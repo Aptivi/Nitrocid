@@ -69,10 +69,10 @@ namespace KS.Misc.Encryption
             string hash = "";
             for (int i = 0, loopTo = encrypted.Length - 1; i <= loopTo; i++)
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Appending {0} to hash", encrypted[i]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Appending {0} to hash", encrypted[i]);
                 hash += $"{encrypted[i]:X2}";
             }
-            DebugWriter.Wdbg(DebugLevel.I, "Final hash: {0}", hash);
+            DebugWriter.WriteDebug(DebugLevel.I, "Final hash: {0}", hash);
             return hash;
         }
 
@@ -84,8 +84,8 @@ namespace KS.Misc.Encryption
         /// <returns>Encrypted hash sum</returns>
         public static string GetEncryptedString(string str, Algorithms algorithm)
         {
-            DebugWriter.Wdbg(DebugLevel.I, "Selected algorithm: {0}", algorithm.ToString());
-            DebugWriter.Wdbg(DebugLevel.I, "String length: {0}", str.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "Selected algorithm: {0}", algorithm.ToString());
+            DebugWriter.WriteDebug(DebugLevel.I, "String length: {0}", str.Length);
             switch (algorithm)
             {
                 case Algorithms.MD5:
@@ -130,8 +130,8 @@ namespace KS.Misc.Encryption
         /// <returns>Encrypted hash sum</returns>
         public static string GetEncryptedFile(Stream str, Algorithms algorithm)
         {
-            DebugWriter.Wdbg(DebugLevel.I, "Selected algorithm: {0}", algorithm.ToString());
-            DebugWriter.Wdbg(DebugLevel.I, "Stream length: {0}", str.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "Selected algorithm: {0}", algorithm.ToString());
+            DebugWriter.WriteDebug(DebugLevel.I, "Stream length: {0}", str.Length);
             switch (algorithm)
             {
                 case Algorithms.MD5:

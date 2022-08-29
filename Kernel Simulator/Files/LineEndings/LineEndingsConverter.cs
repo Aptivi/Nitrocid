@@ -52,7 +52,7 @@ namespace KS.Files.LineEndings
 
             // Get all the file lines, regardless of the new line style on the target file
             var FileContents = FileRead.ReadAllLinesNoBlock(TextFile);
-            DebugWriter.Wdbg(DebugLevel.I, "Got {0} lines. Converting newlines in {1} to {2}...", FileContents.Length, TextFile, LineEndingStyle.ToString());
+            DebugWriter.WriteDebug(DebugLevel.I, "Got {0} lines. Converting newlines in {1} to {2}...", FileContents.Length, TextFile, LineEndingStyle.ToString());
 
             // Get the newline string according to the current style
             string NewLineString = LineEndingsTools.GetLineEndingString(LineEndingStyle);

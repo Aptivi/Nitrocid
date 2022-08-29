@@ -41,14 +41,14 @@ namespace KS.Files.Operations
             Filesystem.ThrowOnInvalidPath(Source);
             Filesystem.ThrowOnInvalidPath(Destination);
             Source = Filesystem.NeutralizePath(Source);
-            DebugWriter.Wdbg(DebugLevel.I, "Source directory: {0}", Source);
+            DebugWriter.WriteDebug(DebugLevel.I, "Source directory: {0}", Source);
             Destination = Filesystem.NeutralizePath(Destination);
-            DebugWriter.Wdbg(DebugLevel.I, "Target directory: {0}", Destination);
+            DebugWriter.WriteDebug(DebugLevel.I, "Target directory: {0}", Destination);
             string FileName = Path.GetFileName(Source);
-            DebugWriter.Wdbg(DebugLevel.I, "Source file name: {0}", FileName);
+            DebugWriter.WriteDebug(DebugLevel.I, "Source file name: {0}", FileName);
             if (Checking.FolderExists(Source))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Source and destination are directories");
+                DebugWriter.WriteDebug(DebugLevel.I, "Source and destination are directories");
                 CopyDirectory(Source, Destination);
 
                 // Raise event
@@ -56,7 +56,7 @@ namespace KS.Files.Operations
             }
             else if (Checking.FileExists(Source) & Checking.FolderExists(Destination))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Source is a file and destination is a directory");
+                DebugWriter.WriteDebug(DebugLevel.I, "Source is a file and destination is a directory");
                 File.Copy(Source, Destination + "/" + FileName, true);
 
                 // Raise event
@@ -64,7 +64,7 @@ namespace KS.Files.Operations
             }
             else if (Checking.FileExists(Source))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Source is a file and destination is a file");
+                DebugWriter.WriteDebug(DebugLevel.I, "Source is a file and destination is a file");
                 File.Copy(Source, Destination, true);
 
                 // Raise event
@@ -72,7 +72,7 @@ namespace KS.Files.Operations
             }
             else
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Source or destination are invalid.");
+                DebugWriter.WriteDebug(DebugLevel.E, "Source or destination are invalid.");
                 throw new IOException(Translate.DoTranslation("The path is neither a file nor a directory."));
             }
         }
@@ -93,8 +93,8 @@ namespace KS.Files.Operations
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Failed to copy {0} to {1}: {2}", Source, Destination, ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to copy {0} to {1}: {2}", Source, Destination, ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;
         }
@@ -125,14 +125,14 @@ namespace KS.Files.Operations
             // Get all source directories and files
             var SourceDirInfo = new DirectoryInfo(Source);
             var SourceDirectories = SourceDirInfo.GetDirectories();
-            DebugWriter.Wdbg(DebugLevel.I, "Source directories: {0}", SourceDirectories.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "Source directories: {0}", SourceDirectories.Length);
             var SourceFiles = SourceDirInfo.GetFiles();
-            DebugWriter.Wdbg(DebugLevel.I, "Source files: {0}", SourceFiles.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "Source files: {0}", SourceFiles.Length);
 
             // Make a destination directory if it doesn't exist
             if (!Checking.FolderExists(Destination))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Destination directory {0} doesn't exist. Creating...", Destination);
+                DebugWriter.WriteDebug(DebugLevel.I, "Destination directory {0} doesn't exist. Creating...", Destination);
                 Directory.CreateDirectory(Destination);
             }
 
@@ -140,7 +140,7 @@ namespace KS.Files.Operations
             foreach (FileInfo SourceFile in SourceFiles)
             {
                 string DestinationFilePath = Path.Combine(Destination, SourceFile.Name);
-                DebugWriter.Wdbg(DebugLevel.I, "Copying file {0} to destination...", DestinationFilePath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Copying file {0} to destination...", DestinationFilePath);
                 if (ShowProgress)
                     TextWriterColor.Write("-> {0}", true, ColorTools.ColTypes.Neutral, DestinationFilePath);
                 SourceFile.CopyTo(DestinationFilePath, true);
@@ -150,7 +150,7 @@ namespace KS.Files.Operations
             foreach (DirectoryInfo SourceDirectory in SourceDirectories)
             {
                 string DestinationDirectoryPath = Path.Combine(Destination, SourceDirectory.Name);
-                DebugWriter.Wdbg(DebugLevel.I, "Calling CopyDirectory() with destination {0}...", DestinationDirectoryPath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Calling CopyDirectory() with destination {0}...", DestinationDirectoryPath);
                 if (ShowProgress)
                     TextWriterColor.Write("* {0}", true, ColorTools.ColTypes.Neutral, DestinationDirectoryPath);
                 CopyDirectory(SourceDirectory.FullName, DestinationDirectoryPath);

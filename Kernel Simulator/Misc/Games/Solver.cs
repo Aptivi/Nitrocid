@@ -46,7 +46,7 @@ namespace KS.Misc.Games
 
             // Show tip to exit
             TextWriterColor.Write(Translate.DoTranslation("Press \"q\" to exit."), true, ColorTools.ColTypes.Neutral);
-            DebugWriter.Wdbg(DebugLevel.I, "Initialized expressions.");
+            DebugWriter.WriteDebug(DebugLevel.I, "Initialized expressions.");
             while (true)
             {
                 // Populate the numbers
@@ -56,12 +56,12 @@ namespace KS.Misc.Games
 
                 // Generate the expression
                 RandomExpression = FirstNumber.ToString() + Operations.ElementAt(OperationIndex) + SecondNumber.ToString();
-                DebugWriter.Wdbg(DebugLevel.I, "Expression to be solved: {0}", RandomExpression);
+                DebugWriter.WriteDebug(DebugLevel.I, "Expression to be solved: {0}", RandomExpression);
                 TextWriterColor.Write(RandomExpression, true, ColorTools.ColTypes.Input);
 
                 // Wait for response
                 UserEvaluated = SolverShowInput ? Input.ReadLine() : Input.ReadLineNoInput(Convert.ToChar(""));
-                DebugWriter.Wdbg(DebugLevel.I, "Evaluated: {0}", UserEvaluated);
+                DebugWriter.WriteDebug(DebugLevel.I, "Evaluated: {0}", UserEvaluated);
 
                 // Check to see if the user has entered the correct answer
                 double UserEvaluatedNumber;
@@ -70,23 +70,23 @@ namespace KS.Misc.Games
                 {
                     if (UserEvaluatedNumber == EvaluatedNumber)
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Expression is {0} and equals {1}", UserEvaluated, EvaluatedNumber);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Expression is {0} and equals {1}", UserEvaluated, EvaluatedNumber);
                         TextWriterColor.Write(Translate.DoTranslation("Solved perfectly!"), true, ColorTools.ColTypes.Neutral);
                     }
                     else
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Expression is {0} and equals {1}", UserEvaluated, EvaluatedNumber);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Expression is {0} and equals {1}", UserEvaluated, EvaluatedNumber);
                         TextWriterColor.Write(Translate.DoTranslation("Solved incorrectly."), true, ColorTools.ColTypes.Neutral);
                     }
                 }
                 else if (UserEvaluated == "q")
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "User requested exit.");
+                    DebugWriter.WriteDebug(DebugLevel.W, "User requested exit.");
                     break;
                 }
                 else if (ReadLineReboot.ReadLine.ReadRanToCompletion)
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "User evaluated \"{0}\". However, it's not numeric.", UserEvaluated);
+                    DebugWriter.WriteDebug(DebugLevel.E, "User evaluated \"{0}\". However, it's not numeric.", UserEvaluated);
                     TextWriterColor.Write(Translate.DoTranslation("You can only write the numbers."), true, ColorTools.ColTypes.Error);
                 }
             }

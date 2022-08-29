@@ -33,7 +33,7 @@ namespace KS.Shell.Prompts
 
         internal virtual string PresetPromptBuilder()
         {
-            DebugWriter.Wdbg(DebugLevel.E, "Tried to call prompt builder on base.");
+            DebugWriter.WriteDebug(DebugLevel.E, "Tried to call prompt builder on base.");
             throw new NotImplementedException();
         }
 

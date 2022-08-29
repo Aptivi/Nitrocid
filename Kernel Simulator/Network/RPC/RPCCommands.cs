@@ -70,17 +70,17 @@ namespace KS.Network.RPC
             {
                 // Get the command and the argument
                 string Cmd = Request.Remove(Request.IndexOf("("));
-                DebugWriter.Wdbg(DebugLevel.I, "Command: {0}", Cmd);
+                DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}", Cmd);
                 string Arg = Request.Substring(Request.IndexOf("(") + 1);
-                DebugWriter.Wdbg(DebugLevel.I, "Prototype Arg: {0}", Arg);
+                DebugWriter.WriteDebug(DebugLevel.I, "Prototype Arg: {0}", Arg);
                 Arg = Arg.Remove(Arg.Length - 1);
-                DebugWriter.Wdbg(DebugLevel.I, "Finished Arg: {0}", Arg);
+                DebugWriter.WriteDebug(DebugLevel.I, "Finished Arg: {0}", Arg);
 
                 // Check the command
                 var Malformed = default(bool);
                 if (RPCCommandsField.Contains(Cmd))
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Command found.");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Command found.");
 
                     // Check the request type
                     string RequestType = Cmd.Substring(Cmd.IndexOf(":") + 1, Finish: Cmd.IndexOf(">"));
@@ -97,7 +97,7 @@ namespace KS.Network.RPC
                         case "Ping":
                             {
                                 // Populate the byte message to send the confirmation to
-                                DebugWriter.Wdbg(DebugLevel.I, "Stream opened for device {0}", Arg);
+                                DebugWriter.WriteDebug(DebugLevel.I, "Stream opened for device {0}", Arg);
                                 ByteMsg = System.Text.Encoding.Default.GetBytes($"{RequestType}Confirm, " + Arg + Kernel.Kernel.NewLine);
                                 break;
                             }
@@ -105,7 +105,7 @@ namespace KS.Network.RPC
                         default:
                             {
                                 // Rare case reached. Drop it.
-                                DebugWriter.Wdbg(DebugLevel.E, "Malformed request. {0}", Cmd);
+                                DebugWriter.WriteDebug(DebugLevel.E, "Malformed request. {0}", Cmd);
                                 Malformed = true;
                                 break;
                             }
@@ -114,7 +114,7 @@ namespace KS.Network.RPC
                     // Send the response
                     if (!Malformed)
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Sending response to device...");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Sending response to device...");
                         RemoteProcedure.RPCListen.Send(ByteMsg, ByteMsg.Length, IP, Port);
                         Kernel.Kernel.KernelEventManager.RaiseRPCCommandSent(Cmd, Arg, IP, Port);
                     }
@@ -145,61 +145,61 @@ namespace KS.Network.RPC
                     // If the message is not empty, parse it
                     if (!string.IsNullOrEmpty(Message))
                     {
-                        DebugWriter.Wdbg((DebugLevel)Convert.ToInt32("RPC: Received message {0}"), Message);
+                        DebugWriter.WriteDebug((DebugLevel)Convert.ToInt32("RPC: Received message {0}"), Message);
                         Kernel.Kernel.KernelEventManager.RaiseRPCCommandReceived(Message, RemoteEndpoint.Address.ToString(), RemoteEndpoint.Port);
 
                         // Iterate through every confirmation message
                         if (Message.StartsWith("ShutdownConfirm"))
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Shutdown confirmed from remote access.");
+                            DebugWriter.WriteDebug(DebugLevel.I, "Shutdown confirmed from remote access.");
                             KernelTools.RPCPowerListener.Start(PowerMode.Shutdown);
                         }
                         else if (Message.StartsWith("RebootConfirm"))
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Reboot confirmed from remote access.");
+                            DebugWriter.WriteDebug(DebugLevel.I, "Reboot confirmed from remote access.");
                             KernelTools.RPCPowerListener.Start(PowerMode.Reboot);
                         }
                         else if (Message.StartsWith("RebootSafeConfirm"))
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Reboot to safe mode confirmed from remote access.");
+                            DebugWriter.WriteDebug(DebugLevel.I, "Reboot to safe mode confirmed from remote access.");
                             KernelTools.RPCPowerListener.Start(PowerMode.RebootSafe);
                         }
                         else if (Message.StartsWith("LockConfirm"))
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Lock confirmed from remote access.");
+                            DebugWriter.WriteDebug(DebugLevel.I, "Lock confirmed from remote access.");
                             Screensaver.LockScreen();
                         }
                         else if (Message.StartsWith("SaveScrConfirm"))
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Save screen confirmed from remote access.");
+                            DebugWriter.WriteDebug(DebugLevel.I, "Save screen confirmed from remote access.");
                             Screensaver.ShowSavers(Screensaver.DefSaverName);
                         }
                         else if (Message.StartsWith("ExecConfirm"))
                         {
                             if (Flags.LoggedIn)
                             {
-                                DebugWriter.Wdbg(DebugLevel.I, "Exec confirmed from remote access.");
+                                DebugWriter.WriteDebug(DebugLevel.I, "Exec confirmed from remote access.");
                                 ConsoleBase.ConsoleWrapper.WriteLine();
                                 Shell.Shell.GetLine(Message.Replace("ExecConfirm, ", "").Replace(Kernel.Kernel.NewLine, ""));
                             }
                             else
                             {
-                                DebugWriter.Wdbg(DebugLevel.W, "Tried to exec from remote access while not logged in. Dropping packet...");
+                                DebugWriter.WriteDebug(DebugLevel.W, "Tried to exec from remote access while not logged in. Dropping packet...");
                             }
                         }
                         else if (Message.StartsWith("AckConfirm"))
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "{0} says \"Hello.\"", Message.Replace("AckConfirm, ", "").Replace(Kernel.Kernel.NewLine, ""));
+                            DebugWriter.WriteDebug(DebugLevel.I, "{0} says \"Hello.\"", Message.Replace("AckConfirm, ", "").Replace(Kernel.Kernel.NewLine, ""));
                         }
                         else if (Message.StartsWith("PingConfirm"))
                         {
                             string IPAddr = Message.Replace("PingConfirm, ", "").Replace(Kernel.Kernel.NewLine, "");
-                            DebugWriter.Wdbg(DebugLevel.I, "{0} pinged this device!", IPAddr);
+                            DebugWriter.WriteDebug(DebugLevel.I, "{0} pinged this device!", IPAddr);
                             Notifications.NotifySend(new Notification(Translate.DoTranslation("Ping!"), Translate.DoTranslation("{0} pinged you.").FormatString(IPAddr), Notifications.NotifPriority.Low, Notifications.NotifType.Normal));
                         }
                         else
                         {
-                            DebugWriter.Wdbg(DebugLevel.W, "Not found. Message was {0}", Message);
+                            DebugWriter.WriteDebug(DebugLevel.W, "Not found. Message was {0}", Message);
                         }
                     }
                 }
@@ -210,14 +210,14 @@ namespace KS.Network.RPC
                     {
                         if (!(SE.SocketErrorCode == SocketError.TimedOut))
                         {
-                            DebugWriter.Wdbg(DebugLevel.E, "Error from host: {0}", SE.SocketErrorCode.ToString());
-                            DebugWriter.WStkTrc(ex);
+                            DebugWriter.WriteDebug(DebugLevel.E, "Error from host: {0}", SE.SocketErrorCode.ToString());
+                            DebugWriter.WriteDebugStackTrace(ex);
                         }
                     }
                     else
                     {
-                        DebugWriter.Wdbg(DebugLevel.E, "Fatal error: {0}", ex.Message);
-                        DebugWriter.WStkTrc(ex);
+                        DebugWriter.WriteDebug(DebugLevel.E, "Fatal error: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTrace(ex);
                         Kernel.Kernel.KernelEventManager.RaiseRPCCommandError(Message, ex, RemoteEndpoint.Address.ToString(), RemoteEndpoint.Port);
                     }
                 }

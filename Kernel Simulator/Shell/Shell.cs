@@ -144,11 +144,11 @@ namespace KS.Shell
                     // Get the index of the first space
                     int indexCmd = Command.IndexOf(" ");
                     string cmdArgs = Command; // Command with args
-                    DebugWriter.Wdbg(DebugLevel.I, "Prototype indexCmd and Command: {0}, {1}", indexCmd, Command);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Prototype indexCmd and Command: {0}, {1}", indexCmd, Command);
                     if (indexCmd == -1)
                         indexCmd = Command.Length;
                     string finalCommand = Command.Substring(0, indexCmd);
-                    DebugWriter.Wdbg(DebugLevel.I, "Finished indexCmd and finalCommand: {0}, {1}", indexCmd, finalCommand);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Finished indexCmd and finalCommand: {0}, {1}", indexCmd, finalCommand);
 
                     // Parse script command (if any)
                     var scriptArgs = finalCommand.Split(new[] { ".uesh " }, StringSplitOptions.RemoveEmptyEntries).ToList();
@@ -165,30 +165,30 @@ namespace KS.Shell
                             ConsoleExtensions.SetTitle($"{Kernel.Kernel.ConsoleTitle} - {finalCommand}");
 
                             // Iterate through mod commands
-                            DebugWriter.Wdbg(DebugLevel.I, "Mod commands probing started with {0} from {1}", finalCommand, FullCommand);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Mod commands probing started with {0} from {1}", finalCommand, FullCommand);
                             if (ModManager.ListModCommands(ShellType).ContainsKey(Parts[0]))
                             {
-                                DebugWriter.Wdbg(DebugLevel.I, "Mod command: {0}", Parts[0]);
+                                DebugWriter.WriteDebug(DebugLevel.I, "Mod command: {0}", Parts[0]);
                                 ModExecutor.ExecuteModCommand(finalCommand);
                             }
 
                             // Iterate through alias commands
-                            DebugWriter.Wdbg(DebugLevel.I, "Aliases probing started with {0} from {1}", finalCommand, FullCommand);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Aliases probing started with {0} from {1}", finalCommand, FullCommand);
                             if (AliasManager.GetAliasesListFromType(ShellType).ContainsKey(Parts[0]))
                             {
-                                DebugWriter.Wdbg(DebugLevel.I, "Alias: {0}", Parts[0]);
+                                DebugWriter.WriteDebug(DebugLevel.I, "Alias: {0}", Parts[0]);
                                 AliasExecutor.ExecuteAlias(finalCommand, ShellType);
                             }
 
                             // Execute the built-in command
                             if (Commands.ContainsKey(finalCommand))
                             {
-                                DebugWriter.Wdbg(DebugLevel.I, "Executing built-in command");
+                                DebugWriter.WriteDebug(DebugLevel.I, "Executing built-in command");
 
                                 // Check to see if the command supports redirection
                                 if (Commands[finalCommand].Flags.HasFlag(CommandFlags.RedirectionSupported))
                                 {
-                                    DebugWriter.Wdbg(DebugLevel.I, "Redirection supported!");
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Redirection supported!");
                                     InitializeRedirection(ref finalCommand, OutputPath);
                                 }
                                 if (!(string.IsNullOrEmpty(finalCommand) | finalCommand.StartsWithAnyOf(new[] { " ", "#" }) == true))
@@ -199,7 +199,7 @@ namespace KS.Shell
                                     {
                                         if (PermissionManagement.HasPermission(Login.Login.CurrentUser.Username, PermissionManagement.PermissionType.Administrator) == false & Commands[finalCommand].Flags.HasFlag(CommandFlags.Strict))
                                         {
-                                            DebugWriter.Wdbg(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", finalCommand);
+                                            DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", finalCommand);
                                             TextWriterColor.Write(Translate.DoTranslation("You don't have permission to use {0}"), true, ColorTools.ColTypes.Error, finalCommand);
                                             break;
                                         }
@@ -208,12 +208,12 @@ namespace KS.Shell
                                     // Check the command before starting
                                     if (Flags.Maintenance == true & Commands[finalCommand].Flags.HasFlag(CommandFlags.NoMaintenance))
                                     {
-                                        DebugWriter.Wdbg(DebugLevel.W, "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", finalCommand);
+                                        DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", finalCommand);
                                         TextWriterColor.Write(Translate.DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), true, ColorTools.ColTypes.Error, finalCommand);
                                     }
                                     else
                                     {
-                                        DebugWriter.Wdbg(DebugLevel.I, "Cmd exec {0} succeeded. Running with {1}", finalCommand, cmdArgs);
+                                        DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded. Running with {1}", finalCommand, cmdArgs);
                                         var Params = new GetCommand.ExecuteCommandThreadParameters(FullCommand, ShellType);
 
                                         // Since we're probably trying to run a command using the alternative command threads, if the main shell command thread
@@ -230,7 +230,7 @@ namespace KS.Shell
                                             }
                                             else
                                             {
-                                                DebugWriter.Wdbg(DebugLevel.W, "Cmd exec {0} failed: Alt command threads are not there.");
+                                                DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: Alt command threads are not there.");
                                                 CommandThreadValid = false;
                                             }
                                         }
@@ -255,7 +255,7 @@ namespace KS.Shell
                                 // If we're in the UESH shell, parse the script file or executable file
                                 if (Checking.FileExists(TargetFile) & !TargetFile.EndsWith(".uesh"))
                                 {
-                                    DebugWriter.Wdbg(DebugLevel.I, "Cmd exec {0} succeeded because file is found.", finalCommand);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded because file is found.", finalCommand);
                                     try
                                     {
                                         // Create a new instance of process
@@ -263,7 +263,7 @@ namespace KS.Shell
                                         {
                                             cmdArgs = cmdArgs.Replace(TargetFileName, "");
                                             cmdArgs.RemoveNullsOrWhitespacesAtTheBeginning();
-                                            DebugWriter.Wdbg(DebugLevel.I, "Command: {0}, Arguments: {1}", TargetFile, cmdArgs);
+                                            DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, Arguments: {1}", TargetFile, cmdArgs);
                                             var Params = new ProcessExecutor.ExecuteProcessThreadParameters(TargetFile, cmdArgs);
                                             ProcessStartCommandThread.Start(Params);
                                             ProcessStartCommandThread.Wait();
@@ -272,33 +272,33 @@ namespace KS.Shell
                                     }
                                     catch (Exception ex)
                                     {
-                                        DebugWriter.Wdbg(DebugLevel.E, "Failed to start process: {0}", ex.Message);
+                                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to start process: {0}", ex.Message);
                                         TextWriterColor.Write(Translate.DoTranslation("Failed to start \"{0}\": {1}"), true, ColorTools.ColTypes.Error, finalCommand, ex.Message);
-                                        DebugWriter.WStkTrc(ex);
+                                        DebugWriter.WriteDebugStackTrace(ex);
                                     }
                                 }
                                 else if (Checking.FileExists(TargetFile) & TargetFile.EndsWith(".uesh"))
                                 {
                                     try
                                     {
-                                        DebugWriter.Wdbg(DebugLevel.I, "Cmd exec {0} succeeded because it's a UESH script.", finalCommand);
+                                        DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded because it's a UESH script.", finalCommand);
                                         UESHParse.Execute(TargetFile, scriptArgs.Join(" "));
                                     }
                                     catch (Exception ex)
                                     {
                                         TextWriterColor.Write(Translate.DoTranslation("Error trying to execute script: {0}"), true, ColorTools.ColTypes.Error, ex.Message);
-                                        DebugWriter.WStkTrc(ex);
+                                        DebugWriter.WriteDebugStackTrace(ex);
                                     }
                                 }
                                 else
                                 {
-                                    DebugWriter.Wdbg(DebugLevel.W, "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", finalCommand, indexCmd);
+                                    DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", finalCommand, indexCmd);
                                     TextWriterColor.Write(Translate.DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), true, ColorTools.ColTypes.Error, finalCommand);
                                 }
                             }
                             else
                             {
-                                DebugWriter.Wdbg(DebugLevel.W, "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", finalCommand, indexCmd);
+                                DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", finalCommand, indexCmd);
                                 TextWriterColor.Write(Translate.DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), true, ColorTools.ColTypes.Error, finalCommand);
                             }
 
@@ -307,7 +307,7 @@ namespace KS.Shell
                         }
                         catch (Exception ex)
                         {
-                            DebugWriter.WStkTrc(ex);
+                            DebugWriter.WriteDebugStackTrace(ex);
                             TextWriterColor.Write(Translate.DoTranslation("Error trying to execute command.") + Kernel.Kernel.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, ColorTools.ColTypes.Error, ex.GetType().FullName, ex.Message);
                         }
                     }
@@ -326,10 +326,10 @@ namespace KS.Shell
         private static void InitializeRedirection(ref string Command, string OutputPath)
         {
             // If requested command has output redirection sign after arguments, remove it from final command string and set output to that file
-            DebugWriter.Wdbg(DebugLevel.I, "Does the command contain the redirection sign \">>>\" or \">>\"? {0} and {1}", Command.Contains(">>>"), Command.Contains(">>"));
+            DebugWriter.WriteDebug(DebugLevel.I, "Does the command contain the redirection sign \">>>\" or \">>\"? {0} and {1}", Command.Contains(">>>"), Command.Contains(">>"));
             if (Command.Contains(">>>"))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Output redirection found with append.");
+                DebugWriter.WriteDebug(DebugLevel.I, "Output redirection found with append.");
                 string OutputFileName = Command.Substring(Command.LastIndexOf(">") + 2);
                 OutputFileName = Filesystem.NeutralizePath(OutputFileName);
                 WriterPlainManager.ChangePlain("File");
@@ -339,7 +339,7 @@ namespace KS.Shell
             }
             else if (Command.Contains(">>"))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Output redirection found with overwrite.");
+                DebugWriter.WriteDebug(DebugLevel.I, "Output redirection found with overwrite.");
                 string OutputFileName = Command.Substring(Command.LastIndexOf(">") + 2);
                 OutputFileName = Filesystem.NeutralizePath(OutputFileName);
                 WriterPlainManager.ChangePlain("File");
@@ -350,7 +350,7 @@ namespace KS.Shell
             // Checks to see if the user provided optional path
             if (!string.IsNullOrWhiteSpace(OutputPath))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Optional output redirection found using OutputPath ({0}).", OutputPath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Optional output redirection found using OutputPath ({0}).", OutputPath);
                 OutputPath = Filesystem.NeutralizePath(OutputPath);
                 WriterPlainManager.ChangePlain("File");
                 ((FilePlainWriter)WriterPlainManager.currentPlain).PathToWrite = OutputPath;

@@ -86,19 +86,19 @@ namespace KS.Misc.Settings
                 ConsoleBase.ConsoleWrapper.WriteLine();
                 TextWriterColor.Write("> ", false, ColorTools.ColTypes.Input);
                 AnswerString = Input.ReadLine();
-                DebugWriter.Wdbg(DebugLevel.I, "User answered {0}", AnswerString);
+                DebugWriter.WriteDebug(DebugLevel.I, "User answered {0}", AnswerString);
                 ConsoleBase.ConsoleWrapper.WriteLine();
 
                 // Check for input
-                DebugWriter.Wdbg(DebugLevel.I, "Is the answer numeric? {0}", StringQuery.IsStringNumeric(AnswerString));
+                DebugWriter.WriteDebug(DebugLevel.I, "Is the answer numeric? {0}", StringQuery.IsStringNumeric(AnswerString));
                 if (int.TryParse(AnswerString, out AnswerInt))
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Succeeded. Checking the answer if it points to the right direction...");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Succeeded. Checking the answer if it points to the right direction...");
                     if (AnswerInt >= 1 & AnswerInt <= MaxSections)
                     {
                         // The selected answer is a section
                         JProperty SelectedSection = (JProperty)SettingsToken.ToList()[AnswerInt - 1];
-                        DebugWriter.Wdbg(DebugLevel.I, "Opening section {0}...", SelectedSection.Name);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Opening section {0}...", SelectedSection.Name);
                         OpenSection(SelectedSection.Name, SettingsToken);
                     }
                     else if (AnswerInt == MaxSections + 1)
@@ -109,7 +109,7 @@ namespace KS.Misc.Settings
                     else if (AnswerInt == MaxSections + 2)
                     {
                         // The selected answer is "Save Settings"
-                        DebugWriter.Wdbg(DebugLevel.I, "Saving settings...");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Saving settings...");
                         try
                         {
                             Config.CreateConfig();
@@ -118,7 +118,7 @@ namespace KS.Misc.Settings
                         catch (Exception ex)
                         {
                             TextWriterColor.Write(ex.Message, true, ColorTools.ColTypes.Error);
-                            DebugWriter.WStkTrc(ex);
+                            DebugWriter.WriteDebugStackTrace(ex);
                             ConsoleBase.ConsoleWrapper.ReadKey();
                         }
                     }
@@ -136,7 +136,7 @@ namespace KS.Misc.Settings
                             catch (Exception ex)
                             {
                                 TextWriterColor.Write(ex.Message, true, ColorTools.ColTypes.Error);
-                                DebugWriter.WStkTrc(ex);
+                                DebugWriter.WriteDebugStackTrace(ex);
                                 ConsoleBase.ConsoleWrapper.ReadKey();
                             }
                         }
@@ -161,7 +161,7 @@ namespace KS.Misc.Settings
                             catch (Exception ex)
                             {
                                 TextWriterColor.Write(ex.Message, true, ColorTools.ColTypes.Error);
-                                DebugWriter.WStkTrc(ex);
+                                DebugWriter.WriteDebugStackTrace(ex);
                                 ConsoleBase.ConsoleWrapper.ReadKey();
                             }
                         }
@@ -174,14 +174,14 @@ namespace KS.Misc.Settings
                     else if (AnswerInt == MaxSections + 5)
                     {
                         // The selected answer is "Exit"
-                        DebugWriter.Wdbg(DebugLevel.W, "Exiting...");
+                        DebugWriter.WriteDebug(DebugLevel.W, "Exiting...");
                         PromptFinished = true;
                         ConsoleBase.ConsoleWrapper.Clear();
                     }
                     else
                     {
                         // Invalid selection
-                        DebugWriter.Wdbg(DebugLevel.W, "Option is not valid. Returning...");
+                        DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
                         TextWriterColor.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, ColorTools.ColTypes.Error, AnswerInt);
                         TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
                         ConsoleBase.ConsoleWrapper.ReadKey();
@@ -189,7 +189,7 @@ namespace KS.Misc.Settings
                 }
                 else if (ReadLineReboot.ReadLine.ReadRanToCompletion)
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "Answer is not numeric.");
+                    DebugWriter.WriteDebug(DebugLevel.W, "Answer is not numeric.");
                     TextWriterColor.Write(Translate.DoTranslation("The answer must be numeric."), true, ColorTools.ColTypes.Error);
                     TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
                     ConsoleBase.ConsoleWrapper.ReadKey();
@@ -276,38 +276,38 @@ namespace KS.Misc.Settings
                     {
                         TextWriterColor.Write(" {0}) " + Translate.DoTranslation("Go Back...") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.BackOption, MaxOptions + 1);
                     }
-                    DebugWriter.Wdbg(DebugLevel.W, "Section {0} has {1} selections.", Section, MaxOptions);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Section {0} has {1} selections.", Section, MaxOptions);
 
                     // Prompt user and check for input
                     TextWriterColor.Write("> ", false, ColorTools.ColTypes.Input);
                     AnswerString = Input.ReadLine();
-                    DebugWriter.Wdbg(DebugLevel.I, "User answered {0}", AnswerString);
+                    DebugWriter.WriteDebug(DebugLevel.I, "User answered {0}", AnswerString);
                     ConsoleBase.ConsoleWrapper.WriteLine();
 
-                    DebugWriter.Wdbg(DebugLevel.I, "Is the answer numeric? {0}", StringQuery.IsStringNumeric(AnswerString));
+                    DebugWriter.WriteDebug(DebugLevel.I, "Is the answer numeric? {0}", StringQuery.IsStringNumeric(AnswerString));
                     if (int.TryParse(AnswerString, out AnswerInt))
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Succeeded. Checking the answer if it points to the right direction...");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Succeeded. Checking the answer if it points to the right direction...");
                         if (AnswerInt >= 1 & AnswerInt <= MaxOptions)
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Opening key {0} from section {1}...", AnswerInt, Section);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Opening key {0} from section {1}...", AnswerInt, Section);
                             OpenKey(Section, AnswerInt, SettingsToken);
                         }
                         else if (AnswerInt == MaxOptions + 1 & CurrentSettingsType == SettingsType.Screensaver)
                         {
                             // Preview screensaver
-                            DebugWriter.Wdbg(DebugLevel.I, "User requested screensaver preview.");
+                            DebugWriter.WriteDebug(DebugLevel.I, "User requested screensaver preview.");
                             Screensaver.Screensaver.ShowSavers(Section);
                         }
                         else if (AnswerInt == MaxOptions + 1 | AnswerInt == MaxOptions + 2 & CurrentSettingsType == SettingsType.Screensaver)
                         {
                             // Go Back...
-                            DebugWriter.Wdbg(DebugLevel.I, "User requested exit. Returning...");
+                            DebugWriter.WriteDebug(DebugLevel.I, "User requested exit. Returning...");
                             SectionFinished = true;
                         }
                         else
                         {
-                            DebugWriter.Wdbg(DebugLevel.W, "Option is not valid. Returning...");
+                            DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
                             TextWriterColor.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, ColorTools.ColTypes.Error, AnswerInt);
                             TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
                             ConsoleBase.ConsoleWrapper.ReadKey();
@@ -315,7 +315,7 @@ namespace KS.Misc.Settings
                     }
                     else if (ReadLineReboot.ReadLine.ReadRanToCompletion)
                     {
-                        DebugWriter.Wdbg(DebugLevel.W, "Answer is not numeric.");
+                        DebugWriter.WriteDebug(DebugLevel.W, "Answer is not numeric.");
                         TextWriterColor.Write(Translate.DoTranslation("The answer must be numeric."), true, ColorTools.ColTypes.Error);
                         TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
                         ConsoleBase.ConsoleWrapper.ReadKey();
@@ -325,7 +325,7 @@ namespace KS.Misc.Settings
             catch (Exception ex)
             {
                 ConsoleBase.ConsoleWrapper.Clear();
-                DebugWriter.Wdbg(DebugLevel.I, "Error trying to open section: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.I, "Error trying to open section: {0}", ex.Message);
                 SeparatorWriterColor.WriteSeparator("???", true);
                 TextWriterColor.Write(Kernel.Kernel.NewLine + "X) " + Translate.DoTranslation("Invalid section entered. Please go back."), true, ColorTools.ColTypes.Error);
                 TextWriterColor.Write("X) " + Translate.DoTranslation("If you're sure that you've opened the right section, check this message out:"), true, ColorTools.ColTypes.Error);
@@ -501,8 +501,8 @@ namespace KS.Misc.Settings
                     }
 
                     // Print debugging info
-                    DebugWriter.Wdbg(DebugLevel.W, "Key {0} in section {1} has {2} selections.", KeyNumber, Section, MaxKeyOptions);
-                    DebugWriter.Wdbg(DebugLevel.W, "Target variable: {0}, Key Type: {1}, Key value: {2}, Variant Value: {3}", KeyVar, KeyType, KeyValue, VariantValue);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Key {0} in section {1} has {2} selections.", KeyNumber, Section, MaxKeyOptions);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Target variable: {0}, Key Type: {1}, Key value: {2}, Variant Value: {3}", KeyVar, KeyType, KeyValue, VariantValue);
 
                     // Prompt user
                     if (KeyType == SettingsKeyType.SVariant)
@@ -517,7 +517,7 @@ namespace KS.Misc.Settings
                             VariantValue = Input.ReadLine();
                             if (NeutralizePaths)
                                 VariantValue = Filesystem.NeutralizePath(Convert.ToString(VariantValue), NeutralizeRootPath);
-                            DebugWriter.Wdbg(DebugLevel.I, "User answered {0}", VariantValue);
+                            DebugWriter.WriteDebug(DebugLevel.I, "User answered {0}", VariantValue);
                         }
                     }
                     else if (!(KeyType == SettingsKeyType.SVariant) & !(KeyType == SettingsKeyType.SColor))
@@ -544,7 +544,7 @@ namespace KS.Misc.Settings
                                         DeletedItems = DeletedItems.Append(AnswerString.Substring(1));
                                         TargetList = TargetList.Except(DeletedItems);
                                     }
-                                    DebugWriter.Wdbg(DebugLevel.I, "Added answer {0} to list.", AnswerString);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Added answer {0} to list.", AnswerString);
                                     TextWriterColor.Write("> ", false, ColorTools.ColTypes.Input);
                                 }
                             }
@@ -616,12 +616,12 @@ namespace KS.Misc.Settings
                             // Neutralize answer path if required
                             if (NeutralizePaths)
                                 AnswerString = Filesystem.NeutralizePath(AnswerString, NeutralizeRootPath);
-                            DebugWriter.Wdbg(DebugLevel.I, "User answered {0}", AnswerString);
+                            DebugWriter.WriteDebug(DebugLevel.I, "User answered {0}", AnswerString);
                         }
                     }
 
                     // Check for input
-                    DebugWriter.Wdbg(DebugLevel.I, "Is the answer numeric? {0}", StringQuery.IsStringNumeric(AnswerString));
+                    DebugWriter.WriteDebug(DebugLevel.I, "Is the answer numeric? {0}", StringQuery.IsStringNumeric(AnswerString));
                     if (int.TryParse(AnswerString, out AnswerInt))
                     {
                         // The answer is numeric! Now, check for types
@@ -630,11 +630,11 @@ namespace KS.Misc.Settings
                             case SettingsKeyType.SBoolean:
                                 {
                                     // We're dealing with boolean
-                                    DebugWriter.Wdbg(DebugLevel.I, "Answer is numeric and key is of the Boolean type.");
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Answer is numeric and key is of the Boolean type.");
                                     if (AnswerInt >= 1 & AnswerInt <= MaxKeyOptions)
                                     {
                                         var FinalBool = true;
-                                        DebugWriter.Wdbg(DebugLevel.I, "Translating {0} to the boolean equivalent...", AnswerInt);
+                                        DebugWriter.WriteDebug(DebugLevel.I, "Translating {0} to the boolean equivalent...", AnswerInt);
                                         KeyFinished = true;
 
                                         // Set boolean
@@ -642,13 +642,13 @@ namespace KS.Misc.Settings
                                         {
                                             case 1: // True
                                                 {
-                                                    DebugWriter.Wdbg(DebugLevel.I, "Setting to True...");
+                                                    DebugWriter.WriteDebug(DebugLevel.I, "Setting to True...");
                                                     FinalBool = true;
                                                     break;
                                                 }
                                             case 2: // False
                                                 {
-                                                    DebugWriter.Wdbg(DebugLevel.I, "Setting to False...");
+                                                    DebugWriter.WriteDebug(DebugLevel.I, "Setting to False...");
                                                     FinalBool = false;
                                                     break;
                                                 }
@@ -668,12 +668,12 @@ namespace KS.Misc.Settings
                                     }
                                     else if (AnswerInt == MaxKeyOptions + 1) // Go Back...
                                     {
-                                        DebugWriter.Wdbg(DebugLevel.I, "User requested exit. Returning...");
+                                        DebugWriter.WriteDebug(DebugLevel.I, "User requested exit. Returning...");
                                         KeyFinished = true;
                                     }
                                     else
                                     {
-                                        DebugWriter.Wdbg(DebugLevel.W, "Option is not valid. Returning...");
+                                        DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
                                         TextWriterColor.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, ColorTools.ColTypes.Error, AnswerInt);
                                         TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
                                         ConsoleBase.ConsoleWrapper.ReadKey();
@@ -684,18 +684,18 @@ namespace KS.Misc.Settings
                             case SettingsKeyType.SSelection:
                                 {
                                     // We're dealing with selection
-                                    DebugWriter.Wdbg(DebugLevel.I, "Answer is numeric and key is of the selection type.");
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Answer is numeric and key is of the selection type.");
                                     int AnswerIndex = AnswerInt - 1;
                                     if (AnswerInt == MaxKeyOptions + 1) // Go Back...
                                     {
-                                        DebugWriter.Wdbg(DebugLevel.I, "User requested exit. Returning...");
+                                        DebugWriter.WriteDebug(DebugLevel.I, "User requested exit. Returning...");
                                         KeyFinished = true;
                                     }
                                     else if (AnswerInt > 0)
                                     {
                                         if (Selections is IEnumerable<object> selectionsArray)
                                         {
-                                            DebugWriter.Wdbg(DebugLevel.I, "Setting variable {0} to item index {1}...", KeyVar, AnswerInt);
+                                            DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0} to item index {1}...", KeyVar, AnswerInt);
                                             KeyFinished = true;
 
                                             // Now, set the value
@@ -715,13 +715,13 @@ namespace KS.Misc.Settings
                                             object FinalValue;
                                             if (!SelectionEnum)
                                             {
-                                                DebugWriter.Wdbg(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerInt);
+                                                DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerInt);
                                                 KeyFinished = true;
                                                 FinalValue = SelectFrom.ElementAtOrDefault(AnswerInt - 1);
                                             }
                                             else
                                             {
-                                                DebugWriter.Wdbg(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerInt);
+                                                DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerInt);
                                                 KeyFinished = true;
                                                 FinalValue = AnswerInt;
                                             }
@@ -740,7 +740,7 @@ namespace KS.Misc.Settings
                                         }
                                         else
                                         {
-                                            DebugWriter.Wdbg(DebugLevel.W, "Answer is not valid.");
+                                            DebugWriter.WriteDebug(DebugLevel.W, "Answer is not valid.");
                                             TextWriterColor.Write(Translate.DoTranslation("The answer may not exceed the entries shown."), true, ColorTools.ColTypes.Error);
                                             TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
                                             ConsoleBase.ConsoleWrapper.ReadKey();
@@ -748,14 +748,14 @@ namespace KS.Misc.Settings
                                     }
                                     else if (AnswerInt == 0 & !SelectionEnumZeroBased)
                                     {
-                                        DebugWriter.Wdbg(DebugLevel.W, "Zero is not allowed.");
+                                        DebugWriter.WriteDebug(DebugLevel.W, "Zero is not allowed.");
                                         TextWriterColor.Write(Translate.DoTranslation("The answer may not be zero."), true, ColorTools.ColTypes.Error);
                                         TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
                                         ConsoleBase.ConsoleWrapper.ReadKey();
                                     }
                                     else
                                     {
-                                        DebugWriter.Wdbg(DebugLevel.W, "Negative values are disallowed.");
+                                        DebugWriter.WriteDebug(DebugLevel.W, "Negative values are disallowed.");
                                         TextWriterColor.Write(Translate.DoTranslation("The answer may not be negative."), true, ColorTools.ColTypes.Error);
                                         TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
                                         ConsoleBase.ConsoleWrapper.ReadKey();
@@ -766,11 +766,11 @@ namespace KS.Misc.Settings
                             case SettingsKeyType.SInt:
                                 {
                                     // We're dealing with integers
-                                    DebugWriter.Wdbg(DebugLevel.I, "Answer is numeric and key is of the integer type.");
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Answer is numeric and key is of the integer type.");
                                     int AnswerIndex = AnswerInt - 1;
                                     if (AnswerInt >= 0)
                                     {
-                                        DebugWriter.Wdbg(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerInt);
+                                        DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerInt);
                                         KeyFinished = true;
 
                                         // Now, set the value
@@ -787,7 +787,7 @@ namespace KS.Misc.Settings
                                     }
                                     else
                                     {
-                                        DebugWriter.Wdbg(DebugLevel.W, "Negative values are disallowed.");
+                                        DebugWriter.WriteDebug(DebugLevel.W, "Negative values are disallowed.");
                                         TextWriterColor.Write(Translate.DoTranslation("The answer may not be negative."), true, ColorTools.ColTypes.Error);
                                         TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
                                         ConsoleBase.ConsoleWrapper.ReadKey();
@@ -798,7 +798,7 @@ namespace KS.Misc.Settings
                             case SettingsKeyType.SIntSlider:
                                 {
                                     // We're dealing with integers with limits
-                                    DebugWriter.Wdbg(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerInt);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerInt);
                                     KeyFinished = true;
 
                                     // Now, set the value
@@ -825,19 +825,19 @@ namespace KS.Misc.Settings
                             case SettingsKeyType.SMaskedString:
                             case SettingsKeyType.SChar:
                                 {
-                                    DebugWriter.Wdbg(DebugLevel.I, "Answer is not numeric and key is of the String or Char (inferred from keytype {0}) type. Setting variable...", KeyType.ToString());
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Answer is not numeric and key is of the String or Char (inferred from keytype {0}) type. Setting variable...", KeyType.ToString());
 
                                     // Check to see if written answer is empty
                                     if (string.IsNullOrWhiteSpace(AnswerString))
                                     {
-                                        DebugWriter.Wdbg(DebugLevel.I, "Answer is nothing. Setting to {0}...", KeyValue);
+                                        DebugWriter.WriteDebug(DebugLevel.I, "Answer is nothing. Setting to {0}...", KeyValue);
                                         AnswerString = Convert.ToString(KeyValue);
                                     }
 
                                     // Check to see if the user intended to clear the variable to make it consist of nothing
                                     if (AnswerString.ToLower() == "/clear")
                                     {
-                                        DebugWriter.Wdbg(DebugLevel.I, "User requested clear.");
+                                        DebugWriter.WriteDebug(DebugLevel.I, "User requested clear.");
                                         AnswerString = "";
                                     }
 
@@ -859,7 +859,7 @@ namespace KS.Misc.Settings
                             case SettingsKeyType.SList:
                                 {
                                     string FinalDelimiter;
-                                    DebugWriter.Wdbg(DebugLevel.I, "Answer is not numeric and key is of the List type. Adding answers to the list...");
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Answer is not numeric and key is of the List type. Adding answers to the list...");
                                     KeyFinished = true;
 
                                     // Get the delimiter
@@ -934,14 +934,14 @@ namespace KS.Misc.Settings
                                 }
                             case SettingsKeyType.SUnknown:
                                 {
-                                    DebugWriter.Wdbg(DebugLevel.I, "User requested exit. Returning...");
+                                    DebugWriter.WriteDebug(DebugLevel.I, "User requested exit. Returning...");
                                     KeyFinished = true;
                                     break;
                                 }
 
                             default:
                                 {
-                                    DebugWriter.Wdbg(DebugLevel.W, "Answer is not valid.");
+                                    DebugWriter.WriteDebug(DebugLevel.W, "Answer is not valid.");
                                     TextWriterColor.Write(Translate.DoTranslation("The answer is invalid. Check to make sure that the answer is numeric for config entries that need numbers as answers."), true, ColorTools.ColTypes.Error);
                                     TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
                                     ConsoleBase.ConsoleWrapper.ReadKey();
@@ -954,8 +954,8 @@ namespace KS.Misc.Settings
             catch (Exception ex)
             {
                 ConsoleBase.ConsoleWrapper.Clear();
-                DebugWriter.Wdbg(DebugLevel.I, "Error trying to open section: {0}", ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.I, "Error trying to open section: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
                 SeparatorWriterColor.WriteSeparator(Translate.DoTranslation(Section + " Settings...") + " > ???", true);
                 TextWriterColor.Write(Kernel.Kernel.NewLine + "X) " + Translate.DoTranslation("Invalid section entered. Please go back."), true, ColorTools.ColTypes.Error);
                 TextWriterColor.Write("X) " + Translate.DoTranslation("If you're sure that you've opened the right section, check this message out:"), true, ColorTools.ColTypes.Error);
@@ -975,7 +975,7 @@ namespace KS.Misc.Settings
 
             // Prompt the user
             TextWriterColor.Write(Translate.DoTranslation("Write what do you want to search for."), true, ColorTools.ColTypes.Neutral);
-            DebugWriter.Wdbg(DebugLevel.I, "Prompting user for searching...");
+            DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for searching...");
             TextWriterColor.Write(">> ", false, ColorTools.ColTypes.Input);
             SearchFor = Input.ReadLine();
 
@@ -989,7 +989,7 @@ namespace KS.Misc.Settings
 
                 // Prompt for the number of setting to go to
                 TextWriterColor.Write(Translate.DoTranslation("Write the number of the setting to go to. Any other character means go back."), true, ColorTools.ColTypes.Neutral);
-                DebugWriter.Wdbg(DebugLevel.I, "Prompting user for writing...");
+                DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for writing...");
                 TextWriterColor.Write(">> ", false, ColorTools.ColTypes.Input);
                 SettingsNumber = Input.ReadLine();
 

@@ -99,38 +99,38 @@ namespace KS.Languages
                     int Codepage = Languages[lang].Codepage;
                     ConsoleBase.ConsoleWrapper.OutputEncoding = System.Text.Encoding.GetEncoding(Codepage);
                     ConsoleBase.ConsoleWrapper.InputEncoding = System.Text.Encoding.GetEncoding(Codepage);
-                    DebugWriter.Wdbg(DebugLevel.I, "Encoding set successfully for {0} to {1}.", lang, ConsoleBase.ConsoleWrapper.OutputEncoding.EncodingName);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Encoding set successfully for {0} to {1}.", lang, ConsoleBase.ConsoleWrapper.OutputEncoding.EncodingName);
                 }
                 catch (Exception ex)
                 {
                     NotifyCodepageError = true;
-                    DebugWriter.Wdbg(DebugLevel.W, "Codepage can't be set. {0}", ex.Message);
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Codepage can't be set. {0}", ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
                 }
 
                 // Set current language
                 try
                 {
                     string OldModDescGeneric = Translate.DoTranslation("Command defined by ");
-                    DebugWriter.Wdbg(DebugLevel.I, "Translating kernel to {0}.", lang);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Translating kernel to {0}.", lang);
                     CurrentLanguage = lang;
                     Translate.translatedString = Translate.PrepareDict(lang);
                     var Token = ConfigTools.GetConfigCategory(Config.ConfigCategory.General);
                     ConfigTools.SetConfigValue(Config.ConfigCategory.General, Token, "Language", CurrentLanguage);
-                    DebugWriter.Wdbg(DebugLevel.I, "Saved new language.");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Saved new language.");
 
                     // Update Culture if applicable
                     if (Flags.LangChangeCulture)
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Updating culture.");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Updating culture.");
                         CultureManager.UpdateCulture();
                     }
                     return true;
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "Language can't be set. {0}", ex.Message);
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Language can't be set. {0}", ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
             else
@@ -151,18 +151,18 @@ namespace KS.Languages
         {
             if (Languages.ContainsKey(lang))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Forced {0}", Force);
+                DebugWriter.WriteDebug(DebugLevel.I, "Forced {0}", Force);
                 if (!Force)
                 {
                     if (lang.EndsWith("-T")) // The condition prevents tricksters from using "chlang <lang>-T", if not forced.
                     {
-                        DebugWriter.Wdbg(DebugLevel.W, "Trying to bypass prompt.");
+                        DebugWriter.WriteDebug(DebugLevel.W, "Trying to bypass prompt.");
                         return;
                     }
                     else
                     {
                         // Check to see if the language is transliterable
-                        DebugWriter.Wdbg(DebugLevel.I, "Transliterable? {0}", Languages[lang].Transliterable);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Transliterable? {0}", Languages[lang].Transliterable);
                         if (Languages[lang].Transliterable)
                         {
                             if (AlwaysTransliterated)
@@ -187,7 +187,7 @@ namespace KS.Languages
                                     string AnswerString = Input.ReadLine(false);
                                     if (int.TryParse(AnswerString, out Answer))
                                     {
-                                        DebugWriter.Wdbg(DebugLevel.I, "Choice: {0}", Answer);
+                                        DebugWriter.WriteDebug(DebugLevel.I, "Choice: {0}", Answer);
                                         switch (Answer)
                                         {
                                             case 1:
@@ -258,59 +258,59 @@ namespace KS.Languages
                     string LanguagePath = Paths.GetKernelPath(KernelPathType.CustomLanguages) + LanguageName + ".json";
                     if (Checking.FileExists(LanguagePath))
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Language {0} exists in {1}", LanguageName, LanguagePath);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Language {0} exists in {1}", LanguageName, LanguagePath);
 
                         // Check the metadata to see if it has relevant information for the language
                         JToken MetadataToken = JObject.Parse(File.ReadAllText(LanguagePath));
-                        DebugWriter.Wdbg(DebugLevel.I, "MetadataToken is null: {0}", MetadataToken is null);
+                        DebugWriter.WriteDebug(DebugLevel.I, "MetadataToken is null: {0}", MetadataToken is null);
                         if (MetadataToken is not null)
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Metadata exists!");
+                            DebugWriter.WriteDebug(DebugLevel.I, "Metadata exists!");
 
                             // Parse the values and install the language
                             string ParsedLanguageName = (string)(MetadataToken.SelectToken("Name") ?? LanguageName);
                             bool ParsedLanguageTransliterable = (bool)(MetadataToken.SelectToken("Transliterable") ?? false);
                             var ParsedLanguageLocalizations = MetadataToken.SelectToken("Localizations");
-                            DebugWriter.Wdbg(DebugLevel.I, "Metadata says: Name: {0}, Transliterable: {1}", ParsedLanguageName, ParsedLanguageTransliterable);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Metadata says: Name: {0}, Transliterable: {1}", ParsedLanguageName, ParsedLanguageTransliterable);
 
                             // Check the localizations...
-                            DebugWriter.Wdbg(DebugLevel.I, "Checking localizations... (Null: {0})", ParsedLanguageLocalizations is null);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Checking localizations... (Null: {0})", ParsedLanguageLocalizations is null);
                             if (ParsedLanguageLocalizations is not null)
                             {
-                                DebugWriter.Wdbg(DebugLevel.I, "Valid localizations found! Length: {0}", ParsedLanguageLocalizations.Count());
+                                DebugWriter.WriteDebug(DebugLevel.I, "Valid localizations found! Length: {0}", ParsedLanguageLocalizations.Count());
 
                                 // Try to install the language info
                                 var ParsedLanguageInfo = new LanguageInfo(LanguageName, ParsedLanguageName, ParsedLanguageTransliterable, (JObject)ParsedLanguageLocalizations);
-                                DebugWriter.Wdbg(DebugLevel.I, "Made language info! Checking for existence... (Languages.ContainsKey returns {0})", Languages.ContainsKey(LanguageName));
+                                DebugWriter.WriteDebug(DebugLevel.I, "Made language info! Checking for existence... (Languages.ContainsKey returns {0})", Languages.ContainsKey(LanguageName));
                                 if (!Languages.ContainsKey(LanguageName))
                                 {
-                                    DebugWriter.Wdbg(DebugLevel.I, "Language exists. Installing...");
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Language exists. Installing...");
                                     CustomLanguages.Add(LanguageName, ParsedLanguageInfo);
                                     Kernel.Kernel.KernelEventManager.RaiseLanguageInstalled(LanguageName);
                                 }
                                 else if (ThrowOnAlreadyInstalled)
                                 {
-                                    DebugWriter.Wdbg(DebugLevel.E, "Can't add existing language.");
+                                    DebugWriter.WriteDebug(DebugLevel.E, "Can't add existing language.");
                                     throw new Kernel.Exceptions.LanguageInstallException(Translate.DoTranslation("The language already exists and can't be overwritten."));
                                 }
                             }
                             else
                             {
-                                DebugWriter.Wdbg(DebugLevel.E, "Metadata doesn't contain valid localizations!");
+                                DebugWriter.WriteDebug(DebugLevel.E, "Metadata doesn't contain valid localizations!");
                                 throw new Kernel.Exceptions.LanguageInstallException(Translate.DoTranslation("The metadata information needed to install the custom language doesn't provide the necessary localizations needed."));
                             }
                         }
                         else
                         {
-                            DebugWriter.Wdbg(DebugLevel.E, "Metadata for language doesn't exist!");
+                            DebugWriter.WriteDebug(DebugLevel.E, "Metadata for language doesn't exist!");
                             throw new Kernel.Exceptions.LanguageInstallException(Translate.DoTranslation("The metadata information needed to install the custom language doesn't exist."));
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "Failed to install custom language {0}: {1}", LanguageName, ex.Message);
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to install custom language {0}: {1}", LanguageName, ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     Kernel.Kernel.KernelEventManager.RaiseLanguageInstallError(LanguageName, ex);
                     throw new Kernel.Exceptions.LanguageInstallException(Translate.DoTranslation("Failed to install custom language {0}."), ex, LanguageName);
                 }
@@ -337,8 +337,8 @@ namespace KS.Languages
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "Failed to install custom languages: {0}", ex.Message);
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to install custom languages: {0}", ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     Kernel.Kernel.KernelEventManager.RaiseLanguagesInstallError(ex);
                     throw new Kernel.Exceptions.LanguageInstallException(Translate.DoTranslation("Failed to install custom languages."), ex);
                 }
@@ -358,34 +358,34 @@ namespace KS.Languages
                     string LanguagePath = Paths.GetKernelPath(KernelPathType.CustomLanguages) + LanguageName + ".json";
                     if (Checking.FileExists(LanguagePath))
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Language {0} exists in {1}", LanguageName, LanguagePath);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Language {0} exists in {1}", LanguageName, LanguagePath);
 
                         // Now, check the metadata to see if it has relevant information for the language
                         JToken MetadataToken = JObject.Parse(File.ReadAllText(LanguagePath));
-                        DebugWriter.Wdbg(DebugLevel.I, "MetadataToken is null: {0}", MetadataToken is null);
+                        DebugWriter.WriteDebug(DebugLevel.I, "MetadataToken is null: {0}", MetadataToken is null);
                         if (MetadataToken is not null)
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Metadata exists!");
+                            DebugWriter.WriteDebug(DebugLevel.I, "Metadata exists!");
 
                             // Uninstall the language
                             if (!CustomLanguages.Remove(LanguageName))
                             {
-                                DebugWriter.Wdbg(DebugLevel.E, "Failed to uninstall custom language");
+                                DebugWriter.WriteDebug(DebugLevel.E, "Failed to uninstall custom language");
                                 throw new Kernel.Exceptions.LanguageUninstallException(Translate.DoTranslation("Failed to uninstall custom language. It most likely doesn't exist."));
                             }
                             Kernel.Kernel.KernelEventManager.RaiseLanguageUninstalled(LanguageName);
                         }
                         else
                         {
-                            DebugWriter.Wdbg(DebugLevel.E, "Metadata for language doesn't exist!");
+                            DebugWriter.WriteDebug(DebugLevel.E, "Metadata for language doesn't exist!");
                             throw new Kernel.Exceptions.LanguageUninstallException(Translate.DoTranslation("The metadata information needed to uninstall the custom language doesn't exist."));
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "Failed to uninstall custom language {0}: {1}", LanguageName, ex.Message);
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to uninstall custom language {0}: {1}", LanguageName, ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     Kernel.Kernel.KernelEventManager.RaiseLanguageUninstallError(LanguageName, ex);
                     throw new Kernel.Exceptions.LanguageUninstallException(Translate.DoTranslation("Failed to uninstall custom language {0}."), ex, LanguageName);
                 }
@@ -413,7 +413,7 @@ namespace KS.Languages
                             // Actually uninstall
                             if (!CustomLanguages.Remove(Language))
                             {
-                                DebugWriter.Wdbg(DebugLevel.E, "Failed to uninstall custom languages");
+                                DebugWriter.WriteDebug(DebugLevel.E, "Failed to uninstall custom languages");
                                 throw new Kernel.Exceptions.LanguageUninstallException(Translate.DoTranslation("Failed to uninstall custom languages."));
                             }
                         }
@@ -422,8 +422,8 @@ namespace KS.Languages
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "Failed to uninstall custom languages: {0}", ex.Message);
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to uninstall custom languages: {0}", ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     Kernel.Kernel.KernelEventManager.RaiseLanguagesUninstallError(ex);
                     throw new Kernel.Exceptions.LanguageUninstallException(Translate.DoTranslation("Failed to uninstall custom languages. See the inner exception for more info."), ex);
                 }

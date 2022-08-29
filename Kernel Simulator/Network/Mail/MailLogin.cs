@@ -98,7 +98,7 @@ namespace KS.Network.Mail
         public static void PromptPassword(string Username)
         {
             // Password
-            DebugWriter.Wdbg(DebugLevel.I, "Username: {0}", Username);
+            DebugWriter.WriteDebug(DebugLevel.I, "Username: {0}", Username);
             Mail_Authentication.UserName = Username;
             if (!string.IsNullOrWhiteSpace(Mail_PassPromptStyle))
             {
@@ -142,7 +142,7 @@ namespace KS.Network.Mail
                 TextWriterColor.Write(Translate.DoTranslation("Enter IMAP server address and port (<address> or <address>:[port]): "), false, ColorTools.ColTypes.Input);
             }
             IMAP_Address = Input.ReadLine(false);
-            DebugWriter.Wdbg(DebugLevel.I, "IMAP Server: \"{0}\"", IMAP_Address);
+            DebugWriter.WriteDebug(DebugLevel.I, "IMAP Server: \"{0}\"", IMAP_Address);
 
             // SMTP server address and port
             if (!string.IsNullOrWhiteSpace(Mail_SMTPPromptStyle))
@@ -155,7 +155,7 @@ namespace KS.Network.Mail
             }
             SMTP_Address = Input.ReadLine(false);
             SMTP_Port = 587;
-            DebugWriter.Wdbg(DebugLevel.I, "SMTP Server: \"{0}\"", SMTP_Address);
+            DebugWriter.WriteDebug(DebugLevel.I, "SMTP Server: \"{0}\"", SMTP_Address);
 
             // Parse addresses to connect
             ParseAddresses(IMAP_Address, IMAP_Port, SMTP_Address, SMTP_Port);
@@ -166,19 +166,19 @@ namespace KS.Network.Mail
             // If the address is <address>:[port]
             if (IMAP_Address.Contains(":"))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Found colon in address. Separating...", Mail_Authentication.UserName);
+                DebugWriter.WriteDebug(DebugLevel.I, "Found colon in address. Separating...", Mail_Authentication.UserName);
                 IMAP_Port = Convert.ToInt32(IMAP_Address.Substring(IMAP_Address.IndexOf(":") + 1));
                 IMAP_Address = IMAP_Address.Remove(IMAP_Address.IndexOf(":"));
-                DebugWriter.Wdbg(DebugLevel.I, "Final address: {0}, Final port: {1}", IMAP_Address, IMAP_Port);
+                DebugWriter.WriteDebug(DebugLevel.I, "Final address: {0}, Final port: {1}", IMAP_Address, IMAP_Port);
             }
 
             // If the address is <address>:[port]
             if (SMTP_Address.Contains(":"))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Found colon in address. Separating...", Mail_Authentication.UserName);
+                DebugWriter.WriteDebug(DebugLevel.I, "Found colon in address. Separating...", Mail_Authentication.UserName);
                 SMTP_Port = Convert.ToInt32(SMTP_Address.Substring(SMTP_Address.IndexOf(":") + 1));
                 SMTP_Address = SMTP_Address.Remove(SMTP_Address.IndexOf(":"));
-                DebugWriter.Wdbg(DebugLevel.I, "Final address: {0}, Final port: {1}", SMTP_Address, SMTP_Port);
+                DebugWriter.WriteDebug(DebugLevel.I, "Final address: {0}, Final port: {1}", SMTP_Address, SMTP_Port);
             }
 
             // Try to connect
@@ -249,33 +249,33 @@ namespace KS.Network.Mail
 
                 // IMAP Connection
                 TextWriterColor.Write(Translate.DoTranslation("Connecting to {0}..."), true, ColorTools.ColTypes.Neutral, Address);
-                DebugWriter.Wdbg(DebugLevel.I, "Connecting to IMAP Server {0}:{1} with SSL...", Address, Port);
+                DebugWriter.WriteDebug(DebugLevel.I, "Connecting to IMAP Server {0}:{1} with SSL...", Address, Port);
                 IMAP_Client.Connect(Address, Port, MailKit.Security.SecureSocketOptions.SslOnConnect);
                 IMAP_Client.WebAlert += MailHandlers.HandleWebAlert;
 
                 // SMTP Connection
                 TextWriterColor.Write(Translate.DoTranslation("Connecting to {0}..."), true, ColorTools.ColTypes.Neutral, SmtpAddress);
-                DebugWriter.Wdbg(DebugLevel.I, "Connecting to SMTP Server {0}:{1} with SSL...", Address, Port);
+                DebugWriter.WriteDebug(DebugLevel.I, "Connecting to SMTP Server {0}:{1} with SSL...", Address, Port);
                 SMTP_Client.Connect(SmtpAddress, SmtpPort, MailKit.Security.SecureSocketOptions.StartTlsWhenAvailable);
 
                 // IMAP Authentication
                 TextWriterColor.Write(Translate.DoTranslation("Authenticating..."), true, ColorTools.ColTypes.Neutral);
-                DebugWriter.Wdbg(DebugLevel.I, "Authenticating {0} to IMAP server {1}...", Mail_Authentication.UserName, Address);
+                DebugWriter.WriteDebug(DebugLevel.I, "Authenticating {0} to IMAP server {1}...", Mail_Authentication.UserName, Address);
                 IMAP_Client.Authenticate(Mail_Authentication);
 
                 // SMTP Authentication
-                DebugWriter.Wdbg(DebugLevel.I, "Authenticating {0} to SMTP server {1}...", Mail_Authentication.UserName, SmtpAddress);
+                DebugWriter.WriteDebug(DebugLevel.I, "Authenticating {0} to SMTP server {1}...", Mail_Authentication.UserName, SmtpAddress);
                 SMTP_Client.Authenticate(Mail_Authentication);
                 IMAP_Client.WebAlert -= MailHandlers.HandleWebAlert;
 
                 // Initialize shell
-                DebugWriter.Wdbg(DebugLevel.I, "Authentication succeeded. Opening shell...");
+                DebugWriter.WriteDebug(DebugLevel.I, "Authentication succeeded. Opening shell...");
                 ShellStart.StartShell(ShellType.MailShell);
             }
             catch (Exception ex)
             {
                 TextWriterColor.Write(Translate.DoTranslation("Error while connecting to {0}: {1}"), true, ColorTools.ColTypes.Error, Address, ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebugStackTrace(ex);
                 IMAP_Client.Disconnect(true);
                 SMTP_Client.Disconnect(true);
             }

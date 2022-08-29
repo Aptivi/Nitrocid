@@ -105,7 +105,7 @@ namespace KS.Shell.ShellBase.Commands
                 // Check to see if a requested command is obsolete
                 if (TargetCommands[Command].Flags.HasFlag(CommandFlags.Obsolete))
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "The command requested {0} is obsolete", Command);
+                    DebugWriter.WriteDebug(DebugLevel.I, "The command requested {0} is obsolete", Command);
                     Decisive.DecisiveWrite(ShellType, DebugDeviceSocket, Translate.DoTranslation("This command is obsolete and will be removed in a future release."), true, ColorTools.ColTypes.Neutral);
                 }
 
@@ -123,7 +123,7 @@ namespace KS.Shell.ShellBase.Commands
                     }
                     else
                     {
-                        DebugWriter.Wdbg(DebugLevel.W, "User hasn't provided enough arguments for {0}", Command);
+                        DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough arguments for {0}", Command);
                         Decisive.DecisiveWrite(ShellType, DebugDeviceSocket, Translate.DoTranslation("There was not enough arguments. See below for usage:"), true, ColorTools.ColTypes.Neutral);
                         HelpSystem.ShowHelp(Command, ShellType);
                     }
@@ -145,7 +145,7 @@ namespace KS.Shell.ShellBase.Commands
             catch (Exception ex)
             {
                 Kernel.Kernel.KernelEventManager.RaiseCommandError(RequestedCommand, ex);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebugStackTrace(ex);
                 Decisive.DecisiveWrite(ShellType, DebugDeviceSocket, Translate.DoTranslation("Error trying to execute command") + " {2}." + Kernel.Kernel.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, ColorTools.ColTypes.Error, ex.GetType().FullName, ex.Message, RequestedCommand);
             }
         }

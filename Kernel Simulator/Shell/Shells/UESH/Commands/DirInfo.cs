@@ -44,7 +44,7 @@ namespace KS.Shell.Shells.UESH.Commands
             foreach (string Dir in ListArgsOnly)
             {
                 string DirectoryPath = Filesystem.NeutralizePath(Dir);
-                DebugWriter.Wdbg(DebugLevel.I, "Neutralized directory path: {0} ({1})", DirectoryPath, Checking.FolderExists(DirectoryPath));
+                DebugWriter.WriteDebug(DebugLevel.I, "Neutralized directory path: {0} ({1})", DirectoryPath, Checking.FolderExists(DirectoryPath));
                 SeparatorWriterColor.WriteSeparator(Dir, true);
                 if (Checking.FolderExists(DirectoryPath))
                 {

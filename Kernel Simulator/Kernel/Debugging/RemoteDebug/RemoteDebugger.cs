@@ -100,7 +100,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
             {
                 RDebugFailed = true;
                 RDebugFailedReason = sex;
-                DebugWriter.WStkTrc(sex);
+                DebugWriter.WriteDebugStackTrace(sex);
             }
 
             // Start the listening thread
@@ -146,14 +146,14 @@ namespace KS.Kernel.Debugging.RemoteDebug
                         // Check the name
                         if (string.IsNullOrEmpty(RDebugName))
                         {
-                            DebugWriter.Wdbg(DebugLevel.W, "Debug device {0} has no name. Prompting for name...", RDebugIP);
+                            DebugWriter.WriteDebug(DebugLevel.W, "Debug device {0} has no name. Prompting for name...", RDebugIP);
                         }
 
                         // Check to see if the device is blocked
                         if (RDebugBlocked.Contains(RDebugIP))
                         {
                             // Blocked! Disconnect it.
-                            DebugWriter.Wdbg(DebugLevel.W, "Debug device {0} ({1}) tried to join remote debug, but blocked.", RDebugName, RDebugIP);
+                            DebugWriter.WriteDebug(DebugLevel.W, "Debug device {0} ({1}) tried to join remote debug, but blocked.", RDebugName, RDebugIP);
                             RDebugClient.Disconnect(true);
                         }
                         else
@@ -172,7 +172,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
                             }
 
                             // Acknowledge the debugger
-                            DebugWriter.Wdbg(DebugLevel.I, "Debug device \"{0}\" ({1}) connected.", RDebugName, RDebugIP);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Debug device \"{0}\" ({1}) connected.", RDebugName, RDebugIP);
                             RDebugSWriter.Flush();
                             Kernel.KernelEventManager.RaiseRemoteDebugConnectionAccepted(RDebugIP);
                         }
@@ -193,7 +193,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Remote debugger connection error") + ": {0}", true, ColorTools.ColTypes.Error, ex.Message);
                     }
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
 
@@ -279,11 +279,11 @@ namespace KS.Kernel.Debugging.RemoteDebug
                                 // Decide if we're recording the chat to the debug log
                                 if (Flags.RecordChatToDebugLog)
                                 {
-                                    DebugWriter.Wdbg(DebugLevel.I, PlaceParse.ProbePlaces(RDebugMessageFormat), SocketName, Message);
+                                    DebugWriter.WriteDebug(DebugLevel.I, PlaceParse.ProbePlaces(RDebugMessageFormat), SocketName, Message);
                                 }
                                 else
                                 {
-                                    DebugWriter.WdbgDevicesOnly(DebugLevel.I, PlaceParse.ProbePlaces(RDebugMessageFormat), SocketName, Message);
+                                    DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, PlaceParse.ProbePlaces(RDebugMessageFormat), SocketName, Message);
                                 }
 
                                 // Add the message to the chat history
@@ -313,20 +313,20 @@ namespace KS.Kernel.Debugging.RemoteDebug
                                 if (DebugDevices.Count > DeviceIndex)
                                 {
                                     string SocketIP = DebugDevices[DeviceIndex]?.ClientIP;
-                                    DebugWriter.Wdbg(DebugLevel.E, "Error from host {0}: {1}", SocketIP, SE.SocketErrorCode.ToString());
-                                    DebugWriter.WStkTrc(ex);
+                                    DebugWriter.WriteDebug(DebugLevel.E, "Error from host {0}: {1}", SocketIP, SE.SocketErrorCode.ToString());
+                                    DebugWriter.WriteDebugStackTrace(ex);
                                 }
                                 else
                                 {
-                                    DebugWriter.Wdbg(DebugLevel.E, "Error from unknown host: {0}", SE.SocketErrorCode.ToString());
-                                    DebugWriter.WStkTrc(ex);
+                                    DebugWriter.WriteDebug(DebugLevel.E, "Error from unknown host: {0}", SE.SocketErrorCode.ToString());
+                                    DebugWriter.WriteDebugStackTrace(ex);
                                 }
                             }
                         }
                         else
                         {
-                            DebugWriter.Wdbg(DebugLevel.E, "Unknown error of remote debug: {0}: {1}", ex.GetType().FullName, ex.Message);
-                            DebugWriter.WStkTrc(ex);
+                            DebugWriter.WriteDebug(DebugLevel.E, "Unknown error of remote debug: {0}: {1}", ex.GetType().FullName, ex.Message);
+                            DebugWriter.WriteDebugStackTrace(ex);
                         }
                     }
                 }

@@ -34,7 +34,7 @@ namespace KS.Files.Attributes
         {
             Filesystem.ThrowOnInvalidPath(FilePath);
             FilePath = Filesystem.NeutralizePath(FilePath);
-            DebugWriter.Wdbg(DebugLevel.I, "Setting file attribute to {0}...", Attributes);
+            DebugWriter.WriteDebug(DebugLevel.I, "Setting file attribute to {0}...", Attributes);
             File.SetAttributes(FilePath, Attributes);
 
             // Raise event
@@ -56,8 +56,8 @@ namespace KS.Files.Attributes
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Failed to add attribute {0} for file {1}: {2}", Attributes, Path.GetFileName(FilePath), ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to add attribute {0} for file {1}: {2}", Attributes, Path.GetFileName(FilePath), ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;
         }
@@ -83,9 +83,9 @@ namespace KS.Files.Attributes
             Filesystem.ThrowOnInvalidPath(FilePath);
             FilePath = Filesystem.NeutralizePath(FilePath);
             var Attrib = File.GetAttributes(FilePath);
-            DebugWriter.Wdbg(DebugLevel.I, "File attributes: {0}", Attrib);
+            DebugWriter.WriteDebug(DebugLevel.I, "File attributes: {0}", Attrib);
             Attrib = Attrib.RemoveAttribute(Attributes);
-            DebugWriter.Wdbg(DebugLevel.I, "Setting file attribute to {0}...", Attrib);
+            DebugWriter.WriteDebug(DebugLevel.I, "Setting file attribute to {0}...", Attrib);
             File.SetAttributes(FilePath, Attrib);
 
             // Raise event
@@ -107,8 +107,8 @@ namespace KS.Files.Attributes
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Failed to remove attribute {0} for file {1}: {2}", Attributes, Path.GetFileName(FilePath), ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to remove attribute {0} for file {1}: {2}", Attributes, Path.GetFileName(FilePath), ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;
         }

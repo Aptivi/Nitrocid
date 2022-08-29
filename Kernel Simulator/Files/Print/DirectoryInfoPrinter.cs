@@ -68,7 +68,7 @@ namespace KS.Files.Print
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("Directory {0} not found"), true, ColorTools.ColTypes.Error, DirectoryInfo.FullName);
-                DebugWriter.Wdbg(DebugLevel.I, "IO.FolderExists = {0}", Checking.FolderExists(DirectoryInfo.FullName));
+                DebugWriter.WriteDebug(DebugLevel.I, "IO.FolderExists = {0}", Checking.FolderExists(DirectoryInfo.FullName));
             }
         }
 

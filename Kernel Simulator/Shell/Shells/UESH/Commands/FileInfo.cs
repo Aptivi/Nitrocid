@@ -45,7 +45,7 @@ namespace KS.Shell.Shells.UESH.Commands
             foreach (string FileName in ListArgsOnly)
             {
                 string FilePath = Filesystem.NeutralizePath(FileName);
-                DebugWriter.Wdbg(DebugLevel.I, "Neutralized file path: {0} ({1})", FilePath, Checking.FileExists(FilePath));
+                DebugWriter.WriteDebug(DebugLevel.I, "Neutralized file path: {0} ({1})", FilePath, Checking.FileExists(FilePath));
                 SeparatorWriterColor.WriteSeparator(FileName, true);
                 if (Checking.FileExists(FilePath))
                 {

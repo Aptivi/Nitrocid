@@ -27,7 +27,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Interface
 
         public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, StreamWriter SocketStreamWriter, string DeviceAddress)
         {
-            DebugWriter.Wdbg(DebugLevel.F, "We shouldn't be here!!!");
+            DebugWriter.WriteDebug(DebugLevel.F, "We shouldn't be here!!!");
             throw new InvalidOperationException();
         }
 

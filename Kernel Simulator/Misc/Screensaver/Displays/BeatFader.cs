@@ -294,7 +294,7 @@ namespace KS.Misc.Screensaver.Displays
             RandomDriver = new Random();
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
             ConsoleBase.ConsoleWrapper.Clear();
-            DebugWriter.Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
+            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
             BeatFaderSettingsInstance = new Animations.BeatFader.BeatFaderSettings()
             {
                 BeatFader255Colors = BeatFaderSettings.BeatFader255Colors,

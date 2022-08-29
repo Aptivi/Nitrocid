@@ -56,7 +56,7 @@ namespace KS.Shell.Shells.Text.Commands
                 else
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, ColorTools.ColTypes.Error, ListArgsOnly[0]);
-                    DebugWriter.Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly[0]);
+                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly[0]);
                 }
             }
             else if (ListArgsOnly.Length > 1)
@@ -82,7 +82,7 @@ namespace KS.Shell.Shells.Text.Commands
                 else
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, ColorTools.ColTypes.Error, ListArgsOnly[1]);
-                    DebugWriter.Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly[1]);
+                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly[1]);
                 }
             }
         }

@@ -43,8 +43,8 @@ namespace KS.Misc.Animations.BeatEdgePulse
             ConsoleBase.ConsoleWrapper.CursorVisible = false;
             int BeatInterval = (int)Math.Round(60000d / Settings.BeatEdgePulseDelay);
             int BeatIntervalStep = (int)Math.Round(BeatInterval / (double)Settings.BeatEdgePulseMaxSteps);
-            DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Beat interval from {0} BPM: {1}", Settings.BeatEdgePulseDelay, BeatInterval);
-            DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Beat steps: {0} ms", Settings.BeatEdgePulseDelay, BeatIntervalStep);
+            DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Beat interval from {0} BPM: {1}", Settings.BeatEdgePulseDelay, BeatInterval);
+            DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Beat steps: {0} ms", Settings.BeatEdgePulseDelay, BeatIntervalStep);
             ThreadManager.SleepNoBlock(BeatIntervalStep, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
             // If we're cycling colors, set them. Else, use the user-provided color
@@ -52,7 +52,7 @@ namespace KS.Misc.Animations.BeatEdgePulse
             if (Settings.BeatEdgePulseCycleColors)
             {
                 // We're cycling. Select the color mode, starting from true color
-                DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Cycling colors...");
+                DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Cycling colors...");
                 if (Settings.BeatEdgePulseTrueColor)
                 {
                     RedColorNum = RandomDriver.Next(Settings.BeatEdgePulseMinimumRedColorLevel, Settings.BeatEdgePulseMinimumRedColorLevel);
@@ -73,12 +73,12 @@ namespace KS.Misc.Animations.BeatEdgePulse
                     GreenColorNum = ConsoleColor.G;
                     BlueColorNum = ConsoleColor.B;
                 }
-                DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
             }
             else
             {
                 // We're not cycling. Parse the color and then select the color mode, starting from true color
-                DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Parsing colors... {0}", Settings.BeatEdgePulseBeatColor);
+                DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Parsing colors... {0}", Settings.BeatEdgePulseBeatColor);
                 var UserColor = new Color(Settings.BeatEdgePulseBeatColor);
                 if (UserColor.Type == ColorType.TrueColor)
                 {
@@ -93,14 +93,14 @@ namespace KS.Misc.Animations.BeatEdgePulse
                     GreenColorNum = ConsoleColor.G;
                     BlueColorNum = ConsoleColor.B;
                 }
-                DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
             }
 
             // Set thresholds
             double ThresholdRed = RedColorNum / (double)Settings.BeatEdgePulseMaxSteps;
             double ThresholdGreen = GreenColorNum / (double)Settings.BeatEdgePulseMaxSteps;
             double ThresholdBlue = BlueColorNum / (double)Settings.BeatEdgePulseMaxSteps;
-            DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0};{1};{2})", ThresholdRed, ThresholdGreen, ThresholdBlue);
+            DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0};{1};{2})", ThresholdRed, ThresholdGreen, ThresholdBlue);
 
             // Fade in
             int CurrentColorRedIn = 0;
@@ -112,12 +112,12 @@ namespace KS.Misc.Animations.BeatEdgePulse
                     ResizeSyncing = true;
                 if (ResizeSyncing)
                     break;
-                DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, BeatIntervalStep);
+                DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, BeatIntervalStep);
                 ThreadManager.SleepNoBlock(BeatIntervalStep, System.Threading.Thread.CurrentThread);
                 CurrentColorRedIn = (int)Math.Round(CurrentColorRedIn + ThresholdRed);
                 CurrentColorGreenIn = (int)Math.Round(CurrentColorGreenIn + ThresholdGreen);
                 CurrentColorBlueIn = (int)Math.Round(CurrentColorBlueIn + ThresholdBlue);
-                DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn);
+                DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn);
                 if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                     ResizeSyncing = true;
                 if (!ResizeSyncing)
@@ -134,12 +134,12 @@ namespace KS.Misc.Animations.BeatEdgePulse
                     ResizeSyncing = true;
                 if (ResizeSyncing)
                     break;
-                DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Step {0}/{1} each {2} ms", CurrentStep, Settings.BeatEdgePulseMaxSteps, BeatIntervalStep);
+                DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Step {0}/{1} each {2} ms", CurrentStep, Settings.BeatEdgePulseMaxSteps, BeatIntervalStep);
                 ThreadManager.SleepNoBlock(BeatIntervalStep, System.Threading.Thread.CurrentThread);
                 int CurrentColorRedOut = (int)Math.Round(RedColorNum - ThresholdRed * CurrentStep);
                 int CurrentColorGreenOut = (int)Math.Round(GreenColorNum - ThresholdGreen * CurrentStep);
                 int CurrentColorBlueOut = (int)Math.Round(BlueColorNum - ThresholdBlue * CurrentStep);
-                DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                     ResizeSyncing = true;
                 if (!ResizeSyncing)
@@ -160,25 +160,25 @@ namespace KS.Misc.Animations.BeatEdgePulse
         {
             int FloorTopLeftEdge = 0;
             int FloorBottomLeftEdge = 0;
-            DebugWriter.Wdbg(DebugLevel.I, "Top left edge: {0}, Bottom left edge: {1}", FloorTopLeftEdge, FloorBottomLeftEdge);
+            DebugWriter.WriteDebug(DebugLevel.I, "Top left edge: {0}, Bottom left edge: {1}", FloorTopLeftEdge, FloorBottomLeftEdge);
 
             int FloorTopRightEdge = ConsoleBase.ConsoleWrapper.WindowWidth - 1;
             int FloorBottomRightEdge = ConsoleBase.ConsoleWrapper.WindowWidth - 1;
-            DebugWriter.Wdbg(DebugLevel.I, "Top right edge: {0}, Bottom right edge: {1}", FloorTopRightEdge, FloorBottomRightEdge);
+            DebugWriter.WriteDebug(DebugLevel.I, "Top right edge: {0}, Bottom right edge: {1}", FloorTopRightEdge, FloorBottomRightEdge);
 
             int FloorTopEdge = 0;
             int FloorBottomEdge = ConsoleBase.ConsoleWrapper.WindowHeight - 1;
-            DebugWriter.Wdbg(DebugLevel.I, "Top edge: {0}, Bottom edge: {1}", FloorTopEdge, FloorBottomEdge);
+            DebugWriter.WriteDebug(DebugLevel.I, "Top edge: {0}, Bottom edge: {1}", FloorTopEdge, FloorBottomEdge);
 
             int FloorLeftEdge = 0;
             int FloorRightEdge = ConsoleBase.ConsoleWrapper.WindowWidth - 2;
-            DebugWriter.Wdbg(DebugLevel.I, "Left edge: {0}, Right edge: {1}", FloorLeftEdge, FloorRightEdge);
+            DebugWriter.WriteDebug(DebugLevel.I, "Left edge: {0}, Right edge: {1}", FloorLeftEdge, FloorRightEdge);
 
             // First, draw the floor top edge
             for (int x = FloorTopLeftEdge, loopTo = FloorTopRightEdge; x <= loopTo; x++)
             {
                 ConsoleBase.ConsoleWrapper.SetCursorPosition(x, 0);
-                DebugWriter.Wdbg(DebugLevel.I, "Drawing floor top edge ({0}, {1})", x, 1);
+                DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor top edge ({0}, {1})", x, 1);
                 ConsoleBase.ConsoleWrapper.Write(" ");
             }
 
@@ -186,7 +186,7 @@ namespace KS.Misc.Animations.BeatEdgePulse
             for (int x = FloorBottomLeftEdge, loopTo1 = FloorBottomRightEdge; x <= loopTo1; x++)
             {
                 ConsoleBase.ConsoleWrapper.SetCursorPosition(x, FloorBottomEdge);
-                DebugWriter.Wdbg(DebugLevel.I, "Drawing floor bottom edge ({0}, {1})", x, FloorBottomEdge);
+                DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor bottom edge ({0}, {1})", x, FloorBottomEdge);
                 ConsoleBase.ConsoleWrapper.Write(" ");
             }
 
@@ -194,7 +194,7 @@ namespace KS.Misc.Animations.BeatEdgePulse
             for (int y = FloorTopEdge, loopTo2 = FloorBottomEdge; y <= loopTo2; y++)
             {
                 ConsoleBase.ConsoleWrapper.SetCursorPosition(FloorLeftEdge, y);
-                DebugWriter.Wdbg(DebugLevel.I, "Drawing floor left edge ({0}, {1})", FloorLeftEdge, y);
+                DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor left edge ({0}, {1})", FloorLeftEdge, y);
                 ConsoleBase.ConsoleWrapper.Write("  ");
             }
 
@@ -202,7 +202,7 @@ namespace KS.Misc.Animations.BeatEdgePulse
             for (int y = FloorTopEdge, loopTo3 = FloorBottomEdge; y <= loopTo3; y++)
             {
                 ConsoleBase.ConsoleWrapper.SetCursorPosition(FloorRightEdge, y);
-                DebugWriter.Wdbg(DebugLevel.I, "Drawing floor right edge ({0}, {1})", FloorRightEdge, y);
+                DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor right edge ({0}, {1})", FloorRightEdge, y);
                 ConsoleBase.ConsoleWrapper.Write("  ");
             }
         }

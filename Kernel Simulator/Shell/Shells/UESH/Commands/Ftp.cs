@@ -56,7 +56,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             catch (Exception ex)
             {
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebugStackTrace(ex);
                 TextWriterColor.Write(Translate.DoTranslation("Unknown FTP shell error:") + " {0}", true, ColorTools.ColTypes.Error, ex.Message);
             }
         }

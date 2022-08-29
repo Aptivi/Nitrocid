@@ -294,21 +294,21 @@ namespace KS.Misc.Screensaver.Displays
                 int RedColorNum = RandomDriver.Next(FallingLineSettings.FallingLineMinimumRedColorLevel, FallingLineSettings.FallingLineMaximumRedColorLevel);
                 int GreenColorNum = RandomDriver.Next(FallingLineSettings.FallingLineMinimumGreenColorLevel, FallingLineSettings.FallingLineMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Next(FallingLineSettings.FallingLineMinimumBlueColorLevel, FallingLineSettings.FallingLineMaximumBlueColorLevel);
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
                 ColorTools.SetConsoleColor(ColorStorage, true, true);
             }
             else if (FallingLineSettings.FallingLine255Colors)
             {
                 int ColorNum = RandomDriver.Next(FallingLineSettings.FallingLineMinimumColorLevel, FallingLineSettings.FallingLineMaximumColorLevel);
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 ColorStorage = new Color(ColorNum);
                 ColorTools.SetConsoleColor(ColorStorage, true, true);
             }
             else
             {
                 ConsoleBase.ConsoleWrapper.BackgroundColor = Screensaver.colors[RandomDriver.Next(FallingLineSettings.FallingLineMinimumColorLevel, FallingLineSettings.FallingLineMaximumColorLevel)];
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
                 ColorStorage = new Color((int)ConsoleBase.ConsoleWrapper.BackgroundColor);
             }
 
@@ -343,13 +343,13 @@ namespace KS.Misc.Screensaver.Displays
                 double ThresholdRed = ColorStorage.R / (double)FallingLineSettings.FallingLineMaxSteps;
                 double ThresholdGreen = ColorStorage.G / (double)FallingLineSettings.FallingLineMaxSteps;
                 double ThresholdBlue = ColorStorage.B / (double)FallingLineSettings.FallingLineMaxSteps;
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0})", ThresholdRed, ThresholdGreen, ThresholdBlue);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0})", ThresholdRed, ThresholdGreen, ThresholdBlue);
 
                 // Set color fade steps
                 int CurrentColorRedOut = (int)Math.Round(ColorStorage.R - ThresholdRed * StepNum);
                 int CurrentColorGreenOut = (int)Math.Round(ColorStorage.G - ThresholdGreen * StepNum);
                 int CurrentColorBlueOut = (int)Math.Round(ColorStorage.B - ThresholdBlue * StepNum);
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
 
                 // Get the positions and write the block with new color
                 var CurrentFadeColor = new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);

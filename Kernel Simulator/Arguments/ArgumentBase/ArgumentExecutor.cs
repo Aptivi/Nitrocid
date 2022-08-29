@@ -26,7 +26,7 @@ namespace KS.Arguments.ArgumentBase
 
         public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            DebugWriter.Wdbg(DebugLevel.F, "We shouldn't be here!!!");
+            DebugWriter.WriteDebug(DebugLevel.F, "We shouldn't be here!!!");
             throw new InvalidOperationException();
         }
 

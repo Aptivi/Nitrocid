@@ -248,7 +248,7 @@ namespace KS.Misc.Screensaver.Displays
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ColorTools.SetConsoleColor(new Color(LighterSettings.LighterBackgroundColor), true, true);
             ConsoleBase.ConsoleWrapper.Clear();
-            DebugWriter.Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
+            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
         }
 
         public override void ScreensaverLogic()
@@ -258,13 +258,13 @@ namespace KS.Misc.Screensaver.Displays
             // Select a position
             int Left = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowWidth);
             int Top = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowHeight);
-            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top);
+            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top);
             ConsoleBase.ConsoleWrapper.SetCursorPosition(Left, Top);
             if (!CoveredPositions.Any(t => t.Item1 == Left & t.Item2 == Top))
             {
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Covering position...");
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Covering position...");
                 CoveredPositions.Add(new Tuple<int, int>(Left, Top));
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Position covered. Covered positions: {0}", CoveredPositions.Count);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Position covered. Covered positions: {0}", CoveredPositions.Count);
             }
 
             // Select a color and write the space
@@ -273,7 +273,7 @@ namespace KS.Misc.Screensaver.Displays
                 int RedColorNum = RandomDriver.Next(LighterSettings.LighterMinimumRedColorLevel, LighterSettings.LighterMaximumRedColorLevel);
                 int GreenColorNum = RandomDriver.Next(LighterSettings.LighterMinimumGreenColorLevel, LighterSettings.LighterMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Next(LighterSettings.LighterMinimumBlueColorLevel, LighterSettings.LighterMaximumBlueColorLevel);
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
                 if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                     ResizeSyncing = true;
@@ -284,14 +284,14 @@ namespace KS.Misc.Screensaver.Displays
                 }
                 else
                 {
-                    DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing covered positions...");
+                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing covered positions...");
                     CoveredPositions.Clear();
                 }
             }
             else if (LighterSettings.Lighter255Colors)
             {
                 int ColorNum = RandomDriver.Next(LighterSettings.LighterMinimumColorLevel, LighterSettings.LighterMaximumColorLevel);
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                     ResizeSyncing = true;
                 if (!ResizeSyncing)
@@ -301,7 +301,7 @@ namespace KS.Misc.Screensaver.Displays
                 }
                 else
                 {
-                    DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing covered positions...");
+                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing covered positions...");
                     CoveredPositions.Clear();
                 }
             }
@@ -312,12 +312,12 @@ namespace KS.Misc.Screensaver.Displays
                 if (!ResizeSyncing)
                 {
                     ConsoleBase.ConsoleWrapper.BackgroundColor = Screensaver.colors[RandomDriver.Next(LighterSettings.LighterMinimumColorLevel, LighterSettings.LighterMaximumColorLevel)];
-                    DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
+                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
                     ConsoleBase.ConsoleWrapper.Write(" ");
                 }
                 else
                 {
-                    DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing covered positions...");
+                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing covered positions...");
                     CoveredPositions.Clear();
                 }
             }
@@ -325,10 +325,10 @@ namespace KS.Misc.Screensaver.Displays
             // Simulate a trail effect
             if (CoveredPositions.Count == LighterSettings.LighterMaxPositions)
             {
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Covered positions exceeded max positions of {0}", LighterSettings.LighterMaxPositions);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Covered positions exceeded max positions of {0}", LighterSettings.LighterMaxPositions);
                 int WipeLeft = Convert.ToInt32(CoveredPositions[0].ToString().Substring(0, CoveredPositions[0].ToString().IndexOf(";")));
                 int WipeTop = Convert.ToInt32(CoveredPositions[0].ToString().Substring(CoveredPositions[0].ToString().IndexOf(";") + 1));
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Wiping in {0}, {1}...", WipeLeft, WipeTop);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Wiping in {0}, {1}...", WipeLeft, WipeTop);
                 if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                     ResizeSyncing = true;
                 if (!ResizeSyncing)
@@ -340,7 +340,7 @@ namespace KS.Misc.Screensaver.Displays
                 }
                 else
                 {
-                    DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing covered positions...");
+                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing covered positions...");
                     CoveredPositions.Clear();
                 }
             }

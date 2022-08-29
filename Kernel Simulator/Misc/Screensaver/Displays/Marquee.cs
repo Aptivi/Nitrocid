@@ -293,7 +293,7 @@ namespace KS.Misc.Screensaver.Displays
             {
                 TopPrinted = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowHeight - 1);
             }
-            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Top position: {0}", TopPrinted);
+            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Top position: {0}", TopPrinted);
 
             // Start with the left position as the right position.
             int CurrentLeft = ConsoleBase.ConsoleWrapper.WindowWidth - 1;
@@ -306,19 +306,19 @@ namespace KS.Misc.Screensaver.Displays
                 int RedColorNum = RandomDriver.Next(MarqueeSettings.MarqueeMinimumRedColorLevel, MarqueeSettings.MarqueeMaximumRedColorLevel);
                 int GreenColorNum = RandomDriver.Next(MarqueeSettings.MarqueeMinimumGreenColorLevel, MarqueeSettings.MarqueeMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Next(MarqueeSettings.MarqueeMinimumBlueColorLevel, MarqueeSettings.MarqueeMaximumBlueColorLevel);
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 ColorTools.SetConsoleColor(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"));
             }
             else if (MarqueeSettings.Marquee255Colors)
             {
                 int color = RandomDriver.Next(MarqueeSettings.MarqueeMinimumColorLevel, MarqueeSettings.MarqueeMaximumColorLevel);
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", color);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", color);
                 ColorTools.SetConsoleColor(new Color(color));
             }
             else
             {
                 ConsoleBase.ConsoleWrapper.ForegroundColor = Screensaver.colors[RandomDriver.Next(MarqueeSettings.MarqueeMinimumColorLevel, MarqueeSettings.MarqueeMaximumColorLevel)];
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.ForegroundColor);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.ForegroundColor);
             }
 
             // If the text is at the right and is longer than the console width, crop it until it's complete.
@@ -331,12 +331,12 @@ namespace KS.Misc.Screensaver.Displays
                     break;
                 if (MarqueeSettings.MarqueeUseConsoleAPI)
                     ConsoleBase.ConsoleWrapper.Clear();
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Current left: {0} | Current left on other end: {1}", CurrentLeft, CurrentLeftOtherEnd);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Current left: {0} | Current left on other end: {1}", CurrentLeft, CurrentLeftOtherEnd);
 
                 // Declare variable for written marquee text
                 string MarqueeWritten = MarqueeSettings.MarqueeWrite;
                 bool Middle = MarqueeSettings.MarqueeWrite.Length - (CurrentLeftOtherEnd - CurrentLeft) != CurrentCharacterNum - (CurrentLeftOtherEnd - CurrentLeft);
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Middle of long text: {0}", Middle);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Middle of long text: {0}", Middle);
 
                 // If the current left position is not zero (not on the left), take the substring starting from the beginning of the string until the
                 // written variable equals the base text variable. However, if we're on the left, take the substring so that the character which was
@@ -353,7 +353,7 @@ namespace KS.Misc.Screensaver.Displays
                 {
                     MarqueeWritten = MarqueeWritten.Substring(MarqueeSettings.MarqueeWrite.Length - (CurrentLeftOtherEnd - CurrentLeft));
                 }
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Written result: {0}", MarqueeWritten);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Written result: {0}", MarqueeWritten);
                 if (!MarqueeSettings.MarqueeUseConsoleAPI)
                     MarqueeWritten += Convert.ToString(CharManager.GetEsc()) + "[0K";
 
@@ -367,14 +367,14 @@ namespace KS.Misc.Screensaver.Displays
                 if (!(CurrentLeft == 0))
                 {
                     CurrentLeft -= 1;
-                    DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Not on left. Decremented left position {0}", CurrentLeft);
+                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Not on left. Decremented left position {0}", CurrentLeft);
                 }
 
                 // If we're on the left or the entire text is written, decrement the current left other end position
                 if (!Middle)
                 {
                     CurrentLeftOtherEnd -= 1;
-                    DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "On left or entire text written. Decremented left other end position {0}", CurrentLeftOtherEnd);
+                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "On left or entire text written. Decremented left other end position {0}", CurrentLeftOtherEnd);
                 }
             }
 

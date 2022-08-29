@@ -143,7 +143,7 @@ namespace KS.Misc.Screensaver
                         }
                         if (!Flags.RebootRequested)
                         {
-                            DebugWriter.Wdbg(DebugLevel.W, "Screen time has reached.");
+                            DebugWriter.WriteDebug(DebugLevel.W, "Screen time has reached.");
                             LockScreen();
                         }
                     }
@@ -151,8 +151,8 @@ namespace KS.Misc.Screensaver
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Shutting down screensaver timeout thread: {0}", ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Shutting down screensaver timeout thread: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
             }
         }
 
@@ -167,13 +167,13 @@ namespace KS.Misc.Screensaver
                 InSaver = true;
                 Flags.ScrnTimeReached = true;
                 Kernel.Kernel.KernelEventManager.RaisePreShowScreensaver(saver);
-                DebugWriter.Wdbg(DebugLevel.I, "Requested screensaver: {0}", saver);
+                DebugWriter.WriteDebug(DebugLevel.I, "Requested screensaver: {0}", saver);
                 if (Screensavers.ContainsKey(saver.ToLower()))
                 {
                     saver = saver.ToLower();
                     var BaseSaver = Screensavers[saver];
                     ScreensaverDisplayer.ScreensaverDisplayerThread.Start(BaseSaver);
-                    DebugWriter.Wdbg(DebugLevel.I, "{0} started", saver);
+                    DebugWriter.WriteDebug(DebugLevel.I, "{0} started", saver);
                     Input.DetectKeypress();
                     ScreensaverDisplayer.ScreensaverDisplayerThread.Stop();
                     SaverAutoReset.WaitOne();
@@ -182,7 +182,7 @@ namespace KS.Misc.Screensaver
                 {
                     // Only one custom screensaver can be used.
                     ScreensaverDisplayer.ScreensaverDisplayerThread.Start(new CustomDisplay(CustomSaverTools.CustomSavers[saver].ScreensaverBase));
-                    DebugWriter.Wdbg(DebugLevel.I, "Custom screensaver {0} started", saver);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Custom screensaver {0} started", saver);
                     Input.DetectKeypress();
                     ScreensaverDisplayer.ScreensaverDisplayerThread.Stop();
                     SaverAutoReset.WaitOne();
@@ -190,22 +190,22 @@ namespace KS.Misc.Screensaver
                 else
                 {
                     TextWriterColor.Write(Translate.DoTranslation("The requested screensaver {0} is not found."), true, ColorTools.ColTypes.Error, saver);
-                    DebugWriter.Wdbg(DebugLevel.I, "Screensaver {0} not found in the dictionary.", saver);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Screensaver {0} not found in the dictionary.", saver);
                 }
 
                 // Raise event
-                DebugWriter.Wdbg(DebugLevel.I, "Screensaver really stopped.");
+                DebugWriter.WriteDebug(DebugLevel.I, "Screensaver really stopped.");
                 Kernel.Kernel.KernelEventManager.RaisePostShowScreensaver(saver);
             }
             catch (InvalidOperationException ex)
             {
                 TextWriterColor.Write(Translate.DoTranslation("Error when trying to start screensaver, because of an invalid operation."), true, ColorTools.ColTypes.Error);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebugStackTrace(ex);
             }
             catch (Exception ex)
             {
                 TextWriterColor.Write(Translate.DoTranslation("Error when trying to start screensaver:") + " {0}", true, ColorTools.ColTypes.Error, ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebugStackTrace(ex);
             }
             finally
             {
@@ -241,14 +241,14 @@ namespace KS.Misc.Screensaver
             saver = saver.ToLower();
             if (Screensavers.ContainsKey(saver) | CustomSaverTools.CustomSavers.ContainsKey(saver))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "{0} is found. Setting it to default...", saver);
+                DebugWriter.WriteDebug(DebugLevel.I, "{0} is found. Setting it to default...", saver);
                 DefSaverName = saver;
                 var Token = ConfigTools.GetConfigCategory(Config.ConfigCategory.Screensaver);
                 ConfigTools.SetConfigValue(Config.ConfigCategory.Screensaver, Token, "Screensaver", saver);
             }
             else
             {
-                DebugWriter.Wdbg(DebugLevel.W, "{0} is not found.", saver);
+                DebugWriter.WriteDebug(DebugLevel.W, "{0} is not found.", saver);
                 throw new Kernel.Exceptions.NoSuchScreensaverException(Translate.DoTranslation("Screensaver {0} not found in database. Check the name and try again."), saver);
             }
         }
@@ -274,8 +274,8 @@ namespace KS.Misc.Screensaver
         {
             if (Exception is not null)
             {
-                DebugWriter.Wdbg(DebugLevel.W, "Screensaver experienced an error: {0}.", Exception.Message);
-                DebugWriter.WStkTrc(Exception);
+                DebugWriter.WriteDebug(DebugLevel.W, "Screensaver experienced an error: {0}.", Exception.Message);
+                DebugWriter.WriteDebugStackTrace(Exception);
                 HandleSaverCancel();
                 TextWriterColor.Write(Translate.DoTranslation("Screensaver experienced an error while displaying: {0}. Press any key to exit."), true, ColorTools.ColTypes.Error, Exception.Message);
             }
@@ -286,10 +286,10 @@ namespace KS.Misc.Screensaver
         /// </summary>
         internal static void HandleSaverCancel()
         {
-            DebugWriter.Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...");
+            DebugWriter.WriteDebug(DebugLevel.W, "Cancellation is pending. Cleaning everything up...");
             ColorTools.LoadBack();
             ConsoleBase.ConsoleWrapper.CursorVisible = true;
-            DebugWriter.Wdbg(DebugLevel.I, "All clean. Screensaver stopped.");
+            DebugWriter.WriteDebug(DebugLevel.I, "All clean. Screensaver stopped.");
             SaverAutoReset.Set();
         }
 

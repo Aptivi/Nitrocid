@@ -59,26 +59,26 @@ namespace KS.Misc.Games
             {
                 int FloorTopLeftEdge = 2;
                 int FloorBottomLeftEdge = 2;
-                DebugWriter.Wdbg(DebugLevel.I, "Top left edge: {0}, Bottom left edge: {1}", FloorTopLeftEdge, FloorBottomLeftEdge);
+                DebugWriter.WriteDebug(DebugLevel.I, "Top left edge: {0}, Bottom left edge: {1}", FloorTopLeftEdge, FloorBottomLeftEdge);
 
                 int FloorTopRightEdge = ConsoleBase.ConsoleWrapper.WindowWidth - 3;
                 int FloorBottomRightEdge = ConsoleBase.ConsoleWrapper.WindowWidth - 3;
-                DebugWriter.Wdbg(DebugLevel.I, "Top right edge: {0}, Bottom right edge: {1}", FloorTopRightEdge, FloorBottomRightEdge);
+                DebugWriter.WriteDebug(DebugLevel.I, "Top right edge: {0}, Bottom right edge: {1}", FloorTopRightEdge, FloorBottomRightEdge);
 
                 int FloorTopEdge = 2;
                 int FloorBottomEdge = ConsoleBase.ConsoleWrapper.WindowHeight - 2;
-                DebugWriter.Wdbg(DebugLevel.I, "Top edge: {0}, Bottom edge: {1}", FloorTopEdge, FloorBottomEdge);
+                DebugWriter.WriteDebug(DebugLevel.I, "Top edge: {0}, Bottom edge: {1}", FloorTopEdge, FloorBottomEdge);
 
                 int FloorLeftEdge = 2;
                 int FloorRightEdge = ConsoleBase.ConsoleWrapper.WindowWidth - 4;
-                DebugWriter.Wdbg(DebugLevel.I, "Left edge: {0}, Right edge: {1}", FloorLeftEdge, FloorRightEdge);
+                DebugWriter.WriteDebug(DebugLevel.I, "Left edge: {0}, Right edge: {1}", FloorLeftEdge, FloorRightEdge);
                 ColorTools.SetConsoleColor(FloorColor, true, true);
 
                 // First, draw the floor top edge
                 for (int x = FloorTopLeftEdge, loopTo = FloorTopRightEdge; x <= loopTo; x++)
                 {
                     ConsoleBase.ConsoleWrapper.SetCursorPosition(x, 1);
-                    DebugWriter.Wdbg(DebugLevel.I, "Drawing floor top edge ({0}, {1})", x, 1);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor top edge ({0}, {1})", x, 1);
                     ConsoleBase.ConsoleWrapper.Write(" ");
                 }
 
@@ -86,7 +86,7 @@ namespace KS.Misc.Games
                 for (int x = FloorBottomLeftEdge, loopTo1 = FloorBottomRightEdge; x <= loopTo1; x++)
                 {
                     ConsoleBase.ConsoleWrapper.SetCursorPosition(x, FloorBottomEdge);
-                    DebugWriter.Wdbg(DebugLevel.I, "Drawing floor bottom edge ({0}, {1})", x, FloorBottomEdge);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor bottom edge ({0}, {1})", x, FloorBottomEdge);
                     ConsoleBase.ConsoleWrapper.Write(" ");
                 }
 
@@ -94,7 +94,7 @@ namespace KS.Misc.Games
                 for (int y = FloorTopEdge, loopTo2 = FloorBottomEdge; y <= loopTo2; y++)
                 {
                     ConsoleBase.ConsoleWrapper.SetCursorPosition(FloorLeftEdge, y);
-                    DebugWriter.Wdbg(DebugLevel.I, "Drawing floor left edge ({0}, {1})", FloorLeftEdge, y);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor left edge ({0}, {1})", FloorLeftEdge, y);
                     ConsoleBase.ConsoleWrapper.Write("  ");
                 }
 
@@ -102,7 +102,7 @@ namespace KS.Misc.Games
                 for (int y = FloorTopEdge, loopTo3 = FloorBottomEdge; y <= loopTo3; y++)
                 {
                     ConsoleBase.ConsoleWrapper.SetCursorPosition(FloorRightEdge, y);
-                    DebugWriter.Wdbg(DebugLevel.I, "Drawing floor right edge ({0}, {1})", FloorRightEdge, y);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor right edge ({0}, {1})", FloorRightEdge, y);
                     ConsoleBase.ConsoleWrapper.Write("  ");
                 }
             }
@@ -118,18 +118,18 @@ namespace KS.Misc.Games
                 int FloorBottomEdge = ConsoleBase.ConsoleWrapper.WindowHeight - 2;
                 int FloorLeftEdge = 3;
                 int FloorRightEdge = ConsoleBase.ConsoleWrapper.WindowWidth - 4;
-                DebugWriter.Wdbg(DebugLevel.I, "Floor top edge {0}", FloorTopEdge);
-                DebugWriter.Wdbg(DebugLevel.I, "Floor bottom edge {0}", FloorBottomEdge);
-                DebugWriter.Wdbg(DebugLevel.I, "Floor left edge {0}", FloorLeftEdge);
-                DebugWriter.Wdbg(DebugLevel.I, "Floor right edge {0}", FloorRightEdge);
+                DebugWriter.WriteDebug(DebugLevel.I, "Floor top edge {0}", FloorTopEdge);
+                DebugWriter.WriteDebug(DebugLevel.I, "Floor bottom edge {0}", FloorBottomEdge);
+                DebugWriter.WriteDebug(DebugLevel.I, "Floor left edge {0}", FloorLeftEdge);
+                DebugWriter.WriteDebug(DebugLevel.I, "Floor right edge {0}", FloorRightEdge);
 
                 int SnakeCurrentX = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d);
                 int SnakeCurrentY = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d);
-                DebugWriter.Wdbg(DebugLevel.I, "Initial snake position ({0}, {1})", SnakeCurrentX, SnakeCurrentY);
+                DebugWriter.WriteDebug(DebugLevel.I, "Initial snake position ({0}, {1})", SnakeCurrentX, SnakeCurrentY);
 
                 int SnakeAppleX = RandomDriver.Next(FloorLeftEdge + 1, FloorRightEdge - 1);
                 int SnakeAppleY = RandomDriver.Next(FloorTopEdge + 1, FloorBottomEdge - 1);
-                DebugWriter.Wdbg(DebugLevel.I, "Initial snake apple position ({0}, {1})", SnakeAppleX, SnakeAppleY);
+                DebugWriter.WriteDebug(DebugLevel.I, "Initial snake apple position ({0}, {1})", SnakeAppleX, SnakeAppleY);
 
                 bool DidHorizontal = false;
                 bool DidVertical = false;
@@ -165,7 +165,7 @@ namespace KS.Misc.Games
                         AppleDrawn = true;
                         ConsoleBase.ConsoleWrapper.SetCursorPosition(SnakeAppleX, SnakeAppleY);
                         ConsoleBase.ConsoleWrapper.Write("+");
-                        DebugWriter.Wdbg(DebugLevel.I, "Drawn apple at ({0}, {1})", SnakeAppleX, SnakeAppleY);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Drawn apple at ({0}, {1})", SnakeAppleX, SnakeAppleY);
                     }
 
                     // Make a snake
@@ -177,7 +177,7 @@ namespace KS.Misc.Games
                         ConsoleBase.ConsoleWrapper.SetCursorPosition(PositionX, PositionY);
                         ConsoleBase.ConsoleWrapper.Write(" ");
                         ConsoleBase.ConsoleWrapper.SetCursorPosition(PositionX, PositionY);
-                        DebugWriter.Wdbg(DebugLevel.I, "Drawn snake at ({0}, {1}) for mass {2}/{3}", PositionX, PositionY, PositionIndex + 1, SnakeMassPositions.Count);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Drawn snake at ({0}, {1}) for mass {2}/{3}", PositionX, PositionY, PositionIndex + 1, SnakeMassPositions.Count);
                     }
 
                     // Set the previous positions
@@ -190,8 +190,8 @@ namespace KS.Misc.Games
                         float PossibilityToChange = (float)RandomDriver.NextDouble();
                         if ((int)Math.Round(PossibilityToChange) == 1)
                         {
-                            DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Change guaranteed. {0}", PossibilityToChange);
-                            DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Horizontal? {0}, Vertical? {1}", DidHorizontal, DidVertical);
+                            DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Change guaranteed. {0}", PossibilityToChange);
+                            DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Horizontal? {0}, Vertical? {1}", DidHorizontal, DidVertical);
                             if (DidHorizontal)
                             {
                                 Direction = (SnakeDirection)Convert.ToInt32(Enum.Parse(typeof(SnakeDirection), RandomDriver.Next(2).ToString()));
@@ -208,7 +208,7 @@ namespace KS.Misc.Games
                                     SnakeCurrentY += 1;
                                     DidHorizontal = false;
                                     DidVertical = true;
-                                    DebugWriter.Wdbg(DebugLevel.I, "Increased vertical snake position from {0} to {1}", SnakePreviousY, SnakeCurrentY);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Increased vertical snake position from {0} to {1}", SnakePreviousY, SnakeCurrentY);
                                     break;
                                 }
                             case SnakeDirection.Top:
@@ -216,7 +216,7 @@ namespace KS.Misc.Games
                                     SnakeCurrentY -= 1;
                                     DidHorizontal = false;
                                     DidVertical = true;
-                                    DebugWriter.Wdbg(DebugLevel.I, "Decreased vertical snake position from {0} to {1}", SnakePreviousY, SnakeCurrentY);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Decreased vertical snake position from {0} to {1}", SnakePreviousY, SnakeCurrentY);
                                     break;
                                 }
                             case SnakeDirection.Left:
@@ -224,7 +224,7 @@ namespace KS.Misc.Games
                                     SnakeCurrentX -= 1;
                                     DidHorizontal = true;
                                     DidVertical = false;
-                                    DebugWriter.Wdbg(DebugLevel.I, "Decreased horizontal snake position from {0} to {1}", SnakePreviousX, SnakeCurrentX);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Decreased horizontal snake position from {0} to {1}", SnakePreviousX, SnakeCurrentX);
                                     break;
                                 }
                             case SnakeDirection.Right:
@@ -232,7 +232,7 @@ namespace KS.Misc.Games
                                     SnakeCurrentX += 1;
                                     DidHorizontal = true;
                                     DidVertical = false;
-                                    DebugWriter.Wdbg(DebugLevel.I, "Increased horizontal snake position from {0} to {1}", SnakePreviousX, SnakeCurrentX);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Increased horizontal snake position from {0} to {1}", SnakePreviousX, SnakeCurrentX);
                                     break;
                                 }
                         }
@@ -290,7 +290,7 @@ namespace KS.Misc.Games
                                     SnakeCurrentY += 1;
                                     DidHorizontal = false;
                                     DidVertical = true;
-                                    DebugWriter.Wdbg(DebugLevel.I, "Increased vertical snake position from {0} to {1}", SnakePreviousY, SnakeCurrentY);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Increased vertical snake position from {0} to {1}", SnakePreviousY, SnakeCurrentY);
                                     break;
                                 }
                             case SnakeDirection.Top:
@@ -298,7 +298,7 @@ namespace KS.Misc.Games
                                     SnakeCurrentY -= 1;
                                     DidHorizontal = false;
                                     DidVertical = true;
-                                    DebugWriter.Wdbg(DebugLevel.I, "Decreased vertical snake position from {0} to {1}", SnakePreviousY, SnakeCurrentY);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Decreased vertical snake position from {0} to {1}", SnakePreviousY, SnakeCurrentY);
                                     break;
                                 }
                             case SnakeDirection.Left:
@@ -306,7 +306,7 @@ namespace KS.Misc.Games
                                     SnakeCurrentX -= 1;
                                     DidHorizontal = true;
                                     DidVertical = false;
-                                    DebugWriter.Wdbg(DebugLevel.I, "Decreased horizontal snake position from {0} to {1}", SnakePreviousX, SnakeCurrentX);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Decreased horizontal snake position from {0} to {1}", SnakePreviousX, SnakeCurrentX);
                                     break;
                                 }
                             case SnakeDirection.Right:
@@ -314,22 +314,22 @@ namespace KS.Misc.Games
                                     SnakeCurrentX += 1;
                                     DidHorizontal = true;
                                     DidVertical = false;
-                                    DebugWriter.Wdbg(DebugLevel.I, "Increased horizontal snake position from {0} to {1}", SnakePreviousX, SnakeCurrentX);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Increased horizontal snake position from {0} to {1}", SnakePreviousX, SnakeCurrentX);
                                     break;
                                 }
                         }
                     }
-                    DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Snake is facing {0}.", Direction.ToString());
+                    DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Snake is facing {0}.", Direction.ToString());
 
                     // Check death using mass position check
                     Dead = SnakeMassPositions.Contains($"{SnakeCurrentX}/{SnakeCurrentY}");
-                    DebugWriter.Wdbg(DebugLevel.I, "Mass position contains the current position ({0}, {1})? {2}", SnakeCurrentX, SnakeCurrentY, Dead);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Mass position contains the current position ({0}, {1})? {2}", SnakeCurrentX, SnakeCurrentY, Dead);
 
                     // Add the mass position
                     SnakeMassPositions.AddIfNotFound($"{SnakeCurrentX}/{SnakeCurrentY}");
                     if (SnakeMassPositions.Count > SnakeLength)
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Mass position count {0} exceeds snake length of {1}. Removing index 0...", SnakeMassPositions.Count, SnakeLength);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Mass position count {0} exceeds snake length of {1}. Removing index 0...", SnakeMassPositions.Count, SnakeLength);
                         var LastTailPositionStrings = SnakeMassPositions[0].Split('/');
                         SnakeLastTailToWipeX = Convert.ToInt32(LastTailPositionStrings[0]);
                         SnakeLastTailToWipeY = Convert.ToInt32(LastTailPositionStrings[1]);
@@ -339,36 +339,36 @@ namespace KS.Misc.Games
                     // Check death state
                     if (!Dead)
                         Dead = SnakeCurrentY == FloorTopEdge;
-                    DebugWriter.Wdbg(DebugLevel.I, "Dead? {0} because current Y is {1} and top edge is {2}", Dead, SnakeCurrentY, FloorTopEdge);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Dead? {0} because current Y is {1} and top edge is {2}", Dead, SnakeCurrentY, FloorTopEdge);
                     if (!Dead)
                         Dead = SnakeCurrentY == FloorBottomEdge;
-                    DebugWriter.Wdbg(DebugLevel.I, "Dead? {0} because current Y is {1} and bottom edge is {2}", Dead, SnakeCurrentY, FloorBottomEdge);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Dead? {0} because current Y is {1} and bottom edge is {2}", Dead, SnakeCurrentY, FloorBottomEdge);
                     if (!Dead)
                         Dead = SnakeCurrentX == FloorLeftEdge;
-                    DebugWriter.Wdbg(DebugLevel.I, "Dead? {0} because current X is {1} and left edge is {2}", Dead, SnakeCurrentX, FloorLeftEdge);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Dead? {0} because current X is {1} and left edge is {2}", Dead, SnakeCurrentX, FloorLeftEdge);
                     if (!Dead)
                         Dead = SnakeCurrentX == FloorRightEdge;
-                    DebugWriter.Wdbg(DebugLevel.I, "Dead? {0} because current X is {1} and right edge is {2}", Dead, SnakeCurrentX, FloorRightEdge);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Dead? {0} because current X is {1} and right edge is {2}", Dead, SnakeCurrentX, FloorRightEdge);
 
                     // If dead, show dead face
                     if (Dead)
                     {
                         ConsoleBase.ConsoleWrapper.SetCursorPosition(SnakePreviousX, SnakePreviousY);
                         ConsoleBase.ConsoleWrapper.Write("X");
-                        DebugWriter.Wdbg(DebugLevel.I, "Snake dead at {0}/{1}.", SnakePreviousX, SnakePreviousY);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Snake dead at {0}/{1}.", SnakePreviousX, SnakePreviousY);
                     }
 
                     // If the snake ate the apple, grow it up
                     if (SnakeCurrentX == SnakeAppleX & SnakeCurrentY == SnakeAppleY)
                     {
                         SnakeLength += 1;
-                        DebugWriter.Wdbg(DebugLevel.I, "Snake grew up to {0}.", SnakeLength);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Snake grew up to {0}.", SnakeLength);
 
                         // Relocate the apple
                         SnakeAppleX = RandomDriver.Next(FloorLeftEdge + 1, FloorRightEdge - 1);
                         SnakeAppleY = RandomDriver.Next(FloorTopEdge + 1, FloorBottomEdge - 1);
                         AppleDrawn = false;
-                        DebugWriter.Wdbg(DebugLevel.I, "New snake apple position ({0}, {1})", SnakeAppleX, SnakeAppleY);
+                        DebugWriter.WriteDebug(DebugLevel.I, "New snake apple position ({0}, {1})", SnakeAppleX, SnakeAppleY);
                     }
                 }
             }
@@ -397,19 +397,19 @@ namespace KS.Misc.Games
                 int RedColorNum = RandomDriver.Next(SnakerSettings.SnakerMinimumRedColorLevel, SnakerSettings.SnakerMaximumRedColorLevel);
                 int GreenColorNum = RandomDriver.Next(SnakerSettings.SnakerMinimumGreenColorLevel, SnakerSettings.SnakerMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Next(SnakerSettings.SnakerMinimumBlueColorLevel, SnakerSettings.SnakerMaximumBlueColorLevel);
-                DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 return new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}");
             }
             else if (SnakerSettings.Snaker255Colors)
             {
                 int ColorNum = RandomDriver.Next(SnakerSettings.SnakerMinimumColorLevel, SnakerSettings.SnakerMaximumColorLevel);
-                DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
+                DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 return new Color(ColorNum);
             }
             else
             {
                 ConsoleBase.ConsoleWrapper.BackgroundColor = Screensaver.Screensaver.colors[RandomDriver.Next(SnakerSettings.SnakerMinimumColorLevel, SnakerSettings.SnakerMaximumColorLevel)];
-                DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
+                DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
                 return Color.Empty;
             }
         }

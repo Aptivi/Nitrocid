@@ -74,7 +74,7 @@ namespace KS.Files.Print
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("File {0} not found"), true, ColorTools.ColTypes.Error, FileInfo.FullName);
-                DebugWriter.Wdbg(DebugLevel.I, "IO.FileExists = {0}", Checking.FileExists(FileInfo.FullName));
+                DebugWriter.WriteDebug(DebugLevel.I, "IO.FileExists = {0}", Checking.FileExists(FileInfo.FullName));
             }
         }
 

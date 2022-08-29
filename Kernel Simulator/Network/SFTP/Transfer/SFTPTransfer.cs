@@ -39,20 +39,20 @@ namespace KS.Network.SFTP.Transfer
                 {
                     // Show a message to download
                     Kernel.Kernel.KernelEventManager.RaiseSFTPPreDownload(File);
-                    DebugWriter.Wdbg(DebugLevel.I, "Downloading file {0}...", File);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Downloading file {0}...", File);
 
                     // Try to download
                     var DownloadFileStream = new System.IO.FileStream($"{SFTPShellCommon.SFTPCurrDirect}/{File}", System.IO.FileMode.OpenOrCreate);
                     SFTPShellCommon.ClientSFTP.DownloadFile($"{SFTPShellCommon.SFTPCurrentRemoteDir}/{File}", DownloadFileStream);
 
                     // Show a message that it's downloaded
-                    DebugWriter.Wdbg(DebugLevel.I, "Downloaded file {0}.", File);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Downloaded file {0}.", File);
                     Kernel.Kernel.KernelEventManager.RaiseSFTPPostDownload(File);
                     return true;
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "Download failed for file {0}: {1}", File, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Download failed for file {0}: {1}", File, ex.Message);
                     Kernel.Kernel.KernelEventManager.RaiseSFTPDownloadError(File, ex);
                 }
             }
@@ -76,18 +76,18 @@ namespace KS.Network.SFTP.Transfer
                 {
                     // Show a message to download
                     Kernel.Kernel.KernelEventManager.RaiseSFTPPreUpload(File);
-                    DebugWriter.Wdbg(DebugLevel.I, "Uploading file {0}...", File);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Uploading file {0}...", File);
 
                     // Try to upload
                     var UploadFileStream = new System.IO.FileStream($"{SFTPShellCommon.SFTPCurrDirect}/{File}", System.IO.FileMode.Open);
                     SFTPShellCommon.ClientSFTP.UploadFile(UploadFileStream, $"{SFTPShellCommon.SFTPCurrentRemoteDir}/{File}");
-                    DebugWriter.Wdbg(DebugLevel.I, "Uploaded file {0}", File);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Uploaded file {0}", File);
                     Kernel.Kernel.KernelEventManager.RaiseSFTPPostUpload(File);
                     return true;
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "Upload failed for file {0}: {1}", File, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Upload failed for file {0}: {1}", File, ex.Message);
                     Kernel.Kernel.KernelEventManager.RaiseSFTPUploadError(File, ex);
                 }
             }

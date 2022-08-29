@@ -129,11 +129,11 @@ namespace KS.Misc.Screensaver.Displays
             ConsoleBase.ConsoleWrapper.CursorVisible = false;
 
             // SpotWrite can also deal with files written on the field that is used for storing text, so check to see if the path exists.
-            DebugWriter.Wdbg(DebugLevel.I, "Checking \"{0}\" to see if it's a file path", SpotWriteSettings.SpotWriteWrite);
+            DebugWriter.WriteDebug(DebugLevel.I, "Checking \"{0}\" to see if it's a file path", SpotWriteSettings.SpotWriteWrite);
             if (Parsing.TryParsePath(SpotWriteSettings.SpotWriteWrite) && Checking.FileExists(SpotWriteSettings.SpotWriteWrite))
             {
                 // File found! Now, write the contents of it to the local variable that stores the actual written text.
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Opening file {0} to write...", SpotWriteSettings.SpotWriteWrite);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Opening file {0} to write...", SpotWriteSettings.SpotWriteWrite);
                 TypeWrite = File.ReadAllText(SpotWriteSettings.SpotWriteWrite);
             }
 
@@ -144,7 +144,7 @@ namespace KS.Misc.Screensaver.Displays
                     ResizeSyncing = true;
                 if (ResizeSyncing)
                     break;
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "New paragraph: {0}", Paragraph);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "New paragraph: {0}", Paragraph);
 
                 // Split the paragraph into sentences that have the length of maximum characters that can be printed in various terminal
                 // sizes.
@@ -170,7 +170,7 @@ namespace KS.Misc.Screensaver.Displays
                     if (IncompleteSentenceBuilder.Length == ConsoleBase.ConsoleWrapper.WindowWidth - 2 - ReservedCharacters | Paragraph.Length == CharactersParsed)
                     {
                         // We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
-                        DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Adding {0} to the list... Incomplete sentences: {1}", IncompleteSentenceBuilder.ToString(), IncompleteSentences.Count);
+                        DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Adding {0} to the list... Incomplete sentences: {1}", IncompleteSentenceBuilder.ToString(), IncompleteSentences.Count);
                         IncompleteSentences.Add(IncompleteSentenceBuilder.ToString());
 
                         // Clean everything up
@@ -184,7 +184,7 @@ namespace KS.Misc.Screensaver.Displays
                 {
                     ConsoleBase.ConsoleWrapper.SetCursorPosition(0, ConsoleBase.ConsoleWrapper.CursorTop + 1);
                     ConsoleBase.ConsoleWrapper.Write("    ");
-                    DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleBase.ConsoleWrapper.CursorLeft, ConsoleBase.ConsoleWrapper.CursorTop);
+                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleBase.ConsoleWrapper.CursorLeft, ConsoleBase.ConsoleWrapper.CursorTop);
                 }
 
                 // Get struck character and write it
@@ -205,7 +205,7 @@ namespace KS.Misc.Screensaver.Displays
                         // If we're at the end of the page, clear the screen
                         if (ConsoleBase.ConsoleWrapper.CursorTop == ConsoleBase.ConsoleWrapper.WindowHeight - 2)
                         {
-                            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "We're at the end of the page! {0} = {1}", ConsoleBase.ConsoleWrapper.CursorTop, ConsoleBase.ConsoleWrapper.WindowHeight - 2);
+                            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "We're at the end of the page! {0} = {1}", ConsoleBase.ConsoleWrapper.CursorTop, ConsoleBase.ConsoleWrapper.WindowHeight - 2);
                             ThreadManager.SleepNoBlock(SpotWriteSettings.SpotWriteNewScreenDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
                             ConsoleBase.ConsoleWrapper.Clear();
                             ConsoleBase.ConsoleWrapper.WriteLine();
@@ -217,7 +217,7 @@ namespace KS.Misc.Screensaver.Displays
                             {
                                 ConsoleBase.ConsoleWrapper.Write(" ");
                             }
-                            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleBase.ConsoleWrapper.CursorLeft, ConsoleBase.ConsoleWrapper.CursorTop);
+                            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleBase.ConsoleWrapper.CursorLeft, ConsoleBase.ConsoleWrapper.CursorTop);
                         }
 
                         // Write the final character to the console and wait

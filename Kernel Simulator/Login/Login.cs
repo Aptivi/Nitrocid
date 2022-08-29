@@ -77,7 +77,7 @@ namespace KS.Login
                 // Check to see if the reboot is requested
                 if (Flags.RebootRequested | Flags.KernelShutdown)
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "Reboot has been requested. Exiting...");
+                    DebugWriter.WriteDebug(DebugLevel.W, "Reboot has been requested. Exiting...");
                     Flags.RebootRequested = false;
                     return;
                 }
@@ -89,20 +89,20 @@ namespace KS.Login
                 if (Users.Count == 0)
                 {
                     // Extremely rare state reached
-                    DebugWriter.Wdbg(DebugLevel.F, "Shell reached rare state, because userword count is 0.");
+                    DebugWriter.WriteDebug(DebugLevel.F, "Shell reached rare state, because userword count is 0.");
                     throw new Kernel.Exceptions.NullUsersException(Translate.DoTranslation("There are no more users remaining in the list."));
                 }
                 else if (Users.Count == 1 & Users.Keys.ElementAtOrDefault(0) == "root")
                 {
                     // Run a first user trigger
-                    DebugWriter.Wdbg(DebugLevel.W, "Only root is found. Triggering first user setup...");
+                    DebugWriter.WriteDebug(DebugLevel.W, "Only root is found. Triggering first user setup...");
                     UserManagement.FirstUserTrigger();
                 }
 
                 // Clear console if ClearOnLogin is set to True (If a user has enabled Clear Screen on Login)
                 if (Flags.ClearOnLogin == true)
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Clearing screen...");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Clearing screen...");
                     ConsoleBase.ConsoleWrapper.Clear();
                 }
 
@@ -111,7 +111,7 @@ namespace KS.Login
                 MalParse.ReadMal();
 
                 // Show MOTD once
-                DebugWriter.Wdbg(DebugLevel.I, "showMOTDOnceFlag = {0}, showMOTD = {1}", Flags.ShowMOTDOnceFlag, Flags.ShowMOTD);
+                DebugWriter.WriteDebug(DebugLevel.I, "showMOTDOnceFlag = {0}, showMOTD = {1}", Flags.ShowMOTDOnceFlag, Flags.ShowMOTD);
                 if (Flags.ShowMOTDOnceFlag == true & Flags.ShowMOTD == true)
                 {
                     TextWriterColor.Write(Kernel.Kernel.NewLine + PlaceParse.ProbePlaces(Kernel.Kernel.MOTDMessage), true, ColorTools.ColTypes.Banner);
@@ -138,15 +138,15 @@ namespace KS.Login
                             if (int.TryParse(AnswerUserString, out AnswerUserInt))
                             {
                                 string SelectedUser = UserManagement.SelectUser(AnswerUserInt);
-                                DebugWriter.Wdbg(DebugLevel.I, "Username correct. Finding if the user is disabled...");
+                                DebugWriter.WriteDebug(DebugLevel.I, "Username correct. Finding if the user is disabled...");
                                 if (!PermissionManagement.HasPermission(SelectedUser, PermissionManagement.PermissionType.Disabled))
                                 {
-                                    DebugWriter.Wdbg(DebugLevel.I, "User can log in. (User is not in disabled list)");
+                                    DebugWriter.WriteDebug(DebugLevel.I, "User can log in. (User is not in disabled list)");
                                     ShowPasswordPrompt(SelectedUser);
                                 }
                                 else
                                 {
-                                    DebugWriter.Wdbg(DebugLevel.W, "User can't log in. (User is in disabled list)");
+                                    DebugWriter.WriteDebug(DebugLevel.W, "User can't log in. (User is in disabled list)");
                                     TextWriterColor.Write(Translate.DoTranslation("User is disabled."), true, ColorTools.ColTypes.Error);
                                     Kernel.Kernel.KernelEventManager.RaiseLoginError(SelectedUser, LoginErrorReasons.Disabled);
                                 }
@@ -182,34 +182,34 @@ namespace KS.Login
                     // Parse input
                     if (answeruser.Contains(" "))
                     {
-                        DebugWriter.Wdbg(DebugLevel.W, "Spaces found in username.");
+                        DebugWriter.WriteDebug(DebugLevel.W, "Spaces found in username.");
                         TextWriterColor.Write(Translate.DoTranslation("Spaces are not allowed."), true, ColorTools.ColTypes.Error);
                         Kernel.Kernel.KernelEventManager.RaiseLoginError(answeruser, LoginErrorReasons.Spaces);
                     }
                     else if (answeruser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray()) != -1)
                     {
-                        DebugWriter.Wdbg(DebugLevel.W, "Unknown characters found in username.");
+                        DebugWriter.WriteDebug(DebugLevel.W, "Unknown characters found in username.");
                         TextWriterColor.Write(Translate.DoTranslation("Special characters are not allowed."), true, ColorTools.ColTypes.Error);
                         Kernel.Kernel.KernelEventManager.RaiseLoginError(answeruser, LoginErrorReasons.SpecialCharacters);
                     }
                     else if (Users.ContainsKey(answeruser))
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Username correct. Finding if the user is disabled...");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Username correct. Finding if the user is disabled...");
                         if (!PermissionManagement.HasPermission(answeruser, PermissionManagement.PermissionType.Disabled))
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "User can log in. (User is not in disabled list)");
+                            DebugWriter.WriteDebug(DebugLevel.I, "User can log in. (User is not in disabled list)");
                             ShowPasswordPrompt(answeruser);
                         }
                         else
                         {
-                            DebugWriter.Wdbg(DebugLevel.W, "User can't log in. (User is in disabled list)");
+                            DebugWriter.WriteDebug(DebugLevel.W, "User can't log in. (User is in disabled list)");
                             TextWriterColor.Write(Translate.DoTranslation("User is disabled."), true, ColorTools.ColTypes.Error);
                             Kernel.Kernel.KernelEventManager.RaiseLoginError(answeruser, LoginErrorReasons.Disabled);
                         }
                     }
                     else if (ReadLineReboot.ReadLine.ReadRanToCompletion)
                     {
-                        DebugWriter.Wdbg(DebugLevel.E, "Username not found.");
+                        DebugWriter.WriteDebug(DebugLevel.E, "Username not found.");
                         TextWriterColor.Write(Translate.DoTranslation("Wrong username."), true, ColorTools.ColTypes.Error);
                         Kernel.Kernel.KernelEventManager.RaiseLoginError(answeruser, LoginErrorReasons.NotFound);
                     }
@@ -229,7 +229,7 @@ namespace KS.Login
                 // Check to see if reboot is requested
                 if (Flags.RebootRequested | Flags.KernelShutdown)
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "Reboot has been requested. Exiting...");
+                    DebugWriter.WriteDebug(DebugLevel.W, "Reboot has been requested. Exiting...");
                     Flags.RebootRequested = false;
                     return;
                 }
@@ -241,7 +241,7 @@ namespace KS.Login
                 if (!((UserPassword ?? "") == (Encryption.GetEmptyHash(Encryption.Algorithms.SHA256) ?? ""))) // No password
                 {
                     // Wait for input
-                    DebugWriter.Wdbg(DebugLevel.I, "Password not empty");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Password not empty");
                     if (!string.IsNullOrWhiteSpace(PasswordPrompt))
                     {
                         TextWriterColor.Write(PlaceParse.ProbePlaces(PasswordPrompt), false, ColorTools.ColTypes.Input);
@@ -255,20 +255,20 @@ namespace KS.Login
                     string answerpass = Input.ReadLineNoInput();
 
                     // Compute password hash
-                    DebugWriter.Wdbg(DebugLevel.I, "Computing written password hash...");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Computing written password hash...");
                     answerpass = Encryption.GetEncryptedString(answerpass, Encryption.Algorithms.SHA256);
 
                     // Parse password input
                     if (Users.TryGetValue(usernamerequested, out UserPassword) && (UserPassword ?? "") == (answerpass ?? ""))
                     {
                         // Log-in instantly
-                        DebugWriter.Wdbg(DebugLevel.I, "Password written correctly. Entering shell...");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Password written correctly. Entering shell...");
                         SignIn(usernamerequested);
                         return;
                     }
                     else
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Passowrd written wrong...");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Passowrd written wrong...");
                         TextWriterColor.Write(Translate.DoTranslation("Wrong password."), true, ColorTools.ColTypes.Error);
                         Kernel.Kernel.KernelEventManager.RaiseLoginError(usernamerequested, LoginErrorReasons.WrongPassword);
                         if (!Flags.Maintenance)
@@ -283,7 +283,7 @@ namespace KS.Login
                 else
                 {
                     // Log-in instantly
-                    DebugWriter.Wdbg(DebugLevel.I, "Password is empty");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Password is empty");
                     SignIn(usernamerequested);
                     return;
                 }
@@ -300,7 +300,7 @@ namespace KS.Login
             // Release lock
             if (Screensaver.LockMode)
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Releasing lock and getting back to shell...");
+                DebugWriter.WriteDebug(DebugLevel.I, "Releasing lock and getting back to shell...");
                 Screensaver.LockMode = false;
                 Kernel.Kernel.KernelEventManager.RaisePostUnlock(Screensaver.DefSaverName);
                 return;
@@ -313,7 +313,7 @@ namespace KS.Login
             CurrentUserInfo = new UserInfo(signedInUser);
             if (Screensaver.LockMode == true)
                 Screensaver.LockMode = false;
-            DebugWriter.Wdbg(DebugLevel.I, "Lock released.");
+            DebugWriter.WriteDebug(DebugLevel.I, "Lock released.");
             Flags.ShowMOTDOnceFlag = true;
             if (Flags.ShowMAL)
                 TextWriterColor.Write(PlaceParse.ProbePlaces(Kernel.Kernel.MAL), true, ColorTools.ColTypes.Banner);
@@ -323,7 +323,7 @@ namespace KS.Login
             Kernel.Kernel.KernelEventManager.RaisePostLogin(CurrentUser.Username);
 
             // Initialize shell
-            DebugWriter.Wdbg(DebugLevel.I, "Shell is being initialized...");
+            DebugWriter.WriteDebug(DebugLevel.I, "Shell is being initialized...");
             ShellStart.StartShellForced(ShellType.Shell);
             ShellStart.PurgeShells();
         }

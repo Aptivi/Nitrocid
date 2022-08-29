@@ -42,14 +42,14 @@ namespace KS.Scripting
                 // Open the script file for reading
                 var FileStream = new StreamReader(ScriptPath);
                 int LineNo = 1;
-                DebugWriter.Wdbg(DebugLevel.I, "Stream opened. Parsing script");
+                DebugWriter.WriteDebug(DebugLevel.I, "Stream opened. Parsing script");
 
                 // Look for $variables and initialize them
                 while (!FileStream.EndOfStream)
                 {
                     // Get line
                     string Line = FileStream.ReadLine();
-                    DebugWriter.Wdbg(DebugLevel.I, "Line {0}: \"{1}\"", LineNo, Line);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Line {0}: \"{1}\"", LineNo, Line);
 
                     // If $variable is found in string, initialize it
                     var SplitWords = Line.Split(' ');
@@ -70,7 +70,7 @@ namespace KS.Scripting
                 {
                     // Get line
                     string Line = FileStream.ReadLine();
-                    DebugWriter.Wdbg(DebugLevel.I, "Line {0}: \"{1}\"", LineNo, Line);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Line {0}: \"{1}\"", LineNo, Line);
 
                     // See if the line contains variable, and replace every instance of it with its value
                     var SplitWords = Line.SplitEncloseDoubleQuotes(" ");
@@ -104,12 +104,12 @@ namespace KS.Scripting
                     // See if the line is a comment or command
                     if (!Line.StartsWith("#") & !Line.StartsWith(" "))
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Line {0} is not a comment.", Line);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Line {0} is not a comment.", Line);
                         Shell.Shell.GetLine(Line);
                     }
                     else // For debugging purposes
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Line {0} is a comment.", Line);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Line {0} is a comment.", Line);
                     }
                 }
 
@@ -120,8 +120,8 @@ namespace KS.Scripting
             catch (Exception ex)
             {
                 Kernel.Kernel.KernelEventManager.RaiseUESHError(ScriptPath, ScriptArguments, ex);
-                DebugWriter.Wdbg(DebugLevel.E, "Error trying to execute script {0} with arguments {1}: {2}", ScriptPath, ScriptArguments, ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to execute script {0} with arguments {1}: {2}", ScriptPath, ScriptArguments, ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
                 throw new Kernel.Exceptions.UESHScriptException(Translate.DoTranslation("The script is malformed. Check the script and resolve any errors: {0}"), ex, ex.Message);
             }
         }

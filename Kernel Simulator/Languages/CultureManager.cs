@@ -35,18 +35,18 @@ namespace KS.Languages
         public static void UpdateCulture()
         {
             string StrCult = !(GetCulturesFromCurrentLang().Count == 0) ? GetCulturesFromCurrentLang()[0].EnglishName : CultureInfo.CurrentCulture.EnglishName;
-            DebugWriter.Wdbg(DebugLevel.I, "Culture for {0} is {1}", LanguageManager.CurrentLanguage, StrCult);
+            DebugWriter.WriteDebug(DebugLevel.I, "Culture for {0} is {1}", LanguageManager.CurrentLanguage, StrCult);
             var Cults = CultureInfo.GetCultures(CultureTypes.AllCultures);
-            DebugWriter.Wdbg(DebugLevel.I, "Parsing {0} cultures for {1}", Cults.Length, StrCult);
+            DebugWriter.WriteDebug(DebugLevel.I, "Parsing {0} cultures for {1}", Cults.Length, StrCult);
             foreach (CultureInfo Cult in Cults)
             {
                 if ((Cult.EnglishName ?? "") == (StrCult ?? ""))
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Found. Changing culture...");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Found. Changing culture...");
                     CurrentCult = Cult;
                     var Token = ConfigTools.GetConfigCategory(Config.ConfigCategory.General);
                     ConfigTools.SetConfigValue(Config.ConfigCategory.General, Token, "Culture", CurrentCult.Name);
-                    DebugWriter.Wdbg(DebugLevel.I, "Saved new culture.");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Saved new culture.");
                     break;
                 }
             }
@@ -63,11 +63,11 @@ namespace KS.Languages
             {
                 if ((Cult.EnglishName ?? "") == (Culture ?? ""))
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Found. Changing culture...");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Found. Changing culture...");
                     CurrentCult = Cult;
                     var Token = ConfigTools.GetConfigCategory(Config.ConfigCategory.General);
                     ConfigTools.SetConfigValue(Config.ConfigCategory.General, Token, "Culture", CurrentCult.Name);
-                    DebugWriter.Wdbg(DebugLevel.I, "Saved new culture.");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Saved new culture.");
                     break;
                 }
             }

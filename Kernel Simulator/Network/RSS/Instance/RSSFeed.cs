@@ -116,7 +116,7 @@ namespace KS.Network.RSS.Instance
         public void Refresh(string FeedUrl, RSSFeedType FeedType)
         {
             // Make a web request indicator
-            DebugWriter.Wdbg(DebugLevel.I, "Refreshing feed {0}...", FeedUrl);
+            DebugWriter.WriteDebug(DebugLevel.I, "Refreshing feed {0}...", FeedUrl);
             var FeedWebRequest = NetworkTransfer.WClient.GetAsync(FeedUrl).Result;
 
             // Load the RSS feed and get the feed XML document

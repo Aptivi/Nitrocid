@@ -106,7 +106,7 @@ namespace KS.Misc.Execution
                 CommandProcess.ErrorDataReceived += ExecutableOutput;
 
                 // Start the process
-                DebugWriter.Wdbg(DebugLevel.I, "Starting...");
+                DebugWriter.WriteDebug(DebugLevel.I, "Starting...");
                 CommandProcess.Start();
                 CommandProcess.BeginOutputReadLine();
                 CommandProcess.BeginErrorReadLine();
@@ -148,7 +148,7 @@ namespace KS.Misc.Execution
             catch (Exception ex)
             {
                 Kernel.Kernel.KernelEventManager.RaiseProcessError(File + Args, ex);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebugStackTrace(ex);
                 TextWriterColor.Write(Translate.DoTranslation("Error trying to execute command") + " {2}." + Kernel.Kernel.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, ColorTools.ColTypes.Error, ex.GetType().FullName, ex.Message, File);
             }
             return -1;
@@ -162,7 +162,7 @@ namespace KS.Misc.Execution
         private static void ExecutableOutput(object sendingProcess, DataReceivedEventArgs outLine)
         {
             NewDataSpotted = true;
-            DebugWriter.Wdbg(DebugLevel.I, outLine.Data);
+            DebugWriter.WriteDebug(DebugLevel.I, outLine.Data);
             TextWriterColor.Write(outLine.Data, true, ColorTools.ColTypes.Neutral);
             ProcessData += outLine.Data;
         }

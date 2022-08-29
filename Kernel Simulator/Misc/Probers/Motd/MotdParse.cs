@@ -42,21 +42,21 @@ namespace KS.Misc.Probers.Motd
 
                 // Get the MOTD and MAL file path
                 MotdFilePath = Filesystem.NeutralizePath(MotdFilePath);
-                DebugWriter.Wdbg(DebugLevel.I, "Path: {0}", MotdFilePath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", MotdFilePath);
 
                 // Set the message according to message type
                 MOTDStreamW = new System.IO.StreamWriter(MotdFilePath) { AutoFlush = true };
-                DebugWriter.Wdbg(DebugLevel.I, "Opened stream to MOTD path");
+                DebugWriter.WriteDebug(DebugLevel.I, "Opened stream to MOTD path");
                 MOTDStreamW.WriteLine(Message);
                 Kernel.Kernel.MOTDMessage = Message;
 
                 // Close the message stream
                 MOTDStreamW.Close();
-                DebugWriter.Wdbg(DebugLevel.I, "Stream closed");
+                DebugWriter.WriteDebug(DebugLevel.I, "Stream closed");
             }
             catch (Exception ex)
             {
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebugStackTrace(ex);
                 throw new MOTDException(Translate.DoTranslation("Error when trying to set MOTD: {0}"), ex.Message);
             }
         }
@@ -73,19 +73,19 @@ namespace KS.Misc.Probers.Motd
 
                 // Get the MOTD and MAL file path
                 MotdFilePath = Filesystem.NeutralizePath(MotdFilePath);
-                DebugWriter.Wdbg(DebugLevel.I, "Path: {0}", MotdFilePath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", MotdFilePath);
 
                 // Read the message according to message type
                 MOTDStreamR = new System.IO.StreamReader(MotdFilePath);
-                DebugWriter.Wdbg(DebugLevel.I, "Opened stream to MOTD path");
+                DebugWriter.WriteDebug(DebugLevel.I, "Opened stream to MOTD path");
                 MOTDBuilder.Append(MOTDStreamR.ReadToEnd());
                 Kernel.Kernel.MOTDMessage = MOTDBuilder.ToString();
                 MOTDStreamR.Close();
-                DebugWriter.Wdbg(DebugLevel.I, "Stream closed");
+                DebugWriter.WriteDebug(DebugLevel.I, "Stream closed");
             }
             catch (Exception ex)
             {
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebugStackTrace(ex);
                 throw new MOTDException(Translate.DoTranslation("Error when trying to get MOTD: {0}"), ex.Message);
             }
         }

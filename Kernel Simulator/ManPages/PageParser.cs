@@ -44,8 +44,8 @@ namespace KS.ManPages
                 if (Path.GetExtension(ManualFile) == ".man")
                 {
                     // We found the manual, but we need to check its contents.
-                    DebugWriter.Wdbg(DebugLevel.I, "Found manual page {0}.", ManualFile);
-                    DebugWriter.Wdbg(DebugLevel.I, "Parsing manpage...");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Found manual page {0}.", ManualFile);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Parsing manpage...");
                     var ManualInstance = new Manual(ManualFile);
                     PageManager.AddManualPage(ManualInstance.Title, ManualInstance);
                 }
@@ -67,7 +67,7 @@ namespace KS.ManPages
             {
                 bool InternalParseDone = false;
                 ManualFile = Filesystem.NeutralizePath(ManualFile);
-                DebugWriter.Wdbg(DebugLevel.I, "Current manual file: {0}", ManualFile);
+                DebugWriter.WriteDebug(DebugLevel.I, "Current manual file: {0}", ManualFile);
 
                 // First, get all lines in the file
                 var ManLines = File.ReadAllLines(ManualFile);
@@ -81,7 +81,7 @@ namespace KS.ManPages
                         string TodoConstant = "TODO";
                         if (ManLine.StartsWith("~~-") & ManLine.Contains(TodoConstant))
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "TODO found on this line: {0}", ManLine);
+                            DebugWriter.WriteDebug(DebugLevel.I, "TODO found on this line: {0}", ManLine);
                             Todos.Add(ManLine);
                         }
 
@@ -100,7 +100,7 @@ namespace KS.ManPages
                                 if ((ManLine ?? "") != (BodyEndConstant ?? ""))
                                 {
                                     if (!string.IsNullOrWhiteSpace(ManLine))
-                                        DebugWriter.Wdbg(DebugLevel.I, "Appending {0} to builder", ManLine);
+                                        DebugWriter.WriteDebug(DebugLevel.I, "Appending {0} to builder", ManLine);
                                     Body.AppendLine(PlaceParse.ProbePlaces(ManLine));
                                 }
                                 else
@@ -113,11 +113,11 @@ namespace KS.ManPages
                             else if (ManLine.StartsWith(RevisionConstant))
                             {
                                 // Found the revision constant
-                                DebugWriter.Wdbg(DebugLevel.I, "Revision found on this line: {0}", ManLine);
+                                DebugWriter.WriteDebug(DebugLevel.I, "Revision found on this line: {0}", ManLine);
                                 string Rev = ManLine.Substring(RevisionConstant.Length);
                                 if (string.IsNullOrWhiteSpace(Rev))
                                 {
-                                    DebugWriter.Wdbg(DebugLevel.W, "Revision not defined. Assuming v1...");
+                                    DebugWriter.WriteDebug(DebugLevel.W, "Revision not defined. Assuming v1...");
                                     Rev = "1";
                                 }
                                 ManRevision = Rev;
@@ -125,11 +125,11 @@ namespace KS.ManPages
                             else if (ManLine.StartsWith(TitleConstant))
                             {
                                 // Found the title constant
-                                DebugWriter.Wdbg(DebugLevel.I, "Title found on this line: {0}", ManLine);
+                                DebugWriter.WriteDebug(DebugLevel.I, "Title found on this line: {0}", ManLine);
                                 string Title = ManLine.Substring(TitleConstant.Length);
                                 if (string.IsNullOrWhiteSpace(Title))
                                 {
-                                    DebugWriter.Wdbg(DebugLevel.W, "Title not defined.");
+                                    DebugWriter.WriteDebug(DebugLevel.W, "Title not defined.");
                                     Title = $"Untitled ({PageManager.Pages.Count})";
                                 }
                                 ManTitle = Title;
@@ -144,7 +144,7 @@ namespace KS.ManPages
                     // Check to see if the manual starts with (*MAN START*) header
                     if (ManLine == "(*MAN START*)")
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Successfully found (*MAN START*) in manpage {0}.", ManualFile);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Successfully found (*MAN START*) in manpage {0}.", ManualFile);
                         InternalParseDone = true;
                     }
                 }
@@ -152,10 +152,10 @@ namespace KS.ManPages
                 // Check for body
                 if (InternalParseDone)
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Valid manual page! ({0})", ManualFile);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Valid manual page! ({0})", ManualFile);
                     if (string.IsNullOrWhiteSpace(Body.ToString()))
                     {
-                        DebugWriter.Wdbg(DebugLevel.W, "Body for \"{0}\" does not contain anything.", ManualFile);
+                        DebugWriter.WriteDebug(DebugLevel.W, "Body for \"{0}\" does not contain anything.", ManualFile);
                         Body.AppendLine(Translate.DoTranslation("Consider filling this manual page."));
                     }
                 }
@@ -167,8 +167,8 @@ namespace KS.ManPages
             catch (Exception ex)
             {
                 Success = false;
-                DebugWriter.Wdbg(DebugLevel.E, "The manual page {0} is invalid. {1}", ManTitle, ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "The manual page {0} is invalid. {1}", ManTitle, ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
             }
             return Success;
         }

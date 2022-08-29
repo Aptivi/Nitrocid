@@ -42,7 +42,7 @@ namespace KS.Network.Mail.Transfer
                 }
                 else
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "Connection state is inconsistent. Stopping IMAPKeepConnection()...");
+                    DebugWriter.WriteDebug(DebugLevel.W, "Connection state is inconsistent. Stopping IMAPKeepConnection()...");
                     Thread.CurrentThread.Interrupt();
                 }
             }
@@ -64,7 +64,7 @@ namespace KS.Network.Mail.Transfer
                 }
                 else
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "Connection state is inconsistent. Stopping SMTPKeepConnection()...");
+                    DebugWriter.WriteDebug(DebugLevel.W, "Connection state is inconsistent. Stopping SMTPKeepConnection()...");
                     Thread.CurrentThread.Interrupt();
                 }
             }

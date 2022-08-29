@@ -77,8 +77,8 @@ namespace KS.Kernel.Updates
             var CurrentVer = new Version(Kernel.KernelVersion);
             var UpdateVer = SortedVersions[0].UpdateVersion;
             var UpdateURI = SortedVersions[0].UpdateURL;
-            DebugWriter.Wdbg(DebugLevel.I, "Update version: {0}", UpdateVer.ToString());
-            DebugWriter.Wdbg(DebugLevel.I, "Update URL: {0}", UpdateURI.ToString());
+            DebugWriter.WriteDebug(DebugLevel.I, "Update version: {0}", UpdateVer.ToString());
+            DebugWriter.WriteDebug(DebugLevel.I, "Update URL: {0}", UpdateURI.ToString());
 
             // Install the values
             UpdateVersion = UpdateVer;

@@ -130,36 +130,36 @@ namespace KS.Misc.Splash
                         AssemblyLookup.AddPathToAssemblySearchPath(SplashDepPath);
 
                         // Now, actually parse that.
-                        DebugWriter.Wdbg(DebugLevel.I, "Parsing splash file {0}...", FilePath);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Parsing splash file {0}...", FilePath);
                         var SplashAssembly = Assembly.LoadFrom(FilePath);
                         var SplashInstance = GetSplashInstance(SplashAssembly);
                         if (SplashInstance is not null)
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Found valid splash! Getting information...");
+                            DebugWriter.WriteDebug(DebugLevel.I, "Found valid splash! Getting information...");
                             string Name = SplashInstance.SplashName;
                             bool DisplaysProgress = SplashInstance.SplashDisplaysProgress;
 
                             // Install the values to the new instance
-                            DebugWriter.Wdbg(DebugLevel.I, "- Name: {0}", Name);
-                            DebugWriter.Wdbg(DebugLevel.I, "- Displays Progress: {0}", DisplaysProgress);
-                            DebugWriter.Wdbg(DebugLevel.I, "Installing splash...");
+                            DebugWriter.WriteDebug(DebugLevel.I, "- Name: {0}", Name);
+                            DebugWriter.WriteDebug(DebugLevel.I, "- Displays Progress: {0}", DisplaysProgress);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Installing splash...");
                             var InstalledSplash = new SplashInfo(Name, SplashInstance, DisplaysProgress);
                             InstalledSplashes.AddOrModify(Name, InstalledSplash);
                         }
                         else
                         {
-                            DebugWriter.Wdbg(DebugLevel.W, "Skipping incompatible splash file {0}...", FilePath);
+                            DebugWriter.WriteDebug(DebugLevel.W, "Skipping incompatible splash file {0}...", FilePath);
                         }
                     }
                     catch (ReflectionTypeLoadException ex)
                     {
-                        DebugWriter.Wdbg(DebugLevel.W, "Could not handle splash file {0}! {1}", FilePath, ex.Message);
-                        DebugWriter.WStkTrc(ex);
+                        DebugWriter.WriteDebug(DebugLevel.W, "Could not handle splash file {0}! {1}", FilePath, ex.Message);
+                        DebugWriter.WriteDebugStackTrace(ex);
                     }
                 }
                 else
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "Skipping incompatible splash file {0} because file extension is not .dll ({1})...", FilePath, SplashFileInfo.Extension);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Skipping incompatible splash file {0} because file extension is not .dll ({1})...", FilePath, SplashFileInfo.Extension);
                 }
             }
         }
@@ -177,28 +177,28 @@ namespace KS.Misc.Splash
                 // Try to parse the splash file
                 try
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Parsing splash file {0}...", FilePath);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Parsing splash file {0}...", FilePath);
                     var SplashAssembly = Assembly.LoadFrom(FilePath);
                     var SplashInstance = GetSplashInstance(SplashAssembly);
                     if (SplashInstance is not null)
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Found valid splash! Getting information...");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Found valid splash! Getting information...");
                         string Name = SplashInstance.SplashName;
 
                         // Uninstall the splash
-                        DebugWriter.Wdbg(DebugLevel.I, "- Name: {0}", Name);
-                        DebugWriter.Wdbg(DebugLevel.I, "Uninstalling splash...");
+                        DebugWriter.WriteDebug(DebugLevel.I, "- Name: {0}", Name);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Uninstalling splash...");
                         InstalledSplashes.Remove(Name);
                     }
                     else
                     {
-                        DebugWriter.Wdbg(DebugLevel.W, "Skipping incompatible splash file {0}...", FilePath);
+                        DebugWriter.WriteDebug(DebugLevel.W, "Skipping incompatible splash file {0}...", FilePath);
                     }
                 }
                 catch (ReflectionTypeLoadException ex)
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "Could not handle splash file {0}! {1}", FilePath, ex.Message);
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Could not handle splash file {0}! {1}", FilePath, ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
         }

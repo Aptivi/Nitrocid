@@ -53,8 +53,8 @@ namespace KS.Kernel.Updates
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Failed to check for updates: {0}", ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to check for updates: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
             }
             return null;
         }

@@ -43,8 +43,8 @@ namespace KS.Misc.Animations.BeatFader
             ConsoleBase.ConsoleWrapper.CursorVisible = false;
             int BeatInterval = (int)Math.Round(60000d / Settings.BeatFaderDelay);
             int BeatIntervalStep = (int)Math.Round(BeatInterval / (double)Settings.BeatFaderMaxSteps);
-            DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Beat interval from {0} BPM: {1}", Settings.BeatFaderDelay, BeatInterval);
-            DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Beat steps: {0} ms", Settings.BeatFaderDelay, BeatIntervalStep);
+            DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Beat interval from {0} BPM: {1}", Settings.BeatFaderDelay, BeatInterval);
+            DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Beat steps: {0} ms", Settings.BeatFaderDelay, BeatIntervalStep);
             ThreadManager.SleepNoBlock(BeatIntervalStep, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
             // If we're cycling colors, set them. Else, use the user-provided color
@@ -52,7 +52,7 @@ namespace KS.Misc.Animations.BeatFader
             if (Settings.BeatFaderCycleColors)
             {
                 // We're cycling. Select the color mode, starting from true color
-                DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Cycling colors...");
+                DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Cycling colors...");
                 if (Settings.BeatFaderTrueColor)
                 {
                     RedColorNum = RandomDriver.Next(Settings.BeatFaderMinimumRedColorLevel, Settings.BeatFaderMinimumRedColorLevel);
@@ -73,12 +73,12 @@ namespace KS.Misc.Animations.BeatFader
                     GreenColorNum = ConsoleColor.G;
                     BlueColorNum = ConsoleColor.B;
                 }
-                DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
             }
             else
             {
                 // We're not cycling. Parse the color and then select the color mode, starting from true color
-                DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Parsing colors... {0}", Settings.BeatFaderBeatColor);
+                DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Parsing colors... {0}", Settings.BeatFaderBeatColor);
                 var UserColor = new Color(Settings.BeatFaderBeatColor);
                 if (UserColor.Type == ColorType.TrueColor)
                 {
@@ -93,14 +93,14 @@ namespace KS.Misc.Animations.BeatFader
                     GreenColorNum = ConsoleColor.G;
                     BlueColorNum = ConsoleColor.B;
                 }
-                DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
             }
 
             // Set thresholds
             double ThresholdRed = RedColorNum / (double)Settings.BeatFaderMaxSteps;
             double ThresholdGreen = GreenColorNum / (double)Settings.BeatFaderMaxSteps;
             double ThresholdBlue = BlueColorNum / (double)Settings.BeatFaderMaxSteps;
-            DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0};{1};{2})", ThresholdRed, ThresholdGreen, ThresholdBlue);
+            DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0};{1};{2})", ThresholdRed, ThresholdGreen, ThresholdBlue);
 
             // Fade out
             for (int CurrentStep = 1, loopTo = Settings.BeatFaderMaxSteps; CurrentStep <= loopTo; CurrentStep++)
@@ -109,12 +109,12 @@ namespace KS.Misc.Animations.BeatFader
                     ResizeSyncing = true;
                 if (ResizeSyncing)
                     break;
-                DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Step {0}/{1} each {2} ms", CurrentStep, Settings.BeatFaderMaxSteps, BeatIntervalStep);
+                DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Step {0}/{1} each {2} ms", CurrentStep, Settings.BeatFaderMaxSteps, BeatIntervalStep);
                 ThreadManager.SleepNoBlock(BeatIntervalStep, System.Threading.Thread.CurrentThread);
                 int CurrentColorRedOut = (int)Math.Round(RedColorNum - ThresholdRed * CurrentStep);
                 int CurrentColorGreenOut = (int)Math.Round(GreenColorNum - ThresholdGreen * CurrentStep);
                 int CurrentColorBlueOut = (int)Math.Round(BlueColorNum - ThresholdBlue * CurrentStep);
-                DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                     ResizeSyncing = true;
                 if (!ResizeSyncing)

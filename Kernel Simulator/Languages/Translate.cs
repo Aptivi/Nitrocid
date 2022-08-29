@@ -54,12 +54,12 @@ namespace KS.Languages
                 // Do translation
                 if (translatedString.ContainsKey(text))
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Translating string to {0}: {1}", lang, text);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Translating string to {0}: {1}", lang, text);
                     return translatedString[text];
                 }
                 else // String wasn't found
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "No string found in langlist. Lang: {0}, String: {1}", lang, text);
+                    DebugWriter.WriteDebug(DebugLevel.W, "No string found in langlist. Lang: {0}, String: {1}", lang, text);
                     text = "(( " + text + " ))";
                     return text;
                 }
@@ -70,7 +70,7 @@ namespace KS.Languages
             }
             else // If the language is invalid
             {
-                DebugWriter.Wdbg(DebugLevel.E, "{0} isn't in language list", lang);
+                DebugWriter.WriteDebug(DebugLevel.E, "{0} isn't in language list", lang);
                 return text;
             }
         }

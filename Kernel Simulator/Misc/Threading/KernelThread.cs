@@ -67,7 +67,7 @@ namespace KS.Misc.Threading
             ThreadDelegate = Executor;
             Name = ThreadName;
             IsBackground = Background;
-            DebugWriter.Wdbg(DebugLevel.I, "Made a new kernel thread {0} with ID {1}", ThreadName, BaseThread.ManagedThreadId);
+            DebugWriter.WriteDebug(DebugLevel.I, "Made a new kernel thread {0} with ID {1}", ThreadName, BaseThread.ManagedThreadId);
             ThreadManager.KernelThreads.Add(this);
         }
 
@@ -84,7 +84,7 @@ namespace KS.Misc.Threading
             ThreadDelegateParameterized = Executor;
             Name = ThreadName;
             IsBackground = Background;
-            DebugWriter.Wdbg(DebugLevel.I, "Made a new kernel thread {0} with ID {1}", ThreadName, BaseThread.ManagedThreadId);
+            DebugWriter.WriteDebug(DebugLevel.I, "Made a new kernel thread {0} with ID {1}", ThreadName, BaseThread.ManagedThreadId);
             ThreadManager.KernelThreads.Add(this);
         }
 
@@ -93,7 +93,7 @@ namespace KS.Misc.Threading
         /// </summary>
         public void Start()
         {
-            DebugWriter.Wdbg(DebugLevel.I, "Starting kernel thread {0} with ID {1}", BaseThread.Name, BaseThread.ManagedThreadId);
+            DebugWriter.WriteDebug(DebugLevel.I, "Starting kernel thread {0} with ID {1}", BaseThread.Name, BaseThread.ManagedThreadId);
             BaseThread.Start();
         }
 
@@ -103,7 +103,7 @@ namespace KS.Misc.Threading
         /// <param name="Parameter">The parameter class instance containing multiple parameters, or a usual single parameter</param>
         public void Start(object Parameter)
         {
-            DebugWriter.Wdbg(DebugLevel.I, "Starting kernel thread {0} with ID {1} with parameters", BaseThread.Name, BaseThread.ManagedThreadId);
+            DebugWriter.WriteDebug(DebugLevel.I, "Starting kernel thread {0} with ID {1} with parameters", BaseThread.Name, BaseThread.ManagedThreadId);
             BaseThread.Start(Parameter);
         }
 
@@ -112,7 +112,7 @@ namespace KS.Misc.Threading
         /// </summary>
         public void Stop()
         {
-            DebugWriter.Wdbg(DebugLevel.I, "Stopping kernel thread {0} with ID {1}", Name, BaseThread.ManagedThreadId);
+            DebugWriter.WriteDebug(DebugLevel.I, "Stopping kernel thread {0} with ID {1}", Name, BaseThread.ManagedThreadId);
             BaseThread.Interrupt();
 
             // Remake the thread to avoid illegal state exceptions
@@ -124,7 +124,7 @@ namespace KS.Misc.Threading
             {
                 BaseThread = new Thread(ThreadDelegate) { Name = Name, IsBackground = IsBackground };
             }
-            DebugWriter.Wdbg(DebugLevel.I, "Made a new kernel thread {0} with ID {1}", Name, BaseThread.ManagedThreadId);
+            DebugWriter.WriteDebug(DebugLevel.I, "Made a new kernel thread {0} with ID {1}", Name, BaseThread.ManagedThreadId);
         }
 
         /// <summary>
@@ -134,13 +134,13 @@ namespace KS.Misc.Threading
         {
             try
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Waiting for kernel thread {0} with ID {1}", BaseThread.Name, BaseThread.ManagedThreadId);
+                DebugWriter.WriteDebug(DebugLevel.I, "Waiting for kernel thread {0} with ID {1}", BaseThread.Name, BaseThread.ManagedThreadId);
                 BaseThread.Join();
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Can't wait for kernel thread: {0}", ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.I, "Can't wait for kernel thread: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
             }
         }
 

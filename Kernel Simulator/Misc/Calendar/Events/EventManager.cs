@@ -65,7 +65,7 @@ namespace KS.Misc.Calendar.Events
                 }
                 catch (ThreadInterruptedException)
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Aborting event listener...");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Aborting event listener...");
                     return;
                 }
             }
@@ -131,7 +131,7 @@ namespace KS.Misc.Calendar.Events
         {
             Making.MakeDirectory(Paths.GetKernelPath(KernelPathType.Events), false);
             var EventFiles = Directory.EnumerateFileSystemEntries(Paths.GetKernelPath(KernelPathType.Events), "*", SearchOption.AllDirectories).ToList();
-            DebugWriter.Wdbg(DebugLevel.I, "Got {0} events.", EventFiles.Count);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got {0} events.", EventFiles.Count);
 
             // Load all the events
             foreach (string EventFile in EventFiles)
@@ -153,22 +153,22 @@ namespace KS.Misc.Calendar.Events
             {
                 Filesystem.ThrowOnInvalidPath(EventFile);
                 EventFile = Filesystem.NeutralizePath(EventFile);
-                DebugWriter.Wdbg(DebugLevel.I, "Loading event {0}...", EventFile);
+                DebugWriter.WriteDebug(DebugLevel.I, "Loading event {0}...", EventFile);
 
                 // If file exists, convert the file to the event instance
                 if (Checking.FileExists(EventFile))
                 {
                     var Converter = new XmlSerializer(typeof(EventInfo));
                     var EventFileStream = new FileStream(EventFile, FileMode.Open);
-                    DebugWriter.Wdbg(DebugLevel.I, "Opened stream [{0}]. Converting...", EventFileStream.Length);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Opened stream [{0}]. Converting...", EventFileStream.Length);
                     EventInfo ConvertedEvent = (EventInfo)Converter.Deserialize(EventFileStream);
-                    DebugWriter.Wdbg(DebugLevel.I, "Converted!");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Converted!");
                     EventFileStream.Close();
                     return ConvertedEvent;
                 }
                 else
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "File doesn't exist!");
+                    DebugWriter.WriteDebug(DebugLevel.E, "File doesn't exist!");
                 }
                 return null;
             }
@@ -189,7 +189,7 @@ namespace KS.Misc.Calendar.Events
         {
             Filesystem.ThrowOnInvalidPath(Path);
             Path = Filesystem.NeutralizePath(Path);
-            DebugWriter.Wdbg(DebugLevel.I, "Saving events to {0}...", Path);
+            DebugWriter.WriteDebug(DebugLevel.I, "Saving events to {0}...", Path);
 
             // Remove all events from path, if running destructively
             if (Destructive)
@@ -211,9 +211,9 @@ namespace KS.Misc.Calendar.Events
             {
                 var EventInstance = CalendarEvents[EventIndex];
                 string EventFileName = $"[{EventIndex}] {EventInstance.EventTitle}.ksevent";
-                DebugWriter.Wdbg(DebugLevel.I, "Event file name: {0}...", EventFileName);
+                DebugWriter.WriteDebug(DebugLevel.I, "Event file name: {0}...", EventFileName);
                 string EventFilePath = Filesystem.NeutralizePath(EventFileName, Path);
-                DebugWriter.Wdbg(DebugLevel.I, "Event file path: {0}...", EventFilePath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Event file path: {0}...", EventFilePath);
                 SaveEvent(EventInstance, EventFilePath);
             }
         }
@@ -233,10 +233,10 @@ namespace KS.Misc.Calendar.Events
         {
             Filesystem.ThrowOnInvalidPath(File);
             File = Filesystem.NeutralizePath(File);
-            DebugWriter.Wdbg(DebugLevel.I, "Saving event to {0}...", File);
+            DebugWriter.WriteDebug(DebugLevel.I, "Saving event to {0}...", File);
             var Converter = new XmlSerializer(typeof(EventInfo));
             var EventFileStream = new FileStream(File, FileMode.OpenOrCreate);
-            DebugWriter.Wdbg(DebugLevel.I, "Opened stream with length {0}", EventFileStream.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "Opened stream with length {0}", EventFileStream.Length);
             Converter.Serialize(EventFileStream, EventInstance);
             EventFileStream.Close();
         }

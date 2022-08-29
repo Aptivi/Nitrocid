@@ -45,7 +45,7 @@ namespace KS.Shell.ShellBase.Commands
         /// <returns>True if found; False if not found or shell type is invalid.</returns>
         public static bool IsCommandFound(string Command, ShellType ShellType)
         {
-            DebugWriter.Wdbg(DebugLevel.I, "Command: {0}, ShellType: {1}", Command, ShellType);
+            DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, ShellType: {1}", Command, ShellType);
             if (Shell.UnifiedCommandDict.ContainsKey(Command))
                 return true;
             switch (ShellType)
@@ -117,7 +117,7 @@ namespace KS.Shell.ShellBase.Commands
         /// <returns>True if found; False if not found.</returns>
         public static bool IsCommandFound(string Command)
         {
-            DebugWriter.Wdbg(DebugLevel.I, "Command: {0}", Command);
+            DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}", Command);
             return Shell.UnifiedCommandDict.ContainsKey(Command) | FTPShellCommon.FTPCommands.ContainsKey(Command) | JsonShellCommon.JsonShell_Commands.ContainsKey(Command) | MailShellCommon.MailCommands.ContainsKey(Command) | RemoteDebugCmd.DebugCommands.ContainsKey(Command) | RSSShellCommon.RSSCommands.ContainsKey(Command) | SFTPShellCommon.SFTPCommands.ContainsKey(Command) | UESHShellCommon.Commands.ContainsKey(Command) | TestShellCommon.Test_Commands.ContainsKey(Command) | TextEditShellCommon.TextEdit_Commands.ContainsKey(Command) | ZipShellCommon.ZipShell_Commands.ContainsKey(Command) | HTTPShellCommon.HTTPCommands.ContainsKey(Command) | HexEditShellCommon.HexEdit_Commands.ContainsKey(Command) | RarShellCommon.RarShell_Commands.ContainsKey(Command);
         }
 

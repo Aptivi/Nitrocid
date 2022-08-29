@@ -46,15 +46,15 @@ namespace KS.Shell.Shells.UESH.Commands
             var FinalArgs = new List<string>();
             foreach (string arg in ListArgsOnly)
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Parsing argument {0}...", arg);
+                DebugWriter.WriteDebug(DebugLevel.I, "Parsing argument {0}...", arg);
                 if (ArgumentParse.AvailableArgs.ContainsKey(arg))
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Adding argument {0}...", arg);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Adding argument {0}...", arg);
                     FinalArgs.Add(arg);
                 }
                 else
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "Argument {0} not found.", arg);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Argument {0} not found.", arg);
                     TextWriterColor.Write(Translate.DoTranslation("Argument {0} not found to inject."), true, ColorTools.ColTypes.Warning, arg);
                 }
             }

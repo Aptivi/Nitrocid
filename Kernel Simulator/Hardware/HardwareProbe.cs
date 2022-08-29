@@ -56,8 +56,8 @@ namespace KS.Hardware
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Failed to probe hardware: {0}", ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to probe hardware: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
                 KernelTools.KernelError(KernelErrorLevel.F, true, 10L, Translate.DoTranslation("There was an error when probing hardware: {0}"), ex, ex.Message);
             }
 
@@ -70,7 +70,7 @@ namespace KS.Hardware
         /// </summary>
         private static void WriteWhatProbed(InxiHardwareType Hardware)
         {
-            DebugWriter.Wdbg(DebugLevel.I, "Hardware {0} ({1}) successfully probed.", Hardware, Hardware.ToString());
+            DebugWriter.WriteDebug(DebugLevel.I, "Hardware {0} ({1}) successfully probed.", Hardware, Hardware.ToString());
             if (!Flags.QuietHardwareProbe & Flags.VerboseHardwareProbe | Flags.EnableSplash)
                 SplashReport.ReportProgress(Translate.DoTranslation("Successfully probed {0}.").FormatString(Hardware.ToString()), 5, ColorTools.ColTypes.Neutral);
         }
@@ -80,7 +80,7 @@ namespace KS.Hardware
         /// </summary>
         private static void WriteInxiDebugData(string Message, string PlainMessage)
         {
-            DebugWriter.Wdbg(DebugLevel.I, PlainMessage);
+            DebugWriter.WriteDebug(DebugLevel.I, PlainMessage);
         }
 
     }

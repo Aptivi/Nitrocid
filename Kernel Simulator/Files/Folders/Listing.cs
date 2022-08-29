@@ -53,7 +53,7 @@ namespace KS.Files.Folders
         public static List<FileSystemInfo> CreateList(string folder, bool Sorted = false)
         {
             Filesystem.ThrowOnInvalidPath(folder);
-            DebugWriter.Wdbg(DebugLevel.I, "Folder {0} will be listed...", folder);
+            DebugWriter.WriteDebug(DebugLevel.I, "Folder {0} will be listed...", folder);
             var FilesystemEntries = new List<FileSystemInfo>();
 
             // List files and folders
@@ -67,30 +67,30 @@ namespace KS.Files.Folders
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "Failed to make a list of filesystem entries for directory {0}: {1}", folder, ex.Message);
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to make a list of filesystem entries for directory {0}: {1}", folder, ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     throw new Kernel.Exceptions.FilesystemException(Translate.DoTranslation("Failed to make a list of filesystem entries for directory") + " {0}", ex, folder);
                 }
                 foreach (string Entry in enumeration)
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Enumerating {0}...", Entry);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Enumerating {0}...", Entry);
                     try
                     {
                         if (Checking.FileExists(Entry))
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Entry is a file. Adding {0} to list...", Entry);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Entry is a file. Adding {0} to list...", Entry);
                             FilesystemEntries.Add(new FileInfo(Entry));
                         }
                         else if (Checking.FolderExists(Entry))
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Entry is a folder. Adding {0} to list...", Entry);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Entry is a folder. Adding {0} to list...", Entry);
                             FilesystemEntries.Add(new DirectoryInfo(Entry));
                         }
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.Wdbg(DebugLevel.E, "Failed to enumerate {0} for directory {1}: {2}", Entry, folder, ex.Message);
-                        DebugWriter.WStkTrc(ex);
+                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to enumerate {0} for directory {1}: {2}", Entry, folder, ex.Message);
+                        DebugWriter.WriteDebugStackTrace(ex);
                     }
                 }
             }
@@ -196,7 +196,7 @@ namespace KS.Files.Folders
         public static void List(string folder, bool ShowFileDetails, bool SuppressUnauthorizedMessage, bool Sort)
         {
             Filesystem.ThrowOnInvalidPath(folder);
-            DebugWriter.Wdbg(DebugLevel.I, "Folder {0} will be listed...", folder);
+            DebugWriter.WriteDebug(DebugLevel.I, "Folder {0} will be listed...", folder);
 
             // List files and folders
             folder = Filesystem.NeutralizePath(folder);
@@ -216,7 +216,7 @@ namespace KS.Files.Folders
                     long TotalSize = 0L;
                     foreach (FileSystemInfo Entry in enumeration)
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Enumerating {0}...", Entry.FullName);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Enumerating {0}...", Entry.FullName);
                         try
                         {
                             if (Checking.FileExists(Entry.FullName))
@@ -233,7 +233,7 @@ namespace KS.Files.Folders
                         {
                             if (!SuppressUnauthorizedMessage)
                                 TextWriterColor.Write("- " + Translate.DoTranslation("You are not authorized to get info for {0}."), true, ColorTools.ColTypes.Error, Entry.Name);
-                            DebugWriter.WStkTrc(ex);
+                            DebugWriter.WriteDebugStackTrace(ex);
                         }
                     }
 
@@ -244,7 +244,7 @@ namespace KS.Files.Folders
                 catch (Exception ex)
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Unknown error while listing in directory: {0}"), true, ColorTools.ColTypes.Error, ex.Message);
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
             else if (Checking.FileExists(folder))
@@ -257,13 +257,13 @@ namespace KS.Files.Folders
                 {
                     if (!SuppressUnauthorizedMessage)
                         TextWriterColor.Write("- " + Translate.DoTranslation("You are not authorized to get info for {0}."), true, ColorTools.ColTypes.Error, folder);
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("Directory {0} not found"), true, ColorTools.ColTypes.Error, folder);
-                DebugWriter.Wdbg(DebugLevel.I, "IO.FolderExists = {0}", Checking.FolderExists(folder));
+                DebugWriter.WriteDebug(DebugLevel.I, "IO.FolderExists = {0}", Checking.FolderExists(folder));
             }
         }
 
@@ -313,8 +313,8 @@ namespace KS.Files.Folders
             }
             catch (Exception ex)
             {
-                DebugWriter.WStkTrc(ex);
-                DebugWriter.Wdbg(DebugLevel.E, "Failed to combine files: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to combine files: {0}", ex.Message);
             }
             return Entries;
         }
@@ -338,7 +338,7 @@ namespace KS.Files.Folders
                 if (Directory.Exists(Parent))
                 {
                     Entries = Directory.EnumerateFileSystemEntries(Parent, Pattern).ToArray();
-                    DebugWriter.Wdbg(DebugLevel.I, "Enumerated {0} entries from parent {1} using pattern {2}", Entries.Length, Parent, Pattern);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Enumerated {0} entries from parent {1} using pattern {2}", Entries.Length, Parent, Pattern);
                 }
                 else
                 {
@@ -347,8 +347,8 @@ namespace KS.Files.Folders
             }
             catch (Exception ex)
             {
-                DebugWriter.WStkTrc(ex);
-                DebugWriter.Wdbg(DebugLevel.E, "Failed to combine files: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to combine files: {0}", ex.Message);
             }
             return Entries;
         }

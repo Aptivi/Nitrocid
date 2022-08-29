@@ -85,7 +85,7 @@ namespace KS.Login
             // Adds user into permission lists.
             try
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Mode: {0}", PermissionMode);
+                DebugWriter.WriteDebug(DebugLevel.I, "Mode: {0}", PermissionMode);
                 if (PermissionMode == PermissionManagementMode.Allow)
                 {
                     AddPermission(PermType, Username);
@@ -98,14 +98,14 @@ namespace KS.Login
                 }
                 else
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "Mode is invalid");
+                    DebugWriter.WriteDebug(DebugLevel.W, "Mode is invalid");
                     TextWriterColor.Write(Translate.DoTranslation("Invalid mode {0}"), true, ColorTools.ColTypes.Error, PermissionMode);
                 }
             }
             catch (Exception ex)
             {
                 TextWriterColor.Write(Translate.DoTranslation("You have either found a bug, or the permission you tried to add or remove is already done, or other error.") + Kernel.Kernel.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, ColorTools.ColTypes.Error, ex.GetType().FullName, ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebugStackTrace(ex);
             }
         }
 
@@ -120,7 +120,7 @@ namespace KS.Login
             // Sets the required permissions to false.
             if (Login.Users.Keys.ToArray().Contains(Username))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Type is {0}", PermType);
+                DebugWriter.WriteDebug(DebugLevel.I, "Type is {0}", PermType);
                 switch (PermType)
                 {
                     case PermissionType.Administrator:
@@ -141,15 +141,15 @@ namespace KS.Login
 
                     default:
                         {
-                            DebugWriter.Wdbg(DebugLevel.W, "Type is invalid");
+                            DebugWriter.WriteDebug(DebugLevel.W, "Type is invalid");
                             throw new Kernel.Exceptions.PermissionManagementException(Translate.DoTranslation("Failed to add user into permission lists: invalid type {0}"), PermType);
                         }
                 }
-                DebugWriter.Wdbg(DebugLevel.I, "User {0} permission added; value is now: {1}", Username, UserPermissions[Username]);
+                DebugWriter.WriteDebug(DebugLevel.I, "User {0} permission added; value is now: {1}", Username, UserPermissions[Username]);
             }
             else
             {
-                DebugWriter.Wdbg(DebugLevel.W, "User {0} not found on list", Username);
+                DebugWriter.WriteDebug(DebugLevel.W, "User {0} not found on list", Username);
                 throw new Kernel.Exceptions.PermissionManagementException(Translate.DoTranslation("Failed to add user into permission lists: invalid user {0}"), Username);
             }
 
@@ -198,7 +198,7 @@ namespace KS.Login
             // Sets the required permissions to false.
             if (Login.Users.Keys.ToArray().Contains(Username) & (Username ?? "") != (Login.CurrentUser?.Username ?? ""))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Type is {0}", PermType);
+                DebugWriter.WriteDebug(DebugLevel.I, "Type is {0}", PermType);
                 switch (PermType)
                 {
                     case PermissionType.Administrator:
@@ -219,11 +219,11 @@ namespace KS.Login
 
                     default:
                         {
-                            DebugWriter.Wdbg(DebugLevel.W, "Type is invalid");
+                            DebugWriter.WriteDebug(DebugLevel.W, "Type is invalid");
                             throw new Kernel.Exceptions.PermissionManagementException(Translate.DoTranslation("Failed to remove user from permission lists: invalid type {0}"), PermType);
                         }
                 }
-                DebugWriter.Wdbg(DebugLevel.I, "User {0} permission removed; value is now: {1}", Username, UserPermissions[Username]);
+                DebugWriter.WriteDebug(DebugLevel.I, "User {0} permission removed; value is now: {1}", Username, UserPermissions[Username]);
             }
             else if ((Username ?? "") == (Login.CurrentUser.Username ?? ""))
             {
@@ -231,7 +231,7 @@ namespace KS.Login
             }
             else
             {
-                DebugWriter.Wdbg(DebugLevel.W, "User {0} not found on list", Username);
+                DebugWriter.WriteDebug(DebugLevel.W, "User {0} not found on list", Username);
                 throw new Kernel.Exceptions.PermissionManagementException(Translate.DoTranslation("Failed to remove user from permission lists: invalid user {0}"), Username);
             }
 
@@ -285,16 +285,16 @@ namespace KS.Login
                     var UserOldPermissions = UserPermissions[OldName];
 
                     // Remove old user entry
-                    DebugWriter.Wdbg(DebugLevel.I, "Removing {0} from permissions list...", OldName);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removing {0} from permissions list...", OldName);
                     UserPermissions.Remove(OldName);
 
                     // Add new user entry
                     UserPermissions.Add(Username, UserOldPermissions);
-                    DebugWriter.Wdbg(DebugLevel.I, "Added {0} to permissions list with value of {1}", Username, UserPermissions[Username]);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Added {0} to permissions list with value of {1}", Username, UserPermissions[Username]);
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     throw new Kernel.Exceptions.PermissionManagementException(Translate.DoTranslation("You have either found a bug, or the permission you tried to edit for a new user has failed.") + Kernel.Kernel.NewLine + Translate.DoTranslation("Error {0}: {1}"), ex, ex.GetType().FullName, ex.Message);
                 }
             }

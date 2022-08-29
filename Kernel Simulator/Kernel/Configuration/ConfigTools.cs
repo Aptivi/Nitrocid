@@ -59,8 +59,8 @@ namespace KS.Kernel.Configuration
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Failed to reload config: {0}", ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to reload config: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;
         }
@@ -80,7 +80,7 @@ namespace KS.Kernel.Configuration
             // Check for missing sections
             if (ConfigToken.Count != ExpectedSections)
             {
-                DebugWriter.Wdbg(DebugLevel.W, "Missing sections. Config fix needed set to true.");
+                DebugWriter.WriteDebug(DebugLevel.W, "Missing sections. Config fix needed set to true.");
                 FixesNeeded = true;
             }
 
@@ -94,7 +94,7 @@ namespace KS.Kernel.Configuration
                         // Check the normal keys
                         if (ConfigToken[Section.Key].Count() != PristineConfigToken[Section.Key].Count())
                         {
-                            DebugWriter.Wdbg(DebugLevel.W, "Missing sections and/or keys in {0}. Config fix needed set to true.", Section.Key);
+                            DebugWriter.WriteDebug(DebugLevel.W, "Missing sections and/or keys in {0}. Config fix needed set to true.", Section.Key);
                             FixesNeeded = true;
                         }
 
@@ -105,7 +105,7 @@ namespace KS.Kernel.Configuration
                             {
                                 if (ConfigToken["Screensaver"][ScreensaverSection.Name].Count() != PristineConfigToken["Screensaver"][ScreensaverSection.Name].Count())
                                 {
-                                    DebugWriter.Wdbg(DebugLevel.W, "Missing sections and/or keys in Screensaver > {0}. Config fix needed set to true.", ScreensaverSection.Name);
+                                    DebugWriter.WriteDebug(DebugLevel.W, "Missing sections and/or keys in Screensaver > {0}. Config fix needed set to true.", ScreensaverSection.Name);
                                     FixesNeeded = true;
                                 }
                             }
@@ -118,7 +118,7 @@ namespace KS.Kernel.Configuration
                             {
                                 if (ConfigToken["Splash"][SplashSection.Name].Count() != PristineConfigToken["Splash"][SplashSection.Name].Count())
                                 {
-                                    DebugWriter.Wdbg(DebugLevel.W, "Missing sections and/or keys in Splash > {0}. Config fix needed set to true.", SplashSection.Name);
+                                    DebugWriter.WriteDebug(DebugLevel.W, "Missing sections and/or keys in Splash > {0}. Config fix needed set to true.", SplashSection.Name);
                                     FixesNeeded = true;
                                 }
                             }
@@ -129,8 +129,8 @@ namespace KS.Kernel.Configuration
             catch (Exception ex)
             {
                 // Somehow, the config is corrupt or something. Fix it.
-                DebugWriter.Wdbg(DebugLevel.E, "Found a serious error in configuration: {0}", ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Found a serious error in configuration: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
                 FixesNeeded = true;
             }
 
@@ -148,11 +148,11 @@ namespace KS.Kernel.Configuration
         public static JToken GetConfigCategory(Config.ConfigCategory ConfigCategory, string ConfigSubCategoryName = "")
         {
             // Try to parse the config category
-            DebugWriter.Wdbg(DebugLevel.I, "Parsing config category {0}...", ConfigCategory);
+            DebugWriter.WriteDebug(DebugLevel.I, "Parsing config category {0}...", ConfigCategory);
             if (Enum.TryParse(((int)ConfigCategory).ToString(), out ConfigCategory))
             {
                 // We got a valid category. Now, get the token for the specific category
-                DebugWriter.Wdbg(DebugLevel.I, "Category {0} found! Parsing sub-category {1} ({2})...", ConfigCategory, ConfigSubCategoryName, ConfigSubCategoryName.Length);
+                DebugWriter.WriteDebug(DebugLevel.I, "Category {0} found! Parsing sub-category {1} ({2})...", ConfigCategory, ConfigSubCategoryName, ConfigSubCategoryName.Length);
                 var CategoryToken = ConfigToken[ConfigCategory.ToString()];
 
                 // Try to get the sub-category token and check to see if it's found or not
@@ -160,29 +160,29 @@ namespace KS.Kernel.Configuration
                 if (!string.IsNullOrWhiteSpace(ConfigSubCategoryName) & SubCategoryToken is not null)
                 {
                     // We got the subcategory! Check to see if it's really a sub-category (Object) or not
-                    DebugWriter.Wdbg(DebugLevel.I, "Sub-category {0} found! Is it really the sub-category? Type = {1}", ConfigSubCategoryName, SubCategoryToken.Type);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Sub-category {0} found! Is it really the sub-category? Type = {1}", ConfigSubCategoryName, SubCategoryToken.Type);
                     if (SubCategoryToken.Type == JTokenType.Object)
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "It is really a sub-category!");
+                        DebugWriter.WriteDebug(DebugLevel.I, "It is really a sub-category!");
                         return SubCategoryToken;
                     }
                     else
                     {
-                        DebugWriter.Wdbg(DebugLevel.W, "It is not really a sub-category. Returning master category...");
+                        DebugWriter.WriteDebug(DebugLevel.W, "It is not really a sub-category. Returning master category...");
                         return CategoryToken;
                     }
                 }
                 else
                 {
                     // We only got the full category.
-                    DebugWriter.Wdbg(DebugLevel.I, "Returning master category...");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Returning master category...");
                     return CategoryToken;
                 }
             }
             else
             {
                 // We didn't get a category.
-                DebugWriter.Wdbg(DebugLevel.E, "Category {0} not found!", ConfigCategory);
+                DebugWriter.WriteDebug(DebugLevel.E, "Category {0} not found!", ConfigCategory);
                 throw new Exceptions.ConfigException(Translate.DoTranslation("Config category {0} not found."), ConfigCategory);
             }
         }
@@ -220,17 +220,17 @@ namespace KS.Kernel.Configuration
         public static void SetConfigValue(Config.ConfigCategory ConfigCategory, JToken ConfigCategoryToken, string ConfigEntryName, JToken ConfigValue)
         {
             // Try to parse the config category
-            DebugWriter.Wdbg(DebugLevel.I, "Parsing config category {0}...", ConfigCategory);
+            DebugWriter.WriteDebug(DebugLevel.I, "Parsing config category {0}...", ConfigCategory);
             if (Enum.TryParse(((int)ConfigCategory).ToString(), out ConfigCategory))
             {
                 // We have a valid category. Now, find the config entry property in the token
-                DebugWriter.Wdbg(DebugLevel.I, "Parsing config entry {0}...", ConfigEntryName);
+                DebugWriter.WriteDebug(DebugLevel.I, "Parsing config entry {0}...", ConfigEntryName);
                 var CategoryToken = ConfigToken[ConfigCategory.ToString()];
                 if (ConfigCategoryToken[ConfigEntryName] is not null)
                 {
                     // Assign the new value to it and write the changes to the token and the config file. Don't worry, debuggers, when you set the value like below,
                     // it will automatically save the changes to ConfigToken as in three lines above
-                    DebugWriter.Wdbg(DebugLevel.E, "Entry {0} found! Setting value...", ConfigEntryName);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Entry {0} found! Setting value...", ConfigEntryName);
                     ConfigCategoryToken[ConfigEntryName] = ConfigValue;
 
                     // Write the changes to the config file
@@ -239,14 +239,14 @@ namespace KS.Kernel.Configuration
                 else
                 {
                     // We didn't get an entry.
-                    DebugWriter.Wdbg(DebugLevel.E, "Entry {0} not found!", ConfigEntryName);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Entry {0} not found!", ConfigEntryName);
                     throw new Exceptions.ConfigException(Translate.DoTranslation("Config entry {0} not found."), ConfigEntryName);
                 }
             }
             else
             {
                 // We didn't get a category.
-                DebugWriter.Wdbg(DebugLevel.E, "Category {0} not found!", ConfigCategory);
+                DebugWriter.WriteDebug(DebugLevel.E, "Category {0} not found!", ConfigCategory);
                 throw new Exceptions.ConfigException(Translate.DoTranslation("Config category {0} not found."), ConfigCategory);
             }
         }
@@ -281,29 +281,29 @@ namespace KS.Kernel.Configuration
         public static JToken GetConfigValue(Config.ConfigCategory ConfigCategory, JToken ConfigCategoryToken, string ConfigEntryName)
         {
             // Try to parse the config category
-            DebugWriter.Wdbg(DebugLevel.I, "Parsing config category {0}...", ConfigCategory);
+            DebugWriter.WriteDebug(DebugLevel.I, "Parsing config category {0}...", ConfigCategory);
             if (Enum.TryParse(((int)ConfigCategory).ToString(), out ConfigCategory))
             {
                 // We have a valid category. Now, find the config entry property in the token
-                DebugWriter.Wdbg(DebugLevel.I, "Parsing config entry {0}...", ConfigEntryName);
+                DebugWriter.WriteDebug(DebugLevel.I, "Parsing config entry {0}...", ConfigEntryName);
                 var CategoryToken = ConfigToken[ConfigCategory.ToString()];
                 if (ConfigCategoryToken[ConfigEntryName] is not null)
                 {
                     // We got the appropriate value! Return it.
-                    DebugWriter.Wdbg(DebugLevel.E, "Entry {0} found! Getting value...", ConfigEntryName);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Entry {0} found! Getting value...", ConfigEntryName);
                     return ConfigCategoryToken[ConfigEntryName];
                 }
                 else
                 {
                     // We didn't get an entry.
-                    DebugWriter.Wdbg(DebugLevel.E, "Entry {0} not found!", ConfigEntryName);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Entry {0} not found!", ConfigEntryName);
                     throw new Exceptions.ConfigException(Translate.DoTranslation("Config entry {0} not found."), ConfigEntryName);
                 }
             }
             else
             {
                 // We didn't get a category.
-                DebugWriter.Wdbg(DebugLevel.E, "Category {0} not found!", ConfigCategory);
+                DebugWriter.WriteDebug(DebugLevel.E, "Category {0} not found!", ConfigCategory);
                 throw new Exceptions.ConfigException(Translate.DoTranslation("Config category {0} not found."), ConfigCategory);
             }
         }
@@ -337,8 +337,8 @@ namespace KS.Kernel.Configuration
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Failed to find setting {0}: {1}", Pattern, ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to find setting {0}: {1}", Pattern, ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
             }
 
             // Return the results

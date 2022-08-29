@@ -38,7 +38,7 @@ namespace KS.Files.Read
             filename = Filesystem.NeutralizePath(filename);
             using (var FStream = new StreamReader(filename))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Stream to file {0} opened.", filename);
+                DebugWriter.WriteDebug(DebugLevel.I, "Stream to file {0} opened.", filename);
                 while (!FStream.EndOfStream)
                     FileContents.Add(FStream.ReadLine());
             }

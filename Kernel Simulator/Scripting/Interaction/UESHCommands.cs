@@ -88,8 +88,8 @@ namespace KS.Scripting.Interaction
         {
             // Variables
             string Answer = InputStyle.PromptInput(Question);
-            DebugWriter.Wdbg(DebugLevel.I, "Script var: {0} ({1})", ScriptVariable, UESHVariables.ShellVariables.ContainsKey(ScriptVariable));
-            DebugWriter.Wdbg(DebugLevel.I, "Setting to {0}...", Answer);
+            DebugWriter.WriteDebug(DebugLevel.I, "Script var: {0} ({1})", ScriptVariable, UESHVariables.ShellVariables.ContainsKey(ScriptVariable));
+            DebugWriter.WriteDebug(DebugLevel.I, "Setting to {0}...", Answer);
             UESHVariables.SetVariable(ScriptVariable, Answer);
         }
 

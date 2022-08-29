@@ -58,21 +58,21 @@ namespace KS.Network.FTP.Transfer
                 {
                     // Show a message to download
                     Kernel.Kernel.KernelEventManager.RaiseFTPPreDownload(File);
-                    DebugWriter.Wdbg(DebugLevel.I, "Downloading file {0}...", File);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Downloading file {0}...", File);
 
                     // Try to download 3 times
                     string LocalFilePath = Files.Filesystem.NeutralizePath(LocalFile, FTPShellCommon.FtpCurrentDirectory);
                     var Result = FTPShellCommon.ClientFTP.DownloadFile(LocalFilePath, File, FtpLocalExists.Resume, (FtpVerify)((int)FtpVerify.Retry + (int)FtpVerify.Throw), FTPTransferProgress.FileProgress);
 
                     // Show a message that it's downloaded
-                    DebugWriter.Wdbg(DebugLevel.I, "Downloaded file {0}.", File);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Downloaded file {0}.", File);
                     Kernel.Kernel.KernelEventManager.RaiseFTPPostDownload(File, Result.IsSuccess());
                     return true;
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WStkTrc(ex);
-                    DebugWriter.Wdbg(DebugLevel.E, "Download failed for file {0}: {1}", File, ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Download failed for file {0}: {1}", File, ex.Message);
                     Kernel.Kernel.KernelEventManager.RaiseFTPPostDownload(File, false);
                 }
             }
@@ -107,7 +107,7 @@ namespace KS.Network.FTP.Transfer
                 {
                     // Show a message to download
                     Kernel.Kernel.KernelEventManager.RaiseFTPPreDownload(Folder);
-                    DebugWriter.Wdbg(DebugLevel.I, "Downloading folder {0}...", Folder);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Downloading folder {0}...", Folder);
 
                     // Try to download folder
                     string LocalFolderPath = Files.Filesystem.NeutralizePath(LocalFolder, FTPShellCommon.FtpCurrentDirectory);
@@ -115,24 +115,24 @@ namespace KS.Network.FTP.Transfer
 
                     // Print download results to debugger
                     var Failed = default(bool);
-                    DebugWriter.Wdbg(DebugLevel.I, "Folder download result:");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Folder download result:");
                     foreach (FtpResult Result in Results)
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "-- {0} --", Result.Name);
-                        DebugWriter.Wdbg(DebugLevel.I, "Success: {0}", Result.IsSuccess);
-                        DebugWriter.Wdbg(DebugLevel.I, "Skipped: {0}", Result.IsSkipped);
-                        DebugWriter.Wdbg(DebugLevel.I, "Failure: {0}", Result.IsFailed);
-                        DebugWriter.Wdbg(DebugLevel.I, "Size: {0}", Result.Size);
-                        DebugWriter.Wdbg(DebugLevel.I, "Type: {0}", Result.Type);
+                        DebugWriter.WriteDebug(DebugLevel.I, "-- {0} --", Result.Name);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Success: {0}", Result.IsSuccess);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Skipped: {0}", Result.IsSkipped);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Failure: {0}", Result.IsFailed);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Size: {0}", Result.Size);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Type: {0}", Result.Type);
                         if (Result.IsFailed)
                         {
-                            DebugWriter.Wdbg(DebugLevel.E, "Download failed for {0}", Result.Name);
+                            DebugWriter.WriteDebug(DebugLevel.E, "Download failed for {0}", Result.Name);
 
                             // Download could fail with no exception in very rare cases.
                             if (Result.Exception is not null)
                             {
-                                DebugWriter.Wdbg(DebugLevel.E, "Exception {0}", Result.Exception.Message);
-                                DebugWriter.WStkTrc(Result.Exception);
+                                DebugWriter.WriteDebug(DebugLevel.E, "Exception {0}", Result.Exception.Message);
+                                DebugWriter.WriteDebugStackTrace(Result.Exception);
                             }
                             Failed = true;
                         }
@@ -142,19 +142,19 @@ namespace KS.Network.FTP.Transfer
                     // Show a message that it's downloaded
                     if (!Failed)
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Downloaded folder {0}.", Folder);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Downloaded folder {0}.", Folder);
                     }
                     else
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Downloaded folder {0} partially due to failure.", Folder);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Downloaded folder {0} partially due to failure.", Folder);
                     }
                     Kernel.Kernel.KernelEventManager.RaiseFTPPostDownload(Folder, !Failed);
                     return !Failed;
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WStkTrc(ex);
-                    DebugWriter.Wdbg(DebugLevel.E, "Download failed for folder {0}: {1}", Folder, ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Download failed for folder {0}: {1}", Folder, ex.Message);
                     Kernel.Kernel.KernelEventManager.RaiseFTPPostDownload(Folder, false);
                 }
             }
@@ -187,13 +187,13 @@ namespace KS.Network.FTP.Transfer
             {
                 // Show a message to download
                 Kernel.Kernel.KernelEventManager.RaiseFTPPreUpload(File);
-                DebugWriter.Wdbg(DebugLevel.I, "Uploading file {0}...", LocalFile);
-                DebugWriter.Wdbg(DebugLevel.I, "Where in the remote: {0}", File);
+                DebugWriter.WriteDebug(DebugLevel.I, "Uploading file {0}...", LocalFile);
+                DebugWriter.WriteDebug(DebugLevel.I, "Where in the remote: {0}", File);
 
                 // Try to upload
                 string LocalFilePath = Files.Filesystem.NeutralizePath(LocalFile, FTPShellCommon.FtpCurrentDirectory);
                 bool Success = Convert.ToBoolean(FTPShellCommon.ClientFTP.UploadFile(LocalFilePath, File, FtpRemoteExists.Resume, true, FtpVerify.Retry, FTPTransferProgress.FileProgress));
-                DebugWriter.Wdbg(DebugLevel.I, "Uploaded file {0} to {1} with status {2}.", LocalFile, File, Success);
+                DebugWriter.WriteDebug(DebugLevel.I, "Uploaded file {0} to {1} with status {2}.", LocalFile, File, Success);
                 Kernel.Kernel.KernelEventManager.RaiseFTPPostUpload(File, Success);
                 return Success;
             }
@@ -225,7 +225,7 @@ namespace KS.Network.FTP.Transfer
             {
                 // Show a message to download
                 Kernel.Kernel.KernelEventManager.RaiseFTPPreUpload(Folder);
-                DebugWriter.Wdbg(DebugLevel.I, "Uploading folder {0}...", Folder);
+                DebugWriter.WriteDebug(DebugLevel.I, "Uploading folder {0}...", Folder);
 
                 // Try to upload
                 string LocalFolderPath = Files.Filesystem.NeutralizePath(LocalFolder, FTPShellCommon.FtpCurrentDirectory);
@@ -233,24 +233,24 @@ namespace KS.Network.FTP.Transfer
 
                 // Print upload results to debugger
                 var Failed = default(bool);
-                DebugWriter.Wdbg(DebugLevel.I, "Folder upload result:");
+                DebugWriter.WriteDebug(DebugLevel.I, "Folder upload result:");
                 foreach (FtpResult Result in Results)
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "-- {0} --", Result.Name);
-                    DebugWriter.Wdbg(DebugLevel.I, "Success: {0}", Result.IsSuccess);
-                    DebugWriter.Wdbg(DebugLevel.I, "Skipped: {0}", Result.IsSkipped);
-                    DebugWriter.Wdbg(DebugLevel.I, "Failure: {0}", Result.IsFailed);
-                    DebugWriter.Wdbg(DebugLevel.I, "Size: {0}", Result.Size);
-                    DebugWriter.Wdbg(DebugLevel.I, "Type: {0}", Result.Type);
+                    DebugWriter.WriteDebug(DebugLevel.I, "-- {0} --", Result.Name);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Success: {0}", Result.IsSuccess);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Skipped: {0}", Result.IsSkipped);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Failure: {0}", Result.IsFailed);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Size: {0}", Result.Size);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Type: {0}", Result.Type);
                     if (Result.IsFailed)
                     {
-                        DebugWriter.Wdbg(DebugLevel.E, "Upload failed for {0}", Result.Name);
+                        DebugWriter.WriteDebug(DebugLevel.E, "Upload failed for {0}", Result.Name);
 
                         // Upload could fail with no exception in very rare cases.
                         if (Result.Exception is not null)
                         {
-                            DebugWriter.Wdbg(DebugLevel.E, "Exception {0}", Result.Exception.Message);
-                            DebugWriter.WStkTrc(Result.Exception);
+                            DebugWriter.WriteDebug(DebugLevel.E, "Exception {0}", Result.Exception.Message);
+                            DebugWriter.WriteDebugStackTrace(Result.Exception);
                         }
                         Failed = true;
                     }
@@ -260,11 +260,11 @@ namespace KS.Network.FTP.Transfer
                 // Show a message that it's downloaded
                 if (!Failed)
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Uploaded folder {0}.", Folder);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Uploaded folder {0}.", Folder);
                 }
                 else
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Uploaded folder {0} partially due to failure.", Folder);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Uploaded folder {0} partially due to failure.", Folder);
                 }
                 Kernel.Kernel.KernelEventManager.RaiseFTPPostUpload(Folder, !Failed);
                 return !Failed;
@@ -288,7 +288,7 @@ namespace KS.Network.FTP.Transfer
                 {
                     // Show a message to download
                     Kernel.Kernel.KernelEventManager.RaiseFTPPreDownload(File);
-                    DebugWriter.Wdbg(DebugLevel.I, "Downloading {0}...", File);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Downloading {0}...", File);
 
                     // Try to download 3 times
                     var DownloadedBytes = Array.Empty<byte>();
@@ -298,14 +298,14 @@ namespace KS.Network.FTP.Transfer
                         DownloadedContent.Append(Convert.ToChar(DownloadedByte));
 
                     // Show a message that it's downloaded
-                    DebugWriter.Wdbg(DebugLevel.I, "Downloaded {0}.", File);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Downloaded {0}.", File);
                     Kernel.Kernel.KernelEventManager.RaiseFTPPostDownload(File, Downloaded);
                     return DownloadedContent.ToString();
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WStkTrc(ex);
-                    DebugWriter.Wdbg(DebugLevel.E, "Download failed for {0}: {1}", File, ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Download failed for {0}: {1}", File, ex.Message);
                     Kernel.Kernel.KernelEventManager.RaiseFTPPostDownload(File, false);
                 }
             }

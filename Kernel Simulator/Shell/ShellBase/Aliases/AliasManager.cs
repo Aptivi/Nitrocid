@@ -70,7 +70,7 @@ namespace KS.Shell.ShellBase.Aliases
                 AliasCmd = (string)AliasObject["Alias"];
                 ActualCmd = (string)AliasObject["Command"];
                 AliasType = (ShellType)Convert.ToInt32(AliasObject["Type"].ToObject(typeof(ShellType)));
-                DebugWriter.Wdbg(DebugLevel.I, "Adding \"{0}\" and \"{1}\" from Aliases.json to {2} list...", AliasCmd, ActualCmd, AliasType.ToString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Adding \"{0}\" and \"{1}\" from Aliases.json to {2} list...", AliasCmd, ActualCmd, AliasType.ToString());
                 var TargetAliasList = GetAliasesListFromType(AliasType);
                 TargetAliasList.AddOrModify(AliasCmd, ActualCmd);
             }
@@ -97,7 +97,7 @@ namespace KS.Shell.ShellBase.Aliases
             var ShellAliases = GetAliasesListFromType(ShellType);
             for (int i = 0, loopTo = ShellAliases.Count - 1; i <= loopTo; i++)
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Adding \"{0}\" and \"{1}\" from list to Aliases.json with type {2}...", ShellAliases.Keys.ElementAtOrDefault(i), ShellAliases.Values.ElementAtOrDefault(i), ShellType.ToString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Adding \"{0}\" and \"{1}\" from list to Aliases.json with type {2}...", ShellAliases.Keys.ElementAtOrDefault(i), ShellAliases.Values.ElementAtOrDefault(i), ShellType.ToString());
                 var AliasObject = new JObject() { { "Alias", ShellAliases.Keys.ElementAtOrDefault(i) }, { "Command", ShellAliases.Values.ElementAtOrDefault(i) }, { "Type", ShellType.ToString() } };
                 if (!DoesAliasExist(ShellAliases.Keys.ElementAtOrDefault(i), ShellType))
                     AliasNameToken.Add(AliasObject);
@@ -128,8 +128,8 @@ namespace KS.Shell.ShellBase.Aliases
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.Wdbg(DebugLevel.E, "Failed to add alias. Stack trace written using WStkTrc(). {0}", ex.Message);
-                        DebugWriter.WStkTrc(ex);
+                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to add alias. Stack trace written using WStkTrc(). {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTrace(ex);
                         TextWriterColor.Write(ex.Message, true, ColorTools.ColTypes.Error);
                     }
                 }
@@ -144,14 +144,14 @@ namespace KS.Shell.ShellBase.Aliases
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.Wdbg(DebugLevel.E, "Failed to remove alias. Stack trace written using WStkTrc(). {0}", ex.Message);
-                        DebugWriter.WStkTrc(ex);
+                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to remove alias. Stack trace written using WStkTrc(). {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTrace(ex);
                         TextWriterColor.Write(ex.Message, true, ColorTools.ColTypes.Error);
                     }
                 }
                 else
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "Mode {0} was neither add nor rem.", mode);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Mode {0} was neither add nor rem.", mode);
                     TextWriterColor.Write(Translate.DoTranslation("Invalid mode {0}."), true, ColorTools.ColTypes.Error, mode);
                 }
 
@@ -160,7 +160,7 @@ namespace KS.Shell.ShellBase.Aliases
             }
             else
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Type {0} not found.", Type);
+                DebugWriter.WriteDebug(DebugLevel.E, "Type {0} not found.", Type);
                 TextWriterColor.Write(Translate.DoTranslation("Invalid type {0}."), true, ColorTools.ColTypes.Error, Type);
             }
         }
@@ -182,22 +182,22 @@ namespace KS.Shell.ShellBase.Aliases
             {
                 if ((SourceAlias ?? "") == (Destination ?? ""))
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Assertion succeeded: {0} = {1}", SourceAlias, Destination);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Assertion succeeded: {0} = {1}", SourceAlias, Destination);
                     throw new Kernel.Exceptions.AliasInvalidOperationException(Translate.DoTranslation("Alias can't be the same name as a command."));
                 }
                 else if (!CommandManager.IsCommandFound(Destination))
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "{0} not found in all the command lists", Destination);
+                    DebugWriter.WriteDebug(DebugLevel.W, "{0} not found in all the command lists", Destination);
                     throw new Kernel.Exceptions.AliasNoSuchCommandException(Translate.DoTranslation("Command not found to alias to {0}."), Destination);
                 }
                 else if (DoesAliasExist(SourceAlias, Type))
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "Alias {0} already found", SourceAlias);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Alias {0} already found", SourceAlias);
                     throw new Kernel.Exceptions.AliasAlreadyExistsException(Translate.DoTranslation("Alias already found: {0}"), SourceAlias);
                 }
                 else
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "Aliasing {0} to {1}", SourceAlias, Destination);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Aliasing {0} to {1}", SourceAlias, Destination);
                     var TargetAliasList = GetAliasesListFromType(Type);
                     TargetAliasList.Add(SourceAlias, Destination);
                     return true;
@@ -205,7 +205,7 @@ namespace KS.Shell.ShellBase.Aliases
             }
             else
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Type {0} not found.", Type);
+                DebugWriter.WriteDebug(DebugLevel.E, "Type {0} not found.", Type);
                 throw new Kernel.Exceptions.AliasNoSuchTypeException(Translate.DoTranslation("Invalid type {0}."), Type);
             }
         }
@@ -227,14 +227,14 @@ namespace KS.Shell.ShellBase.Aliases
             if (TargetAliasList.ContainsKey(TargetAlias))
             {
                 string Aliased = TargetAliasList[TargetAlias];
-                DebugWriter.Wdbg(DebugLevel.I, "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased);
+                DebugWriter.WriteDebug(DebugLevel.I, "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased);
                 TargetAliasList.Remove(TargetAlias);
                 AliasesToBeRemoved.Add($"{AliasesToBeRemoved.Count + 1}-{TargetAlias}", Type);
                 return true;
             }
             else
             {
-                DebugWriter.Wdbg(DebugLevel.W, "{0} is not found in the {1} aliases", TargetAlias, Type.ToString());
+                DebugWriter.WriteDebug(DebugLevel.W, "{0} is not found in the {1} aliases", TargetAlias, Type.ToString());
                 throw new Kernel.Exceptions.AliasNoSuchAliasException(Translate.DoTranslation("Alias {0} is not found to be removed."), TargetAlias);
             }
         }
@@ -353,7 +353,7 @@ namespace KS.Shell.ShellBase.Aliases
 
                 default:
                     {
-                        DebugWriter.Wdbg(DebugLevel.E, "Type {0} not found.", ShellType);
+                        DebugWriter.WriteDebug(DebugLevel.E, "Type {0} not found.", ShellType);
                         throw new Kernel.Exceptions.AliasNoSuchTypeException(Translate.DoTranslation("Invalid type {0}."), ShellType);
                     }
             }

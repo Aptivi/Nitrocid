@@ -67,7 +67,7 @@ namespace KS.Misc.Calendar.Reminders
                 }
                 catch (ThreadInterruptedException)
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Aborting reminder listener...");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Aborting reminder listener...");
                     return;
                 }
             }
@@ -145,7 +145,7 @@ namespace KS.Misc.Calendar.Reminders
         {
             Making.MakeDirectory(Paths.GetKernelPath(KernelPathType.Reminders), false);
             var ReminderFiles = Directory.EnumerateFileSystemEntries(Paths.GetKernelPath(KernelPathType.Reminders), "*", SearchOption.AllDirectories).ToList();
-            DebugWriter.Wdbg(DebugLevel.I, "Got {0} reminders.", ReminderFiles.Count);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got {0} reminders.", ReminderFiles.Count);
 
             // Load all the reminders
             foreach (string ReminderFile in ReminderFiles)
@@ -166,22 +166,22 @@ namespace KS.Misc.Calendar.Reminders
             {
                 Filesystem.ThrowOnInvalidPath(ReminderFile);
                 ReminderFile = Filesystem.NeutralizePath(ReminderFile);
-                DebugWriter.Wdbg(DebugLevel.I, "Loading reminder {0}...", ReminderFile);
+                DebugWriter.WriteDebug(DebugLevel.I, "Loading reminder {0}...", ReminderFile);
 
                 // If file exists, convert the file to the reminder instance
                 if (Checking.FileExists(ReminderFile))
                 {
                     var Converter = new XmlSerializer(typeof(ReminderInfo));
                     var ReminderFileStream = new FileStream(ReminderFile, FileMode.Open);
-                    DebugWriter.Wdbg(DebugLevel.I, "Opened stream [{0}]. Converting...", ReminderFileStream.Length);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Opened stream [{0}]. Converting...", ReminderFileStream.Length);
                     ReminderInfo ConvertedReminder = (ReminderInfo)Converter.Deserialize(ReminderFileStream);
-                    DebugWriter.Wdbg(DebugLevel.I, "Converted!");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Converted!");
                     ReminderFileStream.Close();
                     return ConvertedReminder;
                 }
                 else
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "File doesn't exist!");
+                    DebugWriter.WriteDebug(DebugLevel.E, "File doesn't exist!");
                 }
                 return null;
             }
@@ -202,7 +202,7 @@ namespace KS.Misc.Calendar.Reminders
         {
             Filesystem.ThrowOnInvalidPath(Path);
             Path = Filesystem.NeutralizePath(Path);
-            DebugWriter.Wdbg(DebugLevel.I, "Saving reminders to {0}...", Path);
+            DebugWriter.WriteDebug(DebugLevel.I, "Saving reminders to {0}...", Path);
 
             // Remove all events from path, if running destructively
             if (Destructive)
@@ -224,9 +224,9 @@ namespace KS.Misc.Calendar.Reminders
             {
                 var ReminderInstance = Reminders[ReminderIndex];
                 string ReminderFileName = $"[{ReminderIndex}] {ReminderInstance.ReminderTitle}.ksreminder";
-                DebugWriter.Wdbg(DebugLevel.I, "Reminder file name: {0}...", ReminderFileName);
+                DebugWriter.WriteDebug(DebugLevel.I, "Reminder file name: {0}...", ReminderFileName);
                 string ReminderFilePath = Filesystem.NeutralizePath(ReminderFileName, Path);
-                DebugWriter.Wdbg(DebugLevel.I, "Reminder file path: {0}...", ReminderFilePath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Reminder file path: {0}...", ReminderFilePath);
                 SaveReminder(ReminderInstance, ReminderFilePath);
             }
         }
@@ -246,10 +246,10 @@ namespace KS.Misc.Calendar.Reminders
         {
             Filesystem.ThrowOnInvalidPath(File);
             File = Filesystem.NeutralizePath(File);
-            DebugWriter.Wdbg(DebugLevel.I, "Saving reminder to {0}...", File);
+            DebugWriter.WriteDebug(DebugLevel.I, "Saving reminder to {0}...", File);
             var Converter = new XmlSerializer(typeof(ReminderInfo));
             var ReminderFileStream = new FileStream(File, FileMode.OpenOrCreate);
-            DebugWriter.Wdbg(DebugLevel.I, "Opened stream with length {0}", ReminderFileStream.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "Opened stream with length {0}", ReminderFileStream.Length);
             Converter.Serialize(ReminderFileStream, ReminderInstance);
             ReminderFileStream.Close();
         }

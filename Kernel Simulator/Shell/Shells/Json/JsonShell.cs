@@ -62,7 +62,7 @@ namespace KS.Shell.Shells.Json
                 // Open file if not open
                 if (JsonShellCommon.JsonShell_FileStream is null)
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath);
+                    DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath);
                     if (!JsonTools.JsonShell_OpenJsonFile(FilePath))
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Failed to open file. Exiting shell..."), true, ColorTools.ColTypes.Error);

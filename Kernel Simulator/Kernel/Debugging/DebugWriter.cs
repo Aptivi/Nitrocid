@@ -38,7 +38,7 @@ namespace KS.Kernel.Debugging
         /// <param name="Level">Debug level</param>
         /// <param name="text">A sentence that will be written to the the debugger file. Supports {0}, {1}, ...</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Wdbg(DebugLevel Level, string text, params object[] vars)
+        public static void WriteDebug(DebugLevel Level, string text, params object[] vars)
         {
             if (Flags.DebugMode)
             {
@@ -90,7 +90,7 @@ namespace KS.Kernel.Debugging
                             catch (Exception ex)
                             {
                                 OffendingIndex.Add(i.ToString());
-                                WStkTrc(ex);
+                                WriteDebugStackTrace(ex);
                             }
                         }
                     }
@@ -106,7 +106,7 @@ namespace KS.Kernel.Debugging
                             catch (Exception ex)
                             {
                                 OffendingIndex.Add(i.ToString());
-                                WStkTrc(ex);
+                                WriteDebugStackTrace(ex);
                             }
                         }
                     }
@@ -119,7 +119,7 @@ namespace KS.Kernel.Debugging
                         {
                             RemoteDebugger.DebugDevices[i].ClientSocket.Disconnect(true);
                             Kernel.KernelEventManager.RaiseRemoteDebugConnectionDisconnected(RemoteDebugger.DebugDevices[i].ClientIP);
-                            Wdbg(DebugLevel.W, "Debug device {0} ({1}) disconnected.", RemoteDebugger.DebugDevices[i].ClientName, RemoteDebugger.DebugDevices[i].ClientIP);
+                            WriteDebug(DebugLevel.W, "Debug device {0} ({1}) disconnected.", RemoteDebugger.DebugDevices[i].ClientName, RemoteDebugger.DebugDevices[i].ClientIP);
                             RemoteDebugger.DebugDevices.RemoveAt(i);
                         }
                     }
@@ -127,8 +127,8 @@ namespace KS.Kernel.Debugging
                 }
                 catch (Exception ex)
                 {
-                    Wdbg(DebugLevel.F, "Debugger error: {0}", ex.Message);
-                    WStkTrc(ex);
+                    WriteDebug(DebugLevel.F, "Debugger error: {0}", ex.Message);
+                    WriteDebugStackTrace(ex);
                 }
             }
         }
@@ -140,10 +140,10 @@ namespace KS.Kernel.Debugging
         /// <param name="Level">Debug level</param>
         /// <param name="text">A sentence that will be written to the the debugger file. Supports {0}, {1}, ...</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WdbgConditional(ref bool Condition, DebugLevel Level, string text, params object[] vars)
+        public static void WriteDebugConditional(ref bool Condition, DebugLevel Level, string text, params object[] vars)
         {
             if (Condition)
-                Wdbg(Level, text, vars);
+                WriteDebug(Level, text, vars);
         }
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace KS.Kernel.Debugging
         /// <param name="Level">Debug level</param>
         /// <param name="text">A sentence that will be written to the the debugger devices. Supports {0}, {1}, ...</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WdbgDevicesOnly(DebugLevel Level, string text, params object[] vars)
+        public static void WriteDebugDevicesOnly(DebugLevel Level, string text, params object[] vars)
         {
             if (Flags.DebugMode)
             {
@@ -168,7 +168,7 @@ namespace KS.Kernel.Debugging
                     catch (Exception ex)
                     {
                         OffendingIndex.Add(i.ToString());
-                        WStkTrc(ex);
+                        WriteDebugStackTrace(ex);
                     }
                 }
 
@@ -180,7 +180,7 @@ namespace KS.Kernel.Debugging
                     {
                         RemoteDebugger.DebugDevices[i].ClientSocket.Disconnect(true);
                         Kernel.KernelEventManager.RaiseRemoteDebugConnectionDisconnected(RemoteDebugger.DebugDevices[i].ClientIP);
-                        Wdbg(DebugLevel.W, "Debug device {0} ({1}) disconnected.", RemoteDebugger.DebugDevices[i].ClientName, RemoteDebugger.DebugDevices[i].ClientIP);
+                        WriteDebug(DebugLevel.W, "Debug device {0} ({1}) disconnected.", RemoteDebugger.DebugDevices[i].ClientName, RemoteDebugger.DebugDevices[i].ClientIP);
                         RemoteDebugger.DebugDevices.RemoveAt(i);
                     }
                 }
@@ -193,17 +193,17 @@ namespace KS.Kernel.Debugging
         /// </summary>
         /// <param name="Condition">The condition that must be satisfied</param>
         /// <param name="Ex">An exception</param>
-        public static void WStkTrcConditional(ref bool Condition, Exception Ex)
+        public static void WriteDebugStackTraceConditional(ref bool Condition, Exception Ex)
         {
             if (Condition)
-                WStkTrc(Ex);
+                WriteDebugStackTrace(Ex);
         }
 
         /// <summary>
         /// Writes the exception's stack trace to the debugger
         /// </summary>
         /// <param name="Ex">An exception</param>
-        public static void WStkTrc(Exception Ex)
+        public static void WriteDebugStackTrace(Exception Ex)
         {
             if (Flags.DebugMode)
             {
@@ -225,7 +225,7 @@ namespace KS.Kernel.Debugging
                 for (int i = 0, loopTo = NewStackTraces.Count - 1; i <= loopTo; i++)
                     StkTrcs.AddRange(NewStackTraces[i].SplitNewLines());
                 for (int i = 0, loopTo1 = StkTrcs.Count - 1; i <= loopTo1; i++)
-                    Wdbg(DebugLevel.E, StkTrcs[i]);
+                    WriteDebug(DebugLevel.E, StkTrcs[i]);
                 DebugStackTraces.AddRange(NewStackTraces);
             }
         }

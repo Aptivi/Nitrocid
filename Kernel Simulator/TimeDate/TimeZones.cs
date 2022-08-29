@@ -38,11 +38,11 @@ namespace KS.TimeDate
             // Get all system time zones (IANA on Unix)
             var Zones = GetSystemTimeZones().ToArray();
             var ZoneTimes = new Dictionary<string, DateTime>();
-            DebugWriter.Wdbg(DebugLevel.I, "Found {0} time zones.", Zones.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "Found {0} time zones.", Zones.Length);
 
             // Run a cleanup in the list
             ZoneTimes.Clear();
-            DebugWriter.Wdbg(DebugLevel.I, "Cleaned up zoneTimes.");
+            DebugWriter.WriteDebug(DebugLevel.I, "Cleaned up zoneTimes.");
 
             // Adds date and time to every single time zone to the list
             foreach (var Zone in Zones)

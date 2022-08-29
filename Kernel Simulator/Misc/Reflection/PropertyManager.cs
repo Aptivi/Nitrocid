@@ -62,13 +62,13 @@ namespace KS.Misc.Reflection
                 // The "obj" description says this: "The object whose field value will be set."
                 // Apparently, SetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
                 // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
-                DebugWriter.Wdbg(DebugLevel.I, "Got field {0}. Setting to {1}...", TargetProperty.Name, VariableValue);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}. Setting to {1}...", TargetProperty.Name, VariableValue);
                 TargetProperty.SetValue(Variable, VariableValue);
             }
             else
             {
                 // Variable not found on any of the "flag" modules.
-                DebugWriter.Wdbg(DebugLevel.I, "Property {0} not found.", Variable);
+                DebugWriter.WriteDebug(DebugLevel.I, "Property {0} not found.", Variable);
                 throw new Kernel.Exceptions.NoSuchReflectionVariableException(Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
             }
         }
@@ -108,13 +108,13 @@ namespace KS.Misc.Reflection
                 // The "obj" description says this: "The object whose field value will be returned."
                 // Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
                 // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
-                DebugWriter.Wdbg(DebugLevel.I, "Got field {0}.", TargetProperty.Name);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}.", TargetProperty.Name);
                 return TargetProperty.GetValue(Variable);
             }
             else
             {
                 // Variable not found on any of the "flag" modules.
-                DebugWriter.Wdbg(DebugLevel.I, "Property {0} not found.", Variable);
+                DebugWriter.WriteDebug(DebugLevel.I, "Property {0} not found.", Variable);
                 throw new Kernel.Exceptions.NoSuchReflectionVariableException(Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
             }
         }
@@ -209,7 +209,7 @@ namespace KS.Misc.Reflection
             if (TargetField is not null)
             {
                 // Now, get the property
-                DebugWriter.Wdbg(DebugLevel.I, "Got field {0}.", TargetField.Name);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}.", TargetField.Name);
                 var TargetProperty = TargetField.FieldType.GetProperty(Property);
                 object TargetValue;
                 if (VariableType is not null)
@@ -229,14 +229,14 @@ namespace KS.Misc.Reflection
                 else
                 {
                     // Property not found on any of the "flag" modules.
-                    DebugWriter.Wdbg(DebugLevel.I, "Property {0} not found.", Property);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Property {0} not found.", Property);
                     throw new Kernel.Exceptions.NoSuchReflectionPropertyException(Translate.DoTranslation("Property {0} is not found on any of the modules."), Property);
                 }
             }
             else
             {
                 // Variable not found on any of the "flag" modules.
-                DebugWriter.Wdbg(DebugLevel.I, "Field {0} not found.", Variable);
+                DebugWriter.WriteDebug(DebugLevel.I, "Field {0} not found.", Variable);
                 throw new Kernel.Exceptions.NoSuchReflectionVariableException(Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
             }
         }

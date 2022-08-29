@@ -621,13 +621,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event KernelStarted()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event KernelStarted()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("KernelStarted");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -644,13 +644,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PreLogin()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PreLogin()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("PreLogin");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -667,13 +667,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PostLogin()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PostLogin()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("PostLogin", Username);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -690,13 +690,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event LoginError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event LoginError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("LoginError", Username, Reason);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -713,13 +713,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ShellInitialized()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ShellInitialized()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("ShellInitialized");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -736,13 +736,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PreExecuteCommand()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PreExecuteCommand()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("PreExecuteCommand", Command);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -759,13 +759,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PostExecuteCommand()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PostExecuteCommand()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("PostExecuteCommand", Command);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -782,13 +782,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event KernelError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event KernelError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("KernelError", ErrorType, Reboot, RebootTime, Description, Exc, Variables);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -805,13 +805,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ContKernelError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ContKernelError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("ContKernelError", ErrorType, Reboot, RebootTime, Description, Exc, Variables);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -828,13 +828,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PreShutdown()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PreShutdown()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("PreShutdown");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -851,13 +851,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PostShutdown()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PostShutdown()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("PostShutdown");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -874,13 +874,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PreReboot()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PreReboot()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("PreReboot");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -897,13 +897,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PostReboot()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PostReboot()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("PostReboot");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -920,13 +920,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PreShowScreensaver()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PreShowScreensaver()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("PreShowScreensaver", Screensaver);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -943,13 +943,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PostShowScreensaver()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PostShowScreensaver()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("PostShowScreensaver", Screensaver);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -966,13 +966,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PreUnlock()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PreUnlock()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("PreUnlock", Screensaver);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -989,13 +989,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PostUnlock()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PostUnlock()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("PostUnlock", Screensaver);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1012,13 +1012,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event CommandError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event CommandError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("CommandError", Command, Exception);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1035,12 +1035,12 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PreReloadConfig()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PreReloadConfig()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("PreReloadConfig");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
                     }
                 }
             }
@@ -1057,13 +1057,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PostReloadConfig()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PostReloadConfig()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("PostReloadConfig");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1080,13 +1080,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PlaceholderParsing()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PlaceholderParsing()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("PlaceholderParsing", Target);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1103,13 +1103,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PlaceholderParsed()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PlaceholderParsed()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("PlaceholderParsed", Target);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1126,13 +1126,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PlaceholderParseError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PlaceholderParseError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("PlaceholderParseError", Target, Exception);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1149,13 +1149,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event GarbageCollected()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event GarbageCollected()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("GarbageCollected");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1172,13 +1172,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPShellInitialized()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPShellInitialized()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("FTPShellInitialized");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1195,13 +1195,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("FTPPreExecuteCommand", Command);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1218,13 +1218,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("FTPPostExecuteCommand", Command);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1241,13 +1241,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPCommandError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPCommandError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("FTPCommandError", Command, Exception);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1264,13 +1264,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPPreDownload()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPPreDownload()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("FTPPreDownload", File);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1287,13 +1287,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPPostDownload()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPPostDownload()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("FTPPostDownload", File, Success);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1310,13 +1310,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPPreUpload()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPPreUpload()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("FTPPreUpload", File);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1333,13 +1333,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPPostUpload()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPPostUpload()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("FTPPostUpload", File, Success);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1356,13 +1356,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event IMAPShellInitialized()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event IMAPShellInitialized()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("IMAPShellInitialized");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1379,13 +1379,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event IMAPPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event IMAPPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("IMAPPreExecuteCommand", Command);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1402,13 +1402,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event IMAPPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event IMAPPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("IMAPPostExecuteCommand", Command);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1425,13 +1425,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event IMAPCommandError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event IMAPCommandError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("IMAPCommandError", Command, Exception);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1448,13 +1448,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RemoteDebugConnectionAccepted()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RemoteDebugConnectionAccepted()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("RemoteDebugConnectionAccepted", IP);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1471,13 +1471,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RemoteDebugConnectionDisconnected()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RemoteDebugConnectionDisconnected()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("RemoteDebugConnectionDisconnected", IP);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1494,13 +1494,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RemoteDebugExecuteCommand()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RemoteDebugExecuteCommand()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("RemoteDebugExecuteCommand", IP, Command);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1517,13 +1517,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RemoteDebugCommandError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RemoteDebugCommandError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("RemoteDebugCommandError", IP, Command, Exception);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1540,13 +1540,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RPCCommandSent()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RPCCommandSent()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("RPCCommandSent", Command, Argument, IP, Port);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1563,13 +1563,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RPCCommandReceived()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RPCCommandReceived()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("RPCCommandReceived", Command, IP, Port);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1586,13 +1586,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RPCCommandError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RPCCommandError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("RPCCommandError", Command, Exception, IP, Port);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1609,13 +1609,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RSSShellInitialized()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RSSShellInitialized()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("RSSShellInitialized", FeedUrl);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1632,13 +1632,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RSSPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RSSPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("RSSPreExecuteCommand", FeedUrl, Command);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1655,13 +1655,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RSSPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RSSPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("RSSPostExecuteCommand", FeedUrl, Command);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1678,13 +1678,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RSSCommandError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RSSCommandError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("RSSCommandError", FeedUrl, Command, Exception);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1701,13 +1701,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPShellInitialized()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPShellInitialized()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("SFTPShellInitialized");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1724,13 +1724,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("SFTPPreExecuteCommand", Command);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1747,13 +1747,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("SFTPPostExecuteCommand", Command);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1770,13 +1770,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPCommandError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPCommandError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("SFTPCommandError", Command, Exception);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1793,13 +1793,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPPreDownload()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPPreDownload()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("SFTPPreDownload", File);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1816,13 +1816,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPPostDownload()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPPostDownload()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("SFTPPostDownload", File);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1839,13 +1839,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPDownloadError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPDownloadError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("SFTPDownloadError", File, Exception);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1862,13 +1862,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPPreUpload()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPPreUpload()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("SFTPPreUpload", File);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1885,13 +1885,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPPostUpload()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPPostUpload()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("SFTPPostUpload", File);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1908,13 +1908,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPUploadError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPUploadError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("SFTPUploadError", File, Exception);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1931,13 +1931,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SSHConnected()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SSHConnected()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("SSHConnected", Target);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1954,13 +1954,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SSHDisconnected()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SSHDisconnected()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("SSHDisconnected");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -1977,13 +1977,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SSHPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SSHPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("SSHPreExecuteCommand", Target, Command);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2000,13 +2000,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SSHPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SSHPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("SSHPostExecuteCommand", Target, Command);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2023,13 +2023,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SSHCommandError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SSHCommandError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("SSHCommandError", Target, Command, Exception);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2046,13 +2046,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SSHError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SSHError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("SSHError", Exception);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2069,13 +2069,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event UESHPreExecute()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event UESHPreExecute()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("UESHPreExecute", Command, Arguments);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2092,13 +2092,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event UESHPostExecute()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event UESHPostExecute()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("UESHPostExecute", Command, Arguments);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2115,13 +2115,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event UESHError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event UESHError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("UESHError", Command, Arguments, Exception);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2138,13 +2138,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event TextShellInitialized()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event TextShellInitialized()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("TextShellInitialized");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2161,13 +2161,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event TextPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event TextPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("TextPreExecuteCommand", Command);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2184,13 +2184,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event TextPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event TextPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("TextPostExecuteCommand", Command);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2207,13 +2207,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event TextCommandError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event TextCommandError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("TextCommandError", Command, Exception);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2230,13 +2230,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event NotificationSent()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event NotificationSent()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("NotificationSent", Notification);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2253,13 +2253,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event NotificationsSent()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event NotificationsSent()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("NotificationsSent", Notifications);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2276,13 +2276,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event NotificationReceived()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event NotificationReceived()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("NotificationReceived", Notification);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2299,13 +2299,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event NotificationsReceived()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event NotificationsReceived()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("NotificationsReceived", Notifications);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2322,13 +2322,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event NotificationDismissed()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event NotificationDismissed()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("NotificationDismissed");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2345,13 +2345,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ConfigSaved()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ConfigSaved()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("ConfigSaved");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2368,13 +2368,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ConfigSaveError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ConfigSaveError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("ConfigSaveError", Exception);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2391,13 +2391,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ConfigRead()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ConfigRead()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("ConfigRead");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2414,13 +2414,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ConfigReadError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ConfigReadError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("ConfigReadError", Exception);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2437,13 +2437,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PreExecuteModCommand()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PreExecuteModCommand()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("PreExecuteModCommand", Command);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2460,13 +2460,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PostExecuteModCommand()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PostExecuteModCommand()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("PostExecuteModCommand", Command);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2483,13 +2483,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ModParsed()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ModParsed()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("ModParsed", ModFileName);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2506,13 +2506,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ModParseError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ModParseError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("ModParseError", ModFileName);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2529,13 +2529,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ModFinalized()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ModFinalized()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("ModFinalized", ModFileName);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2552,13 +2552,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ModFinalizationFailed()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ModFinalizationFailed()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("ModFinalizationFailed", ModFileName, Reason);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2575,13 +2575,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event UserAdded()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event UserAdded()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("UserAdded", Username);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2598,13 +2598,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event UserRemoved()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event UserRemoved()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("UserRemoved", Username);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2621,13 +2621,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event UsernameChanged()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event UsernameChanged()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("UsernameChanged", OldUsername, NewUsername);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2644,13 +2644,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event UserPasswordChanged()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event UserPasswordChanged()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("UserPasswordChanged", Username);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2667,13 +2667,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event HardwareProbing()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event HardwareProbing()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("HardwareProbing");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2690,13 +2690,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event HardwareProbed()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event HardwareProbed()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("HardwareProbed");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2713,13 +2713,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event CurrentDirectoryChanged()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event CurrentDirectoryChanged()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("CurrentDirectoryChanged");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2736,13 +2736,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FileCreated()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FileCreated()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("FileCreated", File);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2759,13 +2759,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event DirectoryCreated()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event DirectoryCreated()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("DirectoryCreated", Directory);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2782,13 +2782,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FileCopied()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FileCopied()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("FileCopied", Source, Destination);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2805,13 +2805,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event DirectoryCopied()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event DirectoryCopied()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("DirectoryCopied", Source, Destination);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2828,13 +2828,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FileMoved()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FileMoved()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("FileMoved", Source, Destination);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2851,13 +2851,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event DirectoryMoved()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event DirectoryMoved()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("DirectoryMoved", Source, Destination);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2874,13 +2874,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FileRemoved()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FileRemoved()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("FileRemoved", File);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2897,13 +2897,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event DirectoryRemoved()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event DirectoryRemoved()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("DirectoryRemoved", Directory);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2920,13 +2920,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FileAttributeAdded()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FileAttributeAdded()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("FileAttributeAdded", File, Attributes);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2943,13 +2943,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FileAttributeRemoved()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FileAttributeRemoved()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("FileAttributeRemoved", File, Attributes);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2966,13 +2966,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ColorReset()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ColorReset()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("ColorReset");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -2989,13 +2989,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ThemeSet()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ThemeSet()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("ThemeSet", Theme);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3012,13 +3012,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ThemeSetError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ThemeSetError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("ThemeSetError", Theme, Reason);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3035,13 +3035,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ColorSet()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ColorSet()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("ColorSet");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3058,13 +3058,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ColorSetError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ColorSetError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("ColorSetError", Reason);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3081,13 +3081,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ThemeStudioStarted()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ThemeStudioStarted()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("ThemeStudioStarted");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3104,13 +3104,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ThemeStudioExit()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ThemeStudioExit()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("ThemeStudioExit");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3127,13 +3127,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ArgumentsInjected()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ArgumentsInjected()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("ArgumentsInjected", InjectedArguments);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3150,13 +3150,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ZipShellInitialized()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ZipShellInitialized()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("ZipShellInitialized");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3173,13 +3173,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ZipPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ZipPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("ZipPreExecuteCommand", Command);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3196,13 +3196,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ZipPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ZipPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("ZipPostExecuteCommand", Command);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3219,13 +3219,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ZipCommandError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ZipCommandError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("ZipCommandError", Command, Exception);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3242,13 +3242,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event HTTPShellInitialized()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event HTTPShellInitialized()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("HTTPShellInitialized");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3265,13 +3265,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event HTTPPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event HTTPPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("HTTPPreExecuteCommand", Command);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3288,13 +3288,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event HTTPPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event HTTPPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("HTTPPostExecuteCommand", Command);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3311,13 +3311,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event HTTPCommandError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event HTTPCommandError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("HTTPCommandError", Command, Exception);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3334,13 +3334,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ProcessError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ProcessError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("ProcessError", Process, Exception);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3357,13 +3357,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event LanguageInstalled()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event LanguageInstalled()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("LanguageInstalled", Language);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3380,13 +3380,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event LanguageUninstalled()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event LanguageUninstalled()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("LanguageUninstalled", Language);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3403,13 +3403,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event LanguageInstallError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event LanguageInstallError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("LanguageInstallError", Language, Exception);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3426,13 +3426,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event LanguageUninstallError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event LanguageUninstallError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("LanguageUninstallError", Language, Exception);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3449,13 +3449,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event LanguagesInstalled()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event LanguagesInstalled()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("LanguagesInstalled");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3472,13 +3472,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event LanguagesUninstalled()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event LanguagesUninstalled()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("LanguagesUninstalled");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3495,13 +3495,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event LanguagesInstallError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event LanguagesInstallError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("LanguagesInstallError", Exception);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3518,13 +3518,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event LanguagesUninstallError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event LanguagesUninstallError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("LanguagesUninstallError", Exception);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3541,13 +3541,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event HexShellInitialized()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event HexShellInitialized()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("HexShellInitialized");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3564,13 +3564,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event HexPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event HexPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("HexPreExecuteCommand", Command);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3587,13 +3587,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event HexPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event HexPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("HexPostExecuteCommand", Command);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3610,13 +3610,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event HexCommandError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event HexCommandError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("HexCommandError", Command, Exception);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3633,13 +3633,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event JsonShellInitialized()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event JsonShellInitialized()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("JsonShellInitialized");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3656,13 +3656,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event JsonPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event JsonPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("JsonPreExecuteCommand", Command);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3679,13 +3679,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event JsonPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event JsonPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("JsonPostExecuteCommand", Command);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3702,13 +3702,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event JsonCommandError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event JsonCommandError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("JsonCommandError", Command, Exception);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3725,13 +3725,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event TestShellInitialized()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event TestShellInitialized()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("TestShellInitialized");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3748,13 +3748,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event TestPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event TestPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("TestPreExecuteCommand", Command);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3771,13 +3771,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event TestPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event TestPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("TestPostExecuteCommand", Command);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3794,13 +3794,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event TestCommandError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event TestCommandError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("TestCommandError", Command, Exception);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3817,13 +3817,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RarShellInitialized()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RarShellInitialized()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("RarShellInitialized");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3840,13 +3840,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RarPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RarPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("RarPreExecuteCommand", Command);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3863,13 +3863,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RarPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RarPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("RarPostExecuteCommand", Command);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3886,13 +3886,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RarCommandError()...", script.ModPart, script.Name, script.Version);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RarCommandError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("RarCommandError", Command, Exception);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WStkTrcConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
                     }
                 }
             }
@@ -3904,7 +3904,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseStartKernel()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event KernelStarted() and responding in RespondStartKernel()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event KernelStarted() and responding in RespondStartKernel()...");
             EventsManager.FiredEvents.Add("KernelStarted (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             KernelStarted?.Invoke();
         }
@@ -3913,7 +3913,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaisePreLogin()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PreLogin() and responding in RespondPreLogin()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PreLogin() and responding in RespondPreLogin()...");
             EventsManager.FiredEvents.Add("PreLogin (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             PreLogin?.Invoke();
         }
@@ -3922,7 +3922,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaisePostLogin(string Username)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PostLogin() and responding in RespondPostLogin()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PostLogin() and responding in RespondPostLogin()...");
             EventsManager.FiredEvents.Add("PostLogin (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Username });
             PostLogin?.Invoke(Username);
         }
@@ -3931,7 +3931,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseLoginError(string Username, LoginErrorReasons Reason)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event LoginError() and responding in RespondLoginError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event LoginError() and responding in RespondLoginError()...");
             EventsManager.FiredEvents.Add("LoginError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Username, Reason });
             LoginError?.Invoke(Username, Reason);
         }
@@ -3940,7 +3940,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseShellInitialized()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ShellInitialized() and responding in RespondShellInitialized()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ShellInitialized() and responding in RespondShellInitialized()...");
             EventsManager.FiredEvents.Add("ShellInitialized (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             ShellInitialized?.Invoke();
         }
@@ -3949,7 +3949,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaisePreExecuteCommand(string Command)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PreExecuteCommand() and responding in RespondPreExecuteCommand()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PreExecuteCommand() and responding in RespondPreExecuteCommand()...");
             EventsManager.FiredEvents.Add("PreExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
             PreExecuteCommand?.Invoke(Command);
         }
@@ -3958,7 +3958,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaisePostExecuteCommand(string Command)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PostExecuteCommand() and responding in RespondPostExecuteCommand()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PostExecuteCommand() and responding in RespondPostExecuteCommand()...");
             EventsManager.FiredEvents.Add("PostExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
             PostExecuteCommand?.Invoke(Command);
         }
@@ -3967,7 +3967,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseKernelError(KernelErrorLevel ErrorType, bool Reboot, long RebootTime, string Description, Exception Exc, object[] Variables)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event KernelError() and responding in RespondKernelError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event KernelError() and responding in RespondKernelError()...");
             EventsManager.FiredEvents.Add("KernelError (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { ErrorType, Reboot, (object)RebootTime, Description, Exc, Variables });
             KernelError?.Invoke(ErrorType, Reboot, RebootTime, Description, Exc, Variables);
         }
@@ -3976,7 +3976,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseContKernelError(KernelErrorLevel ErrorType, bool Reboot, long RebootTime, string Description, Exception Exc, object[] Variables)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ContKernelError() and responding in RespondContKernelError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ContKernelError() and responding in RespondContKernelError()...");
             EventsManager.FiredEvents.Add("ContKernelError (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { ErrorType, Reboot, (object)RebootTime, Description, Exc, Variables });
             ContKernelError?.Invoke(ErrorType, Reboot, RebootTime, Description, Exc, Variables);
         }
@@ -3985,7 +3985,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaisePreShutdown()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PreShutdown() and responding in RespondPreShutdown()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PreShutdown() and responding in RespondPreShutdown()...");
             EventsManager.FiredEvents.Add("PreShutdown (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             PreShutdown?.Invoke();
         }
@@ -3994,7 +3994,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaisePostShutdown()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PostShutdown() and responding in RespondPostShutdown()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PostShutdown() and responding in RespondPostShutdown()...");
             EventsManager.FiredEvents.Add("PostShutdown (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             PostShutdown?.Invoke();
         }
@@ -4003,7 +4003,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaisePreReboot()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PreReboot() and responding in RespondPreReboot()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PreReboot() and responding in RespondPreReboot()...");
             EventsManager.FiredEvents.Add("PreReboot (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             PreReboot?.Invoke();
         }
@@ -4012,7 +4012,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaisePostReboot()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PostReboot() and responding in RespondPostReboot()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PostReboot() and responding in RespondPostReboot()...");
             EventsManager.FiredEvents.Add("PostReboot (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             PostReboot?.Invoke();
         }
@@ -4021,7 +4021,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaisePreShowScreensaver(string Screensaver)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PreShowScreensaver() and responding in RespondPreShowScreensaver()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PreShowScreensaver() and responding in RespondPreShowScreensaver()...");
             EventsManager.FiredEvents.Add("PreShowScreensaver (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Screensaver });
             PreShowScreensaver?.Invoke(Screensaver);
         }
@@ -4030,7 +4030,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaisePostShowScreensaver(string Screensaver)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PostShowScreensaver() and responding in RespondPostShowScreensaver()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PostShowScreensaver() and responding in RespondPostShowScreensaver()...");
             EventsManager.FiredEvents.Add("PostShowScreensaver (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Screensaver });
             PostShowScreensaver?.Invoke(Screensaver);
         }
@@ -4039,7 +4039,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaisePreUnlock(string Screensaver)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PreUnlock() and responding in RespondPreUnlock()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PreUnlock() and responding in RespondPreUnlock()...");
             EventsManager.FiredEvents.Add("PreUnlock (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Screensaver });
             PreUnlock?.Invoke(Screensaver);
         }
@@ -4048,7 +4048,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaisePostUnlock(string Screensaver)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PostUnlock() and responding in RespondPostUnlock()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PostUnlock() and responding in RespondPostUnlock()...");
             EventsManager.FiredEvents.Add("PostUnlock (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Screensaver });
             PostUnlock?.Invoke(Screensaver);
         }
@@ -4057,7 +4057,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseCommandError(string Command, Exception Exception)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event CommandError() and responding in RespondCommandError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event CommandError() and responding in RespondCommandError()...");
             EventsManager.FiredEvents.Add("CommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
             CommandError?.Invoke(Command, Exception);
         }
@@ -4066,7 +4066,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaisePreReloadConfig()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PreReloadConfig() and responding in RespondPreReloadConfig()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PreReloadConfig() and responding in RespondPreReloadConfig()...");
             EventsManager.FiredEvents.Add("PreReloadConfig (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             PreReloadConfig?.Invoke();
         }
@@ -4075,7 +4075,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaisePostReloadConfig()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PostReloadConfig() and responding in RespondPostReloadConfig()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PostReloadConfig() and responding in RespondPostReloadConfig()...");
             EventsManager.FiredEvents.Add("PostReloadConfig (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             PostReloadConfig?.Invoke();
         }
@@ -4084,7 +4084,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaisePlaceholderParsing(string Target)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PlaceholderParsing() and responding in RespondPlaceholderParsing()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PlaceholderParsing() and responding in RespondPlaceholderParsing()...");
             EventsManager.FiredEvents.Add("PlaceholderParsing (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Target });
             PlaceholderParsing?.Invoke(Target);
         }
@@ -4093,7 +4093,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaisePlaceholderParsed(string Target)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PlaceholderParsed() and responding in RespondPlaceholderParsed()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PlaceholderParsed() and responding in RespondPlaceholderParsed()...");
             EventsManager.FiredEvents.Add("PlaceholderParsed (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Target });
             PlaceholderParsed?.Invoke(Target);
         }
@@ -4102,7 +4102,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaisePlaceholderParseError(string Target, Exception Exception)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PlaceholderParseError() and responding in RespondPlaceholderParseError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PlaceholderParseError() and responding in RespondPlaceholderParseError()...");
             EventsManager.FiredEvents.Add("PlaceholderParseError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Target, Exception });
             PlaceholderParseError?.Invoke(Target, Exception);
         }
@@ -4111,7 +4111,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseGarbageCollected()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event GarbageCollected() and responding in RespondGarbageCollected()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event GarbageCollected() and responding in RespondGarbageCollected()...");
             EventsManager.FiredEvents.Add("GarbageCollected (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             GarbageCollected?.Invoke();
         }
@@ -4120,7 +4120,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseFTPShellInitialized()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FTPShellInitialized() and responding in RespondFTPShellInitialized()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FTPShellInitialized() and responding in RespondFTPShellInitialized()...");
             EventsManager.FiredEvents.Add("FTPShellInitialized (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             FTPShellInitialized?.Invoke();
         }
@@ -4129,7 +4129,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseFTPPreExecuteCommand(string Command)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FTPPreExecuteCommand() and responding in RespondFTPPreExecuteCommand()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FTPPreExecuteCommand() and responding in RespondFTPPreExecuteCommand()...");
             EventsManager.FiredEvents.Add("FTPPreExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
             FTPPreExecuteCommand?.Invoke(Command);
         }
@@ -4138,7 +4138,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseFTPPostExecuteCommand(string Command)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FTPPostExecuteCommand() and responding in RespondFTPPostExecuteCommand()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FTPPostExecuteCommand() and responding in RespondFTPPostExecuteCommand()...");
             EventsManager.FiredEvents.Add("FTPPostExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
             FTPPostExecuteCommand?.Invoke(Command);
         }
@@ -4147,7 +4147,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseFTPCommandError(string Command, Exception Exception)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FTPCommandError() and responding in RespondFTPCommandError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FTPCommandError() and responding in RespondFTPCommandError()...");
             EventsManager.FiredEvents.Add("FTPCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
             FTPCommandError?.Invoke(Command, Exception);
         }
@@ -4156,7 +4156,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseFTPPreDownload(string File)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FTPPreDownload() and responding in RespondFTPPreDownload()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FTPPreDownload() and responding in RespondFTPPreDownload()...");
             EventsManager.FiredEvents.Add("FTPPreDownload (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { File });
             FTPPreDownload?.Invoke(File);
         }
@@ -4165,7 +4165,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseFTPPostDownload(string File, bool Success)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FTPPostDownload() and responding in RespondFTPPostDownload()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FTPPostDownload() and responding in RespondFTPPostDownload()...");
             EventsManager.FiredEvents.Add("FTPPostDownload (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { File, (object)Success });
             FTPPostDownload?.Invoke(File, Success);
         }
@@ -4174,7 +4174,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseFTPPreUpload(string File)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FTPPreUpload() and responding in RespondFTPPreUpload()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FTPPreUpload() and responding in RespondFTPPreUpload()...");
             EventsManager.FiredEvents.Add("FTPPreUpload (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { File });
             FTPPreUpload?.Invoke(File);
         }
@@ -4183,7 +4183,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseFTPPostUpload(string File, bool Success)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FTPPostUpload() and responding in RespondFTPPostUpload()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FTPPostUpload() and responding in RespondFTPPostUpload()...");
             EventsManager.FiredEvents.Add("FTPPostUpload (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { File, (object)Success });
             FTPPostUpload?.Invoke(File, Success);
         }
@@ -4192,7 +4192,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseIMAPShellInitialized()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event IMAPShellInitialized() and responding in RespondIMAPShellInitialized()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event IMAPShellInitialized() and responding in RespondIMAPShellInitialized()...");
             EventsManager.FiredEvents.Add("IMAPShellInitialized (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             IMAPShellInitialized?.Invoke();
         }
@@ -4201,7 +4201,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseIMAPPreExecuteCommand(string Command)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event IMAPPreExecuteCommand() and responding in RespondIMAPPreExecuteCommand()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event IMAPPreExecuteCommand() and responding in RespondIMAPPreExecuteCommand()...");
             EventsManager.FiredEvents.Add("IMAPPreExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
             IMAPPreExecuteCommand?.Invoke(Command);
         }
@@ -4210,7 +4210,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseIMAPPostExecuteCommand(string Command)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event IMAPPostExecuteCommand() and responding in RespondIMAPPostExecuteCommand()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event IMAPPostExecuteCommand() and responding in RespondIMAPPostExecuteCommand()...");
             EventsManager.FiredEvents.Add("IMAPPostExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
             IMAPPostExecuteCommand?.Invoke(Command);
         }
@@ -4219,7 +4219,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseIMAPCommandError(string Command, Exception Exception)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event IMAPCommandError() and responding in RespondIMAPCommandError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event IMAPCommandError() and responding in RespondIMAPCommandError()...");
             EventsManager.FiredEvents.Add("IMAPCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
             IMAPCommandError?.Invoke(Command, Exception);
         }
@@ -4228,7 +4228,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseRemoteDebugConnectionAccepted(string IP)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RemoteDebugConnectionAccepted() and responding in RespondRemoteDebugConnectionAccepted()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RemoteDebugConnectionAccepted() and responding in RespondRemoteDebugConnectionAccepted()...");
             EventsManager.FiredEvents.Add("RemoteDebugConnectionAccepted (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { IP });
             RemoteDebugConnectionAccepted?.Invoke(IP);
         }
@@ -4237,7 +4237,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseRemoteDebugConnectionDisconnected(string IP)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RemoteDebugConnectionDisconnected() and responding in RespondRemoteDebugConnectionDisconnected()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RemoteDebugConnectionDisconnected() and responding in RespondRemoteDebugConnectionDisconnected()...");
             EventsManager.FiredEvents.Add("RemoteDebugConnectionDisconnected (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { IP });
             RemoteDebugConnectionDisconnected?.Invoke(IP);
         }
@@ -4246,7 +4246,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseRemoteDebugExecuteCommand(string IP, string Command)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RemoteDebugExecuteCommand() and responding in RespondRemoteDebugExecuteCommand()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RemoteDebugExecuteCommand() and responding in RespondRemoteDebugExecuteCommand()...");
             EventsManager.FiredEvents.Add("RemoteDebugExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { IP, Command });
             RemoteDebugExecuteCommand?.Invoke(IP, Command);
         }
@@ -4255,7 +4255,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseRemoteDebugCommandError(string IP, string Command, Exception Exception)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RemoteDebugCommandError() and responding in RespondRemoteDebugCommandError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RemoteDebugCommandError() and responding in RespondRemoteDebugCommandError()...");
             EventsManager.FiredEvents.Add("RemoteDebugCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { IP, Command, Exception });
             RemoteDebugCommandError?.Invoke(IP, Command, Exception);
         }
@@ -4264,7 +4264,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseRPCCommandSent(string Command, string Argument, string IP, int Port)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RPCCommandSent() and responding in RespondRPCCommandSent()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RPCCommandSent() and responding in RespondRPCCommandSent()...");
             EventsManager.FiredEvents.Add("RPCCommandSent (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
             RPCCommandSent?.Invoke(Command, Argument, IP, Port);
         }
@@ -4273,7 +4273,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseRPCCommandReceived(string Command, string IP, int Port)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RPCCommandReceived() and responding in RespondRPCCommandReceived()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RPCCommandReceived() and responding in RespondRPCCommandReceived()...");
             EventsManager.FiredEvents.Add("RPCCommandReceived (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
             RPCCommandReceived?.Invoke(Command, IP, Port);
         }
@@ -4282,7 +4282,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseRPCCommandError(string Command, Exception Exception, string IP, int Port)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RPCCommandError() and responding in RespondRPCCommandError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RPCCommandError() and responding in RespondRPCCommandError()...");
             EventsManager.FiredEvents.Add("RPCCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
             RPCCommandError?.Invoke(Command, Exception, IP, Port);
         }
@@ -4291,7 +4291,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseRSSShellInitialized(string FeedUrl)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RSSShellInitialized() and responding in RespondRSSShellInitialized()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RSSShellInitialized() and responding in RespondRSSShellInitialized()...");
             EventsManager.FiredEvents.Add("RSSShellInitialized (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { FeedUrl });
             RSSShellInitialized?.Invoke(FeedUrl);
         }
@@ -4300,7 +4300,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseRSSPreExecuteCommand(string FeedUrl, string Command)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RSSPreExecuteCommand() and responding in RespondRSSPreExecuteCommand()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RSSPreExecuteCommand() and responding in RespondRSSPreExecuteCommand()...");
             EventsManager.FiredEvents.Add("RSSPreExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { FeedUrl, Command });
             RSSPreExecuteCommand?.Invoke(FeedUrl, Command);
         }
@@ -4309,7 +4309,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseRSSPostExecuteCommand(string FeedUrl, string Command)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RSSPostExecuteCommand() and responding in RespondRSSPostExecuteCommand()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RSSPostExecuteCommand() and responding in RespondRSSPostExecuteCommand()...");
             EventsManager.FiredEvents.Add("RSSPostExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { FeedUrl, Command });
             RSSPostExecuteCommand?.Invoke(FeedUrl, Command);
         }
@@ -4318,7 +4318,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseRSSCommandError(string FeedUrl, string Command, Exception Exception)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RSSCommandError() and responding in RespondRSSCommandError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RSSCommandError() and responding in RespondRSSCommandError()...");
             EventsManager.FiredEvents.Add("RSSCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { FeedUrl, Command, Exception });
             RSSCommandError?.Invoke(FeedUrl, Command, Exception);
         }
@@ -4327,7 +4327,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseSFTPShellInitialized()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SFTPShellInitialized() and responding in RespondSFTPShellInitialized()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SFTPShellInitialized() and responding in RespondSFTPShellInitialized()...");
             EventsManager.FiredEvents.Add("SFTPShellInitialized (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             SFTPShellInitialized?.Invoke();
         }
@@ -4336,7 +4336,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseSFTPPreExecuteCommand(string Command)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SFTPPreExecuteCommand() and responding in RespondSFTPPreExecuteCommand()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SFTPPreExecuteCommand() and responding in RespondSFTPPreExecuteCommand()...");
             EventsManager.FiredEvents.Add("SFTPPreExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
             SFTPPreExecuteCommand?.Invoke(Command);
         }
@@ -4345,7 +4345,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseSFTPPostExecuteCommand(string Command)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SFTPPostExecuteCommand() and responding in RespondSFTPPostExecuteCommand()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SFTPPostExecuteCommand() and responding in RespondSFTPPostExecuteCommand()...");
             EventsManager.FiredEvents.Add("SFTPPostExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
             SFTPPostExecuteCommand?.Invoke(Command);
         }
@@ -4354,7 +4354,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseSFTPCommandError(string Command, Exception Exception)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SFTPCommandError() and responding in RespondSFTPCommandError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SFTPCommandError() and responding in RespondSFTPCommandError()...");
             EventsManager.FiredEvents.Add("SFTPCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
             SFTPCommandError?.Invoke(Command, Exception);
         }
@@ -4363,7 +4363,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseSFTPPreDownload(string File)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SFTPPreDownload() and responding in RespondSFTPPreDownload()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SFTPPreDownload() and responding in RespondSFTPPreDownload()...");
             EventsManager.FiredEvents.Add("SFTPPreDownload (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { File });
             SFTPPreDownload?.Invoke(File);
         }
@@ -4372,7 +4372,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseSFTPPostDownload(string File)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SFTPPostDownload() and responding in RespondSFTPPostDownload()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SFTPPostDownload() and responding in RespondSFTPPostDownload()...");
             EventsManager.FiredEvents.Add("SFTPPostDownload (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { File });
             SFTPPostDownload?.Invoke(File);
         }
@@ -4381,7 +4381,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseSFTPDownloadError(string File, Exception Exception)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SFTPDownloadError() and responding in RespondSFTPDownloadError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SFTPDownloadError() and responding in RespondSFTPDownloadError()...");
             EventsManager.FiredEvents.Add("SFTPDownloadError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { File, Exception });
             SFTPDownloadError?.Invoke(File, Exception);
         }
@@ -4390,7 +4390,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseSFTPPreUpload(string File)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SFTPPreUpload() and responding in RespondSFTPPreUpload()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SFTPPreUpload() and responding in RespondSFTPPreUpload()...");
             EventsManager.FiredEvents.Add("SFTPPreUpload (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { File });
             SFTPPreUpload?.Invoke(File);
         }
@@ -4399,7 +4399,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseSFTPPostUpload(string File)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SFTPPostUpload() and responding in RespondSFTPPostUpload()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SFTPPostUpload() and responding in RespondSFTPPostUpload()...");
             EventsManager.FiredEvents.Add("SFTPPostUpload (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { File });
             SFTPPostUpload?.Invoke(File);
         }
@@ -4408,7 +4408,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseSFTPUploadError(string File, Exception Exception)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SFTPUploadError() and responding in RespondSFTPUploadError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SFTPUploadError() and responding in RespondSFTPUploadError()...");
             EventsManager.FiredEvents.Add("SFTPUploadError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { File, Exception });
             SFTPUploadError?.Invoke(File, Exception);
         }
@@ -4417,7 +4417,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseSSHConnected(string Target)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SSHConnected() and responding in RespondSSHConnected()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SSHConnected() and responding in RespondSSHConnected()...");
             EventsManager.FiredEvents.Add("SSHConnected (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Target });
             SSHConnected?.Invoke(Target);
         }
@@ -4426,7 +4426,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseSSHDisconnected()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SSHDisconnected() and responding in RespondSSHDisconnected()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SSHDisconnected() and responding in RespondSSHDisconnected()...");
             EventsManager.FiredEvents.Add("SSHDisconnected (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             SSHDisconnected?.Invoke();
         }
@@ -4435,7 +4435,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseSSHPreExecuteCommand(string Target, string Command)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SSHPreExecuteCommand() and responding in RespondSSHPreExecuteCommand()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SSHPreExecuteCommand() and responding in RespondSSHPreExecuteCommand()...");
             EventsManager.FiredEvents.Add("SSHPreExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
             SSHPreExecuteCommand?.Invoke(Target, Command);
         }
@@ -4444,7 +4444,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseSSHPostExecuteCommand(string Target, string Command)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SSHPostExecuteCommand() and responding in RespondSSHPostExecuteCommand()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SSHPostExecuteCommand() and responding in RespondSSHPostExecuteCommand()...");
             EventsManager.FiredEvents.Add("SSHPostExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
             SSHPostExecuteCommand?.Invoke(Target, Command);
         }
@@ -4453,7 +4453,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseSSHCommandError(string Target, string Command, Exception Exception)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SSHCommandError() and responding in RespondSSHCommandError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SSHCommandError() and responding in RespondSSHCommandError()...");
             EventsManager.FiredEvents.Add("SSHCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
             SSHCommandError?.Invoke(Target, Command, Exception);
         }
@@ -4462,7 +4462,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseSSHError(Exception Exception)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SSHError() and responding in RespondSSHError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SSHError() and responding in RespondSSHError()...");
             EventsManager.FiredEvents.Add("SSHError (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Exception });
             SSHError?.Invoke(Exception);
         }
@@ -4471,7 +4471,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseUESHPreExecute(string Command, string Arguments)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event UESHPreExecute() and responding in RespondUESHPreExecute()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event UESHPreExecute() and responding in RespondUESHPreExecute()...");
             EventsManager.FiredEvents.Add("UESHPreExecute (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command, Arguments });
             UESHPreExecute?.Invoke(Command, Arguments);
         }
@@ -4480,7 +4480,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseUESHPostExecute(string Command, string Arguments)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event UESHPostExecute() and responding in RespondUESHPostExecute()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event UESHPostExecute() and responding in RespondUESHPostExecute()...");
             EventsManager.FiredEvents.Add("UESHPostExecute (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command, Arguments });
             UESHPostExecute?.Invoke(Command, Arguments);
         }
@@ -4489,7 +4489,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseUESHError(string Command, string Arguments, Exception Exception)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event UESHError() and responding in RespondUESHError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event UESHError() and responding in RespondUESHError()...");
             EventsManager.FiredEvents.Add("UESHError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Arguments, Exception });
             UESHError?.Invoke(Command, Arguments, Exception);
         }
@@ -4498,7 +4498,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseTextShellInitialized()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event TextShellInitialized() and responding in RespondTextShellInitialized()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event TextShellInitialized() and responding in RespondTextShellInitialized()...");
             EventsManager.FiredEvents.Add("TextShellInitialized (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             TextShellInitialized?.Invoke();
         }
@@ -4507,7 +4507,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseTextPreExecuteCommand(string Command)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event TextPreExecuteCommand() and responding in RespondTextPreExecuteCommand()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event TextPreExecuteCommand() and responding in RespondTextPreExecuteCommand()...");
             EventsManager.FiredEvents.Add("TextPreExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
             TextPreExecuteCommand?.Invoke(Command);
         }
@@ -4516,7 +4516,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseTextPostExecuteCommand(string Command)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event TextPostExecuteCommand() and responding in RespondTextPostExecuteCommand()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event TextPostExecuteCommand() and responding in RespondTextPostExecuteCommand()...");
             EventsManager.FiredEvents.Add("TextPostExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
             TextPostExecuteCommand?.Invoke(Command);
         }
@@ -4525,7 +4525,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseTextCommandError(string Command, Exception Exception)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event TextCommandError() and responding in RespondTextCommandError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event TextCommandError() and responding in RespondTextCommandError()...");
             EventsManager.FiredEvents.Add("TextCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
             TextCommandError?.Invoke(Command, Exception);
         }
@@ -4534,7 +4534,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseNotificationSent(Notification Notification)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event NotificationSent() and responding in RespondNotificationSent()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event NotificationSent() and responding in RespondNotificationSent()...");
             EventsManager.FiredEvents.Add("NotificationSent (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Notification });
             NotificationSent?.Invoke(Notification);
         }
@@ -4543,7 +4543,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseNotificationsSent(List<Notification> Notifications)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event NotificationsSent() and responding in RespondNotificationsSent()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event NotificationsSent() and responding in RespondNotificationsSent()...");
             EventsManager.FiredEvents.Add("NotificationsSent (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Notifications });
             NotificationsSent?.Invoke(Notifications);
         }
@@ -4552,7 +4552,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseNotificationReceived(Notification Notification)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event NotificationReceived() and responding in RespondNotificationReceived()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event NotificationReceived() and responding in RespondNotificationReceived()...");
             EventsManager.FiredEvents.Add("NotificationReceived (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Notification });
             NotificationReceived?.Invoke(Notification);
         }
@@ -4561,7 +4561,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseNotificationsReceived(List<Notification> Notifications)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event NotificationsReceived() and responding in RespondNotificationsReceived()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event NotificationsReceived() and responding in RespondNotificationsReceived()...");
             EventsManager.FiredEvents.Add("NotificationsReceived (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Notifications });
             NotificationsReceived?.Invoke(Notifications);
         }
@@ -4570,7 +4570,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseNotificationDismissed()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event NotificationDismissed() and responding in RespondNotificationDismissed()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event NotificationDismissed() and responding in RespondNotificationDismissed()...");
             EventsManager.FiredEvents.Add("NotificationDismissed (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             NotificationDismissed?.Invoke();
         }
@@ -4579,7 +4579,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseConfigSaved()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ConfigSaved() and responding in RespondConfigSaved()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ConfigSaved() and responding in RespondConfigSaved()...");
             EventsManager.FiredEvents.Add("ConfigSaved (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             ConfigSaved?.Invoke();
         }
@@ -4588,7 +4588,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseConfigSaveError(Exception Exception)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ConfigSaveError() and responding in RespondConfigSaveError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ConfigSaveError() and responding in RespondConfigSaveError()...");
             EventsManager.FiredEvents.Add("ConfigSaveError (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Exception });
             ConfigSaveError?.Invoke(Exception);
         }
@@ -4597,7 +4597,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseConfigRead()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ConfigRead() and responding in RespondConfigRead()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ConfigRead() and responding in RespondConfigRead()...");
             EventsManager.FiredEvents.Add("ConfigRead (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             ConfigRead?.Invoke();
         }
@@ -4606,7 +4606,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseConfigReadError(Exception Exception)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ConfigReadError() and responding in RespondConfigReadError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ConfigReadError() and responding in RespondConfigReadError()...");
             EventsManager.FiredEvents.Add("ConfigReadError (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Exception });
             ConfigReadError?.Invoke(Exception);
         }
@@ -4615,7 +4615,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaisePreExecuteModCommand(string Command)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PreExecuteModCommand() and responding in RespondPreExecuteModCommand()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PreExecuteModCommand() and responding in RespondPreExecuteModCommand()...");
             EventsManager.FiredEvents.Add("PreExecuteModCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
             PreExecuteModCommand?.Invoke(Command);
         }
@@ -4624,7 +4624,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaisePostExecuteModCommand(string Command)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PostExecuteModCommand() and responding in RespondPostExecuteModCommand()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PostExecuteModCommand() and responding in RespondPostExecuteModCommand()...");
             EventsManager.FiredEvents.Add("PostExecuteModCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
             PostExecuteModCommand?.Invoke(Command);
         }
@@ -4633,7 +4633,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseModParsed(string ModFileName)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ModParsed() and responding in RespondModParsed()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ModParsed() and responding in RespondModParsed()...");
             EventsManager.FiredEvents.Add("ModParsed (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { ModFileName });
             ModParsed?.Invoke(ModFileName);
         }
@@ -4642,7 +4642,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseModParseError(string ModFileName)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ModParseError() and responding in RespondModParseError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ModParseError() and responding in RespondModParseError()...");
             EventsManager.FiredEvents.Add("ModParseError (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { ModFileName });
             ModParseError?.Invoke(ModFileName);
         }
@@ -4651,7 +4651,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseModFinalized(string ModFileName)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ModFinalized() and responding in RespondModFinalized()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ModFinalized() and responding in RespondModFinalized()...");
             EventsManager.FiredEvents.Add("ModFinalized (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { ModFileName });
             ModFinalized?.Invoke(ModFileName);
         }
@@ -4660,7 +4660,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseModFinalizationFailed(string ModFileName, string Reason)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ModFinalizationFailed() and responding in RespondModFinalizationFailed()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ModFinalizationFailed() and responding in RespondModFinalizationFailed()...");
             EventsManager.FiredEvents.Add("ModFinalizationFailed (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { ModFileName, Reason });
             ModFinalizationFailed?.Invoke(ModFileName, Reason);
         }
@@ -4669,7 +4669,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseUserAdded(string Username)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event UserAdded() and responding in RespondUserAdded()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event UserAdded() and responding in RespondUserAdded()...");
             EventsManager.FiredEvents.Add("UserAdded (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Username });
             UserAdded?.Invoke(Username);
         }
@@ -4678,7 +4678,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseUserRemoved(string Username)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event UserRemoved() and responding in RespondUserRemoved()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event UserRemoved() and responding in RespondUserRemoved()...");
             EventsManager.FiredEvents.Add("UserRemoved (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Username });
             UserRemoved?.Invoke(Username);
         }
@@ -4687,7 +4687,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseUsernameChanged(string OldUsername, string NewUsername)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event UsernameChanged() and responding in RespondUsernameChanged()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event UsernameChanged() and responding in RespondUsernameChanged()...");
             EventsManager.FiredEvents.Add("UsernameChanged (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { OldUsername, NewUsername });
             UsernameChanged?.Invoke(OldUsername, NewUsername);
         }
@@ -4696,7 +4696,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseUserPasswordChanged(string Username)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event UserPasswordChanged() and responding in RespondUserPasswordChanged()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event UserPasswordChanged() and responding in RespondUserPasswordChanged()...");
             EventsManager.FiredEvents.Add("UserPasswordChanged (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Username });
             UserPasswordChanged?.Invoke(Username);
         }
@@ -4705,7 +4705,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseHardwareProbing()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event HardwareProbing() and responding in RespondHardwareProbing()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event HardwareProbing() and responding in RespondHardwareProbing()...");
             EventsManager.FiredEvents.Add("HardwareProbing (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             HardwareProbing?.Invoke();
         }
@@ -4714,7 +4714,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseHardwareProbed()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event HardwareProbed() and responding in RespondHardwareProbed()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event HardwareProbed() and responding in RespondHardwareProbed()...");
             EventsManager.FiredEvents.Add("HardwareProbed (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             HardwareProbed?.Invoke();
         }
@@ -4723,7 +4723,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseCurrentDirectoryChanged()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event CurrentDirectoryChanged() and responding in RespondCurrentDirectoryChanged()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event CurrentDirectoryChanged() and responding in RespondCurrentDirectoryChanged()...");
             EventsManager.FiredEvents.Add("CurrentDirectoryChanged (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             CurrentDirectoryChanged?.Invoke();
         }
@@ -4732,7 +4732,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseFileCreated(string File)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FileCreated() and responding in RespondFileCreated()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FileCreated() and responding in RespondFileCreated()...");
             EventsManager.FiredEvents.Add("FileCreated (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { File });
             FileCreated?.Invoke(File);
         }
@@ -4741,7 +4741,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseDirectoryCreated(string Directory)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event DirectoryCreated() and responding in RespondDirectoryCreated()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event DirectoryCreated() and responding in RespondDirectoryCreated()...");
             EventsManager.FiredEvents.Add("DirectoryCreated (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Directory });
             DirectoryCreated?.Invoke(Directory);
         }
@@ -4750,7 +4750,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseFileCopied(string Source, string Destination)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FileCopied() and responding in RespondFileCopied()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FileCopied() and responding in RespondFileCopied()...");
             EventsManager.FiredEvents.Add("FileCopied (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Source, Destination });
             FileCopied?.Invoke(Source, Destination);
         }
@@ -4759,7 +4759,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseDirectoryCopied(string Source, string Destination)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event DirectoryCopied() and responding in RespondDirectoryCopied()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event DirectoryCopied() and responding in RespondDirectoryCopied()...");
             EventsManager.FiredEvents.Add("DirectoryCopied (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Source, Destination });
             DirectoryCopied?.Invoke(Source, Destination);
         }
@@ -4768,7 +4768,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseFileMoved(string Source, string Destination)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FileMoved() and responding in RespondFileMoved()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FileMoved() and responding in RespondFileMoved()...");
             EventsManager.FiredEvents.Add("FileMoved (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Source, Destination });
             FileMoved?.Invoke(Source, Destination);
         }
@@ -4777,7 +4777,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseDirectoryMoved(string Source, string Destination)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event DirectoryMoved() and responding in RespondDirectoryMoved()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event DirectoryMoved() and responding in RespondDirectoryMoved()...");
             EventsManager.FiredEvents.Add("DirectoryMoved (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Source, Destination });
             DirectoryMoved?.Invoke(Source, Destination);
         }
@@ -4786,7 +4786,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseFileRemoved(string File)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FileRemoved() and responding in RespondFileRemoved()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FileRemoved() and responding in RespondFileRemoved()...");
             EventsManager.FiredEvents.Add("FileRemoved (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { File });
             FileRemoved?.Invoke(File);
         }
@@ -4795,7 +4795,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseDirectoryRemoved(string Directory)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event DirectoryRemoved() and responding in RespondDirectoryRemoved()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event DirectoryRemoved() and responding in RespondDirectoryRemoved()...");
             EventsManager.FiredEvents.Add("DirectoryRemoved (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Directory });
             DirectoryRemoved?.Invoke(Directory);
         }
@@ -4804,7 +4804,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseFileAttributeAdded(string File, FileAttributes Attributes)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FileAttributeAdded() and responding in RespondFileAttributeAdded()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FileAttributeAdded() and responding in RespondFileAttributeAdded()...");
             EventsManager.FiredEvents.Add("FileAttributeAdded (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { File, Attributes });
             FileAttributeAdded?.Invoke(File, Attributes);
         }
@@ -4813,7 +4813,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseFileAttributeRemoved(string File, FileAttributes Attributes)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FileAttributeRemoved() and responding in RespondFileAttributeRemoved()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FileAttributeRemoved() and responding in RespondFileAttributeRemoved()...");
             EventsManager.FiredEvents.Add("FileAttributeRemoved (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { File, Attributes });
             FileAttributeRemoved?.Invoke(File, Attributes);
         }
@@ -4822,7 +4822,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseColorReset()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ColorReset() and responding in RespondColorReset()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ColorReset() and responding in RespondColorReset()...");
             EventsManager.FiredEvents.Add("ColorReset (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             ColorReset?.Invoke();
         }
@@ -4831,7 +4831,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseThemeSet(string Theme)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ThemeSet() and responding in RespondThemeSet()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ThemeSet() and responding in RespondThemeSet()...");
             EventsManager.FiredEvents.Add("ThemeSet (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Theme });
             ThemeSet?.Invoke(Theme);
         }
@@ -4840,7 +4840,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseThemeSetError(string Theme, ThemeSetErrorReasons Reason)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ThemeSetError() and responding in RespondThemeSetError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ThemeSetError() and responding in RespondThemeSetError()...");
             EventsManager.FiredEvents.Add("ThemeSetError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Theme, Reason });
             ThemeSetError?.Invoke(Theme, Reason);
         }
@@ -4849,7 +4849,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseColorSet()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ColorSet() and responding in RespondColorSet()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ColorSet() and responding in RespondColorSet()...");
             EventsManager.FiredEvents.Add("ColorSet (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             ColorSet?.Invoke();
         }
@@ -4858,7 +4858,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseColorSetError(ColorSetErrorReasons Reason)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ColorSetError() and responding in RespondColorSetError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ColorSetError() and responding in RespondColorSetError()...");
             EventsManager.FiredEvents.Add("ColorSetError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Reason });
             ColorSetError?.Invoke(Reason);
         }
@@ -4867,7 +4867,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseThemeStudioStarted()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ThemeStudioStarted() and responding in RespondThemeStudioStarted()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ThemeStudioStarted() and responding in RespondThemeStudioStarted()...");
             EventsManager.FiredEvents.Add("ThemeStudioStarted (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             ThemeStudioStarted?.Invoke();
         }
@@ -4876,7 +4876,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseThemeStudioExit()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ThemeStudioExit() and responding in RespondThemeStudioExit()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ThemeStudioExit() and responding in RespondThemeStudioExit()...");
             EventsManager.FiredEvents.Add("ThemeStudioExit (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             ThemeStudioExit?.Invoke();
         }
@@ -4885,7 +4885,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseArgumentsInjected(List<string> InjectedArguments)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ArgumentsInjected() and responding in RespondArgumentsInjected()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ArgumentsInjected() and responding in RespondArgumentsInjected()...");
             EventsManager.FiredEvents.Add("ArgumentsInjected (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { InjectedArguments });
             ArgumentsInjected?.Invoke(InjectedArguments);
         }
@@ -4894,7 +4894,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseZipShellInitialized()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ZipShellInitialized() and responding in RespondZipShellInitialized()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ZipShellInitialized() and responding in RespondZipShellInitialized()...");
             EventsManager.FiredEvents.Add("ZipShellInitialized (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             ZipShellInitialized?.Invoke();
         }
@@ -4903,7 +4903,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseZipPreExecuteCommand(string Command)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ZipPreExecuteCommand() and responding in RespondZipPreExecuteCommand()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ZipPreExecuteCommand() and responding in RespondZipPreExecuteCommand()...");
             EventsManager.FiredEvents.Add("ZipPreExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
             ZipPreExecuteCommand?.Invoke(Command);
         }
@@ -4912,7 +4912,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseZipPostExecuteCommand(string Command)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ZipPostExecuteCommand() and responding in RespondZipPostExecuteCommand()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ZipPostExecuteCommand() and responding in RespondZipPostExecuteCommand()...");
             EventsManager.FiredEvents.Add("ZipPostExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
             ZipPostExecuteCommand?.Invoke(Command);
         }
@@ -4921,7 +4921,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseZipCommandError(string Command, Exception Exception)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ZipCommandError() and responding in RespondZipCommandError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ZipCommandError() and responding in RespondZipCommandError()...");
             EventsManager.FiredEvents.Add("ZipCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
             ZipCommandError?.Invoke(Command, Exception);
         }
@@ -4930,7 +4930,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseHTTPShellInitialized()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event HTTPShellInitialized() and responding in RespondHTTPShellInitialized()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event HTTPShellInitialized() and responding in RespondHTTPShellInitialized()...");
             EventsManager.FiredEvents.Add("HTTPShellInitialized (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             HTTPShellInitialized?.Invoke();
         }
@@ -4939,7 +4939,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseHTTPPreExecuteCommand(string Command)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event HTTPPreExecuteCommand() and responding in RespondHTTPPreExecuteCommand()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event HTTPPreExecuteCommand() and responding in RespondHTTPPreExecuteCommand()...");
             EventsManager.FiredEvents.Add("HTTPPreExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
             HTTPPreExecuteCommand?.Invoke(Command);
         }
@@ -4948,7 +4948,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseHTTPPostExecuteCommand(string Command)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event HTTPPostExecuteCommand() and responding in RespondHTTPPostExecuteCommand()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event HTTPPostExecuteCommand() and responding in RespondHTTPPostExecuteCommand()...");
             EventsManager.FiredEvents.Add("HTTPPostExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
             HTTPPostExecuteCommand?.Invoke(Command);
         }
@@ -4957,7 +4957,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseHTTPCommandError(string Command, Exception Exception)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event HTTPCommandError() and responding in RespondHTTPCommandError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event HTTPCommandError() and responding in RespondHTTPCommandError()...");
             EventsManager.FiredEvents.Add("HTTPCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
             HTTPCommandError?.Invoke(Command, Exception);
         }
@@ -4966,7 +4966,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseProcessError(string Process, Exception Exception)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ProcessError() and responding in RespondProcessError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ProcessError() and responding in RespondProcessError()...");
             EventsManager.FiredEvents.Add("ProcessError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Process, Exception });
             ProcessError?.Invoke(Process, Exception);
         }
@@ -4975,7 +4975,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseLanguageInstalled(string Language)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event LanguageInstalled() and responding in RespondLanguageInstalled()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event LanguageInstalled() and responding in RespondLanguageInstalled()...");
             EventsManager.FiredEvents.Add("LanguageInstalled (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             LanguageInstalled?.Invoke(Language);
         }
@@ -4984,7 +4984,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseLanguageUninstalled(string Language)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event LanguageUninstalled() and responding in RespondLanguageUninstalled()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event LanguageUninstalled() and responding in RespondLanguageUninstalled()...");
             EventsManager.FiredEvents.Add("LanguageUninstalled (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             LanguageUninstalled?.Invoke(Language);
         }
@@ -4993,7 +4993,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseLanguageInstallError(string Language, Exception Exception)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event LanguageInstallError() and responding in RespondLanguageInstallError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event LanguageInstallError() and responding in RespondLanguageInstallError()...");
             EventsManager.FiredEvents.Add("LanguageInstallError (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             LanguageInstallError?.Invoke(Language, Exception);
         }
@@ -5002,7 +5002,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseLanguageUninstallError(string Language, Exception Exception)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event LanguageUninstallError() and responding in RespondLanguageUninstallError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event LanguageUninstallError() and responding in RespondLanguageUninstallError()...");
             EventsManager.FiredEvents.Add("LanguageUninstallError (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             LanguageUninstallError?.Invoke(Language, Exception);
         }
@@ -5011,7 +5011,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseLanguagesInstalled()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event LanguagesInstalled() and responding in RespondLanguagesInstalled()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event LanguagesInstalled() and responding in RespondLanguagesInstalled()...");
             EventsManager.FiredEvents.Add("LanguagesInstalled (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             LanguagesInstalled?.Invoke();
         }
@@ -5020,7 +5020,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseLanguagesUninstalled()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event LanguagesUninstalled() and responding in RespondLanguagesUninstalled()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event LanguagesUninstalled() and responding in RespondLanguagesUninstalled()...");
             EventsManager.FiredEvents.Add("LanguagesUninstalled (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             LanguagesUninstalled?.Invoke();
         }
@@ -5029,7 +5029,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseLanguagesInstallError(Exception Exception)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event LanguagesInstallError() and responding in RespondLanguagesInstallError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event LanguagesInstallError() and responding in RespondLanguagesInstallError()...");
             EventsManager.FiredEvents.Add("LanguagesInstallError (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             LanguagesInstallError?.Invoke(Exception);
         }
@@ -5038,7 +5038,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseLanguagesUninstallError(Exception Exception)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event LanguagesUninstallError() and responding in RespondLanguagesUninstallError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event LanguagesUninstallError() and responding in RespondLanguagesUninstallError()...");
             EventsManager.FiredEvents.Add("LanguagesUninstallError (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             LanguagesUninstallError?.Invoke(Exception);
         }
@@ -5047,7 +5047,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseHexShellInitialized()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event HexShellInitialized() and responding in RespondHexShellInitialized()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event HexShellInitialized() and responding in RespondHexShellInitialized()...");
             EventsManager.FiredEvents.Add("HexShellInitialized (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             HexShellInitialized?.Invoke();
         }
@@ -5056,7 +5056,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseHexPreExecuteCommand(string Command)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event HexPreExecuteCommand() and responding in RespondHexPreExecuteCommand()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event HexPreExecuteCommand() and responding in RespondHexPreExecuteCommand()...");
             EventsManager.FiredEvents.Add("HexPreExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
             HexPreExecuteCommand?.Invoke(Command);
         }
@@ -5065,7 +5065,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseHexPostExecuteCommand(string Command)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event HexPostExecuteCommand() and responding in RespondHexPostExecuteCommand()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event HexPostExecuteCommand() and responding in RespondHexPostExecuteCommand()...");
             EventsManager.FiredEvents.Add("HexPostExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
             HexPostExecuteCommand?.Invoke(Command);
         }
@@ -5074,7 +5074,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseHexCommandError(string Command, Exception Exception)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event HexCommandError() and responding in RespondHexCommandError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event HexCommandError() and responding in RespondHexCommandError()...");
             EventsManager.FiredEvents.Add("HexCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
             HexCommandError?.Invoke(Command, Exception);
         }
@@ -5083,7 +5083,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseJsonShellInitialized()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event JsonShellInitialized() and responding in RespondJsonShellInitialized()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event JsonShellInitialized() and responding in RespondJsonShellInitialized()...");
             EventsManager.FiredEvents.Add("JsonShellInitialized (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             JsonShellInitialized?.Invoke();
         }
@@ -5092,7 +5092,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseJsonPreExecuteCommand(string Command)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event JsonPreExecuteCommand() and responding in RespondJsonPreExecuteCommand()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event JsonPreExecuteCommand() and responding in RespondJsonPreExecuteCommand()...");
             EventsManager.FiredEvents.Add("JsonPreExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
             JsonPreExecuteCommand?.Invoke(Command);
         }
@@ -5101,7 +5101,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseJsonPostExecuteCommand(string Command)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event JsonPostExecuteCommand() and responding in RespondJsonPostExecuteCommand()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event JsonPostExecuteCommand() and responding in RespondJsonPostExecuteCommand()...");
             EventsManager.FiredEvents.Add("JsonPostExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
             JsonPostExecuteCommand?.Invoke(Command);
         }
@@ -5110,7 +5110,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseJsonCommandError(string Command, Exception Exception)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event JsonCommandError() and responding in RespondJsonCommandError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event JsonCommandError() and responding in RespondJsonCommandError()...");
             EventsManager.FiredEvents.Add("JsonCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
             JsonCommandError?.Invoke(Command, Exception);
         }
@@ -5119,7 +5119,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseTestShellInitialized()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event TestShellInitialized() and responding in RespondTestShellInitialized()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event TestShellInitialized() and responding in RespondTestShellInitialized()...");
             EventsManager.FiredEvents.Add("TestShellInitialized (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             TestShellInitialized?.Invoke();
         }
@@ -5128,7 +5128,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseTestPreExecuteCommand(string Command)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event TestPreExecuteCommand() and responding in RespondTestPreExecuteCommand()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event TestPreExecuteCommand() and responding in RespondTestPreExecuteCommand()...");
             EventsManager.FiredEvents.Add("TestPreExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
             TestPreExecuteCommand?.Invoke(Command);
         }
@@ -5137,7 +5137,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseTestPostExecuteCommand(string Command)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event TestPostExecuteCommand() and responding in RespondTestPostExecuteCommand()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event TestPostExecuteCommand() and responding in RespondTestPostExecuteCommand()...");
             EventsManager.FiredEvents.Add("TestPostExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
             TestPostExecuteCommand?.Invoke(Command);
         }
@@ -5146,7 +5146,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseTestCommandError(string Command, Exception Exception)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event TestCommandError() and responding in RespondTestCommandError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event TestCommandError() and responding in RespondTestCommandError()...");
             EventsManager.FiredEvents.Add("TestCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
             TestCommandError?.Invoke(Command, Exception);
         }
@@ -5155,7 +5155,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseRarShellInitialized()
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RarShellInitialized() and responding in RespondRarShellInitialized()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RarShellInitialized() and responding in RespondRarShellInitialized()...");
             EventsManager.FiredEvents.Add("RarShellInitialized (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             RarShellInitialized?.Invoke();
         }
@@ -5164,7 +5164,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseRarPreExecuteCommand(string Command)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RarPreExecuteCommand() and responding in RespondRarPreExecuteCommand()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RarPreExecuteCommand() and responding in RespondRarPreExecuteCommand()...");
             EventsManager.FiredEvents.Add("RarPreExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
             RarPreExecuteCommand?.Invoke(Command);
         }
@@ -5173,7 +5173,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseRarPostExecuteCommand(string Command)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RarPostExecuteCommand() and responding in RespondRarPostExecuteCommand()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RarPostExecuteCommand() and responding in RespondRarPostExecuteCommand()...");
             EventsManager.FiredEvents.Add("RarPostExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
             RarPostExecuteCommand?.Invoke(Command);
         }
@@ -5182,7 +5182,7 @@ namespace KS.Kernel.Events
         /// </summary>
         public void RaiseRarCommandError(string Command, Exception Exception)
         {
-            DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RarCommandError() and responding in RespondRarCommandError()...");
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RarCommandError() and responding in RespondRarCommandError()...");
             EventsManager.FiredEvents.Add("RarCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
             RarCommandError?.Invoke(Command, Exception);
         }

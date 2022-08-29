@@ -51,7 +51,7 @@ namespace KS.Network
                 // See if it supports IPv6
                 if (!adapter.Supports(NetworkInterfaceComponent.IPv6))
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "{0} doesn't support IPv6. Trying to get information about IPv4.", adapter.Description);
+                    DebugWriter.WriteDebug(DebugLevel.W, "{0} doesn't support IPv6. Trying to get information about IPv4.", adapter.Description);
                     TextWriterColor.Write(Translate.DoTranslation("Adapter {0} doesn't support IPv6. Continuing..."), true, ColorTools.ColTypes.Error, adapter.Description);
                     NoV6 = true;
                 }
@@ -59,7 +59,7 @@ namespace KS.Network
                 // See if it supports IPv4
                 if (!adapter.Supports(NetworkInterfaceComponent.IPv4))
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "{0} doesn't support IPv4.", adapter.Description);
+                    DebugWriter.WriteDebug(DebugLevel.E, "{0} doesn't support IPv4.", adapter.Description);
                     TextWriterColor.Write(Translate.DoTranslation("Adapter {0} doesn't support IPv4. Probe failed."), true, ColorTools.ColTypes.Error, adapter.Description);
                     NoV4 = true;
                 }
@@ -67,7 +67,7 @@ namespace KS.Network
                 // Get adapter IPv(4/6) properties
                 if (NetworkAdapter.IsInternetAdapter(adapter) & !NoV4)
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Adapter type of {0}: {1}", adapter.Description, adapter.NetworkInterfaceType.ToString());
+                    DebugWriter.WriteDebug(DebugLevel.I, "Adapter type of {0}: {1}", adapter.Description, adapter.NetworkInterfaceType.ToString());
                     var adapterProperties = adapter.GetIPProperties();
                     var s = adapter.GetIPv4Statistics();
                     try
@@ -79,22 +79,22 @@ namespace KS.Network
                     {
                         if (p6 is null)
                         {
-                            DebugWriter.Wdbg(DebugLevel.W, "Failed to get IPv6 properties.");
+                            DebugWriter.WriteDebug(DebugLevel.W, "Failed to get IPv6 properties.");
                             TextWriterColor.Write(Translate.DoTranslation("Failed to get IPv6 properties for adapter {0}. Continuing..."), true, ColorTools.ColTypes.Error, adapter.Description);
                         }
                         if (p is null)
                         {
-                            DebugWriter.Wdbg(DebugLevel.E, "Failed to get IPv4 properties.");
+                            DebugWriter.WriteDebug(DebugLevel.E, "Failed to get IPv4 properties.");
                             TextWriterColor.Write(Translate.DoTranslation("Failed to get properties for adapter {0}"), true, ColorTools.ColTypes.Error, adapter.Description);
                             Failed = true;
                         }
-                        DebugWriter.WStkTrc(ex);
+                        DebugWriter.WriteDebugStackTrace(ex);
                     }
 
                     // Check if statistics is nothing
                     if (s is null)
                     {
-                        DebugWriter.Wdbg(DebugLevel.E, "Failed to get statistics.");
+                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to get statistics.");
                         TextWriterColor.Write(Translate.DoTranslation("Failed to get statistics for adapter {0}"), true, ColorTools.ColTypes.Error, adapter.Description);
                         Failed = true;
                     }
@@ -112,7 +112,7 @@ namespace KS.Network
                 }
                 else
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "Adapter {0} doesn't belong in netinfo because the type is {1}", adapter.Description, adapter.NetworkInterfaceType);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Adapter {0} doesn't belong in netinfo because the type is {1}", adapter.Description, adapter.NetworkInterfaceType);
                 }
             }
 

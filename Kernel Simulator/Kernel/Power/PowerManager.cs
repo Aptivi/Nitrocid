@@ -55,7 +55,7 @@ namespace KS.Kernel.Power
         /// <param name="Port">Port of the remote system running KS RPC</param>
         public static void PowerManage(PowerMode PowerMode, string IP, int Port)
         {
-            DebugWriter.Wdbg(DebugLevel.I, "Power management has the argument of {0}", PowerMode);
+            DebugWriter.WriteDebug(DebugLevel.I, "Power management has the argument of {0}", PowerMode);
             switch (PowerMode)
             {
                 case PowerMode.Shutdown:

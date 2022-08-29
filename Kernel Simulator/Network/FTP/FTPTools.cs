@@ -138,7 +138,7 @@ namespace KS.Network.FTP
                     FTPShellCommon.FtpUser = Input.ReadLine();
                     if (string.IsNullOrEmpty(FTPShellCommon.FtpUser))
                     {
-                        DebugWriter.Wdbg(DebugLevel.W, "User is not provided. Fallback to \"anonymous\"");
+                        DebugWriter.WriteDebug(DebugLevel.W, "User is not provided. Fallback to \"anonymous\"");
                         FTPShellCommon.FtpUser = "anonymous";
                     }
 
@@ -148,8 +148,8 @@ namespace KS.Network.FTP
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "Error connecting to {0}: {1}", address, ex.Message);
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Error connecting to {0}: {1}", address, ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     TextWriterColor.Write(Translate.DoTranslation("Error when trying to connect to {0}: {1}"), true, ColorTools.ColTypes.Error, address, ex.Message);
                 }
             }
@@ -164,7 +164,7 @@ namespace KS.Network.FTP
             TextWriterColor.Write(Translate.DoTranslation("Preparing profiles... It could take several minutes..."), true, ColorTools.ColTypes.Neutral);
             var profiles = FTPShellCommon.ClientFTP.AutoDetect(Flags.FTPFirstProfileOnly);
             var profsel = new FtpProfile();
-            DebugWriter.Wdbg(DebugLevel.I, "Profile count: {0}", profiles.Count);
+            DebugWriter.WriteDebug(DebugLevel.I, "Profile count: {0}", profiles.Count);
             if (profiles.Count > 1) // More than one profile
             {
                 if (FTPShellCommon.FtpUseFirstProfile)
@@ -193,21 +193,21 @@ namespace KS.Network.FTP
                     {
                         TextWriterColor.Write(Kernel.Kernel.NewLine + ">> ", false, ColorTools.ColTypes.Input);
                         profanswer = Input.ReadLine();
-                        DebugWriter.Wdbg(DebugLevel.I, "Selection: {0}", profanswer);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Selection: {0}", profanswer);
                         if (StringQuery.IsStringNumeric(profanswer))
                         {
                             try
                             {
-                                DebugWriter.Wdbg(DebugLevel.I, "Profile selected");
+                                DebugWriter.WriteDebug(DebugLevel.I, "Profile selected");
                                 int AnswerNumber = Convert.ToInt32(profanswer);
                                 profsel = profiles[AnswerNumber - 1];
                                 profanswered = true;
                             }
                             catch (Exception ex)
                             {
-                                DebugWriter.Wdbg(DebugLevel.I, "Profile invalid");
+                                DebugWriter.WriteDebug(DebugLevel.I, "Profile invalid");
                                 TextWriterColor.Write(Translate.DoTranslation("Invalid profile selection.") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.Error);
-                                DebugWriter.WStkTrc(ex);
+                                DebugWriter.WriteDebugStackTrace(ex);
                             }
                         }
                         else if (!ReadLineReboot.ReadLine.ReadRanToCompletion)
@@ -230,12 +230,12 @@ namespace KS.Network.FTP
 
             // Connect
             TextWriterColor.Write(Translate.DoTranslation("Trying to connect to {0} with profile {1}..."), true, ColorTools.ColTypes.Neutral, FTPShellCommon.ClientFTP.Host, profiles.IndexOf(profsel));
-            DebugWriter.Wdbg(DebugLevel.I, "Connecting to {0} with {1}...", FTPShellCommon.ClientFTP.Host, profiles.IndexOf(profsel));
+            DebugWriter.WriteDebug(DebugLevel.I, "Connecting to {0} with {1}...", FTPShellCommon.ClientFTP.Host, profiles.IndexOf(profsel));
             FTPShellCommon.ClientFTP.Connect(profsel);
 
             // Show that it's connected
             TextWriterColor.Write(Translate.DoTranslation("Connected to {0}"), true, ColorTools.ColTypes.Success, FTPShellCommon.ClientFTP.Host);
-            DebugWriter.Wdbg(DebugLevel.I, "Connected.");
+            DebugWriter.WriteDebug(DebugLevel.I, "Connected.");
             FTPShellCommon.FtpConnected = true;
 
             // If MOTD exists, show it
@@ -253,16 +253,16 @@ namespace KS.Network.FTP
 
             // Prepare to print current FTP directory
             FTPShellCommon.FtpCurrentRemoteDir = FTPShellCommon.ClientFTP.GetWorkingDirectory();
-            DebugWriter.Wdbg(DebugLevel.I, "Working directory: {0}", FTPShellCommon.FtpCurrentRemoteDir);
+            DebugWriter.WriteDebug(DebugLevel.I, "Working directory: {0}", FTPShellCommon.FtpCurrentRemoteDir);
             FTPShellCommon.FtpSite = FTPShellCommon.ClientFTP.Host;
             FTPShellCommon.FtpUser = FTPShellCommon.ClientFTP.Credentials.UserName;
 
             // Write connection information to Speed Dial file if it doesn't exist there
             var SpeedDialEntries = NetworkTools.ListSpeedDialEntries(NetworkTools.SpeedDialType.FTP);
-            DebugWriter.Wdbg(DebugLevel.I, "Speed dial length: {0}", SpeedDialEntries.Count);
+            DebugWriter.WriteDebug(DebugLevel.I, "Speed dial length: {0}", SpeedDialEntries.Count);
             if (SpeedDialEntries.ContainsKey(FTPShellCommon.FtpSite))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Site already there.");
+                DebugWriter.WriteDebug(DebugLevel.I, "Site already there.");
                 return;
             }
             // Speed dial format is below:
@@ -276,22 +276,22 @@ namespace KS.Network.FTP
         /// </summary>
         public static void TryToValidate(FtpClient control, FtpSslValidationEventArgs e)
         {
-            DebugWriter.Wdbg(DebugLevel.I, "Certificate checks");
+            DebugWriter.WriteDebug(DebugLevel.I, "Certificate checks");
             if (e.PolicyErrors == SslPolicyErrors.None)
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Certificate accepted.");
-                DebugWriter.Wdbg(DebugLevel.I, e.Certificate.GetRawCertDataString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Certificate accepted.");
+                DebugWriter.WriteDebug(DebugLevel.I, e.Certificate.GetRawCertDataString());
                 e.Accept = true;
             }
             else
             {
-                DebugWriter.Wdbg(DebugLevel.W, $"Certificate error is {e.PolicyErrors}");
+                DebugWriter.WriteDebug(DebugLevel.W, $"Certificate error is {e.PolicyErrors}");
                 TextWriterColor.Write(Translate.DoTranslation("During certificate validation, there are certificate errors. It might be the first time you've connected to the server or the certificate might have been expired. Here's an error:"), true, ColorTools.ColTypes.Error);
                 TextWriterColor.Write("- {0}", true, ColorTools.ColTypes.Error, e.PolicyErrors.ToString());
                 if (FTPShellCommon.FtpAlwaysAcceptInvalidCerts)
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "Certificate accepted, although there are errors.");
-                    DebugWriter.Wdbg(DebugLevel.I, e.Certificate.GetRawCertDataString());
+                    DebugWriter.WriteDebug(DebugLevel.W, "Certificate accepted, although there are errors.");
+                    DebugWriter.WriteDebug(DebugLevel.I, e.Certificate.GetRawCertDataString());
                     e.Accept = true;
                 }
                 else
@@ -303,16 +303,16 @@ namespace KS.Network.FTP
                         ColorTools.SetConsoleColor(ColorTools.InputColor);
                         Answer = Convert.ToString(ConsoleBase.ConsoleWrapper.ReadKey().KeyChar);
                         ConsoleBase.ConsoleWrapper.WriteLine();
-                        DebugWriter.Wdbg(DebugLevel.I, $"Answer is {Answer}");
+                        DebugWriter.WriteDebug(DebugLevel.I, $"Answer is {Answer}");
                         if (Answer.ToLower() == "y")
                         {
-                            DebugWriter.Wdbg(DebugLevel.W, "Certificate accepted, although there are errors.");
-                            DebugWriter.Wdbg(DebugLevel.I, e.Certificate.GetRawCertDataString());
+                            DebugWriter.WriteDebug(DebugLevel.W, "Certificate accepted, although there are errors.");
+                            DebugWriter.WriteDebug(DebugLevel.I, e.Certificate.GetRawCertDataString());
                             e.Accept = true;
                         }
                         else if (Answer.ToLower() != "n")
                         {
-                            DebugWriter.Wdbg(DebugLevel.W, "Invalid answer.");
+                            DebugWriter.WriteDebug(DebugLevel.W, "Invalid answer.");
                             TextWriterColor.Write(Translate.DoTranslation("Invalid answer. Please try again."), true, ColorTools.ColTypes.Error);
                         }
                     }
@@ -328,7 +328,7 @@ namespace KS.Network.FTP
             if (Checking.FileExists(Paths.GetKernelPath(KernelPathType.FTPSpeedDial)))
             {
                 var SpeedDialLines = NetworkTools.ListSpeedDialEntries(NetworkTools.SpeedDialType.FTP);
-                DebugWriter.Wdbg(DebugLevel.I, "Speed dial length: {0}", SpeedDialLines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Speed dial length: {0}", SpeedDialLines.Count);
                 string Answer;
                 bool Answering = true;
                 var SpeedDialHeaders = new[] { "#", Translate.DoTranslation("Host Name"), Translate.DoTranslation("Host Port"), Translate.DoTranslation("Username"), Translate.DoTranslation("Encryption") };
@@ -339,7 +339,7 @@ namespace KS.Network.FTP
                     for (int i = 0, loopTo = SpeedDialLines.Count - 1; i <= loopTo; i++)
                     {
                         string SpeedDialAddress = SpeedDialLines.Keys.ElementAtOrDefault(i);
-                        DebugWriter.Wdbg(DebugLevel.I, "Speed dial address: {0}", SpeedDialAddress);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Speed dial address: {0}", SpeedDialAddress);
                         SpeedDialData[i, 0] = (i + 1).ToString();
                         SpeedDialData[i, 1] = SpeedDialAddress;
                         SpeedDialData[i, 2] = (string)SpeedDialLines[SpeedDialAddress]["Port"];
@@ -352,33 +352,33 @@ namespace KS.Network.FTP
                     {
                         TextWriterColor.Write(">> ", false, ColorTools.ColTypes.Input);
                         Answer = Input.ReadLine();
-                        DebugWriter.Wdbg(DebugLevel.I, "Response: {0}", Answer);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Response: {0}", Answer);
                         if (StringQuery.IsStringNumeric(Answer))
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Response is numeric. IsStringNumeric(Answer) returned true. Checking to see if in-bounds...");
+                            DebugWriter.WriteDebug(DebugLevel.I, "Response is numeric. IsStringNumeric(Answer) returned true. Checking to see if in-bounds...");
                             int AnswerInt = Convert.ToInt32(Answer);
                             if (AnswerInt <= SpeedDialLines.Count)
                             {
                                 Answering = false;
-                                DebugWriter.Wdbg(DebugLevel.I, "Response is in-bounds. Connecting...");
+                                DebugWriter.WriteDebug(DebugLevel.I, "Response is in-bounds. Connecting...");
                                 string ChosenSpeedDialAddress = SpeedDialLines.Keys.ElementAtOrDefault(AnswerInt - 1);
-                                DebugWriter.Wdbg(DebugLevel.I, "Chosen connection: {0}", ChosenSpeedDialAddress);
+                                DebugWriter.WriteDebug(DebugLevel.I, "Chosen connection: {0}", ChosenSpeedDialAddress);
                                 string Address = ChosenSpeedDialAddress;
                                 string Port = (string)SpeedDialLines[ChosenSpeedDialAddress]["Port"];
                                 string Username = (string)SpeedDialLines[ChosenSpeedDialAddress]["User"];
                                 FtpEncryptionMode Encryption = (FtpEncryptionMode)Convert.ToInt32(Enum.Parse(typeof(FtpEncryptionMode), (string)SpeedDialLines[ChosenSpeedDialAddress]["FTP Encryption Mode"]));
-                                DebugWriter.Wdbg(DebugLevel.I, "Address: {0}, Port: {1}, Username: {2}, Encryption: {3}", Address, Port, Username, Encryption);
+                                DebugWriter.WriteDebug(DebugLevel.I, "Address: {0}, Port: {1}, Username: {2}, Encryption: {3}", Address, Port, Username, Encryption);
                                 PromptForPassword(Username, Address, Convert.ToInt32(Port), Encryption);
                             }
                             else
                             {
-                                DebugWriter.Wdbg(DebugLevel.I, "Response is out-of-bounds. Retrying...");
+                                DebugWriter.WriteDebug(DebugLevel.I, "Response is out-of-bounds. Retrying...");
                                 TextWriterColor.Write(Translate.DoTranslation("The selection is out of range. Select between 1-{0}. Try again."), true, ColorTools.ColTypes.Error, SpeedDialLines.Count);
                             }
                         }
                         else if (ReadLineReboot.ReadLine.ReadRanToCompletion)
                         {
-                            DebugWriter.Wdbg(DebugLevel.W, "Response isn't numeric. IsStringNumeric(Answer) returned false.");
+                            DebugWriter.WriteDebug(DebugLevel.W, "Response isn't numeric. IsStringNumeric(Answer) returned false.");
                             TextWriterColor.Write(Translate.DoTranslation("The selection is not a number. Try again."), true, ColorTools.ColTypes.Error);
                         }
                         else
@@ -389,13 +389,13 @@ namespace KS.Network.FTP
                 }
                 else
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "Speed dial is empty. Lines count is 0.");
+                    DebugWriter.WriteDebug(DebugLevel.E, "Speed dial is empty. Lines count is 0.");
                     TextWriterColor.Write(Translate.DoTranslation("Speed dial is empty. Connect to a server to add an address to it."), true, ColorTools.ColTypes.Error);
                 }
             }
             else
             {
-                DebugWriter.Wdbg(DebugLevel.E, "File doesn't exist.");
+                DebugWriter.WriteDebug(DebugLevel.E, "File doesn't exist.");
                 TextWriterColor.Write(Translate.DoTranslation("Speed dial doesn't exist. Connect to a server to add an address to it."), true, ColorTools.ColTypes.Error);
             }
         }
@@ -411,7 +411,7 @@ namespace KS.Network.FTP
         /// <param name="Message">A message</param>
         public override void Write(string Message)
         {
-            DebugWriter.Wdbg(DebugLevel.I, Message);
+            DebugWriter.WriteDebug(DebugLevel.I, Message);
         }
 
         /// <summary>
@@ -420,7 +420,7 @@ namespace KS.Network.FTP
         /// <param name="Message">A message</param>
         public override void WriteLine(string Message)
         {
-            DebugWriter.Wdbg(DebugLevel.I, Message);
+            DebugWriter.WriteDebug(DebugLevel.I, Message);
         }
     }
 }

@@ -68,7 +68,7 @@ namespace KS.Shell.Shells.Hex
                     // Open file if not open
                     if (HexEditShellCommon.HexEdit_FileStream is null)
                     {
-                        DebugWriter.Wdbg(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath);
+                        DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath);
                         if (!HexEditTools.HexEdit_OpenBinaryFile(FilePath))
                         {
                             TextWriterColor.Write(Translate.DoTranslation("Failed to open file. Exiting shell..."), true, ColorTools.ColTypes.Error);
@@ -104,7 +104,7 @@ namespace KS.Shell.Shells.Hex
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     TextWriterColor.Write(Translate.DoTranslation("There was an error in the shell.") + Kernel.Kernel.NewLine + "Error {0}: {1}", true, ColorTools.ColTypes.Error, ex.GetType().FullName, ex.Message);
                     continue;
                 }

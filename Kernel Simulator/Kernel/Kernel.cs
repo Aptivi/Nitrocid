@@ -197,7 +197,7 @@ namespace KS.Kernel
 
                     // Phase 3: Parse Mods and Screensavers
                     KernelTools.ReportNewStage(3, Translate.DoTranslation("- Stage 3: Mods and screensavers detection"));
-                    DebugWriter.Wdbg(DebugLevel.I, "Safe mode flag is set to {0}", Flags.SafeMode);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Safe mode flag is set to {0}", Flags.SafeMode);
                     if (!Flags.SafeMode)
                     {
                         if (Flags.StartKernelMods)
@@ -256,13 +256,13 @@ namespace KS.Kernel
                         TextWriterColor.Write(Translate.DoTranslation("Enter the admin password for maintenance."), true, ColorTools.ColTypes.Neutral);
                         if (Login.Login.Users.ContainsKey("root"))
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Root account found. Prompting for password...");
+                            DebugWriter.WriteDebug(DebugLevel.I, "Root account found. Prompting for password...");
                             Login.Login.ShowPasswordPrompt("root");
                         }
                         else
                         {
                             // Some malicious mod removed the root account, or rare situation happened and it was gone.
-                            DebugWriter.Wdbg(DebugLevel.W, "Root account not found for maintenance. Initializing it...");
+                            DebugWriter.WriteDebug(DebugLevel.W, "Root account not found for maintenance. Initializing it...");
                             UserManagement.InitializeSystemAccount();
                             Login.Login.ShowPasswordPrompt("root");
                         }
@@ -279,7 +279,7 @@ namespace KS.Kernel
                 }
                 catch (KernelErrorException kee)
                 {
-                    DebugWriter.WStkTrc(kee);
+                    DebugWriter.WriteDebugStackTrace(kee);
                     Flags.KernelErrored = false;
                     Flags.RebootRequested = false;
                     Flags.LogoutRequested = false;
@@ -287,7 +287,7 @@ namespace KS.Kernel
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     KernelTools.KernelError(KernelErrorLevel.U, true, 5L, Translate.DoTranslation("Kernel Error while booting: {0}"), ex, ex.Message);
                 }
             }

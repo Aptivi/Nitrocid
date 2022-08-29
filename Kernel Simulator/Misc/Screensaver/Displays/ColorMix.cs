@@ -280,7 +280,7 @@ namespace KS.Misc.Screensaver.Displays
                 int RedColorNum = RandomDriver.Next(ColorMixSettings.ColorMixMinimumRedColorLevel, ColorMixSettings.ColorMixMaximumRedColorLevel);
                 int GreenColorNum = RandomDriver.Next(ColorMixSettings.ColorMixMinimumGreenColorLevel, ColorMixSettings.ColorMixMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Next(ColorMixSettings.ColorMixMinimumBlueColorLevel, ColorMixSettings.ColorMixMaximumBlueColorLevel);
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
                 if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                     ResizeSyncing = true;
@@ -293,7 +293,7 @@ namespace KS.Misc.Screensaver.Displays
             else if (ColorMixSettings.ColorMix255Colors)
             {
                 int ColorNum = RandomDriver.Next(ColorMixSettings.ColorMixMinimumColorLevel, ColorMixSettings.ColorMixMaximumColorLevel);
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                     ResizeSyncing = true;
                 if (!ResizeSyncing)
@@ -309,7 +309,7 @@ namespace KS.Misc.Screensaver.Displays
                 if (!ResizeSyncing)
                 {
                     ConsoleBase.ConsoleWrapper.BackgroundColor = (ConsoleColor)RandomDriver.Next(ColorMixSettings.ColorMixMinimumColorLevel, ColorMixSettings.ColorMixMaximumColorLevel);
-                    DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
+                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
                     ConsoleBase.ConsoleWrapper.Write(" ");
                 }
             }

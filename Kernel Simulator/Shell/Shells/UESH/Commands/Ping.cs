@@ -48,7 +48,7 @@ namespace KS.Shell.Shells.UESH.Commands
             int StepsToSkip = 0;
             if (StringQuery.IsStringNumeric(ListArgsOnly[0]))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "ListArgsOnly(0) is numeric. Assuming number of times: {0}", ListArgsOnly[0]);
+                DebugWriter.WriteDebug(DebugLevel.I, "ListArgsOnly(0) is numeric. Assuming number of times: {0}", ListArgsOnly[0]);
                 PingTimes = Convert.ToInt32(ListArgsOnly[0]);
                 StepsToSkip = 1;
             }
@@ -74,7 +74,7 @@ namespace KS.Shell.Shells.UESH.Commands
                         catch (Exception ex)
                         {
                             TextWriterColor.Write("[{2}] " + Translate.DoTranslation("Failed to ping {0}: {1}"), true, ColorTools.ColTypes.Error, PingedAddress, ex.Message, CurrentTime);
-                            DebugWriter.WStkTrc(ex);
+                            DebugWriter.WriteDebugStackTrace(ex);
                         }
                     }
                 }

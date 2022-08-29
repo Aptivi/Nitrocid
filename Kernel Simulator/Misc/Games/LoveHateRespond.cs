@@ -81,9 +81,9 @@ namespace KS.Misc.Games
                 Type = Users[RandomUser];
                 RandomComment = Comments[((int)Type).ToString()].ElementAt(RandomDriver.Next(Comments[((int)Type).ToString()].Count));
                 CommentNumber += 1L;
-                DebugWriter.Wdbg(DebugLevel.I, "Comment type: {0}", Type);
-                DebugWriter.Wdbg(DebugLevel.I, "Commenter: {0}", RandomUser);
-                DebugWriter.Wdbg(DebugLevel.I, "Comment: {0}", RandomComment);
+                DebugWriter.WriteDebug(DebugLevel.I, "Comment type: {0}", Type);
+                DebugWriter.WriteDebug(DebugLevel.I, "Commenter: {0}", RandomUser);
+                DebugWriter.WriteDebug(DebugLevel.I, "Comment: {0}", RandomComment);
 
                 // Ask the user the question
                 SeparatorWriterColor.WriteSeparator("[S: {0} / C: {1}]", true, Score, CommentNumber);
@@ -93,7 +93,7 @@ namespace KS.Misc.Games
                 TextWriterColor.Write(Translate.DoTranslation("How would you respond?") + " <A/T/Q> ", false, ColorTools.ColTypes.Input);
                 Response = Convert.ToString(ConsoleBase.ConsoleWrapper.ReadKey().KeyChar);
                 ConsoleBase.ConsoleWrapper.WriteLine();
-                DebugWriter.Wdbg(DebugLevel.I, "Response: {0}", Response);
+                DebugWriter.WriteDebug(DebugLevel.I, "Response: {0}", Response);
 
                 // Parse response
                 switch (Response.ToLower() ?? "")
@@ -104,14 +104,14 @@ namespace KS.Misc.Games
                             {
                                 case CommentType.Love:
                                     {
-                                        DebugWriter.Wdbg(DebugLevel.I, "Apologized to love comment");
+                                        DebugWriter.WriteDebug(DebugLevel.I, "Apologized to love comment");
                                         TextWriterColor.Write("[-1] " + Translate.DoTranslation("Apologized to love comment. Not good enough."), true, ColorTools.ColTypes.Neutral);
                                         Score -= 1L;
                                         break;
                                     }
                                 case CommentType.Hate:
                                     {
-                                        DebugWriter.Wdbg(DebugLevel.I, "Apologized to hate comment");
+                                        DebugWriter.WriteDebug(DebugLevel.I, "Apologized to hate comment");
                                         TextWriterColor.Write("[+1] " + Translate.DoTranslation("You've apologized to a hate comment! Excellent!"), true, ColorTools.ColTypes.Neutral);
                                         Score += 1L;
                                         break;
@@ -126,14 +126,14 @@ namespace KS.Misc.Games
                             {
                                 case CommentType.Love:
                                     {
-                                        DebugWriter.Wdbg(DebugLevel.I, "Thanked love comment");
+                                        DebugWriter.WriteDebug(DebugLevel.I, "Thanked love comment");
                                         TextWriterColor.Write("[+1] " + Translate.DoTranslation("Great! {0} will appreciate your thanks."), true, ColorTools.ColTypes.Neutral, RandomUser);
                                         Score += 1L;
                                         break;
                                     }
                                 case CommentType.Hate:
                                     {
-                                        DebugWriter.Wdbg(DebugLevel.I, "Thanked hate comment");
+                                        DebugWriter.WriteDebug(DebugLevel.I, "Thanked hate comment");
                                         TextWriterColor.Write("[-1] " + Translate.DoTranslation("You just thanked the hater for the hate comment!"), true, ColorTools.ColTypes.Neutral);
                                         Score -= 1L;
                                         break;
@@ -144,14 +144,14 @@ namespace KS.Misc.Games
                         }
                     case "q": // Quit
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Exit requested");
+                            DebugWriter.WriteDebug(DebugLevel.I, "Exit requested");
                             ExitRequested = true;
                             break;
                         }
 
                     default:
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "No such selection");
+                            DebugWriter.WriteDebug(DebugLevel.I, "No such selection");
                             TextWriterColor.Write(Translate.DoTranslation("Invalid selection. Going to the next comment..."), true, ColorTools.ColTypes.Error);
                             break;
                         }

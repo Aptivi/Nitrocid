@@ -47,10 +47,10 @@ namespace KS.Shell.Shells.Mail
             // Send ping to keep the connection alive
             var IMAP_NoOp = new KernelThread("IMAP Keep Connection", false, MailPingers.IMAPKeepConnection);
             IMAP_NoOp.Start();
-            DebugWriter.Wdbg(DebugLevel.I, "Made new thread about IMAPKeepConnection()");
+            DebugWriter.WriteDebug(DebugLevel.I, "Made new thread about IMAPKeepConnection()");
             var SMTP_NoOp = new KernelThread("SMTP Keep Connection", false, MailPingers.SMTPKeepConnection);
             SMTP_NoOp.Start();
-            DebugWriter.Wdbg(DebugLevel.I, "Made new thread about SMTPKeepConnection()");
+            DebugWriter.WriteDebug(DebugLevel.I, "Made new thread about SMTPKeepConnection()");
             Kernel.Kernel.KernelEventManager.RaiseIMAPShellInitialized();
 
             while (!Bail)
@@ -81,11 +81,11 @@ namespace KS.Shell.Shells.Mail
             MailShellCommon.IMAP_CurrentDirectory = "Inbox";
             if (MailShellCommon.KeepAlive)
             {
-                DebugWriter.Wdbg(DebugLevel.W, "Exit requested, but not disconnecting.");
+                DebugWriter.WriteDebug(DebugLevel.W, "Exit requested, but not disconnecting.");
             }
             else
             {
-                DebugWriter.Wdbg(DebugLevel.W, "Exit requested. Disconnecting host...");
+                DebugWriter.WriteDebug(DebugLevel.W, "Exit requested. Disconnecting host...");
                 if (MailShellCommon.Mail_NotifyNewMail)
                     MailHandlers.ReleaseHandlers();
                 MailLogin.IMAP_Client.Disconnect(true);

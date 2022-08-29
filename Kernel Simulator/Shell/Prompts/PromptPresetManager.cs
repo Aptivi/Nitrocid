@@ -110,7 +110,7 @@ namespace KS.Shell.Prompts
             }
             else if (ThrowOnNotFound)
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Preset {0} for {1} doesn't exist. Throwing...", PresetName, ShellType.ToString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Preset {0} for {1} doesn't exist. Throwing...", PresetName, ShellType.ToString());
                 throw new NoSuchShellPresetException(Translate.DoTranslation("The specified preset {0} is not found."), PresetName);
             }
             else

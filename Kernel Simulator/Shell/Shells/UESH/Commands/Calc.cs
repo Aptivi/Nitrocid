@@ -40,13 +40,13 @@ namespace KS.Shell.Shells.UESH.Commands
             try
             {
                 string Res = SMath.Evaluate(StringArgs).ToString();
-                DebugWriter.Wdbg(DebugLevel.I, "Res = {0}", Res);
+                DebugWriter.WriteDebug(DebugLevel.I, "Res = {0}", Res);
                 TextWriterColor.Write(StringArgs + " = " + Res, true, ColorTools.ColTypes.Neutral);
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Error trying to calculate expression {0}: {1}", StringArgs, ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.I, "Error trying to calculate expression {0}: {1}", StringArgs, ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
                 TextWriterColor.Write(Translate.DoTranslation("Error in calculation.") + " {0}", true, ColorTools.ColTypes.Error, ex.Message);
             }
         }

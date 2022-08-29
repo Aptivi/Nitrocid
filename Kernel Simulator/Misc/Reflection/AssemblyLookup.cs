@@ -41,7 +41,7 @@ namespace KS.Misc.Reflection
             // Add the path to the search path
             if (!AssemblyLookupPaths.Contains(Path))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Adding path {0} to lookup paths...", Path);
+                DebugWriter.WriteDebug(DebugLevel.I, "Adding path {0} to lookup paths...", Path);
                 AssemblyLookupPaths.Add(Path);
             }
         }
@@ -54,7 +54,7 @@ namespace KS.Misc.Reflection
         {
             Assembly FinalAssembly = null;
             string DepAssemblyName = new AssemblyName(args.Name).Name;
-            DebugWriter.Wdbg(DebugLevel.I, "Requested to load {0}.", args.Name);
+            DebugWriter.WriteDebug(DebugLevel.I, "Requested to load {0}.", args.Name);
 
             // Try to load assembly from lookup path
             foreach (string LookupPath in AssemblyLookupPaths)
@@ -63,14 +63,14 @@ namespace KS.Misc.Reflection
                 try
                 {
                     // Try loading
-                    DebugWriter.Wdbg(DebugLevel.I, "Loading from {0}...", DepAssemblyFilePath);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Loading from {0}...", DepAssemblyFilePath);
                     FinalAssembly = Assembly.LoadFrom(DepAssemblyFilePath);
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "Failed to load {0} from {1}: {2}", args.Name, DepAssemblyFilePath, ex.Message);
-                    DebugWriter.WStkTrc(ex);
-                    DebugWriter.Wdbg(DebugLevel.E, "Trying another path...");
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to load {0} from {1}: {2}", args.Name, DepAssemblyFilePath, ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Trying another path...");
                 }
             }
 

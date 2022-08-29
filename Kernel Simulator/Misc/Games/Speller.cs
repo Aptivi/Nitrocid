@@ -45,24 +45,24 @@ namespace KS.Misc.Games
             TextWriterColor.Write(Translate.DoTranslation("Press CTRL+C to exit."), true, ColorTools.ColTypes.Tip);
             if (Words.Count == 0)
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Downloading words...");
+                DebugWriter.WriteDebug(DebugLevel.I, "Downloading words...");
                 Words.AddRange(NetworkTransfer.DownloadString("https://cdn.jsdelivr.net/gh/sindresorhus/word-list/words.txt").SplitNewLines().ToList());
             }
             while (true)
             {
                 RandomWord = Words.ElementAt(RandomDriver.Next(Words.Count));
-                DebugWriter.Wdbg(DebugLevel.I, "Word: {0}", RandomWord);
+                DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}", RandomWord);
                 TextWriterColor.Write(RandomWord, true, ColorTools.ColTypes.Input);
                 SpeltWord = Input.ReadLineNoInput(Convert.ToChar(""));
 
                 if ((SpeltWord ?? "") == (RandomWord ?? ""))
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Spelt: {0} = {1}", SpeltWord, RandomWord);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Spelt: {0} = {1}", SpeltWord, RandomWord);
                     TextWriterColor.Write(Translate.DoTranslation("Spelt perfectly!"), true, ColorTools.ColTypes.Success);
                 }
                 else
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Spelt: {0} != {1}", SpeltWord, RandomWord);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Spelt: {0} != {1}", SpeltWord, RandomWord);
                     TextWriterColor.Write(Translate.DoTranslation("Spelt incorrectly."), true, ColorTools.ColTypes.Warning);
                 }
             }

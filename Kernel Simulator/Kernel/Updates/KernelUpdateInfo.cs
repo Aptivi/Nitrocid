@@ -44,12 +44,12 @@ namespace KS.Kernel.Updates
             {
                 UpdateVersion = UpdateVer;
                 UpdateURL = new Uri(UpdateUrl);
-                DebugWriter.Wdbg(DebugLevel.I, "Added new update {0} with {1} as URI", UpdateVer.ToString(), UpdateUrl);
+                DebugWriter.WriteDebug(DebugLevel.I, "Added new update {0} with {1} as URI", UpdateVer.ToString(), UpdateUrl);
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Failed to create new instance of update class with update {0} with {1} as URI: {2}", UpdateVer.ToString(), UpdateUrl, ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to create new instance of update class with update {0} with {1} as URI: {2}", UpdateVer.ToString(), UpdateUrl, ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
             }
         }
 

@@ -113,7 +113,7 @@ namespace KS.Network.FTP.Filesystem
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     throw new Kernel.Exceptions.FTPFilesystemException(Translate.DoTranslation("Failed to list remote files: {0}"), ex, ex.Message);
                 }
             }
@@ -133,25 +133,25 @@ namespace KS.Network.FTP.Filesystem
         {
             if (FTPShellCommon.FtpConnected)
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Deleting {0}...", Target);
+                DebugWriter.WriteDebug(DebugLevel.I, "Deleting {0}...", Target);
 
                 // Delete a file or folder
                 if (FTPShellCommon.ClientFTP.FileExists(Target))
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "{0} is a file.", Target);
+                    DebugWriter.WriteDebug(DebugLevel.I, "{0} is a file.", Target);
                     FTPShellCommon.ClientFTP.DeleteFile(Target);
                 }
                 else if (FTPShellCommon.ClientFTP.DirectoryExists(Target))
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "{0} is a folder.", Target);
+                    DebugWriter.WriteDebug(DebugLevel.I, "{0} is a folder.", Target);
                     FTPShellCommon.ClientFTP.DeleteDirectory(Target);
                 }
                 else
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "{0} is not found.", Target);
+                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", Target);
                     throw new Kernel.Exceptions.FTPFilesystemException(Translate.DoTranslation("{0} is not found in the server."), Target);
                 }
-                DebugWriter.Wdbg(DebugLevel.I, "Deleted {0}", Target);
+                DebugWriter.WriteDebug(DebugLevel.I, "Deleted {0}", Target);
                 return true;
             }
             else
@@ -240,7 +240,7 @@ namespace KS.Network.FTP.Filesystem
 
                 // Begin the moving process
                 string SourceFile = Source.Split('/').Last();
-                DebugWriter.Wdbg(DebugLevel.I, "Moving from {0} to {1} with the source file of {2}...", Source, Target, SourceFile);
+                DebugWriter.WriteDebug(DebugLevel.I, "Moving from {0} to {1} with the source file of {2}...", Source, Target, SourceFile);
                 if (FTPShellCommon.ClientFTP.DirectoryExists(Source))
                 {
                     Success = FTPShellCommon.ClientFTP.MoveDirectory(Source, Target);
@@ -253,7 +253,7 @@ namespace KS.Network.FTP.Filesystem
                 {
                     Success = FTPShellCommon.ClientFTP.MoveFile(Source, Target);
                 }
-                DebugWriter.Wdbg(DebugLevel.I, "Moved. Result: {0}", Success);
+                DebugWriter.WriteDebug(DebugLevel.I, "Moved. Result: {0}", Success);
                 return Success;
             }
             else
@@ -278,7 +278,7 @@ namespace KS.Network.FTP.Filesystem
 
                 // Begin the copying process
                 string SourceFile = Source.Split('/').Last();
-                DebugWriter.Wdbg(DebugLevel.I, "Copying from {0} to {1} with the source file of {2}...", Source, Target, SourceFile);
+                DebugWriter.WriteDebug(DebugLevel.I, "Copying from {0} to {1} with the source file of {2}...", Source, Target, SourceFile);
                 if (FTPShellCommon.ClientFTP.DirectoryExists(Source))
                 {
                     FTPShellCommon.ClientFTP.DownloadDirectory(Paths.TempPath + "/FTPTransfer", Source);
@@ -303,8 +303,8 @@ namespace KS.Network.FTP.Filesystem
                     {
                         if (FileResult.IsFailed)
                         {
-                            DebugWriter.Wdbg(DebugLevel.E, "Transfer for {0} failed: {1}", FileResult.Name, FileResult.Exception.Message);
-                            DebugWriter.WStkTrc(FileResult.Exception);
+                            DebugWriter.WriteDebug(DebugLevel.E, "Transfer for {0} failed: {1}", FileResult.Name, FileResult.Exception.Message);
+                            DebugWriter.WriteDebugStackTrace(FileResult.Exception);
                             Success = false;
                         }
                     }
@@ -313,11 +313,11 @@ namespace KS.Network.FTP.Filesystem
                 {
                     if (((FtpStatus)Convert.ToInt32(Result)).IsFailure())
                     {
-                        DebugWriter.Wdbg(DebugLevel.E, "Transfer failed");
+                        DebugWriter.WriteDebug(DebugLevel.E, "Transfer failed");
                         Success = false;
                     }
                 }
-                DebugWriter.Wdbg(DebugLevel.I, "Copied. Result: {0}", Success);
+                DebugWriter.WriteDebug(DebugLevel.I, "Copied. Result: {0}", Success);
                 return Success;
             }
             else
@@ -343,8 +343,8 @@ namespace KS.Network.FTP.Filesystem
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "Error setting permissions ({0}) to file {1}: {2}", Chmod, Target, ex.Message);
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Error setting permissions ({0}) to file {1}: {2}", Chmod, Target, ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
             else

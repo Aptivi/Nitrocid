@@ -120,7 +120,7 @@ namespace KS.Files
         {
             if (KernelPlatform.IsOnWindows() & (Path.Contains("$i30") | Path.Contains(@"\\.\globalroot\device\condrv\kernelconnect")))
             {
-                DebugWriter.Wdbg(DebugLevel.F, "Trying to access invalid path. Path was {0}", Path);
+                DebugWriter.WriteDebug(DebugLevel.F, "Trying to access invalid path. Path was {0}", Path);
                 throw new ArgumentException(Translate.DoTranslation("Trying to access invalid path."), nameof(Path));
             }
         }

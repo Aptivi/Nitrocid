@@ -42,21 +42,21 @@ namespace KS.Misc.Probers.Motd
 
                 // Get the MOTD and MAL file path
                 MalFilePath = Filesystem.NeutralizePath(MalFilePath);
-                DebugWriter.Wdbg(DebugLevel.I, "Path: {0}", MalFilePath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", MalFilePath);
 
                 // Set the message according to message type
                 MALStreamW = new System.IO.StreamWriter(MalFilePath) { AutoFlush = true };
-                DebugWriter.Wdbg(DebugLevel.I, "Opened stream to MAL path");
+                DebugWriter.WriteDebug(DebugLevel.I, "Opened stream to MAL path");
                 MALStreamW.Write(Message);
                 Kernel.Kernel.MAL = Message;
 
                 // Close the message stream
                 MALStreamW.Close();
-                DebugWriter.Wdbg(DebugLevel.I, "Stream closed");
+                DebugWriter.WriteDebug(DebugLevel.I, "Stream closed");
             }
             catch (Exception ex)
             {
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebugStackTrace(ex);
                 throw new MOTDException(Translate.DoTranslation("Error when trying to set MAL: {0}"), ex.Message);
             }
         }
@@ -73,19 +73,19 @@ namespace KS.Misc.Probers.Motd
 
                 // Get the MOTD and MAL file path
                 MalFilePath = Filesystem.NeutralizePath(MalFilePath);
-                DebugWriter.Wdbg(DebugLevel.I, "Path: {0}", MalFilePath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", MalFilePath);
 
                 // Read the message according to message type
                 MALStreamR = new System.IO.StreamReader(MalFilePath);
-                DebugWriter.Wdbg(DebugLevel.I, "Opened stream to MAL path");
+                DebugWriter.WriteDebug(DebugLevel.I, "Opened stream to MAL path");
                 MALBuilder.Append(MALStreamR.ReadToEnd());
                 Kernel.Kernel.MAL = MALBuilder.ToString();
                 MALStreamR.Close();
-                DebugWriter.Wdbg(DebugLevel.I, "Stream closed");
+                DebugWriter.WriteDebug(DebugLevel.I, "Stream closed");
             }
             catch (Exception ex)
             {
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebugStackTrace(ex);
                 throw new MOTDException(Translate.DoTranslation("Error when trying to get MAL: {0}"), ex.Message);
             }
         }

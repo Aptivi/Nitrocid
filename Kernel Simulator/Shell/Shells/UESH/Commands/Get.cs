@@ -40,7 +40,7 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             int RetryCount = 1;
             string URL = ListArgsOnly[0];
-            DebugWriter.Wdbg(DebugLevel.I, "URL: {0}", URL);
+            DebugWriter.WriteDebug(DebugLevel.I, "URL: {0}", URL);
             while (!(RetryCount > NetworkTools.DownloadRetries))
             {
                 try
@@ -71,8 +71,8 @@ namespace KS.Shell.Shells.UESH.Commands
                     NetworkTools.TransferFinished = false;
                     TextWriterColor.Write(Translate.DoTranslation("Download failed in try {0}: {1}"), true, ColorTools.ColTypes.Error, RetryCount, ex.Message);
                     RetryCount += 1;
-                    DebugWriter.Wdbg(DebugLevel.I, "Try count: {0}", RetryCount);
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Try count: {0}", RetryCount);
+                    DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
         }

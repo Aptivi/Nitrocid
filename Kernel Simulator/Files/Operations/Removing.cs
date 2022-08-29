@@ -53,7 +53,7 @@ namespace KS.Files.Operations
             }
             catch (Exception ex)
             {
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;
         }
@@ -86,7 +86,7 @@ namespace KS.Files.Operations
             }
             catch (Exception ex)
             {
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;
         }

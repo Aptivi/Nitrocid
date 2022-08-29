@@ -67,7 +67,7 @@ namespace KS.Shell.Shells.Text
                     // Open file if not open
                     if (TextEditShellCommon.TextEdit_FileStream is null)
                     {
-                        DebugWriter.Wdbg(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath);
+                        DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath);
                         if (!TextEditTools.TextEdit_OpenTextFile(FilePath))
                         {
                             TextWriterColor.Write(Translate.DoTranslation("Failed to open file. Exiting shell..."), true, ColorTools.ColTypes.Error);
@@ -103,7 +103,7 @@ namespace KS.Shell.Shells.Text
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     TextWriterColor.Write(Translate.DoTranslation("There was an error in the shell.") + Kernel.Kernel.NewLine + "Error {0}: {1}", true, ColorTools.ColTypes.Error, ex.GetType().FullName, ex.Message);
                     continue;
                 }

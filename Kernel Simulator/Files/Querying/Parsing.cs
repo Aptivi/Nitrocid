@@ -57,8 +57,8 @@ namespace KS.Files.Querying
             }
             catch (Exception ex)
             {
-                DebugWriter.WStkTrc(ex);
-                DebugWriter.Wdbg(DebugLevel.E, "Failed to parse path {0}: {1}", Path, ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to parse path {0}: {1}", Path, ex.Message);
             }
             return false;
         }
@@ -77,8 +77,8 @@ namespace KS.Files.Querying
             }
             catch (Exception ex)
             {
-                DebugWriter.WStkTrc(ex);
-                DebugWriter.Wdbg(DebugLevel.E, "Failed to parse file name {0}: {1}", Name, ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to parse file name {0}: {1}", Name, ex.Message);
             }
             return false;
         }

@@ -271,7 +271,7 @@ namespace KS.Network.RSS
                         if (NewFeedsList.Count > 0 && (NewFeedsList[0].ArticleTitle ?? "") != (OldFeedTitle ?? ""))
                         {
                             // Update the list
-                            DebugWriter.Wdbg(DebugLevel.W, "Feeds received! Recents count was {0}, Old count was {1}", RSSShellCommon.RSSFeedInstance.FeedArticles.Count, OldFeedsList.Count);
+                            DebugWriter.WriteDebug(DebugLevel.W, "Feeds received! Recents count was {0}, Old count was {1}", RSSShellCommon.RSSFeedInstance.FeedArticles.Count, OldFeedsList.Count);
                             OldFeedsList = new List<RSSArticle>(RSSShellCommon.RSSFeedInstance.FeedArticles);
                             foreach (RSSArticle NewFeed in NewFeedsList)
                             {
@@ -285,7 +285,7 @@ namespace KS.Network.RSS
             }
             catch (ThreadInterruptedException)
             {
-                DebugWriter.Wdbg(DebugLevel.W, "Aborting refresher...");
+                DebugWriter.WriteDebug(DebugLevel.W, "Aborting refresher...");
             }
         }
 
@@ -307,8 +307,8 @@ namespace KS.Network.RSS
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "Failed to get latest news: {0}", ex.Message);
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     TextWriterColor.Write(Translate.DoTranslation("Failed to get the latest news."), true, ColorTools.ColTypes.Error);
                 }
             }
@@ -340,8 +340,8 @@ namespace KS.Network.RSS
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Failed to get feed list: {0}", ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to get feed list: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
                 TextWriterColor.Write(Translate.DoTranslation("Failed to download feed list."), true, ColorTools.ColTypes.Error);
             }
 
@@ -364,20 +364,20 @@ namespace KS.Network.RSS
 
                 // Read and get response
                 var ConsoleResponse = ConsoleBase.ConsoleWrapper.ReadKey(true);
-                DebugWriter.Wdbg(DebugLevel.I, "Keypress: {0}", ConsoleResponse.Key.ToString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Keypress: {0}", ConsoleResponse.Key.ToString());
                 if (ConsoleResponse.Key == ConsoleKey.LeftArrow)
                 {
                     // Decrement country index by 1
-                    DebugWriter.Wdbg(DebugLevel.I, "Decrementing number...");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Decrementing number...");
                     if (SelectedCountryIndex == 0)
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Reached zero! Back to country index {0}.", FeedListJsonCountries.Length - 1);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Reached zero! Back to country index {0}.", FeedListJsonCountries.Length - 1);
                         SelectedCountryIndex = FeedListJsonCountries.Length - 1;
                     }
                     else
                     {
                         SelectedCountryIndex -= 1;
-                        DebugWriter.Wdbg(DebugLevel.I, "Decremented to {0}", SelectedCountryIndex);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Decremented to {0}", SelectedCountryIndex);
                     }
                 }
                 else if (ConsoleResponse.Key == ConsoleKey.RightArrow)
@@ -385,19 +385,19 @@ namespace KS.Network.RSS
                     // Increment country index by 1
                     if (SelectedCountryIndex == FeedListJsonCountries.Length - 1)
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Reached maximum country number! Back to zero.");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Reached maximum country number! Back to zero.");
                         SelectedCountryIndex = 0;
                     }
                     else
                     {
                         SelectedCountryIndex += 1;
-                        DebugWriter.Wdbg(DebugLevel.I, "Incremented to {0}", SelectedCountryIndex);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Incremented to {0}", SelectedCountryIndex);
                     }
                 }
                 else if (ConsoleResponse.Key == ConsoleKey.Enter)
                 {
                     // Go to the next step
-                    DebugWriter.Wdbg(DebugLevel.I, "Selected country: {0}", FeedListJsonCountries[SelectedCountryIndex]["name"]);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Selected country: {0}", FeedListJsonCountries[SelectedCountryIndex]["name"]);
                     FeedListJsonNewsSources = FeedListJsonCountries[SelectedCountryIndex]["newSources"].ToArray();
                     ConsoleBase.ConsoleWrapper.WriteLine();
                     StepNumber += 1;
@@ -416,7 +416,7 @@ namespace KS.Network.RSS
             while (StepNumber == 2)
             {
                 // Print input
-                DebugWriter.Wdbg(DebugLevel.W, "{0} news sources.", FeedListJsonNewsSources.Length);
+                DebugWriter.WriteDebug(DebugLevel.W, "{0} news sources.", FeedListJsonNewsSources.Length);
                 TextWriterColor.Write(">> ", false, ColorTools.ColTypes.Input);
 
                 // Read and parse the answer
@@ -425,10 +425,10 @@ namespace KS.Network.RSS
                 {
                     // Got a numeric string! Check to see if we're in range before parsing it to index
                     int AnswerInt = Convert.ToInt32(AnswerStr);
-                    DebugWriter.Wdbg(DebugLevel.W, "Got answer {0}.", AnswerInt);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Got answer {0}.", AnswerInt);
                     if (AnswerInt > 0 & AnswerInt <= FeedListJsonNewsSources.Length)
                     {
-                        DebugWriter.Wdbg(DebugLevel.W, "Answer is in range.");
+                        DebugWriter.WriteDebug(DebugLevel.W, "Answer is in range.");
                         SelectedNewsSourceIndex = AnswerInt - 1;
                         FeedListJsonNewsSourceFeeds = FeedListJsonNewsSources[SelectedNewsSourceIndex]["feedUrls"].ToArray();
                         ConsoleBase.ConsoleWrapper.WriteLine();
@@ -436,13 +436,13 @@ namespace KS.Network.RSS
                     }
                     else
                     {
-                        DebugWriter.Wdbg(DebugLevel.W, "Answer is out of range.");
+                        DebugWriter.WriteDebug(DebugLevel.W, "Answer is out of range.");
                         TextWriterColor.Write(Translate.DoTranslation("The selection is out of range. Select between 1-{0}. Try again."), true, ColorTools.ColTypes.Error, FeedListJsonNewsSources.Length);
                     }
                 }
                 else if (ReadLineReboot.ReadLine.ReadRanToCompletion)
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "Answer is not numeric.");
+                    DebugWriter.WriteDebug(DebugLevel.W, "Answer is not numeric.");
                     TextWriterColor.Write(Translate.DoTranslation("The answer must be numeric."), true, ColorTools.ColTypes.Error);
                 }
                 else
@@ -470,7 +470,7 @@ namespace KS.Network.RSS
             while (StepNumber == 3)
             {
                 // Print input
-                DebugWriter.Wdbg(DebugLevel.W, "{0} news source feeds.", FeedListJsonNewsSourceFeeds.Length);
+                DebugWriter.WriteDebug(DebugLevel.W, "{0} news source feeds.", FeedListJsonNewsSourceFeeds.Length);
                 TextWriterColor.Write(">> ", false, ColorTools.ColTypes.Input);
 
                 // Read and parse the answer
@@ -479,23 +479,23 @@ namespace KS.Network.RSS
                 {
                     // Got a numeric string! Check to see if we're in range before parsing it to index
                     int AnswerInt = Convert.ToInt32(AnswerStr);
-                    DebugWriter.Wdbg(DebugLevel.W, "Got answer {0}.", AnswerInt);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Got answer {0}.", AnswerInt);
                     if (AnswerInt > 0 & AnswerInt <= FeedListJsonNewsSourceFeeds.Length)
                     {
-                        DebugWriter.Wdbg(DebugLevel.W, "Answer is in range.");
+                        DebugWriter.WriteDebug(DebugLevel.W, "Answer is in range.");
                         SelectedNewsSourceFeedIndex = AnswerInt - 1;
                         FinalFeedUrl = (string)FeedListJsonNewsSourceFeeds[SelectedNewsSourceFeedIndex]["url"];
                         StepNumber += 1;
                     }
                     else
                     {
-                        DebugWriter.Wdbg(DebugLevel.W, "Answer is out of range.");
+                        DebugWriter.WriteDebug(DebugLevel.W, "Answer is out of range.");
                         TextWriterColor.Write(Translate.DoTranslation("The selection is out of range. Select between 1-{0}. Try again."), true, ColorTools.ColTypes.Error, FeedListJsonNewsSourceFeeds.Length);
                     }
                 }
                 else if (ReadLineReboot.ReadLine.ReadRanToCompletion)
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "Answer is not numeric.");
+                    DebugWriter.WriteDebug(DebugLevel.W, "Answer is not numeric.");
                     TextWriterColor.Write(Translate.DoTranslation("The answer must be numeric."), true, ColorTools.ColTypes.Error);
                 }
                 else

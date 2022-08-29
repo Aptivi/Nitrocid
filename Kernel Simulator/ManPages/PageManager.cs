@@ -70,7 +70,7 @@ namespace KS.ManPages
             // Check to see if title is defined
             if (string.IsNullOrWhiteSpace(Name))
             {
-                DebugWriter.Wdbg(DebugLevel.W, "Title not defined.");
+                DebugWriter.WriteDebug(DebugLevel.W, "Title not defined.");
                 Name = Translate.DoTranslation("Untitled manual page") + $" {Pages.Count}";
             }
 

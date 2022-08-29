@@ -53,13 +53,13 @@ namespace KS.Network.RPC
         {
             if (RPCEnabled)
             {
-                DebugWriter.Wdbg(DebugLevel.I, "RPC: Starting...");
+                DebugWriter.WriteDebug(DebugLevel.I, "RPC: Starting...");
                 if (!RPCStarted)
                 {
                     RPCListen = new UdpClient(RPCPort) { EnableBroadcast = true };
-                    DebugWriter.Wdbg(DebugLevel.I, "RPC: Listener started");
+                    DebugWriter.WriteDebug(DebugLevel.I, "RPC: Listener started");
                     RPCThread.Start();
-                    DebugWriter.Wdbg(DebugLevel.I, "RPC: Thread started");
+                    DebugWriter.WriteDebug(DebugLevel.I, "RPC: Thread started");
                 }
                 else
                 {
@@ -87,7 +87,7 @@ namespace KS.Network.RPC
                 catch (ThreadStateException ex)
                 {
                     SplashReport.ReportProgress(Translate.DoTranslation("RPC is already running."), 5, ColorTools.ColTypes.Error);
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
             else
@@ -106,11 +106,11 @@ namespace KS.Network.RPC
                 RPCThread.Stop();
                 RPCListen?.Close();
                 RPCListen = null;
-                DebugWriter.Wdbg(DebugLevel.I, "RPC stopped.");
+                DebugWriter.WriteDebug(DebugLevel.I, "RPC stopped.");
             }
             else
             {
-                DebugWriter.Wdbg(DebugLevel.E, "RPC hasn't started yet!");
+                DebugWriter.WriteDebug(DebugLevel.E, "RPC hasn't started yet!");
             }
         }
 

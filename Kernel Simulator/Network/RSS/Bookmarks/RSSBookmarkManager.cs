@@ -41,7 +41,7 @@ namespace KS.Network.RSS.Bookmarks
             }
             else
             {
-                DebugWriter.Wdbg(DebugLevel.W, "Trying to add null feed link to bookmarks. Ignored.");
+                DebugWriter.WriteDebug(DebugLevel.W, "Trying to add null feed link to bookmarks. Ignored.");
             }
         }
 
@@ -62,17 +62,17 @@ namespace KS.Network.RSS.Bookmarks
                     // Add the feed to bookmarks if not found
                     if (!RssBookmarks.Contains(FinalFeedUriString))
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Adding {0} to feed bookmark list...", FinalFeedUriString);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Adding {0} to feed bookmark list...", FinalFeedUriString);
                         RssBookmarks.Add(FinalFeedUriString);
                     }
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "Failed to add {0} to RSS bookmarks: {1}", FeedURL, ex.Message);
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to add {0} to RSS bookmarks: {1}", FeedURL, ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     if ((ex.GetType().Name ?? "") == nameof(UriFormatException))
                     {
-                        DebugWriter.Wdbg(DebugLevel.E, "Verify that {0} is actually valid.", FeedURL);
+                        DebugWriter.WriteDebug(DebugLevel.E, "Verify that {0} is actually valid.", FeedURL);
                         throw new InvalidFeedLinkException(Translate.DoTranslation("Failed to parse feed URL:") + " {0}", ex.Message);
                     }
                     else
@@ -83,7 +83,7 @@ namespace KS.Network.RSS.Bookmarks
             }
             else
             {
-                DebugWriter.Wdbg(DebugLevel.W, "Trying to add null feed link to bookmarks. Ignored.");
+                DebugWriter.WriteDebug(DebugLevel.W, "Trying to add null feed link to bookmarks. Ignored.");
             }
         }
 
@@ -98,7 +98,7 @@ namespace KS.Network.RSS.Bookmarks
             }
             else
             {
-                DebugWriter.Wdbg(DebugLevel.W, "Trying to remove null feed link from bookmarks. Ignored.");
+                DebugWriter.WriteDebug(DebugLevel.W, "Trying to remove null feed link from bookmarks. Ignored.");
             }
         }
 
@@ -119,7 +119,7 @@ namespace KS.Network.RSS.Bookmarks
                     // Remove the feed from bookmarks if found
                     if (RssBookmarks.Contains(FinalFeedUriString))
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Removing {0} from feed bookmark list...", FinalFeedUriString);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Removing {0} from feed bookmark list...", FinalFeedUriString);
                         RssBookmarks.Remove(FinalFeedUriString);
                     }
                     else
@@ -129,11 +129,11 @@ namespace KS.Network.RSS.Bookmarks
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "Failed to remove {0} from RSS bookmarks: {1}", FeedURL, ex.Message);
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to remove {0} from RSS bookmarks: {1}", FeedURL, ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     if ((ex.GetType().Name ?? "") == nameof(UriFormatException))
                     {
-                        DebugWriter.Wdbg(DebugLevel.E, "Verify that {0} is actually valid.", FeedURL);
+                        DebugWriter.WriteDebug(DebugLevel.E, "Verify that {0} is actually valid.", FeedURL);
                         throw new InvalidFeedLinkException(Translate.DoTranslation("Failed to parse feed URL:") + " {0}", ex.Message);
                     }
                     else
@@ -144,7 +144,7 @@ namespace KS.Network.RSS.Bookmarks
             }
             else
             {
-                DebugWriter.Wdbg(DebugLevel.W, "Trying to remove null feed link from bookmarks. Ignored.");
+                DebugWriter.WriteDebug(DebugLevel.W, "Trying to remove null feed link from bookmarks. Ignored.");
             }
         }
 

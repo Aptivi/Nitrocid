@@ -50,7 +50,7 @@ namespace KS.Shell.Shells.UESH
             {
                 if (Flags.LogoutRequested)
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Requested log out: {0}", Flags.LogoutRequested);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Requested log out: {0}", Flags.LogoutRequested);
                     Flags.LogoutRequested = false;
                     Flags.LoggedIn = false;
                     Bail = true;
@@ -77,7 +77,7 @@ namespace KS.Shell.Shells.UESH
                         }
 
                         // Wait for command
-                        DebugWriter.Wdbg(DebugLevel.I, "Waiting for command");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Waiting for command");
                         string strcommand = Input.ReadLine();
 
                         // Now, parse the line as necessary
@@ -100,7 +100,7 @@ namespace KS.Shell.Shells.UESH
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WStkTrc(ex);
+                        DebugWriter.WriteDebugStackTrace(ex);
                         TextWriterColor.Write(Translate.DoTranslation("There was an error in the shell.") + Kernel.Kernel.NewLine + "Error {0}: {1}", true, ColorTools.ColTypes.Error, ex.GetType().FullName, ex.Message);
                         continue;
                     }

@@ -47,22 +47,22 @@ namespace KS.Misc.RarFile
             var Entries = new List<RarArchiveEntry>();
             foreach (RarArchiveEntry ArchiveEntry in RarShellCommon.RarShell_RarArchive?.Entries)
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Parsing entry {0}...", ArchiveEntry.Key);
+                DebugWriter.WriteDebug(DebugLevel.I, "Parsing entry {0}...", ArchiveEntry.Key);
                 if (Target is not null)
                 {
                     if (ArchiveEntry.Key.StartsWith(Target))
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Entry {0} found in target {1}. Adding...", ArchiveEntry.Key, Target);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Entry {0} found in target {1}. Adding...", ArchiveEntry.Key, Target);
                         Entries.Add(ArchiveEntry);
                     }
                 }
                 else if (Target is null)
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Adding entry {0}...", ArchiveEntry.Key);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Adding entry {0}...", ArchiveEntry.Key);
                     Entries.Add(ArchiveEntry);
                 }
             }
-            DebugWriter.Wdbg(DebugLevel.I, "Entries: {0}", Entries.Count);
+            DebugWriter.WriteDebug(DebugLevel.I, "Entries: {0}", Entries.Count);
             return Entries;
         }
 
@@ -83,7 +83,7 @@ namespace KS.Misc.RarFile
             string AbsoluteTarget = RarShellCommon.RarShell_CurrentArchiveDirectory + "/" + Target;
             if (AbsoluteTarget.StartsWith("/"))
                 AbsoluteTarget = AbsoluteTarget.RemoveLetter(0);
-            DebugWriter.Wdbg(DebugLevel.I, "Target: {0}, AbsoluteTarget: {1}", Target, AbsoluteTarget);
+            DebugWriter.WriteDebug(DebugLevel.I, "Target: {0}, AbsoluteTarget: {1}", Target, AbsoluteTarget);
 
             // Define local destination while getting an entry from target
             string LocalDestination = Where + "/";
@@ -92,7 +92,7 @@ namespace KS.Misc.RarFile
             {
                 LocalDestination += RarEntry.Key;
             }
-            DebugWriter.Wdbg(DebugLevel.I, "Where: {0}", LocalDestination);
+            DebugWriter.WriteDebug(DebugLevel.I, "Where: {0}", LocalDestination);
 
             // Try to extract file
             Directory.CreateDirectory(LocalDestination);
@@ -121,67 +121,67 @@ namespace KS.Misc.RarFile
             // Check to see if we're going back
             if (Target.Contains(".."))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Target contains going back. Counting...");
+                DebugWriter.WriteDebug(DebugLevel.I, "Target contains going back. Counting...");
                 var CADSplit = RarShellCommon.RarShell_CurrentArchiveDirectory.Split('/').ToList();
                 var TargetSplit = Target.Split('/').ToList();
                 var CADBackSteps = default(int);
 
                 // Add back steps if target is ".."
-                DebugWriter.Wdbg(DebugLevel.I, "Target length: {0}", TargetSplit.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Target length: {0}", TargetSplit.Count);
                 for (int i = 0, loopTo = TargetSplit.Count - 1; i <= loopTo; i++)
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Target part {0}: {1}", i, TargetSplit[i]);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Target part {0}: {1}", i, TargetSplit[i]);
                     if (TargetSplit[i] == "..")
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Target is going back. Adding step...");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Target is going back. Adding step...");
                         CADBackSteps += 1;
                         TargetSplit[i] = "";
-                        DebugWriter.Wdbg(DebugLevel.I, "Steps: {0}", CADBackSteps);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Steps: {0}", CADBackSteps);
                     }
                 }
 
                 // Remove empty strings
                 TargetSplit.RemoveAll(x => string.IsNullOrEmpty(x));
-                DebugWriter.Wdbg(DebugLevel.I, "Target length: {0}", TargetSplit.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Target length: {0}", TargetSplit.Count);
 
                 // Remove every last entry that goes back
-                DebugWriter.Wdbg(DebugLevel.I, "Old CADSplit length: {0}", CADSplit.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Old CADSplit length: {0}", CADSplit.Count);
                 for (int Steps = CADBackSteps; Steps >= 1; Steps -= 1)
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Current step: {0}", Steps);
-                    DebugWriter.Wdbg(DebugLevel.I, "Removing index {0} from CADSplit...", CADSplit.Count - Steps);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Current step: {0}", Steps);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removing index {0} from CADSplit...", CADSplit.Count - Steps);
                     CADSplit.RemoveAt(CADSplit.Count - Steps);
-                    DebugWriter.Wdbg(DebugLevel.I, "New CADSplit length: {0}", CADSplit.Count);
+                    DebugWriter.WriteDebug(DebugLevel.I, "New CADSplit length: {0}", CADSplit.Count);
                 }
 
                 // Set current archive directory and target
                 RarShellCommon.RarShell_CurrentArchiveDirectory = string.Join("/", CADSplit);
-                DebugWriter.Wdbg(DebugLevel.I, "Setting CAD to {0}...", RarShellCommon.RarShell_CurrentArchiveDirectory);
+                DebugWriter.WriteDebug(DebugLevel.I, "Setting CAD to {0}...", RarShellCommon.RarShell_CurrentArchiveDirectory);
                 Target = string.Join("/", TargetSplit);
-                DebugWriter.Wdbg(DebugLevel.I, "Setting target to {0}...", Target);
+                DebugWriter.WriteDebug(DebugLevel.I, "Setting target to {0}...", Target);
             }
 
             // Prepare the target
             Target = RarShellCommon.RarShell_CurrentArchiveDirectory + "/" + Target;
             if (Target.StartsWith("/"))
                 Target = Target.RemoveLetter(0);
-            DebugWriter.Wdbg(DebugLevel.I, "Setting target to {0}...", Target);
+            DebugWriter.WriteDebug(DebugLevel.I, "Setting target to {0}...", Target);
 
             // Enumerate entries
             foreach (RarArchiveEntry Entry in ListRarEntries(Target))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Entry: {0}", Entry.Key);
+                DebugWriter.WriteDebug(DebugLevel.I, "Entry: {0}", Entry.Key);
                 if (Entry.Key.StartsWith(Target))
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "{0} found ({1}). Changing...", Target, Entry.Key);
+                    DebugWriter.WriteDebug(DebugLevel.I, "{0} found ({1}). Changing...", Target, Entry.Key);
                     RarShellCommon.RarShell_CurrentArchiveDirectory = Entry.Key.RemoveLetter(Entry.Key.Length - 1);
-                    DebugWriter.Wdbg(DebugLevel.I, "Setting CAD to {0}...", RarShellCommon.RarShell_CurrentArchiveDirectory);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Setting CAD to {0}...", RarShellCommon.RarShell_CurrentArchiveDirectory);
                     return true;
                 }
             }
 
             // Assume that we didn't find anything.
-            DebugWriter.Wdbg(DebugLevel.E, "{0} not found.", Target);
+            DebugWriter.WriteDebug(DebugLevel.E, "{0} not found.", Target);
             return false;
         }
 
@@ -195,13 +195,13 @@ namespace KS.Misc.RarFile
                 Target = RarShellCommon.RarShell_CurrentDirectory;
             if (Checking.FolderExists(Filesystem.NeutralizePath(Target, RarShellCommon.RarShell_CurrentDirectory)))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "{0} found. Changing...", Target);
+                DebugWriter.WriteDebug(DebugLevel.I, "{0} found. Changing...", Target);
                 RarShellCommon.RarShell_CurrentDirectory = Target;
                 return true;
             }
             else
             {
-                DebugWriter.Wdbg(DebugLevel.E, "{0} not found.", Target);
+                DebugWriter.WriteDebug(DebugLevel.E, "{0} not found.", Target);
                 return false;
             }
         }

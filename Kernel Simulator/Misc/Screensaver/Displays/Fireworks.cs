@@ -272,7 +272,7 @@ namespace KS.Misc.Screensaver.Displays
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
             ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
             ConsoleBase.ConsoleWrapper.Clear();
-            DebugWriter.Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
+            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
         }
 
         public override void ScreensaverLogic()
@@ -285,17 +285,17 @@ namespace KS.Misc.Screensaver.Displays
             int IgnitePositionX = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowWidth);
             int IgnitePositionY = RandomDriver.Next(HalfHeight, (int)Math.Round(HalfHeight * 1.5d));
             LaunchPositionX.SwapIfSourceLarger(ref IgnitePositionX);
-            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Launch position {0}, {1}", LaunchPositionX, LaunchPositionY);
-            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Ignite position {0}, {1}", IgnitePositionX, IgnitePositionY);
+            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Launch position {0}, {1}", LaunchPositionX, LaunchPositionY);
+            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Ignite position {0}, {1}", IgnitePositionX, IgnitePositionY);
 
             // Thresholds
             int FireworkThresholdX = IgnitePositionX - LaunchPositionX;
             int FireworkThresholdY = Math.Abs(IgnitePositionY - LaunchPositionY);
-            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Position thresholds (X: {0}, Y: {1})", FireworkThresholdX, FireworkThresholdY);
+            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Position thresholds (X: {0}, Y: {1})", FireworkThresholdX, FireworkThresholdY);
             double FireworkStepsX = FireworkThresholdX / (double)FireworkThresholdY;
-            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "{0} steps", FireworkStepsX);
+            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "{0} steps", FireworkStepsX);
             int FireworkRadius = FireworksSettings.FireworksRadius >= 0 & FireworksSettings.FireworksRadius <= 10 ? FireworksSettings.FireworksRadius : 5;
-            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Radius: {0} blocks", FireworkRadius);
+            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Radius: {0} blocks", FireworkRadius);
             var IgniteColor = new Color(255, 255, 255);
 
             // Select a color
@@ -305,13 +305,13 @@ namespace KS.Misc.Screensaver.Displays
                 int RedColorNum = RandomDriver.Next(FireworksSettings.FireworksMinimumRedColorLevel, FireworksSettings.FireworksMaximumRedColorLevel);
                 int GreenColorNum = RandomDriver.Next(FireworksSettings.FireworksMinimumGreenColorLevel, FireworksSettings.FireworksMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Next(FireworksSettings.FireworksMinimumBlueColorLevel, FireworksSettings.FireworksMaximumBlueColorLevel);
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 IgniteColor = new Color(RedColorNum, GreenColorNum, BlueColorNum);
             }
             else if (FireworksSettings.Fireworks255Colors)
             {
                 int color = RandomDriver.Next(FireworksSettings.FireworksMinimumColorLevel, FireworksSettings.FireworksMaximumColorLevel);
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", color);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", color);
                 IgniteColor = new Color(color);
             }
 
@@ -326,7 +326,7 @@ namespace KS.Misc.Screensaver.Displays
                         ResizeSyncing = true;
                     if (ResizeSyncing)
                         break;
-                    DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Current position: {0}, {1}", CurrentX, CurrentY);
+                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Current position: {0}, {1}", CurrentX, CurrentY);
                     ConsoleBase.ConsoleWrapper.SetCursorPosition((int)Math.Round(CurrentX), CurrentY);
                     ConsoleBase.ConsoleWrapper.Write(" ");
 
@@ -357,34 +357,34 @@ namespace KS.Misc.Screensaver.Displays
                     int LowerParticleY = IgnitePositionY - 1 - Radius;
                     int LeftParticleX = IgnitePositionX - 1 - Radius * 2;
                     int RightParticleX = IgnitePositionX + 1 + Radius * 2;
-                    DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Upper particle position: {0}", UpperParticleY);
-                    DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Lower particle position: {0}", LowerParticleY);
-                    DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Left particle position: {0}", LeftParticleX);
-                    DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Right particle position: {0}", RightParticleX);
+                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Upper particle position: {0}", UpperParticleY);
+                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Lower particle position: {0}", LowerParticleY);
+                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Left particle position: {0}", LeftParticleX);
+                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Right particle position: {0}", RightParticleX);
 
                     // Draw the explosion
                     ColorTools.SetConsoleColor(IgniteColor, true, true);
                     if (UpperParticleY < ConsoleBase.ConsoleWrapper.WindowHeight)
                     {
-                        DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Making upper particle at {0}, {1}", IgnitePositionX, UpperParticleY);
+                        DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Making upper particle at {0}, {1}", IgnitePositionX, UpperParticleY);
                         ConsoleBase.ConsoleWrapper.SetCursorPosition(IgnitePositionX, UpperParticleY);
                         ConsoleBase.ConsoleWrapper.Write(" ");
                     }
                     if (LowerParticleY < ConsoleBase.ConsoleWrapper.WindowHeight)
                     {
-                        DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Making lower particle at {0}, {1}", IgnitePositionX, LowerParticleY);
+                        DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Making lower particle at {0}, {1}", IgnitePositionX, LowerParticleY);
                         ConsoleBase.ConsoleWrapper.SetCursorPosition(IgnitePositionX, LowerParticleY);
                         ConsoleBase.ConsoleWrapper.Write(" ");
                     }
                     if (LeftParticleX < ConsoleBase.ConsoleWrapper.WindowWidth)
                     {
-                        DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Making left particle at {0}, {1}", LeftParticleX, IgnitePositionY);
+                        DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Making left particle at {0}, {1}", LeftParticleX, IgnitePositionY);
                         ConsoleBase.ConsoleWrapper.SetCursorPosition(LeftParticleX, IgnitePositionY);
                         ConsoleBase.ConsoleWrapper.Write(" ");
                     }
                     if (RightParticleX < ConsoleBase.ConsoleWrapper.WindowWidth)
                     {
-                        DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Making right particle at {0}, {1}", RightParticleX, IgnitePositionY);
+                        DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Making right particle at {0}, {1}", RightParticleX, IgnitePositionY);
                         ConsoleBase.ConsoleWrapper.SetCursorPosition(RightParticleX, IgnitePositionY);
                         ConsoleBase.ConsoleWrapper.Write(" ");
                     }

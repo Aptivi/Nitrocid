@@ -29,7 +29,7 @@ namespace KS.Shell.ShellBase.Shells
 
         public virtual void InitializeShell(params object[] ShellArgs)
         {
-            DebugWriter.Wdbg(DebugLevel.F, "We shouldn't be here!!!");
+            DebugWriter.WriteDebug(DebugLevel.F, "We shouldn't be here!!!");
             throw new InvalidOperationException();
         }
 

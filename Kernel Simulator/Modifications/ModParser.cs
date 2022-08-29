@@ -84,28 +84,28 @@ namespace KS.Modifications
                 }
                 catch (ReflectionTypeLoadException ex)
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", modFile, ex.Message);
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", modFile, ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     SplashReport.ReportProgress(Translate.DoTranslation("Mod can't be loaded because of the following: "), 0, ColorTools.ColTypes.Error);
                     foreach (Exception LoaderException in ex.LoaderExceptions)
                     {
-                        DebugWriter.Wdbg(DebugLevel.E, "Loader exception: {0}", LoaderException.Message);
-                        DebugWriter.WStkTrc(LoaderException);
+                        DebugWriter.WriteDebug(DebugLevel.E, "Loader exception: {0}", LoaderException.Message);
+                        DebugWriter.WriteDebugStackTrace(LoaderException);
                         SplashReport.ReportProgress(LoaderException.Message, 0, ColorTools.ColTypes.Error);
                     }
                     SplashReport.ReportProgress(Translate.DoTranslation("Contact the vendor of the mod to upgrade the mod to the compatible version."), 0, ColorTools.ColTypes.Error);
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", modFile, ex.Message);
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", modFile, ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     SplashReport.ReportProgress(Translate.DoTranslation("Mod can't be loaded because of the following: ") + ex.Message, 0, ColorTools.ColTypes.Error);
                 }
             }
             else
             {
                 // Ignore unsupported files
-                DebugWriter.Wdbg(DebugLevel.W, "Unsupported file type for mod file {0}.", modFile);
+                DebugWriter.WriteDebug(DebugLevel.W, "Unsupported file type for mod file {0}.", modFile);
             }
         }
 
@@ -133,12 +133,12 @@ namespace KS.Modifications
 
                     // Start the mod
                     script.StartMod();
-                    DebugWriter.Wdbg(DebugLevel.I, "script.StartMod() initialized. Mod name: {0} | Mod part: {1} | Version: {2}", script.Name, script.ModPart, script.Version);
+                    DebugWriter.WriteDebug(DebugLevel.I, "script.StartMod() initialized. Mod name: {0} | Mod part: {1} | Version: {2}", script.Name, script.ModPart, script.Version);
 
                     // See if the mod has part name
                     if (string.IsNullOrWhiteSpace(script.ModPart))
                     {
-                        DebugWriter.Wdbg(DebugLevel.W, "No part name for {0}", modFile);
+                        DebugWriter.WriteDebug(DebugLevel.W, "No part name for {0}", modFile);
                         SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} does not have the part name. Mod parsing failed. Review the source code."), 0, ColorTools.ColTypes.Error, modFile);
                         return;
                     }
@@ -150,7 +150,7 @@ namespace KS.Modifications
                         {
                             if (string.IsNullOrWhiteSpace(Command))
                             {
-                                DebugWriter.Wdbg(DebugLevel.W, "No command for {0}", modFile);
+                                DebugWriter.WriteDebug(DebugLevel.W, "No command for {0}", modFile);
                                 SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} has invalid command. Mod parsing failed. Review the source code."), 0, ColorTools.ColTypes.Error, modFile);
                                 return;
                             }
@@ -163,22 +163,22 @@ namespace KS.Modifications
                     {
                         // Mod has no name! Give it a file name.
                         ModName = modFile;
-                        DebugWriter.Wdbg(DebugLevel.W, "No name for {0}", modFile);
+                        DebugWriter.WriteDebug(DebugLevel.W, "No name for {0}", modFile);
                         SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} does not have the name. Review the source code."), 0, ColorTools.ColTypes.Warning, modFile);
                     }
                     else
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "There is a name for {0}", modFile);
+                        DebugWriter.WriteDebug(DebugLevel.I, "There is a name for {0}", modFile);
                     }
-                    DebugWriter.Wdbg(DebugLevel.I, "Mod name: {0}", ModName);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Mod name: {0}", ModName);
 
                     // Check to see if there is a part under the same name.
                     var Parts = ModManager.Mods.ContainsKey(ModName) ? ModManager.Mods[ModName].ModParts : ModParts;
-                    DebugWriter.Wdbg(DebugLevel.I, "Adding mod part {0}...", script.ModPart);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Adding mod part {0}...", script.ModPart);
                     if (Parts.ContainsKey(script.ModPart))
                     {
                         // Append the number to the end of the name
-                        DebugWriter.Wdbg(DebugLevel.W, "There is a conflict with {0}. Appending item number...", script.ModPart);
+                        DebugWriter.WriteDebug(DebugLevel.W, "There is a conflict with {0}. Appending item number...", script.ModPart);
                         script.ModPart = $"{script.ModPart} [{Parts.Count}]";
                     }
 
@@ -191,12 +191,12 @@ namespace KS.Modifications
                     // See if the mod has version
                     if (string.IsNullOrWhiteSpace(script.Version) & !string.IsNullOrWhiteSpace(script.Name))
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "{0}.Version = \"\" | {0}.Name = {1}", modFile, script.Name);
+                        DebugWriter.WriteDebug(DebugLevel.I, "{0}.Version = \"\" | {0}.Name = {1}", modFile, script.Name);
                         SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} does not have the version."), 0, ColorTools.ColTypes.Warning, script.Name);
                     }
                     else if (!string.IsNullOrWhiteSpace(script.Name) & !string.IsNullOrWhiteSpace(script.Version))
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "{0}.Version = {2} | {0}.Name = {1}", modFile, script.Name, script.Version);
+                        DebugWriter.WriteDebug(DebugLevel.I, "{0}.Version = {2} | {0}.Name = {1}", modFile, script.Name, script.Version);
                         SplashReport.ReportProgress(Translate.DoTranslation("{0} v{1} started") + " ({2})", 0, ColorTools.ColTypes.Success, script.Name, script.Version, script.ModPart);
                     }
 
@@ -209,10 +209,10 @@ namespace KS.Modifications
                             string Command = script.Commands.Keys.ElementAtOrDefault(i);
                             string ActualCommand = Command;
                             CommandType CommandType = (CommandType)script.Commands.Values.ElementAtOrDefault(i).Type;
-                            DebugWriter.Wdbg(DebugLevel.I, "Command type: {0}", CommandType);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Command type: {0}", CommandType);
                             if (CommandManager.IsCommandFound(Command, (ShellType)CommandType) | ModManager.ListModCommands((ShellType)CommandType).ContainsKey(Command))
                             {
-                                DebugWriter.Wdbg(DebugLevel.W, "Command {0} conflicts with available shell commands or mod commands. Appending \"-{1}-{2}\" to end of command...", Command, script.Name, script.ModPart);
+                                DebugWriter.WriteDebug(DebugLevel.W, "Command {0} conflicts with available shell commands or mod commands. Appending \"-{1}-{2}\" to end of command...", Command, script.Name, script.ModPart);
                                 Command += $"-{script.Name}-{script.ModPart}";
                             }
 
@@ -222,12 +222,12 @@ namespace KS.Modifications
                                 if (string.IsNullOrEmpty(script.Commands[ActualCommand].HelpDefinition))
                                 {
                                     SplashReport.ReportProgress(Translate.DoTranslation("No definition for command {0}."), 0, ColorTools.ColTypes.Warning, Command);
-                                    DebugWriter.Wdbg(DebugLevel.W, "{0}.Def = Nothing, {0}.Def = \"Command defined by {1} ({2})\"", Command, script.Name, script.ModPart);
+                                    DebugWriter.WriteDebug(DebugLevel.W, "{0}.Def = Nothing, {0}.Def = \"Command defined by {1} ({2})\"", Command, script.Name, script.ModPart);
                                     script.Commands[ActualCommand].HelpDefinition = Translate.DoTranslation("Command defined by ") + script.Name + " (" + script.ModPart + ")";
                                 }
 
                                 // Now, add the command to the mod list
-                                DebugWriter.Wdbg(DebugLevel.I, "Adding command {0} for {1}...", Command, CommandType.ToString());
+                                DebugWriter.WriteDebug(DebugLevel.I, "Adding command {0} for {1}...", Command, CommandType.ToString());
                                 if (!ModManager.ListModCommands((ShellType)CommandType).ContainsKey(Command))
                                     ModManager.ListModCommands((ShellType)CommandType).Add(Command, script.Commands[ActualCommand]);
                                 script.Commands.RenameKey(ActualCommand, Command);
@@ -239,7 +239,7 @@ namespace KS.Modifications
                     string ModManualPath = Filesystem.NeutralizePath(modFile + ".manual", ModPath);
                     if (Checking.FolderExists(ModManualPath))
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Found manual page collection in {0}", ModManualPath);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Found manual page collection in {0}", ModManualPath);
                         foreach (string ModManualFile in Directory.EnumerateFiles(ModManualPath, "*.man", SearchOption.AllDirectories))
                             PageParser.InitMan(ModManualFile);
                     }
@@ -250,7 +250,7 @@ namespace KS.Modifications
                 catch (Exception ex)
                 {
                     Kernel.Kernel.KernelEventManager.RaiseModFinalizationFailed(modFile, ex.Message);
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     SplashReport.ReportProgress(Translate.DoTranslation("Failed to finalize mod {0}: {1}"), 0, ColorTools.ColTypes.Error, modFile, ex.Message);
                 }
             }

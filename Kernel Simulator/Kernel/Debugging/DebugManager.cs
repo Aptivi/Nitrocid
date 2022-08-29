@@ -45,12 +45,12 @@ namespace KS.Kernel.Debugging
                     DebugWriter.DebugStreamWriter = new StreamWriter(Paths.GetKernelPath(KernelPathType.Debugging)) { AutoFlush = true };
                     for (int l = 0, loopTo = Lines.Length - 1; l <= loopTo; l++) // Remove the first 5 lines from stream.
                         DebugWriter.DebugStreamWriter.WriteLine(Lines[l]);
-                    DebugWriter.Wdbg(DebugLevel.W, "Max debug quota size exceeded, was {0} bytes.", OldSize);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Max debug quota size exceeded, was {0} bytes.", OldSize);
                 }
             }
             catch (Exception ex)
             {
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebugStackTrace(ex);
             }
         }
 

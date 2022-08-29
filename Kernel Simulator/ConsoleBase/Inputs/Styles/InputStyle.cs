@@ -34,7 +34,7 @@ namespace KS.ConsoleBase.Inputs.Styles
             {
                 // Variables
                 string Answer;
-                DebugWriter.Wdbg(DebugLevel.I, "Question: {0}", Question);
+                DebugWriter.WriteDebug(DebugLevel.I, "Question: {0}", Question);
 
                 // Ask a question
                 TextWriterColor.Write(Question, false, ColorTools.ColTypes.Question);
@@ -42,7 +42,7 @@ namespace KS.ConsoleBase.Inputs.Styles
 
                 // Wait for an answer
                 Answer = Input.ReadLine();
-                DebugWriter.Wdbg(DebugLevel.I, "Answer: {0}", Answer);
+                DebugWriter.WriteDebug(DebugLevel.I, "Answer: {0}", Answer);
 
                 return Answer;
             }

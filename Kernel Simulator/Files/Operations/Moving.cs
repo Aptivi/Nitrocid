@@ -38,14 +38,14 @@ namespace KS.Files.Operations
             Filesystem.ThrowOnInvalidPath(Source);
             Filesystem.ThrowOnInvalidPath(Destination);
             Source = Filesystem.NeutralizePath(Source);
-            DebugWriter.Wdbg(DebugLevel.I, "Source directory: {0}", Source);
+            DebugWriter.WriteDebug(DebugLevel.I, "Source directory: {0}", Source);
             Destination = Filesystem.NeutralizePath(Destination);
-            DebugWriter.Wdbg(DebugLevel.I, "Target directory: {0}", Destination);
+            DebugWriter.WriteDebug(DebugLevel.I, "Target directory: {0}", Destination);
             string FileName = Path.GetFileName(Source);
-            DebugWriter.Wdbg(DebugLevel.I, "Source file name: {0}", FileName);
+            DebugWriter.WriteDebug(DebugLevel.I, "Source file name: {0}", FileName);
             if (Checking.FolderExists(Source))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Source and destination are directories");
+                DebugWriter.WriteDebug(DebugLevel.I, "Source and destination are directories");
                 Directory.Move(Source, Destination);
 
                 // Raise event
@@ -53,7 +53,7 @@ namespace KS.Files.Operations
             }
             else if (Checking.FileExists(Source) & Checking.FolderExists(Destination))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Source is a file and destination is a directory");
+                DebugWriter.WriteDebug(DebugLevel.I, "Source is a file and destination is a directory");
                 File.Move(Source, Destination + "/" + FileName);
 
                 // Raise event
@@ -61,7 +61,7 @@ namespace KS.Files.Operations
             }
             else if (Checking.FileExists(Source))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Source is a file and destination is a file");
+                DebugWriter.WriteDebug(DebugLevel.I, "Source is a file and destination is a file");
                 File.Move(Source, Destination);
 
                 // Raise event
@@ -69,7 +69,7 @@ namespace KS.Files.Operations
             }
             else
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Source or destination are invalid.");
+                DebugWriter.WriteDebug(DebugLevel.E, "Source or destination are invalid.");
                 throw new IOException(Translate.DoTranslation("The path is neither a file nor a directory."));
             }
         }
@@ -90,8 +90,8 @@ namespace KS.Files.Operations
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Failed to move {0} to {1}: {2}", Source, Destination, ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to move {0} to {1}: {2}", Source, Destination, ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;
         }

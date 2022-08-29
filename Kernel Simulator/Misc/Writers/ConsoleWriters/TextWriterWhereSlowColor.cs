@@ -72,8 +72,8 @@ namespace KS.Misc.Writers.ConsoleWriters
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
-                    DebugWriter.WStkTrc(ex);
-                    DebugWriter.Wdbg(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
                 }
             }
         }
@@ -121,8 +121,8 @@ namespace KS.Misc.Writers.ConsoleWriters
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
-                    DebugWriter.WStkTrc(ex);
-                    DebugWriter.Wdbg(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
                 }
             }
         }
@@ -167,8 +167,8 @@ namespace KS.Misc.Writers.ConsoleWriters
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
-                    DebugWriter.WStkTrc(ex);
-                    DebugWriter.Wdbg(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
                 }
             }
         }
@@ -215,8 +215,8 @@ namespace KS.Misc.Writers.ConsoleWriters
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
-                    DebugWriter.WStkTrc(ex);
-                    DebugWriter.Wdbg(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
                 }
             }
         }
@@ -261,8 +261,8 @@ namespace KS.Misc.Writers.ConsoleWriters
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
-                    DebugWriter.WStkTrc(ex);
-                    DebugWriter.Wdbg(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
                 }
             }
         }
@@ -309,8 +309,8 @@ namespace KS.Misc.Writers.ConsoleWriters
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
-                    DebugWriter.WStkTrc(ex);
-                    DebugWriter.Wdbg(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
                 }
             }
         }

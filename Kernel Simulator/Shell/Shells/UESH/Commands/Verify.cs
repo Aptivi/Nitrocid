@@ -86,17 +86,17 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             catch (Kernel.Exceptions.InvalidHashAlgorithmException ihae)
             {
-                DebugWriter.WStkTrc(ihae);
+                DebugWriter.WriteDebugStackTrace(ihae);
                 TextWriterColor.Write(Translate.DoTranslation("Invalid encryption algorithm."), true, ColorTools.ColTypes.Error);
             }
             catch (Kernel.Exceptions.InvalidHashException ihe)
             {
-                DebugWriter.WStkTrc(ihe);
+                DebugWriter.WriteDebugStackTrace(ihe);
                 TextWriterColor.Write(Translate.DoTranslation("Hashes are malformed."), true, ColorTools.ColTypes.Error);
             }
             catch (FileNotFoundException fnfe)
             {
-                DebugWriter.WStkTrc(fnfe);
+                DebugWriter.WriteDebugStackTrace(fnfe);
                 TextWriterColor.Write(Translate.DoTranslation("{0} is not found."), true, ColorTools.ColTypes.Error, ListArgsOnly[3]);
             }
         }

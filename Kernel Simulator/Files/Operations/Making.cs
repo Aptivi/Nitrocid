@@ -40,7 +40,7 @@ namespace KS.Files.Operations
         {
             Filesystem.ThrowOnInvalidPath(NewDirectory);
             NewDirectory = Filesystem.NeutralizePath(NewDirectory);
-            DebugWriter.Wdbg(DebugLevel.I, "New directory: {0} ({1})", NewDirectory, Checking.FolderExists(NewDirectory));
+            DebugWriter.WriteDebug(DebugLevel.I, "New directory: {0} ({1})", NewDirectory, Checking.FolderExists(NewDirectory));
             if (!Checking.FolderExists(NewDirectory))
             {
                 Directory.CreateDirectory(NewDirectory);
@@ -84,22 +84,22 @@ namespace KS.Files.Operations
         {
             Filesystem.ThrowOnInvalidPath(NewFile);
             NewFile = Filesystem.NeutralizePath(NewFile);
-            DebugWriter.Wdbg(DebugLevel.I, "File path is {0} and .Exists is {0}", NewFile, Checking.FileExists(NewFile));
+            DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {0}", NewFile, Checking.FileExists(NewFile));
             if (!Checking.FileExists(NewFile))
             {
                 try
                 {
                     var NewFileStream = File.Create(NewFile);
-                    DebugWriter.Wdbg(DebugLevel.I, "File created");
+                    DebugWriter.WriteDebug(DebugLevel.I, "File created");
                     NewFileStream.Close();
-                    DebugWriter.Wdbg(DebugLevel.I, "File closed");
+                    DebugWriter.WriteDebug(DebugLevel.I, "File closed");
 
                     // Raise event
                     Kernel.Kernel.KernelEventManager.RaiseFileCreated(NewFile);
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     throw new IOException(Translate.DoTranslation("Error trying to create a file: {0}").FormatString(ex.Message));
                 }
             }
@@ -139,25 +139,25 @@ namespace KS.Files.Operations
         {
             Filesystem.ThrowOnInvalidPath(NewFile);
             NewFile = Filesystem.NeutralizePath(NewFile);
-            DebugWriter.Wdbg(DebugLevel.I, "File path is {0} and .Exists is {0}", NewFile, Checking.FileExists(NewFile));
+            DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {0}", NewFile, Checking.FileExists(NewFile));
             if (!Checking.FileExists(NewFile))
             {
                 try
                 {
                     var NewFileStream = File.Create(NewFile);
-                    DebugWriter.Wdbg(DebugLevel.I, "File created");
+                    DebugWriter.WriteDebug(DebugLevel.I, "File created");
                     var NewJsonObject = JObject.Parse("{}");
                     var NewFileWriter = new StreamWriter(NewFileStream);
                     NewFileWriter.WriteLine(JsonConvert.SerializeObject(NewJsonObject));
                     NewFileStream.Close();
-                    DebugWriter.Wdbg(DebugLevel.I, "File closed");
+                    DebugWriter.WriteDebug(DebugLevel.I, "File closed");
 
                     // Raise event
                     Kernel.Kernel.KernelEventManager.RaiseFileCreated(NewFile);
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     throw new IOException(Translate.DoTranslation("Error trying to create a file: {0}").FormatString(ex.Message));
                 }
             }

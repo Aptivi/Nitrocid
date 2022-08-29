@@ -52,13 +52,13 @@ namespace KS.ManPages
 
                 // Get the bottom place
                 InfoPlace = ConsoleBase.ConsoleWrapper.WindowHeight - 1;
-                DebugWriter.Wdbg(DebugLevel.I, "Bottom info height is {0}", InfoPlace);
+                DebugWriter.WriteDebug(DebugLevel.I, "Bottom info height is {0}", InfoPlace);
 
                 // If there is any To-do, write them to the console
-                DebugWriter.Wdbg(DebugLevel.I, "Todo count for \"{0}\": {1}", ManualTitle, PageManager.Pages[ManualTitle].Todos.Count.ToString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Todo count for \"{0}\": {1}", ManualTitle, PageManager.Pages[ManualTitle].Todos.Count.ToString());
                 if (PageManager.Pages[ManualTitle].Todos.Count != 0)
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Todos are found in manpage.");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Todos are found in manpage.");
                     TextWriterColor.Write(Translate.DoTranslation("This manual page needs work for:"), true, ColorTools.ColTypes.Warning);
                     ListWriterColor.WriteList(PageManager.Pages[ManualTitle].Todos, true);
                     TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("Press any key to read the manual page..."), false, ColorTools.ColTypes.Warning);
@@ -133,7 +133,7 @@ namespace KS.ManPages
                             if (IncompleteSentenceBuilder.Length - EscapeCharacters == ConsoleBase.ConsoleWrapper.WindowWidth - Convert.ToInt32(KernelPlatform.IsOnUnix()) | line.Length == CharactersParsed)
                             {
                                 // We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
-                                DebugWriter.Wdbg(DebugLevel.I, "Adding {0} to the list... Incomplete sentences: {1}", IncompleteSentenceBuilder.ToString(), IncompleteSentences.Count);
+                                DebugWriter.WriteDebug(DebugLevel.I, "Adding {0} to the list... Incomplete sentences: {1}", IncompleteSentenceBuilder.ToString(), IncompleteSentences.Count);
                                 IncompleteSentences.Add(IncompleteSentenceBuilder.ToString());
 
                                 // Clean everything up
@@ -181,11 +181,11 @@ namespace KS.ManPages
                 }
 
                 // Stop on last page
-                DebugWriter.Wdbg(DebugLevel.I, "We're on the last page.");
+                DebugWriter.WriteDebug(DebugLevel.I, "We're on the last page.");
                 ConsoleBase.ConsoleWrapper.ReadKey();
 
                 // Clean up
-                DebugWriter.Wdbg(DebugLevel.I, "Exiting...");
+                DebugWriter.WriteDebug(DebugLevel.I, "Exiting...");
                 ConsoleBase.ConsoleWrapper.Clear();
             }
             else

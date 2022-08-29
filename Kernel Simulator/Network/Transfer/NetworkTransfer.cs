@@ -109,7 +109,7 @@ namespace KS.Network.Transfer
                 WClientProgress.HttpReceiveProgress += HttpReceiveProgressWatch;
 
             // Send the GET request to the server for the file
-            DebugWriter.Wdbg(DebugLevel.I, "Directory location: {0}", CurrentDirectory.CurrentDir);
+            DebugWriter.WriteDebug(DebugLevel.I, "Directory location: {0}", CurrentDirectory.CurrentDir);
             var Response = WClient.GetAsync(FileUri, CancellationToken.Token).Result;
             Response.EnsureSuccessStatusCode();
 
@@ -181,7 +181,7 @@ namespace KS.Network.Transfer
                 WClientProgress.HttpSendProgress += HttpSendProgressWatch;
 
             // Send the GET request to the server for the file after getting the stream and target file stream
-            DebugWriter.Wdbg(DebugLevel.I, "Directory location: {0}", CurrentDirectory.CurrentDir);
+            DebugWriter.WriteDebug(DebugLevel.I, "Directory location: {0}", CurrentDirectory.CurrentDir);
             string FilePath = Filesystem.NeutralizePath(FileName);
             var FileStream = new FileStream(FilePath, FileMode.Open, FileAccess.Read);
             var Content = new StreamContent(FileStream);
@@ -249,7 +249,7 @@ namespace KS.Network.Transfer
                 WClientProgress.HttpReceiveProgress += HttpReceiveProgressWatch;
 
             // Send the GET request to the server for the file
-            DebugWriter.Wdbg(DebugLevel.I, "Directory location: {0}", CurrentDirectory.CurrentDir);
+            DebugWriter.WriteDebug(DebugLevel.I, "Directory location: {0}", CurrentDirectory.CurrentDir);
             var Response = WClient.GetAsync(StringUri, CancellationToken.Token).Result;
             Response.EnsureSuccessStatusCode();
 
@@ -320,7 +320,7 @@ namespace KS.Network.Transfer
                 WClientProgress.HttpSendProgress += HttpSendProgressWatch;
 
             // Send the GET request to the server for the file
-            DebugWriter.Wdbg(DebugLevel.I, "Directory location: {0}", CurrentDirectory.CurrentDir);
+            DebugWriter.WriteDebug(DebugLevel.I, "Directory location: {0}", CurrentDirectory.CurrentDir);
             var StringContent = new StringContent(Data);
 
             try
@@ -359,7 +359,7 @@ namespace KS.Network.Transfer
         /// </summary>
         private static void DownloadChecker(Exception e)
         {
-            DebugWriter.Wdbg(DebugLevel.I, "Download complete. Error: {0}", e?.Message);
+            DebugWriter.WriteDebug(DebugLevel.I, "Download complete. Error: {0}", e?.Message);
             if (e is not null)
             {
                 if (DownloadNotificationProvoke)
@@ -375,7 +375,7 @@ namespace KS.Network.Transfer
         /// </summary>
         private static void UploadChecker(Exception e)
         {
-            DebugWriter.Wdbg(DebugLevel.I, "Upload complete. Error: {0}", e?.Message);
+            DebugWriter.WriteDebug(DebugLevel.I, "Upload complete. Error: {0}", e?.Message);
             if (e is not null)
             {
                 if (UploadNotificationProvoke)
@@ -445,8 +445,8 @@ namespace KS.Network.Transfer
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Error trying to report transfer progress: {0}", ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to report transfer progress: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
             }
         }
 

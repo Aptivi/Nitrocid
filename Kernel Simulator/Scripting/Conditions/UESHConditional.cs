@@ -53,7 +53,7 @@ namespace KS.Scripting.Conditions
                 bool Satisfied;
 
                 // First, check for the existence of one of the conditional words
-                DebugWriter.Wdbg(DebugLevel.I, "Checking expression {0} for condition", ConditionToSatisfy);
+                DebugWriter.WriteDebug(DebugLevel.I, "Checking expression {0} for condition", ConditionToSatisfy);
                 var EnclosedWords = ConditionToSatisfy.SplitEncloseDoubleQuotes(" ")?.ToList();
                 var ConditionFound = default(bool);
                 string ConditionType = "none";
@@ -62,7 +62,7 @@ namespace KS.Scripting.Conditions
                 {
                     if (EnclosedWords.Contains(Condition))
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Condition found in the expression string. It was {0}", Condition);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Condition found in the expression string. It was {0}", Condition);
                         ConditionFound = true;
                         ConditionType = Condition;
                         ConditionBase = AvailableConditions[ConditionType];
@@ -76,12 +76,12 @@ namespace KS.Scripting.Conditions
                 int ConditionPosition = ConditionBase.ConditionPosition;
                 if (EnclosedWords.Count < RequiredArguments)
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "Argument count {0} is less than the required arguments {1}", EnclosedWords.Count, RequiredArguments);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Argument count {0} is less than the required arguments {1}", EnclosedWords.Count, RequiredArguments);
                     throw new Kernel.Exceptions.UESHConditionParseException(Translate.DoTranslation("Condition {0} requires {1} arguments. Got {2}."), ConditionType, RequiredArguments, EnclosedWords.Count);
                 }
                 if (!AvailableConditions.ContainsKey(EnclosedWords[ConditionPosition - 1]))
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "Condition should be in position {0}, but {1} is not a condition.", ConditionPosition, EnclosedWords[ConditionPosition - 1]);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Condition should be in position {0}, but {1} is not a condition.", ConditionPosition, EnclosedWords[ConditionPosition - 1]);
                     throw new Kernel.Exceptions.UESHConditionParseException(Translate.DoTranslation("The condition needs to be placed in the end."));
                 }
 
@@ -155,13 +155,13 @@ namespace KS.Scripting.Conditions
                                 break;
                             }
                     }
-                    DebugWriter.Wdbg(DebugLevel.I, "Satisfied: {0}", Satisfied);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
                     return Satisfied;
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "Syntax error in {0}: {1}", ConditionToSatisfy, ex.Message);
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Syntax error in {0}: {1}", ConditionToSatisfy, ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     throw new Kernel.Exceptions.UESHConditionParseException(Translate.DoTranslation("Error parsing expression due to syntax error.") + " {0}: {1}", ex, ConditionToSatisfy, ex.Message);
                 }
             }

@@ -40,7 +40,7 @@ namespace KS.Shell.Shells.Mail.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            DebugWriter.Wdbg(DebugLevel.I, "Message number is numeric? {0}", StringQuery.IsStringNumeric(ListArgsOnly[0]));
+            DebugWriter.WriteDebug(DebugLevel.I, "Message number is numeric? {0}", StringQuery.IsStringNumeric(ListArgsOnly[0]));
             if (StringQuery.IsStringNumeric(ListArgsOnly[0]))
             {
                 MailTransfer.MailPrintMessage(Convert.ToInt32(ListArgsOnly[0]));

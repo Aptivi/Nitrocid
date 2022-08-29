@@ -52,7 +52,7 @@ namespace KS.Shell.Shells.HTTP
                     lock (CancellationHandlers.GetCancelSyncLock(ShellType))
                     {
                         // Prompt for command
-                        DebugWriter.Wdbg(DebugLevel.I, "Preparing prompt...");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Preparing prompt...");
                         PromptPresetManager.WriteShellPrompt(ShellType);
 
                         // Raise the event
@@ -60,7 +60,7 @@ namespace KS.Shell.Shells.HTTP
                     }
 
                     // Prompt for command
-                    DebugWriter.Wdbg(DebugLevel.I, "Normal shell");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Normal shell");
                     string HttpCommand = Input.ReadLine();
 
                     // Parse command
@@ -78,7 +78,7 @@ namespace KS.Shell.Shells.HTTP
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     throw new Kernel.Exceptions.HTTPShellException(Translate.DoTranslation("There was an error in the HTTP shell:") + " {0}", ex, ex.Message);
                 }
             }

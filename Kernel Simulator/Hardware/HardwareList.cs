@@ -45,28 +45,28 @@ namespace KS.Hardware
                 // We are checking to see if any of the probers reported a failure starting with CPU
                 if (HardwareProbe.HardwareInfo.Hardware.CPU is null | HardwareProbe.HardwareInfo.Hardware.CPU is not null & HardwareProbe.HardwareInfo.Hardware.CPU.Count == 0)
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "CPU failed to probe.");
+                    DebugWriter.WriteDebug(DebugLevel.E, "CPU failed to probe.");
                     TextWriterColor.Write(Translate.DoTranslation("CPU: One or more of the CPU cores failed to be probed. Showing information anyway..."), true, ColorTools.ColTypes.Warning);
                 }
 
                 // then RAM
                 if (HardwareProbe.HardwareInfo.Hardware.RAM is null)
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "RAM failed to probe.");
+                    DebugWriter.WriteDebug(DebugLevel.E, "RAM failed to probe.");
                     TextWriterColor.Write(Translate.DoTranslation("RAM: One or more of the RAM chips failed to be probed. Showing information anyway..."), true, ColorTools.ColTypes.Warning);
                 }
 
                 // then GPU
                 if (HardwareProbe.HardwareInfo.Hardware.GPU is null)
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "GPU failed to probe.");
+                    DebugWriter.WriteDebug(DebugLevel.E, "GPU failed to probe.");
                     TextWriterColor.Write(Translate.DoTranslation("GPU: One or more of the graphics cards failed to be probed. Showing information anyway..."), true, ColorTools.ColTypes.Warning);
                 }
 
                 // and finally HDD
                 if (HardwareProbe.HardwareInfo.Hardware.HDD is null | HardwareProbe.HardwareInfo.Hardware.HDD is not null & HardwareProbe.HardwareInfo.Hardware.HDD.Count == 0)
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "HDD failed to probe.");
+                    DebugWriter.WriteDebug(DebugLevel.E, "HDD failed to probe.");
                     TextWriterColor.Write(Translate.DoTranslation("HDD: One or more of the hard drives failed to be probed. Showing information anyway..."), true, ColorTools.ColTypes.Warning);
                 }
 
@@ -136,7 +136,7 @@ namespace KS.Hardware
         public static void ListHardware(string HardwareType)
         {
             var HardwareField = FieldManager.GetField(HardwareType, FieldManager.GetField(nameof(HardwareProbe.HardwareInfo.Hardware), typeof(Inxi)).FieldType);
-            DebugWriter.Wdbg(DebugLevel.I, "Got hardware field {0}.", HardwareField is not null ? HardwareField.Name : "unknown");
+            DebugWriter.WriteDebug(DebugLevel.I, "Got hardware field {0}.", HardwareField is not null ? HardwareField.Name : "unknown");
             if (HardwareField is not null)
             {
                 ListHardwareProperties(HardwareField);
@@ -155,7 +155,7 @@ namespace KS.Hardware
 
         private static void ListHardwareProperties(FieldInfo Field)
         {
-            DebugWriter.Wdbg(DebugLevel.I, "Got hardware field {0}.", Field.Name);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got hardware field {0}.", Field.Name);
             SeparatorWriterColor.WriteSeparator(Field.Name, true);
             var FieldValue = Field.GetValue(HardwareProbe.HardwareInfo.Hardware);
             if (FieldValue is not null)

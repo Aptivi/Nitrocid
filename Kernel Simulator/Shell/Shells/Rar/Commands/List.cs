@@ -42,12 +42,12 @@ namespace KS.Shell.Shells.Rar.Commands
             List<RarArchiveEntry> Entries;
             if (ListArgsOnly.Length > 0)
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Listing entries with {0} as target directory", ListArgsOnly[0]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Listing entries with {0} as target directory", ListArgsOnly[0]);
                 Entries = RarTools.ListRarEntries(ListArgsOnly[0]);
             }
             else
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Listing entries with current directory as target directory");
+                DebugWriter.WriteDebug(DebugLevel.I, "Listing entries with current directory as target directory");
                 Entries = RarTools.ListRarEntries(RarShellCommon.RarShell_CurrentArchiveDirectory);
             }
             foreach (RarArchiveEntry Entry in Entries)

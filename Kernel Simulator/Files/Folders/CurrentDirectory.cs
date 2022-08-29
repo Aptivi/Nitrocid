@@ -84,8 +84,8 @@ namespace KS.Files.Folders
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Failed to set current directory: {0}", ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to set current directory: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
         }
@@ -112,8 +112,8 @@ namespace KS.Files.Folders
             }
             catch (Exception ex)
             {
-                DebugWriter.WStkTrc(ex);
-                DebugWriter.Wdbg(DebugLevel.E, "Failed to save current directory: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to save current directory: {0}", ex.Message);
                 throw new Kernel.Exceptions.FilesystemException(Translate.DoTranslation("Failed to save current directory: {0}"), ex, ex.Message);
             }
         }

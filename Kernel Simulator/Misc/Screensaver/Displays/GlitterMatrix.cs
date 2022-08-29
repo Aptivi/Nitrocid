@@ -99,7 +99,7 @@ namespace KS.Misc.Screensaver.Displays
             ColorTools.SetConsoleColor(new Color(GlitterMatrixSettings.GlitterMatrixBackgroundColor), true, true);
             ColorTools.SetConsoleColor(new Color(GlitterMatrixSettings.GlitterMatrixForegroundColor));
             ConsoleBase.ConsoleWrapper.Clear();
-            DebugWriter.Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
+            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
         }
 
         public override void ScreensaverLogic()
@@ -107,7 +107,7 @@ namespace KS.Misc.Screensaver.Displays
             ConsoleBase.ConsoleWrapper.CursorVisible = false;
             int Left = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowWidth);
             int Top = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowHeight);
-            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top);
+            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top);
             ConsoleBase.ConsoleWrapper.SetCursorPosition(Left, Top);
             if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                 ResizeSyncing = true;
@@ -117,7 +117,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             else
             {
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.W, "Color-syncing. Clearing...");
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.W, "Color-syncing. Clearing...");
                 ConsoleBase.ConsoleWrapper.Clear();
             }
 

@@ -68,17 +68,17 @@ namespace KS.Shell.Shells.Mail.Commands
             // Prompt for receiver e-mail address
             TextWriterColor.Write(Translate.DoTranslation("Enter recipient mail address:") + " ", false, ColorTools.ColTypes.Input);
             Receiver = Input.ReadLine();
-            DebugWriter.Wdbg(DebugLevel.I, "Recipient: {0}", Receiver);
+            DebugWriter.WriteDebug(DebugLevel.I, "Recipient: {0}", Receiver);
 
             // Check for mail format
             if (Receiver.Contains("@") & Receiver.Substring(Receiver.IndexOf("@")).Contains("."))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Mail format satisfied. Contains \"@\" and contains \".\" in the second part after the \"@\" symbol.");
+                DebugWriter.WriteDebug(DebugLevel.I, "Mail format satisfied. Contains \"@\" and contains \".\" in the second part after the \"@\" symbol.");
 
                 // Prompt for subject
                 TextWriterColor.Write(Translate.DoTranslation("Enter the subject:") + " ", false, ColorTools.ColTypes.Input);
                 Subject = Input.ReadLine(false);
-                DebugWriter.Wdbg(DebugLevel.I, "Subject: {0} ({1} chars)", Subject, Subject.Length);
+                DebugWriter.WriteDebug(DebugLevel.I, "Subject: {0} ({1} chars)", Subject, Subject.Length);
 
                 // Prompt for body
                 TextWriterColor.Write(Translate.DoTranslation("Enter your message below. Write \"EOF\" to confirm."), true, ColorTools.ColTypes.Input);
@@ -88,9 +88,9 @@ namespace KS.Shell.Shells.Mail.Commands
                     BodyLine = Input.ReadLine();
                     if (!(BodyLine.ToUpper() == "EOF"))
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Body line: {0} ({1} chars)", BodyLine, BodyLine.Length);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Body line: {0} ({1} chars)", BodyLine, BodyLine.Length);
                         Body.TextBody += BodyLine + Kernel.Kernel.NewLine;
-                        DebugWriter.Wdbg(DebugLevel.I, "Body length: {0} chars", Body.TextBody.Length);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Body length: {0} chars", Body.TextBody.Length);
                     }
                 }
 
@@ -103,7 +103,7 @@ namespace KS.Shell.Shells.Mail.Commands
                     if (!string.IsNullOrEmpty(PathLine))
                     {
                         PathLine = Filesystem.NeutralizePath(PathLine);
-                        DebugWriter.Wdbg(DebugLevel.I, "Path line: {0} ({1} chars)", PathLine, PathLine.Length);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Path line: {0} ({1} chars)", PathLine, PathLine.Length);
                         if (Checking.FileExists(PathLine))
                         {
                             Body.Attachments.Add(PathLine);
@@ -115,18 +115,18 @@ namespace KS.Shell.Shells.Mail.Commands
                 TextWriterColor.Write(Translate.DoTranslation("Sending message..."), true, ColorTools.ColTypes.Progress);
                 if (Convert.ToBoolean(MailTransfer.MailSendMessage(Receiver, Subject, Body.ToMessageBody())))
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Message sent.");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Message sent.");
                     TextWriterColor.Write(Translate.DoTranslation("Message sent."), true, ColorTools.ColTypes.Success);
                 }
                 else
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "See debug output to find what's wrong.");
+                    DebugWriter.WriteDebug(DebugLevel.E, "See debug output to find what's wrong.");
                     TextWriterColor.Write(Translate.DoTranslation("Error sending message."), true, ColorTools.ColTypes.Error);
                 }
             }
             else if (ReadLineReboot.ReadLine.ReadRanToCompletion)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Mail format unsatisfied." + Receiver);
+                DebugWriter.WriteDebug(DebugLevel.E, "Mail format unsatisfied." + Receiver);
                 TextWriterColor.Write(Translate.DoTranslation("Invalid e-mail address. Make sure you've written the address correctly and that it matches the format of the example shown:") + " john.s@example.com", true, ColorTools.ColTypes.Error);
             }
         }

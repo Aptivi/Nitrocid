@@ -55,7 +55,7 @@ namespace KS.Network.Mail
         /// </summary>
         public static void HandleWebAlert(object sender, WebAlertEventArgs e)
         {
-            DebugWriter.Wdbg(DebugLevel.I, "WebAlert URI: {0}", e.WebUri.AbsoluteUri);
+            DebugWriter.WriteDebug(DebugLevel.I, "WebAlert URI: {0}", e.WebUri.AbsoluteUri);
             TextWriterColor.Write(e.Message, true, ColorTools.ColTypes.Warning);
             TextWriterColor.Write(Translate.DoTranslation("Opening URL... Make sure to follow the steps shown on the screen."), true, ColorTools.ColTypes.Neutral);
             Process.Start(e.WebUri.AbsoluteUri).WaitForExit();

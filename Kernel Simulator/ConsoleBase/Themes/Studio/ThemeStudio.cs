@@ -39,14 +39,14 @@ namespace KS.ConsoleBase.Themes.Studio
         {
             // Inform user that we're on the studio
             Kernel.Kernel.KernelEventManager.RaiseThemeStudioStarted();
-            DebugWriter.Wdbg(DebugLevel.I, "Starting theme studio with theme name {0}", ThemeName);
+            DebugWriter.WriteDebug(DebugLevel.I, "Starting theme studio with theme name {0}", ThemeName);
             string Response;
             int MaximumOptions = 38 + 9; // Colors + options
             var StudioExiting = default(bool);
 
             while (!StudioExiting)
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Studio not exiting yet. Populating {0} options...", MaximumOptions);
+                DebugWriter.WriteDebug(DebugLevel.I, "Studio not exiting yet. Populating {0} options...", MaximumOptions);
                 ConsoleWrapper.Clear();
                 TextWriterColor.Write(Translate.DoTranslation("Making a new theme \"{0}\".") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.Neutral, ThemeName);
 
@@ -104,20 +104,20 @@ namespace KS.ConsoleBase.Themes.Studio
                 ConsoleWrapper.WriteLine();
 
                 // Prompt user
-                DebugWriter.Wdbg(DebugLevel.I, "Waiting for user input...");
+                DebugWriter.WriteDebug(DebugLevel.I, "Waiting for user input...");
                 TextWriterColor.Write("> ", false, ColorTools.ColTypes.Input);
                 Response = Input.ReadLine();
-                DebugWriter.Wdbg(DebugLevel.I, "Got response: {0}", Response);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got response: {0}", Response);
 
                 // Check for response integrity
                 if (StringQuery.IsStringNumeric(Response))
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Response is numeric.");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Response is numeric.");
                     int NumericResponse = Convert.ToInt32(Response);
-                    DebugWriter.Wdbg(DebugLevel.I, "Checking response...");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Checking response...");
                     if (NumericResponse >= 1 & NumericResponse <= MaximumOptions)
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Numeric response {0} is >= 1 and <= {0}.", NumericResponse, MaximumOptions);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Numeric response {0} is >= 1 and <= {0}.", NumericResponse, MaximumOptions);
                         Color SelectedColorInstance;
                         switch (NumericResponse)
                         {
@@ -394,72 +394,72 @@ namespace KS.ConsoleBase.Themes.Studio
                                 }
                             case 40: // Save theme to another directory...
                                 {
-                                    DebugWriter.Wdbg(DebugLevel.I, "Prompting user for directory name...");
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for directory name...");
                                     TextWriterColor.Write(Translate.DoTranslation("Specify directory to save theme to:") + " [{0}] ", false, ColorTools.ColTypes.Input, CurrentDirectory.CurrentDir);
                                     string DirectoryName = Input.ReadLine(false);
                                     DirectoryName = string.IsNullOrWhiteSpace(DirectoryName) ? CurrentDirectory.CurrentDir : DirectoryName;
-                                    DebugWriter.Wdbg(DebugLevel.I, "Got directory name {0}.", DirectoryName);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Got directory name {0}.", DirectoryName);
                                     ThemeStudioTools.SaveThemeToAnotherDirectory(ThemeName, DirectoryName);
                                     break;
                                 }
                             case 41: // Save theme to current directory as...
                                 {
-                                    DebugWriter.Wdbg(DebugLevel.I, "Prompting user for theme name...");
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
                                     TextWriterColor.Write(Translate.DoTranslation("Specify theme name:") + " [{0}] ", false, ColorTools.ColTypes.Input, ThemeName);
                                     string AltThemeName = Input.ReadLine(false);
                                     AltThemeName = string.IsNullOrWhiteSpace(AltThemeName) ? ThemeName : AltThemeName;
-                                    DebugWriter.Wdbg(DebugLevel.I, "Got theme name {0}.", AltThemeName);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", AltThemeName);
                                     ThemeStudioTools.SaveThemeToCurrentDirectory(AltThemeName);
                                     break;
                                 }
                             case 42: // Save theme to another directory as...
                                 {
-                                    DebugWriter.Wdbg(DebugLevel.I, "Prompting user for theme and directory name...");
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme and directory name...");
                                     TextWriterColor.Write(Translate.DoTranslation("Specify directory to save theme to:") + " [{0}] ", false, ColorTools.ColTypes.Input, CurrentDirectory.CurrentDir);
                                     string DirectoryName = Input.ReadLine(false);
                                     DirectoryName = string.IsNullOrWhiteSpace(DirectoryName) ? CurrentDirectory.CurrentDir : DirectoryName;
-                                    DebugWriter.Wdbg(DebugLevel.I, "Got directory name {0}.", DirectoryName);
-                                    DebugWriter.Wdbg(DebugLevel.I, "Prompting user for theme name...");
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Got directory name {0}.", DirectoryName);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
                                     TextWriterColor.Write(Translate.DoTranslation("Specify theme name:") + " [{0}] ", false, ColorTools.ColTypes.Input, ThemeName);
                                     string AltThemeName = Input.ReadLine(false);
                                     AltThemeName = string.IsNullOrWhiteSpace(AltThemeName) ? ThemeName : AltThemeName;
-                                    DebugWriter.Wdbg(DebugLevel.I, "Got theme name {0}.", AltThemeName);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", AltThemeName);
                                     ThemeStudioTools.SaveThemeToAnotherDirectory(AltThemeName, DirectoryName);
                                     break;
                                 }
                             case 43: // Load Theme From File...
                                 {
-                                    DebugWriter.Wdbg(DebugLevel.I, "Prompting user for theme name...");
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
                                     TextWriterColor.Write(Translate.DoTranslation("Specify theme file name wihout the .json extension:") + " ", false, ColorTools.ColTypes.Input);
                                     string AltThemeName = Input.ReadLine(false) + ".json";
-                                    DebugWriter.Wdbg(DebugLevel.I, "Got theme name {0}.", AltThemeName);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", AltThemeName);
                                     ThemeStudioTools.LoadThemeFromFile(AltThemeName);
                                     break;
                                 }
                             case 44: // Load Theme From Prebuilt Themes...
                                 {
-                                    DebugWriter.Wdbg(DebugLevel.I, "Prompting user for theme name...");
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
                                     TextWriterColor.Write(Translate.DoTranslation("Specify theme name:") + " ", false, ColorTools.ColTypes.Input);
                                     string AltThemeName = Input.ReadLine(false);
-                                    DebugWriter.Wdbg(DebugLevel.I, "Got theme name {0}.", AltThemeName);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", AltThemeName);
                                     ThemeStudioTools.LoadThemeFromResource(AltThemeName);
                                     break;
                                 }
                             case 45: // Load Current Colors
                                 {
-                                    DebugWriter.Wdbg(DebugLevel.I, "Loading current colors...");
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Loading current colors...");
                                     ThemeStudioTools.LoadThemeFromCurrentColors();
                                     break;
                                 }
                             case 46: // Preview...
                                 {
-                                    DebugWriter.Wdbg(DebugLevel.I, "Printing text with colors of theme...");
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Printing text with colors of theme...");
                                     ThemeStudioTools.PreparePreview();
                                     break;
                                 }
                             case 47: // Exit
                                 {
-                                    DebugWriter.Wdbg(DebugLevel.I, "Exiting studio...");
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Exiting studio...");
                                     StudioExiting = true;
                                     break;
                                 }
@@ -467,7 +467,7 @@ namespace KS.ConsoleBase.Themes.Studio
                     }
                     else
                     {
-                        DebugWriter.Wdbg(DebugLevel.W, "Option is not valid. Returning...");
+                        DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
                         TextWriterColor.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, ColorTools.ColTypes.Error, NumericResponse);
                         TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
                         ConsoleWrapper.ReadKey();
@@ -475,7 +475,7 @@ namespace KS.ConsoleBase.Themes.Studio
                 }
                 else
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "Answer is not numeric.");
+                    DebugWriter.WriteDebug(DebugLevel.W, "Answer is not numeric.");
                     TextWriterColor.Write(Translate.DoTranslation("The answer must be numeric."), true, ColorTools.ColTypes.Error);
                     TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
                     ConsoleWrapper.ReadKey();

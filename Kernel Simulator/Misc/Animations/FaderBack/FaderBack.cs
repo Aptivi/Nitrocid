@@ -49,7 +49,7 @@ namespace KS.Misc.Animations.FaderBack
             double ThresholdRed = RedColorNum / (double)Settings.FaderBackMaxSteps;
             double ThresholdGreen = GreenColorNum / (double)Settings.FaderBackMaxSteps;
             double ThresholdBlue = BlueColorNum / (double)Settings.FaderBackMaxSteps;
-            DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0})", ThresholdRed, ThresholdGreen, ThresholdBlue);
+            DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0})", ThresholdRed, ThresholdGreen, ThresholdBlue);
 
             // Fade in
             int CurrentColorRedIn = 0;
@@ -61,12 +61,12 @@ namespace KS.Misc.Animations.FaderBack
                     ResizeSyncing = true;
                 if (ResizeSyncing)
                     break;
-                DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, Settings.FaderBackMaxSteps);
+                DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, Settings.FaderBackMaxSteps);
                 ThreadManager.SleepNoBlock(Settings.FaderBackDelay, System.Threading.Thread.CurrentThread);
                 CurrentColorRedIn = (int)Math.Round(CurrentColorRedIn + ThresholdRed);
                 CurrentColorGreenIn = (int)Math.Round(CurrentColorGreenIn + ThresholdGreen);
                 CurrentColorBlueIn = (int)Math.Round(CurrentColorBlueIn + ThresholdBlue);
-                DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn);
+                DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn);
                 ColorTools.SetConsoleColor(new Color($"{CurrentColorRedIn};{CurrentColorGreenIn};{CurrentColorBlueIn}"), true, true);
                 ConsoleBase.ConsoleWrapper.Clear();
             }
@@ -74,7 +74,7 @@ namespace KS.Misc.Animations.FaderBack
             // Wait until fade out
             if (!ResizeSyncing)
             {
-                DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Waiting {0} ms...", Settings.FaderBackFadeOutDelay);
+                DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Waiting {0} ms...", Settings.FaderBackFadeOutDelay);
                 ThreadManager.SleepNoBlock(Settings.FaderBackFadeOutDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
             }
 
@@ -85,12 +85,12 @@ namespace KS.Misc.Animations.FaderBack
                     ResizeSyncing = true;
                 if (ResizeSyncing)
                     break;
-                DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, Settings.FaderBackMaxSteps);
+                DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, Settings.FaderBackMaxSteps);
                 ThreadManager.SleepNoBlock(Settings.FaderBackDelay, System.Threading.Thread.CurrentThread);
                 int CurrentColorRedOut = (int)Math.Round(RedColorNum - ThresholdRed * CurrentStep);
                 int CurrentColorGreenOut = (int)Math.Round(GreenColorNum - ThresholdGreen * CurrentStep);
                 int CurrentColorBlueOut = (int)Math.Round(BlueColorNum - ThresholdBlue * CurrentStep);
-                DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
+                DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
                 ColorTools.SetConsoleColor(new Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}"), true, true);
                 ConsoleBase.ConsoleWrapper.Clear();
             }

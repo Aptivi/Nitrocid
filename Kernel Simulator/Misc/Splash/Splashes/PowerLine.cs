@@ -69,7 +69,7 @@ namespace KS.Misc.Splash.Splashes
         // Actual logic
         public void Opening()
         {
-            DebugWriter.Wdbg(DebugLevel.I, "Splash opening. Clearing console...");
+            DebugWriter.WriteDebug(DebugLevel.I, "Splash opening. Clearing console...");
             ConsoleWrapper.Clear();
 
             // Select the color segment background and mirror it to the transition foreground color
@@ -81,7 +81,7 @@ namespace KS.Misc.Splash.Splashes
         {
             try
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Splash displaying.");
+                DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
                 while (!SplashClosing)
                 {
                     // As the length increases, draw the PowerLine lines
@@ -122,14 +122,14 @@ namespace KS.Misc.Splash.Splashes
             }
             catch (ThreadInterruptedException)
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Splash done.");
+                DebugWriter.WriteDebug(DebugLevel.I, "Splash done.");
             }
         }
 
         public void Closing()
         {
             SplashClosing = true;
-            DebugWriter.Wdbg(DebugLevel.I, "Splash closing. Clearing console...");
+            DebugWriter.WriteDebug(DebugLevel.I, "Splash closing. Clearing console...");
             ColorTools.SetConsoleColor(ColorTools.ColTypes.Neutral);
             ColorTools.SetConsoleColor(ColorTools.BackgroundColor, true);
             ConsoleWrapper.Clear();

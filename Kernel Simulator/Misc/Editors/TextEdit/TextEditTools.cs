@@ -43,11 +43,11 @@ namespace KS.Misc.Editors.TextEdit
         {
             try
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Trying to open file {0}...", File);
+                DebugWriter.WriteDebug(DebugLevel.I, "Trying to open file {0}...", File);
                 TextEditShellCommon.TextEdit_FileStream = new FileStream(File, FileMode.Open);
                 TextEditShellCommon.TextEdit_FileLines ??= new List<string>();
                 TextEditShellCommon.TextEdit_FileLinesOrig ??= new List<string>();
-                DebugWriter.Wdbg(DebugLevel.I, "File {0} is open. Length: {1}, Pos: {2}", File, TextEditShellCommon.TextEdit_FileStream.Length, TextEditShellCommon.TextEdit_FileStream.Position);
+                DebugWriter.WriteDebug(DebugLevel.I, "File {0} is open. Length: {1}, Pos: {2}", File, TextEditShellCommon.TextEdit_FileStream.Length, TextEditShellCommon.TextEdit_FileStream.Position);
                 var TextFileStreamReader = new StreamReader(TextEditShellCommon.TextEdit_FileStream);
                 while (!TextFileStreamReader.EndOfStream)
                 {
@@ -60,8 +60,8 @@ namespace KS.Misc.Editors.TextEdit
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Open file {0} failed: {1}", File, ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Open file {0} failed: {1}", File, ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
         }
@@ -74,18 +74,18 @@ namespace KS.Misc.Editors.TextEdit
         {
             try
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Trying to close file...");
+                DebugWriter.WriteDebug(DebugLevel.I, "Trying to close file...");
                 TextEditShellCommon.TextEdit_FileStream.Close();
                 TextEditShellCommon.TextEdit_FileStream = null;
-                DebugWriter.Wdbg(DebugLevel.I, "File is no longer open.");
+                DebugWriter.WriteDebug(DebugLevel.I, "File is no longer open.");
                 TextEditShellCommon.TextEdit_FileLines.Clear();
                 TextEditShellCommon.TextEdit_FileLinesOrig.Clear();
                 return true;
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Closing file failed: {0}", ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Closing file failed: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
         }
@@ -98,14 +98,14 @@ namespace KS.Misc.Editors.TextEdit
         {
             try
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Trying to save file...");
+                DebugWriter.WriteDebug(DebugLevel.I, "Trying to save file...");
                 TextEditShellCommon.TextEdit_FileStream.SetLength(0L);
-                DebugWriter.Wdbg(DebugLevel.I, "Length set to 0.");
+                DebugWriter.WriteDebug(DebugLevel.I, "Length set to 0.");
                 var FileLinesByte = Encoding.Default.GetBytes(TextEditShellCommon.TextEdit_FileLines.ToArray().Join(Kernel.Kernel.NewLine));
-                DebugWriter.Wdbg(DebugLevel.I, "Converted lines to bytes. Length: {0}", FileLinesByte.Length);
+                DebugWriter.WriteDebug(DebugLevel.I, "Converted lines to bytes. Length: {0}", FileLinesByte.Length);
                 TextEditShellCommon.TextEdit_FileStream.Write(FileLinesByte, 0, FileLinesByte.Length);
                 TextEditShellCommon.TextEdit_FileStream.Flush();
-                DebugWriter.Wdbg(DebugLevel.I, "File is saved.");
+                DebugWriter.WriteDebug(DebugLevel.I, "File is saved.");
                 if (ClearLines)
                 {
                     TextEditShellCommon.TextEdit_FileLines.Clear();
@@ -116,8 +116,8 @@ namespace KS.Misc.Editors.TextEdit
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Saving file failed: {0}", ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Saving file failed: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
         }
@@ -139,7 +139,7 @@ namespace KS.Misc.Editors.TextEdit
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
         }
@@ -198,12 +198,12 @@ namespace KS.Misc.Editors.TextEdit
             if (TextEditShellCommon.TextEdit_FileStream is not null)
             {
                 int LineIndex = LineNumber - 1;
-                DebugWriter.Wdbg(DebugLevel.I, "Got line index: {0}", LineIndex);
-                DebugWriter.Wdbg(DebugLevel.I, "Old file lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
+                DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
                 if (LineNumber <= TextEditShellCommon.TextEdit_FileLines.Count)
                 {
                     TextEditShellCommon.TextEdit_FileLines.RemoveAt(LineIndex);
-                    DebugWriter.Wdbg(DebugLevel.I, "New file lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
+                    DebugWriter.WriteDebug(DebugLevel.I, "New file lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
                 }
                 else
                 {
@@ -227,10 +227,10 @@ namespace KS.Misc.Editors.TextEdit
                 throw new ArgumentNullException(nameof(From));
             if (TextEditShellCommon.TextEdit_FileStream is not null)
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Source: {0}, Target: {1}", From, With);
+                DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}", From, With);
                 for (int LineIndex = 0, loopTo = TextEditShellCommon.TextEdit_FileLines.Count - 1; LineIndex <= loopTo; LineIndex++)
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", From, With, LineIndex + 1);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", From, With, LineIndex + 1);
                     TextEditShellCommon.TextEdit_FileLines[LineIndex] = Regex.Replace(TextEditShellCommon.TextEdit_FileLines[LineIndex], From, With);
                 }
             }
@@ -252,12 +252,12 @@ namespace KS.Misc.Editors.TextEdit
                 throw new ArgumentNullException(nameof(From));
             if (TextEditShellCommon.TextEdit_FileStream is not null)
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Source: {0}, Target: {1}, Line Number: {2}", From, With, LineNumber);
-                DebugWriter.Wdbg(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}, Line Number: {2}", From, With, LineNumber);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
                 long LineIndex = LineNumber - 1;
                 if (LineNumber <= TextEditShellCommon.TextEdit_FileLines.Count)
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", From, With, LineIndex + 1L);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", From, With, LineIndex + 1L);
                     TextEditShellCommon.TextEdit_FileLines[(int)LineIndex] = Regex.Replace(TextEditShellCommon.TextEdit_FileLines[(int)LineIndex], From, With);
                 }
                 else
@@ -282,10 +282,10 @@ namespace KS.Misc.Editors.TextEdit
                 throw new ArgumentNullException(nameof(From));
             if (TextEditShellCommon.TextEdit_FileStream is not null)
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Source: {0}, Target: {1}", From, With);
+                DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}", From, With);
                 for (int LineIndex = 0, loopTo = TextEditShellCommon.TextEdit_FileLines.Count - 1; LineIndex <= loopTo; LineIndex++)
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", From, With, LineIndex + 1);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", From, With, LineIndex + 1);
                     TextEditShellCommon.TextEdit_FileLines[LineIndex] = TextEditShellCommon.TextEdit_FileLines[LineIndex].Replace(From, With);
                 }
             }
@@ -307,12 +307,12 @@ namespace KS.Misc.Editors.TextEdit
                 throw new ArgumentNullException(nameof(From));
             if (TextEditShellCommon.TextEdit_FileStream is not null)
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Source: {0}, Target: {1}, Line Number: {2}", From, With, LineNumber);
-                DebugWriter.Wdbg(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}, Line Number: {2}", From, With, LineNumber);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
                 long LineIndex = LineNumber - 1;
                 if (LineNumber <= TextEditShellCommon.TextEdit_FileLines.Count)
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", From, With, LineIndex + 1L);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", From, With, LineIndex + 1L);
                     TextEditShellCommon.TextEdit_FileLines[(int)LineIndex] = TextEditShellCommon.TextEdit_FileLines[(int)LineIndex].Replace(From, With);
                 }
                 else
@@ -338,13 +338,13 @@ namespace KS.Misc.Editors.TextEdit
             if (TextEditShellCommon.TextEdit_FileStream is not null)
             {
                 int LineIndex = LineNumber - 1;
-                DebugWriter.Wdbg(DebugLevel.I, "Word/Phrase: {0}, Line: {1}", Word, LineNumber);
-                DebugWriter.Wdbg(DebugLevel.I, "Got line index: {0}", LineIndex);
-                DebugWriter.Wdbg(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Word/Phrase: {0}, Line: {1}", Word, LineNumber);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
                 if (LineNumber <= TextEditShellCommon.TextEdit_FileLines.Count)
                 {
                     TextEditShellCommon.TextEdit_FileLines[LineIndex] = TextEditShellCommon.TextEdit_FileLines[LineIndex].Replace(Word, "");
-                    DebugWriter.Wdbg(DebugLevel.I, "Removed {0}. Result: {1}", LineIndex, TextEditShellCommon.TextEdit_FileLines.Count);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}. Result: {1}", LineIndex, TextEditShellCommon.TextEdit_FileLines.Count);
                 }
                 else
                 {
@@ -368,14 +368,14 @@ namespace KS.Misc.Editors.TextEdit
             {
                 int LineIndex = LineNumber - 1;
                 int CharIndex = CharNumber - 1;
-                DebugWriter.Wdbg(DebugLevel.I, "Char number: {0}, Line: {1}", CharNumber, LineNumber);
-                DebugWriter.Wdbg(DebugLevel.I, "Got line index: {0}", LineIndex);
-                DebugWriter.Wdbg(DebugLevel.I, "Got char index: {0}", CharIndex);
-                DebugWriter.Wdbg(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Char number: {0}, Line: {1}", CharNumber, LineNumber);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got char index: {0}", CharIndex);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
                 if (LineNumber <= TextEditShellCommon.TextEdit_FileLines.Count)
                 {
                     TextEditShellCommon.TextEdit_FileLines[LineIndex] = TextEditShellCommon.TextEdit_FileLines[LineIndex].Remove(CharIndex, 1);
-                    DebugWriter.Wdbg(DebugLevel.I, "Removed {0}. Result: {1}", LineIndex, TextEditShellCommon.TextEdit_FileLines[LineIndex]);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}. Result: {1}", LineIndex, TextEditShellCommon.TextEdit_FileLines[LineIndex]);
                 }
                 else
                 {
@@ -398,8 +398,8 @@ namespace KS.Misc.Editors.TextEdit
             {
                 var Lines = new Dictionary<int, Dictionary<int, string>>();
                 var Results = new Dictionary<int, string>();
-                DebugWriter.Wdbg(DebugLevel.I, "Char: {0}", Char);
-                DebugWriter.Wdbg(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Char: {0}", Char);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
                 for (int LineIndex = 0, loopTo = TextEditShellCommon.TextEdit_FileLines.Count - 1; LineIndex <= loopTo; LineIndex++)
                 {
                     for (int CharIndex = 0, loopTo1 = TextEditShellCommon.TextEdit_FileLines[LineIndex].Length - 1; CharIndex <= loopTo1; CharIndex++)
@@ -431,9 +431,9 @@ namespace KS.Misc.Editors.TextEdit
             {
                 int LineIndex = LineNumber - 1;
                 var Results = new Dictionary<int, string>();
-                DebugWriter.Wdbg(DebugLevel.I, "Char: {0}, Line: {1}", Char, LineNumber);
-                DebugWriter.Wdbg(DebugLevel.I, "Got line index: {0}", LineIndex);
-                DebugWriter.Wdbg(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Char: {0}, Line: {1}", Char, LineNumber);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
                 if (LineNumber <= TextEditShellCommon.TextEdit_FileLines.Count)
                 {
                     for (int CharIndex = 0, loopTo = TextEditShellCommon.TextEdit_FileLines[LineIndex].Length - 1; CharIndex <= loopTo; CharIndex++)
@@ -466,8 +466,8 @@ namespace KS.Misc.Editors.TextEdit
             {
                 var Lines = new Dictionary<int, Dictionary<int, string>>();
                 var Results = new Dictionary<int, string>();
-                DebugWriter.Wdbg(DebugLevel.I, "Word: {0}", Word);
-                DebugWriter.Wdbg(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}", Word);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
                 for (int LineIndex = 0, loopTo = TextEditShellCommon.TextEdit_FileLines.Count - 1; LineIndex <= loopTo; LineIndex++)
                 {
                     var Words = TextEditShellCommon.TextEdit_FileLines[LineIndex].Split(' ');
@@ -500,9 +500,9 @@ namespace KS.Misc.Editors.TextEdit
             {
                 int LineIndex = LineNumber - 1;
                 var Results = new Dictionary<int, string>();
-                DebugWriter.Wdbg(DebugLevel.I, "Word: {0}, Line: {1}", Word, LineNumber);
-                DebugWriter.Wdbg(DebugLevel.I, "Got line index: {0}", LineIndex);
-                DebugWriter.Wdbg(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}, Line: {1}", Word, LineNumber);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
                 if (LineNumber <= TextEditShellCommon.TextEdit_FileLines.Count)
                 {
                     var Words = TextEditShellCommon.TextEdit_FileLines[LineIndex].Split(' ');
@@ -536,8 +536,8 @@ namespace KS.Misc.Editors.TextEdit
             {
                 var Lines = new Dictionary<int, Dictionary<int, string>>();
                 var Results = new Dictionary<int, string>();
-                DebugWriter.Wdbg(DebugLevel.I, "Word: {0}", Word);
-                DebugWriter.Wdbg(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}", Word);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
                 for (int LineIndex = 0, loopTo = TextEditShellCommon.TextEdit_FileLines.Count - 1; LineIndex <= loopTo; LineIndex++)
                 {
                     var LineMatches = Regex.Matches(TextEditShellCommon.TextEdit_FileLines[LineIndex], Word);
@@ -568,9 +568,9 @@ namespace KS.Misc.Editors.TextEdit
             {
                 int LineIndex = LineNumber - 1;
                 var Results = new Dictionary<int, string>();
-                DebugWriter.Wdbg(DebugLevel.I, "Word: {0}, Line: {1}", Word, LineNumber);
-                DebugWriter.Wdbg(DebugLevel.I, "Got line index: {0}", LineIndex);
-                DebugWriter.Wdbg(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}, Line: {1}", Word, LineNumber);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
                 if (LineNumber <= TextEditShellCommon.TextEdit_FileLines.Count)
                 {
                     var LineMatches = Regex.Matches(TextEditShellCommon.TextEdit_FileLines[LineIndex], Word);

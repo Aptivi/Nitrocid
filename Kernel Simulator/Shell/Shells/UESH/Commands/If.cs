@@ -56,8 +56,8 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Failed to satisfy condition. See above for more information: {0}", ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to satisfy condition. See above for more information: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
                 TextWriterColor.Write(Translate.DoTranslation("Failed to satisfy condition. More info here:") + " {0}", true, ColorTools.ColTypes.Error, ex.Message);
             }
         }

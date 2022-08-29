@@ -39,8 +39,8 @@ namespace KS.Misc.Reflection
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Failed to format string: {0}", ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to format string: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
             }
             return FormattedString;
         }

@@ -90,7 +90,7 @@ namespace KS.Login
                 if (ComputationNeeded)
                 {
                     unpassword = Encryption.GetEncryptedString(unpassword, Encryption.Algorithms.SHA256);
-                    DebugWriter.Wdbg(DebugLevel.I, "Hash computed.");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Hash computed.");
                 }
                 else if (!Regexp.IsMatch(unpassword))
                 {
@@ -139,13 +139,13 @@ namespace KS.Login
                 File.WriteAllText(Paths.GetKernelPath(KernelPathType.Users), JsonConvert.SerializeObject(UsersToken, Formatting.Indented));
 
                 // Ready permissions
-                DebugWriter.Wdbg(DebugLevel.I, "Username {0} added. Readying permissions...", uninitUser);
+                DebugWriter.WriteDebug(DebugLevel.I, "Username {0} added. Readying permissions...", uninitUser);
                 PermissionManagement.InitPermissionsForNewUser(uninitUser);
                 return true;
             }
             catch (Exception ex)
             {
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebugStackTrace(ex);
                 throw new Kernel.Exceptions.UserCreationException(Translate.DoTranslation("Error trying to add username.") + Kernel.Kernel.NewLine + Translate.DoTranslation("Error {0}: {1}"), ex, ex.GetType().FullName, ex.Message);
             }
         }
@@ -239,20 +239,20 @@ namespace KS.Login
         public static bool AddUser(string newUser, string newPassword = "")
         {
             // Adds user
-            DebugWriter.Wdbg(DebugLevel.I, "Creating user {0}...", newUser);
+            DebugWriter.WriteDebug(DebugLevel.I, "Creating user {0}...", newUser);
             if (newUser.Contains(" "))
             {
-                DebugWriter.Wdbg(DebugLevel.W, "There are spaces in username.");
+                DebugWriter.WriteDebug(DebugLevel.W, "There are spaces in username.");
                 throw new Kernel.Exceptions.UserCreationException(Translate.DoTranslation("Spaces are not allowed."));
             }
             else if (newUser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray()) != -1)
             {
-                DebugWriter.Wdbg(DebugLevel.W, "There are special characters in username.");
+                DebugWriter.WriteDebug(DebugLevel.W, "There are special characters in username.");
                 throw new Kernel.Exceptions.UserCreationException(Translate.DoTranslation("Special characters are not allowed."));
             }
             else if (string.IsNullOrEmpty(newUser))
             {
-                DebugWriter.Wdbg(DebugLevel.W, "Username is blank.");
+                DebugWriter.WriteDebug(DebugLevel.W, "Username is blank.");
                 throw new Kernel.Exceptions.UserCreationException(Translate.DoTranslation("Blank username."));
             }
             else if (!Login.Users.ContainsKey(newUser))
@@ -261,12 +261,12 @@ namespace KS.Login
                 {
                     if (string.IsNullOrEmpty(newPassword))
                     {
-                        DebugWriter.Wdbg(DebugLevel.W, "Initializing user with no password");
+                        DebugWriter.WriteDebug(DebugLevel.W, "Initializing user with no password");
                         InitializeUser(newUser);
                     }
                     else
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Initializing user with password");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Initializing user with password");
                         InitializeUser(newUser, newPassword);
                     }
                     Kernel.Kernel.KernelEventManager.RaiseUserAdded(newUser);
@@ -274,14 +274,14 @@ namespace KS.Login
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "Failed to create user {0}: {1}", ex.Message);
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to create user {0}: {1}", ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     throw new Kernel.Exceptions.UserCreationException(Translate.DoTranslation("usrmgr: Failed to create username {0}: {1}"), ex, newUser, ex.Message);
                 }
             }
             else
             {
-                DebugWriter.Wdbg(DebugLevel.W, "User {0} already found.", newUser);
+                DebugWriter.WriteDebug(DebugLevel.W, "User {0} already found.", newUser);
                 throw new Kernel.Exceptions.UserCreationException(Translate.DoTranslation("usrmgr: Username {0} is already found"), newUser);
             }
         }
@@ -296,44 +296,44 @@ namespace KS.Login
         {
             if (user.Contains(" "))
             {
-                DebugWriter.Wdbg(DebugLevel.W, "There are spaces in username.");
+                DebugWriter.WriteDebug(DebugLevel.W, "There are spaces in username.");
                 throw new Kernel.Exceptions.UserManagementException(Translate.DoTranslation("Spaces are not allowed."));
             }
             else if (user.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray()) != -1)
             {
-                DebugWriter.Wdbg(DebugLevel.W, "There are special characters in username.");
+                DebugWriter.WriteDebug(DebugLevel.W, "There are special characters in username.");
                 throw new Kernel.Exceptions.UserManagementException(Translate.DoTranslation("Special characters are not allowed."));
             }
             else if (string.IsNullOrEmpty(user))
             {
-                DebugWriter.Wdbg(DebugLevel.W, "Username is blank.");
+                DebugWriter.WriteDebug(DebugLevel.W, "Username is blank.");
                 throw new Kernel.Exceptions.UserManagementException(Translate.DoTranslation("Blank username."));
             }
             else if (Login.Users.ContainsKey(user) == false)
             {
-                DebugWriter.Wdbg(DebugLevel.W, "Username {0} not found in list", user);
+                DebugWriter.WriteDebug(DebugLevel.W, "Username {0} not found in list", user);
                 throw new Kernel.Exceptions.UserManagementException(Translate.DoTranslation("User {0} not found."), user);
             }
             // Try to remove user
             else if (Login.Users.Keys.ToArray().Contains(user) & user == "root")
             {
-                DebugWriter.Wdbg(DebugLevel.W, "User is root, and is a system account");
+                DebugWriter.WriteDebug(DebugLevel.W, "User is root, and is a system account");
                 throw new Kernel.Exceptions.UserManagementException(Translate.DoTranslation("User {0} isn't allowed to be removed."), user);
             }
             else if (Login.Users.Keys.ToArray().Contains(user) & (user ?? "") == (Login.CurrentUser?.Username ?? ""))
             {
-                DebugWriter.Wdbg(DebugLevel.W, "User has logged in, so can't delete self.");
+                DebugWriter.WriteDebug(DebugLevel.W, "User has logged in, so can't delete self.");
                 throw new Kernel.Exceptions.UserManagementException(Translate.DoTranslation("User {0} is already logged in. Log-out and log-in as another admin."), user);
             }
             else if (Login.Users.Keys.ToArray().Contains(user) & user != "root")
             {
                 try
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Removing permissions...");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removing permissions...");
                     PermissionManagement.UserPermissions.Remove(user);
 
                     // Remove user
-                    DebugWriter.Wdbg(DebugLevel.I, "Removing username {0}...", user);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removing username {0}...", user);
                     Login.Users.Remove(user);
 
                     // Remove user from Users.json
@@ -352,7 +352,7 @@ namespace KS.Login
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     throw new Kernel.Exceptions.UserManagementException(Translate.DoTranslation("Error trying to remove username.") + Kernel.Kernel.NewLine + Translate.DoTranslation("Error {0}: {1}"), ex, ex.Message);
                 }
             }
@@ -407,7 +407,7 @@ namespace KS.Login
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WStkTrc(ex);
+                        DebugWriter.WriteDebugStackTrace(ex);
                         throw new Kernel.Exceptions.UserManagementException(Translate.DoTranslation("Failed to rename user. {0}"), ex, ex.Message);
                     }
                 }
@@ -593,10 +593,10 @@ namespace KS.Login
                 TextWriterColor.Write(Translate.DoTranslation("Write your username."), true, ColorTools.ColTypes.Neutral);
                 TextWriterColor.Write(">> ", false, ColorTools.ColTypes.Input);
                 AnswerUsername = Input.ReadLine();
-                DebugWriter.Wdbg(DebugLevel.I, "Answer: {0}", AnswerUsername);
+                DebugWriter.WriteDebug(DebugLevel.I, "Answer: {0}", AnswerUsername);
                 if (string.IsNullOrWhiteSpace(AnswerUsername) & ReadLineReboot.ReadLine.ReadRanToCompletion)
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "Username is not valid. Returning...");
+                    DebugWriter.WriteDebug(DebugLevel.W, "Username is not valid. Returning...");
                     TextWriterColor.Write(Translate.DoTranslation("You must write your username."), true, ColorTools.ColTypes.Error);
                     TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
                     ConsoleBase.ConsoleWrapper.ReadKey();
@@ -613,10 +613,10 @@ namespace KS.Login
                 TextWriterColor.Write(Translate.DoTranslation("Write your password."), true, ColorTools.ColTypes.Neutral);
                 TextWriterColor.Write(">> ", false, ColorTools.ColTypes.Input);
                 AnswerPassword = Input.ReadLineNoInput();
-                DebugWriter.Wdbg(DebugLevel.I, "Answer: {0}", AnswerPassword);
+                DebugWriter.WriteDebug(DebugLevel.I, "Answer: {0}", AnswerPassword);
                 if (string.IsNullOrWhiteSpace(AnswerPassword) & ReadLineReboot.ReadLine.ReadRanToCompletion)
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "Password is not valid. Returning...");
+                    DebugWriter.WriteDebug(DebugLevel.W, "Password is not valid. Returning...");
                     TextWriterColor.Write(Translate.DoTranslation("You must write your password."), true, ColorTools.ColTypes.Error);
                     TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
                     ConsoleBase.ConsoleWrapper.ReadKey();
@@ -636,7 +636,7 @@ namespace KS.Login
                 TextWriterColor.Write(Kernel.Kernel.NewLine + ">> ", false, ColorTools.ColTypes.Input);
                 if (int.TryParse(Input.ReadLine(), out AnswerType))
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Answer: {0}", AnswerType);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Answer: {0}", AnswerType);
                     switch (AnswerType)
                     {
                         case 1:
@@ -648,7 +648,7 @@ namespace KS.Login
 
                         default:
                             {
-                                DebugWriter.Wdbg(DebugLevel.W, "Option is not valid. Returning...");
+                                DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
                                 TextWriterColor.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, ColorTools.ColTypes.Error, AnswerType);
                                 TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
                                 ConsoleBase.ConsoleWrapper.ReadKey();
@@ -658,7 +658,7 @@ namespace KS.Login
                 }
                 else if (ReadLineReboot.ReadLine.ReadRanToCompletion)
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "Answer is not numeric.");
+                    DebugWriter.WriteDebug(DebugLevel.W, "Answer is not numeric.");
                     TextWriterColor.Write(Translate.DoTranslation("The answer must be numeric."), true, ColorTools.ColTypes.Error);
                     TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
                     ConsoleBase.ConsoleWrapper.ReadKey();
@@ -673,10 +673,10 @@ namespace KS.Login
                     TextWriterColor.Write(Translate.DoTranslation("Write the administrator password. Make sure that you don't use this account unless you really know what you're doing."), true, ColorTools.ColTypes.Neutral);
                     TextWriterColor.Write(">> ", false, ColorTools.ColTypes.Input);
                     AnswerRootPassword = Input.ReadLineNoInput();
-                    DebugWriter.Wdbg(DebugLevel.I, "Answer: {0}", AnswerPassword);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Answer: {0}", AnswerPassword);
                     if (string.IsNullOrWhiteSpace(AnswerPassword) & ReadLineReboot.ReadLine.ReadRanToCompletion)
                     {
-                        DebugWriter.Wdbg(DebugLevel.W, "Password is not valid. Returning...");
+                        DebugWriter.WriteDebug(DebugLevel.W, "Password is not valid. Returning...");
                         TextWriterColor.Write(Translate.DoTranslation("You must write the administrator password."), true, ColorTools.ColTypes.Error);
                         TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
                         ConsoleBase.ConsoleWrapper.ReadKey();

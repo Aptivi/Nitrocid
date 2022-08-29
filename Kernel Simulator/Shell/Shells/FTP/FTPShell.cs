@@ -64,7 +64,7 @@ namespace KS.Shell.Shells.FTP
                     // Complete initialization
                     if (FtpInitialized == false)
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, $"Completing initialization of FTP: {FtpInitialized}");
+                        DebugWriter.WriteDebug(DebugLevel.I, $"Completing initialization of FTP: {FtpInitialized}");
 #if NETCOREAPP == false
                         FtpTrace.AddListener(new FTPTracer());
 #endif
@@ -79,7 +79,7 @@ namespace KS.Shell.Shells.FTP
                     // Check if the shell is going to exit
                     if (Bail)
                     {
-                        DebugWriter.Wdbg(DebugLevel.W, "Exiting shell...");
+                        DebugWriter.WriteDebug(DebugLevel.W, "Exiting shell...");
                         FTPShellCommon.FtpConnected = false;
                         FTPShellCommon.ClientFTP?.Disconnect();
                         FTPShellCommon.FtpSite = "";
@@ -97,7 +97,7 @@ namespace KS.Shell.Shells.FTP
                         // Prompt for command
                         if (!Connects)
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Preparing prompt...");
+                            DebugWriter.WriteDebug(DebugLevel.I, "Preparing prompt...");
                             PromptPresetManager.WriteShellPrompt(ShellType);
                         }
                     }
@@ -105,13 +105,13 @@ namespace KS.Shell.Shells.FTP
                     // Try to connect if IP address is specified.
                     if (Connects)
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, $"Currently connecting to {Address} by \"ftp (address)\"...");
+                        DebugWriter.WriteDebug(DebugLevel.I, $"Currently connecting to {Address} by \"ftp (address)\"...");
                         FtpCommand = $"connect {Address}";
                         Connects = false;
                     }
                     else
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Normal shell");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Normal shell");
                         FtpCommand = Input.ReadLine();
                     }
 
@@ -130,7 +130,7 @@ namespace KS.Shell.Shells.FTP
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     throw new Kernel.Exceptions.FTPShellException(Translate.DoTranslation("There was an error in the FTP shell:") + " {0}", ex, ex.Message);
                 }
             }

@@ -81,7 +81,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             else
             {
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing...");
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing...");
                 ConsoleBase.ConsoleWrapper.Clear();
             }
 

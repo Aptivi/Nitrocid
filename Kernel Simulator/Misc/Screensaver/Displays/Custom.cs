@@ -42,16 +42,16 @@ namespace KS.Misc.Screensaver.Displays
         {
             // Variable preparations
             ConsoleBase.ConsoleWrapper.CursorVisible = false;
-            DebugWriter.Wdbg(DebugLevel.I, "Entered CustomSaver.ScreensaverPreparation().");
+            DebugWriter.WriteDebug(DebugLevel.I, "Entered CustomSaver.ScreensaverPreparation().");
             CustomSaver.ScreensaverPreparation();
-            DebugWriter.Wdbg(DebugLevel.I, "Exited CustomSaver.ScreensaverPreparation().");
+            DebugWriter.WriteDebug(DebugLevel.I, "Exited CustomSaver.ScreensaverPreparation().");
         }
 
         public override void ScreensaverLogic()
         {
-            DebugWriter.Wdbg(DebugLevel.I, "Entered CustomSaver.ScreensaverLogic().");
+            DebugWriter.WriteDebug(DebugLevel.I, "Entered CustomSaver.ScreensaverLogic().");
             CustomSaver.ScreensaverLogic();
-            DebugWriter.Wdbg(DebugLevel.I, "Exited CustomSaver.ScreensaverLogic().");
+            DebugWriter.WriteDebug(DebugLevel.I, "Exited CustomSaver.ScreensaverLogic().");
         }
 
         public CustomDisplay(BaseScreensaver CustomSaver)

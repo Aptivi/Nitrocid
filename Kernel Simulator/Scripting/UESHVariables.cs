@@ -38,10 +38,10 @@ namespace KS.Scripting
         /// <returns>Sanitized variable name</returns>
         public static string SanitizeVariableName(string var)
         {
-            DebugWriter.Wdbg(DebugLevel.I, "Sanitizing variable {0}...", var);
+            DebugWriter.WriteDebug(DebugLevel.I, "Sanitizing variable {0}...", var);
             if (!var.StartsWith("$"))
             {
-                DebugWriter.Wdbg(DebugLevel.W, "Unsanitized variable found. Prepending $...");
+                DebugWriter.WriteDebug(DebugLevel.W, "Unsanitized variable found. Prepending $...");
                 var = $"${var}";
             }
             return var;
@@ -57,7 +57,7 @@ namespace KS.Scripting
             if (!ShellVariables.ContainsKey(var))
             {
                 ShellVariables.Add(var, "");
-                DebugWriter.Wdbg(DebugLevel.I, "Initialized variable {0}", var);
+                DebugWriter.WriteDebug(DebugLevel.I, "Initialized variable {0}", var);
             }
         }
 
@@ -82,7 +82,7 @@ namespace KS.Scripting
                     }
                     NewCommand += $"{finalWord} ";
                 }
-                DebugWriter.Wdbg(DebugLevel.I, "Replaced variable {0} with their values. Result: {1}", var, NewCommand);
+                DebugWriter.WriteDebug(DebugLevel.I, "Replaced variable {0} with their values. Result: {1}", var, NewCommand);
                 return NewCommand.TrimEnd(' ');
             }
             return cmd;
@@ -102,7 +102,7 @@ namespace KS.Scripting
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Error getting variable {0}: {1}", var, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error getting variable {0}: {1}", var, ex.Message);
             }
             return var;
         }
@@ -128,12 +128,12 @@ namespace KS.Scripting
                 if (!ShellVariables.ContainsKey(var))
                     InitializeVariable(var);
                 ShellVariables[var] = value;
-                DebugWriter.Wdbg(DebugLevel.I, "Set variable {0} to {1}", var, value);
+                DebugWriter.WriteDebug(DebugLevel.I, "Set variable {0} to {1}", var, value);
                 return true;
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Error setting variable {0}: {1}", var, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error setting variable {0}: {1}", var, ex.Message);
             }
             return false;
         }
@@ -155,13 +155,13 @@ namespace KS.Scripting
                     if (!ShellVariables.ContainsKey(VarName))
                         InitializeVariable(VarName);
                     ShellVariables[VarName] = VarValue;
-                    DebugWriter.Wdbg(DebugLevel.I, "Set variable {0} to {1}", VarName, VarValue);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Set variable {0} to {1}", VarName, VarValue);
                 }
                 return true;
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Error creating variable array {0}: {1}", var, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error creating variable array {0}: {1}", var, ex.Message);
             }
             return false;
         }
@@ -179,7 +179,7 @@ namespace KS.Scripting
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Error removing variable {0}: {1}", var, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error removing variable {0}: {1}", var, ex.Message);
             }
             return false;
         }

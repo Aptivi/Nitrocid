@@ -42,10 +42,10 @@ namespace KS.ConsoleBase.Themes
         /// <param name="theme">A specified theme</param>
         public static void ApplyThemeFromResources(string theme)
         {
-            DebugWriter.Wdbg(DebugLevel.I, "Theme: {0}", theme);
+            DebugWriter.WriteDebug(DebugLevel.I, "Theme: {0}", theme);
             if (Themes.ContainsKey(theme))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Theme found.");
+                DebugWriter.WriteDebug(DebugLevel.I, "Theme found.");
 
                 // Populate theme info
                 var ThemeInfo = default(ThemeInfo);
@@ -74,7 +74,7 @@ namespace KS.ConsoleBase.Themes
             }
             else
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Theme not found.");
+                DebugWriter.WriteDebug(DebugLevel.E, "Theme not found.");
                 Kernel.Kernel.KernelEventManager.RaiseThemeSetError(theme, ThemeSetErrorReasons.NotFound);
                 throw new Kernel.Exceptions.NoSuchThemeException(Translate.DoTranslation("Invalid color template {0}"), theme);
             }
@@ -88,9 +88,9 @@ namespace KS.ConsoleBase.Themes
         {
             try
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Theme file name: {0}", ThemeFile);
+                DebugWriter.WriteDebug(DebugLevel.I, "Theme file name: {0}", ThemeFile);
                 ThemeFile = Filesystem.NeutralizePath(ThemeFile, true);
-                DebugWriter.Wdbg(DebugLevel.I, "Theme file path: {0}", ThemeFile);
+                DebugWriter.WriteDebug(DebugLevel.I, "Theme file path: {0}", ThemeFile);
 
                 // Populate theme info
                 var ThemeStream = new StreamReader(ThemeFile);
@@ -108,7 +108,7 @@ namespace KS.ConsoleBase.Themes
             }
             catch (FileNotFoundException)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Theme not found.");
+                DebugWriter.WriteDebug(DebugLevel.E, "Theme not found.");
                 Kernel.Kernel.KernelEventManager.RaiseThemeSetError(ThemeFile, ThemeSetErrorReasons.NotFound);
                 throw new Kernel.Exceptions.NoSuchThemeException(Translate.DoTranslation("Invalid color template {0}"), ThemeFile);
             }
@@ -176,7 +176,7 @@ namespace KS.ConsoleBase.Themes
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     Kernel.Kernel.KernelEventManager.RaiseColorSetError(ColorSetErrorReasons.InvalidColors);
                     throw new Kernel.Exceptions.ColorException(Translate.DoTranslation("One or more of the colors is invalid.") + " {0}", ex, ex.Message);
                 }

@@ -192,7 +192,7 @@ namespace KS.Misc.Screensaver.Displays
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
             ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
             ConsoleBase.ConsoleWrapper.Clear();
-            DebugWriter.Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
+            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
             PulseSettingsInstance = new Animations.Pulse.PulseSettings()
             {
                 PulseDelay = PulseSettings.PulseDelay,

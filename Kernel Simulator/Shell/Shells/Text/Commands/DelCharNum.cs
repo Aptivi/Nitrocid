@@ -53,7 +53,7 @@ namespace KS.Shell.Shells.Text.Commands
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("One or both of the numbers are not numeric."), true, ColorTools.ColTypes.Error);
-                DebugWriter.Wdbg(DebugLevel.E, "{0} and {1} are not numeric values.", ListArgsOnly[0], ListArgsOnly[1]);
+                DebugWriter.WriteDebug(DebugLevel.E, "{0} and {1} are not numeric values.", ListArgsOnly[0], ListArgsOnly[1]);
             }
         }
 

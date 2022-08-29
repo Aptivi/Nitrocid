@@ -37,13 +37,13 @@ namespace KS.Scripting.Conditions
 
         public virtual bool IsConditionSatisfied(string FirstVariable, string SecondVariable)
         {
-            DebugWriter.Wdbg(DebugLevel.I, "Doing nothing because the condition is undefined. Returning true...");
+            DebugWriter.WriteDebug(DebugLevel.I, "Doing nothing because the condition is undefined. Returning true...");
             return true;
         }
 
         public bool IsConditionSatisfied(string[] Variables)
         {
-            DebugWriter.Wdbg(DebugLevel.I, "Doing nothing because the condition is undefined. Returning true...");
+            DebugWriter.WriteDebug(DebugLevel.I, "Doing nothing because the condition is undefined. Returning true...");
             return true;
         }
 

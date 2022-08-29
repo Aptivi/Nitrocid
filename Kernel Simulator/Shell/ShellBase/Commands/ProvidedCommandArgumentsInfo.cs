@@ -69,20 +69,20 @@ namespace KS.Shell.ShellBase.Commands
             int index = CommandText.IndexOf(" ");
             if (index == -1)
                 index = CommandText.Length;
-            DebugWriter.Wdbg(DebugLevel.I, "Index: {0}", index);
+            DebugWriter.WriteDebug(DebugLevel.I, "Index: {0}", index);
 
             // Split the requested command string into words
             var words = CommandText.Split(new[] { ' ' });
             for (int i = 0, loopTo = words.Length - 1; i <= loopTo; i++)
-                DebugWriter.Wdbg(DebugLevel.I, "Word {0}: {1}", i + 1, words[i]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Word {0}: {1}", i + 1, words[i]);
             Command = words[0];
 
             // Get the string of arguments
             string strArgs = CommandText.Substring(index);
-            DebugWriter.Wdbg(DebugLevel.I, "Prototype strArgs: {0}", strArgs);
+            DebugWriter.WriteDebug(DebugLevel.I, "Prototype strArgs: {0}", strArgs);
             if (!(index == CommandText.Length))
                 strArgs = strArgs.Substring(1);
-            DebugWriter.Wdbg(DebugLevel.I, "Finished strArgs: {0}", strArgs);
+            DebugWriter.WriteDebug(DebugLevel.I, "Finished strArgs: {0}", strArgs);
 
             // Split the arguments with enclosed quotes and set the required boolean variable
             var CommandInfo = ModCommands.ContainsKey(Command) ? ModCommands[Command] : ShellCommands[Command];
@@ -105,7 +105,7 @@ namespace KS.Shell.ShellBase.Commands
                 RequiredArgumentsProvided = true;
             }
             if (EnclosedArgs is not null)
-                DebugWriter.Wdbg(DebugLevel.I, "Arguments parsed: " + string.Join(", ", EnclosedArgs));
+                DebugWriter.WriteDebug(DebugLevel.I, "Arguments parsed: " + string.Join(", ", EnclosedArgs));
 
             // Separate the arguments from the switches
             var FinalArgs = new List<string>();

@@ -45,25 +45,25 @@ namespace KS.Misc.Encryption
 
             FileName = Filesystem.NeutralizePath(FileName);
             HashesFile = Filesystem.NeutralizePath(HashesFile);
-            DebugWriter.Wdbg(DebugLevel.I, "File name: {0}", FileName);
-            DebugWriter.Wdbg(DebugLevel.I, "Hashes file name: {0}", HashesFile);
+            DebugWriter.WriteDebug(DebugLevel.I, "File name: {0}", FileName);
+            DebugWriter.WriteDebug(DebugLevel.I, "Hashes file name: {0}", HashesFile);
             if (Checking.FileExists(FileName))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString());
                 ExpectedHashLength = GetExpectedHashLength(HashType);
 
                 // Verify the hash
                 if (Checking.FileExists(HashesFile))
                 {
                     var HashStream = new StreamReader(HashesFile);
-                    DebugWriter.Wdbg(DebugLevel.I, "Stream length: {0}", HashStream.BaseStream.Length);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Stream length: {0}", HashStream.BaseStream.Length);
                     while (!HashStream.EndOfStream)
                     {
                         // Check if made from KS, and take it from before-last split space. If not, take it from the beginning
                         string StringLine = HashStream.ReadLine();
                         if (StringLine.StartsWith("- "))
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Hashes file is of KS format");
+                            DebugWriter.WriteDebug(DebugLevel.I, "Hashes file is of KS format");
                             if ((StringLine.StartsWith("- " + FileName) | StringLine.StartsWith("- " + Path.GetFileName(FileName))) & StringLine.EndsWith($"({HashType})"))
                             {
                                 var HashSplit = StringLine.Split(' ');
@@ -73,7 +73,7 @@ namespace KS.Misc.Encryption
                         }
                         else
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Hashes file is of standard format");
+                            DebugWriter.WriteDebug(DebugLevel.I, "Hashes file is of standard format");
                             if (StringLine.EndsWith(Path.GetFileName(FileName)))
                             {
                                 var HashSplit = StringLine.Split(' ');
@@ -91,22 +91,22 @@ namespace KS.Misc.Encryption
 
                 if (ActualHash.Length == ExpectedHashLength & ExpectedHash.Length == ExpectedHashLength)
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Hashes are consistent.");
-                    DebugWriter.Wdbg(DebugLevel.I, "Hashes {0} and {1}", ActualHash, ExpectedHash);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Hashes are consistent.");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Hashes {0} and {1}", ActualHash, ExpectedHash);
                     if ((ActualHash ?? "") == (ExpectedHash ?? ""))
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Hashes match.");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Hashes match.");
                         return true;
                     }
                     else
                     {
-                        DebugWriter.Wdbg(DebugLevel.W, "Hashes don't match.");
+                        DebugWriter.WriteDebug(DebugLevel.W, "Hashes don't match.");
                         return false;
                     }
                 }
                 else
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength);
+                    DebugWriter.WriteDebug(DebugLevel.E, "{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength);
                     throw new Kernel.Exceptions.InvalidHashException("{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength);
                 }
             }
@@ -134,31 +134,31 @@ namespace KS.Misc.Encryption
             FileName = Filesystem.NeutralizePath(FileName);
             ExpectedHash = ExpectedHash.ToUpper();
             ActualHash = ActualHash.ToUpper();
-            DebugWriter.Wdbg(DebugLevel.I, "File name: {0}", FileName);
+            DebugWriter.WriteDebug(DebugLevel.I, "File name: {0}", FileName);
             if (Checking.FileExists(FileName))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString());
                 ExpectedHashLength = GetExpectedHashLength(HashType);
 
                 // Verify the hash
                 if (ActualHash.Length == ExpectedHashLength & ExpectedHash.Length == ExpectedHashLength)
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Hashes are consistent.");
-                    DebugWriter.Wdbg(DebugLevel.I, "Hashes {0} and {1}", ActualHash, ExpectedHash);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Hashes are consistent.");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Hashes {0} and {1}", ActualHash, ExpectedHash);
                     if ((ActualHash ?? "") == (ExpectedHash ?? ""))
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Hashes match.");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Hashes match.");
                         return true;
                     }
                     else
                     {
-                        DebugWriter.Wdbg(DebugLevel.W, "Hashes don't match.");
+                        DebugWriter.WriteDebug(DebugLevel.W, "Hashes don't match.");
                         return false;
                     }
                 }
                 else
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength);
+                    DebugWriter.WriteDebug(DebugLevel.E, "{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength);
                     throw new Kernel.Exceptions.InvalidHashException("{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength);
                 }
             }
@@ -186,25 +186,25 @@ namespace KS.Misc.Encryption
 
             FileName = Filesystem.NeutralizePath(FileName);
             HashesFile = Filesystem.NeutralizePath(HashesFile);
-            DebugWriter.Wdbg(DebugLevel.I, "File name: {0}", FileName);
-            DebugWriter.Wdbg(DebugLevel.I, "Hashes file name: {0}", HashesFile);
+            DebugWriter.WriteDebug(DebugLevel.I, "File name: {0}", FileName);
+            DebugWriter.WriteDebug(DebugLevel.I, "Hashes file name: {0}", HashesFile);
             if (Checking.FileExists(FileName))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString());
                 ExpectedHashLength = GetExpectedHashLength(HashType);
 
                 // Verify the hash
                 if (Checking.FileExists(HashesFile))
                 {
                     var HashStream = new StreamReader(HashesFile);
-                    DebugWriter.Wdbg(DebugLevel.I, "Stream length: {0}", HashStream.BaseStream.Length);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Stream length: {0}", HashStream.BaseStream.Length);
                     while (!HashStream.EndOfStream)
                     {
                         // Check if made from KS, and take it from before-last split space. If not, take it from the beginning
                         string StringLine = HashStream.ReadLine();
                         if (StringLine.StartsWith("- "))
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Hashes file is of KS format");
+                            DebugWriter.WriteDebug(DebugLevel.I, "Hashes file is of KS format");
                             if ((StringLine.StartsWith("- " + FileName) | StringLine.StartsWith("- " + Path.GetFileName(FileName))) & StringLine.EndsWith($"({HashType})"))
                             {
                                 var HashSplit = StringLine.Split(' ');
@@ -214,7 +214,7 @@ namespace KS.Misc.Encryption
                         }
                         else
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Hashes file is of standard format");
+                            DebugWriter.WriteDebug(DebugLevel.I, "Hashes file is of standard format");
                             if (StringLine.EndsWith(Path.GetFileName(FileName)))
                             {
                                 var HashSplit = StringLine.Split(' ');
@@ -232,22 +232,22 @@ namespace KS.Misc.Encryption
 
                 if (ActualHash.Length == ExpectedHashLength & ExpectedHash.Length == ExpectedHashLength)
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Hashes are consistent.");
-                    DebugWriter.Wdbg(DebugLevel.I, "Hashes {0} and {1}", ActualHash, ExpectedHash);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Hashes are consistent.");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Hashes {0} and {1}", ActualHash, ExpectedHash);
                     if ((ActualHash ?? "") == (ExpectedHash ?? ""))
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Hashes match.");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Hashes match.");
                         return true;
                     }
                     else
                     {
-                        DebugWriter.Wdbg(DebugLevel.W, "Hashes don't match.");
+                        DebugWriter.WriteDebug(DebugLevel.W, "Hashes don't match.");
                         return false;
                     }
                 }
                 else
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength);
+                    DebugWriter.WriteDebug(DebugLevel.E, "{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength);
                     throw new Kernel.Exceptions.InvalidHashException("{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength);
                 }
             }
@@ -273,10 +273,10 @@ namespace KS.Misc.Encryption
             string ActualHash;
             FileName = Filesystem.NeutralizePath(FileName);
             ExpectedHash = ExpectedHash.ToUpper();
-            DebugWriter.Wdbg(DebugLevel.I, "File name: {0}", FileName);
+            DebugWriter.WriteDebug(DebugLevel.I, "File name: {0}", FileName);
             if (Checking.FileExists(FileName))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString());
                 ExpectedHashLength = GetExpectedHashLength(HashType);
 
                 // Calculate the file hash
@@ -285,22 +285,22 @@ namespace KS.Misc.Encryption
                 // Verify the hash
                 if (ActualHash.Length == ExpectedHashLength & ExpectedHash.Length == ExpectedHashLength)
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Hashes are consistent.");
-                    DebugWriter.Wdbg(DebugLevel.I, "Hashes {0} and {1}", ActualHash, ExpectedHash);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Hashes are consistent.");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Hashes {0} and {1}", ActualHash, ExpectedHash);
                     if ((ActualHash ?? "") == (ExpectedHash ?? ""))
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Hashes match.");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Hashes match.");
                         return true;
                     }
                     else
                     {
-                        DebugWriter.Wdbg(DebugLevel.W, "Hashes don't match.");
+                        DebugWriter.WriteDebug(DebugLevel.W, "Hashes don't match.");
                         return false;
                     }
                 }
                 else
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength);
+                    DebugWriter.WriteDebug(DebugLevel.E, "{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength);
                     throw new Kernel.Exceptions.InvalidHashException("{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength);
                 }
             }

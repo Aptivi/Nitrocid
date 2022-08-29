@@ -42,7 +42,7 @@ namespace KS.Modifications
             var parts = cmd.SplitEncloseDoubleQuotes(" ");
             string args = "";
             string actualCmd = parts[0];
-            DebugWriter.Wdbg(DebugLevel.I, "Command = {0}", actualCmd);
+            DebugWriter.WriteDebug(DebugLevel.I, "Command = {0}", actualCmd);
 
             // Check to see if the command written needs normalization
             foreach (ModInfo ModPart in ModManager.Mods.Values)
@@ -57,7 +57,7 @@ namespace KS.Modifications
                             // The commands in the script has the actual command, the mod name is not null, and the command doesn't equal the mod name.
                             // In this case, make the actual command executed the script name.
                             actualCmd = script.Name;
-                            DebugWriter.Wdbg(DebugLevel.I, "Actual command = {0}", actualCmd);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Actual command = {0}", actualCmd);
                         }
                     }
                 }
@@ -68,7 +68,7 @@ namespace KS.Modifications
             {
                 // These below will be executed if there are arguments
                 args = cmd.Replace($"{parts[0]} ", "").Replace($"\"{parts[0]}\" ", "");
-                DebugWriter.Wdbg(DebugLevel.I, "Command {0} will be run with arguments: {1}", actualCmd, args);
+                DebugWriter.WriteDebug(DebugLevel.I, "Command {0} will be run with arguments: {1}", actualCmd, args);
             }
 
             // Try to execute the command.
@@ -99,7 +99,7 @@ namespace KS.Modifications
                             else
                             {
                                 // User wasn't authorized.
-                                DebugWriter.Wdbg(DebugLevel.E, "User {0} doesn't have permission to use {1} from {2}!", Login.Login.CurrentUser.Username, parts[0], ModPart);
+                                DebugWriter.WriteDebug(DebugLevel.E, "User {0} doesn't have permission to use {1} from {2}!", Login.Login.CurrentUser.Username, parts[0], ModPart);
                                 TextWriterColor.Write(Translate.DoTranslation("You don't have permission to use {0}"), true, ColorTools.ColTypes.Error, parts[0]);
                             }
                         }
@@ -112,7 +112,7 @@ namespace KS.Modifications
                         // If the command check went all well without any hiccups, execute the command.
                         if (ScriptCommandExecutable)
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Using command {0} from {1} to be executed...", parts[0], ModPart);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Using command {0} from {1} to be executed...", parts[0], ModPart);
                             if (ScriptCommandBase is not null)
                             {
                                 // Use the modern CommandBase.Execute() command
@@ -125,7 +125,7 @@ namespace KS.Modifications
 
             // Raise event
             Kernel.Kernel.KernelEventManager.RaisePostExecuteModCommand(cmd);
-            DebugWriter.Wdbg(DebugLevel.I, "Command executed successfully.");
+            DebugWriter.WriteDebug(DebugLevel.I, "Command executed successfully.");
         }
 
     }

@@ -178,15 +178,15 @@ namespace KS.Misc.Screensaver.Displays
             int CpmSpeedMin = TypewriterSettings.TypewriterWritingSpeedMin * 5;
             int CpmSpeedMax = TypewriterSettings.TypewriterWritingSpeedMax * 5;
             string TypeWrite = TypewriterSettings.TypewriterWrite;
-            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Minimum speed from {0} WPM: {1} CPM", TypewriterSettings.TypewriterWritingSpeedMin, CpmSpeedMin);
-            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Maximum speed from {0} WPM: {1} CPM", TypewriterSettings.TypewriterWritingSpeedMax, CpmSpeedMax);
+            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Minimum speed from {0} WPM: {1} CPM", TypewriterSettings.TypewriterWritingSpeedMin, CpmSpeedMin);
+            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Maximum speed from {0} WPM: {1} CPM", TypewriterSettings.TypewriterWritingSpeedMax, CpmSpeedMax);
             ConsoleBase.ConsoleWrapper.CursorVisible = false;
             // Typewriter can also deal with files written on the field that is used for storing text, so check to see if the path exists.
-            DebugWriter.Wdbg(DebugLevel.I, "Checking \"{0}\" to see if it's a file path", TypewriterSettings.TypewriterWrite);
+            DebugWriter.WriteDebug(DebugLevel.I, "Checking \"{0}\" to see if it's a file path", TypewriterSettings.TypewriterWrite);
             if (Parsing.TryParsePath(TypewriterSettings.TypewriterWrite) && Checking.FileExists(TypewriterSettings.TypewriterWrite))
             {
                 // File found! Now, write the contents of it to the local variable that stores the actual written text.
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Opening file {0} to write...", TypewriterSettings.TypewriterWrite);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Opening file {0} to write...", TypewriterSettings.TypewriterWrite);
                 TypeWrite = File.ReadAllText(TypewriterSettings.TypewriterWrite);
             }
 
@@ -197,7 +197,7 @@ namespace KS.Misc.Screensaver.Displays
                     ResizeSyncing = true;
                 if (ResizeSyncing)
                     break;
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "New paragraph: {0}", Paragraph);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "New paragraph: {0}", Paragraph);
 
                 // Split the paragraph into sentences that have the length of maximum characters that can be printed in various terminal
                 // sizes.
@@ -223,7 +223,7 @@ namespace KS.Misc.Screensaver.Displays
                     if (IncompleteSentenceBuilder.Length == ConsoleBase.ConsoleWrapper.WindowWidth - 2 - ReservedCharacters | Paragraph.Length == CharactersParsed)
                     {
                         // We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
-                        DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Adding {0} to the list... Incomplete sentences: {1}", IncompleteSentenceBuilder.ToString(), IncompleteSentences.Count);
+                        DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Adding {0} to the list... Incomplete sentences: {1}", IncompleteSentenceBuilder.ToString(), IncompleteSentences.Count);
                         IncompleteSentences.Add(IncompleteSentenceBuilder.ToString());
 
                         // Clean everything up
@@ -237,7 +237,7 @@ namespace KS.Misc.Screensaver.Displays
                 {
                     ConsoleBase.ConsoleWrapper.WriteLine();
                     ConsoleBase.ConsoleWrapper.Write("    ");
-                    DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleBase.ConsoleWrapper.CursorLeft, ConsoleBase.ConsoleWrapper.CursorTop);
+                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleBase.ConsoleWrapper.CursorLeft, ConsoleBase.ConsoleWrapper.CursorTop);
                 }
 
                 // Get struck character and write it
@@ -258,12 +258,12 @@ namespace KS.Misc.Screensaver.Displays
                         // Calculate needed milliseconds from two WPM speeds (minimum and maximum)
                         int SelectedCpm = RandomDriver.Next(CpmSpeedMin, CpmSpeedMax);
                         int WriteMs = (int)Math.Round(60d / SelectedCpm * 1000d);
-                        DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Delay for {0} CPM: {1} ms", SelectedCpm, WriteMs);
+                        DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Delay for {0} CPM: {1} ms", SelectedCpm, WriteMs);
 
                         // If we're at the end of the page, clear the screen
                         if (ConsoleBase.ConsoleWrapper.CursorTop == ConsoleBase.ConsoleWrapper.WindowHeight - 2)
                         {
-                            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "We're at the end of the page! {0} = {1}", ConsoleBase.ConsoleWrapper.CursorTop, ConsoleBase.ConsoleWrapper.WindowHeight - 2);
+                            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "We're at the end of the page! {0} = {1}", ConsoleBase.ConsoleWrapper.CursorTop, ConsoleBase.ConsoleWrapper.WindowHeight - 2);
                             ThreadManager.SleepNoBlock(TypewriterSettings.TypewriterNewScreenDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
                             ConsoleBase.ConsoleWrapper.Clear();
                             ConsoleBase.ConsoleWrapper.WriteLine();
@@ -275,7 +275,7 @@ namespace KS.Misc.Screensaver.Displays
                             {
                                 ConsoleBase.ConsoleWrapper.Write(" ");
                             }
-                            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleBase.ConsoleWrapper.CursorLeft, ConsoleBase.ConsoleWrapper.CursorTop);
+                            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleBase.ConsoleWrapper.CursorLeft, ConsoleBase.ConsoleWrapper.CursorTop);
                         }
 
                         // If we need to show the arrow indicator, update its position
@@ -284,10 +284,10 @@ namespace KS.Misc.Screensaver.Displays
                             int OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
                             int OldLeft = ConsoleBase.ConsoleWrapper.CursorLeft;
                             ConsoleBase.ConsoleWrapper.SetCursorPosition(OldLeft, ConsoleBase.ConsoleWrapper.WindowHeight - 1);
-                            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Arrow drawn in {0}, {1}", ConsoleBase.ConsoleWrapper.CursorLeft, ConsoleBase.ConsoleWrapper.CursorTop);
+                            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Arrow drawn in {0}, {1}", ConsoleBase.ConsoleWrapper.CursorLeft, ConsoleBase.ConsoleWrapper.CursorTop);
                             ConsoleBase.ConsoleWrapper.Write(Convert.ToString(CharManager.GetEsc()) + "[1K^" + Convert.ToString(CharManager.GetEsc()) + "[K");
                             ConsoleBase.ConsoleWrapper.SetCursorPosition(OldLeft, OldTop);
-                            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Returned to {0}, {1}", OldLeft, OldTop);
+                            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Returned to {0}, {1}", OldLeft, OldTop);
                         }
 
                         // Write the final character to the console and wait
@@ -296,7 +296,7 @@ namespace KS.Misc.Screensaver.Displays
                     }
                     ConsoleBase.ConsoleWrapper.WriteLine();
                     ConsoleBase.ConsoleWrapper.Write(" ");
-                    DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleBase.ConsoleWrapper.CursorLeft, ConsoleBase.ConsoleWrapper.CursorTop);
+                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleBase.ConsoleWrapper.CursorLeft, ConsoleBase.ConsoleWrapper.CursorTop);
                 }
             }
 

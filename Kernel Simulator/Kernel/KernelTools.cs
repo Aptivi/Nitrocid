@@ -93,7 +93,7 @@ namespace KS.Kernel
                 Flags.QuietKernel = false;
 
                 // Check error types and its capabilities
-                DebugWriter.Wdbg(DebugLevel.I, "Error type: {0}", ErrorType);
+                DebugWriter.WriteDebug(DebugLevel.I, "Error type: {0}", ErrorType);
                 if (Enum.IsDefined(typeof(KernelErrorLevel), ErrorType))
                 {
                     if (ErrorType == KernelErrorLevel.U | ErrorType == KernelErrorLevel.D)
@@ -102,7 +102,7 @@ namespace KS.Kernel
                         {
                             // If the error type is unrecoverable, or double, and the reboot time exceeds 5 seconds, then
                             // generate a second kernel error stating that there is something wrong with the reboot time.
-                            DebugWriter.Wdbg(DebugLevel.W, "Errors that have type {0} shouldn't exceed 5 seconds. RebootTime was {1} seconds", ErrorType, RebootTime);
+                            DebugWriter.WriteDebug(DebugLevel.W, "Errors that have type {0} shouldn't exceed 5 seconds. RebootTime was {1} seconds", ErrorType, RebootTime);
                             KernelError(KernelErrorLevel.D, true, 5L, Translate.DoTranslation("DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug."), null, ((int)ErrorType).ToString());
                             return;
                         }
@@ -110,7 +110,7 @@ namespace KS.Kernel
                         {
                             // If the error type is unrecoverable, or double, and the rebooting is false where it should
                             // not be false, then it can deal with this issue by enabling reboot.
-                            DebugWriter.Wdbg(DebugLevel.W, "Errors that have type {0} enforced Reboot = True.", ErrorType);
+                            DebugWriter.WriteDebug(DebugLevel.W, "Errors that have type {0} enforced Reboot = True.", ErrorType);
                             TextWriterColor.Write(Translate.DoTranslation("[{0}] panic: Reboot enabled due to error level being {0}."), true, ColorTools.ColTypes.Uncontinuable, ErrorType);
                             Reboot = true;
                         }
@@ -118,7 +118,7 @@ namespace KS.Kernel
                     if (RebootTime > 3600L)
                     {
                         // If the reboot time exceeds 1 hour, then it will set the time to 1 minute.
-                        DebugWriter.Wdbg(DebugLevel.W, "RebootTime shouldn't exceed 1 hour. Was {0} seconds", RebootTime);
+                        DebugWriter.WriteDebug(DebugLevel.W, "RebootTime shouldn't exceed 1 hour. Was {0} seconds", RebootTime);
                         TextWriterColor.Write(Translate.DoTranslation("[{0}] panic: Time to reboot: {1} seconds, exceeds 1 hour. It is set to 1 minute."), true, ColorTools.ColTypes.Uncontinuable, ErrorType, RebootTime.ToString());
                         RebootTime = 60L;
                     }
@@ -126,7 +126,7 @@ namespace KS.Kernel
                 else
                 {
                     // If the error type is other than D/F/C/U/S, then it will generate a second error.
-                    DebugWriter.Wdbg(DebugLevel.E, "Error type {0} is not valid.", ErrorType);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Error type {0} is not valid.", ErrorType);
                     KernelError(KernelErrorLevel.D, true, 5L, Translate.DoTranslation("DOUBLE PANIC: Error Type {0} invalid."), null, ((int)ErrorType).ToString());
                     return;
                 }
@@ -146,10 +146,10 @@ namespace KS.Kernel
                     case KernelErrorLevel.D:
                         {
                             // Double panic printed and reboot initiated
-                            DebugWriter.Wdbg(DebugLevel.F, "Double panic caused by bug in kernel crash.");
+                            DebugWriter.WriteDebug(DebugLevel.F, "Double panic caused by bug in kernel crash.");
                             TextWriterColor.Write(Translate.DoTranslation("[{0}] dpanic: {1} -- Rebooting in {2} seconds..."), true, ColorTools.ColTypes.Uncontinuable, ErrorType, Description, RebootTime.ToString());
                             Thread.Sleep((int)(RebootTime * 1000L));
-                            DebugWriter.Wdbg(DebugLevel.F, "Rebooting");
+                            DebugWriter.WriteDebug(DebugLevel.F, "Rebooting");
                             PowerManager.PowerManage(PowerMode.Reboot);
                             break;
                         }
@@ -158,7 +158,7 @@ namespace KS.Kernel
                             if (Reboot)
                             {
                                 // Continuable kernel errors shouldn't cause the kernel to reboot.
-                                DebugWriter.Wdbg(DebugLevel.W, "Continuable kernel errors shouldn't have Reboot = True.");
+                                DebugWriter.WriteDebug(DebugLevel.W, "Continuable kernel errors shouldn't have Reboot = True.");
                                 TextWriterColor.Write(Translate.DoTranslation("[{0}] panic: Reboot disabled due to error level being {0}."), true, ColorTools.ColTypes.Warning, ErrorType);
                             }
                             // Print normally
@@ -175,7 +175,7 @@ namespace KS.Kernel
                             if (Reboot)
                             {
                                 // Offer the user to wait for the set time interval before the kernel reboots.
-                                DebugWriter.Wdbg(DebugLevel.F, "Kernel panic initiated with reboot time: {0} seconds, Error Type: {1}", RebootTime, ErrorType);
+                                DebugWriter.WriteDebug(DebugLevel.F, "Kernel panic initiated with reboot time: {0} seconds, Error Type: {1}", RebootTime, ErrorType);
                                 TextWriterColor.Write(Translate.DoTranslation("[{0}] panic: {1} -- Rebooting in {2} seconds..."), true, ColorTools.ColTypes.Uncontinuable, ErrorType, Description, RebootTime.ToString());
                                 if (Flags.ShowStackTraceOnKernelError & Exc is not null)
                                     TextWriterColor.Write(Exc.StackTrace, true, ColorTools.ColTypes.Uncontinuable);
@@ -185,7 +185,7 @@ namespace KS.Kernel
                             else
                             {
                                 // If rebooting is disabled, offer the user to shutdown the kernel
-                                DebugWriter.Wdbg(DebugLevel.W, "Reboot is False, ErrorType is not double or continuable.");
+                                DebugWriter.WriteDebug(DebugLevel.W, "Reboot is False, ErrorType is not double or continuable.");
                                 TextWriterColor.Write(Translate.DoTranslation("[{0}] panic: {1} -- Press any key to shutdown."), true, ColorTools.ColTypes.Uncontinuable, ErrorType, Description);
                                 if (Flags.ShowStackTraceOnKernelError & Exc is not null)
                                     TextWriterColor.Write(Exc.StackTrace, true, ColorTools.ColTypes.Uncontinuable);
@@ -203,15 +203,15 @@ namespace KS.Kernel
                 if (ErrorType == KernelErrorLevel.D)
                 {
                     // Trigger triple fault
-                    DebugWriter.Wdbg(DebugLevel.F, "TRIPLE FAULT: Kernel bug: {0}", ex.Message);
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebug(DebugLevel.F, "TRIPLE FAULT: Kernel bug: {0}", ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     Environment.FailFast("TRIPLE FAULT in trying to handle DOUBLE PANIC. KS can't continue.", ex);
                 }
                 else
                 {
                     // Alright, we have a double panic.
-                    DebugWriter.Wdbg(DebugLevel.F, "DOUBLE PANIC: Kernel bug: {0}", ex.Message);
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebug(DebugLevel.F, "DOUBLE PANIC: Kernel bug: {0}", ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     KernelError(KernelErrorLevel.D, true, 5L, Translate.DoTranslation("DOUBLE PANIC: Kernel bug: {0}"), ex, ex.Message);
                 }
             }
@@ -229,7 +229,7 @@ namespace KS.Kernel
             {
                 // Open a file stream for dump
                 var Dump = new StreamWriter($"{Paths.HomePath}/dmp_{TimeDateRenderers.RenderDate(TimeDate.TimeDate.FormatType.Short).Replace("/", "-")}_{TimeDateRenderers.RenderTime(TimeDate.TimeDate.FormatType.Long).Replace(":", "-")}.txt");
-                DebugWriter.Wdbg(DebugLevel.I, "Opened file stream in home directory, saved as dmp_{0}.txt", $"{TimeDateRenderers.RenderDate(TimeDate.TimeDate.FormatType.Short).Replace("/", "-")}_{TimeDateRenderers.RenderTime(TimeDate.TimeDate.FormatType.Long).Replace(":", "-")}");
+                DebugWriter.WriteDebug(DebugLevel.I, "Opened file stream in home directory, saved as dmp_{0}.txt", $"{TimeDateRenderers.RenderDate(TimeDate.TimeDate.FormatType.Short).Replace("/", "-")}_{TimeDateRenderers.RenderTime(TimeDate.TimeDate.FormatType.Long).Replace(":", "-")}");
 
                 // Write info (Header)
                 Dump.AutoFlush = true;
@@ -291,19 +291,19 @@ namespace KS.Kernel
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     Dump.WriteLine(Translate.DoTranslation("> There is an error when trying to get frame information. {0}: {1}"), ex.GetType().FullName, ex.Message.Replace(Kernel.NewLine, " | "));
                 }
 
                 // Close stream
-                DebugWriter.Wdbg(DebugLevel.I, "Closing file stream for dump...");
+                DebugWriter.WriteDebug(DebugLevel.I, "Closing file stream for dump...");
                 Dump.Flush();
                 Dump.Close();
             }
             catch (Exception ex)
             {
                 TextWriterColor.Write(Translate.DoTranslation("Dump information gatherer crashed when trying to get information about {0}: {1}"), true, ColorTools.ColTypes.Error, Exc.GetType().FullName, ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebugStackTrace(ex);
             }
         }
 
@@ -326,24 +326,24 @@ namespace KS.Kernel
             SplashReport._Progress = 0;
             SplashReport._ProgressText = "";
             SplashReport._KernelBooted = false;
-            DebugWriter.Wdbg(DebugLevel.I, "General variables reset");
+            DebugWriter.WriteDebug(DebugLevel.I, "General variables reset");
 
             // Reset hardware info
             HardwareProbe.HardwareInfo = null;
-            DebugWriter.Wdbg(DebugLevel.I, "Hardware info reset.");
+            DebugWriter.WriteDebug(DebugLevel.I, "Hardware info reset.");
 
             // Disconnect all hosts from remote debugger
             RemoteDebugger.StopRDebugThread();
-            DebugWriter.Wdbg(DebugLevel.I, "Remote debugger stopped");
+            DebugWriter.WriteDebug(DebugLevel.I, "Remote debugger stopped");
 
             // Stop all mods
             ModManager.StopMods();
-            DebugWriter.Wdbg(DebugLevel.I, "Mods stopped");
+            DebugWriter.WriteDebug(DebugLevel.I, "Mods stopped");
 
             // Disable Debugger
             if (Flags.DebugMode)
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Shutting down debugger");
+                DebugWriter.WriteDebug(DebugLevel.I, "Shutting down debugger");
                 Flags.DebugMode = false;
                 DebugWriter.DebugStreamWriter.Close();
                 DebugWriter.DebugStreamWriter.Dispose();
@@ -450,10 +450,10 @@ namespace KS.Kernel
             SplashManager.OpenSplash();
 
             // Write headers for debug
-            DebugWriter.Wdbg(DebugLevel.I, "-------------------------------------------------------------------");
-            DebugWriter.Wdbg(DebugLevel.I, "Kernel initialized, version {0}.", Kernel.KernelVersion);
-            DebugWriter.Wdbg(DebugLevel.I, "OS: {0}", Environment.OSVersion.ToString());
-            DebugWriter.Wdbg(DebugLevel.I, "Framework: {0}", Kernel.KernelSimulatorMoniker);
+            DebugWriter.WriteDebug(DebugLevel.I, "-------------------------------------------------------------------");
+            DebugWriter.WriteDebug(DebugLevel.I, "Kernel initialized, version {0}.", Kernel.KernelVersion);
+            DebugWriter.WriteDebug(DebugLevel.I, "OS: {0}", Environment.OSVersion.ToString());
+            DebugWriter.WriteDebug(DebugLevel.I, "Framework: {0}", Kernel.KernelSimulatorMoniker);
 
             // Populate ban list for debug devices
             RemoteDebugTools.PopulateBlockedDevices();
@@ -536,7 +536,7 @@ namespace KS.Kernel
                     ConsoleBase.ConsoleWrapper.WriteLine();
                     SeparatorWriterColor.WriteSeparator(StageText, false, ColorTools.ColTypes.Stage);
                 }
-                DebugWriter.Wdbg(DebugLevel.I, $"- Kernel stage {StageNumber} | Text: {StageText}");
+                DebugWriter.WriteDebug(DebugLevel.I, $"- Kernel stage {StageNumber} | Text: {StageText}");
             }
         }
 

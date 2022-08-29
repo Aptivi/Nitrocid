@@ -305,19 +305,19 @@ namespace KS.Misc.Screensaver.Displays
                 int RedColorNum = RandomDriver.Next(FigletSettings.FigletMinimumRedColorLevel, FigletSettings.FigletMaximumRedColorLevel);
                 int GreenColorNum = RandomDriver.Next(FigletSettings.FigletMinimumGreenColorLevel, FigletSettings.FigletMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Next(FigletSettings.FigletMinimumBlueColorLevel, FigletSettings.FigletMaximumBlueColorLevel);
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
             }
             else if (FigletSettings.Figlet255Colors)
             {
                 int ColorNum = RandomDriver.Next(FigletSettings.FigletMinimumColorLevel, FigletSettings.FigletMaximumColorLevel);
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 ColorStorage = new Color(ColorNum);
             }
             else
             {
                 ConsoleBase.ConsoleWrapper.BackgroundColor = (ConsoleColor)RandomDriver.Next(FigletSettings.FigletMinimumColorLevel, FigletSettings.FigletMaximumColorLevel);
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
             }
 
             // Prepare the figlet font for writing

@@ -132,8 +132,8 @@ namespace KS.Network
             }
             catch (Exception ex)
             {
-                DebugWriter.WStkTrc(ex);
-                DebugWriter.Wdbg(DebugLevel.E, "Failed to change hostname: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to change hostname: {0}", ex.Message);
             }
             return false;
         }
@@ -253,12 +253,12 @@ namespace KS.Network
         public static string GetFilenameFromUrl(string Url)
         {
             string FileName = Url.Split('/').Last();
-            DebugWriter.Wdbg(DebugLevel.I, "Prototype Filename: {0}", FileName);
+            DebugWriter.WriteDebug(DebugLevel.I, "Prototype Filename: {0}", FileName);
             if (FileName.Contains(Convert.ToString('?')))
             {
                 FileName = FileName.Remove(FileName.IndexOf('?'));
             }
-            DebugWriter.Wdbg(DebugLevel.I, "Finished Filename: {0}", FileName);
+            DebugWriter.WriteDebug(DebugLevel.I, "Finished Filename: {0}", FileName);
             return FileName;
         }
 

@@ -34,7 +34,7 @@ namespace KS.Network.Mail.Directory
         /// <param name="Directory">Directory name</param>
         public static void CreateMailDirectory(string Directory)
         {
-            DebugWriter.Wdbg(DebugLevel.I, "Creating folder: {0}", Directory);
+            DebugWriter.WriteDebug(DebugLevel.I, "Creating folder: {0}", Directory);
             try
             {
                 MailFolder MailFolder;
@@ -46,8 +46,8 @@ namespace KS.Network.Mail.Directory
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Failed to create folder {0}: {1}", Directory, ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to create folder {0}: {1}", Directory, ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
                 throw new Kernel.Exceptions.MailException(Translate.DoTranslation("Unable to create mail folder {0}: {1}"), ex, Directory, ex.Message);
             }
         }
@@ -58,7 +58,7 @@ namespace KS.Network.Mail.Directory
         /// <param name="Directory">Directory name</param>
         public static void DeleteMailDirectory(string Directory)
         {
-            DebugWriter.Wdbg(DebugLevel.I, "Deleting folder: {0}", Directory);
+            DebugWriter.WriteDebug(DebugLevel.I, "Deleting folder: {0}", Directory);
             try
             {
                 MailFolder MailFolder;
@@ -70,8 +70,8 @@ namespace KS.Network.Mail.Directory
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Failed to delete folder {0}: {1}", Directory, ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to delete folder {0}: {1}", Directory, ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
                 throw new Kernel.Exceptions.MailException(Translate.DoTranslation("Unable to delete mail folder {0}: {1}"), ex, Directory, ex.Message);
             }
         }
@@ -83,7 +83,7 @@ namespace KS.Network.Mail.Directory
         /// <param name="NewName">New mail directory name</param>
         public static void RenameMailDirectory(string Directory, string NewName)
         {
-            DebugWriter.Wdbg(DebugLevel.I, "Renaming folder {0} to {1}", Directory, NewName);
+            DebugWriter.WriteDebug(DebugLevel.I, "Renaming folder {0} to {1}", Directory, NewName);
             try
             {
                 MailFolder MailFolder;
@@ -95,8 +95,8 @@ namespace KS.Network.Mail.Directory
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Failed to delete folder {0}: {1}", Directory, ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to delete folder {0}: {1}", Directory, ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
                 throw new Kernel.Exceptions.MailException(Translate.DoTranslation("Unable to delete mail folder {0}: {1}"), ex, Directory, ex.Message);
             }
         }
@@ -107,18 +107,18 @@ namespace KS.Network.Mail.Directory
         /// <param name="Directory">A mail directory</param>
         public static void MailChangeDirectory(string Directory)
         {
-            DebugWriter.Wdbg(DebugLevel.I, "Opening folder: {0}", Directory);
+            DebugWriter.WriteDebug(DebugLevel.I, "Opening folder: {0}", Directory);
             try
             {
                 lock (MailLogin.IMAP_Client.SyncRoot)
                     OpenFolder(Directory);
                 MailShellCommon.IMAP_CurrentDirectory = Directory;
-                DebugWriter.Wdbg(DebugLevel.I, "Current directory changed.");
+                DebugWriter.WriteDebug(DebugLevel.I, "Current directory changed.");
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Failed to open folder {0}: {1}", Directory, ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to open folder {0}: {1}", Directory, ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
                 throw new Kernel.Exceptions.MailException(Translate.DoTranslation("Unable to open mail folder {0}: {1}"), ex, Directory, ex.Message);
             }
         }
@@ -132,10 +132,10 @@ namespace KS.Network.Mail.Directory
         public static MailFolder OpenFolder(string FolderString, FolderAccess FolderMode = FolderAccess.ReadWrite)
         {
             var Opened = default(MailFolder);
-            DebugWriter.Wdbg(DebugLevel.I, "Personal namespace collection parsing started.");
+            DebugWriter.WriteDebug(DebugLevel.I, "Personal namespace collection parsing started.");
             foreach (FolderNamespace nmspc in MailLogin.IMAP_Client.PersonalNamespaces)
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Namespace: {0}", nmspc.Path);
+                DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
                 foreach (MailFolder dir in MailLogin.IMAP_Client.GetFolders(nmspc))
                 {
                     if ((dir.Name.ToLower() ?? "") == (FolderString.ToLower() ?? ""))
@@ -146,10 +146,10 @@ namespace KS.Network.Mail.Directory
                 }
             }
 
-            DebugWriter.Wdbg(DebugLevel.I, "Shared namespace collection parsing started.");
+            DebugWriter.WriteDebug(DebugLevel.I, "Shared namespace collection parsing started.");
             foreach (FolderNamespace nmspc in MailLogin.IMAP_Client.SharedNamespaces)
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Namespace: {0}", nmspc.Path);
+                DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
                 foreach (MailFolder dir in MailLogin.IMAP_Client.GetFolders(nmspc))
                 {
                     if ((dir.Name.ToLower() ?? "") == (FolderString.ToLower() ?? ""))
@@ -160,10 +160,10 @@ namespace KS.Network.Mail.Directory
                 }
             }
 
-            DebugWriter.Wdbg(DebugLevel.I, "Other namespace collection parsing started.");
+            DebugWriter.WriteDebug(DebugLevel.I, "Other namespace collection parsing started.");
             foreach (FolderNamespace nmspc in MailLogin.IMAP_Client.OtherNamespaces)
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Namespace: {0}", nmspc.Path);
+                DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
                 foreach (MailFolder dir in MailLogin.IMAP_Client.GetFolders(nmspc))
                 {
                     if ((dir.Name.ToLower() ?? "") == (FolderString.ToLower() ?? ""))
@@ -193,38 +193,38 @@ namespace KS.Network.Mail.Directory
             var EntryBuilder = new StringBuilder();
             lock (MailLogin.IMAP_Client.SyncRoot)
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Personal namespace collection parsing started.");
+                DebugWriter.WriteDebug(DebugLevel.I, "Personal namespace collection parsing started.");
                 foreach (FolderNamespace nmspc in MailLogin.IMAP_Client.PersonalNamespaces)
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Namespace: {0}", nmspc.Path);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
                     EntryBuilder.AppendLine($"- {nmspc.Path}");
                     foreach (MailFolder dir in MailLogin.IMAP_Client.GetFolders(nmspc))
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Folder: {0}", dir.Name);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Folder: {0}", dir.Name);
                         EntryBuilder.AppendLine($"  - {dir.Name}");
                     }
                 }
 
-                DebugWriter.Wdbg(DebugLevel.I, "Shared namespace collection parsing started.");
+                DebugWriter.WriteDebug(DebugLevel.I, "Shared namespace collection parsing started.");
                 foreach (FolderNamespace nmspc in MailLogin.IMAP_Client.SharedNamespaces)
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Namespace: {0}", nmspc.Path);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
                     EntryBuilder.AppendLine($"- {nmspc.Path}");
                     foreach (MailFolder dir in MailLogin.IMAP_Client.GetFolders(nmspc))
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Folder: {0}", dir.Name);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Folder: {0}", dir.Name);
                         EntryBuilder.AppendLine($"  - {dir.Name}");
                     }
                 }
 
-                DebugWriter.Wdbg(DebugLevel.I, "Other namespace collection parsing started.");
+                DebugWriter.WriteDebug(DebugLevel.I, "Other namespace collection parsing started.");
                 foreach (FolderNamespace nmspc in MailLogin.IMAP_Client.OtherNamespaces)
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Namespace: {0}", nmspc.Path);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
                     EntryBuilder.AppendLine($"- {nmspc.Path}");
                     foreach (MailFolder dir in MailLogin.IMAP_Client.GetFolders(nmspc))
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Folder: {0}", dir.Name);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Folder: {0}", dir.Name);
                         EntryBuilder.AppendLine($"  - {dir.Name}");
                     }
                 }

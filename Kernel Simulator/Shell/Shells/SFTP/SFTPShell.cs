@@ -62,7 +62,7 @@ namespace KS.Shell.Shells.SFTP
                     // Complete initialization
                     if (SFTPInitialized == false)
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, $"Completing initialization of SFTP: {SFTPInitialized}");
+                        DebugWriter.WriteDebug(DebugLevel.I, $"Completing initialization of SFTP: {SFTPInitialized}");
                         SFTPShellCommon.SFTPCurrDirect = Paths.HomePath;
                         Kernel.Kernel.KernelEventManager.RaiseSFTPShellInitialized();
                         SFTPInitialized = true;
@@ -71,7 +71,7 @@ namespace KS.Shell.Shells.SFTP
                     // Check if the shell is going to exit
                     if (Bail)
                     {
-                        DebugWriter.Wdbg(DebugLevel.W, "Exiting shell...");
+                        DebugWriter.WriteDebug(DebugLevel.W, "Exiting shell...");
                         SFTPShellCommon.SFTPConnected = false;
                         SFTPShellCommon.ClientSFTP?.Disconnect();
                         SFTPShellCommon.SFTPSite = "";
@@ -89,7 +89,7 @@ namespace KS.Shell.Shells.SFTP
                         // Prompt for command
                         if (!Connects)
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Preparing prompt...");
+                            DebugWriter.WriteDebug(DebugLevel.I, "Preparing prompt...");
                             PromptPresetManager.WriteShellPrompt(ShellType);
                         }
                     }
@@ -97,13 +97,13 @@ namespace KS.Shell.Shells.SFTP
                     // Try to connect if IP address is specified.
                     if (Connects)
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, $"Currently connecting to {Address} by \"sftp (address)\"...");
+                        DebugWriter.WriteDebug(DebugLevel.I, $"Currently connecting to {Address} by \"sftp (address)\"...");
                         SFTPStrCmd = $"connect {Address}";
                         Connects = false;
                     }
                     else
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Normal shell");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Normal shell");
                         SFTPStrCmd = Input.ReadLine();
                     }
 
@@ -122,7 +122,7 @@ namespace KS.Shell.Shells.SFTP
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     throw new Kernel.Exceptions.SFTPShellException(Translate.DoTranslation("There was an error in the SFTP shell:") + " {0}", ex, ex.Message);
                 }
             }

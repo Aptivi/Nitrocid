@@ -44,7 +44,7 @@ namespace KS.Misc.Screensaver.Displays
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
             ConsoleBase.ConsoleWrapper.Clear();
-            DebugWriter.Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
+            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
         }
 
         public override void ScreensaverLogic()
@@ -67,35 +67,35 @@ namespace KS.Misc.Screensaver.Displays
                 // Get the required positions for the four boxes
                 int UpperLeftBoxEndX = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d - 1d);
                 int UpperLeftBoxStartX = (int)Math.Round(UpperLeftBoxEndX / 2d);
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Upper left box X position {0} -> {1}", UpperLeftBoxStartX, UpperLeftBoxEndX);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Upper left box X position {0} -> {1}", UpperLeftBoxStartX, UpperLeftBoxEndX);
 
                 int UpperLeftBoxStartY = 2;
                 int UpperLeftBoxEndY = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d - 1d);
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Upper left box Y position {0} -> {1}", UpperLeftBoxStartY, UpperLeftBoxEndY);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Upper left box Y position {0} -> {1}", UpperLeftBoxStartY, UpperLeftBoxEndY);
 
                 int LowerLeftBoxEndX = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d - 1d);
                 int LowerLeftBoxStartX = (int)Math.Round(LowerLeftBoxEndX / 2d);
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Lower left box X position {0} -> {1}", LowerLeftBoxStartX, LowerLeftBoxEndX);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Lower left box X position {0} -> {1}", LowerLeftBoxStartX, LowerLeftBoxEndX);
 
                 int LowerLeftBoxStartY = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d + 1d);
                 int LowerLeftBoxEndY = ConsoleBase.ConsoleWrapper.WindowHeight - 2;
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Lower left box X position {0} -> {1}", LowerLeftBoxStartX, LowerLeftBoxEndX);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Lower left box X position {0} -> {1}", LowerLeftBoxStartX, LowerLeftBoxEndX);
 
                 int UpperRightBoxStartX = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d + 2d);
                 int UpperRightBoxEndX = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d + UpperRightBoxStartX / 2d);
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Upper right box X position {0} -> {1}", UpperRightBoxStartX, UpperRightBoxEndX);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Upper right box X position {0} -> {1}", UpperRightBoxStartX, UpperRightBoxEndX);
 
                 int UpperRightBoxStartY = 2;
                 int UpperRightBoxEndY = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d - 1d);
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Upper right box X position {0} -> {1}", UpperRightBoxStartX, UpperRightBoxEndX);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Upper right box X position {0} -> {1}", UpperRightBoxStartX, UpperRightBoxEndX);
 
                 int LowerRightBoxStartX = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d + 2d);
                 int LowerRightBoxEndX = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d + LowerRightBoxStartX / 2d);
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Lower right box X position {0} -> {1}", LowerRightBoxStartX, LowerRightBoxEndX);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Lower right box X position {0} -> {1}", LowerRightBoxStartX, LowerRightBoxEndX);
 
                 int LowerRightBoxStartY = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d + 1d);
                 int LowerRightBoxEndY = ConsoleBase.ConsoleWrapper.WindowHeight - 2;
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Lower right box X position {0} -> {1}", LowerRightBoxStartX, LowerRightBoxEndX);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Lower right box X position {0} -> {1}", LowerRightBoxStartX, LowerRightBoxEndX);
 
                 // Draw the Windows 11 logo
                 if (!Drawn)
@@ -109,7 +109,7 @@ namespace KS.Misc.Screensaver.Displays
                     {
                         for (int Y = UpperLeftBoxStartY, loopTo1 = UpperLeftBoxEndY; Y <= loopTo1; Y++)
                         {
-                            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Filling upper left box {0},{1}...", X, Y);
+                            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Filling upper left box {0},{1}...", X, Y);
                             ConsoleBase.ConsoleWrapper.SetCursorPosition(X, Y);
                             ConsoleBase.ConsoleWrapper.Write(" ");
                         }
@@ -120,7 +120,7 @@ namespace KS.Misc.Screensaver.Displays
                     {
                         for (int Y = LowerLeftBoxStartY, loopTo3 = LowerLeftBoxEndY; Y <= loopTo3; Y++)
                         {
-                            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Filling lower left box {0},{1}...", X, Y);
+                            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Filling lower left box {0},{1}...", X, Y);
                             ConsoleBase.ConsoleWrapper.SetCursorPosition(X, Y);
                             ConsoleBase.ConsoleWrapper.Write(" ");
                         }
@@ -131,7 +131,7 @@ namespace KS.Misc.Screensaver.Displays
                     {
                         for (int Y = UpperRightBoxStartY, loopTo5 = UpperRightBoxEndY; Y <= loopTo5; Y++)
                         {
-                            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Filling upper right box {0},{1}...", X, Y);
+                            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Filling upper right box {0},{1}...", X, Y);
                             ConsoleBase.ConsoleWrapper.SetCursorPosition(X, Y);
                             ConsoleBase.ConsoleWrapper.Write(" ");
                         }
@@ -142,7 +142,7 @@ namespace KS.Misc.Screensaver.Displays
                     {
                         for (int Y = LowerRightBoxStartY, loopTo7 = LowerRightBoxEndY; Y <= loopTo7; Y++)
                         {
-                            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Filling lower right box {0},{1}...", X, Y);
+                            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Filling lower right box {0},{1}...", X, Y);
                             ConsoleBase.ConsoleWrapper.SetCursorPosition(X, Y);
                             ConsoleBase.ConsoleWrapper.Write(" ");
                         }
@@ -150,7 +150,7 @@ namespace KS.Misc.Screensaver.Displays
 
                     // Set drawn
                     Drawn = true;
-                    DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Drawn!");
+                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Drawn!");
                 }
             }
             if (Drawn)

@@ -42,7 +42,7 @@ namespace KS.Shell.Shells.RSS.Commands
             if (ArticleIndex > RSSShellCommon.RSSFeedInstance.FeedArticles.Count - 1)
             {
                 TextWriterColor.Write(Translate.DoTranslation("Article number couldn't be bigger than the available articles."), true, ColorTools.ColTypes.Error);
-                DebugWriter.Wdbg(DebugLevel.E, "Tried to access article number {0}, but count is {1}.", ArticleIndex, RSSShellCommon.RSSFeedInstance.FeedArticles.Count - 1);
+                DebugWriter.WriteDebug(DebugLevel.E, "Tried to access article number {0}, but count is {1}.", ArticleIndex, RSSShellCommon.RSSFeedInstance.FeedArticles.Count - 1);
             }
             else
             {

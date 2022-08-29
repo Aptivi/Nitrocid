@@ -22,7 +22,7 @@ using KS.Shell.ShellBase.Commands;
 namespace KS.Shell.Shells.Test.Commands
 {
     /// <summary>
-    /// It lets you send any message to the debugger, using <see cref="DebugWriter.Wdbg(DebugLevel, string, object[])"/> call. It provides support for variables. It only works if you have enabled the debugger which you can enable by debug 1.
+    /// It lets you send any message to the debugger, using <see cref="DebugWriter.WriteDebug(DebugLevel, string, object[])"/> call. It provides support for variables. It only works if you have enabled the debugger which you can enable by debug 1.
     /// </summary>
     class Test_PrintDFCommand : CommandExecutor, ICommand
     {
@@ -30,7 +30,7 @@ namespace KS.Shell.Shells.Test.Commands
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
             object[] Vars = ListArgsOnly[0].Split(';');
-            DebugWriter.Wdbg(DebugLevel.I, ListArgsOnly[1], Vars);
+            DebugWriter.WriteDebug(DebugLevel.I, ListArgsOnly[1], Vars);
         }
 
     }

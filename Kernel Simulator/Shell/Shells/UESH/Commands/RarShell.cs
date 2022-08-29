@@ -39,7 +39,7 @@ namespace KS.Shell.Shells.UESH.Commands
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
             ListArgsOnly[0] = Filesystem.NeutralizePath(ListArgsOnly[0]);
-            DebugWriter.Wdbg(DebugLevel.I, "File path is {0} and .Exists is {0}", ListArgsOnly[0], Checking.FileExists(ListArgsOnly[0]));
+            DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {0}", ListArgsOnly[0], Checking.FileExists(ListArgsOnly[0]));
             if (Checking.FileExists(ListArgsOnly[0]))
             {
                 ShellStart.StartShell(ShellType.RARShell, ListArgsOnly[0]);

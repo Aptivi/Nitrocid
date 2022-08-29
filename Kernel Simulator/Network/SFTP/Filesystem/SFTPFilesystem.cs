@@ -103,7 +103,7 @@ namespace KS.Network.SFTP.Filesystem
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     throw new Kernel.Exceptions.SFTPFilesystemException(Translate.DoTranslation("Failed to list remote files: {0}"), ex, ex.Message);
                 }
             }
@@ -123,20 +123,20 @@ namespace KS.Network.SFTP.Filesystem
         {
             if (SFTPShellCommon.SFTPConnected)
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Deleting {0}...", Target);
+                DebugWriter.WriteDebug(DebugLevel.I, "Deleting {0}...", Target);
 
                 // Delete a file or folder
                 if (SFTPShellCommon.ClientSFTP.Exists(Target))
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Deleting {0}...", Target);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Deleting {0}...", Target);
                     SFTPShellCommon.ClientSFTP.Delete(Target);
                 }
                 else
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "{0} is not found.", Target);
+                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", Target);
                     throw new Kernel.Exceptions.SFTPFilesystemException(Translate.DoTranslation("{0} is not found in the server."), Target);
                 }
-                DebugWriter.Wdbg(DebugLevel.I, "Deleted {0}", Target);
+                DebugWriter.WriteDebug(DebugLevel.I, "Deleted {0}", Target);
                 return true;
             }
             else
@@ -226,7 +226,7 @@ namespace KS.Network.SFTP.Filesystem
                 var SFTPSessionType = SFTPSession.GetType();
                 var SFTPSessionCanon = SFTPSessionType.GetMethod("GetCanonicalPath");
                 string CanonicalPath = Convert.ToString(SFTPSessionCanon.Invoke(SFTPSession, new string[] { Path }));
-                DebugWriter.Wdbg(DebugLevel.I, "Canonical path: {0}", CanonicalPath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Canonical path: {0}", CanonicalPath);
                 return CanonicalPath;
             }
             else

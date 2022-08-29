@@ -100,7 +100,7 @@ namespace KS.Misc.Notifications
                     if (NewNotificationsList.Count > 0 & !Screensaver.Screensaver.InSaver)
                     {
                         // Update the old notifications list
-                        DebugWriter.Wdbg(DebugLevel.W, "Notifications received! Recents count was {0}, Old count was {1}", NotifRecents.Count, OldNotificationsList.Count);
+                        DebugWriter.WriteDebug(DebugLevel.W, "Notifications received! Recents count was {0}, Old count was {1}", NotifRecents.Count, OldNotificationsList.Count);
                         OldNotificationsList = new List<Notification>(NotifRecents);
                         Kernel.Kernel.KernelEventManager.RaiseNotificationsReceived(NewNotificationsList);
 
@@ -114,17 +114,17 @@ namespace KS.Misc.Notifications
 
                             // Populate title and description
                             string Title, Desc;
-                            DebugWriter.Wdbg(DebugLevel.I, "Title: {0}", NewNotification.Title);
-                            DebugWriter.Wdbg(DebugLevel.I, "Desc: {0}", NewNotification.Desc);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Title: {0}", NewNotification.Title);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Desc: {0}", NewNotification.Desc);
                             Title = NewNotification.Title.Truncate(36);
                             Desc = NewNotification.Desc.Truncate(36);
-                            DebugWriter.Wdbg(DebugLevel.I, "Truncated title: {0}", Title);
-                            DebugWriter.Wdbg(DebugLevel.I, "Truncated desc: {0}", Desc);
-                            DebugWriter.Wdbg(DebugLevel.I, "Truncated title length: {0}", Title.Length);
-                            DebugWriter.Wdbg(DebugLevel.I, "Truncated desc length: {0}", Desc.Length);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Truncated title: {0}", Title);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Truncated desc: {0}", Desc);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Truncated title length: {0}", Title.Length);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Truncated desc length: {0}", Desc.Length);
 
                             // Set the border color
-                            DebugWriter.Wdbg(DebugLevel.I, "Priority: {0}", NewNotification.Priority);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Priority: {0}", NewNotification.Priority);
                             var NotifyBorderColor = ColorTools.LowPriorityBorderColor;
                             var NotifyTitleColor = ColorTools.NotificationTitleColor;
                             var NotifyDescColor = ColorTools.NotificationDescriptionColor;
@@ -158,7 +158,7 @@ namespace KS.Misc.Notifications
                             }
 
                             // Write notification to console
-                            DebugWriter.Wdbg(DebugLevel.I, "Where to store: ({0}, {1}), Title top: {2}, Desc top: {3}", ConsoleBase.ConsoleWrapper.WindowWidth - 40, ConsoleBase.ConsoleWrapper.WindowTop, ConsoleBase.ConsoleWrapper.WindowTop + 1, ConsoleBase.ConsoleWrapper.WindowTop + 2);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Where to store: ({0}, {1}), Title top: {2}, Desc top: {3}", ConsoleBase.ConsoleWrapper.WindowWidth - 40, ConsoleBase.ConsoleWrapper.WindowTop, ConsoleBase.ConsoleWrapper.WindowTop + 1, ConsoleBase.ConsoleWrapper.WindowTop + 2);
                             TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", ConsoleBase.ConsoleWrapper.WindowWidth - 40, ConsoleBase.ConsoleWrapper.WindowTop, true, ColorTools.ColTypes.Neutral);
                             TextWriterWhereColor.WriteWhere(Title + Convert.ToString(CharManager.GetEsc()) + "[0K", ConsoleBase.ConsoleWrapper.WindowWidth - 40, ConsoleBase.ConsoleWrapper.WindowTop + 1, true, NotifyTitleColor);
                             TextWriterWhereColor.WriteWhere(Desc + Convert.ToString(CharManager.GetEsc()) + "[0K", ConsoleBase.ConsoleWrapper.WindowWidth - 40, ConsoleBase.ConsoleWrapper.WindowTop + 2, true, NotifyDescColor);
@@ -214,8 +214,8 @@ namespace KS.Misc.Notifications
                                 while (!(NewNotification.Progress >= 100 | NewNotification.ProgressFailed))
                                 {
                                     string ProgressTitle = Title + " (" + NewNotification.Progress.ToString() + "%)";
-                                    DebugWriter.Wdbg(DebugLevel.I, "Where to store progress: {0},{1}", ConsoleBase.ConsoleWrapper.WindowWidth - 40, ConsoleBase.ConsoleWrapper.WindowTop + 3);
-                                    DebugWriter.Wdbg(DebugLevel.I, "Progress: {0}", NewNotification.Progress);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Where to store progress: {0},{1}", ConsoleBase.ConsoleWrapper.WindowWidth - 40, ConsoleBase.ConsoleWrapper.WindowTop + 3);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Progress: {0}", NewNotification.Progress);
                                     TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", ConsoleBase.ConsoleWrapper.WindowWidth - 40, ConsoleBase.ConsoleWrapper.WindowTop, true, ColorTools.ColTypes.Neutral);
                                     TextWriterWhereColor.WriteWhere(ProgressTitle + Convert.ToString(CharManager.GetEsc()) + "[0K", ConsoleBase.ConsoleWrapper.WindowWidth - 40, ConsoleBase.ConsoleWrapper.WindowTop + 1, true, NotifyTitleColor, NewNotification.Progress);
                                     TextWriterWhereColor.WriteWhere(Desc + Convert.ToString(CharManager.GetEsc()) + "[0K", ConsoleBase.ConsoleWrapper.WindowWidth - 40, ConsoleBase.ConsoleWrapper.WindowTop + 2, true, NotifyDescColor);
@@ -240,8 +240,8 @@ namespace KS.Misc.Notifications
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Shutting down botification thread because of {0}", ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Shutting down botification thread because of {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
             }
         }
 
@@ -286,7 +286,7 @@ namespace KS.Misc.Notifications
         /// <param name="notif">Instance of notification holder</param>
         public static void NotifySend(Notification notif)
         {
-            DebugWriter.Wdbg(DebugLevel.I, "List contains this notification? {0}", NotifRecents.Contains(notif));
+            DebugWriter.WriteDebug(DebugLevel.I, "List contains this notification? {0}", NotifRecents.Contains(notif));
             if (!NotifRecents.Contains(notif))
             {
                 NotifRecents.Add(notif);
@@ -314,14 +314,14 @@ namespace KS.Misc.Notifications
             try
             {
                 NotifRecents.RemoveAt(ind);
-                DebugWriter.Wdbg(DebugLevel.I, "Removed index {0} from notification list", ind);
+                DebugWriter.WriteDebug(DebugLevel.I, "Removed index {0} from notification list", ind);
                 Kernel.Kernel.KernelEventManager.RaiseNotificationDismissed();
                 return true;
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Error trying to dismiss notification: {0}", ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to dismiss notification: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;
         }

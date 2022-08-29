@@ -45,19 +45,19 @@ namespace KS.Misc.Screensaver.Customized
             // Start parsing screensaver
             if (Checking.FileExists(FinalScreensaverPath))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Parsing {0}...", SaverFileName);
+                DebugWriter.WriteDebug(DebugLevel.I, "Parsing {0}...", SaverFileName);
                 BaseScreensaver ScreensaverBase;
                 if (Path.GetExtension(FinalScreensaverPath) == ".dll")
                 {
                     // Try loading the screensaver
                     try
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "{0} is probably a valid screensaver. Generating...", SaverFileName);
+                        DebugWriter.WriteDebug(DebugLevel.I, "{0} is probably a valid screensaver. Generating...", SaverFileName);
                         ScreensaverBase = Screensaver.GetScreensaverInstance(Assembly.LoadFrom(FinalScreensaverPath));
                         if (ScreensaverBase is not null)
                         {
                             // This screensaver uses the modern BaseScreensaver and IScreensaver interfaces
-                            DebugWriter.Wdbg(DebugLevel.I, "{0} is a valid screensaver!", SaverFileName);
+                            DebugWriter.WriteDebug(DebugLevel.I, "{0} is a valid screensaver!", SaverFileName);
                             SplashReport.ReportProgress(Translate.DoTranslation("{0} has been initialized properly."), 0, ColorTools.ColTypes.Neutral, SaverFileName);
                             string SaverName = ScreensaverBase.ScreensaverName;
                             CustomSaverInfo SaverInstance;
@@ -66,36 +66,36 @@ namespace KS.Misc.Screensaver.Customized
                         }
                         else
                         {
-                            DebugWriter.Wdbg(DebugLevel.E, "{0} is not a valid screensaver.", file);
+                            DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a valid screensaver.", file);
                         }
                     }
                     catch (ReflectionTypeLoadException ex)
                     {
-                        DebugWriter.Wdbg(DebugLevel.E, "Error trying to load dynamic screensaver {0} because of reflection failure: {1}", file, ex.Message);
-                        DebugWriter.WStkTrc(ex);
+                        DebugWriter.WriteDebug(DebugLevel.E, "Error trying to load dynamic screensaver {0} because of reflection failure: {1}", file, ex.Message);
+                        DebugWriter.WriteDebugStackTrace(ex);
                         SplashReport.ReportProgress(Translate.DoTranslation("Screensaver can't be loaded because of the following: "), 0, ColorTools.ColTypes.Error);
                         foreach (Exception LoaderException in ex.LoaderExceptions)
                         {
-                            DebugWriter.Wdbg(DebugLevel.E, "Loader exception: {0}", LoaderException.Message);
-                            DebugWriter.WStkTrc(LoaderException);
+                            DebugWriter.WriteDebug(DebugLevel.E, "Loader exception: {0}", LoaderException.Message);
+                            DebugWriter.WriteDebugStackTrace(LoaderException);
                             SplashReport.ReportProgress(LoaderException.Message, 0, ColorTools.ColTypes.Error);
                         }
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.Wdbg(DebugLevel.E, "Error trying to load dynamic screensaver {0}: {1}", file, ex.Message);
-                        DebugWriter.WStkTrc(ex);
+                        DebugWriter.WriteDebug(DebugLevel.E, "Error trying to load dynamic screensaver {0}: {1}", file, ex.Message);
+                        DebugWriter.WriteDebugStackTrace(ex);
                     }
                 }
                 else
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "{0} is not a screensaver. A screensaver code should have \".dll\" at the end.", file);
+                    DebugWriter.WriteDebug(DebugLevel.W, "{0} is not a screensaver. A screensaver code should have \".dll\" at the end.", file);
                 }
             }
             else
             {
                 SplashReport.ReportProgress(Translate.DoTranslation("Screensaver {0} does not exist."), 0, ColorTools.ColTypes.Error, file);
-                DebugWriter.Wdbg(DebugLevel.E, "The file {0} does not exist for compilation.", file);
+                DebugWriter.WriteDebug(DebugLevel.E, "The file {0} does not exist for compilation.", file);
             }
         }
 

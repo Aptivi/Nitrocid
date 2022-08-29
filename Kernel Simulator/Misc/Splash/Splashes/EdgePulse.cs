@@ -77,7 +77,7 @@ namespace KS.Misc.Splash.Splashes
         // Actual logic
         public void Opening()
         {
-            DebugWriter.Wdbg(DebugLevel.I, "Splash opening. Clearing console...");
+            DebugWriter.WriteDebug(DebugLevel.I, "Splash opening. Clearing console...");
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
             ConsoleBase.ConsoleWrapper.Clear();
             RandomDriver = new Random();
@@ -88,7 +88,7 @@ namespace KS.Misc.Splash.Splashes
         {
             try
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Splash displaying.");
+                DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
 
                 // Loop until we got a closing notification
                 while (!SplashClosing)
@@ -96,14 +96,14 @@ namespace KS.Misc.Splash.Splashes
             }
             catch (ThreadInterruptedException)
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Splash done.");
+                DebugWriter.WriteDebug(DebugLevel.I, "Splash done.");
             }
         }
 
         public void Closing()
         {
             SplashClosing = true;
-            DebugWriter.Wdbg(DebugLevel.I, "Splash closing. Clearing console...");
+            DebugWriter.WriteDebug(DebugLevel.I, "Splash closing. Clearing console...");
             ColorTools.SetConsoleColor(ColorTools.BackgroundColor, true);
             ConsoleBase.ConsoleWrapper.Clear();
         }

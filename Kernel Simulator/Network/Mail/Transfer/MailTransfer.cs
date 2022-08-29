@@ -51,16 +51,16 @@ namespace KS.Network.Mail.Transfer
         {
             int Message = MessageNum - 1;
             int MaxMessagesIndex = MailShellCommon.IMAP_Messages.Count() - 1;
-            DebugWriter.Wdbg(DebugLevel.I, "Message number {0}", Message);
+            DebugWriter.WriteDebug(DebugLevel.I, "Message number {0}", Message);
             if (Message < 0)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Trying to access message 0 or less than 0.");
+                DebugWriter.WriteDebug(DebugLevel.E, "Trying to access message 0 or less than 0.");
                 TextWriterColor.Write(Translate.DoTranslation("Message number may not be negative or zero."), true, ColorTools.ColTypes.Error);
                 return;
             }
             else if (Message > MaxMessagesIndex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", Message, MaxMessagesIndex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", Message, MaxMessagesIndex);
                 TextWriterColor.Write(Translate.DoTranslation("Message specified is not found."), true, ColorTools.ColTypes.Error);
                 return;
             }
@@ -68,7 +68,7 @@ namespace KS.Network.Mail.Transfer
             lock (MailLogin.IMAP_Client.SyncRoot)
             {
                 // Get message
-                DebugWriter.Wdbg(DebugLevel.I, "Getting message...");
+                DebugWriter.WriteDebug(DebugLevel.I, "Getting message...");
                 MimeMessage Msg;
                 if (!string.IsNullOrEmpty(MailShellCommon.IMAP_CurrentDirectory) & !(MailShellCommon.IMAP_CurrentDirectory == "Inbox"))
                 {
@@ -84,32 +84,32 @@ namespace KS.Network.Mail.Transfer
                 ConsoleBase.ConsoleWrapper.WriteLine();
 
                 // Print all the addresses that sent the mail
-                DebugWriter.Wdbg(DebugLevel.I, "{0} senders.", Msg.From.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "{0} senders.", Msg.From.Count);
                 foreach (InternetAddress Address in Msg.From)
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Address: {0} ({1})", Address.Name, Address.Encoding.EncodingName);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Address: {0} ({1})", Address.Name, Address.Encoding.EncodingName);
                     TextWriterColor.Write(Translate.DoTranslation("- From {0}"), true, ColorTools.ColTypes.ListEntry, Address.ToString());
                 }
 
                 // Print all the addresses that received the mail
-                DebugWriter.Wdbg(DebugLevel.I, "{0} receivers.", Msg.To.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "{0} receivers.", Msg.To.Count);
                 foreach (InternetAddress Address in Msg.To)
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Address: {0} ({1})", Address.Name, Address.Encoding.EncodingName);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Address: {0} ({1})", Address.Name, Address.Encoding.EncodingName);
                     TextWriterColor.Write(Translate.DoTranslation("- To {0}"), true, ColorTools.ColTypes.ListEntry, Address.ToString());
                 }
 
                 // Print the date and time when the user received the mail
-                DebugWriter.Wdbg(DebugLevel.I, "Rendering time and date of {0}.", Msg.Date.DateTime.ToString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Rendering time and date of {0}.", Msg.Date.DateTime.ToString());
                 TextWriterColor.Write(Translate.DoTranslation("- Sent at {0} in {1}"), true, ColorTools.ColTypes.ListEntry, TimeDateRenderers.RenderTime(Msg.Date.DateTime), TimeDateRenderers.RenderDate(Msg.Date.DateTime));
 
                 // Prepare subject
                 ConsoleBase.ConsoleWrapper.WriteLine();
-                DebugWriter.Wdbg(DebugLevel.I, "Subject length: {0}, {1}", Msg.Subject.Length, Msg.Subject);
+                DebugWriter.WriteDebug(DebugLevel.I, "Subject length: {0}, {1}", Msg.Subject.Length, Msg.Subject);
                 TextWriterColor.Write($"- {Msg.Subject}", false, ColorTools.ColTypes.ListEntry);
 
                 // Write a sign after the subject if attachments are found
-                DebugWriter.Wdbg(DebugLevel.I, "Attachments count: {0}", Msg.Attachments.Count());
+                DebugWriter.WriteDebug(DebugLevel.I, "Attachments count: {0}", Msg.Attachments.Count());
                 if (Msg.Attachments.Count() > 0)
                 {
                     TextWriterColor.Write(" - [*]", true, ColorTools.ColTypes.ListEntry);
@@ -121,33 +121,33 @@ namespace KS.Network.Mail.Transfer
 
                 // Prepare body
                 ConsoleBase.ConsoleWrapper.WriteLine();
-                DebugWriter.Wdbg(DebugLevel.I, "Displaying body...");
+                DebugWriter.WriteDebug(DebugLevel.I, "Displaying body...");
                 var DecryptedMessage = default(Dictionary<string, MimeEntity>);
-                DebugWriter.Wdbg(DebugLevel.I, "To decrypt: {0}", Decrypt);
+                DebugWriter.WriteDebug(DebugLevel.I, "To decrypt: {0}", Decrypt);
                 if (Decrypt)
                 {
                     DecryptedMessage = DecryptMessage(Msg);
-                    DebugWriter.Wdbg(DebugLevel.I, "Decrypted messages length: {0}", DecryptedMessage.Count);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Decrypted messages length: {0}", DecryptedMessage.Count);
                     var DecryptedEntity = DecryptedMessage["Body"];
                     var DecryptedStream = new MemoryStream();
-                    DebugWriter.Wdbg(DebugLevel.I, $"Decrypted message type: {(DecryptedEntity is Multipart ? "Multipart" : "Singlepart")}");
+                    DebugWriter.WriteDebug(DebugLevel.I, $"Decrypted message type: {(DecryptedEntity is Multipart ? "Multipart" : "Singlepart")}");
                     if (DecryptedEntity is Multipart)
                     {
                         Multipart MultiEntity = (Multipart)DecryptedEntity;
-                        DebugWriter.Wdbg(DebugLevel.I, $"Decrypted message entity is {(MultiEntity is not null ? "multipart" : "nothing")}");
+                        DebugWriter.WriteDebug(DebugLevel.I, $"Decrypted message entity is {(MultiEntity is not null ? "multipart" : "nothing")}");
                         if (MultiEntity is not null)
                         {
                             for (int EntityNumber = 0, loopTo = MultiEntity.Count - 1; EntityNumber <= loopTo; EntityNumber++)
                             {
-                                DebugWriter.Wdbg(DebugLevel.I, $"Entity number {EntityNumber} is {(MultiEntity[EntityNumber].IsAttachment ? "an attachment" : "not an attachment")}");
+                                DebugWriter.WriteDebug(DebugLevel.I, $"Entity number {EntityNumber} is {(MultiEntity[EntityNumber].IsAttachment ? "an attachment" : "not an attachment")}");
                                 if (!MultiEntity[EntityNumber].IsAttachment)
                                 {
                                     MultiEntity[EntityNumber].WriteTo(DecryptedStream, true);
-                                    DebugWriter.Wdbg(DebugLevel.I, "Written {0} bytes to stream.", DecryptedStream.Length);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Written {0} bytes to stream.", DecryptedStream.Length);
                                     DecryptedStream.Position = 0L;
                                     var DecryptedByte = new byte[(int)(DecryptedStream.Length + 1)];
                                     DecryptedStream.Read(DecryptedByte, 0, (int)DecryptedStream.Length);
-                                    DebugWriter.Wdbg(DebugLevel.I, "Written {0} bytes to buffer.", DecryptedByte.Length);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Written {0} bytes to buffer.", DecryptedByte.Length);
                                     TextWriterColor.Write(Encoding.Default.GetString(DecryptedByte), true, ColorTools.ColTypes.ListValue);
                                 }
                             }
@@ -156,11 +156,11 @@ namespace KS.Network.Mail.Transfer
                     else
                     {
                         DecryptedEntity.WriteTo(DecryptedStream, true);
-                        DebugWriter.Wdbg(DebugLevel.I, "Written {0} bytes to stream.", DecryptedStream.Length);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Written {0} bytes to stream.", DecryptedStream.Length);
                         DecryptedStream.Position = 0L;
                         var DecryptedByte = new byte[(int)(DecryptedStream.Length + 1)];
                         DecryptedStream.Read(DecryptedByte, 0, (int)DecryptedStream.Length);
-                        DebugWriter.Wdbg(DebugLevel.I, "Written {0} bytes to buffer.", DecryptedByte.Length);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Written {0} bytes to buffer.", DecryptedByte.Length);
                         TextWriterColor.Write(Encoding.Default.GetString(DecryptedByte), true, ColorTools.ColTypes.ListValue);
                     }
                 }
@@ -177,29 +177,29 @@ namespace KS.Network.Mail.Transfer
                     var AttachmentEntities = new List<MimeEntity>();
                     if (Decrypt)
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Parsing attachments...");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Parsing attachments...");
                         for (int DecryptedEntityNumber = 0, loopTo1 = DecryptedMessage.Count - 1; DecryptedEntityNumber <= loopTo1; DecryptedEntityNumber++)
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Is entity number {0} an attachment? {1}", DecryptedEntityNumber, DecryptedMessage.Keys.ElementAtOrDefault(DecryptedEntityNumber).Contains("Attachment"));
-                            DebugWriter.Wdbg(DebugLevel.I, "Is entity number {0} a body that is a multipart? {1}", DecryptedEntityNumber, DecryptedMessage.Keys.ElementAtOrDefault(DecryptedEntityNumber) == "Body" & DecryptedMessage["Body"] is Multipart);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Is entity number {0} an attachment? {1}", DecryptedEntityNumber, DecryptedMessage.Keys.ElementAtOrDefault(DecryptedEntityNumber).Contains("Attachment"));
+                            DebugWriter.WriteDebug(DebugLevel.I, "Is entity number {0} a body that is a multipart? {1}", DecryptedEntityNumber, DecryptedMessage.Keys.ElementAtOrDefault(DecryptedEntityNumber) == "Body" & DecryptedMessage["Body"] is Multipart);
                             if (DecryptedMessage.Keys.ElementAtOrDefault(DecryptedEntityNumber).Contains("Attachment"))
                             {
-                                DebugWriter.Wdbg(DebugLevel.I, "Adding entity {0} to attachment entities...", DecryptedEntityNumber);
+                                DebugWriter.WriteDebug(DebugLevel.I, "Adding entity {0} to attachment entities...", DecryptedEntityNumber);
                                 AttachmentEntities.Add(DecryptedMessage.Values.ElementAtOrDefault(DecryptedEntityNumber));
                             }
                             else if (DecryptedMessage.Keys.ElementAtOrDefault(DecryptedEntityNumber) == "Body" & DecryptedMessage["Body"] is Multipart)
                             {
                                 Multipart MultiEntity = (Multipart)DecryptedMessage["Body"];
-                                DebugWriter.Wdbg(DebugLevel.I, $"Decrypted message entity is {(MultiEntity is not null ? "multipart" : "nothing")}");
+                                DebugWriter.WriteDebug(DebugLevel.I, $"Decrypted message entity is {(MultiEntity is not null ? "multipart" : "nothing")}");
                                 if (MultiEntity is not null)
                                 {
-                                    DebugWriter.Wdbg(DebugLevel.I, "{0} entities found.", MultiEntity.Count);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "{0} entities found.", MultiEntity.Count);
                                     for (int EntityNumber = 0, loopTo2 = MultiEntity.Count - 1; EntityNumber <= loopTo2; EntityNumber++)
                                     {
-                                        DebugWriter.Wdbg(DebugLevel.I, $"Entity number {EntityNumber} is {(MultiEntity[EntityNumber].IsAttachment ? "an attachment" : "not an attachment")}");
+                                        DebugWriter.WriteDebug(DebugLevel.I, $"Entity number {EntityNumber} is {(MultiEntity[EntityNumber].IsAttachment ? "an attachment" : "not an attachment")}");
                                         if (MultiEntity[EntityNumber].IsAttachment)
                                         {
-                                            DebugWriter.Wdbg(DebugLevel.I, "Adding entity {0} to attachment list...", EntityNumber);
+                                            DebugWriter.WriteDebug(DebugLevel.I, "Adding entity {0} to attachment list...", EntityNumber);
                                             AttachmentEntities.Add(MultiEntity[EntityNumber]);
                                         }
                                     }
@@ -213,15 +213,15 @@ namespace KS.Network.Mail.Transfer
                     }
                     foreach (MimeEntity Attachment in AttachmentEntities)
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Attachment ID: {0}", Attachment.ContentId);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Attachment ID: {0}", Attachment.ContentId);
                         if (Attachment is MessagePart)
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Attachment is a message.");
+                            DebugWriter.WriteDebug(DebugLevel.I, "Attachment is a message.");
                             TextWriterColor.Write($"- {Attachment.ContentDisposition?.FileName}", true, ColorTools.ColTypes.Neutral);
                         }
                         else
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Attachment is a file.");
+                            DebugWriter.WriteDebug(DebugLevel.I, "Attachment is a file.");
                             MimePart AttachmentPart = (MimePart)Attachment;
                             TextWriterColor.Write($"- {AttachmentPart.FileName}", true, ColorTools.ColTypes.Neutral);
                         }
@@ -238,34 +238,34 @@ namespace KS.Network.Mail.Transfer
         public static Dictionary<string, MimeEntity> DecryptMessage(MimeMessage Text)
         {
             var EncryptedDict = new Dictionary<string, MimeEntity>();
-            DebugWriter.Wdbg(DebugLevel.I, $"Encrypted message type: {(Text.Body is MultipartEncrypted ? "Multipart" : "Singlepart")}");
+            DebugWriter.WriteDebug(DebugLevel.I, $"Encrypted message type: {(Text.Body is MultipartEncrypted ? "Multipart" : "Singlepart")}");
             if (Text.Body is MultipartEncrypted)
             {
                 MultipartEncrypted Encrypted = (MultipartEncrypted)Text.Body;
-                DebugWriter.Wdbg(DebugLevel.I, $"Message type: {(Encrypted is not null ? "MultipartEncrypted" : "Nothing")}");
-                DebugWriter.Wdbg(DebugLevel.I, "Decrypting...");
+                DebugWriter.WriteDebug(DebugLevel.I, $"Message type: {(Encrypted is not null ? "MultipartEncrypted" : "Nothing")}");
+                DebugWriter.WriteDebug(DebugLevel.I, "Decrypting...");
                 EncryptedDict.Add("Body", Encrypted.Decrypt(new PGPContext()));
             }
             else
             {
-                DebugWriter.Wdbg(DebugLevel.W, "Trying to decrypt plain text. Returning body...");
+                DebugWriter.WriteDebug(DebugLevel.W, "Trying to decrypt plain text. Returning body...");
                 EncryptedDict.Add("Body", Text.Body);
             }
             int AttachmentNumber = 1;
             foreach (MimeEntity TextAttachment in Text.Attachments)
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Attachment number {0}", AttachmentNumber);
-                DebugWriter.Wdbg(DebugLevel.I, $"Encrypted attachment type: {(TextAttachment is MultipartEncrypted ? "Multipart" : "Singlepart")}");
+                DebugWriter.WriteDebug(DebugLevel.I, "Attachment number {0}", AttachmentNumber);
+                DebugWriter.WriteDebug(DebugLevel.I, $"Encrypted attachment type: {(TextAttachment is MultipartEncrypted ? "Multipart" : "Singlepart")}");
                 if (TextAttachment is MultipartEncrypted)
                 {
                     MultipartEncrypted Encrypted = (MultipartEncrypted)TextAttachment;
-                    DebugWriter.Wdbg(DebugLevel.I, $"Attachment type: {(Encrypted is not null ? "MultipartEncrypted" : "Nothing")}");
-                    DebugWriter.Wdbg(DebugLevel.I, "Decrypting...");
+                    DebugWriter.WriteDebug(DebugLevel.I, $"Attachment type: {(Encrypted is not null ? "MultipartEncrypted" : "Nothing")}");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Decrypting...");
                     EncryptedDict.Add("Attachment " + AttachmentNumber, Encrypted.Decrypt(new PGPContext()));
                 }
                 else
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "Trying to decrypt plain attachment. Returning body...");
+                    DebugWriter.WriteDebug(DebugLevel.W, "Trying to decrypt plain attachment. Returning body...");
                     EncryptedDict.Add("Attachment " + AttachmentNumber, TextAttachment);
                 }
                 AttachmentNumber += 1;
@@ -285,13 +285,13 @@ namespace KS.Network.Mail.Transfer
             // Construct a message
             var FinalMessage = new MimeMessage();
             FinalMessage.From.Add(MailboxAddress.Parse(MailLogin.Mail_Authentication.UserName));
-            DebugWriter.Wdbg(DebugLevel.I, "Added sender to FinalMessage.From.");
+            DebugWriter.WriteDebug(DebugLevel.I, "Added sender to FinalMessage.From.");
             FinalMessage.To.Add(MailboxAddress.Parse(Recipient));
-            DebugWriter.Wdbg(DebugLevel.I, "Added address to FinalMessage.To.");
+            DebugWriter.WriteDebug(DebugLevel.I, "Added address to FinalMessage.To.");
             FinalMessage.Subject = Subject;
-            DebugWriter.Wdbg(DebugLevel.I, "Added subject to FinalMessage.Subject.");
+            DebugWriter.WriteDebug(DebugLevel.I, "Added subject to FinalMessage.Subject.");
             FinalMessage.Body = new TextPart(TextFormat.Plain) { Text = Body.ToString() };
-            DebugWriter.Wdbg(DebugLevel.I, "Added body to FinalMessage.Body (plain text). Sending message...");
+            DebugWriter.WriteDebug(DebugLevel.I, "Added body to FinalMessage.Body (plain text). Sending message...");
 
             // Send the message
             lock (MailLogin.SMTP_Client.SyncRoot)
@@ -303,8 +303,8 @@ namespace KS.Network.Mail.Transfer
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "Failed to send message: {0}", ex.Message);
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to send message: {0}", ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
                 }
                 return Convert.ToString(false);
             }
@@ -322,13 +322,13 @@ namespace KS.Network.Mail.Transfer
             // Construct a message
             var FinalMessage = new MimeMessage();
             FinalMessage.From.Add(MailboxAddress.Parse(MailLogin.Mail_Authentication.UserName));
-            DebugWriter.Wdbg(DebugLevel.I, "Added sender to FinalMessage.From.");
+            DebugWriter.WriteDebug(DebugLevel.I, "Added sender to FinalMessage.From.");
             FinalMessage.To.Add(MailboxAddress.Parse(Recipient));
-            DebugWriter.Wdbg(DebugLevel.I, "Added address to FinalMessage.To.");
+            DebugWriter.WriteDebug(DebugLevel.I, "Added address to FinalMessage.To.");
             FinalMessage.Subject = Subject;
-            DebugWriter.Wdbg(DebugLevel.I, "Added subject to FinalMessage.Subject.");
+            DebugWriter.WriteDebug(DebugLevel.I, "Added subject to FinalMessage.Subject.");
             FinalMessage.Body = Body;
-            DebugWriter.Wdbg(DebugLevel.I, "Added body to FinalMessage.Body (plain text). Sending message...");
+            DebugWriter.WriteDebug(DebugLevel.I, "Added body to FinalMessage.Body (plain text). Sending message...");
 
             // Send the message
             lock (MailLogin.SMTP_Client.SyncRoot)
@@ -340,8 +340,8 @@ namespace KS.Network.Mail.Transfer
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "Failed to send message: {0}", ex.Message);
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to send message: {0}", ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
                 }
                 return Convert.ToString(false);
             }
@@ -359,13 +359,13 @@ namespace KS.Network.Mail.Transfer
             // Construct a message
             var FinalMessage = new MimeMessage();
             FinalMessage.From.Add(MailboxAddress.Parse(MailLogin.Mail_Authentication.UserName));
-            DebugWriter.Wdbg(DebugLevel.I, "Added sender to FinalMessage.From.");
+            DebugWriter.WriteDebug(DebugLevel.I, "Added sender to FinalMessage.From.");
             FinalMessage.To.Add(MailboxAddress.Parse(Recipient));
-            DebugWriter.Wdbg(DebugLevel.I, "Added address to FinalMessage.To.");
+            DebugWriter.WriteDebug(DebugLevel.I, "Added address to FinalMessage.To.");
             FinalMessage.Subject = Subject;
-            DebugWriter.Wdbg(DebugLevel.I, "Added subject to FinalMessage.Subject.");
+            DebugWriter.WriteDebug(DebugLevel.I, "Added subject to FinalMessage.Subject.");
             FinalMessage.Body = MultipartEncrypted.Encrypt(new PGPContext(), FinalMessage.To.Mailboxes, Body);
-            DebugWriter.Wdbg(DebugLevel.I, "Added body to FinalMessage.Body (plain text). Sending message...");
+            DebugWriter.WriteDebug(DebugLevel.I, "Added body to FinalMessage.Body (plain text). Sending message...");
 
             // Send the message
             lock (MailLogin.SMTP_Client.SyncRoot)
@@ -377,8 +377,8 @@ namespace KS.Network.Mail.Transfer
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.Wdbg(DebugLevel.E, "Failed to send message: {0}", ex.Message);
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to send message: {0}", ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
                 }
                 return Convert.ToString(false);
             }
@@ -396,16 +396,16 @@ namespace KS.Network.Mail.Transfer
                     if (string.IsNullOrEmpty(MailShellCommon.IMAP_CurrentDirectory) | MailShellCommon.IMAP_CurrentDirectory == "Inbox")
                     {
                         MailLogin.IMAP_Client.Inbox.Open(FolderAccess.ReadWrite);
-                        DebugWriter.Wdbg(DebugLevel.I, "Opened inbox");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Opened inbox");
                         MailShellCommon.IMAP_Messages = MailLogin.IMAP_Client.Inbox.Search(SearchQuery.All).Reverse();
-                        DebugWriter.Wdbg(DebugLevel.I, "Messages count: {0} messages", MailShellCommon.IMAP_Messages.LongCount());
+                        DebugWriter.WriteDebug(DebugLevel.I, "Messages count: {0} messages", MailShellCommon.IMAP_Messages.LongCount());
                     }
                     else
                     {
                         var Folder = MailDirectory.OpenFolder(MailShellCommon.IMAP_CurrentDirectory);
-                        DebugWriter.Wdbg(DebugLevel.I, "Opened {0}", MailShellCommon.IMAP_CurrentDirectory);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Opened {0}", MailShellCommon.IMAP_CurrentDirectory);
                         MailShellCommon.IMAP_Messages = Folder.Search(SearchQuery.All).Reverse();
-                        DebugWriter.Wdbg(DebugLevel.I, "Messages count: {0} messages", MailShellCommon.IMAP_Messages.LongCount());
+                        DebugWriter.WriteDebug(DebugLevel.I, "Messages count: {0} messages", MailShellCommon.IMAP_Messages.LongCount());
                     }
                 }
             }

@@ -66,7 +66,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             catch (Exception ex)
             {
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebugStackTrace(ex);
                 TextWriterColor.Write(ex.Message, true, ColorTools.ColTypes.Error);
             }
         }

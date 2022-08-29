@@ -45,8 +45,8 @@ namespace KS.Shell.Shells.Hex.Commands
                 if (ListArgsOnly.Length == 1)
                 {
                     // We've only provided one range
-                    DebugWriter.Wdbg(DebugLevel.I, "Byte number provided: {0}", ListArgsOnly[0]);
-                    DebugWriter.Wdbg(DebugLevel.I, "Is it numeric? {0}", StringQuery.IsStringNumeric(ListArgsOnly[0]));
+                    DebugWriter.WriteDebug(DebugLevel.I, "Byte number provided: {0}", ListArgsOnly[0]);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Is it numeric? {0}", StringQuery.IsStringNumeric(ListArgsOnly[0]));
                     if (StringQuery.IsStringNumeric(ListArgsOnly[0]))
                     {
                         ByteNumber = Convert.ToInt64(ListArgsOnly[0]);
@@ -55,14 +55,14 @@ namespace KS.Shell.Shells.Hex.Commands
                     else
                     {
                         TextWriterColor.Write(Translate.DoTranslation("The byte number is not numeric."), true, ColorTools.ColTypes.Error);
-                        DebugWriter.Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly[0]);
+                        DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly[0]);
                     }
                 }
                 else
                 {
                     // We've provided two Byte numbers in the range
-                    DebugWriter.Wdbg(DebugLevel.I, "Byte numbers provided: {0}, {1}", ListArgsOnly[0], ListArgsOnly[1]);
-                    DebugWriter.Wdbg(DebugLevel.I, "Is it numeric? {0}", StringQuery.IsStringNumeric(ListArgsOnly[0]), StringQuery.IsStringNumeric(ListArgsOnly[1]));
+                    DebugWriter.WriteDebug(DebugLevel.I, "Byte numbers provided: {0}, {1}", ListArgsOnly[0], ListArgsOnly[1]);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Is it numeric? {0}", StringQuery.IsStringNumeric(ListArgsOnly[0]), StringQuery.IsStringNumeric(ListArgsOnly[1]));
                     if (StringQuery.IsStringNumeric(ListArgsOnly[0]) & StringQuery.IsStringNumeric(ListArgsOnly[1]))
                     {
                         long ByteNumberStart = Convert.ToInt64(ListArgsOnly[0]);
@@ -73,7 +73,7 @@ namespace KS.Shell.Shells.Hex.Commands
                     else
                     {
                         TextWriterColor.Write(Translate.DoTranslation("The byte number is not numeric."), true, ColorTools.ColTypes.Error);
-                        DebugWriter.Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly[0]);
+                        DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly[0]);
                     }
                 }
             }

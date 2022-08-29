@@ -36,9 +36,9 @@ namespace KS.Misc.Beautifiers
         public static string MinifyJson(string JsonFile)
         {
             // Neutralize the file path
-            DebugWriter.Wdbg(DebugLevel.I, "Neutralizing json file {0}...", JsonFile);
+            DebugWriter.WriteDebug(DebugLevel.I, "Neutralizing json file {0}...", JsonFile);
             JsonFile = Filesystem.NeutralizePath(JsonFile, true);
-            DebugWriter.Wdbg(DebugLevel.I, "Got json file {0}...", JsonFile);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got json file {0}...", JsonFile);
 
             // Try to minify JSON
             string JsonFileContents = File.ReadAllText(JsonFile);
@@ -54,11 +54,11 @@ namespace KS.Misc.Beautifiers
         {
             // Make an instance of JToken with this text
             var JsonToken = JToken.Parse(JsonText);
-            DebugWriter.Wdbg(DebugLevel.I, "Created a token with text length of {0}", JsonText.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "Created a token with text length of {0}", JsonText.Length);
 
             // Minify JSON
             string MinifiedJson = JsonConvert.SerializeObject(JsonToken);
-            DebugWriter.Wdbg(DebugLevel.I, "Minified the JSON text. Length: {0}", MinifiedJson.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "Minified the JSON text. Length: {0}", MinifiedJson.Length);
             return MinifiedJson;
         }
 

@@ -83,8 +83,8 @@ namespace KS.Shell.Shells.Test
                 catch (Exception ex)
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Error in test shell: {0}"), true, ColorTools.ColTypes.Error, ex.Message);
-                    DebugWriter.Wdbg(DebugLevel.E, "Error: {0}", ex.Message);
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Error: {0}", ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
         }

@@ -1294,7 +1294,7 @@ namespace KS.Kernel.Configuration
             catch (Exception ex)
             {
                 Kernel.KernelEventManager.RaiseConfigSaveError(ex);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
         }
@@ -1338,7 +1338,7 @@ namespace KS.Kernel.Configuration
             // Parse configuration.
             // NOTE: Question marks between parentheses are for nullable types.
             Config.ConfigToken = (JObject)ConfigToken;
-            DebugWriter.Wdbg(DebugLevel.I, "Config loaded with {0} sections", ConfigToken.Count());
+            DebugWriter.WriteDebug(DebugLevel.I, "Config loaded with {0} sections", ConfigToken.Count());
 
             // ----------------------------- Important configuration -----------------------------
             // Set background color flag
@@ -1356,14 +1356,14 @@ namespace KS.Kernel.Configuration
             bool UncoloredDetected = ConfigToken["Shell"]["Colored Shell"] != null && !ConfigToken["Shell"]["Colored Shell"].ToObject<bool>();
             if (UncoloredDetected)
             {
-                DebugWriter.Wdbg(DebugLevel.W, "Detected uncolored shell. Removing colors...");
+                DebugWriter.WriteDebug(DebugLevel.W, "Detected uncolored shell. Removing colors...");
                 ThemeTools.ApplyThemeFromResources("LinuxUncolored");
                 Shell.Shell.ColoredShell = false;
             }
 
             // ----------------------------- General configuration -----------------------------
             // Colors Section
-            DebugWriter.Wdbg(DebugLevel.I, "Loading colors...");
+            DebugWriter.WriteDebug(DebugLevel.I, "Loading colors...");
             if (Shell.Shell.ColoredShell)
             {
                 // We use New Color() to parse entered color. This is to ensure that the kernel can use the correct VT sequence.
@@ -1408,7 +1408,7 @@ namespace KS.Kernel.Configuration
             }
 
             // General Section
-            DebugWriter.Wdbg(DebugLevel.I, "Parsing general section...");
+            DebugWriter.WriteDebug(DebugLevel.I, "Parsing general section...");
             Flags.Maintenance = (bool)ConfigToken["General"]["Maintenance Mode"];
             Flags.ArgsOnBoot = (bool)ConfigToken["General"]["Prompt for Arguments on Boot"];
             Flags.CheckUpdateStart = (bool)ConfigToken["General"]["Check for Updates on Startup"];
@@ -1431,7 +1431,7 @@ namespace KS.Kernel.Configuration
             Flags.SimulateNoAPM = (bool)ConfigToken["General"]["Simulate No APM Mode"];
 
             // Login Section
-            DebugWriter.Wdbg(DebugLevel.I, "Parsing login section...");
+            DebugWriter.WriteDebug(DebugLevel.I, "Parsing login section...");
             Flags.ClearOnLogin = (bool)ConfigToken["Login"]["Clear Screen on Log-in"];
             Flags.ShowMOTD = (bool)ConfigToken["Login"]["Show MOTD on Log-in"];
             Flags.ShowAvailableUsers = (bool)ConfigToken["Login"]["Show available usernames"];
@@ -1448,7 +1448,7 @@ namespace KS.Kernel.Configuration
             UserManagement.IncludeDisabled = (bool)ConfigToken["Login"]["Include disabled users"];
 
             // Shell Section
-            DebugWriter.Wdbg(DebugLevel.I, "Parsing shell section...");
+            DebugWriter.WriteDebug(DebugLevel.I, "Parsing shell section...");
             Flags.SimHelp = (bool)ConfigToken["Shell"]["Simplified Help Command"];
             CurrentDirectory.CurrentDir = (string)ConfigToken["Shell"]["Current Directory"] ?? Paths.HomePath;
             Shell.Shell.PathsToLookup = !string.IsNullOrEmpty((string)ConfigToken["Shell"]["Lookup Directories"]) ? ConfigToken["Shell"]["Lookup Directories"].ToString().ReleaseDoubleQuotes() : Environment.GetEnvironmentVariable("PATH");
@@ -1468,7 +1468,7 @@ namespace KS.Kernel.Configuration
             ChoiceStyle.DefaultChoiceOutputType = (ConfigToken["Shell"]["Default choice output type"] != null) ? (Enum.TryParse((string)ConfigToken["Shell"]["Default choice output type"], out ChoiceStyle.DefaultChoiceOutputType) ? ChoiceStyle.DefaultChoiceOutputType : ChoiceStyle.ChoiceOutputType.Modern) : ChoiceStyle.ChoiceOutputType.Modern;
 
             // Filesystem Section
-            DebugWriter.Wdbg(DebugLevel.I, "Parsing filesystem section...");
+            DebugWriter.WriteDebug(DebugLevel.I, "Parsing filesystem section...");
             DebugManager.DebugQuota = (double)(int.TryParse((string)ConfigToken["Filesystem"]["Debug Size Quota in Bytes"], out _) ? (int)ConfigToken["Filesystem"]["Debug Size Quota in Bytes"] : 1073741824);
             Flags.FullParseMode = (bool)ConfigToken["Filesystem"]["Size parse mode"];
             Flags.HiddenFiles = (bool)ConfigToken["Filesystem"]["Show Hidden Files"];
@@ -1482,13 +1482,13 @@ namespace KS.Kernel.Configuration
             Listing.ShowTotalSizeInList = (bool)ConfigToken["Filesystem"]["Show total size in list"];
 
             // Hardware Section
-            DebugWriter.Wdbg(DebugLevel.I, "Parsing hardware section...");
+            DebugWriter.WriteDebug(DebugLevel.I, "Parsing hardware section...");
             Flags.QuietHardwareProbe = (bool)ConfigToken["Hardware"]["Quiet Probe"];
             Flags.FullHardwareProbe = (bool)ConfigToken["Hardware"]["Full Probe"];
             Flags.VerboseHardwareProbe = (bool)ConfigToken["Hardware"]["Verbose Probe"];
 
             // Network Section
-            DebugWriter.Wdbg(DebugLevel.I, "Parsing network section...");
+            DebugWriter.WriteDebug(DebugLevel.I, "Parsing network section...");
             RemoteDebugger.DebugPort = int.TryParse((string)ConfigToken["Network"]["Debug Port"], out _) ? (int)ConfigToken["Network"]["Debug Port"] : 3014;
             NetworkTools.DownloadRetries = int.TryParse((string)ConfigToken["Network"]["Download Retry Times"], out _) ? (int)ConfigToken["Network"]["Download Retry Times"] : 3;
             NetworkTools.UploadRetries = int.TryParse((string)ConfigToken["Network"]["Upload Retry Times"], out _) ? (int)ConfigToken["Network"]["Upload Retry Times"] : 3;
@@ -2200,7 +2200,7 @@ namespace KS.Kernel.Configuration
             SplashSettings.PowerLineProgressProgressTextLocation = ConfigToken["Splash"]["PowerLineProgress"]["Progress text location"] != null ? Enum.TryParse((string)ConfigToken["Splash"]["PowerLineProgress"]["Progress text location"], out SplashSettings.PowerLineProgressProgressTextLocation) ? SplashSettings.PowerLineProgressProgressTextLocation : TextLocation.Top : TextLocation.Top;
 
             // Misc Section
-            DebugWriter.Wdbg(DebugLevel.I, "Parsing misc section...");
+            DebugWriter.WriteDebug(DebugLevel.I, "Parsing misc section...");
             Flags.CornerTimeDate = (bool)ConfigToken["Misc"]["Show Time/Date on Upper Right Corner"];
             Flags.StartScroll = (bool)ConfigToken["Misc"]["Marquee on startup"];
             Flags.LongTimeDate = (bool)ConfigToken["Misc"]["Long Time and Date"];
@@ -2300,18 +2300,18 @@ namespace KS.Kernel.Configuration
             catch (NullReferenceException nre)
             {
                 // Rare, but repair config if an NRE is caught.
-                DebugWriter.Wdbg(DebugLevel.E, "Error trying to read config: {0}", nre.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to read config: {0}", nre.Message);
                 ConfigTools.RepairConfig();
             }
             catch (Exception ex)
             {
                 Kernel.KernelEventManager.RaiseConfigReadError(ex);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebugStackTrace(ex);
                 if (!SplashReport.KernelBooted)
                 {
                     Notifications.NotifySend(new Notification(Translate.DoTranslation("Error loading settings"), Translate.DoTranslation("There is an error while loading settings. You may need to check the settings file."), Notifications.NotifPriority.Medium, Notifications.NotifType.Normal));
                 }
-                DebugWriter.Wdbg(DebugLevel.E, "Error trying to read config: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to read config: {0}", ex.Message);
                 throw new Exceptions.ConfigException(Translate.DoTranslation("There is an error trying to read configuration: {0}."), ex, ex.Message);
             }
             return false;
@@ -2325,7 +2325,7 @@ namespace KS.Kernel.Configuration
             // Make a config file if not found
             if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.Configuration)))
             {
-                DebugWriter.Wdbg(DebugLevel.E, "No config file found. Creating...");
+                DebugWriter.WriteDebug(DebugLevel.E, "No config file found. Creating...");
                 CreateConfig();
             }
 
@@ -2337,7 +2337,7 @@ namespace KS.Kernel.Configuration
             catch (Exceptions.ConfigException cex)
             {
                 TextWriterColor.Write(cex.Message, true, ColorTools.ColTypes.Error);
-                DebugWriter.WStkTrc(cex);
+                DebugWriter.WriteDebugStackTrace(cex);
             }
         }
 

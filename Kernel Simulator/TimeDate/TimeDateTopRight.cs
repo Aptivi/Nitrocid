@@ -58,12 +58,12 @@ namespace KS.TimeDate
             }
             catch (ThreadInterruptedException)
             {
-                DebugWriter.Wdbg(DebugLevel.W, "Aborting time/date change thread.");
+                DebugWriter.WriteDebug(DebugLevel.W, "Aborting time/date change thread.");
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Fatal error in time/date changer: {0}", ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Fatal error in time/date changer: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
             }
         }
 

@@ -244,7 +244,7 @@ namespace KS.Misc.Screensaver.Displays
             RandomDriver = new Random();
             ColorTools.SetConsoleColor(new Color(FaderSettings.FaderBackgroundColor), true, true);
             ConsoleBase.ConsoleWrapper.Clear();
-            DebugWriter.Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
+            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
             FaderSettingsInstance = new Animations.Fader.FaderSettings()
             {
                 FaderDelay = FaderSettings.FaderDelay,

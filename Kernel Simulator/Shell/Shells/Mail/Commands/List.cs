@@ -40,7 +40,7 @@ namespace KS.Shell.Shells.Mail.Commands
         {
             if (ListArgsOnly.Length > 0)
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Page is numeric? {0}", StringQuery.IsStringNumeric(ListArgsOnly[0]));
+                DebugWriter.WriteDebug(DebugLevel.I, "Page is numeric? {0}", StringQuery.IsStringNumeric(ListArgsOnly[0]));
                 if (StringQuery.IsStringNumeric(ListArgsOnly[0]))
                 {
                     MailManager.MailListMessages(Convert.ToInt32(ListArgsOnly[0]));

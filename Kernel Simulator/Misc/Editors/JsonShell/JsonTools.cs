@@ -43,19 +43,19 @@ namespace KS.Misc.Editors.JsonShell
         {
             try
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Trying to open file {0}...", File);
+                DebugWriter.WriteDebug(DebugLevel.I, "Trying to open file {0}...", File);
                 JsonShellCommon.JsonShell_FileStream = new FileStream(File, FileMode.Open);
                 var JsonFileReader = new StreamReader(JsonShellCommon.JsonShell_FileStream);
                 string JsonFileContents = JsonFileReader.ReadToEndAndSeek();
                 JsonShellCommon.JsonShell_FileToken = JToken.Parse(!string.IsNullOrWhiteSpace(JsonFileContents) ? JsonFileContents : "{}");
                 JsonShellCommon.JsonShell_FileTokenOrig = JToken.Parse(!string.IsNullOrWhiteSpace(JsonFileContents) ? JsonFileContents : "{}");
-                DebugWriter.Wdbg(DebugLevel.I, "File {0} is open. Length: {1}, Pos: {2}", File, JsonShellCommon.JsonShell_FileStream.Length, JsonShellCommon.JsonShell_FileStream.Position);
+                DebugWriter.WriteDebug(DebugLevel.I, "File {0} is open. Length: {1}, Pos: {2}", File, JsonShellCommon.JsonShell_FileStream.Length, JsonShellCommon.JsonShell_FileStream.Position);
                 return true;
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Open file {0} failed: {1}", File, ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Open file {0} failed: {1}", File, ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
         }
@@ -68,18 +68,18 @@ namespace KS.Misc.Editors.JsonShell
         {
             try
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Trying to close file...");
+                DebugWriter.WriteDebug(DebugLevel.I, "Trying to close file...");
                 JsonShellCommon.JsonShell_FileStream.Close();
                 JsonShellCommon.JsonShell_FileStream = null;
-                DebugWriter.Wdbg(DebugLevel.I, "File is no longer open.");
+                DebugWriter.WriteDebug(DebugLevel.I, "File is no longer open.");
                 JsonShellCommon.JsonShell_FileToken = JToken.Parse("{}");
                 JsonShellCommon.JsonShell_FileTokenOrig = JToken.Parse("{}");
                 return true;
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Closing file failed: {0}", ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Closing file failed: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
         }
@@ -101,14 +101,14 @@ namespace KS.Misc.Editors.JsonShell
         {
             try
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Trying to save file...");
+                DebugWriter.WriteDebug(DebugLevel.I, "Trying to save file...");
                 JsonShellCommon.JsonShell_FileStream.SetLength(0L);
-                DebugWriter.Wdbg(DebugLevel.I, "Length set to 0.");
+                DebugWriter.WriteDebug(DebugLevel.I, "Length set to 0.");
                 var FileLinesByte = Encoding.Default.GetBytes(JsonConvert.SerializeObject(JsonShellCommon.JsonShell_FileToken, Formatting));
-                DebugWriter.Wdbg(DebugLevel.I, "Converted lines to bytes. Length: {0}", FileLinesByte.Length);
+                DebugWriter.WriteDebug(DebugLevel.I, "Converted lines to bytes. Length: {0}", FileLinesByte.Length);
                 JsonShellCommon.JsonShell_FileStream.Write(FileLinesByte, 0, FileLinesByte.Length);
                 JsonShellCommon.JsonShell_FileStream.Flush();
-                DebugWriter.Wdbg(DebugLevel.I, "File is saved.");
+                DebugWriter.WriteDebug(DebugLevel.I, "File is saved.");
                 if (ClearJson)
                 {
                     JsonShellCommon.JsonShell_FileToken = JToken.Parse("{}");
@@ -119,8 +119,8 @@ namespace KS.Misc.Editors.JsonShell
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Saving file failed: {0}", ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Saving file failed: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
         }
@@ -142,7 +142,7 @@ namespace KS.Misc.Editors.JsonShell
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
         }
@@ -187,11 +187,11 @@ namespace KS.Misc.Editors.JsonShell
         /// <param name="Value">The value for the new property</param>
         public static void JsonShell_AddNewProperty(string ParentProperty, string Key, JToken Value)
         {
-            DebugWriter.Wdbg(DebugLevel.I, "Old file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
+            DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
             var TargetToken = JsonShell_GetProperty(ParentProperty);
             JObject TokenObject = (JObject)TargetToken;
             TokenObject.Add(Key, Value);
-            DebugWriter.Wdbg(DebugLevel.I, "New file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
+            DebugWriter.WriteDebug(DebugLevel.I, "New file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
         }
 
         /// <summary>
@@ -200,10 +200,10 @@ namespace KS.Misc.Editors.JsonShell
         /// <param name="Property">The property. You can use JSONPath.</param>
         public static void JsonShell_RemoveProperty(string Property)
         {
-            DebugWriter.Wdbg(DebugLevel.I, "Old file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
+            DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
             var TargetToken = JsonShell_GetProperty(Property);
             TargetToken.Parent.Remove();
-            DebugWriter.Wdbg(DebugLevel.I, "New file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
+            DebugWriter.WriteDebug(DebugLevel.I, "New file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
         }
 
         /// <summary>

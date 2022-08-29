@@ -537,7 +537,7 @@ namespace KS.Misc.Screensaver.Displays
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
             ConsoleBase.ConsoleWrapper.Clear();
-            DebugWriter.Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
+            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
         }
 
         public override void ScreensaverLogic()
@@ -556,11 +556,11 @@ namespace KS.Misc.Screensaver.Displays
             int RampFrameStartWidth = 4;
             int RampFrameEndWidth = ConsoleBase.ConsoleWrapper.WindowWidth - RampFrameStartWidth;
             int RampFrameSpaces = RampFrameEndWidth - RampFrameStartWidth;
-            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Start width: {0}, End width: {1}, Spaces: {2}", RampFrameStartWidth, RampFrameEndWidth, RampFrameSpaces);
+            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Start width: {0}, End width: {1}, Spaces: {2}", RampFrameStartWidth, RampFrameEndWidth, RampFrameSpaces);
 
             // Let the ramp be printed in the center
             int RampCenterPosition = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d);
-            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Center position: {0}", RampCenterPosition);
+            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Center position: {0}", RampCenterPosition);
 
             // Draw the frame
             if (!ResizeSyncing)

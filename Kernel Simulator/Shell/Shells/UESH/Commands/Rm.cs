@@ -43,17 +43,17 @@ namespace KS.Shell.Shells.UESH.Commands
                 string NeutPath = Filesystem.NeutralizePath(Path);
                 if (Checking.FileExists(NeutPath))
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "{0} is a file. Removing...", Path);
+                    DebugWriter.WriteDebug(DebugLevel.I, "{0} is a file. Removing...", Path);
                     Removing.RemoveFile(Path);
                 }
                 else if (Checking.FolderExists(NeutPath))
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "{0} is a folder. Removing...", Path);
+                    DebugWriter.WriteDebug(DebugLevel.I, "{0} is a folder. Removing...", Path);
                     Removing.RemoveDirectory(Path);
                 }
                 else
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "Trying to remove {0} which is not found.", Path);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Trying to remove {0} which is not found.", Path);
                     TextWriterColor.Write(Translate.DoTranslation("Can't remove {0} because it doesn't exist."), true, ColorTools.ColTypes.Error, Path);
                 }
             }

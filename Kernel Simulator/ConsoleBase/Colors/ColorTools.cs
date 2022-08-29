@@ -236,7 +236,7 @@ namespace KS.ConsoleBase.Colors
         /// </summary>
         public static void ResetColors()
         {
-            DebugWriter.Wdbg(DebugLevel.I, "Resetting colors");
+            DebugWriter.WriteDebug(DebugLevel.I, "Resetting colors");
             var DefInfo = new ThemeInfo("_Default");
             InputColor = DefInfo.ThemeInputColor;
             LicenseColor = DefInfo.ThemeLicenseColor;
@@ -289,13 +289,13 @@ namespace KS.ConsoleBase.Colors
         {
             try
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Filling background with background color");
+                DebugWriter.WriteDebug(DebugLevel.I, "Filling background with background color");
                 SetConsoleColor(BackgroundColor, true);
                 ConsoleWrapper.Clear();
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Failed to set background: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to set background: {0}", ex.Message);
             }
         }
 
@@ -611,7 +611,7 @@ namespace KS.ConsoleBase.Colors
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     Kernel.Kernel.KernelEventManager.RaiseColorSetError(ColorSetErrorReasons.InvalidColors);
                     throw new Kernel.Exceptions.ColorException(Translate.DoTranslation("One or more of the colors is invalid.") + " {0}", ex, ex.Message);
                 }
@@ -950,8 +950,8 @@ namespace KS.ConsoleBase.Colors
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Failed trying to parse color: {0}", ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed trying to parse color: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
         }
@@ -970,8 +970,8 @@ namespace KS.ConsoleBase.Colors
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Failed trying to parse color: {0}", ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed trying to parse color: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
         }
@@ -992,8 +992,8 @@ namespace KS.ConsoleBase.Colors
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Failed trying to parse color: {0}", ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed trying to parse color: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
         }

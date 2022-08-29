@@ -64,7 +64,7 @@ namespace KS.Shell.Shells.UESH.Commands
                             }
                             catch (Exception ex)
                             {
-                                DebugWriter.WStkTrc(ex);
+                                DebugWriter.WriteDebugStackTrace(ex);
                                 TextWriterColor.Write(Translate.DoTranslation("Failed to add or remove an event.") + " {0}", true, ColorTools.ColTypes.Error, ex.Message);
                             }
                         }
@@ -100,7 +100,7 @@ namespace KS.Shell.Shells.UESH.Commands
                                             }
                                             catch (Exception ex)
                                             {
-                                                DebugWriter.WStkTrc(ex);
+                                                DebugWriter.WriteDebugStackTrace(ex);
                                                 TextWriterColor.Write(Translate.DoTranslation("Failed to add an event.") + " {0}", true, ColorTools.ColTypes.Error, ex.Message);
                                             }
                                         }
@@ -126,7 +126,7 @@ namespace KS.Shell.Shells.UESH.Commands
                                             }
                                             catch (Exception ex)
                                             {
-                                                DebugWriter.WStkTrc(ex);
+                                                DebugWriter.WriteDebugStackTrace(ex);
                                                 TextWriterColor.Write(Translate.DoTranslation("Failed to remove an event.") + " {0}", true, ColorTools.ColTypes.Error, ex.Message);
                                             }
                                         }
@@ -190,7 +190,7 @@ namespace KS.Shell.Shells.UESH.Commands
                                             }
                                             catch (Exception ex)
                                             {
-                                                DebugWriter.WStkTrc(ex);
+                                                DebugWriter.WriteDebugStackTrace(ex);
                                                 TextWriterColor.Write(Translate.DoTranslation("Failed to add a reminder.") + " {0}", true, ColorTools.ColTypes.Error, ex.Message);
                                             }
                                         }
@@ -216,7 +216,7 @@ namespace KS.Shell.Shells.UESH.Commands
                                             }
                                             catch (Exception ex)
                                             {
-                                                DebugWriter.WStkTrc(ex);
+                                                DebugWriter.WriteDebugStackTrace(ex);
                                                 TextWriterColor.Write(Translate.DoTranslation("Failed to remove a reminder.") + " {0}", true, ColorTools.ColTypes.Error, ex.Message);
                                             }
                                         }

@@ -45,20 +45,20 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             catch (System.Security.SecurityException sex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Security error: {0} ({1})", sex.Message, sex.PermissionType);
+                DebugWriter.WriteDebug(DebugLevel.E, "Security error: {0} ({1})", sex.Message, sex.PermissionType);
                 TextWriterColor.Write(Translate.DoTranslation("You are unauthorized to set current directory to {0}: {1}"), true, ColorTools.ColTypes.Error, ListArgsOnly[0], sex.Message);
-                DebugWriter.WStkTrc(sex);
+                DebugWriter.WriteDebugStackTrace(sex);
             }
             catch (PathTooLongException ptlex)
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Directory length: {0}", Filesystem.NeutralizePath(ListArgsOnly[0]).Length);
+                DebugWriter.WriteDebug(DebugLevel.I, "Directory length: {0}", Filesystem.NeutralizePath(ListArgsOnly[0]).Length);
                 TextWriterColor.Write(Translate.DoTranslation("The path you've specified is too long."), true, ColorTools.ColTypes.Error);
-                DebugWriter.WStkTrc(ptlex);
+                DebugWriter.WriteDebugStackTrace(ptlex);
             }
             catch (Exception ex)
             {
                 TextWriterColor.Write(Translate.DoTranslation("Changing directory has failed: {0}"), true, ColorTools.ColTypes.Error, ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebugStackTrace(ex);
             }
         }
 

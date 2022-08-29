@@ -46,8 +46,8 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Error trying to search {0} for {1}", ListArgsOnly[0], ListArgsOnly[1]);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to search {0} for {1}", ListArgsOnly[0], ListArgsOnly[1]);
+                DebugWriter.WriteDebugStackTrace(ex);
                 TextWriterColor.Write(Translate.DoTranslation("Searching {0} for {1} failed.") + " {2}", true, ColorTools.ColTypes.Error, ListArgsOnly[0], ListArgsOnly[1], ex.Message);
             }
         }

@@ -70,7 +70,7 @@ namespace KS.Network.SSH
         public static ConnectionInfo PromptConnectionInfo(string Address, int Port, string Username)
         {
             // Authentication
-            DebugWriter.Wdbg(DebugLevel.I, "Address: {0}:{1}, Username: {2}", Address, Port, Username);
+            DebugWriter.WriteDebug(DebugLevel.I, "Address: {0}:{1}, Username: {2}", Address, Port, Username);
             var AuthenticationMethods = new List<AuthenticationMethod>();
             int Answer;
             while (true)
@@ -95,7 +95,7 @@ namespace KS.Network.SSH
 
                         default:
                             {
-                                DebugWriter.Wdbg(DebugLevel.W, "Option is not valid. Returning...");
+                                DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
                                 TextWriterColor.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, ColorTools.ColTypes.Error, Answer);
                                 TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
                                 ConsoleBase.ConsoleWrapper.ReadKey();
@@ -110,7 +110,7 @@ namespace KS.Network.SSH
                 }
                 else
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "Answer is not numeric.");
+                    DebugWriter.WriteDebug(DebugLevel.W, "Answer is not numeric.");
                     TextWriterColor.Write(Translate.DoTranslation("The answer must be numeric."), true, ColorTools.ColTypes.Error);
                     TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
                     ConsoleBase.ConsoleWrapper.ReadKey();
@@ -154,8 +154,8 @@ namespace KS.Network.SSH
                                 }
                                 catch (Exception ex)
                                 {
-                                    DebugWriter.WStkTrc(ex);
-                                    DebugWriter.Wdbg(DebugLevel.E, "Error trying to add private key authentication method: {0}", ex.Message);
+                                    DebugWriter.WriteDebugStackTrace(ex);
+                                    DebugWriter.WriteDebug(DebugLevel.E, "Error trying to add private key authentication method: {0}", ex.Message);
                                     TextWriterColor.Write(Translate.DoTranslation("Error trying to add private key:") + " {0}", true, ColorTools.ColTypes.Error, ex.Message);
                                 }
                             }
@@ -218,7 +218,7 @@ namespace KS.Network.SSH
                 SSH.ConnectionInfo.Timeout = TimeSpan.FromSeconds(30d);
                 if (SSHBanner)
                     SSH.ConnectionInfo.AuthenticationBanner += ShowBanner;
-                DebugWriter.Wdbg(DebugLevel.I, "Connecting to {0}...", Address);
+                DebugWriter.WriteDebug(DebugLevel.I, "Connecting to {0}...", Address);
                 SSH.Connect();
 
                 // Open SSH connection
@@ -235,7 +235,7 @@ namespace KS.Network.SSH
             {
                 Kernel.Kernel.KernelEventManager.RaiseSSHError(ex);
                 TextWriterColor.Write(Translate.DoTranslation("Error trying to connect to SSH server: {0}"), true, ColorTools.ColTypes.Error, ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebugStackTrace(ex);
             }
         }
 
@@ -244,14 +244,14 @@ namespace KS.Network.SSH
         /// </summary>
         private static void ShowBanner(object sender, AuthenticationBannerEventArgs e)
         {
-            DebugWriter.Wdbg(DebugLevel.I, "Banner language: {0}", e.Language);
-            DebugWriter.Wdbg(DebugLevel.I, "Banner username: {0}", e.Username);
-            DebugWriter.Wdbg(DebugLevel.I, "Banner length: {0}", e.BannerMessage.Length);
-            DebugWriter.Wdbg(DebugLevel.I, "Banner:");
+            DebugWriter.WriteDebug(DebugLevel.I, "Banner language: {0}", e.Language);
+            DebugWriter.WriteDebug(DebugLevel.I, "Banner username: {0}", e.Username);
+            DebugWriter.WriteDebug(DebugLevel.I, "Banner length: {0}", e.BannerMessage.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "Banner:");
             var BannerMessageLines = e.BannerMessage.SplitNewLines();
             foreach (string BannerLine in BannerMessageLines)
             {
-                DebugWriter.Wdbg(DebugLevel.I, BannerLine);
+                DebugWriter.WriteDebug(DebugLevel.I, BannerLine);
                 TextWriterColor.Write(BannerLine, true, ColorTools.ColTypes.Neutral);
             }
         }
@@ -270,7 +270,7 @@ namespace KS.Network.SSH
                 Kernel.Kernel.KernelEventManager.RaiseSSHConnected(SSHClient.ConnectionInfo.Host + ":" + SSHClient.ConnectionInfo.Port.ToString());
 
                 // Shell creation. Note that $TERM is what kind of terminal being used (vt100, xterm, ...). Always vt100 on Windows.
-                DebugWriter.Wdbg(DebugLevel.I, "Opening shell...");
+                DebugWriter.WriteDebug(DebugLevel.I, "Opening shell...");
                 var SSHS = SSHClient.CreateShell(ConsoleBase.ConsoleWrapper.OpenStandardInput(), ConsoleBase.ConsoleWrapper.OpenStandardOutput(), ConsoleBase.ConsoleWrapper.OpenStandardError(), KernelPlatform.IsOnUnix() ? KernelPlatform.GetTerminalType() : "vt100", (uint)ConsoleBase.ConsoleWrapper.WindowWidth, (uint)ConsoleBase.ConsoleWrapper.WindowHeight, (uint)ConsoleBase.ConsoleWrapper.BufferWidth, (uint)ConsoleBase.ConsoleWrapper.BufferHeight, new Dictionary<TerminalModes, uint>());
                 SSHS.Start();
 
@@ -287,13 +287,13 @@ namespace KS.Network.SSH
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Error on SSH shell in {0}: {1}", SSHClient.ConnectionInfo.Host, ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error on SSH shell in {0}: {1}", SSHClient.ConnectionInfo.Host, ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
                 TextWriterColor.Write(Translate.DoTranslation("Error on SSH shell") + ": {0}", true, ColorTools.ColTypes.Error, ex.Message);
             }
             finally
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Connected: {0}", SSHClient.IsConnected);
+                DebugWriter.WriteDebug(DebugLevel.I, "Connected: {0}", SSHClient.IsConnected);
                 TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("SSH Disconnected."), true, ColorTools.ColTypes.Neutral);
                 DisconnectionRequested = false;
 
@@ -318,7 +318,7 @@ namespace KS.Network.SSH
                 Kernel.Kernel.KernelEventManager.RaiseSSHConnected(SSHClient.ConnectionInfo.Host + ":" + SSHClient.ConnectionInfo.Port.ToString());
 
                 // Shell creation
-                DebugWriter.Wdbg(DebugLevel.I, "Opening shell...");
+                DebugWriter.WriteDebug(DebugLevel.I, "Opening shell...");
                 Kernel.Kernel.KernelEventManager.RaiseSSHPreExecuteCommand(SSHClient.ConnectionInfo.Host + ":" + SSHClient.ConnectionInfo.Port.ToString(), Command);
                 var SSHC = SSHClient.CreateCommand(Command);
                 var SSHCAsyncResult = SSHC.BeginExecute();
@@ -342,14 +342,14 @@ namespace KS.Network.SSH
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Error trying to execute SSH command \"{0}\" to {1}: {2}", Command, SSHClient.ConnectionInfo.Host, ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to execute SSH command \"{0}\" to {1}: {2}", Command, SSHClient.ConnectionInfo.Host, ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
                 TextWriterColor.Write(Translate.DoTranslation("Error executing SSH command") + " {0}: {1}", true, ColorTools.ColTypes.Error, Command, ex.Message);
                 Kernel.Kernel.KernelEventManager.RaiseSSHCommandError(SSHClient.ConnectionInfo.Host + ":" + SSHClient.ConnectionInfo.Port.ToString(), Command, ex);
             }
             finally
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Connected: {0}", SSHClient.IsConnected);
+                DebugWriter.WriteDebug(DebugLevel.I, "Connected: {0}", SSHClient.IsConnected);
                 TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("SSH Disconnected."), true, ColorTools.ColTypes.Neutral);
                 DisconnectionRequested = false;
                 Kernel.Kernel.KernelEventManager.RaiseSSHPostExecuteCommand(SSHClient.ConnectionInfo.Host + ":" + SSHClient.ConnectionInfo.Port.ToString(), Command);

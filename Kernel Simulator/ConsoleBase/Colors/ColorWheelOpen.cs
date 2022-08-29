@@ -94,8 +94,8 @@ namespace KS.ConsoleBase.Colors
             int CurrentColorB = DefaultColorB;
             char CurrentRange = 'R';
             var ColorWheelExiting = default(bool);
-            DebugWriter.Wdbg(DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", CurrentColorR, CurrentColorG, CurrentColorB);
-            DebugWriter.Wdbg(DebugLevel.I, "Got color ({0})", CurrentColor);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", CurrentColorR, CurrentColorG, CurrentColorB);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got color ({0})", CurrentColor);
 
             ConsoleWrapper.CursorVisible = false;
             var _DefaultColor = default(int);
@@ -107,12 +107,12 @@ namespace KS.ConsoleBase.Colors
                     TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("Select color using \"<-\" and \"->\" keys. Press ENTER to quit. Press \"i\" to insert color number manually."), true, ColorTools.ColTypes.Tip);
                     TextWriterColor.Write(Translate.DoTranslation("Press \"t\" to switch to 255 color mode."), true, ColorTools.ColTypes.Tip);
                     TextWriterColor.Write(Translate.DoTranslation("Press \"c\" to write full color code."), true, ColorTools.ColTypes.Tip);
-                    DebugWriter.Wdbg(DebugLevel.I, "Current Range: {0}", CurrentRange);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Current Range: {0}", CurrentRange);
 
                     // The red color level
                     var RedForeground = Convert.ToString(CurrentRange) == "R" ? new Color((int)ConsoleColors.Black) : new Color("255;0;0");
                     var RedBackground = Convert.ToString(CurrentRange) == "R" ? new Color("255;0;0") : new Color((int)ConsoleColors.Black);
-                    DebugWriter.Wdbg(DebugLevel.I, "Red foreground: {0} | Red background: {1}", RedForeground.PlainSequence, RedBackground.PlainSequence);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Red foreground: {0} | Red background: {1}", RedForeground.PlainSequence, RedBackground.PlainSequence);
                     TextWriterColor.Write(Kernel.Kernel.NewLine + "  ", false, ColorTools.ColTypes.Neutral);
                     TextWriterColor.Write(" < ", false, RedForeground, RedBackground);
                     TextWriterWhereColor.WriteWhere("R: {0}", (int)Math.Round((ConsoleWrapper.CursorLeft + 35 - $"R: {CurrentColorR}".Length) / 2d), ConsoleWrapper.CursorTop, new Color($"{CurrentColorR};0;0"), CurrentColorR);
@@ -121,7 +121,7 @@ namespace KS.ConsoleBase.Colors
                     // The green color level
                     var GreenForeground = Convert.ToString(CurrentRange) == "G" ? new Color((int)ConsoleColors.Black) : new Color("0;255;0");
                     var GreenBackground = Convert.ToString(CurrentRange) == "G" ? new Color("0;255;0") : new Color((int)ConsoleColors.Black);
-                    DebugWriter.Wdbg(DebugLevel.I, "Green foreground: {0} | Green background: {1}", GreenForeground.PlainSequence, GreenBackground.PlainSequence);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Green foreground: {0} | Green background: {1}", GreenForeground.PlainSequence, GreenBackground.PlainSequence);
                     TextWriterColor.Write(Kernel.Kernel.NewLine + "  ", false, ColorTools.ColTypes.Neutral);
                     TextWriterColor.Write(" < ", false, GreenForeground, GreenBackground);
                     TextWriterWhereColor.WriteWhere("G: {0}", (int)Math.Round((ConsoleWrapper.CursorLeft + 35 - $"G: {CurrentColorG}".Length) / 2d), ConsoleWrapper.CursorTop, new Color($"0;{CurrentColorG};0"), CurrentColorG);
@@ -130,7 +130,7 @@ namespace KS.ConsoleBase.Colors
                     // The blue color level
                     var BlueForeground = Convert.ToString(CurrentRange) == "B" ? new Color((int)ConsoleColors.Black) : new Color("0;0;255");
                     var BlueBackground = Convert.ToString(CurrentRange) == "B" ? new Color("0;0;255") : new Color((int)ConsoleColors.Black);
-                    DebugWriter.Wdbg(DebugLevel.I, "Blue foreground: {0} | Blue background: {1}", BlueForeground.PlainSequence, BlueBackground.PlainSequence);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Blue foreground: {0} | Blue background: {1}", BlueForeground.PlainSequence, BlueBackground.PlainSequence);
                     TextWriterColor.Write(Kernel.Kernel.NewLine + "  ", false, ColorTools.ColTypes.Neutral);
                     TextWriterColor.Write(" < ", false, BlueForeground, BlueBackground);
                     TextWriterWhereColor.WriteWhere("B: {0}", (int)Math.Round((ConsoleWrapper.CursorLeft + 35 - $"B: {CurrentColorB}".Length) / 2d), ConsoleWrapper.CursorTop, new Color($"0;0;{CurrentColorB}"), CurrentColorB);
@@ -152,23 +152,23 @@ namespace KS.ConsoleBase.Colors
 
                     // Read and get response
                     var ConsoleResponse = ConsoleWrapper.ReadKey(true);
-                    DebugWriter.Wdbg(DebugLevel.I, "Keypress: {0}", ConsoleResponse.Key.ToString());
+                    DebugWriter.WriteDebug(DebugLevel.I, "Keypress: {0}", ConsoleResponse.Key.ToString());
                     if (ConsoleResponse.Key == ConsoleKey.LeftArrow)
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Decrementing number...");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Decrementing number...");
                         switch (CurrentRange)
                         {
                             case 'R':
                                 {
                                     if (CurrentColorR == 0)
                                     {
-                                        DebugWriter.Wdbg(DebugLevel.I, "Reached zero! Back to 255.");
+                                        DebugWriter.WriteDebug(DebugLevel.I, "Reached zero! Back to 255.");
                                         CurrentColorR = 255;
                                     }
                                     else
                                     {
                                         CurrentColorR -= 1;
-                                        DebugWriter.Wdbg(DebugLevel.I, "Decremented to {0}", CurrentColorR);
+                                        DebugWriter.WriteDebug(DebugLevel.I, "Decremented to {0}", CurrentColorR);
                                     }
 
                                     break;
@@ -177,13 +177,13 @@ namespace KS.ConsoleBase.Colors
                                 {
                                     if (CurrentColorG == 0)
                                     {
-                                        DebugWriter.Wdbg(DebugLevel.I, "Reached zero! Back to 255.");
+                                        DebugWriter.WriteDebug(DebugLevel.I, "Reached zero! Back to 255.");
                                         CurrentColorG = 255;
                                     }
                                     else
                                     {
                                         CurrentColorG -= 1;
-                                        DebugWriter.Wdbg(DebugLevel.I, "Decremented to {0}", CurrentColorG);
+                                        DebugWriter.WriteDebug(DebugLevel.I, "Decremented to {0}", CurrentColorG);
                                     }
 
                                     break;
@@ -192,13 +192,13 @@ namespace KS.ConsoleBase.Colors
                                 {
                                     if (CurrentColorB == 0)
                                     {
-                                        DebugWriter.Wdbg(DebugLevel.I, "Reached zero! Back to 255.");
+                                        DebugWriter.WriteDebug(DebugLevel.I, "Reached zero! Back to 255.");
                                         CurrentColorB = 255;
                                     }
                                     else
                                     {
                                         CurrentColorB -= 1;
-                                        DebugWriter.Wdbg(DebugLevel.I, "Decremented to {0}", CurrentColorB);
+                                        DebugWriter.WriteDebug(DebugLevel.I, "Decremented to {0}", CurrentColorB);
                                     }
 
                                     break;
@@ -207,20 +207,20 @@ namespace KS.ConsoleBase.Colors
                     }
                     else if (ConsoleResponse.Key == ConsoleKey.RightArrow)
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Incrementing number...");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Incrementing number...");
                         switch (CurrentRange)
                         {
                             case 'R':
                                 {
                                     if (CurrentColorR == 255)
                                     {
-                                        DebugWriter.Wdbg(DebugLevel.I, "Reached 255! Back to zero.");
+                                        DebugWriter.WriteDebug(DebugLevel.I, "Reached 255! Back to zero.");
                                         CurrentColorR = 0;
                                     }
                                     else
                                     {
                                         CurrentColorR += 1;
-                                        DebugWriter.Wdbg(DebugLevel.I, "Incremented to {0}", CurrentColorR);
+                                        DebugWriter.WriteDebug(DebugLevel.I, "Incremented to {0}", CurrentColorR);
                                     }
 
                                     break;
@@ -229,13 +229,13 @@ namespace KS.ConsoleBase.Colors
                                 {
                                     if (CurrentColorG == 255)
                                     {
-                                        DebugWriter.Wdbg(DebugLevel.I, "Reached 255! Back to zero.");
+                                        DebugWriter.WriteDebug(DebugLevel.I, "Reached 255! Back to zero.");
                                         CurrentColorG = 0;
                                     }
                                     else
                                     {
                                         CurrentColorG += 1;
-                                        DebugWriter.Wdbg(DebugLevel.I, "Incremented to {0}", CurrentColorG);
+                                        DebugWriter.WriteDebug(DebugLevel.I, "Incremented to {0}", CurrentColorG);
                                     }
 
                                     break;
@@ -244,13 +244,13 @@ namespace KS.ConsoleBase.Colors
                                 {
                                     if (CurrentColorB == 255)
                                     {
-                                        DebugWriter.Wdbg(DebugLevel.I, "Reached 255! Back to zero.");
+                                        DebugWriter.WriteDebug(DebugLevel.I, "Reached 255! Back to zero.");
                                         CurrentColorB = 0;
                                     }
                                     else
                                     {
                                         CurrentColorB += 1;
-                                        DebugWriter.Wdbg(DebugLevel.I, "Incremented to {0}", CurrentColorB);
+                                        DebugWriter.WriteDebug(DebugLevel.I, "Incremented to {0}", CurrentColorB);
                                     }
 
                                     break;
@@ -259,7 +259,7 @@ namespace KS.ConsoleBase.Colors
                     }
                     else if (ConsoleResponse.Key == ConsoleKey.UpArrow)
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Changing range...");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Changing range...");
                         switch (CurrentRange)
                         {
                             case 'R':
@@ -281,7 +281,7 @@ namespace KS.ConsoleBase.Colors
                     }
                     else if (ConsoleResponse.Key == ConsoleKey.DownArrow)
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Changing range...");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Changing range...");
                         switch (CurrentRange)
                         {
                             case 'R':
@@ -303,7 +303,7 @@ namespace KS.ConsoleBase.Colors
                     }
                     else if (ConsoleResponse.Key == ConsoleKey.I)
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Prompting for color number...");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Prompting for color number...");
                         switch (CurrentRange)
                         {
                             case 'R':
@@ -326,30 +326,30 @@ namespace KS.ConsoleBase.Colors
                         ConsoleWrapper.CursorVisible = true;
                         string ColorNum = Input.ReadLine();
                         ConsoleWrapper.CursorVisible = false;
-                        DebugWriter.Wdbg(DebugLevel.I, "Got response: {0}", ColorNum);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Got response: {0}", ColorNum);
                         if (StringQuery.IsStringNumeric(ColorNum))
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Numeric! Checking range...");
+                            DebugWriter.WriteDebug(DebugLevel.I, "Numeric! Checking range...");
                             if (Convert.ToDouble(ColorNum) >= 0d & Convert.ToDouble(ColorNum) <= 255d)
                             {
-                                DebugWriter.Wdbg(DebugLevel.I, "In range!");
+                                DebugWriter.WriteDebug(DebugLevel.I, "In range!");
                                 switch (CurrentRange)
                                 {
                                     case 'R':
                                         {
-                                            DebugWriter.Wdbg(DebugLevel.I, "Changing red color level to {0}...", ColorNum);
+                                            DebugWriter.WriteDebug(DebugLevel.I, "Changing red color level to {0}...", ColorNum);
                                             CurrentColorR = Convert.ToInt32(ColorNum);
                                             break;
                                         }
                                     case 'G':
                                         {
-                                            DebugWriter.Wdbg(DebugLevel.I, "Changing green color level to {0}...", ColorNum);
+                                            DebugWriter.WriteDebug(DebugLevel.I, "Changing green color level to {0}...", ColorNum);
                                             CurrentColorG = Convert.ToInt32(ColorNum);
                                             break;
                                         }
                                     case 'B':
                                         {
-                                            DebugWriter.Wdbg(DebugLevel.I, "Changing blue color level to {0}...", ColorNum);
+                                            DebugWriter.WriteDebug(DebugLevel.I, "Changing blue color level to {0}...", ColorNum);
                                             CurrentColorB = Convert.ToInt32(ColorNum);
                                             break;
                                         }
@@ -365,7 +365,7 @@ namespace KS.ConsoleBase.Colors
                         ConsoleWrapper.CursorVisible = false;
                         try
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Parsing {0}...", ColorSequence);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Parsing {0}...", ColorSequence);
                             var ParsedColor = new Color(ColorSequence);
                             CurrentColorR = ParsedColor.R;
                             CurrentColorG = ParsedColor.G;
@@ -373,18 +373,18 @@ namespace KS.ConsoleBase.Colors
                         }
                         catch (Exception ex)
                         {
-                            DebugWriter.WStkTrc(ex);
-                            DebugWriter.Wdbg(DebugLevel.E, "Possible input error: {0} ({1})", ColorSequence, ex.Message);
+                            DebugWriter.WriteDebugStackTrace(ex);
+                            DebugWriter.WriteDebug(DebugLevel.E, "Possible input error: {0} ({1})", ColorSequence, ex.Message);
                         }
                     }
                     else if (ConsoleResponse.Key == ConsoleKey.T)
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Switching back to 255 color...");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Switching back to 255 color...");
                         TrueColor = false;
                     }
                     else if (ConsoleResponse.Key == ConsoleKey.Enter)
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Exiting...");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Exiting...");
                         ColorWheelExiting = true;
                     }
                 }
@@ -404,60 +404,60 @@ namespace KS.ConsoleBase.Colors
 
                     // Read and get response
                     var ConsoleResponse = ConsoleWrapper.ReadKey(true);
-                    DebugWriter.Wdbg(DebugLevel.I, "Keypress: {0}", ConsoleResponse.Key.ToString());
+                    DebugWriter.WriteDebug(DebugLevel.I, "Keypress: {0}", ConsoleResponse.Key.ToString());
                     if (ConsoleResponse.Key == ConsoleKey.LeftArrow)
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Decrementing number...");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Decrementing number...");
                         if (CurrentColor == 0)
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Reached zero! Back to 255.");
+                            DebugWriter.WriteDebug(DebugLevel.I, "Reached zero! Back to 255.");
                             CurrentColor = (ConsoleColors)255;
                         }
                         else
                         {
                             CurrentColor--;
-                            DebugWriter.Wdbg(DebugLevel.I, "Decremented to {0}", CurrentColor);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Decremented to {0}", CurrentColor);
                         }
                     }
                     else if (ConsoleResponse.Key == ConsoleKey.RightArrow)
                     {
                         if ((int)CurrentColor == 255)
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Reached 255! Back to zero.");
+                            DebugWriter.WriteDebug(DebugLevel.I, "Reached 255! Back to zero.");
                             CurrentColor = 0;
                         }
                         else
                         {
                             CurrentColor++;
-                            DebugWriter.Wdbg(DebugLevel.I, "Incremented to {0}", CurrentColor);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Incremented to {0}", CurrentColor);
                         }
                     }
                     else if (ConsoleResponse.Key == ConsoleKey.I)
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Prompting for color number...");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Prompting for color number...");
                         TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Enter color number from 0 to 255:") + " [{0}] ", 0, ConsoleWrapper.WindowHeight - 1, ColorTools.ColTypes.Input, (int)CurrentColor);
                         ConsoleWrapper.CursorVisible = true;
                         string ColorNum = Input.ReadLine();
                         ConsoleWrapper.CursorVisible = false;
-                        DebugWriter.Wdbg(DebugLevel.I, "Got response: {0}", ColorNum);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Got response: {0}", ColorNum);
                         if (StringQuery.IsStringNumeric(ColorNum))
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Numeric! Checking range...");
+                            DebugWriter.WriteDebug(DebugLevel.I, "Numeric! Checking range...");
                             if (Convert.ToDouble(ColorNum) >= 0d & Convert.ToDouble(ColorNum) <= 255d)
                             {
-                                DebugWriter.Wdbg(DebugLevel.I, "In range! Changing color level to {0}...", ColorNum);
+                                DebugWriter.WriteDebug(DebugLevel.I, "In range! Changing color level to {0}...", ColorNum);
                                 CurrentColor = (ConsoleColors)Convert.ToInt32(ColorNum);
                             }
                         }
                     }
                     else if (ConsoleResponse.Key == ConsoleKey.T)
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Switching back to 255 color...");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Switching back to 255 color...");
                         TrueColor = true;
                     }
                     else if (ConsoleResponse.Key == ConsoleKey.Enter)
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Exiting...");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Exiting...");
                         ColorWheelExiting = true;
                     }
                 }

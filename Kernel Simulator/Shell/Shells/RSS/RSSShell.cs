@@ -98,8 +98,8 @@ namespace KS.Shell.Shells.RSS
                         }
                         catch (Exception ex)
                         {
-                            DebugWriter.Wdbg(DebugLevel.E, "Failed to parse RSS feed URL {0}: {1}", FeedUrl, ex.Message);
-                            DebugWriter.WStkTrc(ex);
+                            DebugWriter.WriteDebug(DebugLevel.E, "Failed to parse RSS feed URL {0}: {1}", FeedUrl, ex.Message);
+                            DebugWriter.WriteDebugStackTrace(ex);
                             TextWriterColor.Write(Translate.DoTranslation("Failed to parse feed URL:") + " {0}", true, ColorTools.ColTypes.Error, ex.Message);
                             RSSShellCommon.RSSFeedLink = "";
                         }
@@ -130,8 +130,8 @@ namespace KS.Shell.Shells.RSS
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.Wdbg(DebugLevel.E, "Failed to parse RSS feed URL {0}: {1}", RSSShellCommon.RSSFeedLink, ex.Message);
-                        DebugWriter.WStkTrc(ex);
+                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to parse RSS feed URL {0}: {1}", RSSShellCommon.RSSFeedLink, ex.Message);
+                        DebugWriter.WriteDebugStackTrace(ex);
                         TextWriterColor.Write(Translate.DoTranslation("Failed to parse feed URL:") + " {0}", true, ColorTools.ColTypes.Error, ex.Message);
                         RSSShellCommon.RSSFeedLink = "";
                     }
@@ -145,7 +145,7 @@ namespace KS.Shell.Shells.RSS
                     // Send ping to keep the connection alive
                     if (!RSSShellCommon.RSSKeepAlive & !RSSShellCommon.RSSRefresher.IsAlive & RSSShellCommon.RSSRefreshFeeds)
                         RSSShellCommon.RSSRefresher.Start();
-                    DebugWriter.Wdbg(DebugLevel.I, "Made new thread about RefreshFeeds()");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Made new thread about RefreshFeeds()");
 
                     // See UESHShell.cs for more info
                     lock (CancellationHandlers.GetCancelSyncLock(ShellType))
@@ -173,7 +173,7 @@ namespace KS.Shell.Shells.RSS
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     TextWriterColor.Write(Translate.DoTranslation("There was an error in the shell.") + Kernel.Kernel.NewLine + "Error {0}: {1}", true, ColorTools.ColTypes.Error, ex.GetType().FullName, ex.Message);
                     continue;
                 }
@@ -182,11 +182,11 @@ namespace KS.Shell.Shells.RSS
             // Disconnect the session
             if (RSSShellCommon.RSSKeepAlive)
             {
-                DebugWriter.Wdbg(DebugLevel.W, "Exit requested, but not disconnecting.");
+                DebugWriter.WriteDebug(DebugLevel.W, "Exit requested, but not disconnecting.");
             }
             else
             {
-                DebugWriter.Wdbg(DebugLevel.W, "Exit requested. Disconnecting host...");
+                DebugWriter.WriteDebug(DebugLevel.W, "Exit requested. Disconnecting host...");
                 if (RSSShellCommon.RSSRefreshFeeds)
                     RSSShellCommon.RSSRefresher.Stop();
                 RSSShellCommon.RSSFeedLink = "";

@@ -56,13 +56,13 @@ namespace KS.Network.Mail.Directory
             // Sanity checks for the page number
             if (PageNum <= 0)
                 PageNum = 1;
-            DebugWriter.Wdbg(DebugLevel.I, "Page number {0}", PageNum);
+            DebugWriter.WriteDebug(DebugLevel.I, "Page number {0}", PageNum);
 
             int MsgsLimitForPg = MessagesInPage;
             int FirstIndex = MsgsLimitForPg * PageNum - 10;
             int LastIndex = MsgsLimitForPg * PageNum - 1;
             int MaxMessagesIndex = MailShellCommon.IMAP_Messages.Count() - 1;
-            DebugWriter.Wdbg(DebugLevel.I, "10 messages shown in each page. First message number in page {0} is {1} and last message number in page {0} is {2}", MsgsLimitForPg, FirstIndex, LastIndex);
+            DebugWriter.WriteDebug(DebugLevel.I, "10 messages shown in each page. First message number in page {0} is {1} and last message number in page {0} is {2}", MsgsLimitForPg, FirstIndex, LastIndex);
             for (int i = FirstIndex, loopTo = LastIndex; i <= loopTo; i++)
             {
                 if (!(i > MaxMessagesIndex))
@@ -72,7 +72,7 @@ namespace KS.Network.Mail.Directory
                     string MsgPreview = "";
 
                     // Getting information about the message is vital to display them.
-                    DebugWriter.Wdbg(DebugLevel.I, "Getting message {0}...", i);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Getting message {0}...", i);
                     lock (MailLogin.IMAP_Client.SyncRoot)
                     {
                         MimeMessage Msg;
@@ -89,7 +89,7 @@ namespace KS.Network.Mail.Directory
                         MsgSubject = Msg.Subject;
                         MsgPreview = (Msg.GetTextBody(MimeKit.Text.TextFormat.Text) ?? "").Truncate(200);
                     }
-                    DebugWriter.Wdbg(DebugLevel.I, "From {0}: {1}", MsgFrom, MsgSubject);
+                    DebugWriter.WriteDebug(DebugLevel.I, "From {0}: {1}", MsgFrom, MsgSubject);
 
                     // Display them now.
                     TextWriterColor.Write($"- [{i + 1}/{MaxMessagesIndex + 1}] {MsgFrom}: ", false, ColorTools.ColTypes.ListEntry);
@@ -105,7 +105,7 @@ namespace KS.Network.Mail.Directory
                 }
                 else
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "Reached max message limit. Message number {0}", i);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Reached max message limit. Message number {0}", i);
                 }
             }
         }
@@ -121,15 +121,15 @@ namespace KS.Network.Mail.Directory
         {
             int Message = MsgNumber - 1;
             int MaxMessagesIndex = MailShellCommon.IMAP_Messages.Count() - 1;
-            DebugWriter.Wdbg(DebugLevel.I, "Message number {0}", Message);
+            DebugWriter.WriteDebug(DebugLevel.I, "Message number {0}", Message);
             if (Message < 0)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Trying to remove message 0 or less than 0.");
+                DebugWriter.WriteDebug(DebugLevel.E, "Trying to remove message 0 or less than 0.");
                 throw new ArgumentException(Translate.DoTranslation("Message number may not be negative or zero."));
             }
             else if (Message > MaxMessagesIndex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", Message, MaxMessagesIndex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", Message, MaxMessagesIndex);
                 throw new Kernel.Exceptions.MailException(Translate.DoTranslation("Message specified is not found."));
             }
 
@@ -139,18 +139,18 @@ namespace KS.Network.Mail.Directory
                 {
                     // Remove message
                     var Dir = MailDirectory.OpenFolder(MailShellCommon.IMAP_CurrentDirectory);
-                    DebugWriter.Wdbg(DebugLevel.I, "Opened {0}. Removing {1}...", MailShellCommon.IMAP_CurrentDirectory, MsgNumber);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Opened {0}. Removing {1}...", MailShellCommon.IMAP_CurrentDirectory, MsgNumber);
                     Dir.Store(MailShellCommon.IMAP_Messages.ElementAtOrDefault(Message), new StoreFlagsRequest(StoreAction.Add, MessageFlags.Deleted));
-                    DebugWriter.Wdbg(DebugLevel.I, "Removed.");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removed.");
                     Dir.Expunge();
                 }
                 else
                 {
                     // Remove message
                     MailLogin.IMAP_Client.Inbox.Open(FolderAccess.ReadWrite);
-                    DebugWriter.Wdbg(DebugLevel.I, "Removing {0}...", MsgNumber);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removing {0}...", MsgNumber);
                     MailLogin.IMAP_Client.Inbox.Store(MailShellCommon.IMAP_Messages.ElementAtOrDefault(Message), new StoreFlagsRequest(StoreAction.Add, MessageFlags.Deleted));
-                    DebugWriter.Wdbg(DebugLevel.I, "Removed.");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removed.");
                     MailLogin.IMAP_Client.Inbox.Expunge();
                 }
             }
@@ -164,7 +164,7 @@ namespace KS.Network.Mail.Directory
         /// <returns>True if successful; False if unsuccessful</returns>
         public static bool MailRemoveAllBySender(string Sender)
         {
-            DebugWriter.Wdbg(DebugLevel.I, "All mail by {0} will be removed.", Sender);
+            DebugWriter.WriteDebug(DebugLevel.I, "All mail by {0} will be removed.", Sender);
             int DeletedMsgNumber = 1;
             int SteppedMsgNumber = 0;
             for (int i = 0, loopTo = MailShellCommon.IMAP_Messages.Count(); i <= loopTo; i++)
@@ -195,22 +195,22 @@ namespace KS.Network.Mail.Directory
                                     var Dir = MailDirectory.OpenFolder(MailShellCommon.IMAP_CurrentDirectory);
 
                                     // Remove message
-                                    DebugWriter.Wdbg(DebugLevel.I, "Opened {0}. Removing {1}...", MailShellCommon.IMAP_CurrentDirectory, Sender);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Opened {0}. Removing {1}...", MailShellCommon.IMAP_CurrentDirectory, Sender);
                                     Dir.Store(MessageId, new StoreFlagsRequest(StoreAction.Add, MessageFlags.Deleted));
-                                    DebugWriter.Wdbg(DebugLevel.I, "Removed.");
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Removed.");
                                     Dir.Expunge();
-                                    DebugWriter.Wdbg(DebugLevel.I, "Message {0} from {1} deleted from {2}. {3} messages remaining to parse.", DeletedMsgNumber, Sender, MailShellCommon.IMAP_CurrentDirectory, MailShellCommon.IMAP_Messages.Count() - SteppedMsgNumber);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Message {0} from {1} deleted from {2}. {3} messages remaining to parse.", DeletedMsgNumber, Sender, MailShellCommon.IMAP_CurrentDirectory, MailShellCommon.IMAP_Messages.Count() - SteppedMsgNumber);
                                     TextWriterColor.Write(Translate.DoTranslation("Message {0} from {1} deleted from {2}. {3} messages remaining to parse."), true, ColorTools.ColTypes.Neutral, DeletedMsgNumber, Sender, MailShellCommon.IMAP_CurrentDirectory, MailShellCommon.IMAP_Messages.Count() - SteppedMsgNumber);
                                 }
                                 else
                                 {
                                     // Remove message
                                     MailLogin.IMAP_Client.Inbox.Open(FolderAccess.ReadWrite);
-                                    DebugWriter.Wdbg(DebugLevel.I, "Removing {0}...", Sender);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Removing {0}...", Sender);
                                     MailLogin.IMAP_Client.Inbox.Store(MessageId, new StoreFlagsRequest(StoreAction.Add, MessageFlags.Deleted));
-                                    DebugWriter.Wdbg(DebugLevel.I, "Removed.");
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Removed.");
                                     MailLogin.IMAP_Client.Inbox.Expunge();
-                                    DebugWriter.Wdbg(DebugLevel.I, "Message {0} from {1} deleted from inbox. {2} messages remaining to parse.", DeletedMsgNumber, Sender, MailShellCommon.IMAP_Messages.Count() - SteppedMsgNumber);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Message {0} from {1} deleted from inbox. {2} messages remaining to parse.", DeletedMsgNumber, Sender, MailShellCommon.IMAP_Messages.Count() - SteppedMsgNumber);
                                     TextWriterColor.Write(Translate.DoTranslation("Message {0} from {1} deleted from inbox. {2} messages remaining to parse."), true, ColorTools.ColTypes.Neutral, DeletedMsgNumber, Sender, MailShellCommon.IMAP_Messages.Count() - SteppedMsgNumber);
                                 }
                                 DeletedMsgNumber += 1;
@@ -220,7 +220,7 @@ namespace KS.Network.Mail.Directory
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     return false;
                 }
             }
@@ -239,15 +239,15 @@ namespace KS.Network.Mail.Directory
         {
             int Message = MsgNumber - 1;
             int MaxMessagesIndex = MailShellCommon.IMAP_Messages.Count() - 1;
-            DebugWriter.Wdbg(DebugLevel.I, "Message number {0}", Message);
+            DebugWriter.WriteDebug(DebugLevel.I, "Message number {0}", Message);
             if (Message < 0)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Trying to move message 0 or less than 0.");
+                DebugWriter.WriteDebug(DebugLevel.E, "Trying to move message 0 or less than 0.");
                 throw new ArgumentException(Translate.DoTranslation("Message number may not be negative or zero."));
             }
             else if (Message > MaxMessagesIndex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", Message, MaxMessagesIndex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", Message, MaxMessagesIndex);
                 throw new Kernel.Exceptions.MailException(Translate.DoTranslation("Message specified is not found."));
             }
 
@@ -258,18 +258,18 @@ namespace KS.Network.Mail.Directory
                     // Move message
                     var Dir = MailDirectory.OpenFolder(MailShellCommon.IMAP_CurrentDirectory);
                     var TargetF = MailDirectory.OpenFolder(TargetFolder);
-                    DebugWriter.Wdbg(DebugLevel.I, "Opened {0}. Moving {1}...", MailShellCommon.IMAP_CurrentDirectory, MsgNumber);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Opened {0}. Moving {1}...", MailShellCommon.IMAP_CurrentDirectory, MsgNumber);
                     Dir.MoveTo(MailShellCommon.IMAP_Messages.ElementAtOrDefault(Message), TargetF);
-                    DebugWriter.Wdbg(DebugLevel.I, "Moved.");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Moved.");
                 }
                 else
                 {
                     // Move message
                     var TargetF = MailDirectory.OpenFolder(TargetFolder);
-                    DebugWriter.Wdbg(DebugLevel.I, "Moving {0}...", MsgNumber);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Moving {0}...", MsgNumber);
                     MailLogin.IMAP_Client.Inbox.Open(FolderAccess.ReadWrite);
                     MailLogin.IMAP_Client.Inbox.MoveTo(MailShellCommon.IMAP_Messages.ElementAtOrDefault(Message), TargetF);
-                    DebugWriter.Wdbg(DebugLevel.I, "Moved.");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Moved.");
                 }
             }
             return true;
@@ -283,7 +283,7 @@ namespace KS.Network.Mail.Directory
         /// <returns>True if successful; False if unsuccessful</returns>
         public static bool MailMoveAllBySender(string Sender, string TargetFolder)
         {
-            DebugWriter.Wdbg(DebugLevel.I, "All mail by {0} will be moved.", Sender);
+            DebugWriter.WriteDebug(DebugLevel.I, "All mail by {0} will be moved.", Sender);
             int DeletedMsgNumber = 1;
             int SteppedMsgNumber = 0;
             for (int i = 0, loopTo = MailShellCommon.IMAP_Messages.Count(); i <= loopTo; i++)
@@ -314,21 +314,21 @@ namespace KS.Network.Mail.Directory
                                     var Dir = MailDirectory.OpenFolder(MailShellCommon.IMAP_CurrentDirectory);
                                     var TargetF = MailDirectory.OpenFolder(TargetFolder);
                                     // Remove message
-                                    DebugWriter.Wdbg(DebugLevel.I, "Opened {0}. Moving {1}...", MailShellCommon.IMAP_CurrentDirectory, Sender);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Opened {0}. Moving {1}...", MailShellCommon.IMAP_CurrentDirectory, Sender);
                                     Dir.MoveTo(MessageId, TargetF);
-                                    DebugWriter.Wdbg(DebugLevel.I, "Moved.");
-                                    DebugWriter.Wdbg(DebugLevel.I, "Message {0} from {1} moved from {2}. {3} messages remaining to parse.", DeletedMsgNumber, Sender, MailShellCommon.IMAP_CurrentDirectory, MailShellCommon.IMAP_Messages.Count() - SteppedMsgNumber);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Moved.");
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Message {0} from {1} moved from {2}. {3} messages remaining to parse.", DeletedMsgNumber, Sender, MailShellCommon.IMAP_CurrentDirectory, MailShellCommon.IMAP_Messages.Count() - SteppedMsgNumber);
                                     TextWriterColor.Write(Translate.DoTranslation("Message {0} from {1} moved from {2}. {3} messages remaining to parse."), true, ColorTools.ColTypes.Neutral, DeletedMsgNumber, Sender, MailShellCommon.IMAP_CurrentDirectory, MailShellCommon.IMAP_Messages.Count() - SteppedMsgNumber);
                                 }
                                 else
                                 {
                                     // Remove message
                                     var TargetF = MailDirectory.OpenFolder(TargetFolder);
-                                    DebugWriter.Wdbg(DebugLevel.I, "Moving {0}...", Sender);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Moving {0}...", Sender);
                                     MailLogin.IMAP_Client.Inbox.Open(FolderAccess.ReadWrite);
                                     MailLogin.IMAP_Client.Inbox.MoveTo(MessageId, TargetF);
-                                    DebugWriter.Wdbg(DebugLevel.I, "Moved.");
-                                    DebugWriter.Wdbg(DebugLevel.I, "Message {0} from {1} moved. {2} messages remaining to parse.", DeletedMsgNumber, Sender, MailShellCommon.IMAP_Messages.Count() - SteppedMsgNumber);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Moved.");
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Message {0} from {1} moved. {2} messages remaining to parse.", DeletedMsgNumber, Sender, MailShellCommon.IMAP_Messages.Count() - SteppedMsgNumber);
                                     TextWriterColor.Write(Translate.DoTranslation("Message {0} from {1} moved. {2} messages remaining to parse."), true, ColorTools.ColTypes.Neutral, DeletedMsgNumber, Sender, MailShellCommon.IMAP_Messages.Count() - SteppedMsgNumber);
                                 }
                                 DeletedMsgNumber += 1;
@@ -338,7 +338,7 @@ namespace KS.Network.Mail.Directory
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebugStackTrace(ex);
                     return false;
                 }
             }

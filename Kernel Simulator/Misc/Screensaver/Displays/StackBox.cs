@@ -269,7 +269,7 @@ namespace KS.Misc.Screensaver.Displays
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
             ConsoleBase.ConsoleWrapper.Clear();
-            DebugWriter.Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
+            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
         }
 
         public override void ScreensaverLogic()
@@ -294,10 +294,10 @@ namespace KS.Misc.Screensaver.Displays
                 // Get the required positions for the box
                 int BoxStartX = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowWidth);
                 int BoxEndX = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowWidth);
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Box X position {0} -> {1}", BoxStartX, BoxEndX);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Box X position {0} -> {1}", BoxStartX, BoxEndX);
                 int BoxStartY = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowHeight);
                 int BoxEndY = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowHeight);
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Box Y position {0} -> {1}", BoxStartY, BoxEndY);
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Box Y position {0} -> {1}", BoxStartY, BoxEndY);
 
                 // Check to see if start is less than or equal to end
                 BoxStartX.SwapIfSourceLarger(ref BoxEndX);
@@ -305,7 +305,7 @@ namespace KS.Misc.Screensaver.Displays
                 if (BoxStartX == BoxEndX | BoxStartY == BoxEndY)
                 {
                     // Don't draw; it won't be shown anyways
-                    DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Asking StackBox not to draw. Consult above two lines.");
+                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Asking StackBox not to draw. Consult above two lines.");
                     Drawable = false;
                 }
 
@@ -317,19 +317,19 @@ namespace KS.Misc.Screensaver.Displays
                         int RedColorNum = RandomDriver.Next(StackBoxSettings.StackBoxMinimumRedColorLevel, StackBoxSettings.StackBoxMaximumRedColorLevel);
                         int GreenColorNum = RandomDriver.Next(StackBoxSettings.StackBoxMinimumGreenColorLevel, StackBoxSettings.StackBoxMaximumGreenColorLevel);
                         int BlueColorNum = RandomDriver.Next(StackBoxSettings.StackBoxMinimumBlueColorLevel, StackBoxSettings.StackBoxMaximumBlueColorLevel);
-                        DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                        DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                         ColorTools.SetConsoleColor(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), true, true);
                     }
                     else if (StackBoxSettings.StackBox255Colors)
                     {
                         int ColorNum = RandomDriver.Next(StackBoxSettings.StackBoxMinimumColorLevel, StackBoxSettings.StackBoxMaximumColorLevel);
-                        DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
+                        DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                         ColorTools.SetConsoleColor(new Color(ColorNum), true, true);
                     }
                     else
                     {
                         ConsoleBase.ConsoleWrapper.BackgroundColor = Screensaver.colors[RandomDriver.Next(StackBoxSettings.StackBoxMinimumColorLevel, StackBoxSettings.StackBoxMaximumColorLevel)];
-                        DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
+                        DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
                     }
 
                     // Draw the box
@@ -340,7 +340,7 @@ namespace KS.Misc.Screensaver.Displays
                         {
                             for (int Y = BoxStartY, loopTo1 = BoxEndY; Y <= loopTo1; Y++)
                             {
-                                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Filling {0},{1}...", X, Y);
+                                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Filling {0},{1}...", X, Y);
                                 ConsoleBase.ConsoleWrapper.SetCursorPosition(X, Y);
                                 ConsoleBase.ConsoleWrapper.Write(" ");
                             }
@@ -353,10 +353,10 @@ namespace KS.Misc.Screensaver.Displays
                         {
                             ConsoleBase.ConsoleWrapper.SetCursorPosition(X, BoxStartY);
                             ConsoleBase.ConsoleWrapper.Write(" ");
-                            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Drawn upper border at {0}", X);
+                            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Drawn upper border at {0}", X);
                             ConsoleBase.ConsoleWrapper.SetCursorPosition(X, BoxEndY);
                             ConsoleBase.ConsoleWrapper.Write(" ");
-                            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Drawn lower border at {0}", X);
+                            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Drawn lower border at {0}", X);
                         }
 
                         // Draw the left and right borders
@@ -366,12 +366,12 @@ namespace KS.Misc.Screensaver.Displays
                             ConsoleBase.ConsoleWrapper.Write(" ");
                             if (!(BoxStartX >= ConsoleBase.ConsoleWrapper.WindowWidth - 1))
                                 ConsoleBase.ConsoleWrapper.Write(" ");
-                            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Drawn left border at {0}", Y);
+                            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Drawn left border at {0}", Y);
                             ConsoleBase.ConsoleWrapper.SetCursorPosition(BoxEndX, Y);
                             ConsoleBase.ConsoleWrapper.Write(" ");
                             if (!(BoxEndX >= ConsoleBase.ConsoleWrapper.WindowWidth - 1))
                                 ConsoleBase.ConsoleWrapper.Write(" ");
-                            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Drawn right border at {0}", Y);
+                            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Drawn right border at {0}", Y);
                         }
                     }
                 }

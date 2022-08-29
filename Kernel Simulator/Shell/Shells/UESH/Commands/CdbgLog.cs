@@ -50,7 +50,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 catch (Exception ex)
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Debug log removal failed: {0}"), true, ColorTools.ColTypes.Error, ex.Message);
-                    DebugWriter.WStkTrc(ex);
+                    DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
             else

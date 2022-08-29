@@ -45,12 +45,12 @@ namespace KS.Network.FTP.Filesystem
                 {
                     if (FTPShellCommon.ClientFTP.FileExists(File))
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Hashing {0} using {1}...", File, HashAlgorithm.ToString());
+                        DebugWriter.WriteDebug(DebugLevel.I, "Hashing {0} using {1}...", File, HashAlgorithm.ToString());
                         return FTPShellCommon.ClientFTP.GetChecksum(File, HashAlgorithm);
                     }
                     else
                     {
-                        DebugWriter.Wdbg(DebugLevel.E, "{0} is not found.", File);
+                        DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", File);
                         throw new Kernel.Exceptions.FTPFilesystemException(Translate.DoTranslation("{0} is not found in the server."), File);
                     }
                 }
@@ -107,14 +107,14 @@ namespace KS.Network.FTP.Filesystem
                         }
                         foreach (FtpListItem Item in Items)
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Hashing {0} using {1}...", Item.FullName, HashAlgorithm.ToString());
+                            DebugWriter.WriteDebug(DebugLevel.I, "Hashing {0} using {1}...", Item.FullName, HashAlgorithm.ToString());
                             Hashes.Add(Item.FullName, FTPGetHash(Item.FullName, HashAlgorithm));
                         }
                         return Hashes;
                     }
                     else
                     {
-                        DebugWriter.Wdbg(DebugLevel.E, "{0} is not found.", Directory);
+                        DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", Directory);
                         throw new Kernel.Exceptions.FTPFilesystemException(Translate.DoTranslation("{0} is not found in the server."), Directory);
                     }
                 }

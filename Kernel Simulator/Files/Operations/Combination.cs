@@ -54,8 +54,8 @@ namespace KS.Files.Operations
             }
             catch (Exception ex)
             {
-                DebugWriter.WStkTrc(ex);
-                DebugWriter.Wdbg(DebugLevel.E, "Failed to combine files: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to combine files: {0}", ex.Message);
                 throw new Kernel.Exceptions.FilesystemException(Translate.DoTranslation("Failed to combine files."), ex);
             }
         }

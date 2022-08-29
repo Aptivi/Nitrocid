@@ -54,7 +54,7 @@ namespace KS.Files.Querying
             {
                 Files = DirectoryInfo.EnumerateFiles("*", SearchOption.TopDirectoryOnly).ToList();
             }
-            DebugWriter.Wdbg(DebugLevel.I, "{0} files to be parsed", Files.Count);
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} files to be parsed", Files.Count);
             long TotalSize = 0L; // In bytes
             foreach (FileInfo DFile in Files)
             {
@@ -62,7 +62,7 @@ namespace KS.Files.Querying
                 {
                     if (KernelPlatform.IsOnWindows() & (!DFile.Name.StartsWith(".") | DFile.Name.StartsWith(".") & Flags.HiddenFiles) | KernelPlatform.IsOnUnix())
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "File {0}, Size {1} bytes", DFile.Name, DFile.Length);
+                        DebugWriter.WriteDebug(DebugLevel.I, "File {0}, Size {1} bytes", DFile.Name, DFile.Length);
                         TotalSize += DFile.Length;
                     }
                 }

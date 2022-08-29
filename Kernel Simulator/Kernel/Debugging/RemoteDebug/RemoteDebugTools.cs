@@ -66,7 +66,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
                 }
                 else if ((IPAddr ?? "") == (RemoteDebugger.DebugDevices[i].ClientIP ?? ""))
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Debug device {0} disconnected.", RemoteDebugger.DebugDevices[i].ClientIP);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Debug device {0} disconnected.", RemoteDebugger.DebugDevices[i].ClientIP);
                     Found = true;
                     RemoteDebugger.DebugDevices[i].ClientSocket.Disconnect(true);
                     RemoteDebugger.DebugDevices.RemoveAt(i);
@@ -86,17 +86,17 @@ namespace KS.Kernel.Debugging.RemoteDebug
         public static void AddToBlockList(string IP)
         {
             var BlockedDevices = ListDevices();
-            DebugWriter.Wdbg(DebugLevel.I, "Devices count: {0}", BlockedDevices.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "Devices count: {0}", BlockedDevices.Length);
             if (BlockedDevices.Contains(IP) && !(bool)GetDeviceProperty(IP, DeviceProperty.Blocked))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Device {0} will be blocked...", IP);
+                DebugWriter.WriteDebug(DebugLevel.I, "Device {0} will be blocked...", IP);
                 DisconnectDbgDev(IP);
                 SetDeviceProperty(IP, DeviceProperty.Blocked, true);
                 RemoteDebugger.RDebugBlocked.Add(IP);
             }
             else if (BlockedDevices.Contains(IP) && (bool)GetDeviceProperty(IP, DeviceProperty.Blocked))
             {
-                DebugWriter.Wdbg(DebugLevel.W, "Trying to add an already-blocked device {0}. Adding to list...", IP);
+                DebugWriter.WriteDebug(DebugLevel.W, "Trying to add an already-blocked device {0}. Adding to list...", IP);
                 if (!RemoteDebugger.RDebugBlocked.Contains(IP))
                 {
                     DisconnectDbgDev(IP);
@@ -104,7 +104,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
                 }
                 else
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "Trying to add an already-blocked device {0}.", IP);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Trying to add an already-blocked device {0}.", IP);
                     throw new Exceptions.RemoteDebugDeviceAlreadyExistsException(Translate.DoTranslation("Device already exists in the block list."));
                 }
             }
@@ -124,8 +124,8 @@ namespace KS.Kernel.Debugging.RemoteDebug
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Failed to add device to block list: {0}", ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to add device to block list: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;
         }
@@ -137,16 +137,16 @@ namespace KS.Kernel.Debugging.RemoteDebug
         public static void RemoveFromBlockList(string IP)
         {
             var BlockedDevices = ListDevices();
-            DebugWriter.Wdbg(DebugLevel.I, "Devices count: {0}", BlockedDevices.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "Devices count: {0}", BlockedDevices.Length);
             if (BlockedDevices.Contains(IP))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Device {0} found.", IP);
+                DebugWriter.WriteDebug(DebugLevel.I, "Device {0} found.", IP);
                 RemoteDebugger.RDebugBlocked.Remove(IP);
                 SetDeviceProperty(IP, DeviceProperty.Blocked, false);
             }
             else
             {
-                DebugWriter.Wdbg(DebugLevel.W, "Trying to remove an already-unblocked device {0}. Removing from list...", IP);
+                DebugWriter.WriteDebug(DebugLevel.W, "Trying to remove an already-unblocked device {0}. Removing from list...", IP);
                 if (!RemoteDebugger.RDebugBlocked.Remove(IP))
                     throw new Exceptions.RemoteDebugDeviceOperationException(Translate.DoTranslation("Device doesn't exist in the block list."));
             }
@@ -166,8 +166,8 @@ namespace KS.Kernel.Debugging.RemoteDebug
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Failed to remove device from block list: {0}", ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to remove device from block list: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;
         }
@@ -181,7 +181,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
             try
             {
                 var BlockEntries = ListDevices();
-                DebugWriter.Wdbg(DebugLevel.I, "Devices count: {0}", BlockEntries.Length);
+                DebugWriter.WriteDebug(DebugLevel.I, "Devices count: {0}", BlockEntries.Length);
                 foreach (string BlockEntry in BlockEntries)
                 {
                     if (Convert.ToBoolean(GetDeviceProperty(BlockEntry, DeviceProperty.Blocked)))
@@ -191,8 +191,8 @@ namespace KS.Kernel.Debugging.RemoteDebug
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Failed to populate block list: {0}", ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to populate block list: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;
         }

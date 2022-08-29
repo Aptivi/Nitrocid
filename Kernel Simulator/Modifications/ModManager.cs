@@ -65,33 +65,33 @@ namespace KS.Modifications
         public static void StartMods()
         {
             string ModPath = Paths.GetKernelPath(KernelPathType.Mods);
-            DebugWriter.Wdbg(DebugLevel.I, "Safe mode: {0}", Flags.SafeMode);
+            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", Flags.SafeMode);
             if (!Flags.SafeMode)
             {
                 // We're not in safe mode. We're good now.
                 if (!Checking.FolderExists(ModPath))
                     Directory.CreateDirectory(ModPath);
                 int count = Directory.EnumerateFiles(ModPath).Count();
-                DebugWriter.Wdbg(DebugLevel.I, "Files count: {0}", count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Files count: {0}", count);
 
                 // Check to see if we have mods
                 if (count != 0)
                 {
                     SplashReport.ReportProgress(Translate.DoTranslation("mod: Loading mods..."), 0, ColorTools.ColTypes.Neutral);
-                    DebugWriter.Wdbg(DebugLevel.I, "Mods are being loaded. Total mods with screensavers = {0}", count);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Mods are being loaded. Total mods with screensavers = {0}", count);
                     int CurrentCount = 1;
                     foreach (string modFilePath in Directory.EnumerateFiles(ModPath))
                     {
                         string modFile = Path.GetFileName(modFilePath);
                         if (!GetBlacklistedMods().Contains(modFile))
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Mod {0} is not blacklisted.", modFile);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} is not blacklisted.", modFile);
                             SplashReport.ReportProgress("[{1}/{2}] " + Translate.DoTranslation("Starting mod") + " {0}...", 0, ColorTools.ColTypes.Progress, modFile, CurrentCount.ToString(), count.ToString());
                             ModParser.ParseMod(modFile);
                         }
                         else
                         {
-                            DebugWriter.Wdbg(DebugLevel.W, "Trying to start blacklisted mod {0}. Ignoring...", modFile);
+                            DebugWriter.WriteDebug(DebugLevel.W, "Trying to start blacklisted mod {0}. Ignoring...", modFile);
                             SplashReport.ReportProgress("[{1}/{2}] " + Translate.DoTranslation("Mod {0} is blacklisted."), 0, ColorTools.ColTypes.Warning, modFile, CurrentCount.ToString(), count.ToString());
                         }
                         CurrentCount += 1;
@@ -116,25 +116,25 @@ namespace KS.Modifications
         {
             string ModPath = Paths.GetKernelPath(KernelPathType.Mods);
             string PathToMod = Path.Combine(ModPath, ModFilename);
-            DebugWriter.Wdbg(DebugLevel.I, "Safe mode: {0}", Flags.SafeMode);
-            DebugWriter.Wdbg(DebugLevel.I, "Mod file path: {0}", PathToMod);
+            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", Flags.SafeMode);
+            DebugWriter.WriteDebug(DebugLevel.I, "Mod file path: {0}", PathToMod);
 
             if (!Flags.SafeMode)
             {
                 if (Checking.FileExists(PathToMod))
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Mod file exists! Starting...");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Mod file exists! Starting...");
                     if (!HasModStarted(PathToMod))
                     {
                         if (!GetBlacklistedMods().Contains(PathToMod))
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Mod {0} is not blacklisted.", ModFilename);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} is not blacklisted.", ModFilename);
                             SplashReport.ReportProgress(Translate.DoTranslation("Starting mod") + " {0}...", 0, ColorTools.ColTypes.Neutral, ModFilename);
                             ModParser.ParseMod(ModFilename);
                         }
                         else
                         {
-                            DebugWriter.Wdbg(DebugLevel.W, "Trying to start blacklisted mod {0}. Ignoring...", ModFilename);
+                            DebugWriter.WriteDebug(DebugLevel.W, "Trying to start blacklisted mod {0}. Ignoring...", ModFilename);
                             SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} is blacklisted."), 0, ColorTools.ColTypes.Warning, ModFilename);
                         }
                     }
@@ -160,20 +160,20 @@ namespace KS.Modifications
         public static void StopMods()
         {
             string ModPath = Paths.GetKernelPath(KernelPathType.Mods);
-            DebugWriter.Wdbg(DebugLevel.I, "Safe mode: {0}", Flags.SafeMode);
+            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", Flags.SafeMode);
             if (!Flags.SafeMode)
             {
                 // We're not in safe mode. We're good now.
                 if (!Checking.FolderExists(ModPath))
                     Directory.CreateDirectory(ModPath);
                 int count = Directory.EnumerateFiles(ModPath).Count();
-                DebugWriter.Wdbg(DebugLevel.I, "Files count: {0}", count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Files count: {0}", count);
 
                 // Check to see if we have mods
                 if (count != 0)
                 {
                     TextWriterColor.Write(Translate.DoTranslation("mod: Stopping mods..."), true, ColorTools.ColTypes.Neutral);
-                    DebugWriter.Wdbg(DebugLevel.I, "Mods are being stopped. Total mods with screensavers = {0}", count);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Mods are being stopped. Total mods with screensavers = {0}", count);
 
                     // Enumerate and delete the script as soon as the stopping is complete
                     for (int ScriptIndex = Mods.Count - 1; ScriptIndex >= 0; ScriptIndex -= 1)
@@ -182,11 +182,11 @@ namespace KS.Modifications
                         var ScriptParts = TargetMod.ModParts;
 
                         // Try to stop the mod and all associated parts
-                        DebugWriter.Wdbg(DebugLevel.I, "Stopping... Mod name: {0}", TargetMod.ModName);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Stopping... Mod name: {0}", TargetMod.ModName);
                         for (int PartIndex = ScriptParts.Count - 1; PartIndex >= 0; PartIndex -= 1)
                         {
                             var ScriptPartInfo = ScriptParts.Values.ElementAtOrDefault(PartIndex);
-                            DebugWriter.Wdbg(DebugLevel.I, "Stopping part {0} v{1}", ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Stopping part {0} v{1}", ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version);
 
                             // Stop the associated part
                             ScriptPartInfo.PartScript.StopMod();
@@ -209,7 +209,7 @@ namespace KS.Modifications
                     {
                         ShellType ShellTypeEnum = (ShellType)Convert.ToInt32(Enum.Parse(typeof(ShellType), ShellTypeName));
                         ListModCommands(ShellTypeEnum).Clear();
-                        DebugWriter.Wdbg(DebugLevel.I, "Mod commands for {0} cleared.", ShellTypeEnum.ToString());
+                        DebugWriter.WriteDebug(DebugLevel.I, "Mod commands for {0} cleared.", ShellTypeEnum.ToString());
                     }
 
                     // Clear the custom screensavers
@@ -234,8 +234,8 @@ namespace KS.Modifications
         {
             string ModPath = Paths.GetKernelPath(KernelPathType.Mods);
             string PathToMod = Path.Combine(ModPath, ModFilename);
-            DebugWriter.Wdbg(DebugLevel.I, "Safe mode: {0}", Flags.SafeMode);
-            DebugWriter.Wdbg(DebugLevel.I, "Mod file path: {0}", PathToMod);
+            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", Flags.SafeMode);
+            DebugWriter.WriteDebug(DebugLevel.I, "Mod file path: {0}", PathToMod);
 
             if (!Flags.SafeMode)
             {
@@ -244,7 +244,7 @@ namespace KS.Modifications
                     if (HasModStarted(PathToMod))
                     {
                         TextWriterColor.Write(Translate.DoTranslation("mod: Stopping mod {0}..."), true, ColorTools.ColTypes.Neutral, ModFilename);
-                        DebugWriter.Wdbg(DebugLevel.I, "Mod {0} is being stopped.", ModFilename);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} is being stopped.", ModFilename);
 
                         // Iterate through all the mods
                         for (int ScriptIndex = Mods.Count - 1; ScriptIndex >= 0; ScriptIndex -= 1)
@@ -253,23 +253,23 @@ namespace KS.Modifications
                             var ScriptParts = TargetMod.ModParts;
 
                             // Try to stop the mod and all associated parts
-                            DebugWriter.Wdbg(DebugLevel.I, "Checking mod {0}...", TargetMod.ModName);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Checking mod {0}...", TargetMod.ModName);
                             if ((TargetMod.ModFileName ?? "") == (ModFilename ?? ""))
                             {
-                                DebugWriter.Wdbg(DebugLevel.I, "Found mod to be stopped. Stopping...");
+                                DebugWriter.WriteDebug(DebugLevel.I, "Found mod to be stopped. Stopping...");
 
                                 // Iterate through all the parts
                                 for (int PartIndex = ScriptParts.Count - 1; PartIndex >= 0; PartIndex -= 1)
                                 {
                                     var ScriptPartInfo = ScriptParts.Values.ElementAtOrDefault(PartIndex);
-                                    DebugWriter.Wdbg(DebugLevel.I, "Stopping part {0} v{1}", ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Stopping part {0} v{1}", ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version);
 
                                     // Remove all the commands associated with the part
                                     if (ScriptPartInfo.PartScript.Commands is not null)
                                     {
                                         foreach (CommandInfo CommandInfo in ScriptPartInfo.PartScript.Commands.Values)
                                         {
-                                            DebugWriter.Wdbg(DebugLevel.I, "Removing command {0} from {1}...", CommandInfo.Command, CommandInfo.Type);
+                                            DebugWriter.WriteDebug(DebugLevel.I, "Removing command {0} from {1}...", CommandInfo.Command, CommandInfo.Type);
                                             ListModCommands(CommandInfo.Type).Remove(CommandInfo.Command);
                                         }
                                     }
@@ -314,11 +314,11 @@ namespace KS.Modifications
         {
             // Stop all mods
             StopMods();
-            DebugWriter.Wdbg(DebugLevel.I, "All mods stopped.");
+            DebugWriter.WriteDebug(DebugLevel.I, "All mods stopped.");
 
             // Start all mods
             StartMods();
-            DebugWriter.Wdbg(DebugLevel.I, "All mods restarted.");
+            DebugWriter.WriteDebug(DebugLevel.I, "All mods restarted.");
         }
 
         /// <summary>
@@ -340,13 +340,13 @@ namespace KS.Modifications
             // Iterate through each mod and mod part
             foreach (string ModName in Mods.Keys)
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Checking mod {0}...", ModName);
+                DebugWriter.WriteDebug(DebugLevel.I, "Checking mod {0}...", ModName);
                 foreach (string PartName in Mods[ModName].ModParts.Keys)
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Checking part {0}...", PartName);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Checking part {0}...", PartName);
                     if ((Mods[ModName].ModParts[PartName].PartFilePath ?? "") == (ModFilename ?? ""))
                     {
-                        DebugWriter.Wdbg(DebugLevel.I, "Found part {0} ({1}). Returning True...", PartName, ModFilename);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Found part {0} ({1}). Returning True...", PartName, ModFilename);
                         return true;
                     }
                 }
@@ -363,11 +363,11 @@ namespace KS.Modifications
         public static void AddModToBlacklist(string ModFilename)
         {
             ModFilename = Filesystem.NeutralizePath(ModFilename, Paths.GetKernelPath(KernelPathType.Mods));
-            DebugWriter.Wdbg(DebugLevel.I, "Adding {0} to the mod blacklist...", ModFilename);
+            DebugWriter.WriteDebug(DebugLevel.I, "Adding {0} to the mod blacklist...", ModFilename);
             var BlacklistedMods = GetBlacklistedMods();
             if (!BlacklistedMods.Contains(ModFilename))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Mod {0} not on the blacklist. Adding...", ModFilename);
+                DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} not on the blacklist. Adding...", ModFilename);
                 BlacklistedMods.Add(ModFilename);
             }
             BlacklistedModsString = string.Join(";", BlacklistedMods);
@@ -382,11 +382,11 @@ namespace KS.Modifications
         public static void RemoveModFromBlacklist(string ModFilename)
         {
             ModFilename = Filesystem.NeutralizePath(ModFilename, Paths.GetKernelPath(KernelPathType.Mods));
-            DebugWriter.Wdbg(DebugLevel.I, "Removing {0} from the mod blacklist...", ModFilename);
+            DebugWriter.WriteDebug(DebugLevel.I, "Removing {0} from the mod blacklist...", ModFilename);
             var BlacklistedMods = GetBlacklistedMods();
             if (BlacklistedMods.Contains(ModFilename))
             {
-                DebugWriter.Wdbg(DebugLevel.I, "Mod {0} on the blacklist. Removing...", ModFilename);
+                DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} on the blacklist. Removing...", ModFilename);
                 BlacklistedMods.Remove(ModFilename);
             }
             BlacklistedModsString = string.Join(";", BlacklistedMods);
@@ -411,7 +411,7 @@ namespace KS.Modifications
             string TargetModPath = Filesystem.NeutralizePath(Path.GetFileName(ModPath), Paths.GetKernelPath(KernelPathType.Mods));
             IScript Script;
             ModPath = Filesystem.NeutralizePath(ModPath, true);
-            DebugWriter.Wdbg(DebugLevel.I, "Installing mod {0} to {1}...", ModPath, TargetModPath);
+            DebugWriter.WriteDebug(DebugLevel.I, "Installing mod {0} to {1}...", ModPath, TargetModPath);
 
             // Check for upgrade
             if (Checking.FileExists(TargetModPath))
@@ -434,13 +434,13 @@ namespace KS.Modifications
                     }
                     catch (ReflectionTypeLoadException ex)
                     {
-                        DebugWriter.Wdbg(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", ModPath, ex.Message);
-                        DebugWriter.WStkTrc(ex);
+                        DebugWriter.WriteDebug(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", ModPath, ex.Message);
+                        DebugWriter.WriteDebugStackTrace(ex);
                         TextWriterColor.Write(Translate.DoTranslation("Mod can't be loaded because of the following: "), true, ColorTools.ColTypes.Error);
                         foreach (Exception LoaderException in ex.LoaderExceptions)
                         {
-                            DebugWriter.Wdbg(DebugLevel.E, "Loader exception: {0}", LoaderException.Message);
-                            DebugWriter.WStkTrc(LoaderException);
+                            DebugWriter.WriteDebug(DebugLevel.E, "Loader exception: {0}", LoaderException.Message);
+                            DebugWriter.WriteDebugStackTrace(LoaderException);
                             TextWriterColor.Write(LoaderException.Message, true, ColorTools.ColTypes.Error);
                         }
                         TextWriterColor.Write(Translate.DoTranslation("Contact the vendor of the mod to upgrade the mod to the compatible version."), true, ColorTools.ColTypes.Error);
@@ -458,7 +458,7 @@ namespace KS.Modifications
                 // Check for the manual pages
                 if (Checking.FolderExists(ModPath + ".manual"))
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Found manual page directory. {0}.manual exists. Installing manual pages...", ModPath);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Found manual page directory. {0}.manual exists. Installing manual pages...", ModPath);
                     Directory.CreateDirectory(TargetModPath + ".manual");
                     foreach (string ModManualFile in Directory.EnumerateFiles(ModPath + ".manual", "*.man", SearchOption.AllDirectories))
                     {
@@ -476,8 +476,8 @@ namespace KS.Modifications
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Installation failed for {0}: {1}", ModPath, ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Installation failed for {0}: {1}", ModPath, ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
                 TextWriterColor.Write(Translate.DoTranslation("Installation failed for") + " {0}: {1}", true, ColorTools.ColTypes.Error, ModPath, ex.Message);
             }
         }
@@ -489,7 +489,7 @@ namespace KS.Modifications
         public static void UninstallMod(string ModPath)
         {
             string TargetModPath = Filesystem.NeutralizePath(ModPath, Paths.GetKernelPath(KernelPathType.Mods), true);
-            DebugWriter.Wdbg(DebugLevel.I, "Uninstalling mod {0}...", TargetModPath);
+            DebugWriter.WriteDebug(DebugLevel.I, "Uninstalling mod {0}...", TargetModPath);
             try
             {
                 // First, stop all mods related to it
@@ -501,7 +501,7 @@ namespace KS.Modifications
                 // Finally, check for the manual pages and remove them
                 if (Checking.FolderExists(ModPath + ".manual"))
                 {
-                    DebugWriter.Wdbg(DebugLevel.I, "Found manual page directory. {0}.manual exists. Removing manual pages...", ModPath);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Found manual page directory. {0}.manual exists. Removing manual pages...", ModPath);
                     foreach (string ModManualFile in Directory.EnumerateFiles(ModPath + ".manual", "*.man", SearchOption.AllDirectories))
                     {
                         string ManualFileName = Path.GetFileNameWithoutExtension(ModManualFile);
@@ -520,8 +520,8 @@ namespace KS.Modifications
             }
             catch (Exception ex)
             {
-                DebugWriter.Wdbg(DebugLevel.E, "Uninstallation failed for {0}: {1}", ModPath, ex.Message);
-                DebugWriter.WStkTrc(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Uninstallation failed for {0}: {1}", ModPath, ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
                 TextWriterColor.Write(Translate.DoTranslation("Uninstallation failed for") + " {0}: {1}", true, ColorTools.ColTypes.Error, ModPath, ex.Message);
             }
         }
