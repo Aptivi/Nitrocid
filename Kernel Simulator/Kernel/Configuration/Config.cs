@@ -219,7 +219,7 @@ namespace KS.Kernel.Configuration
             {
                 { "Show MOTD on Log-in", Flags.ShowMOTD },
                 { "Clear Screen on Log-in", Flags.ClearOnLogin },
-                { "Host Name", Kernel.HostName },
+                { "Host Name", NetworkTools.HostName },
                 { "Show available usernames", Flags.ShowAvailableUsers },
                 { "MOTD Path", MotdParse.MotdFilePath },
                 { "MAL Path", MalParse.MalFilePath },
@@ -1436,7 +1436,7 @@ namespace KS.Kernel.Configuration
             Flags.ShowMOTD = (bool)ConfigToken["Login"]["Show MOTD on Log-in"];
             Flags.ShowAvailableUsers = (bool)ConfigToken["Login"]["Show available usernames"];
             if (!string.IsNullOrWhiteSpace((string)ConfigToken["Login"]["Host Name"]))
-                Kernel.HostName = (string)ConfigToken["Login"]["Host Name"];
+                NetworkTools.HostName = (string)ConfigToken["Login"]["Host Name"];
             if (!string.IsNullOrWhiteSpace((string)ConfigToken["Login"]["MOTD Path"]) & Parsing.TryParsePath((string)ConfigToken["Login"]["MOTD Path"]))
                 MotdParse.MotdFilePath = (string)ConfigToken["Login"]["MOTD Path"];
             if (!string.IsNullOrWhiteSpace((string)ConfigToken["Login"]["MAL Path"]) & Parsing.TryParsePath((string)ConfigToken["Login"]["MAL Path"]))

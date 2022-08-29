@@ -22,6 +22,7 @@ using KS.Files.Folders;
 using KS.Kernel;
 using KS.Languages;
 using KS.Login;
+using KS.Network;
 
 namespace KS.Shell.Prompts.Presets.UESH
 {
@@ -60,7 +61,7 @@ namespace KS.Shell.Prompts.Presets.UESH
 
                 // Current hostname
                 PresetStringBuilder.Append(ColorTools.HostNameShellColor.VTSequenceForeground);
-                PresetStringBuilder.AppendFormat("{0}", Kernel.Kernel.HostName);
+                PresetStringBuilder.AppendFormat("{0}", NetworkTools.HostName);
 
                 // Current directory
                 PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);

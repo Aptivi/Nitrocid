@@ -58,7 +58,6 @@ namespace KS.Kernel
     {
 
         // Variables
-        public static string HostName = "kernel";
         public readonly static string KernelVersion = GetExecutingAssembly().GetName().Version.ToString();
         public readonly static string NewLine = Environment.NewLine;
         public readonly static Events.Events KernelEventManager = new();

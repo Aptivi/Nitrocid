@@ -26,6 +26,7 @@ using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Login;
 using KS.Misc.Text;
+using KS.Network;
 using KS.Network.Mail;
 using KS.Scripting;
 using KS.Shell.Shells.FTP;
@@ -154,7 +155,7 @@ namespace KS.Misc.Probers
                 if (text.Contains("<host>"))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Hostname placeholder found.");
-                    text = text.Replace("<host>", Kernel.Kernel.HostName);
+                    text = text.Replace("<host>", NetworkTools.HostName);
                 }
 
                 // -> Current directory placeholder

@@ -37,6 +37,7 @@ namespace KS.Network
     {
 
         // Variables
+        public static string HostName = "kernel";
         public static int DownloadRetries = 3;
         public static int UploadRetries = 3;
         public static int PingTimeout = 60000;
@@ -113,9 +114,9 @@ namespace KS.Network
         /// <param name="NewHost">New host name</param>
         public static void ChangeHostname(string NewHost)
         {
-            Kernel.Kernel.HostName = NewHost;
+            HostName = NewHost;
             var Token = ConfigTools.GetConfigCategory(Config.ConfigCategory.Login);
-            ConfigTools.SetConfigValue(Config.ConfigCategory.Login, Token, "Host Name", Kernel.Kernel.HostName);
+            ConfigTools.SetConfigValue(Config.ConfigCategory.Login, Token, "Host Name", HostName);
         }
 
         /// <summary>
