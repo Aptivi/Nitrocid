@@ -29,6 +29,7 @@ namespace KS.Misc.Probers.Motd
 
         // Variables
         public static string MalFilePath = Paths.GetKernelPath(KernelPathType.MAL);
+        public static string MAL;
 
         /// <summary>
         /// Sets the MAL
@@ -48,7 +49,7 @@ namespace KS.Misc.Probers.Motd
                 MALStreamW = new System.IO.StreamWriter(MalFilePath) { AutoFlush = true };
                 DebugWriter.WriteDebug(DebugLevel.I, "Opened stream to MAL path");
                 MALStreamW.Write(Message);
-                Kernel.Kernel.MAL = Message;
+                MAL = Message;
 
                 // Close the message stream
                 MALStreamW.Close();
@@ -79,7 +80,7 @@ namespace KS.Misc.Probers.Motd
                 MALStreamR = new System.IO.StreamReader(MalFilePath);
                 DebugWriter.WriteDebug(DebugLevel.I, "Opened stream to MAL path");
                 MALBuilder.Append(MALStreamR.ReadToEnd());
-                Kernel.Kernel.MAL = MALBuilder.ToString();
+                MAL = MALBuilder.ToString();
                 MALStreamR.Close();
                 DebugWriter.WriteDebug(DebugLevel.I, "Stream closed");
             }

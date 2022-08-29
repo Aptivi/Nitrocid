@@ -114,7 +114,7 @@ namespace KS.Login
                 DebugWriter.WriteDebug(DebugLevel.I, "showMOTDOnceFlag = {0}, showMOTD = {1}", Flags.ShowMOTDOnceFlag, Flags.ShowMOTD);
                 if (Flags.ShowMOTDOnceFlag == true & Flags.ShowMOTD == true)
                 {
-                    TextWriterColor.Write(Kernel.Kernel.NewLine + PlaceParse.ProbePlaces(Kernel.Kernel.MOTDMessage), true, ColorTools.ColTypes.Banner);
+                    TextWriterColor.Write(Kernel.Kernel.NewLine + PlaceParse.ProbePlaces(MotdParse.MOTDMessage), true, ColorTools.ColTypes.Banner);
                 }
                 Flags.ShowMOTDOnceFlag = false;
 
@@ -316,7 +316,7 @@ namespace KS.Login
             DebugWriter.WriteDebug(DebugLevel.I, "Lock released.");
             Flags.ShowMOTDOnceFlag = true;
             if (Flags.ShowMAL)
-                TextWriterColor.Write(PlaceParse.ProbePlaces(Kernel.Kernel.MAL), true, ColorTools.ColTypes.Banner);
+                TextWriterColor.Write(PlaceParse.ProbePlaces(MalParse.MAL), true, ColorTools.ColTypes.Banner);
             RSSTools.ShowHeadlineLogin();
 
             // Fire event PostLogin

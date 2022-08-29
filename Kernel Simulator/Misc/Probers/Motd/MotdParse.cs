@@ -29,6 +29,7 @@ namespace KS.Misc.Probers.Motd
 
         // Variables
         public static string MotdFilePath = Paths.GetKernelPath(KernelPathType.MOTD);
+        public static string MOTDMessage;
 
         /// <summary>
         /// Sets the Message of the Day
@@ -48,7 +49,7 @@ namespace KS.Misc.Probers.Motd
                 MOTDStreamW = new System.IO.StreamWriter(MotdFilePath) { AutoFlush = true };
                 DebugWriter.WriteDebug(DebugLevel.I, "Opened stream to MOTD path");
                 MOTDStreamW.WriteLine(Message);
-                Kernel.Kernel.MOTDMessage = Message;
+                MOTDMessage = Message;
 
                 // Close the message stream
                 MOTDStreamW.Close();
@@ -79,7 +80,7 @@ namespace KS.Misc.Probers.Motd
                 MOTDStreamR = new System.IO.StreamReader(MotdFilePath);
                 DebugWriter.WriteDebug(DebugLevel.I, "Opened stream to MOTD path");
                 MOTDBuilder.Append(MOTDStreamR.ReadToEnd());
-                Kernel.Kernel.MOTDMessage = MOTDBuilder.ToString();
+                MOTDMessage = MOTDBuilder.ToString();
                 MOTDStreamR.Close();
                 DebugWriter.WriteDebug(DebugLevel.I, "Stream closed");
             }
