@@ -181,11 +181,11 @@ namespace KS.Misc.Screensaver.Displays
 
                 // Print all information
                 ConsoleBase.ConsoleWrapper.Clear();
-                WriterPlainManager.currentPlain.WriteWherePlain("  - Name:                {0}", 0, 1, false, GeneratedName);
-                WriterPlainManager.currentPlain.WriteWherePlain("  - First Name:          {0}", 0, 2, false, FirstName);
-                WriterPlainManager.currentPlain.WriteWherePlain("  - Last Name / Surname: {0}", 0, 3, false, LastName);
-                WriterPlainManager.currentPlain.WriteWherePlain("  - Age:                 {0} years old", 0, 4, false, FinalAge);
-                WriterPlainManager.currentPlain.WriteWherePlain("  - Birth date:          {0}", 0, 5, false, TimeDateRenderers.Render(Birthdate));
+                WriterPlainManager.CurrentPlain.WriteWherePlain("  - Name:                {0}", 0, 1, false, GeneratedName);
+                WriterPlainManager.CurrentPlain.WriteWherePlain("  - First Name:          {0}", 0, 2, false, FirstName);
+                WriterPlainManager.CurrentPlain.WriteWherePlain("  - Last Name / Surname: {0}", 0, 3, false, LastName);
+                WriterPlainManager.CurrentPlain.WriteWherePlain("  - Age:                 {0} years old", 0, 4, false, FinalAge);
+                WriterPlainManager.CurrentPlain.WriteWherePlain("  - Birth date:          {0}", 0, 5, false, TimeDateRenderers.Render(Birthdate));
 
                 // Lookup delay
                 ThreadManager.SleepNoBlock(PersonLookupSettings.PersonLookupDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);

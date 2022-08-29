@@ -50,7 +50,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(colorType);
 
                     // Write text slowly
-                    WriterPlainManager.currentPlain.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
+                    WriterPlainManager.CurrentPlain.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -80,7 +80,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(colorTypeBackground, true);
 
                     // Write text slowly
-                    WriterPlainManager.currentPlain.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
+                    WriterPlainManager.CurrentPlain.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -108,7 +108,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ConsoleBase.ConsoleWrapper.ForegroundColor = color;
 
                     // Write text slowly
-                    WriterPlainManager.currentPlain.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
+                    WriterPlainManager.CurrentPlain.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -137,7 +137,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ConsoleBase.ConsoleWrapper.ForegroundColor = ForegroundColor;
 
                     // Write text slowly
-                    WriterPlainManager.currentPlain.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
+                    WriterPlainManager.CurrentPlain.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -165,7 +165,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(ColorTools.BackgroundColor, true);
 
                     // Write text slowly
-                    WriterPlainManager.currentPlain.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
+                    WriterPlainManager.CurrentPlain.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -194,7 +194,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(BackgroundColor, true);
 
                     // Write text slowly
-                    WriterPlainManager.currentPlain.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
+                    WriterPlainManager.CurrentPlain.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {

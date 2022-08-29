@@ -322,7 +322,7 @@ namespace KS.Misc.Screensaver.Displays
                     break;
 
                 // Print a block and add the covered position to the list so fading down can be done
-                WriterPlainManager.currentPlain.WriteWherePlain(" ", ColumnLine, Fall, false);
+                WriterPlainManager.CurrentPlain.WriteWherePlain(" ", ColumnLine, Fall, false);
                 var PositionTuple = new Tuple<int, int>(ColumnLine, Fall);
                 CoveredPositions.Add(PositionTuple);
 

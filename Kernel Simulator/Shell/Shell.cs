@@ -338,8 +338,8 @@ namespace KS.Shell
                 string OutputFileName = Command.Substring(Command.LastIndexOf(">") + 2);
                 OutputFileName = Filesystem.NeutralizePath(OutputFileName);
                 WriterPlainManager.ChangePlain("File");
-                ((FilePlainWriter)WriterPlainManager.currentPlain).AppendToFile = true;
-                ((FilePlainWriter)WriterPlainManager.currentPlain).PathToWrite = OutputFileName;
+                ((FilePlainWriter)WriterPlainManager.CurrentPlain).AppendToFile = true;
+                ((FilePlainWriter)WriterPlainManager.CurrentPlain).PathToWrite = OutputFileName;
                 Command = Command.Replace(" >>> " + OutputFileName, "");
             }
             else if (Command.Contains(">>"))
@@ -348,7 +348,7 @@ namespace KS.Shell
                 string OutputFileName = Command.Substring(Command.LastIndexOf(">") + 2);
                 OutputFileName = Filesystem.NeutralizePath(OutputFileName);
                 WriterPlainManager.ChangePlain("File");
-                ((FilePlainWriter)WriterPlainManager.currentPlain).PathToWrite = OutputFileName;
+                ((FilePlainWriter)WriterPlainManager.CurrentPlain).PathToWrite = OutputFileName;
                 Command = Command.Replace(" >> " + OutputFileName, "");
             }
 
@@ -358,7 +358,7 @@ namespace KS.Shell
                 DebugWriter.WriteDebug(DebugLevel.I, "Optional output redirection found using OutputPath ({0}).", OutputPath);
                 OutputPath = Filesystem.NeutralizePath(OutputPath);
                 WriterPlainManager.ChangePlain("File");
-                ((FilePlainWriter)WriterPlainManager.currentPlain).PathToWrite = OutputPath;
+                ((FilePlainWriter)WriterPlainManager.CurrentPlain).PathToWrite = OutputPath;
             }
         }
 

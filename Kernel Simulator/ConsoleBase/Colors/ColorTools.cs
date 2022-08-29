@@ -877,13 +877,13 @@ namespace KS.ConsoleBase.Colors
                 if (Background)
                 {
                     if (Flags.SetBackground | ForceSet)
-                        WriterPlainManager.currentPlain.WritePlain(ColorSequence.VTSequenceBackground, false);
+                        WriterPlainManager.CurrentPlain.WritePlain(ColorSequence.VTSequenceBackground, false);
                     else
-                        WriterPlainManager.currentPlain.WritePlain(resetSequence, false);
+                        WriterPlainManager.CurrentPlain.WritePlain(resetSequence, false);
                 }
                 else
                 {
-                    WriterPlainManager.currentPlain.WritePlain(ColorSequence.VTSequenceForeground, false);
+                    WriterPlainManager.CurrentPlain.WritePlain(ColorSequence.VTSequenceForeground, false);
                 }
             }
         }

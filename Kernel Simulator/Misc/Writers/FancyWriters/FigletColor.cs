@@ -48,7 +48,7 @@ namespace KS.Misc.Writers.FancyWriters
 
                 // Write the font
                 Text = FigletFont.Render(Text);
-                WriterPlainManager.currentPlain.WritePlain(Text, true, Vars);
+                WriterPlainManager.CurrentPlain.WritePlain(Text, true, Vars);
             }
             catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
             {

@@ -398,7 +398,7 @@ namespace KS.Misc.Screensaver.Displays
 
                     // Fill the entire screen
                     for (int y = 0; y < ConsoleBase.ConsoleWrapper.WindowHeight; y++)
-                        WriterPlainManager.currentPlain.WriteWherePlain(" ", RampCurrentPositionLeft, y);
+                        WriterPlainManager.CurrentPlain.WriteWherePlain(" ", RampCurrentPositionLeft, y);
 
                     // Update left position
                     RampCurrentPositionLeft = ConsoleBase.ConsoleWrapper.CursorLeft;

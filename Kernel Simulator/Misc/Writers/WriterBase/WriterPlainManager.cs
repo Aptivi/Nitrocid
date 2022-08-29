@@ -41,6 +41,11 @@ namespace KS.Misc.Writers.WriterBase
         public static string CurrentPlainName { get => currentPlainName; }
 
         /// <summary>
+        /// Gets the current plain writer interface
+        /// </summary>
+        public static IWriterPlain CurrentPlain { get => currentPlain; }
+
+        /// <summary>
         /// Changes the plain writer
         /// </summary>
         /// <param name="plainName">The plain writer name. Usually found in <see cref="plains"/></param>

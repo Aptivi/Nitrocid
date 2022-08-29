@@ -607,18 +607,18 @@ namespace KS.Misc.Screensaver.Displays
                 {
                     for (int BlockPos = RampFrameBlockStartWidth, loopTo = IndeterminateCurrentBlockStart; BlockPos <= loopTo; BlockPos++)
                     {
-                        WriterPlainManager.currentPlain.WriteWherePlain(" ", BlockPos, RampCenterPosition - 1, true);
-                        WriterPlainManager.currentPlain.WriteWherePlain(" ", BlockPos, RampCenterPosition, true);
-                        WriterPlainManager.currentPlain.WriteWherePlain(" ", BlockPos, RampCenterPosition + 1, true);
+                        WriterPlainManager.CurrentPlain.WriteWherePlain(" ", BlockPos, RampCenterPosition - 1, true);
+                        WriterPlainManager.CurrentPlain.WriteWherePlain(" ", BlockPos, RampCenterPosition, true);
+                        WriterPlainManager.CurrentPlain.WriteWherePlain(" ", BlockPos, RampCenterPosition + 1, true);
                     }
                 }
                 else
                 {
                     for (int BlockPos = IndeterminateCurrentBlockEnd, loopTo1 = RampFrameBlockEndWidth; BlockPos <= loopTo1; BlockPos++)
                     {
-                        WriterPlainManager.currentPlain.WriteWherePlain(" ", BlockPos, RampCenterPosition - 1, true);
-                        WriterPlainManager.currentPlain.WriteWherePlain(" ", BlockPos, RampCenterPosition, true);
-                        WriterPlainManager.currentPlain.WriteWherePlain(" ", BlockPos, RampCenterPosition + 1, true);
+                        WriterPlainManager.CurrentPlain.WriteWherePlain(" ", BlockPos, RampCenterPosition - 1, true);
+                        WriterPlainManager.CurrentPlain.WriteWherePlain(" ", BlockPos, RampCenterPosition, true);
+                        WriterPlainManager.CurrentPlain.WriteWherePlain(" ", BlockPos, RampCenterPosition + 1, true);
                     }
                 }
 
@@ -626,9 +626,9 @@ namespace KS.Misc.Screensaver.Displays
                 ColorTools.SetConsoleColor(RampCurrentColorInstance, true, true);
                 for (int BlockPos = IndeterminateCurrentBlockStart, loopTo2 = IndeterminateCurrentBlockEnd; BlockPos <= loopTo2; BlockPos++)
                 {
-                    WriterPlainManager.currentPlain.WriteWherePlain(" ", BlockPos, RampCenterPosition - 1, true);
-                    WriterPlainManager.currentPlain.WriteWherePlain(" ", BlockPos, RampCenterPosition, true);
-                    WriterPlainManager.currentPlain.WriteWherePlain(" ", BlockPos, RampCenterPosition + 1, true);
+                    WriterPlainManager.CurrentPlain.WriteWherePlain(" ", BlockPos, RampCenterPosition - 1, true);
+                    WriterPlainManager.CurrentPlain.WriteWherePlain(" ", BlockPos, RampCenterPosition, true);
+                    WriterPlainManager.CurrentPlain.WriteWherePlain(" ", BlockPos, RampCenterPosition + 1, true);
                 }
 
                 // Change the start and end positions

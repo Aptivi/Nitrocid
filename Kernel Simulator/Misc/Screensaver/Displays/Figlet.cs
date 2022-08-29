@@ -338,7 +338,7 @@ namespace KS.Misc.Screensaver.Displays
                 }
                 else
                 {
-                    WriterPlainManager.currentPlain.WriteWherePlain(FigletWrite, FigletWidth, FigletHeight, true);
+                    WriterPlainManager.CurrentPlain.WriteWherePlain(FigletWrite, FigletWidth, FigletHeight, true);
                 }
             }
             ThreadManager.SleepNoBlock(FigletSettings.FigletDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);

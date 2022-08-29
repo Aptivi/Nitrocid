@@ -143,7 +143,7 @@ namespace KS.ConsoleBase
             char EscapeChar = Convert.ToChar(27);
             string Sequence = $"{EscapeChar}]0;{Text}{BellChar}";
             Console.Title = Text;
-            WriterPlainManager.currentPlain.WritePlain(Sequence, false);
+            WriterPlainManager.CurrentPlain.WritePlain(Sequence, false);
         }
 
     }
