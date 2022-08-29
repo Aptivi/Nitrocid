@@ -29,8 +29,8 @@ namespace KS.Kernel.Debugging
     public static class DebugWriter
     {
 
-        public static StreamWriter DebugStreamWriter;
-        public static List<string> DebugStackTraces = new();
+        internal static StreamWriter DebugStreamWriter;
+        public readonly static List<string> DebugStackTraces = new();
 
         /// <summary>
         /// Outputs the text into the debugger file, and sets the time stamp.
