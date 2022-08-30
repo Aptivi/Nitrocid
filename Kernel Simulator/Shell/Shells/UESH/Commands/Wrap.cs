@@ -16,16 +16,11 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System;
 using System.Collections;
-using System.IO;
 using KS.ConsoleBase.Colors;
-using KS.Files;
 using KS.Languages;
-using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Shells.UESH.Commands
 {

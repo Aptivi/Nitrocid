@@ -20,11 +20,9 @@ using System;
 using ColorSeq;
 using Figgle;
 using KS.ConsoleBase.Colors;
-using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Reflection;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.WriterBase;
 
 namespace KS.Misc.Writers.FancyWriters

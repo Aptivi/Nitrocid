@@ -18,7 +18,6 @@
 
 using System;
 using System.IO;
-using KS.Kernel.Debugging;
 using KS.Kernel.Debugging.RemoteDebug.Interface;
 using KS.Languages;
 

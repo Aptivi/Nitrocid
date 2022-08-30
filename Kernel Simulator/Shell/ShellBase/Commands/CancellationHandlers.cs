@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using System.IO;
 using KS.Kernel;
 using KS.Misc.Writers.WriterBase;
 using KS.Shell.ShellBase.Shells;

@@ -19,7 +19,6 @@
 using KS.Kernel.Debugging.RemoteDebug.Interface;
 using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Commands;
-using System.IO;
 
 namespace KS.Shell.UnifiedCommands
 {

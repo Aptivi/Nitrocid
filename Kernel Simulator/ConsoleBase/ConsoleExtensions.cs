@@ -19,7 +19,6 @@
 using System;
 using KS.Misc.Reflection;
 using KS.Misc.Text;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.WriterBase;
 using VT.NET;
 

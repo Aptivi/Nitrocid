@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.IO;
-using KS.Kernel.Debugging.RemoteDebug;
 using KS.Kernel.Debugging.RemoteDebug.Interface;
 
 namespace KS.Kernel.Debugging.RemoteDebug.Commands

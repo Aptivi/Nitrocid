@@ -16,9 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.Linq;
 using KS.Languages;
-using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using Shouldly;
 

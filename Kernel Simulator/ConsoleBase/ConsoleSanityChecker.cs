@@ -19,7 +19,6 @@
 using System;
 using KS.Kernel;
 using KS.Kernel.Exceptions;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.WriterBase;
 
 namespace KS.ConsoleBase

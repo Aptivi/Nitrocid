@@ -22,7 +22,6 @@ using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using Newtonsoft.Json.Linq;
-using System;
 
 namespace KS.Shell.Shells.Test.Commands
 {

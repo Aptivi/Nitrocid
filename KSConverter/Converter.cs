@@ -23,8 +23,6 @@ using System.IO;
 using System.Linq;
 using FluentFTP;
 using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
-using KS.Files;
 using KS.Files.Querying;
 using KS.Login;
 using KS.Kernel.Configuration;

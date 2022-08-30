@@ -18,11 +18,9 @@
 
 using Extensification.StringExts;
 using KS.Kernel.Debugging;
-using KS.Kernel.Debugging.RemoteDebug;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using System.IO;
-using System.Net.Sockets;
 
 namespace KS.Shell.ShellBase.Aliases
 {
