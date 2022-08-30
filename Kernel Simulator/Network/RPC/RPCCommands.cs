@@ -28,6 +28,7 @@ using KS.Kernel.Power;
 using KS.Languages;
 using KS.Misc.Notifications;
 using KS.Misc.Screensaver;
+using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Network.RPC
 {
@@ -189,7 +190,7 @@ namespace KS.Network.RPC
                             if (Flags.LoggedIn)
                             {
                                 DebugWriter.WriteDebug(DebugLevel.I, "Exec confirmed from remote access.");
-                                ConsoleBase.ConsoleWrapper.WriteLine();
+                                TextWriterColor.Write();
                                 Shell.Shell.GetLine(Message.Replace("ExecConfirm, ", "").Replace(Kernel.Kernel.NewLine, ""));
                             }
                             else

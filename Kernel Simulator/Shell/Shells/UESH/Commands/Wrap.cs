@@ -53,7 +53,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     string WrapOutput = WrapOutputStream.ReadToEnd();
                     TextWriterWrappedColor.WriteWrapped(WrapOutput, false, ColorTools.ColTypes.Neutral);
                     if (!WrapOutput.EndsWith(Kernel.Kernel.NewLine))
-                        KS.ConsoleBase.ConsoleWrapper.WriteLine();
+                        KS.TextWriterColor.Write();
                     WrapOutputStream.Close();
                     File.Delete(WrapOutputPath);
                 }

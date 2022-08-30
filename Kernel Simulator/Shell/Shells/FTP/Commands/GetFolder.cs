@@ -41,12 +41,12 @@ namespace KS.Shell.Shells.FTP.Commands
             bool Result = !string.IsNullOrWhiteSpace(LocalFolder) ? FTPTransfer.FTPGetFolder(RemoteFolder, LocalFolder) : FTPTransfer.FTPGetFolder(RemoteFolder);
             if (Result)
             {
-                ConsoleBase.ConsoleWrapper.WriteLine();
+                TextWriterColor.Write();
                 TextWriterColor.Write(Translate.DoTranslation("Downloaded folder {0}."), true, ColorTools.ColTypes.Success, RemoteFolder);
             }
             else
             {
-                ConsoleBase.ConsoleWrapper.WriteLine();
+                TextWriterColor.Write();
                 TextWriterColor.Write(Translate.DoTranslation("Download failed for folder {0}."), true, ColorTools.ColTypes.Error, RemoteFolder);
             }
         }

@@ -44,12 +44,12 @@ namespace KS.Shell.Shells.SFTP.Commands
             // Begin the uploading process
             if (SFTPTransfer.SFTPUploadFile(ListArgsOnly[0]))
             {
-                ConsoleBase.ConsoleWrapper.WriteLine();
+                TextWriterColor.Write();
                 TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("Uploaded file {0}"), true, ColorTools.ColTypes.Success, ListArgsOnly[0]);
             }
             else
             {
-                ConsoleBase.ConsoleWrapper.WriteLine();
+                TextWriterColor.Write();
                 TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("Failed to upload {0}"), true, ColorTools.ColTypes.Error, ListArgsOnly[0]);
             }
         }

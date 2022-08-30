@@ -156,7 +156,7 @@ namespace KS.Network.SFTP
                         SpeedDialData[i, 3] = (string)SpeedDialLines[SpeedDialAddress]["User"];
                     }
                     TableColor.WriteTable(SpeedDialHeaders, SpeedDialData, 2, ColorTools.ColTypes.Option);
-                    ConsoleBase.ConsoleWrapper.WriteLine();
+                    TextWriterColor.Write();
                     while (Answering)
                     {
                         TextWriterColor.Write(">> ", false, ColorTools.ColTypes.Input);

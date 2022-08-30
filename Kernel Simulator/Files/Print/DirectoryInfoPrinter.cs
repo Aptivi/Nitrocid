@@ -60,7 +60,7 @@ namespace KS.Files.Print
                             TextWriterColor.Write(": ", false, ColorTools.ColTypes.ListEntry);
                             TextWriterColor.Write(Translate.DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), false, ColorTools.ColTypes.ListValue, TotalSize.FileSizeToString(), DirectoryInfo.CreationTime.ToShortDateString(), DirectoryInfo.CreationTime.ToShortTimeString(), DirectoryInfo.LastWriteTime.ToShortDateString(), DirectoryInfo.LastWriteTime.ToShortTimeString());
                         }
-                        ConsoleBase.ConsoleWrapper.WriteLine();
+                        TextWriterColor.Write();
                     }
                 }
             }

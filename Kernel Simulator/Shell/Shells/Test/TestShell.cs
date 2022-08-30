@@ -48,7 +48,7 @@ namespace KS.Shell.Shells.Test
         public override void InitializeShell(params object[] ShellArgs)
         {
             // Show the welcome message
-            ConsoleBase.ConsoleWrapper.WriteLine();
+            TextWriterColor.Write();
             SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Welcome to Test Shell!"), true);
 
             // Actual shell logic

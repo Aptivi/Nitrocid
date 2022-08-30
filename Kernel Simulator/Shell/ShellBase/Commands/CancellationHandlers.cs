@@ -18,6 +18,7 @@
 
 using System;
 using KS.Kernel;
+using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.WriterBase;
 using KS.Shell.ShellBase.Shells;
 
@@ -35,7 +36,7 @@ namespace KS.Shell.ShellBase.Commands
                 if (e.SpecialKey == ConsoleSpecialKey.ControlC)
                 {
                     Flags.CancelRequested = true;
-                    ConsoleBase.ConsoleWrapper.WriteLine();
+                    TextWriterColor.Write();
                     WriterPlainManager.ChangePlain("Null");
                     e.Cancel = true;
                     var StartCommandThread = ShellStart.ShellStack[ShellStart.ShellStack.Count - 1].ShellCommandThread;

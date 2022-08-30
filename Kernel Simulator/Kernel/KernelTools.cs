@@ -519,7 +519,7 @@ namespace KS.Kernel
                 {
                     SplashReport.ReportProgress(Translate.DoTranslation("Stage finished in") + $" {Kernel.StageTimer.Elapsed}", 10, ColorTools.ColTypes.StageTime);
                     Kernel.StageTimer.Reset();
-                    ConsoleBase.ConsoleWrapper.WriteLine();
+                    TextWriterColor.Write();
                 }
             }
             else if (Flags.ShowStageFinishTimes)
@@ -533,7 +533,7 @@ namespace KS.Kernel
             {
                 if (!Flags.EnableSplash & !Flags.QuietKernel)
                 {
-                    ConsoleBase.ConsoleWrapper.WriteLine();
+                    TextWriterColor.Write();
                     SeparatorWriterColor.WriteSeparator(StageText, false, ColorTools.ColTypes.Stage);
                 }
                 DebugWriter.WriteDebug(DebugLevel.I, $"- Kernel stage {StageNumber} | Text: {StageText}");

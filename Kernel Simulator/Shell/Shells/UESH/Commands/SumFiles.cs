@@ -101,7 +101,7 @@ namespace KS.Shell.Shells.UESH.Commands
                         TextWriterColor.Write(Translate.DoTranslation("Invalid encryption algorithm."), true, ColorTools.ColTypes.Error);
                         break;
                     }
-                    ConsoleBase.ConsoleWrapper.WriteLine();
+                    TextWriterColor.Write();
                 }
                 if (!string.IsNullOrEmpty(@out))
                 {

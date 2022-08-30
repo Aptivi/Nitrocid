@@ -171,7 +171,7 @@ namespace KS.Hardware
                             TextWriterColor.Write("  - {0}: ", false, ColorTools.ColTypes.ListEntry, HardwareValuePropertyInfo.Name);
                             if (Field.Name == "HDD" & HardwareValuePropertyInfo.Name == "Partitions")
                             {
-                                ConsoleBase.ConsoleWrapper.WriteLine();
+                                TextWriterColor.Write();
                                 IDictionary Partitions = HardwareValuePropertyInfo.GetValue(FieldValueDict[HardwareKey]) as IDictionary;
                                 if (Partitions is not null)
                                 {

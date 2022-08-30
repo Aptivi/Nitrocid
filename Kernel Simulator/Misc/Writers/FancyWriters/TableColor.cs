@@ -45,7 +45,7 @@ namespace KS.Misc.Writers.FancyWriters
             int RepeatTimes;
 
             // Populate the positions
-            ConsoleBase.ConsoleWrapper.WriteLine();
+            TextWriterColor.Write();
             for (int ColumnPosition = Margin, loopTo = ConsoleBase.ConsoleWrapper.WindowWidth; ColumnCapacity >= 0 ? ColumnPosition <= loopTo : ColumnPosition >= loopTo; ColumnPosition += ColumnCapacity)
             {
                 if (!(ColumnPosition >= ConsoleBase.ConsoleWrapper.WindowWidth))
@@ -68,7 +68,7 @@ namespace KS.Misc.Writers.FancyWriters
                 Header ??= "";
                 TextWriterWhereColor.WriteWhere(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, ColorTools.ColTypes.TableHeader);
             }
-            ConsoleBase.ConsoleWrapper.WriteLine();
+            TextWriterColor.Write();
 
             // Write the closing minus sign.
             int OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
@@ -120,7 +120,7 @@ namespace KS.Misc.Writers.FancyWriters
                         TextWriterWhereColor.WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, ColorTools.ColTypes.TableValue);
                     }
                 }
-                ConsoleBase.ConsoleWrapper.WriteLine();
+                TextWriterColor.Write();
 
                 // Separate the rows optionally
                 if (SeparateRows)
@@ -158,7 +158,7 @@ namespace KS.Misc.Writers.FancyWriters
             int RepeatTimes;
 
             // Populate the positions
-            ConsoleBase.ConsoleWrapper.WriteLine();
+            TextWriterColor.Write();
             for (int ColumnPosition = Margin, loopTo = ConsoleBase.ConsoleWrapper.WindowWidth; ColumnCapacity >= 0 ? ColumnPosition <= loopTo : ColumnPosition >= loopTo; ColumnPosition += ColumnCapacity)
             {
                 if (!(ColumnPosition >= ConsoleBase.ConsoleWrapper.WindowWidth))
@@ -181,7 +181,7 @@ namespace KS.Misc.Writers.FancyWriters
                 Header ??= "";
                 TextWriterWhereColor.WriteWhere(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, Color);
             }
-            ConsoleBase.ConsoleWrapper.WriteLine();
+            TextWriterColor.Write();
 
             // Write the closing minus sign.
             int OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
@@ -233,7 +233,7 @@ namespace KS.Misc.Writers.FancyWriters
                         TextWriterWhereColor.WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, Color);
                     }
                 }
-                ConsoleBase.ConsoleWrapper.WriteLine();
+                TextWriterColor.Write();
 
                 // Separate the rows optionally
                 if (SeparateRows)
@@ -272,7 +272,7 @@ namespace KS.Misc.Writers.FancyWriters
             int RepeatTimes;
 
             // Populate the positions
-            ConsoleBase.ConsoleWrapper.WriteLine();
+            TextWriterColor.Write();
             for (int ColumnPosition = Margin, loopTo = ConsoleBase.ConsoleWrapper.WindowWidth; ColumnCapacity >= 0 ? ColumnPosition <= loopTo : ColumnPosition >= loopTo; ColumnPosition += ColumnCapacity)
             {
                 if (!(ColumnPosition >= ConsoleBase.ConsoleWrapper.WindowWidth))
@@ -295,7 +295,7 @@ namespace KS.Misc.Writers.FancyWriters
                 Header ??= "";
                 TextWriterWhereColor.WriteWhere(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, ForegroundColor, BackgroundColor);
             }
-            ConsoleBase.ConsoleWrapper.WriteLine();
+            TextWriterColor.Write();
 
             // Write the closing minus sign.
             int OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
@@ -347,7 +347,7 @@ namespace KS.Misc.Writers.FancyWriters
                         TextWriterWhereColor.WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, ForegroundColor, BackgroundColor);
                     }
                 }
-                ConsoleBase.ConsoleWrapper.WriteLine();
+                TextWriterColor.Write();
 
                 // Separate the rows optionally
                 if (SeparateRows)
@@ -385,7 +385,7 @@ namespace KS.Misc.Writers.FancyWriters
             int RepeatTimes;
 
             // Populate the positions
-            ConsoleBase.ConsoleWrapper.WriteLine();
+            TextWriterColor.Write();
             for (int ColumnPosition = Margin, loopTo = ConsoleBase.ConsoleWrapper.WindowWidth; ColumnCapacity >= 0 ? ColumnPosition <= loopTo : ColumnPosition >= loopTo; ColumnPosition += ColumnCapacity)
             {
                 if (!(ColumnPosition >= ConsoleBase.ConsoleWrapper.WindowWidth))
@@ -408,7 +408,7 @@ namespace KS.Misc.Writers.FancyWriters
                 Header ??= "";
                 TextWriterWhereColor.WriteWhere(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, ColTypes);
             }
-            ConsoleBase.ConsoleWrapper.WriteLine();
+            TextWriterColor.Write();
 
             // Write the closing minus sign.
             int OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
@@ -460,7 +460,7 @@ namespace KS.Misc.Writers.FancyWriters
                         TextWriterWhereColor.WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, ColTypes);
                     }
                 }
-                ConsoleBase.ConsoleWrapper.WriteLine();
+                TextWriterColor.Write();
 
                 // Separate the rows optionally
                 if (SeparateRows)
@@ -499,7 +499,7 @@ namespace KS.Misc.Writers.FancyWriters
             int RepeatTimes;
 
             // Populate the positions
-            ConsoleBase.ConsoleWrapper.WriteLine();
+            TextWriterColor.Write();
             for (int ColumnPosition = Margin, loopTo = ConsoleBase.ConsoleWrapper.WindowWidth; ColumnCapacity >= 0 ? ColumnPosition <= loopTo : ColumnPosition >= loopTo; ColumnPosition += ColumnCapacity)
             {
                 if (!(ColumnPosition >= ConsoleBase.ConsoleWrapper.WindowWidth))
@@ -522,7 +522,7 @@ namespace KS.Misc.Writers.FancyWriters
                 Header ??= "";
                 TextWriterWhereColor.WriteWhere(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, colorTypeForeground, colorTypeBackground);
             }
-            ConsoleBase.ConsoleWrapper.WriteLine();
+            TextWriterColor.Write();
 
             // Write the closing minus sign.
             int OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
@@ -574,7 +574,7 @@ namespace KS.Misc.Writers.FancyWriters
                         TextWriterWhereColor.WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, colorTypeForeground, colorTypeBackground);
                     }
                 }
-                ConsoleBase.ConsoleWrapper.WriteLine();
+                TextWriterColor.Write();
 
                 // Separate the rows optionally
                 if (SeparateRows)
@@ -612,7 +612,7 @@ namespace KS.Misc.Writers.FancyWriters
             int RepeatTimes;
 
             // Populate the positions
-            ConsoleBase.ConsoleWrapper.WriteLine();
+            TextWriterColor.Write();
             for (int ColumnPosition = Margin, loopTo = ConsoleBase.ConsoleWrapper.WindowWidth; ColumnCapacity >= 0 ? ColumnPosition <= loopTo : ColumnPosition >= loopTo; ColumnPosition += ColumnCapacity)
             {
                 if (!(ColumnPosition >= ConsoleBase.ConsoleWrapper.WindowWidth))
@@ -635,7 +635,7 @@ namespace KS.Misc.Writers.FancyWriters
                 Header ??= "";
                 TextWriterWhereColor.WriteWhere(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, Color);
             }
-            ConsoleBase.ConsoleWrapper.WriteLine();
+            TextWriterColor.Write();
 
             // Write the closing minus sign.
             int OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
@@ -687,7 +687,7 @@ namespace KS.Misc.Writers.FancyWriters
                         TextWriterWhereColor.WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, Color);
                     }
                 }
-                ConsoleBase.ConsoleWrapper.WriteLine();
+                TextWriterColor.Write();
 
                 // Separate the rows optionally
                 if (SeparateRows)
@@ -726,7 +726,7 @@ namespace KS.Misc.Writers.FancyWriters
             int RepeatTimes;
 
             // Populate the positions
-            ConsoleBase.ConsoleWrapper.WriteLine();
+            TextWriterColor.Write();
             for (int ColumnPosition = Margin, loopTo = ConsoleBase.ConsoleWrapper.WindowWidth; ColumnCapacity >= 0 ? ColumnPosition <= loopTo : ColumnPosition >= loopTo; ColumnPosition += ColumnCapacity)
             {
                 if (!(ColumnPosition >= ConsoleBase.ConsoleWrapper.WindowWidth))
@@ -749,7 +749,7 @@ namespace KS.Misc.Writers.FancyWriters
                 Header ??= "";
                 TextWriterWhereColor.WriteWhere(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, ForegroundColor, BackgroundColor);
             }
-            ConsoleBase.ConsoleWrapper.WriteLine();
+            TextWriterColor.Write();
 
             // Write the closing minus sign.
             int OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
@@ -801,7 +801,7 @@ namespace KS.Misc.Writers.FancyWriters
                         TextWriterWhereColor.WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, ForegroundColor, BackgroundColor);
                     }
                 }
-                ConsoleBase.ConsoleWrapper.WriteLine();
+                TextWriterColor.Write();
 
                 // Separate the rows optionally
                 if (SeparateRows)

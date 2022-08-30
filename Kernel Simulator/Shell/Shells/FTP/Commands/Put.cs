@@ -45,12 +45,12 @@ namespace KS.Shell.Shells.FTP.Commands
             bool Result = !string.IsNullOrWhiteSpace(LocalFile) ? FTPTransfer.FTPUploadFile(RemoteFile, LocalFile) : FTPTransfer.FTPUploadFile(RemoteFile);
             if (Result)
             {
-                ConsoleBase.ConsoleWrapper.WriteLine();
+                TextWriterColor.Write();
                 TextWriterColor.Write(Translate.DoTranslation("Uploaded file {0}"), true, ColorTools.ColTypes.Success, LocalFile);
             }
             else
             {
-                ConsoleBase.ConsoleWrapper.WriteLine();
+                TextWriterColor.Write();
                 TextWriterColor.Write(Translate.DoTranslation("Failed to upload {0}"), true, ColorTools.ColTypes.Error, LocalFile);
             }
         }

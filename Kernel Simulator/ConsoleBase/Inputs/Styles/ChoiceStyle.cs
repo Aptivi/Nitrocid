@@ -150,7 +150,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 else
                 {
                     answer = Convert.ToString(ConsoleWrapper.ReadKey().KeyChar);
-                    ConsoleWrapper.WriteLine();
+                    TextWriterColor.Write();
                 }
 
                 // Check if answer is correct.

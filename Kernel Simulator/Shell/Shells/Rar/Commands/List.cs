@@ -58,7 +58,7 @@ namespace KS.Shell.Shells.Rar.Commands
                 }
                 else
                 {
-                    ConsoleBase.ConsoleWrapper.WriteLine();
+                    TextWriterColor.Write();
                 }
             }
         }

@@ -75,7 +75,7 @@ namespace KS.Misc.Settings
                         TextWriterColor.Write(" {0}) " + Translate.DoTranslation(Section.Name + " Settings..."), true, ColorTools.ColTypes.Option, SectionIndex + 1);
                     }
                 }
-                ConsoleBase.ConsoleWrapper.WriteLine();
+                TextWriterColor.Write();
                 TextWriterColor.Write(" {0}) " + Translate.DoTranslation("Find a Setting"), true, ColorTools.ColTypes.AlternativeOption, MaxSections + 1);
                 TextWriterColor.Write(" {0}) " + Translate.DoTranslation("Save Settings"), true, ColorTools.ColTypes.AlternativeOption, MaxSections + 2);
                 TextWriterColor.Write(" {0}) " + Translate.DoTranslation("Save Settings As"), true, ColorTools.ColTypes.AlternativeOption, MaxSections + 3);
@@ -83,11 +83,11 @@ namespace KS.Misc.Settings
                 TextWriterColor.Write(" {0}) " + Translate.DoTranslation("Exit"), true, ColorTools.ColTypes.AlternativeOption, MaxSections + 5);
 
                 // Prompt user
-                ConsoleBase.ConsoleWrapper.WriteLine();
+                TextWriterColor.Write();
                 TextWriterColor.Write("> ", false, ColorTools.ColTypes.Input);
                 AnswerString = Input.ReadLine();
                 DebugWriter.WriteDebug(DebugLevel.I, "User answered {0}", AnswerString);
-                ConsoleBase.ConsoleWrapper.WriteLine();
+                TextWriterColor.Write();
 
                 // Check for input
                 DebugWriter.WriteDebug(DebugLevel.I, "Is the answer numeric? {0}", StringQuery.IsStringNumeric(AnswerString));
@@ -266,7 +266,7 @@ namespace KS.Misc.Settings
                             TextWriterColor.Write(" {0}) " + Translate.DoTranslation((string)Setting["Name"]) + " [{1}]", true, ColorTools.ColTypes.Option, SectionIndex + 1, CurrentValue);
                         }
                     }
-                    ConsoleBase.ConsoleWrapper.WriteLine();
+                    TextWriterColor.Write();
                     if (CurrentSettingsType == SettingsType.Screensaver)
                     {
                         TextWriterColor.Write(" {0}) " + Translate.DoTranslation("Preview screensaver"), true, ColorTools.ColTypes.BackOption, MaxOptions + 1);
@@ -282,7 +282,7 @@ namespace KS.Misc.Settings
                     TextWriterColor.Write("> ", false, ColorTools.ColTypes.Input);
                     AnswerString = Input.ReadLine();
                     DebugWriter.WriteDebug(DebugLevel.I, "User answered {0}", AnswerString);
-                    ConsoleBase.ConsoleWrapper.WriteLine();
+                    TextWriterColor.Write();
 
                     DebugWriter.WriteDebug(DebugLevel.I, "Is the answer numeric? {0}", StringQuery.IsStringNumeric(AnswerString));
                     if (int.TryParse(AnswerString, out AnswerInt))
@@ -463,12 +463,12 @@ namespace KS.Misc.Settings
                     // If the type is boolean, write the two options
                     if (KeyType == SettingsKeyType.SBoolean)
                     {
-                        ConsoleBase.ConsoleWrapper.WriteLine();
+                        TextWriterColor.Write();
                         MaxKeyOptions = 2;
                         TextWriterColor.Write(" 1) " + Translate.DoTranslation("Enable"), true, ColorTools.ColTypes.Option);
                         TextWriterColor.Write(" 2) " + Translate.DoTranslation("Disable"), true, ColorTools.ColTypes.Option);
                     }
-                    ConsoleBase.ConsoleWrapper.WriteLine();
+                    TextWriterColor.Write();
 
                     // If the type is a color, initialize the color wheel
                     if (KeyType == SettingsKeyType.SColor)
@@ -481,13 +481,13 @@ namespace KS.Misc.Settings
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Current items:"), true, ColorTools.ColTypes.ListTitle);
                         ListWriterColor.WriteList(SelectFrom);
-                        ConsoleBase.ConsoleWrapper.WriteLine();
+                        TextWriterColor.Write();
                     }
                     else if (KeyType == SettingsKeyType.SList)
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Current items:"), true, ColorTools.ColTypes.ListTitle);
                         ListWriterColor.WriteList(TargetList);
-                        ConsoleBase.ConsoleWrapper.WriteLine();
+                        TextWriterColor.Write();
                     }
 
                     // Add an option to go back.

@@ -68,7 +68,7 @@ namespace KS.ConsoleBase.Inputs.Styles
 
                 // Wait for an answer
                 Answer = ConsoleWrapper.ReadKey(true);
-                ConsoleWrapper.WriteLine();
+                TextWriterColor.Write();
 
                 // Check the answer
                 switch (Answer.Key)

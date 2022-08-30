@@ -235,7 +235,7 @@ namespace KS.Kernel
                     // Show license if new style used
                     if (Flags.NewWelcomeStyle | Flags.EnableSplash)
                     {
-                        ConsoleWrapper.WriteLine();
+                        TextWriterColor.Write();
                         SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("License information"), true, ColorTools.ColTypes.Stage);
                         WelcomeMessage.WriteLicense(false);
                     }

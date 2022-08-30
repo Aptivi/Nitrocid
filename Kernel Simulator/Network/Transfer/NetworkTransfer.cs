@@ -131,7 +131,7 @@ namespace KS.Network.Transfer
             // We're done downloading. Check to see if it's actually an error
             NetworkTools.TransferFinished = false;
             if (ShowProgress & !SuppressDownloadMessage)
-                ConsoleWrapper.WriteLine();
+                TextWriterColor.Write();
             SuppressDownloadMessage = false;
             if (IsError)
             {
@@ -201,7 +201,7 @@ namespace KS.Network.Transfer
             // We're done uploading. Check to see if it's actually an error
             NetworkTools.TransferFinished = false;
             if (ShowProgress & !SuppressUploadMessage)
-                ConsoleWrapper.WriteLine();
+                TextWriterColor.Write();
             SuppressUploadMessage = false;
             if (IsError)
             {
@@ -270,7 +270,7 @@ namespace KS.Network.Transfer
             // We're done downloading. Check to see if it's actually an error
             NetworkTools.TransferFinished = false;
             if (ShowProgress & !SuppressDownloadMessage)
-                ConsoleWrapper.WriteLine();
+                TextWriterColor.Write();
             SuppressDownloadMessage = false;
             if (IsError)
             {
@@ -337,7 +337,7 @@ namespace KS.Network.Transfer
             // We're done uploading. Check to see if it's actually an error
             NetworkTools.TransferFinished = false;
             if (ShowProgress & !SuppressUploadMessage)
-                ConsoleWrapper.WriteLine();
+                TextWriterColor.Write();
             SuppressUploadMessage = false;
             if (IsError)
             {

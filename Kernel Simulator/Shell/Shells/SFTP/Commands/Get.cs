@@ -38,12 +38,12 @@ namespace KS.Shell.Shells.SFTP.Commands
             TextWriterColor.Write(Translate.DoTranslation("Downloading file {0}..."), false, ColorTools.ColTypes.Progress, ListArgsOnly[0]);
             if (SFTPTransfer.SFTPGetFile(ListArgsOnly[0]))
             {
-                ConsoleBase.ConsoleWrapper.WriteLine();
+                TextWriterColor.Write();
                 TextWriterColor.Write(Translate.DoTranslation("Downloaded file {0}."), true, ColorTools.ColTypes.Success, ListArgsOnly[0]);
             }
             else
             {
-                ConsoleBase.ConsoleWrapper.WriteLine();
+                TextWriterColor.Write();
                 TextWriterColor.Write(Translate.DoTranslation("Download failed for file {0}."), true, ColorTools.ColTypes.Error, ListArgsOnly[0]);
             }
         }

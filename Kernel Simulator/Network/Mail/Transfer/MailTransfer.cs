@@ -81,7 +81,7 @@ namespace KS.Network.Mail.Transfer
                 }
 
                 // Prepare view
-                ConsoleBase.ConsoleWrapper.WriteLine();
+                TextWriterColor.Write();
 
                 // Print all the addresses that sent the mail
                 DebugWriter.WriteDebug(DebugLevel.I, "{0} senders.", Msg.From.Count);
@@ -104,7 +104,7 @@ namespace KS.Network.Mail.Transfer
                 TextWriterColor.Write(Translate.DoTranslation("- Sent at {0} in {1}"), true, ColorTools.ColTypes.ListEntry, TimeDateRenderers.RenderTime(Msg.Date.DateTime), TimeDateRenderers.RenderDate(Msg.Date.DateTime));
 
                 // Prepare subject
-                ConsoleBase.ConsoleWrapper.WriteLine();
+                TextWriterColor.Write();
                 DebugWriter.WriteDebug(DebugLevel.I, "Subject length: {0}, {1}", Msg.Subject.Length, Msg.Subject);
                 TextWriterColor.Write($"- {Msg.Subject}", false, ColorTools.ColTypes.ListEntry);
 
@@ -116,11 +116,11 @@ namespace KS.Network.Mail.Transfer
                 }
                 else
                 {
-                    ConsoleBase.ConsoleWrapper.WriteLine();
+                    TextWriterColor.Write();
                 }
 
                 // Prepare body
-                ConsoleBase.ConsoleWrapper.WriteLine();
+                TextWriterColor.Write();
                 DebugWriter.WriteDebug(DebugLevel.I, "Displaying body...");
                 var DecryptedMessage = default(Dictionary<string, MimeEntity>);
                 DebugWriter.WriteDebug(DebugLevel.I, "To decrypt: {0}", Decrypt);
@@ -168,7 +168,7 @@ namespace KS.Network.Mail.Transfer
                 {
                     TextWriterColor.Write(Msg.GetTextBody(MailShellCommon.Mail_TextFormat), true, ColorTools.ColTypes.ListValue);
                 }
-                ConsoleBase.ConsoleWrapper.WriteLine();
+                TextWriterColor.Write();
 
                 // Populate attachments
                 if (Msg.Attachments.Count() > 0)

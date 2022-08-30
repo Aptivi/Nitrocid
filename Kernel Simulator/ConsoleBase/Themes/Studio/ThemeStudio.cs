@@ -89,7 +89,7 @@ namespace KS.ConsoleBase.Themes.Studio
                 TextWriterColor.Write("36) " + Translate.DoTranslation("Table value color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedTableValueColor.PlainSequence);
                 TextWriterColor.Write("37) " + Translate.DoTranslation("Selected option color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedSelectedOptionColor.PlainSequence);
                 TextWriterColor.Write("38) " + Translate.DoTranslation("Alternative option color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedAlternativeOptionColor.PlainSequence);
-                ConsoleWrapper.WriteLine();
+                TextWriterColor.Write();
 
                 // List saving and loading options
                 TextWriterColor.Write("39) " + Translate.DoTranslation("Save Theme to Current Directory"), true, ColorTools.ColTypes.AlternativeOption);
@@ -101,7 +101,7 @@ namespace KS.ConsoleBase.Themes.Studio
                 TextWriterColor.Write("45) " + Translate.DoTranslation("Load Current Colors"), true, ColorTools.ColTypes.AlternativeOption);
                 TextWriterColor.Write("46) " + Translate.DoTranslation("Preview..."), true, ColorTools.ColTypes.AlternativeOption);
                 TextWriterColor.Write("47) " + Translate.DoTranslation("Exit"), true, ColorTools.ColTypes.AlternativeOption);
-                ConsoleWrapper.WriteLine();
+                TextWriterColor.Write();
 
                 // Prompt user
                 DebugWriter.WriteDebug(DebugLevel.I, "Waiting for user input...");
