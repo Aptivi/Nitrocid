@@ -4,10 +4,6 @@ root = true
 end_of_line = crlf
 insert_final_newline = true
 
-# CS1591: Missing XML comment for publicly visible type or member
-# TODO: Resolve this between milestones.
-dotnet_diagnostic.CS1591.severity = none
-
 # IDE0056: Use index operator
 csharp_style_prefer_index_operator = false
 
