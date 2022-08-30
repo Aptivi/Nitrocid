@@ -194,7 +194,7 @@ namespace KS.Shell
                                 if (Commands[finalCommand].Flags.HasFlag(CommandFlags.RedirectionSupported))
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.I, "Redirection supported!");
-                                    InitializeRedirection(ref finalCommand, OutputPath);
+                                    InitializeRedirection(ref FullCommand, OutputPath);
                                 }
                                 if (!(string.IsNullOrEmpty(finalCommand) | finalCommand.StartsWithAnyOf(new[] { " ", "#" }) == true))
                                 {

@@ -43,11 +43,11 @@ namespace KS.Misc.Writers.WriterBase.PlainWriters
             lock (TextWriterColor.WriteLock)
             {
                 // If the file doesn't exist, don't do anything
-                if (Checking.FileExists(PathToWrite))
+                if (!Checking.FileExists(PathToWrite))
                     return;
 
                 // Open the stream
-                StreamWriter fileWriter = new(PathToWrite, false);
+                StreamWriter fileWriter = new(PathToWrite, AppendToFile) { AutoFlush = true };
                 try
                 {
                     if (Line)
@@ -88,7 +88,7 @@ namespace KS.Misc.Writers.WriterBase.PlainWriters
             lock (TextWriterColor.WriteLock)
             {
                 // If the file doesn't exist, don't do anything
-                if (Checking.FileExists(PathToWrite))
+                if (!Checking.FileExists(PathToWrite))
                     return;
 
                 // Open the stream
@@ -115,7 +115,7 @@ namespace KS.Misc.Writers.WriterBase.PlainWriters
             lock (TextWriterColor.WriteLock)
             {
                 // If the file doesn't exist, don't do anything
-                if (Checking.FileExists(PathToWrite))
+                if (!Checking.FileExists(PathToWrite))
                     return;
 
                 // Open the stream
@@ -162,7 +162,7 @@ namespace KS.Misc.Writers.WriterBase.PlainWriters
             lock (TextWriterColor.WriteLock)
             {
                 // If the file doesn't exist, don't do anything
-                if (Checking.FileExists(PathToWrite))
+                if (!Checking.FileExists(PathToWrite))
                     return;
 
                 try
@@ -193,7 +193,7 @@ namespace KS.Misc.Writers.WriterBase.PlainWriters
             lock (TextWriterColor.WriteLock)
             {
                 // If the file doesn't exist, don't do anything
-                if (Checking.FileExists(PathToWrite))
+                if (!Checking.FileExists(PathToWrite))
                     return;
 
                 try
@@ -218,7 +218,7 @@ namespace KS.Misc.Writers.WriterBase.PlainWriters
             lock (TextWriterColor.WriteLock)
             {
                 // If the file doesn't exist, don't do anything
-                if (Checking.FileExists(PathToWrite))
+                if (!Checking.FileExists(PathToWrite))
                     return;
 
                 try

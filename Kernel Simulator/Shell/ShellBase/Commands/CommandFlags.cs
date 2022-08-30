@@ -46,6 +46,10 @@ namespace KS.Shell.ShellBase.Commands
         /// <summary>
         /// Redirection is supported, meaning that all the output to the commands can be redirected to a file.
         /// </summary>
-        RedirectionSupported = 16
+        RedirectionSupported = 16,
+        /// <summary>
+        /// This command is wrappable to pages.
+        /// </summary>
+        Wrappable = 16
     }
 }
