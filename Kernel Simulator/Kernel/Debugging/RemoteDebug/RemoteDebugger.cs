@@ -298,7 +298,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
                         // without crashing just because of this exception. We had to search the above word in this phrase:
                         // 
                         // System.IO.IOException: The operation is not allowed on non-connected sockets.
-                        // ^^^^^^^^^^^^^
+                        //                                                        ^^^^^^^^^^^^^
                         // 
                         // Though, we wish to have a better workaround to detect this specific error message on .NET Framework 4.8.
                         DebugDevices.RemoveAt(DeviceIndex);
