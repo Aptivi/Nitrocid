@@ -457,4 +457,13 @@
   <data name="SpaceDuck" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\SpaceDuck.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
+  <data name="Monokai" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Monokai.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Sakura" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Sakura.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Yasai" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Yasai.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
 </root>

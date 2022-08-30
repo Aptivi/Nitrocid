@@ -1069,7 +1069,8 @@ namespace Properties.Resources {
         ///    },
         ///    &quot;arb-T&quot;: {
         ///        &quot;name&quot;: &quot;Arabic&quot;,
-        ///        &quot;transliterable&quot;: true
+        ///        &quot;transliterable&quot;: true,
+        ///        &quot;codepage&quot;: 1256
         ///    },
         ///    &quot;chi&quot;: {
         ///        &quot;name&quot;: &quot;Chinese&quot;,
@@ -1077,15 +1078,15 @@ namespace Properties.Resources {
         ///    },
         ///    &quot;chi-T&quot;: {
         ///        &quot;name&quot;: &quot;Chinese&quot;,
-        ///        &quot;transliterable&quot;: true
+        ///        &quot;transliterable&quot;: true,
+        ///        &quot;codepage&quot;: 936
         ///    },
         ///    &quot;cnt&quot;: {
         ///        &quot;name&quot;: &quot;Chinese (Traditional)&quot;,
         ///        &quot;transliterable&quot;: true
         ///    },
         ///    &quot;cnt-T&quot;: {
-        ///        &quot;name&quot;: &quot;Chinese (Traditional)&quot;,
-        ///        &quot;transliterable&quot;: [rest of string was truncated]&quot;;.
+        ///        &quot;name&quot; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string LanguageMetadata {
             get {
@@ -1383,6 +1384,31 @@ namespace Properties.Resources {
         public static string Mintish {
             get {
                 return ResourceManager.GetString("Mintish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///    &quot;Metadata&quot;: {
+        ///        &quot;Name&quot;: &quot;Monokai&quot;,
+        ///        &quot;255ColorsRequired&quot;: true,
+        ///        &quot;TrueColorRequired&quot;: true
+        ///    },
+        ///    &quot;InputColor&quot;: &quot;#90908a&quot;,
+        ///    &quot;LicenseColor&quot;: &quot;#f8f8f2&quot;,
+        ///    &quot;ContKernelErrorColor&quot;: &quot;#f8f8f0&quot;,
+        ///    &quot;UncontKernelErrorColor&quot;: &quot;#f8f8f0&quot;,
+        ///    &quot;HostNameShellColor&quot;: &quot;#ae81ff&quot;,
+        ///    &quot;UserNameShellColor&quot;: &quot;#f92672&quot;,
+        ///    &quot;BackgroundColor&quot;: &quot;#272822&quot;,
+        ///    &quot;NeutralTextColor&quot;: &quot;#f8f8f2&quot;,
+        ///    &quot;ListEntryColor&quot;: &quot;#90908a&quot;,
+        ///    &quot;ListValueColor&quot;: &quot;#ae81ff&quot;,
+        ///    &quot;StageColor&quot;: &quot;#9090 [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Monokai {
+            get {
+                return ResourceManager.GetString("Monokai", resourceCulture);
             }
         }
         
@@ -2013,6 +2039,30 @@ namespace Properties.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to {
+        ///    &quot;InputColor&quot;: &quot;#EACBD2&quot;,
+        ///    &quot;LicenseColor&quot;: &quot;#DFAEB4&quot;,
+        ///    &quot;ContKernelErrorColor&quot;: &quot;#DFAEB4&quot;,
+        ///    &quot;UncontKernelErrorColor&quot;: &quot;#DD9AC2&quot;,
+        ///    &quot;HostNameShellColor&quot;: &quot;#DFAEB4&quot;,
+        ///    &quot;UserNameShellColor&quot;: &quot;#DD9AC2&quot;,
+        ///    &quot;BackgroundColor&quot;: &quot;#231C29&quot;,
+        ///    &quot;NeutralTextColor&quot;: &quot;#DFAEB4&quot;,
+        ///    &quot;ListEntryColor&quot;: &quot;#EACBD2&quot;,
+        ///    &quot;ListValueColor&quot;: &quot;#DFAEB4&quot;,
+        ///    &quot;StageColor&quot;: &quot;#EACBD2&quot;,
+        ///    &quot;ErrorColor&quot;: &quot;#DD9AC2&quot;,
+        ///    &quot;WarningColor&quot;: &quot;#DFAEB4&quot;,
+        ///    &quot;OptionColor&quot;: &quot;#DD9AC2&quot;,
+        ///    &quot;BannerColor&quot;: &quot;#EACBD2 [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Sakura {
+            get {
+                return ResourceManager.GetString("Sakura", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
         ///    &quot;ColorMix&quot;: {
         ///        &quot;Desc&quot;: &quot;Settings for this screensaver are available here.&quot;,
         ///        &quot;Keys&quot;: [
@@ -2542,6 +2592,31 @@ namespace Properties.Resources {
         public static string Wood {
             get {
                 return ResourceManager.GetString("Wood", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///    &quot;Metadata&quot;: {
+        ///        &quot;Name&quot;: &quot;Yasai&quot;,
+        ///        &quot;255ColorsRequired&quot;: true,
+        ///        &quot;TrueColorRequired&quot;: true
+        ///    },
+        ///    &quot;InputColor&quot;: &quot;#C0B596&quot;,
+        ///    &quot;LicenseColor&quot;: &quot;#7B1F68&quot;,
+        ///    &quot;ContKernelErrorColor&quot;: &quot;#BB7429&quot;,
+        ///    &quot;UncontKernelErrorColor&quot;: &quot;#DD5815&quot;,
+        ///    &quot;HostNameShellColor&quot;: &quot;#869A73&quot;,
+        ///    &quot;UserNameShellColor&quot;: &quot;#614161&quot;,
+        ///    &quot;BackgroundColor&quot;: &quot;#16253D&quot;,
+        ///    &quot;NeutralTextColor&quot;: &quot;#7B1F68&quot;,
+        ///    &quot;ListEntryColor&quot;: &quot;#C0B596&quot;,
+        ///    &quot;ListValueColor&quot;: &quot;#869A73&quot;,
+        ///    &quot;StageColor&quot;: &quot;#C0B596 [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Yasai {
+            get {
+                return ResourceManager.GetString("Yasai", resourceCulture);
             }
         }
         
