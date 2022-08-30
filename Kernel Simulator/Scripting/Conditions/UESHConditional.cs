@@ -29,7 +29,30 @@ namespace KS.Scripting.Conditions
     public static class UESHConditional
     {
 
-        private readonly static Dictionary<string, BaseCondition> Conditions = new() { { "eq", new EqualsCondition() }, { "neq", new NotEqualsCondition() }, { "les", new LessThanCondition() }, { "lesoreq", new LessThanOrEqualCondition() }, { "gre", new GreaterThanCondition() }, { "greoreq", new GreaterThanOrEqualCondition() }, { "fileex", new FileExistsCondition() }, { "filenex", new FileNotExistsCondition() }, { "direx", new DirectoryExistsCondition() }, { "dirnex", new DirectoryNotExistsCondition() }, { "has", new ContainsCondition() }, { "hasno", new NotContainsCondition() }, { "ispath", new ValidPathCondition() }, { "isnotpath", new InvalidPathCondition() }, { "isfname", new ValidFileNameCondition() }, { "isnotfname", new InvalidFileNameCondition() }, { "sane", new HashesMatchCondition() }, { "insane", new HashesMismatchCondition() }, { "fsane", new FileHashMatchCondition() }, { "finsane", new FileHashMismatchCondition() }, { "none", new NoneCondition() } };
+        private readonly static Dictionary<string, BaseCondition> Conditions = new()
+        {
+            { "eq", new EqualsCondition() },
+            { "neq", new NotEqualsCondition() },
+            { "les", new LessThanCondition() },
+            { "lesoreq", new LessThanOrEqualCondition() },
+            { "gre", new GreaterThanCondition() },
+            { "greoreq", new GreaterThanOrEqualCondition() },
+            { "fileex", new FileExistsCondition() },
+            { "filenex", new FileNotExistsCondition() },
+            { "direx", new DirectoryExistsCondition() },
+            { "dirnex", new DirectoryNotExistsCondition() },
+            { "has", new ContainsCondition() },
+            { "hasno", new NotContainsCondition() },
+            { "ispath", new ValidPathCondition() },
+            { "isnotpath", new InvalidPathCondition() },
+            { "isfname", new ValidFileNameCondition() },
+            { "isnotfname", new InvalidFileNameCondition() },
+            { "sane", new HashesMatchCondition() },
+            { "insane", new HashesMismatchCondition() },
+            { "fsane", new FileHashMatchCondition() },
+            { "finsane", new FileHashMismatchCondition() },
+            { "none", new NoneCondition() }
+        };
 
         /// <summary>
         /// The available condition names

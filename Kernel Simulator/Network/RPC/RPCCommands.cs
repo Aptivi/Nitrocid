@@ -45,7 +45,17 @@ namespace KS.Network.RPC
         /// <br/>&lt;Request:Acknowledge&gt;: Pings the remote kernel silently. Usage: &lt;Request:Acknowledge&gt;(IP)
         /// <br/>&lt;Request:Ping&gt;: Pings the remote kernel with notification. Usage: &lt;Request:Ping&gt;(IP)
         /// </summary>
-        private readonly static List<string> RPCCommandsField = new() { "<Request:Shutdown>", "<Request:Reboot>", "<Request:RebootSafe>", "<Request:Lock>", "<Request:SaveScr>", "<Request:Exec>", "<Request:Acknowledge>", "<Request:Ping>" };
+        private readonly static List<string> RPCCommandsField = new()
+        {
+            "<Request:Shutdown>",
+            "<Request:Reboot>",
+            "<Request:RebootSafe>",
+            "<Request:Lock>",
+            "<Request:SaveScr>",
+            "<Request:Exec>",
+            "<Request:Acknowledge>",
+            "<Request:Ping>"
+        };
 
         /// <summary>
         /// Send an RPC command to another instance of KS using the specified address
