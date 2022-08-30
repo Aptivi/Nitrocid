@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.ConsoleBase;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -68,6 +69,33 @@ namespace KS.Misc.Writers.WriterBase.PlainWriters
                     {
                         fileWriter.Write(Text);
                     }
+                }
+                catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+                {
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+                }
+                fileWriter.Close();
+            }
+        }
+
+        /// <summary>
+        /// Outputs new line to file
+        /// </summary>
+        /// <inheritdoc/>
+        public void WritePlain()
+        {
+            lock (TextWriterColor.WriteLock)
+            {
+                // If the file doesn't exist, don't do anything
+                if (Checking.FileExists(PathToWrite))
+                    return;
+
+                // Open the stream
+                StreamWriter fileWriter = new(PathToWrite, false);
+                try
+                {
+                    fileWriter.WriteLine();
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {

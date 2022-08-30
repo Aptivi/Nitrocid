@@ -33,6 +33,17 @@ namespace KS.Misc.Writers.ConsoleWriters
         internal static object WriteLock = new();
 
         /// <summary>
+        /// Outputs the new line into the terminal prompt, and sets colors as needed.
+        /// </summary>
+        public static void Write()
+        {
+            lock (WriteLock)
+            {
+                WriterPlainManager.CurrentPlain.WritePlain();
+            }
+        }
+
+        /// <summary>
         /// Outputs the text into the terminal prompt, and sets colors as needed.
         /// </summary>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>

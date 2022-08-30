@@ -24,6 +24,11 @@ namespace KS.Misc.Writers.WriterBase
     public interface IWriterPlain
     {
         /// <summary>
+        /// Outputs the new line into the terminal prompt without colors
+        /// </summary>
+        void WritePlain();
+
+        /// <summary>
         /// Outputs the text into the terminal prompt without colors
         /// </summary>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>

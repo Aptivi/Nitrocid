@@ -76,6 +76,15 @@ namespace KS.Misc.Writers.WriterBase.PlainWriters
         }
 
         /// <inheritdoc/>
+        public void WritePlain()
+        {
+            lock (TextWriterColor.WriteLock)
+            {
+                ConsoleWrapper.WriteLine();
+            }
+        }
+
+        /// <inheritdoc/>
         public void WriteSlowlyPlain(string msg, bool Line, double MsEachLetter, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)

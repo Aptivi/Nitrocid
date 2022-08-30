@@ -16,6 +16,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.ConsoleBase;
+using KS.Misc.Writers.ConsoleWriters;
+
 namespace KS.Misc.Writers.WriterBase.PlainWriters
 {
     internal class NullPlainWriter : IWriterPlain
@@ -25,6 +28,12 @@ namespace KS.Misc.Writers.WriterBase.PlainWriters
         /// </summary>
         /// <inheritdoc/>
         public void WritePlain(string Text, bool Line, params object[] vars) { }
+
+        /// <summary>
+        /// Outputs new line to the void
+        /// </summary>
+        /// <inheritdoc/>
+        public void WritePlain() { }
 
         /// <summary>
         /// Outputs text slowly to the void
