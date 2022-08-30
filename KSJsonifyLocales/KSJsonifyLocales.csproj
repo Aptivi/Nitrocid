@@ -30,8 +30,6 @@
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
-    <DocumentationFile></DocumentationFile>
-    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-dotnet|AnyCPU'">
     <TargetFramework>net6.0</TargetFramework>
@@ -40,8 +38,6 @@
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
-    <DocumentationFile></DocumentationFile>
-    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <TargetFramework>net48</TargetFramework>
@@ -50,8 +46,6 @@
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
-    <DocumentationFile></DocumentationFile>
-    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-dotnet|AnyCPU'">
     <TargetFramework>net6.0</TargetFramework>
@@ -60,8 +54,6 @@
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
-    <DocumentationFile></DocumentationFile>
-    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
     <Reference Include="System" />
@@ -95,97 +87,103 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="OfficialAppIcon-Generic-256.ico" />
-    <Content Include="Translations\arb-T.txt">
+    <None Include="OfficialAppIcon-Generic-256.ico" />
+    <None Include="Translations\arb-T.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Translations\arb.txt">
+    </None>
+    <None Include="Translations\arb.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Translations\chi-T.txt">
+    </None>
+    <None Include="Translations\chi-T.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Translations\chi.txt">
+    </None>
+    <None Include="Translations\chi.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Translations\cnt-T.txt">
+    </None>
+    <None Include="Translations\cnt-T.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Translations\cnt.txt">
+    </None>
+    <None Include="Translations\cnt.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Translations\cze.txt">
+    </None>
+    <None Include="Translations\cze.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Translations\dtc.txt">
+    </None>
+    <None Include="Translations\dtc.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Translations\eng.txt">
+    </None>
+    <None Include="Translations\eng.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Translations\fre.txt">
+    </None>
+    <None Include="Translations\fre.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Translations\ger.txt">
+    </None>
+    <None Include="Translations\ger.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Translations\hxr-1.txt">
+    </None>
+    <None Include="Translations\hxr-1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Translations\hxr-2.txt">
+    </None>
+    <None Include="Translations\hxr-2.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Translations\hxr-3.txt">
+    </None>
+    <None Include="Translations\hxr-3.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Translations\ind-T.txt">
+    </None>
+    <None Include="Translations\ind-T.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Translations\ind.txt">
+    </None>
+    <None Include="Translations\ind.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Translations\ita.txt">
+    </None>
+    <None Include="Translations\ita.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Translations\jpn.txt">
+    </None>
+    <None Include="Translations\jpn.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Translations\kor-T.txt">
+    </None>
+    <None Include="Translations\kor-T.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Translations\kor.txt">
+    </None>
+    <None Include="Translations\kor.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Translations\pir.txt">
+    </None>
+    <None Include="Translations\pir.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Translations\pla.txt">
+    </None>
+    <None Include="Translations\pla.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Translations\ptg.txt">
+    </None>
+    <None Include="Translations\ptg.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Translations\rus-T.txt">
+    </None>
+    <None Include="Translations\rus-T.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Translations\rus.txt">
+    </None>
+    <None Include="Translations\rus.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Translations\spa.txt">
+    </None>
+    <None Update="Translations\sms.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Translations\tky.txt">
+    </None>
+    <None Update="Translations\ssp.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Translations\ukr-T.txt">
+    </None>
+    <None Include="Translations\spa.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Translations\ukr.txt">
+    </None>
+    <None Include="Translations\tky.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Translations\vtn.txt">
+    </None>
+    <None Include="Translations\ukr-T.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </None>
+    <None Include="Translations\ukr.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Translations\vtn.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json">
@@ -199,11 +197,5 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Update="Translations\sms.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Translations\ssp.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 </Project>
