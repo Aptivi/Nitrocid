@@ -25,6 +25,8 @@ using KS.Kernel;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell;
 using ColorSeq;
+using KS.Network;
+using KS.Misc.Probers.Motd;
 
 namespace KSConverter
 {
@@ -191,15 +193,15 @@ namespace KSConverter
                         }
                         else if (line.Contains("MOTD = "))
                         {
-                            Kernel.MOTDMessage = line.Replace("MOTD = ", "");
+                            MotdParse.MOTDMessage = line.Replace("MOTD = ", "");
                         }
                         else if (line.Contains("Host Name = "))
                         {
-                            Kernel.HostName = line.Replace("Host Name = ", "");
+                            NetworkTools.HostName = line.Replace("Host Name = ", "");
                         }
                         else if (line.Contains("MOTD After Login = "))
                         {
-                            Kernel.MAL = line.Replace("MOTD After Login = ", "");
+                            MalParse.MAL = line.Replace("MOTD After Login = ", "");
                         }
                     }
                     line = OldConfigReader.ReadLine();

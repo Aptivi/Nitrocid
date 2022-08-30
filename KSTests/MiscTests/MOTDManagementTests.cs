@@ -40,7 +40,7 @@ namespace KSTests.MiscTests
         {
             MotdParse.ReadMotd();
             string MOTDLine = File.ReadAllText(Paths.GetKernelPath(KernelPathType.MOTD));
-            MOTDLine.ShouldBe(Kernel.MOTDMessage);
+            MOTDLine.ShouldBe(MotdParse.MOTDMessage);
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace KSTests.MiscTests
         {
             MalParse.ReadMal();
             string MALLine = File.ReadAllText(Paths.GetKernelPath(KernelPathType.MAL));
-            MALLine.ShouldBe(Kernel.MAL);
+            MALLine.ShouldBe(MalParse.MAL);
         }
 
     }

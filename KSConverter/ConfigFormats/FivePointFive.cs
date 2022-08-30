@@ -166,11 +166,11 @@ namespace KSConverter
                 {
                     if (!string.IsNullOrEmpty(ConfigReader.Sections["Login"].Keys["Host Name"].Value))
                     {
-                        Kernel.HostName = ConfigReader.Sections["Login"].Keys["Host Name"].Value;
+                        NetworkTools.HostName = ConfigReader.Sections["Login"].Keys["Host Name"].Value;
                     }
                     else
                     {
-                        Kernel.HostName = "kernel";
+                        NetworkTools.HostName = "kernel";
                     }
                 }
 
