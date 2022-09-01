@@ -338,7 +338,6 @@ namespace KS.Shell
                 string OutputFileName = Command.Substring(Command.LastIndexOf(">") + 2);
                 OutputFileName = Filesystem.NeutralizePath(OutputFileName);
                 WriterPlainManager.ChangePlain("File");
-                ((FilePlainWriter)WriterPlainManager.CurrentPlain).AppendToFile = true;
                 ((FilePlainWriter)WriterPlainManager.CurrentPlain).PathToWrite = OutputFileName;
                 Command = Command.Replace(" >>> " + OutputFileName, "");
             }
@@ -349,6 +348,9 @@ namespace KS.Shell
                 OutputFileName = Filesystem.NeutralizePath(OutputFileName);
                 WriterPlainManager.ChangePlain("File");
                 ((FilePlainWriter)WriterPlainManager.CurrentPlain).PathToWrite = OutputFileName;
+                FileStream clearer = new(OutputFileName, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                clearer.SetLength(0);
+                clearer.Close();
                 Command = Command.Replace(" >> " + OutputFileName, "");
             }
 

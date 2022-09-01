@@ -32,7 +32,6 @@ namespace KS.Misc.Writers.WriterBase.PlainWriters
     internal class FilePlainWriter : IWriterPlain
     {
         internal string PathToWrite { get; set; }
-        internal bool AppendToFile { get; set; } = false;
 
         /// <summary>
         /// Outputs text to file
@@ -47,7 +46,7 @@ namespace KS.Misc.Writers.WriterBase.PlainWriters
                     return;
 
                 // Open the stream
-                StreamWriter fileWriter = new(PathToWrite, AppendToFile) { AutoFlush = true };
+                StreamWriter fileWriter = new(PathToWrite, true) { AutoFlush = true };
                 try
                 {
                     if (Line)
@@ -92,7 +91,7 @@ namespace KS.Misc.Writers.WriterBase.PlainWriters
                     return;
 
                 // Open the stream
-                StreamWriter fileWriter = new(PathToWrite, false);
+                StreamWriter fileWriter = new(PathToWrite, true);
                 try
                 {
                     fileWriter.WriteLine();
@@ -119,7 +118,7 @@ namespace KS.Misc.Writers.WriterBase.PlainWriters
                     return;
 
                 // Open the stream
-                StreamWriter fileWriter = new(PathToWrite, false);
+                StreamWriter fileWriter = new(PathToWrite, true);
                 try
                 {
                     // Format string as needed
