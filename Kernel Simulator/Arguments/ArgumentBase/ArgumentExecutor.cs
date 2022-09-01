@@ -21,9 +21,19 @@ using KS.Kernel.Debugging;
 
 namespace KS.Arguments.ArgumentBase
 {
+    /// <summary>
+    /// Argument executor base class
+    /// </summary>
     public abstract class ArgumentExecutor : IArgument
     {
 
+        /// <summary>
+        /// Executes the argument
+        /// </summary>
+        /// <param name="StringArgs">String of arguments</param>
+        /// <param name="ListArgsOnly">List of argument arguments</param>
+        /// <param name="ListSwitchesOnly">List of argument switches</param>
+        /// <exception cref="InvalidOperationException"></exception>
         public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
             DebugWriter.WriteDebug(DebugLevel.F, "We shouldn't be here!!!");

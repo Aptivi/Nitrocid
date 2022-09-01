@@ -136,6 +136,10 @@ namespace KS.ConsoleBase
             ConsoleWrapper.SetCursorPosition(OldLeft, OldTop);
         }
 
+        /// <summary>
+        /// Sets the console title
+        /// </summary>
+        /// <param name="Text">The text to be set</param>
         public static void SetTitle(string Text)
         {
             char BellChar = Convert.ToChar(7);
