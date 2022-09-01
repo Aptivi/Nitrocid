@@ -21,9 +21,15 @@ using System.Collections.Generic;
 
 namespace KS.Arguments.ArgumentBase
 {
+    /// <summary>
+    /// Pre-boot command line arguments parser
+    /// </summary>
     public static class PreBootCommandLineArgsParse
     {
 
+        /// <summary>
+        /// Available pre-boot command line arguments
+        /// </summary>
         public readonly static Dictionary<string, ArgumentInfo> AvailablePreBootCMDLineArgs = new()
         {
             { "reset", new ArgumentInfo("reset", ArgumentType.PreBootCommandLineArgs, "Resets the kernel to the factory settings", "", false, 0, new PreBootCommandLine_ResetArgument()) },

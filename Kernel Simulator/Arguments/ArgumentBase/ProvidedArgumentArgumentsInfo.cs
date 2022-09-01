@@ -23,6 +23,9 @@ using KS.Kernel.Debugging;
 
 namespace KS.Arguments.ArgumentBase
 {
+    /// <summary>
+    /// Provided argument parameters information class
+    /// </summary>
     public class ProvidedArgumentArgumentsInfo
     {
 

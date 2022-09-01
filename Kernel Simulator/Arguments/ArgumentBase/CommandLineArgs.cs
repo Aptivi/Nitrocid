@@ -21,9 +21,15 @@ using System.Collections.Generic;
 
 namespace KS.Arguments.ArgumentBase
 {
+    /// <summary>
+    /// Command line argument class
+    /// </summary>
     public static class CommandLineArgs
     {
 
+        /// <summary>
+        /// Available command line arguments
+        /// </summary>
         public readonly static Dictionary<string, ArgumentInfo> AvailableCMDLineArgs = new()
         {
             { "testInteractive", new ArgumentInfo("testInteractive", ArgumentType.CommandLineArgs, "Opens a test shell", "", false, 0, new CommandLine_TestInteractiveArgument()) },

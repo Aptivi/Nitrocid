@@ -27,9 +27,15 @@ using System.Collections.Generic;
 
 namespace KS.Arguments.ArgumentBase
 {
+    /// <summary>
+    /// Argument parser class
+    /// </summary>
     public static class ArgumentParse
     {
 
+        /// <summary>
+        /// Lists all available arguments
+        /// </summary>
         public readonly static Dictionary<string, ArgumentInfo> AvailableArgs = new()
         {
             { "quiet", new ArgumentInfo("quiet", ArgumentType.KernelArgs, "Starts the kernel quietly", "", false, 0, new QuietArgument()) },

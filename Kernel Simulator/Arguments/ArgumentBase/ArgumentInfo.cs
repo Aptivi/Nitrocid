@@ -21,6 +21,9 @@ using KS.Languages;
 
 namespace KS.Arguments.ArgumentBase
 {
+    /// <summary>
+    /// Argument information class
+    /// </summary>
     public class ArgumentInfo
     {
 

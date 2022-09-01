@@ -23,6 +23,9 @@ using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Arguments.ArgumentBase
 {
+    /// <summary>
+    /// Argument help system module
+    /// </summary>
     public static class ArgumentHelpSystem
     {
 

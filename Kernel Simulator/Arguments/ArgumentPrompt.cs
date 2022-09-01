@@ -26,6 +26,9 @@ using System.Collections.Generic;
 
 namespace KS.Arguments
 {
+    /// <summary>
+    /// Argument prompt module
+    /// </summary>
     public static class ArgumentPrompt
     {
 
