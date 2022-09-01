@@ -320,11 +320,20 @@ namespace KS.ConsoleBase
         /// <summary>
         /// Writes a character to console
         /// </summary>
+        /// <param name="value">A character</param>
         public static void Write(char value) => Console.Write(value);
 
         /// <summary>
         /// Writes text to console
         /// </summary>
+        /// <param name="text">The text to write</param>
+        public static void Write(string text) => Console.Write(text);
+
+        /// <summary>
+        /// Writes text to console
+        /// </summary>
+        /// <param name="text">The text to write</param>
+        /// <param name="args">The arguments to evaluate</param>
         public static void Write(string text, params object[] args) => Console.Write(text, args);
 
         /// <summary>
@@ -335,6 +344,14 @@ namespace KS.ConsoleBase
         /// <summary>
         /// Writes text to console with line terminator
         /// </summary>
+        /// <param name="text">The text to write</param>
+        public static void WriteLine(string text) => Console.WriteLine(text);
+
+        /// <summary>
+        /// Writes text to console with line terminator
+        /// </summary>
+        /// <param name="text">The text to write</param>
+        /// <param name="args">The arguments to evaluate</param>
         public static void WriteLine(string text, params object[] args) => Console.WriteLine(text, args);
     }
 }
