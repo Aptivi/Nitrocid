@@ -161,6 +161,7 @@ namespace KS.Shell
 
                     // Get command parts
                     var Parts = finalCommand.SplitSpacesEncloseDoubleQuotes();
+
                     // Reads command written by user
                     do
                     {
@@ -194,8 +195,16 @@ namespace KS.Shell
                                 if (Commands[finalCommand].Flags.HasFlag(CommandFlags.RedirectionSupported))
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.I, "Redirection supported!");
-                                    InitializeRedirection(ref FullCommand, OutputPath);
+                                    InitializeRedirection(ref FullCommand);
                                 }
+
+                                // Check to see if the optional path is specified
+                                if (!string.IsNullOrEmpty(OutputPath))
+                                {
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Output path provided!");
+                                    InitializeOutputPathWriter(OutputPath);
+                                }
+
                                 if (!(string.IsNullOrEmpty(finalCommand) | finalCommand.StartsWithAnyOf(new[] { " ", "#" }) == true))
                                 {
 
@@ -328,7 +337,7 @@ namespace KS.Shell
         /// <summary>
         /// Initializes the redirection
         /// </summary>
-        private static void InitializeRedirection(ref string Command, string OutputPath)
+        private static void InitializeRedirection(ref string Command)
         {
             // If requested command has output redirection sign after arguments, remove it from final command string and set output to that file
             DebugWriter.WriteDebug(DebugLevel.I, "Does the command contain the redirection sign \">>>\" or \">>\"? {0} and {1}", Command.Contains(">>>"), Command.Contains(">>"));
@@ -353,7 +362,13 @@ namespace KS.Shell
                 clearer.Close();
                 Command = Command.Replace(" >> " + OutputFileName, "");
             }
+        }
 
+        /// <summary>
+        /// Initializes the optional file path writer
+        /// </summary>
+        private static void InitializeOutputPathWriter(string OutputPath)
+        {
             // Checks to see if the user provided optional path
             if (!string.IsNullOrWhiteSpace(OutputPath))
             {
