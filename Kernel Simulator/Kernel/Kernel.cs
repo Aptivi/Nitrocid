@@ -64,25 +64,25 @@ namespace KS.Kernel
 
         // #ifdef'd variables ... Framework monikers
 #if NETCOREAPP
-        public const string KernelSimulatorMoniker = ".NET CoreCLR";
+        internal const string KernelSimulatorMoniker = ".NET CoreCLR";
 #else
-        public const string KernelSimulatorMoniker = ".NET Framework";
+        internal const string KernelSimulatorMoniker = ".NET Framework";
 #endif
         // Release specifiers (SPECIFIER: REL, RC, or DEV | MILESTONESPECIFIER: ALPHA, BETA, NONE | None satisfied: Unsupported Release)
 #if SPECIFIERREL
-        public readonly static string ConsoleTitle = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker}";
+        internal readonly static string ConsoleTitle = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker}";
 #elif SPECIFIERRC
-        public readonly static string ConsoleTitle = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Release Candidate";
+        internal readonly static string ConsoleTitle = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Release Candidate";
 #elif SPECIFIERDEV
 #if MILESTONESPECIFIERALPHA
-        public readonly static string ConsoleTitle = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Developer Preview - Milestone 3";
+        internal readonly static string ConsoleTitle = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Developer Preview - Milestone 3";
 #elif MILESTONESPECIFIERBETA
-        public readonly static string ConsoleTitle = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Developer Preview - Beta 1";
+        internal readonly static string ConsoleTitle = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Developer Preview - Beta 1";
 #else
-        public readonly static string ConsoleTitle = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Developer Preview";
+        internal readonly static string ConsoleTitle = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Developer Preview";
 #endif
 #else
-        public readonly static string ConsoleTitle = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Unsupported Release";
+        internal readonly static string ConsoleTitle = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Unsupported Release";
 #endif
 
         /// <summary>
