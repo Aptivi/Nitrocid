@@ -18,9 +18,13 @@
 
 namespace KS.Scripting.Conditions.Types
 {
+    /// <summary>
+    /// Condition to check to see if the directory doesn't exist
+    /// </summary>
     public class DirectoryNotExistsCondition : BaseCondition, ICondition
     {
 
+        /// <inheritdoc/>
         public override string ConditionName
         {
             get
@@ -29,10 +33,13 @@ namespace KS.Scripting.Conditions.Types
             }
         }
 
+        /// <inheritdoc/>
         public override int ConditionPosition { get; } = 1;
 
+        /// <inheritdoc/>
         public override int ConditionRequiredArguments { get; } = 2;
 
+        /// <inheritdoc/>
         public override bool IsConditionSatisfied(string FirstVariable, string SecondVariable)
         {
             return UESHOperators.UESHVariableDirectoryDoesNotExist(FirstVariable);

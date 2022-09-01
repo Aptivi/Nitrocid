@@ -22,6 +22,9 @@ using KS.Misc.Encryption;
 
 namespace KS.Scripting
 {
+    /// <summary>
+    /// UESH operator code functions
+    /// </summary>
     public static class UESHOperators
     {
 

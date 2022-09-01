@@ -24,6 +24,9 @@ using KS.Languages;
 
 namespace KS.Scripting
 {
+    /// <summary>
+    /// UESH script parser
+    /// </summary>
     public static class UESHParse
     {
 

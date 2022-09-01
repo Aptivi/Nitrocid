@@ -22,6 +22,9 @@ using KS.Kernel.Debugging;
 
 namespace KS.Scripting.Interaction
 {
+    /// <summary>
+    /// UESH scripting command functions
+    /// </summary>
     public static class UESHCommands
     {
 

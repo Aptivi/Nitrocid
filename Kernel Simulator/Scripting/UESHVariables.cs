@@ -26,6 +26,9 @@ using KS.Shell.Shells.UESH;
 
 namespace KS.Scripting
 {
+    /// <summary>
+    /// UESH shell variable manager
+    /// </summary>
     public static class UESHVariables
     {
 

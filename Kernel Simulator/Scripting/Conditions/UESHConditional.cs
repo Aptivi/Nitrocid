@@ -26,6 +26,9 @@ using KS.Scripting.Conditions.Types;
 
 namespace KS.Scripting.Conditions
 {
+    /// <summary>
+    /// UESH condition manager
+    /// </summary>
     public static class UESHConditional
     {
 

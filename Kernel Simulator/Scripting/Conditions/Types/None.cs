@@ -18,9 +18,8 @@
 
 namespace KS.Scripting.Conditions.Types
 {
-    public class NoneCondition : BaseCondition, ICondition
-    {
-
-        // This condition always returns true.
-    }
+    /// <summary>
+    /// This condition always returns true.
+    /// </summary>
+    public class NoneCondition : BaseCondition, ICondition { }
 }

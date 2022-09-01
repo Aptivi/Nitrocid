@@ -18,9 +18,13 @@
 
 namespace KS.Scripting.Conditions.Types
 {
+    /// <summary>
+    /// Checks to see if the two UESH variables are different
+    /// </summary>
     public class NotEqualsCondition : BaseCondition, ICondition
     {
 
+        /// <inheritdoc/>
         public override string ConditionName
         {
             get
@@ -29,10 +33,13 @@ namespace KS.Scripting.Conditions.Types
             }
         }
 
+        /// <inheritdoc/>
         public override int ConditionPosition { get; } = 2;
 
+        /// <inheritdoc/>
         public override int ConditionRequiredArguments { get; } = 3;
 
+        /// <inheritdoc/>
         public override bool IsConditionSatisfied(string FirstVariable, string SecondVariable)
         {
             return UESHOperators.UESHVariableNotEqual(FirstVariable, SecondVariable);

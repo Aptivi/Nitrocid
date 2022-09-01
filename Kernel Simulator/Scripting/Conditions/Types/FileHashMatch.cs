@@ -18,9 +18,13 @@
 
 namespace KS.Scripting.Conditions.Types
 {
+    /// <summary>
+    /// Checks to see if a file specified from a UESH variable matches its hash specified on the second
+    /// </summary>
     public class FileHashMatchCondition : BaseCondition, ICondition
     {
 
+        /// <inheritdoc/>
         public override string ConditionName
         {
             get
@@ -29,10 +33,13 @@ namespace KS.Scripting.Conditions.Types
             }
         }
 
+        /// <inheritdoc/>
         public override int ConditionPosition { get; } = 3;
 
+        /// <inheritdoc/>
         public override int ConditionRequiredArguments { get; } = 3;
 
+        /// <inheritdoc/>
         public override bool IsConditionSatisfied(string FirstVariable, string SecondVariable)
         {
             return UESHOperators.UESHVariableFileHashMatch(FirstVariable, SecondVariable);

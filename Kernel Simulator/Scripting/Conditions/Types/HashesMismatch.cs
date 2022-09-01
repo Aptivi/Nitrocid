@@ -18,9 +18,13 @@
 
 namespace KS.Scripting.Conditions.Types
 {
+    /// <summary>
+    /// Checks to see if a UESH variable doesn't match its hash specified on the second
+    /// </summary>
     public class HashesMismatchCondition : BaseCondition, ICondition
     {
 
+        /// <inheritdoc/>
         public override string ConditionName
         {
             get
@@ -29,10 +33,13 @@ namespace KS.Scripting.Conditions.Types
             }
         }
 
+        /// <inheritdoc/>
         public override int ConditionPosition { get; } = 3;
 
+        /// <inheritdoc/>
         public override int ConditionRequiredArguments { get; } = 3;
 
+        /// <inheritdoc/>
         public override bool IsConditionSatisfied(string FirstVariable, string SecondVariable)
         {
             return UESHOperators.UESHVariableHashNoMatch(FirstVariable, SecondVariable);
