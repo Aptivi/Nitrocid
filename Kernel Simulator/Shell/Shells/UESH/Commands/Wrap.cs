@@ -17,10 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.Collections;
+using System.IO;
 using KS.ConsoleBase.Colors;
+using KS.Files;
+using KS.Files.Operations;
+using KS.Files.Querying;
 using KS.Languages;
+using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -38,22 +44,23 @@ namespace KS.Shell.Shells.UESH.Commands
             string CommandToBeWrapped = ListArgsOnly[0].Split(' ')[0];
             if (UESHShellCommon.Commands.ContainsKey(CommandToBeWrapped))
             {
-                /*
                 if (UESHShellCommon.Commands[CommandToBeWrapped].Flags.HasFlag(CommandFlags.Wrappable))
                 {
                     string WrapOutputPath = Paths.TempPath + "/wrapoutput.txt";
+                    if (!Checking.FileExists(WrapOutputPath))
+                        Making.MakeFile(WrapOutputPath);
                     var AltThreads = ShellStart.ShellStack[ShellStart.ShellStack.Count - 1].AltCommandThreads;
                     if (AltThreads.Count == 0 || AltThreads[AltThreads.Count - 1].IsAlive)
                     {
-                        var WrappedCommand = new KernelThread($"Wrapped Shell Command Thread", false, (cmdThreadParams) => GetCommand.ExecuteCommand((GetCommand.ExecuteCommandThreadParameters)cmdThreadParams));
+                        var WrappedCommand = new KernelThread($"Wrapped Shell Command Thread", false, (cmdThreadParams) => GetCommand.ExecuteCommand((GetCommand.ExecuteCommandParameters)cmdThreadParams));
                         ShellStart.ShellStack[ShellStart.ShellStack.Count - 1].AltCommandThreads.Add(WrappedCommand);
                     }
-                    Shell.GetLine(ListArgsOnly[0], WrapOutputPath);
+                    Shell.GetLine(StringArgs, WrapOutputPath);
                     var WrapOutputStream = new StreamReader(WrapOutputPath);
                     string WrapOutput = WrapOutputStream.ReadToEnd();
                     TextWriterWrappedColor.WriteWrapped(WrapOutput, false, ColorTools.ColTypes.Neutral);
                     if (!WrapOutput.EndsWith(Kernel.Kernel.NewLine))
-                        KS.TextWriterColor.Write();
+                        TextWriterColor.Write();
                     WrapOutputStream.Close();
                     File.Delete(WrapOutputPath);
                 }
@@ -67,7 +74,6 @@ namespace KS.Shell.Shells.UESH.Commands
                     }
                     TextWriterColor.Write(Translate.DoTranslation("The command is not wrappable. These commands are wrappable:") + " {0}", true, ColorTools.ColTypes.Error, string.Join(", ", WrappableCmds.ToArray()));
                 }
-                */
             }
             else
             {
@@ -81,10 +87,8 @@ namespace KS.Shell.Shells.UESH.Commands
             var WrappableCmds = new ArrayList();
             foreach (CommandInfo CommandInfo in UESHShellCommon.Commands.Values)
             {
-                /*
                 if (CommandInfo.Flags.HasFlag(CommandFlags.Wrappable))
                     WrappableCmds.Add(CommandInfo.Command);
-                */
             }
 
             // Print them along with help description
