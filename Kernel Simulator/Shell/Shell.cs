@@ -306,9 +306,6 @@ namespace KS.Shell
                                 DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", finalCommand, indexCmd);
                                 TextWriterColor.Write(Translate.DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), true, ColorTools.ColTypes.Error, finalCommand);
                             }
-
-                            // Restore title
-                            ConsoleExtensions.SetTitle(Kernel.Kernel.ConsoleTitle);
                         }
                         catch (Exception ex)
                         {
@@ -323,6 +320,9 @@ namespace KS.Shell
             // Restore console output to its original state if any
             if (WriterPlainManager.CurrentPlainName != "Console")
                 WriterPlainManager.ChangePlain("Console");
+
+            // Restore title
+            ConsoleExtensions.SetTitle(Kernel.Kernel.ConsoleTitle);
         }
 
         /// <summary>
