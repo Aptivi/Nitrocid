@@ -20,9 +20,15 @@ using KS.Kernel.Debugging;
 
 namespace KS.Scripting.Conditions
 {
+    /// <summary>
+    /// Base UESH scripting condition class
+    /// </summary>
     public abstract class BaseCondition : ICondition
     {
 
+        /// <summary>
+        /// Condition name
+        /// </summary>
         public virtual string ConditionName
         {
             get
@@ -31,16 +37,33 @@ namespace KS.Scripting.Conditions
             }
         }
 
+        /// <summary>
+        /// Condition position (starts from 1)
+        /// </summary>
         public virtual int ConditionPosition { get; } = 1;
 
+        /// <summary>
+        /// Condition required argument numbers (starts from 1)
+        /// </summary>
         public virtual int ConditionRequiredArguments { get; } = 1;
 
+        /// <summary>
+        /// Is the condition satisfied?
+        /// </summary>
+        /// <param name="FirstVariable">The first UESH variable (can be unsanitized; can start without $)</param>
+        /// <param name="SecondVariable">The second UESH variable (can be unsanitized; can start without $)</param>
+        /// <returns>True if satisfied; otherwise, false</returns>
         public virtual bool IsConditionSatisfied(string FirstVariable, string SecondVariable)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Doing nothing because the condition is undefined. Returning true...");
             return true;
         }
 
+        /// <summary>
+        /// Is the condition satisfied?
+        /// </summary>
+        /// <param name="Variables">Array of UESH variables (can be unsanitized; can start without $)</param>
+        /// <returns>True if satisfied; otherwise, false</returns>
         public bool IsConditionSatisfied(string[] Variables)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Doing nothing because the condition is undefined. Returning true...");

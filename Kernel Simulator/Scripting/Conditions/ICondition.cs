@@ -18,6 +18,9 @@
 
 namespace KS.Scripting.Conditions
 {
+    /// <summary>
+    /// UESH scripting condition interface
+    /// </summary>
     public interface ICondition
     {
 
