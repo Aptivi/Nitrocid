@@ -27,18 +27,32 @@ namespace KS.Kernel.Exceptions
     public class HTTPShellException : Exception
     {
 
+        /// <inheritdoc/>
         public HTTPShellException() : base()
         {
         }
+        /// <inheritdoc/>
         public HTTPShellException(string message) : base(message)
         {
         }
+        /// <summary>
+        /// Initializes the instance of this exception that has a message and a list of arguments
+        /// </summary>
+        /// <param name="vars">List of arguments</param>
+        /// <param name="message">Message to be printed</param>
         public HTTPShellException(string message, params object[] vars) : base(StringManipulate.FormatString(message, vars))
         {
         }
+        /// <inheritdoc/>
         public HTTPShellException(string message, Exception e) : base(message, e)
         {
         }
+        /// <summary>
+        /// Initializes the instance of this exception that has a message, an inner exception, and a list of arguments
+        /// </summary>
+        /// <param name="vars">List of arguments</param>
+        /// <param name="e">Inner exception</param>
+        /// <param name="message">Message to be printed</param>
         public HTTPShellException(string message, Exception e, params object[] vars) : base(StringManipulate.FormatString(message, vars), e)
         {
         }
