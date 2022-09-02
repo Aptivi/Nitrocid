@@ -58,6 +58,24 @@ namespace KS.Files
         }
 
         /// <summary>
+        /// Platform-dependent application data path
+        /// </summary>
+        public static string AppDataPath
+        {
+            get
+            {
+                if (KernelPlatform.IsOnUnix())
+                {
+                    return Environment.GetEnvironmentVariable("HOME") + "/.config/ks";
+                }
+                else
+                {
+                    return (Environment.GetEnvironmentVariable("LOCALAPPDATA") + "/KS").Replace("\\", "/");
+                }
+            }
+        }
+
+        /// <summary>
         /// Platform-dependent temp path
         /// </summary>
         public static string TempPath
@@ -113,6 +131,7 @@ namespace KS.Files
         {
             get
             {
+                // return Filesystem.NeutralizePath(AppDataPath + "/KSMods/");
                 return Filesystem.NeutralizePath(HomePath + "/KSMods/");
             }
         }
@@ -124,6 +143,7 @@ namespace KS.Files
         {
             get
             {
+                // return Filesystem.NeutralizePath(AppDataPath + "/KernelConfig.json");
                 return Filesystem.NeutralizePath(HomePath + "/KernelConfig.json");
             }
         }
@@ -135,6 +155,7 @@ namespace KS.Files
         {
             get
             {
+                // return Filesystem.NeutralizePath(AppDataPath + "/kernelDbg.log");
                 return Filesystem.NeutralizePath(HomePath + "/kernelDbg.log");
             }
         }
@@ -146,6 +167,7 @@ namespace KS.Files
         {
             get
             {
+                // return Filesystem.NeutralizePath(AppDataPath + "/Aliases.json");
                 return Filesystem.NeutralizePath(HomePath + "/Aliases.json");
             }
         }
@@ -157,6 +179,7 @@ namespace KS.Files
         {
             get
             {
+                // return Filesystem.NeutralizePath(AppDataPath + "/Users.json");
                 return Filesystem.NeutralizePath(HomePath + "/Users.json");
             }
         }
@@ -168,6 +191,7 @@ namespace KS.Files
         {
             get
             {
+                // return Filesystem.NeutralizePath(AppDataPath + "/FTP_SpeedDial.json");
                 return Filesystem.NeutralizePath(HomePath + "/FTP_SpeedDial.json");
             }
         }
@@ -179,6 +203,7 @@ namespace KS.Files
         {
             get
             {
+                // return Filesystem.NeutralizePath(AppDataPath + "/SFTP_SpeedDial.json");
                 return Filesystem.NeutralizePath(HomePath + "/SFTP_SpeedDial.json");
             }
         }
@@ -190,6 +215,7 @@ namespace KS.Files
         {
             get
             {
+                // return Filesystem.NeutralizePath(AppDataPath + "/DebugDeviceNames.json");
                 return Filesystem.NeutralizePath(HomePath + "/DebugDeviceNames.json");
             }
         }
@@ -201,6 +227,7 @@ namespace KS.Files
         {
             get
             {
+                // return Filesystem.NeutralizePath(AppDataPath + "/MOTD.txt");
                 return Filesystem.NeutralizePath(HomePath + "/MOTD.txt");
             }
         }
@@ -212,6 +239,7 @@ namespace KS.Files
         {
             get
             {
+                // return Filesystem.NeutralizePath(AppDataPath + "/MAL.txt");
                 return Filesystem.NeutralizePath(HomePath + "/MAL.txt");
             }
         }
@@ -223,6 +251,7 @@ namespace KS.Files
         {
             get
             {
+                // return Filesystem.NeutralizePath(AppDataPath + "/CustomSaverSettings.json");
                 return Filesystem.NeutralizePath(HomePath + "/CustomSaverSettings.json");
             }
         }
@@ -234,6 +263,7 @@ namespace KS.Files
         {
             get
             {
+                // return Filesystem.NeutralizePath(AppDataPath + "/KSEvents/");
                 return Filesystem.NeutralizePath(HomePath + "/KSEvents/");
             }
         }
@@ -245,6 +275,7 @@ namespace KS.Files
         {
             get
             {
+                // return Filesystem.NeutralizePath(AppDataPath + "/KSReminders/");
                 return Filesystem.NeutralizePath(HomePath + "/KSReminders/");
             }
         }
@@ -256,6 +287,7 @@ namespace KS.Files
         {
             get
             {
+                // return Filesystem.NeutralizePath(AppDataPath + "/KSLanguages/");
                 return Filesystem.NeutralizePath(HomePath + "/KSLanguages/");
             }
         }
@@ -267,6 +299,7 @@ namespace KS.Files
         {
             get
             {
+                // return Filesystem.NeutralizePath(AppDataPath + "/KSSplashes/");
                 return Filesystem.NeutralizePath(HomePath + "/KSSplashes/");
             }
         }
