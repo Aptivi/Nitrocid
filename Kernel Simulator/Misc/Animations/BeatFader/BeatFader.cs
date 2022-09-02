@@ -25,6 +25,9 @@ using KS.Misc.Threading;
 
 namespace KS.Misc.Animations.BeatFader
 {
+    /// <summary>
+    /// Beat fader animation module
+    /// </summary>
     public static class BeatFader
     {
 

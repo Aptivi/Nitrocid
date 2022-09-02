@@ -24,6 +24,9 @@ using KS.Misc.Threading;
 
 namespace KS.Misc.Animations.Pulse
 {
+    /// <summary>
+    /// Pulse animation module
+    /// </summary>
     public static class Pulse
     {
 

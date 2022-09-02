@@ -24,6 +24,9 @@ using KS.Misc.Threading;
 
 namespace KS.Misc.Animations.EdgePulse
 {
+    /// <summary>
+    /// Edge pulse animation module
+    /// </summary>
     public static class EdgePulse
     {
 

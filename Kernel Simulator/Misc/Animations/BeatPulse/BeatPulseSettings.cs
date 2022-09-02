@@ -21,6 +21,9 @@ using ColorSeq;
 
 namespace KS.Misc.Animations.BeatPulse
 {
+    /// <summary>
+    /// Beat pulse settings
+    /// </summary>
     public class BeatPulseSettings
     {
 

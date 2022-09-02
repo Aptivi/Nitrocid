@@ -25,6 +25,9 @@ using KS.Misc.Threading;
 
 namespace KS.Misc.Animations.BeatEdgePulse
 {
+    /// <summary>
+    /// Beat edge pulse animation module
+    /// </summary>
     public static class BeatEdgePulse
     {
 

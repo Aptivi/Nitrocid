@@ -20,6 +20,9 @@ using System;
 
 namespace KS.Misc.Animations.Pulse
 {
+    /// <summary>
+    /// Pulse settings
+    /// </summary>
     public class PulseSettings
     {
 

@@ -25,6 +25,9 @@ using KS.Misc.Threading;
 
 namespace KS.Misc.Animations.FaderBack
 {
+    /// <summary>
+    /// Background fader animation module
+    /// </summary>
     public static class FaderBack
     {
 

@@ -20,6 +20,9 @@ using System;
 
 namespace KS.Misc.Animations.EdgePulse
 {
+    /// <summary>
+    /// Edge pulse settings
+    /// </summary>
     public class EdgePulseSettings
     {
 

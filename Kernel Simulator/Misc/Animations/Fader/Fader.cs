@@ -26,6 +26,9 @@ using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Misc.Animations.Fader
 {
+    /// <summary>
+    /// Fader animation module
+    /// </summary>
     public static class Fader
     {
 

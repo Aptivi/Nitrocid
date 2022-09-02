@@ -21,6 +21,9 @@ using ColorSeq;
 
 namespace KS.Misc.Animations.BeatFader
 {
+    /// <summary>
+    /// Beat fader settings
+    /// </summary>
     public class BeatFaderSettings
     {
 

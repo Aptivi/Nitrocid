@@ -20,6 +20,9 @@ using System;
 
 namespace KS.Misc.Animations.FaderBack
 {
+    /// <summary>
+    /// Background fader settings
+    /// </summary>
     public class FaderBackSettings
     {
 
