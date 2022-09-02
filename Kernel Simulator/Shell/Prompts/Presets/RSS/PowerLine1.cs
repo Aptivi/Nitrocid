@@ -27,11 +27,16 @@ using KS.Shell.Shells.RSS;
 
 namespace KS.Shell.Prompts.Presets.RSS
 {
+    /// <summary>
+    /// PowerLine 1 preset
+    /// </summary>
     public class RSSPowerLine1Preset : PromptPresetBase, IPromptPreset
     {
 
+        /// <inheritdoc/>
         public override string PresetName { get; } = "PowerLine1";
 
+        /// <inheritdoc/>
         public override string PresetPrompt
         {
             get
@@ -40,6 +45,7 @@ namespace KS.Shell.Prompts.Presets.RSS
             }
         }
 
+        /// <inheritdoc/>
         public override ShellType PresetShellType { get; } = ShellType.RSSShell;
 
         internal override string PresetPromptBuilder()

@@ -28,11 +28,16 @@ using KS.Shell.Shells.Hex;
 
 namespace KS.Shell.Prompts.Presets.Hex
 {
+    /// <summary>
+    /// PowerLine BG 1 preset
+    /// </summary>
     public class HexPowerLineBG1Preset : PromptPresetBase, IPromptPreset
     {
 
+        /// <inheritdoc/>
         public override string PresetName { get; } = "PowerLineBG1";
 
+        /// <inheritdoc/>
         public override string PresetPrompt
         {
             get
@@ -41,6 +46,7 @@ namespace KS.Shell.Prompts.Presets.Hex
             }
         }
 
+        /// <inheritdoc/>
         public override ShellType PresetShellType { get; } = ShellType.HexShell;
 
         internal override string PresetPromptBuilder()

@@ -22,13 +22,19 @@ using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Prompts
 {
+    /// <summary>
+    /// Base prompt preset
+    /// </summary>
     public abstract class PromptPresetBase : IPromptPreset
     {
 
+        /// <inheritdoc/>
         public virtual string PresetName { get; } = "BasePreset";
 
+        /// <inheritdoc/>
         public virtual string PresetPrompt { get; } = "> ";
 
+        /// <inheritdoc/>
         public virtual ShellType PresetShellType { get; } = ShellType.Shell;
 
         internal virtual string PresetPromptBuilder()

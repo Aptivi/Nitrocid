@@ -28,11 +28,16 @@ using KS.Shell.Shells.Json;
 
 namespace KS.Shell.Prompts.Presets.Json
 {
+    /// <summary>
+    /// PowerLine BG 3 preset
+    /// </summary>
     public class JsonPowerLineBG3Preset : PromptPresetBase, IPromptPreset
     {
 
+        /// <inheritdoc/>
         public override string PresetName { get; } = "PowerLineBG3";
 
+        /// <inheritdoc/>
         public override string PresetPrompt
         {
             get
@@ -41,6 +46,7 @@ namespace KS.Shell.Prompts.Presets.Json
             }
         }
 
+        /// <inheritdoc/>
         public override ShellType PresetShellType { get; } = ShellType.JsonShell;
 
         internal override string PresetPromptBuilder()

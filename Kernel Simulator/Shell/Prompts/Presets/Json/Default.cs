@@ -25,11 +25,16 @@ using KS.Shell.Shells.Json;
 
 namespace KS.Shell.Prompts.Presets.Json
 {
+    /// <summary>
+    /// Default preset
+    /// </summary>
     public class JsonDefaultPreset : PromptPresetBase, IPromptPreset
     {
 
+        /// <inheritdoc/>
         public override string PresetName { get; } = "Default";
 
+        /// <inheritdoc/>
         public override string PresetPrompt
         {
             get
@@ -38,6 +43,7 @@ namespace KS.Shell.Prompts.Presets.Json
             }
         }
 
+        /// <inheritdoc/>
         public override ShellType PresetShellType { get; } = ShellType.JsonShell;
 
         internal override string PresetPromptBuilder()

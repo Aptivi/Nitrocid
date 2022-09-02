@@ -28,11 +28,16 @@ using KS.Shell.Shells.Text;
 
 namespace KS.Shell.Prompts.Presets.Text
 {
+    /// <summary>
+    /// PowerLine 2 preset
+    /// </summary>
     public class TextPowerLine2Preset : PromptPresetBase, IPromptPreset
     {
 
+        /// <inheritdoc/>
         public override string PresetName { get; } = "PowerLine2";
 
+        /// <inheritdoc/>
         public override string PresetPrompt
         {
             get
@@ -41,6 +46,7 @@ namespace KS.Shell.Prompts.Presets.Text
             }
         }
 
+        /// <inheritdoc/>
         public override ShellType PresetShellType { get; } = ShellType.TextShell;
 
         internal override string PresetPromptBuilder()

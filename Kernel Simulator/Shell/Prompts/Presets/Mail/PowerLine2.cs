@@ -28,11 +28,16 @@ using KS.Shell.Shells.Mail;
 
 namespace KS.Shell.Prompts.Presets.Mail
 {
+    /// <summary>
+    /// PowerLine 2 preset
+    /// </summary>
     public class MailPowerLine2Preset : PromptPresetBase, IPromptPreset
     {
 
+        /// <inheritdoc/>
         public override string PresetName { get; } = "PowerLine2";
 
+        /// <inheritdoc/>
         public override string PresetPrompt
         {
             get
@@ -41,6 +46,7 @@ namespace KS.Shell.Prompts.Presets.Mail
             }
         }
 
+        /// <inheritdoc/>
         public override ShellType PresetShellType { get; } = ShellType.MailShell;
 
         internal override string PresetPromptBuilder()

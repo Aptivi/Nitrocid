@@ -26,11 +26,16 @@ using KS.Network;
 
 namespace KS.Shell.Prompts.Presets.UESH
 {
+    /// <summary>
+    /// Default preset
+    /// </summary>
     public class DefaultPreset : PromptPresetBase, IPromptPreset
     {
 
+        /// <inheritdoc/>
         public override string PresetName { get; } = "Default";
 
+        /// <inheritdoc/>
         public override string PresetPrompt
         {
             get

@@ -44,6 +44,9 @@ using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Prompts
 {
+    /// <summary>
+    /// Prompt preset management module
+    /// </summary>
     public static class PromptPresetManager
     {
 

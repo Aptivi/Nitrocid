@@ -23,11 +23,16 @@ using KS.Shell.Shells.SFTP;
 
 namespace KS.Shell.Prompts.Presets.SFTP
 {
+    /// <summary>
+    /// Default preset
+    /// </summary>
     public class SFTPDefaultPreset : PromptPresetBase, IPromptPreset
     {
 
+        /// <inheritdoc/>
         public override string PresetName { get; } = "Default";
 
+        /// <inheritdoc/>
         public override string PresetPrompt
         {
             get
@@ -36,6 +41,7 @@ namespace KS.Shell.Prompts.Presets.SFTP
             }
         }
 
+        /// <inheritdoc/>
         public override ShellType PresetShellType { get; } = ShellType.SFTPShell;
 
         internal override string PresetPromptBuilder()

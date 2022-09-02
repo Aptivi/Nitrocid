@@ -27,11 +27,16 @@ using KS.Shell.Shells.SFTP;
 
 namespace KS.Shell.Prompts.Presets.SFTP
 {
+    /// <summary>
+    /// PowerLine BG 1 preset
+    /// </summary>
     public class SftpPowerLineBG1Preset : PromptPresetBase, IPromptPreset
     {
 
+        /// <inheritdoc/>
         public override string PresetName { get; } = "PowerLineBG1";
 
+        /// <inheritdoc/>
         public override string PresetPrompt
         {
             get
@@ -40,6 +45,7 @@ namespace KS.Shell.Prompts.Presets.SFTP
             }
         }
 
+        /// <inheritdoc/>
         public override ShellType PresetShellType { get; } = ShellType.SFTPShell;
 
         internal override string PresetPromptBuilder()

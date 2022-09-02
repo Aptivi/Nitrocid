@@ -25,11 +25,16 @@ using KS.Shell.Shells.Hex;
 
 namespace KS.Shell.Prompts.Presets.Hex
 {
+    /// <summary>
+    /// Default preset
+    /// </summary>
     public class HexDefaultPreset : PromptPresetBase, IPromptPreset
     {
 
+        /// <inheritdoc/>
         public override string PresetName { get; } = "Default";
 
+        /// <inheritdoc/>
         public override string PresetPrompt
         {
             get
@@ -38,6 +43,7 @@ namespace KS.Shell.Prompts.Presets.Hex
             }
         }
 
+        /// <inheritdoc/>
         public override ShellType PresetShellType { get; } = ShellType.HexShell;
 
         internal override string PresetPromptBuilder()

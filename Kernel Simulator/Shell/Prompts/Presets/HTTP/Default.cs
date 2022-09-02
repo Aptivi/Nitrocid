@@ -23,11 +23,16 @@ using KS.Shell.Shells.HTTP;
 
 namespace KS.Shell.Prompts.Presets.HTTP
 {
+    /// <summary>
+    /// Default preset
+    /// </summary>
     public class HTTPDefaultPreset : PromptPresetBase, IPromptPreset
     {
 
+        /// <inheritdoc/>
         public override string PresetName { get; } = "Default";
 
+        /// <inheritdoc/>
         public override string PresetPrompt
         {
             get
@@ -36,6 +41,7 @@ namespace KS.Shell.Prompts.Presets.HTTP
             }
         }
 
+        /// <inheritdoc/>
         public override ShellType PresetShellType { get; } = ShellType.HTTPShell;
 
         internal override string PresetPromptBuilder()

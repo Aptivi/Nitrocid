@@ -25,11 +25,16 @@ using KS.Shell.Shells.Text;
 
 namespace KS.Shell.Prompts.Presets.Text
 {
+    /// <summary>
+    /// Default preset
+    /// </summary>
     public class TextDefaultPreset : PromptPresetBase, IPromptPreset
     {
 
+        /// <inheritdoc/>
         public override string PresetName { get; } = "Default";
 
+        /// <inheritdoc/>
         public override string PresetPrompt
         {
             get
@@ -38,6 +43,7 @@ namespace KS.Shell.Prompts.Presets.Text
             }
         }
 
+        /// <inheritdoc/>
         public override ShellType PresetShellType { get; } = ShellType.TextShell;
 
         internal override string PresetPromptBuilder()

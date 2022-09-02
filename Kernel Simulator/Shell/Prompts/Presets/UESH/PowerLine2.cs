@@ -28,11 +28,16 @@ using KS.Network;
 
 namespace KS.Shell.Prompts.Presets.UESH
 {
+    /// <summary>
+    /// PowerLine 2 preset
+    /// </summary>
     public class PowerLine2Preset : PromptPresetBase, IPromptPreset
     {
 
+        /// <inheritdoc/>
         public override string PresetName { get; } = "PowerLine2";
 
+        /// <inheritdoc/>
         public override string PresetPrompt
         {
             get

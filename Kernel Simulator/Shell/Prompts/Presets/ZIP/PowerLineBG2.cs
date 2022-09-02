@@ -28,11 +28,16 @@ using KS.Shell.Shells.Zip;
 
 namespace KS.Shell.Prompts.Presets.ZIP
 {
+    /// <summary>
+    /// PowerLine BG 2 preset
+    /// </summary>
     public class ZipPowerLineBG2Preset : PromptPresetBase, IPromptPreset
     {
 
+        /// <inheritdoc/>
         public override string PresetName { get; } = "PowerLineBG2";
 
+        /// <inheritdoc/>
         public override string PresetPrompt
         {
             get
@@ -41,6 +46,7 @@ namespace KS.Shell.Prompts.Presets.ZIP
             }
         }
 
+        /// <inheritdoc/>
         public override ShellType PresetShellType { get; } = ShellType.ZIPShell;
 
         internal override string PresetPromptBuilder()

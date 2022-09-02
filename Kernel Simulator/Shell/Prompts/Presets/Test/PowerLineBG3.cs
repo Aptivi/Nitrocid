@@ -26,11 +26,16 @@ using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Prompts.Presets.Test
 {
+    /// <summary>
+    /// PowerLine BG 3 preset
+    /// </summary>
     public class TestPowerLineBG3Preset : PromptPresetBase, IPromptPreset
     {
 
+        /// <inheritdoc/>
         public override string PresetName { get; } = "PowerLineBG3";
 
+        /// <inheritdoc/>
         public override string PresetPrompt
         {
             get
@@ -39,6 +44,7 @@ namespace KS.Shell.Prompts.Presets.Test
             }
         }
 
+        /// <inheritdoc/>
         public override ShellType PresetShellType { get; } = ShellType.TestShell;
 
         internal override string PresetPromptBuilder()

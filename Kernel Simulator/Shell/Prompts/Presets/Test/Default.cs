@@ -20,13 +20,19 @@ using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Prompts.Presets.Test
 {
+    /// <summary>
+    /// Default preset
+    /// </summary>
     public class TestDefaultPreset : PromptPresetBase, IPromptPreset
     {
 
+        /// <inheritdoc/>
         public override string PresetName { get; } = "Default";
 
+        /// <inheritdoc/>
         public override string PresetPrompt { get; } = "(t)> ";
 
+        /// <inheritdoc/>
         public override ShellType PresetShellType { get; } = ShellType.TestShell;
 
     }

@@ -28,11 +28,16 @@ using KS.Shell.Shells.Rar;
 
 namespace KS.Shell.Prompts.Presets.RAR
 {
+    /// <summary>
+    /// PowerLine BG 2 preset
+    /// </summary>
     public class RarPowerLineBG2Preset : PromptPresetBase, IPromptPreset
     {
 
+        /// <inheritdoc/>
         public override string PresetName { get; } = "PowerLineBG2";
 
+        /// <inheritdoc/>
         public override string PresetPrompt
         {
             get
@@ -41,6 +46,7 @@ namespace KS.Shell.Prompts.Presets.RAR
             }
         }
 
+        /// <inheritdoc/>
         public override ShellType PresetShellType { get; } = ShellType.RARShell;
 
         internal override string PresetPromptBuilder()

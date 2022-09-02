@@ -27,11 +27,16 @@ using KS.Shell.Shells.FTP;
 
 namespace KS.Shell.Prompts.Presets.FTP
 {
+    /// <summary>
+    /// PowerLine 1 preset
+    /// </summary>
     public class FtpPowerLine1Preset : PromptPresetBase, IPromptPreset
     {
 
+        /// <inheritdoc/>
         public override string PresetName { get; } = "PowerLine1";
 
+        /// <inheritdoc/>
         public override string PresetPrompt
         {
             get
@@ -40,6 +45,7 @@ namespace KS.Shell.Prompts.Presets.FTP
             }
         }
 
+        /// <inheritdoc/>
         public override ShellType PresetShellType { get; } = ShellType.FTPShell;
 
         internal override string PresetPromptBuilder()

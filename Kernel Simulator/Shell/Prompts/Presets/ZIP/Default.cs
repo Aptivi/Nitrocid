@@ -24,11 +24,16 @@ using KS.Shell.Shells.Zip;
 
 namespace KS.Shell.Prompts.Presets.ZIP
 {
+    /// <summary>
+    /// Default preset
+    /// </summary>
     public class ZipDefaultPreset : PromptPresetBase, IPromptPreset
     {
 
+        /// <inheritdoc/>
         public override string PresetName { get; } = "Default";
 
+        /// <inheritdoc/>
         public override string PresetPrompt
         {
             get
@@ -37,6 +42,7 @@ namespace KS.Shell.Prompts.Presets.ZIP
             }
         }
 
+        /// <inheritdoc/>
         public override ShellType PresetShellType { get; } = ShellType.ZIPShell;
 
         internal override string PresetPromptBuilder()

@@ -27,11 +27,16 @@ using KS.Shell.Shells.HTTP;
 
 namespace KS.Shell.Prompts.Presets.HTTP
 {
+    /// <summary>
+    /// PowerLine BG 2 preset
+    /// </summary>
     public class HTTPPowerLineBG2Preset : PromptPresetBase, IPromptPreset
     {
 
+        /// <inheritdoc/>
         public override string PresetName { get; } = "PowerLineBG2";
 
+        /// <inheritdoc/>
         public override string PresetPrompt
         {
             get
@@ -40,6 +45,7 @@ namespace KS.Shell.Prompts.Presets.HTTP
             }
         }
 
+        /// <inheritdoc/>
         public override ShellType PresetShellType { get; } = ShellType.HTTPShell;
 
         internal override string PresetPromptBuilder()
