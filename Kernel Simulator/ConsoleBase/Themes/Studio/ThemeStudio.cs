@@ -455,6 +455,10 @@ namespace KS.ConsoleBase.Themes.Studio
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.I, "Printing text with colors of theme...");
                                     ThemeStudioTools.PreparePreview();
+
+                                    // Pause until a key is pressed
+                                    TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Neutral);
+                                    ConsoleWrapper.ReadKey();
                                     break;
                                 }
                             case 47: // Exit

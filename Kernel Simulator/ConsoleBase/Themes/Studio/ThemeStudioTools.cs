@@ -510,10 +510,6 @@ namespace KS.ConsoleBase.Themes.Studio
             // Selected option color
             TextWriterColor.Write("*) " + Translate.DoTranslation("Alternative option color") + ": ", false, ColorTools.ColTypes.Option);
             TextWriterColor.Write("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", true, SelectedAlternativeOptionColor);
-
-            // Pause until a key is pressed
-            TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Neutral);
-            ConsoleWrapper.ReadKey();
         }
 
     }
