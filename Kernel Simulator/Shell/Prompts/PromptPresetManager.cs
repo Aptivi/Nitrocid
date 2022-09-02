@@ -27,6 +27,7 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
+using KS.Shell.Prompts.Presets.Archive;
 using KS.Shell.Prompts.Presets.FTP;
 using KS.Shell.Prompts.Presets.Hex;
 using KS.Shell.Prompts.Presets.HTTP;
@@ -167,6 +168,16 @@ namespace KS.Shell.Prompts
             { "PowerLineBG2", new RarPowerLineBG2Preset() },
             { "PowerLineBG3", new RarPowerLineBG3Preset() }
         };
+        internal readonly static Dictionary<string, PromptPresetBase> ArchiveShellPresets = new()
+        {
+            { "Default", new ArchiveDefaultPreset() },
+            { "PowerLine1", new ArchivePowerLine1Preset() },
+            { "PowerLine2", new ArchivePowerLine2Preset() },
+            { "PowerLine3", new ArchivePowerLine3Preset() },
+            { "PowerLineBG1", new ArchivePowerLineBG1Preset() },
+            { "PowerLineBG2", new ArchivePowerLineBG2Preset() },
+            { "PowerLineBG3", new ArchivePowerLineBG3Preset() }
+        };
 
         // Custom shell presets used by mods
         internal readonly static Dictionary<string, PromptPresetBase> UESHCustomShellPresets = new();
@@ -181,6 +192,7 @@ namespace KS.Shell.Prompts
         internal readonly static Dictionary<string, PromptPresetBase> HexCustomShellPresets = new();
         internal readonly static Dictionary<string, PromptPresetBase> FTPCustomShellPresets = new();
         internal readonly static Dictionary<string, PromptPresetBase> RARCustomShellPresets = new();
+        internal readonly static Dictionary<string, PromptPresetBase> ArchiveCustomShellPresets = new();
 
         // Current presets
         internal static PromptPresetBase UESHShellCurrentPreset = UESHShellPresets["Default"];
@@ -194,7 +206,8 @@ namespace KS.Shell.Prompts
         internal static PromptPresetBase HTTPShellCurrentPreset = HTTPShellPresets["Default"];
         internal static PromptPresetBase HexShellCurrentPreset = HexShellPresets["Default"];
         internal static PromptPresetBase FTPShellCurrentPreset = FTPShellPresets["Default"];
-        internal static PromptPresetBase RARShellCurrentPreset = FTPShellPresets["Default"];
+        internal static PromptPresetBase RARShellCurrentPreset = RARShellPresets["Default"];
+        internal static PromptPresetBase ArchiveShellCurrentPreset = ArchiveShellPresets["Default"];
 
         /// <summary>
         /// Sets the shell preset
@@ -309,6 +322,12 @@ namespace KS.Shell.Prompts
                         ConfigTools.SetConfigValue(Config.ConfigCategory.Shell, "RAR Shell Prompt Preset", PresetName);
                         break;
                     }
+                case ShellType.ArchiveShell:
+                    {
+                        ArchiveShellCurrentPreset = Presets[PresetName];
+                        ConfigTools.SetConfigValue(Config.ConfigCategory.Shell, "Archive Shell Prompt Preset", PresetName);
+                        break;
+                    }
             }
         }
 
@@ -367,6 +386,10 @@ namespace KS.Shell.Prompts
                 case ShellType.RARShell:
                     {
                         return RARShellCurrentPreset;
+                    }
+                case ShellType.ArchiveShell:
+                    {
+                        return ArchiveShellCurrentPreset;
                     }
 
                 default:
@@ -432,6 +455,10 @@ namespace KS.Shell.Prompts
                     {
                         return RARShellPresets;
                     }
+                case ShellType.ArchiveShell:
+                    {
+                        return ArchiveShellPresets;
+                    }
 
                 default:
                     {
@@ -495,6 +522,10 @@ namespace KS.Shell.Prompts
                 case ShellType.RARShell:
                     {
                         return RARCustomShellPresets;
+                    }
+                case ShellType.ArchiveShell:
+                    {
+                        return ArchiveCustomShellPresets;
                     }
 
                 default:

@@ -461,6 +461,18 @@ namespace KS.Kernel.Events
         public event RarCommandErrorEventHandler RarCommandError;
 
         public delegate void RarCommandErrorEventHandler(string Command, Exception Exception);
+        public event ArchiveShellInitializedEventHandler ArchiveShellInitialized;
+
+        public delegate void ArchiveShellInitializedEventHandler();
+        public event ArchivePreExecuteCommandEventHandler ArchivePreExecuteCommand;
+
+        public delegate void ArchivePreExecuteCommandEventHandler(string Command);
+        public event ArchivePostExecuteCommandEventHandler ArchivePostExecuteCommand;
+
+        public delegate void ArchivePostExecuteCommandEventHandler(string Command);
+        public event ArchiveCommandErrorEventHandler ArchiveCommandError;
+
+        public delegate void ArchiveCommandErrorEventHandler(string Command, Exception Exception);
 
         public Events()
         {
@@ -3897,6 +3909,98 @@ namespace KS.Kernel.Events
                 }
             }
         }
+        /// <summary>
+        /// Makes the mod respond to the event of ZIP shell initialized
+        /// </summary>
+        public void RespondArchiveShellInitialized()
+        {
+            foreach (ModInfo ModPart in ModManager.Mods.Values)
+            {
+                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
+                {
+                    try
+                    {
+                        var script = PartInfo.PartScript;
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ArchiveShellInitialized()...", script.ModPart, script.Name, script.Version);
+                        script.InitEvents("ArchiveShellInitialized");
+                    }
+                    catch (Exception ex)
+                    {
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// Makes the mod respond to the event of ZIP pre-command execution
+        /// </summary>
+        public void RespondArchivePreExecuteCommand(string Command)
+        {
+            foreach (ModInfo ModPart in ModManager.Mods.Values)
+            {
+                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
+                {
+                    try
+                    {
+                        var script = PartInfo.PartScript;
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ArchivePreExecuteCommand()...", script.ModPart, script.Name, script.Version);
+                        script.InitEvents("ArchivePreExecuteCommand", Command);
+                    }
+                    catch (Exception ex)
+                    {
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// Makes the mod respond to the event of ZIP post-command execution
+        /// </summary>
+        public void RespondArchivePostExecuteCommand(string Command)
+        {
+            foreach (ModInfo ModPart in ModManager.Mods.Values)
+            {
+                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
+                {
+                    try
+                    {
+                        var script = PartInfo.PartScript;
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ArchivePostExecuteCommand()...", script.ModPart, script.Name, script.Version);
+                        script.InitEvents("ArchivePostExecuteCommand", Command);
+                    }
+                    catch (Exception ex)
+                    {
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// Makes the mod respond to the event of ZIP command error
+        /// </summary>
+        public void RespondArchiveCommandError(string Command, Exception Exception)
+        {
+            foreach (ModInfo ModPart in ModManager.Mods.Values)
+            {
+                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
+                {
+                    try
+                    {
+                        var script = PartInfo.PartScript;
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ArchiveCommandError()...", script.ModPart, script.Name, script.Version);
+                        script.InitEvents("ArchiveCommandError", Command, Exception);
+                    }
+                    catch (Exception ex)
+                    {
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
+                    }
+                }
+            }
+        }
 
         // These subs are for raising events
         /// <summary>
@@ -5185,6 +5289,42 @@ namespace KS.Kernel.Events
             DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RarCommandError() and responding in RespondRarCommandError()...");
             EventsManager.FiredEvents.Add("RarCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
             RarCommandError?.Invoke(Command, Exception);
+        }
+        /// <summary>
+        /// Raise an event of ZIP shell initialized
+        /// </summary>
+        public void RaiseArchiveShellInitialized()
+        {
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ArchiveShellInitialized() and responding in RespondArchiveShellInitialized()...");
+            EventsManager.FiredEvents.Add("ArchiveShellInitialized (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
+            ArchiveShellInitialized?.Invoke();
+        }
+        /// <summary>
+        /// Raise an event of ZIP pre-command execution
+        /// </summary>
+        public void RaiseArchivePreExecuteCommand(string Command)
+        {
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ArchivePreExecuteCommand() and responding in RespondArchivePreExecuteCommand()...");
+            EventsManager.FiredEvents.Add("ArchivePreExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
+            ArchivePreExecuteCommand?.Invoke(Command);
+        }
+        /// <summary>
+        /// Raise an event of ZIP post-command execution
+        /// </summary>
+        public void RaiseArchivePostExecuteCommand(string Command)
+        {
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ArchivePostExecuteCommand() and responding in RespondArchivePostExecuteCommand()...");
+            EventsManager.FiredEvents.Add("ArchivePostExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
+            ArchivePostExecuteCommand?.Invoke(Command);
+        }
+        /// <summary>
+        /// Raise an event of ZIP command error
+        /// </summary>
+        public void RaiseArchiveCommandError(string Command, Exception Exception)
+        {
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ArchiveCommandError() and responding in RespondArchiveCommandError()...");
+            EventsManager.FiredEvents.Add("ArchiveCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
+            ArchiveCommandError?.Invoke(Command, Exception);
         }
 
     }

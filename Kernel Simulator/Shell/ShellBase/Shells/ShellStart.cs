@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using KS.Languages;
 using KS.Misc.Threading;
 using KS.Shell.ShellBase.Commands;
+using KS.Shell.Shells.Archive;
 using KS.Shell.Shells.FTP;
 using KS.Shell.Shells.Hex;
 using KS.Shell.Shells.HTTP;
@@ -171,6 +172,10 @@ namespace KS.Shell.ShellBase.Shells
                 case ShellType.RARShell:
                     {
                         return new RarShell();
+                    }
+                case ShellType.ArchiveShell:
+                    {
+                        return new ArchiveShell();
                     }
 
                 default:

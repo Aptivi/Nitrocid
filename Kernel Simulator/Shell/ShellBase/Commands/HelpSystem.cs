@@ -144,6 +144,11 @@ namespace KS.Shell.ShellBase.Commands
                         AliasedCommandList = AliasManager.RARShellAliases;
                         break;
                     }
+                case ShellType.ArchiveShell:
+                    {
+                        AliasedCommandList = AliasManager.ArchiveShellAliases;
+                        break;
+                    }
             }
 
             // Check to see if command exists

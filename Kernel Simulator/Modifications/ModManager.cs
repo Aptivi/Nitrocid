@@ -50,6 +50,7 @@ using KS.Shell.Shells.Zip;
 using KS.Shell.Shells.UESH;
 using KS.Kernel.Debugging;
 using KS.Kernel.Debugging.RemoteDebug;
+using KS.Shell.Shells.Archive;
 
 namespace KS.Modifications
 {
@@ -612,6 +613,10 @@ namespace KS.Modifications
                 case ShellType.RARShell:
                     {
                         return RarShellCommon.RarShell_ModCommands;
+                    }
+                case ShellType.ArchiveShell:
+                    {
+                        return ArchiveShellCommon.ArchiveShell_ModCommands;
                     }
 
                 default:

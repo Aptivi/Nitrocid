@@ -74,6 +74,10 @@ namespace KS.Shell.ShellBase.Shells
         /// <summary>
         /// RAR shell
         /// </summary>
-        RARShell
+        RARShell,
+        /// <summary>
+        /// Archive shell
+        /// </summary>
+        ArchiveShell
     }
 }

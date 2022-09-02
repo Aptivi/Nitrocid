@@ -27,7 +27,20 @@ namespace KS.Shell.ShellBase.Commands
     static class CancellationHandlers
     {
 
-        internal static object CancelSync = new(), EditorCancelSync = new(), FTPCancelSync = new(), HTTPCancelSync = new(), JsonShellCancelSync = new(), MailCancelSync = new(), RssShellCancelSync = new(), SFTPCancelSync = new(), TestCancelSync = new(), ZipShellCancelSync = new(), HexEditorCancelSync = new(), RarShellCancelSync = new();
+        internal static object 
+            CancelSync = new(), 
+            EditorCancelSync = new(), 
+            FTPCancelSync = new(), 
+            HTTPCancelSync = new(), 
+            JsonShellCancelSync = new(), 
+            MailCancelSync = new(), 
+            RssShellCancelSync = new(), 
+            SFTPCancelSync = new(), 
+            TestCancelSync = new(), 
+            ZipShellCancelSync = new(), 
+            HexEditorCancelSync = new(), 
+            RarShellCancelSync = new(),
+            ArchiveShellCancelSync = new();
 
         public static void CancelCommand(object sender, ConsoleCancelEventArgs e)
         {
@@ -98,6 +111,10 @@ namespace KS.Shell.ShellBase.Commands
                 case ShellType.RARShell:
                     {
                         return RarShellCancelSync;
+                    }
+                case ShellType.ArchiveShell:
+                    {
+                        return ArchiveShellCancelSync;
                     }
 
                 default:

@@ -17,37 +17,23 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase.Colors;
-using KS.Files;
-using KS.Files.Querying;
-using KS.Kernel.Debugging;
-using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace KS.Shell.Shells.Archive.Commands
 {
     /// <summary>
-    /// Opens an archive file to the archive shell
+    /// Gets current local directory
     /// </summary>
     /// <remarks>
-    /// If you want to interact with the archive files, like extracting them, use this command. For now, only RAR and ZIP files are supported.
+    /// Should you want to get the current local directory in the ZIP shell, you can use this command.
     /// </remarks>
-    class ArchiveCommand : CommandExecutor, ICommand
+    class ArchiveShell_CDirCommand : CommandExecutor, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            ListArgsOnly[0] = Filesystem.NeutralizePath(ListArgsOnly[0]);
-            DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {0}", ListArgsOnly[0], Checking.FileExists(ListArgsOnly[0]));
-            if (Checking.FileExists(ListArgsOnly[0]))
-            {
-                ShellStart.StartShell(ShellType.ArchiveShell, ListArgsOnly[0]);
-            }
-            else
-            {
-                TextWriterColor.Write(Translate.DoTranslation("File doesn't exist."), true, ColorTools.ColTypes.Error);
-            }
+            TextWriterColor.Write(ArchiveShellCommon.ArchiveShell_CurrentDirectory, true, ColorTools.ColTypes.Neutral);
         }
 
     }

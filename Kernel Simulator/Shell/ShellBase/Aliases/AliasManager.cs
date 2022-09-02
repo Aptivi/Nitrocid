@@ -51,6 +51,7 @@ namespace KS.Shell.ShellBase.Aliases
         internal static Dictionary<string, string> HTTPShellAliases = new();
         internal static Dictionary<string, string> HexShellAliases = new();
         internal static Dictionary<string, string> RARShellAliases = new();
+        internal static Dictionary<string, string> ArchiveShellAliases = new();
         internal static Dictionary<string, ShellType> AliasesToBeRemoved = new();
 
         /// <summary>
@@ -349,6 +350,10 @@ namespace KS.Shell.ShellBase.Aliases
                 case ShellType.RARShell:
                     {
                         return RARShellAliases;
+                    }
+                case ShellType.ArchiveShell:
+                    {
+                        return ArchiveShellAliases;
                     }
 
                 default:

@@ -29,6 +29,7 @@ using KS.Kernel.Debugging.RemoteDebug.Interface;
 using KS.Languages;
 using KS.Misc.Writers.MiscWriters;
 using KS.Shell.ShellBase.Shells;
+using KS.Shell.Shells.Archive;
 using KS.Shell.Shells.FTP;
 using KS.Shell.Shells.Hex;
 using KS.Shell.Shells.HTTP;
@@ -218,6 +219,11 @@ namespace KS.Shell.ShellBase.Commands
                 case ShellType.RARShell:
                     {
                         FinalCommands = new Dictionary<string, CommandInfo>(RarShellCommon.RarShell_Commands);
+                        break;
+                    }
+                case ShellType.ArchiveShell:
+                    {
+                        FinalCommands = new Dictionary<string, CommandInfo>(ArchiveShellCommon.ArchiveShell_Commands);
                         break;
                     }
 

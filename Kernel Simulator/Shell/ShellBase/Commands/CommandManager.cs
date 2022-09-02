@@ -19,6 +19,7 @@
 using KS.Kernel.Debugging;
 using KS.Kernel.Debugging.RemoteDebug;
 using KS.Shell.ShellBase.Shells;
+using KS.Shell.Shells.Archive;
 using KS.Shell.Shells.FTP;
 using KS.Shell.Shells.Hex;
 using KS.Shell.Shells.HTTP;
@@ -101,6 +102,10 @@ namespace KS.Shell.ShellBase.Commands
                 case ShellType.RARShell:
                     {
                         return RarShellCommon.RarShell_Commands.ContainsKey(Command);
+                    }
+                case ShellType.ArchiveShell:
+                    {
+                        return ArchiveShellCommon.ArchiveShell_Commands.ContainsKey(Command);
                     }
 
                 default:

@@ -250,6 +250,7 @@ namespace KS.Kernel.Configuration
                 { "Hex Edit Prompt Preset", PromptPresetManager.HexShellCurrentPreset.PresetName },
                 { "HTTP Shell Prompt Preset", PromptPresetManager.HTTPShellCurrentPreset.PresetName },
                 { "RAR Shell Prompt Preset", PromptPresetManager.RARShellCurrentPreset.PresetName },
+                { "Archive Shell Prompt Preset", PromptPresetManager.ArchiveShellCurrentPreset.PresetName },
                 { "Start color wheel in true color mode", Flags.ColorWheelTrueColor },
                 { "Default choice output type", ChoiceStyle.DefaultChoiceOutputType.ToString() }
             };
@@ -1464,6 +1465,7 @@ namespace KS.Kernel.Configuration
             PromptPresetManager.SetPreset((string)ConfigToken["Shell"]["Hex Edit Prompt Preset"] ?? "Default", ShellType.HexShell, false);
             PromptPresetManager.SetPreset((string)ConfigToken["Shell"]["HTTP Shell Prompt Preset"] ?? "Default", ShellType.HTTPShell, false);
             PromptPresetManager.SetPreset((string)ConfigToken["Shell"]["RAR Shell Prompt Preset"] ?? "Default", ShellType.RARShell, false);
+            PromptPresetManager.SetPreset((string)ConfigToken["Shell"]["Archive Shell Prompt Preset"] ?? "Default", ShellType.ArchiveShell, false);
             Flags.ColorWheelTrueColor = (bool)ConfigToken["Shell"]["Start color wheel in true color mode"];
             ChoiceStyle.DefaultChoiceOutputType = (ConfigToken["Shell"]["Default choice output type"] != null) ? (Enum.TryParse((string)ConfigToken["Shell"]["Default choice output type"], out ChoiceStyle.DefaultChoiceOutputType) ? ChoiceStyle.DefaultChoiceOutputType : ChoiceStyle.ChoiceOutputType.Modern) : ChoiceStyle.ChoiceOutputType.Modern;
 
