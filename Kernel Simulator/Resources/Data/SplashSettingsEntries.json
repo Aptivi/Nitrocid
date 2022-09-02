@@ -1,6 +1,7 @@
 {
     "Simple": {
         "Desc": "Settings for this splash screen are available here.",
+        "Path": "Splash.Simple",
         "Keys": [
             {
                 "Name": "Progress text location",
@@ -16,6 +17,7 @@
     },
     "Progress": {
         "Desc": "Settings for this splash screen are available here.",
+        "Path": "Splash.Progress",
         "Keys": [
             {
                 "Name": "Progress bar color",
@@ -36,6 +38,7 @@
     },
     "PowerLineProgress": {
         "Desc": "Settings for this splash screen are available here.",
+        "Path": "Splash.PowerLineProgress",
         "Keys": [
             {
                 "Name": "Progress bar color",

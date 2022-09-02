@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Arguments.KernelArguments;
 using KS.Arguments.PreBootCommandLineArguments;
 using System.Collections.Generic;
 
@@ -33,6 +34,7 @@ namespace KS.Arguments.ArgumentBase
         public readonly static Dictionary<string, ArgumentInfo> AvailablePreBootCMDLineArgs = new()
         {
             { "reset", new ArgumentInfo("reset", ArgumentType.PreBootCommandLineArgs, "Resets the kernel to the factory settings", "", false, 0, new PreBootCommandLine_ResetArgument()) },
+            { "newreader", new ArgumentInfo("newreader", ArgumentType.KernelArgs, "Opts in to new config reader", "", false, 0, new PreBootCommandLine_NewReaderArgument()) },
             { "bypasssizedetection", new ArgumentInfo("bypasssizedetection", ArgumentType.PreBootCommandLineArgs, "Bypasses the console size detection", "", false, 0, new PreBootCommandLine_BypassSizeDetectionArgument()) }
         };
 

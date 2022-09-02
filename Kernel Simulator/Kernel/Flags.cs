@@ -347,6 +347,10 @@ namespace KS.Kernel
         /// If the kernel is shut down, exit from main entry point gracefully.
         /// </summary>
         internal static bool KernelShutdown;
+        /// <summary>
+        /// Opts in to the new config reader
+        /// </summary>
+        internal static bool OptInToNewConfigReader;
 
     }
 }

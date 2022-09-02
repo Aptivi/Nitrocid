@@ -1,6 +1,7 @@
 {
     "General": {
         "Desc": "This section lists all general kernel settings, mainly for maintaining the kernel.",
+        "Path": "General",
         "Keys": [
             {
                 "Name": "Prompt for Arguments on Boot",
@@ -9,7 +10,7 @@
                 "Description": "Sets up the kernel so it prompts you for argument on boot."
             },
             {
-                "Name": "Maintenance Mode Trigger",
+                "Name": "Maintenance Mode",
                 "Type": "SBoolean",
                 "Variable": "Maintenance",
                 "Description": "Triggers maintenance mode. This disables multiple accounts."
@@ -33,10 +34,9 @@
                 "Description": "When switching languages, change the month names, calendar, etc."
             },
             {
-                "Name": "Culture of the current language",
+                "Name": "Culture",
                 "Type": "SSelection",
-                "Variable": "CurrentCult",
-                "VariableProperty": "Name",
+                "Variable": "CurrentCultStr",
                 "IsEnumeration": false,
                 "SelectionFunctionName": "GetCulturesFromCurrentLang",
                 "SelectionFunctionType": "Translate",
@@ -147,194 +147,195 @@
     },
     "Colors": {
         "Desc": "This section lets you choose what type of color do you want to change.",
+        "Path": "Colors",
         "Keys": [
             {
-                "Name": "Input color",
+                "Name": "Input Color",
                 "Type": "SColor",
                 "Variable": "InputColor"
             },
             {
-                "Name": "License color",
+                "Name": "License Color",
                 "Type": "SColor",
                 "Variable": "LicenseColor"
             },
             {
-                "Name": "Continuable kernel error color",
+                "Name": "Continuable Kernel Error Color",
                 "Type": "SColor",
                 "Variable": "ContKernelErrorColor"
             },
             {
-                "Name": "Uncontinuable kernel error color",
+                "Name": "Uncontinuable Kernel Error Color",
                 "Type": "SColor",
                 "Variable": "UncontKernelErrorColor"
             },
             {
-                "Name": "Host name color",
+                "Name": "Host Name Shell Color",
                 "Type": "SColor",
                 "Variable": "HostNameShellColor"
             },
             {
-                "Name": "User name color",
+                "Name": "User Name Shell Color",
                 "Type": "SColor",
                 "Variable": "UserNameShellColor"
             },
             {
-                "Name": "Background color",
+                "Name": "Background Color",
                 "Type": "SColor",
                 "Variable": "BackgroundColor"
             },
             {
-                "Name": "Neutral text color",
+                "Name": "Text Color",
                 "Type": "SColor",
                 "Variable": "NeutralTextColor"
             },
             {
-                "Name": "List entry color",
+                "Name": "List Entry Color",
                 "Type": "SColor",
                 "Variable": "ListEntryColor"
             },
             {
-                "Name": "List value color",
+                "Name": "List Value Color",
                 "Type": "SColor",
                 "Variable": "ListValueColor"
             },
             {
-                "Name": "Stage color",
+                "Name": "Kernel Stage Color",
                 "Type": "SColor",
                 "Variable": "StageColor"
             },
             {
-                "Name": "Error color",
+                "Name": "Error Text Color",
                 "Type": "SColor",
                 "Variable": "ErrorColor"
             },
             {
-                "Name": "Warning color",
+                "Name": "Warning Text Color",
                 "Type": "SColor",
                 "Variable": "WarningColor"
             },
             {
-                "Name": "Option color",
+                "Name": "Option Color",
                 "Type": "SColor",
                 "Variable": "OptionColor"
             },
             {
-                "Name": "Banner color",
+                "Name": "Banner Color",
                 "Type": "SColor",
                 "Variable": "BannerColor"
             },
             {
-                "Name": "Notification title color",
+                "Name": "Notification Title Color",
                 "Type": "SColor",
                 "Variable": "NotificationTitleColor"
             },
             {
-                "Name": "Notification description color",
+                "Name": "Notification Description Color",
                 "Type": "SColor",
                 "Variable": "NotificationDescriptionColor"
             },
             {
-                "Name": "Notification progress color",
+                "Name": "Notification Progress Color",
                 "Type": "SColor",
                 "Variable": "NotificationProgressColor"
             },
             {
-                "Name": "Notification failure color",
+                "Name": "Notification Failure Color",
                 "Type": "SColor",
                 "Variable": "NotificationFailureColor"
             },
             {
-                "Name": "Question color",
+                "Name": "Question Color",
                 "Type": "SColor",
                 "Variable": "QuestionColor"
             },
             {
-                "Name": "Success color",
+                "Name": "Success Color",
                 "Type": "SColor",
                 "Variable": "SuccessColor"
             },
             {
-                "Name": "User dollar color",
+                "Name": "User Dollar Color",
                 "Type": "SColor",
                 "Variable": "UserDollarColor"
             },
             {
-                "Name": "Tip color",
+                "Name": "Tip Color",
                 "Type": "SColor",
                 "Variable": "TipColor"
             },
             {
-                "Name": "Separator text color",
+                "Name": "Separator Text Color",
                 "Type": "SColor",
                 "Variable": "SeparatorTextColor"
             },
             {
-                "Name": "Separator color",
+                "Name": "Separator Color",
                 "Type": "SColor",
                 "Variable": "SeparatorColor"
             },
             {
-                "Name": "List title color",
+                "Name": "List Title Color",
                 "Type": "SColor",
                 "Variable": "ListTitleColor"
             },
             {
-                "Name": "Development warning color",
+                "Name": "Development Warning Color",
                 "Type": "SColor",
                 "Variable": "DevelopmentWarningColor"
             },
             {
-                "Name": "Stage time color",
+                "Name": "Stage Time Color",
                 "Type": "SColor",
                 "Variable": "StageTimeColor"
             },
             {
-                "Name": "Progress color",
+                "Name": "Progress Color",
                 "Type": "SColor",
                 "Variable": "ProgressColor"
             },
             {
-                "Name": "Back option color",
+                "Name": "Back Option Color",
                 "Type": "SColor",
                 "Variable": "BackOptionColor"
             },
             {
-                "Name": "Low priority border color",
+                "Name": "Low Priority Border Color",
                 "Type": "SColor",
                 "Variable": "LowPriorityBorderColor"
             },
             {
-                "Name": "Medium priority border color",
+                "Name": "Medium Priority Border Color",
                 "Type": "SColor",
                 "Variable": "MediumPriorityBorderColor"
             },
             {
-                "Name": "High priority border color",
+                "Name": "High Priority Border Color",
                 "Type": "SColor",
                 "Variable": "HighPriorityBorderColor"
             },
             {
-                "Name": "Table separator color",
+                "Name": "Table Separator Color",
                 "Type": "SColor",
                 "Variable": "TableSeparatorColor"
             },
             {
-                "Name": "Table header color",
+                "Name": "Table Header Color",
                 "Type": "SColor",
                 "Variable": "TableHeaderColor"
             },
             {
-                "Name": "Table value color",
+                "Name": "Table Value Color",
                 "Type": "SColor",
                 "Variable": "TableValueColor"
             },
             {
-                "Name": "Selected option color",
+                "Name": "Selected Option Color",
                 "Type": "SColor",
                 "Variable": "SelectedOptionColor"
             },
             {
-                "Name": "Alternative option color",
+                "Name": "Alternative Option Color",
                 "Type": "SColor",
                 "Variable": "AlternativeOptionColor"
             }
@@ -342,6 +343,7 @@
     },
     "Hardware": {
         "Desc": "This section changes hardware probe behavior.",
+        "Path": "Hardware",
         "Keys": [
             {
                 "Name": "Quiet Probe",
@@ -365,6 +367,7 @@
     },
     "Login": {
         "Desc": "This section represents the login settings. Log out of your account for the changes to take effect.",
+        "Path": "Login",
         "Keys": [
             {
                 "Name": "Show MOTD on Log-in",
@@ -379,7 +382,7 @@
                 "Description": "Clear screen before displaying login screen."
             },
             {
-                "Name": "Show Available Usernames",
+                "Name": "Show available usernames",
                 "Type": "SBoolean",
                 "Variable": "ShowAvailableUsers",
                 "Description": "Shows available users if enabled."
@@ -434,6 +437,7 @@
     },
     "Shell": {
         "Desc": "This section lists the shell settings.",
+        "Path": "Shell",
         "Keys": [
             {
                 "Name": "Colored Shell",
@@ -484,6 +488,7 @@
     },
     "Filesystem": {
         "Desc": "This section lists the filesystem settings.",
+        "Path": "Filesystem",
         "Keys": [
             {
                 "Name": "Filesystem sort mode",
@@ -563,6 +568,7 @@
     },
     "Network": {
         "Desc": "This section lists the network settings, like the FTP shell, the network-related command settings, and the remote debug settings.",
+        "Path": "Network",
         "Keys": [
             {
                 "Name": "Debug Port",
@@ -914,6 +920,7 @@
     },
     "Screensaver": {
         "Desc": "This section lists the general screensaver settings. For individual screensaver settings, exit Settings and open Screensaver Settings.",
+        "Path": "Screensaver",
         "Keys": [
             {
                 "Name": "Screensaver Timeout in ms",
@@ -937,6 +944,7 @@
     },
     "Misc": {
         "Desc": "Settings that don't fit in their appropriate sections land here.",
+        "Path": "Misc",
         "Keys": [
             {
                 "Name": "Show Time/Date on Upper Right Corner",

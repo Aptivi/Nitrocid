@@ -18,6 +18,10 @@
     },
     "KS": {
       "commandName": "Project"
+    },
+    "KS - new config reader": {
+      "commandName": "Project",
+      "commandLineArgs": "newreader"
     }
   }
 }

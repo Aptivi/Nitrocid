@@ -39,8 +39,10 @@ using KS.Misc;
 using KS.Misc.Games;
 using KS.Misc.Notifications;
 using KS.Misc.Probers.Motd;
+using KS.Misc.Reflection;
 using KS.Misc.Screensaver;
 using KS.Misc.Screensaver.Displays;
+using KS.Misc.Settings;
 using KS.Misc.Splash;
 using KS.Misc.Timers;
 using KS.Misc.Writers.ConsoleWriters;
@@ -66,6 +68,7 @@ using ManagedWeatherMap.Core;
 using MimeKit.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using static System.Collections.Specialized.BitVector32;
 
 namespace KS.Kernel.Configuration
 {
@@ -967,6 +970,24 @@ namespace KS.Kernel.Configuration
             };
             ScreensaverConfig.Add("Glitch", GlitchConfig);
 
+            // FallingLine config json object
+            var FallingLineConfig = new JObject()
+            {
+                { "Activate 255 Color Mode", FallingLineSettings.FallingLine255Colors },
+                { "Activate True Color Mode", FallingLineSettings.FallingLineTrueColor },
+                { "Delay in Milliseconds", FallingLineSettings.FallingLineDelay },
+                { "Max Fade Steps", FallingLineSettings.FallingLineMaxSteps },
+                { "Minimum red color level", FallingLineSettings.FallingLineMinimumRedColorLevel },
+                { "Minimum green color level", FallingLineSettings.FallingLineMinimumGreenColorLevel },
+                { "Minimum blue color level", FallingLineSettings.FallingLineMinimumBlueColorLevel },
+                { "Minimum color level", FallingLineSettings.FallingLineMinimumColorLevel },
+                { "Maximum red color level", FallingLineSettings.FallingLineMaximumRedColorLevel },
+                { "Maximum green color level", FallingLineSettings.FallingLineMaximumGreenColorLevel },
+                { "Maximum blue color level", FallingLineSettings.FallingLineMaximumBlueColorLevel },
+                { "Maximum color level", FallingLineSettings.FallingLineMaximumColorLevel }
+            };
+            ScreensaverConfig.Add("FallingLine", FallingLineConfig);
+
             // Indeterminate config json object
             var IndeterminateConfig = new JObject()
             {
@@ -1306,7 +1327,10 @@ namespace KS.Kernel.Configuration
         /// <exception cref="Exceptions.ConfigException"></exception>
         public static void ReadFailsafeConfig()
         {
-            ReadConfig(PristineConfigToken, true);
+            if (Flags.OptInToNewConfigReader)
+                ReadConfigNew(PristineConfigToken, true);
+            else
+                ReadConfig(PristineConfigToken, true);
         }
 
         /// <summary>
@@ -1315,7 +1339,10 @@ namespace KS.Kernel.Configuration
         /// <exception cref="Exceptions.ConfigException"></exception>
         public static void ReadConfig()
         {
-            ReadConfig(Paths.GetKernelPath(KernelPathType.Configuration));
+            if (Flags.OptInToNewConfigReader)
+                ReadConfigNew(Paths.GetKernelPath(KernelPathType.Configuration));
+            else
+                ReadConfig(Paths.GetKernelPath(KernelPathType.Configuration));
         }
 
         /// <summary>
@@ -1324,7 +1351,79 @@ namespace KS.Kernel.Configuration
         public static void ReadConfig(string ConfigPath)
         {
             Filesystem.ThrowOnInvalidPath(ConfigPath);
-            ReadConfig(JObject.Parse(File.ReadAllText(ConfigPath)));
+            if (Flags.OptInToNewConfigReader)
+                ReadConfigNew(JObject.Parse(File.ReadAllText(ConfigPath)));
+            else
+                ReadConfig(JObject.Parse(File.ReadAllText(ConfigPath)));
+        }
+
+        /// <summary>
+        /// Configures the kernel according to the custom kernel configuration file (new)
+        /// </summary>
+        /// <exception cref="Exceptions.ConfigException"></exception>
+        public static void ReadConfigNew(JToken ConfigToken, bool Force = false)
+        {
+            if (Flags.SafeMode & !Force)
+                return;
+
+            // Load config token
+            Config.ConfigToken = (JObject)ConfigToken;
+            DebugWriter.WriteDebug(DebugLevel.I, "Config loaded with {0} sections", ConfigToken.Count());
+
+            // Parse config metadata
+            JToken ConfigMetadata = JToken.Parse(Properties.Resources.Resources.SettingsEntries);
+            JToken ScreensaverConfigMetadata = JToken.Parse(Properties.Resources.Resources.ScreensaverSettingsEntries);
+            JToken SplashConfigMetadata = JToken.Parse(Properties.Resources.Resources.SplashSettingsEntries);
+            JToken[] Metadatas = new[] { ConfigMetadata, ScreensaverConfigMetadata, SplashConfigMetadata };
+
+            // Load configuration values
+            foreach (JToken metadata in Metadatas)
+            {
+                // Get the max sections
+                int MaxSections = metadata.Count();
+                for (int SectionIndex = 0; SectionIndex <= MaxSections - 1; SectionIndex++)
+                {
+                    // Get the section property and fetch metadata information from section
+                    JProperty Section = (JProperty)metadata.ToList()[SectionIndex];
+                    var SectionTokenGeneral = metadata[Section.Name];
+                    var SectionToken = SectionTokenGeneral["Keys"];
+
+                    // Get config token from path
+                    var SectionTokenPath = SectionTokenGeneral["Path"];
+                    var ConfigTokenFromPath = ConfigToken.SelectToken((string)SectionTokenPath);
+
+                    // Count the options
+                    int MaxOptions = SectionToken.Count();
+                    for (int OptionIndex = 0; OptionIndex <= MaxOptions - 1; OptionIndex++)
+                    {
+                        // Get the setting token and fetch information
+                        var Setting = SectionToken[OptionIndex];
+                        string VariableKeyName = (string)Setting["Name"];
+                        string Variable = (string)Setting["Variable"];
+
+                        // Get variable value and type
+                        SettingsKeyType VariableType = (SettingsKeyType)Convert.ToInt32(Enum.Parse(typeof(SettingsKeyType), (string)Setting["Type"]));
+                        object VariableValue;
+                        if (VariableType == SettingsKeyType.SColor)
+                            VariableValue = new Color(((string)ConfigTokenFromPath[VariableKeyName]).ReleaseDoubleQuotes());
+                        else
+                            VariableValue = ConfigTokenFromPath[VariableKeyName].ToObject<dynamic>();
+                        TextWriterColor.Write(" {0}) " + Translate.DoTranslation((string)Setting["Name"]) + " [{1}]", true, ColorTools.ColTypes.Option, OptionIndex + 1, VariableValue);
+
+                        // Now, set the value
+                        if (FieldManager.CheckField(Variable))
+                        {
+                            // We're dealing with the field
+                            FieldManager.SetValue(Variable, VariableValue, true);
+                        }
+                        else if (PropertyManager.CheckProperty(Variable))
+                        {
+                            // We're dealing with the property
+                            PropertyManager.SetPropertyValue(Variable, VariableValue);
+                        }
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -2296,7 +2395,10 @@ namespace KS.Kernel.Configuration
         {
             try
             {
-                ReadConfig(ConfigToken);
+                if (Flags.OptInToNewConfigReader)
+                    ReadConfigNew(ConfigToken);
+                else
+                    ReadConfig(ConfigToken);
                 return true;
             }
             catch (Exception ex)
