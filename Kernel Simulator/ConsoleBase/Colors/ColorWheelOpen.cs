@@ -27,16 +27,43 @@ using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.ConsoleBase.Colors
 {
+    /// <summary>
+    /// Color wheel module
+    /// </summary>
     public static class ColorWheelOpen
     {
 
+        /// <summary>
+        /// Upper left corner character for color wheel
+        /// </summary>
         public static string WheelUpperLeftCornerChar = "╔";
+        /// <summary>
+        /// Upper right corner character for color wheel
+        /// </summary>
         public static string WheelUpperRightCornerChar = "╗";
+        /// <summary>
+        /// Lower left corner character for color wheel
+        /// </summary>
         public static string WheelLowerLeftCornerChar = "╚";
+        /// <summary>
+        /// Lower right corner character for color wheel
+        /// </summary>
         public static string WheelLowerRightCornerChar = "╝";
+        /// <summary>
+        /// Upper frame character for color wheel
+        /// </summary>
         public static string WheelUpperFrameChar = "═";
+        /// <summary>
+        /// Lower frame character for color wheel
+        /// </summary>
         public static string WheelLowerFrameChar = "═";
+        /// <summary>
+        /// Left frame character for color wheel
+        /// </summary>
         public static string WheelLeftFrameChar = "║";
+        /// <summary>
+        /// Right frame character for color wheel
+        /// </summary>
         public static string WheelRightFrameChar = "║";
 
         /// <summary>

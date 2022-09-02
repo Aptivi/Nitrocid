@@ -29,6 +29,9 @@ using KS.Misc.Writers.WriterBase;
 
 namespace KS.ConsoleBase.Colors
 {
+    /// <summary>
+    /// Color tools module
+    /// </summary>
     public static class ColorTools
     {
 
@@ -192,43 +195,157 @@ namespace KS.ConsoleBase.Colors
         }
 
         // Variables for colors used by previous versions of the kernel.
+        /// <summary>
+        /// Input text
+        /// </summary>
         public static Color InputColor = new((int)ConsoleColors.White);
+        /// <summary>
+        /// License color
+        /// </summary>
         public static Color LicenseColor = new((int)ConsoleColors.White);
+        /// <summary>
+        /// Continuable kernel panic text (usually sync'd with Warning)
+        /// </summary>
         public static Color ContKernelErrorColor = new((int)ConsoleColors.Yellow);
+        /// <summary>
+        /// Uncontinuable kernel panic text (usually sync'd with Error)
+        /// </summary>
         public static Color UncontKernelErrorColor = new((int)ConsoleColors.Red);
+        /// <summary>
+        /// Host name color
+        /// </summary>
         public static Color HostNameShellColor = new((int)ConsoleColors.DarkGreen);
+        /// <summary>
+        /// User name color
+        /// </summary>
         public static Color UserNameShellColor = new((int)ConsoleColors.Green);
+        /// <summary>
+        /// Background color
+        /// </summary>
         public static Color BackgroundColor = new((int)ConsoleColors.Black);
+        /// <summary>
+        /// Neutral text (for general purposes)
+        /// </summary>
         public static Color NeutralTextColor = new((int)ConsoleColors.Gray);
+        /// <summary>
+        /// List entry text
+        /// </summary>
         public static Color ListEntryColor = new((int)ConsoleColors.DarkYellow);
+        /// <summary>
+        /// List value text
+        /// </summary>
         public static Color ListValueColor = new((int)ConsoleColors.DarkGray);
+        /// <summary>
+        /// Stage text
+        /// </summary>
         public static Color StageColor = new((int)ConsoleColors.Green);
+        /// <summary>
+        /// Error text
+        /// </summary>
         public static Color ErrorColor = new((int)ConsoleColors.Red);
+        /// <summary>
+        /// Warning text
+        /// </summary>
         public static Color WarningColor = new((int)ConsoleColors.Yellow);
+        /// <summary>
+        /// Option text
+        /// </summary>
         public static Color OptionColor = new((int)ConsoleColors.DarkYellow);
+        /// <summary>
+        /// Banner text
+        /// </summary>
         public static Color BannerColor = new((int)ConsoleColors.Green);
+        /// <summary>
+        /// Notification title text
+        /// </summary>
         public static Color NotificationTitleColor = new((int)ConsoleColors.White);
+        /// <summary>
+        /// Notification description text
+        /// </summary>
         public static Color NotificationDescriptionColor = new((int)ConsoleColors.Gray);
+        /// <summary>
+        /// Notification progress text
+        /// </summary>
         public static Color NotificationProgressColor = new((int)ConsoleColors.DarkYellow);
+        /// <summary>
+        /// Notification failure text
+        /// </summary>
         public static Color NotificationFailureColor = new((int)ConsoleColors.Red);
+        /// <summary>
+        /// Question text
+        /// </summary>
         public static Color QuestionColor = new((int)ConsoleColors.Yellow);
+        /// <summary>
+        /// Success text
+        /// </summary>
         public static Color SuccessColor = new((int)ConsoleColors.Green);
+        /// <summary>
+        /// User dollar sign on shell text
+        /// </summary>
         public static Color UserDollarColor = new((int)ConsoleColors.Gray);
+        /// <summary>
+        /// Tip text
+        /// </summary>
         public static Color TipColor = new((int)ConsoleColors.Gray);
+        /// <summary>
+        /// Separator text
+        /// </summary>
         public static Color SeparatorTextColor = new((int)ConsoleColors.White);
+        /// <summary>
+        /// Separator color
+        /// </summary>
         public static Color SeparatorColor = new((int)ConsoleColors.Gray);
+        /// <summary>
+        /// List title text
+        /// </summary>
         public static Color ListTitleColor = new((int)ConsoleColors.White);
+        /// <summary>
+        /// Development warning text
+        /// </summary>
         public static Color DevelopmentWarningColor = new((int)ConsoleColors.Yellow);
+        /// <summary>
+        /// Stage time text
+        /// </summary>
         public static Color StageTimeColor = new((int)ConsoleColors.Gray);
+        /// <summary>
+        /// General progress text
+        /// </summary>
         public static Color ProgressColor = new((int)ConsoleColors.DarkYellow);
+        /// <summary>
+        /// Back option text
+        /// </summary>
         public static Color BackOptionColor = new((int)ConsoleColors.DarkRed);
+        /// <summary>
+        /// Low priority notification border color
+        /// </summary>
         public static Color LowPriorityBorderColor = new((int)ConsoleColors.White);
+        /// <summary>
+        /// Medium priority notification border color
+        /// </summary>
         public static Color MediumPriorityBorderColor = new((int)ConsoleColors.Yellow);
+        /// <summary>
+        /// High priority notification border color
+        /// </summary>
         public static Color HighPriorityBorderColor = new((int)ConsoleColors.Red);
+        /// <summary>
+        /// Table separator
+        /// </summary>
         public static Color TableSeparatorColor = new((int)ConsoleColors.DarkGray);
+        /// <summary>
+        /// Table header
+        /// </summary>
         public static Color TableHeaderColor = new((int)ConsoleColors.White);
+        /// <summary>
+        /// Table value
+        /// </summary>
         public static Color TableValueColor = new((int)ConsoleColors.Gray);
+        /// <summary>
+        /// Selected option
+        /// </summary>
         public static Color SelectedOptionColor = new((int)ConsoleColors.Yellow);
+        /// <summary>
+        /// Alternative option
+        /// </summary>
         public static Color AlternativeOptionColor = new((int)ConsoleColors.DarkGreen);
 
         /// <summary>
