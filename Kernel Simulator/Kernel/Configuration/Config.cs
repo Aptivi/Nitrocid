@@ -2299,12 +2299,6 @@ namespace KS.Kernel.Configuration
                 ReadConfig(ConfigToken);
                 return true;
             }
-            catch (NullReferenceException nre)
-            {
-                // Rare, but repair config if an NRE is caught.
-                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to read config: {0}", nre.Message);
-                ConfigTools.RepairConfig();
-            }
             catch (Exception ex)
             {
                 Kernel.KernelEventManager.RaiseConfigReadError(ex);
@@ -2316,7 +2310,6 @@ namespace KS.Kernel.Configuration
                 DebugWriter.WriteDebug(DebugLevel.E, "Error trying to read config: {0}", ex.Message);
                 throw new Exceptions.ConfigException(Translate.DoTranslation("There is an error trying to read configuration: {0}."), ex, ex.Message);
             }
-            return false;
         }
 
         /// <summary>
@@ -2340,6 +2333,8 @@ namespace KS.Kernel.Configuration
             {
                 TextWriterColor.Write(cex.Message, true, ColorTools.ColTypes.Error);
                 DebugWriter.WriteDebugStackTrace(cex);
+                TextWriterColor.Write(Translate.DoTranslation("Trying to fix configuration..."), true, ColorTools.ColTypes.Error);
+                ConfigTools.RepairConfig();
             }
         }
 
