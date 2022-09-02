@@ -26,6 +26,9 @@ using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Misc.Screensaver.Displays
 {
+    /// <summary>
+    /// Settings for FlashText
+    /// </summary>
     public static class FlashTextSettings
     {
 
@@ -264,6 +267,9 @@ namespace KS.Misc.Screensaver.Displays
 
     }
 
+    /// <summary>
+    /// Display code for FlashText
+    /// </summary>
     public class FlashTextDisplay : BaseScreensaver, IScreensaver
     {
 
@@ -273,10 +279,13 @@ namespace KS.Misc.Screensaver.Displays
         private bool ResizeSyncing;
         private int Left, Top;
 
+        /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "FlashText";
 
+        /// <inheritdoc/>
         public override Dictionary<string, object> ScreensaverSettings { get; set; }
 
+        /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             // Variable preparations
@@ -293,6 +302,7 @@ namespace KS.Misc.Screensaver.Displays
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top);
         }
 
+        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             ConsoleBase.ConsoleWrapper.CursorVisible = false;

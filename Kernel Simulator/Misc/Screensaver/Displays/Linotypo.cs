@@ -29,6 +29,9 @@ using KS.Misc.Threading;
 
 namespace KS.Misc.Screensaver.Displays
 {
+    /// <summary>
+    /// Settings for Linotypo
+    /// </summary>
     public static class LinotypoSettings
     {
 
@@ -238,6 +241,9 @@ namespace KS.Misc.Screensaver.Displays
             }
         }
 
+        /// <summary>
+        /// Etaoin fill type
+        /// </summary>
         public enum FillType
         {
             /// <summary>
@@ -256,6 +262,9 @@ namespace KS.Misc.Screensaver.Displays
 
     }
 
+    /// <summary>
+    /// Display code for Linotypo
+    /// </summary>
     internal class LinotypoDisplay : BaseScreensaver, IScreensaver
     {
 

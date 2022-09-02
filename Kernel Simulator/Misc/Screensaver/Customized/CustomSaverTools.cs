@@ -26,11 +26,14 @@ using Newtonsoft.Json.Linq;
 
 namespace KS.Misc.Screensaver.Customized
 {
+    /// <summary>
+    /// Custom screensaver tools
+    /// </summary>
     public static class CustomSaverTools
     {
 
-        public static Dictionary<string, CustomSaverInfo> CustomSavers = new();
-        public static JObject CustomSaverSettingsToken;
+        internal static Dictionary<string, CustomSaverInfo> CustomSavers = new();
+        internal static JObject CustomSaverSettingsToken;
 
         /// <summary>
         /// Initializes and reads the custom saver settings

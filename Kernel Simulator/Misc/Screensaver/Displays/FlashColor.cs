@@ -26,6 +26,9 @@ using KS.Misc.Threading;
 
 namespace KS.Misc.Screensaver.Displays
 {
+    /// <summary>
+    /// Settings for FlashColor
+    /// </summary>
     public static class FlashColorSettings
     {
 
@@ -249,6 +252,9 @@ namespace KS.Misc.Screensaver.Displays
 
     }
 
+    /// <summary>
+    /// Display code for FlashColor
+    /// </summary>
     public class FlashColorDisplay : BaseScreensaver, IScreensaver
     {
 
@@ -257,10 +263,13 @@ namespace KS.Misc.Screensaver.Displays
         private int CurrentWindowHeight;
         private bool ResizeSyncing;
 
+        /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "FlashColor";
 
+        /// <inheritdoc/>
         public override Dictionary<string, object> ScreensaverSettings { get; set; }
 
+        /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             // Variable preparations
@@ -272,6 +281,7 @@ namespace KS.Misc.Screensaver.Displays
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
 
+        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             ConsoleWrapper.CursorVisible = false;

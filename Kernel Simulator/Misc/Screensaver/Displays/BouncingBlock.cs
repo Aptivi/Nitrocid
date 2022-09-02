@@ -26,6 +26,9 @@ using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Misc.Screensaver.Displays
 {
+    /// <summary>
+    /// Settings for BouncingBlock
+    /// </summary>
     public static class BouncingBlockSettings
     {
 
@@ -264,6 +267,9 @@ namespace KS.Misc.Screensaver.Displays
 
     }
 
+    /// <summary>
+    /// Display code for BouncingBlock
+    /// </summary>
     public class BouncingBlockDisplay : BaseScreensaver, IScreensaver
     {
 
@@ -274,10 +280,13 @@ namespace KS.Misc.Screensaver.Displays
         private int CurrentWindowHeight;
         private bool ResizeSyncing;
 
+        /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "BouncingBlock";
 
+        /// <inheritdoc/>
         public override Dictionary<string, object> ScreensaverSettings { get; set; }
 
+        /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             // Variable preparations
@@ -288,6 +297,7 @@ namespace KS.Misc.Screensaver.Displays
             ColumnBlock = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d);
         }
 
+        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             ConsoleBase.ConsoleWrapper.CursorVisible = false;

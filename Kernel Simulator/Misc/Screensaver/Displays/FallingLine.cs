@@ -27,6 +27,9 @@ using KS.Misc.Writers.WriterBase;
 
 namespace KS.Misc.Screensaver.Displays
 {
+    /// <summary>
+    /// Settings for FallingLine
+    /// </summary>
     public static class FallingLineSettings
     {
 
@@ -252,6 +255,9 @@ namespace KS.Misc.Screensaver.Displays
 
     }
 
+    /// <summary>
+    /// Display code for FallingLine
+    /// </summary>
     public class FallingLineDisplay : BaseScreensaver, IScreensaver
     {
 
@@ -262,10 +268,13 @@ namespace KS.Misc.Screensaver.Displays
         private bool ResizeSyncing;
         private readonly List<Tuple<int, int>> CoveredPositions = new();
 
+        /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "FallingLine";
 
+        /// <inheritdoc/>
         public override Dictionary<string, object> ScreensaverSettings { get; set; }
 
+        /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             // Variable preparations
@@ -278,6 +287,7 @@ namespace KS.Misc.Screensaver.Displays
             ConsoleBase.ConsoleWrapper.CursorVisible = false;
         }
 
+        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             // Choose the column for the falling line

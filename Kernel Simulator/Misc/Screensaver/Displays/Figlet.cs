@@ -29,6 +29,9 @@ using KS.Misc.Writers.WriterBase;
 
 namespace KS.Misc.Screensaver.Displays
 {
+    /// <summary>
+    /// Settings for Figlet
+    /// </summary>
     public static class FigletSettings
     {
 
@@ -268,6 +271,10 @@ namespace KS.Misc.Screensaver.Displays
         }
 
     }
+
+    /// <summary>
+    /// Display code for Figlet
+    /// </summary>
     public class FigletDisplay : BaseScreensaver, IScreensaver
     {
 
@@ -276,10 +283,13 @@ namespace KS.Misc.Screensaver.Displays
         private int CurrentWindowHeight;
         private bool ResizeSyncing;
 
+        /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Figlet";
 
+        /// <inheritdoc/>
         public override Dictionary<string, object> ScreensaverSettings { get; set; }
 
+        /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             // Variable preparations
@@ -290,6 +300,7 @@ namespace KS.Misc.Screensaver.Displays
             ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
         }
 
+        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             int ConsoleMiddleWidth = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d);

@@ -22,6 +22,9 @@ using KS.Misc.Threading;
 
 namespace KS.Misc.Screensaver.Displays
 {
+    /// <summary>
+    /// Settings for Pulse
+    /// </summary>
     public static class PulseSettings
     {
 
@@ -177,14 +180,19 @@ namespace KS.Misc.Screensaver.Displays
 
     }
 
+    /// <summary>
+    /// Display code for Pulse
+    /// </summary>
     public class PulseDisplay : BaseScreensaver, IScreensaver
     {
 
         private Animations.Pulse.PulseSettings PulseSettingsInstance;
         private Random RandomDriver;
 
+        /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Pulse";
 
+        /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             // Variable preparations
@@ -207,6 +215,7 @@ namespace KS.Misc.Screensaver.Displays
             };
         }
 
+        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             Animations.Pulse.Pulse.Simulate(PulseSettingsInstance);

@@ -22,6 +22,9 @@ using KS.Misc.Threading;
 
 namespace KS.Misc.Screensaver.Displays
 {
+    /// <summary>
+    /// Settings for EdgePulse
+    /// </summary>
     public static class EdgePulseSettings
     {
 
@@ -177,14 +180,19 @@ namespace KS.Misc.Screensaver.Displays
 
     }
 
+    /// <summary>
+    /// Display code for EdgePulse
+    /// </summary>
     public class EdgePulseDisplay : BaseScreensaver, IScreensaver
     {
 
         private Animations.EdgePulse.EdgePulseSettings EdgePulseSettingsInstance;
         private Random RandomDriver;
 
+        /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "EdgePulse";
 
+        /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             // Variable preparations
@@ -207,6 +215,7 @@ namespace KS.Misc.Screensaver.Displays
             };
         }
 
+        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             Animations.EdgePulse.EdgePulse.Simulate(EdgePulseSettingsInstance);

@@ -22,13 +22,25 @@ using KS.Misc.Threading;
 
 namespace KS.Misc.Screensaver
 {
+    /// <summary>
+    /// Base screensaver class
+    /// </summary>
     public abstract class BaseScreensaver : IScreensaver
     {
 
+        /// <summary>
+        /// Screensaver name
+        /// </summary>
         public virtual string ScreensaverName { get; set; } = "BaseScreensaver";
 
+        /// <summary>
+        /// Screensaver settings
+        /// </summary>
         public virtual Dictionary<string, object> ScreensaverSettings { get; set; }
 
+        /// <summary>
+        /// Screensaver preparation logic
+        /// </summary>
         public virtual void ScreensaverPreparation()
         {
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
@@ -37,6 +49,9 @@ namespace KS.Misc.Screensaver
             ConsoleBase.ConsoleWrapper.CursorVisible = false;
         }
 
+        /// <summary>
+        /// Screensaver logic
+        /// </summary>
         public virtual void ScreensaverLogic()
         {
             ThreadManager.SleepNoBlock(10L, ScreensaverDisplayer.ScreensaverDisplayerThread);

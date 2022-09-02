@@ -25,6 +25,9 @@ using KS.Misc.Threading;
 
 namespace KS.Misc.Screensaver.Displays
 {
+    /// <summary>
+    /// Settings for Disco
+    /// </summary>
     public static class DiscoSettings
     {
 
@@ -277,6 +280,10 @@ namespace KS.Misc.Screensaver.Displays
         }
 
     }
+
+    /// <summary>
+    /// Display code for Disco
+    /// </summary>
     public class DiscoDisplay : BaseScreensaver, IScreensaver
     {
 
@@ -284,10 +291,13 @@ namespace KS.Misc.Screensaver.Displays
         private int CurrentColor = 0;
         private int CurrentColorR, CurrentColorG, CurrentColorB;
 
+        /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Disco";
 
+        /// <inheritdoc/>
         public override Dictionary<string, object> ScreensaverSettings { get; set; }
 
+        /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             // Variable preparations
@@ -297,6 +307,7 @@ namespace KS.Misc.Screensaver.Displays
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
         }
 
+        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             int MaximumColors = DiscoSettings.DiscoMaximumColorLevel;
@@ -307,7 +318,6 @@ namespace KS.Misc.Screensaver.Displays
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", MaximumColorsG);
             int MaximumColorsB = DiscoSettings.DiscoMaximumBlueColorLevel;
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", MaximumColorsB);
-            var FedColors = new[] { ConsoleColors.Black, ConsoleColors.White };
 
             ConsoleBase.ConsoleWrapper.CursorVisible = false;
 

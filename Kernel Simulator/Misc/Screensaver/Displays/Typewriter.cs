@@ -30,6 +30,9 @@ using KS.Misc.Threading;
 
 namespace KS.Misc.Screensaver.Displays
 {
+    /// <summary>
+    /// Settings for Typewriter
+    /// </summary>
     public static class TypewriterSettings
     {
 
@@ -151,6 +154,10 @@ namespace KS.Misc.Screensaver.Displays
         }
 
     }
+
+    /// <summary>
+    /// Display code for Typewriter
+    /// </summary>
     public class TypewriterDisplay : BaseScreensaver, IScreensaver
     {
 
@@ -159,10 +166,13 @@ namespace KS.Misc.Screensaver.Displays
         private int CurrentWindowHeight;
         private bool ResizeSyncing;
 
+        /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Typewriter";
 
+        /// <inheritdoc/>
         public override Dictionary<string, object> ScreensaverSettings { get; set; }
 
+        /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             // Variable preparations
@@ -173,6 +183,7 @@ namespace KS.Misc.Screensaver.Displays
             ConsoleBase.ConsoleWrapper.Clear();
         }
 
+        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             int CpmSpeedMin = TypewriterSettings.TypewriterWritingSpeedMin * 5;

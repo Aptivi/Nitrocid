@@ -25,6 +25,9 @@ using KS.Misc.Threading;
 
 namespace KS.Misc.Screensaver.Displays
 {
+    /// <summary>
+    /// Settings for Lightspeed
+    /// </summary>
     public static class LightspeedSettings
     {
 
@@ -198,16 +201,23 @@ namespace KS.Misc.Screensaver.Displays
         }
 
     }
+
+    /// <summary>
+    /// Display code for Lightspeed
+    /// </summary>
     public class LightspeedDisplay : BaseScreensaver, IScreensaver
     {
 
         private Random RandomDriver;
         private int CurrentColorR, CurrentColorG, CurrentColorB;
 
+        /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Lightspeed";
 
+        /// <inheritdoc/>
         public override Dictionary<string, object> ScreensaverSettings { get; set; }
 
+        /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             // Variable preparations
@@ -217,6 +227,7 @@ namespace KS.Misc.Screensaver.Displays
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
         }
 
+        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             int MaximumColors = LightspeedSettings.LightspeedMaximumColorLevel;

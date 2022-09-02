@@ -25,6 +25,9 @@ using KS.Misc.Threading;
 
 namespace KS.Misc.Screensaver.Displays
 {
+    /// <summary>
+    /// Settings for Glitch
+    /// </summary>
     public static class GlitchSettings
     {
 
@@ -68,6 +71,9 @@ namespace KS.Misc.Screensaver.Displays
 
     }
 
+    /// <summary>
+    /// Display code for Glitch
+    /// </summary>
     public class GlitchDisplay : BaseScreensaver, IScreensaver
     {
 
@@ -76,10 +82,13 @@ namespace KS.Misc.Screensaver.Displays
         private int CurrentWindowHeight;
         private bool ResizeSyncing;
 
+        /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Glitch";
 
+        /// <inheritdoc/>
         public override Dictionary<string, object> ScreensaverSettings { get; set; }
 
+        /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             // Variable preparations
@@ -92,6 +101,7 @@ namespace KS.Misc.Screensaver.Displays
             ConsoleBase.ConsoleWrapper.Clear();
         }
 
+        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             // Select random positions to generate the glitch

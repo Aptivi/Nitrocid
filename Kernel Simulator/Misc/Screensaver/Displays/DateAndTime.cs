@@ -26,6 +26,9 @@ using KS.TimeDate;
 
 namespace KS.Misc.Screensaver.Displays
 {
+    /// <summary>
+    /// Settings for DateAndTime
+    /// </summary>
     public static class DateAndTimeSettings
     {
 
@@ -234,15 +237,21 @@ namespace KS.Misc.Screensaver.Displays
 
     }
 
+    /// <summary>
+    /// Display code for DateAndTime
+    /// </summary>
     public class DateAndTimeDisplay : BaseScreensaver, IScreensaver
     {
 
         private Random RandomDriver;
 
+        /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "DateAndTime";
 
+        /// <inheritdoc/>
         public override Dictionary<string, object> ScreensaverSettings { get; set; }
 
+        /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             // Variable preparations
@@ -251,6 +260,7 @@ namespace KS.Misc.Screensaver.Displays
             ConsoleBase.ConsoleWrapper.Clear();
         }
 
+        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             ConsoleBase.ConsoleWrapper.CursorVisible = false;

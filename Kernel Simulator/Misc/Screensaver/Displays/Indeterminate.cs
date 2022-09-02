@@ -28,6 +28,9 @@ using KS.Misc.Writers.WriterBase;
 
 namespace KS.Misc.Screensaver.Displays
 {
+    /// <summary>
+    /// Settings for Indeterminate
+    /// </summary>
     public static class IndeterminateSettings
     {
 
@@ -506,6 +509,10 @@ namespace KS.Misc.Screensaver.Displays
         }
 
     }
+
+    /// <summary>
+    /// Display code for Indeterminate
+    /// </summary>
     public class IndeterminateDisplay : BaseScreensaver, IScreensaver
     {
 
@@ -519,16 +526,20 @@ namespace KS.Misc.Screensaver.Displays
         private int CurrentWindowHeight;
         private bool ResizeSyncing;
 
+        /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Indeterminate";
 
+        /// <inheritdoc/>
         public override Dictionary<string, object> ScreensaverSettings { get; set; }
 
+        /// <inheritdoc/>
         public IndeterminateDisplay()
         {
             IndeterminateCurrentBlockStart = RampFrameBlockStartWidth;
             IndeterminateCurrentBlockEnd = IndeterminateCurrentBlockStart + RampFrameBlockWidth;
         }
 
+        /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             // Variable preparations

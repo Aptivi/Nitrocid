@@ -24,6 +24,9 @@ using KS.Kernel.Debugging;
 
 namespace KS.Misc.Screensaver.Displays
 {
+    /// <summary>
+    /// Settings for Fader
+    /// </summary>
     public static class FaderSettings
     {
 
@@ -228,16 +231,22 @@ namespace KS.Misc.Screensaver.Displays
 
     }
 
+    /// <summary>
+    /// Display code for Fader
+    /// </summary>
     public class FaderDisplay : BaseScreensaver, IScreensaver
     {
 
         private Random RandomDriver;
         private Animations.Fader.FaderSettings FaderSettingsInstance;
 
+        /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Fader";
 
+        /// <inheritdoc/>
         public override Dictionary<string, object> ScreensaverSettings { get; set; }
 
+        /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             // Variable preparations
@@ -262,6 +271,7 @@ namespace KS.Misc.Screensaver.Displays
             };
         }
 
+        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             Animations.Fader.Fader.Simulate(FaderSettingsInstance);

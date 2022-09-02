@@ -29,6 +29,9 @@ using KS.TimeDate;
 
 namespace KS.Misc.Screensaver.Displays
 {
+    /// <summary>
+    /// Settings for ProgressClock
+    /// </summary>
     public static class ProgressClockSettings
     {
 
@@ -1243,6 +1246,10 @@ namespace KS.Misc.Screensaver.Displays
         }
 
     }
+
+    /// <summary>
+    /// Display code for ProgressClock
+    /// </summary>
     public class ProgressClockDisplay : BaseScreensaver, IScreensaver
     {
 
@@ -1252,10 +1259,13 @@ namespace KS.Misc.Screensaver.Displays
         private bool ResizeSyncing;
         private long CurrentTicks;
 
+        /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "ProgressClock";
 
+        /// <inheritdoc/>
         public override Dictionary<string, object> ScreensaverSettings { get; set; }
 
+        /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             // Variable preparations
@@ -1265,6 +1275,7 @@ namespace KS.Misc.Screensaver.Displays
             CurrentTicks = ProgressClockSettings.ProgressClockCycleColorsTicks;
         }
 
+        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             ConsoleWrapper.CursorVisible = false;

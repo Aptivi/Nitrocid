@@ -28,6 +28,9 @@ using KS.Misc.Splash;
 
 namespace KS.Misc.Screensaver.Customized
 {
+    /// <summary>
+    /// Custom screensaver parser
+    /// </summary>
     public static class CustomSaverParser
     {
 

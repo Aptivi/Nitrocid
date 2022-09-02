@@ -24,6 +24,9 @@ using KS.ConsoleBase.Colors;
 
 namespace KS.Misc.Screensaver.Displays
 {
+    /// <summary>
+    /// Settings for Siren
+    /// </summary>
     public static class SirenSettings
     {
 
@@ -64,6 +67,9 @@ namespace KS.Misc.Screensaver.Displays
 
     }
 
+    /// <summary>
+    /// Display code for Siren
+    /// </summary>
     public class SirenDisplay : BaseScreensaver, IScreensaver
     {
 
@@ -74,10 +80,13 @@ namespace KS.Misc.Screensaver.Displays
         };
         private int step = 0;
 
+        /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Siren";
 
+        /// <inheritdoc/>
         public override Dictionary<string, object> ScreensaverSettings { get; set; }
 
+        /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             // Variable preparations
@@ -86,6 +95,7 @@ namespace KS.Misc.Screensaver.Displays
             ConsoleBase.ConsoleWrapper.Clear();
         }
 
+        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             ConsoleBase.ConsoleWrapper.CursorVisible = false;

@@ -18,9 +18,13 @@
 
 namespace KS.Misc.Screensaver.Displays
 {
+    /// <summary>
+    /// Display for Plain
+    /// </summary>
     public class PlainDisplay : BaseScreensaver, IScreensaver
     {
 
+        /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Plain";
 
     }

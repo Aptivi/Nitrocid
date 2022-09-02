@@ -24,6 +24,9 @@ using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Misc.Screensaver.Displays
 {
+    /// <summary>
+    /// Settings for Starfield
+    /// </summary>
     public static class StarfieldSettings
     {
 
@@ -48,6 +51,9 @@ namespace KS.Misc.Screensaver.Displays
 
     }
 
+    /// <summary>
+    /// Display code for Starfield
+    /// </summary>
     public class StarfieldDisplay : BaseScreensaver, IScreensaver
     {
 
@@ -57,10 +63,13 @@ namespace KS.Misc.Screensaver.Displays
         private bool ResizeSyncing;
         private readonly List<Tuple<int, int>> Stars = new();
 
+        /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Starfield";
 
+        /// <inheritdoc/>
         public override Dictionary<string, object> ScreensaverSettings { get; set; }
 
+        /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             // Variable preparations
@@ -72,6 +81,7 @@ namespace KS.Misc.Screensaver.Displays
             ConsoleBase.ConsoleWrapper.Clear();
         }
 
+        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             ConsoleBase.ConsoleWrapper.CursorVisible = false;

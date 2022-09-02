@@ -22,10 +22,13 @@ using KS.Misc.Threading;
 
 namespace KS.Misc.Screensaver
 {
+    /// <summary>
+    /// Screensaver display module
+    /// </summary>
     public static class ScreensaverDisplayer
     {
 
-        public readonly static KernelThread ScreensaverDisplayerThread = new("Screensaver display thread", false, (ss) => DisplayScreensaver((BaseScreensaver)ss));
+        internal readonly static KernelThread ScreensaverDisplayerThread = new("Screensaver display thread", false, (ss) => DisplayScreensaver((BaseScreensaver)ss));
         internal static bool OutOfRandom;
 
         /// <summary>

@@ -26,6 +26,9 @@ using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Misc.Screensaver.Displays
 {
+    /// <summary>
+    /// Settings for BouncingText
+    /// </summary>
     public static class BouncingTextSettings
     {
 
@@ -281,6 +284,9 @@ namespace KS.Misc.Screensaver.Displays
 
     }
 
+    /// <summary>
+    /// Display code for BouncingText
+    /// </summary>
     public class BouncingTextDisplay : BaseScreensaver, IScreensaver
     {
 
@@ -291,10 +297,13 @@ namespace KS.Misc.Screensaver.Displays
         private bool ResizeSyncing;
         private Color BouncingColor;
 
+        /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "BouncingText";
 
+        /// <inheritdoc/>
         public override Dictionary<string, object> ScreensaverSettings { get; set; }
 
+        /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             // Variable preparations
@@ -308,6 +317,7 @@ namespace KS.Misc.Screensaver.Displays
             ColumnLastLetter = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d + BouncingTextSettings.BouncingTextWrite.Length / 2d);
         }
 
+        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             ConsoleBase.ConsoleWrapper.CursorVisible = false;

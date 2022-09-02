@@ -34,18 +34,37 @@ using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Misc.Screensaver
 {
+    /// <summary>
+    /// Screensaver management module
+    /// </summary>
     public static class Screensaver
     {
 
         // Public Variables
-        public static bool LockMode;
-        public static bool InSaver;
+        /// <summary>
+        /// Screensaver debugging
+        /// </summary>
         public static bool ScreensaverDebug;
+        /// <summary>
+        /// Default screensaver name
+        /// </summary>
         public static string DefSaverName = "matrix";
+        /// <summary>
+        /// Screen timeout in milliseconds
+        /// </summary>
         public static int ScrnTimeout = 300000;
+        /// <summary>
+        /// Password lock enabled
+        /// </summary>
         public static bool PasswordLock = true;
-        public readonly static ConsoleColor[] colors = (ConsoleColor[])Enum.GetValues(typeof(ConsoleColor));        // 15 Console Colors
-        public readonly static ConsoleColors[] colors255 = (ConsoleColors[])Enum.GetValues(typeof(ConsoleColors));  // 255 Console Colors
+        /// <summary>
+        /// 15 Console Colors
+        /// </summary>
+        public readonly static ConsoleColor[] colors = (ConsoleColor[])Enum.GetValues(typeof(ConsoleColor));
+        /// <summary>
+        /// 255 Console Colors
+        /// </summary>
+        public readonly static ConsoleColors[] colors255 = (ConsoleColors[])Enum.GetValues(typeof(ConsoleColors));
 
         // Private variables
         internal static Dictionary<string, BaseScreensaver> Screensavers = new()
@@ -97,8 +116,15 @@ namespace KS.Misc.Screensaver
             { "windowslogo", new WindowsLogoDisplay() },
             { "wipe", new WipeDisplay() }
         };
+        internal static bool LockMode;
+        internal static bool inSaver;
         internal static AutoResetEvent SaverAutoReset = new(false);
         internal static KernelThread Timeout = new("Screensaver timeout thread", false, HandleTimeout);
+
+        /// <summary>
+        /// Whether the kernel is on the screensaver mode
+        /// </summary>
+        public static bool InSaver { get => inSaver; }
 
         /// <summary>
         /// Handles the screensaver time so that when it reaches the time threshold, the screensaver launches
@@ -164,7 +190,7 @@ namespace KS.Misc.Screensaver
         {
             try
             {
-                InSaver = true;
+                inSaver = true;
                 Flags.ScrnTimeReached = true;
                 Kernel.Kernel.KernelEventManager.RaisePreShowScreensaver(saver);
                 DebugWriter.WriteDebug(DebugLevel.I, "Requested screensaver: {0}", saver);
@@ -209,7 +235,7 @@ namespace KS.Misc.Screensaver
             }
             finally
             {
-                InSaver = false;
+                inSaver = false;
                 Flags.ScrnTimeReached = false;
             }
         }

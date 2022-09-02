@@ -21,6 +21,9 @@ using KS.Kernel.Debugging;
 
 namespace KS.Misc.Screensaver.Displays
 {
+    /// <summary>
+    /// Custom screensaver displayer
+    /// </summary>
     public class CustomDisplay : BaseScreensaver, IScreensaver
     {
 
@@ -33,10 +36,13 @@ namespace KS.Misc.Screensaver.Displays
 
         // WARNING: Please refrain from using ICustomSaver; use IScreensaver instead, which is more dynamic.
         // This implementation doesn't call PostDisplay().
+        /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Custom";
 
+        /// <inheritdoc/>
         public override Dictionary<string, object> ScreensaverSettings { get; set; }
 
+        /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             // Variable preparations
@@ -46,6 +52,7 @@ namespace KS.Misc.Screensaver.Displays
             DebugWriter.WriteDebug(DebugLevel.I, "Exited CustomSaver.ScreensaverPreparation().");
         }
 
+        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Entered CustomSaver.ScreensaverLogic().");
@@ -53,6 +60,10 @@ namespace KS.Misc.Screensaver.Displays
             DebugWriter.WriteDebug(DebugLevel.I, "Exited CustomSaver.ScreensaverLogic().");
         }
 
+        /// <summary>
+        /// Generates a new custom screensaver displayer from the screensaver base
+        /// </summary>
+        /// <param name="CustomSaver">Saver base</param>
         public CustomDisplay(BaseScreensaver CustomSaver)
         {
             this.CustomSaver = CustomSaver;

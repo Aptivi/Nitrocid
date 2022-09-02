@@ -25,6 +25,9 @@ using KS.Misc.Threading;
 
 namespace KS.Misc.Screensaver.Displays
 {
+    /// <summary>
+    /// Display for WindowsLogo
+    /// </summary>
     public class WindowsLogoDisplay : BaseScreensaver, IScreensaver
     {
 
@@ -33,10 +36,13 @@ namespace KS.Misc.Screensaver.Displays
         private bool ResizeSyncing;
         private bool Drawn;
 
+        /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "WindowsLogo";
 
+        /// <inheritdoc/>
         public override Dictionary<string, object> ScreensaverSettings { get; set; }
 
+        /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             // Variable preparations
@@ -47,6 +53,7 @@ namespace KS.Misc.Screensaver.Displays
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
         }
 
+        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             ConsoleBase.ConsoleWrapper.CursorVisible = false;

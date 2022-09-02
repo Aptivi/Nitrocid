@@ -25,6 +25,9 @@ using static Namer.NameGenerator;
 
 namespace KS.Misc.Screensaver.Displays
 {
+    /// <summary>
+    /// Settings for PersonLookup
+    /// </summary>
     public static class PersonLookupSettings
     {
 
@@ -142,14 +145,21 @@ namespace KS.Misc.Screensaver.Displays
 
     }
 
+    /// <summary>
+    /// Display code for PersonLookup
+    /// </summary>
     public class PersonLookupDisplay : BaseScreensaver, IScreensaver
     {
 
         private Random RandomDriver;
+
+        /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "PersonLookup";
 
+        /// <inheritdoc/>
         public override Dictionary<string, object> ScreensaverSettings { get; set; }
 
+        /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             // Variable preparations
@@ -157,6 +167,7 @@ namespace KS.Misc.Screensaver.Displays
             PopulateNames();
         }
 
+        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;

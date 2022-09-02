@@ -23,15 +23,21 @@ using System.Linq;
 
 namespace KS.Misc.Screensaver.Displays
 {
+    /// <summary>
+    /// Display for RandomSaver
+    /// </summary>
     public class RandomSaverDisplay : BaseScreensaver, IScreensaver
     {
 
         private Random RandomDriver;
 
+        /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "RandomSaver";
 
+        /// <inheritdoc/>
         public override Dictionary<string, object> ScreensaverSettings { get; set; }
 
+        /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             // Variable preparations
@@ -42,6 +48,7 @@ namespace KS.Misc.Screensaver.Displays
             ConsoleBase.ConsoleWrapper.CursorVisible = false;
         }
 
+        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             int ScreensaverIndex = RandomDriver.Next(Misc.Screensaver.Screensaver.Screensavers.Count);

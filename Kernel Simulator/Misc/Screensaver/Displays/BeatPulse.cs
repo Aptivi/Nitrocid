@@ -23,6 +23,9 @@ using KS.Misc.Threading;
 
 namespace KS.Misc.Screensaver.Displays
 {
+    /// <summary>
+    /// Settings for BeatPulse
+    /// </summary>
     public static class BeatPulseSettings
     {
 
@@ -278,14 +281,19 @@ namespace KS.Misc.Screensaver.Displays
 
     }
 
+    /// <summary>
+    /// Display code for BeatPulse
+    /// </summary>
     public class BeatPulseDisplay : BaseScreensaver, IScreensaver
     {
 
         private Animations.BeatPulse.BeatPulseSettings BeatPulseSettingsInstance;
         private Random RandomDriver;
 
+        /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "BeatPulse";
 
+        /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             // Variable preparations
@@ -314,6 +322,7 @@ namespace KS.Misc.Screensaver.Displays
             };
         }
 
+        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             Animations.BeatPulse.BeatPulse.Simulate(BeatPulseSettingsInstance);

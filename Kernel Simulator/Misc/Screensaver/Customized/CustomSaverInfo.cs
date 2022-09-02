@@ -18,6 +18,9 @@
 
 namespace KS.Misc.Screensaver.Customized
 {
+    /// <summary>
+    /// Custom screensaver information
+    /// </summary>
     public class CustomSaverInfo
     {
 

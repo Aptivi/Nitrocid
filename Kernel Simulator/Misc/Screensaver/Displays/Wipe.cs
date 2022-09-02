@@ -27,6 +27,9 @@ using KS.Misc.Threading;
 
 namespace KS.Misc.Screensaver.Displays
 {
+    /// <summary>
+    /// Settings for Wipe
+    /// </summary>
     public static class WipeSettings
     {
 
@@ -228,6 +231,10 @@ namespace KS.Misc.Screensaver.Displays
         }
 
     }
+
+    /// <summary>
+    /// Display code for Wipe
+    /// </summary>
     public class WipeDisplay : BaseScreensaver, IScreensaver
     {
 
@@ -238,10 +245,13 @@ namespace KS.Misc.Screensaver.Displays
         private WipeDirections ToDirection = WipeDirections.Right;
         private int TimesWiped = 0;
 
+        /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Wipe";
 
+        /// <inheritdoc/>
         public override Dictionary<string, object> ScreensaverSettings { get; set; }
 
+        /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             // Variable preparations
@@ -254,6 +264,7 @@ namespace KS.Misc.Screensaver.Displays
             ConsoleBase.ConsoleWrapper.CursorVisible = false;
         }
 
+        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             ConsoleBase.ConsoleWrapper.CursorVisible = false;

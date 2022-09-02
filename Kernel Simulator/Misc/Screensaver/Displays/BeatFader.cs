@@ -23,6 +23,9 @@ using KS.Kernel.Debugging;
 
 namespace KS.Misc.Screensaver.Displays
 {
+    /// <summary>
+    /// Settings for BeatFader
+    /// </summary>
     public static class BeatFaderSettings
     {
 
@@ -278,16 +281,22 @@ namespace KS.Misc.Screensaver.Displays
 
     }
 
+    /// <summary>
+    /// Display code for BeatFader
+    /// </summary>
     public class BeatFaderDisplay : BaseScreensaver, IScreensaver
     {
 
         private Random RandomDriver;
         private Animations.BeatFader.BeatFaderSettings BeatFaderSettingsInstance;
 
+        /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "BeatFader";
 
+        /// <inheritdoc/>
         public override Dictionary<string, object> ScreensaverSettings { get; set; }
 
+        /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             // Variable preparations
@@ -315,6 +324,7 @@ namespace KS.Misc.Screensaver.Displays
             };
         }
 
+        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             Animations.BeatFader.BeatFader.Simulate(BeatFaderSettingsInstance);
