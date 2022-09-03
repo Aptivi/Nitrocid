@@ -17,9 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using ColorSeq;
 using Extensification.StringExts;
 using FluentFTP;
@@ -59,6 +61,7 @@ using KS.Network.Transfer;
 using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.FTP;
+using KS.Shell.Shells.Hex;
 using KS.Shell.Shells.Json;
 using KS.Shell.Shells.Mail;
 using KS.Shell.Shells.RSS;
@@ -351,8 +354,8 @@ namespace KS.Kernel.Configuration
             // ColorMix config json object
             var ColorMixConfig = new JObject()
             {
-                { "Activate 255 Color Mode", ColorMixSettings.ColorMix255Colors },
-                { "Activate True Color Mode", ColorMixSettings.ColorMixTrueColor },
+                { "Activate 255 colors", ColorMixSettings.ColorMix255Colors },
+                { "Activate true colors", ColorMixSettings.ColorMixTrueColor },
                 { "Delay in Milliseconds", ColorMixSettings.ColorMixDelay },
                 { "Background color", new Color(ColorMixSettings.ColorMixBackgroundColor).Type == ColorType.TrueColor ? ColorMixSettings.ColorMixBackgroundColor.EncloseByDoubleQuotes() : ColorMixSettings.ColorMixBackgroundColor },
                 { "Minimum red color level", ColorMixSettings.ColorMixMinimumRedColorLevel },
@@ -369,11 +372,11 @@ namespace KS.Kernel.Configuration
             // Disco config json object
             var DiscoConfig = new JObject()
             {
-                { "Activate 255 Color Mode", DiscoSettings.Disco255Colors },
-                { "Activate True Color Mode", DiscoSettings.DiscoTrueColor },
+                { "Activate 255 colors", DiscoSettings.Disco255Colors },
+                { "Activate true colors", DiscoSettings.DiscoTrueColor },
                 { "Delay in Milliseconds", DiscoSettings.DiscoDelay },
                 { "Use Beats Per Minute", DiscoSettings.DiscoUseBeatsPerMinute },
-                { "Cycle Colors", DiscoSettings.DiscoCycleColors },
+                { "Cycle colors", DiscoSettings.DiscoCycleColors },
                 { "Enable Black and White Mode", DiscoSettings.DiscoEnableFedMode },
                 { "Minimum red color level", DiscoSettings.DiscoMinimumRedColorLevel },
                 { "Minimum green color level", DiscoSettings.DiscoMinimumGreenColorLevel },
@@ -389,8 +392,8 @@ namespace KS.Kernel.Configuration
             // GlitterColor config json object
             var GlitterColorConfig = new JObject()
             {
-                { "Activate 255 Color Mode", GlitterColorSettings.GlitterColor255Colors },
-                { "Activate True Color Mode", GlitterColorSettings.GlitterColorTrueColor },
+                { "Activate 255 colors", GlitterColorSettings.GlitterColor255Colors },
+                { "Activate true colors", GlitterColorSettings.GlitterColorTrueColor },
                 { "Delay in Milliseconds", GlitterColorSettings.GlitterColorDelay },
                 { "Minimum red color level", GlitterColorSettings.GlitterColorMinimumRedColorLevel },
                 { "Minimum green color level", GlitterColorSettings.GlitterColorMinimumGreenColorLevel },
@@ -406,8 +409,8 @@ namespace KS.Kernel.Configuration
             // Lines config json object
             var LinesConfig = new JObject()
             {
-                { "Activate 255 Color Mode", LinesSettings.Lines255Colors },
-                { "Activate True Color Mode", LinesSettings.LinesTrueColor },
+                { "Activate 255 colors", LinesSettings.Lines255Colors },
+                { "Activate true colors", LinesSettings.LinesTrueColor },
                 { "Delay in Milliseconds", LinesSettings.LinesDelay },
                 { "Line character", LinesSettings.LinesLineChar },
                 { "Background color", new Color(LinesSettings.LinesBackgroundColor).Type == ColorType.TrueColor ? LinesSettings.LinesBackgroundColor.EncloseByDoubleQuotes() : LinesSettings.LinesBackgroundColor },
@@ -425,8 +428,8 @@ namespace KS.Kernel.Configuration
             // Dissolve config json object
             var DissolveConfig = new JObject()
             {
-                { "Activate 255 Color Mode", DissolveSettings.Dissolve255Colors },
-                { "Activate True Color Mode", DissolveSettings.DissolveTrueColor },
+                { "Activate 255 colors", DissolveSettings.Dissolve255Colors },
+                { "Activate true colors", DissolveSettings.DissolveTrueColor },
                 { "Background color", new Color(DissolveSettings.DissolveBackgroundColor).Type == ColorType.TrueColor ? DissolveSettings.DissolveBackgroundColor.EncloseByDoubleQuotes() : DissolveSettings.DissolveBackgroundColor },
                 { "Minimum red color level", DissolveSettings.DissolveMinimumRedColorLevel },
                 { "Minimum green color level", DissolveSettings.DissolveMinimumGreenColorLevel },
@@ -442,8 +445,8 @@ namespace KS.Kernel.Configuration
             // BouncingBlock config json object
             var BouncingBlockConfig = new JObject()
             {
-                { "Activate 255 Color Mode", BouncingBlockSettings.BouncingBlock255Colors },
-                { "Activate True Color Mode", BouncingBlockSettings.BouncingBlockTrueColor },
+                { "Activate 255 colors", BouncingBlockSettings.BouncingBlock255Colors },
+                { "Activate true colors", BouncingBlockSettings.BouncingBlockTrueColor },
                 { "Delay in Milliseconds", BouncingBlockSettings.BouncingBlockDelay },
                 { "Background color", new Color(BouncingBlockSettings.BouncingBlockBackgroundColor).Type == ColorType.TrueColor ? BouncingBlockSettings.BouncingBlockBackgroundColor.EncloseByDoubleQuotes() : BouncingBlockSettings.BouncingBlockBackgroundColor },
                 { "Foreground color", new Color(BouncingBlockSettings.BouncingBlockForegroundColor).Type == ColorType.TrueColor ? BouncingBlockSettings.BouncingBlockForegroundColor.EncloseByDoubleQuotes() : BouncingBlockSettings.BouncingBlockForegroundColor },
@@ -461,9 +464,9 @@ namespace KS.Kernel.Configuration
             // ProgressClock config json object
             var ProgressClockConfig = new JObject()
             {
-                { "Activate 255 Color Mode", ProgressClockSettings.ProgressClock255Colors },
-                { "Activate True Color Mode", ProgressClockSettings.ProgressClockTrueColor },
-                { "Cycle Colors", ProgressClockSettings.ProgressClockCycleColors },
+                { "Activate 255 colors", ProgressClockSettings.ProgressClock255Colors },
+                { "Activate true colors", ProgressClockSettings.ProgressClockTrueColor },
+                { "Cycle colors", ProgressClockSettings.ProgressClockCycleColors },
                 { "Ticks to change color", ProgressClockSettings.ProgressClockCycleColorsTicks },
                 { "Color of Seconds Bar", ProgressClockSettings.ProgressClockSecondsProgressColor },
                 { "Color of Minutes Bar", ProgressClockSettings.ProgressClockMinutesProgressColor },
@@ -535,8 +538,8 @@ namespace KS.Kernel.Configuration
             // Lighter config json object
             var LighterConfig = new JObject()
             {
-                { "Activate 255 Color Mode", LighterSettings.Lighter255Colors },
-                { "Activate True Color Mode", LighterSettings.LighterTrueColor },
+                { "Activate 255 colors", LighterSettings.Lighter255Colors },
+                { "Activate true colors", LighterSettings.LighterTrueColor },
                 { "Delay in Milliseconds", LighterSettings.LighterDelay },
                 { "Max Positions Count", LighterSettings.LighterMaxPositions },
                 { "Background color", new Color(LighterSettings.LighterBackgroundColor).Type == ColorType.TrueColor ? LighterSettings.LighterBackgroundColor.EncloseByDoubleQuotes() : LighterSettings.LighterBackgroundColor },
@@ -554,8 +557,8 @@ namespace KS.Kernel.Configuration
             // Wipe config json object
             var WipeConfig = new JObject()
             {
-                { "Activate 255 Color Mode", WipeSettings.Wipe255Colors },
-                { "Activate True Color Mode", WipeSettings.WipeTrueColor },
+                { "Activate 255 colors", WipeSettings.Wipe255Colors },
+                { "Activate true colors", WipeSettings.WipeTrueColor },
                 { "Delay in Milliseconds", WipeSettings.WipeDelay },
                 { "Wipes to change direction", WipeSettings.WipeWipesNeededToChangeDirection },
                 { "Background color", new Color(WipeSettings.WipeBackgroundColor).Type == ColorType.TrueColor ? WipeSettings.WipeBackgroundColor.EncloseByDoubleQuotes() : WipeSettings.WipeBackgroundColor },
@@ -589,10 +592,10 @@ namespace KS.Kernel.Configuration
             // BouncingText config json object
             var BouncingTextConfig = new JObject()
             {
-                { "Activate 255 Color Mode", BouncingTextSettings.BouncingText255Colors },
-                { "Activate True Color Mode", BouncingTextSettings.BouncingTextTrueColor },
+                { "Activate 255 colors", BouncingTextSettings.BouncingText255Colors },
+                { "Activate true colors", BouncingTextSettings.BouncingTextTrueColor },
                 { "Delay in Milliseconds", BouncingTextSettings.BouncingTextDelay },
-                { "Text Shown", BouncingTextSettings.BouncingTextWrite },
+                { "Text shown", BouncingTextSettings.BouncingTextWrite },
                 { "Background color", new Color(BouncingTextSettings.BouncingTextBackgroundColor).Type == ColorType.TrueColor ? BouncingTextSettings.BouncingTextBackgroundColor.EncloseByDoubleQuotes() : BouncingTextSettings.BouncingTextBackgroundColor },
                 { "Foreground color", new Color(BouncingTextSettings.BouncingTextForegroundColor).Type == ColorType.TrueColor ? BouncingTextSettings.BouncingTextForegroundColor.EncloseByDoubleQuotes() : BouncingTextSettings.BouncingTextForegroundColor },
                 { "Minimum red color level", BouncingTextSettings.BouncingTextMinimumRedColorLevel },
@@ -611,7 +614,7 @@ namespace KS.Kernel.Configuration
             {
                 { "Delay in Milliseconds", FaderSettings.FaderDelay },
                 { "Fade Out Delay in Milliseconds", FaderSettings.FaderFadeOutDelay },
-                { "Text Shown", FaderSettings.FaderWrite },
+                { "Text shown", FaderSettings.FaderWrite },
                 { "Max Fade Steps", FaderSettings.FaderMaxSteps },
                 { "Background color", new Color(FaderSettings.FaderBackgroundColor).Type == ColorType.TrueColor ? FaderSettings.FaderBackgroundColor.EncloseByDoubleQuotes() : FaderSettings.FaderBackgroundColor },
                 { "Minimum red color level", FaderSettings.FaderMinimumRedColorLevel },
@@ -641,11 +644,11 @@ namespace KS.Kernel.Configuration
             // BeatFader config json object
             var BeatFaderConfig = new JObject()
             {
-                { "Activate 255 Color Mode", BeatFaderSettings.BeatFader255Colors },
-                { "Activate True Color Mode", BeatFaderSettings.BeatFaderTrueColor },
+                { "Activate 255 colors", BeatFaderSettings.BeatFader255Colors },
+                { "Activate true colors", BeatFaderSettings.BeatFaderTrueColor },
                 { "Delay in Beats Per Minute", BeatFaderSettings.BeatFaderDelay },
-                { "Cycle Colors", BeatFaderSettings.BeatFaderCycleColors },
-                { "Beat Color", BeatFaderSettings.BeatFaderBeatColor },
+                { "Cycle colors", BeatFaderSettings.BeatFaderCycleColors },
+                { "Beat color", BeatFaderSettings.BeatFaderBeatColor },
                 { "Max Fade Steps", BeatFaderSettings.BeatFaderMaxSteps },
                 { "Minimum red color level", BeatFaderSettings.BeatFaderMinimumRedColorLevel },
                 { "Minimum green color level", BeatFaderSettings.BeatFaderMinimumGreenColorLevel },
@@ -663,7 +666,7 @@ namespace KS.Kernel.Configuration
             {
                 { "Delay in Milliseconds", TypoSettings.TypoDelay },
                 { "Write Again Delay in Milliseconds", TypoSettings.TypoWriteAgainDelay },
-                { "Text Shown", TypoSettings.TypoWrite },
+                { "Text shown", TypoSettings.TypoWrite },
                 { "Minimum writing speed in WPM", TypoSettings.TypoWritingSpeedMin },
                 { "Maximum writing speed in WPM", TypoSettings.TypoWritingSpeedMax },
                 { "Probability of typo in percent", TypoSettings.TypoMissStrikePossibility },
@@ -675,11 +678,11 @@ namespace KS.Kernel.Configuration
             // Marquee config json object
             var MarqueeConfig = new JObject()
             {
-                { "Activate 255 Color Mode", MarqueeSettings.Marquee255Colors },
-                { "Activate True Color Mode", MarqueeSettings.MarqueeTrueColor },
+                { "Activate 255 colors", MarqueeSettings.Marquee255Colors },
+                { "Activate true colors", MarqueeSettings.MarqueeTrueColor },
                 { "Delay in Milliseconds", MarqueeSettings.MarqueeDelay },
-                { "Text Shown", MarqueeSettings.MarqueeWrite },
-                { "Always Centered", MarqueeSettings.MarqueeAlwaysCentered },
+                { "Text shown", MarqueeSettings.MarqueeWrite },
+                { "Always centered", MarqueeSettings.MarqueeAlwaysCentered },
                 { "Use Console API", MarqueeSettings.MarqueeUseConsoleAPI },
                 { "Background color", new Color(MarqueeSettings.MarqueeBackgroundColor).Type == ColorType.TrueColor ? MarqueeSettings.MarqueeBackgroundColor.EncloseByDoubleQuotes() : MarqueeSettings.MarqueeBackgroundColor },
                 { "Minimum red color level", MarqueeSettings.MarqueeMinimumRedColorLevel },
@@ -698,7 +701,7 @@ namespace KS.Kernel.Configuration
             {
                 { "Delay in Milliseconds", LinotypoSettings.LinotypoDelay },
                 { "New Screen Delay in Milliseconds", LinotypoSettings.LinotypoNewScreenDelay },
-                { "Text Shown", LinotypoSettings.LinotypoWrite },
+                { "Text shown", LinotypoSettings.LinotypoWrite },
                 { "Minimum writing speed in WPM", LinotypoSettings.LinotypoWritingSpeedMin },
                 { "Maximum writing speed in WPM", LinotypoSettings.LinotypoWritingSpeedMax },
                 { "Probability of typo in percent", LinotypoSettings.LinotypoMissStrikePossibility },
@@ -716,7 +719,7 @@ namespace KS.Kernel.Configuration
             {
                 { "Delay in Milliseconds", TypewriterSettings.TypewriterDelay },
                 { "New Screen Delay in Milliseconds", TypewriterSettings.TypewriterNewScreenDelay },
-                { "Text Shown", TypewriterSettings.TypewriterWrite },
+                { "Text shown", TypewriterSettings.TypewriterWrite },
                 { "Minimum writing speed in WPM", TypewriterSettings.TypewriterWritingSpeedMin },
                 { "Maximum writing speed in WPM", TypewriterSettings.TypewriterWritingSpeedMax },
                 { "Text color", new Color(TypewriterSettings.TypewriterTextColor).Type == ColorType.TrueColor ? TypewriterSettings.TypewriterTextColor.EncloseByDoubleQuotes() : TypewriterSettings.TypewriterTextColor }
@@ -726,8 +729,8 @@ namespace KS.Kernel.Configuration
             // FlashColor config json object
             var FlashColorConfig = new JObject()
             {
-                { "Activate 255 Color Mode", FlashColorSettings.FlashColor255Colors },
-                { "Activate True Color Mode", FlashColorSettings.FlashColorTrueColor },
+                { "Activate 255 colors", FlashColorSettings.FlashColor255Colors },
+                { "Activate true colors", FlashColorSettings.FlashColorTrueColor },
                 { "Delay in Milliseconds", FlashColorSettings.FlashColorDelay },
                 { "Background color", new Color(FlashColorSettings.FlashColorBackgroundColor).Type == ColorType.TrueColor ? FlashColorSettings.FlashColorBackgroundColor.EncloseByDoubleQuotes() : FlashColorSettings.FlashColorBackgroundColor },
                 { "Minimum red color level", FlashColorSettings.FlashColorMinimumRedColorLevel },
@@ -746,7 +749,7 @@ namespace KS.Kernel.Configuration
             {
                 { "Delay in Milliseconds", SpotWriteSettings.SpotWriteDelay },
                 { "New Screen Delay in Milliseconds", SpotWriteSettings.SpotWriteNewScreenDelay },
-                { "Text Shown", SpotWriteSettings.SpotWriteWrite },
+                { "Text shown", SpotWriteSettings.SpotWriteWrite },
                 { "Text color", SpotWriteSettings.SpotWriteTextColor }
             };
             ScreensaverConfig.Add("SpotWrite", SpotWriteonfig);
@@ -754,8 +757,8 @@ namespace KS.Kernel.Configuration
             // Ramp config json object
             var RampConfig = new JObject()
             {
-                { "Activate 255 Color Mode", RampSettings.Ramp255Colors },
-                { "Activate True Color Mode", RampSettings.RampTrueColor },
+                { "Activate 255 colors", RampSettings.Ramp255Colors },
+                { "Activate true colors", RampSettings.RampTrueColor },
                 { "Delay in Milliseconds", RampSettings.RampDelay },
                 { "Next ramp interval", RampSettings.RampDelay },
                 { "Upper left corner character for ramp bar", RampSettings.RampUpperLeftCornerChar },
@@ -797,8 +800,8 @@ namespace KS.Kernel.Configuration
             // StackBox config json object
             var StackBoxConfig = new JObject()
             {
-                { "Activate 255 Color Mode", StackBoxSettings.StackBox255Colors },
-                { "Activate True Color Mode", StackBoxSettings.StackBoxTrueColor },
+                { "Activate 255 colors", StackBoxSettings.StackBox255Colors },
+                { "Activate true colors", StackBoxSettings.StackBoxTrueColor },
                 { "Delay in Milliseconds", StackBoxSettings.StackBoxDelay },
                 { "Minimum red color level", StackBoxSettings.StackBoxMinimumRedColorLevel },
                 { "Minimum green color level", StackBoxSettings.StackBoxMinimumGreenColorLevel },
@@ -815,8 +818,8 @@ namespace KS.Kernel.Configuration
             // Snaker config json object
             var SnakerConfig = new JObject()
             {
-                { "Activate 255 Color Mode", SnakerSettings.Snaker255Colors },
-                { "Activate True Color Mode", SnakerSettings.SnakerTrueColor },
+                { "Activate 255 colors", SnakerSettings.Snaker255Colors },
+                { "Activate true colors", SnakerSettings.SnakerTrueColor },
                 { "Delay in Milliseconds", SnakerSettings.SnakerDelay },
                 { "Stage delay in milliseconds", SnakerSettings.SnakerStageDelay },
                 { "Minimum red color level", SnakerSettings.SnakerMinimumRedColorLevel },
@@ -833,8 +836,8 @@ namespace KS.Kernel.Configuration
             // BarRot config json object
             var BarRotConfig = new JObject()
             {
-                { "Activate 255 Color Mode", BarRotSettings.BarRot255Colors },
-                { "Activate True Color Mode", BarRotSettings.BarRotTrueColor },
+                { "Activate 255 colors", BarRotSettings.BarRot255Colors },
+                { "Activate true colors", BarRotSettings.BarRotTrueColor },
                 { "Delay in Milliseconds", BarRotSettings.BarRotDelay },
                 { "Next ramp rot interval", BarRotSettings.BarRotNextRampDelay },
                 { "Upper left corner character for ramp bar", BarRotSettings.BarRotUpperLeftCornerChar },
@@ -872,8 +875,8 @@ namespace KS.Kernel.Configuration
             // Fireworks config json object
             var FireworksConfig = new JObject()
             {
-                { "Activate 255 Color Mode", FireworksSettings.Fireworks255Colors },
-                { "Activate True Color Mode", FireworksSettings.FireworksTrueColor },
+                { "Activate 255 colors", FireworksSettings.Fireworks255Colors },
+                { "Activate true colors", FireworksSettings.FireworksTrueColor },
                 { "Delay in Milliseconds", FireworksSettings.FireworksDelay },
                 { "Firework explosion radius", FireworksSettings.FireworksRadius },
                 { "Minimum red color level", FireworksSettings.FireworksMinimumRedColorLevel },
@@ -890,10 +893,10 @@ namespace KS.Kernel.Configuration
             // Figlet config json object
             var FigletConfig = new JObject()
             {
-                { "Activate 255 Color Mode", FigletSettings.Figlet255Colors },
-                { "Activate True Color Mode", FigletSettings.FigletTrueColor },
+                { "Activate 255 colors", FigletSettings.Figlet255Colors },
+                { "Activate true colors", FigletSettings.FigletTrueColor },
                 { "Delay in Milliseconds", FigletSettings.FigletDelay },
-                { "Text Shown", FigletSettings.FigletText },
+                { "Text shown", FigletSettings.FigletText },
                 { "Figlet font", FigletSettings.FigletFont },
                 { "Minimum red color level", FigletSettings.FigletMinimumRedColorLevel },
                 { "Minimum green color level", FigletSettings.FigletMinimumGreenColorLevel },
@@ -909,10 +912,10 @@ namespace KS.Kernel.Configuration
             // FlashText config json object
             var FlashTextConfig = new JObject()
             {
-                { "Activate 255 Color Mode", FlashTextSettings.FlashText255Colors },
-                { "Activate True Color Mode", FlashTextSettings.FlashTextTrueColor },
+                { "Activate 255 colors", FlashTextSettings.FlashText255Colors },
+                { "Activate true colors", FlashTextSettings.FlashTextTrueColor },
                 { "Delay in Milliseconds", FlashTextSettings.FlashTextDelay },
-                { "Text Shown", FlashTextSettings.FlashTextWrite },
+                { "Text shown", FlashTextSettings.FlashTextWrite },
                 { "Background color", new Color(FlashTextSettings.FlashTextBackgroundColor).Type == ColorType.TrueColor ? FlashTextSettings.FlashTextBackgroundColor.EncloseByDoubleQuotes() : FlashTextSettings.FlashTextBackgroundColor },
                 { "Minimum red color level", FlashTextSettings.FlashTextMinimumRedColorLevel },
                 { "Minimum green color level", FlashTextSettings.FlashTextMinimumGreenColorLevel },
@@ -948,8 +951,8 @@ namespace KS.Kernel.Configuration
             // DateAndTime config json object
             var DateAndTimeConfig = new JObject()
             {
-                { "Activate 255 Color Mode", DateAndTimeSettings.DateAndTime255Colors },
-                { "Activate True Color Mode", DateAndTimeSettings.DateAndTimeTrueColor },
+                { "Activate 255 colors", DateAndTimeSettings.DateAndTime255Colors },
+                { "Activate true colors", DateAndTimeSettings.DateAndTimeTrueColor },
                 { "Delay in Milliseconds", DateAndTimeSettings.DateAndTimeDelay },
                 { "Minimum red color level", DateAndTimeSettings.DateAndTimeMinimumRedColorLevel },
                 { "Minimum green color level", DateAndTimeSettings.DateAndTimeMinimumGreenColorLevel },
@@ -973,8 +976,8 @@ namespace KS.Kernel.Configuration
             // FallingLine config json object
             var FallingLineConfig = new JObject()
             {
-                { "Activate 255 Color Mode", FallingLineSettings.FallingLine255Colors },
-                { "Activate True Color Mode", FallingLineSettings.FallingLineTrueColor },
+                { "Activate 255 colors", FallingLineSettings.FallingLine255Colors },
+                { "Activate true colors", FallingLineSettings.FallingLineTrueColor },
                 { "Delay in Milliseconds", FallingLineSettings.FallingLineDelay },
                 { "Max Fade Steps", FallingLineSettings.FallingLineMaxSteps },
                 { "Minimum red color level", FallingLineSettings.FallingLineMinimumRedColorLevel },
@@ -991,8 +994,8 @@ namespace KS.Kernel.Configuration
             // Indeterminate config json object
             var IndeterminateConfig = new JObject()
             {
-                { "Activate 255 Color Mode", IndeterminateSettings.Indeterminate255Colors },
-                { "Activate True Color Mode", IndeterminateSettings.IndeterminateTrueColor },
+                { "Activate 255 colors", IndeterminateSettings.Indeterminate255Colors },
+                { "Activate true colors", IndeterminateSettings.IndeterminateTrueColor },
                 { "Delay in Milliseconds", IndeterminateSettings.IndeterminateDelay },
                 { "Upper left corner character for ramp bar", IndeterminateSettings.IndeterminateUpperLeftCornerChar },
                 { "Upper right corner character for ramp bar", IndeterminateSettings.IndeterminateUpperRightCornerChar },
@@ -1039,11 +1042,11 @@ namespace KS.Kernel.Configuration
             // BeatPulse config json object
             var BeatPulseConfig = new JObject()
             {
-                { "Activate 255 Color Mode", BeatPulseSettings.BeatPulse255Colors },
-                { "Activate True Color Mode", BeatPulseSettings.BeatPulseTrueColor },
+                { "Activate 255 colors", BeatPulseSettings.BeatPulse255Colors },
+                { "Activate true colors", BeatPulseSettings.BeatPulseTrueColor },
                 { "Delay in Beats Per Minute", BeatPulseSettings.BeatPulseDelay },
-                { "Cycle Colors", BeatPulseSettings.BeatPulseCycleColors },
-                { "Beat Color", BeatPulseSettings.BeatPulseBeatColor },
+                { "Cycle colors", BeatPulseSettings.BeatPulseCycleColors },
+                { "Beat color", BeatPulseSettings.BeatPulseBeatColor },
                 { "Max Fade Steps", BeatPulseSettings.BeatPulseMaxSteps },
                 { "Minimum red color level", BeatPulseSettings.BeatPulseMinimumRedColorLevel },
                 { "Minimum green color level", BeatPulseSettings.BeatPulseMinimumGreenColorLevel },
@@ -1073,11 +1076,11 @@ namespace KS.Kernel.Configuration
             // BeatEdgePulse config json object
             var BeatEdgePulseConfig = new JObject()
             {
-                { "Activate 255 Color Mode", BeatEdgePulseSettings.BeatEdgePulse255Colors },
-                { "Activate True Color Mode", BeatEdgePulseSettings.BeatEdgePulseTrueColor },
+                { "Activate 255 colors", BeatEdgePulseSettings.BeatEdgePulse255Colors },
+                { "Activate true colors", BeatEdgePulseSettings.BeatEdgePulseTrueColor },
                 { "Delay in Beats Per Minute", BeatEdgePulseSettings.BeatEdgePulseDelay },
-                { "Cycle Colors", BeatEdgePulseSettings.BeatEdgePulseCycleColors },
-                { "Beat Color", BeatEdgePulseSettings.BeatEdgePulseBeatColor },
+                { "Cycle colors", BeatEdgePulseSettings.BeatEdgePulseCycleColors },
+                { "Beat color", BeatEdgePulseSettings.BeatEdgePulseBeatColor },
                 { "Max Fade Steps", BeatEdgePulseSettings.BeatEdgePulseMaxSteps },
                 { "Minimum red color level", BeatEdgePulseSettings.BeatEdgePulseMinimumRedColorLevel },
                 { "Minimum green color level", BeatEdgePulseSettings.BeatEdgePulseMinimumGreenColorLevel },
@@ -1132,7 +1135,7 @@ namespace KS.Kernel.Configuration
             // Lightspeed config json object
             var LightspeedConfig = new JObject()
             {
-                { "Cycle Colors", LightspeedSettings.LightspeedCycleColors },
+                { "Cycle colors", LightspeedSettings.LightspeedCycleColors },
                 { "Minimum red color level", LightspeedSettings.LightspeedMinimumRedColorLevel },
                 { "Minimum green color level", LightspeedSettings.LightspeedMinimumGreenColorLevel },
                 { "Minimum blue color level", LightspeedSettings.LightspeedMinimumBlueColorLevel },
@@ -1200,6 +1203,8 @@ namespace KS.Kernel.Configuration
                 { "Preferred Unit for Temperature", Misc.Forecast.Forecast.PreferredUnit.ToString() },
                 { "Enable text editor autosave", TextEditShellCommon.TextEdit_AutoSaveFlag },
                 { "Text editor autosave interval", TextEditShellCommon.TextEdit_AutoSaveInterval },
+                { "Enable hex editor autosave", HexEditShellCommon.HexEdit_AutoSaveFlag },
+                { "Hex editor autosave interval", HexEditShellCommon.HexEdit_AutoSaveInterval },
                 { "Wrap list outputs", Flags.WrapListOutputs },
                 { "Draw notification border", Flags.DrawBorderNotification },
                 { "Blacklisted mods", ModManager.BlacklistedModsString },
@@ -1400,15 +1405,58 @@ namespace KS.Kernel.Configuration
                         var Setting = SectionToken[OptionIndex];
                         string VariableKeyName = (string)Setting["Name"];
                         string Variable = (string)Setting["Variable"];
+                        string IntType = (string)Setting["IntType"] ?? "";
 
                         // Get variable value and type
                         SettingsKeyType VariableType = (SettingsKeyType)Convert.ToInt32(Enum.Parse(typeof(SettingsKeyType), (string)Setting["Type"]));
                         object VariableValue;
                         if (VariableType == SettingsKeyType.SColor)
+                        {
                             VariableValue = new Color(((string)ConfigTokenFromPath[VariableKeyName]).ReleaseDoubleQuotes());
+
+                            // Setting entry is color, but the variable could be either String or Color.
+                            if ((FieldManager.CheckField(Variable) && FieldManager.GetField(Variable).FieldType == typeof(string)) ||
+                                (PropertyManager.CheckProperty(Variable) && PropertyManager.GetProperty(Variable).PropertyType == typeof(string)))
+                            {
+                                // We're dealing with the field or the property which takes color but is a string containing plain sequence
+                                VariableValue = ((Color)VariableValue).PlainSequence;
+                            }
+                        }
+                        else if (VariableType == SettingsKeyType.SSelection)
+                        {
+                            bool SelectionEnum = (bool)(Setting["IsEnumeration"] ?? false);
+                            string SelectionEnumAssembly = (string)Setting["EnumerationAssembly"];
+                            bool SelectionEnumInternal = (bool)(Setting["EnumerationInternal"] ?? false);
+                            if (SelectionEnum)
+                            {
+                                if (SelectionEnumInternal)
+                                {
+                                    // Apparently, we need to have a full assembly name for getting types.
+                                    Type enumType = Type.GetType("KS." + Setting["Enumeration"].ToString() + ", " + Assembly.GetExecutingAssembly().FullName);
+                                    VariableValue = Enum.Parse(enumType, ((string)ConfigTokenFromPath[VariableKeyName]).ReleaseDoubleQuotes());
+                                }
+                                else
+                                {
+                                    Type enumType = Type.GetType(Setting["Enumeration"].ToString() + ", " + SelectionEnumAssembly);
+                                    VariableValue = Enum.Parse(enumType, ((string)ConfigTokenFromPath[VariableKeyName]).ReleaseDoubleQuotes());
+                                }
+                            }
+                            else
+                            {
+                                VariableValue = ConfigTokenFromPath[VariableKeyName].ToObject<dynamic>();
+                            }
+                        }
                         else
                             VariableValue = ConfigTokenFromPath[VariableKeyName].ToObject<dynamic>();
-                        TextWriterColor.Write(" {0}) " + Translate.DoTranslation((string)Setting["Name"]) + " [{1}]", true, ColorTools.ColTypes.Option, OptionIndex + 1, VariableValue);
+
+                        // Check to see if the value is numeric
+                        if (VariableValue is int or long)
+                        {
+                            if (Convert.ToInt64(VariableValue) <= int.MaxValue)
+                                VariableValue = int.Parse(Convert.ToString(VariableValue));
+                            else if (Convert.ToInt64(VariableValue) <= long.MaxValue)
+                                VariableValue = long.Parse(Convert.ToString(VariableValue));
+                        }
 
                         // Now, set the value
                         if (FieldManager.CheckField(Variable))
@@ -1656,8 +1704,8 @@ namespace KS.Kernel.Configuration
 
             // Screensaver-specific settings go below:
             // > ColorMix
-            ColorMixSettings.ColorMix255Colors = (bool)ConfigToken["Screensaver"]["ColorMix"]["Activate 255 Color Mode"];
-            ColorMixSettings.ColorMixTrueColor = (bool)ConfigToken["Screensaver"]["ColorMix"]["Activate True Color Mode"];
+            ColorMixSettings.ColorMix255Colors = (bool)ConfigToken["Screensaver"]["ColorMix"]["Activate 255 colors"];
+            ColorMixSettings.ColorMixTrueColor = (bool)ConfigToken["Screensaver"]["ColorMix"]["Activate true colors"];
             ColorMixSettings.ColorMixDelay = int.TryParse((string)ConfigToken["Screensaver"]["ColorMix"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["ColorMix"]["Delay in Milliseconds"] : 1;
             ColorMixSettings.ColorMixBackgroundColor = new Color(ConfigToken["Screensaver"]["ColorMix"]["Background color"].ToString()).PlainSequence;
             ColorMixSettings.ColorMixMinimumRedColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["ColorMix"]["Minimum red color level"], out _) ? (int)ConfigToken["Screensaver"]["ColorMix"]["Minimum red color level"] : 0;
@@ -1670,9 +1718,9 @@ namespace KS.Kernel.Configuration
             ColorMixSettings.ColorMixMaximumColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["ColorMix"]["Maximum color level"], out _) ? (int)ConfigToken["Screensaver"]["ColorMix"]["Maximum color level"] : 255;
 
             // > Disco
-            DiscoSettings.Disco255Colors = (bool)ConfigToken["Screensaver"]["Disco"]["Activate 255 Color Mode"];
-            DiscoSettings.DiscoTrueColor = (bool)ConfigToken["Screensaver"]["Disco"]["Activate True Color Mode"];
-            DiscoSettings.DiscoCycleColors = (bool)ConfigToken["Screensaver"]["Disco"]["Cycle Colors"];
+            DiscoSettings.Disco255Colors = (bool)ConfigToken["Screensaver"]["Disco"]["Activate 255 colors"];
+            DiscoSettings.DiscoTrueColor = (bool)ConfigToken["Screensaver"]["Disco"]["Activate true colors"];
+            DiscoSettings.DiscoCycleColors = (bool)ConfigToken["Screensaver"]["Disco"]["Cycle colors"];
             DiscoSettings.DiscoDelay = int.TryParse((string)ConfigToken["Screensaver"]["Disco"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Disco"]["Delay in Milliseconds"] : 100;
             DiscoSettings.DiscoUseBeatsPerMinute = (bool)ConfigToken["Screensaver"]["Disco"]["Use Beats Per Minute"];
             DiscoSettings.DiscoEnableFedMode = (bool)ConfigToken["Screensaver"]["Disco"]["Enable Black and White Mode"];
@@ -1686,8 +1734,8 @@ namespace KS.Kernel.Configuration
             DiscoSettings.DiscoMaximumColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Disco"]["Maximum color level"], out _) ? (int)ConfigToken["Screensaver"]["Disco"]["Maximum color level"] : 255;
 
             // > GlitterColor
-            GlitterColorSettings.GlitterColor255Colors = (bool)ConfigToken["Screensaver"]["GlitterColor"]["Activate 255 Color Mode"];
-            GlitterColorSettings.GlitterColorTrueColor = (bool)ConfigToken["Screensaver"]["GlitterColor"]["Activate True Color Mode"];
+            GlitterColorSettings.GlitterColor255Colors = (bool)ConfigToken["Screensaver"]["GlitterColor"]["Activate 255 colors"];
+            GlitterColorSettings.GlitterColorTrueColor = (bool)ConfigToken["Screensaver"]["GlitterColor"]["Activate true colors"];
             GlitterColorSettings.GlitterColorDelay = int.TryParse((string)ConfigToken["Screensaver"]["GlitterColor"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["GlitterColor"]["Delay in Milliseconds"] : 1;
             GlitterColorSettings.GlitterColorMinimumRedColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["GlitterColor"]["Minimum red color level"], out _) ? (int)ConfigToken["Screensaver"]["GlitterColor"]["Minimum red color level"] : 0;
             GlitterColorSettings.GlitterColorMinimumGreenColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["GlitterColor"]["Minimum green color level"], out _) ? (int)ConfigToken["Screensaver"]["GlitterColor"]["Minimum green color level"] : 0;
@@ -1704,8 +1752,8 @@ namespace KS.Kernel.Configuration
             GlitterMatrixSettings.GlitterMatrixForegroundColor = new Color((string)ConfigToken["Screensaver"]["GlitterMatrix"]["Foreground color"]).PlainSequence;
 
             // > Lines
-            LinesSettings.Lines255Colors = (bool)ConfigToken["Screensaver"]["Lines"]["Activate 255 Color Mode"];
-            LinesSettings.LinesTrueColor = (bool)ConfigToken["Screensaver"]["Lines"]["Activate True Color Mode"];
+            LinesSettings.Lines255Colors = (bool)ConfigToken["Screensaver"]["Lines"]["Activate 255 colors"];
+            LinesSettings.LinesTrueColor = (bool)ConfigToken["Screensaver"]["Lines"]["Activate true colors"];
             LinesSettings.LinesDelay = int.TryParse((string)ConfigToken["Screensaver"]["Lines"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Lines"]["Delay in Milliseconds"] : 500;
             LinesSettings.LinesLineChar = (string)ConfigToken["Screensaver"]["Lines"]["Line character"] ?? "-";
             LinesSettings.LinesBackgroundColor = new Color((string)ConfigToken["Screensaver"]["Lines"]["Background color"]).PlainSequence;
@@ -1719,8 +1767,8 @@ namespace KS.Kernel.Configuration
             LinesSettings.LinesMaximumColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Lines"]["Maximum color level"], out _) ? (int)ConfigToken["Screensaver"]["Lines"]["Maximum color level"] : 255;
 
             // > Dissolve
-            DissolveSettings.Dissolve255Colors = (bool)ConfigToken["Screensaver"]["Dissolve"]["Activate 255 Color Mode"];
-            DissolveSettings.DissolveTrueColor = (bool)ConfigToken["Screensaver"]["Dissolve"]["Activate True Color Mode"];
+            DissolveSettings.Dissolve255Colors = (bool)ConfigToken["Screensaver"]["Dissolve"]["Activate 255 colors"];
+            DissolveSettings.DissolveTrueColor = (bool)ConfigToken["Screensaver"]["Dissolve"]["Activate true colors"];
             DissolveSettings.DissolveBackgroundColor = new Color((string)ConfigToken["Screensaver"]["Dissolve"]["Background color"]).PlainSequence;
             DissolveSettings.DissolveMinimumRedColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Dissolve"]["Minimum red color level"], out _) ? (int)ConfigToken["Screensaver"]["Dissolve"]["Minimum red color level"] : 0;
             DissolveSettings.DissolveMinimumGreenColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Dissolve"]["Minimum green color level"], out _) ? (int)ConfigToken["Screensaver"]["Dissolve"]["Minimum green color level"] : 0;
@@ -1732,8 +1780,8 @@ namespace KS.Kernel.Configuration
             DissolveSettings.DissolveMaximumColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Dissolve"]["Maximum color level"], out _) ? (int)ConfigToken["Screensaver"]["Dissolve"]["Maximum color level"] : 255;
 
             // > BouncingBlock
-            BouncingBlockSettings.BouncingBlock255Colors = (bool)ConfigToken["Screensaver"]["BouncingBlock"]["Activate 255 Color Mode"];
-            BouncingBlockSettings.BouncingBlockTrueColor = (bool)ConfigToken["Screensaver"]["BouncingBlock"]["Activate True Color Mode"];
+            BouncingBlockSettings.BouncingBlock255Colors = (bool)ConfigToken["Screensaver"]["BouncingBlock"]["Activate 255 colors"];
+            BouncingBlockSettings.BouncingBlockTrueColor = (bool)ConfigToken["Screensaver"]["BouncingBlock"]["Activate true colors"];
             BouncingBlockSettings.BouncingBlockDelay = int.TryParse((string)ConfigToken["Screensaver"]["BouncingBlock"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["BouncingBlock"]["Delay in Milliseconds"] : 10;
             BouncingBlockSettings.BouncingBlockBackgroundColor = new Color((string)ConfigToken["Screensaver"]["BouncingBlock"]["Background color"]).PlainSequence;
             BouncingBlockSettings.BouncingBlockForegroundColor = new Color((string)ConfigToken["Screensaver"]["BouncingBlock"]["Foreground color"]).PlainSequence;
@@ -1747,10 +1795,10 @@ namespace KS.Kernel.Configuration
             BouncingBlockSettings.BouncingBlockMaximumColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["BouncingBlock"]["Maximum color level"], out _) ? (int)ConfigToken["Screensaver"]["BouncingBlock"]["Maximum color level"] : 255;
 
             // > BouncingText
-            BouncingTextSettings.BouncingText255Colors = (bool)ConfigToken["Screensaver"]["BouncingText"]["Activate 255 Color Mode"];
-            BouncingTextSettings.BouncingTextTrueColor = (bool)ConfigToken["Screensaver"]["BouncingText"]["Activate True Color Mode"];
+            BouncingTextSettings.BouncingText255Colors = (bool)ConfigToken["Screensaver"]["BouncingText"]["Activate 255 colors"];
+            BouncingTextSettings.BouncingTextTrueColor = (bool)ConfigToken["Screensaver"]["BouncingText"]["Activate true colors"];
             BouncingTextSettings.BouncingTextDelay = int.TryParse((string)ConfigToken["Screensaver"]["BouncingText"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["BouncingText"]["Delay in Milliseconds"] : 10;
-            BouncingTextSettings.BouncingTextWrite = (string)ConfigToken["Screensaver"]["BouncingText"]["Text Shown"] ?? "Kernel Simulator";
+            BouncingTextSettings.BouncingTextWrite = (string)ConfigToken["Screensaver"]["BouncingText"]["Text shown"] ?? "Kernel Simulator";
             BouncingTextSettings.BouncingTextBackgroundColor = new Color((string)ConfigToken["Screensaver"]["BouncingText"]["Background color"]).PlainSequence;
             BouncingTextSettings.BouncingTextForegroundColor = new Color((string)ConfigToken["Screensaver"]["BouncingText"]["Foreground color"]).PlainSequence;
             BouncingTextSettings.BouncingTextMinimumRedColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["BouncingText"]["Minimum red color level"], out _) ? (int)ConfigToken["Screensaver"]["BouncingText"]["Minimum red color level"] : 0;
@@ -1763,9 +1811,9 @@ namespace KS.Kernel.Configuration
             BouncingTextSettings.BouncingTextMaximumColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["BouncingText"]["Maximum color level"], out _) ? (int)ConfigToken["Screensaver"]["BouncingText"]["Maximum color level"] : 255;
 
             // > ProgressClock
-            ProgressClockSettings.ProgressClock255Colors = (bool)ConfigToken["Screensaver"]["ProgressClock"]["Activate 255 Color Mode"];
-            ProgressClockSettings.ProgressClockTrueColor = (bool)ConfigToken["Screensaver"]["ProgressClock"]["Activate True Color Mode"];
-            ProgressClockSettings.ProgressClockCycleColors = (bool)ConfigToken["Screensaver"]["ProgressClock"]["Cycle Colors"];
+            ProgressClockSettings.ProgressClock255Colors = (bool)ConfigToken["Screensaver"]["ProgressClock"]["Activate 255 colors"];
+            ProgressClockSettings.ProgressClockTrueColor = (bool)ConfigToken["Screensaver"]["ProgressClock"]["Activate true colors"];
+            ProgressClockSettings.ProgressClockCycleColors = (bool)ConfigToken["Screensaver"]["ProgressClock"]["Cycle colors"];
             ProgressClockSettings.ProgressClockSecondsProgressColor = (string)ConfigToken["Screensaver"]["ProgressClock"]["Color of Seconds Bar"];
             ProgressClockSettings.ProgressClockMinutesProgressColor = (string)ConfigToken["Screensaver"]["ProgressClock"]["Color of Minutes Bar"];
             ProgressClockSettings.ProgressClockHoursProgressColor = (string)ConfigToken["Screensaver"]["ProgressClock"]["Color of Hours Bar"];
@@ -1833,8 +1881,8 @@ namespace KS.Kernel.Configuration
             ProgressClockSettings.ProgressClockMaximumColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["ProgressClock"]["Maximum color level"], out _) ? (int)ConfigToken["Screensaver"]["ProgressClock"]["Maximum color level"] : 255;
 
             // > Lighter
-            LighterSettings.Lighter255Colors = (bool)ConfigToken["Screensaver"]["Lighter"]["Activate 255 Color Mode"];
-            LighterSettings.LighterTrueColor = (bool)ConfigToken["Screensaver"]["Lighter"]["Activate True Color Mode"];
+            LighterSettings.Lighter255Colors = (bool)ConfigToken["Screensaver"]["Lighter"]["Activate 255 colors"];
+            LighterSettings.LighterTrueColor = (bool)ConfigToken["Screensaver"]["Lighter"]["Activate true colors"];
             LighterSettings.LighterDelay = int.TryParse((string)ConfigToken["Screensaver"]["Lighter"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Lighter"]["Delay in Milliseconds"] : 100;
             LighterSettings.LighterMaxPositions = int.TryParse((string)ConfigToken["Screensaver"]["Lighter"]["Max Positions Count"], out _) ? (int)ConfigToken["Screensaver"]["Lighter"]["Max Positions Count"] : 10;
             LighterSettings.LighterBackgroundColor = new Color((string)ConfigToken["Screensaver"]["Lighter"]["Background color"]).PlainSequence;
@@ -1848,8 +1896,8 @@ namespace KS.Kernel.Configuration
             LighterSettings.LighterMaximumColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Lighter"]["Maximum color level"], out _) ? (int)ConfigToken["Screensaver"]["Lighter"]["Maximum color level"] : 255;
 
             // > Wipe
-            WipeSettings.Wipe255Colors = (bool)ConfigToken["Screensaver"]["Wipe"]["Activate 255 Color Mode"];
-            WipeSettings.WipeTrueColor = (bool)ConfigToken["Screensaver"]["Wipe"]["Activate True Color Mode"];
+            WipeSettings.Wipe255Colors = (bool)ConfigToken["Screensaver"]["Wipe"]["Activate 255 colors"];
+            WipeSettings.WipeTrueColor = (bool)ConfigToken["Screensaver"]["Wipe"]["Activate true colors"];
             WipeSettings.WipeDelay = int.TryParse((string)ConfigToken["Screensaver"]["Wipe"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Wipe"]["Delay in Milliseconds"] : 10;
             WipeSettings.WipeWipesNeededToChangeDirection = int.TryParse((string)ConfigToken["Screensaver"]["Wipe"]["Wipes to change direction"], out _) ? (int)ConfigToken["Screensaver"]["Wipe"]["Wipes to change direction"] : 10;
             WipeSettings.WipeBackgroundColor = new Color((string)ConfigToken["Screensaver"]["Wipe"]["Background color"]).PlainSequence;
@@ -1865,7 +1913,7 @@ namespace KS.Kernel.Configuration
             // > Fader
             FaderSettings.FaderDelay = int.TryParse((string)ConfigToken["Screensaver"]["Fader"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Fader"]["Delay in Milliseconds"] : 50;
             FaderSettings.FaderFadeOutDelay = int.TryParse((string)ConfigToken["Screensaver"]["Fader"]["Fade Out Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Fader"]["Fade Out Delay in Milliseconds"] : 3000;
-            FaderSettings.FaderWrite = (string)ConfigToken["Screensaver"]["Fader"]["Text Shown"] ?? "Kernel Simulator";
+            FaderSettings.FaderWrite = (string)ConfigToken["Screensaver"]["Fader"]["Text shown"] ?? "Kernel Simulator";
             FaderSettings.FaderMaxSteps = int.TryParse((string)ConfigToken["Screensaver"]["Fader"]["Max Fade Steps"], out _) ? (int)ConfigToken["Screensaver"]["Fader"]["Max Fade Steps"] : 25;
             FaderSettings.FaderBackgroundColor = new Color((string)ConfigToken["Screensaver"]["Fader"]["Background color"]).PlainSequence;
             FaderSettings.FaderMinimumRedColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Fader"]["Minimum red color level"], out _) ? (int)ConfigToken["Screensaver"]["Fader"]["Minimum red color level"] : 0;
@@ -1887,10 +1935,10 @@ namespace KS.Kernel.Configuration
             FaderBackSettings.FaderBackMaximumBlueColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["FaderBack"]["Maximum blue color level"], out _) ? (int)ConfigToken["Screensaver"]["FaderBack"]["Maximum blue color level"] : 255;
 
             // > BeatFader
-            BeatFaderSettings.BeatFader255Colors = (bool)ConfigToken["Screensaver"]["BeatFader"]["Activate 255 Color Mode"];
-            BeatFaderSettings.BeatFaderTrueColor = (bool)ConfigToken["Screensaver"]["BeatFader"]["Activate True Color Mode"];
-            BeatFaderSettings.BeatFaderCycleColors = (bool)ConfigToken["Screensaver"]["BeatFader"]["Cycle Colors"];
-            BeatFaderSettings.BeatFaderBeatColor = (string)ConfigToken["Screensaver"]["BeatFader"]["Beat Color"];
+            BeatFaderSettings.BeatFader255Colors = (bool)ConfigToken["Screensaver"]["BeatFader"]["Activate 255 colors"];
+            BeatFaderSettings.BeatFaderTrueColor = (bool)ConfigToken["Screensaver"]["BeatFader"]["Activate true colors"];
+            BeatFaderSettings.BeatFaderCycleColors = (bool)ConfigToken["Screensaver"]["BeatFader"]["Cycle colors"];
+            BeatFaderSettings.BeatFaderBeatColor = (string)ConfigToken["Screensaver"]["BeatFader"]["Beat color"];
             BeatFaderSettings.BeatFaderDelay = int.TryParse((string)ConfigToken["Screensaver"]["BeatFader"]["Delay in Beats Per Minute"], out _) ? (int)ConfigToken["Screensaver"]["BeatFader"]["Delay in Beats Per Minute"] : 120;
             BeatFaderSettings.BeatFaderMaxSteps = int.TryParse((string)ConfigToken["Screensaver"]["BeatFader"]["Max Fade Steps"], out _) ? (int)ConfigToken["Screensaver"]["BeatFader"]["Max Fade Steps"] : 25;
             BeatFaderSettings.BeatFaderMinimumRedColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["BeatFader"]["Minimum red color level"], out _) ? (int)ConfigToken["Screensaver"]["BeatFader"]["Minimum red color level"] : 0;
@@ -1905,7 +1953,7 @@ namespace KS.Kernel.Configuration
             // > Typo
             TypoSettings.TypoDelay = int.TryParse((string)ConfigToken["Screensaver"]["Typo"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Typo"]["Delay in Milliseconds"] : 50;
             TypoSettings.TypoWriteAgainDelay = int.TryParse((string)ConfigToken["Screensaver"]["Typo"]["Write Again Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Typo"]["Write Again Delay in Milliseconds"] : 3000;
-            TypoSettings.TypoWrite = (string)ConfigToken["Screensaver"]["Typo"]["Text Shown"] ?? "Kernel Simulator";
+            TypoSettings.TypoWrite = (string)ConfigToken["Screensaver"]["Typo"]["Text shown"] ?? "Kernel Simulator";
             TypoSettings.TypoWritingSpeedMin = int.TryParse((string)ConfigToken["Screensaver"]["Typo"]["Minimum writing speed in WPM"], out _) ? (int)ConfigToken["Screensaver"]["Typo"]["Minimum writing speed in WPM"] : 50;
             TypoSettings.TypoWritingSpeedMax = int.TryParse((string)ConfigToken["Screensaver"]["Typo"]["Maximum writing speed in WPM"], out _) ? (int)ConfigToken["Screensaver"]["Typo"]["Maximum writing speed in WPM"] : 80;
             TypoSettings.TypoMissStrikePossibility = int.TryParse((string)ConfigToken["Screensaver"]["Typo"]["Probability of typo in percent"], out _) ? (int)ConfigToken["Screensaver"]["Typo"]["Probability of typo in percent"] : 20;
@@ -1913,11 +1961,11 @@ namespace KS.Kernel.Configuration
             TypoSettings.TypoTextColor = new Color((string)ConfigToken["Screensaver"]["Typo"]["Text color"]).PlainSequence;
 
             // > Marquee
-            MarqueeSettings.Marquee255Colors = (bool)ConfigToken["Screensaver"]["Marquee"]["Activate 255 Color Mode"];
-            MarqueeSettings.MarqueeTrueColor = (bool)ConfigToken["Screensaver"]["Marquee"]["Activate True Color Mode"];
-            MarqueeSettings.MarqueeWrite = (string)ConfigToken["Screensaver"]["Marquee"]["Text Shown"] ?? "Kernel Simulator";
+            MarqueeSettings.Marquee255Colors = (bool)ConfigToken["Screensaver"]["Marquee"]["Activate 255 colors"];
+            MarqueeSettings.MarqueeTrueColor = (bool)ConfigToken["Screensaver"]["Marquee"]["Activate true colors"];
+            MarqueeSettings.MarqueeWrite = (string)ConfigToken["Screensaver"]["Marquee"]["Text shown"] ?? "Kernel Simulator";
             MarqueeSettings.MarqueeDelay = int.TryParse((string)ConfigToken["Screensaver"]["Marquee"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Marquee"]["Delay in Milliseconds"] : 10;
-            MarqueeSettings.MarqueeAlwaysCentered = (bool)ConfigToken["Screensaver"]["Marquee"]["Always Centered"];
+            MarqueeSettings.MarqueeAlwaysCentered = (bool)ConfigToken["Screensaver"]["Marquee"]["Always centered"];
             MarqueeSettings.MarqueeUseConsoleAPI = (bool)ConfigToken["Screensaver"]["Marquee"]["Use Console API"];
             MarqueeSettings.MarqueeMinimumRedColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Marquee"]["Minimum red color level"], out _) ? (int)ConfigToken["Screensaver"]["Marquee"]["Minimum red color level"] : 0;
             MarqueeSettings.MarqueeMinimumGreenColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Marquee"]["Minimum green color level"], out _) ? (int)ConfigToken["Screensaver"]["Marquee"]["Minimum green color level"] : 0;
@@ -1941,7 +1989,7 @@ namespace KS.Kernel.Configuration
             }
             LinotypoSettings.LinotypoDelay = int.TryParse((string)ConfigToken["Screensaver"]["Linotypo"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Linotypo"]["Delay in Milliseconds"] : 50;
             LinotypoSettings.LinotypoNewScreenDelay = int.TryParse((string)ConfigToken["Screensaver"]["Linotypo"]["New Screen Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Linotypo"]["New Screen Delay in Milliseconds"] : 3000;
-            LinotypoSettings.LinotypoWrite = (string)ConfigToken["Screensaver"]["Linotypo"]["Text Shown"] ?? "Kernel Simulator";
+            LinotypoSettings.LinotypoWrite = (string)ConfigToken["Screensaver"]["Linotypo"]["Text shown"] ?? "Kernel Simulator";
             LinotypoSettings.LinotypoWritingSpeedMin = int.TryParse((string)ConfigToken["Screensaver"]["Linotypo"]["Minimum writing speed in WPM"], out _) ? (int)ConfigToken["Screensaver"]["Linotypo"]["Minimum writing speed in WPM"] : 50;
             LinotypoSettings.LinotypoWritingSpeedMax = int.TryParse((string)ConfigToken["Screensaver"]["Linotypo"]["Maximum writing speed in WPM"], out _) ? (int)ConfigToken["Screensaver"]["Linotypo"]["Maximum writing speed in WPM"] : 80;
             LinotypoSettings.LinotypoMissStrikePossibility = int.TryParse((string)ConfigToken["Screensaver"]["Linotypo"]["Probability of typo in percent"], out _) ? (int)ConfigToken["Screensaver"]["Linotypo"]["Probability of typo in percent"] : 1;
@@ -1955,14 +2003,14 @@ namespace KS.Kernel.Configuration
             // > Typewriter
             TypewriterSettings.TypewriterDelay = int.TryParse((string)ConfigToken["Screensaver"]["Typewriter"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Typewriter"]["Delay in Milliseconds"] : 50;
             TypewriterSettings.TypewriterNewScreenDelay = int.TryParse((string)ConfigToken["Screensaver"]["Typewriter"]["New Screen Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Typewriter"]["New Screen Delay in Milliseconds"] : 3000;
-            TypewriterSettings.TypewriterWrite = (string)ConfigToken["Screensaver"]["Typewriter"]["Text Shown"] ?? "Kernel Simulator";
+            TypewriterSettings.TypewriterWrite = (string)ConfigToken["Screensaver"]["Typewriter"]["Text shown"] ?? "Kernel Simulator";
             TypewriterSettings.TypewriterWritingSpeedMin = int.TryParse((string)ConfigToken["Screensaver"]["Typewriter"]["Minimum writing speed in WPM"], out _) ? (int)ConfigToken["Screensaver"]["Typewriter"]["Minimum writing speed in WPM"] : 50;
             TypewriterSettings.TypewriterWritingSpeedMax = int.TryParse((string)ConfigToken["Screensaver"]["Typewriter"]["Maximum writing speed in WPM"], out _) ? (int)ConfigToken["Screensaver"]["Typewriter"]["Maximum writing speed in WPM"] : 80;
             TypewriterSettings.TypewriterTextColor = new Color((string)ConfigToken["Screensaver"]["Typewriter"]["Text color"]).PlainSequence;
 
             // > FlashColor
-            FlashColorSettings.FlashColor255Colors = (bool)ConfigToken["Screensaver"]["FlashColor"]["Activate 255 Color Mode"];
-            FlashColorSettings.FlashColorTrueColor = (bool)ConfigToken["Screensaver"]["FlashColor"]["Activate True Color Mode"];
+            FlashColorSettings.FlashColor255Colors = (bool)ConfigToken["Screensaver"]["FlashColor"]["Activate 255 colors"];
+            FlashColorSettings.FlashColorTrueColor = (bool)ConfigToken["Screensaver"]["FlashColor"]["Activate true colors"];
             FlashColorSettings.FlashColorDelay = int.TryParse((string)ConfigToken["Screensaver"]["FlashColor"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["FlashColor"]["Delay in Milliseconds"] : 1;
             FlashColorSettings.FlashColorBackgroundColor = new Color((string)ConfigToken["Screensaver"]["FlashColor"]["Background color"]).PlainSequence;
             FlashColorSettings.FlashColorMinimumRedColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["FlashColor"]["Minimum red color level"], out _) ? (int)ConfigToken["Screensaver"]["FlashColor"]["Minimum red color level"] : 0;
@@ -1977,12 +2025,12 @@ namespace KS.Kernel.Configuration
             // > SpotWrite
             SpotWriteSettings.SpotWriteDelay = int.TryParse((string)ConfigToken["Screensaver"]["SpotWrite"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["SpotWrite"]["Delay in Milliseconds"] : 50;
             SpotWriteSettings.SpotWriteNewScreenDelay = int.TryParse((string)ConfigToken["Screensaver"]["SpotWrite"]["New Screen Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["SpotWrite"]["New Screen Delay in Milliseconds"] : 3000;
-            SpotWriteSettings.SpotWriteWrite = (string)ConfigToken["Screensaver"]["SpotWrite"]["Text Shown"] ?? "Kernel Simulator";
+            SpotWriteSettings.SpotWriteWrite = (string)ConfigToken["Screensaver"]["SpotWrite"]["Text shown"] ?? "Kernel Simulator";
             SpotWriteSettings.SpotWriteTextColor = new Color((string)ConfigToken["Screensaver"]["SpotWrite"]["Text color"]).PlainSequence;
 
             // > Ramp
-            RampSettings.Ramp255Colors = (bool)ConfigToken["Screensaver"]["Ramp"]["Activate 255 Color Mode"];
-            RampSettings.RampTrueColor = (bool)ConfigToken["Screensaver"]["Ramp"]["Activate True Color Mode"];
+            RampSettings.Ramp255Colors = (bool)ConfigToken["Screensaver"]["Ramp"]["Activate 255 colors"];
+            RampSettings.RampTrueColor = (bool)ConfigToken["Screensaver"]["Ramp"]["Activate true colors"];
             RampSettings.RampDelay = int.TryParse((string)ConfigToken["Screensaver"]["Ramp"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Ramp"]["Delay in Milliseconds"] : 20;
             RampSettings.RampNextRampDelay = int.TryParse((string)ConfigToken["Screensaver"]["Ramp"]["Next ramp interval"], out _) ? (int)ConfigToken["Screensaver"]["Ramp"]["Next ramp interval"] : 250;
             RampSettings.RampUpperLeftCornerChar = (string)(ConfigToken["Screensaver"]["Ramp"]["Upper left corner character for ramp bar"] ?? "╔");
@@ -2020,8 +2068,8 @@ namespace KS.Kernel.Configuration
             RampSettings.RampUseBorderColors = (bool)ConfigToken["Screensaver"]["Ramp"]["Use border colors for ramp bar"];
 
             // > StackBox
-            StackBoxSettings.StackBox255Colors = (bool)ConfigToken["Screensaver"]["StackBox"]["Activate 255 Color Mode"];
-            StackBoxSettings.StackBoxTrueColor = (bool)ConfigToken["Screensaver"]["StackBox"]["Activate True Color Mode"];
+            StackBoxSettings.StackBox255Colors = (bool)ConfigToken["Screensaver"]["StackBox"]["Activate 255 colors"];
+            StackBoxSettings.StackBoxTrueColor = (bool)ConfigToken["Screensaver"]["StackBox"]["Activate true colors"];
             StackBoxSettings.StackBoxDelay = int.TryParse((string)ConfigToken["Screensaver"]["StackBox"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["StackBox"]["Delay in Milliseconds"] : 10;
             StackBoxSettings.StackBoxMinimumRedColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["StackBox"]["Minimum red color level"], out _) ? (int)ConfigToken["Screensaver"]["StackBox"]["Minimum red color level"] : 0;
             StackBoxSettings.StackBoxMinimumGreenColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["StackBox"]["Minimum green color level"], out _) ? (int)ConfigToken["Screensaver"]["StackBox"]["Minimum green color level"] : 0;
@@ -2034,8 +2082,8 @@ namespace KS.Kernel.Configuration
             StackBoxSettings.StackBoxFill = (bool)ConfigToken["Screensaver"]["StackBox"]["Fill the boxes"];
 
             // > Snaker
-            SnakerSettings.Snaker255Colors = (bool)ConfigToken["Screensaver"]["Snaker"]["Activate 255 Color Mode"];
-            SnakerSettings.SnakerTrueColor = (bool)ConfigToken["Screensaver"]["Snaker"]["Activate True Color Mode"];
+            SnakerSettings.Snaker255Colors = (bool)ConfigToken["Screensaver"]["Snaker"]["Activate 255 colors"];
+            SnakerSettings.SnakerTrueColor = (bool)ConfigToken["Screensaver"]["Snaker"]["Activate true colors"];
             SnakerSettings.SnakerDelay = int.TryParse((string)ConfigToken["Screensaver"]["Snaker"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Snaker"]["Delay in Milliseconds"] : 100;
             SnakerSettings.SnakerStageDelay = int.TryParse((string)ConfigToken["Screensaver"]["Snaker"]["Stage delay in milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Snaker"]["Stage delay in milliseconds"] : 5000;
             SnakerSettings.SnakerMinimumRedColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Snaker"]["Minimum red color level"], out _) ? (int)ConfigToken["Screensaver"]["Snaker"]["Minimum red color level"] : 0;
@@ -2048,8 +2096,8 @@ namespace KS.Kernel.Configuration
             SnakerSettings.SnakerMaximumColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Snaker"]["Maximum color level"], out _) ? (int)ConfigToken["Screensaver"]["Snaker"]["Maximum color level"] : 255;
 
             // > BarRot
-            BarRotSettings.BarRot255Colors = (bool)ConfigToken["Screensaver"]["BarRot"]["Activate 255 Color Mode"];
-            BarRotSettings.BarRotTrueColor = (bool)ConfigToken["Screensaver"]["BarRot"]["Activate True Color Mode"];
+            BarRotSettings.BarRot255Colors = (bool)ConfigToken["Screensaver"]["BarRot"]["Activate 255 colors"];
+            BarRotSettings.BarRotTrueColor = (bool)ConfigToken["Screensaver"]["BarRot"]["Activate true colors"];
             BarRotSettings.BarRotDelay = int.TryParse((string)ConfigToken["Screensaver"]["BarRot"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["BarRot"]["Delay in Milliseconds"] : 10;
             BarRotSettings.BarRotNextRampDelay = int.TryParse((string)ConfigToken["Screensaver"]["BarRot"]["Next ramp rot interval"], out _) ? (int)ConfigToken["Screensaver"]["BarRot"]["Next ramp rot interval"] : 250;
             BarRotSettings.BarRotUpperLeftCornerChar = (string)(ConfigToken["Screensaver"]["BarRot"]["Upper left corner character for ramp bar"] ?? "╔");
@@ -2083,8 +2131,8 @@ namespace KS.Kernel.Configuration
             BarRotSettings.BarRotUseBorderColors = (bool)ConfigToken["Screensaver"]["BarRot"]["Use border colors for ramp bar"];
 
             // > Fireworks
-            FireworksSettings.Fireworks255Colors = (bool)ConfigToken["Screensaver"]["Fireworks"]["Activate 255 Color Mode"];
-            FireworksSettings.FireworksTrueColor = (bool)ConfigToken["Screensaver"]["Fireworks"]["Activate True Color Mode"];
+            FireworksSettings.Fireworks255Colors = (bool)ConfigToken["Screensaver"]["Fireworks"]["Activate 255 colors"];
+            FireworksSettings.FireworksTrueColor = (bool)ConfigToken["Screensaver"]["Fireworks"]["Activate true colors"];
             FireworksSettings.FireworksDelay = int.TryParse((string)ConfigToken["Screensaver"]["Fireworks"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Fireworks"]["Delay in Milliseconds"] : 10;
             FireworksSettings.FireworksRadius = int.TryParse((string)ConfigToken["Screensaver"]["Fireworks"]["Firework explosion radius"], out _) ? (int)ConfigToken["Screensaver"]["Fireworks"]["Firework explosion radius"] : 5;
             FireworksSettings.FireworksMinimumRedColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Fireworks"]["Minimum red color level"], out _) ? (int)ConfigToken["Screensaver"]["Fireworks"]["Minimum red color level"] : 0;
@@ -2097,10 +2145,10 @@ namespace KS.Kernel.Configuration
             FireworksSettings.FireworksMaximumColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Fireworks"]["Maximum color level"], out _) ? (int)ConfigToken["Screensaver"]["Fireworks"]["Maximum color level"] : 255;
 
             // > Figlet
-            FigletSettings.Figlet255Colors = (bool)ConfigToken["Screensaver"]["Figlet"]["Activate 255 Color Mode"];
-            FigletSettings.FigletTrueColor = (bool)ConfigToken["Screensaver"]["Figlet"]["Activate True Color Mode"];
+            FigletSettings.Figlet255Colors = (bool)ConfigToken["Screensaver"]["Figlet"]["Activate 255 colors"];
+            FigletSettings.FigletTrueColor = (bool)ConfigToken["Screensaver"]["Figlet"]["Activate true colors"];
             FigletSettings.FigletDelay = int.TryParse((string)ConfigToken["Screensaver"]["Figlet"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Figlet"]["Delay in Milliseconds"] : 10;
-            FigletSettings.FigletText = (string)ConfigToken["Screensaver"]["Figlet"]["Text Shown"] ?? "Kernel Simulator";
+            FigletSettings.FigletText = (string)ConfigToken["Screensaver"]["Figlet"]["Text shown"] ?? "Kernel Simulator";
             FigletSettings.FigletFont = (string)(ConfigToken["Screensaver"]["Figlet"]["Figlet font"] ?? "Small");
             FigletSettings.FigletMinimumRedColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Figlet"]["Minimum red color level"], out _) ? (int)ConfigToken["Screensaver"]["Figlet"]["Minimum red color level"] : 0;
             FigletSettings.FigletMinimumGreenColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Figlet"]["Minimum green color level"], out _) ? (int)ConfigToken["Screensaver"]["Figlet"]["Minimum green color level"] : 0;
@@ -2112,10 +2160,10 @@ namespace KS.Kernel.Configuration
             FigletSettings.FigletMaximumColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Figlet"]["Maximum color level"], out _) ? (int)ConfigToken["Screensaver"]["Figlet"]["Maximum color level"] : 255;
 
             // > FlashText
-            FlashTextSettings.FlashText255Colors = (bool)ConfigToken["Screensaver"]["FlashText"]["Activate 255 Color Mode"];
-            FlashTextSettings.FlashTextTrueColor = (bool)ConfigToken["Screensaver"]["FlashText"]["Activate True Color Mode"];
+            FlashTextSettings.FlashText255Colors = (bool)ConfigToken["Screensaver"]["FlashText"]["Activate 255 colors"];
+            FlashTextSettings.FlashTextTrueColor = (bool)ConfigToken["Screensaver"]["FlashText"]["Activate true colors"];
             FlashTextSettings.FlashTextDelay = int.TryParse((string)ConfigToken["Screensaver"]["FlashText"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["FlashText"]["Delay in Milliseconds"] : 10;
-            FlashTextSettings.FlashTextWrite = (string)ConfigToken["Screensaver"]["FlashText"]["Text Shown"] ?? "Kernel Simulator";
+            FlashTextSettings.FlashTextWrite = (string)ConfigToken["Screensaver"]["FlashText"]["Text shown"] ?? "Kernel Simulator";
             FlashTextSettings.FlashTextBackgroundColor = new Color((string)ConfigToken["Screensaver"]["FlashText"]["Background color"]).PlainSequence;
             FlashTextSettings.FlashTextMinimumRedColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["FlashText"]["Minimum red color level"], out _) ? (int)ConfigToken["Screensaver"]["FlashText"]["Minimum red color level"] : 0;
             FlashTextSettings.FlashTextMinimumGreenColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["FlashText"]["Minimum green color level"], out _) ? (int)ConfigToken["Screensaver"]["FlashText"]["Minimum green color level"] : 0;
@@ -2139,8 +2187,8 @@ namespace KS.Kernel.Configuration
             PersonLookupSettings.PersonLookupMaximumAgeYears = int.TryParse((string)ConfigToken["Screensaver"]["PersonLookup"]["Maximum age years count"], out _) ? (int)ConfigToken["Screensaver"]["PersonLookup"]["Maximum age years count"] : 100;
 
             // > DateAndTime
-            DateAndTimeSettings.DateAndTime255Colors = (bool)ConfigToken["Screensaver"]["DateAndTime"]["Activate 255 Color Mode"];
-            DateAndTimeSettings.DateAndTimeTrueColor = (bool)ConfigToken["Screensaver"]["DateAndTime"]["Activate True Color Mode"];
+            DateAndTimeSettings.DateAndTime255Colors = (bool)ConfigToken["Screensaver"]["DateAndTime"]["Activate 255 colors"];
+            DateAndTimeSettings.DateAndTimeTrueColor = (bool)ConfigToken["Screensaver"]["DateAndTime"]["Activate true colors"];
             DateAndTimeSettings.DateAndTimeDelay = int.TryParse((string)ConfigToken["Screensaver"]["DateAndTime"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["DateAndTime"]["Delay in Milliseconds"] : 1000;
             DateAndTimeSettings.DateAndTimeMinimumRedColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["DateAndTime"]["Minimum red color level"], out _) ? (int)ConfigToken["Screensaver"]["DateAndTime"]["Minimum red color level"] : 0;
             DateAndTimeSettings.DateAndTimeMinimumGreenColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["DateAndTime"]["Minimum green color level"], out _) ? (int)ConfigToken["Screensaver"]["DateAndTime"]["Minimum green color level"] : 0;
@@ -2156,8 +2204,8 @@ namespace KS.Kernel.Configuration
             GlitchSettings.GlitchDensity = int.TryParse((string)ConfigToken["Screensaver"]["Glitch"]["Glitch density"], out _) ? (int)ConfigToken["Screensaver"]["Glitch"]["Glitch density"] : 40;
 
             // > Indeterminate
-            IndeterminateSettings.Indeterminate255Colors = (bool)ConfigToken["Screensaver"]["Indeterminate"]["Activate 255 Color Mode"];
-            IndeterminateSettings.IndeterminateTrueColor = (bool)ConfigToken["Screensaver"]["Indeterminate"]["Activate True Color Mode"];
+            IndeterminateSettings.Indeterminate255Colors = (bool)ConfigToken["Screensaver"]["Indeterminate"]["Activate 255 colors"];
+            IndeterminateSettings.IndeterminateTrueColor = (bool)ConfigToken["Screensaver"]["Indeterminate"]["Activate true colors"];
             IndeterminateSettings.IndeterminateDelay = int.TryParse((string)ConfigToken["Screensaver"]["Indeterminate"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Indeterminate"]["Delay in Milliseconds"] : 20;
             IndeterminateSettings.IndeterminateUpperLeftCornerChar = (string)(ConfigToken["Screensaver"]["Indeterminate"]["Upper left corner character for ramp bar"] ?? "╔");
             IndeterminateSettings.IndeterminateUpperRightCornerChar = (string)(ConfigToken["Screensaver"]["Indeterminate"]["Upper right corner character for ramp bar"] ?? "╗");
@@ -2196,10 +2244,10 @@ namespace KS.Kernel.Configuration
             PulseSettings.PulseMaximumBlueColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Pulse"]["Maximum blue color level"], out _) ? (int)ConfigToken["Screensaver"]["Pulse"]["Maximum blue color level"] : 255;
 
             // > BeatPulse
-            BeatPulseSettings.BeatPulse255Colors = (bool)ConfigToken["Screensaver"]["BeatPulse"]["Activate 255 Color Mode"];
-            BeatPulseSettings.BeatPulseTrueColor = (bool)ConfigToken["Screensaver"]["BeatPulse"]["Activate True Color Mode"];
-            BeatPulseSettings.BeatPulseCycleColors = (bool)ConfigToken["Screensaver"]["BeatPulse"]["Cycle Colors"];
-            BeatPulseSettings.BeatPulseBeatColor = (string)(ConfigToken["Screensaver"]["BeatPulse"]["Beat Color"] ?? 17);
+            BeatPulseSettings.BeatPulse255Colors = (bool)ConfigToken["Screensaver"]["BeatPulse"]["Activate 255 colors"];
+            BeatPulseSettings.BeatPulseTrueColor = (bool)ConfigToken["Screensaver"]["BeatPulse"]["Activate true colors"];
+            BeatPulseSettings.BeatPulseCycleColors = (bool)ConfigToken["Screensaver"]["BeatPulse"]["Cycle colors"];
+            BeatPulseSettings.BeatPulseBeatColor = (string)(ConfigToken["Screensaver"]["BeatPulse"]["Beat color"] ?? 17);
             BeatPulseSettings.BeatPulseDelay = int.TryParse((string)ConfigToken["Screensaver"]["BeatPulse"]["Delay in Beats Per Minute"], out _) ? (int)ConfigToken["Screensaver"]["BeatPulse"]["Delay in Beats Per Minute"] : 120;
             BeatPulseSettings.BeatPulseMaxSteps = int.TryParse((string)ConfigToken["Screensaver"]["BeatPulse"]["Max Fade Steps"], out _) ? (int)ConfigToken["Screensaver"]["BeatPulse"]["Max Fade Steps"] : 25;
             BeatPulseSettings.BeatPulseMinimumRedColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["BeatPulse"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["BeatPulse"]["Delay in Milliseconds"] : 1000;
@@ -2223,10 +2271,10 @@ namespace KS.Kernel.Configuration
             EdgePulseSettings.EdgePulseMaximumBlueColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["EdgePulse"]["Maximum blue color level"], out _) ? (int)ConfigToken["Screensaver"]["EdgePulse"]["Maximum blue color level"] : 255;
 
             // > BeatEdgePulse
-            BeatEdgePulseSettings.BeatEdgePulse255Colors = (bool)ConfigToken["Screensaver"]["BeatEdgePulse"]["Activate 255 Color Mode"];
-            BeatEdgePulseSettings.BeatEdgePulseTrueColor = (bool)ConfigToken["Screensaver"]["BeatEdgePulse"]["Activate True Color Mode"];
-            BeatEdgePulseSettings.BeatEdgePulseCycleColors = (bool)ConfigToken["Screensaver"]["BeatEdgePulse"]["Cycle Colors"];
-            BeatEdgePulseSettings.BeatEdgePulseBeatColor = (string)(ConfigToken["Screensaver"]["BeatEdgePulse"]["Beat Color"] ?? 17);
+            BeatEdgePulseSettings.BeatEdgePulse255Colors = (bool)ConfigToken["Screensaver"]["BeatEdgePulse"]["Activate 255 colors"];
+            BeatEdgePulseSettings.BeatEdgePulseTrueColor = (bool)ConfigToken["Screensaver"]["BeatEdgePulse"]["Activate true colors"];
+            BeatEdgePulseSettings.BeatEdgePulseCycleColors = (bool)ConfigToken["Screensaver"]["BeatEdgePulse"]["Cycle colors"];
+            BeatEdgePulseSettings.BeatEdgePulseBeatColor = (string)(ConfigToken["Screensaver"]["BeatEdgePulse"]["Beat color"] ?? 17);
             BeatEdgePulseSettings.BeatEdgePulseDelay = int.TryParse((string)ConfigToken["Screensaver"]["BeatEdgePulse"]["Delay in Beats Per Minute"], out _) ? (int)ConfigToken["Screensaver"]["BeatEdgePulse"]["Delay in Beats Per Minute"] : 120;
             BeatEdgePulseSettings.BeatEdgePulseMaxSteps = int.TryParse((string)ConfigToken["Screensaver"]["BeatEdgePulse"]["Max Fade Steps"], out _) ? (int)ConfigToken["Screensaver"]["BeatEdgePulse"]["Max Fade Steps"] : 25;
             BeatEdgePulseSettings.BeatEdgePulseMinimumRedColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["BeatEdgePulse"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["BeatEdgePulse"]["Delay in Milliseconds"] : 1000;
@@ -2271,7 +2319,7 @@ namespace KS.Kernel.Configuration
             GradientSettings.GradientMaximumBlueColorLevelEnd = int.TryParse((string)ConfigToken["Screensaver"]["Gradient"]["Maximum blue color level for end color"], out _) ? (int)ConfigToken["Screensaver"]["Gradient"]["Maximum blue color level for end color"] : 255;
 
             // > Lightspeed
-            LightspeedSettings.LightspeedCycleColors = (bool)ConfigToken["Screensaver"]["Lightspeed"]["Cycle Colors"];
+            LightspeedSettings.LightspeedCycleColors = (bool)ConfigToken["Screensaver"]["Lightspeed"]["Cycle colors"];
             LightspeedSettings.LightspeedMinimumRedColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Lightspeed"]["Minimum red color level"], out _) ? (int)ConfigToken["Screensaver"]["Lightspeed"]["Minimum red color level"] : 0;
             LightspeedSettings.LightspeedMinimumGreenColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Lightspeed"]["Minimum green color level"], out _) ? (int)ConfigToken["Screensaver"]["Lightspeed"]["Minimum green color level"] : 0;
             LightspeedSettings.LightspeedMinimumBlueColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Lightspeed"]["Minimum blue color level"], out _) ? (int)ConfigToken["Screensaver"]["Lightspeed"]["Minimum blue color level"] : 0;
@@ -2308,6 +2356,8 @@ namespace KS.Kernel.Configuration
             Misc.Forecast.Forecast.PreferredUnit = ConfigToken["Misc"]["Preferred Unit for Temperature"] != null ? Enum.TryParse((string)ConfigToken["Misc"]["Preferred Unit for Temperature"], out Misc.Forecast.Forecast.PreferredUnit) ? Misc.Forecast.Forecast.PreferredUnit : UnitMeasurement.Metric : UnitMeasurement.Metric;
             TextEditShellCommon.TextEdit_AutoSaveFlag = (bool)ConfigToken["Misc"]["Enable text editor autosave"];
             TextEditShellCommon.TextEdit_AutoSaveInterval = int.TryParse((string)ConfigToken["Misc"]["Text editor autosave interval"], out _) ? (int)ConfigToken["Misc"]["Text editor autosave interval"] : 60;
+            HexEditShellCommon.HexEdit_AutoSaveFlag = (bool)ConfigToken["Misc"]["Enable hex editor autosave"];
+            HexEditShellCommon.HexEdit_AutoSaveInterval = int.TryParse((string)ConfigToken["Misc"]["Hex editor autosave interval"], out _) ? (int)ConfigToken["Misc"]["Hex editor autosave interval"] : 60;
             Flags.WrapListOutputs = (bool)ConfigToken["Misc"]["Wrap list outputs"];
             Flags.DrawBorderNotification = (bool)ConfigToken["Misc"]["Draw notification border"];
             ModManager.BlacklistedModsString = (string)ConfigToken["Misc"]["Blacklisted mods"] ?? "";
