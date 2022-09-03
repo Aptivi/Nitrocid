@@ -233,9 +233,20 @@ namespace KS.Kernel
                         Notifications.NotifySend(new Notification(Translate.DoTranslation("Previous boot failed"), KernelTools.LastKernelErrorException.Message, Notifications.NotifPriority.High, Notifications.NotifType.Normal));
                     }
 
-                    // Show license if new style used
+                    // Show license and dev notice if new style used
                     if (Flags.NewWelcomeStyle | Flags.EnableSplash)
                     {
+#if SPECIFIERDEV
+                        TextWriterColor.Write();
+                        TextWriterColor.Write("* " + Translate.DoTranslation("Looks like you were running the development version of the kernel. While you can see the aspects, it is frequently updated and might introduce bugs. It is recommended that you stay on the stable version."), true, ColorTools.ColTypes.DevelopmentWarning);
+#elif SPECIFIERRC
+                        TextWriterColor.Write();
+                        TextWriterColor.Write("* " + Translate.DoTranslation("Looks like you were running the release candidate version. It is recommended that you stay on the stable version."), true, ColorTools.ColTypes.DevelopmentWarning);
+#elif SPECIFIERREL == false
+                        TextWriterColor.Write();
+                        TextWriterColor.Write("* " + Translate.DoTranslation("Looks like you were running an unsupported version. It's highly advisable not to use this version."), true, ColorTools.ColTypes.DevelopmentWarning);
+#endif
+
                         TextWriterColor.Write();
                         SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("License information"), true, ColorTools.ColTypes.Stage);
                         WelcomeMessage.WriteLicense(false);
