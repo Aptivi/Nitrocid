@@ -72,17 +72,17 @@ namespace KS.Kernel
 #if SPECIFIERREL
         internal readonly static string ConsoleTitle = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker}";
 #elif SPECIFIERRC
-        internal readonly static string ConsoleTitle = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Release Candidate";
+        internal readonly static string ConsoleTitle = $"[RC] Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker}";
 #elif SPECIFIERDEV
 #if MILESTONESPECIFIERALPHA
-        internal readonly static string ConsoleTitle = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Developer Preview - Milestone 4";
+        internal readonly static string ConsoleTitle = $"[DEV - M4] Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker}";
 #elif MILESTONESPECIFIERBETA
-        internal readonly static string ConsoleTitle = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Developer Preview - Beta 1";
+        internal readonly static string ConsoleTitle = $"[DEV - B1] Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker}";
 #else
-        internal readonly static string ConsoleTitle = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Developer Preview";
+        internal readonly static string ConsoleTitle = $"[DEV - PRE] Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker}";
 #endif
 #else
-        internal readonly static string ConsoleTitle = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Unsupported Release";
+        internal readonly static string ConsoleTitle = $"[UNSUPPORTED] Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker}";
 #endif
 
         /// <summary>
