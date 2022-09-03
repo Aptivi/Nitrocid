@@ -492,9 +492,7 @@ namespace KS.Kernel
                 }
             }
 
-            // Clear the console and reset the colors
-            ConsoleBase.ConsoleWrapper.ResetColor();
-            ConsoleBase.ConsoleWrapper.Clear();
+            // Exit now.
             Environment.Exit(0);
         }
 
