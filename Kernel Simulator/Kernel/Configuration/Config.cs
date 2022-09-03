@@ -1405,7 +1405,6 @@ namespace KS.Kernel.Configuration
                         var Setting = SectionToken[OptionIndex];
                         string VariableKeyName = (string)Setting["Name"];
                         string Variable = (string)Setting["Variable"];
-                        string IntType = (string)Setting["IntType"] ?? "";
 
                         // Get variable value and type
                         SettingsKeyType VariableType = (SettingsKeyType)Convert.ToInt32(Enum.Parse(typeof(SettingsKeyType), (string)Setting["Type"]));
