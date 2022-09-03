@@ -247,6 +247,10 @@ namespace KS.Misc.Splash
                 SplashThread.Wait();
                 SplashThread.Stop();
                 ConsoleBase.ConsoleWrapper.CursorVisible = true;
+
+                // Reset the SplashClosing variable in case it needs to be open again. Some splashes don't do anything if they detect that the splash
+                // screen is closing.
+                CurrentSplash.SplashClosing = false;
             }
             SplashReport._KernelBooted = true;
         }
