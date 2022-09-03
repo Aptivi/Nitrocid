@@ -37,6 +37,14 @@ namespace KS.Kernel.Debugging
         /// <summary>
         /// Fatal error message
         /// </summary>
-        F
+        F,
+        /// <summary>
+        /// Debug verbose message
+        /// </summary>
+        D,
+        /// <summary>
+        /// Trace verbose message
+        /// </summary>
+        T
     }
 }
