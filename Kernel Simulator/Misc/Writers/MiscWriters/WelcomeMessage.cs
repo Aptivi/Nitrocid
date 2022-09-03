@@ -67,11 +67,11 @@ namespace KS.Misc.Writers.MiscWriters
                 // Finally, write the message
                 if (Flags.StartScroll)
                 {
-                    TextWriterSlowColor.WriteSlowly(MessageWrite, true, 10d, ColorTools.ColTypes.Banner, Kernel.Kernel.KernelVersion);
+                    TextWriterSlowColor.WriteSlowly(MessageWrite, true, 10d, ColorTools.ColTypes.Banner, Kernel.Kernel.KernelVersion.ToString());
                 }
                 else
                 {
-                    TextWriterColor.Write(MessageWrite, true, ColorTools.ColTypes.Banner, Kernel.Kernel.KernelVersion);
+                    TextWriterColor.Write(MessageWrite, true, ColorTools.ColTypes.Banner, Kernel.Kernel.KernelVersion.ToString());
                 }
 
                 if (Flags.NewWelcomeStyle)

@@ -57,7 +57,8 @@ namespace KS.Kernel
     {
 
         // Variables
-        public readonly static string KernelVersion = GetExecutingAssembly().GetName().Version.ToString();
+        public readonly static Version KernelVersion = GetExecutingAssembly().GetName().Version;
+        public readonly static Version KernelApiVersion = new(FileVersionInfo.GetVersionInfo(GetExecutingAssembly().Location).FileVersion);
         public readonly static string NewLine = Environment.NewLine;
         public readonly static Events.Events KernelEventManager = new();
         internal static Stopwatch StageTimer = new();
@@ -70,19 +71,19 @@ namespace KS.Kernel
 #endif
         // Release specifiers (SPECIFIER: REL, RC, or DEV | MILESTONESPECIFIER: ALPHA, BETA, NONE | None satisfied: Unsupported Release)
 #if SPECIFIERREL
-        internal readonly static string ConsoleTitle = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker}";
+        internal readonly static string ConsoleTitle = $"Kernel Simulator v{KernelVersion} (API v{KernelApiVersion}) - {KernelSimulatorMoniker}";
 #elif SPECIFIERRC
-        internal readonly static string ConsoleTitle = $"[RC] Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker}";
+        internal readonly static string ConsoleTitle = $"[RC] Kernel Simulator v{KernelVersion} (API v{KernelApiVersion}) - {KernelSimulatorMoniker}";
 #elif SPECIFIERDEV
 #if MILESTONESPECIFIERALPHA
-        internal readonly static string ConsoleTitle = $"[DEV - M4] Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker}";
+        internal readonly static string ConsoleTitle = $"[DEV - M4] Kernel Simulator v{KernelVersion} (API v{KernelApiVersion}) - {KernelSimulatorMoniker}";
 #elif MILESTONESPECIFIERBETA
-        internal readonly static string ConsoleTitle = $"[DEV - B1] Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker}";
+        internal readonly static string ConsoleTitle = $"[DEV - B1] Kernel Simulator v{KernelVersion} (API v{KernelApiVersion}) - {KernelSimulatorMoniker}";
 #else
-        internal readonly static string ConsoleTitle = $"[DEV - PRE] Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker}";
+        internal readonly static string ConsoleTitle = $"[DEV - PRE] Kernel Simulator v{KernelVersion} (API v{KernelApiVersion}) - {KernelSimulatorMoniker}";
 #endif
 #else
-        internal readonly static string ConsoleTitle = $"[UNSUPPORTED] Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker}";
+        internal readonly static string ConsoleTitle = $"[UNSUPPORTED] Kernel Simulator v{KernelVersion} (API v{KernelApiVersion}) - {KernelSimulatorMoniker}";
 #endif
 
         /// <summary>
