@@ -168,7 +168,7 @@ namespace KS.Shell
                         try
                         {
                             // Set title
-                            ConsoleExtensions.SetTitle($"{Kernel.Kernel.ConsoleTitle} - {finalCommand}");
+                            ConsoleExtensions.SetTitle($"{Kernel.Kernel.ConsoleTitle} - {FullCommand}");
 
                             // Iterate through mod commands
                             DebugWriter.WriteDebug(DebugLevel.I, "Mod commands probing started with {0} from {1}", finalCommand, FullCommand);
