@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System;
 using System.Collections.Generic;
 using KS.Shell.ShellBase.Commands;
 
@@ -42,6 +43,10 @@ namespace KS.Modifications
         /// Mod version
         /// </summary>
         string Version { get; set; }
+        /// <summary>
+        /// Minimum supported API version that the mod supports
+        /// </summary>
+        Version MinimumSupportedApiVersion { get; }
         /// <summary>
         /// Code executed when starting mod
         /// </summary>

@@ -131,6 +131,22 @@ namespace KS.Modifications
                     string ModDepPath = ModPath + "Deps/" + Path.GetFileNameWithoutExtension(modFile) + "-" + FileVersionInfo.GetVersionInfo(ModPath + modFile).FileVersion + "/";
                     AssemblyLookup.AddPathToAssemblySearchPath(ModDepPath);
 
+                    // Check the API version defined by mod to ensure that we don't load mods that are API incompatible
+                    try
+                    {
+                        if (Kernel.Kernel.KernelApiVersion < script.MinimumSupportedApiVersion)
+                        {
+                            DebugWriter.WriteDebug(DebugLevel.W, "Trying to load mod {0} that requires minimum api version {1} on api {2}", modFile, script.MinimumSupportedApiVersion.ToString(), Kernel.Kernel.KernelApiVersion.ToString());
+                            SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} requires minimum API version {1}, but you have version {2}. Upgrading Kernel Simulator usually helps. Mod parsing failed."), 0, ColorTools.ColTypes.Error, modFile, script.MinimumSupportedApiVersion.ToString(), Kernel.Kernel.KernelApiVersion.ToString());
+                            return;
+                        }
+                    }
+                    catch
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.W, "Trying to load mod {0} that has undeterminable minimum API version.", modFile);
+                        SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} may not work properly with this API version. Mod may fail to start up. Contact the mod vendor to get a latest copy."), 0, ColorTools.ColTypes.Error, modFile);
+                    }
+
                     // Start the mod
                     script.StartMod();
                     DebugWriter.WriteDebug(DebugLevel.I, "script.StartMod() initialized. Mod name: {0} | Mod part: {1} | Version: {2}", script.Name, script.ModPart, script.Version);
