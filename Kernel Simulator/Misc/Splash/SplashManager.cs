@@ -221,12 +221,24 @@ namespace KS.Misc.Splash
         /// <summary>
         /// Opens the splash screen
         /// </summary>
-        public static void OpenSplash()
+        public static void OpenSplash() => OpenSplash(CurrentSplash);
+
+        /// <summary>
+        /// Opens the splash screen
+        /// </summary>
+        /// <param name="splashName">Splash name</param>
+        public static void OpenSplash(string splashName) => OpenSplash(Splashes[splashName].EntryPoint);
+
+        /// <summary>
+        /// Opens the splash screen
+        /// </summary>
+        /// <param name="splash">Splash interface to use</param>
+        public static void OpenSplash(ISplash splash)
         {
             if (Flags.EnableSplash)
             {
                 ConsoleBase.ConsoleWrapper.CursorVisible = false;
-                CurrentSplash.Opening();
+                splash.Opening();
                 SplashThread.Stop();
                 SplashThread.Start();
             }

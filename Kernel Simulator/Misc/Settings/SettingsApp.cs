@@ -272,6 +272,11 @@ namespace KS.Misc.Settings
                         TextWriterColor.Write(" {0}) " + Translate.DoTranslation("Preview screensaver"), true, ColorTools.ColTypes.BackOption, MaxOptions + 1);
                         TextWriterColor.Write(" {0}) " + Translate.DoTranslation("Go Back...") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.BackOption, MaxOptions + 2);
                     }
+                    else if (CurrentSettingsType == SettingsType.Splash)
+                    {
+                        TextWriterColor.Write(" {0}) " + Translate.DoTranslation("Preview splash"), true, ColorTools.ColTypes.BackOption, MaxOptions + 1);
+                        TextWriterColor.Write(" {0}) " + Translate.DoTranslation("Go Back...") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.BackOption, MaxOptions + 2);
+                    }
                     else
                     {
                         TextWriterColor.Write(" {0}) " + Translate.DoTranslation("Go Back...") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.BackOption, MaxOptions + 1);
@@ -299,7 +304,30 @@ namespace KS.Misc.Settings
                             DebugWriter.WriteDebug(DebugLevel.I, "User requested screensaver preview.");
                             Screensaver.Screensaver.ShowSavers(Section);
                         }
-                        else if (AnswerInt == MaxOptions + 1 | AnswerInt == MaxOptions + 2 & CurrentSettingsType == SettingsType.Screensaver)
+                        else if (AnswerInt == MaxOptions + 1 & CurrentSettingsType == SettingsType.Splash)
+                        {
+                            // Preview splash
+                            string tempSplashName = Splash.SplashManager.SplashName;
+                            DebugWriter.WriteDebug(DebugLevel.I, "User requested splash preview.");
+                            Splash.SplashManager.SplashName = Section;
+                            Splash.SplashManager.OpenSplash(Section);
+                            Splash.SplashReport._KernelBooted = false;
+                            Splash.SplashReport._Progress = 0;
+                            System.Threading.Thread.Sleep(1000);
+                            Splash.SplashReport.ReportProgress("20%", 20, ColorTools.ColTypes.Neutral);
+                            System.Threading.Thread.Sleep(1000);
+                            Splash.SplashReport.ReportProgress("40%", 20, ColorTools.ColTypes.Neutral);
+                            System.Threading.Thread.Sleep(1000);
+                            Splash.SplashReport.ReportProgress("60%", 20, ColorTools.ColTypes.Neutral);
+                            System.Threading.Thread.Sleep(1000);
+                            Splash.SplashReport.ReportProgress("80%", 20, ColorTools.ColTypes.Neutral);
+                            System.Threading.Thread.Sleep(1000);
+                            Splash.SplashReport.ReportProgress("100%", 20, ColorTools.ColTypes.Neutral);
+                            System.Threading.Thread.Sleep(1000);
+                            Splash.SplashManager.CloseSplash();
+                            Splash.SplashManager.SplashName = tempSplashName;
+                        }
+                        else if (AnswerInt == MaxOptions + 1 | AnswerInt == MaxOptions + 2 & (CurrentSettingsType == SettingsType.Screensaver || CurrentSettingsType == SettingsType.Splash))
                         {
                             // Go Back...
                             DebugWriter.WriteDebug(DebugLevel.I, "User requested exit. Returning...");
