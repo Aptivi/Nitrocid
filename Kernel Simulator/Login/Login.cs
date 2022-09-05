@@ -31,6 +31,8 @@ using KS.Misc.Screensaver;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.RSS;
 using KS.Shell.ShellBase.Shells;
+using KS.Users;
+using KS.Users.Groups;
 
 namespace KS.Login
 {
@@ -138,7 +140,7 @@ namespace KS.Login
                             {
                                 string SelectedUser = UserManagement.SelectUser(AnswerUserInt);
                                 DebugWriter.WriteDebug(DebugLevel.I, "Username correct. Finding if the user is disabled...");
-                                if (!PermissionManagement.HasPermission(SelectedUser, PermissionManagement.PermissionType.Disabled))
+                                if (!GroupManagement.HasGroup(SelectedUser, GroupManagement.GroupType.Disabled))
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.I, "User can log in. (User is not in disabled list)");
                                     ShowPasswordPrompt(SelectedUser);
@@ -194,7 +196,7 @@ namespace KS.Login
                     else if (Users.ContainsKey(answeruser))
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Username correct. Finding if the user is disabled...");
-                        if (!PermissionManagement.HasPermission(answeruser, PermissionManagement.PermissionType.Disabled))
+                        if (!GroupManagement.HasGroup(answeruser, GroupManagement.GroupType.Disabled))
                         {
                             DebugWriter.WriteDebug(DebugLevel.I, "User can log in. (User is not in disabled list)");
                             ShowPasswordPrompt(answeruser);

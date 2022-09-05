@@ -30,7 +30,6 @@ using KS.Files.Querying;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Login;
 using KS.Misc.Execution;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
@@ -42,6 +41,7 @@ using KS.Shell.ShellBase.Aliases;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.UnifiedCommands;
+using KS.Users.Groups;
 
 namespace KS.Shell
 {
@@ -211,7 +211,7 @@ namespace KS.Shell
                                     // Check to see if a user is able to execute a command
                                     if (ShellType == ShellType.Shell)
                                     {
-                                        if (PermissionManagement.HasPermission(Login.Login.CurrentUser.Username, PermissionManagement.PermissionType.Administrator) == false & Commands[finalCommand].Flags.HasFlag(CommandFlags.Strict))
+                                        if (GroupManagement.HasGroup(Login.Login.CurrentUser.Username, GroupManagement.GroupType.Administrator) == false & Commands[finalCommand].Flags.HasFlag(CommandFlags.Strict))
                                         {
                                             DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", finalCommand);
                                             TextWriterColor.Write(Translate.DoTranslation("You don't have permission to use {0}"), true, ColorTools.ColTypes.Error, finalCommand);

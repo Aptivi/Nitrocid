@@ -29,10 +29,11 @@ using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Encryption;
 using KS.Misc.Writers.ConsoleWriters;
+using KS.Users.Groups;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace KS.Login
+namespace KS.Users
 {
     public static class UserManagement
     {
@@ -67,7 +68,7 @@ namespace KS.Login
             /// <summary>
             /// List of permissions
             /// </summary>
-            Permissions
+            Groups
         }
 
         // ---------- User Management ----------
@@ -98,13 +99,13 @@ namespace KS.Login
                 }
 
                 // Add user locally
-                if (!Login.Users.ContainsKey(uninitUser))
+                if (!Login.Login.Users.ContainsKey(uninitUser))
                 {
-                    Login.Users.Add(uninitUser, unpassword);
+                    Login.Login.Users.Add(uninitUser, unpassword);
                 }
-                else if (Login.Users.ContainsKey(uninitUser) & ModifyExisting)
+                else if (Login.Login.Users.ContainsKey(uninitUser) & ModifyExisting)
                 {
-                    Login.Users[uninitUser] = unpassword;
+                    Login.Login.Users[uninitUser] = unpassword;
                 }
 
                 // Add user globally
@@ -140,7 +141,7 @@ namespace KS.Login
 
                 // Ready permissions
                 DebugWriter.WriteDebug(DebugLevel.I, "Username {0} added. Readying permissions...", uninitUser);
-                PermissionManagement.InitPermissionsForNewUser(uninitUser);
+                GroupManagement.InitGroupsForNewUser(uninitUser);
                 return true;
             }
             catch (Exception ex)
@@ -215,9 +216,9 @@ namespace KS.Login
                                 UserToken["password"] = Value;
                                 break;
                             }
-                        case UserProperty.Permissions:
+                        case UserProperty.Groups:
                             {
-                                throw new NotSupportedException("Use AddPermission and RemovePermission for this.");
+                                throw new NotSupportedException("Use AddGroup and RemoveGroup for this.");
                             }
 
                         default:
@@ -255,7 +256,7 @@ namespace KS.Login
                 DebugWriter.WriteDebug(DebugLevel.W, "Username is blank.");
                 throw new Kernel.Exceptions.UserCreationException(Translate.DoTranslation("Blank username."));
             }
-            else if (!Login.Users.ContainsKey(newUser))
+            else if (!Login.Login.Users.ContainsKey(newUser))
             {
                 try
                 {
@@ -309,32 +310,32 @@ namespace KS.Login
                 DebugWriter.WriteDebug(DebugLevel.W, "Username is blank.");
                 throw new Kernel.Exceptions.UserManagementException(Translate.DoTranslation("Blank username."));
             }
-            else if (Login.Users.ContainsKey(user) == false)
+            else if (Login.Login.Users.ContainsKey(user) == false)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Username {0} not found in list", user);
                 throw new Kernel.Exceptions.UserManagementException(Translate.DoTranslation("User {0} not found."), user);
             }
             // Try to remove user
-            else if (Login.Users.Keys.ToArray().Contains(user) & user == "root")
+            else if (Login.Login.Users.Keys.ToArray().Contains(user) & user == "root")
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "User is root, and is a system account");
                 throw new Kernel.Exceptions.UserManagementException(Translate.DoTranslation("User {0} isn't allowed to be removed."), user);
             }
-            else if (Login.Users.Keys.ToArray().Contains(user) & (user ?? "") == (Login.CurrentUser?.Username ?? ""))
+            else if (Login.Login.Users.Keys.ToArray().Contains(user) & (user ?? "") == (Login.Login.CurrentUser?.Username ?? ""))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "User has logged in, so can't delete self.");
                 throw new Kernel.Exceptions.UserManagementException(Translate.DoTranslation("User {0} is already logged in. Log-out and log-in as another admin."), user);
             }
-            else if (Login.Users.Keys.ToArray().Contains(user) & user != "root")
+            else if (Login.Login.Users.Keys.ToArray().Contains(user) & user != "root")
             {
                 try
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Removing permissions...");
-                    PermissionManagement.UserPermissions.Remove(user);
+                    GroupManagement.UserGroups.Remove(user);
 
                     // Remove user
                     DebugWriter.WriteDebug(DebugLevel.I, "Removing username {0}...", user);
-                    Login.Users.Remove(user);
+                    Login.Login.Users.Remove(user);
 
                     // Remove user from Users.json
                     foreach (JObject UserToken in UsersToken)
@@ -385,19 +386,19 @@ namespace KS.Login
         /// <param name="Username">New username</param>
         public static void ChangeUsername(string OldName, string Username)
         {
-            if (Login.Users.ContainsKey(OldName))
+            if (Login.Login.Users.ContainsKey(OldName))
             {
-                if (!Login.Users.ContainsKey(Username))
+                if (!Login.Login.Users.ContainsKey(Username))
                 {
                     try
                     {
                         // Store user password
-                        string Temporary = Login.Users[OldName];
+                        string Temporary = Login.Login.Users[OldName];
 
                         // Rename username in dictionary
-                        Login.Users.Remove(OldName);
-                        Login.Users.Add(Username, Temporary);
-                        PermissionManagement.PermissionEditForNewUser(OldName, Username);
+                        Login.Login.Users.Remove(OldName);
+                        Login.Login.Users.Add(Username, Temporary);
+                        GroupManagement.GroupEditForNewUser(OldName, Username);
 
                         // Rename username in Users.json
                         SetUserProperty(OldName, UserProperty.Username, Username);
@@ -461,7 +462,7 @@ namespace KS.Login
             {
                 InitializeUser("root", "", true, true);
             }
-            PermissionManagement.AddPermission(PermissionManagement.PermissionType.Administrator, "root");
+            GroupManagement.AddGroup(GroupManagement.GroupType.Administrator, "root");
         }
 
         /// <summary>
@@ -474,13 +475,13 @@ namespace KS.Login
         public static void ChangePassword(string Target, string CurrentPass, string NewPass)
         {
             CurrentPass = Encryption.GetEncryptedString(CurrentPass, Encryption.Algorithms.SHA256);
-            if ((CurrentPass ?? "") == (Login.Users[Target] ?? ""))
+            if ((CurrentPass ?? "") == (Login.Login.Users[Target] ?? ""))
             {
-                if (PermissionManagement.HasPermission(Login.CurrentUser.Username, PermissionManagement.PermissionType.Administrator) & Login.Users.ContainsKey(Target))
+                if (GroupManagement.HasGroup(Login.Login.CurrentUser.Username, GroupManagement.GroupType.Administrator) & Login.Login.Users.ContainsKey(Target))
                 {
                     // Change password locally
                     NewPass = Encryption.GetEncryptedString(NewPass, Encryption.Algorithms.SHA256);
-                    Login.Users[Target] = NewPass;
+                    Login.Login.Users[Target] = NewPass;
 
                     // Change password globally
                     SetUserProperty(Target, UserProperty.Password, NewPass);
@@ -488,11 +489,11 @@ namespace KS.Login
                     // Raise event
                     Kernel.Kernel.KernelEventManager.RaiseUserPasswordChanged(Target);
                 }
-                else if (PermissionManagement.HasPermission(Login.CurrentUser.Username, PermissionManagement.PermissionType.Administrator) & !Login.Users.ContainsKey(Target))
+                else if (GroupManagement.HasGroup(Login.Login.CurrentUser.Username, GroupManagement.GroupType.Administrator) & !Login.Login.Users.ContainsKey(Target))
                 {
                     throw new Kernel.Exceptions.UserManagementException(Translate.DoTranslation("User not found"));
                 }
-                else if (PermissionManagement.HasPermission(Target, PermissionManagement.PermissionType.Administrator) & !PermissionManagement.HasPermission(Login.CurrentUser.Username, PermissionManagement.PermissionType.Administrator))
+                else if (GroupManagement.HasGroup(Target, GroupManagement.GroupType.Administrator) & !GroupManagement.HasGroup(Login.Login.CurrentUser.Username, GroupManagement.GroupType.Administrator))
                 {
                     throw new Kernel.Exceptions.UserManagementException(Translate.DoTranslation("You are not authorized to change password of {0} because the target was an admin."), Target);
                 }
@@ -539,14 +540,14 @@ namespace KS.Login
         /// <param name="IncludeDisabled">Include disabled users</param>
         public static List<string> ListAllUsers(bool IncludeAnonymous = false, bool IncludeDisabled = false)
         {
-            var UsersList = new List<string>(Login.Users.Keys);
+            var UsersList = new List<string>(Login.Login.Users.Keys);
             if (!IncludeAnonymous)
             {
-                UsersList.RemoveAll(new Predicate<string>(x => PermissionManagement.HasPermission(x, PermissionManagement.PermissionType.Anonymous) == true));
+                UsersList.RemoveAll(new Predicate<string>(x => GroupManagement.HasGroup(x, GroupManagement.GroupType.Anonymous) == true));
             }
             if (!IncludeDisabled)
             {
-                UsersList.RemoveAll(new Predicate<string>(x => PermissionManagement.HasPermission(x, PermissionManagement.PermissionType.Disabled) == true));
+                UsersList.RemoveAll(new Predicate<string>(x => GroupManagement.HasGroup(x, GroupManagement.GroupType.Disabled) == true));
             }
             return UsersList;
         }
@@ -572,7 +573,7 @@ namespace KS.Login
         {
             var UsersList = ListAllUsers(IncludeAnonymous, IncludeDisabled);
             string SelectedUsername = UsersList[UserNumber - 1];
-            return Login.Users.Keys.First(x => (x ?? "") == (SelectedUsername ?? ""));
+            return Login.Login.Users.Keys.First(x => (x ?? "") == (SelectedUsername ?? ""));
         }
 
         /// <summary>
@@ -668,7 +669,7 @@ namespace KS.Login
             // Fourth, write root password
             while (Step == 4)
             {
-                if ((Login.Users["root"] ?? "") == (Encryption.GetEmptyHash(Encryption.Algorithms.SHA256) ?? ""))
+                if ((Login.Login.Users["root"] ?? "") == (Encryption.GetEmptyHash(Encryption.Algorithms.SHA256) ?? ""))
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Write the administrator password. Make sure that you don't use this account unless you really know what you're doing."), true, ColorTools.ColTypes.Neutral);
                     TextWriterColor.Write(">> ", false, ColorTools.ColTypes.Input);
@@ -695,14 +696,14 @@ namespace KS.Login
             // Finally, create an account and change root password
             AddUser(AnswerUsername, AnswerPassword);
             if (AnswerType == 1)
-                PermissionManagement.AddPermission(PermissionManagement.PermissionType.Administrator, AnswerUsername);
+                GroupManagement.AddGroup(GroupManagement.GroupType.Administrator, AnswerUsername);
 
             // Actually change the root password if specified
             if (!string.IsNullOrEmpty(AnswerRootPassword))
             {
                 AnswerRootPassword = Encryption.GetEncryptedString(AnswerRootPassword, Encryption.Algorithms.SHA256);
                 SetUserProperty("root", UserProperty.Password, AnswerRootPassword);
-                Login.Users["root"] = AnswerRootPassword;
+                Login.Login.Users["root"] = AnswerRootPassword;
             }
 
             // Write a congratulating message
@@ -715,7 +716,7 @@ namespace KS.Login
         /// <param name="User">The target user</param>
         public static bool UserExists(string User)
         {
-            return Login.Users.ContainsKey(User);
+            return Login.Login.Users.ContainsKey(User);
         }
 
         /// <summary>
@@ -723,7 +724,7 @@ namespace KS.Login
         /// </summary>
         public static string GetUserDollarSign()
         {
-            return GetUserDollarSign(Login.CurrentUser.Username);
+            return GetUserDollarSign(Login.Login.CurrentUser.Username);
         }
 
         /// <summary>
@@ -734,7 +735,7 @@ namespace KS.Login
         {
             if (UserExists(User))
             {
-                if (PermissionManagement.HasPermission(User, PermissionManagement.PermissionType.Administrator))
+                if (GroupManagement.HasGroup(User, GroupManagement.GroupType.Administrator))
                 {
                     return "#";
                 }

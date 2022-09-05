@@ -24,7 +24,6 @@ using System.Linq;
 using FluentFTP;
 using KS.ConsoleBase;
 using KS.Files.Querying;
-using KS.Login;
 using KS.Kernel.Configuration;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
@@ -33,6 +32,8 @@ using KS.Shell.ShellBase.Aliases;
 using KS.Shell.ShellBase.Shells;
 using static KS.ConsoleBase.Colors.ColorTools;
 using KS.Kernel.Debugging.RemoteDebug;
+using KS.Users.Groups;
+using KS.Users;
 
 namespace KSConverter
 {
@@ -208,17 +209,17 @@ namespace KSConverter
                         if (Administrator == "True")
                         {
                             Debug.WriteLine($"Adding the Administrator permission to {Username}...");
-                            PermissionManagement.AddPermission(PermissionManagement.PermissionType.Administrator, Username);
+                            GroupManagement.AddGroup(GroupManagement.GroupType.Administrator, Username);
                         }
                         if (Disabled == "True")
                         {
                             Debug.WriteLine($"Adding the Disabled permission to {Username}...");
-                            PermissionManagement.AddPermission(PermissionManagement.PermissionType.Disabled, Username);
+                            GroupManagement.AddGroup(GroupManagement.GroupType.Disabled, Username);
                         }
                         if (Anonymous == "True")
                         {
                             Debug.WriteLine($"Adding the Anonymous permission to {Username}...");
-                            PermissionManagement.AddPermission(PermissionManagement.PermissionType.Anonymous, Username);
+                            GroupManagement.AddGroup(GroupManagement.GroupType.Anonymous, Username);
                         }
                     }
                 }

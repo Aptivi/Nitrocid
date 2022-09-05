@@ -24,15 +24,15 @@ namespace KS.Kernel.Exceptions
     /// <summary>
     /// Thrown when there is a user management error
     /// </summary>
-    public class PermissionManagementException : Exception
+    public class GroupManagementException : Exception
     {
 
         /// <inheritdoc/>
-        public PermissionManagementException() : base()
+        public GroupManagementException() : base()
         {
         }
         /// <inheritdoc/>
-        public PermissionManagementException(string message) : base(message)
+        public GroupManagementException(string message) : base(message)
         {
         }
         /// <summary>
@@ -40,11 +40,11 @@ namespace KS.Kernel.Exceptions
         /// </summary>
         /// <param name="vars">List of arguments</param>
         /// <param name="message">Message to be printed</param>
-        public PermissionManagementException(string message, params object[] vars) : base(StringManipulate.FormatString(message, vars))
+        public GroupManagementException(string message, params object[] vars) : base(StringManipulate.FormatString(message, vars))
         {
         }
         /// <inheritdoc/>
-        public PermissionManagementException(string message, Exception e) : base(message, e)
+        public GroupManagementException(string message, Exception e) : base(message, e)
         {
         }
         /// <summary>
@@ -53,7 +53,7 @@ namespace KS.Kernel.Exceptions
         /// <param name="vars">List of arguments</param>
         /// <param name="e">Inner exception</param>
         /// <param name="message">Message to be printed</param>
-        public PermissionManagementException(string message, Exception e, params object[] vars) : base(StringManipulate.FormatString(message, vars), e)
+        public GroupManagementException(string message, Exception e, params object[] vars) : base(StringManipulate.FormatString(message, vars), e)
         {
         }
 

@@ -32,7 +32,6 @@ using KS.Hardware;
 using KS.Kernel.Configuration;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Login;
 using KS.Misc.Notifications;
 using KS.Misc.Probers.Motd;
 using KS.Misc.Reflection;
@@ -46,6 +45,8 @@ using KS.Network.RPC;
 using ReadLineReboot;
 using KS.Kernel.Debugging;
 using KS.Kernel.Debugging.RemoteDebug;
+using KS.Users.Groups;
+using KS.Users;
 
 #if SPECIFIERREL
 using KS.Kernel.Updates;
@@ -212,8 +213,8 @@ namespace KS.Kernel
                     SplashReport.ReportProgress(Translate.DoTranslation("System account initialized"), 5, ColorTools.ColTypes.Neutral);
                     UserManagement.InitializeUsers();
                     SplashReport.ReportProgress(Translate.DoTranslation("Users initialized"), 5, ColorTools.ColTypes.Neutral);
-                    PermissionManagement.LoadPermissions();
-                    SplashReport.ReportProgress(Translate.DoTranslation("Permissions loaded"), 5, ColorTools.ColTypes.Neutral);
+                    GroupManagement.LoadGroups();
+                    SplashReport.ReportProgress(Translate.DoTranslation("Groups loaded"), 5, ColorTools.ColTypes.Neutral);
 
                     // Reset console state and stop stage timer
                     KernelTools.ReportNewStage(5, "");

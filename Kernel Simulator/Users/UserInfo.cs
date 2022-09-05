@@ -16,7 +16,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-namespace KS.Login
+using KS.Users.Groups;
+
+namespace KS.Users
 {
     public class UserInfo
     {
@@ -28,7 +30,7 @@ namespace KS.Login
         /// <summary>
         /// The user permissions
         /// </summary>
-        public PermissionManagement.PermissionType Permissions { get; private set; }
+        public GroupManagement.GroupType Groups { get; private set; }
 
         /// <summary>
         /// Makes a new class instance of current user info
@@ -36,7 +38,7 @@ namespace KS.Login
         protected internal UserInfo(string Username)
         {
             this.Username = Username;
-            Permissions = PermissionManagement.UserPermissions[Username];
+            Groups = GroupManagement.UserGroups[Username];
         }
 
     }

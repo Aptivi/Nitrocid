@@ -330,9 +330,9 @@ namespace KS.Network.FTP.Filesystem
         /// Changes the permissions of a remote file
         /// </summary>
         /// <param name="Target">Target file</param>
-        /// <param name="Chmod">Permissions in CHMOD format. See https://man7.org/linux/man-pages/man2/chmod.2.html chmod(2) for more info.</param>
+        /// <param name="Chmod">Groups in CHMOD format. See https://man7.org/linux/man-pages/man2/chmod.2.html chmod(2) for more info.</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool FTPChangePermissions(string Target, int Chmod)
+        public static bool FTPChangeGroups(string Target, int Chmod)
         {
             if (FTPShellCommon.FtpConnected)
             {

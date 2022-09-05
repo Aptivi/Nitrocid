@@ -21,8 +21,8 @@ using KS.ConsoleBase.Colors;
 using KS.Files.Folders;
 using KS.Kernel;
 using KS.Languages;
-using KS.Login;
 using KS.Network;
+using KS.Users.Groups;
 
 namespace KS.Shell.Prompts.Presets.UESH
 {
@@ -47,7 +47,7 @@ namespace KS.Shell.Prompts.Presets.UESH
         internal override string PresetPromptBuilder()
         {
             var PresetStringBuilder = new StringBuilder();
-            char UserDollarSign = PermissionManagement.HasPermission(Login.Login.CurrentUser.Username, PermissionManagement.PermissionType.Administrator) ? '#' : '$';
+            char UserDollarSign = GroupManagement.HasGroup(Login.Login.CurrentUser.Username, GroupManagement.GroupType.Administrator) ? '#' : '$';
 
             // Build the preset
             if (!Flags.Maintenance)

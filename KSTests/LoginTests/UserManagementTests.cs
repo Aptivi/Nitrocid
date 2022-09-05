@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Login;
+using KS.Users;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using Shouldly;
@@ -57,7 +57,7 @@ namespace KSTests.LoginTests
         public void TestGetUserProperty()
         {
             UserManagement.GetUserProperty("Account3", UserManagement.UserProperty.Username).ShouldBe("Account3");
-            ((JArray)UserManagement.GetUserProperty("Account3", UserManagement.UserProperty.Permissions)).ShouldBeEmpty();
+            ((JArray)UserManagement.GetUserProperty("Account3", UserManagement.UserProperty.Groups)).ShouldBeEmpty();
         }
 
         /// <summary>

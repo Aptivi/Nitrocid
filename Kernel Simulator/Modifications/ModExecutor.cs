@@ -20,10 +20,10 @@ using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Login;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
+using KS.Users.Groups;
 
 namespace KS.Modifications
 {
@@ -91,7 +91,7 @@ namespace KS.Modifications
                         if (Script.Commands[parts[0]].Type == ShellType.Shell)
                         {
                             // Command type is of shell. Check the user privileges for restricted commands.
-                            if (Script.Commands[parts[0]].Flags.HasFlag(CommandFlags.Strict) & PermissionManagement.HasPermission(Login.Login.CurrentUser.Username, PermissionManagement.PermissionType.Administrator) | !Script.Commands[parts[0]].Flags.HasFlag(CommandFlags.Strict))
+                            if (Script.Commands[parts[0]].Flags.HasFlag(CommandFlags.Strict) & GroupManagement.HasGroup(Login.Login.CurrentUser.Username, GroupManagement.GroupType.Administrator) | !Script.Commands[parts[0]].Flags.HasFlag(CommandFlags.Strict))
                             {
                                 // User is authorized to use the command, or the command isn't strict
                                 ScriptCommandExecutable = true;

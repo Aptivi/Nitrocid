@@ -108,3 +108,7 @@ These have no relationship with the kernel directly.
 ##### Moved HostName from Kernel to NetworkTools
 
 It has no relationship with the kernel either.
+
+##### Renamed `permissions` to `groups`
+
+Renamed `permissions` to `groups` as it has been incorrectly named after the permissions. It could have been more accurately described as user groups.

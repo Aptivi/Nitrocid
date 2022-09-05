@@ -16,7 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Login;
+using KS.Users;
+using KS.Users.Groups;
 using NUnit.Framework;
 using Shouldly;
 
@@ -24,7 +25,7 @@ namespace KSTests.LoginTests
 {
 
     [TestFixture]
-    public class UserPermissionManagementTests
+    public class UserGroupManagementTests
     {
 
         [SetUp]
@@ -40,8 +41,8 @@ namespace KSTests.LoginTests
         [Description("Management")]
         public void TestAddUserPerm()
         {
-            PermissionManagement.TryAddPermission(PermissionManagement.PermissionType.Administrator, "Account").ShouldBeTrue();
-            PermissionManagement.TryAddPermission(PermissionManagement.PermissionType.Disabled, "Account").ShouldBeTrue();
+            GroupManagement.TryAddGroup(GroupManagement.GroupType.Administrator, "Account").ShouldBeTrue();
+            GroupManagement.TryAddGroup(GroupManagement.GroupType.Disabled, "Account").ShouldBeTrue();
         }
 
         /// <summary>
@@ -51,8 +52,8 @@ namespace KSTests.LoginTests
         [Description("Management")]
         public void TestRemoveUserPerm()
         {
-            PermissionManagement.TryRemovePermission(PermissionManagement.PermissionType.Administrator, "Account").ShouldBeTrue();
-            PermissionManagement.TryRemovePermission(PermissionManagement.PermissionType.Disabled, "Account").ShouldBeTrue();
+            GroupManagement.TryRemoveGroup(GroupManagement.GroupType.Administrator, "Account").ShouldBeTrue();
+            GroupManagement.TryRemoveGroup(GroupManagement.GroupType.Disabled, "Account").ShouldBeTrue();
         }
 
         /// <summary>
@@ -60,9 +61,9 @@ namespace KSTests.LoginTests
         /// </summary>
         [Test]
         [Description("Management")]
-        public void TestLoadPermissions()
+        public void TestLoadGroups()
         {
-            PermissionManagement.TryLoadPermissions().ShouldBeTrue();
+            GroupManagement.TryLoadGroups().ShouldBeTrue();
         }
 
         [TearDown]

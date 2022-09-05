@@ -20,9 +20,9 @@ using System;
 using System.IO;
 using KS.Files;
 using KS.Files.Querying;
-using KS.Login;
 using KS.Kernel.Configuration;
 using NUnit.Framework;
+using KS.Users;
 
 namespace KSTests
 {

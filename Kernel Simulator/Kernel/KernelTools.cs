@@ -33,7 +33,6 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Debugging.RemoteDebug;
 using KS.Kernel.Power;
 using KS.Languages;
-using KS.Login;
 using KS.Misc.Calendar.Events;
 using KS.Misc.Calendar.Reminders;
 using KS.Misc.Notifications;
@@ -51,6 +50,8 @@ using KS.Scripting;
 using KS.Shell.ShellBase.Aliases;
 using KS.Shell.ShellBase.Commands;
 using KS.TimeDate;
+using KS.Users;
+using KS.Users.Groups;
 
 #if SPECIFIERREL
 using static KS.ConsoleBase.Colors.ColorTools;
@@ -316,7 +317,7 @@ namespace KS.Kernel
             // Reset every variable below
             if (Flags.ArgsInjected == false)
                 ArgumentPrompt.EnteredArguments.Clear();
-            PermissionManagement.UserPermissions.Clear();
+            GroupManagement.UserGroups.Clear();
             ReminderManager.Reminders.Clear();
             EventManager.CalendarEvents.Clear();
             Flags.ArgsOnBoot = false;
