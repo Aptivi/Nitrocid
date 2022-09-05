@@ -34,13 +34,31 @@ using KS.Misc.Writers.FancyWriters;
 
 namespace KS.Files.Folders
 {
+    /// <summary>
+    /// File listing module
+    /// </summary>
     public static class Listing
     {
 
+        /// <summary>
+        /// Whether to sort the list or not
+        /// </summary>
         public static bool SortList = true;
+        /// <summary>
+        /// Sort mode
+        /// </summary>
         public static FilesystemSortOptions SortMode = FilesystemSortOptions.FullName;
+        /// <summary>
+        /// Sort direction
+        /// </summary>
         public static FilesystemSortDirection SortDirection = FilesystemSortDirection.Ascending;
+        /// <summary>
+        /// Show file details when listing
+        /// </summary>
         public static bool ShowFileDetailsList = true;
+        /// <summary>
+        /// Show total size when listing
+        /// </summary>
         public static bool ShowTotalSizeInList;
 
         /// <summary>
