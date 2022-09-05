@@ -25,10 +25,19 @@ using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Misc.Games
 {
+    /// <summary>
+    /// Meteor shooter game module
+    /// </summary>
     public static class MeteorShooter
     {
 
+        /// <summary>
+        /// Use PowerLine characters for the spaceship?
+        /// </summary>
         public static bool MeteorUsePowerLine = true;
+        /// <summary>
+        /// Meteor speed in milliseconds
+        /// </summary>
         public static int MeteorSpeed = 10;
         internal readonly static KernelThread MeteorDrawThread = new("Meteor Shooter Draw Thread", true, DrawGame);
         internal static bool GameEnded = false;
@@ -143,7 +152,7 @@ namespace KS.Misc.Games
             GameEnded = false;
         }
 
-        public static void DrawGame()
+        private static void DrawGame()
         {
             try
             {
@@ -264,20 +273,20 @@ namespace KS.Misc.Games
             }
         }
 
-        public static void DrawSpaceship()
+        private static void DrawSpaceship()
         {
             char PowerLineSpaceship = Convert.ToChar(0xE0B0);
             char SpaceshipSymbol = MeteorUsePowerLine ? PowerLineSpaceship : '>';
             TextWriterWhereColor.WriteWhere(Convert.ToString(SpaceshipSymbol), 0, SpaceshipHeight, false, ConsoleColor.Green);
         }
 
-        public static void DrawMeteor(int MeteorX, int MeteorY)
+        private static void DrawMeteor(int MeteorX, int MeteorY)
         {
             char MeteorSymbol = '*';
             TextWriterWhereColor.WriteWhere(Convert.ToString(MeteorSymbol), MeteorX, MeteorY, false, ConsoleColor.Red);
         }
 
-        public static void DrawBullet(int BulletX, int BulletY)
+        private static void DrawBullet(int BulletX, int BulletY)
         {
             char BulletSymbol = '-';
             TextWriterWhereColor.WriteWhere(Convert.ToString(BulletSymbol), BulletX, BulletY, false, ConsoleColor.Cyan);
