@@ -170,7 +170,7 @@ namespace KS.Misc.Screensaver
                         if (!Flags.RebootRequested)
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "Screen time has reached.");
-                            LockScreen();
+                            ShowSavers(DefSaverName);
                         }
                     }
                 }

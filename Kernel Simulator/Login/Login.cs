@@ -312,9 +312,6 @@ namespace KS.Login
 
             // Sign in to user.
             CurrentUserInfo = new UserInfo(signedInUser);
-            if (Screensaver.LockMode == true)
-                Screensaver.LockMode = false;
-            DebugWriter.WriteDebug(DebugLevel.I, "Lock released.");
             Flags.ShowMOTDOnceFlag = true;
             if (Flags.ShowMAL)
                 TextWriterColor.Write(PlaceParse.ProbePlaces(MalParse.MAL), true, ColorTools.ColTypes.Banner);
