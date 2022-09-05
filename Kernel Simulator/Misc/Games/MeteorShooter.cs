@@ -42,7 +42,7 @@ namespace KS.Misc.Games
         /// <summary>
         /// Initializes the Meteor game
         /// </summary>
-        public static void InitializeMeteor()
+        public static void InitializeMeteor(bool simulation = false)
         {
             // Clear all bullets and meteors
             Bullets.Clear();
@@ -58,17 +58,61 @@ namespace KS.Misc.Games
             // Remove the cursor
             ConsoleBase.ConsoleWrapper.CursorVisible = false;
 
-            // Now, handle input
-            ConsoleKeyInfo Keypress;
-            while (!GameEnded)
+            // Now, handle input or simulate keypresses
+            if (!simulation)
             {
-                if (ConsoleBase.ConsoleWrapper.KeyAvailable)
+                // Player mode
+                ConsoleKeyInfo Keypress;
+                while (!GameEnded)
                 {
-                    // Read the key
-                    Keypress = ConsoleBase.ConsoleWrapper.ReadKey(true);
+                    if (ConsoleBase.ConsoleWrapper.KeyAvailable)
+                    {
+                        // Read the key
+                        Keypress = ConsoleBase.ConsoleWrapper.ReadKey(true);
+
+                        // Select command based on key value
+                        switch (Keypress.Key)
+                        {
+                            case ConsoleKey.UpArrow:
+                                {
+                                    if (SpaceshipHeight > 0)
+                                        SpaceshipHeight -= 1;
+                                    break;
+                                }
+                            case ConsoleKey.DownArrow:
+                                {
+                                    if (SpaceshipHeight < ConsoleBase.ConsoleWrapper.WindowHeight)
+                                        SpaceshipHeight += 1;
+                                    break;
+                                }
+                            case ConsoleKey.Spacebar:
+                                {
+                                    if (Bullets.Count < MaxBullets)
+                                        Bullets.Add(new Tuple<int, int>(1, SpaceshipHeight));
+                                    break;
+                                }
+                            case ConsoleKey.Escape:
+                                {
+                                    GameEnded = true;
+                                    break;
+                                }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                // Simulation mode
+                ConsoleKey Keypress = 0;
+                ConsoleKey[] possibleKeys = new[] { ConsoleKey.UpArrow, ConsoleKey.DownArrow, ConsoleKey.Spacebar };
+                while (!GameEnded)
+                {
+                    float PossibilityToChange = (float)RandomDriver.NextDouble();
+                    if ((int)Math.Round(PossibilityToChange) == 1)
+                        Keypress = possibleKeys[RandomDriver.Next(possibleKeys.Length)];
 
                     // Select command based on key value
-                    switch (Keypress.Key)
+                    switch (Keypress)
                     {
                         case ConsoleKey.UpArrow:
                             {
@@ -86,11 +130,6 @@ namespace KS.Misc.Games
                             {
                                 if (Bullets.Count < MaxBullets)
                                     Bullets.Add(new Tuple<int, int>(1, SpaceshipHeight));
-                                break;
-                            }
-                        case ConsoleKey.Escape:
-                            {
-                                GameEnded = true;
                                 break;
                             }
                     }
