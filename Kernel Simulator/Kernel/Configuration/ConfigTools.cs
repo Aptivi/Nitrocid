@@ -91,11 +91,25 @@ namespace KS.Kernel.Configuration
                 {
                     if (ConfigToken[Section.Key] is not null)
                     {
-                        // Check the normal keys
+                        // Check the normal keys count
                         if (ConfigToken[Section.Key].Count() != PristineConfigToken[Section.Key].Count())
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "Missing sections and/or keys in {0}. Config fix needed set to true.", Section.Key);
                             FixesNeeded = true;
+                        }
+                        else
+                        {
+                            // Count is the same, but verify the names
+                            for (int i = 0; i < PristineConfigToken[Section.Key].Count(); i++)
+                            {
+                                JProperty token = (JProperty)ConfigToken[Section.Key].ElementAt(i);
+                                JProperty pristineToken = (JProperty)PristineConfigToken[Section.Key].ElementAt(i);
+                                if (token.Name != pristineToken.Name)
+                                {
+                                    DebugWriter.WriteDebug(DebugLevel.W, "Name inconsistency. Expected: {0}, Actual: {1}. Config fix needed set to true.", pristineToken.Name, token.Name);
+                                    FixesNeeded = true;
+                                }
+                            }
                         }
 
                         // Check the screensaver keys
@@ -107,6 +121,20 @@ namespace KS.Kernel.Configuration
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.W, "Missing sections and/or keys in Screensaver > {0}. Config fix needed set to true.", ScreensaverSection.Name);
                                     FixesNeeded = true;
+                                }
+                                else
+                                {
+                                    // Count is the same, but verify the names
+                                    for (int i = 0; i < PristineConfigToken["Screensaver"][ScreensaverSection.Name].Count(); i++)
+                                    {
+                                        JProperty token = (JProperty)ConfigToken["Screensaver"][ScreensaverSection.Name].ElementAt(i);
+                                        JProperty pristineToken = (JProperty)PristineConfigToken["Screensaver"][ScreensaverSection.Name].ElementAt(i);
+                                        if (token.Name != pristineToken.Name)
+                                        {
+                                            DebugWriter.WriteDebug(DebugLevel.W, "Name inconsistency. Expected: {0}, Actual: {1}. Config fix needed set to true.", pristineToken.Name, token.Name);
+                                            FixesNeeded = true;
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -120,6 +148,20 @@ namespace KS.Kernel.Configuration
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.W, "Missing sections and/or keys in Splash > {0}. Config fix needed set to true.", SplashSection.Name);
                                     FixesNeeded = true;
+                                }
+                                else
+                                {
+                                    // Count is the same, but verify the names
+                                    for (int i = 0; i < PristineConfigToken["Screensaver"][SplashSection.Name].Count(); i++)
+                                    {
+                                        JProperty token = (JProperty)ConfigToken["Screensaver"][SplashSection.Name].ElementAt(i);
+                                        JProperty pristineToken = (JProperty)PristineConfigToken["Screensaver"][SplashSection.Name].ElementAt(i);
+                                        if (token.Name != pristineToken.Name)
+                                        {
+                                            DebugWriter.WriteDebug(DebugLevel.W, "Name inconsistency. Expected: {0}, Actual: {1}. Config fix needed set to true.", pristineToken.Name, token.Name);
+                                            FixesNeeded = true;
+                                        }
+                                    }
                                 }
                             }
                         }
