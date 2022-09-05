@@ -43,7 +43,7 @@ namespace KS.Shell.Prompts.Presets.Archive
         }
 
         /// <inheritdoc/>
-        public override ShellType PresetShellType { get; } = ShellType.ZIPShell;
+        public override ShellType PresetShellType { get; } = ShellType.ArchiveShell;
 
         internal override string PresetPromptBuilder()
         {

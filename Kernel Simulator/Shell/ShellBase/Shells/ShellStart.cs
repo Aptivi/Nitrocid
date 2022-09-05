@@ -27,12 +27,10 @@ using KS.Shell.Shells.Hex;
 using KS.Shell.Shells.HTTP;
 using KS.Shell.Shells.Json;
 using KS.Shell.Shells.Mail;
-using KS.Shell.Shells.Rar;
 using KS.Shell.Shells.RSS;
 using KS.Shell.Shells.SFTP;
 using KS.Shell.Shells.Text;
 using KS.Shell.Shells.UESH;
-using KS.Shell.Shells.Zip;
 using ReadLineReboot;
 
 namespace KS.Shell.ShellBase.Shells
@@ -149,10 +147,6 @@ namespace KS.Shell.ShellBase.Shells
                     {
                         return new KS.Shell.Shells.Test.TestShell();
                     }
-                case ShellType.ZIPShell:
-                    {
-                        return new ZipShell();
-                    }
                 case ShellType.RSSShell:
                     {
                         return new RSSShell();
@@ -168,10 +162,6 @@ namespace KS.Shell.ShellBase.Shells
                 case ShellType.HexShell:
                     {
                         return new HexShell();
-                    }
-                case ShellType.RARShell:
-                    {
-                        return new RarShell();
                     }
                 case ShellType.ArchiveShell:
                     {

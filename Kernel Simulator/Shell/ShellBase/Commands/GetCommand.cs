@@ -35,13 +35,11 @@ using KS.Shell.Shells.Hex;
 using KS.Shell.Shells.HTTP;
 using KS.Shell.Shells.Json;
 using KS.Shell.Shells.Mail;
-using KS.Shell.Shells.Rar;
 using KS.Shell.Shells.RSS;
 using KS.Shell.Shells.SFTP;
 using KS.Shell.Shells.Test;
 using KS.Shell.Shells.Text;
 using KS.Shell.Shells.UESH;
-using KS.Shell.Shells.Zip;
 
 namespace KS.Shell.ShellBase.Commands
 {
@@ -196,11 +194,6 @@ namespace KS.Shell.ShellBase.Commands
                         FinalCommands = new Dictionary<string, CommandInfo>(TextEditShellCommon.TextEdit_Commands);
                         break;
                     }
-                case ShellType.ZIPShell:
-                    {
-                        FinalCommands = new Dictionary<string, CommandInfo>(ZipShellCommon.ZipShell_Commands);
-                        break;
-                    }
                 case ShellType.JsonShell:
                     {
                         FinalCommands = new Dictionary<string, CommandInfo>(JsonShellCommon.JsonShell_Commands);
@@ -214,11 +207,6 @@ namespace KS.Shell.ShellBase.Commands
                 case ShellType.HexShell:
                     {
                         FinalCommands = new Dictionary<string, CommandInfo>(HexEditShellCommon.HexEdit_Commands);
-                        break;
-                    }
-                case ShellType.RARShell:
-                    {
-                        FinalCommands = new Dictionary<string, CommandInfo>(RarShellCommon.RarShell_Commands);
                         break;
                     }
                 case ShellType.ArchiveShell:

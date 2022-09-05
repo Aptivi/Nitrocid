@@ -28,18 +28,16 @@ namespace KS.Shell.ShellBase.Commands
     {
 
         internal static object 
-            CancelSync = new(), 
-            EditorCancelSync = new(), 
-            FTPCancelSync = new(), 
-            HTTPCancelSync = new(), 
-            JsonShellCancelSync = new(), 
-            MailCancelSync = new(), 
-            RssShellCancelSync = new(), 
-            SFTPCancelSync = new(), 
-            TestCancelSync = new(), 
-            ZipShellCancelSync = new(), 
-            HexEditorCancelSync = new(), 
-            RarShellCancelSync = new(),
+            CancelSync = new(),
+            EditorCancelSync = new(),
+            FTPCancelSync = new(),
+            HTTPCancelSync = new(),
+            JsonShellCancelSync = new(),
+            MailCancelSync = new(),
+            RssShellCancelSync = new(),
+            SFTPCancelSync = new(),
+            TestCancelSync = new(),
+            HexEditorCancelSync = new(),
             ArchiveShellCancelSync = new();
 
         public static void CancelCommand(object sender, ConsoleCancelEventArgs e)
@@ -88,10 +86,6 @@ namespace KS.Shell.ShellBase.Commands
                     {
                         return TestCancelSync;
                     }
-                case ShellType.ZIPShell:
-                    {
-                        return ZipShellCancelSync;
-                    }
                 case ShellType.RSSShell:
                     {
                         return RssShellCancelSync;
@@ -107,10 +101,6 @@ namespace KS.Shell.ShellBase.Commands
                 case ShellType.HexShell:
                     {
                         return HexEditorCancelSync;
-                    }
-                case ShellType.RARShell:
-                    {
-                        return RarShellCancelSync;
                     }
                 case ShellType.ArchiveShell:
                     {

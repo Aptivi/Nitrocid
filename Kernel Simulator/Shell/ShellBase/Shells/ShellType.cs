@@ -52,10 +52,6 @@ namespace KS.Shell.ShellBase.Shells
         /// </summary>
         RemoteDebugShell,
         /// <summary>
-        /// ZIP shell
-        /// </summary>
-        ZIPShell,
-        /// <summary>
         /// RSS Shell
         /// </summary>
         RSSShell,
@@ -71,10 +67,6 @@ namespace KS.Shell.ShellBase.Shells
         /// Hex shell
         /// </summary>
         HexShell,
-        /// <summary>
-        /// RAR shell
-        /// </summary>
-        RARShell,
         /// <summary>
         /// Archive shell
         /// </summary>

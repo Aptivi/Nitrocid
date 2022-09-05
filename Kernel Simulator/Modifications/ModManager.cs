@@ -41,12 +41,10 @@ using KS.Shell.Shells.Hex;
 using KS.Shell.Shells.HTTP;
 using KS.Shell.Shells.Json;
 using KS.Shell.Shells.Mail;
-using KS.Shell.Shells.Rar;
 using KS.Shell.Shells.RSS;
 using KS.Shell.Shells.SFTP;
 using KS.Shell.Shells.Test;
 using KS.Shell.Shells.Text;
-using KS.Shell.Shells.Zip;
 using KS.Shell.Shells.UESH;
 using KS.Kernel.Debugging;
 using KS.Kernel.Debugging.RemoteDebug;
@@ -590,10 +588,6 @@ namespace KS.Modifications
                     {
                         return TestShellCommon.Test_ModCommands;
                     }
-                case ShellType.ZIPShell:
-                    {
-                        return ZipShellCommon.ZipShell_ModCommands;
-                    }
                 case ShellType.RSSShell:
                     {
                         return RSSShellCommon.RSSModCommands;
@@ -609,10 +603,6 @@ namespace KS.Modifications
                 case ShellType.HexShell:
                     {
                         return HexEditShellCommon.HexEdit_ModCommands;
-                    }
-                case ShellType.RARShell:
-                    {
-                        return RarShellCommon.RarShell_ModCommands;
                     }
                 case ShellType.ArchiveShell:
                     {

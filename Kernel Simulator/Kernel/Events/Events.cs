@@ -449,18 +449,6 @@ namespace KS.Kernel.Events
         public event JsonCommandErrorEventHandler JsonCommandError;
 
         public delegate void JsonCommandErrorEventHandler(string Command, Exception Exception);
-        public event RarShellInitializedEventHandler RarShellInitialized;
-
-        public delegate void RarShellInitializedEventHandler();
-        public event RarPreExecuteCommandEventHandler RarPreExecuteCommand;
-
-        public delegate void RarPreExecuteCommandEventHandler(string Command);
-        public event RarPostExecuteCommandEventHandler RarPostExecuteCommand;
-
-        public delegate void RarPostExecuteCommandEventHandler(string Command);
-        public event RarCommandErrorEventHandler RarCommandError;
-
-        public delegate void RarCommandErrorEventHandler(string Command, Exception Exception);
         public event ArchiveShellInitializedEventHandler ArchiveShellInitialized;
 
         public delegate void ArchiveShellInitializedEventHandler();
@@ -615,10 +603,6 @@ namespace KS.Kernel.Events
             TestPreExecuteCommand += RespondTestPreExecuteCommand;
             TestPostExecuteCommand += RespondTestPostExecuteCommand;
             TestCommandError += RespondTestCommandError;
-            RarShellInitialized += RespondRarShellInitialized;
-            RarPreExecuteCommand += RespondRarPreExecuteCommand;
-            RarPostExecuteCommand += RespondRarPostExecuteCommand;
-            RarCommandError += RespondRarCommandError;
         }
 
         /// <summary>
@@ -3820,98 +3804,6 @@ namespace KS.Kernel.Events
         /// <summary>
         /// Makes the mod respond to the event of ZIP shell initialized
         /// </summary>
-        public void RespondRarShellInitialized()
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RarShellInitialized()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("RarShellInitialized");
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of ZIP pre-command execution
-        /// </summary>
-        public void RespondRarPreExecuteCommand(string Command)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RarPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("RarPreExecuteCommand", Command);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of ZIP post-command execution
-        /// </summary>
-        public void RespondRarPostExecuteCommand(string Command)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RarPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("RarPostExecuteCommand", Command);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of ZIP command error
-        /// </summary>
-        public void RespondRarCommandError(string Command, Exception Exception)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RarCommandError()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("RarCommandError", Command, Exception);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of ZIP shell initialized
-        /// </summary>
         public void RespondArchiveShellInitialized()
         {
             foreach (ModInfo ModPart in ModManager.Mods.Values)
@@ -5253,42 +5145,6 @@ namespace KS.Kernel.Events
             DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event TestCommandError() and responding in RespondTestCommandError()...");
             EventsManager.FiredEvents.Add("TestCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
             TestCommandError?.Invoke(Command, Exception);
-        }
-        /// <summary>
-        /// Raise an event of ZIP shell initialized
-        /// </summary>
-        public void RaiseRarShellInitialized()
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RarShellInitialized() and responding in RespondRarShellInitialized()...");
-            EventsManager.FiredEvents.Add("RarShellInitialized (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
-            RarShellInitialized?.Invoke();
-        }
-        /// <summary>
-        /// Raise an event of ZIP pre-command execution
-        /// </summary>
-        public void RaiseRarPreExecuteCommand(string Command)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RarPreExecuteCommand() and responding in RespondRarPreExecuteCommand()...");
-            EventsManager.FiredEvents.Add("RarPreExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
-            RarPreExecuteCommand?.Invoke(Command);
-        }
-        /// <summary>
-        /// Raise an event of ZIP post-command execution
-        /// </summary>
-        public void RaiseRarPostExecuteCommand(string Command)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RarPostExecuteCommand() and responding in RespondRarPostExecuteCommand()...");
-            EventsManager.FiredEvents.Add("RarPostExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
-            RarPostExecuteCommand?.Invoke(Command);
-        }
-        /// <summary>
-        /// Raise an event of ZIP command error
-        /// </summary>
-        public void RaiseRarCommandError(string Command, Exception Exception)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RarCommandError() and responding in RespondRarCommandError()...");
-            EventsManager.FiredEvents.Add("RarCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
-            RarCommandError?.Invoke(Command, Exception);
         }
         /// <summary>
         /// Raise an event of ZIP shell initialized

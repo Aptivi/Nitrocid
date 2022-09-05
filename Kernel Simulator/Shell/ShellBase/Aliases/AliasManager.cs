@@ -327,10 +327,6 @@ namespace KS.Shell.ShellBase.Aliases
                     {
                         return TestShellAliases;
                     }
-                case ShellType.ZIPShell:
-                    {
-                        return ZIPShellAliases;
-                    }
                 case ShellType.RSSShell:
                     {
                         return RSSShellAliases;
@@ -346,10 +342,6 @@ namespace KS.Shell.ShellBase.Aliases
                 case ShellType.HexShell:
                     {
                         return HexShellAliases;
-                    }
-                case ShellType.RARShell:
-                    {
-                        return RARShellAliases;
                     }
                 case ShellType.ArchiveShell:
                     {

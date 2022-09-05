@@ -250,12 +250,10 @@ namespace KS.Kernel.Configuration
                 { "SFTP Prompt Preset", PromptPresetManager.SFTPShellCurrentPreset.PresetName },
                 { "RSS Prompt Preset", PromptPresetManager.RSSShellCurrentPreset.PresetName },
                 { "Text Edit Prompt Preset", PromptPresetManager.TextShellCurrentPreset.PresetName },
-                { "Zip Shell Prompt Preset", PromptPresetManager.ZipShellCurrentPreset.PresetName },
                 { "Test Shell Prompt Preset", PromptPresetManager.TestShellCurrentPreset.PresetName },
                 { "JSON Shell Prompt Preset", PromptPresetManager.JsonShellCurrentPreset.PresetName },
                 { "Hex Edit Prompt Preset", PromptPresetManager.HexShellCurrentPreset.PresetName },
                 { "HTTP Shell Prompt Preset", PromptPresetManager.HTTPShellCurrentPreset.PresetName },
-                { "RAR Shell Prompt Preset", PromptPresetManager.RARShellCurrentPreset.PresetName },
                 { "Archive Shell Prompt Preset", PromptPresetManager.ArchiveShellCurrentPreset.PresetName },
                 { "Start color wheel in true color mode", Flags.ColorWheelTrueColor },
                 { "Default choice output type", ChoiceStyle.DefaultChoiceOutputType.ToString() }
@@ -1612,12 +1610,10 @@ namespace KS.Kernel.Configuration
             PromptPresetManager.SetPreset((string)ConfigToken["Shell"]["SFTP Prompt Preset"] ?? "Default", ShellType.SFTPShell, false);
             PromptPresetManager.SetPreset((string)ConfigToken["Shell"]["RSS Prompt Preset"] ?? "Default", ShellType.RSSShell, false);
             PromptPresetManager.SetPreset((string)ConfigToken["Shell"]["Text Edit Prompt Preset"] ?? "Default", ShellType.TextShell, false);
-            PromptPresetManager.SetPreset((string)ConfigToken["Shell"]["Zip Shell Prompt Preset"] ?? "Default", ShellType.ZIPShell, false);
             PromptPresetManager.SetPreset((string)ConfigToken["Shell"]["Test Shell Prompt Preset"] ?? "Default", ShellType.TestShell, false);
             PromptPresetManager.SetPreset((string)ConfigToken["Shell"]["JSON Shell Prompt Preset"] ?? "Default", ShellType.JsonShell, false);
             PromptPresetManager.SetPreset((string)ConfigToken["Shell"]["Hex Edit Prompt Preset"] ?? "Default", ShellType.HexShell, false);
             PromptPresetManager.SetPreset((string)ConfigToken["Shell"]["HTTP Shell Prompt Preset"] ?? "Default", ShellType.HTTPShell, false);
-            PromptPresetManager.SetPreset((string)ConfigToken["Shell"]["RAR Shell Prompt Preset"] ?? "Default", ShellType.RARShell, false);
             PromptPresetManager.SetPreset((string)ConfigToken["Shell"]["Archive Shell Prompt Preset"] ?? "Default", ShellType.ArchiveShell, false);
             Flags.ColorWheelTrueColor = (bool)ConfigToken["Shell"]["Start color wheel in true color mode"];
             ChoiceStyle.DefaultChoiceOutputType = (ConfigToken["Shell"]["Default choice output type"] != null) ? (Enum.TryParse((string)ConfigToken["Shell"]["Default choice output type"], out ChoiceStyle.DefaultChoiceOutputType) ? ChoiceStyle.DefaultChoiceOutputType : ChoiceStyle.ChoiceOutputType.Modern) : ChoiceStyle.ChoiceOutputType.Modern;

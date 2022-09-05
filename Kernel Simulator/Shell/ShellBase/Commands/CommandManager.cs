@@ -25,13 +25,11 @@ using KS.Shell.Shells.Hex;
 using KS.Shell.Shells.HTTP;
 using KS.Shell.Shells.Json;
 using KS.Shell.Shells.Mail;
-using KS.Shell.Shells.Rar;
 using KS.Shell.Shells.RSS;
 using KS.Shell.Shells.SFTP;
 using KS.Shell.Shells.Test;
 using KS.Shell.Shells.Text;
 using KS.Shell.Shells.UESH;
-using KS.Shell.Shells.Zip;
 
 namespace KS.Shell.ShellBase.Commands
 {
@@ -87,10 +85,6 @@ namespace KS.Shell.ShellBase.Commands
                     {
                         return TextEditShellCommon.TextEdit_Commands.ContainsKey(Command);
                     }
-                case ShellType.ZIPShell:
-                    {
-                        return ZipShellCommon.ZipShell_Commands.ContainsKey(Command);
-                    }
                 case ShellType.HTTPShell:
                     {
                         return HTTPShellCommon.HTTPCommands.ContainsKey(Command);
@@ -98,10 +92,6 @@ namespace KS.Shell.ShellBase.Commands
                 case ShellType.HexShell:
                     {
                         return HexEditShellCommon.HexEdit_Commands.ContainsKey(Command);
-                    }
-                case ShellType.RARShell:
-                    {
-                        return RarShellCommon.RarShell_Commands.ContainsKey(Command);
                     }
                 case ShellType.ArchiveShell:
                     {
@@ -123,7 +113,18 @@ namespace KS.Shell.ShellBase.Commands
         public static bool IsCommandFound(string Command)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}", Command);
-            return Shell.UnifiedCommandDict.ContainsKey(Command) | FTPShellCommon.FTPCommands.ContainsKey(Command) | JsonShellCommon.JsonShell_Commands.ContainsKey(Command) | MailShellCommon.MailCommands.ContainsKey(Command) | RemoteDebugCmd.DebugCommands.ContainsKey(Command) | RSSShellCommon.RSSCommands.ContainsKey(Command) | SFTPShellCommon.SFTPCommands.ContainsKey(Command) | UESHShellCommon.Commands.ContainsKey(Command) | TestShellCommon.Test_Commands.ContainsKey(Command) | TextEditShellCommon.TextEdit_Commands.ContainsKey(Command) | ZipShellCommon.ZipShell_Commands.ContainsKey(Command) | HTTPShellCommon.HTTPCommands.ContainsKey(Command) | HexEditShellCommon.HexEdit_Commands.ContainsKey(Command) | RarShellCommon.RarShell_Commands.ContainsKey(Command);
+            return Shell.UnifiedCommandDict.ContainsKey(Command)
+                 | FTPShellCommon.FTPCommands.ContainsKey(Command)
+                 | JsonShellCommon.JsonShell_Commands.ContainsKey(Command)
+                 | MailShellCommon.MailCommands.ContainsKey(Command)
+                 | RemoteDebugCmd.DebugCommands.ContainsKey(Command)
+                 | RSSShellCommon.RSSCommands.ContainsKey(Command)
+                 | SFTPShellCommon.SFTPCommands.ContainsKey(Command)
+                 | UESHShellCommon.Commands.ContainsKey(Command)
+                 | TestShellCommon.Test_Commands.ContainsKey(Command)
+                 | TextEditShellCommon.TextEdit_Commands.ContainsKey(Command)
+                 | HTTPShellCommon.HTTPCommands.ContainsKey(Command)
+                 | HexEditShellCommon.HexEdit_Commands.ContainsKey(Command);
         }
 
     }

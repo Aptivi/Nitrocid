@@ -33,13 +33,11 @@ using KS.Shell.Prompts.Presets.Hex;
 using KS.Shell.Prompts.Presets.HTTP;
 using KS.Shell.Prompts.Presets.Json;
 using KS.Shell.Prompts.Presets.Mail;
-using KS.Shell.Prompts.Presets.RAR;
 using KS.Shell.Prompts.Presets.RSS;
 using KS.Shell.Prompts.Presets.SFTP;
 using KS.Shell.Prompts.Presets.Test;
 using KS.Shell.Prompts.Presets.Text;
 using KS.Shell.Prompts.Presets.UESH;
-using KS.Shell.Prompts.Presets.ZIP;
 using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Prompts
@@ -70,16 +68,6 @@ namespace KS.Shell.Prompts
             { "PowerLineBG1", new TestPowerLineBG1Preset() },
             { "PowerLineBG2", new TestPowerLineBG2Preset() },
             { "PowerLineBG3", new TestPowerLineBG3Preset() }
-        };
-        internal readonly static Dictionary<string, PromptPresetBase> ZipShellPresets = new()
-        {
-            { "Default", new ZipDefaultPreset() },
-            { "PowerLine1", new ZipPowerLine1Preset() },
-            { "PowerLine2", new ZipPowerLine2Preset() },
-            { "PowerLine3", new ZipPowerLine3Preset() },
-            { "PowerLineBG1", new ZipPowerLineBG1Preset() },
-            { "PowerLineBG2", new ZipPowerLineBG2Preset() },
-            { "PowerLineBG3", new ZipPowerLineBG3Preset() }
         };
         internal readonly static Dictionary<string, PromptPresetBase> TextShellPresets = new()
         {
@@ -161,16 +149,6 @@ namespace KS.Shell.Prompts
             { "PowerLineBG2", new FtpPowerLineBG2Preset() },
             { "PowerLineBG3", new FtpPowerLineBG3Preset() }
         };
-        internal readonly static Dictionary<string, PromptPresetBase> RARShellPresets = new()
-        {
-            { "Default", new RarDefaultPreset() },
-            { "PowerLine1", new RarPowerLine1Preset() },
-            { "PowerLine2", new RarPowerLine2Preset() },
-            { "PowerLine3", new RarPowerLine3Preset() },
-            { "PowerLineBG1", new RarPowerLineBG1Preset() },
-            { "PowerLineBG2", new RarPowerLineBG2Preset() },
-            { "PowerLineBG3", new RarPowerLineBG3Preset() }
-        };
         internal readonly static Dictionary<string, PromptPresetBase> ArchiveShellPresets = new()
         {
             { "Default", new ArchiveDefaultPreset() },
@@ -185,7 +163,6 @@ namespace KS.Shell.Prompts
         // Custom shell presets used by mods
         internal readonly static Dictionary<string, PromptPresetBase> UESHCustomShellPresets = new();
         internal readonly static Dictionary<string, PromptPresetBase> TestCustomShellPresets = new();
-        internal readonly static Dictionary<string, PromptPresetBase> ZipCustomShellPresets = new();
         internal readonly static Dictionary<string, PromptPresetBase> TextCustomShellPresets = new();
         internal readonly static Dictionary<string, PromptPresetBase> SFTPCustomShellPresets = new();
         internal readonly static Dictionary<string, PromptPresetBase> RSSCustomShellPresets = new();
@@ -194,13 +171,11 @@ namespace KS.Shell.Prompts
         internal readonly static Dictionary<string, PromptPresetBase> HTTPCustomShellPresets = new();
         internal readonly static Dictionary<string, PromptPresetBase> HexCustomShellPresets = new();
         internal readonly static Dictionary<string, PromptPresetBase> FTPCustomShellPresets = new();
-        internal readonly static Dictionary<string, PromptPresetBase> RARCustomShellPresets = new();
         internal readonly static Dictionary<string, PromptPresetBase> ArchiveCustomShellPresets = new();
 
         // Current presets
         internal static PromptPresetBase UESHShellCurrentPreset = UESHShellPresets["Default"];
         internal static PromptPresetBase TestShellCurrentPreset = TestShellPresets["Default"];
-        internal static PromptPresetBase ZipShellCurrentPreset = ZipShellPresets["Default"];
         internal static PromptPresetBase TextShellCurrentPreset = TextShellPresets["Default"];
         internal static PromptPresetBase SFTPShellCurrentPreset = SFTPShellPresets["Default"];
         internal static PromptPresetBase RSSShellCurrentPreset = RSSShellPresets["Default"];
@@ -209,7 +184,6 @@ namespace KS.Shell.Prompts
         internal static PromptPresetBase HTTPShellCurrentPreset = HTTPShellPresets["Default"];
         internal static PromptPresetBase HexShellCurrentPreset = HexShellPresets["Default"];
         internal static PromptPresetBase FTPShellCurrentPreset = FTPShellPresets["Default"];
-        internal static PromptPresetBase RARShellCurrentPreset = RARShellPresets["Default"];
         internal static PromptPresetBase ArchiveShellCurrentPreset = ArchiveShellPresets["Default"];
 
         /// <summary>
@@ -265,12 +239,6 @@ namespace KS.Shell.Prompts
                         ConfigTools.SetConfigValue(Config.ConfigCategory.Shell, "Test Shell Prompt Preset", PresetName);
                         break;
                     }
-                case ShellType.ZIPShell:
-                    {
-                        ZipShellCurrentPreset = Presets[PresetName];
-                        ConfigTools.SetConfigValue(Config.ConfigCategory.Shell, "Zip Shell Prompt Preset", PresetName);
-                        break;
-                    }
                 case ShellType.TextShell:
                     {
                         TextShellCurrentPreset = Presets[PresetName];
@@ -319,12 +287,6 @@ namespace KS.Shell.Prompts
                         ConfigTools.SetConfigValue(Config.ConfigCategory.Shell, "FTP Prompt Preset", PresetName);
                         break;
                     }
-                case ShellType.RARShell:
-                    {
-                        RARShellCurrentPreset = Presets[PresetName];
-                        ConfigTools.SetConfigValue(Config.ConfigCategory.Shell, "RAR Shell Prompt Preset", PresetName);
-                        break;
-                    }
                 case ShellType.ArchiveShell:
                     {
                         ArchiveShellCurrentPreset = Presets[PresetName];
@@ -349,10 +311,6 @@ namespace KS.Shell.Prompts
                 case ShellType.TestShell:
                     {
                         return TestShellCurrentPreset;
-                    }
-                case ShellType.ZIPShell:
-                    {
-                        return ZipShellCurrentPreset;
                     }
                 case ShellType.TextShell:
                     {
@@ -386,10 +344,6 @@ namespace KS.Shell.Prompts
                     {
                         return FTPShellCurrentPreset;
                     }
-                case ShellType.RARShell:
-                    {
-                        return RARShellCurrentPreset;
-                    }
                 case ShellType.ArchiveShell:
                     {
                         return ArchiveShellCurrentPreset;
@@ -417,10 +371,6 @@ namespace KS.Shell.Prompts
                 case ShellType.TestShell:
                     {
                         return TestShellPresets;
-                    }
-                case ShellType.ZIPShell:
-                    {
-                        return ZipShellPresets;
                     }
                 case ShellType.TextShell:
                     {
@@ -454,10 +404,6 @@ namespace KS.Shell.Prompts
                     {
                         return FTPShellPresets;
                     }
-                case ShellType.RARShell:
-                    {
-                        return RARShellPresets;
-                    }
                 case ShellType.ArchiveShell:
                     {
                         return ArchiveShellPresets;
@@ -485,10 +431,6 @@ namespace KS.Shell.Prompts
                 case ShellType.TestShell:
                     {
                         return TestCustomShellPresets;
-                    }
-                case ShellType.ZIPShell:
-                    {
-                        return ZipCustomShellPresets;
                     }
                 case ShellType.TextShell:
                     {
@@ -521,10 +463,6 @@ namespace KS.Shell.Prompts
                 case ShellType.FTPShell:
                     {
                         return FTPCustomShellPresets;
-                    }
-                case ShellType.RARShell:
-                    {
-                        return RARCustomShellPresets;
                     }
                 case ShellType.ArchiveShell:
                     {

@@ -114,11 +114,6 @@ namespace KS.Shell.ShellBase.Commands
                         AliasedCommandList = AliasManager.TextShellAliases;
                         break;
                     }
-                case ShellType.ZIPShell:
-                    {
-                        AliasedCommandList = AliasManager.ZIPShellAliases;
-                        break;
-                    }
                 case ShellType.RemoteDebugShell:
                     {
                         AliasedCommandList = AliasManager.RemoteDebugAliases;
@@ -137,11 +132,6 @@ namespace KS.Shell.ShellBase.Commands
                 case ShellType.HexShell:
                     {
                         AliasedCommandList = AliasManager.HexShellAliases;
-                        break;
-                    }
-                case ShellType.RARShell:
-                    {
-                        AliasedCommandList = AliasManager.RARShellAliases;
                         break;
                     }
                 case ShellType.ArchiveShell:
