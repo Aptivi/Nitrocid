@@ -4147,4 +4147,16 @@
             }
         ]
     }
+    "Spin": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Path": "Screensaver.Spin",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "SpinDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            }
+        ]
+    },
 }

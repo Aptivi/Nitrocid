@@ -108,6 +108,7 @@ namespace KS.Misc.Screensaver
             { "random", new RandomSaverDisplay() },
             { "siren", new SirenDisplay() },
             { "snaker", new SnakerDisplay() },
+            { "spin", new SpinDisplay() },
             { "spotwrite", new SpotWriteDisplay() },
             { "stackbox", new StackBoxDisplay() },
             { "starfield", new StarfieldDisplay() },

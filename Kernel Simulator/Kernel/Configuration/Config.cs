@@ -1162,6 +1162,13 @@ namespace KS.Kernel.Configuration
             };
             ScreensaverConfig.Add("Siren", SirenConfig);
 
+            // Spin config json object
+            var SpinConfig = new JObject()
+            {
+                { "Delay in Milliseconds", SpinSettings.SpinDelay }
+            };
+            ScreensaverConfig.Add("Spin", SpinConfig);
+
             // Add a screensaver config json object to Screensaver section
             ConfigurationObject.Add("Screensaver", ScreensaverConfig);
 
@@ -2334,6 +2341,9 @@ namespace KS.Kernel.Configuration
             // > Siren
             SirenSettings.SirenDelay = int.TryParse((string)ConfigToken["Screensaver"]["Siren"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Siren"]["Delay in Milliseconds"] : 10;
             SirenSettings.SirenStyle = (string)(ConfigToken["Screensaver"]["Siren"]["Siren style"] ?? "Cop");
+
+            // > Spin
+            SpinSettings.SpinDelay = int.TryParse((string)ConfigToken["Screensaver"]["Spin"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Spin"]["Delay in Milliseconds"] : 10;
 
             // Splash Section - Splash-specific settings go below:
             // > Simple

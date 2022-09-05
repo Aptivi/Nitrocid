@@ -56,7 +56,8 @@ namespace KS.Misc.Splash
             { "EdgePulse", new SplashInfo("EdgePulse", new SplashEdgePulse()) },
             { "BeatEdgePulse", new SplashInfo("BeatEdgePulse", new SplashBeatEdgePulse()) },
             { "PowerLine", new SplashInfo("PowerLine", new SplashPowerLine()) },
-            { "PowerLineProgress", new SplashInfo("PowerLine", new SplashPowerLineProgress()) }
+            { "PowerLineProgress", new SplashInfo("PowerLine", new SplashPowerLineProgress()) },
+            { "Spin", new SplashInfo("Spin", new SplashSpin()) }
         };
 
         /// <summary>
