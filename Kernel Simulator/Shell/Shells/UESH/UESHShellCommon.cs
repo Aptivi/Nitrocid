@@ -109,7 +109,6 @@ namespace KS.Shell.Shells.UESH
             { "perm", new CommandInfo("perm", ShellType.Shell, "Manage permissions for users", new CommandArgumentInfo(new[] { "<userName> <Administrator/Disabled/Anonymous> <Allow/Disallow>" }, true, 3), new PermCommand(), CommandFlags.Strict) },
             { "ping", new CommandInfo("ping", ShellType.Shell, "Pings an address", new CommandArgumentInfo(new[] { "[times] <Address1> <Address2> ..." }, true, 1), new PingCommand()) },
             { "put", new CommandInfo("put", ShellType.Shell, "Uploads a file to specified website", new CommandArgumentInfo(new[] { "<FileName> <URL>" }, true, 2), new PutCommand()) },
-            { "rarshell", new CommandInfo("rarshell", ShellType.Shell, "The RAR shell", new CommandArgumentInfo(new[] { "<rarfile>" }, true, 1), new RarShellCommand(), CommandFlags.Obsolete) },
             { "reboot", new CommandInfo("reboot", ShellType.Shell, "Restarts your computer (WARNING: No syncing, because it is not a final kernel)", new CommandArgumentInfo(new[] { "[ip] [port]" }, false, 0), new RebootCommand()) },
             { "reloadconfig", new CommandInfo("reloadconfig", ShellType.Shell, "Reloads configuration file that is edited.", new CommandArgumentInfo(), new ReloadConfigCommand(), CommandFlags.Strict) },
             { "reloadsaver", new CommandInfo("reloadsaver", ShellType.Shell, "Reloads screensaver file in KSMods", new CommandArgumentInfo(new[] { "<customsaver>" }, true, 1), new ReloadSaverCommand(), CommandFlags.Strict) },
@@ -155,8 +154,7 @@ namespace KS.Shell.Shells.UESH
             { "verify", new CommandInfo("verify", ShellType.Shell, "Verifies sanity of the file", new CommandArgumentInfo(new[] { "<MD5/SHA1/SHA256/SHA384/SHA512> <calculatedhash> <hashfile/expectedhash> <file>" }, true, 4), new VerifyCommand()) },
             { "weather", new CommandInfo("weather", ShellType.Shell, "Shows weather info for specified city. Uses OpenWeatherMap.", new CommandArgumentInfo(new[] { "[-list] <CityID/CityName> [apikey]" }, true, 1), new WeatherCommand()) },
             { "wrap", new CommandInfo("wrap", ShellType.Shell, "Wraps the console output", new CommandArgumentInfo(new[] { "<command>" }, true, 1), new WrapCommand()) },
-            { "zip", new CommandInfo("zip", ShellType.Shell, "Creates a ZIP archive", new CommandArgumentInfo(new[] { "<zipfile> <path> [-fast|-nocomp|-nobasedir]" }, true, 2), new ZipCommand()) },
-            { "zipshell", new CommandInfo("zipshell", ShellType.Shell, "Opens a ZIP archive", new CommandArgumentInfo(new[] { "<zipfile>" }, true, 1), new ZipShellCommand(), CommandFlags.Obsolete) }
+            { "zip", new CommandInfo("zip", ShellType.Shell, "Creates a ZIP archive", new CommandArgumentInfo(new[] { "<zipfile> <path> [-fast|-nocomp|-nobasedir]" }, true, 2), new ZipCommand()) }
         };
     }
 }
