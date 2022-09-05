@@ -30,13 +30,13 @@ namespace KS.Misc.Games
 
         public static bool MeteorUsePowerLine = true;
         public static int MeteorSpeed = 10;
+        internal readonly static KernelThread MeteorDrawThread = new("Meteor Shooter Draw Thread", true, DrawGame);
+        internal static bool GameEnded = false;
         private static int SpaceshipHeight = 0;
-        private static bool GameEnded = false;
         private readonly static int MaxBullets = 10;
         private readonly static List<Tuple<int, int>> Bullets = new();
         private readonly static int MaxMeteors = 10;
         private readonly static List<Tuple<int, int>> Meteors = new();
-        private readonly static KernelThread MeteorDrawThread = new("Meteor Shooter Draw Thread", true, DrawGame);
         private readonly static Random RandomDriver = new();
 
         /// <summary>
@@ -133,6 +133,7 @@ namespace KS.Misc.Games
                                 break;
                             }
                     }
+                    ThreadManager.SleepNoBlock(100, Screensaver.ScreensaverDisplayer.ScreensaverDisplayerThread);
                 }
             }
 

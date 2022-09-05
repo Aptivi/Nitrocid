@@ -34,6 +34,10 @@ namespace KS.Misc.Screensaver
         /// </summary>
         void ScreensaverLogic();
         /// <summary>
+        /// The outro logic once the screensaver is done displaying.
+        /// </summary>
+        void ScreensaverOutro();
+        /// <summary>
         /// The name of screensaver, usually the assembly name of the custom screensaver
         /// </summary>
         string ScreensaverName { get; set; }

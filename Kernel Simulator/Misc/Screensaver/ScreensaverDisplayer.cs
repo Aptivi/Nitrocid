@@ -50,11 +50,15 @@ namespace KS.Misc.Screensaver
             catch (ThreadInterruptedException)
             {
                 Misc.Screensaver.Screensaver.HandleSaverCancel();
-                OutOfRandom = true;
             }
             catch (Exception ex)
             {
                 Misc.Screensaver.Screensaver.HandleSaverError(ex);
+            }
+            finally
+            {
+                Screensaver.ScreensaverOutro();
+                OutOfRandom = true;
             }
         }
 

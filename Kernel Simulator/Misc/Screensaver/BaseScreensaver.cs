@@ -56,5 +56,10 @@ namespace KS.Misc.Screensaver
         {
             ThreadManager.SleepNoBlock(10L, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
+
+        /// <summary>
+        /// Screensaver outro
+        /// </summary>
+        public virtual void ScreensaverOutro() { }
     }
 }

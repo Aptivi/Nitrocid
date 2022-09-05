@@ -46,5 +46,13 @@ namespace KS.Misc.Screensaver.Displays
             MeteorShooter.InitializeMeteor(true);
         }
 
+        /// <inheritdoc/>
+        public override void ScreensaverOutro()
+        {
+            MeteorShooter.MeteorDrawThread.Stop();
+            MeteorShooter.MeteorDrawThread.Wait();
+            MeteorShooter.GameEnded = false;
+        }
+
     }
 }
