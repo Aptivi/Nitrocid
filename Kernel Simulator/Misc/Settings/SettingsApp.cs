@@ -72,7 +72,7 @@ namespace KS.Misc.Settings
                     }
                     else
                     {
-                        TextWriterColor.Write(" {0}) " + Translate.DoTranslation(Section.Name + " Settings..."), true, ColorTools.ColTypes.Option, SectionIndex + 1);
+                        TextWriterColor.Write(" {0}) " + Section.First["DisplayAs"], true, ColorTools.ColTypes.Option, SectionIndex + 1);
                     }
                 }
                 TextWriterColor.Write();
@@ -213,12 +213,14 @@ namespace KS.Misc.Settings
                 var SectionTokenGeneral = SettingsToken[Section];
                 var SectionToken = SectionTokenGeneral["Keys"];
                 var SectionDescription = SectionTokenGeneral["Desc"];
+                var SectionDisplayName = SectionTokenGeneral["DisplayAs"] ?? Section;
+                bool SectionTranslateName = SectionTokenGeneral["DisplayAs"] != null;
                 int MaxOptions = SectionToken.Count();
 
                 while (!SectionFinished)
                 {
                     ConsoleBase.ConsoleWrapper.Clear();
-                    SeparatorWriterColor.WriteSeparator(Translate.DoTranslation(Section + " Settings..."), true);
+                    SeparatorWriterColor.WriteSeparator(SectionTranslateName ? Translate.DoTranslation((string)SectionDisplayName) : (string)SectionDisplayName, true);
                     TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation((string)SectionDescription) + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.Neutral);
 
                     // List options
