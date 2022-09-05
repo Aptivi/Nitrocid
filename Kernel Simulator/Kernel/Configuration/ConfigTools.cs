@@ -152,10 +152,10 @@ namespace KS.Kernel.Configuration
                                 else
                                 {
                                     // Count is the same, but verify the names
-                                    for (int i = 0; i < PristineConfigToken["Screensaver"][SplashSection.Name].Count(); i++)
+                                    for (int i = 0; i < PristineConfigToken["Splash"][SplashSection.Name].Count(); i++)
                                     {
-                                        JProperty token = (JProperty)ConfigToken["Screensaver"][SplashSection.Name].ElementAt(i);
-                                        JProperty pristineToken = (JProperty)PristineConfigToken["Screensaver"][SplashSection.Name].ElementAt(i);
+                                        JProperty token = (JProperty)ConfigToken["Splash"][SplashSection.Name].ElementAt(i);
+                                        JProperty pristineToken = (JProperty)PristineConfigToken["Splash"][SplashSection.Name].ElementAt(i);
                                         if (token.Name != pristineToken.Name)
                                         {
                                             DebugWriter.WriteDebug(DebugLevel.W, "Name inconsistency. Expected: {0}, Actual: {1}. Config fix needed set to true.", pristineToken.Name, token.Name);
