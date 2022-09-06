@@ -124,7 +124,7 @@ namespace KS.Users
                     }
                     if (!UserExists)
                     {
-                        var NewUser = new JObject(new JProperty("username", uninitUser), new JProperty("password", unpassword), new JProperty("permissions", new JArray()));
+                        var NewUser = new JObject(new JProperty("username", uninitUser), new JProperty("password", unpassword), new JProperty("groups", new JArray()));
                         UsersToken.Add(NewUser);
                     }
                     else if (UserExists & ModifyExisting)
@@ -134,7 +134,7 @@ namespace KS.Users
                 }
                 else
                 {
-                    var NewUser = new JObject(new JProperty("username", uninitUser), new JProperty("password", unpassword), new JProperty("permissions", new JArray()));
+                    var NewUser = new JObject(new JProperty("username", uninitUser), new JProperty("password", unpassword), new JProperty("groups", new JArray()));
                     UsersToken.Add(NewUser);
                 }
                 File.WriteAllText(Paths.GetKernelPath(KernelPathType.Users), JsonConvert.SerializeObject(UsersToken, Formatting.Indented));
