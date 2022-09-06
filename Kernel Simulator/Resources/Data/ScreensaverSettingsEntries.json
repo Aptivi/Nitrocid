@@ -4146,7 +4146,7 @@
                 "Description": "The siren style."
             }
         ]
-    }
+    },
     "Spin": {
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Spin",
@@ -4158,5 +4158,5 @@
                 "Description": "How many milliseconds to wait before making the next write?"
             }
         ]
-    },
+    }
 }
