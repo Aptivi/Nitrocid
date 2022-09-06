@@ -77,7 +77,7 @@ namespace KS.Kernel
         internal readonly static string ConsoleTitle = $"[RC] Kernel Simulator v{KernelVersion} (API v{KernelApiVersion}) - {KernelSimulatorMoniker}";
 #elif SPECIFIERDEV
 #if MILESTONESPECIFIERALPHA
-        internal readonly static string ConsoleTitle = $"[DEV - M4] Kernel Simulator v{KernelVersion} (API v{KernelApiVersion}) - {KernelSimulatorMoniker}";
+        internal readonly static string ConsoleTitle = $"[DEV - M5] Kernel Simulator v{KernelVersion} (API v{KernelApiVersion}) - {KernelSimulatorMoniker}";
 #elif MILESTONESPECIFIERBETA
         internal readonly static string ConsoleTitle = $"[DEV - B1] Kernel Simulator v{KernelVersion} (API v{KernelApiVersion}) - {KernelSimulatorMoniker}";
 #else
