@@ -28,438 +28,295 @@ using KS.Modifications;
 
 namespace KS.Kernel.Events
 {
-    public class Events
+    internal class Events
     {
 
         // These events are fired by their Raise<EventName>() subs and are responded by their Respond<EventName>() subs.
         public event KernelStartedEventHandler KernelStarted;
-
         public delegate void KernelStartedEventHandler();
         public event PreLoginEventHandler PreLogin;
-
         public delegate void PreLoginEventHandler();
         public event PostLoginEventHandler PostLogin;
-
         public delegate void PostLoginEventHandler(string Username);
         public event LoginErrorEventHandler LoginError;
-
         public delegate void LoginErrorEventHandler(string Username, LoginErrorReasons Reason);
         public event ShellInitializedEventHandler ShellInitialized;
-
         public delegate void ShellInitializedEventHandler();
         public event PreExecuteCommandEventHandler PreExecuteCommand;
-
         public delegate void PreExecuteCommandEventHandler(string Command);
         public event PostExecuteCommandEventHandler PostExecuteCommand;
-
         public delegate void PostExecuteCommandEventHandler(string Command);
         public event KernelErrorEventHandler KernelError;
-
         public delegate void KernelErrorEventHandler(KernelErrorLevel ErrorType, bool Reboot, long RebootTime, string Description, Exception Exc, object[] Variables);
         public event ContKernelErrorEventHandler ContKernelError;
-
         public delegate void ContKernelErrorEventHandler(KernelErrorLevel ErrorType, bool Reboot, long RebootTime, string Description, Exception Exc, object[] Variables);
         public event PreShutdownEventHandler PreShutdown;
-
         public delegate void PreShutdownEventHandler();
         public event PostShutdownEventHandler PostShutdown;
-
         public delegate void PostShutdownEventHandler();
         public event PreRebootEventHandler PreReboot;
-
         public delegate void PreRebootEventHandler();
         public event PostRebootEventHandler PostReboot;
-
         public delegate void PostRebootEventHandler();
         public event PreShowScreensaverEventHandler PreShowScreensaver;
-
         public delegate void PreShowScreensaverEventHandler(string Screensaver);
         public event PostShowScreensaverEventHandler PostShowScreensaver;
-
         public delegate void PostShowScreensaverEventHandler(string Screensaver); // After a key is pressed after screensaver is shown
         public event PreUnlockEventHandler PreUnlock;
-
         public delegate void PreUnlockEventHandler(string Screensaver);
         public event PostUnlockEventHandler PostUnlock;
-
         public delegate void PostUnlockEventHandler(string Screensaver);
         public event CommandErrorEventHandler CommandError;
-
         public delegate void CommandErrorEventHandler(string Command, Exception Exception);
         public event PreReloadConfigEventHandler PreReloadConfig;
-
         public delegate void PreReloadConfigEventHandler();
         public event PostReloadConfigEventHandler PostReloadConfig;
-
         public delegate void PostReloadConfigEventHandler();
         public event PlaceholderParsingEventHandler PlaceholderParsing;
-
         public delegate void PlaceholderParsingEventHandler(string Target);
         public event PlaceholderParsedEventHandler PlaceholderParsed;
-
         public delegate void PlaceholderParsedEventHandler(string Target);
         public event PlaceholderParseErrorEventHandler PlaceholderParseError;
-
         public delegate void PlaceholderParseErrorEventHandler(string Target, Exception Exception);
         public event GarbageCollectedEventHandler GarbageCollected;
-
         public delegate void GarbageCollectedEventHandler();
         public event FTPShellInitializedEventHandler FTPShellInitialized;
-
         public delegate void FTPShellInitializedEventHandler();
         public event FTPPreExecuteCommandEventHandler FTPPreExecuteCommand;
-
         public delegate void FTPPreExecuteCommandEventHandler(string Command);
         public event FTPPostExecuteCommandEventHandler FTPPostExecuteCommand;
-
         public delegate void FTPPostExecuteCommandEventHandler(string Command);
         public event FTPCommandErrorEventHandler FTPCommandError;
-
         public delegate void FTPCommandErrorEventHandler(string Command, Exception Exception);
         public event FTPPreDownloadEventHandler FTPPreDownload;
-
         public delegate void FTPPreDownloadEventHandler(string File);
         public event FTPPostDownloadEventHandler FTPPostDownload;
-
         public delegate void FTPPostDownloadEventHandler(string File, bool Success);
         public event FTPPreUploadEventHandler FTPPreUpload;
-
         public delegate void FTPPreUploadEventHandler(string File);
         public event FTPPostUploadEventHandler FTPPostUpload;
-
         public delegate void FTPPostUploadEventHandler(string File, bool Success);
         public event IMAPShellInitializedEventHandler IMAPShellInitialized;
-
         public delegate void IMAPShellInitializedEventHandler();
         public event IMAPPreExecuteCommandEventHandler IMAPPreExecuteCommand;
-
         public delegate void IMAPPreExecuteCommandEventHandler(string Command);
         public event IMAPPostExecuteCommandEventHandler IMAPPostExecuteCommand;
-
         public delegate void IMAPPostExecuteCommandEventHandler(string Command);
         public event IMAPCommandErrorEventHandler IMAPCommandError;
-
         public delegate void IMAPCommandErrorEventHandler(string Command, Exception Exception);
         public event RemoteDebugConnectionAcceptedEventHandler RemoteDebugConnectionAccepted;
-
         public delegate void RemoteDebugConnectionAcceptedEventHandler(string IP);
         public event RemoteDebugConnectionDisconnectedEventHandler RemoteDebugConnectionDisconnected;
-
         public delegate void RemoteDebugConnectionDisconnectedEventHandler(string IP);
         public event RemoteDebugExecuteCommandEventHandler RemoteDebugExecuteCommand;
-
         public delegate void RemoteDebugExecuteCommandEventHandler(string IP, string Command);
         public event RemoteDebugCommandErrorEventHandler RemoteDebugCommandError;
-
         public delegate void RemoteDebugCommandErrorEventHandler(string IP, string Command, Exception Exception);
         public event RPCCommandSentEventHandler RPCCommandSent;
-
         public delegate void RPCCommandSentEventHandler(string Command, string Argument, string IP, int Port);
         public event RPCCommandReceivedEventHandler RPCCommandReceived;
-
         public delegate void RPCCommandReceivedEventHandler(string Command, string IP, int Port);
         public event RPCCommandErrorEventHandler RPCCommandError;
-
         public delegate void RPCCommandErrorEventHandler(string Command, Exception Exception, string IP, int Port);
         public event RSSShellInitializedEventHandler RSSShellInitialized;
-
         public delegate void RSSShellInitializedEventHandler(string FeedUrl);
         public event RSSPreExecuteCommandEventHandler RSSPreExecuteCommand;
-
         public delegate void RSSPreExecuteCommandEventHandler(string FeedUrl, string Command);
         public event RSSPostExecuteCommandEventHandler RSSPostExecuteCommand;
-
         public delegate void RSSPostExecuteCommandEventHandler(string FeedUrl, string Command);
         public event RSSCommandErrorEventHandler RSSCommandError;
-
         public delegate void RSSCommandErrorEventHandler(string FeedUrl, string Command, Exception Exception);
         public event SFTPShellInitializedEventHandler SFTPShellInitialized;
-
         public delegate void SFTPShellInitializedEventHandler();
         public event SFTPPreExecuteCommandEventHandler SFTPPreExecuteCommand;
-
         public delegate void SFTPPreExecuteCommandEventHandler(string Command);
         public event SFTPPostExecuteCommandEventHandler SFTPPostExecuteCommand;
-
         public delegate void SFTPPostExecuteCommandEventHandler(string Command);
         public event SFTPCommandErrorEventHandler SFTPCommandError;
-
         public delegate void SFTPCommandErrorEventHandler(string Command, Exception Exception);
         public event SFTPPreDownloadEventHandler SFTPPreDownload;
-
         public delegate void SFTPPreDownloadEventHandler(string File);
         public event SFTPPostDownloadEventHandler SFTPPostDownload;
-
         public delegate void SFTPPostDownloadEventHandler(string File);
         public event SFTPDownloadErrorEventHandler SFTPDownloadError;
-
         public delegate void SFTPDownloadErrorEventHandler(string File, Exception Exception);
         public event SFTPPreUploadEventHandler SFTPPreUpload;
-
         public delegate void SFTPPreUploadEventHandler(string File);
         public event SFTPPostUploadEventHandler SFTPPostUpload;
-
         public delegate void SFTPPostUploadEventHandler(string File);
         public event SFTPUploadErrorEventHandler SFTPUploadError;
-
         public delegate void SFTPUploadErrorEventHandler(string File, Exception Exception);
         public event SSHConnectedEventHandler SSHConnected;
-
         public delegate void SSHConnectedEventHandler(string Target);
         public event SSHDisconnectedEventHandler SSHDisconnected;
-
         public delegate void SSHDisconnectedEventHandler();
         public event SSHPreExecuteCommandEventHandler SSHPreExecuteCommand;
-
         public delegate void SSHPreExecuteCommandEventHandler(string Target, string Command);
         public event SSHPostExecuteCommandEventHandler SSHPostExecuteCommand;
-
         public delegate void SSHPostExecuteCommandEventHandler(string Target, string Command);
         public event SSHCommandErrorEventHandler SSHCommandError;
-
         public delegate void SSHCommandErrorEventHandler(string Target, string Command, Exception Exception);
         public event SSHErrorEventHandler SSHError;
-
         public delegate void SSHErrorEventHandler(Exception Exception);
         public event UESHPreExecuteEventHandler UESHPreExecute;
-
         public delegate void UESHPreExecuteEventHandler(string Command, string Arguments);
         public event UESHPostExecuteEventHandler UESHPostExecute;
-
         public delegate void UESHPostExecuteEventHandler(string Command, string Arguments);
         public event UESHErrorEventHandler UESHError;
-
         public delegate void UESHErrorEventHandler(string Command, string Arguments, Exception Exception);
         public event TextShellInitializedEventHandler TextShellInitialized;
-
         public delegate void TextShellInitializedEventHandler();
         public event TextPreExecuteCommandEventHandler TextPreExecuteCommand;
-
         public delegate void TextPreExecuteCommandEventHandler(string Command);
         public event TextPostExecuteCommandEventHandler TextPostExecuteCommand;
-
         public delegate void TextPostExecuteCommandEventHandler(string Command);
         public event TextCommandErrorEventHandler TextCommandError;
-
         public delegate void TextCommandErrorEventHandler(string Command, Exception Exception);
         public event NotificationSentEventHandler NotificationSent;
-
         public delegate void NotificationSentEventHandler(Notification Notification);
         public event NotificationsSentEventHandler NotificationsSent;
-
         public delegate void NotificationsSentEventHandler(List<Notification> Notifications);
         public event NotificationReceivedEventHandler NotificationReceived;
-
         public delegate void NotificationReceivedEventHandler(Notification Notification);
         public event NotificationsReceivedEventHandler NotificationsReceived;
-
         public delegate void NotificationsReceivedEventHandler(List<Notification> Notifications);
         public event NotificationDismissedEventHandler NotificationDismissed;
-
         public delegate void NotificationDismissedEventHandler();
         public event ConfigSavedEventHandler ConfigSaved;
-
         public delegate void ConfigSavedEventHandler();
         public event ConfigSaveErrorEventHandler ConfigSaveError;
-
         public delegate void ConfigSaveErrorEventHandler(Exception Exception);
         public event ConfigReadEventHandler ConfigRead;
-
         public delegate void ConfigReadEventHandler();
         public event ConfigReadErrorEventHandler ConfigReadError;
-
         public delegate void ConfigReadErrorEventHandler(Exception Exception);
         public event PreExecuteModCommandEventHandler PreExecuteModCommand;
-
         public delegate void PreExecuteModCommandEventHandler(string Command);
         public event PostExecuteModCommandEventHandler PostExecuteModCommand;
-
         public delegate void PostExecuteModCommandEventHandler(string Command);
         public event ModParsedEventHandler ModParsed;
-
         public delegate void ModParsedEventHandler(string ModFileName);
         public event ModParseErrorEventHandler ModParseError;
-
         public delegate void ModParseErrorEventHandler(string ModFileName);
         public event ModFinalizedEventHandler ModFinalized;
-
         public delegate void ModFinalizedEventHandler(string ModFileName);
         public event ModFinalizationFailedEventHandler ModFinalizationFailed;
-
         public delegate void ModFinalizationFailedEventHandler(string ModFileName, string Reason);
         public event UserAddedEventHandler UserAdded;
-
         public delegate void UserAddedEventHandler(string Username);
         public event UserRemovedEventHandler UserRemoved;
-
         public delegate void UserRemovedEventHandler(string Username);
         public event UsernameChangedEventHandler UsernameChanged;
-
         public delegate void UsernameChangedEventHandler(string OldUsername, string NewUsername);
         public event UserPasswordChangedEventHandler UserPasswordChanged;
-
         public delegate void UserPasswordChangedEventHandler(string Username);
         public event HardwareProbingEventHandler HardwareProbing;
-
         public delegate void HardwareProbingEventHandler();
         public event HardwareProbedEventHandler HardwareProbed;
-
         public delegate void HardwareProbedEventHandler();
         public event CurrentDirectoryChangedEventHandler CurrentDirectoryChanged;
-
         public delegate void CurrentDirectoryChangedEventHandler();
         public event FileCreatedEventHandler FileCreated;
-
         public delegate void FileCreatedEventHandler(string File);
         public event DirectoryCreatedEventHandler DirectoryCreated;
-
         public delegate void DirectoryCreatedEventHandler(string Directory);
         public event FileCopiedEventHandler FileCopied;
-
         public delegate void FileCopiedEventHandler(string Source, string Destination);
         public event DirectoryCopiedEventHandler DirectoryCopied;
-
         public delegate void DirectoryCopiedEventHandler(string Source, string Destination);
         public event FileMovedEventHandler FileMoved;
-
         public delegate void FileMovedEventHandler(string Source, string Destination);
         public event DirectoryMovedEventHandler DirectoryMoved;
-
         public delegate void DirectoryMovedEventHandler(string Source, string Destination);
         public event FileRemovedEventHandler FileRemoved;
-
         public delegate void FileRemovedEventHandler(string File);
         public event DirectoryRemovedEventHandler DirectoryRemoved;
-
         public delegate void DirectoryRemovedEventHandler(string Directory);
         public event FileAttributeAddedEventHandler FileAttributeAdded;
-
         public delegate void FileAttributeAddedEventHandler(string File, FileAttributes Attributes);
         public event FileAttributeRemovedEventHandler FileAttributeRemoved;
-
         public delegate void FileAttributeRemovedEventHandler(string File, FileAttributes Attributes);
         public event ColorResetEventHandler ColorReset;
-
         public delegate void ColorResetEventHandler();
         public event ThemeSetEventHandler ThemeSet;
-
         public delegate void ThemeSetEventHandler(string Theme);
         public event ThemeSetErrorEventHandler ThemeSetError;
-
         public delegate void ThemeSetErrorEventHandler(string Theme, ThemeSetErrorReasons Reason);
         public event ColorSetEventHandler ColorSet;
-
         public delegate void ColorSetEventHandler();
         public event ColorSetErrorEventHandler ColorSetError;
-
         public delegate void ColorSetErrorEventHandler(ColorSetErrorReasons Reason);
         public event ThemeStudioStartedEventHandler ThemeStudioStarted;
-
         public delegate void ThemeStudioStartedEventHandler();
         public event ThemeStudioExitEventHandler ThemeStudioExit;
-
         public delegate void ThemeStudioExitEventHandler();
         public event ArgumentsInjectedEventHandler ArgumentsInjected;
-
         public delegate void ArgumentsInjectedEventHandler(List<string> InjectedArguments);
         public event ZipShellInitializedEventHandler ZipShellInitialized;
-
         public delegate void ZipShellInitializedEventHandler();
         public event ZipPreExecuteCommandEventHandler ZipPreExecuteCommand;
-
         public delegate void ZipPreExecuteCommandEventHandler(string Command);
         public event ZipPostExecuteCommandEventHandler ZipPostExecuteCommand;
-
         public delegate void ZipPostExecuteCommandEventHandler(string Command);
         public event ZipCommandErrorEventHandler ZipCommandError;
-
         public delegate void ZipCommandErrorEventHandler(string Command, Exception Exception);
         public event HTTPShellInitializedEventHandler HTTPShellInitialized;
-
         public delegate void HTTPShellInitializedEventHandler();
         public event HTTPPreExecuteCommandEventHandler HTTPPreExecuteCommand;
-
         public delegate void HTTPPreExecuteCommandEventHandler(string Command);
         public event HTTPPostExecuteCommandEventHandler HTTPPostExecuteCommand;
-
         public delegate void HTTPPostExecuteCommandEventHandler(string Command);
         public event HTTPCommandErrorEventHandler HTTPCommandError;
-
         public delegate void HTTPCommandErrorEventHandler(string Command, Exception Exception);
         public event ProcessErrorEventHandler ProcessError;
-
         public delegate void ProcessErrorEventHandler(string Process, Exception Exception);
         public event LanguageInstalledEventHandler LanguageInstalled;
-
         public delegate void LanguageInstalledEventHandler(string Language);
         public event LanguageUninstalledEventHandler LanguageUninstalled;
-
         public delegate void LanguageUninstalledEventHandler(string Language);
         public event LanguageInstallErrorEventHandler LanguageInstallError;
-
         public delegate void LanguageInstallErrorEventHandler(string Language, Exception Exception);
         public event LanguageUninstallErrorEventHandler LanguageUninstallError;
-
         public delegate void LanguageUninstallErrorEventHandler(string Language, Exception Exception);
         public event LanguagesInstalledEventHandler LanguagesInstalled;
-
         public delegate void LanguagesInstalledEventHandler();
         public event LanguagesUninstalledEventHandler LanguagesUninstalled;
-
         public delegate void LanguagesUninstalledEventHandler();
         public event LanguagesInstallErrorEventHandler LanguagesInstallError;
-
         public delegate void LanguagesInstallErrorEventHandler(Exception Exception);
         public event LanguagesUninstallErrorEventHandler LanguagesUninstallError;
-
         public delegate void LanguagesUninstallErrorEventHandler(Exception Exception);
         public event HexShellInitializedEventHandler HexShellInitialized;
-
         public delegate void HexShellInitializedEventHandler();
         public event HexPreExecuteCommandEventHandler HexPreExecuteCommand;
-
         public delegate void HexPreExecuteCommandEventHandler(string Command);
         public event HexPostExecuteCommandEventHandler HexPostExecuteCommand;
-
         public delegate void HexPostExecuteCommandEventHandler(string Command);
         public event HexCommandErrorEventHandler HexCommandError;
-
         public delegate void HexCommandErrorEventHandler(string Command, Exception Exception);
         public event TestShellInitializedEventHandler TestShellInitialized;
-
         public delegate void TestShellInitializedEventHandler();
         public event TestPreExecuteCommandEventHandler TestPreExecuteCommand;
-
         public delegate void TestPreExecuteCommandEventHandler(string Command);
         public event TestPostExecuteCommandEventHandler TestPostExecuteCommand;
-
         public delegate void TestPostExecuteCommandEventHandler(string Command);
         public event TestCommandErrorEventHandler TestCommandError;
-
         public delegate void TestCommandErrorEventHandler(string Command, Exception Exception);
         public event JsonShellInitializedEventHandler JsonShellInitialized;
-
         public delegate void JsonShellInitializedEventHandler();
         public event JsonPreExecuteCommandEventHandler JsonPreExecuteCommand;
-
         public delegate void JsonPreExecuteCommandEventHandler(string Command);
         public event JsonPostExecuteCommandEventHandler JsonPostExecuteCommand;
-
         public delegate void JsonPostExecuteCommandEventHandler(string Command);
         public event JsonCommandErrorEventHandler JsonCommandError;
-
         public delegate void JsonCommandErrorEventHandler(string Command, Exception Exception);
         public event ArchiveShellInitializedEventHandler ArchiveShellInitialized;
-
         public delegate void ArchiveShellInitializedEventHandler();
         public event ArchivePreExecuteCommandEventHandler ArchivePreExecuteCommand;
-
         public delegate void ArchivePreExecuteCommandEventHandler(string Command);
         public event ArchivePostExecuteCommandEventHandler ArchivePostExecuteCommand;
-
         public delegate void ArchivePostExecuteCommandEventHandler(string Command);
         public event ArchiveCommandErrorEventHandler ArchiveCommandError;
-
         public delegate void ArchiveCommandErrorEventHandler(string Command, Exception Exception);
 
         public Events()
