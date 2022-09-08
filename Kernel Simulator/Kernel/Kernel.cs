@@ -113,8 +113,6 @@ namespace KS.Kernel
                     ConsoleSanityChecker.CheckConsole();
 
                     // Initialize crucial things
-                    if (Flags.SafeMode)
-                        Config.ReadFailsafeConfig();
                     if (!KernelPlatform.IsOnUnix())
                         Color255.Initialize255();
                     AppDomain.CurrentDomain.AssemblyResolve += AssemblyLookup.LoadFromAssemblySearchPaths;

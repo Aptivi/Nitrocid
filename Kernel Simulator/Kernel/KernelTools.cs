@@ -395,6 +395,10 @@ namespace KS.Kernel
             // Initialize splashes
             SplashManager.LoadSplashes();
 
+            // Read failsafe config
+            if (Flags.SafeMode)
+                Config.ReadFailsafeConfig();
+
             // Create config file and then read it
             Config.InitializeConfig();
 
