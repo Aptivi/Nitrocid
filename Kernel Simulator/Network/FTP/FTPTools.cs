@@ -40,6 +40,9 @@ using KS.Shell.Shells.FTP;
 
 namespace KS.Network.FTP
 {
+    /// <summary>
+    /// FTP tools class
+    /// </summary>
     public static class FTPTools
     {
 

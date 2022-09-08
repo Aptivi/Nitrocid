@@ -24,9 +24,15 @@ using Renci.SshNet;
 
 namespace KS.Shell.Shells.SFTP
 {
+    /// <summary>
+    /// SFTP shell common module
+    /// </summary>
     public static class SFTPShellCommon
     {
 
+        /// <summary>
+        /// SFTP commands
+        /// </summary>
         public readonly static Dictionary<string, CommandInfo> SFTPCommands = new()
         {
             { "connect", new CommandInfo("connect", ShellType.SFTPShell, "Connects to an SFTP server (it must start with \"sftp://\")", new CommandArgumentInfo(new[] { "<server>" }, true, 1), new SFTP_ConnectCommand()) },
@@ -42,10 +48,25 @@ namespace KS.Shell.Shells.SFTP
             { "pwdr", new CommandInfo("pwdr", ShellType.SFTPShell, "Gets current remote directory", new CommandArgumentInfo(), new SFTP_PwdrCommand()) },
             { "quickconnect", new CommandInfo("quickconnect", ShellType.SFTPShell, "Uses information from Speed Dial to connect to any network quickly", new CommandArgumentInfo(), new SFTP_QuickConnectCommand()) }
         };
+        /// <summary>
+        /// SFTP current local directory
+        /// </summary>
         public static string SFTPCurrDirect;
+        /// <summary>
+        /// SFTP current remote directory
+        /// </summary>
         public static string SFTPCurrentRemoteDir;
+        /// <summary>
+        /// SFTP show file details in list
+        /// </summary>
         public static bool SFTPShowDetailsInList = true;
+        /// <summary>
+        /// SFTP user prompt style
+        /// </summary>
         public static string SFTPUserPromptStyle = "";
+        /// <summary>
+        /// SFTP add new connections to speed dial
+        /// </summary>
         public static bool SFTPNewConnectionsToSpeedDial = true;
         internal static bool SFTPConnected;
         internal static SftpClient _clientSFTP;

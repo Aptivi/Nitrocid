@@ -34,6 +34,9 @@ using KS.Shell.Shells.FTP;
 
 namespace KS.Network.FTP.Filesystem
 {
+    /// <summary>
+    /// FTP filesystem tools module
+    /// </summary>
     public static class FTPFilesystem
     {
 
@@ -198,6 +201,13 @@ namespace KS.Network.FTP.Filesystem
             }
         }
 
+        /// <summary>
+        /// Change the local directory
+        /// </summary>
+        /// <param name="Directory">Local directory to change to</param>
+        /// <returns>True if successful; False if unsuccessful</returns>
+        /// <exception cref="Kernel.Exceptions.FTPFilesystemException"></exception>
+        /// <exception cref="ArgumentNullException"></exception>
         public static bool FTPChangeLocalDir(string Directory)
         {
             if (!string.IsNullOrEmpty(Directory))

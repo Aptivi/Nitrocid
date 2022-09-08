@@ -25,6 +25,9 @@ using KS.Shell.Shells.FTP;
 
 namespace KS.Network.FTP.Filesystem
 {
+    /// <summary>
+    /// FTP hashing module
+    /// </summary>
     public static class FTPHashing
     {
 

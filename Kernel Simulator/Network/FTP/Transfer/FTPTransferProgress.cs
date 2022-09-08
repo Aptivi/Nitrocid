@@ -24,6 +24,9 @@ using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Network.FTP.Transfer
 {
+    /// <summary>
+    /// FTP transfer progress class
+    /// </summary>
     public static class FTPTransferProgress
     {
 

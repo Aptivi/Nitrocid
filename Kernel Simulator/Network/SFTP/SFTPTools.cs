@@ -34,6 +34,9 @@ using Renci.SshNet;
 
 namespace KS.Network.SFTP
 {
+    /// <summary>
+    /// SFTP tools module
+    /// </summary>
     public static class SFTPTools
     {
 

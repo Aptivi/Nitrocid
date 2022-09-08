@@ -23,6 +23,9 @@ using KS.Shell.Shells.SFTP;
 
 namespace KS.Network.SFTP.Transfer
 {
+    /// <summary>
+    /// SFTP transfer module
+    /// </summary>
     public static class SFTPTransfer
     {
 

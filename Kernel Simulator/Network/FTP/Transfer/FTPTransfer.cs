@@ -26,6 +26,9 @@ using KS.Shell.Shells.FTP;
 
 namespace KS.Network.FTP.Transfer
 {
+    /// <summary>
+    /// FTP transfer class
+    /// </summary>
     public static class FTPTransfer
     {
 

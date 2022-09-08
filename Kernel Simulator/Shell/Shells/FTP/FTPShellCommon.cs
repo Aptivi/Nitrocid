@@ -24,9 +24,15 @@ using KS.Shell.Shells.FTP.Commands;
 
 namespace KS.Shell.Shells.FTP
 {
+    /// <summary>
+    /// Common FTP shell class
+    /// </summary>
     public static class FTPShellCommon
     {
 
+        /// <summary>
+        /// FTP commands
+        /// </summary>
         public readonly static Dictionary<string, CommandInfo> FTPCommands = new()
         {
             { "connect", new CommandInfo("connect", ShellType.FTPShell, "Connects to an FTP server (it must start with \"ftp://\" or \"ftps://\")", new CommandArgumentInfo(new[] { "<server>" }, true, 1), new FTP_ConnectCommand()) },
@@ -52,20 +58,65 @@ namespace KS.Shell.Shells.FTP
             { "sumfiles", new CommandInfo("sumfiles", ShellType.FTPShell, "Calculates sums of files in specified directory.", new CommandArgumentInfo(new[] { "<file> <MD5/SHA1/SHA256/SHA512/CRC>" }, true, 2), new FTP_SumFilesCommand()) },
             { "type", new CommandInfo("type", ShellType.FTPShell, "Sets the type for this session", new CommandArgumentInfo(new[] { "<a/b>" }, true, 1), new FTP_TypeCommand()) }
         };
+        /// <summary>
+        /// FTP current local directory
+        /// </summary>
         public static string FtpCurrentDirectory;
+        /// <summary>
+        /// FTP current remote directory
+        /// </summary>
         public static string FtpCurrentRemoteDir;
+        /// <summary>
+        /// FTP show details in list
+        /// </summary>
         public static bool FtpShowDetailsInList = true;
+        /// <summary>
+        /// FTP user prompt style
+        /// </summary>
         public static string FtpUserPromptStyle = "";
+        /// <summary>
+        /// FTP password prompt style
+        /// </summary>
         public static string FtpPassPromptStyle = "";
+        /// <summary>
+        /// FTP always use first profile
+        /// </summary>
         public static bool FtpUseFirstProfile;
+        /// <summary>
+        /// FTP add new connections to speed dial
+        /// </summary>
         public static bool FtpNewConnectionsToSpeedDial = true;
+        /// <summary>
+        /// FTP try to validate the certificate
+        /// </summary>
         public static bool FtpTryToValidateCertificate = true;
+        /// <summary>
+        /// FTP recursive hashing
+        /// </summary>
         public static bool FtpRecursiveHashing;
+        /// <summary>
+        /// FTP show MOTD
+        /// </summary>
         public static bool FtpShowMotd = true;
+        /// <summary>
+        /// FTP always accept invalid certificates. Turning it on is not recommended.
+        /// </summary>
         public static bool FtpAlwaysAcceptInvalidCerts;
+        /// <summary>
+        /// FTP verify retry attempts
+        /// </summary>
         public static int FtpVerifyRetryAttempts = 3;
+        /// <summary>
+        /// FTP connection timeout in milliseconds
+        /// </summary>
         public static int FtpConnectTimeout = 15000;
+        /// <summary>
+        /// FTP data connection timeout in milliseconds
+        /// </summary>
         public static int FtpDataConnectTimeout = 15000;
+        /// <summary>
+        /// FTP protocol versions
+        /// </summary>
         public static FtpIpVersion FtpProtocolVersions = FtpIpVersion.ANY;
         internal static FtpClient _clientFTP;
         internal static bool FtpConnected;
