@@ -59,26 +59,23 @@ namespace KS.Misc.Splash.Splashes
         internal BeatPulseSettings BeatPulseSettings;
         internal Random RandomDriver;
 
-        public SplashBeatPulse()
+        public SplashBeatPulse() => BeatPulseSettings = new BeatPulseSettings()
         {
-            BeatPulseSettings = new BeatPulseSettings()
-            {
-                BeatPulse255Colors = false,
-                BeatPulseTrueColor = true,
-                BeatPulseBeatColor = 17.ToString(),
-                BeatPulseCycleColors = true,
-                BeatPulseDelay = 50,
-                BeatPulseMaxSteps = 30,
-                BeatPulseMinimumRedColorLevel = 0,
-                BeatPulseMinimumGreenColorLevel = 0,
-                BeatPulseMinimumBlueColorLevel = 0,
-                BeatPulseMinimumColorLevel = 0,
-                BeatPulseMaximumRedColorLevel = 255,
-                BeatPulseMaximumGreenColorLevel = 255,
-                BeatPulseMaximumBlueColorLevel = 255,
-                BeatPulseMaximumColorLevel = 255
-            };
-        }
+            BeatPulse255Colors = false,
+            BeatPulseTrueColor = true,
+            BeatPulseBeatColor = 17.ToString(),
+            BeatPulseCycleColors = true,
+            BeatPulseDelay = 50,
+            BeatPulseMaxSteps = 30,
+            BeatPulseMinimumRedColorLevel = 0,
+            BeatPulseMinimumGreenColorLevel = 0,
+            BeatPulseMinimumBlueColorLevel = 0,
+            BeatPulseMinimumColorLevel = 0,
+            BeatPulseMaximumRedColorLevel = 255,
+            BeatPulseMaximumGreenColorLevel = 255,
+            BeatPulseMaximumBlueColorLevel = 255,
+            BeatPulseMaximumColorLevel = 255
+        };
 
         // Actual logic
         public void Opening()

@@ -96,10 +96,7 @@ namespace KS.Shell.ShellBase.Commands
         /// Command auto complete constructor
         /// </summary>
         /// <param name="ShellType">Shell type</param>
-        protected internal CommandAutoComplete(ShellType ShellType = ShellType.Shell)
-        {
-            ShellTypeToAutocomplete = ShellType;
-        }
+        protected internal CommandAutoComplete(ShellType ShellType = ShellType.Shell) => ShellTypeToAutocomplete = ShellType;
 
     }
 }

@@ -58,27 +58,24 @@ namespace KS.Misc.Splash.Splashes
         internal Random RandomDriver = new();
         internal Animations.BeatFader.BeatFaderSettings BeatFaderSettingsInstance;
 
-        public SplashBeatFader()
+        public SplashBeatFader() => BeatFaderSettingsInstance = new Animations.BeatFader.BeatFaderSettings()
         {
-            BeatFaderSettingsInstance = new Animations.BeatFader.BeatFaderSettings()
-            {
-                BeatFader255Colors = false,
-                BeatFaderTrueColor = true,
-                BeatFaderCycleColors = true,
-                BeatFaderBeatColor = 17.ToString(),
-                BeatFaderDelay = 50,
-                BeatFaderMaxSteps = 30,
-                BeatFaderMinimumRedColorLevel = 0,
-                BeatFaderMinimumGreenColorLevel = 0,
-                BeatFaderMinimumBlueColorLevel = 0,
-                BeatFaderMinimumColorLevel = 0,
-                BeatFaderMaximumRedColorLevel = 255,
-                BeatFaderMaximumGreenColorLevel = 255,
-                BeatFaderMaximumBlueColorLevel = 255,
-                BeatFaderMaximumColorLevel = 255,
-                RandomDriver = RandomDriver
-            };
-        }
+            BeatFader255Colors = false,
+            BeatFaderTrueColor = true,
+            BeatFaderCycleColors = true,
+            BeatFaderBeatColor = 17.ToString(),
+            BeatFaderDelay = 50,
+            BeatFaderMaxSteps = 30,
+            BeatFaderMinimumRedColorLevel = 0,
+            BeatFaderMinimumGreenColorLevel = 0,
+            BeatFaderMinimumBlueColorLevel = 0,
+            BeatFaderMinimumColorLevel = 0,
+            BeatFaderMaximumRedColorLevel = 255,
+            BeatFaderMaximumGreenColorLevel = 255,
+            BeatFaderMaximumBlueColorLevel = 255,
+            BeatFaderMaximumColorLevel = 255,
+            RandomDriver = RandomDriver
+        };
 
         // Actual logic
         public void Opening()

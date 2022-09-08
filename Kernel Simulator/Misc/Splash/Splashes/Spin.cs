@@ -58,13 +58,10 @@ namespace KS.Misc.Splash.Splashes
         // Spin-specific variables
         internal SpinSettings SpinSettings;
 
-        public SplashSpin()
+        public SplashSpin() => SpinSettings = new SpinSettings()
         {
-            SpinSettings = new SpinSettings()
-            {
-                SpinDelay = 10,
-            };
-        }
+            SpinDelay = 10,
+        };
 
         // Actual logic
         public void Opening()

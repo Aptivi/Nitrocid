@@ -59,20 +59,17 @@ namespace KS.Misc.Splash.Splashes
         internal EdgePulseSettings EdgePulseSettings;
         internal Random RandomDriver;
 
-        public SplashEdgePulse()
+        public SplashEdgePulse() => EdgePulseSettings = new EdgePulseSettings()
         {
-            EdgePulseSettings = new EdgePulseSettings()
-            {
-                EdgePulseDelay = 50,
-                EdgePulseMaxSteps = 30,
-                EdgePulseMinimumRedColorLevel = 0,
-                EdgePulseMinimumGreenColorLevel = 0,
-                EdgePulseMinimumBlueColorLevel = 0,
-                EdgePulseMaximumRedColorLevel = 255,
-                EdgePulseMaximumGreenColorLevel = 255,
-                EdgePulseMaximumBlueColorLevel = 255
-            };
-        }
+            EdgePulseDelay = 50,
+            EdgePulseMaxSteps = 30,
+            EdgePulseMinimumRedColorLevel = 0,
+            EdgePulseMinimumGreenColorLevel = 0,
+            EdgePulseMinimumBlueColorLevel = 0,
+            EdgePulseMaximumRedColorLevel = 255,
+            EdgePulseMaximumGreenColorLevel = 255,
+            EdgePulseMaximumBlueColorLevel = 255
+        };
 
         // Actual logic
         public void Opening()

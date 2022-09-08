@@ -59,20 +59,17 @@ namespace KS.Misc.Splash.Splashes
         internal PulseSettings PulseSettings;
         internal Random RandomDriver;
 
-        public SplashPulse()
+        public SplashPulse() => PulseSettings = new PulseSettings()
         {
-            PulseSettings = new PulseSettings()
-            {
-                PulseDelay = 50,
-                PulseMaxSteps = 30,
-                PulseMinimumRedColorLevel = 0,
-                PulseMinimumGreenColorLevel = 0,
-                PulseMinimumBlueColorLevel = 0,
-                PulseMaximumRedColorLevel = 255,
-                PulseMaximumGreenColorLevel = 255,
-                PulseMaximumBlueColorLevel = 255
-            };
-        }
+            PulseDelay = 50,
+            PulseMaxSteps = 30,
+            PulseMinimumRedColorLevel = 0,
+            PulseMinimumGreenColorLevel = 0,
+            PulseMinimumBlueColorLevel = 0,
+            PulseMaximumRedColorLevel = 255,
+            PulseMaximumGreenColorLevel = 255,
+            PulseMaximumBlueColorLevel = 255
+        };
 
         // Actual logic
         public void Opening()

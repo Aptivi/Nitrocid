@@ -95,10 +95,7 @@ namespace KS.Network.RSS.Instance
         /// </summary>
         /// <param name="FeedUrl">A URL to RSS feed</param>
         /// <param name="FeedType">A feed type to parse. If set to Infer, it will automatically detect the type based on contents.</param>
-        public RSSFeed(string FeedUrl, RSSFeedType FeedType)
-        {
-            Refresh(FeedUrl, FeedType);
-        }
+        public RSSFeed(string FeedUrl, RSSFeedType FeedType) => Refresh(FeedUrl, FeedType);
 
         /// <summary>
         /// Refreshes the RSS class instance

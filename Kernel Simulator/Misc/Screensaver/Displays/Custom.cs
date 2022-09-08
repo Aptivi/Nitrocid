@@ -64,10 +64,7 @@ namespace KS.Misc.Screensaver.Displays
         /// Generates a new custom screensaver displayer from the screensaver base
         /// </summary>
         /// <param name="CustomSaver">Saver base</param>
-        public CustomDisplay(BaseScreensaver CustomSaver)
-        {
-            this.CustomSaver = CustomSaver;
-        }
+        public CustomDisplay(BaseScreensaver CustomSaver) => this.CustomSaver = CustomSaver;
 
     }
 }

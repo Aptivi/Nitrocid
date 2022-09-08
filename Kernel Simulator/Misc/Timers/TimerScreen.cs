@@ -68,10 +68,7 @@ namespace KS.Misc.Timers
             }
         }
 
-        static TimerScreen()
-        {
-            Timer = new Timer();
-        }
+        static TimerScreen() => Timer = new Timer();
 
         /// <summary>
         /// Opens the timer screen

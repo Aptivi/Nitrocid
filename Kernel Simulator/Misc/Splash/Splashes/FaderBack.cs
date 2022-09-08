@@ -57,22 +57,19 @@ namespace KS.Misc.Splash.Splashes
         internal Random RandomDriver = new();
         internal Animations.FaderBack.FaderBackSettings FaderBackSettingsInstance;
 
-        public SplashFaderBack()
+        public SplashFaderBack() => FaderBackSettingsInstance = new Animations.FaderBack.FaderBackSettings()
         {
-            FaderBackSettingsInstance = new Animations.FaderBack.FaderBackSettings()
-            {
-                FaderBackDelay = 10,
-                FaderBackFadeOutDelay = 3000,
-                FaderBackMaxSteps = 30,
-                FaderBackMinimumRedColorLevel = 0,
-                FaderBackMinimumGreenColorLevel = 0,
-                FaderBackMinimumBlueColorLevel = 0,
-                FaderBackMaximumRedColorLevel = 255,
-                FaderBackMaximumGreenColorLevel = 255,
-                FaderBackMaximumBlueColorLevel = 255,
-                RandomDriver = RandomDriver
-            };
-        }
+            FaderBackDelay = 10,
+            FaderBackFadeOutDelay = 3000,
+            FaderBackMaxSteps = 30,
+            FaderBackMinimumRedColorLevel = 0,
+            FaderBackMinimumGreenColorLevel = 0,
+            FaderBackMinimumBlueColorLevel = 0,
+            FaderBackMaximumRedColorLevel = 255,
+            FaderBackMaximumGreenColorLevel = 255,
+            FaderBackMaximumBlueColorLevel = 255,
+            RandomDriver = RandomDriver
+        };
 
         // Actual logic
         public void Opening()

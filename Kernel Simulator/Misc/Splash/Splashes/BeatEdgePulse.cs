@@ -59,26 +59,23 @@ namespace KS.Misc.Splash.Splashes
         internal BeatEdgePulseSettings BeatEdgePulseSettings;
         internal Random RandomDriver;
 
-        public SplashBeatEdgePulse()
+        public SplashBeatEdgePulse() => BeatEdgePulseSettings = new BeatEdgePulseSettings()
         {
-            BeatEdgePulseSettings = new BeatEdgePulseSettings()
-            {
-                BeatEdgePulse255Colors = false,
-                BeatEdgePulseTrueColor = true,
-                BeatEdgePulseBeatColor = 17.ToString(),
-                BeatEdgePulseCycleColors = true,
-                BeatEdgePulseDelay = 50,
-                BeatEdgePulseMaxSteps = 30,
-                BeatEdgePulseMinimumRedColorLevel = 0,
-                BeatEdgePulseMinimumGreenColorLevel = 0,
-                BeatEdgePulseMinimumBlueColorLevel = 0,
-                BeatEdgePulseMinimumColorLevel = 0,
-                BeatEdgePulseMaximumRedColorLevel = 255,
-                BeatEdgePulseMaximumGreenColorLevel = 255,
-                BeatEdgePulseMaximumBlueColorLevel = 255,
-                BeatEdgePulseMaximumColorLevel = 255
-            };
-        }
+            BeatEdgePulse255Colors = false,
+            BeatEdgePulseTrueColor = true,
+            BeatEdgePulseBeatColor = 17.ToString(),
+            BeatEdgePulseCycleColors = true,
+            BeatEdgePulseDelay = 50,
+            BeatEdgePulseMaxSteps = 30,
+            BeatEdgePulseMinimumRedColorLevel = 0,
+            BeatEdgePulseMinimumGreenColorLevel = 0,
+            BeatEdgePulseMinimumBlueColorLevel = 0,
+            BeatEdgePulseMinimumColorLevel = 0,
+            BeatEdgePulseMaximumRedColorLevel = 255,
+            BeatEdgePulseMaximumGreenColorLevel = 255,
+            BeatEdgePulseMaximumBlueColorLevel = 255,
+            BeatEdgePulseMaximumColorLevel = 255
+        };
 
         // Actual logic
         public void Opening()

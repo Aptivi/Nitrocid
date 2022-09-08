@@ -37,34 +37,22 @@ namespace KS.Kernel.Exceptions
         {
         }
         /// <inheritdoc/>
-        public InsaneConsoleDetectedException(string message) : base($"Insane console detected! See the {nameof(InsanityReason)} property for more information.")
-        {
-            InsanityReason = message;
-        }
+        public InsaneConsoleDetectedException(string message) : base($"Insane console detected! See the {nameof(InsanityReason)} property for more information.") => InsanityReason = message;
         /// <summary>
         /// Initializes the instance of this exception that has a message and a list of arguments
         /// </summary>
         /// <param name="vars">List of arguments</param>
         /// <param name="message">Message to be printed</param>
-        public InsaneConsoleDetectedException(string message, params object[] vars) : base($"Insane console detected! See the {nameof(InsanityReason)} property for more information.")
-        {
-            InsanityReason = StringManipulate.FormatString(message, vars);
-        }
+        public InsaneConsoleDetectedException(string message, params object[] vars) : base($"Insane console detected! See the {nameof(InsanityReason)} property for more information.") => InsanityReason = StringManipulate.FormatString(message, vars);
         /// <inheritdoc/>
-        public InsaneConsoleDetectedException(string message, Exception e) : base($"Insane console detected! See the {nameof(InsanityReason)} property for more information.", e)
-        {
-            InsanityReason = message;
-        }
+        public InsaneConsoleDetectedException(string message, Exception e) : base($"Insane console detected! See the {nameof(InsanityReason)} property for more information.", e) => InsanityReason = message;
         /// <summary>
         /// Initializes the instance of this exception that has a message, an inner exception, and a list of arguments
         /// </summary>
         /// <param name="vars">List of arguments</param>
         /// <param name="e">Inner exception</param>
         /// <param name="message">Message to be printed</param>
-        public InsaneConsoleDetectedException(string message, Exception e, params object[] vars) : base($"Insane console detected! See the {nameof(InsanityReason)} property for more information.", e)
-        {
-            InsanityReason = StringManipulate.FormatString(message, vars);
-        }
+        public InsaneConsoleDetectedException(string message, Exception e, params object[] vars) : base($"Insane console detected! See the {nameof(InsanityReason)} property for more information.", e) => InsanityReason = StringManipulate.FormatString(message, vars);
 
     }
 }

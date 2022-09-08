@@ -59,24 +59,21 @@ namespace KS.Misc.Splash.Splashes
         internal Random RandomDriver = new();
         internal Animations.Fader.FaderSettings FaderSettingsInstance;
 
-        public SplashFader()
+        public SplashFader() => FaderSettingsInstance = new Animations.Fader.FaderSettings()
         {
-            FaderSettingsInstance = new Animations.Fader.FaderSettings()
-            {
-                FaderDelay = 50,
-                FaderWrite = "Kernel Simulator",
-                FaderBackgroundColor = new Color((int)ConsoleColor.Black).PlainSequence,
-                FaderFadeOutDelay = 3000,
-                FaderMaxSteps = 30,
-                FaderMinimumRedColorLevel = 0,
-                FaderMinimumGreenColorLevel = 0,
-                FaderMinimumBlueColorLevel = 0,
-                FaderMaximumRedColorLevel = 255,
-                FaderMaximumGreenColorLevel = 255,
-                FaderMaximumBlueColorLevel = 255,
-                RandomDriver = RandomDriver
-            };
-        }
+            FaderDelay = 50,
+            FaderWrite = "Kernel Simulator",
+            FaderBackgroundColor = new Color((int)ConsoleColor.Black).PlainSequence,
+            FaderFadeOutDelay = 3000,
+            FaderMaxSteps = 30,
+            FaderMinimumRedColorLevel = 0,
+            FaderMinimumGreenColorLevel = 0,
+            FaderMinimumBlueColorLevel = 0,
+            FaderMaximumRedColorLevel = 255,
+            FaderMaximumGreenColorLevel = 255,
+            FaderMaximumBlueColorLevel = 255,
+            RandomDriver = RandomDriver
+        };
 
         // Actual logic
         public void Opening()
