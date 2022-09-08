@@ -25,13 +25,20 @@ using ReadLineReboot;
 
 namespace KS.Shell.ShellBase.Commands
 {
+    /// <summary>
+    /// Command auto completion class
+    /// </summary>
     public class CommandAutoComplete : IAutoCompleteHandler
     {
 
         private readonly ShellType ShellTypeToAutocomplete = ShellType.Shell;
 
+        /// <summary>
+        /// Command separators
+        /// </summary>
         public char[] Separators { get; set; } = new[] { ' ' };
 
+        /// <inheritdoc/>
         public string[] GetSuggestions(string text, int index)
         {
             var ShellCommands = GetCommand.GetCommands(ShellTypeToAutocomplete);
@@ -85,6 +92,10 @@ namespace KS.Shell.ShellBase.Commands
             }
         }
 
+        /// <summary>
+        /// Command auto complete constructor
+        /// </summary>
+        /// <param name="ShellType">Shell type</param>
         protected internal CommandAutoComplete(ShellType ShellType = ShellType.Shell)
         {
             ShellTypeToAutocomplete = ShellType;

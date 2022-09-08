@@ -33,6 +33,9 @@ using KS.Shell.Shells.UESH;
 
 namespace KS.Shell.ShellBase.Commands
 {
+    /// <summary>
+    /// Command management class
+    /// </summary>
     public static class CommandManager
     {
 

@@ -23,9 +23,19 @@ using KS.Kernel.Debugging.RemoteDebug.Interface;
 
 namespace KS.Shell.ShellBase.Commands
 {
+    /// <summary>
+    /// The command executor class
+    /// </summary>
     public abstract class CommandExecutor : ICommand, IRemoteDebugCommand
     {
 
+        /// <summary>
+        /// Executes a command
+        /// </summary>
+        /// <param name="StringArgs">String of arguments</param>
+        /// <param name="ListArgsOnly">List of all arguments</param>
+        /// <param name="ListSwitchesOnly">List of all switches</param>
+        /// <exception cref="InvalidOperationException"></exception>
         public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
             DebugWriter.WriteDebug(DebugLevel.F, "We shouldn't be here!!!");
@@ -34,6 +44,9 @@ namespace KS.Shell.ShellBase.Commands
 
         void IRemoteDebugCommand.Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, StreamWriter SocketStreamWriter, string DeviceAddress) { }
 
+        /// <summary>
+        /// The help helper
+        /// </summary>
         public virtual void HelpHelper() => DebugWriter.WriteDebug(DebugLevel.I, "No additional information found.");
 
     }

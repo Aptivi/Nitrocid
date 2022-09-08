@@ -20,6 +20,9 @@ using System;
 
 namespace KS.Shell.ShellBase.Commands
 {
+    /// <summary>
+    /// Command argument info class
+    /// </summary>
     public class CommandArgumentInfo
     {
 
