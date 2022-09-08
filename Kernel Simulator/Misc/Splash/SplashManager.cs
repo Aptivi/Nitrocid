@@ -22,7 +22,9 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Threading;
 using Extensification.DictionaryExts;
+using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Files.Folders;
 using KS.Files.Operations;
@@ -39,7 +41,7 @@ namespace KS.Misc.Splash
     {
 
         public static string SplashName = "Simple";
-        internal static KernelThread SplashThread = new("Kernel Splash Thread", false, () => CurrentSplash.Display());
+        internal static KernelThread SplashThread = new("Kernel Splash Thread", false, (splash) => GetSplashFromName((string)splash).EntryPoint.Display());
         private readonly static Dictionary<string, SplashInfo> InstalledSplashes = new()
         {
             { "Simple", new SplashInfo("Simple", new SplashSimple()) },
@@ -63,38 +65,12 @@ namespace KS.Misc.Splash
         /// <summary>
         /// Current splash screen
         /// </summary>
-        public static ISplash CurrentSplash
-        {
-            get
-            {
-                if (Splashes.ContainsKey(SplashName))
-                {
-                    return Splashes[SplashName].EntryPoint;
-                }
-                else
-                {
-                    return Splashes["Simple"].EntryPoint;
-                }
-            }
-        }
+        public static ISplash CurrentSplash => GetSplashFromName(SplashName).EntryPoint;
 
         /// <summary>
         /// Current splash screen info instance
         /// </summary>
-        public static SplashInfo CurrentSplashInfo
-        {
-            get
-            {
-                if (Splashes.ContainsKey(SplashName))
-                {
-                    return Splashes[SplashName];
-                }
-                else
-                {
-                    return Splashes["Simple"];
-                }
-            }
-        }
+        public static SplashInfo CurrentSplashInfo => GetSplashFromName(SplashName);
 
         /// <summary>
         /// All the installed splashes either normal or custom
@@ -219,6 +195,23 @@ namespace KS.Misc.Splash
         }
 
         /// <summary>
+        /// Gets the splash information from the name
+        /// </summary>
+        /// <param name="splashName">Splash name</param>
+        /// <returns>Splash information</returns>
+        public static SplashInfo GetSplashFromName(string splashName)
+        {
+            if (Splashes.ContainsKey(splashName))
+            {
+                return Splashes[splashName];
+            }
+            else
+            {
+                return Splashes["Simple"];
+            }
+        }
+
+        /// <summary>
         /// Opens the splash screen
         /// </summary>
         public static void OpenSplash() => OpenSplash(CurrentSplash);
@@ -227,7 +220,7 @@ namespace KS.Misc.Splash
         /// Opens the splash screen
         /// </summary>
         /// <param name="splashName">Splash name</param>
-        public static void OpenSplash(string splashName) => OpenSplash(Splashes[splashName].EntryPoint);
+        public static void OpenSplash(string splashName) => OpenSplash(GetSplashFromName(splashName).EntryPoint);
 
         /// <summary>
         /// Opens the splash screen
@@ -237,21 +230,34 @@ namespace KS.Misc.Splash
         {
             if (Flags.EnableSplash)
             {
+                SplashReport._Progress = 0;
                 ConsoleBase.ConsoleWrapper.CursorVisible = false;
                 splash.Opening();
                 SplashThread.Stop();
-                SplashThread.Start();
+                SplashThread.Start(splash.SplashName);
             }
         }
 
         /// <summary>
         /// Closes the splash screen
         /// </summary>
-        public static void CloseSplash()
+        public static void CloseSplash() => CloseSplash(CurrentSplash);
+
+        /// <summary>
+        /// Closes the splash screen
+        /// </summary>
+        /// <param name="splashName">Splash name</param>
+        public static void CloseSplash(string splashName) => CloseSplash(GetSplashFromName(splashName).EntryPoint);
+
+        /// <summary>
+        /// Closes the splash screen
+        /// </summary>
+        /// <param name="splash">Splash interface to use</param>
+        public static void CloseSplash(ISplash splash)
         {
             if (Flags.EnableSplash)
             {
-                CurrentSplash.Closing();
+                splash.Closing();
 
                 // We need to wait for the splash display thread to finish its work once Closing() is called, because some splashes, like PowerLine,
                 // actually do some operations that take a few milliseconds to finish what it's doing, and if we didn't wait here until the operations
@@ -263,9 +269,46 @@ namespace KS.Misc.Splash
 
                 // Reset the SplashClosing variable in case it needs to be open again. Some splashes don't do anything if they detect that the splash
                 // screen is closing.
-                CurrentSplash.SplashClosing = false;
+                splash.SplashClosing = false;
             }
             SplashReport._KernelBooted = true;
+        }
+
+        /// <summary>
+        /// Previews the splash by name
+        /// </summary>
+        public static void PreviewSplash() => PreviewSplash(CurrentSplash);
+
+        /// <summary>
+        /// Previews the splash by name
+        /// </summary>
+        /// <param name="splashName">Splash name</param>
+        public static void PreviewSplash(string splashName) => PreviewSplash(GetSplashFromName(splashName).EntryPoint);
+
+        /// <summary>
+        /// Previews the splash by name
+        /// </summary>
+        /// <param name="splash">Splash name</param>
+        public static void PreviewSplash(ISplash splash)
+        {
+            // Open the splash and reset the report progress to 0%
+            OpenSplash(splash);
+
+            // Report progress 5 times
+            Thread.Sleep(1000);
+            SplashReport.ReportProgress("20%", 20, true, splash, ColorTools.ColTypes.Neutral);
+            Thread.Sleep(1000);
+            SplashReport.ReportProgress("40%", 20, true, splash, ColorTools.ColTypes.Neutral);
+            Thread.Sleep(1000);
+            SplashReport.ReportProgress("60%", 20, true, splash, ColorTools.ColTypes.Neutral);
+            Thread.Sleep(1000);
+            SplashReport.ReportProgress("80%", 20, true, splash, ColorTools.ColTypes.Neutral);
+            Thread.Sleep(1000);
+            SplashReport.ReportProgress("100%", 20, true, splash, ColorTools.ColTypes.Neutral);
+            Thread.Sleep(1000);
+
+            // Close
+            CloseSplash(splash);
         }
 
     }

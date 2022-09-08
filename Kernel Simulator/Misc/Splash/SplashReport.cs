@@ -32,35 +32,17 @@ namespace KS.Misc.Splash
         /// <summary>
         /// The progress indicator of the kernel 
         /// </summary>
-        public static int Progress
-        {
-            get
-            {
-                return _Progress;
-            }
-        }
+        public static int Progress => _Progress;
 
         /// <summary>
         /// The progress text to indicate how did the kernel progress
         /// </summary>
-        public static string ProgressText
-        {
-            get
-            {
-                return _ProgressText;
-            }
-        }
+        public static string ProgressText => _ProgressText;
 
         /// <summary>
         /// Did the kernel boot successfully?
         /// </summary>
-        public static bool KernelBooted
-        {
-            get
-            {
-                return _KernelBooted;
-            }
-        }
+        public static bool KernelBooted => _KernelBooted;
 
         /// <summary>
         /// Reports the progress for the splash screen while the kernel is booting.
@@ -71,11 +53,26 @@ namespace KS.Misc.Splash
         /// <param name="Vars">Varibales to be expanded to text</param>
         /// <remarks>
         /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
-        /// it will report the progress to the splash system.
+        /// it will report the progress to the splash system. You can force it to report the progress by passing force.
         /// </remarks>
-        internal static void ReportProgress(string Text, int Progress, ColorTools.ColTypes ColTypes, params string[] Vars)
+        internal static void ReportProgress(string Text, int Progress, ColorTools.ColTypes ColTypes = ColorTools.ColTypes.Neutral, params string[] Vars) => ReportProgress(Text, Progress, false, SplashManager.CurrentSplash, ColTypes, Vars);
+
+        /// <summary>
+        /// Reports the progress for the splash screen while the kernel is booting.
+        /// </summary>
+        /// <param name="Text">The progress text to indicate how did the kernel progress</param>
+        /// <param name="Progress">The progress indicator of the kernel</param>
+        /// <param name="force">Force report progress to splash</param>
+        /// <param name="splash">Splash interface</param>
+        /// <param name="ColTypes">A type of colors that will be changed.</param>
+        /// <param name="Vars">Varibales to be expanded to text</param>
+        /// <remarks>
+        /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
+        /// it will report the progress to the splash system. You can force it to report the progress by passing force.
+        /// </remarks>
+        internal static void ReportProgress(string Text, int Progress, bool force = false, ISplash splash = null, ColorTools.ColTypes ColTypes = ColorTools.ColTypes.Neutral, params string[] Vars)
         {
-            if (!KernelBooted)
+            if (!KernelBooted || force)
             {
                 _Progress += Progress;
                 _ProgressText = Text;
@@ -83,9 +80,9 @@ namespace KS.Misc.Splash
                     _Progress = 100;
                 if (SplashManager.CurrentSplashInfo.DisplaysProgress)
                 {
-                    if (Flags.EnableSplash)
+                    if (Flags.EnableSplash && splash != null)
                     {
-                        SplashManager.CurrentSplash.Report(_Progress, Text, Vars);
+                        splash.Report(_Progress, Text, Vars);
                     }
                     else if (!Flags.QuietKernel)
                     {
