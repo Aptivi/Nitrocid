@@ -34,9 +34,13 @@ using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Shells.RSS
 {
+    /// <summary>
+    /// The RSS shell
+    /// </summary>
     public class RSSShell : ShellExecutor, IShell
     {
 
+        /// <inheritdoc/>
         public override ShellType ShellType
         {
             get
@@ -45,8 +49,10 @@ namespace KS.Shell.Shells.RSS
             }
         }
 
+        /// <inheritdoc/>
         public override bool Bail { get; set; }
 
+        /// <inheritdoc/>
         public override void InitializeShell(params object[] ShellArgs)
         {
             // Handle the RSS feed link provided by user

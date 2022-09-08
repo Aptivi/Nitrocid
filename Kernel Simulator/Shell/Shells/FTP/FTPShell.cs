@@ -32,11 +32,15 @@ using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Shells.FTP
 {
+    /// <summary>
+    /// The FTP shell
+    /// </summary>
     public class FTPShell : ShellExecutor, IShell
     {
 
         private bool FtpInitialized;
 
+        /// <inheritdoc/>
         public override ShellType ShellType
         {
             get
@@ -45,8 +49,10 @@ namespace KS.Shell.Shells.FTP
             }
         }
 
+        /// <inheritdoc/>
         public override bool Bail { get; set; }
 
+        /// <inheritdoc/>
         public override void InitializeShell(params object[] ShellArgs)
         {
             // Parse shell arguments

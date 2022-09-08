@@ -42,6 +42,7 @@ namespace KS.Shell.Shells.Archive
     /// </summary>
     public class ArchiveShell : ShellExecutor, IShell
     {
+        /// <inheritdoc/>
         public override ShellType ShellType
         {
             get
@@ -50,8 +51,10 @@ namespace KS.Shell.Shells.Archive
             }
         }
 
+        /// <inheritdoc/>
         public override bool Bail { get; set; }
 
+        /// <inheritdoc/>
         public override void InitializeShell(params object[] ShellArgs)
         {
             // Set current directory for RAR shell

@@ -31,9 +31,13 @@ using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Shells.UESH
 {
+    /// <summary>
+    /// The UESH shell
+    /// </summary>
     public class UESHShell : ShellExecutor, IShell
     {
 
+        /// <inheritdoc/>
         public override ShellType ShellType
         {
             get
@@ -42,8 +46,10 @@ namespace KS.Shell.Shells.UESH
             }
         }
 
+        /// <inheritdoc/>
         public override bool Bail { get; set; }
 
+        /// <inheritdoc/>
         public override void InitializeShell(params object[] ShellArgs)
         {
             while (!Bail)

@@ -29,9 +29,13 @@ using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Shells.HTTP
 {
+    /// <summary>
+    /// The HTTP shell
+    /// </summary>
     public class HTTPShell : ShellExecutor, IShell
     {
 
+        /// <inheritdoc/>
         public override ShellType ShellType
         {
             get
@@ -40,8 +44,10 @@ namespace KS.Shell.Shells.HTTP
             }
         }
 
+        /// <inheritdoc/>
         public override bool Bail { get; set; }
 
+        /// <inheritdoc/>
         public override void InitializeShell(params object[] ShellArgs)
         {
             while (!Bail)

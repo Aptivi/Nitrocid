@@ -32,9 +32,13 @@ using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Shells.Text
 {
+    /// <summary>
+    /// The text editor shell
+    /// </summary>
     public class TextShell : ShellExecutor, IShell
     {
 
+        /// <inheritdoc/>
         public override ShellType ShellType
         {
             get
@@ -43,8 +47,10 @@ namespace KS.Shell.Shells.Text
             }
         }
 
+        /// <inheritdoc/>
         public override bool Bail { get; set; }
 
+        /// <inheritdoc/>
         public override void InitializeShell(params object[] ShellArgs)
         {
             // Get file path

@@ -30,9 +30,13 @@ using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Shells.Json
 {
+    /// <summary>
+    /// The JSON editor shell
+    /// </summary>
     public class JsonShell : ShellExecutor, IShell
     {
 
+        /// <inheritdoc/>
         public override ShellType ShellType
         {
             get
@@ -41,8 +45,10 @@ namespace KS.Shell.Shells.Json
             }
         }
 
+        /// <inheritdoc/>
         public override bool Bail { get; set; }
 
+        /// <inheritdoc/>
         public override void InitializeShell(params object[] ShellArgs)
         {
             // Get file path

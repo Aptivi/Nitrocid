@@ -21,12 +21,19 @@ using KS.Kernel.Debugging;
 
 namespace KS.Shell.ShellBase.Shells
 {
+    /// <summary>
+    /// The shell executor class
+    /// </summary>
     public abstract class ShellExecutor : IShell
     {
 
+        /// <inheritdoc/>
         public virtual ShellType ShellType { get; private set; }
+
+        /// <inheritdoc/>
         public virtual bool Bail { get; set; }
 
+        /// <inheritdoc/>
         public virtual void InitializeShell(params object[] ShellArgs)
         {
             DebugWriter.WriteDebug(DebugLevel.F, "We shouldn't be here!!!");

@@ -30,9 +30,13 @@ using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Shells.SFTP
 {
+    /// <summary>
+    /// The SFTP shell
+    /// </summary>
     public class SFTPShell : ShellExecutor, IShell
     {
 
+        /// <inheritdoc/>
         public override ShellType ShellType
         {
             get
@@ -41,8 +45,10 @@ namespace KS.Shell.Shells.SFTP
             }
         }
 
+        /// <inheritdoc/>
         public override bool Bail { get; set; }
 
+        /// <inheritdoc/>
         public override void InitializeShell(params object[] ShellArgs)
         {
             // Parse shell arguments

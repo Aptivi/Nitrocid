@@ -28,9 +28,13 @@ using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Shells.Mail
 {
+    /// <summary>
+    /// The mail shell
+    /// </summary>
     public class MailShell : ShellExecutor, IShell
     {
 
+        /// <inheritdoc/>
         public override ShellType ShellType
         {
             get
@@ -39,8 +43,10 @@ namespace KS.Shell.Shells.Mail
             }
         }
 
+        /// <inheritdoc/>
         public override bool Bail { get; set; }
 
+        /// <inheritdoc/>
         public override void InitializeShell(params object[] ShellArgs)
         {
             // Send ping to keep the connection alive
