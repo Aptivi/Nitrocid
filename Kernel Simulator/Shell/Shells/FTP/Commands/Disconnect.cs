@@ -52,7 +52,7 @@ namespace KS.Shell.Shells.FTP.Commands
             {
                 // Set a connected flag to False
                 FTPShellCommon.FtpConnected = false;
-                FTPShellCommon.ClientFTP.DisconnectWithQuit = ListSwitchesOnly.Contains("-f");
+                FTPShellCommon.ClientFTP.Config.DisconnectWithQuit = ListSwitchesOnly.Contains("-f");
                 FTPShellCommon.ClientFTP.Disconnect();
                 TextWriterColor.Write(Translate.DoTranslation("Disconnected from {0}"), true, ColorTools.ColTypes.Success, FTPShellCommon.FtpSite);
 

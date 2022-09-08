@@ -71,11 +71,11 @@ namespace KS.Network.FTP.Filesystem
                 {
                     if (!string.IsNullOrEmpty(Path))
                     {
-                        Listing = FTPShellCommon.ClientFTP.GetListing(Path, FtpListOption.DerefLinks);
+                        Listing = FTPShellCommon.ClientFTP.GetListing(Path, FtpListOption.Auto);
                     }
                     else
                     {
-                        Listing = FTPShellCommon.ClientFTP.GetListing(FTPShellCommon.FtpCurrentRemoteDir, FtpListOption.DerefLinks);
+                        Listing = FTPShellCommon.ClientFTP.GetListing(FTPShellCommon.FtpCurrentRemoteDir, FtpListOption.Auto);
                     }
                     foreach (FtpListItem DirListFTP in Listing)
                     {

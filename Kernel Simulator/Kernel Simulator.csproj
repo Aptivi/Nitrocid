@@ -104,7 +104,7 @@
     <PackageReference Include="Dictify" Version="1.0.0.1" />
     <PackageReference Include="Extensification" Version="2022.3.0" />
     <PackageReference Include="Figgle" Version="0.4.0" />
-    <PackageReference Include="FluentFTP" Version="39.4.0" />
+    <PackageReference Include="FluentFTP" Version="40.0.0" />
     <PackageReference Include="GRILO.Boot" Version="0.1.0" />
     <PackageReference Include="HtmlAgilityPack" Version="1.11.45" />
     <PackageReference Include="Inxi.NET" Version="2022.3.1" />

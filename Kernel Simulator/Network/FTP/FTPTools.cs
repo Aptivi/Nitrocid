@@ -23,6 +23,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Security;
 using FluentFTP;
+using FluentFTP.Client.BaseClient;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.Files;
@@ -54,15 +55,19 @@ namespace KS.Network.FTP
             // Make a new FTP client object instance (Used in case logging in using speed dial)
             if (FTPShellCommon.ClientFTP is null)
             {
-                FTPShellCommon._clientFTP = new FtpClient()
+                var ftpConfig = new FtpConfig()
                 {
-                    Host = Address,
-                    Port = Port,
                     RetryAttempts = FTPShellCommon.FtpVerifyRetryAttempts,
                     ConnectTimeout = FTPShellCommon.FtpConnectTimeout,
                     DataConnectionConnectTimeout = FTPShellCommon.FtpDataConnectTimeout,
                     EncryptionMode = EncryptionMode,
                     InternetProtocolVersions = FTPShellCommon.FtpProtocolVersions
+                };
+                FTPShellCommon._clientFTP = new FtpClient()
+                {
+                    Host = Address,
+                    Port = Port,
+                    Config = ftpConfig
                 };
             }
 
@@ -111,15 +116,19 @@ namespace KS.Network.FTP
                     }
 
                     // Make a new FTP client object instance
-                    FTPShellCommon._clientFTP = new FtpClient()
+                    var ftpConfig = new FtpConfig()
                     {
-                        Host = FtpHost,
-                        Port = Convert.ToInt32(FtpPort),
                         RetryAttempts = FTPShellCommon.FtpVerifyRetryAttempts,
                         ConnectTimeout = FTPShellCommon.FtpConnectTimeout,
                         DataConnectionConnectTimeout = FTPShellCommon.FtpDataConnectTimeout,
                         EncryptionMode = FtpEncryptionMode.Auto,
                         InternetProtocolVersions = FTPShellCommon.FtpProtocolVersions
+                    };
+                    FTPShellCommon._clientFTP = new FtpClient()
+                    {
+                        Host = FtpHost,
+                        Port = Convert.ToInt32(FtpPort),
+                        Config = ftpConfig
                     };
 
                     // Add handler for SSL validation
@@ -268,13 +277,13 @@ namespace KS.Network.FTP
             // Speed dial format is below:
             // Site,Port,Username,Encryption
             else if (FTPShellCommon.FtpNewConnectionsToSpeedDial)
-                NetworkTools.AddEntryToSpeedDial(FTPShellCommon.FtpSite, FTPShellCommon.ClientFTP.Port, FTPShellCommon.FtpUser, NetworkTools.SpeedDialType.FTP, FTPShellCommon.ClientFTP.EncryptionMode);
+                NetworkTools.AddEntryToSpeedDial(FTPShellCommon.FtpSite, FTPShellCommon.ClientFTP.Port, FTPShellCommon.FtpUser, NetworkTools.SpeedDialType.FTP, FTPShellCommon.ClientFTP.Config.EncryptionMode);
         }
 
         /// <summary>
         /// Tries to validate certificate
         /// </summary>
-        public static void TryToValidate(FtpClient control, FtpSslValidationEventArgs e)
+        public static void TryToValidate(BaseFtpClient control, FtpSslValidationEventArgs e)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Certificate checks");
             if (e.PolicyErrors == SslPolicyErrors.None)

@@ -62,15 +62,17 @@ namespace KS.Shell.Shells.FTP
                 try
                 {
                     // Complete initialization
-                    if (FtpInitialized == false)
+                    if (FtpInitialized == false && !Connects)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, $"Completing initialization of FTP: {FtpInitialized}");
+
+                        // TODO: Use ClientFTP.Logger to move to new logging system
 #if NETCOREAPP == false
-                        FtpTrace.AddListener(new FTPTracer());
+                        FTPShellCommon.ClientFTP.LegacyLogger += (_, msg) => new FTPTracer().WriteLine(msg);
 #endif
-                        FtpTrace.LogUserName = Flags.FTPLoggerUsername;
-                        FtpTrace.LogPassword = false; // Don't remove this, make a config entry for it, or set it to True! It will introduce security problems.
-                        FtpTrace.LogIP = Flags.FTPLoggerIP;
+                        FTPShellCommon.ClientFTP.Config.LogUserName = Flags.FTPLoggerUsername;
+                        FTPShellCommon.ClientFTP.Config.LogPassword = false; // Don't remove this, make a config entry for it, or set it to True! It will introduce security problems.
+                        FTPShellCommon.ClientFTP.Config.LogHost = Flags.FTPLoggerIP;
                         FTPShellCommon.FtpCurrentDirectory = Paths.HomePath;
                         Kernel.Kernel.KernelEventManager.RaiseFTPShellInitialized();
                         FtpInitialized = true;
