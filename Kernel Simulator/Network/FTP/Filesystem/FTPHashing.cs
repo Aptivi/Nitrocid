@@ -76,10 +76,7 @@ namespace KS.Network.FTP.Filesystem
         /// <exception cref="Kernel.Exceptions.FTPFilesystemException"></exception>
         /// <exception cref="InvalidOperationException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
-        public static Dictionary<string, FtpHash> FTPGetHashes(string Directory, FtpHashAlgorithm HashAlgorithm)
-        {
-            return FTPGetHashes(Directory, HashAlgorithm, FTPShellCommon.FtpRecursiveHashing);
-        }
+        public static Dictionary<string, FtpHash> FTPGetHashes(string Directory, FtpHashAlgorithm HashAlgorithm) => FTPGetHashes(Directory, HashAlgorithm, FTPShellCommon.FtpRecursiveHashing);
 
         /// <summary>
         /// Gets a hash for files in a directory

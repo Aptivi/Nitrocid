@@ -33,10 +33,7 @@ namespace KSTests.MiscTests
         /// </summary>
         [Test]
         [Description("Management")]
-        public void TestCheckField()
-        {
-            FieldManager.CheckField("HiddenFiles").ShouldBeTrue();
-        }
+        public void TestCheckField() => FieldManager.CheckField("HiddenFiles").ShouldBeTrue();
 
         /// <summary>
         /// Tests getting value

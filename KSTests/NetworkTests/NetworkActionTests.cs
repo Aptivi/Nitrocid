@@ -34,30 +34,21 @@ namespace KSTests.NetworkTests
         /// </summary>
         [Test]
         [Description("Action")]
-        public void TestPingAddress()
-        {
-            NetworkTools.PingAddress("www.google.com").Status.ShouldBe(IPStatus.Success);
-        }
+        public void TestPingAddress() => NetworkTools.PingAddress("www.google.com").Status.ShouldBe(IPStatus.Success);
 
         /// <summary>
         /// Tests pinging with custom timeout
         /// </summary>
         [Test]
         [Description("Action")]
-        public void TestPingAddressCustomTimeout()
-        {
-            NetworkTools.PingAddress("www.google.com", 60000).Status.ShouldBe(IPStatus.Success);
-        }
+        public void TestPingAddressCustomTimeout() => NetworkTools.PingAddress("www.google.com", 60000).Status.ShouldBe(IPStatus.Success);
 
         /// <summary>
         /// Tests pinging with custom timeout and buffer
         /// </summary>
         [Test]
         [Description("Action")]
-        public void TestPingAddressCustomTimeoutAndBuffer()
-        {
-            NetworkTools.PingAddress("www.google.com", 60000, System.Text.Encoding.Default.GetBytes("KS")).Status.ShouldBe(IPStatus.Success);
-        }
+        public void TestPingAddressCustomTimeoutAndBuffer() => NetworkTools.PingAddress("www.google.com", 60000, System.Text.Encoding.Default.GetBytes("KS")).Status.ShouldBe(IPStatus.Success);
 
         /// <summary>
         /// Tests pinging with custom timeout and buffer

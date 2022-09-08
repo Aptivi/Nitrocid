@@ -88,10 +88,7 @@ namespace KS.Misc.Editors.JsonShell
         /// Saves JSON file
         /// </summary>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool JsonShell_SaveFile(bool ClearJson)
-        {
-            return JsonShell_SaveFile(ClearJson, JsonShellCommon.JsonShell_Formatting);
-        }
+        public static bool JsonShell_SaveFile(bool ClearJson) => JsonShell_SaveFile(ClearJson, JsonShellCommon.JsonShell_Formatting);
 
         /// <summary>
         /// Saves JSON file
@@ -150,10 +147,7 @@ namespace KS.Misc.Editors.JsonShell
         /// <summary>
         /// Was JSON edited?
         /// </summary>
-        public static bool JsonShell_WasJsonEdited()
-        {
-            return !JToken.DeepEquals(JsonShellCommon.JsonShell_FileToken, JsonShellCommon.JsonShell_FileTokenOrig);
-        }
+        public static bool JsonShell_WasJsonEdited() => !JToken.DeepEquals(JsonShellCommon.JsonShell_FileToken, JsonShellCommon.JsonShell_FileTokenOrig);
 
         /// <summary>
         /// Gets a property in the JSON file

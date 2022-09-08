@@ -30,40 +30,28 @@ namespace KSTests.KernelTests
         /// </summary>
         [Test]
         [Description("Management")]
-        public void TestGetNewConfigObject()
-        {
-            Config.GetNewConfigObject().ShouldNotBeNull();
-        }
+        public void TestGetNewConfigObject() => Config.GetNewConfigObject().ShouldNotBeNull();
 
         /// <summary>
         /// Tests config repair (Actually, it checks to see if any of the config entries is missing. If any one of them is missing, unit test fails.)
         /// </summary>
         [Test]
         [Description("Management")]
-        public void TestRepairConfig()
-        {
-            ConfigTools.RepairConfig().ShouldBeFalse();
-        }
+        public void TestRepairConfig() => ConfigTools.RepairConfig().ShouldBeFalse();
 
         /// <summary>
         /// Tests getting a config category
         /// </summary>
         [Test]
         [Description("Management")]
-        public void TestGetConfigCategoryStandard()
-        {
-            ConfigTools.GetConfigCategory(Config.ConfigCategory.General).ShouldNotBeNull();
-        }
+        public void TestGetConfigCategoryStandard() => ConfigTools.GetConfigCategory(Config.ConfigCategory.General).ShouldNotBeNull();
 
         /// <summary>
         /// Tests getting a config category with a sub-category
         /// </summary>
         [Test]
         [Description("Management")]
-        public void TestGetConfigCategoryWithSubcategory()
-        {
-            ConfigTools.GetConfigCategory(Config.ConfigCategory.Screensaver, "Matrix").ShouldNotBeNull();
-        }
+        public void TestGetConfigCategoryWithSubcategory() => ConfigTools.GetConfigCategory(Config.ConfigCategory.Screensaver, "Matrix").ShouldNotBeNull();
 
         /// <summary>
         /// Tests setting the value of an entry in a category

@@ -30,10 +30,7 @@ namespace KS.Shell.Shells.SFTP.Commands
     class SFTP_CdrCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            SFTPFilesystem.SFTPChangeRemoteDir(ListArgsOnly[0]);
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => SFTPFilesystem.SFTPChangeRemoteDir(ListArgsOnly[0]);
 
     }
 }

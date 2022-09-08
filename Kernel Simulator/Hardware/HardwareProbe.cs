@@ -78,10 +78,7 @@ namespace KS.Hardware
         /// <summary>
         /// Write Inxi.NET debug data to debugger
         /// </summary>
-        private static void WriteInxiDebugData(string Message, string PlainMessage)
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, PlainMessage);
-        }
+        private static void WriteInxiDebugData(string Message, string PlainMessage) => DebugWriter.WriteDebug(DebugLevel.I, PlainMessage);
 
     }
 }

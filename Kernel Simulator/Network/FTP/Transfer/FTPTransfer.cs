@@ -42,10 +42,7 @@ namespace KS.Network.FTP.Transfer
         /// </summary>
         /// <param name="File">A remote file</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool FTPGetFile(string File)
-        {
-            return FTPGetFile(File, File);
-        }
+        public static bool FTPGetFile(string File) => FTPGetFile(File, File);
 
         /// <summary>
         /// Downloads a file from the currently connected FTP server
@@ -91,10 +88,7 @@ namespace KS.Network.FTP.Transfer
         /// </summary>
         /// <param name="Folder">A remote folder</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool FTPGetFolder(string Folder)
-        {
-            return FTPGetFolder(Folder, "");
-        }
+        public static bool FTPGetFolder(string Folder) => FTPGetFolder(Folder, "");
 
         /// <summary>
         /// Downloads a folder from the currently connected FTP server
@@ -173,10 +167,7 @@ namespace KS.Network.FTP.Transfer
         /// </summary>
         /// <param name="File">A local file</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool FTPUploadFile(string File)
-        {
-            return FTPUploadFile(File, File);
-        }
+        public static bool FTPUploadFile(string File) => FTPUploadFile(File, File);
 
         /// <summary>
         /// Uploads a file to the currently connected FTP server
@@ -211,10 +202,7 @@ namespace KS.Network.FTP.Transfer
         /// </summary>
         /// <param name="Folder">A local folder</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool FTPUploadFolder(string Folder)
-        {
-            return FTPUploadFolder(Folder, Folder);
-        }
+        public static bool FTPUploadFolder(string Folder) => FTPUploadFolder(Folder, Folder);
 
         /// <summary>
         /// Uploads a folder to the currently connected FTP server

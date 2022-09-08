@@ -30,10 +30,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class MkFileCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            Making.MakeFile(ListArgsOnly[0]);
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Making.MakeFile(ListArgsOnly[0]);
 
     }
 }

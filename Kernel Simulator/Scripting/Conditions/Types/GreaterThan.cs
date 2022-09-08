@@ -40,10 +40,7 @@ namespace KS.Scripting.Conditions.Types
         public override int ConditionRequiredArguments { get; } = 3;
 
         /// <inheritdoc/>
-        public override bool IsConditionSatisfied(string FirstVariable, string SecondVariable)
-        {
-            return UESHOperators.UESHVariableGreaterThan(FirstVariable, SecondVariable);
-        }
+        public override bool IsConditionSatisfied(string FirstVariable, string SecondVariable) => UESHOperators.UESHVariableGreaterThan(FirstVariable, SecondVariable);
 
     }
 }

@@ -32,10 +32,7 @@ namespace KS.Misc.Reflection
         /// <param name="Variable">Variable name. Use operator NameOf to get name.</param>
         /// <param name="VariableValue">New value of variable</param>
         /// <param name="Internal">Whether the field is internal</param>
-        public static void SetValue(string Variable, object VariableValue, bool Internal = false)
-        {
-            SetValue(Variable, VariableValue, null, Internal);
-        }
+        public static void SetValue(string Variable, object VariableValue, bool Internal = false) => SetValue(Variable, VariableValue, null, Internal);
 
         /// <summary>
         /// Sets the value of a variable to the new value dynamically
@@ -80,10 +77,7 @@ namespace KS.Misc.Reflection
         /// <param name="Variable">Variable name. Use operator NameOf to get name.</param>
         /// <param name="Internal">Whether the field is internal</param>
         /// <returns>Value of a variable</returns>
-        public static object GetValue(string Variable, bool Internal = false)
-        {
-            return GetValue(Variable, null, Internal);
-        }
+        public static object GetValue(string Variable, bool Internal = false) => GetValue(Variable, null, Internal);
 
         /// <summary>
         /// Gets the value of a variable dynamically 

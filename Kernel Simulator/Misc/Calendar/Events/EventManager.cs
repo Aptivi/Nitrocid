@@ -92,10 +92,7 @@ namespace KS.Misc.Calendar.Events
         /// Adds the event to the list (calendar will mark the day with color)
         /// </summary>
         /// <param name="EventInstance">Event info instance</param>
-        internal static void AddEvent(EventInfo EventInstance)
-        {
-            CalendarEvents.Add(EventInstance);
-        }
+        internal static void AddEvent(EventInfo EventInstance) => CalendarEvents.Add(EventInstance);
 
         /// <summary>
         /// Removes the event from the list
@@ -177,10 +174,7 @@ namespace KS.Misc.Calendar.Events
         /// <summary>
         /// Saves all the events from the event list to their individual files
         /// </summary>
-        public static void SaveEvents()
-        {
-            SaveEvents(Paths.GetKernelPath(KernelPathType.Events), Flags.SaveEventsRemindersDestructively);
-        }
+        public static void SaveEvents() => SaveEvents(Paths.GetKernelPath(KernelPathType.Events), Flags.SaveEventsRemindersDestructively);
 
         /// <summary>
         /// Saves all the events from the event list to their individual files
@@ -221,10 +215,7 @@ namespace KS.Misc.Calendar.Events
         /// <summary>
         /// Saves an event to a file
         /// </summary>
-        public static void SaveEvent(EventInfo EventInstance)
-        {
-            SaveEvent(EventInstance, Paths.GetKernelPath(KernelPathType.Events));
-        }
+        public static void SaveEvent(EventInfo EventInstance) => SaveEvent(EventInstance, Paths.GetKernelPath(KernelPathType.Events));
 
         /// <summary>
         /// Saves an event to a file

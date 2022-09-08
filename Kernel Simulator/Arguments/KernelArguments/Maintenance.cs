@@ -24,10 +24,7 @@ namespace KS.Arguments.KernelArguments
     class MaintenanceArgument : ArgumentExecutor, IArgument
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            Flags.Maintenance = true;
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Flags.Maintenance = true;
 
     }
 }

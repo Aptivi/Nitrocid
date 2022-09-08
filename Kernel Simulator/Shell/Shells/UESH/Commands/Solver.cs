@@ -30,10 +30,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class SolverCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            Solver.InitializeSolver();
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Solver.InitializeSolver();
 
     }
 }

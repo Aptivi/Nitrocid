@@ -24,10 +24,7 @@ namespace KS.Arguments.CommandLineArguments
     class CommandLine_ArgsArgument : ArgumentExecutor, IArgument
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            Flags.ArgsOnBoot = true;
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Flags.ArgsOnBoot = true;
 
     }
 }

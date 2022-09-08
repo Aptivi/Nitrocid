@@ -24,10 +24,7 @@ namespace KS.Arguments.KernelArguments
     class SafeArgument : ArgumentExecutor, IArgument
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            Flags.SafeMode = true;
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Flags.SafeMode = true;
 
     }
 }

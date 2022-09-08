@@ -33,10 +33,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class BeepCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            ConsoleBase.ConsoleWrapper.Beep();
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => ConsoleBase.ConsoleWrapper.Beep();
 
     }
 }

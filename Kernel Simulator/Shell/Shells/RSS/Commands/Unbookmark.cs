@@ -30,10 +30,7 @@ namespace KS.Shell.Shells.RSS.Commands
     class RSS_UnbookmarkCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            RSSBookmarkManager.RemoveRSSFeedFromBookmark();
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => RSSBookmarkManager.RemoveRSSFeedFromBookmark();
 
     }
 }

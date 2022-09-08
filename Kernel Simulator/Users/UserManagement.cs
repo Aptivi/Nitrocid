@@ -528,10 +528,7 @@ namespace KS.Users
         /// <summary>
         /// Lists all users and includes anonymous and disabled users if enabled.
         /// </summary>
-        public static List<string> ListAllUsers()
-        {
-            return ListAllUsers(IncludeAnonymous, IncludeDisabled);
-        }
+        public static List<string> ListAllUsers() => ListAllUsers(IncludeAnonymous, IncludeDisabled);
 
         /// <summary>
         /// Lists all users and includes anonymous and disabled users if enabled.
@@ -557,10 +554,7 @@ namespace KS.Users
         /// </summary>
         /// <param name="UserNumber">The user number. This is NOT an index!</param>
         /// <returns>The username which is selected</returns>
-        public static string SelectUser(int UserNumber)
-        {
-            return SelectUser(UserNumber, IncludeAnonymous, IncludeDisabled);
-        }
+        public static string SelectUser(int UserNumber) => SelectUser(UserNumber, IncludeAnonymous, IncludeDisabled);
 
         /// <summary>
         /// Selects a user from the <see cref="ListAllUsers(bool, bool)"/> list
@@ -714,18 +708,12 @@ namespace KS.Users
         /// Checks to see if the user exists
         /// </summary>
         /// <param name="User">The target user</param>
-        public static bool UserExists(string User)
-        {
-            return Login.Login.Users.ContainsKey(User);
-        }
+        public static bool UserExists(string User) => Login.Login.Users.ContainsKey(User);
 
         /// <summary>
         /// Gets the unique user identifier for the current user
         /// </summary>
-        public static string GetUserDollarSign()
-        {
-            return GetUserDollarSign(Login.Login.CurrentUser.Username);
-        }
+        public static string GetUserDollarSign() => GetUserDollarSign(Login.Login.CurrentUser.Username);
 
         /// <summary>
         /// Gets the unique user identifier

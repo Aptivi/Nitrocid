@@ -82,10 +82,7 @@ namespace KSTests.FilesTests
         [TestCase("/usr/bin", IncludePlatform = "linux,unix,macosx", ExpectedResult = true)]
         [TestCase("/usr/bin<>", IncludePlatform = "linux,unix,macosx", ExpectedResult = false)]
         [Description("Querying")]
-        public bool TestTryParsePath(string Path)
-        {
-            return Parsing.TryParsePath(Path);
-        }
+        public bool TestTryParsePath(string Path) => Parsing.TryParsePath(Path);
 
         /// <summary>
         /// Tests trying to parse the file name
@@ -93,10 +90,7 @@ namespace KSTests.FilesTests
         [TestCase("Windows", ExpectedResult = true)]
         [TestCase(@"Windows/System32\", ExpectedResult = false)]
         [Description("Querying")]
-        public bool TestTryParseFileName(string Path)
-        {
-            return Parsing.TryParseFileName(Path);
-        }
+        public bool TestTryParseFileName(string Path) => Parsing.TryParseFileName(Path);
 
         /// <summary>
         /// Tests trying to get the line ending from text file

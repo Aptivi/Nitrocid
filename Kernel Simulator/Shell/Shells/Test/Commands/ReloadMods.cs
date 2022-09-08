@@ -27,10 +27,7 @@ namespace KS.Shell.Shells.Test.Commands
     class Test_ReloadModsCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            ModManager.ReloadMods();
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => ModManager.ReloadMods();
 
     }
 }

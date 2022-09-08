@@ -30,10 +30,7 @@ namespace KS.Shell.Shells.Json.Commands
     class JsonShell_AddPropertyCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            JsonTools.JsonShell_AddNewProperty(ListArgsOnly[0], ListArgsOnly[1], ListArgsOnly[2]);
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => JsonTools.JsonShell_AddNewProperty(ListArgsOnly[0], ListArgsOnly[1], ListArgsOnly[2]);
 
     }
 }

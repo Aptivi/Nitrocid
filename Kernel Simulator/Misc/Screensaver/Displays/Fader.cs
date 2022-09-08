@@ -272,10 +272,7 @@ namespace KS.Misc.Screensaver.Displays
         }
 
         /// <inheritdoc/>
-        public override void ScreensaverLogic()
-        {
-            Animations.Fader.Fader.Simulate(FaderSettingsInstance);
-        }
+        public override void ScreensaverLogic() => Animations.Fader.Fader.Simulate(FaderSettingsInstance);
 
     }
 }

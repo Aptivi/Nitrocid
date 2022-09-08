@@ -28,41 +28,26 @@ namespace KS.Misc.Text
         /// <summary>
         /// Gets all the letters and the numbers.
         /// </summary>
-        public static char[] GetAllLettersAndNumbers()
-        {
-            return Enumerable.Range(0, Convert.ToInt32(char.MaxValue) + 1).Select(CharNum => Convert.ToChar(CharNum)).Where(c => char.IsLetterOrDigit(c)).ToArray();
-
-
-        }
+        public static char[] GetAllLettersAndNumbers() =>
+            Enumerable.Range(0, Convert.ToInt32(char.MaxValue) + 1).Select(CharNum => Convert.ToChar(CharNum)).Where(c => char.IsLetterOrDigit(c)).ToArray();
 
         /// <summary>
         /// Gets all the letters.
         /// </summary>
-        public static char[] GetAllLetters()
-        {
-            return Enumerable.Range(0, Convert.ToInt32(char.MaxValue) + 1).Select(CharNum => Convert.ToChar(CharNum)).Where(c => char.IsLetter(c)).ToArray();
-
-
-        }
+        public static char[] GetAllLetters() => 
+            Enumerable.Range(0, Convert.ToInt32(char.MaxValue) + 1).Select(CharNum => Convert.ToChar(CharNum)).Where(c => char.IsLetter(c)).ToArray();
 
         /// <summary>
         /// Gets all the numbers.
         /// </summary>
-        public static char[] GetAllNumbers()
-        {
-            return Enumerable.Range(0, Convert.ToInt32(char.MaxValue) + 1).Select(CharNum => Convert.ToChar(CharNum)).Where(c => char.IsNumber(c)).ToArray();
-
-
-        }
+        public static char[] GetAllNumbers() => 
+            Enumerable.Range(0, Convert.ToInt32(char.MaxValue) + 1).Select(CharNum => Convert.ToChar(CharNum)).Where(c => char.IsNumber(c)).ToArray();
 
         /// <summary>
         /// A simplification for <see cref="Convert.ToChar(int)"/> function to return the ESC character
         /// </summary>
         /// <returns>ESC</returns>
-        public static char GetEsc()
-        {
-            return Convert.ToChar(0x1B);
-        }
+        public static char GetEsc() => Convert.ToChar(0x1B);
 
     }
 }

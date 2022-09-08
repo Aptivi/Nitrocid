@@ -33,10 +33,7 @@ namespace KS.Files.LineEndings
         /// Converts the line endings to the newline style for the current platform
         /// </summary>
         /// <param name="TextFile">Text file name with extension or file path</param>
-        public static void ConvertLineEndings(string TextFile)
-        {
-            ConvertLineEndings(TextFile, LineEndingsTools.NewlineStyle);
-        }
+        public static void ConvertLineEndings(string TextFile) => ConvertLineEndings(TextFile, LineEndingsTools.NewlineStyle);
 
         /// <summary>
         /// Converts the line endings to the specified newline style

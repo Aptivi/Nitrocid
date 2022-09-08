@@ -34,10 +34,7 @@ namespace KSTests.TimeDateTests
         /// </summary>
         [Test]
         [Description("Action")]
-        public void TestRenderKernelDate()
-        {
-            TimeDateRenderers.RenderDate().ShouldNotBeNullOrEmpty();
-        }
+        public void TestRenderKernelDate() => TimeDateRenderers.RenderDate().ShouldNotBeNullOrEmpty();
 
         /// <summary>
         /// Tests rendering kernel date with specific format type
@@ -78,10 +75,7 @@ namespace KSTests.TimeDateTests
         /// </summary>
         [Test]
         [Description("Action")]
-        public void TestRenderKernelDateUtc()
-        {
-            TimeDateRenderersUtc.RenderDateUtc().ShouldNotBeNullOrEmpty();
-        }
+        public void TestRenderKernelDateUtc() => TimeDateRenderersUtc.RenderDateUtc().ShouldNotBeNullOrEmpty();
 
         /// <summary>
         /// Tests rendering kernel date with specific format type (UTC)
@@ -218,10 +212,7 @@ namespace KSTests.TimeDateTests
         /// </summary>
         [Test]
         [Description("Action")]
-        public void TestRenderKernelTime()
-        {
-            TimeDateRenderers.RenderTime().ShouldNotBeNullOrEmpty();
-        }
+        public void TestRenderKernelTime() => TimeDateRenderers.RenderTime().ShouldNotBeNullOrEmpty();
 
         /// <summary>
         /// Tests rendering kernel time
@@ -262,10 +253,7 @@ namespace KSTests.TimeDateTests
         /// </summary>
         [Test]
         [Description("Action")]
-        public void TestRenderKernelTimeUtc()
-        {
-            TimeDateRenderersUtc.RenderTimeUtc().ShouldNotBeNullOrEmpty();
-        }
+        public void TestRenderKernelTimeUtc() => TimeDateRenderersUtc.RenderTimeUtc().ShouldNotBeNullOrEmpty();
 
         /// <summary>
         /// Tests rendering kernel time with specific format type (UTC)
@@ -402,10 +390,7 @@ namespace KSTests.TimeDateTests
         /// </summary>
         [Test]
         [Description("Action")]
-        public void TestRenderKernel()
-        {
-            TimeDateRenderers.Render().ShouldNotBeNullOrEmpty();
-        }
+        public void TestRenderKernel() => TimeDateRenderers.Render().ShouldNotBeNullOrEmpty();
 
         /// <summary>
         /// Tests rendering kernel date
@@ -446,10 +431,7 @@ namespace KSTests.TimeDateTests
         /// </summary>
         [Test]
         [Description("Action")]
-        public void TestRenderKernelUtc()
-        {
-            TimeDateRenderersUtc.RenderUtc().ShouldNotBeNullOrEmpty();
-        }
+        public void TestRenderKernelUtc() => TimeDateRenderersUtc.RenderUtc().ShouldNotBeNullOrEmpty();
 
         /// <summary>
         /// Tests rendering kernel date with specific format type (UTC)

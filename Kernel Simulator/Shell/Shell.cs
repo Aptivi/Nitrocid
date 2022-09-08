@@ -116,10 +116,7 @@ namespace KS.Shell
         /// </summary>
         /// <param name="FullCommand">The full command string</param>
         /// <remarks>All new shells implemented either in KS or by mods should use this routine to allow effective and consistent line parsing.</remarks>
-        public static void GetLine(string FullCommand)
-        {
-            GetLine(FullCommand, "", CurrentShellType);
-        }
+        public static void GetLine(string FullCommand) => GetLine(FullCommand, "", CurrentShellType);
 
         /// <summary>
         /// Parses a specified command.

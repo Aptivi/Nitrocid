@@ -37,18 +37,12 @@ namespace KS.Network.Mail
         /// <summary>
         /// Initializes the CountChanged handlers. Currently, it only supports inbox.
         /// </summary>
-        public static void InitializeHandlers()
-        {
-            MailLogin.IMAP_Client.Inbox.CountChanged += OnCountChanged;
-        }
+        public static void InitializeHandlers() => MailLogin.IMAP_Client.Inbox.CountChanged += OnCountChanged;
 
         /// <summary>
         /// Releases the CountChanged handlers. Currently, it only supports inbox.
         /// </summary>
-        public static void ReleaseHandlers()
-        {
-            MailLogin.IMAP_Client.Inbox.CountChanged -= OnCountChanged;
-        }
+        public static void ReleaseHandlers() => MailLogin.IMAP_Client.Inbox.CountChanged -= OnCountChanged;
 
         /// <summary>
         /// Handles WebAlert sent by Gmail

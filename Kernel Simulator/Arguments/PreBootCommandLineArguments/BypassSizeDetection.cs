@@ -24,10 +24,7 @@ namespace KS.Arguments.PreBootCommandLineArguments
     class PreBootCommandLine_BypassSizeDetectionArgument : ArgumentExecutor, IArgument
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            Flags.CheckingForConsoleSize = false;
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Flags.CheckingForConsoleSize = false;
 
     }
 }

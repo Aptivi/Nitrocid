@@ -30,10 +30,7 @@ namespace KS.Shell.Shells.Mail.Commands
     class Mail_RenCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            MailDirectory.RenameMailDirectory(ListArgsOnly[0], ListArgsOnly[1]);
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => MailDirectory.RenameMailDirectory(ListArgsOnly[0], ListArgsOnly[1]);
 
     }
 }

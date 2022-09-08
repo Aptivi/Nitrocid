@@ -61,10 +61,7 @@ namespace KS.Misc.Execution
         /// <summary>
         /// Executes a file with specified arguments
         /// </summary>
-        internal static void ExecuteProcess(ExecuteProcessThreadParameters ThreadParams)
-        {
-            ExecuteProcess(ThreadParams.File, ThreadParams.Args);
-        }
+        internal static void ExecuteProcess(ExecuteProcessThreadParameters ThreadParams) => ExecuteProcess(ThreadParams.File, ThreadParams.Args);
 
         /// <summary>
         /// Executes a file with specified arguments
@@ -72,10 +69,7 @@ namespace KS.Misc.Execution
         /// <param name="File">Full path to file</param>
         /// <param name="Args">Arguments, if any</param>
         /// <returns>Application exit code. -1 if internal error occurred.</returns>
-        public static int ExecuteProcess(string File, string Args)
-        {
-            return ExecuteProcess(File, Args, CurrentDirectory.CurrentDir);
-        }
+        public static int ExecuteProcess(string File, string Args) => ExecuteProcess(File, Args, CurrentDirectory.CurrentDir);
 
         /// <summary>
         /// Executes a file with specified arguments

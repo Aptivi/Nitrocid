@@ -52,10 +52,7 @@ namespace KS.Misc.Screensaver
         /// <summary>
         /// Screensaver logic
         /// </summary>
-        public virtual void ScreensaverLogic()
-        {
-            ThreadManager.SleepNoBlock(10L, ScreensaverDisplayer.ScreensaverDisplayerThread);
-        }
+        public virtual void ScreensaverLogic() => ThreadManager.SleepNoBlock(10L, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
         /// <summary>
         /// Screensaver outro

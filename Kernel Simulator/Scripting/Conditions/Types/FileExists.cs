@@ -40,10 +40,7 @@ namespace KS.Scripting.Conditions.Types
         public override int ConditionRequiredArguments { get; } = 2;
 
         /// <inheritdoc/>
-        public override bool IsConditionSatisfied(string FirstVariable, string SecondVariable)
-        {
-            return UESHOperators.UESHVariableFileExists(FirstVariable);
-        }
+        public override bool IsConditionSatisfied(string FirstVariable, string SecondVariable) => UESHOperators.UESHVariableFileExists(FirstVariable);
 
     }
 }

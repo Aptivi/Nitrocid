@@ -27,10 +27,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class HttpCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            ShellStart.StartShell(ShellType.HTTPShell);
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => ShellStart.StartShell(ShellType.HTTPShell);
 
     }
 }

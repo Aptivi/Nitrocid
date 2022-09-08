@@ -30,10 +30,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class CopyCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            Copying.CopyFileOrDir(ListArgsOnly[0], ListArgsOnly[1]);
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Copying.CopyFileOrDir(ListArgsOnly[0], ListArgsOnly[1]);
 
     }
 }

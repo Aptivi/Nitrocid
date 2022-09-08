@@ -35,40 +35,28 @@ namespace KSTests.MiscTests
         /// </summary>
         [Test]
         [Description("Initialization")]
-        public void TestInitializeKernelThread()
-        {
-            TargetThread = new KernelThread("Unit test thread #1", true, KernelThreadTestHelper.WriteHello);
-        }
+        public void TestInitializeKernelThread() => TargetThread = new KernelThread("Unit test thread #1", true, KernelThreadTestHelper.WriteHello);
 
         /// <summary>
         /// Tests initializing kernel parameterized thread
         /// </summary>
         [Test]
         [Description("Initialization")]
-        public void TestInitializeKernelParameterizedThread()
-        {
-            TargetParameterizedThread = new KernelThread("Unit test thread #2", true, (_) => KernelThreadTestHelper.WriteHelloWithArgument("Hello"));
-        }
+        public void TestInitializeKernelParameterizedThread() => TargetParameterizedThread = new KernelThread("Unit test thread #2", true, (_) => KernelThreadTestHelper.WriteHelloWithArgument("Hello"));
 
         /// <summary>
         /// Tests starting kernel thread
         /// </summary>
         [Test]
         [Description("Initialization")]
-        public void TestStartKernelThread()
-        {
-            TargetThread.Start();
-        }
+        public void TestStartKernelThread() => TargetThread.Start();
 
         /// <summary>
         /// Tests starting kernel parameterized thread
         /// </summary>
         [Test]
         [Description("Initialization")]
-        public void TestStartKernelParameterizedThread()
-        {
-            TargetParameterizedThread.Start("Agustin");
-        }
+        public void TestStartKernelParameterizedThread() => TargetParameterizedThread.Start("Agustin");
 
         /// <summary>
         /// Tests stopping kernel thread

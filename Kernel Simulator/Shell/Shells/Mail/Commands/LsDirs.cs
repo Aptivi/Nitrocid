@@ -32,10 +32,7 @@ namespace KS.Shell.Shells.Mail.Commands
     class Mail_LsDirsCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            TextWriterColor.Write(MailDirectory.MailListDirectories(), false, ColorTools.ColTypes.Neutral);
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => TextWriterColor.Write(MailDirectory.MailListDirectories(), false, ColorTools.ColTypes.Neutral);
 
     }
 }

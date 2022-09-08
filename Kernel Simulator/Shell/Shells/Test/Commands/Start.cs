@@ -27,10 +27,7 @@ namespace KS.Shell.Shells.Test.Commands
     class Test_StartCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            ShellStart.KillShellForced();
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => ShellStart.KillShellForced();
 
     }
 }

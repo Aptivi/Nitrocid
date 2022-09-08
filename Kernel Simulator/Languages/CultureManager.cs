@@ -77,10 +77,7 @@ namespace KS.Languages
         /// <summary>
         /// Gets all cultures available for the current language
         /// </summary>
-        public static List<CultureInfo> GetCulturesFromCurrentLang()
-        {
-            return LanguageManager.Languages[LanguageManager.CurrentLanguage].Cultures;
-        }
+        public static List<CultureInfo> GetCulturesFromCurrentLang() => LanguageManager.Languages[LanguageManager.CurrentLanguage].Cultures;
 
         /// <summary>
         /// Gets all cultures available for the current language

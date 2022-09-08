@@ -31,10 +31,7 @@ namespace KS.Kernel.Events
         /// <summary>
         /// Lists all the fired events with arguments
         /// </summary>
-        public static Dictionary<string, object[]> ListAllFiredEvents()
-        {
-            return ListAllFiredEvents("");
-        }
+        public static Dictionary<string, object[]> ListAllFiredEvents() => ListAllFiredEvents("");
 
         /// <summary>
         /// Lists all the fired events with arguments
@@ -59,10 +56,7 @@ namespace KS.Kernel.Events
         /// <summary>
         /// Clears all the fired events
         /// </summary>
-        public static void ClearAllFiredEvents()
-        {
-            FiredEvents.Clear();
-        }
+        public static void ClearAllFiredEvents() => FiredEvents.Clear();
 
     }
 }

@@ -103,10 +103,7 @@ namespace KS.Network.RSS.Instance
         /// <summary>
         /// Refreshes the RSS class instance
         /// </summary>
-        public void Refresh()
-        {
-            Refresh(_FeedUrl, _FeedType);
-        }
+        public void Refresh() => Refresh(_FeedUrl, _FeedType);
 
         /// <summary>
         /// Refreshes the RSS class instance

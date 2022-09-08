@@ -40,10 +40,7 @@ namespace KS.Network.Mail.Directory
         /// </summary>
         /// <param name="PageNum">Page number</param>
         /// <exception cref="ArgumentException"></exception>
-        public static void MailListMessages(int PageNum)
-        {
-            MailListMessages(PageNum, MailShellCommon.Mail_MaxMessagesInPage);
-        }
+        public static void MailListMessages(int PageNum) => MailListMessages(PageNum, MailShellCommon.Mail_MaxMessagesInPage);
 
         /// <summary>
         /// Lists messages

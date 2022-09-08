@@ -34,10 +34,7 @@ namespace KSTests.ConsoleTests
         /// </summary>
         [Test]
         [Description("Querying")]
-        public void TestPercentRepeatTargeted()
-        {
-            ConsoleExtensions.PercentRepeatTargeted(25, 200, 100).ShouldBe(12);
-        }
+        public void TestPercentRepeatTargeted() => ConsoleExtensions.PercentRepeatTargeted(25, 200, 100).ShouldBe(12);
 
         /// <summary>
         /// Tests filtering the VT sequences that matches the regex

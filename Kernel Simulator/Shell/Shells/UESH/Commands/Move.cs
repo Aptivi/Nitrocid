@@ -30,10 +30,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class MoveCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            Moving.MoveFileOrDir(ListArgsOnly[0], ListArgsOnly[1]);
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Moving.MoveFileOrDir(ListArgsOnly[0], ListArgsOnly[1]);
 
     }
 }

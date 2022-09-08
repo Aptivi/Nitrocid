@@ -27,10 +27,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class ClearFiredEventsCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            EventsManager.ClearAllFiredEvents();
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => EventsManager.ClearAllFiredEvents();
 
     }
 }

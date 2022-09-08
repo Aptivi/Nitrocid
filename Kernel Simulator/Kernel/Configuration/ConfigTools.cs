@@ -235,10 +235,7 @@ namespace KS.Kernel.Configuration
         /// <param name="ConfigCategory">Config category</param>
         /// <param name="ConfigEntryName">Config entry name.</param>
         /// <param name="ConfigValue">Config entry value to install</param>
-        public static void SetConfigValue(Config.ConfigCategory ConfigCategory, string ConfigEntryName, JToken ConfigValue)
-        {
-            SetConfigValue(ConfigCategory, GetConfigCategory(ConfigCategory), ConfigEntryName, ConfigValue);
-        }
+        public static void SetConfigValue(Config.ConfigCategory ConfigCategory, string ConfigEntryName, JToken ConfigValue) => SetConfigValue(ConfigCategory, GetConfigCategory(ConfigCategory), ConfigEntryName, ConfigValue);
 
         /// <summary>
         /// Sets the value of an entry in a category.
@@ -247,10 +244,7 @@ namespace KS.Kernel.Configuration
         /// <param name="ConfigSubCategoryName">Configuration subcategory name</param>
         /// <param name="ConfigEntryName">Config entry name.</param>
         /// <param name="ConfigValue">Config entry value to install</param>
-        public static void SetConfigValue(Config.ConfigCategory ConfigCategory, string ConfigSubCategoryName, string ConfigEntryName, JToken ConfigValue)
-        {
-            SetConfigValue(ConfigCategory, GetConfigCategory(ConfigCategory, ConfigSubCategoryName), ConfigEntryName, ConfigValue);
-        }
+        public static void SetConfigValue(Config.ConfigCategory ConfigCategory, string ConfigSubCategoryName, string ConfigEntryName, JToken ConfigValue) => SetConfigValue(ConfigCategory, GetConfigCategory(ConfigCategory, ConfigSubCategoryName), ConfigEntryName, ConfigValue);
 
         /// <summary>
         /// Sets the value of an entry in a category.
@@ -298,10 +292,7 @@ namespace KS.Kernel.Configuration
         /// </summary>
         /// <param name="ConfigCategory">Config category</param>
         /// <param name="ConfigEntryName">Config entry name.</param>
-        public static JToken GetConfigValue(Config.ConfigCategory ConfigCategory, string ConfigEntryName)
-        {
-            return GetConfigValue(ConfigCategory, GetConfigCategory(ConfigCategory), ConfigEntryName);
-        }
+        public static JToken GetConfigValue(Config.ConfigCategory ConfigCategory, string ConfigEntryName) => GetConfigValue(ConfigCategory, GetConfigCategory(ConfigCategory), ConfigEntryName);
 
         /// <summary>
         /// Gets the value of an entry in a category.
@@ -309,10 +300,7 @@ namespace KS.Kernel.Configuration
         /// <param name="ConfigCategory">Config category</param>
         /// <param name="ConfigSubCategoryName">Configuration subcategory name</param>
         /// <param name="ConfigEntryName">Config entry name.</param>
-        public static JToken GetConfigValue(Config.ConfigCategory ConfigCategory, string ConfigSubCategoryName, string ConfigEntryName)
-        {
-            return GetConfigValue(ConfigCategory, GetConfigCategory(ConfigCategory, ConfigSubCategoryName), ConfigEntryName);
-        }
+        public static JToken GetConfigValue(Config.ConfigCategory ConfigCategory, string ConfigSubCategoryName, string ConfigEntryName) => GetConfigValue(ConfigCategory, GetConfigCategory(ConfigCategory, ConfigSubCategoryName), ConfigEntryName);
 
         /// <summary>
         /// Gets the value of an entry in a category.

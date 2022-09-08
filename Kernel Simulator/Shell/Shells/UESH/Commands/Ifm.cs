@@ -31,10 +31,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class IfmCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            TextWriterColor.Write("TBD. It'll be hopefully finished by Beta 1.", true, ConsoleBase.Colors.ColorTools.ColTypes.Error);
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => TextWriterColor.Write("TBD. It'll be hopefully finished by Beta 1.", true, ConsoleBase.Colors.ColorTools.ColTypes.Error);
 
     }
 }

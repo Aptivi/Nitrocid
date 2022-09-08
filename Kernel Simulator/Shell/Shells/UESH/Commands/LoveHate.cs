@@ -27,10 +27,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class LoveHateCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            LoveHateRespond.InitializeLoveHate();
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => LoveHateRespond.InitializeLoveHate();
 
     }
 }

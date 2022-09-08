@@ -37,29 +37,20 @@ namespace KS.ConsoleBase.Inputs
         /// <summary>
         /// Reads the line from the console
         /// </summary>
-        public static string ReadLine()
-        {
-            return ReadLine("", "", true);
-        }
+        public static string ReadLine() => ReadLine("", "", true);
 
         /// <summary>
         /// Reads the line from the console
         /// </summary>
         /// <param name="UseCtrlCAsInput">Whether to treat CTRL + C as input</param>
-        public static string ReadLine(bool UseCtrlCAsInput)
-        {
-            return ReadLine("", "", UseCtrlCAsInput);
-        }
+        public static string ReadLine(bool UseCtrlCAsInput) => ReadLine("", "", UseCtrlCAsInput);
 
         /// <summary>
         /// Reads the line from the console
         /// </summary>
         /// <param name="InputText">Input text to write</param>
         /// <param name="DefaultValue">Default value</param>
-        public static string ReadLine(string InputText, string DefaultValue)
-        {
-            return ReadLine(InputText, DefaultValue, true);
-        }
+        public static string ReadLine(string InputText, string DefaultValue) => ReadLine(InputText, DefaultValue, true);
 
         /// <summary>
         /// Reads the line from the console
@@ -96,10 +87,7 @@ namespace KS.ConsoleBase.Inputs
         /// Reads the next line of characters from the standard input stream without showing input being written by user.
         /// </summary>
         /// <param name="MaskChar">Specifies the password mask character</param>
-        public static string ReadLineNoInput(char MaskChar)
-        {
-            return ReadLineReboot.ReadLine.ReadPassword("", MaskChar);
-        }
+        public static string ReadLineNoInput(char MaskChar) => ReadLineReboot.ReadLine.ReadPassword("", MaskChar);
 
         /// <summary>
         /// Reads the next key from the console input stream with the timeout
@@ -175,8 +163,7 @@ namespace KS.ConsoleBase.Inputs
         /// <summary>
         /// Detects the keypress
         /// </summary>
-        public static void DetectKeypress()
-        {
+        public static void DetectKeypress() =>
 #if NETCOREAPP
             while (!KS.ConsoleBase.ConsoleWrapper.KeyAvailable)
                 Thread.Sleep(1);
@@ -184,7 +171,7 @@ namespace KS.ConsoleBase.Inputs
 #else
             ConsoleWrapper.ReadKey();
 #endif
-        }
+
 
     }
 }

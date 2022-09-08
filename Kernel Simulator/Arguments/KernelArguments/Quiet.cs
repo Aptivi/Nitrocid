@@ -24,10 +24,7 @@ namespace KS.Arguments.KernelArguments
     class QuietArgument : ArgumentExecutor, IArgument
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            Flags.QuietKernel = true;
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Flags.QuietKernel = true;
 
     }
 }

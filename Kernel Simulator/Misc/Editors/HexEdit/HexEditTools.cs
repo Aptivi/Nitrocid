@@ -217,10 +217,7 @@ namespace KS.Misc.Editors.HexEdit
         /// Deletes the bytes
         /// </summary>
         /// <param name="StartByteNumber">Start from the byte number</param>
-        public static void HexEdit_DeleteBytes(long StartByteNumber)
-        {
-            HexEdit_DeleteBytes(StartByteNumber, HexEditShellCommon.HexEdit_FileBytes.LongLength);
-        }
+        public static void HexEdit_DeleteBytes(long StartByteNumber) => HexEdit_DeleteBytes(StartByteNumber, HexEditShellCommon.HexEdit_FileBytes.LongLength);
 
         /// <summary>
         /// Deletes the bytes
@@ -266,18 +263,12 @@ namespace KS.Misc.Editors.HexEdit
         /// <summary>
         /// Renders the file in hex
         /// </summary>
-        public static void HexEdit_DisplayHex()
-        {
-            HexEdit_DisplayHex(1L, HexEditShellCommon.HexEdit_FileBytes.LongLength);
-        }
+        public static void HexEdit_DisplayHex() => HexEdit_DisplayHex(1L, HexEditShellCommon.HexEdit_FileBytes.LongLength);
 
         /// <summary>
         /// Renders the file in hex
         /// </summary>
-        public static void HexEdit_DisplayHex(long Start)
-        {
-            HexEdit_DisplayHex(Start, HexEditShellCommon.HexEdit_FileBytes.LongLength);
-        }
+        public static void HexEdit_DisplayHex(long Start) => HexEdit_DisplayHex(Start, HexEditShellCommon.HexEdit_FileBytes.LongLength);
 
         /// <summary>
         /// Renders the file in hex
@@ -353,18 +344,12 @@ namespace KS.Misc.Editors.HexEdit
         /// <summary>
         /// Queries the byte and displays the results
         /// </summary>
-        public static void HexEdit_QueryByteAndDisplay(byte ByteContent)
-        {
-            HexEdit_QueryByteAndDisplay(ByteContent, 1L, HexEditShellCommon.HexEdit_FileBytes.LongLength);
-        }
+        public static void HexEdit_QueryByteAndDisplay(byte ByteContent) => HexEdit_QueryByteAndDisplay(ByteContent, 1L, HexEditShellCommon.HexEdit_FileBytes.LongLength);
 
         /// <summary>
         /// Queries the byte and displays the results
         /// </summary>
-        public static void HexEdit_QueryByteAndDisplay(byte ByteContent, long Start)
-        {
-            HexEdit_QueryByteAndDisplay(ByteContent, Start, HexEditShellCommon.HexEdit_FileBytes.LongLength);
-        }
+        public static void HexEdit_QueryByteAndDisplay(byte ByteContent, long Start) => HexEdit_QueryByteAndDisplay(ByteContent, Start, HexEditShellCommon.HexEdit_FileBytes.LongLength);
 
         /// <summary>
         /// Queries the byte and displays the results
@@ -427,10 +412,7 @@ namespace KS.Misc.Editors.HexEdit
         /// </summary>
         /// <param name="FromByte">Byte to be replaced</param>
         /// <param name="WithByte">Byte to replace with</param>
-        public static void HexEdit_Replace(byte FromByte, byte WithByte)
-        {
-            HexEdit_Replace(FromByte, WithByte, 1L, HexEditShellCommon.HexEdit_FileBytes.LongLength);
-        }
+        public static void HexEdit_Replace(byte FromByte, byte WithByte) => HexEdit_Replace(FromByte, WithByte, 1L, HexEditShellCommon.HexEdit_FileBytes.LongLength);
 
         /// <summary>
         /// Replaces every occurence of a byte with the replacement
@@ -438,10 +420,7 @@ namespace KS.Misc.Editors.HexEdit
         /// <param name="FromByte">Byte to be replaced</param>
         /// <param name="WithByte">Byte to replace with</param>
         /// <param name="Start">Start byte number</param>
-        public static void HexEdit_Replace(byte FromByte, byte WithByte, long Start)
-        {
-            HexEdit_Replace(FromByte, WithByte, Start, HexEditShellCommon.HexEdit_FileBytes.LongLength);
-        }
+        public static void HexEdit_Replace(byte FromByte, byte WithByte, long Start) => HexEdit_Replace(FromByte, WithByte, Start, HexEditShellCommon.HexEdit_FileBytes.LongLength);
 
         /// <summary>
         /// Replaces every occurence of a byte with the replacement

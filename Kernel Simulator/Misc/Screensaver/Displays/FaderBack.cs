@@ -236,10 +236,7 @@ namespace KS.Misc.Screensaver.Displays
         }
 
         /// <inheritdoc/>
-        public override void ScreensaverLogic()
-        {
-            Animations.FaderBack.FaderBack.Simulate(FaderBackSettingsInstance);
-        }
+        public override void ScreensaverLogic() => Animations.FaderBack.FaderBack.Simulate(FaderBackSettingsInstance);
 
     }
 }

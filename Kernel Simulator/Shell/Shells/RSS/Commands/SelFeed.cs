@@ -30,10 +30,7 @@ namespace KS.Shell.Shells.RSS.Commands
     class RSS_SelFeedCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            RSSTools.OpenFeedSelector();
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => RSSTools.OpenFeedSelector();
 
     }
 }

@@ -30,10 +30,7 @@ namespace KS.Shell.Shells.FTP.Commands
     class FTP_CdlCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            FTPFilesystem.FTPChangeLocalDir(ListArgsOnly[0]);
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => FTPFilesystem.FTPChangeLocalDir(ListArgsOnly[0]);
 
     }
 }

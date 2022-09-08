@@ -47,10 +47,7 @@ namespace KS.Network.FTP.Filesystem
         /// <returns>The list if successful; null if unsuccessful</returns>
         /// <exception cref="Kernel.Exceptions.FTPFilesystemException"></exception>
         /// <exception cref="InvalidOperationException"></exception>
-        public static List<string> FTPListRemote(string Path)
-        {
-            return FTPListRemote(Path, FTPShellCommon.FtpShowDetailsInList);
-        }
+        public static List<string> FTPListRemote(string Path) => FTPListRemote(Path, FTPShellCommon.FtpShowDetailsInList);
 
         /// <summary>
         /// Lists remote folders and files

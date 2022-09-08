@@ -188,10 +188,7 @@ namespace KS.Misc.Encryption
         /// </summary>
         /// <param name="Algorithm">Algorithm</param>
         /// <returns>Empty hash</returns>
-        public static string GetEmptyHash(Algorithms Algorithm)
-        {
-            return GetEncryptedString("", Algorithm);
-        }
+        public static string GetEmptyHash(Algorithms Algorithm) => GetEncryptedString("", Algorithm);
 
     }
 }

@@ -30,10 +30,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class LockScreenCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            Screensaver.LockScreen();
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Screensaver.LockScreen();
 
     }
 }

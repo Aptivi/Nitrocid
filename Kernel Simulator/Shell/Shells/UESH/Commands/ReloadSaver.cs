@@ -50,11 +50,9 @@ namespace KS.Shell.Shells.UESH.Commands
             }
         }
 
-        public override void HelpHelper()
-        {
+        public override void HelpHelper() =>
             // Print available screensavers
             TextWriterColor.Write(Translate.DoTranslation("where customsaver will be") + " {0}", true, ColorTools.ColTypes.Neutral, string.Join(", ", CustomSaverTools.CustomSavers.Keys));
-        }
 
     }
 }

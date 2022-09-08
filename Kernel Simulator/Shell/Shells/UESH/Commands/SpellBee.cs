@@ -32,10 +32,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class SpellBeeCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            Speller.InitializeWords();
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Speller.InitializeWords();
 
     }
 }

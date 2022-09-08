@@ -26,10 +26,7 @@ namespace KS.Shell.Shells.Text.Commands
     class TextEdit_ClearCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            TextEditShellCommon.TextEdit_FileLines.Clear();
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => TextEditShellCommon.TextEdit_FileLines.Clear();
 
     }
 }

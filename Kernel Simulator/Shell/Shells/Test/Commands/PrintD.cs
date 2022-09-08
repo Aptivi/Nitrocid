@@ -27,10 +27,7 @@ namespace KS.Shell.Shells.Test.Commands
     class Test_PrintDCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, string.Join(" ", ListArgsOnly));
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => DebugWriter.WriteDebug(DebugLevel.I, string.Join(" ", ListArgsOnly));
 
     }
 }

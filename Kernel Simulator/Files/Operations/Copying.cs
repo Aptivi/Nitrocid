@@ -104,10 +104,7 @@ namespace KS.Files.Operations
         /// </summary>
         /// <param name="Source">Source directory</param>
         /// <param name="Destination">Target directory</param>
-        public static void CopyDirectory(string Source, string Destination)
-        {
-            CopyDirectory(Source, Destination, Filesystem.ShowFilesystemProgress);
-        }
+        public static void CopyDirectory(string Source, string Destination) => CopyDirectory(Source, Destination, Filesystem.ShowFilesystemProgress);
 
         /// <summary>
         /// Copies the directory from source to destination

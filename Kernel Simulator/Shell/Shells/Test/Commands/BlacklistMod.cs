@@ -27,10 +27,7 @@ namespace KS.Shell.Shells.Test.Commands
     class Test_BlacklistModCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            ModManager.AddModToBlacklist(ListArgsOnly[0]);
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => ModManager.AddModToBlacklist(ListArgsOnly[0]);
 
     }
 }

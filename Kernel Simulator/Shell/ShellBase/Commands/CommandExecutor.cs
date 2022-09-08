@@ -34,10 +34,7 @@ namespace KS.Shell.ShellBase.Commands
 
         void IRemoteDebugCommand.Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, StreamWriter SocketStreamWriter, string DeviceAddress) { }
 
-        public virtual void HelpHelper()
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "No additional information found.");
-        }
+        public virtual void HelpHelper() => DebugWriter.WriteDebug(DebugLevel.I, "No additional information found.");
 
     }
 }

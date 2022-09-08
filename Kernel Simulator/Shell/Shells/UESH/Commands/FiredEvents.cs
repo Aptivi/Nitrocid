@@ -31,10 +31,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class FiredEventsCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            ListWriterColor.WriteList(EventsManager.ListAllFiredEvents());
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => ListWriterColor.WriteList(EventsManager.ListAllFiredEvents());
 
     }
 }

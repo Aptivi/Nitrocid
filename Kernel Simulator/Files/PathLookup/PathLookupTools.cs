@@ -29,10 +29,7 @@ namespace KS.Files.PathLookup
         /// <summary>
         /// Gets the lookup path list
         /// </summary>
-        public static List<string> GetPathList()
-        {
-            return Shell.Shell.PathsToLookup.Split(Convert.ToChar(Shell.Shell.PathLookupDelimiter)).ToList();
-        }
+        public static List<string> GetPathList() => Shell.Shell.PathsToLookup.Split(Convert.ToChar(Shell.Shell.PathLookupDelimiter)).ToList();
 
         /// <summary>
         /// Adds a (non-)neutralized path to lookup

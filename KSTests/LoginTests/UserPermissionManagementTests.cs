@@ -29,10 +29,7 @@ namespace KSTests.LoginTests
     {
 
         [SetUp]
-        public static void AddNecessaryUser()
-        {
-            UserManagement.AddUser("Account");
-        }
+        public static void AddNecessaryUser() => UserManagement.AddUser("Account");
 
         /// <summary>
         /// Tests adding permissions to user
@@ -61,16 +58,10 @@ namespace KSTests.LoginTests
         /// </summary>
         [Test]
         [Description("Management")]
-        public void TestLoadGroups()
-        {
-            GroupManagement.TryLoadGroups().ShouldBeTrue();
-        }
+        public void TestLoadGroups() => GroupManagement.TryLoadGroups().ShouldBeTrue();
 
         [TearDown]
-        public static void RemoveNecessaryUser()
-        {
-            UserManagement.RemoveUser("Account");
-        }
+        public static void RemoveNecessaryUser() => UserManagement.RemoveUser("Account");
 
     }
 }

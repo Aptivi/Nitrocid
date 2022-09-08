@@ -24,10 +24,7 @@ namespace KS.Arguments.KernelArguments
     class DebugArgument : ArgumentExecutor, IArgument
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            Flags.DebugMode = true;
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Flags.DebugMode = true;
 
     }
 }

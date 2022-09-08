@@ -68,10 +68,7 @@ namespace KS.Files.Attributes
         /// <param name="attributes">All attributes</param>
         /// <param name="attributesToRemove">Attributes to remove</param>
         /// <returns>Attributes without target attribute</returns>
-        public static FileAttributes RemoveAttribute(this FileAttributes attributes, FileAttributes attributesToRemove)
-        {
-            return attributes & ~attributesToRemove;
-        }
+        public static FileAttributes RemoveAttribute(this FileAttributes attributes, FileAttributes attributesToRemove) => attributes & ~attributesToRemove;
 
         /// <summary>
         /// Removes attribute from file

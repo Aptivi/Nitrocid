@@ -30,9 +30,6 @@ namespace KSTests.LoginTests
         /// </summary>
         [Test]
         [Description("Initialization")]
-        public void TestInitializeUsers()
-        {
-            Should.NotThrow(UserManagement.InitializeUsers);
-        }
+        public void TestInitializeUsers() => Should.NotThrow(UserManagement.InitializeUsers);
     }
 }

@@ -30,10 +30,7 @@ namespace KS.Shell.Shells.RSS.Commands
     class RSS_BookmarkCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            RSSBookmarkManager.AddRSSFeedToBookmark();
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => RSSBookmarkManager.AddRSSFeedToBookmark();
 
     }
 }

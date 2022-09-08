@@ -31,10 +31,7 @@ namespace KS.Shell.UnifiedCommands
     class PresetsUnifiedCommand : CommandExecutor, ICommand, IRemoteDebugCommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            PromptPresetManager.PromptForPresets();
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => PromptPresetManager.PromptForPresets();
 
     }
 }

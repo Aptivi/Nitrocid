@@ -759,10 +759,7 @@ namespace KS.ConsoleBase.Colors
         /// Sets the console color
         /// </summary>
         /// <param name="colorType">A type of colors that will be changed.</param>
-        public static void SetConsoleColor(ColTypes colorType)
-        {
-            SetConsoleColor(colorType, false);
-        }
+        public static void SetConsoleColor(ColTypes colorType) => SetConsoleColor(colorType, false);
 
         /// <summary>
         /// Sets the console color
@@ -1010,10 +1007,7 @@ namespace KS.ConsoleBase.Colors
         /// </summary>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool TrySetConsoleColor(ColTypes colorType)
-        {
-            return TrySetConsoleColor(colorType, false);
-        }
+        public static bool TrySetConsoleColor(ColTypes colorType) => TrySetConsoleColor(colorType, false);
 
         /// <summary>
         /// Sets the console color

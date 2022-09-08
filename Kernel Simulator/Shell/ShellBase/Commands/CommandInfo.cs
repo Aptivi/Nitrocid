@@ -71,10 +71,7 @@ namespace KS.Shell.ShellBase.Commands
         /// <summary>
         /// Gets the translated version of help entry (KS built-in commands only)
         /// </summary>
-        public string GetTranslatedHelpEntry()
-        {
-            return Translate.DoTranslation(HelpDefinition);
-        }
+        public string GetTranslatedHelpEntry() => Translate.DoTranslation(HelpDefinition);
 
     }
 }

@@ -35,16 +35,10 @@ namespace KS.Misc.Screensaver.Displays
         public override Dictionary<string, object> ScreensaverSettings { get; set; }
 
         /// <inheritdoc/>
-        public override void ScreensaverPreparation()
-        {
-            ConsoleBase.ConsoleWrapper.Clear();
-        }
+        public override void ScreensaverPreparation() => ConsoleBase.ConsoleWrapper.Clear();
 
         /// <inheritdoc/>
-        public override void ScreensaverLogic()
-        {
-            MeteorShooter.InitializeMeteor(true);
-        }
+        public override void ScreensaverLogic() => MeteorShooter.InitializeMeteor(true);
 
         /// <inheritdoc/>
         public override void ScreensaverOutro()

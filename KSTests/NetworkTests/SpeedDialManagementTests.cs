@@ -33,20 +33,14 @@ namespace KSTests.NetworkTests
         /// </summary>
         [Test]
         [Description("Management")]
-        public void TestAddEntryToFTPSpeedDial()
-        {
-            NetworkTools.TryAddEntryToSpeedDial("ftp.riken.jp", 21, "anonymous", NetworkTools.SpeedDialType.FTP, FluentFTP.FtpEncryptionMode.None, false).ShouldBeTrue();
-        }
+        public void TestAddEntryToFTPSpeedDial() => NetworkTools.TryAddEntryToSpeedDial("ftp.riken.jp", 21, "anonymous", NetworkTools.SpeedDialType.FTP, FluentFTP.FtpEncryptionMode.None, false).ShouldBeTrue();
 
         /// <summary>
         /// Tests adding SFTP speed dial entry
         /// </summary>
         [Test]
         [Description("Management")]
-        public void TestAddEntryToSFTPSpeedDial()
-        {
-            NetworkTools.TryAddEntryToSpeedDial("test.rebex.net", 22, "demo", NetworkTools.SpeedDialType.SFTP, FluentFTP.FtpEncryptionMode.None, false).ShouldBeTrue();
-        }
+        public void TestAddEntryToSFTPSpeedDial() => NetworkTools.TryAddEntryToSpeedDial("test.rebex.net", 22, "demo", NetworkTools.SpeedDialType.SFTP, FluentFTP.FtpEncryptionMode.None, false).ShouldBeTrue();
 
         /// <summary>
         /// Tests listing FTP speed dial entries

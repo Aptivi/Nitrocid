@@ -59,10 +59,7 @@ namespace KS.Network.Transfer
         /// </summary>
         /// <param name="URL">A URL to a file</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
-        public static bool DownloadFile(string URL)
-        {
-            return DownloadFile(URL, Flags.ShowProgress);
-        }
+        public static bool DownloadFile(string URL) => DownloadFile(URL, Flags.ShowProgress);
 
         /// <summary>
         /// Downloads a file to the current working directory.
@@ -82,10 +79,7 @@ namespace KS.Network.Transfer
         /// <param name="URL">A URL to a file</param>
         /// <param name="FileName">File name to download to</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
-        public static bool DownloadFile(string URL, string FileName)
-        {
-            return DownloadFile(URL, Flags.ShowProgress, FileName);
-        }
+        public static bool DownloadFile(string URL, string FileName) => DownloadFile(URL, Flags.ShowProgress, FileName);
 
         /// <summary>
         /// Downloads a file to the current working directory.
@@ -154,10 +148,7 @@ namespace KS.Network.Transfer
         /// <param name="FileName">A target file name. Use <see cref="Filesystem.NeutralizePath(string, bool)"/> to get full path of source.</param>
         /// <param name="URL">A URL to a file</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
-        public static bool UploadFile(string FileName, string URL)
-        {
-            return UploadFile(FileName, URL, Flags.ShowProgress);
-        }
+        public static bool UploadFile(string FileName, string URL) => UploadFile(FileName, URL, Flags.ShowProgress);
 
         /// <summary>
         /// Uploads a file from the current working directory.
@@ -223,10 +214,7 @@ namespace KS.Network.Transfer
         /// </summary>
         /// <param name="URL">A URL to a file</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
-        public static string DownloadString(string URL)
-        {
-            return DownloadString(URL, Flags.ShowProgress);
-        }
+        public static string DownloadString(string URL) => DownloadString(URL, Flags.ShowProgress);
 
         /// <summary>
         /// Downloads a resource from URL as a string.
@@ -293,10 +281,7 @@ namespace KS.Network.Transfer
         /// <param name="URL">A URL to a file</param>
         /// <param name="Data">Content to upload</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
-        public static bool UploadString(string URL, string Data)
-        {
-            return UploadString(URL, Data, Flags.ShowProgress);
-        }
+        public static bool UploadString(string URL, string Data) => UploadString(URL, Data, Flags.ShowProgress);
 
         /// <summary>
         /// Uploads a resource from URL as a string.

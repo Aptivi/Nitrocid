@@ -109,11 +109,9 @@ namespace KS.Shell.ShellBase.Shells
         /// <summary>
         /// Cleans up the shell stack
         /// </summary>
-        public static void PurgeShells()
-        {
+        public static void PurgeShells() =>
             // Remove these shells from the stack
             ShellStack.RemoveAll(x => x.ShellExecutor.Bail == true);
-        }
 
         /// <summary>
         /// Gets the shell executor based on the shell type

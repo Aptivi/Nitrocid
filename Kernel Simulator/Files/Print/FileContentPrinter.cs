@@ -31,10 +31,7 @@ namespace KS.Files.Print
         /// Prints the contents of a file to the console
         /// </summary>
         /// <param name="filename">Full path to file</param>
-        public static void PrintContents(string filename)
-        {
-            PrintContents(filename, Flags.PrintLineNumbers);
-        }
+        public static void PrintContents(string filename) => PrintContents(filename, Flags.PrintLineNumbers);
 
         /// <summary>
         /// Prints the contents of a file to the console

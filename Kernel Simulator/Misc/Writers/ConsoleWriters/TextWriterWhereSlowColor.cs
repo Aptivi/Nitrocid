@@ -39,10 +39,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, ColorTools.ColTypes colorType, params object[] vars)
-        {
-            WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, false, colorType, vars);
-        }
+        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, ColorTools.ColTypes colorType, params object[] vars) => WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, false, colorType, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
@@ -86,10 +83,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, ColorTools.ColTypes colorTypeForeground, ColorTools.ColTypes colorTypeBackground, params object[] vars)
-        {
-            WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, false, colorTypeForeground, colorTypeBackground, vars);
-        }
+        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, ColorTools.ColTypes colorTypeForeground, ColorTools.ColTypes colorTypeBackground, params object[] vars) => WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, false, colorTypeForeground, colorTypeBackground, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
@@ -134,10 +128,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, ConsoleColor color, params object[] vars)
-        {
-            WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, false, color, vars);
-        }
+        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, ConsoleColor color, params object[] vars) => WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, false, color, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
@@ -181,10 +172,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, ConsoleColor ForegroundColor, ConsoleColor BackgroundColor, params object[] vars)
-        {
-            WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, false, ForegroundColor, BackgroundColor, vars);
-        }
+        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, ConsoleColor ForegroundColor, ConsoleColor BackgroundColor, params object[] vars) => WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, false, ForegroundColor, BackgroundColor, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
@@ -228,10 +216,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, Color color, params object[] vars)
-        {
-            WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, false, color, vars);
-        }
+        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, Color color, params object[] vars) => WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, false, color, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
@@ -275,10 +260,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, Color ForegroundColor, Color BackgroundColor, params object[] vars)
-        {
-            WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, false, ForegroundColor, BackgroundColor, vars);
-        }
+        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, Color ForegroundColor, Color BackgroundColor, params object[] vars) => WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, false, ForegroundColor, BackgroundColor, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with location support, and sets colors as needed.

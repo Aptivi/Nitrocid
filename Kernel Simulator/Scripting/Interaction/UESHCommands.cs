@@ -36,10 +36,7 @@ namespace KS.Scripting.Interaction
         /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
-        public static void PromptChoiceAndSet(string Question, string ScriptVariable, string AnswersStr, ChoiceStyle.ChoiceOutputType OutputType = ChoiceStyle.ChoiceOutputType.OneLine, bool PressEnter = false)
-        {
-            PromptChoiceAndSet(Question, ScriptVariable, AnswersStr, Array.Empty<string>(), OutputType, PressEnter);
-        }
+        public static void PromptChoiceAndSet(string Question, string ScriptVariable, string AnswersStr, ChoiceStyle.ChoiceOutputType OutputType = ChoiceStyle.ChoiceOutputType.OneLine, bool PressEnter = false) => PromptChoiceAndSet(Question, ScriptVariable, AnswersStr, Array.Empty<string>(), OutputType, PressEnter);
 
         /// <summary>
         /// Prompts user for choice
@@ -62,10 +59,7 @@ namespace KS.Scripting.Interaction
         /// <param name="Question">A question</param>
         /// <param name="ScriptVariable">A $variable</param>
         /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
-        public static void PromptSelectionAndSet(string Question, string ScriptVariable, string AnswersStr)
-        {
-            PromptSelectionAndSet(Question, ScriptVariable, AnswersStr, Array.Empty<string>());
-        }
+        public static void PromptSelectionAndSet(string Question, string ScriptVariable, string AnswersStr) => PromptSelectionAndSet(Question, ScriptVariable, AnswersStr, Array.Empty<string>());
 
         /// <summary>
         /// Prompts user for Selection

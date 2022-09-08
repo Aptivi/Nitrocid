@@ -30,10 +30,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class OpenCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            Process.Start(ListArgsOnly[0]);
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Process.Start(ListArgsOnly[0]);
 
     }
 }

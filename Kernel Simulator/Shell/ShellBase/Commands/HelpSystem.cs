@@ -37,28 +37,19 @@ namespace KS.Shell.ShellBase.Commands
         /// <summary>
         /// Shows the list of commands under the current shell type
         /// </summary>
-        public static void ShowHelp()
-        {
-            ShowHelp("", Shell.CurrentShellType);
-        }
+        public static void ShowHelp() => ShowHelp("", Shell.CurrentShellType);
 
         /// <summary>
         /// Shows the list of commands under the specified shell type
         /// </summary>
         /// <param name="CommandType">A specified shell type</param>
-        public static void ShowHelp(ShellType CommandType)
-        {
-            ShowHelp("", CommandType);
-        }
+        public static void ShowHelp(ShellType CommandType) => ShowHelp("", CommandType);
 
         /// <summary>
         /// Shows the help of a command, or command list under the current shell type if nothing is specified
         /// </summary>
         /// <param name="command">A specified command</param>
-        public static void ShowHelp(string command)
-        {
-            ShowHelp(command, Shell.CurrentShellType);
-        }
+        public static void ShowHelp(string command) => ShowHelp(command, Shell.CurrentShellType);
 
         /// <summary>
         /// Shows the help of a command, or command list under the specified shell type if nothing is specified

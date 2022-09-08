@@ -29,10 +29,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class ShowTdCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            TimeDate.TimeDate.ShowCurrentTimes();
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => TimeDate.TimeDate.ShowCurrentTimes();
 
     }
 }

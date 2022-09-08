@@ -57,10 +57,7 @@ namespace KS.Shell.UnifiedCommands
             }
         }
 
-        public static string[] ListCmds()
-        {
-            return GetCommand.GetCommands(Shell.CurrentShellType).Keys.ToArray();
-        }
+        public static string[] ListCmds() => GetCommand.GetCommands(Shell.CurrentShellType).Keys.ToArray();
 
     }
 }

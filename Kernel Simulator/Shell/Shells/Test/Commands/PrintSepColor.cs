@@ -28,10 +28,7 @@ namespace KS.Shell.Shells.Test.Commands
     class Test_PrintSepColorCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            SeparatorWriterColor.WriteSeparator(ListArgsOnly[1], true, new Color(ListArgsOnly[0]));
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => SeparatorWriterColor.WriteSeparator(ListArgsOnly[1], true, new Color(ListArgsOnly[0]));
 
     }
 }

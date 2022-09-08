@@ -33,19 +33,13 @@ namespace KS.Arguments.ArgumentBase
         /// Shows the help of an argument, or argument list if nothing is specified
         /// </summary>
         /// <param name="ArgumentType">A specified argument type</param>
-        public static void ShowArgsHelp(ArgumentType ArgumentType)
-        {
-            ShowArgsHelp("", ArgumentType);
-        }
+        public static void ShowArgsHelp(ArgumentType ArgumentType) => ShowArgsHelp("", ArgumentType);
 
         /// <summary>
         /// Shows the help of an argument, or argument list if nothing is specified
         /// </summary>
         /// <param name="Argument">A specified argument</param>
-        public static void ShowArgsHelp(string Argument)
-        {
-            ShowArgsHelp(Argument, ArgumentType.KernelArgs);
-        }
+        public static void ShowArgsHelp(string Argument) => ShowArgsHelp(Argument, ArgumentType.KernelArgs);
 
         /// <summary>
         /// Shows the help of an argument, or argument list if nothing is specified

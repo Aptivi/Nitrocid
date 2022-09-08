@@ -32,10 +32,7 @@ namespace KSTests.MiscTests
         /// </summary>
         [Test]
         [Description("Management")]
-        public void TestGetMethod()
-        {
-            MethodManager.GetMethod("GetCulturesFromCurrentLang").ShouldNotBeNull();
-        }
+        public void TestGetMethod() => MethodManager.GetMethod("GetCulturesFromCurrentLang").ShouldNotBeNull();
 
     }
 }

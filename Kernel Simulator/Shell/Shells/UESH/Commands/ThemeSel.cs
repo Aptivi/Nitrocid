@@ -71,10 +71,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 TextWriterColor.Write(Translate.DoTranslation("Colors are not available. Turn on colored shell in the kernel config."), true, ColorTools.ColTypes.Neutral);
         }
 
-        public override void HelpHelper()
-        {
-            TextWriterColor.Write("<Theme>: ThemeName.json, " + string.Join(", ", ThemeTools.Themes.Keys), true, ColorTools.ColTypes.Neutral);
-        }
+        public override void HelpHelper() => TextWriterColor.Write("<Theme>: ThemeName.json, " + string.Join(", ", ThemeTools.Themes.Keys), true, ColorTools.ColTypes.Neutral);
 
     }
 }

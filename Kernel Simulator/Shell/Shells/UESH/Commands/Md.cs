@@ -32,10 +32,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class MdCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            Making.MakeDirectory(ListArgsOnly[0]);
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Making.MakeDirectory(ListArgsOnly[0]);
 
     }
 }

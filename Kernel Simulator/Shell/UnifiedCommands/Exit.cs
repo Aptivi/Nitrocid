@@ -33,15 +33,9 @@ namespace KS.Shell.UnifiedCommands
     class ExitUnifiedCommand : CommandExecutor, ICommand, IRemoteDebugCommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            ShellStart.KillShell();
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => ShellStart.KillShell();
 
-        void IRemoteDebugCommand.Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, StreamWriter SocketStreamWriter, string DeviceAddress)
-        {
-            RemoteDebugTools.DisconnectDbgDev(DeviceAddress);
-        }
+        void IRemoteDebugCommand.Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, StreamWriter SocketStreamWriter, string DeviceAddress) => RemoteDebugTools.DisconnectDbgDev(DeviceAddress);
 
     }
 }

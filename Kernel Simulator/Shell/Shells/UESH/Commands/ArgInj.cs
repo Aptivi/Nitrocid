@@ -70,10 +70,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
         }
 
-        public override void HelpHelper()
-        {
-            TextWriterColor.Write(Translate.DoTranslation("where arguments will be {0}"), true, ColorTools.ColTypes.Neutral, string.Join(", ", ArgumentParse.AvailableArgs.Keys));
-        }
+        public override void HelpHelper() => TextWriterColor.Write(Translate.DoTranslation("where arguments will be {0}"), true, ColorTools.ColTypes.Neutral, string.Join(", ", ArgumentParse.AvailableArgs.Keys));
 
     }
 }

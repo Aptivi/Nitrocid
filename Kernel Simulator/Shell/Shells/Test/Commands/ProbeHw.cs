@@ -27,10 +27,7 @@ namespace KS.Shell.Shells.Test.Commands
     class Test_ProbeHwCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            HardwareProbe.StartProbing();
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => HardwareProbe.StartProbing();
 
     }
 }

@@ -325,10 +325,7 @@ namespace KS.Misc.Screensaver.Displays
         }
 
         /// <inheritdoc/>
-        public override void ScreensaverLogic()
-        {
-            Animations.BeatFader.BeatFader.Simulate(BeatFaderSettingsInstance);
-        }
+        public override void ScreensaverLogic() => Animations.BeatFader.BeatFader.Simulate(BeatFaderSettingsInstance);
 
     }
 }

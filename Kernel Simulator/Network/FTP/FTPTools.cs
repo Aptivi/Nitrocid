@@ -421,18 +421,12 @@ namespace KS.Network.FTP
         /// Writes any message that the tracer has received to the debugger.
         /// </summary>
         /// <param name="Message">A message</param>
-        public override void Write(string Message)
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, Message);
-        }
+        public override void Write(string Message) => DebugWriter.WriteDebug(DebugLevel.I, Message);
 
         /// <summary>
         /// Writes any message that the tracer has received to the debugger. Please note that this does exactly as Write() since the debugger only supports writing with newlines.
         /// </summary>
         /// <param name="Message">A message</param>
-        public override void WriteLine(string Message)
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, Message);
-        }
+        public override void WriteLine(string Message) => DebugWriter.WriteDebug(DebugLevel.I, Message);
     }
 }

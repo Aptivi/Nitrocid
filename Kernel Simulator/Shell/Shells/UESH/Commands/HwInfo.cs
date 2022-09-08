@@ -33,15 +33,9 @@ namespace KS.Shell.Shells.UESH.Commands
     class HwInfoCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            HardwareList.ListHardware(ListArgsOnly[0]);
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => HardwareList.ListHardware(ListArgsOnly[0]);
 
-        public override void HelpHelper()
-        {
-            TextWriterColor.Write(Translate.DoTranslation("where HardwareType will be") + " HDD, LogicalParts, CPU, GPU, Sound, Network, System, Machine, BIOS, RAM, all.", true, ColorTools.ColTypes.Neutral);
-        }
+        public override void HelpHelper() => TextWriterColor.Write(Translate.DoTranslation("where HardwareType will be") + " HDD, LogicalParts, CPU, GPU, Sound, Network, System, Machine, BIOS, RAM, all.", true, ColorTools.ColTypes.Neutral);
 
     }
 }

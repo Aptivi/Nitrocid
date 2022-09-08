@@ -30,10 +30,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class TimerCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            TimerScreen.OpenTimer();
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => TimerScreen.OpenTimer();
 
     }
 }

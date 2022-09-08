@@ -32,10 +32,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class MkThemeCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            ThemeStudio.StartThemeStudio(ListArgsOnly[0]);
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => ThemeStudio.StartThemeStudio(ListArgsOnly[0]);
 
     }
 }

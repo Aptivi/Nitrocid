@@ -58,19 +58,13 @@ namespace KSTests.LanguagesTests
         /// </summary>
         [Test]
         [Description("Setting")]
-        public void TestSetLang()
-        {
-            LanguageManager.SetLang("spa").ShouldBeTrue();
-        }
+        public void TestSetLang() => LanguageManager.SetLang("spa").ShouldBeTrue();
 
         /// <summary>
         /// Restores the language
         /// </summary>
         [TearDown]
-        public void RestoreLanguage()
-        {
-            LanguageManager.SetLang("eng");
-        }
+        public void RestoreLanguage() => LanguageManager.SetLang("eng");
 
     }
 }

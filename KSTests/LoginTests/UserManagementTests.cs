@@ -44,10 +44,7 @@ namespace KSTests.LoginTests
         /// </summary>
         [Test]
         [Description("Management")]
-        public void TestChangeUser()
-        {
-            UserManagement.TryChangeUsername("Account2", "Account3").ShouldBeTrue();
-        }
+        public void TestChangeUser() => UserManagement.TryChangeUsername("Account2", "Account3").ShouldBeTrue();
 
         /// <summary>
         /// Tests username change

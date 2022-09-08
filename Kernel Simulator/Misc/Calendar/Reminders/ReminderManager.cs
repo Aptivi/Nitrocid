@@ -78,10 +78,7 @@ namespace KS.Misc.Calendar.Reminders
         /// </summary>
         /// <param name="ReminderDate">Reminder date and time</param>
         /// <param name="ReminderTitle">Reminder title</param>
-        public static void AddReminder(DateTime ReminderDate, string ReminderTitle)
-        {
-            AddReminder(ReminderDate, ReminderTitle, CurrentReminderImportance);
-        }
+        public static void AddReminder(DateTime ReminderDate, string ReminderTitle) => AddReminder(ReminderDate, ReminderTitle, CurrentReminderImportance);
 
         /// <summary>
         /// Adds the reminder to the list (calendar will mark the day with parentheses)
@@ -106,10 +103,7 @@ namespace KS.Misc.Calendar.Reminders
         /// Adds the reminder to the list (calendar will mark the day with parentheses)
         /// </summary>
         /// <param name="Reminder">Reminder info instance</param>
-        internal static void AddReminder(ReminderInfo Reminder)
-        {
-            Reminders.Add(Reminder);
-        }
+        internal static void AddReminder(ReminderInfo Reminder) => Reminders.Add(Reminder);
 
         /// <summary>
         /// Removes the reminder from the list
@@ -190,10 +184,7 @@ namespace KS.Misc.Calendar.Reminders
         /// <summary>
         /// Saves all the reminders from the reminder list to their individual files
         /// </summary>
-        public static void SaveReminders()
-        {
-            SaveReminders(Paths.GetKernelPath(KernelPathType.Reminders), Flags.SaveEventsRemindersDestructively);
-        }
+        public static void SaveReminders() => SaveReminders(Paths.GetKernelPath(KernelPathType.Reminders), Flags.SaveEventsRemindersDestructively);
 
         /// <summary>
         /// Saves all the reminders from the reminder list to their individual files
@@ -234,10 +225,7 @@ namespace KS.Misc.Calendar.Reminders
         /// <summary>
         /// Saves an reminder to a file
         /// </summary>
-        public static void SaveReminder(ReminderInfo ReminderInstance)
-        {
-            SaveReminder(ReminderInstance, Paths.GetKernelPath(KernelPathType.Reminders));
-        }
+        public static void SaveReminder(ReminderInfo ReminderInstance) => SaveReminder(ReminderInstance, Paths.GetKernelPath(KernelPathType.Reminders));
 
         /// <summary>
         /// Saves an reminder to a file

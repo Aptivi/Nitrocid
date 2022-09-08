@@ -24,10 +24,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Commands
     class Debug_ExitCommand : RemoteDebugCommandExecutor, IRemoteDebugCommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, StreamWriter SocketStreamWriter, string DeviceAddress)
-        {
-            RemoteDebugTools.DisconnectDbgDev(DeviceAddress);
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, StreamWriter SocketStreamWriter, string DeviceAddress) => RemoteDebugTools.DisconnectDbgDev(DeviceAddress);
 
     }
 }

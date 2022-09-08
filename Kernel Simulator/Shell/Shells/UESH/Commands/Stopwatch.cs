@@ -30,10 +30,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class StopwatchCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            StopwatchScreen.OpenStopwatch();
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => StopwatchScreen.OpenStopwatch();
 
     }
 }

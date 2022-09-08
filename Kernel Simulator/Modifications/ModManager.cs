@@ -396,10 +396,7 @@ namespace KS.Modifications
         /// <summary>
         /// Gets the blacklisted mods list
         /// </summary>
-        public static List<string> GetBlacklistedMods()
-        {
-            return BlacklistedModsString.Split(';').ToList();
-        }
+        public static List<string> GetBlacklistedMods() => BlacklistedModsString.Split(';').ToList();
 
         /// <summary>
         /// Installs the mod DLL or single code file to the mod directory
@@ -528,10 +525,7 @@ namespace KS.Modifications
         /// <summary>
         /// Lists the mods
         /// </summary>
-        public static Dictionary<string, ModInfo> ListMods()
-        {
-            return ListMods("");
-        }
+        public static Dictionary<string, ModInfo> ListMods() => ListMods("");
 
         /// <summary>
         /// Lists the mods

@@ -153,10 +153,7 @@ namespace KS.Misc.Splash.Splashes
             ConsoleWrapper.Clear();
         }
 
-        public void Report(int Progress, string ProgressReport, params object[] Vars)
-        {
-            UpdateProgressReport(Progress, ProgressReport, Vars);
-        }
+        public void Report(int Progress, string ProgressReport, params object[] Vars) => UpdateProgressReport(Progress, ProgressReport, Vars);
 
         /// <summary>
         /// Updates the splash progress

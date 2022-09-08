@@ -31,10 +31,7 @@ namespace KS.ManPages
         /// <summary>
         /// Lists all manual pages
         /// </summary>
-        public static Dictionary<string, Manual> ListAllPages()
-        {
-            return ListAllPages("");
-        }
+        public static Dictionary<string, Manual> ListAllPages() => ListAllPages("");
 
         /// <summary>
         /// Lists all manual pages
@@ -92,10 +89,7 @@ namespace KS.ManPages
         /// Removes a manual page from the list
         /// </summary>
         /// <param name="Name">Manual page name</param>
-        public static bool RemoveManualPage(string Name)
-        {
-            return Pages.Remove(Name);
-        }
+        public static bool RemoveManualPage(string Name) => Pages.Remove(Name);
 
     }
 }

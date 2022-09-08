@@ -31,20 +31,14 @@ namespace KS.Kernel.Power
         /// Manage computer's (actually, simulated computer) power
         /// </summary>
         /// <param name="PowerMode">Selects the power mode</param>
-        public static void PowerManage(PowerMode PowerMode)
-        {
-            PowerManage(PowerMode, "0.0.0.0", RemoteProcedure.RPCPort);
-        }
+        public static void PowerManage(PowerMode PowerMode) => PowerManage(PowerMode, "0.0.0.0", RemoteProcedure.RPCPort);
 
         /// <summary>
         /// Manage computer's (actually, simulated computer) power
         /// </summary>
         /// <param name="PowerMode">Selects the power mode</param>
         /// <param name="IP">IP address to remotely manage power</param>
-        public static void PowerManage(PowerMode PowerMode, string IP)
-        {
-            PowerManage(PowerMode, IP, RemoteProcedure.RPCPort);
-        }
+        public static void PowerManage(PowerMode PowerMode, string IP) => PowerManage(PowerMode, IP, RemoteProcedure.RPCPort);
 
         /// <summary>
         /// Manage computer's (actually, simulated computer) power

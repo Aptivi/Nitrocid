@@ -69,29 +69,20 @@ namespace KS.ConsoleBase.Colors
         /// <summary>
         /// Initializes color wheel
         /// </summary>
-        public static string ColorWheel()
-        {
-            return ColorWheel(false, ConsoleColors.White, 0, 0, 0);
-        }
+        public static string ColorWheel() => ColorWheel(false, ConsoleColors.White, 0, 0, 0);
 
         /// <summary>
         /// Initializes color wheel
         /// </summary>
         /// <param name="TrueColor">Whether or not to use true color. It can be changed dynamically during runtime.</param>
-        public static string ColorWheel(bool TrueColor)
-        {
-            return ColorWheel(TrueColor, ConsoleColors.White, 0, 0, 0);
-        }
+        public static string ColorWheel(bool TrueColor) => ColorWheel(TrueColor, ConsoleColors.White, 0, 0, 0);
 
         /// <summary>
         /// Initializes color wheel
         /// </summary>
         /// <param name="TrueColor">Whether or not to use true color. It can be changed dynamically during runtime.</param>
         /// <param name="DefaultColor">The default 255-color to use</param>
-        public static string ColorWheel(bool TrueColor, ConsoleColors DefaultColor)
-        {
-            return ColorWheel(TrueColor, DefaultColor, 0, 0, 0);
-        }
+        public static string ColorWheel(bool TrueColor, ConsoleColors DefaultColor) => ColorWheel(TrueColor, DefaultColor, 0, 0, 0);
 
         /// <summary>
         /// Initializes color wheel
@@ -100,10 +91,7 @@ namespace KS.ConsoleBase.Colors
         /// <param name="DefaultColorR">The default red color range of 0-255 to use</param>
         /// <param name="DefaultColorG">The default green color range of 0-255 to use</param>
         /// <param name="DefaultColorB">The default blue color range of 0-255 to use</param>
-        public static string ColorWheel(bool TrueColor, int DefaultColorR, int DefaultColorG, int DefaultColorB)
-        {
-            return ColorWheel(TrueColor, ConsoleColors.White, DefaultColorR, DefaultColorG, DefaultColorB);
-        }
+        public static string ColorWheel(bool TrueColor, int DefaultColorR, int DefaultColorG, int DefaultColorB) => ColorWheel(TrueColor, ConsoleColors.White, DefaultColorR, DefaultColorG, DefaultColorB);
 
         /// <summary>
         /// Initializes color wheel

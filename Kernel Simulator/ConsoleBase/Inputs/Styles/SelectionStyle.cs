@@ -30,10 +30,7 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// </summary>
         /// <param name="Question">A question</param>
         /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
-        public static int PromptSelection(string Question, string AnswersStr)
-        {
-            return PromptSelection(Question, AnswersStr, Array.Empty<string>());
-        }
+        public static int PromptSelection(string Question, string AnswersStr) => PromptSelection(Question, AnswersStr, Array.Empty<string>());
 
         /// <summary>
         /// Prompts user for Selection

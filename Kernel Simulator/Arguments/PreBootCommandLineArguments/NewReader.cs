@@ -24,10 +24,7 @@ namespace KS.Arguments.PreBootCommandLineArguments
     class PreBootCommandLine_NewReaderArgument : ArgumentExecutor, IArgument
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            Flags.OptInToNewConfigReader = true;
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Flags.OptInToNewConfigReader = true;
 
     }
 }

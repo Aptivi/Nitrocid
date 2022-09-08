@@ -24,10 +24,7 @@ namespace KS.Arguments.PreBootCommandLineArguments
     class PreBootCommandLine_ResetArgument : ArgumentExecutor, IArgument
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            KernelTools.FactoryReset();
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => KernelTools.FactoryReset();
 
     }
 }

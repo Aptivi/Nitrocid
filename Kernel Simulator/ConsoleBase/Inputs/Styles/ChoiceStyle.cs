@@ -60,10 +60,7 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
-        public static string PromptChoice(string Question, string AnswersStr, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false)
-        {
-            return PromptChoice(Question, AnswersStr, Array.Empty<string>(), OutputType, PressEnter);
-        }
+        public static string PromptChoice(string Question, string AnswersStr, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) => PromptChoice(Question, AnswersStr, Array.Empty<string>(), OutputType, PressEnter);
 
         /// <summary>
         /// Prompts user for choice

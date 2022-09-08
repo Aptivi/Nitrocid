@@ -27,10 +27,7 @@ namespace KS.Network
         /// Checks to see if the adapter is one of the Internet adapters (Ethernet, Ethernet3Megabit, FastEthernetFx, FastEthernetT, GigabitEthernet, Wireless80211, Tunnel)
         /// </summary>
         /// <param name="InternetAdapter">Network adapter</param>
-        public static bool IsInternetAdapter(NetworkInterface InternetAdapter)
-        {
-            return InternetAdapter.NetworkInterfaceType == NetworkInterfaceType.Ethernet | InternetAdapter.NetworkInterfaceType == NetworkInterfaceType.Ethernet3Megabit | InternetAdapter.NetworkInterfaceType == NetworkInterfaceType.FastEthernetFx | InternetAdapter.NetworkInterfaceType == NetworkInterfaceType.FastEthernetT | InternetAdapter.NetworkInterfaceType == NetworkInterfaceType.GigabitEthernet | InternetAdapter.NetworkInterfaceType == NetworkInterfaceType.Wireless80211 | InternetAdapter.NetworkInterfaceType == NetworkInterfaceType.Tunnel;
-        }
+        public static bool IsInternetAdapter(NetworkInterface InternetAdapter) => InternetAdapter.NetworkInterfaceType == NetworkInterfaceType.Ethernet | InternetAdapter.NetworkInterfaceType == NetworkInterfaceType.Ethernet3Megabit | InternetAdapter.NetworkInterfaceType == NetworkInterfaceType.FastEthernetFx | InternetAdapter.NetworkInterfaceType == NetworkInterfaceType.FastEthernetT | InternetAdapter.NetworkInterfaceType == NetworkInterfaceType.GigabitEthernet | InternetAdapter.NetworkInterfaceType == NetworkInterfaceType.Wireless80211 | InternetAdapter.NetworkInterfaceType == NetworkInterfaceType.Tunnel;
 
     }
 }

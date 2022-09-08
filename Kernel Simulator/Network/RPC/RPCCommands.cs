@@ -61,10 +61,7 @@ namespace KS.Network.RPC
         /// </summary>
         /// <param name="Request">A request</param>
         /// <param name="IP">An IP address which the RPC is hosted</param>
-        public static void SendCommand(string Request, string IP)
-        {
-            SendCommand(Request, IP, RemoteProcedure.RPCPort);
-        }
+        public static void SendCommand(string Request, string IP) => SendCommand(Request, IP, RemoteProcedure.RPCPort);
 
         /// <summary>
         /// Send an RPC command to another instance of KS using the specified address

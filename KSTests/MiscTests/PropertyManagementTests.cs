@@ -36,10 +36,7 @@ namespace KSTests.MiscTests
         /// </summary>
         [Test]
         [Description("Management")]
-        public void TestCheckProperty()
-        {
-            PropertyManager.CheckProperty("PersonLookupDelay").ShouldBeTrue();
-        }
+        public void TestCheckProperty() => PropertyManager.CheckProperty("PersonLookupDelay").ShouldBeTrue();
 
         /// <summary>
         /// Tests getting value

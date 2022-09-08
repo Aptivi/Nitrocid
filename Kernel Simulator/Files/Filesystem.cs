@@ -42,10 +42,7 @@ namespace KS.Files
         /// <param name="Strict">If path is not found, throw exception. Otherwise, neutralize anyway.</param>
         /// <returns>Absolute path</returns>
         /// <exception cref="FileNotFoundException"></exception>
-        public static string NeutralizePath(string Path, bool Strict = false)
-        {
-            return NeutralizePath(Path, CurrentDirectory.CurrentDir, Strict);
-        }
+        public static string NeutralizePath(string Path, bool Strict = false) => NeutralizePath(Path, CurrentDirectory.CurrentDir, Strict);
 
         /// <summary>
         /// Simplifies the path to the correct one. It converts the path format to the unified format.

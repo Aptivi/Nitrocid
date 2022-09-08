@@ -32,10 +32,7 @@ namespace KS.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <param name="VariableValue">New value</param>
-        public static void SetPropertyValue(string Variable, object VariableValue)
-        {
-            SetPropertyValue(Variable, VariableValue, null);
-        }
+        public static void SetPropertyValue(string Variable, object VariableValue) => SetPropertyValue(Variable, VariableValue, null);
 
         /// <summary>
         /// Sets the value of a property to the new value dynamically
@@ -78,10 +75,7 @@ namespace KS.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <returns>Value of a property</returns>
-        public static object GetPropertyValue(string Variable)
-        {
-            return GetPropertyValue(Variable, null);
-        }
+        public static object GetPropertyValue(string Variable) => GetPropertyValue(Variable, null);
 
         /// <summary>
         /// Gets the value of a property dynamically 
@@ -180,10 +174,7 @@ namespace KS.Misc.Reflection
         /// <param name="Variable">Variable name. Use operator NameOf to get name.</param>
         /// <param name="Property">Property name from within the variable type</param>
         /// <returns>Value of a property</returns>
-        public static object GetPropertyValueInVariable(string Variable, string Property)
-        {
-            return GetPropertyValueInVariable(Variable, Property, null);
-        }
+        public static object GetPropertyValueInVariable(string Variable, string Property) => GetPropertyValueInVariable(Variable, Property, null);
 
         /// <summary>
         /// Gets the value of a property in the type of a variable dynamically

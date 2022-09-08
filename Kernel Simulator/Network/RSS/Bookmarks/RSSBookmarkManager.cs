@@ -151,10 +151,7 @@ namespace KS.Network.RSS.Bookmarks
         /// <summary>
         /// Gets all RSS bookmarks
         /// </summary>
-        public static List<string> GetBookmarks()
-        {
-            return RssBookmarks;
-        }
+        public static List<string> GetBookmarks() => RssBookmarks;
 
         /// <summary>
         /// Gets the bookmark URL from number

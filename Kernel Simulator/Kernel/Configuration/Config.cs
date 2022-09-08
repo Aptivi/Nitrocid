@@ -1269,10 +1269,7 @@ namespace KS.Kernel.Configuration
         /// Creates the kernel configuration file
         /// </summary>
         /// <exception cref="Exceptions.ConfigException"></exception>
-        public static void CreateConfig()
-        {
-            CreateConfig(Paths.GetKernelPath(KernelPathType.Configuration));
-        }
+        public static void CreateConfig() => CreateConfig(Paths.GetKernelPath(KernelPathType.Configuration));
 
         /// <summary>
         /// Creates the kernel configuration file with custom path
@@ -1296,20 +1293,14 @@ namespace KS.Kernel.Configuration
         /// </summary>
         /// <returns>True if successful; False if unsuccessful.</returns>
         /// <exception cref="Exceptions.ConfigException"></exception>
-        public static bool TryCreateConfig()
-        {
-            return TryCreateConfig(Paths.GetKernelPath(KernelPathType.Configuration));
-        }
+        public static bool TryCreateConfig() => TryCreateConfig(Paths.GetKernelPath(KernelPathType.Configuration));
 
         /// <summary>
         /// Creates the kernel configuration file with custom path
         /// </summary>
         /// <returns>True if successful; False if unsuccessful.</returns>
         /// <exception cref="Exceptions.ConfigException"></exception>
-        public static bool TryCreateConfig(string ConfigPath)
-        {
-            return TryCreateConfig(JObject.Parse(File.ReadAllText(ConfigPath)));
-        }
+        public static bool TryCreateConfig(string ConfigPath) => TryCreateConfig(JObject.Parse(File.ReadAllText(ConfigPath)));
 
         /// <summary>
         /// Creates the kernel configuration file with custom path
@@ -2426,10 +2417,7 @@ namespace KS.Kernel.Configuration
         /// </summary>
         /// <returns>True if successful; False if unsuccessful</returns>
         /// <exception cref="Exceptions.ConfigException"></exception>
-        public static bool TryReadConfig()
-        {
-            return TryReadConfig(Paths.GetKernelPath(KernelPathType.Configuration));
-        }
+        public static bool TryReadConfig() => TryReadConfig(Paths.GetKernelPath(KernelPathType.Configuration));
 
         /// <summary>
         /// Configures the kernel according to the custom kernel configuration file

@@ -32,10 +32,7 @@ namespace KS.Languages
         /// </summary>
         /// <param name="text">Any string that exists in Kernel Simulator's translation files</param>
         /// <returns>Translated string</returns>
-        public static string DoTranslation(string text)
-        {
-            return DoTranslation(text, LanguageManager.CurrentLanguage);
-        }
+        public static string DoTranslation(string text) => DoTranslation(text, LanguageManager.CurrentLanguage);
 
         /// <summary>
         /// Translates string into another language, or to English if the language wasn't specified or if it's invalid.

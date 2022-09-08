@@ -33,20 +33,14 @@ namespace KSTests.ShellTests
         /// </summary>
         [Test]
         [Description("Action")]
-        public void TestIsCommandFoundInSpecificShell()
-        {
-            CommandManager.IsCommandFound("help", ShellType.Shell).ShouldBeTrue();
-        }
+        public void TestIsCommandFoundInSpecificShell() => CommandManager.IsCommandFound("help", ShellType.Shell).ShouldBeTrue();
 
         /// <summary>
         /// Tests seeing if the command is found in all the shells (test case: connect command)
         /// </summary>
         [Test]
         [Description("Action")]
-        public void TestIsCommandFoundInAllTheShells()
-        {
-            CommandManager.IsCommandFound("connect").ShouldBeTrue();
-        }
+        public void TestIsCommandFoundInAllTheShells() => CommandManager.IsCommandFound("connect").ShouldBeTrue();
 
     }
 }

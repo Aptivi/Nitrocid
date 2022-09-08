@@ -39,10 +39,7 @@ namespace KS.Network.SFTP.Filesystem
         /// <returns>The list if successful; null if unsuccessful</returns>
         /// <exception cref="Kernel.Exceptions.SFTPFilesystemException"></exception>
         /// <exception cref="InvalidOperationException"></exception>
-        public static List<string> SFTPListRemote(string Path)
-        {
-            return SFTPListRemote(Path, SFTPShellCommon.SFTPShowDetailsInList);
-        }
+        public static List<string> SFTPListRemote(string Path) => SFTPListRemote(Path, SFTPShellCommon.SFTPShowDetailsInList);
 
         /// <summary>
         /// Lists remote folders and files

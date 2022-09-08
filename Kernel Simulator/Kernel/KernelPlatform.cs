@@ -27,18 +27,12 @@ namespace KS.Kernel
         /// <summary>
         /// Is this system a Windows system?
         /// </summary>
-        public static bool IsOnWindows()
-        {
-            return Environment.OSVersion.Platform == PlatformID.Win32NT;
-        }
+        public static bool IsOnWindows() => Environment.OSVersion.Platform == PlatformID.Win32NT;
 
         /// <summary>
         /// Is this system a Unix system? True for macOS, too!
         /// </summary>
-        public static bool IsOnUnix()
-        {
-            return Environment.OSVersion.Platform == PlatformID.Unix;
-        }
+        public static bool IsOnUnix() => Environment.OSVersion.Platform == PlatformID.Unix;
 
         /// <summary>
         /// Is this system a macOS system?
@@ -61,34 +55,22 @@ namespace KS.Kernel
         /// <summary>
         /// Are we running KS on Mono?
         /// </summary>
-        public static bool IsOnMonoRuntime()
-        {
-            return Type.GetType("Mono.Runtime") is not null;
-        }
+        public static bool IsOnMonoRuntime() => Type.GetType("Mono.Runtime") is not null;
 
         /// <summary>
         /// Polls $TERM_PROGRAM to get terminal emulator
         /// </summary>
-        public static string GetTerminalEmulator()
-        {
-            return Environment.GetEnvironmentVariable("TERM_PROGRAM") ?? "";
-        }
+        public static string GetTerminalEmulator() => Environment.GetEnvironmentVariable("TERM_PROGRAM") ?? "";
 
         /// <summary>
         /// Polls $TERM to get terminal type (vt100, dumb, ...)
         /// </summary>
-        public static string GetTerminalType()
-        {
-            return Environment.GetEnvironmentVariable("TERM") ?? "";
-        }
+        public static string GetTerminalType() => Environment.GetEnvironmentVariable("TERM") ?? "";
 
         /// <summary>
         /// Is Kernel Simulator running from GRILO?
         /// </summary>
-        public static bool IsRunningFromGrilo()
-        {
-            return (System.Reflection.Assembly.GetEntryAssembly()?.GetName()?.Name?.StartsWith("GRILO")) ?? false;
-        }
+        public static bool IsRunningFromGrilo() => (System.Reflection.Assembly.GetEntryAssembly()?.GetName()?.Name?.StartsWith("GRILO")) ?? false;
 
     }
 }

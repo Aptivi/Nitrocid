@@ -27,10 +27,7 @@ namespace KS.Shell.Shells.Json.Commands
     class JsonShell_ExitNoSaveCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            ShellStart.KillShell();
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => ShellStart.KillShell();
 
     }
 }

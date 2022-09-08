@@ -41,10 +41,7 @@ namespace KS.Shell.Shells.UESH.Commands
             TextWriterColor.Write(Translate.DoTranslation("Configuration reloaded. You might need to reboot the kernel for some changes to take effect."), true, ColorTools.ColTypes.Neutral);
         }
 
-        public override void HelpHelper()
-        {
-            TextWriterColor.Write(Translate.DoTranslation("Colors don't require a restart, but most of the settings require a restart."), true, ColorTools.ColTypes.Neutral);
-        }
+        public override void HelpHelper() => TextWriterColor.Write(Translate.DoTranslation("Colors don't require a restart, but most of the settings require a restart."), true, ColorTools.ColTypes.Neutral);
 
     }
 }

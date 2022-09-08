@@ -35,10 +35,7 @@ namespace KS.Misc.Calendar
         /// <summary>
         /// Prints the table of the calendar
         /// </summary>
-        public static void PrintCalendar()
-        {
-            PrintCalendar(DateTime.Today.Year, DateTime.Today.Month);
-        }
+        public static void PrintCalendar() => PrintCalendar(DateTime.Today.Year, DateTime.Today.Month);
 
         /// <summary>
         /// Prints the table of the calendar

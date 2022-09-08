@@ -32,10 +32,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class SaveCurrDirCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            CurrentDirectory.SaveCurrDir();
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => CurrentDirectory.SaveCurrDir();
 
     }
 }
