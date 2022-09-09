@@ -35,6 +35,9 @@ using Newtonsoft.Json.Linq;
 
 namespace KS.Shell.ShellBase.Aliases
 {
+    /// <summary>
+    /// Alias management module
+    /// </summary>
     public static class AliasManager
     {
 

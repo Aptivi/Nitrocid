@@ -34,6 +34,9 @@ using Renci.SshNet.Common;
 
 namespace KS.Network.SSH
 {
+    /// <summary>
+    /// SSH module
+    /// </summary>
     public static class SSH
     {
 

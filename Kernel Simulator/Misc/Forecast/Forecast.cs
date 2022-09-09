@@ -27,9 +27,15 @@ using System;
 
 namespace KS.Misc.Forecast
 {
+    /// <summary>
+    /// Forecast module
+    /// </summary>
     public static class Forecast
     {
 
+        /// <summary>
+        /// Preferred unit for forecast measurements
+        /// </summary>
         public static UnitMeasurement PreferredUnit = UnitMeasurement.Metric;
         internal static string ApiKey = "";
 

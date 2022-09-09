@@ -39,6 +39,9 @@ using Newtonsoft.Json.Linq;
 
 namespace KS.Misc.Settings
 {
+    /// <summary>
+    /// Settings application module
+    /// </summary>
     public static class SettingsApp
     {
 

@@ -25,6 +25,9 @@ using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.ShellBase.Commands
 {
+    /// <summary>
+    /// Provided command arguments information class
+    /// </summary>
     public class ProvidedCommandArgumentsInfo
     {
 

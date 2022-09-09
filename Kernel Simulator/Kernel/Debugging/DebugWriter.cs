@@ -26,11 +26,17 @@ using KS.Kernel.Debugging.RemoteDebug;
 
 namespace KS.Kernel.Debugging
 {
+    /// <summary>
+    /// Debug writing module
+    /// </summary>
     public static class DebugWriter
     {
 
-        internal static StreamWriter DebugStreamWriter;
+        /// <summary>
+        /// Debug stack trace list
+        /// </summary>
         public readonly static List<string> DebugStackTraces = new();
+        internal static StreamWriter DebugStreamWriter;
 
         /// <summary>
         /// Outputs the text into the debugger file, and sets the time stamp.

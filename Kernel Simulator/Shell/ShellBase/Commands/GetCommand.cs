@@ -43,6 +43,9 @@ using KS.Shell.Shells.UESH;
 
 namespace KS.Shell.ShellBase.Commands
 {
+    /// <summary>
+    /// Command parser module
+    /// </summary>
     public static class GetCommand
     {
 

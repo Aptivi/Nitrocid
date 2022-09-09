@@ -31,6 +31,9 @@ using VT.NET;
 
 namespace KS.ManPages
 {
+    /// <summary>
+    /// Mod manual page viewer module
+    /// </summary>
     public static class PageViewer
     {
 

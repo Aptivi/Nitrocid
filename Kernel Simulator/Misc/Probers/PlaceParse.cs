@@ -36,6 +36,9 @@ using KS.Users;
 
 namespace KS.Misc.Probers
 {
+    /// <summary>
+    /// Placeholder parsing module
+    /// </summary>
     public static class PlaceParse
     {
 

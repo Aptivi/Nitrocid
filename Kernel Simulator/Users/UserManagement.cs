@@ -35,6 +35,9 @@ using Newtonsoft.Json.Linq;
 
 namespace KS.Users
 {
+    /// <summary>
+    /// User management module
+    /// </summary>
     public static class UserManagement
     {
 

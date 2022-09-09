@@ -21,6 +21,9 @@ using KS.Misc.Threading;
 
 namespace KS.Shell.ShellBase.Shells
 {
+    /// <summary>
+    /// Shell information
+    /// </summary>
     public class ShellInfo
     {
 

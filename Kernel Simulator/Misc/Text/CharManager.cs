@@ -22,6 +22,9 @@ using System.Linq;
 
 namespace KS.Misc.Text
 {
+    /// <summary>
+    /// Character querying and management module
+    /// </summary>
     public static class CharManager
     {
 

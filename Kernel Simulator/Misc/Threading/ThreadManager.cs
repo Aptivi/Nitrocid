@@ -25,6 +25,9 @@ using System.Threading;
 
 namespace KS.Misc.Threading
 {
+    /// <summary>
+    /// Thread management module
+    /// </summary>
     public static class ThreadManager
     {
 

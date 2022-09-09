@@ -35,6 +35,9 @@ using SharpCompress.Writers;
 
 namespace KS.Misc.Archive
 {
+    /// <summary>
+    /// Archive shell tools
+    /// </summary>
     public static class ArchiveTools
     {
 

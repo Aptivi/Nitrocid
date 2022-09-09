@@ -31,6 +31,9 @@ using KS.Users.Groups;
 
 namespace KS.Shell.ShellBase.Commands
 {
+    /// <summary>
+    /// Help system for shells module
+    /// </summary>
     public static class HelpSystem
     {
 

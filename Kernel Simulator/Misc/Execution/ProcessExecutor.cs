@@ -30,6 +30,9 @@ using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Misc.Execution
 {
+    /// <summary>
+    /// Process executor module
+    /// </summary>
     public static class ProcessExecutor
     {
 

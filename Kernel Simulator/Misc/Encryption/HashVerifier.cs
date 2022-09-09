@@ -24,6 +24,9 @@ using KS.Kernel.Debugging;
 
 namespace KS.Misc.Encryption
 {
+    /// <summary>
+    /// Hash sum verification module
+    /// </summary>
     public static class HashVerifier
     {
 

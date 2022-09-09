@@ -21,6 +21,9 @@ using System.Reflection;
 
 namespace KS.Misc.Reflection
 {
+    /// <summary>
+    /// Method management module
+    /// </summary>
     public static class MethodManager
     {
 

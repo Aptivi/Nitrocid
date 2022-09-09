@@ -52,9 +52,15 @@ using KS.Shell.Shells.Archive;
 
 namespace KS.Modifications
 {
+    /// <summary>
+    /// Mod management module
+    /// </summary>
     public static class ModManager
     {
 
+        /// <summary>
+        /// Blacklisted mods split by semicolons
+        /// </summary>
         public static string BlacklistedModsString = "";
         internal static Dictionary<string, ModInfo> Mods = new();
 

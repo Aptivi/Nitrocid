@@ -21,6 +21,9 @@ using KS.Languages;
 
 namespace KS.Modifications
 {
+    /// <summary>
+    /// Mod information
+    /// </summary>
     public class ModInfo
     {
 

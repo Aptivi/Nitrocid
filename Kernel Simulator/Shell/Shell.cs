@@ -45,6 +45,9 @@ using KS.Users.Groups;
 
 namespace KS.Shell
 {
+    /// <summary>
+    /// Base shell module
+    /// </summary>
     public static class Shell
     {
 

@@ -29,6 +29,9 @@ using KS.Misc.Writers.FancyWriters.Tools;
 
 namespace KS.Misc.Calendar
 {
+    /// <summary>
+    /// Calendar printing module
+    /// </summary>
     public static class CalendarPrint
     {
 

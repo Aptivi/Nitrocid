@@ -18,6 +18,9 @@
 
 namespace KS.Misc.Reflection
 {
+    /// <summary>
+    /// String querying module
+    /// </summary>
     public static class StringQuery
     {
 

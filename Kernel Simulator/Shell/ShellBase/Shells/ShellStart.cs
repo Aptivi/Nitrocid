@@ -35,6 +35,9 @@ using ReadLineReboot;
 
 namespace KS.Shell.ShellBase.Shells
 {
+    /// <summary>
+    /// Shell starter module
+    /// </summary>
     public static class ShellStart
     {
 

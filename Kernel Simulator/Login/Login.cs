@@ -36,10 +36,12 @@ using KS.Users.Groups;
 
 namespace KS.Login
 {
+    /// <summary>
+    /// Login module
+    /// </summary>
     public static class Login
     {
 
-        // Variables
         /// <summary>
         /// Username prompt
         /// </summary>

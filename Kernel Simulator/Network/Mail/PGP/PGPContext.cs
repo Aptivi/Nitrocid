@@ -26,6 +26,9 @@ using Org.BouncyCastle.Bcpg.OpenPgp;
 
 namespace KS.Network.Mail.PGP
 {
+    /// <summary>
+    /// KS PGP context
+    /// </summary>
     public class PGPContext : GnuPGContext
     {
 

@@ -25,6 +25,9 @@ using KS.Kernel.Debugging;
 
 namespace KS.Misc.Reflection
 {
+    /// <summary>
+    /// Assembly lookup module
+    /// </summary>
     public static class AssemblyLookup
     {
 

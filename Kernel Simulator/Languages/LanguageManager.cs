@@ -36,10 +36,15 @@ using Newtonsoft.Json.Linq;
 
 namespace KS.Languages
 {
+    /// <summary>
+    /// Lanaguage management module
+    /// </summary>
     public static class LanguageManager
     {
 
-        // Variables
+        /// <summary>
+        /// Current language
+        /// </summary>
         public static string CurrentLanguage = "eng"; // Default to English
         internal static Dictionary<string, LanguageInfo> BaseLanguages = new();
         internal static Dictionary<string, LanguageInfo> CustomLanguages = new();

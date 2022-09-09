@@ -31,6 +31,9 @@ using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Misc.Timers
 {
+    /// <summary>
+    /// Stopwatch CLI module
+    /// </summary>
     public static class StopwatchScreen
     {
 

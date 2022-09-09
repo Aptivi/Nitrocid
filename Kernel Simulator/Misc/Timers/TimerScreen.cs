@@ -34,9 +34,15 @@ using KS.Misc.Writers.FancyWriters.Tools;
 
 namespace KS.Misc.Timers
 {
+    /// <summary>
+    /// Timer CLI module
+    /// </summary>
     public static class TimerScreen
     {
 
+        /// <summary>
+        /// Timer figlet font
+        /// </summary>
         public static string TimerFigletFont = "Small";
         internal static KernelThread TimerUpdate = new("Timer Remaining Time Updater", true, UpdateTimerElapsedDisplay);
         internal static DateTime TimerStarted;

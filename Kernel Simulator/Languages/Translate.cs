@@ -22,6 +22,9 @@ using Newtonsoft.Json.Linq;
 
 namespace KS.Languages
 {
+    /// <summary>
+    /// Translation module
+    /// </summary>
     public static class Translate
     {
 

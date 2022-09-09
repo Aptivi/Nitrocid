@@ -21,6 +21,9 @@ using KS.Kernel.Debugging;
 
 namespace KS.Misc.Reflection
 {
+    /// <summary>
+    /// String manipulation module
+    /// </summary>
     public static class StringManipulate
     {
 

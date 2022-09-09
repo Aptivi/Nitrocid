@@ -20,6 +20,9 @@ using System.Collections.Generic;
 
 namespace KS.Shell.ShellBase.Commands
 {
+    /// <summary>
+    /// Switch management module
+    /// </summary>
     public static class SwitchManager
     {
         /// <summary>

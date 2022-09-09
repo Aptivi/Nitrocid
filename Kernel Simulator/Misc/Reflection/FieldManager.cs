@@ -23,6 +23,9 @@ using KS.Languages;
 
 namespace KS.Misc.Reflection
 {
+    /// <summary>
+    /// Field management module
+    /// </summary>
     public static class FieldManager
     {
 

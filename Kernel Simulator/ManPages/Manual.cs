@@ -21,6 +21,9 @@ using System.Text;
 
 namespace KS.ManPages
 {
+    /// <summary>
+    /// Manual page class instance
+    /// </summary>
     public class Manual
     {
 

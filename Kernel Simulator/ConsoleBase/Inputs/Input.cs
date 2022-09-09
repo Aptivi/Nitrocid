@@ -26,6 +26,9 @@ using System.Threading;
 
 namespace KS.ConsoleBase.Inputs
 {
+    /// <summary>
+    /// Console input module
+    /// </summary>
     public static class Input
     {
 

@@ -24,6 +24,9 @@ using Newtonsoft.Json.Linq;
 
 namespace KS.Misc.Beautifiers
 {
+    /// <summary>
+    /// JSON file minifier module
+    /// </summary>
     public static class JsonMinifier
     {
 

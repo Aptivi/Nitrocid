@@ -20,6 +20,9 @@ using KS.Languages;
 
 namespace KS.Modifications
 {
+    /// <summary>
+    /// Mod part information
+    /// </summary>
     public class PartInfo
     {
 

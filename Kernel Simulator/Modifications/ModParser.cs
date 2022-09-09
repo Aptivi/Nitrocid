@@ -39,6 +39,9 @@ using KS.Shell.ShellBase.Shells;
 
 namespace KS.Modifications
 {
+    /// <summary>
+    /// Mod parsing module
+    /// </summary>
     public static class ModParser
     {
 

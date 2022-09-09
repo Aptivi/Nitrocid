@@ -20,6 +20,9 @@ using KS.Users.Groups;
 
 namespace KS.Users
 {
+    /// <summary>
+    /// User information class
+    /// </summary>
     public class UserInfo
     {
 

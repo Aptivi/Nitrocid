@@ -25,6 +25,9 @@ using KS.Kernel.Debugging;
 
 namespace KS.Misc.Encryption
 {
+    /// <summary>
+    /// Encryption and hashing module
+    /// </summary>
     public static class Encryption
     {
 

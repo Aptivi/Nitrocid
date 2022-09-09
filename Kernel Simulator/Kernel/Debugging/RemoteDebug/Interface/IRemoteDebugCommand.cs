@@ -20,6 +20,9 @@ using System.IO;
 
 namespace KS.Kernel.Debugging.RemoteDebug.Interface
 {
+    /// <summary>
+    /// Remote debug command interface
+    /// </summary>
     public interface IRemoteDebugCommand
     {
 

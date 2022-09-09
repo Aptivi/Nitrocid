@@ -24,9 +24,15 @@ using KS.Files.Read;
 
 namespace KS.Kernel.Debugging
 {
+    /// <summary>
+    /// Debug management module
+    /// </summary>
     public static class DebugManager
     {
 
+        /// <summary>
+        /// Debug maximum quota size before rotation
+        /// </summary>
         public static double DebugQuota = 1073741824d; // 1073741824 bytes = 1 GiB (1 GB for Windows)
 
         /// <summary>

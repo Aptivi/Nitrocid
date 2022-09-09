@@ -22,6 +22,9 @@ using KS.Languages;
 
 namespace KS.ManPages
 {
+    /// <summary>
+    /// Mod manual page management module
+    /// </summary>
     public static class PageManager
     {
 

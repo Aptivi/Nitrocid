@@ -30,6 +30,9 @@ using Newtonsoft.Json.Linq;
 
 namespace KS.Users.Groups
 {
+    /// <summary>
+    /// Group management module
+    /// </summary>
     public static class GroupManagement
     {
 

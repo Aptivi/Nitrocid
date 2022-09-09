@@ -18,6 +18,9 @@
 
 namespace KS.Misc.Splash
 {
+    /// <summary>
+    /// Splash information class
+    /// </summary>
     public class SplashInfo
     {
 

@@ -23,11 +23,19 @@ using KS.Kernel.Debugging;
 
 namespace KS.Languages
 {
+    /// <summary>
+    /// Culture management module
+    /// </summary>
     public static class CultureManager
     {
 
-        // Variables
+        /// <summary>
+        /// Current culture
+        /// </summary>
         public static string CurrentCultStr = "en-US";
+        /// <summary>
+        /// Current culture
+        /// </summary>
         public static CultureInfo CurrentCult = new(CurrentCultStr);
 
         /// <summary>

@@ -32,6 +32,9 @@ using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Network.RPC
 {
+    /// <summary>
+    /// RPC commands module
+    /// </summary>
     public static class RPCCommands
     {
 
