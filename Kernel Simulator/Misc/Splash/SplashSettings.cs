@@ -20,6 +20,9 @@ using KS.ConsoleBase.Colors;
 
 namespace KS.Misc.Splash
 {
+    /// <summary>
+    /// Splash settings module
+    /// </summary>
     public static class SplashSettings
     {
 

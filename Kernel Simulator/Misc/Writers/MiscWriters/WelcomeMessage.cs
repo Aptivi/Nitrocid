@@ -25,6 +25,9 @@ using KS.Misc.Writers.FancyWriters.Tools;
 
 namespace KS.Misc.Writers.MiscWriters
 {
+    /// <summary>
+    /// Welcome message writer
+    /// </summary>
     public static class WelcomeMessage
     {
 

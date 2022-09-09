@@ -23,6 +23,9 @@ using KS.Misc.Reflection;
 
 namespace KS.Misc.Writers.FancyWriters.Tools
 {
+    /// <summary>
+    /// Figlet tools
+    /// </summary>
     public static class FigletTools
     {
 

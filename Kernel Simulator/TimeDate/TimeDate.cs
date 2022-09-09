@@ -23,6 +23,9 @@ using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.TimeDate
 {
+    /// <summary>
+    /// Time and date module
+    /// </summary>
     public static class TimeDate
     {
 

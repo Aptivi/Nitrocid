@@ -18,16 +18,43 @@
 
 namespace KS.Misc.Writers.FancyWriters.Tools
 {
+    /// <summary>
+    /// Progress tools
+    /// </summary>
     public static class ProgressTools
     {
 
+        /// <summary>
+        /// Upper left corner character for the progress bar
+        /// </summary>
         public static string ProgressUpperLeftCornerChar = "╔";
+        /// <summary>
+        /// Upper right corner character for the progress bar
+        /// </summary>
         public static string ProgressUpperRightCornerChar = "╗";
+        /// <summary>
+        /// Lower left corner character for the progress bar
+        /// </summary>
         public static string ProgressLowerLeftCornerChar = "╚";
+        /// <summary>
+        /// Lower right corner character for the progress bar
+        /// </summary>
         public static string ProgressLowerRightCornerChar = "╝";
+        /// <summary>
+        /// Upper frame character for the progress bar
+        /// </summary>
         public static string ProgressUpperFrameChar = "═";
+        /// <summary>
+        /// Lower frame character for the progress bar
+        /// </summary>
         public static string ProgressLowerFrameChar = "═";
+        /// <summary>
+        /// Left frame character for the progress bar
+        /// </summary>
         public static string ProgressLeftFrameChar = "║";
+        /// <summary>
+        /// Right frame character for the progress bar
+        /// </summary>
         public static string ProgressRightFrameChar = "║";
 
     }

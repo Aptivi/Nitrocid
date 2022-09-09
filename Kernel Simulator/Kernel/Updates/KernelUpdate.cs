@@ -26,6 +26,9 @@ using Newtonsoft.Json.Linq;
 
 namespace KS.Kernel.Updates
 {
+    /// <summary>
+    /// Kernel update class instance
+    /// </summary>
     public class KernelUpdate
     {
 

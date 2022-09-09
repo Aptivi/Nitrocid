@@ -23,6 +23,9 @@ using KS.Languages;
 
 namespace KS.TimeDate
 {
+    /// <summary>
+    /// Time and date rendering module
+    /// </summary>
     public static class TimeDateRenderers
     {
 

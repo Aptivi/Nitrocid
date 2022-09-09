@@ -25,6 +25,9 @@ using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Misc.Writers.FancyWriters
 {
+    /// <summary>
+    /// Separator writer
+    /// </summary>
     public static class SeparatorWriterColor
     {
 

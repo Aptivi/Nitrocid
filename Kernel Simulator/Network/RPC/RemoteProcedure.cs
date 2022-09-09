@@ -27,11 +27,23 @@ using KS.Misc.Threading;
 
 namespace KS.Network.RPC
 {
+    /// <summary>
+    /// Remote procedure module
+    /// </summary>
     public static class RemoteProcedure
     {
 
+        /// <summary>
+        /// RPC listener client
+        /// </summary>
         public static UdpClient RPCListen;
+        /// <summary>
+        /// RPC port
+        /// </summary>
         public static int RPCPort = 12345;
+        /// <summary>
+        /// Whether the RPC is enabled or not
+        /// </summary>
         public static bool RPCEnabled = true;
         internal static KernelThread RPCThread = new("RPC Thread", true, RPCCommands.ReceiveCommand);
 

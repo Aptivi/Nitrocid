@@ -24,11 +24,19 @@ using KS.Languages;
 
 namespace KS.Misc.Probers.Motd
 {
+    /// <summary>
+    /// Message of the Day (MOTD) parsing module
+    /// </summary>
     public static class MotdParse
     {
 
-        // Variables
+        /// <summary>
+        /// MOTD file path
+        /// </summary>
         public static string MotdFilePath = Paths.GetKernelPath(KernelPathType.MOTD);
+        /// <summary>
+        /// Current MOTD message
+        /// </summary>
         public static string MOTDMessage;
 
         /// <summary>

@@ -24,6 +24,9 @@ using VT.NET;
 
 namespace KS.ConsoleBase
 {
+    /// <summary>
+    /// Additional routines for the console
+    /// </summary>
     public static class ConsoleExtensions
     {
 

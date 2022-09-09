@@ -27,6 +27,9 @@ using KS.Misc.Writers.FancyWriters.Tools;
 
 namespace KS.Misc.Writers.FancyWriters
 {
+    /// <summary>
+    /// Table writer with color support
+    /// </summary>
     public static class TableColor
     {
 

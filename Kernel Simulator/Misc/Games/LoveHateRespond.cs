@@ -28,6 +28,9 @@ using static Namer.NameGenerator;
 
 namespace KS.Misc.Games
 {
+    /// <summary>
+    /// Love and hate comment responder game module
+    /// </summary>
     public static class LoveHateRespond
     {
 
@@ -73,6 +76,9 @@ namespace KS.Misc.Games
         };
         private readonly static Dictionary<string, CommentType> Users = new();
 
+        /// <summary>
+        /// Comment type
+        /// </summary>
         public enum CommentType
         {
             /// <summary>

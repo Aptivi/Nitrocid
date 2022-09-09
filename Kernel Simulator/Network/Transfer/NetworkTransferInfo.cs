@@ -18,6 +18,9 @@
 
 namespace KS.Network.Transfer
 {
+    /// <summary>
+    /// Network transfer information
+    /// </summary>
     public class NetworkTransferInfo
     {
 
@@ -52,6 +55,12 @@ namespace KS.Network.Transfer
             }
         }
 
+        /// <summary>
+        /// Makes a new instance of the <see cref="NetworkTransferInfo"/> class
+        /// </summary>
+        /// <param name="DoneSize">How many bytes are transferred?</param>
+        /// <param name="FileSize">File size</param>
+        /// <param name="TransferType">Transfer type</param>
         protected internal NetworkTransferInfo(long DoneSize, long FileSize, NetworkTransferType TransferType)
         {
             this.DoneSize = DoneSize;

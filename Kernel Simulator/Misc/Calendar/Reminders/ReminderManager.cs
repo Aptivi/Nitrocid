@@ -34,11 +34,23 @@ using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Misc.Calendar.Reminders
 {
+    /// <summary>
+    /// Reminder management module
+    /// </summary>
     public static class ReminderManager
     {
 
+        /// <summary>
+        /// List of reminders
+        /// </summary>
         public static List<ReminderInfo> Reminders = new();
+        /// <summary>
+        /// Current reminder notification importance
+        /// </summary>
         public static Notifications.Notifications.NotifPriority CurrentReminderImportance = Notifications.Notifications.NotifPriority.Low;
+        /// <summary>
+        /// Reminder thread
+        /// </summary>
         public static KernelThread ReminderThread = new("Reminder Thread", false, ReminderListen);
         internal static object ReminderManagerLock = new();
 

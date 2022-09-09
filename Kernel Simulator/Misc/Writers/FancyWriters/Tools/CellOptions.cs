@@ -21,6 +21,9 @@ using KS.ConsoleBase.Colors;
 
 namespace KS.Misc.Writers.FancyWriters.Tools
 {
+    /// <summary>
+    /// Table cell options
+    /// </summary>
     public class CellOptions
     {
 

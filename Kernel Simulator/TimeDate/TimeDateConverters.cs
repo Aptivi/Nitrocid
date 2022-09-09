@@ -20,9 +20,15 @@ using System;
 
 namespace KS.TimeDate
 {
+    /// <summary>
+    /// Date and time conversion module
+    /// </summary>
     public static class TimeDateConverters
     {
 
+        /// <summary>
+        /// Unix epoch (1970/1/1)
+        /// </summary>
         public readonly static DateTime UnixEpoch = new(1970, 1, 1, 0, 0, 0, 0);
 
         /// <summary>

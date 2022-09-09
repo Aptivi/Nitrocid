@@ -37,9 +37,15 @@ using KS.Misc.Threading;
 
 namespace KS.Misc.Splash
 {
+    /// <summary>
+    /// Splash management module
+    /// </summary>
     public static class SplashManager
     {
 
+        /// <summary>
+        /// Current splash name
+        /// </summary>
         public static string SplashName = "Simple";
         internal static KernelThread SplashThread = new("Kernel Splash Thread", false, (splash) => GetSplashFromName((string)splash).EntryPoint.Display());
         private readonly static Dictionary<string, SplashInfo> InstalledSplashes = new()

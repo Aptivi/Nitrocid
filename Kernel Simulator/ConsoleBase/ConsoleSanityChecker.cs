@@ -23,6 +23,9 @@ using KS.Misc.Writers.WriterBase;
 
 namespace KS.ConsoleBase
 {
+    /// <summary>
+    /// Console sanity checking module
+    /// </summary>
     public static class ConsoleSanityChecker
     {
 

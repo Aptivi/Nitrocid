@@ -21,6 +21,9 @@ using UnameNET;
 
 namespace KS.Kernel
 {
+    /// <summary>
+    /// Kernel platform query
+    /// </summary>
     public static class KernelPlatform
     {
 

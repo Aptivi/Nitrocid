@@ -28,6 +28,9 @@ using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.TimeDate
 {
+    /// <summary>
+    /// Top right corner on time and date
+    /// </summary>
     public static class TimeDateTopRight
     {
 

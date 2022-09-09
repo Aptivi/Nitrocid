@@ -33,16 +33,33 @@ using Newtonsoft.Json.Linq;
 
 namespace KS.Network
 {
+    /// <summary>
+    /// Network tools module
+    /// </summary>
     public static class NetworkTools
     {
 
-        // Variables
+        /// <summary>
+        /// Current kernel host name
+        /// </summary>
         public static string HostName = "kernel";
+        /// <summary>
+        /// Download retries before giving up
+        /// </summary>
         public static int DownloadRetries = 3;
+        /// <summary>
+        /// Upload retries before giving up
+        /// </summary>
         public static int UploadRetries = 3;
+        /// <summary>
+        /// Ping timeout in milliseconds
+        /// </summary>
         public static int PingTimeout = 60000;
         internal static bool TransferFinished;
 
+        /// <summary>
+        /// Speed dial type
+        /// </summary>
         public enum SpeedDialType
         {
             /// <summary>

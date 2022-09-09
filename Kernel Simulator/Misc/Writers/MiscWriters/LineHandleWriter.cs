@@ -24,6 +24,9 @@ using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Misc.Writers.MiscWriters
 {
+    /// <summary>
+    /// Line handle writer
+    /// </summary>
     public static class LineHandleWriter
     {
 

@@ -27,6 +27,9 @@ using KS.Kernel.Debugging;
 
 namespace KS.TimeDate
 {
+    /// <summary>
+    /// Time zone module
+    /// </summary>
     public static class TimeZones
     {
 

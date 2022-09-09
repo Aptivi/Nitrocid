@@ -24,11 +24,19 @@ using KS.Languages;
 
 namespace KS.Misc.Probers.Motd
 {
+    /// <summary>
+    /// Message of the Day After Login (MAL) parsing module
+    /// </summary>
     public static class MalParse
     {
 
-        // Variables
+        /// <summary>
+        /// MAL file path
+        /// </summary>
         public static string MalFilePath = Paths.GetKernelPath(KernelPathType.MAL);
+        /// <summary>
+        /// Current MAL message
+        /// </summary>
         public static string MAL;
 
         /// <summary>

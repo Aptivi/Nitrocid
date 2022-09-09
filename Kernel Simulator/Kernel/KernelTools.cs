@@ -63,10 +63,15 @@ using System.Reflection;
 
 namespace KS.Kernel
 {
+    /// <summary>
+    /// Kernel tools module
+    /// </summary>
     public static class KernelTools
     {
 
-        // Variables
+        /// <summary>
+        /// Current banner figlet font
+        /// </summary>
         public static string BannerFigletFont = "Banner";
         internal static KernelThread RPCPowerListener = new("RPC Power Listener Thread", true, (object arg) => PowerManager.PowerManage((PowerMode)arg));
         internal static Exception LastKernelErrorException;

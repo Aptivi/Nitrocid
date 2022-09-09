@@ -25,6 +25,9 @@ using KS.Languages;
 
 namespace KS.Files.LineEndings
 {
+    /// <summary>
+    /// Line endings tools module
+    /// </summary>
     public static class LineEndingsTools
     {
 

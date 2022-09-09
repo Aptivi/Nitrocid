@@ -27,11 +27,23 @@ using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Misc.Games
 {
+    /// <summary>
+    /// Solver game module
+    /// </summary>
     public static class Solver
     {
 
+        /// <summary>
+        /// Minimum number for solver
+        /// </summary>
         public static int SolverMinimumNumber = 0;
+        /// <summary>
+        /// Maximum number for solver
+        /// </summary>
         public static int SolverMaximumNumber = 1000;
+        /// <summary>
+        /// Whether to show the input or not
+        /// </summary>
         public static bool SolverShowInput;
 
         /// <summary>

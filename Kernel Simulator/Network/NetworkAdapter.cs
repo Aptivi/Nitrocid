@@ -20,6 +20,9 @@ using System.Net.NetworkInformation;
 
 namespace KS.Network
 {
+    /// <summary>
+    /// Network adapter instance
+    /// </summary>
     public static class NetworkAdapter
     {
 

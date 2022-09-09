@@ -23,6 +23,9 @@ using KS.Shell.ShellBase.Shells;
 
 namespace KS.Misc.Writers.MiscWriters
 {
+    /// <summary>
+    /// Decisive text writer module
+    /// </summary>
     public static class Decisive
     {
 

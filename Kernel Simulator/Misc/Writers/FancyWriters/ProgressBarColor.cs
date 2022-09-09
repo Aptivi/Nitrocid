@@ -29,6 +29,9 @@ using KS.Misc.Writers.WriterBase;
 
 namespace KS.Misc.Writers.FancyWriters
 {
+    /// <summary>
+    /// Progress bar writer with color support
+    /// </summary>
     public static class ProgressBarColor
     {
 

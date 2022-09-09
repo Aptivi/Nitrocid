@@ -21,6 +21,9 @@ using KS.Kernel.Debugging;
 
 namespace KS.Kernel.Updates
 {
+    /// <summary>
+    /// Kernel update information class
+    /// </summary>
     public class KernelUpdateInfo
     {
 

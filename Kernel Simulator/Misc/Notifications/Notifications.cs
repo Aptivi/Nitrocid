@@ -31,19 +31,51 @@ using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Misc.Notifications
 {
+    /// <summary>
+    /// Notifications module
+    /// </summary>
     public static class Notifications
     {
 
-        // Variables
+        /// <summary>
+        /// Recent notifications
+        /// </summary>
         public static List<Notification> NotifRecents = new();
+        /// <summary>
+        /// Notification listener thread
+        /// </summary>
         public static KernelThread NotifThread = new("Notification Thread", false, NotifListen);
+        /// <summary>
+        /// Upper left corner character for the notfication box
+        /// </summary>
         public static string NotifyUpperLeftCornerChar = "╔";
+        /// <summary>
+        /// Upper right corner character for the notfication box
+        /// </summary>
         public static string NotifyUpperRightCornerChar = "╗";
+        /// <summary>
+        /// Lower left corner character for the notfication box
+        /// </summary>
         public static string NotifyLowerLeftCornerChar = "╚";
+        /// <summary>
+        /// Lower right corner character for the notfication box
+        /// </summary>
         public static string NotifyLowerRightCornerChar = "╝";
+        /// <summary>
+        /// Upper frame character for the notfication box
+        /// </summary>
         public static string NotifyUpperFrameChar = "═";
+        /// <summary>
+        /// Lower frame character for the notfication box
+        /// </summary>
         public static string NotifyLowerFrameChar = "═";
+        /// <summary>
+        /// Left frame character for the notfication box
+        /// </summary>
         public static string NotifyLeftFrameChar = "║";
+        /// <summary>
+        /// Right frame character for the notfication box
+        /// </summary>
         public static string NotifyRightFrameChar = "║";
 
         /// <summary>

@@ -22,9 +22,13 @@ using KS.Shell.ShellBase.Commands;
 
 namespace KS.Kernel.Debugging.RemoteDebug.Interface
 {
+    /// <summary>
+    /// Remote debug command executor
+    /// </summary>
     public abstract class RemoteDebugCommandExecutor : CommandExecutor, IRemoteDebugCommand
     {
 
+        /// <inheritdoc/>
         public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, StreamWriter SocketStreamWriter, string DeviceAddress)
         {
             DebugWriter.WriteDebug(DebugLevel.F, "We shouldn't be here!!!");

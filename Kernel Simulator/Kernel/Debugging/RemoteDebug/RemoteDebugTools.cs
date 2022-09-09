@@ -28,6 +28,9 @@ using Newtonsoft.Json.Linq;
 
 namespace KS.Kernel.Debugging.RemoteDebug
 {
+    /// <summary>
+    /// Remote debug tool module
+    /// </summary>
     public static class RemoteDebugTools
     {
 

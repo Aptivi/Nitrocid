@@ -24,10 +24,19 @@ using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Misc.Games
 {
+    /// <summary>
+    /// Speed press game module
+    /// </summary>
     public static class SpeedPress
     {
 
+        /// <summary>
+        /// Current difficulty for the game
+        /// </summary>
         public static SpeedPressDifficulty SpeedPressCurrentDifficulty = SpeedPressDifficulty.Medium;
+        /// <summary>
+        /// Timeout in milliseconds before declaring that the time is up
+        /// </summary>
         public static int SpeedPressTimeout = 3000;
 
         /// <summary>

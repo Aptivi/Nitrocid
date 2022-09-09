@@ -35,17 +35,47 @@ using KS.TimeDate;
 
 namespace KS.Kernel.Debugging.RemoteDebug
 {
+    /// <summary>
+    /// Remote debugger module
+    /// </summary>
     public static class RemoteDebugger
     {
 
+        /// <summary>
+        /// Remote debugger port
+        /// </summary>
         public static int DebugPort = 3014;
+        /// <summary>
+        /// Remote debugger client
+        /// </summary>
         public static Socket RDebugClient;
+        /// <summary>
+        /// Remote debugger TCP listener
+        /// </summary>
         public static TcpListener DebugTCP;
+        /// <summary>
+        /// Remote debug devices
+        /// </summary>
         public static List<RemoteDebugDevice> DebugDevices = new();
+        /// <summary>
+        /// Remote debug thread
+        /// </summary>
         public static KernelThread RDebugThread = new("Remote Debug Thread", true, StartRDebugger);
-        public static List<string> RDebugBlocked = new(); // Blocked IP addresses
+        /// <summary>
+        /// Blocked remote debug device IP addresses
+        /// </summary>
+        public static List<string> RDebugBlocked = new();
+        /// <summary>
+        /// Whether the remote debug is stopping
+        /// </summary>
         public static bool RDebugStopping;
+        /// <summary>
+        /// Whether to automatically start the remote debugger
+        /// </summary>
         public static bool RDebugAutoStart = true;
+        /// <summary>
+        /// Remote debug message format
+        /// </summary>
         public static string RDebugMessageFormat = "";
         internal static bool RDebugFailed;
         internal static Exception RDebugFailedReason;

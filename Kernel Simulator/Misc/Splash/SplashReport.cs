@@ -22,6 +22,9 @@ using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Misc.Splash
 {
+    /// <summary>
+    /// Splash reporting module
+    /// </summary>
     public static class SplashReport
     {
 

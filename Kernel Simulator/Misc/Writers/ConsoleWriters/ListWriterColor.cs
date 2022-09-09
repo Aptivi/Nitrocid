@@ -27,6 +27,9 @@ using KS.Languages;
 
 namespace KS.Misc.Writers.ConsoleWriters
 {
+    /// <summary>
+    /// List writer with color support
+    /// </summary>
     public static class ListWriterColor
     {
         #region Dictionary

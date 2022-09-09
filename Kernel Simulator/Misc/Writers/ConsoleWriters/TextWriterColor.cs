@@ -27,6 +27,9 @@ using KS.Misc.Writers.WriterBase;
 
 namespace KS.Misc.Writers.ConsoleWriters
 {
+    /// <summary>
+    /// Console text writer with color support
+    /// </summary>
     public static class TextWriterColor
     {
 

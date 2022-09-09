@@ -22,6 +22,9 @@ using KS.Misc.Notifications;
 
 namespace KS.Misc.Calendar.Events
 {
+    /// <summary>
+    /// Event information class
+    /// </summary>
     public class EventInfo
     {
 

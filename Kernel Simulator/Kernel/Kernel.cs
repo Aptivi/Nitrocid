@@ -54,12 +54,23 @@ using KS.Kernel.Updates;
 
 namespace KS.Kernel
 {
+    /// <summary>
+    /// Kernel main class
+    /// </summary>
     public static class Kernel
     {
 
-        // Variables
+        /// <summary>
+        /// Kernel version
+        /// </summary>
         public readonly static Version KernelVersion = GetExecutingAssembly().GetName().Version;
+        /// <summary>
+        /// Kernel API version
+        /// </summary>
         public readonly static Version KernelApiVersion = new(FileVersionInfo.GetVersionInfo(GetExecutingAssembly().Location).FileVersion);
+        /// <summary>
+        /// New line constant
+        /// </summary>
         public readonly static string NewLine = Environment.NewLine;
         internal readonly static Events.Events KernelEventManager = new();
         internal static Stopwatch StageTimer = new();

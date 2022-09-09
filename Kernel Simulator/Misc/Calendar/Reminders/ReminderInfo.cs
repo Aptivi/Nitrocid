@@ -22,6 +22,9 @@ using KS.Misc.Notifications;
 
 namespace KS.Misc.Calendar.Reminders
 {
+    /// <summary>
+    /// Reminder information class
+    /// </summary>
     public class ReminderInfo
     {
 

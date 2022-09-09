@@ -20,6 +20,9 @@ using System.Collections.Generic;
 
 namespace KS.Kernel.Events
 {
+    /// <summary>
+    /// Kernel event management module
+    /// </summary>
     public static class EventsManager
     {
 

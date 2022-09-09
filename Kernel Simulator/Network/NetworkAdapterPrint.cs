@@ -25,6 +25,9 @@ using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Network
 {
+    /// <summary>
+    /// Network adapter printing module
+    /// </summary>
     public static class NetworkAdapterPrint
     {
 

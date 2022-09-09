@@ -21,6 +21,9 @@ using System.Net.Sockets;
 
 namespace KS.Kernel.Debugging.RemoteDebug
 {
+    /// <summary>
+    /// Remote debug device instance
+    /// </summary>
     public class RemoteDebugDevice
     {
 

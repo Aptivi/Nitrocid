@@ -27,6 +27,9 @@ using KS.Misc.Writers.WriterBase;
 
 namespace KS.Misc.Writers.FancyWriters
 {
+    /// <summary>
+    /// Figlet writer (positional)
+    /// </summary>
     public static class FigletWhereColor
     {
 

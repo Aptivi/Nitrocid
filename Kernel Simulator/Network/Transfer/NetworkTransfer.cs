@@ -36,12 +36,27 @@ using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Network.Transfer
 {
+    /// <summary>
+    /// Network transfer module
+    /// </summary>
     public static class NetworkTransfer
     {
 
+        /// <summary>
+        /// Download percentage print style
+        /// </summary>
         public static string DownloadPercentagePrint = "";
+        /// <summary>
+        /// Upload percentage print style
+        /// </summary>
         public static string UploadPercentagePrint = "";
+        /// <summary>
+        /// Whether to provoke the notification upon download starts
+        /// </summary>
         public static bool DownloadNotificationProvoke;
+        /// <summary>
+        /// Whether to provoke the notification upon upload starts
+        /// </summary>
         public static bool UploadNotificationProvoke;
         internal static bool IsError;
         internal static Exception ReasonError;

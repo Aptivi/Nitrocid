@@ -34,10 +34,19 @@ using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Misc.Calendar.Events
 {
+    /// <summary>
+    /// Event management module
+    /// </summary>
     public static class EventManager
     {
 
+        /// <summary>
+        /// Calendar events
+        /// </summary>
         public static List<EventInfo> CalendarEvents = new();
+        /// <summary>
+        /// Event thread
+        /// </summary>
         public static KernelThread EventThread = new("Event Thread", false, EventListen);
         internal static object EventManagerLock = new();
 

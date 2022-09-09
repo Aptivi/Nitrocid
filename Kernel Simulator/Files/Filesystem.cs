@@ -29,10 +29,15 @@ using KS.Kernel;
 
 namespace KS.Files
 {
+    /// <summary>
+    /// Filesystem module
+    /// </summary>
     public static class Filesystem
     {
 
-        // Variables
+        /// <summary>
+        /// Shows the filesystem progress (currently copy only)
+        /// </summary>
         public static bool ShowFilesystemProgress = true;
 
         /// <summary>
