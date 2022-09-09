@@ -163,7 +163,8 @@ namespace KS.ConsoleBase.Inputs
         /// <summary>
         /// Detects the keypress
         /// </summary>
-        public static void DetectKeypress() =>
+        public static void DetectKeypress()
+        {
 #if NETCOREAPP
             while (!KS.ConsoleBase.ConsoleWrapper.KeyAvailable)
                 Thread.Sleep(1);
@@ -171,7 +172,7 @@ namespace KS.ConsoleBase.Inputs
 #else
             ConsoleWrapper.ReadKey();
 #endif
-
+        }
 
     }
 }
