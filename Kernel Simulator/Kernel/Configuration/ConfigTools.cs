@@ -33,6 +33,9 @@ using static KS.Kernel.Configuration.Config;
 
 namespace KS.Kernel.Configuration
 {
+    /// <summary>
+    /// Configuration tools
+    /// </summary>
     public static class ConfigTools
     {
 

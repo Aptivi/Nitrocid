@@ -75,6 +75,9 @@ using static System.Collections.Specialized.BitVector32;
 
 namespace KS.Kernel.Configuration
 {
+    /// <summary>
+    /// Configuration module
+    /// </summary>
     public static class Config
     {
 
