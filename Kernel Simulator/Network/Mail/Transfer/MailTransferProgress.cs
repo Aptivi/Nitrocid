@@ -28,9 +28,13 @@ using MailKit;
 
 namespace KS.Network.Mail.Transfer
 {
+    /// <summary>
+    /// Mail transfer progress
+    /// </summary>
     public class MailTransferProgress : ITransferProgress
     {
 
+        /// <inheritdoc/>
         public void Report(long bytesTransferred, long totalSize)
         {
             if (MailShellCommon.Mail_ShowProgress)
@@ -46,6 +50,7 @@ namespace KS.Network.Mail.Transfer
             }
         }
 
+        /// <inheritdoc/>
         public void Report(long bytesTransferred)
         {
             if (MailShellCommon.Mail_ShowProgress)

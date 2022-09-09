@@ -31,6 +31,9 @@ using Newtonsoft.Json.Linq;
 
 namespace KS.Misc.Editors.JsonShell
 {
+    /// <summary>
+    /// JSON shell tools
+    /// </summary>
     public static class JsonTools
     {
 

@@ -39,6 +39,9 @@ using MimeKit.Text;
 
 namespace KS.Network.Mail.Transfer
 {
+    /// <summary>
+    /// Mail transfer module
+    /// </summary>
     public static class MailTransfer
     {
 

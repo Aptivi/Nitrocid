@@ -26,10 +26,15 @@ using MimeKit.Text;
 
 namespace KS.Shell.Shells.Mail
 {
+    /// <summary>
+    /// Mail shell common module
+    /// </summary>
     public static class MailShellCommon
     {
 
-        // Variables
+        /// <summary>
+        /// Mail shell commands
+        /// </summary>
         public readonly static Dictionary<string, CommandInfo> MailCommands = new()
         {
             { "cd", new CommandInfo("cd", ShellType.MailShell, "Changes current mail directory", new CommandArgumentInfo(new[] { "<folder>" }, true, 1), new Mail_CdCommand()) },
@@ -47,15 +52,45 @@ namespace KS.Shell.Shells.Mail
             { "send", new CommandInfo("send", ShellType.MailShell, "Sends a message to an address", new CommandArgumentInfo(), new Mail_SendCommand()) },
             { "sendenc", new CommandInfo("sendenc", ShellType.MailShell, "Sends an encrypted message to an address", new CommandArgumentInfo(), new Mail_SendEncCommand()) }
         };
+        /// <summary>
+        /// IMAP current directory name
+        /// </summary>
         public static string IMAP_CurrentDirectory = "Inbox";
+        /// <summary>
+        /// Notify on new mail arrival
+        /// </summary>
         public static bool Mail_NotifyNewMail = true;
+        /// <summary>
+        /// IMAP ping interval in milliseconds
+        /// </summary>
         public static int Mail_ImapPingInterval = 30000;
+        /// <summary>
+        /// SMTP ping interval in milliseconds
+        /// </summary>
         public static int Mail_SmtpPingInterval = 30000;
+        /// <summary>
+        /// Max messages per page
+        /// </summary>
         public static int Mail_MaxMessagesInPage = 10;
+        /// <summary>
+        /// Message text format
+        /// </summary>
         public static TextFormat Mail_TextFormat = TextFormat.Plain;
+        /// <summary>
+        /// Show progress on mail transfer
+        /// </summary>
         public static bool Mail_ShowProgress = true;
+        /// <summary>
+        /// Mail progress style
+        /// </summary>
         public static string Mail_ProgressStyle = "";
+        /// <summary>
+        /// Mail progress style (single)
+        /// </summary>
         public static string Mail_ProgressStyleSingle = "";
+        /// <summary>
+        /// The mail progress
+        /// </summary>
         public readonly static MailTransferProgress Mail_Progress = new();
         internal readonly static Dictionary<string, CommandInfo> MailModCommands = new();
         internal static bool KeepAlive;

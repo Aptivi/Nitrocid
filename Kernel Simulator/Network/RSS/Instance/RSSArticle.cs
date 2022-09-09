@@ -21,6 +21,9 @@ using System.Xml;
 
 namespace KS.Network.RSS.Instance
 {
+    /// <summary>
+    /// RSS article instance
+    /// </summary>
     public class RSSArticle
     {
 

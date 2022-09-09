@@ -31,6 +31,9 @@ using KS.Shell.Shells.Text;
 
 namespace KS.Misc.Editors.TextEdit
 {
+    /// <summary>
+    /// Text editor tools module
+    /// </summary>
     public static class TextEditTools
     {
 

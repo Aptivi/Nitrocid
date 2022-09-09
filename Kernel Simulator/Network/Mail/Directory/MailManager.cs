@@ -30,9 +30,15 @@ using MimeKit;
 
 namespace KS.Network.Mail.Directory
 {
+    /// <summary>
+    /// Mail management module
+    /// </summary>
     public static class MailManager
     {
 
+        /// <summary>
+        /// Whether to show the message preview or not
+        /// </summary>
         public static bool ShowPreview;
 
         /// <summary>

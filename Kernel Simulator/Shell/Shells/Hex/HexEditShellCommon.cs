@@ -26,10 +26,15 @@ using KS.Shell.Shells.Hex.Commands;
 
 namespace KS.Shell.Shells.Hex
 {
+    /// <summary>
+    /// Common hex editor shell module
+    /// </summary>
     public static class HexEditShellCommon
     {
 
-        // Variables
+        /// <summary>
+        /// Hex editor commands
+        /// </summary>
         public readonly static Dictionary<string, CommandInfo> HexEdit_Commands = new()
         {
             { "addbyte", new CommandInfo("addbyte", ShellType.HexShell, "Adds a new byte at the end of the file", new CommandArgumentInfo(new[] { "<byte>" }, true, 1), new HexEdit_AddByteCommand()) },
@@ -43,10 +48,25 @@ namespace KS.Shell.Shells.Hex
             { "replace", new CommandInfo("replace", ShellType.HexShell, "Replaces a byte with another one", new CommandArgumentInfo(new[] { "<byte> <replacedbyte>" }, true, 2), new HexEdit_ReplaceCommand()) },
             { "save", new CommandInfo("save", ShellType.HexShell, "Saves the file", new CommandArgumentInfo(), new HexEdit_SaveCommand()) }
         };
+        /// <summary>
+        /// File stream for the hex editor
+        /// </summary>
         public static FileStream HexEdit_FileStream;
+        /// <summary>
+        /// File bytes for the hex editor
+        /// </summary>
         public static byte[] HexEdit_FileBytes;
+        /// <summary>
+        /// Auto save thread for file
+        /// </summary>
         public static KernelThread HexEdit_AutoSave = new("Hex Edit Autosave Thread", false, HexEditTools.HexEdit_HandleAutoSaveBinaryFile);
+        /// <summary>
+        /// Auto save flag
+        /// </summary>
         public static bool HexEdit_AutoSaveFlag = true;
+        /// <summary>
+        /// Auto save interval in seconds
+        /// </summary>
         public static int HexEdit_AutoSaveInterval = 60;
         internal static byte[] HexEdit_FileBytesOrig;
         internal readonly static Dictionary<string, CommandInfo> HexEdit_ModCommands = new();

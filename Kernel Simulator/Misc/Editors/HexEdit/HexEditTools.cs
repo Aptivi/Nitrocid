@@ -31,6 +31,9 @@ using KS.Shell.Shells.Hex;
 
 namespace KS.Misc.Editors.HexEdit
 {
+    /// <summary>
+    /// Hex editor tools module
+    /// </summary>
     public static class HexEditTools
     {
 

@@ -25,6 +25,9 @@ using MailKit;
 
 namespace KS.Network.Mail.Directory
 {
+    /// <summary>
+    /// Mail directory module
+    /// </summary>
     public static class MailDirectory
     {
 

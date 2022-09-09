@@ -25,6 +25,9 @@ using KS.Kernel.Debugging;
 
 namespace KS.Network.RSS.Instance
 {
+    /// <summary>
+    /// RSS feed class instance
+    /// </summary>
     public class RSSFeed
     {
 

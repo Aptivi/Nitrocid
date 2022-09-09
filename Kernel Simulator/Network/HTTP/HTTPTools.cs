@@ -24,6 +24,9 @@ using KS.Shell.Shells.HTTP;
 
 namespace KS.Network.HTTP
 {
+    /// <summary>
+    /// HTTP tools
+    /// </summary>
     public static class HTTPTools
     {
 

@@ -31,6 +31,9 @@ using MailKit.Net.Imap;
 
 namespace KS.Network.Mail
 {
+    /// <summary>
+    /// Mail event handlers
+    /// </summary>
     public static class MailHandlers
     {
 

@@ -26,10 +26,15 @@ using KS.Shell.Shells.Text.Commands;
 
 namespace KS.Shell.Shells.Text
 {
+    /// <summary>
+    /// Common text editor shell module
+    /// </summary>
     public static class TextEditShellCommon
     {
 
-        // Variables
+        /// <summary>
+        /// Commands for text editor
+        /// </summary>
         public readonly static Dictionary<string, CommandInfo> TextEdit_Commands = new()
         {
             { "addline", new CommandInfo("addline", ShellType.TextShell, "Adds a new line with text at the end of the file", new CommandArgumentInfo(new[] { "<text>" }, true, 1), new TextEdit_AddLineCommand()) },
@@ -50,10 +55,25 @@ namespace KS.Shell.Shells.Text
             { "replaceinlineregex", new CommandInfo("replaceinlineregex", ShellType.TextShell, "Replaces a word or phrase with another one in a line using regular expressions", new CommandArgumentInfo(new[] { "\"<regex>\" \"<word/phrase>\" <linenumber> [linenumber2]" }, true, 3), new TextEdit_ReplaceInlineRegexCommand()) },
             { "save", new CommandInfo("save", ShellType.TextShell, "Saves the file", new CommandArgumentInfo(), new TextEdit_SaveCommand()) }
         };
+        /// <summary>
+        /// File lines for text editor
+        /// </summary>
         public static List<string> TextEdit_FileLines;
+        /// <summary>
+        /// File stream for text editor
+        /// </summary>
         public static FileStream TextEdit_FileStream;
+        /// <summary>
+        /// Auto save thread for the text editor
+        /// </summary>
         public static KernelThread TextEdit_AutoSave = new("Text Edit Autosave Thread", false, TextEditTools.TextEdit_HandleAutoSaveTextFile);
+        /// <summary>
+        /// Auto save flag
+        /// </summary>
         public static bool TextEdit_AutoSaveFlag = true;
+        /// <summary>
+        /// Auto save interval in seconds
+        /// </summary>
         public static int TextEdit_AutoSaveInterval = 60;
         internal readonly static Dictionary<string, CommandInfo> TextEdit_ModCommands = new();
         internal static List<string> TextEdit_FileLinesOrig;

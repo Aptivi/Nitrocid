@@ -25,6 +25,9 @@ using KS.Shell.Shells.RSS;
 
 namespace KS.Network.RSS.Bookmarks
 {
+    /// <summary>
+    /// RSS bookmark management routines
+    /// </summary>
     public static class RSSBookmarkManager
     {
 

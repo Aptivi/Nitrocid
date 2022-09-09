@@ -38,6 +38,9 @@ using Newtonsoft.Json.Linq;
 
 namespace KS.Network.RSS
 {
+    /// <summary>
+    /// RSS tools module
+    /// </summary>
     public static class RSSTools
     {
 

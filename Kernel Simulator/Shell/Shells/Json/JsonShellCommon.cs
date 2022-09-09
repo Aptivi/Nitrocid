@@ -28,10 +28,15 @@ using Newtonsoft.Json.Linq;
 
 namespace KS.Shell.Shells.Json
 {
+    /// <summary>
+    /// Common JSON shell module
+    /// </summary>
     public static class JsonShellCommon
     {
 
-        // Variables
+        /// <summary>
+        /// JSON shell commands
+        /// </summary>
         public readonly static Dictionary<string, CommandInfo> JsonShell_Commands = new()
         {
             { "addproperty", new CommandInfo("addproperty", ShellType.JsonShell, "Adds a new property at the end of the JSON file", new CommandArgumentInfo(new[] { "<parentProperty> <propertyName> <propertyValue>" }, true, 3), new JsonShell_AddPropertyCommand()) },
@@ -41,11 +46,29 @@ namespace KS.Shell.Shells.Json
             { "print", new CommandInfo("print", ShellType.JsonShell, "Prints the JSON file", new CommandArgumentInfo(new[] { "[property]" }, false, 0), new JsonShell_PrintCommand()) },
             { "save", new CommandInfo("save", ShellType.JsonShell, "Saves the JSON file", new CommandArgumentInfo(new[] { "[-b|-m]" }, false, 0), new JsonShell_SaveCommand()) }
         };
+        /// <summary>
+        /// JSON shell file stream
+        /// </summary>
         public static FileStream JsonShell_FileStream;
+        /// <summary>
+        /// JSON shell file token
+        /// </summary>
         public static JToken JsonShell_FileToken = JToken.Parse("{}");
+        /// <summary>
+        /// JSON shell auto save thread
+        /// </summary>
         public static KernelThread JsonShell_AutoSave = new("JSON Shell Autosave Thread", false, JsonTools.JsonShell_HandleAutoSaveJsonFile);
+        /// <summary>
+        /// Auto save flag
+        /// </summary>
         public static bool JsonShell_AutoSaveFlag = true;
+        /// <summary>
+        /// Auto save interval in seconds
+        /// </summary>
         public static int JsonShell_AutoSaveInterval = 60;
+        /// <summary>
+        /// JSON formatting
+        /// </summary>
         public static Formatting JsonShell_Formatting = Formatting.Indented;
         internal static JToken JsonShell_FileTokenOrig = JToken.Parse("{}");
         internal readonly static Dictionary<string, CommandInfo> JsonShell_ModCommands = new();

@@ -28,10 +28,15 @@ using KS.Shell.Shells.RSS.Commands;
 
 namespace KS.Shell.Shells.RSS
 {
+    /// <summary>
+    /// Common RSS shell module
+    /// </summary>
     public static class RSSShellCommon
     {
 
-        // Variables
+        /// <summary>
+        /// RSS commands
+        /// </summary>
         public readonly static Dictionary<string, CommandInfo> RSSCommands = new()
         {
             { "articleinfo", new CommandInfo("articleinfo", ShellType.RSSShell, "Gets the article info", new CommandArgumentInfo(new[] { "<feednum>" }, true, 1), new RSS_ArticleInfoCommand()) },
@@ -44,11 +49,29 @@ namespace KS.Shell.Shells.RSS
             { "selfeed", new CommandInfo("selfeed", ShellType.RSSShell, "Selects the feed from the existing feed list from online sources", new CommandArgumentInfo(), new RSS_SelFeedCommand()) },
             { "unbookmark", new CommandInfo("unbookmark", ShellType.RSSShell, "Removes the feed bookmark", new CommandArgumentInfo(), new RSS_UnbookmarkCommand()) }
         };
+        /// <summary>
+        /// RSS feed instance
+        /// </summary>
         public static RSSFeed RSSFeedInstance;
+        /// <summary>
+        /// RSS feed URL prompt style
+        /// </summary>
         public static string RSSFeedUrlPromptStyle = "";
+        /// <summary>
+        /// RSS fetch timeout in milliseconds
+        /// </summary>
         public static int RSSFetchTimeout = 60000;
+        /// <summary>
+        /// Whether to refresh RSS feeds or not
+        /// </summary>
         public static bool RSSRefreshFeeds = true;
+        /// <summary>
+        /// RSS refresh interval in milliseconds
+        /// </summary>
         public static int RSSRefreshInterval = 60000;
+        /// <summary>
+        /// Whether to keep the connection alive or not
+        /// </summary>
         public static bool RSSKeepAlive;
         internal static KernelThread RSSRefresher = new("RSS Feed Refresher", false, RSSTools.RefreshFeeds);
         internal static HttpClient RSSRefresherClient = new() { Timeout = TimeSpan.FromMilliseconds(RSSFetchTimeout) };
