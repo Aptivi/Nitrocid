@@ -64,20 +64,33 @@ namespace KS.Shell.ShellBase.Shells
         /// <param name="ShellArgs">Arguments to pass to shell</param>
         public static void StartShellForced(ShellType ShellType, params object[] ShellArgs)
         {
-            // Make a shell executor based on shell type to select a specific executor (if the shell type is not UESH, and if the new shell isn't a mother shell)
-            // Please note that the remote debug shell is not supported because it works on its own space, so it can't be interfaced using the standard IShell.
-            var ShellExecute = GetShellExecutor(ShellType);
+            int shellCount = ShellStack.Count;
+            try
+            {
+                // Make a shell executor based on shell type to select a specific executor (if the shell type is not UESH, and if the new shell isn't a mother shell)
+                // Please note that the remote debug shell is not supported because it works on its own space, so it can't be interfaced using the standard IShell.
+                var ShellExecute = GetShellExecutor(ShellType);
 
-            // Make a new instance of shell information
-            var ShellCommandThread = new KernelThread($"{ShellType} Command Thread", false, (cmdThreadParams) => GetCommand.ExecuteCommand((GetCommand.ExecuteCommandParameters)cmdThreadParams));
-            var ShellInfo = new ShellInfo(ShellType, ShellExecute, ShellCommandThread);
+                // Make a new instance of shell information
+                var ShellCommandThread = new KernelThread($"{ShellType} Command Thread", false, (cmdThreadParams) => GetCommand.ExecuteCommand((GetCommand.ExecuteCommandParameters)cmdThreadParams));
+                var ShellInfo = new ShellInfo(ShellType, ShellExecute, ShellCommandThread);
 
-            // Now, initialize the command autocomplete handler. This will not be invoked if we have auto completion disabled.
-            ReadLine.AutoCompletionHandler = new CommandAutoComplete(ShellType);
+                // Now, initialize the command autocomplete handler. This will not be invoked if we have auto completion disabled.
+                ReadLine.AutoCompletionHandler = new CommandAutoComplete(ShellType);
 
-            // Add a new shell to the shell stack to indicate that we have a new shell (a visitor)!
-            ShellStack.Add(ShellInfo);
-            ShellExecute.InitializeShell(ShellArgs);
+                // Add a new shell to the shell stack to indicate that we have a new shell (a visitor)!
+                ShellStack.Add(ShellInfo);
+                ShellExecute.InitializeShell(ShellArgs);
+            }
+            catch
+            {
+                // There is an unknown shell error trying to be initialized. If we haven't added the shell to the shell stack, do nothing. Else, purge that shell
+                // with KillShell(). Otherwise, we'll get another shell's commands in the wrong shell and other problems will occur until the ghost shell has exited
+                // either automatically or manually, so check to see if we have added the newly created shell to the shell stack and kill that faulted shell.
+                int newShellCount = ShellStack.Count;
+                if (newShellCount > shellCount)
+                    KillShell();
+            }
         }
 
         /// <summary>
