@@ -27,6 +27,9 @@ using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Files.Operations
 {
+    /// <summary>
+    /// Copying file operations module
+    /// </summary>
     public static class Copying
     {
 

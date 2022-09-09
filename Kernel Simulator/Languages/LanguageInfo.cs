@@ -23,6 +23,9 @@ using Newtonsoft.Json.Linq;
 
 namespace KS.Languages
 {
+    /// <summary>
+    /// Language information
+    /// </summary>
     public class LanguageInfo
     {
 

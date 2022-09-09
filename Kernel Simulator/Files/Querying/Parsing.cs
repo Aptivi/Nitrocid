@@ -23,6 +23,9 @@ using KS.Kernel.Debugging;
 
 namespace KS.Files.Querying
 {
+    /// <summary>
+    /// File parsing module
+    /// </summary>
     public static class Parsing
     {
 

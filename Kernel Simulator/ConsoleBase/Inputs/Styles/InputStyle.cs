@@ -22,6 +22,9 @@ using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.ConsoleBase.Inputs.Styles
 {
+    /// <summary>
+    /// Input style module
+    /// </summary>
     public static class InputStyle
     {
 

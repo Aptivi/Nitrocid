@@ -24,6 +24,9 @@ using KS.Languages;
 
 namespace KS.Files.Operations
 {
+    /// <summary>
+    /// Moving file operations module
+    /// </summary>
     public static class Moving
     {
 

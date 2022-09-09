@@ -25,9 +25,15 @@ using KS.Misc.Writers.FancyWriters;
 
 namespace KS.ConsoleBase.Inputs.Styles
 {
+    /// <summary>
+    /// Choice style for input module
+    /// </summary>
     public static class ChoiceStyle
     {
 
+        /// <summary>
+        /// Default input choice output type
+        /// </summary>
         public static ChoiceOutputType DefaultChoiceOutputType = ChoiceOutputType.Modern;
 
         /// <summary>

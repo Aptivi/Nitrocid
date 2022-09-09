@@ -23,6 +23,9 @@ using KS.Files.Querying;
 
 namespace KS.Files.PathLookup
 {
+    /// <summary>
+    /// Path lookup tools module
+    /// </summary>
     public static class PathLookupTools
     {
 

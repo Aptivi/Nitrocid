@@ -22,6 +22,9 @@ using Newtonsoft.Json.Linq;
 
 namespace KS.ConsoleBase.Themes
 {
+    /// <summary>
+    /// Theme information class
+    /// </summary>
     public class ThemeInfo
     {
 

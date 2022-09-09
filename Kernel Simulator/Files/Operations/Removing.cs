@@ -22,6 +22,9 @@ using KS.Kernel.Debugging;
 
 namespace KS.Files.Operations
 {
+    /// <summary>
+    /// Removing file operations module
+    /// </summary>
     public static class Removing
     {
 

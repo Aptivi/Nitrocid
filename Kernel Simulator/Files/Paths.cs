@@ -23,6 +23,9 @@ using KS.Languages;
 
 namespace KS.Files
 {
+    /// <summary>
+    /// Paths module
+    /// </summary>
     public static class Paths
     {
 

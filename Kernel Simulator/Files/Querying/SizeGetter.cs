@@ -24,6 +24,9 @@ using KS.Kernel.Debugging;
 
 namespace KS.Files.Querying
 {
+    /// <summary>
+    /// Size getter module
+    /// </summary>
     public static class SizeGetter
     {
 

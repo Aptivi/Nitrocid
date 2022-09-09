@@ -28,6 +28,9 @@ using Newtonsoft.Json.Linq;
 
 namespace KS.Kernel.Updates
 {
+    /// <summary>
+    /// Update management module
+    /// </summary>
     public static class UpdateManager
     {
 

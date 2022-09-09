@@ -28,6 +28,9 @@ using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Files.Print
 {
+    /// <summary>
+    /// File information printing module
+    /// </summary>
     public static class FileInfoPrinter
     {
 

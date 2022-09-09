@@ -27,6 +27,9 @@ using KS.Kernel.Debugging;
 
 namespace KS.Files.Folders
 {
+    /// <summary>
+    /// Current directory module
+    /// </summary>
     public static class CurrentDirectory
     {
 

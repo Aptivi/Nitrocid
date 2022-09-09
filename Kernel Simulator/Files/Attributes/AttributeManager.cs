@@ -22,6 +22,9 @@ using KS.Kernel.Debugging;
 
 namespace KS.Files.Attributes
 {
+    /// <summary>
+    /// Attribute management module
+    /// </summary>
     public static class AttributeManager
     {
 

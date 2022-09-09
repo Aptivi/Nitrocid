@@ -28,6 +28,9 @@ using KS.Languages;
 
 namespace KS.ConsoleBase.Themes
 {
+    /// <summary>
+    /// Theme tools module
+    /// </summary>
     public static class ThemeTools
     {
 

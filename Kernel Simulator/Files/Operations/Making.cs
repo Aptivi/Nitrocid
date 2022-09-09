@@ -27,6 +27,9 @@ using Newtonsoft.Json.Linq;
 
 namespace KS.Files.Operations
 {
+    /// <summary>
+    /// Making file operations module
+    /// </summary>
     public static class Making
     {
 

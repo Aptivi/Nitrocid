@@ -20,6 +20,9 @@ using System.IO;
 
 namespace KS.Files.Querying
 {
+    /// <summary>
+    /// File checking module
+    /// </summary>
     public static class Checking
     {
 

@@ -22,6 +22,9 @@ using KS.Kernel.Debugging;
 
 namespace KS.Files.Read
 {
+    /// <summary>
+    /// File reading module
+    /// </summary>
     public static class FileRead
     {
 

@@ -26,6 +26,9 @@ using KS.Languages;
 
 namespace KS.Files.Querying
 {
+    /// <summary>
+    /// File searching module
+    /// </summary>
     public static class Searching
     {
 

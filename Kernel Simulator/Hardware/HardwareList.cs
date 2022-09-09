@@ -32,6 +32,9 @@ using KS.Misc.Writers.FancyWriters;
 
 namespace KS.Hardware
 {
+    /// <summary>
+    /// Hardware list module
+    /// </summary>
     public static class HardwareList
     {
 

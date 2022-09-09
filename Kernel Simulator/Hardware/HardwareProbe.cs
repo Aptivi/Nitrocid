@@ -27,10 +27,13 @@ using KS.Misc.Splash;
 
 namespace KS.Hardware
 {
+    /// <summary>
+    /// Hardware probe module
+    /// </summary>
     public static class HardwareProbe
     {
 
-        public static Inxi HardwareInfo;
+        internal static Inxi HardwareInfo;
 
         /// <summary>
         /// Starts probing hardware

@@ -24,6 +24,9 @@ using KS.Languages;
 
 namespace KS.Files.Operations
 {
+    /// <summary>
+    /// Combination file operations module
+    /// </summary>
     public static class Combination
     {
 

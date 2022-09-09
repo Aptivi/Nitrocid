@@ -24,6 +24,9 @@ using KS.Network.RPC;
 
 namespace KS.Kernel.Power
 {
+    /// <summary>
+    /// Power management module
+    /// </summary>
     public static class PowerManager
     {
 

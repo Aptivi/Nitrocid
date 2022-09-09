@@ -18,6 +18,9 @@
 
 namespace KS.Kernel
 {
+    /// <summary>
+    /// Kernel flags module
+    /// </summary>
     public static class Flags
     {
 

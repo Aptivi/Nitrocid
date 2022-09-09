@@ -24,6 +24,9 @@ using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Files.Print
 {
+    /// <summary>
+    /// File content printing module
+    /// </summary>
     public static class FileContentPrinter
     {
 
