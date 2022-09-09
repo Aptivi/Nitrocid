@@ -277,10 +277,19 @@ namespace KS.Network.FTP
                 DebugWriter.WriteDebug(DebugLevel.I, "Site already there.");
                 return;
             }
-            // Speed dial format is below:
-            // Site,Port,Username,Encryption
             else if (FTPShellCommon.FtpNewConnectionsToSpeedDial)
+                // Speed dial format is below:
+                // Site,Port,Username,Encryption
                 NetworkTools.AddEntryToSpeedDial(FTPShellCommon.FtpSite, FTPShellCommon.ClientFTP.Port, FTPShellCommon.FtpUser, NetworkTools.SpeedDialType.FTP, FTPShellCommon.ClientFTP.Config.EncryptionMode);
+
+            // Initialize logging
+            // TODO: Use ClientFTP.Logger to move to new logging system
+#if NETCOREAPP == false
+            FTPShellCommon.ClientFTP.LegacyLogger += (_, msg) => new FTPTracer().WriteLine(msg);
+#endif
+            FTPShellCommon.ClientFTP.Config.LogUserName = Flags.FTPLoggerUsername;
+            FTPShellCommon.ClientFTP.Config.LogPassword = false; // Don't remove this, make a config entry for it, or set it to True! It will introduce security problems.
+            FTPShellCommon.ClientFTP.Config.LogHost = Flags.FTPLoggerIP;
         }
 
         /// <summary>

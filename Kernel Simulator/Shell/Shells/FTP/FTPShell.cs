@@ -38,8 +38,6 @@ namespace KS.Shell.Shells.FTP
     public class FTPShell : ShellExecutor, IShell
     {
 
-        private bool FtpInitialized;
-
         /// <inheritdoc/>
         public override ShellType ShellType
         {
@@ -62,28 +60,14 @@ namespace KS.Shell.Shells.FTP
             if (Connects)
                 Address = Convert.ToString(ShellArgs[0]);
 
+            // Populate FTP current directory
+            FTPShellCommon.FtpCurrentDirectory = Paths.HomePath;
+
             // Actual shell logic
             while (!Bail)
             {
                 try
                 {
-                    // Complete initialization
-                    if (FtpInitialized == false && !Connects)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, $"Completing initialization of FTP: {FtpInitialized}");
-
-                        // TODO: Use ClientFTP.Logger to move to new logging system
-#if NETCOREAPP == false
-                        FTPShellCommon.ClientFTP.LegacyLogger += (_, msg) => new FTPTracer().WriteLine(msg);
-#endif
-                        FTPShellCommon.ClientFTP.Config.LogUserName = Flags.FTPLoggerUsername;
-                        FTPShellCommon.ClientFTP.Config.LogPassword = false; // Don't remove this, make a config entry for it, or set it to True! It will introduce security problems.
-                        FTPShellCommon.ClientFTP.Config.LogHost = Flags.FTPLoggerIP;
-                        FTPShellCommon.FtpCurrentDirectory = Paths.HomePath;
-                        Kernel.Kernel.KernelEventManager.RaiseFTPShellInitialized();
-                        FtpInitialized = true;
-                    }
-
                     // Check if the shell is going to exit
                     if (Bail)
                     {
@@ -95,9 +79,11 @@ namespace KS.Shell.Shells.FTP
                         FTPShellCommon.FtpCurrentRemoteDir = "";
                         FTPShellCommon.FtpUser = "";
                         FTPShellCommon.FtpPass = "";
-                        FtpInitialized = false;
                         return;
                     }
+
+                    // Raise event
+                    Kernel.Kernel.KernelEventManager.RaiseFTPShellInitialized();
 
                     // See UESHShell.cs for more info
                     lock (CancellationHandlers.GetCancelSyncLock(ShellType))
