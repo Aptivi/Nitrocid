@@ -199,7 +199,7 @@ namespace KS.Network.SSH
         /// <param name="Port">A port of the SSH/SFTP server. It's usually 22</param>
         /// <param name="Username">A username to authenticate with</param>
         /// <param name="AuthMethods">Authentication methods list.</param>
-        public static ConnectionInfo GetConnectionInfo(string Address, int Port, string Username, List<AuthenticationMethod> AuthMethods) => new ConnectionInfo(Address, Port, Username, AuthMethods.ToArray());
+        public static ConnectionInfo GetConnectionInfo(string Address, int Port, string Username, List<AuthenticationMethod> AuthMethods) => new(Address, Port, Username, AuthMethods.ToArray());
 
         /// <summary>
         /// Opens a session to specified address using the specified port and the username
