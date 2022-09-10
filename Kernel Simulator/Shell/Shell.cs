@@ -328,7 +328,11 @@ namespace KS.Shell
 
             // Restore console output to its original state if any
             if (WriterPlainManager.CurrentPlainName != "Console")
+            {
+                if (WriterPlainManager.CurrentPlain is FilePlainWriter writer)
+                    writer.FilterVT = false;
                 WriterPlainManager.ChangePlain("Console");
+            }
 
             // Restore title
             ConsoleExtensions.SetTitle(Kernel.Kernel.ConsoleTitle);
@@ -348,6 +352,7 @@ namespace KS.Shell
                 OutputFileName = Filesystem.NeutralizePath(OutputFileName);
                 WriterPlainManager.ChangePlain("File");
                 ((FilePlainWriter)WriterPlainManager.CurrentPlain).PathToWrite = OutputFileName;
+                ((FilePlainWriter)WriterPlainManager.CurrentPlain).FilterVT = true;
                 Command = Command.Replace(" >>> " + OutputFileName, "");
             }
             else if (Command.Contains(">>"))
@@ -357,6 +362,7 @@ namespace KS.Shell
                 OutputFileName = Filesystem.NeutralizePath(OutputFileName);
                 WriterPlainManager.ChangePlain("File");
                 ((FilePlainWriter)WriterPlainManager.CurrentPlain).PathToWrite = OutputFileName;
+                ((FilePlainWriter)WriterPlainManager.CurrentPlain).FilterVT = true;
                 FileStream clearer = new(OutputFileName, FileMode.OpenOrCreate, FileAccess.ReadWrite);
                 clearer.SetLength(0);
                 clearer.Close();

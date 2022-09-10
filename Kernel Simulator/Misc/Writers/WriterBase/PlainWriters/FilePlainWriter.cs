@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.ConsoleBase;
+using VT.NET;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -32,6 +32,7 @@ namespace KS.Misc.Writers.WriterBase.PlainWriters
     internal class FilePlainWriter : IWriterPlain
     {
         internal string PathToWrite { get; set; }
+        internal bool FilterVT { get; set; }
 
         /// <summary>
         /// Outputs text to file
@@ -44,6 +45,10 @@ namespace KS.Misc.Writers.WriterBase.PlainWriters
                 // If the file doesn't exist, don't do anything
                 if (!Checking.FileExists(PathToWrite))
                     return;
+
+                // If filtering, filter all VT sequences
+                if (FilterVT)
+                    Text = Filters.FilterVTSequences(Text);
 
                 // Open the stream
                 StreamWriter fileWriter = new(PathToWrite, true) { AutoFlush = true };
@@ -116,6 +121,10 @@ namespace KS.Misc.Writers.WriterBase.PlainWriters
                 // If the file doesn't exist, don't do anything
                 if (!Checking.FileExists(PathToWrite))
                     return;
+
+                // If filtering, filter all VT sequences
+                if (FilterVT)
+                    msg = Filters.FilterVTSequences(msg);
 
                 // Open the stream
                 StreamWriter fileWriter = new(PathToWrite, true);
