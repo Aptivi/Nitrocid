@@ -349,9 +349,9 @@ namespace KS.Shell
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Output redirection found with append.");
                 string OutputFileName = Command.Substring(Command.LastIndexOf(">") + 2);
-                OutputFileName = Filesystem.NeutralizePath(OutputFileName);
+                string OutputFilePath = Filesystem.NeutralizePath(OutputFileName);
                 WriterPlainManager.ChangePlain("File");
-                ((FilePlainWriter)WriterPlainManager.CurrentPlain).PathToWrite = OutputFileName;
+                ((FilePlainWriter)WriterPlainManager.CurrentPlain).PathToWrite = OutputFilePath;
                 ((FilePlainWriter)WriterPlainManager.CurrentPlain).FilterVT = true;
                 Command = Command.Replace(" >>> " + OutputFileName, "");
             }
@@ -359,11 +359,11 @@ namespace KS.Shell
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Output redirection found with overwrite.");
                 string OutputFileName = Command.Substring(Command.LastIndexOf(">") + 2);
-                OutputFileName = Filesystem.NeutralizePath(OutputFileName);
+                string OutputFilePath = Filesystem.NeutralizePath(OutputFileName);
                 WriterPlainManager.ChangePlain("File");
-                ((FilePlainWriter)WriterPlainManager.CurrentPlain).PathToWrite = OutputFileName;
+                ((FilePlainWriter)WriterPlainManager.CurrentPlain).PathToWrite = OutputFilePath;
                 ((FilePlainWriter)WriterPlainManager.CurrentPlain).FilterVT = true;
-                FileStream clearer = new(OutputFileName, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                FileStream clearer = new(OutputFilePath, FileMode.OpenOrCreate, FileAccess.ReadWrite);
                 clearer.SetLength(0);
                 clearer.Close();
                 Command = Command.Replace(" >> " + OutputFileName, "");
