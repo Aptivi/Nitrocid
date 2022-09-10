@@ -87,7 +87,7 @@ namespace KS.Files.Operations
         {
             Filesystem.ThrowOnInvalidPath(NewFile);
             NewFile = Filesystem.NeutralizePath(NewFile);
-            DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {0}", NewFile, Checking.FileExists(NewFile));
+            DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {1}", NewFile, Checking.FileExists(NewFile));
             if (!Checking.FileExists(NewFile))
             {
                 try
@@ -142,7 +142,7 @@ namespace KS.Files.Operations
         {
             Filesystem.ThrowOnInvalidPath(NewFile);
             NewFile = Filesystem.NeutralizePath(NewFile);
-            DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {0}", NewFile, Checking.FileExists(NewFile));
+            DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {1}", NewFile, Checking.FileExists(NewFile));
             if (!Checking.FileExists(NewFile))
             {
                 try
