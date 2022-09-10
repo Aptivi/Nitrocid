@@ -15,7 +15,8 @@ Currently, you can pipe the output of the command to a file like this: `list >>>
 
 Here are two ways to pipe the output of a command to the file:
 
-| Syntax | Description
-|:-------|:------------
-| `>>`   | It overwrites the output file and stores the output of the command to it
-| `>>>`  | It appends the output to the output file
+| Syntax      | Description
+|:------------|:------------
+| ` >> file`  | It overwrites the output file and stores the output of the command to it
+| ` >>> file` | It appends the output to the output file
+| ` |SILENT|` | It throws all output away
