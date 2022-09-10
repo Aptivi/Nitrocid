@@ -14,7 +14,7 @@
 ## [Mail Shell](commands/Mail-commands-for-KS.md)
 ## [RSS Shell](commands/RSS-commands-for-KS.md)
 ## [Text Editor Shell](commands/Text-Editor-commands-for-KS.md)
-## [ZIP Shell](commands/ZIP-commands-for-KS.md)
+## [Archive Shell](commands/Archive-commands-for-KS.md)
 ## [Test Shell](commands/Test-commands-for-KS.md)
 ## [HTTP Shell](commands/HTTP-commands-for-KS.md)
 ## [JSON Shell](commands/JSON-commands-for-KS.md)
