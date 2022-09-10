@@ -35,6 +35,7 @@ namespace KS.ConsoleBase.Colors
     public static class ColorTools
     {
 
+        // TODO: Condense the color types to slice the line numbers massively
         /// <summary>
         /// Enumeration for color types
         /// </summary>
