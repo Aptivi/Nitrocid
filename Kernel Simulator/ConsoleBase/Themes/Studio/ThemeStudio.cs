@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Linq;
 using ColorSeq;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
@@ -25,6 +26,7 @@ using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Reflection;
 using KS.Misc.Writers.ConsoleWriters;
+using Renci.SshNet.Security;
 
 namespace KS.ConsoleBase.Themes.Studio
 {
@@ -42,7 +44,7 @@ namespace KS.ConsoleBase.Themes.Studio
             DebugWriter.WriteDebug(DebugLevel.I, "Starting theme studio with theme name {0}", ThemeName);
             ThemeStudioTools.SelectedThemeName = ThemeName;
             string Response;
-            int MaximumOptions = 38 + 9; // Colors + options
+            int MaximumOptions = ThemeStudioTools.SelectedColors.Count + 9; // Colors + options
             var StudioExiting = default(bool);
 
             while (!StudioExiting)
@@ -52,44 +54,8 @@ namespace KS.ConsoleBase.Themes.Studio
                 TextWriterColor.Write(Translate.DoTranslation("Making a new theme \"{0}\".") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.Neutral, ThemeName);
 
                 // List options
-                TextWriterColor.Write("1) " + Translate.DoTranslation("Input color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedInputColor.PlainSequence);
-                TextWriterColor.Write("2) " + Translate.DoTranslation("License color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedLicenseColor.PlainSequence);
-                TextWriterColor.Write("3) " + Translate.DoTranslation("Continuable kernel error color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedContKernelErrorColor.PlainSequence);
-                TextWriterColor.Write("4) " + Translate.DoTranslation("Uncontinuable kernel error color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedUncontKernelErrorColor.PlainSequence);
-                TextWriterColor.Write("5) " + Translate.DoTranslation("Host name color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedHostNameShellColor.PlainSequence);
-                TextWriterColor.Write("6) " + Translate.DoTranslation("User name color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedUserNameShellColor.PlainSequence);
-                TextWriterColor.Write("7) " + Translate.DoTranslation("Background color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedBackgroundColor.PlainSequence);
-                TextWriterColor.Write("8) " + Translate.DoTranslation("Neutral text color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedNeutralTextColor.PlainSequence);
-                TextWriterColor.Write("9) " + Translate.DoTranslation("List entry color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedListEntryColor.PlainSequence);
-                TextWriterColor.Write("10) " + Translate.DoTranslation("List value color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedListValueColor.PlainSequence);
-                TextWriterColor.Write("11) " + Translate.DoTranslation("Stage color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedStageColor.PlainSequence);
-                TextWriterColor.Write("12) " + Translate.DoTranslation("Error color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedErrorColor.PlainSequence);
-                TextWriterColor.Write("13) " + Translate.DoTranslation("Warning color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedWarningColor.PlainSequence);
-                TextWriterColor.Write("14) " + Translate.DoTranslation("Option color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedOptionColor.PlainSequence);
-                TextWriterColor.Write("15) " + Translate.DoTranslation("Banner color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedBannerColor.PlainSequence);
-                TextWriterColor.Write("16) " + Translate.DoTranslation("Notification title color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedNotificationTitleColor.PlainSequence);
-                TextWriterColor.Write("17) " + Translate.DoTranslation("Notification description color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedNotificationDescriptionColor.PlainSequence);
-                TextWriterColor.Write("18) " + Translate.DoTranslation("Notification progress color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedNotificationProgressColor.PlainSequence);
-                TextWriterColor.Write("19) " + Translate.DoTranslation("Notification failure color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedNotificationFailureColor.PlainSequence);
-                TextWriterColor.Write("20) " + Translate.DoTranslation("Question color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedQuestionColor.PlainSequence);
-                TextWriterColor.Write("21) " + Translate.DoTranslation("Success color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedSuccessColor.PlainSequence);
-                TextWriterColor.Write("22) " + Translate.DoTranslation("User dollar color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedUserDollarColor.PlainSequence);
-                TextWriterColor.Write("23) " + Translate.DoTranslation("Tip color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedTipColor.PlainSequence);
-                TextWriterColor.Write("24) " + Translate.DoTranslation("Separator text color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedSeparatorTextColor.PlainSequence);
-                TextWriterColor.Write("25) " + Translate.DoTranslation("Separator color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedSeparatorColor.PlainSequence);
-                TextWriterColor.Write("26) " + Translate.DoTranslation("List title color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedListTitleColor.PlainSequence);
-                TextWriterColor.Write("27) " + Translate.DoTranslation("Development warning color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedDevelopmentWarningColor.PlainSequence);
-                TextWriterColor.Write("28) " + Translate.DoTranslation("Stage time color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedStageTimeColor.PlainSequence);
-                TextWriterColor.Write("29) " + Translate.DoTranslation("Progress color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedProgressColor.PlainSequence);
-                TextWriterColor.Write("30) " + Translate.DoTranslation("Back option color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedBackOptionColor.PlainSequence);
-                TextWriterColor.Write("31) " + Translate.DoTranslation("Low priority border color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedLowPriorityBorderColor.PlainSequence);
-                TextWriterColor.Write("32) " + Translate.DoTranslation("Medium priority border color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedMediumPriorityBorderColor.PlainSequence);
-                TextWriterColor.Write("33) " + Translate.DoTranslation("High priority border color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedHighPriorityBorderColor.PlainSequence);
-                TextWriterColor.Write("34) " + Translate.DoTranslation("Table separator color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedTableSeparatorColor.PlainSequence);
-                TextWriterColor.Write("35) " + Translate.DoTranslation("Table header color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedTableHeaderColor.PlainSequence);
-                TextWriterColor.Write("36) " + Translate.DoTranslation("Table value color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedTableValueColor.PlainSequence);
-                TextWriterColor.Write("37) " + Translate.DoTranslation("Selected option color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedSelectedOptionColor.PlainSequence);
-                TextWriterColor.Write("38) " + Translate.DoTranslation("Alternative option color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedAlternativeOptionColor.PlainSequence);
+                for (int key = 0; key < ThemeStudioTools.SelectedColors.Count; key++)
+                    TextWriterColor.Write("{0}) " + Translate.DoTranslation(ThemeStudioTools.SelectedColors.Keys.ElementAt(key)) + ": [{1}] ", true, ColorTools.ColTypes.Option, key + 1, ThemeStudioTools.SelectedColors.Values.ElementAt(key).PlainSequence);
                 TextWriterColor.Write();
 
                 // List saving and loading options
@@ -122,272 +88,6 @@ namespace KS.ConsoleBase.Themes.Studio
                         Color SelectedColorInstance;
                         switch (NumericResponse)
                         {
-                            case 1: // Input color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedInputColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedInputColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 2: // License color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedLicenseColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedLicenseColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 3: // Continuable kernel error color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedContKernelErrorColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedContKernelErrorColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 4: // Uncontinuable kernel error color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedUncontKernelErrorColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedUncontKernelErrorColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 5: // Host name color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedHostNameShellColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedHostNameShellColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 6: // User name color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedUserNameShellColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedUserNameShellColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 7: // Background color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedBackgroundColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedBackgroundColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 8: // Neutral text color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedNeutralTextColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedNeutralTextColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 9: // list entry color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedListEntryColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedListEntryColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 10: // list value color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedListValueColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedListValueColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 11: // Stage color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedStageColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedStageColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 12: // Error color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedErrorColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedErrorColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 13: // Warning color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedWarningColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedWarningColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 14: // Option color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedOptionColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedOptionColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 15: // Banner color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedBannerColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedBannerColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 16: // Notification title color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedNotificationTitleColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedNotificationTitleColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 17: // Notification description color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedNotificationDescriptionColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedNotificationDescriptionColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 18: // Notification progress color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedNotificationProgressColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedNotificationProgressColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 19: // Notification failure color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedNotificationFailureColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedNotificationFailureColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 20: // Question color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedQuestionColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedQuestionColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 21: // Success color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedSuccessColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedSuccessColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 22: // User dollar color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedUserDollarColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedUserDollarColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 23: // Tip color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedTipColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedTipColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 24: // Separator text color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedSeparatorTextColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedSeparatorTextColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 25: // Separator color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedSeparatorColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedSeparatorColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 26: // List title color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedListTitleColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedListTitleColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 27: // Development warning color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedDevelopmentWarningColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedDevelopmentWarningColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 28: // Stage time color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedStageTimeColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedStageTimeColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 29: // Progress color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedProgressColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedProgressColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 30: // Back option color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedBackOptionColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedBackOptionColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 31: // Low priority border color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedLowPriorityBorderColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedLowPriorityBorderColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 32: // Medium priority border color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedMediumPriorityBorderColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedMediumPriorityBorderColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 33: // High priority border color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedHighPriorityBorderColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedHighPriorityBorderColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 34: // Table separator color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedTableSeparatorColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedTableSeparatorColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 35: // Table header color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedTableHeaderColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedTableHeaderColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 36: // Table value color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedTableValueColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedTableValueColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 37: // Selected option color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedSelectedOptionColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedSelectedOptionColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
-                            case 38: // Selected option color
-                                {
-                                    SelectedColorInstance = ThemeStudioTools.SelectedAlternativeOptionColor;
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools.SelectedAlternativeOptionColor = new Color(ColorWheelReturn);
-                                    break;
-                                }
                             case 39: // Save theme to current directory
                                 {
                                     ThemeStudioTools.SaveThemeToCurrentDirectory(ThemeName);
@@ -466,6 +166,13 @@ namespace KS.ConsoleBase.Themes.Studio
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.I, "Exiting studio...");
                                     StudioExiting = true;
+                                    break;
+                                }
+                            default:
+                                {
+                                    SelectedColorInstance = ThemeStudioTools.SelectedColors[ThemeStudioTools.SelectedColors.Keys.ElementAt(NumericResponse - 1)];
+                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
+                                    ThemeStudioTools.SelectedColors[ThemeStudioTools.SelectedColors.Keys.ElementAt(NumericResponse - 1)] = new Color(ColorWheelReturn);
                                     break;
                                 }
                         }
