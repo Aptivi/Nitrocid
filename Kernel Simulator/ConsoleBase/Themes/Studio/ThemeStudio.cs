@@ -40,6 +40,7 @@ namespace KS.ConsoleBase.Themes.Studio
             // Inform user that we're on the studio
             Kernel.Kernel.KernelEventManager.RaiseThemeStudioStarted();
             DebugWriter.WriteDebug(DebugLevel.I, "Starting theme studio with theme name {0}", ThemeName);
+            ThemeStudioTools.SelectedThemeName = ThemeName;
             string Response;
             int MaximumOptions = 38 + 9; // Colors + options
             var StudioExiting = default(bool);

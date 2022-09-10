@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System;
 using System.IO;
 using ColorSeq;
 using KS.ConsoleBase.Colors;
@@ -30,6 +31,10 @@ namespace KS.ConsoleBase.Themes.Studio
     static class ThemeStudioTools
     {
 
+        /// <summary>
+        /// Selected theme name
+        /// </summary>
+        internal static string SelectedThemeName = "";
         /// <summary>
         /// Selected input color for new theme
         /// </summary>
@@ -339,6 +344,24 @@ namespace KS.ConsoleBase.Themes.Studio
         /// <returns>A JSON object</returns>
         public static JObject GetThemeJson() => 
             new (
+                /*
+                 * Metadata instance with the format of:
+                 * 
+                 *     "Metadata": {
+                 *         "Name": "ThemeName",
+                 *         "255ColorsRequired": true,
+                 *         "TrueColorRequired": true
+                 *     },
+                 */
+                new JProperty("Metadata",
+                    new JObject(
+                        new JProperty("Name", SelectedThemeName),
+                        new JProperty("255ColorsRequired", Is255ColorsRequired()),
+                        new JProperty("TrueColorRequired", IsTrueColorRequired())
+                    )
+                ),
+
+                // Color instances
                 new JProperty("InputColor", SelectedInputColor.PlainSequence),
                 new JProperty("LicenseColor", SelectedLicenseColor.PlainSequence),
                 new JProperty("ContKernelErrorColor", SelectedContKernelErrorColor.PlainSequence),
@@ -378,6 +401,32 @@ namespace KS.ConsoleBase.Themes.Studio
                 new JProperty("SelectedOptionColor", SelectedSelectedOptionColor.PlainSequence),
                 new JProperty("AlternativeOptionColor", SelectedAlternativeOptionColor.PlainSequence)
             );
+
+        /// <summary>
+        /// Is the 255 color support required?
+        /// </summary>
+        /// <returns>If required, then true.</returns>
+        public static bool Is255ColorsRequired()
+        {
+            // FIXME: Just a prototype formula. It may get changed.
+            if (IsTrueColorRequired())
+                return true;
+            if (SelectedNeutralTextColor.Type == ColorType._255Color && Convert.ToInt32(SelectedNeutralTextColor.PlainSequence) >= 16)
+                return true;
+            return false;
+        }
+
+        /// <summary>
+        /// Is the true color support required?
+        /// </summary>
+        /// <returns>If required, then true.</returns>
+        public static bool IsTrueColorRequired()
+        {
+            // FIXME: Just a prototype formula. It may get changed.
+            if (SelectedNeutralTextColor.Type == ColorType.TrueColor)
+                return true;
+            return false;
+        }
 
         /// <summary>
         /// Prepares the preview
