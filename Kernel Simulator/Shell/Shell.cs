@@ -368,6 +368,12 @@ namespace KS.Shell
                 clearer.Close();
                 Command = Command.Replace(" >> " + OutputFileName, "");
             }
+            else if (Command.EndsWith(" |SILENT|"))
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Silence found. Redirecting to null writer...");
+                WriterPlainManager.ChangePlain("Null");
+                Command = Command.Replace(" |SILENT|", "");
+            }
         }
 
         /// <summary>
