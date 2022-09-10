@@ -216,21 +216,13 @@ namespace KS.ConsoleBase.Themes.Studio
             {
                 ThemeInfo = new ThemeInfo("_Default");
             }
-            else if (Theme == "NFSHP-Cop")
-            {
-                ThemeInfo = new ThemeInfo("NFSHP_Cop");
-            }
-            else if (Theme == "NFSHP-Racer")
-            {
-                ThemeInfo = new ThemeInfo("NFSHP_Racer");
-            }
             else if (Theme == "3Y-Diamond")
             {
                 ThemeInfo = new ThemeInfo("_3Y_Diamond");
             }
             else
             {
-                ThemeInfo = new ThemeInfo(Theme);
+                ThemeInfo = new ThemeInfo(Theme.Replace("-", "_"));
             }
             LoadThemeFromThemeInfo(ThemeInfo);
         }
