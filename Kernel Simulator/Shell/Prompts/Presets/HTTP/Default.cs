@@ -62,12 +62,14 @@ namespace KS.Shell.Prompts.Presets.HTTP
                 // Closing
                 PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
                 PresetStringBuilder.Append("] > ");
+                PresetStringBuilder.Append(ColorTools.InputColor.VTSequenceForeground);
             }
             else
             {
                 // Closing
                 PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
                 PresetStringBuilder.Append("> ");
+                PresetStringBuilder.Append(ColorTools.InputColor.VTSequenceForeground);
             }
 
             // Present final string

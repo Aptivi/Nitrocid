@@ -65,6 +65,7 @@ namespace KS.Shell.Prompts.Presets.Mail
             // Closing
             PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.AppendFormat("{0} > ", MailShellCommon.IMAP_CurrentDirectory);
+            PresetStringBuilder.Append(ColorTools.InputColor.VTSequenceForeground);
 
             // Present final string
             return PresetStringBuilder.ToString();

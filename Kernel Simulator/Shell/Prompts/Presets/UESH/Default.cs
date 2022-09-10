@@ -75,12 +75,14 @@ namespace KS.Shell.Prompts.Presets.UESH
                 // User dollar sign
                 PresetStringBuilder.Append(ColorTools.UserDollarColor.VTSequenceForeground);
                 PresetStringBuilder.AppendFormat(" {0} ", UserDollarSign);
+                PresetStringBuilder.Append(ColorTools.InputColor.VTSequenceForeground);
             }
             else
             {
                 // Maintenance mode
                 PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
                 PresetStringBuilder.Append(Translate.DoTranslation("Maintenance Mode") + "> ");
+                PresetStringBuilder.Append(ColorTools.InputColor.VTSequenceForeground);
             }
 
             // Present final string

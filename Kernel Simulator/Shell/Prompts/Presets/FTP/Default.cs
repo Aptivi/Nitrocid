@@ -70,12 +70,14 @@ namespace KS.Shell.Prompts.Presets.FTP
                 // Closing
                 PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
                 PresetStringBuilder.AppendFormat("]{0}> ", FTPShellCommon.FtpCurrentRemoteDir);
+                PresetStringBuilder.Append(ColorTools.InputColor.VTSequenceForeground);
             }
             else
             {
                 // Current directory
                 PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
                 PresetStringBuilder.AppendFormat("{0}> ", FTPShellCommon.FtpCurrentDirectory);
+                PresetStringBuilder.Append(ColorTools.InputColor.VTSequenceForeground);
             }
 
             // Present final string

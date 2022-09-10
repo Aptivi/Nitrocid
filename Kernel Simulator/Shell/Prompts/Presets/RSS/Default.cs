@@ -61,6 +61,7 @@ namespace KS.Shell.Prompts.Presets.RSS
             // Closing
             PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append("] > ");
+            PresetStringBuilder.Append(ColorTools.InputColor.VTSequenceForeground);
 
             // Present final string
             return PresetStringBuilder.ToString();

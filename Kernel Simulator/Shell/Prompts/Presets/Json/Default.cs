@@ -66,6 +66,7 @@ namespace KS.Shell.Prompts.Presets.Json
             // Closing
             PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append("] > ");
+            PresetStringBuilder.Append(ColorTools.InputColor.VTSequenceForeground);
 
             // Present final string
             return PresetStringBuilder.ToString();

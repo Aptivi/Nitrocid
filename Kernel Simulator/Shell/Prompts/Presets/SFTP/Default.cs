@@ -70,12 +70,14 @@ namespace KS.Shell.Prompts.Presets.SFTP
                 // Closing
                 PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
                 PresetStringBuilder.AppendFormat("]{0}> ", SFTPShellCommon.SFTPCurrentRemoteDir);
+                PresetStringBuilder.Append(ColorTools.InputColor.VTSequenceForeground);
             }
             else
             {
                 // Current directory
                 PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
                 PresetStringBuilder.AppendFormat("{0}> ", SFTPShellCommon.SFTPCurrDirect);
+                PresetStringBuilder.Append(ColorTools.InputColor.VTSequenceForeground);
             }
 
             // Present final string
