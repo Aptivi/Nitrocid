@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Ubuntu",
+        "255ColorsRequired": false,
+        "TrueColorRequired": false
+    },
     "InputColor": "15",
     "LicenseColor": "15",
     "ContKernelErrorColor": "15",

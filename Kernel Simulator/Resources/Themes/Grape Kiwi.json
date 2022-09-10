@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Grape Kiwi",
+        "255ColorsRequired": true,
+        "TrueColorRequired": true
+    },
     "InputColor": "147;77;191",
     "LicenseColor": "147;77;191",
     "ContKernelErrorColor": "166;51;95",

@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Neutralized",
+        "255ColorsRequired": true,
+        "TrueColorRequired": true
+    },
     "InputColor": "45;60;61",
     "LicenseColor": "45;60;61",
     "ContKernelErrorColor": "61;72;74",

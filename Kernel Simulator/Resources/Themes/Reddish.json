@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Reddish",
+        "255ColorsRequired": true,
+        "TrueColorRequired": true
+    },
     "InputColor": "153;46;38",
     "LicenseColor": "153;46;38",
     "ContKernelErrorColor": "176;56;40",

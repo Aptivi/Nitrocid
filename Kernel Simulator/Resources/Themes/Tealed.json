@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Tealed",
+        "255ColorsRequired": true,
+        "TrueColorRequired": true
+    },
     "InputColor": "62;98;115",
     "LicenseColor": "62;98;115",
     "ContKernelErrorColor": "51;99;128",

@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "BedOS",
+        "255ColorsRequired": false,
+        "TrueColorRequired": false
+    },
     "InputColor": "74",
     "LicenseColor": "177",
     "ContKernelErrorColor": "202",

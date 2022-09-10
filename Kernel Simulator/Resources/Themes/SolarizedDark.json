@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Solarized (dark)",
+        "255ColorsRequired": true,
+        "TrueColorRequired": true
+    },
     "InputColor": "38;139;210",
     "LicenseColor": "211;54;130",
     "ContKernelErrorColor": "181;137;0",

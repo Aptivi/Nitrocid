@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Ayu (dark)",
+        "255ColorsRequired": true,
+        "TrueColorRequired": true
+    },
     "InputColor": "184;204;82",
     "LicenseColor": "92;103;115",
     "ContKernelErrorColor": "255;119;51",

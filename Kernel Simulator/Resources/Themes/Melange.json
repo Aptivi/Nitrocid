@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Melange",
+        "255ColorsRequired": true,
+        "TrueColorRequired": true
+    },
     "InputColor": "#CC7F2B",
     "LicenseColor": "#C29830",
     "ContKernelErrorColor": "#E0BFBB",

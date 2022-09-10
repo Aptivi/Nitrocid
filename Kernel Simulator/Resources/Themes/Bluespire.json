@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Bluespire",
+        "255ColorsRequired": false,
+        "TrueColorRequired": false
+    },
     "InputColor": "14",
     "LicenseColor": "14",
     "ContKernelErrorColor": "12",

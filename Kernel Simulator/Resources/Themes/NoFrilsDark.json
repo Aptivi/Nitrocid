@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "No Frils (dark)",
+        "255ColorsRequired": true,
+        "TrueColorRequired": true
+    },
     "InputColor": "#6C6C6C",
     "LicenseColor": "#6C6C6C",
     "ContKernelErrorColor": "#800000",

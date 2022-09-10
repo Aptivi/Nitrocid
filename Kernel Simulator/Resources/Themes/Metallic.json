@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Metallic",
+        "255ColorsRequired": true,
+        "TrueColorRequired": false
+    },
     "InputColor": "8",
     "LicenseColor": "7",
     "ContKernelErrorColor": "8",

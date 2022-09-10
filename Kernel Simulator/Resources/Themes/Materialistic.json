@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Materialistic",
+        "255ColorsRequired": true,
+        "TrueColorRequired": true
+    },
     "InputColor": "105;158;62",
     "LicenseColor": "105;158;62",
     "ContKernelErrorColor": "56;91;232",

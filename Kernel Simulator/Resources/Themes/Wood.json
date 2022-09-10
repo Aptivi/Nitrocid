@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Wood",
+        "255ColorsRequired": true,
+        "TrueColorRequired": false
+    },
     "InputColor": "166",
     "LicenseColor": "130",
     "ContKernelErrorColor": "130",

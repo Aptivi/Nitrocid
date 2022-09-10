@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "No Frils (sepia)",
+        "255ColorsRequired": true,
+        "TrueColorRequired": true
+    },
     "InputColor": "#AF8700",
     "LicenseColor": "#AF8700",
     "ContKernelErrorColor": "#800000",

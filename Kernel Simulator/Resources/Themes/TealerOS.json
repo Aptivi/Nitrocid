@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "TealerOS",
+        "255ColorsRequired": true,
+        "TrueColorRequired": false
+    },
     "InputColor": "74",
     "LicenseColor": "74",
     "ContKernelErrorColor": "23",

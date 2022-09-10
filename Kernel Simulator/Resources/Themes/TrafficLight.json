@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Traffic Light",
+        "255ColorsRequired": true,
+        "TrueColorRequired": false
+    },
     "InputColor": "10",
     "LicenseColor": "10",
     "ContKernelErrorColor": "226",

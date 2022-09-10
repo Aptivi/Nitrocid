@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Blue Power",
+        "255ColorsRequired": true,
+        "TrueColorRequired": true
+    },
     "InputColor": "35;11;128",
     "LicenseColor": "35;11;128",
     "ContKernelErrorColor": "250;52;55",

@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Grand Theft Auto: San Andreas",
+        "255ColorsRequired": false,
+        "TrueColorRequired": false
+    },
     "InputColor": "11",
     "LicenseColor": "11",
     "ContKernelErrorColor": "3",

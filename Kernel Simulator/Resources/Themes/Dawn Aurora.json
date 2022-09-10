@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Dawn Aurora",
+        "255ColorsRequired": true,
+        "TrueColorRequired": true
+    },
     "InputColor": "15;31;64",
     "LicenseColor": "15;31;64",
     "ContKernelErrorColor": "33;39;83",

@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Ayu (mirage)",
+        "255ColorsRequired": true,
+        "TrueColorRequired": true
+    },
     "InputColor": "187;230;126",
     "LicenseColor": "92;103;115",
     "ContKernelErrorColor": "255;174;87",

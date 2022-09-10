@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Black on White",
+        "255ColorsRequired": false,
+        "TrueColorRequired": false
+    },
     "InputColor": "0",
     "LicenseColor": "0",
     "ContKernelErrorColor": "0",

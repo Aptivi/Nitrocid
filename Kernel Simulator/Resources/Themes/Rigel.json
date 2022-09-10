@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Rigel",
+        "255ColorsRequired": true,
+        "TrueColorRequired": true
+    },
     "InputColor": "#f08e48",
     "LicenseColor": "#1c8db2",
     "ContKernelErrorColor": "#c43060",

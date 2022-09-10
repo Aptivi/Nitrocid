@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Papercolor",
+        "255ColorsRequired": true,
+        "TrueColorRequired": true
+    },
     "InputColor": "#005f87",
     "LicenseColor": "#000000",
     "ContKernelErrorColor": "#af0000",

@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Grays",
+        "255ColorsRequired": true,
+        "TrueColorRequired": true
+    },
     "InputColor": "33;33;33",
     "LicenseColor": "33;33;33",
     "ContKernelErrorColor": "52;52;53",

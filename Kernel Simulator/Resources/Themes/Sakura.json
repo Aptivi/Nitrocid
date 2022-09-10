@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Sakura",
+        "255ColorsRequired": true,
+        "TrueColorRequired": true
+    },
     "InputColor": "#EACBD2",
     "LicenseColor": "#DFAEB4",
     "ContKernelErrorColor": "#DFAEB4",

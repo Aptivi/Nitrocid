@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Red Breeze",
+        "255ColorsRequired": true,
+        "TrueColorRequired": true
+    },
     "InputColor": "197;201;54",
     "LicenseColor": "197;201;54",
     "ContKernelErrorColor": "71;223;237",

@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Fire",
+        "255ColorsRequired": true,
+        "TrueColorRequired": true
+    },
     "InputColor": "#FAA307",
     "LicenseColor": "#FFBA08",
     "ContKernelErrorColor": "#9D0208",

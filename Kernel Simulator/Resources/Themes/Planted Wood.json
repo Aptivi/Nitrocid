@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Planted Wood",
+        "255ColorsRequired": true,
+        "TrueColorRequired": true
+    },
     "InputColor": "214;142;60",
     "LicenseColor": "214;142;60",
     "ContKernelErrorColor": "69;140;90",

@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Light Planks",
+        "255ColorsRequired": true,
+        "TrueColorRequired": true
+    },
     "InputColor": "184;129;62",
     "LicenseColor": "184;129;62",
     "ContKernelErrorColor": "194;136;66",

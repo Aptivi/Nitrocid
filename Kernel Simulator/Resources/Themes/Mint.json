@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Mint",
+        "255ColorsRequired": true,
+        "TrueColorRequired": true
+    },
     "InputColor": "50;161;61",
     "LicenseColor": "50;161;61",
     "ContKernelErrorColor": "75;173;68",

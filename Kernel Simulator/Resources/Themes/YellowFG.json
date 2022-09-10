@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Yellow (foreground)",
+        "255ColorsRequired": false,
+        "TrueColorRequired": false
+    },
     "InputColor": "11",
     "LicenseColor": "3",
     "ContKernelErrorColor": "11",

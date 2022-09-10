@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Darcula",
+        "255ColorsRequired": true,
+        "TrueColorRequired": true
+    },
     "InputColor": "#629755",
     "LicenseColor": "#A9B7C6",
     "ContKernelErrorColor": "#CC666E",

@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "3Y-Diamond OS",
+        "255ColorsRequired": false,
+        "TrueColorRequired": false
+    },
     "InputColor": "60",
     "LicenseColor": "113",
     "ContKernelErrorColor": "146",

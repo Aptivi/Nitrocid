@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Aquatic",
+        "255ColorsRequired": true,
+        "TrueColorRequired": true
+    },
     "InputColor": "68;142;227",
     "LicenseColor": "68;142;227",
     "ContKernelErrorColor": "48;159;199",

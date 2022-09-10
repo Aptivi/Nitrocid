@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Mintback",
+        "255ColorsRequired": true,
+        "TrueColorRequired": true
+    },
     "InputColor": "23;13;28",
     "LicenseColor": "23;13;28",
     "ContKernelErrorColor": "32;14;36",

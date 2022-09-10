@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Pastel 2",
+        "255ColorsRequired": true,
+        "TrueColorRequired": true
+    },
     "InputColor": "252;204;189",
     "LicenseColor": "252;204;189",
     "ContKernelErrorColor": "207;209;208",

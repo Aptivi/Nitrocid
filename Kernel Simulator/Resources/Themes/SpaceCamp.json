@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Space Camp",
+        "255ColorsRequired": true,
+        "TrueColorRequired": true
+    },
     "InputColor": "#DEDEDE",
     "LicenseColor": "#EEEEEE",
     "ContKernelErrorColor": "#821A1A",

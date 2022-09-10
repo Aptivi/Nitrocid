@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Orange Sea",
+        "255ColorsRequired": true,
+        "TrueColorRequired": true
+    },
     "InputColor": "54;152;217",
     "LicenseColor": "54;152;217",
     "ContKernelErrorColor": "179;112;68",
