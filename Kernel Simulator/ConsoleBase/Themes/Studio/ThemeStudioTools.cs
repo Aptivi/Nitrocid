@@ -27,6 +27,7 @@ using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Renci.SshNet.Security;
 
 namespace KS.ConsoleBase.Themes.Studio
 {
@@ -299,11 +300,17 @@ namespace KS.ConsoleBase.Themes.Studio
         /// <returns>If required, then true.</returns>
         public static bool Is255ColorsRequired()
         {
-            // FIXME: Just a prototype formula. It may get changed.
+            // Check for true color requirement
             if (IsTrueColorRequired())
                 return true;
-            if (SelectedColors["Neutral text color"].Type == ColorType._255Color && Convert.ToInt32(SelectedColors["Neutral text color"].PlainSequence) >= 16)
-                return true;
+
+            // Now, check for 255-color requirement
+            for (int key = 0; key < SelectedColors.Count; key++)
+                if (SelectedColors.Values.ElementAt(key).Type == ColorType._255Color && 
+                    Convert.ToInt32(SelectedColors.Values.ElementAt(key).PlainSequence) >= 16)
+                    return true;
+
+            // Else, 255 color support is not required
             return false;
         }
 
@@ -313,9 +320,12 @@ namespace KS.ConsoleBase.Themes.Studio
         /// <returns>If required, then true.</returns>
         public static bool IsTrueColorRequired()
         {
-            // FIXME: Just a prototype formula. It may get changed.
-            if (SelectedColors["Neutral text color"].Type == ColorType.TrueColor)
-                return true;
+            // Check for true color requirement according to color type
+            for (int key = 0; key < SelectedColors.Count; key++)
+                if (SelectedColors.Values.ElementAt(key).Type == ColorType.TrueColor)
+                    return true;
+
+            // Else, no requirement
             return false;
         }
 
