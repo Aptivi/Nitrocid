@@ -85,7 +85,7 @@ namespace KS.ConsoleBase.Themes.Studio
         /// <summary>
         /// Selected option color for new theme
         /// </summary>
-        internal static Color _SelectedOptionColor = ColorTools.OptionColor;
+        internal static Color SelectedOptionColor = ColorTools.OptionColor;
         /// <summary>
         /// Selected banner color for new theme
         /// </summary>
@@ -260,7 +260,7 @@ namespace KS.ConsoleBase.Themes.Studio
             SelectedStageColor = ThemeInfo.ThemeStageColor;
             SelectedErrorColor = ThemeInfo.ThemeErrorColor;
             SelectedWarningColor = ThemeInfo.ThemeWarningColor;
-            _SelectedOptionColor = ThemeInfo.ThemeOptionColor;
+            SelectedOptionColor = ThemeInfo.ThemeOptionColor;
             SelectedBannerColor = ThemeInfo.ThemeBannerColor;
             SelectedNotificationTitleColor = ThemeInfo.ThemeNotificationTitleColor;
             SelectedNotificationDescriptionColor = ThemeInfo.ThemeNotificationDescriptionColor;
@@ -306,7 +306,7 @@ namespace KS.ConsoleBase.Themes.Studio
             SelectedStageColor = ColorTools.StageColor;
             SelectedErrorColor = ColorTools.ErrorColor;
             SelectedWarningColor = ColorTools.WarningColor;
-            _SelectedOptionColor = ColorTools.OptionColor;
+            SelectedOptionColor = ColorTools.OptionColor;
             SelectedBannerColor = ColorTools.BannerColor;
             SelectedNotificationTitleColor = ColorTools.NotificationTitleColor;
             SelectedNotificationDescriptionColor = ColorTools.NotificationDescriptionColor;
@@ -337,7 +337,47 @@ namespace KS.ConsoleBase.Themes.Studio
         /// Gets the full theme JSON object
         /// </summary>
         /// <returns>A JSON object</returns>
-        public static JObject GetThemeJson() => new(new JProperty("InputColor", SelectedInputColor.PlainSequence), new JProperty("LicenseColor", SelectedLicenseColor.PlainSequence), new JProperty("ContKernelErrorColor", SelectedContKernelErrorColor.PlainSequence), new JProperty("UncontKernelErrorColor", SelectedUncontKernelErrorColor.PlainSequence), new JProperty("HostNameShellColor", SelectedHostNameShellColor.PlainSequence), new JProperty("UserNameShellColor", SelectedUserNameShellColor.PlainSequence), new JProperty("BackgroundColor", SelectedBackgroundColor.PlainSequence), new JProperty("NeutralTextColor", SelectedNeutralTextColor.PlainSequence), new JProperty("ListEntryColor", SelectedListEntryColor.PlainSequence), new JProperty("ListValueColor", SelectedListValueColor.PlainSequence), new JProperty("StageColor", SelectedStageColor.PlainSequence), new JProperty("ErrorColor", SelectedErrorColor.PlainSequence), new JProperty("WarningColor", SelectedWarningColor.PlainSequence), new JProperty("OptionColor", _SelectedOptionColor.PlainSequence), new JProperty("BannerColor", SelectedBannerColor.PlainSequence), new JProperty("NotificationTitleColor", SelectedNotificationTitleColor.PlainSequence), new JProperty("NotificationDescriptionColor", SelectedNotificationDescriptionColor.PlainSequence), new JProperty("NotificationProgressColor", SelectedNotificationProgressColor.PlainSequence), new JProperty("NotificationFailureColor", SelectedNotificationFailureColor.PlainSequence), new JProperty("QuestionColor", SelectedQuestionColor.PlainSequence), new JProperty("SuccessColor", SelectedSuccessColor.PlainSequence), new JProperty("UserDollarColor", SelectedUserDollarColor.PlainSequence), new JProperty("TipColor", SelectedTipColor.PlainSequence), new JProperty("SeparatorTextColor", SelectedSeparatorTextColor.PlainSequence), new JProperty("SeparatorColor", SelectedSeparatorColor.PlainSequence), new JProperty("ListTitleColor", SelectedListTitleColor.PlainSequence), new JProperty("DevelopmentWarningColor", SelectedDevelopmentWarningColor.PlainSequence), new JProperty("StageTimeColor", SelectedStageTimeColor.PlainSequence), new JProperty("ProgressColor", SelectedProgressColor.PlainSequence), new JProperty("BackOptionColor", SelectedBackOptionColor.PlainSequence), new JProperty("LowPriorityBorderColor", SelectedLowPriorityBorderColor.PlainSequence), new JProperty("MediumPriorityBorderColor", SelectedMediumPriorityBorderColor.PlainSequence), new JProperty("HighPriorityBorderColor", SelectedHighPriorityBorderColor.PlainSequence), new JProperty("TableSeparatorColor", SelectedTableSeparatorColor.PlainSequence), new JProperty("TableHeaderColor", SelectedTableHeaderColor.PlainSequence), new JProperty("TableValueColor", SelectedTableValueColor.PlainSequence), new JProperty("SelectedOptionColor", SelectedSelectedOptionColor.PlainSequence), new JProperty("AlternativeOptionColor", SelectedAlternativeOptionColor.PlainSequence));
+        public static JObject GetThemeJson() => 
+            new (
+                new JProperty("InputColor", SelectedInputColor.PlainSequence),
+                new JProperty("LicenseColor", SelectedLicenseColor.PlainSequence),
+                new JProperty("ContKernelErrorColor", SelectedContKernelErrorColor.PlainSequence),
+                new JProperty("UncontKernelErrorColor", SelectedUncontKernelErrorColor.PlainSequence),
+                new JProperty("HostNameShellColor", SelectedHostNameShellColor.PlainSequence),
+                new JProperty("UserNameShellColor", SelectedUserNameShellColor.PlainSequence),
+                new JProperty("BackgroundColor", SelectedBackgroundColor.PlainSequence),
+                new JProperty("NeutralTextColor", SelectedNeutralTextColor.PlainSequence),
+                new JProperty("ListEntryColor", SelectedListEntryColor.PlainSequence),
+                new JProperty("ListValueColor", SelectedListValueColor.PlainSequence),
+                new JProperty("StageColor", SelectedStageColor.PlainSequence),
+                new JProperty("ErrorColor", SelectedErrorColor.PlainSequence),
+                new JProperty("WarningColor", SelectedWarningColor.PlainSequence),
+                new JProperty("OptionColor", SelectedOptionColor.PlainSequence),
+                new JProperty("BannerColor", SelectedBannerColor.PlainSequence),
+                new JProperty("NotificationTitleColor", SelectedNotificationTitleColor.PlainSequence),
+                new JProperty("NotificationDescriptionColor", SelectedNotificationDescriptionColor.PlainSequence),
+                new JProperty("NotificationProgressColor", SelectedNotificationProgressColor.PlainSequence),
+                new JProperty("NotificationFailureColor", SelectedNotificationFailureColor.PlainSequence),
+                new JProperty("QuestionColor", SelectedQuestionColor.PlainSequence),
+                new JProperty("SuccessColor", SelectedSuccessColor.PlainSequence),
+                new JProperty("UserDollarColor", SelectedUserDollarColor.PlainSequence),
+                new JProperty("TipColor", SelectedTipColor.PlainSequence),
+                new JProperty("SeparatorTextColor", SelectedSeparatorTextColor.PlainSequence),
+                new JProperty("SeparatorColor", SelectedSeparatorColor.PlainSequence),
+                new JProperty("ListTitleColor", SelectedListTitleColor.PlainSequence),
+                new JProperty("DevelopmentWarningColor", SelectedDevelopmentWarningColor.PlainSequence),
+                new JProperty("StageTimeColor", SelectedStageTimeColor.PlainSequence),
+                new JProperty("ProgressColor", SelectedProgressColor.PlainSequence),
+                new JProperty("BackOptionColor", SelectedBackOptionColor.PlainSequence),
+                new JProperty("LowPriorityBorderColor", SelectedLowPriorityBorderColor.PlainSequence),
+                new JProperty("MediumPriorityBorderColor", SelectedMediumPriorityBorderColor.PlainSequence),
+                new JProperty("HighPriorityBorderColor", SelectedHighPriorityBorderColor.PlainSequence),
+                new JProperty("TableSeparatorColor", SelectedTableSeparatorColor.PlainSequence),
+                new JProperty("TableHeaderColor", SelectedTableHeaderColor.PlainSequence),
+                new JProperty("TableValueColor", SelectedTableValueColor.PlainSequence),
+                new JProperty("SelectedOptionColor", SelectedSelectedOptionColor.PlainSequence),
+                new JProperty("AlternativeOptionColor", SelectedAlternativeOptionColor.PlainSequence)
+            );
 
         /// <summary>
         /// Prepares the preview
@@ -402,7 +442,7 @@ namespace KS.ConsoleBase.Themes.Studio
 
             // Option color
             TextWriterColor.Write("*) " + Translate.DoTranslation("Option color") + ": ", false, ColorTools.ColTypes.Option);
-            TextWriterColor.Write("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", true, _SelectedOptionColor);
+            TextWriterColor.Write("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", true, SelectedOptionColor);
 
             // Banner color
             TextWriterColor.Write("*) " + Translate.DoTranslation("Banner color") + ": ", false, ColorTools.ColTypes.Option);

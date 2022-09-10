@@ -64,7 +64,7 @@ namespace KS.ConsoleBase.Themes.Studio
                 TextWriterColor.Write("11) " + Translate.DoTranslation("Stage color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedStageColor.PlainSequence);
                 TextWriterColor.Write("12) " + Translate.DoTranslation("Error color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedErrorColor.PlainSequence);
                 TextWriterColor.Write("13) " + Translate.DoTranslation("Warning color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedWarningColor.PlainSequence);
-                TextWriterColor.Write("14) " + Translate.DoTranslation("Option color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools._SelectedOptionColor.PlainSequence);
+                TextWriterColor.Write("14) " + Translate.DoTranslation("Option color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedOptionColor.PlainSequence);
                 TextWriterColor.Write("15) " + Translate.DoTranslation("Banner color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedBannerColor.PlainSequence);
                 TextWriterColor.Write("16) " + Translate.DoTranslation("Notification title color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedNotificationTitleColor.PlainSequence);
                 TextWriterColor.Write("17) " + Translate.DoTranslation("Notification description color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedNotificationDescriptionColor.PlainSequence);
@@ -214,9 +214,9 @@ namespace KS.ConsoleBase.Themes.Studio
                                 }
                             case 14: // Option color
                                 {
-                                    SelectedColorInstance = ThemeStudioTools._SelectedOptionColor;
+                                    SelectedColorInstance = ThemeStudioTools.SelectedOptionColor;
                                     string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
-                                    ThemeStudioTools._SelectedOptionColor = new Color(ColorWheelReturn);
+                                    ThemeStudioTools.SelectedOptionColor = new Color(ColorWheelReturn);
                                     break;
                                 }
                             case 15: // Banner color
