@@ -306,8 +306,7 @@ namespace KS.ConsoleBase.Themes.Studio
 
             // Now, check for 255-color requirement
             for (int key = 0; key < SelectedColors.Count; key++)
-                if (SelectedColors.Values.ElementAt(key).Type == ColorType._255Color && 
-                    Convert.ToInt32(SelectedColors.Values.ElementAt(key).PlainSequence) >= 16)
+                if (SelectedColors.Values.ElementAt(key).Type == ColorType._255Color)
                     return true;
 
             // Else, 255 color support is not required

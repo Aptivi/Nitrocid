@@ -89,7 +89,7 @@ namespace KS.Misc.Animations.BeatFader
                     GreenColorNum = UserColor.G;
                     BlueColorNum = UserColor.B;
                 }
-                else if (UserColor.Type == ColorType._255Color)
+                else
                 {
                     var ConsoleColor = new ConsoleColorsInfo((ConsoleColors)Convert.ToInt32(UserColor.PlainSequence));
                     RedColorNum = ConsoleColor.R;

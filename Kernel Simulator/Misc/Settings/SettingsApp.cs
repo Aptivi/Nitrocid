@@ -489,7 +489,14 @@ namespace KS.Misc.Settings
                     // If the type is a color, initialize the color wheel
                     if (KeyType == SettingsKeyType.SColor)
                     {
-                        ColorValue = ColorWheelOpen.ColorWheel(new Color(KeyDefaultValue.ToString()).Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(new Color(KeyDefaultValue.ToString()).Type == ColorType._255Color ? new global::ColorSeq.Color(KeyDefaultValue.ToString()).PlainSequence : global::ColorSeq.ConsoleColors.White), new Color(KeyDefaultValue.ToString()).R, new Color(KeyDefaultValue.ToString()).G, new Color(KeyDefaultValue.ToString()).B);
+                        var keyColorValue = new Color(KeyDefaultValue.ToString());
+                        ColorValue = ColorWheelOpen.ColorWheel(keyColorValue.Type == ColorType.TrueColor,
+                                                               (ConsoleColors)Convert.ToInt32(
+                                                                   keyColorValue.Type == ColorType._255Color || keyColorValue.Type == ColorType._16Color ?
+                                                                   keyColorValue.PlainSequence : 
+                                                                   ConsoleColors.White
+                                                               ),
+                                                               keyColorValue.R, keyColorValue.G, keyColorValue.B);
                     }
 
                     // Write the list from the current items
