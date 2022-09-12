@@ -9,7 +9,7 @@ configuration:
 - Debug-dotnet
 dotnet_csproj:
   patch: true
-  file: Kernel Simulator\Kernel Simulator.csproj
+  file: public\Kernel Simulator\Kernel Simulator.csproj
   package_version: 0.1.0-dev{build}
 environment:
   WEBHOOK_URL:
@@ -29,7 +29,7 @@ test_script:
 artifacts:
 - path: devbuild.zip
   name: Development build of Kernel Simulator
-- path: Kernel Simulator/KSBuild/KS.*.symbols.nupkg
+- path: public/Kernel Simulator/KSBuild/KS.*.symbols.nupkg
 deploy:
 - provider: NuGet
   server: https://www.nuget.org/api/v2/package

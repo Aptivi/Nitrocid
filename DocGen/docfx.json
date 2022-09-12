@@ -3,7 +3,7 @@
         {
             "src": [
                 {
-                    "files": [ "Kernel Simulator/Kernel Simulator.csproj" ],
+                    "files": [ "public/Kernel Simulator/Kernel Simulator.csproj" ],
                     "src": ".."
                 }
             ],

@@ -1,2 +1,2 @@
-KSTests/TestData/TestText.txt text eol=lf
+private/KSTests/TestData/TestText.txt text eol=lf
 *.sh text eol=lf
