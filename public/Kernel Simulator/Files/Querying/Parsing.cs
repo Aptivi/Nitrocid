@@ -20,6 +20,7 @@ using System;
 using System.IO;
 using KS.Kernel;
 using KS.Kernel.Debugging;
+using KS.Misc.Text;
 
 namespace KS.Files.Querying
 {
@@ -83,6 +84,32 @@ namespace KS.Files.Querying
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to parse file name {0}: {1}", Name, ex.Message);
             }
+            return false;
+        }
+
+        /// <summary>
+        /// Is the file a binary file?
+        /// </summary>
+        /// <param name="Path">Path to file</param>
+        /// <returns></returns>
+        public static bool IsBinaryFile(string Path)
+        {
+            // Neutralize path
+            Filesystem.ThrowOnInvalidPath(Path);
+            Path = Filesystem.NeutralizePath(Path);
+
+            // Check to see if the file contains these control characters
+            using StreamReader reader = new(Path);
+            int ch;
+            while ((ch = reader.Read()) != -1)
+            {
+                // Parse character
+                if (CharManager.IsControlChar((char)ch))
+                    // Our file is binary!
+                    return true;
+            }
+
+            // Our file is not binary. Return false.
             return false;
         }
 

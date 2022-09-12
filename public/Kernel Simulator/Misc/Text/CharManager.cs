@@ -19,6 +19,8 @@
 using System;
 using System.Data;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Runtime.Remoting.Messaging;
 
 namespace KS.Misc.Text
 {
@@ -51,6 +53,16 @@ namespace KS.Misc.Text
         /// </summary>
         /// <returns>ESC</returns>
         public static char GetEsc() => Convert.ToChar(0x1B);
+
+        /// <summary>
+        /// Is the character a real control character
+        /// </summary>
+        /// <param name="ch">Character to query</param>
+        public static bool IsControlChar(char ch) =>
+            // If the character is greater than the NULL character and less than the BACKSPACE character, or
+            // if the character is greater than the CARRIAGE RETURN character and less than the SUBSTITUTE character,
+            // it's a real control character.
+            (ch > (char)0 && ch < (char)8) || (ch > (char)13 && ch < (char)26);
 
     }
 }
