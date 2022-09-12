@@ -51,17 +51,9 @@ namespace KS.Misc.Settings
         /// </summary>
         SList,
         /// <summary>
-        /// The value is variant and comes from a function
-        /// </summary>
-        SVariant,
-        /// <summary>
         /// The value is of <see cref="Color"/> and comes from the color wheel
         /// </summary>
         SColor,
-        /// <summary>
-        /// The value is of <see cref="string"/>, but masked. Useful for passwords.
-        /// </summary>
-        SMaskedString,
         /// <summary>
         /// The value is of <see cref="char"/> and only accepts one character.
         /// </summary>

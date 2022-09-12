@@ -45,19 +45,15 @@ namespace KS.Misc.Settings
     public static class SettingsApp
     {
 
-        private static SettingsType CurrentSettingsType = SettingsType.Normal;
-
         /// <summary>
         /// Main page
         /// </summary>
         public static void OpenMainPage(SettingsType SettingsType)
         {
-            var PromptFinished = default(bool);
+            bool PromptFinished = false;
             string AnswerString;
-            int AnswerInt;
             var SettingsToken = OpenSettingsResource(SettingsType);
             int MaxSections = SettingsToken.Count();
-            CurrentSettingsType = SettingsType;
 
             while (!PromptFinished)
             {
@@ -94,7 +90,7 @@ namespace KS.Misc.Settings
 
                 // Check for input
                 DebugWriter.WriteDebug(DebugLevel.I, "Is the answer numeric? {0}", StringQuery.IsStringNumeric(AnswerString));
-                if (int.TryParse(AnswerString, out AnswerInt))
+                if (int.TryParse(AnswerString, out int AnswerInt))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Succeeded. Checking the answer if it points to the right direction...");
                     if (AnswerInt >= 1 & AnswerInt <= MaxSections)
@@ -102,7 +98,7 @@ namespace KS.Misc.Settings
                         // The selected answer is a section
                         JProperty SelectedSection = (JProperty)SettingsToken.ToList()[AnswerInt - 1];
                         DebugWriter.WriteDebug(DebugLevel.I, "Opening section {0}...", SelectedSection.Name);
-                        OpenSection(SelectedSection.Name, SettingsToken);
+                        OpenSection(SelectedSection.Name, SettingsToken, SettingsType);
                     }
                     else if (AnswerInt == MaxSections + 1)
                     {
@@ -205,14 +201,14 @@ namespace KS.Misc.Settings
         /// </summary>
         /// <param name="Section">Section name</param>
         /// <param name="SettingsToken">Settings token</param>
-        public static void OpenSection(string Section, JToken SettingsToken)
+        /// <param name="SettingsType">Settings type</param>
+        public static void OpenSection(string Section, JToken SettingsToken, SettingsType SettingsType)
         {
             try
             {
                 // General variables
-                var SectionFinished = default(bool);
+                bool SectionFinished = false;
                 string AnswerString;
-                int AnswerInt;
                 var SectionTokenGeneral = SettingsToken[Section];
                 var SectionToken = SectionTokenGeneral["Keys"];
                 var SectionDescription = SectionTokenGeneral["Desc"];
@@ -235,49 +231,40 @@ namespace KS.Misc.Settings
                         string VariableProperty = (string)Setting["VariableProperty"];
                         SettingsKeyType VariableType = (SettingsKeyType)Convert.ToInt32(Enum.Parse(typeof(SettingsKeyType), (string)Setting["Type"]));
 
-                        // Print the option
-                        if (VariableType == SettingsKeyType.SMaskedString)
+                        // Print the option by determining how to get the current value
+                        if (VariableProperty is null)
                         {
-                            // Don't print the default value! We don't want to reveal passwords.
-                            TextWriterColor.Write(" {0}) " + Translate.DoTranslation((string)Setting["Name"]), true, ColorTools.ColTypes.Option, SectionIndex + 1);
+                            if (FieldManager.CheckField(Variable))
+                            {
+                                // We're dealing with the field, get the value from it
+                                CurrentValue = FieldManager.GetValue(Variable);
+                            }
+                            else if (PropertyManager.CheckProperty(Variable))
+                            {
+                                // We're dealing with the property, get the value from it
+                                CurrentValue = PropertyManager.GetPropertyValue(Variable);
+                            }
+
+                            // Get the plain sequence from the color
+                            if (CurrentValue is Color color)
+                            {
+                                CurrentValue = color.PlainSequence;
+                            }
                         }
                         else
                         {
-                            // Determine how to get the current value
-                            if (VariableProperty is null)
-                            {
-                                if (FieldManager.CheckField(Variable))
-                                {
-                                    // We're dealing with the field, get the value from it
-                                    CurrentValue = FieldManager.GetValue(Variable);
-                                }
-                                else if (PropertyManager.CheckProperty(Variable))
-                                {
-                                    // We're dealing with the property, get the value from it
-                                    CurrentValue = PropertyManager.GetPropertyValue(Variable);
-                                }
-
-                                // Get the plain sequence from the color
-                                if (CurrentValue is Color color)
-                                {
-                                    CurrentValue = color.PlainSequence;
-                                }
-                            }
-                            else
-                            {
-                                // Get the property value from variable
-                                CurrentValue = PropertyManager.GetPropertyValueInVariable(Variable, VariableProperty);
-                            }
-                            TextWriterColor.Write(" {0}) " + Translate.DoTranslation((string)Setting["Name"]) + " [{1}]", true, ColorTools.ColTypes.Option, SectionIndex + 1, CurrentValue);
+                            // Get the property value from variable
+                            CurrentValue = PropertyManager.GetPropertyValueInVariable(Variable, VariableProperty);
                         }
+                        TextWriterColor.Write(" {0}) " + Translate.DoTranslation((string)Setting["Name"]) + " [{1}]", true, ColorTools.ColTypes.Option, SectionIndex + 1, CurrentValue);
                     }
                     TextWriterColor.Write();
-                    if (CurrentSettingsType == SettingsType.Screensaver)
+                    if (SettingsType == SettingsType.Screensaver)
                     {
                         TextWriterColor.Write(" {0}) " + Translate.DoTranslation("Preview screensaver"), true, ColorTools.ColTypes.BackOption, MaxOptions + 1);
                         TextWriterColor.Write(" {0}) " + Translate.DoTranslation("Go Back...") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.BackOption, MaxOptions + 2);
                     }
-                    else if (CurrentSettingsType == SettingsType.Splash)
+                    else if (SettingsType == SettingsType.Splash)
                     {
                         TextWriterColor.Write(" {0}) " + Translate.DoTranslation("Preview splash"), true, ColorTools.ColTypes.BackOption, MaxOptions + 1);
                         TextWriterColor.Write(" {0}) " + Translate.DoTranslation("Go Back...") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.BackOption, MaxOptions + 2);
@@ -295,7 +282,7 @@ namespace KS.Misc.Settings
                     TextWriterColor.Write();
 
                     DebugWriter.WriteDebug(DebugLevel.I, "Is the answer numeric? {0}", StringQuery.IsStringNumeric(AnswerString));
-                    if (int.TryParse(AnswerString, out AnswerInt))
+                    if (int.TryParse(AnswerString, out int AnswerInt))
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Succeeded. Checking the answer if it points to the right direction...");
                         if (AnswerInt >= 1 & AnswerInt <= MaxOptions)
@@ -303,19 +290,19 @@ namespace KS.Misc.Settings
                             DebugWriter.WriteDebug(DebugLevel.I, "Opening key {0} from section {1}...", AnswerInt, Section);
                             OpenKey(Section, AnswerInt, SettingsToken);
                         }
-                        else if (AnswerInt == MaxOptions + 1 & CurrentSettingsType == SettingsType.Screensaver)
+                        else if (AnswerInt == MaxOptions + 1 & SettingsType == SettingsType.Screensaver)
                         {
                             // Preview screensaver
                             DebugWriter.WriteDebug(DebugLevel.I, "User requested screensaver preview.");
                             Screensaver.Screensaver.ShowSavers(Section);
                         }
-                        else if (AnswerInt == MaxOptions + 1 & CurrentSettingsType == SettingsType.Splash)
+                        else if (AnswerInt == MaxOptions + 1 & SettingsType == SettingsType.Splash)
                         {
                             // Preview splash
                             DebugWriter.WriteDebug(DebugLevel.I, "User requested splash preview.");
                             Splash.SplashManager.PreviewSplash(Section);
                         }
-                        else if (AnswerInt == MaxOptions + 1 | AnswerInt == MaxOptions + 2 & (CurrentSettingsType == SettingsType.Screensaver || CurrentSettingsType == SettingsType.Splash))
+                        else if (AnswerInt == MaxOptions + 1 | AnswerInt == MaxOptions + 2 & (SettingsType == SettingsType.Screensaver || SettingsType == SettingsType.Splash))
                         {
                             // Go Back...
                             DebugWriter.WriteDebug(DebugLevel.I, "User requested exit. Returning...");
@@ -373,7 +360,7 @@ namespace KS.Misc.Settings
                 string KeyVar = (string)KeyToken["Variable"];
                 object KeyValue = "";
                 object KeyDefaultValue = "";
-                var KeyFinished = default(bool);
+                bool KeyFinished = false;
 
                 // Integer slider properties
                 int IntSliderMinimumValue = (int)(KeyToken["MinimumValue"] ?? 0);
@@ -409,7 +396,6 @@ namespace KS.Misc.Settings
 
                 // Inputs
                 string AnswerString = "";
-                int AnswerInt;
 
                 while (!KeyFinished)
                 {
@@ -422,6 +408,7 @@ namespace KS.Misc.Settings
                     // See how to get the value
                     if (!(KeyType == SettingsKeyType.SUnknown))
                     {
+                        // Determine which list we're going to select
                         if (KeyType == SettingsKeyType.SSelection)
                         {
                             if (SelectionEnum)
@@ -450,6 +437,8 @@ namespace KS.Misc.Settings
                         {
                             TargetList = (IEnumerable<object>)MethodManager.GetMethod(ListFunctionName).Invoke(ListFunctionType, null);
                         }
+
+                        // Determine how to get key default value
                         if (KeyVarProperty is null)
                         {
                             if (FieldManager.CheckField(KeyVar))
@@ -493,7 +482,7 @@ namespace KS.Misc.Settings
                         ColorValue = ColorWheelOpen.ColorWheel(keyColorValue.Type == ColorType.TrueColor,
                                                                (ConsoleColors)Convert.ToInt32(
                                                                    keyColorValue.Type == ColorType._255Color || keyColorValue.Type == ColorType._16Color ?
-                                                                   keyColorValue.PlainSequence : 
+                                                                   keyColorValue.PlainSequence :
                                                                    ConsoleColors.White
                                                                ),
                                                                keyColorValue.R, keyColorValue.G, keyColorValue.B);
@@ -514,7 +503,11 @@ namespace KS.Misc.Settings
                     }
 
                     // Add an option to go back.
-                    if (!(KeyType == SettingsKeyType.SVariant) & !(KeyType == SettingsKeyType.SInt) & !(KeyType == SettingsKeyType.SString) & !(KeyType == SettingsKeyType.SList) & !(KeyType == SettingsKeyType.SMaskedString) & !(KeyType == SettingsKeyType.SChar) & !(KeyType == SettingsKeyType.SIntSlider))
+                    if (!(KeyType == SettingsKeyType.SInt) &
+                        !(KeyType == SettingsKeyType.SString) &
+                        !(KeyType == SettingsKeyType.SList) &
+                        !(KeyType == SettingsKeyType.SChar) &
+                        !(KeyType == SettingsKeyType.SIntSlider))
                     {
                         TextWriterColor.Write(" {0}) " + Translate.DoTranslation("Go Back...") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.BackOption, MaxKeyOptions + 1);
                     }
@@ -528,22 +521,7 @@ namespace KS.Misc.Settings
                     DebugWriter.WriteDebug(DebugLevel.W, "Target variable: {0}, Key Type: {1}, Key value: {2}, Variant Value: {3}", KeyVar, KeyType, KeyValue, VariantValue);
 
                     // Prompt user
-                    if (KeyType == SettingsKeyType.SVariant)
-                    {
-                        if (VariantFunctionSetsValue)
-                        {
-                            MethodManager.GetMethod(VariantFunction).Invoke(null, null);
-                        }
-                        else
-                        {
-                            TextWriterColor.Write("> ", false, ColorTools.ColTypes.Input);
-                            VariantValue = Input.ReadLine();
-                            if (NeutralizePaths)
-                                VariantValue = Filesystem.NeutralizePath(Convert.ToString(VariantValue), NeutralizeRootPath);
-                            DebugWriter.WriteDebug(DebugLevel.I, "User answered {0}", VariantValue);
-                        }
-                    }
-                    else if (!(KeyType == SettingsKeyType.SVariant) & !(KeyType == SettingsKeyType.SColor))
+                    if (!(KeyType == SettingsKeyType.SColor))
                     {
                         if (KeyType == SettingsKeyType.SList)
                         {
@@ -555,6 +533,8 @@ namespace KS.Misc.Settings
                                 {
                                     if (NeutralizePaths)
                                         AnswerString = Filesystem.NeutralizePath(AnswerString, NeutralizeRootPath);
+
+                                    // Check to see if we're removing an item
                                     if (!AnswerString.StartsWith("-"))
                                     {
                                         // We're not removing an item!
@@ -575,7 +555,7 @@ namespace KS.Misc.Settings
                         else
                         {
                             // Make a prompt
-                            if (KeyType == SettingsKeyType.SUnknown | KeyType == SettingsKeyType.SMaskedString)
+                            if (KeyType == SettingsKeyType.SUnknown)
                             {
                                 TextWriterColor.Write("> ", false, ColorTools.ColTypes.Input);
                             }
@@ -585,11 +565,7 @@ namespace KS.Misc.Settings
                             }
 
                             // Select how to present input
-                            if (KeyType == SettingsKeyType.SMaskedString)
-                            {
-                                AnswerString = Input.ReadLineNoInput();
-                            }
-                            else if (KeyType == SettingsKeyType.SChar)
+                            if (KeyType == SettingsKeyType.SChar)
                             {
                                 AnswerString = Convert.ToString(ConsoleBase.ConsoleWrapper.ReadKey().KeyChar);
                             }
@@ -645,7 +621,7 @@ namespace KS.Misc.Settings
 
                     // Check for input
                     DebugWriter.WriteDebug(DebugLevel.I, "Is the answer numeric? {0}", StringQuery.IsStringNumeric(AnswerString));
-                    if (int.TryParse(AnswerString, out AnswerInt))
+                    if (int.TryParse(AnswerString, out int AnswerInt))
                     {
                         // The answer is numeric! Now, check for types
                         switch (KeyType)
@@ -845,7 +821,6 @@ namespace KS.Misc.Settings
                         switch (KeyType)
                         {
                             case SettingsKeyType.SString:
-                            case SettingsKeyType.SMaskedString:
                             case SettingsKeyType.SChar:
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.I, "Answer is not numeric and key is of the String or Char (inferred from keytype {0}) type. Setting variable...", KeyType.ToString());
@@ -908,25 +883,6 @@ namespace KS.Misc.Settings
                                         PropertyManager.SetPropertyValue(KeyVar, JoinedString);
                                     }
 
-                                    break;
-                                }
-                            case SettingsKeyType.SVariant:
-                                {
-                                    if (!VariantFunctionSetsValue)
-                                    {
-                                        // Now, set the value
-                                        if (FieldManager.CheckField(KeyVar))
-                                        {
-                                            // We're dealing with the field
-                                            FieldManager.SetValue(KeyVar, VariantValue, true);
-                                        }
-                                        else if (PropertyManager.CheckProperty(KeyVar))
-                                        {
-                                            // We're dealing with the property
-                                            PropertyManager.SetPropertyValue(KeyVar, VariantValue);
-                                        }
-                                    }
-                                    KeyFinished = true;
                                     break;
                                 }
                             case SettingsKeyType.SColor:
