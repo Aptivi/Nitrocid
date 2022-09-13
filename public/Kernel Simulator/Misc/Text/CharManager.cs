@@ -19,8 +19,6 @@
 using System;
 using System.Data;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Runtime.Remoting.Messaging;
 
 namespace KS.Misc.Text
 {
