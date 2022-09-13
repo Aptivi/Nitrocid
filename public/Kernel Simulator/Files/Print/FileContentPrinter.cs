@@ -19,12 +19,14 @@
 using Extensification.LongExts;
 using KS.ConsoleBase.Colors;
 using KS.Files.Folders;
+using KS.Files.Querying;
 using KS.Files.Read;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using System;
+using System.IO;
 
 namespace KS.Files.Print
 {
@@ -46,6 +48,22 @@ namespace KS.Files.Print
         /// <param name="filename">Full path to file with wildcards supported</param>
         /// <param name="PrintLineNumbers">Whether to also print the line numbers or not</param>
         public static void PrintContents(string filename, bool PrintLineNumbers)
+        {
+            // Check the path
+            Filesystem.ThrowOnInvalidPath(filename);
+            filename = Filesystem.NeutralizePath(filename);
+
+            // If interacting with the binary file, display it in hex. Otherwise, display it as if it is text.
+            if (Parsing.IsBinaryFile(filename))
+            {
+                byte[] bytes = File.ReadAllBytes(filename);
+                DisplayInHex(1, bytes.LongLength, bytes);
+            }
+            else
+                PrintContentsInternal(filename, PrintLineNumbers);
+        }
+
+        private static void PrintContentsInternal(string filename, bool PrintLineNumbers)
         {
             // Read the contents
             Filesystem.ThrowOnInvalidPath(filename);
@@ -82,7 +100,7 @@ namespace KS.Files.Print
                 //    0x00000030  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
                 // ... and so on.
                 TextWriterColor.Write($"0x{StartByte - 1L:X8}", false, ColorTools.ColTypes.ListEntry);
-                int ByteWritePositionX = ConsoleBase.ConsoleWrapper.CursorLeft + 2;
+                int ByteWritePositionX = $"0x{StartByte - 1L:X8}".Length + 2;
                 int ByteCharWritePositionX = 61 + (ByteWritePositionX - 12);
                 int ByteNumberEachSixteen = 1;
                 for (long CurrentByteNumber = StartByte, loopTo = EndByte; CurrentByteNumber <= loopTo; CurrentByteNumber++)
@@ -114,7 +132,7 @@ namespace KS.Files.Print
                     {
                         // OK, let's increase the byte iteration and get the next line ready
                         TextWriterColor.Write(Kernel.Kernel.NewLine + $"0x{CurrentByteNumber:X8}", false, ColorTools.ColTypes.ListEntry);
-                        ByteWritePositionX = ConsoleBase.ConsoleWrapper.CursorLeft + 2;
+                        ByteWritePositionX = $"0x{CurrentByteNumber:X8}".Length + 2;
                         ByteCharWritePositionX = 61 + (ByteWritePositionX - 12);
                         ByteNumberEachSixteen = 1;
                     }
