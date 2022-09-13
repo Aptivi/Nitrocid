@@ -20,12 +20,12 @@ build:
   project: Kernel Simulator.sln
   verbosity: normal
 after_build:
-- pwsh: 7z a devbuild.zip "$env:APPVEYOR_BUILD_FOLDER/Kernel Simulator/KSBuild/"
+- pwsh: 7z a devbuild.zip "$env:APPVEYOR_BUILD_FOLDER/public/Kernel Simulator/KSBuild/"
 test_script:
 - cmd: >-
     nuget install Appveyor.TestLogger -Version 2.0.0
 
-    dotnet test --test-adapter-path:. --logger:Appveyor "%APPVEYOR_BUILD_FOLDER%\KSTests\KSTests.csproj" -c %CONFIGURATION%
+    dotnet test --test-adapter-path:. --logger:Appveyor "%APPVEYOR_BUILD_FOLDER%\private\KSTests\KSTests.csproj" -c %CONFIGURATION%
 artifacts:
 - path: devbuild.zip
   name: Development build of Kernel Simulator
