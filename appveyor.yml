@@ -34,7 +34,7 @@ deploy:
 - provider: NuGet
   server: https://www.nuget.org/api/v2/package
   api_key:
-    secure: 2ocxItByklPOySTf0USeSC6NpQGHHkhYMzj08PlSKNZE/VxLSLzcQpdt4VMTQnJI
+    secure: zV2DJaWY2ZIvXYrXofxz/Hy39XzVryc7Z13umuhiYBf6QJziJpeMFQfKkAnh+7T5
   symbol_server: https://www.nuget.org/api/v2/package
 on_success:
 - ps: >-
