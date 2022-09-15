@@ -131,7 +131,8 @@ namespace KS.ConsoleBase.Colors
                     TextWriterColor.Write(Kernel.Kernel.NewLine + "  ", false, ColorTools.ColTypes.Neutral);
                     TextWriterColor.Write(" < ", false, RedForeground, RedBackground);
                     TextWriterWhereColor.WriteWhere("R: {0}", (int)Math.Round((ConsoleWrapper.CursorLeft + 35 - $"R: {CurrentColorR}".Length) / 2d), ConsoleWrapper.CursorTop, true, new Color($"{CurrentColorR};0;0"), CurrentColorR);
-                    TextWriterWhereColor.WriteWhere(" > " + Kernel.Kernel.NewLine, ConsoleWrapper.CursorLeft + 32, ConsoleWrapper.CursorTop, true, RedForeground, RedBackground);
+                    TextWriterWhereColor.WriteWhere(" > ", ConsoleWrapper.CursorLeft + 32, ConsoleWrapper.CursorTop, RedForeground, RedBackground);
+                    TextWriterColor.Write("", true, ColorTools.ColTypes.Neutral);
 
                     // The green color level
                     var GreenForeground = Convert.ToString(CurrentRange) == "G" ? new Color((int)ConsoleColors.Black) : new Color("0;255;0");
@@ -140,7 +141,8 @@ namespace KS.ConsoleBase.Colors
                     TextWriterColor.Write(Kernel.Kernel.NewLine + "  ", false, ColorTools.ColTypes.Neutral);
                     TextWriterColor.Write(" < ", false, GreenForeground, GreenBackground);
                     TextWriterWhereColor.WriteWhere("G: {0}", (int)Math.Round((ConsoleWrapper.CursorLeft + 35 - $"G: {CurrentColorG}".Length) / 2d), ConsoleWrapper.CursorTop, true, new Color($"0;{CurrentColorG};0"), CurrentColorG);
-                    TextWriterWhereColor.WriteWhere(" > " + Kernel.Kernel.NewLine, ConsoleWrapper.CursorLeft + 32, ConsoleWrapper.CursorTop, true, GreenForeground, GreenBackground);
+                    TextWriterWhereColor.WriteWhere(" > ", ConsoleWrapper.CursorLeft + 32, ConsoleWrapper.CursorTop, GreenForeground, GreenBackground);
+                    TextWriterColor.Write("", true, ColorTools.ColTypes.Neutral);
 
                     // The blue color level
                     var BlueForeground = Convert.ToString(CurrentRange) == "B" ? new Color((int)ConsoleColors.Black) : new Color("0;0;255");
@@ -149,17 +151,18 @@ namespace KS.ConsoleBase.Colors
                     TextWriterColor.Write(Kernel.Kernel.NewLine + "  ", false, ColorTools.ColTypes.Neutral);
                     TextWriterColor.Write(" < ", false, BlueForeground, BlueBackground);
                     TextWriterWhereColor.WriteWhere("B: {0}", (int)Math.Round((ConsoleWrapper.CursorLeft + 35 - $"B: {CurrentColorB}".Length) / 2d), ConsoleWrapper.CursorTop, true, new Color($"0;0;{CurrentColorB}"), CurrentColorB);
-                    TextWriterWhereColor.WriteWhere(" > " + Kernel.Kernel.NewLine, ConsoleWrapper.CursorLeft + 32, ConsoleWrapper.CursorTop, true, BlueForeground, BlueBackground);
+                    TextWriterWhereColor.WriteWhere(" > ", ConsoleWrapper.CursorLeft + 32, ConsoleWrapper.CursorTop, BlueForeground, BlueBackground);
+                    TextWriterColor.Write("", true, ColorTools.ColTypes.Neutral);
 
                     // Draw the RGB ramp
-                    TextWriterWhereColor.WriteWhere(WheelUpperLeftCornerChar + WheelUpperFrameChar.Repeat(ConsoleWrapper.WindowWidth - 6) + WheelUpperRightCornerChar, 2, ConsoleWrapper.WindowHeight - 6, ColorTools.ColTypes.Gray);
-                    TextWriterWhereColor.WriteWhere(WheelLeftFrameChar + " ".Repeat(ConsoleWrapper.WindowWidth - 6) + WheelRightFrameChar, 2, ConsoleWrapper.WindowHeight - 5, ColorTools.ColTypes.Gray);
-                    TextWriterWhereColor.WriteWhere(WheelLeftFrameChar + " ".Repeat(ConsoleWrapper.WindowWidth - 6) + WheelRightFrameChar, 2, ConsoleWrapper.WindowHeight - 4, ColorTools.ColTypes.Gray);
-                    TextWriterWhereColor.WriteWhere(WheelLeftFrameChar + " ".Repeat(ConsoleWrapper.WindowWidth - 6) + WheelRightFrameChar, 2, ConsoleWrapper.WindowHeight - 3, ColorTools.ColTypes.Gray);
-                    TextWriterWhereColor.WriteWhere(WheelLowerLeftCornerChar + WheelLowerFrameChar.Repeat(ConsoleWrapper.WindowWidth - 6) + WheelLowerRightCornerChar, 2, ConsoleWrapper.WindowHeight - 2, ColorTools.ColTypes.Gray);
-                    TextWriterWhereColor.WriteWhere(" ".Repeat(ConsoleExtensions.PercentRepeat(CurrentColorR, 255, 6)), 3, ConsoleWrapper.WindowHeight - 5, new Color((int)ConsoleColors.Black), new Color(255, 0, 0));
-                    TextWriterWhereColor.WriteWhere(" ".Repeat(ConsoleExtensions.PercentRepeat(CurrentColorG, 255, 6)), 3, ConsoleWrapper.WindowHeight - 4, new Color((int)ConsoleColors.Black), new Color(0, 255, 0));
-                    TextWriterWhereColor.WriteWhere(" ".Repeat(ConsoleExtensions.PercentRepeat(CurrentColorB, 255, 6)), 3, ConsoleWrapper.WindowHeight - 3, new Color((int)ConsoleColors.Black), new Color(0, 0, 255));
+                    TextWriterWhereColor.WriteWhere(WheelUpperLeftCornerChar + WheelUpperFrameChar.Repeat(ConsoleWrapper.WindowWidth - 6) + WheelUpperRightCornerChar, 2, ConsoleWrapper.WindowHeight - 6, true, ColorTools.ColTypes.Gray);
+                    TextWriterWhereColor.WriteWhere(WheelLeftFrameChar + " ".Repeat(ConsoleWrapper.WindowWidth - 6) + WheelRightFrameChar, 2, ConsoleWrapper.WindowHeight - 5, true, ColorTools.ColTypes.Gray);
+                    TextWriterWhereColor.WriteWhere(WheelLeftFrameChar + " ".Repeat(ConsoleWrapper.WindowWidth - 6) + WheelRightFrameChar, 2, ConsoleWrapper.WindowHeight - 4, true, ColorTools.ColTypes.Gray);
+                    TextWriterWhereColor.WriteWhere(WheelLeftFrameChar + " ".Repeat(ConsoleWrapper.WindowWidth - 6) + WheelRightFrameChar, 2, ConsoleWrapper.WindowHeight - 3, true, ColorTools.ColTypes.Gray);
+                    TextWriterWhereColor.WriteWhere(WheelLowerLeftCornerChar + WheelLowerFrameChar.Repeat(ConsoleWrapper.WindowWidth - 6) + WheelLowerRightCornerChar, 2, ConsoleWrapper.WindowHeight - 2, true, ColorTools.ColTypes.Gray);
+                    TextWriterWhereColor.WriteWhere(" ".Repeat(ConsoleExtensions.PercentRepeat(CurrentColorR, 255, 6)), 3, ConsoleWrapper.WindowHeight - 5, true, new Color((int)ConsoleColors.Black), new Color(255, 0, 0));
+                    TextWriterWhereColor.WriteWhere(" ".Repeat(ConsoleExtensions.PercentRepeat(CurrentColorG, 255, 6)), 3, ConsoleWrapper.WindowHeight - 4, true, new Color((int)ConsoleColors.Black), new Color(0, 255, 0));
+                    TextWriterWhereColor.WriteWhere(" ".Repeat(ConsoleExtensions.PercentRepeat(CurrentColorB, 255, 6)), 3, ConsoleWrapper.WindowHeight - 3, true, new Color((int)ConsoleColors.Black), new Color(0, 0, 255));
 
                     // Show example
                     var PreviewColor = new Color($"{CurrentColorR};{CurrentColorG};{CurrentColorB}");
