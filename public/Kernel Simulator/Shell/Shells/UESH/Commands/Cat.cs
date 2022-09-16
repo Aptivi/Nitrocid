@@ -58,11 +58,15 @@ namespace KS.Shell.Shells.UESH.Commands
             try
             {
                 bool PrintLines = Flags.PrintLineNumbers;
+                bool ForcePlain = false;
                 if (ListSwitchesOnly.Contains("-lines"))
                     PrintLines = true;
                 if (ListSwitchesOnly.Contains("-nolines"))
-                    PrintLines = false; // -lines and -nolines cancel together.
-                FileContentPrinter.PrintContents(ListArgsOnly[0], PrintLines);
+                    // -lines and -nolines cancel together.
+                    PrintLines = false; 
+                if (ListSwitchesOnly.Contains("-plain"))
+                    ForcePlain = true;
+                FileContentPrinter.PrintContents(ListArgsOnly[0], PrintLines, ForcePlain);
             }
             catch (Exception ex)
             {

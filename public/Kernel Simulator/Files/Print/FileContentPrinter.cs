@@ -47,14 +47,15 @@ namespace KS.Files.Print
         /// </summary>
         /// <param name="filename">Full path to file with wildcards supported</param>
         /// <param name="PrintLineNumbers">Whether to also print the line numbers or not</param>
-        public static void PrintContents(string filename, bool PrintLineNumbers)
+        /// <param name="ForcePlain">Forces binary files to be printed verbatim</param>
+        public static void PrintContents(string filename, bool PrintLineNumbers, bool ForcePlain = false)
         {
             // Check the path
             Filesystem.ThrowOnInvalidPath(filename);
             filename = Filesystem.NeutralizePath(filename);
 
-            // If interacting with the binary file, display it in hex. Otherwise, display it as if it is text.
-            if (Parsing.IsBinaryFile(filename))
+            // If interacting with the binary file, display it in hex. Otherwise, display it as if it is text. Except if forced to view binaries as texts.
+            if (Parsing.IsBinaryFile(filename) && !ForcePlain)
             {
                 byte[] bytes = File.ReadAllBytes(filename);
                 DisplayInHex(1, bytes.LongLength, bytes);
