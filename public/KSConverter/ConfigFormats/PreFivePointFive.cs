@@ -62,57 +62,57 @@ namespace KSConverter
                                 Shell.ColoredShell = false;
                             }
                         }
-                        if (line.Contains("User Name Shell Color = "))
+                        if (line.Contains("User Name Shell , "))
                         {
                             if (Shell.ColoredShell == true)
-                                ColorTools.UserNameShellColor = new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), line.Replace("User Name Shell Color = ", ""))));
+                                ColorTools.SetColor(ColorTools.ColTypes.UserName, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), line.Replace("User Name Shell , ", "")))));
                         }
-                        else if (line.Contains("Host Name Shell Color = "))
+                        else if (line.Contains("Host Name Shell , "))
                         {
                             if (Shell.ColoredShell == true)
-                                ColorTools.HostNameShellColor = new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), line.Replace("Host Name Shell Color = ", ""))));
+                                ColorTools.SetColor(ColorTools.ColTypes.HostName, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), line.Replace("Host Name Shell , ", "")))));
                         }
-                        else if (line.Contains("Continuable Kernel Error Color = "))
+                        else if (line.Contains("Continuable Kernel Error , "))
                         {
                             if (Shell.ColoredShell == true)
-                                ColorTools.ContKernelErrorColor = new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), line.Replace("Continuable Kernel Error Color = ", ""))));
+                                ColorTools.SetColor(ColorTools.ColTypes.Continuable, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), line.Replace("Continuable Kernel Error , ", "")))));
                         }
-                        else if (line.Contains("Uncontinuable Kernel Error Color = "))
+                        else if (line.Contains("Uncontinuable Kernel Error , "))
                         {
                             if (Shell.ColoredShell == true)
-                                ColorTools.UncontKernelErrorColor = new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), line.Replace("Uncontinuable Kernel Error Color = ", ""))));
+                                ColorTools.SetColor(ColorTools.ColTypes.Uncontinuable, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), line.Replace("Uncontinuable Kernel Error , ", "")))));
                         }
-                        else if (line.Contains("Text Color = "))
+                        else if (line.Contains("Text , "))
                         {
                             if (Shell.ColoredShell == true)
-                                ColorTools.NeutralTextColor = new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), line.Replace("Text Color = ", ""))));
+                                ColorTools.SetColor(ColorTools.ColTypes.Neutral, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), line.Replace("Text , ", "")))));
                         }
-                        else if (line.Contains("License Color = "))
+                        else if (line.Contains("License , "))
                         {
                             if (Shell.ColoredShell == true)
-                                ColorTools.LicenseColor = new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), line.Replace("License Color = ", ""))));
+                                ColorTools.SetColor(ColorTools.ColTypes.License, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), line.Replace("License , ", "")))));
                         }
-                        else if (line.Contains("Background Color = "))
+                        else if (line.Contains("Background , "))
                         {
                             if (Shell.ColoredShell == true)
                             {
-                                ColorTools.BackgroundColor = new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), line.Replace("Background Color = ", ""))));
+                                ColorTools.SetColor(ColorTools.ColTypes.Background, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), line.Replace("Background , ", "")))));
                             }
                         }
-                        else if (line.Contains("Input Color = "))
+                        else if (line.Contains("Input , "))
                         {
                             if (Shell.ColoredShell == true)
-                                ColorTools.InputColor = new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), line.Replace("Input Color = ", ""))));
+                                ColorTools.SetColor(ColorTools.ColTypes.Input, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), line.Replace("Input , ", "")))));
                         }
-                        else if (line.Contains("Listed command in Help Color = "))
+                        else if (line.Contains("Listed command in Help , "))
                         {
                             if (Shell.ColoredShell == true)
-                                ColorTools.ListEntryColor = new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), line.Replace("Listed command in Help Color = ", ""))));
+                                ColorTools.SetColor(ColorTools.ColTypes.ListEntry, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), line.Replace("Listed command in Help , ", "")))));
                         }
-                        else if (line.Contains("Definition of command in Help Color = "))
+                        else if (line.Contains("Definition of command in Help , "))
                         {
                             if (Shell.ColoredShell == true)
-                                ColorTools.ListValueColor = new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), line.Replace("Definition of command in Help Color = ", ""))));
+                                ColorTools.SetColor(ColorTools.ColTypes.ListValue, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), line.Replace("Definition of command in Help , ", "")))));
                         }
                         else if (line.Contains("Maintenance Mode = "))
                         {

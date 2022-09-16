@@ -75,7 +75,7 @@ namespace KS.Misc.Calendar
                     {
                         ColoredCell = true,
                         CellColor = new Color(128, 128, 128),
-                        CellBackgroundColor = ColorTools.BackgroundColor
+                        CellBackgroundColor = ColorTools.GetColor(ColorTools.ColTypes.Background)
                     };
                     CalendarCellOptions.Add(WeekendOptions);
                 }
@@ -96,8 +96,8 @@ namespace KS.Misc.Calendar
                         var EventCell = new CellOptions((int)CurrentDate.DayOfWeek + 1, CurrentWeek)
                         {
                             ColoredCell = true,
-                            CellColor = ColorTools.StageColor,
-                            CellBackgroundColor = ColorTools.BackgroundColor
+                            CellColor = ColorTools.GetColor(ColorTools.ColTypes.Stage),
+                            CellBackgroundColor = ColorTools.GetColor(ColorTools.ColTypes.Background)
                         };
                         CalendarCellOptions.Add(EventCell);
                         EventMarked = true;

@@ -44,7 +44,7 @@ namespace KS.Shell.Shells.Test.Commands
             TextWriterColor.Write($" {PadlockChar} Secure ", false, new Color((int)ConsoleColor.Black), new Color(255, 255, 85));
             TextWriterColor.Write(Convert.ToString(TransitionChar), false, new Color(255, 255, 85), new Color(255, 255, 255));
             TextWriterColor.Write($" {GitBranchChar} master ", false, new Color((int)ConsoleColor.Black), new Color(255, 255, 255));
-            TextWriterColor.Write(Convert.ToString(TransitionChar), true, new Color(255, 255, 255), ColorTools.BackgroundColor);
+            TextWriterColor.Write(Convert.ToString(TransitionChar), true, new Color(255, 255, 255));
         }
 
     }

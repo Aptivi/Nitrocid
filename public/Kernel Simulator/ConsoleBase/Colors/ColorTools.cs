@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase.Themes;
@@ -35,20 +37,19 @@ namespace KS.ConsoleBase.Colors
     public static class ColorTools
     {
 
-        // TODO: Condense the color types to slice the line numbers massively
         /// <summary>
         /// Enumeration for color types
         /// </summary>
         public enum ColTypes : int
         {
             /// <summary>
-            /// Neutral text (for general purposes)
-            /// </summary>
-            Neutral,
-            /// <summary>
             /// Input text
             /// </summary>
             Input,
+            /// <summary>
+            /// License color
+            /// </summary>
+            License,
             /// <summary>
             /// Continuable kernel panic text (usually sync'd with Warning)
             /// </summary>
@@ -66,21 +67,21 @@ namespace KS.ConsoleBase.Colors
             /// </summary>
             UserName,
             /// <summary>
-            /// License color
+            /// Background color
             /// </summary>
-            License,
+            Background,
             /// <summary>
-            /// Gray color (for special purposes)
+            /// Neutral text (for general purposes)
             /// </summary>
-            Gray,
-            /// <summary>
-            /// List value text
-            /// </summary>
-            ListValue,
+            Neutral,
             /// <summary>
             /// List entry text
             /// </summary>
             ListEntry,
+            /// <summary>
+            /// List value text
+            /// </summary>
+            ListValue,
             /// <summary>
             /// Stage text
             /// </summary>
@@ -128,7 +129,7 @@ namespace KS.ConsoleBase.Colors
             /// <summary>
             /// User dollar sign on shell text
             /// </summary>
-            UserDollarSign,
+            UserDollar,
             /// <summary>
             /// Tip text
             /// </summary>
@@ -192,162 +193,68 @@ namespace KS.ConsoleBase.Colors
             /// <summary>
             /// Alternative option
             /// </summary>
-            AlternativeOption
+            AlternativeOption,
+            /// <summary>
+            /// Gray color (for special purposes)
+            /// </summary>
+            Gray = -1,
         }
 
         // Variables for colors used by previous versions of the kernel.
+        internal static readonly Dictionary<ColTypes, Color> KernelColors = new()
+        {
+            { ColTypes.Input, new((int)ConsoleColors.White) },
+            { ColTypes.License, new((int)ConsoleColors.White) },
+            { ColTypes.Continuable, new((int)ConsoleColors.Yellow) },
+            { ColTypes.Uncontinuable, new((int)ConsoleColors.Red) },
+            { ColTypes.HostName, new((int)ConsoleColors.DarkGreen) },
+            { ColTypes.UserName, new((int)ConsoleColors.Green) },
+            { ColTypes.Background, new((int)ConsoleColors.Black) },
+            { ColTypes.Neutral, new((int)ConsoleColors.Gray) },
+            { ColTypes.ListEntry, new((int)ConsoleColors.DarkYellow) },
+            { ColTypes.ListValue, new((int)ConsoleColors.DarkGray) },
+            { ColTypes.Stage, new((int)ConsoleColors.Green) },
+            { ColTypes.Error, new((int)ConsoleColors.Red) },
+            { ColTypes.Warning, new((int)ConsoleColors.Yellow) },
+            { ColTypes.Option, new((int)ConsoleColors.DarkYellow) },
+            { ColTypes.Banner, new((int)ConsoleColors.Green) },
+            { ColTypes.NotificationTitle, new((int)ConsoleColors.White) },
+            { ColTypes.NotificationDescription, new((int)ConsoleColors.Gray) },
+            { ColTypes.NotificationProgress, new((int)ConsoleColors.DarkYellow) },
+            { ColTypes.NotificationFailure, new((int)ConsoleColors.Red) },
+            { ColTypes.Question, new((int)ConsoleColors.Yellow) },
+            { ColTypes.Success, new((int)ConsoleColors.Green) },
+            { ColTypes.UserDollar, new((int)ConsoleColors.Gray) },
+            { ColTypes.Tip, new((int)ConsoleColors.Gray) },
+            { ColTypes.SeparatorText, new((int)ConsoleColors.White) },
+            { ColTypes.Separator, new((int)ConsoleColors.Gray) },
+            { ColTypes.ListTitle, new((int)ConsoleColors.White) },
+            { ColTypes.DevelopmentWarning, new((int)ConsoleColors.Yellow) },
+            { ColTypes.StageTime, new((int)ConsoleColors.Gray) },
+            { ColTypes.Progress, new((int)ConsoleColors.DarkYellow) },
+            { ColTypes.BackOption, new((int)ConsoleColors.DarkRed) },
+            { ColTypes.LowPriorityBorder, new((int)ConsoleColors.White) },
+            { ColTypes.MediumPriorityBorder, new((int)ConsoleColors.Yellow) },
+            { ColTypes.HighPriorityBorder, new((int)ConsoleColors.Red) },
+            { ColTypes.TableSeparator, new((int)ConsoleColors.DarkGray) },
+            { ColTypes.TableHeader, new((int)ConsoleColors.White) },
+            { ColTypes.TableValue, new((int)ConsoleColors.Gray) },
+            { ColTypes.SelectedOption, new((int)ConsoleColors.Yellow) },
+            { ColTypes.AlternativeOption, new((int)ConsoleColors.DarkGreen) },
+        };
+
         /// <summary>
-        /// Input text
+        /// Gets a color from the color type
         /// </summary>
-        public static Color InputColor = new((int)ConsoleColors.White);
+        /// <param name="type">Color type</param>
+        public static Color GetColor(ColTypes type) => KernelColors[type];
+
         /// <summary>
-        /// License color
+        /// Sets a color from the color type
         /// </summary>
-        public static Color LicenseColor = new((int)ConsoleColors.White);
-        /// <summary>
-        /// Continuable kernel panic text (usually sync'd with Warning)
-        /// </summary>
-        public static Color ContKernelErrorColor = new((int)ConsoleColors.Yellow);
-        /// <summary>
-        /// Uncontinuable kernel panic text (usually sync'd with Error)
-        /// </summary>
-        public static Color UncontKernelErrorColor = new((int)ConsoleColors.Red);
-        /// <summary>
-        /// Host name color
-        /// </summary>
-        public static Color HostNameShellColor = new((int)ConsoleColors.DarkGreen);
-        /// <summary>
-        /// User name color
-        /// </summary>
-        public static Color UserNameShellColor = new((int)ConsoleColors.Green);
-        /// <summary>
-        /// Background color
-        /// </summary>
-        public static Color BackgroundColor = new((int)ConsoleColors.Black);
-        /// <summary>
-        /// Neutral text (for general purposes)
-        /// </summary>
-        public static Color NeutralTextColor = new((int)ConsoleColors.Gray);
-        /// <summary>
-        /// List entry text
-        /// </summary>
-        public static Color ListEntryColor = new((int)ConsoleColors.DarkYellow);
-        /// <summary>
-        /// List value text
-        /// </summary>
-        public static Color ListValueColor = new((int)ConsoleColors.DarkGray);
-        /// <summary>
-        /// Stage text
-        /// </summary>
-        public static Color StageColor = new((int)ConsoleColors.Green);
-        /// <summary>
-        /// Error text
-        /// </summary>
-        public static Color ErrorColor = new((int)ConsoleColors.Red);
-        /// <summary>
-        /// Warning text
-        /// </summary>
-        public static Color WarningColor = new((int)ConsoleColors.Yellow);
-        /// <summary>
-        /// Option text
-        /// </summary>
-        public static Color OptionColor = new((int)ConsoleColors.DarkYellow);
-        /// <summary>
-        /// Banner text
-        /// </summary>
-        public static Color BannerColor = new((int)ConsoleColors.Green);
-        /// <summary>
-        /// Notification title text
-        /// </summary>
-        public static Color NotificationTitleColor = new((int)ConsoleColors.White);
-        /// <summary>
-        /// Notification description text
-        /// </summary>
-        public static Color NotificationDescriptionColor = new((int)ConsoleColors.Gray);
-        /// <summary>
-        /// Notification progress text
-        /// </summary>
-        public static Color NotificationProgressColor = new((int)ConsoleColors.DarkYellow);
-        /// <summary>
-        /// Notification failure text
-        /// </summary>
-        public static Color NotificationFailureColor = new((int)ConsoleColors.Red);
-        /// <summary>
-        /// Question text
-        /// </summary>
-        public static Color QuestionColor = new((int)ConsoleColors.Yellow);
-        /// <summary>
-        /// Success text
-        /// </summary>
-        public static Color SuccessColor = new((int)ConsoleColors.Green);
-        /// <summary>
-        /// User dollar sign on shell text
-        /// </summary>
-        public static Color UserDollarColor = new((int)ConsoleColors.Gray);
-        /// <summary>
-        /// Tip text
-        /// </summary>
-        public static Color TipColor = new((int)ConsoleColors.Gray);
-        /// <summary>
-        /// Separator text
-        /// </summary>
-        public static Color SeparatorTextColor = new((int)ConsoleColors.White);
-        /// <summary>
-        /// Separator color
-        /// </summary>
-        public static Color SeparatorColor = new((int)ConsoleColors.Gray);
-        /// <summary>
-        /// List title text
-        /// </summary>
-        public static Color ListTitleColor = new((int)ConsoleColors.White);
-        /// <summary>
-        /// Development warning text
-        /// </summary>
-        public static Color DevelopmentWarningColor = new((int)ConsoleColors.Yellow);
-        /// <summary>
-        /// Stage time text
-        /// </summary>
-        public static Color StageTimeColor = new((int)ConsoleColors.Gray);
-        /// <summary>
-        /// General progress text
-        /// </summary>
-        public static Color ProgressColor = new((int)ConsoleColors.DarkYellow);
-        /// <summary>
-        /// Back option text
-        /// </summary>
-        public static Color BackOptionColor = new((int)ConsoleColors.DarkRed);
-        /// <summary>
-        /// Low priority notification border color
-        /// </summary>
-        public static Color LowPriorityBorderColor = new((int)ConsoleColors.White);
-        /// <summary>
-        /// Medium priority notification border color
-        /// </summary>
-        public static Color MediumPriorityBorderColor = new((int)ConsoleColors.Yellow);
-        /// <summary>
-        /// High priority notification border color
-        /// </summary>
-        public static Color HighPriorityBorderColor = new((int)ConsoleColors.Red);
-        /// <summary>
-        /// Table separator
-        /// </summary>
-        public static Color TableSeparatorColor = new((int)ConsoleColors.DarkGray);
-        /// <summary>
-        /// Table header
-        /// </summary>
-        public static Color TableHeaderColor = new((int)ConsoleColors.White);
-        /// <summary>
-        /// Table value
-        /// </summary>
-        public static Color TableValueColor = new((int)ConsoleColors.Gray);
-        /// <summary>
-        /// Selected option
-        /// </summary>
-        public static Color SelectedOptionColor = new((int)ConsoleColors.Yellow);
-        /// <summary>
-        /// Alternative option
-        /// </summary>
-        public static Color AlternativeOptionColor = new((int)ConsoleColors.DarkGreen);
+        /// <param name="type">Color type</param>
+        /// <param name="color">Color to be set</param>
+        public static Color SetColor(ColTypes type, Color color) => KernelColors[type] = color;
 
         /// <summary>
         /// Resets all colors to default
@@ -356,44 +263,13 @@ namespace KS.ConsoleBase.Colors
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Resetting colors");
             var DefInfo = new ThemeInfo("_Default");
-            InputColor = DefInfo.ThemeInputColor;
-            LicenseColor = DefInfo.ThemeLicenseColor;
-            ContKernelErrorColor = DefInfo.ThemeContKernelErrorColor;
-            UncontKernelErrorColor = DefInfo.ThemeUncontKernelErrorColor;
-            HostNameShellColor = DefInfo.ThemeHostNameShellColor;
-            UserNameShellColor = DefInfo.ThemeUserNameShellColor;
-            BackgroundColor = DefInfo.ThemeBackgroundColor;
-            NeutralTextColor = DefInfo.ThemeNeutralTextColor;
-            ListEntryColor = DefInfo.ThemeListEntryColor;
-            ListValueColor = DefInfo.ThemeListValueColor;
-            StageColor = DefInfo.ThemeStageColor;
-            ErrorColor = DefInfo.ThemeErrorColor;
-            WarningColor = DefInfo.ThemeWarningColor;
-            OptionColor = DefInfo.ThemeOptionColor;
-            BannerColor = DefInfo.ThemeBannerColor;
-            NotificationTitleColor = DefInfo.ThemeNotificationTitleColor;
-            NotificationDescriptionColor = DefInfo.ThemeNotificationDescriptionColor;
-            NotificationProgressColor = DefInfo.ThemeNotificationProgressColor;
-            NotificationFailureColor = DefInfo.ThemeNotificationFailureColor;
-            QuestionColor = DefInfo.ThemeQuestionColor;
-            SuccessColor = DefInfo.ThemeSuccessColor;
-            UserDollarColor = DefInfo.ThemeUserDollarColor;
-            TipColor = DefInfo.ThemeTipColor;
-            SeparatorTextColor = DefInfo.ThemeSeparatorTextColor;
-            SeparatorColor = DefInfo.ThemeSeparatorColor;
-            ListTitleColor = DefInfo.ThemeListTitleColor;
-            DevelopmentWarningColor = DefInfo.ThemeDevelopmentWarningColor;
-            StageTimeColor = DefInfo.ThemeStageTimeColor;
-            ProgressColor = DefInfo.ThemeProgressColor;
-            BackOptionColor = DefInfo.ThemeBackOptionColor;
-            LowPriorityBorderColor = DefInfo.ThemeLowPriorityBorderColor;
-            MediumPriorityBorderColor = DefInfo.ThemeMediumPriorityBorderColor;
-            HighPriorityBorderColor = DefInfo.ThemeHighPriorityBorderColor;
-            TableSeparatorColor = DefInfo.ThemeTableSeparatorColor;
-            TableHeaderColor = DefInfo.ThemeTableHeaderColor;
-            TableValueColor = DefInfo.ThemeTableValueColor;
-            SelectedOptionColor = DefInfo.ThemeSelectedOptionColor;
-            AlternativeOptionColor = DefInfo.ThemeAlternativeOptionColor;
+
+            // Set colors
+            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ColTypes)).Length - 2; typeIndex++)
+            {
+                ColTypes type = KernelColors.Keys.ElementAt(typeIndex);
+                KernelColors[type] = DefInfo.ThemeColors[type];
+            }
             LoadBack();
 
             // Raise event
@@ -408,7 +284,7 @@ namespace KS.ConsoleBase.Colors
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Filling background with background color");
-                SetConsoleColor(BackgroundColor, true);
+                SetConsoleColor(GetColor(ColTypes.Background), true);
                 ConsoleWrapper.Clear();
             }
             catch (Exception ex)
@@ -683,44 +559,44 @@ namespace KS.ConsoleBase.Colors
                 // Set the colors
                 try
                 {
-                    ColorTools.InputColor = new Color(InputColor);
-                    ColorTools.LicenseColor = new Color(LicenseColor);
-                    ColorTools.ContKernelErrorColor = new Color(ContKernelErrorColor);
-                    ColorTools.UncontKernelErrorColor = new Color(UncontKernelErrorColor);
-                    ColorTools.HostNameShellColor = new Color(HostNameShellColor);
-                    ColorTools.UserNameShellColor = new Color(UserNameShellColor);
-                    ColorTools.BackgroundColor = new Color(BackgroundColor);
-                    ColorTools.NeutralTextColor = new Color(NeutralTextColor);
-                    ColorTools.ListEntryColor = new Color(ListEntryColor);
-                    ColorTools.ListValueColor = new Color(ListValueColor);
-                    ColorTools.StageColor = new Color(StageColor);
-                    ColorTools.ErrorColor = new Color(ErrorColor);
-                    ColorTools.WarningColor = new Color(WarningColor);
-                    ColorTools.OptionColor = new Color(OptionColor);
-                    ColorTools.BannerColor = new Color(BannerColor);
-                    ColorTools.NotificationTitleColor = new Color(NotificationTitleColor);
-                    ColorTools.NotificationDescriptionColor = new Color(NotificationDescriptionColor);
-                    ColorTools.NotificationProgressColor = new Color(NotificationProgressColor);
-                    ColorTools.NotificationFailureColor = new Color(NotificationFailureColor);
-                    ColorTools.QuestionColor = new Color(QuestionColor);
-                    ColorTools.SuccessColor = new Color(SuccessColor);
-                    ColorTools.UserDollarColor = new Color(UserDollarColor);
-                    ColorTools.TipColor = new Color(TipColor);
-                    ColorTools.SeparatorTextColor = new Color(SeparatorTextColor);
-                    ColorTools.SeparatorColor = new Color(SeparatorColor);
-                    ColorTools.ListTitleColor = new Color(ListTitleColor);
-                    ColorTools.DevelopmentWarningColor = new Color(DevelopmentWarningColor);
-                    ColorTools.StageTimeColor = new Color(StageTimeColor);
-                    ColorTools.ProgressColor = new Color(ProgressColor);
-                    ColorTools.BackOptionColor = new Color(BackOptionColor);
-                    ColorTools.LowPriorityBorderColor = new Color(LowPriorityBorderColor);
-                    ColorTools.MediumPriorityBorderColor = new Color(MediumPriorityBorderColor);
-                    ColorTools.HighPriorityBorderColor = new Color(HighPriorityBorderColor);
-                    ColorTools.TableSeparatorColor = new Color(TableSeparatorColor);
-                    ColorTools.TableHeaderColor = new Color(TableHeaderColor);
-                    ColorTools.TableValueColor = new Color(TableValueColor);
-                    ColorTools.SelectedOptionColor = new Color(SelectedOptionColor);
-                    ColorTools.AlternativeOptionColor = new Color(AlternativeOptionColor);
+                    KernelColors[ColTypes.Input] = new Color(InputColor);
+                    KernelColors[ColTypes.License] = new Color(LicenseColor);
+                    KernelColors[ColTypes.Continuable] = new Color(ContKernelErrorColor);
+                    KernelColors[ColTypes.Uncontinuable] = new Color(UncontKernelErrorColor);
+                    KernelColors[ColTypes.HostName] = new Color(HostNameShellColor);
+                    KernelColors[ColTypes.UserName] = new Color(UserNameShellColor);
+                    KernelColors[ColTypes.Background] = new Color(BackgroundColor);
+                    KernelColors[ColTypes.Neutral] = new Color(NeutralTextColor);
+                    KernelColors[ColTypes.ListEntry] = new Color(ListEntryColor);
+                    KernelColors[ColTypes.ListValue] = new Color(ListValueColor);
+                    KernelColors[ColTypes.Stage] = new Color(StageColor);
+                    KernelColors[ColTypes.Error] = new Color(ErrorColor);
+                    KernelColors[ColTypes.Warning] = new Color(WarningColor);
+                    KernelColors[ColTypes.Option] = new Color(OptionColor);
+                    KernelColors[ColTypes.Banner] = new Color(BannerColor);
+                    KernelColors[ColTypes.NotificationTitle] = new Color(NotificationTitleColor);
+                    KernelColors[ColTypes.NotificationDescription] = new Color(NotificationDescriptionColor);
+                    KernelColors[ColTypes.NotificationProgress] = new Color(NotificationProgressColor);
+                    KernelColors[ColTypes.NotificationFailure] = new Color(NotificationFailureColor);
+                    KernelColors[ColTypes.Question] = new Color(QuestionColor);
+                    KernelColors[ColTypes.Success] = new Color(SuccessColor);
+                    KernelColors[ColTypes.UserDollar] = new Color(UserDollarColor);
+                    KernelColors[ColTypes.Tip] = new Color(TipColor);
+                    KernelColors[ColTypes.SeparatorText] = new Color(SeparatorTextColor);
+                    KernelColors[ColTypes.Separator] = new Color(SeparatorColor);
+                    KernelColors[ColTypes.ListTitle] = new Color(ListTitleColor);
+                    KernelColors[ColTypes.DevelopmentWarning] = new Color(DevelopmentWarningColor);
+                    KernelColors[ColTypes.StageTime] = new Color(StageTimeColor);
+                    KernelColors[ColTypes.Progress] = new Color(ProgressColor);
+                    KernelColors[ColTypes.BackOption] = new Color(BackOptionColor);
+                    KernelColors[ColTypes.LowPriorityBorder] = new Color(LowPriorityBorderColor);
+                    KernelColors[ColTypes.MediumPriorityBorder] = new Color(MediumPriorityBorderColor);
+                    KernelColors[ColTypes.HighPriorityBorder] = new Color(HighPriorityBorderColor);
+                    KernelColors[ColTypes.TableSeparator] = new Color(TableSeparatorColor);
+                    KernelColors[ColTypes.TableHeader] = new Color(TableHeaderColor);
+                    KernelColors[ColTypes.TableValue] = new Color(TableValueColor);
+                    KernelColors[ColTypes.SelectedOption] = new Color(SelectedOptionColor);
+                    KernelColors[ColTypes.AlternativeOption] = new Color(AlternativeOptionColor);
                     LoadBack();
                     Config.CreateConfig();
 
@@ -746,9 +622,9 @@ namespace KS.ConsoleBase.Colors
         /// </summary>
         public static Color GetGray()
         {
-            if (BackgroundColor.IsBright)
+            if (GetColor(ColTypes.Background).IsBright)
             {
-                return NeutralTextColor;
+                return GetColor(ColTypes.Neutral);
             }
             else
             {
@@ -772,204 +648,19 @@ namespace KS.ConsoleBase.Colors
         {
             switch (colorType)
             {
-                case ColTypes.Neutral:
-                    {
-                        SetConsoleColor(NeutralTextColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.Continuable:
-                    {
-                        SetConsoleColor(ContKernelErrorColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.Uncontinuable:
-                    {
-                        SetConsoleColor(UncontKernelErrorColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.HostName:
-                    {
-                        SetConsoleColor(HostNameShellColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.UserName:
-                    {
-                        SetConsoleColor(UserNameShellColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.License:
-                    {
-                        SetConsoleColor(LicenseColor, Background, ForceSet);
-                        break;
-                    }
                 case ColTypes.Gray:
                     {
                         SetConsoleColor(GetGray(), Background, ForceSet);
                         break;
                     }
-                case ColTypes.ListValue:
-                    {
-                        SetConsoleColor(ListValueColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.ListEntry:
-                    {
-                        SetConsoleColor(ListEntryColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.Stage:
-                    {
-                        SetConsoleColor(StageColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.Error:
-                    {
-                        SetConsoleColor(ErrorColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.Warning:
-                    {
-                        SetConsoleColor(WarningColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.Option:
-                    {
-                        SetConsoleColor(OptionColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.Banner:
-                    {
-                        SetConsoleColor(BannerColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.NotificationTitle:
-                    {
-                        SetConsoleColor(NotificationTitleColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.NotificationDescription:
-                    {
-                        SetConsoleColor(NotificationDescriptionColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.NotificationProgress:
-                    {
-                        SetConsoleColor(NotificationProgressColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.NotificationFailure:
-                    {
-                        SetConsoleColor(NotificationFailureColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.Question:
-                    {
-                        SetConsoleColor(QuestionColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.Input:
-                    {
-                        SetConsoleColor(InputColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.Success:
-                    {
-                        SetConsoleColor(SuccessColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.UserDollarSign:
-                    {
-                        SetConsoleColor(UserDollarColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.Tip:
-                    {
-                        SetConsoleColor(TipColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.SeparatorText:
-                    {
-                        SetConsoleColor(SeparatorTextColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.Separator:
-                    {
-                        SetConsoleColor(SeparatorColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.ListTitle:
-                    {
-                        SetConsoleColor(ListTitleColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.DevelopmentWarning:
-                    {
-                        SetConsoleColor(DevelopmentWarningColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.StageTime:
-                    {
-                        SetConsoleColor(StageTimeColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.Progress:
-                    {
-                        SetConsoleColor(ProgressColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.BackOption:
-                    {
-                        SetConsoleColor(BackOptionColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.LowPriorityBorder:
-                    {
-                        SetConsoleColor(LowPriorityBorderColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.MediumPriorityBorder:
-                    {
-                        SetConsoleColor(MediumPriorityBorderColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.HighPriorityBorder:
-                    {
-                        SetConsoleColor(HighPriorityBorderColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.TableSeparator:
-                    {
-                        SetConsoleColor(TableSeparatorColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.TableHeader:
-                    {
-                        SetConsoleColor(TableHeaderColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.TableValue:
-                    {
-                        SetConsoleColor(TableValueColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.SelectedOption:
-                    {
-                        SetConsoleColor(SelectedOptionColor, Background, ForceSet);
-                        break;
-                    }
-                case ColTypes.AlternativeOption:
-                    {
-                        SetConsoleColor(AlternativeOptionColor, Background, ForceSet);
-                        break;
-                    }
-
                 default:
                     {
+                        SetConsoleColor(ColorTools.GetColor(colorType), Background, ForceSet);
                         break;
                     }
             }
             if (!Background)
-                SetConsoleColor(BackgroundColor, true);
+                SetConsoleColor(GetColor(ColTypes.Background), true);
         }
 
         /// <summary>

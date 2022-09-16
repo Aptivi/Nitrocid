@@ -119,7 +119,7 @@ namespace KS.Shell.Shells.UESH.Commands
             Assembly.LoadFrom(RetroExecKSPath).EntryPoint.Invoke("", Array.Empty<object>());
 
             // Clear the console
-            ColorTools.SetConsoleColor(ColorTools.BackgroundColor, true);
+            ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
             ConsoleBase.ConsoleWrapper.Clear();
         }
 

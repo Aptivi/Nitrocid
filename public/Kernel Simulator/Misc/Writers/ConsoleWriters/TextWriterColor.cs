@@ -77,7 +77,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     {
                         WriterPlainManager.CurrentPlain.WritePlain(Text, false, vars);
                         ColorTools.SetConsoleColor(colorType);
-                        ColorTools.SetConsoleColor(ColorTools.BackgroundColor, true);
+                        ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
                         WriterPlainManager.CurrentPlain.WritePlain("", Line);
                     }
                     else
@@ -169,12 +169,12 @@ namespace KS.Misc.Writers.ConsoleWriters
                     // Try to write to console
                     if (Highlight)
                     {
-                        ConsoleWrapper.ForegroundColor = (ConsoleColor)Convert.ToInt32(StringQuery.IsStringNumeric(ColorTools.BackgroundColor.PlainSequence) && Convert.ToDouble(ColorTools.BackgroundColor.PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.BackgroundColor.PlainSequence) : ConsoleColor.Black);
+                        ConsoleWrapper.ForegroundColor = (ConsoleColor)Convert.ToInt32(StringQuery.IsStringNumeric(ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) && Convert.ToDouble(ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) : ConsoleColor.Black);
                         ConsoleWrapper.BackgroundColor = color;
                     }
                     else
                     {
-                        ConsoleWrapper.BackgroundColor = (ConsoleColor)Convert.ToInt32(StringQuery.IsStringNumeric(ColorTools.BackgroundColor.PlainSequence) && Convert.ToDouble(ColorTools.BackgroundColor.PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.BackgroundColor.PlainSequence) : ConsoleColor.Black);
+                        ConsoleWrapper.BackgroundColor = (ConsoleColor)Convert.ToInt32(StringQuery.IsStringNumeric(ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) && Convert.ToDouble(ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) : ConsoleColor.Black);
                         ConsoleWrapper.ForegroundColor = color;
                     }
 
@@ -182,7 +182,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     if (Highlight)
                     {
                         WriterPlainManager.CurrentPlain.WritePlain(Text, false, vars);
-                        ConsoleWrapper.BackgroundColor = (ConsoleColor)Convert.ToInt32(StringQuery.IsStringNumeric(ColorTools.BackgroundColor.PlainSequence) && Convert.ToDouble(ColorTools.BackgroundColor.PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.BackgroundColor.PlainSequence) : ConsoleColor.Black);
+                        ConsoleWrapper.BackgroundColor = (ConsoleColor)Convert.ToInt32(StringQuery.IsStringNumeric(ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) && Convert.ToDouble(ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) : ConsoleColor.Black);
                         ConsoleWrapper.ForegroundColor = color;
                         WriterPlainManager.CurrentPlain.WritePlain("", Line);
                     }
@@ -282,14 +282,14 @@ namespace KS.Misc.Writers.ConsoleWriters
                 {
                     // Try to write to console
                     ColorTools.SetConsoleColor(color, Highlight, Highlight);
-                    ColorTools.SetConsoleColor(ColorTools.BackgroundColor, !Highlight, !Highlight);
+                    ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, !Highlight, !Highlight);
 
                     // Write the text to console
                     if (Highlight)
                     {
                         WriterPlainManager.CurrentPlain.WritePlain(Text, false, vars);
                         ColorTools.SetConsoleColor(color);
-                        ColorTools.SetConsoleColor(ColorTools.BackgroundColor, true);
+                        ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
                         WriterPlainManager.CurrentPlain.WritePlain("", Line);
                     }
                     else

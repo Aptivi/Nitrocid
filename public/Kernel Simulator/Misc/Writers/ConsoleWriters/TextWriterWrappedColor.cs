@@ -102,7 +102,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                 try
                 {
                     // Try to write to console
-                    ConsoleBase.ConsoleWrapper.BackgroundColor = (ConsoleColor)Convert.ToInt32(StringQuery.IsStringNumeric(ColorTools.BackgroundColor.PlainSequence) && Convert.ToDouble(ColorTools.BackgroundColor.PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.BackgroundColor.PlainSequence) : ConsoleColor.Black);
+                    ConsoleBase.ConsoleWrapper.BackgroundColor = (ConsoleColor)Convert.ToInt32(StringQuery.IsStringNumeric(ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) && Convert.ToDouble(ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) : ConsoleColor.Black);
                     ConsoleBase.ConsoleWrapper.ForegroundColor = color;
 
                     // Write wrapped output
@@ -160,7 +160,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                 {
                     // Set the console color to selected background and foreground colors
                     ColorTools.SetConsoleColor(color);
-                    ColorTools.SetConsoleColor(ColorTools.BackgroundColor, true);
+                    ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
 
                     // Write wrapped output
                     WriterPlainManager.CurrentPlain.WriteWrappedPlain(Text, Line, vars);

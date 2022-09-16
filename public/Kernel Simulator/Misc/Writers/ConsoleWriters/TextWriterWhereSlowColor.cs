@@ -150,7 +150,7 @@ namespace KS.Misc.Writers.ConsoleWriters
             {
                 try
                 {
-                    ConsoleBase.ConsoleWrapper.BackgroundColor = (ConsoleColor)Convert.ToInt32(StringQuery.IsStringNumeric(ColorTools.BackgroundColor.PlainSequence) && Convert.ToDouble(ColorTools.BackgroundColor.PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.BackgroundColor.PlainSequence) : ConsoleColor.Black);
+                    ConsoleBase.ConsoleWrapper.BackgroundColor = (ConsoleColor)Convert.ToInt32(StringQuery.IsStringNumeric(ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) && Convert.ToDouble(ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) : ConsoleColor.Black);
                     ConsoleBase.ConsoleWrapper.ForegroundColor = color;
 
                     // Write text in another place slowly
@@ -239,7 +239,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                 try
                 {
                     ColorTools.SetConsoleColor(color);
-                    ColorTools.SetConsoleColor(ColorTools.BackgroundColor, true);
+                    ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
 
                     // Write text in another place slowly
                     WriterPlainManager.CurrentPlain.WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, vars);

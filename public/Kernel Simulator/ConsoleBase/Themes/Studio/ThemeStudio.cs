@@ -26,7 +26,6 @@ using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Reflection;
 using KS.Misc.Writers.ConsoleWriters;
-using Renci.SshNet.Security;
 
 namespace KS.ConsoleBase.Themes.Studio
 {
@@ -55,7 +54,7 @@ namespace KS.ConsoleBase.Themes.Studio
 
                 // List options
                 for (int key = 0; key < ThemeStudioTools.SelectedColors.Count; key++)
-                    TextWriterColor.Write("{0}) " + Translate.DoTranslation(ThemeStudioTools.SelectedColors.Keys.ElementAt(key)) + ": [{1}] ", true, ColorTools.ColTypes.Option, key + 1, ThemeStudioTools.SelectedColors.Values.ElementAt(key).PlainSequence);
+                    TextWriterColor.Write("{0}) " + ThemeStudioTools.SelectedColors.Keys.ElementAt(key) + ": [{1}] ", true, ColorTools.ColTypes.Option, key + 1, ThemeStudioTools.SelectedColors.Values.ElementAt(key).PlainSequence);
                 TextWriterColor.Write();
 
                 // List saving and loading options

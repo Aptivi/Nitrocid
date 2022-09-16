@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -71,7 +70,6 @@ using ManagedWeatherMap.Core;
 using MimeKit.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using static System.Collections.Specialized.BitVector32;
 
 namespace KS.Kernel.Configuration
 {
@@ -173,44 +171,44 @@ namespace KS.Kernel.Configuration
             // The Colors Section
             var ColorConfig = new JObject()
             {
-                { "User Name Shell Color", ColorTools.UserNameShellColor.PlainSequenceEnclosed },
-                { "Host Name Shell Color", ColorTools.HostNameShellColor.PlainSequenceEnclosed },
-                { "Continuable Kernel Error Color", ColorTools.ContKernelErrorColor.PlainSequenceEnclosed },
-                { "Uncontinuable Kernel Error Color", ColorTools.UncontKernelErrorColor.PlainSequenceEnclosed },
-                { "Text Color", ColorTools.NeutralTextColor.PlainSequenceEnclosed },
-                { "License Color", ColorTools.LicenseColor.PlainSequenceEnclosed },
-                { "Background Color", ColorTools.BackgroundColor.PlainSequenceEnclosed },
-                { "Input Color", ColorTools.InputColor.PlainSequenceEnclosed },
-                { "List Entry Color", ColorTools.ListEntryColor.PlainSequenceEnclosed },
-                { "List Value Color", ColorTools.ListValueColor.PlainSequenceEnclosed },
-                { "Kernel Stage Color", ColorTools.StageColor.PlainSequenceEnclosed },
-                { "Error Text Color", ColorTools.ErrorColor.PlainSequenceEnclosed },
-                { "Warning Text Color", ColorTools.WarningColor.PlainSequenceEnclosed },
-                { "Option Color", ColorTools.OptionColor.PlainSequenceEnclosed },
-                { "Banner Color", ColorTools.BannerColor.PlainSequenceEnclosed },
-                { "Notification Title Color", ColorTools.NotificationTitleColor.PlainSequenceEnclosed },
-                { "Notification Description Color", ColorTools.NotificationDescriptionColor.PlainSequenceEnclosed },
-                { "Notification Progress Color", ColorTools.NotificationProgressColor.PlainSequenceEnclosed },
-                { "Notification Failure Color", ColorTools.NotificationFailureColor.PlainSequenceEnclosed },
-                { "Question Color", ColorTools.QuestionColor.PlainSequenceEnclosed },
-                { "Success Color", ColorTools.SuccessColor.PlainSequenceEnclosed },
-                { "User Dollar Color", ColorTools.UserDollarColor.PlainSequenceEnclosed },
-                { "Tip Color", ColorTools.TipColor.PlainSequenceEnclosed },
-                { "Separator Text Color", ColorTools.SeparatorTextColor.PlainSequenceEnclosed },
-                { "Separator Color", ColorTools.SeparatorColor.PlainSequenceEnclosed },
-                { "List Title Color", ColorTools.ListTitleColor.PlainSequenceEnclosed },
-                { "Development Warning Color", ColorTools.DevelopmentWarningColor.PlainSequenceEnclosed },
-                { "Stage Time Color", ColorTools.StageTimeColor.PlainSequenceEnclosed },
-                { "Progress Color", ColorTools.ProgressColor.PlainSequenceEnclosed },
-                { "Back Option Color", ColorTools.BackOptionColor.PlainSequenceEnclosed },
-                { "Low Priority Border Color", ColorTools.LowPriorityBorderColor.PlainSequenceEnclosed },
-                { "Medium Priority Border Color", ColorTools.MediumPriorityBorderColor.PlainSequenceEnclosed },
-                { "High Priority Border Color", ColorTools.HighPriorityBorderColor.PlainSequenceEnclosed },
-                { "Table Separator Color", ColorTools.TableSeparatorColor.PlainSequenceEnclosed },
-                { "Table Header Color", ColorTools.TableHeaderColor.PlainSequenceEnclosed },
-                { "Table Value Color", ColorTools.TableValueColor.PlainSequenceEnclosed },
-                { "Selected Option Color", ColorTools.SelectedOptionColor.PlainSequenceEnclosed },
-                { "Alternative Option Color", ColorTools.AlternativeOptionColor.PlainSequenceEnclosed }
+                { "User Name Shell Color", ColorTools.GetColor(ColorTools.ColTypes.UserName).PlainSequenceEnclosed },
+                { "Host Name Shell Color", ColorTools.GetColor(ColorTools.ColTypes.HostName).PlainSequenceEnclosed },
+                { "Continuable Kernel Error Color", ColorTools.GetColor(ColorTools.ColTypes.Continuable).PlainSequenceEnclosed },
+                { "Uncontinuable Kernel Error Color", ColorTools.GetColor(ColorTools.ColTypes.Uncontinuable).PlainSequenceEnclosed },
+                { "Text Color", ColorTools.GetColor(ColorTools.ColTypes.Neutral).PlainSequenceEnclosed },
+                { "License Color", ColorTools.GetColor(ColorTools.ColTypes.License).PlainSequenceEnclosed },
+                { "Background Color", ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequenceEnclosed },
+                { "Input Color", ColorTools.GetColor(ColorTools.ColTypes.Input).PlainSequenceEnclosed },
+                { "List Entry Color", ColorTools.GetColor(ColorTools.ColTypes.ListEntry).PlainSequenceEnclosed },
+                { "List Value Color", ColorTools.GetColor(ColorTools.ColTypes.ListValue).PlainSequenceEnclosed },
+                { "Kernel Stage Color", ColorTools.GetColor(ColorTools.ColTypes.Stage).PlainSequenceEnclosed },
+                { "Error Text Color", ColorTools.GetColor(ColorTools.ColTypes.Error).PlainSequenceEnclosed },
+                { "Warning Text Color", ColorTools.GetColor(ColorTools.ColTypes.Warning).PlainSequenceEnclosed },
+                { "Option Color", ColorTools.GetColor(ColorTools.ColTypes.Option).PlainSequenceEnclosed },
+                { "Banner Color", ColorTools.GetColor(ColorTools.ColTypes.Banner).PlainSequenceEnclosed },
+                { "Notification Title Color", ColorTools.GetColor(ColorTools.ColTypes.NotificationTitle).PlainSequenceEnclosed },
+                { "Notification Description Color", ColorTools.GetColor(ColorTools.ColTypes.NotificationDescription).PlainSequenceEnclosed },
+                { "Notification Progress Color", ColorTools.GetColor(ColorTools.ColTypes.NotificationProgress).PlainSequenceEnclosed },
+                { "Notification Failure Color", ColorTools.GetColor(ColorTools.ColTypes.NotificationFailure).PlainSequenceEnclosed },
+                { "Question Color", ColorTools.GetColor(ColorTools.ColTypes.Question).PlainSequenceEnclosed },
+                { "Success Color", ColorTools.GetColor(ColorTools.ColTypes.Success).PlainSequenceEnclosed },
+                { "User Dollar Color", ColorTools.GetColor(ColorTools.ColTypes.UserDollar).PlainSequenceEnclosed },
+                { "Tip Color", ColorTools.GetColor(ColorTools.ColTypes.Tip).PlainSequenceEnclosed },
+                { "Separator Text Color", ColorTools.GetColor(ColorTools.ColTypes.SeparatorText).PlainSequenceEnclosed },
+                { "Separator Color", ColorTools.GetColor(ColorTools.ColTypes.Separator).PlainSequenceEnclosed },
+                { "List Title Color", ColorTools.GetColor(ColorTools.ColTypes.ListTitle).PlainSequenceEnclosed },
+                { "Development Warning Color", ColorTools.GetColor(ColorTools.ColTypes.DevelopmentWarning).PlainSequenceEnclosed },
+                { "Stage Time Color", ColorTools.GetColor(ColorTools.ColTypes.StageTime).PlainSequenceEnclosed },
+                { "Progress Color", ColorTools.GetColor(ColorTools.ColTypes.Progress).PlainSequenceEnclosed },
+                { "Back Option Color", ColorTools.GetColor(ColorTools.ColTypes.BackOption).PlainSequenceEnclosed },
+                { "Low Priority Border Color", ColorTools.GetColor(ColorTools.ColTypes.LowPriorityBorder).PlainSequenceEnclosed },
+                { "Medium Priority Border Color", ColorTools.GetColor(ColorTools.ColTypes.MediumPriorityBorder).PlainSequenceEnclosed },
+                { "High Priority Border Color", ColorTools.GetColor(ColorTools.ColTypes.HighPriorityBorder).PlainSequenceEnclosed },
+                { "Table Separator Color", ColorTools.GetColor(ColorTools.ColTypes.TableSeparator).PlainSequenceEnclosed },
+                { "Table Header Color", ColorTools.GetColor(ColorTools.ColTypes.TableHeader).PlainSequenceEnclosed },
+                { "Table Value Color", ColorTools.GetColor(ColorTools.ColTypes.TableValue).PlainSequenceEnclosed },
+                { "Selected Option Color", ColorTools.GetColor(ColorTools.ColTypes.SelectedOption).PlainSequenceEnclosed },
+                { "Alternative Option Color", ColorTools.GetColor(ColorTools.ColTypes.AlternativeOption).PlainSequenceEnclosed }
             };
             ConfigurationObject.Add("Colors", ColorConfig);
 
@@ -1513,44 +1511,44 @@ namespace KS.Kernel.Configuration
             if (Shell.Shell.ColoredShell)
             {
                 // We use New Color() to parse entered color. This is to ensure that the kernel can use the correct VT sequence.
-                ColorTools.UserNameShellColor = new Color(ConfigToken["Colors"]["User Name Shell Color"].ToString());
-                ColorTools.HostNameShellColor = new Color(ConfigToken["Colors"]["Host Name Shell Color"].ToString());
-                ColorTools.ContKernelErrorColor = new Color(ConfigToken["Colors"]["Continuable Kernel Error Color"].ToString());
-                ColorTools.UncontKernelErrorColor = new Color(ConfigToken["Colors"]["Uncontinuable Kernel Error Color"].ToString());
-                ColorTools.NeutralTextColor = new Color(ConfigToken["Colors"]["Text Color"].ToString());
-                ColorTools.LicenseColor = new Color(ConfigToken["Colors"]["License Color"].ToString());
-                ColorTools.BackgroundColor = new Color(ConfigToken["Colors"]["Background Color"].ToString());
-                ColorTools.InputColor = new Color(ConfigToken["Colors"]["Input Color"].ToString());
-                ColorTools.ListEntryColor = new Color(ConfigToken["Colors"]["List Entry Color"].ToString());
-                ColorTools.ListValueColor = new Color(ConfigToken["Colors"]["List Value Color"].ToString());
-                ColorTools.StageColor = new Color(ConfigToken["Colors"]["Kernel Stage Color"].ToString());
-                ColorTools.ErrorColor = new Color(ConfigToken["Colors"]["Error Text Color"].ToString());
-                ColorTools.WarningColor = new Color(ConfigToken["Colors"]["Warning Text Color"].ToString());
-                ColorTools.OptionColor = new Color(ConfigToken["Colors"]["Option Color"].ToString());
-                ColorTools.BannerColor = new Color(ConfigToken["Colors"]["Banner Color"].ToString());
-                ColorTools.NotificationTitleColor = new Color(ConfigToken["Colors"]["Notification Title Color"].ToString());
-                ColorTools.NotificationDescriptionColor = new Color(ConfigToken["Colors"]["Notification Description Color"].ToString());
-                ColorTools.NotificationProgressColor = new Color(ConfigToken["Colors"]["Notification Progress Color"].ToString());
-                ColorTools.NotificationFailureColor = new Color(ConfigToken["Colors"]["Notification Failure Color"].ToString());
-                ColorTools.QuestionColor = new Color(ConfigToken["Colors"]["Question Color"].ToString());
-                ColorTools.SuccessColor = new Color(ConfigToken["Colors"]["Success Color"].ToString());
-                ColorTools.UserDollarColor = new Color(ConfigToken["Colors"]["User Dollar Color"].ToString());
-                ColorTools.TipColor = new Color(ConfigToken["Colors"]["Tip Color"].ToString());
-                ColorTools.SeparatorTextColor = new Color(ConfigToken["Colors"]["Separator Text Color"].ToString());
-                ColorTools.SeparatorColor = new Color(ConfigToken["Colors"]["Separator Color"].ToString());
-                ColorTools.ListTitleColor = new Color(ConfigToken["Colors"]["List Title Color"].ToString());
-                ColorTools.DevelopmentWarningColor = new Color(ConfigToken["Colors"]["Development Warning Color"].ToString());
-                ColorTools.StageTimeColor = new Color(ConfigToken["Colors"]["Stage Time Color"].ToString());
-                ColorTools.ProgressColor = new Color(ConfigToken["Colors"]["Progress Color"].ToString());
-                ColorTools.BackOptionColor = new Color(ConfigToken["Colors"]["Back Option Color"].ToString());
-                ColorTools.LowPriorityBorderColor = new Color(ConfigToken["Colors"]["Low Priority Border Color"].ToString());
-                ColorTools.MediumPriorityBorderColor = new Color(ConfigToken["Colors"]["Medium Priority Border Color"].ToString());
-                ColorTools.HighPriorityBorderColor = new Color(ConfigToken["Colors"]["High Priority Border Color"].ToString());
-                ColorTools.TableSeparatorColor = new Color(ConfigToken["Colors"]["Table Separator Color"].ToString());
-                ColorTools.TableHeaderColor = new Color(ConfigToken["Colors"]["Table Header Color"].ToString());
-                ColorTools.TableValueColor = new Color(ConfigToken["Colors"]["Table Value Color"].ToString());
-                ColorTools.SelectedOptionColor = new Color(ConfigToken["Colors"]["Selected Option Color"].ToString());
-                ColorTools.AlternativeOptionColor = new Color(ConfigToken["Colors"]["Alternative Option Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.UserName] = new Color(ConfigToken["Colors"]["User Name Shell Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.HostName] = new Color(ConfigToken["Colors"]["Host Name Shell Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.Continuable] = new Color(ConfigToken["Colors"]["Continuable Kernel Error Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.Uncontinuable] = new Color(ConfigToken["Colors"]["Uncontinuable Kernel Error Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.Neutral] = new Color(ConfigToken["Colors"]["Text Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.License] = new Color(ConfigToken["Colors"]["License Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.Background] = new Color(ConfigToken["Colors"]["Background Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.Input] = new Color(ConfigToken["Colors"]["Input Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.ListEntry] = new Color(ConfigToken["Colors"]["List Entry Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.ListValue] = new Color(ConfigToken["Colors"]["List Value Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.Stage] = new Color(ConfigToken["Colors"]["Kernel Stage Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.Error] = new Color(ConfigToken["Colors"]["Error Text Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.Warning] = new Color(ConfigToken["Colors"]["Warning Text Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.Option] = new Color(ConfigToken["Colors"]["Option Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.Banner] = new Color(ConfigToken["Colors"]["Banner Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.NotificationTitle] = new Color(ConfigToken["Colors"]["Notification Title Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.NotificationDescription] = new Color(ConfigToken["Colors"]["Notification Description Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.NotificationProgress] = new Color(ConfigToken["Colors"]["Notification Progress Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.NotificationFailure] = new Color(ConfigToken["Colors"]["Notification Failure Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.Question] = new Color(ConfigToken["Colors"]["Question Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.Success] = new Color(ConfigToken["Colors"]["Success Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.UserDollar] = new Color(ConfigToken["Colors"]["User Dollar Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.Tip] = new Color(ConfigToken["Colors"]["Tip Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.SeparatorText] = new Color(ConfigToken["Colors"]["Separator Text Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.Separator] = new Color(ConfigToken["Colors"]["Separator Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.ListTitle] = new Color(ConfigToken["Colors"]["List Title Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.DevelopmentWarning] = new Color(ConfigToken["Colors"]["Development Warning Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.StageTime] = new Color(ConfigToken["Colors"]["Stage Time Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.Progress] = new Color(ConfigToken["Colors"]["Progress Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.BackOption] = new Color(ConfigToken["Colors"]["Back Option Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.LowPriorityBorder] = new Color(ConfigToken["Colors"]["Low Priority Border Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.MediumPriorityBorder] = new Color(ConfigToken["Colors"]["Medium Priority Border Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.HighPriorityBorder] = new Color(ConfigToken["Colors"]["High Priority Border Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.TableSeparator] = new Color(ConfigToken["Colors"]["Table Separator Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.TableHeader] = new Color(ConfigToken["Colors"]["Table Header Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.TableValue] = new Color(ConfigToken["Colors"]["Table Value Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.SelectedOption] = new Color(ConfigToken["Colors"]["Selected Option Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.AlternativeOption] = new Color(ConfigToken["Colors"]["Alternative Option Color"].ToString());
             }
 
             // General Section
@@ -2340,11 +2338,11 @@ namespace KS.Kernel.Configuration
             SplashSettings.SimpleProgressTextLocation = ConfigToken["Splash"]["Simple"]["Progress text location"] != null ? Enum.TryParse((string)ConfigToken["Splash"]["Simple"]["Progress text location"], out SplashSettings.SimpleProgressTextLocation) ? SplashSettings.SimpleProgressTextLocation : TextLocation.Top : TextLocation.Top;
 
             // > Progress
-            SplashSettings.ProgressProgressColor = new Color((ConfigToken["Splash"]["Progress"]["Progress bar color"].ToString()) ?? ColorTools.ProgressColor.PlainSequence).PlainSequence;
+            SplashSettings.ProgressProgressColor = new Color((ConfigToken["Splash"]["Progress"]["Progress bar color"].ToString()) ?? ColorTools.GetColor(ColorTools.ColTypes.Progress).PlainSequence).PlainSequence;
             SplashSettings.ProgressProgressTextLocation = ConfigToken["Splash"]["Progress"]["Progress text location"] != null ? Enum.TryParse((string)ConfigToken["Splash"]["Progress"]["Progress text location"], out SplashSettings.ProgressProgressTextLocation) ? SplashSettings.ProgressProgressTextLocation : TextLocation.Top : TextLocation.Top;
 
             // > PowerLineProgress
-            SplashSettings.PowerLineProgressProgressColor = new Color((ConfigToken["Splash"]["PowerLineProgress"]["Progress bar color"].ToString()) ?? ColorTools.ProgressColor.PlainSequence).PlainSequence;
+            SplashSettings.PowerLineProgressProgressColor = new Color((ConfigToken["Splash"]["PowerLineProgress"]["Progress bar color"].ToString()) ?? ColorTools.GetColor(ColorTools.ColTypes.Progress).PlainSequence).PlainSequence;
             SplashSettings.PowerLineProgressProgressTextLocation = ConfigToken["Splash"]["PowerLineProgress"]["Progress text location"] != null ? Enum.TryParse((string)ConfigToken["Splash"]["PowerLineProgress"]["Progress text location"], out SplashSettings.PowerLineProgressProgressTextLocation) ? SplashSettings.PowerLineProgressProgressTextLocation : TextLocation.Top : TextLocation.Top;
 
             // Misc Section

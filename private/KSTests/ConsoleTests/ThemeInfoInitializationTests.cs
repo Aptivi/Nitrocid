@@ -21,6 +21,9 @@ using Extensification.StringExts;
 using KS.ConsoleBase.Themes;
 using NUnit.Framework;
 using Shouldly;
+using static KS.ConsoleBase.Colors.ColorTools;
+using System;
+using System.Linq;
 
 namespace KSTests.ConsoleTests
 {
@@ -40,43 +43,12 @@ namespace KSTests.ConsoleTests
             var ThemeInfoInstance = new ThemeInfo("Hacker");
 
             // Check for null
-            ThemeInfoInstance.ThemeBackgroundColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeListValueColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeListEntryColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeContKernelErrorColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeErrorColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeHostNameShellColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeInputColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeLicenseColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeNeutralTextColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeOptionColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeStageColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeUncontKernelErrorColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeUserNameShellColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeWarningColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeNotificationTitleColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeNotificationDescriptionColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeNotificationProgressColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeNotificationFailureColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeQuestionColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeSuccessColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeUserDollarColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeTipColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeSeparatorTextColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeSeparatorColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeListTitleColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeDevelopmentWarningColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeStageTimeColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeProgressColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeBackOptionColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeLowPriorityBorderColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeMediumPriorityBorderColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeHighPriorityBorderColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeTableSeparatorColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeTableHeaderColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeTableValueColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeSelectedOptionColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeAlternativeOptionColor.ShouldNotBeNull();
+            ThemeInfoInstance.ThemeColors.ShouldNotBeNull();
+            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ColTypes)).Length - 2; typeIndex++)
+            {
+                ColTypes type = ThemeInfoInstance.ThemeColors.Keys.ElementAt(typeIndex);
+                ThemeInfoInstance.ThemeColors[type].ShouldNotBeNull();
+            }
         }
 
         /// <summary>
@@ -109,43 +81,12 @@ namespace KSTests.ConsoleTests
                 var ThemeInfoInstance = new ThemeInfo(ThemeName);
 
                 // Check for null
-                ThemeInfoInstance.ThemeBackgroundColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeListValueColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeListEntryColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeContKernelErrorColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeErrorColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeHostNameShellColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeInputColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeLicenseColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeNeutralTextColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeOptionColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeStageColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeUncontKernelErrorColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeUserNameShellColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeWarningColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeNotificationTitleColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeNotificationDescriptionColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeNotificationProgressColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeNotificationFailureColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeQuestionColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeSuccessColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeUserDollarColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeTipColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeSeparatorTextColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeSeparatorColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeListTitleColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeDevelopmentWarningColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeStageTimeColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeProgressColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeBackOptionColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeLowPriorityBorderColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeMediumPriorityBorderColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeHighPriorityBorderColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeTableSeparatorColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeTableHeaderColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeTableValueColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeSelectedOptionColor.ShouldNotBeNull();
-                ThemeInfoInstance.ThemeAlternativeOptionColor.ShouldNotBeNull();
+                ThemeInfoInstance.ThemeColors.ShouldNotBeNull();
+                for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ColTypes)).Length - 2; typeIndex++)
+                {
+                    ColTypes type = ThemeInfoInstance.ThemeColors.Keys.ElementAt(typeIndex);
+                    ThemeInfoInstance.ThemeColors[type].ShouldNotBeNull();
+                }
             }
         }
 
@@ -163,43 +104,12 @@ namespace KSTests.ConsoleTests
             ThemeInfoStream.Close();
 
             // Check for null
-            ThemeInfoInstance.ThemeBackgroundColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeListValueColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeListEntryColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeContKernelErrorColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeErrorColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeHostNameShellColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeInputColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeLicenseColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeNeutralTextColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeOptionColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeStageColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeUncontKernelErrorColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeUserNameShellColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeWarningColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeNotificationTitleColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeNotificationDescriptionColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeNotificationProgressColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeNotificationFailureColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeQuestionColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeSuccessColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeUserDollarColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeTipColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeSeparatorTextColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeSeparatorColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeListTitleColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeDevelopmentWarningColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeStageTimeColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeProgressColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeBackOptionColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeLowPriorityBorderColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeMediumPriorityBorderColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeHighPriorityBorderColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeTableSeparatorColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeTableHeaderColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeTableValueColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeSelectedOptionColor.ShouldNotBeNull();
-            ThemeInfoInstance.ThemeAlternativeOptionColor.ShouldNotBeNull();
+            ThemeInfoInstance.ThemeColors.ShouldNotBeNull();
+            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ColTypes)).Length - 2; typeIndex++)
+            {
+                ColTypes type = ThemeInfoInstance.ThemeColors.Keys.ElementAt(typeIndex);
+                ThemeInfoInstance.ThemeColors[type].ShouldNotBeNull();
+            }
         }
 
     }

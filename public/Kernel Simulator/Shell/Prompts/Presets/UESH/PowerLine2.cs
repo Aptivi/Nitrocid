@@ -94,16 +94,16 @@ namespace KS.Shell.Prompts.Presets.UESH
 
                 // Transition
                 PresetStringBuilder.Append(LastTransitionForeground.VTSequenceForeground);
-                PresetStringBuilder.Append(Flags.SetBackground ? ColorTools.BackgroundColor.VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m");
+                PresetStringBuilder.Append(Flags.SetBackground ? ColorTools.GetColor(ColorTools.ColTypes.Background).VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m");
                 PresetStringBuilder.AppendFormat("{0} ", TransitionChar);
-                PresetStringBuilder.Append(ColorTools.InputColor.VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.Input).VTSequenceForeground);
             }
             else
             {
                 // Maintenance mode
                 PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
                 PresetStringBuilder.Append(Translate.DoTranslation("Maintenance Mode") + "> ");
-                PresetStringBuilder.Append(ColorTools.InputColor.VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.Input).VTSequenceForeground);
             }
 
             // Present final string

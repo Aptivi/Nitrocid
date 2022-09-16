@@ -56,7 +56,7 @@ namespace KS.Shell.Prompts.Presets.FTP
                 PresetStringBuilder.Append("[");
 
                 // SFTP user
-                PresetStringBuilder.Append(ColorTools.UserNameShellColor.VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.UserName).VTSequenceForeground);
                 PresetStringBuilder.AppendFormat("{0}", FTPShellCommon.FtpUser);
 
                 // "at" sign
@@ -64,20 +64,20 @@ namespace KS.Shell.Prompts.Presets.FTP
                 PresetStringBuilder.Append("@");
 
                 // SFTP site
-                PresetStringBuilder.Append(ColorTools.HostNameShellColor.VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.HostName).VTSequenceForeground);
                 PresetStringBuilder.AppendFormat("{0}", FTPShellCommon.FtpSite);
 
                 // Closing
                 PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
                 PresetStringBuilder.AppendFormat("]{0}> ", FTPShellCommon.FtpCurrentRemoteDir);
-                PresetStringBuilder.Append(ColorTools.InputColor.VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.Input).VTSequenceForeground);
             }
             else
             {
                 // Current directory
                 PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
                 PresetStringBuilder.AppendFormat("{0}> ", FTPShellCommon.FtpCurrentDirectory);
-                PresetStringBuilder.Append(ColorTools.InputColor.VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.Input).VTSequenceForeground);
             }
 
             // Present final string

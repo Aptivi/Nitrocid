@@ -29,7 +29,6 @@ using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Files.Querying;
 using KS.Hardware;
-using KS.Kernel.Configuration;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Notifications;

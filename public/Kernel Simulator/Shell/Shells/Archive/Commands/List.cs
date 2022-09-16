@@ -23,7 +23,6 @@ using KS.Kernel.Debugging;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Archive;
 using KS.Shell.ShellBase.Commands;
-using SharpCompress.Archives.Zip;
 using SharpCompress.Archives;
 
 namespace KS.Shell.Shells.Archive.Commands

@@ -124,7 +124,7 @@ namespace KS.Misc.Splash.Splashes
             SplashClosing = true;
             DebugWriter.WriteDebug(DebugLevel.I, "Splash closing. Clearing console...");
             ColorTools.SetConsoleColor(ColorTools.ColTypes.Neutral);
-            ColorTools.SetConsoleColor(ColorTools.BackgroundColor, true);
+            ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
             ConsoleWrapper.Clear();
         }
 
@@ -159,7 +159,7 @@ namespace KS.Misc.Splash.Splashes
 
             // Transition
             PresetStringBuilder.Append(LastTransitionForeground.VTSequenceForeground);
-            PresetStringBuilder.Append(Flags.SetBackground ? ColorTools.BackgroundColor.VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m");
+            PresetStringBuilder.Append(Flags.SetBackground ? ColorTools.GetColor(ColorTools.ColTypes.Background).VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m");
             PresetStringBuilder.AppendFormat("{0} ", TransitionChar);
 
             // Display the text and percentage

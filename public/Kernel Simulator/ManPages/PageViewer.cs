@@ -74,11 +74,11 @@ namespace KS.ManPages
                 // Write the information to the console
                 if (!string.IsNullOrWhiteSpace(ManpageInfoStyle))
                 {
-                    TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(ManpageInfoStyle), ConsoleBase.ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.BackgroundColor, ColorTools.NeutralTextColor, PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
+                    TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(ManpageInfoStyle), ConsoleBase.ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.GetColor(ColorTools.ColTypes.Background), ColorTools.GetColor(ColorTools.ColTypes.Neutral), PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
                 }
                 else
                 {
-                    TextWriterWhereColor.WriteWhere(" {0} [v{1}] ", ConsoleBase.ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.BackgroundColor, ColorTools.NeutralTextColor, PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
+                    TextWriterWhereColor.WriteWhere(" {0} [v{1}] ", ConsoleBase.ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.GetColor(ColorTools.ColTypes.Background), ColorTools.GetColor(ColorTools.ColTypes.Neutral), PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
                 }
 
                 // Disable blinking cursor
@@ -173,11 +173,11 @@ namespace KS.ManPages
                             ConsoleBase.ConsoleWrapper.Clear();
                             if (!string.IsNullOrWhiteSpace(ManpageInfoStyle))
                             {
-                                TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(ManpageInfoStyle), ConsoleBase.ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.BackgroundColor, ColorTools.NeutralTextColor, PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
+                                TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(ManpageInfoStyle), ConsoleBase.ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.GetColor(ColorTools.ColTypes.Background), ColorTools.GetColor(ColorTools.ColTypes.Neutral), PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
                             }
                             else
                             {
-                                TextWriterWhereColor.WriteWhere(" {0} (v{1}) ", ConsoleBase.ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.BackgroundColor, ColorTools.NeutralTextColor, PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
+                                TextWriterWhereColor.WriteWhere(" {0} (v{1}) ", ConsoleBase.ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.GetColor(ColorTools.ColTypes.Background), ColorTools.GetColor(ColorTools.ColTypes.Neutral), PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
                             }
                         }
                     }

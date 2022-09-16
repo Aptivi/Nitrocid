@@ -56,17 +56,17 @@ namespace KS.Shell.Prompts.Presets.Text
             PresetStringBuilder.Append("[");
 
             // File name
-            PresetStringBuilder.Append(ColorTools.UserNameShellColor.VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.UserName).VTSequenceForeground);
             PresetStringBuilder.AppendFormat(Path.GetFileName(TextEditShellCommon.TextEdit_FileStream.Name));
 
             // Was file edited?
-            PresetStringBuilder.Append(ColorTools.UserNameShellColor.VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.UserName).VTSequenceForeground);
             PresetStringBuilder.AppendFormat("{0}", TextEditTools.TextEdit_WasTextEdited() ? "*" : "");
 
             // Closing
             PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append("] > ");
-            PresetStringBuilder.Append(ColorTools.InputColor.VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.Input).VTSequenceForeground);
 
             // Present final string
             return PresetStringBuilder.ToString();

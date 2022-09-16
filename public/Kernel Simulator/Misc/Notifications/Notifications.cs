@@ -157,21 +157,21 @@ namespace KS.Misc.Notifications
 
                             // Set the border color
                             DebugWriter.WriteDebug(DebugLevel.I, "Priority: {0}", NewNotification.Priority);
-                            var NotifyBorderColor = ColorTools.LowPriorityBorderColor;
-                            var NotifyTitleColor = ColorTools.NotificationTitleColor;
-                            var NotifyDescColor = ColorTools.NotificationDescriptionColor;
-                            var NotifyProgressColor = ColorTools.NotificationProgressColor;
-                            var NotifyProgressFailureColor = ColorTools.NotificationFailureColor;
+                            var NotifyBorderColor = ColorTools.GetColor(ColorTools.ColTypes.LowPriorityBorder);
+                            var NotifyTitleColor = ColorTools.GetColor(ColorTools.ColTypes.NotificationTitle);
+                            var NotifyDescColor = ColorTools.GetColor(ColorTools.ColTypes.NotificationDescription);
+                            var NotifyProgressColor = ColorTools.GetColor(ColorTools.ColTypes.NotificationProgress);
+                            var NotifyProgressFailureColor = ColorTools.GetColor(ColorTools.ColTypes.NotificationFailure);
                             switch (NewNotification.Priority)
                             {
                                 case NotifPriority.Medium:
                                     {
-                                        NotifyBorderColor = ColorTools.MediumPriorityBorderColor;
+                                        NotifyBorderColor = ColorTools.GetColor(ColorTools.ColTypes.MediumPriorityBorder);
                                         break;
                                     }
                                 case NotifPriority.High:
                                     {
-                                        NotifyBorderColor = ColorTools.HighPriorityBorderColor;
+                                        NotifyBorderColor = ColorTools.GetColor(ColorTools.ColTypes.HighPriorityBorder);
                                         break;
                                     }
                                 case NotifPriority.Custom:

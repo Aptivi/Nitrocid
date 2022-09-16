@@ -55,13 +55,13 @@ namespace KS.Shell.Prompts.Presets.RSS
             PresetStringBuilder.Append("[");
 
             // RSS site
-            PresetStringBuilder.Append(ColorTools.UserNameShellColor.VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.UserName).VTSequenceForeground);
             PresetStringBuilder.AppendFormat("{0}", new Uri(RSSShellCommon.RSSFeedLink).Host);
 
             // Closing
             PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append("] > ");
-            PresetStringBuilder.Append(ColorTools.InputColor.VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.Input).VTSequenceForeground);
 
             // Present final string
             return PresetStringBuilder.ToString();

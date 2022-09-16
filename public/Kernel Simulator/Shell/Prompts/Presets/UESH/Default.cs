@@ -57,7 +57,7 @@ namespace KS.Shell.Prompts.Presets.UESH
                 PresetStringBuilder.Append("[");
 
                 // Current username
-                PresetStringBuilder.Append(ColorTools.UserNameShellColor.VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.UserName).VTSequenceForeground);
                 PresetStringBuilder.AppendFormat("{0}", Login.Login.CurrentUser.Username);
 
                 // "At" sign
@@ -65,7 +65,7 @@ namespace KS.Shell.Prompts.Presets.UESH
                 PresetStringBuilder.Append("@");
 
                 // Current hostname
-                PresetStringBuilder.Append(ColorTools.HostNameShellColor.VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.HostName).VTSequenceForeground);
                 PresetStringBuilder.AppendFormat("{0}", NetworkTools.HostName);
 
                 // Current directory
@@ -73,16 +73,16 @@ namespace KS.Shell.Prompts.Presets.UESH
                 PresetStringBuilder.AppendFormat("]{0}", CurrentDirectory.CurrentDir);
 
                 // User dollar sign
-                PresetStringBuilder.Append(ColorTools.UserDollarColor.VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.UserDollar).VTSequenceForeground);
                 PresetStringBuilder.AppendFormat(" {0} ", UserDollarSign);
-                PresetStringBuilder.Append(ColorTools.InputColor.VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.Input).VTSequenceForeground);
             }
             else
             {
                 // Maintenance mode
                 PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
                 PresetStringBuilder.Append(Translate.DoTranslation("Maintenance Mode") + "> ");
-                PresetStringBuilder.Append(ColorTools.InputColor.VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.Input).VTSequenceForeground);
             }
 
             // Present final string

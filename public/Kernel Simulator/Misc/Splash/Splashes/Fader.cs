@@ -100,7 +100,7 @@ namespace KS.Misc.Splash.Splashes
         {
             SplashClosing = true;
             DebugWriter.WriteDebug(DebugLevel.I, "Splash closing. Clearing console...");
-            ColorTools.SetConsoleColor(ColorTools.BackgroundColor, true);
+            ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
             ConsoleBase.ConsoleWrapper.Clear();
         }
 

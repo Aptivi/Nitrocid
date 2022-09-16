@@ -55,17 +55,17 @@ namespace KS.Shell.Prompts.Presets.Archive
             PresetStringBuilder.Append("[");
 
             // File name
-            PresetStringBuilder.Append(ColorTools.UserNameShellColor.VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.UserName).VTSequenceForeground);
             PresetStringBuilder.AppendFormat(Path.GetFileName(ArchiveShellCommon.ArchiveShell_FileStream.Name));
 
             // Current archive directory
-            PresetStringBuilder.Append(ColorTools.UserNameShellColor.VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.UserName).VTSequenceForeground);
             PresetStringBuilder.AppendFormat("{0}", ArchiveShellCommon.ArchiveShell_CurrentArchiveDirectory);
 
             // Closing
             PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append("] > ");
-            PresetStringBuilder.Append(ColorTools.InputColor.VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.Input).VTSequenceForeground);
 
             // Present final string
             return PresetStringBuilder.ToString();

@@ -109,27 +109,27 @@ namespace KS.Misc.Notifications
         /// <summary>
         /// Custom color (for custom priority notfications)
         /// </summary>
-        public Color CustomColor { get; set; } = ColorTools.LowPriorityBorderColor;
+        public Color CustomColor { get; set; } = ColorTools.GetColor(ColorTools.ColTypes.LowPriorityBorder);
 
         /// <summary>
         /// Custom title color (for custom priority notfications)
         /// </summary>
-        public Color CustomTitleColor { get; set; } = ColorTools.NotificationTitleColor;
+        public Color CustomTitleColor { get; set; } = ColorTools.GetColor(ColorTools.ColTypes.NotificationTitle);
 
         /// <summary>
         /// Custom description color (for custom priority notfications)
         /// </summary>
-        public Color CustomDescriptionColor { get; set; } = ColorTools.NotificationDescriptionColor;
+        public Color CustomDescriptionColor { get; set; } = ColorTools.GetColor(ColorTools.ColTypes.NotificationDescription);
 
         /// <summary>
         /// Custom progress color (for custom priority notfications)
         /// </summary>
-        public Color CustomProgressColor { get; set; } = ColorTools.NotificationProgressColor;
+        public Color CustomProgressColor { get; set; } = ColorTools.GetColor(ColorTools.ColTypes.NotificationProgress);
 
         /// <summary>
         /// Custom progress failure color (for custom priority notfications)
         /// </summary>
-        public Color CustomProgressFailureColor { get; set; } = ColorTools.NotificationFailureColor;
+        public Color CustomProgressFailureColor { get; set; } = ColorTools.GetColor(ColorTools.ColTypes.NotificationFailure);
 
         /// <summary>
         /// Upper left corner character for custom priority notification

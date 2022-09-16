@@ -19,12 +19,14 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
+using static KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.ConsoleBase.Themes
 {
@@ -215,45 +217,12 @@ namespace KS.ConsoleBase.Themes
             {
                 try
                 {
-                    ColorTools.InputColor = ThemeInfo.ThemeInputColor;
-                    ColorTools.LicenseColor = ThemeInfo.ThemeLicenseColor;
-                    ColorTools.ContKernelErrorColor = ThemeInfo.ThemeContKernelErrorColor;
-                    ColorTools.UncontKernelErrorColor = ThemeInfo.ThemeUncontKernelErrorColor;
-                    ColorTools.HostNameShellColor = ThemeInfo.ThemeHostNameShellColor;
-                    ColorTools.UserNameShellColor = ThemeInfo.ThemeUserNameShellColor;
-                    ColorTools.BackgroundColor = ThemeInfo.ThemeBackgroundColor;
-                    ColorTools.NeutralTextColor = ThemeInfo.ThemeNeutralTextColor;
-                    ColorTools.ListEntryColor = ThemeInfo.ThemeListEntryColor;
-                    ColorTools.ListValueColor = ThemeInfo.ThemeListValueColor;
-                    ColorTools.StageColor = ThemeInfo.ThemeStageColor;
-                    ColorTools.ErrorColor = ThemeInfo.ThemeErrorColor;
-                    ColorTools.WarningColor = ThemeInfo.ThemeWarningColor;
-                    ColorTools.OptionColor = ThemeInfo.ThemeOptionColor;
-                    ColorTools.BannerColor = ThemeInfo.ThemeBannerColor;
-                    ColorTools.NotificationTitleColor = ThemeInfo.ThemeNotificationTitleColor;
-                    ColorTools.NotificationDescriptionColor = ThemeInfo.ThemeNotificationDescriptionColor;
-                    ColorTools.NotificationProgressColor = ThemeInfo.ThemeNotificationProgressColor;
-                    ColorTools.NotificationFailureColor = ThemeInfo.ThemeNotificationFailureColor;
-                    ColorTools.QuestionColor = ThemeInfo.ThemeQuestionColor;
-                    ColorTools.SuccessColor = ThemeInfo.ThemeSuccessColor;
-                    ColorTools.UserDollarColor = ThemeInfo.ThemeUserDollarColor;
-                    ColorTools.TipColor = ThemeInfo.ThemeTipColor;
-                    ColorTools.SeparatorTextColor = ThemeInfo.ThemeSeparatorTextColor;
-                    ColorTools.SeparatorColor = ThemeInfo.ThemeSeparatorColor;
-                    ColorTools.ListTitleColor = ThemeInfo.ThemeListTitleColor;
-                    ColorTools.DevelopmentWarningColor = ThemeInfo.ThemeDevelopmentWarningColor;
-                    ColorTools.StageTimeColor = ThemeInfo.ThemeStageTimeColor;
-                    ColorTools.ProgressColor = ThemeInfo.ThemeProgressColor;
-                    ColorTools.BackOptionColor = ThemeInfo.ThemeBackOptionColor;
-                    ColorTools.LowPriorityBorderColor = ThemeInfo.ThemeLowPriorityBorderColor;
-                    ColorTools.MediumPriorityBorderColor = ThemeInfo.ThemeMediumPriorityBorderColor;
-                    ColorTools.HighPriorityBorderColor = ThemeInfo.ThemeHighPriorityBorderColor;
-                    ColorTools.TableSeparatorColor = ThemeInfo.ThemeTableSeparatorColor;
-                    ColorTools.TableHeaderColor = ThemeInfo.ThemeTableHeaderColor;
-                    ColorTools.TableValueColor = ThemeInfo.ThemeTableValueColor;
-                    ColorTools.SelectedOptionColor = ThemeInfo.ThemeSelectedOptionColor;
-                    ColorTools.AlternativeOptionColor = ThemeInfo.ThemeAlternativeOptionColor;
-                    ColorTools.LoadBack();
+                    for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ColTypes)).Length - 2; typeIndex++)
+                    {
+                        ColTypes type = KernelColors.Keys.ElementAt(typeIndex);
+                        KernelColors[type] = ThemeInfo.ThemeColors[type];
+                    }
+                    LoadBack();
                     Config.CreateConfig();
 
                     // Raise event

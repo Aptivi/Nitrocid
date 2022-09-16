@@ -56,20 +56,20 @@ namespace KS.Shell.Prompts.Presets.HTTP
                 PresetStringBuilder.Append("[");
 
                 // HTTP site
-                PresetStringBuilder.Append(ColorTools.HostNameShellColor.VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.HostName).VTSequenceForeground);
                 PresetStringBuilder.AppendFormat("{0}", HTTPShellCommon.HTTPSite);
 
                 // Closing
                 PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
                 PresetStringBuilder.Append("] > ");
-                PresetStringBuilder.Append(ColorTools.InputColor.VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.Input).VTSequenceForeground);
             }
             else
             {
                 // Closing
                 PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
                 PresetStringBuilder.Append("> ");
-                PresetStringBuilder.Append(ColorTools.InputColor.VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.Input).VTSequenceForeground);
             }
 
             // Present final string
