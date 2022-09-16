@@ -18,6 +18,7 @@
 
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Inputs.Styles;
 using KS.ConsoleBase.Themes;
 using KS.ConsoleBase.Themes.Studio;
@@ -27,6 +28,7 @@ using KS.Kernel.Configuration;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
+using System.Linq;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -43,12 +45,23 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             if (Shell.ColoredShell)
             {
+                // Selected theme null for now
+                string selectedTheme = ListArgsOnly.Length > 0 ? ListArgsOnly[0] : "";
+                if (ListArgsOnly.Length == 0)
+                {
+                    // Let the user select a theme
+                    int colorIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a theme"), string.Join("/", ThemeTools.Themes.Keys)) - 1;
+
+                    // Get the theme name from index
+                    selectedTheme = ThemeTools.Themes.Keys.ElementAt(colorIndex);
+                }
+
                 // Try to load the theme to the theme studio
-                string ThemePath = Filesystem.NeutralizePath(ListArgsOnly[0]);
+                string ThemePath = Filesystem.NeutralizePath(selectedTheme);
                 if (Checking.FileExists(ThemePath))
                     ThemeStudioTools.LoadThemeFromFile(ThemePath);
                 else
-                    ThemeStudioTools.LoadThemeFromResource(ListArgsOnly[0]);
+                    ThemeStudioTools.LoadThemeFromResource(selectedTheme);
 
                 // Load the preview
                 ThemeStudioTools.PreparePreview();
@@ -61,7 +74,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     if (Checking.FileExists(ThemePath))
                         ThemeTools.ApplyThemeFromFile(ThemePath);
                     else
-                        ThemeTools.ApplyThemeFromResources(ListArgsOnly[0]);
+                        ThemeTools.ApplyThemeFromResources(selectedTheme);
 
                     // Save it to configuration
                     Config.CreateConfig();
