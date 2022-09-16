@@ -373,11 +373,6 @@ namespace KS.Misc.Settings
                 bool SelectionEnumInternal = (bool)(KeyToken["EnumerationInternal"] ?? false);
                 bool SelectionEnumZeroBased = (bool)(KeyToken["EnumerationZeroBased"] ?? false);
 
-                // Variant properties
-                object VariantValue = "";
-                bool VariantFunctionSetsValue = (bool)(KeyToken["VariantFunctionSetsValue"] ?? false);
-                string VariantFunction = (string)KeyToken["VariantFunction"];
-
                 // Color properties
                 object ColorValue = "";
 
@@ -518,7 +513,7 @@ namespace KS.Misc.Settings
 
                     // Print debugging info
                     DebugWriter.WriteDebug(DebugLevel.W, "Key {0} in section {1} has {2} selections.", KeyNumber, Section, MaxKeyOptions);
-                    DebugWriter.WriteDebug(DebugLevel.W, "Target variable: {0}, Key Type: {1}, Key value: {2}, Variant Value: {3}", KeyVar, KeyType, KeyValue, VariantValue);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Target variable: {0}, Key Type: {1}, Key value: {2}", KeyVar, KeyType, KeyValue);
 
                     // Prompt user
                     if (!(KeyType == SettingsKeyType.SColor))
