@@ -112,3 +112,11 @@ It has no relationship with the kernel either.
 ##### Renamed `permissions` to `groups`
 
 Renamed `permissions` to `groups` as it has been incorrectly named after the permissions. It could have been more accurately described as user groups.
+
+##### Made abstractions regarding the color management class
+
+The color management used to define so many variables for just one color type. Now, it has been simplified to ease the making of the new color type. Color types are renamed to match all files that mention the color type.
+
+As a result, we have removed all separate variables for each color type and merged them to simplify the declaration.
+
+Also, we have added `GetColor()` and `SetColor()` functions to ColorTools to perform operations on these color types.
