@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -229,15 +230,21 @@ namespace KS.Misc.Settings
                         object CurrentValue = "Unknown";
                         string Variable = (string)Setting["Variable"];
                         string VariableProperty = (string)Setting["VariableProperty"];
+                        bool VariableIsInternal = (bool)(Setting["IsInternal"] ?? false);
+                        bool VariableIsEnumerable = (bool)(Setting["IsEnumerable"] ?? false);
+                        int VariableEnumerableIndex = (int)(Setting["EnumerableIndex"] ?? 0);
                         SettingsKeyType VariableType = (SettingsKeyType)Convert.ToInt32(Enum.Parse(typeof(SettingsKeyType), (string)Setting["Type"]));
 
                         // Print the option by determining how to get the current value
                         if (VariableProperty is null)
                         {
-                            if (FieldManager.CheckField(Variable))
+                            if (FieldManager.CheckField(Variable, VariableIsInternal))
                             {
-                                // We're dealing with the field, get the value from it
-                                CurrentValue = FieldManager.GetValue(Variable);
+                                // We're dealing with the field, get the value from it. However, check to see if that field is an enumerable
+                                if (VariableIsEnumerable)
+                                    CurrentValue = FieldManager.GetValueFromEnumerable(Variable, VariableEnumerableIndex, VariableIsInternal);
+                                else
+                                    CurrentValue = FieldManager.GetValue(Variable, VariableIsInternal);
                             }
                             else if (PropertyManager.CheckProperty(Variable))
                             {
@@ -246,9 +253,9 @@ namespace KS.Misc.Settings
                             }
 
                             // Get the plain sequence from the color
-                            if (CurrentValue is Color color)
+                            if (CurrentValue is KeyValuePair<ColorTools.ColTypes, Color> color)
                             {
-                                CurrentValue = color.PlainSequence;
+                                CurrentValue = color.Value.PlainSequence;
                             }
                         }
                         else
@@ -358,6 +365,10 @@ namespace KS.Misc.Settings
                 string KeyDescription = (string)KeyToken["Description"];
                 SettingsKeyType KeyType = (SettingsKeyType)Convert.ToInt32(Enum.Parse(typeof(SettingsKeyType), (string)KeyToken["Type"]));
                 string KeyVar = (string)KeyToken["Variable"];
+                string KeyVarProperty = (string)KeyToken["VariableProperty"];
+                bool KeyIsInternal = (bool)(KeyToken["IsInternal"] ?? false);
+                bool KeyIsEnumerable = (bool)(KeyToken["IsEnumerable"] ?? false);
+                int KeyEnumerableIndex = (int)(KeyToken["EnumerableIndex"] ?? 0);
                 object KeyValue = "";
                 object KeyDefaultValue = "";
                 bool KeyFinished = false;
@@ -367,7 +378,6 @@ namespace KS.Misc.Settings
                 int IntSliderMaximumValue = (int)(KeyToken["MaximumValue"] ?? 100);
 
                 // Selection properties
-                string KeyVarProperty = (string)KeyToken["VariableProperty"];
                 bool SelectionEnum = (bool)(KeyToken["IsEnumeration"] ?? false);
                 string SelectionEnumAssembly = (string)KeyToken["EnumerationAssembly"];
                 bool SelectionEnumInternal = (bool)(KeyToken["EnumerationInternal"] ?? false);
@@ -436,10 +446,13 @@ namespace KS.Misc.Settings
                         // Determine how to get key default value
                         if (KeyVarProperty is null)
                         {
-                            if (FieldManager.CheckField(KeyVar))
+                            if (FieldManager.CheckField(KeyVar, KeyIsInternal))
                             {
-                                // We're dealing with the field, get the value from it
-                                KeyDefaultValue = FieldManager.GetValue(KeyVar);
+                                // We're dealing with the field, get the value from it. However, check to see if that field is an enumerable
+                                if (KeyIsEnumerable)
+                                    KeyDefaultValue = FieldManager.GetValueFromEnumerable(KeyVar, KeyEnumerableIndex, KeyIsInternal);
+                                else
+                                    KeyDefaultValue = FieldManager.GetValue(KeyVar, KeyIsInternal);
                             }
                             else if (PropertyManager.CheckProperty(KeyVar))
                             {
@@ -473,7 +486,7 @@ namespace KS.Misc.Settings
                     // If the type is a color, initialize the color wheel
                     if (KeyType == SettingsKeyType.SColor)
                     {
-                        var keyColorValue = new Color(KeyDefaultValue.ToString());
+                        var keyColorValue = ((KeyValuePair<ColorTools.ColTypes, Color>)KeyDefaultValue).Value;
                         ColorValue = ColorWheelOpen.ColorWheel(keyColorValue.Type == ColorType.TrueColor,
                                                                (ConsoleColors)Convert.ToInt32(
                                                                    keyColorValue.Type == ColorType._255Color || keyColorValue.Type == ColorType._16Color ?
@@ -893,10 +906,10 @@ namespace KS.Misc.Settings
                                     }
 
                                     // Now, set the value
-                                    if (FieldManager.CheckField(KeyVar))
+                                    if (FieldManager.CheckField(KeyVar, KeyIsInternal))
                                     {
                                         // We're dealing with the field
-                                        FieldManager.SetValue(KeyVar, FinalColor, true);
+                                        FieldManager.SetValue(KeyVar, FinalColor, KeyIsInternal);
                                     }
                                     else if (PropertyManager.CheckProperty(KeyVar))
                                     {

@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Collections;
 using System.Reflection;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -72,6 +73,40 @@ namespace KS.Misc.Reflection
                 DebugWriter.WriteDebug(DebugLevel.I, "Field {0} not found.", Variable);
                 throw new Kernel.Exceptions.NoSuchReflectionVariableException(Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
             }
+        }
+
+        /// <summary>
+        /// Gets the value of a variable dynamically 
+        /// </summary>
+        /// <param name="Variable">Variable name. Use operator NameOf to get name.</param>
+        /// <param name="Index">Index from the enumerable</param>
+        /// <param name="Internal">Whether the field is internal</param>
+        /// <returns>Value of a variable</returns>
+        public static object GetValueFromEnumerable(string Variable, int Index, bool Internal = false) => GetValueFromEnumerable(Variable, null, 0, Internal);
+
+        /// <summary>
+        /// Gets the value of a variable dynamically 
+        /// </summary>
+        /// <param name="Variable">Variable name. Use operator NameOf to get name.</param>
+        /// <param name="VariableType">Variable type</param>
+        /// <param name="Index">Index from the enumerable</param>
+        /// <param name="Internal">Whether the field is internal</param>
+        /// <returns>Value of a variable from the enumerable, or null if not an enumerable</returns>
+        public static object GetValueFromEnumerable(string Variable, Type VariableType, int Index, bool Internal = false)
+        {
+            var value = GetValue(Variable, VariableType, Internal);
+            if (value is IEnumerable values)
+            {
+                int idx = 0;
+                foreach (object val in values)
+                {
+                    if (idx == Index)
+                    {
+                        return val;
+                    }
+                }
+            }
+            return null;
         }
 
         /// <summary>

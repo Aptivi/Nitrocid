@@ -111,7 +111,7 @@ namespace KSConverter
                     if (ConfigReader.Sections["Colors"].Keys.Contains("User Name Shell Color"))
                         ColorTools.SetColor(ColorTools.ColTypes.UserNameShell, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), ConfigReader.Sections["Colors"].Keys["User Name Shell Color"].Value))));
                     if (ConfigReader.Sections["Colors"].Keys.Contains("Host Name Shell Color"))
-                        ColorTools.SetColor(ColorTools.ColTypes.HostName, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), ConfigReader.Sections["Colors"].Keys["Host Name Shell Color"].Value))));
+                        ColorTools.SetColor(ColorTools.ColTypes.HostNameShell, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), ConfigReader.Sections["Colors"].Keys["Host Name Shell Color"].Value))));
                     if (ConfigReader.Sections["Colors"].Keys.Contains("Continuable Kernel Error Color"))
                         ColorTools.SetColor(ColorTools.ColTypes.ContKernelError, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), ConfigReader.Sections["Colors"].Keys["Continuable Kernel Error Color"].Value))));
                     if (ConfigReader.Sections["Colors"].Keys.Contains("Uncontinuable Kernel Error Color"))

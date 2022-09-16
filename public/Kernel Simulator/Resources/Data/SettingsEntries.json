@@ -154,7 +154,10 @@
             {
                 "Name": "Input Color",
                 "Type": "SColor",
-                "Variable": "InputColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 0
             },
             {
                 "Name": "License Color",

@@ -70,7 +70,7 @@ namespace KSConverter
                         else if (line.Contains("Host Name Shell , "))
                         {
                             if (Shell.ColoredShell == true)
-                                ColorTools.SetColor(ColorTools.ColTypes.HostName, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), line.Replace("Host Name Shell , ", "")))));
+                                ColorTools.SetColor(ColorTools.ColTypes.HostNameShell, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), line.Replace("Host Name Shell , ", "")))));
                         }
                         else if (line.Contains("Continuable Kernel Error , "))
                         {

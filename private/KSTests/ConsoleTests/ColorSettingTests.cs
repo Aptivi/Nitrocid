@@ -81,7 +81,7 @@ namespace KSTests.ConsoleTests
             ColorTools.GetColor(ColorTools.ColTypes.License).ShouldBeEquivalentTo(new Color((int)ConsoleColors.White));
             ColorTools.GetColor(ColorTools.ColTypes.ContKernelError).ShouldBeEquivalentTo(new Color((int)ConsoleColors.Yellow));
             ColorTools.GetColor(ColorTools.ColTypes.UncontKernelError).ShouldBeEquivalentTo(new Color((int)ConsoleColors.Red));
-            ColorTools.GetColor(ColorTools.ColTypes.HostName).ShouldBeEquivalentTo(new Color((int)ConsoleColors.DarkGreen));
+            ColorTools.GetColor(ColorTools.ColTypes.HostNameShell).ShouldBeEquivalentTo(new Color((int)ConsoleColors.DarkGreen));
             ColorTools.GetColor(ColorTools.ColTypes.UserNameShell).ShouldBeEquivalentTo(new Color((int)ConsoleColors.Green));
             ColorTools.GetColor(ColorTools.ColTypes.Background).ShouldBeEquivalentTo(new Color((int)ConsoleColors.Black));
             ColorTools.GetColor(ColorTools.ColTypes.NeutralText).ShouldBeEquivalentTo(new Color((int)ConsoleColors.Gray));
