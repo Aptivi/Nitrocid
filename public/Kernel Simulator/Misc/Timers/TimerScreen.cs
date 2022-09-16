@@ -115,11 +115,11 @@ namespace KS.Misc.Timers
             // Print the time interval
             if (Flags.EnableFigletTimer)
             {
-                FigletWhereColor.WriteFigletWhere(CurrentRemainingString, TimeLeftPosition, TimeTopPosition, true, FigletFont, ColorTools.ColTypes.Neutral);
+                FigletWhereColor.WriteFigletWhere(CurrentRemainingString, TimeLeftPosition, TimeTopPosition, true, FigletFont, ColorTools.ColTypes.NeutralText);
             }
             else
             {
-                TextWriterWhereColor.WriteWhere(CurrentRemainingString, TimeLeftPosition, TimeTopPosition, true, ColorTools.ColTypes.Neutral);
+                TextWriterWhereColor.WriteWhere(CurrentRemainingString, TimeLeftPosition, TimeTopPosition, true, ColorTools.ColTypes.NeutralText);
             }
 
             // Print the border
@@ -167,11 +167,11 @@ namespace KS.Misc.Timers
                                     ClearRemainingTimeDisplay(RemainingString, FigletTimeOldWidth, FigletTimeOldWidthEnd);
                                     if (Flags.EnableFigletTimer)
                                     {
-                                        FigletWhereColor.WriteFigletWhere(RemainingString, TimeLeftPosition, TimeTopPosition, true, FigletFont, ColorTools.ColTypes.Neutral);
+                                        FigletWhereColor.WriteFigletWhere(RemainingString, TimeLeftPosition, TimeTopPosition, true, FigletFont, ColorTools.ColTypes.NeutralText);
                                     }
                                     else
                                     {
-                                        TextWriterWhereColor.WriteWhere(RemainingString, TimeLeftPosition, TimeTopPosition, true, ColorTools.ColTypes.Neutral);
+                                        TextWriterWhereColor.WriteWhere(RemainingString, TimeLeftPosition, TimeTopPosition, true, ColorTools.ColTypes.NeutralText);
                                     }
                                 }
 
@@ -254,11 +254,11 @@ namespace KS.Misc.Timers
                     // Actually display the remaining time
                     if (Flags.EnableFigletTimer)
                     {
-                        FigletWhereColor.WriteFigletWhere(UntilText, TimeLeftPosition, TimeTopPosition, true, FigletFont, ColorTools.ColTypes.Neutral);
+                        FigletWhereColor.WriteFigletWhere(UntilText, TimeLeftPosition, TimeTopPosition, true, FigletFont, ColorTools.ColTypes.NeutralText);
                     }
                     else
                     {
-                        TextWriterWhereColor.WriteWhere(UntilText, TimeLeftPosition, TimeTopPosition, true, ColorTools.ColTypes.Neutral);
+                        TextWriterWhereColor.WriteWhere(UntilText, TimeLeftPosition, TimeTopPosition, true, ColorTools.ColTypes.NeutralText);
                     }
                 }
                 catch (ThreadInterruptedException)
@@ -314,12 +314,12 @@ namespace KS.Misc.Timers
                     for (int Position = FigletOldWidth - 1, loopTo1 = FigletTimeLeftPosition - 1; Position <= loopTo1; Position++)
                     {
                         ConsoleWrapper.CursorLeft = Position;
-                        TextWriterColor.Write(" ", false, ColorTools.GetColor(ColorTools.ColTypes.Neutral), ColorTools.GetColor(ColorTools.ColTypes.Background));
+                        TextWriterColor.Write(" ", false, ColorTools.GetColor(ColorTools.ColTypes.NeutralText), ColorTools.GetColor(ColorTools.ColTypes.Background));
                     }
                     for (int Position = FigletOldWidthEnd, loopTo2 = FigletTimeLeftEndPosition + 1; Position <= loopTo2; Position++)
                     {
                         ConsoleWrapper.CursorLeft = Position;
-                        TextWriterColor.Write(" ", false, ColorTools.GetColor(ColorTools.ColTypes.Neutral), ColorTools.GetColor(ColorTools.ColTypes.Background));
+                        TextWriterColor.Write(" ", false, ColorTools.GetColor(ColorTools.ColTypes.NeutralText), ColorTools.GetColor(ColorTools.ColTypes.Background));
                     }
                 }
             }

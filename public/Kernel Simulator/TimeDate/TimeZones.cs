@@ -66,7 +66,7 @@ namespace KS.TimeDate
             bool ZoneFound = ZoneTimes.ContainsKey(Zone);
             if (ZoneFound)
             {
-                TextWriterColor.Write(Translate.DoTranslation("- Time of {0}: {1}") + " ({2})", true, ColorTools.ColTypes.Neutral, Zone, ZoneTimes[Zone].ToString(), FindSystemTimeZoneById(Zone).GetUtcOffset(TimeDate.KernelDateTime).ToString());
+                TextWriterColor.Write(Translate.DoTranslation("- Time of {0}: {1}") + " ({2})", true, ColorTools.ColTypes.NeutralText, Zone, ZoneTimes[Zone].ToString(), FindSystemTimeZoneById(Zone).GetUtcOffset(TimeDate.KernelDateTime).ToString());
             }
             return ZoneFound;
         }
@@ -85,7 +85,7 @@ namespace KS.TimeDate
                 if (ZoneName.Contains(Zone))
                 {
                     ZoneFound = true;
-                    TextWriterColor.Write(Translate.DoTranslation("- Time of {0}: {1}") + " ({2})", true, ColorTools.ColTypes.Neutral, ZoneName, ZoneTimes[ZoneName].ToString(), FindSystemTimeZoneById(ZoneName).GetUtcOffset(TimeDate.KernelDateTime).ToString());
+                    TextWriterColor.Write(Translate.DoTranslation("- Time of {0}: {1}") + " ({2})", true, ColorTools.ColTypes.NeutralText, ZoneName, ZoneTimes[ZoneName].ToString(), FindSystemTimeZoneById(ZoneName).GetUtcOffset(TimeDate.KernelDateTime).ToString());
                 }
             }
             return ZoneFound;
@@ -98,7 +98,7 @@ namespace KS.TimeDate
         {
             var ZoneTimes = GetTimeZones();
             foreach (var TimeZone in ZoneTimes.Keys)
-                TextWriterColor.Write(Translate.DoTranslation("- Time of {0}: {1}") + " ({2})", true, ColorTools.ColTypes.Neutral, TimeZone, ZoneTimes[TimeZone].ToString(), FindSystemTimeZoneById(TimeZone).GetUtcOffset(TimeDate.KernelDateTime).ToString());
+                TextWriterColor.Write(Translate.DoTranslation("- Time of {0}: {1}") + " ({2})", true, ColorTools.ColTypes.NeutralText, TimeZone, ZoneTimes[TimeZone].ToString(), FindSystemTimeZoneById(TimeZone).GetUtcOffset(TimeDate.KernelDateTime).ToString());
         }
 
     }

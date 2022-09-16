@@ -46,12 +46,12 @@ namespace KS.Shell.Shells.UESH.Commands
             if (Screensaver.Screensavers.ContainsKey(StringArgs) | CustomSaverTools.CustomSavers.ContainsKey(StringArgs))
             {
                 Screensaver.SetDefaultScreensaver(StringArgs);
-                TextWriterColor.Write(Translate.DoTranslation("{0} is set to default screensaver."), true, ColorTools.ColTypes.Neutral, StringArgs);
+                TextWriterColor.Write(Translate.DoTranslation("{0} is set to default screensaver."), true, ColorTools.ColTypes.NeutralText, StringArgs);
             }
             else if (Checking.FileExists($"{modPath}{StringArgs}") & !Flags.SafeMode)
             {
                 Screensaver.SetDefaultScreensaver(StringArgs);
-                TextWriterColor.Write(Translate.DoTranslation("{0} is set to default screensaver."), true, ColorTools.ColTypes.Neutral, StringArgs);
+                TextWriterColor.Write(Translate.DoTranslation("{0} is set to default screensaver."), true, ColorTools.ColTypes.NeutralText, StringArgs);
             }
             else
             {
@@ -63,9 +63,9 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             if (CustomSaverTools.CustomSavers.Count > 0)
             {
-                TextWriterColor.Write(Translate.DoTranslation("where customsaver will be") + " {0}", true, ColorTools.ColTypes.Neutral, string.Join(", ", CustomSaverTools.CustomSavers.Keys));
+                TextWriterColor.Write(Translate.DoTranslation("where customsaver will be") + " {0}", true, ColorTools.ColTypes.NeutralText, string.Join(", ", CustomSaverTools.CustomSavers.Keys));
             }
-            TextWriterColor.Write(Translate.DoTranslation("where builtinsaver will be") + " {0}", true, ColorTools.ColTypes.Neutral, string.Join(", ", Screensaver.Screensavers.Keys));
+            TextWriterColor.Write(Translate.DoTranslation("where builtinsaver will be") + " {0}", true, ColorTools.ColTypes.NeutralText, string.Join(", ", Screensaver.Screensavers.Keys));
         }
 
     }

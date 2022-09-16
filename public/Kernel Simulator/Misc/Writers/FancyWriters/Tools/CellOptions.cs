@@ -50,7 +50,7 @@ namespace KS.Misc.Writers.FancyWriters.Tools
         /// <summary>
         /// The custom cell color
         /// </summary>
-        public Color CellColor { get; set; } = ColorTools.GetColor(ColorTools.ColTypes.Neutral);
+        public Color CellColor { get; set; } = ColorTools.GetColor(ColorTools.ColTypes.NeutralText);
         /// <summary>
         /// The custom background cell color
         /// </summary>

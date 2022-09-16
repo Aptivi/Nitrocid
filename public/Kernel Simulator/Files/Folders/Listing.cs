@@ -248,7 +248,7 @@ namespace KS.Files.Folders
 
                     // Show total size in list optionally
                     if (ShowTotalSizeInList)
-                        TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("Total size in folder:") + " {0}", true, ColorTools.ColTypes.Neutral, TotalSize.FileSizeToString());
+                        TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("Total size in folder:") + " {0}", true, ColorTools.ColTypes.NeutralText, TotalSize.FileSizeToString());
                 }
                 catch (Exception ex)
                 {

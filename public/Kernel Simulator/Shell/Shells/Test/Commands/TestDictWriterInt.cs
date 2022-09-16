@@ -34,9 +34,9 @@ namespace KS.Shell.Shells.Test.Commands
         {
             var NormalIntegerDict = new Dictionary<string, int>() { { "One", 1 }, { "Two", 2 }, { "Three", 3 } };
             var ArrayIntegerDict = new Dictionary<string, int[]>() { { "One", new int[] { 1, 2, 3 } }, { "Two", new int[] { 1, 2, 3 } }, { "Three", new int[] { 1, 2, 3 } } };
-            TextWriterColor.Write(Translate.DoTranslation("Normal integer dictionary:"), true, ColorTools.ColTypes.Neutral);
+            TextWriterColor.Write(Translate.DoTranslation("Normal integer dictionary:"), true, ColorTools.ColTypes.NeutralText);
             ListWriterColor.WriteList(NormalIntegerDict);
-            TextWriterColor.Write(Translate.DoTranslation("Array integer dictionary:"), true, ColorTools.ColTypes.Neutral);
+            TextWriterColor.Write(Translate.DoTranslation("Array integer dictionary:"), true, ColorTools.ColTypes.NeutralText);
             ListWriterColor.WriteList(ArrayIntegerDict);
         }
 

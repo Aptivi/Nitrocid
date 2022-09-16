@@ -34,9 +34,9 @@ namespace KS.Shell.Shells.Test.Commands
         {
             var NormalCharDict = new Dictionary<string, char>() { { "One", '1' }, { "Two", '2' }, { "Three", '3' } };
             var ArrayCharDict = new Dictionary<string, char[]>() { { "One", new char[] { '1', '2', '3' } }, { "Two", new char[] { '1', '2', '3' } }, { "Three", new char[] { '1', '2', '3' } } };
-            TextWriterColor.Write(Translate.DoTranslation("Normal char dictionary:"), true, ColorTools.ColTypes.Neutral);
+            TextWriterColor.Write(Translate.DoTranslation("Normal char dictionary:"), true, ColorTools.ColTypes.NeutralText);
             ListWriterColor.WriteList(NormalCharDict);
-            TextWriterColor.Write(Translate.DoTranslation("Array char dictionary:"), true, ColorTools.ColTypes.Neutral);
+            TextWriterColor.Write(Translate.DoTranslation("Array char dictionary:"), true, ColorTools.ColTypes.NeutralText);
             ListWriterColor.WriteList(ArrayCharDict);
         }
 

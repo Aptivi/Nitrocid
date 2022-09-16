@@ -51,14 +51,14 @@ namespace KS.Shell.Shells.UESH.Commands
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Changing MOTD..."), true, ColorTools.ColTypes.Neutral);
+                    TextWriterColor.Write(Translate.DoTranslation("Changing MOTD..."), true, ColorTools.ColTypes.NeutralText);
                     MotdParse.SetMotd(StringArgs);
                 }
             }
             else
             {
                 ShellStart.StartShell(ShellType.TextShell, Paths.GetKernelPath(KernelPathType.MOTD));
-                TextWriterColor.Write(Translate.DoTranslation("Changing MOTD..."), true, ColorTools.ColTypes.Neutral);
+                TextWriterColor.Write(Translate.DoTranslation("Changing MOTD..."), true, ColorTools.ColTypes.NeutralText);
                 MotdParse.ReadMotd();
             }
         }

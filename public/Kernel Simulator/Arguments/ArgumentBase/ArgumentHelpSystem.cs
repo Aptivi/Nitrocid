@@ -76,7 +76,7 @@ namespace KS.Arguments.ArgumentBase
                 string HelpUsage = ArgumentList[Argument].HelpUsage;
 
                 // Print usage information
-                TextWriterColor.Write(Translate.DoTranslation("Usage:") + $" {Argument} {HelpUsage}: {HelpDefinition}", true, ColorTools.ColTypes.Neutral);
+                TextWriterColor.Write(Translate.DoTranslation("Usage:") + $" {Argument} {HelpUsage}: {HelpDefinition}", true, ColorTools.ColTypes.NeutralText);
 
                 // Extra help action for some arguments
                 if (ArgumentList[Argument].AdditionalHelpAction is not null)

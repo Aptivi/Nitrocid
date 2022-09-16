@@ -70,7 +70,7 @@ namespace KS.Shell.Shells.FTP.Commands
 
         public override void HelpHelper()
         {
-            TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"), true, ColorTools.ColTypes.Neutral);
+            TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"), true, ColorTools.ColTypes.NeutralText);
             TextWriterColor.Write("  -f: ", false, ColorTools.ColTypes.ListEntry);
             TextWriterColor.Write(Translate.DoTranslation("Disconnects from server disgracefully"), true, ColorTools.ColTypes.ListValue);
         }

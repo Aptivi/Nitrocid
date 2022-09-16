@@ -66,11 +66,11 @@ namespace KS.Shell.Shells.UESH.Commands
             {
                 ArgumentPrompt.EnteredArguments = new List<string>(FinalArgs);
                 Flags.ArgsInjected = true;
-                TextWriterColor.Write(Translate.DoTranslation("Injected arguments, {0}, will be scheduled to run at next reboot."), true, ColorTools.ColTypes.Neutral, string.Join(", ", ArgumentPrompt.EnteredArguments));
+                TextWriterColor.Write(Translate.DoTranslation("Injected arguments, {0}, will be scheduled to run at next reboot."), true, ColorTools.ColTypes.NeutralText, string.Join(", ", ArgumentPrompt.EnteredArguments));
             }
         }
 
-        public override void HelpHelper() => TextWriterColor.Write(Translate.DoTranslation("where arguments will be {0}"), true, ColorTools.ColTypes.Neutral, string.Join(", ", ArgumentParse.AvailableArgs.Keys));
+        public override void HelpHelper() => TextWriterColor.Write(Translate.DoTranslation("where arguments will be {0}"), true, ColorTools.ColTypes.NeutralText, string.Join(", ", ArgumentParse.AvailableArgs.Keys));
 
     }
 }

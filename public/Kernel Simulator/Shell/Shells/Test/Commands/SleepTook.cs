@@ -38,17 +38,17 @@ namespace KS.Shell.Shells.Test.Commands
             bool Ticks = ListSwitchesOnly.Contains("-t");
             if (Ticks)
             {
-                TextWriterColor.Write("{0} ms => {1} ticks", true, ColorTools.ColTypes.Neutral, SleepMs, ThreadManager.GetActualTicks(SleepMs));
+                TextWriterColor.Write("{0} ms => {1} ticks", true, ColorTools.ColTypes.NeutralText, SleepMs, ThreadManager.GetActualTicks(SleepMs));
             }
             else
             {
-                TextWriterColor.Write("{0} ms => {1} ms", true, ColorTools.ColTypes.Neutral, SleepMs, ThreadManager.GetActualMilliseconds(SleepMs));
+                TextWriterColor.Write("{0} ms => {1} ms", true, ColorTools.ColTypes.NeutralText, SleepMs, ThreadManager.GetActualMilliseconds(SleepMs));
             }
         }
 
         public override void HelpHelper()
         {
-            TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"), true, ColorTools.ColTypes.Neutral);
+            TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"), true, ColorTools.ColTypes.NeutralText);
             TextWriterColor.Write("  -t: ", false, ColorTools.ColTypes.ListEntry);
             TextWriterColor.Write(Translate.DoTranslation("Unit in ticks"), true, ColorTools.ColTypes.ListValue);
         }

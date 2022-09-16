@@ -38,12 +38,12 @@ namespace KS.Shell.Shells.Test.Commands
                 {
                     if (Cult.Name.ToLower().Contains(ListArgsOnly[0].ToLower()) | Cult.EnglishName.ToLower().Contains(ListArgsOnly[0].ToLower()))
                     {
-                        TextWriterColor.Write("{0}: {1}", true, ColorTools.ColTypes.Neutral, Cult.Name, Cult.EnglishName);
+                        TextWriterColor.Write("{0}: {1}", true, ColorTools.ColTypes.NeutralText, Cult.Name, Cult.EnglishName);
                     }
                 }
                 else
                 {
-                    TextWriterColor.Write("{0}: {1}", true, ColorTools.ColTypes.Neutral, Cult.Name, Cult.EnglishName);
+                    TextWriterColor.Write("{0}: {1}", true, ColorTools.ColTypes.NeutralText, Cult.Name, Cult.EnglishName);
                 }
             }
         }

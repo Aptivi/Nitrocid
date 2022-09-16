@@ -585,10 +585,10 @@ namespace KS.Users
             var AnswerType = default(int);
 
             // First, select user name
-            TextWriterColor.Write(Translate.DoTranslation("It looks like you've got no user except root. This is bad. We'll guide you how to create one."), true, ColorTools.ColTypes.Neutral);
+            TextWriterColor.Write(Translate.DoTranslation("It looks like you've got no user except root. This is bad. We'll guide you how to create one."), true, ColorTools.ColTypes.NeutralText);
             while (Step == 1)
             {
-                TextWriterColor.Write(Translate.DoTranslation("Write your username."), true, ColorTools.ColTypes.Neutral);
+                TextWriterColor.Write(Translate.DoTranslation("Write your username."), true, ColorTools.ColTypes.NeutralText);
                 TextWriterColor.Write(">> ", false, ColorTools.ColTypes.Input);
                 AnswerUsername = Input.ReadLine();
                 DebugWriter.WriteDebug(DebugLevel.I, "Answer: {0}", AnswerUsername);
@@ -608,7 +608,7 @@ namespace KS.Users
             // Second, write password
             while (Step == 2)
             {
-                TextWriterColor.Write(Translate.DoTranslation("Write your password."), true, ColorTools.ColTypes.Neutral);
+                TextWriterColor.Write(Translate.DoTranslation("Write your password."), true, ColorTools.ColTypes.NeutralText);
                 TextWriterColor.Write(">> ", false, ColorTools.ColTypes.Input);
                 AnswerPassword = Input.ReadLineNoInput();
                 DebugWriter.WriteDebug(DebugLevel.I, "Answer: {0}", AnswerPassword);
@@ -628,7 +628,7 @@ namespace KS.Users
             // Third, select account type
             while (Step == 3)
             {
-                TextWriterColor.Write(Translate.DoTranslation("Select account type.") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.Neutral);
+                TextWriterColor.Write(Translate.DoTranslation("Select account type.") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.NeutralText);
                 TextWriterColor.Write(" 1) " + Translate.DoTranslation("Administrator: This account type has the most power in the kernel, allowing you to use system management programs."), true, ColorTools.ColTypes.Option);
                 TextWriterColor.Write(" 2) " + Translate.DoTranslation("Normal User: This account type is slightly more restricted than administrators."), true, ColorTools.ColTypes.Option);
                 TextWriterColor.Write(Kernel.Kernel.NewLine + ">> ", false, ColorTools.ColTypes.Input);
@@ -668,7 +668,7 @@ namespace KS.Users
             {
                 if ((Login.Login.Users["root"] ?? "") == (Encryption.GetEmptyHash(Encryption.Algorithms.SHA256) ?? ""))
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Write the administrator password. Make sure that you don't use this account unless you really know what you're doing."), true, ColorTools.ColTypes.Neutral);
+                    TextWriterColor.Write(Translate.DoTranslation("Write the administrator password. Make sure that you don't use this account unless you really know what you're doing."), true, ColorTools.ColTypes.NeutralText);
                     TextWriterColor.Write(">> ", false, ColorTools.ColTypes.Input);
                     AnswerRootPassword = Input.ReadLineNoInput();
                     DebugWriter.WriteDebug(DebugLevel.I, "Answer: {0}", AnswerPassword);
@@ -704,7 +704,7 @@ namespace KS.Users
             }
 
             // Write a congratulating message
-            TextWriterColor.Write(Translate.DoTranslation("Congratulations! You've made a new account! To finish this off, log in as your new account."), true, ColorTools.ColTypes.Neutral);
+            TextWriterColor.Write(Translate.DoTranslation("Congratulations! You've made a new account! To finish this off, log in as your new account."), true, ColorTools.ColTypes.NeutralText);
         }
 
         /// <summary>

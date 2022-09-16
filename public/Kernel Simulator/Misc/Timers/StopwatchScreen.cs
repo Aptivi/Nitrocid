@@ -39,7 +39,7 @@ namespace KS.Misc.Timers
 
         internal static List<LapDisplayInfo> Laps = new();
         internal static KernelThread StopwatchUpdate = new("Stopwatch ETA Updater", true, UpdateStopwatchElapsedDisplay);
-        internal static Color LapColor = ColorTools.GetColor(ColorTools.ColTypes.Neutral);
+        internal static Color LapColor = ColorTools.GetColor(ColorTools.ColTypes.NeutralText);
         internal static Stopwatch Stopwatch = new();
         internal static Stopwatch LappedStopwatch = new();
         internal static bool NewLapAcknowledged;
@@ -145,7 +145,7 @@ namespace KS.Misc.Timers
                             }
 
                             // Reset the indicators
-                            LapColor = ColorTools.GetColor(ColorTools.ColTypes.Neutral);
+                            LapColor = ColorTools.GetColor(ColorTools.ColTypes.NeutralText);
                             TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Lap") + " {0}: {1}", LapsCurrentLapLeftPosition, LapsCurrentLapTopPosition, false, LapColor, Laps.Count + 1, LappedStopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult));
                             ConsoleExtensions.ClearLineToRight();
                             ConsoleWrapper.SetCursorPosition(0, TimeTopPosition);
@@ -160,7 +160,7 @@ namespace KS.Misc.Timers
                                 LappedStopwatch.Reset();
                             if (Stopwatch.IsRunning)
                                 Stopwatch.Reset();
-                            LapColor = ColorTools.GetColor(ColorTools.ColTypes.Neutral);
+                            LapColor = ColorTools.GetColor(ColorTools.ColTypes.NeutralText);
                             if (StopwatchUpdate.IsAlive)
                                 StopwatchUpdate.Stop();
                             break;

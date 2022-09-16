@@ -176,7 +176,7 @@ namespace KS.Network.Mail.Transfer
                 // Populate attachments
                 if (Msg.Attachments.Count() > 0)
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Attachments:"), true, ColorTools.ColTypes.Neutral);
+                    TextWriterColor.Write(Translate.DoTranslation("Attachments:"), true, ColorTools.ColTypes.NeutralText);
                     var AttachmentEntities = new List<MimeEntity>();
                     if (Decrypt)
                     {
@@ -220,13 +220,13 @@ namespace KS.Network.Mail.Transfer
                         if (Attachment is MessagePart)
                         {
                             DebugWriter.WriteDebug(DebugLevel.I, "Attachment is a message.");
-                            TextWriterColor.Write($"- {Attachment.ContentDisposition?.FileName}", true, ColorTools.ColTypes.Neutral);
+                            TextWriterColor.Write($"- {Attachment.ContentDisposition?.FileName}", true, ColorTools.ColTypes.NeutralText);
                         }
                         else
                         {
                             DebugWriter.WriteDebug(DebugLevel.I, "Attachment is a file.");
                             MimePart AttachmentPart = (MimePart)Attachment;
-                            TextWriterColor.Write($"- {AttachmentPart.FileName}", true, ColorTools.ColTypes.Neutral);
+                            TextWriterColor.Write($"- {AttachmentPart.FileName}", true, ColorTools.ColTypes.NeutralText);
                         }
                     }
                 }

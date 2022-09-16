@@ -41,7 +41,7 @@ namespace KS.Shell.Shells.FTP.Commands
         {
             if (FTPShellCommon.FtpConnected)
             {
-                TextWriterColor.Write(Translate.DoTranslation("Copying {0} to {1}..."), true, ColorTools.ColTypes.Neutral, ListArgsOnly[0], ListArgsOnly[1]);
+                TextWriterColor.Write(Translate.DoTranslation("Copying {0} to {1}..."), true, ColorTools.ColTypes.NeutralText, ListArgsOnly[0], ListArgsOnly[1]);
                 if (FTPFilesystem.FTPCopyItem(ListArgsOnly[0], ListArgsOnly[1]))
                 {
                     TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("Copied successfully"), true, ColorTools.ColTypes.Success);

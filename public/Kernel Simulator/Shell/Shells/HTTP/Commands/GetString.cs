@@ -46,7 +46,7 @@ namespace KS.Shell.Shells.HTTP.Commands
                     var ResponseTask = HTTPTools.HttpGetString(ListArgsOnly[0]);
                     ResponseTask.Wait();
                     string Response = ResponseTask.Result;
-                    TextWriterColor.Write(Response, true, ColorTools.ColTypes.Neutral);
+                    TextWriterColor.Write(Response, true, ColorTools.ColTypes.NeutralText);
                 }
                 catch (AggregateException aex)
                 {

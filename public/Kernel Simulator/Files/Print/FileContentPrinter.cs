@@ -78,7 +78,7 @@ namespace KS.Files.Print
                     {
                         TextWriterColor.Write("{0,4}: ", false, ColorTools.ColTypes.ListEntry, ContentIndex + 1);
                     }
-                    TextWriterColor.Write(Contents[ContentIndex], true, ColorTools.ColTypes.Neutral);
+                    TextWriterColor.Write(Contents[ContentIndex], true, ColorTools.ColTypes.NeutralText);
                 }
             }
         }
@@ -138,7 +138,7 @@ namespace KS.Files.Print
                         ByteNumberEachSixteen = 1;
                     }
                 }
-                TextWriterColor.Write("", true, ColorTools.ColTypes.Neutral);
+                TextWriterColor.Write("", true, ColorTools.ColTypes.NeutralText);
             }
             else if (StartByte > FileByte.LongLength)
             {

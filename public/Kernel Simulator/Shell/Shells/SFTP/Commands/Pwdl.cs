@@ -32,7 +32,7 @@ namespace KS.Shell.Shells.SFTP.Commands
     class SFTP_PwdlCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => TextWriterColor.Write(Translate.DoTranslation("Local directory: {0}"), true, ColorTools.ColTypes.Neutral, SFTPShellCommon.SFTPCurrDirect);
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => TextWriterColor.Write(Translate.DoTranslation("Local directory: {0}"), true, ColorTools.ColTypes.NeutralText, SFTPShellCommon.SFTPCurrDirect);
 
     }
 }

@@ -65,7 +65,7 @@ namespace KSConverter
                         if (line.Contains("User Name Shell , "))
                         {
                             if (Shell.ColoredShell == true)
-                                ColorTools.SetColor(ColorTools.ColTypes.UserName, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), line.Replace("User Name Shell , ", "")))));
+                                ColorTools.SetColor(ColorTools.ColTypes.UserNameShell, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), line.Replace("User Name Shell , ", "")))));
                         }
                         else if (line.Contains("Host Name Shell , "))
                         {
@@ -75,17 +75,17 @@ namespace KSConverter
                         else if (line.Contains("Continuable Kernel Error , "))
                         {
                             if (Shell.ColoredShell == true)
-                                ColorTools.SetColor(ColorTools.ColTypes.Continuable, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), line.Replace("Continuable Kernel Error , ", "")))));
+                                ColorTools.SetColor(ColorTools.ColTypes.ContKernelError, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), line.Replace("Continuable Kernel Error , ", "")))));
                         }
                         else if (line.Contains("Uncontinuable Kernel Error , "))
                         {
                             if (Shell.ColoredShell == true)
-                                ColorTools.SetColor(ColorTools.ColTypes.Uncontinuable, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), line.Replace("Uncontinuable Kernel Error , ", "")))));
+                                ColorTools.SetColor(ColorTools.ColTypes.UncontKernelError, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), line.Replace("Uncontinuable Kernel Error , ", "")))));
                         }
                         else if (line.Contains("Text , "))
                         {
                             if (Shell.ColoredShell == true)
-                                ColorTools.SetColor(ColorTools.ColTypes.Neutral, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), line.Replace("Text , ", "")))));
+                                ColorTools.SetColor(ColorTools.ColTypes.NeutralText, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), line.Replace("Text , ", "")))));
                         }
                         else if (line.Contains("License , "))
                         {

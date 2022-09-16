@@ -36,7 +36,7 @@ namespace KS.Shell.Shells.FTP.Commands
         {
             if (FTPShellCommon.FtpConnected)
             {
-                TextWriterColor.Write("<<< C: {0}", true, ColorTools.ColTypes.Neutral, StringArgs);
+                TextWriterColor.Write("<<< C: {0}", true, ColorTools.ColTypes.NeutralText, StringArgs);
                 var ExecutedReply = FTPShellCommon.ClientFTP.Execute(StringArgs);
                 if (ExecutedReply.Success)
                 {

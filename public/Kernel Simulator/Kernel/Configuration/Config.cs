@@ -171,11 +171,11 @@ namespace KS.Kernel.Configuration
             // The Colors Section
             var ColorConfig = new JObject()
             {
-                { "User Name Shell Color", ColorTools.GetColor(ColorTools.ColTypes.UserName).PlainSequenceEnclosed },
-                { "Host Name Shell Color", ColorTools.GetColor(ColorTools.ColTypes.HostName).PlainSequenceEnclosed },
-                { "Continuable Kernel Error Color", ColorTools.GetColor(ColorTools.ColTypes.Continuable).PlainSequenceEnclosed },
-                { "Uncontinuable Kernel Error Color", ColorTools.GetColor(ColorTools.ColTypes.Uncontinuable).PlainSequenceEnclosed },
-                { "Text Color", ColorTools.GetColor(ColorTools.ColTypes.Neutral).PlainSequenceEnclosed },
+                { "User Name Shell Color", ColorTools.GetColor(ColorTools.ColTypes.UserNameShell).PlainSequenceEnclosed },
+                { "Host Name Shell Color", ColorTools.GetColor(ColorTools.ColTypes.HostNameShell).PlainSequenceEnclosed },
+                { "Continuable Kernel Error Color", ColorTools.GetColor(ColorTools.ColTypes.ContKernelError).PlainSequenceEnclosed },
+                { "Uncontinuable Kernel Error Color", ColorTools.GetColor(ColorTools.ColTypes.UncontKernelError).PlainSequenceEnclosed },
+                { "Text Color", ColorTools.GetColor(ColorTools.ColTypes.NeutralText).PlainSequenceEnclosed },
                 { "License Color", ColorTools.GetColor(ColorTools.ColTypes.License).PlainSequenceEnclosed },
                 { "Background Color", ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequenceEnclosed },
                 { "Input Color", ColorTools.GetColor(ColorTools.ColTypes.Input).PlainSequenceEnclosed },
@@ -1511,11 +1511,11 @@ namespace KS.Kernel.Configuration
             if (Shell.Shell.ColoredShell)
             {
                 // We use New Color() to parse entered color. This is to ensure that the kernel can use the correct VT sequence.
-                ColorTools.KernelColors[ColorTools.ColTypes.UserName] = new Color(ConfigToken["Colors"]["User Name Shell Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.HostName] = new Color(ConfigToken["Colors"]["Host Name Shell Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.Continuable] = new Color(ConfigToken["Colors"]["Continuable Kernel Error Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.Uncontinuable] = new Color(ConfigToken["Colors"]["Uncontinuable Kernel Error Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.Neutral] = new Color(ConfigToken["Colors"]["Text Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.UserNameShell] = new Color(ConfigToken["Colors"]["User Name Shell Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.HostNameShell] = new Color(ConfigToken["Colors"]["Host Name Shell Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.ContKernelError] = new Color(ConfigToken["Colors"]["Continuable Kernel Error Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.UncontKernelError] = new Color(ConfigToken["Colors"]["Uncontinuable Kernel Error Color"].ToString());
+                ColorTools.KernelColors[ColorTools.ColTypes.NeutralText] = new Color(ConfigToken["Colors"]["Text Color"].ToString());
                 ColorTools.KernelColors[ColorTools.ColTypes.License] = new Color(ConfigToken["Colors"]["License Color"].ToString());
                 ColorTools.KernelColors[ColorTools.ColTypes.Background] = new Color(ConfigToken["Colors"]["Background Color"].ToString());
                 ColorTools.KernelColors[ColorTools.ColTypes.Input] = new Color(ConfigToken["Colors"]["Input Color"].ToString());

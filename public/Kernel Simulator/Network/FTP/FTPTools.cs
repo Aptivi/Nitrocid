@@ -173,7 +173,7 @@ namespace KS.Network.FTP
         private static void ConnectFTP()
         {
             // Prepare profiles
-            TextWriterColor.Write(Translate.DoTranslation("Preparing profiles... It could take several minutes..."), true, ColorTools.ColTypes.Neutral);
+            TextWriterColor.Write(Translate.DoTranslation("Preparing profiles... It could take several minutes..."), true, ColorTools.ColTypes.NeutralText);
             var profiles = FTPShellCommon.ClientFTP.AutoDetect(Flags.FTPFirstProfileOnly);
             var profsel = new FtpProfile();
             DebugWriter.WriteDebug(DebugLevel.I, "Profile count: {0}", profiles.Count);
@@ -189,7 +189,7 @@ namespace KS.Network.FTP
                     var profanswered = default(bool);
                     var ProfHeaders = new[] { "#", Translate.DoTranslation("Host Name"), Translate.DoTranslation("Username"), Translate.DoTranslation("Data Type"), Translate.DoTranslation("Encoding"), Translate.DoTranslation("Encryption"), Translate.DoTranslation("Protocols") };
                     var ProfData = new string[profiles.Count, 7];
-                    TextWriterColor.Write(Translate.DoTranslation("More than one profile found. Select one:"), true, ColorTools.ColTypes.Neutral);
+                    TextWriterColor.Write(Translate.DoTranslation("More than one profile found. Select one:"), true, ColorTools.ColTypes.NeutralText);
                     for (int i = 0, loopTo = profiles.Count - 1; i <= loopTo; i++)
                     {
                         ProfData[i, 0] = (i + 1).ToString();
@@ -241,7 +241,7 @@ namespace KS.Network.FTP
             }
 
             // Connect
-            TextWriterColor.Write(Translate.DoTranslation("Trying to connect to {0} with profile {1}..."), true, ColorTools.ColTypes.Neutral, FTPShellCommon.ClientFTP.Host, profiles.IndexOf(profsel));
+            TextWriterColor.Write(Translate.DoTranslation("Trying to connect to {0} with profile {1}..."), true, ColorTools.ColTypes.NeutralText, FTPShellCommon.ClientFTP.Host, profiles.IndexOf(profsel));
             DebugWriter.WriteDebug(DebugLevel.I, "Connecting to {0} with {1}...", FTPShellCommon.ClientFTP.Host, profiles.IndexOf(profsel));
             FTPShellCommon.ClientFTP.Connect(profsel);
 
@@ -356,7 +356,7 @@ namespace KS.Network.FTP
                 var SpeedDialData = new string[SpeedDialLines.Count, 5];
                 if (!(SpeedDialLines.Count == 0))
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Select an address to connect to:"), true, ColorTools.ColTypes.Neutral);
+                    TextWriterColor.Write(Translate.DoTranslation("Select an address to connect to:"), true, ColorTools.ColTypes.NeutralText);
                     for (int i = 0, loopTo = SpeedDialLines.Count - 1; i <= loopTo; i++)
                     {
                         string SpeedDialAddress = SpeedDialLines.Keys.ElementAtOrDefault(i);

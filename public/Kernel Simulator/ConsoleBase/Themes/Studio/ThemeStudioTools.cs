@@ -41,12 +41,12 @@ namespace KS.ConsoleBase.Themes.Studio
         {
             { ColorTools.ColTypes.Input, ColorTools.GetColor(ColorTools.ColTypes.Input) },
             { ColorTools.ColTypes.License, ColorTools.GetColor(ColorTools.ColTypes.License) },
-            { ColorTools.ColTypes.Continuable, ColorTools.GetColor(ColorTools.ColTypes.Continuable) },
-            { ColorTools.ColTypes.Uncontinuable, ColorTools.GetColor(ColorTools.ColTypes.Uncontinuable) },
-            { ColorTools.ColTypes.HostName, ColorTools.GetColor(ColorTools.ColTypes.HostName) },
-            { ColorTools.ColTypes.UserName, ColorTools.GetColor(ColorTools.ColTypes.UserName) },
+            { ColorTools.ColTypes.ContKernelError, ColorTools.GetColor(ColorTools.ColTypes.ContKernelError) },
+            { ColorTools.ColTypes.UncontKernelError, ColorTools.GetColor(ColorTools.ColTypes.UncontKernelError) },
+            { ColorTools.ColTypes.HostNameShell, ColorTools.GetColor(ColorTools.ColTypes.HostNameShell) },
+            { ColorTools.ColTypes.UserNameShell, ColorTools.GetColor(ColorTools.ColTypes.UserNameShell) },
             { ColorTools.ColTypes.Background, ColorTools.GetColor(ColorTools.ColTypes.Background) },
-            { ColorTools.ColTypes.Neutral, ColorTools.GetColor(ColorTools.ColTypes.Neutral) },
+            { ColorTools.ColTypes.NeutralText, ColorTools.GetColor(ColorTools.ColTypes.NeutralText) },
             { ColorTools.ColTypes.ListEntry, ColorTools.GetColor(ColorTools.ColTypes.ListEntry) },
             { ColorTools.ColTypes.ListValue, ColorTools.GetColor(ColorTools.ColTypes.ListValue) },
             { ColorTools.ColTypes.Stage, ColorTools.GetColor(ColorTools.ColTypes.Stage) },
@@ -243,7 +243,7 @@ namespace KS.ConsoleBase.Themes.Studio
         public static void PreparePreview()
         {
             ConsoleWrapper.Clear();
-            TextWriterColor.Write(Translate.DoTranslation("Here's how your theme will look like:") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.Neutral);
+            TextWriterColor.Write(Translate.DoTranslation("Here's how your theme will look like:") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.NeutralText);
 
             // Print every possibility of color types
             for (int key = 0; key < SelectedColors.Count; key++)

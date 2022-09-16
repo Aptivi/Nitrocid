@@ -49,10 +49,10 @@ namespace KS.Shell.Shells.UESH.Commands
                     {
                         if (!URL.StartsWith(" "))
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("Downloading from {0}..."), true, ColorTools.ColTypes.Neutral, URL);
+                            TextWriterColor.Write(Translate.DoTranslation("Downloading from {0}..."), true, ColorTools.ColTypes.NeutralText, URL);
                             if (NetworkTransfer.DownloadFile(ListArgsOnly[0]))
                             {
-                                TextWriterColor.Write(Translate.DoTranslation("Download has completed."), true, ColorTools.ColTypes.Neutral);
+                                TextWriterColor.Write(Translate.DoTranslation("Download has completed."), true, ColorTools.ColTypes.NeutralText);
                             }
                         }
                         else

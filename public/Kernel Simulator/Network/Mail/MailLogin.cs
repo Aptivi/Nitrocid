@@ -248,18 +248,18 @@ namespace KS.Network.Mail
                 CryptographyContext.Register(typeof(PGPContext));
 
                 // IMAP Connection
-                TextWriterColor.Write(Translate.DoTranslation("Connecting to {0}..."), true, ColorTools.ColTypes.Neutral, Address);
+                TextWriterColor.Write(Translate.DoTranslation("Connecting to {0}..."), true, ColorTools.ColTypes.NeutralText, Address);
                 DebugWriter.WriteDebug(DebugLevel.I, "Connecting to IMAP Server {0}:{1} with SSL...", Address, Port);
                 IMAP_Client.Connect(Address, Port, MailKit.Security.SecureSocketOptions.SslOnConnect);
                 IMAP_Client.WebAlert += MailHandlers.HandleWebAlert;
 
                 // SMTP Connection
-                TextWriterColor.Write(Translate.DoTranslation("Connecting to {0}..."), true, ColorTools.ColTypes.Neutral, SmtpAddress);
+                TextWriterColor.Write(Translate.DoTranslation("Connecting to {0}..."), true, ColorTools.ColTypes.NeutralText, SmtpAddress);
                 DebugWriter.WriteDebug(DebugLevel.I, "Connecting to SMTP Server {0}:{1} with SSL...", Address, Port);
                 SMTP_Client.Connect(SmtpAddress, SmtpPort, MailKit.Security.SecureSocketOptions.StartTlsWhenAvailable);
 
                 // IMAP Authentication
-                TextWriterColor.Write(Translate.DoTranslation("Authenticating..."), true, ColorTools.ColTypes.Neutral);
+                TextWriterColor.Write(Translate.DoTranslation("Authenticating..."), true, ColorTools.ColTypes.NeutralText);
                 DebugWriter.WriteDebug(DebugLevel.I, "Authenticating {0} to IMAP server {1}...", Mail_Authentication.UserName, Address);
                 IMAP_Client.Authenticate(Mail_Authentication);
 

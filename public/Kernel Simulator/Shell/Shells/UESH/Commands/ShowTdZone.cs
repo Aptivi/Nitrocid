@@ -66,7 +66,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void HelpHelper()
         {
-            TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"), true, ColorTools.ColTypes.Neutral);
+            TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"), true, ColorTools.ColTypes.NeutralText);
             TextWriterColor.Write("  -all: ", false, ColorTools.ColTypes.ListEntry);
             TextWriterColor.Write(Translate.DoTranslation("Shows all the time zones"), true, ColorTools.ColTypes.ListValue);
         }

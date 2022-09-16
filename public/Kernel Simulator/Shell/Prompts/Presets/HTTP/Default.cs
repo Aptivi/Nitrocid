@@ -56,7 +56,7 @@ namespace KS.Shell.Prompts.Presets.HTTP
                 PresetStringBuilder.Append("[");
 
                 // HTTP site
-                PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.HostName).VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.HostNameShell).VTSequenceForeground);
                 PresetStringBuilder.AppendFormat("{0}", HTTPShellCommon.HTTPSite);
 
                 // Closing

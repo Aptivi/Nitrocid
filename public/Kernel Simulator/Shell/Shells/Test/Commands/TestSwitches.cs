@@ -31,9 +31,9 @@ namespace KS.Shell.Shells.Test.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            TextWriterColor.Write(Translate.DoTranslation("Normal passed switches:"), true, ColorTools.ColTypes.Neutral);
+            TextWriterColor.Write(Translate.DoTranslation("Normal passed switches:"), true, ColorTools.ColTypes.NeutralText);
             ListWriterColor.WriteList(ListSwitchesOnly);
-            TextWriterColor.Write(Translate.DoTranslation("Switches with values:"), true, ColorTools.ColTypes.Neutral);
+            TextWriterColor.Write(Translate.DoTranslation("Switches with values:"), true, ColorTools.ColTypes.NeutralText);
             ListWriterColor.WriteList(SwitchManager.GetSwitchValues(ListSwitchesOnly));
         }
 

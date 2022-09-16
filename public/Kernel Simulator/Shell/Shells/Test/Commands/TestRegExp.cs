@@ -38,7 +38,7 @@ namespace KS.Shell.Shells.Test.Commands
             int MatchNum = 1;
             foreach (Match Mat in Matches)
             {
-                TextWriterColor.Write(Translate.DoTranslation("Match {0} ({1}): {2}"), true, ColorTools.ColTypes.Neutral, MatchNum, Exp, Mat);
+                TextWriterColor.Write(Translate.DoTranslation("Match {0} ({1}): {2}"), true, ColorTools.ColTypes.NeutralText, MatchNum, Exp, Mat);
                 MatchNum += 1;
             }
         }

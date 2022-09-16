@@ -252,7 +252,7 @@ namespace KS.Network.SSH
             foreach (string BannerLine in BannerMessageLines)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, BannerLine);
-                TextWriterColor.Write(BannerLine, true, ColorTools.ColTypes.Neutral);
+                TextWriterColor.Write(BannerLine, true, ColorTools.ColTypes.NeutralText);
             }
         }
 
@@ -294,7 +294,7 @@ namespace KS.Network.SSH
             finally
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Connected: {0}", SSHClient.IsConnected);
-                TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("SSH Disconnected."), true, ColorTools.ColTypes.Neutral);
+                TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("SSH Disconnected."), true, ColorTools.ColTypes.NeutralText);
                 DisconnectionRequested = false;
 
                 // Remove handler for SSH
@@ -335,9 +335,9 @@ namespace KS.Network.SSH
                         SSHClient.Disconnect();
                     }
                     while (!SSHCErrorReader.EndOfStream)
-                        TextWriterColor.Write(SSHCErrorReader.ReadLine(), true, ColorTools.ColTypes.Neutral);
+                        TextWriterColor.Write(SSHCErrorReader.ReadLine(), true, ColorTools.ColTypes.NeutralText);
                     while (!SSHCOutputReader.EndOfStream)
-                        TextWriterColor.Write(SSHCOutputReader.ReadLine(), true, ColorTools.ColTypes.Neutral);
+                        TextWriterColor.Write(SSHCOutputReader.ReadLine(), true, ColorTools.ColTypes.NeutralText);
                 }
             }
             catch (Exception ex)
@@ -350,7 +350,7 @@ namespace KS.Network.SSH
             finally
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Connected: {0}", SSHClient.IsConnected);
-                TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("SSH Disconnected."), true, ColorTools.ColTypes.Neutral);
+                TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("SSH Disconnected."), true, ColorTools.ColTypes.NeutralText);
                 DisconnectionRequested = false;
                 Kernel.Kernel.KernelEventManager.RaiseSSHPostExecuteCommand(SSHClient.ConnectionInfo.Host + ":" + SSHClient.ConnectionInfo.Port.ToString(), Command);
 

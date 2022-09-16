@@ -58,7 +58,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     Shell.GetLine(StringArgs, WrapOutputPath);
                     var WrapOutputStream = new StreamReader(WrapOutputPath);
                     string WrapOutput = WrapOutputStream.ReadToEnd();
-                    TextWriterWrappedColor.WriteWrapped(WrapOutput, false, ColorTools.ColTypes.Neutral);
+                    TextWriterWrappedColor.WriteWrapped(WrapOutput, false, ColorTools.ColTypes.NeutralText);
                     if (!WrapOutput.EndsWith(Kernel.Kernel.NewLine))
                         TextWriterColor.Write();
                     WrapOutputStream.Close();
@@ -92,7 +92,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
 
             // Print them along with help description
-            TextWriterColor.Write(Translate.DoTranslation("Wrappable commands:") + " {0}", true, ColorTools.ColTypes.Neutral, string.Join(", ", WrappableCmds.ToArray()));
+            TextWriterColor.Write(Translate.DoTranslation("Wrappable commands:") + " {0}", true, ColorTools.ColTypes.NeutralText, string.Join(", ", WrappableCmds.ToArray()));
         }
 
     }

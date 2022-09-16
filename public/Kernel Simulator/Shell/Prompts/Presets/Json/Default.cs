@@ -56,11 +56,11 @@ namespace KS.Shell.Prompts.Presets.Json
             PresetStringBuilder.Append("[");
 
             // File name
-            PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.UserName).VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.UserNameShell).VTSequenceForeground);
             PresetStringBuilder.AppendFormat(Path.GetFileName(JsonShellCommon.JsonShell_FileStream.Name));
 
             // Was file edited?
-            PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.UserName).VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.UserNameShell).VTSequenceForeground);
             PresetStringBuilder.AppendFormat("{0}", JsonTools.JsonShell_WasJsonEdited() ? "*" : "");
 
             // Closing

@@ -56,11 +56,11 @@ namespace KS.Shell.Prompts.Presets.Hex
             PresetStringBuilder.Append("[");
 
             // File name
-            PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.UserName).VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.UserNameShell).VTSequenceForeground);
             PresetStringBuilder.AppendFormat(Path.GetFileName(HexEditShellCommon.HexEdit_FileStream.Name));
 
             // Was file edited?
-            PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.UserName).VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.UserNameShell).VTSequenceForeground);
             PresetStringBuilder.AppendFormat("{0}", HexEditTools.HexEdit_WasHexEdited() ? "*" : "");
 
             // Closing

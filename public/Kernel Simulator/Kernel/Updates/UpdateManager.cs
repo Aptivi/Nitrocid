@@ -75,7 +75,7 @@ namespace KS.Kernel.Updates
             }
 
             // Check for updates now
-            SplashReport.ReportProgress(Translate.DoTranslation("Checking for system updates..."), 10, ColorTools.ColTypes.Neutral);
+            SplashReport.ReportProgress(Translate.DoTranslation("Checking for system updates..."), 10, ColorTools.ColTypes.NeutralText);
             var AvailableUpdate = FetchKernelUpdates();
             if (AvailableUpdate is not null)
             {
@@ -96,7 +96,7 @@ namespace KS.Kernel.Updates
                 }
                 else
                 {
-                    SplashReport.ReportProgress(Translate.DoTranslation("You're up to date!"), 10, ColorTools.ColTypes.Neutral);
+                    SplashReport.ReportProgress(Translate.DoTranslation("You're up to date!"), 10, ColorTools.ColTypes.NeutralText);
                 }
             }
             else if (AvailableUpdate is null)

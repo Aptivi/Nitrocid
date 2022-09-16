@@ -36,7 +36,7 @@ namespace KS.Shell.Shells.Test.Commands
             {
                 if (CustomSaverTools.SetCustomSaverSettings(ListArgsOnly[0], ListArgsOnly[1], ListArgsOnly[2]))
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Settings set successfully for screensaver") + " {0}.", true, ColorTools.ColTypes.Neutral, ListArgsOnly[0]);
+                    TextWriterColor.Write(Translate.DoTranslation("Settings set successfully for screensaver") + " {0}.", true, ColorTools.ColTypes.NeutralText, ListArgsOnly[0]);
                 }
                 else
                 {

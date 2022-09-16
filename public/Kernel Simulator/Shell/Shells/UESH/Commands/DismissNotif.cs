@@ -41,7 +41,7 @@ namespace KS.Shell.Shells.UESH.Commands
             int NotifIndex = (int)Math.Round(Convert.ToDouble(ListArgsOnly[0]) - 1d);
             if (Notifications.NotifDismiss(NotifIndex))
             {
-                TextWriterColor.Write(Translate.DoTranslation("Notification dismissed successfully."), true, ColorTools.ColTypes.Neutral);
+                TextWriterColor.Write(Translate.DoTranslation("Notification dismissed successfully."), true, ColorTools.ColTypes.NeutralText);
             }
             else
             {

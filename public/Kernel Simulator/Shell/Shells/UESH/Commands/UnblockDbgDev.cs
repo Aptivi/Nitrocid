@@ -41,16 +41,16 @@ namespace KS.Shell.Shells.UESH.Commands
             {
                 if (RemoteDebugTools.TryRemoveFromBlockList(ListArgsOnly[0]))
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("{0} can now join remote debug again."), true, ColorTools.ColTypes.Neutral, ListArgsOnly[0]);
+                    TextWriterColor.Write(Translate.DoTranslation("{0} can now join remote debug again."), true, ColorTools.ColTypes.NeutralText, ListArgsOnly[0]);
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Failed to unblock {0}."), true, ColorTools.ColTypes.Neutral, ListArgsOnly[0]);
+                    TextWriterColor.Write(Translate.DoTranslation("Failed to unblock {0}."), true, ColorTools.ColTypes.NeutralText, ListArgsOnly[0]);
                 }
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("{0} is not blocked yet."), true, ColorTools.ColTypes.Neutral, ListArgsOnly[0]);
+                TextWriterColor.Write(Translate.DoTranslation("{0} is not blocked yet."), true, ColorTools.ColTypes.NeutralText, ListArgsOnly[0]);
             }
         }
 

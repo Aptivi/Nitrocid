@@ -41,7 +41,7 @@ namespace KS.Shell.Shells.UESH.Commands
             var Quantities = Quantity.Infos.Where(x => (x.Name ?? "") == (ListArgsOnly[0] ?? ""));
             if (Quantities.Count() != 0)
             {
-                TextWriterColor.Write(Translate.DoTranslation("Available unit types and their units:"), true, ColorTools.ColTypes.Neutral);
+                TextWriterColor.Write(Translate.DoTranslation("Available unit types and their units:"), true, ColorTools.ColTypes.NeutralText);
                 foreach (QuantityInfo QuantityInfo in Quantities)
                 {
                     TextWriterColor.Write("- {0}:", true, ColorTools.ColTypes.ListEntry, QuantityInfo.Name);
@@ -60,7 +60,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void HelpHelper()
         {
-            TextWriterColor.Write(Translate.DoTranslation("Available unit types:"), true, ColorTools.ColTypes.Neutral);
+            TextWriterColor.Write(Translate.DoTranslation("Available unit types:"), true, ColorTools.ColTypes.NeutralText);
             foreach (QuantityInfo QuantityInfo in Quantity.Infos)
                 TextWriterColor.Write("- {0}", true, ColorTools.ColTypes.ListEntry, QuantityInfo.Name);
         }

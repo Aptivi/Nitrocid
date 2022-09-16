@@ -77,11 +77,11 @@ namespace KS.Arguments
                 {
                     Flags.ArgsInjected = true;
                     Kernel.Kernel.KernelEventManager.RaiseArgumentsInjected(EnteredArguments);
-                    TextWriterColor.Write(Translate.DoTranslation("Injected arguments will be scheduled to run at next reboot."), true, ColorTools.ColTypes.Neutral);
+                    TextWriterColor.Write(Translate.DoTranslation("Injected arguments will be scheduled to run at next reboot."), true, ColorTools.ColTypes.NeutralText);
                 }
                 else if (EnteredArguments.Count != 0)
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Starting the kernel with:") + " {0}", true, ColorTools.ColTypes.Neutral, string.Join(", ", EnteredArguments));
+                    TextWriterColor.Write(Translate.DoTranslation("Starting the kernel with:") + " {0}", true, ColorTools.ColTypes.NeutralText, string.Join(", ", EnteredArguments));
                     ArgumentParse.ParseArguments(EnteredArguments, ArgumentType.KernelArgs);
                 }
             }

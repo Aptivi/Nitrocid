@@ -166,7 +166,7 @@ namespace KS.Misc.Splash.Splashes
             // Display the text and percentage
             string RenderedText = ProgressReport.Truncate(ConsoleWrapper.WindowWidth - ProgressReportWritePositionX - ProgressWritePositionX - 3);
             TextWriterWhereColor.WriteWhere("{0}%", ProgressWritePositionX, ProgressWritePositionY, true, ColorTools.ColTypes.Progress, Progress.ToString().PadLeft(3));
-            TextWriterWhereColor.WriteWhere(RenderedText, ProgressReportWritePositionX, ProgressReportWritePositionY, false, ColorTools.ColTypes.Neutral, Vars);
+            TextWriterWhereColor.WriteWhere(RenderedText, ProgressReportWritePositionX, ProgressReportWritePositionY, false, ColorTools.ColTypes.NeutralText, Vars);
             ConsoleExtensions.ClearLineToRight();
 
             // Display the progress bar

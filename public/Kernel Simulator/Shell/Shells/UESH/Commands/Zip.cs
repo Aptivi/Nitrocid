@@ -79,7 +79,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void HelpHelper()
         {
-            TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"), true, ColorTools.ColTypes.Neutral);
+            TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"), true, ColorTools.ColTypes.NeutralText);
             TextWriterColor.Write("  -fast: ", false, ColorTools.ColTypes.ListEntry);
             TextWriterColor.Write(Translate.DoTranslation("Fast compression"), true, ColorTools.ColTypes.ListValue);
             TextWriterColor.Write("  -nocomp: ", false, ColorTools.ColTypes.ListEntry);

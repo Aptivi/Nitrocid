@@ -77,7 +77,7 @@ namespace KS.Misc.Writers.FancyWriters
             int OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
             RepeatTimes = ConsoleBase.ConsoleWrapper.WindowWidth - ConsoleBase.ConsoleWrapper.CursorLeft - Margin * 2;
             if (Margin > 0)
-                TextWriterColor.Write(" ".Repeat(Margin), false, ColorTools.ColTypes.Neutral);
+                TextWriterColor.Write(" ".Repeat(Margin), false, ColorTools.ColTypes.NeutralText);
             TextWriterColor.Write("-".Repeat(RepeatTimes), true, ColorTools.ColTypes.TableSeparator);
 
             // Fix CursorTop value on Unix systems.
@@ -93,7 +93,7 @@ namespace KS.Misc.Writers.FancyWriters
                 for (int RowValueIndex = 0, loopTo3 = Rows.GetLength(1) - 1; RowValueIndex <= loopTo3; RowValueIndex++)
                 {
                     var ColoredCell = false;
-                    var CellColor = ColorTools.GetColor(ColorTools.ColTypes.Neutral);
+                    var CellColor = ColorTools.GetColor(ColorTools.ColTypes.NeutralText);
                     var CellBackgroundColor = ColorTools.GetColor(ColorTools.ColTypes.Background);
                     string RowValue = Rows[RowIndex, RowValueIndex];
                     int ColumnPosition = ColumnPositions[RowValueIndex];
@@ -132,7 +132,7 @@ namespace KS.Misc.Writers.FancyWriters
                     OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
                     RepeatTimes = ConsoleBase.ConsoleWrapper.WindowWidth - ConsoleBase.ConsoleWrapper.CursorLeft - Margin * 2;
                     if (Margin > 0)
-                        TextWriterColor.Write(" ".Repeat(Margin), false, ColorTools.ColTypes.Neutral);
+                        TextWriterColor.Write(" ".Repeat(Margin), false, ColorTools.ColTypes.NeutralText);
                     TextWriterColor.Write("-".Repeat(RepeatTimes), true, ColorTools.ColTypes.TableSeparator);
 
                     // Fix CursorTop value on Unix systems.
@@ -206,7 +206,7 @@ namespace KS.Misc.Writers.FancyWriters
                 for (int RowValueIndex = 0, loopTo3 = Rows.GetLength(1) - 1; RowValueIndex <= loopTo3; RowValueIndex++)
                 {
                     var ColoredCell = false;
-                    var CellColor = ColorTools.GetColor(ColorTools.ColTypes.Neutral);
+                    var CellColor = ColorTools.GetColor(ColorTools.ColTypes.NeutralText);
                     var CellBackgroundColor = ColorTools.GetColor(ColorTools.ColTypes.Background);
                     string RowValue = Rows[RowIndex, RowValueIndex];
                     int ColumnPosition = ColumnPositions[RowValueIndex];
@@ -320,7 +320,7 @@ namespace KS.Misc.Writers.FancyWriters
                 for (int RowValueIndex = 0, loopTo3 = Rows.GetLength(1) - 1; RowValueIndex <= loopTo3; RowValueIndex++)
                 {
                     var ColoredCell = false;
-                    var CellColor = ColorTools.GetColor(ColorTools.ColTypes.Neutral);
+                    var CellColor = ColorTools.GetColor(ColorTools.ColTypes.NeutralText);
                     var CellBackgroundColor = ColorTools.GetColor(ColorTools.ColTypes.Background);
                     string RowValue = Rows[RowIndex, RowValueIndex];
                     int ColumnPosition = ColumnPositions[RowValueIndex];
@@ -433,7 +433,7 @@ namespace KS.Misc.Writers.FancyWriters
                 for (int RowValueIndex = 0, loopTo3 = Rows.GetLength(1) - 1; RowValueIndex <= loopTo3; RowValueIndex++)
                 {
                     var ColoredCell = false;
-                    var CellColor = ColorTools.GetColor(ColorTools.ColTypes.Neutral);
+                    var CellColor = ColorTools.GetColor(ColorTools.ColTypes.NeutralText);
                     var CellBackgroundColor = ColorTools.GetColor(ColorTools.ColTypes.Background);
                     string RowValue = Rows[RowIndex, RowValueIndex];
                     int ColumnPosition = ColumnPositions[RowValueIndex];
@@ -547,7 +547,7 @@ namespace KS.Misc.Writers.FancyWriters
                 for (int RowValueIndex = 0, loopTo3 = Rows.GetLength(1) - 1; RowValueIndex <= loopTo3; RowValueIndex++)
                 {
                     var ColoredCell = false;
-                    var CellColor = ColorTools.GetColor(ColorTools.ColTypes.Neutral);
+                    var CellColor = ColorTools.GetColor(ColorTools.ColTypes.NeutralText);
                     var CellBackgroundColor = ColorTools.GetColor(ColorTools.ColTypes.Background);
                     string RowValue = Rows[RowIndex, RowValueIndex];
                     int ColumnPosition = ColumnPositions[RowValueIndex];
@@ -660,7 +660,7 @@ namespace KS.Misc.Writers.FancyWriters
                 for (int RowValueIndex = 0, loopTo3 = Rows.GetLength(1) - 1; RowValueIndex <= loopTo3; RowValueIndex++)
                 {
                     var ColoredCell = false;
-                    var CellColor = ColorTools.GetColor(ColorTools.ColTypes.Neutral);
+                    var CellColor = ColorTools.GetColor(ColorTools.ColTypes.NeutralText);
                     var CellBackgroundColor = ColorTools.GetColor(ColorTools.ColTypes.Background);
                     string RowValue = Rows[RowIndex, RowValueIndex];
                     int ColumnPosition = ColumnPositions[RowValueIndex];
@@ -774,7 +774,7 @@ namespace KS.Misc.Writers.FancyWriters
                 for (int RowValueIndex = 0, loopTo3 = Rows.GetLength(1) - 1; RowValueIndex <= loopTo3; RowValueIndex++)
                 {
                     var ColoredCell = false;
-                    var CellColor = ColorTools.GetColor(ColorTools.ColTypes.Neutral);
+                    var CellColor = ColorTools.GetColor(ColorTools.ColTypes.NeutralText);
                     var CellBackgroundColor = ColorTools.GetColor(ColorTools.ColTypes.Background);
                     string RowValue = Rows[RowIndex, RowValueIndex];
                     int ColumnPosition = ColumnPositions[RowValueIndex];

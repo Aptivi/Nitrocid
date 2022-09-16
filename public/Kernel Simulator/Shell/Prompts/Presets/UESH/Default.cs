@@ -57,7 +57,7 @@ namespace KS.Shell.Prompts.Presets.UESH
                 PresetStringBuilder.Append("[");
 
                 // Current username
-                PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.UserName).VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.UserNameShell).VTSequenceForeground);
                 PresetStringBuilder.AppendFormat("{0}", Login.Login.CurrentUser.Username);
 
                 // "At" sign
@@ -65,7 +65,7 @@ namespace KS.Shell.Prompts.Presets.UESH
                 PresetStringBuilder.Append("@");
 
                 // Current hostname
-                PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.HostName).VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.HostNameShell).VTSequenceForeground);
                 PresetStringBuilder.AppendFormat("{0}", NetworkTools.HostName);
 
                 // Current directory

@@ -34,9 +34,9 @@ namespace KS.Shell.Shells.Test.Commands
         {
             var NormalStringList = new List<string>() { "String 1", "String 2", "String 3" };
             var ArrayStringList = new List<string[]>() { { new string[] { "String 1", "String 2", "String 3" } }, { new string[] { "String 1", "String 2", "String 3" } }, { new string[] { "String 1", "String 2", "String 3" } } };
-            TextWriterColor.Write(Translate.DoTranslation("Normal string list:"), true, ColorTools.ColTypes.Neutral);
+            TextWriterColor.Write(Translate.DoTranslation("Normal string list:"), true, ColorTools.ColTypes.NeutralText);
             ListWriterColor.WriteList(NormalStringList);
-            TextWriterColor.Write(Translate.DoTranslation("Array string list:"), true, ColorTools.ColTypes.Neutral);
+            TextWriterColor.Write(Translate.DoTranslation("Array string list:"), true, ColorTools.ColTypes.NeutralText);
             ListWriterColor.WriteList(ArrayStringList);
         }
 

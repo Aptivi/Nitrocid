@@ -41,7 +41,7 @@ namespace KS.Shell.Shells.Hex.Commands
             string FinalByte = "";
 
             // Keep prompting for bytes until the user finishes
-            TextWriterColor.Write(Translate.DoTranslation("Enter a byte on its own line that you want to append to the end of the file. When you're done, write \"EOF\" on its own line."), true, ColorTools.ColTypes.Neutral);
+            TextWriterColor.Write(Translate.DoTranslation("Enter a byte on its own line that you want to append to the end of the file. When you're done, write \"EOF\" on its own line."), true, ColorTools.ColTypes.NeutralText);
             while (FinalByte != "EOF")
             {
                 TextWriterColor.Write(">> ", false, ColorTools.ColTypes.Input);

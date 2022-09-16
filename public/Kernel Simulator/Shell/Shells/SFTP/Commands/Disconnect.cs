@@ -40,7 +40,7 @@ namespace KS.Shell.Shells.SFTP.Commands
                 // Set a connected flag to False
                 SFTPShellCommon.SFTPConnected = false;
                 SFTPShellCommon.ClientSFTP.Disconnect();
-                TextWriterColor.Write(Translate.DoTranslation("Disconnected from {0}"), true, ColorTools.ColTypes.Neutral, FTPShellCommon.FtpSite);
+                TextWriterColor.Write(Translate.DoTranslation("Disconnected from {0}"), true, ColorTools.ColTypes.NeutralText, FTPShellCommon.FtpSite);
 
                 // Clean up everything
                 SFTPShellCommon.SFTPSite = "";

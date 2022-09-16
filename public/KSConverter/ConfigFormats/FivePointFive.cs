@@ -109,15 +109,15 @@ namespace KSConverter
                 {
                     // We use New Color() to parse entered color. This is to ensure that the kernel can use the correct VT sequence.
                     if (ConfigReader.Sections["Colors"].Keys.Contains("User Name Shell Color"))
-                        ColorTools.SetColor(ColorTools.ColTypes.UserName, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), ConfigReader.Sections["Colors"].Keys["User Name Shell Color"].Value))));
+                        ColorTools.SetColor(ColorTools.ColTypes.UserNameShell, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), ConfigReader.Sections["Colors"].Keys["User Name Shell Color"].Value))));
                     if (ConfigReader.Sections["Colors"].Keys.Contains("Host Name Shell Color"))
                         ColorTools.SetColor(ColorTools.ColTypes.HostName, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), ConfigReader.Sections["Colors"].Keys["Host Name Shell Color"].Value))));
                     if (ConfigReader.Sections["Colors"].Keys.Contains("Continuable Kernel Error Color"))
-                        ColorTools.SetColor(ColorTools.ColTypes.Continuable, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), ConfigReader.Sections["Colors"].Keys["Continuable Kernel Error Color"].Value))));
+                        ColorTools.SetColor(ColorTools.ColTypes.ContKernelError, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), ConfigReader.Sections["Colors"].Keys["Continuable Kernel Error Color"].Value))));
                     if (ConfigReader.Sections["Colors"].Keys.Contains("Uncontinuable Kernel Error Color"))
-                        ColorTools.SetColor(ColorTools.ColTypes.Uncontinuable, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), ConfigReader.Sections["Colors"].Keys["Uncontinuable Kernel Error Color"].Value))));
+                        ColorTools.SetColor(ColorTools.ColTypes.UncontKernelError, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), ConfigReader.Sections["Colors"].Keys["Uncontinuable Kernel Error Color"].Value))));
                     if (ConfigReader.Sections["Colors"].Keys.Contains("Text Color"))
-                        ColorTools.SetColor(ColorTools.ColTypes.Neutral, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), ConfigReader.Sections["Colors"].Keys["Text Color"].Value))));
+                        ColorTools.SetColor(ColorTools.ColTypes.NeutralText, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), ConfigReader.Sections["Colors"].Keys["Text Color"].Value))));
                     if (ConfigReader.Sections["Colors"].Keys.Contains("License Color"))
                         ColorTools.SetColor(ColorTools.ColTypes.License, new Color(Convert.ToInt32(Enum.Parse(typeof(ConsoleColors), ConfigReader.Sections["Colors"].Keys["License Color"].Value))));
                     if (ConfigReader.Sections["Colors"].Keys.Contains("Background Color"))

@@ -53,7 +53,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Changing from: {0} to {1}..."), true, ColorTools.ColTypes.Neutral, NetworkTools.HostName, ListArgsOnly[0]);
+                TextWriterColor.Write(Translate.DoTranslation("Changing from: {0} to {1}..."), true, ColorTools.ColTypes.NeutralText, NetworkTools.HostName, ListArgsOnly[0]);
                 NetworkTools.ChangeHostname(ListArgsOnly[0]);
             }
         }

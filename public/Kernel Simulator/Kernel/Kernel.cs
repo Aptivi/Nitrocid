@@ -160,30 +160,30 @@ namespace KS.Kernel
                     KernelTools.ReportNewStage(1, Translate.DoTranslation("- Stage 1: System initialization"));
                     if (RemoteDebugger.RDebugAutoStart & Flags.DebugMode)
                     {
-                        SplashReport.ReportProgress(Translate.DoTranslation("Starting the remote debugger..."), 3, ColorTools.ColTypes.Neutral);
+                        SplashReport.ReportProgress(Translate.DoTranslation("Starting the remote debugger..."), 3, ColorTools.ColTypes.NeutralText);
                         RemoteDebugger.StartRDebugThread();
                         if (!RemoteDebugger.RDebugFailed)
                         {
-                            SplashReport.ReportProgress(Translate.DoTranslation("Debug listening on all addresses using port {0}.").FormatString(RemoteDebugger.DebugPort), 5, ColorTools.ColTypes.Neutral);
+                            SplashReport.ReportProgress(Translate.DoTranslation("Debug listening on all addresses using port {0}.").FormatString(RemoteDebugger.DebugPort), 5, ColorTools.ColTypes.NeutralText);
                         }
                         else
                         {
                             SplashReport.ReportProgress(Translate.DoTranslation("Remote debug failed to start: {0}").FormatString(RemoteDebugger.RDebugFailedReason.Message), 5, ColorTools.ColTypes.Error);
                         }
                     }
-                    SplashReport.ReportProgress(Translate.DoTranslation("Starting RPC..."), 3, ColorTools.ColTypes.Neutral);
+                    SplashReport.ReportProgress(Translate.DoTranslation("Starting RPC..."), 3, ColorTools.ColTypes.NeutralText);
                     RemoteProcedure.WrapperStartRPC();
 
                     // If the two files are not found, create two MOTD files with current config.
                     if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.MOTD)))
                     {
                         MotdParse.SetMotd(Translate.DoTranslation("Welcome to Kernel!"));
-                        SplashReport.ReportProgress(Translate.DoTranslation("Generated default MOTD."), 3, ColorTools.ColTypes.Neutral);
+                        SplashReport.ReportProgress(Translate.DoTranslation("Generated default MOTD."), 3, ColorTools.ColTypes.NeutralText);
                     }
                     if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.MAL)))
                     {
                         MalParse.SetMal(Translate.DoTranslation("Logged in successfully as <user>"));
-                        SplashReport.ReportProgress(Translate.DoTranslation("Generated default MAL."), 3, ColorTools.ColTypes.Neutral);
+                        SplashReport.ReportProgress(Translate.DoTranslation("Generated default MAL."), 3, ColorTools.ColTypes.NeutralText);
                     }
 
                     // Check for kernel updates
@@ -211,18 +211,18 @@ namespace KS.Kernel
                     }
                     else
                     {
-                        SplashReport.ReportProgress(Translate.DoTranslation("Running in safe mode. Skipping stage..."), 0, ColorTools.ColTypes.Neutral);
+                        SplashReport.ReportProgress(Translate.DoTranslation("Running in safe mode. Skipping stage..."), 0, ColorTools.ColTypes.NeutralText);
                     }
                     KernelEventManager.RaiseStartKernel();
 
                     // Phase 4: Log-in
                     KernelTools.ReportNewStage(4, Translate.DoTranslation("- Stage 4: Log in"));
                     UserManagement.InitializeSystemAccount();
-                    SplashReport.ReportProgress(Translate.DoTranslation("System account initialized"), 5, ColorTools.ColTypes.Neutral);
+                    SplashReport.ReportProgress(Translate.DoTranslation("System account initialized"), 5, ColorTools.ColTypes.NeutralText);
                     UserManagement.InitializeUsers();
-                    SplashReport.ReportProgress(Translate.DoTranslation("Users initialized"), 5, ColorTools.ColTypes.Neutral);
+                    SplashReport.ReportProgress(Translate.DoTranslation("Users initialized"), 5, ColorTools.ColTypes.NeutralText);
                     GroupManagement.LoadGroups();
-                    SplashReport.ReportProgress(Translate.DoTranslation("Groups loaded"), 5, ColorTools.ColTypes.Neutral);
+                    SplashReport.ReportProgress(Translate.DoTranslation("Groups loaded"), 5, ColorTools.ColTypes.NeutralText);
 
                     // Reset console state and stop stage timer
                     KernelTools.ReportNewStage(5, "");
@@ -270,7 +270,7 @@ namespace KS.Kernel
                     {
                         MotdParse.ReadMotd();
                         MalParse.ReadMal();
-                        TextWriterColor.Write(Translate.DoTranslation("Enter the admin password for maintenance."), true, ColorTools.ColTypes.Neutral);
+                        TextWriterColor.Write(Translate.DoTranslation("Enter the admin password for maintenance."), true, ColorTools.ColTypes.NeutralText);
                         if (Login.Login.Users.ContainsKey("root"))
                         {
                             DebugWriter.WriteDebug(DebugLevel.I, "Root account found. Prompting for password...");

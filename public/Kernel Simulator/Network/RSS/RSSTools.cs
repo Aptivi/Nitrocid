@@ -353,7 +353,7 @@ namespace KS.Network.RSS
             {
                 // If the JSON token is actually full, show the list of countries
                 ConsoleBase.ConsoleWrapper.Clear();
-                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Select your country by pressing the arrow left or arrow right keys. Press ENTER to confirm your selection."), 0, 1, false, ColorTools.ColTypes.Neutral);
+                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Select your country by pressing the arrow left or arrow right keys. Press ENTER to confirm your selection."), 0, 1, false, ColorTools.ColTypes.NeutralText);
                 TextWriterColor.Write(Kernel.Kernel.NewLine + Kernel.Kernel.NewLine + "   < ", false, ColorTools.ColTypes.Gray);
 
                 // The cursor positions for the arrow elements
@@ -363,7 +363,7 @@ namespace KS.Network.RSS
                 int ItemNameXPosition = (int)Math.Round(ConsoleBase.ConsoleWrapper.CursorLeft + (ArrowLeftXPosition - ConsoleBase.ConsoleWrapper.CursorLeft) / 2d - ItemName.Length / 2d);
                 TextWriterWhereColor.WriteWhere(ItemName, ItemNameXPosition, ConsoleBase.ConsoleWrapper.CursorTop, true, ColorTools.ColTypes.Option);
                 TextWriterWhereColor.WriteWhere(" >", ArrowLeftXPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, ColorTools.ColTypes.Gray);
-                TextWriterColor.Write(Kernel.Kernel.NewLine + Kernel.Kernel.NewLine + Translate.DoTranslation("This country has {0} news sources."), true, ColorTools.ColTypes.Neutral, FeedListJsonCountries[SelectedCountryIndex]["newSources"].Count());
+                TextWriterColor.Write(Kernel.Kernel.NewLine + Kernel.Kernel.NewLine + Translate.DoTranslation("This country has {0} news sources."), true, ColorTools.ColTypes.NeutralText, FeedListJsonCountries[SelectedCountryIndex]["newSources"].Count());
 
                 // Read and get response
                 var ConsoleResponse = ConsoleBase.ConsoleWrapper.ReadKey(true);
@@ -408,7 +408,7 @@ namespace KS.Network.RSS
             }
 
             // News source selection
-            TextWriterColor.Write(Translate.DoTranslation("Select your favorite news source by writing the number. Press ENTER to confirm your selection.") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.Neutral);
+            TextWriterColor.Write(Translate.DoTranslation("Select your favorite news source by writing the number. Press ENTER to confirm your selection.") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.NeutralText);
             for (int SourceIndex = 0, loopTo = FeedListJsonNewsSources.Length - 1; SourceIndex <= loopTo; SourceIndex++)
             {
                 var NewsSource = FeedListJsonNewsSources[SourceIndex];
@@ -456,7 +456,7 @@ namespace KS.Network.RSS
             }
 
             // News feed selection
-            TextWriterColor.Write(Translate.DoTranslation("Select a feed for your favorite news source. Press ENTER to confirm your selection.") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.Neutral);
+            TextWriterColor.Write(Translate.DoTranslation("Select a feed for your favorite news source. Press ENTER to confirm your selection.") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.NeutralText);
             for (int SourceFeedIndex = 0, loopTo1 = FeedListJsonNewsSourceFeeds.Length - 1; SourceFeedIndex <= loopTo1; SourceFeedIndex++)
             {
                 var NewsSourceFeed = FeedListJsonNewsSourceFeeds[SourceFeedIndex];

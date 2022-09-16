@@ -69,7 +69,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 }
                 else if (string.IsNullOrEmpty(APIKey))
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("You can get your own API key at https://home.openweathermap.org/api_keys."), true, ColorTools.ColTypes.Neutral);
+                    TextWriterColor.Write(Translate.DoTranslation("You can get your own API key at https://home.openweathermap.org/api_keys."), true, ColorTools.ColTypes.NeutralText);
                     TextWriterColor.Write(Translate.DoTranslation("Enter your API key:") + " ", false, ColorTools.ColTypes.Input);
                     APIKey = Input.ReadLineNoInput();
                     Forecast.ApiKey = APIKey;
@@ -80,8 +80,8 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void HelpHelper()
         {
-            TextWriterColor.Write(Translate.DoTranslation("You can always consult http://bulk.openweathermap.org/sample/city.list.json.gz for the list of cities with their IDs.") + " " + Translate.DoTranslation("Or, pass \"listcities\" to this command."), true, ColorTools.ColTypes.Neutral);
-            TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"), true, ColorTools.ColTypes.Neutral);
+            TextWriterColor.Write(Translate.DoTranslation("You can always consult http://bulk.openweathermap.org/sample/city.list.json.gz for the list of cities with their IDs.") + " " + Translate.DoTranslation("Or, pass \"listcities\" to this command."), true, ColorTools.ColTypes.NeutralText);
+            TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"), true, ColorTools.ColTypes.NeutralText);
             TextWriterColor.Write("  -list: ", false, ColorTools.ColTypes.ListEntry);
             TextWriterColor.Write(Translate.DoTranslation("Shows all the available cities"), true, ColorTools.ColTypes.ListValue);
         }

@@ -49,14 +49,14 @@ namespace KS.Shell.Shells.UESH.Commands
                 if (Checking.FolderExists(DirectoryPath))
                 {
                     var DirInfo = new DirectoryInfo(DirectoryPath);
-                    TextWriterColor.Write(Translate.DoTranslation("Name: {0}"), true, ColorTools.ColTypes.Neutral, DirInfo.Name);
-                    TextWriterColor.Write(Translate.DoTranslation("Full name: {0}"), true, ColorTools.ColTypes.Neutral, Filesystem.NeutralizePath(DirInfo.FullName));
-                    TextWriterColor.Write(Translate.DoTranslation("Size: {0}"), true, ColorTools.ColTypes.Neutral, SizeGetter.GetAllSizesInFolder(DirInfo).FileSizeToString());
-                    TextWriterColor.Write(Translate.DoTranslation("Creation time: {0}"), true, ColorTools.ColTypes.Neutral, TimeDateRenderers.Render(DirInfo.CreationTime));
-                    TextWriterColor.Write(Translate.DoTranslation("Last access time: {0}"), true, ColorTools.ColTypes.Neutral, TimeDateRenderers.Render(DirInfo.LastAccessTime));
-                    TextWriterColor.Write(Translate.DoTranslation("Last write time: {0}"), true, ColorTools.ColTypes.Neutral, TimeDateRenderers.Render(DirInfo.LastWriteTime));
-                    TextWriterColor.Write(Translate.DoTranslation("Attributes: {0}"), true, ColorTools.ColTypes.Neutral, DirInfo.Attributes);
-                    TextWriterColor.Write(Translate.DoTranslation("Parent directory: {0}"), true, ColorTools.ColTypes.Neutral, Filesystem.NeutralizePath(DirInfo.Parent.FullName));
+                    TextWriterColor.Write(Translate.DoTranslation("Name: {0}"), true, ColorTools.ColTypes.NeutralText, DirInfo.Name);
+                    TextWriterColor.Write(Translate.DoTranslation("Full name: {0}"), true, ColorTools.ColTypes.NeutralText, Filesystem.NeutralizePath(DirInfo.FullName));
+                    TextWriterColor.Write(Translate.DoTranslation("Size: {0}"), true, ColorTools.ColTypes.NeutralText, SizeGetter.GetAllSizesInFolder(DirInfo).FileSizeToString());
+                    TextWriterColor.Write(Translate.DoTranslation("Creation time: {0}"), true, ColorTools.ColTypes.NeutralText, TimeDateRenderers.Render(DirInfo.CreationTime));
+                    TextWriterColor.Write(Translate.DoTranslation("Last access time: {0}"), true, ColorTools.ColTypes.NeutralText, TimeDateRenderers.Render(DirInfo.LastAccessTime));
+                    TextWriterColor.Write(Translate.DoTranslation("Last write time: {0}"), true, ColorTools.ColTypes.NeutralText, TimeDateRenderers.Render(DirInfo.LastWriteTime));
+                    TextWriterColor.Write(Translate.DoTranslation("Attributes: {0}"), true, ColorTools.ColTypes.NeutralText, DirInfo.Attributes);
+                    TextWriterColor.Write(Translate.DoTranslation("Parent directory: {0}"), true, ColorTools.ColTypes.NeutralText, Filesystem.NeutralizePath(DirInfo.Parent.FullName));
                 }
                 else
                 {

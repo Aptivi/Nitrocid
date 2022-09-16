@@ -55,7 +55,7 @@ namespace KS.Shell.Prompts.Presets.Mail
             PresetStringBuilder.Append("[");
 
             // Mail username
-            PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.UserName).VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.UserNameShell).VTSequenceForeground);
             PresetStringBuilder.AppendFormat("{0}", MailLogin.Mail_Authentication.UserName);
 
             // Closing

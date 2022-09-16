@@ -51,15 +51,15 @@ namespace KS.Shell.Shells.UESH.Commands
                 {
                     var FileInfo = new FileInfo(FilePath);
                     var Style = LineEndingsTools.GetLineEndingFromFile(FilePath);
-                    TextWriterColor.Write(Translate.DoTranslation("Name: {0}"), true, ColorTools.ColTypes.Neutral, FileInfo.Name);
-                    TextWriterColor.Write(Translate.DoTranslation("Full name: {0}"), true, ColorTools.ColTypes.Neutral, Filesystem.NeutralizePath(FileInfo.FullName));
-                    TextWriterColor.Write(Translate.DoTranslation("File size: {0}"), true, ColorTools.ColTypes.Neutral, FileInfo.Length.FileSizeToString());
-                    TextWriterColor.Write(Translate.DoTranslation("Creation time: {0}"), true, ColorTools.ColTypes.Neutral, TimeDateRenderers.Render(FileInfo.CreationTime));
-                    TextWriterColor.Write(Translate.DoTranslation("Last access time: {0}"), true, ColorTools.ColTypes.Neutral, TimeDateRenderers.Render(FileInfo.LastAccessTime));
-                    TextWriterColor.Write(Translate.DoTranslation("Last write time: {0}"), true, ColorTools.ColTypes.Neutral, TimeDateRenderers.Render(FileInfo.LastWriteTime));
-                    TextWriterColor.Write(Translate.DoTranslation("Attributes: {0}"), true, ColorTools.ColTypes.Neutral, FileInfo.Attributes);
-                    TextWriterColor.Write(Translate.DoTranslation("Where to find: {0}"), true, ColorTools.ColTypes.Neutral, Filesystem.NeutralizePath(FileInfo.DirectoryName));
-                    TextWriterColor.Write(Translate.DoTranslation("Newline style:") + " {0}", true, ColorTools.ColTypes.Neutral, Style.ToString());
+                    TextWriterColor.Write(Translate.DoTranslation("Name: {0}"), true, ColorTools.ColTypes.NeutralText, FileInfo.Name);
+                    TextWriterColor.Write(Translate.DoTranslation("Full name: {0}"), true, ColorTools.ColTypes.NeutralText, Filesystem.NeutralizePath(FileInfo.FullName));
+                    TextWriterColor.Write(Translate.DoTranslation("File size: {0}"), true, ColorTools.ColTypes.NeutralText, FileInfo.Length.FileSizeToString());
+                    TextWriterColor.Write(Translate.DoTranslation("Creation time: {0}"), true, ColorTools.ColTypes.NeutralText, TimeDateRenderers.Render(FileInfo.CreationTime));
+                    TextWriterColor.Write(Translate.DoTranslation("Last access time: {0}"), true, ColorTools.ColTypes.NeutralText, TimeDateRenderers.Render(FileInfo.LastAccessTime));
+                    TextWriterColor.Write(Translate.DoTranslation("Last write time: {0}"), true, ColorTools.ColTypes.NeutralText, TimeDateRenderers.Render(FileInfo.LastWriteTime));
+                    TextWriterColor.Write(Translate.DoTranslation("Attributes: {0}"), true, ColorTools.ColTypes.NeutralText, FileInfo.Attributes);
+                    TextWriterColor.Write(Translate.DoTranslation("Where to find: {0}"), true, ColorTools.ColTypes.NeutralText, Filesystem.NeutralizePath(FileInfo.DirectoryName));
+                    TextWriterColor.Write(Translate.DoTranslation("Newline style:") + " {0}", true, ColorTools.ColTypes.NeutralText, Style.ToString());
                 }
                 else
                 {

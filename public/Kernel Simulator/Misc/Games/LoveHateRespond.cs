@@ -126,7 +126,7 @@ namespace KS.Misc.Games
 
                 // Ask the user the question
                 SeparatorWriterColor.WriteSeparator("[S: {0} / C: {1}]", true, Score, CommentNumber);
-                TextWriterColor.Write(Translate.DoTranslation("If someone made this comment to your video:"), true, ColorTools.ColTypes.Neutral);
+                TextWriterColor.Write(Translate.DoTranslation("If someone made this comment to your video:"), true, ColorTools.ColTypes.NeutralText);
                 TextWriterColor.Write("- {0}:", false, ColorTools.ColTypes.ListEntry, RandomUser);
                 TextWriterColor.Write(" {0}", true, ColorTools.ColTypes.ListValue, RandomComment);
                 TextWriterColor.Write(Translate.DoTranslation("How would you respond?") + " <A/T/Q> ", false, ColorTools.ColTypes.Input);
@@ -144,14 +144,14 @@ namespace KS.Misc.Games
                                 case CommentType.Love:
                                     {
                                         DebugWriter.WriteDebug(DebugLevel.I, "Apologized to love comment");
-                                        TextWriterColor.Write("[-1] " + Translate.DoTranslation("Apologized to love comment. Not good enough."), true, ColorTools.ColTypes.Neutral);
+                                        TextWriterColor.Write("[-1] " + Translate.DoTranslation("Apologized to love comment. Not good enough."), true, ColorTools.ColTypes.NeutralText);
                                         Score -= 1L;
                                         break;
                                     }
                                 case CommentType.Hate:
                                     {
                                         DebugWriter.WriteDebug(DebugLevel.I, "Apologized to hate comment");
-                                        TextWriterColor.Write("[+1] " + Translate.DoTranslation("You've apologized to a hate comment! Excellent!"), true, ColorTools.ColTypes.Neutral);
+                                        TextWriterColor.Write("[+1] " + Translate.DoTranslation("You've apologized to a hate comment! Excellent!"), true, ColorTools.ColTypes.NeutralText);
                                         Score += 1L;
                                         break;
                                     }
@@ -166,14 +166,14 @@ namespace KS.Misc.Games
                                 case CommentType.Love:
                                     {
                                         DebugWriter.WriteDebug(DebugLevel.I, "Thanked love comment");
-                                        TextWriterColor.Write("[+1] " + Translate.DoTranslation("Great! {0} will appreciate your thanks."), true, ColorTools.ColTypes.Neutral, RandomUser);
+                                        TextWriterColor.Write("[+1] " + Translate.DoTranslation("Great! {0} will appreciate your thanks."), true, ColorTools.ColTypes.NeutralText, RandomUser);
                                         Score += 1L;
                                         break;
                                     }
                                 case CommentType.Hate:
                                     {
                                         DebugWriter.WriteDebug(DebugLevel.I, "Thanked hate comment");
-                                        TextWriterColor.Write("[-1] " + Translate.DoTranslation("You just thanked the hater for the hate comment!"), true, ColorTools.ColTypes.Neutral);
+                                        TextWriterColor.Write("[-1] " + Translate.DoTranslation("You just thanked the hater for the hate comment!"), true, ColorTools.ColTypes.NeutralText);
                                         Score -= 1L;
                                         break;
                                     }

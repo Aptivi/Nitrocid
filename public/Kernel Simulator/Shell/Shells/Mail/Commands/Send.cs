@@ -94,7 +94,7 @@ namespace KS.Shell.Shells.Mail.Commands
                     }
                 }
 
-                TextWriterColor.Write(Translate.DoTranslation("Enter file paths to attachments. Press ENTER on a blank path to confirm."), true, ColorTools.ColTypes.Neutral);
+                TextWriterColor.Write(Translate.DoTranslation("Enter file paths to attachments. Press ENTER on a blank path to confirm."), true, ColorTools.ColTypes.NeutralText);
                 string PathLine = " ";
                 while (!string.IsNullOrEmpty(PathLine))
                 {

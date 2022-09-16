@@ -94,7 +94,7 @@ namespace KS.Network.RPC
                 try
                 {
                     StartRPC();
-                    SplashReport.ReportProgress(Translate.DoTranslation("RPC listening on all addresses using port {0}.").FormatString(RPCPort), 5, ColorTools.ColTypes.Neutral);
+                    SplashReport.ReportProgress(Translate.DoTranslation("RPC listening on all addresses using port {0}.").FormatString(RPCPort), 5, ColorTools.ColTypes.NeutralText);
                 }
                 catch (ThreadStateException ex)
                 {
@@ -104,7 +104,7 @@ namespace KS.Network.RPC
             }
             else
             {
-                SplashReport.ReportProgress(Translate.DoTranslation("Not starting RPC because it's disabled."), 3, ColorTools.ColTypes.Neutral);
+                SplashReport.ReportProgress(Translate.DoTranslation("Not starting RPC because it's disabled."), 3, ColorTools.ColTypes.NeutralText);
             }
         }
 

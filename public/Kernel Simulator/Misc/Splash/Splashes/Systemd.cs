@@ -94,7 +94,7 @@ namespace KS.Misc.Splash.Splashes
         {
             if (!Beginning)
                 TextWriterWhereColor.WriteWhere("  OK  ", IndicatorLeft, IndicatorTop, true, ColorTools.ColTypes.Success);
-            TextWriterColor.Write($" [      ] {ProgressReport}", true, ColorTools.ColTypes.Neutral, Vars);
+            TextWriterColor.Write($" [      ] {ProgressReport}", true, ColorTools.ColTypes.NeutralText, Vars);
             if (!Beginning)
             {
                 IndicatorLeft = 2;

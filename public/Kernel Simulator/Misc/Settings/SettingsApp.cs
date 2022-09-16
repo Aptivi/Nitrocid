@@ -61,7 +61,7 @@ namespace KS.Misc.Settings
 
                 // List sections
                 SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Welcome to Settings!"), true);
-                TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("Select section:") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.Neutral);
+                TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("Select section:") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.NeutralText);
                 for (int SectionIndex = 0, loopTo = MaxSections - 1; SectionIndex <= loopTo; SectionIndex++)
                 {
                     JProperty Section = (JProperty)SettingsToken.ToList()[SectionIndex];
@@ -220,7 +220,7 @@ namespace KS.Misc.Settings
                 {
                     ConsoleBase.ConsoleWrapper.Clear();
                     SeparatorWriterColor.WriteSeparator(SectionTranslateName ? Translate.DoTranslation((string)SectionDisplayName) : (string)SectionDisplayName, true);
-                    TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation((string)SectionDescription) + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.Neutral);
+                    TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation((string)SectionDescription) + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.NeutralText);
 
                     // List options
                     for (int SectionIndex = 0, loopTo = MaxOptions - 1; SectionIndex <= loopTo; SectionIndex++)
@@ -403,7 +403,7 @@ namespace KS.Misc.Settings
 
                     // Make an introductory banner
                     SeparatorWriterColor.WriteSeparator(Translate.DoTranslation(Section + " Settings...") + " > " + Translate.DoTranslation(KeyName), true);
-                    TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation(KeyDescription), true, ColorTools.ColTypes.Neutral);
+                    TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation(KeyDescription), true, ColorTools.ColTypes.NeutralText);
 
                     // See how to get the value
                     if (!(KeyType == SettingsKeyType.SUnknown))
@@ -580,7 +580,7 @@ namespace KS.Misc.Settings
                                     ProgressBarColor.WriteProgress(100d * (CurrentValue / (double)IntSliderMaximumValue), 4, ConsoleBase.ConsoleWrapper.WindowHeight - 4);
 
                                     // Show the current value
-                                    TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Current value:") + " {0} / {1} - {2}" + Convert.ToString(CharManager.GetEsc()) + "[0K", 5, ConsoleBase.ConsoleWrapper.WindowHeight - 5, false, ColorTools.ColTypes.Neutral, CurrentValue, IntSliderMinimumValue, IntSliderMaximumValue);
+                                    TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Current value:") + " {0} / {1} - {2}" + Convert.ToString(CharManager.GetEsc()) + "[0K", 5, ConsoleBase.ConsoleWrapper.WindowHeight - 5, false, ColorTools.ColTypes.NeutralText, CurrentValue, IntSliderMinimumValue, IntSliderMaximumValue);
 
                                     // Parse the user input
                                     PressedKey = ConsoleBase.ConsoleWrapper.ReadKey().Key;
@@ -953,7 +953,7 @@ namespace KS.Misc.Settings
             List<string> Results;
 
             // Prompt the user
-            TextWriterColor.Write(Translate.DoTranslation("Write what do you want to search for."), true, ColorTools.ColTypes.Neutral);
+            TextWriterColor.Write(Translate.DoTranslation("Write what do you want to search for."), true, ColorTools.ColTypes.NeutralText);
             DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for searching...");
             TextWriterColor.Write(">> ", false, ColorTools.ColTypes.Input);
             SearchFor = Input.ReadLine();
@@ -967,7 +967,7 @@ namespace KS.Misc.Settings
                 ListWriterColor.WriteList(Results);
 
                 // Prompt for the number of setting to go to
-                TextWriterColor.Write(Translate.DoTranslation("Write the number of the setting to go to. Any other character means go back."), true, ColorTools.ColTypes.Neutral);
+                TextWriterColor.Write(Translate.DoTranslation("Write the number of the setting to go to. Any other character means go back."), true, ColorTools.ColTypes.NeutralText);
                 DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for writing...");
                 TextWriterColor.Write(">> ", false, ColorTools.ColTypes.Input);
                 SettingsNumber = Input.ReadLine();

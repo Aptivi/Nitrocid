@@ -64,7 +64,7 @@ namespace KS.Shell.Shells.UESH.Commands
                             var PingReplied = NetworkTools.PingAddress(PingedAddress);
                             if (PingReplied.Status == IPStatus.Success)
                             {
-                                TextWriterColor.Write("[{1}] " + Translate.DoTranslation("Ping succeeded in {0} ms."), true, ColorTools.ColTypes.Neutral, PingReplied.RoundtripTime, CurrentTime);
+                                TextWriterColor.Write("[{1}] " + Translate.DoTranslation("Ping succeeded in {0} ms."), true, ColorTools.ColTypes.NeutralText, PingReplied.RoundtripTime, CurrentTime);
                             }
                             else
                             {

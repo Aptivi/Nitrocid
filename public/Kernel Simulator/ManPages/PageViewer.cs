@@ -74,11 +74,11 @@ namespace KS.ManPages
                 // Write the information to the console
                 if (!string.IsNullOrWhiteSpace(ManpageInfoStyle))
                 {
-                    TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(ManpageInfoStyle), ConsoleBase.ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.GetColor(ColorTools.ColTypes.Background), ColorTools.GetColor(ColorTools.ColTypes.Neutral), PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
+                    TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(ManpageInfoStyle), ConsoleBase.ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.GetColor(ColorTools.ColTypes.Background), ColorTools.GetColor(ColorTools.ColTypes.NeutralText), PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
                 }
                 else
                 {
-                    TextWriterWhereColor.WriteWhere(" {0} [v{1}] ", ConsoleBase.ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.GetColor(ColorTools.ColTypes.Background), ColorTools.GetColor(ColorTools.ColTypes.Neutral), PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
+                    TextWriterWhereColor.WriteWhere(" {0} [v{1}] ", ConsoleBase.ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.GetColor(ColorTools.ColTypes.Background), ColorTools.GetColor(ColorTools.ColTypes.NeutralText), PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
                 }
 
                 // Disable blinking cursor
@@ -155,7 +155,7 @@ namespace KS.ManPages
                 {
                     // Write the line
                     int OldTop = ConsoleBase.ConsoleWrapper.CursorTop + 1;
-                    TextWriterColor.Write(line, true, ColorTools.ColTypes.Neutral);
+                    TextWriterColor.Write(line, true, ColorTools.ColTypes.NeutralText);
                     if (OldTop != ConsoleBase.ConsoleWrapper.CursorTop)
                         ConsoleBase.ConsoleWrapper.CursorTop = OldTop;
 
@@ -173,11 +173,11 @@ namespace KS.ManPages
                             ConsoleBase.ConsoleWrapper.Clear();
                             if (!string.IsNullOrWhiteSpace(ManpageInfoStyle))
                             {
-                                TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(ManpageInfoStyle), ConsoleBase.ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.GetColor(ColorTools.ColTypes.Background), ColorTools.GetColor(ColorTools.ColTypes.Neutral), PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
+                                TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(ManpageInfoStyle), ConsoleBase.ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.GetColor(ColorTools.ColTypes.Background), ColorTools.GetColor(ColorTools.ColTypes.NeutralText), PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
                             }
                             else
                             {
-                                TextWriterWhereColor.WriteWhere(" {0} (v{1}) ", ConsoleBase.ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.GetColor(ColorTools.ColTypes.Background), ColorTools.GetColor(ColorTools.ColTypes.Neutral), PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
+                                TextWriterWhereColor.WriteWhere(" {0} (v{1}) ", ConsoleBase.ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.GetColor(ColorTools.ColTypes.Background), ColorTools.GetColor(ColorTools.ColTypes.NeutralText), PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
                             }
                         }
                     }
@@ -193,7 +193,7 @@ namespace KS.ManPages
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Manual page {0} not found."), true, ColorTools.ColTypes.Neutral, ManualTitle);
+                TextWriterColor.Write(Translate.DoTranslation("Manual page {0} not found."), true, ColorTools.ColTypes.NeutralText, ManualTitle);
             }
         }
 

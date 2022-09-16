@@ -44,7 +44,7 @@ namespace KS.Shell.Shells.FTP.Commands
             if (Enum.IsDefined(typeof(FtpHashAlgorithm), Hash))
             {
                 var HashResult = FTPHashing.FTPGetHash(RemoteFile, (FtpHashAlgorithm)Convert.ToInt32(Enum.Parse(typeof(FtpHashAlgorithm), Hash)));
-                TextWriterColor.Write(HashResult.Value, true, ColorTools.ColTypes.Neutral);
+                TextWriterColor.Write(HashResult.Value, true, ColorTools.ColTypes.NeutralText);
             }
             else
             {

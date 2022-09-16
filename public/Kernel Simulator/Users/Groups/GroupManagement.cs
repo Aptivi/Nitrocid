@@ -92,12 +92,12 @@ namespace KS.Users.Groups
                 if (GroupMode == GroupManagementMode.Allow)
                 {
                     AddGroup(PermType, Username);
-                    TextWriterColor.Write(Translate.DoTranslation("The user {0} has been added to the \"{1}\" list."), true, ColorTools.ColTypes.Neutral, Username, PermType.ToString());
+                    TextWriterColor.Write(Translate.DoTranslation("The user {0} has been added to the \"{1}\" list."), true, ColorTools.ColTypes.NeutralText, Username, PermType.ToString());
                 }
                 else if (GroupMode == GroupManagementMode.Disallow)
                 {
                     RemoveGroup(PermType, Username);
-                    TextWriterColor.Write(Translate.DoTranslation("The user {0} has been removed from the \"{1}\" list."), true, ColorTools.ColTypes.Neutral, Username, PermType.ToString());
+                    TextWriterColor.Write(Translate.DoTranslation("The user {0} has been removed from the \"{1}\" list."), true, ColorTools.ColTypes.NeutralText, Username, PermType.ToString());
                 }
                 else
                 {

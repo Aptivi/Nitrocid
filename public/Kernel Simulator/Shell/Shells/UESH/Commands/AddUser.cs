@@ -41,14 +41,14 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             if (ListArgsOnly.Length == 1)
             {
-                TextWriterColor.Write(Translate.DoTranslation("usrmgr: Creating username {0}..."), true, ColorTools.ColTypes.Neutral, ListArgsOnly[0]);
+                TextWriterColor.Write(Translate.DoTranslation("usrmgr: Creating username {0}..."), true, ColorTools.ColTypes.NeutralText, ListArgsOnly[0]);
                 UserManagement.AddUser(ListArgsOnly[0]);
             }
             else if (ListArgsOnly.Length > 2)
             {
                 if ((ListArgsOnly[1] ?? "") == (ListArgsOnly[2] ?? ""))
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("usrmgr: Creating username {0}..."), true, ColorTools.ColTypes.Neutral, ListArgsOnly[0]);
+                    TextWriterColor.Write(Translate.DoTranslation("usrmgr: Creating username {0}..."), true, ColorTools.ColTypes.NeutralText, ListArgsOnly[0]);
                     UserManagement.AddUser(ListArgsOnly[0], ListArgsOnly[1]);
                 }
                 else

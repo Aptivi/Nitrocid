@@ -108,7 +108,7 @@ namespace KS.Shell.ShellBase.Commands
                 if (TargetCommands[Command].Flags.HasFlag(CommandFlags.Obsolete))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "The command requested {0} is obsolete", Command);
-                    Decisive.DecisiveWrite(ShellType, DebugDeviceSocket, Translate.DoTranslation("This command is obsolete and will be removed in a future release."), true, ColorTools.ColTypes.Neutral);
+                    Decisive.DecisiveWrite(ShellType, DebugDeviceSocket, Translate.DoTranslation("This command is obsolete and will be removed in a future release."), true, ColorTools.ColTypes.NeutralText);
                 }
 
                 // If there are enough arguments provided, execute. Otherwise, fail with not enough arguments.
@@ -126,7 +126,7 @@ namespace KS.Shell.ShellBase.Commands
                     else
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough arguments for {0}", Command);
-                        Decisive.DecisiveWrite(ShellType, DebugDeviceSocket, Translate.DoTranslation("There was not enough arguments. See below for usage:"), true, ColorTools.ColTypes.Neutral);
+                        Decisive.DecisiveWrite(ShellType, DebugDeviceSocket, Translate.DoTranslation("There was not enough arguments. See below for usage:"), true, ColorTools.ColTypes.NeutralText);
                         HelpSystem.ShowHelp(Command, ShellType);
                     }
                 }

@@ -75,7 +75,7 @@ namespace KS.Shell.Shells.SFTP.Commands
 
         public override void HelpHelper()
         {
-            TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"), true, ColorTools.ColTypes.Neutral);
+            TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"), true, ColorTools.ColTypes.NeutralText);
             TextWriterColor.Write("  -showdetails: ", false, ColorTools.ColTypes.ListEntry);
             TextWriterColor.Write(Translate.DoTranslation("Shows the file details in the list"), true, ColorTools.ColTypes.ListValue);
             TextWriterColor.Write("  -suppressmessages: ", false, ColorTools.ColTypes.ListEntry);

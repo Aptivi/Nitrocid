@@ -46,13 +46,13 @@ namespace KS.Shell.Shells.UESH.Commands
                     {
                         TextWriterColor.Write($" ({Notif.Progress}%)", false, Notif.ProgressFailed ? ColorTools.ColTypes.Error : ColorTools.ColTypes.Success);
                     }
-                    TextWriterColor.Write("", true, ColorTools.ColTypes.Neutral);
+                    TextWriterColor.Write("", true, ColorTools.ColTypes.NeutralText);
                     Count += 1;
                 }
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("No recent notifications"), true, ColorTools.ColTypes.Neutral);
+                TextWriterColor.Write(Translate.DoTranslation("No recent notifications"), true, ColorTools.ColTypes.NeutralText);
             }
         }
 

@@ -130,7 +130,7 @@ namespace KS.Misc.Games
                 // Prompt user for character
                 try
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Current character:") + " {0}", true, ColorTools.ColTypes.Neutral, SelectedChar);
+                    TextWriterColor.Write(Translate.DoTranslation("Current character:") + " {0}", true, ColorTools.ColTypes.NeutralText, SelectedChar);
                     TextWriterColor.Write("> ", false, ColorTools.ColTypes.Input);
                     WrittenChar = Input.ReadKeyTimeout(false, TimeSpan.FromMilliseconds(SpeedTimeout));
                     TextWriterColor.Write();

@@ -79,7 +79,7 @@ namespace KS.Misc.Writers.MiscWriters
 
                 if (Flags.NewWelcomeStyle)
                 {
-                    TextWriterColor.Write(Kernel.Kernel.NewLine + Kernel.Kernel.NewLine + FigletTools.GetFigletFont(KernelTools.BannerFigletFont).Render($"{Kernel.Kernel.KernelVersion}"), true, ColorTools.ColTypes.Neutral);
+                    TextWriterColor.Write(Kernel.Kernel.NewLine + Kernel.Kernel.NewLine + FigletTools.GetFigletFont(KernelTools.BannerFigletFont).Render($"{Kernel.Kernel.KernelVersion}"), true, ColorTools.ColTypes.NeutralText);
                 }
                 else
                 {

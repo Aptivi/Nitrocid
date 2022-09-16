@@ -53,19 +53,19 @@ namespace KS.ConsoleBase.Colors
             /// <summary>
             /// Continuable kernel panic text (usually sync'd with Warning)
             /// </summary>
-            Continuable,
+            ContKernelError,
             /// <summary>
             /// Uncontinuable kernel panic text (usually sync'd with Error)
             /// </summary>
-            Uncontinuable,
+            UncontKernelError,
             /// <summary>
             /// Host name color
             /// </summary>
-            HostName,
+            HostNameShell,
             /// <summary>
             /// User name color
             /// </summary>
-            UserName,
+            UserNameShell,
             /// <summary>
             /// Background color
             /// </summary>
@@ -73,7 +73,7 @@ namespace KS.ConsoleBase.Colors
             /// <summary>
             /// Neutral text (for general purposes)
             /// </summary>
-            Neutral,
+            NeutralText,
             /// <summary>
             /// List entry text
             /// </summary>
@@ -205,12 +205,12 @@ namespace KS.ConsoleBase.Colors
         {
             { ColTypes.Input, new((int)ConsoleColors.White) },
             { ColTypes.License, new((int)ConsoleColors.White) },
-            { ColTypes.Continuable, new((int)ConsoleColors.Yellow) },
-            { ColTypes.Uncontinuable, new((int)ConsoleColors.Red) },
-            { ColTypes.HostName, new((int)ConsoleColors.DarkGreen) },
-            { ColTypes.UserName, new((int)ConsoleColors.Green) },
+            { ColTypes.ContKernelError, new((int)ConsoleColors.Yellow) },
+            { ColTypes.UncontKernelError, new((int)ConsoleColors.Red) },
+            { ColTypes.HostNameShell, new((int)ConsoleColors.DarkGreen) },
+            { ColTypes.UserNameShell, new((int)ConsoleColors.Green) },
             { ColTypes.Background, new((int)ConsoleColors.Black) },
-            { ColTypes.Neutral, new((int)ConsoleColors.Gray) },
+            { ColTypes.NeutralText, new((int)ConsoleColors.Gray) },
             { ColTypes.ListEntry, new((int)ConsoleColors.DarkYellow) },
             { ColTypes.ListValue, new((int)ConsoleColors.DarkGray) },
             { ColTypes.Stage, new((int)ConsoleColors.Green) },
@@ -561,12 +561,12 @@ namespace KS.ConsoleBase.Colors
                 {
                     KernelColors[ColTypes.Input] = new Color(InputColor);
                     KernelColors[ColTypes.License] = new Color(LicenseColor);
-                    KernelColors[ColTypes.Continuable] = new Color(ContKernelErrorColor);
-                    KernelColors[ColTypes.Uncontinuable] = new Color(UncontKernelErrorColor);
-                    KernelColors[ColTypes.HostName] = new Color(HostNameShellColor);
-                    KernelColors[ColTypes.UserName] = new Color(UserNameShellColor);
+                    KernelColors[ColTypes.ContKernelError] = new Color(ContKernelErrorColor);
+                    KernelColors[ColTypes.UncontKernelError] = new Color(UncontKernelErrorColor);
+                    KernelColors[ColTypes.HostNameShell] = new Color(HostNameShellColor);
+                    KernelColors[ColTypes.UserNameShell] = new Color(UserNameShellColor);
                     KernelColors[ColTypes.Background] = new Color(BackgroundColor);
-                    KernelColors[ColTypes.Neutral] = new Color(NeutralTextColor);
+                    KernelColors[ColTypes.NeutralText] = new Color(NeutralTextColor);
                     KernelColors[ColTypes.ListEntry] = new Color(ListEntryColor);
                     KernelColors[ColTypes.ListValue] = new Color(ListValueColor);
                     KernelColors[ColTypes.Stage] = new Color(StageColor);
@@ -624,7 +624,7 @@ namespace KS.ConsoleBase.Colors
         {
             if (GetColor(ColTypes.Background).IsBright)
             {
-                return GetColor(ColTypes.Neutral);
+                return GetColor(ColTypes.NeutralText);
             }
             else
             {

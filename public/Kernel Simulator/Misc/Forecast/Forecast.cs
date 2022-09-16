@@ -95,7 +95,7 @@ namespace KS.Misc.Forecast
             }
             DebugWriter.WriteDebug(DebugLevel.I, "City name: {0}, City ID: {1}", WeatherInfo.CityName, WeatherInfo.CityID);
             SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("-- Weather info for {0} --"), false, WeatherInfo.CityName);
-            TextWriterColor.Write(Translate.DoTranslation("Weather: {0}"), true, ColorTools.ColTypes.Neutral, WeatherInfo.Weather);
+            TextWriterColor.Write(Translate.DoTranslation("Weather: {0}"), true, ColorTools.ColTypes.NeutralText, WeatherInfo.Weather);
             if (WeatherInfo.TemperatureMeasurement == UnitMeasurement.Metric)
             {
                 WeatherSpecifier += "C";
@@ -109,12 +109,12 @@ namespace KS.Misc.Forecast
                 WeatherSpecifier += "F";
                 WindSpeedSpecifier = "mph";
             }
-            TextWriterColor.Write(Translate.DoTranslation("Temperature: {0}") + WeatherSpecifier, true, ColorTools.ColTypes.Neutral, WeatherInfo.Temperature.ToString("N2"));
-            TextWriterColor.Write(Translate.DoTranslation("Feels like: {0}") + WeatherSpecifier, true, ColorTools.ColTypes.Neutral, WeatherInfo.FeelsLike.ToString("N2"));
-            TextWriterColor.Write(Translate.DoTranslation("Wind speed: {0}") + " {1}", true, ColorTools.ColTypes.Neutral, WeatherInfo.WindSpeed.ToString("N2"), WindSpeedSpecifier);
-            TextWriterColor.Write(Translate.DoTranslation("Wind direction: {0}") + "°", true, ColorTools.ColTypes.Neutral, WeatherInfo.WindDirection.ToString("N2"));
-            TextWriterColor.Write(Translate.DoTranslation("Pressure: {0}") + " hPa", true, ColorTools.ColTypes.Neutral, WeatherInfo.Pressure.ToString("N2"));
-            TextWriterColor.Write(Translate.DoTranslation("Humidity: {0}") + "%", true, ColorTools.ColTypes.Neutral, WeatherInfo.Humidity.ToString("N2"));
+            TextWriterColor.Write(Translate.DoTranslation("Temperature: {0}") + WeatherSpecifier, true, ColorTools.ColTypes.NeutralText, WeatherInfo.Temperature.ToString("N2"));
+            TextWriterColor.Write(Translate.DoTranslation("Feels like: {0}") + WeatherSpecifier, true, ColorTools.ColTypes.NeutralText, WeatherInfo.FeelsLike.ToString("N2"));
+            TextWriterColor.Write(Translate.DoTranslation("Wind speed: {0}") + " {1}", true, ColorTools.ColTypes.NeutralText, WeatherInfo.WindSpeed.ToString("N2"), WindSpeedSpecifier);
+            TextWriterColor.Write(Translate.DoTranslation("Wind direction: {0}") + "°", true, ColorTools.ColTypes.NeutralText, WeatherInfo.WindDirection.ToString("N2"));
+            TextWriterColor.Write(Translate.DoTranslation("Pressure: {0}") + " hPa", true, ColorTools.ColTypes.NeutralText, WeatherInfo.Pressure.ToString("N2"));
+            TextWriterColor.Write(Translate.DoTranslation("Humidity: {0}") + "%", true, ColorTools.ColTypes.NeutralText, WeatherInfo.Humidity.ToString("N2"));
         }
 
     }

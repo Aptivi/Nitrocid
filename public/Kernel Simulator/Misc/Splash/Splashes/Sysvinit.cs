@@ -89,8 +89,8 @@ namespace KS.Misc.Splash.Splashes
         public void Report(int Progress, string ProgressReport, params object[] Vars)
         {
             if (!Beginning)
-                TextWriterColor.Write(".", true, ColorTools.ColTypes.Neutral);
-            TextWriterColor.Write($"{ProgressReport}:", false, ColorTools.ColTypes.Neutral, Vars);
+                TextWriterColor.Write(".", true, ColorTools.ColTypes.NeutralText);
+            TextWriterColor.Write($"{ProgressReport}:", false, ColorTools.ColTypes.NeutralText, Vars);
             Beginning = false;
         }
 

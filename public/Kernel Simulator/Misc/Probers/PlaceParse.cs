@@ -256,7 +256,7 @@ namespace KS.Misc.Probers
                 if (text.Contains("<f:reset>"))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Foreground color reset placeholder found.");
-                    text = text.Replace("<f:reset>", ColorTools.GetColor(ColorTools.ColTypes.Neutral).VTSequenceForeground);
+                    text = text.Replace("<f:reset>", ColorTools.GetColor(ColorTools.ColTypes.NeutralText).VTSequenceForeground);
                 }
 
                 // -> Background color reset placeholder

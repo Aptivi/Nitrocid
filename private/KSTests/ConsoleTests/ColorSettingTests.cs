@@ -79,12 +79,12 @@ namespace KSTests.ConsoleTests
             // Check for correctness
             ColorTools.GetColor(ColorTools.ColTypes.Input).ShouldBeEquivalentTo(new Color((int)ConsoleColors.White));
             ColorTools.GetColor(ColorTools.ColTypes.License).ShouldBeEquivalentTo(new Color((int)ConsoleColors.White));
-            ColorTools.GetColor(ColorTools.ColTypes.Continuable).ShouldBeEquivalentTo(new Color((int)ConsoleColors.Yellow));
-            ColorTools.GetColor(ColorTools.ColTypes.Uncontinuable).ShouldBeEquivalentTo(new Color((int)ConsoleColors.Red));
+            ColorTools.GetColor(ColorTools.ColTypes.ContKernelError).ShouldBeEquivalentTo(new Color((int)ConsoleColors.Yellow));
+            ColorTools.GetColor(ColorTools.ColTypes.UncontKernelError).ShouldBeEquivalentTo(new Color((int)ConsoleColors.Red));
             ColorTools.GetColor(ColorTools.ColTypes.HostName).ShouldBeEquivalentTo(new Color((int)ConsoleColors.DarkGreen));
-            ColorTools.GetColor(ColorTools.ColTypes.UserName).ShouldBeEquivalentTo(new Color((int)ConsoleColors.Green));
+            ColorTools.GetColor(ColorTools.ColTypes.UserNameShell).ShouldBeEquivalentTo(new Color((int)ConsoleColors.Green));
             ColorTools.GetColor(ColorTools.ColTypes.Background).ShouldBeEquivalentTo(new Color((int)ConsoleColors.Black));
-            ColorTools.GetColor(ColorTools.ColTypes.Neutral).ShouldBeEquivalentTo(new Color((int)ConsoleColors.Gray));
+            ColorTools.GetColor(ColorTools.ColTypes.NeutralText).ShouldBeEquivalentTo(new Color((int)ConsoleColors.Gray));
             ColorTools.GetColor(ColorTools.ColTypes.ListEntry).ShouldBeEquivalentTo(new Color((int)ConsoleColors.DarkYellow));
             ColorTools.GetColor(ColorTools.ColTypes.ListValue).ShouldBeEquivalentTo(new Color((int)ConsoleColors.DarkGray));
             ColorTools.GetColor(ColorTools.ColTypes.Stage).ShouldBeEquivalentTo(new Color((int)ConsoleColors.Green));

@@ -104,12 +104,12 @@ namespace KS.Network.SFTP
         private static void ConnectSFTP()
         {
             // Connect
-            TextWriterColor.Write(Translate.DoTranslation("Trying to connect to {0}..."), true, ColorTools.ColTypes.Neutral, SFTPShellCommon.ClientSFTP.ConnectionInfo.Host);
+            TextWriterColor.Write(Translate.DoTranslation("Trying to connect to {0}..."), true, ColorTools.ColTypes.NeutralText, SFTPShellCommon.ClientSFTP.ConnectionInfo.Host);
             DebugWriter.WriteDebug(DebugLevel.I, "Connecting to {0} with {1}...", SFTPShellCommon.ClientSFTP.ConnectionInfo.Host);
             SFTPShellCommon.ClientSFTP.Connect();
 
             // Show that it's connected
-            TextWriterColor.Write(Translate.DoTranslation("Connected to {0}"), true, ColorTools.ColTypes.Neutral, SFTPShellCommon.ClientSFTP.ConnectionInfo.Host);
+            TextWriterColor.Write(Translate.DoTranslation("Connected to {0}"), true, ColorTools.ColTypes.NeutralText, SFTPShellCommon.ClientSFTP.ConnectionInfo.Host);
             DebugWriter.WriteDebug(DebugLevel.I, "Connected.");
             SFTPShellCommon.SFTPConnected = true;
 
@@ -148,7 +148,7 @@ namespace KS.Network.SFTP
                 var SpeedDialData = new string[SpeedDialLines.Count, 4];
                 if (!(SpeedDialLines.Count == 0))
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Select an address to connect to:"), true, ColorTools.ColTypes.Neutral);
+                    TextWriterColor.Write(Translate.DoTranslation("Select an address to connect to:"), true, ColorTools.ColTypes.NeutralText);
                     for (int i = 0, loopTo = SpeedDialLines.Count - 1; i <= loopTo; i++)
                     {
                         string SpeedDialAddress = SpeedDialLines.Keys.ElementAtOrDefault(i);

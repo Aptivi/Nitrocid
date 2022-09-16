@@ -56,7 +56,7 @@ namespace KS.Shell.Prompts.Presets.FTP
                 PresetStringBuilder.Append("[");
 
                 // SFTP user
-                PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.UserName).VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.UserNameShell).VTSequenceForeground);
                 PresetStringBuilder.AppendFormat("{0}", FTPShellCommon.FtpUser);
 
                 // "at" sign
@@ -64,7 +64,7 @@ namespace KS.Shell.Prompts.Presets.FTP
                 PresetStringBuilder.Append("@");
 
                 // SFTP site
-                PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.HostName).VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.HostNameShell).VTSequenceForeground);
                 PresetStringBuilder.AppendFormat("{0}", FTPShellCommon.FtpSite);
 
                 // Closing

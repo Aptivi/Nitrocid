@@ -61,8 +61,8 @@ namespace KS.Shell.Shells.UESH.Commands
                         var spent = new Stopwatch();
                         spent.Start(); // Time when you're on a breakpoint is counted
                         string encrypted = Encryption.GetEncryptedFile(file, AlgorithmEnum);
-                        TextWriterColor.Write("{0} ({1})", true, ColorTools.ColTypes.Neutral, encrypted, AlgorithmEnum);
-                        TextWriterColor.Write(Translate.DoTranslation("Time spent: {0} milliseconds"), true, ColorTools.ColTypes.Neutral, spent.ElapsedMilliseconds);
+                        TextWriterColor.Write("{0} ({1})", true, ColorTools.ColTypes.NeutralText, encrypted, AlgorithmEnum);
+                        TextWriterColor.Write(Translate.DoTranslation("Time spent: {0} milliseconds"), true, ColorTools.ColTypes.NeutralText, spent.ElapsedMilliseconds);
                         if (UseRelative)
                         {
                             FileBuilder.AppendLine($"- {ListArgsOnly[1]}: {encrypted} ({AlgorithmEnum})");
@@ -79,8 +79,8 @@ namespace KS.Shell.Shells.UESH.Commands
                     var spent = new Stopwatch();
                     spent.Start(); // Time when you're on a breakpoint is counted
                     string encrypted = Encryption.GetEncryptedFile(file, AlgorithmEnum);
-                    TextWriterColor.Write(encrypted, true, ColorTools.ColTypes.Neutral);
-                    TextWriterColor.Write(Translate.DoTranslation("Time spent: {0} milliseconds"), true, ColorTools.ColTypes.Neutral, spent.ElapsedMilliseconds);
+                    TextWriterColor.Write(encrypted, true, ColorTools.ColTypes.NeutralText);
+                    TextWriterColor.Write(Translate.DoTranslation("Time spent: {0} milliseconds"), true, ColorTools.ColTypes.NeutralText, spent.ElapsedMilliseconds);
                     if (UseRelative)
                     {
                         FileBuilder.AppendLine($"- {ListArgsOnly[1]}: {encrypted} ({AlgorithmEnum})");
@@ -110,7 +110,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void HelpHelper()
         {
-            TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"), true, ColorTools.ColTypes.Neutral);
+            TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"), true, ColorTools.ColTypes.NeutralText);
             TextWriterColor.Write("  -relative: ", false, ColorTools.ColTypes.ListEntry);
             TextWriterColor.Write(Translate.DoTranslation("Uses relative path instead of absolute"), true, ColorTools.ColTypes.ListValue);
         }

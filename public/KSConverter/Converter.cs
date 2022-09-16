@@ -86,7 +86,7 @@ namespace KSConverter
                     {
                         // Move the old config file to backup
                         Debug.WriteLine($"Moving {ConfigEntry} from {ListOfOldPaths[ConfigEntry]} to {ListOfBackups[ConfigEntry]}...");
-                        TextWriterColor.Write("  - {0}: {1} -> {2}", true, ColTypes.Neutral, ConfigEntry, ListOfOldPaths[ConfigEntry], ListOfBackups[ConfigEntry]);
+                        TextWriterColor.Write("  - {0}: {1} -> {2}", true, ColTypes.NeutralText, ConfigEntry, ListOfOldPaths[ConfigEntry], ListOfBackups[ConfigEntry]);
                         File.Move(ListOfOldPaths[ConfigEntry], ListOfBackups[ConfigEntry]);
                     }
                     else if (Checking.FileExists(ListOfBackups[ConfigEntry]))
@@ -113,7 +113,7 @@ namespace KSConverter
                     Debug.WriteLine($"Calling File.ReadAllLines on {ListOfBackups["BlockedDevices"]}...");
                     var BlockedDevices = File.ReadAllLines(ListOfBackups["BlockedDevices"]).ToList();
                     Debug.WriteLine($"We have {BlockedDevices.Count} devices.");
-                    TextWriterColor.Write("  - {0} devices found.", true, ColTypes.Neutral, BlockedDevices.Count);
+                    TextWriterColor.Write("  - {0} devices found.", true, ColTypes.NeutralText, BlockedDevices.Count);
 
                     // Add blocked devices to new format
                     Debug.WriteLine($"Iterating {BlockedDevices.Count} blocked devices...");
@@ -143,7 +143,7 @@ namespace KSConverter
                     Debug.WriteLine($"Calling File.ReadAllLines on {ListOfBackups["FTPSpeedDial"]}...");
                     var SpeedDialLines = File.ReadAllLines(ListOfBackups["FTPSpeedDial"]);
                     Debug.WriteLine($"We have {SpeedDialLines.Length} addresses.");
-                    TextWriterColor.Write("  - {0} addresses found.", true, ColTypes.Neutral, SpeedDialLines.Length);
+                    TextWriterColor.Write("  - {0} addresses found.", true, ColTypes.NeutralText, SpeedDialLines.Length);
 
                     // Add addresses to new format
                     foreach (string SpeedDialLine in SpeedDialLines)
@@ -183,7 +183,7 @@ namespace KSConverter
                     Debug.WriteLine($"Calling File.ReadAllLines on {ListOfBackups["Users"]}...");
                     var UsersLines = File.ReadAllLines(ListOfBackups["Users"]);
                     Debug.WriteLine($"We have {UsersLines.Length} addresses.");
-                    TextWriterColor.Write("  - {0} users found.", true, ColTypes.Neutral, UsersLines.Length);
+                    TextWriterColor.Write("  - {0} users found.", true, ColTypes.NeutralText, UsersLines.Length);
 
                     // Add users to new format
                     foreach (string UsersLine in UsersLines)
@@ -241,7 +241,7 @@ namespace KSConverter
                     Debug.WriteLine($"Calling File.ReadAllLines on {ListOfBackups["Aliases"]}...");
                     var AliasesLines = File.ReadAllLines(ListOfBackups["Aliases"]);
                     Debug.WriteLine($"We have {AliasesLines.Length} aliases.");
-                    TextWriterColor.Write("  - {0} aliases found.", true, ColTypes.Neutral, AliasesLines.Length);
+                    TextWriterColor.Write("  - {0} aliases found.", true, ColTypes.NeutralText, AliasesLines.Length);
 
                     // Add aliases to new format
                     foreach (string AliasLine in AliasesLines)
@@ -362,7 +362,7 @@ namespace KSConverter
             {
                 TextWriterColor.Write("- Error converting settings: {0}", true, ColTypes.Error, ex.Message);
                 TextWriterColor.Write("- Press any key to exit. Stack trace below:", true, ColTypes.Error);
-                TextWriterColor.Write(ex.StackTrace, true, ColTypes.Neutral);
+                TextWriterColor.Write(ex.StackTrace, true, ColTypes.NeutralText);
                 Console.ReadKey(true);
             }
         }
