@@ -486,14 +486,29 @@ namespace KS.Misc.Settings
                     // If the type is a color, initialize the color wheel
                     if (KeyType == SettingsKeyType.SColor)
                     {
-                        var keyColorValue = ((KeyValuePair<ColorTools.ColTypes, Color>)KeyDefaultValue).Value;
-                        ColorValue = ColorWheelOpen.ColorWheel(keyColorValue.Type == ColorType.TrueColor,
-                                                               (ConsoleColors)Convert.ToInt32(
-                                                                   keyColorValue.Type == ColorType._255Color || keyColorValue.Type == ColorType._16Color ?
-                                                                   keyColorValue.PlainSequence :
-                                                                   ConsoleColors.White
-                                                               ),
-                                                               keyColorValue.R, keyColorValue.G, keyColorValue.B);
+                        Color keyColorValue = Color.Empty;
+
+                        // Check to see if the color is contained in the dictionary
+                        if (KeyDefaultValue is KeyValuePair<ColorTools.ColTypes, Color> keyColorValuePair)
+                            keyColorValue = keyColorValuePair.Value;
+                        else if (KeyDefaultValue is string keyColorString)
+                            keyColorValue = new Color(keyColorString);
+
+                        // Get the color value from the color wheel
+                        ColorValue = ColorWheelOpen.ColorWheel(
+                            // Determine if the color is true color
+                            keyColorValue.Type == ColorType.TrueColor,
+
+                            // Get the ConsoleColors number from the current color value
+                            (ConsoleColors)Convert.ToInt32(
+                                keyColorValue.Type == ColorType._255Color || keyColorValue.Type == ColorType._16Color ?
+                                keyColorValue.PlainSequence :
+                                ConsoleColors.White
+                            ),
+
+                            // Now, get the RGB from the color class
+                            keyColorValue.R, keyColorValue.G, keyColorValue.B
+                        );
                     }
 
                     // Write the list from the current items
@@ -899,13 +914,15 @@ namespace KS.Misc.Settings
 
                                     // KeyVar is not always KernelColors, which is a dictionary. This applies to standard settings. Everything else should
                                     // be either the Color type or a String type.
-                                    if (FieldManager.GetValue(KeyVar, KeyIsInternal) is Dictionary<ColorTools.ColTypes, Color> colors)
+                                    if (FieldManager.CheckField(KeyVar, KeyIsInternal) &&
+                                        FieldManager.GetValue(KeyVar, KeyIsInternal) is Dictionary<ColorTools.ColTypes, Color> colors)
                                     {
                                         var colorTypeOnDict = colors.ElementAt(KeyEnumerableIndex).Key;
                                         colors[colorTypeOnDict] = new Color(ColorValue.ToString());
                                         FinalColor = colors;
                                     }
-                                    else if (FieldManager.GetField(KeyVar, KeyIsInternal).FieldType == typeof(Color))
+                                    else if (FieldManager.CheckField(KeyVar, KeyIsInternal) &&
+                                             FieldManager.GetField(KeyVar, KeyIsInternal).FieldType == typeof(Color))
                                     {
                                         FinalColor = new Color(ColorValue.ToString());
                                     }
