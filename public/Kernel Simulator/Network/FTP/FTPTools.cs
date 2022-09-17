@@ -273,10 +273,7 @@ namespace KS.Network.FTP
             var SpeedDialEntries = NetworkTools.ListSpeedDialEntries(NetworkTools.SpeedDialType.FTP);
             DebugWriter.WriteDebug(DebugLevel.I, "Speed dial length: {0}", SpeedDialEntries.Count);
             if (SpeedDialEntries.ContainsKey(FTPShellCommon.FtpSite))
-            {
                 DebugWriter.WriteDebug(DebugLevel.I, "Site already there.");
-                return;
-            }
             else if (FTPShellCommon.FtpNewConnectionsToSpeedDial)
                 // Speed dial format is below:
                 // Site,Port,Username,Encryption
