@@ -78,6 +78,10 @@ namespace KS.Misc.Timers
             // Print the border
             MakeBorder();
 
+            // Print informational messages
+            TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Ready!"), 1, 0, false, ColorTools.ColTypes.NeutralText);
+            ConsoleExtensions.ClearLineToRight();
+
             while (KeysKeypress != ConsoleKey.Escape)
             {
                 // Wait for a keypress
@@ -89,13 +93,9 @@ namespace KS.Misc.Timers
                     case ConsoleKey.Enter:
                         {
                             if (!StopwatchUpdate.IsAlive)
-                            {
                                 StopwatchUpdate.Start();
-                            }
                             else
-                            {
                                 StopwatchUpdate.Stop();
-                            }
                             if (LappedStopwatch.IsRunning)
                                 LappedStopwatch.Stop();
                             else
@@ -104,6 +104,8 @@ namespace KS.Misc.Timers
                                 Stopwatch.Stop();
                             else
                                 Stopwatch.Start();
+                            TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Stopwatch running!"), 1, 0, false, ColorTools.ColTypes.NeutralText);
+                            ConsoleExtensions.ClearLineToRight();
                             break;
                         }
                     case ConsoleKey.L:
@@ -128,9 +130,7 @@ namespace KS.Misc.Timers
                     case ConsoleKey.R:
                         {
                             if (StopwatchUpdate.IsAlive)
-                            {
                                 StopwatchUpdate.Stop();
-                            }
                             if (LappedStopwatch.IsRunning)
                                 LappedStopwatch.Reset();
                             if (Stopwatch.IsRunning)
@@ -152,6 +152,8 @@ namespace KS.Misc.Timers
                             ConsoleExtensions.ClearLineToRight();
                             TextWriterWhereColor.WriteWhere(Stopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult), TimeLeftPosition, TimeTopPosition, false, LapColor);
                             MakeBorder();
+                            TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Ready!"), 1, 0, false, ColorTools.ColTypes.NeutralText);
+                            ConsoleExtensions.ClearLineToRight();
                             break;
                         }
                     case ConsoleKey.Escape:
