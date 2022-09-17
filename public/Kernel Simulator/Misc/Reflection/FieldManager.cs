@@ -101,9 +101,8 @@ namespace KS.Misc.Reflection
                 foreach (object val in values)
                 {
                     if (idx == Index)
-                    {
                         return val;
-                    }
+                    idx++;
                 }
             }
             return null;
