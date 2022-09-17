@@ -162,187 +162,298 @@
             {
                 "Name": "License Color",
                 "Type": "SColor",
-                "Variable": "LicenseColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 1
             },
             {
                 "Name": "Continuable Kernel Error Color",
                 "Type": "SColor",
-                "Variable": "ContKernelErrorColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 2
             },
             {
                 "Name": "Uncontinuable Kernel Error Color",
                 "Type": "SColor",
-                "Variable": "UncontKernelErrorColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 3
             },
             {
                 "Name": "Host Name Shell Color",
                 "Type": "SColor",
-                "Variable": "HostNameShellColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 4
             },
             {
                 "Name": "User Name Shell Color",
                 "Type": "SColor",
-                "Variable": "UserNameShellColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 5
             },
             {
                 "Name": "Background Color",
                 "Type": "SColor",
-                "Variable": "BackgroundColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 6
             },
             {
                 "Name": "Text Color",
                 "Type": "SColor",
-                "Variable": "NeutralTextColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 7
             },
             {
                 "Name": "List Entry Color",
                 "Type": "SColor",
-                "Variable": "ListEntryColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 8
             },
             {
                 "Name": "List Value Color",
                 "Type": "SColor",
-                "Variable": "ListValueColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 9
             },
             {
                 "Name": "Kernel Stage Color",
                 "Type": "SColor",
-                "Variable": "StageColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 10
             },
             {
                 "Name": "Error Text Color",
                 "Type": "SColor",
-                "Variable": "ErrorColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 11
             },
             {
                 "Name": "Warning Text Color",
                 "Type": "SColor",
-                "Variable": "WarningColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 12
             },
             {
                 "Name": "Option Color",
                 "Type": "SColor",
-                "Variable": "OptionColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 13
             },
             {
                 "Name": "Banner Color",
                 "Type": "SColor",
-                "Variable": "BannerColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 14
             },
             {
                 "Name": "Notification Title Color",
                 "Type": "SColor",
-                "Variable": "NotificationTitleColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 15
             },
             {
                 "Name": "Notification Description Color",
                 "Type": "SColor",
-                "Variable": "NotificationDescriptionColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 16
             },
             {
                 "Name": "Notification Progress Color",
                 "Type": "SColor",
-                "Variable": "NotificationProgressColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 17
             },
             {
                 "Name": "Notification Failure Color",
                 "Type": "SColor",
-                "Variable": "NotificationFailureColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 18
             },
             {
                 "Name": "Question Color",
                 "Type": "SColor",
-                "Variable": "QuestionColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 19
             },
             {
                 "Name": "Success Color",
                 "Type": "SColor",
-                "Variable": "SuccessColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 20
             },
             {
                 "Name": "User Dollar Color",
                 "Type": "SColor",
-                "Variable": "UserDollarColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 21
             },
             {
                 "Name": "Tip Color",
                 "Type": "SColor",
-                "Variable": "TipColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 22
             },
             {
                 "Name": "Separator Text Color",
                 "Type": "SColor",
-                "Variable": "SeparatorTextColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 23
             },
             {
                 "Name": "Separator Color",
                 "Type": "SColor",
-                "Variable": "SeparatorColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 24
             },
             {
                 "Name": "List Title Color",
                 "Type": "SColor",
-                "Variable": "ListTitleColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 25
             },
             {
                 "Name": "Development Warning Color",
                 "Type": "SColor",
-                "Variable": "DevelopmentWarningColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 26
             },
             {
                 "Name": "Stage Time Color",
                 "Type": "SColor",
-                "Variable": "StageTimeColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 27
             },
             {
                 "Name": "Progress Color",
                 "Type": "SColor",
-                "Variable": "ProgressColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 28
             },
             {
                 "Name": "Back Option Color",
                 "Type": "SColor",
-                "Variable": "BackOptionColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 29
             },
             {
                 "Name": "Low Priority Border Color",
                 "Type": "SColor",
-                "Variable": "LowPriorityBorderColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 30
             },
             {
                 "Name": "Medium Priority Border Color",
                 "Type": "SColor",
-                "Variable": "MediumPriorityBorderColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 31
             },
             {
                 "Name": "High Priority Border Color",
                 "Type": "SColor",
-                "Variable": "HighPriorityBorderColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 32
             },
             {
                 "Name": "Table Separator Color",
                 "Type": "SColor",
-                "Variable": "TableSeparatorColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 33
             },
             {
                 "Name": "Table Header Color",
                 "Type": "SColor",
-                "Variable": "TableHeaderColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 34
             },
             {
                 "Name": "Table Value Color",
                 "Type": "SColor",
-                "Variable": "TableValueColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 35
             },
             {
                 "Name": "Selected Option Color",
                 "Type": "SColor",
-                "Variable": "SelectedOptionColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 36
             },
             {
                 "Name": "Alternative Option Color",
                 "Type": "SColor",
-                "Variable": "AlternativeOptionColor"
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 37
             }
         ]
     },

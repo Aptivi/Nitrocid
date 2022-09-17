@@ -82,7 +82,7 @@ namespace KS.Misc.Reflection
         /// <param name="Index">Index from the enumerable</param>
         /// <param name="Internal">Whether the field is internal</param>
         /// <returns>Value of a variable</returns>
-        public static object GetValueFromEnumerable(string Variable, int Index, bool Internal = false) => GetValueFromEnumerable(Variable, null, 0, Internal);
+        public static object GetValueFromEnumerable(string Variable, int Index, bool Internal = false) => GetValueFromEnumerable(Variable, null, Index, Internal);
 
         /// <summary>
         /// Gets the value of a variable dynamically 

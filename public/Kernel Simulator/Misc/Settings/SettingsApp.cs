@@ -896,7 +896,7 @@ namespace KS.Misc.Settings
                             case SettingsKeyType.SColor:
                                 {
                                     object FinalColor;
-                                    if (FieldManager.GetField(KeyVar).FieldType == typeof(Color))
+                                    if (FieldManager.GetField(KeyVar, KeyIsInternal).FieldType == typeof(Color))
                                     {
                                         FinalColor = new Color(ColorValue.ToString());
                                     }
