@@ -283,13 +283,12 @@ namespace KS.Network.FTP
                 NetworkTools.AddEntryToSpeedDial(FTPShellCommon.FtpSite, FTPShellCommon.ClientFTP.Port, FTPShellCommon.FtpUser, NetworkTools.SpeedDialType.FTP, FTPShellCommon.ClientFTP.Config.EncryptionMode);
 
             // Initialize logging
-            // TODO: Use ClientFTP.Logger to move to new logging system
-#if NETCOREAPP == false
-            FTPShellCommon.ClientFTP.LegacyLogger += (_, msg) => new FTPTracer().WriteLine(msg);
-#endif
+            FTPShellCommon.ClientFTP.Logger = new FTPLogger();
             FTPShellCommon.ClientFTP.Config.LogUserName = Flags.FTPLoggerUsername;
-            FTPShellCommon.ClientFTP.Config.LogPassword = false; // Don't remove this, make a config entry for it, or set it to True! It will introduce security problems.
             FTPShellCommon.ClientFTP.Config.LogHost = Flags.FTPLoggerIP;
+
+            // Don't remove this, make a config entry for it, or set it to True! It will introduce security problems.
+            FTPShellCommon.ClientFTP.Config.LogPassword = false;
         }
 
         /// <summary>
@@ -421,21 +420,5 @@ namespace KS.Network.FTP
             }
         }
 
-    }
-
-    class FTPTracer : TraceListener // Both Write and WriteLine do exactly the same thing, which is writing to a debugger.
-    {
-
-        /// <summary>
-        /// Writes any message that the tracer has received to the debugger.
-        /// </summary>
-        /// <param name="Message">A message</param>
-        public override void Write(string Message) => DebugWriter.WriteDebug(DebugLevel.I, Message);
-
-        /// <summary>
-        /// Writes any message that the tracer has received to the debugger. Please note that this does exactly as Write() since the debugger only supports writing with newlines.
-        /// </summary>
-        /// <param name="Message">A message</param>
-        public override void WriteLine(string Message) => DebugWriter.WriteDebug(DebugLevel.I, Message);
     }
 }
