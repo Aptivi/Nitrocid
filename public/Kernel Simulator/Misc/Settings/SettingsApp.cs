@@ -896,7 +896,16 @@ namespace KS.Misc.Settings
                             case SettingsKeyType.SColor:
                                 {
                                     object FinalColor;
-                                    if (FieldManager.GetField(KeyVar, KeyIsInternal).FieldType == typeof(Color))
+
+                                    // KeyVar is not always KernelColors, which is a dictionary. This applies to standard settings. Everything else should
+                                    // be either the Color type or a String type.
+                                    if (FieldManager.GetValue(KeyVar, KeyIsInternal) is Dictionary<ColorTools.ColTypes, Color> colors)
+                                    {
+                                        var colorTypeOnDict = colors.ElementAt(KeyEnumerableIndex).Key;
+                                        colors[colorTypeOnDict] = new Color(ColorValue.ToString());
+                                        FinalColor = colors;
+                                    }
+                                    else if (FieldManager.GetField(KeyVar, KeyIsInternal).FieldType == typeof(Color))
                                     {
                                         FinalColor = new Color(ColorValue.ToString());
                                     }
