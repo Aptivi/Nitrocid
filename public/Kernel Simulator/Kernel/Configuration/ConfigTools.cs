@@ -402,10 +402,11 @@ namespace KS.Kernel.Configuration
                         string KeyEnumeration = (string)Key["Enumeration"];
                         bool KeyEnumerationInternal = (bool)(Key["EnumerationInternal"] ?? false);
                         string KeyEnumerationAssembly = (string)Key["EnumerationAssembly"];
+                        bool KeyIsInternal = (bool)(Key["IsInternal"] ?? false);
                         bool KeyFound;
 
                         // Check the variable
-                        KeyFound = FieldManager.CheckField(KeyVariable) | PropertyManager.CheckProperty(KeyVariable);
+                        KeyFound = FieldManager.CheckField(KeyVariable, KeyIsInternal) | PropertyManager.CheckProperty(KeyVariable);
                         Results.Add($"{KeyName}, {KeyVariable}", KeyFound);
 
                         // Check the enumeration
