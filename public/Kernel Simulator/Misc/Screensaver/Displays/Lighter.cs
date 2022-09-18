@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ColorSeq;
 using KS.ConsoleBase.Colors;
+using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 
@@ -237,7 +238,6 @@ namespace KS.Misc.Screensaver.Displays
     public class LighterDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Random RandomDriver;
         private int CurrentWindowWidth;
         private int CurrentWindowHeight;
         private bool ResizeSyncing;
@@ -253,7 +253,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            RandomDriver = new Random();
             CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ColorTools.SetConsoleColor(new Color(LighterSettings.LighterBackgroundColor), true, true);
@@ -267,8 +266,8 @@ namespace KS.Misc.Screensaver.Displays
             ConsoleBase.ConsoleWrapper.CursorVisible = false;
 
             // Select a position
-            int Left = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowWidth);
-            int Top = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowHeight);
+            int Left = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowWidth);
+            int Top = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowHeight);
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top);
             ConsoleBase.ConsoleWrapper.SetCursorPosition(Left, Top);
             if (!CoveredPositions.Any(t => t.Item1 == Left & t.Item2 == Top))
@@ -281,9 +280,9 @@ namespace KS.Misc.Screensaver.Displays
             // Select a color and write the space
             if (LighterSettings.LighterTrueColor)
             {
-                int RedColorNum = RandomDriver.Next(LighterSettings.LighterMinimumRedColorLevel, LighterSettings.LighterMaximumRedColorLevel);
-                int GreenColorNum = RandomDriver.Next(LighterSettings.LighterMinimumGreenColorLevel, LighterSettings.LighterMaximumGreenColorLevel);
-                int BlueColorNum = RandomDriver.Next(LighterSettings.LighterMinimumBlueColorLevel, LighterSettings.LighterMaximumBlueColorLevel);
+                int RedColorNum = RandomDriver.Random(LighterSettings.LighterMinimumRedColorLevel, LighterSettings.LighterMaximumRedColorLevel);
+                int GreenColorNum = RandomDriver.Random(LighterSettings.LighterMinimumGreenColorLevel, LighterSettings.LighterMaximumGreenColorLevel);
+                int BlueColorNum = RandomDriver.Random(LighterSettings.LighterMinimumBlueColorLevel, LighterSettings.LighterMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
                 if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
@@ -301,7 +300,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             else if (LighterSettings.Lighter255Colors)
             {
-                int ColorNum = RandomDriver.Next(LighterSettings.LighterMinimumColorLevel, LighterSettings.LighterMaximumColorLevel);
+                int ColorNum = RandomDriver.Random(LighterSettings.LighterMinimumColorLevel, LighterSettings.LighterMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                     ResizeSyncing = true;
@@ -322,7 +321,7 @@ namespace KS.Misc.Screensaver.Displays
                     ResizeSyncing = true;
                 if (!ResizeSyncing)
                 {
-                    ConsoleBase.ConsoleWrapper.BackgroundColor = Screensaver.colors[RandomDriver.Next(LighterSettings.LighterMinimumColorLevel, LighterSettings.LighterMaximumColorLevel)];
+                    ConsoleBase.ConsoleWrapper.BackgroundColor = Screensaver.colors[RandomDriver.Random(LighterSettings.LighterMinimumColorLevel, LighterSettings.LighterMaximumColorLevel)];
                     DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
                     ConsoleBase.ConsoleWrapper.Write(" ");
                 }

@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using ColorSeq;
 using KS.ConsoleBase.Colors;
+using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
@@ -273,7 +274,6 @@ namespace KS.Misc.Screensaver.Displays
     public class FlashTextDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Random RandomDriver;
         private int CurrentWindowWidth;
         private int CurrentWindowHeight;
         private bool ResizeSyncing;
@@ -289,7 +289,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            RandomDriver = new Random();
             CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ColorTools.SetConsoleColor(new Color(FlashTextSettings.FlashTextBackgroundColor), true, true);
@@ -297,8 +296,8 @@ namespace KS.Misc.Screensaver.Displays
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
 
             // Select position
-            Left = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowWidth);
-            Top = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowHeight);
+            Left = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowWidth);
+            Top = RandomDriver.Random(ConsoleBase.ConsoleWrapper.WindowHeight);
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top);
         }
 
@@ -315,9 +314,9 @@ namespace KS.Misc.Screensaver.Displays
             ConsoleBase.ConsoleWrapper.Clear();
             if (FlashTextSettings.FlashTextTrueColor)
             {
-                int RedColorNum = RandomDriver.Next(FlashTextSettings.FlashTextMinimumRedColorLevel, FlashTextSettings.FlashTextMaximumRedColorLevel);
-                int GreenColorNum = RandomDriver.Next(FlashTextSettings.FlashTextMinimumGreenColorLevel, FlashTextSettings.FlashTextMaximumGreenColorLevel);
-                int BlueColorNum = RandomDriver.Next(FlashTextSettings.FlashTextMinimumBlueColorLevel, FlashTextSettings.FlashTextMaximumBlueColorLevel);
+                int RedColorNum = RandomDriver.Random(FlashTextSettings.FlashTextMinimumRedColorLevel, FlashTextSettings.FlashTextMaximumRedColorLevel);
+                int GreenColorNum = RandomDriver.Random(FlashTextSettings.FlashTextMinimumGreenColorLevel, FlashTextSettings.FlashTextMaximumGreenColorLevel);
+                int BlueColorNum = RandomDriver.Random(FlashTextSettings.FlashTextMinimumBlueColorLevel, FlashTextSettings.FlashTextMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
                 if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
@@ -329,7 +328,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             else if (FlashTextSettings.FlashText255Colors)
             {
-                int ColorNum = RandomDriver.Next(FlashTextSettings.FlashTextMinimumColorLevel, FlashTextSettings.FlashTextMaximumColorLevel);
+                int ColorNum = RandomDriver.Random(FlashTextSettings.FlashTextMinimumColorLevel, FlashTextSettings.FlashTextMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                     ResizeSyncing = true;
@@ -344,7 +343,7 @@ namespace KS.Misc.Screensaver.Displays
                     ResizeSyncing = true;
                 if (!ResizeSyncing)
                 {
-                    TextWriterWhereColor.WriteWhere(FlashTextSettings.FlashTextWrite, Left, Top, true, Screensaver.colors[RandomDriver.Next(FlashTextSettings.FlashTextMinimumColorLevel, FlashTextSettings.FlashTextMaximumColorLevel)]);
+                    TextWriterWhereColor.WriteWhere(FlashTextSettings.FlashTextWrite, Left, Top, true, Screensaver.colors[RandomDriver.Random(FlashTextSettings.FlashTextMinimumColorLevel, FlashTextSettings.FlashTextMaximumColorLevel)]);
                 }
             }
             ThreadManager.SleepNoBlock(HalfDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);

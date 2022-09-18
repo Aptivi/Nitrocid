@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using ColorSeq;
 using KS.ConsoleBase.Colors;
+using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
@@ -261,7 +262,6 @@ namespace KS.Misc.Screensaver.Displays
     public class FallingLineDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Random RandomDriver;
         private int ColumnLine;
         private int CurrentWindowWidth;
         private int CurrentWindowHeight;
@@ -278,7 +278,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            RandomDriver = new Random();
             CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
@@ -291,7 +290,7 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverLogic()
         {
             // Choose the column for the falling line
-            ColumnLine = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowWidth);
+            ColumnLine = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowWidth);
 
             // Now, determine the fall start and end position
             int FallStart = 0;
@@ -301,23 +300,23 @@ namespace KS.Misc.Screensaver.Displays
             Color ColorStorage;
             if (FallingLineSettings.FallingLineTrueColor)
             {
-                int RedColorNum = RandomDriver.Next(FallingLineSettings.FallingLineMinimumRedColorLevel, FallingLineSettings.FallingLineMaximumRedColorLevel);
-                int GreenColorNum = RandomDriver.Next(FallingLineSettings.FallingLineMinimumGreenColorLevel, FallingLineSettings.FallingLineMaximumGreenColorLevel);
-                int BlueColorNum = RandomDriver.Next(FallingLineSettings.FallingLineMinimumBlueColorLevel, FallingLineSettings.FallingLineMaximumBlueColorLevel);
+                int RedColorNum = RandomDriver.Random(FallingLineSettings.FallingLineMinimumRedColorLevel, FallingLineSettings.FallingLineMaximumRedColorLevel);
+                int GreenColorNum = RandomDriver.Random(FallingLineSettings.FallingLineMinimumGreenColorLevel, FallingLineSettings.FallingLineMaximumGreenColorLevel);
+                int BlueColorNum = RandomDriver.Random(FallingLineSettings.FallingLineMinimumBlueColorLevel, FallingLineSettings.FallingLineMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
                 ColorTools.SetConsoleColor(ColorStorage, true, true);
             }
             else if (FallingLineSettings.FallingLine255Colors)
             {
-                int ColorNum = RandomDriver.Next(FallingLineSettings.FallingLineMinimumColorLevel, FallingLineSettings.FallingLineMaximumColorLevel);
+                int ColorNum = RandomDriver.Random(FallingLineSettings.FallingLineMinimumColorLevel, FallingLineSettings.FallingLineMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 ColorStorage = new Color(ColorNum);
                 ColorTools.SetConsoleColor(ColorStorage, true, true);
             }
             else
             {
-                ConsoleBase.ConsoleWrapper.BackgroundColor = Screensaver.colors[RandomDriver.Next(FallingLineSettings.FallingLineMinimumColorLevel, FallingLineSettings.FallingLineMaximumColorLevel)];
+                ConsoleBase.ConsoleWrapper.BackgroundColor = Screensaver.colors[RandomDriver.Random(FallingLineSettings.FallingLineMinimumColorLevel, FallingLineSettings.FallingLineMaximumColorLevel)];
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
                 ColorStorage = new Color((int)ConsoleBase.ConsoleWrapper.BackgroundColor);
             }

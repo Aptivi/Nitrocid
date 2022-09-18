@@ -27,7 +27,6 @@ namespace KS.Misc.Animations.Fader
     public class FaderSettings
     {
 
-        internal Random RandomDriver;
         private int _faderDelay = 50;
         private int _faderFadeOutDelay = 3000;
         private string _faderWrite = "Kernel Simulator";

@@ -21,6 +21,7 @@ using System.Data;
 using System.Linq;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
+using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
@@ -51,7 +52,6 @@ namespace KS.Misc.Games
         /// </summary>
         public static void InitializeSolver()
         {
-            var RandomDriver = new Random();
             string RandomExpression;
             string UserEvaluated;
             var Operations = new string[] { "+", "-", "*", "/" };
@@ -62,9 +62,9 @@ namespace KS.Misc.Games
             while (true)
             {
                 // Populate the numbers
-                int FirstNumber = RandomDriver.Next(SolverMinimumNumber, SolverMaximumNumber);
-                int OperationIndex = RandomDriver.Next(Operations.Length);
-                int SecondNumber = RandomDriver.Next(SolverMinimumNumber, SolverMaximumNumber);
+                int FirstNumber = RandomDriver.Random(SolverMinimumNumber, SolverMaximumNumber);
+                int OperationIndex = RandomDriver.Random(Operations.Length);
+                int SecondNumber = RandomDriver.Random(SolverMinimumNumber, SolverMaximumNumber);
 
                 // Generate the expression
                 RandomExpression = FirstNumber.ToString() + Operations.ElementAt(OperationIndex) + SecondNumber.ToString();

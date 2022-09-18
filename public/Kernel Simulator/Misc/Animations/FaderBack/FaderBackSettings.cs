@@ -26,7 +26,6 @@ namespace KS.Misc.Animations.FaderBack
     public class FaderBackSettings
     {
 
-        internal Random RandomDriver;
         private int _faderBackDelay = 50;
         private int _faderBackFadeOutDelay = 3000;
         private int _faderBackMaxSteps = 25;

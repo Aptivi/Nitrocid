@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ColorSeq;
 using Extensification.StringExts;
+using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
@@ -278,7 +279,6 @@ namespace KS.Misc.Screensaver.Displays
     public class FigletDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Random RandomDriver;
         private int CurrentWindowWidth;
         private int CurrentWindowHeight;
         private bool ResizeSyncing;
@@ -293,7 +293,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            RandomDriver = new Random();
             CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
@@ -313,21 +312,21 @@ namespace KS.Misc.Screensaver.Displays
             var ColorStorage = new Color(255, 255, 255);
             if (FigletSettings.FigletTrueColor)
             {
-                int RedColorNum = RandomDriver.Next(FigletSettings.FigletMinimumRedColorLevel, FigletSettings.FigletMaximumRedColorLevel);
-                int GreenColorNum = RandomDriver.Next(FigletSettings.FigletMinimumGreenColorLevel, FigletSettings.FigletMaximumGreenColorLevel);
-                int BlueColorNum = RandomDriver.Next(FigletSettings.FigletMinimumBlueColorLevel, FigletSettings.FigletMaximumBlueColorLevel);
+                int RedColorNum = RandomDriver.Random(FigletSettings.FigletMinimumRedColorLevel, FigletSettings.FigletMaximumRedColorLevel);
+                int GreenColorNum = RandomDriver.Random(FigletSettings.FigletMinimumGreenColorLevel, FigletSettings.FigletMaximumGreenColorLevel);
+                int BlueColorNum = RandomDriver.Random(FigletSettings.FigletMinimumBlueColorLevel, FigletSettings.FigletMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
             }
             else if (FigletSettings.Figlet255Colors)
             {
-                int ColorNum = RandomDriver.Next(FigletSettings.FigletMinimumColorLevel, FigletSettings.FigletMaximumColorLevel);
+                int ColorNum = RandomDriver.Random(FigletSettings.FigletMinimumColorLevel, FigletSettings.FigletMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 ColorStorage = new Color(ColorNum);
             }
             else
             {
-                ConsoleBase.ConsoleWrapper.BackgroundColor = (ConsoleColor)RandomDriver.Next(FigletSettings.FigletMinimumColorLevel, FigletSettings.FigletMaximumColorLevel);
+                ConsoleBase.ConsoleWrapper.BackgroundColor = (ConsoleColor)RandomDriver.Random(FigletSettings.FigletMinimumColorLevel, FigletSettings.FigletMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
             }
 

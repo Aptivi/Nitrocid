@@ -18,6 +18,7 @@
 
 using System;
 using System.Collections.Generic;
+using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
@@ -57,7 +58,6 @@ namespace KS.Misc.Screensaver.Displays
     public class StarfieldDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Random RandomDriver;
         private int CurrentWindowWidth;
         private int CurrentWindowHeight;
         private bool ResizeSyncing;
@@ -73,7 +73,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            RandomDriver = new Random();
             CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
@@ -106,12 +105,11 @@ namespace KS.Misc.Screensaver.Displays
             }
 
             // Add new star if guaranteed
-            double StarShowProbability = 10d / 100d;
-            bool StarShowGuaranteed = RandomDriver.NextDouble() < StarShowProbability;
+            bool StarShowGuaranteed = RandomDriver.RandomChance(10);
             if (StarShowGuaranteed)
             {
                 int StarX = ConsoleBase.ConsoleWrapper.WindowWidth - 1;
-                int StarY = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowHeight - 1);
+                int StarY = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowHeight);
                 Stars.Add(new Tuple<int, int>(StarX, StarY));
             }
 

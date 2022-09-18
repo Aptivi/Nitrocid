@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using ColorSeq;
 using Extensification.IntegerExts;
 using KS.ConsoleBase.Colors;
+using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 
@@ -258,7 +259,6 @@ namespace KS.Misc.Screensaver.Displays
     public class StackBoxDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Random RandomDriver;
         private int CurrentWindowWidth;
         private int CurrentWindowHeight;
         private bool ResizeSyncing;
@@ -273,7 +273,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            RandomDriver = new Random();
             CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
@@ -302,11 +301,11 @@ namespace KS.Misc.Screensaver.Displays
                     ResizeSyncing = true;
 
                 // Get the required positions for the box
-                int BoxStartX = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowWidth);
-                int BoxEndX = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowWidth);
+                int BoxStartX = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowWidth);
+                int BoxEndX = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowWidth);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Box X position {0} -> {1}", BoxStartX, BoxEndX);
-                int BoxStartY = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowHeight);
-                int BoxEndY = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowHeight);
+                int BoxStartY = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowHeight);
+                int BoxEndY = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowHeight);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Box Y position {0} -> {1}", BoxStartY, BoxEndY);
 
                 // Check to see if start is less than or equal to end
@@ -324,21 +323,21 @@ namespace KS.Misc.Screensaver.Displays
                     // Select color
                     if (StackBoxSettings.StackBoxTrueColor)
                     {
-                        int RedColorNum = RandomDriver.Next(StackBoxSettings.StackBoxMinimumRedColorLevel, StackBoxSettings.StackBoxMaximumRedColorLevel);
-                        int GreenColorNum = RandomDriver.Next(StackBoxSettings.StackBoxMinimumGreenColorLevel, StackBoxSettings.StackBoxMaximumGreenColorLevel);
-                        int BlueColorNum = RandomDriver.Next(StackBoxSettings.StackBoxMinimumBlueColorLevel, StackBoxSettings.StackBoxMaximumBlueColorLevel);
+                        int RedColorNum = RandomDriver.Random(StackBoxSettings.StackBoxMinimumRedColorLevel, StackBoxSettings.StackBoxMaximumRedColorLevel);
+                        int GreenColorNum = RandomDriver.Random(StackBoxSettings.StackBoxMinimumGreenColorLevel, StackBoxSettings.StackBoxMaximumGreenColorLevel);
+                        int BlueColorNum = RandomDriver.Random(StackBoxSettings.StackBoxMinimumBlueColorLevel, StackBoxSettings.StackBoxMaximumBlueColorLevel);
                         DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                         ColorTools.SetConsoleColor(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), true, true);
                     }
                     else if (StackBoxSettings.StackBox255Colors)
                     {
-                        int ColorNum = RandomDriver.Next(StackBoxSettings.StackBoxMinimumColorLevel, StackBoxSettings.StackBoxMaximumColorLevel);
+                        int ColorNum = RandomDriver.Random(StackBoxSettings.StackBoxMinimumColorLevel, StackBoxSettings.StackBoxMaximumColorLevel);
                         DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                         ColorTools.SetConsoleColor(new Color(ColorNum), true, true);
                     }
                     else
                     {
-                        ConsoleBase.ConsoleWrapper.BackgroundColor = Screensaver.colors[RandomDriver.Next(StackBoxSettings.StackBoxMinimumColorLevel, StackBoxSettings.StackBoxMaximumColorLevel)];
+                        ConsoleBase.ConsoleWrapper.BackgroundColor = Screensaver.colors[RandomDriver.Random(StackBoxSettings.StackBoxMinimumColorLevel, StackBoxSettings.StackBoxMaximumColorLevel)];
                         DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
                     }
 

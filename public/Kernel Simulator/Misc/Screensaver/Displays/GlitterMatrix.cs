@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using ColorSeq;
 using KS.ConsoleBase.Colors;
+using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 
@@ -88,7 +89,6 @@ namespace KS.Misc.Screensaver.Displays
     public class GlitterMatrixDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Random RandomDriver;
         private int CurrentWindowWidth;
         private int CurrentWindowHeight;
         private bool ResizeSyncing;
@@ -103,7 +103,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            RandomDriver = new Random();
             CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ColorTools.SetConsoleColor(new Color(GlitterMatrixSettings.GlitterMatrixBackgroundColor), true, true);
@@ -116,15 +115,15 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverLogic()
         {
             ConsoleBase.ConsoleWrapper.CursorVisible = false;
-            int Left = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowWidth);
-            int Top = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowHeight);
+            int Left = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowWidth);
+            int Top = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowHeight);
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top);
             ConsoleBase.ConsoleWrapper.SetCursorPosition(Left, Top);
             if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                 ResizeSyncing = true;
             if (!ResizeSyncing)
             {
-                ConsoleBase.ConsoleWrapper.Write(RandomDriver.Next(2).ToString());
+                ConsoleBase.ConsoleWrapper.Write(RandomDriver.Random(1).ToString());
             }
             else
             {

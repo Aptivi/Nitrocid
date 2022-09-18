@@ -26,7 +26,6 @@ namespace KS.Misc.Animations.Pulse
     public class PulseSettings
     {
 
-        internal Random RandomDriver;
         private int _pulseDelay = 50;
         private int _pulseMaxSteps = 25;
         private int _pulseMinimumRedColorLevel = 0;

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using ColorSeq;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
+using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 
@@ -258,7 +259,6 @@ namespace KS.Misc.Screensaver.Displays
     public class FlashColorDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Random RandomDriver;
         private int CurrentWindowWidth;
         private int CurrentWindowHeight;
         private bool ResizeSyncing;
@@ -273,7 +273,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            RandomDriver = new Random();
             CurrentWindowWidth = ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleWrapper.WindowHeight;
             ColorTools.SetConsoleColor(new Color(FlashColorSettings.FlashColorBackgroundColor), true, true);
@@ -287,8 +286,8 @@ namespace KS.Misc.Screensaver.Displays
             ConsoleWrapper.CursorVisible = false;
 
             // Select position
-            int Left = RandomDriver.Next(ConsoleWrapper.WindowWidth);
-            int Top = RandomDriver.Next(ConsoleWrapper.WindowHeight);
+            int Left = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
+            int Top = RandomDriver.Random(ConsoleWrapper.WindowHeight);
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top);
             ConsoleWrapper.SetCursorPosition(Left, Top);
 
@@ -297,9 +296,9 @@ namespace KS.Misc.Screensaver.Displays
             ConsoleExtensions.ClearKeepPosition();
             if (FlashColorSettings.FlashColorTrueColor)
             {
-                int RedColorNum = RandomDriver.Next(FlashColorSettings.FlashColorMinimumRedColorLevel, FlashColorSettings.FlashColorMaximumRedColorLevel);
-                int GreenColorNum = RandomDriver.Next(FlashColorSettings.FlashColorMinimumGreenColorLevel, FlashColorSettings.FlashColorMaximumGreenColorLevel);
-                int BlueColorNum = RandomDriver.Next(FlashColorSettings.FlashColorMinimumBlueColorLevel, FlashColorSettings.FlashColorMaximumBlueColorLevel);
+                int RedColorNum = RandomDriver.Random(FlashColorSettings.FlashColorMinimumRedColorLevel, FlashColorSettings.FlashColorMaximumRedColorLevel);
+                int GreenColorNum = RandomDriver.Random(FlashColorSettings.FlashColorMinimumGreenColorLevel, FlashColorSettings.FlashColorMaximumGreenColorLevel);
+                int BlueColorNum = RandomDriver.Random(FlashColorSettings.FlashColorMinimumBlueColorLevel, FlashColorSettings.FlashColorMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
                 if (CurrentWindowHeight != ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleWrapper.WindowWidth)
@@ -312,7 +311,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             else if (FlashColorSettings.FlashColor255Colors)
             {
-                int ColorNum = RandomDriver.Next(FlashColorSettings.FlashColorMinimumColorLevel, FlashColorSettings.FlashColorMaximumColorLevel);
+                int ColorNum = RandomDriver.Random(FlashColorSettings.FlashColorMinimumColorLevel, FlashColorSettings.FlashColorMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 if (CurrentWindowHeight != ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleWrapper.WindowWidth)
                     ResizeSyncing = true;
@@ -328,7 +327,7 @@ namespace KS.Misc.Screensaver.Displays
                     ResizeSyncing = true;
                 if (!ResizeSyncing)
                 {
-                    ConsoleWrapper.BackgroundColor = Screensaver.colors[RandomDriver.Next(FlashColorSettings.FlashColorMinimumColorLevel, FlashColorSettings.FlashColorMaximumColorLevel)];
+                    ConsoleWrapper.BackgroundColor = Screensaver.colors[RandomDriver.Random(FlashColorSettings.FlashColorMinimumColorLevel, FlashColorSettings.FlashColorMaximumColorLevel)];
                     DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleWrapper.BackgroundColor);
                     ConsoleWrapper.Write(" ");
                 }

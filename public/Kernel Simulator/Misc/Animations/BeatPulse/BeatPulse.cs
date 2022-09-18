@@ -19,6 +19,7 @@
 using System;
 using ColorSeq;
 using KS.ConsoleBase.Colors;
+using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Screensaver;
 using KS.Misc.Threading;
@@ -42,7 +43,6 @@ namespace KS.Misc.Animations.BeatPulse
         {
             CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
-            var RandomDriver = Settings.RandomDriver;
             ConsoleBase.ConsoleWrapper.CursorVisible = false;
             int BeatInterval = (int)Math.Round(60000d / Settings.BeatPulseDelay);
             int BeatIntervalStep = (int)Math.Round(BeatInterval / (double)Settings.BeatPulseMaxSteps);
@@ -51,27 +51,27 @@ namespace KS.Misc.Animations.BeatPulse
             ThreadManager.SleepNoBlock(BeatIntervalStep, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
             // If we're cycling colors, set them. Else, use the user-provided color
-            int RedColorNum = default, GreenColorNum = default, BlueColorNum = default;
+            int RedColorNum, GreenColorNum, BlueColorNum;
             if (Settings.BeatPulseCycleColors)
             {
                 // We're cycling. Select the color mode, starting from true color
                 DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Cycling colors...");
                 if (Settings.BeatPulseTrueColor)
                 {
-                    RedColorNum = RandomDriver.Next(Settings.BeatPulseMinimumRedColorLevel, Settings.BeatPulseMinimumRedColorLevel);
-                    GreenColorNum = RandomDriver.Next(Settings.BeatPulseMinimumGreenColorLevel, Settings.BeatPulseMaximumGreenColorLevel);
-                    BlueColorNum = RandomDriver.Next(Settings.BeatPulseMinimumBlueColorLevel, Settings.BeatPulseMaximumBlueColorLevel);
+                    RedColorNum = RandomDriver.Random(Settings.BeatPulseMinimumRedColorLevel, Settings.BeatPulseMaximumRedColorLevel);
+                    GreenColorNum = RandomDriver.Random(Settings.BeatPulseMinimumGreenColorLevel, Settings.BeatPulseMaximumGreenColorLevel);
+                    BlueColorNum = RandomDriver.Random(Settings.BeatPulseMinimumBlueColorLevel, Settings.BeatPulseMaximumBlueColorLevel);
                 }
                 else if (Settings.BeatPulse255Colors)
                 {
-                    var ConsoleColor = new ConsoleColorsInfo((ConsoleColors)RandomDriver.Next(Settings.BeatPulseMinimumColorLevel, Settings.BeatPulseMaximumColorLevel));
+                    var ConsoleColor = new ConsoleColorsInfo((ConsoleColors)RandomDriver.Random(Settings.BeatPulseMinimumColorLevel, Settings.BeatPulseMaximumColorLevel));
                     RedColorNum = ConsoleColor.R;
                     GreenColorNum = ConsoleColor.G;
                     BlueColorNum = ConsoleColor.B;
                 }
                 else
                 {
-                    var ConsoleColor = new ConsoleColorsInfo((ConsoleColors)RandomDriver.Next(Settings.BeatPulseMinimumColorLevel, Settings.BeatPulseMaximumColorLevel));
+                    var ConsoleColor = new ConsoleColorsInfo((ConsoleColors)RandomDriver.Random(Settings.BeatPulseMinimumColorLevel, Settings.BeatPulseMaximumColorLevel));
                     RedColorNum = ConsoleColor.R;
                     GreenColorNum = ConsoleColor.G;
                     BlueColorNum = ConsoleColor.B;

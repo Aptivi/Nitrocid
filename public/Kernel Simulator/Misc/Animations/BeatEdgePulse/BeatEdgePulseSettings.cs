@@ -27,7 +27,6 @@ namespace KS.Misc.Animations.BeatEdgePulse
     public class BeatEdgePulseSettings
     {
 
-        internal Random RandomDriver;
         private bool _beatedgepulse255Colors;
         private bool _beatedgepulseTrueColor = true;
         private int _beatedgepulseDelay = 120;

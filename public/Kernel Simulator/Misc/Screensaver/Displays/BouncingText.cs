@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using ColorSeq;
 using KS.ConsoleBase.Colors;
+using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
@@ -416,23 +417,22 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public Color ChangeBouncingTextColor()
         {
-            var RandomDriver = new Random();
             Color ColorInstance;
             if (BouncingTextSettings.BouncingTextTrueColor)
             {
-                int RedColorNum = RandomDriver.Next(BouncingTextSettings.BouncingTextMinimumRedColorLevel, BouncingTextSettings.BouncingTextMaximumRedColorLevel);
-                int GreenColorNum = RandomDriver.Next(BouncingTextSettings.BouncingTextMinimumGreenColorLevel, BouncingTextSettings.BouncingTextMaximumGreenColorLevel);
-                int BlueColorNum = RandomDriver.Next(BouncingTextSettings.BouncingTextMinimumBlueColorLevel, BouncingTextSettings.BouncingTextMaximumBlueColorLevel);
+                int RedColorNum = RandomDriver.Random(BouncingTextSettings.BouncingTextMinimumRedColorLevel, BouncingTextSettings.BouncingTextMaximumRedColorLevel);
+                int GreenColorNum = RandomDriver.Random(BouncingTextSettings.BouncingTextMinimumGreenColorLevel, BouncingTextSettings.BouncingTextMaximumGreenColorLevel);
+                int BlueColorNum = RandomDriver.Random(BouncingTextSettings.BouncingTextMinimumBlueColorLevel, BouncingTextSettings.BouncingTextMaximumBlueColorLevel);
                 ColorInstance = new Color(RedColorNum, GreenColorNum, BlueColorNum);
             }
             else if (BouncingTextSettings.BouncingText255Colors)
             {
-                int ColorNum = RandomDriver.Next(BouncingTextSettings.BouncingTextMinimumColorLevel, BouncingTextSettings.BouncingTextMaximumColorLevel);
+                int ColorNum = RandomDriver.Random(BouncingTextSettings.BouncingTextMinimumColorLevel, BouncingTextSettings.BouncingTextMaximumColorLevel);
                 ColorInstance = new Color(ColorNum);
             }
             else
             {
-                ColorInstance = new Color((int)Screensaver.colors[RandomDriver.Next(BouncingTextSettings.BouncingTextMinimumColorLevel, BouncingTextSettings.BouncingTextMaximumColorLevel)]);
+                ColorInstance = new Color((int)Screensaver.colors[RandomDriver.Random(BouncingTextSettings.BouncingTextMinimumColorLevel, BouncingTextSettings.BouncingTextMaximumColorLevel)]);
             }
             return ColorInstance;
         }

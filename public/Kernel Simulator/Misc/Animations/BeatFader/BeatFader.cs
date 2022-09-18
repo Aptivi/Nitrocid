@@ -19,6 +19,7 @@
 using System;
 using ColorSeq;
 using KS.ConsoleBase.Colors;
+using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Screensaver;
 using KS.Misc.Threading;
@@ -42,7 +43,6 @@ namespace KS.Misc.Animations.BeatFader
         {
             CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
-            var RandomDriver = Settings.RandomDriver;
             ConsoleBase.ConsoleWrapper.CursorVisible = false;
             int BeatInterval = (int)Math.Round(60000d / Settings.BeatFaderDelay);
             int BeatIntervalStep = (int)Math.Round(BeatInterval / (double)Settings.BeatFaderMaxSteps);
@@ -58,20 +58,20 @@ namespace KS.Misc.Animations.BeatFader
                 DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Cycling colors...");
                 if (Settings.BeatFaderTrueColor)
                 {
-                    RedColorNum = RandomDriver.Next(Settings.BeatFaderMinimumRedColorLevel, Settings.BeatFaderMinimumRedColorLevel);
-                    GreenColorNum = RandomDriver.Next(Settings.BeatFaderMinimumGreenColorLevel, Settings.BeatFaderMaximumGreenColorLevel);
-                    BlueColorNum = RandomDriver.Next(Settings.BeatFaderMinimumBlueColorLevel, Settings.BeatFaderMaximumBlueColorLevel);
+                    RedColorNum = RandomDriver.Random(Settings.BeatFaderMinimumRedColorLevel, Settings.BeatFaderMaximumRedColorLevel);
+                    GreenColorNum = RandomDriver.Random(Settings.BeatFaderMinimumGreenColorLevel, Settings.BeatFaderMaximumGreenColorLevel);
+                    BlueColorNum = RandomDriver.Random(Settings.BeatFaderMinimumBlueColorLevel, Settings.BeatFaderMaximumBlueColorLevel);
                 }
                 else if (Settings.BeatFader255Colors)
                 {
-                    var ConsoleColor = new ConsoleColorsInfo((ConsoleColors)RandomDriver.Next(Settings.BeatFaderMinimumColorLevel, Settings.BeatFaderMaximumColorLevel));
+                    var ConsoleColor = new ConsoleColorsInfo((ConsoleColors)RandomDriver.Random(Settings.BeatFaderMinimumColorLevel, Settings.BeatFaderMaximumColorLevel));
                     RedColorNum = ConsoleColor.R;
                     GreenColorNum = ConsoleColor.G;
                     BlueColorNum = ConsoleColor.B;
                 }
                 else
                 {
-                    var ConsoleColor = new ConsoleColorsInfo((ConsoleColors)RandomDriver.Next(Settings.BeatFaderMinimumColorLevel, Settings.BeatFaderMaximumColorLevel));
+                    var ConsoleColor = new ConsoleColorsInfo((ConsoleColors)RandomDriver.Random(Settings.BeatFaderMinimumColorLevel, Settings.BeatFaderMaximumColorLevel));
                     RedColorNum = ConsoleColor.R;
                     GreenColorNum = ConsoleColor.G;
                     BlueColorNum = ConsoleColor.B;

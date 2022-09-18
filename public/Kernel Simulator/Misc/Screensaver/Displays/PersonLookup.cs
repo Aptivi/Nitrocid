@@ -18,6 +18,7 @@
 
 using System;
 using System.Collections.Generic;
+using KS.Drivers.RNG;
 using KS.Misc.Threading;
 using KS.Misc.Writers.WriterBase;
 using KS.TimeDate;
@@ -151,8 +152,6 @@ namespace KS.Misc.Screensaver.Displays
     public class PersonLookupDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Random RandomDriver;
-
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "PersonLookup";
 
@@ -160,12 +159,7 @@ namespace KS.Misc.Screensaver.Displays
         public override Dictionary<string, object> ScreensaverSettings { get; set; }
 
         /// <inheritdoc/>
-        public override void ScreensaverPreparation()
-        {
-            // Variable preparations
-            RandomDriver = new Random();
-            PopulateNames();
-        }
+        public override void ScreensaverPreparation() => PopulateNames();
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()
@@ -176,15 +170,15 @@ namespace KS.Misc.Screensaver.Displays
             ConsoleBase.ConsoleWrapper.CursorVisible = false;
 
             // Generate names
-            int NumberOfPeople = RandomDriver.Next(PersonLookupSettings.PersonLookupMinimumNames, PersonLookupSettings.PersonLookupMaximumNames);
+            int NumberOfPeople = RandomDriver.Random(PersonLookupSettings.PersonLookupMinimumNames, PersonLookupSettings.PersonLookupMaximumNames);
             var NamesToLookup = GenerateNames(NumberOfPeople);
 
             // Loop through names
             foreach (string GeneratedName in NamesToLookup)
             {
-                int Age = RandomDriver.Next(PersonLookupSettings.PersonLookupMinimumAgeYears, PersonLookupSettings.PersonLookupMaximumAgeYears);
-                int AgeMonth = RandomDriver.Next(-12, 12);
-                int AgeDay = RandomDriver.Next(-31, 31);
+                int Age = RandomDriver.Random(PersonLookupSettings.PersonLookupMinimumAgeYears, PersonLookupSettings.PersonLookupMaximumAgeYears);
+                int AgeMonth = RandomDriver.Random(-12, 12);
+                int AgeDay = RandomDriver.Random(-31, 31);
                 var Birthdate = DateTime.Now.AddYears(-Age).AddMonths(AgeMonth).AddDays(AgeDay);
                 int FinalAge = new DateTime((DateTime.Now - Birthdate).Ticks).Year;
                 string FirstName = GeneratedName.Substring(0, GeneratedName.IndexOf(" "));

@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using ColorSeq;
 using KS.ConsoleBase.Colors;
+using KS.Drivers.RNG;
 using KS.Misc.Threading;
 using KS.Misc.Writers.WriterBase;
 using KS.TimeDate;
@@ -243,7 +244,6 @@ namespace KS.Misc.Screensaver.Displays
     public class DateAndTimeDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Random RandomDriver;
 
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "DateAndTime";
@@ -255,7 +255,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            RandomDriver = new Random();
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
             ConsoleBase.ConsoleWrapper.Clear();
         }
@@ -283,19 +282,19 @@ namespace KS.Misc.Screensaver.Displays
             Color ColorInstance;
             if (DateAndTimeSettings.DateAndTimeTrueColor)
             {
-                int RedColorNum = RandomDriver.Next(DateAndTimeSettings.DateAndTimeMinimumRedColorLevel, DateAndTimeSettings.DateAndTimeMaximumRedColorLevel);
-                int GreenColorNum = RandomDriver.Next(DateAndTimeSettings.DateAndTimeMinimumGreenColorLevel, DateAndTimeSettings.DateAndTimeMaximumGreenColorLevel);
-                int BlueColorNum = RandomDriver.Next(DateAndTimeSettings.DateAndTimeMinimumBlueColorLevel, DateAndTimeSettings.DateAndTimeMaximumBlueColorLevel);
+                int RedColorNum = RandomDriver.Random(DateAndTimeSettings.DateAndTimeMinimumRedColorLevel, DateAndTimeSettings.DateAndTimeMaximumRedColorLevel);
+                int GreenColorNum = RandomDriver.Random(DateAndTimeSettings.DateAndTimeMinimumGreenColorLevel, DateAndTimeSettings.DateAndTimeMaximumGreenColorLevel);
+                int BlueColorNum = RandomDriver.Random(DateAndTimeSettings.DateAndTimeMinimumBlueColorLevel, DateAndTimeSettings.DateAndTimeMaximumBlueColorLevel);
                 ColorInstance = new Color(RedColorNum, GreenColorNum, BlueColorNum);
             }
             else if (DateAndTimeSettings.DateAndTime255Colors)
             {
-                int ColorNum = RandomDriver.Next(DateAndTimeSettings.DateAndTimeMinimumColorLevel, DateAndTimeSettings.DateAndTimeMaximumColorLevel);
+                int ColorNum = RandomDriver.Random(DateAndTimeSettings.DateAndTimeMinimumColorLevel, DateAndTimeSettings.DateAndTimeMaximumColorLevel);
                 ColorInstance = new Color(ColorNum);
             }
             else
             {
-                ColorInstance = new Color((int)Screensaver.colors[RandomDriver.Next(DateAndTimeSettings.DateAndTimeMinimumColorLevel, DateAndTimeSettings.DateAndTimeMaximumColorLevel)]);
+                ColorInstance = new Color((int)Screensaver.colors[RandomDriver.Random(DateAndTimeSettings.DateAndTimeMinimumColorLevel, DateAndTimeSettings.DateAndTimeMaximumColorLevel)]);
             }
             return ColorInstance;
         }

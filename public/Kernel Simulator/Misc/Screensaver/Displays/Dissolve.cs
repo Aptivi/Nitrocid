@@ -22,6 +22,7 @@ using System.Linq;
 using System.Threading;
 using ColorSeq;
 using KS.ConsoleBase.Colors;
+using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 
 namespace KS.Misc.Screensaver.Displays
@@ -241,7 +242,6 @@ namespace KS.Misc.Screensaver.Displays
     public class DissolveDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Random RandomDriver;
         private bool ColorFilled;
         private int CurrentWindowWidth;
         private int CurrentWindowHeight;
@@ -258,7 +258,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            RandomDriver = new Random();
             CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ColorTools.SetConsoleColor(new Color(DissolveSettings.DissolveBackgroundColor), true, true);
@@ -274,8 +273,8 @@ namespace KS.Misc.Screensaver.Displays
                 Thread.Sleep(1);
             int EndLeft = ConsoleBase.ConsoleWrapper.WindowWidth - 1;
             int EndTop = ConsoleBase.ConsoleWrapper.WindowHeight - 1;
-            int Left = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowWidth);
-            int Top = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowHeight);
+            int Left = RandomDriver.Random(ConsoleBase.ConsoleWrapper.WindowWidth);
+            int Top = RandomDriver.Random(ConsoleBase.ConsoleWrapper.WindowHeight);
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Dissolving: {0}", ColorFilled);
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "End left: {0} | End top: {1}", EndLeft, EndTop);
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got left: {0} | Got top: {1}", Left, Top);
@@ -288,9 +287,9 @@ namespace KS.Misc.Screensaver.Displays
                 {
                     if (DissolveSettings.DissolveTrueColor)
                     {
-                        int RedColorNum = RandomDriver.Next(DissolveSettings.DissolveMinimumRedColorLevel, DissolveSettings.DissolveMaximumRedColorLevel);
-                        int GreenColorNum = RandomDriver.Next(DissolveSettings.DissolveMinimumGreenColorLevel, DissolveSettings.DissolveMaximumGreenColorLevel);
-                        int BlueColorNum = RandomDriver.Next(DissolveSettings.DissolveMinimumBlueColorLevel, DissolveSettings.DissolveMaximumBlueColorLevel);
+                        int RedColorNum = RandomDriver.Random(DissolveSettings.DissolveMinimumRedColorLevel, DissolveSettings.DissolveMaximumRedColorLevel);
+                        int GreenColorNum = RandomDriver.Random(DissolveSettings.DissolveMinimumGreenColorLevel, DissolveSettings.DissolveMaximumGreenColorLevel);
+                        int BlueColorNum = RandomDriver.Random(DissolveSettings.DissolveMinimumBlueColorLevel, DissolveSettings.DissolveMaximumBlueColorLevel);
                         DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                         if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                             ResizeSyncing = true;
@@ -311,7 +310,7 @@ namespace KS.Misc.Screensaver.Displays
                     }
                     else if (DissolveSettings.Dissolve255Colors)
                     {
-                        int ColorNum = RandomDriver.Next(DissolveSettings.DissolveMinimumColorLevel, DissolveSettings.DissolveMaximumColorLevel);
+                        int ColorNum = RandomDriver.Random(DissolveSettings.DissolveMinimumColorLevel, DissolveSettings.DissolveMaximumColorLevel);
                         DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                         if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                             ResizeSyncing = true;

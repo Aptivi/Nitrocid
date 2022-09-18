@@ -27,7 +27,6 @@ namespace KS.Misc.Animations.BeatFader
     public class BeatFaderSettings
     {
 
-        internal Random RandomDriver;
         private bool _beatFader255Colors;
         private bool _beatFaderTrueColor = true;
         private int _beatFaderDelay = 120;

@@ -22,6 +22,7 @@ using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
+using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
@@ -64,7 +65,6 @@ namespace KS.Misc.Splash.Splashes
         private int PowerLineLength = 0;
         private bool LengthDecreasing;
         private readonly char TransitionChar = Convert.ToChar(0xE0B0);
-        private readonly Random RandomDriver = new();
 
         // Actual logic
         public void Opening()
@@ -73,7 +73,7 @@ namespace KS.Misc.Splash.Splashes
             ConsoleWrapper.Clear();
 
             // Select the color segment background and mirror it to the transition foreground color
-            FirstColorSegmentBackground = new Color(RandomDriver.Next(256), RandomDriver.Next(256), RandomDriver.Next(256));
+            FirstColorSegmentBackground = new Color(RandomDriver.Random(255), RandomDriver.Random(255), RandomDriver.Random(255));
             LastTransitionForeground = FirstColorSegmentBackground;
         }
 

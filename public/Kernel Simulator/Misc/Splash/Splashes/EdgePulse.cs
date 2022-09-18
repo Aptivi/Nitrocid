@@ -57,7 +57,6 @@ namespace KS.Misc.Splash.Splashes
 
         // EdgePulse-specific variables
         internal EdgePulseSettings EdgePulseSettings;
-        internal Random RandomDriver;
 
         public SplashEdgePulse() => EdgePulseSettings = new EdgePulseSettings()
         {
@@ -77,8 +76,6 @@ namespace KS.Misc.Splash.Splashes
             DebugWriter.WriteDebug(DebugLevel.I, "Splash opening. Clearing console...");
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
             ConsoleBase.ConsoleWrapper.Clear();
-            RandomDriver = new Random();
-            EdgePulseSettings.RandomDriver = RandomDriver;
         }
 
         public void Display()

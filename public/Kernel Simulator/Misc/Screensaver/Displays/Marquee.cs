@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
+using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Text;
 using KS.Misc.Threading;
@@ -268,7 +269,6 @@ namespace KS.Misc.Screensaver.Displays
     public class MarqueeDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Random RandomDriver;
         private int CurrentWindowWidth;
         private int CurrentWindowHeight;
         private bool ResizeSyncing;
@@ -283,7 +283,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            RandomDriver = new Random();
             CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ColorTools.SetConsoleColor(new Color(MarqueeSettings.MarqueeBackgroundColor), true, true);
@@ -302,7 +301,7 @@ namespace KS.Misc.Screensaver.Displays
             int TopPrinted = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d);
             if (!MarqueeSettings.MarqueeAlwaysCentered)
             {
-                TopPrinted = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowHeight - 1);
+                TopPrinted = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowHeight);
             }
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Top position: {0}", TopPrinted);
 
@@ -314,21 +313,21 @@ namespace KS.Misc.Screensaver.Displays
             // We need to set colors for the text.
             if (MarqueeSettings.MarqueeTrueColor)
             {
-                int RedColorNum = RandomDriver.Next(MarqueeSettings.MarqueeMinimumRedColorLevel, MarqueeSettings.MarqueeMaximumRedColorLevel);
-                int GreenColorNum = RandomDriver.Next(MarqueeSettings.MarqueeMinimumGreenColorLevel, MarqueeSettings.MarqueeMaximumGreenColorLevel);
-                int BlueColorNum = RandomDriver.Next(MarqueeSettings.MarqueeMinimumBlueColorLevel, MarqueeSettings.MarqueeMaximumBlueColorLevel);
+                int RedColorNum = RandomDriver.Random(MarqueeSettings.MarqueeMinimumRedColorLevel, MarqueeSettings.MarqueeMaximumRedColorLevel);
+                int GreenColorNum = RandomDriver.Random(MarqueeSettings.MarqueeMinimumGreenColorLevel, MarqueeSettings.MarqueeMaximumGreenColorLevel);
+                int BlueColorNum = RandomDriver.Random(MarqueeSettings.MarqueeMinimumBlueColorLevel, MarqueeSettings.MarqueeMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 ColorTools.SetConsoleColor(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"));
             }
             else if (MarqueeSettings.Marquee255Colors)
             {
-                int color = RandomDriver.Next(MarqueeSettings.MarqueeMinimumColorLevel, MarqueeSettings.MarqueeMaximumColorLevel);
+                int color = RandomDriver.Random(MarqueeSettings.MarqueeMinimumColorLevel, MarqueeSettings.MarqueeMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", color);
                 ColorTools.SetConsoleColor(new Color(color));
             }
             else
             {
-                ConsoleBase.ConsoleWrapper.ForegroundColor = Screensaver.colors[RandomDriver.Next(MarqueeSettings.MarqueeMinimumColorLevel, MarqueeSettings.MarqueeMaximumColorLevel)];
+                ConsoleBase.ConsoleWrapper.ForegroundColor = Screensaver.colors[RandomDriver.Random(MarqueeSettings.MarqueeMinimumColorLevel, MarqueeSettings.MarqueeMaximumColorLevel)];
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.ForegroundColor);
             }
 

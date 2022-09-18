@@ -22,6 +22,7 @@ using System.Linq;
 using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
+using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
@@ -39,7 +40,6 @@ namespace KS.Misc.Games
         /// </summary>
         public static void InitializeWords()
         {
-            var RandomDriver = new Random();
             string RandomWord;
             string SpeltWord;
             TextWriterColor.Write(Translate.DoTranslation("Press CTRL+C to exit."), true, ColorTools.ColTypes.Tip);
@@ -50,7 +50,7 @@ namespace KS.Misc.Games
             }
             while (true)
             {
-                RandomWord = Words.ElementAt(RandomDriver.Next(Words.Count));
+                RandomWord = Words.ElementAt(RandomDriver.Random(Words.Count));
                 DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}", RandomWord);
                 TextWriterColor.Write(RandomWord, true, ColorTools.ColTypes.Input);
                 SpeltWord = Input.ReadLineNoInput(Convert.ToChar(""));

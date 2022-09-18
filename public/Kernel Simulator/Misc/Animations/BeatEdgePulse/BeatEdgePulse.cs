@@ -19,6 +19,7 @@
 using System;
 using ColorSeq;
 using KS.ConsoleBase.Colors;
+using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Screensaver;
 using KS.Misc.Threading;
@@ -42,7 +43,6 @@ namespace KS.Misc.Animations.BeatEdgePulse
         {
             CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
-            var RandomDriver = Settings.RandomDriver;
             ConsoleBase.ConsoleWrapper.CursorVisible = false;
             int BeatInterval = (int)Math.Round(60000d / Settings.BeatEdgePulseDelay);
             int BeatIntervalStep = (int)Math.Round(BeatInterval / (double)Settings.BeatEdgePulseMaxSteps);
@@ -51,27 +51,27 @@ namespace KS.Misc.Animations.BeatEdgePulse
             ThreadManager.SleepNoBlock(BeatIntervalStep, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
             // If we're cycling colors, set them. Else, use the user-provided color
-            int RedColorNum = default, GreenColorNum = default, BlueColorNum = default;
+            int RedColorNum, GreenColorNum, BlueColorNum;
             if (Settings.BeatEdgePulseCycleColors)
             {
                 // We're cycling. Select the color mode, starting from true color
                 DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Cycling colors...");
                 if (Settings.BeatEdgePulseTrueColor)
                 {
-                    RedColorNum = RandomDriver.Next(Settings.BeatEdgePulseMinimumRedColorLevel, Settings.BeatEdgePulseMinimumRedColorLevel);
-                    GreenColorNum = RandomDriver.Next(Settings.BeatEdgePulseMinimumGreenColorLevel, Settings.BeatEdgePulseMaximumGreenColorLevel);
-                    BlueColorNum = RandomDriver.Next(Settings.BeatEdgePulseMinimumBlueColorLevel, Settings.BeatEdgePulseMaximumBlueColorLevel);
+                    RedColorNum = RandomDriver.Random(Settings.BeatEdgePulseMinimumRedColorLevel, Settings.BeatEdgePulseMaximumRedColorLevel);
+                    GreenColorNum = RandomDriver.Random(Settings.BeatEdgePulseMinimumGreenColorLevel, Settings.BeatEdgePulseMaximumGreenColorLevel);
+                    BlueColorNum = RandomDriver.Random(Settings.BeatEdgePulseMinimumBlueColorLevel, Settings.BeatEdgePulseMaximumBlueColorLevel);
                 }
                 else if (Settings.BeatEdgePulse255Colors)
                 {
-                    var ConsoleColor = new ConsoleColorsInfo((ConsoleColors)RandomDriver.Next(Settings.BeatEdgePulseMinimumColorLevel, Settings.BeatEdgePulseMaximumColorLevel));
+                    var ConsoleColor = new ConsoleColorsInfo((ConsoleColors)RandomDriver.Random(Settings.BeatEdgePulseMinimumColorLevel, Settings.BeatEdgePulseMaximumColorLevel));
                     RedColorNum = ConsoleColor.R;
                     GreenColorNum = ConsoleColor.G;
                     BlueColorNum = ConsoleColor.B;
                 }
                 else
                 {
-                    var ConsoleColor = new ConsoleColorsInfo((ConsoleColors)RandomDriver.Next(Settings.BeatEdgePulseMinimumColorLevel, Settings.BeatEdgePulseMaximumColorLevel));
+                    var ConsoleColor = new ConsoleColorsInfo((ConsoleColors)RandomDriver.Random(Settings.BeatEdgePulseMinimumColorLevel, Settings.BeatEdgePulseMaximumColorLevel));
                     RedColorNum = ConsoleColor.R;
                     GreenColorNum = ConsoleColor.G;
                     BlueColorNum = ConsoleColor.B;

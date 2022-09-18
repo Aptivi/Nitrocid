@@ -19,6 +19,7 @@
 using System;
 using ColorSeq;
 using KS.ConsoleBase;
+using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Screensaver;
 using KS.Misc.Threading;
@@ -43,15 +44,14 @@ namespace KS.Misc.Animations.Fader
         {
             CurrentWindowWidth = ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleWrapper.WindowHeight;
-            var RandomDriver = Settings.RandomDriver;
-            int RedColorNum = RandomDriver.Next(Settings.FaderMinimumRedColorLevel, Settings.FaderMaximumRedColorLevel);
-            int GreenColorNum = RandomDriver.Next(Settings.FaderMinimumGreenColorLevel, Settings.FaderMaximumGreenColorLevel);
-            int BlueColorNum = RandomDriver.Next(Settings.FaderMinimumBlueColorLevel, Settings.FaderMaximumBlueColorLevel);
+            int RedColorNum = RandomDriver.Random(Settings.FaderMinimumRedColorLevel, Settings.FaderMaximumRedColorLevel);
+            int GreenColorNum = RandomDriver.Random(Settings.FaderMinimumGreenColorLevel, Settings.FaderMaximumGreenColorLevel);
+            int BlueColorNum = RandomDriver.Random(Settings.FaderMinimumBlueColorLevel, Settings.FaderMaximumBlueColorLevel);
             ConsoleWrapper.CursorVisible = false;
 
             // Check the text
-            int Left = RandomDriver.Next(ConsoleWrapper.WindowWidth);
-            int Top = RandomDriver.Next(ConsoleWrapper.WindowHeight);
+            int Left = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
+            int Top = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
             DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top);
             if (Settings.FaderWrite.Length + Left >= ConsoleWrapper.WindowWidth)
             {

@@ -26,7 +26,6 @@ namespace KS.Misc.Animations.EdgePulse
     public class EdgePulseSettings
     {
 
-        internal Random RandomDriver;
         private int _edgepulseDelay = 50;
         private int _edgepulseMaxSteps = 25;
         private int _edgepulseMinimumRedColorLevel = 0;

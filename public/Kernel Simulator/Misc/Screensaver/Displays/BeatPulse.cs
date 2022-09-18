@@ -288,7 +288,6 @@ namespace KS.Misc.Screensaver.Displays
     {
 
         private Animations.BeatPulse.BeatPulseSettings BeatPulseSettingsInstance;
-        private Random RandomDriver;
 
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "BeatPulse";
@@ -297,7 +296,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            RandomDriver = new Random();
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
             ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
             ConsoleBase.ConsoleWrapper.Clear();
@@ -317,8 +315,7 @@ namespace KS.Misc.Screensaver.Displays
                 BeatPulseMaximumRedColorLevel = BeatPulseSettings.BeatPulseMaximumRedColorLevel,
                 BeatPulseMaximumGreenColorLevel = BeatPulseSettings.BeatPulseMaximumGreenColorLevel,
                 BeatPulseMaximumBlueColorLevel = BeatPulseSettings.BeatPulseMaximumBlueColorLevel,
-                BeatPulseMaximumColorLevel = BeatPulseSettings.BeatPulseMaximumColorLevel,
-                RandomDriver = RandomDriver
+                BeatPulseMaximumColorLevel = BeatPulseSettings.BeatPulseMaximumColorLevel
             };
         }
 

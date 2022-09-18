@@ -187,7 +187,6 @@ namespace KS.Misc.Screensaver.Displays
     {
 
         private Animations.EdgePulse.EdgePulseSettings EdgePulseSettingsInstance;
-        private Random RandomDriver;
 
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "EdgePulse";
@@ -196,7 +195,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            RandomDriver = new Random();
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
             ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
             ConsoleBase.ConsoleWrapper.Clear();
@@ -210,8 +208,7 @@ namespace KS.Misc.Screensaver.Displays
                 EdgePulseMinimumBlueColorLevel = EdgePulseSettings.EdgePulseMinimumBlueColorLevel,
                 EdgePulseMaximumRedColorLevel = EdgePulseSettings.EdgePulseMaximumRedColorLevel,
                 EdgePulseMaximumGreenColorLevel = EdgePulseSettings.EdgePulseMaximumGreenColorLevel,
-                EdgePulseMaximumBlueColorLevel = EdgePulseSettings.EdgePulseMaximumBlueColorLevel,
-                RandomDriver = RandomDriver
+                EdgePulseMaximumBlueColorLevel = EdgePulseSettings.EdgePulseMaximumBlueColorLevel
             };
         }
 

@@ -19,6 +19,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using KS.Drivers.RNG;
 using KS.Misc.Threading;
 
 namespace KS.Misc.Screensaver.Displays
@@ -75,7 +76,6 @@ namespace KS.Misc.Screensaver.Displays
     public class NoiseDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Random RandomDriver;
         private int CurrentWindowWidth;
         private int CurrentWindowHeight;
         private bool ResizeSyncing;
@@ -90,7 +90,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            RandomDriver = new Random();
             CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
         }
@@ -115,8 +114,8 @@ namespace KS.Misc.Screensaver.Displays
                     ResizeSyncing = true;
                 if (!ResizeSyncing)
                 {
-                    int CoverX = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowWidth);
-                    int CoverY = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowHeight);
+                    int CoverX = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowWidth);
+                    int CoverY = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowHeight);
                     ConsoleBase.ConsoleWrapper.SetCursorPosition(CoverX, CoverY);
                     ConsoleBase.ConsoleWrapper.Write(" ");
                     if (!CoveredBlocks.Contains(CoverX.ToString() + ", " + CoverY.ToString()))

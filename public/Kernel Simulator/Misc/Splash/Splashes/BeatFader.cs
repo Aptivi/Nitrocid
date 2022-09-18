@@ -55,7 +55,6 @@ namespace KS.Misc.Splash.Splashes
         }
 
         // BeatFader-specific variables
-        internal Random RandomDriver = new();
         internal Animations.BeatFader.BeatFaderSettings BeatFaderSettingsInstance;
 
         public SplashBeatFader() => BeatFaderSettingsInstance = new Animations.BeatFader.BeatFaderSettings()
@@ -74,7 +73,6 @@ namespace KS.Misc.Splash.Splashes
             BeatFaderMaximumGreenColorLevel = 255,
             BeatFaderMaximumBlueColorLevel = 255,
             BeatFaderMaximumColorLevel = 255,
-            RandomDriver = RandomDriver
         };
 
         // Actual logic

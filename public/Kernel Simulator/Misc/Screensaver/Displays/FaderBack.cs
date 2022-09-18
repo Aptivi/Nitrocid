@@ -203,7 +203,6 @@ namespace KS.Misc.Screensaver.Displays
     public class FaderBackDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Random RandomDriver;
         private Animations.FaderBack.FaderBackSettings FaderBackSettingsInstance;
 
         /// <inheritdoc/>
@@ -216,7 +215,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            RandomDriver = new Random();
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
             ConsoleBase.ConsoleWrapper.Clear();
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
@@ -230,8 +228,7 @@ namespace KS.Misc.Screensaver.Displays
                 FaderBackMinimumBlueColorLevel = FaderBackSettings.FaderBackMinimumBlueColorLevel,
                 FaderBackMaximumRedColorLevel = FaderBackSettings.FaderBackMaximumRedColorLevel,
                 FaderBackMaximumGreenColorLevel = FaderBackSettings.FaderBackMaximumGreenColorLevel,
-                FaderBackMaximumBlueColorLevel = FaderBackSettings.FaderBackMaximumBlueColorLevel,
-                RandomDriver = RandomDriver
+                FaderBackMaximumBlueColorLevel = FaderBackSettings.FaderBackMaximumBlueColorLevel
             };
         }
 

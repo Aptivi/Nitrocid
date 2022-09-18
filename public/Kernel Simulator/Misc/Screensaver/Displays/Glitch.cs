@@ -21,6 +21,7 @@ using System.Collections;
 using System.Collections.Generic;
 using ColorSeq;
 using KS.ConsoleBase.Colors;
+using KS.Drivers.RNG;
 using KS.Misc.Threading;
 
 namespace KS.Misc.Screensaver.Displays
@@ -77,7 +78,6 @@ namespace KS.Misc.Screensaver.Displays
     public class GlitchDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Random RandomDriver;
         private int CurrentWindowWidth;
         private int CurrentWindowHeight;
         private bool ResizeSyncing;
@@ -92,7 +92,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            RandomDriver = new Random();
             CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
@@ -115,35 +114,35 @@ namespace KS.Misc.Screensaver.Displays
                     ResizeSyncing = true;
                 if (!ResizeSyncing)
                 {
-                    int CoverX = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowWidth);
-                    int CoverY = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowHeight);
+                    int CoverX = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowWidth);
+                    int CoverY = RandomDriver.Random(ConsoleBase.ConsoleWrapper.WindowHeight);
                     ConsoleBase.ConsoleWrapper.SetCursorPosition(CoverX, CoverY);
 
                     // Select random glitch type
-                    GlitchType GlitchType = (GlitchType)Convert.ToInt32(Enum.Parse(typeof(GlitchType), RandomDriver.Next(5).ToString()));
+                    GlitchType GlitchType = (GlitchType)Convert.ToInt32(Enum.Parse(typeof(GlitchType), RandomDriver.Random(4).ToString()));
 
                     // Select random letter
-                    bool LetterCapitalized = Convert.ToBoolean(RandomDriver.Next(2));
+                    bool LetterCapitalized = Convert.ToBoolean(RandomDriver.Random(1));
                     int LetterRangeStart = LetterCapitalized ? 65 : 97;
                     int LetterRangeEnd = LetterCapitalized ? 90 : 122;
-                    char Letter = Convert.ToChar(RandomDriver.Next(LetterRangeStart, LetterRangeEnd + 1));
+                    char Letter = Convert.ToChar(RandomDriver.Random(LetterRangeStart, LetterRangeEnd));
 
                     // Select random symbol
-                    bool UseExtendedAscii = Convert.ToBoolean(RandomDriver.Next(2));
+                    bool UseExtendedAscii = Convert.ToBoolean(RandomDriver.Random(1));
                     int SymbolRangeStart = UseExtendedAscii ? 128 : 33;
                     int SymbolRangeEnd = UseExtendedAscii ? 256 : 64;
-                    char Symbol = Convert.ToChar(RandomDriver.Next(SymbolRangeStart, SymbolRangeEnd + 1));
+                    char Symbol = Convert.ToChar(RandomDriver.Random(SymbolRangeStart, SymbolRangeEnd));
 
                     // Select red, green, or blue background and foreground
-                    GlitchColorType GlitchBlockColorType = (GlitchColorType)Convert.ToInt32(Enum.Parse(typeof(GlitchColorType), RandomDriver.Next(3).ToString()));
-                    GlitchColorType GlitchLetterColorType = (GlitchColorType)Convert.ToInt32(Enum.Parse(typeof(GlitchColorType), RandomDriver.Next(3).ToString()));
-                    bool ColorLetter = Convert.ToBoolean(RandomDriver.Next(2));
-                    int ColorBlockNumber = RandomDriver.Next(0, 256);
-                    int ColorLetterNumber = RandomDriver.Next(0, 256);
+                    GlitchColorType GlitchBlockColorType = (GlitchColorType)Convert.ToInt32(Enum.Parse(typeof(GlitchColorType), RandomDriver.Random(2).ToString()));
+                    GlitchColorType GlitchLetterColorType = (GlitchColorType)Convert.ToInt32(Enum.Parse(typeof(GlitchColorType), RandomDriver.Random(2).ToString()));
+                    bool ColorLetter = Convert.ToBoolean(RandomDriver.Random(1));
+                    int ColorBlockNumber = RandomDriver.Random(0, 255);
+                    int ColorLetterNumber = RandomDriver.Random(0, 255);
                     var ColorBlockInstance = Color.Empty;
                     var ColorLetterInstance = Color.Empty;
 
-                    // ...    for the block
+                    // ...for the block
                     switch (GlitchBlockColorType)
                     {
                         case GlitchColorType.Red:

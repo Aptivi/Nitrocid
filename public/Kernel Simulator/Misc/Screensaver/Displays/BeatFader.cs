@@ -287,7 +287,6 @@ namespace KS.Misc.Screensaver.Displays
     public class BeatFaderDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Random RandomDriver;
         private Animations.BeatFader.BeatFaderSettings BeatFaderSettingsInstance;
 
         /// <inheritdoc/>
@@ -300,7 +299,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            RandomDriver = new Random();
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
             ConsoleBase.ConsoleWrapper.Clear();
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
@@ -319,8 +317,7 @@ namespace KS.Misc.Screensaver.Displays
                 BeatFaderMaximumRedColorLevel = BeatFaderSettings.BeatFaderMaximumRedColorLevel,
                 BeatFaderMaximumGreenColorLevel = BeatFaderSettings.BeatFaderMaximumGreenColorLevel,
                 BeatFaderMaximumBlueColorLevel = BeatFaderSettings.BeatFaderMaximumBlueColorLevel,
-                BeatFaderMaximumColorLevel = BeatFaderSettings.BeatFaderMaximumColorLevel,
-                RandomDriver = RandomDriver
+                BeatFaderMaximumColorLevel = BeatFaderSettings.BeatFaderMaximumColorLevel
             };
         }
 

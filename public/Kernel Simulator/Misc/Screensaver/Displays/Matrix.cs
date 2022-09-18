@@ -18,6 +18,7 @@
 
 using System;
 using System.Collections.Generic;
+using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 
@@ -56,7 +57,6 @@ namespace KS.Misc.Screensaver.Displays
     public class MatrixDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Random RandomDriver;
         private int CurrentWindowWidth;
         private int CurrentWindowHeight;
         private bool ResizeSyncing;
@@ -71,7 +71,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            RandomDriver = new Random();
             CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
@@ -87,7 +86,7 @@ namespace KS.Misc.Screensaver.Displays
                 ResizeSyncing = true;
             if (!ResizeSyncing)
             {
-                ConsoleBase.ConsoleWrapper.Write(RandomDriver.Next(2).ToString());
+                ConsoleBase.ConsoleWrapper.Write(RandomDriver.Random(1).ToString());
             }
             else
             {

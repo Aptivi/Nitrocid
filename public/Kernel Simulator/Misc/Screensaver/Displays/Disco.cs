@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using ColorSeq;
 using KS.ConsoleBase.Colors;
+using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 
@@ -287,7 +288,6 @@ namespace KS.Misc.Screensaver.Displays
     public class DiscoDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Random RandomDriver;
         private int CurrentColor = 0;
         private int CurrentColorR, CurrentColorG, CurrentColorB;
 
@@ -301,7 +301,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            RandomDriver = new Random();
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
             ConsoleBase.ConsoleWrapper.Clear();
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
@@ -330,9 +329,9 @@ namespace KS.Misc.Screensaver.Displays
                 {
                     if (!DiscoSettings.DiscoCycleColors)
                     {
-                        int RedColorNum = RandomDriver.Next(255);
-                        int GreenColorNum = RandomDriver.Next(255);
-                        int BlueColorNum = RandomDriver.Next(255);
+                        int RedColorNum = RandomDriver.Random(255);
+                        int GreenColorNum = RandomDriver.Random(255);
+                        int BlueColorNum = RandomDriver.Random(255);
                         DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                         var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
                         ColorTools.SetConsoleColor(ColorStorage, true, true);
@@ -348,7 +347,7 @@ namespace KS.Misc.Screensaver.Displays
                 {
                     if (!DiscoSettings.DiscoCycleColors)
                     {
-                        int color = RandomDriver.Next(255);
+                        int color = RandomDriver.Random(255);
                         DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", color);
                         ColorTools.SetConsoleColor(new Color(color), true, true);
                     }
@@ -360,7 +359,7 @@ namespace KS.Misc.Screensaver.Displays
                 }
                 else if (!DiscoSettings.DiscoCycleColors)
                 {
-                    ConsoleBase.ConsoleWrapper.BackgroundColor = Screensaver.colors[RandomDriver.Next(Screensaver.colors.Length - 1)];
+                    ConsoleBase.ConsoleWrapper.BackgroundColor = Screensaver.colors[RandomDriver.Random(Screensaver.colors.Length - 1)];
                     DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
                 }
                 else

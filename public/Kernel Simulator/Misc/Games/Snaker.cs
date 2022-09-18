@@ -23,6 +23,7 @@ using ColorSeq;
 using Extensification.DictionaryExts;
 using Extensification.ListExts;
 using KS.ConsoleBase.Colors;
+using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Screensaver;
 using KS.Misc.Screensaver.Displays;
@@ -39,7 +40,6 @@ namespace KS.Misc.Games
         public static void InitializeSnaker(bool Simulation)
         {
             // Variables
-            var RandomDriver = new Random();
             int CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
             int CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             var ResizeSyncing = default(bool);
@@ -127,8 +127,8 @@ namespace KS.Misc.Games
                 int SnakeCurrentY = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d);
                 DebugWriter.WriteDebug(DebugLevel.I, "Initial snake position ({0}, {1})", SnakeCurrentX, SnakeCurrentY);
 
-                int SnakeAppleX = RandomDriver.Next(FloorLeftEdge + 1, FloorRightEdge - 1);
-                int SnakeAppleY = RandomDriver.Next(FloorTopEdge + 1, FloorBottomEdge - 1);
+                int SnakeAppleX = RandomDriver.Random(FloorLeftEdge + 1, FloorRightEdge - 1);
+                int SnakeAppleY = RandomDriver.Random(FloorTopEdge + 1, FloorBottomEdge - 1);
                 DebugWriter.WriteDebug(DebugLevel.I, "Initial snake apple position ({0}, {1})", SnakeAppleX, SnakeAppleY);
 
                 bool DidHorizontal = false;
@@ -187,18 +187,18 @@ namespace KS.Misc.Games
                     if (Simulation)
                     {
                         // Change the snake direction
-                        float PossibilityToChange = (float)RandomDriver.NextDouble();
+                        float PossibilityToChange = (float)RandomDriver.RandomDouble();
                         if ((int)Math.Round(PossibilityToChange) == 1)
                         {
                             DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Change guaranteed. {0}", PossibilityToChange);
                             DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Horizontal? {0}, Vertical? {1}", DidHorizontal, DidVertical);
                             if (DidHorizontal)
                             {
-                                Direction = (SnakeDirection)Convert.ToInt32(Enum.Parse(typeof(SnakeDirection), RandomDriver.Next(2).ToString()));
+                                Direction = (SnakeDirection)Convert.ToInt32(Enum.Parse(typeof(SnakeDirection), RandomDriver.Random(2).ToString()));
                             }
                             else if (DidVertical)
                             {
-                                Direction = (SnakeDirection)Convert.ToInt32(Enum.Parse(typeof(SnakeDirection), RandomDriver.Next(2, 4).ToString()));
+                                Direction = (SnakeDirection)Convert.ToInt32(Enum.Parse(typeof(SnakeDirection), RandomDriver.Random(2, 4).ToString()));
                             }
                         }
                         switch (Direction)
@@ -365,8 +365,8 @@ namespace KS.Misc.Games
                         DebugWriter.WriteDebug(DebugLevel.I, "Snake grew up to {0}.", SnakeLength);
 
                         // Relocate the apple
-                        SnakeAppleX = RandomDriver.Next(FloorLeftEdge + 1, FloorRightEdge - 1);
-                        SnakeAppleY = RandomDriver.Next(FloorTopEdge + 1, FloorBottomEdge - 1);
+                        SnakeAppleX = RandomDriver.Random(FloorLeftEdge + 1, FloorRightEdge - 1);
+                        SnakeAppleY = RandomDriver.Random(FloorTopEdge + 1, FloorBottomEdge - 1);
                         AppleDrawn = false;
                         DebugWriter.WriteDebug(DebugLevel.I, "New snake apple position ({0}, {1})", SnakeAppleX, SnakeAppleY);
                     }

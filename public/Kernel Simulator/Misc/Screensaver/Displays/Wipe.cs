@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
+using KS.Drivers.RNG;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
@@ -238,7 +239,6 @@ namespace KS.Misc.Screensaver.Displays
     public class WipeDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Random RandomDriver;
         private int CurrentWindowWidth;
         private int CurrentWindowHeight;
         private bool ResizeSyncing;
@@ -255,7 +255,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            RandomDriver = new Random();
             CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ColorTools.SetConsoleColor(new Color(WipeSettings.WipeBackgroundColor), true, true);
@@ -274,16 +273,16 @@ namespace KS.Misc.Screensaver.Displays
             // Select a color
             if (WipeSettings.WipeTrueColor)
             {
-                int RedColorNum = RandomDriver.Next(WipeSettings.WipeMinimumRedColorLevel, WipeSettings.WipeMaximumRedColorLevel);
-                int GreenColorNum = RandomDriver.Next(WipeSettings.WipeMinimumGreenColorLevel, WipeSettings.WipeMaximumGreenColorLevel);
-                int BlueColorNum = RandomDriver.Next(WipeSettings.WipeMinimumBlueColorLevel, WipeSettings.WipeMaximumBlueColorLevel);
+                int RedColorNum = RandomDriver.Random(WipeSettings.WipeMinimumRedColorLevel, WipeSettings.WipeMaximumRedColorLevel);
+                int GreenColorNum = RandomDriver.Random(WipeSettings.WipeMinimumGreenColorLevel, WipeSettings.WipeMaximumGreenColorLevel);
+                int BlueColorNum = RandomDriver.Random(WipeSettings.WipeMinimumBlueColorLevel, WipeSettings.WipeMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 if (!ResizeSyncing)
                     ColorTools.SetConsoleColor(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), true, true);
             }
             else if (WipeSettings.Wipe255Colors)
             {
-                int ColorNum = RandomDriver.Next(WipeSettings.WipeMinimumColorLevel, WipeSettings.WipeMaximumColorLevel);
+                int ColorNum = RandomDriver.Random(WipeSettings.WipeMinimumColorLevel, WipeSettings.WipeMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 if (!ResizeSyncing)
                     ColorTools.SetConsoleColor(new Color(ColorNum), true, true);
@@ -291,7 +290,7 @@ namespace KS.Misc.Screensaver.Displays
             else
             {
                 if (!ResizeSyncing)
-                    ConsoleBase.ConsoleWrapper.BackgroundColor = Screensaver.colors[RandomDriver.Next(WipeSettings.WipeMinimumColorLevel, WipeSettings.WipeMaximumColorLevel)];
+                    ConsoleBase.ConsoleWrapper.BackgroundColor = Screensaver.colors[RandomDriver.Random(WipeSettings.WipeMinimumColorLevel, WipeSettings.WipeMaximumColorLevel)];
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
             }
 
@@ -404,7 +403,7 @@ namespace KS.Misc.Screensaver.Displays
                 if (TimesWiped == WipeSettings.WipeWipesNeededToChangeDirection)
                 {
                     TimesWiped = 0;
-                    ToDirection = (WipeDirections)Convert.ToInt32(Enum.Parse(typeof(WipeDirections), RandomDriver.Next(0, 3).ToString()));
+                    ToDirection = (WipeDirections)Convert.ToInt32(Enum.Parse(typeof(WipeDirections), RandomDriver.Random(3).ToString()));
                     DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Changed direction to {0}", ToDirection.ToString());
                 }
             }

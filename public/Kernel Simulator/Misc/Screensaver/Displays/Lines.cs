@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using ColorSeq;
 using KS.ConsoleBase.Colors;
+using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 
@@ -274,7 +275,6 @@ namespace KS.Misc.Screensaver.Displays
     public class LinesDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Random RandomDriver;
         private int CurrentWindowWidth;
         private int CurrentWindowHeight;
         private bool ResizeSyncing;
@@ -289,7 +289,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            RandomDriver = new Random();
             CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
@@ -305,9 +304,9 @@ namespace KS.Misc.Screensaver.Displays
             {
                 ColorTools.SetConsoleColor(new Color(LinesSettings.LinesBackgroundColor), true, true);
                 ConsoleBase.ConsoleWrapper.Clear();
-                int RedColorNum = RandomDriver.Next(LinesSettings.LinesMinimumRedColorLevel, LinesSettings.LinesMaximumRedColorLevel);
-                int GreenColorNum = RandomDriver.Next(LinesSettings.LinesMinimumGreenColorLevel, LinesSettings.LinesMaximumGreenColorLevel);
-                int BlueColorNum = RandomDriver.Next(LinesSettings.LinesMinimumBlueColorLevel, LinesSettings.LinesMaximumBlueColorLevel);
+                int RedColorNum = RandomDriver.Random(LinesSettings.LinesMinimumRedColorLevel, LinesSettings.LinesMaximumRedColorLevel);
+                int GreenColorNum = RandomDriver.Random(LinesSettings.LinesMinimumGreenColorLevel, LinesSettings.LinesMaximumGreenColorLevel);
+                int BlueColorNum = RandomDriver.Random(LinesSettings.LinesMinimumBlueColorLevel, LinesSettings.LinesMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
                 ColorTools.SetConsoleColor(ColorStorage);
@@ -316,7 +315,7 @@ namespace KS.Misc.Screensaver.Displays
             {
                 ColorTools.SetConsoleColor(new Color(LinesSettings.LinesBackgroundColor), true, true);
                 ConsoleBase.ConsoleWrapper.Clear();
-                int color = RandomDriver.Next(LinesSettings.LinesMinimumColorLevel, LinesSettings.LinesMaximumColorLevel);
+                int color = RandomDriver.Random(LinesSettings.LinesMinimumColorLevel, LinesSettings.LinesMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", color);
                 ColorTools.SetConsoleColor(new Color(color));
             }
@@ -324,7 +323,7 @@ namespace KS.Misc.Screensaver.Displays
             {
                 ConsoleBase.ConsoleWrapper.Clear();
                 ColorTools.SetConsoleColor(new Color(LinesSettings.LinesBackgroundColor), true, true);
-                ConsoleBase.ConsoleWrapper.ForegroundColor = Screensaver.colors[RandomDriver.Next(LinesSettings.LinesMinimumColorLevel, LinesSettings.LinesMaximumColorLevel)];
+                ConsoleBase.ConsoleWrapper.ForegroundColor = Screensaver.colors[RandomDriver.Random(LinesSettings.LinesMinimumColorLevel, LinesSettings.LinesMaximumColorLevel)];
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.ForegroundColor);
             }
 

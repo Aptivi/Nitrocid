@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using ColorSeq;
 using KS.ConsoleBase.Colors;
+using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 
@@ -208,7 +209,6 @@ namespace KS.Misc.Screensaver.Displays
     public class LightspeedDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Random RandomDriver;
         private int CurrentColorR, CurrentColorG, CurrentColorB;
 
         /// <inheritdoc/>
@@ -221,7 +221,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            RandomDriver = new Random();
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
             ConsoleBase.ConsoleWrapper.Clear();
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
@@ -245,9 +244,9 @@ namespace KS.Misc.Screensaver.Displays
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Cycling colors: {0}", LightspeedSettings.LightspeedCycleColors);
             if (!LightspeedSettings.LightspeedCycleColors)
             {
-                int RedColorNum = RandomDriver.Next(255);
-                int GreenColorNum = RandomDriver.Next(255);
-                int BlueColorNum = RandomDriver.Next(255);
+                int RedColorNum = RandomDriver.Random(255);
+                int GreenColorNum = RandomDriver.Random(255);
+                int BlueColorNum = RandomDriver.Random(255);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
                 ColorTools.SetConsoleColor(ColorStorage, true, true);

@@ -288,7 +288,6 @@ namespace KS.Misc.Screensaver.Displays
     {
 
         private Animations.BeatEdgePulse.BeatEdgePulseSettings BeatEdgePulseSettingsInstance;
-        private Random RandomDriver;
 
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "BeatEdgePulse";
@@ -297,7 +296,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            RandomDriver = new Random();
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
             ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
             ConsoleBase.ConsoleWrapper.Clear();
@@ -317,8 +315,7 @@ namespace KS.Misc.Screensaver.Displays
                 BeatEdgePulseMaximumRedColorLevel = BeatEdgePulseSettings.BeatEdgePulseMaximumRedColorLevel,
                 BeatEdgePulseMaximumGreenColorLevel = BeatEdgePulseSettings.BeatEdgePulseMaximumGreenColorLevel,
                 BeatEdgePulseMaximumBlueColorLevel = BeatEdgePulseSettings.BeatEdgePulseMaximumBlueColorLevel,
-                BeatEdgePulseMaximumColorLevel = BeatEdgePulseSettings.BeatEdgePulseMaximumColorLevel,
-                RandomDriver = RandomDriver
+                BeatEdgePulseMaximumColorLevel = BeatEdgePulseSettings.BeatEdgePulseMaximumColorLevel
             };
         }
 

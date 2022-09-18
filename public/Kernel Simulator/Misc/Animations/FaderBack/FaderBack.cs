@@ -19,6 +19,7 @@
 using System;
 using ColorSeq;
 using KS.ConsoleBase.Colors;
+using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Screensaver;
 using KS.Misc.Threading;
@@ -42,10 +43,9 @@ namespace KS.Misc.Animations.FaderBack
         {
             CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
-            var RandomDriver = Settings.RandomDriver;
-            int RedColorNum = RandomDriver.Next(Settings.FaderBackMinimumRedColorLevel, Settings.FaderBackMaximumRedColorLevel);
-            int GreenColorNum = RandomDriver.Next(Settings.FaderBackMinimumGreenColorLevel, Settings.FaderBackMaximumGreenColorLevel);
-            int BlueColorNum = RandomDriver.Next(Settings.FaderBackMinimumBlueColorLevel, Settings.FaderBackMaximumBlueColorLevel);
+            int RedColorNum = RandomDriver.Random(Settings.FaderBackMinimumRedColorLevel, Settings.FaderBackMaximumRedColorLevel);
+            int GreenColorNum = RandomDriver.Random(Settings.FaderBackMinimumGreenColorLevel, Settings.FaderBackMaximumGreenColorLevel);
+            int BlueColorNum = RandomDriver.Random(Settings.FaderBackMinimumBlueColorLevel, Settings.FaderBackMaximumBlueColorLevel);
             ConsoleBase.ConsoleWrapper.CursorVisible = false;
 
             // Set thresholds

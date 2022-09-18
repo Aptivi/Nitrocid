@@ -91,7 +91,6 @@ namespace KS.Misc.Splash.Splashes
         private readonly Color SecondColorSegmentBackground = new(85, 255, 255);
         private readonly Color LastTransitionForeground = new(85, 255, 255);
         private readonly char TransitionChar = Convert.ToChar(0xE0B0);
-        private readonly Random RandomDriver = new();
 
         // Actual logic
         public void Opening()
@@ -155,7 +154,7 @@ namespace KS.Misc.Splash.Splashes
             // Progress text
             PresetStringBuilder.Append(SecondColorSegmentForeground.VTSequenceForeground);
             PresetStringBuilder.Append(SecondColorSegmentBackground.VTSequenceBackground);
-            PresetStringBuilder.AppendFormat(" {0} ", ProgressReport);
+            PresetStringBuilder.AppendFormat(" {0} ", RenderedText);
 
             // Transition
             PresetStringBuilder.Append(LastTransitionForeground.VTSequenceForeground);

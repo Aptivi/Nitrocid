@@ -23,6 +23,7 @@ using System.Text;
 using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
+using KS.Drivers.RNG;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Misc.Text;
@@ -161,7 +162,6 @@ namespace KS.Misc.Screensaver.Displays
     public class TypewriterDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Random RandomDriver;
         private int CurrentWindowWidth;
         private int CurrentWindowHeight;
         private bool ResizeSyncing;
@@ -176,7 +176,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            RandomDriver = new Random();
             CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ColorTools.SetConsoleColor(new Color(TypewriterSettings.TypewriterTextColor));
@@ -267,7 +266,7 @@ namespace KS.Misc.Screensaver.Displays
                             break;
 
                         // Calculate needed milliseconds from two WPM speeds (minimum and maximum)
-                        int SelectedCpm = RandomDriver.Next(CpmSpeedMin, CpmSpeedMax);
+                        int SelectedCpm = RandomDriver.RandomIdx(CpmSpeedMin, CpmSpeedMax);
                         int WriteMs = (int)Math.Round(60d / SelectedCpm * 1000d);
                         DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Delay for {0} CPM: {1} ms", SelectedCpm, WriteMs);
 

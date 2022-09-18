@@ -23,6 +23,7 @@ using System.Text;
 using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
+using KS.Drivers.RNG;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
@@ -268,7 +269,6 @@ namespace KS.Misc.Screensaver.Displays
     internal class LinotypoDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Random RandomDriver;
         private int CurrentWindowWidth;
         private int CurrentWindowHeight;
         private bool ResizeSyncing;
@@ -280,7 +280,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            RandomDriver = new Random();
             CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ColorTools.SetConsoleColor(new Color(LinotypoSettings.LinotypoTextColor));
@@ -306,7 +305,15 @@ namespace KS.Misc.Screensaver.Displays
             var Strikes = new List<string>() { "q`12wsa", "r43edfgt5", "u76yhjki8", @"p09ol;'[-=]\", "/';. ", "m,lkjn ", "vbhgfc ", "zxdsa " };
             var CapStrikes = new List<string>() { "Q~!@WSA", "R$#EDFGT%", "U&^YHJKI*", "P)(OL:\"{_+}|", "?\":> ", "M<LKJN ", "VBHGFC ", "ZXDSA " };
             string CapSymbols = "~!@$#%&^*)(:\"{_+}|?><";
-            var LinotypeLayout = new string[,] { { "e", "t", "a", "o", "i", "n", " " }, { "s", "h", "r", "d", "l", "u", " " }, { "c", "m", "f", "w", "y", "p", " " }, { "v", "b", "g", "k", "q", "j", " " }, { "x", "z", " ", " ", " ", " ", " " }, { " ", " ", " ", " ", " ", " ", " " } };
+            var LinotypeLayout = new string[,]
+            {
+                { "e", "t", "a", "o", "i", "n", " " },
+                { "s", "h", "r", "d", "l", "u", " " },
+                { "c", "m", "f", "w", "y", "p", " " },
+                { "v", "b", "g", "k", "q", "j", " " },
+                { "x", "z", " ", " ", " ", " ", " " },
+                { " ", " ", " ", " ", " ", " ", " " }
+            };
 
             // Other variables
             var CountingCharacters = default(bool);
@@ -454,7 +461,7 @@ namespace KS.Misc.Screensaver.Displays
                         DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Struck character: {0}", StruckChar);
 
                         // Calculate needed milliseconds from two WPM speeds (minimum and maximum)
-                        int SelectedCpm = RandomDriver.Next(CpmSpeedMin, CpmSpeedMax);
+                        int SelectedCpm = RandomDriver.Random(CpmSpeedMin, CpmSpeedMax);
                         int WriteMs = (int)Math.Round(60d / SelectedCpm * 1000d);
                         DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Delay for {0} CPM: {1} ms", SelectedCpm, WriteMs);
 
@@ -463,7 +470,7 @@ namespace KS.Misc.Screensaver.Displays
                         {
                             // Doing this in linotype machines after spotting an error usually triggers a speed boost, because the authors
                             // that used this machine back then considered it as a quick way to fill the faulty line.
-                            WriteMs = (int)Math.Round(WriteMs / (1d + RandomDriver.NextDouble()));
+                            WriteMs = (int)Math.Round(WriteMs / (1d + RandomDriver.RandomDouble()));
                             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Etaoin mode on. Delaying {0} ms...", WriteMs);
 
                             // Get the character
@@ -504,8 +511,8 @@ namespace KS.Misc.Screensaver.Displays
                                 case LinotypoSettings.FillType.RandomChars:
                                     {
                                         // Randomly select the linotype indexes
-                                        LinotypeColumnIndex = RandomDriver.Next(0, 5);
-                                        LinotypeKeyIndex = RandomDriver.Next(0, 6);
+                                        LinotypeColumnIndex = RandomDriver.Random(0, 5);
+                                        LinotypeKeyIndex = RandomDriver.Random(0, 6);
                                         break;
                                     }
                             }
@@ -515,14 +522,14 @@ namespace KS.Misc.Screensaver.Displays
                         {
                             // See if the typo is guaranteed
                             double Probability = (LinotypoSettings.LinotypoMissStrikePossibility >= 5 ? 5 : LinotypoSettings.LinotypoMissStrikePossibility) / 100d;
-                            bool LinotypoGuaranteed = RandomDriver.NextDouble() < Probability;
+                            bool LinotypoGuaranteed = RandomDriver.RandomChance(Probability);
                             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Probability: {0} Guarantee: {1}", Probability, LinotypoGuaranteed);
                             if (LinotypoGuaranteed)
                             {
                                 // Sometimes, a typo is generated by missing a character.
                                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Made a typo!");
                                 double MissProbability = (LinotypoSettings.LinotypoMissPossibility >= 10 ? 10 : LinotypoSettings.LinotypoMissPossibility) / 100d;
-                                bool MissGuaranteed = RandomDriver.NextDouble() < MissProbability;
+                                bool MissGuaranteed = RandomDriver.RandomChance(MissProbability);
                                 if (MissGuaranteed)
                                 {
                                     // Miss is guaranteed. Simulate the missed character
@@ -538,7 +545,7 @@ namespace KS.Misc.Screensaver.Displays
                                     DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Bruteforcing...");
                                     while (!StruckFound)
                                     {
-                                        StrikeCharsIndex1 = RandomDriver.Next(0, Strikes.Count - 1);
+                                        StrikeCharsIndex1 = RandomDriver.Random(0, Strikes.Count);
                                         CappedStrike = char.IsUpper(StruckChar) | CapSymbols.Contains(Convert.ToString(StruckChar));
                                         StrikesString = CappedStrike ? CapStrikes[StrikeCharsIndex1] : Strikes[StrikeCharsIndex1];
                                         StruckFound = !string.IsNullOrEmpty(StrikesString) && StrikesString.Contains(Convert.ToString(StruckChar));
@@ -550,7 +557,7 @@ namespace KS.Misc.Screensaver.Displays
                                     DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Found!");
 
                                     // Select a random character that is a typo from the selected strike index
-                                    int RandomStrikeIndex = RandomDriver.Next(0, StrikesString.Length - 1);
+                                    int RandomStrikeIndex = RandomDriver.Random(0, StrikesString.Length);
                                     char MistypedChar = StrikesString[RandomStrikeIndex];
                                     if (@"`-=\][';/.,".Contains(Convert.ToString(MistypedChar)) & CappedStrike)
                                     {
@@ -564,7 +571,7 @@ namespace KS.Misc.Screensaver.Displays
 
                                 // Randomly select whether or not to turn on the capped Etaoin
                                 double CappingProbability = (LinotypoSettings.LinotypoEtaoinCappingPossibility >= 10 ? 10 : LinotypoSettings.LinotypoEtaoinCappingPossibility) / 100d;
-                                CappedEtaoin = RandomDriver.NextDouble() < CappingProbability;
+                                CappedEtaoin = RandomDriver.RandomChance(CappingProbability);
                                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Capped Etaoin: {0}", CappedEtaoin);
 
                                 // Trigger character counter mode

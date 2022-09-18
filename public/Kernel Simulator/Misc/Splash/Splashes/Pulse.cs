@@ -57,7 +57,6 @@ namespace KS.Misc.Splash.Splashes
 
         // Pulse-specific variables
         internal PulseSettings PulseSettings;
-        internal Random RandomDriver;
 
         public SplashPulse() => PulseSettings = new PulseSettings()
         {
@@ -77,8 +76,6 @@ namespace KS.Misc.Splash.Splashes
             DebugWriter.WriteDebug(DebugLevel.I, "Splash opening. Clearing console...");
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
             ConsoleBase.ConsoleWrapper.Clear();
-            RandomDriver = new Random();
-            PulseSettings.RandomDriver = RandomDriver;
         }
 
         public void Display()

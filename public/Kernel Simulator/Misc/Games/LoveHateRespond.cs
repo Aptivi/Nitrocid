@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using KS.ConsoleBase.Colors;
+using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
@@ -96,7 +97,6 @@ namespace KS.Misc.Games
         /// </summary>
         public static void InitializeLoveHate()
         {
-            var RandomDriver = new Random();
             string RandomUser, RandomComment, Response;
             CommentType Type;
             var ExitRequested = default(bool);
@@ -108,7 +108,7 @@ namespace KS.Misc.Games
             for (int NameNum = 1, loopTo = LoveOrHateUsersCount; NameNum <= loopTo; NameNum++)
             {
                 string GeneratedName = GenerateNames()[0];
-                Users.Add($"{GeneratedName}", (CommentType)RandomDriver.Next(2));
+                Users.Add($"{GeneratedName}", (CommentType)RandomDriver.Random(2));
             }
 
             // Game logic
@@ -116,9 +116,9 @@ namespace KS.Misc.Games
             while (!ExitRequested)
             {
                 // Set necessary variables
-                RandomUser = Users.Keys.ElementAt(RandomDriver.Next(Users.Keys.Count));
+                RandomUser = Users.Keys.ElementAt(RandomDriver.Random(Users.Keys.Count));
                 Type = Users[RandomUser];
-                RandomComment = Comments[((int)Type).ToString()].ElementAt(RandomDriver.Next(Comments[((int)Type).ToString()].Count));
+                RandomComment = Comments[((int)Type).ToString()].ElementAt(RandomDriver.Random(Comments[((int)Type).ToString()].Count));
                 CommentNumber += 1L;
                 DebugWriter.WriteDebug(DebugLevel.I, "Comment type: {0}", Type);
                 DebugWriter.WriteDebug(DebugLevel.I, "Commenter: {0}", RandomUser);

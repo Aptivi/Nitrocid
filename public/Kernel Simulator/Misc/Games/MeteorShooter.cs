@@ -19,6 +19,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
+using KS.Drivers.RNG;
 using KS.Languages;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
@@ -46,7 +47,6 @@ namespace KS.Misc.Games
         private readonly static List<Tuple<int, int>> Bullets = new();
         private readonly static int MaxMeteors = 10;
         private readonly static List<Tuple<int, int>> Meteors = new();
-        private readonly static Random RandomDriver = new();
 
         /// <summary>
         /// Initializes the Meteor game
@@ -116,9 +116,9 @@ namespace KS.Misc.Games
                 ConsoleKey[] possibleKeys = new[] { ConsoleKey.UpArrow, ConsoleKey.DownArrow, ConsoleKey.Spacebar };
                 while (!GameEnded)
                 {
-                    float PossibilityToChange = (float)RandomDriver.NextDouble();
+                    float PossibilityToChange = (float)RandomDriver.RandomDouble();
                     if ((int)Math.Round(PossibilityToChange) == 1)
-                        Keypress = possibleKeys[RandomDriver.Next(possibleKeys.Length)];
+                        Keypress = possibleKeys[RandomDriver.Random(possibleKeys.Length)];
 
                     // Select command based on key value
                     switch (Keypress)
@@ -201,11 +201,11 @@ namespace KS.Misc.Games
 
                     // Add new meteor if guaranteed
                     double MeteorShowProbability = 10d / 100d;
-                    bool MeteorShowGuaranteed = RandomDriver.NextDouble() < MeteorShowProbability;
+                    bool MeteorShowGuaranteed = RandomDriver.RandomDouble() < MeteorShowProbability;
                     if (MeteorShowGuaranteed & Meteors.Count < MaxMeteors)
                     {
                         int MeteorX = ConsoleBase.ConsoleWrapper.WindowWidth - 1;
-                        int MeteorY = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowHeight - 1);
+                        int MeteorY = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowHeight - 1);
                         Meteors.Add(new Tuple<int, int>(MeteorX, MeteorY));
                     }
 

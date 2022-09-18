@@ -56,7 +56,6 @@ namespace KS.Misc.Splash.Splashes
         }
 
         // Fader-specific variables
-        internal Random RandomDriver = new();
         internal Animations.Fader.FaderSettings FaderSettingsInstance;
 
         public SplashFader() => FaderSettingsInstance = new Animations.Fader.FaderSettings()
@@ -72,7 +71,6 @@ namespace KS.Misc.Splash.Splashes
             FaderMaximumRedColorLevel = 255,
             FaderMaximumGreenColorLevel = 255,
             FaderMaximumBlueColorLevel = 255,
-            RandomDriver = RandomDriver
         };
 
         // Actual logic

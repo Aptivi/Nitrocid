@@ -57,7 +57,6 @@ namespace KS.Misc.Splash.Splashes
 
         // BeatPulse-specific variables
         internal BeatPulseSettings BeatPulseSettings;
-        internal Random RandomDriver;
 
         public SplashBeatPulse() => BeatPulseSettings = new BeatPulseSettings()
         {
@@ -83,8 +82,6 @@ namespace KS.Misc.Splash.Splashes
             DebugWriter.WriteDebug(DebugLevel.I, "Splash opening. Clearing console...");
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
             ConsoleBase.ConsoleWrapper.Clear();
-            RandomDriver = new Random();
-            BeatPulseSettings.RandomDriver = RandomDriver;
         }
 
         public void Display()

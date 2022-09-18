@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Drivers.RNG;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -29,7 +30,6 @@ namespace KS.Misc.Screensaver.Displays
     public class RandomSaverDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Random RandomDriver;
 
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "RandomSaver";
@@ -41,7 +41,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            RandomDriver = new Random();
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
             ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
             ConsoleBase.ConsoleWrapper.Clear();
@@ -51,14 +50,14 @@ namespace KS.Misc.Screensaver.Displays
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            int ScreensaverIndex = RandomDriver.Next(Misc.Screensaver.Screensaver.Screensavers.Count);
+            int ScreensaverIndex = RandomDriver.RandomIdx(Misc.Screensaver.Screensaver.Screensavers.Count);
             string ScreensaverName = Misc.Screensaver.Screensaver.Screensavers.Keys.ElementAtOrDefault(ScreensaverIndex);
             var Screensaver = Misc.Screensaver.Screensaver.Screensavers[ScreensaverName];
 
             // We don't want another "random" screensaver showing up, so keep selecting until it's no longer "random"
             while (ScreensaverName == "random")
             {
-                ScreensaverIndex = RandomDriver.Next(Misc.Screensaver.Screensaver.Screensavers.Count);
+                ScreensaverIndex = RandomDriver.RandomIdx(Misc.Screensaver.Screensaver.Screensavers.Count);
                 ScreensaverName = Misc.Screensaver.Screensaver.Screensavers.Keys.ElementAtOrDefault(ScreensaverIndex);
                 Screensaver = Misc.Screensaver.Screensaver.Screensavers[ScreensaverName];
             }

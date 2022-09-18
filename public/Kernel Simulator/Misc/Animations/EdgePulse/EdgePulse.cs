@@ -19,6 +19,7 @@
 using System;
 using ColorSeq;
 using KS.ConsoleBase.Colors;
+using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 
@@ -43,10 +44,9 @@ namespace KS.Misc.Animations.EdgePulse
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
 
             // Now, do the rest
-            var RandomDriver = Settings.RandomDriver;
-            int RedColorNum = RandomDriver.Next(Settings.EdgePulseMinimumRedColorLevel, Settings.EdgePulseMaximumRedColorLevel);
-            int GreenColorNum = RandomDriver.Next(Settings.EdgePulseMinimumGreenColorLevel, Settings.EdgePulseMaximumGreenColorLevel);
-            int BlueColorNum = RandomDriver.Next(Settings.EdgePulseMinimumBlueColorLevel, Settings.EdgePulseMaximumBlueColorLevel);
+            int RedColorNum = RandomDriver.Random(Settings.EdgePulseMinimumRedColorLevel, Settings.EdgePulseMaximumRedColorLevel);
+            int GreenColorNum = RandomDriver.Random(Settings.EdgePulseMinimumGreenColorLevel, Settings.EdgePulseMaximumGreenColorLevel);
+            int BlueColorNum = RandomDriver.Random(Settings.EdgePulseMinimumBlueColorLevel, Settings.EdgePulseMaximumBlueColorLevel);
             ConsoleBase.ConsoleWrapper.CursorVisible = false;
 
             // Set thresholds

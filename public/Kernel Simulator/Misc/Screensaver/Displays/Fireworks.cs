@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using ColorSeq;
 using Extensification.IntegerExts;
 using KS.ConsoleBase.Colors;
+using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 
@@ -260,7 +261,6 @@ namespace KS.Misc.Screensaver.Displays
     public class FireworksDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Random RandomDriver;
         private int CurrentWindowWidth;
         private int CurrentWindowHeight;
         private bool ResizeSyncing;
@@ -275,7 +275,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            RandomDriver = new Random();
             CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
@@ -290,10 +289,10 @@ namespace KS.Misc.Screensaver.Displays
             ConsoleBase.ConsoleWrapper.CursorVisible = false;
             // Variables
             int HalfHeight = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d);
-            int LaunchPositionX = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowWidth);
+            int LaunchPositionX = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowWidth);
             int LaunchPositionY = ConsoleBase.ConsoleWrapper.WindowHeight - 1;
-            int IgnitePositionX = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowWidth);
-            int IgnitePositionY = RandomDriver.Next(HalfHeight, (int)Math.Round(HalfHeight * 1.5d));
+            int IgnitePositionX = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowWidth);
+            int IgnitePositionY = RandomDriver.Random(HalfHeight, (int)Math.Round(HalfHeight * 1.5d));
             LaunchPositionX.SwapIfSourceLarger(ref IgnitePositionX);
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Launch position {0}, {1}", LaunchPositionX, LaunchPositionY);
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Ignite position {0}, {1}", IgnitePositionX, IgnitePositionY);
@@ -312,15 +311,15 @@ namespace KS.Misc.Screensaver.Displays
             ConsoleBase.ConsoleWrapper.Clear();
             if (FireworksSettings.FireworksTrueColor)
             {
-                int RedColorNum = RandomDriver.Next(FireworksSettings.FireworksMinimumRedColorLevel, FireworksSettings.FireworksMaximumRedColorLevel);
-                int GreenColorNum = RandomDriver.Next(FireworksSettings.FireworksMinimumGreenColorLevel, FireworksSettings.FireworksMaximumGreenColorLevel);
-                int BlueColorNum = RandomDriver.Next(FireworksSettings.FireworksMinimumBlueColorLevel, FireworksSettings.FireworksMaximumBlueColorLevel);
+                int RedColorNum = RandomDriver.Random(FireworksSettings.FireworksMinimumRedColorLevel, FireworksSettings.FireworksMaximumRedColorLevel);
+                int GreenColorNum = RandomDriver.Random(FireworksSettings.FireworksMinimumGreenColorLevel, FireworksSettings.FireworksMaximumGreenColorLevel);
+                int BlueColorNum = RandomDriver.Random(FireworksSettings.FireworksMinimumBlueColorLevel, FireworksSettings.FireworksMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 IgniteColor = new Color(RedColorNum, GreenColorNum, BlueColorNum);
             }
             else if (FireworksSettings.Fireworks255Colors)
             {
-                int color = RandomDriver.Next(FireworksSettings.FireworksMinimumColorLevel, FireworksSettings.FireworksMaximumColorLevel);
+                int color = RandomDriver.Random(FireworksSettings.FireworksMinimumColorLevel, FireworksSettings.FireworksMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", color);
                 IgniteColor = new Color(color);
             }

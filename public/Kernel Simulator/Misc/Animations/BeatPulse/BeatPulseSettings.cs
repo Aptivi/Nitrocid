@@ -27,7 +27,6 @@ namespace KS.Misc.Animations.BeatPulse
     public class BeatPulseSettings
     {
 
-        internal Random RandomDriver;
         private bool _beatpulse255Colors;
         private bool _beatpulseTrueColor = true;
         private int _beatpulseDelay = 120;

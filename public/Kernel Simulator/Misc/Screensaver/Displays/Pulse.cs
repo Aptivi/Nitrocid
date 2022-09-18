@@ -187,7 +187,6 @@ namespace KS.Misc.Screensaver.Displays
     {
 
         private Animations.Pulse.PulseSettings PulseSettingsInstance;
-        private Random RandomDriver;
 
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Pulse";
@@ -196,7 +195,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            RandomDriver = new Random();
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
             ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
             ConsoleBase.ConsoleWrapper.Clear();
@@ -210,8 +208,7 @@ namespace KS.Misc.Screensaver.Displays
                 PulseMinimumBlueColorLevel = PulseSettings.PulseMinimumBlueColorLevel,
                 PulseMaximumRedColorLevel = PulseSettings.PulseMaximumRedColorLevel,
                 PulseMaximumGreenColorLevel = PulseSettings.PulseMaximumGreenColorLevel,
-                PulseMaximumBlueColorLevel = PulseSettings.PulseMaximumBlueColorLevel,
-                RandomDriver = RandomDriver
+                PulseMaximumBlueColorLevel = PulseSettings.PulseMaximumBlueColorLevel
             };
         }
 
