@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -129,6 +130,126 @@ namespace KS.Kernel.Configuration
             /// Miscellaneous settings
             /// </summary>
             Misc
+        }
+
+        /// <summary>
+        /// Creates a new JSON object containing the kernel settings of all kinds
+        /// </summary>
+        /// <returns>A pristine config object</returns>
+        public static JObject GetNewConfigObjectNew()
+        {
+            // Parse config metadata
+            JToken ConfigMetadata = JToken.Parse(Properties.Resources.Resources.SettingsEntries);
+            JToken ScreensaverConfigMetadata = JToken.Parse(Properties.Resources.Resources.ScreensaverSettingsEntries);
+            JToken SplashConfigMetadata = JToken.Parse(Properties.Resources.Resources.SplashSettingsEntries);
+            JToken[] Metadatas = new[] { ConfigMetadata, ScreensaverConfigMetadata, SplashConfigMetadata };
+            JObject ConfigObject = new();
+
+            // Load configuration values
+            foreach (JToken metadata in Metadatas)
+            {
+                // Get the max sections
+                int MaxSections = metadata.Count();
+                for (int SectionIndex = 0; SectionIndex <= MaxSections - 1; SectionIndex++)
+                {
+                    // Get the section property and fetch metadata information from section
+                    JProperty Section = (JProperty)metadata.ToList()[SectionIndex];
+                    var SectionTokenGeneral = metadata[Section.Name];
+                    var SectionToken = SectionTokenGeneral["Keys"];
+
+                    // Get config token from path
+                    var SectionTokenPath = SectionTokenGeneral["Path"];
+                    var ConfigTokenFromPath = ConfigToken.SelectToken((string)SectionTokenPath);
+
+                    // Count the options
+                    int MaxOptions = SectionToken.Count();
+                    for (int OptionIndex = 0; OptionIndex <= MaxOptions - 1; OptionIndex++)
+                    {
+                        // Get the setting token and fetch information
+                        var Setting = SectionToken[OptionIndex];
+                        string VariableKeyName = (string)Setting["Name"];
+                        string Variable = (string)Setting["Variable"];
+                        bool VariableIsInternal = (bool)(Setting["IsInternal"] ?? false);
+                        bool VariableIsEnumerable = (bool)(Setting["IsEnumerable"] ?? false);
+                        int VariableEnumerableIndex = (int)(Setting["EnumerableIndex"] ?? 0);
+
+                        // Get variable value and type
+                        SettingsKeyType VariableType = (SettingsKeyType)Convert.ToInt32(Enum.Parse(typeof(SettingsKeyType), (string)Setting["Type"]));
+                        object VariableValue = null;
+
+                        // Check the value if we're dealing with an enumerable
+                        if (FieldManager.CheckField(Variable, VariableIsInternal) && VariableIsEnumerable)
+                            VariableValue = FieldManager.GetValueFromEnumerable(Variable, VariableEnumerableIndex, VariableIsInternal);
+
+                        // Check the variable type, and deal with it as appropriate
+                        if (VariableType == SettingsKeyType.SColor)
+                        {
+                            // Get the plain sequence from the color
+                            if (VariableValue is KeyValuePair<ColorTools.ColTypes, Color> color)
+                                VariableValue = color.Value.PlainSequence;
+                            else
+                                VariableValue = new Color(((string)ConfigTokenFromPath[VariableKeyName]).ReleaseDoubleQuotes());
+
+                            // Setting entry is color, but the variable could be either String or Color.
+                            if ((FieldManager.CheckField(Variable, VariableIsInternal) && FieldManager.GetField(Variable, VariableIsInternal).FieldType == typeof(string)) ||
+                                (PropertyManager.CheckProperty(Variable) && PropertyManager.GetProperty(Variable).PropertyType == typeof(string)))
+                            {
+                                // We're dealing with the field or the property which takes color but is a string containing plain sequence
+                                VariableValue = ((Color)VariableValue).PlainSequence;
+                            }
+                        }
+                        else if (VariableType == SettingsKeyType.SSelection)
+                        {
+                            bool SelectionEnum = (bool)(Setting["IsEnumeration"] ?? false);
+                            string SelectionEnumAssembly = (string)Setting["EnumerationAssembly"];
+                            bool SelectionEnumInternal = (bool)(Setting["EnumerationInternal"] ?? false);
+                            if (SelectionEnum)
+                            {
+                                if (SelectionEnumInternal)
+                                {
+                                    // Apparently, we need to have a full assembly name for getting types.
+                                    Type enumType = Type.GetType("KS." + Setting["Enumeration"].ToString() + ", " + Assembly.GetExecutingAssembly().FullName);
+                                    VariableValue = Enum.Parse(enumType, ((string)ConfigTokenFromPath[VariableKeyName]).ReleaseDoubleQuotes());
+                                }
+                                else
+                                {
+                                    Type enumType = Type.GetType(Setting["Enumeration"].ToString() + ", " + SelectionEnumAssembly);
+                                    VariableValue = Enum.Parse(enumType, ((string)ConfigTokenFromPath[VariableKeyName]).ReleaseDoubleQuotes());
+                                }
+                            }
+                            else
+                            {
+                                VariableValue = ConfigTokenFromPath[VariableKeyName].ToObject<dynamic>();
+                            }
+                        }
+                        else
+                            VariableValue = ConfigTokenFromPath[VariableKeyName].ToObject<dynamic>();
+
+                        // Check to see if the value is numeric
+                        if (VariableValue is int or long)
+                        {
+                            if (Convert.ToInt64(VariableValue) <= int.MaxValue)
+                                VariableValue = int.Parse(Convert.ToString(VariableValue));
+                            else if (Convert.ToInt64(VariableValue) <= long.MaxValue)
+                                VariableValue = long.Parse(Convert.ToString(VariableValue));
+                        }
+
+                        // Now, set the value
+                        if (FieldManager.CheckField(Variable))
+                        {
+                            // We're dealing with the field
+                            FieldManager.SetValue(Variable, VariableValue, true);
+                        }
+                        else if (PropertyManager.CheckProperty(Variable))
+                        {
+                            // We're dealing with the property
+                            PropertyManager.SetPropertyValue(Variable, VariableValue);
+                        }
+                    }
+                }
+            }
+
+            return ConfigObject;
         }
 
         /// <summary>
@@ -1402,16 +1523,29 @@ namespace KS.Kernel.Configuration
                         var Setting = SectionToken[OptionIndex];
                         string VariableKeyName = (string)Setting["Name"];
                         string Variable = (string)Setting["Variable"];
+                        bool VariableIsInternal = (bool)(Setting["IsInternal"] ?? false);
+                        bool VariableIsEnumerable = (bool)(Setting["IsEnumerable"] ?? false);
+                        int VariableEnumerableIndex = (int)(Setting["EnumerableIndex"] ?? 0);
 
                         // Get variable value and type
                         SettingsKeyType VariableType = (SettingsKeyType)Convert.ToInt32(Enum.Parse(typeof(SettingsKeyType), (string)Setting["Type"]));
-                        object VariableValue;
+                        object VariableValue = null;
+
+                        // Check the value if we're dealing with an enumerable
+                        if (FieldManager.CheckField(Variable, VariableIsInternal) && VariableIsEnumerable)
+                            VariableValue = FieldManager.GetValueFromEnumerable(Variable, VariableEnumerableIndex, VariableIsInternal);
+
+                        // Check the variable type, and deal with it as appropriate
                         if (VariableType == SettingsKeyType.SColor)
                         {
-                            VariableValue = new Color(((string)ConfigTokenFromPath[VariableKeyName]).ReleaseDoubleQuotes());
+                            // Get the plain sequence from the color
+                            if (VariableValue is KeyValuePair<ColorTools.ColTypes, Color> color)
+                                VariableValue = color.Value.PlainSequence;
+                            else
+                                VariableValue = new Color(((string)ConfigTokenFromPath[VariableKeyName]).ReleaseDoubleQuotes());
 
                             // Setting entry is color, but the variable could be either String or Color.
-                            if ((FieldManager.CheckField(Variable) && FieldManager.GetField(Variable).FieldType == typeof(string)) ||
+                            if ((FieldManager.CheckField(Variable, VariableIsInternal) && FieldManager.GetField(Variable, VariableIsInternal).FieldType == typeof(string)) ||
                                 (PropertyManager.CheckProperty(Variable) && PropertyManager.GetProperty(Variable).PropertyType == typeof(string)))
                             {
                                 // We're dealing with the field or the property which takes color but is a string containing plain sequence
