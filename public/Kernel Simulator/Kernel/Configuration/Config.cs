@@ -90,49 +90,6 @@ namespace KS.Kernel.Configuration
         internal readonly static JObject PristineConfigToken = GetNewConfigObject();
 
         /// <summary>
-        /// Config category enumeration
-        /// </summary>
-        public enum ConfigCategory
-        {
-            /// <summary>
-            /// All general kernel settings, mainly for maintaining the kernel.
-            /// </summary>
-            General,
-            /// <summary>
-            /// Color settings
-            /// </summary>
-            Colors,
-            /// <summary>
-            /// Hardware settings
-            /// </summary>
-            Hardware,
-            /// <summary>
-            /// Login settings
-            /// </summary>
-            Login,
-            /// <summary>
-            /// Shell settings
-            /// </summary>
-            Shell,
-            /// <summary>
-            /// Filesystem settings
-            /// </summary>
-            Filesystem,
-            /// <summary>
-            /// Network settings
-            /// </summary>
-            Network,
-            /// <summary>
-            /// Screensaver settings
-            /// </summary>
-            Screensaver,
-            /// <summary>
-            /// Miscellaneous settings
-            /// </summary>
-            Misc
-        }
-
-        /// <summary>
         /// Creates a new JSON object containing the kernel settings of all kinds
         /// </summary>
         /// <returns>A pristine config object</returns>

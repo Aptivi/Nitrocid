@@ -120,3 +120,7 @@ The color management used to define so many variables for just one color type. N
 As a result, we have removed all separate variables for each color type and merged them to simplify the declaration.
 
 Also, we have added `GetColor()` and `SetColor()` functions to ColorTools to perform operations on these color types.
+
+##### Moved ConfigCategory outside Config class
+
+We have moved ConfigCategory outside the Config class to better organize the enumerations relating to the configuration.
