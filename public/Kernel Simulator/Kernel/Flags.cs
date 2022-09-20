@@ -354,6 +354,10 @@ namespace KS.Kernel
         /// Opts in to the new config reader
         /// </summary>
         internal static bool OptInToNewConfigReader;
+        /// <summary>
+        /// Opts in to the new config writer
+        /// </summary>
+        internal static bool OptInToNewConfigWriter;
 
     }
 }

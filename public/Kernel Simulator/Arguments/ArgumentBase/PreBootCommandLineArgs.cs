@@ -34,6 +34,7 @@ namespace KS.Arguments.ArgumentBase
         {
             { "reset", new ArgumentInfo("reset", ArgumentType.PreBootCommandLineArgs, "Resets the kernel to the factory settings", "", false, 0, new PreBootCommandLine_ResetArgument()) },
             { "newreader", new ArgumentInfo("newreader", ArgumentType.KernelArgs, "Opts in to new config reader", "", false, 0, new PreBootCommandLine_NewReaderArgument()) },
+            { "newwriter", new ArgumentInfo("newwriter", ArgumentType.KernelArgs, "Opts in to new config writer", "", false, 0, new PreBootCommandLine_NewWriterArgument()) },
             { "bypasssizedetection", new ArgumentInfo("bypasssizedetection", ArgumentType.PreBootCommandLineArgs, "Bypasses the console size detection", "", false, 0, new PreBootCommandLine_BypassSizeDetectionArgument()) }
         };
 

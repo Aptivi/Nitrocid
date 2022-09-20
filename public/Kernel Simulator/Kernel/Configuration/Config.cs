@@ -152,6 +152,8 @@ namespace KS.Kernel.Configuration
                 int MaxSections = metadata.Count();
                 for (int SectionIndex = 0; SectionIndex <= MaxSections - 1; SectionIndex++)
                 {
+                    JObject ConfigSectionOptionsObject = new();
+
                     // Get the section property and fetch metadata information from section
                     JProperty Section = (JProperty)metadata.ToList()[SectionIndex];
                     var SectionTokenGeneral = metadata[Section.Name];
@@ -234,18 +236,12 @@ namespace KS.Kernel.Configuration
                                 VariableValue = long.Parse(Convert.ToString(VariableValue));
                         }
 
-                        // Now, set the value
-                        if (FieldManager.CheckField(Variable))
-                        {
-                            // We're dealing with the field
-                            FieldManager.SetValue(Variable, VariableValue, true);
-                        }
-                        else if (PropertyManager.CheckProperty(Variable))
-                        {
-                            // We're dealing with the property
-                            PropertyManager.SetPropertyValue(Variable, VariableValue);
-                        }
+                        // Now, add the key to the options object
+                        ConfigSectionOptionsObject.Add(VariableKeyName, VariableValue != null ? JToken.FromObject(VariableValue) : null);
                     }
+
+                    // Now, add the key to the options object
+                    ConfigObject.Add(Section.Name, ConfigSectionOptionsObject);
                 }
             }
 
@@ -1403,7 +1399,11 @@ namespace KS.Kernel.Configuration
                 return;
 
             Filesystem.ThrowOnInvalidPath(ConfigPath);
-            var ConfigurationObject = GetNewConfigObject();
+            object ConfigurationObject;
+            if (Flags.OptInToNewConfigWriter)
+                ConfigurationObject = GetNewConfigObjectNew();
+            else
+                ConfigurationObject = GetNewConfigObject();
 
             // Save Config
             File.WriteAllText(ConfigPath, JsonConvert.SerializeObject(ConfigurationObject, Formatting.Indented));

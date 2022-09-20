@@ -22,6 +22,14 @@
     "KS - new config reader": {
       "commandName": "Project",
       "commandLineArgs": "newreader"
+    },
+    "KS - new config writer": {
+      "commandName": "Project",
+      "commandLineArgs": "newwriter"
+    },
+    "KS - new config reader and writer": {
+      "commandName": "Project",
+      "commandLineArgs": "newwriter newreader"
     }
   }
 }
