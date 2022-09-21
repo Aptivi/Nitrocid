@@ -132,10 +132,6 @@ namespace KS.Kernel.Configuration
                 var SectionTokenGeneral = metadata[Section.Name];
                 var SectionToken = SectionTokenGeneral["Keys"];
 
-                // Get config token from path
-                var SectionTokenPath = SectionTokenGeneral["Path"];
-                var ConfigTokenFromPath = ConfigToken.SelectToken((string)SectionTokenPath);
-
                 // Count the options
                 int MaxOptions = SectionToken.Count();
                 for (int OptionIndex = 0; OptionIndex <= MaxOptions - 1; OptionIndex++)
@@ -163,7 +159,12 @@ namespace KS.Kernel.Configuration
                         if (VariableValue is KeyValuePair<ColorTools.ColTypes, Color> color)
                             VariableValue = color.Value.PlainSequence;
                         else
-                            VariableValue = new Color(((string)ConfigTokenFromPath[VariableKeyName]).ReleaseDoubleQuotes());
+                        {
+                            if (FieldManager.CheckField(Variable, VariableIsInternal))
+                                VariableValue = new Color(((string)FieldManager.GetValue(Variable, VariableIsInternal)).ReleaseDoubleQuotes());
+                            else
+                                VariableValue = new Color(((string)PropertyManager.GetPropertyValue(Variable)).ReleaseDoubleQuotes());
+                        }
 
                         // Setting entry is color, but the variable could be either String or Color.
                         if ((FieldManager.CheckField(Variable, VariableIsInternal) && FieldManager.GetField(Variable, VariableIsInternal).FieldType == typeof(string)) ||
@@ -173,32 +174,13 @@ namespace KS.Kernel.Configuration
                             VariableValue = ((Color)VariableValue).PlainSequence;
                         }
                     }
-                    else if (VariableType == SettingsKeyType.SSelection)
-                    {
-                        bool SelectionEnum = (bool)(Setting["IsEnumeration"] ?? false);
-                        string SelectionEnumAssembly = (string)Setting["EnumerationAssembly"];
-                        bool SelectionEnumInternal = (bool)(Setting["EnumerationInternal"] ?? false);
-                        if (SelectionEnum)
-                        {
-                            if (SelectionEnumInternal)
-                            {
-                                // Apparently, we need to have a full assembly name for getting types.
-                                Type enumType = Type.GetType("KS." + Setting["Enumeration"].ToString() + ", " + Assembly.GetExecutingAssembly().FullName);
-                                VariableValue = Enum.Parse(enumType, ((string)ConfigTokenFromPath[VariableKeyName]).ReleaseDoubleQuotes());
-                            }
-                            else
-                            {
-                                Type enumType = Type.GetType(Setting["Enumeration"].ToString() + ", " + SelectionEnumAssembly);
-                                VariableValue = Enum.Parse(enumType, ((string)ConfigTokenFromPath[VariableKeyName]).ReleaseDoubleQuotes());
-                            }
-                        }
-                        else
-                        {
-                            VariableValue = ConfigTokenFromPath[VariableKeyName].ToObject<dynamic>();
-                        }
-                    }
                     else
-                        VariableValue = ConfigTokenFromPath[VariableKeyName].ToObject<dynamic>();
+                    {
+                        if (FieldManager.CheckField(Variable, VariableIsInternal))
+                            VariableValue = FieldManager.GetValue(Variable, VariableIsInternal);
+                        else
+                            VariableValue = PropertyManager.GetPropertyValue(Variable);
+                    }
 
                     // Check to see if the value is numeric
                     if (VariableValue is int or long)
