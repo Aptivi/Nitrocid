@@ -120,8 +120,8 @@ namespace KS.Languages
                     DebugWriter.WriteDebug(DebugLevel.I, "Translating kernel to {0}.", lang);
                     CurrentLanguage = lang;
                     Translate.translatedString = Translate.PrepareDict(lang);
-                    var Token = ConfigTools.GetConfigCategory(Config.ConfigCategory.General);
-                    ConfigTools.SetConfigValue(Config.ConfigCategory.General, Token, "Language", CurrentLanguage);
+                    var Token = ConfigTools.GetConfigCategory(ConfigCategory.General);
+                    ConfigTools.SetConfigValue(ConfigCategory.General, Token, "Language", CurrentLanguage);
                     DebugWriter.WriteDebug(DebugLevel.I, "Saved new language.");
 
                     // Update Culture if applicable

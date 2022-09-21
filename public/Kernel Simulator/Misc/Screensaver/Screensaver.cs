@@ -271,8 +271,8 @@ namespace KS.Misc.Screensaver
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "{0} is found. Setting it to default...", saver);
                 DefSaverName = saver;
-                var Token = ConfigTools.GetConfigCategory(Config.ConfigCategory.Screensaver);
-                ConfigTools.SetConfigValue(Config.ConfigCategory.Screensaver, Token, "Screensaver", saver);
+                var Token = ConfigTools.GetConfigCategory(ConfigCategory.Screensaver);
+                ConfigTools.SetConfigValue(ConfigCategory.Screensaver, Token, "Screensaver", saver);
             }
             else
             {

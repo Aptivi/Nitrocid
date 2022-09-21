@@ -376,8 +376,8 @@ namespace KS.Modifications
                 BlacklistedMods.Add(ModFilename);
             }
             BlacklistedModsString = string.Join(";", BlacklistedMods);
-            var Token = ConfigTools.GetConfigCategory(Config.ConfigCategory.Misc);
-            ConfigTools.SetConfigValue(Config.ConfigCategory.Misc, Token, "Blacklisted mods", BlacklistedModsString);
+            var Token = ConfigTools.GetConfigCategory(ConfigCategory.Misc);
+            ConfigTools.SetConfigValue(ConfigCategory.Misc, Token, "Blacklisted mods", BlacklistedModsString);
         }
 
         /// <summary>
@@ -395,8 +395,8 @@ namespace KS.Modifications
                 BlacklistedMods.Remove(ModFilename);
             }
             BlacklistedModsString = string.Join(";", BlacklistedMods);
-            var Token = ConfigTools.GetConfigCategory(Config.ConfigCategory.Misc);
-            ConfigTools.SetConfigValue(Config.ConfigCategory.Misc, Token, "Blacklisted mods", BlacklistedModsString);
+            var Token = ConfigTools.GetConfigCategory(ConfigCategory.Misc);
+            ConfigTools.SetConfigValue(ConfigCategory.Misc, Token, "Blacklisted mods", BlacklistedModsString);
         }
 
         /// <summary>

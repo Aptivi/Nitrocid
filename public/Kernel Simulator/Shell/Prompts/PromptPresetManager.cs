@@ -230,67 +230,67 @@ namespace KS.Shell.Prompts
                 case ShellType.Shell:
                     {
                         UESHShellCurrentPreset = Presets[PresetName];
-                        ConfigTools.SetConfigValue(Config.ConfigCategory.Shell, "Prompt Preset", PresetName);
+                        ConfigTools.SetConfigValue(ConfigCategory.Shell, "Prompt Preset", PresetName);
                         break;
                     }
                 case ShellType.TestShell:
                     {
                         TestShellCurrentPreset = Presets[PresetName];
-                        ConfigTools.SetConfigValue(Config.ConfigCategory.Shell, "Test Shell Prompt Preset", PresetName);
+                        ConfigTools.SetConfigValue(ConfigCategory.Shell, "Test Shell Prompt Preset", PresetName);
                         break;
                     }
                 case ShellType.TextShell:
                     {
                         TextShellCurrentPreset = Presets[PresetName];
-                        ConfigTools.SetConfigValue(Config.ConfigCategory.Shell, "Text Edit Prompt Preset", PresetName);
+                        ConfigTools.SetConfigValue(ConfigCategory.Shell, "Text Edit Prompt Preset", PresetName);
                         break;
                     }
                 case ShellType.SFTPShell:
                     {
                         SFTPShellCurrentPreset = Presets[PresetName];
-                        ConfigTools.SetConfigValue(Config.ConfigCategory.Shell, "SFTP Prompt Preset", PresetName);
+                        ConfigTools.SetConfigValue(ConfigCategory.Shell, "SFTP Prompt Preset", PresetName);
                         break;
                     }
                 case ShellType.RSSShell:
                     {
                         RSSShellCurrentPreset = Presets[PresetName];
-                        ConfigTools.SetConfigValue(Config.ConfigCategory.Shell, "RSS Prompt Preset", PresetName);
+                        ConfigTools.SetConfigValue(ConfigCategory.Shell, "RSS Prompt Preset", PresetName);
                         break;
                     }
                 case ShellType.MailShell:
                     {
                         MailShellCurrentPreset = Presets[PresetName];
-                        ConfigTools.SetConfigValue(Config.ConfigCategory.Shell, "Mail Prompt Preset", PresetName);
+                        ConfigTools.SetConfigValue(ConfigCategory.Shell, "Mail Prompt Preset", PresetName);
                         break;
                     }
                 case ShellType.JsonShell:
                     {
                         JsonShellCurrentPreset = Presets[PresetName];
-                        ConfigTools.SetConfigValue(Config.ConfigCategory.Shell, "JSON Shell Prompt Preset", PresetName);
+                        ConfigTools.SetConfigValue(ConfigCategory.Shell, "JSON Shell Prompt Preset", PresetName);
                         break;
                     }
                 case ShellType.HTTPShell:
                     {
                         HTTPShellCurrentPreset = Presets[PresetName];
-                        ConfigTools.SetConfigValue(Config.ConfigCategory.Shell, "HTTP Shell Prompt Preset", PresetName);
+                        ConfigTools.SetConfigValue(ConfigCategory.Shell, "HTTP Shell Prompt Preset", PresetName);
                         break;
                     }
                 case ShellType.HexShell:
                     {
                         HexShellCurrentPreset = Presets[PresetName];
-                        ConfigTools.SetConfigValue(Config.ConfigCategory.Shell, "Hex Edit Prompt Preset", PresetName);
+                        ConfigTools.SetConfigValue(ConfigCategory.Shell, "Hex Edit Prompt Preset", PresetName);
                         break;
                     }
                 case ShellType.FTPShell:
                     {
                         FTPShellCurrentPreset = Presets[PresetName];
-                        ConfigTools.SetConfigValue(Config.ConfigCategory.Shell, "FTP Prompt Preset", PresetName);
+                        ConfigTools.SetConfigValue(ConfigCategory.Shell, "FTP Prompt Preset", PresetName);
                         break;
                     }
                 case ShellType.ArchiveShell:
                     {
                         ArchiveShellCurrentPreset = Presets[PresetName];
-                        ConfigTools.SetConfigValue(Config.ConfigCategory.Shell, "Archive Shell Prompt Preset", PresetName);
+                        ConfigTools.SetConfigValue(ConfigCategory.Shell, "Archive Shell Prompt Preset", PresetName);
                         break;
                     }
             }

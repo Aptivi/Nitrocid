@@ -128,8 +128,8 @@ namespace KS.Network
         public static void ChangeHostname(string NewHost)
         {
             HostName = NewHost;
-            var Token = ConfigTools.GetConfigCategory(Config.ConfigCategory.Login);
-            ConfigTools.SetConfigValue(Config.ConfigCategory.Login, Token, "Host Name", HostName);
+            var Token = ConfigTools.GetConfigCategory(ConfigCategory.Login);
+            ConfigTools.SetConfigValue(ConfigCategory.Login, Token, "Host Name", HostName);
         }
 
         /// <summary>

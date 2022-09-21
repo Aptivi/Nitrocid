@@ -64,7 +64,7 @@ namespace KSTests.FilesTests
         {
             CurrentDirectory.CurrentDir = Paths.HomePath;
             CurrentDirectory.SaveCurrDir();
-            ConfigTools.GetConfigValue(Config.ConfigCategory.Shell, "Current Directory").ToString().ShouldBe(Paths.HomePath);
+            ConfigTools.GetConfigValue(ConfigCategory.Shell, "Current Directory").ToString().ShouldBe(Paths.HomePath);
         }
 
     }

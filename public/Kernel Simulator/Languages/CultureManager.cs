@@ -53,8 +53,8 @@ namespace KS.Languages
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Found. Changing culture...");
                     CurrentCult = Cult;
-                    var Token = ConfigTools.GetConfigCategory(Config.ConfigCategory.General);
-                    ConfigTools.SetConfigValue(Config.ConfigCategory.General, Token, "Culture", CurrentCult.Name);
+                    var Token = ConfigTools.GetConfigCategory(ConfigCategory.General);
+                    ConfigTools.SetConfigValue(ConfigCategory.General, Token, "Culture", CurrentCult.Name);
                     DebugWriter.WriteDebug(DebugLevel.I, "Saved new culture.");
                     break;
                 }
@@ -74,8 +74,8 @@ namespace KS.Languages
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Found. Changing culture...");
                     CurrentCult = Cult;
-                    var Token = ConfigTools.GetConfigCategory(Config.ConfigCategory.General);
-                    ConfigTools.SetConfigValue(Config.ConfigCategory.General, Token, "Culture", CurrentCult.Name);
+                    var Token = ConfigTools.GetConfigCategory(ConfigCategory.General);
+                    ConfigTools.SetConfigValue(ConfigCategory.General, Token, "Culture", CurrentCult.Name);
                     DebugWriter.WriteDebug(DebugLevel.I, "Saved new culture.");
                     break;
                 }

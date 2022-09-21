@@ -51,14 +51,14 @@ namespace KSTests.KernelTests
         /// </summary>
         [Test]
         [Description("Management")]
-        public void TestGetConfigCategoryStandard() => ConfigTools.GetConfigCategory(Config.ConfigCategory.General).ShouldNotBeNull();
+        public void TestGetConfigCategoryStandard() => ConfigTools.GetConfigCategory(ConfigCategory.General).ShouldNotBeNull();
 
         /// <summary>
         /// Tests getting a config category with a sub-category
         /// </summary>
         [Test]
         [Description("Management")]
-        public void TestGetConfigCategoryWithSubcategory() => ConfigTools.GetConfigCategory(Config.ConfigCategory.Screensaver, "Matrix").ShouldNotBeNull();
+        public void TestGetConfigCategoryWithSubcategory() => ConfigTools.GetConfigCategory(ConfigCategory.Screensaver, "Matrix").ShouldNotBeNull();
 
         /// <summary>
         /// Tests setting the value of an entry in a category
@@ -67,8 +67,8 @@ namespace KSTests.KernelTests
         [Description("Management")]
         public void TestSetConfigValueAndWriteStandard()
         {
-            var Token = ConfigTools.GetConfigCategory(Config.ConfigCategory.General);
-            ConfigTools.SetConfigValue(Config.ConfigCategory.General, Token, "Prompt for Arguments on Boot", true);
+            var Token = ConfigTools.GetConfigCategory(ConfigCategory.General);
+            ConfigTools.SetConfigValue(ConfigCategory.General, Token, "Prompt for Arguments on Boot", true);
             Token["Prompt for Arguments on Boot"].ToObject<bool>().ShouldBeTrue();
         }
 
@@ -79,8 +79,8 @@ namespace KSTests.KernelTests
         [Description("Management")]
         public void TestSetConfigValueAndWriteWithSubcategory()
         {
-            var Token = ConfigTools.GetConfigCategory(Config.ConfigCategory.Screensaver, "Matrix");
-            ConfigTools.SetConfigValue(Config.ConfigCategory.Screensaver, Token, "Delay in Milliseconds", 2);
+            var Token = ConfigTools.GetConfigCategory(ConfigCategory.Screensaver, "Matrix");
+            ConfigTools.SetConfigValue(ConfigCategory.Screensaver, Token, "Delay in Milliseconds", 2);
             Token["Delay in Milliseconds"].ToObject<int>().ShouldBe(2);
         }
 
