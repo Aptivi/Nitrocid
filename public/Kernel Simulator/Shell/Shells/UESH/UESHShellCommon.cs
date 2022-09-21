@@ -118,6 +118,7 @@ namespace KS.Shell.Shells.UESH
             { "rdebug", new CommandInfo("rdebug", ShellType.Shell, "Enables or disables remote debugging.", new CommandArgumentInfo(), new RdebugCommand(), CommandFlags.Strict) },
             { "reportbug", new CommandInfo("reportbug", ShellType.Shell, "A bug reporting prompt.", new CommandArgumentInfo(), new ReportBugCommand()) },
             { "rmuser", new CommandInfo("rmuser", ShellType.Shell, "Removes a user from the list", new CommandArgumentInfo(new[] { "<Username>" }, true, 1), new RmUserCommand(), CommandFlags.Strict) },
+            { "roulette", new CommandInfo("roulette", ShellType.Shell, "Russian Roulette", new CommandArgumentInfo(), new RouletteCommand()) },
             { "rss", new CommandInfo("rss", ShellType.Shell, "Opens an RSS shell to read the feeds", new CommandArgumentInfo(new[] { "[feedlink]" }, false, 0), new RssCommand()) },
             { "savecurrdir", new CommandInfo("savecurrdir", ShellType.Shell, "Saves the current directory to kernel configuration file", new CommandArgumentInfo(), new SaveCurrDirCommand(), CommandFlags.Strict) },
             { "savescreen", new CommandInfo("savescreen", ShellType.Shell, "Saves your screen from burn outs", new CommandArgumentInfo(new[] { "[saver]" }, false, 0), new SaveScreenCommand()) },

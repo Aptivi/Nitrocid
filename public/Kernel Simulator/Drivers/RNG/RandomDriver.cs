@@ -104,5 +104,11 @@ namespace KS.Drivers.RNG
         /// <param name="probPercent">Probability in percent (from 0 to 100)</param>
         /// <remarks>If the specified probability by percent is larger than 100% or smaller than 0%, then the probability by percentage will be set to a random value from 0% to 100%</remarks>
         public static bool RandomChance(int probPercent) => RandomChance((probPercent >= 0 && probPercent <= 100 ? probPercent : Random(100)) / 100d);
+
+        /// <summary>
+        /// Random Russian Roulette!
+        /// </summary>
+        /// <returns>True if you're unlucky; otherwise, false if lucky.</returns>
+        public static bool RandomRussianRoulette() => (RandomShort() % 6) == 0;
     }
 }
