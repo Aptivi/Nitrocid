@@ -444,10 +444,6 @@ namespace KS.Kernel
             if (KernelPlatform.IsOnMacOS())
                 TextWriterColor.Write("* You're running on macOS. This is not supported and may or may no longer work starting on January 1st, 2023. Until further notice, all support coming from macOS are denied.", true, ColorTools.ColTypes.Warning);
 
-            // Parse real command-line arguments
-            if (Flags.ParseCommandLineArguments)
-                ArgumentParse.ParseArguments(Args.ToList(), ArgumentType.CommandLineArgs);
-
             // Check arguments
             if (Flags.ArgsOnBoot)
             {

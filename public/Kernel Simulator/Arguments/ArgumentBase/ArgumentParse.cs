@@ -56,20 +56,7 @@ namespace KS.Arguments.ArgumentBase
             try
             {
                 // Select the argument dictionary
-                var Arguments = AvailableArgs;
-                switch (ArgumentType)
-                {
-                    case ArgumentType.PreBootCommandLineArgs:
-                        {
-                            Arguments = PreBootCommandLineArgsParse.AvailablePreBootCMDLineArgs;
-                            break;
-                        }
-                    case ArgumentType.CommandLineArgs:
-                        {
-                            Arguments = CommandLineArgs.AvailableCMDLineArgs;
-                            break;
-                        }
-                }
+                var Arguments = ArgumentType == ArgumentType.CommandLineArgs ? CommandLineArgs.AvailableCMDLineArgs : AvailableArgs;
 
                 // Parse them now
                 for (int i = 0, loopTo = ArgumentsInput.Count - 1; i <= loopTo; i++)

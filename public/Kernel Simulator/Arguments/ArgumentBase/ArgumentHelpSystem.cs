@@ -62,11 +62,6 @@ namespace KS.Arguments.ArgumentBase
                         ArgumentList = CommandLineArgs.AvailableCMDLineArgs;
                         break;
                     }
-                case ArgumentType.PreBootCommandLineArgs:
-                    {
-                        ArgumentList = PreBootCommandLineArgsParse.AvailablePreBootCMDLineArgs;
-                        break;
-                    }
             }
 
             // Check to see if argument exists

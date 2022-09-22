@@ -127,8 +127,8 @@ namespace KS.Kernel
                         Color255.Initialize255();
                     AppDomain.CurrentDomain.AssemblyResolve += AssemblyLookup.LoadFromAssemblySearchPaths;
 
-                    // Check for pre-boot arguments
-                    ArgumentParse.ParseArguments(Args.ToList(), ArgumentType.PreBootCommandLineArgs);
+                    // Check for kernel command-line arguments
+                    ArgumentParse.ParseArguments(Args.ToList(), ArgumentType.CommandLineArgs);
 
                     // Download debug symbols if not found (loads automatically, useful for debugging problems and stack traces)
                     KernelTools.CheckDebugSymbols();

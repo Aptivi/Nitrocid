@@ -19,12 +19,12 @@
 using KS.Arguments.ArgumentBase;
 using KS.Kernel;
 
-namespace KS.Arguments.PreBootCommandLineArguments
+namespace KS.Arguments.CommandLineArguments
 {
-    class PreBootCommandLine_ResetArgument : ArgumentExecutor, IArgument
+    class CommandLine_NewReaderArgument : ArgumentExecutor, IArgument
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => KernelTools.FactoryReset();
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Flags.OptInToNewConfigReader = true;
 
     }
 }

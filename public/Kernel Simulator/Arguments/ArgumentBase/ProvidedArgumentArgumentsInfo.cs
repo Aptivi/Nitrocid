@@ -63,27 +63,7 @@ namespace KS.Arguments.ArgumentBase
         {
             string Argument;
             bool RequiredArgumentsProvided = true;
-            var KernelArguments = ArgumentParse.AvailableArgs;
-
-            // Change the available commands list according to command type
-            switch (ArgumentType)
-            {
-                case ArgumentType.KernelArgs:
-                    {
-                        KernelArguments = ArgumentParse.AvailableArgs;
-                        break;
-                    }
-                case ArgumentType.CommandLineArgs:
-                    {
-                        KernelArguments = CommandLineArgs.AvailableCMDLineArgs;
-                        break;
-                    }
-                case ArgumentType.PreBootCommandLineArgs:
-                    {
-                        KernelArguments = PreBootCommandLineArgsParse.AvailablePreBootCMDLineArgs;
-                        break;
-                    }
-            }
+            var KernelArguments = ArgumentType == ArgumentType.CommandLineArgs ? CommandLineArgs.AvailableCMDLineArgs : ArgumentParse.AvailableArgs;
 
             // Get the index of the first space (Used for step 3)
             int index = ArgumentText.IndexOf(" ");

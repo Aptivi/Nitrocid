@@ -34,11 +34,6 @@ namespace KS.Arguments.CommandLineArguments
             ArgumentHelpSystem.ShowArgsHelp(ArgumentType.CommandLineArgs);
             TextWriterColor.Write();
 
-            // Pre-boot command-line arguments
-            TextWriterColor.Write(Translate.DoTranslation("Pre-boot command-line arguments:"), true, ColorTools.ColTypes.ListTitle);
-            ArgumentHelpSystem.ShowArgsHelp(ArgumentType.PreBootCommandLineArgs);
-            TextWriterColor.Write();
-
             // Either start the kernel or exit it
             TextWriterColor.Write(Translate.DoTranslation("* Press any key to start the kernel or ESC to exit."), true, ColorTools.ColTypes.Tip);
             if (ConsoleBase.ConsoleWrapper.ReadKey(true).Key == ConsoleKey.Escape)

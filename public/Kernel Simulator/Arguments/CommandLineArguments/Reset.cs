@@ -19,12 +19,12 @@
 using KS.Arguments.ArgumentBase;
 using KS.Kernel;
 
-namespace KS.Arguments.PreBootCommandLineArguments
+namespace KS.Arguments.CommandLineArguments
 {
-    class PreBootCommandLine_NewWriterArgument : ArgumentExecutor, IArgument
+    class CommandLine_ResetArgument : ArgumentExecutor, IArgument
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Flags.OptInToNewConfigWriter = true;
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => KernelTools.FactoryReset();
 
     }
 }

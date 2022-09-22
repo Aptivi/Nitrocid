@@ -30,10 +30,6 @@ namespace KS.Arguments.ArgumentBase
         /// <summary>
         /// Command line arguments
         /// </summary>
-        CommandLineArgs,
-        /// <summary>
-        /// Pre-boot command line arguments
-        /// </summary>
-        PreBootCommandLineArgs
+        CommandLineArgs
     }
 }

@@ -19,12 +19,12 @@
 using KS.Arguments.ArgumentBase;
 using KS.Kernel;
 
-namespace KS.Arguments.PreBootCommandLineArguments
+namespace KS.Arguments.CommandLineArguments
 {
-    class PreBootCommandLine_BypassSizeDetectionArgument : ArgumentExecutor, IArgument
+    class CommandLine_NewWriterArgument : ArgumentExecutor, IArgument
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Flags.CheckingForConsoleSize = false;
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Flags.OptInToNewConfigWriter = true;
 
     }
 }

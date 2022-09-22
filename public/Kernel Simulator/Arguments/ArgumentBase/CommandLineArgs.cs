@@ -35,6 +35,10 @@ namespace KS.Arguments.ArgumentBase
             { "testInteractive", new ArgumentInfo("testInteractive", ArgumentType.CommandLineArgs, "Opens a test shell", "", false, 0, new CommandLine_TestInteractiveArgument()) },
             { "debug", new ArgumentInfo("debug", ArgumentType.CommandLineArgs, "Enables debug mode", "", false, 0, new CommandLine_DebugArgument()) },
             { "args", new ArgumentInfo("args", ArgumentType.CommandLineArgs, "Prompts for arguments", "", false, 0, new CommandLine_ArgsArgument()) },
+            { "reset", new ArgumentInfo("reset", ArgumentType.CommandLineArgs, "Resets the kernel to the factory settings", "", false, 0, new CommandLine_ResetArgument()) },
+            { "newreader", new ArgumentInfo("newreader", ArgumentType.CommandLineArgs, "Opts in to new config reader", "", false, 0, new CommandLine_NewReaderArgument()) },
+            { "newwriter", new ArgumentInfo("newwriter", ArgumentType.CommandLineArgs, "Opts in to new config writer", "", false, 0, new CommandLine_NewWriterArgument()) },
+            { "bypasssizedetection", new ArgumentInfo("bypasssizedetection", ArgumentType.CommandLineArgs, "Bypasses the console size detection", "", false, 0, new CommandLine_BypassSizeDetectionArgument()) },
             { "help", new ArgumentInfo("help", ArgumentType.CommandLineArgs, "Help page", "", false, 0, new CommandLine_HelpArgument()) }
         };
 
