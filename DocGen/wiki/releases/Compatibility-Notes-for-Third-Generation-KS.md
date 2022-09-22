@@ -124,3 +124,11 @@ Also, we have added `GetColor()` and `SetColor()` functions to ColorTools to per
 ##### Moved ConfigCategory outside Config class
 
 We have moved ConfigCategory outside the Config class to better organize the enumerations relating to the configuration.
+
+##### Implemented interface for encryptors
+
+This will make implementing future encryptors easier for mods, since it'll now use our own encryption algorithm manager instead of relying on the mod's algorithm management.
+
+An interface, IEncryptor, was created to help you implement the encryptor faster. You can use Encryption in KS.Drivers.Encryption to use helper functions.
+
+However, this is only the initial stage of the implementation.

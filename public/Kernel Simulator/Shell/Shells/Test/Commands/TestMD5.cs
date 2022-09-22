@@ -18,8 +18,8 @@
 
 using System.Diagnostics;
 using KS.ConsoleBase.Colors;
+using KS.Drivers.Encryption;
 using KS.Languages;
-using KS.Misc.Encryption;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 

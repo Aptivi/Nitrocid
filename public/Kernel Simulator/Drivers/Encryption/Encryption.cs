@@ -16,20 +16,32 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System;
+using System.Collections.Generic;
 using System.IO;
-using System.Security.Cryptography;
-using System.Text;
-using Force.Crc32;
+using KS.Drivers.Encryption.Encryptors;
 using KS.Files;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
+using KS.Languages;
 
-namespace KS.Misc.Encryption
+namespace KS.Drivers.Encryption
 {
     /// <summary>
     /// Encryption and hashing module
     /// </summary>
     public static class Encryption
     {
+
+        internal static Dictionary<string, IEncryptor> encryptors = new()
+        {
+            { "CRC32", new CRC32() },
+            { "MD5", new MD5() },
+            { "SHA1", new SHA1() },
+            { "SHA256", new SHA256() },
+            { "SHA384", new SHA384() },
+            { "SHA512", new SHA512() }
+        };
 
         /// <summary>
         /// Encryption algorithms supported by KS
@@ -63,6 +75,37 @@ namespace KS.Misc.Encryption
         }
 
         /// <summary>
+        /// Registers the encryptor (Mods that implement IEncryptors should use this function to add their encryptors to the list)
+        /// </summary>
+        /// <param name="encryptor">Encryptor instance</param>
+        public static void RegisterEncryptor(IEncryptor encryptor)
+        {
+            // Get the encryptor name according to the class name
+            string encryptorName = encryptor.GetType().Name;
+
+            // Check to see if the name is taken
+            if (encryptors.ContainsKey(encryptorName))
+                encryptorName += encryptors.Count;
+
+            // Add it to the available encryptors
+            encryptors.Add(encryptorName, encryptor);
+        }
+
+        /// <summary>
+        /// Unregisters the encryptor (Mods that implement IEncryptors should use this function to remove their encryptors from the list when unloading the mod)
+        /// </summary>
+        /// <param name="encryptorName">Encryptor name</param>
+        public static void UnregisterEncryptor(string encryptorName)
+        {
+            // Make sure that we don't remove algorithms implemented by Kernel Simulator
+            if (Enum.IsDefined(typeof(Algorithms), encryptorName))
+                throw new InvalidHashAlgorithmException(Translate.DoTranslation("Tried to remove an internal algorithm. This isn't possible."));
+
+            // Remove it!
+            encryptors.Remove(encryptorName);
+        }
+
+        /// <summary>
         /// Translates the array of encrypted bytes to string
         /// </summary>
         /// <param name="encrypted">Array of encrypted bytes</param>
@@ -89,40 +132,9 @@ namespace KS.Misc.Encryption
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Selected algorithm: {0}", algorithm.ToString());
             DebugWriter.WriteDebug(DebugLevel.I, "String length: {0}", str.Length);
-            switch (algorithm)
-            {
-                case Algorithms.MD5:
-                    {
-                        var hashbyte = MD5.Create().ComputeHash(Encoding.UTF8.GetBytes(str));
-                        return GetArrayEnc(hashbyte);
-                    }
-                case Algorithms.SHA1:
-                    {
-                        var hashbyte = SHA1.Create().ComputeHash(Encoding.UTF8.GetBytes(str));
-                        return GetArrayEnc(hashbyte);
-                    }
-                case Algorithms.SHA256:
-                    {
-                        var hashbyte = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(str));
-                        return GetArrayEnc(hashbyte);
-                    }
-                case Algorithms.SHA384:
-                    {
-                        var hashbyte = SHA384.Create().ComputeHash(Encoding.UTF8.GetBytes(str));
-                        return GetArrayEnc(hashbyte);
-                    }
-                case Algorithms.SHA512:
-                    {
-                        var hashbyte = SHA512.Create().ComputeHash(Encoding.UTF8.GetBytes(str));
-                        return GetArrayEnc(hashbyte);
-                    }
-                case Algorithms.CRC32:
-                    {
-                        var hashbyte = new Crc32Algorithm().ComputeHash(Encoding.UTF8.GetBytes(str));
-                        return GetArrayEnc(hashbyte);
-                    }
-            }
-            return "";
+
+            // Get the encryptor
+            return encryptors[algorithm.ToString()].GetEncryptedString(str);
         }
 
         /// <summary>
@@ -135,40 +147,9 @@ namespace KS.Misc.Encryption
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Selected algorithm: {0}", algorithm.ToString());
             DebugWriter.WriteDebug(DebugLevel.I, "Stream length: {0}", str.Length);
-            switch (algorithm)
-            {
-                case Algorithms.MD5:
-                    {
-                        var hashbyte = MD5.Create().ComputeHash(str);
-                        return GetArrayEnc(hashbyte);
-                    }
-                case Algorithms.SHA1:
-                    {
-                        var hashbyte = SHA1.Create().ComputeHash(str);
-                        return GetArrayEnc(hashbyte);
-                    }
-                case Algorithms.SHA256:
-                    {
-                        var hashbyte = SHA256.Create().ComputeHash(str);
-                        return GetArrayEnc(hashbyte);
-                    }
-                case Algorithms.SHA384:
-                    {
-                        var hashbyte = SHA384.Create().ComputeHash(str);
-                        return GetArrayEnc(hashbyte);
-                    }
-                case Algorithms.SHA512:
-                    {
-                        var hashbyte = SHA512.Create().ComputeHash(str);
-                        return GetArrayEnc(hashbyte);
-                    }
-                case Algorithms.CRC32:
-                    {
-                        var hashbyte = new Crc32Algorithm().ComputeHash(str);
-                        return GetArrayEnc(hashbyte);
-                    }
-            }
-            return "";
+
+            // Get the encryptor
+            return encryptors[algorithm.ToString()].GetEncryptedFile(str);
         }
 
         /// <summary>
@@ -191,7 +172,7 @@ namespace KS.Misc.Encryption
         /// </summary>
         /// <param name="Algorithm">Algorithm</param>
         /// <returns>Empty hash</returns>
-        public static string GetEmptyHash(Algorithms Algorithm) => GetEncryptedString("", Algorithm);
+        public static string GetEmptyHash(Algorithms Algorithm) => encryptors[Algorithm.ToString()].EmptyHash;
 
     }
 }

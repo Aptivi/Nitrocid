@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.IO;
+using KS.Drivers.Encryption;
 using KS.Files;
-using KS.Misc.Encryption;
 using NUnit.Framework;
 using Shouldly;
 

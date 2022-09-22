@@ -22,10 +22,10 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using KS.ConsoleBase.Colors;
+using KS.Drivers.Encryption;
 using KS.Files;
 using KS.Files.Querying;
 using KS.Languages;
-using KS.Misc.Encryption;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 

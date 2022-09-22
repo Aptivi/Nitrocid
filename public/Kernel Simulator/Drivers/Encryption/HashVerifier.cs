@@ -22,7 +22,7 @@ using KS.Files;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
 
-namespace KS.Misc.Encryption
+namespace KS.Drivers.Encryption
 {
     /// <summary>
     /// Hash sum verification module
