@@ -100,7 +100,7 @@ namespace KS.Kernel
         /// <summary>
         /// Entry point
         /// </summary>
-        public static void Main(string[] Args)
+        internal static void Main(string[] Args)
         {
             // Set main thread name
             Thread.CurrentThread.Name = "Main Kernel Thread";
