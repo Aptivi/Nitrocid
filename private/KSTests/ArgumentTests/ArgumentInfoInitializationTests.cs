@@ -18,6 +18,7 @@
 
 using System;
 using KS.Arguments.ArgumentBase;
+using KS.Shell.ShellBase.Commands;
 using NUnit.Framework;
 using Shouldly;
 
@@ -36,7 +37,7 @@ namespace KSTests.ArgumentTests
         public void TestInitializeArgumentInfoInstanceFromCommandLineArg()
         {
             // Create instance
-            var ArgumentInstance = new ArgumentInfo("help", ArgumentType.CommandLineArgs, "Help page", "", false, 0, null);
+            var ArgumentInstance = new ArgumentInfo("help", ArgumentType.CommandLineArgs, "Help page", new CommandArgumentInfo(), null);
 
             // Check for null
             ArgumentInstance.ShouldNotBeNull();
@@ -45,9 +46,9 @@ namespace KSTests.ArgumentTests
 
             // Check for property correctness
             ArgumentInstance.Argument.ShouldBe("help");
-            ArgumentInstance.ArgumentsRequired.ShouldBeFalse();
+            ArgumentInstance.ArgArgumentInfo.ArgumentsRequired.ShouldBeFalse();
             ArgumentInstance.HelpDefinition.ShouldBe("Help page");
-            ArgumentInstance.MinimumArguments.ShouldBe(0);
+            ArgumentInstance.ArgArgumentInfo.MinimumArguments.ShouldBe(0);
             ArgumentInstance.Obsolete.ShouldBeFalse();
             ArgumentInstance.Type.ShouldBe(ArgumentType.CommandLineArgs);
         }

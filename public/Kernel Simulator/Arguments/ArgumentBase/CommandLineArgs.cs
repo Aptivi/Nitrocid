@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Arguments.CommandLineArguments;
+using KS.Shell.ShellBase.Commands;
 using System.Collections.Generic;
 
 namespace KS.Arguments.ArgumentBase
@@ -32,14 +33,14 @@ namespace KS.Arguments.ArgumentBase
         /// </summary>
         public readonly static Dictionary<string, ArgumentInfo> AvailableCMDLineArgs = new()
         {
-            { "testInteractive", new ArgumentInfo("testInteractive", ArgumentType.CommandLineArgs, "Opens a test shell", "", false, 0, new CommandLine_TestInteractiveArgument()) },
-            { "debug", new ArgumentInfo("debug", ArgumentType.CommandLineArgs, "Enables debug mode", "", false, 0, new CommandLine_DebugArgument()) },
-            { "args", new ArgumentInfo("args", ArgumentType.CommandLineArgs, "Prompts for arguments", "", false, 0, new CommandLine_ArgsArgument()) },
-            { "reset", new ArgumentInfo("reset", ArgumentType.CommandLineArgs, "Resets the kernel to the factory settings", "", false, 0, new CommandLine_ResetArgument()) },
-            { "newreader", new ArgumentInfo("newreader", ArgumentType.CommandLineArgs, "Opts in to new config reader", "", false, 0, new CommandLine_NewReaderArgument()) },
-            { "newwriter", new ArgumentInfo("newwriter", ArgumentType.CommandLineArgs, "Opts in to new config writer", "", false, 0, new CommandLine_NewWriterArgument()) },
-            { "bypasssizedetection", new ArgumentInfo("bypasssizedetection", ArgumentType.CommandLineArgs, "Bypasses the console size detection", "", false, 0, new CommandLine_BypassSizeDetectionArgument()) },
-            { "help", new ArgumentInfo("help", ArgumentType.CommandLineArgs, "Help page", "", false, 0, new CommandLine_HelpArgument()) }
+            { "testInteractive", new ArgumentInfo("testInteractive", ArgumentType.CommandLineArgs, "Opens a test shell", new CommandArgumentInfo(), new CommandLine_TestInteractiveArgument()) },
+            { "debug", new ArgumentInfo("debug", ArgumentType.CommandLineArgs, "Enables debug mode", new CommandArgumentInfo(), new CommandLine_DebugArgument()) },
+            { "args", new ArgumentInfo("args", ArgumentType.CommandLineArgs, "Prompts for arguments", new CommandArgumentInfo(), new CommandLine_ArgsArgument()) },
+            { "reset", new ArgumentInfo("reset", ArgumentType.CommandLineArgs, "Resets the kernel to the factory settings", new CommandArgumentInfo(), new CommandLine_ResetArgument()) },
+            { "newreader", new ArgumentInfo("newreader", ArgumentType.CommandLineArgs, "Opts in to new config reader", new CommandArgumentInfo(), new CommandLine_NewReaderArgument()) },
+            { "newwriter", new ArgumentInfo("newwriter", ArgumentType.CommandLineArgs, "Opts in to new config writer", new CommandArgumentInfo(), new CommandLine_NewWriterArgument()) },
+            { "bypasssizedetection", new ArgumentInfo("bypasssizedetection", ArgumentType.CommandLineArgs, "Bypasses the console size detection", new CommandArgumentInfo(), new CommandLine_BypassSizeDetectionArgument()) },
+            { "help", new ArgumentInfo("help", ArgumentType.CommandLineArgs, "Help page", new CommandArgumentInfo(), new CommandLine_HelpArgument()) }
         };
 
     }

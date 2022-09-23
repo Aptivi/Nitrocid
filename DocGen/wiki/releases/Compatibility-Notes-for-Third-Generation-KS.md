@@ -132,3 +132,9 @@ This will make implementing future encryptors easier for mods, since it'll now u
 An interface, IEncryptor, was created to help you implement the encryptor faster. You can use Encryption in KS.Drivers.Encryption to use helper functions.
 
 However, this is only the initial stage of the implementation.
+
+##### Use CommandArgumentInfo in arguments
+
+Using `CommandArgumentInfo` allows you to define argument information for commands. However, it's a powerful class for managing arguments for commands and kernel arguments themselves.
+
+As a result, we've used `CommandArgumentInfo` in `ArgumentInfo`.

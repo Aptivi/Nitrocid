@@ -88,9 +88,9 @@ namespace KS.Arguments.ArgumentBase
             var EnclosedArgs = strArgs.SplitEncloseDoubleQuotes(" ")?.ToList();
             if (EnclosedArgs is not null)
             {
-                RequiredArgumentsProvided = (bool)(KernelArguments[Argument].MinimumArguments is var arg2 && (EnclosedArgs?.Count) is { } arg1 ? arg1 >= arg2 : (bool?)null);
+                RequiredArgumentsProvided = (bool)(KernelArguments[Argument].ArgArgumentInfo.MinimumArguments is var arg2 && (EnclosedArgs?.Count) is { } arg1 ? arg1 >= arg2 : (bool?)null);
             }
-            else if (KernelArguments[Argument].ArgumentsRequired & EnclosedArgs is null)
+            else if (KernelArguments[Argument].ArgArgumentInfo.ArgumentsRequired & EnclosedArgs is null)
             {
                 RequiredArgumentsProvided = false;
             }

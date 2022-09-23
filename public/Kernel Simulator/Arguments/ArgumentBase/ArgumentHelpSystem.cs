@@ -16,10 +16,16 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
+using KS.Misc.Writers.MiscWriters;
+using KS.Shell.Shells.UESH.Commands;
+using System;
+using System.Data;
+using System.Management.Instrumentation;
 
 namespace KS.Arguments.ArgumentBase
 {
@@ -68,16 +74,38 @@ namespace KS.Arguments.ArgumentBase
             if (!string.IsNullOrWhiteSpace(Argument) & ArgumentList.ContainsKey(Argument))
             {
                 string HelpDefinition = ArgumentList[Argument].GetTranslatedHelpEntry();
-                string HelpUsage = ArgumentList[Argument].HelpUsage;
+                int UsageLength = Translate.DoTranslation("Usage:").Length;
+                var HelpUsages = Array.Empty<string>();
+
+                // Populate help usages
+                if (ArgumentList[Argument].ArgArgumentInfo is not null)
+                    HelpUsages = ArgumentList[Argument].ArgArgumentInfo.HelpUsages;
 
                 // Print usage information
-                TextWriterColor.Write(Translate.DoTranslation("Usage:") + $" {Argument} {HelpUsage}: {HelpDefinition}", true, ColorTools.ColTypes.NeutralText);
+                if (HelpUsages.Length != 0)
+                {
+                    var Indent = default(bool);
+                    TextWriterColor.Write(Translate.DoTranslation("Usage:"), true, ColorTools.ColTypes.NeutralText);
+
+                    // Enumerate through the available help usages
+                    foreach (string HelpUsage in HelpUsages)
+                    {
+                        // Indent, if necessary
+                        if (Indent)
+                            TextWriterColor.Write(" ".Repeat(UsageLength), false, ColorTools.ColTypes.ListEntry);
+                        TextWriterColor.Write($" {Argument} {HelpUsage}", true, ColorTools.ColTypes.ListEntry);
+                        Indent = true;
+                    }
+                }
+
+                // Write the description now
+                if (string.IsNullOrEmpty(HelpDefinition))
+                    HelpDefinition = Translate.DoTranslation("Command defined by ") + Argument;
+                TextWriterColor.Write(Translate.DoTranslation("Description:") + $" {HelpDefinition}", true, ColorTools.ColTypes.ListValue);
 
                 // Extra help action for some arguments
                 if (ArgumentList[Argument].AdditionalHelpAction is not null)
-                {
                     ArgumentList[Argument].AdditionalHelpAction.DynamicInvoke();
-                }
             }
             else if (string.IsNullOrWhiteSpace(Argument))
             {

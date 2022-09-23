@@ -18,6 +18,7 @@
 
 using System;
 using KS.Languages;
+using KS.Shell.ShellBase.Commands;
 
 namespace KS.Arguments.ArgumentBase
 {
@@ -40,17 +41,9 @@ namespace KS.Arguments.ArgumentBase
         /// </summary>
         public string HelpDefinition { get; set; }
         /// <summary>
-        /// The help usage of command.
+        /// Argument info
         /// </summary>
-        public string HelpUsage { get; private set; }
-        /// <summary>
-        /// Does the argument require arguments?
-        /// </summary>
-        public bool ArgumentsRequired { get; private set; }
-        /// <summary>
-        /// User must specify at least this number of arguments
-        /// </summary>
-        public int MinimumArguments { get; private set; }
+        public CommandArgumentInfo ArgArgumentInfo { get; private set; }
         /// <summary>
         /// Kernel argument base for execution
         /// </summary>
@@ -70,20 +63,16 @@ namespace KS.Arguments.ArgumentBase
         /// <param name="Argument">Argument</param>
         /// <param name="Type">Argument type</param>
         /// <param name="HelpDefinition">Argument help definition</param>
-        /// <param name="HelpUsage">Command help usage</param>
-        /// <param name="ArgumentsRequired">Does the argument require arguments?</param>
-        /// <param name="MinimumArguments">User must specify at least this number of arguments</param>
+        /// <param name="ArgArgumentInfo">Argument info</param>
         /// <param name="ArgumentBase">Kernel argument base for execution</param>
         /// <param name="Obsolete">Is the command obsolete?</param>
         /// <param name="AdditionalHelpAction">An extra help action intended to show extra information</param>
-        public ArgumentInfo(string Argument, ArgumentType Type, string HelpDefinition, string HelpUsage, bool ArgumentsRequired, int MinimumArguments, ArgumentExecutor ArgumentBase, bool Obsolete = false, Action AdditionalHelpAction = null)
+        public ArgumentInfo(string Argument, ArgumentType Type, string HelpDefinition, CommandArgumentInfo ArgArgumentInfo, ArgumentExecutor ArgumentBase, bool Obsolete = false, Action AdditionalHelpAction = null)
         {
             this.Argument = Argument;
             this.Type = Type;
             this.HelpDefinition = HelpDefinition;
-            this.HelpUsage = HelpUsage;
-            this.ArgumentsRequired = ArgumentsRequired;
-            this.MinimumArguments = MinimumArguments;
+            this.ArgArgumentInfo = ArgArgumentInfo;
             this.ArgumentBase = ArgumentBase;
             this.Obsolete = Obsolete;
             this.AdditionalHelpAction = AdditionalHelpAction;
