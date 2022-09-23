@@ -1,4 +1,9 @@
 {
+    "Metadata": {
+        "Name": "Hacker",
+        "255ColorsRequired": false,
+        "TrueColorRequired": false
+    },
     "InputColor": "10",
     "LicenseColor": "10",
     "ContKernelErrorColor": "10",
