@@ -71,42 +71,24 @@ namespace KS.Files
 
             // Append current directory to path
             if (KernelPlatform.IsOnWindows() & !Path.Contains(":/") | KernelPlatform.IsOnUnix() & !Path.StartsWith("/"))
-            {
                 if (!Source.EndsWith("/"))
-                {
                     Path = $"{Source}/{Path}";
-                }
                 else
-                {
                     Path = $"{Source}{Path}";
-                }
-            }
 
             // Replace last occurrences of current directory of path with nothing.
             if (!string.IsNullOrEmpty(Source))
-            {
                 if (Path.Contains(Source) & Path.AllIndexesOf(Source).Count() > 1)
-                {
                     Path = Path.ReplaceLastOccurrence(Source, "");
-                }
-            }
 
             // If strict, checks for existence of file
             if (Strict)
-            {
                 if (Checking.FileExists(Path) | Checking.FolderExists(Path))
-                {
                     return Path;
-                }
                 else
-                {
                     throw new FileNotFoundException(Translate.DoTranslation("Neutralized a non-existent path.") + " {0}".FormatString(Path));
-                }
-            }
             else
-            {
                 return Path;
-            }
         }
 
         /// <summary>
