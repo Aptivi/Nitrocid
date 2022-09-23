@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel;
 using System;
 using System.IO;
 using System.Text;
@@ -38,14 +39,18 @@ namespace KS.ConsoleBase
             {
                 try
                 {
+                    // Get terminal type
+                    string TerminalType = KernelPlatform.GetTerminalType();
+
                     // Try to cache the value
                     if (!_dumbSet)
                     {
                         _dumbSet = true;
                         int _ = Console.CursorLeft;
 
-                        // If it doesn't get here without throwing exceptions, assume console is dumb.
-                        _dumb = false;
+                        // If it doesn't get here without throwing exceptions, assume console is dumb. Now, check to see if terminal type is dumb
+                        if (TerminalType != "dumb")
+                            _dumb = false;
                     }
                 }
                 catch { }

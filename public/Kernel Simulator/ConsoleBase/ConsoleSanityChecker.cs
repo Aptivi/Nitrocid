@@ -61,7 +61,8 @@ namespace KS.ConsoleBase
             {
                 if (TerminalEmulator == "Apple_Terminal")
                 {
-                    throw new InsaneConsoleDetectedException("Kernel Simulator makes use of VT escape sequences, but Terminal.app has broken support for 255 and true colors." + Kernel.Kernel.NewLine + "Possible solution: Download iTerm2 here: https://iterm2.com/downloads.html");
+                    throw new InsaneConsoleDetectedException("Kernel Simulator makes use of VT escape sequences, but Terminal.app has broken support for 255 and true colors." + Kernel.Kernel.NewLine +
+                                                             "Possible solution: Download iTerm2 here: https://iterm2.com/downloads.html");
                 }
             }
 
@@ -74,9 +75,11 @@ namespace KS.ConsoleBase
             // appropriate variable, like the frontend applications that rely on console applications and their outputs to do their job (for example,
             // Brasero, a disk burning program, uses wodim, xorriso, and such applications to do its very intent of burning a blank CD-ROM. All these
             // backend applications are console programs).
-            if (TerminalType == "dumb" || ConsoleWrapper.IsDumb)
+            if (ConsoleWrapper.IsDumb)
             {
-                throw new InsaneConsoleDetectedException("Kernel Simulator makes use of inputs and cursor manipulation, but the \"dumb\" terminals have no support for such tasks." + Kernel.Kernel.NewLine + "Possible solution: Use an appropriate terminal emulator or consult your terminal settings to set the terminal type into something other than \"dumb\"." + Kernel.Kernel.NewLine + "                   We recommend using the \"vt100\" terminal emulators to get the most out of Kernel Simulator.");
+                throw new InsaneConsoleDetectedException("Kernel Simulator makes use of inputs and cursor manipulation, but the \"dumb\" terminals have no support for such tasks." + Kernel.Kernel.NewLine + 
+                                                         "Possible solution: Use an appropriate terminal emulator or consult your terminal settings to set the terminal type into something other than \"dumb\"." + Kernel.Kernel.NewLine +
+                                                         "                   We recommend using the \"vt100\" terminal emulators to get the most out of Kernel Simulator.");
             }
 
             // Third: Check if the terminal supports 256 colors
