@@ -108,6 +108,7 @@ namespace KS.Misc.Screensaver
             { "ramp", new RampDisplay() },
             { "random", new RandomSaverDisplay() },
             { "siren", new SirenDisplay() },
+            { "snakefill", new SnakeFillDisplay() },
             { "snaker", new SnakerDisplay() },
             { "spin", new SpinDisplay() },
             { "spotwrite", new SpotWriteDisplay() },
