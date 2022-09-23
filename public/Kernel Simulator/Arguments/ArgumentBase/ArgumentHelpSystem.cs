@@ -21,11 +21,7 @@ using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.MiscWriters;
-using KS.Shell.Shells.UESH.Commands;
 using System;
-using System.Data;
-using System.Management.Instrumentation;
 
 namespace KS.Arguments.ArgumentBase
 {

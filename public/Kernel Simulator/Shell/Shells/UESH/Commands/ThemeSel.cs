@@ -27,7 +27,6 @@ using KS.Kernel.Configuration;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 

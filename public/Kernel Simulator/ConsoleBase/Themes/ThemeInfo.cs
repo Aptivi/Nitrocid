@@ -32,47 +32,7 @@ namespace KS.ConsoleBase.Themes
     public class ThemeInfo
     {
 
-        internal readonly Dictionary<ColorTools.ColTypes, Color> ThemeColors = new()
-        {
-            { ColorTools.ColTypes.Input, Color.Empty },
-            { ColorTools.ColTypes.License, Color.Empty },
-            { ColorTools.ColTypes.ContKernelError, Color.Empty },
-            { ColorTools.ColTypes.UncontKernelError, Color.Empty },
-            { ColorTools.ColTypes.HostNameShell, Color.Empty },
-            { ColorTools.ColTypes.UserNameShell, Color.Empty },
-            { ColorTools.ColTypes.Background, Color.Empty },
-            { ColorTools.ColTypes.NeutralText, Color.Empty },
-            { ColorTools.ColTypes.ListEntry, Color.Empty },
-            { ColorTools.ColTypes.ListValue, Color.Empty },
-            { ColorTools.ColTypes.Stage, Color.Empty },
-            { ColorTools.ColTypes.Error, Color.Empty },
-            { ColorTools.ColTypes.Warning, Color.Empty },
-            { ColorTools.ColTypes.Option, Color.Empty },
-            { ColorTools.ColTypes.Banner, Color.Empty },
-            { ColorTools.ColTypes.NotificationTitle, Color.Empty },
-            { ColorTools.ColTypes.NotificationDescription, Color.Empty },
-            { ColorTools.ColTypes.NotificationProgress, Color.Empty },
-            { ColorTools.ColTypes.NotificationFailure, Color.Empty },
-            { ColorTools.ColTypes.Question, Color.Empty },
-            { ColorTools.ColTypes.Success, Color.Empty },
-            { ColorTools.ColTypes.UserDollar, Color.Empty },
-            { ColorTools.ColTypes.Tip, Color.Empty },
-            { ColorTools.ColTypes.SeparatorText, Color.Empty },
-            { ColorTools.ColTypes.Separator, Color.Empty },
-            { ColorTools.ColTypes.ListTitle, Color.Empty },
-            { ColorTools.ColTypes.DevelopmentWarning, Color.Empty },
-            { ColorTools.ColTypes.StageTime, Color.Empty },
-            { ColorTools.ColTypes.Progress, Color.Empty },
-            { ColorTools.ColTypes.BackOption, Color.Empty },
-            { ColorTools.ColTypes.LowPriorityBorder, Color.Empty },
-            { ColorTools.ColTypes.MediumPriorityBorder, Color.Empty },
-            { ColorTools.ColTypes.HighPriorityBorder, Color.Empty },
-            { ColorTools.ColTypes.TableSeparator, Color.Empty },
-            { ColorTools.ColTypes.TableHeader, Color.Empty },
-            { ColorTools.ColTypes.TableValue, Color.Empty },
-            { ColorTools.ColTypes.SelectedOption, Color.Empty },
-            { ColorTools.ColTypes.AlternativeOption, Color.Empty },
-        };
+        internal readonly Dictionary<ColorTools.ColTypes, Color> ThemeColors = ColorTools.PopulateColorsEmpty();
 
         /// <summary>
         /// Theme name

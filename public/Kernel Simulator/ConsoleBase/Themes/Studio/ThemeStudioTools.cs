@@ -37,47 +37,7 @@ namespace KS.ConsoleBase.Themes.Studio
         /// Selected theme name
         /// </summary>
         internal static string SelectedThemeName = "";
-        internal static readonly Dictionary<ColorTools.ColTypes, Color> SelectedColors = new()
-        {
-            { ColorTools.ColTypes.Input, ColorTools.GetColor(ColorTools.ColTypes.Input) },
-            { ColorTools.ColTypes.License, ColorTools.GetColor(ColorTools.ColTypes.License) },
-            { ColorTools.ColTypes.ContKernelError, ColorTools.GetColor(ColorTools.ColTypes.ContKernelError) },
-            { ColorTools.ColTypes.UncontKernelError, ColorTools.GetColor(ColorTools.ColTypes.UncontKernelError) },
-            { ColorTools.ColTypes.HostNameShell, ColorTools.GetColor(ColorTools.ColTypes.HostNameShell) },
-            { ColorTools.ColTypes.UserNameShell, ColorTools.GetColor(ColorTools.ColTypes.UserNameShell) },
-            { ColorTools.ColTypes.Background, ColorTools.GetColor(ColorTools.ColTypes.Background) },
-            { ColorTools.ColTypes.NeutralText, ColorTools.GetColor(ColorTools.ColTypes.NeutralText) },
-            { ColorTools.ColTypes.ListEntry, ColorTools.GetColor(ColorTools.ColTypes.ListEntry) },
-            { ColorTools.ColTypes.ListValue, ColorTools.GetColor(ColorTools.ColTypes.ListValue) },
-            { ColorTools.ColTypes.Stage, ColorTools.GetColor(ColorTools.ColTypes.Stage) },
-            { ColorTools.ColTypes.Error, ColorTools.GetColor(ColorTools.ColTypes.Error) },
-            { ColorTools.ColTypes.Warning, ColorTools.GetColor(ColorTools.ColTypes.Warning) },
-            { ColorTools.ColTypes.Option, ColorTools.GetColor(ColorTools.ColTypes.Option) },
-            { ColorTools.ColTypes.Banner, ColorTools.GetColor(ColorTools.ColTypes.Banner) },
-            { ColorTools.ColTypes.NotificationTitle, ColorTools.GetColor(ColorTools.ColTypes.NotificationTitle) },
-            { ColorTools.ColTypes.NotificationDescription, ColorTools.GetColor(ColorTools.ColTypes.NotificationDescription) },
-            { ColorTools.ColTypes.NotificationProgress, ColorTools.GetColor(ColorTools.ColTypes.NotificationProgress) },
-            { ColorTools.ColTypes.NotificationFailure, ColorTools.GetColor(ColorTools.ColTypes.NotificationFailure) },
-            { ColorTools.ColTypes.Question, ColorTools.GetColor(ColorTools.ColTypes.Question) },
-            { ColorTools.ColTypes.Success, ColorTools.GetColor(ColorTools.ColTypes.Success) },
-            { ColorTools.ColTypes.UserDollar, ColorTools.GetColor(ColorTools.ColTypes.UserDollar) },
-            { ColorTools.ColTypes.Tip, ColorTools.GetColor(ColorTools.ColTypes.Tip) },
-            { ColorTools.ColTypes.SeparatorText, ColorTools.GetColor(ColorTools.ColTypes.SeparatorText) },
-            { ColorTools.ColTypes.Separator, ColorTools.GetColor(ColorTools.ColTypes.Separator) },
-            { ColorTools.ColTypes.ListTitle, ColorTools.GetColor(ColorTools.ColTypes.ListTitle) },
-            { ColorTools.ColTypes.DevelopmentWarning, ColorTools.GetColor(ColorTools.ColTypes.DevelopmentWarning) },
-            { ColorTools.ColTypes.StageTime, ColorTools.GetColor(ColorTools.ColTypes.StageTime) },
-            { ColorTools.ColTypes.Progress, ColorTools.GetColor(ColorTools.ColTypes.Progress) },
-            { ColorTools.ColTypes.BackOption, ColorTools.GetColor(ColorTools.ColTypes.BackOption) },
-            { ColorTools.ColTypes.LowPriorityBorder, ColorTools.GetColor(ColorTools.ColTypes.LowPriorityBorder) },
-            { ColorTools.ColTypes.MediumPriorityBorder, ColorTools.GetColor(ColorTools.ColTypes.MediumPriorityBorder) },
-            { ColorTools.ColTypes.HighPriorityBorder, ColorTools.GetColor(ColorTools.ColTypes.HighPriorityBorder) },
-            { ColorTools.ColTypes.TableSeparator, ColorTools.GetColor(ColorTools.ColTypes.TableSeparator) },
-            { ColorTools.ColTypes.TableHeader, ColorTools.GetColor(ColorTools.ColTypes.TableHeader) },
-            { ColorTools.ColTypes.TableValue, ColorTools.GetColor(ColorTools.ColTypes.TableValue) },
-            { ColorTools.ColTypes.SelectedOption, ColorTools.GetColor(ColorTools.ColTypes.SelectedOption) },
-            { ColorTools.ColTypes.AlternativeOption, ColorTools.GetColor(ColorTools.ColTypes.AlternativeOption) },
-        };
+        internal static readonly Dictionary<ColorTools.ColTypes, Color> SelectedColors = ColorTools.PopulateColorsCurrent();
 
         /// <summary>
         /// Saves theme to current directory under "<paramref name="Theme"/>.json."

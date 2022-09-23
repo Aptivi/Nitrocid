@@ -23,7 +23,6 @@ using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase.Themes;
 using KS.Kernel;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
@@ -201,47 +200,7 @@ namespace KS.ConsoleBase.Colors
         }
 
         // Variables for colors used by previous versions of the kernel.
-        internal static readonly Dictionary<ColTypes, Color> KernelColors = new()
-        {
-            { ColTypes.Input, new((int)ConsoleColors.White) },
-            { ColTypes.License, new((int)ConsoleColors.White) },
-            { ColTypes.ContKernelError, new((int)ConsoleColors.Yellow) },
-            { ColTypes.UncontKernelError, new((int)ConsoleColors.Red) },
-            { ColTypes.HostNameShell, new((int)ConsoleColors.DarkGreen) },
-            { ColTypes.UserNameShell, new((int)ConsoleColors.Green) },
-            { ColTypes.Background, new((int)ConsoleColors.Black) },
-            { ColTypes.NeutralText, new((int)ConsoleColors.Gray) },
-            { ColTypes.ListEntry, new((int)ConsoleColors.DarkYellow) },
-            { ColTypes.ListValue, new((int)ConsoleColors.DarkGray) },
-            { ColTypes.Stage, new((int)ConsoleColors.Green) },
-            { ColTypes.Error, new((int)ConsoleColors.Red) },
-            { ColTypes.Warning, new((int)ConsoleColors.Yellow) },
-            { ColTypes.Option, new((int)ConsoleColors.DarkYellow) },
-            { ColTypes.Banner, new((int)ConsoleColors.Green) },
-            { ColTypes.NotificationTitle, new((int)ConsoleColors.White) },
-            { ColTypes.NotificationDescription, new((int)ConsoleColors.Gray) },
-            { ColTypes.NotificationProgress, new((int)ConsoleColors.DarkYellow) },
-            { ColTypes.NotificationFailure, new((int)ConsoleColors.Red) },
-            { ColTypes.Question, new((int)ConsoleColors.Yellow) },
-            { ColTypes.Success, new((int)ConsoleColors.Green) },
-            { ColTypes.UserDollar, new((int)ConsoleColors.Gray) },
-            { ColTypes.Tip, new((int)ConsoleColors.Gray) },
-            { ColTypes.SeparatorText, new((int)ConsoleColors.White) },
-            { ColTypes.Separator, new((int)ConsoleColors.Gray) },
-            { ColTypes.ListTitle, new((int)ConsoleColors.White) },
-            { ColTypes.DevelopmentWarning, new((int)ConsoleColors.Yellow) },
-            { ColTypes.StageTime, new((int)ConsoleColors.Gray) },
-            { ColTypes.Progress, new((int)ConsoleColors.DarkYellow) },
-            { ColTypes.BackOption, new((int)ConsoleColors.DarkRed) },
-            { ColTypes.LowPriorityBorder, new((int)ConsoleColors.White) },
-            { ColTypes.MediumPriorityBorder, new((int)ConsoleColors.Yellow) },
-            { ColTypes.HighPriorityBorder, new((int)ConsoleColors.Red) },
-            { ColTypes.TableSeparator, new((int)ConsoleColors.DarkGray) },
-            { ColTypes.TableHeader, new((int)ConsoleColors.White) },
-            { ColTypes.TableValue, new((int)ConsoleColors.Gray) },
-            { ColTypes.SelectedOption, new((int)ConsoleColors.Yellow) },
-            { ColTypes.AlternativeOption, new((int)ConsoleColors.DarkGreen) },
-        };
+        internal static readonly Dictionary<ColTypes, Color> KernelColors = PopulateColorsDefault();
 
         /// <summary>
         /// Gets a color from the color type
@@ -255,6 +214,66 @@ namespace KS.ConsoleBase.Colors
         /// <param name="type">Color type</param>
         /// <param name="color">Color to be set</param>
         public static Color SetColor(ColTypes type, Color color) => KernelColors[type] = color;
+
+        /// <summary>
+        /// Populate the empty color dictionary
+        /// </summary>
+        public static Dictionary<ColTypes, Color> PopulateColorsEmpty() => PopulateColors(0);
+
+        /// <summary>
+        /// Populate the default color dictionary
+        /// </summary>
+        public static Dictionary<ColTypes, Color> PopulateColorsDefault() => PopulateColors(1);
+
+        /// <summary>
+        /// Populate the current color dictionary
+        /// </summary>
+        public static Dictionary<ColTypes, Color> PopulateColorsCurrent() => PopulateColors(2);
+
+        private static Dictionary<ColTypes, Color> PopulateColors(int populationType)
+        {
+            Dictionary<ColTypes, Color> colors = new();
+
+            // Select population type
+            switch (populationType)
+            {
+                case 0:
+                    // Population type is empty colors
+                    for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ColTypes)).Length - 1; typeIndex++)
+                    {
+                        ColTypes type = (ColTypes)Enum.Parse(typeof(ColTypes), typeIndex.ToString());
+                        Color color = Color.Empty;
+                        DebugWriter.WriteDebug(DebugLevel.I, "Adding color type {0} with color {1}...", type, color);
+                        colors.Add(type, color);
+                    }
+                    break;
+                case 1:
+                    // Population type is default colors
+                    ThemeInfo themeInfo = new();
+                    for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ColTypes)).Length - 1; typeIndex++)
+                    {
+                        ColTypes type = (ColTypes)Enum.Parse(typeof(ColTypes), typeIndex.ToString());
+                        Color color = themeInfo.GetColor(type);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Adding color type {0} with color {1}...", type, color);
+                        colors.Add(type, color);
+                    }
+                    break;
+                case 2:
+                    // Population type is current colors
+                    for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ColTypes)).Length - 1; typeIndex++)
+                    {
+                        ColTypes type = (ColTypes)Enum.Parse(typeof(ColTypes), typeIndex.ToString());
+                        Color color = GetColor(type);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Adding color type {0} with color {1}...", type, color);
+                        colors.Add(type, color);
+                    }
+                    break;
+            }
+
+            // Return it
+            DebugWriter.WriteDebug(DebugLevel.I, "Populated {0} colors.", colors.Count);
+            return colors;
+        }
 
         /// <summary>
         /// Resets all colors to default
