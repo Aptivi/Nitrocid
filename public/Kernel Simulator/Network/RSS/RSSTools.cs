@@ -23,6 +23,7 @@ using System.Linq;
 using System.Threading;
 using System.Xml;
 using Extensification.DictionaryExts;
+using FluentFTP.Helpers;
 using HtmlAgilityPack;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
@@ -510,6 +511,45 @@ namespace KS.Network.RSS
 
             // Actually change the feed
             RSSShellCommon.RSSFeedLink = FinalFeedUrl;
+        }
+
+        /// <summary>
+        /// Searches for articles
+        /// </summary>
+        /// <param name="phrase">Phrase to look for</param>
+        /// <param name="searchTitle">Whether to search the title or not</param>
+        /// <param name="searchDescription">Whether to search the description or not</param>
+        /// <param name="caseSensitive">Case sensitivity</param>
+        /// <returns>List of articles containing the phrase</returns>
+        public static List<RSSArticle> SearchArticles(string phrase, bool searchTitle = true, bool searchDescription = false, bool caseSensitive = false)
+        {
+            var foundArticles = new List<RSSArticle>();
+            var feedArticles = RSSShellCommon.RSSFeedInstance.FeedArticles;
+
+            // If not searching title and description, assume that we're searching for title
+            if (!searchTitle && !searchDescription)
+                searchTitle = true;
+
+            // Search through the entire article list
+            foreach (var article in feedArticles)
+            {
+                bool titleFound = caseSensitive ? article.ArticleTitle.Contains(phrase) : article.ArticleTitle.ContainsCI(phrase);
+                bool descriptionFound = caseSensitive ? article.ArticleDescription.Contains(phrase) : article.ArticleDescription.ContainsCI(phrase);
+
+                if (searchTitle && titleFound)
+                {
+                    foundArticles.Add(article);
+                    continue;
+                }
+
+                if (searchDescription && descriptionFound)
+                {
+                    foundArticles.Add(article);
+                    continue;
+                }
+            }
+
+            return foundArticles;
         }
 
     }

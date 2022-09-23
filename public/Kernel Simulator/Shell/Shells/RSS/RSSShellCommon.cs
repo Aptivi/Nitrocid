@@ -46,6 +46,7 @@ namespace KS.Shell.Shells.RSS
             { "list", new CommandInfo("list", ShellType.RSSShell, "Lists all feeds", new CommandArgumentInfo(), new RSS_ListCommand()) },
             { "listbookmark", new CommandInfo("listbookmark", ShellType.RSSShell, "Lists all bookmarked feeds", new CommandArgumentInfo(), new RSS_ListBookmarkCommand()) },
             { "read", new CommandInfo("read", ShellType.RSSShell, "Reads a feed in a web browser", new CommandArgumentInfo(new[] { "<feednum>" }, true, 1), new RSS_ReadCommand()) },
+            { "search", new CommandInfo("search", ShellType.RSSShell, "Searches the feed for a phrase in title and/or description", new CommandArgumentInfo(new[] { "[-t|-d|-a|-cs] <phrase>" }, true, 1), new RSS_SearchCommand()) },
             { "selfeed", new CommandInfo("selfeed", ShellType.RSSShell, "Selects the feed from the existing feed list from online sources", new CommandArgumentInfo(), new RSS_SelFeedCommand()) },
             { "unbookmark", new CommandInfo("unbookmark", ShellType.RSSShell, "Removes the feed bookmark", new CommandArgumentInfo(), new RSS_UnbookmarkCommand()) }
         };
