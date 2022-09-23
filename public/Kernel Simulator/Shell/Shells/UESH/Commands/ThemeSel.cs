@@ -27,6 +27,8 @@ using KS.Kernel.Configuration;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace KS.Shell.Shells.UESH.Commands
@@ -49,7 +51,14 @@ namespace KS.Shell.Shells.UESH.Commands
                 if (ListArgsOnly.Length == 0)
                 {
                     // Let the user select a theme
-                    int colorIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a theme"), string.Join("/", ThemeTools.Themes.Keys)) - 1;
+                    List<string> themeAnswers = new();
+                    List<string> themeWorkingNames = new();
+                    foreach (string theme in ThemeTools.Themes.Keys)
+                    {
+                        themeAnswers.Add(theme);
+                        themeWorkingNames.Add(ThemeTools.Themes[theme].Name);
+                    }
+                    int colorIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a theme"), string.Join("/", themeAnswers), themeWorkingNames.ToArray()) - 1;
 
                     // Get the theme name from index
                     selectedTheme = ThemeTools.Themes.Keys.ElementAt(colorIndex);
