@@ -262,7 +262,7 @@ namespace KS.ConsoleBase.Colors
         public static void ResetColors()
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Resetting colors");
-            var DefInfo = new ThemeInfo("_Default");
+            var DefInfo = new ThemeInfo();
 
             // Set colors
             for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ColTypes)).Length - 2; typeIndex++)

@@ -41,7 +41,7 @@ namespace KS.ConsoleBase.Themes
         /// </summary>
         public readonly static Dictionary<string, ThemeInfo> Themes = new()
         {
-            { "Default", new ThemeInfo("_Default") },
+            { "Default", new ThemeInfo() },
             { "3Y-Diamond", new ThemeInfo("_3Y_Diamond") },
             { "Aptivi", new ThemeInfo("Aptivi") },
             { "Aquatic", new ThemeInfo("Aquatic") },

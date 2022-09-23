@@ -110,7 +110,7 @@ namespace KS.ConsoleBase.Themes.Studio
             ThemeInfo ThemeInfo;
             if (Theme == "Default")
             {
-                ThemeInfo = new ThemeInfo("_Default");
+                ThemeInfo = new ThemeInfo();
             }
             else if (Theme == "3Y-Diamond")
             {
