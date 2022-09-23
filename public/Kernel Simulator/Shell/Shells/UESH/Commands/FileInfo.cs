@@ -28,6 +28,7 @@ using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using KS.Shell.ShellBase.Commands;
 using KS.TimeDate;
+using MimeKit;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -60,6 +61,8 @@ namespace KS.Shell.Shells.UESH.Commands
                     TextWriterColor.Write(Translate.DoTranslation("Attributes: {0}"), true, ColorTools.ColTypes.NeutralText, FileInfo.Attributes);
                     TextWriterColor.Write(Translate.DoTranslation("Where to find: {0}"), true, ColorTools.ColTypes.NeutralText, Filesystem.NeutralizePath(FileInfo.DirectoryName));
                     TextWriterColor.Write(Translate.DoTranslation("Newline style:") + " {0}", true, ColorTools.ColTypes.NeutralText, Style.ToString());
+                    TextWriterColor.Write(Translate.DoTranslation("Binary file:") + " {0}", true, ColorTools.ColTypes.NeutralText, Parsing.IsBinaryFile(FileInfo.FullName));
+                    TextWriterColor.Write(Translate.DoTranslation("MIME metadata:") + " {0}", true, ColorTools.ColTypes.NeutralText, MimeTypes.GetMimeType(Filesystem.NeutralizePath(FileInfo.FullName)));
                 }
                 else
                 {
