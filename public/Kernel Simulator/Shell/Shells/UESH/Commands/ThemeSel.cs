@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs.Styles;
 using KS.ConsoleBase.Themes;
@@ -65,7 +66,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 ThemeStudioTools.PreparePreview();
 
                 // Pause until a key is pressed
-                string answer = ChoiceStyle.PromptChoice(Translate.DoTranslation("Would you like to set this theme?"), "y/n", new[] { Translate.DoTranslation("Yes, set it!"), Translate.DoTranslation("No, don't set it.") }, ChoiceStyle.ChoiceOutputType.Modern);
+                string answer = ChoiceStyle.PromptChoice(Translate.DoTranslation("Would you like to set this theme to {0}?").FormatString(selectedTheme), "y/n", new[] { Translate.DoTranslation("Yes, set it!"), Translate.DoTranslation("No, don't set it.") }, ChoiceStyle.ChoiceOutputType.Modern);
                 if (answer == "y")
                 {
                     // User answered yes, so set it
