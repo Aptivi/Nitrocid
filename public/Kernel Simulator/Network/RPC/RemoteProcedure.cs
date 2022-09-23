@@ -50,13 +50,7 @@ namespace KS.Network.RPC
         /// <summary>
         /// Whether the RPC started
         /// </summary>
-        public static bool RPCStarted
-        {
-            get
-            {
-                return RPCThread.IsAlive;
-            }
-        }
+        public static bool RPCStarted => RPCThread.IsAlive;
 
         /// <summary>
         /// Starts the RPC listener

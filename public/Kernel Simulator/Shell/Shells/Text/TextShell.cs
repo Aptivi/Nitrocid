@@ -39,13 +39,7 @@ namespace KS.Shell.Shells.Text
     {
 
         /// <inheritdoc/>
-        public override ShellType ShellType
-        {
-            get
-            {
-                return ShellType.TextShell;
-            }
-        }
+        public override ShellType ShellType => ShellType.TextShell;
 
         /// <inheritdoc/>
         public override bool Bail { get; set; }

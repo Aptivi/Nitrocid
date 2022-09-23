@@ -62,13 +62,7 @@ namespace KS.Login
         /// <summary>
         /// Current username
         /// </summary>
-        public static UserInfo CurrentUser
-        {
-            get
-            {
-                return CurrentUserInfo;
-            }
-        }
+        public static UserInfo CurrentUser => CurrentUserInfo;
 
         /// <summary>
         /// Prompts user for login information

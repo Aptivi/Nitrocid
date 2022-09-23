@@ -25,13 +25,7 @@ namespace KS.Scripting.Conditions.Types
     {
 
         /// <inheritdoc/>
-        public override string ConditionName
-        {
-            get
-            {
-                return "fileex";
-            }
-        }
+        public override string ConditionName => "fileex";
 
         /// <inheritdoc/>
         public override int ConditionPosition { get; } = 1;

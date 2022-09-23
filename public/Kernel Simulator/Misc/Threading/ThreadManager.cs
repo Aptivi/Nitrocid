@@ -36,13 +36,7 @@ namespace KS.Misc.Threading
         /// <summary>
         /// Gets active threads
         /// </summary>
-        public static List<KernelThread> ActiveThreads
-        {
-            get
-            {
-                return KernelThreads.Where(x => x.IsAlive).ToList();
-            }
-        }
+        public static List<KernelThread> ActiveThreads => KernelThreads.Where(x => x.IsAlive).ToList();
 
         /// <summary>
         /// Stops all active threads

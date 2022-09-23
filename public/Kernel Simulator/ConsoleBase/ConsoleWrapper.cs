@@ -56,7 +56,7 @@ namespace KS.ConsoleBase
         /// <summary>
         /// The standard output stream that the console uses
         /// </summary>
-        public static TextWriter Out { get => Console.Out; }
+        public static TextWriter Out => Console.Out;
 
         /// <summary>
         /// The cursor left position

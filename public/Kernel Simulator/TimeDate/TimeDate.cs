@@ -32,11 +32,11 @@ namespace KS.TimeDate
         /// <summary>
         /// The kernel time and date
         /// </summary>
-        public static DateTime KernelDateTime { get => DateTime.Now; }
+        public static DateTime KernelDateTime => DateTime.Now;
         /// <summary>
         /// The kernel time and date (UTC)
         /// </summary>
-        public static DateTime KernelDateTimeUtc { get => DateTime.UtcNow; }
+        public static DateTime KernelDateTimeUtc => DateTime.UtcNow;
 
         /// <summary>
         /// Specifies the time/date format type.

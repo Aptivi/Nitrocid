@@ -26,32 +26,14 @@ namespace KS.Misc.Splash.Splashes
     {
 
         // Standalone splash information
-        public string SplashName
-        {
-            get
-            {
-                return "BeatFader";
-            }
-        }
+        public string SplashName => "BeatFader";
 
-        private SplashInfo Info
-        {
-            get
-            {
-                return SplashManager.Splashes[SplashName];
-            }
-        }
+        private SplashInfo Info => SplashManager.Splashes[SplashName];
 
         // Property implementations
         public bool SplashClosing { get; set; }
 
-        public bool SplashDisplaysProgress
-        {
-            get
-            {
-                return Info.DisplaysProgress;
-            }
-        }
+        public bool SplashDisplaysProgress => Info.DisplaysProgress;
 
         // BeatFader-specific variables
         internal Animations.BeatFader.BeatFaderSettings BeatFaderSettingsInstance;

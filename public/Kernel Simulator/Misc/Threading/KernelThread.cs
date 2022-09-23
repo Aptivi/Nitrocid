@@ -46,13 +46,7 @@ namespace KS.Misc.Threading
         /// <summary>
         /// Is the kernel thread alive?
         /// </summary>
-        public bool IsAlive
-        {
-            get
-            {
-                return BaseThread.IsAlive;
-            }
-        }
+        public bool IsAlive => BaseThread.IsAlive;
 
         /// <summary>
         /// Makes a new kernel thread

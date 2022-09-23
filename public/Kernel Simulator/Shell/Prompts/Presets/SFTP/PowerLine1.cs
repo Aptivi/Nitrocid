@@ -37,13 +37,7 @@ namespace KS.Shell.Prompts.Presets.SFTP
         public override string PresetName { get; } = "PowerLine1";
 
         /// <inheritdoc/>
-        public override string PresetPrompt
-        {
-            get
-            {
-                return PresetPromptBuilder();
-            }
-        }
+        public override string PresetPrompt => PresetPromptBuilder();
 
         /// <inheritdoc/>
         public override ShellType PresetShellType { get; } = ShellType.SFTPShell;

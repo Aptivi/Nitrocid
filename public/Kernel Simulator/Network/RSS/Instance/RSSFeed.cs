@@ -40,58 +40,28 @@ namespace KS.Network.RSS.Instance
         /// <summary>
         /// A URL to RSS feed
         /// </summary>
-        public string FeedUrl
-        {
-            get
-            {
-                return _FeedUrl;
-            }
-        }
+        public string FeedUrl => _FeedUrl;
 
         /// <summary>
         /// RSS feed type
         /// </summary>
-        public RSSFeedType FeedType
-        {
-            get
-            {
-                return _FeedType;
-            }
-        }
+        public RSSFeedType FeedType => _FeedType;
 
         /// <summary>
         /// RSS feed type
         /// </summary>
-        public string FeedTitle
-        {
-            get
-            {
-                return _FeedTitle;
-            }
-        }
+        public string FeedTitle => _FeedTitle;
 
         /// <summary>
         /// RSS feed description (Atom feeds not supported and always return an empty string)
         /// </summary>
-        public string FeedDescription
-        {
-            get
-            {
-                return _FeedDescription;
-            }
-        }
+        public string FeedDescription => _FeedDescription;
 
         /// <summary>
         /// Feed articles
         /// </summary>
         /// <returns></returns>
-        public List<RSSArticle> FeedArticles
-        {
-            get
-            {
-                return _FeedArticles;
-            }
-        }
+        public List<RSSArticle> FeedArticles => _FeedArticles;
 
         /// <summary>
         /// Makes a new instance of an RSS feed class

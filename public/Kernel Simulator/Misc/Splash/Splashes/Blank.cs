@@ -25,32 +25,14 @@ namespace KS.Misc.Splash.Splashes
     {
 
         // Standalone splash information
-        public string SplashName
-        {
-            get
-            {
-                return "Blank";
-            }
-        }
+        public string SplashName => "Blank";
 
-        private SplashInfo Info
-        {
-            get
-            {
-                return SplashManager.Splashes[SplashName];
-            }
-        }
+        private SplashInfo Info => SplashManager.Splashes[SplashName];
 
         // Property implementations
         public bool SplashClosing { get; set; }
 
-        public bool SplashDisplaysProgress
-        {
-            get
-            {
-                return Info.DisplaysProgress;
-            }
-        }
+        public bool SplashDisplaysProgress => Info.DisplaysProgress;
 
         // Actual logic
         public void Opening()

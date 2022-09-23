@@ -174,13 +174,7 @@ namespace KS.Misc.Notifications
         /// <summary>
         /// Whether the progress has been compeleted successfully or with failure
         /// </summary>
-        public bool ProgressCompleted
-        {
-            get
-            {
-                return _Progress >= 100 | ProgressFailed;
-            }
-        }
+        public bool ProgressCompleted => _Progress >= 100 | ProgressFailed;
 
         /// <summary>
         /// The notification border color. Must be null for custom priority notifications.

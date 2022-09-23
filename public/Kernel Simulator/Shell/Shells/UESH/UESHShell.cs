@@ -38,13 +38,7 @@ namespace KS.Shell.Shells.UESH
     {
 
         /// <inheritdoc/>
-        public override ShellType ShellType
-        {
-            get
-            {
-                return ShellType.Shell;
-            }
-        }
+        public override ShellType ShellType => ShellType.Shell;
 
         /// <inheritdoc/>
         public override bool Bail { get; set; }

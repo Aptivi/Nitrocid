@@ -126,7 +126,7 @@ namespace KS.Misc.Screensaver
         /// <summary>
         /// Whether the kernel is on the screensaver mode
         /// </summary>
-        public static bool InSaver { get => inSaver; }
+        public static bool InSaver => inSaver;
 
         /// <summary>
         /// Handles the screensaver time so that when it reaches the time threshold, the screensaver launches

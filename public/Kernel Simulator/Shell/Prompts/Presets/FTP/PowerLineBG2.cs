@@ -37,13 +37,7 @@ namespace KS.Shell.Prompts.Presets.FTP
         public override string PresetName { get; } = "PowerLineBG2";
 
         /// <inheritdoc/>
-        public override string PresetPrompt
-        {
-            get
-            {
-                return PresetPromptBuilder();
-            }
-        }
+        public override string PresetPrompt => PresetPromptBuilder();
 
         /// <inheritdoc/>
         public override ShellType PresetShellType { get; } = ShellType.FTPShell;

@@ -35,13 +35,7 @@ namespace KS.Shell.Shells.Mail
     {
 
         /// <inheritdoc/>
-        public override ShellType ShellType
-        {
-            get
-            {
-                return ShellType.MailShell;
-            }
-        }
+        public override ShellType ShellType => ShellType.MailShell;
 
         /// <inheritdoc/>
         public override bool Bail { get; set; }

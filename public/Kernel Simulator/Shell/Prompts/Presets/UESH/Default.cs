@@ -36,13 +36,7 @@ namespace KS.Shell.Prompts.Presets.UESH
         public override string PresetName { get; } = "Default";
 
         /// <inheritdoc/>
-        public override string PresetPrompt
-        {
-            get
-            {
-                return PresetPromptBuilder();
-            }
-        }
+        public override string PresetPrompt => PresetPromptBuilder();
 
         internal override string PresetPromptBuilder()
         {

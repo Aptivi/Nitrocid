@@ -60,13 +60,7 @@ namespace KS.Scripting.Conditions
         /// <summary>
         /// The available condition names
         /// </summary>
-        public static Dictionary<string, BaseCondition> AvailableConditions
-        {
-            get
-            {
-                return Conditions;
-            }
-        }
+        public static Dictionary<string, BaseCondition> AvailableConditions => Conditions;
 
         /// <summary>
         /// Checks if the UESH condition was satisfied

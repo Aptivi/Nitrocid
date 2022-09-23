@@ -39,13 +39,7 @@ namespace KS.Shell.Shells.Hex
     {
 
         /// <inheritdoc/>
-        public override ShellType ShellType
-        {
-            get
-            {
-                return ShellType.HexShell;
-            }
-        }
+        public override ShellType ShellType => ShellType.HexShell;
 
         /// <inheritdoc/>
         public override bool Bail { get; set; }

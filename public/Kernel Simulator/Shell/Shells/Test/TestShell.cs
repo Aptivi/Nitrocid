@@ -39,13 +39,7 @@ namespace KS.Shell.Shells.Test
     {
 
         /// <inheritdoc/>
-        public override ShellType ShellType
-        {
-            get
-            {
-                return ShellType.TestShell;
-            }
-        }
+        public override ShellType ShellType => ShellType.TestShell;
 
         /// <inheritdoc/>
         public override bool Bail { get; set; }

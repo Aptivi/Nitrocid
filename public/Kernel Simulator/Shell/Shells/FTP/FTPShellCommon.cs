@@ -128,13 +128,7 @@ namespace KS.Shell.Shells.FTP
         /// <summary>
         /// The FTP client used to connect to the FTP server
         /// </summary>
-        public static FtpClient ClientFTP
-        {
-            get
-            {
-                return _clientFTP;
-            }
-        }
+        public static FtpClient ClientFTP => _clientFTP;
 
     }
 }

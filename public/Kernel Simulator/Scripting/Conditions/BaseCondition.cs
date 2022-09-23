@@ -29,13 +29,7 @@ namespace KS.Scripting.Conditions
         /// <summary>
         /// Condition name
         /// </summary>
-        public virtual string ConditionName
-        {
-            get
-            {
-                return "none";
-            }
-        }
+        public virtual string ConditionName => "none";
 
         /// <summary>
         /// Condition position (starts from 1)

@@ -43,13 +43,7 @@ namespace KS.Shell.Shells.Archive
     public class ArchiveShell : ShellExecutor, IShell
     {
         /// <inheritdoc/>
-        public override ShellType ShellType
-        {
-            get
-            {
-                return ShellType.ArchiveShell;
-            }
-        }
+        public override ShellType ShellType => ShellType.ArchiveShell;
 
         /// <inheritdoc/>
         public override bool Bail { get; set; }

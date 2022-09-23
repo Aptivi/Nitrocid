@@ -37,13 +37,7 @@ namespace KS.Shell.Shells.SFTP
     {
 
         /// <inheritdoc/>
-        public override ShellType ShellType
-        {
-            get
-            {
-                return ShellType.SFTPShell;
-            }
-        }
+        public override ShellType ShellType => ShellType.SFTPShell;
 
         /// <inheritdoc/>
         public override bool Bail { get; set; }

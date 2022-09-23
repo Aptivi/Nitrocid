@@ -34,13 +34,7 @@ namespace KS.Files
         /// <summary>
         /// Path to KS executable folder
         /// </summary>
-        public static string ExecPath
-        {
-            get
-            {
-                return System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            }
-        }
+        public static string ExecPath => System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
         /// <summary>
         /// Platform-dependent home path
@@ -130,182 +124,107 @@ namespace KS.Files
         /// <summary>
         /// Mods path
         /// </summary>
-        public static string ModsPath
-        {
-            get
-            {
+        public static string ModsPath =>
                 // return Filesystem.NeutralizePath(AppDataPath + "/KSMods/");
-                return Filesystem.NeutralizePath(HomePath + "/KSMods/");
-            }
-        }
+                Filesystem.NeutralizePath(HomePath + "/KSMods/");
 
         /// <summary>
         /// Configuration path
         /// </summary>
-        public static string ConfigurationPath
-        {
-            get
-            {
+        public static string ConfigurationPath =>
                 // return Filesystem.NeutralizePath(AppDataPath + "/KernelConfig.json");
-                return Filesystem.NeutralizePath(HomePath + "/KernelConfig.json");
-            }
-        }
+                Filesystem.NeutralizePath(HomePath + "/KernelConfig.json");
 
         /// <summary>
         /// Debugging path
         /// </summary>
-        public static string DebuggingPath
-        {
-            get
-            {
+        public static string DebuggingPath =>
                 // return Filesystem.NeutralizePath(AppDataPath + "/kernelDbg.log");
-                return Filesystem.NeutralizePath(HomePath + "/kernelDbg.log");
-            }
-        }
+                Filesystem.NeutralizePath(HomePath + "/kernelDbg.log");
 
         /// <summary>
         /// Aliases path
         /// </summary>
-        public static string AliasesPath
-        {
-            get
-            {
+        public static string AliasesPath =>
                 // return Filesystem.NeutralizePath(AppDataPath + "/Aliases.json");
-                return Filesystem.NeutralizePath(HomePath + "/Aliases.json");
-            }
-        }
+                Filesystem.NeutralizePath(HomePath + "/Aliases.json");
 
         /// <summary>
         /// Users path
         /// </summary>
-        public static string UsersPath
-        {
-            get
-            {
+        public static string UsersPath =>
                 // return Filesystem.NeutralizePath(AppDataPath + "/Users.json");
-                return Filesystem.NeutralizePath(HomePath + "/Users.json");
-            }
-        }
+                Filesystem.NeutralizePath(HomePath + "/Users.json");
 
         /// <summary>
         /// FTPSpeedDial path
         /// </summary>
-        public static string FTPSpeedDialPath
-        {
-            get
-            {
+        public static string FTPSpeedDialPath =>
                 // return Filesystem.NeutralizePath(AppDataPath + "/FTP_SpeedDial.json");
-                return Filesystem.NeutralizePath(HomePath + "/FTP_SpeedDial.json");
-            }
-        }
+                Filesystem.NeutralizePath(HomePath + "/FTP_SpeedDial.json");
 
         /// <summary>
         /// SFTPSpeedDial path
         /// </summary>
-        public static string SFTPSpeedDialPath
-        {
-            get
-            {
+        public static string SFTPSpeedDialPath =>
                 // return Filesystem.NeutralizePath(AppDataPath + "/SFTP_SpeedDial.json");
-                return Filesystem.NeutralizePath(HomePath + "/SFTP_SpeedDial.json");
-            }
-        }
+                Filesystem.NeutralizePath(HomePath + "/SFTP_SpeedDial.json");
 
         /// <summary>
         /// DebugDevNames path
         /// </summary>
-        public static string DebugDevNamesPath
-        {
-            get
-            {
+        public static string DebugDevNamesPath =>
                 // return Filesystem.NeutralizePath(AppDataPath + "/DebugDeviceNames.json");
-                return Filesystem.NeutralizePath(HomePath + "/DebugDeviceNames.json");
-            }
-        }
+                Filesystem.NeutralizePath(HomePath + "/DebugDeviceNames.json");
 
         /// <summary>
         /// MOTD path
         /// </summary>
-        public static string MOTDPath
-        {
-            get
-            {
+        public static string MOTDPath =>
                 // return Filesystem.NeutralizePath(AppDataPath + "/MOTD.txt");
-                return Filesystem.NeutralizePath(HomePath + "/MOTD.txt");
-            }
-        }
+                Filesystem.NeutralizePath(HomePath + "/MOTD.txt");
 
         /// <summary>
         /// MAL path
         /// </summary>
-        public static string MALPath
-        {
-            get
-            {
+        public static string MALPath =>
                 // return Filesystem.NeutralizePath(AppDataPath + "/MAL.txt");
-                return Filesystem.NeutralizePath(HomePath + "/MAL.txt");
-            }
-        }
+                Filesystem.NeutralizePath(HomePath + "/MAL.txt");
 
         /// <summary>
         /// CustomSaverSettings path
         /// </summary>
-        public static string CustomSaverSettingsPath
-        {
-            get
-            {
+        public static string CustomSaverSettingsPath =>
                 // return Filesystem.NeutralizePath(AppDataPath + "/CustomSaverSettings.json");
-                return Filesystem.NeutralizePath(HomePath + "/CustomSaverSettings.json");
-            }
-        }
+                Filesystem.NeutralizePath(HomePath + "/CustomSaverSettings.json");
 
         /// <summary>
         /// Events path
         /// </summary>
-        public static string EventsPath
-        {
-            get
-            {
+        public static string EventsPath =>
                 // return Filesystem.NeutralizePath(AppDataPath + "/KSEvents/");
-                return Filesystem.NeutralizePath(HomePath + "/KSEvents/");
-            }
-        }
+                Filesystem.NeutralizePath(HomePath + "/KSEvents/");
 
         /// <summary>
         /// Reminders path
         /// </summary>
-        public static string RemindersPath
-        {
-            get
-            {
+        public static string RemindersPath =>
                 // return Filesystem.NeutralizePath(AppDataPath + "/KSReminders/");
-                return Filesystem.NeutralizePath(HomePath + "/KSReminders/");
-            }
-        }
+                Filesystem.NeutralizePath(HomePath + "/KSReminders/");
 
         /// <summary>
         /// CustomLanguages path
         /// </summary>
-        public static string CustomLanguagesPath
-        {
-            get
-            {
+        public static string CustomLanguagesPath =>
                 // return Filesystem.NeutralizePath(AppDataPath + "/KSLanguages/");
-                return Filesystem.NeutralizePath(HomePath + "/KSLanguages/");
-            }
-        }
+                Filesystem.NeutralizePath(HomePath + "/KSLanguages/");
 
         /// <summary>
         /// CustomSplashes path
         /// </summary>
-        public static string CustomSplashesPath
-        {
-            get
-            {
+        public static string CustomSplashesPath =>
                 // return Filesystem.NeutralizePath(AppDataPath + "/KSSplashes/");
-                return Filesystem.NeutralizePath(HomePath + "/KSSplashes/");
-            }
-        }
+                Filesystem.NeutralizePath(HomePath + "/KSSplashes/");
 
         /// <summary>
         /// Gets the neutralized kernel path

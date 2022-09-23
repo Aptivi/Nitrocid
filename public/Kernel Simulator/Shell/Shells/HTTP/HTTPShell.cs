@@ -36,13 +36,7 @@ namespace KS.Shell.Shells.HTTP
     {
 
         /// <inheritdoc/>
-        public override ShellType ShellType
-        {
-            get
-            {
-                return ShellType.HTTPShell;
-            }
-        }
+        public override ShellType ShellType => ShellType.HTTPShell;
 
         /// <inheritdoc/>
         public override bool Bail { get; set; }

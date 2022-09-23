@@ -38,13 +38,7 @@ namespace KS.Shell.Prompts.Presets.Archive
         public override string PresetName { get; } = "PowerLine3";
 
         /// <inheritdoc/>
-        public override string PresetPrompt
-        {
-            get
-            {
-                return PresetPromptBuilder();
-            }
-        }
+        public override string PresetPrompt => PresetPromptBuilder();
 
         /// <inheritdoc/>
         public override ShellType PresetShellType { get; } = ShellType.ArchiveShell;

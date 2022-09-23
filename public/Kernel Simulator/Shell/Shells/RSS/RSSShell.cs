@@ -41,13 +41,7 @@ namespace KS.Shell.Shells.RSS
     {
 
         /// <inheritdoc/>
-        public override ShellType ShellType
-        {
-            get
-            {
-                return ShellType.RSSShell;
-            }
-        }
+        public override ShellType ShellType => ShellType.RSSShell;
 
         /// <inheritdoc/>
         public override bool Bail { get; set; }

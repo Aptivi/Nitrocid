@@ -78,13 +78,7 @@ namespace KS.Shell.Shells.SFTP
         /// <summary>
         /// The SFTP client used to connect to the SFTP server
         /// </summary>
-        public static SftpClient ClientSFTP
-        {
-            get
-            {
-                return _clientSFTP;
-            }
-        }
+        public static SftpClient ClientSFTP => _clientSFTP;
 
     }
 }

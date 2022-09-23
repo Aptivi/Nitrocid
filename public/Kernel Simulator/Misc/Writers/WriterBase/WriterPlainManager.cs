@@ -38,12 +38,12 @@ namespace KS.Misc.Writers.WriterBase
         /// <summary>
         /// Gets the current plain writer name
         /// </summary>
-        public static string CurrentPlainName { get => currentPlainName; }
+        public static string CurrentPlainName => currentPlainName;
 
         /// <summary>
         /// Gets the current plain writer interface
         /// </summary>
-        public static IWriterPlain CurrentPlain { get => currentPlain; }
+        public static IWriterPlain CurrentPlain => currentPlain;
 
         /// <summary>
         /// Changes the plain writer

@@ -37,13 +37,7 @@ namespace KS.Shell.Shells.Json
     {
 
         /// <inheritdoc/>
-        public override ShellType ShellType
-        {
-            get
-            {
-                return ShellType.JsonShell;
-            }
-        }
+        public override ShellType ShellType => ShellType.JsonShell;
 
         /// <inheritdoc/>
         public override bool Bail { get; set; }

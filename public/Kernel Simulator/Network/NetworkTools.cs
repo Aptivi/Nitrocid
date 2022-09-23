@@ -75,13 +75,7 @@ namespace KS.Network
         /// <summary>
         /// Checks to see if the network is available
         /// </summary>
-        public static bool NetworkAvailable
-        {
-            get
-            {
-                return NetworkInterface.GetIsNetworkAvailable();
-            }
-        }
+        public static bool NetworkAvailable => NetworkInterface.GetIsNetworkAvailable();
 
         /// <summary>
         /// Pings an address

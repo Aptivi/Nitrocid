@@ -81,13 +81,7 @@ namespace KS.Shell
         /// <summary>
         /// Current shell type
         /// </summary>
-        public static ShellType CurrentShellType
-        {
-            get
-            {
-                return ShellStart.ShellStack[ShellStart.ShellStack.Count - 1].ShellType;
-            }
-        }
+        public static ShellType CurrentShellType => ShellStart.ShellStack[ShellStart.ShellStack.Count - 1].ShellType;
 
         /// <summary>
         /// Last shell type

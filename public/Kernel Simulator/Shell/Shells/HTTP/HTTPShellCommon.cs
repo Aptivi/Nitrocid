@@ -56,12 +56,6 @@ namespace KS.Shell.Shells.HTTP
         /// <summary>
         /// See if the HTTP shell is connected
         /// </summary>
-        public static bool HTTPConnected
-        {
-            get
-            {
-                return !string.IsNullOrEmpty(HTTPSite);
-            }
-        }
+        public static bool HTTPConnected => !string.IsNullOrEmpty(HTTPSite);
     }
 }
