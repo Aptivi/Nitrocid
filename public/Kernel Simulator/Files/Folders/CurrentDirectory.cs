@@ -21,7 +21,6 @@ using System.IO;
 using Extensification.StringExts;
 using KS.Files.Querying;
 using KS.Kernel.Configuration;
-using static KS.Kernel.Configuration.Config;
 using KS.Languages;
 using KS.Kernel.Debugging;
 

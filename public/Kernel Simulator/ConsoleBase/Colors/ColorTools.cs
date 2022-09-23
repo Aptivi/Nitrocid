@@ -655,7 +655,7 @@ namespace KS.ConsoleBase.Colors
                     }
                 default:
                     {
-                        SetConsoleColor(ColorTools.GetColor(colorType), Background, ForceSet);
+                        SetConsoleColor(GetColor(colorType), Background, ForceSet);
                         break;
                     }
             }

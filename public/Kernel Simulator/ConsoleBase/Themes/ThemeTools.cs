@@ -143,7 +143,7 @@ namespace KS.ConsoleBase.Themes
                 theme = theme.ReplaceAll(new[] { "-", " " }, "_");
                 if (theme == "Default")
                 {
-                    ColorTools.ResetColors();
+                    ResetColors();
                 }
                 else if (theme == "3Y-Diamond")
                 {
