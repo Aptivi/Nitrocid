@@ -143,7 +143,7 @@ namespace KS.ConsoleBase.Themes.Studio
         public static void LoadThemeFromThemeInfo(ThemeInfo themeInfo)
         {
             // Place information to the studio
-            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ColorTools.ColTypes)).Length - 2; typeIndex++)
+            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ColorTools.ColTypes)).Length - 1; typeIndex++)
             {
                 ColorTools.ColTypes type = SelectedColors.Keys.ElementAt(typeIndex);
                 SelectedColors[type] = themeInfo.ThemeColors[type];
@@ -156,7 +156,7 @@ namespace KS.ConsoleBase.Themes.Studio
         public static void LoadThemeFromCurrentColors()
         {
             // Place information to the studio
-            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ColorTools.ColTypes)).Length - 2; typeIndex++)
+            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ColorTools.ColTypes)).Length - 1; typeIndex++)
             {
                 ColorTools.ColTypes type = SelectedColors.Keys.ElementAt(typeIndex);
                 SelectedColors[type] = ColorTools.KernelColors[type];
@@ -192,7 +192,7 @@ namespace KS.ConsoleBase.Themes.Studio
             themeJson.Add(metadata);
 
             // Populate the colors
-            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ColorTools.ColTypes)).Length - 2; typeIndex++)
+            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ColorTools.ColTypes)).Length - 1; typeIndex++)
             {
                 // Add the color to the final object
                 ColorTools.ColTypes type = SelectedColors.Keys.ElementAt(typeIndex);

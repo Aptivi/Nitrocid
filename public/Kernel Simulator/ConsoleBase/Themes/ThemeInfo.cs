@@ -104,7 +104,7 @@ namespace KS.ConsoleBase.Themes
         protected ThemeInfo(JToken ThemeResourceJson)
         {
             // Place information to the class
-            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ColorTools.ColTypes)).Length - 2; typeIndex++)
+            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ColorTools.ColTypes)).Length - 1; typeIndex++)
             {
                 ColorTools.ColTypes type = ThemeColors.Keys.ElementAt(typeIndex);
                 ThemeColors[type] = new Color(ThemeResourceJson.SelectToken($"{type}Color").ToString());
