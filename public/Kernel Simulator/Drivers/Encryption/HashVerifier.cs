@@ -318,41 +318,7 @@ namespace KS.Drivers.Encryption
         /// </summary>
         /// <param name="HashType">An encryption algorithm</param>
         /// <returns>The expected hash length</returns>
-        public static int GetExpectedHashLength(EncryptionAlgorithms HashType)
-        {
-            switch (HashType)
-            {
-                case EncryptionAlgorithms.SHA512:
-                    {
-                        return 128;
-                    }
-                case EncryptionAlgorithms.SHA384:
-                    {
-                        return 96;
-                    }
-                case EncryptionAlgorithms.SHA256:
-                    {
-                        return 64;
-                    }
-                case EncryptionAlgorithms.SHA1:
-                    {
-                        return 40;
-                    }
-                case EncryptionAlgorithms.MD5:
-                    {
-                        return 32;
-                    }
-                case EncryptionAlgorithms.CRC32:
-                    {
-                        return 8;
-                    }
-
-                default:
-                    {
-                        throw new Kernel.Exceptions.InvalidHashAlgorithmException("Invalid encryption algorithm.");
-                    }
-            }
-        }
+        public static int GetExpectedHashLength(EncryptionAlgorithms HashType) => Encryption.encryptors[HashType.ToString()].HashLength;
 
     }
 }

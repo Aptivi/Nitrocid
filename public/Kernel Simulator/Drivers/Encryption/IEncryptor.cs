@@ -32,6 +32,11 @@ namespace KS.Drivers.Encryption
         abstract string EmptyHash { get; }
 
         /// <summary>
+        /// The expected hash length
+        /// </summary>
+        abstract int HashLength { get; }
+
+        /// <summary>
         /// Encrypts a string
         /// </summary>
         /// <param name="str">Source string</param>
@@ -51,5 +56,39 @@ namespace KS.Drivers.Encryption
         /// <param name="Path">Relative path</param>
         /// <returns>Encrypted hash sum of a file</returns>
         abstract string GetEncryptedFile(string Path);
+
+        /// <summary>
+        /// Verifies the hash sum of a file from expected hash
+        /// </summary>
+        /// <param name="FileName">Target file</param>
+        /// <param name="ExpectedHash">Expected hash of a target file</param>
+        /// <param name="ActualHash">Actual hash calculated from hash tool</param>
+        /// <returns>True if they match; else, false.</returns>
+        abstract bool VerifyHashFromHash(string FileName, string ExpectedHash, string ActualHash);
+
+        /// <summary>
+        /// Verifies the hash sum of a file from hashes file
+        /// </summary>
+        /// <param name="FileName">Target file</param>
+        /// <param name="HashesFile">Hashes file that contains the target file</param>
+        /// <param name="ActualHash">Actual hash calculated from hash tool</param>
+        /// <returns>True if they match; else, false.</returns>
+        abstract bool VerifyHashFromHashesFile(string FileName, string HashesFile, string ActualHash);
+
+        /// <summary>
+        /// Verifies the hash sum of a file from expected hash once the file's hash is calculated.
+        /// </summary>
+        /// <param name="FileName">Target file</param>
+        /// <param name="ExpectedHash">Expected hash of a target file</param>
+        /// <returns>True if they match; else, false.</returns>
+        abstract bool VerifyUncalculatedHashFromHash(string FileName, string ExpectedHash);
+
+        /// <summary>
+        /// Verifies the hash sum of a file from hashes file once the file's hash is calculated.
+        /// </summary>
+        /// <param name="FileName">Target file</param>
+        /// <param name="HashesFile">Hashes file that contains the target file</param>
+        /// <returns>True if they match; else, false.</returns>
+        abstract bool VerifyUncalculatedHashFromHashesFile(string FileName, string HashesFile);
     }
 }

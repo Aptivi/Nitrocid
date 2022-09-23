@@ -29,10 +29,11 @@ namespace KS.Drivers.Encryption.Encryptors
     /// </summary>
     public class SHA1 : IEncryptor
     {
-        /// <summary>
-        /// Empty hash
-        /// </summary>
+        /// <inheritdoc/>
         public string EmptyHash => GetEncryptedString("");
+
+        /// <inheritdoc/>
+        public int HashLength => 40;
 
         /// <inheritdoc/>
         public string GetEncryptedFile(Stream stream)
@@ -59,5 +60,17 @@ namespace KS.Drivers.Encryption.Encryptors
             var hashbyte = Encryptor.Create().ComputeHash(Encoding.UTF8.GetBytes(str));
             return Encryption.GetArrayEnc(hashbyte);
         }
+
+        /// <inheritdoc/>
+        public bool VerifyHashFromHash(string FileName, string ExpectedHash, string ActualHash) => HashVerifier.VerifyHashFromHash(FileName, EncryptionAlgorithms.SHA1, ExpectedHash, ActualHash);
+
+        /// <inheritdoc/>
+        public bool VerifyHashFromHashesFile(string FileName, string HashesFile, string ActualHash) => HashVerifier.VerifyHashFromHashesFile(FileName, EncryptionAlgorithms.SHA1, HashesFile, ActualHash);
+
+        /// <inheritdoc/>
+        public bool VerifyUncalculatedHashFromHash(string FileName, string ExpectedHash) => HashVerifier.VerifyUncalculatedHashFromHash(FileName, EncryptionAlgorithms.SHA1, ExpectedHash);
+
+        /// <inheritdoc/>
+        public bool VerifyUncalculatedHashFromHashesFile(string FileName, string HashesFile) => HashVerifier.VerifyUncalculatedHashFromHashesFile(FileName, EncryptionAlgorithms.SHA1, HashesFile);
     }
 }
