@@ -22,6 +22,7 @@ using KS.Kernel;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using System;
+using System.Linq;
 
 namespace KS.Arguments.ArgumentBase
 {
@@ -51,20 +52,9 @@ namespace KS.Arguments.ArgumentBase
         public static void ShowArgsHelp(string Argument, ArgumentType ArgumentType)
         {
             // Determine argument type
-            var ArgumentList = ArgumentParse.AvailableArgs;
-            switch (ArgumentType)
-            {
-                case ArgumentType.KernelArgs:
-                    {
-                        ArgumentList = ArgumentParse.AvailableArgs;
-                        break;
-                    }
-                case ArgumentType.CommandLineArgs:
-                    {
-                        ArgumentList = CommandLineArgs.AvailableCMDLineArgs;
-                        break;
-                    }
-            }
+            var ArgumentList = (ArgumentType == ArgumentType.CommandLineArgs ? CommandLineArgs.AvailableCMDLineArgs : ArgumentParse.AvailableArgs)
+                                   .OrderBy((CommandValuePair) => CommandValuePair.Key)
+                                   .ToDictionary((CommandValuePair) => CommandValuePair.Key, (CommandValuePair) => CommandValuePair.Value);
 
             // Check to see if argument exists
             if (!string.IsNullOrWhiteSpace(Argument) & ArgumentList.ContainsKey(Argument))

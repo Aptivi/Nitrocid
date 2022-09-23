@@ -19,6 +19,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Kernel;
@@ -63,7 +64,9 @@ namespace KS.Shell.ShellBase.Commands
         public static void ShowHelp(string command, ShellType CommandType, StreamWriter DebugDeviceSocket = null)
         {
             // Determine command type
-            var CommandList = GetCommand.GetCommands(CommandType);
+            var CommandList = GetCommand.GetCommands(CommandType)
+                                        .OrderBy((CommandValuePair) => CommandValuePair.Key)
+                                        .ToDictionary((CommandValuePair) => CommandValuePair.Key, (CommandValuePair) => CommandValuePair.Value);
             Dictionary<string, CommandInfo> ModCommandList;
             var AliasedCommandList = AliasManager.Aliases;
 
