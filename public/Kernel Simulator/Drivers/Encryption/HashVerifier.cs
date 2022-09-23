@@ -41,7 +41,7 @@ namespace KS.Drivers.Encryption
         /// <exception cref="Kernel.Exceptions.InvalidHashException"></exception>
         /// <exception cref="Kernel.Exceptions.InvalidHashAlgorithmException"></exception>
         /// <exception cref="FileNotFoundException"></exception>
-        public static bool VerifyHashFromHashesFile(string FileName, Encryption.Algorithms HashType, string HashesFile, string ActualHash)
+        public static bool VerifyHashFromHashesFile(string FileName, EncryptionAlgorithms HashType, string HashesFile, string ActualHash)
         {
             int ExpectedHashLength;
             string ExpectedHash = "";
@@ -130,7 +130,7 @@ namespace KS.Drivers.Encryption
         /// <exception cref="Kernel.Exceptions.InvalidHashException"></exception>
         /// <exception cref="Kernel.Exceptions.InvalidHashAlgorithmException"></exception>
         /// <exception cref="FileNotFoundException"></exception>
-        public static bool VerifyHashFromHash(string FileName, Encryption.Algorithms HashType, string ExpectedHash, string ActualHash)
+        public static bool VerifyHashFromHash(string FileName, EncryptionAlgorithms HashType, string ExpectedHash, string ActualHash)
         {
             int ExpectedHashLength;
 
@@ -181,7 +181,7 @@ namespace KS.Drivers.Encryption
         /// <exception cref="Kernel.Exceptions.InvalidHashException"></exception>
         /// <exception cref="Kernel.Exceptions.InvalidHashAlgorithmException"></exception>
         /// <exception cref="FileNotFoundException"></exception>
-        public static bool VerifyUncalculatedHashFromHashesFile(string FileName, Encryption.Algorithms HashType, string HashesFile)
+        public static bool VerifyUncalculatedHashFromHashesFile(string FileName, EncryptionAlgorithms HashType, string HashesFile)
         {
             int ExpectedHashLength;
             string ExpectedHash = "";
@@ -270,7 +270,7 @@ namespace KS.Drivers.Encryption
         /// <exception cref="Kernel.Exceptions.InvalidHashException"></exception>
         /// <exception cref="Kernel.Exceptions.InvalidHashAlgorithmException"></exception>
         /// <exception cref="FileNotFoundException"></exception>
-        public static bool VerifyUncalculatedHashFromHash(string FileName, Encryption.Algorithms HashType, string ExpectedHash)
+        public static bool VerifyUncalculatedHashFromHash(string FileName, EncryptionAlgorithms HashType, string ExpectedHash)
         {
             int ExpectedHashLength;
             string ActualHash;
@@ -318,31 +318,31 @@ namespace KS.Drivers.Encryption
         /// </summary>
         /// <param name="HashType">An encryption algorithm</param>
         /// <returns>The expected hash length</returns>
-        public static int GetExpectedHashLength(Encryption.Algorithms HashType)
+        public static int GetExpectedHashLength(EncryptionAlgorithms HashType)
         {
             switch (HashType)
             {
-                case Encryption.Algorithms.SHA512:
+                case EncryptionAlgorithms.SHA512:
                     {
                         return 128;
                     }
-                case Encryption.Algorithms.SHA384:
+                case EncryptionAlgorithms.SHA384:
                     {
                         return 96;
                     }
-                case Encryption.Algorithms.SHA256:
+                case EncryptionAlgorithms.SHA256:
                     {
                         return 64;
                     }
-                case Encryption.Algorithms.SHA1:
+                case EncryptionAlgorithms.SHA1:
                     {
                         return 40;
                     }
-                case Encryption.Algorithms.MD5:
+                case EncryptionAlgorithms.MD5:
                     {
                         return 32;
                     }
-                case Encryption.Algorithms.CRC32:
+                case EncryptionAlgorithms.CRC32:
                     {
                         return 8;
                     }

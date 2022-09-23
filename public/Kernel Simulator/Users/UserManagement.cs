@@ -93,7 +93,7 @@ namespace KS.Users
                 var Regexp = new Regex("^([a-fA-F0-9]{64})$");
                 if (ComputationNeeded)
                 {
-                    unpassword = Encryption.GetEncryptedString(unpassword, Encryption.Algorithms.SHA256);
+                    unpassword = Encryption.GetEncryptedString(unpassword, EncryptionAlgorithms.SHA256);
                     DebugWriter.WriteDebug(DebugLevel.I, "Hash computed.");
                 }
                 else if (!Regexp.IsMatch(unpassword))
@@ -477,13 +477,13 @@ namespace KS.Users
         /// <exception cref="Kernel.Exceptions.UserManagementException"></exception>
         public static void ChangePassword(string Target, string CurrentPass, string NewPass)
         {
-            CurrentPass = Encryption.GetEncryptedString(CurrentPass, Encryption.Algorithms.SHA256);
+            CurrentPass = Encryption.GetEncryptedString(CurrentPass, EncryptionAlgorithms.SHA256);
             if ((CurrentPass ?? "") == (Login.Login.Users[Target] ?? ""))
             {
                 if (GroupManagement.HasGroup(Login.Login.CurrentUser.Username, GroupManagement.GroupType.Administrator) & Login.Login.Users.ContainsKey(Target))
                 {
                     // Change password locally
-                    NewPass = Encryption.GetEncryptedString(NewPass, Encryption.Algorithms.SHA256);
+                    NewPass = Encryption.GetEncryptedString(NewPass, EncryptionAlgorithms.SHA256);
                     Login.Login.Users[Target] = NewPass;
 
                     // Change password globally
@@ -666,7 +666,7 @@ namespace KS.Users
             // Fourth, write root password
             while (Step == 4)
             {
-                if ((Login.Login.Users["root"] ?? "") == (Encryption.GetEmptyHash(Encryption.Algorithms.SHA256) ?? ""))
+                if ((Login.Login.Users["root"] ?? "") == (Encryption.GetEmptyHash(EncryptionAlgorithms.SHA256) ?? ""))
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Write the administrator password. Make sure that you don't use this account unless you really know what you're doing."), true, ColorTools.ColTypes.NeutralText);
                     TextWriterColor.Write(">> ", false, ColorTools.ColTypes.Input);
@@ -698,7 +698,7 @@ namespace KS.Users
             // Actually change the root password if specified
             if (!string.IsNullOrEmpty(AnswerRootPassword))
             {
-                AnswerRootPassword = Encryption.GetEncryptedString(AnswerRootPassword, Encryption.Algorithms.SHA256);
+                AnswerRootPassword = Encryption.GetEncryptedString(AnswerRootPassword, EncryptionAlgorithms.SHA256);
                 SetUserProperty("root", UserProperty.Password, AnswerRootPassword);
                 Login.Login.Users["root"] = AnswerRootPassword;
             }

@@ -142,3 +142,7 @@ As a result, we've used `CommandArgumentInfo` in `ArgumentInfo`.
 ##### Removed *SetColors as they're no longer used
 
 We have improved the color tools module, so SetColors is no longer used. We've removed it for this reason. Use `SetColor()` instead.
+
+##### Changed algorithm enum to EncryptionAlgorithms
+
+As part of an ongoing change to the encryption driver, we've changed the algorithm enumeration to EncryptionAlgorithms outside the Encryption module.

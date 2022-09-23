@@ -35,7 +35,7 @@ namespace KS.Shell.Shells.Test.Commands
         {
             var spent = new Stopwatch();
             spent.Start(); // Time when you're on a breakpoint is counted
-            TextWriterColor.Write(Encryption.GetEncryptedString(ListArgsOnly[0], Encryption.Algorithms.SHA1), true, ColorTools.ColTypes.NeutralText);
+            TextWriterColor.Write(Encryption.GetEncryptedString(ListArgsOnly[0], EncryptionAlgorithms.SHA1), true, ColorTools.ColTypes.NeutralText);
             TextWriterColor.Write(Translate.DoTranslation("Time spent: {0} milliseconds"), true, ColorTools.ColTypes.NeutralText, spent.ElapsedMilliseconds);
             spent.Stop();
         }

@@ -57,12 +57,12 @@ namespace KS.Shell.Shells.UESH.Commands
                 {
                     string finalFile = Filesystem.NeutralizePath(file);
                     SeparatorWriterColor.WriteSeparator(finalFile, true);
-                    Encryption.Algorithms AlgorithmEnum;
+                    EncryptionAlgorithms AlgorithmEnum;
                     if (ListArgsOnly[0] == "all")
                     {
-                        foreach (string Algorithm in Enum.GetNames(typeof(Encryption.Algorithms)))
+                        foreach (string Algorithm in Enum.GetNames(typeof(EncryptionAlgorithms)))
                         {
-                            AlgorithmEnum = (Encryption.Algorithms)Convert.ToInt32(Enum.Parse(typeof(Encryption.Algorithms), Algorithm));
+                            AlgorithmEnum = (EncryptionAlgorithms)Convert.ToInt32(Enum.Parse(typeof(EncryptionAlgorithms), Algorithm));
                             var spent = new Stopwatch();
                             spent.Start(); // Time when you're on a breakpoint is counted
                             string encrypted = Encryption.GetEncryptedFile(finalFile, AlgorithmEnum);

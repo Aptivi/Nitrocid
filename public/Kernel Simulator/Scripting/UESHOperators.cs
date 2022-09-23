@@ -330,7 +330,7 @@ namespace KS.Scripting
             DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", FirstVariable, FirstVarValue);
             string SecondVarValue = UESHVariables.GetVariable(SecondVariable);
             DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", SecondVariable, SecondVarValue);
-            Satisfied = (Encryption.GetEncryptedString(FirstVarValue, Encryption.Algorithms.SHA256) ?? "") == (SecondVarValue ?? "");
+            Satisfied = (Encryption.GetEncryptedString(FirstVarValue, EncryptionAlgorithms.SHA256) ?? "") == (SecondVarValue ?? "");
             DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
             return Satisfied;
         }
@@ -349,7 +349,7 @@ namespace KS.Scripting
             DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", FirstVariable, FirstVarValue);
             string SecondVarValue = UESHVariables.GetVariable(SecondVariable);
             DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", SecondVariable, SecondVarValue);
-            Satisfied = (Encryption.GetEncryptedString(FirstVarValue, Encryption.Algorithms.SHA256) ?? "") != (SecondVarValue ?? "");
+            Satisfied = (Encryption.GetEncryptedString(FirstVarValue, EncryptionAlgorithms.SHA256) ?? "") != (SecondVarValue ?? "");
             DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
             return Satisfied;
         }
@@ -368,7 +368,7 @@ namespace KS.Scripting
             DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", FirstVariable, FirstVarValue);
             string SecondVarValue = UESHVariables.GetVariable(SecondVariable);
             DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", SecondVariable, SecondVarValue);
-            Satisfied = (Encryption.GetEncryptedFile(FirstVarValue, Encryption.Algorithms.SHA256) ?? "") == (SecondVarValue ?? "");
+            Satisfied = (Encryption.GetEncryptedFile(FirstVarValue, EncryptionAlgorithms.SHA256) ?? "") == (SecondVarValue ?? "");
             DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
             return Satisfied;
         }
@@ -387,7 +387,7 @@ namespace KS.Scripting
             DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", FirstVariable, FirstVarValue);
             string SecondVarValue = UESHVariables.GetVariable(SecondVariable);
             DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", SecondVariable, SecondVarValue);
-            Satisfied = (Encryption.GetEncryptedFile(FirstVarValue, Encryption.Algorithms.SHA256) ?? "") != (SecondVarValue ?? "");
+            Satisfied = (Encryption.GetEncryptedFile(FirstVarValue, EncryptionAlgorithms.SHA256) ?? "") != (SecondVarValue ?? "");
             DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
             return Satisfied;
         }

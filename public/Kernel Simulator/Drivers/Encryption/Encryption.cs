@@ -44,37 +44,6 @@ namespace KS.Drivers.Encryption
         };
 
         /// <summary>
-        /// Encryption algorithms supported by KS
-        /// </summary>
-        public enum Algorithms
-        {
-            /// <summary>
-            /// The MD5 Algorithm
-            /// </summary>
-            MD5,
-            /// <summary>
-            /// The SHA1 Algorithm
-            /// </summary>
-            SHA1,
-            /// <summary>
-            /// The SHA256 Algorithm
-            /// </summary>
-            SHA256,
-            /// <summary>
-            /// The SHA384 Algorithm
-            /// </summary>
-            SHA384,
-            /// <summary>
-            /// The SHA512 Algorithm
-            /// </summary>
-            SHA512,
-            /// <summary>
-            /// The CRC32 Algorithm
-            /// </summary>
-            CRC32
-        }
-
-        /// <summary>
         /// Registers the encryptor (Mods that implement IEncryptors should use this function to add their encryptors to the list)
         /// </summary>
         /// <param name="encryptor">Encryptor instance</param>
@@ -97,8 +66,8 @@ namespace KS.Drivers.Encryption
         /// <param name="encryptorName">Encryptor name</param>
         public static void UnregisterEncryptor(string encryptorName)
         {
-            // Make sure that we don't remove algorithms implemented by Kernel Simulator
-            if (Enum.IsDefined(typeof(Algorithms), encryptorName))
+            // Make sure that we don't remove EncryptionAlgorithms implemented by Kernel Simulator
+            if (Enum.IsDefined(typeof(EncryptionAlgorithms), encryptorName))
                 throw new InvalidHashAlgorithmException(Translate.DoTranslation("Tried to remove an internal algorithm. This isn't possible."));
 
             // Remove it!
@@ -128,7 +97,7 @@ namespace KS.Drivers.Encryption
         /// <param name="str">Source string</param>
         /// <param name="algorithm">Algorithm</param>
         /// <returns>Encrypted hash sum</returns>
-        public static string GetEncryptedString(string str, Algorithms algorithm)
+        public static string GetEncryptedString(string str, EncryptionAlgorithms algorithm)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Selected algorithm: {0}", algorithm.ToString());
             DebugWriter.WriteDebug(DebugLevel.I, "String length: {0}", str.Length);
@@ -143,7 +112,7 @@ namespace KS.Drivers.Encryption
         /// <param name="str">Source stream</param>
         /// <param name="algorithm">Algorithm</param>
         /// <returns>Encrypted hash sum</returns>
-        public static string GetEncryptedFile(Stream str, Algorithms algorithm)
+        public static string GetEncryptedFile(Stream str, EncryptionAlgorithms algorithm)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Selected algorithm: {0}", algorithm.ToString());
             DebugWriter.WriteDebug(DebugLevel.I, "Stream length: {0}", str.Length);
@@ -158,7 +127,7 @@ namespace KS.Drivers.Encryption
         /// <param name="Path">Relative path</param>
         /// <param name="algorithm">Algorithm</param>
         /// <returns>Encrypted hash sum</returns>
-        public static string GetEncryptedFile(string Path, Algorithms algorithm)
+        public static string GetEncryptedFile(string Path, EncryptionAlgorithms algorithm)
         {
             Path = Filesystem.NeutralizePath(Path);
             var Str = new FileStream(Path, FileMode.Open);
@@ -172,7 +141,7 @@ namespace KS.Drivers.Encryption
         /// </summary>
         /// <param name="Algorithm">Algorithm</param>
         /// <returns>Empty hash</returns>
-        public static string GetEmptyHash(Algorithms Algorithm) => encryptors[Algorithm.ToString()].EmptyHash;
+        public static string GetEmptyHash(EncryptionAlgorithms Algorithm) => encryptors[Algorithm.ToString()].EmptyHash;
 
     }
 }
