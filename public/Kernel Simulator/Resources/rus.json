@@ -1181,7 +1181,7 @@
     "A character that resembles the left frame. Be sure to only input one character.": "Personazh, napominayushchiy levuyu ramku. Obyazatel'no vvodite tol'ko odin simvol.",
     "A character that resembles the right frame. Be sure to only input one character.": "Personazh, napominayushchiy pravuyu ramku. Obyazatel'no vvodite tol'ko odin simvol.",
     "Write how your information text for the current hour shows. {0} for current hour out of 24 hours.": "Napishite, kak otobrazhayetsya vash informatsionnyy tekst na tekushchiy chas. {0} za tekushchiy chas iz 24 chasov.",
-    "Write how your information text for the current minute shows. {0} for current minute out of 60 minutes.": "Napishite, kak otobrazhayetsya vash informatsionnyy tekst na tekushchuyu minutu. {0} za tekushchuyu minutu iz 60 minut.",
+    "Write how your information text for the current minute shows. {0} for current minute out of 60 minutes.": "Napishite, kak otobrazhayetsya vash informatsionnyy tekst na tekushchuyu minutu. {0} za tekushchuyu minutu iz 60 minut.",
     "Write how your information text for the current second shows. {0} for current second out of 60 seconds.": "Napishite, kak otobrazhayetsya vash informatsionnyy tekst na tekushchuyu sekundu. {0} dlya tekushchey sekundy iz 60 sekund.",
     "Text color": "Tsvet teksta",
     "Upper left corner character for ramp bar": "Verkhniy levyy uglovoy simvol dlya pandusa",

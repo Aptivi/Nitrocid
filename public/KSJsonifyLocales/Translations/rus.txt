@@ -1177,7 +1177,7 @@ Personazh, napominayushchiy nizhnyuyu ramku. Obyazatel'no vvodite tol'ko odin si
 Personazh, napominayushchiy levuyu ramku. Obyazatel'no vvodite tol'ko odin simvol.
 Personazh, napominayushchiy pravuyu ramku. Obyazatel'no vvodite tol'ko odin simvol.
 Napishite, kak otobrazhayetsya vash informatsionnyy tekst na tekushchiy chas. {0} za tekushchiy chas iz 24 chasov.
-Napishite, kak otobrazhayetsya vash informatsionnyy tekst na tekushchuyu minutu. {0} za tekushchuyu minutu iz 60 minut.
+Napishite, kak otobrazhayetsya vash informatsionnyy tekst na tekushchuyu minutu. {0} za tekushchuyu minutu iz 60 minut.
 Napishite, kak otobrazhayetsya vash informatsionnyy tekst na tekushchuyu sekundu. {0} dlya tekushchey sekundy iz 60 sekund.
 Tsvet teksta
 Verkhniy levyy uglovoy simvol dlya pandusa

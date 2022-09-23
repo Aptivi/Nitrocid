@@ -1181,7 +1181,7 @@
     "A character that resembles the left frame. Be sure to only input one character.": "Персонаж, напоминающий левую рамку. Обязательно вводите только один символ.",
     "A character that resembles the right frame. Be sure to only input one character.": "Персонаж, напоминающий правую рамку. Обязательно вводите только один символ.",
     "Write how your information text for the current hour shows. {0} for current hour out of 24 hours.": "Напишите, как отображается ваш информационный текст на текущий час. {0} за текущий час из 24 часов.",
-    "Write how your information text for the current minute shows. {0} for current minute out of 60 minutes.": "Напишите, как отображается ваш информационный текст на текущую минуту. {0} за текущую минуту из 60 минут.",
+    "Write how your information text for the current minute shows. {0} for current minute out of 60 minutes.": "Напишите, как отображается ваш информационный текст на текущую минуту. {0} за текущую минуту из 60 минут.",
     "Write how your information text for the current second shows. {0} for current second out of 60 seconds.": "Напишите, как отображается ваш информационный текст на текущую секунду. {0} для текущей секунды из 60 секунд.",
     "Text color": "Цвет текста",
     "Upper left corner character for ramp bar": "Верхний левый угловой символ для пандуса",
