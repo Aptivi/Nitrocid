@@ -92,6 +92,16 @@ namespace KS.ConsoleBase.Inputs.Styles
                             HighlightedAnswer += 1;
                             break;
                         }
+                    case ConsoleKey.PageUp:
+                        {
+                            HighlightedAnswer = 0;
+                            break;
+                        }
+                    case ConsoleKey.PageDown:
+                        {
+                            HighlightedAnswer = answers.Length;
+                            break;
+                        }
                     case ConsoleKey.Enter:
                         {
                             return HighlightedAnswer;
