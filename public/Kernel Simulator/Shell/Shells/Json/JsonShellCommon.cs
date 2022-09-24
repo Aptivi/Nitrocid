@@ -43,6 +43,7 @@ namespace KS.Shell.Shells.Json
             { "clear", new CommandInfo("clear", ShellType.JsonShell, "Clears the JSON file", new CommandArgumentInfo(), new JsonShell_ClearCommand()) },
             { "delproperty", new CommandInfo("delproperty", ShellType.JsonShell, "Removes a property from the JSON file", new CommandArgumentInfo(new[] { "<propertyName>" }, true, 1), new JsonShell_DelPropertyCommand()) },
             { "exitnosave", new CommandInfo("exitnosave", ShellType.JsonShell, "Exits the JSON shell without saving the changes", new CommandArgumentInfo(), new JsonShell_ExitNoSaveCommand()) },
+            { "jsoninfo", new CommandInfo("jsoninfo", ShellType.JsonShell, "Shows information about the JSON file", new CommandArgumentInfo(), new JsonShell_JsonInfoCommand()) },
             { "print", new CommandInfo("print", ShellType.JsonShell, "Prints the JSON file", new CommandArgumentInfo(new[] { "[property]" }, false, 0), new JsonShell_PrintCommand()) },
             { "save", new CommandInfo("save", ShellType.JsonShell, "Saves the JSON file", new CommandArgumentInfo(new[] { "[-b|-m]" }, false, 0), new JsonShell_SaveCommand()) }
         };
