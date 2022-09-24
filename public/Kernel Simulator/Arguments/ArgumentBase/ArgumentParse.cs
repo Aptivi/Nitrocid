@@ -40,7 +40,6 @@ namespace KS.Arguments.ArgumentBase
         public readonly static Dictionary<string, ArgumentInfo> AvailableArgs = new()
         {
             { "quiet", new ArgumentInfo("quiet", ArgumentType.KernelArgs, "Starts the kernel quietly", new CommandArgumentInfo(), new QuietArgument()) },
-            { "debug", new ArgumentInfo("debug", ArgumentType.KernelArgs, "Enables debug mode", new CommandArgumentInfo(), new DebugArgument()) },
             { "maintenance", new ArgumentInfo("maintenance", ArgumentType.KernelArgs, "Like safe mode, but also disables multi-user and some customization", new CommandArgumentInfo(), new MaintenanceArgument()) },
             { "safe", new ArgumentInfo("safe", ArgumentType.KernelArgs, "Starts the kernel in safe mode, disabling all mods", new CommandArgumentInfo(), new SafeArgument()) },
             { "testInteractive", new ArgumentInfo("testInteractive", ArgumentType.KernelArgs, "Opens a test shell", new CommandArgumentInfo(), new TestInteractiveArgument()) }
