@@ -53,5 +53,18 @@ namespace KS.Shell.ShellBase.Commands
             // Return the final result
             return switchValues;
         }
+
+        /// <summary>
+        /// Gets the switch value
+        /// </summary>
+        /// <param name="switches">List of switches</param>
+        /// <param name="switchKey">Switch key</param>
+        public static string GetSwitchValue(string[] switches, string switchKey)
+        {
+            var switchValues = GetSwitchValues(switches);
+            return switchValues.Exists((tuple) => tuple.Item1 == switchKey) ?
+                   switchValues.Find((tuple) => tuple.Item1 == switchKey).Item2 :
+                   "";
+        }
     }
 }

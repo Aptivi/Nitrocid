@@ -34,10 +34,7 @@ namespace KS.Shell.Shells.Json.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            var switchValues = SwitchManager.GetSwitchValues(ListSwitchesOnly);
-            string parent = switchValues.Exists((tuple) => tuple.Item1 == "-parentProperty") ?
-                            switchValues.Find((tuple) => tuple.Item1 == "-parentProperty").Item2 :
-                            "";
+            string parent = SwitchManager.GetSwitchValue(ListSwitchesOnly, "-parentProperty");
             JsonTools.JsonShell_AddNewArray(parent, ListArgsOnly[0], JArray.Parse("[ \"" + string.Join("\", \"", ListArgsOnly.Skip(1).ToArray()) + "\" ]"));
         }
     }
