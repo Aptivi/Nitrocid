@@ -32,7 +32,13 @@ namespace KS.Shell.Shells.Json.Commands
     class JsonShell_AddArrayCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => JsonTools.JsonShell_AddNewArray(ListArgsOnly[0], ListArgsOnly[1], JArray.Parse("[ \"" + string.Join("\", \"", ListArgsOnly.Skip(2).ToArray()) + "\" ]"));
-
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        {
+            var switchValues = SwitchManager.GetSwitchValues(ListSwitchesOnly);
+            string parent = switchValues.Exists((tuple) => tuple.Item1 == "-parentProperty") ?
+                            switchValues.Find((tuple) => tuple.Item1 == "-parentProperty").Item2 :
+                            "";
+            JsonTools.JsonShell_AddNewArray(parent, ListArgsOnly[0], JArray.Parse("[ \"" + string.Join("\", \"", ListArgsOnly.Skip(1).ToArray()) + "\" ]"));
+        }
     }
 }

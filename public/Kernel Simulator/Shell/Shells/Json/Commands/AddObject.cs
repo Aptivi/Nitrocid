@@ -18,8 +18,6 @@
 
 using KS.Misc.Editors.JsonShell;
 using KS.Shell.ShellBase.Commands;
-using Newtonsoft.Json.Linq;
-using System.Linq;
 
 namespace KS.Shell.Shells.Json.Commands
 {
@@ -32,7 +30,13 @@ namespace KS.Shell.Shells.Json.Commands
     class JsonShell_AddObjectCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => JsonTools.JsonShell_AddNewObject(ListArgsOnly[0], ListArgsOnly[1], ListArgsOnly[2]);
-
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        {
+            var switchValues = SwitchManager.GetSwitchValues(ListSwitchesOnly);
+            string parent = switchValues.Exists((tuple) => tuple.Item1 == "-parentProperty") ?
+                            switchValues.Find((tuple) => tuple.Item1 == "-parentProperty").Item2 :
+                            "";
+            JsonTools.JsonShell_AddNewObject(parent, ListArgsOnly[0], ListArgsOnly[1]);
+        }
     }
 }

@@ -30,7 +30,13 @@ namespace KS.Shell.Shells.Json.Commands
     class JsonShell_AddPropertyCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => JsonTools.JsonShell_AddNewProperty(ListArgsOnly[0], ListArgsOnly[1], ListArgsOnly[2]);
-
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        {
+            var switchValues = SwitchManager.GetSwitchValues(ListSwitchesOnly);
+            string parent = switchValues.Exists((tuple) => tuple.Item1 == "-parentProperty") ?
+                            switchValues.Find((tuple) => tuple.Item1 == "-parentProperty").Item2 :
+                            "";
+            JsonTools.JsonShell_AddNewProperty(parent, ListArgsOnly[0], ListArgsOnly[1]);
+        }
     }
 }
