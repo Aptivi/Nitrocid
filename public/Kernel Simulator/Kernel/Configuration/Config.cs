@@ -123,29 +123,36 @@ namespace KS.Kernel.Configuration
 
             // Get the max sections
             int MaxSections = metadata.Count();
+            DebugWriter.WriteDebug(DebugLevel.I, "Max sections from metadata: {0}", MaxSections);
             for (int SectionIndex = 0; SectionIndex <= MaxSections - 1; SectionIndex++)
             {
+                DebugWriter.WriteDebug(DebugLevel.I, "Section index: {0}", SectionIndex);
                 JObject ConfigSectionOptionsObject = new();
 
                 // Get the section property and fetch metadata information from section
                 JProperty Section = (JProperty)metadata.ToList()[SectionIndex];
+                DebugWriter.WriteDebug(DebugLevel.I, "Section name: {0}", Section.Name);
                 var SectionTokenGeneral = metadata[Section.Name];
                 var SectionToken = SectionTokenGeneral["Keys"];
 
                 // Count the options
                 int MaxOptions = SectionToken.Count();
+                DebugWriter.WriteDebug(DebugLevel.I, "Number of options: {0}", MaxOptions);
                 for (int OptionIndex = 0; OptionIndex <= MaxOptions - 1; OptionIndex++)
                 {
                     // Get the setting token and fetch information
+                    DebugWriter.WriteDebug(DebugLevel.I, "Option index: {0}", OptionIndex);
                     var Setting = SectionToken[OptionIndex];
                     string VariableKeyName = (string)Setting["Name"];
                     string Variable = (string)Setting["Variable"];
                     bool VariableIsInternal = (bool)(Setting["IsInternal"] ?? false);
                     bool VariableIsEnumerable = (bool)(Setting["IsEnumerable"] ?? false);
                     int VariableEnumerableIndex = (int)(Setting["EnumerableIndex"] ?? 0);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Variable key name: {0} [reflecting {1}] with int: {2}, enum: {3}, enumidx: {4}", VariableKeyName, Variable, VariableIsInternal, VariableIsEnumerable, VariableEnumerableIndex);
 
                     // Get variable value and type
                     SettingsKeyType VariableType = (SettingsKeyType)Convert.ToInt32(Enum.Parse(typeof(SettingsKeyType), (string)Setting["Type"]));
+                    DebugWriter.WriteDebug(DebugLevel.I, "Got variable type: {0}", VariableType);
                     object VariableValue = null;
 
                     // Check the value if we're dealing with an enumerable
@@ -173,6 +180,7 @@ namespace KS.Kernel.Configuration
                             // We're dealing with the field or the property which takes color but is a string containing plain sequence
                             VariableValue = ((Color)VariableValue).PlainSequence;
                         }
+                        DebugWriter.WriteDebug(DebugLevel.I, "Got color var value: {0}", VariableValue);
                     }
                     else
                     {
@@ -180,6 +188,7 @@ namespace KS.Kernel.Configuration
                             VariableValue = FieldManager.GetValue(Variable, VariableIsInternal);
                         else
                             VariableValue = PropertyManager.GetPropertyValue(Variable);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Got var value: {0}", VariableValue);
                     }
 
                     // Check to see if the value is numeric
@@ -189,13 +198,16 @@ namespace KS.Kernel.Configuration
                             VariableValue = int.Parse(Convert.ToString(VariableValue));
                         else if (Convert.ToInt64(VariableValue) <= long.MaxValue)
                             VariableValue = long.Parse(Convert.ToString(VariableValue));
+                        DebugWriter.WriteDebug(DebugLevel.I, "Made necessary conversion for value: {0} [{1}]", VariableValue, VariableValue.GetType());
                     }
 
                     // Now, add the key to the options object
+                    DebugWriter.WriteDebug(DebugLevel.I, "Adding {0} to final options object", VariableKeyName);
                     ConfigSectionOptionsObject.Add(VariableKeyName, VariableValue != null ? JToken.FromObject(VariableValue) : null);
                 }
 
                 // Now, add the key to the options object
+                DebugWriter.WriteDebug(DebugLevel.I, "Adding {0} to final object", Section.Name);
                 ConfigObject.Add(Section.Name, ConfigSectionOptionsObject);
             }
 
@@ -1475,10 +1487,14 @@ namespace KS.Kernel.Configuration
             {
                 // Get the max sections
                 int MaxSections = metadata.Count();
+                DebugWriter.WriteDebug(DebugLevel.I, "Max sections from metadata: {0}", MaxSections);
                 for (int SectionIndex = 0; SectionIndex <= MaxSections - 1; SectionIndex++)
                 {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Section index: {0}", SectionIndex);
+
                     // Get the section property and fetch metadata information from section
                     JProperty Section = (JProperty)metadata.ToList()[SectionIndex];
+                    DebugWriter.WriteDebug(DebugLevel.I, "Section name: {0}", Section.Name);
                     var SectionTokenGeneral = metadata[Section.Name];
                     var SectionToken = SectionTokenGeneral["Keys"];
 
@@ -1488,18 +1504,22 @@ namespace KS.Kernel.Configuration
 
                     // Count the options
                     int MaxOptions = SectionToken.Count();
+                    DebugWriter.WriteDebug(DebugLevel.I, "Number of options: {0}", MaxOptions);
                     for (int OptionIndex = 0; OptionIndex <= MaxOptions - 1; OptionIndex++)
                     {
                         // Get the setting token and fetch information
+                        DebugWriter.WriteDebug(DebugLevel.I, "Option index: {0}", OptionIndex);
                         var Setting = SectionToken[OptionIndex];
                         string VariableKeyName = (string)Setting["Name"];
                         string Variable = (string)Setting["Variable"];
                         bool VariableIsInternal = (bool)(Setting["IsInternal"] ?? false);
                         bool VariableIsEnumerable = (bool)(Setting["IsEnumerable"] ?? false);
                         int VariableEnumerableIndex = (int)(Setting["EnumerableIndex"] ?? 0);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Variable key name: {0} [reflecting {1}] with int: {2}, enum: {3}, enumidx: {4}", VariableKeyName, Variable, VariableIsInternal, VariableIsEnumerable, VariableEnumerableIndex);
 
                         // Get variable value and type
                         SettingsKeyType VariableType = (SettingsKeyType)Convert.ToInt32(Enum.Parse(typeof(SettingsKeyType), (string)Setting["Type"]));
+                        DebugWriter.WriteDebug(DebugLevel.I, "Got variable type: {0}", VariableType);
                         object VariableValue = null;
 
                         // Check the value if we're dealing with an enumerable
@@ -1522,6 +1542,7 @@ namespace KS.Kernel.Configuration
                                 // We're dealing with the field or the property which takes color but is a string containing plain sequence
                                 VariableValue = ((Color)VariableValue).PlainSequence;
                             }
+                            DebugWriter.WriteDebug(DebugLevel.I, "Got color var value: {0}", VariableValue);
                         }
                         else if (VariableType == SettingsKeyType.SSelection)
                         {
@@ -1546,9 +1567,13 @@ namespace KS.Kernel.Configuration
                             {
                                 VariableValue = ConfigTokenFromPath[VariableKeyName].ToObject<dynamic>();
                             }
+                            DebugWriter.WriteDebug(DebugLevel.I, "Got var value: {0}", VariableValue);
                         }
                         else
+                        {
                             VariableValue = ConfigTokenFromPath[VariableKeyName].ToObject<dynamic>();
+                            DebugWriter.WriteDebug(DebugLevel.I, "Got var value: {0}", VariableValue);
+                        }
 
                         // Check to see if the value is numeric
                         if (VariableValue is int or long)
@@ -1557,17 +1582,20 @@ namespace KS.Kernel.Configuration
                                 VariableValue = int.Parse(Convert.ToString(VariableValue));
                             else if (Convert.ToInt64(VariableValue) <= long.MaxValue)
                                 VariableValue = long.Parse(Convert.ToString(VariableValue));
+                            DebugWriter.WriteDebug(DebugLevel.I, "Made necessary conversion for value: {0} [{1}]", VariableValue, VariableValue.GetType());
                         }
 
                         // Now, set the value
                         if (FieldManager.CheckField(Variable))
                         {
                             // We're dealing with the field
+                            DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0}...", Variable);
                             FieldManager.SetValue(Variable, VariableValue, true);
                         }
                         else if (PropertyManager.CheckProperty(Variable))
                         {
                             // We're dealing with the property
+                            DebugWriter.WriteDebug(DebugLevel.I, "Setting property {0}...", Variable);
                             PropertyManager.SetPropertyValue(Variable, VariableValue);
                         }
                     }

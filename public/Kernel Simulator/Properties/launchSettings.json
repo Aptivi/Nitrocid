@@ -30,6 +30,18 @@
     "KS - new config reader and writer": {
       "commandName": "Project",
       "commandLineArgs": "newwriter newreader"
+    },
+    "KS - new config reader [Debug]": {
+      "commandName": "Project",
+      "commandLineArgs": "newreader debug"
+    },
+    "KS - new config writer [Debug]": {
+      "commandName": "Project",
+      "commandLineArgs": "newwriter debug"
+    },
+    "KS - new config reader and writer [Debug]": {
+      "commandName": "Project",
+      "commandLineArgs": "newreader newwriter debug"
     }
   }
 }
