@@ -26,7 +26,7 @@ using KS.Misc.Writers.FancyWriters;
 namespace KS.Shell.Shells.Json.Commands
 {
     /// <summary>
-    /// Exits the JSON shell without saving changes to the JSON file if any.
+    /// Gets information about the JSON file and its contents
     /// </summary>
     class JsonShell_JsonInfoCommand : CommandExecutor, ICommand
     {
