@@ -38,16 +38,13 @@ namespace KS.Shell.ShellBase.Commands
             {
                 // Check the index to see if there is an equal sign
                 int switchIndex = @switch.IndexOf('=');
+                string switchName, switchValue;
                 if (switchIndex == -1)
                     continue;
 
-                // Check to see if the equal sign is at the end
-                if (switchIndex == @switch.Length - 1)
-                    continue;
-
-                // Get switch name and value
-                string switchName = @switch.Substring(0, switchIndex);
-                string switchValue = @switch.Substring(switchIndex + 1);
+                // Get switch name and value. If the equal sign is at the end, the value is an empty value.
+                switchName = @switch.Substring(0, switchIndex);
+                switchValue = switchIndex != @switch.Length - 1 ? @switch.Substring(switchIndex + 1) : "";
 
                 // Add the values to the list
                 switchValues.Add((switchName, switchValue));
