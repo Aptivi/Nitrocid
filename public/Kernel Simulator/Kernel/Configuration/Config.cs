@@ -1239,6 +1239,23 @@ namespace KS.Kernel.Configuration
             };
             ScreensaverConfig.Add("Spin", SpinConfig);
 
+            // SnakeFill config json object
+            var SnakeFillConfig = new JObject()
+            {
+                { "Activate 255 colors", SnakeFillSettings.SnakeFill255Colors },
+                { "Activate true colors", SnakeFillSettings.SnakeFillTrueColor },
+                { "Delay in Milliseconds", SnakeFillSettings.SnakeFillDelay },
+                { "Minimum red color level", SnakeFillSettings.SnakeFillMinimumRedColorLevel },
+                { "Minimum green color level", SnakeFillSettings.SnakeFillMinimumGreenColorLevel },
+                { "Minimum blue color level", SnakeFillSettings.SnakeFillMinimumBlueColorLevel },
+                { "Minimum color level", SnakeFillSettings.SnakeFillMinimumColorLevel },
+                { "Maximum red color level", SnakeFillSettings.SnakeFillMaximumRedColorLevel },
+                { "Maximum green color level", SnakeFillSettings.SnakeFillMaximumGreenColorLevel },
+                { "Maximum blue color level", SnakeFillSettings.SnakeFillMaximumBlueColorLevel },
+                { "Maximum color level", SnakeFillSettings.SnakeFillMaximumColorLevel }
+            };
+            ScreensaverConfig.Add("SnakeFill", SnakeFillConfig);
+
             // Add a screensaver config json object to Screensaver section
             ConfigurationObject.Add("Screensaver", ScreensaverConfig);
 
@@ -1991,6 +2008,19 @@ namespace KS.Kernel.Configuration
             WipeSettings.WipeMaximumGreenColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Wipe"]["Maximum green color level"], out _) ? (int)ConfigToken["Screensaver"]["Wipe"]["Maximum green color level"] : 255;
             WipeSettings.WipeMaximumBlueColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Wipe"]["Maximum blue color level"], out _) ? (int)ConfigToken["Screensaver"]["Wipe"]["Maximum blue color level"] : 255;
             WipeSettings.WipeMaximumColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Wipe"]["Maximum color level"], out _) ? (int)ConfigToken["Screensaver"]["Wipe"]["Maximum color level"] : 255;
+            
+            // > SnakeFill
+            SnakeFillSettings.SnakeFill255Colors = (bool)ConfigToken["Screensaver"]["SnakeFill"]["Activate 255 colors"];
+            SnakeFillSettings.SnakeFillTrueColor = (bool)ConfigToken["Screensaver"]["SnakeFill"]["Activate true colors"];
+            SnakeFillSettings.SnakeFillDelay = int.TryParse((string)ConfigToken["Screensaver"]["SnakeFill"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["SnakeFill"]["Delay in Milliseconds"] : 10;
+            SnakeFillSettings.SnakeFillMinimumRedColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["SnakeFill"]["Minimum red color level"], out _) ? (int)ConfigToken["Screensaver"]["SnakeFill"]["Minimum red color level"] : 0;
+            SnakeFillSettings.SnakeFillMinimumGreenColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["SnakeFill"]["Minimum green color level"], out _) ? (int)ConfigToken["Screensaver"]["SnakeFill"]["Minimum green color level"] : 0;
+            SnakeFillSettings.SnakeFillMinimumBlueColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["SnakeFill"]["Minimum blue color level"], out _) ? (int)ConfigToken["Screensaver"]["SnakeFill"]["Minimum blue color level"] : 0;
+            SnakeFillSettings.SnakeFillMinimumColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["SnakeFill"]["Minimum color level"], out _) ? (int)ConfigToken["Screensaver"]["SnakeFill"]["Minimum color level"] : 0;
+            SnakeFillSettings.SnakeFillMaximumRedColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["SnakeFill"]["Maximum red color level"], out _) ? (int)ConfigToken["Screensaver"]["SnakeFill"]["Maximum red color level"] : 255;
+            SnakeFillSettings.SnakeFillMaximumGreenColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["SnakeFill"]["Maximum green color level"], out _) ? (int)ConfigToken["Screensaver"]["SnakeFill"]["Maximum green color level"] : 255;
+            SnakeFillSettings.SnakeFillMaximumBlueColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["SnakeFill"]["Maximum blue color level"], out _) ? (int)ConfigToken["Screensaver"]["SnakeFill"]["Maximum blue color level"] : 255;
+            SnakeFillSettings.SnakeFillMaximumColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["SnakeFill"]["Maximum color level"], out _) ? (int)ConfigToken["Screensaver"]["SnakeFill"]["Maximum color level"] : 255;
 
             // > Fader
             FaderSettings.FaderDelay = int.TryParse((string)ConfigToken["Screensaver"]["Fader"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Fader"]["Delay in Milliseconds"] : 50;
