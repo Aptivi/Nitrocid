@@ -39,6 +39,7 @@ namespace KS.Shell.Shells.Json
         /// </summary>
         public readonly static Dictionary<string, CommandInfo> JsonShell_Commands = new()
         {
+            { "addarray", new CommandInfo("addarray", ShellType.JsonShell, "Adds a new property containing the array", new CommandArgumentInfo(new[] { "<parentProperty> <propertyName> <propertyValue1> [propertyValue2] [propertyValue3]..." }, true, 3), new JsonShell_AddArrayCommand()) },
             { "addproperty", new CommandInfo("addproperty", ShellType.JsonShell, "Adds a new property at the end of the JSON file", new CommandArgumentInfo(new[] { "<parentProperty> <propertyName> <propertyValue>" }, true, 3), new JsonShell_AddPropertyCommand()) },
             { "clear", new CommandInfo("clear", ShellType.JsonShell, "Clears the JSON file", new CommandArgumentInfo(), new JsonShell_ClearCommand()) },
             { "delproperty", new CommandInfo("delproperty", ShellType.JsonShell, "Removes a property from the JSON file", new CommandArgumentInfo(new[] { "<propertyName>" }, true, 1), new JsonShell_DelPropertyCommand()) },

@@ -192,6 +192,21 @@ namespace KS.Misc.Editors.JsonShell
         }
 
         /// <summary>
+        /// Adds a new array to the current JSON file
+        /// </summary>
+        /// <param name="ParentProperty">Where to place the new array?</param>
+        /// <param name="Key">New array</param>
+        /// <param name="Values">The values for the new array</param>
+        public static void JsonShell_AddNewArray(string ParentProperty, string Key, JArray Values)
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
+            var TargetToken = JsonShell_GetProperty(ParentProperty);
+            JObject TokenObject = (JObject)TargetToken;
+            TokenObject.Add(Key, Values);
+            DebugWriter.WriteDebug(DebugLevel.I, "New file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
+        }
+
+        /// <summary>
         /// Removes a property from the current JSON file
         /// </summary>
         /// <param name="Property">The property. You can use JSONPath.</param>
