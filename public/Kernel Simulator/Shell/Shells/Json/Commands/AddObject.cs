@@ -24,15 +24,15 @@ using System.Linq;
 namespace KS.Shell.Shells.Json.Commands
 {
     /// <summary>
-    /// Adds a new array
+    /// Adds a new object
     /// </summary>
     /// <remarks>
-    /// You can use this command to add an array to the end of the parent property. Note that the parent property must exist.
+    /// You can use this command to add an object to the end of the parent property. Note that the parent property must exist.
     /// </remarks>
-    class JsonShell_AddArrayCommand : CommandExecutor, ICommand
+    class JsonShell_AddObjectCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => JsonTools.JsonShell_AddNewArray(ListArgsOnly[0], ListArgsOnly[1], JArray.Parse("[ \"" + string.Join("\", \"", ListArgsOnly.Skip(2).ToArray()) + "\" ]"));
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => JsonTools.JsonShell_AddNewObject(ListArgsOnly[0], ListArgsOnly[1], ListArgsOnly[2]);
 
     }
 }

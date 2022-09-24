@@ -177,6 +177,24 @@ namespace KS.Misc.Editors.JsonShell
         }
 
         /// <summary>
+        /// Adds a new object to the current JSON file
+        /// </summary>
+        /// <param name="ParentProperty">Where is the target array found?</param>
+        /// <param name="Key">Name of property containing the array</param>
+        /// <param name="Value">The new value</param>
+        public static void JsonShell_AddNewObject(string ParentProperty, string Key, JToken Value)
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
+            var TargetToken = JsonShell_GetProperty(ParentProperty);
+            JToken PropertyToken = TargetToken[Key];
+
+            // Check to see if we're dealing with the array
+            if (PropertyToken.Type == JTokenType.Array)
+                ((JArray)PropertyToken).Add(Value);
+            DebugWriter.WriteDebug(DebugLevel.I, "New file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
+        }
+
+        /// <summary>
         /// Adds a new property to the current JSON file
         /// </summary>
         /// <param name="ParentProperty">Where to place the new property?</param>
