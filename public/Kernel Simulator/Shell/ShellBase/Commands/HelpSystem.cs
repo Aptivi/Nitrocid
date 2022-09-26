@@ -227,7 +227,7 @@ namespace KS.Shell.ShellBase.Commands
                     }
 
                     // A tip for you all
-                    Decisive.DecisiveWrite(CommandType, DebugDeviceSocket, Kernel.Kernel.NewLine + Translate.DoTranslation("* You can use multiple commands using the colon between commands."), true, ColorTools.ColTypes.Tip);
+                    Decisive.DecisiveWrite(CommandType, DebugDeviceSocket, Kernel.Kernel.NewLine + Translate.DoTranslation("* You can use multiple commands using the semicolon between commands."), true, ColorTools.ColTypes.Tip);
                     Decisive.DecisiveWrite(CommandType, DebugDeviceSocket, "* " + Translate.DoTranslation("Commands highlighted in another color are unified commands and are available in every shell."), true, ColorTools.ColTypes.Tip);
                 }
                 else

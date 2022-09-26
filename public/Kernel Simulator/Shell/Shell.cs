@@ -20,10 +20,12 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using Extensification.StringExts;
 using FluentFTP.Helpers;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Inputs;
 using KS.Files;
 using KS.Files.PathLookup;
 using KS.Files.Querying;
@@ -132,11 +134,31 @@ namespace KS.Shell
             string TargetFile = "";
             string TargetFileName = "";
 
-            // Check for a type of command
-            var SplitCommands = FullCommand.Split(new[] { " : " }, StringSplitOptions.RemoveEmptyEntries);
-            var Commands = GetCommand.GetCommands(ShellType);
-            foreach (string Command in SplitCommands)
+            // Check to see if the full command string ends with the semicolon
+            while (FullCommand.EndsWith(";") || string.IsNullOrEmpty(FullCommand))
             {
+                // Tell the user to provide the second command
+                StringBuilder commandBuilder = new(FullCommand);
+
+                // Wait for command
+                DebugWriter.WriteDebug(DebugLevel.I, "Waiting for command");
+                TextWriterColor.Write("[+] > ", false, ColorTools.ColTypes.Input);
+                string strcommand = Input.ReadLine();
+
+                // Add command to command builder and return the final result. The reason to add the extra space before the second command written is that
+                // because if we need to provide a second command to the shell in a separate line, we usually add the semicolon at the end of the primary
+                // command input.
+                commandBuilder.Append(" " + strcommand);
+                FullCommand = commandBuilder.ToString();
+            }
+
+            // Check for a type of command
+            var SplitCommands = FullCommand.Split(new[] { " ; " }, StringSplitOptions.RemoveEmptyEntries);
+            var Commands = GetCommand.GetCommands(ShellType);
+            for (int i = 0; i < SplitCommands.Length; i++)
+            {
+                string Command = SplitCommands[i];
+
                 // Check to see if the command is a comment
                 if ((string.IsNullOrEmpty(Command) | (Command?.StartsWithAnyOf(new[] { " ", "#" }))) == false)
                 {
@@ -160,7 +182,7 @@ namespace KS.Shell
                             ConsoleExtensions.SetTitle($"{Kernel.Kernel.ConsoleTitle} - {Command}");
 
                             // Iterate through mod commands
-                            DebugWriter.WriteDebug(DebugLevel.I, "Mod commands probing started with {0} from {1}", commandName, FullCommand);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Mod commands probing started with {0} from {1}", commandName, Command);
                             if (ModManager.ListModCommands(ShellType).ContainsKey(commandName))
                             {
                                 DebugWriter.WriteDebug(DebugLevel.I, "Mod command: {0}", commandName);
@@ -168,7 +190,7 @@ namespace KS.Shell
                             }
 
                             // Iterate through alias commands
-                            DebugWriter.WriteDebug(DebugLevel.I, "Aliases probing started with {0} from {1}", commandName, FullCommand);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Aliases probing started with {0} from {1}", commandName, Command);
                             if (AliasManager.GetAliasesListFromType(ShellType).ContainsKey(commandName))
                             {
                                 DebugWriter.WriteDebug(DebugLevel.I, "Alias: {0}", commandName);
@@ -184,7 +206,7 @@ namespace KS.Shell
                                 if (Commands[commandName].Flags.HasFlag(CommandFlags.RedirectionSupported))
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.I, "Redirection supported!");
-                                    InitializeRedirection(ref FullCommand);
+                                    Command = InitializeRedirection(Command);
                                 }
 
                                 // Check to see if the optional path is specified
@@ -217,7 +239,7 @@ namespace KS.Shell
                                     else
                                     {
                                         DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded. Running with {1}", commandName, Command);
-                                        var Params = new GetCommand.ExecuteCommandParameters(FullCommand, ShellType);
+                                        var Params = new GetCommand.ExecuteCommandParameters(Command, ShellType);
 
                                         // Since we're probably trying to run a command using the alternative command threads, if the main shell command thread
                                         // is running, use that to execute the command. This ensures that commands like "wrap" that also execute commands from the
@@ -330,7 +352,7 @@ namespace KS.Shell
         /// <summary>
         /// Initializes the redirection
         /// </summary>
-        private static void InitializeRedirection(ref string Command)
+        private static string InitializeRedirection(string Command)
         {
             // If requested command has output redirection sign after arguments, remove it from final command string and set output to that file
             DebugWriter.WriteDebug(DebugLevel.I, "Does the command contain the redirection sign \">>>\" or \">>\"? {0} and {1}", Command.Contains(">>>"), Command.Contains(">>"));
@@ -363,6 +385,8 @@ namespace KS.Shell
                 WriterPlainManager.ChangePlain("Null");
                 Command = Command.Replace(" |SILENT|", "");
             }
+
+            return Command;
         }
 
         /// <summary>
