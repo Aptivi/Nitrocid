@@ -245,20 +245,20 @@ namespace KS.Kernel
                     // Show license and dev notice if new style used
                     if (Flags.NewWelcomeStyle | Flags.EnableSplash)
                     {
-#if SPECIFIERDEV
-                        TextWriterColor.Write();
-                        TextWriterColor.Write("* " + Translate.DoTranslation("Looks like you were running the development version of the kernel. While you can see the aspects, it is frequently updated and might introduce bugs. It is recommended that you stay on the stable version."), true, ColorTools.ColTypes.DevelopmentWarning);
-#elif SPECIFIERRC
-                        TextWriterColor.Write();
-                        TextWriterColor.Write("* " + Translate.DoTranslation("Looks like you were running the release candidate version. It is recommended that you stay on the stable version."), true, ColorTools.ColTypes.DevelopmentWarning);
-#elif SPECIFIERREL == false
-                        TextWriterColor.Write();
-                        TextWriterColor.Write("* " + Translate.DoTranslation("Looks like you were running an unsupported version. It's highly advisable not to use this version."), true, ColorTools.ColTypes.DevelopmentWarning);
-#endif
-
                         TextWriterColor.Write();
                         SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("License information"), true, ColorTools.ColTypes.Stage);
                         WelcomeMessage.WriteLicense(false);
+
+#if SPECIFIERDEV
+                        TextWriterColor.Write();
+                        TextWriterColor.Write("* " + Translate.DoTranslation("You're running the development version of the kernel. While you can experience upcoming features which may exist in the final release, you may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible."), true, ColorTools.ColTypes.DevelopmentWarning);
+#elif SPECIFIERRC
+                        TextWriterColor.Write();
+                        TextWriterColor.Write("* " + Translate.DoTranslation("You're running the release candidate version of the kernel. While you can experience the final touches, you may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible."), true, ColorTools.ColTypes.DevelopmentWarning);
+#elif SPECIFIERREL == false
+                        TextWriterColor.Write();
+                        TextWriterColor.Write("* " + Translate.DoTranslation("We recommend against running this version of the kernel, because it is unsupported. If you have downloaded this kernel from unknown sources, this message may appear. Please download from our official downloads page."), true, ColorTools.ColTypes.DevelopmentWarning);
+#endif
                     }
 
                     // Initialize login prompt
