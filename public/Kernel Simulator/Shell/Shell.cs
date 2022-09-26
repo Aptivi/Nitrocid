@@ -111,6 +111,12 @@ namespace KS.Shell
         }
 
         /// <summary>
+        /// Inputs for command then parses a specified command.
+        /// </summary>
+        /// <remarks>All new shells implemented either in KS or by mods should use this routine to allow effective and consistent line parsing.</remarks>
+        public static void GetLine() => GetLine("", "", CurrentShellType);
+
+        /// <summary>
         /// Parses a specified command.
         /// </summary>
         /// <param name="FullCommand">The full command string</param>
@@ -141,14 +147,17 @@ namespace KS.Shell
                 StringBuilder commandBuilder = new(FullCommand);
 
                 // Wait for command
+                if (!string.IsNullOrEmpty(FullCommand))
+                    TextWriterColor.Write("[+] > ", false, ColorTools.ColTypes.Input);
                 DebugWriter.WriteDebug(DebugLevel.I, "Waiting for command");
-                TextWriterColor.Write("[+] > ", false, ColorTools.ColTypes.Input);
                 string strcommand = Input.ReadLine();
 
                 // Add command to command builder and return the final result. The reason to add the extra space before the second command written is that
                 // because if we need to provide a second command to the shell in a separate line, we usually add the semicolon at the end of the primary
                 // command input.
-                commandBuilder.Append(" " + strcommand);
+                if (!string.IsNullOrEmpty(FullCommand))
+                    commandBuilder.Append(" ");
+                commandBuilder.Append(strcommand);
                 FullCommand = commandBuilder.ToString();
             }
 
