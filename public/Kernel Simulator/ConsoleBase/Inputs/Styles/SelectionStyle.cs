@@ -62,7 +62,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 for (int AnswerIndex = 0, loopTo = answers.Length - 1; AnswerIndex <= loopTo; AnswerIndex++)
                 {
                     string AnswerInstance = answers[AnswerIndex];
-                    string AnswerTitle = AnswersTitles[AnswerIndex];
+                    string AnswerTitle = AnswersTitles[AnswerIndex] ?? "";
                     TextWriterColor.Write($" {AnswerInstance}) {AnswerTitle}", true, AnswerIndex + 1 == HighlightedAnswer ? ColorTools.ColTypes.SelectedOption : ColorTools.ColTypes.Option);
                 }
 

@@ -114,7 +114,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                             for (int AnswerIndex = 0, loopTo = answers.Length - 1; AnswerIndex <= loopTo; AnswerIndex++)
                             {
                                 string AnswerInstance = answers[AnswerIndex];
-                                string AnswerTitle = AnswersTitles[AnswerIndex];
+                                string AnswerTitle = AnswersTitles[AnswerIndex] ?? "";
                                 if (AnswerTitleLeft > 0)
                                 {
                                     TextWriterColor.Write($" {AnswerInstance}) ", false, ColorTools.ColTypes.Option);
@@ -137,7 +137,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                             for (int AnswerIndex = 0, loopTo1 = answers.Length - 1; AnswerIndex <= loopTo1; AnswerIndex++)
                             {
                                 ChoiceData[AnswerIndex, 0] = answers[AnswerIndex];
-                                ChoiceData[AnswerIndex, 1] = AnswersTitles[AnswerIndex];
+                                ChoiceData[AnswerIndex, 1] = AnswersTitles[AnswerIndex] ?? "";
                             }
                             TableColor.WriteTable(ChoiceHeader, ChoiceData, 2);
                             TextWriterColor.Write(Kernel.Kernel.NewLine + ">> ", false, ColorTools.ColTypes.Input);
