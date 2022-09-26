@@ -19,10 +19,8 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
 using Extensification.StringExts;
-using FluentFTP.Helpers;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
@@ -33,12 +31,14 @@ using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Execution;
+using KS.Misc.Screensaver;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.WriterBase;
 using KS.Misc.Writers.WriterBase.PlainWriters;
 using KS.Modifications;
 using KS.Scripting;
+using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Aliases;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
@@ -146,9 +146,22 @@ namespace KS.Shell
                 // Tell the user to provide the second command
                 StringBuilder commandBuilder = new(FullCommand);
 
+                // We need to put a synclock in the below steps, because the cancellation handlers seem to be taking their time to try to suppress the
+                // thread abort error messages. If the shell tried to write to the console while these handlers were still working, the command prompt
+                // would either be incomplete or not printed to the console at all.
+                lock (CancellationHandlers.GetCancelSyncLock(ShellType))
+                {
+                    // Print a prompt
+                    if (!string.IsNullOrEmpty(FullCommand))
+                        TextWriterColor.Write("[+] > ", false, ColorTools.ColTypes.Input);
+                    else
+                        PromptPresetManager.WriteShellPrompt(ShellType);
+                }
+
+                // Raise shell initialization event
+                Kernel.Kernel.KernelEventManager.RaiseShellInitialized();
+
                 // Wait for command
-                if (!string.IsNullOrEmpty(FullCommand))
-                    TextWriterColor.Write("[+] > ", false, ColorTools.ColTypes.Input);
                 DebugWriter.WriteDebug(DebugLevel.I, "Waiting for command");
                 string strcommand = Input.ReadLine();
 
@@ -159,6 +172,9 @@ namespace KS.Shell
                     commandBuilder.Append(" ");
                 commandBuilder.Append(strcommand);
                 FullCommand = commandBuilder.ToString();
+
+                if (Screensaver.InSaver)
+                    return;
             }
 
             // Check for a type of command
@@ -167,6 +183,9 @@ namespace KS.Shell
             for (int i = 0; i < SplitCommands.Length; i++)
             {
                 string Command = SplitCommands[i];
+
+                // Fire an event of PreExecuteCommand
+                Kernel.Kernel.KernelEventManager.RaisePreExecuteCommand(Command);
 
                 // Check to see if the command is a comment
                 if ((string.IsNullOrEmpty(Command) | (Command?.StartsWithAnyOf(new[] { " ", "#" }))) == false)
@@ -344,6 +363,9 @@ namespace KS.Shell
                     }
                     while (false);
                 }
+
+                // Fire an event of PostExecuteCommand
+                Kernel.Kernel.KernelEventManager.RaisePostExecuteCommand(Command);
             }
 
             // Restore console output to its original state if any

@@ -74,39 +74,17 @@ namespace KS.Shell.Shells.FTP
                         return;
                     }
 
-                    // Raise event
-                    Kernel.Kernel.KernelEventManager.RaiseFTPShellInitialized();
-
-                    // See UESHShell.cs for more info
-                    lock (CancellationHandlers.GetCancelSyncLock(ShellType))
-                    {
-                        // Prompt for command
-                        if (!Connects)
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Preparing prompt...");
-                            PromptPresetManager.WriteShellPrompt(ShellType);
-                        }
-                    }
-
                     // Try to connect if IP address is specified.
                     if (Connects)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, $"Currently connecting to {Address} by \"ftp (address)\"...");
                         FtpCommand = $"connect {Address}";
                         Connects = false;
+                        Shell.GetLine(FtpCommand, "", ShellType.FTPShell);
                     }
                     else
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Normal shell");
-                        FtpCommand = Input.ReadLine();
-                    }
-
-                    // Parse command
-                    if ((string.IsNullOrEmpty(FtpCommand) | (FtpCommand?.StartsWithAnyOf(new[] { " ", "#" }))) == false)
-                    {
-                        Kernel.Kernel.KernelEventManager.RaiseFTPPreExecuteCommand(FtpCommand);
-                        Shell.GetLine(FtpCommand, "", ShellType.FTPShell);
-                        Kernel.Kernel.KernelEventManager.RaiseFTPPostExecuteCommand(FtpCommand);
+                        Shell.GetLine();
                     }
                 }
                 catch (ThreadInterruptedException)

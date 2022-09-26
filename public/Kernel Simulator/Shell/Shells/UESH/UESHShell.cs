@@ -59,39 +59,7 @@ namespace KS.Shell.Shells.UESH
                 {
                     try
                     {
-                        // We need to put a synclock in the below steps, because the cancellation handlers seem to be taking their time to try to suppress the
-                        // thread abort error messages. If the shell tried to write to the console while these handlers were still working, the command prompt
-                        // would either be incomplete or not printed to the console at all. As a side effect, we wouldn't fire the shell initialization event
-                        // despite us calling the RaiseShellInitialized() routine, causing some mods that rely on this event to believe that the shell was still
-                        // waiting for the command.
-                        lock (CancellationHandlers.GetCancelSyncLock(ShellType))
-                        {
-                            // Enable cursor (We put it here to avoid repeated "CursorVisible = True" statements in different command codes)
-                            ConsoleBase.ConsoleWrapper.CursorVisible = true;
-
-                            // Write a prompt
-                            PromptPresetManager.WriteShellPrompt(ShellType);
-
-                            // Raise shell initialization event
-                            Kernel.Kernel.KernelEventManager.RaiseShellInitialized();
-                        }
-
-                        // Wait for command
-                        DebugWriter.WriteDebug(DebugLevel.I, "Waiting for command");
-                        string strcommand = Input.ReadLine();
-
-                        // Now, parse the line as necessary
-                        if (!Screensaver.InSaver)
-                        {
-                            // Fire an event of PreExecuteCommand
-                            Kernel.Kernel.KernelEventManager.RaisePreExecuteCommand(strcommand);
-
-                            // Get the command
-                            Shell.GetLine(strcommand);
-
-                            // Fire an event of PostExecuteCommand
-                            Kernel.Kernel.KernelEventManager.RaisePostExecuteCommand(strcommand);
-                        }
+                        Shell.GetLine();
                     }
                     catch (ThreadInterruptedException)
                     {
