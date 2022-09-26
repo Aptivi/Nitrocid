@@ -87,28 +87,25 @@ namespace KS.Shell.ShellBase.Commands
                 strArgs = strArgs.Substring(1);
             DebugWriter.WriteDebug(DebugLevel.I, "Finished strArgs: {0}", strArgs);
 
-            // Split the arguments with enclosed quotes and set the required boolean variable
-            var CommandInfo = ModCommands.ContainsKey(Command) ? ModCommands[Command] : ShellCommands[Command];
+            // Split the arguments with enclosed quotes
             var EnclosedArgs = strArgs.SplitSpacesEncloseDoubleQuotes();
             if (string.IsNullOrWhiteSpace(strArgs))
                 EnclosedArgs = null;
-            if (CommandInfo.CommandArgumentInfo is not null)
-            {
-                if (EnclosedArgs is not null)
-                {
-                    RequiredArgumentsProvided = (bool)(CommandInfo.CommandArgumentInfo.MinimumArguments is var arg2 && (EnclosedArgs?.Count()) is { } arg1 ? arg1 >= arg2 : (bool?)null);
-                }
-                else if (CommandInfo.CommandArgumentInfo.ArgumentsRequired & EnclosedArgs is null)
-                {
-                    RequiredArgumentsProvided = false;
-                }
-            }
-            else
-            {
-                RequiredArgumentsProvided = true;
-            }
             if (EnclosedArgs is not null)
                 DebugWriter.WriteDebug(DebugLevel.I, "Arguments parsed: " + string.Join(", ", EnclosedArgs));
+
+            // Check to see if the caller has provided required number of arguments
+            var CommandInfo = ModCommands.ContainsKey(Command) ? ModCommands[Command] :
+                              ShellCommands.ContainsKey(Command) ? ShellCommands[Command] :
+                              null;
+            if (CommandInfo?.CommandArgumentInfo is not null)
+                if (EnclosedArgs is not null)
+                    RequiredArgumentsProvided = (bool)(CommandInfo.CommandArgumentInfo.MinimumArguments is int expectedArgumentNum &&
+                                                      (EnclosedArgs?.Count()) is int actualArgumentNum ? actualArgumentNum >= expectedArgumentNum : (bool?)null);
+                else if (CommandInfo.CommandArgumentInfo.ArgumentsRequired & EnclosedArgs is null)
+                    RequiredArgumentsProvided = false;
+            else
+                RequiredArgumentsProvided = true;
 
             // Separate the arguments from the switches
             var FinalArgs = new List<string>();

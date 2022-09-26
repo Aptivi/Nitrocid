@@ -142,19 +142,14 @@ namespace KS.Shell
                 {
                     // Get the index of the first space
                     int indexCmd = Command.IndexOf(" ");
-                    string cmdArgs = Command; // Command with args
                     DebugWriter.WriteDebug(DebugLevel.I, "Prototype indexCmd and Command: {0}, {1}", indexCmd, Command);
                     if (indexCmd == -1)
                         indexCmd = Command.Length;
                     string commandName = Command.Substring(0, indexCmd);
                     DebugWriter.WriteDebug(DebugLevel.I, "Finished indexCmd and finalCommand: {0}, {1}", indexCmd, commandName);
 
-                    // Parse script command (if any)
-                    var scriptArgs = commandName.Split(new[] { ".uesh " }, StringSplitOptions.RemoveEmptyEntries).ToList();
-                    scriptArgs.RemoveAt(0);
-
-                    // Get command parts
-                    var Parts = commandName.SplitSpacesEncloseDoubleQuotes();
+                    // Get arguments
+                    var commandArguments = new ProvidedCommandArgumentsInfo(Command, ShellType);
 
                     // Reads command written by user
                     do
@@ -166,17 +161,17 @@ namespace KS.Shell
 
                             // Iterate through mod commands
                             DebugWriter.WriteDebug(DebugLevel.I, "Mod commands probing started with {0} from {1}", commandName, FullCommand);
-                            if (ModManager.ListModCommands(ShellType).ContainsKey(Parts[0]))
+                            if (ModManager.ListModCommands(ShellType).ContainsKey(commandName))
                             {
-                                DebugWriter.WriteDebug(DebugLevel.I, "Mod command: {0}", Parts[0]);
+                                DebugWriter.WriteDebug(DebugLevel.I, "Mod command: {0}", commandName);
                                 ModExecutor.ExecuteModCommand(commandName);
                             }
 
                             // Iterate through alias commands
                             DebugWriter.WriteDebug(DebugLevel.I, "Aliases probing started with {0} from {1}", commandName, FullCommand);
-                            if (AliasManager.GetAliasesListFromType(ShellType).ContainsKey(Parts[0]))
+                            if (AliasManager.GetAliasesListFromType(ShellType).ContainsKey(commandName))
                             {
-                                DebugWriter.WriteDebug(DebugLevel.I, "Alias: {0}", Parts[0]);
+                                DebugWriter.WriteDebug(DebugLevel.I, "Alias: {0}", commandName);
                                 AliasExecutor.ExecuteAlias(commandName, ShellType);
                             }
 
@@ -221,7 +216,7 @@ namespace KS.Shell
                                     }
                                     else
                                     {
-                                        DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded. Running with {1}", commandName, cmdArgs);
+                                        DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded. Running with {1}", commandName, Command);
                                         var Params = new GetCommand.ExecuteCommandParameters(FullCommand, ShellType);
 
                                         // Since we're probably trying to run a command using the alternative command threads, if the main shell command thread
@@ -269,10 +264,10 @@ namespace KS.Shell
                                         // Create a new instance of process
                                         if (Parsing.TryParsePath(TargetFile))
                                         {
-                                            cmdArgs = cmdArgs.Replace(TargetFileName, "");
-                                            cmdArgs.RemoveNullsOrWhitespacesAtTheBeginning();
-                                            DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, Arguments: {1}", TargetFile, cmdArgs);
-                                            var Params = new ProcessExecutor.ExecuteProcessThreadParameters(TargetFile, cmdArgs);
+                                            var targetCommand = Command.Replace(TargetFileName, "");
+                                            targetCommand.RemoveNullsOrWhitespacesAtTheBeginning();
+                                            DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, Arguments: {1}", TargetFile, targetCommand);
+                                            var Params = new ProcessExecutor.ExecuteProcessThreadParameters(TargetFile, targetCommand);
                                             ProcessStartCommandThread.Start(Params);
                                             ProcessStartCommandThread.Wait();
                                             ProcessStartCommandThread.Stop();
@@ -290,7 +285,7 @@ namespace KS.Shell
                                     try
                                     {
                                         DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded because it's a UESH script.", commandName);
-                                        UESHParse.Execute(TargetFile, scriptArgs.Join(" "));
+                                        UESHParse.Execute(TargetFile, commandArguments.ArgumentsText);
                                     }
                                     catch (Exception ex)
                                     {
