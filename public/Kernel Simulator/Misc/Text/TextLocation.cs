@@ -1,5 +1,4 @@
-﻿
-// Kernel Simulator  Copyright (C) 2018-2022  Aptivi
+﻿// Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
 // 
@@ -16,7 +15,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-namespace KS.Misc
+namespace KS.Misc.Text
 {
     /// <summary>
     /// The console text location (used for screensavers and splashes)

@@ -9,7 +9,7 @@
                 "Variable": "SimpleProgressTextLocation",
                 "IsEnumeration": true,
                 "EnumerationInternal": true,
-                "Enumeration": "Misc.TextLocation",
+                "Enumeration": "Misc.Text.TextLocation",
                 "EnumerationZeroBased": true,
                 "Description": "Select your preferred progress text location."
             }
@@ -30,7 +30,7 @@
                 "Variable": "ProgressProgressTextLocation",
                 "IsEnumeration": true,
                 "EnumerationInternal": true,
-                "Enumeration": "Misc.TextLocation",
+                "Enumeration": "Misc.Text.TextLocation",
                 "EnumerationZeroBased": true,
                 "Description": "Select your preferred progress text location."
             }
@@ -51,7 +51,7 @@
                 "Variable": "PowerLineProgressProgressTextLocation",
                 "IsEnumeration": true,
                 "EnumerationInternal": true,
-                "Enumeration": "Misc.TextLocation",
+                "Enumeration": "Misc.Text.TextLocation",
                 "EnumerationZeroBased": true,
                 "Description": "Select your preferred progress text location."
             }

@@ -154,3 +154,7 @@ We have renamed the below two shell-related classes to the ones that suit the na
 * Affected classes:
   - ShellInfo -> ShellExecuteInfo
   - ShellExecutor -> BaseShell
+
+##### Moved TextLocation to Misc.Text
+
+This is a text-related enum of text vertical location (top, bottom).
