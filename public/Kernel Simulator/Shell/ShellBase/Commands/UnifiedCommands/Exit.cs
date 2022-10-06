@@ -16,22 +16,25 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Debugging.RemoteDebug;
 using KS.Kernel.Debugging.RemoteDebug.Interface;
-using KS.Shell.Prompts;
-using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Shells;
+using System.IO;
 
-namespace KS.Shell.UnifiedCommands
+namespace KS.Shell.ShellBase.Commands.UnifiedCommands
 {
     /// <summary>
-    /// Changes the shell preset
+    /// Exits the subshell
     /// </summary>
     /// <remarks>
-    /// This command allows you to change your shell presets to either one of the pre-defined presets or your custom preset installed by a mod.
+    /// If the UESH shell is a subshell, you can exit it. However, you can't use this command to log out of your account, because it can't exit the mother shell. The only to exit it is to use the logout command.
     /// </remarks>
-    class PresetsUnifiedCommand : CommandExecutor, ICommand, IRemoteDebugCommand
+    class ExitUnifiedCommand : CommandExecutor, ICommand, IRemoteDebugCommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => PromptPresetManager.PromptForPresets();
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => ShellStart.KillShell();
+
+        void IRemoteDebugCommand.Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, StreamWriter SocketStreamWriter, string DeviceAddress) => RemoteDebugTools.DisconnectDbgDev(DeviceAddress);
 
     }
 }

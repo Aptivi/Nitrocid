@@ -42,7 +42,7 @@ using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Aliases;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
-using KS.Shell.UnifiedCommands;
+using KS.Shell.ShellBase.Commands.UnifiedCommands;
 using KS.Users.Groups;
 
 namespace KS.Shell

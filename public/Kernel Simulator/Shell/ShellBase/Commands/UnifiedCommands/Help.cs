@@ -19,10 +19,9 @@
 using System.IO;
 using System.Linq;
 using KS.Kernel.Debugging.RemoteDebug.Interface;
-using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 
-namespace KS.Shell.UnifiedCommands
+namespace KS.Shell.ShellBase.Commands.UnifiedCommands
 {
     /// <summary>
     /// Opens the help page
