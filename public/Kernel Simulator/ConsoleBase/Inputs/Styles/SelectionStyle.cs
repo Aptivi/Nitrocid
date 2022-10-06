@@ -17,7 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Linq;
 using KS.ConsoleBase.Colors;
+using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.ConsoleBase.Inputs.Styles
@@ -53,22 +55,37 @@ namespace KS.ConsoleBase.Inputs.Styles
 
                 // Check to see if the answer titles are the same
                 if (answers.Length != AnswersTitles.Length)
-                {
                     Array.Resize(ref AnswersTitles, answers.Length);
-                }
 
                 // Ask a question
                 TextWriterColor.Write(Question + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.Question);
-                for (int AnswerIndex = 0, loopTo = answers.Length - 1; AnswerIndex <= loopTo; AnswerIndex++)
+
+                // Make pages based on console window height
+                int pages = answers.Length / (ConsoleWrapper.WindowHeight - ConsoleWrapper.CursorTop);
+                int answersPerPage = answers.Length / pages;
+                int displayAnswersPerPage = answersPerPage - ConsoleWrapper.CursorTop;
+
+                // The reason for subtracting the highlighted answer by one is that because while the highlighted answer number is one-based, the indexes are zero-based,
+                // causing confusion. Pages, again, are one-based. Highlighting the last option causes us to go to the next page. This is intentional.
+                int currentPage = (HighlightedAnswer - 1) / displayAnswersPerPage;
+                int startIndex = displayAnswersPerPage * currentPage;
+                int endIndex = displayAnswersPerPage * (currentPage + 1);
+
+                // Populate the answers
+                for (int AnswerIndex = startIndex; AnswerIndex <= endIndex && AnswerIndex <= answers.Length - 1; AnswerIndex++)
                 {
                     string AnswerInstance = answers[AnswerIndex];
                     string AnswerTitle = AnswersTitles[AnswerIndex] ?? "";
-                    TextWriterColor.Write($" {AnswerInstance}) {AnswerTitle}", true, AnswerIndex + 1 == HighlightedAnswer ? ColorTools.ColTypes.SelectedOption : ColorTools.ColTypes.Option);
+
+                    // Just like we told you previously in above few lines, the last option highlight to go to the next page is intentional. So, change the last option
+                    // string so it says "Highlight this entry to go to the next page."
+                    string AnswerOption = $" {AnswerInstance}) {AnswerTitle}";
+                    var AnswerColor = AnswerIndex + 1 == HighlightedAnswer ? ColorTools.ColTypes.SelectedOption : ColorTools.ColTypes.Option;
+                    TextWriterColor.Write(AnswerIndex == endIndex ? " " + Translate.DoTranslation("Highlight this entry to go to the next page.") : AnswerOption, true, AnswerColor);
                 }
 
                 // Wait for an answer
                 Answer = ConsoleWrapper.ReadKey(true);
-                TextWriterColor.Write();
 
                 // Check the answer
                 switch (Answer.Key)
@@ -77,24 +94,20 @@ namespace KS.ConsoleBase.Inputs.Styles
                         {
                             HighlightedAnswer -= 1;
                             if (HighlightedAnswer == 0)
-                            {
                                 HighlightedAnswer = answers.Length;
-                            }
 
                             break;
                         }
                     case ConsoleKey.DownArrow:
                         {
                             if (HighlightedAnswer == answers.Length)
-                            {
                                 HighlightedAnswer = 0;
-                            }
                             HighlightedAnswer += 1;
                             break;
                         }
                     case ConsoleKey.PageUp:
                         {
-                            HighlightedAnswer = 0;
+                            HighlightedAnswer = 1;
                             break;
                         }
                     case ConsoleKey.PageDown:
@@ -104,10 +117,12 @@ namespace KS.ConsoleBase.Inputs.Styles
                         }
                     case ConsoleKey.Enter:
                         {
+                            TextWriterColor.Write();
                             return HighlightedAnswer;
                         }
                     case ConsoleKey.Escape:
                         {
+                            TextWriterColor.Write();
                             return -1;
                         }
                 }
