@@ -47,6 +47,10 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <term>-suppressmessages</term>
     /// <description>Suppresses the "unauthorized" messages</description>
     /// </item>
+    /// <item>
+    /// <term>-recursive</term>
+    /// <description>Recursively lists files and folders</description>
+    /// </item>
     /// </list>
     /// <br></br>
     /// </remarks>
@@ -57,16 +61,17 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             bool ShowFileDetails = ListSwitchesOnly.Contains("-showdetails") || Listing.ShowFileDetailsList;
             bool SuppressUnauthorizedMessage = ListSwitchesOnly.Contains("-suppressmessages") || Flags.SuppressUnauthorizedMessages;
-            if (((0 is var arg2 && (ListArgsOnly?.Length) is { } arg1 ? arg1 == arg2 : (bool?)null) | ListArgsOnly is null) == true)
+            bool Recursive = ListSwitchesOnly.Contains("-recursive");
+            if (ListArgsOnly.Length == 0)
             {
-                Listing.List(CurrentDirectory.CurrentDir, ShowFileDetails, SuppressUnauthorizedMessage);
+                Listing.List(CurrentDirectory.CurrentDir, ShowFileDetails, SuppressUnauthorizedMessage, Listing.SortList, Recursive);
             }
             else
             {
                 foreach (string Directory in ListArgsOnly)
                 {
                     string direct = Filesystem.NeutralizePath(Directory);
-                    Listing.List(direct, ShowFileDetails, SuppressUnauthorizedMessage);
+                    Listing.List(direct, ShowFileDetails, SuppressUnauthorizedMessage, Listing.SortList, Recursive);
                 }
             }
         }

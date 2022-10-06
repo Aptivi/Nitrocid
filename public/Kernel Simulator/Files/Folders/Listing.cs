@@ -66,9 +66,10 @@ namespace KS.Files.Folders
         /// </summary>
         /// <param name="folder">Full path to folder</param>
         /// <param name="Sorted">Whether the list is sorted or not</param>
+        /// <param name="Recursive">Whether the list is recursive or not</param>
         /// <returns>List of filesystem entries if any. Empty list if folder is not found or is empty.</returns>
         /// <exception cref="Kernel.Exceptions.FilesystemException"></exception>
-        public static List<FileSystemInfo> CreateList(string folder, bool Sorted = false)
+        public static List<FileSystemInfo> CreateList(string folder, bool Sorted = false, bool Recursive = false)
         {
             Filesystem.ThrowOnInvalidPath(folder);
             DebugWriter.WriteDebug(DebugLevel.I, "Folder {0} will be listed...", folder);
@@ -81,7 +82,7 @@ namespace KS.Files.Folders
                 IEnumerable<string> enumeration;
                 try
                 {
-                    enumeration = GetFilesystemEntries(folder);
+                    enumeration = GetFilesystemEntries(folder, false, Recursive);
                 }
                 catch (Exception ex)
                 {
@@ -202,7 +203,8 @@ namespace KS.Files.Folders
         /// <param name="ShowFileDetails">Whether to show the file details</param>
         /// <param name="SuppressUnauthorizedMessage">Whether to silence the access denied messages</param>
         /// <param name="Sort">Whether to sort the filesystem entries</param>
-        public static void List(string folder, bool ShowFileDetails, bool SuppressUnauthorizedMessage, bool Sort)
+        /// <param name="Recursive">Whether the list is recursive or not</param>
+        public static void List(string folder, bool ShowFileDetails, bool SuppressUnauthorizedMessage, bool Sort, bool Recursive = false)
         {
             Filesystem.ThrowOnInvalidPath(folder);
             DebugWriter.WriteDebug(DebugLevel.I, "Folder {0} will be listed...", folder);
@@ -217,7 +219,7 @@ namespace KS.Files.Folders
                 // Try to create a list
                 try
                 {
-                    enumeration = CreateList(folder, Sort);
+                    enumeration = CreateList(folder, Sort, Recursive);
                     if (enumeration.Count == 0)
                         TextWriterColor.Write(Translate.DoTranslation("Folder is empty."), true, ColorTools.ColTypes.Warning);
 
@@ -281,8 +283,9 @@ namespace KS.Files.Folders
         /// </summary>
         /// <param name="Path">The path, including the pattern</param>
         /// <param name="IsFile">Is the entry a file?</param>
+        /// <param name="Recursive">Whether the list is recursive or not</param>
         /// <returns>The array of full paths</returns>
-        public static string[] GetFilesystemEntries(string Path, bool IsFile = false)
+        public static string[] GetFilesystemEntries(string Path, bool IsFile = false, bool Recursive = false)
         {
             var Entries = Array.Empty<string>();
             try
@@ -318,7 +321,7 @@ namespace KS.Files.Folders
                 }
 
                 // Split the path and the pattern and return the final result
-                Entries = GetFilesystemEntries(Parent, Pattern);
+                Entries = GetFilesystemEntries(Parent, Pattern, Recursive);
             }
             catch (Exception ex)
             {
@@ -333,8 +336,9 @@ namespace KS.Files.Folders
         /// </summary>
         /// <param name="Parent">The parent path. It can be neutralized if necessary</param>
         /// <param name="Pattern">The pattern</param>
+        /// <param name="Recursive">Whether the list is recursive or not</param>
         /// <returns>The array of full paths</returns>
-        public static string[] GetFilesystemEntries(string Parent, string Pattern)
+        public static string[] GetFilesystemEntries(string Parent, string Pattern, bool Recursive = false)
         {
             var Entries = Array.Empty<string>();
             try
@@ -346,7 +350,8 @@ namespace KS.Files.Folders
                 // Get the entries
                 if (Directory.Exists(Parent))
                 {
-                    Entries = Directory.EnumerateFileSystemEntries(Parent, Pattern).ToArray();
+                    SearchOption options = Recursive ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly;
+                    Entries = Directory.EnumerateFileSystemEntries(Parent, Pattern, options).ToArray();
                     DebugWriter.WriteDebug(DebugLevel.I, "Enumerated {0} entries from parent {1} using pattern {2}", Entries.Length, Parent, Pattern);
                 }
                 else
