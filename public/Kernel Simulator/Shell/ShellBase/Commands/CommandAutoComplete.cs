@@ -19,6 +19,7 @@
 using System.Data;
 using System.Linq;
 using Extensification.StringExts;
+using FluentFTP.Helpers;
 using KS.Files.Folders;
 using KS.Shell.ShellBase.Shells;
 using ReadLineReboot;
@@ -52,7 +53,11 @@ namespace KS.Shell.ShellBase.Commands
                 {
                     // We're providing completion for argument.
                     string CommandName = text.SplitEncloseDoubleQuotes(" ")[0];
-                    var FileFolderList = Listing.CreateList(CurrentDirectory.CurrentDir, true).Select(x => x.Name).ToArray();
+                    string LastArgument = text.SplitEncloseDoubleQuotes(" ")[text.SplitEncloseDoubleQuotes(" ").Length - 1];
+                    var FileFolderList = Listing.CreateList(CurrentDirectory.CurrentDir, true)
+                                                .Select(x => x.Name)
+                                                .Where(x => x.StartsWith(LastArgument))
+                                                .ToArray();
                     if (ShellCommands.ContainsKey(CommandName))
                     {
                         // We have the command. Check its entry for argument info
