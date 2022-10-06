@@ -118,6 +118,31 @@ namespace Properties.Resources {
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
+        ///        &quot;Name&quot;: &quot;Amaya&quot;,
+        ///        &quot;255ColorsRequired&quot;: true,
+        ///        &quot;TrueColorRequired&quot;: true
+        ///    },
+        ///    &quot;InputColor&quot;: &quot;#b491c5&quot;,
+        ///    &quot;LicenseColor&quot;: &quot;#808080&quot;,
+        ///    &quot;ContKernelErrorColor&quot;: &quot;#68228b&quot;,
+        ///    &quot;UncontKernelErrorColor&quot;: &quot;#68228b&quot;,
+        ///    &quot;HostNameShellColor&quot;: &quot;#33218a&quot;,
+        ///    &quot;UserNameShellColor&quot;: &quot;#68228b&quot;,
+        ///    &quot;BackgroundColor&quot;: &quot;#000000&quot;,
+        ///    &quot;NeutralTextColor&quot;: &quot;#808080&quot;,
+        ///    &quot;ListEntryColor&quot;: &quot;#b491c5&quot;,
+        ///    &quot;ListValueColor&quot;: &quot;#33218a&quot;,
+        ///    &quot;StageColor&quot;: &quot;#b491c5 [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Amaya {
+            get {
+                return ResourceManager.GetString("Amaya", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Aptivi&quot;,
         ///        &quot;255ColorsRequired&quot;: true,
         ///        &quot;TrueColorRequired&quot;: true
@@ -1300,6 +1325,31 @@ namespace Properties.Resources {
         public static string Materialistic {
             get {
                 return ResourceManager.GetString("Materialistic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///    &quot;Metadata&quot;: {
+        ///        &quot;Name&quot;: &quot;Maya&quot;,
+        ///        &quot;255ColorsRequired&quot;: true,
+        ///        &quot;TrueColorRequired&quot;: true
+        ///    },
+        ///    &quot;InputColor&quot;: &quot;#d1e1da&quot;,
+        ///    &quot;LicenseColor&quot;: &quot;#c3d6c2&quot;,
+        ///    &quot;ContKernelErrorColor&quot;: &quot;#912e2e&quot;,
+        ///    &quot;UncontKernelErrorColor&quot;: &quot;#4e3925&quot;,
+        ///    &quot;HostNameShellColor&quot;: &quot;#e59f00&quot;,
+        ///    &quot;UserNameShellColor&quot;: &quot;#4e3925&quot;,
+        ///    &quot;BackgroundColor&quot;: &quot;#000000&quot;,
+        ///    &quot;NeutralTextColor&quot;: &quot;#c3d6c2&quot;,
+        ///    &quot;ListEntryColor&quot;: &quot;#d1e1da&quot;,
+        ///    &quot;ListValueColor&quot;: &quot;#e59f00&quot;,
+        ///    &quot;StageColor&quot;: &quot;#d1e1da&quot; [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Maya {
+            get {
+                return ResourceManager.GetString("Maya", resourceCulture);
             }
         }
         
@@ -2576,7 +2626,7 @@ namespace Properties.Resources {
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;VIآ -آ Viceآ City&quot;,
+        ///        &quot;Name&quot;: &quot;VI - Vice City&quot;,
         ///        &quot;255ColorsRequired&quot;: true,
         ///        &quot;TrueColorRequired&quot;: true
         ///    },
@@ -2590,7 +2640,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;#0266c8&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;#00a8ff&quot;,
         ///    &quot;ListValueColor&quot;: &quot;#b28bc0&quot;,
-        ///    &quot;StageColo [rest of string was truncated]&quot;;.
+        ///    &quot;StageColor&quot;: [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ViceCity {
             get {

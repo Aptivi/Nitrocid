@@ -478,4 +478,10 @@
   <data name="ViceCity" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\ViceCity.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
+  <data name="Amaya" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Amaya.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Maya" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Maya.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
 </root>

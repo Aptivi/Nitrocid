@@ -43,6 +43,7 @@ namespace KS.ConsoleBase.Themes
         {
             { "Default", new ThemeInfo() },
             { "3Y-Diamond", new ThemeInfo("_3Y_Diamond") },
+            { "Amaya", new ThemeInfo("Amaya") },
             { "Aptivi", new ThemeInfo("Aptivi") },
             { "Aquatic", new ThemeInfo("Aquatic") },
             { "AyuDark", new ThemeInfo("AyuDark") },
@@ -75,6 +76,7 @@ namespace KS.ConsoleBase.Themes
             { "LinuxColoredDef", new ThemeInfo("LinuxColoredDef") },
             { "LinuxUncolored", new ThemeInfo("LinuxUncolored") },
             { "Materialistic", new ThemeInfo("Materialistic") },
+            { "Maya", new ThemeInfo("Maya") },
             { "Melange", new ThemeInfo("Melange") },
             { "MelangeDark", new ThemeInfo("MelangeDark") },
             { "Metallic", new ThemeInfo("Metallic") },
