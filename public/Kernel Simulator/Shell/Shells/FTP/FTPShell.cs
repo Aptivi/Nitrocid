@@ -29,7 +29,7 @@ namespace KS.Shell.Shells.FTP
     /// <summary>
     /// The FTP shell
     /// </summary>
-    public class FTPShell : ShellExecutor, IShell
+    public class FTPShell : BaseShell, IShell
     {
 
         /// <inheritdoc/>

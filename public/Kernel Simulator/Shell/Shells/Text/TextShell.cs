@@ -35,7 +35,7 @@ namespace KS.Shell.Shells.Text
     /// <summary>
     /// The text editor shell
     /// </summary>
-    public class TextShell : ShellExecutor, IShell
+    public class TextShell : BaseShell, IShell
     {
 
         /// <inheritdoc/>

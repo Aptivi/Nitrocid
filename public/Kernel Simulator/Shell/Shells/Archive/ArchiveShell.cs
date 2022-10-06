@@ -40,7 +40,7 @@ namespace KS.Shell.Shells.Archive
     /// <summary>
     /// Archive shell class
     /// </summary>
-    public class ArchiveShell : ShellExecutor, IShell
+    public class ArchiveShell : BaseShell, IShell
     {
         /// <inheritdoc/>
         public override ShellType ShellType => ShellType.ArchiveShell;

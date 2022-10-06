@@ -35,7 +35,7 @@ namespace KS.Shell.Shells.Hex
     /// <summary>
     /// The hex editor class
     /// </summary>
-    public class HexShell : ShellExecutor, IShell
+    public class HexShell : BaseShell, IShell
     {
 
         /// <inheritdoc/>

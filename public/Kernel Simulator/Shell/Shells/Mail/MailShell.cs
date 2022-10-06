@@ -31,7 +31,7 @@ namespace KS.Shell.Shells.Mail
     /// <summary>
     /// The mail shell
     /// </summary>
-    public class MailShell : ShellExecutor, IShell
+    public class MailShell : BaseShell, IShell
     {
 
         /// <inheritdoc/>

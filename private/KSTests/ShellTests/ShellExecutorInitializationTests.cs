@@ -28,7 +28,7 @@ namespace KSTests.ShellTests
     public class ShellExecutorInitializationTests
     {
 
-        private static ShellExecutor ShellInstance;
+        private static BaseShell ShellInstance;
 
         /// <summary>
         /// Tests initializing the shell instance from base

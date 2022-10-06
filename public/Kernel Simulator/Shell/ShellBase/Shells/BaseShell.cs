@@ -22,9 +22,9 @@ using KS.Kernel.Debugging;
 namespace KS.Shell.ShellBase.Shells
 {
     /// <summary>
-    /// The shell executor class
+    /// Base abstract shell class
     /// </summary>
-    public abstract class ShellExecutor : IShell
+    public abstract class BaseShell : IShell
     {
 
         /// <inheritdoc/>

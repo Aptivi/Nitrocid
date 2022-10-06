@@ -146,3 +146,11 @@ We have improved the color tools module, so SetColors is no longer used. We've r
 ##### Changed algorithm enum to EncryptionAlgorithms
 
 As part of an ongoing change to the encryption driver, we've changed the algorithm enumeration to EncryptionAlgorithms outside the Encryption module.
+
+##### Renamed two classes related to shell
+
+We have renamed the below two shell-related classes to the ones that suit the narrative of the classes.
+
+* Affected classes:
+  - ShellInfo -> ShellExecuteInfo
+  - ShellExecutor -> BaseShell

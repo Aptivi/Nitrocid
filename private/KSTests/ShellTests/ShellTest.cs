@@ -22,7 +22,7 @@ using System.Diagnostics;
 namespace KSTests.ShellTests
 {
 
-    class ShellTest : ShellExecutor, IShell
+    class ShellTest : BaseShell, IShell
     {
 
         public override ShellType ShellType { get; }

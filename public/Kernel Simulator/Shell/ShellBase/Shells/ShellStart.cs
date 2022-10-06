@@ -41,7 +41,7 @@ namespace KS.Shell.ShellBase.Shells
     public static class ShellStart
     {
 
-        internal static List<ShellInfo> ShellStack = new();
+        internal static List<ShellExecuteInfo> ShellStack = new();
 
         /// <summary>
         /// Starts the shell
@@ -73,7 +73,7 @@ namespace KS.Shell.ShellBase.Shells
 
                 // Make a new instance of shell information
                 var ShellCommandThread = new KernelThread($"{ShellType} Command Thread", false, (cmdThreadParams) => GetCommand.ExecuteCommand((GetCommand.ExecuteCommandParameters)cmdThreadParams));
-                var ShellInfo = new ShellInfo(ShellType, ShellExecute, ShellCommandThread);
+                var ShellInfo = new ShellExecuteInfo(ShellType, ShellExecute, ShellCommandThread);
 
                 // Now, initialize the command autocomplete handler. This will not be invoked if we have auto completion disabled.
                 ReadLine.AutoCompletionHandler = new CommandAutoComplete(ShellType);
@@ -101,7 +101,7 @@ namespace KS.Shell.ShellBase.Shells
             // We must have at least two shells to kill the last shell. Else, we will have zero shells running, making us look like we've logged out!
             if (ShellStack.Count >= 2)
             {
-                ShellStack[ShellStack.Count - 1].ShellExecutor.Bail = true;
+                ShellStack[ShellStack.Count - 1].ShellBase.Bail = true;
                 PurgeShells();
             }
             else
@@ -117,7 +117,7 @@ namespace KS.Shell.ShellBase.Shells
         {
             if (ShellStack.Count >= 1)
             {
-                ShellStack[ShellStack.Count - 1].ShellExecutor.Bail = true;
+                ShellStack[ShellStack.Count - 1].ShellBase.Bail = true;
                 PurgeShells();
             }
         }
@@ -127,13 +127,13 @@ namespace KS.Shell.ShellBase.Shells
         /// </summary>
         public static void PurgeShells() =>
             // Remove these shells from the stack
-            ShellStack.RemoveAll(x => x.ShellExecutor.Bail == true);
+            ShellStack.RemoveAll(x => x.ShellBase.Bail == true);
 
         /// <summary>
         /// Gets the shell executor based on the shell type
         /// </summary>
         /// <param name="ShellType">The requested shell type</param>
-        public static ShellExecutor GetShellExecutor(ShellType ShellType)
+        public static BaseShell GetShellExecutor(ShellType ShellType)
         {
             switch (ShellType)
             {

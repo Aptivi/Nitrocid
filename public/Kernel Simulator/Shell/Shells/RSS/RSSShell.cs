@@ -37,7 +37,7 @@ namespace KS.Shell.Shells.RSS
     /// <summary>
     /// The RSS shell
     /// </summary>
-    public class RSSShell : ShellExecutor, IShell
+    public class RSSShell : BaseShell, IShell
     {
 
         /// <inheritdoc/>

@@ -32,7 +32,7 @@ namespace KS.Shell.Shells.HTTP
     /// <summary>
     /// The HTTP shell
     /// </summary>
-    public class HTTPShell : ShellExecutor, IShell
+    public class HTTPShell : BaseShell, IShell
     {
 
         /// <inheritdoc/>

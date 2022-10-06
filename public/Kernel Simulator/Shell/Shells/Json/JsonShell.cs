@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.Json
     /// <summary>
     /// The JSON editor shell
     /// </summary>
-    public class JsonShell : ShellExecutor, IShell
+    public class JsonShell : BaseShell, IShell
     {
 
         /// <inheritdoc/>

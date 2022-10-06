@@ -31,7 +31,7 @@ namespace KS.Shell.Shells.UESH
     /// <summary>
     /// The UESH shell
     /// </summary>
-    public class UESHShell : ShellExecutor, IShell
+    public class UESHShell : BaseShell, IShell
     {
 
         /// <inheritdoc/>

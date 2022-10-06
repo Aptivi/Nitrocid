@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.SFTP
     /// <summary>
     /// The SFTP shell
     /// </summary>
-    public class SFTPShell : ShellExecutor, IShell
+    public class SFTPShell : BaseShell, IShell
     {
 
         /// <inheritdoc/>

@@ -24,7 +24,7 @@ namespace KS.Shell.ShellBase.Shells
     /// <summary>
     /// Shell information
     /// </summary>
-    public class ShellInfo
+    public class ShellExecuteInfo
     {
 
         /// <summary>
@@ -32,9 +32,9 @@ namespace KS.Shell.ShellBase.Shells
         /// </summary>
         public readonly ShellType ShellType;
         /// <summary>
-        /// Shell executor
+        /// Shell base class
         /// </summary>
-        public readonly ShellExecutor ShellExecutor;
+        public readonly BaseShell ShellBase;
         /// <summary>
         /// Shell command thread
         /// </summary>
@@ -48,12 +48,12 @@ namespace KS.Shell.ShellBase.Shells
         /// Installs the values to a new instance of ShellInfo
         /// </summary>
         /// <param name="ShellType">The shell type</param>
-        /// <param name="ShellExecutor">Shell executor</param>
+        /// <param name="ShellBase">Shell base class</param>
         /// <param name="ShellCommandThread">Shell command thread</param>
-        public ShellInfo(ShellType ShellType, ShellExecutor ShellExecutor, KernelThread ShellCommandThread)
+        public ShellExecuteInfo(ShellType ShellType, BaseShell ShellBase, KernelThread ShellCommandThread)
         {
             this.ShellType = ShellType;
-            this.ShellExecutor = ShellExecutor;
+            this.ShellBase = ShellBase;
             this.ShellCommandThread = ShellCommandThread;
         }
 

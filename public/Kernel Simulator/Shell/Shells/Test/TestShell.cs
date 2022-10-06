@@ -35,7 +35,7 @@ namespace KS.Shell.Shells.Test
     /// <summary>
     /// The test shell
     /// </summary>
-    public class TestShell : ShellExecutor, IShell
+    public class TestShell : BaseShell, IShell
     {
 
         /// <inheritdoc/>
