@@ -18,6 +18,7 @@
 
 using System;
 using System.Linq;
+using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
@@ -108,23 +109,18 @@ namespace KS.ConsoleBase.Inputs.Styles
                     case ChoiceOutputType.Modern:
                         {
                             TextWriterColor.Write(Question + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.Question);
-                            int AnswerTitleLeft = answers.Max(x => $" {x}) ".Length);
-                            if (AnswerTitleLeft >= ConsoleWrapper.WindowWidth)
-                                AnswerTitleLeft = 0;
                             for (int AnswerIndex = 0, loopTo = answers.Length - 1; AnswerIndex <= loopTo; AnswerIndex++)
                             {
                                 string AnswerInstance = answers[AnswerIndex];
                                 string AnswerTitle = AnswersTitles[AnswerIndex] ?? "";
-                                if (AnswerTitleLeft > 0)
+                                string AnswerOption = $" {AnswerInstance}) {AnswerTitle}";
+                                int AnswerTitleLeft = answers.Max(x => $" {x}) ".Length);
+                                if (AnswerTitleLeft < ConsoleWrapper.WindowWidth)
                                 {
-                                    TextWriterColor.Write($" {AnswerInstance}) ", false, ColorTools.ColTypes.Option);
-                                    TextWriterWhereColor.WriteWhere(AnswerTitle, AnswerTitleLeft, ConsoleWrapper.CursorTop, false, ColorTools.ColTypes.Option);
-                                    TextWriterColor.Write("", true, ColorTools.ColTypes.Option);
+                                    int blankRepeats = AnswerTitleLeft - $" {AnswerInstance}) ".Length;
+                                    AnswerOption = $" {AnswerInstance}) " + " ".Repeat(blankRepeats) + $"{AnswerTitle}";
                                 }
-                                else
-                                {
-                                    TextWriterColor.Write($" {AnswerInstance}) {AnswerTitle}", true, ColorTools.ColTypes.Option);
-                                }
+                                TextWriterColor.Write(AnswerOption, true, ColorTools.ColTypes.Option);
                             }
                             TextWriterColor.Write(Kernel.Kernel.NewLine + ">> ", false, ColorTools.ColTypes.Input);
                             break;

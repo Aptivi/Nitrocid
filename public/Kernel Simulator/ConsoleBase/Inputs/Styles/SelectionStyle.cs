@@ -18,6 +18,7 @@
 
 using System;
 using System.Linq;
+using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
@@ -80,6 +81,12 @@ namespace KS.ConsoleBase.Inputs.Styles
                     // Just like we told you previously in above few lines, the last option highlight to go to the next page is intentional. So, change the last option
                     // string so it says "Highlight this entry to go to the next page."
                     string AnswerOption = $" {AnswerInstance}) {AnswerTitle}";
+                    int AnswerTitleLeft = answers.Max(x => $" {x}) ".Length);
+                    if (AnswerTitleLeft < ConsoleWrapper.WindowWidth)
+                    {
+                        int blankRepeats = AnswerTitleLeft - $" {AnswerInstance}) ".Length;
+                        AnswerOption = $" {AnswerInstance}) " + " ".Repeat(blankRepeats) + $"{AnswerTitle}";
+                    }
                     var AnswerColor = AnswerIndex + 1 == HighlightedAnswer ? ColorTools.ColTypes.SelectedOption : ColorTools.ColTypes.Option;
                     TextWriterColor.Write(AnswerIndex == endIndex ? " " + Translate.DoTranslation("Highlight this entry to go to the next page.") : AnswerOption, true, AnswerColor);
                 }
