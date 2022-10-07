@@ -30,6 +30,7 @@ using KS.Files;
 using KS.Files.Querying;
 using KS.Hardware;
 using KS.Kernel.Exceptions;
+using KS.Kernel.Updates;
 using KS.Languages;
 using KS.Misc.Notifications;
 using KS.Misc.Probers.Motd;
@@ -46,10 +47,6 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Debugging.RemoteDebug;
 using KS.Users.Groups;
 using KS.Users;
-
-#if SPECIFIERREL
-using KS.Kernel.Updates;
-#endif
 
 namespace KS.Kernel
 {
@@ -187,10 +184,8 @@ namespace KS.Kernel
                     }
 
                     // Check for kernel updates
-#if SPECIFIERREL
                     if (Flags.CheckUpdateStart)
                         UpdateManager.CheckKernelUpdates();
-#endif
 
                     // Phase 2: Probe hardware
                     KernelTools.ReportNewStage(2, Translate.DoTranslation("- Stage 2: Hardware detection"));

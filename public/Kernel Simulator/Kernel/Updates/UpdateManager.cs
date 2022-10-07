@@ -67,6 +67,7 @@ namespace KS.Kernel.Updates
         /// </summary>
         public static void CheckKernelUpdates()
         {
+#if SPECIFIERREL
             // Check to see if we're running from Ubuntu PPA
             if (Paths.ExecPath.StartsWith("/usr/lib/ks"))
             {
@@ -103,6 +104,7 @@ namespace KS.Kernel.Updates
             {
                 SplashReport.ReportProgress(Translate.DoTranslation("Failed to check for updates."), 10, ColorTools.ColTypes.Error);
             }
+#endif
         }
 
     }
