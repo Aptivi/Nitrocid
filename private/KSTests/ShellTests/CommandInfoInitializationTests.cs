@@ -48,7 +48,7 @@ namespace KSTests.ShellTests
             CommandInstance.Command.ShouldBe("help");
             CommandInstance.HelpDefinition.ShouldBe("Help page");
             CommandInstance.CommandArgumentInfo.HelpUsages.ShouldNotBeEmpty();
-            CommandInstance.Type.ShouldBe(ShellType.Shell);
+            CommandInstance.Type.ShouldBe("Shell");
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse();

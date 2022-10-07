@@ -36,7 +36,7 @@ namespace KS.Shell.Prompts.Presets.SFTP
         public override string PresetPrompt => PresetPromptBuilder();
 
         /// <inheritdoc/>
-        public override ShellType PresetShellType { get; } = ShellType.SFTPShell;
+        public override string PresetShellType { get; } = "SFTPShell";
 
         internal override string PresetPromptBuilder()
         {

@@ -16,13 +16,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.Collections.Generic;
 using System.IO;
 using KS.Misc.Editors.JsonShell;
 using KS.Misc.Threading;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
-using KS.Shell.Shells.Json.Commands;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -34,21 +30,6 @@ namespace KS.Shell.Shells.Json
     public static class JsonShellCommon
     {
 
-        /// <summary>
-        /// JSON shell commands
-        /// </summary>
-        public readonly static Dictionary<string, CommandInfo> JsonShell_Commands = new()
-        {
-            { "addarray", new CommandInfo("addarray", ShellType.JsonShell, "Adds a new property containing the array", new CommandArgumentInfo(new[] { "[-parentProperty=prop] <propertyName> <propertyValue1> [propertyValue2] [propertyValue3]..." }, true, 2), new JsonShell_AddArrayCommand()) },
-            { "addproperty", new CommandInfo("addproperty", ShellType.JsonShell, "Adds a new property at the end of the JSON file", new CommandArgumentInfo(new[] { "[-parentProperty=prop] <propertyName> <propertyValue>" }, true, 2), new JsonShell_AddPropertyCommand()) },
-            { "addobject", new CommandInfo("addobject", ShellType.JsonShell, "Adds a new object inside the array", new CommandArgumentInfo(new[] { "[-parentProperty=prop] <arrayName> <valueInArray>" }, true, 2), new JsonShell_AddObjectCommand()) },
-            { "clear", new CommandInfo("clear", ShellType.JsonShell, "Clears the JSON file", new CommandArgumentInfo(), new JsonShell_ClearCommand()) },
-            { "delproperty", new CommandInfo("delproperty", ShellType.JsonShell, "Removes a property from the JSON file", new CommandArgumentInfo(new[] { "<propertyName>" }, true, 1), new JsonShell_DelPropertyCommand()) },
-            { "exitnosave", new CommandInfo("exitnosave", ShellType.JsonShell, "Exits the JSON shell without saving the changes", new CommandArgumentInfo(), new JsonShell_ExitNoSaveCommand()) },
-            { "jsoninfo", new CommandInfo("jsoninfo", ShellType.JsonShell, "Shows information about the JSON file", new CommandArgumentInfo(), new JsonShell_JsonInfoCommand()) },
-            { "print", new CommandInfo("print", ShellType.JsonShell, "Prints the JSON file", new CommandArgumentInfo(new[] { "[property]" }, false, 0), new JsonShell_PrintCommand()) },
-            { "save", new CommandInfo("save", ShellType.JsonShell, "Saves the JSON file", new CommandArgumentInfo(new[] { "[-b|-m]" }, false, 0), new JsonShell_SaveCommand()) }
-        };
         /// <summary>
         /// JSON shell file stream
         /// </summary>
@@ -74,7 +55,6 @@ namespace KS.Shell.Shells.Json
         /// </summary>
         public static Formatting JsonShell_Formatting = Formatting.Indented;
         internal static JToken JsonShell_FileTokenOrig = JToken.Parse("{}");
-        internal readonly static Dictionary<string, CommandInfo> JsonShell_ModCommands = new();
 
     }
 }

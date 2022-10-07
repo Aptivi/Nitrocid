@@ -19,17 +19,6 @@
 using KS.Kernel.Debugging;
 using KS.Kernel.Debugging.RemoteDebug;
 using KS.Shell.ShellBase.Shells;
-using KS.Shell.Shells.Archive;
-using KS.Shell.Shells.FTP;
-using KS.Shell.Shells.Hex;
-using KS.Shell.Shells.HTTP;
-using KS.Shell.Shells.Json;
-using KS.Shell.Shells.Mail;
-using KS.Shell.Shells.RSS;
-using KS.Shell.Shells.SFTP;
-using KS.Shell.Shells.Test;
-using KS.Shell.Shells.Text;
-using KS.Shell.Shells.UESH;
 
 namespace KS.Shell.ShellBase.Commands
 {
@@ -38,7 +27,6 @@ namespace KS.Shell.ShellBase.Commands
     /// </summary>
     public static class CommandManager
     {
-
         /// <summary>
         /// Checks to see if the command is found in selected shell command type
         /// </summary>
@@ -50,62 +38,21 @@ namespace KS.Shell.ShellBase.Commands
             DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, ShellType: {1}", Command, ShellType);
             if (Shell.UnifiedCommandDict.ContainsKey(Command))
                 return true;
-            switch (ShellType)
-            {
-                case ShellType.FTPShell:
-                    {
-                        return FTPShellCommon.FTPCommands.ContainsKey(Command);
-                    }
-                case ShellType.JsonShell:
-                    {
-                        return JsonShellCommon.JsonShell_Commands.ContainsKey(Command);
-                    }
-                case ShellType.MailShell:
-                    {
-                        return MailShellCommon.MailCommands.ContainsKey(Command);
-                    }
-                case ShellType.RemoteDebugShell:
-                    {
-                        return RemoteDebugCmd.DebugCommands.ContainsKey(Command);
-                    }
-                case ShellType.RSSShell:
-                    {
-                        return RSSShellCommon.RSSCommands.ContainsKey(Command);
-                    }
-                case ShellType.SFTPShell:
-                    {
-                        return SFTPShellCommon.SFTPCommands.ContainsKey(Command);
-                    }
-                case ShellType.Shell:
-                    {
-                        return UESHShellCommon.Commands.ContainsKey(Command);
-                    }
-                case ShellType.TestShell:
-                    {
-                        return TestShellCommon.Test_Commands.ContainsKey(Command);
-                    }
-                case ShellType.TextShell:
-                    {
-                        return TextEditShellCommon.TextEdit_Commands.ContainsKey(Command);
-                    }
-                case ShellType.HTTPShell:
-                    {
-                        return HTTPShellCommon.HTTPCommands.ContainsKey(Command);
-                    }
-                case ShellType.HexShell:
-                    {
-                        return HexEditShellCommon.HexEdit_Commands.ContainsKey(Command);
-                    }
-                case ShellType.ArchiveShell:
-                    {
-                        return ArchiveShellCommon.ArchiveShell_Commands.ContainsKey(Command);
-                    }
+            return GetCommand.GetCommands(ShellType).ContainsKey(Command);
+        }
 
-                default:
-                    {
-                        return false;
-                    }
-            }
+        /// <summary>
+        /// Checks to see if the command is found in selected shell command type
+        /// </summary>
+        /// <param name="Command">A command</param>
+        /// <param name="ShellType">The shell type name</param>
+        /// <returns>True if found; False if not found or shell type is invalid.</returns>
+        public static bool IsCommandFound(string Command, string ShellType)
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, ShellType: {1}", Command, ShellType);
+            if (Shell.UnifiedCommandDict.ContainsKey(Command))
+                return true;
+            return GetCommand.GetCommands(ShellType).ContainsKey(Command);
         }
 
         /// <summary>
@@ -117,18 +64,18 @@ namespace KS.Shell.ShellBase.Commands
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}", Command);
             return Shell.UnifiedCommandDict.ContainsKey(Command)
-                 | FTPShellCommon.FTPCommands.ContainsKey(Command)
-                 | JsonShellCommon.JsonShell_Commands.ContainsKey(Command)
-                 | MailShellCommon.MailCommands.ContainsKey(Command)
+                 | GetCommand.GetCommands(ShellType.FTPShell).ContainsKey(Command)
+                 | GetCommand.GetCommands(ShellType.JsonShell).ContainsKey(Command)
+                 | GetCommand.GetCommands(ShellType.MailShell).ContainsKey(Command)
                  | RemoteDebugCmd.DebugCommands.ContainsKey(Command)
-                 | RSSShellCommon.RSSCommands.ContainsKey(Command)
-                 | SFTPShellCommon.SFTPCommands.ContainsKey(Command)
-                 | UESHShellCommon.Commands.ContainsKey(Command)
-                 | TestShellCommon.Test_Commands.ContainsKey(Command)
-                 | TextEditShellCommon.TextEdit_Commands.ContainsKey(Command)
-                 | HTTPShellCommon.HTTPCommands.ContainsKey(Command)
-                 | HexEditShellCommon.HexEdit_Commands.ContainsKey(Command);
+                 | GetCommand.GetCommands(ShellType.RSSShell).ContainsKey(Command)
+                 | GetCommand.GetCommands(ShellType.SFTPShell).ContainsKey(Command)
+                 | GetCommand.GetCommands(ShellType.Shell).ContainsKey(Command)
+                 | GetCommand.GetCommands(ShellType.TestShell).ContainsKey(Command)
+                 | GetCommand.GetCommands(ShellType.TextShell).ContainsKey(Command)
+                 | GetCommand.GetCommands(ShellType.HTTPShell).ContainsKey(Command)
+                 | GetCommand.GetCommands(ShellType.HexShell).ContainsKey(Command)
+                 | GetCommand.GetCommands(ShellType.ArchiveShell).ContainsKey(Command);
         }
-
     }
 }

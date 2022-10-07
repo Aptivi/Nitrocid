@@ -21,20 +21,20 @@ using System.Collections.Generic;
 using KS.Shell.Shells.UESH.Commands;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
+using KS.Shell.Prompts;
+using KS.Shell.Prompts.Presets.UESH;
 
 namespace KS.Shell.Shells.UESH
 {
     /// <summary>
     /// UESH common shell properties
     /// </summary>
-    public static class UESHShellCommon
+    internal class UESHShellCommon : BaseShellInfo, IShellInfo
     {
-        internal readonly static Dictionary<string, CommandInfo> ModCommands = new();
-
         /// <summary>
         /// List of commands
         /// </summary>
-        public readonly static Dictionary<string, CommandInfo> Commands = new()
+        public override Dictionary<string, CommandInfo> Commands => new()
         {
             { "adduser", new CommandInfo("adduser", ShellType.Shell, "Adds users", new CommandArgumentInfo(new[] { "<userName> [password] [confirm]" }, true, 1), new AddUserCommand(), CommandFlags.Strict) },
             { "alias", new CommandInfo("alias", ShellType.Shell, "Adds aliases to commands", new CommandArgumentInfo( new[] { $"<rem/add> <{string.Join("/", Enum.GetNames(typeof(ShellType)))}> <alias> <cmd>" }, true, 3), new AliasCommand(), CommandFlags.Strict) },
@@ -157,5 +157,20 @@ namespace KS.Shell.Shells.UESH
             { "wrap", new CommandInfo("wrap", ShellType.Shell, "Wraps the console output", new CommandArgumentInfo(new[] { "<command>" }, true, 1), new WrapCommand()) },
             { "zip", new CommandInfo("zip", ShellType.Shell, "Creates a ZIP archive", new CommandArgumentInfo(new[] { "<zipfile> <path> [-fast|-nocomp|-nobasedir]" }, true, 2), new ZipCommand()) }
         };
+
+        public override Dictionary<string, PromptPresetBase> ShellPresets => new()
+        {
+            { "Default", new DefaultPreset() },
+            { "PowerLine1", new PowerLine1Preset() },
+            { "PowerLine2", new PowerLine2Preset() },
+            { "PowerLine3", new PowerLine3Preset() },
+            { "PowerLineBG1", new PowerLineBG1Preset() },
+            { "PowerLineBG2", new PowerLineBG2Preset() },
+            { "PowerLineBG3", new PowerLineBG3Preset() }
+        };
+
+        public override BaseShell ShellBase => new UESHShell();
+
+        public override PromptPresetBase CurrentPreset => PromptPresetManager.CurrentPresets["Shell"];
     }
 }

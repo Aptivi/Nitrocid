@@ -38,7 +38,7 @@ namespace KS.Shell.Prompts.Presets.Text
         public override string PresetPrompt => PresetPromptBuilder();
 
         /// <inheritdoc/>
-        public override ShellType PresetShellType { get; } = ShellType.TextShell;
+        public override string PresetShellType { get; } = "TextShell";
 
         internal override string PresetPromptBuilder()
         {

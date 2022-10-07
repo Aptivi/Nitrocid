@@ -19,7 +19,6 @@
 using System.Data;
 using System.Linq;
 using Extensification.StringExts;
-using FluentFTP.Helpers;
 using KS.Files.Folders;
 using KS.Shell.ShellBase.Shells;
 using ReadLineReboot;
@@ -32,7 +31,7 @@ namespace KS.Shell.ShellBase.Commands
     public class CommandAutoComplete : IAutoCompleteHandler
     {
 
-        private readonly ShellType ShellTypeToAutocomplete = ShellType.Shell;
+        private readonly string ShellTypeToAutocomplete = "Shell";
 
         /// <summary>
         /// Command separators
@@ -101,7 +100,13 @@ namespace KS.Shell.ShellBase.Commands
         /// Command auto complete constructor
         /// </summary>
         /// <param name="ShellType">Shell type</param>
-        protected internal CommandAutoComplete(ShellType ShellType = ShellType.Shell) => ShellTypeToAutocomplete = ShellType;
+        protected internal CommandAutoComplete(ShellType ShellType = ShellType.Shell) => ShellTypeToAutocomplete = Shell.GetShellTypeName(ShellType);
+
+        /// <summary>
+        /// Command auto complete constructor
+        /// </summary>
+        /// <param name="ShellType">Shell type</param>
+        protected internal CommandAutoComplete(string ShellType = "Shell") => ShellTypeToAutocomplete = ShellType;
 
     }
 }

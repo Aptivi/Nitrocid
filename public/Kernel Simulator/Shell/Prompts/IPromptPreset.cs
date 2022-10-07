@@ -1,5 +1,4 @@
-﻿
-// Kernel Simulator  Copyright (C) 2018-2022  Aptivi
+﻿// Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
 // 
@@ -15,8 +14,6 @@
 // 
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Prompts
 {
@@ -37,7 +34,7 @@ namespace KS.Shell.Prompts
         /// <summary>
         /// Preset shell type
         /// </summary>
-        ShellType PresetShellType { get; }
+        string PresetShellType { get; }
 
         /// <summary>
         /// Preset prompt builder logic for advanced prompts, like PowerLine, ...

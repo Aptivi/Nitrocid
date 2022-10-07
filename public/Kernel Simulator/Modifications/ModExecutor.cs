@@ -22,7 +22,6 @@ using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
 using KS.Users.Groups;
 
 namespace KS.Modifications
@@ -88,7 +87,7 @@ namespace KS.Modifications
                         var ScriptCommandSwitches = ScriptCommandArgsInfo.SwitchesList;
 
                         // Check to see if we're in the shell type command.
-                        if (Script.Commands[parts[0]].Type == ShellType.Shell)
+                        if (Script.Commands[parts[0]].Type == "Shell")
                         {
                             // Command type is of shell. Check the user privileges for restricted commands.
                             if (Script.Commands[parts[0]].Flags.HasFlag(CommandFlags.Strict) & GroupManagement.HasGroup(Login.Login.CurrentUser.Username, GroupManagement.GroupType.Administrator) | !Script.Commands[parts[0]].Flags.HasFlag(CommandFlags.Strict))

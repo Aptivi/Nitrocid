@@ -30,7 +30,7 @@ namespace KS.Shell.ShellBase.Shells
         /// <summary>
         /// Shell type
         /// </summary>
-        public readonly ShellType ShellType;
+        public readonly string ShellType;
         /// <summary>
         /// Shell base class
         /// </summary>
@@ -50,7 +50,17 @@ namespace KS.Shell.ShellBase.Shells
         /// <param name="ShellType">The shell type</param>
         /// <param name="ShellBase">Shell base class</param>
         /// <param name="ShellCommandThread">Shell command thread</param>
-        public ShellExecuteInfo(ShellType ShellType, BaseShell ShellBase, KernelThread ShellCommandThread)
+        public ShellExecuteInfo(ShellType ShellType, BaseShell ShellBase, KernelThread ShellCommandThread) :
+            this(Shell.GetShellTypeName(ShellType), ShellBase, ShellCommandThread)
+        { }
+
+        /// <summary>
+        /// Installs the values to a new instance of ShellInfo
+        /// </summary>
+        /// <param name="ShellType">The shell type</param>
+        /// <param name="ShellBase">Shell base class</param>
+        /// <param name="ShellCommandThread">Shell command thread</param>
+        public ShellExecuteInfo(string ShellType, BaseShell ShellBase, KernelThread ShellCommandThread)
         {
             this.ShellType = ShellType;
             this.ShellBase = ShellBase;

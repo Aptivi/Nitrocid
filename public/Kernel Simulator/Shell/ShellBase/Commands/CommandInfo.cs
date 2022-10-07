@@ -34,7 +34,7 @@ namespace KS.Shell.ShellBase.Commands
         /// <summary>
         /// The type of command
         /// </summary>
-        public ShellType Type { get; private set; }
+        public string Type { get; private set; }
         /// <summary>
         /// The untranslated help definition of command. Translated by <see cref="GetTranslatedHelpEntry()"/>
         /// </summary>
@@ -61,7 +61,20 @@ namespace KS.Shell.ShellBase.Commands
         /// <param name="CommandArgumentInfo">Command argument info</param>
         /// <param name="CommandBase">Command base for execution</param>
         /// <param name="Flags">Command flags</param>
-        public CommandInfo(string Command, ShellType Type, string HelpDefinition, CommandArgumentInfo CommandArgumentInfo, CommandExecutor CommandBase, CommandFlags Flags = CommandFlags.None)
+        public CommandInfo(string Command, ShellType Type, string HelpDefinition, CommandArgumentInfo CommandArgumentInfo, CommandExecutor CommandBase, CommandFlags Flags = CommandFlags.None) :
+            this(Command, Shell.GetShellTypeName(Type), HelpDefinition, CommandArgumentInfo, CommandBase, Flags)
+        { }
+
+        /// <summary>
+        /// Installs a new instance of command info class
+        /// </summary>
+        /// <param name="Command">Command</param>
+        /// <param name="Type">Shell command type</param>
+        /// <param name="HelpDefinition">Command help definition</param>
+        /// <param name="CommandArgumentInfo">Command argument info</param>
+        /// <param name="CommandBase">Command base for execution</param>
+        /// <param name="Flags">Command flags</param>
+        public CommandInfo(string Command, string Type, string HelpDefinition, CommandArgumentInfo CommandArgumentInfo, CommandExecutor CommandBase, CommandFlags Flags = CommandFlags.None)
         {
             this.Command = Command;
             this.Type = Type;

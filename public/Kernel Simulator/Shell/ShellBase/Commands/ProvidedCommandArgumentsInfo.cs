@@ -57,7 +57,16 @@ namespace KS.Shell.ShellBase.Commands
         /// </summary>
         /// <param name="CommandText">Command text that the user provided</param>
         /// <param name="CommandType">Shell command type. Consult the <see cref="ShellType"/> enum for information about supported shells.</param>
-        internal ProvidedCommandArgumentsInfo(string CommandText, ShellType CommandType)
+        internal ProvidedCommandArgumentsInfo(string CommandText, ShellType CommandType) :
+            this(CommandText, Shell.GetShellTypeName(CommandType)) 
+        { }
+
+        /// <summary>
+        /// Makes a new instance of the command argument info with the user-provided command text
+        /// </summary>
+        /// <param name="CommandText">Command text that the user provided</param>
+        /// <param name="CommandType">Shell command type.</param>
+        internal ProvidedCommandArgumentsInfo(string CommandText, string CommandType)
         {
             string Command;
             bool RequiredArgumentsProvided = true;

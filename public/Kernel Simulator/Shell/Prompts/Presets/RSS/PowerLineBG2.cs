@@ -40,7 +40,7 @@ namespace KS.Shell.Prompts.Presets.RSS
         public override string PresetPrompt => PresetPromptBuilder();
 
         /// <inheritdoc/>
-        public override ShellType PresetShellType { get; } = ShellType.RSSShell;
+        public override string PresetShellType { get; } = "RSSShell";
 
         internal override string PresetPromptBuilder()
         {

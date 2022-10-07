@@ -47,7 +47,7 @@ namespace KS.Shell.ShellBase.Commands
         /// Shows the list of commands under the specified shell type
         /// </summary>
         /// <param name="CommandType">A specified shell type</param>
-        public static void ShowHelp(ShellType CommandType) => ShowHelp("", CommandType);
+        public static void ShowHelp(ShellType CommandType) => ShowHelp("", Shell.GetShellTypeName(CommandType));
 
         /// <summary>
         /// Shows the help of a command, or command list under the current shell type if nothing is specified
@@ -61,82 +61,25 @@ namespace KS.Shell.ShellBase.Commands
         /// <param name="command">A specified command</param>
         /// <param name="CommandType">A specified shell type</param>
         /// <param name="DebugDeviceSocket">Only for remote debug shell. Specifies the debug device socket.</param>
-        public static void ShowHelp(string command, ShellType CommandType, StreamWriter DebugDeviceSocket = null)
+        public static void ShowHelp(string command, ShellType CommandType, StreamWriter DebugDeviceSocket = null) => ShowHelp(command, Shell.GetShellTypeName(CommandType), DebugDeviceSocket);
+
+        /// <summary>
+        /// Shows the help of a command, or command list under the specified shell type if nothing is specified
+        /// </summary>
+        /// <param name="command">A specified command</param>
+        /// <param name="CommandType">A specified shell type</param>
+        /// <param name="DebugDeviceSocket">Only for remote debug shell. Specifies the debug device socket.</param>
+        public static void ShowHelp(string command, string CommandType, StreamWriter DebugDeviceSocket = null)
         {
             // Determine command type
             var CommandList = GetCommand.GetCommands(CommandType)
                                         .OrderBy((CommandValuePair) => CommandValuePair.Key)
                                         .ToDictionary((CommandValuePair) => CommandValuePair.Key, (CommandValuePair) => CommandValuePair.Value);
             Dictionary<string, CommandInfo> ModCommandList;
-            var AliasedCommandList = AliasManager.Aliases;
+            var AliasedCommandList = AliasManager.GetAliasesListFromType(CommandType);
 
             // Add every command from each mod
             ModCommandList = ModManager.ListModCommands(CommandType);
-
-            // Select which list to use according to the shell type
-            switch (CommandType)
-            {
-                case ShellType.Shell:
-                    {
-                        AliasedCommandList = AliasManager.Aliases;
-                        break;
-                    }
-                case ShellType.FTPShell:
-                    {
-                        AliasedCommandList = AliasManager.FTPShellAliases;
-                        break;
-                    }
-                case ShellType.MailShell:
-                    {
-                        AliasedCommandList = AliasManager.MailShellAliases;
-                        break;
-                    }
-                case ShellType.RSSShell:
-                    {
-                        AliasedCommandList = AliasManager.RSSShellAliases;
-                        break;
-                    }
-                case ShellType.SFTPShell:
-                    {
-                        AliasedCommandList = AliasManager.SFTPShellAliases;
-                        break;
-                    }
-                case ShellType.TestShell:
-                    {
-                        AliasedCommandList = AliasManager.TestShellAliases;
-                        break;
-                    }
-                case ShellType.TextShell:
-                    {
-                        AliasedCommandList = AliasManager.TextShellAliases;
-                        break;
-                    }
-                case ShellType.RemoteDebugShell:
-                    {
-                        AliasedCommandList = AliasManager.RemoteDebugAliases;
-                        break;
-                    }
-                case ShellType.JsonShell:
-                    {
-                        AliasedCommandList = AliasManager.JsonShellAliases;
-                        break;
-                    }
-                case ShellType.HTTPShell:
-                    {
-                        AliasedCommandList = AliasManager.HTTPShellAliases;
-                        break;
-                    }
-                case ShellType.HexShell:
-                    {
-                        AliasedCommandList = AliasManager.HexShellAliases;
-                        break;
-                    }
-                case ShellType.ArchiveShell:
-                    {
-                        AliasedCommandList = AliasManager.ArchiveShellAliases;
-                        break;
-                    }
-            }
 
             // Check to see if command exists
             if (!string.IsNullOrWhiteSpace(command) & (CommandList.ContainsKey(command) | AliasedCommandList.ContainsKey(command) | ModCommandList.ContainsKey(command)))
@@ -164,7 +107,7 @@ namespace KS.Shell.ShellBase.Commands
                     Decisive.DecisiveWrite(CommandType, DebugDeviceSocket, Translate.DoTranslation("Usage:"), false, ColorTools.ColTypes.ListEntry);
 
                     // If remote debug, set the command to be prepended by the slash
-                    if (CommandType == ShellType.RemoteDebugShell)
+                    if (CommandType == "RemoteDebugShell")
                         FinalCommand = $"/{FinalCommand}";
 
                     // Enumerate through the available help usages

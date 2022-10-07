@@ -18,7 +18,6 @@
 
 using System;
 using KS.Kernel.Debugging;
-using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Prompts
 {
@@ -35,7 +34,7 @@ namespace KS.Shell.Prompts
         public virtual string PresetPrompt { get; } = "> ";
 
         /// <inheritdoc/>
-        public virtual ShellType PresetShellType { get; } = ShellType.Shell;
+        public virtual string PresetShellType { get; } = "Shell";
 
         internal virtual string PresetPromptBuilder()
         {

@@ -34,7 +34,17 @@ namespace KS.Shell.ShellBase.Aliases
         /// <param name="ShellType">Type of shell</param>
         /// <param name="SocketStream">A socket stream writer</param>
         /// <param name="Address">IP Address</param>
-        public static void ExecuteAlias(string aliascmd, ShellType ShellType, StreamWriter SocketStream = null, string Address = "")
+        public static void ExecuteAlias(string aliascmd, ShellType ShellType, StreamWriter SocketStream = null, string Address = "") =>
+            ExecuteAlias(aliascmd, Shell.GetShellTypeName(ShellType), SocketStream, Address);
+
+        /// <summary>
+        /// Translates alias to actual command, preserving arguments
+        /// </summary>
+        /// <param name="aliascmd">Specifies the alias with arguments</param>
+        /// <param name="ShellType">Type of shell</param>
+        /// <param name="SocketStream">A socket stream writer</param>
+        /// <param name="Address">IP Address</param>
+        public static void ExecuteAlias(string aliascmd, string ShellType, StreamWriter SocketStream = null, string Address = "")
         {
             var AliasesList = AliasManager.GetAliasesListFromType(ShellType);
 
@@ -47,7 +57,7 @@ namespace KS.Shell.ShellBase.Aliases
             var Params = new GetCommand.ExecuteCommandParameters(actualCmd, ShellType, SocketStream, Address);
 
             // Check to see if we're on the shell or on the remote debug
-            if (ShellType == ShellType.RemoteDebugShell)
+            if (ShellType == "RemoteDebugShell")
             {
                 // Handle the remote debug case specially
                 GetCommand.ExecuteCommand(Params);

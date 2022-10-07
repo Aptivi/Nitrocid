@@ -21,16 +21,6 @@ using System.Collections.Generic;
 using KS.Languages;
 using KS.Misc.Threading;
 using KS.Shell.ShellBase.Commands;
-using KS.Shell.Shells.Archive;
-using KS.Shell.Shells.FTP;
-using KS.Shell.Shells.Hex;
-using KS.Shell.Shells.HTTP;
-using KS.Shell.Shells.Json;
-using KS.Shell.Shells.Mail;
-using KS.Shell.Shells.RSS;
-using KS.Shell.Shells.SFTP;
-using KS.Shell.Shells.Text;
-using KS.Shell.Shells.UESH;
 using ReadLineReboot;
 
 namespace KS.Shell.ShellBase.Shells
@@ -48,7 +38,15 @@ namespace KS.Shell.ShellBase.Shells
         /// </summary>
         /// <param name="ShellType">The shell type</param>
         /// <param name="ShellArgs">Arguments to pass to shell</param>
-        public static void StartShell(ShellType ShellType, params object[] ShellArgs)
+        public static void StartShell(ShellType ShellType, params object[] ShellArgs) =>
+            StartShell(Shell.GetShellTypeName(ShellType), ShellArgs);
+
+        /// <summary>
+        /// Starts the shell
+        /// </summary>
+        /// <param name="ShellType">The shell type</param>
+        /// <param name="ShellArgs">Arguments to pass to shell</param>
+        public static void StartShell(string ShellType, params object[] ShellArgs)
         {
             if (ShellStack.Count >= 1)
             {
@@ -62,7 +60,15 @@ namespace KS.Shell.ShellBase.Shells
         /// </summary>
         /// <param name="ShellType">The shell type</param>
         /// <param name="ShellArgs">Arguments to pass to shell</param>
-        public static void StartShellForced(ShellType ShellType, params object[] ShellArgs)
+        public static void StartShellForced(ShellType ShellType, params object[] ShellArgs) =>
+            StartShellForced(Shell.GetShellTypeName(ShellType), ShellArgs);
+
+        /// <summary>
+        /// Force starts the shell
+        /// </summary>
+        /// <param name="ShellType">The shell type</param>
+        /// <param name="ShellArgs">Arguments to pass to shell</param>
+        public static void StartShellForced(string ShellType, params object[] ShellArgs)
         {
             int shellCount = ShellStack.Count;
             try
@@ -133,61 +139,15 @@ namespace KS.Shell.ShellBase.Shells
         /// Gets the shell executor based on the shell type
         /// </summary>
         /// <param name="ShellType">The requested shell type</param>
-        public static BaseShell GetShellExecutor(ShellType ShellType)
-        {
-            switch (ShellType)
-            {
-                case ShellType.Shell:
-                    {
-                        return new UESHShell();
-                    }
-                case ShellType.FTPShell:
-                    {
-                        return new FTPShell();
-                    }
-                case ShellType.MailShell:
-                    {
-                        return new MailShell();
-                    }
-                case ShellType.SFTPShell:
-                    {
-                        return new SFTPShell();
-                    }
-                case ShellType.TextShell:
-                    {
-                        return new TextShell();
-                    }
-                case ShellType.TestShell:
-                    {
-                        return new KS.Shell.Shells.Test.TestShell();
-                    }
-                case ShellType.RSSShell:
-                    {
-                        return new RSSShell();
-                    }
-                case ShellType.JsonShell:
-                    {
-                        return new JsonShell();
-                    }
-                case ShellType.HTTPShell:
-                    {
-                        return new HTTPShell();
-                    }
-                case ShellType.HexShell:
-                    {
-                        return new HexShell();
-                    }
-                case ShellType.ArchiveShell:
-                    {
-                        return new ArchiveShell();
-                    }
+        public static BaseShell GetShellExecutor(ShellType ShellType) =>
+            GetShellExecutor(Shell.GetShellTypeName(ShellType));
 
-                default:
-                    {
-                        return new UESHShell();
-                    }
-            }
-        }
+        /// <summary>
+        /// Gets the shell executor based on the shell type
+        /// </summary>
+        /// <param name="ShellType">The requested shell type</param>
+        public static BaseShell GetShellExecutor(string ShellType) =>
+            Shell.GetShellInfo(ShellType).ShellBase;
 
     }
 }

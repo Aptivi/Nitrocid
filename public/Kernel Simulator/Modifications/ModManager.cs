@@ -36,19 +36,7 @@ using KS.Misc.Splash;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
-using KS.Shell.Shells.FTP;
-using KS.Shell.Shells.Hex;
-using KS.Shell.Shells.HTTP;
-using KS.Shell.Shells.Json;
-using KS.Shell.Shells.Mail;
-using KS.Shell.Shells.RSS;
-using KS.Shell.Shells.SFTP;
-using KS.Shell.Shells.Test;
-using KS.Shell.Shells.Text;
-using KS.Shell.Shells.UESH;
 using KS.Kernel.Debugging;
-using KS.Kernel.Debugging.RemoteDebug;
-using KS.Shell.Shells.Archive;
 
 namespace KS.Modifications
 {
@@ -556,65 +544,13 @@ namespace KS.Modifications
         /// Lists the mod commands based on the shell
         /// </summary>
         /// <param name="ShellType">Selected shell type</param>
-        public static Dictionary<string, CommandInfo> ListModCommands(ShellType ShellType)
-        {
-            switch (ShellType)
-            {
-                case ShellType.Shell:
-                    {
-                        return UESHShellCommon.ModCommands;
-                    }
-                case ShellType.RemoteDebugShell:
-                    {
-                        return RemoteDebugCmd.DebugModCmds;
-                    }
-                case ShellType.FTPShell:
-                    {
-                        return FTPShellCommon.FTPModCommands;
-                    }
-                case ShellType.SFTPShell:
-                    {
-                        return SFTPShellCommon.SFTPModCommands;
-                    }
-                case ShellType.MailShell:
-                    {
-                        return MailShellCommon.MailModCommands;
-                    }
-                case ShellType.TextShell:
-                    {
-                        return TextEditShellCommon.TextEdit_ModCommands;
-                    }
-                case ShellType.TestShell:
-                    {
-                        return TestShellCommon.Test_ModCommands;
-                    }
-                case ShellType.RSSShell:
-                    {
-                        return RSSShellCommon.RSSModCommands;
-                    }
-                case ShellType.JsonShell:
-                    {
-                        return JsonShellCommon.JsonShell_ModCommands;
-                    }
-                case ShellType.HTTPShell:
-                    {
-                        return HTTPShellCommon.HTTPModCommands;
-                    }
-                case ShellType.HexShell:
-                    {
-                        return HexEditShellCommon.HexEdit_ModCommands;
-                    }
-                case ShellType.ArchiveShell:
-                    {
-                        return ArchiveShellCommon.ArchiveShell_ModCommands;
-                    }
+        public static Dictionary<string, CommandInfo> ListModCommands(ShellType ShellType) => ListModCommands(Shell.Shell.GetShellTypeName(ShellType));
 
-                default:
-                    {
-                        return UESHShellCommon.ModCommands;
-                    }
-            }
-        }
+        /// <summary>
+        /// Lists the mod commands based on the shell
+        /// </summary>
+        /// <param name="ShellType">Selected shell type</param>
+        public static Dictionary<string, CommandInfo> ListModCommands(string ShellType) => Shell.Shell.GetShellInfo(ShellType).ModCommands;
 
     }
 }

@@ -22,7 +22,6 @@ using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
-using KS.Shell.Shells.UESH;
 
 namespace KS.Scripting
 {
@@ -76,7 +75,7 @@ namespace KS.Scripting
         {
             var CommandArgumentsInfo = new ProvidedCommandArgumentsInfo(cmd, ShellType.Shell);
             string NewCommand = $"{CommandArgumentsInfo.Command} ";
-            if (!UESHShellCommon.Commands[CommandArgumentsInfo.Command].Flags.HasFlag(CommandFlags.SettingVariable))
+            if (!Shell.Shell.GetShellInfo(ShellType.Shell).Commands[CommandArgumentsInfo.Command].Flags.HasFlag(CommandFlags.SettingVariable))
             {
                 foreach (string Word in CommandArgumentsInfo.ArgumentsList)
                 {

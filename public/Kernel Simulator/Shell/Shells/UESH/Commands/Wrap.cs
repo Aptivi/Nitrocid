@@ -42,9 +42,9 @@ namespace KS.Shell.Shells.UESH.Commands
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
             string CommandToBeWrapped = ListArgsOnly[0].Split(' ')[0];
-            if (UESHShellCommon.Commands.ContainsKey(CommandToBeWrapped))
+            if (Shell.GetShellInfo(ShellType.Shell).Commands.ContainsKey(CommandToBeWrapped))
             {
-                if (UESHShellCommon.Commands[CommandToBeWrapped].Flags.HasFlag(CommandFlags.Wrappable))
+                if (Shell.GetShellInfo(ShellType.Shell).Commands[CommandToBeWrapped].Flags.HasFlag(CommandFlags.Wrappable))
                 {
                     string WrapOutputPath = Paths.TempPath + "/wrapoutput.txt";
                     if (!Checking.FileExists(WrapOutputPath))
@@ -67,7 +67,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 else
                 {
                     var WrappableCmds = new ArrayList();
-                    foreach (CommandInfo CommandInfo in UESHShellCommon.Commands.Values)
+                    foreach (CommandInfo CommandInfo in Shell.GetShellInfo(ShellType.Shell).Commands.Values)
                     {
                         if (CommandInfo.Flags.HasFlag(CommandFlags.Wrappable))
                             WrappableCmds.Add(CommandInfo.Command);
@@ -85,7 +85,7 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             // Get wrappable commands
             var WrappableCmds = new ArrayList();
-            foreach (CommandInfo CommandInfo in UESHShellCommon.Commands.Values)
+            foreach (CommandInfo CommandInfo in Shell.GetShellInfo(ShellType.Shell).Commands.Values)
             {
                 if (CommandInfo.Flags.HasFlag(CommandFlags.Wrappable))
                     WrappableCmds.Add(CommandInfo.Command);

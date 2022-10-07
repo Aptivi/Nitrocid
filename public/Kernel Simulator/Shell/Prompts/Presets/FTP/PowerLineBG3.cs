@@ -40,7 +40,7 @@ namespace KS.Shell.Prompts.Presets.FTP
         public override string PresetPrompt => PresetPromptBuilder();
 
         /// <inheritdoc/>
-        public override ShellType PresetShellType { get; } = ShellType.FTPShell;
+        public override string PresetShellType { get; } = "FTPShell";
 
         internal override string PresetPromptBuilder()
         {

@@ -27,22 +27,9 @@ namespace KS.Shell.ShellBase.Commands
     static class CancellationHandlers
     {
 
-        internal static object 
-            CancelSync = new(),
-            EditorCancelSync = new(),
-            FTPCancelSync = new(),
-            HTTPCancelSync = new(),
-            JsonShellCancelSync = new(),
-            MailCancelSync = new(),
-            RssShellCancelSync = new(),
-            SFTPCancelSync = new(),
-            TestCancelSync = new(),
-            HexEditorCancelSync = new(),
-            ArchiveShellCancelSync = new();
-
         public static void CancelCommand(object sender, ConsoleCancelEventArgs e)
         {
-            lock (GetCancelSyncLock(ShellStart.ShellStack[ShellStart.ShellStack.Count - 1].ShellType))
+            lock (GetCancelSyncLock(Shell.CurrentShellType))
             {
                 if (e.SpecialKey == ConsoleSpecialKey.ControlC)
                 {
@@ -58,61 +45,9 @@ namespace KS.Shell.ShellBase.Commands
             }
         }
 
-        public static object GetCancelSyncLock(ShellType ShellType)
-        {
-            switch (ShellType)
-            {
-                case ShellType.Shell:
-                    {
-                        return CancelSync;
-                    }
-                case ShellType.FTPShell:
-                    {
-                        return FTPCancelSync;
-                    }
-                case ShellType.MailShell:
-                    {
-                        return MailCancelSync;
-                    }
-                case ShellType.SFTPShell:
-                    {
-                        return SFTPCancelSync;
-                    }
-                case ShellType.TextShell:
-                    {
-                        return EditorCancelSync;
-                    }
-                case ShellType.TestShell:
-                    {
-                        return TestCancelSync;
-                    }
-                case ShellType.RSSShell:
-                    {
-                        return RssShellCancelSync;
-                    }
-                case ShellType.JsonShell:
-                    {
-                        return JsonShellCancelSync;
-                    }
-                case ShellType.HTTPShell:
-                    {
-                        return HTTPCancelSync;
-                    }
-                case ShellType.HexShell:
-                    {
-                        return HexEditorCancelSync;
-                    }
-                case ShellType.ArchiveShell:
-                    {
-                        return ArchiveShellCancelSync;
-                    }
+        public static object GetCancelSyncLock(ShellType ShellType) => GetCancelSyncLock(Shell.GetShellTypeName(ShellType));
 
-                default:
-                    {
-                        return CancelSync;
-                    }
-            }
-        }
+        public static object GetCancelSyncLock(string ShellType) => Shell.GetShellInfo(ShellType).ShellLock;
 
     }
 }

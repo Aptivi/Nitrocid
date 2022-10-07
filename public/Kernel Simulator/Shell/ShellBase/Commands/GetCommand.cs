@@ -24,22 +24,10 @@ using Extensification.DictionaryExts;
 using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Kernel.Debugging;
-using KS.Kernel.Debugging.RemoteDebug;
 using KS.Kernel.Debugging.RemoteDebug.Interface;
 using KS.Languages;
 using KS.Misc.Writers.MiscWriters;
 using KS.Shell.ShellBase.Shells;
-using KS.Shell.Shells.Archive;
-using KS.Shell.Shells.FTP;
-using KS.Shell.Shells.Hex;
-using KS.Shell.Shells.HTTP;
-using KS.Shell.Shells.Json;
-using KS.Shell.Shells.Mail;
-using KS.Shell.Shells.RSS;
-using KS.Shell.Shells.SFTP;
-using KS.Shell.Shells.Test;
-using KS.Shell.Shells.Text;
-using KS.Shell.Shells.UESH;
 
 namespace KS.Shell.ShellBase.Commands
 {
@@ -61,7 +49,7 @@ namespace KS.Shell.ShellBase.Commands
             /// <summary>
             /// The shell type
             /// </summary>
-            internal ShellType ShellType;
+            internal string ShellType;
             /// <summary>
             /// The debug device stream writer
             /// </summary>
@@ -71,7 +59,11 @@ namespace KS.Shell.ShellBase.Commands
             /// </summary>
             internal string Address;
 
-            internal ExecuteCommandParameters(string RequestedCommand, ShellType ShellType, StreamWriter DebugDeviceSocket = null, string Address = "")
+            internal ExecuteCommandParameters(string RequestedCommand, ShellType ShellType, StreamWriter DebugDeviceSocket = null, string Address = "") : 
+                this(RequestedCommand, Shell.GetShellTypeName(ShellType), DebugDeviceSocket, Address) 
+            { }
+
+            internal ExecuteCommandParameters(string RequestedCommand, string ShellType, StreamWriter DebugDeviceSocket = null, string Address = "")
             {
                 this.RequestedCommand = RequestedCommand;
                 this.ShellType = ShellType;
@@ -87,7 +79,7 @@ namespace KS.Shell.ShellBase.Commands
         internal static void ExecuteCommand(ExecuteCommandParameters ThreadParams)
         {
             string RequestedCommand = ThreadParams.RequestedCommand;
-            var ShellType = ThreadParams.ShellType;
+            string ShellType = ThreadParams.ShellType;
             var DebugDeviceSocket = ThreadParams.DebugDeviceSocket;
             string DebugDeviceAddress = ThreadParams.Address;
             try
@@ -99,10 +91,7 @@ namespace KS.Shell.ShellBase.Commands
                 var Switches = ArgumentInfo.SwitchesList;
                 string StrArgs = ArgumentInfo.ArgumentsText;
                 bool RequiredArgumentsProvided = ArgumentInfo.RequiredArgumentsProvided;
-                var TargetCommands = UESHShellCommon.Commands;
-
-                // Set TargetCommands according to the shell type
-                TargetCommands = GetCommands(ShellType);
+                var TargetCommands = GetCommands(ShellType);
 
                 // Check to see if a requested command is obsolete
                 if (TargetCommands[Command].Flags.HasFlag(CommandFlags.Obsolete))
@@ -152,78 +141,21 @@ namespace KS.Shell.ShellBase.Commands
             }
         }
 
+        // TODO: Move these below to CommandManager
         /// <summary>
         /// Gets the command dictionary according to the shell type
         /// </summary>
         /// <param name="ShellType">The shell type</param>
-        public static Dictionary<string, CommandInfo> GetCommands(ShellType ShellType)
+        public static Dictionary<string, CommandInfo> GetCommands(ShellType ShellType) => GetCommands(Shell.GetShellTypeName(ShellType));
+
+        /// <summary>
+        /// Gets the command dictionary according to the shell type
+        /// </summary>
+        /// <param name="ShellType">The shell type</param>
+        public static Dictionary<string, CommandInfo> GetCommands(string ShellType)
         {
             // Individual shells
-            Dictionary<string, CommandInfo> FinalCommands;
-            switch (ShellType)
-            {
-                case ShellType.FTPShell:
-                    {
-                        FinalCommands = new Dictionary<string, CommandInfo>(FTPShellCommon.FTPCommands);
-                        break;
-                    }
-                case ShellType.MailShell:
-                    {
-                        FinalCommands = new Dictionary<string, CommandInfo>(MailShellCommon.MailCommands);
-                        break;
-                    }
-                case ShellType.RemoteDebugShell:
-                    {
-                        FinalCommands = new Dictionary<string, CommandInfo>(RemoteDebugCmd.DebugCommands);
-                        break;
-                    }
-                case ShellType.RSSShell:
-                    {
-                        FinalCommands = new Dictionary<string, CommandInfo>(RSSShellCommon.RSSCommands);
-                        break;
-                    }
-                case ShellType.SFTPShell:
-                    {
-                        FinalCommands = new Dictionary<string, CommandInfo>(SFTPShellCommon.SFTPCommands);
-                        break;
-                    }
-                case ShellType.TestShell:
-                    {
-                        FinalCommands = new Dictionary<string, CommandInfo>(TestShellCommon.Test_Commands);
-                        break;
-                    }
-                case ShellType.TextShell:
-                    {
-                        FinalCommands = new Dictionary<string, CommandInfo>(TextEditShellCommon.TextEdit_Commands);
-                        break;
-                    }
-                case ShellType.JsonShell:
-                    {
-                        FinalCommands = new Dictionary<string, CommandInfo>(JsonShellCommon.JsonShell_Commands);
-                        break;
-                    }
-                case ShellType.HTTPShell:
-                    {
-                        FinalCommands = new Dictionary<string, CommandInfo>(HTTPShellCommon.HTTPCommands);
-                        break;
-                    }
-                case ShellType.HexShell:
-                    {
-                        FinalCommands = new Dictionary<string, CommandInfo>(HexEditShellCommon.HexEdit_Commands);
-                        break;
-                    }
-                case ShellType.ArchiveShell:
-                    {
-                        FinalCommands = new Dictionary<string, CommandInfo>(ArchiveShellCommon.ArchiveShell_Commands);
-                        break;
-                    }
-
-                default:
-                    {
-                        FinalCommands = new Dictionary<string, CommandInfo>(UESHShellCommon.Commands);
-                        break;
-                    }
-            }
+            Dictionary<string, CommandInfo> FinalCommands = Shell.GetShellInfo(ShellType).Commands;
 
             // Unified commands
             foreach (string UnifiedCommand in Shell.UnifiedCommandDict.Keys)

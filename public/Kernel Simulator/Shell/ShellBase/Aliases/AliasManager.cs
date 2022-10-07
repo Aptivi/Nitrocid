@@ -41,21 +41,7 @@ namespace KS.Shell.ShellBase.Aliases
     public static class AliasManager
     {
 
-        internal static Dictionary<string, string> Aliases = new();
-        internal static Dictionary<string, string> RemoteDebugAliases = new();
-        internal static Dictionary<string, string> FTPShellAliases = new();
-        internal static Dictionary<string, string> MailShellAliases = new();
-        internal static Dictionary<string, string> SFTPShellAliases = new();
-        internal static Dictionary<string, string> TextShellAliases = new();
-        internal static Dictionary<string, string> TestShellAliases = new();
-        internal static Dictionary<string, string> ZIPShellAliases = new();
-        internal static Dictionary<string, string> RSSShellAliases = new();
-        internal static Dictionary<string, string> JsonShellAliases = new();
-        internal static Dictionary<string, string> HTTPShellAliases = new();
-        internal static Dictionary<string, string> HexShellAliases = new();
-        internal static Dictionary<string, string> RARShellAliases = new();
-        internal static Dictionary<string, string> ArchiveShellAliases = new();
-        internal static Dictionary<string, ShellType> AliasesToBeRemoved = new();
+        internal static Dictionary<string, string> AliasesToBeRemoved = new();
 
         /// <summary>
         /// Initializes aliases
@@ -67,14 +53,14 @@ namespace KS.Shell.ShellBase.Aliases
             string AliasJsonContent = File.ReadAllText(Paths.GetKernelPath(KernelPathType.Aliases));
             var AliasNameToken = JToken.Parse(!string.IsNullOrEmpty(AliasJsonContent) ? AliasJsonContent : "{}");
             string AliasCmd, ActualCmd;
-            ShellType AliasType;
+            string AliasType;
 
             foreach (JObject AliasObject in AliasNameToken)
             {
                 AliasCmd = (string)AliasObject["Alias"];
                 ActualCmd = (string)AliasObject["Command"];
-                AliasType = (ShellType)Convert.ToInt32(AliasObject["Type"].ToObject(typeof(ShellType)));
-                DebugWriter.WriteDebug(DebugLevel.I, "Adding \"{0}\" and \"{1}\" from Aliases.json to {2} list...", AliasCmd, ActualCmd, AliasType.ToString());
+                AliasType = (string)AliasObject["Type"];
+                DebugWriter.WriteDebug(DebugLevel.I, "Adding \"{0}\" and \"{1}\" from Aliases.json to {2} list...", AliasCmd, ActualCmd, AliasType);
                 var TargetAliasList = GetAliasesListFromType(AliasType);
                 TargetAliasList.AddOrModify(AliasCmd, ActualCmd);
             }
@@ -218,11 +204,21 @@ namespace KS.Shell.ShellBase.Aliases
         /// Removes alias from kernel
         /// </summary>
         /// <param name="TargetAlias">An alias that needs to be removed.</param>
-        /// <param name="Type">Alias type, whether it be shell or remote debug.</param>
+        /// <param name="Type">Alias type.</param>
         /// <returns>True if successful, False if unsuccessful.</returns>
         /// <exception cref="Kernel.Exceptions.AliasNoSuchAliasException"></exception>
         /// <exception cref="Kernel.Exceptions.AliasNoSuchTypeException"></exception>
-        public static bool RemoveAlias(string TargetAlias, ShellType Type)
+        public static bool RemoveAlias(string TargetAlias, ShellType Type) => RemoveAlias(TargetAlias, Shell.GetShellTypeName(Type));
+
+        /// <summary>
+        /// Removes alias from kernel
+        /// </summary>
+        /// <param name="TargetAlias">An alias that needs to be removed.</param>
+        /// <param name="Type">Alias type.</param>
+        /// <returns>True if successful, False if unsuccessful.</returns>
+        /// <exception cref="Kernel.Exceptions.AliasNoSuchAliasException"></exception>
+        /// <exception cref="Kernel.Exceptions.AliasNoSuchTypeException"></exception>
+        public static bool RemoveAlias(string TargetAlias, string Type)
         {
             // Variables
             var TargetAliasList = GetAliasesListFromType(Type);
@@ -278,7 +274,15 @@ namespace KS.Shell.ShellBase.Aliases
         /// <param name="TargetAlias">The existing alias</param>
         /// <param name="Type">The alias type</param>
         /// <returns>True if it exists; false if it doesn't exist</returns>
-        public static bool DoesAliasExist(string TargetAlias, ShellType Type)
+        public static bool DoesAliasExist(string TargetAlias, ShellType Type) => DoesAliasExist(TargetAlias, Shell.GetShellTypeName(Type));
+
+        /// <summary>
+        /// Checks to see if the specified alias exists.
+        /// </summary>
+        /// <param name="TargetAlias">The existing alias</param>
+        /// <param name="Type">The alias type</param>
+        /// <returns>True if it exists; false if it doesn't exist</returns>
+        public static bool DoesAliasExist(string TargetAlias, string Type)
         {
             // Get all aliases from file
             Making.MakeFile(Paths.GetKernelPath(KernelPathType.Aliases), false);
@@ -298,66 +302,13 @@ namespace KS.Shell.ShellBase.Aliases
         /// Gets the aliases list from the shell type
         /// </summary>
         /// <param name="ShellType">Selected shell type</param>
-        public static Dictionary<string, string> GetAliasesListFromType(ShellType ShellType)
-        {
-            switch (ShellType)
-            {
-                case ShellType.Shell:
-                    {
-                        return Aliases;
-                    }
-                case ShellType.RemoteDebugShell:
-                    {
-                        return RemoteDebugAliases;
-                    }
-                case ShellType.FTPShell:
-                    {
-                        return FTPShellAliases;
-                    }
-                case ShellType.SFTPShell:
-                    {
-                        return SFTPShellAliases;
-                    }
-                case ShellType.MailShell:
-                    {
-                        return MailShellAliases;
-                    }
-                case ShellType.TextShell:
-                    {
-                        return TextShellAliases;
-                    }
-                case ShellType.TestShell:
-                    {
-                        return TestShellAliases;
-                    }
-                case ShellType.RSSShell:
-                    {
-                        return RSSShellAliases;
-                    }
-                case ShellType.JsonShell:
-                    {
-                        return JsonShellAliases;
-                    }
-                case ShellType.HTTPShell:
-                    {
-                        return HTTPShellAliases;
-                    }
-                case ShellType.HexShell:
-                    {
-                        return HexShellAliases;
-                    }
-                case ShellType.ArchiveShell:
-                    {
-                        return ArchiveShellAliases;
-                    }
+        public static Dictionary<string, string> GetAliasesListFromType(ShellType ShellType) => GetAliasesListFromType(Shell.GetShellTypeName(ShellType));
 
-                default:
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Type {0} not found.", ShellType);
-                        throw new Kernel.Exceptions.AliasNoSuchTypeException(Translate.DoTranslation("Invalid type {0}."), ShellType);
-                    }
-            }
-        }
+        /// <summary>
+        /// Gets the aliases list from the shell type
+        /// </summary>
+        /// <param name="ShellType">Selected shell type</param>
+        public static Dictionary<string, string> GetAliasesListFromType(string ShellType) => Shell.GetShellInfo(ShellType).Aliases;
 
     }
 }

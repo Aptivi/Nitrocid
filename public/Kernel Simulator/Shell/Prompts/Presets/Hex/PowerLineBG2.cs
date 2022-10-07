@@ -41,7 +41,7 @@ namespace KS.Shell.Prompts.Presets.Hex
         public override string PresetPrompt => PresetPromptBuilder();
 
         /// <inheritdoc/>
-        public override ShellType PresetShellType { get; } = ShellType.HexShell;
+        public override string PresetShellType { get; } = "HexShell";
 
         internal override string PresetPromptBuilder()
         {

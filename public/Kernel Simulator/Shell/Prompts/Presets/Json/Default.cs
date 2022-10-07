@@ -38,7 +38,7 @@ namespace KS.Shell.Prompts.Presets.Json
         public override string PresetPrompt => PresetPromptBuilder();
 
         /// <inheritdoc/>
-        public override ShellType PresetShellType { get; } = ShellType.JsonShell;
+        public override string PresetShellType { get; } = "JsonShell";
 
         internal override string PresetPromptBuilder()
         {

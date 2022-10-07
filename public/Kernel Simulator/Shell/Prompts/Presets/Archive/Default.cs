@@ -37,7 +37,7 @@ namespace KS.Shell.Prompts.Presets.Archive
         public override string PresetPrompt => PresetPromptBuilder();
 
         /// <inheritdoc/>
-        public override ShellType PresetShellType { get; } = ShellType.ArchiveShell;
+        public override string PresetShellType { get; } = "ArchiveShell";
 
         internal override string PresetPromptBuilder()
         {

@@ -35,7 +35,6 @@ using KS.Misc.Reflection;
 using KS.Misc.Screensaver.Customized;
 using KS.Misc.Splash;
 using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
 
 namespace KS.Modifications
 {
@@ -227,9 +226,9 @@ namespace KS.Modifications
                             // See if the command conflicts with pre-existing shell commands
                             string Command = script.Commands.Keys.ElementAtOrDefault(i);
                             string ActualCommand = Command;
-                            CommandType CommandType = (CommandType)script.Commands.Values.ElementAtOrDefault(i).Type;
+                            string CommandType = script.Commands.Values.ElementAtOrDefault(i).Type;
                             DebugWriter.WriteDebug(DebugLevel.I, "Command type: {0}", CommandType);
-                            if (CommandManager.IsCommandFound(Command, (ShellType)CommandType) | ModManager.ListModCommands((ShellType)CommandType).ContainsKey(Command))
+                            if (CommandManager.IsCommandFound(Command, CommandType) | ModManager.ListModCommands(CommandType).ContainsKey(Command))
                             {
                                 DebugWriter.WriteDebug(DebugLevel.W, "Command {0} conflicts with available shell commands or mod commands. Appending \"-{1}-{2}\" to end of command...", Command, script.Name, script.ModPart);
                                 Command += $"-{script.Name}-{script.ModPart}";
@@ -247,8 +246,8 @@ namespace KS.Modifications
 
                                 // Now, add the command to the mod list
                                 DebugWriter.WriteDebug(DebugLevel.I, "Adding command {0} for {1}...", Command, CommandType.ToString());
-                                if (!ModManager.ListModCommands((ShellType)CommandType).ContainsKey(Command))
-                                    ModManager.ListModCommands((ShellType)CommandType).Add(Command, script.Commands[ActualCommand]);
+                                if (!ModManager.ListModCommands(CommandType).ContainsKey(Command))
+                                    ModManager.ListModCommands(CommandType).Add(Command, script.Commands[ActualCommand]);
                                 script.Commands.RenameKey(ActualCommand, Command);
                             }
                         }

@@ -36,7 +36,7 @@ namespace KS.Shell.Prompts.Presets.HTTP
         public override string PresetPrompt => PresetPromptBuilder();
 
         /// <inheritdoc/>
-        public override ShellType PresetShellType { get; } = ShellType.HTTPShell;
+        public override string PresetShellType { get; } = "HTTPShell";
 
         internal override string PresetPromptBuilder()
         {

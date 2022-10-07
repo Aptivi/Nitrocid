@@ -287,7 +287,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
                                     var Params = new GetCommand.ExecuteCommandParameters(FullCommand, ShellType.RemoteDebugShell, SocketStreamWriter, SocketIP);
                                     GetCommand.ExecuteCommand(Params);
                                 }
-                                else if (AliasManager.RemoteDebugAliases.ContainsKey(Command))
+                                else if (AliasManager.DoesAliasExist(Command, ShellType.RemoteDebugShell))
                                 {
                                     // Alias parsing starts here.
                                     AliasExecutor.ExecuteAlias(FullCommand, ShellType.RemoteDebugShell, SocketStreamWriter, SocketIP);

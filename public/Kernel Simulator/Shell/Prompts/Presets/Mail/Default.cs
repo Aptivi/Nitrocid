@@ -37,7 +37,7 @@ namespace KS.Shell.Prompts.Presets.Mail
         public override string PresetPrompt => PresetPromptBuilder();
 
         /// <inheritdoc/>
-        public override ShellType PresetShellType { get; } = ShellType.MailShell;
+        public override string PresetShellType { get; } = "MailShell";
 
         internal override string PresetPromptBuilder()
         {

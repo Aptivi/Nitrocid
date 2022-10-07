@@ -44,6 +44,17 @@ using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.ShellBase.Commands.UnifiedCommands;
 using KS.Users.Groups;
+using KS.Shell.Shells.UESH;
+using KS.Shell.Shells.FTP;
+using KS.Shell.Shells.Mail;
+using KS.Shell.Shells.SFTP;
+using KS.Shell.Shells.Text;
+using KS.Shell.Shells.Test;
+using KS.Shell.Shells.RSS;
+using KS.Shell.Shells.Json;
+using KS.Shell.Shells.HTTP;
+using KS.Shell.Shells.Hex;
+using KS.Shell.Shells.Archive;
 
 namespace KS.Shell
 {
@@ -81,21 +92,39 @@ namespace KS.Shell
         };
 
         /// <summary>
+        /// List of available shells
+        /// </summary>
+        internal readonly static Dictionary<string, BaseShellInfo> AvailableShells = new()
+        {
+            { "Shell", new UESHShellCommon() },
+            { "FTPShell", new FTPShellInfo() },
+            { "MailShell", new MailShellInfo() },
+            { "SFTPShell", new SFTPShellInfo() },
+            { "TextShell", new TextShellInfo() },
+            { "TestShell", new TestShellInfo() },
+            { "RSSShell", new RSSShellInfo() },
+            { "JsonShell", new JsonShellInfo() },
+            { "HTTPShell", new HTTPShellInfo() },
+            { "HexShell", new HexShellInfo() },
+            { "ArchiveShell", new ArchiveShellInfo() }
+        };
+
+        /// <summary>
         /// Current shell type
         /// </summary>
-        public static ShellType CurrentShellType => ShellStart.ShellStack[ShellStart.ShellStack.Count - 1].ShellType;
+        public static string CurrentShellType => ShellStart.ShellStack[ShellStart.ShellStack.Count - 1].ShellType;
 
         /// <summary>
         /// Last shell type
         /// </summary>
-        public static ShellType LastShellType
+        public static string LastShellType
         {
             get
             {
                 if (ShellStart.ShellStack.Count == 0)
                 {
                     // We don't have any shell. Return Shell.
-                    return ShellType.Shell;
+                    return "Shell";
                 }
                 else if (ShellStart.ShellStack.Count == 1)
                 {
@@ -128,9 +157,27 @@ namespace KS.Shell
         /// </summary>
         /// <param name="FullCommand">The full command string</param>
         /// <param name="OutputPath">Optional (non-)neutralized output path</param>
+        /// <remarks>All new shells implemented either in KS or by mods should use this routine to allow effective and consistent line parsing.</remarks>
+        public static void GetLine(string FullCommand, string OutputPath = "") => GetLine(FullCommand, OutputPath, CurrentShellType);
+
+        /// <summary>
+        /// Parses a specified command.
+        /// </summary>
+        /// <param name="FullCommand">The full command string</param>
+        /// <param name="OutputPath">Optional (non-)neutralized output path</param>
         /// <param name="ShellType">Shell type</param>
         /// <remarks>All new shells implemented either in KS or by mods should use this routine to allow effective and consistent line parsing.</remarks>
-        public static void GetLine(string FullCommand, string OutputPath = "", ShellType ShellType = ShellType.Shell)
+        public static void GetLine(string FullCommand, string OutputPath = "", ShellType ShellType = ShellType.Shell) =>
+            GetLine(FullCommand, OutputPath, GetShellTypeName(ShellType));
+
+        /// <summary>
+        /// Parses a specified command.
+        /// </summary>
+        /// <param name="FullCommand">The full command string</param>
+        /// <param name="OutputPath">Optional (non-)neutralized output path</param>
+        /// <param name="ShellType">Shell type</param>
+        /// <remarks>All new shells implemented either in KS or by mods should use this routine to allow effective and consistent line parsing.</remarks>
+        public static void GetLine(string FullCommand, string OutputPath = "", string ShellType = "Shell")
         {
             // Check for sanity
             if (string.IsNullOrEmpty(FullCommand))
@@ -248,7 +295,7 @@ namespace KS.Shell
                                 {
 
                                     // Check to see if a user is able to execute a command
-                                    if (ShellType == ShellType.Shell)
+                                    if (ShellType == "Shell")
                                     {
                                         if (GroupManagement.HasGroup(Login.Login.CurrentUser.Username, GroupManagement.GroupType.Administrator) == false & Commands[commandName].Flags.HasFlag(CommandFlags.Strict))
                                         {
@@ -296,7 +343,7 @@ namespace KS.Shell
                                     }
                                 }
                             }
-                            else if (Parsing.TryParsePath(TargetFile) & ShellType == ShellType.Shell)
+                            else if (Parsing.TryParsePath(TargetFile) & ShellType == "Shell")
                             {
                                 // Scan PATH for file existence and set file name as needed
                                 PathLookupTools.FileExistsInPath(commandName, ref TargetFile);
@@ -379,6 +426,24 @@ namespace KS.Shell
             // Restore title
             ConsoleExtensions.SetTitle(Kernel.Kernel.ConsoleTitle);
         }
+
+        /// <summary>
+        /// Gets the shell type name
+        /// </summary>
+        /// <param name="shellType">Shell type enumeration</param>
+        public static string GetShellTypeName(ShellType shellType) => shellType.ToString();
+
+        /// <summary>
+        /// Gets the shell information instance
+        /// </summary>
+        /// <param name="shellType">Shell type from enum</param>
+        public static BaseShellInfo GetShellInfo(ShellType shellType) => GetShellInfo(GetShellTypeName(shellType));
+
+        /// <summary>
+        /// Gets the shell information instance
+        /// </summary>
+        /// <param name="shellType">Shell type name</param>
+        public static BaseShellInfo GetShellInfo(string shellType) => AvailableShells.ContainsKey(shellType) ? AvailableShells[shellType] : AvailableShells["Shell"];
 
         /// <summary>
         /// Initializes the redirection
