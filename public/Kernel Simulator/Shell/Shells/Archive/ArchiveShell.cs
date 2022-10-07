@@ -43,7 +43,7 @@ namespace KS.Shell.Shells.Archive
     public class ArchiveShell : BaseShell, IShell
     {
         /// <inheritdoc/>
-        public override ShellType ShellType => ShellType.ArchiveShell;
+        public override string ShellType => "ArchiveShell";
 
         /// <inheritdoc/>
         public override bool Bail { get; set; }
@@ -99,7 +99,7 @@ namespace KS.Shell.Shells.Archive
                     if ((string.IsNullOrEmpty(WrittenCommand) | (WrittenCommand?.StartsWithAnyOf(new[] { " ", "#" }))) == false)
                     {
                         Kernel.Kernel.KernelEventManager.RaiseArchivePreExecuteCommand(WrittenCommand);
-                        Shell.GetLine(WrittenCommand, "", ShellType.ArchiveShell);
+                        Shell.GetLine(WrittenCommand, "", ShellType);
                         Kernel.Kernel.KernelEventManager.RaiseArchivePostExecuteCommand(WrittenCommand);
                     }
                 }

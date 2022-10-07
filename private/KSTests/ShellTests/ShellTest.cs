@@ -25,7 +25,7 @@ namespace KSTests.ShellTests
     class ShellTest : BaseShell, IShell
     {
 
-        public override ShellType ShellType { get; }
+        public override string ShellType => "Basic debug shell";
 
         public override bool Bail { get; set; }
 

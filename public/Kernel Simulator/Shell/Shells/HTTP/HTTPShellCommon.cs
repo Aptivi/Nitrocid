@@ -30,16 +30,6 @@ namespace KS.Shell.Shells.HTTP
     public static class HTTPShellCommon
     {
         /// <summary>
-        /// HTTP shell commands
-        /// </summary>
-        public readonly static Dictionary<string, CommandInfo> HTTPCommands = new()
-        {
-            { "delete", new CommandInfo("delete", ShellType.HTTPShell, "Deletes content from HTTP server", new CommandArgumentInfo(new[] { "<request>" }, true, 1), new HTTP_DeleteCommand()) },
-            { "get", new CommandInfo("get", ShellType.HTTPShell, "Gets the response from the HTTP server using the specified request", new CommandArgumentInfo(new[] { "<request>" }, true, 1), new HTTP_GetCommand()) },
-            { "getstring", new CommandInfo("getstring", ShellType.HTTPShell, "Gets the string from the HTTP server using the specified request", new CommandArgumentInfo(new[] { "<request>" }, true, 1), new HTTP_GetStringCommand()) },
-            { "setsite", new CommandInfo("setsite", ShellType.HTTPShell, "Sets the HTTP site. Must be a valid URI.", new CommandArgumentInfo(new[] { "<uri>" }, true, 1), new HTTP_SetSiteCommand()) }
-        };
-        /// <summary>
         /// HTTP site URL
         /// </summary>
         public static string HTTPSite;
@@ -51,7 +41,6 @@ namespace KS.Shell.Shells.HTTP
         /// HTTP client
         /// </summary>
         public static HttpClient ClientHTTP = new();
-        internal readonly static Dictionary<string, CommandInfo> HTTPModCommands = new();
 
         /// <summary>
         /// See if the HTTP shell is connected

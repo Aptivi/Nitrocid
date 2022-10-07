@@ -35,7 +35,7 @@ namespace KS.Shell.Shells.Mail
     {
 
         /// <inheritdoc/>
-        public override ShellType ShellType => ShellType.MailShell;
+        public override string ShellType => "MailShell";
 
         /// <inheritdoc/>
         public override bool Bail { get; set; }
@@ -71,7 +71,7 @@ namespace KS.Shell.Shells.Mail
                 if ((string.IsNullOrEmpty(cmd) | (cmd?.StartsWithAnyOf(new[] { " ", "#" }))) == false)
                 {
                     Kernel.Kernel.KernelEventManager.RaiseIMAPPreExecuteCommand(cmd);
-                    Shell.GetLine(cmd, "", ShellType.MailShell);
+                    Shell.GetLine(cmd, "", ShellType);
                     Kernel.Kernel.KernelEventManager.RaiseIMAPPostExecuteCommand(cmd);
                 }
             }

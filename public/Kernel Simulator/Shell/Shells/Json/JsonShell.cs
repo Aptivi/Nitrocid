@@ -37,7 +37,7 @@ namespace KS.Shell.Shells.Json
     {
 
         /// <inheritdoc/>
-        public override ShellType ShellType => ShellType.JsonShell;
+        public override string ShellType => "JsonShell";
 
         /// <inheritdoc/>
         public override bool Bail { get; set; }
@@ -86,7 +86,7 @@ namespace KS.Shell.Shells.Json
                 if ((string.IsNullOrEmpty(WrittenCommand) | (WrittenCommand?.StartsWithAnyOf(new[] { " ", "#" }))) == false)
                 {
                     Kernel.Kernel.KernelEventManager.RaiseJsonPreExecuteCommand(WrittenCommand);
-                    Shell.GetLine(WrittenCommand, "", ShellType.JsonShell);
+                    Shell.GetLine(WrittenCommand, "", ShellType);
                     Kernel.Kernel.KernelEventManager.RaiseJsonPostExecuteCommand(WrittenCommand);
                 }
             }

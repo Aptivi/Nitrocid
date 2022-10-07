@@ -45,9 +45,9 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             if (ListArgsOnly.Length > 3)
             {
-                if (ListArgsOnly[0] == "add" & Enum.IsDefined(typeof(ShellType), ListArgsOnly[1]))
+                if (ListArgsOnly[0] == "add" & Shell.AvailableShells.ContainsKey(ListArgsOnly[1]))
                 {
-                    AliasManager.ManageAlias(ListArgsOnly[0], (ShellType)Convert.ToInt32(Enum.Parse(typeof(ShellType), ListArgsOnly[1])), ListArgsOnly[2], ListArgsOnly[3]);
+                    AliasManager.ManageAlias(ListArgsOnly[0], ListArgsOnly[1], ListArgsOnly[2], ListArgsOnly[3]);
                 }
                 else
                 {
@@ -56,9 +56,9 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             else if (ListArgsOnly.Length == 3)
             {
-                if (ListArgsOnly[0] == "rem" & Enum.IsDefined(typeof(ShellType), ListArgsOnly[1]))
+                if (ListArgsOnly[0] == "rem" & Shell.AvailableShells.ContainsKey(ListArgsOnly[1]))
                 {
-                    AliasManager.ManageAlias(ListArgsOnly[0], (ShellType)Convert.ToInt32(Enum.Parse(typeof(ShellType), ListArgsOnly[1])), ListArgsOnly[2]);
+                    AliasManager.ManageAlias(ListArgsOnly[0], ListArgsOnly[1], ListArgsOnly[2]);
                 }
                 else
                 {

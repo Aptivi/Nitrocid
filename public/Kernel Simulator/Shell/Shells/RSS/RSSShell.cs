@@ -41,7 +41,7 @@ namespace KS.Shell.Shells.RSS
     {
 
         /// <inheritdoc/>
-        public override ShellType ShellType => ShellType.RSSShell;
+        public override string ShellType => "RSSShell";
 
         /// <inheritdoc/>
         public override bool Bail { get; set; }
@@ -162,7 +162,7 @@ namespace KS.Shell.Shells.RSS
                     if ((string.IsNullOrEmpty(WrittenCommand) | (WrittenCommand?.StartsWithAnyOf(new[] { " ", "#" }))) == false)
                     {
                         Kernel.Kernel.KernelEventManager.RaiseRSSPreExecuteCommand(RSSShellCommon.RSSFeedLink, WrittenCommand);
-                        Shell.GetLine(WrittenCommand, "", ShellType.RSSShell);
+                        Shell.GetLine(WrittenCommand, "", ShellType);
                         Kernel.Kernel.KernelEventManager.RaiseRSSPostExecuteCommand(RSSShellCommon.RSSFeedLink, WrittenCommand);
                     }
                 }

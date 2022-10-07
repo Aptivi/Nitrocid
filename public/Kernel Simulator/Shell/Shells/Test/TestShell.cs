@@ -39,7 +39,7 @@ namespace KS.Shell.Shells.Test
     {
 
         /// <inheritdoc/>
-        public override ShellType ShellType => ShellType.TestShell;
+        public override string ShellType => "TestShell";
 
         /// <inheritdoc/>
         public override bool Bail { get; set; }
@@ -71,7 +71,7 @@ namespace KS.Shell.Shells.Test
                     if ((string.IsNullOrEmpty(FullCmd) | (FullCmd?.StartsWithAnyOf(new[] { " ", "#" }))) == false)
                     {
                         Kernel.Kernel.KernelEventManager.RaiseTestPreExecuteCommand(FullCmd);
-                        Shell.GetLine(FullCmd, "", ShellType.TestShell);
+                        Shell.GetLine(FullCmd, "", ShellType);
                         Kernel.Kernel.KernelEventManager.RaiseTestPostExecuteCommand(FullCmd);
                     }
                 }

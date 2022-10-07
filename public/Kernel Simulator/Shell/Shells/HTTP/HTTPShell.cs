@@ -36,7 +36,7 @@ namespace KS.Shell.Shells.HTTP
     {
 
         /// <inheritdoc/>
-        public override ShellType ShellType => ShellType.HTTPShell;
+        public override string ShellType => "HTTPShell";
 
         /// <inheritdoc/>
         public override bool Bail { get; set; }
@@ -67,7 +67,7 @@ namespace KS.Shell.Shells.HTTP
                     if ((string.IsNullOrEmpty(HttpCommand) | (HttpCommand?.StartsWithAnyOf(new[] { " ", "#" }))) == false)
                     {
                         Kernel.Kernel.KernelEventManager.RaiseHTTPPreExecuteCommand(HttpCommand);
-                        Shell.GetLine(HttpCommand, "", ShellType.HTTPShell);
+                        Shell.GetLine(HttpCommand, "", ShellType);
                         Kernel.Kernel.KernelEventManager.RaiseHTTPPostExecuteCommand(HttpCommand);
                     }
                 }

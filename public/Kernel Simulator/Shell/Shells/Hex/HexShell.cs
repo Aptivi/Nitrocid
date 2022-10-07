@@ -39,7 +39,7 @@ namespace KS.Shell.Shells.Hex
     {
 
         /// <inheritdoc/>
-        public override ShellType ShellType => ShellType.HexShell;
+        public override string ShellType => "HexShell";
 
         /// <inheritdoc/>
         public override bool Bail { get; set; }
@@ -93,7 +93,7 @@ namespace KS.Shell.Shells.Hex
                     if ((string.IsNullOrEmpty(WrittenCommand) | (WrittenCommand?.StartsWithAnyOf(new[] { " ", "#" }))) == false)
                     {
                         Kernel.Kernel.KernelEventManager.RaiseHexPreExecuteCommand(WrittenCommand);
-                        Shell.GetLine(WrittenCommand, "", ShellType.HexShell);
+                        Shell.GetLine(WrittenCommand, "", ShellType);
                         Kernel.Kernel.KernelEventManager.RaiseHexPostExecuteCommand(WrittenCommand);
                     }
                 }

@@ -198,11 +198,10 @@ namespace KS.Modifications
                     }
 
                     // Clear all mod commands list, since we've stopped all mods.
-                    foreach (string ShellTypeName in Enum.GetNames(typeof(ShellType)))
+                    foreach (string ShellTypeName in Shell.Shell.AvailableShells.Keys)
                     {
-                        ShellType ShellTypeEnum = (ShellType)Convert.ToInt32(Enum.Parse(typeof(ShellType), ShellTypeName));
-                        ListModCommands(ShellTypeEnum).Clear();
-                        DebugWriter.WriteDebug(DebugLevel.I, "Mod commands for {0} cleared.", ShellTypeEnum.ToString());
+                        ListModCommands(ShellTypeName).Clear();
+                        DebugWriter.WriteDebug(DebugLevel.I, "Mod commands for {0} cleared.", ShellTypeName);
                     }
 
                     // Clear the custom screensavers

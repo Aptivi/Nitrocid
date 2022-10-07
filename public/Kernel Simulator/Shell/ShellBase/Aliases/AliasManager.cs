@@ -72,11 +72,14 @@ namespace KS.Shell.ShellBase.Aliases
         public static void SaveAliases()
         {
             // Save all aliases
-            foreach (ShellType Shell in Enum.GetValues(typeof(ShellType)))
+            foreach (string Shell in Shell.AvailableShells.Keys)
                 SaveAliasesInternal(Shell);
         }
 
-        internal static void SaveAliasesInternal(ShellType ShellType)
+        internal static void SaveAliasesInternal(ShellType ShellType) =>
+            SaveAliasesInternal(Shell.GetShellTypeName(ShellType));
+
+        internal static void SaveAliasesInternal(string ShellType)
         {
             // Get all aliases from file
             Making.MakeFile(Paths.GetKernelPath(KernelPathType.Aliases), false);
@@ -104,7 +107,17 @@ namespace KS.Shell.ShellBase.Aliases
         /// <param name="Type">Alias type (Shell or Remote Debug)</param>
         /// <param name="AliasCmd">A specified alias</param>
         /// <param name="DestCmd">A destination command (target)</param>
-        public static void ManageAlias(string mode, ShellType Type, string AliasCmd, string DestCmd = "")
+        public static void ManageAlias(string mode, ShellType Type, string AliasCmd, string DestCmd = "") =>
+            ManageAlias(mode, Shell.GetShellTypeName(Type), AliasCmd, DestCmd);
+
+        /// <summary>
+        /// Manages the alias
+        /// </summary>
+        /// <param name="mode">Either add or rem</param>
+        /// <param name="Type">Alias type (Shell or Remote Debug)</param>
+        /// <param name="AliasCmd">A specified alias</param>
+        /// <param name="DestCmd">A destination command (target)</param>
+        public static void ManageAlias(string mode, string Type, string AliasCmd, string DestCmd = "")
         {
             if (Enum.IsDefined(typeof(ShellType), Type))
             {
@@ -166,7 +179,21 @@ namespace KS.Shell.ShellBase.Aliases
         /// <exception cref="Kernel.Exceptions.AliasNoSuchCommandException"></exception>
         /// <exception cref="Kernel.Exceptions.AliasAlreadyExistsException"></exception>
         /// <exception cref="Kernel.Exceptions.AliasNoSuchTypeException"></exception>
-        public static bool AddAlias(string SourceAlias, string Destination, ShellType Type)
+        public static bool AddAlias(string SourceAlias, string Destination, ShellType Type) =>
+            AddAlias(SourceAlias, Destination, Type);
+
+        /// <summary>
+        /// Adds alias to kernel
+        /// </summary>
+        /// <param name="SourceAlias">A command to be aliased. It should exist in both shell and remote debug.</param>
+        /// <param name="Destination">A one-word command to alias to.</param>
+        /// <param name="Type">Alias type, whether it be shell or remote debug.</param>
+        /// <returns>True if successful, False if unsuccessful.</returns>
+        /// <exception cref="Kernel.Exceptions.AliasInvalidOperationException"></exception>
+        /// <exception cref="Kernel.Exceptions.AliasNoSuchCommandException"></exception>
+        /// <exception cref="Kernel.Exceptions.AliasAlreadyExistsException"></exception>
+        /// <exception cref="Kernel.Exceptions.AliasNoSuchTypeException"></exception>
+        public static bool AddAlias(string SourceAlias, string Destination, string Type)
         {
             if (Enum.IsDefined(typeof(ShellType), Type))
             {
@@ -208,7 +235,8 @@ namespace KS.Shell.ShellBase.Aliases
         /// <returns>True if successful, False if unsuccessful.</returns>
         /// <exception cref="Kernel.Exceptions.AliasNoSuchAliasException"></exception>
         /// <exception cref="Kernel.Exceptions.AliasNoSuchTypeException"></exception>
-        public static bool RemoveAlias(string TargetAlias, ShellType Type) => RemoveAlias(TargetAlias, Shell.GetShellTypeName(Type));
+        public static bool RemoveAlias(string TargetAlias, ShellType Type) => 
+            RemoveAlias(TargetAlias, Shell.GetShellTypeName(Type));
 
         /// <summary>
         /// Removes alias from kernel
@@ -274,7 +302,8 @@ namespace KS.Shell.ShellBase.Aliases
         /// <param name="TargetAlias">The existing alias</param>
         /// <param name="Type">The alias type</param>
         /// <returns>True if it exists; false if it doesn't exist</returns>
-        public static bool DoesAliasExist(string TargetAlias, ShellType Type) => DoesAliasExist(TargetAlias, Shell.GetShellTypeName(Type));
+        public static bool DoesAliasExist(string TargetAlias, ShellType Type) => 
+            DoesAliasExist(TargetAlias, Shell.GetShellTypeName(Type));
 
         /// <summary>
         /// Checks to see if the specified alias exists.
@@ -302,13 +331,15 @@ namespace KS.Shell.ShellBase.Aliases
         /// Gets the aliases list from the shell type
         /// </summary>
         /// <param name="ShellType">Selected shell type</param>
-        public static Dictionary<string, string> GetAliasesListFromType(ShellType ShellType) => GetAliasesListFromType(Shell.GetShellTypeName(ShellType));
+        public static Dictionary<string, string> GetAliasesListFromType(ShellType ShellType) => 
+            GetAliasesListFromType(Shell.GetShellTypeName(ShellType));
 
         /// <summary>
         /// Gets the aliases list from the shell type
         /// </summary>
         /// <param name="ShellType">Selected shell type</param>
-        public static Dictionary<string, string> GetAliasesListFromType(string ShellType) => Shell.GetShellInfo(ShellType).Aliases;
+        public static Dictionary<string, string> GetAliasesListFromType(string ShellType) => 
+            Shell.GetShellInfo(ShellType).Aliases;
 
     }
 }

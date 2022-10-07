@@ -39,7 +39,7 @@ namespace KS.Shell.Shells.Text
     {
 
         /// <inheritdoc/>
-        public override ShellType ShellType => ShellType.TextShell;
+        public override string ShellType => "TextShell";
 
         /// <inheritdoc/>
         public override bool Bail { get; set; }
@@ -92,7 +92,7 @@ namespace KS.Shell.Shells.Text
                     if ((string.IsNullOrEmpty(WrittenCommand) | (WrittenCommand?.StartsWithAnyOf(new[] { " ", "#" }))) == false)
                     {
                         Kernel.Kernel.KernelEventManager.RaiseTextPreExecuteCommand(WrittenCommand);
-                        Shell.GetLine(WrittenCommand, "", ShellType.TextShell);
+                        Shell.GetLine(WrittenCommand, "", ShellType);
                         Kernel.Kernel.KernelEventManager.RaiseTextPostExecuteCommand(WrittenCommand);
                     }
                 }

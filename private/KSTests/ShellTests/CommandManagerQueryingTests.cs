@@ -18,6 +18,7 @@
 
 using System;
 using System.Diagnostics;
+using KS.Shell;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using NUnit.Framework;
@@ -51,9 +52,9 @@ namespace KSTests.ShellTests
         [Description("Querying")]
         public void TestGetCommandListFromAllShells()
         {
-            foreach (string ShellTypeName in Enum.GetNames(typeof(ShellType)))
+            foreach (string ShellTypeName in Shell.AvailableShells.Keys)
             {
-                var Commands = CommandManager.GetCommands((ShellType)Convert.ToInt32(Enum.Parse(typeof(ShellType), ShellTypeName)));
+                var Commands = CommandManager.GetCommands(ShellTypeName);
                 Debug.WriteLine(format: "Commands from {0}: {1} commands", ShellTypeName, Commands.Count);
                 Debug.WriteLine(format: string.Join(", ", Commands));
                 Commands.ShouldNotBeNull();

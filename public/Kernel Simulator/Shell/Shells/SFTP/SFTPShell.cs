@@ -37,7 +37,7 @@ namespace KS.Shell.Shells.SFTP
     {
 
         /// <inheritdoc/>
-        public override ShellType ShellType => ShellType.SFTPShell;
+        public override string ShellType => "SFTPShell";
 
         /// <inheritdoc/>
         public override bool Bail { get; set; }
@@ -110,7 +110,7 @@ namespace KS.Shell.Shells.SFTP
                     if ((string.IsNullOrEmpty(SFTPStrCmd) | (SFTPStrCmd?.StartsWithAnyOf(new[] { " ", "#" }))) == false)
                     {
                         Kernel.Kernel.KernelEventManager.RaiseSFTPPreExecuteCommand(SFTPStrCmd);
-                        Shell.GetLine(SFTPStrCmd, "", ShellType.SFTPShell);
+                        Shell.GetLine(SFTPStrCmd, "", ShellType);
                         Kernel.Kernel.KernelEventManager.RaiseSFTPPostExecuteCommand(SFTPStrCmd);
                     }
                 }

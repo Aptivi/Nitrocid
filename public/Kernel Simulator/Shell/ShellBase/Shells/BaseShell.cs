@@ -28,7 +28,7 @@ namespace KS.Shell.ShellBase.Shells
     {
 
         /// <inheritdoc/>
-        public virtual ShellType ShellType { get; private set; }
+        public virtual string ShellType { get; private set; }
 
         /// <inheritdoc/>
         public virtual bool Bail { get; set; }

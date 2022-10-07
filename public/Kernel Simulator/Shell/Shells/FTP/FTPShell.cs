@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.FTP
     {
 
         /// <inheritdoc/>
-        public override ShellType ShellType => ShellType.FTPShell;
+        public override string ShellType => "FTPShell";
 
         /// <inheritdoc/>
         public override bool Bail { get; set; }
@@ -76,7 +76,7 @@ namespace KS.Shell.Shells.FTP
                         DebugWriter.WriteDebug(DebugLevel.I, $"Currently connecting to {Address} by \"ftp (address)\"...");
                         FtpCommand = $"connect {Address}";
                         Connects = false;
-                        Shell.GetLine(FtpCommand, "", ShellType.FTPShell);
+                        Shell.GetLine(FtpCommand, "", ShellType);
                     }
                     else
                     {

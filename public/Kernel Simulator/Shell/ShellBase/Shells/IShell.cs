@@ -27,7 +27,7 @@ namespace KS.Shell.ShellBase.Shells
         /// <summary>
         /// The shell type
         /// </summary>
-        ShellType ShellType { get; }
+        string ShellType { get; }
         /// <summary>
         /// If true, will exit the shell
         /// </summary>
