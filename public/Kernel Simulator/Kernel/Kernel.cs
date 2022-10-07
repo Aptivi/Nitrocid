@@ -237,12 +237,13 @@ namespace KS.Kernel
                         Notifications.NotifySend(new Notification(Translate.DoTranslation("Previous boot failed"), KernelTools.LastKernelErrorException.Message, Notifications.NotifPriority.High, Notifications.NotifType.Normal));
                     }
 
-                    // Show license and dev notice if new style used
+                    // Show license if new style used
                     if (Flags.NewWelcomeStyle | Flags.EnableSplash)
                     {
                         TextWriterColor.Write();
                         SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("License information"), true, ColorTools.ColTypes.Stage);
                         WelcomeMessage.WriteLicense(false);
+                    }
 
 #if SPECIFIERDEV
                         TextWriterColor.Write();
@@ -254,7 +255,6 @@ namespace KS.Kernel
                         TextWriterColor.Write();
                         TextWriterColor.Write("* " + Translate.DoTranslation("We recommend against running this version of the kernel, because it is unsupported. If you have downloaded this kernel from unknown sources, this message may appear. Please download from our official downloads page."), true, ColorTools.ColTypes.DevelopmentWarning);
 #endif
-                    }
 
                     // Initialize login prompt
                     if (!Flags.Maintenance)
