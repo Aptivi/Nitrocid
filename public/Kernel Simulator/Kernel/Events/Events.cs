@@ -41,11 +41,11 @@ namespace KS.Kernel.Events
         public event LoginErrorEventHandler LoginError;
         public delegate void LoginErrorEventHandler(string Username, LoginErrorReasons Reason);
         public event ShellInitializedEventHandler ShellInitialized;
-        public delegate void ShellInitializedEventHandler();
+        public delegate void ShellInitializedEventHandler(string ShellType);
         public event PreExecuteCommandEventHandler PreExecuteCommand;
-        public delegate void PreExecuteCommandEventHandler(string Command);
+        public delegate void PreExecuteCommandEventHandler(string ShellType, string Command);
         public event PostExecuteCommandEventHandler PostExecuteCommand;
-        public delegate void PostExecuteCommandEventHandler(string Command);
+        public delegate void PostExecuteCommandEventHandler(string ShellType, string Command);
         public event KernelErrorEventHandler KernelError;
         public delegate void KernelErrorEventHandler(KernelErrorLevel ErrorType, bool Reboot, long RebootTime, string Description, Exception Exc, object[] Variables);
         public event ContKernelErrorEventHandler ContKernelError;
@@ -67,7 +67,7 @@ namespace KS.Kernel.Events
         public event PostUnlockEventHandler PostUnlock;
         public delegate void PostUnlockEventHandler(string Screensaver);
         public event CommandErrorEventHandler CommandError;
-        public delegate void CommandErrorEventHandler(string Command, Exception Exception);
+        public delegate void CommandErrorEventHandler(string ShellType, string Command, Exception Exception);
         public event PreReloadConfigEventHandler PreReloadConfig;
         public delegate void PreReloadConfigEventHandler();
         public event PostReloadConfigEventHandler PostReloadConfig;
@@ -80,14 +80,6 @@ namespace KS.Kernel.Events
         public delegate void PlaceholderParseErrorEventHandler(string Target, Exception Exception);
         public event GarbageCollectedEventHandler GarbageCollected;
         public delegate void GarbageCollectedEventHandler();
-        public event FTPShellInitializedEventHandler FTPShellInitialized;
-        public delegate void FTPShellInitializedEventHandler();
-        public event FTPPreExecuteCommandEventHandler FTPPreExecuteCommand;
-        public delegate void FTPPreExecuteCommandEventHandler(string Command);
-        public event FTPPostExecuteCommandEventHandler FTPPostExecuteCommand;
-        public delegate void FTPPostExecuteCommandEventHandler(string Command);
-        public event FTPCommandErrorEventHandler FTPCommandError;
-        public delegate void FTPCommandErrorEventHandler(string Command, Exception Exception);
         public event FTPPreDownloadEventHandler FTPPreDownload;
         public delegate void FTPPreDownloadEventHandler(string File);
         public event FTPPostDownloadEventHandler FTPPostDownload;
@@ -96,13 +88,6 @@ namespace KS.Kernel.Events
         public delegate void FTPPreUploadEventHandler(string File);
         public event FTPPostUploadEventHandler FTPPostUpload;
         public delegate void FTPPostUploadEventHandler(string File, bool Success);
-        public event IMAPShellInitializedEventHandler IMAPShellInitialized;
-        public delegate void IMAPShellInitializedEventHandler();
-        public event IMAPPreExecuteCommandEventHandler IMAPPreExecuteCommand;
-        public delegate void IMAPPreExecuteCommandEventHandler(string Command);
-        public event IMAPPostExecuteCommandEventHandler IMAPPostExecuteCommand;
-        public delegate void IMAPPostExecuteCommandEventHandler(string Command);
-        public event IMAPCommandErrorEventHandler IMAPCommandError;
         public delegate void IMAPCommandErrorEventHandler(string Command, Exception Exception);
         public event RemoteDebugConnectionAcceptedEventHandler RemoteDebugConnectionAccepted;
         public delegate void RemoteDebugConnectionAcceptedEventHandler(string IP);
@@ -118,22 +103,6 @@ namespace KS.Kernel.Events
         public delegate void RPCCommandReceivedEventHandler(string Command, string IP, int Port);
         public event RPCCommandErrorEventHandler RPCCommandError;
         public delegate void RPCCommandErrorEventHandler(string Command, Exception Exception, string IP, int Port);
-        public event RSSShellInitializedEventHandler RSSShellInitialized;
-        public delegate void RSSShellInitializedEventHandler(string FeedUrl);
-        public event RSSPreExecuteCommandEventHandler RSSPreExecuteCommand;
-        public delegate void RSSPreExecuteCommandEventHandler(string FeedUrl, string Command);
-        public event RSSPostExecuteCommandEventHandler RSSPostExecuteCommand;
-        public delegate void RSSPostExecuteCommandEventHandler(string FeedUrl, string Command);
-        public event RSSCommandErrorEventHandler RSSCommandError;
-        public delegate void RSSCommandErrorEventHandler(string FeedUrl, string Command, Exception Exception);
-        public event SFTPShellInitializedEventHandler SFTPShellInitialized;
-        public delegate void SFTPShellInitializedEventHandler();
-        public event SFTPPreExecuteCommandEventHandler SFTPPreExecuteCommand;
-        public delegate void SFTPPreExecuteCommandEventHandler(string Command);
-        public event SFTPPostExecuteCommandEventHandler SFTPPostExecuteCommand;
-        public delegate void SFTPPostExecuteCommandEventHandler(string Command);
-        public event SFTPCommandErrorEventHandler SFTPCommandError;
-        public delegate void SFTPCommandErrorEventHandler(string Command, Exception Exception);
         public event SFTPPreDownloadEventHandler SFTPPreDownload;
         public delegate void SFTPPreDownloadEventHandler(string File);
         public event SFTPPostDownloadEventHandler SFTPPostDownload;
@@ -164,14 +133,6 @@ namespace KS.Kernel.Events
         public delegate void UESHPostExecuteEventHandler(string Command, string Arguments);
         public event UESHErrorEventHandler UESHError;
         public delegate void UESHErrorEventHandler(string Command, string Arguments, Exception Exception);
-        public event TextShellInitializedEventHandler TextShellInitialized;
-        public delegate void TextShellInitializedEventHandler();
-        public event TextPreExecuteCommandEventHandler TextPreExecuteCommand;
-        public delegate void TextPreExecuteCommandEventHandler(string Command);
-        public event TextPostExecuteCommandEventHandler TextPostExecuteCommand;
-        public delegate void TextPostExecuteCommandEventHandler(string Command);
-        public event TextCommandErrorEventHandler TextCommandError;
-        public delegate void TextCommandErrorEventHandler(string Command, Exception Exception);
         public event NotificationSentEventHandler NotificationSent;
         public delegate void NotificationSentEventHandler(Notification Notification);
         public event NotificationsSentEventHandler NotificationsSent;
@@ -252,22 +213,6 @@ namespace KS.Kernel.Events
         public delegate void ThemeStudioExitEventHandler();
         public event ArgumentsInjectedEventHandler ArgumentsInjected;
         public delegate void ArgumentsInjectedEventHandler(List<string> InjectedArguments);
-        public event ZipShellInitializedEventHandler ZipShellInitialized;
-        public delegate void ZipShellInitializedEventHandler();
-        public event ZipPreExecuteCommandEventHandler ZipPreExecuteCommand;
-        public delegate void ZipPreExecuteCommandEventHandler(string Command);
-        public event ZipPostExecuteCommandEventHandler ZipPostExecuteCommand;
-        public delegate void ZipPostExecuteCommandEventHandler(string Command);
-        public event ZipCommandErrorEventHandler ZipCommandError;
-        public delegate void ZipCommandErrorEventHandler(string Command, Exception Exception);
-        public event HTTPShellInitializedEventHandler HTTPShellInitialized;
-        public delegate void HTTPShellInitializedEventHandler();
-        public event HTTPPreExecuteCommandEventHandler HTTPPreExecuteCommand;
-        public delegate void HTTPPreExecuteCommandEventHandler(string Command);
-        public event HTTPPostExecuteCommandEventHandler HTTPPostExecuteCommand;
-        public delegate void HTTPPostExecuteCommandEventHandler(string Command);
-        public event HTTPCommandErrorEventHandler HTTPCommandError;
-        public delegate void HTTPCommandErrorEventHandler(string Command, Exception Exception);
         public event ProcessErrorEventHandler ProcessError;
         public delegate void ProcessErrorEventHandler(string Process, Exception Exception);
         public event LanguageInstalledEventHandler LanguageInstalled;
@@ -286,38 +231,6 @@ namespace KS.Kernel.Events
         public delegate void LanguagesInstallErrorEventHandler(Exception Exception);
         public event LanguagesUninstallErrorEventHandler LanguagesUninstallError;
         public delegate void LanguagesUninstallErrorEventHandler(Exception Exception);
-        public event HexShellInitializedEventHandler HexShellInitialized;
-        public delegate void HexShellInitializedEventHandler();
-        public event HexPreExecuteCommandEventHandler HexPreExecuteCommand;
-        public delegate void HexPreExecuteCommandEventHandler(string Command);
-        public event HexPostExecuteCommandEventHandler HexPostExecuteCommand;
-        public delegate void HexPostExecuteCommandEventHandler(string Command);
-        public event HexCommandErrorEventHandler HexCommandError;
-        public delegate void HexCommandErrorEventHandler(string Command, Exception Exception);
-        public event TestShellInitializedEventHandler TestShellInitialized;
-        public delegate void TestShellInitializedEventHandler();
-        public event TestPreExecuteCommandEventHandler TestPreExecuteCommand;
-        public delegate void TestPreExecuteCommandEventHandler(string Command);
-        public event TestPostExecuteCommandEventHandler TestPostExecuteCommand;
-        public delegate void TestPostExecuteCommandEventHandler(string Command);
-        public event TestCommandErrorEventHandler TestCommandError;
-        public delegate void TestCommandErrorEventHandler(string Command, Exception Exception);
-        public event JsonShellInitializedEventHandler JsonShellInitialized;
-        public delegate void JsonShellInitializedEventHandler();
-        public event JsonPreExecuteCommandEventHandler JsonPreExecuteCommand;
-        public delegate void JsonPreExecuteCommandEventHandler(string Command);
-        public event JsonPostExecuteCommandEventHandler JsonPostExecuteCommand;
-        public delegate void JsonPostExecuteCommandEventHandler(string Command);
-        public event JsonCommandErrorEventHandler JsonCommandError;
-        public delegate void JsonCommandErrorEventHandler(string Command, Exception Exception);
-        public event ArchiveShellInitializedEventHandler ArchiveShellInitialized;
-        public delegate void ArchiveShellInitializedEventHandler();
-        public event ArchivePreExecuteCommandEventHandler ArchivePreExecuteCommand;
-        public delegate void ArchivePreExecuteCommandEventHandler(string Command);
-        public event ArchivePostExecuteCommandEventHandler ArchivePostExecuteCommand;
-        public delegate void ArchivePostExecuteCommandEventHandler(string Command);
-        public event ArchiveCommandErrorEventHandler ArchiveCommandError;
-        public delegate void ArchiveCommandErrorEventHandler(string Command, Exception Exception);
 
         public Events()
         {
@@ -345,18 +258,10 @@ namespace KS.Kernel.Events
             PlaceholderParsed += RespondPlaceholderParsed;
             PlaceholderParseError += RespondPlaceholderParseError;
             GarbageCollected += RespondGarbageCollected;
-            FTPShellInitialized += RespondFTPShellInitialized;
-            FTPPreExecuteCommand += RespondFTPPreExecuteCommand;
-            FTPPostExecuteCommand += RespondFTPPostExecuteCommand;
-            FTPCommandError += RespondFTPCommandError;
             FTPPreDownload += RespondFTPPreDownload;
             FTPPostDownload += RespondFTPPostDownload;
             FTPPreUpload += RespondFTPPreUpload;
             FTPPostUpload += RespondFTPPostUpload;
-            IMAPShellInitialized += RespondIMAPShellInitialized;
-            IMAPPreExecuteCommand += RespondIMAPPreExecuteCommand;
-            IMAPPostExecuteCommand += RespondIMAPPostExecuteCommand;
-            IMAPCommandError += RespondIMAPCommandError;
             RemoteDebugConnectionAccepted += RespondRemoteDebugConnectionAccepted;
             RemoteDebugConnectionDisconnected += RespondRemoteDebugConnectionDisconnected;
             RemoteDebugExecuteCommand += RespondRemoteDebugExecuteCommand;
@@ -364,14 +269,6 @@ namespace KS.Kernel.Events
             RPCCommandSent += RespondRPCCommandSent;
             RPCCommandReceived += RespondRPCCommandReceived;
             RPCCommandError += RespondRPCCommandError;
-            RSSShellInitialized += RespondRSSShellInitialized;
-            RSSPreExecuteCommand += RespondRSSPreExecuteCommand;
-            RSSPostExecuteCommand += RespondRSSPostExecuteCommand;
-            RSSCommandError += RespondRSSCommandError;
-            SFTPShellInitialized += RespondSFTPShellInitialized;
-            SFTPPreExecuteCommand += RespondSFTPPreExecuteCommand;
-            SFTPPostExecuteCommand += RespondSFTPPostExecuteCommand;
-            SFTPCommandError += RespondSFTPCommandError;
             SFTPPreDownload += RespondSFTPPreDownload;
             SFTPPostDownload += RespondSFTPPostDownload;
             SFTPDownloadError += RespondSFTPDownloadError;
@@ -387,10 +284,6 @@ namespace KS.Kernel.Events
             UESHPreExecute += RespondUESHPreExecute;
             UESHPostExecute += RespondUESHPostExecute;
             UESHError += RespondUESHError;
-            TextShellInitialized += RespondTextShellInitialized;
-            TextPreExecuteCommand += RespondTextPreExecuteCommand;
-            TextPostExecuteCommand += RespondTextPostExecuteCommand;
-            TextCommandError += RespondTextCommandError;
             NotificationSent += RespondNotificationSent;
             NotificationsSent += RespondNotificationsSent;
             NotificationReceived += RespondNotificationReceived;
@@ -431,14 +324,6 @@ namespace KS.Kernel.Events
             ThemeStudioStarted += RespondThemeStudioStarted;
             ThemeStudioExit += RespondThemeStudioExit;
             ArgumentsInjected += RespondArgumentsInjected;
-            ZipShellInitialized += RespondZipShellInitialized;
-            ZipPreExecuteCommand += RespondZipPreExecuteCommand;
-            ZipPostExecuteCommand += RespondZipPostExecuteCommand;
-            ZipCommandError += RespondZipCommandError;
-            HTTPShellInitialized += RespondHTTPShellInitialized;
-            HTTPPreExecuteCommand += RespondHTTPPreExecuteCommand;
-            HTTPPostExecuteCommand += RespondHTTPPostExecuteCommand;
-            HTTPCommandError += RespondHTTPCommandError;
             ProcessError += RespondProcessError;
             LanguageInstalled += RespondLanguageInstalled;
             LanguageUninstalled += RespondLanguageUninstalled;
@@ -448,18 +333,6 @@ namespace KS.Kernel.Events
             LanguagesUninstalled += RespondLanguagesUninstalled;
             LanguagesInstallError += RespondLanguagesInstallError;
             LanguagesUninstallError += RespondLanguagesUninstallError;
-            HexShellInitialized += RespondHexShellInitialized;
-            HexPreExecuteCommand += RespondHexPreExecuteCommand;
-            HexPostExecuteCommand += RespondHexPostExecuteCommand;
-            HexCommandError += RespondHexCommandError;
-            JsonShellInitialized += RespondJsonShellInitialized;
-            JsonPreExecuteCommand += RespondJsonPreExecuteCommand;
-            JsonPostExecuteCommand += RespondJsonPostExecuteCommand;
-            JsonCommandError += RespondJsonCommandError;
-            TestShellInitialized += RespondTestShellInitialized;
-            TestPreExecuteCommand += RespondTestPreExecuteCommand;
-            TestPostExecuteCommand += RespondTestPostExecuteCommand;
-            TestCommandError += RespondTestCommandError;
         }
 
         /// <summary>
@@ -557,7 +430,7 @@ namespace KS.Kernel.Events
         /// <summary>
         /// Makes the mod respond to the event of the shell being initialized
         /// </summary>
-        public void RespondShellInitialized()
+        public void RespondShellInitialized(string ShellType)
         {
             foreach (ModInfo ModPart in ModManager.Mods.Values)
             {
@@ -567,7 +440,7 @@ namespace KS.Kernel.Events
                     {
                         var script = PartInfo.PartScript;
                         DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ShellInitialized()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("ShellInitialized");
+                        script.InitEvents("ShellInitialized", ShellType);
                     }
                     catch (Exception ex)
                     {
@@ -580,7 +453,7 @@ namespace KS.Kernel.Events
         /// <summary>
         /// Makes the mod respond to the event of pre-execute command
         /// </summary>
-        public void RespondPreExecuteCommand(string Command)
+        public void RespondPreExecuteCommand(string ShellType, string Command)
         {
             foreach (ModInfo ModPart in ModManager.Mods.Values)
             {
@@ -590,7 +463,7 @@ namespace KS.Kernel.Events
                     {
                         var script = PartInfo.PartScript;
                         DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PreExecuteCommand()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("PreExecuteCommand", Command);
+                        script.InitEvents("PreExecuteCommand", ShellType, Command);
                     }
                     catch (Exception ex)
                     {
@@ -603,7 +476,7 @@ namespace KS.Kernel.Events
         /// <summary>
         /// Makes the mod respond to the event of post-execute command
         /// </summary>
-        public void RespondPostExecuteCommand(string Command)
+        public void RespondPostExecuteCommand(string ShellType, string Command)
         {
             foreach (ModInfo ModPart in ModManager.Mods.Values)
             {
@@ -613,7 +486,7 @@ namespace KS.Kernel.Events
                     {
                         var script = PartInfo.PartScript;
                         DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PostExecuteCommand()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("PostExecuteCommand", Command);
+                        script.InitEvents("PostExecuteCommand", ShellType, Command);
                     }
                     catch (Exception ex)
                     {
@@ -856,7 +729,7 @@ namespace KS.Kernel.Events
         /// <summary>
         /// Makes the mod respond to the event of command error
         /// </summary>
-        public void RespondCommandError(string Command, Exception Exception)
+        public void RespondCommandError(string ShellType, string Command, Exception Exception)
         {
             foreach (ModInfo ModPart in ModManager.Mods.Values)
             {
@@ -866,7 +739,7 @@ namespace KS.Kernel.Events
                     {
                         var script = PartInfo.PartScript;
                         DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event CommandError()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("CommandError", Command, Exception);
+                        script.InitEvents("CommandError", ShellType, Command, Exception);
                     }
                     catch (Exception ex)
                     {
@@ -1014,98 +887,6 @@ namespace KS.Kernel.Events
             }
         }
         /// <summary>
-        /// Makes the mod respond to the event of FTP shell initialized
-        /// </summary>
-        public void RespondFTPShellInitialized()
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPShellInitialized()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("FTPShellInitialized");
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of pre-command execution
-        /// </summary>
-        public void RespondFTPPreExecuteCommand(string Command)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("FTPPreExecuteCommand", Command);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of post-command execution
-        /// </summary>
-        public void RespondFTPPostExecuteCommand(string Command)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("FTPPostExecuteCommand", Command);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of FTP command error
-        /// </summary>
-        public void RespondFTPCommandError(string Command, Exception Exception)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPCommandError()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("FTPCommandError", Command, Exception);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
         /// Makes the mod respond to the event of FTP pre-download
         /// </summary>
         public void RespondFTPPreDownload(string File)
@@ -1188,98 +969,6 @@ namespace KS.Kernel.Events
                         var script = PartInfo.PartScript;
                         DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPPostUpload()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("FTPPostUpload", File, Success);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of IMAP shell initialized
-        /// </summary>
-        public void RespondIMAPShellInitialized()
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event IMAPShellInitialized()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("IMAPShellInitialized");
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of IMAP pre-command execution
-        /// </summary>
-        public void RespondIMAPPreExecuteCommand(string Command)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event IMAPPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("IMAPPreExecuteCommand", Command);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of IMAP post-command execution
-        /// </summary>
-        public void RespondIMAPPostExecuteCommand(string Command)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event IMAPPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("IMAPPostExecuteCommand", Command);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of IMAP command error
-        /// </summary>
-        public void RespondIMAPCommandError(string Command, Exception Exception)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event IMAPCommandError()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("IMAPCommandError", Command, Exception);
                     }
                     catch (Exception ex)
                     {
@@ -1441,190 +1130,6 @@ namespace KS.Kernel.Events
                         var script = PartInfo.PartScript;
                         DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RPCCommandError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("RPCCommandError", Command, Exception, IP, Port);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of RSS shell initialized
-        /// </summary>
-        public void RespondRSSShellInitialized(string FeedUrl)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RSSShellInitialized()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("RSSShellInitialized", FeedUrl);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of pre-command execution
-        /// </summary>
-        public void RespondRSSPreExecuteCommand(string FeedUrl, string Command)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RSSPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("RSSPreExecuteCommand", FeedUrl, Command);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of post-command execution
-        /// </summary>
-        public void RespondRSSPostExecuteCommand(string FeedUrl, string Command)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RSSPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("RSSPostExecuteCommand", FeedUrl, Command);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of RSS command error
-        /// </summary>
-        public void RespondRSSCommandError(string FeedUrl, string Command, Exception Exception)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RSSCommandError()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("RSSCommandError", FeedUrl, Command, Exception);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of SFTP shell initialized
-        /// </summary>
-        public void RespondSFTPShellInitialized()
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPShellInitialized()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("SFTPShellInitialized");
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of pre-command execution
-        /// </summary>
-        public void RespondSFTPPreExecuteCommand(string Command)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("SFTPPreExecuteCommand", Command);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of post-command execution
-        /// </summary>
-        public void RespondSFTPPostExecuteCommand(string Command)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("SFTPPostExecuteCommand", Command);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of SFTP command error
-        /// </summary>
-        public void RespondSFTPCommandError(string Command, Exception Exception)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPCommandError()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("SFTPCommandError", Command, Exception);
                     }
                     catch (Exception ex)
                     {
@@ -1970,98 +1475,6 @@ namespace KS.Kernel.Events
                         var script = PartInfo.PartScript;
                         DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event UESHError()...", script.ModPart, script.Name, script.Version);
                         script.InitEvents("UESHError", Command, Arguments, Exception);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of text shell initialized
-        /// </summary>
-        public void RespondTextShellInitialized()
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event TextShellInitialized()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("TextShellInitialized");
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of text pre-command execution
-        /// </summary>
-        public void RespondTextPreExecuteCommand(string Command)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event TextPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("TextPreExecuteCommand", Command);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of text post-command execution
-        /// </summary>
-        public void RespondTextPostExecuteCommand(string Command)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event TextPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("TextPostExecuteCommand", Command);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of text command error
-        /// </summary>
-        public void RespondTextCommandError(string Command, Exception Exception)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event TextCommandError()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("TextCommandError", Command, Exception);
                     }
                     catch (Exception ex)
                     {
@@ -2992,190 +2405,6 @@ namespace KS.Kernel.Events
             }
         }
         /// <summary>
-        /// Makes the mod respond to the event of ZIP shell initialized
-        /// </summary>
-        public void RespondZipShellInitialized()
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ZipShellInitialized()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("ZipShellInitialized");
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of ZIP pre-command execution
-        /// </summary>
-        public void RespondZipPreExecuteCommand(string Command)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ZipPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("ZipPreExecuteCommand", Command);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of ZIP post-command execution
-        /// </summary>
-        public void RespondZipPostExecuteCommand(string Command)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ZipPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("ZipPostExecuteCommand", Command);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of ZIP command error
-        /// </summary>
-        public void RespondZipCommandError(string Command, Exception Exception)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ZipCommandError()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("ZipCommandError", Command, Exception);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of HTTP shell initialized
-        /// </summary>
-        public void RespondHTTPShellInitialized()
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event HTTPShellInitialized()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("HTTPShellInitialized");
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of pre-command execution
-        /// </summary>
-        public void RespondHTTPPreExecuteCommand(string Command)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event HTTPPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("HTTPPreExecuteCommand", Command);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of post-command execution
-        /// </summary>
-        public void RespondHTTPPostExecuteCommand(string Command)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event HTTPPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("HTTPPostExecuteCommand", Command);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of HTTP command error
-        /// </summary>
-        public void RespondHTTPCommandError(string Command, Exception Exception)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event HTTPCommandError()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("HTTPCommandError", Command, Exception);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
         /// Makes the mod respond to the event of process error
         /// </summary>
         public void RespondProcessError(string Process, Exception Exception)
@@ -3382,374 +2611,6 @@ namespace KS.Kernel.Events
                 }
             }
         }
-        /// <summary>
-        /// Makes the mod respond to the event of Hex shell initialized
-        /// </summary>
-        public void RespondHexShellInitialized()
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event HexShellInitialized()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("HexShellInitialized");
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of Hex pre-command execution
-        /// </summary>
-        public void RespondHexPreExecuteCommand(string Command)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event HexPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("HexPreExecuteCommand", Command);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of Hex post-command execution
-        /// </summary>
-        public void RespondHexPostExecuteCommand(string Command)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event HexPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("HexPostExecuteCommand", Command);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of Hex command error
-        /// </summary>
-        public void RespondHexCommandError(string Command, Exception Exception)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event HexCommandError()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("HexCommandError", Command, Exception);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of Json shell initialized
-        /// </summary>
-        public void RespondJsonShellInitialized()
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event JsonShellInitialized()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("JsonShellInitialized");
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of Json pre-command execution
-        /// </summary>
-        public void RespondJsonPreExecuteCommand(string Command)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event JsonPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("JsonPreExecuteCommand", Command);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of Json post-command execution
-        /// </summary>
-        public void RespondJsonPostExecuteCommand(string Command)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event JsonPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("JsonPostExecuteCommand", Command);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of Json command error
-        /// </summary>
-        public void RespondJsonCommandError(string Command, Exception Exception)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event JsonCommandError()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("JsonCommandError", Command, Exception);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of Test shell initialized
-        /// </summary>
-        public void RespondTestShellInitialized()
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event TestShellInitialized()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("TestShellInitialized");
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of Test pre-command execution
-        /// </summary>
-        public void RespondTestPreExecuteCommand(string Command)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event TestPreExecuteCommand()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("TestPreExecuteCommand", Command);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of Test post-command execution
-        /// </summary>
-        public void RespondTestPostExecuteCommand(string Command)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event TestPostExecuteCommand()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("TestPostExecuteCommand", Command);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of Test command error
-        /// </summary>
-        public void RespondTestCommandError(string Command, Exception Exception)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event TestCommandError()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("TestCommandError", Command, Exception);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of ZIP shell initialized
-        /// </summary>
-        public void RespondArchiveShellInitialized()
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ArchiveShellInitialized()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("ArchiveShellInitialized");
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of ZIP pre-command execution
-        /// </summary>
-        public void RespondArchivePreExecuteCommand(string Command)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ArchivePreExecuteCommand()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("ArchivePreExecuteCommand", Command);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of ZIP post-command execution
-        /// </summary>
-        public void RespondArchivePostExecuteCommand(string Command)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ArchivePostExecuteCommand()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("ArchivePostExecuteCommand", Command);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the mod respond to the event of ZIP command error
-        /// </summary>
-        public void RespondArchiveCommandError(string Command, Exception Exception)
-        {
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
-            {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
-                {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event ArchiveCommandError()...", script.ModPart, script.Name, script.Version);
-                        script.InitEvents("ArchiveCommandError", Command, Exception);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
-                    }
-                }
-            }
-        }
 
         // These subs are for raising events
         /// <summary>
@@ -3791,29 +2652,29 @@ namespace KS.Kernel.Events
         /// <summary>
         /// Raise an event of shell initialized
         /// </summary>
-        public void RaiseShellInitialized()
+        public void RaiseShellInitialized(string ShellType)
         {
             DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ShellInitialized() and responding in RespondShellInitialized()...");
-            EventsManager.FiredEvents.Add("ShellInitialized (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
-            ShellInitialized?.Invoke();
+            EventsManager.FiredEvents.Add("ShellInitialized (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { ShellType });
+            ShellInitialized?.Invoke(ShellType);
         }
         /// <summary>
         /// Raise an event of pre-command execution
         /// </summary>
-        public void RaisePreExecuteCommand(string Command)
+        public void RaisePreExecuteCommand(string ShellType, string Command)
         {
             DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PreExecuteCommand() and responding in RespondPreExecuteCommand()...");
-            EventsManager.FiredEvents.Add("PreExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
-            PreExecuteCommand?.Invoke(Command);
+            EventsManager.FiredEvents.Add("PreExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { ShellType, Command });
+            PreExecuteCommand?.Invoke(ShellType, Command);
         }
         /// <summary>
         /// Raise an event of post-command execution
         /// </summary>
-        public void RaisePostExecuteCommand(string Command)
+        public void RaisePostExecuteCommand(string ShellType, string Command)
         {
             DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PostExecuteCommand() and responding in RespondPostExecuteCommand()...");
-            EventsManager.FiredEvents.Add("PostExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
-            PostExecuteCommand?.Invoke(Command);
+            EventsManager.FiredEvents.Add("PostExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { ShellType, Command });
+            PostExecuteCommand?.Invoke(ShellType, Command);
         }
         /// <summary>
         /// Raise an event of kernel error
@@ -3908,11 +2769,11 @@ namespace KS.Kernel.Events
         /// <summary>
         /// Raise an event of command error
         /// </summary>
-        public void RaiseCommandError(string Command, Exception Exception)
+        public void RaiseCommandError(string ShellType, string Command, Exception Exception)
         {
             DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event CommandError() and responding in RespondCommandError()...");
-            EventsManager.FiredEvents.Add("CommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
-            CommandError?.Invoke(Command, Exception);
+            EventsManager.FiredEvents.Add("CommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { ShellType, Command, Exception });
+            CommandError?.Invoke(ShellType, Command, Exception);
         }
         /// <summary>
         /// Raise an event of pre-reload config
@@ -3969,42 +2830,6 @@ namespace KS.Kernel.Events
             GarbageCollected?.Invoke();
         }
         /// <summary>
-        /// Raise an event of FTP shell initialized
-        /// </summary>
-        public void RaiseFTPShellInitialized()
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FTPShellInitialized() and responding in RespondFTPShellInitialized()...");
-            EventsManager.FiredEvents.Add("FTPShellInitialized (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
-            FTPShellInitialized?.Invoke();
-        }
-        /// <summary>
-        /// Raise an event of FTP pre-execute command
-        /// </summary>
-        public void RaiseFTPPreExecuteCommand(string Command)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FTPPreExecuteCommand() and responding in RespondFTPPreExecuteCommand()...");
-            EventsManager.FiredEvents.Add("FTPPreExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
-            FTPPreExecuteCommand?.Invoke(Command);
-        }
-        /// <summary>
-        /// Raise an event of FTP post-execute command
-        /// </summary>
-        public void RaiseFTPPostExecuteCommand(string Command)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FTPPostExecuteCommand() and responding in RespondFTPPostExecuteCommand()...");
-            EventsManager.FiredEvents.Add("FTPPostExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
-            FTPPostExecuteCommand?.Invoke(Command);
-        }
-        /// <summary>
-        /// Raise an event of FTP command error
-        /// </summary>
-        public void RaiseFTPCommandError(string Command, Exception Exception)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FTPCommandError() and responding in RespondFTPCommandError()...");
-            EventsManager.FiredEvents.Add("FTPCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
-            FTPCommandError?.Invoke(Command, Exception);
-        }
-        /// <summary>
         /// Raise an event of FTP pre-download
         /// </summary>
         public void RaiseFTPPreDownload(string File)
@@ -4039,42 +2864,6 @@ namespace KS.Kernel.Events
             DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FTPPostUpload() and responding in RespondFTPPostUpload()...");
             EventsManager.FiredEvents.Add("FTPPostUpload (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { File, (object)Success });
             FTPPostUpload?.Invoke(File, Success);
-        }
-        /// <summary>
-        /// Raise an event of IMAP shell initialized
-        /// </summary>
-        public void RaiseIMAPShellInitialized()
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event IMAPShellInitialized() and responding in RespondIMAPShellInitialized()...");
-            EventsManager.FiredEvents.Add("IMAPShellInitialized (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
-            IMAPShellInitialized?.Invoke();
-        }
-        /// <summary>
-        /// Raise an event of IMAP pre-command execution
-        /// </summary>
-        public void RaiseIMAPPreExecuteCommand(string Command)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event IMAPPreExecuteCommand() and responding in RespondIMAPPreExecuteCommand()...");
-            EventsManager.FiredEvents.Add("IMAPPreExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
-            IMAPPreExecuteCommand?.Invoke(Command);
-        }
-        /// <summary>
-        /// Raise an event of IMAP post-command execution
-        /// </summary>
-        public void RaiseIMAPPostExecuteCommand(string Command)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event IMAPPostExecuteCommand() and responding in RespondIMAPPostExecuteCommand()...");
-            EventsManager.FiredEvents.Add("IMAPPostExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
-            IMAPPostExecuteCommand?.Invoke(Command);
-        }
-        /// <summary>
-        /// Raise an event of IMAP command error
-        /// </summary>
-        public void RaiseIMAPCommandError(string Command, Exception Exception)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event IMAPCommandError() and responding in RespondIMAPCommandError()...");
-            EventsManager.FiredEvents.Add("IMAPCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
-            IMAPCommandError?.Invoke(Command, Exception);
         }
         /// <summary>
         /// Raise an event of remote debugging connection accepted
@@ -4138,78 +2927,6 @@ namespace KS.Kernel.Events
             DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RPCCommandError() and responding in RespondRPCCommandError()...");
             EventsManager.FiredEvents.Add("RPCCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
             RPCCommandError?.Invoke(Command, Exception, IP, Port);
-        }
-        /// <summary>
-        /// Raise an event of RSS shell initialized
-        /// </summary>
-        public void RaiseRSSShellInitialized(string FeedUrl)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RSSShellInitialized() and responding in RespondRSSShellInitialized()...");
-            EventsManager.FiredEvents.Add("RSSShellInitialized (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { FeedUrl });
-            RSSShellInitialized?.Invoke(FeedUrl);
-        }
-        /// <summary>
-        /// Raise an event of RSS pre-execute command
-        /// </summary>
-        public void RaiseRSSPreExecuteCommand(string FeedUrl, string Command)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RSSPreExecuteCommand() and responding in RespondRSSPreExecuteCommand()...");
-            EventsManager.FiredEvents.Add("RSSPreExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { FeedUrl, Command });
-            RSSPreExecuteCommand?.Invoke(FeedUrl, Command);
-        }
-        /// <summary>
-        /// Raise an event of RSS post-execute command
-        /// </summary>
-        public void RaiseRSSPostExecuteCommand(string FeedUrl, string Command)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RSSPostExecuteCommand() and responding in RespondRSSPostExecuteCommand()...");
-            EventsManager.FiredEvents.Add("RSSPostExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { FeedUrl, Command });
-            RSSPostExecuteCommand?.Invoke(FeedUrl, Command);
-        }
-        /// <summary>
-        /// Raise an event of RSS command error
-        /// </summary>
-        public void RaiseRSSCommandError(string FeedUrl, string Command, Exception Exception)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RSSCommandError() and responding in RespondRSSCommandError()...");
-            EventsManager.FiredEvents.Add("RSSCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { FeedUrl, Command, Exception });
-            RSSCommandError?.Invoke(FeedUrl, Command, Exception);
-        }
-        /// <summary>
-        /// Raise an event of SFTP shell initialized
-        /// </summary>
-        public void RaiseSFTPShellInitialized()
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SFTPShellInitialized() and responding in RespondSFTPShellInitialized()...");
-            EventsManager.FiredEvents.Add("SFTPShellInitialized (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
-            SFTPShellInitialized?.Invoke();
-        }
-        /// <summary>
-        /// Raise an event of SFTP pre-execute command
-        /// </summary>
-        public void RaiseSFTPPreExecuteCommand(string Command)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SFTPPreExecuteCommand() and responding in RespondSFTPPreExecuteCommand()...");
-            EventsManager.FiredEvents.Add("SFTPPreExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
-            SFTPPreExecuteCommand?.Invoke(Command);
-        }
-        /// <summary>
-        /// Raise an event of SFTP post-execute command
-        /// </summary>
-        public void RaiseSFTPPostExecuteCommand(string Command)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SFTPPostExecuteCommand() and responding in RespondSFTPPostExecuteCommand()...");
-            EventsManager.FiredEvents.Add("SFTPPostExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
-            SFTPPostExecuteCommand?.Invoke(Command);
-        }
-        /// <summary>
-        /// Raise an event of SFTP command error
-        /// </summary>
-        public void RaiseSFTPCommandError(string Command, Exception Exception)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SFTPCommandError() and responding in RespondSFTPCommandError()...");
-            EventsManager.FiredEvents.Add("SFTPCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
-            SFTPCommandError?.Invoke(Command, Exception);
         }
         /// <summary>
         /// Raise an event of SFTP pre-download
@@ -4345,42 +3062,6 @@ namespace KS.Kernel.Events
             DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event UESHError() and responding in RespondUESHError()...");
             EventsManager.FiredEvents.Add("UESHError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Arguments, Exception });
             UESHError?.Invoke(Command, Arguments, Exception);
-        }
-        /// <summary>
-        /// Raise an event of text shell initialized
-        /// </summary>
-        public void RaiseTextShellInitialized()
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event TextShellInitialized() and responding in RespondTextShellInitialized()...");
-            EventsManager.FiredEvents.Add("TextShellInitialized (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
-            TextShellInitialized?.Invoke();
-        }
-        /// <summary>
-        /// Raise an event of text pre-command execution
-        /// </summary>
-        public void RaiseTextPreExecuteCommand(string Command)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event TextPreExecuteCommand() and responding in RespondTextPreExecuteCommand()...");
-            EventsManager.FiredEvents.Add("TextPreExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
-            TextPreExecuteCommand?.Invoke(Command);
-        }
-        /// <summary>
-        /// Raise an event of text post-command execution
-        /// </summary>
-        public void RaiseTextPostExecuteCommand(string Command)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event TextPostExecuteCommand() and responding in RespondTextPostExecuteCommand()...");
-            EventsManager.FiredEvents.Add("TextPostExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
-            TextPostExecuteCommand?.Invoke(Command);
-        }
-        /// <summary>
-        /// Raise an event of text command error
-        /// </summary>
-        public void RaiseTextCommandError(string Command, Exception Exception)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event TextCommandError() and responding in RespondTextCommandError()...");
-            EventsManager.FiredEvents.Add("TextCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
-            TextCommandError?.Invoke(Command, Exception);
         }
         /// <summary>
         /// Raise an event of notification being sent
@@ -4743,78 +3424,6 @@ namespace KS.Kernel.Events
             ArgumentsInjected?.Invoke(InjectedArguments);
         }
         /// <summary>
-        /// Raise an event of ZIP shell initialized
-        /// </summary>
-        public void RaiseZipShellInitialized()
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ZipShellInitialized() and responding in RespondZipShellInitialized()...");
-            EventsManager.FiredEvents.Add("ZipShellInitialized (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
-            ZipShellInitialized?.Invoke();
-        }
-        /// <summary>
-        /// Raise an event of ZIP pre-command execution
-        /// </summary>
-        public void RaiseZipPreExecuteCommand(string Command)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ZipPreExecuteCommand() and responding in RespondZipPreExecuteCommand()...");
-            EventsManager.FiredEvents.Add("ZipPreExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
-            ZipPreExecuteCommand?.Invoke(Command);
-        }
-        /// <summary>
-        /// Raise an event of ZIP post-command execution
-        /// </summary>
-        public void RaiseZipPostExecuteCommand(string Command)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ZipPostExecuteCommand() and responding in RespondZipPostExecuteCommand()...");
-            EventsManager.FiredEvents.Add("ZipPostExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
-            ZipPostExecuteCommand?.Invoke(Command);
-        }
-        /// <summary>
-        /// Raise an event of ZIP command error
-        /// </summary>
-        public void RaiseZipCommandError(string Command, Exception Exception)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ZipCommandError() and responding in RespondZipCommandError()...");
-            EventsManager.FiredEvents.Add("ZipCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
-            ZipCommandError?.Invoke(Command, Exception);
-        }
-        /// <summary>
-        /// Raise an event of HTTP shell initialized
-        /// </summary>
-        public void RaiseHTTPShellInitialized()
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event HTTPShellInitialized() and responding in RespondHTTPShellInitialized()...");
-            EventsManager.FiredEvents.Add("HTTPShellInitialized (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
-            HTTPShellInitialized?.Invoke();
-        }
-        /// <summary>
-        /// Raise an event of HTTP pre-execute command
-        /// </summary>
-        public void RaiseHTTPPreExecuteCommand(string Command)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event HTTPPreExecuteCommand() and responding in RespondHTTPPreExecuteCommand()...");
-            EventsManager.FiredEvents.Add("HTTPPreExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
-            HTTPPreExecuteCommand?.Invoke(Command);
-        }
-        /// <summary>
-        /// Raise an event of HTTP post-execute command
-        /// </summary>
-        public void RaiseHTTPPostExecuteCommand(string Command)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event HTTPPostExecuteCommand() and responding in RespondHTTPPostExecuteCommand()...");
-            EventsManager.FiredEvents.Add("HTTPPostExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
-            HTTPPostExecuteCommand?.Invoke(Command);
-        }
-        /// <summary>
-        /// Raise an event of HTTP command error
-        /// </summary>
-        public void RaiseHTTPCommandError(string Command, Exception Exception)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event HTTPCommandError() and responding in RespondHTTPCommandError()...");
-            EventsManager.FiredEvents.Add("HTTPCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
-            HTTPCommandError?.Invoke(Command, Exception);
-        }
-        /// <summary>
         /// Raise an event of process error
         /// </summary>
         public void RaiseProcessError(string Process, Exception Exception)
@@ -4894,150 +3503,6 @@ namespace KS.Kernel.Events
             DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event LanguagesUninstallError() and responding in RespondLanguagesUninstallError()...");
             EventsManager.FiredEvents.Add("LanguagesUninstallError (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
             LanguagesUninstallError?.Invoke(Exception);
-        }
-        /// <summary>
-        /// Raise an event of Hex shell initialized
-        /// </summary>
-        public void RaiseHexShellInitialized()
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event HexShellInitialized() and responding in RespondHexShellInitialized()...");
-            EventsManager.FiredEvents.Add("HexShellInitialized (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
-            HexShellInitialized?.Invoke();
-        }
-        /// <summary>
-        /// Raise an event of Hex pre-command execution
-        /// </summary>
-        public void RaiseHexPreExecuteCommand(string Command)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event HexPreExecuteCommand() and responding in RespondHexPreExecuteCommand()...");
-            EventsManager.FiredEvents.Add("HexPreExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
-            HexPreExecuteCommand?.Invoke(Command);
-        }
-        /// <summary>
-        /// Raise an event of Hex post-command execution
-        /// </summary>
-        public void RaiseHexPostExecuteCommand(string Command)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event HexPostExecuteCommand() and responding in RespondHexPostExecuteCommand()...");
-            EventsManager.FiredEvents.Add("HexPostExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
-            HexPostExecuteCommand?.Invoke(Command);
-        }
-        /// <summary>
-        /// Raise an event of Hex command error
-        /// </summary>
-        public void RaiseHexCommandError(string Command, Exception Exception)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event HexCommandError() and responding in RespondHexCommandError()...");
-            EventsManager.FiredEvents.Add("HexCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
-            HexCommandError?.Invoke(Command, Exception);
-        }
-        /// <summary>
-        /// Raise an event of Json shell initialized
-        /// </summary>
-        public void RaiseJsonShellInitialized()
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event JsonShellInitialized() and responding in RespondJsonShellInitialized()...");
-            EventsManager.FiredEvents.Add("JsonShellInitialized (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
-            JsonShellInitialized?.Invoke();
-        }
-        /// <summary>
-        /// Raise an event of Json pre-command execution
-        /// </summary>
-        public void RaiseJsonPreExecuteCommand(string Command)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event JsonPreExecuteCommand() and responding in RespondJsonPreExecuteCommand()...");
-            EventsManager.FiredEvents.Add("JsonPreExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
-            JsonPreExecuteCommand?.Invoke(Command);
-        }
-        /// <summary>
-        /// Raise an event of Json post-command execution
-        /// </summary>
-        public void RaiseJsonPostExecuteCommand(string Command)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event JsonPostExecuteCommand() and responding in RespondJsonPostExecuteCommand()...");
-            EventsManager.FiredEvents.Add("JsonPostExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
-            JsonPostExecuteCommand?.Invoke(Command);
-        }
-        /// <summary>
-        /// Raise an event of Json command error
-        /// </summary>
-        public void RaiseJsonCommandError(string Command, Exception Exception)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event JsonCommandError() and responding in RespondJsonCommandError()...");
-            EventsManager.FiredEvents.Add("JsonCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
-            JsonCommandError?.Invoke(Command, Exception);
-        }
-        /// <summary>
-        /// Raise an event of Test shell initialized
-        /// </summary>
-        public void RaiseTestShellInitialized()
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event TestShellInitialized() and responding in RespondTestShellInitialized()...");
-            EventsManager.FiredEvents.Add("TestShellInitialized (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
-            TestShellInitialized?.Invoke();
-        }
-        /// <summary>
-        /// Raise an event of Test pre-command execution
-        /// </summary>
-        public void RaiseTestPreExecuteCommand(string Command)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event TestPreExecuteCommand() and responding in RespondTestPreExecuteCommand()...");
-            EventsManager.FiredEvents.Add("TestPreExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
-            TestPreExecuteCommand?.Invoke(Command);
-        }
-        /// <summary>
-        /// Raise an event of Test post-command execution
-        /// </summary>
-        public void RaiseTestPostExecuteCommand(string Command)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event TestPostExecuteCommand() and responding in RespondTestPostExecuteCommand()...");
-            EventsManager.FiredEvents.Add("TestPostExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
-            TestPostExecuteCommand?.Invoke(Command);
-        }
-        /// <summary>
-        /// Raise an event of Test command error
-        /// </summary>
-        public void RaiseTestCommandError(string Command, Exception Exception)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event TestCommandError() and responding in RespondTestCommandError()...");
-            EventsManager.FiredEvents.Add("TestCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
-            TestCommandError?.Invoke(Command, Exception);
-        }
-        /// <summary>
-        /// Raise an event of ZIP shell initialized
-        /// </summary>
-        public void RaiseArchiveShellInitialized()
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ArchiveShellInitialized() and responding in RespondArchiveShellInitialized()...");
-            EventsManager.FiredEvents.Add("ArchiveShellInitialized (" + EventsManager.FiredEvents.Count.ToString() + ")", Array.Empty<object>());
-            ArchiveShellInitialized?.Invoke();
-        }
-        /// <summary>
-        /// Raise an event of ZIP pre-command execution
-        /// </summary>
-        public void RaiseArchivePreExecuteCommand(string Command)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ArchivePreExecuteCommand() and responding in RespondArchivePreExecuteCommand()...");
-            EventsManager.FiredEvents.Add("ArchivePreExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
-            ArchivePreExecuteCommand?.Invoke(Command);
-        }
-        /// <summary>
-        /// Raise an event of ZIP post-command execution
-        /// </summary>
-        public void RaiseArchivePostExecuteCommand(string Command)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ArchivePostExecuteCommand() and responding in RespondArchivePostExecuteCommand()...");
-            EventsManager.FiredEvents.Add("ArchivePostExecuteCommand (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command });
-            ArchivePostExecuteCommand?.Invoke(Command);
-        }
-        /// <summary>
-        /// Raise an event of ZIP command error
-        /// </summary>
-        public void RaiseArchiveCommandError(string Command, Exception Exception)
-        {
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ArchiveCommandError() and responding in RespondArchiveCommandError()...");
-            EventsManager.FiredEvents.Add("ArchiveCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
-            ArchiveCommandError?.Invoke(Command, Exception);
         }
 
     }

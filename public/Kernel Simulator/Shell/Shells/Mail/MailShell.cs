@@ -50,7 +50,6 @@ namespace KS.Shell.Shells.Mail
             var SMTP_NoOp = new KernelThread("SMTP Keep Connection", false, MailPingers.SMTPKeepConnection);
             SMTP_NoOp.Start();
             DebugWriter.WriteDebug(DebugLevel.I, "Made new thread about SMTPKeepConnection()");
-            Kernel.Kernel.KernelEventManager.RaiseIMAPShellInitialized();
 
             while (!Bail)
             {
@@ -59,21 +58,8 @@ namespace KS.Shell.Shells.Mail
                 if (MailShellCommon.Mail_NotifyNewMail)
                     MailHandlers.InitializeHandlers();
 
-                // See UESHShell.cs for more info
-                lock (CancellationHandlers.GetCancelSyncLock(ShellType))
-                {
-                    // Initialize prompt
-                    PromptPresetManager.WriteShellPrompt(ShellType);
-                }
-
-                // Listen for a command
-                string cmd = Input.ReadLine();
-                if ((string.IsNullOrEmpty(cmd) | (cmd?.StartsWithAnyOf(new[] { " ", "#" }))) == false)
-                {
-                    Kernel.Kernel.KernelEventManager.RaiseIMAPPreExecuteCommand(cmd);
-                    Shell.GetLine(cmd, "", ShellType);
-                    Kernel.Kernel.KernelEventManager.RaiseIMAPPostExecuteCommand(cmd);
-                }
+                // Prompt for the command
+                Shell.GetLine();
             }
 
             // Disconnect the session

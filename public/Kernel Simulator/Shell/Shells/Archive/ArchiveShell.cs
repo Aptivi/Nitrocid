@@ -84,24 +84,8 @@ namespace KS.Shell.Shells.Archive
                             break;
                     }
 
-                    // See UESHShell.cs for more info
-                    lock (CancellationHandlers.GetCancelSyncLock(ShellType))
-                    {
-                        // Prepare for prompt
-                        PromptPresetManager.WriteShellPrompt(ShellType);
-
-                        // Raise the event
-                        Kernel.Kernel.KernelEventManager.RaiseArchiveShellInitialized();
-                    }
-
                     // Prompt for the command
-                    string WrittenCommand = Input.ReadLine();
-                    if ((string.IsNullOrEmpty(WrittenCommand) | (WrittenCommand?.StartsWithAnyOf(new[] { " ", "#" }))) == false)
-                    {
-                        Kernel.Kernel.KernelEventManager.RaiseArchivePreExecuteCommand(WrittenCommand);
-                        Shell.GetLine(WrittenCommand, "", ShellType);
-                        Kernel.Kernel.KernelEventManager.RaiseArchivePostExecuteCommand(WrittenCommand);
-                    }
+                    Shell.GetLine();
                 }
                 catch (ThreadInterruptedException)
                 {

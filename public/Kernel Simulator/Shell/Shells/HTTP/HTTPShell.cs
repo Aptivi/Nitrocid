@@ -48,28 +48,8 @@ namespace KS.Shell.Shells.HTTP
             {
                 try
                 {
-                    // See UESHShell.cs for more info
-                    lock (CancellationHandlers.GetCancelSyncLock(ShellType))
-                    {
-                        // Prompt for command
-                        DebugWriter.WriteDebug(DebugLevel.I, "Preparing prompt...");
-                        PromptPresetManager.WriteShellPrompt(ShellType);
-
-                        // Raise the event
-                        Kernel.Kernel.KernelEventManager.RaiseHTTPShellInitialized();
-                    }
-
-                    // Prompt for command
-                    DebugWriter.WriteDebug(DebugLevel.I, "Normal shell");
-                    string HttpCommand = Input.ReadLine();
-
-                    // Parse command
-                    if ((string.IsNullOrEmpty(HttpCommand) | (HttpCommand?.StartsWithAnyOf(new[] { " ", "#" }))) == false)
-                    {
-                        Kernel.Kernel.KernelEventManager.RaiseHTTPPreExecuteCommand(HttpCommand);
-                        Shell.GetLine(HttpCommand, "", ShellType);
-                        Kernel.Kernel.KernelEventManager.RaiseHTTPPostExecuteCommand(HttpCommand);
-                    }
+                    // Prompt for the command
+                    Shell.GetLine();
                 }
                 catch (ThreadInterruptedException)
                 {

@@ -27,6 +27,7 @@ using KS.Languages;
 using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
+using KS.Shell.Shells.UESH.Commands;
 
 namespace KS.Shell.Shells.SFTP
 {
@@ -63,7 +64,6 @@ namespace KS.Shell.Shells.SFTP
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, $"Completing initialization of SFTP: {SFTPInitialized}");
                         SFTPShellCommon.SFTPCurrDirect = Paths.HomePath;
-                        Kernel.Kernel.KernelEventManager.RaiseSFTPShellInitialized();
                         SFTPInitialized = true;
                     }
 
@@ -82,36 +82,18 @@ namespace KS.Shell.Shells.SFTP
                         return;
                     }
 
-                    // See UESHShell.cs for more info
-                    lock (CancellationHandlers.GetCancelSyncLock(ShellType))
-                    {
-                        // Prompt for command
-                        if (!Connects)
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Preparing prompt...");
-                            PromptPresetManager.WriteShellPrompt(ShellType);
-                        }
-                    }
-
                     // Try to connect if IP address is specified.
                     if (Connects)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, $"Currently connecting to {Address} by \"sftp (address)\"...");
                         SFTPStrCmd = $"connect {Address}";
                         Connects = false;
+                        Shell.GetLine(SFTPStrCmd, "", ShellType);
                     }
                     else
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Normal shell");
-                        SFTPStrCmd = Input.ReadLine();
-                    }
-
-                    // Parse command
-                    if ((string.IsNullOrEmpty(SFTPStrCmd) | (SFTPStrCmd?.StartsWithAnyOf(new[] { " ", "#" }))) == false)
-                    {
-                        Kernel.Kernel.KernelEventManager.RaiseSFTPPreExecuteCommand(SFTPStrCmd);
-                        Shell.GetLine(SFTPStrCmd, "", ShellType);
-                        Kernel.Kernel.KernelEventManager.RaiseSFTPPostExecuteCommand(SFTPStrCmd);
+                        // Prompt for the command
+                        Shell.GetLine();
                     }
                 }
                 catch (ThreadInterruptedException)

@@ -78,24 +78,8 @@ namespace KS.Shell.Shells.Hex
                         HexEditShellCommon.HexEdit_AutoSave.Start();
                     }
 
-                    // See UESHShell.cs for more info
-                    lock (CancellationHandlers.GetCancelSyncLock(ShellType))
-                    {
-                        // Prepare for prompt
-                        PromptPresetManager.WriteShellPrompt(ShellType);
-
-                        // Raise the event
-                        Kernel.Kernel.KernelEventManager.RaiseHexShellInitialized();
-                    }
-
-                    // Prompt for command
-                    string WrittenCommand = Input.ReadLine();
-                    if ((string.IsNullOrEmpty(WrittenCommand) | (WrittenCommand?.StartsWithAnyOf(new[] { " ", "#" }))) == false)
-                    {
-                        Kernel.Kernel.KernelEventManager.RaiseHexPreExecuteCommand(WrittenCommand);
-                        Shell.GetLine(WrittenCommand, "", ShellType);
-                        Kernel.Kernel.KernelEventManager.RaiseHexPostExecuteCommand(WrittenCommand);
-                    }
+                    // Prompt for the command
+                    Shell.GetLine();
                 }
                 catch (ThreadInterruptedException)
                 {

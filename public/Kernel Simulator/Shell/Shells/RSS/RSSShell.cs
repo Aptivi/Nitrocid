@@ -147,24 +147,8 @@ namespace KS.Shell.Shells.RSS
                         RSSShellCommon.RSSRefresher.Start();
                     DebugWriter.WriteDebug(DebugLevel.I, "Made new thread about RefreshFeeds()");
 
-                    // See UESHShell.cs for more info
-                    lock (CancellationHandlers.GetCancelSyncLock(ShellType))
-                    {
-                        // Prepare for prompt
-                        PromptPresetManager.WriteShellPrompt(ShellType);
-
-                        // Raise the event
-                        Kernel.Kernel.KernelEventManager.RaiseRSSShellInitialized(RSSShellCommon.RSSFeedLink);
-                    }
-
-                    // Prompt for command
-                    string WrittenCommand = Input.ReadLine();
-                    if ((string.IsNullOrEmpty(WrittenCommand) | (WrittenCommand?.StartsWithAnyOf(new[] { " ", "#" }))) == false)
-                    {
-                        Kernel.Kernel.KernelEventManager.RaiseRSSPreExecuteCommand(RSSShellCommon.RSSFeedLink, WrittenCommand);
-                        Shell.GetLine(WrittenCommand, "", ShellType);
-                        Kernel.Kernel.KernelEventManager.RaiseRSSPostExecuteCommand(RSSShellCommon.RSSFeedLink, WrittenCommand);
-                    }
+                    // Prompt for the command
+                    Shell.GetLine();
                 }
                 catch (ThreadInterruptedException)
                 {

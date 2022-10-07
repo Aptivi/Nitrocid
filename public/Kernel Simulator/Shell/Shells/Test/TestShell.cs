@@ -54,26 +54,10 @@ namespace KS.Shell.Shells.Test
             // Actual shell logic
             while (!Bail)
             {
-                // See UESHShell.cs for more info
-                lock (CancellationHandlers.GetCancelSyncLock(ShellType))
-                {
-                    // Write the prompt
-                    PromptPresetManager.WriteShellPrompt(ShellType);
-
-                    // Raise the event
-                    Kernel.Kernel.KernelEventManager.RaiseTestShellInitialized();
-                }
-
-                // Parse the command
-                string FullCmd = Input.ReadLine();
                 try
                 {
-                    if ((string.IsNullOrEmpty(FullCmd) | (FullCmd?.StartsWithAnyOf(new[] { " ", "#" }))) == false)
-                    {
-                        Kernel.Kernel.KernelEventManager.RaiseTestPreExecuteCommand(FullCmd);
-                        Shell.GetLine(FullCmd, "", ShellType);
-                        Kernel.Kernel.KernelEventManager.RaiseTestPostExecuteCommand(FullCmd);
-                    }
+                    // Prompt for the command
+                    Shell.GetLine();
                 }
                 catch (ThreadInterruptedException)
                 {
