@@ -89,7 +89,7 @@ namespace KS.Misc.Splash
                     }
                     else if (!Flags.QuietKernel)
                     {
-                        TextWriterColor.Write(Text, true, ColTypes, Vars);
+                        TextWriterColor.Write($"[{_Progress}%] {Text}", true, ColTypes, Vars);
                     }
                 }
             }
