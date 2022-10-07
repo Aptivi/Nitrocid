@@ -74,7 +74,7 @@ namespace KS.Shell.ShellBase.Commands
             Dictionary<string, CommandInfo> ModCommands;
 
             // Change the available commands list according to command type
-            ShellCommands = GetCommand.GetCommands(CommandType);
+            ShellCommands = CommandManager.GetCommands(CommandType);
             ModCommands = ModManager.ListModCommands(CommandType);
 
             // Get the index of the first space (Used for step 3)

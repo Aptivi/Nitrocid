@@ -16,9 +16,11 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using Extensification.DictionaryExts;
 using KS.Kernel.Debugging;
 using KS.Kernel.Debugging.RemoteDebug;
 using KS.Shell.ShellBase.Shells;
+using System.Collections.Generic;
 
 namespace KS.Shell.ShellBase.Commands
 {
@@ -38,7 +40,7 @@ namespace KS.Shell.ShellBase.Commands
             DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, ShellType: {1}", Command, ShellType);
             if (Shell.UnifiedCommandDict.ContainsKey(Command))
                 return true;
-            return GetCommand.GetCommands(ShellType).ContainsKey(Command);
+            return GetCommands(ShellType).ContainsKey(Command);
         }
 
         /// <summary>
@@ -52,7 +54,7 @@ namespace KS.Shell.ShellBase.Commands
             DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, ShellType: {1}", Command, ShellType);
             if (Shell.UnifiedCommandDict.ContainsKey(Command))
                 return true;
-            return GetCommand.GetCommands(ShellType).ContainsKey(Command);
+            return GetCommands(ShellType).ContainsKey(Command);
         }
 
         /// <summary>
@@ -64,18 +66,40 @@ namespace KS.Shell.ShellBase.Commands
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}", Command);
             return Shell.UnifiedCommandDict.ContainsKey(Command)
-                 | GetCommand.GetCommands(ShellType.FTPShell).ContainsKey(Command)
-                 | GetCommand.GetCommands(ShellType.JsonShell).ContainsKey(Command)
-                 | GetCommand.GetCommands(ShellType.MailShell).ContainsKey(Command)
+                 | GetCommands(ShellType.FTPShell).ContainsKey(Command)
+                 | GetCommands(ShellType.JsonShell).ContainsKey(Command)
+                 | GetCommands(ShellType.MailShell).ContainsKey(Command)
                  | RemoteDebugCmd.DebugCommands.ContainsKey(Command)
-                 | GetCommand.GetCommands(ShellType.RSSShell).ContainsKey(Command)
-                 | GetCommand.GetCommands(ShellType.SFTPShell).ContainsKey(Command)
-                 | GetCommand.GetCommands(ShellType.Shell).ContainsKey(Command)
-                 | GetCommand.GetCommands(ShellType.TestShell).ContainsKey(Command)
-                 | GetCommand.GetCommands(ShellType.TextShell).ContainsKey(Command)
-                 | GetCommand.GetCommands(ShellType.HTTPShell).ContainsKey(Command)
-                 | GetCommand.GetCommands(ShellType.HexShell).ContainsKey(Command)
-                 | GetCommand.GetCommands(ShellType.ArchiveShell).ContainsKey(Command);
+                 | GetCommands(ShellType.RSSShell).ContainsKey(Command)
+                 | GetCommands(ShellType.SFTPShell).ContainsKey(Command)
+                 | GetCommands(ShellType.Shell).ContainsKey(Command)
+                 | GetCommands(ShellType.TestShell).ContainsKey(Command)
+                 | GetCommands(ShellType.TextShell).ContainsKey(Command)
+                 | GetCommands(ShellType.HTTPShell).ContainsKey(Command)
+                 | GetCommands(ShellType.HexShell).ContainsKey(Command)
+                 | GetCommands(ShellType.ArchiveShell).ContainsKey(Command);
+        }
+
+        /// <summary>
+        /// Gets the command dictionary according to the shell type
+        /// </summary>
+        /// <param name="ShellType">The shell type</param>
+        public static Dictionary<string, CommandInfo> GetCommands(ShellType ShellType) => GetCommands(Shell.GetShellTypeName(ShellType));
+
+        /// <summary>
+        /// Gets the command dictionary according to the shell type
+        /// </summary>
+        /// <param name="ShellType">The shell type</param>
+        public static Dictionary<string, CommandInfo> GetCommands(string ShellType)
+        {
+            // Individual shells
+            Dictionary<string, CommandInfo> FinalCommands = Shell.GetShellInfo(ShellType).Commands;
+
+            // Unified commands
+            foreach (string UnifiedCommand in Shell.UnifiedCommandDict.Keys)
+                FinalCommands.AddOrModify(UnifiedCommand, Shell.UnifiedCommandDict[UnifiedCommand]);
+
+            return FinalCommands;
         }
     }
 }

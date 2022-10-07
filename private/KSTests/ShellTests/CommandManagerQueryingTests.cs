@@ -37,7 +37,7 @@ namespace KSTests.ShellTests
         [Description("Querying")]
         public void TestGetCommandListFromSpecificShell()
         {
-            var Commands = GetCommand.GetCommands(ShellType.Shell);
+            var Commands = CommandManager.GetCommands(ShellType.Shell);
             Debug.WriteLine(format: "Commands from Shell: {0} commands", Commands.Count);
             Debug.WriteLine(format: string.Join(", ", Commands));
             Commands.ShouldNotBeNull();
@@ -53,7 +53,7 @@ namespace KSTests.ShellTests
         {
             foreach (string ShellTypeName in Enum.GetNames(typeof(ShellType)))
             {
-                var Commands = GetCommand.GetCommands((ShellType)Convert.ToInt32(Enum.Parse(typeof(ShellType), ShellTypeName)));
+                var Commands = CommandManager.GetCommands((ShellType)Convert.ToInt32(Enum.Parse(typeof(ShellType), ShellTypeName)));
                 Debug.WriteLine(format: "Commands from {0}: {1} commands", ShellTypeName, Commands.Count);
                 Debug.WriteLine(format: string.Join(", ", Commands));
                 Commands.ShouldNotBeNull();

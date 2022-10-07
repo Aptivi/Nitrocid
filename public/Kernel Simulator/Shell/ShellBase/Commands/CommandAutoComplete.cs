@@ -41,7 +41,7 @@ namespace KS.Shell.ShellBase.Commands
         /// <inheritdoc/>
         public string[] GetSuggestions(string text, int index)
         {
-            var ShellCommands = GetCommand.GetCommands(ShellTypeToAutocomplete);
+            var ShellCommands = CommandManager.GetCommands(ShellTypeToAutocomplete);
             if (ShellStart.ShellStack.Count > 0)
             {
                 if (string.IsNullOrEmpty(text))

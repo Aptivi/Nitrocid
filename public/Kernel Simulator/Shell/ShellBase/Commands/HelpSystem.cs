@@ -72,7 +72,7 @@ namespace KS.Shell.ShellBase.Commands
         public static void ShowHelp(string command, string CommandType, StreamWriter DebugDeviceSocket = null)
         {
             // Determine command type
-            var CommandList = GetCommand.GetCommands(CommandType)
+            var CommandList = CommandManager.GetCommands(CommandType)
                                         .OrderBy((CommandValuePair) => CommandValuePair.Key)
                                         .ToDictionary((CommandValuePair) => CommandValuePair.Key, (CommandValuePair) => CommandValuePair.Value);
             Dictionary<string, CommandInfo> ModCommandList;

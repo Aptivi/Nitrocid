@@ -158,3 +158,7 @@ We have renamed the below two shell-related classes to the ones that suit the na
 ##### Moved TextLocation to Misc.Text
 
 This is a text-related enum of text vertical location (top, bottom).
+
+##### Moved GetCommands to CommandManager
+
+This sub is more of a command management routine than the "getting command" module work itself.

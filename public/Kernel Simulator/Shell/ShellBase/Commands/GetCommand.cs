@@ -17,10 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Threading;
-using Extensification.DictionaryExts;
 using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Kernel.Debugging;
@@ -91,7 +89,7 @@ namespace KS.Shell.ShellBase.Commands
                 var Switches = ArgumentInfo.SwitchesList;
                 string StrArgs = ArgumentInfo.ArgumentsText;
                 bool RequiredArgumentsProvided = ArgumentInfo.RequiredArgumentsProvided;
-                var TargetCommands = GetCommands(ShellType);
+                var TargetCommands = CommandManager.GetCommands(ShellType);
 
                 // Check to see if a requested command is obsolete
                 if (TargetCommands[Command].Flags.HasFlag(CommandFlags.Obsolete))
@@ -139,29 +137,6 @@ namespace KS.Shell.ShellBase.Commands
                 DebugWriter.WriteDebugStackTrace(ex);
                 Decisive.DecisiveWrite(ShellType, DebugDeviceSocket, Translate.DoTranslation("Error trying to execute command") + " {2}." + Kernel.Kernel.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, ColorTools.ColTypes.Error, ex.GetType().FullName, ex.Message, RequestedCommand);
             }
-        }
-
-        // TODO: Move these below to CommandManager
-        /// <summary>
-        /// Gets the command dictionary according to the shell type
-        /// </summary>
-        /// <param name="ShellType">The shell type</param>
-        public static Dictionary<string, CommandInfo> GetCommands(ShellType ShellType) => GetCommands(Shell.GetShellTypeName(ShellType));
-
-        /// <summary>
-        /// Gets the command dictionary according to the shell type
-        /// </summary>
-        /// <param name="ShellType">The shell type</param>
-        public static Dictionary<string, CommandInfo> GetCommands(string ShellType)
-        {
-            // Individual shells
-            Dictionary<string, CommandInfo> FinalCommands = Shell.GetShellInfo(ShellType).Commands;
-
-            // Unified commands
-            foreach (string UnifiedCommand in Shell.UnifiedCommandDict.Keys)
-                FinalCommands.AddOrModify(UnifiedCommand, Shell.UnifiedCommandDict[UnifiedCommand]);
-
-            return FinalCommands;
         }
 
     }

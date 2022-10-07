@@ -226,7 +226,7 @@ namespace KS.Shell
 
             // Check for a type of command
             var SplitCommands = FullCommand.Split(new[] { " ; " }, StringSplitOptions.RemoveEmptyEntries);
-            var Commands = GetCommand.GetCommands(ShellType);
+            var Commands = CommandManager.GetCommands(ShellType);
             for (int i = 0; i < SplitCommands.Length; i++)
             {
                 string Command = SplitCommands[i];
