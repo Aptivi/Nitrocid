@@ -144,7 +144,6 @@ namespace KS.Shell.Shells.UESH
             { "stopwatch", new CommandInfo("stopwatch", ShellType.Shell, "A simple stopwatch", new CommandArgumentInfo(), new StopwatchCommand()) },
             { "sumfile", new CommandInfo("sumfile", ShellType.Shell, "Calculates file sums.", new CommandArgumentInfo(new[] { "[-relative] <MD5/SHA1/SHA256/SHA384/SHA512/all> <file> [outputFile]" }, true, 2), new SumFileCommand()) },
             { "sumfiles", new CommandInfo("sumfiles", ShellType.Shell, "Calculates sums of files in specified directory.", new CommandArgumentInfo(new[] { "[-relative] <MD5/SHA1/SHA256/SHA384/SHA512/all> <dir> [outputFile]" }, true, 2), new SumFilesCommand()) },
-            { "testshell", new CommandInfo("testshell", ShellType.Shell, "Opens a test shell", new CommandArgumentInfo(), new TestShellCommand(), CommandFlags.Strict) },
             { "themesel", new CommandInfo("themesel", ShellType.Shell, "Selects a theme and sets it", new CommandArgumentInfo(new[] { "[Theme]" }, false, 0), new ThemeSelCommand()) },
             { "timer", new CommandInfo("timer", ShellType.Shell, "A simple timer", new CommandArgumentInfo(), new TimerCommand()) },
             { "unblockdbgdev", new CommandInfo("unblockdbgdev", ShellType.Shell, "Unblock a debug device by IP address", new CommandArgumentInfo(new[] { "<ipaddress>" }, true, 1), new UnblockDbgDevCommand(), CommandFlags.Strict) },
