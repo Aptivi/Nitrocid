@@ -93,7 +93,6 @@ namespace KS.Shell.Shells.UESH
             { "listunits", new CommandInfo("listunits", ShellType.Shell, "Lists all available units", new CommandArgumentInfo(new[] { "<type>" }, true, 1), new ListUnitsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
             { "lockscreen", new CommandInfo("lockscreen", ShellType.Shell, "Locks your screen with a password", new CommandArgumentInfo(), new LockScreenCommand()) },
             { "logout", new CommandInfo("logout", ShellType.Shell, "Logs you out", new CommandArgumentInfo(), new LogoutCommand(), CommandFlags.NoMaintenance) },
-            { "lovehate", new CommandInfo("lovehate", ShellType.Shell, "Respond to love or hate comments.", new CommandArgumentInfo(), new LoveHateCommand()) },
             { "lsdbgdev", new CommandInfo("lsdbgdev", ShellType.Shell, "Lists debugging devices connected", new CommandArgumentInfo(), new LsDbgDevCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
             { "lsvars", new CommandInfo("lsvars", ShellType.Shell, "Lists available UESH variables", new CommandArgumentInfo(), new LsVarsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
             { "mail", new CommandInfo("mail", ShellType.Shell, "Opens the mail client", new CommandArgumentInfo(new[] { "[emailAddress]" }, false, 0), new MailCommand()) },

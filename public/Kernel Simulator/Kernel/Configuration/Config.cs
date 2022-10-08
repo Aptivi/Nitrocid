@@ -1355,7 +1355,6 @@ namespace KS.Kernel.Configuration
                 { "Lower frame character for progress bars", ProgressTools.ProgressLowerFrameChar },
                 { "Left frame character for progress bars", ProgressTools.ProgressLeftFrameChar },
                 { "Right frame character for progress bars", ProgressTools.ProgressRightFrameChar },
-                { "Users count for love or hate comments", LoveHateRespond.LoveOrHateUsersCount },
                 { "Input history enabled", Flags.InputHistoryEnabled },
                 { "Input clipboard enabled", Flags.InputClipboardEnabled },
                 { "Input undo enabled", Flags.InputUndoEnabled },
@@ -2545,7 +2544,6 @@ namespace KS.Kernel.Configuration
             ProgressTools.ProgressLowerFrameChar = (string)(ConfigToken["Misc"]["Lower frame character for progress bars"] ?? "═");
             ProgressTools.ProgressLeftFrameChar = (string)(ConfigToken["Misc"]["Left frame character for progress bars"] ?? "║");
             ProgressTools.ProgressRightFrameChar = (string)(ConfigToken["Misc"]["Right frame character for progress bars"] ?? "║");
-            LoveHateRespond.LoveOrHateUsersCount = int.TryParse((string)ConfigToken["Misc"]["Users count for love or hate comments"], out _) ? (int)ConfigToken["Misc"]["Users count for love or hate comments"] : 20;
             Flags.InputHistoryEnabled = (bool)ConfigToken["Misc"]["Input history enabled"];
             Flags.InputClipboardEnabled = (bool)ConfigToken["Misc"]["Input clipboard enabled"];
             Flags.InputUndoEnabled = (bool)ConfigToken["Misc"]["Input undo enabled"];
