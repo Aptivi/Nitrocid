@@ -273,7 +273,7 @@ namespace KS.Users
                         DebugWriter.WriteDebug(DebugLevel.I, "Initializing user with password");
                         InitializeUser(newUser, newPassword);
                     }
-                    Kernel.Kernel.KernelEventManager.RaiseUserAdded(newUser);
+                    Kernel.Events.EventsManager.FireEvent("UserAdded", newUser);
                     return true;
                 }
                 catch (Exception ex)
@@ -352,7 +352,7 @@ namespace KS.Users
                     File.WriteAllText(Paths.GetKernelPath(KernelPathType.Users), JsonConvert.SerializeObject(UsersToken, Formatting.Indented));
 
                     // Raise event
-                    Kernel.Kernel.KernelEventManager.RaiseUserRemoved(user);
+                    Kernel.Events.EventsManager.FireEvent("UserRemoved", user);
                 }
                 catch (Exception ex)
                 {
@@ -407,7 +407,7 @@ namespace KS.Users
                         SetUserProperty(OldName, UserProperty.Username, Username);
 
                         // Raise event
-                        Kernel.Kernel.KernelEventManager.RaiseUsernameChanged(OldName, Username);
+                        Kernel.Events.EventsManager.FireEvent("UsernameChanged", OldName, Username);
                     }
                     catch (Exception ex)
                     {
@@ -490,7 +490,7 @@ namespace KS.Users
                     SetUserProperty(Target, UserProperty.Password, NewPass);
 
                     // Raise event
-                    Kernel.Kernel.KernelEventManager.RaiseUserPasswordChanged(Target);
+                    Kernel.Events.EventsManager.FireEvent("UserPasswordChanged", Target);
                 }
                 else if (GroupManagement.HasGroup(Login.Login.CurrentUser.Username, GroupManagement.GroupType.Administrator) & !Login.Login.Users.ContainsKey(Target))
                 {

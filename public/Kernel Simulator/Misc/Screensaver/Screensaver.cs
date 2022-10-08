@@ -195,7 +195,7 @@ namespace KS.Misc.Screensaver
             {
                 inSaver = true;
                 Flags.ScrnTimeReached = true;
-                Kernel.Kernel.KernelEventManager.RaisePreShowScreensaver(saver);
+                Kernel.Events.EventsManager.FireEvent("PreShowScreensaver", saver);
                 DebugWriter.WriteDebug(DebugLevel.I, "Requested screensaver: {0}", saver);
                 if (Screensavers.ContainsKey(saver.ToLower()))
                 {
@@ -224,7 +224,7 @@ namespace KS.Misc.Screensaver
 
                 // Raise event
                 DebugWriter.WriteDebug(DebugLevel.I, "Screensaver really stopped.");
-                Kernel.Kernel.KernelEventManager.RaisePostShowScreensaver(saver);
+                Kernel.Events.EventsManager.FireEvent("PostShowScreensaver", saver);
             }
             catch (InvalidOperationException ex)
             {
@@ -250,7 +250,7 @@ namespace KS.Misc.Screensaver
         {
             LockMode = true;
             ShowSavers(DefSaverName);
-            Kernel.Kernel.KernelEventManager.RaisePreUnlock(DefSaverName);
+            Kernel.Events.EventsManager.FireEvent("PreUnlock", DefSaverName);
             if (PasswordLock)
             {
                 Login.Login.ShowPasswordPrompt(Login.Login.CurrentUser.Username);

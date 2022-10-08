@@ -16,7 +16,14 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Debugging;
+using KS.Languages;
+using KS.Modifications;
+using KS.Shell.ShellBase.Shells;
+using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace KS.Kernel.Events
 {
@@ -25,6 +32,110 @@ namespace KS.Kernel.Events
     /// </summary>
     public static class EventsManager
     {
+
+        private static readonly string[] events = 
+        {
+            "StartKernel",
+            "KernelStarted",
+            "PreLogin",
+            "PostLogin",
+            "LoginError",
+            "ShellInitialized",
+            "PreExecuteCommand",
+            "PostExecuteCommand",
+            "KernelError",
+            "ContKernelError",
+            "PreShutdown",
+            "PostShutdown",
+            "PreReboot",
+            "PostReboot",
+            "PreShowScreensaver",
+            "PostShowScreensaver",
+            "PreUnlock",
+            "PostUnlock",
+            "CommandError",
+            "PreReloadConfig",
+            "PostReloadConfig",
+            "PlaceholderParsing",
+            "PlaceholderParsed",
+            "PlaceholderParseError",
+            "GarbageCollected",
+            "FTPPreDownload",
+            "FTPPostDownload",
+            "FTPPreUpload",
+            "FTPPostUpload",
+            "RemoteDebugConnectionAccepted",
+            "RemoteDebugConnectionDisconnected",
+            "RemoteDebugExecuteCommand",
+            "RemoteDebugCommandError",
+            "RPCCommandSent",
+            "RPCCommandReceived",
+            "RPCCommandError",
+            "SFTPPreDownload",
+            "SFTPPostDownload",
+            "SFTPDownloadError",
+            "SFTPPreUpload",
+            "SFTPPostUpload",
+            "SFTPUploadError",
+            "SSHConnected",
+            "SSHDisconnected",
+            "SSHPreExecuteCommand",
+            "SSHPostExecuteCommand",
+            "SSHCommandError",
+            "SSHError",
+            "UESHPreExecute",
+            "UESHPostExecute",
+            "UESHError",
+            "NotificationSent",
+            "NotificationsSent",
+            "NotificationReceived",
+            "NotificationsReceived",
+            "NotificationDismissed",
+            "ConfigSaved",
+            "ConfigSaveError",
+            "ConfigRead",
+            "ConfigReadError",
+            "PreExecuteModCommand",
+            "PostExecuteModCommand",
+            "ModParsed",
+            "ModParseError",
+            "ModFinalized",
+            "ModFinalizationFailed",
+            "UserAdded",
+            "UserRemoved",
+            "UsernameChanged",
+            "UserPasswordChanged",
+            "HardwareProbing",
+            "HardwareProbed",
+            "CurrentDirectoryChanged",
+            "FileCreated",
+            "DirectoryCreated",
+            "FileCopied",
+            "DirectoryCopied",
+            "FileMoved",
+            "DirectoryMoved",
+            "FileRemoved",
+            "DirectoryRemoved",
+            "FileAttributeAdded",
+            "FileAttributeRemoved",
+            "ColorReset",
+            "ThemeSet",
+            "ThemeSetError",
+            "ColorSet",
+            "ColorSetError",
+            "ThemeStudioStarted",
+            "ThemeStudioExit",
+            "ArgumentsInjected",
+            "ProcessError",
+            "LanguageInstalled",
+            "LanguageUninstalled",
+            "LanguageInstallError",
+            "LanguageUninstallError",
+            "LanguagesInstalled",
+            "LanguagesUninstalled",
+            "LanguagesInstallError",
+            "LanguagesUninstallError"
+        };
 
         /// <summary>
         /// Recently fired events
@@ -60,6 +171,42 @@ namespace KS.Kernel.Events
         /// Clears all the fired events
         /// </summary>
         public static void ClearAllFiredEvents() => FiredEvents.Clear();
+
+        /// <summary>
+        /// Fires a kernel event
+        /// </summary>
+        /// <param name="EventName">Event name. Refer to <see cref="events"/>.</param>
+        /// <param name="Params">Parameters for event</param>
+        /// <exception cref="Exceptions.NoSuchEventException"></exception>
+        public static void FireEvent(string EventName, params object[] Params)
+        {
+            // Check to see if event exists
+            if (!events.Contains(EventName))
+                throw new Exceptions.NoSuchEventException(Translate.DoTranslation("Event {0} not found."), EventName);
+
+            // Add fired event to the list
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, $"Raising event {EventName}...");
+            FiredEvents.Add($"[{FiredEvents.Count}] {EventName}", Params);
+
+            // Now, respond to the event
+            foreach (ModInfo ModPart in ModManager.Mods.Values)
+            {
+                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
+                {
+                    try
+                    {
+                        var script = PartInfo.PartScript;
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event {3}...", script.ModPart, script.Name, script.Version, EventName);
+                        script.InitEvents(EventName, Params);
+                    }
+                    catch (Exception ex)
+                    {
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
+                    }
+                }
+            }
+        }
 
     }
 }

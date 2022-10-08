@@ -44,9 +44,9 @@ namespace KS.Kernel.Configuration
         /// </summary>
         public static void ReloadConfig()
         {
-            Kernel.KernelEventManager.RaisePreReloadConfig();
+            Events.EventsManager.FireEvent("PreReloadConfig");
             InitializeConfig();
-            Kernel.KernelEventManager.RaisePostReloadConfig();
+            Events.EventsManager.FireEvent("PostReloadConfig");
         }
 
         /// <summary>

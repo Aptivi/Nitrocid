@@ -35,7 +35,7 @@ namespace KS.Modifications
         /// <param name="cmd">A mod command with arguments</param>
         public static void ExecuteModCommand(string cmd)
         {
-            Kernel.Kernel.KernelEventManager.RaisePreExecuteModCommand(cmd);
+            Kernel.Events.EventsManager.FireEvent("PreExecuteModCommand", cmd);
 
             // Variables
             var parts = cmd.SplitEncloseDoubleQuotes(" ");
@@ -123,7 +123,7 @@ namespace KS.Modifications
             }
 
             // Raise event
-            Kernel.Kernel.KernelEventManager.RaisePostExecuteModCommand(cmd);
+            Kernel.Events.EventsManager.FireEvent("PostExecuteModCommand", cmd);
             DebugWriter.WriteDebug(DebugLevel.I, "Command executed successfully.");
         }
 

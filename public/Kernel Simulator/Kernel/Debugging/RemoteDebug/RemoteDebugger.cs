@@ -204,7 +204,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
                             // Acknowledge the debugger
                             DebugWriter.WriteDebug(DebugLevel.I, "Debug device \"{0}\" ({1}) connected.", RDebugName, RDebugIP);
                             RDebugSWriter.Flush();
-                            Kernel.KernelEventManager.RaiseRemoteDebugConnectionAccepted(RDebugIP);
+                            Events.EventsManager.FireEvent("RemoteDebugConnectionAccepted", RDebugIP);
                         }
                     }
                 }

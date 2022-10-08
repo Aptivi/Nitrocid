@@ -18,6 +18,7 @@
 
 using System.Linq;
 using System.Reflection;
+using KS.Kernel.Events;
 using KS.Misc.Reflection;
 using KS.Shell.ShellBase.Commands;
 
@@ -33,8 +34,7 @@ namespace KS.Shell.Shells.Test.Commands
         {
             string eventName = ListArgsOnly[0];
             string[] eventArgs = ListArgsOnly.Skip(1).ToArray();
-            MethodBase eventMethod = MethodManager.GetMethod($"Raise{eventName}");
-            eventMethod.Invoke(Kernel.Kernel.KernelEventManager, eventArgs);
+            EventsManager.FireEvent(eventName, eventArgs);
         }
 
     }

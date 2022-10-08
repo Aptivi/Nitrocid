@@ -133,7 +133,7 @@ namespace KS.Shell.ShellBase.Commands
             }
             catch (Exception ex)
             {
-                Kernel.Kernel.KernelEventManager.RaiseCommandError(ShellType, RequestedCommand, ex);
+                Kernel.Events.EventsManager.FireEvent("CommandError", ShellType, RequestedCommand, ex);
                 DebugWriter.WriteDebugStackTrace(ex);
                 Decisive.DecisiveWrite(ShellType, DebugDeviceSocket, Translate.DoTranslation("Error trying to execute command") + " {2}." + Kernel.Kernel.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, ColorTools.ColTypes.Error, ex.GetType().FullName, ex.Message, RequestedCommand);
             }

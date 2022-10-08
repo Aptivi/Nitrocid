@@ -58,12 +58,12 @@ namespace KS.Modifications
         /// <summary>
         /// Code executed when initializing events
         /// </summary>
-        /// <param name="ev">Event name. Look it up on <see cref="Kernel.Events.Events"/></param>
+        /// <param name="ev">Event name. Look it up on <see cref="Kernel.Events.EventsManager.events"/></param>
         void InitEvents(string ev);
         /// <summary>
         /// Code executed when initializing events
         /// </summary>
-        /// <param name="ev">Event name. Look it up on <see cref="Kernel.Events.Events"/></param>
+        /// <param name="ev">Event name. Look it up on <see cref="Kernel.Events.EventsManager.events"/></param>
         /// <param name="Args">Arguments.</param>
         void InitEvents(string ev, params object[] Args);
     }

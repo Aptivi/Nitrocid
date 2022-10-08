@@ -292,7 +292,7 @@ namespace KS.ConsoleBase.Colors
             LoadBack();
 
             // Raise event
-            Kernel.Kernel.KernelEventManager.RaiseColorReset();
+            Kernel.Events.EventsManager.FireEvent("ColorReset");
         }
 
         /// <summary>

@@ -144,7 +144,7 @@ namespace KS.Misc.Execution
             }
             catch (Exception ex)
             {
-                Kernel.Kernel.KernelEventManager.RaiseProcessError(File + Args, ex);
+                Kernel.Events.EventsManager.FireEvent("ProcessError", File + Args, ex);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriterColor.Write(Translate.DoTranslation("Error trying to execute command") + " {2}." + Kernel.Kernel.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, ColorTools.ColTypes.Error, ex.GetType().FullName, ex.Message, File);
             }

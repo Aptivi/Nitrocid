@@ -47,6 +47,7 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Debugging.RemoteDebug;
 using KS.Users.Groups;
 using KS.Users;
+using KS.Kernel.Events;
 
 namespace KS.Kernel
 {
@@ -68,7 +69,6 @@ namespace KS.Kernel
         /// New line constant
         /// </summary>
         public readonly static string NewLine = Environment.NewLine;
-        internal readonly static Events.Events KernelEventManager = new();
         internal static Stopwatch StageTimer = new();
 
         // #ifdef'd variables ... Framework monikers
@@ -208,7 +208,7 @@ namespace KS.Kernel
                     {
                         SplashReport.ReportProgress(Translate.DoTranslation("Running in safe mode. Skipping stage..."), 0, ColorTools.ColTypes.NeutralText);
                     }
-                    KernelEventManager.RaiseStartKernel();
+                    EventsManager.FireEvent("StartKernel");
 
                     // Phase 4: Log-in
                     KernelTools.ReportNewStage(4, Translate.DoTranslation("- Stage 4: Log in"));

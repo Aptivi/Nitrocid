@@ -39,7 +39,7 @@ namespace KS.Files.Operations
             Directory.Delete(Dir, true);
 
             // Raise event
-            Kernel.Kernel.KernelEventManager.RaiseDirectoryRemoved(Target);
+            Kernel.Events.EventsManager.FireEvent("DirectoryRemoved", Target);
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace KS.Files.Operations
             File.Delete(Dir);
 
             // Raise event
-            Kernel.Kernel.KernelEventManager.RaiseFileRemoved(Target);
+            Kernel.Events.EventsManager.FireEvent("FileRemoved", Target);
         }
 
         /// <summary>

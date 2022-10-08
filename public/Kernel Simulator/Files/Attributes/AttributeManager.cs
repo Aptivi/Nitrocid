@@ -41,7 +41,7 @@ namespace KS.Files.Attributes
             File.SetAttributes(FilePath, Attributes);
 
             // Raise event
-            Kernel.Kernel.KernelEventManager.RaiseFileAttributeAdded(FilePath, Attributes);
+            Kernel.Events.EventsManager.FireEvent("FileAttributeAdded", FilePath, Attributes);
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace KS.Files.Attributes
             File.SetAttributes(FilePath, Attrib);
 
             // Raise event
-            Kernel.Kernel.KernelEventManager.RaiseFileAttributeRemoved(FilePath, Attributes);
+            Kernel.Events.EventsManager.FireEvent("FileAttributeRemoved", FilePath, Attributes);
         }
 
         /// <summary>

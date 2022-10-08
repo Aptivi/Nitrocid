@@ -49,7 +49,7 @@ namespace KS.Files.Operations
                 Directory.CreateDirectory(NewDirectory);
 
                 // Raise event
-                Kernel.Kernel.KernelEventManager.RaiseDirectoryCreated(NewDirectory);
+                Kernel.Events.EventsManager.FireEvent("DirectoryCreated", NewDirectory);
             }
             else if (ThrowIfDirectoryExists)
             {
@@ -98,7 +98,7 @@ namespace KS.Files.Operations
                     DebugWriter.WriteDebug(DebugLevel.I, "File closed");
 
                     // Raise event
-                    Kernel.Kernel.KernelEventManager.RaiseFileCreated(NewFile);
+                    Kernel.Events.EventsManager.FireEvent("FileCreated", NewFile);
                 }
                 catch (Exception ex)
                 {
@@ -156,7 +156,7 @@ namespace KS.Files.Operations
                     DebugWriter.WriteDebug(DebugLevel.I, "File closed");
 
                     // Raise event
-                    Kernel.Kernel.KernelEventManager.RaiseFileCreated(NewFile);
+                    Kernel.Events.EventsManager.FireEvent("FileCreated", NewFile);
                 }
                 catch (Exception ex)
                 {

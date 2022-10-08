@@ -1390,7 +1390,7 @@ namespace KS.Kernel.Configuration
 
             // Save Config
             File.WriteAllText(ConfigPath, JsonConvert.SerializeObject(ConfigurationObject, Formatting.Indented));
-            Kernel.KernelEventManager.RaiseConfigSaved();
+            Events.EventsManager.FireEvent("ConfigSaved");
         }
 
         /// <summary>
@@ -1421,7 +1421,7 @@ namespace KS.Kernel.Configuration
             }
             catch (Exception ex)
             {
-                Kernel.KernelEventManager.RaiseConfigSaveError(ex);
+                Events.EventsManager.FireEvent("ConfigSaveError", ex);
                 DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
@@ -2556,7 +2556,7 @@ namespace KS.Kernel.Configuration
             ConfigTools.RepairConfig();
 
             // Raise event
-            Kernel.KernelEventManager.RaiseConfigRead();
+            Events.EventsManager.FireEvent("ConfigRead");
         }
 
         /// <summary>
@@ -2593,7 +2593,7 @@ namespace KS.Kernel.Configuration
             }
             catch (Exception ex)
             {
-                Kernel.KernelEventManager.RaiseConfigReadError(ex);
+                Events.EventsManager.FireEvent("ConfigReadError", ex);
                 DebugWriter.WriteDebugStackTrace(ex);
                 if (!SplashReport.KernelBooted)
                 {

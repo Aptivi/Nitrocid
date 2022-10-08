@@ -140,7 +140,7 @@ namespace KS.Kernel
                 Description = StringManipulate.FormatString(Description, Variables);
 
                 // Fire an event
-                Kernel.KernelEventManager.RaiseKernelError(ErrorType, Reboot, RebootTime, Description, Exc, Variables);
+                Events.EventsManager.FireEvent("KernelError", ErrorType, Reboot, RebootTime, Description, Exc, Variables);
 
                 // Make a dump file
                 GeneratePanicDump(Description, ErrorType, Exc);
@@ -167,7 +167,7 @@ namespace KS.Kernel
                                 TextWriterColor.Write(Translate.DoTranslation("[{0}] panic: Reboot disabled due to error level being {0}."), true, ColorTools.ColTypes.Warning, ErrorType);
                             }
                             // Print normally
-                            Kernel.KernelEventManager.RaiseContKernelError(ErrorType, Reboot, RebootTime, Description, Exc, Variables);
+                            Events.EventsManager.FireEvent("ContKernelError", ErrorType, Reboot, RebootTime, Description, Exc, Variables);
                             TextWriterColor.Write(Translate.DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel."), true, ColorTools.ColTypes.ContKernelError, ErrorType, Description);
                             if (Flags.ShowStackTraceOnKernelError & Exc is not null)
                                 TextWriterColor.Write(Exc.StackTrace, true, ColorTools.ColTypes.ContKernelError);

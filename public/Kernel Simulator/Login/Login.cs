@@ -80,7 +80,7 @@ namespace KS.Login
                 }
 
                 // Fire event PreLogin
-                Kernel.Kernel.KernelEventManager.RaisePreLogin();
+                Kernel.Events.EventsManager.FireEvent("PreLogin");
 
                 // Check to see if there are any users
                 if (Users.Count == 0)
@@ -145,7 +145,7 @@ namespace KS.Login
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.W, "User can't log in. (User is in disabled list)");
                                     TextWriterColor.Write(Translate.DoTranslation("User is disabled."), true, ColorTools.ColTypes.Error);
-                                    Kernel.Kernel.KernelEventManager.RaiseLoginError(SelectedUser, LoginErrorReasons.Disabled);
+                                    Kernel.Events.EventsManager.FireEvent("LoginError", SelectedUser, LoginErrorReasons.Disabled);
                                 }
                             }
                             else
@@ -181,13 +181,13 @@ namespace KS.Login
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Spaces found in username.");
                         TextWriterColor.Write(Translate.DoTranslation("Spaces are not allowed."), true, ColorTools.ColTypes.Error);
-                        Kernel.Kernel.KernelEventManager.RaiseLoginError(answeruser, LoginErrorReasons.Spaces);
+                        Kernel.Events.EventsManager.FireEvent("LoginError", answeruser, LoginErrorReasons.Spaces);
                     }
                     else if (answeruser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray()) != -1)
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Unknown characters found in username.");
                         TextWriterColor.Write(Translate.DoTranslation("Special characters are not allowed."), true, ColorTools.ColTypes.Error);
-                        Kernel.Kernel.KernelEventManager.RaiseLoginError(answeruser, LoginErrorReasons.SpecialCharacters);
+                        Kernel.Events.EventsManager.FireEvent("LoginError", answeruser, LoginErrorReasons.SpecialCharacters);
                     }
                     else if (Users.ContainsKey(answeruser))
                     {
@@ -201,14 +201,14 @@ namespace KS.Login
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "User can't log in. (User is in disabled list)");
                             TextWriterColor.Write(Translate.DoTranslation("User is disabled."), true, ColorTools.ColTypes.Error);
-                            Kernel.Kernel.KernelEventManager.RaiseLoginError(answeruser, LoginErrorReasons.Disabled);
+                            Kernel.Events.EventsManager.FireEvent("LoginError", answeruser, LoginErrorReasons.Disabled);
                         }
                     }
                     else if (ReadLineReboot.ReadLine.ReadRanToCompletion)
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "Username not found.");
                         TextWriterColor.Write(Translate.DoTranslation("Wrong username."), true, ColorTools.ColTypes.Error);
-                        Kernel.Kernel.KernelEventManager.RaiseLoginError(answeruser, LoginErrorReasons.NotFound);
+                        Kernel.Events.EventsManager.FireEvent("LoginError", answeruser, LoginErrorReasons.NotFound);
                     }
                 }
             }
@@ -267,7 +267,7 @@ namespace KS.Login
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Passowrd written wrong...");
                         TextWriterColor.Write(Translate.DoTranslation("Wrong password."), true, ColorTools.ColTypes.Error);
-                        Kernel.Kernel.KernelEventManager.RaiseLoginError(usernamerequested, LoginErrorReasons.WrongPassword);
+                        Kernel.Events.EventsManager.FireEvent("LoginError", usernamerequested, LoginErrorReasons.WrongPassword);
                         if (!Flags.Maintenance)
                         {
                             if (!Screensaver.LockMode)
@@ -299,7 +299,7 @@ namespace KS.Login
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Releasing lock and getting back to shell...");
                 Screensaver.LockMode = false;
-                Kernel.Kernel.KernelEventManager.RaisePostUnlock(Screensaver.DefSaverName);
+                Kernel.Events.EventsManager.FireEvent("PostUnlock", Screensaver.DefSaverName);
                 return;
             }
 
@@ -314,7 +314,7 @@ namespace KS.Login
             RSSTools.ShowHeadlineLogin();
 
             // Fire event PostLogin
-            Kernel.Kernel.KernelEventManager.RaisePostLogin(CurrentUser.Username);
+            Kernel.Events.EventsManager.FireEvent("PostLogin", CurrentUser.Username);
 
             // Initialize shell
             DebugWriter.WriteDebug(DebugLevel.I, "Shell is being initialized...");

@@ -40,7 +40,7 @@ namespace KS.Scripting
             try
             {
                 // Raise event
-                Kernel.Kernel.KernelEventManager.RaiseUESHPreExecute(ScriptPath, ScriptArguments);
+                Kernel.Events.EventsManager.FireEvent("UESHPreExecute", ScriptPath, ScriptArguments);
 
                 // Open the script file for reading
                 var FileStream = new StreamReader(ScriptPath);
@@ -118,11 +118,11 @@ namespace KS.Scripting
 
                 // Close the stream
                 FileStream.Close();
-                Kernel.Kernel.KernelEventManager.RaiseUESHPostExecute(ScriptPath, ScriptArguments);
+                Kernel.Events.EventsManager.FireEvent("UESHPostExecute", ScriptPath, ScriptArguments);
             }
             catch (Exception ex)
             {
-                Kernel.Kernel.KernelEventManager.RaiseUESHError(ScriptPath, ScriptArguments, ex);
+                Kernel.Events.EventsManager.FireEvent("UESHError", ScriptPath, ScriptArguments, ex);
                 DebugWriter.WriteDebug(DebugLevel.E, "Error trying to execute script {0} with arguments {1}: {2}", ScriptPath, ScriptArguments, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 throw new Kernel.Exceptions.UESHScriptException(Translate.DoTranslation("The script is malformed. Check the script and resolve any errors: {0}"), ex, ex.Message);

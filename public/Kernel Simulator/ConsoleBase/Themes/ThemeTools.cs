@@ -163,12 +163,12 @@ namespace KS.ConsoleBase.Themes
                 }
 
                 // Raise event
-                Kernel.Kernel.KernelEventManager.RaiseThemeSet(theme);
+                Kernel.Events.EventsManager.FireEvent("ThemeSet", theme);
             }
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Theme not found.");
-                Kernel.Kernel.KernelEventManager.RaiseThemeSetError(theme, ThemeSetErrorReasons.NotFound);
+                Kernel.Events.EventsManager.FireEvent("ThemeSetError", theme, ThemeSetErrorReasons.NotFound);
                 throw new Kernel.Exceptions.NoSuchThemeException(Translate.DoTranslation("Invalid color template {0}"), theme);
             }
         }
@@ -197,12 +197,12 @@ namespace KS.ConsoleBase.Themes
                 }
 
                 // Raise event
-                Kernel.Kernel.KernelEventManager.RaiseThemeSet(ThemeFile);
+                Kernel.Events.EventsManager.FireEvent("ThemeSet", ThemeFile);
             }
             catch (FileNotFoundException)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Theme not found.");
-                Kernel.Kernel.KernelEventManager.RaiseThemeSetError(ThemeFile, ThemeSetErrorReasons.NotFound);
+                Kernel.Events.EventsManager.FireEvent("ThemeSetError", ThemeFile, ThemeSetErrorReasons.NotFound);
                 throw new Kernel.Exceptions.NoSuchThemeException(Translate.DoTranslation("Invalid color template {0}"), ThemeFile);
             }
         }
@@ -232,18 +232,18 @@ namespace KS.ConsoleBase.Themes
                     Config.CreateConfig();
 
                     // Raise event
-                    Kernel.Kernel.KernelEventManager.RaiseColorSet();
+                    Kernel.Events.EventsManager.FireEvent("ColorSet");
                 }
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    Kernel.Kernel.KernelEventManager.RaiseColorSetError(ColorSetErrorReasons.InvalidColors);
+                    Kernel.Events.EventsManager.FireEvent("ColorSetError", ColorSetErrorReasons.InvalidColors);
                     throw new Kernel.Exceptions.ColorException(Translate.DoTranslation("One or more of the colors is invalid.") + " {0}", ex, ex.Message);
                 }
             }
             else
             {
-                Kernel.Kernel.KernelEventManager.RaiseColorSetError(ColorSetErrorReasons.NoColors);
+                Kernel.Events.EventsManager.FireEvent("ColorSetError", ColorSetErrorReasons.NoColors);
                 throw new InvalidOperationException(Translate.DoTranslation("Colors are not available. Turn on colored shell in the kernel config."));
             }
         }

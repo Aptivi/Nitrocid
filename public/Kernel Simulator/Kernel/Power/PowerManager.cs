@@ -56,10 +56,10 @@ namespace KS.Kernel.Power
             {
                 case PowerMode.Shutdown:
                     {
-                        Kernel.KernelEventManager.RaisePreShutdown();
+                        Events.EventsManager.FireEvent("PreShutdown");
                         TextWriterColor.Write(Translate.DoTranslation("Shutting down..."), true, ColorTools.ColTypes.NeutralText);
                         KernelTools.ResetEverything();
-                        Kernel.KernelEventManager.RaisePostShutdown();
+                        Events.EventsManager.FireEvent("PostShutdown");
                         Flags.RebootRequested = true;
                         Flags.LogoutRequested = true;
                         Flags.KernelShutdown = true;
@@ -68,10 +68,10 @@ namespace KS.Kernel.Power
                 case PowerMode.Reboot:
                 case PowerMode.RebootSafe:
                     {
-                        Kernel.KernelEventManager.RaisePreReboot();
+                        Events.EventsManager.FireEvent("PreReboot");
                         TextWriterColor.Write(Translate.DoTranslation("Rebooting..."), true, ColorTools.ColTypes.NeutralText);
                         KernelTools.ResetEverything();
-                        Kernel.KernelEventManager.RaisePostReboot();
+                        Events.EventsManager.FireEvent("PostReboot");
                         ConsoleBase.ConsoleWrapper.Clear();
                         Flags.RebootRequested = true;
                         Flags.LogoutRequested = true;

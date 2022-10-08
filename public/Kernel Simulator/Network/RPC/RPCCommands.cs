@@ -124,7 +124,7 @@ namespace KS.Network.RPC
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Sending response to device...");
                         RemoteProcedure.RPCListen.Send(ByteMsg, ByteMsg.Length, IP, Port);
-                        Kernel.Kernel.KernelEventManager.RaiseRPCCommandSent(Cmd, Arg, IP, Port);
+                        Kernel.Events.EventsManager.FireEvent("RPCCommandSent", Cmd, Arg, IP, Port);
                     }
                 }
             }
@@ -154,7 +154,7 @@ namespace KS.Network.RPC
                     if (!string.IsNullOrEmpty(Message))
                     {
                         DebugWriter.WriteDebug((DebugLevel)Convert.ToInt32("RPC: Received message {0}"), Message);
-                        Kernel.Kernel.KernelEventManager.RaiseRPCCommandReceived(Message, RemoteEndpoint.Address.ToString(), RemoteEndpoint.Port);
+                        Kernel.Events.EventsManager.FireEvent("RPCCommandReceived", Message, RemoteEndpoint.Address.ToString(), RemoteEndpoint.Port);
 
                         // Iterate through every confirmation message
                         if (Message.StartsWith("ShutdownConfirm"))
@@ -221,7 +221,7 @@ namespace KS.Network.RPC
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "Fatal error: {0}", ex.Message);
                         DebugWriter.WriteDebugStackTrace(ex);
-                        Kernel.Kernel.KernelEventManager.RaiseRPCCommandError(Message, ex, RemoteEndpoint.Address.ToString(), RemoteEndpoint.Port);
+                        Kernel.Events.EventsManager.FireEvent("RPCCommandError", Message, ex, RemoteEndpoint.Address.ToString(), RemoteEndpoint.Port);
                     }
                 }
             }

@@ -72,7 +72,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
                     Found = true;
                     RemoteDebugger.DebugDevices[i].ClientSocket.Disconnect(true);
                     RemoteDebugger.DebugDevices.RemoveAt(i);
-                    Kernel.KernelEventManager.RaiseRemoteDebugConnectionDisconnected(IPAddr);
+                    Events.EventsManager.FireEvent("RemoteDebugConnectionDisconnected", IPAddr);
                 }
             }
             if (!Found)

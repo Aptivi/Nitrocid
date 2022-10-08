@@ -52,7 +52,7 @@ namespace KS.Files.Operations
                 Directory.Move(Source, Destination);
 
                 // Raise event
-                Kernel.Kernel.KernelEventManager.RaiseDirectoryMoved(Source, Destination);
+                Kernel.Events.EventsManager.FireEvent("DirectoryMoved", Source, Destination);
             }
             else if (Checking.FileExists(Source) & Checking.FolderExists(Destination))
             {
@@ -60,7 +60,7 @@ namespace KS.Files.Operations
                 File.Move(Source, Destination + "/" + FileName);
 
                 // Raise event
-                Kernel.Kernel.KernelEventManager.RaiseFileMoved(Source, Destination + "/" + FileName);
+                Kernel.Events.EventsManager.FireEvent("FileMoved", Source, Destination + "/" + FileName);
             }
             else if (Checking.FileExists(Source))
             {
@@ -68,7 +68,7 @@ namespace KS.Files.Operations
                 File.Move(Source, Destination);
 
                 // Raise event
-                Kernel.Kernel.KernelEventManager.RaiseFileMoved(Source, Destination);
+                Kernel.Events.EventsManager.FireEvent("FileMoved", Source, Destination);
             }
             else
             {

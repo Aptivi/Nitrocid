@@ -39,7 +39,7 @@ namespace KS.ConsoleBase.Themes.Studio
         public static void StartThemeStudio(string ThemeName)
         {
             // Inform user that we're on the studio
-            Kernel.Kernel.KernelEventManager.RaiseThemeStudioStarted();
+            Kernel.Events.EventsManager.FireEvent("ThemeStudioStarted");
             DebugWriter.WriteDebug(DebugLevel.I, "Starting theme studio with theme name {0}", ThemeName);
             ThemeStudioTools.SelectedThemeName = ThemeName;
             string Response;
@@ -194,7 +194,7 @@ namespace KS.ConsoleBase.Themes.Studio
             }
 
             // Raise event
-            Kernel.Kernel.KernelEventManager.RaiseThemeStudioExit();
+            Kernel.Events.EventsManager.FireEvent("ThemeStudioExit");
         }
 
     }

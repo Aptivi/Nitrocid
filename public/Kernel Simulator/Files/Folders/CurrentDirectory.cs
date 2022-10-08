@@ -68,7 +68,7 @@ namespace KS.Files.Folders
             CurrentDir = dir;
 
             // Raise event
-            Kernel.Kernel.KernelEventManager.RaiseCurrentDirectoryChanged();
+            Kernel.Events.EventsManager.FireEvent("CurrentDirectoryChanged");
         }
 
         /// <summary>

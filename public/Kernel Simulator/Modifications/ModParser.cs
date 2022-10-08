@@ -126,7 +126,7 @@ namespace KS.Modifications
             if (script is not null)
             {
                 string ModPath = Paths.GetKernelPath(KernelPathType.Mods);
-                Kernel.Kernel.KernelEventManager.RaiseModParsed(modFile);
+                Kernel.Events.EventsManager.FireEvent("ModParsed", modFile);
                 try
                 {
                     // Add mod dependencies folder (if any) to the private appdomain lookup folder
@@ -263,18 +263,18 @@ namespace KS.Modifications
                     }
 
                     // Raise event
-                    Kernel.Kernel.KernelEventManager.RaiseModFinalized(modFile);
+                    Kernel.Events.EventsManager.FireEvent("ModFinalized", modFile);
                 }
                 catch (Exception ex)
                 {
-                    Kernel.Kernel.KernelEventManager.RaiseModFinalizationFailed(modFile, ex.Message);
+                    Kernel.Events.EventsManager.FireEvent("ModFinalizationFailed", modFile, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
                     SplashReport.ReportProgress(Translate.DoTranslation("Failed to finalize mod {0}: {1}"), 0, ColorTools.ColTypes.Error, modFile, ex.Message);
                 }
             }
             else
             {
-                Kernel.Kernel.KernelEventManager.RaiseModParseError(modFile);
+                Kernel.Events.EventsManager.FireEvent("ModParseError", modFile);
             }
         }
 

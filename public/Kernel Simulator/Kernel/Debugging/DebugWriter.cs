@@ -124,7 +124,7 @@ namespace KS.Kernel.Debugging
                         if (i != -1)
                         {
                             RemoteDebugger.DebugDevices[i].ClientSocket.Disconnect(true);
-                            Kernel.KernelEventManager.RaiseRemoteDebugConnectionDisconnected(RemoteDebugger.DebugDevices[i].ClientIP);
+                            Events.EventsManager.FireEvent("RemoteDebugConnectionDisconnected", RemoteDebugger.DebugDevices[i].ClientIP);
                             WriteDebug(DebugLevel.W, "Debug device {0} ({1}) disconnected.", RemoteDebugger.DebugDevices[i].ClientName, RemoteDebugger.DebugDevices[i].ClientIP);
                             RemoteDebugger.DebugDevices.RemoveAt(i);
                         }
@@ -185,7 +185,7 @@ namespace KS.Kernel.Debugging
                     if (i != -1)
                     {
                         RemoteDebugger.DebugDevices[i].ClientSocket.Disconnect(true);
-                        Kernel.KernelEventManager.RaiseRemoteDebugConnectionDisconnected(RemoteDebugger.DebugDevices[i].ClientIP);
+                        Events.EventsManager.FireEvent("RemoteDebugConnectionDisconnected", RemoteDebugger.DebugDevices[i].ClientIP);
                         WriteDebug(DebugLevel.W, "Debug device {0} ({1}) disconnected.", RemoteDebugger.DebugDevices[i].ClientName, RemoteDebugger.DebugDevices[i].ClientIP);
                         RemoteDebugger.DebugDevices.RemoveAt(i);
                     }

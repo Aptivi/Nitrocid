@@ -233,7 +233,7 @@ namespace KS.Network.SSH
             }
             catch (Exception ex)
             {
-                Kernel.Kernel.KernelEventManager.RaiseSSHError(ex);
+                Kernel.Events.EventsManager.FireEvent("SSHError", ex);
                 TextWriterColor.Write(Translate.DoTranslation("Error trying to connect to SSH server: {0}"), true, ColorTools.ColTypes.Error, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
@@ -267,7 +267,7 @@ namespace KS.Network.SSH
                 // Add handler for SSH
                 Console.CancelKeyPress += SSHDisconnect;
                 Console.CancelKeyPress -= CancellationHandlers.CancelCommand;
-                Kernel.Kernel.KernelEventManager.RaiseSSHConnected(SSHClient.ConnectionInfo.Host + ":" + SSHClient.ConnectionInfo.Port.ToString());
+                Kernel.Events.EventsManager.FireEvent("SSHConnected", SSHClient.ConnectionInfo.Host + ":" + SSHClient.ConnectionInfo.Port.ToString());
 
                 // Shell creation. Note that $TERM is what kind of terminal being used (vt100, xterm, ...). Always vt100 on Windows.
                 DebugWriter.WriteDebug(DebugLevel.I, "Opening shell...");
@@ -315,11 +315,11 @@ namespace KS.Network.SSH
                 // Add handler for SSH
                 Console.CancelKeyPress += SSHDisconnect;
                 Console.CancelKeyPress -= CancellationHandlers.CancelCommand;
-                Kernel.Kernel.KernelEventManager.RaiseSSHConnected(SSHClient.ConnectionInfo.Host + ":" + SSHClient.ConnectionInfo.Port.ToString());
+                Kernel.Events.EventsManager.FireEvent("SSHConnected", SSHClient.ConnectionInfo.Host + ":" + SSHClient.ConnectionInfo.Port.ToString());
 
                 // Shell creation
                 DebugWriter.WriteDebug(DebugLevel.I, "Opening shell...");
-                Kernel.Kernel.KernelEventManager.RaiseSSHPreExecuteCommand(SSHClient.ConnectionInfo.Host + ":" + SSHClient.ConnectionInfo.Port.ToString(), Command);
+                Kernel.Events.EventsManager.FireEvent("SSHPreExecuteCommand", SSHClient.ConnectionInfo.Host + ":" + SSHClient.ConnectionInfo.Port.ToString(), Command);
                 var SSHC = SSHClient.CreateCommand(Command);
                 var SSHCAsyncResult = SSHC.BeginExecute();
                 var SSHCOutputReader = new StreamReader(SSHC.OutputStream);
@@ -345,14 +345,14 @@ namespace KS.Network.SSH
                 DebugWriter.WriteDebug(DebugLevel.E, "Error trying to execute SSH command \"{0}\" to {1}: {2}", Command, SSHClient.ConnectionInfo.Host, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriterColor.Write(Translate.DoTranslation("Error executing SSH command") + " {0}: {1}", true, ColorTools.ColTypes.Error, Command, ex.Message);
-                Kernel.Kernel.KernelEventManager.RaiseSSHCommandError(SSHClient.ConnectionInfo.Host + ":" + SSHClient.ConnectionInfo.Port.ToString(), Command, ex);
+                Kernel.Events.EventsManager.FireEvent("SSHCommandError", SSHClient.ConnectionInfo.Host + ":" + SSHClient.ConnectionInfo.Port.ToString(), Command, ex);
             }
             finally
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Connected: {0}", SSHClient.IsConnected);
                 TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("SSH Disconnected."), true, ColorTools.ColTypes.NeutralText);
                 DisconnectionRequested = false;
-                Kernel.Kernel.KernelEventManager.RaiseSSHPostExecuteCommand(SSHClient.ConnectionInfo.Host + ":" + SSHClient.ConnectionInfo.Port.ToString(), Command);
+                Kernel.Events.EventsManager.FireEvent("SSHPostExecuteCommand", SSHClient.ConnectionInfo.Host + ":" + SSHClient.ConnectionInfo.Port.ToString(), Command);
 
                 // Remove handler for SSH
                 Console.CancelKeyPress += CancellationHandlers.CancelCommand;
@@ -366,7 +366,7 @@ namespace KS.Network.SSH
             {
                 e.Cancel = true;
                 DisconnectionRequested = true;
-                Kernel.Kernel.KernelEventManager.RaiseSSHDisconnected();
+                Kernel.Events.EventsManager.FireEvent("SSHDisconnected");
             }
         }
 

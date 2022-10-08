@@ -20,6 +20,7 @@ using KS.Arguments.ArgumentBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.Kernel;
+using KS.Kernel.Events;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using System.Collections.Generic;
@@ -76,7 +77,7 @@ namespace KS.Arguments
                 else if (InjMode)
                 {
                     Flags.ArgsInjected = true;
-                    Kernel.Kernel.KernelEventManager.RaiseArgumentsInjected(EnteredArguments);
+                    EventsManager.FireEvent("ArgumentsInjected", EnteredArguments);
                     TextWriterColor.Write(Translate.DoTranslation("Injected arguments will be scheduled to run at next reboot."), true, ColorTools.ColTypes.NeutralText);
                 }
                 else if (EnteredArguments.Count != 0)

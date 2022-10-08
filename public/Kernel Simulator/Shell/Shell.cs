@@ -206,7 +206,7 @@ namespace KS.Shell
                 }
 
                 // Raise shell initialization event
-                Kernel.Kernel.KernelEventManager.RaiseShellInitialized(ShellType);
+                Kernel.Events.EventsManager.FireEvent("ShellInitialized", ShellType);
 
                 // Wait for command
                 DebugWriter.WriteDebug(DebugLevel.I, "Waiting for command");
@@ -232,7 +232,7 @@ namespace KS.Shell
                 string Command = SplitCommands[i];
 
                 // Fire an event of PreExecuteCommand
-                Kernel.Kernel.KernelEventManager.RaisePreExecuteCommand(ShellType, Command);
+                Kernel.Events.EventsManager.FireEvent("PreExecuteCommand", ShellType, Command);
 
                 // Check to see if the command is a comment
                 if ((string.IsNullOrEmpty(Command) | (Command?.StartsWithAnyOf(new[] { " ", "#" }))) == false)
@@ -412,7 +412,7 @@ namespace KS.Shell
                 }
 
                 // Fire an event of PostExecuteCommand
-                Kernel.Kernel.KernelEventManager.RaisePostExecuteCommand(ShellType, Command);
+                Kernel.Events.EventsManager.FireEvent("PostExecuteCommand", ShellType, Command);
             }
 
             // Restore console output to its original state if any

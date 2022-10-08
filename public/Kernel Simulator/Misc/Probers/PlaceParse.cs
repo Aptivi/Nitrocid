@@ -50,7 +50,7 @@ namespace KS.Misc.Probers
         /// <returns>A string that has the parsed placeholders</returns>
         public static string ProbePlaces(string text, bool ThrowIfFailure = false)
         {
-            Kernel.Kernel.KernelEventManager.RaisePlaceholderParsing(text);
+            Kernel.Events.EventsManager.FireEvent("PlaceholderParsing", text);
             try
             {
                 // Parse the text for the following placeholders:
@@ -311,13 +311,13 @@ namespace KS.Misc.Probers
                 }
 
                 // If successful, raise the parsed event
-                Kernel.Kernel.KernelEventManager.RaisePlaceholderParsed(text);
+                Kernel.Events.EventsManager.FireEvent("PlaceholderParsed", text);
             }
             catch (Exception ex)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to parse placeholder {0}: {1}", text, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                Kernel.Kernel.KernelEventManager.RaisePlaceholderParseError(text, ex);
+                Kernel.Events.EventsManager.FireEvent("PlaceholderParseError", text, ex);
                 if (ThrowIfFailure)
                     throw new Kernel.Exceptions.InvalidPlaceholderException(Translate.DoTranslation("Error trying to parse placeholders. {0}"), ex.Message);
             }

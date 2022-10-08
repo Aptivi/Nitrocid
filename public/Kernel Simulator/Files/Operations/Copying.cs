@@ -55,7 +55,7 @@ namespace KS.Files.Operations
                 CopyDirectory(Source, Destination);
 
                 // Raise event
-                Kernel.Kernel.KernelEventManager.RaiseDirectoryCopied(Source, Destination);
+                Kernel.Events.EventsManager.FireEvent("DirectoryCopied", Source, Destination);
             }
             else if (Checking.FileExists(Source) & Checking.FolderExists(Destination))
             {
@@ -63,7 +63,7 @@ namespace KS.Files.Operations
                 File.Copy(Source, Destination + "/" + FileName, true);
 
                 // Raise event
-                Kernel.Kernel.KernelEventManager.RaiseFileCopied(Source, Destination + "/" + FileName);
+                Kernel.Events.EventsManager.FireEvent("FileCopied", Source, Destination + "/" + FileName);
             }
             else if (Checking.FileExists(Source))
             {
@@ -71,7 +71,7 @@ namespace KS.Files.Operations
                 File.Copy(Source, Destination, true);
 
                 // Raise event
-                Kernel.Kernel.KernelEventManager.RaiseFileCopied(Source, Destination);
+                Kernel.Events.EventsManager.FireEvent("FileCopied", Source, Destination);
             }
             else
             {
