@@ -79,7 +79,7 @@ namespace KS.Misc.Animations.Pulse
             }
 
             // Fade out
-            for (int CurrentStep = 1, loopTo = Settings.PulseMaxSteps; CurrentStep <= loopTo; CurrentStep++)
+            for (int CurrentStep = 1; CurrentStep <= Settings.PulseMaxSteps; CurrentStep++)
             {
                 if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                     ResizeSyncing = true;

@@ -87,7 +87,7 @@ namespace KS.Kernel.Debugging
                     {
                         // Debug to file and all connected debug devices (raw mode)
                         DebugStreamWriter.WriteLine($"{TimeDate.TimeDate.KernelDateTime.ToShortDateString()} {TimeDate.TimeDate.KernelDateTime.ToShortTimeString()} [{Level}] ({Func} - {Source}:{LineNum}): {text}", vars);
-                        for (int i = 0, loopTo = RemoteDebugger.DebugDevices.Count - 1; i <= loopTo; i++)
+                        for (int i = 0; i <= RemoteDebugger.DebugDevices.Count - 1; i++)
                         {
                             try
                             {
@@ -103,7 +103,7 @@ namespace KS.Kernel.Debugging
                     else // Rare case, unless debug symbol is not found on archives.
                     {
                         DebugStreamWriter.WriteLine($"{TimeDate.TimeDate.KernelDateTime.ToShortDateString()} {TimeDate.TimeDate.KernelDateTime.ToShortTimeString()} [{Level}] {text}", vars);
-                        for (int i = 0, loopTo1 = RemoteDebugger.DebugDevices.Count - 1; i <= loopTo1; i++)
+                        for (int i = 0; i <= RemoteDebugger.DebugDevices.Count - 1; i++)
                         {
                             try
                             {
@@ -165,7 +165,7 @@ namespace KS.Kernel.Debugging
                 var OffendingIndex = new List<string>();
 
                 // For contributors who are testing new code: Define ENABLEIMMEDIATEWINDOWDEBUG for immediate debugging (Immediate Window)
-                for (int i = 0, loopTo = RemoteDebugger.DebugDevices.Count - 1; i <= loopTo; i++)
+                for (int i = 0; i <= RemoteDebugger.DebugDevices.Count - 1; i++)
                 {
                     try
                     {
@@ -228,9 +228,9 @@ namespace KS.Kernel.Debugging
 
                 // Print stack trace to debugger
                 var StkTrcs = new List<string>();
-                for (int i = 0, loopTo = NewStackTraces.Count - 1; i <= loopTo; i++)
+                for (int i = 0; i <= NewStackTraces.Count - 1; i++)
                     StkTrcs.AddRange(NewStackTraces[i].SplitNewLines());
-                for (int i = 0, loopTo1 = StkTrcs.Count - 1; i <= loopTo1; i++)
+                for (int i = 0; i <= StkTrcs.Count - 1; i++)
                     WriteDebug(DebugLevel.E, StkTrcs[i]);
                 DebugStackTraces.AddRange(NewStackTraces);
             }

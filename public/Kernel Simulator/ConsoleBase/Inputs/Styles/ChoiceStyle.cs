@@ -109,7 +109,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                     case ChoiceOutputType.Modern:
                         {
                             TextWriterColor.Write(Question + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.Question);
-                            for (int AnswerIndex = 0, loopTo = answers.Length - 1; AnswerIndex <= loopTo; AnswerIndex++)
+                            for (int AnswerIndex = 0; AnswerIndex <= answers.Length - 1; AnswerIndex++)
                             {
                                 string AnswerInstance = answers[AnswerIndex];
                                 string AnswerTitle = AnswersTitles[AnswerIndex] ?? "";
@@ -130,7 +130,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                             var ChoiceHeader = new[] { Translate.DoTranslation("Possible answers"), Translate.DoTranslation("Answer description") };
                             var ChoiceData = new string[answers.Length, 2];
                             TextWriterColor.Write(Question, true, ColorTools.ColTypes.Question);
-                            for (int AnswerIndex = 0, loopTo1 = answers.Length - 1; AnswerIndex <= loopTo1; AnswerIndex++)
+                            for (int AnswerIndex = 0; AnswerIndex <= answers.Length - 1; AnswerIndex++)
                             {
                                 ChoiceData[AnswerIndex, 0] = answers[AnswerIndex];
                                 ChoiceData[AnswerIndex, 1] = AnswersTitles[AnswerIndex] ?? "";

@@ -296,7 +296,7 @@ namespace KS.Files.Folders
                 int SelectedPatternIndex = 0;
                 var SplitPath = Path.Split('/').Skip(1).ToArray();
                 var SplitParent = new List<string>() { Path.Split('/')[0] };
-                for (int PatternIndex = 0, loopTo = SplitPath.Length - 1; PatternIndex <= loopTo; PatternIndex++)
+                for (int PatternIndex = 0; PatternIndex <= SplitPath.Length - 1; PatternIndex++)
                 {
                     if (SplitPath[PatternIndex].ContainsAnyOf(System.IO.Path.GetInvalidFileNameChars().Select(Character => Character.ToString()).ToArray()))
                     {

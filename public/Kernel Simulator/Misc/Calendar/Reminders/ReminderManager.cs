@@ -66,7 +66,7 @@ namespace KS.Misc.Calendar.Reminders
                     Thread.Sleep(100);
                     lock (ReminderManagerLock)
                     {
-                        for (int ReminderIndex = 0, loopTo = Reminders.Count - 1; ReminderIndex <= loopTo; ReminderIndex++)
+                        for (int ReminderIndex = 0; ReminderIndex <= Reminders.Count - 1; ReminderIndex++)
                         {
                             var ReminderInstance = Reminders[ReminderIndex];
                             var CurrentDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
@@ -223,7 +223,7 @@ namespace KS.Misc.Calendar.Reminders
             }
 
             // Enumerate through every reminder and save them
-            for (int ReminderIndex = 0, loopTo = Reminders.Count - 1; ReminderIndex <= loopTo; ReminderIndex++)
+            for (int ReminderIndex = 0; ReminderIndex <= Reminders.Count - 1; ReminderIndex++)
             {
                 var ReminderInstance = Reminders[ReminderIndex];
                 string ReminderFileName = $"[{ReminderIndex}] {ReminderInstance.ReminderTitle}.ksreminder";

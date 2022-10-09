@@ -78,7 +78,7 @@ namespace KS.Shell.Shells.Text.Commands
                         int LineNumberStart = Convert.ToInt32(ListArgsOnly[1]);
                         int LineNumberEnd = Convert.ToInt32(ListArgsOnly[2]);
                         LineNumberStart.SwapIfSourceLarger(ref LineNumberEnd);
-                        for (int LineNumber = LineNumberStart, loopTo = LineNumberEnd; LineNumber <= loopTo; LineNumber++)
+                        for (int LineNumber = LineNumberStart; LineNumber <= LineNumberEnd; LineNumber++)
                         {
                             var QueriedChars = TextEditTools.TextEdit_QueryChar(Convert.ToChar(ListArgsOnly[0]), LineNumber);
                             foreach (int CharIndex in QueriedChars.Keys)

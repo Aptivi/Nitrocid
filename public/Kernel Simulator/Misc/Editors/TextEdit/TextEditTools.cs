@@ -231,7 +231,7 @@ namespace KS.Misc.Editors.TextEdit
             if (TextEditShellCommon.TextEdit_FileStream is not null)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}", From, With);
-                for (int LineIndex = 0, loopTo = TextEditShellCommon.TextEdit_FileLines.Count - 1; LineIndex <= loopTo; LineIndex++)
+                for (int LineIndex = 0; LineIndex <= TextEditShellCommon.TextEdit_FileLines.Count - 1; LineIndex++)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", From, With, LineIndex + 1);
                     TextEditShellCommon.TextEdit_FileLines[LineIndex] = Regex.Replace(TextEditShellCommon.TextEdit_FileLines[LineIndex], From, With);
@@ -286,7 +286,7 @@ namespace KS.Misc.Editors.TextEdit
             if (TextEditShellCommon.TextEdit_FileStream is not null)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}", From, With);
-                for (int LineIndex = 0, loopTo = TextEditShellCommon.TextEdit_FileLines.Count - 1; LineIndex <= loopTo; LineIndex++)
+                for (int LineIndex = 0; LineIndex <= TextEditShellCommon.TextEdit_FileLines.Count - 1; LineIndex++)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", From, With, LineIndex + 1);
                     TextEditShellCommon.TextEdit_FileLines[LineIndex] = TextEditShellCommon.TextEdit_FileLines[LineIndex].Replace(From, With);
@@ -403,9 +403,9 @@ namespace KS.Misc.Editors.TextEdit
                 var Results = new Dictionary<int, string>();
                 DebugWriter.WriteDebug(DebugLevel.I, "Char: {0}", Char);
                 DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
-                for (int LineIndex = 0, loopTo = TextEditShellCommon.TextEdit_FileLines.Count - 1; LineIndex <= loopTo; LineIndex++)
+                for (int LineIndex = 0; LineIndex <= TextEditShellCommon.TextEdit_FileLines.Count - 1; LineIndex++)
                 {
-                    for (int CharIndex = 0, loopTo1 = TextEditShellCommon.TextEdit_FileLines[LineIndex].Length - 1; CharIndex <= loopTo1; CharIndex++)
+                    for (int CharIndex = 0; CharIndex <= TextEditShellCommon.TextEdit_FileLines[LineIndex].Length - 1; CharIndex++)
                     {
                         if (TextEditShellCommon.TextEdit_FileLines[LineIndex][CharIndex] == Char)
                         {
@@ -439,7 +439,7 @@ namespace KS.Misc.Editors.TextEdit
                 DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
                 if (LineNumber <= TextEditShellCommon.TextEdit_FileLines.Count)
                 {
-                    for (int CharIndex = 0, loopTo = TextEditShellCommon.TextEdit_FileLines[LineIndex].Length - 1; CharIndex <= loopTo; CharIndex++)
+                    for (int CharIndex = 0; CharIndex <= TextEditShellCommon.TextEdit_FileLines[LineIndex].Length - 1; CharIndex++)
                     {
                         if (TextEditShellCommon.TextEdit_FileLines[LineIndex][CharIndex] == Char)
                         {
@@ -471,10 +471,10 @@ namespace KS.Misc.Editors.TextEdit
                 var Results = new Dictionary<int, string>();
                 DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}", Word);
                 DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
-                for (int LineIndex = 0, loopTo = TextEditShellCommon.TextEdit_FileLines.Count - 1; LineIndex <= loopTo; LineIndex++)
+                for (int LineIndex = 0; LineIndex <= TextEditShellCommon.TextEdit_FileLines.Count - 1; LineIndex++)
                 {
                     var Words = TextEditShellCommon.TextEdit_FileLines[LineIndex].Split(' ');
-                    for (int WordIndex = 0, loopTo1 = Words.Length - 1; WordIndex <= loopTo1; WordIndex++)
+                    for (int WordIndex = 0; WordIndex <= Words.Length - 1; WordIndex++)
                     {
                         if (Words[WordIndex].ToLower().Contains(Word.ToLower()))
                         {
@@ -509,7 +509,7 @@ namespace KS.Misc.Editors.TextEdit
                 if (LineNumber <= TextEditShellCommon.TextEdit_FileLines.Count)
                 {
                     var Words = TextEditShellCommon.TextEdit_FileLines[LineIndex].Split(' ');
-                    for (int WordIndex = 0, loopTo = Words.Length - 1; WordIndex <= loopTo; WordIndex++)
+                    for (int WordIndex = 0; WordIndex <= Words.Length - 1; WordIndex++)
                     {
                         if (Words[WordIndex].ToLower().Contains(Word.ToLower()))
                         {
@@ -541,10 +541,10 @@ namespace KS.Misc.Editors.TextEdit
                 var Results = new Dictionary<int, string>();
                 DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}", Word);
                 DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
-                for (int LineIndex = 0, loopTo = TextEditShellCommon.TextEdit_FileLines.Count - 1; LineIndex <= loopTo; LineIndex++)
+                for (int LineIndex = 0; LineIndex <= TextEditShellCommon.TextEdit_FileLines.Count - 1; LineIndex++)
                 {
                     var LineMatches = Regex.Matches(TextEditShellCommon.TextEdit_FileLines[LineIndex], Word);
-                    for (int MatchIndex = 0, loopTo1 = LineMatches.Count - 1; MatchIndex <= loopTo1; MatchIndex++)
+                    for (int MatchIndex = 0; MatchIndex <= LineMatches.Count - 1; MatchIndex++)
                     {
                         var LineMatch = LineMatches[MatchIndex];
                         Results.Add(MatchIndex, TextEditShellCommon.TextEdit_FileLines[LineIndex]);
@@ -577,7 +577,7 @@ namespace KS.Misc.Editors.TextEdit
                 if (LineNumber <= TextEditShellCommon.TextEdit_FileLines.Count)
                 {
                     var LineMatches = Regex.Matches(TextEditShellCommon.TextEdit_FileLines[LineIndex], Word);
-                    for (int MatchIndex = 0, loopTo = LineMatches.Count - 1; MatchIndex <= loopTo; MatchIndex++)
+                    for (int MatchIndex = 0; MatchIndex <= LineMatches.Count - 1; MatchIndex++)
                     {
                         var LineMatch = LineMatches[MatchIndex];
                         Results.Add(MatchIndex, TextEditShellCommon.TextEdit_FileLines[LineIndex]);

@@ -189,7 +189,7 @@ namespace KS.Network.FTP
                     var ProfHeaders = new[] { "#", Translate.DoTranslation("Host Name"), Translate.DoTranslation("Username"), Translate.DoTranslation("Data Type"), Translate.DoTranslation("Encoding"), Translate.DoTranslation("Encryption"), Translate.DoTranslation("Protocols") };
                     var ProfData = new string[profiles.Count, 7];
                     TextWriterColor.Write(Translate.DoTranslation("More than one profile found. Select one:"), true, ColorTools.ColTypes.NeutralText);
-                    for (int i = 0, loopTo = profiles.Count - 1; i <= loopTo; i++)
+                    for (int i = 0; i <= profiles.Count - 1; i++)
                     {
                         ProfData[i, 0] = (i + 1).ToString();
                         ProfData[i, 1] = profiles[i].Host;
@@ -352,7 +352,7 @@ namespace KS.Network.FTP
                 if (!(SpeedDialLines.Count == 0))
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Select an address to connect to:"), true, ColorTools.ColTypes.NeutralText);
-                    for (int i = 0, loopTo = SpeedDialLines.Count - 1; i <= loopTo; i++)
+                    for (int i = 0; i <= SpeedDialLines.Count - 1; i++)
                     {
                         string SpeedDialAddress = SpeedDialLines.Keys.ElementAtOrDefault(i);
                         DebugWriter.WriteDebug(DebugLevel.I, "Speed dial address: {0}", SpeedDialAddress);

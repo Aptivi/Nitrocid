@@ -308,15 +308,15 @@ namespace KS.Misc.Timers
             // If figlet is enabled, clear the display
             if (Flags.EnableFigletTimer)
             {
-                for (int FigletTimePosition = FigletTimeTopPosition, loopTo = FigletTimeBottomPosition; FigletTimePosition <= loopTo; FigletTimePosition++)
+                for (int FigletTimePosition = FigletTimeTopPosition; FigletTimePosition <= FigletTimeBottomPosition; FigletTimePosition++)
                 {
                     ConsoleWrapper.CursorTop = FigletTimePosition;
-                    for (int Position = FigletOldWidth - 1, loopTo1 = FigletTimeLeftPosition - 1; Position <= loopTo1; Position++)
+                    for (int Position = FigletOldWidth - 1; Position <= FigletTimeLeftPosition - 1; Position++)
                     {
                         ConsoleWrapper.CursorLeft = Position;
                         TextWriterColor.Write(" ", false, ColorTools.GetColor(ColorTools.ColTypes.NeutralText), ColorTools.GetColor(ColorTools.ColTypes.Background));
                     }
-                    for (int Position = FigletOldWidthEnd, loopTo2 = FigletTimeLeftEndPosition + 1; Position <= loopTo2; Position++)
+                    for (int Position = FigletOldWidthEnd; Position <= FigletTimeLeftEndPosition + 1; Position++)
                     {
                         ConsoleWrapper.CursorLeft = Position;
                         TextWriterColor.Write(" ", false, ColorTools.GetColor(ColorTools.ColTypes.NeutralText), ColorTools.GetColor(ColorTools.ColTypes.Background));

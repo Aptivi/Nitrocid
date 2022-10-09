@@ -138,7 +138,7 @@ namespace KS.Misc.Timers
 
                             // Clear the laps and the laps list
                             Laps.Clear();
-                            for (int Y = 1, loopTo = LapsCurrentLapTopPosition - 1; Y <= loopTo; Y++)
+                            for (int Y = 1; Y <= LapsCurrentLapTopPosition - 1; Y++)
                             {
                                 ConsoleWrapper.SetCursorPosition(LapsCurrentLapLeftPosition, Y);
                                 ConsoleExtensions.ClearLineToRight();
@@ -208,7 +208,7 @@ namespace KS.Misc.Timers
                         int BorderDifference = Laps.Count - LapsListEndBorder;
                         if (BorderDifference < 0)
                             BorderDifference = 0;
-                        for (int LapIndex = BorderDifference, loopTo = Laps.Count - 1; LapIndex <= loopTo; LapIndex++)
+                        for (int LapIndex = BorderDifference; LapIndex <= Laps.Count - 1; LapIndex++)
                         {
                             var Lap = Laps[LapIndex];
                             LapsListBuilder.AppendLine(Lap.LapColor.VTSequenceForeground + Translate.DoTranslation("Lap") + $" {LapIndex + 1}: {Lap.LapInterval.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult)}");
@@ -233,7 +233,7 @@ namespace KS.Misc.Timers
             int HalfWidth = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
             TextWriterWhereColor.WriteWhere("═".Repeat(ConsoleWrapper.WindowWidth), 0, KeysTextTopPosition - 2, true, ColorTools.ColTypes.Gray);
             TextWriterWhereColor.WriteWhere("═".Repeat(ConsoleWrapper.WindowWidth), 0, 1, true, ColorTools.ColTypes.Gray);
-            for (int Height = 2, loopTo = KeysTextTopPosition - 2; Height <= loopTo; Height++)
+            for (int Height = 2; Height <= KeysTextTopPosition - 2; Height++)
                 TextWriterWhereColor.WriteWhere("║", HalfWidth, Height, true, ColorTools.ColTypes.Gray);
             TextWriterWhereColor.WriteWhere("╩", HalfWidth, KeysTextTopPosition - 2, true, ColorTools.ColTypes.Gray);
             TextWriterWhereColor.WriteWhere("╦", HalfWidth, 1, true, ColorTools.ColTypes.Gray);

@@ -134,7 +134,7 @@ namespace KS.Misc.Writers.WriterBase.PlainWriters
                     int OldTop = ConsoleWrapper.CursorTop;
                     var Paragraphs = msg.SplitNewLines();
                     ConsoleWrapper.SetCursorPosition(Left, Top);
-                    for (int MessageParagraphIndex = 0, loopTo = Paragraphs.Length - 1; MessageParagraphIndex <= loopTo; MessageParagraphIndex++)
+                    for (int MessageParagraphIndex = 0; MessageParagraphIndex <= Paragraphs.Length - 1; MessageParagraphIndex++)
                     {
                         // We can now check to see if we're writing a letter past the console window width
                         string MessageParagraph = Paragraphs[MessageParagraphIndex];
@@ -201,7 +201,7 @@ namespace KS.Misc.Writers.WriterBase.PlainWriters
                     int OldTop = ConsoleWrapper.CursorTop;
                     var Paragraphs = msg.SplitNewLines();
                     ConsoleWrapper.SetCursorPosition(Left, Top);
-                    for (int MessageParagraphIndex = 0, loopTo = Paragraphs.Length - 1; MessageParagraphIndex <= loopTo; MessageParagraphIndex++)
+                    for (int MessageParagraphIndex = 0; MessageParagraphIndex <= Paragraphs.Length - 1; MessageParagraphIndex++)
                     {
                         // We can now check to see if we're writing a letter past the console window width
                         string MessageParagraph = Paragraphs[MessageParagraphIndex];

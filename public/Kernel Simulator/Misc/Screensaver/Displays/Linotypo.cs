@@ -396,7 +396,7 @@ namespace KS.Misc.Screensaver.Displays
                 }
 
                 // Get struck character and write it
-                for (int IncompleteSentenceIndex = 0, loopTo = IncompleteSentences.Count - 1; IncompleteSentenceIndex <= loopTo; IncompleteSentenceIndex++)
+                for (int IncompleteSentenceIndex = 0; IncompleteSentenceIndex <= IncompleteSentences.Count - 1; IncompleteSentenceIndex++)
                 {
                     string IncompleteSentence = IncompleteSentences[IncompleteSentenceIndex];
                     if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
@@ -427,7 +427,7 @@ namespace KS.Misc.Screensaver.Displays
                     int LinotypeMaxColumnIndex = 5;
 
                     // Process the incomplete sentences
-                    for (int StruckCharIndex = 0, loopTo1 = IncompleteSentence.Length - 1; StruckCharIndex <= loopTo1; StruckCharIndex++)
+                    for (int StruckCharIndex = 0; StruckCharIndex <= IncompleteSentence.Length - 1; StruckCharIndex++)
                     {
                         if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                             ResizeSyncing = true;

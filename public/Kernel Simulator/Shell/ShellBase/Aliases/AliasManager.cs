@@ -88,7 +88,7 @@ namespace KS.Shell.ShellBase.Aliases
 
             // Save the alias
             var ShellAliases = GetAliasesListFromType(ShellType);
-            for (int i = 0, loopTo = ShellAliases.Count - 1; i <= loopTo; i++)
+            for (int i = 0; i <= ShellAliases.Count - 1; i++)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Adding \"{0}\" and \"{1}\" from list to Aliases.json with type {2}...", ShellAliases.Keys.ElementAtOrDefault(i), ShellAliases.Values.ElementAtOrDefault(i), ShellType.ToString());
                 var AliasObject = new JObject() { { "Alias", ShellAliases.Keys.ElementAtOrDefault(i) }, { "Command", ShellAliases.Values.ElementAtOrDefault(i) }, { "Type", ShellType.ToString() } };

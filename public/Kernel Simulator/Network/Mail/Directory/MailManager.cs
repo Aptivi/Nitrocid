@@ -66,7 +66,7 @@ namespace KS.Network.Mail.Directory
             int LastIndex = MsgsLimitForPg * PageNum - 1;
             int MaxMessagesIndex = MailShellCommon.IMAP_Messages.Count() - 1;
             DebugWriter.WriteDebug(DebugLevel.I, "10 messages shown in each page. First message number in page {0} is {1} and last message number in page {0} is {2}", MsgsLimitForPg, FirstIndex, LastIndex);
-            for (int i = FirstIndex, loopTo = LastIndex; i <= loopTo; i++)
+            for (int i = FirstIndex; i <= LastIndex; i++)
             {
                 if (!(i > MaxMessagesIndex))
                 {
@@ -170,7 +170,7 @@ namespace KS.Network.Mail.Directory
             DebugWriter.WriteDebug(DebugLevel.I, "All mail by {0} will be removed.", Sender);
             int DeletedMsgNumber = 1;
             int SteppedMsgNumber = 0;
-            for (int i = 0, loopTo = MailShellCommon.IMAP_Messages.Count(); i <= loopTo; i++)
+            for (int i = 0; i <= MailShellCommon.IMAP_Messages.Count(); i++)
             {
                 try
                 {
@@ -289,7 +289,7 @@ namespace KS.Network.Mail.Directory
             DebugWriter.WriteDebug(DebugLevel.I, "All mail by {0} will be moved.", Sender);
             int DeletedMsgNumber = 1;
             int SteppedMsgNumber = 0;
-            for (int i = 0, loopTo = MailShellCommon.IMAP_Messages.Count(); i <= loopTo; i++)
+            for (int i = 0; i <= MailShellCommon.IMAP_Messages.Count(); i++)
             {
                 try
                 {

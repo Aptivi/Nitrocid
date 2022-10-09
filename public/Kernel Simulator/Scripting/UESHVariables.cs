@@ -149,7 +149,7 @@ namespace KS.Scripting
             try
             {
                 var = SanitizeVariableName(var);
-                for (int ValueIndex = 0, loopTo = values.Length - 1; ValueIndex <= loopTo; ValueIndex++)
+                for (int ValueIndex = 0; ValueIndex <= values.Length - 1; ValueIndex++)
                 {
                     string VarName = $"{var}[{ValueIndex}]";
                     string VarValue = values[ValueIndex];

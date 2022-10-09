@@ -143,8 +143,7 @@ namespace KS.Misc.Screensaver
                     if (!Flags.ScrnTimeReached)
                     {
                         bool exitWhile = false;
-                        var loopTo = ScrnTimeout;
-                        for (CountedTime = 0; CountedTime <= loopTo; CountedTime++)
+                        for (CountedTime = 0; CountedTime <= ScrnTimeout; CountedTime++)
                         {
                             Thread.Sleep(1);
                             if (ConsoleBase.ConsoleWrapper.KeyAvailable | OldCursorLeft != ConsoleBase.ConsoleWrapper.CursorLeft)

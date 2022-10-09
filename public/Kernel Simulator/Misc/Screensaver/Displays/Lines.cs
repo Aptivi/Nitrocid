@@ -331,7 +331,7 @@ namespace KS.Misc.Screensaver.Displays
             string Line = "";
             int Top = new Random().Next(ConsoleBase.ConsoleWrapper.WindowHeight);
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got top position ({0})", Top);
-            for (int i = 1, loopTo = ConsoleBase.ConsoleWrapper.WindowWidth; i <= loopTo; i++)
+            for (int i = 1; i <= ConsoleBase.ConsoleWrapper.WindowWidth; i++)
             {
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Forming line using {0} or the default \"-\"...", LinesSettings.LinesLineChar);
                 Line += !string.IsNullOrWhiteSpace(LinesSettings.LinesLineChar) ? LinesSettings.LinesLineChar : "-";

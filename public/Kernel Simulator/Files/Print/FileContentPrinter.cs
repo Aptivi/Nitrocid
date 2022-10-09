@@ -72,7 +72,7 @@ namespace KS.Files.Print
             foreach (string FilePath in Listing.GetFilesystemEntries(filename, true))
             {
                 var Contents = FileRead.ReadContents(FilePath);
-                for (int ContentIndex = 0, loopTo = Contents.Length - 1; ContentIndex <= loopTo; ContentIndex++)
+                for (int ContentIndex = 0; ContentIndex <= Contents.Length - 1; ContentIndex++)
                 {
                     if (PrintLineNumbers)
                     {
@@ -104,7 +104,7 @@ namespace KS.Files.Print
                 int ByteWritePositionX = $"0x{StartByte - 1L:X8}".Length + 2;
                 int ByteCharWritePositionX = 61 + (ByteWritePositionX - 12);
                 int ByteNumberEachSixteen = 1;
-                for (long CurrentByteNumber = StartByte, loopTo = EndByte; CurrentByteNumber <= loopTo; CurrentByteNumber++)
+                for (long CurrentByteNumber = StartByte; CurrentByteNumber <= EndByte; CurrentByteNumber++)
                 {
                     // Write the byte and the contents
                     DebugWriter.WriteDebug(DebugLevel.I, "Byte write position: {0}", ByteWritePositionX);

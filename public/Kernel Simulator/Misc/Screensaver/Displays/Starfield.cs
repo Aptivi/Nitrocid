@@ -86,7 +86,7 @@ namespace KS.Misc.Screensaver.Displays
             ConsoleBase.ConsoleWrapper.CursorVisible = false;
 
             // Move the stars left
-            for (int Star = 0, loopTo = Stars.Count - 1; Star <= loopTo; Star++)
+            for (int Star = 0; Star <= Stars.Count - 1; Star++)
             {
                 int StarX = Stars[Star].Item1 - 1;
                 int StarY = Stars[Star].Item2;

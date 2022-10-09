@@ -241,7 +241,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
         {
             while (!RDebugStopping)
             {
-                for (int DeviceIndex = 0, loopTo = DebugDevices.Count - 1; DeviceIndex <= loopTo; DeviceIndex++)
+                for (int DeviceIndex = 0; DeviceIndex <= DebugDevices.Count - 1; DeviceIndex++)
                 {
                     try
                     {

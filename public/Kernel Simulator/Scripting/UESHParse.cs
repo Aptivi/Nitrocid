@@ -56,7 +56,7 @@ namespace KS.Scripting
 
                     // If $variable is found in string, initialize it
                     var SplitWords = Line.Split(' ');
-                    for (int i = 0, loopTo = SplitWords.Length - 1; i <= loopTo; i++)
+                    for (int i = 0; i <= SplitWords.Length - 1; i++)
                     {
                         if (!UESHVariables.ShellVariables.ContainsKey(SplitWords[i]) & SplitWords[i].StartsWith("$"))
                         {
@@ -79,7 +79,7 @@ namespace KS.Scripting
                     var SplitWords = Line.SplitEncloseDoubleQuotes(" ");
                     if (SplitWords is not null)
                     {
-                        for (int i = 0, loopTo1 = SplitWords.Length - 1; i <= loopTo1; i++)
+                        for (int i = 0; i <= SplitWords.Length - 1; i++)
                         {
                             if (SplitWords[i].StartsWith("$"))
                             {
@@ -92,9 +92,9 @@ namespace KS.Scripting
                     var SplitArguments = ScriptArguments.SplitEncloseDoubleQuotes(" ");
                     if (SplitArguments is not null)
                     {
-                        for (int i = 0, loopTo2 = SplitWords.Length - 1; i <= loopTo2; i++)
+                        for (int i = 0; i <= SplitWords.Length - 1; i++)
                         {
-                            for (int j = 0, loopTo3 = SplitArguments.Length - 1; j <= loopTo3; j++)
+                            for (int j = 0; j <= SplitArguments.Length - 1; j++)
                             {
                                 if ((SplitWords[i] ?? "") == ($"{{{j}}}" ?? ""))
                                 {

@@ -81,8 +81,7 @@ namespace KS.Shell.Shells.Text.Commands
                         DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
                         if (LineNumberStart <= TextEditShellCommon.TextEdit_FileLines.Count & LineNumberEnd <= TextEditShellCommon.TextEdit_FileLines.Count)
                         {
-                            var loopTo = LineNumberEnd;
-                            for (LineNumber = LineNumberStart; LineNumber <= loopTo; LineNumber++)
+                            for (LineNumber = LineNumberStart; LineNumber <= LineNumberEnd; LineNumber++)
                             {
                                 string Line = TextEditShellCommon.TextEdit_FileLines[LineNumber - 1];
                                 DebugWriter.WriteDebug(DebugLevel.I, "Line number: {0} ({1})", LineNumber, Line);

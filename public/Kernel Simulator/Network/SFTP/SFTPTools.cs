@@ -149,7 +149,7 @@ namespace KS.Network.SFTP
                 if (!(SpeedDialLines.Count == 0))
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Select an address to connect to:"), true, ColorTools.ColTypes.NeutralText);
-                    for (int i = 0, loopTo = SpeedDialLines.Count - 1; i <= loopTo; i++)
+                    for (int i = 0; i <= SpeedDialLines.Count - 1; i++)
                     {
                         string SpeedDialAddress = SpeedDialLines.Keys.ElementAtOrDefault(i);
                         DebugWriter.WriteDebug(DebugLevel.I, "Speed dial address: {0}", SpeedDialAddress);

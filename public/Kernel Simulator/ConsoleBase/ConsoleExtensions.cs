@@ -93,7 +93,7 @@ namespace KS.ConsoleBase
             Text = Text.Replace(Convert.ToString(Convert.ToChar(13)), "");
             int LeftSeekPosition = ConsoleWrapper.CursorLeft;
             int TopSeekPosition = ConsoleWrapper.CursorTop;
-            for (int i = 1, loopTo = Text.Length; i <= loopTo; i++)
+            for (int i = 1; i <= Text.Length; i++)
             {
                 // If we spotted a new line character, get down by one line.
                 if (Text[i - 1] == Convert.ToChar(10) & TopSeekPosition < ConsoleWrapper.BufferHeight - 1)

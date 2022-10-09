@@ -49,7 +49,7 @@ namespace KS.Misc.Writers.FancyWriters
 
             // Populate the positions
             TextWriterColor.Write();
-            for (int ColumnPosition = Margin, loopTo = ConsoleBase.ConsoleWrapper.WindowWidth; ColumnCapacity >= 0 ? ColumnPosition <= loopTo : ColumnPosition >= loopTo; ColumnPosition += ColumnCapacity)
+            for (int ColumnPosition = Margin; ColumnCapacity >= 0 ? ColumnPosition <= ConsoleBase.ConsoleWrapper.WindowWidth : ColumnPosition >= ConsoleBase.ConsoleWrapper.WindowWidth; ColumnPosition += ColumnCapacity)
             {
                 if (!(ColumnPosition >= ConsoleBase.ConsoleWrapper.WindowWidth))
                 {
@@ -64,7 +64,7 @@ namespace KS.Misc.Writers.FancyWriters
             }
 
             // Write the headers
-            for (int HeaderIndex = 0, loopTo1 = Headers.Length - 1; HeaderIndex <= loopTo1; HeaderIndex++)
+            for (int HeaderIndex = 0; HeaderIndex <= Headers.Length - 1; HeaderIndex++)
             {
                 string Header = Headers[HeaderIndex];
                 int ColumnPosition = ColumnPositions[HeaderIndex];
@@ -88,9 +88,9 @@ namespace KS.Misc.Writers.FancyWriters
             }
 
             // Write the rows
-            for (int RowIndex = 0, loopTo2 = Rows.GetLength(0) - 1; RowIndex <= loopTo2; RowIndex++)
+            for (int RowIndex = 0; RowIndex <= Rows.GetLength(0) - 1; RowIndex++)
             {
-                for (int RowValueIndex = 0, loopTo3 = Rows.GetLength(1) - 1; RowValueIndex <= loopTo3; RowValueIndex++)
+                for (int RowValueIndex = 0; RowValueIndex <= Rows.GetLength(1) - 1; RowValueIndex++)
                 {
                     var ColoredCell = false;
                     var CellColor = ColorTools.GetColor(ColorTools.ColTypes.NeutralText);
@@ -162,7 +162,7 @@ namespace KS.Misc.Writers.FancyWriters
 
             // Populate the positions
             TextWriterColor.Write();
-            for (int ColumnPosition = Margin, loopTo = ConsoleBase.ConsoleWrapper.WindowWidth; ColumnCapacity >= 0 ? ColumnPosition <= loopTo : ColumnPosition >= loopTo; ColumnPosition += ColumnCapacity)
+            for (int ColumnPosition = Margin; ColumnCapacity >= 0 ? ColumnPosition <= ConsoleBase.ConsoleWrapper.WindowWidth : ColumnPosition >= ConsoleBase.ConsoleWrapper.WindowWidth; ColumnPosition += ColumnCapacity)
             {
                 if (!(ColumnPosition >= ConsoleBase.ConsoleWrapper.WindowWidth))
                 {
@@ -177,7 +177,7 @@ namespace KS.Misc.Writers.FancyWriters
             }
 
             // Write the headers
-            for (int HeaderIndex = 0, loopTo1 = Headers.Length - 1; HeaderIndex <= loopTo1; HeaderIndex++)
+            for (int HeaderIndex = 0; HeaderIndex <= Headers.Length - 1; HeaderIndex++)
             {
                 string Header = Headers[HeaderIndex];
                 int ColumnPosition = ColumnPositions[HeaderIndex];
@@ -201,9 +201,9 @@ namespace KS.Misc.Writers.FancyWriters
             }
 
             // Write the rows
-            for (int RowIndex = 0, loopTo2 = Rows.GetLength(0) - 1; RowIndex <= loopTo2; RowIndex++)
+            for (int RowIndex = 0; RowIndex <= Rows.GetLength(0) - 1; RowIndex++)
             {
-                for (int RowValueIndex = 0, loopTo3 = Rows.GetLength(1) - 1; RowValueIndex <= loopTo3; RowValueIndex++)
+                for (int RowValueIndex = 0; RowValueIndex <= Rows.GetLength(1) - 1; RowValueIndex++)
                 {
                     var ColoredCell = false;
                     var CellColor = ColorTools.GetColor(ColorTools.ColTypes.NeutralText);
@@ -276,7 +276,7 @@ namespace KS.Misc.Writers.FancyWriters
 
             // Populate the positions
             TextWriterColor.Write();
-            for (int ColumnPosition = Margin, loopTo = ConsoleBase.ConsoleWrapper.WindowWidth; ColumnCapacity >= 0 ? ColumnPosition <= loopTo : ColumnPosition >= loopTo; ColumnPosition += ColumnCapacity)
+            for (int ColumnPosition = Margin; ColumnCapacity >= 0 ? ColumnPosition <= ConsoleBase.ConsoleWrapper.WindowWidth : ColumnPosition >= ConsoleBase.ConsoleWrapper.WindowWidth; ColumnPosition += ColumnCapacity)
             {
                 if (!(ColumnPosition >= ConsoleBase.ConsoleWrapper.WindowWidth))
                 {
@@ -291,7 +291,7 @@ namespace KS.Misc.Writers.FancyWriters
             }
 
             // Write the headers
-            for (int HeaderIndex = 0, loopTo1 = Headers.Length - 1; HeaderIndex <= loopTo1; HeaderIndex++)
+            for (int HeaderIndex = 0; HeaderIndex <= Headers.Length - 1; HeaderIndex++)
             {
                 string Header = Headers[HeaderIndex];
                 int ColumnPosition = ColumnPositions[HeaderIndex];
@@ -315,9 +315,9 @@ namespace KS.Misc.Writers.FancyWriters
             }
 
             // Write the rows
-            for (int RowIndex = 0, loopTo2 = Rows.GetLength(0) - 1; RowIndex <= loopTo2; RowIndex++)
+            for (int RowIndex = 0; RowIndex <= Rows.GetLength(0) - 1; RowIndex++)
             {
-                for (int RowValueIndex = 0, loopTo3 = Rows.GetLength(1) - 1; RowValueIndex <= loopTo3; RowValueIndex++)
+                for (int RowValueIndex = 0; RowValueIndex <= Rows.GetLength(1) - 1; RowValueIndex++)
                 {
                     var ColoredCell = false;
                     var CellColor = ColorTools.GetColor(ColorTools.ColTypes.NeutralText);
@@ -389,7 +389,7 @@ namespace KS.Misc.Writers.FancyWriters
 
             // Populate the positions
             TextWriterColor.Write();
-            for (int ColumnPosition = Margin, loopTo = ConsoleBase.ConsoleWrapper.WindowWidth; ColumnCapacity >= 0 ? ColumnPosition <= loopTo : ColumnPosition >= loopTo; ColumnPosition += ColumnCapacity)
+            for (int ColumnPosition = Margin; ColumnCapacity >= 0 ? ColumnPosition <= ConsoleBase.ConsoleWrapper.WindowWidth : ColumnPosition >= ConsoleBase.ConsoleWrapper.WindowWidth; ColumnPosition += ColumnCapacity)
             {
                 if (!(ColumnPosition >= ConsoleBase.ConsoleWrapper.WindowWidth))
                 {
@@ -404,7 +404,7 @@ namespace KS.Misc.Writers.FancyWriters
             }
 
             // Write the headers
-            for (int HeaderIndex = 0, loopTo1 = Headers.Length - 1; HeaderIndex <= loopTo1; HeaderIndex++)
+            for (int HeaderIndex = 0; HeaderIndex <= Headers.Length - 1; HeaderIndex++)
             {
                 string Header = Headers[HeaderIndex];
                 int ColumnPosition = ColumnPositions[HeaderIndex];
@@ -428,9 +428,9 @@ namespace KS.Misc.Writers.FancyWriters
             }
 
             // Write the rows
-            for (int RowIndex = 0, loopTo2 = Rows.GetLength(0) - 1; RowIndex <= loopTo2; RowIndex++)
+            for (int RowIndex = 0; RowIndex <= Rows.GetLength(0) - 1; RowIndex++)
             {
-                for (int RowValueIndex = 0, loopTo3 = Rows.GetLength(1) - 1; RowValueIndex <= loopTo3; RowValueIndex++)
+                for (int RowValueIndex = 0; RowValueIndex <= Rows.GetLength(1) - 1; RowValueIndex++)
                 {
                     var ColoredCell = false;
                     var CellColor = ColorTools.GetColor(ColorTools.ColTypes.NeutralText);
@@ -503,7 +503,7 @@ namespace KS.Misc.Writers.FancyWriters
 
             // Populate the positions
             TextWriterColor.Write();
-            for (int ColumnPosition = Margin, loopTo = ConsoleBase.ConsoleWrapper.WindowWidth; ColumnCapacity >= 0 ? ColumnPosition <= loopTo : ColumnPosition >= loopTo; ColumnPosition += ColumnCapacity)
+            for (int ColumnPosition = Margin; ColumnCapacity >= 0 ? ColumnPosition <= ConsoleBase.ConsoleWrapper.WindowWidth : ColumnPosition >= ConsoleBase.ConsoleWrapper.WindowWidth; ColumnPosition += ColumnCapacity)
             {
                 if (!(ColumnPosition >= ConsoleBase.ConsoleWrapper.WindowWidth))
                 {
@@ -518,7 +518,7 @@ namespace KS.Misc.Writers.FancyWriters
             }
 
             // Write the headers
-            for (int HeaderIndex = 0, loopTo1 = Headers.Length - 1; HeaderIndex <= loopTo1; HeaderIndex++)
+            for (int HeaderIndex = 0; HeaderIndex <= Headers.Length - 1; HeaderIndex++)
             {
                 string Header = Headers[HeaderIndex];
                 int ColumnPosition = ColumnPositions[HeaderIndex];
@@ -542,9 +542,9 @@ namespace KS.Misc.Writers.FancyWriters
             }
 
             // Write the rows
-            for (int RowIndex = 0, loopTo2 = Rows.GetLength(0) - 1; RowIndex <= loopTo2; RowIndex++)
+            for (int RowIndex = 0; RowIndex <= Rows.GetLength(0) - 1; RowIndex++)
             {
-                for (int RowValueIndex = 0, loopTo3 = Rows.GetLength(1) - 1; RowValueIndex <= loopTo3; RowValueIndex++)
+                for (int RowValueIndex = 0; RowValueIndex <= Rows.GetLength(1) - 1; RowValueIndex++)
                 {
                     var ColoredCell = false;
                     var CellColor = ColorTools.GetColor(ColorTools.ColTypes.NeutralText);
@@ -616,7 +616,7 @@ namespace KS.Misc.Writers.FancyWriters
 
             // Populate the positions
             TextWriterColor.Write();
-            for (int ColumnPosition = Margin, loopTo = ConsoleBase.ConsoleWrapper.WindowWidth; ColumnCapacity >= 0 ? ColumnPosition <= loopTo : ColumnPosition >= loopTo; ColumnPosition += ColumnCapacity)
+            for (int ColumnPosition = Margin; ColumnCapacity >= 0 ? ColumnPosition <= ConsoleBase.ConsoleWrapper.WindowWidth : ColumnPosition >= ConsoleBase.ConsoleWrapper.WindowWidth; ColumnPosition += ColumnCapacity)
             {
                 if (!(ColumnPosition >= ConsoleBase.ConsoleWrapper.WindowWidth))
                 {
@@ -631,7 +631,7 @@ namespace KS.Misc.Writers.FancyWriters
             }
 
             // Write the headers
-            for (int HeaderIndex = 0, loopTo1 = Headers.Length - 1; HeaderIndex <= loopTo1; HeaderIndex++)
+            for (int HeaderIndex = 0; HeaderIndex <= Headers.Length - 1; HeaderIndex++)
             {
                 string Header = Headers[HeaderIndex];
                 int ColumnPosition = ColumnPositions[HeaderIndex];
@@ -655,9 +655,9 @@ namespace KS.Misc.Writers.FancyWriters
             }
 
             // Write the rows
-            for (int RowIndex = 0, loopTo2 = Rows.GetLength(0) - 1; RowIndex <= loopTo2; RowIndex++)
+            for (int RowIndex = 0; RowIndex <= Rows.GetLength(0) - 1; RowIndex++)
             {
-                for (int RowValueIndex = 0, loopTo3 = Rows.GetLength(1) - 1; RowValueIndex <= loopTo3; RowValueIndex++)
+                for (int RowValueIndex = 0; RowValueIndex <= Rows.GetLength(1) - 1; RowValueIndex++)
                 {
                     var ColoredCell = false;
                     var CellColor = ColorTools.GetColor(ColorTools.ColTypes.NeutralText);
@@ -730,7 +730,7 @@ namespace KS.Misc.Writers.FancyWriters
 
             // Populate the positions
             TextWriterColor.Write();
-            for (int ColumnPosition = Margin, loopTo = ConsoleBase.ConsoleWrapper.WindowWidth; ColumnCapacity >= 0 ? ColumnPosition <= loopTo : ColumnPosition >= loopTo; ColumnPosition += ColumnCapacity)
+            for (int ColumnPosition = Margin; ColumnCapacity >= 0 ? ColumnPosition <= ConsoleBase.ConsoleWrapper.WindowWidth : ColumnPosition >= ConsoleBase.ConsoleWrapper.WindowWidth; ColumnPosition += ColumnCapacity)
             {
                 if (!(ColumnPosition >= ConsoleBase.ConsoleWrapper.WindowWidth))
                 {
@@ -745,7 +745,7 @@ namespace KS.Misc.Writers.FancyWriters
             }
 
             // Write the headers
-            for (int HeaderIndex = 0, loopTo1 = Headers.Length - 1; HeaderIndex <= loopTo1; HeaderIndex++)
+            for (int HeaderIndex = 0; HeaderIndex <= Headers.Length - 1; HeaderIndex++)
             {
                 string Header = Headers[HeaderIndex];
                 int ColumnPosition = ColumnPositions[HeaderIndex];
@@ -769,9 +769,9 @@ namespace KS.Misc.Writers.FancyWriters
             }
 
             // Write the rows
-            for (int RowIndex = 0, loopTo2 = Rows.GetLength(0) - 1; RowIndex <= loopTo2; RowIndex++)
+            for (int RowIndex = 0; RowIndex <= Rows.GetLength(0) - 1; RowIndex++)
             {
-                for (int RowValueIndex = 0, loopTo3 = Rows.GetLength(1) - 1; RowValueIndex <= loopTo3; RowValueIndex++)
+                for (int RowValueIndex = 0; RowValueIndex <= Rows.GetLength(1) - 1; RowValueIndex++)
                 {
                     var ColoredCell = false;
                     var CellColor = ColorTools.GetColor(ColorTools.ColTypes.NeutralText);

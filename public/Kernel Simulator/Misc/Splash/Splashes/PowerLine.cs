@@ -67,7 +67,7 @@ namespace KS.Misc.Splash.Splashes
                 while (!SplashClosing)
                 {
                     // As the length increases, draw the PowerLine lines
-                    for (int Top = 0, loopTo = ConsoleWrapper.WindowHeight - 1; Top <= loopTo; Top++)
+                    for (int Top = 0; Top <= ConsoleWrapper.WindowHeight - 1; Top++)
                     {
                         if (SplashClosing)
                             break;

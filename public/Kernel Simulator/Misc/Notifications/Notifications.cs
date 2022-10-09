@@ -238,7 +238,7 @@ namespace KS.Misc.Notifications
                             int BeepTimes = (int)NewNotification.Priority;
                             if (NewNotification.Priority == NotifPriority.Custom)
                                 BeepTimes = NewNotification.CustomBeepTimes;
-                            for (int i = 1, loopTo = BeepTimes; i <= loopTo; i++)
+                            for (int i = 1; i <= BeepTimes; i++)
                                 ConsoleBase.ConsoleWrapper.Beep();
 
                             // Show progress

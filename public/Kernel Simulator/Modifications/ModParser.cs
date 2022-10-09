@@ -221,7 +221,7 @@ namespace KS.Modifications
                     // Process the commands that are defined in a mod
                     if (script.Commands is not null)
                     {
-                        for (int i = 0, loopTo = script.Commands.Keys.Count - 1; i <= loopTo; i++)
+                        for (int i = 0; i <= script.Commands.Keys.Count - 1; i++)
                         {
                             // See if the command conflicts with pre-existing shell commands
                             string Command = script.Commands.Keys.ElementAtOrDefault(i);

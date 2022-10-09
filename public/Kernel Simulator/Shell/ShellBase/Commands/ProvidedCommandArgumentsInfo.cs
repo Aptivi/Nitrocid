@@ -85,7 +85,7 @@ namespace KS.Shell.ShellBase.Commands
 
             // Split the requested command string into words
             var words = CommandText.Split(new[] { ' ' });
-            for (int i = 0, loopTo = words.Length - 1; i <= loopTo; i++)
+            for (int i = 0; i <= words.Length - 1; i++)
                 DebugWriter.WriteDebug(DebugLevel.I, "Word {0}: {1}", i + 1, words[i]);
             Command = words[0];
 

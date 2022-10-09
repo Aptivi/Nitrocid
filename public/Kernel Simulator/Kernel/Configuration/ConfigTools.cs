@@ -351,13 +351,13 @@ namespace KS.Kernel.Configuration
             // Search the settings for the given pattern
             try
             {
-                for (int SectionIndex = 0, loopTo = SettingsToken.Count() - 1; SectionIndex <= loopTo; SectionIndex++)
+                for (int SectionIndex = 0; SectionIndex <= SettingsToken.Count() - 1; SectionIndex++)
                 {
                     var SectionToken = SettingsToken.ToList()[SectionIndex];
-                    for (int SettingIndex = 0, loopTo1 = SectionToken.Count() - 1; SettingIndex <= loopTo1; SettingIndex++)
+                    for (int SettingIndex = 0; SettingIndex <= SectionToken.Count() - 1; SettingIndex++)
                     {
                         var SettingToken = SectionToken.ToList()[SettingIndex]["Keys"];
-                        for (int KeyIndex = 0, loopTo2 = SettingToken.Count() - 1; KeyIndex <= loopTo2; KeyIndex++)
+                        for (int KeyIndex = 0; KeyIndex <= SettingToken.Count() - 1; KeyIndex++)
                         {
                             string KeyName = Translate.DoTranslation((string)SettingToken.ToList()[KeyIndex]["Name"]);
                             if (Regex.IsMatch(KeyName, Pattern, RegexOptions.IgnoreCase))

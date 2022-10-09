@@ -95,7 +95,7 @@ namespace KS.Misc.Animations.Fader
             ThreadManager.SleepNoBlock(Settings.FaderFadeOutDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
             // Fade out
-            for (int CurrentStep = 1, loopTo = Settings.FaderMaxSteps; CurrentStep <= loopTo; CurrentStep++)
+            for (int CurrentStep = 1; CurrentStep <= Settings.FaderMaxSteps; CurrentStep++)
             {
                 if (CurrentWindowHeight != ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleWrapper.WindowWidth)
                     ResizeSyncing = true;

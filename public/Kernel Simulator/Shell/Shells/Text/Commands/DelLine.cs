@@ -68,7 +68,7 @@ namespace KS.Shell.Shells.Text.Commands
                         int LineNumberStart = Convert.ToInt32(ListArgsOnly[0]);
                         int LineNumberEnd = Convert.ToInt32(ListArgsOnly[1]);
                         LineNumberStart.SwapIfSourceLarger(ref LineNumberEnd);
-                        for (int LineNumber = LineNumberStart, loopTo = LineNumberEnd; LineNumber <= loopTo; LineNumber++)
+                        for (int LineNumber = LineNumberStart; LineNumber <= LineNumberEnd; LineNumber++)
                         {
                             TextEditTools.TextEdit_RemoveLine(LineNumber);
                             TextWriterColor.Write(Translate.DoTranslation("Removed line number {0}."), true, ColorTools.ColTypes.Success, LineNumber);

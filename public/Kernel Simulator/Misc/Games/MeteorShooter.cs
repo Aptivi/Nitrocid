@@ -162,7 +162,7 @@ namespace KS.Misc.Games
                     ConsoleBase.ConsoleWrapper.Clear();
 
                     // Move the meteors left
-                    for (int Meteor = 0, loopTo = Meteors.Count - 1; Meteor <= loopTo; Meteor++)
+                    for (int Meteor = 0; Meteor <= Meteors.Count - 1; Meteor++)
                     {
                         int MeteorX = Meteors[Meteor].Item1 - 1;
                         int MeteorY = Meteors[Meteor].Item2;
@@ -170,7 +170,7 @@ namespace KS.Misc.Games
                     }
 
                     // Move the bullets right
-                    for (int Bullet = 0, loopTo1 = Bullets.Count - 1; Bullet <= loopTo1; Bullet++)
+                    for (int Bullet = 0; Bullet <= Bullets.Count - 1; Bullet++)
                     {
                         int BulletX = Bullets[Bullet].Item1 + 1;
                         int BulletY = Bullets[Bullet].Item2;

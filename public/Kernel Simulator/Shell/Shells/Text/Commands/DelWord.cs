@@ -68,7 +68,7 @@ namespace KS.Shell.Shells.Text.Commands
                         int LineNumberStart = Convert.ToInt32(ListArgsOnly[1]);
                         int LineNumberEnd = Convert.ToInt32(ListArgsOnly[2]);
                         LineNumberStart.SwapIfSourceLarger(ref LineNumberEnd);
-                        for (int LineNumber = LineNumberStart, loopTo = LineNumberEnd; LineNumber <= loopTo; LineNumber++)
+                        for (int LineNumber = LineNumberStart; LineNumber <= LineNumberEnd; LineNumber++)
                         {
                             TextEditTools.TextEdit_DeleteWord(ListArgsOnly[0], LineNumber);
                             TextWriterColor.Write(Translate.DoTranslation("Word deleted in line {0}."), true, ColorTools.ColTypes.Success, LineNumber);

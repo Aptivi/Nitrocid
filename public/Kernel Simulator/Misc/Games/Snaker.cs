@@ -75,7 +75,7 @@ namespace KS.Misc.Games
                 ColorTools.SetConsoleColor(FloorColor, true, true);
 
                 // First, draw the floor top edge
-                for (int x = FloorTopLeftEdge, loopTo = FloorTopRightEdge; x <= loopTo; x++)
+                for (int x = FloorTopLeftEdge; x <= FloorTopRightEdge; x++)
                 {
                     ConsoleBase.ConsoleWrapper.SetCursorPosition(x, 1);
                     DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor top edge ({0}, {1})", x, 1);
@@ -83,7 +83,7 @@ namespace KS.Misc.Games
                 }
 
                 // Second, draw the floor bottom edge
-                for (int x = FloorBottomLeftEdge, loopTo1 = FloorBottomRightEdge; x <= loopTo1; x++)
+                for (int x = FloorBottomLeftEdge; x <= FloorBottomRightEdge; x++)
                 {
                     ConsoleBase.ConsoleWrapper.SetCursorPosition(x, FloorBottomEdge);
                     DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor bottom edge ({0}, {1})", x, FloorBottomEdge);
@@ -91,7 +91,7 @@ namespace KS.Misc.Games
                 }
 
                 // Third, draw the floor left edge
-                for (int y = FloorTopEdge, loopTo2 = FloorBottomEdge; y <= loopTo2; y++)
+                for (int y = FloorTopEdge; y <= FloorBottomEdge; y++)
                 {
                     ConsoleBase.ConsoleWrapper.SetCursorPosition(FloorLeftEdge, y);
                     DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor left edge ({0}, {1})", FloorLeftEdge, y);
@@ -99,7 +99,7 @@ namespace KS.Misc.Games
                 }
 
                 // Finally, draw the floor right edge
-                for (int y = FloorTopEdge, loopTo3 = FloorBottomEdge; y <= loopTo3; y++)
+                for (int y = FloorTopEdge; y <= FloorBottomEdge; y++)
                 {
                     ConsoleBase.ConsoleWrapper.SetCursorPosition(FloorRightEdge, y);
                     DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor right edge ({0}, {1})", FloorRightEdge, y);

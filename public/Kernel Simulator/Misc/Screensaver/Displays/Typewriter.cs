@@ -251,7 +251,7 @@ namespace KS.Misc.Screensaver.Displays
                 }
 
                 // Get struck character and write it
-                for (int SentenceIndex = 0, loopTo = IncompleteSentences.Count - 1; SentenceIndex <= loopTo; SentenceIndex++)
+                for (int SentenceIndex = 0; SentenceIndex <= IncompleteSentences.Count - 1; SentenceIndex++)
                 {
                     string Sentence = IncompleteSentences[SentenceIndex];
                     if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)

@@ -354,7 +354,7 @@ namespace KS.Misc.Screensaver.Displays
             // Blow it up!
             if (!ResizeSyncing)
             {
-                for (int Radius = 0, loopTo = FireworkRadius; Radius <= loopTo; Radius++)
+                for (int Radius = 0; Radius <= FireworkRadius; Radius++)
                 {
                     if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                         ResizeSyncing = true;

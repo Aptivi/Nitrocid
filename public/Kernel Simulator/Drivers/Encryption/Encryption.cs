@@ -82,7 +82,7 @@ namespace KS.Drivers.Encryption
         public static string GetArrayEnc(byte[] encrypted)
         {
             string hash = "";
-            for (int i = 0, loopTo = encrypted.Length - 1; i <= loopTo; i++)
+            for (int i = 0; i <= encrypted.Length - 1; i++)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Appending {0} to hash", encrypted[i]);
                 hash += $"{encrypted[i]:X2}";

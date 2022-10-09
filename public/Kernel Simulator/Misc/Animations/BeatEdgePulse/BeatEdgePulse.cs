@@ -131,7 +131,7 @@ namespace KS.Misc.Animations.BeatEdgePulse
             }
 
             // Fade out
-            for (int CurrentStep = 1, loopTo = Settings.BeatEdgePulseMaxSteps; CurrentStep <= loopTo; CurrentStep++)
+            for (int CurrentStep = 1; CurrentStep <= Settings.BeatEdgePulseMaxSteps; CurrentStep++)
             {
                 if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                     ResizeSyncing = true;
@@ -178,7 +178,7 @@ namespace KS.Misc.Animations.BeatEdgePulse
             DebugWriter.WriteDebug(DebugLevel.I, "Left edge: {0}, Right edge: {1}", FloorLeftEdge, FloorRightEdge);
 
             // First, draw the floor top edge
-            for (int x = FloorTopLeftEdge, loopTo = FloorTopRightEdge; x <= loopTo; x++)
+            for (int x = FloorTopLeftEdge; x <= FloorTopRightEdge; x++)
             {
                 ConsoleBase.ConsoleWrapper.SetCursorPosition(x, 0);
                 DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor top edge ({0}, {1})", x, 1);
@@ -186,7 +186,7 @@ namespace KS.Misc.Animations.BeatEdgePulse
             }
 
             // Second, draw the floor bottom edge
-            for (int x = FloorBottomLeftEdge, loopTo1 = FloorBottomRightEdge; x <= loopTo1; x++)
+            for (int x = FloorBottomLeftEdge; x <= FloorBottomRightEdge; x++)
             {
                 ConsoleBase.ConsoleWrapper.SetCursorPosition(x, FloorBottomEdge);
                 DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor bottom edge ({0}, {1})", x, FloorBottomEdge);
@@ -194,7 +194,7 @@ namespace KS.Misc.Animations.BeatEdgePulse
             }
 
             // Third, draw the floor left edge
-            for (int y = FloorTopEdge, loopTo2 = FloorBottomEdge; y <= loopTo2; y++)
+            for (int y = FloorTopEdge; y <= FloorBottomEdge; y++)
             {
                 ConsoleBase.ConsoleWrapper.SetCursorPosition(FloorLeftEdge, y);
                 DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor left edge ({0}, {1})", FloorLeftEdge, y);
@@ -202,7 +202,7 @@ namespace KS.Misc.Animations.BeatEdgePulse
             }
 
             // Finally, draw the floor right edge
-            for (int y = FloorTopEdge, loopTo3 = FloorBottomEdge; y <= loopTo3; y++)
+            for (int y = FloorTopEdge; y <= FloorBottomEdge; y++)
             {
                 ConsoleBase.ConsoleWrapper.SetCursorPosition(FloorRightEdge, y);
                 DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor right edge ({0}, {1})", FloorRightEdge, y);

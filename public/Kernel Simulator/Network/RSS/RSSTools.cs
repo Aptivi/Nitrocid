@@ -410,7 +410,7 @@ namespace KS.Network.RSS
 
             // News source selection
             TextWriterColor.Write(Translate.DoTranslation("Select your favorite news source by writing the number. Press ENTER to confirm your selection.") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.NeutralText);
-            for (int SourceIndex = 0, loopTo = FeedListJsonNewsSources.Length - 1; SourceIndex <= loopTo; SourceIndex++)
+            for (int SourceIndex = 0; SourceIndex <= FeedListJsonNewsSources.Length - 1; SourceIndex++)
             {
                 var NewsSource = FeedListJsonNewsSources[SourceIndex];
                 string NewsSourceTitle = NewsSource["site"]["title"].ToString().Trim();
@@ -458,7 +458,7 @@ namespace KS.Network.RSS
 
             // News feed selection
             TextWriterColor.Write(Translate.DoTranslation("Select a feed for your favorite news source. Press ENTER to confirm your selection.") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.NeutralText);
-            for (int SourceFeedIndex = 0, loopTo1 = FeedListJsonNewsSourceFeeds.Length - 1; SourceFeedIndex <= loopTo1; SourceFeedIndex++)
+            for (int SourceFeedIndex = 0; SourceFeedIndex <= FeedListJsonNewsSourceFeeds.Length - 1; SourceFeedIndex++)
             {
                 var NewsSourceFeed = FeedListJsonNewsSourceFeeds[SourceFeedIndex];
                 string NewsSourceTitle = (string)NewsSourceFeed["title"];

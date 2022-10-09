@@ -60,7 +60,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
         public static void DisconnectDbgDev(string IPAddr)
         {
             var Found = default(bool);
-            for (int i = 0, loopTo = RemoteDebugger.DebugDevices.Count - 1; i <= loopTo; i++)
+            for (int i = 0; i <= RemoteDebugger.DebugDevices.Count - 1; i++)
             {
                 if (Found)
                 {

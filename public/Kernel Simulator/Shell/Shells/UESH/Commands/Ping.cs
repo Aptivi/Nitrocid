@@ -57,7 +57,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 if (!string.IsNullOrEmpty(PingedAddress))
                 {
                     SeparatorWriterColor.WriteSeparator(PingedAddress, true);
-                    for (int CurrentTime = 1, loopTo = PingTimes; CurrentTime <= loopTo; CurrentTime++)
+                    for (int CurrentTime = 1; CurrentTime <= PingTimes; CurrentTime++)
                     {
                         try
                         {

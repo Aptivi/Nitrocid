@@ -170,7 +170,7 @@ namespace KS.Misc.Archive
 
                 // Add back steps if target is ".."
                 DebugWriter.WriteDebug(DebugLevel.I, "Target length: {0}", TargetSplit.Count);
-                for (int i = 0, loopTo = TargetSplit.Count - 1; i <= loopTo; i++)
+                for (int i = 0; i <= TargetSplit.Count - 1; i++)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Target part {0}: {1}", i, TargetSplit[i]);
                     if (TargetSplit[i] == "..")

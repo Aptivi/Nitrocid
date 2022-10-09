@@ -140,7 +140,7 @@ namespace KS.Network.Mail.Transfer
                         DebugWriter.WriteDebug(DebugLevel.I, $"Decrypted message entity is {(MultiEntity is not null ? "multipart" : "nothing")}");
                         if (MultiEntity is not null)
                         {
-                            for (int EntityNumber = 0, loopTo = MultiEntity.Count - 1; EntityNumber <= loopTo; EntityNumber++)
+                            for (int EntityNumber = 0; EntityNumber <= MultiEntity.Count - 1; EntityNumber++)
                             {
                                 DebugWriter.WriteDebug(DebugLevel.I, $"Entity number {EntityNumber} is {(MultiEntity[EntityNumber].IsAttachment ? "an attachment" : "not an attachment")}");
                                 if (!MultiEntity[EntityNumber].IsAttachment)
@@ -181,7 +181,7 @@ namespace KS.Network.Mail.Transfer
                     if (Decrypt)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Parsing attachments...");
-                        for (int DecryptedEntityNumber = 0, loopTo1 = DecryptedMessage.Count - 1; DecryptedEntityNumber <= loopTo1; DecryptedEntityNumber++)
+                        for (int DecryptedEntityNumber = 0; DecryptedEntityNumber <= DecryptedMessage.Count - 1; DecryptedEntityNumber++)
                         {
                             DebugWriter.WriteDebug(DebugLevel.I, "Is entity number {0} an attachment? {1}", DecryptedEntityNumber, DecryptedMessage.Keys.ElementAtOrDefault(DecryptedEntityNumber).Contains("Attachment"));
                             DebugWriter.WriteDebug(DebugLevel.I, "Is entity number {0} a body that is a multipart? {1}", DecryptedEntityNumber, DecryptedMessage.Keys.ElementAtOrDefault(DecryptedEntityNumber) == "Body" & DecryptedMessage["Body"] is Multipart);
@@ -197,7 +197,7 @@ namespace KS.Network.Mail.Transfer
                                 if (MultiEntity is not null)
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.I, "{0} entities found.", MultiEntity.Count);
-                                    for (int EntityNumber = 0, loopTo2 = MultiEntity.Count - 1; EntityNumber <= loopTo2; EntityNumber++)
+                                    for (int EntityNumber = 0; EntityNumber <= MultiEntity.Count - 1; EntityNumber++)
                                     {
                                         DebugWriter.WriteDebug(DebugLevel.I, $"Entity number {EntityNumber} is {(MultiEntity[EntityNumber].IsAttachment ? "an attachment" : "not an attachment")}");
                                         if (MultiEntity[EntityNumber].IsAttachment)

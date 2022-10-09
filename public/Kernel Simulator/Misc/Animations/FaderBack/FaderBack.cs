@@ -82,7 +82,7 @@ namespace KS.Misc.Animations.FaderBack
             }
 
             // Fade out
-            for (int CurrentStep = 1, loopTo = Settings.FaderBackMaxSteps; CurrentStep <= loopTo; CurrentStep++)
+            for (int CurrentStep = 1; CurrentStep <= Settings.FaderBackMaxSteps; CurrentStep++)
             {
                 if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                     ResizeSyncing = true;

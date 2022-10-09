@@ -345,9 +345,9 @@ namespace KS.Misc.Screensaver.Displays
                     if (StackBoxSettings.StackBoxFill)
                     {
                         // Cover all the positions
-                        for (int X = BoxStartX, loopTo = BoxEndX; X <= loopTo; X++)
+                        for (int X = BoxStartX; X <= BoxEndX; X++)
                         {
-                            for (int Y = BoxStartY, loopTo1 = BoxEndY; Y <= loopTo1; Y++)
+                            for (int Y = BoxStartY; Y <= BoxEndY; Y++)
                             {
                                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Filling {0},{1}...", X, Y);
                                 ConsoleBase.ConsoleWrapper.SetCursorPosition(X, Y);
@@ -358,7 +358,7 @@ namespace KS.Misc.Screensaver.Displays
                     else
                     {
                         // Draw the upper and lower borders
-                        for (int X = BoxStartX, loopTo2 = BoxEndX; X <= loopTo2; X++)
+                        for (int X = BoxStartX; X <= BoxEndX; X++)
                         {
                             ConsoleBase.ConsoleWrapper.SetCursorPosition(X, BoxStartY);
                             ConsoleBase.ConsoleWrapper.Write(" ");
@@ -369,7 +369,7 @@ namespace KS.Misc.Screensaver.Displays
                         }
 
                         // Draw the left and right borders
-                        for (int Y = BoxStartY, loopTo3 = BoxEndY; Y <= loopTo3; Y++)
+                        for (int Y = BoxStartY; Y <= BoxEndY; Y++)
                         {
                             ConsoleBase.ConsoleWrapper.SetCursorPosition(BoxStartX, Y);
                             ConsoleBase.ConsoleWrapper.Write(" ");

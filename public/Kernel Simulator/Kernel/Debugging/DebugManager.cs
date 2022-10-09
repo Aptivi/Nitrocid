@@ -49,7 +49,8 @@ namespace KS.Kernel.Debugging
                     var Lines = FileRead.ReadAllLinesNoBlock(Paths.GetKernelPath(KernelPathType.Debugging)).Skip(5).ToArray();
                     DebugWriter.DebugStreamWriter.Close();
                     DebugWriter.DebugStreamWriter = new StreamWriter(Paths.GetKernelPath(KernelPathType.Debugging)) { AutoFlush = true };
-                    for (int l = 0, loopTo = Lines.Length - 1; l <= loopTo; l++) // Remove the first 5 lines from stream.
+                    for (int l = 0; l <= Lines.Length - 1; l++)
+                        // Remove the first 5 lines from stream.
                         DebugWriter.DebugStreamWriter.WriteLine(Lines[l]);
                     DebugWriter.WriteDebug(DebugLevel.W, "Max debug quota size exceeded, was {0} bytes.", OldSize);
                 }

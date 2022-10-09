@@ -59,7 +59,7 @@ namespace KS.Arguments.ArgumentBase
                 var Arguments = ArgumentType == ArgumentType.CommandLineArgs ? CommandLineArgs.AvailableCMDLineArgs : AvailableArgs;
 
                 // Parse them now
-                for (int i = 0, loopTo = ArgumentsInput.Count - 1; i <= loopTo; i++)
+                for (int i = 0; i <= ArgumentsInput.Count - 1; i++)
                 {
                     string Argument = ArgumentsInput[i];
                     if (Arguments.ContainsKey(Argument))

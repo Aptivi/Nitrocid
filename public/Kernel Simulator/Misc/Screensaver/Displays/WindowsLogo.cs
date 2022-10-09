@@ -112,9 +112,9 @@ namespace KS.Misc.Screensaver.Displays
                     ColorTools.SetConsoleColor(new Color($"0;120;212"), true, true);
 
                     // First, draw the upper left box
-                    for (int X = UpperLeftBoxStartX, loopTo = UpperLeftBoxEndX; X <= loopTo; X++)
+                    for (int X = UpperLeftBoxStartX; X <= UpperLeftBoxEndX; X++)
                     {
-                        for (int Y = UpperLeftBoxStartY, loopTo1 = UpperLeftBoxEndY; Y <= loopTo1; Y++)
+                        for (int Y = UpperLeftBoxStartY; Y <= UpperLeftBoxEndY; Y++)
                         {
                             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Filling upper left box {0},{1}...", X, Y);
                             ConsoleBase.ConsoleWrapper.SetCursorPosition(X, Y);
@@ -123,9 +123,9 @@ namespace KS.Misc.Screensaver.Displays
                     }
 
                     // Second, draw the lower left box
-                    for (int X = LowerLeftBoxStartX, loopTo2 = LowerLeftBoxEndX; X <= loopTo2; X++)
+                    for (int X = LowerLeftBoxStartX; X <= LowerLeftBoxEndX; X++)
                     {
-                        for (int Y = LowerLeftBoxStartY, loopTo3 = LowerLeftBoxEndY; Y <= loopTo3; Y++)
+                        for (int Y = LowerLeftBoxStartY; Y <= LowerLeftBoxEndY; Y++)
                         {
                             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Filling lower left box {0},{1}...", X, Y);
                             ConsoleBase.ConsoleWrapper.SetCursorPosition(X, Y);
@@ -134,9 +134,9 @@ namespace KS.Misc.Screensaver.Displays
                     }
 
                     // Third, draw the upper right box
-                    for (int X = UpperRightBoxStartX, loopTo4 = UpperRightBoxEndX; X <= loopTo4; X++)
+                    for (int X = UpperRightBoxStartX; X <= UpperRightBoxEndX; X++)
                     {
-                        for (int Y = UpperRightBoxStartY, loopTo5 = UpperRightBoxEndY; Y <= loopTo5; Y++)
+                        for (int Y = UpperRightBoxStartY; Y <= UpperRightBoxEndY; Y++)
                         {
                             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Filling upper right box {0},{1}...", X, Y);
                             ConsoleBase.ConsoleWrapper.SetCursorPosition(X, Y);
@@ -145,9 +145,9 @@ namespace KS.Misc.Screensaver.Displays
                     }
 
                     // Fourth, draw the lower right box
-                    for (int X = LowerRightBoxStartX, loopTo6 = LowerRightBoxEndX; X <= loopTo6; X++)
+                    for (int X = LowerRightBoxStartX; X <= LowerRightBoxEndX; X++)
                     {
-                        for (int Y = LowerRightBoxStartY, loopTo7 = LowerRightBoxEndY; Y <= loopTo7; Y++)
+                        for (int Y = LowerRightBoxStartY; Y <= LowerRightBoxEndY; Y++)
                         {
                             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Filling lower right box {0},{1}...", X, Y);
                             ConsoleBase.ConsoleWrapper.SetCursorPosition(X, Y);

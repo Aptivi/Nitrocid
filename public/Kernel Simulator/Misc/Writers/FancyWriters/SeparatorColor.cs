@@ -50,7 +50,7 @@ namespace KS.Misc.Writers.FancyWriters
                 // We need to set an appropriate color for the suffix in the text.
                 if (Text.StartsWith("-"))
                 {
-                    for (int CharIndex = 0, loopTo = Text.Length - 1; CharIndex <= loopTo; CharIndex++)
+                    for (int CharIndex = 0; CharIndex <= Text.Length - 1; CharIndex++)
                     {
                         if (Convert.ToString(Text[CharIndex]) == "-")
                         {

@@ -244,7 +244,7 @@ namespace KS.Misc.Editors.HexEdit
                 // Actually remove the bytes
                 if (StartByteNumber <= HexEditShellCommon.HexEdit_FileBytes.LongLength & EndByteNumber <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
                 {
-                    for (long ByteNumber = EndByteNumber, loopTo = StartByteNumber; ByteNumber >= loopTo; ByteNumber += -1)
+                    for (long ByteNumber = EndByteNumber; ByteNumber >= StartByteNumber; ByteNumber -= 1)
                         FileBytesList.RemoveAt((int)(ByteNumber - 1L));
                     DebugWriter.WriteDebug(DebugLevel.I, "Removed {0} to {1}. New length: {2}", StartByteNumber, EndByteNumber, HexEditShellCommon.HexEdit_FileBytes.LongLength);
                     HexEditShellCommon.HexEdit_FileBytes = FileBytesList.ToArray();
@@ -305,14 +305,14 @@ namespace KS.Misc.Editors.HexEdit
                 DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", HexEditShellCommon.HexEdit_FileBytes.LongLength);
                 if (StartByte <= HexEditShellCommon.HexEdit_FileBytes.LongLength & EndByte <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
                 {
-                    for (long ByteNumber = StartByte, loopTo = EndByte; ByteNumber <= loopTo; ByteNumber++)
+                    for (long ByteNumber = StartByte; ByteNumber <= EndByte; ByteNumber++)
                     {
                         if (HexEditShellCommon.HexEdit_FileBytes[(int)(ByteNumber - 1L)] == ByteContent)
                         {
                             long ByteRenderStart = ByteNumber - 2L;
                             long ByteRenderEnd = ByteNumber + 2L;
                             TextWriterColor.Write($"- 0x{ByteNumber:X8}: ", false, ColorTools.ColTypes.ListEntry);
-                            for (long ByteRenderNumber = ByteRenderStart, loopTo1 = ByteRenderEnd; ByteRenderNumber <= loopTo1; ByteRenderNumber++)
+                            for (long ByteRenderNumber = ByteRenderStart; ByteRenderNumber <= ByteRenderEnd; ByteRenderNumber++)
                             {
                                 if (ByteRenderStart < 0L)
                                     ByteRenderStart = 1L;
@@ -381,7 +381,7 @@ namespace KS.Misc.Editors.HexEdit
                 DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", HexEditShellCommon.HexEdit_FileBytes.LongLength);
                 if (StartByte <= HexEditShellCommon.HexEdit_FileBytes.LongLength & EndByte <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
                 {
-                    for (long ByteNumber = StartByte, loopTo = EndByte; ByteNumber <= loopTo; ByteNumber++)
+                    for (long ByteNumber = StartByte; ByteNumber <= EndByte; ByteNumber++)
                     {
                         if (HexEditShellCommon.HexEdit_FileBytes[(int)(ByteNumber - 1L)] == FromByte)
                         {

@@ -62,7 +62,7 @@ namespace KS.Misc.Settings
                 // List sections
                 SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Welcome to Settings!"), true);
                 TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("Select section:") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.NeutralText);
-                for (int SectionIndex = 0, loopTo = MaxSections - 1; SectionIndex <= loopTo; SectionIndex++)
+                for (int SectionIndex = 0; SectionIndex <= MaxSections - 1; SectionIndex++)
                 {
                     JProperty Section = (JProperty)SettingsToken.ToList()[SectionIndex];
                     if (SettingsType != SettingsType.Normal)
@@ -223,7 +223,7 @@ namespace KS.Misc.Settings
                     TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation((string)SectionDescription) + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.NeutralText);
 
                     // List options
-                    for (int SectionIndex = 0, loopTo = MaxOptions - 1; SectionIndex <= loopTo; SectionIndex++)
+                    for (int SectionIndex = 0; SectionIndex <= MaxOptions - 1; SectionIndex++)
                     {
                         var Setting = SectionToken[SectionIndex];
                         object CurrentValue = "Unknown";

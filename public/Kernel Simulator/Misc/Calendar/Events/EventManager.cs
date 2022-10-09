@@ -62,7 +62,7 @@ namespace KS.Misc.Calendar.Events
                     Thread.Sleep(100);
                     lock (EventManagerLock)
                     {
-                        for (int EventIndex = 0, loopTo = CalendarEvents.Count - 1; EventIndex <= loopTo; EventIndex++)
+                        for (int EventIndex = 0; EventIndex <= CalendarEvents.Count - 1; EventIndex++)
                         {
                             var EventInstance = CalendarEvents[EventIndex];
                             if (DateTime.Today == EventInstance.EventDate.Date)
@@ -210,7 +210,7 @@ namespace KS.Misc.Calendar.Events
             }
 
             // Enumerate through every event and save them
-            for (int EventIndex = 0, loopTo = CalendarEvents.Count - 1; EventIndex <= loopTo; EventIndex++)
+            for (int EventIndex = 0; EventIndex <= CalendarEvents.Count - 1; EventIndex++)
             {
                 var EventInstance = CalendarEvents[EventIndex];
                 string EventFileName = $"[{EventIndex}] {EventInstance.EventTitle}.ksevent";

@@ -306,13 +306,13 @@ namespace KS.Misc.Screensaver.Displays
             {
                 case WipeDirections.Right:
                     {
-                        for (int Column = 0, loopTo = ConsoleBase.ConsoleWrapper.WindowWidth; Column <= loopTo; Column++)
+                        for (int Column = 0; Column <= ConsoleBase.ConsoleWrapper.WindowWidth; Column++)
                         {
                             if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                                 ResizeSyncing = true;
                             if (ResizeSyncing)
                                 break;
-                            for (int Row = 0, loopTo1 = MaxWindowHeight; Row <= loopTo1; Row++)
+                            for (int Row = 0; Row <= MaxWindowHeight; Row++)
                             {
                                 if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                                     ResizeSyncing = true;
@@ -338,7 +338,7 @@ namespace KS.Misc.Screensaver.Displays
                                 ResizeSyncing = true;
                             if (ResizeSyncing)
                                 break;
-                            for (int Row = 0, loopTo2 = MaxWindowHeight; Row <= loopTo2; Row++)
+                            for (int Row = 0; Row <= MaxWindowHeight; Row++)
                             {
                                 if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                                     ResizeSyncing = true;
@@ -377,7 +377,7 @@ namespace KS.Misc.Screensaver.Displays
                     }
                 case WipeDirections.Bottom:
                     {
-                        for (int Row = 0, loopTo3 = MaxWindowHeight; Row <= loopTo3; Row++)
+                        for (int Row = 0; Row <= MaxWindowHeight; Row++)
                         {
                             if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                                 ResizeSyncing = true;

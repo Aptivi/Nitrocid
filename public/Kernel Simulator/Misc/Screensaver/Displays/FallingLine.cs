@@ -322,7 +322,7 @@ namespace KS.Misc.Screensaver.Displays
             }
 
             // Make the line fall down
-            for (int Fall = FallStart, loopTo = FallEnd; Fall <= loopTo; Fall++)
+            for (int Fall = FallStart; Fall <= FallEnd; Fall++)
             {
                 // Check to see if user decided to resize
                 if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
@@ -340,7 +340,7 @@ namespace KS.Misc.Screensaver.Displays
             }
 
             // Fade the line down. Please note that this requires true-color support in the terminal to work properly.
-            for (int StepNum = 0, loopTo1 = FallingLineSettings.FallingLineMaxSteps; StepNum <= loopTo1; StepNum++)
+            for (int StepNum = 0; StepNum <= FallingLineSettings.FallingLineMaxSteps; StepNum++)
             {
                 // Check to see if user decided to resize
                 if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)

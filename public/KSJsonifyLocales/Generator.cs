@@ -173,7 +173,7 @@ namespace KSJsonifyLocales
                     // Make a JSON object for each language entry
                     var localizedJson = new JObject();
                     var localizationDataJson = new JObject();
-                    for (int i = 0, loopTo = fileLines.Length - 1; i <= loopTo; i++)
+                    for (int i = 0; i <= fileLines.Length - 1; i++)
                     {
                         if (!string.IsNullOrWhiteSpace(fileLines[i]) & !string.IsNullOrWhiteSpace(fileLinesEng[i]))
                         {

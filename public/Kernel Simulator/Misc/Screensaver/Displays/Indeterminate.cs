@@ -616,7 +616,7 @@ namespace KS.Misc.Screensaver.Displays
                 ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
                 if (IndeterminateCurrentBlockDirection == IndeterminateDirection.LeftToRight)
                 {
-                    for (int BlockPos = RampFrameBlockStartWidth, loopTo = IndeterminateCurrentBlockStart; BlockPos <= loopTo; BlockPos++)
+                    for (int BlockPos = RampFrameBlockStartWidth; BlockPos <= IndeterminateCurrentBlockStart; BlockPos++)
                     {
                         WriterPlainManager.CurrentPlain.WriteWherePlain(" ", BlockPos, RampCenterPosition - 1, true);
                         WriterPlainManager.CurrentPlain.WriteWherePlain(" ", BlockPos, RampCenterPosition, true);
@@ -625,7 +625,7 @@ namespace KS.Misc.Screensaver.Displays
                 }
                 else
                 {
-                    for (int BlockPos = IndeterminateCurrentBlockEnd, loopTo1 = RampFrameBlockEndWidth; BlockPos <= loopTo1; BlockPos++)
+                    for (int BlockPos = IndeterminateCurrentBlockEnd; BlockPos <= RampFrameBlockEndWidth; BlockPos++)
                     {
                         WriterPlainManager.CurrentPlain.WriteWherePlain(" ", BlockPos, RampCenterPosition - 1, true);
                         WriterPlainManager.CurrentPlain.WriteWherePlain(" ", BlockPos, RampCenterPosition, true);
@@ -635,7 +635,7 @@ namespace KS.Misc.Screensaver.Displays
 
                 // Fill the ramp
                 ColorTools.SetConsoleColor(RampCurrentColorInstance, true, true);
-                for (int BlockPos = IndeterminateCurrentBlockStart, loopTo2 = IndeterminateCurrentBlockEnd; BlockPos <= loopTo2; BlockPos++)
+                for (int BlockPos = IndeterminateCurrentBlockStart; BlockPos <= IndeterminateCurrentBlockEnd; BlockPos++)
                 {
                     WriterPlainManager.CurrentPlain.WriteWherePlain(" ", BlockPos, RampCenterPosition - 1, true);
                     WriterPlainManager.CurrentPlain.WriteWherePlain(" ", BlockPos, RampCenterPosition, true);
