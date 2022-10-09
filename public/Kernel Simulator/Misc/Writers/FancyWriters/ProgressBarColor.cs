@@ -41,13 +41,20 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Progress">The progress percentage</param>
         /// <param name="Left">The progress position from the upper left corner</param>
         /// <param name="Top">The progress position from the top</param>
-        public static void WriteProgressPlain(double Progress, int Left, int Top)
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteProgressPlain(double Progress, int Left, int Top, bool DrawBorder = true)
         {
             try
             {
-                WriterPlainManager.CurrentPlain.WriteWherePlain(ProgressTools.ProgressUpperLeftCornerChar + ProgressTools.ProgressUpperFrameChar.Repeat(ConsoleWrapper.WindowWidth - 10) + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true);
-                WriterPlainManager.CurrentPlain.WriteWherePlain(ProgressTools.ProgressLeftFrameChar + " ".Repeat(ConsoleWrapper.WindowWidth - 10) + ProgressTools.ProgressRightFrameChar, Left, Top + 1, true);
-                WriterPlainManager.CurrentPlain.WriteWherePlain(ProgressTools.ProgressLowerLeftCornerChar + ProgressTools.ProgressLowerFrameChar.Repeat(ConsoleWrapper.WindowWidth - 10) + ProgressTools.ProgressLowerRightCornerChar, Left, Top + 2, true);
+                // Draw the border
+                if (DrawBorder)
+                {
+                    WriterPlainManager.CurrentPlain.WriteWherePlain(ProgressTools.ProgressUpperLeftCornerChar + ProgressTools.ProgressUpperFrameChar.Repeat(ConsoleWrapper.WindowWidth - 10) + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true);
+                    WriterPlainManager.CurrentPlain.WriteWherePlain(ProgressTools.ProgressLeftFrameChar + " ".Repeat(ConsoleWrapper.WindowWidth - 10) + ProgressTools.ProgressRightFrameChar, Left, Top + 1, true);
+                    WriterPlainManager.CurrentPlain.WriteWherePlain(ProgressTools.ProgressLowerLeftCornerChar + ProgressTools.ProgressLowerFrameChar.Repeat(ConsoleWrapper.WindowWidth - 10) + ProgressTools.ProgressLowerRightCornerChar, Left, Top + 2, true);
+                }
+
+                // Draw the progress bar
                 WriterPlainManager.CurrentPlain.WriteWherePlain("*".Repeat(ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, 10)), Left + 1, Top + 1, true);
             }
             catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
@@ -63,11 +70,12 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Progress">The progress percentage</param>
         /// <param name="Left">The progress position from the upper left corner</param>
         /// <param name="Top">The progress position from the top</param>
-        public static void WriteProgress(double Progress, int Left, int Top)
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteProgress(double Progress, int Left, int Top, bool DrawBorder = true)
         {
             try
             {
-                WriteProgress(Progress, Left, Top, ColorTools.ColTypes.Progress, ColorTools.ColTypes.Gray);
+                WriteProgress(Progress, Left, Top, ColorTools.ColTypes.Progress, ColorTools.ColTypes.Gray, DrawBorder);
             }
             catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
             {
@@ -83,11 +91,12 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Left">The progress position from the upper left corner</param>
         /// <param name="Top">The progress position from the top</param>
         /// <param name="ProgressColor">The progress bar color</param>
-        public static void WriteProgress(double Progress, int Left, int Top, ColorTools.ColTypes ProgressColor)
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteProgress(double Progress, int Left, int Top, ColorTools.ColTypes ProgressColor, bool DrawBorder = true)
         {
             try
             {
-                WriteProgress(Progress, Left, Top, ProgressColor, ColorTools.ColTypes.Gray);
+                WriteProgress(Progress, Left, Top, ProgressColor, ColorTools.ColTypes.Gray, DrawBorder);
             }
             catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
             {
@@ -104,13 +113,20 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Top">The progress position from the top</param>
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="FrameColor">The progress bar frame color</param>
-        public static void WriteProgress(double Progress, int Left, int Top, ColorTools.ColTypes ProgressColor, ColorTools.ColTypes FrameColor)
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteProgress(double Progress, int Left, int Top, ColorTools.ColTypes ProgressColor, ColorTools.ColTypes FrameColor, bool DrawBorder = true)
         {
             try
             {
-                TextWriterWhereColor.WriteWhere(ProgressTools.ProgressUpperLeftCornerChar + ProgressTools.ProgressUpperFrameChar.Repeat(ConsoleWrapper.WindowWidth - 10) + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true, FrameColor);
-                TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLeftFrameChar + " ".Repeat(ConsoleWrapper.WindowWidth - 10) + ProgressTools.ProgressRightFrameChar, Left, Top + 1, true, FrameColor);
-                TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLowerLeftCornerChar + ProgressTools.ProgressLowerFrameChar.Repeat(ConsoleWrapper.WindowWidth - 10) + ProgressTools.ProgressLowerRightCornerChar, Left, Top + 2, true, FrameColor);
+                // Draw the border
+                if (DrawBorder)
+                {
+                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressUpperLeftCornerChar + ProgressTools.ProgressUpperFrameChar.Repeat(ConsoleWrapper.WindowWidth - 10) + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true, FrameColor);
+                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLeftFrameChar + " ".Repeat(ConsoleWrapper.WindowWidth - 10) + ProgressTools.ProgressRightFrameChar, Left, Top + 1, true, FrameColor);
+                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLowerLeftCornerChar + ProgressTools.ProgressLowerFrameChar.Repeat(ConsoleWrapper.WindowWidth - 10) + ProgressTools.ProgressLowerRightCornerChar, Left, Top + 2, true, FrameColor);
+                }
+
+                // Draw the progress bar
                 ColorTools.SetConsoleColor(ProgressColor, true, true);
                 WriterPlainManager.CurrentPlain.WriteWherePlain(" ".Repeat(ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, 10)), Left + 1, Top + 1, true);
             }
@@ -128,11 +144,12 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Left">The progress position from the upper left corner</param>
         /// <param name="Top">The progress position from the top</param>
         /// <param name="ProgressColor">The progress bar color</param>
-        public static void WriteProgress(double Progress, int Left, int Top, Color ProgressColor)
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteProgress(double Progress, int Left, int Top, Color ProgressColor, bool DrawBorder = true)
         {
             try
             {
-                WriteProgress(Progress, Left, Top, ProgressColor, ColorTools.GetGray());
+                WriteProgress(Progress, Left, Top, ProgressColor, ColorTools.GetGray(), DrawBorder);
             }
             catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
             {
@@ -149,13 +166,20 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Top">The progress position from the top</param>
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="FrameColor">The progress bar frame color</param>
-        public static void WriteProgress(double Progress, int Left, int Top, Color ProgressColor, Color FrameColor)
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteProgress(double Progress, int Left, int Top, Color ProgressColor, Color FrameColor, bool DrawBorder = true)
         {
             try
             {
-                TextWriterWhereColor.WriteWhere(ProgressTools.ProgressUpperLeftCornerChar + ProgressTools.ProgressUpperFrameChar.Repeat(ConsoleWrapper.WindowWidth - 10) + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true, FrameColor);
-                TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLeftFrameChar + " ".Repeat(ConsoleWrapper.WindowWidth - 10) + ProgressTools.ProgressRightFrameChar, Left, Top + 1, true, FrameColor);
-                TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLowerLeftCornerChar + ProgressTools.ProgressLowerFrameChar.Repeat(ConsoleWrapper.WindowWidth - 10) + ProgressTools.ProgressLowerRightCornerChar, Left, Top + 2, true, FrameColor);
+                // Draw the border
+                if (DrawBorder)
+                {
+                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressUpperLeftCornerChar + ProgressTools.ProgressUpperFrameChar.Repeat(ConsoleWrapper.WindowWidth - 10) + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true, FrameColor);
+                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLeftFrameChar + " ".Repeat(ConsoleWrapper.WindowWidth - 10) + ProgressTools.ProgressRightFrameChar, Left, Top + 1, true, FrameColor);
+                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLowerLeftCornerChar + ProgressTools.ProgressLowerFrameChar.Repeat(ConsoleWrapper.WindowWidth - 10) + ProgressTools.ProgressLowerRightCornerChar, Left, Top + 2, true, FrameColor);
+                }
+
+                // Draw the progress bar
                 ColorTools.SetConsoleColor(ProgressColor, true, true);
                 WriterPlainManager.CurrentPlain.WriteWherePlain(" ".Repeat(ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, 10)), Left + 1, Top + 1, true);
             }
