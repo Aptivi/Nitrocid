@@ -23,6 +23,7 @@ using System.IO;
 using System.Threading;
 using KS.Arguments;
 using KS.Arguments.ArgumentBase;
+using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Files.Querying;
@@ -385,6 +386,9 @@ namespace KS.Kernel
                 ReminderManager.ReminderThread.Start();
             if (!EventManager.EventThread.IsAlive)
                 EventManager.EventThread.Start();
+
+            // Initialize console resize listener
+            ConsoleResizeListener.StartResizeListener();
 
             // Install cancellation handler
             if (!Flags.CancellationHandlerInstalled)

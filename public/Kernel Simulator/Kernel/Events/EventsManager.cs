@@ -134,7 +134,8 @@ namespace KS.Kernel.Events
             "LanguagesInstalled",
             "LanguagesUninstalled",
             "LanguagesInstallError",
-            "LanguagesUninstallError"
+            "LanguagesUninstallError",
+            "ResizeDetected"
         };
 
         /// <summary>
