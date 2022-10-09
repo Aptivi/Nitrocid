@@ -85,18 +85,14 @@ namespace KS.ConsoleBase
         /// <param name="Vars">Variables to be formatted in the text</param>
         public static void GetFilteredPositions(string Text, ref int Left, ref int Top, params object[] Vars)
         {
-            // First, get the old cursor positions
-            int OldLeft = ConsoleWrapper.CursorLeft;
-            int OldTop = ConsoleWrapper.CursorTop;
-
-            // Second, filter all text from the VT escape sequences
+            // Filter all text from the VT escape sequences
             Text = FilterVTSequences(Text);
 
-            // Third, seek through filtered text (make it seem like it came from Linux by removing CR (\r)), return to the old position, and return the filtered positions
+            // Seek through filtered text (make it seem like it came from Linux by removing CR (\r)), return to the old position, and return the filtered positions
             Text = StringManipulate.FormatString(Text, Vars);
             Text = Text.Replace(Convert.ToString(Convert.ToChar(13)), "");
-            int LeftSeekPosition = OldLeft;
-            int TopSeekPosition = OldTop;
+            int LeftSeekPosition = ConsoleWrapper.CursorLeft;
+            int TopSeekPosition = ConsoleWrapper.CursorTop;
             for (int i = 1, loopTo = Text.Length; i <= loopTo; i++)
             {
                 // If we spotted a new line character, get down by one line.
@@ -125,9 +121,6 @@ namespace KS.ConsoleBase
             }
             Left = LeftSeekPosition;
             Top = TopSeekPosition;
-
-            // Finally, set the correct old position
-            ConsoleWrapper.SetCursorPosition(OldLeft, OldTop);
         }
 
         /// <summary>
