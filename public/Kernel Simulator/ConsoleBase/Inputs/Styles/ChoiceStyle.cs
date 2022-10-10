@@ -67,7 +67,8 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
-        public static string PromptChoice(string Question, string AnswersStr, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) => PromptChoice(Question, AnswersStr, Array.Empty<string>(), OutputType, PressEnter);
+        public static string PromptChoice(string Question, string AnswersStr, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) => 
+            PromptChoice(Question, AnswersStr, Array.Empty<string>(), OutputType, PressEnter);
 
         /// <summary>
         /// Prompts user for choice
@@ -77,19 +78,33 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
-        public static string PromptChoice(string Question, string AnswersStr, string[] AnswersTitles, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false)
+        public static string PromptChoice(string Question, string AnswersStr, string[] AnswersTitles, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
+            PromptChoice(Question, AnswersStr, AnswersTitles, "", Array.Empty<string>(), OutputType, PressEnter);
+
+        /// <summary>
+        /// Prompts user for choice
+        /// </summary>
+        /// <param name="Question">A question</param>
+        /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
+        /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
+        /// <param name="AlternateAnswersStr">Set of alternate answers. They can be written like this: Y/N/C.</param>
+        /// <param name="AlternateAnswersTitles">Working titles for each alternate answer. It must be the same amount as the alternate answers.</param>
+        /// <param name="OutputType">Output type of choices</param>
+        /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
+        public static string PromptChoice(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, string[] AlternateAnswersTitles, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false)
         {
             while (true)
             {
                 // Variables
                 var answers = AnswersStr.Split('/');
+                var altAnswers = AlternateAnswersStr.Split('/');
                 string answer;
 
                 // Check to see if the answer titles are the same
                 if (answers.Length != AnswersTitles.Length)
-                {
                     Array.Resize(ref AnswersTitles, answers.Length);
-                }
+                if (altAnswers.Length != AlternateAnswersTitles.Length)
+                    Array.Resize(ref AlternateAnswersTitles, altAnswers.Length);
 
                 // Ask a question
                 switch (OutputType)
@@ -97,13 +112,13 @@ namespace KS.ConsoleBase.Inputs.Styles
                     case ChoiceOutputType.OneLine:
                         {
                             TextWriterColor.Write(Question, false, ColorTools.ColTypes.Question);
-                            TextWriterColor.Write(" <{0}> ", false, ColorTools.ColTypes.Input, AnswersStr);
+                            TextWriterColor.Write(" <{0}/{1}> ", false, ColorTools.ColTypes.Input, AnswersStr, AlternateAnswersStr);
                             break;
                         }
                     case ChoiceOutputType.TwoLines:
                         {
                             TextWriterColor.Write(Question, true, ColorTools.ColTypes.Question);
-                            TextWriterColor.Write("<{0}> ", false, ColorTools.ColTypes.Input, AnswersStr);
+                            TextWriterColor.Write("<{0}/{1}> ", false, ColorTools.ColTypes.Input, AnswersStr, AlternateAnswersStr);
                             break;
                         }
                     case ChoiceOutputType.Modern:
@@ -122,18 +137,38 @@ namespace KS.ConsoleBase.Inputs.Styles
                                 }
                                 TextWriterColor.Write(AnswerOption, true, ColorTools.ColTypes.Option);
                             }
+                            if (altAnswers.Length > 0)
+                                TextWriterColor.Write(" ----------------", true, ColorTools.ColTypes.AlternativeOption);
+                            for (int AnswerIndex = 0; AnswerIndex <= altAnswers.Length - 1; AnswerIndex++)
+                            {
+                                string AnswerInstance = altAnswers[AnswerIndex];
+                                string AnswerTitle = AlternateAnswersTitles[AnswerIndex] ?? "";
+                                string AnswerOption = $" {AnswerInstance}) {AnswerTitle}";
+                                int AnswerTitleLeft = altAnswers.Max(x => $" {x}) ".Length);
+                                if (AnswerTitleLeft < ConsoleWrapper.WindowWidth)
+                                {
+                                    int blankRepeats = AnswerTitleLeft - $" {AnswerInstance}) ".Length;
+                                    AnswerOption = $" {AnswerInstance}) " + " ".Repeat(blankRepeats) + $"{AnswerTitle}";
+                                }
+                                TextWriterColor.Write(AnswerOption, true, ColorTools.ColTypes.AlternativeOption);
+                            }
                             TextWriterColor.Write(Kernel.Kernel.NewLine + ">> ", false, ColorTools.ColTypes.Input);
                             break;
                         }
                     case ChoiceOutputType.Table:
                         {
                             var ChoiceHeader = new[] { Translate.DoTranslation("Possible answers"), Translate.DoTranslation("Answer description") };
-                            var ChoiceData = new string[answers.Length, 2];
+                            var ChoiceData = new string[answers.Length + altAnswers.Length, 2];
                             TextWriterColor.Write(Question, true, ColorTools.ColTypes.Question);
                             for (int AnswerIndex = 0; AnswerIndex <= answers.Length - 1; AnswerIndex++)
                             {
                                 ChoiceData[AnswerIndex, 0] = answers[AnswerIndex];
                                 ChoiceData[AnswerIndex, 1] = AnswersTitles[AnswerIndex] ?? "";
+                            }
+                            for (int AnswerIndex = 0; AnswerIndex <= altAnswers.Length - 1; AnswerIndex++)
+                            {
+                                ChoiceData[answers.Length - 1 + AnswerIndex, 0] = altAnswers[AnswerIndex];
+                                ChoiceData[answers.Length - 1 + AnswerIndex, 1] = AlternateAnswersTitles[AnswerIndex] ?? "";
                             }
                             TableColor.WriteTable(ChoiceHeader, ChoiceData, 2);
                             TextWriterColor.Write(Kernel.Kernel.NewLine + ">> ", false, ColorTools.ColTypes.Input);
@@ -153,7 +188,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 }
 
                 // Check if answer is correct.
-                if (answers.Contains(answer))
+                if (answers.Contains(answer) || altAnswers.Contains(answer))
                 {
                     return answer;
                 }
