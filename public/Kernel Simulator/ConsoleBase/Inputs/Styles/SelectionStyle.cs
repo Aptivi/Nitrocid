@@ -92,7 +92,7 @@ namespace KS.ConsoleBase.Inputs.Styles
 
                 // Make pages based on console window height
                 int pages = finalAnswers.Count / (ConsoleWrapper.WindowHeight - ConsoleWrapper.CursorTop);
-                int answersPerPage = finalAnswers.Count / pages;
+                int answersPerPage = pages == 0 ? finalAnswers.Count : finalAnswers.Count / pages;
                 int displayAnswersPerPage = answersPerPage - ConsoleWrapper.CursorTop;
 
                 // The reason for subtracting the highlighted answer by one is that because while the highlighted answer number is one-based, the indexes are zero-based,
