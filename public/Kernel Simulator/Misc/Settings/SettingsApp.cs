@@ -51,7 +51,6 @@ namespace KS.Misc.Settings
         public static void OpenMainPage(SettingsType SettingsType)
         {
             bool PromptFinished = false;
-            string AnswerString;
             var SettingsToken = OpenSettingsResource(SettingsType);
             int MaxSections = SettingsToken.Count();
 
@@ -59,60 +58,80 @@ namespace KS.Misc.Settings
             {
                 ConsoleBase.ConsoleWrapper.Clear();
 
-                // List sections
-                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Welcome to Settings!"), true);
-                TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("Select section:") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.NeutralText);
+                // Populate sections
+                var sections = new List<string>();
+                var sectionNums = new List<int>();
+                var altSections = new List<string>()
+                {
+                    "Find a Setting",
+                    "Save Settings",
+                    "Save Settings As",
+                    "Load Settings From",
+                    "Exit",
+                };
+                var altSectionNums = new List<int>()
+                {
+                    MaxSections + 1,
+                    MaxSections + 2,
+                    MaxSections + 3,
+                    MaxSections + 4,
+                    MaxSections + 5
+                };
                 for (int SectionIndex = 0; SectionIndex <= MaxSections - 1; SectionIndex++)
                 {
                     JProperty Section = (JProperty)SettingsToken.ToList()[SectionIndex];
                     if (SettingsType != SettingsType.Normal)
                     {
-                        TextWriterColor.Write(" {0}) " + Section.Name + "...", true, ColorTools.ColTypes.Option, SectionIndex + 1);
+                        sections.Add(Section.Name);
+                        sectionNums.Add(SectionIndex + 1);
                     }
                     else
                     {
-                        TextWriterColor.Write(" {0}) " + Section.First["DisplayAs"], true, ColorTools.ColTypes.Option, SectionIndex + 1);
+                        sections.Add(Section.First["DisplayAs"].ToString());
+                        sectionNums.Add(SectionIndex + 1);
                     }
                 }
-                TextWriterColor.Write();
-                TextWriterColor.Write(" {0}) " + Translate.DoTranslation("Find a Setting"), true, ColorTools.ColTypes.AlternativeOption, MaxSections + 1);
-                TextWriterColor.Write(" {0}) " + Translate.DoTranslation("Save Settings"), true, ColorTools.ColTypes.AlternativeOption, MaxSections + 2);
-                TextWriterColor.Write(" {0}) " + Translate.DoTranslation("Save Settings As"), true, ColorTools.ColTypes.AlternativeOption, MaxSections + 3);
-                TextWriterColor.Write(" {0}) " + Translate.DoTranslation("Load Settings From"), true, ColorTools.ColTypes.AlternativeOption, MaxSections + 4);
-                TextWriterColor.Write(" {0}) " + Translate.DoTranslation("Exit"), true, ColorTools.ColTypes.AlternativeOption, MaxSections + 5);
 
-                // Prompt user
-                TextWriterColor.Write();
-                TextWriterColor.Write("> ", false, ColorTools.ColTypes.Input);
-                AnswerString = Input.ReadLine();
-                DebugWriter.WriteDebug(DebugLevel.I, "User answered {0}", AnswerString);
-                TextWriterColor.Write();
-
-                // Check for input
-                DebugWriter.WriteDebug(DebugLevel.I, "Is the answer numeric? {0}", StringQuery.IsStringNumeric(AnswerString));
-                if (int.TryParse(AnswerString, out int AnswerInt))
+                // Prompt for selection and check the answer
+                int Answer = ConsoleBase.Inputs.Styles.SelectionStyle.PromptSelection(Translate.DoTranslation("Select section:"), string.Join("/", sectionNums), sections.ToArray(), string.Join("/", altSectionNums), altSections.ToArray());
+                if (Answer >= 1 & Answer <= MaxSections)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Succeeded. Checking the answer if it points to the right direction...");
-                    if (AnswerInt >= 1 & AnswerInt <= MaxSections)
+                    // The selected answer is a section
+                    JProperty SelectedSection = (JProperty)SettingsToken.ToList()[Answer - 1];
+                    DebugWriter.WriteDebug(DebugLevel.I, "Opening section {0}...", SelectedSection.Name);
+                    OpenSection(SelectedSection.Name, SettingsToken, SettingsType);
+                }
+                else if (Answer == MaxSections + 1)
+                {
+                    // The selected answer is "Find a Setting"
+                    VariableFinder(SettingsToken);
+                }
+                else if (Answer == MaxSections + 2)
+                {
+                    // The selected answer is "Save Settings"
+                    DebugWriter.WriteDebug(DebugLevel.I, "Saving settings...");
+                    try
                     {
-                        // The selected answer is a section
-                        JProperty SelectedSection = (JProperty)SettingsToken.ToList()[AnswerInt - 1];
-                        DebugWriter.WriteDebug(DebugLevel.I, "Opening section {0}...", SelectedSection.Name);
-                        OpenSection(SelectedSection.Name, SettingsToken, SettingsType);
+                        Config.CreateConfig();
+                        CustomSaverTools.SaveCustomSaverSettings();
                     }
-                    else if (AnswerInt == MaxSections + 1)
+                    catch (Exception ex)
                     {
-                        // The selected answer is "Find a Setting"
-                        VariableFinder(SettingsToken);
+                        TextWriterColor.Write(ex.Message, true, ColorTools.ColTypes.Error);
+                        DebugWriter.WriteDebugStackTrace(ex);
+                        ConsoleBase.ConsoleWrapper.ReadKey();
                     }
-                    else if (AnswerInt == MaxSections + 2)
+                }
+                else if (Answer == MaxSections + 3)
+                {
+                    // The selected answer is "Save Settings As"
+                    TextWriterColor.Write(Translate.DoTranslation("Where do you want to save the current kernel settings?"), true, ColorTools.ColTypes.Question);
+                    string Location = Filesystem.NeutralizePath(Input.ReadLine());
+                    if (!Checking.FileExists(Location))
                     {
-                        // The selected answer is "Save Settings"
-                        DebugWriter.WriteDebug(DebugLevel.I, "Saving settings...");
                         try
                         {
-                            Config.CreateConfig();
-                            CustomSaverTools.SaveCustomSaverSettings();
+                            Config.CreateConfig(Location);
                         }
                         catch (Exception ex)
                         {
@@ -121,75 +140,49 @@ namespace KS.Misc.Settings
                             ConsoleBase.ConsoleWrapper.ReadKey();
                         }
                     }
-                    else if (AnswerInt == MaxSections + 3)
-                    {
-                        // The selected answer is "Save Settings As"
-                        TextWriterColor.Write(Translate.DoTranslation("Where do you want to save the current kernel settings?"), true, ColorTools.ColTypes.Question);
-                        string Location = Filesystem.NeutralizePath(Input.ReadLine());
-                        if (!Checking.FileExists(Location))
-                        {
-                            try
-                            {
-                                Config.CreateConfig(Location);
-                            }
-                            catch (Exception ex)
-                            {
-                                TextWriterColor.Write(ex.Message, true, ColorTools.ColTypes.Error);
-                                DebugWriter.WriteDebugStackTrace(ex);
-                                ConsoleBase.ConsoleWrapper.ReadKey();
-                            }
-                        }
-                        else
-                        {
-                            TextWriterColor.Write(Translate.DoTranslation("Can't save kernel settings on top of existing file."), true, ColorTools.ColTypes.Error);
-                            ConsoleBase.ConsoleWrapper.ReadKey();
-                        }
-                    }
-                    else if (AnswerInt == MaxSections + 4)
-                    {
-                        // The selected answer is "Load Settings From"
-                        TextWriterColor.Write(Translate.DoTranslation("Where do you want to load the current kernel settings from?"), true, ColorTools.ColTypes.Question);
-                        string Location = Filesystem.NeutralizePath(Input.ReadLine());
-                        if (Checking.FileExists(Location))
-                        {
-                            try
-                            {
-                                Config.ReadConfig(Location);
-                                Config.CreateConfig();
-                            }
-                            catch (Exception ex)
-                            {
-                                TextWriterColor.Write(ex.Message, true, ColorTools.ColTypes.Error);
-                                DebugWriter.WriteDebugStackTrace(ex);
-                                ConsoleBase.ConsoleWrapper.ReadKey();
-                            }
-                        }
-                        else
-                        {
-                            TextWriterColor.Write(Translate.DoTranslation("File not found."), true, ColorTools.ColTypes.Error);
-                            ConsoleBase.ConsoleWrapper.ReadKey();
-                        }
-                    }
-                    else if (AnswerInt == MaxSections + 5)
-                    {
-                        // The selected answer is "Exit"
-                        DebugWriter.WriteDebug(DebugLevel.W, "Exiting...");
-                        PromptFinished = true;
-                        ConsoleBase.ConsoleWrapper.Clear();
-                    }
                     else
                     {
-                        // Invalid selection
-                        DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
-                        TextWriterColor.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, ColorTools.ColTypes.Error, AnswerInt);
-                        TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
+                        TextWriterColor.Write(Translate.DoTranslation("Can't save kernel settings on top of existing file."), true, ColorTools.ColTypes.Error);
                         ConsoleBase.ConsoleWrapper.ReadKey();
                     }
                 }
-                else if (ReadLineReboot.ReadLine.ReadRanToCompletion)
+                else if (Answer == MaxSections + 4)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.W, "Answer is not numeric.");
-                    TextWriterColor.Write(Translate.DoTranslation("The answer must be numeric."), true, ColorTools.ColTypes.Error);
+                    // The selected answer is "Load Settings From"
+                    TextWriterColor.Write(Translate.DoTranslation("Where do you want to load the current kernel settings from?"), true, ColorTools.ColTypes.Question);
+                    string Location = Filesystem.NeutralizePath(Input.ReadLine());
+                    if (Checking.FileExists(Location))
+                    {
+                        try
+                        {
+                            Config.ReadConfig(Location);
+                            Config.CreateConfig();
+                        }
+                        catch (Exception ex)
+                        {
+                            TextWriterColor.Write(ex.Message, true, ColorTools.ColTypes.Error);
+                            DebugWriter.WriteDebugStackTrace(ex);
+                            ConsoleBase.ConsoleWrapper.ReadKey();
+                        }
+                    }
+                    else
+                    {
+                        TextWriterColor.Write(Translate.DoTranslation("File not found."), true, ColorTools.ColTypes.Error);
+                        ConsoleBase.ConsoleWrapper.ReadKey();
+                    }
+                }
+                else if (Answer == MaxSections + 5)
+                {
+                    // The selected answer is "Exit"
+                    DebugWriter.WriteDebug(DebugLevel.W, "Exiting...");
+                    PromptFinished = true;
+                    ConsoleBase.ConsoleWrapper.Clear();
+                }
+                else
+                {
+                    // Invalid selection
+                    DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
+                    TextWriterColor.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, ColorTools.ColTypes.Error, Answer);
                     TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
                     ConsoleBase.ConsoleWrapper.ReadKey();
                 }
