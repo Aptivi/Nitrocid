@@ -582,7 +582,7 @@ namespace KS.Kernel
 				//Check to see if we're running from Ubuntu PPA
 				bool PPASpotted = Paths.ExecPath.StartsWith("/usr/lib/ks");
 				if (PPASpotted)
-					SplashReport.ReportProgress(Translate.DoTranslation("Use apt to update Kernel Simulator."), 10, ColTypes.Error);
+					SplashReport.ReportProgressError(Translate.DoTranslation("Use apt to update Kernel Simulator."));
 
 				//Download debug symbols
 				if (!Checking.FileExists(Assembly.GetExecutingAssembly().Location.Replace(".exe", ".pdb")) & !PPASpotted)

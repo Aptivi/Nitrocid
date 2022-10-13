@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System;
 using System.Threading;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
@@ -73,6 +74,14 @@ namespace KS.Misc.Splash.Splashes
             if (!Beginning)
                 TextWriterColor.Write(".", true, ColorTools.ColTypes.NeutralText);
             TextWriterColor.Write($"{ProgressReport}:", false, ColorTools.ColTypes.NeutralText, Vars);
+            Beginning = false;
+        }
+
+        public void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars)
+        {
+            if (!Beginning)
+                TextWriterColor.Write(".", true, ColorTools.ColTypes.NeutralText);
+            TextWriterColor.Write($"{ErrorReport}:", false, ColorTools.ColTypes.NeutralText, Vars);
             Beginning = false;
         }
 

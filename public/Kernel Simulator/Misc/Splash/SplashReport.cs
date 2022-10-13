@@ -19,6 +19,7 @@
 using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Misc.Writers.ConsoleWriters;
+using System;
 
 namespace KS.Misc.Splash
 {
@@ -58,7 +59,8 @@ namespace KS.Misc.Splash
         /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
         /// it will report the progress to the splash system. You can force it to report the progress by passing force.
         /// </remarks>
-        internal static void ReportProgress(string Text, int Progress, ColorTools.ColTypes ColTypes = ColorTools.ColTypes.NeutralText, params string[] Vars) => ReportProgress(Text, Progress, false, SplashManager.CurrentSplash, ColTypes, Vars);
+        internal static void ReportProgress(string Text, int Progress, ColorTools.ColTypes ColTypes = ColorTools.ColTypes.NeutralText, params string[] Vars) => 
+            ReportProgress(Text, Progress, false, SplashManager.CurrentSplash, ColTypes, Vars);
 
         /// <summary>
         /// Reports the progress for the splash screen while the kernel is booting.
@@ -96,6 +98,66 @@ namespace KS.Misc.Splash
             else
             {
                 TextWriterColor.Write(Text, true, ColTypes, Vars);
+            }
+        }
+
+        /// <summary>
+        /// Reports the progress for the splash screen while the kernel is booting.
+        /// </summary>
+        /// <param name="Text">The progress text to indicate how did the kernel progress</param>
+        /// <param name="Vars">Varibales to be expanded to text</param>
+        /// <remarks>
+        /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
+        /// it will report the progress to the splash system. You can force it to report the progress by passing force.
+        /// </remarks>
+        internal static void ReportProgressError(string Text, params string[] Vars) =>
+            ReportProgressError(Text, false, SplashManager.CurrentSplash, null, Vars);
+
+        /// <summary>
+        /// Reports the progress for the splash screen while the kernel is booting.
+        /// </summary>
+        /// <param name="Text">The progress text to indicate how did the kernel progress</param>
+        /// <param name="exception">Exception information</param>
+        /// <param name="Vars">Varibales to be expanded to text</param>
+        /// <remarks>
+        /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
+        /// it will report the progress to the splash system. You can force it to report the progress by passing force.
+        /// </remarks>
+        internal static void ReportProgressError(string Text, Exception exception, params string[] Vars) =>
+            ReportProgressError(Text, false, SplashManager.CurrentSplash, exception, Vars);
+
+        /// <summary>
+        /// Reports the progress for the splash screen while the kernel is booting.
+        /// </summary>
+        /// <param name="Text">The progress text to indicate how did the kernel progress</param>
+        /// <param name="force">Force report progress to splash</param>
+        /// <param name="splash">Splash interface</param>
+        /// <param name="exception">Exception information</param>
+        /// <param name="Vars">Varibales to be expanded to text</param>
+        /// <remarks>
+        /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
+        /// it will report the progress to the splash system. You can force it to report the progress by passing force.
+        /// </remarks>
+        internal static void ReportProgressError(string Text, bool force = false, ISplash splash = null, Exception exception = null, params string[] Vars)
+        {
+            if (!KernelBooted || force)
+            {
+                _ProgressText = Text;
+                if (SplashManager.CurrentSplashInfo.DisplaysProgress)
+                {
+                    if (Flags.EnableSplash && splash != null)
+                    {
+                        splash.ReportError(_Progress, Text, exception, Vars);
+                    }
+                    else if (!Flags.QuietKernel)
+                    {
+                        TextWriterColor.Write($"[{_Progress}%] {Text}", true, ColorTools.ColTypes.Error, Vars);
+                    }
+                }
+            }
+            else
+            {
+                TextWriterColor.Write(Text, true, ColorTools.ColTypes.Error, Vars);
             }
         }
 

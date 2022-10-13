@@ -88,20 +88,20 @@ namespace KS.Modifications
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", modFile, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    SplashReport.ReportProgress(Translate.DoTranslation("Mod can't be loaded because of the following: "), 0, ColorTools.ColTypes.Error);
+                    SplashReport.ReportProgressError(Translate.DoTranslation("Mod can't be loaded because of the following: "));
                     foreach (Exception LoaderException in ex.LoaderExceptions)
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "Loader exception: {0}", LoaderException.Message);
                         DebugWriter.WriteDebugStackTrace(LoaderException);
-                        SplashReport.ReportProgress(LoaderException.Message, 0, ColorTools.ColTypes.Error);
+                        SplashReport.ReportProgressError(LoaderException.Message);
                     }
-                    SplashReport.ReportProgress(Translate.DoTranslation("Contact the vendor of the mod to upgrade the mod to the compatible version."), 0, ColorTools.ColTypes.Error);
+                    SplashReport.ReportProgressError(Translate.DoTranslation("Contact the vendor of the mod to upgrade the mod to the compatible version."));
                 }
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", modFile, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    SplashReport.ReportProgress(Translate.DoTranslation("Mod can't be loaded because of the following: ") + ex.Message, 0, ColorTools.ColTypes.Error);
+                    SplashReport.ReportProgressError(Translate.DoTranslation("Mod can't be loaded because of the following: ") + ex.Message);
                 }
             }
             else
@@ -139,14 +139,14 @@ namespace KS.Modifications
                         if (Kernel.Kernel.KernelApiVersion < script.MinimumSupportedApiVersion)
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "Trying to load mod {0} that requires minimum api version {1} on api {2}", modFile, script.MinimumSupportedApiVersion.ToString(), Kernel.Kernel.KernelApiVersion.ToString());
-                            SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} requires minimum API version {1}, but you have version {2}. Upgrading Kernel Simulator usually helps. Mod parsing failed."), 0, ColorTools.ColTypes.Error, modFile, script.MinimumSupportedApiVersion.ToString(), Kernel.Kernel.KernelApiVersion.ToString());
+                            SplashReport.ReportProgressError(Translate.DoTranslation("Mod {0} requires minimum API version {1}, but you have version {2}. Upgrading Kernel Simulator usually helps. Mod parsing failed."), modFile, script.MinimumSupportedApiVersion.ToString(), Kernel.Kernel.KernelApiVersion.ToString());
                             return;
                         }
                     }
                     catch
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Trying to load mod {0} that has undeterminable minimum API version.", modFile);
-                        SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} may not work properly with this API version. Mod may fail to start up. Contact the mod vendor to get a latest copy."), 0, ColorTools.ColTypes.Error, modFile);
+                        SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} may not work properly with this API version. Mod may fail to start up. Contact the mod vendor to get a latest copy."), 0, ColorTools.ColTypes.Warning, modFile);
                     }
 
                     // Start the mod
@@ -157,7 +157,7 @@ namespace KS.Modifications
                     if (string.IsNullOrWhiteSpace(script.ModPart))
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "No part name for {0}", modFile);
-                        SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} does not have the part name. Mod parsing failed. Review the source code."), 0, ColorTools.ColTypes.Error, modFile);
+                        SplashReport.ReportProgressError(Translate.DoTranslation("Mod {0} does not have the part name. Mod parsing failed. Review the source code."), modFile);
                         return;
                     }
 
@@ -169,7 +169,7 @@ namespace KS.Modifications
                             if (string.IsNullOrWhiteSpace(Command))
                             {
                                 DebugWriter.WriteDebug(DebugLevel.W, "No command for {0}", modFile);
-                                SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} has invalid command. Mod parsing failed. Review the source code."), 0, ColorTools.ColTypes.Error, modFile);
+                                SplashReport.ReportProgressError(Translate.DoTranslation("Mod {0} has invalid command. Mod parsing failed. Review the source code."), modFile);
                                 return;
                             }
                         }
@@ -269,7 +269,7 @@ namespace KS.Modifications
                 {
                     Kernel.Events.EventsManager.FireEvent("ModFinalizationFailed", modFile, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    SplashReport.ReportProgress(Translate.DoTranslation("Failed to finalize mod {0}: {1}"), 0, ColorTools.ColTypes.Error, modFile, ex.Message);
+                    SplashReport.ReportProgressError(Translate.DoTranslation("Failed to finalize mod {0}: {1}"), modFile, ex.Message);
                 }
             }
             else

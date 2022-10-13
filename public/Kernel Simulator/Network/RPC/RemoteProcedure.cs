@@ -92,7 +92,7 @@ namespace KS.Network.RPC
                 }
                 catch (ThreadStateException ex)
                 {
-                    SplashReport.ReportProgress(Translate.DoTranslation("RPC is already running."), 5, ColorTools.ColTypes.Error);
+                    SplashReport.ReportProgressError(Translate.DoTranslation("RPC is already running."));
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }

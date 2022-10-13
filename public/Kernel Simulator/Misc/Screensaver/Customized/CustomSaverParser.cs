@@ -76,12 +76,12 @@ namespace KS.Misc.Screensaver.Customized
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "Error trying to load dynamic screensaver {0} because of reflection failure: {1}", file, ex.Message);
                         DebugWriter.WriteDebugStackTrace(ex);
-                        SplashReport.ReportProgress(Translate.DoTranslation("Screensaver can't be loaded because of the following: "), 0, ColorTools.ColTypes.Error);
+                        SplashReport.ReportProgressError(Translate.DoTranslation("Screensaver can't be loaded because of the following: "));
                         foreach (Exception LoaderException in ex.LoaderExceptions)
                         {
                             DebugWriter.WriteDebug(DebugLevel.E, "Loader exception: {0}", LoaderException.Message);
                             DebugWriter.WriteDebugStackTrace(LoaderException);
-                            SplashReport.ReportProgress(LoaderException.Message, 0, ColorTools.ColTypes.Error);
+                            SplashReport.ReportProgressError(LoaderException.Message);
                         }
                     }
                     catch (Exception ex)
@@ -97,7 +97,7 @@ namespace KS.Misc.Screensaver.Customized
             }
             else
             {
-                SplashReport.ReportProgress(Translate.DoTranslation("Screensaver {0} does not exist."), 0, ColorTools.ColTypes.Error, file);
+                SplashReport.ReportProgressError(Translate.DoTranslation("Screensaver {0} does not exist."), file);
                 DebugWriter.WriteDebug(DebugLevel.E, "The file {0} does not exist for compilation.", file);
             }
         }

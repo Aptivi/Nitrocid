@@ -88,5 +88,9 @@ namespace KS.Misc.Splash.Splashes
         {
         }
 
+        public void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars)
+        {
+        }
+
     }
 }

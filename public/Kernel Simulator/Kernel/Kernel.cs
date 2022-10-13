@@ -169,7 +169,7 @@ namespace KS.Kernel
                         }
                         else
                         {
-                            SplashReport.ReportProgress(Translate.DoTranslation("Remote debug failed to start: {0}").FormatString(RemoteDebugger.RDebugFailedReason.Message), 5, ColorTools.ColTypes.Error);
+                            SplashReport.ReportProgressError(Translate.DoTranslation("Remote debug failed to start: {0}").FormatString(RemoteDebugger.RDebugFailedReason.Message));
                         }
                     }
                     SplashReport.ReportProgress(Translate.DoTranslation("Starting RPC..."), 3, ColorTools.ColTypes.NeutralText);

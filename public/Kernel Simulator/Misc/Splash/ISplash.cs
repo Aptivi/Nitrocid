@@ -16,6 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System;
+
 namespace KS.Misc.Splash
 {
     /// <summary>
@@ -55,6 +57,14 @@ namespace KS.Misc.Splash
         /// <param name="Progress">The progress indicator of the kernel</param>
         /// <param name="Vars">Variables to be formatted in the text</param>
         void Report(int Progress, string ProgressReport, params object[] Vars);
+        /// <summary>
+        /// Report the progress error
+        /// </summary>
+        /// <param name="Progress">The progress indicator of the kernel</param>
+        /// <param name="ErrorReport">The progress text to indicate what went wrong</param>
+        /// <param name="ExceptionInfo">Exception that caused the error</param>
+        /// <param name="Vars">Variables to be formatted in the text</param>
+        void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars);
 
     }
 }

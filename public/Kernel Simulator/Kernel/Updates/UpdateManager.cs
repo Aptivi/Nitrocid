@@ -71,7 +71,7 @@ namespace KS.Kernel.Updates
             // Check to see if we're running from Ubuntu PPA
             if (Paths.ExecPath.StartsWith("/usr/lib/ks"))
             {
-                SplashReport.ReportProgress(Translate.DoTranslation("Use apt to update Kernel Simulator."), 10, ColorTools.ColTypes.Error);
+                SplashReport.ReportProgressError(Translate.DoTranslation("Use apt to update Kernel Simulator."));
                 return;
             }
 
@@ -102,7 +102,7 @@ namespace KS.Kernel.Updates
             }
             else if (AvailableUpdate is null)
             {
-                SplashReport.ReportProgress(Translate.DoTranslation("Failed to check for updates."), 10, ColorTools.ColTypes.Error);
+                SplashReport.ReportProgressError(Translate.DoTranslation("Failed to check for updates."));
             }
 #endif
         }

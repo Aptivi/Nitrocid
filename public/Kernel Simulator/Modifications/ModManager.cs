@@ -97,7 +97,7 @@ namespace KS.Modifications
             }
             else
             {
-                SplashReport.ReportProgress(Translate.DoTranslation("Parsing mods not allowed on safe mode."), 0, ColorTools.ColTypes.Error);
+                SplashReport.ReportProgressError(Translate.DoTranslation("Parsing mods not allowed on safe mode."));
             }
         }
 
@@ -133,7 +133,7 @@ namespace KS.Modifications
                     }
                     else
                     {
-                        SplashReport.ReportProgress(Translate.DoTranslation("Mod has already been started!"), 0, ColorTools.ColTypes.Error);
+                        SplashReport.ReportProgressError(Translate.DoTranslation("Mod has already been started!"));
                     }
                 }
                 else
@@ -143,7 +143,7 @@ namespace KS.Modifications
             }
             else
             {
-                SplashReport.ReportProgress(Translate.DoTranslation("Parsing mods not allowed on safe mode."), 0, ColorTools.ColTypes.Error);
+                SplashReport.ReportProgressError(Translate.DoTranslation("Parsing mods not allowed on safe mode."));
             }
         }
 

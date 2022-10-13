@@ -95,5 +95,22 @@ namespace KS.Misc.Splash.Splashes
             Beginning = false;
         }
 
+        public void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars)
+        {
+            if (!Beginning)
+            {
+                TextWriterWhereColor.WriteWhere("[    ]", IndicatorLeft, IndicatorTop, true, OpenRCPlaceholderColor);
+                TextWriterWhereColor.WriteWhere("fail", IndicatorLeft + 1, IndicatorTop, true, OpenRCIndicatorColor);
+            }
+            TextWriterColor.Write($" * ", false, OpenRCIndicatorColor);
+            TextWriterColor.Write(ErrorReport, true, ColorTools.ColTypes.NeutralText, Vars);
+            if (!Beginning)
+            {
+                IndicatorLeft = ConsoleBase.ConsoleWrapper.WindowWidth - 8;
+                IndicatorTop = ConsoleBase.ConsoleWrapper.CursorTop - 1;
+            }
+            Beginning = false;
+        }
+
     }
 }
