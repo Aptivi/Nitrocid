@@ -20,6 +20,7 @@ using System;
 using System.IO;
 using System.Linq;
 using KS.Files;
+using KS.Files.Querying;
 using KS.Files.Read;
 
 namespace KS.Kernel.Debugging
@@ -35,6 +36,8 @@ namespace KS.Kernel.Debugging
         /// </summary>
         public static double DebugQuota = 1073741824d; // 1073741824 bytes = 1 GiB (1 GB for Windows)
 
+        internal static string DebugPath = "";
+
         /// <summary>
         /// Checks to see if the debug file exceeds the quota
         /// </summary>
@@ -42,13 +45,14 @@ namespace KS.Kernel.Debugging
         {
             try
             {
-                var FInfo = new FileInfo(Paths.GetKernelPath(KernelPathType.Debugging));
+                string debugFilePath = DebugPath;
+                var FInfo = new FileInfo(debugFilePath);
                 double OldSize = FInfo.Length;
                 if (OldSize > DebugQuota)
                 {
-                    var Lines = FileRead.ReadAllLinesNoBlock(Paths.GetKernelPath(KernelPathType.Debugging)).Skip(5).ToArray();
+                    var Lines = FileRead.ReadAllLinesNoBlock(debugFilePath).Skip(5).ToArray();
                     DebugWriter.DebugStreamWriter.Close();
-                    DebugWriter.DebugStreamWriter = new StreamWriter(Paths.GetKernelPath(KernelPathType.Debugging)) { AutoFlush = true };
+                    DebugWriter.DebugStreamWriter = new StreamWriter(debugFilePath) { AutoFlush = true };
                     for (int l = 0; l <= Lines.Length - 1; l++)
                         // Remove the first 5 lines from stream.
                         DebugWriter.DebugStreamWriter.WriteLine(Lines[l]);

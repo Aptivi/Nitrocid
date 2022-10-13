@@ -21,6 +21,7 @@ using System.Diagnostics;
 using System.Linq;
 using static System.Reflection.Assembly;
 using System.Threading;
+using System.IO;
 using ColorSeq;
 using Extensification.StringExts;
 using KS.Arguments.ArgumentBase;
@@ -123,6 +124,9 @@ namespace KS.Kernel
                     if (!KernelPlatform.IsOnUnix())
                         Color255.Initialize255();
                     AppDomain.CurrentDomain.AssemblyResolve += AssemblyLookup.LoadFromAssemblySearchPaths;
+
+                    // Initialize debug path
+                    DebugManager.DebugPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Debugging)), Paths.GetKernelPath(KernelPathType.Debugging));
 
                     // Check for kernel command-line arguments
                     ArgumentParse.ParseArguments(Args.ToList(), ArgumentType.CommandLineArgs);

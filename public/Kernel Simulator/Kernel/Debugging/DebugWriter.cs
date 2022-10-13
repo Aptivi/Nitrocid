@@ -23,6 +23,7 @@ using System.IO;
 using System.Net.Sockets;
 using Extensification.StringExts;
 using KS.Files;
+using KS.Files.Querying;
 using KS.Kernel.Debugging.RemoteDebug;
 
 namespace KS.Kernel.Debugging
@@ -50,8 +51,9 @@ namespace KS.Kernel.Debugging
             if (Flags.DebugMode)
             {
                 // Open debugging stream
+                string debugFilePath = DebugManager.DebugPath;
                 if (DebugStreamWriter is null | DebugStreamWriter?.BaseStream is null)
-                    DebugStreamWriter = new StreamWriter(Paths.GetKernelPath(KernelPathType.Debugging), true) { AutoFlush = true };
+                    DebugStreamWriter = new StreamWriter(debugFilePath, true) { AutoFlush = true };
 
                 // Try to debug...
                 try
