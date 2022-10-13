@@ -49,7 +49,8 @@ namespace KS.Kernel.Debugging
                 string debugFilePath = DebugPath;
 
                 // If, in rare cases, we don't have debug log file, create it
-                Making.MakeFile(debugFilePath, false);
+                if (!File.Exists(debugFilePath))
+                    File.Create(debugFilePath).Close();
 
                 // Now, get information from the currently rotating debug file
                 var FInfo = new FileInfo(debugFilePath);
