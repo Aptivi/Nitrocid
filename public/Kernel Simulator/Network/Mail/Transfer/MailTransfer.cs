@@ -283,7 +283,7 @@ namespace KS.Network.Mail.Transfer
         /// <param name="Subject">Subject</param>
         /// <param name="Body">Body (only text. See <see cref="MailSendMessage(string, string, MimeEntity)"/> for more.)</param>
         /// <returns>True if successful; False if unsuccessful.</returns>
-        public static string MailSendMessage(string Recipient, string Subject, string Body)
+        public static bool MailSendMessage(string Recipient, string Subject, string Body)
         {
             // Construct a message
             var FinalMessage = new MimeMessage();
@@ -293,7 +293,7 @@ namespace KS.Network.Mail.Transfer
             DebugWriter.WriteDebug(DebugLevel.I, "Added address to FinalMessage.To.");
             FinalMessage.Subject = Subject;
             DebugWriter.WriteDebug(DebugLevel.I, "Added subject to FinalMessage.Subject.");
-            FinalMessage.Body = new TextPart(TextFormat.Plain) { Text = Body.ToString() };
+            FinalMessage.Body = new TextPart(TextFormat.Plain) { Text = Body };
             DebugWriter.WriteDebug(DebugLevel.I, "Added body to FinalMessage.Body (plain text). Sending message...");
 
             // Send the message
@@ -302,14 +302,14 @@ namespace KS.Network.Mail.Transfer
                 try
                 {
                     MailLogin.SMTP_Client.Send(FinalMessage, default, MailShellCommon.Mail_Progress);
-                    return Convert.ToString(true);
+                    return true;
                 }
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to send message: {0}", ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
-                return Convert.ToString(false);
+                return false;
             }
         }
 
@@ -320,7 +320,7 @@ namespace KS.Network.Mail.Transfer
         /// <param name="Subject">Subject</param>
         /// <param name="Body">Body</param>
         /// <returns>True if successful; False if unsuccessful.</returns>
-        public static string MailSendMessage(string Recipient, string Subject, MimeEntity Body)
+        public static bool MailSendMessage(string Recipient, string Subject, MimeEntity Body)
         {
             // Construct a message
             var FinalMessage = new MimeMessage();
@@ -339,14 +339,14 @@ namespace KS.Network.Mail.Transfer
                 try
                 {
                     MailLogin.SMTP_Client.Send(FinalMessage, default, MailShellCommon.Mail_Progress);
-                    return Convert.ToString(true);
+                    return true;
                 }
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to send message: {0}", ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
-                return Convert.ToString(false);
+                return false;
             }
         }
 
@@ -357,7 +357,7 @@ namespace KS.Network.Mail.Transfer
         /// <param name="Subject">Subject</param>
         /// <param name="Body">Body</param>
         /// <returns>True if successful; False if unsuccessful.</returns>
-        public static string MailSendEncryptedMessage(string Recipient, string Subject, MimeEntity Body)
+        public static bool MailSendEncryptedMessage(string Recipient, string Subject, MimeEntity Body)
         {
             // Construct a message
             var FinalMessage = new MimeMessage();
@@ -376,14 +376,14 @@ namespace KS.Network.Mail.Transfer
                 try
                 {
                     MailLogin.SMTP_Client.Send(FinalMessage, default, MailShellCommon.Mail_Progress);
-                    return Convert.ToString(true);
+                    return true;
                 }
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to send message: {0}", ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
-                return Convert.ToString(false);
+                return false;
             }
         }
 

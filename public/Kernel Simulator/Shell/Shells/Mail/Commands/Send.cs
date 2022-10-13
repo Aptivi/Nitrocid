@@ -113,7 +113,7 @@ namespace KS.Shell.Shells.Mail.Commands
 
                 // Send the message
                 TextWriterColor.Write(Translate.DoTranslation("Sending message..."), true, ColorTools.ColTypes.Progress);
-                if (Convert.ToBoolean(MailTransfer.MailSendMessage(Receiver, Subject, Body.ToMessageBody())))
+                if (MailTransfer.MailSendMessage(Receiver, Subject, Body.ToMessageBody()))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Message sent.");
                     TextWriterColor.Write(Translate.DoTranslation("Message sent."), true, ColorTools.ColTypes.Success);
