@@ -296,7 +296,6 @@ namespace KS.Kernel
                 catch (KernelErrorException kee)
                 {
                     DebugWriter.WriteDebugStackTrace(kee);
-                    Flags.KernelErrored = false;
                     Flags.RebootRequested = false;
                     Flags.LogoutRequested = false;
                     Flags.SafeMode = false;
@@ -326,7 +325,10 @@ namespace KS.Kernel
         public static void CheckErrored()
         {
             if (Flags.KernelErrored)
+            {
+                Flags.KernelErrored = false;
                 throw new KernelErrorException(Translate.DoTranslation("Kernel Error while booting: {0}"), KernelTools.LastKernelErrorException, KernelTools.LastKernelErrorException.Message);
+            }
         }
 
     }
