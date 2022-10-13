@@ -17,12 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Collections.Generic;
 using ColorSeq;
 using Figgle;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Reflection;
+using KS.Misc.Writers.FancyWriters.Tools;
 using KS.Misc.Writers.WriterBase;
 
 namespace KS.Misc.Writers.FancyWriters
@@ -43,12 +45,7 @@ namespace KS.Misc.Writers.FancyWriters
         {
             try
             {
-                // Format string as needed
-                if (!(Vars.Length == 0))
-                    Text = StringManipulate.FormatString(Text, Vars);
-
-                // Write the font
-                Text = FigletFont.Render(Text);
+                Text = FigletTools.RenderFiglet(Text, FigletFont, Vars);
                 WriterPlainManager.CurrentPlain.WritePlain(Text, true, Vars);
             }
             catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))

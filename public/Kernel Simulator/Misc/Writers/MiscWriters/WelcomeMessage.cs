@@ -36,8 +36,6 @@ namespace KS.Misc.Writers.MiscWriters
         /// </summary>
         public static string CustomBanner = "";
 
-        private static string FigletRenderedBanner = "";
-
         /// <summary>
         /// Gets the custom banner actual text with placeholders parsed
         /// </summary>
@@ -81,8 +79,7 @@ namespace KS.Misc.Writers.MiscWriters
 
                 if (Flags.NewWelcomeStyle)
                 {
-                    if (string.IsNullOrEmpty(FigletRenderedBanner))
-                        FigletRenderedBanner = FigletTools.GetFigletFont(KernelTools.BannerFigletFont).Render($"{Kernel.Kernel.KernelVersion}");
+                    string FigletRenderedBanner = FigletTools.RenderFiglet($"{Kernel.Kernel.KernelVersion}", KernelTools.BannerFigletFont);
                     TextWriterColor.Write(Kernel.Kernel.NewLine + Kernel.Kernel.NewLine + FigletRenderedBanner, true, ColorTools.ColTypes.NeutralText);
                 }
                 else

@@ -29,6 +29,8 @@ namespace KS.Misc.Writers.FancyWriters.Tools
     public static class FigletTools
     {
 
+        private readonly static Dictionary<string, string> cachedFiglets = new();
+
         /// <summary>
         /// The figlet fonts dictionary. It lists all the Figlet fonts supported by the Figgle library.
         /// </summary>
@@ -72,6 +74,45 @@ namespace KS.Misc.Writers.FancyWriters.Tools
             else
             {
                 return FiggleFonts.Small;
+            }
+        }
+
+        public static string RenderFiglet(string Text, string figletFontName, params object[] Vars)
+        {
+            var FigletFont = FigletTools.GetFigletFont(figletFontName);
+            return RenderFiglet(Text, FigletFont, Vars);
+        }
+
+        public static string RenderFiglet(string Text, FiggleFont FigletFont, params object[] Vars)
+        {
+            // Since Figgle library doesn't have a meaningful way of checking if the provided FiggleFont exists, so we have no option other than using the
+            // FigletFonts variable and scouring through it to look for this specific copy.
+            string figletFontName = "";
+            foreach (string FigletFontToCompare in FigletFonts.Keys)
+            {
+                if (GetFigletFont(FigletFontToCompare) == FigletFont)
+                    figletFontName = FigletFontToCompare;
+                if (!string.IsNullOrEmpty(figletFontName))
+                    break;
+            }
+            if (string.IsNullOrEmpty(figletFontName))
+                return "";
+
+            // Now, render the figlet and add to the cache
+            string cachedFigletKey = $"[{cachedFiglets.Count} - {figletFontName}] {Text}";
+            string cachedFigletKeyToAdd = $"[{cachedFiglets.Count + 1} - {figletFontName}] {Text}";
+            if (cachedFiglets.ContainsKey(cachedFigletKey))
+                return cachedFiglets[cachedFigletKey];
+            else
+            {
+                // Format string as needed
+                if (!(Vars.Length == 0))
+                    Text = StringManipulate.FormatString(Text, Vars);
+
+                // Write the font
+                Text = FigletFont.Render(Text);
+                cachedFiglets.Add(cachedFigletKeyToAdd, Text);
+                return Text;
             }
         }
 
