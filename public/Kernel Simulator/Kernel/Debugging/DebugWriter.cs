@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Net.Sockets;
 using Extensification.StringExts;
 using KS.Files;
 using KS.Kernel.Debugging.RemoteDebug;
@@ -95,8 +96,19 @@ namespace KS.Kernel.Debugging
                             }
                             catch (Exception ex)
                             {
-                                OffendingIndex.Add(i.ToString());
-                                WriteDebugStackTrace(ex);
+                                SocketException SE = (SocketException)ex.InnerException;
+                                if (SE is not null)
+                                {
+                                    if ((SE.SocketErrorCode == SocketError.TimedOut) | (SE.SocketErrorCode == SocketError.WouldBlock) | (SE.SocketErrorCode == SocketError.ConnectionAborted))
+                                        OffendingIndex.Add(i.ToString());
+                                    else
+                                        WriteDebugStackTrace(ex);
+                                }
+                                else
+                                {
+                                    OffendingIndex.Add(i.ToString());
+                                    WriteDebugStackTrace(ex);
+                                }
                             }
                         }
                     }
@@ -111,8 +123,19 @@ namespace KS.Kernel.Debugging
                             }
                             catch (Exception ex)
                             {
-                                OffendingIndex.Add(i.ToString());
-                                WriteDebugStackTrace(ex);
+                                SocketException SE = (SocketException)ex.InnerException;
+                                if (SE is not null)
+                                {
+                                    if ((SE.SocketErrorCode == SocketError.TimedOut) | (SE.SocketErrorCode == SocketError.WouldBlock) | (SE.SocketErrorCode == SocketError.ConnectionAborted))
+                                        OffendingIndex.Add(i.ToString());
+                                    else
+                                        WriteDebugStackTrace(ex);
+                                }
+                                else
+                                {
+                                    OffendingIndex.Add(i.ToString());
+                                    WriteDebugStackTrace(ex);
+                                }
                             }
                         }
                     }
@@ -121,12 +144,14 @@ namespace KS.Kernel.Debugging
                     foreach (string si in OffendingIndex)
                     {
                         int i = int.Parse(si);
-                        if (i != -1)
+                        if (i != -1 && i < RemoteDebugger.DebugDevices.Count)
                         {
+                            string clientIp = RemoteDebugger.DebugDevices[i].ClientIP;
+                            string clientName = RemoteDebugger.DebugDevices[i].ClientName;
                             RemoteDebugger.DebugDevices[i].ClientSocket.Disconnect(true);
-                            Events.EventsManager.FireEvent("RemoteDebugConnectionDisconnected", RemoteDebugger.DebugDevices[i].ClientIP);
-                            WriteDebug(DebugLevel.W, "Debug device {0} ({1}) disconnected.", RemoteDebugger.DebugDevices[i].ClientName, RemoteDebugger.DebugDevices[i].ClientIP);
+                            Events.EventsManager.FireEvent("RemoteDebugConnectionDisconnected", clientIp);
                             RemoteDebugger.DebugDevices.RemoveAt(i);
+                            WriteDebug(DebugLevel.W, "Debug device {0} ({1}) disconnected.", clientName, clientIp);
                         }
                     }
                     OffendingIndex.Clear();
@@ -173,8 +198,19 @@ namespace KS.Kernel.Debugging
                     }
                     catch (Exception ex)
                     {
-                        OffendingIndex.Add(i.ToString());
-                        WriteDebugStackTrace(ex);
+                        SocketException SE = (SocketException)ex.InnerException;
+                        if (SE is not null)
+                        {
+                            if ((SE.SocketErrorCode == SocketError.TimedOut) | (SE.SocketErrorCode == SocketError.WouldBlock) | (SE.SocketErrorCode == SocketError.ConnectionAborted))
+                                OffendingIndex.Add(i.ToString());
+                            else
+                                WriteDebugStackTrace(ex);
+                        }
+                        else
+                        {
+                            OffendingIndex.Add(i.ToString());
+                            WriteDebugStackTrace(ex);
+                        }
                     }
                 }
 
@@ -182,12 +218,14 @@ namespace KS.Kernel.Debugging
                 foreach (string si in OffendingIndex)
                 {
                     int i = int.Parse(si);
-                    if (i != -1)
+                    if (i != -1 && i < RemoteDebugger.DebugDevices.Count)
                     {
+                        string clientIp = RemoteDebugger.DebugDevices[i].ClientIP;
+                        string clientName = RemoteDebugger.DebugDevices[i].ClientName;
                         RemoteDebugger.DebugDevices[i].ClientSocket.Disconnect(true);
-                        Events.EventsManager.FireEvent("RemoteDebugConnectionDisconnected", RemoteDebugger.DebugDevices[i].ClientIP);
-                        WriteDebug(DebugLevel.W, "Debug device {0} ({1}) disconnected.", RemoteDebugger.DebugDevices[i].ClientName, RemoteDebugger.DebugDevices[i].ClientIP);
+                        Events.EventsManager.FireEvent("RemoteDebugConnectionDisconnected", clientIp);
                         RemoteDebugger.DebugDevices.RemoveAt(i);
+                        WriteDebug(DebugLevel.W, "Debug device {0} ({1}) disconnected.", clientName, clientIp);
                     }
                 }
                 OffendingIndex.Clear();
