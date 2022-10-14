@@ -22,11 +22,13 @@ using System.Data;
 using System.Linq;
 using System.Reflection;
 using ColorSeq;
+using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.Files;
 using KS.Files.Folders;
 using KS.Files.Querying;
+using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -56,18 +58,16 @@ namespace KS.Misc.Settings
 
             while (!PromptFinished)
             {
-                ConsoleBase.ConsoleWrapper.Clear();
-
                 // Populate sections
                 var sections = new List<string>();
                 var sectionNums = new List<int>();
                 var altSections = new List<string>()
                 {
-                    "Find a Setting",
-                    "Save Settings",
-                    "Save Settings As",
-                    "Load Settings From",
-                    "Exit",
+                    Translate.DoTranslation("Find a Setting"),
+                    Translate.DoTranslation("Save Settings"),
+                    Translate.DoTranslation("Save Settings As"),
+                    Translate.DoTranslation("Load Settings From"),
+                    Translate.DoTranslation("Exit"),
                 };
                 var altSectionNums = new List<int>()
                 {
@@ -93,7 +93,9 @@ namespace KS.Misc.Settings
                 }
 
                 // Prompt for selection and check the answer
-                int Answer = ConsoleBase.Inputs.Styles.SelectionStyle.PromptSelection(Translate.DoTranslation("Select section:"), string.Join("/", sectionNums), sections.ToArray(), string.Join("/", altSectionNums), altSections.ToArray());
+                int Answer = ConsoleBase.Inputs.Styles.SelectionStyle.PromptSelection(Translate.DoTranslation("Select section:"), 
+                    string.Join("/", sectionNums), sections.ToArray(), 
+                    string.Join("/", altSectionNums), altSections.ToArray());
                 if (Answer >= 1 & Answer <= MaxSections)
                 {
                     // The selected answer is a section
@@ -201,7 +203,6 @@ namespace KS.Misc.Settings
             {
                 // General variables
                 bool SectionFinished = false;
-                string AnswerString;
                 var SectionTokenGeneral = SettingsToken[Section];
                 var SectionToken = SectionTokenGeneral["Keys"];
                 var SectionDescription = SectionTokenGeneral["Desc"];
@@ -211,11 +212,17 @@ namespace KS.Misc.Settings
 
                 while (!SectionFinished)
                 {
-                    ConsoleBase.ConsoleWrapper.Clear();
-                    SeparatorWriterColor.WriteSeparator(SectionTranslateName ? Translate.DoTranslation((string)SectionDisplayName) : (string)SectionDisplayName, true);
-                    TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation((string)SectionDescription) + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.NeutralText);
-
-                    // List options
+                    // Populate sections
+                    var sections = new List<string>();
+                    var sectionNums = new List<int>();
+                    var altSections = new List<string>()
+                    {
+                        Translate.DoTranslation("Go Back...")
+                    };
+                    var altSectionNums = new List<int>()
+                    {
+                        MaxOptions + 1
+                    };
                     for (int SectionIndex = 0; SectionIndex <= MaxOptions - 1; SectionIndex++)
                     {
                         var Setting = SectionToken[SectionIndex];
@@ -255,70 +262,54 @@ namespace KS.Misc.Settings
                             // Get the property value from variable
                             CurrentValue = PropertyManager.GetPropertyValueInVariable(Variable, VariableProperty);
                         }
-                        TextWriterColor.Write(" {0}) " + Translate.DoTranslation((string)Setting["Name"]) + " [{1}]", true, ColorTools.ColTypes.Option, SectionIndex + 1, CurrentValue);
+                        sections.Add($"{Setting["Name"]} [{CurrentValue}]");
+                        sectionNums.Add(SectionIndex + 1);
                     }
-                    TextWriterColor.Write();
                     if (SettingsType == SettingsType.Screensaver)
                     {
-                        TextWriterColor.Write(" {0}) " + Translate.DoTranslation("Preview screensaver"), true, ColorTools.ColTypes.BackOption, MaxOptions + 1);
-                        TextWriterColor.Write(" {0}) " + Translate.DoTranslation("Go Back...") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.BackOption, MaxOptions + 2);
+                        altSections.Add(Translate.DoTranslation("Preview screensaver"));
+                        altSectionNums.Add(MaxOptions + 2);
                     }
                     else if (SettingsType == SettingsType.Splash)
                     {
-                        TextWriterColor.Write(" {0}) " + Translate.DoTranslation("Preview splash"), true, ColorTools.ColTypes.BackOption, MaxOptions + 1);
-                        TextWriterColor.Write(" {0}) " + Translate.DoTranslation("Go Back...") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.BackOption, MaxOptions + 2);
-                    }
-                    else
-                    {
-                        TextWriterColor.Write(" {0}) " + Translate.DoTranslation("Go Back...") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.BackOption, MaxOptions + 1);
+                        altSections.Add(Translate.DoTranslation("Preview splash"));
+                        altSectionNums.Add(MaxOptions + 2);
                     }
                     DebugWriter.WriteDebug(DebugLevel.W, "Section {0} has {1} selections.", Section, MaxOptions);
 
                     // Prompt user and check for input
-                    TextWriterColor.Write("> ", false, ColorTools.ColTypes.Input);
-                    AnswerString = Input.ReadLine();
-                    DebugWriter.WriteDebug(DebugLevel.I, "User answered {0}", AnswerString);
-                    TextWriterColor.Write();
-
-                    DebugWriter.WriteDebug(DebugLevel.I, "Is the answer numeric? {0}", StringQuery.IsStringNumeric(AnswerString));
-                    if (int.TryParse(AnswerString, out int AnswerInt))
+                    string finalSection = SectionTranslateName ? Translate.DoTranslation((string)SectionDisplayName) : (string)SectionDisplayName;
+                    int Answer = ConsoleBase.Inputs.Styles.SelectionStyle.PromptSelection(finalSection + Kernel.Kernel.NewLine + "=".Repeat(finalSection.Length) + Kernel.Kernel.NewLine + Translate.DoTranslation((string)SectionDescription),
+                        string.Join("/", sectionNums), sections.ToArray(),
+                        string.Join("/", altSectionNums), altSections.ToArray());
+                    DebugWriter.WriteDebug(DebugLevel.I, "Succeeded. Checking the answer if it points to the right direction...");
+                    if (Answer >= 1 & Answer <= MaxOptions)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Succeeded. Checking the answer if it points to the right direction...");
-                        if (AnswerInt >= 1 & AnswerInt <= MaxOptions)
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Opening key {0} from section {1}...", AnswerInt, Section);
-                            OpenKey(Section, AnswerInt, SettingsToken);
-                        }
-                        else if (AnswerInt == MaxOptions + 1 & SettingsType == SettingsType.Screensaver)
-                        {
-                            // Preview screensaver
-                            DebugWriter.WriteDebug(DebugLevel.I, "User requested screensaver preview.");
-                            Screensaver.Screensaver.ShowSavers(Section);
-                        }
-                        else if (AnswerInt == MaxOptions + 1 & SettingsType == SettingsType.Splash)
-                        {
-                            // Preview splash
-                            DebugWriter.WriteDebug(DebugLevel.I, "User requested splash preview.");
-                            Splash.SplashManager.PreviewSplash(Section);
-                        }
-                        else if (AnswerInt == MaxOptions + 1 | AnswerInt == MaxOptions + 2 & (SettingsType == SettingsType.Screensaver || SettingsType == SettingsType.Splash))
-                        {
-                            // Go Back...
-                            DebugWriter.WriteDebug(DebugLevel.I, "User requested exit. Returning...");
-                            SectionFinished = true;
-                        }
-                        else
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
-                            TextWriterColor.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, ColorTools.ColTypes.Error, AnswerInt);
-                            TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
-                            ConsoleBase.ConsoleWrapper.ReadKey();
-                        }
+                        DebugWriter.WriteDebug(DebugLevel.I, "Opening key {0} from section {1}...", Answer, Section);
+                        OpenKey(Section, Answer, SettingsToken);
                     }
-                    else if (ReadLineReboot.ReadLine.ReadRanToCompletion)
+                    else if (Answer == MaxOptions + 1 & SettingsType == SettingsType.Screensaver)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.W, "Answer is not numeric.");
-                        TextWriterColor.Write(Translate.DoTranslation("The answer must be numeric."), true, ColorTools.ColTypes.Error);
+                        // Preview screensaver
+                        DebugWriter.WriteDebug(DebugLevel.I, "User requested screensaver preview.");
+                        Screensaver.Screensaver.ShowSavers(Section);
+                    }
+                    else if (Answer == MaxOptions + 1 & SettingsType == SettingsType.Splash)
+                    {
+                        // Preview splash
+                        DebugWriter.WriteDebug(DebugLevel.I, "User requested splash preview.");
+                        Splash.SplashManager.PreviewSplash(Section);
+                    }
+                    else if (Answer == MaxOptions + 1 | Answer == MaxOptions + 2 & (SettingsType == SettingsType.Screensaver || SettingsType == SettingsType.Splash))
+                    {
+                        // Go Back...
+                        DebugWriter.WriteDebug(DebugLevel.I, "User requested exit. Returning...");
+                        SectionFinished = true;
+                    }
+                    else
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
+                        TextWriterColor.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, ColorTools.ColTypes.Error, Answer);
                         TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
                         ConsoleBase.ConsoleWrapper.ReadKey();
                     }
