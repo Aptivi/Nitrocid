@@ -73,7 +73,6 @@ namespace KS.Shell.Shells.UESH
             { "edit", new CommandInfo("edit", ShellType.Shell, "Edits a text file", new CommandArgumentInfo(new[] { "<file>" }, true, 1), new EditCommand()) },
             { "fileinfo", new CommandInfo("fileinfo", ShellType.Shell, "Provides information about a file", new CommandArgumentInfo(new[] { "<file>" }, true, 1), new FileInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
             { "find", new CommandInfo("find", ShellType.Shell, "Finds a file in the specified directory or in the current directory", new CommandArgumentInfo(new[] { "<file> [directory]" }, true, 1), new FindCommand()) },
-            { "firedevents", new CommandInfo("firedevents", ShellType.Shell, "Lists all fired events", new CommandArgumentInfo(), new FiredEventsCommand()) },
             { "ftp", new CommandInfo("ftp", ShellType.Shell, "Use an FTP shell to interact with servers", new CommandArgumentInfo(new[] { "<server>" }, false, 0), new FtpCommand()) },
             { "genname", new CommandInfo("genname", ShellType.Shell, "Name and surname generator", new CommandArgumentInfo(new[] { "[namescount] [nameprefix] [namesuffix] [surnameprefix] [surnamesuffix]" }, false, 0), new GenNameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
             { "gettimeinfo", new CommandInfo("gettimeinfo", ShellType.Shell, "Gets the date and time information", new CommandArgumentInfo(new[] { "<date>" }, true, 1), new GetTimeInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },

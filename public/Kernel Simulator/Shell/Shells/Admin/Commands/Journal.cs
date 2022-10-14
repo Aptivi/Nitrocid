@@ -16,22 +16,24 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Administration.Journalling;
 using KS.Kernel.Events;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace KS.Shell.Shells.Admin.Commands
 {
     /// <summary>
-    /// Shows the list of fired events
+    /// Gets the current kernel journal log
     /// </summary>
     /// <remarks>
-    /// It shows you a detailed list of fired events with the arguments passed to each of them, if any.
+    /// This command gets the current kernel journal log from the <see cref="Files.KernelPathType.Journalling"/> path.
     /// </remarks>
-    class FiredEventsCommand : CommandExecutor, ICommand
+    class JournalCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => ListWriterColor.WriteList(EventsManager.ListAllFiredEvents());
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>
+            JournalManager.PrintJournalLog();
 
     }
 }

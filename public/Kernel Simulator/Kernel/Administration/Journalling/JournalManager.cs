@@ -16,10 +16,13 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.ConsoleBase.Colors;
 using KS.Files.Operations;
 using KS.Files.Querying;
+using KS.Misc.Writers.ConsoleWriters;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System;
 using System.IO;
 using System.Runtime.Remoting;
 
@@ -69,6 +72,27 @@ namespace KS.Kernel.Administration.Journalling
 
             // Save the journal with the changes in it
             File.WriteAllText(JournalPath, JsonConvert.SerializeObject(JournalFileObject, Formatting.Indented));
+        }
+
+        /// <summary>
+        /// Prints the current journal log
+        /// </summary>
+        public static void PrintJournalLog()
+        {
+            var JournalFileObject = JArray.Parse(File.ReadAllText(JournalPath));
+            for (int i = 0; i < JournalFileObject.Count; i++)
+            {
+                // Populate variables
+                JToken journal = JournalFileObject[i];
+                string Date = (string)journal["date"];
+                string Time = (string)journal["time"];
+                JournalStatus Status = (JournalStatus)Enum.Parse(typeof(JournalStatus), (string)journal["status"]);
+                string Message = (string)journal["message"];
+
+                // Now, print the entries
+                TextWriterColor.Write($"[{Date} {Time}] [{i + 1}] [{Status}]: ", false, ColorTools.ColTypes.ListEntry);
+                TextWriterColor.Write(Message, true, ColorTools.ColTypes.ListEntry);
+            }
         }
 
     }
