@@ -78,6 +78,37 @@ namespace KS.Misc.Writers.FancyWriters.Tools
         }
 
         /// <summary>
+        /// Gets the figlet font name from font
+        /// </summary>
+        /// <param name="Font">Font instance that is supported by the Figgle library. Consult <see cref="FigletFonts"/> for more info.</param>
+        /// <returns>Figlet font name of your font, or an empty string if not found</returns>
+        /// <remarks>
+        /// Since the Figgle library doesn't have a meaningful way of checking if the provided FiggleFont exists, the function looks for the specific instance of the font
+        /// that the function provided to check to see if the FigletFonts contains that specific font instance.
+        /// </remarks>
+        public static string GetFigletFontName(FiggleFont Font)
+        {
+            // Since the Figgle library doesn't have a meaningful way of checking if the provided FiggleFont exists, we have no option other than using the
+            // FigletFonts variable and scouring through it to look for this specific copy.
+            string figletFontName = "";
+            foreach (string FigletFontToCompare in FigletFonts.Keys)
+            {
+                if (GetFigletFont(FigletFontToCompare) == Font)
+                {
+                    figletFontName = FigletFontToCompare;
+                    break;
+                }
+            }
+
+            // If we don't have the font in the supported fonts dictionary, return an empty string
+            if (string.IsNullOrEmpty(figletFontName))
+                return "";
+
+            // Otherwise, return the name
+            return figletFontName;
+        }
+
+        /// <summary>
         /// Renders the figlet font
         /// </summary>
         /// <param name="Text">Text to render</param>
@@ -97,16 +128,8 @@ namespace KS.Misc.Writers.FancyWriters.Tools
         /// <param name="Vars">Variables to use when formatting the string</param>
         public static string RenderFiglet(string Text, FiggleFont FigletFont, params object[] Vars)
         {
-            // Since Figgle library doesn't have a meaningful way of checking if the provided FiggleFont exists, so we have no option other than using the
-            // FigletFonts variable and scouring through it to look for this specific copy.
-            string figletFontName = "";
-            foreach (string FigletFontToCompare in FigletFonts.Keys)
-            {
-                if (GetFigletFont(FigletFontToCompare) == FigletFont)
-                    figletFontName = FigletFontToCompare;
-                if (!string.IsNullOrEmpty(figletFontName))
-                    break;
-            }
+            // Look at the Remarks section of GetFigletFontName to see why we're doing this.
+            string figletFontName = GetFigletFontName(FigletFont);
             if (string.IsNullOrEmpty(figletFontName))
                 return "";
 
