@@ -26,7 +26,7 @@ using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace KS.Shell.Shells.Admin.Commands
 {
     /// <summary>
     /// Clears debugging log
@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// The user must have at least the administrative privileges before they can run the below commands.
     /// </remarks>
-    class CdbgLogCommand : CommandExecutor, ICommand
+    class Admin_CdbgLogCommand : CommandExecutor, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

@@ -70,6 +70,10 @@ namespace KS.Shell.ShellBase.Shells
         /// <summary>
         /// Archive shell
         /// </summary>
-        ArchiveShell
+        ArchiveShell,
+        /// <summary>
+        /// Kernel administration shell
+        /// </summary>
+        AdminShell
     }
 }

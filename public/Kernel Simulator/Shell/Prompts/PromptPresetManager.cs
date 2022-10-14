@@ -50,7 +50,8 @@ namespace KS.Shell.Prompts
             { "JsonShell", Shell.GetShellInfo(ShellType.JsonShell).ShellPresets["Default"] },
             { "HTTPShell", Shell.GetShellInfo(ShellType.HTTPShell).ShellPresets["Default"] },
             { "HexShell", Shell.GetShellInfo(ShellType.HexShell).ShellPresets["Default"] },
-            { "ArchiveShell", Shell.GetShellInfo(ShellType.ArchiveShell).ShellPresets["Default"] }
+            { "ArchiveShell", Shell.GetShellInfo(ShellType.ArchiveShell).ShellPresets["Default"] },
+            { "AdminShell", Shell.GetShellInfo(ShellType.AdminShell).ShellPresets["Default"] }
         };
 
         /// <summary>
@@ -166,6 +167,11 @@ namespace KS.Shell.Prompts
                 case "ArchiveShell":
                     {
                         ConfigTools.SetConfigValue(ConfigCategory.Shell, "Archive Shell Prompt Preset", PresetName);
+                        break;
+                    }
+                case "AdminShell":
+                    {
+                        ConfigTools.SetConfigValue(ConfigCategory.Shell, "Admin Shell Prompt Preset", PresetName);
                         break;
                     }
             }

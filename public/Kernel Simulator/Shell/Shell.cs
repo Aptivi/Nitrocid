@@ -56,6 +56,7 @@ using KS.Shell.Shells.Json;
 using KS.Shell.Shells.HTTP;
 using KS.Shell.Shells.Hex;
 using KS.Shell.Shells.Archive;
+using KS.Shell.Shells.Admin;
 
 namespace KS.Shell
 {
@@ -107,7 +108,8 @@ namespace KS.Shell
             { "JsonShell", new JsonShellInfo() },
             { "HTTPShell", new HTTPShellInfo() },
             { "HexShell", new HexShellInfo() },
-            { "ArchiveShell", new ArchiveShellInfo() }
+            { "ArchiveShell", new ArchiveShellInfo() },
+            { "AdminShell", new AdminShellInfo() }
         };
 
         /// <summary>
