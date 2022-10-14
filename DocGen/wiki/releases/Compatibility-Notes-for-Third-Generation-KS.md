@@ -165,4 +165,8 @@ This sub is more of a command management routine than the "getting command" modu
 
 ##### Changed the entire event system
 
-TBD
+We have moved all the events to its own dedicated array containing all the available events that the kernel introduced, removing the giant Events class and its variable, `KernelEventManager`, in the Kernel entry point class. This will reduce the need of importing the Kernel namespace and class everytime we need to directly manage the events.
+
+Event firing and response functions are moved to the EventsManager class in one function, `FireEvent`.
+
+This reduces the amount of lines by more than 3500 lines.
