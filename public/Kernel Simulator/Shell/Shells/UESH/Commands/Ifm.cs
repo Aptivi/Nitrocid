@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Misc.Writers.ConsoleWriters;
+using KS.Files.Interactive;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.UESH.Commands
@@ -31,7 +31,8 @@ namespace KS.Shell.Shells.UESH.Commands
     class IfmCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => TextWriterColor.Write("TBD. It'll be hopefully finished by Beta 1.", true, ConsoleBase.Colors.ColorTools.ColTypes.Error);
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>
+            FileManagerCli.OpenMain();
 
     }
 }
