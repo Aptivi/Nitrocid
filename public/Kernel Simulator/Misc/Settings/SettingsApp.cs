@@ -28,7 +28,6 @@ using KS.ConsoleBase.Inputs;
 using KS.Files;
 using KS.Files.Folders;
 using KS.Files.Querying;
-using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;

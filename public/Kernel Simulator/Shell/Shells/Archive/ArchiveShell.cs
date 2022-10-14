@@ -16,17 +16,13 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
 using KS.Files.Folders;
 using KS.Kernel.Debugging;
 using KS.Kernel;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Shell.Prompts;
-using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using System;
 using System.IO;

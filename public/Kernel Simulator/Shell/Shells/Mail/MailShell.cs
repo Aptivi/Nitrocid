@@ -16,14 +16,10 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using Extensification.StringExts;
-using KS.ConsoleBase.Inputs;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using KS.Network.Mail;
 using KS.Network.Mail.Transfer;
-using KS.Shell.Prompts;
-using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Shells.Mail

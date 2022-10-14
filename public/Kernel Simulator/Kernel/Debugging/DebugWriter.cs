@@ -22,8 +22,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Net.Sockets;
 using Extensification.StringExts;
-using KS.Files;
-using KS.Files.Querying;
 using KS.Kernel.Debugging.RemoteDebug;
 using KS.Misc.Text;
 

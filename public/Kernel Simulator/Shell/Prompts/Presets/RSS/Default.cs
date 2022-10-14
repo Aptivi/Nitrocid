@@ -19,7 +19,6 @@
 using System;
 using System.Text;
 using KS.ConsoleBase.Colors;
-using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.RSS;
 
 namespace KS.Shell.Prompts.Presets.RSS

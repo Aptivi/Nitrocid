@@ -18,16 +18,11 @@
 
 using System;
 using System.Threading;
-using Extensification.StringExts;
-using KS.ConsoleBase.Inputs;
 using KS.Files;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Shell.Prompts;
-using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
-using KS.Shell.Shells.UESH.Commands;
 
 namespace KS.Shell.Shells.SFTP
 {

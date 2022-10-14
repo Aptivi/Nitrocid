@@ -23,7 +23,6 @@ using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Misc.Text;
 using KS.Network.Mail;
-using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.Mail;
 
 namespace KS.Shell.Prompts.Presets.Mail

@@ -18,7 +18,6 @@
 
 using System.Text;
 using KS.ConsoleBase.Colors;
-using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.SFTP;
 
 namespace KS.Shell.Prompts.Presets.SFTP

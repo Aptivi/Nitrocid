@@ -20,7 +20,6 @@ using System.IO;
 using System.Text;
 using KS.ConsoleBase.Colors;
 using KS.Misc.Editors.JsonShell;
-using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.Json;
 
 namespace KS.Shell.Prompts.Presets.Json

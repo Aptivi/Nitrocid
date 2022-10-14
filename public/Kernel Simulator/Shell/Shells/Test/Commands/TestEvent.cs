@@ -17,9 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.Linq;
-using System.Reflection;
 using KS.Kernel.Events;
-using KS.Misc.Reflection;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.Test.Commands

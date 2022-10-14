@@ -18,7 +18,6 @@
 
 using System;
 using System.Threading;
-using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.Kernel;
@@ -29,8 +28,6 @@ using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.RSS;
 using KS.Network.RSS.Instance;
-using KS.Shell.Prompts;
-using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Shells.RSS

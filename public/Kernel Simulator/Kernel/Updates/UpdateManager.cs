@@ -17,12 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using System.IO;
-using KS.ConsoleBase.Colors;
-using KS.Files;
 using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Misc.Splash;
 using KS.Network.Transfer;
 using Newtonsoft.Json.Linq;
 

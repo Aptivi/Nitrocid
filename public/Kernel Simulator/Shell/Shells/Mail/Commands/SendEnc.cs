@@ -25,7 +25,6 @@ using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.Mail.Transfer;
 using KS.Shell.ShellBase.Commands;
-using System;
 using MimeKit;
 using KS.Kernel.Debugging;
 

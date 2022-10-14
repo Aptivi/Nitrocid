@@ -19,7 +19,6 @@
 using System.IO;
 using System.Text;
 using KS.ConsoleBase.Colors;
-using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.Archive;
 
 namespace KS.Shell.Prompts.Presets.Archive

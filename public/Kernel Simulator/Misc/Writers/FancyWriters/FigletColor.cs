@@ -17,13 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using System.Collections.Generic;
 using ColorSeq;
 using Figgle;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Reflection;
 using KS.Misc.Writers.FancyWriters.Tools;
 using KS.Misc.Writers.WriterBase;
 

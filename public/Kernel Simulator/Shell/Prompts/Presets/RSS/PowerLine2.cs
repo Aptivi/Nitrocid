@@ -22,7 +22,6 @@ using ColorSeq;
 using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Misc.Text;
-using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.RSS;
 
 namespace KS.Shell.Prompts.Presets.RSS

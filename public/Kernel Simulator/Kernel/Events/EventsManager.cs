@@ -19,10 +19,8 @@
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Modifications;
-using KS.Shell.ShellBase.Shells;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 
 namespace KS.Kernel.Events

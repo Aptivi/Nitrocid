@@ -23,7 +23,6 @@ using ColorSeq;
 using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Misc.Text;
-using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.Json;
 
 namespace KS.Shell.Prompts.Presets.Json

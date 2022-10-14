@@ -20,7 +20,6 @@ using System.IO;
 using System.Text;
 using KS.ConsoleBase.Colors;
 using KS.Misc.Editors.TextEdit;
-using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.Text;
 
 namespace KS.Shell.Prompts.Presets.Text
