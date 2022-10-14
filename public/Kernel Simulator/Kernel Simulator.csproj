@@ -343,8 +343,5 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Kernel\Administration\" />
-  </ItemGroup>
   <!-- KS GRILO boot metadata End -->
 </Project>

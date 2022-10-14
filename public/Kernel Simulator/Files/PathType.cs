@@ -82,6 +82,10 @@ namespace KS.Files
         /// <summary>
         /// Custom splashes folder
         /// </summary>
-        CustomSplashes
+        CustomSplashes,
+        /// <summary>
+        /// Journal file
+        /// </summary>
+        Journalling
     }
 }

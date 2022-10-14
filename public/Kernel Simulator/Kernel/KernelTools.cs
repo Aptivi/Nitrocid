@@ -26,8 +26,10 @@ using KS.Arguments.ArgumentBase;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Files;
+using KS.Files.Operations;
 using KS.Files.Querying;
 using KS.Hardware;
+using KS.Kernel.Administration.Journalling;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Debugging.RemoteDebug;
@@ -53,6 +55,7 @@ using KS.Shell.ShellBase.Commands;
 using KS.TimeDate;
 using KS.Users;
 using KS.Users.Groups;
+using static System.Net.Mime.MediaTypeNames;
 
 #if SPECIFIERREL
 using static KS.ConsoleBase.Colors.ColorTools;
@@ -98,6 +101,7 @@ namespace KS.Kernel
             {
                 // Unquiet
                 Flags.QuietKernel = false;
+                JournalManager.WriteJournal(Description, JournalStatus.Fatal, Variables);
 
                 // Check error types and its capabilities
                 DebugWriter.WriteDebug(DebugLevel.I, "Error type: {0}", ErrorType);

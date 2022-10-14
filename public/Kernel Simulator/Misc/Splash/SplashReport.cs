@@ -18,6 +18,7 @@
 
 using KS.ConsoleBase.Colors;
 using KS.Kernel;
+using KS.Kernel.Administration.Journalling;
 using KS.Misc.Writers.ConsoleWriters;
 using System;
 
@@ -99,6 +100,7 @@ namespace KS.Misc.Splash
             {
                 TextWriterColor.Write(Text, true, ColTypes, Vars);
             }
+            JournalManager.WriteJournal(Text, Vars);
         }
 
         /// <summary>
@@ -159,6 +161,7 @@ namespace KS.Misc.Splash
             {
                 TextWriterColor.Write(Text, true, ColorTools.ColTypes.Error, Vars);
             }
+            JournalManager.WriteJournal(Text, JournalStatus.Error, Vars);
         }
 
     }

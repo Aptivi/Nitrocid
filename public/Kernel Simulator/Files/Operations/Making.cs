@@ -137,8 +137,9 @@ namespace KS.Files.Operations
         /// </summary>
         /// <param name="NewFile">New JSON file</param>
         /// <param name="ThrowIfFileExists">If file exists, throw an exception.</param>
+        /// <param name="useArray">Use array instead of object</param>
         /// <exception cref="IOException"></exception>
-        public static void MakeJsonFile(string NewFile, bool ThrowIfFileExists = true)
+        public static void MakeJsonFile(string NewFile, bool ThrowIfFileExists = true, bool useArray = false)
         {
             Filesystem.ThrowOnInvalidPath(NewFile);
             NewFile = Filesystem.NeutralizePath(NewFile);
@@ -149,9 +150,10 @@ namespace KS.Files.Operations
                 {
                     var NewFileStream = File.Create(NewFile);
                     DebugWriter.WriteDebug(DebugLevel.I, "File created");
-                    var NewJsonObject = JObject.Parse("{}");
+                    object NewJsonObject = useArray ? JArray.Parse("[]") : JObject.Parse("{}");
                     var NewFileWriter = new StreamWriter(NewFileStream);
                     NewFileWriter.WriteLine(JsonConvert.SerializeObject(NewJsonObject));
+                    NewFileWriter.Flush();
                     NewFileStream.Close();
                     DebugWriter.WriteDebug(DebugLevel.I, "File closed");
 

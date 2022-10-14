@@ -50,6 +50,8 @@ using KS.Users.Groups;
 using KS.Users;
 using KS.Kernel.Events;
 using KS.Misc.Text;
+using KS.Kernel.Administration.Journalling;
+using KS.Files.Operations;
 
 namespace KS.Kernel
 {
@@ -122,8 +124,13 @@ namespace KS.Kernel
                         Color255.Initialize255();
                     AppDomain.CurrentDomain.AssemblyResolve += AssemblyLookup.LoadFromAssemblySearchPaths;
 
-                    // Initialize debug path
+                    // Check to see if we have an appdata folder for KS
+                    if (!Checking.FolderExists(Paths.AppDataPath))
+                        Making.MakeDirectory(Paths.AppDataPath, false);
+
+                    // Initialize debug and journal path
                     DebugManager.DebugPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Debugging)), Paths.GetKernelPath(KernelPathType.Debugging));
+                    JournalManager.JournalPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Journalling)), Paths.GetKernelPath(KernelPathType.Journalling));
 
                     // Check for kernel command-line arguments
                     ArgumentParse.ParseArguments(Args.ToList(), ArgumentType.CommandLineArgs);
