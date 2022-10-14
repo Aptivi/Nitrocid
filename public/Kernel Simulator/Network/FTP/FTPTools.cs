@@ -32,6 +32,7 @@ using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Probers;
 using KS.Misc.Reflection;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using KS.Network.FTP.Transfer;
@@ -202,7 +203,7 @@ namespace KS.Network.FTP
                     TableColor.WriteTable(ProfHeaders, ProfData, 2, ColorTools.ColTypes.Option);
                     while (!profanswered)
                     {
-                        TextWriterColor.Write(Kernel.Kernel.NewLine + ">> ", false, ColorTools.ColTypes.Input);
+                        TextWriterColor.Write(CharManager.NewLine + ">> ", false, ColorTools.ColTypes.Input);
                         profanswer = Input.ReadLine();
                         DebugWriter.WriteDebug(DebugLevel.I, "Selection: {0}", profanswer);
                         if (StringQuery.IsStringNumeric(profanswer))
@@ -217,7 +218,7 @@ namespace KS.Network.FTP
                             catch (Exception ex)
                             {
                                 DebugWriter.WriteDebug(DebugLevel.I, "Profile invalid");
-                                TextWriterColor.Write(Translate.DoTranslation("Invalid profile selection.") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.Error);
+                                TextWriterColor.Write(Translate.DoTranslation("Invalid profile selection.") + CharManager.NewLine, true, ColorTools.ColTypes.Error);
                                 DebugWriter.WriteDebugStackTrace(ex);
                             }
                         }

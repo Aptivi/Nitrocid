@@ -22,6 +22,7 @@ using KS.Files;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Languages;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.Mail.Transfer;
 using KS.Shell.ShellBase.Commands;
@@ -89,7 +90,7 @@ namespace KS.Shell.Shells.Mail.Commands
                     if (!(BodyLine.ToUpper() == "EOF"))
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Body line: {0} ({1} chars)", BodyLine, BodyLine.Length);
-                        Body.TextBody += BodyLine + Kernel.Kernel.NewLine;
+                        Body.TextBody += BodyLine + CharManager.NewLine;
                         DebugWriter.WriteDebug(DebugLevel.I, "Body length: {0} chars", Body.TextBody.Length);
                     }
                 }

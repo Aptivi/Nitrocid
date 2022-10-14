@@ -24,6 +24,7 @@ using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Languages;
+using KS.Misc.Text;
 using KS.Misc.Writers.MiscWriters;
 using KS.Modifications;
 using KS.Shell.ShellBase.Aliases;
@@ -150,7 +151,7 @@ namespace KS.Shell.ShellBase.Commands
                     }
 
                     // The mod commands
-                    Decisive.DecisiveWrite(CommandType, DebugDeviceSocket, Kernel.Kernel.NewLine + Translate.DoTranslation("Mod commands:") + (Flags.ShowCommandsCount & Flags.ShowModCommandsCount ? " [{0}]" : ""), true, ColorTools.ColTypes.ListTitle, ModCommandList.Count);
+                    Decisive.DecisiveWrite(CommandType, DebugDeviceSocket, CharManager.NewLine + Translate.DoTranslation("Mod commands:") + (Flags.ShowCommandsCount & Flags.ShowModCommandsCount ? " [{0}]" : ""), true, ColorTools.ColTypes.ListTitle, ModCommandList.Count);
                     if (ModCommandList.Count == 0)
                         Decisive.DecisiveWrite(CommandType, DebugDeviceSocket, "- " + Translate.DoTranslation("No mod commands."), true, ColorTools.ColTypes.Warning);
                     foreach (string cmd in ModCommandList.Keys)
@@ -160,7 +161,7 @@ namespace KS.Shell.ShellBase.Commands
                     }
 
                     // The alias commands
-                    Decisive.DecisiveWrite(CommandType, DebugDeviceSocket, Kernel.Kernel.NewLine + Translate.DoTranslation("Alias commands:") + (Flags.ShowCommandsCount & Flags.ShowShellAliasesCount ? " [{0}]" : ""), true, ColorTools.ColTypes.ListTitle, AliasedCommandList.Count);
+                    Decisive.DecisiveWrite(CommandType, DebugDeviceSocket, CharManager.NewLine + Translate.DoTranslation("Alias commands:") + (Flags.ShowCommandsCount & Flags.ShowShellAliasesCount ? " [{0}]" : ""), true, ColorTools.ColTypes.ListTitle, AliasedCommandList.Count);
                     if (AliasedCommandList.Count == 0)
                         Decisive.DecisiveWrite(CommandType, DebugDeviceSocket, "- " + Translate.DoTranslation("No alias commands."), true, ColorTools.ColTypes.Warning);
                     foreach (string cmd in AliasedCommandList.Keys)
@@ -170,7 +171,7 @@ namespace KS.Shell.ShellBase.Commands
                     }
 
                     // A tip for you all
-                    Decisive.DecisiveWrite(CommandType, DebugDeviceSocket, Kernel.Kernel.NewLine + Translate.DoTranslation("* You can use multiple commands using the semicolon between commands."), true, ColorTools.ColTypes.Tip);
+                    Decisive.DecisiveWrite(CommandType, DebugDeviceSocket, CharManager.NewLine + Translate.DoTranslation("* You can use multiple commands using the semicolon between commands."), true, ColorTools.ColTypes.Tip);
                     Decisive.DecisiveWrite(CommandType, DebugDeviceSocket, "* " + Translate.DoTranslation("Commands highlighted in another color are unified commands and are available in every shell."), true, ColorTools.ColTypes.Tip);
                 }
                 else

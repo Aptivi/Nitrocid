@@ -279,7 +279,7 @@ namespace KS.Misc.Settings
 
                     // Prompt user and check for input
                     string finalSection = SectionTranslateName ? Translate.DoTranslation((string)SectionDisplayName) : (string)SectionDisplayName;
-                    int Answer = ConsoleBase.Inputs.Styles.SelectionStyle.PromptSelection(finalSection + Kernel.Kernel.NewLine + "=".Repeat(finalSection.Length) + Kernel.Kernel.NewLine + Translate.DoTranslation((string)SectionDescription),
+                    int Answer = ConsoleBase.Inputs.Styles.SelectionStyle.PromptSelection(finalSection + CharManager.NewLine + "=".Repeat(finalSection.Length) + CharManager.NewLine + Translate.DoTranslation((string)SectionDescription),
                         string.Join("/", sectionNums), sections.ToArray(),
                         string.Join("/", altSectionNums), altSections.ToArray());
                     DebugWriter.WriteDebug(DebugLevel.I, "Succeeded. Checking the answer if it points to the right direction...");
@@ -320,7 +320,7 @@ namespace KS.Misc.Settings
                 ConsoleBase.ConsoleWrapper.Clear();
                 DebugWriter.WriteDebug(DebugLevel.I, "Error trying to open section: {0}", ex.Message);
                 SeparatorWriterColor.WriteSeparator("???", true);
-                TextWriterColor.Write(Kernel.Kernel.NewLine + "X) " + Translate.DoTranslation("Invalid section entered. Please go back."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(CharManager.NewLine + "X) " + Translate.DoTranslation("Invalid section entered. Please go back."), true, ColorTools.ColTypes.Error);
                 TextWriterColor.Write("X) " + Translate.DoTranslation("If you're sure that you've opened the right section, check this message out:"), true, ColorTools.ColTypes.Error);
                 TextWriterColor.Write("X) " + ex.Message, true, ColorTools.ColTypes.Error);
                 ConsoleBase.ConsoleWrapper.ReadKey();
@@ -391,7 +391,7 @@ namespace KS.Misc.Settings
 
                     // Make an introductory banner
                     SeparatorWriterColor.WriteSeparator(Translate.DoTranslation(Section + " Settings...") + " > " + Translate.DoTranslation(KeyName), true);
-                    TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation(KeyDescription), true, ColorTools.ColTypes.NeutralText);
+                    TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation(KeyDescription), true, ColorTools.ColTypes.NeutralText);
 
                     // See how to get the value
                     if (!(KeyType == SettingsKeyType.SUnknown))
@@ -515,11 +515,11 @@ namespace KS.Misc.Settings
                         !(KeyType == SettingsKeyType.SChar) &
                         !(KeyType == SettingsKeyType.SIntSlider))
                     {
-                        TextWriterColor.Write(" {0}) " + Translate.DoTranslation("Go Back...") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.BackOption, MaxKeyOptions + 1);
+                        TextWriterColor.Write(" {0}) " + Translate.DoTranslation("Go Back...") + CharManager.NewLine, true, ColorTools.ColTypes.BackOption, MaxKeyOptions + 1);
                     }
                     else if (KeyType == SettingsKeyType.SList)
                     {
-                        TextWriterColor.Write(Kernel.Kernel.NewLine + " q) " + Translate.DoTranslation("Save Changes...") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.Option, MaxKeyOptions + 1);
+                        TextWriterColor.Write(CharManager.NewLine + " q) " + Translate.DoTranslation("Save Changes...") + CharManager.NewLine, true, ColorTools.ColTypes.Option, MaxKeyOptions + 1);
                     }
 
                     // Print debugging info
@@ -953,7 +953,7 @@ namespace KS.Misc.Settings
                 DebugWriter.WriteDebug(DebugLevel.I, "Error trying to open section: {0}", ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 SeparatorWriterColor.WriteSeparator(Translate.DoTranslation(Section + " Settings...") + " > ???", true);
-                TextWriterColor.Write(Kernel.Kernel.NewLine + "X) " + Translate.DoTranslation("Invalid section entered. Please go back."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(CharManager.NewLine + "X) " + Translate.DoTranslation("Invalid section entered. Please go back."), true, ColorTools.ColTypes.Error);
                 TextWriterColor.Write("X) " + Translate.DoTranslation("If you're sure that you've opened the right section, check this message out:"), true, ColorTools.ColTypes.Error);
                 TextWriterColor.Write("X) " + ex.Message, true, ColorTools.ColTypes.Error);
                 ConsoleBase.ConsoleWrapper.ReadKey();

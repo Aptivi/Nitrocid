@@ -22,6 +22,7 @@ using System.Linq;
 using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.ConsoleBase.Inputs.Styles
@@ -78,7 +79,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                     Array.Resize(ref AlternateAnswersTitles, altAnswers.Length);
 
                 // Ask a question
-                TextWriterColor.Write(Question + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.Question);
+                TextWriterColor.Write(Question + CharManager.NewLine, true, ColorTools.ColTypes.Question);
 
                 // Populate answers to final list for below operation
                 foreach (var answer in answers)

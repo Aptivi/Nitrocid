@@ -23,6 +23,7 @@ using KS.Files;
 using KS.Files.Operations;
 using KS.Files.Querying;
 using KS.Languages;
+using KS.Misc.Text;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
@@ -59,7 +60,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     var WrapOutputStream = new StreamReader(WrapOutputPath);
                     string WrapOutput = WrapOutputStream.ReadToEnd();
                     TextWriterWrappedColor.WriteWrapped(WrapOutput, false, ColorTools.ColTypes.NeutralText);
-                    if (!WrapOutput.EndsWith(Kernel.Kernel.NewLine))
+                    if (!WrapOutput.EndsWith(CharManager.NewLine))
                         TextWriterColor.Write();
                     WrapOutputStream.Close();
                     File.Delete(WrapOutputPath);

@@ -20,6 +20,7 @@ using System;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
 using KS.Languages;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 
@@ -59,7 +60,7 @@ namespace KS.Shell.Shells.RSS.Commands
                         TextWriterColor.Write(Article.ArticleVariables[Variable].InnerText, true, ColorTools.ColTypes.ListValue);
                     }
                 }
-                TextWriterColor.Write(Kernel.Kernel.NewLine + Article.ArticleDescription, true, ColorTools.ColTypes.NeutralText);
+                TextWriterColor.Write(CharManager.NewLine + Article.ArticleDescription, true, ColorTools.ColTypes.NeutralText);
             }
         }
 

@@ -31,6 +31,7 @@ using KS.Files.Querying;
 using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using Newtonsoft.Json.Linq;
 
@@ -181,9 +182,9 @@ namespace KS.Languages
                             }
                             else
                             {
-                                TextWriterColor.Write(Translate.DoTranslation("The language you've selected contains two variants. Select one:") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.NeutralText);
+                                TextWriterColor.Write(Translate.DoTranslation("The language you've selected contains two variants. Select one:") + CharManager.NewLine, true, ColorTools.ColTypes.NeutralText);
                                 TextWriterColor.Write(" 1) " + Translate.DoTranslation("Transliterated version", lang), true, ColorTools.ColTypes.Option);
-                                TextWriterColor.Write(" 2) " + Translate.DoTranslation("Translated version", lang + "-T") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.Option);
+                                TextWriterColor.Write(" 2) " + Translate.DoTranslation("Translated version", lang + "-T") + CharManager.NewLine, true, ColorTools.ColTypes.Option);
                                 var LanguageSet = default(bool);
                                 while (!LanguageSet)
                                 {

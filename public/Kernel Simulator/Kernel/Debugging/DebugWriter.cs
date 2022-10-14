@@ -25,6 +25,7 @@ using Extensification.StringExts;
 using KS.Files;
 using KS.Files.Querying;
 using KS.Kernel.Debugging.RemoteDebug;
+using KS.Misc.Text;
 
 namespace KS.Kernel.Debugging
 {
@@ -256,12 +257,12 @@ namespace KS.Kernel.Debugging
                 // These two NewLines are padding for accurate stack tracing.
                 var Inner = Ex.InnerException;
                 int InnerNumber = 1;
-                var NewStackTraces = new List<string>() { $"{Kernel.NewLine}{Ex.ToString().Substring(0, Ex.ToString().IndexOf(":"))}: {Ex.Message}{Kernel.NewLine}{Ex.StackTrace}{Kernel.NewLine}" };
+                var NewStackTraces = new List<string>() { $"{CharManager.NewLine}{Ex.ToString().Substring(0, Ex.ToString().IndexOf(":"))}: {Ex.Message}{CharManager.NewLine}{Ex.StackTrace}{CharManager.NewLine}" };
 
                 // Get all the inner exceptions
                 while (Inner is not null)
                 {
-                    NewStackTraces.Add($"[{InnerNumber}] {Inner.ToString().Substring(0, Inner.ToString().IndexOf(":"))}: {Inner.Message}{Kernel.NewLine}{Inner.StackTrace}{Kernel.NewLine}");
+                    NewStackTraces.Add($"[{InnerNumber}] {Inner.ToString().Substring(0, Inner.ToString().IndexOf(":"))}: {Inner.Message}{CharManager.NewLine}{Inner.StackTrace}{CharManager.NewLine}");
                     InnerNumber += 1;
                     Inner = Inner.InnerException;
                 }

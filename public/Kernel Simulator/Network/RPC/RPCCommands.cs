@@ -28,6 +28,7 @@ using KS.Kernel.Power;
 using KS.Languages;
 using KS.Misc.Notifications;
 using KS.Misc.Screensaver;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Network.RPC
@@ -106,7 +107,7 @@ namespace KS.Network.RPC
                             {
                                 // Populate the byte message to send the confirmation to
                                 DebugWriter.WriteDebug(DebugLevel.I, "Stream opened for device {0}", Arg);
-                                ByteMsg = System.Text.Encoding.Default.GetBytes($"{RequestType}Confirm, " + Arg + Kernel.Kernel.NewLine);
+                                ByteMsg = System.Text.Encoding.Default.GetBytes($"{RequestType}Confirm, " + Arg + CharManager.NewLine);
                                 break;
                             }
 
@@ -183,7 +184,7 @@ namespace KS.Network.RPC
                             {
                                 DebugWriter.WriteDebug(DebugLevel.I, "Exec confirmed from remote access.");
                                 TextWriterColor.Write();
-                                Shell.Shell.GetLine(Message.Replace("ExecConfirm, ", "").Replace(Kernel.Kernel.NewLine, ""));
+                                Shell.Shell.GetLine(Message.Replace("ExecConfirm, ", "").Replace(CharManager.NewLine, ""));
                             }
                             else
                             {
@@ -192,11 +193,11 @@ namespace KS.Network.RPC
                         }
                         else if (Message.StartsWith("AckConfirm"))
                         {
-                            DebugWriter.WriteDebug(DebugLevel.I, "{0} says \"Hello.\"", Message.Replace("AckConfirm, ", "").Replace(Kernel.Kernel.NewLine, ""));
+                            DebugWriter.WriteDebug(DebugLevel.I, "{0} says \"Hello.\"", Message.Replace("AckConfirm, ", "").Replace(CharManager.NewLine, ""));
                         }
                         else if (Message.StartsWith("PingConfirm"))
                         {
-                            string IPAddr = Message.Replace("PingConfirm, ", "").Replace(Kernel.Kernel.NewLine, "");
+                            string IPAddr = Message.Replace("PingConfirm, ", "").Replace(CharManager.NewLine, "");
                             DebugWriter.WriteDebug(DebugLevel.I, "{0} pinged this device!", IPAddr);
                             Notifications.NotifySend(new Notification(Translate.DoTranslation("Ping!"), Translate.DoTranslation("{0} pinged you.").FormatString(IPAddr), Notifications.NotifPriority.Low, Notifications.NotifType.Normal));
                         }

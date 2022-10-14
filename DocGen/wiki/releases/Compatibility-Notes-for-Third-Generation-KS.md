@@ -170,3 +170,7 @@ We have moved all the events to its own dedicated array containing all the avail
 Event firing and response functions are moved to the EventsManager class in one function, `FireEvent`.
 
 This reduces the amount of lines by more than 3500 lines.
+
+##### Moved NewLine from Kernel to CharManager
+
+This is actually a character management function and not a function directly to the kernel.

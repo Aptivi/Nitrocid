@@ -24,6 +24,7 @@ using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Kernel.Debugging.RemoteDebug.Interface;
 using KS.Languages;
+using KS.Misc.Text;
 using KS.Misc.Writers.MiscWriters;
 using KS.Shell.ShellBase.Shells;
 
@@ -135,7 +136,7 @@ namespace KS.Shell.ShellBase.Commands
             {
                 Kernel.Events.EventsManager.FireEvent("CommandError", ShellType, RequestedCommand, ex);
                 DebugWriter.WriteDebugStackTrace(ex);
-                Decisive.DecisiveWrite(ShellType, DebugDeviceSocket, Translate.DoTranslation("Error trying to execute command") + " {2}." + Kernel.Kernel.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, ColorTools.ColTypes.Error, ex.GetType().FullName, ex.Message, RequestedCommand);
+                Decisive.DecisiveWrite(ShellType, DebugDeviceSocket, Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, ColorTools.ColTypes.Error, ex.GetType().FullName, ex.Message, RequestedCommand);
             }
         }
 

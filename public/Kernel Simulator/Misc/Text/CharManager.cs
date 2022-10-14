@@ -29,6 +29,11 @@ namespace KS.Misc.Text
     {
 
         /// <summary>
+        /// New line constant
+        /// </summary>
+        public static string NewLine { get => Environment.NewLine; }
+
+        /// <summary>
         /// Gets all the letters and the numbers.
         /// </summary>
         public static char[] GetAllLettersAndNumbers() =>
@@ -50,7 +55,8 @@ namespace KS.Misc.Text
         /// A simplification for <see cref="Convert.ToChar(int)"/> function to return the ESC character
         /// </summary>
         /// <returns>ESC</returns>
-        public static char GetEsc() => Convert.ToChar(0x1B);
+        public static char GetEsc() => 
+            Convert.ToChar(0x1B);
 
         /// <summary>
         /// Is the character a real control character

@@ -22,6 +22,7 @@ using static Extensification.CharExts.Querying;
 using Extensification.StringExts;
 using KS.Files.Querying;
 using KS.Languages;
+using KS.Misc.Text;
 
 namespace KS.Files.LineEndings
 {
@@ -38,11 +39,11 @@ namespace KS.Files.LineEndings
         {
             get
             {
-                if (Kernel.Kernel.NewLine == $"{Convert.ToChar(13)}{Convert.ToChar(10)}")
+                if (CharManager.NewLine == $"{Convert.ToChar(13)}{Convert.ToChar(10)}")
                     return FilesystemNewlineStyle.CRLF;
-                else if (Kernel.Kernel.NewLine == Convert.ToChar(13).ToString())
+                else if (CharManager.NewLine == Convert.ToChar(13).ToString())
                     return FilesystemNewlineStyle.CR;
-                else if (Kernel.Kernel.NewLine == Convert.ToChar(10).ToString())
+                else if (CharManager.NewLine == Convert.ToChar(10).ToString())
                     return FilesystemNewlineStyle.LF;
                 else
                     return FilesystemNewlineStyle.CRLF;

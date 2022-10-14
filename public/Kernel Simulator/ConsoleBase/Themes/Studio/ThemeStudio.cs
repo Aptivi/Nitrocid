@@ -25,6 +25,7 @@ using KS.Files.Folders;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Reflection;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.ConsoleBase.Themes.Studio
@@ -50,7 +51,7 @@ namespace KS.ConsoleBase.Themes.Studio
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Studio not exiting yet. Populating {0} options...", MaximumOptions);
                 ConsoleWrapper.Clear();
-                TextWriterColor.Write(Translate.DoTranslation("Making a new theme \"{0}\".") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.NeutralText, ThemeName);
+                TextWriterColor.Write(Translate.DoTranslation("Making a new theme \"{0}\".") + CharManager.NewLine, true, ColorTools.ColTypes.NeutralText, ThemeName);
 
                 // List options
                 for (int key = 0; key < ThemeStudioTools.SelectedColors.Count; key++)
@@ -157,7 +158,7 @@ namespace KS.ConsoleBase.Themes.Studio
                                     ThemeStudioTools.PreparePreview();
 
                                     // Pause until a key is pressed
-                                    TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.NeutralText);
+                                    TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.NeutralText);
                                     ConsoleWrapper.ReadKey();
                                     break;
                                 }

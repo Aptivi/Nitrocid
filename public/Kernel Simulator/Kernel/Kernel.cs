@@ -49,6 +49,7 @@ using KS.Kernel.Debugging.RemoteDebug;
 using KS.Users.Groups;
 using KS.Users;
 using KS.Kernel.Events;
+using KS.Misc.Text;
 
 namespace KS.Kernel
 {
@@ -66,10 +67,6 @@ namespace KS.Kernel
         /// Kernel API version
         /// </summary>
         public readonly static Version KernelApiVersion = new(FileVersionInfo.GetVersionInfo(GetExecutingAssembly().Location).FileVersion);
-        /// <summary>
-        /// New line constant
-        /// </summary>
-        public readonly static string NewLine = Environment.NewLine;
         internal static Stopwatch StageTimer = new();
 
         // #ifdef'd variables ... Framework monikers
@@ -147,7 +144,7 @@ namespace KS.Kernel
                     }
                     else
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("Looks like you're bypassing the console size detection. Things may not work properly on small screens.") + NewLine + Translate.DoTranslation("To have a better experience, resize your console window while still being on this screen. Press any key to continue..."), true, ColorTools.ColTypes.Warning);
+                        TextWriterColor.Write(Translate.DoTranslation("Looks like you're bypassing the console size detection. Things may not work properly on small screens.") + CharManager.NewLine + Translate.DoTranslation("To have a better experience, resize your console window while still being on this screen. Press any key to continue..."), true, ColorTools.ColTypes.Warning);
                         ConsoleWrapper.ReadKey(true);
                         Flags.CheckingForConsoleSize = true;
                     }

@@ -24,6 +24,7 @@ using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Kernel.Debugging;
 using KS.Languages;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -107,7 +108,7 @@ namespace KS.Users.Groups
             }
             catch (Exception ex)
             {
-                TextWriterColor.Write(Translate.DoTranslation("You have either found a bug, or the group you tried to add or remove is already done, or other error.") + Kernel.Kernel.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, ColorTools.ColTypes.Error, ex.GetType().FullName, ex.Message);
+                TextWriterColor.Write(Translate.DoTranslation("You have either found a bug, or the group you tried to add or remove is already done, or other error.") + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, ColorTools.ColTypes.Error, ex.GetType().FullName, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }
@@ -298,7 +299,7 @@ namespace KS.Users.Groups
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    throw new Kernel.Exceptions.GroupManagementException(Translate.DoTranslation("You have either found a bug, or the group you tried to edit for a new user has failed.") + Kernel.Kernel.NewLine + Translate.DoTranslation("Error {0}: {1}"), ex, ex.GetType().FullName, ex.Message);
+                    throw new Kernel.Exceptions.GroupManagementException(Translate.DoTranslation("You have either found a bug, or the group you tried to edit for a new user has failed.") + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), ex, ex.GetType().FullName, ex.Message);
                 }
             }
             else

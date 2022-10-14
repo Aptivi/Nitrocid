@@ -21,6 +21,7 @@ using System.Linq;
 using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 
@@ -123,7 +124,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                         }
                     case ChoiceOutputType.Modern:
                         {
-                            TextWriterColor.Write(Question + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.Question);
+                            TextWriterColor.Write(Question + CharManager.NewLine, true, ColorTools.ColTypes.Question);
                             for (int AnswerIndex = 0; AnswerIndex <= answers.Length - 1; AnswerIndex++)
                             {
                                 string AnswerInstance = answers[AnswerIndex];
@@ -152,7 +153,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                                 }
                                 TextWriterColor.Write(AnswerOption, true, ColorTools.ColTypes.AlternativeOption);
                             }
-                            TextWriterColor.Write(Kernel.Kernel.NewLine + ">> ", false, ColorTools.ColTypes.Input);
+                            TextWriterColor.Write(CharManager.NewLine + ">> ", false, ColorTools.ColTypes.Input);
                             break;
                         }
                     case ChoiceOutputType.Table:
@@ -171,7 +172,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                                 ChoiceData[answers.Length - 1 + AnswerIndex, 1] = AlternateAnswersTitles[AnswerIndex] ?? "";
                             }
                             TableColor.WriteTable(ChoiceHeader, ChoiceData, 2);
-                            TextWriterColor.Write(Kernel.Kernel.NewLine + ">> ", false, ColorTools.ColTypes.Input);
+                            TextWriterColor.Write(CharManager.NewLine + ">> ", false, ColorTools.ColTypes.Input);
                             break;
                         }
                 }

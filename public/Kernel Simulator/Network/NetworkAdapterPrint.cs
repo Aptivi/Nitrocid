@@ -21,6 +21,7 @@ using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Network
@@ -138,11 +139,11 @@ namespace KS.Network
         {
             if (Flags.ExtensiveAdapterInformation)
             {
-                TextWriterColor.Write(Translate.DoTranslation("IPv4 information:") + Kernel.Kernel.NewLine + Translate.DoTranslation("Adapter Number:") + " {0}" + Kernel.Kernel.NewLine + Translate.DoTranslation("Adapter Name:") + " {1}" + Kernel.Kernel.NewLine + Translate.DoTranslation("Maximum Transmission Unit: {2} Units") + Kernel.Kernel.NewLine + Translate.DoTranslation("DHCP Enabled:") + " {3}" + Kernel.Kernel.NewLine + Translate.DoTranslation("Non-unicast packets:") + " {4}/{5}" + Kernel.Kernel.NewLine + Translate.DoTranslation("Unicast packets:") + " {6}/{7}" + Kernel.Kernel.NewLine + Translate.DoTranslation("Error incoming/outgoing packets:") + " {8}/{9}", true, ColorTools.ColTypes.NeutralText, AdapterNumber, NInterface.Description, Properties.Mtu, Properties.IsDhcpEnabled, Statistics.NonUnicastPacketsSent, Statistics.NonUnicastPacketsReceived, Statistics.UnicastPacketsSent, Statistics.UnicastPacketsReceived, Statistics.IncomingPacketsWithErrors, Statistics.OutgoingPacketsWithErrors);
+                TextWriterColor.Write(Translate.DoTranslation("IPv4 information:") + CharManager.NewLine + Translate.DoTranslation("Adapter Number:") + " {0}" + CharManager.NewLine + Translate.DoTranslation("Adapter Name:") + " {1}" + CharManager.NewLine + Translate.DoTranslation("Maximum Transmission Unit: {2} Units") + CharManager.NewLine + Translate.DoTranslation("DHCP Enabled:") + " {3}" + CharManager.NewLine + Translate.DoTranslation("Non-unicast packets:") + " {4}/{5}" + CharManager.NewLine + Translate.DoTranslation("Unicast packets:") + " {6}/{7}" + CharManager.NewLine + Translate.DoTranslation("Error incoming/outgoing packets:") + " {8}/{9}", true, ColorTools.ColTypes.NeutralText, AdapterNumber, NInterface.Description, Properties.Mtu, Properties.IsDhcpEnabled, Statistics.NonUnicastPacketsSent, Statistics.NonUnicastPacketsReceived, Statistics.UnicastPacketsSent, Statistics.UnicastPacketsReceived, Statistics.IncomingPacketsWithErrors, Statistics.OutgoingPacketsWithErrors);
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("IPv4 information:") + Kernel.Kernel.NewLine + Translate.DoTranslation("Adapter Number:") + " {0}" + Kernel.Kernel.NewLine + Translate.DoTranslation("Adapter Name:") + " {1}", true, ColorTools.ColTypes.NeutralText, AdapterNumber, NInterface.Description);
+                TextWriterColor.Write(Translate.DoTranslation("IPv4 information:") + CharManager.NewLine + Translate.DoTranslation("Adapter Number:") + " {0}" + CharManager.NewLine + Translate.DoTranslation("Adapter Name:") + " {1}", true, ColorTools.ColTypes.NeutralText, AdapterNumber, NInterface.Description);
             }
         }
 
@@ -156,11 +157,11 @@ namespace KS.Network
         {
             if (Flags.ExtensiveAdapterInformation)
             {
-                TextWriterColor.Write(Translate.DoTranslation("IPv6 information:") + Kernel.Kernel.NewLine + Translate.DoTranslation("Adapter Number:") + " {0}" + Kernel.Kernel.NewLine + Translate.DoTranslation("Adapter Name:") + " {1}" + Kernel.Kernel.NewLine + Translate.DoTranslation("Maximum Transmission Unit: {2} Units"), true, ColorTools.ColTypes.NeutralText, AdapterNumber, NInterface.Description, Properties.Mtu);
+                TextWriterColor.Write(Translate.DoTranslation("IPv6 information:") + CharManager.NewLine + Translate.DoTranslation("Adapter Number:") + " {0}" + CharManager.NewLine + Translate.DoTranslation("Adapter Name:") + " {1}" + CharManager.NewLine + Translate.DoTranslation("Maximum Transmission Unit: {2} Units"), true, ColorTools.ColTypes.NeutralText, AdapterNumber, NInterface.Description, Properties.Mtu);
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("IPv6 information:") + Kernel.Kernel.NewLine + Translate.DoTranslation("Adapter Number:") + " {0}" + Kernel.Kernel.NewLine + Translate.DoTranslation("Adapter Name:") + " {1}", true, ColorTools.ColTypes.NeutralText, AdapterNumber, NInterface.Description);
+                TextWriterColor.Write(Translate.DoTranslation("IPv6 information:") + CharManager.NewLine + Translate.DoTranslation("Adapter Number:") + " {0}" + CharManager.NewLine + Translate.DoTranslation("Adapter Name:") + " {1}", true, ColorTools.ColTypes.NeutralText, AdapterNumber, NInterface.Description);
             }
         }
 
@@ -169,7 +170,7 @@ namespace KS.Network
         /// </summary>
         /// <param name="IPv4Stat">IPv4 general statistics</param>
         /// <param name="IPv6Stat">IPv6 general statistics</param>
-        public static void PrintGeneralNetInfo(IPGlobalStatistics IPv4Stat, IPGlobalStatistics IPv6Stat) => TextWriterColor.Write(Translate.DoTranslation("General IPv6 properties") + Kernel.Kernel.NewLine + Translate.DoTranslation("Packets (inbound):") + " {0}/{1}" + Kernel.Kernel.NewLine + Translate.DoTranslation("Packets (outbound):") + " {2}/{3}" + Kernel.Kernel.NewLine + Translate.DoTranslation("Errors in received packets:") + " {4}/{5}/{6}" + Kernel.Kernel.NewLine + Translate.DoTranslation("General IPv4 properties") + Kernel.Kernel.NewLine + Translate.DoTranslation("Packets (inbound):") + " {7}/{8}" + Kernel.Kernel.NewLine + Translate.DoTranslation("Packets (outbound):") + " {9}/{10}" + Kernel.Kernel.NewLine + Translate.DoTranslation("Errors in received packets:") + " {11}/{12}/{13}", true, ColorTools.ColTypes.NeutralText, IPv6Stat.ReceivedPackets, IPv6Stat.ReceivedPacketsDelivered, IPv6Stat.OutputPacketRequests, IPv6Stat.OutputPacketsDiscarded, IPv6Stat.ReceivedPacketsWithAddressErrors, IPv6Stat.ReceivedPacketsWithHeadersErrors, IPv6Stat.ReceivedPacketsWithUnknownProtocol, IPv4Stat.ReceivedPackets, IPv4Stat.ReceivedPacketsDelivered, IPv4Stat.OutputPacketRequests, IPv4Stat.OutputPacketsDiscarded, IPv4Stat.ReceivedPacketsWithAddressErrors, IPv4Stat.ReceivedPacketsWithHeadersErrors, IPv4Stat.ReceivedPacketsWithUnknownProtocol);
+        public static void PrintGeneralNetInfo(IPGlobalStatistics IPv4Stat, IPGlobalStatistics IPv6Stat) => TextWriterColor.Write(Translate.DoTranslation("General IPv6 properties") + CharManager.NewLine + Translate.DoTranslation("Packets (inbound):") + " {0}/{1}" + CharManager.NewLine + Translate.DoTranslation("Packets (outbound):") + " {2}/{3}" + CharManager.NewLine + Translate.DoTranslation("Errors in received packets:") + " {4}/{5}/{6}" + CharManager.NewLine + Translate.DoTranslation("General IPv4 properties") + CharManager.NewLine + Translate.DoTranslation("Packets (inbound):") + " {7}/{8}" + CharManager.NewLine + Translate.DoTranslation("Packets (outbound):") + " {9}/{10}" + CharManager.NewLine + Translate.DoTranslation("Errors in received packets:") + " {11}/{12}/{13}", true, ColorTools.ColTypes.NeutralText, IPv6Stat.ReceivedPackets, IPv6Stat.ReceivedPacketsDelivered, IPv6Stat.OutputPacketRequests, IPv6Stat.OutputPacketsDiscarded, IPv6Stat.ReceivedPacketsWithAddressErrors, IPv6Stat.ReceivedPacketsWithHeadersErrors, IPv6Stat.ReceivedPacketsWithUnknownProtocol, IPv4Stat.ReceivedPackets, IPv4Stat.ReceivedPacketsDelivered, IPv4Stat.OutputPacketRequests, IPv4Stat.OutputPacketsDiscarded, IPv4Stat.ReceivedPacketsWithAddressErrors, IPv4Stat.ReceivedPacketsWithHeadersErrors, IPv4Stat.ReceivedPacketsWithUnknownProtocol);
 
     }
 }

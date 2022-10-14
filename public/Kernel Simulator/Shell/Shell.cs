@@ -32,6 +32,7 @@ using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Execution;
 using KS.Misc.Screensaver;
+using KS.Misc.Text;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.WriterBase;
@@ -405,7 +406,7 @@ namespace KS.Shell
                         catch (Exception ex)
                         {
                             DebugWriter.WriteDebugStackTrace(ex);
-                            TextWriterColor.Write(Translate.DoTranslation("Error trying to execute command.") + Kernel.Kernel.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, ColorTools.ColTypes.Error, ex.GetType().FullName, ex.Message);
+                            TextWriterColor.Write(Translate.DoTranslation("Error trying to execute command.") + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, ColorTools.ColTypes.Error, ex.GetType().FullName, ex.Message);
                         }
                     }
                     while (false);

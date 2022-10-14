@@ -25,6 +25,7 @@ using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Probers;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.RSS;
 using KS.Network.RSS.Instance;
@@ -158,7 +159,7 @@ namespace KS.Shell.Shells.RSS
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriterColor.Write(Translate.DoTranslation("There was an error in the shell.") + Kernel.Kernel.NewLine + "Error {0}: {1}", true, ColorTools.ColTypes.Error, ex.GetType().FullName, ex.Message);
+                    TextWriterColor.Write(Translate.DoTranslation("There was an error in the shell.") + CharManager.NewLine + "Error {0}: {1}", true, ColorTools.ColTypes.Error, ex.GetType().FullName, ex.Message);
                     continue;
                 }
             }

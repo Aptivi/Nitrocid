@@ -242,7 +242,7 @@ namespace KS.Misc.Probers
                 if (text.Contains("<newline>"))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Newline placeholder found.");
-                    text = text.Replace("<newline>", Kernel.Kernel.NewLine);
+                    text = text.Replace("<newline>", CharManager.NewLine);
                 }
 
                 // -> User dollar sign placeholder

@@ -18,6 +18,7 @@
 
 using KS.ConsoleBase.Colors;
 using KS.Languages;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.FTP.Transfer;
 using KS.Shell.ShellBase.Commands;
@@ -46,12 +47,12 @@ namespace KS.Shell.Shells.FTP.Commands
             if (Result)
             {
                 TextWriterColor.Write();
-                TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("Uploaded folder {0}"), true, ColorTools.ColTypes.Success, ListArgsOnly[0]);
+                TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Uploaded folder {0}"), true, ColorTools.ColTypes.Success, ListArgsOnly[0]);
             }
             else
             {
                 TextWriterColor.Write();
-                TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("Failed to upload {0}"), true, ColorTools.ColTypes.Error, ListArgsOnly[0]);
+                TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Failed to upload {0}"), true, ColorTools.ColTypes.Error, ListArgsOnly[0]);
             }
         }
 

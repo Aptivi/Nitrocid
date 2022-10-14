@@ -18,6 +18,7 @@
 
 using KS.ConsoleBase.Colors;
 using KS.Languages;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.SFTP.Transfer;
 using KS.Shell.ShellBase.Commands;
@@ -45,12 +46,12 @@ namespace KS.Shell.Shells.SFTP.Commands
             if (SFTPTransfer.SFTPUploadFile(ListArgsOnly[0]))
             {
                 TextWriterColor.Write();
-                TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("Uploaded file {0}"), true, ColorTools.ColTypes.Success, ListArgsOnly[0]);
+                TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Uploaded file {0}"), true, ColorTools.ColTypes.Success, ListArgsOnly[0]);
             }
             else
             {
                 TextWriterColor.Write();
-                TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("Failed to upload {0}"), true, ColorTools.ColTypes.Error, ListArgsOnly[0]);
+                TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Failed to upload {0}"), true, ColorTools.ColTypes.Error, ListArgsOnly[0]);
             }
         }
 

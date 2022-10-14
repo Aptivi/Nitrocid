@@ -20,6 +20,7 @@ using System;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.Languages;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Misc.Games
@@ -121,7 +122,7 @@ namespace KS.Misc.Games
             }
 
             // Enter the loop until the user presses ESC
-            TextWriterColor.Write(Translate.DoTranslation("Press ESC to exit.") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.Tip);
+            TextWriterColor.Write(Translate.DoTranslation("Press ESC to exit.") + CharManager.NewLine, true, ColorTools.ColTypes.Tip);
             while (!(WrittenChar.Key == ConsoleKey.Escape) | !(WrittenChar.Modifiers == ConsoleModifiers.Control) & WrittenChar.Key == ConsoleKey.C)
             {
                 // Select a random character

@@ -18,6 +18,7 @@
 
 using KS.ConsoleBase.Colors;
 using KS.Languages;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.FTP.Filesystem;
 using KS.Shell.ShellBase.Commands;
@@ -42,11 +43,11 @@ namespace KS.Shell.Shells.FTP.Commands
                 TextWriterColor.Write(Translate.DoTranslation("Moving {0} to {1}..."), true, ColorTools.ColTypes.Progress, ListArgsOnly[0], ListArgsOnly[1]);
                 if (FTPFilesystem.FTPMoveItem(ListArgsOnly[0], ListArgsOnly[1]))
                 {
-                    TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("Moved successfully"), true, ColorTools.ColTypes.Success);
+                    TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Moved successfully"), true, ColorTools.ColTypes.Success);
                 }
                 else
                 {
-                    TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("Failed to move {0} to {1}."), true, ColorTools.ColTypes.Error, ListArgsOnly[0], ListArgsOnly[1]);
+                    TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Failed to move {0} to {1}."), true, ColorTools.ColTypes.Error, ListArgsOnly[0], ListArgsOnly[1]);
                 }
             }
             else

@@ -29,6 +29,7 @@ using KS.Files.Querying;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 
@@ -250,7 +251,7 @@ namespace KS.Files.Folders
 
                     // Show total size in list optionally
                     if (ShowTotalSizeInList)
-                        TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("Total size in folder:") + " {0}", true, ColorTools.ColTypes.NeutralText, TotalSize.FileSizeToString());
+                        TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Total size in folder:") + " {0}", true, ColorTools.ColTypes.NeutralText, TotalSize.FileSizeToString());
                 }
                 catch (Exception ex)
                 {

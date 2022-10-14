@@ -28,6 +28,7 @@ using KS.Languages;
 using KS.Misc.Probers;
 using KS.Misc.Probers.Motd;
 using KS.Misc.Screensaver;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.RSS;
 using KS.Shell.ShellBase.Shells;
@@ -111,7 +112,7 @@ namespace KS.Login
                 DebugWriter.WriteDebug(DebugLevel.I, "showMOTDOnceFlag = {0}, showMOTD = {1}", Flags.ShowMOTDOnceFlag, Flags.ShowMOTD);
                 if (Flags.ShowMOTDOnceFlag == true & Flags.ShowMOTD == true)
                 {
-                    TextWriterColor.Write(Kernel.Kernel.NewLine + PlaceParse.ProbePlaces(MotdParse.MOTDMessage), true, ColorTools.ColTypes.Banner);
+                    TextWriterColor.Write(CharManager.NewLine + PlaceParse.ProbePlaces(MotdParse.MOTDMessage), true, ColorTools.ColTypes.Banner);
                 }
                 Flags.ShowMOTDOnceFlag = false;
 

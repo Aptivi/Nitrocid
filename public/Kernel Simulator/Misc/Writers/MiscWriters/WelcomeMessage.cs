@@ -20,6 +20,7 @@ using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Languages;
 using KS.Misc.Probers;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters.Tools;
 
@@ -80,7 +81,7 @@ namespace KS.Misc.Writers.MiscWriters
                 if (Flags.NewWelcomeStyle)
                 {
                     string FigletRenderedBanner = FigletTools.RenderFiglet($"{Kernel.Kernel.KernelVersion}", KernelTools.BannerFigletFont);
-                    TextWriterColor.Write(Kernel.Kernel.NewLine + Kernel.Kernel.NewLine + FigletRenderedBanner, true, ColorTools.ColTypes.NeutralText);
+                    TextWriterColor.Write(CharManager.NewLine + CharManager.NewLine + FigletRenderedBanner, true, ColorTools.ColTypes.NeutralText);
                 }
                 else
                 {
@@ -96,7 +97,7 @@ namespace KS.Misc.Writers.MiscWriters
         /// </summary>
         public static void WriteLicense(bool TwoNewlines)
         {
-            TextWriterColor.Write(Kernel.Kernel.NewLine + "    Kernel Simulator  Copyright (C) 2018-2022  Aptivi" + Kernel.Kernel.NewLine + "    This program comes with ABSOLUTELY NO WARRANTY, not even " + Kernel.Kernel.NewLine + "    MERCHANTABILITY or FITNESS for particular purposes." + Kernel.Kernel.NewLine + "    This is free software, and you are welcome to redistribute it" + Kernel.Kernel.NewLine + "    under certain conditions; See COPYING file in source code." + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.License);
+            TextWriterColor.Write(CharManager.NewLine + "    Kernel Simulator  Copyright (C) 2018-2022  Aptivi" + CharManager.NewLine + "    This program comes with ABSOLUTELY NO WARRANTY, not even " + CharManager.NewLine + "    MERCHANTABILITY or FITNESS for particular purposes." + CharManager.NewLine + "    This is free software, and you are welcome to redistribute it" + CharManager.NewLine + "    under certain conditions; See COPYING file in source code." + CharManager.NewLine, true, ColorTools.ColTypes.License);
             TextWriterColor.Write("* " + Translate.DoTranslation("For more information about the terms and conditions of using this software, visit") + " http://www.gnu.org/licenses/", true, ColorTools.ColTypes.License);
             if (TwoNewlines)
                 TextWriterColor.Write();

@@ -25,6 +25,7 @@ using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Editors.HexEdit;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Commands;
@@ -58,7 +59,7 @@ namespace KS.Shell.Shells.Hex
                 TextWriterColor.Write(Translate.DoTranslation("File not specified. Exiting shell..."), true, ColorTools.ColTypes.Error);
                 Bail = true;
             }
-            TextWriterColor.Write(Translate.DoTranslation("Please note that editing binary files using this shell is experimental and may lead to data corruption or data loss if not used properly.") + Kernel.Kernel.NewLine + Translate.DoTranslation("DON'T LAUNCH THE SHELL UNLESS YOU KNOW WHAT YOU'RE DOING!"), true, ColorTools.ColTypes.Warning);
+            TextWriterColor.Write(Translate.DoTranslation("Please note that editing binary files using this shell is experimental and may lead to data corruption or data loss if not used properly.") + CharManager.NewLine + Translate.DoTranslation("DON'T LAUNCH THE SHELL UNLESS YOU KNOW WHAT YOU'RE DOING!"), true, ColorTools.ColTypes.Warning);
 
             // Actual shell logic
             while (!Bail)
@@ -89,7 +90,7 @@ namespace KS.Shell.Shells.Hex
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriterColor.Write(Translate.DoTranslation("There was an error in the shell.") + Kernel.Kernel.NewLine + "Error {0}: {1}", true, ColorTools.ColTypes.Error, ex.GetType().FullName, ex.Message);
+                    TextWriterColor.Write(Translate.DoTranslation("There was an error in the shell.") + CharManager.NewLine + "Error {0}: {1}", true, ColorTools.ColTypes.Error, ex.GetType().FullName, ex.Message);
                     continue;
                 }
             }

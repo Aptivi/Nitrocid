@@ -23,6 +23,7 @@ using KS.ConsoleBase.Inputs;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Reflection;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.ConsoleBase.Colors
@@ -119,7 +120,7 @@ namespace KS.ConsoleBase.Colors
                 ConsoleWrapper.Clear();
                 if (TrueColor)
                 {
-                    TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("Select color using \"<-\" and \"->\" keys. Press ENTER to quit. Press \"i\" to insert color number manually."), true, ColorTools.ColTypes.Tip);
+                    TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Select color using \"<-\" and \"->\" keys. Press ENTER to quit. Press \"i\" to insert color number manually."), true, ColorTools.ColTypes.Tip);
                     TextWriterColor.Write(Translate.DoTranslation("Press \"t\" to switch to 255 color mode."), true, ColorTools.ColTypes.Tip);
                     TextWriterColor.Write(Translate.DoTranslation("Press \"c\" to write full color code."), true, ColorTools.ColTypes.Tip);
                     DebugWriter.WriteDebug(DebugLevel.I, "Current Range: {0}", CurrentRange);
@@ -128,7 +129,7 @@ namespace KS.ConsoleBase.Colors
                     var RedForeground = Convert.ToString(CurrentRange) == "R" ? new Color((int)ConsoleColors.Black) : new Color("255;0;0");
                     var RedBackground = Convert.ToString(CurrentRange) == "R" ? new Color("255;0;0") : new Color((int)ConsoleColors.Black);
                     DebugWriter.WriteDebug(DebugLevel.I, "Red foreground: {0} | Red background: {1}", RedForeground.PlainSequence, RedBackground.PlainSequence);
-                    TextWriterColor.Write(Kernel.Kernel.NewLine + "  ", false, ColorTools.ColTypes.NeutralText);
+                    TextWriterColor.Write(CharManager.NewLine + "  ", false, ColorTools.ColTypes.NeutralText);
                     TextWriterColor.Write(" < ", false, RedForeground, RedBackground);
                     TextWriterWhereColor.WriteWhere("R: {0}", (int)Math.Round((ConsoleWrapper.CursorLeft + 35 - $"R: {CurrentColorR}".Length) / 2d), ConsoleWrapper.CursorTop, true, new Color($"{CurrentColorR};0;0"), CurrentColorR);
                     TextWriterWhereColor.WriteWhere(" > ", ConsoleWrapper.CursorLeft + 32, ConsoleWrapper.CursorTop, RedForeground, RedBackground);
@@ -138,7 +139,7 @@ namespace KS.ConsoleBase.Colors
                     var GreenForeground = Convert.ToString(CurrentRange) == "G" ? new Color((int)ConsoleColors.Black) : new Color("0;255;0");
                     var GreenBackground = Convert.ToString(CurrentRange) == "G" ? new Color("0;255;0") : new Color((int)ConsoleColors.Black);
                     DebugWriter.WriteDebug(DebugLevel.I, "Green foreground: {0} | Green background: {1}", GreenForeground.PlainSequence, GreenBackground.PlainSequence);
-                    TextWriterColor.Write(Kernel.Kernel.NewLine + "  ", false, ColorTools.ColTypes.NeutralText);
+                    TextWriterColor.Write(CharManager.NewLine + "  ", false, ColorTools.ColTypes.NeutralText);
                     TextWriterColor.Write(" < ", false, GreenForeground, GreenBackground);
                     TextWriterWhereColor.WriteWhere("G: {0}", (int)Math.Round((ConsoleWrapper.CursorLeft + 35 - $"G: {CurrentColorG}".Length) / 2d), ConsoleWrapper.CursorTop, true, new Color($"0;{CurrentColorG};0"), CurrentColorG);
                     TextWriterWhereColor.WriteWhere(" > ", ConsoleWrapper.CursorLeft + 32, ConsoleWrapper.CursorTop, GreenForeground, GreenBackground);
@@ -148,7 +149,7 @@ namespace KS.ConsoleBase.Colors
                     var BlueForeground = Convert.ToString(CurrentRange) == "B" ? new Color((int)ConsoleColors.Black) : new Color("0;0;255");
                     var BlueBackground = Convert.ToString(CurrentRange) == "B" ? new Color("0;0;255") : new Color((int)ConsoleColors.Black);
                     DebugWriter.WriteDebug(DebugLevel.I, "Blue foreground: {0} | Blue background: {1}", BlueForeground.PlainSequence, BlueBackground.PlainSequence);
-                    TextWriterColor.Write(Kernel.Kernel.NewLine + "  ", false, ColorTools.ColTypes.NeutralText);
+                    TextWriterColor.Write(CharManager.NewLine + "  ", false, ColorTools.ColTypes.NeutralText);
                     TextWriterColor.Write(" < ", false, BlueForeground, BlueBackground);
                     TextWriterWhereColor.WriteWhere("B: {0}", (int)Math.Round((ConsoleWrapper.CursorLeft + 35 - $"B: {CurrentColorB}".Length) / 2d), ConsoleWrapper.CursorTop, true, new Color($"0;0;{CurrentColorB}"), CurrentColorB);
                     TextWriterWhereColor.WriteWhere(" > ", ConsoleWrapper.CursorLeft + 32, ConsoleWrapper.CursorTop, BlueForeground, BlueBackground);
@@ -166,7 +167,7 @@ namespace KS.ConsoleBase.Colors
 
                     // Show example
                     var PreviewColor = new Color($"{CurrentColorR};{CurrentColorG};{CurrentColorB}");
-                    TextWriterColor.Write(Kernel.Kernel.NewLine + "- Lorem ipsum dolor sit amet, consectetur adipiscing elit. ({0})", true, PreviewColor, PreviewColor.Hex);
+                    TextWriterColor.Write(CharManager.NewLine + "- Lorem ipsum dolor sit amet, consectetur adipiscing elit. ({0})", true, PreviewColor, PreviewColor.Hex);
 
                     // Read and get response
                     var ConsoleResponse = ConsoleWrapper.ReadKey(true);
@@ -408,17 +409,17 @@ namespace KS.ConsoleBase.Colors
                 }
                 else
                 {
-                    TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("Select color using \"<-\" and \"->\" keys. Use arrow up and arrow down keys to select between color ranges. Press ENTER to quit. Press \"i\" to insert color number manually."), true, ColorTools.ColTypes.Tip);
+                    TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Select color using \"<-\" and \"->\" keys. Use arrow up and arrow down keys to select between color ranges. Press ENTER to quit. Press \"i\" to insert color number manually."), true, ColorTools.ColTypes.Tip);
                     TextWriterColor.Write(Translate.DoTranslation("Press \"t\" to switch to true color mode."), true, ColorTools.ColTypes.Tip);
 
                     // The color selection
-                    TextWriterColor.Write(Kernel.Kernel.NewLine + "   < ", false, ColorTools.ColTypes.Gray);
+                    TextWriterColor.Write(CharManager.NewLine + "   < ", false, ColorTools.ColTypes.Gray);
                     TextWriterWhereColor.WriteWhere($"{CurrentColor} [{Convert.ToInt32((int)CurrentColor)}]", (int)Math.Round((ConsoleWrapper.CursorLeft + 38 - $"{CurrentColor} [{Convert.ToInt32((int)CurrentColor)}]".Length) / 2d), ConsoleWrapper.CursorTop, true, new Color((int)CurrentColor));
                     TextWriterWhereColor.WriteWhere(" >", ConsoleWrapper.CursorLeft + 32, ConsoleWrapper.CursorTop, ColorTools.ColTypes.Gray);
 
                     // Show prompt
                     var PreviewColor = new Color((int)CurrentColor);
-                    TextWriterColor.Write(Kernel.Kernel.NewLine + Kernel.Kernel.NewLine + "- Lorem ipsum dolor sit amet, consectetur adipiscing elit. ({0})", true, PreviewColor, PreviewColor.Hex);
+                    TextWriterColor.Write(CharManager.NewLine + CharManager.NewLine + "- Lorem ipsum dolor sit amet, consectetur adipiscing elit. ({0})", true, PreviewColor, PreviewColor.Hex);
 
                     // Read and get response
                     var ConsoleResponse = ConsoleWrapper.ReadKey(true);

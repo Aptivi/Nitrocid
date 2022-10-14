@@ -24,6 +24,7 @@ using KS.Files.Read;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using System;
 using System.IO;
@@ -132,7 +133,7 @@ namespace KS.Files.Print
                     if (ByteNumberEachSixteen > 16)
                     {
                         // OK, let's increase the byte iteration and get the next line ready
-                        TextWriterColor.Write(Kernel.Kernel.NewLine + $"0x{CurrentByteNumber:X8}", false, ColorTools.ColTypes.ListEntry);
+                        TextWriterColor.Write(CharManager.NewLine + $"0x{CurrentByteNumber:X8}", false, ColorTools.ColTypes.ListEntry);
                         ByteWritePositionX = $"0x{CurrentByteNumber:X8}".Length + 2;
                         ByteCharWritePositionX = 61 + (ByteWritePositionX - 12);
                         ByteNumberEachSixteen = 1;

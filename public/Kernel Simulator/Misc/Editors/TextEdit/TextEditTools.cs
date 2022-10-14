@@ -27,6 +27,7 @@ using FluentFTP.Helpers;
 using KS.Files;
 using KS.Kernel.Debugging;
 using KS.Languages;
+using KS.Misc.Text;
 using KS.Shell.Shells.Text;
 
 namespace KS.Misc.Editors.TextEdit
@@ -104,7 +105,7 @@ namespace KS.Misc.Editors.TextEdit
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to save file...");
                 TextEditShellCommon.TextEdit_FileStream.SetLength(0L);
                 DebugWriter.WriteDebug(DebugLevel.I, "Length set to 0.");
-                var FileLinesByte = Encoding.Default.GetBytes(TextEditShellCommon.TextEdit_FileLines.ToArray().Join(Kernel.Kernel.NewLine));
+                var FileLinesByte = Encoding.Default.GetBytes(TextEditShellCommon.TextEdit_FileLines.ToArray().Join(CharManager.NewLine));
                 DebugWriter.WriteDebug(DebugLevel.I, "Converted lines to bytes. Length: {0}", FileLinesByte.Length);
                 TextEditShellCommon.TextEdit_FileStream.Write(FileLinesByte, 0, FileLinesByte.Length);
                 TextEditShellCommon.TextEdit_FileStream.Flush();

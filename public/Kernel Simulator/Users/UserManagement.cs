@@ -28,6 +28,7 @@ using KS.Files;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Languages;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Users.Groups;
 using Newtonsoft.Json;
@@ -150,7 +151,7 @@ namespace KS.Users
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                throw new Kernel.Exceptions.UserCreationException(Translate.DoTranslation("Error trying to add username.") + Kernel.Kernel.NewLine + Translate.DoTranslation("Error {0}: {1}"), ex, ex.GetType().FullName, ex.Message);
+                throw new Kernel.Exceptions.UserCreationException(Translate.DoTranslation("Error trying to add username.") + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), ex, ex.GetType().FullName, ex.Message);
             }
         }
 
@@ -357,7 +358,7 @@ namespace KS.Users
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    throw new Kernel.Exceptions.UserManagementException(Translate.DoTranslation("Error trying to remove username.") + Kernel.Kernel.NewLine + Translate.DoTranslation("Error {0}: {1}"), ex, ex.Message);
+                    throw new Kernel.Exceptions.UserManagementException(Translate.DoTranslation("Error trying to remove username.") + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), ex, ex.Message);
                 }
             }
         }
@@ -628,10 +629,10 @@ namespace KS.Users
             // Third, select account type
             while (Step == 3)
             {
-                TextWriterColor.Write(Translate.DoTranslation("Select account type.") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.NeutralText);
+                TextWriterColor.Write(Translate.DoTranslation("Select account type.") + CharManager.NewLine, true, ColorTools.ColTypes.NeutralText);
                 TextWriterColor.Write(" 1) " + Translate.DoTranslation("Administrator: This account type has the most power in the kernel, allowing you to use system management programs."), true, ColorTools.ColTypes.Option);
                 TextWriterColor.Write(" 2) " + Translate.DoTranslation("Normal User: This account type is slightly more restricted than administrators."), true, ColorTools.ColTypes.Option);
-                TextWriterColor.Write(Kernel.Kernel.NewLine + ">> ", false, ColorTools.ColTypes.Input);
+                TextWriterColor.Write(CharManager.NewLine + ">> ", false, ColorTools.ColTypes.Input);
                 if (int.TryParse(Input.ReadLine(), out AnswerType))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Answer: {0}", AnswerType);

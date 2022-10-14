@@ -39,6 +39,7 @@ using KS.Misc.Notifications;
 using KS.Misc.Reflection;
 using KS.Misc.Screensaver;
 using KS.Misc.Splash;
+using KS.Misc.Text;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
@@ -239,20 +240,20 @@ namespace KS.Kernel
 
                 // Write info (Header)
                 Dump.AutoFlush = true;
-                Dump.WriteLine(Translate.DoTranslation("----------------------------- Kernel panic dump -----------------------------") + Kernel.NewLine + Kernel.NewLine + Translate.DoTranslation(">> Panic information <<") + Kernel.NewLine + Translate.DoTranslation("> Description: {0}") + Kernel.NewLine + Translate.DoTranslation("> Error type: {1}") + Kernel.NewLine + Translate.DoTranslation("> Date and Time: {2}") + Kernel.NewLine + Translate.DoTranslation("> Framework Type: {3}") + Kernel.NewLine, Description, ErrorType.ToString(), TimeDateRenderers.Render(), Kernel.KernelSimulatorMoniker);
+                Dump.WriteLine(Translate.DoTranslation("----------------------------- Kernel panic dump -----------------------------") + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation(">> Panic information <<") + CharManager.NewLine + Translate.DoTranslation("> Description: {0}") + CharManager.NewLine + Translate.DoTranslation("> Error type: {1}") + CharManager.NewLine + Translate.DoTranslation("> Date and Time: {2}") + CharManager.NewLine + Translate.DoTranslation("> Framework Type: {3}") + CharManager.NewLine, Description, ErrorType.ToString(), TimeDateRenderers.Render(), Kernel.KernelSimulatorMoniker);
 
                 // Write Info (Exception)
                 if (Exc is not null)
                 {
                     int Count = 1;
-                    Dump.WriteLine(Translate.DoTranslation(">> Exception information <<") + Kernel.NewLine + Translate.DoTranslation("> Exception: {0}") + Kernel.NewLine + Translate.DoTranslation("> Description: {1}") + Kernel.NewLine + Translate.DoTranslation("> HRESULT: {2}") + Kernel.NewLine + Translate.DoTranslation("> Source: {3}") + Kernel.NewLine + Kernel.NewLine + Translate.DoTranslation("> Stack trace <") + Kernel.NewLine + Kernel.NewLine + Exc.StackTrace + Kernel.NewLine + Kernel.NewLine, Exc.GetType().FullName, Exc.Message, Exc.HResult, Exc.Source);
+                    Dump.WriteLine(Translate.DoTranslation(">> Exception information <<") + CharManager.NewLine + Translate.DoTranslation("> Exception: {0}") + CharManager.NewLine + Translate.DoTranslation("> Description: {1}") + CharManager.NewLine + Translate.DoTranslation("> HRESULT: {2}") + CharManager.NewLine + Translate.DoTranslation("> Source: {3}") + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("> Stack trace <") + CharManager.NewLine + CharManager.NewLine + Exc.StackTrace + CharManager.NewLine + CharManager.NewLine, Exc.GetType().FullName, Exc.Message, Exc.HResult, Exc.Source);
                     Dump.WriteLine(Translate.DoTranslation(">> Inner exception {0} information <<"), Count);
 
                     // Write info (Inner exceptions)
                     var InnerExc = Exc.InnerException;
                     while (InnerExc is not null)
                     {
-                        Dump.WriteLine(Translate.DoTranslation("> Exception: {0}") + Kernel.NewLine + Translate.DoTranslation("> Description: {1}") + Kernel.NewLine + Translate.DoTranslation("> HRESULT: {2}") + Kernel.NewLine + Translate.DoTranslation("> Source: {3}") + Kernel.NewLine + Kernel.NewLine + Translate.DoTranslation("> Stack trace <") + Kernel.NewLine + Kernel.NewLine + InnerExc.StackTrace + Kernel.NewLine, InnerExc.GetType().FullName, InnerExc.Message, InnerExc.HResult, InnerExc.Source);
+                        Dump.WriteLine(Translate.DoTranslation("> Exception: {0}") + CharManager.NewLine + Translate.DoTranslation("> Description: {1}") + CharManager.NewLine + Translate.DoTranslation("> HRESULT: {2}") + CharManager.NewLine + Translate.DoTranslation("> Source: {3}") + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("> Stack trace <") + CharManager.NewLine + CharManager.NewLine + InnerExc.StackTrace + CharManager.NewLine, InnerExc.GetType().FullName, InnerExc.Message, InnerExc.HResult, InnerExc.Source);
                         InnerExc = InnerExc.InnerException;
                         if (InnerExc is not null)
                         {
@@ -268,7 +269,7 @@ namespace KS.Kernel
                 }
                 else
                 {
-                    Dump.WriteLine(Translate.DoTranslation(">> No exception; might be a kernel error. <<") + Kernel.NewLine);
+                    Dump.WriteLine(Translate.DoTranslation(">> No exception; might be a kernel error. <<") + CharManager.NewLine);
                 }
 
                 // Write info (Frames)
@@ -298,7 +299,7 @@ namespace KS.Kernel
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    Dump.WriteLine(Translate.DoTranslation("> There is an error when trying to get frame information. {0}: {1}"), ex.GetType().FullName, ex.Message.Replace(Kernel.NewLine, " | "));
+                    Dump.WriteLine(Translate.DoTranslation("> There is an error when trying to get frame information. {0}: {1}"), ex.GetType().FullName, ex.Message.Replace(CharManager.NewLine, " | "));
                 }
 
                 // Close stream

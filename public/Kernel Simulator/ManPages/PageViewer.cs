@@ -64,7 +64,7 @@ namespace KS.ManPages
                     DebugWriter.WriteDebug(DebugLevel.I, "Todos are found in manpage.");
                     TextWriterColor.Write(Translate.DoTranslation("This manual page needs work for:"), true, ColorTools.ColTypes.Warning);
                     ListWriterColor.WriteList(PageManager.Pages[ManualTitle].Todos, true);
-                    TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("Press any key to read the manual page..."), false, ColorTools.ColTypes.Warning);
+                    TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Press any key to read the manual page..."), false, ColorTools.ColTypes.Warning);
                     ConsoleBase.ConsoleWrapper.ReadKey();
                 }
 
