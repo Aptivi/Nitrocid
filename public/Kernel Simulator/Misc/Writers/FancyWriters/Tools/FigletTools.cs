@@ -77,12 +77,24 @@ namespace KS.Misc.Writers.FancyWriters.Tools
             }
         }
 
+        /// <summary>
+        /// Renders the figlet font
+        /// </summary>
+        /// <param name="Text">Text to render</param>
+        /// <param name="figletFontName">Figlet font name to render. Consult <see cref="FigletFonts"/> for more info.</param>
+        /// <param name="Vars">Variables to use when formatting the string</param>
         public static string RenderFiglet(string Text, string figletFontName, params object[] Vars)
         {
-            var FigletFont = FigletTools.GetFigletFont(figletFontName);
+            var FigletFont = GetFigletFont(figletFontName);
             return RenderFiglet(Text, FigletFont, Vars);
         }
 
+        /// <summary>
+        /// Renders the figlet font
+        /// </summary>
+        /// <param name="Text">Text to render</param>
+        /// <param name="FigletFont">Figlet font instance to render. Consult <see cref="FigletFonts"/> for more info.</param>
+        /// <param name="Vars">Variables to use when formatting the string</param>
         public static string RenderFiglet(string Text, FiggleFont FigletFont, params object[] Vars)
         {
             // Since Figgle library doesn't have a meaningful way of checking if the provided FiggleFont exists, so we have no option other than using the
