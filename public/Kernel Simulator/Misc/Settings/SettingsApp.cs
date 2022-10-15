@@ -25,6 +25,7 @@ using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
+using KS.ConsoleBase.Inputs.Styles;
 using KS.Files;
 using KS.Files.Folders;
 using KS.Files.Querying;
@@ -93,7 +94,7 @@ namespace KS.Misc.Settings
 
                 // Prompt for selection and check the answer
                 string finalTitle = Translate.DoTranslation("Welcome to Settings!");
-                int Answer = ConsoleBase.Inputs.Styles.SelectionStyle.PromptSelection(finalTitle + CharManager.NewLine + "=".Repeat(finalTitle.Length) + CharManager.NewLine + Translate.DoTranslation("Select section:"), 
+                int Answer = SelectionStyle.PromptSelection(finalTitle + CharManager.NewLine + "=".Repeat(finalTitle.Length) + CharManager.NewLine + Translate.DoTranslation("Select section:"), 
                     string.Join("/", sectionNums), sections.ToArray(), 
                     string.Join("/", altSectionNums), altSections.ToArray());
                 if (Answer >= 1 & Answer <= MaxSections)
@@ -279,7 +280,7 @@ namespace KS.Misc.Settings
 
                     // Prompt user and check for input
                     string finalSection = SectionTranslateName ? Translate.DoTranslation((string)SectionDisplayName) : (string)SectionDisplayName;
-                    int Answer = ConsoleBase.Inputs.Styles.SelectionStyle.PromptSelection(finalSection + CharManager.NewLine + "=".Repeat(finalSection.Length) + CharManager.NewLine + Translate.DoTranslation((string)SectionDescription),
+                    int Answer = SelectionStyle.PromptSelection(finalSection + CharManager.NewLine + "=".Repeat(finalSection.Length) + CharManager.NewLine + Translate.DoTranslation((string)SectionDescription),
                         string.Join("/", sectionNums), sections.ToArray(),
                         string.Join("/", altSectionNums), altSections.ToArray());
                     DebugWriter.WriteDebug(DebugLevel.I, "Succeeded. Checking the answer if it points to the right direction...");
