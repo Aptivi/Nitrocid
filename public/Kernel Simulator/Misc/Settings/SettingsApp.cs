@@ -92,7 +92,8 @@ namespace KS.Misc.Settings
                 }
 
                 // Prompt for selection and check the answer
-                int Answer = ConsoleBase.Inputs.Styles.SelectionStyle.PromptSelection(Translate.DoTranslation("Select section:"), 
+                string finalTitle = Translate.DoTranslation("Welcome to Settings!");
+                int Answer = ConsoleBase.Inputs.Styles.SelectionStyle.PromptSelection(finalTitle + CharManager.NewLine + "=".Repeat(finalTitle.Length) + CharManager.NewLine + Translate.DoTranslation("Select section:"), 
                     string.Join("/", sectionNums), sections.ToArray(), 
                     string.Join("/", altSectionNums), altSections.ToArray());
                 if (Answer >= 1 & Answer <= MaxSections)
