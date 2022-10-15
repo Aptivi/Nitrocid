@@ -27,7 +27,7 @@ namespace KSCleanUnusedLocales
         static void Main()
         {
             // Check to see if we're running on the KS repo
-            string engFile = "../../../../KSJsonifyLocales/Translations/eng.txt";
+            string engFile = "../../../../../public/KSJsonifyLocales/Translations/eng.txt";
             if (File.Exists(engFile))
             {
                 Console.WriteLine("Probing English file...");

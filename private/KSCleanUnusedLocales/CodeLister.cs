@@ -27,7 +27,7 @@ namespace KSCleanUnusedLocales
         private static string[] ListCodeFilesForKS()
         {
             // Check to see if we have the Kernel Simulator folder
-            string kernelSimulatorSource = "../../../../Kernel Simulator/";
+            string kernelSimulatorSource = "../../../../../public/Kernel Simulator/";
             if (Directory.Exists(kernelSimulatorSource))
             {
                 // Iterate through all the source files for Kernel Simulator
@@ -40,7 +40,7 @@ namespace KSCleanUnusedLocales
         private static string[] ListDataFilesForKS()
         {
             // Check to see if we have the Kernel Simulator folder
-            string kernelSimulatorDataSource = "../../../../Kernel Simulator/Resources/Data/";
+            string kernelSimulatorDataSource = "../../../../../public/Kernel Simulator/Resources/Data/";
             if (Directory.Exists(kernelSimulatorDataSource))
             {
                 // Iterate through all the data files for Kernel Simulator

@@ -28,7 +28,7 @@ namespace KSCleanUnusedLocales
         private static string[] ListLanguageFilesForKS()
         {
             // Check to see if we have the Kernel Simulator folder
-            string ksJsonifyLocalesSource = "../../../../KSJsonifyLocales/Translations";
+            string ksJsonifyLocalesSource = "../../../../../public/KSJsonifyLocales/Translations";
             if (Directory.Exists(ksJsonifyLocalesSource))
             {
                 // Iterate through all the source files for Kernel Simulator
