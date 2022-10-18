@@ -388,82 +388,66 @@ namespace KS.Misc.Settings
 
                 while (!KeyFinished)
                 {
-                    ConsoleBase.ConsoleWrapper.Clear();
+                    if (KeyType == SettingsKeyType.SUnknown)
+                        break;
 
-                    // Make an introductory banner
-                    SeparatorWriterColor.WriteSeparator(Translate.DoTranslation(Section + " Settings...") + " > " + Translate.DoTranslation(KeyName), true);
-                    TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation(KeyDescription), true, ColorTools.ColTypes.NeutralText);
-
-                    // See how to get the value
-                    if (!(KeyType == SettingsKeyType.SUnknown))
+                    // Determine which list we're going to select
+                    if (KeyType == SettingsKeyType.SSelection)
                     {
-                        // Determine which list we're going to select
-                        if (KeyType == SettingsKeyType.SSelection)
+                        if (SelectionEnum)
                         {
-                            if (SelectionEnum)
+                            if (SelectionEnumInternal)
                             {
-                                if (SelectionEnumInternal)
-                                {
-                                    // Apparently, we need to have a full assembly name for getting types.
-                                    SelectFrom = Type.GetType("KS." + KeyToken["Enumeration"].ToString() + ", " + Assembly.GetExecutingAssembly().FullName).GetEnumNames();
-                                    Selections = Type.GetType("KS." + KeyToken["Enumeration"].ToString() + ", " + Assembly.GetExecutingAssembly().FullName).GetEnumValues();
-                                    MaxKeyOptions = SelectFrom.Count();
-                                }
-                                else
-                                {
-                                    SelectFrom = Type.GetType(KeyToken["Enumeration"].ToString() + ", " + SelectionEnumAssembly).GetEnumNames();
-                                    Selections = Type.GetType(KeyToken["Enumeration"].ToString() + ", " + SelectionEnumAssembly).GetEnumValues();
-                                    MaxKeyOptions = SelectFrom.Count();
-                                }
+                                // Apparently, we need to have a full assembly name for getting types.
+                                SelectFrom = Type.GetType("KS." + KeyToken["Enumeration"].ToString() + ", " + Assembly.GetExecutingAssembly().FullName).GetEnumNames();
+                                Selections = Type.GetType("KS." + KeyToken["Enumeration"].ToString() + ", " + Assembly.GetExecutingAssembly().FullName).GetEnumValues();
+                                MaxKeyOptions = SelectFrom.Count();
                             }
                             else
                             {
-                                SelectFrom = (IEnumerable<object>)MethodManager.GetMethod((string)KeyToken["SelectionFunctionName"]).Invoke(KeyToken["SelectionFunctionType"], null);
+                                SelectFrom = Type.GetType(KeyToken["Enumeration"].ToString() + ", " + SelectionEnumAssembly).GetEnumNames();
+                                Selections = Type.GetType(KeyToken["Enumeration"].ToString() + ", " + SelectionEnumAssembly).GetEnumValues();
                                 MaxKeyOptions = SelectFrom.Count();
-                            }
-                        }
-                        else if (KeyType == SettingsKeyType.SList)
-                        {
-                            TargetList = (IEnumerable<object>)MethodManager.GetMethod(ListFunctionName).Invoke(ListFunctionType, null);
-                        }
-
-                        // Determine how to get key default value
-                        if (KeyVarProperty is null)
-                        {
-                            if (FieldManager.CheckField(KeyVar, KeyIsInternal))
-                            {
-                                // We're dealing with the field, get the value from it. However, check to see if that field is an enumerable
-                                if (KeyIsEnumerable)
-                                    KeyDefaultValue = FieldManager.GetValueFromEnumerable(KeyVar, KeyEnumerableIndex, KeyIsInternal);
-                                else
-                                    KeyDefaultValue = FieldManager.GetValue(KeyVar, KeyIsInternal);
-                            }
-                            else if (PropertyManager.CheckProperty(KeyVar))
-                            {
-                                // We're dealing with the property, get the value from it
-                                KeyDefaultValue = PropertyManager.GetPropertyValue(KeyVar);
-                            }
-
-                            // Get the plain sequence from the color
-                            if (KeyDefaultValue is Color color)
-                            {
-                                KeyDefaultValue = color.PlainSequence;
                             }
                         }
                         else
                         {
-                            // Get the property value from variable
-                            KeyDefaultValue = PropertyManager.GetPropertyValueInVariable(KeyVar, KeyVarProperty);
+                            SelectFrom = (IEnumerable<object>)MethodManager.GetMethod((string)KeyToken["SelectionFunctionName"]).Invoke(KeyToken["SelectionFunctionType"], null);
+                            MaxKeyOptions = SelectFrom.Count();
                         }
                     }
-
-                    // If the type is boolean, write the two options
-                    if (KeyType == SettingsKeyType.SBoolean)
+                    else if (KeyType == SettingsKeyType.SList)
                     {
-                        TextWriterColor.Write();
-                        MaxKeyOptions = 2;
-                        TextWriterColor.Write(" 1) " + Translate.DoTranslation("Enable"), true, ColorTools.ColTypes.Option);
-                        TextWriterColor.Write(" 2) " + Translate.DoTranslation("Disable"), true, ColorTools.ColTypes.Option);
+                        TargetList = (IEnumerable<object>)MethodManager.GetMethod(ListFunctionName).Invoke(ListFunctionType, null);
+                    }
+
+                    // Determine how to get key default value
+                    if (KeyVarProperty is null)
+                    {
+                        if (FieldManager.CheckField(KeyVar, KeyIsInternal))
+                        {
+                            // We're dealing with the field, get the value from it. However, check to see if that field is an enumerable
+                            if (KeyIsEnumerable)
+                                KeyDefaultValue = FieldManager.GetValueFromEnumerable(KeyVar, KeyEnumerableIndex, KeyIsInternal);
+                            else
+                                KeyDefaultValue = FieldManager.GetValue(KeyVar, KeyIsInternal);
+                        }
+                        else if (PropertyManager.CheckProperty(KeyVar))
+                        {
+                            // We're dealing with the property, get the value from it
+                            KeyDefaultValue = PropertyManager.GetPropertyValue(KeyVar);
+                        }
+
+                        // Get the plain sequence from the color
+                        if (KeyDefaultValue is Color color)
+                        {
+                            KeyDefaultValue = color.PlainSequence;
+                        }
+                    }
+                    else
+                    {
+                        // Get the property value from variable
+                        KeyDefaultValue = PropertyManager.GetPropertyValueInVariable(KeyVar, KeyVarProperty);
                     }
                     TextWriterColor.Write();
 
@@ -495,6 +479,12 @@ namespace KS.Misc.Settings
                         );
                     }
 
+                    ConsoleBase.ConsoleWrapper.Clear();
+
+                    // Make an introductory banner
+                    SeparatorWriterColor.WriteSeparator(Translate.DoTranslation(Section + " Settings...") + " > " + Translate.DoTranslation(KeyName), true);
+                    TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation(KeyDescription), true, ColorTools.ColTypes.NeutralText);
+
                     // Write the list from the current items
                     if (KeyType == SettingsKeyType.SSelection)
                     {
@@ -514,7 +504,8 @@ namespace KS.Misc.Settings
                         !(KeyType == SettingsKeyType.SString) &
                         !(KeyType == SettingsKeyType.SList) &
                         !(KeyType == SettingsKeyType.SChar) &
-                        !(KeyType == SettingsKeyType.SIntSlider))
+                        !(KeyType == SettingsKeyType.SIntSlider) &
+                        !(KeyType == SettingsKeyType.SBoolean))
                     {
                         TextWriterColor.Write(" {0}) " + Translate.DoTranslation("Go Back...") + CharManager.NewLine, true, ColorTools.ColTypes.BackOption, MaxKeyOptions + 1);
                     }
@@ -562,14 +553,8 @@ namespace KS.Misc.Settings
                         else
                         {
                             // Make a prompt
-                            if (KeyType == SettingsKeyType.SUnknown)
-                            {
-                                TextWriterColor.Write("> ", false, ColorTools.ColTypes.Input);
-                            }
-                            else if (!(KeyType == SettingsKeyType.SIntSlider))
-                            {
+                            if (!(KeyType == SettingsKeyType.SIntSlider))
                                 TextWriterColor.Write("[{0}] > ", false, ColorTools.ColTypes.Input, KeyDefaultValue);
-                            }
 
                             // Select how to present input
                             if (KeyType == SettingsKeyType.SChar)
@@ -614,6 +599,10 @@ namespace KS.Misc.Settings
                                     }
                                 }
                             }
+                            else if (KeyType == SettingsKeyType.SBoolean)
+                            {
+                                AnswerString = Convert.ToString(Convert.ToInt32(!(bool)KeyDefaultValue));
+                            }
                             else
                             {
                                 AnswerString = Input.ReadLine();
@@ -637,54 +626,38 @@ namespace KS.Misc.Settings
                                 {
                                     // We're dealing with boolean
                                     DebugWriter.WriteDebug(DebugLevel.I, "Answer is numeric and key is of the Boolean type.");
-                                    if (AnswerInt >= 1 & AnswerInt <= MaxKeyOptions)
-                                    {
-                                        var FinalBool = true;
-                                        DebugWriter.WriteDebug(DebugLevel.I, "Translating {0} to the boolean equivalent...", AnswerInt);
-                                        KeyFinished = true;
+                                    var FinalBool = true;
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Translating {0} to the boolean equivalent...", AnswerInt);
+                                    KeyFinished = true;
 
-                                        // Set boolean
-                                        switch (AnswerInt)
-                                        {
-                                            case 1: // True
-                                                {
-                                                    DebugWriter.WriteDebug(DebugLevel.I, "Setting to True...");
-                                                    FinalBool = true;
-                                                    break;
-                                                }
-                                            case 2: // False
-                                                {
-                                                    DebugWriter.WriteDebug(DebugLevel.I, "Setting to False...");
-                                                    FinalBool = false;
-                                                    break;
-                                                }
-                                        }
-
-                                        // Now, set the value
-                                        if (FieldManager.CheckField(KeyVar))
-                                        {
-                                            // We're dealing with the field
-                                            FieldManager.SetValue(KeyVar, (object)FinalBool, true);
-                                        }
-                                        else if (PropertyManager.CheckProperty(KeyVar))
-                                        {
-                                            // We're dealing with the property
-                                            PropertyManager.SetPropertyValue(KeyVar, (object)FinalBool);
-                                        }
-                                    }
-                                    else if (AnswerInt == MaxKeyOptions + 1) // Go Back...
+                                    // Set boolean
+                                    switch (AnswerInt)
                                     {
-                                        DebugWriter.WriteDebug(DebugLevel.I, "User requested exit. Returning...");
-                                        KeyFinished = true;
-                                    }
-                                    else
-                                    {
-                                        DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
-                                        TextWriterColor.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, ColorTools.ColTypes.Error, AnswerInt);
-                                        TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
-                                        ConsoleBase.ConsoleWrapper.ReadKey();
+                                        case 0: // False
+                                            {
+                                                DebugWriter.WriteDebug(DebugLevel.I, "Setting to False...");
+                                                FinalBool = false;
+                                                break;
+                                            }
+                                        case 1: // True
+                                            {
+                                                DebugWriter.WriteDebug(DebugLevel.I, "Setting to True...");
+                                                FinalBool = true;
+                                                break;
+                                            }
                                     }
 
+                                    // Now, set the value
+                                    if (FieldManager.CheckField(KeyVar))
+                                    {
+                                        // We're dealing with the field
+                                        FieldManager.SetValue(KeyVar, (object)FinalBool, true);
+                                    }
+                                    else if (PropertyManager.CheckProperty(KeyVar))
+                                    {
+                                        // We're dealing with the property
+                                        PropertyManager.SetPropertyValue(KeyVar, (object)FinalBool);
+                                    }
                                     break;
                                 }
                             case SettingsKeyType.SSelection:
@@ -926,12 +899,6 @@ namespace KS.Misc.Settings
                                         // We're dealing with the property
                                         PropertyManager.SetPropertyValue(KeyVar, FinalColor);
                                     }
-                                    KeyFinished = true;
-                                    break;
-                                }
-                            case SettingsKeyType.SUnknown:
-                                {
-                                    DebugWriter.WriteDebug(DebugLevel.I, "User requested exit. Returning...");
                                     KeyFinished = true;
                                     break;
                                 }
