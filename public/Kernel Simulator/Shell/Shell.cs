@@ -193,7 +193,10 @@ namespace KS.Shell
             // Check to see if the full command string ends with the semicolon
             while (FullCommand.EndsWith(";") || string.IsNullOrEmpty(FullCommand))
             {
-                // Tell the user to provide the second command
+                // Enable cursor
+                ConsoleWrapper.CursorVisible = true;
+
+                // Tell the user to provide the command
                 StringBuilder commandBuilder = new(FullCommand);
 
                 // We need to put a synclock in the below steps, because the cancellation handlers seem to be taking their time to try to suppress the
