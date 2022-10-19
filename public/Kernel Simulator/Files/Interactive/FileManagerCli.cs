@@ -21,6 +21,7 @@ using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Files.Folders;
 using KS.Misc.Writers.ConsoleWriters;
+using KS.Misc.Writers.FancyWriters;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -37,7 +38,11 @@ namespace KS.Files.Interactive
         /// <summary>
         /// File manager background color
         /// </summary>
-        public static Color FileManagerBackgroundColor = new(Convert.ToInt32(ConsoleColors.Blue));
+        public static Color FileManagerBackgroundColor = new(Convert.ToInt32(ConsoleColors.DarkBlue));
+        /// <summary>
+        /// File manager pane background color
+        /// </summary>
+        public static Color FileManagerPaneBackgroundColor = new(Convert.ToInt32(ConsoleColors.Blue3));
         /// <summary>
         /// File manager pane separator color
         /// </summary>
@@ -59,13 +64,21 @@ namespace KS.Files.Interactive
         /// Opens the file manager to the current path
         /// </summary>
         public static void OpenMain() =>
-            OpenMain(CurrentDirectory.CurrentDir);
+            OpenMain(CurrentDirectory.CurrentDir, CurrentDirectory.CurrentDir);
+
+        /// <summary>
+        /// Opens the file manager to the current path
+        /// </summary>
+        /// <param name="firstPath">(Non)neutralized path to the folder for the first pane</param>
+        public static void OpenMain(string firstPath) =>
+            OpenMain(firstPath, CurrentDirectory.CurrentDir);
 
         /// <summary>
         /// Opens the file manager to the specified path
         /// </summary>
-        /// <param name="path">(Non)neutralized path to the folder</param>
-        public static void OpenMain(string path)
+        /// <param name="firstPath">(Non)neutralized path to the folder for the first pane</param>
+        /// <param name="secondPath">(Non)neutralized path to the folder for the second pane</param>
+        public static void OpenMain(string firstPath, string secondPath)
         {
             // Set the background color
             ColorTools.SetConsoleColor(FileManagerBackgroundColor, true, true);
@@ -75,38 +88,25 @@ namespace KS.Files.Interactive
             // lower part of the console, so we need to render the entire program to look like this: (just a concept mockup)
             //
             // H: 0  |
-            // H: 1  | ----------------------+----------------------
-            // H: 2  |                       |
-            // H: 3  |                       |
-            // H: 4  |                       |
-            // H: 5  |                       |
-            // H: 6  |                       |
-            // H: 7  |                       |
-            // H: 8  |                       |
-            // H: 9  | ----------------------+----------------------
+            // H: 1  | ---------------------||----------------------
+            // H: 2  |                      ||
+            // H: 3  |                      ||
+            // H: 4  |                      ||
+            // H: 5  |                      ||
+            // H: 6  |                      ||
+            // H: 7  |                      ||
+            // H: 8  |                      ||
+            // H: 9  | ---------------------||----------------------
             // H: 10 |
-            int    SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
-            int    SeparatorMinimumHeight    = 1;
-            int    SeparatorMaximumHeight    = ConsoleWrapper.WindowHeight - 2;
-            string SeparatorHorizontal       = "═";
-            string SeparatorVertical         = "║";
-            string SeparatorIntersectDown    = "╦";
-            string SeparatorIntersectUp      = "╩";
+            int    SeparatorHalfConsoleWidth         = ConsoleWrapper.WindowWidth / 2;
+            int    SeparatorHalfConsoleWidthInterior = (ConsoleWrapper.WindowWidth / 2) - 2;
+            int    SeparatorMinimumHeight            = 1;
+            int    SeparatorMaximumHeight            = ConsoleWrapper.WindowHeight - 2;
+            int    SeparatorMaximumHeightInterior    = ConsoleWrapper.WindowHeight - 4;
 
-            // First, the horizontal separators
-            for (int i = 0; i < ConsoleWrapper.WindowWidth; i++)
-            {
-                TextWriterWhereColor.WriteWhere(SeparatorHorizontal, i, SeparatorMinimumHeight, FileManagerPaneSeparatorColor, FileManagerBackgroundColor);
-                TextWriterWhereColor.WriteWhere(SeparatorHorizontal, i, SeparatorMaximumHeight, FileManagerPaneSeparatorColor, FileManagerBackgroundColor);
-            }
-
-            // Second, the vertical separators
-            for (int i = SeparatorMinimumHeight; i < SeparatorMaximumHeight; i++)
-                TextWriterWhereColor.WriteWhere(SeparatorVertical, SeparatorHalfConsoleWidth, i, FileManagerPaneSeparatorColor, FileManagerBackgroundColor);
-
-            // Finally, the intersections
-            TextWriterWhereColor.WriteWhere(SeparatorIntersectDown, SeparatorHalfConsoleWidth, SeparatorMinimumHeight, FileManagerPaneSeparatorColor, FileManagerBackgroundColor);
-            TextWriterWhereColor.WriteWhere(SeparatorIntersectUp, SeparatorHalfConsoleWidth, SeparatorMaximumHeight, FileManagerPaneSeparatorColor, FileManagerBackgroundColor);
+            // First, the horizontal and vertical separators
+            BorderColor.WriteBorder(0, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, FileManagerPaneSeparatorColor, FileManagerPaneBackgroundColor);
+            BorderColor.WriteBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, FileManagerPaneSeparatorColor, FileManagerPaneBackgroundColor);
 
             // As we're not done yet, write this message
             TextWriterWhereColor.WriteWhere("TBD. It'll be hopefully finished by Beta 1.", 0, 0, ColorTools.GetColor(ColorTools.ColTypes.Warning), FileManagerBackgroundColor);
