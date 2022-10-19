@@ -25,6 +25,7 @@ using KS.Misc.Writers.FancyWriters;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace KS.Files.Interactive
 {
@@ -33,7 +34,13 @@ namespace KS.Files.Interactive
     /// </summary>
     public static class FileManagerCli
     {
-        private static Dictionary<string, FileInfo> cachedFileInfos = new();
+        private static bool isExiting = false;
+        private static Dictionary<string, FileInfo> cachedFileInfosFirstPane = new();
+        private static Dictionary<string, FileInfo> cachedFileInfosSecondPane = new();
+        private static List<FileManagerBinding> fileManagerBindings = new()
+        {
+            new FileManagerBinding("Exit", ConsoleKey.Escape, (currdir) => isExiting = true)
+        };
 
         /// <summary>
         /// File manager background color
@@ -80,43 +87,61 @@ namespace KS.Files.Interactive
         /// <param name="secondPath">(Non)neutralized path to the folder for the second pane</param>
         public static void OpenMain(string firstPath, string secondPath)
         {
-            // Prepare the console
-            ConsoleWrapper.CursorVisible = false;
-            ColorTools.SetConsoleColor(FileManagerBackgroundColor, true, true);
-            ConsoleWrapper.Clear();
+            isExiting = false;
 
-            // Make a separator that separates the two panes to make it look like Total Commander or Midnight Commander. We need information in the upper and the
-            // lower part of the console, so we need to render the entire program to look like this: (just a concept mockup)
-            //
-            // H: 0  |
-            // H: 1  | ---------------------||----------------------
-            // H: 2  |                      ||
-            // H: 3  |                      ||
-            // H: 4  |                      ||
-            // H: 5  |                      ||
-            // H: 6  |                      ||
-            // H: 7  |                      ||
-            // H: 8  |                      ||
-            // H: 9  | ---------------------||----------------------
-            // H: 10 |
-            int    SeparatorHalfConsoleWidth         = ConsoleWrapper.WindowWidth / 2;
-            int    SeparatorHalfConsoleWidthInterior = (ConsoleWrapper.WindowWidth / 2) - 2;
-            int    SeparatorMinimumHeight            = 1;
-            int    SeparatorMaximumHeight            = ConsoleWrapper.WindowHeight - 2;
-            int    SeparatorMaximumHeightInterior    = ConsoleWrapper.WindowHeight - 4;
+            while (!isExiting)
+            {
+                // Prepare the console
+                ConsoleWrapper.CursorVisible = false;
+                ColorTools.SetConsoleColor(FileManagerBackgroundColor, true, true);
+                ConsoleWrapper.Clear();
 
-            // First, the horizontal and vertical separators
-            BorderColor.WriteBorder(0, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, FileManagerPaneSeparatorColor, FileManagerPaneBackgroundColor);
-            BorderColor.WriteBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, FileManagerPaneSeparatorColor, FileManagerPaneBackgroundColor);
+                // Make a separator that separates the two panes to make it look like Total Commander or Midnight Commander. We need information in the upper and the
+                // lower part of the console, so we need to render the entire program to look like this: (just a concept mockup)
+                //
+                // H: 0  |
+                // H: 1  | ---------------------||----------------------
+                // H: 2  |                      ||
+                // H: 3  |                      ||
+                // H: 4  |                      ||
+                // H: 5  |                      ||
+                // H: 6  |                      ||
+                // H: 7  |                      ||
+                // H: 8  |                      ||
+                // H: 9  | ---------------------||----------------------
+                // H: 10 |
+                int SeparatorHalfConsoleWidth         = ConsoleWrapper.WindowWidth / 2;
+                int SeparatorHalfConsoleWidthInterior = (ConsoleWrapper.WindowWidth / 2) - 2;
+                int SeparatorMinimumHeight            = 1;
+                int SeparatorMaximumHeight            = ConsoleWrapper.WindowHeight - 2;
+                int SeparatorMaximumHeightInterior    = ConsoleWrapper.WindowHeight - 4;
 
-            // As we're not done yet, write this message
-            TextWriterWhereColor.WriteWhere("TBD. It'll be hopefully finished by Beta 1.", 0, 0, ColorTools.GetColor(ColorTools.ColTypes.Warning), FileManagerBackgroundColor);
-            TextWriterWhereColor.WriteWhere("ESC ", 0, ConsoleWrapper.WindowHeight - 1, FileManagerKeyBindingOptionColor, FileManagerOptionBackgroundColor);
-            TextWriterWhereColor.WriteWhere("Exit", 5, ConsoleWrapper.WindowHeight - 1, FileManagerOptionForegroundColor, FileManagerBackgroundColor);
-            
-            // Wait for key
-            while (ConsoleWrapper.ReadKey(true).Key != ConsoleKey.Escape)
-                ;
+                // First, the horizontal and vertical separators
+                BorderColor.WriteBorder(0, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, FileManagerPaneSeparatorColor, FileManagerPaneBackgroundColor);
+                BorderColor.WriteBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, FileManagerPaneSeparatorColor, FileManagerPaneBackgroundColor);
+
+                // Render the key bindings
+                ConsoleWrapper.CursorLeft = 0;
+                foreach (FileManagerBinding binding in fileManagerBindings)
+                {
+                    // First, check to see if the rendered binding info is going to exceed the console window width
+                    if (!($" {binding.BindingKeyName} {binding.BindingName}  ".Length + ConsoleWrapper.CursorLeft >= ConsoleWrapper.WindowWidth))
+                    {
+                        TextWriterWhereColor.WriteWhere($" {binding.BindingKeyName} ", ConsoleWrapper.CursorLeft + 0, ConsoleWrapper.WindowHeight - 1, FileManagerKeyBindingOptionColor, FileManagerOptionBackgroundColor);
+                        TextWriterWhereColor.WriteWhere($"{binding.BindingName}  ", ConsoleWrapper.CursorLeft + 1, ConsoleWrapper.WindowHeight - 1, FileManagerOptionForegroundColor, FileManagerBackgroundColor);
+                    }
+                }
+
+                // As we're not done yet, write this message
+                TextWriterWhereColor.WriteWhere("TBD. It'll be hopefully finished by Beta 1.", 0, 0, ColorTools.GetColor(ColorTools.ColTypes.Warning), FileManagerBackgroundColor);
+
+                // Wait for key
+                ConsoleKey pressedKey = ConsoleWrapper.ReadKey(true).Key;
+                var implementedBindings = fileManagerBindings.Where((binding) => binding.BindingKeyName == pressedKey);
+                foreach (var implementedBinding in implementedBindings)
+                    // The path that we've passed to the binding action is wrong, because we don't currently have the selected file variable.
+                    implementedBinding.BindingAction.Invoke(firstPath);
+            }
 
             // Clear the console to clean up
             ColorTools.LoadBack();
