@@ -65,7 +65,8 @@ namespace KS.Misc.Writers.FancyWriters
                                             string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar, 
                                             string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar)
         {
-            try {
+            try 
+            {
                 // First, draw the border
                 TextWriterWhereColor.WriteWherePlain(UpperLeftCornerChar + UpperFrameChar.Repeat(InteriorWidth) + UpperRightCornerChar, Left, Top, true);
                 for (int i = 1; i <= InteriorHeight; i++)
