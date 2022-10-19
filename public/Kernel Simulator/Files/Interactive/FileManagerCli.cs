@@ -80,7 +80,8 @@ namespace KS.Files.Interactive
         /// <param name="secondPath">(Non)neutralized path to the folder for the second pane</param>
         public static void OpenMain(string firstPath, string secondPath)
         {
-            // Set the background color
+            // Prepare the console
+            ConsoleWrapper.CursorVisible = false;
             ColorTools.SetConsoleColor(FileManagerBackgroundColor, true, true);
             ConsoleWrapper.Clear();
 
