@@ -486,14 +486,6 @@ namespace KS.Misc.Settings
 
                             break;
                         case SettingsKeyType.SSelection:
-                            // TEMP
-                            ConsoleBase.ConsoleWrapper.Clear();
-
-                            // Make an introductory banner
-                            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation(Section + " Settings...") + " > " + Translate.DoTranslation(KeyName), true);
-                            TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation(KeyDescription), true, ColorTools.ColTypes.NeutralText);
-                            // TEMP END
-
                             // Determine which list we're going to select
                             if (SelectionEnum)
                             {
@@ -517,11 +509,33 @@ namespace KS.Misc.Settings
                                 MaxKeyOptions = SelectFrom.Count();
                             }
 
-                            TextWriterColor.Write(Translate.DoTranslation("Current items:"), true, ColorTools.ColTypes.ListTitle);
-                            ListWriterColor.WriteList(SelectFrom);
-                            TextWriterColor.Write();
-                            TextWriterColor.Write(" {0}) " + Translate.DoTranslation("Go Back...") + CharManager.NewLine, true, ColorTools.ColTypes.BackOption, MaxKeyOptions + 1);
-                            AnswerString = Input.ReadLine();
+                            // Populate items
+                            var items = new List<string>();
+                            var itemNums = new List<int>();
+                            var altSections = new List<string>()
+                            {
+                                Translate.DoTranslation("Go Back...")
+                            };
+                            var altSectionNums = new List<int>()
+                            {
+                                MaxKeyOptions + 1
+                            };
+
+                            // Since there is no way to index the SelectFrom enumerable, we have to manually initialize a counter. Ugly!
+                            int itemCount = 1;
+                            foreach (var item in SelectFrom)
+                            {
+                                items.Add(item.ToString());
+                                itemNums.Add(itemCount);
+                                itemCount++;
+                            }
+
+                            // Prompt user and check for input
+                            string finalSection = Translate.DoTranslation(KeyName);
+                            int Answer = SelectionStyle.PromptSelection(finalSection + CharManager.NewLine + "=".Repeat(finalSection.Length) + CharManager.NewLine + Translate.DoTranslation(KeyDescription),
+                                string.Join("/", itemNums), items.ToArray(),
+                                string.Join("/", altSectionNums), altSections.ToArray());
+                            AnswerString = Answer.ToString();
 
                             break;
                         case SettingsKeyType.SColor:
