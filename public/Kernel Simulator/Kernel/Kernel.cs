@@ -79,20 +79,22 @@ namespace KS.Kernel
 #endif
         // Release specifiers (SPECIFIER: REL, RC, or DEV | MILESTONESPECIFIER: ALPHA, BETA, NONE | None satisfied: Unsupported Release)
 #if SPECIFIERREL
-        internal readonly static string ConsoleTitle = $"Kernel Simulator v{KernelVersion} (API v{KernelApiVersion}) - {KernelSimulatorMoniker}";
+        internal readonly static string ReleaseSpecifier = $"RTM";
 #elif SPECIFIERRC
-        internal readonly static string ConsoleTitle = $"[RC] Kernel Simulator v{KernelVersion} (API v{KernelApiVersion}) - {KernelSimulatorMoniker}";
+        internal readonly static string ReleaseSpecifier = $"RC";
 #elif SPECIFIERDEV
 #if MILESTONESPECIFIERALPHA
-        internal readonly static string ConsoleTitle = $"[DEV - M7] Kernel Simulator v{KernelVersion} (API v{KernelApiVersion}) - {KernelSimulatorMoniker}";
+        internal readonly static string ReleaseSpecifier = $"DEV - M7";
 #elif MILESTONESPECIFIERBETA
-        internal readonly static string ConsoleTitle = $"[DEV - B1] Kernel Simulator v{KernelVersion} (API v{KernelApiVersion}) - {KernelSimulatorMoniker}";
+        internal readonly static string ReleaseSpecifier = $"DEV - B1";
 #else
-        internal readonly static string ConsoleTitle = $"[DEV - PRE] Kernel Simulator v{KernelVersion} (API v{KernelApiVersion}) - {KernelSimulatorMoniker}";
+        internal readonly static string ReleaseSpecifier = $"DEV - PRE";
 #endif
 #else
-        internal readonly static string ConsoleTitle = $"[UNSUPPORTED] Kernel Simulator v{KernelVersion} (API v{KernelApiVersion}) - {KernelSimulatorMoniker}";
+        internal readonly static string ReleaseSpecifier = $"UNSUPPORTED";
 #endif
+        // Final console window title
+        internal readonly static string ConsoleTitle = $"[{KernelSimulatorMoniker}] [{ReleaseSpecifier}] - Kernel Simulator v{KernelVersion} (API v{KernelApiVersion})";
 
         /// <summary>
         /// Entry point
