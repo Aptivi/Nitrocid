@@ -18,6 +18,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,7 +32,7 @@ namespace KS.Files.Interactive
     {
         private string _bindingName;
         private ConsoleKey _bindingKeyName;
-        private Action<string> _bindingAction;
+        private Action<string, string, FileSystemInfo> _bindingAction;
 
         /// <summary>
         /// Key binding name
@@ -44,11 +45,14 @@ namespace KS.Files.Interactive
         public ConsoleKey BindingKeyName { get => _bindingKeyName; }
 
         /// <summary>
-        /// The action to execute. The string argument denotes the current directory
+        /// The action to execute.
+        /// The string argument denotes the current directory in the first pane,
+        /// the string argument denotes the current directory in the second pane, and
+        /// the <see cref="FileSystemInfo"/> argument represents the selected file in the current pane.
         /// </summary>
-        public Action<string> BindingAction { get => _bindingAction; }
+        public Action<string, string, FileSystemInfo> BindingAction { get => _bindingAction; }
 
-        internal FileManagerBinding(string bindingName, ConsoleKey bindingKeyName, Action<string> bindingAction)
+        internal FileManagerBinding(string bindingName, ConsoleKey bindingKeyName, Action<string, string, FileSystemInfo> bindingAction)
         {
             _bindingName = bindingName;
             _bindingKeyName = bindingKeyName;

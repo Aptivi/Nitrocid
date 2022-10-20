@@ -42,11 +42,18 @@ namespace KS.Files.Interactive
         private static int secondPaneCurrentPage = 1;
         private static int firstPaneCurrentSelection = 1;
         private static int secondPaneCurrentSelection = 1;
-        private static Dictionary<string, FileInfo> cachedFileInfosFirstPane = new();
-        private static Dictionary<string, FileInfo> cachedFileInfosSecondPane = new();
+        private static int currentPane = 1;
+        private static List<FileSystemInfo> cachedFileInfosFirstPane = new();
+        private static List<FileSystemInfo> cachedFileInfosSecondPane = new();
         private static List<FileManagerBinding> fileManagerBindings = new()
         {
-            new FileManagerBinding("Exit", ConsoleKey.Escape, (currdir) => isExiting = true)
+            new FileManagerBinding("Exit"  , ConsoleKey.Escape, (_, _, _) => isExiting = true),
+            new FileManagerBinding("Switch", ConsoleKey.Tab   , (_, _, _) =>
+            {
+                currentPane++;
+                if (currentPane > 2)
+                    currentPane = 1;
+            }),
         };
 
         /// <summary>
@@ -60,7 +67,11 @@ namespace KS.Files.Interactive
         /// <summary>
         /// File manager pane separator color
         /// </summary>
-        public static Color FileManagerPaneSeparatorColor = ColorTools.GetColor(ColorTools.ColTypes.Separator);
+        public static Color FileManagerPaneSeparatorColor = new(Convert.ToInt32(ConsoleColors.DarkGreen_005f00));
+        /// <summary>
+        /// File manager selected pane separator color
+        /// </summary>
+        public static Color FileManagerPaneSelectedSeparatorColor = new(Convert.ToInt32(ConsoleColors.Green3_00d700));
         /// <summary>
         /// File manager pane selected file color (foreground)
         /// </summary>
@@ -147,8 +158,10 @@ namespace KS.Files.Interactive
                 int SeparatorMaximumHeightInterior    = ConsoleWrapper.WindowHeight - 4;
 
                 // First, the horizontal and vertical separators
-                BorderColor.WriteBorder(0, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, FileManagerPaneSeparatorColor, FileManagerPaneBackgroundColor);
-                BorderColor.WriteBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, FileManagerPaneSeparatorColor, FileManagerPaneBackgroundColor);
+                var finalFirstPaneSeparatorColor = currentPane == 1 ? FileManagerPaneSelectedSeparatorColor : FileManagerPaneSeparatorColor;
+                var finalSecondPaneSeparatorColor = currentPane == 2 ? FileManagerPaneSelectedSeparatorColor : FileManagerPaneSeparatorColor;
+                BorderColor.WriteBorder(0, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, finalFirstPaneSeparatorColor, FileManagerPaneBackgroundColor);
+                BorderColor.WriteBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, finalSecondPaneSeparatorColor, FileManagerPaneBackgroundColor);
 
                 // Render the key bindings
                 ConsoleWrapper.CursorLeft = 0;
@@ -164,6 +177,7 @@ namespace KS.Files.Interactive
 
                 // Render the file lists (first pane)
                 var FilesFirstPane = Listing.CreateList(firstPath, true);
+                cachedFileInfosFirstPane = FilesFirstPane;
                 int pagesFirstPane = FilesFirstPane.Count / SeparatorMaximumHeightInterior;
                 int answersPerPageFirstPane = pagesFirstPane == 0 ? FilesFirstPane.Count : FilesFirstPane.Count / pagesFirstPane;
                 int displayAnswersPerPageFirstPane = answersPerPageFirstPane >= SeparatorMaximumHeightInterior ?
@@ -186,6 +200,7 @@ namespace KS.Files.Interactive
 
                 // Render the file lists (second pane)
                 var FilesSecondPane = Listing.CreateList(secondPath, true);
+                cachedFileInfosSecondPane = FilesSecondPane;
                 int pagesSecondPane = FilesSecondPane.Count / SeparatorMaximumHeightInterior;
                 int answersPerPageSecondPane = pagesSecondPane == 0 ? FilesSecondPane.Count : FilesSecondPane.Count / pagesSecondPane;
                 int displayAnswersPerPageSecondPane = answersPerPageSecondPane >= SeparatorMaximumHeightInterior ?
@@ -209,12 +224,16 @@ namespace KS.Files.Interactive
                 // As we're not done yet, write this message
                 TextWriterWhereColor.WriteWhere("TBD. It'll be hopefully finished by Beta 1.", 0, 0, ColorTools.GetColor(ColorTools.ColTypes.Warning), FileManagerBackgroundColor);
 
+                // Now, populate the current file/folder info from the current pane
+                var FileInfoCurrentPane = currentPane == 2 ?
+                                          cachedFileInfosSecondPane[secondPaneCurrentSelection] :
+                                          cachedFileInfosFirstPane[firstPaneCurrentSelection];
+
                 // Wait for key
                 ConsoleKey pressedKey = ConsoleWrapper.ReadKey(true).Key;
                 var implementedBindings = fileManagerBindings.Where((binding) => binding.BindingKeyName == pressedKey);
                 foreach (var implementedBinding in implementedBindings)
-                    // The path that we've passed to the binding action is wrong, because we don't currently have the selected file variable.
-                    implementedBinding.BindingAction.Invoke(firstPath);
+                    implementedBinding.BindingAction.Invoke(firstPath, secondPath, FileInfoCurrentPane);
             }
 
             // Clear the console to clean up
