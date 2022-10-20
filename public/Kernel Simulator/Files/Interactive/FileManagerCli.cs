@@ -17,15 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using ColorSeq;
+using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Files.Folders;
+using KS.Files.Querying;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 
 namespace KS.Files.Interactive
 {
@@ -35,6 +38,10 @@ namespace KS.Files.Interactive
     public static class FileManagerCli
     {
         private static bool isExiting = false;
+        private static int firstPaneCurrentPage = 1;
+        private static int secondPaneCurrentPage = 1;
+        private static int firstPaneCurrentSelection = 1;
+        private static int secondPaneCurrentSelection = 1;
         private static Dictionary<string, FileInfo> cachedFileInfosFirstPane = new();
         private static Dictionary<string, FileInfo> cachedFileInfosSecondPane = new();
         private static List<FileManagerBinding> fileManagerBindings = new()
@@ -54,6 +61,22 @@ namespace KS.Files.Interactive
         /// File manager pane separator color
         /// </summary>
         public static Color FileManagerPaneSeparatorColor = ColorTools.GetColor(ColorTools.ColTypes.Separator);
+        /// <summary>
+        /// File manager pane selected file color (foreground)
+        /// </summary>
+        public static Color FileManagerPaneSelectedFileForeColor = new(Convert.ToInt32(ConsoleColors.Yellow));
+        /// <summary>
+        /// File manager pane selected file color (background)
+        /// </summary>
+        public static Color FileManagerPaneSelectedFileBackColor = new(Convert.ToInt32(ConsoleColors.DarkBlue));
+        /// <summary>
+        /// File manager pane file color (foreground)
+        /// </summary>
+        public static Color FileManagerPaneFileForeColor = new(Convert.ToInt32(ConsoleColors.DarkYellow));
+        /// <summary>
+        /// File manager pane file color (background)
+        /// </summary>
+        public static Color FileManagerPaneFileBackColor = new(Convert.ToInt32(ConsoleColors.Blue3));
         /// <summary>
         /// File manager option background color
         /// </summary>
@@ -99,20 +122,27 @@ namespace KS.Files.Interactive
                 // Make a separator that separates the two panes to make it look like Total Commander or Midnight Commander. We need information in the upper and the
                 // lower part of the console, so we need to render the entire program to look like this: (just a concept mockup)
                 //
+                //       | vvvvvvvvvvvvvvvvvvvvvv (SeparatorHalfConsoleWidth)
+                //       |  vvvvvvvvvvvvvvvvvvvv  (SeparatorHalfConsoleWidthInterior)
                 // H: 0  |
-                // H: 1  | ---------------------||----------------------
-                // H: 2  |                      ||
-                // H: 3  |                      ||
-                // H: 4  |                      ||
-                // H: 5  |                      ||
-                // H: 6  |                      ||
-                // H: 7  |                      ||
-                // H: 8  |                      ||
-                // H: 9  | ---------------------||----------------------
+                // H: 1  | a--------------------|c---------------------| < ----> (SeparatorMinimumHeight)
+                // H: 2  | |b                   ||d                    | << ----> (SeparatorMinimumHeightInterior)
+                // H: 3  | |                    ||                     | <<
+                // H: 4  | |                    ||                     | <<
+                // H: 5  | |                    ||                     | <<
+                // H: 6  | |                    ||                     | <<
+                // H: 7  | |                    ||                     | <<
+                // H: 8  | |                    ||                     | << ----> (SeparatorMaximumHeightInterior)
+                // H: 9  | |--------------------||---------------------| < ----> (SeparatorMaximumHeight)
                 // H: 10 |
+                //       | where a is the dimension for the first pane upper left corner           (0, SeparatorMinimumHeight                                     (usually 1))
+                //       |   and b is the dimension for the first pane interior upper left corner  (1, SeparatorMinimumHeightInterior                             (usually 2))
+                //       |   and c is the dimension for the second pane upper left corner          (SeparatorHalfConsoleWidth, SeparatorMinimumHeight             (usually 1))
+                //       |   and d is the dimension for the second pane interior upper left corner (SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior (usually 2))
                 int SeparatorHalfConsoleWidth         = ConsoleWrapper.WindowWidth / 2;
                 int SeparatorHalfConsoleWidthInterior = (ConsoleWrapper.WindowWidth / 2) - 2;
                 int SeparatorMinimumHeight            = 1;
+                int SeparatorMinimumHeightInterior    = 2;
                 int SeparatorMaximumHeight            = ConsoleWrapper.WindowHeight - 2;
                 int SeparatorMaximumHeightInterior    = ConsoleWrapper.WindowHeight - 4;
 
@@ -130,6 +160,50 @@ namespace KS.Files.Interactive
                         TextWriterWhereColor.WriteWhere($" {binding.BindingKeyName} ", ConsoleWrapper.CursorLeft + 0, ConsoleWrapper.WindowHeight - 1, FileManagerKeyBindingOptionColor, FileManagerOptionBackgroundColor);
                         TextWriterWhereColor.WriteWhere($"{binding.BindingName}  ", ConsoleWrapper.CursorLeft + 1, ConsoleWrapper.WindowHeight - 1, FileManagerOptionForegroundColor, FileManagerBackgroundColor);
                     }
+                }
+
+                // Render the file lists (first pane)
+                var FilesFirstPane = Listing.CreateList(firstPath, true);
+                int pagesFirstPane = FilesFirstPane.Count / SeparatorMaximumHeightInterior;
+                int answersPerPageFirstPane = pagesFirstPane == 0 ? FilesFirstPane.Count : FilesFirstPane.Count / pagesFirstPane;
+                int displayAnswersPerPageFirstPane = answersPerPageFirstPane >= SeparatorMaximumHeightInterior ?
+                                                     answersPerPageFirstPane - 2 :
+                                                     answersPerPageFirstPane;
+                int currentPageFirstPane = (firstPaneCurrentSelection - 1) / displayAnswersPerPageFirstPane;
+                int startIndexFirstPane = displayAnswersPerPageFirstPane * currentPageFirstPane;
+                int endIndexFirstPane = displayAnswersPerPageFirstPane * (currentPageFirstPane + 1);
+                for (int i = startIndexFirstPane; i <= endIndexFirstPane && i <= FilesFirstPane.Count - 1; i++)
+                {
+                    // Populate the first pane
+                    FileSystemInfo file = FilesFirstPane[i];
+                    bool isDirectory = Checking.FolderExists(file.FullName);
+
+                    string finalEntry = $" [{(isDirectory ? "/" : "*")}] {file.Name}".Truncate(SeparatorHalfConsoleWidthInterior - 3);
+                    var finalForeColor = i == firstPaneCurrentSelection - 1 ? FileManagerPaneSelectedFileForeColor : FileManagerPaneFileForeColor;
+                    var finalBackColor = i == firstPaneCurrentSelection - 1 ? FileManagerPaneSelectedFileBackColor : FileManagerPaneFileBackColor;
+                    TextWriterWhereColor.WriteWhere(finalEntry + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalEntry.Length), 1, SeparatorMinimumHeightInterior + i, finalForeColor, finalBackColor);
+                }
+
+                // Render the file lists (second pane)
+                var FilesSecondPane = Listing.CreateList(secondPath, true);
+                int pagesSecondPane = FilesSecondPane.Count / SeparatorMaximumHeightInterior;
+                int answersPerPageSecondPane = pagesSecondPane == 0 ? FilesSecondPane.Count : FilesSecondPane.Count / pagesSecondPane;
+                int displayAnswersPerPageSecondPane = answersPerPageSecondPane >= SeparatorMaximumHeightInterior ?
+                                                      answersPerPageSecondPane - 2 :
+                                                      answersPerPageSecondPane;
+                int currentPageSecondPane = (secondPaneCurrentSelection - 1) / displayAnswersPerPageSecondPane;
+                int startIndexSecondPane = displayAnswersPerPageSecondPane * currentPageSecondPane;
+                int endIndexSecondPane = displayAnswersPerPageSecondPane * (currentPageSecondPane + 1);
+                for (int i = startIndexSecondPane; i <= endIndexSecondPane && i <= FilesSecondPane.Count - 1; i++)
+                {
+                    // Populate the second pane
+                    FileSystemInfo file = FilesSecondPane[i];
+                    bool isDirectory = Checking.FolderExists(file.FullName);
+
+                    string finalEntry = $" [{(isDirectory ? "/" : "*")}] {file.Name}".Truncate(SeparatorHalfConsoleWidthInterior - 3);
+                    var finalForeColor = i == secondPaneCurrentSelection - 1 ? FileManagerPaneSelectedFileForeColor : FileManagerPaneFileForeColor;
+                    var finalBackColor = i == secondPaneCurrentSelection - 1 ? FileManagerPaneSelectedFileBackColor : FileManagerPaneFileBackColor;
+                    TextWriterWhereColor.WriteWhere(finalEntry + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalEntry.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + i, finalForeColor, finalBackColor);
                 }
 
                 // As we're not done yet, write this message
