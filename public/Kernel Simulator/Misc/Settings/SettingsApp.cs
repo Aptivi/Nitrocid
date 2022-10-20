@@ -391,36 +391,6 @@ namespace KS.Misc.Settings
                     if (KeyType == SettingsKeyType.SUnknown)
                         break;
 
-                    // Determine which list we're going to select
-                    if (KeyType == SettingsKeyType.SSelection)
-                    {
-                        if (SelectionEnum)
-                        {
-                            if (SelectionEnumInternal)
-                            {
-                                // Apparently, we need to have a full assembly name for getting types.
-                                SelectFrom = Type.GetType("KS." + KeyToken["Enumeration"].ToString() + ", " + Assembly.GetExecutingAssembly().FullName).GetEnumNames();
-                                Selections = Type.GetType("KS." + KeyToken["Enumeration"].ToString() + ", " + Assembly.GetExecutingAssembly().FullName).GetEnumValues();
-                                MaxKeyOptions = SelectFrom.Count();
-                            }
-                            else
-                            {
-                                SelectFrom = Type.GetType(KeyToken["Enumeration"].ToString() + ", " + SelectionEnumAssembly).GetEnumNames();
-                                Selections = Type.GetType(KeyToken["Enumeration"].ToString() + ", " + SelectionEnumAssembly).GetEnumValues();
-                                MaxKeyOptions = SelectFrom.Count();
-                            }
-                        }
-                        else
-                        {
-                            SelectFrom = (IEnumerable<object>)MethodManager.GetMethod((string)KeyToken["SelectionFunctionName"]).Invoke(KeyToken["SelectionFunctionType"], null);
-                            MaxKeyOptions = SelectFrom.Count();
-                        }
-                    }
-                    else if (KeyType == SettingsKeyType.SList)
-                    {
-                        TargetList = (IEnumerable<object>)MethodManager.GetMethod(ListFunctionName).Invoke(ListFunctionType, null);
-                    }
-
                     // Determine how to get key default value
                     if (KeyVarProperty is null)
                     {
@@ -449,170 +419,179 @@ namespace KS.Misc.Settings
                         // Get the property value from variable
                         KeyDefaultValue = PropertyManager.GetPropertyValueInVariable(KeyVar, KeyVarProperty);
                     }
-                    TextWriterColor.Write();
 
-                    // If the type is a color, initialize the color wheel
-                    if (KeyType == SettingsKeyType.SColor)
+                    // How the settings app displays the options and parses the output varies by the keytype
+                    switch (KeyType)
                     {
-                        Color keyColorValue = Color.Empty;
+                        case SettingsKeyType.SChar:
+                        case SettingsKeyType.SInt:
+                        case SettingsKeyType.SList:
+                        case SettingsKeyType.SString:
+                            ConsoleBase.ConsoleWrapper.Clear();
 
-                        // Check to see if the color is contained in the dictionary
-                        if (KeyDefaultValue is KeyValuePair<ColorTools.ColTypes, Color> keyColorValuePair)
-                            keyColorValue = keyColorValuePair.Value;
-                        else if (KeyDefaultValue is string keyColorString)
-                            keyColorValue = new Color(keyColorString);
+                            // Make an introductory banner
+                            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation(Section + " Settings...") + " > " + Translate.DoTranslation(KeyName), true);
+                            TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation(KeyDescription), true, ColorTools.ColTypes.NeutralText);
 
-                        // Get the color value from the color wheel
-                        ColorValue = ColorWheelOpen.ColorWheel(
-                            // Determine if the color is true color
-                            keyColorValue.Type == ColorType.TrueColor,
-
-                            // Get the ConsoleColors number from the current color value
-                            (ConsoleColors)Convert.ToInt32(
-                                keyColorValue.Type == ColorType._255Color || keyColorValue.Type == ColorType._16Color ?
-                                keyColorValue.PlainSequence :
-                                ConsoleColors.White
-                            ),
-
-                            // Now, get the RGB from the color class
-                            keyColorValue.R, keyColorValue.G, keyColorValue.B
-                        );
-                    }
-
-                    ConsoleBase.ConsoleWrapper.Clear();
-
-                    // Make an introductory banner
-                    SeparatorWriterColor.WriteSeparator(Translate.DoTranslation(Section + " Settings...") + " > " + Translate.DoTranslation(KeyName), true);
-                    TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation(KeyDescription), true, ColorTools.ColTypes.NeutralText);
-
-                    // Write the list from the current items
-                    if (KeyType == SettingsKeyType.SSelection)
-                    {
-                        TextWriterColor.Write(Translate.DoTranslation("Current items:"), true, ColorTools.ColTypes.ListTitle);
-                        ListWriterColor.WriteList(SelectFrom);
-                        TextWriterColor.Write();
-                    }
-                    else if (KeyType == SettingsKeyType.SList)
-                    {
-                        TextWriterColor.Write(Translate.DoTranslation("Current items:"), true, ColorTools.ColTypes.ListTitle);
-                        ListWriterColor.WriteList(TargetList);
-                        TextWriterColor.Write();
-                    }
-
-                    // Add an option to go back.
-                    if (!(KeyType == SettingsKeyType.SInt) &
-                        !(KeyType == SettingsKeyType.SString) &
-                        !(KeyType == SettingsKeyType.SList) &
-                        !(KeyType == SettingsKeyType.SChar) &
-                        !(KeyType == SettingsKeyType.SIntSlider) &
-                        !(KeyType == SettingsKeyType.SBoolean))
-                    {
-                        TextWriterColor.Write(" {0}) " + Translate.DoTranslation("Go Back...") + CharManager.NewLine, true, ColorTools.ColTypes.BackOption, MaxKeyOptions + 1);
-                    }
-                    else if (KeyType == SettingsKeyType.SList)
-                    {
-                        TextWriterColor.Write(CharManager.NewLine + " q) " + Translate.DoTranslation("Save Changes...") + CharManager.NewLine, true, ColorTools.ColTypes.Option, MaxKeyOptions + 1);
-                    }
-
-                    // Print debugging info
-                    DebugWriter.WriteDebug(DebugLevel.W, "Key {0} in section {1} has {2} selections.", KeyNumber, Section, MaxKeyOptions);
-                    DebugWriter.WriteDebug(DebugLevel.W, "Target variable: {0}, Key Type: {1}, Key value: {2}", KeyVar, KeyType, KeyValue);
-
-                    // Prompt user
-                    if (!(KeyType == SettingsKeyType.SColor))
-                    {
-                        if (KeyType == SettingsKeyType.SList)
-                        {
-                            TextWriterColor.Write("> ", false, ColorTools.ColTypes.Input);
-                            while (AnswerString != "q")
-                            {
-                                AnswerString = Input.ReadLine();
-                                if (!(AnswerString == "q"))
-                                {
-                                    if (NeutralizePaths)
-                                        AnswerString = Filesystem.NeutralizePath(AnswerString, NeutralizeRootPath);
-
-                                    // Check to see if we're removing an item
-                                    if (!AnswerString.StartsWith("-"))
-                                    {
-                                        // We're not removing an item!
-                                        TargetList = TargetList.Append(AnswerString);
-                                    }
-                                    else
-                                    {
-                                        // We're removing an item.
-                                        var DeletedItems = Enumerable.Empty<object>();
-                                        DeletedItems = DeletedItems.Append(AnswerString.Substring(1));
-                                        TargetList = TargetList.Except(DeletedItems);
-                                    }
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Added answer {0} to list.", AnswerString);
-                                    TextWriterColor.Write("> ", false, ColorTools.ColTypes.Input);
-                                }
-                            }
-                        }
-                        else
-                        {
-                            // Make a prompt
+                            // Write the prompt
                             if (!(KeyType == SettingsKeyType.SIntSlider))
                                 TextWriterColor.Write("[{0}] > ", false, ColorTools.ColTypes.Input, KeyDefaultValue);
 
-                            // Select how to present input
-                            if (KeyType == SettingsKeyType.SChar)
+                            // Get the target list from the method defined in the manifest (SelectionFunctionName)
+                            if (KeyType == SettingsKeyType.SList)
                             {
-                                AnswerString = Convert.ToString(ConsoleBase.ConsoleWrapper.ReadKey().KeyChar);
-                            }
-                            else if (KeyType == SettingsKeyType.SIntSlider)
-                            {
-                                var PressedKey = default(ConsoleKey);
-                                int CurrentValue = Convert.ToInt32(KeyDefaultValue);
-                                ConsoleBase.ConsoleWrapper.CursorVisible = false;
-                                while (PressedKey != ConsoleKey.Enter)
+                                TargetList = (IEnumerable<object>)MethodManager.GetMethod(ListFunctionName).Invoke(ListFunctionType, null);
+                                TextWriterColor.Write(Translate.DoTranslation("Current items:"), true, ColorTools.ColTypes.ListTitle);
+                                ListWriterColor.WriteList(TargetList);
+                                TextWriterColor.Write();
+                                TextWriterColor.Write(CharManager.NewLine + " q) " + Translate.DoTranslation("Save Changes...") + CharManager.NewLine, true, ColorTools.ColTypes.Option);
+
+                                // Prompt the user and parse the answer
+                                TextWriterColor.Write("> ", false, ColorTools.ColTypes.Input);
+                                while (AnswerString != "q")
                                 {
-                                    // Draw the progress bar
-                                    ProgressBarColor.WriteProgress(100d * (CurrentValue / (double)IntSliderMaximumValue), 4, ConsoleBase.ConsoleWrapper.WindowHeight - 4);
-
-                                    // Show the current value
-                                    TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Current value:") + " {0} / {1} - {2}" + Convert.ToString(CharManager.GetEsc()) + "[0K", 5, ConsoleBase.ConsoleWrapper.WindowHeight - 5, false, ColorTools.ColTypes.NeutralText, CurrentValue, IntSliderMinimumValue, IntSliderMaximumValue);
-
-                                    // Parse the user input
-                                    PressedKey = ConsoleBase.ConsoleWrapper.ReadKey().Key;
-                                    switch (PressedKey)
+                                    AnswerString = Input.ReadLine();
+                                    if (!(AnswerString == "q"))
                                     {
-                                        case ConsoleKey.LeftArrow:
-                                            {
-                                                if (CurrentValue > IntSliderMinimumValue)
-                                                    CurrentValue -= 1;
-                                                break;
-                                            }
-                                        case ConsoleKey.RightArrow:
-                                            {
-                                                if (CurrentValue < IntSliderMaximumValue)
-                                                    CurrentValue += 1;
-                                                break;
-                                            }
-                                        case ConsoleKey.Enter:
-                                            {
-                                                AnswerString = CurrentValue.ToString();
-                                                ConsoleBase.ConsoleWrapper.CursorVisible = true;
-                                                break;
-                                            }
+                                        if (NeutralizePaths)
+                                            AnswerString = Filesystem.NeutralizePath(AnswerString, NeutralizeRootPath);
+
+                                        // Check to see if we're removing an item
+                                        if (!AnswerString.StartsWith("-"))
+                                        {
+                                            // We're not removing an item!
+                                            TargetList = TargetList.Append(AnswerString);
+                                        }
+                                        else
+                                        {
+                                            // We're removing an item.
+                                            var DeletedItems = Enumerable.Empty<object>();
+                                            DeletedItems = DeletedItems.Append(AnswerString.Substring(1));
+                                            TargetList = TargetList.Except(DeletedItems);
+                                        }
+                                        DebugWriter.WriteDebug(DebugLevel.I, "Added answer {0} to list.", AnswerString);
+                                        TextWriterColor.Write("> ", false, ColorTools.ColTypes.Input);
                                     }
                                 }
                             }
-                            else if (KeyType == SettingsKeyType.SBoolean)
-                            {
-                                AnswerString = Convert.ToString(Convert.ToInt32(!(bool)KeyDefaultValue));
-                            }
+                            else if (KeyType == SettingsKeyType.SChar)
+                                AnswerString = Convert.ToString(ConsoleBase.ConsoleWrapper.ReadKey().KeyChar);
                             else
-                            {
                                 AnswerString = Input.ReadLine();
-                            }
 
-                            // Neutralize answer path if required
+                            // Neutralize path if required with the assumption that the keytype is not list
                             if (NeutralizePaths)
                                 AnswerString = Filesystem.NeutralizePath(AnswerString, NeutralizeRootPath);
                             DebugWriter.WriteDebug(DebugLevel.I, "User answered {0}", AnswerString);
-                        }
+
+                            break;
+                        case SettingsKeyType.SSelection:
+                            // TEMP
+                            ConsoleBase.ConsoleWrapper.Clear();
+
+                            // Make an introductory banner
+                            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation(Section + " Settings...") + " > " + Translate.DoTranslation(KeyName), true);
+                            TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation(KeyDescription), true, ColorTools.ColTypes.NeutralText);
+                            // TEMP END
+
+                            // Determine which list we're going to select
+                            if (SelectionEnum)
+                            {
+                                if (SelectionEnumInternal)
+                                {
+                                    // Apparently, we need to have a full assembly name for getting types.
+                                    SelectFrom = Type.GetType("KS." + KeyToken["Enumeration"].ToString() + ", " + Assembly.GetExecutingAssembly().FullName).GetEnumNames();
+                                    Selections = Type.GetType("KS." + KeyToken["Enumeration"].ToString() + ", " + Assembly.GetExecutingAssembly().FullName).GetEnumValues();
+                                    MaxKeyOptions = SelectFrom.Count();
+                                }
+                                else
+                                {
+                                    SelectFrom = Type.GetType(KeyToken["Enumeration"].ToString() + ", " + SelectionEnumAssembly).GetEnumNames();
+                                    Selections = Type.GetType(KeyToken["Enumeration"].ToString() + ", " + SelectionEnumAssembly).GetEnumValues();
+                                    MaxKeyOptions = SelectFrom.Count();
+                                }
+                            }
+                            else
+                            {
+                                SelectFrom = (IEnumerable<object>)MethodManager.GetMethod((string)KeyToken["SelectionFunctionName"]).Invoke(KeyToken["SelectionFunctionType"], null);
+                                MaxKeyOptions = SelectFrom.Count();
+                            }
+
+                            TextWriterColor.Write(Translate.DoTranslation("Current items:"), true, ColorTools.ColTypes.ListTitle);
+                            ListWriterColor.WriteList(SelectFrom);
+                            TextWriterColor.Write();
+                            TextWriterColor.Write(" {0}) " + Translate.DoTranslation("Go Back...") + CharManager.NewLine, true, ColorTools.ColTypes.BackOption, MaxKeyOptions + 1);
+                            AnswerString = Input.ReadLine();
+
+                            break;
+                        case SettingsKeyType.SColor:
+                            Color keyColorValue = Color.Empty;
+
+                            // Check to see if the color is contained in the dictionary
+                            if (KeyDefaultValue is KeyValuePair<ColorTools.ColTypes, Color> keyColorValuePair)
+                                keyColorValue = keyColorValuePair.Value;
+                            else if (KeyDefaultValue is string keyColorString)
+                                keyColorValue = new Color(keyColorString);
+
+                            // Get the color value from the color wheel
+                            ColorValue = ColorWheelOpen.ColorWheel(
+                                // Determine if the color is true color
+                                keyColorValue.Type == ColorType.TrueColor,
+
+                                // Get the ConsoleColors number from the current color value
+                                (ConsoleColors)Convert.ToInt32(
+                                    keyColorValue.Type == ColorType._255Color || keyColorValue.Type == ColorType._16Color ?
+                                    keyColorValue.PlainSequence :
+                                    ConsoleColors.White
+                                ),
+
+                                // Now, get the RGB from the color class
+                                keyColorValue.R, keyColorValue.G, keyColorValue.B
+                            );
+
+                            break;
+                        case SettingsKeyType.SIntSlider:
+                            var PressedKey = default(ConsoleKey);
+                            int CurrentValue = Convert.ToInt32(KeyDefaultValue);
+                            ConsoleBase.ConsoleWrapper.CursorVisible = false;
+                            while (PressedKey != ConsoleKey.Enter)
+                            {
+                                // Draw the progress bar
+                                ProgressBarColor.WriteProgress(100d * (CurrentValue / (double)IntSliderMaximumValue), 4, ConsoleBase.ConsoleWrapper.WindowHeight - 4);
+
+                                // Show the current value
+                                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Current value:") + " {0} / {1} - {2}" + Convert.ToString(CharManager.GetEsc()) + "[0K", 5, ConsoleBase.ConsoleWrapper.WindowHeight - 5, false, ColorTools.ColTypes.NeutralText, CurrentValue, IntSliderMinimumValue, IntSliderMaximumValue);
+
+                                // Parse the user input
+                                PressedKey = ConsoleBase.ConsoleWrapper.ReadKey().Key;
+                                switch (PressedKey)
+                                {
+                                    case ConsoleKey.LeftArrow:
+                                        {
+                                            if (CurrentValue > IntSliderMinimumValue)
+                                                CurrentValue -= 1;
+                                            break;
+                                        }
+                                    case ConsoleKey.RightArrow:
+                                        {
+                                            if (CurrentValue < IntSliderMaximumValue)
+                                                CurrentValue += 1;
+                                            break;
+                                        }
+                                    case ConsoleKey.Enter:
+                                        {
+                                            AnswerString = CurrentValue.ToString();
+                                            ConsoleBase.ConsoleWrapper.CursorVisible = true;
+                                            break;
+                                        }
+                                }
+                            }
+
+                            break;
+                        case SettingsKeyType.SBoolean:
+                            AnswerString = Convert.ToString(Convert.ToInt32(!(bool)KeyDefaultValue));
+
+                            break;
                     }
 
                     // Check for input
