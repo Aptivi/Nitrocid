@@ -18,17 +18,20 @@
 
 using ColorSeq;
 using Extensification.StringExts;
+using FluentFTP.Helpers;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Files.Folders;
 using KS.Files.Querying;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
+using KS.TimeDate;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
+using static System.Net.WebRequestMethods;
 
 namespace KS.Files.Interactive
 {
@@ -60,6 +63,10 @@ namespace KS.Files.Interactive
         /// File manager background color
         /// </summary>
         public static Color FileManagerBackgroundColor = new(Convert.ToInt32(ConsoleColors.DarkBlue));
+        /// <summary>
+        /// File manager foreground color
+        /// </summary>
+        public static Color FileManagerForegroundColor = new(Convert.ToInt32(ConsoleColors.Yellow));
         /// <summary>
         /// File manager pane background color
         /// </summary>
@@ -221,13 +228,24 @@ namespace KS.Files.Interactive
                     TextWriterWhereColor.WriteWhere(finalEntry + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalEntry.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + i, finalForeColor, finalBackColor);
                 }
 
-                // As we're not done yet, write this message
-                TextWriterWhereColor.WriteWhere("TBD. It'll be hopefully finished by Beta 1.", 0, 0, ColorTools.GetColor(ColorTools.ColTypes.Warning), FileManagerBackgroundColor);
-
                 // Now, populate the current file/folder info from the current pane
                 var FileInfoCurrentPane = currentPane == 2 ?
-                                          cachedFileInfosSecondPane[secondPaneCurrentSelection] :
-                                          cachedFileInfosFirstPane[firstPaneCurrentSelection];
+                                          cachedFileInfosSecondPane[secondPaneCurrentSelection - 1] :
+                                          cachedFileInfosFirstPane[firstPaneCurrentSelection - 1];
+
+                // Write file info
+                bool infoIsDirectory = Checking.FolderExists(FileInfoCurrentPane.FullName);
+                string finalInfoRendered = (
+                    // Name and directory indicator
+                    $" [{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.Name} | " + 
+
+                    // File size or directory size
+                    $"{(!infoIsDirectory ? ((FileInfo)FileInfoCurrentPane).Length.FileSizeToString() : SizeGetter.GetAllSizesInFolder((DirectoryInfo)FileInfoCurrentPane))} | " + 
+
+                    // Modified date
+                    $"{(!infoIsDirectory ? TimeDateRenderers.Render(((FileInfo)FileInfoCurrentPane).LastWriteTime) : "")}"
+                ).Truncate(ConsoleWrapper.WindowWidth - 3);
+                TextWriterWhereColor.WriteWhere(finalInfoRendered, 0, 0, FileManagerForegroundColor, FileManagerBackgroundColor);
 
                 // Wait for key
                 ConsoleKey pressedKey = ConsoleWrapper.ReadKey(true).Key;
