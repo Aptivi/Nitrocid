@@ -393,7 +393,7 @@ namespace KS.Kernel
         /// <summary>
         /// Initializes everything
         /// </summary>
-        public static void InitEverything(string[] Args)
+        public static void InitEverything()
         {
             // Initialize notifications
             if (!Notifications.NotifThread.IsAlive)

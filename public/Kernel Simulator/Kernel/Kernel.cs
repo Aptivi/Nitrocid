@@ -160,7 +160,7 @@ namespace KS.Kernel
 
                     // Initialize everything
                     StageTimer.Start();
-                    KernelTools.InitEverything(Args);
+                    KernelTools.InitEverything();
                     CheckErrored();
 
                     // Stage 1: Initialize the system
