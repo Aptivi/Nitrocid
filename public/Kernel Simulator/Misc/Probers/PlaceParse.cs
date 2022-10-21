@@ -33,6 +33,7 @@ using KS.Shell.Shells.Mail;
 using KS.Shell.Shells.SFTP;
 using KS.TimeDate;
 using KS.Users;
+using KS.Users.Login;
 
 namespace KS.Misc.Probers
 {
@@ -60,7 +61,7 @@ namespace KS.Misc.Probers
                 if (text.Contains("<user>"))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Username placeholder found.");
-                    text = text.Replace("<user>", Login.Login.CurrentUser.Username);
+                    text = text.Replace("<user>", Login.CurrentUser.Username);
                 }
 
                 // -> FTP user placeholder

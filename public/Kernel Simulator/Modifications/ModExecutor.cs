@@ -23,6 +23,7 @@ using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using KS.Users.Groups;
+using KS.Users.Login;
 
 namespace KS.Modifications
 {
@@ -90,7 +91,7 @@ namespace KS.Modifications
                         if (Script.Commands[parts[0]].Type == "Shell")
                         {
                             // Command type is of shell. Check the user privileges for restricted commands.
-                            if (Script.Commands[parts[0]].Flags.HasFlag(CommandFlags.Strict) & GroupManagement.HasGroup(Login.Login.CurrentUser.Username, GroupManagement.GroupType.Administrator) | !Script.Commands[parts[0]].Flags.HasFlag(CommandFlags.Strict))
+                            if (Script.Commands[parts[0]].Flags.HasFlag(CommandFlags.Strict) & GroupManagement.HasGroup(Login.CurrentUser.Username, GroupManagement.GroupType.Administrator) | !Script.Commands[parts[0]].Flags.HasFlag(CommandFlags.Strict))
                             {
                                 // User is authorized to use the command, or the command isn't strict
                                 ScriptCommandExecutable = true;
@@ -98,7 +99,7 @@ namespace KS.Modifications
                             else
                             {
                                 // User wasn't authorized.
-                                DebugWriter.WriteDebug(DebugLevel.E, "User {0} doesn't have permission to use {1} from {2}!", Login.Login.CurrentUser.Username, parts[0], ModPart);
+                                DebugWriter.WriteDebug(DebugLevel.E, "User {0} doesn't have permission to use {1} from {2}!", Login.CurrentUser.Username, parts[0], ModPart);
                                 TextWriterColor.Write(Translate.DoTranslation("You don't have permission to use {0}"), true, ColorTools.ColTypes.Error, parts[0]);
                             }
                         }

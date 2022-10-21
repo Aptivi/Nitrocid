@@ -32,10 +32,9 @@ using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.RSS;
 using KS.Shell.ShellBase.Shells;
-using KS.Users;
 using KS.Users.Groups;
 
-namespace KS.Login
+namespace KS.Users.Login
 {
     /// <summary>
     /// Login module

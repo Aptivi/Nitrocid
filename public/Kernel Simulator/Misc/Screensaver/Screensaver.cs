@@ -31,6 +31,7 @@ using KS.Misc.Screensaver.Customized;
 using KS.Misc.Screensaver.Displays;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
+using KS.Users.Login;
 
 namespace KS.Misc.Screensaver
 {
@@ -251,13 +252,9 @@ namespace KS.Misc.Screensaver
             ShowSavers(DefSaverName);
             Kernel.Events.EventsManager.FireEvent("PreUnlock", DefSaverName);
             if (PasswordLock)
-            {
-                Login.Login.ShowPasswordPrompt(Login.Login.CurrentUser.Username);
-            }
+                Login.ShowPasswordPrompt(Login.CurrentUser.Username);
             else
-            {
                 LockMode = false;
-            }
         }
 
         /// <summary>

@@ -67,6 +67,7 @@ using KS.Shell.Shells.RSS;
 using KS.Shell.Shells.SFTP;
 using KS.Shell.Shells.Text;
 using KS.Users;
+using KS.Users.Login;
 using ManagedWeatherMap.Core;
 using MimeKit.Text;
 using Newtonsoft.Json;
@@ -313,8 +314,8 @@ namespace KS.Kernel.Configuration
                 { "Show available usernames", Flags.ShowAvailableUsers },
                 { "MOTD Path", MotdParse.MotdFilePath },
                 { "MAL Path", MalParse.MalFilePath },
-                { "Username prompt style", Login.Login.UsernamePrompt },
-                { "Password prompt style", Login.Login.PasswordPrompt },
+                { "Username prompt style", Login.UsernamePrompt },
+                { "Password prompt style", Login.PasswordPrompt },
                 { "Show MAL on Log-in", Flags.ShowMAL },
                 { "Include anonymous users", UserManagement.IncludeAnonymous },
                 { "Include disabled users", UserManagement.IncludeDisabled }
@@ -1718,8 +1719,8 @@ namespace KS.Kernel.Configuration
                 MotdParse.MotdFilePath = (string)ConfigToken["Login"]["MOTD Path"];
             if (!string.IsNullOrWhiteSpace((string)ConfigToken["Login"]["MAL Path"]) & Parsing.TryParsePath((string)ConfigToken["Login"]["MAL Path"]))
                 MalParse.MalFilePath = (string)ConfigToken["Login"]["MAL Path"];
-            Login.Login.UsernamePrompt = (string)ConfigToken["Login"]["Username prompt style"] ?? "";
-            Login.Login.PasswordPrompt = (string)ConfigToken["Login"]["Password prompt style"] ?? "";
+            Login.UsernamePrompt = (string)ConfigToken["Login"]["Username prompt style"] ?? "";
+            Login.PasswordPrompt = (string)ConfigToken["Login"]["Password prompt style"] ?? "";
             Flags.ShowMAL = (bool)ConfigToken["Login"]["Show MAL on Log-in"];
             UserManagement.IncludeAnonymous = (bool)ConfigToken["Login"]["Include anonymous users"];
             UserManagement.IncludeDisabled = (bool)ConfigToken["Login"]["Include disabled users"];

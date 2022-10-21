@@ -18,13 +18,15 @@
 
 using System.IO;
 using KS.Kernel.Debugging.RemoteDebug.Interface;
+using KS.Users.Login;
 
 namespace KS.Kernel.Debugging.RemoteDebug.Commands
 {
     class Debug_UsernameCommand : RemoteDebugCommandExecutor, IRemoteDebugCommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, StreamWriter SocketStreamWriter, string DeviceAddress) => SocketStreamWriter.WriteLine(Login.Login.CurrentUser.Username);
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, StreamWriter SocketStreamWriter, string DeviceAddress) => 
+            SocketStreamWriter.WriteLine(Login.CurrentUser.Username);
 
     }
 }

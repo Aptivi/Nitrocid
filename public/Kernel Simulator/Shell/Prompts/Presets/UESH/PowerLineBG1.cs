@@ -25,6 +25,7 @@ using KS.Kernel;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Network;
+using KS.Users.Login;
 
 namespace KS.Shell.Prompts.Presets.UESH
 {
@@ -65,7 +66,7 @@ namespace KS.Shell.Prompts.Presets.UESH
                 // Current username
                 PresetStringBuilder.Append(FirstColorSegmentForeground.VTSequenceForeground);
                 PresetStringBuilder.Append(FirstColorSegmentBackground.VTSequenceBackground);
-                PresetStringBuilder.AppendFormat(" {0} ", Login.Login.CurrentUser.Username);
+                PresetStringBuilder.AppendFormat(" {0} ", Login.CurrentUser.Username);
 
                 // Transition
                 PresetStringBuilder.Append(FirstColorSegmentForeground.VTSequenceForeground);

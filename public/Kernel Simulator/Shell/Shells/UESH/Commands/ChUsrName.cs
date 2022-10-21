@@ -22,6 +22,7 @@ using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using KS.Users;
+using KS.Users.Login;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -44,7 +45,7 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             UserManagement.ChangeUsername(ListArgsOnly[0], ListArgsOnly[1]);
             TextWriterColor.Write(Translate.DoTranslation("Username has been changed to {0}!"), true, ColorTools.ColTypes.NeutralText, ListArgsOnly[1]);
-            if ((ListArgsOnly[0] ?? "") == (Login.Login.CurrentUser.Username ?? ""))
+            if ((ListArgsOnly[0] ?? "") == (Login.CurrentUser.Username ?? ""))
             {
                 Flags.LogoutRequested = true;
             }

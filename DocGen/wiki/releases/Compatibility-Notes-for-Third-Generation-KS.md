@@ -174,3 +174,7 @@ This reduces the amount of lines by more than 3500 lines.
 ##### Moved NewLine from Kernel to CharManager
 
 This is actually a character management function and not a function directly to the kernel.
+
+##### Moved KS.Login to KS.Users.Login
+
+This has to do with the user management namespace, so we moved it to that namespace.

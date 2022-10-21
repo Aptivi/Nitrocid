@@ -57,6 +57,7 @@ using KS.Shell.Shells.HTTP;
 using KS.Shell.Shells.Hex;
 using KS.Shell.Shells.Archive;
 using KS.Shell.Shells.Admin;
+using KS.Users.Login;
 
 namespace KS.Shell
 {
@@ -303,7 +304,7 @@ namespace KS.Shell
                                     // Check to see if a user is able to execute a command
                                     if (ShellType == "Shell")
                                     {
-                                        if (GroupManagement.HasGroup(Login.Login.CurrentUser.Username, GroupManagement.GroupType.Administrator) == false & Commands[commandName].Flags.HasFlag(CommandFlags.Strict))
+                                        if (GroupManagement.HasGroup(Login.CurrentUser.Username, GroupManagement.GroupType.Administrator) == false & Commands[commandName].Flags.HasFlag(CommandFlags.Strict))
                                         {
                                             DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", commandName);
                                             TextWriterColor.Write(Translate.DoTranslation("You don't have permission to use {0}"), true, ColorTools.ColTypes.Error, commandName);

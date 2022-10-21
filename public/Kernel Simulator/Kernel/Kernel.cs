@@ -47,6 +47,7 @@ using ReadLineReboot;
 using KS.Kernel.Debugging;
 using KS.Kernel.Debugging.RemoteDebug;
 using KS.Users.Groups;
+using KS.Users.Login;
 using KS.Users;
 using KS.Kernel.Events;
 using KS.Misc.Text;
@@ -269,24 +270,24 @@ namespace KS.Kernel
                     // Initialize login prompt
                     if (!Flags.Maintenance)
                     {
-                        Login.Login.LoginPrompt();
+                        Login.LoginPrompt();
                     }
                     else
                     {
                         MotdParse.ReadMotd();
                         MalParse.ReadMal();
                         TextWriterColor.Write(Translate.DoTranslation("Enter the admin password for maintenance."), true, ColorTools.ColTypes.NeutralText);
-                        if (Login.Login.Users.ContainsKey("root"))
+                        if (Login.Users.ContainsKey("root"))
                         {
                             DebugWriter.WriteDebug(DebugLevel.I, "Root account found. Prompting for password...");
-                            Login.Login.ShowPasswordPrompt("root");
+                            Login.ShowPasswordPrompt("root");
                         }
                         else
                         {
                             // Some malicious mod removed the root account, or rare situation happened and it was gone.
                             DebugWriter.WriteDebug(DebugLevel.W, "Root account not found for maintenance. Initializing it...");
                             UserManagement.InitializeSystemAccount();
-                            Login.Login.ShowPasswordPrompt("root");
+                            Login.ShowPasswordPrompt("root");
                         }
                     }
 
