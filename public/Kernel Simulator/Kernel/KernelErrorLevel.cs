@@ -32,10 +32,6 @@ namespace KS.Kernel
         /// </summary>
         S,
         /// <summary>
-        /// Double kernel panic
-        /// </summary>
-        D,
-        /// <summary>
         /// Fatal kernel error
         /// </summary>
         F,

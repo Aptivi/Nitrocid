@@ -107,7 +107,7 @@ namespace KS.Kernel
                 DebugWriter.WriteDebug(DebugLevel.I, "Error type: {0}", ErrorType);
                 if (Enum.IsDefined(typeof(KernelErrorLevel), ErrorType))
                 {
-                    if (ErrorType == KernelErrorLevel.U | ErrorType == KernelErrorLevel.D)
+                    if (ErrorType == KernelErrorLevel.U)
                     {
                         if (RebootTime > 5L)
                         {
@@ -138,7 +138,7 @@ namespace KS.Kernel
                 {
                     // If the error type is other than D/F/C/U/S, then it will generate a second error.
                     DebugWriter.WriteDebug(DebugLevel.E, "Error type {0} is not valid.", ErrorType);
-                    KernelError(KernelErrorLevel.D, true, 5L, Translate.DoTranslation("DOUBLE PANIC: Error Type {0} invalid."), null, ((int)ErrorType).ToString());
+                    KernelErrorDouble(Translate.DoTranslation("DOUBLE PANIC: Error Type {0} invalid."), null, ((int)ErrorType).ToString());
                     return;
                 }
 
@@ -154,16 +154,6 @@ namespace KS.Kernel
                 // Check error type
                 switch (ErrorType)
                 {
-                    case KernelErrorLevel.D:
-                        {
-                            // Double panic printed and reboot initiated
-                            DebugWriter.WriteDebug(DebugLevel.F, "Double panic caused by bug in kernel crash.");
-                            TextWriterColor.Write(Translate.DoTranslation("[{0}] dpanic: {1} -- Rebooting in {2} seconds..."), true, ColorTools.ColTypes.UncontKernelError, ErrorType, Description, RebootTime.ToString());
-                            Thread.Sleep((int)(RebootTime * 1000L));
-                            DebugWriter.WriteDebug(DebugLevel.F, "Rebooting");
-                            PowerManager.PowerManage(PowerMode.Reboot);
-                            break;
-                        }
                     case KernelErrorLevel.C:
                         {
                             if (Reboot)
@@ -210,21 +200,44 @@ namespace KS.Kernel
             }
             catch (Exception ex)
             {
-                // Check to see if it's a double panic
-                if (ErrorType == KernelErrorLevel.D)
-                {
-                    // Trigger triple fault
-                    DebugWriter.WriteDebug(DebugLevel.F, "TRIPLE FAULT: Kernel bug: {0}", ex.Message);
-                    DebugWriter.WriteDebugStackTrace(ex);
-                    Environment.FailFast("TRIPLE FAULT in trying to handle DOUBLE PANIC. KS can't continue.", ex);
-                }
-                else
-                {
-                    // Alright, we have a double panic.
-                    DebugWriter.WriteDebug(DebugLevel.F, "DOUBLE PANIC: Kernel bug: {0}", ex.Message);
-                    DebugWriter.WriteDebugStackTrace(ex);
-                    KernelError(KernelErrorLevel.D, true, 5L, Translate.DoTranslation("DOUBLE PANIC: Kernel bug: {0}"), ex, ex.Message);
-                }
+                // Alright, we have a double panic.
+                DebugWriter.WriteDebug(DebugLevel.F, "DOUBLE PANIC: Kernel bug: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+                KernelErrorDouble(Translate.DoTranslation("DOUBLE PANIC: Kernel bug: {0}"), ex, ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Indicates that there's a double fault with the kernel.
+        /// </summary>
+        /// <param name="Description">Explanation of what happened when it errored.</param>
+        /// <param name="Exc">An exception to get stack traces, etc. Used for dump files currently.</param>
+        /// <param name="Variables">Optional. Specifies variables to get on text that will be printed.</param>
+        private static void KernelErrorDouble(string Description, Exception Exc, params object[] Variables)
+        {
+            Flags.KernelErrored = true;
+            LastKernelErrorException = Exc;
+            Flags.NotifyKernelError = true;
+
+            try
+            {
+                // Unquiet
+                Flags.QuietKernel = false;
+
+                // Format the "Description" string variable
+                Description = StringManipulate.FormatString(Description, Variables);
+
+                // Double panic printed and reboot initiated
+                DebugWriter.WriteDebug(DebugLevel.F, "Double panic caused by bug in kernel crash.");
+                TextWriterColor.Write("[D] dpanic: " + Translate.DoTranslation("{0} -- Rebooting in {1} seconds..."), true, ColorTools.ColTypes.UncontKernelError, Description, 5);
+                Thread.Sleep(5000);
+                DebugWriter.WriteDebug(DebugLevel.F, "Rebooting");
+                PowerManager.PowerManage(PowerMode.Reboot);
+            }
+            catch (Exception ex)
+            {
+                // Trigger triple fault
+                Environment.FailFast("TRIPLE FAULT in trying to handle DOUBLE PANIC. KS can't continue.", ex);
             }
         }
 
