@@ -167,7 +167,7 @@ namespace KS.Kernel
                             TextWriterColor.Write(Translate.DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel."), true, ColorTools.ColTypes.ContKernelError, ErrorType, Description);
                             if (Flags.ShowStackTraceOnKernelError & Exc is not null)
                                 TextWriterColor.Write(Exc.StackTrace, true, ColorTools.ColTypes.ContKernelError);
-                            ConsoleBase.ConsoleWrapper.ReadKey();
+                            ConsoleWrapper.ReadKey();
                             break;
                         }
 
@@ -190,7 +190,7 @@ namespace KS.Kernel
                                 TextWriterColor.Write(Translate.DoTranslation("[{0}] panic: {1} -- Press any key to shutdown."), true, ColorTools.ColTypes.UncontKernelError, ErrorType, Description);
                                 if (Flags.ShowStackTraceOnKernelError & Exc is not null)
                                     TextWriterColor.Write(Exc.StackTrace, true, ColorTools.ColTypes.UncontKernelError);
-                                ConsoleBase.ConsoleWrapper.ReadKey();
+                                ConsoleWrapper.ReadKey();
                                 PowerManager.PowerManage(PowerMode.Shutdown);
                             }
 
