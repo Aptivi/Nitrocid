@@ -298,12 +298,18 @@ namespace KS.ConsoleBase.Colors
         /// <summary>
         /// Loads the background
         /// </summary>
-        public static void LoadBack()
+        public static void LoadBack() =>
+            LoadBack(GetColor(ColTypes.Background));
+
+        /// <summary>
+        /// Loads the background
+        /// </summary>
+        public static void LoadBack(Color ColorSequence)
         {
             try
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Filling background with background color");
-                SetConsoleColor(GetColor(ColTypes.Background), true);
+                DebugWriter.WriteDebug(DebugLevel.I, "Filling background with background color {0}", ColorSequence.PlainSequence);
+                SetConsoleColor(ColorSequence, true);
                 ConsoleWrapper.Clear();
             }
             catch (Exception ex)
