@@ -263,14 +263,15 @@ namespace KS.Misc.Splash
         {
             if (Flags.EnableSplash)
             {
-                splash.Closing();
+                splash.SplashClosing = true;
 
-                // We need to wait for the splash display thread to finish its work once Closing() is called, because some splashes, like PowerLine,
+                // We need to wait for the splash display thread to finish its work once SplashClosing is set, because some splashes, like PowerLine,
                 // actually do some operations that take a few milliseconds to finish what it's doing, and if we didn't wait here until the operations
                 // are done in the Display() function, we'd abruptly stop without waiting, causing race condition. If this happened, visual glitches
                 // manifest, which is not good.
                 SplashThread.Wait();
                 SplashThread.Stop();
+                splash.Closing();
                 ConsoleBase.ConsoleWrapper.CursorVisible = true;
 
                 // Reset the SplashClosing variable in case it needs to be open again. Some splashes don't do anything if they detect that the splash
