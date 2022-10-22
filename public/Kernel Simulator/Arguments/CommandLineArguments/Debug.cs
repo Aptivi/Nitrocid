@@ -18,13 +18,24 @@
 
 using KS.Arguments.ArgumentBase;
 using KS.Kernel;
+using KS.Kernel.Debugging;
+using System;
 
 namespace KS.Arguments.CommandLineArguments
 {
     class CommandLine_DebugArgument : ArgumentExecutor, IArgument
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Flags.DebugMode = true;
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        {
+            Flags.DebugMode = true;
 
+            // Write headers for debug
+            DebugWriter.WriteDebug(DebugLevel.I, "-------------------------------------------------------------------");
+            DebugWriter.WriteDebug(DebugLevel.I, "Kernel initialized, version {0}.", Kernel.Kernel.KernelVersion.ToString());
+            DebugWriter.WriteDebug(DebugLevel.I, "Kernel mod API version {0}.", Kernel.Kernel.KernelApiVersion.ToString());
+            DebugWriter.WriteDebug(DebugLevel.I, "OS: {0}", Environment.OSVersion.ToString());
+            DebugWriter.WriteDebug(DebugLevel.I, "Framework: {0}", Kernel.Kernel.KernelSimulatorMoniker);
+        }
     }
 }

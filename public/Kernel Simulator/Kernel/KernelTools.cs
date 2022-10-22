@@ -469,13 +469,6 @@ namespace KS.Kernel
             // Load splash
             SplashManager.OpenSplash();
 
-            // Write headers for debug
-            DebugWriter.WriteDebug(DebugLevel.I, "-------------------------------------------------------------------");
-            DebugWriter.WriteDebug(DebugLevel.I, "Kernel initialized, version {0}.", Kernel.KernelVersion.ToString());
-            DebugWriter.WriteDebug(DebugLevel.I, "Kernel mod API version {0}.", Kernel.KernelApiVersion.ToString());
-            DebugWriter.WriteDebug(DebugLevel.I, "OS: {0}", Environment.OSVersion.ToString());
-            DebugWriter.WriteDebug(DebugLevel.I, "Framework: {0}", Kernel.KernelSimulatorMoniker);
-
             // Populate ban list for debug devices
             RemoteDebugTools.PopulateBlockedDevices();
 
