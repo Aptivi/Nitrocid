@@ -19,7 +19,6 @@
 using System;
 using System.Diagnostics;
 using System.Linq;
-using static System.Reflection.Assembly;
 using System.Threading;
 using System.IO;
 using ColorSeq;
@@ -59,17 +58,9 @@ namespace KS.Kernel
     /// <summary>
     /// Kernel main class
     /// </summary>
-    public static class Kernel
+    internal static class Kernel
     {
 
-        /// <summary>
-        /// Kernel version
-        /// </summary>
-        public readonly static Version KernelVersion = GetExecutingAssembly().GetName().Version;
-        /// <summary>
-        /// Kernel API version
-        /// </summary>
-        public readonly static Version KernelApiVersion = new(FileVersionInfo.GetVersionInfo(GetExecutingAssembly().Location).FileVersion);
         internal static Stopwatch StageTimer = new();
 
         // #ifdef'd variables ... Framework monikers
@@ -95,7 +86,7 @@ namespace KS.Kernel
         internal readonly static string ReleaseSpecifier = $"UNSUPPORTED";
 #endif
         // Final console window title
-        internal readonly static string ConsoleTitle = $"[{KernelSimulatorMoniker}] [{ReleaseSpecifier}] - Kernel Simulator v{KernelVersion} (API v{KernelApiVersion})";
+        internal readonly static string ConsoleTitle = $"[{KernelSimulatorMoniker}] [{ReleaseSpecifier}] - Kernel Simulator v{KernelTools.KernelVersion} (API v{KernelTools.KernelApiVersion})";
 
         /// <summary>
         /// Entry point
@@ -329,7 +320,7 @@ namespace KS.Kernel
         /// <summary>
         /// Check to see if KernelError has been called
         /// </summary>
-        public static void CheckErrored()
+        private static void CheckErrored()
         {
             if (Flags.KernelErrored)
             {

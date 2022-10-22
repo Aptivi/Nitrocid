@@ -77,7 +77,7 @@ namespace KS.Kernel.Updates
             SortedVersions = SortedVersions.OrderByDescending(x => x.UpdateVersion).ToList();
 
             // Get the latest version found
-            var CurrentVer = new Version(Kernel.KernelVersion.ToString());
+            var CurrentVer = new Version(KernelTools.KernelVersion.ToString());
             var UpdateVer = SortedVersions[0].UpdateVersion;
             var UpdateURI = SortedVersions[0].UpdateURL;
             DebugWriter.WriteDebug(DebugLevel.I, "Update version: {0}", UpdateVer.ToString());

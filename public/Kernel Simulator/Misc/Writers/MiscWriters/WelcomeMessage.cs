@@ -71,16 +71,16 @@ namespace KS.Misc.Writers.MiscWriters
                 // Finally, write the message
                 if (Flags.StartScroll)
                 {
-                    TextWriterSlowColor.WriteSlowly(MessageWrite, true, 10d, ColorTools.ColTypes.Banner, Kernel.Kernel.KernelVersion.ToString());
+                    TextWriterSlowColor.WriteSlowly(MessageWrite, true, 10d, ColorTools.ColTypes.Banner, KernelTools.KernelVersion.ToString());
                 }
                 else
                 {
-                    TextWriterColor.Write(MessageWrite, true, ColorTools.ColTypes.Banner, Kernel.Kernel.KernelVersion.ToString());
+                    TextWriterColor.Write(MessageWrite, true, ColorTools.ColTypes.Banner, KernelTools.KernelVersion.ToString());
                 }
 
                 if (Flags.NewWelcomeStyle)
                 {
-                    string FigletRenderedBanner = FigletTools.RenderFiglet($"{Kernel.Kernel.KernelVersion}", KernelTools.BannerFigletFont);
+                    string FigletRenderedBanner = FigletTools.RenderFiglet($"{KernelTools.KernelVersion}", KernelTools.BannerFigletFont);
                     TextWriterColor.Write(CharManager.NewLine + CharManager.NewLine + FigletRenderedBanner, true, ColorTools.ColTypes.NeutralText);
                 }
                 else

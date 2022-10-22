@@ -20,6 +20,7 @@ using System;
 using System.Threading;
 using ColorSeq;
 using KS.ConsoleBase.Colors;
+using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
@@ -53,7 +54,7 @@ namespace KS.Misc.Splash.Splashes
             Beginning = true;
             DebugWriter.WriteDebug(DebugLevel.I, "Splash opening. Clearing console...");
             ConsoleBase.ConsoleWrapper.Clear();
-            TextWriterColor.Write(CharManager.NewLine + $"   {OpenRCIndicatorColor.VTSequenceForeground}OpenRC {OpenRCVersionColor.VTSequenceForeground}0.13.11 {ColorTools.GetColor(ColorTools.ColTypes.NeutralText).VTSequenceForeground}is starting up {OpenRCPlaceholderColor.VTSequenceForeground}Kernel Simulator {Kernel.Kernel.KernelVersion}" + CharManager.NewLine, true, ColorTools.ColTypes.NeutralText);
+            TextWriterColor.Write(CharManager.NewLine + $"   {OpenRCIndicatorColor.VTSequenceForeground}OpenRC {OpenRCVersionColor.VTSequenceForeground}0.13.11 {ColorTools.GetColor(ColorTools.ColTypes.NeutralText).VTSequenceForeground}is starting up {OpenRCPlaceholderColor.VTSequenceForeground}Kernel Simulator {KernelTools.KernelVersion}" + CharManager.NewLine, true, ColorTools.ColTypes.NeutralText);
         }
 
         public void Display()

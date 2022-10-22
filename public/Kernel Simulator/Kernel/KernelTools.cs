@@ -26,7 +26,6 @@ using KS.Arguments.ArgumentBase;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Files;
-using KS.Files.Operations;
 using KS.Files.Querying;
 using KS.Hardware;
 using KS.Kernel.Administration.Journalling;
@@ -55,14 +54,13 @@ using KS.Shell.ShellBase.Commands;
 using KS.TimeDate;
 using KS.Users;
 using KS.Users.Groups;
-using static System.Net.Mime.MediaTypeNames;
+using System.Reflection;
 
 #if SPECIFIERREL
 using static KS.ConsoleBase.Colors.ColorTools;
 using static KS.Misc.Notifications.Notifications;
 using KS.Network;
 using KS.Network.Transfer;
-using System.Reflection;
 #endif
 
 namespace KS.Kernel
@@ -73,6 +71,14 @@ namespace KS.Kernel
     public static class KernelTools
     {
 
+        /// <summary>
+        /// Kernel version
+        /// </summary>
+        public readonly static Version KernelVersion = Assembly.GetExecutingAssembly().GetName().Version;
+        /// <summary>
+        /// Kernel API version
+        /// </summary>
+        public readonly static Version KernelApiVersion = new(FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion);
         /// <summary>
         /// Current banner figlet font
         /// </summary>

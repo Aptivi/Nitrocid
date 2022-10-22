@@ -27,6 +27,7 @@ using Extensification.DictionaryExts;
 using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Files.Querying;
+using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -136,10 +137,10 @@ namespace KS.Modifications
                     // Check the API version defined by mod to ensure that we don't load mods that are API incompatible
                     try
                     {
-                        if (Kernel.Kernel.KernelApiVersion < script.MinimumSupportedApiVersion)
+                        if (KernelTools.KernelApiVersion < script.MinimumSupportedApiVersion)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.W, "Trying to load mod {0} that requires minimum api version {1} on api {2}", modFile, script.MinimumSupportedApiVersion.ToString(), Kernel.Kernel.KernelApiVersion.ToString());
-                            SplashReport.ReportProgressError(Translate.DoTranslation("Mod {0} requires minimum API version {1}, but you have version {2}. Upgrading Kernel Simulator usually helps. Mod parsing failed."), modFile, script.MinimumSupportedApiVersion.ToString(), Kernel.Kernel.KernelApiVersion.ToString());
+                            DebugWriter.WriteDebug(DebugLevel.W, "Trying to load mod {0} that requires minimum api version {1} on api {2}", modFile, script.MinimumSupportedApiVersion.ToString(), KernelTools.KernelApiVersion.ToString());
+                            SplashReport.ReportProgressError(Translate.DoTranslation("Mod {0} requires minimum API version {1}, but you have version {2}. Upgrading Kernel Simulator usually helps. Mod parsing failed."), modFile, script.MinimumSupportedApiVersion.ToString(), KernelTools.KernelApiVersion.ToString());
                             return;
                         }
                     }
