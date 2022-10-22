@@ -304,6 +304,7 @@ namespace KS.ConsoleBase.Colors
         /// <summary>
         /// Loads the background
         /// </summary>
+        /// <param name="ColorSequence">Color sequence used to load background</param>
         public static void LoadBack(Color ColorSequence)
         {
             try

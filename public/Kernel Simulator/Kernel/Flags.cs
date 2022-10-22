@@ -323,7 +323,7 @@ namespace KS.Kernel
         /// </summary>
         internal static bool CancelRequested;
         /// <summary>
-        /// Show MOTD every <see cref="Login.Login.LoginPrompt()"/> call
+        /// Show MOTD every <see cref="Users.Login.Login.LoginPrompt()"/> call if false. Otherwise, shows it only once.
         /// </summary>
         internal static bool ShowMOTDOnceFlag = true;
         /// <summary>
