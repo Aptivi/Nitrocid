@@ -138,5 +138,23 @@ namespace KS.Misc.Threading
             }
         }
 
+        /// <summary>
+        /// Waits for the kernel thread to finish unless the waiting timed out
+        /// </summary>
+        public bool Wait(int timeoutMs)
+        {
+            try
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Waiting for kernel thread {0} with ID {1} for {0} milliseconds", BaseThread.Name, BaseThread.ManagedThreadId, timeoutMs);
+                return BaseThread.Join(timeoutMs);
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Can't wait for kernel thread: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
+            return false;
+        }
+
     }
 }
