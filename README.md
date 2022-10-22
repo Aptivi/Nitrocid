@@ -77,7 +77,16 @@
 
 <br>
 
-The 2nd generations of **KS** are not backwards <br>
+The 3rd generation versions of **KS** are not backwards <br>
+compatible with the 2nd generation versions.
+
+*Upgrade your mods to support the latest API changes.*
+
+<br>
+
+<br>
+
+The 2nd generation versions of **KS** are not backwards <br>
 compatible with the 1st generation versions.
 
 *Upgrade your mods to support the latest API changes.*
