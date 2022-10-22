@@ -28,11 +28,8 @@ namespace KS.Misc.Reflection
         /// Is the string numeric?
         /// </summary>
         /// <param name="Expression">The expression</param>
-        public static bool IsStringNumeric(string Expression)
-        {
-            double argresult = 0d;
-            return double.TryParse(Expression, out argresult);
-        }
+        public static bool IsStringNumeric(string Expression) => 
+            double.TryParse(Expression, out double _);
 
     }
 }
