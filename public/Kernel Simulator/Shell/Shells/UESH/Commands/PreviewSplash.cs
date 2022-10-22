@@ -18,33 +18,33 @@
 
 using KS.ConsoleBase.Colors;
 using KS.Languages;
-using KS.Misc.Screensaver;
+using KS.Misc.Splash;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
     /// <summary>
-    /// Launches your current screen saver
+    /// Previews the splash
     /// </summary>
     /// <remarks>
-    /// This command can protect your LCD screen from burn-in and shows you the current screensaver that is set by you or by the kernel. However it doesn't lock the user account, so we recommend to lock your screen for any purposes, unless you're testing your own screensaver from the screensaver modfile.
+    /// This command previews either the current splash as set in the kernel settings or the specified splash. Refer the current splash list found in <see cref="Misc.Splash.SplashManager.Splashes"/>.
     /// </remarks>
-    class SaveScreenCommand : CommandExecutor, ICommand
+    class PreviewSplashCommand : CommandExecutor, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
             if (!(ListArgsOnly.Length == 0))
-                Screensaver.ShowSavers(ListArgsOnly[0]);
+                SplashManager.PreviewSplash(ListArgsOnly[0]);
             else
-                Screensaver.ShowSavers(Screensaver.DefSaverName);
+                SplashManager.PreviewSplash();
         }
 
         public override void HelpHelper()
         {
-            TextWriterColor.Write(Translate.DoTranslation("Available screensavers:"), true, ColorTools.ColTypes.NeutralText);
-            ListWriterColor.WriteList(Screensaver.Screensavers.Keys);
+            TextWriterColor.Write(Translate.DoTranslation("Available splashes:"), true, ColorTools.ColTypes.NeutralText);
+            ListWriterColor.WriteList(SplashManager.Splashes.Keys);
         }
 
     }
