@@ -243,7 +243,7 @@ namespace KS.ConsoleBase.Colors
                     {
                         ColTypes type = (ColTypes)Enum.Parse(typeof(ColTypes), typeIndex.ToString());
                         Color color = Color.Empty;
-                        DebugWriter.WriteDebug(DebugLevel.I, "Adding color type {0} with color {1}...", type, color);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Adding color type {0} with color {1}...", type, color.PlainSequence);
                         colors.Add(type, color);
                     }
                     break;
@@ -254,7 +254,7 @@ namespace KS.ConsoleBase.Colors
                     {
                         ColTypes type = (ColTypes)Enum.Parse(typeof(ColTypes), typeIndex.ToString());
                         Color color = themeInfo.GetColor(type);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Adding color type {0} with color {1}...", type, color);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Adding color type {0} with color {1}...", type, color.PlainSequence);
                         colors.Add(type, color);
                     }
                     break;
@@ -264,7 +264,7 @@ namespace KS.ConsoleBase.Colors
                     {
                         ColTypes type = (ColTypes)Enum.Parse(typeof(ColTypes), typeIndex.ToString());
                         Color color = GetColor(type);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Adding color type {0} with color {1}...", type, color);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Adding color type {0} with color {1}...", type, color.PlainSequence);
                         colors.Add(type, color);
                     }
                     break;
