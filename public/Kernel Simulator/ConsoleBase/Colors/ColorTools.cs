@@ -305,12 +305,13 @@ namespace KS.ConsoleBase.Colors
         /// Loads the background
         /// </summary>
         /// <param name="ColorSequence">Color sequence used to load background</param>
-        public static void LoadBack(Color ColorSequence)
+        /// <param name="Force">Force set background even if background setting is disabled</param>
+        public static void LoadBack(Color ColorSequence, bool Force = false)
         {
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Filling background with background color {0}", ColorSequence.PlainSequence);
-                SetConsoleColor(ColorSequence, true);
+                SetConsoleColor(ColorSequence, true, Force);
                 ConsoleWrapper.Clear();
             }
             catch (Exception ex)

@@ -285,9 +285,8 @@ namespace KS.Misc.Screensaver.Displays
             // Variable preparations
             CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
-            ColorTools.SetConsoleColor(new Color(MarqueeSettings.MarqueeBackgroundColor), true, true);
+            ColorTools.LoadBack(new Color(MarqueeSettings.MarqueeBackgroundColor), true);
             ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
-            ConsoleBase.ConsoleWrapper.Clear();
             MarqueeSettings.MarqueeWrite = MarqueeSettings.MarqueeWrite.ReplaceAll(new string[] { Convert.ToChar(13).ToString(), Convert.ToChar(10).ToString() }, " - ");
         }
 

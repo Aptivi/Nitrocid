@@ -257,9 +257,8 @@ namespace KS.Misc.Screensaver.Displays
             // Variable preparations
             CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
-            ColorTools.SetConsoleColor(new Color(WipeSettings.WipeBackgroundColor), true, true);
+            ColorTools.LoadBack(new Color(WipeSettings.WipeBackgroundColor), true);
             ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
-            ConsoleBase.ConsoleWrapper.Clear();
             ConsoleBase.ConsoleWrapper.CursorVisible = false;
         }
 
@@ -410,8 +409,7 @@ namespace KS.Misc.Screensaver.Displays
             else
             {
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing...");
-                ColorTools.SetConsoleColor(new Color(WipeSettings.WipeBackgroundColor), true);
-                ConsoleBase.ConsoleWrapper.Clear();
+                ColorTools.LoadBack(new Color(WipeSettings.WipeBackgroundColor), true);
             }
 
             ResizeSyncing = false;

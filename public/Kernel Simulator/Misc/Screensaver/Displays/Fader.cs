@@ -249,8 +249,7 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.SetConsoleColor(new Color(FaderSettings.FaderBackgroundColor), true, true);
-            ConsoleBase.ConsoleWrapper.Clear();
+            ColorTools.LoadBack(new Color(FaderSettings.FaderBackgroundColor), true);
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
             FaderSettingsInstance = new Animations.Fader.FaderSettings()
             {

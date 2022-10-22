@@ -109,10 +109,9 @@ namespace KS.Misc.Screensaver.Displays
                 step = 0;
 
             // Set color
-            ColorTools.SetConsoleColor(sirenColors[step], true, true);
+            ColorTools.LoadBack(sirenColors[step], true);
 
-            // Clear screen and delay
-            ConsoleBase.ConsoleWrapper.Clear();
+            // Delay
             ThreadManager.SleepNoBlock(SirenSettings.SirenDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

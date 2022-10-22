@@ -274,9 +274,8 @@ namespace KS.Misc.Screensaver.Displays
             // Variable preparations
             CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
-            ColorTools.SetConsoleColor(new Color(ColorMixSettings.ColorMixBackgroundColor), true, true);
             ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
-            ConsoleBase.ConsoleWrapper.Clear();
+            ColorTools.LoadBack(new Color(ColorMixSettings.ColorMixBackgroundColor), true);
         }
 
         /// <inheritdoc/>

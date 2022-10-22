@@ -302,8 +302,7 @@ namespace KS.Misc.Screensaver.Displays
             // Select a color
             if (LinesSettings.LinesTrueColor)
             {
-                ColorTools.SetConsoleColor(new Color(LinesSettings.LinesBackgroundColor), true, true);
-                ConsoleBase.ConsoleWrapper.Clear();
+                ColorTools.LoadBack(new Color(LinesSettings.LinesBackgroundColor), true);
                 int RedColorNum = RandomDriver.Random(LinesSettings.LinesMinimumRedColorLevel, LinesSettings.LinesMaximumRedColorLevel);
                 int GreenColorNum = RandomDriver.Random(LinesSettings.LinesMinimumGreenColorLevel, LinesSettings.LinesMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Random(LinesSettings.LinesMinimumBlueColorLevel, LinesSettings.LinesMaximumBlueColorLevel);
@@ -313,16 +312,14 @@ namespace KS.Misc.Screensaver.Displays
             }
             else if (LinesSettings.Lines255Colors)
             {
-                ColorTools.SetConsoleColor(new Color(LinesSettings.LinesBackgroundColor), true, true);
-                ConsoleBase.ConsoleWrapper.Clear();
+                ColorTools.LoadBack(new Color(LinesSettings.LinesBackgroundColor), true);
                 int color = RandomDriver.Random(LinesSettings.LinesMinimumColorLevel, LinesSettings.LinesMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", color);
                 ColorTools.SetConsoleColor(new Color(color));
             }
             else
             {
-                ConsoleBase.ConsoleWrapper.Clear();
-                ColorTools.SetConsoleColor(new Color(LinesSettings.LinesBackgroundColor), true, true);
+                ColorTools.LoadBack(new Color(LinesSettings.LinesBackgroundColor), true);
                 ConsoleBase.ConsoleWrapper.ForegroundColor = Screensaver.colors[RandomDriver.Random(LinesSettings.LinesMinimumColorLevel, LinesSettings.LinesMaximumColorLevel)];
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.ForegroundColor);
             }

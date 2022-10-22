@@ -300,9 +300,8 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverLogic()
         {
             ConsoleBase.ConsoleWrapper.CursorVisible = false;
-            ColorTools.SetConsoleColor(new Color(BouncingBlockSettings.BouncingBlockBackgroundColor), true, true);
             ColorTools.SetConsoleColor(new Color(BouncingBlockSettings.BouncingBlockForegroundColor));
-            ConsoleBase.ConsoleWrapper.Clear();
+            ColorTools.LoadBack(new Color(BouncingBlockSettings.BouncingBlockBackgroundColor), true);
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Row block: {0} | Column block: {1}", RowBlock, ColumnBlock);
 
             // Change the color

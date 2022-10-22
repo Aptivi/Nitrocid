@@ -291,8 +291,7 @@ namespace KS.Misc.Screensaver.Displays
             // Variable preparations
             CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
-            ColorTools.SetConsoleColor(new Color(FlashTextSettings.FlashTextBackgroundColor), true, true);
-            ConsoleBase.ConsoleWrapper.Clear();
+            ColorTools.LoadBack(new Color(FlashTextSettings.FlashTextBackgroundColor), true);
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
 
             // Select position

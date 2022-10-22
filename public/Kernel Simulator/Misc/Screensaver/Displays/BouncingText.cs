@@ -310,9 +310,8 @@ namespace KS.Misc.Screensaver.Displays
             // Variable preparations
             CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
-            ColorTools.SetConsoleColor(new Color(BouncingTextSettings.BouncingTextBackgroundColor), true, true);
             ColorTools.SetConsoleColor(new Color(BouncingTextSettings.BouncingTextForegroundColor));
-            ConsoleBase.ConsoleWrapper.Clear();
+            ColorTools.LoadBack(new Color(BouncingTextSettings.BouncingTextBackgroundColor), true);
             RowText = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d);
             ColumnFirstLetter = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d - BouncingTextSettings.BouncingTextWrite.Length / 2d);
             ColumnLastLetter = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d + BouncingTextSettings.BouncingTextWrite.Length / 2d);

@@ -260,8 +260,7 @@ namespace KS.Misc.Screensaver.Displays
             // Variable preparations
             CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
-            ColorTools.SetConsoleColor(new Color(DissolveSettings.DissolveBackgroundColor), true, true);
-            ConsoleBase.ConsoleWrapper.Clear();
+            ColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor), true);
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
         }
 
@@ -303,8 +302,7 @@ namespace KS.Misc.Screensaver.Displays
                         {
                             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "We're refilling...");
                             ColorFilled = false;
-                            ColorTools.SetConsoleColor(new Color(DissolveSettings.DissolveBackgroundColor), true, true);
-                            ConsoleBase.ConsoleWrapper.Clear();
+                            ColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor), true);
                             CoveredPositions.Clear();
                         }
                     }
@@ -324,8 +322,7 @@ namespace KS.Misc.Screensaver.Displays
                         {
                             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "We're refilling...");
                             ColorFilled = false;
-                            ColorTools.SetConsoleColor(new Color(DissolveSettings.DissolveBackgroundColor), true, true);
-                            ConsoleBase.ConsoleWrapper.Clear();
+                            ColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor), true);
                             CoveredPositions.Clear();
                         }
                     }
@@ -343,8 +340,7 @@ namespace KS.Misc.Screensaver.Displays
                         {
                             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "We're refilling...");
                             ColorFilled = false;
-                            ColorTools.SetConsoleColor(new Color(DissolveSettings.DissolveBackgroundColor), true, true);
-                            ConsoleBase.ConsoleWrapper.Clear();
+                            ColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor), true);
                             CoveredPositions.Clear();
                         }
                     }
@@ -374,8 +370,7 @@ namespace KS.Misc.Screensaver.Displays
                     {
                         DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "We're refilling...");
                         ColorFilled = false;
-                        ColorTools.SetConsoleColor(new Color(DissolveSettings.DissolveBackgroundColor), true, true);
-                        ConsoleBase.ConsoleWrapper.Clear();
+                        ColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor), true);
                         CoveredPositions.Clear();
                     }
                 }
@@ -383,8 +378,7 @@ namespace KS.Misc.Screensaver.Displays
                 {
                     DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "We're refilling...");
                     ColorFilled = false;
-                    ColorTools.SetConsoleColor(new Color(DissolveSettings.DissolveBackgroundColor), true, true);
-                    ConsoleBase.ConsoleWrapper.Clear();
+                    ColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor), true);
                     CoveredPositions.Clear();
                 }
             }

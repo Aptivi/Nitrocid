@@ -255,8 +255,7 @@ namespace KS.Misc.Screensaver.Displays
             // Variable preparations
             CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
-            ColorTools.SetConsoleColor(new Color(LighterSettings.LighterBackgroundColor), true, true);
-            ConsoleBase.ConsoleWrapper.Clear();
+            ColorTools.LoadBack(new Color(LighterSettings.LighterBackgroundColor), true);
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
         }
 
