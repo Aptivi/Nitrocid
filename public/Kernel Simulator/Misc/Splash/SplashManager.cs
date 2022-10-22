@@ -302,17 +302,12 @@ namespace KS.Misc.Splash
             OpenSplash(splash);
 
             // Report progress 5 times
-            Thread.Sleep(1000);
-            SplashReport.ReportProgress("20%", 20, true, splash, ColorTools.ColTypes.NeutralText);
-            Thread.Sleep(1000);
-            SplashReport.ReportProgress("40%", 20, true, splash, ColorTools.ColTypes.NeutralText);
-            Thread.Sleep(1000);
-            SplashReport.ReportProgress("60%", 20, true, splash, ColorTools.ColTypes.NeutralText);
-            Thread.Sleep(1000);
-            SplashReport.ReportProgress("80%", 20, true, splash, ColorTools.ColTypes.NeutralText);
-            Thread.Sleep(1000);
-            SplashReport.ReportProgress("100%", 20, true, splash, ColorTools.ColTypes.NeutralText);
-            Thread.Sleep(1000);
+            for (int i = 1; i <= 5; i++)
+            {
+                int prog = i * 20;
+                SplashReport.ReportProgress($"{prog}%", 20, true, splash, ColorTools.ColTypes.NeutralText);
+                Thread.Sleep(1000);
+            }
 
             // Close
             CloseSplash(splash);
