@@ -75,5 +75,16 @@ namespace KS.Kernel
         /// </summary>
         public static bool IsRunningFromGrilo() => (System.Reflection.Assembly.GetEntryAssembly()?.GetName()?.Name?.StartsWith("GRILO")) ?? false;
 
+        /// <summary>
+        /// Is Kernel Simulator running from .NET CoreCLR?
+        /// </summary>
+        /// <returns></returns>
+        public static bool IsDotnetCoreClr() =>
+#if NETCOREAPP
+            true;
+#else
+            false;
+#endif
+
     }
 }

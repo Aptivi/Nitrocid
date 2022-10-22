@@ -63,13 +63,7 @@ namespace KS.Kernel
 
         internal static Stopwatch StageTimer = new();
 
-        // #ifdef'd variables ... Framework monikers
-#if NETCOREAPP
-        internal const string KernelSimulatorMoniker = ".NET CoreCLR";
-#else
-        internal const string KernelSimulatorMoniker = ".NET Framework";
-#endif
-        // Release specifiers (SPECIFIER: REL, RC, or DEV | MILESTONESPECIFIER: ALPHA, BETA, NONE | None satisfied: Unsupported Release)
+        // #ifdef'd variables ... Release specifiers (SPECIFIER: REL, RC, or DEV | MILESTONESPECIFIER: ALPHA, BETA, NONE | None satisfied: Unsupported Release)
 #if SPECIFIERREL
         internal readonly static string ReleaseSpecifier = $"RTM";
 #elif SPECIFIERRC
@@ -85,8 +79,9 @@ namespace KS.Kernel
 #else
         internal readonly static string ReleaseSpecifier = $"UNSUPPORTED";
 #endif
+
         // Final console window title
-        internal readonly static string ConsoleTitle = $"[{KernelSimulatorMoniker}] [{ReleaseSpecifier}] - Kernel Simulator v{KernelTools.KernelVersion} (API v{KernelTools.KernelApiVersion})";
+        internal readonly static string ConsoleTitle = $"[{(KernelPlatform.IsDotnetCoreClr() ? ".NET CoreCLR" : ".NET Framework")}] [{ReleaseSpecifier}] - Kernel Simulator v{KernelTools.KernelVersion} (API v{KernelTools.KernelApiVersion})";
 
         /// <summary>
         /// Entry point
