@@ -139,8 +139,7 @@ namespace KS.Files
         /// Debugging path
         /// </summary>
         public static string DebuggingPath =>
-            // return Filesystem.NeutralizePath(AppDataPath + "/kernelDbg.log");
-            Filesystem.NeutralizePath(HomePath + "/kernelDbg.log");
+            Filesystem.NeutralizePath(AppDataPath + "/kernelDbg.log");
 
         /// <summary>
         /// Aliases path
