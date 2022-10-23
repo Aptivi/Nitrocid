@@ -43,52 +43,47 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            if (Shell.ColoredShell)
+            // Selected theme null for now
+            string selectedTheme = ListArgsOnly.Length > 0 ? ListArgsOnly[0] : "";
+            if (ListArgsOnly.Length == 0)
             {
-                // Selected theme null for now
-                string selectedTheme = ListArgsOnly.Length > 0 ? ListArgsOnly[0] : "";
-                if (ListArgsOnly.Length == 0)
+                // Let the user select a theme
+                List<string> themeAnswers = new();
+                List<string> themeWorkingNames = new();
+                foreach (string theme in ThemeTools.Themes.Keys)
                 {
-                    // Let the user select a theme
-                    List<string> themeAnswers = new();
-                    List<string> themeWorkingNames = new();
-                    foreach (string theme in ThemeTools.Themes.Keys)
-                    {
-                        themeAnswers.Add(theme);
-                        themeWorkingNames.Add(ThemeTools.Themes[theme].Name);
-                    }
-                    int colorIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a theme"), string.Join("/", themeAnswers), themeWorkingNames.ToArray()) - 1;
-
-                    // Get the theme name from index
-                    selectedTheme = ThemeTools.Themes.Keys.ElementAt(colorIndex);
+                    themeAnswers.Add(theme);
+                    themeWorkingNames.Add(ThemeTools.Themes[theme].Name);
                 }
+                int colorIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a theme"), string.Join("/", themeAnswers), themeWorkingNames.ToArray()) - 1;
 
-                // Try to load the theme to the theme studio
-                string ThemePath = Filesystem.NeutralizePath(selectedTheme);
-                if (Checking.FileExists(ThemePath))
-                    ThemeStudioTools.LoadThemeFromFile(ThemePath);
-                else
-                    ThemeStudioTools.LoadThemeFromResource(selectedTheme);
-
-                // Load the preview
-                ThemeStudioTools.PreparePreview();
-
-                // Pause until a key is pressed
-                string answer = ChoiceStyle.PromptChoice(Translate.DoTranslation("Would you like to set this theme to {0}?").FormatString(selectedTheme), "y/n", new[] { Translate.DoTranslation("Yes, set it!"), Translate.DoTranslation("No, don't set it.") }, ChoiceStyle.ChoiceOutputType.Modern);
-                if (answer == "y")
-                {
-                    // User answered yes, so set it
-                    if (Checking.FileExists(ThemePath))
-                        ThemeTools.ApplyThemeFromFile(ThemePath);
-                    else
-                        ThemeTools.ApplyThemeFromResources(selectedTheme);
-
-                    // Save it to configuration
-                    Config.CreateConfig();
-                }
+                // Get the theme name from index
+                selectedTheme = ThemeTools.Themes.Keys.ElementAt(colorIndex);
             }
+
+            // Try to load the theme to the theme studio
+            string ThemePath = Filesystem.NeutralizePath(selectedTheme);
+            if (Checking.FileExists(ThemePath))
+                ThemeStudioTools.LoadThemeFromFile(ThemePath);
             else
-                TextWriterColor.Write(Translate.DoTranslation("Colors are not available. Turn on colored shell in the kernel config."), true, ColorTools.ColTypes.NeutralText);
+                ThemeStudioTools.LoadThemeFromResource(selectedTheme);
+
+            // Load the preview
+            ThemeStudioTools.PreparePreview();
+
+            // Pause until a key is pressed
+            string answer = ChoiceStyle.PromptChoice(Translate.DoTranslation("Would you like to set this theme to {0}?").FormatString(selectedTheme), "y/n", new[] { Translate.DoTranslation("Yes, set it!"), Translate.DoTranslation("No, don't set it.") }, ChoiceStyle.ChoiceOutputType.Modern);
+            if (answer == "y")
+            {
+                // User answered yes, so set it
+                if (Checking.FileExists(ThemePath))
+                    ThemeTools.ApplyThemeFromFile(ThemePath);
+                else
+                    ThemeTools.ApplyThemeFromResources(selectedTheme);
+
+                // Save it to configuration
+                Config.CreateConfig();
+            }
         }
 
         public override void HelpHelper() => TextWriterColor.Write("<Theme>: ThemeName.json, " + string.Join(", ", ThemeTools.Themes.Keys), true, ColorTools.ColTypes.NeutralText);

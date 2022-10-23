@@ -38,26 +38,19 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            if (Shell.ColoredShell)
+            // Try to apply the theme
+            string ThemePath = Filesystem.NeutralizePath(ListArgsOnly[0]);
+            if (Checking.FileExists(ThemePath))
             {
-                // Try to apply the theme
-                string ThemePath = Filesystem.NeutralizePath(ListArgsOnly[0]);
-                if (Checking.FileExists(ThemePath))
-                {
-                    ThemeTools.ApplyThemeFromFile(ThemePath);
-                }
-                else
-                {
-                    ThemeTools.ApplyThemeFromResources(ListArgsOnly[0]);
-                }
-
-                // Save it to configuration
-                Config.CreateConfig();
+                ThemeTools.ApplyThemeFromFile(ThemePath);
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Colors are not available. Turn on colored shell in the kernel config."), true, ColorTools.ColTypes.NeutralText);
+                ThemeTools.ApplyThemeFromResources(ListArgsOnly[0]);
             }
+
+            // Save it to configuration
+            Config.CreateConfig();
         }
 
         public override void HelpHelper() => TextWriterColor.Write("<Theme>: ThemeName.json, " + string.Join(", ", ThemeTools.Themes.Keys), true, ColorTools.ColTypes.NeutralText);

@@ -184,3 +184,7 @@ This has to do with the user management namespace, so we moved it to that namesp
 We don't want the `Kernel` class to be publicly accessible, since it has been planned back at 0.0.1 as the class responsible for being an entry point.
 
 These variables, `KernelVersion` and `KernelApiVersion`, are successfully moved to `KernelTools`.
+
+##### Removed `ColoredShell`
+
+The colors are now an essential part of KS, so we decided to take out support for uncolored shell.

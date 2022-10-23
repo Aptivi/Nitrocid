@@ -325,7 +325,6 @@ namespace KS.Kernel.Configuration
             // The Shell Section
             var ShellConfig = new JObject()
             {
-                { "Colored Shell", Shell.Shell.ColoredShell },
                 { "Simplified Help Command", Flags.SimHelp },
                 { "Current Directory", CurrentDirectory.CurrentDir },
                 { "Lookup Directories", Shell.Shell.PathsToLookup.EncloseByDoubleQuotes() },
@@ -1630,60 +1629,48 @@ namespace KS.Kernel.Configuration
             }
             LanguageManager.SetLang((string)ConfigToken["General"]["Language"] ?? "eng");
 
-            // Colored Shell
-            bool UncoloredDetected = ConfigToken["Shell"]["Colored Shell"] != null && !ConfigToken["Shell"]["Colored Shell"].ToObject<bool>();
-            if (UncoloredDetected)
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, "Detected uncolored shell. Removing colors...");
-                ThemeTools.ApplyThemeFromResources("LinuxUncolored");
-                Shell.Shell.ColoredShell = false;
-            }
-
             // ----------------------------- General configuration -----------------------------
             // Colors Section
             DebugWriter.WriteDebug(DebugLevel.I, "Loading colors...");
-            if (Shell.Shell.ColoredShell)
-            {
-                // We use New Color() to parse entered color. This is to ensure that the kernel can use the correct VT sequence.
-                ColorTools.KernelColors[ColorTools.ColTypes.UserNameShell] = new Color(ConfigToken["Colors"]["User Name Shell Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.HostNameShell] = new Color(ConfigToken["Colors"]["Host Name Shell Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.ContKernelError] = new Color(ConfigToken["Colors"]["Continuable Kernel Error Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.UncontKernelError] = new Color(ConfigToken["Colors"]["Uncontinuable Kernel Error Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.NeutralText] = new Color(ConfigToken["Colors"]["Text Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.License] = new Color(ConfigToken["Colors"]["License Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.Background] = new Color(ConfigToken["Colors"]["Background Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.Input] = new Color(ConfigToken["Colors"]["Input Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.ListEntry] = new Color(ConfigToken["Colors"]["List Entry Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.ListValue] = new Color(ConfigToken["Colors"]["List Value Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.Stage] = new Color(ConfigToken["Colors"]["Kernel Stage Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.Error] = new Color(ConfigToken["Colors"]["Error Text Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.Warning] = new Color(ConfigToken["Colors"]["Warning Text Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.Option] = new Color(ConfigToken["Colors"]["Option Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.Banner] = new Color(ConfigToken["Colors"]["Banner Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.NotificationTitle] = new Color(ConfigToken["Colors"]["Notification Title Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.NotificationDescription] = new Color(ConfigToken["Colors"]["Notification Description Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.NotificationProgress] = new Color(ConfigToken["Colors"]["Notification Progress Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.NotificationFailure] = new Color(ConfigToken["Colors"]["Notification Failure Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.Question] = new Color(ConfigToken["Colors"]["Question Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.Success] = new Color(ConfigToken["Colors"]["Success Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.UserDollar] = new Color(ConfigToken["Colors"]["User Dollar Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.Tip] = new Color(ConfigToken["Colors"]["Tip Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.SeparatorText] = new Color(ConfigToken["Colors"]["Separator Text Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.Separator] = new Color(ConfigToken["Colors"]["Separator Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.ListTitle] = new Color(ConfigToken["Colors"]["List Title Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.DevelopmentWarning] = new Color(ConfigToken["Colors"]["Development Warning Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.StageTime] = new Color(ConfigToken["Colors"]["Stage Time Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.Progress] = new Color(ConfigToken["Colors"]["Progress Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.BackOption] = new Color(ConfigToken["Colors"]["Back Option Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.LowPriorityBorder] = new Color(ConfigToken["Colors"]["Low Priority Border Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.MediumPriorityBorder] = new Color(ConfigToken["Colors"]["Medium Priority Border Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.HighPriorityBorder] = new Color(ConfigToken["Colors"]["High Priority Border Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.TableSeparator] = new Color(ConfigToken["Colors"]["Table Separator Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.TableHeader] = new Color(ConfigToken["Colors"]["Table Header Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.TableValue] = new Color(ConfigToken["Colors"]["Table Value Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.SelectedOption] = new Color(ConfigToken["Colors"]["Selected Option Color"].ToString());
-                ColorTools.KernelColors[ColorTools.ColTypes.AlternativeOption] = new Color(ConfigToken["Colors"]["Alternative Option Color"].ToString());
-            }
+            // We use New Color() to parse entered color. This is to ensure that the kernel can use the correct VT sequence.
+            ColorTools.KernelColors[ColorTools.ColTypes.UserNameShell] = new Color(ConfigToken["Colors"]["User Name Shell Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.HostNameShell] = new Color(ConfigToken["Colors"]["Host Name Shell Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.ContKernelError] = new Color(ConfigToken["Colors"]["Continuable Kernel Error Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.UncontKernelError] = new Color(ConfigToken["Colors"]["Uncontinuable Kernel Error Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.NeutralText] = new Color(ConfigToken["Colors"]["Text Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.License] = new Color(ConfigToken["Colors"]["License Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.Background] = new Color(ConfigToken["Colors"]["Background Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.Input] = new Color(ConfigToken["Colors"]["Input Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.ListEntry] = new Color(ConfigToken["Colors"]["List Entry Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.ListValue] = new Color(ConfigToken["Colors"]["List Value Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.Stage] = new Color(ConfigToken["Colors"]["Kernel Stage Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.Error] = new Color(ConfigToken["Colors"]["Error Text Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.Warning] = new Color(ConfigToken["Colors"]["Warning Text Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.Option] = new Color(ConfigToken["Colors"]["Option Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.Banner] = new Color(ConfigToken["Colors"]["Banner Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.NotificationTitle] = new Color(ConfigToken["Colors"]["Notification Title Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.NotificationDescription] = new Color(ConfigToken["Colors"]["Notification Description Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.NotificationProgress] = new Color(ConfigToken["Colors"]["Notification Progress Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.NotificationFailure] = new Color(ConfigToken["Colors"]["Notification Failure Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.Question] = new Color(ConfigToken["Colors"]["Question Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.Success] = new Color(ConfigToken["Colors"]["Success Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.UserDollar] = new Color(ConfigToken["Colors"]["User Dollar Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.Tip] = new Color(ConfigToken["Colors"]["Tip Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.SeparatorText] = new Color(ConfigToken["Colors"]["Separator Text Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.Separator] = new Color(ConfigToken["Colors"]["Separator Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.ListTitle] = new Color(ConfigToken["Colors"]["List Title Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.DevelopmentWarning] = new Color(ConfigToken["Colors"]["Development Warning Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.StageTime] = new Color(ConfigToken["Colors"]["Stage Time Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.Progress] = new Color(ConfigToken["Colors"]["Progress Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.BackOption] = new Color(ConfigToken["Colors"]["Back Option Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.LowPriorityBorder] = new Color(ConfigToken["Colors"]["Low Priority Border Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.MediumPriorityBorder] = new Color(ConfigToken["Colors"]["Medium Priority Border Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.HighPriorityBorder] = new Color(ConfigToken["Colors"]["High Priority Border Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.TableSeparator] = new Color(ConfigToken["Colors"]["Table Separator Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.TableHeader] = new Color(ConfigToken["Colors"]["Table Header Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.TableValue] = new Color(ConfigToken["Colors"]["Table Value Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.SelectedOption] = new Color(ConfigToken["Colors"]["Selected Option Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.AlternativeOption] = new Color(ConfigToken["Colors"]["Alternative Option Color"].ToString());
 
             // General Section
             DebugWriter.WriteDebug(DebugLevel.I, "Parsing general section...");

@@ -219,32 +219,24 @@ namespace KS.ConsoleBase.Themes
                 throw new ArgumentNullException(nameof(ThemeInfo));
 
             // Set the colors
-            if (Shell.Shell.ColoredShell == true)
+            try
             {
-                try
+                for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ColTypes)).Length - 2; typeIndex++)
                 {
-                    for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ColTypes)).Length - 2; typeIndex++)
-                    {
-                        ColTypes type = KernelColors.Keys.ElementAt(typeIndex);
-                        KernelColors[type] = ThemeInfo.ThemeColors[type];
-                    }
-                    LoadBack();
-                    Config.CreateConfig();
+                    ColTypes type = KernelColors.Keys.ElementAt(typeIndex);
+                    KernelColors[type] = ThemeInfo.ThemeColors[type];
+                }
+                LoadBack();
+                Config.CreateConfig();
 
-                    // Raise event
-                    Kernel.Events.EventsManager.FireEvent("ColorSet");
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebugStackTrace(ex);
-                    Kernel.Events.EventsManager.FireEvent("ColorSetError", ColorSetErrorReasons.InvalidColors);
-                    throw new Kernel.Exceptions.ColorException(Translate.DoTranslation("One or more of the colors is invalid.") + " {0}", ex, ex.Message);
-                }
+                // Raise event
+                Kernel.Events.EventsManager.FireEvent("ColorSet");
             }
-            else
+            catch (Exception ex)
             {
-                Kernel.Events.EventsManager.FireEvent("ColorSetError", ColorSetErrorReasons.NoColors);
-                throw new InvalidOperationException(Translate.DoTranslation("Colors are not available. Turn on colored shell in the kernel config."));
+                DebugWriter.WriteDebugStackTrace(ex);
+                Kernel.Events.EventsManager.FireEvent("ColorSetError", ColorSetErrorReasons.InvalidColors);
+                throw new Kernel.Exceptions.ColorException(Translate.DoTranslation("One or more of the colors is invalid.") + " {0}", ex, ex.Message);
             }
         }
 

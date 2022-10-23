@@ -72,10 +72,6 @@ namespace KS.Shell
         internal static KernelThread ProcessStartCommandThread = new("Executable Command Thread", false, (processParams) => ProcessExecutor.ExecuteProcess((ProcessExecutor.ExecuteProcessThreadParameters)processParams));
 
         /// <summary>
-        /// Whether the shell is colored or not
-        /// </summary>
-        public static bool ColoredShell = true;
-        /// <summary>
         /// Specifies where to lookup for executables in these paths. Same as in PATH implementation.
         /// </summary>
         public static string PathsToLookup = Environment.GetEnvironmentVariable("PATH");

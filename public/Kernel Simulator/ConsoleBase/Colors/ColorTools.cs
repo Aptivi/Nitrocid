@@ -374,26 +374,23 @@ namespace KS.ConsoleBase.Colors
         /// <param name="ForceSet">Force set background even if background setting is disabled</param>
         public static void SetConsoleColor(Color ColorSequence, bool Background = false, bool ForceSet = false)
         {
-            if (Shell.Shell.ColoredShell)
+            if (ColorSequence is null)
+                throw new ArgumentNullException(nameof(ColorSequence));
+
+            // Define reset background sequence
+            string resetSequence = CharManager.GetEsc() + $"[49m";
+
+            // Set background
+            if (Background)
             {
-                if (ColorSequence is null)
-                    throw new ArgumentNullException(nameof(ColorSequence));
-
-                // Define reset background sequence
-                string resetSequence = CharManager.GetEsc() + $"[49m";
-
-                // Set background
-                if (Background)
-                {
-                    if (Flags.SetBackground | ForceSet)
-                        WriterPlainManager.CurrentPlain.WritePlain(ColorSequence.VTSequenceBackground, false);
-                    else
-                        WriterPlainManager.CurrentPlain.WritePlain(resetSequence, false);
-                }
+                if (Flags.SetBackground | ForceSet)
+                    WriterPlainManager.CurrentPlain.WritePlain(ColorSequence.VTSequenceBackground, false);
                 else
-                {
-                    WriterPlainManager.CurrentPlain.WritePlain(ColorSequence.VTSequenceForeground, false);
-                }
+                    WriterPlainManager.CurrentPlain.WritePlain(resetSequence, false);
+            }
+            else
+            {
+                WriterPlainManager.CurrentPlain.WritePlain(ColorSequence.VTSequenceForeground, false);
             }
         }
 

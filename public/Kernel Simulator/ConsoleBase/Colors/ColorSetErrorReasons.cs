@@ -28,12 +28,8 @@ namespace KS.ConsoleBase.Colors
         /// </summary>
         Unknown = 0,
         /// <summary>
-        /// The colored shell is disabled
-        /// </summary>
-        NoColors = 1,
-        /// <summary>
         /// One or more of the colors is invalid
         /// </summary>
-        InvalidColors = 2
+        InvalidColors = 1
     }
 }
