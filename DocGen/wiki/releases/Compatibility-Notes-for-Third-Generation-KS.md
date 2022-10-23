@@ -188,3 +188,9 @@ These variables, `KernelVersion` and `KernelApiVersion`, are successfully moved 
 ##### Removed `ColoredShell`
 
 The colors are now an essential part of KS, so we decided to take out support for uncolored shell.
+
+##### Finally condensed `TableColor`
+
+We noticed that the code is repetitive for making tables, and we don't want to update six locations every bug fix, so we decided to condense it to a single code.
+
+As a side-effect, we've changed the color signatures from foreground and background pairs to header, value, separator, and background colors. Consequently, we've removed the `ConsoleColor` version of `TableColor` as we found it irrelevant thanks to the enhanced `Color` class found in the ColorSeq library.
