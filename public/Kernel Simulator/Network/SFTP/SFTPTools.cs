@@ -158,7 +158,7 @@ namespace KS.Network.SFTP
                         SpeedDialData[i, 2] = (string)SpeedDialLines[SpeedDialAddress]["Port"];
                         SpeedDialData[i, 3] = (string)SpeedDialLines[SpeedDialAddress]["User"];
                     }
-                    TableColor.WriteTable(SpeedDialHeaders, SpeedDialData, 2, ColorTools.ColTypes.Option);
+                    TableColor.WriteTable(SpeedDialHeaders, SpeedDialData, 2);
                     TextWriterColor.Write();
                     while (Answering)
                     {

@@ -200,7 +200,7 @@ namespace KS.Network.FTP
                         ProfData[i, 5] = profiles[i].Encryption.ToString();
                         ProfData[i, 6] = profiles[i].Protocols.ToString();
                     }
-                    TableColor.WriteTable(ProfHeaders, ProfData, 2, ColorTools.ColTypes.Option);
+                    TableColor.WriteTable(ProfHeaders, ProfData, 2);
                     while (!profanswered)
                     {
                         TextWriterColor.Write(CharManager.NewLine + ">> ", false, ColorTools.ColTypes.Input);
@@ -363,7 +363,7 @@ namespace KS.Network.FTP
                         SpeedDialData[i, 3] = (string)SpeedDialLines[SpeedDialAddress]["User"];
                         SpeedDialData[i, 4] = (string)SpeedDialLines[SpeedDialAddress]["FTP Encryption Mode"];
                     }
-                    TableColor.WriteTable(SpeedDialHeaders, SpeedDialData, 2, ColorTools.ColTypes.Option);
+                    TableColor.WriteTable(SpeedDialHeaders, SpeedDialData, 2);
                     TextWriterColor.Write();
                     while (Answering)
                     {
