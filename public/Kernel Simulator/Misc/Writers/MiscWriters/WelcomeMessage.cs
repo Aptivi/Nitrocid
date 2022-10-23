@@ -32,10 +32,12 @@ namespace KS.Misc.Writers.MiscWriters
     public static class WelcomeMessage
     {
 
+        private static string customBanner = "";
+
         /// <summary>
         /// The customized message banner to write. If none is specified, or if it only consists of whitespace, it uses the default message.
         /// </summary>
-        public static string CustomBanner = "";
+        public static string CustomBanner { get => GetCustomBanner(); set => customBanner = value; }
 
         /// <summary>
         /// Gets the custom banner actual text with placeholders parsed
@@ -46,11 +48,8 @@ namespace KS.Misc.Writers.MiscWriters
             string MessageWrite = "      >> " + Translate.DoTranslation("Welcome to the kernel! - Version {0}") + " <<      ";
 
             // Check to see if user specified custom message
-            if (!string.IsNullOrWhiteSpace(CustomBanner))
-            {
-                MessageWrite = CustomBanner;
-                MessageWrite = PlaceParse.ProbePlaces(MessageWrite);
-            }
+            if (!string.IsNullOrWhiteSpace(customBanner))
+                MessageWrite = PlaceParse.ProbePlaces(customBanner);
 
             // Just return the result
             return MessageWrite;
@@ -97,7 +96,11 @@ namespace KS.Misc.Writers.MiscWriters
         /// </summary>
         public static void WriteLicense(bool TwoNewlines)
         {
-            TextWriterColor.Write(CharManager.NewLine + "    Kernel Simulator  Copyright (C) 2018-2022  Aptivi" + CharManager.NewLine + "    This program comes with ABSOLUTELY NO WARRANTY, not even " + CharManager.NewLine + "    MERCHANTABILITY or FITNESS for particular purposes." + CharManager.NewLine + "    This is free software, and you are welcome to redistribute it" + CharManager.NewLine + "    under certain conditions; See COPYING file in source code." + CharManager.NewLine, true, ColorTools.ColTypes.License);
+            TextWriterColor.Write(CharManager.NewLine + "    Kernel Simulator  Copyright (C) 2018-2022  Aptivi" + 
+                                  CharManager.NewLine + "    This program comes with ABSOLUTELY NO WARRANTY, not even " + 
+                                  CharManager.NewLine + "    MERCHANTABILITY or FITNESS for particular purposes." + 
+                                  CharManager.NewLine + "    This is free software, and you are welcome to redistribute it" + 
+                                  CharManager.NewLine + "    under certain conditions; See COPYING file in source code." + CharManager.NewLine, true, ColorTools.ColTypes.License);
             TextWriterColor.Write("* " + Translate.DoTranslation("For more information about the terms and conditions of using this software, visit") + " http://www.gnu.org/licenses/", true, ColorTools.ColTypes.License);
             if (TwoNewlines)
                 TextWriterColor.Write();
