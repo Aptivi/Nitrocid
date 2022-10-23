@@ -38,11 +38,11 @@ namespace KS.Misc.Writers.FancyWriters.Tools
         /// <summary>
         /// The column, or row value, index
         /// </summary>
-        public int ColumnIndex { get; private set; }
+        public int ColumnIndex { get => ColumnNumber - 1; }
         /// <summary>
         /// The row index
         /// </summary>
-        public int RowIndex { get; private set; }
+        public int RowIndex { get => RowNumber - 1; }
         /// <summary>
         /// Whether to color the cell
         /// </summary>
@@ -65,8 +65,6 @@ namespace KS.Misc.Writers.FancyWriters.Tools
         {
             this.ColumnNumber = ColumnNumber;
             this.RowNumber = RowNumber;
-            ColumnIndex = ColumnNumber - 1;
-            RowIndex = RowNumber - 1;
         }
 
     }
