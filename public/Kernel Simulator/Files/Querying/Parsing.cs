@@ -21,6 +21,7 @@ using System.IO;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Misc.Text;
+using Newtonsoft.Json.Linq;
 
 namespace KS.Files.Querying
 {
@@ -111,6 +112,37 @@ namespace KS.Files.Querying
 
             // Our file is not binary. Return false.
             return false;
+        }
+
+        /// <summary>
+        /// Is the file a JSON file?
+        /// </summary>
+        /// <param name="Path">Path to file</param>
+        /// <returns></returns>
+        public static bool IsJson(string Path)
+        {
+            try
+            {
+                // Neutralize path
+                Filesystem.ThrowOnInvalidPath(Path);
+                Path = Filesystem.NeutralizePath(Path);
+
+                // Try to parse the content as JSON object
+                try
+                {
+                    var ParsedObject = JObject.Parse(File.ReadAllText(Path));
+                    return true;
+                }
+                catch
+                {
+                    var ParsedObject = JArray.Parse(File.ReadAllText(Path));
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
         }
 
     }
