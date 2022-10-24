@@ -31,6 +31,8 @@ namespace KS.Misc.Games
         {
             // First, tell them to select either true or false
             int bet = SelectionStyle.PromptSelection(Translate.DoTranslation("What's your bet?"), "T/F") - 1;
+            if (bet == -2)
+                return;
 
             // Then, compare the value to the randomly selected value for the roulette
             bool unlucky = RandomDriver.RandomRussianRoulette();

@@ -57,6 +57,11 @@ namespace KS.Shell.Shells.UESH.Commands
                 }
                 int colorIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a theme"), string.Join("/", themeAnswers), themeWorkingNames.ToArray()) - 1;
 
+                // If the color index is -2, exit. PromptSelection returns -1 if ESC is pressed to cancel selecting. However, the index just decreases to -2
+                // even if that PromptSelection returned the abovementioned value, so bail if index is -2
+                if (colorIndex == -2)
+                    return;
+
                 // Get the theme name from index
                 selectedTheme = ThemeTools.Themes.Keys.ElementAt(colorIndex);
             }

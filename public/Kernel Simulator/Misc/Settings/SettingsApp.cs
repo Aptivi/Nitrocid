@@ -174,7 +174,7 @@ namespace KS.Misc.Settings
                         ConsoleBase.ConsoleWrapper.ReadKey();
                     }
                 }
-                else if (Answer == MaxSections + 5)
+                else if (Answer == MaxSections + 5 || Answer == -1)
                 {
                     // The selected answer is "Exit"
                     DebugWriter.WriteDebug(DebugLevel.W, "Exiting...");
@@ -301,7 +301,7 @@ namespace KS.Misc.Settings
                         DebugWriter.WriteDebug(DebugLevel.I, "User requested splash preview.");
                         Splash.SplashManager.PreviewSplash(Section);
                     }
-                    else if (Answer == MaxOptions + 1 | Answer == MaxOptions + 2 & (SettingsType == SettingsType.Screensaver || SettingsType == SettingsType.Splash))
+                    else if (Answer == MaxOptions + 1 | Answer == MaxOptions + 2 & (SettingsType == SettingsType.Screensaver || SettingsType == SettingsType.Splash) | Answer == -1)
                     {
                         // Go Back...
                         DebugWriter.WriteDebug(DebugLevel.I, "User requested exit. Returning...");
@@ -657,7 +657,7 @@ namespace KS.Misc.Settings
                                     // We're dealing with selection
                                     DebugWriter.WriteDebug(DebugLevel.I, "Answer is numeric and key is of the selection type.");
                                     int AnswerIndex = AnswerInt - 1;
-                                    if (AnswerInt == MaxKeyOptions + 1) // Go Back...
+                                    if (AnswerInt == MaxKeyOptions + 1 || AnswerInt == -1) // Go Back...
                                     {
                                         DebugWriter.WriteDebug(DebugLevel.I, "User requested exit. Returning...");
                                         KeyFinished = true;

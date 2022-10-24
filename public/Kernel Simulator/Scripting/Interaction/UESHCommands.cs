@@ -73,7 +73,8 @@ namespace KS.Scripting.Interaction
             int SelectedAnswer = SelectionStyle.PromptSelection(Question, AnswersStr, AnswersTitles);
 
             // Set the value
-            UESHVariables.SetVariable(ScriptVariable, SelectedAnswer.ToString());
+            if (SelectedAnswer == -1)
+                UESHVariables.SetVariable(ScriptVariable, SelectedAnswer.ToString());
         }
 
         /// <summary>
