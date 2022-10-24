@@ -185,13 +185,10 @@ namespace KS.Files.Interactive
                 var FilesFirstPane = Listing.CreateList(firstPath, true);
                 cachedFileInfosFirstPane = FilesFirstPane;
                 int pagesFirstPane = FilesFirstPane.Count / SeparatorMaximumHeightInterior;
-                int answersPerPageFirstPane = pagesFirstPane == 0 ? FilesFirstPane.Count : FilesFirstPane.Count / pagesFirstPane;
-                int displayAnswersPerPageFirstPane = answersPerPageFirstPane >= SeparatorMaximumHeightInterior ?
-                                                     answersPerPageFirstPane - 2 :
-                                                     answersPerPageFirstPane;
-                int currentPageFirstPane = (firstPaneCurrentSelection - 1) / displayAnswersPerPageFirstPane;
-                int startIndexFirstPane = displayAnswersPerPageFirstPane * currentPageFirstPane;
-                int endIndexFirstPane = displayAnswersPerPageFirstPane * (currentPageFirstPane + 1);
+                int answersPerPageFirstPane = SeparatorMaximumHeightInterior - 1;
+                int currentPageFirstPane = (firstPaneCurrentSelection - 1) / answersPerPageFirstPane;
+                int startIndexFirstPane = answersPerPageFirstPane * currentPageFirstPane;
+                int endIndexFirstPane = answersPerPageFirstPane * (currentPageFirstPane + 1);
                 for (int i = startIndexFirstPane; i <= endIndexFirstPane && i <= FilesFirstPane.Count - 1; i++)
                 {
                     // Populate the first pane
@@ -208,13 +205,10 @@ namespace KS.Files.Interactive
                 var FilesSecondPane = Listing.CreateList(secondPath, true);
                 cachedFileInfosSecondPane = FilesSecondPane;
                 int pagesSecondPane = FilesSecondPane.Count / SeparatorMaximumHeightInterior;
-                int answersPerPageSecondPane = pagesSecondPane == 0 ? FilesSecondPane.Count : FilesSecondPane.Count / pagesSecondPane;
-                int displayAnswersPerPageSecondPane = answersPerPageSecondPane >= SeparatorMaximumHeightInterior ?
-                                                      answersPerPageSecondPane - 2 :
-                                                      answersPerPageSecondPane;
-                int currentPageSecondPane = (secondPaneCurrentSelection - 1) / displayAnswersPerPageSecondPane;
-                int startIndexSecondPane = displayAnswersPerPageSecondPane * currentPageSecondPane;
-                int endIndexSecondPane = displayAnswersPerPageSecondPane * (currentPageSecondPane + 1);
+                int answersPerPageSecondPane = SeparatorMaximumHeightInterior - 1;
+                int currentPageSecondPane = (secondPaneCurrentSelection - 1) / answersPerPageSecondPane;
+                int startIndexSecondPane = answersPerPageSecondPane * currentPageSecondPane;
+                int endIndexSecondPane = answersPerPageSecondPane * (currentPageSecondPane + 1);
                 for (int i = startIndexSecondPane; i <= endIndexSecondPane && i <= FilesSecondPane.Count - 1; i++)
                 {
                     // Populate the second pane
