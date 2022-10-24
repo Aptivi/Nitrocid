@@ -104,6 +104,7 @@ namespace KS.ConsoleBase.Themes
             { "Planted Wood", new ThemeInfo("Planted_Wood") },
             { "Purlow", new ThemeInfo("Purlow") },
             { "Red Breeze", new ThemeInfo("Red_Breeze") },
+            { "RecentDisaster", new ThemeInfo("RecentDisaster") },
             { "RedConsole", new ThemeInfo("RedConsole") },
             { "Reddish", new ThemeInfo("Reddish") },
             { "Rigel", new ThemeInfo("Rigel") },
