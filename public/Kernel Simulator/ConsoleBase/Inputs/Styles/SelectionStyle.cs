@@ -64,8 +64,8 @@ namespace KS.ConsoleBase.Inputs.Styles
             while (true)
             {
                 // Variables
-                var answers = AnswersStr.Split('/');
-                var altAnswers = AlternateAnswersStr.Split('/');
+                var answers = AnswersStr.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
+                var altAnswers = AlternateAnswersStr.Split(new char[] {'/'}, StringSplitOptions.RemoveEmptyEntries);
                 var finalAnswers = new List<string>();
                 var finalAnswerTitles = new List<string>();
                 int altAnswersFirstIdx = answers.Length;

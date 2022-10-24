@@ -97,8 +97,8 @@ namespace KS.ConsoleBase.Inputs.Styles
             while (true)
             {
                 // Variables
-                var answers = AnswersStr.Split('/');
-                var altAnswers = AlternateAnswersStr.Split('/');
+                var answers = AnswersStr.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
+                var altAnswers = AlternateAnswersStr.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
                 string answer;
 
                 // Check to see if the answer titles are the same
