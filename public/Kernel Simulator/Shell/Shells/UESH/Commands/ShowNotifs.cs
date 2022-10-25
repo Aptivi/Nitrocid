@@ -46,7 +46,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     {
                         TextWriterColor.Write($" ({Notif.Progress}%)", false, Notif.ProgressFailed ? ColorTools.ColTypes.Error : ColorTools.ColTypes.Success);
                     }
-                    TextWriterColor.Write("", true, ColorTools.ColTypes.NeutralText);
+                    TextWriterColor.Write();
                     Count += 1;
                 }
             }

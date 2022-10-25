@@ -139,7 +139,7 @@ namespace KS.Files.Print
                         ByteNumberEachSixteen = 1;
                     }
                 }
-                TextWriterColor.Write("", true, ColorTools.ColTypes.NeutralText);
+                TextWriterColor.Write();
             }
             else if (StartByte > FileByte.LongLength)
             {

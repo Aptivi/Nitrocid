@@ -332,7 +332,7 @@ namespace KS.Misc.Editors.HexEdit
                                 }
                                 TextWriterColor.Write($"0x{ByteRenderNumber:X2}({RenderedByteChar}) ", false, UseHighlight ? ColorTools.ColTypes.Success : ColorTools.ColTypes.ListValue);
                             }
-                            TextWriterColor.Write("", true, ColorTools.ColTypes.NeutralText);
+                            TextWriterColor.Write();
                         }
                     }
                 }

@@ -133,7 +133,7 @@ namespace KS.ConsoleBase.Colors
                     TextWriterColor.Write(" < ", false, RedForeground, RedBackground);
                     TextWriterWhereColor.WriteWhere("R: {0}", (int)Math.Round((ConsoleWrapper.CursorLeft + 35 - $"R: {CurrentColorR}".Length) / 2d), ConsoleWrapper.CursorTop, true, new Color($"{CurrentColorR};0;0"), CurrentColorR);
                     TextWriterWhereColor.WriteWhere(" > ", ConsoleWrapper.CursorLeft + 32, ConsoleWrapper.CursorTop, RedForeground, RedBackground);
-                    TextWriterColor.Write("", true, ColorTools.ColTypes.NeutralText);
+                    TextWriterColor.Write();
 
                     // The green color level
                     var GreenForeground = Convert.ToString(CurrentRange) == "G" ? new Color((int)ConsoleColors.Black) : new Color("0;255;0");
@@ -143,7 +143,7 @@ namespace KS.ConsoleBase.Colors
                     TextWriterColor.Write(" < ", false, GreenForeground, GreenBackground);
                     TextWriterWhereColor.WriteWhere("G: {0}", (int)Math.Round((ConsoleWrapper.CursorLeft + 35 - $"G: {CurrentColorG}".Length) / 2d), ConsoleWrapper.CursorTop, true, new Color($"0;{CurrentColorG};0"), CurrentColorG);
                     TextWriterWhereColor.WriteWhere(" > ", ConsoleWrapper.CursorLeft + 32, ConsoleWrapper.CursorTop, GreenForeground, GreenBackground);
-                    TextWriterColor.Write("", true, ColorTools.ColTypes.NeutralText);
+                    TextWriterColor.Write();
 
                     // The blue color level
                     var BlueForeground = Convert.ToString(CurrentRange) == "B" ? new Color((int)ConsoleColors.Black) : new Color("0;0;255");
@@ -153,7 +153,7 @@ namespace KS.ConsoleBase.Colors
                     TextWriterColor.Write(" < ", false, BlueForeground, BlueBackground);
                     TextWriterWhereColor.WriteWhere("B: {0}", (int)Math.Round((ConsoleWrapper.CursorLeft + 35 - $"B: {CurrentColorB}".Length) / 2d), ConsoleWrapper.CursorTop, true, new Color($"0;0;{CurrentColorB}"), CurrentColorB);
                     TextWriterWhereColor.WriteWhere(" > ", ConsoleWrapper.CursorLeft + 32, ConsoleWrapper.CursorTop, BlueForeground, BlueBackground);
-                    TextWriterColor.Write("", true, ColorTools.ColTypes.NeutralText);
+                    TextWriterColor.Write();
 
                     // Draw the RGB ramp
                     TextWriterWhereColor.WriteWhere(WheelUpperLeftCornerChar + WheelUpperFrameChar.Repeat(ConsoleWrapper.WindowWidth - 6) + WheelUpperRightCornerChar, 2, ConsoleWrapper.WindowHeight - 6, true, ColorTools.ColTypes.Gray);
