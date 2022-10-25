@@ -200,3 +200,7 @@ As a side-effect, we've changed the color signatures from foreground and backgro
 Migration from `ConsoleColor` to `ConsoleColors` is complete. This means that all the writers in the `KS.Misc.*Writers` now have the `ConsoleColors` support.
 
 The latest ColorSeq version, 1.0.2, will be used to make it easier to achieve.
+
+##### Added last argument support to auto completer
+
+This is to aid in trying to autocomplete subjects starting from the last argument

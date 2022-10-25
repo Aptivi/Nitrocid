@@ -68,7 +68,7 @@ namespace KS.Shell.ShellBase.Commands
                             if (AutoCompleter is not null)
                             {
                                 // We have the delegate! Invoke it.
-                                return AutoCompleter.Invoke();
+                                return AutoCompleter.Invoke(LastArgument);
                             }
                             else
                             {

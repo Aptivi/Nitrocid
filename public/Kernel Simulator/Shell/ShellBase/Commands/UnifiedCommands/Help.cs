@@ -56,7 +56,11 @@ namespace KS.Shell.ShellBase.Commands.UnifiedCommands
             }
         }
 
-        public static string[] ListCmds() => CommandManager.GetCommands(Shell.CurrentShellType).Keys.ToArray();
+        public static string[] ListCmds() => 
+            CommandManager.GetCommands(Shell.CurrentShellType).Keys.ToArray();
+
+        public static string[] ListCmds(string startFrom) => 
+            CommandManager.GetCommands(Shell.CurrentShellType).Keys.Where(x => x.StartsWith(startFrom)).ToArray();
 
     }
 }
