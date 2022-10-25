@@ -17,6 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using ColorSeq;
+using KS.Misc.Threading;
+using KS.Misc.Writers.ConsoleWriters;
+using System.Text;
+using System;
 
 namespace KS.Misc.Animations.Spin
 {
@@ -44,19 +48,24 @@ namespace KS.Misc.Animations.Spin
             // Get spin character from current index
             char spinStep = spinSteps[currentSpinStep];
 
-            // Spin!
+            StringBuilder spinBuffer = new();
+
+            // Make a spin buffer
             for (int x = 0; x < CurrentWindowWidth; x++)
             {
                 for (int y = 0; y < CurrentWindowHeight; y++)
                 {
-                    if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                        ResizeSyncing = true;
-                    if (ResizeSyncing)
-                        break;
-                    Writers.ConsoleWriters.TextWriterWhereColor.WriteWhere(spinStep.ToString(), x, y, new Color(255, 255, 255), Color.Empty);
+                    spinBuffer.Append(spinStep.ToString());
                 }
-                if (ResizeSyncing)
-                    break;
+            }
+
+            // Spin!
+            if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
+                ResizeSyncing = true;
+            if (!ResizeSyncing)
+            {
+                TextWriterWhereColor.WriteWhere(spinBuffer.ToString(), 0, 0, true, new Color(Convert.ToInt32(ConsoleColors.White)), new Color(Convert.ToInt32(ConsoleColors.Black)));
+                ThreadManager.SleepNoBlock(Settings.SpinDelay, System.Threading.Thread.CurrentThread);
             }
 
             // Step the current spin step forward
