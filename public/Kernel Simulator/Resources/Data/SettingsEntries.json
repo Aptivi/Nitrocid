@@ -559,12 +559,6 @@
         "DisplayAs": "General shell settings",
         "Keys": [
             {
-                "Name": "Colored Shell",
-                "Type": "SBoolean",
-                "Variable": "ColoredShell",
-                "Description": "Gives the kernel color support"
-            },
-            {
                 "Name": "Simplified Help Command",
                 "Type": "SBoolean",
                 "Variable": "SimHelp",
