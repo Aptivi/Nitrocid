@@ -47,6 +47,23 @@ namespace KS.Misc.Writers.ConsoleWriters
         }
 
         /// <summary>
+        /// Outputs the text into the terminal prompt.
+        /// </summary>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Line">Whether to print a new line or not</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void Write(string Text, bool Line, params object[] vars) => Write(Text, Line, false, vars);
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt.
+        /// </summary>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Line">Whether to print a new line or not</param>
+        /// <param name="Highlight">Highlight the text written</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void Write(string Text, bool Line, bool Highlight, params object[] vars) => Write(Text, Line, Highlight, ColorTools.ColTypes.NeutralText, vars);
+
+        /// <summary>
         /// Outputs the text into the terminal prompt, and sets colors as needed.
         /// </summary>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
