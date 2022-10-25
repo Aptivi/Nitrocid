@@ -50,6 +50,13 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// Outputs the text into the terminal prompt.
         /// </summary>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void Write(string Text, params object[] vars) => Write(Text, true, vars);
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt.
+        /// </summary>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void Write(string Text, bool Line, params object[] vars) => Write(Text, Line, false, vars);
