@@ -150,7 +150,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, ConsoleColor color, params object[] vars) => Write(Text, Line, false, color, vars);
+        public static void Write(string Text, bool Line, ConsoleColors color, params object[] vars) => Write(Text, Line, false, color, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
@@ -160,30 +160,21 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="Highlight">Highlight the text written</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, bool Highlight, ConsoleColor color, params object[] vars)
+        public static void Write(string Text, bool Line, bool Highlight, ConsoleColors color, params object[] vars)
         {
             lock (WriteLock)
             {
                 try
                 {
                     // Try to write to console
-                    if (Highlight)
-                    {
-                        ConsoleWrapper.ForegroundColor = (ConsoleColor)Convert.ToInt32(StringQuery.IsStringNumeric(ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) && Convert.ToDouble(ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) : ConsoleColor.Black);
-                        ConsoleWrapper.BackgroundColor = color;
-                    }
-                    else
-                    {
-                        ConsoleWrapper.BackgroundColor = (ConsoleColor)Convert.ToInt32(StringQuery.IsStringNumeric(ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) && Convert.ToDouble(ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) : ConsoleColor.Black);
-                        ConsoleWrapper.ForegroundColor = color;
-                    }
+                    ColorTools.SetConsoleColor(new Color(Convert.ToInt32(color)), Highlight);
 
                     // Write the text to console
                     if (Highlight)
                     {
                         WriterPlainManager.CurrentPlain.WritePlain(Text, false, vars);
-                        ConsoleWrapper.BackgroundColor = (ConsoleColor)Convert.ToInt32(StringQuery.IsStringNumeric(ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) && Convert.ToDouble(ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) : ConsoleColor.Black);
-                        ConsoleWrapper.ForegroundColor = color;
+                        ColorTools.SetConsoleColor(new Color(Convert.ToInt32(color)));
+                        ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
                         WriterPlainManager.CurrentPlain.WritePlain("", Line);
                     }
                     else
@@ -207,7 +198,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, ConsoleColor ForegroundColor, ConsoleColor BackgroundColor, params object[] vars) => Write(Text, Line, false, ForegroundColor, BackgroundColor, vars);
+        public static void Write(string Text, bool Line, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars) => Write(Text, Line, false, ForegroundColor, BackgroundColor, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
@@ -218,30 +209,22 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, bool Highlight, ConsoleColor ForegroundColor, ConsoleColor BackgroundColor, params object[] vars)
+        public static void Write(string Text, bool Line, bool Highlight, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars)
         {
             lock (WriteLock)
             {
                 try
                 {
                     // Try to write to console
-                    if (Highlight)
-                    {
-                        ConsoleWrapper.BackgroundColor = ForegroundColor;
-                        ConsoleWrapper.ForegroundColor = BackgroundColor;
-                    }
-                    else
-                    {
-                        ConsoleWrapper.BackgroundColor = BackgroundColor;
-                        ConsoleWrapper.ForegroundColor = ForegroundColor;
-                    }
+                    ColorTools.SetConsoleColor(new Color(Convert.ToInt32(ForegroundColor)), Highlight);
+                    ColorTools.SetConsoleColor(new Color(Convert.ToInt32(BackgroundColor)), !Highlight);
 
                     // Write the text to console
                     if (Highlight)
                     {
                         WriterPlainManager.CurrentPlain.WritePlain(Text, false, vars);
-                        ConsoleWrapper.BackgroundColor = BackgroundColor;
-                        ConsoleWrapper.ForegroundColor = ForegroundColor;
+                        ColorTools.SetConsoleColor(new Color(Convert.ToInt32(ForegroundColor)));
+                        ColorTools.SetConsoleColor(new Color(Convert.ToInt32(BackgroundColor)), true);
                         WriterPlainManager.CurrentPlain.WritePlain("", Line);
                     }
                     else

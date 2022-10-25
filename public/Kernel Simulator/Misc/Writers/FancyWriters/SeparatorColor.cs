@@ -182,7 +182,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you have suffix on your text.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteSeparator(string Text, bool PrintSuffix, ConsoleColor Color, params object[] Vars)
+        public static void WriteSeparator(string Text, bool PrintSuffix, ConsoleColors Color, params object[] Vars)
         {
             // Print the suffix and the text
             if (!string.IsNullOrWhiteSpace(Text))
@@ -225,7 +225,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteSeparator(string Text, bool PrintSuffix, ConsoleColor ForegroundColor, ConsoleColor BackgroundColor, params object[] Vars)
+        public static void WriteSeparator(string Text, bool PrintSuffix, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars)
         {
             // Print the suffix and the text
             if (!string.IsNullOrWhiteSpace(Text))

@@ -98,14 +98,14 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteSlowly(string msg, bool Line, double MsEachLetter, ConsoleColor color, params object[] vars)
+        public static void WriteSlowly(string msg, bool Line, double MsEachLetter, ConsoleColors color, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
                 try
                 {
-                    ConsoleBase.ConsoleWrapper.BackgroundColor = (ConsoleColor)Convert.ToInt32(StringQuery.IsStringNumeric(ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) && Convert.ToDouble(ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) : ConsoleColor.Black);
-                    ConsoleBase.ConsoleWrapper.ForegroundColor = color;
+                    ColorTools.SetConsoleColor(new Color(Convert.ToInt32(color)));
+                    ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
 
                     // Write text slowly
                     WriterPlainManager.CurrentPlain.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
@@ -127,14 +127,14 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteSlowly(string msg, bool Line, double MsEachLetter, ConsoleColor ForegroundColor, ConsoleColor BackgroundColor, params object[] vars)
+        public static void WriteSlowly(string msg, bool Line, double MsEachLetter, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
                 try
                 {
-                    ConsoleBase.ConsoleWrapper.BackgroundColor = BackgroundColor;
-                    ConsoleBase.ConsoleWrapper.ForegroundColor = ForegroundColor;
+                    ColorTools.SetConsoleColor(new Color(Convert.ToInt32(ForegroundColor)));
+                    ColorTools.SetConsoleColor(new Color(Convert.ToInt32(BackgroundColor)));
 
                     // Write text slowly
                     WriterPlainManager.CurrentPlain.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);

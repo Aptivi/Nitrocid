@@ -131,7 +131,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, ConsoleColor color, params object[] vars) => WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, false, color, vars);
+        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, ConsoleColors color, params object[] vars) => WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, false, color, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
@@ -144,14 +144,14 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="Return">Whether or not to return to old position</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, ConsoleColor color, params object[] vars)
+        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, ConsoleColors color, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
                 try
                 {
-                    ConsoleBase.ConsoleWrapper.BackgroundColor = (ConsoleColor)Convert.ToInt32(StringQuery.IsStringNumeric(ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) && Convert.ToDouble(ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) : ConsoleColor.Black);
-                    ConsoleBase.ConsoleWrapper.ForegroundColor = color;
+                    ColorTools.SetConsoleColor(new Color(Convert.ToInt32(color)));
+                    ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
 
                     // Write text in another place slowly
                     WriterPlainManager.CurrentPlain.WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, vars);
@@ -175,7 +175,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, ConsoleColor ForegroundColor, ConsoleColor BackgroundColor, params object[] vars) => WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, false, ForegroundColor, BackgroundColor, vars);
+        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars) => WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, false, ForegroundColor, BackgroundColor, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
@@ -189,14 +189,14 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, ConsoleColor ForegroundColor, ConsoleColor BackgroundColor, params object[] vars)
+        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
                 try
                 {
-                    ConsoleBase.ConsoleWrapper.BackgroundColor = BackgroundColor;
-                    ConsoleBase.ConsoleWrapper.ForegroundColor = ForegroundColor;
+                    ColorTools.SetConsoleColor(new Color(Convert.ToInt32(ForegroundColor)));
+                    ColorTools.SetConsoleColor(new Color(Convert.ToInt32(BackgroundColor)));
 
                     // Write text in another place slowly
                     WriterPlainManager.CurrentPlain.WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, vars);

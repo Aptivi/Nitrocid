@@ -329,6 +329,86 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Top">The progress position from the top</param>
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteProgress(double Progress, int Left, int Top, ConsoleColors ProgressColor, bool DrawBorder = true)
+        {
+            try
+            {
+                WriteProgress(Progress, Left, Top, 10, 0, new Color(Convert.ToInt32(ProgressColor)), ColorTools.GetGray(), DrawBorder);
+            }
+            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Writes the progress bar
+        /// </summary>
+        /// <param name="Progress">The progress percentage</param>
+        /// <param name="Left">The progress position from the upper left corner</param>
+        /// <param name="Top">The progress position from the top</param>
+        /// <param name="ProgressColor">The progress bar color</param>
+        /// <param name="WidthOffset">Width offset</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteProgress(double Progress, int Left, int Top, int WidthOffset, ConsoleColors ProgressColor, bool DrawBorder = true)
+        {
+            try
+            {
+                WriteProgress(Progress, Left, Top, WidthOffset, 0, new Color(Convert.ToInt32(ProgressColor)), ColorTools.GetGray(), DrawBorder);
+            }
+            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Writes the progress bar
+        /// </summary>
+        /// <param name="Progress">The progress percentage</param>
+        /// <param name="Left">The progress position from the upper left corner</param>
+        /// <param name="Top">The progress position from the top</param>
+        /// <param name="ProgressColor">The progress bar color</param>
+        /// <param name="FrameColor">The progress bar frame color</param>
+        /// <param name="LeftWidthOffset">Width offset from the left</param>
+        /// <param name="RightWidthOffset">Width offset from the right</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteProgress(double Progress, int Left, int Top, int LeftWidthOffset, int RightWidthOffset, ConsoleColors ProgressColor, ConsoleColors FrameColor, bool DrawBorder = true)
+        {
+            try
+            {
+                // Get the final width offset
+                int FinalWidthOffset = LeftWidthOffset + RightWidthOffset;
+
+                // Draw the border
+                if (DrawBorder)
+                {
+                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressUpperLeftCornerChar + ProgressTools.ProgressUpperFrameChar.Repeat(ConsoleWrapper.WindowWidth - FinalWidthOffset) + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true, FrameColor);
+                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLeftFrameChar + " ".Repeat(ConsoleWrapper.WindowWidth - FinalWidthOffset) + ProgressTools.ProgressRightFrameChar, Left, Top + 1, true, FrameColor);
+                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLowerLeftCornerChar + ProgressTools.ProgressLowerFrameChar.Repeat(ConsoleWrapper.WindowWidth - FinalWidthOffset) + ProgressTools.ProgressLowerRightCornerChar, Left, Top + 2, true, FrameColor);
+                }
+
+                // Draw the progress bar
+                ColorTools.SetConsoleColor(new Color(Convert.ToInt32(ProgressColor)), true, true);
+                WriterPlainManager.CurrentPlain.WriteWherePlain(" ".Repeat(ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset)), Left + 1, Top + 1, true);
+            }
+            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Writes the progress bar
+        /// </summary>
+        /// <param name="Progress">The progress percentage</param>
+        /// <param name="Left">The progress position from the upper left corner</param>
+        /// <param name="Top">The progress position from the top</param>
+        /// <param name="ProgressColor">The progress bar color</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteProgress(double Progress, int Left, int Top, Color ProgressColor, bool DrawBorder = true)
         {
             try

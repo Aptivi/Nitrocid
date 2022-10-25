@@ -71,6 +71,21 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="HeaderForegroundColor">A header foreground color that will be changed to.</param>
         /// <param name="ValueForegroundColor">A value foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        public static void WriteTable(string[] Headers, string[,] Rows, int Margin, ConsoleColors SeparatorForegroundColor, ConsoleColors HeaderForegroundColor, ConsoleColors ValueForegroundColor, ConsoleColors BackgroundColor, bool SeparateRows = true, List<CellOptions> CellOptions = null) =>
+            WriteTable(Headers, Rows, Margin, new Color(Convert.ToInt32(SeparatorForegroundColor)), new Color(Convert.ToInt32(HeaderForegroundColor)), new Color(Convert.ToInt32(ValueForegroundColor)), new Color(Convert.ToInt32(BackgroundColor)), SeparateRows, CellOptions);
+
+        /// <summary>
+        /// Draw a table with text
+        /// </summary>
+        /// <param name="Headers">Headers to insert to the table.</param>
+        /// <param name="Rows">Rows to insert to the table.</param>
+        /// <param name="Margin">Margin offset</param>
+        /// <param name="SeparateRows">Separate the rows?</param>
+        /// <param name="CellOptions">Specifies the cell options</param>
+        /// <param name="SeparatorForegroundColor">A separator foreground color that will be changed to.</param>
+        /// <param name="HeaderForegroundColor">A header foreground color that will be changed to.</param>
+        /// <param name="ValueForegroundColor">A value foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
         public static void WriteTable(string[] Headers, string[,] Rows, int Margin, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, bool SeparateRows = true, List<CellOptions> CellOptions = null)
         {
             int ColumnCapacity = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / (double)Headers.Length);

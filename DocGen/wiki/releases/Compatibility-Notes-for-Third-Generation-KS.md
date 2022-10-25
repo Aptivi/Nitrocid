@@ -194,3 +194,9 @@ The colors are now an essential part of KS, so we decided to take out support fo
 We noticed that the code is repetitive for making tables, and we don't want to update six locations every bug fix, so we decided to condense it to a single code.
 
 As a side-effect, we've changed the color signatures from foreground and background pairs to header, value, separator, and background colors. Consequently, we've removed the `ConsoleColor` version of `TableColor` as we found it irrelevant thanks to the enhanced `Color` class found in the ColorSeq library.
+
+##### Tried to balance color support for writers
+
+Migration from `ConsoleColor` to `ConsoleColors` is complete. This means that all the writers in the `KS.Misc.*Writers` now have the `ConsoleColors` support.
+
+The latest ColorSeq version, 1.0.2, will be used to make it easier to achieve.

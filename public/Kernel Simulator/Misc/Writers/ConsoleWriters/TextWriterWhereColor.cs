@@ -155,7 +155,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="Top">Row number in console</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhere(string msg, int Left, int Top, ConsoleColor color, params object[] vars) => WriteWhere(msg, Left, Top, false, color, vars);
+        public static void WriteWhere(string msg, int Left, int Top, ConsoleColors color, params object[] vars) => WriteWhere(msg, Left, Top, false, color, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
@@ -166,14 +166,14 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="Return">Whether or not to return to old position</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhere(string msg, int Left, int Top, bool Return, ConsoleColor color, params object[] vars)
+        public static void WriteWhere(string msg, int Left, int Top, bool Return, ConsoleColors color, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
                 try
                 {
-                    ConsoleBase.ConsoleWrapper.BackgroundColor = (ConsoleColor)Convert.ToInt32(StringQuery.IsStringNumeric(ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) && Convert.ToDouble(ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.GetColor(ColorTools.ColTypes.Background).PlainSequence) : ConsoleColor.Black);
-                    ConsoleBase.ConsoleWrapper.ForegroundColor = color;
+                    ColorTools.SetConsoleColor(new Color(Convert.ToInt32(color)));
+                    ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
                     WriteWherePlain(msg, Left, Top, Return, vars);
@@ -195,7 +195,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhere(string msg, int Left, int Top, ConsoleColor ForegroundColor, ConsoleColor BackgroundColor, params object[] vars) => WriteWhere(msg, Left, Top, false, ForegroundColor, BackgroundColor, vars);
+        public static void WriteWhere(string msg, int Left, int Top, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars) => WriteWhere(msg, Left, Top, false, ForegroundColor, BackgroundColor, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
@@ -207,14 +207,14 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhere(string msg, int Left, int Top, bool Return, ConsoleColor ForegroundColor, ConsoleColor BackgroundColor, params object[] vars)
+        public static void WriteWhere(string msg, int Left, int Top, bool Return, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
                 try
                 {
-                    ConsoleBase.ConsoleWrapper.BackgroundColor = BackgroundColor;
-                    ConsoleBase.ConsoleWrapper.ForegroundColor = ForegroundColor;
+                    ColorTools.SetConsoleColor(new Color(Convert.ToInt32(ForegroundColor)));
+                    ColorTools.SetConsoleColor(new Color(Convert.ToInt32(BackgroundColor)));
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
                     WriteWherePlain(msg, Left, Top, Return, vars);
