@@ -18,6 +18,7 @@
 
 using System;
 using System.Collections.Generic;
+using ColorSeq;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
@@ -124,7 +125,7 @@ namespace KS.Misc.Screensaver.Displays
                     char StarSymbol = '*';
                     int StarX = Star.Item1;
                     int StarY = Star.Item2;
-                    TextWriterWhereColor.WriteWhere(Convert.ToString(StarSymbol), StarX, StarY, false, ConsoleColor.White);
+                    TextWriterWhereColor.WriteWhere(Convert.ToString(StarSymbol), StarX, StarY, false, ConsoleColors.White);
                 }
             }
             else

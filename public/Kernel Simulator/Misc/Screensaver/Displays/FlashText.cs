@@ -342,7 +342,7 @@ namespace KS.Misc.Screensaver.Displays
                     ResizeSyncing = true;
                 if (!ResizeSyncing)
                 {
-                    TextWriterWhereColor.WriteWhere(FlashTextSettings.FlashTextWrite, Left, Top, true, Screensaver.colors[RandomDriver.Random(FlashTextSettings.FlashTextMinimumColorLevel, FlashTextSettings.FlashTextMaximumColorLevel)]);
+                    TextWriterWhereColor.WriteWhere(FlashTextSettings.FlashTextWrite, Left, Top, true, (ConsoleColors)Screensaver.colors[RandomDriver.Random(FlashTextSettings.FlashTextMinimumColorLevel, FlashTextSettings.FlashTextMaximumColorLevel)]);
                 }
             }
             ThreadManager.SleepNoBlock(HalfDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
