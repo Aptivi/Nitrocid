@@ -70,7 +70,7 @@ namespace KS.Kernel
         internal readonly static string ReleaseSpecifier = $"RC";
 #elif SPECIFIERDEV
 #if MILESTONESPECIFIERALPHA
-        internal readonly static string ReleaseSpecifier = $"DEV - M7";
+        internal readonly static string ReleaseSpecifier = $"DEV - M8";
 #elif MILESTONESPECIFIERBETA
         internal readonly static string ReleaseSpecifier = $"DEV - B1";
 #else
