@@ -240,7 +240,7 @@ namespace KSJsonifyLocales
 
             // Finish the program
             if (!quiet)
-                TextWriterColor.Write("Finished in " + $"{total.Elapsed}", true, ColorTools.ColTypes.NeutralText);
+                TextWriterColor.Write("Finished in " + $"{total.Elapsed}");
             total.Reset();
         }
     }

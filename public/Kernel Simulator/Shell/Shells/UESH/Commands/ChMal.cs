@@ -51,14 +51,14 @@ namespace KS.Shell.Shells.UESH.Commands
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Changing MAL..."), true, ColorTools.ColTypes.NeutralText);
+                    TextWriterColor.Write(Translate.DoTranslation("Changing MAL..."));
                     MalParse.SetMal(StringArgs);
                 }
             }
             else
             {
                 ShellStart.StartShell(ShellType.TextShell, Paths.GetKernelPath(KernelPathType.MAL));
-                TextWriterColor.Write(Translate.DoTranslation("Changing MAL..."), true, ColorTools.ColTypes.NeutralText);
+                TextWriterColor.Write(Translate.DoTranslation("Changing MAL..."));
                 MalParse.ReadMal();
             }
         }

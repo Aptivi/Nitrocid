@@ -105,8 +105,8 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void HelpHelper()
         {
-            TextWriterColor.Write(Translate.DoTranslation("where <$variable> is any variable that will be used to store response") + CharManager.NewLine + Translate.DoTranslation("where <answers> are one-lettered answers of the question separated in slashes"), true, ColorTools.ColTypes.NeutralText);
-            TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"), true, ColorTools.ColTypes.NeutralText);
+            TextWriterColor.Write(Translate.DoTranslation("where <$variable> is any variable that will be used to store response") + CharManager.NewLine + Translate.DoTranslation("where <answers> are one-lettered answers of the question separated in slashes"));
+            TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"));
             TextWriterColor.Write("  -multiple: ", false, ColorTools.ColTypes.ListEntry);
             TextWriterColor.Write(Translate.DoTranslation("Indicate that the answer can take more than one character"), true, ColorTools.ColTypes.ListValue);
             TextWriterColor.Write("  -single: ", false, ColorTools.ColTypes.ListEntry);

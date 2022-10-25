@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.Test.Commands
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
             var Style = LineEndingsTools.GetLineEndingFromFile(ListArgsOnly[0]);
-            TextWriterColor.Write(Translate.DoTranslation("Newline style:") + " {0}", true, ColorTools.ColTypes.NeutralText, Style.ToString());
+            TextWriterColor.Write(Translate.DoTranslation("Newline style:") + " {0}", Style.ToString());
         }
 
     }

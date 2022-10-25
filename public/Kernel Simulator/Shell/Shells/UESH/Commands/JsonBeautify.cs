@@ -46,7 +46,7 @@ namespace KS.Shell.Shells.UESH.Commands
             {
                 // Beautify the JSON and display it on screen
                 BeautifiedJson = JsonBeautifier.BeautifyJson(JsonFile);
-                TextWriterColor.Write(BeautifiedJson, true, ColorTools.ColTypes.NeutralText);
+                TextWriterColor.Write(BeautifiedJson);
 
                 // Beautify it to an output file specified (optional)
                 if (ListArgsOnly.Length > 1)

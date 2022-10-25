@@ -51,10 +51,10 @@ namespace KS.Shell.Shells.UESH.Commands
                     {
                         if (!URL.StartsWith(" "))
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("Uploading {0} to {1}..."), true, ColorTools.ColTypes.NeutralText, FileName, URL);
+                            TextWriterColor.Write(Translate.DoTranslation("Uploading {0} to {1}..."), FileName, URL);
                             if (NetworkTransfer.UploadFile(FileName, URL))
                             {
-                                TextWriterColor.Write(Translate.DoTranslation("Upload has completed."), true, ColorTools.ColTypes.NeutralText);
+                                TextWriterColor.Write(Translate.DoTranslation("Upload has completed."));
                             }
                         }
                         else

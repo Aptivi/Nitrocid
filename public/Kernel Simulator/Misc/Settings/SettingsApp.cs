@@ -930,7 +930,7 @@ namespace KS.Misc.Settings
             List<string> Results;
 
             // Prompt the user
-            TextWriterColor.Write(Translate.DoTranslation("Write what do you want to search for."), true, ColorTools.ColTypes.NeutralText);
+            TextWriterColor.Write(Translate.DoTranslation("Write what do you want to search for."));
             DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for searching...");
             TextWriterColor.Write(">> ", false, ColorTools.ColTypes.Input);
             SearchFor = Input.ReadLine();
@@ -944,7 +944,7 @@ namespace KS.Misc.Settings
                 ListWriterColor.WriteList(Results);
 
                 // Prompt for the number of setting to go to
-                TextWriterColor.Write(Translate.DoTranslation("Write the number of the setting to go to. Any other character means go back."), true, ColorTools.ColTypes.NeutralText);
+                TextWriterColor.Write(Translate.DoTranslation("Write the number of the setting to go to. Any other character means go back."));
                 DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for writing...");
                 TextWriterColor.Write(">> ", false, ColorTools.ColTypes.Input);
                 SettingsNumber = Input.ReadLine();

@@ -53,7 +53,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void HelpHelper()
         {
-            TextWriterColor.Write(Translate.DoTranslation("Available unit types and their units:"), true, ColorTools.ColTypes.NeutralText);
+            TextWriterColor.Write(Translate.DoTranslation("Available unit types and their units:"));
             foreach (QuantityInfo QuantityInfo in Quantity.Infos)
             {
                 TextWriterColor.Write("- {0}:", true, ColorTools.ColTypes.ListEntry, QuantityInfo.Name);

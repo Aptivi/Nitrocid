@@ -78,11 +78,11 @@ namespace KS.Arguments
                 {
                     Flags.ArgsInjected = true;
                     EventsManager.FireEvent("ArgumentsInjected", EnteredArguments);
-                    TextWriterColor.Write(Translate.DoTranslation("Injected arguments will be scheduled to run at next reboot."), true, ColorTools.ColTypes.NeutralText);
+                    TextWriterColor.Write(Translate.DoTranslation("Injected arguments will be scheduled to run at next reboot."));
                 }
                 else if (EnteredArguments.Count != 0)
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Starting the kernel with:") + " {0}", true, ColorTools.ColTypes.NeutralText, string.Join(", ", EnteredArguments));
+                    TextWriterColor.Write(Translate.DoTranslation("Starting the kernel with:") + " {0}", string.Join(", ", EnteredArguments));
                     ArgumentParse.ParseArguments(EnteredArguments, ArgumentType.KernelArgs);
                 }
             }

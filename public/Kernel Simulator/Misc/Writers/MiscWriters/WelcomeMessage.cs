@@ -80,7 +80,7 @@ namespace KS.Misc.Writers.MiscWriters
                 if (Flags.NewWelcomeStyle)
                 {
                     string FigletRenderedBanner = FigletTools.RenderFiglet($"{KernelTools.KernelVersion}", KernelTools.BannerFigletFont);
-                    TextWriterColor.Write(CharManager.NewLine + CharManager.NewLine + FigletRenderedBanner, true, ColorTools.ColTypes.NeutralText);
+                    TextWriterColor.Write(CharManager.NewLine + CharManager.NewLine + FigletRenderedBanner);
                 }
                 else
                 {

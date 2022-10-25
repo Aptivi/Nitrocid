@@ -45,7 +45,7 @@ namespace KS.Shell.Shells.UESH.Commands
             {
                 // First, print the license out
                 SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("License information"), true);
-                TextWriterColor.Write("dictionaryapi.dev " + Translate.DoTranslation("API is licensed under") + $" {Word.LicenseInfo.Name}: {Word.LicenseInfo.Url}", true, ColorTools.ColTypes.NeutralText);
+                TextWriterColor.Write("dictionaryapi.dev " + Translate.DoTranslation("API is licensed under") + $" {Word.LicenseInfo.Name}: {Word.LicenseInfo.Url}");
 
                 // Now, we can write the word information
                 SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Word information for") + $" {ListArgsOnly[0]}", true);

@@ -65,7 +65,7 @@ namespace KS.Files.Operations
                 string DestinationFilePath = Path.Combine(Target, SourceFile.Name);
                 DebugWriter.WriteDebug(DebugLevel.I, "Removing file {0}...", DestinationFilePath);
                 if (ShowProgress)
-                    TextWriterColor.Write("-> {0}", true, ColorTools.ColTypes.NeutralText, DestinationFilePath);
+                    TextWriterColor.Write("-> {0}", DestinationFilePath);
                 RemoveFile(DestinationFilePath);
             }
 
@@ -75,7 +75,7 @@ namespace KS.Files.Operations
                 string DestinationDirectoryPath = Path.Combine(Target, SourceDirectory.Name);
                 DebugWriter.WriteDebug(DebugLevel.I, "Calling RemoveDirectory() with destination {0}...", DestinationDirectoryPath);
                 if (ShowProgress)
-                    TextWriterColor.Write("* {0}", true, ColorTools.ColTypes.NeutralText, DestinationDirectoryPath);
+                    TextWriterColor.Write("* {0}", DestinationDirectoryPath);
                 RemoveDirectory(DestinationDirectoryPath);
             }
 

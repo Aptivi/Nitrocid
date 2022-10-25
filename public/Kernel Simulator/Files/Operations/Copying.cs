@@ -142,7 +142,7 @@ namespace KS.Files.Operations
                 string DestinationFilePath = Path.Combine(Destination, SourceFile.Name);
                 DebugWriter.WriteDebug(DebugLevel.I, "Copying file {0} to destination...", DestinationFilePath);
                 if (ShowProgress)
-                    TextWriterColor.Write("-> {0}", true, ColorTools.ColTypes.NeutralText, DestinationFilePath);
+                    TextWriterColor.Write("-> {0}", DestinationFilePath);
                 SourceFile.CopyTo(DestinationFilePath, true);
             }
 
@@ -152,7 +152,7 @@ namespace KS.Files.Operations
                 string DestinationDirectoryPath = Path.Combine(Destination, SourceDirectory.Name);
                 DebugWriter.WriteDebug(DebugLevel.I, "Calling CopyDirectory() with destination {0}...", DestinationDirectoryPath);
                 if (ShowProgress)
-                    TextWriterColor.Write("* {0}", true, ColorTools.ColTypes.NeutralText, DestinationDirectoryPath);
+                    TextWriterColor.Write("* {0}", DestinationDirectoryPath);
                 CopyDirectory(SourceDirectory.FullName, DestinationDirectoryPath);
             }
         }

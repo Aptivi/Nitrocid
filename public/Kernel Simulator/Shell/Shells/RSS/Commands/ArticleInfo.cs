@@ -60,7 +60,7 @@ namespace KS.Shell.Shells.RSS.Commands
                         TextWriterColor.Write(Article.ArticleVariables[Variable].InnerText, true, ColorTools.ColTypes.ListValue);
                     }
                 }
-                TextWriterColor.Write(CharManager.NewLine + Article.ArticleDescription, true, ColorTools.ColTypes.NeutralText);
+                TextWriterColor.Write(CharManager.NewLine + Article.ArticleDescription);
             }
         }
 

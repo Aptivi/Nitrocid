@@ -45,7 +45,7 @@ namespace KS.Shell.Shells.Admin.Commands
                 {
                     DebugWriter.DebugStreamWriter.Close();
                     DebugWriter.DebugStreamWriter = new StreamWriter(Paths.GetKernelPath(KernelPathType.Debugging)) { AutoFlush = true };
-                    TextWriterColor.Write(Translate.DoTranslation("Debug log removed. All connected debugging devices may still view messages."), true, ColorTools.ColTypes.NeutralText);
+                    TextWriterColor.Write(Translate.DoTranslation("Debug log removed. All connected debugging devices may still view messages."));
                 }
                 catch (Exception ex)
                 {
@@ -55,7 +55,7 @@ namespace KS.Shell.Shells.Admin.Commands
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("You must turn on debug mode before you can clear debug log."), true, ColorTools.ColTypes.NeutralText);
+                TextWriterColor.Write(Translate.DoTranslation("You must turn on debug mode before you can clear debug log."));
             }
         }
 

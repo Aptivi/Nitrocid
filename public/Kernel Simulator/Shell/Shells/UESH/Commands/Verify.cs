@@ -68,7 +68,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 {
                     if (HashVerifier.VerifyHashFromHashesFile(ListArgsOnly[3], (EncryptionAlgorithms)Convert.ToInt32(Enum.Parse(typeof(EncryptionAlgorithms), ListArgsOnly[0])), ListArgsOnly[2], ListArgsOnly[1]))
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("Hashes match."), true, ColorTools.ColTypes.NeutralText);
+                        TextWriterColor.Write(Translate.DoTranslation("Hashes match."));
                     }
                     else
                     {
@@ -77,7 +77,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 }
                 else if (HashVerifier.VerifyHashFromHash(ListArgsOnly[3], (EncryptionAlgorithms)Convert.ToInt32(Enum.Parse(typeof(EncryptionAlgorithms), ListArgsOnly[0])), ListArgsOnly[2], ListArgsOnly[1]))
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Hashes match."), true, ColorTools.ColTypes.NeutralText);
+                    TextWriterColor.Write(Translate.DoTranslation("Hashes match."));
                 }
                 else
                 {

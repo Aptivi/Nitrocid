@@ -37,9 +37,9 @@ namespace KS.Misc.Games
             // Then, compare the value to the randomly selected value for the roulette
             bool unlucky = RandomDriver.RandomRussianRoulette();
             if (Convert.ToBoolean(bet) == unlucky)
-                TextWriterColor.Write(Translate.DoTranslation("You guessed it right!"), true, ColorTools.ColTypes.NeutralText);
+                TextWriterColor.Write(Translate.DoTranslation("You guessed it right!"));
             else
-                TextWriterColor.Write(Translate.DoTranslation("You got it wrong."), true, ColorTools.ColTypes.NeutralText);
+                TextWriterColor.Write(Translate.DoTranslation("You got it wrong."));
 
             // Finally, check if the user is lucky or not
             if (unlucky)

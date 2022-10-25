@@ -52,17 +52,17 @@ namespace KS.Shell.Shells.UESH.Commands
                 {
                     var FileInfo = new FileInfo(FilePath);
                     var Style = LineEndingsTools.GetLineEndingFromFile(FilePath);
-                    TextWriterColor.Write(Translate.DoTranslation("Name: {0}"), true, ColorTools.ColTypes.NeutralText, FileInfo.Name);
-                    TextWriterColor.Write(Translate.DoTranslation("Full name: {0}"), true, ColorTools.ColTypes.NeutralText, Filesystem.NeutralizePath(FileInfo.FullName));
-                    TextWriterColor.Write(Translate.DoTranslation("File size: {0}"), true, ColorTools.ColTypes.NeutralText, FileInfo.Length.FileSizeToString());
-                    TextWriterColor.Write(Translate.DoTranslation("Creation time: {0}"), true, ColorTools.ColTypes.NeutralText, TimeDateRenderers.Render(FileInfo.CreationTime));
-                    TextWriterColor.Write(Translate.DoTranslation("Last access time: {0}"), true, ColorTools.ColTypes.NeutralText, TimeDateRenderers.Render(FileInfo.LastAccessTime));
-                    TextWriterColor.Write(Translate.DoTranslation("Last write time: {0}"), true, ColorTools.ColTypes.NeutralText, TimeDateRenderers.Render(FileInfo.LastWriteTime));
-                    TextWriterColor.Write(Translate.DoTranslation("Attributes: {0}"), true, ColorTools.ColTypes.NeutralText, FileInfo.Attributes);
-                    TextWriterColor.Write(Translate.DoTranslation("Where to find: {0}"), true, ColorTools.ColTypes.NeutralText, Filesystem.NeutralizePath(FileInfo.DirectoryName));
-                    TextWriterColor.Write(Translate.DoTranslation("Newline style:") + " {0}", true, ColorTools.ColTypes.NeutralText, Style.ToString());
-                    TextWriterColor.Write(Translate.DoTranslation("Binary file:") + " {0}", true, ColorTools.ColTypes.NeutralText, Parsing.IsBinaryFile(FileInfo.FullName));
-                    TextWriterColor.Write(Translate.DoTranslation("MIME metadata:") + " {0}", true, ColorTools.ColTypes.NeutralText, MimeTypes.GetMimeType(Filesystem.NeutralizePath(FileInfo.FullName)));
+                    TextWriterColor.Write(Translate.DoTranslation("Name: {0}"), FileInfo.Name);
+                    TextWriterColor.Write(Translate.DoTranslation("Full name: {0}"), Filesystem.NeutralizePath(FileInfo.FullName));
+                    TextWriterColor.Write(Translate.DoTranslation("File size: {0}"), FileInfo.Length.FileSizeToString());
+                    TextWriterColor.Write(Translate.DoTranslation("Creation time: {0}"), TimeDateRenderers.Render(FileInfo.CreationTime));
+                    TextWriterColor.Write(Translate.DoTranslation("Last access time: {0}"), TimeDateRenderers.Render(FileInfo.LastAccessTime));
+                    TextWriterColor.Write(Translate.DoTranslation("Last write time: {0}"), TimeDateRenderers.Render(FileInfo.LastWriteTime));
+                    TextWriterColor.Write(Translate.DoTranslation("Attributes: {0}"), FileInfo.Attributes);
+                    TextWriterColor.Write(Translate.DoTranslation("Where to find: {0}"), Filesystem.NeutralizePath(FileInfo.DirectoryName));
+                    TextWriterColor.Write(Translate.DoTranslation("Newline style:") + " {0}", Style.ToString());
+                    TextWriterColor.Write(Translate.DoTranslation("Binary file:") + " {0}", Parsing.IsBinaryFile(FileInfo.FullName));
+                    TextWriterColor.Write(Translate.DoTranslation("MIME metadata:") + " {0}", MimeTypes.GetMimeType(Filesystem.NeutralizePath(FileInfo.FullName)));
                 }
                 else
                 {

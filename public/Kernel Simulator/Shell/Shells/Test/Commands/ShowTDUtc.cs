@@ -29,7 +29,7 @@ namespace KS.Shell.Shells.Test.Commands
     class Test_ShowTDUtcCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => TextWriterColor.Write(TimeDateRenderersUtc.RenderUtc(), true, ColorTools.ColTypes.NeutralText);
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => TextWriterColor.Write(TimeDateRenderersUtc.RenderUtc());
 
     }
 }

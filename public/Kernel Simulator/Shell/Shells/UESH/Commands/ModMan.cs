@@ -94,7 +94,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 {
                     case "start":
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("Starting mod") + " {0}...", true, ColorTools.ColTypes.NeutralText, Path.GetFileNameWithoutExtension(TargetMod));
+                            TextWriterColor.Write(Translate.DoTranslation("Starting mod") + " {0}...", Path.GetFileNameWithoutExtension(TargetMod));
                             ModManager.StartMod(Path.GetFileName(TargetModPath));
                             break;
                         }

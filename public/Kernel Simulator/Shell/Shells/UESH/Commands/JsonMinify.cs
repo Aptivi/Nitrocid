@@ -46,7 +46,7 @@ namespace KS.Shell.Shells.UESH.Commands
             {
                 // Minify the JSON and display it on screen
                 MinifiedJson = JsonMinifier.MinifyJson(JsonFile);
-                TextWriterColor.Write(MinifiedJson, true, ColorTools.ColTypes.NeutralText);
+                TextWriterColor.Write(MinifiedJson);
 
                 // Minify it to an output file specified (optional)
                 if (ListArgsOnly.Length > 1)

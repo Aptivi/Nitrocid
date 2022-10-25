@@ -36,11 +36,11 @@ namespace KS.Shell.Shells.Json.Commands
         {
             if (ListArgsOnly.Length > 0)
             {
-                TextWriterColor.Write(JsonTools.JsonShell_SerializeToString(StringArgs), true, ColorTools.ColTypes.NeutralText);
+                TextWriterColor.Write(JsonTools.JsonShell_SerializeToString(StringArgs));
             }
             else
             {
-                TextWriterColor.Write(JsonTools.JsonShell_SerializeToString("$"), true, ColorTools.ColTypes.NeutralText);
+                TextWriterColor.Write(JsonTools.JsonShell_SerializeToString("$"));
             }
         }
 

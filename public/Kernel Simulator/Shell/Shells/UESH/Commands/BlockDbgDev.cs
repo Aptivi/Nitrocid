@@ -43,16 +43,16 @@ namespace KS.Shell.Shells.UESH.Commands
             {
                 if (RemoteDebugTools.TryAddToBlockList(ListArgsOnly[0]))
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("{0} can't join remote debug now."), true, ColorTools.ColTypes.NeutralText, ListArgsOnly[0]);
+                    TextWriterColor.Write(Translate.DoTranslation("{0} can't join remote debug now."), ListArgsOnly[0]);
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Failed to block {0}."), true, ColorTools.ColTypes.NeutralText, ListArgsOnly[0]);
+                    TextWriterColor.Write(Translate.DoTranslation("Failed to block {0}."), ListArgsOnly[0]);
                 }
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("{0} is already blocked."), true, ColorTools.ColTypes.NeutralText, ListArgsOnly[0]);
+                TextWriterColor.Write(Translate.DoTranslation("{0} is already blocked."), ListArgsOnly[0]);
             }
         }
 

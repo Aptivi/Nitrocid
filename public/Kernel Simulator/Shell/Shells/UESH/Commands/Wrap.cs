@@ -93,7 +93,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
 
             // Print them along with help description
-            TextWriterColor.Write(Translate.DoTranslation("Wrappable commands:") + " {0}", true, ColorTools.ColTypes.NeutralText, string.Join(", ", WrappableCmds.ToArray()));
+            TextWriterColor.Write(Translate.DoTranslation("Wrappable commands:") + " {0}", string.Join(", ", WrappableCmds.ToArray()));
         }
 
     }

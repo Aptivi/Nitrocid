@@ -450,8 +450,8 @@ namespace KS.Kernel
             if (Flags.ShowAppInfoOnBoot & !Flags.EnableSplash)
             {
                 SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("App information"), true, ColorTools.ColTypes.Stage);
-                TextWriterColor.Write("OS: " + Translate.DoTranslation("Running on {0}"), true, ColorTools.ColTypes.NeutralText, Environment.OSVersion.ToString());
-                TextWriterColor.Write("KS: " + Translate.DoTranslation("Running from GRILO?") + " {0}", true, ColorTools.ColTypes.NeutralText, KernelPlatform.IsRunningFromGrilo());
+                TextWriterColor.Write("OS: " + Translate.DoTranslation("Running on {0}"), Environment.OSVersion.ToString());
+                TextWriterColor.Write("KS: " + Translate.DoTranslation("Running from GRILO?") + $" {KernelPlatform.IsRunningFromGrilo()}");
             }
 
             // Check to see if running on macOS, since we no longer support it.

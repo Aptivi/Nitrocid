@@ -41,7 +41,7 @@ namespace KS.Shell.Shells.Text.Commands
             string FinalLine = "";
 
             // Keep prompting for lines until the user finishes
-            TextWriterColor.Write(Translate.DoTranslation("Enter the text that you want to append to the end of the file. When you're done, write \"EOF\" on its own line."), true, ColorTools.ColTypes.NeutralText);
+            TextWriterColor.Write(Translate.DoTranslation("Enter the text that you want to append to the end of the file. When you're done, write \"EOF\" on its own line."));
             while (FinalLine != "EOF")
             {
                 TextWriterColor.Write(">> ", false, ColorTools.ColTypes.Input);

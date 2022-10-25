@@ -50,7 +50,7 @@ namespace KS.Shell.Shells.UESH.Commands
             UESHCommands.PromptSelectionAndSet(ListArgsOnly[2], ListArgsOnly[0], ListArgsOnly[1], Titles.ToArray());
         }
 
-        public override void HelpHelper() => TextWriterColor.Write(Translate.DoTranslation("where <$variable> is any variable that will be used to store response") + CharManager.NewLine + Translate.DoTranslation("where <answers> are one-lettered answers of the question separated in slashes"), true, ColorTools.ColTypes.NeutralText);
+        public override void HelpHelper() => TextWriterColor.Write(Translate.DoTranslation("where <$variable> is any variable that will be used to store response") + CharManager.NewLine + Translate.DoTranslation("where <answers> are one-lettered answers of the question separated in slashes"));
 
     }
 }

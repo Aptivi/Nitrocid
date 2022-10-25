@@ -34,25 +34,25 @@ namespace KS.Shell.Shells.Test.Commands
         {
             if (ListArgsOnly[0] == "Gregorian")
             {
-                TextWriterColor.Write(TimeDateRenderers.RenderDate(new CultureInfo("en-US")), true, ColorTools.ColTypes.NeutralText);
+                TextWriterColor.Write(TimeDateRenderers.RenderDate(new CultureInfo("en-US")));
             }
             else if (ListArgsOnly[0] == "Hijri")
             {
                 var Cult = new CultureInfo("ar");
                 Cult.DateTimeFormat.Calendar = new HijriCalendar();
-                TextWriterColor.Write(TimeDateRenderers.RenderDate(Cult), true, ColorTools.ColTypes.NeutralText);
+                TextWriterColor.Write(TimeDateRenderers.RenderDate(Cult));
             }
             else if (ListArgsOnly[0] == "Persian")
             {
-                TextWriterColor.Write(TimeDateRenderers.RenderDate(new CultureInfo("fa")), true, ColorTools.ColTypes.NeutralText);
+                TextWriterColor.Write(TimeDateRenderers.RenderDate(new CultureInfo("fa")));
             }
             else if (ListArgsOnly[0] == "Saudi-Hijri")
             {
-                TextWriterColor.Write(TimeDateRenderers.RenderDate(new CultureInfo("ar-SA")), true, ColorTools.ColTypes.NeutralText);
+                TextWriterColor.Write(TimeDateRenderers.RenderDate(new CultureInfo("ar-SA")));
             }
             else if (ListArgsOnly[0] == "Thai-Buddhist")
             {
-                TextWriterColor.Write(TimeDateRenderers.RenderDate(new CultureInfo("th-TH")), true, ColorTools.ColTypes.NeutralText);
+                TextWriterColor.Write(TimeDateRenderers.RenderDate(new CultureInfo("th-TH")));
             }
         }
 

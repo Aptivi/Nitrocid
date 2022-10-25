@@ -41,7 +41,7 @@ namespace KS.Shell.Shells.UESH.Commands
             {
                 string Res = SMath.Evaluate(StringArgs).ToString();
                 DebugWriter.WriteDebug(DebugLevel.I, "Res = {0}", Res);
-                TextWriterColor.Write(StringArgs + " = " + Res, true, ColorTools.ColTypes.NeutralText);
+                TextWriterColor.Write(StringArgs + " = " + Res);
             }
             catch (Exception ex)
             {

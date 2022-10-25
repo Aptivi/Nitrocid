@@ -53,7 +53,7 @@ namespace KS.Shell.Shells.UESH.Commands
 #else
             string ExecutableName = "RetroKS.exe";
 #endif
-            TextWriterColor.Write(Translate.DoTranslation("Checking for updates..."), true, ColorTools.ColTypes.NeutralText);
+            TextWriterColor.Write(Translate.DoTranslation("Checking for updates..."));
 
             // Because api.github.com requires the UserAgent header to be put, else, 403 error occurs. Fortunately for us, "Aptivi" is enough.
             NetworkTransfer.WClient.DefaultRequestHeaders.Add("User-Agent", "Aptivi");
@@ -95,14 +95,14 @@ namespace KS.Shell.Shells.UESH.Commands
             // Check to see if we already have RetroKS installed and up-to-date
             if ((Checking.FileExists(RetroExecKSPath) && Assembly.Load(System.IO.File.ReadAllBytes(RetroExecKSPath)).GetName().Version < SortedVersions[0].UpdateVersion) | !Checking.FileExists(RetroExecKSPath))
             {
-                TextWriterColor.Write(Translate.DoTranslation("Downloading version") + " {0}...", true, ColorTools.ColTypes.NeutralText, SortedVersions[0].UpdateVersion.ToString());
+                TextWriterColor.Write(Translate.DoTranslation("Downloading version") + " {0}...", SortedVersions[0].UpdateVersion.ToString());
 
                 // Download RetroKS
                 var RetroKSURI = SortedVersions[0].UpdateURL;
                 NetworkTransfer.DownloadFile(RetroKSURI.ToString(), RetroKSPath);
 
                 // Extract it
-                TextWriterColor.Write(Translate.DoTranslation("Installing version") + " {0}...", true, ColorTools.ColTypes.NeutralText, SortedVersions[0].UpdateVersion.ToString());
+                TextWriterColor.Write(Translate.DoTranslation("Installing version") + " {0}...", SortedVersions[0].UpdateVersion.ToString());
                 using (var archive = RarArchive.Open(RetroKSPath))
                 {
                     foreach (var entry in archive.Entries.Where(e => !e.IsDirectory))
@@ -115,7 +115,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
 
             // Now, run the assembly
-            TextWriterColor.Write(Translate.DoTranslation("Going back to 2018..."), true, ColorTools.ColTypes.NeutralText);
+            TextWriterColor.Write(Translate.DoTranslation("Going back to 2018..."));
             Assembly.LoadFrom(RetroExecKSPath).EntryPoint.Invoke("", Array.Empty<object>());
 
             // Clear the console

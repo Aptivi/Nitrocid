@@ -34,9 +34,9 @@ namespace KS.Shell.Shells.Test.Commands
         {
             var NormalCharList = new List<char>() { '1', '2', '3' };
             var ArrayCharList = new List<char[]>() { { new char[] { '1', '2', '3' } }, { new char[] { '1', '2', '3' } }, { new char[] { '1', '2', '3' } } };
-            TextWriterColor.Write(Translate.DoTranslation("Normal char list:"), true, ColorTools.ColTypes.NeutralText);
+            TextWriterColor.Write(Translate.DoTranslation("Normal char list:"));
             ListWriterColor.WriteList(NormalCharList);
-            TextWriterColor.Write(Translate.DoTranslation("Array char list:"), true, ColorTools.ColTypes.NeutralText);
+            TextWriterColor.Write(Translate.DoTranslation("Array char list:"));
             ListWriterColor.WriteList(ArrayCharList);
         }
 

@@ -36,7 +36,7 @@ namespace KS.Shell.Shells.FTP.Commands
         {
             if (FTPShellCommon.FtpConnected)
             {
-                TextWriterColor.Write(Translate.DoTranslation("Remote directory: {0}"), true, ColorTools.ColTypes.NeutralText, FTPShellCommon.FtpCurrentRemoteDir);
+                TextWriterColor.Write(Translate.DoTranslation("Remote directory: {0}"), FTPShellCommon.FtpCurrentRemoteDir);
             }
             else
             {

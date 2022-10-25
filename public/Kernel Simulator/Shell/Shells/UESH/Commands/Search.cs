@@ -42,7 +42,7 @@ namespace KS.Shell.Shells.UESH.Commands
             {
                 var Matches = Searching.SearchFileForStringRegexp(ListArgsOnly[1], new Regex(ListArgsOnly[0], RegexOptions.IgnoreCase));
                 foreach (string Match in Matches)
-                    TextWriterColor.Write(Match, true, ColorTools.ColTypes.NeutralText);
+                    TextWriterColor.Write(Match);
             }
             catch (Exception ex)
             {

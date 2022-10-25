@@ -46,7 +46,7 @@ namespace KS.Shell.Shells.Test.Commands
                 }
                 else
                 {
-                    TextWriterColor.Write("[-] {0}", true, ColorTools.ColTypes.NeutralText, Text);
+                    TextWriterColor.Write("[-] {0}", Text);
                 }
             }
         }

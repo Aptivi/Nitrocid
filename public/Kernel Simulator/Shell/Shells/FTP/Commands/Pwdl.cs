@@ -32,7 +32,7 @@ namespace KS.Shell.Shells.FTP.Commands
     class FTP_PwdlCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => TextWriterColor.Write(Translate.DoTranslation("Local directory: {0}"), true, ColorTools.ColTypes.NeutralText, FTPShellCommon.FtpCurrentDirectory);
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => TextWriterColor.Write(Translate.DoTranslation("Local directory: {0}"), FTPShellCommon.FtpCurrentDirectory);
 
     }
 }

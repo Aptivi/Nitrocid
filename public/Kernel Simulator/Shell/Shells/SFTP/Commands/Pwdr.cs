@@ -36,7 +36,7 @@ namespace KS.Shell.Shells.SFTP.Commands
         {
             if (SFTPShellCommon.SFTPConnected)
             {
-                TextWriterColor.Write(Translate.DoTranslation("Remote directory: {0}"), true, ColorTools.ColTypes.NeutralText, SFTPShellCommon.SFTPCurrentRemoteDir);
+                TextWriterColor.Write(Translate.DoTranslation("Remote directory: {0}"), SFTPShellCommon.SFTPCurrentRemoteDir);
             }
             else
             {

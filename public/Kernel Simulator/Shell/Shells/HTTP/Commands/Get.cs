@@ -47,9 +47,9 @@ namespace KS.Shell.Shells.HTTP.Commands
                     ResponseTask.Wait();
                     var Response = ResponseTask.Result;
                     string ResponseContent = await Response.Content.ReadAsStringAsync();
-                    TextWriterColor.Write("[{0}] {1}", true, ColorTools.ColTypes.NeutralText, (int)Response.StatusCode, Response.StatusCode.ToString());
-                    TextWriterColor.Write(ResponseContent, true, ColorTools.ColTypes.NeutralText);
-                    TextWriterColor.Write(Response.ReasonPhrase, true, ColorTools.ColTypes.NeutralText);
+                    TextWriterColor.Write("[{0}] {1}", (int)Response.StatusCode, Response.StatusCode.ToString());
+                    TextWriterColor.Write(ResponseContent);
+                    TextWriterColor.Write(Response.ReasonPhrase);
                 }
                 catch (AggregateException aex)
                 {

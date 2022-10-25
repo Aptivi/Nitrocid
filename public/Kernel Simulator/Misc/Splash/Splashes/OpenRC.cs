@@ -54,7 +54,7 @@ namespace KS.Misc.Splash.Splashes
             Beginning = true;
             DebugWriter.WriteDebug(DebugLevel.I, "Splash opening. Clearing console...");
             ConsoleBase.ConsoleWrapper.Clear();
-            TextWriterColor.Write(CharManager.NewLine + $"   {OpenRCIndicatorColor.VTSequenceForeground}OpenRC {OpenRCVersionColor.VTSequenceForeground}0.13.11 {ColorTools.GetColor(ColorTools.ColTypes.NeutralText).VTSequenceForeground}is starting up {OpenRCPlaceholderColor.VTSequenceForeground}Kernel Simulator {KernelTools.KernelVersion}" + CharManager.NewLine, true, ColorTools.ColTypes.NeutralText);
+            TextWriterColor.Write(CharManager.NewLine + $"   {OpenRCIndicatorColor.VTSequenceForeground}OpenRC {OpenRCVersionColor.VTSequenceForeground}0.13.11 {ColorTools.GetColor(ColorTools.ColTypes.NeutralText).VTSequenceForeground}is starting up {OpenRCPlaceholderColor.VTSequenceForeground}Kernel Simulator {KernelTools.KernelVersion}" + CharManager.NewLine);
         }
 
         public void Display()
@@ -87,7 +87,7 @@ namespace KS.Misc.Splash.Splashes
                 TextWriterWhereColor.WriteWhere(" ok ", IndicatorLeft + 1, IndicatorTop, true, OpenRCIndicatorColor);
             }
             TextWriterColor.Write($" * ", false, OpenRCIndicatorColor);
-            TextWriterColor.Write(ProgressReport, true, ColorTools.ColTypes.NeutralText, Vars);
+            TextWriterColor.Write(ProgressReport, Vars);
             if (!Beginning)
             {
                 IndicatorLeft = ConsoleBase.ConsoleWrapper.WindowWidth - 8;
@@ -104,7 +104,7 @@ namespace KS.Misc.Splash.Splashes
                 TextWriterWhereColor.WriteWhere("fail", IndicatorLeft + 1, IndicatorTop, true, OpenRCIndicatorColor);
             }
             TextWriterColor.Write($" * ", false, OpenRCIndicatorColor);
-            TextWriterColor.Write(ErrorReport, true, ColorTools.ColTypes.NeutralText, Vars);
+            TextWriterColor.Write(ErrorReport, Vars);
             if (!Beginning)
             {
                 IndicatorLeft = ConsoleBase.ConsoleWrapper.WindowWidth - 8;

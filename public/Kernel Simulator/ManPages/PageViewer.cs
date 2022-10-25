@@ -155,7 +155,7 @@ namespace KS.ManPages
                 {
                     // Write the line
                     int OldTop = ConsoleBase.ConsoleWrapper.CursorTop + 1;
-                    TextWriterColor.Write(line, true, ColorTools.ColTypes.NeutralText);
+                    TextWriterColor.Write(line);
                     if (OldTop != ConsoleBase.ConsoleWrapper.CursorTop)
                         ConsoleBase.ConsoleWrapper.CursorTop = OldTop;
 
@@ -193,7 +193,7 @@ namespace KS.ManPages
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Manual page {0} not found."), true, ColorTools.ColTypes.NeutralText, ManualTitle);
+                TextWriterColor.Write(Translate.DoTranslation("Manual page {0} not found."), ManualTitle);
             }
         }
 

@@ -91,7 +91,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
         }
 
-        public override void HelpHelper() => TextWriterColor.Write("<Theme>: ThemeName.json, " + string.Join(", ", ThemeTools.Themes.Keys), true, ColorTools.ColTypes.NeutralText);
+        public override void HelpHelper() => TextWriterColor.Write("<Theme>: ThemeName.json, " + string.Join(", ", ThemeTools.Themes.Keys));
 
     }
 }

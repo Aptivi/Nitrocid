@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.Test.Commands
         {
             var Encodings = Encoding.GetEncodings();
             foreach (EncodingInfo Encoding in Encodings)
-                TextWriterColor.Write("{0}: {1} ({2})", true, ColorTools.ColTypes.NeutralText, Encoding.CodePage, Encoding.Name, Encoding.DisplayName);
+                TextWriterColor.Write("{0}: {1} ({2})", Encoding.CodePage, Encoding.Name, Encoding.DisplayName);
         }
 
     }

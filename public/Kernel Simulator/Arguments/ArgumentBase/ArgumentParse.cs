@@ -80,7 +80,7 @@ namespace KS.Arguments.ArgumentBase
                         else
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough arguments for {0}", Argument);
-                            TextWriterColor.Write(Translate.DoTranslation("There was not enough arguments."), true, ColorTools.ColTypes.NeutralText);
+                            TextWriterColor.Write(Translate.DoTranslation("There was not enough arguments."));
                         }
                     }
                 }

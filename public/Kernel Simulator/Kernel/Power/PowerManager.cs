@@ -57,7 +57,7 @@ namespace KS.Kernel.Power
                 case PowerMode.Shutdown:
                     {
                         Events.EventsManager.FireEvent("PreShutdown");
-                        TextWriterColor.Write(Translate.DoTranslation("Shutting down..."), true, ColorTools.ColTypes.NeutralText);
+                        TextWriterColor.Write(Translate.DoTranslation("Shutting down..."));
                         KernelTools.ResetEverything();
                         Events.EventsManager.FireEvent("PostShutdown");
                         Flags.RebootRequested = true;
@@ -69,7 +69,7 @@ namespace KS.Kernel.Power
                 case PowerMode.RebootSafe:
                     {
                         Events.EventsManager.FireEvent("PreReboot");
-                        TextWriterColor.Write(Translate.DoTranslation("Rebooting..."), true, ColorTools.ColTypes.NeutralText);
+                        TextWriterColor.Write(Translate.DoTranslation("Rebooting..."));
                         KernelTools.ResetEverything();
                         Events.EventsManager.FireEvent("PostReboot");
                         ConsoleBase.ConsoleWrapper.Clear();

@@ -127,7 +127,7 @@ namespace KS.Shell.ShellBase.Aliases
                     try
                     {
                         AddAlias(AliasCmd, DestCmd, Type);
-                        TextWriterColor.Write(Translate.DoTranslation("You can now run \"{0}\" as a command: \"{1}\"."), true, ColorTools.ColTypes.NeutralText, AliasCmd, DestCmd);
+                        TextWriterColor.Write(Translate.DoTranslation("You can now run \"{0}\" as a command: \"{1}\"."), AliasCmd, DestCmd);
                     }
                     catch (Exception ex)
                     {
@@ -143,7 +143,7 @@ namespace KS.Shell.ShellBase.Aliases
                     {
                         RemoveAlias(AliasCmd, Type);
                         PurgeAliases();
-                        TextWriterColor.Write(Translate.DoTranslation("Removed alias {0} successfully."), true, ColorTools.ColTypes.NeutralText, AliasCmd);
+                        TextWriterColor.Write(Translate.DoTranslation("Removed alias {0} successfully."), AliasCmd);
                     }
                     catch (Exception ex)
                     {

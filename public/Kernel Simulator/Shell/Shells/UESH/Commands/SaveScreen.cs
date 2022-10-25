@@ -43,7 +43,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void HelpHelper()
         {
-            TextWriterColor.Write(Translate.DoTranslation("Available screensavers:"), true, ColorTools.ColTypes.NeutralText);
+            TextWriterColor.Write(Translate.DoTranslation("Available screensavers:"));
             ListWriterColor.WriteList(Screensaver.Screensavers.Keys);
         }
 

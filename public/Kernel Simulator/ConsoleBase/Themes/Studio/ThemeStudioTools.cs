@@ -204,7 +204,7 @@ namespace KS.ConsoleBase.Themes.Studio
         public static void PreparePreview()
         {
             ConsoleWrapper.Clear();
-            TextWriterColor.Write(Translate.DoTranslation("Here's how your theme will look like:") + CharManager.NewLine, true, ColorTools.ColTypes.NeutralText);
+            TextWriterColor.Write(Translate.DoTranslation("Here's how your theme will look like:") + CharManager.NewLine);
 
             // Print every possibility of color types
             for (int key = 0; key < SelectedColors.Count; key++)

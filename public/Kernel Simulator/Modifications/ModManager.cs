@@ -165,7 +165,7 @@ namespace KS.Modifications
                 // Check to see if we have mods
                 if (count != 0)
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("mod: Stopping mods..."), true, ColorTools.ColTypes.NeutralText);
+                    TextWriterColor.Write(Translate.DoTranslation("mod: Stopping mods..."));
                     DebugWriter.WriteDebug(DebugLevel.I, "Mods are being stopped. Total mods with screensavers = {0}", count);
 
                     // Enumerate and delete the script as soon as the stopping is complete
@@ -185,7 +185,7 @@ namespace KS.Modifications
                             ScriptPartInfo.PartScript.StopMod();
                             if (!string.IsNullOrWhiteSpace(ScriptPartInfo.PartName) & !string.IsNullOrWhiteSpace(ScriptPartInfo.PartScript.Version))
                             {
-                                TextWriterColor.Write(Translate.DoTranslation("{0} v{1} stopped"), true, ColorTools.ColTypes.NeutralText, ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version);
+                                TextWriterColor.Write(Translate.DoTranslation("{0} v{1} stopped"), ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version);
                             }
 
                             // Remove the part from the list
@@ -193,7 +193,7 @@ namespace KS.Modifications
                         }
 
                         // Remove the mod from the list
-                        TextWriterColor.Write(Translate.DoTranslation("Mod {0} stopped"), true, ColorTools.ColTypes.NeutralText, TargetMod.ModName);
+                        TextWriterColor.Write(Translate.DoTranslation("Mod {0} stopped"), TargetMod.ModName);
                         Mods.Remove(Mods.Keys.ElementAtOrDefault(ScriptIndex));
                     }
 
@@ -209,7 +209,7 @@ namespace KS.Modifications
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("mod: No mods detected."), true, ColorTools.ColTypes.NeutralText);
+                    TextWriterColor.Write(Translate.DoTranslation("mod: No mods detected."));
                 }
             }
             else
@@ -235,7 +235,7 @@ namespace KS.Modifications
                 {
                     if (HasModStarted(PathToMod))
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("mod: Stopping mod {0}..."), true, ColorTools.ColTypes.NeutralText, ModFilename);
+                        TextWriterColor.Write(Translate.DoTranslation("mod: Stopping mod {0}..."), ModFilename);
                         DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} is being stopped.", ModFilename);
 
                         // Iterate through all the mods
@@ -270,7 +270,7 @@ namespace KS.Modifications
                                     ScriptPartInfo.PartScript.StopMod();
                                     if (!string.IsNullOrWhiteSpace(ScriptPartInfo.PartName) & !string.IsNullOrWhiteSpace(ScriptPartInfo.PartScript.Version))
                                     {
-                                        TextWriterColor.Write(Translate.DoTranslation("{0} v{1} stopped"), true, ColorTools.ColTypes.NeutralText, ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version);
+                                        TextWriterColor.Write(Translate.DoTranslation("{0} v{1} stopped"), ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version);
                                     }
 
                                     // Remove the part from the list
@@ -278,7 +278,7 @@ namespace KS.Modifications
                                 }
 
                                 // Remove the mod from the list
-                                TextWriterColor.Write(Translate.DoTranslation("Mod {0} stopped"), true, ColorTools.ColTypes.NeutralText, TargetMod.ModName);
+                                TextWriterColor.Write(Translate.DoTranslation("Mod {0} stopped"), TargetMod.ModName);
                                 Mods.Remove(Mods.Keys.ElementAtOrDefault(ScriptIndex));
                             }
                         }
@@ -290,7 +290,7 @@ namespace KS.Modifications
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Mod {0} not found."), true, ColorTools.ColTypes.NeutralText, ModFilename);
+                    TextWriterColor.Write(Translate.DoTranslation("Mod {0} not found."), ModFilename);
                 }
             }
             else
@@ -460,7 +460,7 @@ namespace KS.Modifications
                 }
 
                 // Finally, start the mod
-                TextWriterColor.Write(Translate.DoTranslation("Starting mod") + " {0}...", true, ColorTools.ColTypes.NeutralText, Path.GetFileNameWithoutExtension(TargetModPath));
+                TextWriterColor.Write(Translate.DoTranslation("Starting mod") + " {0}...", Path.GetFileNameWithoutExtension(TargetModPath));
                 StartMod(Path.GetFileName(TargetModPath));
             }
             catch (Exception ex)

@@ -35,7 +35,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            TextWriterColor.Write(Translate.DoTranslation("Enter a key or a combination of keys to display its information."), true, ColorTools.ColTypes.NeutralText);
+            TextWriterColor.Write(Translate.DoTranslation("Enter a key or a combination of keys to display its information."));
             var KeyPress = ConsoleBase.ConsoleWrapper.ReadKey(true);
 
             // Pressed key

@@ -57,7 +57,7 @@ namespace KS.Misc.Games
             var Operations = new string[] { "+", "-", "*", "/" };
 
             // Show tip to exit
-            TextWriterColor.Write(Translate.DoTranslation("Press \"q\" to exit."), true, ColorTools.ColTypes.NeutralText);
+            TextWriterColor.Write(Translate.DoTranslation("Press \"q\" to exit."));
             DebugWriter.WriteDebug(DebugLevel.I, "Initialized expressions.");
             while (true)
             {
@@ -83,12 +83,12 @@ namespace KS.Misc.Games
                     if (UserEvaluatedNumber == EvaluatedNumber)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Expression is {0} and equals {1}", UserEvaluated, EvaluatedNumber);
-                        TextWriterColor.Write(Translate.DoTranslation("Solved perfectly!"), true, ColorTools.ColTypes.NeutralText);
+                        TextWriterColor.Write(Translate.DoTranslation("Solved perfectly!"));
                     }
                     else
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Expression is {0} and equals {1}", UserEvaluated, EvaluatedNumber);
-                        TextWriterColor.Write(Translate.DoTranslation("Solved incorrectly."), true, ColorTools.ColTypes.NeutralText);
+                        TextWriterColor.Write(Translate.DoTranslation("Solved incorrectly."));
                     }
                 }
                 else if (UserEvaluated == "q")

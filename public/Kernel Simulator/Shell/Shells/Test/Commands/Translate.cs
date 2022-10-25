@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.Test.Commands
         {
             string Lang = ListArgsOnly[0];
             string Message = ListArgsOnly[1];
-            TextWriterColor.Write(Translate.DoTranslation(Message, Lang), true, ColorTools.ColTypes.NeutralText);
+            TextWriterColor.Write(Translate.DoTranslation(Message, Lang));
         }
 
     }

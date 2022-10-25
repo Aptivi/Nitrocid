@@ -71,7 +71,7 @@ namespace KS.Arguments.ArgumentBase
                 if (HelpUsages.Length != 0)
                 {
                     var Indent = default(bool);
-                    TextWriterColor.Write(Translate.DoTranslation("Usage:"), true, ColorTools.ColTypes.NeutralText);
+                    TextWriterColor.Write(Translate.DoTranslation("Usage:"));
 
                     // Enumerate through the available help usages
                     foreach (string HelpUsage in HelpUsages)

@@ -29,7 +29,7 @@ namespace KS.Shell.Shells.Test.Commands
     class Test_ShowTimeCommand : CommandExecutor, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => TextWriterColor.Write(TimeDateRenderers.RenderTime(), true, ColorTools.ColTypes.NeutralText);
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => TextWriterColor.Write(TimeDateRenderers.RenderTime());
 
     }
 }

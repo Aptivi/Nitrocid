@@ -41,7 +41,7 @@ namespace KS.Shell.Shells.UESH.Commands
             {
                 var Matches = Searching.SearchFileForString(ListArgsOnly[1], ListArgsOnly[0]);
                 foreach (string Match in Matches)
-                    TextWriterColor.Write(Match, true, ColorTools.ColTypes.NeutralText);
+                    TextWriterColor.Write(Match);
             }
             catch (Exception ex)
             {

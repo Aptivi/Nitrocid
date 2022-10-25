@@ -79,7 +79,7 @@ namespace KS.Files.Print
                     {
                         TextWriterColor.Write("{0,4}: ", false, ColorTools.ColTypes.ListEntry, ContentIndex + 1);
                     }
-                    TextWriterColor.Write(Contents[ContentIndex], true, ColorTools.ColTypes.NeutralText);
+                    TextWriterColor.Write(Contents[ContentIndex]);
                 }
             }
         }

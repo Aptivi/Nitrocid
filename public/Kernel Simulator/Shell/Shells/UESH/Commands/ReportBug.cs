@@ -35,7 +35,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            TextWriterColor.Write(Translate.DoTranslation("Thank you for reporting a bug to us! Please follow the instructions on the screen."), true, ColorTools.ColTypes.NeutralText);
+            TextWriterColor.Write(Translate.DoTranslation("Thank you for reporting a bug to us! Please follow the instructions on the screen."));
             Process.Start("https://github.com/Aptivi/Kernel-Simulator/issues/new/choose");
         }
 

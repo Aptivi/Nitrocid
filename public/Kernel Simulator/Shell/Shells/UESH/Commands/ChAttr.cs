@@ -74,11 +74,11 @@ namespace KS.Shell.Shells.UESH.Commands
                         FileAttributes Attrib = (FileAttributes)Convert.ToInt32(Enum.Parse(typeof(FileAttributes), ListArgsOnly[1].Remove(0, 1)));
                         if (AttributeManager.TryAddAttributeToFile(NeutralizedFilePath, Attrib))
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("Attribute has been added successfully."), true, ColorTools.ColTypes.NeutralText, ListArgsOnly[1]);
+                            TextWriterColor.Write(Translate.DoTranslation("Attribute has been added successfully."), ListArgsOnly[1]);
                         }
                         else
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("Failed to add attribute."), true, ColorTools.ColTypes.NeutralText, ListArgsOnly[1]);
+                            TextWriterColor.Write(Translate.DoTranslation("Failed to add attribute."), ListArgsOnly[1]);
                         }
                     }
                     else if (ListArgsOnly[1].StartsWith("-"))
@@ -86,11 +86,11 @@ namespace KS.Shell.Shells.UESH.Commands
                         FileAttributes Attrib = (FileAttributes)Convert.ToInt32(Enum.Parse(typeof(FileAttributes), ListArgsOnly[1].Remove(0, 1)));
                         if (AttributeManager.TryRemoveAttributeFromFile(NeutralizedFilePath, Attrib))
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("Attribute has been removed successfully."), true, ColorTools.ColTypes.NeutralText, ListArgsOnly[1]);
+                            TextWriterColor.Write(Translate.DoTranslation("Attribute has been removed successfully."), ListArgsOnly[1]);
                         }
                         else
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("Failed to remove attribute."), true, ColorTools.ColTypes.NeutralText, ListArgsOnly[1]);
+                            TextWriterColor.Write(Translate.DoTranslation("Failed to remove attribute."), ListArgsOnly[1]);
                         }
                     }
                 }
@@ -107,7 +107,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void HelpHelper()
         {
-            TextWriterColor.Write(Translate.DoTranslation("where <attributes> is one of the following:"), true, ColorTools.ColTypes.NeutralText);
+            TextWriterColor.Write(Translate.DoTranslation("where <attributes> is one of the following:"));
             TextWriterColor.Write("- Normal: ", false, ColorTools.ColTypes.ListEntry);
             TextWriterColor.Write(Translate.DoTranslation("The file is a normal file"), true, ColorTools.ColTypes.ListValue);                   // Normal   = 128
             TextWriterColor.Write("- ReadOnly: ", false, ColorTools.ColTypes.ListEntry);

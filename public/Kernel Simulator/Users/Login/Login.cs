@@ -163,7 +163,7 @@ namespace KS.Users.Login
                 {
                     // Generate user list
                     if (Flags.ShowAvailableUsers)
-                        TextWriterColor.Write(Translate.DoTranslation("Available usernames: {0}"), true, ColorTools.ColTypes.NeutralText, string.Join(", ", UsersList));
+                        TextWriterColor.Write(Translate.DoTranslation("Available usernames: {0}"), string.Join(", ", UsersList));
 
                     // Prompt user to login
                     if (!string.IsNullOrWhiteSpace(UsernamePrompt))

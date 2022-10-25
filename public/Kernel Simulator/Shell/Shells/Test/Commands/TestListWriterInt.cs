@@ -34,9 +34,9 @@ namespace KS.Shell.Shells.Test.Commands
         {
             var NormalIntegerList = new List<int>() { 1, 2, 3 };
             var ArrayIntegerList = new List<int[]>() { { new int[] { 1, 2, 3 } }, { new int[] { 1, 2, 3 } }, { new int[] { 1, 2, 3 } } };
-            TextWriterColor.Write(Translate.DoTranslation("Normal integer list:"), true, ColorTools.ColTypes.NeutralText);
+            TextWriterColor.Write(Translate.DoTranslation("Normal integer list:"));
             ListWriterColor.WriteList(NormalIntegerList);
-            TextWriterColor.Write(Translate.DoTranslation("Array integer list:"), true, ColorTools.ColTypes.NeutralText);
+            TextWriterColor.Write(Translate.DoTranslation("Array integer list:"));
             ListWriterColor.WriteList(ArrayIntegerList);
         }
 

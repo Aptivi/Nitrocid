@@ -40,7 +40,7 @@ namespace KS.Shell.Shells.UESH.Commands
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
             UserManagement.RemoveUser(ListArgsOnly[0]);
-            TextWriterColor.Write(Translate.DoTranslation("User {0} removed."), true, ColorTools.ColTypes.NeutralText, ListArgsOnly[0]);
+            TextWriterColor.Write(Translate.DoTranslation("User {0} removed."), ListArgsOnly[0]);
         }
 
     }

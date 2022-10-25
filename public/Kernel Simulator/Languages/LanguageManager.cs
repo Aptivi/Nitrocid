@@ -182,7 +182,7 @@ namespace KS.Languages
                             }
                             else
                             {
-                                TextWriterColor.Write(Translate.DoTranslation("The language you've selected contains two variants. Select one:") + CharManager.NewLine, true, ColorTools.ColTypes.NeutralText);
+                                TextWriterColor.Write(Translate.DoTranslation("The language you've selected contains two variants. Select one:") + CharManager.NewLine);
                                 TextWriterColor.Write(" 1) " + Translate.DoTranslation("Transliterated version", lang), true, ColorTools.ColTypes.Option);
                                 TextWriterColor.Write(" 2) " + Translate.DoTranslation("Translated version", lang + "-T") + CharManager.NewLine, true, ColorTools.ColTypes.Option);
                                 var LanguageSet = default(bool);
@@ -233,7 +233,7 @@ namespace KS.Languages
                 }
 
                 // Now, set the language!
-                TextWriterColor.Write(Translate.DoTranslation("Changing from: {0} to {1}..."), true, ColorTools.ColTypes.NeutralText, CurrentLanguage, lang);
+                TextWriterColor.Write(Translate.DoTranslation("Changing from: {0} to {1}..."), CurrentLanguage, lang);
                 if (!SetLang(lang))
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Failed to set language."), true, ColorTools.ColTypes.Error);

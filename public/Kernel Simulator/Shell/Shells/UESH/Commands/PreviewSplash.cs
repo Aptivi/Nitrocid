@@ -43,7 +43,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void HelpHelper()
         {
-            TextWriterColor.Write(Translate.DoTranslation("Available splashes:"), true, ColorTools.ColTypes.NeutralText);
+            TextWriterColor.Write(Translate.DoTranslation("Available splashes:"));
             ListWriterColor.WriteList(SplashManager.Splashes.Keys);
         }
 

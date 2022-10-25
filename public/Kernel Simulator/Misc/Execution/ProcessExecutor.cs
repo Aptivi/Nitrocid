@@ -161,7 +161,7 @@ namespace KS.Misc.Execution
         {
             NewDataSpotted = true;
             DebugWriter.WriteDebug(DebugLevel.I, outLine.Data);
-            TextWriterColor.Write(outLine.Data, true, ColorTools.ColTypes.NeutralText);
+            TextWriterColor.Write(outLine.Data);
             ProcessData += outLine.Data;
         }
 

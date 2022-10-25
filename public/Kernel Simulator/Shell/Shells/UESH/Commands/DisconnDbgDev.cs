@@ -38,7 +38,7 @@ namespace KS.Shell.Shells.UESH.Commands
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
             RemoteDebugTools.DisconnectDbgDev(ListArgsOnly[0]);
-            TextWriterColor.Write(Translate.DoTranslation("Device {0} disconnected."), true, ColorTools.ColTypes.NeutralText, ListArgsOnly[0]);
+            TextWriterColor.Write(Translate.DoTranslation("Device {0} disconnected."), ListArgsOnly[0]);
         }
 
     }

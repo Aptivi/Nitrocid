@@ -262,7 +262,7 @@ namespace KS.Kernel
                     {
                         MotdParse.ReadMotd();
                         MalParse.ReadMal();
-                        TextWriterColor.Write(Translate.DoTranslation("Enter the admin password for maintenance."), true, ColorTools.ColTypes.NeutralText);
+                        TextWriterColor.Write(Translate.DoTranslation("Enter the admin password for maintenance."));
                         if (Login.Users.ContainsKey("root"))
                         {
                             DebugWriter.WriteDebug(DebugLevel.I, "Root account found. Prompting for password...");

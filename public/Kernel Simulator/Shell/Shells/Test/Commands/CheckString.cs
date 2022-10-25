@@ -39,7 +39,7 @@ namespace KS.Shell.Shells.Test.Commands
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("String not found in the localization resources."), true, ColorTools.ColTypes.NeutralText);
+                TextWriterColor.Write(Translate.DoTranslation("String not found in the localization resources."));
             }
         }
 

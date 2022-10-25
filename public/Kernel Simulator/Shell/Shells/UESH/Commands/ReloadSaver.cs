@@ -52,7 +52,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void HelpHelper() =>
             // Print available screensavers
-            TextWriterColor.Write(Translate.DoTranslation("where customsaver will be") + " {0}", true, ColorTools.ColTypes.NeutralText, string.Join(", ", CustomSaverTools.CustomSavers.Keys));
+            TextWriterColor.Write(Translate.DoTranslation("where customsaver will be") + " {0}", string.Join(", ", CustomSaverTools.CustomSavers.Keys));
 
     }
 }
