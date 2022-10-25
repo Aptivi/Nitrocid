@@ -18,7 +18,13 @@
 
 using System;
 using System.IO;
+using Extensification.StringExts;
+using KS.ConsoleBase.Colors;
+using KS.Files.Querying;
 using KS.Kernel.Debugging;
+using KS.Languages;
+using KS.Misc.Writers.ConsoleWriters;
+using UnitsNet;
 
 namespace KS.Files.Operations
 {
@@ -32,13 +38,49 @@ namespace KS.Files.Operations
         /// Removes a directory
         /// </summary>
         /// <param name="Target">Target directory</param>
-        public static void RemoveDirectory(string Target)
+        public static void RemoveDirectory(string Target) =>
+            RemoveDirectory(Target, Filesystem.ShowFilesystemProgress);
+
+        /// <summary>
+        /// Removes a directory
+        /// </summary>
+        /// <param name="Target">Target directory</param>
+        /// <param name="ShowProgress">Whether or not to show what files are being removed</param>
+        public static void RemoveDirectory(string Target, bool ShowProgress)
         {
             Filesystem.ThrowOnInvalidPath(Target);
-            string Dir = Filesystem.NeutralizePath(Target);
-            Directory.Delete(Dir, true);
+            if (!Checking.FolderExists(Target))
+                throw new IOException(Translate.DoTranslation("Directory {0} not found.").FormatString(Target));
+
+            // Get all source directories and files
+            var SourceDirInfo = new DirectoryInfo(Target);
+            var SourceDirectories = SourceDirInfo.GetDirectories();
+            DebugWriter.WriteDebug(DebugLevel.I, "Source directories: {0}", SourceDirectories.Length);
+            var SourceFiles = SourceDirInfo.GetFiles();
+            DebugWriter.WriteDebug(DebugLevel.I, "Source files: {0}", SourceFiles.Length);
+
+            // Iterate through every file and delete them
+            foreach (FileInfo SourceFile in SourceFiles)
+            {
+                string DestinationFilePath = Path.Combine(Target, SourceFile.Name);
+                DebugWriter.WriteDebug(DebugLevel.I, "Removing file {0}...", DestinationFilePath);
+                if (ShowProgress)
+                    TextWriterColor.Write("-> {0}", true, ColorTools.ColTypes.NeutralText, DestinationFilePath);
+                RemoveFile(DestinationFilePath);
+            }
+
+            // Iterate through every subdirectory and delete them
+            foreach (DirectoryInfo SourceDirectory in SourceDirectories)
+            {
+                string DestinationDirectoryPath = Path.Combine(Target, SourceDirectory.Name);
+                DebugWriter.WriteDebug(DebugLevel.I, "Calling RemoveDirectory() with destination {0}...", DestinationDirectoryPath);
+                if (ShowProgress)
+                    TextWriterColor.Write("* {0}", true, ColorTools.ColTypes.NeutralText, DestinationDirectoryPath);
+                RemoveDirectory(DestinationDirectoryPath);
+            }
 
             // Raise event
+            Directory.Delete(Target, true);
             Kernel.Events.EventsManager.FireEvent("DirectoryRemoved", Target);
         }
 
