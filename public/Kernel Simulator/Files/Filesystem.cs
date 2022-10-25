@@ -36,7 +36,7 @@ namespace KS.Files
     {
 
         /// <summary>
-        /// Shows the filesystem progress (currently copy only)
+        /// Shows the filesystem progress
         /// </summary>
         public static bool ShowFilesystemProgress = true;
 
