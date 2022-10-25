@@ -16,6 +16,12 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+// Note: The new localizable strings during the development of the next version
+//       of Kernel Simulator are found in the source code, which is:
+//
+//       Kernel Simulator Source -> Internal -> NewStrings.txt
+//       which is found in: ProjectRoot/private/NewStrings.txt
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

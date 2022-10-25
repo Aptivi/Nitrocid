@@ -1,0 +1,102 @@
+New strings to be added should be found here. Addition of these strings will be added by Release Candidate and are removed from this file.
+==========================================================================================================================================
+
+Redirection supported?
+Lists all available units
+Available unit types:
+No such unit type:
+Running from GRILO?
+Error when trying to set MAL: {0}
+Error when trying to get MAL: {0}
+Error when trying to set MOTD: {0}
+Error when trying to get MOTD: {0}
+Use apt to update Kernel Simulator.
+Set console background color
+If you want to set the background color to your favorite terminal emulator color, set it to false. Otherwise, Kernel Simulator will set its own background colors.
+Next gradient rot interval
+How many milliseconds to wait before rotting the next screen?
+Siren style
+The siren style.
+Tests arguments
+Tests switches
+Normal passed switches:
+Switches with values:
+Interactive system host file manager
+Beeps from the console
+Opens the archive file to the archive shell
+Combines the two text files or more into the console.
+Archive is not writable because type is
+Archive Shell Prompt Preset
+Trying to fix configuration...
+Selects a theme and sets it
+Would you like to set this theme to {0}?
+Yes, set it!
+No, don't set it.
+Maintenance Mode
+You have either found a bug, or the group you tried to add or remove is already done, or other error.
+Failed to add user into group lists: invalid type {0}
+Failed to add user into group lists: invalid user {0}
+Failed to remove user from group lists: invalid type {0}
+Failed to remove user from group lists: invalid user {0}
+You have either found a bug, or the group you tried to edit for a new user has failed.
+One of the group lists doesn't contain username {0}.
+Groups loaded
+Mod {0} requires minimum API version {1}, but you have version {2}. Upgrading Kernel Simulator usually helps. Mod parsing failed.
+Mod {0} may not work properly with this API version. Mod may fail to start up. Contact the mod vendor to get a latest copy.
+Preview splash
+General kernel settings
+Color settings
+Hardware settings
+Login settings
+General shell settings
+Filesystem settings
+General networking settings
+Basic screensaver settings
+Miscellaneous settings
+Open color type selector...
+Select a theme
+Ready!
+Stopwatch running!
+What's your bet?
+You guessed it right!
+You got it wrong.
+But, you're unlucky. Loser.
+You're lucky! Winner!
+Russian Roulette
+Tried to remove an internal algorithm. This isn't possible.
+Searches the feed for a phrase in title and/or description
+Binary file:
+MIME metadata:
+Shows information about the JSON file
+Base type
+Base has values
+Base path
+Token type
+Token has values
+Token path
+Token value
+Property count
+Property name
+Property value
+Property path
+Base JSON token information
+Individual JSON token information
+Property information for
+Property type
+Adds a new property containing the array
+Adds a new object inside the array
+You're running the development version of the kernel. While you can experience upcoming features which may exist in the final release, you may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible.
+You're running the release candidate version of the kernel. While you can experience the final touches, you may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible.
+We recommend against running this version of the kernel, because it is unsupported. If you have downloaded this kernel from unknown sources, this message may appear. Please download from our official downloads page.
+* You can use multiple commands using the semicolon between commands.
+Highlight this entry to go to the next page.
+Event {0} not found.
+Administrative shell
+Gets current kernel journal log
+You're Lost!
+{0} -- Rebooting in {1} seconds...
+Previews the splash
+Available splashes:
+Available screensavers:
+
+==========================================================================================================================================
