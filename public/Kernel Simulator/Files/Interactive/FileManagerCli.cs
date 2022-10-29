@@ -22,6 +22,7 @@ using FluentFTP.Helpers;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Files.Folders;
+using KS.Files.Operations;
 using KS.Files.Querying;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
@@ -50,8 +51,14 @@ namespace KS.Files.Interactive
         private static List<FileSystemInfo> cachedFileInfosSecondPane = new();
         private static List<FileManagerBinding> fileManagerBindings = new()
         {
-            new FileManagerBinding("Exit"  , ConsoleKey.Escape, (_, _, _) => isExiting = true),
-            new FileManagerBinding("Switch", ConsoleKey.Tab   , (_, _, _) =>
+            // Operations
+            new FileManagerBinding("Copy",   ConsoleKey.F1, (destinationPath, sourcePath) => Copying.CopyFileOrDir(sourcePath.FullName, destinationPath)),
+            new FileManagerBinding("Move",   ConsoleKey.F2, (destinationPath, sourcePath) => Moving.MoveFileOrDir(sourcePath.FullName, destinationPath)),
+            new FileManagerBinding("Delete", ConsoleKey.F3, (_,               sourcePath) => Removing.RemoveFileOrDir(sourcePath.FullName)),
+
+            // Misc bindings
+            new FileManagerBinding("Exit"  , ConsoleKey.Escape, (_, _) => isExiting = true),
+            new FileManagerBinding("Switch", ConsoleKey.Tab   , (_, _) =>
             {
                 currentPane++;
                 if (currentPane > 2)
@@ -222,9 +229,15 @@ namespace KS.Files.Interactive
                 }
 
                 // Now, populate the current file/folder info from the current pane
-                var FileInfoCurrentPane = currentPane == 2 ?
-                                          cachedFileInfosSecondPane[secondPaneCurrentSelection - 1] :
-                                          cachedFileInfosFirstPane[firstPaneCurrentSelection - 1];
+                var FileInfoCurrentPane =    currentPane == 2 ?
+                                             cachedFileInfosSecondPane[secondPaneCurrentSelection - 1] :
+                                             cachedFileInfosFirstPane[firstPaneCurrentSelection - 1];
+                var PathCurrentPane =        currentPane == 2 ?
+                                             secondPath :
+                                             firstPath;
+                var CachedFilesCurrentPane = currentPane == 2 ?
+                                             cachedFileInfosSecondPane :
+                                             cachedFileInfosFirstPane;
 
                 // Write file info
                 bool infoIsDirectory = Checking.FolderExists(FileInfoCurrentPane.FullName);
@@ -242,9 +255,24 @@ namespace KS.Files.Interactive
 
                 // Wait for key
                 ConsoleKey pressedKey = ConsoleWrapper.ReadKey(true).Key;
-                var implementedBindings = fileManagerBindings.Where((binding) => binding.BindingKeyName == pressedKey);
-                foreach (var implementedBinding in implementedBindings)
-                    implementedBinding.BindingAction.Invoke(firstPath, secondPath, FileInfoCurrentPane);
+                switch (pressedKey)
+                {
+                    case ConsoleKey.UpArrow:
+                        firstPaneCurrentSelection--;
+                        if (firstPaneCurrentSelection < 1)
+                            firstPaneCurrentSelection = CachedFilesCurrentPane.Count;
+                        break;
+                    case ConsoleKey.DownArrow:
+                        firstPaneCurrentSelection++;
+                        if (firstPaneCurrentSelection > CachedFilesCurrentPane.Count)
+                            firstPaneCurrentSelection = 1;
+                        break;
+                    default:
+                        var implementedBindings = fileManagerBindings.Where((binding) => binding.BindingKeyName == pressedKey);
+                        foreach (var implementedBinding in implementedBindings)
+                            implementedBinding.BindingAction.Invoke(PathCurrentPane, FileInfoCurrentPane);
+                        break;
+                }
             }
 
             // Clear the console to clean up

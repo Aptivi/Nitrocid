@@ -19,7 +19,7 @@
 using System;
 using System.IO;
 using Extensification.StringExts;
-using KS.ConsoleBase.Colors;
+using KS.Kernel.Exceptions;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -127,6 +127,40 @@ namespace KS.Files.Operations
             try
             {
                 RemoveFile(Target);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Removes file or directory
+        /// </summary>
+        /// <param name="Target">Path to file or directory</param>
+        /// <exception cref="FilesystemException"></exception>
+        public static void RemoveFileOrDir(string Target)
+        {
+            if (Checking.FileExists(Target))
+                RemoveFile(Target);
+            else if (Checking.FolderExists(Target))
+                RemoveDirectory(Target);
+            else
+                throw new FilesystemException(Translate.DoTranslation("File or directory {0} doesn't exist."), Target);
+        }
+
+        /// <summary>
+        /// Removes a file or directory
+        /// </summary>
+        /// <param name="Target">Target file or directory</param>
+        /// <returns>True if successful; False if unsuccessful</returns>
+        public static bool TryRemoveFileOrDir(string Target)
+        {
+            try
+            {
+                RemoveFileOrDir(Target);
                 return true;
             }
             catch (Exception ex)
