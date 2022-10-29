@@ -39,9 +39,9 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             try
             {
-                string Res = SMath.Evaluate(StringArgs).ToString();
+                double Res = ((MathExpr)StringArgs).Result;
                 DebugWriter.WriteDebug(DebugLevel.I, "Res = {0}", Res);
-                TextWriterColor.Write(StringArgs + " = " + Res);
+                TextWriterColor.Write(StringArgs + " = " + Res.ToString());
             }
             catch (Exception ex)
             {
