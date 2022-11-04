@@ -243,7 +243,6 @@ namespace KS.Kernel.Configuration
                 { "Check debug quota", Flags.CheckDebugQuota },
                 { "Automatically download updates", Flags.AutoDownloadUpdate },
                 { "Enable event debugging", Flags.EventDebug },
-                { "New welcome banner", Flags.NewWelcomeStyle },
                 { "Stylish splash screen", Flags.EnableSplash },
                 { "Splash name", SplashManager.SplashName },
                 { "Banner figlet font", KernelTools.BannerFigletFont },
@@ -1689,7 +1688,6 @@ namespace KS.Kernel.Configuration
             Flags.CheckDebugQuota = (bool)ConfigToken["General"]["Check debug quota"];
             Flags.AutoDownloadUpdate = (bool)ConfigToken["General"]["Automatically download updates"];
             Flags.EventDebug = (bool)ConfigToken["General"]["Enable event debugging"];
-            Flags.NewWelcomeStyle = (bool)ConfigToken["General"]["New welcome banner"];
             Flags.EnableSplash = (bool)ConfigToken["General"]["Stylish splash screen"];
             SplashManager.SplashName = (string)ConfigToken["General"]["Splash name"] ?? "Simple";
             KernelTools.BannerFigletFont = (string)ConfigToken["General"]["Banner figlet font"] ?? "Banner";

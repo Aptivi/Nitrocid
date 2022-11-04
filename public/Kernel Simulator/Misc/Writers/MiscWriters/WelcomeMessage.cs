@@ -77,16 +77,8 @@ namespace KS.Misc.Writers.MiscWriters
                     TextWriterColor.Write(MessageWrite, true, ColorTools.ColTypes.Banner, KernelTools.KernelVersion.ToString());
                 }
 
-                if (Flags.NewWelcomeStyle)
-                {
-                    string FigletRenderedBanner = FigletTools.RenderFiglet($"{KernelTools.KernelVersion}", KernelTools.BannerFigletFont);
-                    TextWriterColor.Write(CharManager.NewLine + CharManager.NewLine + FigletRenderedBanner);
-                }
-                else
-                {
-                    // Show license
-                    WriteLicense(true);
-                }
+                string FigletRenderedBanner = FigletTools.RenderFiglet($"{KernelTools.KernelVersion}", KernelTools.BannerFigletFont);
+                TextWriterColor.Write(CharManager.NewLine + CharManager.NewLine + FigletRenderedBanner);
                 ConsoleBase.ConsoleWrapper.CursorVisible = true;
             }
         }

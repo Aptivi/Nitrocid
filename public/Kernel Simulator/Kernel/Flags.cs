@@ -222,10 +222,6 @@ namespace KS.Kernel
         /// </summary>
         public static bool EventDebug;
         /// <summary>
-        /// Use the new welcome style for the kernel (uses the Figlet text rendering)
-        /// </summary>
-        public static bool NewWelcomeStyle = true;
-        /// <summary>
         /// Enable the stylish splash screen in place of the regular verbose boot messages
         /// </summary>
         public static bool EnableSplash = true;
