@@ -44,8 +44,6 @@ namespace KS.Files.Interactive
     public static class FileManagerCli
     {
         private static bool isExiting = false;
-        private static int firstPaneCurrentPage = 1;
-        private static int secondPaneCurrentPage = 1;
         private static int firstPaneCurrentSelection = 1;
         private static int secondPaneCurrentSelection = 1;
         private static int currentPane = 1;
