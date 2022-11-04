@@ -308,6 +308,18 @@ namespace KS.Files.Interactive
                                 firstPaneCurrentSelection = 1;
                         }
                         break;
+                    case ConsoleKey.PageUp:
+                        if (currentPane == 2)
+                            secondPaneCurrentSelection = 1;
+                        else
+                            firstPaneCurrentSelection = 1;
+                        break;
+                    case ConsoleKey.PageDown:
+                        if (currentPane == 2)
+                            secondPaneCurrentSelection = CachedFilesCurrentPane.Count;
+                        else
+                            firstPaneCurrentSelection = CachedFilesCurrentPane.Count;
+                        break;
                     default:
                         var implementedBindings = fileManagerBindings.Where((binding) => binding.BindingKeyName == pressedKey);
                         foreach (var implementedBinding in implementedBindings)
