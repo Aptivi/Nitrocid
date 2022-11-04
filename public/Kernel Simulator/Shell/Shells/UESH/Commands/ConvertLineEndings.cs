@@ -47,7 +47,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// </list>
     /// <br></br>
     /// </remarks>
-    class ConvertLineEndingsCommand : CommandExecutor, ICommand
+    class ConvertLineEndingsCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

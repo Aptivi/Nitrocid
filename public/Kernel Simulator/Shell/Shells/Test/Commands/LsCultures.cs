@@ -26,7 +26,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It lets you test the available cultures installed on the system.
     /// </summary>
-    class Test_LsCulturesCommand : CommandExecutor, ICommand
+    class Test_LsCulturesCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

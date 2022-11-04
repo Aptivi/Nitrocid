@@ -30,7 +30,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// This shows you the detailed hardware information, including the CPU information and its features.
     /// </remarks>
-    class HwInfoCommand : CommandExecutor, ICommand
+    class HwInfoCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => HardwareList.ListHardware(ListArgsOnly[0]);

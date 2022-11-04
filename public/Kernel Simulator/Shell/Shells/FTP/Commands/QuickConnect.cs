@@ -32,7 +32,7 @@ namespace KS.Shell.Shells.FTP.Commands
     /// <br></br>
     /// For this, we have implemented this command for easier access to FTP servers.
     /// </remarks>
-    class FTP_QuickConnectCommand : CommandExecutor, ICommand
+    class FTP_QuickConnectCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

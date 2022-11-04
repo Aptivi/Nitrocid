@@ -26,7 +26,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// If you are trying to focus on one thing and you can't do it, or if you want the personal info printed by commands hidden, you can clear your screen from clutter to gain focus and reduce eyestrain.
     /// </remarks>
-    class ClsCommand : CommandExecutor, ICommand
+    class ClsCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => ConsoleBase.ConsoleWrapper.Clear();

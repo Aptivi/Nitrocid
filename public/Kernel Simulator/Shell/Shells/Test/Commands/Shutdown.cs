@@ -24,7 +24,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It shuts down the system.
     /// </summary>
-    class Test_ShutdownCommand : CommandExecutor, ICommand
+    class Test_ShutdownCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

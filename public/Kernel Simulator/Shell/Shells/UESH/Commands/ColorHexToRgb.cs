@@ -30,7 +30,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// If you want to get the RGB color numbers from the hexadecimal representation of the color, you can use this command.
     /// </remarks>
-    class ColorHexToRgbCommand : CommandExecutor, ICommand
+    class ColorHexToRgbCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

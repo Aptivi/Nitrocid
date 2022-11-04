@@ -29,7 +29,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// This command will repeat back the string that you have entered. It is used in scripting to print text. It supports $variable parsing.
     /// </remarks>
-    class EchoCommand : CommandExecutor, ICommand
+    class EchoCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => TextWriterColor.Write(PlaceParse.ProbePlaces(StringArgs));

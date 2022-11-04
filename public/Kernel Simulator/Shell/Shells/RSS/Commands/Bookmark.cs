@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.RSS.Commands
     /// <remarks>
     /// If you want to bookmark the current feed that you're in, you can use this command.
     /// </remarks>
-    class RSS_BookmarkCommand : CommandExecutor, ICommand
+    class RSS_BookmarkCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => RSSBookmarkManager.AddRSSFeedToBookmark();

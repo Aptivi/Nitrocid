@@ -28,7 +28,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It lets you estimate the time taken to encode a specified string on milliseconds using SHA1 algorithm.
     /// </summary>
-    class Test_TestSHA1Command : CommandExecutor, ICommand
+    class Test_TestSHA1Command : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

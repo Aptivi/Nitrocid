@@ -26,7 +26,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// Opens the colorwheel facility to test choosing the color based on the type of color whether it's a 255-color or a true color.
     /// </summary>
-    class Test_ColorWheelCommand : CommandExecutor, ICommand
+    class Test_ColorWheelCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

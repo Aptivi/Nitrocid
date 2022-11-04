@@ -36,7 +36,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// You can use this command to view directory information.
     /// </remarks>
-    class DirInfoCommand : CommandExecutor, ICommand
+    class DirInfoCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

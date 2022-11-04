@@ -58,7 +58,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// </list>
     /// <br></br>
     /// </remarks>
-    class ChAttrCommand : CommandExecutor, ICommand
+    class ChAttrCommand : BaseCommand, ICommand
     {
 
         // Warning: Don't use ListSwitchesOnly to replace ListArgsOnly(1); the removal signs of ChAttr are treated as switches and will cause unexpected behavior if changed.

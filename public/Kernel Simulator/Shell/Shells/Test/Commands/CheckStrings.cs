@@ -28,7 +28,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// Checks the specified strings in a separate text file if they exist in the localization files found in the resources of KS (found in the language JSON file)
     /// </summary>
-    class Test_CheckStringsCommand : CommandExecutor, ICommand
+    class Test_CheckStringsCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

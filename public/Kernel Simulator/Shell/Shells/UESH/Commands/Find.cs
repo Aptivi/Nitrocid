@@ -29,7 +29,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// If you are looking for a file and you can't remember where, using this command will help you find it.
     /// </remarks>
-    class FindCommand : CommandExecutor, ICommand
+    class FindCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

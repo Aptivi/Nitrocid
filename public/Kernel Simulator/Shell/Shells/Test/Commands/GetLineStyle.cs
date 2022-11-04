@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// Gets the line ending style from text file.
     /// </summary>
-    class Test_GetLineStyleCommand : CommandExecutor, ICommand
+    class Test_GetLineStyleCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

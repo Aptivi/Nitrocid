@@ -29,7 +29,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// This command lists all the defined UESH variables by either the set or the setrange commands, UESH commands that define and set a variable to a value (choice, ...), a UESH script, a mod, or your system's environment variables.
     /// </remarks>
-    class LsVarsCommand : CommandExecutor, ICommand
+    class LsVarsCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

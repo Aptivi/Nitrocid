@@ -56,7 +56,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <br></br>
     /// If you run across a hash file that verify can't parse, feel free to post an issue or make a PR.
     /// </remarks>
-    class VerifyCommand : CommandExecutor, ICommand
+    class VerifyCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

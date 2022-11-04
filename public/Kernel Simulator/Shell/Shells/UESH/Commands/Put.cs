@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// This command uploads a file from the website to a file, preserving the file name. This is currently very basic, but it will be expanded in future releases.
     /// </remarks>
-    class PutCommand : CommandExecutor, ICommand
+    class PutCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

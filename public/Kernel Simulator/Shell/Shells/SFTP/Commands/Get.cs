@@ -30,7 +30,7 @@ namespace KS.Shell.Shells.SFTP.Commands
     /// <remarks>
     /// Downloads the binary or text file and saves it to the current working local directory for you to use the downloaded file that is provided in the SFTP server.
     /// </remarks>
-    class SFTP_GetCommand : CommandExecutor, ICommand
+    class SFTP_GetCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

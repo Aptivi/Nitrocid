@@ -28,7 +28,7 @@ namespace KS.Shell.Shells.Json.Commands
     /// <summary>
     /// Gets information about the JSON file and its contents
     /// </summary>
-    class JsonShell_JsonInfoCommand : CommandExecutor, ICommand
+    class JsonShell_JsonInfoCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

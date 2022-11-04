@@ -35,7 +35,7 @@ namespace KS.Shell.Shells.Mail.Commands
     /// <br></br>
     /// This command will decrypt the mail message before displaying it, assuming that you have the public key.
     /// </remarks>
-    class Mail_ReadEncCommand : CommandExecutor, ICommand
+    class Mail_ReadEncCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

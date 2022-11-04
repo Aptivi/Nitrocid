@@ -24,7 +24,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It lets you blacklist a mod in the testing shell.
     /// </summary>
-    class Test_BlacklistModCommand : CommandExecutor, ICommand
+    class Test_BlacklistModCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => ModManager.AddModToBlacklist(ListArgsOnly[0]);

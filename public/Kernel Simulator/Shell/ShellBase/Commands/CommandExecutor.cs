@@ -18,36 +18,127 @@
 
 using System;
 using System.IO;
+using System.Threading;
+using KS.ConsoleBase.Colors;
+using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Kernel.Debugging.RemoteDebug.Interface;
+using KS.Languages;
+using KS.Misc.Text;
+using KS.Misc.Writers.MiscWriters;
+using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.ShellBase.Commands
 {
     /// <summary>
-    /// The command executor class
+    /// Command parser module
     /// </summary>
-    public abstract class CommandExecutor : ICommand, IRemoteDebugCommand
+    public static class CommandExecutor
     {
+
+        /// <summary>
+        /// Parameters to pass to <see cref="ExecuteCommand(ExecuteCommandParameters)"/>
+        /// </summary>
+        internal class ExecuteCommandParameters
+        {
+            /// <summary>
+            /// The requested command with arguments
+            /// </summary>
+            internal string RequestedCommand;
+            /// <summary>
+            /// The shell type
+            /// </summary>
+            internal string ShellType;
+            /// <summary>
+            /// The debug device stream writer
+            /// </summary>
+            internal StreamWriter DebugDeviceSocket;
+            /// <summary>
+            /// Remote debug device address
+            /// </summary>
+            internal string Address;
+
+            internal ExecuteCommandParameters(string RequestedCommand, ShellType ShellType, StreamWriter DebugDeviceSocket = null, string Address = "") : 
+                this(RequestedCommand, Shell.GetShellTypeName(ShellType), DebugDeviceSocket, Address) 
+            { }
+
+            internal ExecuteCommandParameters(string RequestedCommand, string ShellType, StreamWriter DebugDeviceSocket = null, string Address = "")
+            {
+                this.RequestedCommand = RequestedCommand;
+                this.ShellType = ShellType;
+                this.DebugDeviceSocket = DebugDeviceSocket;
+                this.Address = Address;
+            }
+        }
 
         /// <summary>
         /// Executes a command
         /// </summary>
-        /// <param name="StringArgs">String of arguments</param>
-        /// <param name="ListArgsOnly">List of all arguments</param>
-        /// <param name="ListSwitchesOnly">List of all switches</param>
-        /// <exception cref="InvalidOperationException"></exception>
-        public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        /// <param name="ThreadParams">Thread parameters for ExecuteCommand.</param>
+        internal static void ExecuteCommand(ExecuteCommandParameters ThreadParams)
         {
-            DebugWriter.WriteDebug(DebugLevel.F, "We shouldn't be here!!!");
-            throw new InvalidOperationException();
+            string RequestedCommand = ThreadParams.RequestedCommand;
+            string ShellType = ThreadParams.ShellType;
+            var DebugDeviceSocket = ThreadParams.DebugDeviceSocket;
+            string DebugDeviceAddress = ThreadParams.Address;
+            try
+            {
+                // Variables
+                var ArgumentInfo = new ProvidedCommandArgumentsInfo(RequestedCommand, ShellType);
+                string Command = ArgumentInfo.Command;
+                var Args = ArgumentInfo.ArgumentsList;
+                var Switches = ArgumentInfo.SwitchesList;
+                string StrArgs = ArgumentInfo.ArgumentsText;
+                bool RequiredArgumentsProvided = ArgumentInfo.RequiredArgumentsProvided;
+                var TargetCommands = CommandManager.GetCommands(ShellType);
+
+                // Check to see if a requested command is obsolete
+                if (TargetCommands[Command].Flags.HasFlag(CommandFlags.Obsolete))
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "The command requested {0} is obsolete", Command);
+                    Decisive.DecisiveWrite(ShellType, DebugDeviceSocket, Translate.DoTranslation("This command is obsolete and will be removed in a future release."), true, ColorTools.ColTypes.NeutralText);
+                }
+
+                // If there are enough arguments provided, execute. Otherwise, fail with not enough arguments.
+                if (TargetCommands[Command].CommandArgumentInfo is not null)
+                {
+                    var ArgInfo = TargetCommands[Command].CommandArgumentInfo;
+                    if (ArgInfo.ArgumentsRequired & RequiredArgumentsProvided | !ArgInfo.ArgumentsRequired)
+                    {
+                        var CommandBase = TargetCommands[Command].CommandBase;
+                        if ((CommandBase is RemoteDebugCommandExecutor || CommandBase.GetType().GetInterface(typeof(IRemoteDebugCommand).Name) != null) && DebugDeviceSocket != null)
+                            ((IRemoteDebugCommand)CommandBase).Execute(StrArgs, Args, Switches, DebugDeviceSocket, DebugDeviceAddress);
+                        else
+                            CommandBase.Execute(StrArgs, Args, Switches);
+                    }
+                    else
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough arguments for {0}", Command);
+                        Decisive.DecisiveWrite(ShellType, DebugDeviceSocket, Translate.DoTranslation("There was not enough arguments. See below for usage:"), true, ColorTools.ColTypes.NeutralText);
+                        HelpSystem.ShowHelp(Command, ShellType);
+                    }
+                }
+                else
+                {
+                    var CommandBase = TargetCommands[Command].CommandBase;
+                    if ((CommandBase is RemoteDebugCommandExecutor || CommandBase.GetType().GetInterface(typeof(IRemoteDebugCommand).Name) != null) && DebugDeviceSocket != null)
+                        ((IRemoteDebugCommand)CommandBase).Execute(StrArgs, Args, Switches, DebugDeviceSocket, DebugDeviceAddress);
+                    else
+                        CommandBase.Execute(StrArgs, Args, Switches);
+                }
+            }
+            catch (ThreadInterruptedException)
+            {
+                Flags.CancelRequested = false;
+                return;
+            }
+            catch (Exception ex)
+            {
+                Kernel.Events.EventsManager.FireEvent("CommandError", ShellType, RequestedCommand, ex);
+                DebugWriter.WriteDebugStackTrace(ex);
+                Decisive.DecisiveWrite(ShellType, DebugDeviceSocket, Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, ColorTools.ColTypes.Error, ex.GetType().FullName, ex.Message, RequestedCommand);
+            }
         }
-
-        void IRemoteDebugCommand.Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, StreamWriter SocketStreamWriter, string DeviceAddress) { }
-
-        /// <summary>
-        /// The help helper
-        /// </summary>
-        public virtual void HelpHelper() => DebugWriter.WriteDebug(DebugLevel.I, "No additional information found.");
 
     }
 }

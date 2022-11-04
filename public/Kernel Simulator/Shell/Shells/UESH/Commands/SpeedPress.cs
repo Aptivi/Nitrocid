@@ -61,7 +61,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// </list>
     /// <br></br>
     /// </remarks>
-    class SpeedPressCommand : CommandExecutor, ICommand
+    class SpeedPressCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

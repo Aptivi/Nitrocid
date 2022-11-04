@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.SFTP.Commands
     /// <remarks>
     /// This command lets you change your remote directory in your connected SFTP server to another directory that exists in the subdirectory. However, when specifying .., it goes backwards.
     /// </remarks>
-    class SFTP_CdrCommand : CommandExecutor, ICommand
+    class SFTP_CdrCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => SFTPFilesystem.SFTPChangeRemoteDir(ListArgsOnly[0]);

@@ -24,7 +24,7 @@ namespace KS.Shell.Shells.Mail.Commands
     /// <summary>
     /// Removes a mail directory
     /// </summary>
-    class Mail_RmdirCommand : CommandExecutor, ICommand
+    class Mail_RmdirCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => MailDirectory.DeleteMailDirectory(ListArgsOnly[0]);

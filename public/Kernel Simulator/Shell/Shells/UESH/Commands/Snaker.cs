@@ -51,7 +51,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// </list>
     /// <br></br>
     /// </remarks>
-    class SnakerCommand : CommandExecutor, ICommand
+    class SnakerCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

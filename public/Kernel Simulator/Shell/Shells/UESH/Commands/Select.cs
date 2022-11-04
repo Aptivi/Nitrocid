@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// This command can be used in a scripting file that ends in .uesh file extension. It lets the user select the correct answers when answering this question and passes the chosen answer to the specified variable.
     /// </remarks>
-    class SelectCommand : CommandExecutor, ICommand
+    class SelectCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

@@ -30,7 +30,7 @@ namespace KS.Shell.Shells.Mail.Commands
     /// <remarks>
     /// If you no longer want all messages from a recipient in your mail account, use this command, assuming you know the full name of the recipient.
     /// </remarks>
-    class Mail_RmAllCommand : CommandExecutor, ICommand
+    class Mail_RmAllCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

@@ -26,7 +26,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It lets you translate strings that are found in the current language file in the source code from the current source language to the target language, and prints it in the console.
     /// </summary>
-    class Test_TranslateCommand : CommandExecutor, ICommand
+    class Test_TranslateCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

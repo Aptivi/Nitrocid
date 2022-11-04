@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// You can personalize your kernel using themes, which contains the color sets to set colors.
     /// </remarks>
-    class SetThemesCommand : CommandExecutor, ICommand
+    class SetThemesCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

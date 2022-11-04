@@ -30,7 +30,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// If you have two or more fragments of a complete text file, you can combine them using this command to generate a complete text file.
     /// </remarks>
-    class CombineCommand : CommandExecutor, ICommand
+    class CombineCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

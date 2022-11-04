@@ -32,7 +32,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <br></br>
     /// The user must have at least the administrative privileges before they can run the below commands.
     /// </remarks>
-    class PermCommand : CommandExecutor, ICommand
+    class PermCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => GroupManagement.Group((GroupManagement.GroupType)Convert.ToInt32(Enum.Parse(typeof(GroupManagement.GroupType), ListArgsOnly[1])), ListArgsOnly[0], (GroupManagement.GroupManagementMode)Convert.ToInt32(Enum.Parse(typeof(GroupManagement.GroupManagementMode), ListArgsOnly[2])));

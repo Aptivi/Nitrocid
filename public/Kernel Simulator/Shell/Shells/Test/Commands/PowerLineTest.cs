@@ -28,7 +28,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It lets you test the powerline glyphs
     /// </summary>
-    class Test_PowerLineTestCommand : CommandExecutor, ICommand
+    class Test_PowerLineTestCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

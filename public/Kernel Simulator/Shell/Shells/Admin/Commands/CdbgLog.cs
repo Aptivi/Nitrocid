@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.Admin.Commands
     /// <remarks>
     /// The user must have at least the administrative privileges before they can run the below commands.
     /// </remarks>
-    class Admin_CdbgLogCommand : CommandExecutor, ICommand
+    class Admin_CdbgLogCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

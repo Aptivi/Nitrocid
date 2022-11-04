@@ -25,7 +25,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It lets you test the 255 color compatibility.
     /// </summary>
-    class Test_ColorTestCommand : CommandExecutor, ICommand
+    class Test_ColorTestCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

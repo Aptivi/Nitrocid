@@ -24,7 +24,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It lets you stop mods in the testing shell.
     /// </summary>
-    class Test_StopModsCommand : CommandExecutor, ICommand
+    class Test_StopModsCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => ModManager.StopMods();

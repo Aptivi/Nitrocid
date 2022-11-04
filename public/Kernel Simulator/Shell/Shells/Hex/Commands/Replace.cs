@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.Hex.Commands
     /// <remarks>
     /// You can use this command to replace a byte with another one.
     /// </remarks>
-    class HexEdit_ReplaceCommand : CommandExecutor, ICommand
+    class HexEdit_ReplaceCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

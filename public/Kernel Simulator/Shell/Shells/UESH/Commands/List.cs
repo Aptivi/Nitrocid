@@ -54,7 +54,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// </list>
     /// <br></br>
     /// </remarks>
-    class ListCommand : CommandExecutor, ICommand
+    class ListCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

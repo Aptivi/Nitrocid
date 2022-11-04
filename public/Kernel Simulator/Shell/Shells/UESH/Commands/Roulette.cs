@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// Try your luck there.
     /// </remarks>
-    class RouletteCommand : CommandExecutor, ICommand
+    class RouletteCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => RussianRoulette.InitializeRoulette();

@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.Text.Commands
     /// <remarks>
     /// You can use this command to remove a specified line by number. You can use the print command to take a look at the unneeded line and its number.
     /// </remarks>
-    class TextEdit_DelLineCommand : CommandExecutor, ICommand
+    class TextEdit_DelLineCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

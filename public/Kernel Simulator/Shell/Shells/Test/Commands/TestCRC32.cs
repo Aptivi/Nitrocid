@@ -28,7 +28,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It lets you estimate the time taken to encode a specified string on milliseconds using CRC32 algorithm.
     /// </summary>
-    class Test_TestCRC32Command : CommandExecutor, ICommand
+    class Test_TestCRC32Command : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

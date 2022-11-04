@@ -29,7 +29,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <br></br>
     /// To show available notifications, consult shownotifs command.
     /// </remarks>
-    class DismissNotifsCommand : CommandExecutor, ICommand
+    class DismissNotifsCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Notifications.NotifRecents.Clear();

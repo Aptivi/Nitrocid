@@ -30,7 +30,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// This command lets you view the details about a pressed key on your keyboard, including the pressed key and character, the hexadecimal representation of the letter, the pressed modifiers, and the keyboard shortcut.
     /// </remarks>
-    class KeyInfoCommand : CommandExecutor, ICommand
+    class KeyInfoCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

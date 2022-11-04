@@ -30,7 +30,7 @@ namespace KS.Shell.Shells.Archive.Commands
     /// <remarks>
     /// If you want to go to a folder inside the ZIP archive, you can use this command to change the working archive directory.
     /// </remarks>
-    class ArchiveShell_ChADirCommand : CommandExecutor, ICommand
+    class ArchiveShell_ChADirCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

@@ -32,7 +32,7 @@ namespace KS.Shell.Shells.FTP.Commands
     /// <remarks>
     /// If you want to get a remote files in directory checksum, use this command.
     /// </remarks>
-    class FTP_SumFilesCommand : CommandExecutor, ICommand
+    class FTP_SumFilesCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

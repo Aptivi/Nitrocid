@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// You can lock your screen and show your default screensaver to confirm that you're away and will come back for an hour or more. It then asks for your password for security.
     /// </remarks>
-    class LockScreenCommand : CommandExecutor, ICommand
+    class LockScreenCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Screensaver.LockScreen();

@@ -32,7 +32,7 @@ namespace KS.Shell.Shells.RSS.Commands
     /// <remarks>
     /// If you want to read more about the article, you can use this command to open your current web browser to the article link, if one is found.
     /// </remarks>
-    class RSS_ReadCommand : CommandExecutor, ICommand
+    class RSS_ReadCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

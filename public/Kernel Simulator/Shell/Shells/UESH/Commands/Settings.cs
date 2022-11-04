@@ -59,7 +59,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <br></br>
     /// The user must have at least the administrative privileges before they can run the below commands.
     /// </remarks>
-    class SettingsCommand : CommandExecutor, ICommand
+    class SettingsCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

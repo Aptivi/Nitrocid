@@ -31,7 +31,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <br></br>
     /// If no address is specified, it will prompt you for the address, password, and the mail server (IMAP) if the address is not found in the ISP database. Currently, it connects with necessary requirements to ensure successful connection.
     /// </remarks>
-    class MailCommand : CommandExecutor, ICommand
+    class MailCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

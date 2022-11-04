@@ -30,7 +30,7 @@ namespace KS.Shell.Shells.FTP.Commands
     /// <remarks>
     /// To get the server info, including the operating system and server type, use this command.
     /// </remarks>
-    class FTP_InfoCommand : CommandExecutor, ICommand
+    class FTP_InfoCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

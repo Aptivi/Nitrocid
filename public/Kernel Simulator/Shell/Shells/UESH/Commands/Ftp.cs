@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <br></br>
     /// You can download files to your computer, upload files to the server, manage files by renaming, deleting, etc., and so on.
     /// </remarks>
-    class FtpCommand : CommandExecutor, ICommand
+    class FtpCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

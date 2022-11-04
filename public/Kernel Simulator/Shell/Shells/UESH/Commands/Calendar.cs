@@ -35,7 +35,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// This is a master application for the calendar that not only it shows you the calendar, but also shows and manages the events and reminders.
     /// </remarks>
-    class CalendarCommand : CommandExecutor, ICommand
+    class CalendarCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

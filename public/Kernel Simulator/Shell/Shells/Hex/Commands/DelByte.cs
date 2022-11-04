@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.Hex.Commands
     /// <remarks>
     /// You can use this command to remove a specified byte by number. You can use the print command to take a look at the unneeded byte and its number.
     /// </remarks>
-    class HexEdit_DelByteCommand : CommandExecutor, ICommand
+    class HexEdit_DelByteCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

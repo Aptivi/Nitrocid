@@ -31,7 +31,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// > [!WARNING]
     /// > There is no file system syncing because the current kernel version doesn't have the real file system to sync, and the kernel is not final.
     /// </remarks>
-    class RebootCommand : CommandExecutor, ICommand
+    class RebootCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

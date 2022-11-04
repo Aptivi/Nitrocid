@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.Hex.Commands
     /// <remarks>
     /// You can use this command to query a byte and get its number from the specified byte, a range of bytes, or entirely.
     /// </remarks>
-    class HexEdit_QueryByteCommand : CommandExecutor, ICommand
+    class HexEdit_QueryByteCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

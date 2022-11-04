@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.RSS.Commands
     /// <br></br>
     /// It shows you the article title, the link, the description, and the extra arguments and their values, if available.
     /// </remarks>
-    class RSS_ArticleInfoCommand : CommandExecutor, ICommand
+    class RSS_ArticleInfoCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

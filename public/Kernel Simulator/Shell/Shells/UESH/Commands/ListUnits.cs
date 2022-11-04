@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// If you don't know what units are there, you can use this command. If you don't know what unit types are there, use its help entry.
     /// </remarks>
-    class ListUnitsCommand : CommandExecutor, ICommand
+    class ListUnitsCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

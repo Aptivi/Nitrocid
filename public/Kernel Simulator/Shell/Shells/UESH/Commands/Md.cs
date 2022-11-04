@@ -29,7 +29,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <br></br>
     /// This command lets you create a folder in the current working directory.
     /// </remarks>
-    class MdCommand : CommandExecutor, ICommand
+    class MdCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Making.MakeDirectory(ListArgsOnly[0]);

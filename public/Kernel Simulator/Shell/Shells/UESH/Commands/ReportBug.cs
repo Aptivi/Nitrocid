@@ -30,7 +30,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// You can use this command to prepare your bug report to be sent to GitHub. You must be signed in to GitHub to be able to use this feature.
     /// </remarks>
-    class ReportBugCommand : CommandExecutor, ICommand
+    class ReportBugCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

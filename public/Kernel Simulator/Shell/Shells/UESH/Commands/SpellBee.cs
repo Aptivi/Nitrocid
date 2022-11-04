@@ -29,7 +29,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <br></br>
     /// This game will select a random word, then lets you write, which will obviously show nothing when input. Pressing ENTER will validate your spelling.
     /// </remarks>
-    class SpellBeeCommand : CommandExecutor, ICommand
+    class SpellBeeCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Speller.InitializeWords();

@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.Text.Commands
     /// <remarks>
     /// You can use this command to delete a character using a character number in a specified line. You can revise the print command output, but it will only tell you the line number and not the character number. To solve the problem, use the querychar command.
     /// </remarks>
-    class TextEdit_DelCharNumCommand : CommandExecutor, ICommand
+    class TextEdit_DelCharNumCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.Text.Commands
     /// <remarks>
     /// You can use this command to query a word and get its number from the specified line or all lines.
     /// </remarks>
-    class TextEdit_QueryWordCommand : CommandExecutor, ICommand
+    class TextEdit_QueryWordCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

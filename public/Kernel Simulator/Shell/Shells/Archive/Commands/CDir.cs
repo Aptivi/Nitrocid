@@ -28,7 +28,7 @@ namespace KS.Shell.Shells.Archive.Commands
     /// <remarks>
     /// Should you want to get the current local directory in the ZIP shell, you can use this command.
     /// </remarks>
-    class ArchiveShell_CDirCommand : CommandExecutor, ICommand
+    class ArchiveShell_CDirCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => TextWriterColor.Write(ArchiveShellCommon.ArchiveShell_CurrentDirectory);

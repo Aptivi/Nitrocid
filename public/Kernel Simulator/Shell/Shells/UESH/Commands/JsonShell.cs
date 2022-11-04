@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// You can use this shell to open the JSON editor. It allows you to manipulate with the JSON file in various ways, such as adding and deleting properties.
     /// </remarks>
-    class JsonShellCommand : CommandExecutor, ICommand
+    class JsonShellCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

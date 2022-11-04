@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.Text.Commands
     /// <remarks>
     /// You can use this command to edit a line seamlessly.
     /// </remarks>
-    class TextEdit_EditLineCommand : CommandExecutor, ICommand
+    class TextEdit_EditLineCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

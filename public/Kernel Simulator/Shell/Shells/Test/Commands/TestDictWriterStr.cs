@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It lets you test the dictionary writer using the String type.
     /// </summary>
-    class Test_TestDictWriterStrCommand : CommandExecutor, ICommand
+    class Test_TestDictWriterStrCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

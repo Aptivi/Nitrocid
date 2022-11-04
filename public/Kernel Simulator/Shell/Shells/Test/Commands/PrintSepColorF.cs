@@ -25,7 +25,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It lets you print the separator using any text you want with color and format support.
     /// </summary>
-    class Test_PrintSepColorFCommand : CommandExecutor, ICommand
+    class Test_PrintSepColorFCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

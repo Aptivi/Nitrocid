@@ -57,7 +57,7 @@ namespace KS.Shell.Shells.Mail.Commands
     /// <br></br>
     /// This command supports encryption, assuming you have a private key.
     /// </remarks>
-    class Mail_SendEncCommand : CommandExecutor, ICommand
+    class Mail_SendEncCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

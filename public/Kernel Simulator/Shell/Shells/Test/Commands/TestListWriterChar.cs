@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It lets you test the list writer using the Char type.
     /// </summary>
-    class Test_TestListWriterCharCommand : CommandExecutor, ICommand
+    class Test_TestListWriterCharCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

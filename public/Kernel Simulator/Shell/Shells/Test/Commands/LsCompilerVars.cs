@@ -26,7 +26,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It lets you list all the compiler variables used to build Kernel Simulator.
     /// </summary>
-    class Test_LsCompilerVarsCommand : CommandExecutor, ICommand
+    class Test_LsCompilerVarsCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

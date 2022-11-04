@@ -25,7 +25,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It force crashes the kernel using custom exception types, messages, reboot times, etc. It provides support for variables.
     /// </summary>
-    class Test_PanicFCommand : CommandExecutor, ICommand
+    class Test_PanicFCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

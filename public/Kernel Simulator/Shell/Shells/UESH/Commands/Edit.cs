@@ -35,7 +35,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <br></br>
     /// It can also open binary files, but we don't recommend doing that, because it isn't a hex editor yet. Editing a binary file may or may not cause file corruptions. Use hexedit for such tasks.
     /// </remarks>
-    class EditCommand : CommandExecutor, ICommand
+    class EditCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

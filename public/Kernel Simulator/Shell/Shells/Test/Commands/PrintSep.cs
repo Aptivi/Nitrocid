@@ -24,7 +24,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It lets you print the separator using any text you want.
     /// </summary>
-    class Test_PrintSepCommand : CommandExecutor, ICommand
+    class Test_PrintSepCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => SeparatorWriterColor.WriteSeparator(ListArgsOnly[0], true);

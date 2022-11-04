@@ -52,7 +52,7 @@ namespace KS.Shell.Shells.FTP.Commands
     /// </list>
     /// <br></br>
     /// </remarks>
-    class FTP_LslCommand : CommandExecutor, ICommand
+    class FTP_LslCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

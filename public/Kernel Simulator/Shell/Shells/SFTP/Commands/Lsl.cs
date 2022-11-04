@@ -52,7 +52,7 @@ namespace KS.Shell.Shells.SFTP.Commands
     /// </list>
     /// <br></br>
     /// </remarks>
-    class SFTP_LslCommand : CommandExecutor, ICommand
+    class SFTP_LslCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// If you want to edit a binary file or a text file, this command will let you open the hex editor shell to a specified document so you can edit it. Currently, it's on the basic stage, so it doesn't have advanced options yet.
     /// </remarks>
-    class HexEditCommand : CommandExecutor, ICommand
+    class HexEditCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

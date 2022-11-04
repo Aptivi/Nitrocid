@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.Hex.Commands
     /// <remarks>
     /// Prints the contents of the file with bytes to the console. This is useful if you need to view the contents before and after editing.
     /// </remarks>
-    class HexEdit_PrintCommand : CommandExecutor, ICommand
+    class HexEdit_PrintCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

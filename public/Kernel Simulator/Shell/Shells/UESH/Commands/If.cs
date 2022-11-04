@@ -35,7 +35,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// Executes commands once the UESH conditions are satisfied
     /// </remarks>
-    class IfCommand : CommandExecutor, ICommand
+    class IfCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
@@ -48,7 +48,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     var AltThreads = ShellStart.ShellStack[ShellStart.ShellStack.Count - 1].AltCommandThreads;
                     if (AltThreads.Count == 0 || AltThreads[AltThreads.Count - 1].IsAlive)
                     {
-                        var CommandThread = new KernelThread($"Alternative Shell Command Thread", false, (cmdThreadParams) => GetCommand.ExecuteCommand((GetCommand.ExecuteCommandParameters)cmdThreadParams));
+                        var CommandThread = new KernelThread($"Alternative Shell Command Thread", false, (cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutor.ExecuteCommandParameters)cmdThreadParams));
                         ShellStart.ShellStack[ShellStart.ShellStack.Count - 1].AltCommandThreads.Add(CommandThread);
                     }
                     Shell.GetLine(CommandString);

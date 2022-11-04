@@ -29,7 +29,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// If you want to get the semicolon-delimited sequence of the RGB color numbers from the hexadecimal representation of the color, you can use this command. You can use this to form a complete VT sequence of changing color.
     /// </remarks>
-    class ColorHexToRgbKSCommand : CommandExecutor, ICommand
+    class ColorHexToRgbKSCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

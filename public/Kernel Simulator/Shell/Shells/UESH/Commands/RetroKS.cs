@@ -43,7 +43,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// This command runs a legacy version of Kernel Simulator based on 0.0.4.1 with added optimizations for both Linux and Windows operating systems.
     /// </remarks>
-    class RetroKSCommand : CommandExecutor, ICommand
+    class RetroKSCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

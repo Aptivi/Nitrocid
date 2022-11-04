@@ -30,7 +30,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// This command previews either the current splash as set in the kernel settings or the specified splash. Refer the current splash list found in <see cref="Misc.Splash.SplashManager.Splashes"/>.
     /// </remarks>
-    class PreviewSplashCommand : CommandExecutor, ICommand
+    class PreviewSplashCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

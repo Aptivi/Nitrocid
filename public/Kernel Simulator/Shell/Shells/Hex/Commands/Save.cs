@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.Hex.Commands
     /// <remarks>
     /// This command will save any changes made to the binary file that is currently open.
     /// </remarks>
-    class HexEdit_SaveCommand : CommandExecutor, ICommand
+    class HexEdit_SaveCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => HexEditTools.HexEdit_SaveBinaryFile();

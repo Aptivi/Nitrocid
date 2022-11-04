@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.FTP.Commands
     /// <remarks>
     /// This command lets you change your local directory in your hard drives to another directory that exists in the subdirectory. However, when specifying .., it goes backwards.
     /// </remarks>
-    class FTP_CdlCommand : CommandExecutor, ICommand
+    class FTP_CdlCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => FTPFilesystem.FTPChangeLocalDir(ListArgsOnly[0]);

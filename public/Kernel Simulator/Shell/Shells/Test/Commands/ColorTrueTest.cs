@@ -25,7 +25,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It lets you test the 24-bit color compatibility, assuming that R, G, and B aren't less than 0 or greater than 255.
     /// </summary>
-    class Test_ColorTrueTestCommand : CommandExecutor, ICommand
+    class Test_ColorTrueTestCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

@@ -24,7 +24,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It lets you load mods in the testing shell.
     /// </summary>
-    class Test_LoadModsCommand : CommandExecutor, ICommand
+    class Test_LoadModsCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => ModManager.StartMods();

@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It lets you test the regular expression pattern on a specific string. It prints all matches.
     /// </summary>
-    class Test_TestRegExpCommand : CommandExecutor, ICommand
+    class Test_TestRegExpCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

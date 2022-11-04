@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// If you want to set the time limit, you can do so using this command.
     /// </remarks>
-    class TimerCommand : CommandExecutor, ICommand
+    class TimerCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => TimerScreen.OpenTimer();

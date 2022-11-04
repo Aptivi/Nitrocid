@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// You can interact with the RSS shell to connect to a feed server and interact with them.
     /// </remarks>
-    class RssCommand : CommandExecutor, ICommand
+    class RssCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

@@ -29,7 +29,7 @@ namespace KS.Shell.Shells.RSS.Commands
     /// <remarks>
     /// If you want to read another feed, you can use this command to provide a second feed URL to the shell so you can interact with it.
     /// </remarks>
-    class RSS_ChFeedCommand : CommandExecutor, ICommand
+    class RSS_ChFeedCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

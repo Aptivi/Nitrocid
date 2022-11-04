@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// This command allows you to move files or folders to a different name, or different path. This is useful for many purposes.
     /// </remarks>
-    class MoveCommand : CommandExecutor, ICommand
+    class MoveCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Moving.MoveFileOrDir(ListArgsOnly[0], ListArgsOnly[1]);

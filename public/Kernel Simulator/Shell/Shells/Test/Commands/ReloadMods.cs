@@ -24,7 +24,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It lets you reload mods in the testing shell.
     /// </summary>
-    class Test_ReloadModsCommand : CommandExecutor, ICommand
+    class Test_ReloadModsCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => ModManager.ReloadMods();

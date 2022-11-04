@@ -32,7 +32,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// This command lets you calculate expressions and return the results.
     /// </remarks>
-    class CalcCommand : CommandExecutor, ICommand
+    class CalcCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

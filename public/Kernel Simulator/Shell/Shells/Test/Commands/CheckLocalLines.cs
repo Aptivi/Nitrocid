@@ -28,7 +28,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// Checks the localization files to see if the line numbers in them are all equal.
     /// </summary>
-    class Test_CheckLocalLinesCommand : CommandExecutor, ICommand
+    class Test_CheckLocalLinesCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

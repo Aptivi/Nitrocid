@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.RSS.Commands
     /// <remarks>
     /// If you want to select feed from the available feed dataset, use this command.
     /// </remarks>
-    class RSS_SelFeedCommand : CommandExecutor, ICommand
+    class RSS_SelFeedCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => RSSTools.OpenFeedSelector();

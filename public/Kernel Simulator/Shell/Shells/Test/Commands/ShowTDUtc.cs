@@ -26,7 +26,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// Shows the current time and date (UTC)
     /// </summary>
-    class Test_ShowTDUtcCommand : CommandExecutor, ICommand
+    class Test_ShowTDUtcCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => TextWriterColor.Write(TimeDateRenderersUtc.RenderUtc());

@@ -38,7 +38,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <br></br>
     /// If you want to ping an address to see if it's offline or online, or if you want to see if you're online or offline, use this command.
     /// </remarks>
-    class PingCommand : CommandExecutor, ICommand
+    class PingCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

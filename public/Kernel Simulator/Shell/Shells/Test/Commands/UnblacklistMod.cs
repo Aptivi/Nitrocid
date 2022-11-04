@@ -24,7 +24,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It lets you unblacklist a mod in the testing shell.
     /// </summary>
-    class Test_UnblacklistModCommand : CommandExecutor, ICommand
+    class Test_UnblacklistModCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => ModManager.RemoveModFromBlacklist(ListArgsOnly[0]);

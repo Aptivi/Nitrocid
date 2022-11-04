@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// If you want to interact with the archive files, like extracting them, use this command. For now, only RAR and ZIP files are supported.
     /// </remarks>
-    class ArchiveCommand : CommandExecutor, ICommand
+    class ArchiveCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

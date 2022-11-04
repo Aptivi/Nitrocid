@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.Text.Commands
     /// <remarks>
     /// You can use this command to add a new line at the end of the file with the content that is enclosed in double quotes. You can also add nothing by addline "".
     /// </remarks>
-    class TextEdit_AddLineCommand : CommandExecutor, ICommand
+    class TextEdit_AddLineCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => TextEditTools.TextEdit_AddNewLine(StringArgs);

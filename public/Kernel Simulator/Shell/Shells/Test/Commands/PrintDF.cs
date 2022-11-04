@@ -24,7 +24,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It lets you send any message to the debugger, using <see cref="DebugWriter.WriteDebug(DebugLevel, string, object[])"/> call. It provides support for variables. It only works if you have enabled the debugger which you can enable by debug 1.
     /// </summary>
-    class Test_PrintDFCommand : CommandExecutor, ICommand
+    class Test_PrintDFCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

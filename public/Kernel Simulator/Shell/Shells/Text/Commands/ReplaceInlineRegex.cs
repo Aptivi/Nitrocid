@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.Text.Commands
     /// <remarks>
     /// You can use this command to replace a word or a complete phrase enclosed in double quotes with another one (enclosed in double quotes again) in a line.
     /// </remarks>
-    class TextEdit_ReplaceInlineRegexCommand : CommandExecutor, ICommand
+    class TextEdit_ReplaceInlineRegexCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

@@ -30,7 +30,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// If you have two or more fragments of a complete text file, you can combine them using this command to print the complete text file to toe console.
     /// </remarks>
-    class CombineStrCommand : CommandExecutor, ICommand
+    class CombineStrCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

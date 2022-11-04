@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// This command can be used in shell scripts to ask the user a specified question, which has to be answered using text. It will them pass the answer to the specified $variable.
     /// </remarks>
-    class InputCommand : CommandExecutor, ICommand
+    class InputCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => UESHCommands.PromptInputAndSet(StringArgs.Replace(ListArgsOnly[0] + " ", ""), ListArgsOnly[0]);

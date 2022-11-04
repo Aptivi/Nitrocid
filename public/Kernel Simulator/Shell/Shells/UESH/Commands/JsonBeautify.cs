@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// This command parses the JSON file to beautify it. It can be wrapped and saved to output file using the command-line redirection.
     /// </remarks>
-    class JsonBeautifyCommand : CommandExecutor, ICommand
+    class JsonBeautifyCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

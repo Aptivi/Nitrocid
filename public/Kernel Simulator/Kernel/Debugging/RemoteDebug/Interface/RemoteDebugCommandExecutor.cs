@@ -25,7 +25,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Interface
     /// <summary>
     /// Remote debug command executor
     /// </summary>
-    public abstract class RemoteDebugCommandExecutor : CommandExecutor, IRemoteDebugCommand
+    public abstract class RemoteDebugCommandExecutor : BaseCommand, IRemoteDebugCommand
     {
 
         /// <inheritdoc/>

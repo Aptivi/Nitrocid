@@ -38,7 +38,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// Calculating the hash sum of files is important, because it lets users verify if the file is corrupt or not. It calculates the sum of files using either the MD5, SHA1, SHA256, or SHA512 algorithms.
     /// </remarks>
-    class SumFilesCommand : CommandExecutor, ICommand
+    class SumFilesCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

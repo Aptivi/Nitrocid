@@ -30,7 +30,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <br></br>
     /// This command lets you connect to another computer to remotely interact with the shell.
     /// </remarks>
-    class SshellCommand : CommandExecutor, ICommand
+    class SshellCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

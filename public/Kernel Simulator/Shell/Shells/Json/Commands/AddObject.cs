@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.Json.Commands
     /// <remarks>
     /// You can use this command to add an object to the end of the parent property. Note that the parent property must exist.
     /// </remarks>
-    class JsonShell_AddObjectCommand : CommandExecutor, ICommand
+    class JsonShell_AddObjectCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

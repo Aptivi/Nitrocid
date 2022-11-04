@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// This command lets you remove a directory or a file from your current working directory.
     /// </remarks>
-    class RmCommand : CommandExecutor, ICommand
+    class RmCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

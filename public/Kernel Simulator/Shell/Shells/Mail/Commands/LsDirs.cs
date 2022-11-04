@@ -29,7 +29,7 @@ namespace KS.Shell.Shells.Mail.Commands
     /// <remarks>
     /// This command lets you list all mail directories in your mail account. It varies from one account to other.
     /// </remarks>
-    class Mail_LsDirsCommand : CommandExecutor, ICommand
+    class Mail_LsDirsCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => TextWriterColor.Write(MailDirectory.MailListDirectories(), false, ColorTools.ColTypes.NeutralText);

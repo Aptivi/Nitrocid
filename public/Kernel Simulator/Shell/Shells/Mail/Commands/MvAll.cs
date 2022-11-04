@@ -30,7 +30,7 @@ namespace KS.Shell.Shells.Mail.Commands
     /// <remarks>
     /// It allows you to bulk move all messages from a recipient to a folder. Depending on the number of messages in the folder, it may take some time to move all messages.
     /// </remarks>
-    class Mail_MvAllCommand : CommandExecutor, ICommand
+    class Mail_MvAllCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

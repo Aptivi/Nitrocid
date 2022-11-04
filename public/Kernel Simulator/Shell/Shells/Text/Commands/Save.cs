@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.Text.Commands
     /// <remarks>
     /// This command will save any changes made to the text file that is currently open
     /// </remarks>
-    class TextEdit_SaveCommand : CommandExecutor, ICommand
+    class TextEdit_SaveCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => TextEditTools.TextEdit_SaveTextFile(false);

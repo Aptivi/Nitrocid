@@ -45,7 +45,7 @@ namespace KS.Shell.Shells.Archive.Commands
     /// </list>
     /// <br></br>
     /// </remarks>
-    class ArchiveShell_GetCommand : CommandExecutor, ICommand
+    class ArchiveShell_GetCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

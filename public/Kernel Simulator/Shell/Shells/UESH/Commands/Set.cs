@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// You can set a UESH variable to a specified value. This can be used in UESH scripts.
     /// </remarks>
-    class SetCommand : CommandExecutor, ICommand
+    class SetCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => UESHVariables.SetVariable(ListArgsOnly[0], ListArgsOnly[1]);

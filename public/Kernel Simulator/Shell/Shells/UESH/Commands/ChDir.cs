@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// You can change your working directory to another directory to execute listing commands, removing files, or creating directories on another directory.
     /// </remarks>
-    class ChDirCommand : CommandExecutor, ICommand
+    class ChDirCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// If you want to record the time elapsed from when the stopwatch has started, you can use this command. It's useful for races, because it has the lap feature.
     /// </remarks>
-    class StopwatchCommand : CommandExecutor, ICommand
+    class StopwatchCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => StopwatchScreen.OpenStopwatch();

@@ -28,7 +28,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// If you are planning to take a look at your filesystem in an interactive manner, use this command.
     /// > [!WARNING] You currently can't run this command because it's a placeholder. It'll be hopefully finished by Beta 1.
     /// </remarks>
-    class IfmCommand : CommandExecutor, ICommand
+    class IfmCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>

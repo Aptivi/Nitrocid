@@ -25,7 +25,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It lets you test an event.
     /// </summary>
-    class Test_TestEventCommand : CommandExecutor, ICommand
+    class Test_TestEventCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

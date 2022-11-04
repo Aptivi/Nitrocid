@@ -38,7 +38,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// You can use this command to view file information.
     /// </remarks>
-    class FileInfoCommand : CommandExecutor, ICommand
+    class FileInfoCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

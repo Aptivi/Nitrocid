@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.RSS.Commands
     /// <remarks>
     /// If you want to remove the bookmark that points to the current feed, you can use this command.
     /// </remarks>
-    class RSS_UnbookmarkCommand : CommandExecutor, ICommand
+    class RSS_UnbookmarkCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => RSSBookmarkManager.RemoveRSSFeedFromBookmark();

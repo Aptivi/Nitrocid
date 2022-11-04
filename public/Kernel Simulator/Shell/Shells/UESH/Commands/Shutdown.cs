@@ -28,7 +28,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// If you're finished with everything and don't want to do something else on your computer, instead of leaving it on to consume energy and pay high energy bills, you have to use this command to shutdown your computer and conserve power.
     /// </remarks>
-    class ShutdownCommand : CommandExecutor, ICommand
+    class ShutdownCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

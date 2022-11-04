@@ -32,7 +32,7 @@ namespace KS.Shell.Shells.HTTP.Commands
     /// <br></br>
     /// You must set the target URL to the one that supports the commands.
     /// </remarks>
-    class HTTP_SetSiteCommand : CommandExecutor, ICommand
+    class HTTP_SetSiteCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

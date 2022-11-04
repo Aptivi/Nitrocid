@@ -22,7 +22,7 @@ using System.Diagnostics;
 namespace KSTests.ShellTests
 {
 
-    class CommandTest : CommandExecutor, ICommand
+    class CommandTest : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

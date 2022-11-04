@@ -28,7 +28,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// If you want to store a group of values in one variable, you can use this command to create arrays of values. Such variables will have the [n] suffix, for example, $values[1].
     /// </remarks>
-    class SetRangeCommand : CommandExecutor, ICommand
+    class SetRangeCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => UESHVariables.SetVariables(ListArgsOnly[0], ListArgsOnly.Skip(1).ToArray());

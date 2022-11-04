@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.Mail.Commands
     /// <remarks>
     /// This command lets you move a message to a folder. It is especially useful when organizing mail messages manually.
     /// </remarks>
-    class Mail_MvCommand : CommandExecutor, ICommand
+    class Mail_MvCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

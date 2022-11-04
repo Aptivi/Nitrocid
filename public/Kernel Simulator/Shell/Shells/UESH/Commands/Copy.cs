@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// This command allows you to create copies of files or folders to a different name, or different path. This is useful for many purposes.
     /// </remarks>
-    class CopyCommand : CommandExecutor, ICommand
+    class CopyCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Copying.CopyFileOrDir(ListArgsOnly[0], ListArgsOnly[1]);

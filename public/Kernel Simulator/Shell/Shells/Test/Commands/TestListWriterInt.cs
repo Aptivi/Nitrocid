@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It lets you test the list writer using the Integer type.
     /// </summary>
-    class Test_TestListWriterIntCommand : CommandExecutor, ICommand
+    class Test_TestListWriterIntCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

@@ -28,7 +28,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It lets you test the figlet print to print every text, using the font and colors that you need. It has an additional feature of variables.
     /// </summary>
-    class Test_PrintFigletFCommand : CommandExecutor, ICommand
+    class Test_PrintFigletFCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

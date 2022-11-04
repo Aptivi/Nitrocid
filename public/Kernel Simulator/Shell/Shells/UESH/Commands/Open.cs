@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// If you have a webpage to open, you can use this command.
     /// </remarks>
-    class OpenCommand : CommandExecutor, ICommand
+    class OpenCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Process.Start(ListArgsOnly[0]);

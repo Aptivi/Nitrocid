@@ -24,7 +24,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It lets you probe hardware in the testing session.
     /// </summary>
-    class Test_ProbeHwCommand : CommandExecutor, ICommand
+    class Test_ProbeHwCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => HardwareProbe.StartProbing();

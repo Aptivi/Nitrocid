@@ -29,7 +29,7 @@ namespace KS.Shell.Shells.Admin.Commands
     /// <remarks>
     /// This command gets the current kernel journal log from the <see cref="Files.KernelPathType.Journalling"/> path.
     /// </remarks>
-    class JournalCommand : CommandExecutor, ICommand
+    class JournalCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>

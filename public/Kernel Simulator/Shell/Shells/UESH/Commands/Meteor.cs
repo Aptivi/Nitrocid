@@ -51,7 +51,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// </list>
     /// <br></br>
     /// </remarks>
-    class MeteorCommand : CommandExecutor, ICommand
+    class MeteorCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => MeteorShooter.InitializeMeteor();

@@ -25,7 +25,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It lets you enable and disable debugging mode. It only enables the local debugging which will write to your home directory. This allows printd and printdf to function.
     /// </summary>
-    class Test_DebugCommand : CommandExecutor, ICommand
+    class Test_DebugCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

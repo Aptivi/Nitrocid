@@ -26,7 +26,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It lets you list all the available codepages installed on the system.
     /// </summary>
-    class Test_ListCodePagesCommand : CommandExecutor, ICommand
+    class Test_ListCodePagesCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

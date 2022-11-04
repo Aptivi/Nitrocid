@@ -28,7 +28,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// Checks the settings entry variables to see if it can be accessible using the settings program.
     /// </summary>
-    class Test_CheckSettingsEntryVarsCommand : CommandExecutor, ICommand
+    class Test_CheckSettingsEntryVarsCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.Mail.Commands
     /// <remarks>
     /// If you want to change the name of a directory to something else, you can use this command.
     /// </remarks>
-    class Mail_RenCommand : CommandExecutor, ICommand
+    class Mail_RenCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => MailDirectory.RenameMailDirectory(ListArgsOnly[0], ListArgsOnly[1]);

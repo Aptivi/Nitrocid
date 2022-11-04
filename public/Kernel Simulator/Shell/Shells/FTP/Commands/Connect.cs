@@ -29,7 +29,7 @@ namespace KS.Shell.Shells.FTP.Commands
     /// <br></br>
     /// This command opens a new session to connect your FTP client to any FTP server that is open to the public, and valid. It then asks for your credentials. Try with anonymous first, then usernames.
     /// </remarks>
-    class FTP_ConnectCommand : CommandExecutor, ICommand
+    class FTP_ConnectCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

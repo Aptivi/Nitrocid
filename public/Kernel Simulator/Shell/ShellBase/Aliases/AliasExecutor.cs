@@ -54,13 +54,13 @@ namespace KS.Shell.ShellBase.Aliases
             DebugWriter.WriteDebug(DebugLevel.I, "Actual command: {0}", actualCmd);
 
             // Make thread parameters.
-            var Params = new GetCommand.ExecuteCommandParameters(actualCmd, ShellType, SocketStream, Address);
+            var Params = new CommandExecutor.ExecuteCommandParameters(actualCmd, ShellType, SocketStream, Address);
 
             // Check to see if we're on the shell or on the remote debug
             if (ShellType == "RemoteDebugShell")
             {
                 // Handle the remote debug case specially
-                GetCommand.ExecuteCommand(Params);
+                CommandExecutor.ExecuteCommand(Params);
             }
             else
             {

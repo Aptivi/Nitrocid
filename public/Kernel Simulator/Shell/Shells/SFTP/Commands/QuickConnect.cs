@@ -32,7 +32,7 @@ namespace KS.Shell.Shells.SFTP.Commands
     /// <br></br>
     /// For this, we have implemented this command for easier access to SFTP servers.
     /// </remarks>
-    class SFTP_QuickConnectCommand : CommandExecutor, ICommand
+    class SFTP_QuickConnectCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

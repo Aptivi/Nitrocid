@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// If you want to define a specific English word, you can use this command.
     /// </remarks>
-    class DictCommand : CommandExecutor, ICommand
+    class DictCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

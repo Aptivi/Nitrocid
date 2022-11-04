@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <br></br>
     /// To show available notifications, consult shownotifs command.
     /// </remarks>
-    class DismissNotifCommand : CommandExecutor, ICommand
+    class DismissNotifCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

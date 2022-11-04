@@ -29,7 +29,7 @@ namespace KS.Shell.Shells.Json.Commands
     /// <remarks>
     /// You can use this command to print the contents of either the full JSON file or a property.
     /// </remarks>
-    class JsonShell_PrintCommand : CommandExecutor, ICommand
+    class JsonShell_PrintCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

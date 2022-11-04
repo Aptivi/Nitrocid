@@ -47,7 +47,7 @@ namespace KS.Shell.Shells.Json.Commands
     /// </list>
     /// <br></br>
     /// </remarks>
-    class JsonShell_SaveCommand : CommandExecutor, ICommand
+    class JsonShell_SaveCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

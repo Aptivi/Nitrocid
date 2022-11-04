@@ -32,7 +32,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// This shows you the detailed time information, including the time analysis, binary representation, and even the Unix time.
     /// </remarks>
-    class GetTimeInfoCommand : CommandExecutor, ICommand
+    class GetTimeInfoCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

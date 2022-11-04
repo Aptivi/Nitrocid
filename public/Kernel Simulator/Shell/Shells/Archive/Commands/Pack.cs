@@ -28,7 +28,7 @@ namespace KS.Shell.Shells.Archive.Commands
     /// <remarks>
     /// If you want to compress a single file from the ZIP archive, you can use this command.
     /// </remarks>
-    class ArchiveShell_PackCommand : CommandExecutor, ICommand
+    class ArchiveShell_PackCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

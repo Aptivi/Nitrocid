@@ -29,7 +29,7 @@ namespace KS.Shell.Shells.FTP.Commands
     /// <remarks>
     /// If you want to get the remote directory, use this command.
     /// </remarks>
-    class FTP_PwdrCommand : CommandExecutor, ICommand
+    class FTP_PwdrCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

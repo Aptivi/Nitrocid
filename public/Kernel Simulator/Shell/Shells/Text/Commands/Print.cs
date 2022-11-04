@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.Text.Commands
     /// <remarks>
     /// Prints the contents of the file with line numbers to the console. This is useful if you need to view the contents before and after editing.
     /// </remarks>
-    class TextEdit_PrintCommand : CommandExecutor, ICommand
+    class TextEdit_PrintCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

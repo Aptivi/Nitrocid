@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.Archive.Commands
     /// <remarks>
     /// If you want to know what this ZIP file contains, you can use this command to list all the files and folders included in the archive.
     /// </remarks>
-    class ArchiveShell_ListCommand : CommandExecutor, ICommand
+    class ArchiveShell_ListCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

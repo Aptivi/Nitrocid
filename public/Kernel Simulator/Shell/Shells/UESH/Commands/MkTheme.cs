@@ -29,7 +29,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <br></br>
     /// If you want your theme to be included in the default Kernel Simulator themes, let us know.
     /// </remarks>
-    class MkThemeCommand : CommandExecutor, ICommand
+    class MkThemeCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => ThemeStudio.StartThemeStudio(ListArgsOnly[0]);

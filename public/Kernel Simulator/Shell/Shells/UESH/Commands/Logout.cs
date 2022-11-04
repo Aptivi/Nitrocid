@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <br></br>
     /// This command lets you off your account and sign in as somebody else. When you're finished with your account, and you want to use either the root account, or let someone else use their account, you must sign out.
     /// </remarks>
-    class LogoutCommand : CommandExecutor, ICommand
+    class LogoutCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

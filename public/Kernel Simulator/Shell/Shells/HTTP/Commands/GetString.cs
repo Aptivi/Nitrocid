@@ -31,7 +31,7 @@ namespace KS.Shell.Shells.HTTP.Commands
     /// <remarks>
     /// If you want to test a GET function of the REST API, you can do so using this command. It returns responses using strings.
     /// </remarks>
-    class HTTP_GetStringCommand : CommandExecutor, ICommand
+    class HTTP_GetStringCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

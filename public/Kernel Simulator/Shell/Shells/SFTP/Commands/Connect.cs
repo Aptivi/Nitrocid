@@ -29,7 +29,7 @@ namespace KS.Shell.Shells.SFTP.Commands
     /// <br></br>
     /// This command opens a new session to connect your SFTP client to any SFTP server that is open to the public, and valid. It then asks for your credentials. Try with anonymous first, then usernames.
     /// </remarks>
-    class SFTP_ConnectCommand : CommandExecutor, ICommand
+    class SFTP_ConnectCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

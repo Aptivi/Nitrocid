@@ -26,7 +26,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// Shows the current date
     /// </summary>
-    class Test_ShowDateCommand : CommandExecutor, ICommand
+    class Test_ShowDateCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => TextWriterColor.Write(TimeDateRenderers.RenderDate());

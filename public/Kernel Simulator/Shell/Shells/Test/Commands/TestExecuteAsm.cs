@@ -26,7 +26,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It lets you test the assembly execution by reflection
     /// </summary>
-    class Test_TestExecuteAsmCommand : CommandExecutor, ICommand
+    class Test_TestExecuteAsmCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

@@ -29,7 +29,7 @@ namespace KS.Shell.Shells.Json.Commands
     /// <remarks>
     /// You can use this command to add an array to the end of the parent property. Note that the parent property must exist.
     /// </remarks>
-    class JsonShell_AddArrayCommand : CommandExecutor, ICommand
+    class JsonShell_AddArrayCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

@@ -24,7 +24,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <summary>
     /// Clears the list of fired events
     /// </summary>
-    class ClearFiredEventsCommand : CommandExecutor, ICommand
+    class ClearFiredEventsCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => EventsManager.ClearAllFiredEvents();

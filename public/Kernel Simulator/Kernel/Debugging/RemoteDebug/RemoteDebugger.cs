@@ -284,8 +284,8 @@ namespace KS.Kernel.Debugging.RemoteDebug
                                 if (RemoteDebugCmd.DebugCommands.ContainsKey(Command))
                                 {
                                     // Parsing starts here.
-                                    var Params = new GetCommand.ExecuteCommandParameters(FullCommand, ShellType.RemoteDebugShell, SocketStreamWriter, SocketIP);
-                                    GetCommand.ExecuteCommand(Params);
+                                    var Params = new CommandExecutor.ExecuteCommandParameters(FullCommand, ShellType.RemoteDebugShell, SocketStreamWriter, SocketIP);
+                                    CommandExecutor.ExecuteCommand(Params);
                                 }
                                 else if (AliasManager.DoesAliasExist(Command, ShellType.RemoteDebugShell))
                                 {

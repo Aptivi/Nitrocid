@@ -204,3 +204,11 @@ The latest ColorSeq version, 1.0.2, will be used to make it easier to achieve.
 ##### Added last argument support to auto completer
 
 This is to aid in trying to autocomplete subjects starting from the last argument
+
+##### Renamed command executor and base to reduce confusion
+
+Base command class had the name of `CommandExecutor`. However, it behaved like the base class for your mod commands, so we renamed it to `BaseCommand`. This caused us to rename the command execution class to `CommandExecutor`.
+
+Affected classes:
+  * `CommandExecutor` -> `BaseCommand`
+  * `GetCommand` -> `CommandExecutor`

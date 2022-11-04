@@ -24,7 +24,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// Exits the test shell forcefully.
     /// </summary>
-    class Test_StartCommand : CommandExecutor, ICommand
+    class Test_StartCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => ShellStart.KillShellForced();

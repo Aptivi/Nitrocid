@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.Text.Commands
     /// <remarks>
     /// You can use this command to query a character and get its number from the specified line or all lines. This is useful for some commands like delcharnum.
     /// </remarks>
-    class TextEdit_QueryCharCommand : CommandExecutor, ICommand
+    class TextEdit_QueryCharCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

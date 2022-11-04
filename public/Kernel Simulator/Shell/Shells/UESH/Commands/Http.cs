@@ -24,7 +24,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <summary>
     /// You can interact with the Hyper Text Transfer Protocol (HTTP) using this shell.
     /// </summary>
-    class HttpCommand : CommandExecutor, ICommand
+    class HttpCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => ShellStart.StartShell(ShellType.HTTPShell);

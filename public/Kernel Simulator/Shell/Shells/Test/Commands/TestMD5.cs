@@ -28,7 +28,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It lets you estimate the time taken to encode a specified string on milliseconds using MD5 algorithm.
     /// </summary>
-    class Test_TestMD5Command : CommandExecutor, ICommand
+    class Test_TestMD5Command : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

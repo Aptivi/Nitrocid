@@ -29,7 +29,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// Checks how many milliseconds (or ticks if started with the -t switch) did it really take to sleep.
     /// </summary>
-    class Test_SleepTookCommand : CommandExecutor, ICommand
+    class Test_SleepTookCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

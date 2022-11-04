@@ -30,7 +30,7 @@ namespace KS.Shell.Shells.Archive.Commands
     /// <remarks>
     /// If you want to interact with the ZIP file in another local directory, you can use this command to change the current local directory. This change isn't applied to the main shell.
     /// </remarks>
-    class ArchiveShell_ChDirCommand : CommandExecutor, ICommand
+    class ArchiveShell_ChDirCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

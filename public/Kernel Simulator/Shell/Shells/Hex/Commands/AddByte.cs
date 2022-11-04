@@ -28,7 +28,7 @@ namespace KS.Shell.Shells.Hex.Commands
     /// <remarks>
     /// You can use this command to add a new byte at the end of the file.
     /// </remarks>
-    class HexEdit_AddByteCommand : CommandExecutor, ICommand
+    class HexEdit_AddByteCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

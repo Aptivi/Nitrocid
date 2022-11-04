@@ -30,7 +30,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// on Windows. With the help of a native utility to utilize the PC speaker completely in Linux, this would have been achieved. However, we're trying
     /// to be 100% .NET compatible and not depend on that utility.
     /// </remarks>
-    class BeepCommand : CommandExecutor, ICommand
+    class BeepCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => ConsoleBase.ConsoleWrapper.Beep();

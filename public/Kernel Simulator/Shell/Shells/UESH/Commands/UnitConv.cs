@@ -35,7 +35,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <br></br>
     /// If you want to see the full list of all supported units by the UnitsNet library, check out its help command where it lists all possible units.
     /// </remarks>
-    class UnitConvCommand : CommandExecutor, ICommand
+    class UnitConvCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.Hex.Commands
     /// <remarks>
     /// You can use this command to remove a extraneous bytes in a specified range. You can use the print command to review the changes.
     /// </remarks>
-    class HexEdit_DelBytesCommand : CommandExecutor, ICommand
+    class HexEdit_DelBytesCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

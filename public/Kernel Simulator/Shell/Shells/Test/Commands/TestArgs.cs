@@ -24,7 +24,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It lets you test arguments.
     /// </summary>
-    class Test_TestArgsCommand : CommandExecutor, ICommand
+    class Test_TestArgsCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => ListWriterColor.WriteList(ListArgsOnly);

@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.FTP.Commands
     /// <br></br>
     /// The authenticated user must have at least the administrative privileges before they can run the below commands.
     /// </remarks>
-    class FTP_MvCommand : CommandExecutor, ICommand
+    class FTP_MvCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

@@ -29,7 +29,7 @@ namespace KS.Shell.Shells.FTP.Commands
     /// <remarks>
     /// If you want to get the local directory, use this command.
     /// </remarks>
-    class FTP_PwdlCommand : CommandExecutor, ICommand
+    class FTP_PwdlCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => TextWriterColor.Write(Translate.DoTranslation("Local directory: {0}"), FTPShellCommon.FtpCurrentDirectory);

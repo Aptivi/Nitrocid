@@ -37,7 +37,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <br></br>
     /// The user must have at least the administrative privileges before they can run the below commands.
     /// </remarks>
-    class ModManCommand : CommandExecutor, ICommand
+    class ModManCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

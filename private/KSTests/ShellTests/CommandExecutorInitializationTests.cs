@@ -28,7 +28,7 @@ namespace KSTests.ShellTests
     public class CommandExecutorInitializationTests
     {
 
-        private static CommandExecutor CommandInstance;
+        private static BaseCommand CommandInstance;
 
         /// <summary>
         /// Tests initializing the command instance from base

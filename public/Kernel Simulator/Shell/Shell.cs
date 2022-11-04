@@ -317,7 +317,7 @@ namespace KS.Shell
                                     else
                                     {
                                         DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded. Running with {1}", commandName, Command);
-                                        var Params = new GetCommand.ExecuteCommandParameters(Command, ShellType);
+                                        var Params = new CommandExecutor.ExecuteCommandParameters(Command, ShellType);
 
                                         // Since we're probably trying to run a command using the alternative command threads, if the main shell command thread
                                         // is running, use that to execute the command. This ensures that commands like "wrap" that also execute commands from the

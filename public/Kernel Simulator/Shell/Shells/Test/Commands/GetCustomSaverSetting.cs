@@ -28,7 +28,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It lets you get a setting from a custom saver. Load all the mods and screensavers first before using this command.
     /// </summary>
-    class Test_GetCustomSaverSettingCommand : CommandExecutor, ICommand
+    class Test_GetCustomSaverSettingCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

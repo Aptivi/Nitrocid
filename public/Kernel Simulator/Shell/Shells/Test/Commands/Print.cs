@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It lets you test the <see cref="TextWriterColor.Write(string, bool, ColTypes, object[])"/> call to print every text, using the lines and colors that you need.
     /// </summary>
-    class Test_PrintCommand : CommandExecutor, ICommand
+    class Test_PrintCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

@@ -26,7 +26,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// Tests the table drawing
     /// </summary>
-    class Test_TestTableCommand : CommandExecutor, ICommand
+    class Test_TestTableCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

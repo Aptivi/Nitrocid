@@ -32,7 +32,7 @@ namespace KS.Shell.Shells.Text.Commands
     /// <remarks>
     /// You can use this command to add new lines at the end of the file.
     /// </remarks>
-    class TextEdit_AddLinesCommand : CommandExecutor, ICommand
+    class TextEdit_AddLinesCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

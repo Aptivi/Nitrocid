@@ -37,7 +37,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// You can wrap a command so it stops outputting until you press a key if the console has printed lines that exceed the console window height. Only the commands that are explicitly set to be wrappable can be used with this command.
     /// </remarks>
-    class WrapCommand : CommandExecutor, ICommand
+    class WrapCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
@@ -53,7 +53,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     var AltThreads = ShellStart.ShellStack[ShellStart.ShellStack.Count - 1].AltCommandThreads;
                     if (AltThreads.Count == 0 || AltThreads[AltThreads.Count - 1].IsAlive)
                     {
-                        var WrappedCommand = new KernelThread($"Wrapped Shell Command Thread", false, (cmdThreadParams) => GetCommand.ExecuteCommand((GetCommand.ExecuteCommandParameters)cmdThreadParams));
+                        var WrappedCommand = new KernelThread($"Wrapped Shell Command Thread", false, (cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutor.ExecuteCommandParameters)cmdThreadParams));
                         ShellStart.ShellStack[ShellStart.ShellStack.Count - 1].AltCommandThreads.Add(WrappedCommand);
                     }
                     Shell.GetLine(StringArgs, WrapOutputPath);

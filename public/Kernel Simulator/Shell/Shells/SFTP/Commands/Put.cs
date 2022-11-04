@@ -35,7 +35,7 @@ namespace KS.Shell.Shells.SFTP.Commands
     /// <br></br>
     /// The authenticated user must have at least the administrative privileges before they can run the below commands.
     /// </remarks>
-    class SFTP_PutCommand : CommandExecutor, ICommand
+    class SFTP_PutCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

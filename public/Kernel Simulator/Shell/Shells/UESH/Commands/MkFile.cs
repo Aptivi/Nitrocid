@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// If you wanted to create a file, this command is for you. It allows you to create every kind of file, including files without extensions, text files, binary files, and so on. If it's a text file, you can use the edit command to add new lines, delete them, and so on.
     /// </remarks>
-    class MkFileCommand : CommandExecutor, ICommand
+    class MkFileCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Making.MakeFile(ListArgsOnly[0]);

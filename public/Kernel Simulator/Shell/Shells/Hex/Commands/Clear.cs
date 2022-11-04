@@ -24,7 +24,7 @@ namespace KS.Shell.Shells.Hex.Commands
     /// <summary>
     /// Clears the binary file
     /// </summary>
-    class HexEdit_ClearCommand : CommandExecutor, ICommand
+    class HexEdit_ClearCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => HexEditShellCommon.HexEdit_FileBytes = Array.Empty<byte>();

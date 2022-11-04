@@ -31,7 +31,7 @@ namespace KS.Shell.Shells.HTTP.Commands
     /// <remarks>
     /// If you want to test a DELETE function of the REST API, you can do so using this command.
     /// </remarks>
-    class HTTP_DeleteCommand : CommandExecutor, ICommand
+    class HTTP_DeleteCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

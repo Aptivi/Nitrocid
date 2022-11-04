@@ -28,7 +28,7 @@ namespace KS.Shell.Shells.Admin.Commands
     /// <remarks>
     /// It shows you a detailed list of fired events with the arguments passed to each of them, if any.
     /// </remarks>
-    class LsEventsCommand : CommandExecutor, ICommand
+    class LsEventsCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => ListWriterColor.WriteList(EventsManager.ListAllFiredEvents());

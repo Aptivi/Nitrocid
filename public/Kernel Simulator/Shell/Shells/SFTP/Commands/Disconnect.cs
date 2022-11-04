@@ -30,7 +30,7 @@ namespace KS.Shell.Shells.SFTP.Commands
     /// <remarks>
     /// This command sends the quit command to the SFTP server so the server knows that you're going away. It basically disconnects you from the server to connect to the server again or re-connect to the last server connected.
     /// </remarks>
-    class SFTP_DisconnectCommand : CommandExecutor, ICommand
+    class SFTP_DisconnectCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

@@ -26,7 +26,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It lets you parse placeholders in the text without the option of changing color and the newline.
     /// </summary>
-    class Test_PlacesCommand : CommandExecutor, ICommand
+    class Test_PlacesCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => TextWriterColor.Write(PlaceParse.ProbePlaces(ListArgsOnly[0]));

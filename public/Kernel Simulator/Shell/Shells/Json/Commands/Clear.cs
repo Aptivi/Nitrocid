@@ -24,7 +24,7 @@ namespace KS.Shell.Shells.Json.Commands
     /// <summary>
     /// Clears the JSON file
     /// </summary>
-    class JsonShell_ClearCommand : CommandExecutor, ICommand
+    class JsonShell_ClearCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => JsonShellCommon.JsonShell_FileToken = JToken.Parse("{}");

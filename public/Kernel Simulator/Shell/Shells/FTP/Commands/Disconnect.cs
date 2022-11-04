@@ -43,7 +43,7 @@ namespace KS.Shell.Shells.FTP.Commands
     /// </list>
     /// <br></br>
     /// </remarks>
-    class FTP_DisconnectCommand : CommandExecutor, ICommand
+    class FTP_DisconnectCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

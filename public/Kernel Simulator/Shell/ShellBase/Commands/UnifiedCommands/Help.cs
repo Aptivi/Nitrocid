@@ -29,7 +29,7 @@ namespace KS.Shell.ShellBase.Commands.UnifiedCommands
     /// <remarks>
     /// This command allows you to get help for any specific command, including its usage. If no command is specified, all commands are listed.
     /// </remarks>
-    class HelpUnifiedCommand : CommandExecutor, ICommand, IRemoteDebugCommand
+    class HelpUnifiedCommand : BaseCommand, ICommand, IRemoteDebugCommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

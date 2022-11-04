@@ -28,7 +28,7 @@ namespace KS.Shell.Shells.Test.Commands
     /// <summary>
     /// It lets you estimate the time taken to encode a specified string on milliseconds using SHA384 algorithm.
     /// </summary>
-    class Test_TestSHA384Command : CommandExecutor, ICommand
+    class Test_TestSHA384Command : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
