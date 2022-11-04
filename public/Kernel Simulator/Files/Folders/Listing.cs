@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using Extensification.StringExts;
 using FluentFTP.Helpers;
 using KS.ConsoleBase.Colors;
@@ -119,7 +120,7 @@ namespace KS.Files.Folders
             if (Sorted & !(FilesystemEntries.Count == 0))
             {
                 // We define the max string length for the largest size. This is to overcome the limitation of sorting when it comes to numbers.
-                int MaxLength = FilesystemEntries.Max(x => (x as FileInfo is not null ? (x as FileInfo).Length : 0L).ToString().Length);
+                int MaxLength = FilesystemEntries.Max(x => (x as FileInfo is not null ? (x as FileInfo).Length.GetDigits() : 1));
 
                 // Select whether or not to sort descending.
                 switch (SortDirection)
@@ -175,6 +176,9 @@ namespace KS.Files.Folders
                     }
             }
         }
+
+        private static int GetDigits(this long Number) =>
+            Number == 0 ? 1 : (int)Math.Log10(Math.Abs(Number)) + 1;
 
         /// <summary>
         /// List all files and folders in a specified folder
