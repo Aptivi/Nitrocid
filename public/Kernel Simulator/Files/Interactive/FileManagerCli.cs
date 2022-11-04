@@ -24,6 +24,8 @@ using KS.ConsoleBase.Colors;
 using KS.Files.Folders;
 using KS.Files.Operations;
 using KS.Files.Querying;
+using KS.Kernel.Debugging;
+using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using KS.TimeDate;
@@ -240,18 +242,28 @@ namespace KS.Files.Interactive
                                              cachedFileInfosFirstPane;
 
                 // Write file info
-                bool infoIsDirectory = Checking.FolderExists(FileInfoCurrentPane.FullName);
-                string finalInfoRendered = (
-                    // Name and directory indicator
-                    $" [{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.Name} | " + 
+                string finalInfoRendered = "";
+                try
+                {
+                    bool infoIsDirectory = Checking.FolderExists(FileInfoCurrentPane.FullName);
+                    finalInfoRendered = (
+                        // Name and directory indicator
+                        $" [{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.Name} | " + 
 
-                    // File size or directory size
-                    $"{(!infoIsDirectory ? ((FileInfo)FileInfoCurrentPane).Length.FileSizeToString() : SizeGetter.GetAllSizesInFolder((DirectoryInfo)FileInfoCurrentPane))} | " + 
+                        // File size or directory size
+                        $"{(!infoIsDirectory ? ((FileInfo)FileInfoCurrentPane).Length.FileSizeToString() : SizeGetter.GetAllSizesInFolder((DirectoryInfo)FileInfoCurrentPane))} | " + 
 
-                    // Modified date
-                    $"{(!infoIsDirectory ? TimeDateRenderers.Render(((FileInfo)FileInfoCurrentPane).LastWriteTime) : "")}"
-                ).Truncate(ConsoleWrapper.WindowWidth - 3);
-                TextWriterWhereColor.WriteWhere(finalInfoRendered, 0, 0, FileManagerForegroundColor, FileManagerBackgroundColor);
+                        // Modified date
+                        $"{(!infoIsDirectory ? TimeDateRenderers.Render(((FileInfo)FileInfoCurrentPane).LastWriteTime) : "")}"
+                    );
+                }
+                catch (Exception ex)
+                {
+                    finalInfoRendered = Translate.DoTranslation("Failed to get file or folder information.");
+                    DebugWriter.WriteDebug(DebugLevel.E, "Error trying to get file or folder information in ifm: {0}", ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                }
+                TextWriterWhereColor.WriteWhere(finalInfoRendered.Truncate(ConsoleWrapper.WindowWidth - 3), 0, 0, FileManagerForegroundColor, FileManagerBackgroundColor);
 
                 // Wait for key
                 ConsoleKey pressedKey = ConsoleWrapper.ReadKey(true).Key;
