@@ -61,6 +61,8 @@ namespace KS.ConsoleBase.Themes
             { "Darcula", new ThemeInfo("Darcula") },
             { "Debian", new ThemeInfo("Debian") },
             { "EDM", new ThemeInfo("EDM") },
+            { "Fast_X", new ThemeInfo("Fast_X") },
+            { "Fast_X_FG", new ThemeInfo("Fast_X_FG") },
             { "Fire", new ThemeInfo("Fire") },
             { "Grape", new ThemeInfo("Grape") },
             { "Grape Kiwi", new ThemeInfo("Grape_Kiwi") },

@@ -685,7 +685,7 @@ namespace Properties.Resources {
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Electric Dance Music (EDM)&quot;,
+        ///        &quot;Name&quot;: &quot;Electronic Dance Music (EDM)&quot;,
         ///        &quot;255ColorsRequired&quot;: true,
         ///        &quot;TrueColorRequired&quot;: true
         ///    },
@@ -699,7 +699,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;#FDD602&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;#5C1D6B&quot;,
         ///    &quot;ListValueColor&quot;: &quot;#B41EB2&quot;,
-        ///    &quot; [rest of string was truncated]&quot;;.
+        ///    [rest of string was truncated]&quot;;.
         /// </summary>
         public static string EDM {
             get {
@@ -721,6 +721,56 @@ namespace Properties.Resources {
         public static string eng {
             get {
                 return ResourceManager.GetString("eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///    &quot;Metadata&quot;: {
+        ///        &quot;Name&quot;: &quot;Fast X (Fast and Furious 10)&quot;,
+        ///        &quot;255ColorsRequired&quot;: true,
+        ///        &quot;TrueColorRequired&quot;: true
+        ///    },
+        ///    &quot;InputColor&quot;: &quot;#FFFFFF&quot;,
+        ///    &quot;LicenseColor&quot;: &quot;#FFFFFF&quot;,
+        ///    &quot;ContKernelErrorColor&quot;: &quot;#FFFFFF&quot;,
+        ///    &quot;UncontKernelErrorColor&quot;: &quot;#FFFFFF&quot;,
+        ///    &quot;HostNameShellColor&quot;: &quot;#FFFFFF&quot;,
+        ///    &quot;UserNameShellColor&quot;: &quot;#FFFFFF&quot;,
+        ///    &quot;BackgroundColor&quot;: &quot;#009AFE&quot;,
+        ///    &quot;NeutralTextColor&quot;: &quot;#FFFFFF&quot;,
+        ///    &quot;ListEntryColor&quot;: &quot;#FFFFFF&quot;,
+        ///    &quot;ListValueColor&quot;: &quot;#FFFFFF&quot;,
+        ///    [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Fast_X {
+            get {
+                return ResourceManager.GetString("Fast_X", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///    &quot;Metadata&quot;: {
+        ///        &quot;Name&quot;: &quot;Fast X (Fast and Furious 10)&quot;,
+        ///        &quot;255ColorsRequired&quot;: true,
+        ///        &quot;TrueColorRequired&quot;: true
+        ///    },
+        ///    &quot;InputColor&quot;: &quot;#009AFE&quot;,
+        ///    &quot;LicenseColor&quot;: &quot;#009AFE&quot;,
+        ///    &quot;ContKernelErrorColor&quot;: &quot;#009AFE&quot;,
+        ///    &quot;UncontKernelErrorColor&quot;: &quot;#009AFE&quot;,
+        ///    &quot;HostNameShellColor&quot;: &quot;#009AFE&quot;,
+        ///    &quot;UserNameShellColor&quot;: &quot;#009AFE&quot;,
+        ///    &quot;BackgroundColor&quot;: &quot;#000023&quot;,
+        ///    &quot;NeutralTextColor&quot;: &quot;#009AFE&quot;,
+        ///    &quot;ListEntryColor&quot;: &quot;#009AFE&quot;,
+        ///    &quot;ListValueColor&quot;: &quot;#009AFE&quot;,
+        ///    [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Fast_X_FG {
+            get {
+                return ResourceManager.GetString("Fast_X_FG", resourceCulture);
             }
         }
         
@@ -2065,7 +2115,7 @@ namespace Properties.Resources {
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Mourning the death of &quot;,
+        ///        &quot;Name&quot;: &quot;Mourning the death of Mahsa Amini&quot;,
         ///        &quot;255ColorsRequired&quot;: true,
         ///        &quot;TrueColorRequired&quot;: true
         ///    },
@@ -2078,8 +2128,7 @@ namespace Properties.Resources {
         ///    &quot;BackgroundColor&quot;: &quot;#006600&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;#EEEEEE&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;#00EE00&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;#EEEEEE&quot;,
-        ///    &quot;Stag [rest of string was truncated]&quot;;.
+        ///    &quot;ListValueColor&quot;: &quot;#EEEEEE&quot;, [rest of string was truncated]&quot;;.
         /// </summary>
         public static string RecentDisaster {
             get {
