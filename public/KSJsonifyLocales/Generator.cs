@@ -144,8 +144,8 @@ namespace KSJsonifyLocales
                         string fileName = Path.GetFileNameWithoutExtension(file);
                         string fileExtension = Path.GetExtension(file);
 
-                        // Check the file and add if not in KS resources, not a Readme, and is a text file
-                        if (fileExtension == ".txt" & !(fileName.ToLower() == "readme") & !LanguageManager.Languages.ContainsKey(fileName))
+                        // Check the file and add if not a Readme and is a text file
+                        if (fileExtension == ".txt" & !(fileName.ToLower() == "readme"))
                         {
                             if (!singular || (singular && fileName.Equals(toSearch)))
                             {

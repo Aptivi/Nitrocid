@@ -115,6 +115,9 @@
     <None Include="Translations\eng.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Translations\enk.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Translations\fre.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

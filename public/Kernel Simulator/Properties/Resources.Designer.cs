@@ -726,6 +726,23 @@ namespace Properties.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to {
+        ///  &quot;Name&quot;: &quot;English (UK)&quot;,
+        ///  &quot;Transliterable&quot;: false,
+        ///  &quot;Localizations&quot;: {
+        ///    &quot;Available commands: {0}&quot;: &quot;Available commands: {0}&quot;,
+        ///    &quot;Command injection has been cancelled.&quot;: &quot;Command injection has been cancelled.&quot;,
+        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Injected arguments will be scheduled to run at next reboot.&quot;,
+        ///    &quot;Invalid color template {0}&quot;: &quot;Invalid colour template {0}&quot;,
+        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Your hardware will [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string enk {
+            get {
+                return ResourceManager.GetString("enk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Fast X (Fast and Furious 10)&quot;,
         ///        &quot;255ColorsRequired&quot;: true,
