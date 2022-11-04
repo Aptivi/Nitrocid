@@ -44,7 +44,13 @@ namespace KS.Shell.Shells.UESH.Commands
             DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {0}", ListArgsOnly[0], Checking.FileExists(ListArgsOnly[0]));
             if (Checking.FileExists(ListArgsOnly[0]))
             {
-                ShellStart.StartShell(ShellType.TextShell, ListArgsOnly[0]);
+                // Determine the type
+                if (Parsing.IsBinaryFile(ListArgsOnly[0]))
+                    ShellStart.StartShell(ShellType.HexShell, ListArgsOnly[0]);
+                else if (Parsing.IsJson(ListArgsOnly[0]))
+                    ShellStart.StartShell(ShellType.JsonShell, ListArgsOnly[0]);
+                else
+                    ShellStart.StartShell(ShellType.TextShell, ListArgsOnly[0]);
             }
             else
             {

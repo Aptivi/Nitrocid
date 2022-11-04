@@ -101,5 +101,6 @@ Available screensavers:
 File or directory {0} doesn't exist.
 Opts in to new config paths
 Failed to get file or folder information.
+Edits a file
 
 ==========================================================================================================================================
