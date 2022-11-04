@@ -99,5 +99,6 @@ Previews the splash
 Available splashes:
 Available screensavers:
 File or directory {0} doesn't exist.
+Opts in to new config paths
 
 ==========================================================================================================================================

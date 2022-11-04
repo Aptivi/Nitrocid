@@ -42,6 +42,14 @@
     "KS - new config reader and writer [Debug]": {
       "commandName": "Project",
       "commandLineArgs": "newreader newwriter debug"
+    },
+    "KS - new config paths": {
+      "commandName": "Project",
+      "commandLineArgs": "newconfigpaths"
+    },
+    "KS - new config paths [Debug]": {
+      "commandName": "Project",
+      "commandLineArgs": "newconfigpaths debug"
     }
   }
 }

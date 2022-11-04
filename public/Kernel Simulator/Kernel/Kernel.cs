@@ -117,12 +117,14 @@ namespace KS.Kernel
                     if (!Checking.FolderExists(Paths.AppDataPath))
                         Making.MakeDirectory(Paths.AppDataPath, false);
 
-                    // Initialize debug and journal path
+                    // Initialize debug path
                     DebugManager.DebugPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Debugging)), Paths.GetKernelPath(KernelPathType.Debugging));
-                    JournalManager.JournalPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Journalling)), Paths.GetKernelPath(KernelPathType.Journalling));
 
                     // Check for kernel command-line arguments
                     ArgumentParse.ParseArguments(Args.ToList(), ArgumentType.CommandLineArgs);
+
+                    // Initialize journal path
+                    JournalManager.JournalPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Journalling)), Paths.GetKernelPath(KernelPathType.Journalling));
 
                     // Download debug symbols if not found (loads automatically, useful for debugging problems and stack traces)
                     KernelTools.CheckDebugSymbols();
