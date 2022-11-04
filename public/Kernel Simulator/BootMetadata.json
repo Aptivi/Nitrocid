@@ -12,10 +12,6 @@
         "Arguments": [ "debug" ]
     },
     {
-        "OverrideTitle": "Kernel Simulator 0.1.0 - test shell",
-        "Arguments": [ "testInteractive" ]
-    },
-    {
         "OverrideTitle": "Kernel Simulator 0.1.0 - force on small console",
         "Arguments": [ "bypasssizedetection" ]
     }
