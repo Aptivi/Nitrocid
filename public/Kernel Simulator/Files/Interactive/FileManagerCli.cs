@@ -25,6 +25,7 @@ using KS.Files.Folders;
 using KS.Files.Operations;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
@@ -43,6 +44,7 @@ namespace KS.Files.Interactive
     /// </summary>
     public static class FileManagerCli
     {
+        private static bool redrawRequired = true;
         private static bool isExiting = false;
         private static int firstPaneCurrentSelection = 1;
         private static int secondPaneCurrentSelection = 1;
@@ -63,6 +65,7 @@ namespace KS.Files.Interactive
                 currentPane++;
                 if (currentPane > 2)
                     currentPane = 1;
+                redrawRequired = true;
             }),
         };
 
@@ -136,56 +139,65 @@ namespace KS.Files.Interactive
         public static void OpenMain(string firstPath, string secondPath)
         {
             isExiting = false;
+            redrawRequired = true;
 
             while (!isExiting)
             {
                 // Prepare the console
                 ConsoleWrapper.CursorVisible = false;
-                ColorTools.LoadBack(FileManagerBackgroundColor, true);
-
-                // Make a separator that separates the two panes to make it look like Total Commander or Midnight Commander. We need information in the upper and the
-                // lower part of the console, so we need to render the entire program to look like this: (just a concept mockup)
-                //
-                //       | vvvvvvvvvvvvvvvvvvvvvv (SeparatorHalfConsoleWidth)
-                //       |  vvvvvvvvvvvvvvvvvvvv  (SeparatorHalfConsoleWidthInterior)
-                // H: 0  |
-                // H: 1  | a--------------------|c---------------------| < ----> (SeparatorMinimumHeight)
-                // H: 2  | |b                   ||d                    | << ----> (SeparatorMinimumHeightInterior)
-                // H: 3  | |                    ||                     | <<
-                // H: 4  | |                    ||                     | <<
-                // H: 5  | |                    ||                     | <<
-                // H: 6  | |                    ||                     | <<
-                // H: 7  | |                    ||                     | <<
-                // H: 8  | |                    ||                     | << ----> (SeparatorMaximumHeightInterior)
-                // H: 9  | |--------------------||---------------------| < ----> (SeparatorMaximumHeight)
-                // H: 10 |
-                //       | where a is the dimension for the first pane upper left corner           (0, SeparatorMinimumHeight                                     (usually 1))
-                //       |   and b is the dimension for the first pane interior upper left corner  (1, SeparatorMinimumHeightInterior                             (usually 2))
-                //       |   and c is the dimension for the second pane upper left corner          (SeparatorHalfConsoleWidth, SeparatorMinimumHeight             (usually 1))
-                //       |   and d is the dimension for the second pane interior upper left corner (SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior (usually 2))
-                int SeparatorHalfConsoleWidth         = ConsoleWrapper.WindowWidth / 2;
+                int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
                 int SeparatorHalfConsoleWidthInterior = (ConsoleWrapper.WindowWidth / 2) - 2;
-                int SeparatorMinimumHeight            = 1;
-                int SeparatorMinimumHeightInterior    = 2;
-                int SeparatorMaximumHeight            = ConsoleWrapper.WindowHeight - 2;
-                int SeparatorMaximumHeightInterior    = ConsoleWrapper.WindowHeight - 4;
+                int SeparatorMinimumHeight = 1;
+                int SeparatorMinimumHeightInterior = 2;
+                int SeparatorMaximumHeight = ConsoleWrapper.WindowHeight - 2;
+                int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
 
-                // First, the horizontal and vertical separators
-                var finalFirstPaneSeparatorColor = currentPane == 1 ? FileManagerPaneSelectedSeparatorColor : FileManagerPaneSeparatorColor;
-                var finalSecondPaneSeparatorColor = currentPane == 2 ? FileManagerPaneSelectedSeparatorColor : FileManagerPaneSeparatorColor;
-                BorderColor.WriteBorder(0, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, finalFirstPaneSeparatorColor, FileManagerPaneBackgroundColor);
-                BorderColor.WriteBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, finalSecondPaneSeparatorColor, FileManagerPaneBackgroundColor);
-
-                // Render the key bindings
-                ConsoleWrapper.CursorLeft = 0;
-                foreach (FileManagerBinding binding in fileManagerBindings)
+                // Redraw the entire file manager screen
+                if (redrawRequired)
                 {
-                    // First, check to see if the rendered binding info is going to exceed the console window width
-                    if (!($" {binding.BindingKeyName} {binding.BindingName}  ".Length + ConsoleWrapper.CursorLeft >= ConsoleWrapper.WindowWidth))
+                    ColorTools.LoadBack(FileManagerBackgroundColor, true);
+
+                    // Make a separator that separates the two panes to make it look like Total Commander or Midnight Commander. We need information in the upper and the
+                    // lower part of the console, so we need to render the entire program to look like this: (just a concept mockup)
+                    //
+                    //       | vvvvvvvvvvvvvvvvvvvvvv (SeparatorHalfConsoleWidth)
+                    //       |  vvvvvvvvvvvvvvvvvvvv  (SeparatorHalfConsoleWidthInterior)
+                    // H: 0  |
+                    // H: 1  | a--------------------|c---------------------| < ----> (SeparatorMinimumHeight)
+                    // H: 2  | |b                   ||d                    | << ----> (SeparatorMinimumHeightInterior)
+                    // H: 3  | |                    ||                     | <<
+                    // H: 4  | |                    ||                     | <<
+                    // H: 5  | |                    ||                     | <<
+                    // H: 6  | |                    ||                     | <<
+                    // H: 7  | |                    ||                     | <<
+                    // H: 8  | |                    ||                     | << ----> (SeparatorMaximumHeightInterior)
+                    // H: 9  | |--------------------||---------------------| < ----> (SeparatorMaximumHeight)
+                    // H: 10 |
+                    //       | where a is the dimension for the first pane upper left corner           (0, SeparatorMinimumHeight                                     (usually 1))
+                    //       |   and b is the dimension for the first pane interior upper left corner  (1, SeparatorMinimumHeightInterior                             (usually 2))
+                    //       |   and c is the dimension for the second pane upper left corner          (SeparatorHalfConsoleWidth, SeparatorMinimumHeight             (usually 1))
+                    //       |   and d is the dimension for the second pane interior upper left corner (SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior (usually 2))
+
+                    // First, the horizontal and vertical separators
+                    var finalFirstPaneSeparatorColor = currentPane == 1 ? FileManagerPaneSelectedSeparatorColor : FileManagerPaneSeparatorColor;
+                    var finalSecondPaneSeparatorColor = currentPane == 2 ? FileManagerPaneSelectedSeparatorColor : FileManagerPaneSeparatorColor;
+                    BorderColor.WriteBorder(0, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, finalFirstPaneSeparatorColor, FileManagerPaneBackgroundColor);
+                    BorderColor.WriteBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, finalSecondPaneSeparatorColor, FileManagerPaneBackgroundColor);
+
+                    // Render the key bindings
+                    ConsoleWrapper.CursorLeft = 0;
+                    foreach (FileManagerBinding binding in fileManagerBindings)
                     {
-                        TextWriterWhereColor.WriteWhere($" {binding.BindingKeyName} ", ConsoleWrapper.CursorLeft + 0, ConsoleWrapper.WindowHeight - 1, FileManagerKeyBindingOptionColor, FileManagerOptionBackgroundColor);
-                        TextWriterWhereColor.WriteWhere($"{binding.BindingName}  ", ConsoleWrapper.CursorLeft + 1, ConsoleWrapper.WindowHeight - 1, FileManagerOptionForegroundColor, FileManagerBackgroundColor);
+                        // First, check to see if the rendered binding info is going to exceed the console window width
+                        if (!($" {binding.BindingKeyName} {binding.BindingName}  ".Length + ConsoleWrapper.CursorLeft >= ConsoleWrapper.WindowWidth))
+                        {
+                            TextWriterWhereColor.WriteWhere($" {binding.BindingKeyName} ", ConsoleWrapper.CursorLeft + 0, ConsoleWrapper.WindowHeight - 1, FileManagerKeyBindingOptionColor, FileManagerOptionBackgroundColor);
+                            TextWriterWhereColor.WriteWhere($"{binding.BindingName}  ", ConsoleWrapper.CursorLeft + 1, ConsoleWrapper.WindowHeight - 1, FileManagerOptionForegroundColor, FileManagerBackgroundColor);
+                        }
                     }
+
+                    // Don't require redraw
+                    redrawRequired = false;
                 }
 
                 // Render the file lists (first pane)
@@ -262,6 +274,7 @@ namespace KS.Files.Interactive
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
                 TextWriterWhereColor.WriteWhere(finalInfoRendered.Truncate(ConsoleWrapper.WindowWidth - 3), 0, 0, FileManagerForegroundColor, FileManagerBackgroundColor);
+                ConsoleExtensions.ClearLineToRight();
 
                 // Wait for key
                 ConsoleKey pressedKey = ConsoleWrapper.ReadKey(true).Key;
