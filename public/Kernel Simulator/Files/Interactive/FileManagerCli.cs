@@ -62,9 +62,15 @@ namespace KS.Files.Interactive
             new FileManagerBinding("Up",     ConsoleKey.F4, (_,               sourcePath) => 
             {
                 if (currentPane == 2)
+                {
                     secondPanePath = Filesystem.NeutralizePath(secondPanePath + "/..");
+                    secondPaneCurrentSelection = 1;
+                }
                 else
+                {
                     firstPanePath = Filesystem.NeutralizePath(firstPanePath + "/..");
+                    firstPaneCurrentSelection = 1;
+                }
             }),
 
             // Misc bindings
@@ -330,6 +336,20 @@ namespace KS.Files.Interactive
                             secondPaneCurrentSelection = CachedFilesCurrentPane.Count;
                         else
                             firstPaneCurrentSelection = CachedFilesCurrentPane.Count;
+                        break;
+                    case ConsoleKey.Enter:
+                        if (!Checking.FolderExists(FileInfoCurrentPane.FullName))
+                            break;
+                        if (currentPane == 2)
+                        {
+                            secondPanePath = Filesystem.NeutralizePath(FileInfoCurrentPane.FullName);
+                            secondPaneCurrentSelection = 1;
+                        }
+                        else
+                        {
+                            firstPanePath = Filesystem.NeutralizePath(FileInfoCurrentPane.FullName);
+                            firstPaneCurrentSelection = 1;
+                        }
                         break;
                     default:
                         var implementedBindings = fileManagerBindings.Where((binding) => binding.BindingKeyName == pressedKey);
