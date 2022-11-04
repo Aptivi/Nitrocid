@@ -95,7 +95,7 @@ namespace KS.Shell
         /// </summary>
         internal readonly static Dictionary<string, BaseShellInfo> AvailableShells = new()
         {
-            { "Shell", new UESHShellCommon() },
+            { "Shell", new UESHShellInfo() },
             { "FTPShell", new FTPShellInfo() },
             { "MailShell", new MailShellInfo() },
             { "SFTPShell", new SFTPShellInfo() },

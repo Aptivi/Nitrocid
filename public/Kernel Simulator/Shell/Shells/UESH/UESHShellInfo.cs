@@ -29,7 +29,7 @@ namespace KS.Shell.Shells.UESH
     /// <summary>
     /// UESH common shell properties
     /// </summary>
-    internal class UESHShellCommon : BaseShellInfo, IShellInfo
+    internal class UESHShellInfo : BaseShellInfo, IShellInfo
     {
         /// <summary>
         /// List of commands
