@@ -89,12 +89,21 @@ namespace KS.ConsoleBase
             // ---
             // Kernel Simulator makes use of the 256 colors to print its own text by default. Even if we specify the 16-color compatibility values, we
             // still use the VT sequence to print colored text, but this will be changed later.
-            if (!TerminalType.Contains("-256col") & !KernelPlatform.IsOnWindows())
+            if (!IsConsole256Colors())
             {
                 ConsoleWrapper.ForegroundColor = ConsoleColor.Yellow;
                 WriterPlainManager.CurrentPlain.WritePlain("Warning: Kernel Simulator makes use of the 256 colors. Make sure that your terminal is set to run on 256 color mode. Your terminal is {0}. Press any key to continue.", true, TerminalType);
                 ConsoleWrapper.ReadKey(true);
             }
+        }
+
+        /// <summary>
+        /// Does the console support 256 colors? Always true on Windows
+        /// </summary>
+        public static bool IsConsole256Colors()
+        {
+            string TerminalType = KernelPlatform.GetTerminalType();
+            return TerminalType.Contains("-256col") || KernelPlatform.IsOnWindows();
         }
 
     }
