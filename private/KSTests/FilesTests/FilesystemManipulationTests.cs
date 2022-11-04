@@ -171,7 +171,7 @@ namespace KSTests.FilesTests
         public void TestRemoveDirectory()
         {
             CurrentDirectory.CurrentDir = Paths.HomePath;
-            string TargetPath = "/TestDir2";
+            string TargetPath = Filesystem.NeutralizePath("/TestDir2");
             Removing.TryRemoveDirectory(TargetPath).ShouldBeTrue();
         }
 
