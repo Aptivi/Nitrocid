@@ -50,6 +50,6 @@ namespace KS.Shell.ShellBase.Commands
         /// <summary>
         /// This command is wrappable to pages.
         /// </summary>
-        Wrappable = 16
+        Wrappable = 32
     }
 }
