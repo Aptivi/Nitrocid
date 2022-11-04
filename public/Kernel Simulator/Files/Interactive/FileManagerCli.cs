@@ -51,7 +51,7 @@ namespace KS.Files.Interactive
         private static int currentPane = 1;
         private static List<FileSystemInfo> cachedFileInfosFirstPane = new();
         private static List<FileSystemInfo> cachedFileInfosSecondPane = new();
-        private static List<FileManagerBinding> fileManagerBindings = new()
+        private static readonly List<FileManagerBinding> fileManagerBindings = new()
         {
             // Operations
             new FileManagerBinding("Copy",   ConsoleKey.F1, (destinationPath, sourcePath) => Copying.CopyFileOrDir(sourcePath.FullName, destinationPath)),
