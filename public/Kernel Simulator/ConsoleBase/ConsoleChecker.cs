@@ -27,7 +27,7 @@ namespace KS.ConsoleBase
     /// <summary>
     /// Console sanity checking module
     /// </summary>
-    public static class ConsoleSanityChecker
+    public static class ConsoleChecker
     {
 
         /// <summary>

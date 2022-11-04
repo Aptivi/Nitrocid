@@ -212,3 +212,10 @@ Base command class had the name of `CommandExecutor`. However, it behaved like t
 Affected classes:
   * `CommandExecutor` -> `BaseCommand`
   * `GetCommand` -> `CommandExecutor`
+
+##### Renamed ConsoleSanityChecker to ConsoleChecker
+
+This class will be filled by many console checks, so renamed it according to the purpose.
+
+Affected classes:
+  * `ConsoleSanityChecker` -> `ConsoleChecker`

@@ -106,7 +106,7 @@ namespace KS.Kernel
                     ReadLine.AutoCompletionEnabled = true;
 
                     // Check for terminal
-                    ConsoleSanityChecker.CheckConsole();
+                    ConsoleChecker.CheckConsole();
 
                     // Initialize crucial things
                     if (!KernelPlatform.IsOnUnix())

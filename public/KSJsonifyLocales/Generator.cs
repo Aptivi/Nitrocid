@@ -45,7 +45,7 @@ namespace KSJsonifyLocales
         public static void Main(string[] Args)
         {
             // Check console
-            ConsoleSanityChecker.CheckConsole();
+            ConsoleChecker.CheckConsole();
 
             // Parse for arguments
             var arguments = new List<string>();

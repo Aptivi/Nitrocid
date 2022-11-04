@@ -45,7 +45,7 @@ namespace KSConverter
         public static void Main()
         {
             // Check console
-            ConsoleSanityChecker.CheckConsole();
+            ConsoleChecker.CheckConsole();
 
             try
             {
