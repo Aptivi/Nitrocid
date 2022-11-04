@@ -49,6 +49,8 @@ namespace KS.Files.Interactive
         private static int firstPaneCurrentSelection = 1;
         private static int secondPaneCurrentSelection = 1;
         private static int currentPane = 1;
+        private static string firstPanePath = "";
+        private static string secondPanePath = "";
         private static List<FileSystemInfo> cachedFileInfosFirstPane = new();
         private static List<FileSystemInfo> cachedFileInfosSecondPane = new();
         private static readonly List<FileManagerBinding> fileManagerBindings = new()
@@ -57,6 +59,13 @@ namespace KS.Files.Interactive
             new FileManagerBinding("Copy",   ConsoleKey.F1, (destinationPath, sourcePath) => Copying.CopyFileOrDir(sourcePath.FullName, destinationPath)),
             new FileManagerBinding("Move",   ConsoleKey.F2, (destinationPath, sourcePath) => Moving.MoveFileOrDir(sourcePath.FullName, destinationPath)),
             new FileManagerBinding("Delete", ConsoleKey.F3, (_,               sourcePath) => Removing.RemoveFileOrDir(sourcePath.FullName)),
+            new FileManagerBinding("Up",     ConsoleKey.F4, (_,               sourcePath) => 
+            {
+                if (currentPane == 2)
+                    secondPanePath = Filesystem.NeutralizePath(secondPanePath + "/..");
+                else
+                    firstPanePath = Filesystem.NeutralizePath(firstPanePath + "/..");
+            }),
 
             // Misc bindings
             new FileManagerBinding("Exit"  , ConsoleKey.Escape, (_, _) => isExiting = true),
@@ -140,6 +149,8 @@ namespace KS.Files.Interactive
         {
             isExiting = false;
             redrawRequired = true;
+            firstPanePath = firstPath;
+            secondPanePath = secondPath;
 
             while (!isExiting)
             {
@@ -201,7 +212,7 @@ namespace KS.Files.Interactive
                 }
 
                 // Render the file lists (first pane)
-                var FilesFirstPane = Listing.CreateList(firstPath, true);
+                var FilesFirstPane = Listing.CreateList(firstPanePath, true);
                 cachedFileInfosFirstPane = FilesFirstPane;
                 int pagesFirstPane = FilesFirstPane.Count / SeparatorMaximumHeightInterior;
                 int answersPerPageFirstPane = SeparatorMaximumHeightInterior - 1;
@@ -221,7 +232,7 @@ namespace KS.Files.Interactive
                 }
 
                 // Render the file lists (second pane)
-                var FilesSecondPane = Listing.CreateList(secondPath, true);
+                var FilesSecondPane = Listing.CreateList(secondPanePath, true);
                 cachedFileInfosSecondPane = FilesSecondPane;
                 int pagesSecondPane = FilesSecondPane.Count / SeparatorMaximumHeightInterior;
                 int answersPerPageSecondPane = SeparatorMaximumHeightInterior - 1;
@@ -245,8 +256,8 @@ namespace KS.Files.Interactive
                                              cachedFileInfosSecondPane[secondPaneCurrentSelection - 1] :
                                              cachedFileInfosFirstPane[firstPaneCurrentSelection - 1];
                 var PathCurrentPane =        currentPane == 2 ?
-                                             secondPath :
-                                             firstPath;
+                                             secondPanePath :
+                                             firstPanePath;
                 var CachedFilesCurrentPane = currentPane == 2 ?
                                              cachedFileInfosSecondPane :
                                              cachedFileInfosFirstPane;
