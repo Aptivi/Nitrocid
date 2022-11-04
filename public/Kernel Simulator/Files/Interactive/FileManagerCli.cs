@@ -270,14 +270,32 @@ namespace KS.Files.Interactive
                 switch (pressedKey)
                 {
                     case ConsoleKey.UpArrow:
-                        firstPaneCurrentSelection--;
-                        if (firstPaneCurrentSelection < 1)
-                            firstPaneCurrentSelection = CachedFilesCurrentPane.Count;
+                        if (currentPane == 2)
+                        {
+                            secondPaneCurrentSelection--;
+                            if (secondPaneCurrentSelection < 1)
+                                secondPaneCurrentSelection = CachedFilesCurrentPane.Count;
+                        }
+                        else
+                        {
+                            firstPaneCurrentSelection--;
+                            if (firstPaneCurrentSelection < 1)
+                                firstPaneCurrentSelection = CachedFilesCurrentPane.Count;
+                        }
                         break;
                     case ConsoleKey.DownArrow:
-                        firstPaneCurrentSelection++;
-                        if (firstPaneCurrentSelection > CachedFilesCurrentPane.Count)
-                            firstPaneCurrentSelection = 1;
+                        if (currentPane == 2)
+                        {
+                            secondPaneCurrentSelection++;
+                            if (secondPaneCurrentSelection > CachedFilesCurrentPane.Count)
+                                secondPaneCurrentSelection = 1;
+                        }
+                        else
+                        {
+                            firstPaneCurrentSelection++;
+                            if (firstPaneCurrentSelection > CachedFilesCurrentPane.Count)
+                                firstPaneCurrentSelection = 1;
+                        }
                         break;
                     default:
                         var implementedBindings = fileManagerBindings.Where((binding) => binding.BindingKeyName == pressedKey);
