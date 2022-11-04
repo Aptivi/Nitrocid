@@ -75,8 +75,9 @@ namespace KS.Shell.ShellBase.Commands
         {
             // Determine command type
             var CommandList = CommandManager.GetCommands(CommandType)
-                                        .OrderBy((CommandValuePair) => CommandValuePair.Key)
-                                        .ToDictionary((CommandValuePair) => CommandValuePair.Key, (CommandValuePair) => CommandValuePair.Value);
+                                            .Where((CommandValuePair) => !CommandValuePair.Value.Flags.HasFlag(CommandFlags.Hidden))
+                                            .OrderBy((CommandValuePair) => CommandValuePair.Key)
+                                            .ToDictionary((CommandValuePair) => CommandValuePair.Key, (CommandValuePair) => CommandValuePair.Value);
             Dictionary<string, CommandInfo> ModCommandList;
             var AliasedCommandList = AliasManager.GetAliasesListFromType(CommandType);
 
