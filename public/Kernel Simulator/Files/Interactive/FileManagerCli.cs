@@ -234,13 +234,14 @@ namespace KS.Files.Interactive
                     {
                         FileSystemInfo file = FilesFirstPane[finalIndex];
                         bool isDirectory = Checking.FolderExists(file.FullName);
-                        finalEntry = $" [{(isDirectory ? "/" : "*")}] {file.Name}".Truncate(SeparatorHalfConsoleWidthInterior - 3);
+                        finalEntry = $" [{(isDirectory ? "/" : "*")}] {file.Name}".Truncate(SeparatorHalfConsoleWidthInterior - 4);
                     }
 
                     var finalForeColor = finalIndex == firstPaneCurrentSelection - 1 ? FileManagerPaneSelectedFileForeColor : FileManagerPaneFileForeColor;
                     var finalBackColor = finalIndex == firstPaneCurrentSelection - 1 ? FileManagerPaneSelectedFileBackColor : FileManagerPaneFileBackColor;
                     TextWriterWhereColor.WriteWhere(finalEntry + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalEntry.Length), 1, SeparatorMinimumHeightInterior + finalIndex - startIndexFirstPane, finalForeColor, finalBackColor);
                 }
+                ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)firstPaneCurrentSelection / FilesFirstPane.Count), SeparatorHalfConsoleWidthInterior - 1, 1, 2, 2, false);
 
                 // Render the file lists (second pane)
                 var FilesSecondPane = Listing.CreateList(secondPanePath, true);
@@ -259,13 +260,14 @@ namespace KS.Files.Interactive
                     {
                         FileSystemInfo file = FilesSecondPane[finalIndex];
                         bool isDirectory = Checking.FolderExists(file.FullName);
-                        finalEntry = $" [{(isDirectory ? "/" : "*")}] {file.Name}".Truncate(SeparatorHalfConsoleWidthInterior - 3);
+                        finalEntry = $" [{(isDirectory ? "/" : "*")}] {file.Name}".Truncate(SeparatorHalfConsoleWidthInterior - 4);
                     }
 
                     var finalForeColor = finalIndex == secondPaneCurrentSelection - 1 ? FileManagerPaneSelectedFileForeColor : FileManagerPaneFileForeColor;
                     var finalBackColor = finalIndex == secondPaneCurrentSelection - 1 ? FileManagerPaneSelectedFileBackColor : FileManagerPaneFileBackColor;
                     TextWriterWhereColor.WriteWhere(finalEntry + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalEntry.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + finalIndex - startIndexSecondPane, finalForeColor, finalBackColor);
                 }
+                ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)secondPaneCurrentSelection / FilesSecondPane.Count), ConsoleWrapper.WindowWidth - 3, 1, 2, 2, false);
 
                 // Now, populate the current file/folder info from the current pane
                 var FileInfoCurrentPane =    currentPane == 2 ?
