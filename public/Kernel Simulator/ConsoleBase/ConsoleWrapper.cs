@@ -262,10 +262,14 @@ namespace KS.ConsoleBase
         /// <summary>
         /// Clears the console screen, filling it with spaces with the selected background color.
         /// </summary>
-        public static void Clear()
+        public static void Clear(bool loadBack = false)
         {
             if (!IsDumb)
+            {
+                if (loadBack)
+                    ColorTools.LoadBack();
                 Console.Clear();
+            }
         }
 
         /// <summary>

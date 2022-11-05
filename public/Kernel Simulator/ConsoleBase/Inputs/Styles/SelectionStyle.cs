@@ -24,6 +24,7 @@ using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
+using KS.Misc.Writers.FancyWriters;
 
 namespace KS.ConsoleBase.Inputs.Styles
 {
@@ -70,7 +71,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 var finalAnswerTitles = new List<string>();
                 int altAnswersFirstIdx = answers.Length;
                 ConsoleKeyInfo Answer;
-                ConsoleWrapper.Clear();
+                ConsoleWrapper.Clear(true);
 
                 // Check to see if the answer titles are the same
                 if (answers.Length != AnswersTitles.Length)
@@ -92,8 +93,10 @@ namespace KS.ConsoleBase.Inputs.Styles
                     finalAnswerTitles.Add(answer);
 
                 // Make pages based on console window height
-                int pages = finalAnswers.Count / (ConsoleWrapper.WindowHeight - ConsoleWrapper.CursorTop);
-                int answersPerPage = ConsoleWrapper.WindowHeight - ConsoleWrapper.CursorTop - 2;
+                int listStartPosition = ConsoleWrapper.CursorTop;
+                int listEndPosition = ConsoleWrapper.WindowHeight - ConsoleWrapper.CursorTop;
+                int pages = finalAnswers.Count / listEndPosition;
+                int answersPerPage = listEndPosition - 2;
 
                 // The reason for subtracting the highlighted answer by one is that because while the highlighted answer number is one-based, the indexes are zero-based,
                 // causing confusion. Pages, again, are one-based. Highlighting the last option causes us to go to the next page. This is intentional.
@@ -122,6 +125,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                                       AltAnswer ? ColorTools.ColTypes.AlternativeOption : ColorTools.ColTypes.Option;
                     TextWriterColor.Write(AnswerIndex == endIndex ? " " + Translate.DoTranslation("Highlight this entry to go to the next page.") : AnswerOption, true, AnswerColor);
                 }
+                ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)HighlightedAnswer / finalAnswers.Count), ConsoleWrapper.WindowWidth - 2, 0, listStartPosition, false);
 
                 // Wait for an answer
                 Answer = ConsoleWrapper.ReadKey(true);
