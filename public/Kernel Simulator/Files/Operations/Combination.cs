@@ -18,6 +18,7 @@
 
 using System;
 using System.Collections.Generic;
+using KS.Files.Querying;
 using KS.Files.Read;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -31,11 +32,11 @@ namespace KS.Files.Operations
     {
 
         /// <summary>
-        /// Combines the files and puts the combined output to the array
+        /// Combines the text files and puts the combined output to the array
         /// </summary>
         /// <param name="Input">An input file</param>
         /// <param name="TargetInputs">The target inputs to merge</param>
-        public static string[] CombineFiles(string Input, string[] TargetInputs)
+        public static string[] CombineTextFiles(string Input, string[] TargetInputs)
         {
             try
             {
@@ -43,13 +44,54 @@ namespace KS.Files.Operations
 
                 // Add the input contents
                 Filesystem.ThrowOnInvalidPath(Input);
+                if (Parsing.IsBinaryFile(Input))
+                    throw new Kernel.Exceptions.FilesystemException(Translate.DoTranslation("To combine binary files, use the appropriate function.") + " " + nameof(CombineBinaryFiles) + "(" + Input + ")");
                 CombinedContents.AddRange(FileRead.ReadContents(Input));
 
                 // Enumerate the target inputs
                 foreach (string TargetInput in TargetInputs)
                 {
                     Filesystem.ThrowOnInvalidPath(TargetInput);
+                    if (Parsing.IsBinaryFile(TargetInput))
+                        throw new Kernel.Exceptions.FilesystemException(Translate.DoTranslation("To combine binary files, use the appropriate function.") + " " + nameof(CombineBinaryFiles) + "(" + TargetInput + ")");
                     CombinedContents.AddRange(FileRead.ReadContents(TargetInput));
+                }
+
+                // Return the combined contents
+                return CombinedContents.ToArray();
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to combine files: {0}", ex.Message);
+                throw new Kernel.Exceptions.FilesystemException(Translate.DoTranslation("Failed to combine files."), ex);
+            }
+        }
+
+        /// <summary>
+        /// Combines the binary files and puts the combined output to the array
+        /// </summary>
+        /// <param name="Input">An input file</param>
+        /// <param name="TargetInputs">The target inputs to merge</param>
+        public static byte[] CombineBinaryFiles(string Input, string[] TargetInputs)
+        {
+            try
+            {
+                var CombinedContents = new List<byte>();
+
+                // Add the input contents
+                Filesystem.ThrowOnInvalidPath(Input);
+                if (!Parsing.IsBinaryFile(Input))
+                    throw new Kernel.Exceptions.FilesystemException(Translate.DoTranslation("To combine text files, use the appropriate function.") + " " + nameof(CombineTextFiles) + "(" + Input + ")");
+                CombinedContents.AddRange(FileRead.ReadAllBytes(Input));
+
+                // Enumerate the target inputs
+                foreach (string TargetInput in TargetInputs)
+                {
+                    Filesystem.ThrowOnInvalidPath(TargetInput);
+                    if (!Parsing.IsBinaryFile(TargetInput))
+                        throw new Kernel.Exceptions.FilesystemException(Translate.DoTranslation("To combine text files, use the appropriate function.") + " " + nameof(CombineTextFiles) + "(" + TargetInput + ")");
+                    CombinedContents.AddRange(FileRead.ReadAllBytes(TargetInput));
                 }
 
                 // Return the combined contents

@@ -40,7 +40,7 @@ namespace KS.Shell.Shells.UESH.Commands
             var CombineInputPaths = ListArgsOnly.Skip(2).ToArray();
 
             // Make a combined content array
-            var CombinedContents = Combination.CombineFiles(InputPath, CombineInputPaths);
+            var CombinedContents = Combination.CombineTextFiles(InputPath, CombineInputPaths);
             Making.MakeFile(OutputPath, false);
             File.WriteAllLines(OutputPath, CombinedContents);
         }

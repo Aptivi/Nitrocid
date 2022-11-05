@@ -102,5 +102,7 @@ File or directory {0} doesn't exist.
 Opts in to new config paths
 Failed to get file or folder information.
 Edits a file
+To combine binary files, use the appropriate function.
+To combine text files, use the appropriate function.
 
 ==========================================================================================================================================

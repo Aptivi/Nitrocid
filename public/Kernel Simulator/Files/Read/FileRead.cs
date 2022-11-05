@@ -67,5 +67,17 @@ namespace KS.Files.Read
             return AllLnList.ToArray();
         }
 
+        /// <summary>
+        /// Reads all the bytes
+        /// </summary>
+        /// <param name="path">Path to the file</param>
+        public static byte[] ReadAllBytes(string path)
+        {
+            // Read the bytes
+            Filesystem.ThrowOnInvalidPath(path);
+            path = Filesystem.NeutralizePath(path);
+            return File.ReadAllBytes(path);
+        }
+
     }
 }

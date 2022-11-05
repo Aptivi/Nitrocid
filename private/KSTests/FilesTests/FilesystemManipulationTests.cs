@@ -416,7 +416,7 @@ namespace KSTests.FilesTests
         {
             string PathToTestText = Path.GetFullPath("TestData/TestText.txt");
             string PathToTestTextToBeCombined = Path.GetFullPath("TestData/TestText.txt");
-            var Combined = Combination.CombineFiles(PathToTestText, new[] { PathToTestTextToBeCombined });
+            var Combined = Combination.CombineTextFiles(PathToTestText, new[] { PathToTestTextToBeCombined });
             Combined.ShouldBeOfType(typeof(string[]));
             Combined.ShouldNotBeNull();
             Combined.ShouldNotBeEmpty();
