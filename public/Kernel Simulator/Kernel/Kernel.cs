@@ -132,17 +132,12 @@ namespace KS.Kernel
                     // Check for console size
                     if (Flags.CheckingForConsoleSize)
                     {
-                        // Check for the minimum console window requirements (80x24)
-                        while (ConsoleWrapper.WindowWidth < 80 | ConsoleWrapper.WindowHeight < 24)
-                        {
-                            TextWriterColor.Write(Translate.DoTranslation("Your console is too small to run properly:") + " {0}x{1}", true, ColorTools.ColTypes.Warning, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
-                            TextWriterColor.Write(Translate.DoTranslation("To have a better experience, resize your console window while still being on this screen. Press any key to continue..."), true, ColorTools.ColTypes.Warning);
-                            ConsoleWrapper.ReadKey(true);
-                        }
+                        ConsoleChecker.CheckConsoleSize();
                     }
                     else
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("Looks like you're bypassing the console size detection. Things may not work properly on small screens.") + CharManager.NewLine + Translate.DoTranslation("To have a better experience, resize your console window while still being on this screen. Press any key to continue..."), true, ColorTools.ColTypes.Warning);
+                        TextWriterColor.Write(Translate.DoTranslation("Looks like you're bypassing the console size detection. Things may not work properly on small screens.") + CharManager.NewLine + 
+                                              Translate.DoTranslation("To have a better experience, resize your console window while still being on this screen. Press any key to continue..."), true, ColorTools.ColTypes.Warning);
                         ConsoleWrapper.ReadKey(true);
                         Flags.CheckingForConsoleSize = true;
                     }

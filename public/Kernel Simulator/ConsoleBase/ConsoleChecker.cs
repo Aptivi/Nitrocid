@@ -17,9 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Kernel.Exceptions;
+using KS.Languages;
 using KS.Misc.Text;
+using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.WriterBase;
 
 namespace KS.ConsoleBase
@@ -104,6 +107,27 @@ namespace KS.ConsoleBase
         {
             string TerminalType = KernelPlatform.GetTerminalType();
             return TerminalType.Contains("-256col") || KernelPlatform.IsOnWindows();
+        }
+
+        /// <summary>
+        /// Checks the console size with edge cases
+        /// </summary>
+        internal static void CheckConsoleSize()
+        {
+            // If we're being run on TMUX, the status bar might mess up our interpretation of the window height.
+            int MinimumWidth =  80;
+            int MinimumHeight = 24;
+            if (KernelPlatform.IsRunningFromTmux())
+                // Assume that status bar is 1 row long
+                MinimumHeight -= 1;
+
+            // Check for the minimum console window requirements (80x24)
+            while (ConsoleWrapper.WindowWidth < MinimumWidth | ConsoleWrapper.WindowHeight < MinimumHeight)
+            {
+                TextWriterColor.Write(Translate.DoTranslation("Your console is too small to run properly:") + " {0}x{1} | buff: {2}x{3}", true, ColorTools.ColTypes.Warning, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, ConsoleWrapper.BufferWidth, ConsoleWrapper.BufferHeight);
+                TextWriterColor.Write(Translate.DoTranslation("To have a better experience, resize your console window while still being on this screen. Press any key to continue..."), true, ColorTools.ColTypes.Warning);
+                ConsoleWrapper.ReadKey(true);
+            }
         }
 
     }

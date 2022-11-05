@@ -86,5 +86,10 @@ namespace KS.Kernel
             false;
 #endif
 
+        /// <summary>
+        /// Is Kernel Simulator running from TMUX?
+        /// </summary>
+        public static bool IsRunningFromTmux() => Environment.GetEnvironmentVariable("TMUX") is not null;
+
     }
 }
