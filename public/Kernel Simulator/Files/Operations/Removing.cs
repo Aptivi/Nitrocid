@@ -46,7 +46,8 @@ namespace KS.Files.Operations
         /// </summary>
         /// <param name="Target">Target directory</param>
         /// <param name="ShowProgress">Whether or not to show what files are being removed</param>
-        public static void RemoveDirectory(string Target, bool ShowProgress)
+        /// <param name="secureRemove">Securely remove file by filling it with zeroes</param>
+        public static void RemoveDirectory(string Target, bool ShowProgress, bool secureRemove = false)
         {
             Filesystem.ThrowOnInvalidPath(Target);
             if (!Checking.FolderExists(Target))
@@ -66,7 +67,7 @@ namespace KS.Files.Operations
                 DebugWriter.WriteDebug(DebugLevel.I, "Removing file {0}...", DestinationFilePath);
                 if (ShowProgress)
                     TextWriterColor.Write("-> {0}", DestinationFilePath);
-                RemoveFile(DestinationFilePath);
+                RemoveFile(DestinationFilePath, secureRemove);
             }
 
             // Iterate through every subdirectory and delete them
@@ -88,12 +89,13 @@ namespace KS.Files.Operations
         /// Removes a directory
         /// </summary>
         /// <param name="Target">Target directory</param>
+        /// <param name="secureRemove">Securely remove file by filling it with zeroes</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool TryRemoveDirectory(string Target)
+        public static bool TryRemoveDirectory(string Target, bool secureRemove = false)
         {
             try
             {
-                RemoveDirectory(Target);
+                RemoveDirectory(Target, secureRemove);
                 return true;
             }
             catch (Exception ex)
@@ -107,10 +109,21 @@ namespace KS.Files.Operations
         /// Removes a file
         /// </summary>
         /// <param name="Target">Target directory</param>
-        public static void RemoveFile(string Target)
+        /// <param name="secureRemove">Securely remove file by filling it with zeroes</param>
+        public static void RemoveFile(string Target, bool secureRemove = false)
         {
             Filesystem.ThrowOnInvalidPath(Target);
             string Dir = Filesystem.NeutralizePath(Target);
+            if (secureRemove)
+            {
+                // Open the file stream and fill it with zeroes
+                if (!Checking.FileExists(Dir))
+                    throw new FileNotFoundException();
+                var target = File.OpenWrite(Dir);
+                byte[] zeroes = new byte[target.Length];
+                target.Write(zeroes, 0, zeroes.Length);
+                target.Close();
+            }
             File.Delete(Dir);
 
             // Raise event
@@ -121,12 +134,13 @@ namespace KS.Files.Operations
         /// Removes a file
         /// </summary>
         /// <param name="Target">Target directory</param>
+        /// <param name="secureRemove">Securely remove file by filling it with zeroes</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool TryRemoveFile(string Target)
+        public static bool TryRemoveFile(string Target, bool secureRemove = false)
         {
             try
             {
-                RemoveFile(Target);
+                RemoveFile(Target, secureRemove);
                 return true;
             }
             catch (Exception ex)
@@ -140,13 +154,14 @@ namespace KS.Files.Operations
         /// Removes file or directory
         /// </summary>
         /// <param name="Target">Path to file or directory</param>
+        /// <param name="secureRemove">Securely remove file by filling it with zeroes</param>
         /// <exception cref="FilesystemException"></exception>
-        public static void RemoveFileOrDir(string Target)
+        public static void RemoveFileOrDir(string Target, bool secureRemove = false)
         {
             if (Checking.FileExists(Target))
-                RemoveFile(Target);
+                RemoveFile(Target, secureRemove);
             else if (Checking.FolderExists(Target))
-                RemoveDirectory(Target);
+                RemoveDirectory(Target, Filesystem.ShowFilesystemProgress, secureRemove);
             else
                 throw new FilesystemException(Translate.DoTranslation("File or directory {0} doesn't exist."), Target);
         }
@@ -155,12 +170,13 @@ namespace KS.Files.Operations
         /// Removes a file or directory
         /// </summary>
         /// <param name="Target">Target file or directory</param>
+        /// <param name="secureRemove">Securely remove file by filling it with zeroes</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool TryRemoveFileOrDir(string Target)
+        public static bool TryRemoveFileOrDir(string Target, bool secureRemove = false)
         {
             try
             {
-                RemoveFileOrDir(Target);
+                RemoveFileOrDir(Target, secureRemove);
                 return true;
             }
             catch (Exception ex)
