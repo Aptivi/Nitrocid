@@ -157,6 +157,8 @@ namespace KS.Files.Interactive
             redrawRequired = true;
             firstPanePath = firstPath;
             secondPanePath = secondPath;
+            string lastFirstPanePath = "";
+            string lastSecondPanePath = "";
 
             while (!isExiting)
             {
@@ -218,9 +220,13 @@ namespace KS.Files.Interactive
                 }
 
                 // Render the file lists (first pane)
-                var FilesFirstPane = Listing.CreateList(firstPanePath, true);
-                cachedFileInfosFirstPane = FilesFirstPane;
-                int pagesFirstPane = FilesFirstPane.Count / SeparatorMaximumHeightInterior;
+                if (lastFirstPanePath != firstPanePath)
+                {
+                    var FilesFirstPane = Listing.CreateList(firstPanePath, true);
+                    cachedFileInfosFirstPane = FilesFirstPane;
+                    lastFirstPanePath = firstPanePath;
+                }
+                int pagesFirstPane = cachedFileInfosFirstPane.Count / SeparatorMaximumHeightInterior;
                 int answersPerPageFirstPane = SeparatorMaximumHeightInterior - 1;
                 int currentPageFirstPane = (firstPaneCurrentSelection - 1) / answersPerPageFirstPane;
                 int startIndexFirstPane = answersPerPageFirstPane * currentPageFirstPane;
@@ -230,9 +236,9 @@ namespace KS.Files.Interactive
                     // Populate the first pane
                     string finalEntry = "";
                     int finalIndex = i + startIndexFirstPane;
-                    if (finalIndex <= FilesFirstPane.Count - 1)
+                    if (finalIndex <= cachedFileInfosFirstPane.Count - 1)
                     {
-                        FileSystemInfo file = FilesFirstPane[finalIndex];
+                        FileSystemInfo file = cachedFileInfosFirstPane[finalIndex];
                         bool isDirectory = Checking.FolderExists(file.FullName);
                         finalEntry = $" [{(isDirectory ? "/" : "*")}] {file.Name}".Truncate(SeparatorHalfConsoleWidthInterior - 4);
                     }
@@ -241,12 +247,16 @@ namespace KS.Files.Interactive
                     var finalBackColor = finalIndex == firstPaneCurrentSelection - 1 ? FileManagerPaneSelectedFileBackColor : FileManagerPaneFileBackColor;
                     TextWriterWhereColor.WriteWhere(finalEntry + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalEntry.Length), 1, SeparatorMinimumHeightInterior + finalIndex - startIndexFirstPane, finalForeColor, finalBackColor);
                 }
-                ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)firstPaneCurrentSelection / FilesFirstPane.Count), SeparatorHalfConsoleWidthInterior - 1, 1, 2, 2, false);
+                ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)firstPaneCurrentSelection / cachedFileInfosFirstPane.Count), SeparatorHalfConsoleWidthInterior - 1, 1, 2, 2, false);
 
                 // Render the file lists (second pane)
-                var FilesSecondPane = Listing.CreateList(secondPanePath, true);
-                cachedFileInfosSecondPane = FilesSecondPane;
-                int pagesSecondPane = FilesSecondPane.Count / SeparatorMaximumHeightInterior;
+                if (lastSecondPanePath != secondPanePath)
+                {
+                    var FilesSecondPane = Listing.CreateList(secondPanePath, true);
+                    cachedFileInfosSecondPane = FilesSecondPane;
+                    lastSecondPanePath = secondPanePath;
+                }
+                int pagesSecondPane = cachedFileInfosSecondPane.Count / SeparatorMaximumHeightInterior;
                 int answersPerPageSecondPane = SeparatorMaximumHeightInterior - 1;
                 int currentPageSecondPane = (secondPaneCurrentSelection - 1) / answersPerPageSecondPane;
                 int startIndexSecondPane = answersPerPageSecondPane * currentPageSecondPane;
@@ -256,9 +266,9 @@ namespace KS.Files.Interactive
                     // Populate the second pane
                     string finalEntry = "";
                     int finalIndex = i + startIndexSecondPane;
-                    if (finalIndex <= FilesSecondPane.Count - 1)
+                    if (finalIndex <= cachedFileInfosSecondPane.Count - 1)
                     {
-                        FileSystemInfo file = FilesSecondPane[finalIndex];
+                        FileSystemInfo file = cachedFileInfosSecondPane[finalIndex];
                         bool isDirectory = Checking.FolderExists(file.FullName);
                         finalEntry = $" [{(isDirectory ? "/" : "*")}] {file.Name}".Truncate(SeparatorHalfConsoleWidthInterior - 4);
                     }
@@ -267,7 +277,7 @@ namespace KS.Files.Interactive
                     var finalBackColor = finalIndex == secondPaneCurrentSelection - 1 ? FileManagerPaneSelectedFileBackColor : FileManagerPaneFileBackColor;
                     TextWriterWhereColor.WriteWhere(finalEntry + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalEntry.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + finalIndex - startIndexSecondPane, finalForeColor, finalBackColor);
                 }
-                ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)secondPaneCurrentSelection / FilesSecondPane.Count), ConsoleWrapper.WindowWidth - 3, 1, 2, 2, false);
+                ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)secondPaneCurrentSelection / cachedFileInfosSecondPane.Count), ConsoleWrapper.WindowWidth - 3, 1, 2, 2, false);
 
                 // Now, populate the current file/folder info from the current pane
                 var FileInfoCurrentPane =    currentPane == 2 ?
