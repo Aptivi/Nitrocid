@@ -25,6 +25,7 @@ using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using UnitsNet;
+using KS.ConsoleBase.Colors;
 
 namespace KS.Files.Operations
 {
@@ -159,11 +160,20 @@ namespace KS.Files.Operations
         public static void RemoveFileOrDir(string Target, bool secureRemove = false)
         {
             if (Checking.FileExists(Target))
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "{0} is a file. Removing...", Target);
                 RemoveFile(Target, secureRemove);
+            }
             else if (Checking.FolderExists(Target))
-                RemoveDirectory(Target, Filesystem.ShowFilesystemProgress, secureRemove);
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "{0} is a folder. Removing...", Target);
+                RemoveDirectory(Target, secureRemove);
+            }
             else
-                throw new FilesystemException(Translate.DoTranslation("File or directory {0} doesn't exist."), Target);
+            {
+                DebugWriter.WriteDebug(DebugLevel.W, "Trying to remove {0} which is not found.", Target);
+                throw new FilesystemException(Translate.DoTranslation("Can't remove {0} because it doesn't exist."), Target);
+            }
         }
 
         /// <summary>

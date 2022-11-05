@@ -41,21 +41,7 @@ namespace KS.Shell.Shells.UESH.Commands
             foreach (string Path in ListArgsOnly)
             {
                 string NeutPath = Filesystem.NeutralizePath(Path);
-                if (Checking.FileExists(NeutPath))
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "{0} is a file. Removing...", Path);
-                    Removing.RemoveFile(Path);
-                }
-                else if (Checking.FolderExists(NeutPath))
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "{0} is a folder. Removing...", Path);
-                    Removing.RemoveDirectory(Path);
-                }
-                else
-                {
-                    DebugWriter.WriteDebug(DebugLevel.W, "Trying to remove {0} which is not found.", Path);
-                    TextWriterColor.Write(Translate.DoTranslation("Can't remove {0} because it doesn't exist."), true, ColorTools.ColTypes.Error, Path);
-                }
+                Removing.RemoveFileOrDir(NeutPath);
             }
         }
 
