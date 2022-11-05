@@ -16,6 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using ColorSeq;
+using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using System;
 using System.IO;
@@ -177,6 +179,7 @@ namespace KS.ConsoleBase
             {
                 if (!IsDumb)
                     Console.ForegroundColor = value;
+                ColorTools.cachedForegroundColor = new Color(Convert.ToInt32(value)).VTSequenceForeground;
             }
         }
 
@@ -195,6 +198,7 @@ namespace KS.ConsoleBase
             {
                 if (!IsDumb)
                     Console.BackgroundColor = value;
+                ColorTools.cachedBackgroundColor = new Color(Convert.ToInt32(value)).VTSequenceBackground;
             }
         }
 

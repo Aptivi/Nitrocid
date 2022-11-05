@@ -202,6 +202,10 @@ namespace KS.ConsoleBase.Colors
         // Variables for colors used by previous versions of the kernel.
         internal static readonly Dictionary<ColTypes, Color> KernelColors = PopulateColorsDefault();
 
+        // Cache variables for background and foreground colors
+        internal static string cachedForegroundColor = "";
+        internal static string cachedBackgroundColor = "";
+
         /// <summary>
         /// Gets a color from the color type
         /// </summary>
@@ -383,14 +387,21 @@ namespace KS.ConsoleBase.Colors
             // Set background
             if (Background)
             {
-                if (Flags.SetBackground | ForceSet)
+                if ((Flags.SetBackground | ForceSet) && cachedBackgroundColor != ColorSequence.VTSequenceBackground)
+                {
                     WriterPlainManager.CurrentPlain.WritePlain(ColorSequence.VTSequenceBackground, false);
-                else
+                    cachedBackgroundColor = ColorSequence.VTSequenceBackground;
+                }
+                else if (!Flags.SetBackground && cachedBackgroundColor != resetSequence)
+                {
                     WriterPlainManager.CurrentPlain.WritePlain(resetSequence, false);
+                    cachedBackgroundColor = resetSequence;
+                }
             }
-            else
+            else if (cachedForegroundColor != ColorSequence.VTSequenceForeground)
             {
                 WriterPlainManager.CurrentPlain.WritePlain(ColorSequence.VTSequenceForeground, false);
+                cachedForegroundColor = ColorSequence.VTSequenceForeground;
             }
         }
 
