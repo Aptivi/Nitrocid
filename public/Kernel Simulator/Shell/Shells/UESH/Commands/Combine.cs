@@ -16,10 +16,14 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using KS.Files;
 using KS.Files.Operations;
+using KS.Files.Querying;
+using KS.Kernel.Exceptions;
+using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.UESH.Commands
@@ -39,10 +43,36 @@ namespace KS.Shell.Shells.UESH.Commands
             string InputPath = ListArgsOnly[1];
             var CombineInputPaths = ListArgsOnly.Skip(2).ToArray();
 
+            // Check all inputs
+            bool AreAllInputsBinary = false;
+            bool AreAllInputsText = false;
+            bool IsInputBinary = Parsing.IsBinaryFile(InputPath);
+
+            // Get all the input states and make them true if all binary
+            List<bool> InputStates = new();
+            foreach (string CombineInputPath in CombineInputPaths)
+                InputStates.Add(Parsing.IsBinaryFile(CombineInputPath));
+
+            // Check to see if all inputs are either binary or text.
+            // TODO: Mixed combination?
+            AreAllInputsBinary = InputStates.Count == InputStates.Where((binary) => binary).Count();
+            AreAllInputsText = InputStates.Count == InputStates.Where((binary) => !binary).Count();
+            if (!AreAllInputsBinary && !AreAllInputsText)
+                throw new FilesystemException(Translate.DoTranslation("Can't combine a mix of text and binary files."));
+
             // Make a combined content array
-            var CombinedContents = Combination.CombineTextFiles(InputPath, CombineInputPaths);
-            Making.MakeFile(OutputPath, false);
-            File.WriteAllLines(OutputPath, CombinedContents);
+            if (AreAllInputsText)
+            {
+                var CombinedContents = Combination.CombineTextFiles(InputPath, CombineInputPaths);
+                Making.MakeFile(OutputPath, false);
+                File.WriteAllLines(OutputPath, CombinedContents);
+            }
+            else
+            {
+                var CombinedContents = Combination.CombineBinaryFiles(InputPath, CombineInputPaths);
+                Making.MakeFile(OutputPath, false);
+                File.WriteAllBytes(OutputPath, CombinedContents);
+            }
         }
 
     }
