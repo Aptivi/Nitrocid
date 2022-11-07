@@ -195,7 +195,7 @@ namespace KS.Misc.Screensaver
             {
                 inSaver = true;
                 Flags.ScrnTimeReached = true;
-                Kernel.Events.EventsManager.FireEvent("PreShowScreensaver", saver);
+                Kernel.Events.EventsManager.FireEvent("PreShowScreensaver");
                 DebugWriter.WriteDebug(DebugLevel.I, "Requested screensaver: {0}", saver);
                 if (Screensavers.ContainsKey(saver.ToLower()))
                 {
@@ -203,28 +203,18 @@ namespace KS.Misc.Screensaver
                     var BaseSaver = Screensavers[saver];
                     ScreensaverDisplayer.ScreensaverDisplayerThread.Start(BaseSaver);
                     DebugWriter.WriteDebug(DebugLevel.I, "{0} started", saver);
-                    Input.DetectKeypress();
-                    ScreensaverDisplayer.ScreensaverDisplayerThread.Stop();
-                    SaverAutoReset.WaitOne();
                 }
                 else if (CustomSaverTools.CustomSavers.ContainsKey(saver))
                 {
                     // Only one custom screensaver can be used.
                     ScreensaverDisplayer.ScreensaverDisplayerThread.Start(new CustomDisplay(CustomSaverTools.CustomSavers[saver].ScreensaverBase));
                     DebugWriter.WriteDebug(DebugLevel.I, "Custom screensaver {0} started", saver);
-                    Input.DetectKeypress();
-                    ScreensaverDisplayer.ScreensaverDisplayerThread.Stop();
-                    SaverAutoReset.WaitOne();
                 }
                 else
                 {
                     TextWriterColor.Write(Translate.DoTranslation("The requested screensaver {0} is not found."), true, ColorTools.ColTypes.Error, saver);
                     DebugWriter.WriteDebug(DebugLevel.I, "Screensaver {0} not found in the dictionary.", saver);
                 }
-
-                // Raise event
-                DebugWriter.WriteDebug(DebugLevel.I, "Screensaver really stopped.");
-                Kernel.Events.EventsManager.FireEvent("PostShowScreensaver", saver);
             }
             catch (InvalidOperationException ex)
             {
@@ -235,11 +225,6 @@ namespace KS.Misc.Screensaver
             {
                 TextWriterColor.Write(Translate.DoTranslation("Error when trying to start screensaver:") + " {0}", true, ColorTools.ColTypes.Error, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-            }
-            finally
-            {
-                inSaver = false;
-                Flags.ScrnTimeReached = false;
             }
         }
 
