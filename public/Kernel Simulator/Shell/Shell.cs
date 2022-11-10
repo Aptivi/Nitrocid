@@ -203,7 +203,7 @@ namespace KS.Shell
                 {
                     // Print a prompt
                     if (!string.IsNullOrEmpty(FullCommand))
-                        TextWriterColor.Write("[+] > ", false, ColorTools.ColTypes.Input);
+                        PromptPresetManager.WriteShellCompletionPrompt(ShellType);
                     else
                         PromptPresetManager.WriteShellPrompt(ShellType);
                 }

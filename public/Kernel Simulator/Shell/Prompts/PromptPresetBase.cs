@@ -34,6 +34,9 @@ namespace KS.Shell.Prompts
         public virtual string PresetPrompt { get; } = "> ";
 
         /// <inheritdoc/>
+        public virtual string PresetPromptCompletion { get; } = "[+] > ";
+
+        /// <inheritdoc/>
         public virtual string PresetShellType { get; } = "Shell";
 
         internal virtual string PresetPromptBuilder()
@@ -43,6 +46,14 @@ namespace KS.Shell.Prompts
         }
 
         string IPromptPreset.PresetPromptBuilder() => PresetPromptBuilder();
+
+        internal virtual string PresetPromptCompletionBuilder()
+        {
+            DebugWriter.WriteDebug(DebugLevel.E, "Tried to call prompt builder on base.");
+            throw new NotImplementedException();
+        }
+
+        string IPromptPreset.PresetPromptCompletionBuilder() => PresetPromptCompletionBuilder();
 
     }
 }

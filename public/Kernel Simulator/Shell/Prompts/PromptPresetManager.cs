@@ -237,6 +237,23 @@ namespace KS.Shell.Prompts
         }
 
         /// <summary>
+        /// Writes the shell completion prompt
+        /// </summary>
+        /// <param name="ShellType">Shell type</param>
+        public static void WriteShellCompletionPrompt(ShellType ShellType) =>
+            WriteShellCompletionPrompt(Shell.GetShellTypeName(ShellType));
+
+        /// <summary>
+        /// Writes the shell completion prompt
+        /// </summary>
+        /// <param name="ShellType">Shell type</param>
+        public static void WriteShellCompletionPrompt(string ShellType)
+        {
+            var CurrentPresetBase = GetCurrentPresetBaseFromShell(ShellType);
+            TextWriterColor.Write(CurrentPresetBase.PresetPromptCompletion, false, ColorTools.ColTypes.Input);
+        }
+
+        /// <summary>
         /// Prompts a user to select the preset
         /// </summary>
         public static void PromptForPresets()
