@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using ColorSeq;
+using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Languages;
@@ -79,7 +80,7 @@ namespace KS.ConsoleBase.Themes.Studio
             }
             else
             {
-                ThemeInfo = new ThemeInfo(Theme.Replace("-", "_"));
+                ThemeInfo = new ThemeInfo(Theme.ReplaceAll(new[] { "-", " " }, "_"));
             }
             LoadThemeFromThemeInfo(ThemeInfo);
         }
