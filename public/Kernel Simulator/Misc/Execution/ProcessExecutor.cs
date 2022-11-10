@@ -170,14 +170,25 @@ namespace KS.Misc.Execution
         /// </summary>
         private static void DetectNewData()
         {
-            while (Thread.CurrentThread.IsAlive)
+            try
             {
-                if (NewDataSpotted)
+                while (Thread.CurrentThread.IsAlive)
                 {
-                    long OldLength = ProcessData.LongCount();
-                    Thread.Sleep(50);
-                    if (OldLength == ProcessData.LongCount())
-                        NewDataSpotted = false;
+                    if (NewDataSpotted)
+                    {
+                        long OldLength = ProcessData.LongCount();
+                        Thread.Sleep(50);
+                        if (OldLength == ProcessData.LongCount())
+                            NewDataSpotted = false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                if (ex is not ThreadInterruptedException)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, "Error processing data: {0}", ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
         }
