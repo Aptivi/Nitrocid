@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Inputs;
 using KS.Languages;
 using KS.Misc.Screensaver;
 using KS.Misc.Writers.ConsoleWriters;
@@ -39,6 +39,8 @@ namespace KS.Shell.Shells.UESH.Commands
                 Screensaver.ShowSavers(ListArgsOnly[0]);
             else
                 Screensaver.ShowSavers(Screensaver.DefSaverName);
+            Input.DetectKeypress();
+            ScreensaverDisplayer.BailFromScreensaver();
         }
 
         public override void HelpHelper()
