@@ -29,6 +29,8 @@ using System.Linq;
 using KS.Users;
 using UnitsNet;
 using KS.ConsoleBase.Themes;
+using KS.Misc.Screensaver;
+using KS.Misc.Splash;
 
 namespace KS.Shell.Shells.UESH
 {
@@ -110,7 +112,7 @@ namespace KS.Shell.Shells.UESH
             { "open", new CommandInfo("open", ShellType.Shell, "Opens a URL", new CommandArgumentInfo(new[] { "<URL>" }, true, 1), new OpenCommand()) },
             { "perm", new CommandInfo("perm", ShellType.Shell, "Manage permissions for users", new CommandArgumentInfo(new[] { "<userName> <Administrator/Disabled/Anonymous> <Allow/Disallow>" }, true, 3, (_) => UserManagement.ListAllUsers().Where((src) => src.StartsWith(_)).ToArray()), new PermCommand(), CommandFlags.Strict) },
             { "ping", new CommandInfo("ping", ShellType.Shell, "Pings an address", new CommandArgumentInfo(new[] { "[times] <Address1> <Address2> ..." }, true, 1), new PingCommand()) },
-            { "previewsplash", new CommandInfo("previewsplash", ShellType.Shell, "Previews the splash", new CommandArgumentInfo(new[] { "[splashName]" }, false, 0), new PreviewSplashCommand()) },
+            { "previewsplash", new CommandInfo("previewsplash", ShellType.Shell, "Previews the splash", new CommandArgumentInfo(new[] { "[splashName]" }, false, 0, (_) => SplashManager.Splashes.Keys.Where((src) => src.StartsWith(_)).ToArray()), new PreviewSplashCommand()) },
             { "put", new CommandInfo("put", ShellType.Shell, "Uploads a file to specified website", new CommandArgumentInfo(new[] { "<FileName> <URL>" }, true, 2), new PutCommand()) },
             { "reboot", new CommandInfo("reboot", ShellType.Shell, "Restarts your computer (WARNING: No syncing, because it is not a final kernel)", new CommandArgumentInfo(new[] { "[ip] [port]" }, false, 0), new RebootCommand()) },
             { "reloadconfig", new CommandInfo("reloadconfig", ShellType.Shell, "Reloads configuration file that is edited.", new CommandArgumentInfo(), new ReloadConfigCommand(), CommandFlags.Strict) },
@@ -124,7 +126,7 @@ namespace KS.Shell.Shells.UESH
             { "roulette", new CommandInfo("roulette", ShellType.Shell, "Russian Roulette", new CommandArgumentInfo(), new RouletteCommand()) },
             { "rss", new CommandInfo("rss", ShellType.Shell, "Opens an RSS shell to read the feeds", new CommandArgumentInfo(new[] { "[feedlink]" }, false, 0), new RssCommand()) },
             { "savecurrdir", new CommandInfo("savecurrdir", ShellType.Shell, "Saves the current directory to kernel configuration file", new CommandArgumentInfo(), new SaveCurrDirCommand(), CommandFlags.Strict) },
-            { "savescreen", new CommandInfo("savescreen", ShellType.Shell, "Saves your screen from burn outs", new CommandArgumentInfo(new[] { "[saver]" }, false, 0), new SaveScreenCommand()) },
+            { "savescreen", new CommandInfo("savescreen", ShellType.Shell, "Saves your screen from burn outs", new CommandArgumentInfo(new[] { "[saver]" }, false, 0, (_) => Screensaver.Screensavers.Keys.Where((src) => src.StartsWith(_)).ToArray()), new SaveScreenCommand()) },
             { "search", new CommandInfo("search", ShellType.Shell, "Searches for specified string in the provided file using regular expressions", new CommandArgumentInfo(new[] { "<Regexp> <File>" }, true, 2), new SearchCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
             { "searchword", new CommandInfo("searchword", ShellType.Shell, "Searches for specified string in the provided file", new CommandArgumentInfo(new[] { "<StringEnclosedInDoubleQuotes> <File>" }, true, 2), new SearchWordCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
             { "select", new CommandInfo("select", ShellType.Shell, "Provides a selection choice", new CommandArgumentInfo(new[] { "<$variable> <answers> <input> [answertitle1] [answertitle2] ..." }, true, 3), new SelectCommand(), CommandFlags.SettingVariable) },
