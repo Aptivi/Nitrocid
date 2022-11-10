@@ -119,7 +119,7 @@ namespace KS.Misc.Games
                 {
                     float PossibilityToChange = (float)RandomDriver.RandomDouble();
                     if ((int)Math.Round(PossibilityToChange) == 1)
-                        Keypress = possibleKeys[RandomDriver.Random(possibleKeys.Length)];
+                        Keypress = possibleKeys[RandomDriver.RandomIdx(possibleKeys.Length)];
 
                     // Select command based on key value
                     switch (Keypress)
