@@ -42,7 +42,6 @@ namespace KS.Misc.Splash.Splashes
 
         public SplashBeatEdgePulse() => BeatEdgePulseSettings = new BeatEdgePulseSettings()
         {
-            BeatEdgePulse255Colors = false,
             BeatEdgePulseTrueColor = true,
             BeatEdgePulseBeatColor = 17.ToString(),
             BeatEdgePulseCycleColors = true,

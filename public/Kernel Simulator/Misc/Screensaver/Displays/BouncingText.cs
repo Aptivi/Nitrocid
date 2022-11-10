@@ -33,7 +33,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class BouncingTextSettings
     {
 
-        private static bool _bouncingText255Colors;
         private static bool _bouncingTextTrueColor = true;
         private static int _bouncingTextDelay = 10;
         private static string _bouncingTextWrite = "Kernel Simulator";
@@ -48,20 +47,6 @@ namespace KS.Misc.Screensaver.Displays
         private static int _bouncingTextMaximumBlueColorLevel = 255;
         private static int _bouncingTextMaximumColorLevel = 255;
 
-        /// <summary>
-        /// [BouncingText] Enable 255 color support. Has a higher priority than 16 color support.
-        /// </summary>
-        public static bool BouncingText255Colors
-        {
-            get
-            {
-                return _bouncingText255Colors;
-            }
-            set
-            {
-                _bouncingText255Colors = value;
-            }
-        }
         /// <summary>
         /// [BouncingText] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -201,7 +186,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMinimumLevel = _bouncingText255Colors | _bouncingTextTrueColor ? 255 : 15;
+                int FinalMinimumLevel = 255;
                 if (value <= 0)
                     value = 0;
                 if (value > FinalMinimumLevel)
@@ -274,7 +259,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMaximumLevel = _bouncingText255Colors | _bouncingTextTrueColor ? 255 : 15;
+                int FinalMaximumLevel = 255;
                 if (value <= _bouncingTextMinimumColorLevel)
                     value = _bouncingTextMinimumColorLevel;
                 if (value > FinalMaximumLevel)
@@ -424,14 +409,10 @@ namespace KS.Misc.Screensaver.Displays
                 int BlueColorNum = RandomDriver.Random(BouncingTextSettings.BouncingTextMinimumBlueColorLevel, BouncingTextSettings.BouncingTextMaximumBlueColorLevel);
                 ColorInstance = new Color(RedColorNum, GreenColorNum, BlueColorNum);
             }
-            else if (BouncingTextSettings.BouncingText255Colors)
+            else
             {
                 int ColorNum = RandomDriver.Random(BouncingTextSettings.BouncingTextMinimumColorLevel, BouncingTextSettings.BouncingTextMaximumColorLevel);
                 ColorInstance = new Color(ColorNum);
-            }
-            else
-            {
-                ColorInstance = new Color((int)Screensaver.colors[RandomDriver.Random(BouncingTextSettings.BouncingTextMinimumColorLevel, BouncingTextSettings.BouncingTextMaximumColorLevel)]);
             }
             return ColorInstance;
         }

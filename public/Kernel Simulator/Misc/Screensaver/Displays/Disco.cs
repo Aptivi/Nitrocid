@@ -32,7 +32,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class DiscoSettings
     {
 
-        private static bool _disco255Colors;
         private static bool _discoTrueColor = true;
         private static bool _discoCycleColors;
         private static int _discoDelay = 100;
@@ -47,20 +46,6 @@ namespace KS.Misc.Screensaver.Displays
         private static int _discoMaximumBlueColorLevel = 255;
         private static int _discoMaximumColorLevel = 255;
 
-        /// <summary>
-        /// [Disco] Enable 255 color support. Has a higher priority than 16 color support.
-        /// </summary>
-        public static bool Disco255Colors
-        {
-            get
-            {
-                return _disco255Colors;
-            }
-            set
-            {
-                _disco255Colors = value;
-            }
-        }
         /// <summary>
         /// [Disco] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -198,7 +183,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMinimumLevel = _disco255Colors | _discoTrueColor ? 255 : 15;
+                int FinalMinimumLevel = 255;
                 if (value <= 0)
                     value = 0;
                 if (value > FinalMinimumLevel)
@@ -271,7 +256,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMaximumLevel = _disco255Colors | _discoTrueColor ? 255 : 15;
+                int FinalMaximumLevel = 255;
                 if (value <= _discoMinimumColorLevel)
                     value = _discoMinimumColorLevel;
                 if (value > FinalMaximumLevel)
@@ -343,7 +328,7 @@ namespace KS.Misc.Screensaver.Displays
                         ColorTools.SetConsoleColor(ColorStorage, true, true);
                     }
                 }
-                else if (DiscoSettings.Disco255Colors)
+                else
                 {
                     if (!DiscoSettings.DiscoCycleColors)
                     {
@@ -356,17 +341,6 @@ namespace KS.Misc.Screensaver.Displays
                         DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", CurrentColor);
                         ColorTools.SetConsoleColor(new Color(CurrentColor), true, true);
                     }
-                }
-                else if (!DiscoSettings.DiscoCycleColors)
-                {
-                    ConsoleBase.ConsoleWrapper.BackgroundColor = Screensaver.colors[RandomDriver.Random(Screensaver.colors.Length - 1)];
-                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
-                }
-                else
-                {
-                    MaximumColors = DiscoSettings.DiscoMaximumColorLevel >= 0 & DiscoSettings.DiscoMaximumColorLevel <= 15 ? DiscoSettings.DiscoMaximumColorLevel : 15;
-                    ConsoleBase.ConsoleWrapper.BackgroundColor = Screensaver.colors[CurrentColor];
-                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
                 }
             }
             else

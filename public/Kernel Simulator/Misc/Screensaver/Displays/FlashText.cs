@@ -33,7 +33,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class FlashTextSettings
     {
 
-        private static bool _flashText255Colors;
         private static bool _flashTextTrueColor = true;
         private static int _flashTextDelay = 20;
         private static string _flashTextWrite = "Kernel Simulator";
@@ -47,20 +46,6 @@ namespace KS.Misc.Screensaver.Displays
         private static int _flashTextMaximumBlueColorLevel = 255;
         private static int _flashTextMaximumColorLevel = 0;
 
-        /// <summary>
-        /// [FlashText] Enable 255 color support. Has a higher priority than 16 color support.
-        /// </summary>
-        public static bool FlashText255Colors
-        {
-            get
-            {
-                return _flashText255Colors;
-            }
-            set
-            {
-                _flashText255Colors = value;
-            }
-        }
         /// <summary>
         /// [FlashText] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -184,7 +169,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMinimumLevel = _flashText255Colors | _flashTextTrueColor ? 255 : 15;
+                int FinalMinimumLevel = 255;
                 if (value <= 0)
                     value = 0;
                 if (value > FinalMinimumLevel)
@@ -257,7 +242,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMaximumLevel = _flashText255Colors | _flashTextTrueColor ? 255 : 15;
+                int FinalMaximumLevel = 255;
                 if (value <= _flashTextMinimumColorLevel)
                     value = _flashTextMinimumColorLevel;
                 if (value > FinalMaximumLevel)
@@ -325,7 +310,7 @@ namespace KS.Misc.Screensaver.Displays
                     TextWriterWhereColor.WriteWhere(FlashTextSettings.FlashTextWrite, Left, Top, true, ColorStorage);
                 }
             }
-            else if (FlashTextSettings.FlashText255Colors)
+            else
             {
                 int ColorNum = RandomDriver.Random(FlashTextSettings.FlashTextMinimumColorLevel, FlashTextSettings.FlashTextMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
@@ -334,15 +319,6 @@ namespace KS.Misc.Screensaver.Displays
                 if (!ResizeSyncing)
                 {
                     TextWriterWhereColor.WriteWhere(FlashTextSettings.FlashTextWrite, Left, Top, true, new Color(ColorNum));
-                }
-            }
-            else
-            {
-                if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                    ResizeSyncing = true;
-                if (!ResizeSyncing)
-                {
-                    TextWriterWhereColor.WriteWhere(FlashTextSettings.FlashTextWrite, Left, Top, true, (ConsoleColors)Screensaver.colors[RandomDriver.Random(FlashTextSettings.FlashTextMinimumColorLevel, FlashTextSettings.FlashTextMaximumColorLevel)]);
                 }
             }
             ThreadManager.SleepNoBlock(HalfDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);

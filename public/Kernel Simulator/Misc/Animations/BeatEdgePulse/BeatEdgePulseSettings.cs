@@ -26,7 +26,6 @@ namespace KS.Misc.Animations.BeatEdgePulse
     public class BeatEdgePulseSettings
     {
 
-        private bool _beatedgepulse255Colors;
         private bool _beatedgepulseTrueColor = true;
         private int _beatedgepulseDelay = 120;
         private int _beatedgepulseMaxSteps = 30;
@@ -41,20 +40,6 @@ namespace KS.Misc.Animations.BeatEdgePulse
         private int _beatedgepulseMaximumBlueColorLevel = 255;
         private int _beatedgepulseMaximumColorLevel = 255;
 
-        /// <summary>
-        /// [BeatEdgePulse] Enable 255 color support. Has a higher priority than 16 color support. Please note that it only works if color cycling is enabled.
-        /// </summary>
-        public bool BeatEdgePulse255Colors
-        {
-            get
-            {
-                return _beatedgepulse255Colors;
-            }
-            set
-            {
-                _beatedgepulse255Colors = value;
-            }
-        }
         /// <summary>
         /// [BeatEdgePulse] Enable truecolor support. Has a higher priority than 255 color support. Please note that it only works if color cycling is enabled.
         /// </summary>
@@ -194,7 +179,7 @@ namespace KS.Misc.Animations.BeatEdgePulse
             }
             set
             {
-                int FinalMinimumLevel = _beatedgepulse255Colors | _beatedgepulseTrueColor ? 255 : 15;
+                int FinalMinimumLevel = 255;
                 if (value <= 0)
                     value = 0;
                 if (value > FinalMinimumLevel)
@@ -267,7 +252,7 @@ namespace KS.Misc.Animations.BeatEdgePulse
             }
             set
             {
-                int FinalMaximumLevel = _beatedgepulse255Colors | _beatedgepulseTrueColor ? 255 : 15;
+                int FinalMaximumLevel = 255;
                 if (value <= _beatedgepulseMinimumColorLevel)
                     value = _beatedgepulseMinimumColorLevel;
                 if (value > FinalMaximumLevel)

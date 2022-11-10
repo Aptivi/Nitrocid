@@ -30,7 +30,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class SnakerSettings
     {
 
-        private static bool _snaker255Colors;
         private static bool _snakerTrueColor = true;
         private static int _snakerDelay = 100;
         private static int _snakerStageDelay = 5000;
@@ -43,20 +42,6 @@ namespace KS.Misc.Screensaver.Displays
         private static int _snakerMaximumBlueColorLevel = 255;
         private static int _snakerMaximumColorLevel = 255;
 
-        /// <summary>
-        /// [Snaker] Enable 255 color support. Has a higher priority than 16 color support.
-        /// </summary>
-        public static bool Snaker255Colors
-        {
-            get
-            {
-                return _snaker255Colors;
-            }
-            set
-            {
-                _snaker255Colors = value;
-            }
-        }
         /// <summary>
         /// [Snaker] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -168,7 +153,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMinimumLevel = _snaker255Colors | _snakerTrueColor ? 255 : 15;
+                int FinalMinimumLevel = 255;
                 if (value <= 0)
                     value = 0;
                 if (value > FinalMinimumLevel)
@@ -241,7 +226,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMaximumLevel = _snaker255Colors | _snakerTrueColor ? 255 : 15;
+                int FinalMaximumLevel = 255;
                 if (value <= _snakerMinimumColorLevel)
                     value = _snakerMinimumColorLevel;
                 if (value > FinalMaximumLevel)

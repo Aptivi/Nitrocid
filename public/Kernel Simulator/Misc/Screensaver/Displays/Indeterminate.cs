@@ -35,7 +35,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class IndeterminateSettings
     {
 
-        private static bool _indeterminate255Colors;
         private static bool _indeterminateTrueColor = true;
         private static int _indeterminateDelay = 20;
         private static string _indeterminateUpperLeftCornerChar = "╔";
@@ -64,20 +63,6 @@ namespace KS.Misc.Screensaver.Displays
         private static string _indeterminateRightFrameColor = 7.ToString();
         private static bool _indeterminateUseBorderColors;
 
-        /// <summary>
-        /// [Indeterminate] Enable 255 color support. Has a higher priority than 16 color support.
-        /// </summary>
-        public static bool Indeterminate255Colors
-        {
-            get
-            {
-                return _indeterminate255Colors;
-            }
-            set
-            {
-                _indeterminate255Colors = value;
-            }
-        }
         /// <summary>
         /// [Indeterminate] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -301,7 +286,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMinimumLevel = _indeterminate255Colors | _indeterminateTrueColor ? 255 : 15;
+                int FinalMinimumLevel = 255;
                 if (value <= 0)
                     value = 0;
                 if (value > FinalMinimumLevel)
@@ -374,7 +359,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMaximumLevel = _indeterminate255Colors | _indeterminateTrueColor ? 255 : 15;
+                int FinalMaximumLevel = 255;
                 if (value <= _indeterminateMinimumColorLevel)
                     value = _indeterminateMinimumColorLevel;
                 if (value > FinalMaximumLevel)

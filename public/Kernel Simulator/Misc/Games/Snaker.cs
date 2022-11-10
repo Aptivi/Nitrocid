@@ -400,17 +400,11 @@ namespace KS.Misc.Games
                 DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 return new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}");
             }
-            else if (SnakerSettings.Snaker255Colors)
+            else
             {
                 int ColorNum = RandomDriver.Next(SnakerSettings.SnakerMinimumColorLevel, SnakerSettings.SnakerMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 return new Color(ColorNum);
-            }
-            else
-            {
-                ConsoleBase.ConsoleWrapper.BackgroundColor = Screensaver.Screensaver.colors[RandomDriver.Next(SnakerSettings.SnakerMinimumColorLevel, SnakerSettings.SnakerMaximumColorLevel)];
-                DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
-                return Color.Empty;
             }
         }
 

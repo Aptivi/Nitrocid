@@ -33,7 +33,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class SnakeFillSettings
     {
 
-        private static bool _snakeFill255Colors;
         private static bool _snakeFillTrueColor = true;
         private static int _snakeFillDelay = 10;
         private static int _snakeFillMinimumRedColorLevel = 0;
@@ -45,20 +44,6 @@ namespace KS.Misc.Screensaver.Displays
         private static int _snakeFillMaximumBlueColorLevel = 255;
         private static int _snakeFillMaximumColorLevel = 255;
 
-        /// <summary>
-        /// [SnakeFill] Enable 255 color support. Has a higher priority than 16 color support.
-        /// </summary>
-        public static bool SnakeFill255Colors
-        {
-            get
-            {
-                return _snakeFill255Colors;
-            }
-            set
-            {
-                _snakeFill255Colors = value;
-            }
-        }
         /// <summary>
         /// [SnakeFill] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -245,18 +230,12 @@ namespace KS.Misc.Screensaver.Displays
                 if (!ResizeSyncing)
                     ColorTools.SetConsoleColor(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), true, true);
             }
-            else if (SnakeFillSettings.SnakeFill255Colors)
+            else
             {
                 int ColorNum = RandomDriver.Random(SnakeFillSettings.SnakeFillMinimumColorLevel, SnakeFillSettings.SnakeFillMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 if (!ResizeSyncing)
                     ColorTools.SetConsoleColor(new Color(ColorNum), true, true);
-            }
-            else
-            {
-                if (!ResizeSyncing)
-                    ConsoleBase.ConsoleWrapper.BackgroundColor = Screensaver.colors[RandomDriver.Random(SnakeFillSettings.SnakeFillMinimumColorLevel, SnakeFillSettings.SnakeFillMaximumColorLevel)];
-                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
             }
 
             // Set max height according to platform

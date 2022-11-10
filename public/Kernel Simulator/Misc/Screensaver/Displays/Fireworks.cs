@@ -33,7 +33,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class FireworksSettings
     {
 
-        private static bool _fireworks255Colors;
         private static bool _fireworksTrueColor = true;
         private static int _fireworksDelay = 10;
         private static int _fireworksRadius = 5;
@@ -46,20 +45,6 @@ namespace KS.Misc.Screensaver.Displays
         private static int _fireworksMaximumBlueColorLevel = 255;
         private static int _fireworksMaximumColorLevel = 255;
 
-        /// <summary>
-        /// [Fireworks] Enable 255 color support. Has a higher priority than 16 color support.
-        /// </summary>
-        public static bool Fireworks255Colors
-        {
-            get
-            {
-                return _fireworks255Colors;
-            }
-            set
-            {
-                _fireworks255Colors = value;
-            }
-        }
         /// <summary>
         /// [Fireworks] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -171,7 +156,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMinimumLevel = _fireworks255Colors | _fireworksTrueColor ? 255 : 15;
+                int FinalMinimumLevel = 255;
                 if (value <= 0)
                     value = 0;
                 if (value > FinalMinimumLevel)
@@ -244,7 +229,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMaximumLevel = _fireworks255Colors | _fireworksTrueColor ? 255 : 15;
+                int FinalMaximumLevel = 255;
                 if (value <= _fireworksMinimumColorLevel)
                     value = _fireworksMinimumColorLevel;
                 if (value > FinalMaximumLevel)
@@ -317,7 +302,7 @@ namespace KS.Misc.Screensaver.Displays
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 IgniteColor = new Color(RedColorNum, GreenColorNum, BlueColorNum);
             }
-            else if (FireworksSettings.Fireworks255Colors)
+            else
             {
                 int color = RandomDriver.Random(FireworksSettings.FireworksMinimumColorLevel, FireworksSettings.FireworksMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", color);

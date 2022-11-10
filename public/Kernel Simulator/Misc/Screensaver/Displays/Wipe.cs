@@ -34,7 +34,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class WipeSettings
     {
 
-        private static bool _wipe255Colors;
         private static bool _wipeTrueColor = true;
         private static int _wipeDelay = 10;
         private static int _wipeWipesNeededToChangeDirection = 10;
@@ -48,20 +47,6 @@ namespace KS.Misc.Screensaver.Displays
         private static int _wipeMaximumBlueColorLevel = 255;
         private static int _wipeMaximumColorLevel = 255;
 
-        /// <summary>
-        /// [Wipe] Enable 255 color support. Has a higher priority than 16 color support.
-        /// </summary>
-        public static bool Wipe255Colors
-        {
-            get
-            {
-                return _wipe255Colors;
-            }
-            set
-            {
-                _wipe255Colors = value;
-            }
-        }
         /// <summary>
         /// [Wipe] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -279,18 +264,12 @@ namespace KS.Misc.Screensaver.Displays
                 if (!ResizeSyncing)
                     ColorTools.SetConsoleColor(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), true, true);
             }
-            else if (WipeSettings.Wipe255Colors)
+            else
             {
                 int ColorNum = RandomDriver.Random(WipeSettings.WipeMinimumColorLevel, WipeSettings.WipeMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 if (!ResizeSyncing)
                     ColorTools.SetConsoleColor(new Color(ColorNum), true, true);
-            }
-            else
-            {
-                if (!ResizeSyncing)
-                    ConsoleBase.ConsoleWrapper.BackgroundColor = Screensaver.colors[RandomDriver.Random(WipeSettings.WipeMinimumColorLevel, WipeSettings.WipeMaximumColorLevel)];
-                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
             }
 
             // Set max height according to platform

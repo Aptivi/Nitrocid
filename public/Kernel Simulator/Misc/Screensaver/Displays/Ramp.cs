@@ -34,7 +34,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class RampSettings
     {
 
-        private static bool _ramp255Colors;
         private static bool _rampTrueColor = true;
         private static int _rampDelay = 20;
         private static int _rampNextRampDelay = 250;
@@ -72,20 +71,6 @@ namespace KS.Misc.Screensaver.Displays
         private static string _rampRightFrameColor = 7.ToString();
         private static bool _rampUseBorderColors;
 
-        /// <summary>
-        /// [Ramp] Enable 255 color support. Has a higher priority than 16 color support.
-        /// </summary>
-        public static bool Ramp255Colors
-        {
-            get
-            {
-                return _ramp255Colors;
-            }
-            set
-            {
-                _ramp255Colors = value;
-            }
-        }
         /// <summary>
         /// [Ramp] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -325,7 +310,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMinimumLevel = _ramp255Colors | _rampTrueColor ? 255 : 15;
+                int FinalMinimumLevel = 255;
                 if (value <= 0)
                     value = 0;
                 if (value > FinalMinimumLevel)
@@ -398,7 +383,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMaximumLevel = _ramp255Colors | _rampTrueColor ? 255 : 15;
+                int FinalMaximumLevel = 255;
                 if (value <= _rampMinimumColorLevelStart)
                     value = _rampMinimumColorLevelStart;
                 if (value > FinalMaximumLevel)
@@ -471,7 +456,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMinimumLevel = _ramp255Colors | _rampTrueColor ? 255 : 15;
+                int FinalMinimumLevel = 255;
                 if (value <= 0)
                     value = 0;
                 if (value > FinalMinimumLevel)
@@ -544,7 +529,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMaximumLevel = _ramp255Colors | _rampTrueColor ? 255 : 15;
+                int FinalMaximumLevel = 255;
                 if (value <= _rampMinimumColorLevelEnd)
                     value = _rampMinimumColorLevelEnd;
                 if (value > FinalMaximumLevel)

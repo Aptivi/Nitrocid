@@ -62,13 +62,6 @@ namespace KS.Misc.Animations.BeatEdgePulse
                     GreenColorNum = RandomDriver.Random(Settings.BeatEdgePulseMinimumGreenColorLevel, Settings.BeatEdgePulseMaximumGreenColorLevel);
                     BlueColorNum = RandomDriver.Random(Settings.BeatEdgePulseMinimumBlueColorLevel, Settings.BeatEdgePulseMaximumBlueColorLevel);
                 }
-                else if (Settings.BeatEdgePulse255Colors)
-                {
-                    var ConsoleColor = new ConsoleColorsInfo((ConsoleColors)RandomDriver.Random(Settings.BeatEdgePulseMinimumColorLevel, Settings.BeatEdgePulseMaximumColorLevel));
-                    RedColorNum = ConsoleColor.R;
-                    GreenColorNum = ConsoleColor.G;
-                    BlueColorNum = ConsoleColor.B;
-                }
                 else
                 {
                     var ConsoleColor = new ConsoleColorsInfo((ConsoleColors)RandomDriver.Random(Settings.BeatEdgePulseMinimumColorLevel, Settings.BeatEdgePulseMaximumColorLevel));

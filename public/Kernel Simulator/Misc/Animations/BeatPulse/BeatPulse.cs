@@ -62,13 +62,6 @@ namespace KS.Misc.Animations.BeatPulse
                     GreenColorNum = RandomDriver.Random(Settings.BeatPulseMinimumGreenColorLevel, Settings.BeatPulseMaximumGreenColorLevel);
                     BlueColorNum = RandomDriver.Random(Settings.BeatPulseMinimumBlueColorLevel, Settings.BeatPulseMaximumBlueColorLevel);
                 }
-                else if (Settings.BeatPulse255Colors)
-                {
-                    var ConsoleColor = new ConsoleColorsInfo((ConsoleColors)RandomDriver.Random(Settings.BeatPulseMinimumColorLevel, Settings.BeatPulseMaximumColorLevel));
-                    RedColorNum = ConsoleColor.R;
-                    GreenColorNum = ConsoleColor.G;
-                    BlueColorNum = ConsoleColor.B;
-                }
                 else
                 {
                     var ConsoleColor = new ConsoleColorsInfo((ConsoleColors)RandomDriver.Random(Settings.BeatPulseMinimumColorLevel, Settings.BeatPulseMaximumColorLevel));

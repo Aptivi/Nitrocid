@@ -33,7 +33,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class DissolveSettings
     {
 
-        private static bool _dissolve255Colors;
         private static bool _dissolveTrueColor = true;
         private static string _dissolveBackgroundColor = new Color((int)ConsoleColor.Black).PlainSequence;
         private static int _dissolveMinimumRedColorLevel = 0;
@@ -45,20 +44,6 @@ namespace KS.Misc.Screensaver.Displays
         private static int _dissolveMaximumBlueColorLevel = 255;
         private static int _dissolveMaximumColorLevel = 255;
 
-        /// <summary>
-        /// [Dissolve] Enable 255 color support. Has a higher priority than 16 color support.
-        /// </summary>
-        public static bool Dissolve255Colors
-        {
-            get
-            {
-                return _dissolve255Colors;
-            }
-            set
-            {
-                _dissolve255Colors = value;
-            }
-        }
         /// <summary>
         /// [Dissolve] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -152,7 +137,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMinimumLevel = _dissolve255Colors | _dissolveTrueColor ? 255 : 15;
+                int FinalMinimumLevel = 255;
                 if (value <= 0)
                     value = 0;
                 if (value > FinalMinimumLevel)
@@ -225,7 +210,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMaximumLevel = _dissolve255Colors | _dissolveTrueColor ? 255 : 15;
+                int FinalMaximumLevel = 255;
                 if (value <= _dissolveMinimumColorLevel)
                     value = _dissolveMinimumColorLevel;
                 if (value > FinalMaximumLevel)
@@ -312,7 +297,7 @@ namespace KS.Misc.Screensaver.Displays
                             CoveredPositions.Clear();
                         }
                     }
-                    else if (DissolveSettings.Dissolve255Colors)
+                    else
                     {
                         int ColorNum = RandomDriver.Random(DissolveSettings.DissolveMinimumColorLevel, DissolveSettings.DissolveMaximumColorLevel);
                         DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
@@ -322,30 +307,6 @@ namespace KS.Misc.Screensaver.Displays
                         {
                             ColorTools.SetConsoleColor(Color.Empty);
                             ColorTools.SetConsoleColor(new Color(ColorNum), true, true);
-                            ConsoleBase.ConsoleWrapper.Write(" ");
-                            if (ConsoleBase.ConsoleWrapper.CursorLeft == ConsoleBase.ConsoleWrapper.WindowWidth - 1 &&
-                                ConsoleBase.ConsoleWrapper.CursorTop < EndTop)
-                            {
-                                ConsoleBase.ConsoleWrapper.CursorLeft = 0;
-                                ConsoleBase.ConsoleWrapper.CursorTop += 1;
-                            }
-                        }
-                        else
-                        {
-                            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "We're refilling...");
-                            ColorFilled = false;
-                            ColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor), true);
-                            CoveredPositions.Clear();
-                        }
-                    }
-                    else
-                    {
-                        if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                            ResizeSyncing = true;
-                        if (!ResizeSyncing)
-                        {
-                            ColorTools.SetConsoleColor(new Color(DissolveSettings.DissolveBackgroundColor), true, true);
-                            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
                             ConsoleBase.ConsoleWrapper.Write(" ");
                             if (ConsoleBase.ConsoleWrapper.CursorLeft == ConsoleBase.ConsoleWrapper.WindowWidth - 1 &&
                                 ConsoleBase.ConsoleWrapper.CursorTop < EndTop)

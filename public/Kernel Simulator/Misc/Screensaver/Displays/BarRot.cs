@@ -34,7 +34,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class BarRotSettings
     {
 
-        private static bool _barRot255Colors;
         private static bool _barRotTrueColor = true;
         private static int _barRotDelay = 10;
         private static int _barRotNextRampDelay = 250;
@@ -68,20 +67,6 @@ namespace KS.Misc.Screensaver.Displays
         private static string _barRotRightFrameColor = "192;192;192";
         private static bool _barRotUseBorderColors;
 
-        /// <summary>
-        /// [BarRot] Enable 255 color support. Has a higher priority than 16 color support.
-        /// </summary>
-        public static bool BarRot255Colors
-        {
-            get
-            {
-                return _barRot255Colors;
-            }
-            set
-            {
-                _barRot255Colors = value;
-            }
-        }
         /// <summary>
         /// [BarRot] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>

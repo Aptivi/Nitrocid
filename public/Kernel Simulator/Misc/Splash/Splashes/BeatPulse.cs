@@ -42,7 +42,6 @@ namespace KS.Misc.Splash.Splashes
 
         public SplashBeatPulse() => BeatPulseSettings = new BeatPulseSettings()
         {
-            BeatPulse255Colors = false,
             BeatPulseTrueColor = true,
             BeatPulseBeatColor = 17.ToString(),
             BeatPulseCycleColors = true,

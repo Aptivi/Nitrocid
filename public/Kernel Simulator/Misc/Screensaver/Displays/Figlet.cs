@@ -36,7 +36,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class FigletSettings
     {
 
-        private static bool _figlet255Colors;
         private static bool _figletTrueColor = true;
         private static int _figletDelay = 1000;
         private static string _figletText = "Kernel Simulator";
@@ -50,20 +49,6 @@ namespace KS.Misc.Screensaver.Displays
         private static int _figletMaximumBlueColorLevel = 255;
         private static int _figletMaximumColorLevel = 255;
 
-        /// <summary>
-        /// [Figlet] Enable 255 color support. Has a higher priority than 16 color support.
-        /// </summary>
-        public static bool Figlet255Colors
-        {
-            get
-            {
-                return _figlet255Colors;
-            }
-            set
-            {
-                _figlet255Colors = value;
-            }
-        }
         /// <summary>
         /// [Figlet] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -189,7 +174,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMinimumLevel = _figlet255Colors | _figletTrueColor ? 255 : 15;
+                int FinalMinimumLevel = 255;
                 if (value <= 0)
                     value = 0;
                 if (value > FinalMinimumLevel)
@@ -262,7 +247,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMaximumLevel = _figlet255Colors | _figletTrueColor ? 255 : 15;
+                int FinalMaximumLevel = 255;
                 if (value <= _figletMinimumColorLevel)
                     value = _figletMinimumColorLevel;
                 if (value > FinalMaximumLevel)
@@ -318,16 +303,11 @@ namespace KS.Misc.Screensaver.Displays
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
             }
-            else if (FigletSettings.Figlet255Colors)
+            else
             {
                 int ColorNum = RandomDriver.Random(FigletSettings.FigletMinimumColorLevel, FigletSettings.FigletMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 ColorStorage = new Color(ColorNum);
-            }
-            else
-            {
-                ConsoleBase.ConsoleWrapper.BackgroundColor = (ConsoleColor)RandomDriver.Random(FigletSettings.FigletMinimumColorLevel, FigletSettings.FigletMaximumColorLevel);
-                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
             }
 
             // Prepare the figlet font for writing
@@ -342,14 +322,7 @@ namespace KS.Misc.Screensaver.Displays
                 ResizeSyncing = true;
             if (!ResizeSyncing)
             {
-                if (FigletSettings.Figlet255Colors | FigletSettings.FigletTrueColor)
-                {
-                    TextWriterWhereColor.WriteWhere(FigletWrite, FigletWidth, FigletHeight, true, ColorStorage);
-                }
-                else
-                {
-                    WriterPlainManager.CurrentPlain.WriteWherePlain(FigletWrite, FigletWidth, FigletHeight, true);
-                }
+                TextWriterWhereColor.WriteWhere(FigletWrite, FigletWidth, FigletHeight, true, ColorStorage);
             }
             ThreadManager.SleepNoBlock(FigletSettings.FigletDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
 

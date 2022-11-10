@@ -33,7 +33,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class FlashColorSettings
     {
 
-        private static bool _flashColor255Colors;
         private static bool _flashColorTrueColor = true;
         private static int _flashColorDelay = 20;
         private static string _flashColorBackgroundColor = new Color((int)ConsoleColor.Black).PlainSequence;
@@ -46,20 +45,6 @@ namespace KS.Misc.Screensaver.Displays
         private static int _flashColorMaximumBlueColorLevel = 255;
         private static int _flashColorMaximumColorLevel = 0;
 
-        /// <summary>
-        /// [FlashColor] Enable 255 color support. Has a higher priority than 16 color support.
-        /// </summary>
-        public static bool FlashColor255Colors
-        {
-            get
-            {
-                return _flashColor255Colors;
-            }
-            set
-            {
-                _flashColor255Colors = value;
-            }
-        }
         /// <summary>
         /// [FlashColor] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -169,7 +154,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMinimumLevel = _flashColor255Colors | _flashColorTrueColor ? 255 : 15;
+                int FinalMinimumLevel = 255;
                 if (value <= 0)
                     value = 0;
                 if (value > FinalMinimumLevel)
@@ -242,7 +227,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMaximumLevel = _flashColor255Colors | _flashColorTrueColor ? 255 : 15;
+                int FinalMaximumLevel = 255;
                 if (value <= _flashColorMinimumColorLevel)
                     value = _flashColorMinimumColorLevel;
                 if (value > FinalMaximumLevel)
@@ -308,7 +293,7 @@ namespace KS.Misc.Screensaver.Displays
                     ConsoleWrapper.Write(" ");
                 }
             }
-            else if (FlashColorSettings.FlashColor255Colors)
+            else
             {
                 int ColorNum = RandomDriver.Random(FlashColorSettings.FlashColorMinimumColorLevel, FlashColorSettings.FlashColorMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
@@ -317,17 +302,6 @@ namespace KS.Misc.Screensaver.Displays
                 if (!ResizeSyncing)
                 {
                     ColorTools.SetConsoleColor(new Color(ColorNum), true, true);
-                    ConsoleWrapper.Write(" ");
-                }
-            }
-            else
-            {
-                if (CurrentWindowHeight != ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleWrapper.WindowWidth)
-                    ResizeSyncing = true;
-                if (!ResizeSyncing)
-                {
-                    ConsoleWrapper.BackgroundColor = Screensaver.colors[RandomDriver.Random(FlashColorSettings.FlashColorMinimumColorLevel, FlashColorSettings.FlashColorMaximumColorLevel)];
-                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleWrapper.BackgroundColor);
                     ConsoleWrapper.Write(" ");
                 }
             }

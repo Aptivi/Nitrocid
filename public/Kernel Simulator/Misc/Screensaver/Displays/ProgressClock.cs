@@ -36,7 +36,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class ProgressClockSettings
     {
 
-        private static bool _progressClock255Colors;
         private static bool _progressClockTrueColor = true;
         private static bool _progressClockCycleColors = true;
         private static string _progressClockSecondsProgressColor = 4.ToString();
@@ -105,20 +104,6 @@ namespace KS.Misc.Screensaver.Displays
         private static int _progressClockMaximumBlueColorLevel = 255;
         private static int _progressClockMaximumColorLevel = 255;
 
-        /// <summary>
-        /// [ProgressClock] Enable 255 color support. Has a higher priority than 16 color support.
-        /// </summary>
-        public static bool ProgressClock255Colors
-        {
-            get
-            {
-                return _progressClock255Colors;
-            }
-            set
-            {
-                _progressClock255Colors = value;
-            }
-        }
         /// <summary>
         /// [ProgressClock] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -726,7 +711,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMinimumLevel = _progressClock255Colors | _progressClockTrueColor ? 255 : 15;
+                int FinalMinimumLevel = 255;
                 if (value <= 0)
                     value = 0;
                 if (value > FinalMinimumLevel)
@@ -799,7 +784,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMaximumLevel = _progressClock255Colors | _progressClockTrueColor ? 255 : 15;
+                int FinalMaximumLevel = 255;
                 if (value <= _progressClockMinimumColorLevelHours)
                     value = _progressClockMinimumColorLevelHours;
                 if (value > FinalMaximumLevel)
@@ -872,7 +857,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMinimumLevel = _progressClock255Colors | _progressClockTrueColor ? 255 : 15;
+                int FinalMinimumLevel = 255;
                 if (value <= 0)
                     value = 0;
                 if (value > FinalMinimumLevel)
@@ -945,7 +930,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMaximumLevel = _progressClock255Colors | _progressClockTrueColor ? 255 : 15;
+                int FinalMaximumLevel = 255;
                 if (value <= _progressClockMinimumColorLevelMinutes)
                     value = _progressClockMinimumColorLevelMinutes;
                 if (value > FinalMaximumLevel)
@@ -1018,7 +1003,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMinimumLevel = _progressClock255Colors | _progressClockTrueColor ? 255 : 15;
+                int FinalMinimumLevel = 255;
                 if (value <= 0)
                     value = 0;
                 if (value > FinalMinimumLevel)
@@ -1091,7 +1076,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMaximumLevel = _progressClock255Colors | _progressClockTrueColor ? 255 : 15;
+                int FinalMaximumLevel = 255;
                 if (value <= _progressClockMinimumColorLevelSeconds)
                     value = _progressClockMinimumColorLevelSeconds;
                 if (value > FinalMaximumLevel)
@@ -1164,7 +1149,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMinimumLevel = _progressClock255Colors | _progressClockTrueColor ? 255 : 15;
+                int FinalMinimumLevel = 255;
                 if (value <= 0)
                     value = 0;
                 if (value > FinalMinimumLevel)
@@ -1237,7 +1222,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMaximumLevel = _progressClock255Colors | _progressClockTrueColor ? 255 : 15;
+                int FinalMaximumLevel = 255;
                 if (value <= _progressClockMinimumColorLevel)
                     value = _progressClockMinimumColorLevel;
                 if (value > FinalMaximumLevel)

@@ -33,7 +33,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class DateAndTimeSettings
     {
 
-        private static bool _dateAndTime255Colors;
         private static bool _dateAndTimeTrueColor = true;
         private static int _dateAndTimeDelay = 1000;
         private static int _dateAndTimeMinimumRedColorLevel = 0;
@@ -45,20 +44,6 @@ namespace KS.Misc.Screensaver.Displays
         private static int _dateAndTimeMaximumBlueColorLevel = 255;
         private static int _dateAndTimeMaximumColorLevel = 255;
 
-        /// <summary>
-        /// [DateAndTime] Enable 255 color support. Has a higher priority than 16 color support.
-        /// </summary>
-        public static bool DateAndTime255Colors
-        {
-            get
-            {
-                return _dateAndTime255Colors;
-            }
-            set
-            {
-                _dateAndTime255Colors = value;
-            }
-        }
         /// <summary>
         /// [DateAndTime] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -154,7 +139,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMinimumLevel = _dateAndTime255Colors | _dateAndTimeTrueColor ? 255 : 15;
+                int FinalMinimumLevel = 255;
                 if (value <= 0)
                     value = 0;
                 if (value > FinalMinimumLevel)
@@ -227,7 +212,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMaximumLevel = _dateAndTime255Colors | _dateAndTimeTrueColor ? 255 : 15;
+                int FinalMaximumLevel = 255;
                 if (value <= _dateAndTimeMinimumColorLevel)
                     value = _dateAndTimeMinimumColorLevel;
                 if (value > FinalMaximumLevel)
@@ -287,14 +272,10 @@ namespace KS.Misc.Screensaver.Displays
                 int BlueColorNum = RandomDriver.Random(DateAndTimeSettings.DateAndTimeMinimumBlueColorLevel, DateAndTimeSettings.DateAndTimeMaximumBlueColorLevel);
                 ColorInstance = new Color(RedColorNum, GreenColorNum, BlueColorNum);
             }
-            else if (DateAndTimeSettings.DateAndTime255Colors)
+            else
             {
                 int ColorNum = RandomDriver.Random(DateAndTimeSettings.DateAndTimeMinimumColorLevel, DateAndTimeSettings.DateAndTimeMaximumColorLevel);
                 ColorInstance = new Color(ColorNum);
-            }
-            else
-            {
-                ColorInstance = new Color((int)Screensaver.colors[RandomDriver.Random(DateAndTimeSettings.DateAndTimeMinimumColorLevel, DateAndTimeSettings.DateAndTimeMaximumColorLevel)]);
             }
             return ColorInstance;
         }

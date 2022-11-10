@@ -33,7 +33,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class LighterSettings
     {
 
-        private static bool _lighter255Colors;
         private static bool _lighterTrueColor = true;
         private static int _lighterDelay = 100;
         private static int _lighterMaxPositions = 10;
@@ -47,20 +46,6 @@ namespace KS.Misc.Screensaver.Displays
         private static int _lighterMaximumBlueColorLevel = 255;
         private static int _lighterMaximumColorLevel = 255;
 
-        /// <summary>
-        /// [Lighter] Enable 255 color support. Has a higher priority than 16 color support.
-        /// </summary>
-        public static bool Lighter255Colors
-        {
-            get
-            {
-                return _lighter255Colors;
-            }
-            set
-            {
-                _lighter255Colors = value;
-            }
-        }
         /// <summary>
         /// [Lighter] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -297,7 +282,7 @@ namespace KS.Misc.Screensaver.Displays
                     CoveredPositions.Clear();
                 }
             }
-            else if (LighterSettings.Lighter255Colors)
+            else
             {
                 int ColorNum = RandomDriver.Random(LighterSettings.LighterMinimumColorLevel, LighterSettings.LighterMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
@@ -306,22 +291,6 @@ namespace KS.Misc.Screensaver.Displays
                 if (!ResizeSyncing)
                 {
                     ColorTools.SetConsoleColor(new Color(ColorNum), true, true);
-                    ConsoleBase.ConsoleWrapper.Write(" ");
-                }
-                else
-                {
-                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing covered positions...");
-                    CoveredPositions.Clear();
-                }
-            }
-            else
-            {
-                if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                    ResizeSyncing = true;
-                if (!ResizeSyncing)
-                {
-                    ConsoleBase.ConsoleWrapper.BackgroundColor = Screensaver.colors[RandomDriver.Random(LighterSettings.LighterMinimumColorLevel, LighterSettings.LighterMaximumColorLevel)];
-                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
                     ConsoleBase.ConsoleWrapper.Write(" ");
                 }
                 else

@@ -29,7 +29,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class BeatFaderSettings
     {
 
-        private static bool _beatFader255Colors;
         private static bool _beatFaderTrueColor = true;
         private static bool _beatFaderCycleColors = true;
         private static string _beatFaderBeatColor = 17.ToString();
@@ -44,20 +43,6 @@ namespace KS.Misc.Screensaver.Displays
         private static int _beatFaderMaximumBlueColorLevel = 255;
         private static int _beatFaderMaximumColorLevel = 255;
 
-        /// <summary>
-        /// [BeatFader] Enable 255 color support. Has a higher priority than 16 color support. Please note that it only works if color cycling is enabled.
-        /// </summary>
-        public static bool BeatFader255Colors
-        {
-            get
-            {
-                return _beatFader255Colors;
-            }
-            set
-            {
-                _beatFader255Colors = value;
-            }
-        }
         /// <summary>
         /// [BeatFader] Enable truecolor support. Has a higher priority than 255 color support. Please note that it only works if color cycling is enabled.
         /// </summary>
@@ -197,7 +182,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMinimumLevel = _beatFader255Colors | _beatFaderTrueColor ? 255 : 15;
+                int FinalMinimumLevel = 255;
                 if (value <= 0)
                     value = 0;
                 if (value > FinalMinimumLevel)
@@ -270,7 +255,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMaximumLevel = _beatFader255Colors | _beatFaderTrueColor ? 255 : 15;
+                int FinalMaximumLevel = 255;
                 if (value <= _beatFaderMinimumColorLevel)
                     value = _beatFaderMinimumColorLevel;
                 if (value > FinalMaximumLevel)
@@ -304,7 +289,6 @@ namespace KS.Misc.Screensaver.Displays
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
             BeatFaderSettingsInstance = new Animations.BeatFader.BeatFaderSettings()
             {
-                BeatFader255Colors = BeatFaderSettings.BeatFader255Colors,
                 BeatFaderTrueColor = BeatFaderSettings.BeatFaderTrueColor,
                 BeatFaderBeatColor = BeatFaderSettings.BeatFaderBeatColor,
                 BeatFaderDelay = BeatFaderSettings.BeatFaderDelay,

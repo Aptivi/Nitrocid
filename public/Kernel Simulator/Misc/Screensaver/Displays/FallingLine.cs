@@ -34,7 +34,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class FallingLineSettings
     {
 
-        private static bool _fallingLine255Colors;
         private static bool _fallingLineTrueColor = true;
         private static int _fallingLineDelay = 10;
         private static int _fallingLineMaxSteps = 25;
@@ -47,20 +46,6 @@ namespace KS.Misc.Screensaver.Displays
         private static int _fallingLineMaximumBlueColorLevel = 255;
         private static int _fallingLineMaximumColorLevel = 255;
 
-        /// <summary>
-        /// [FallingLine] Enable 255 color support. Has a higher priority than 16 color support.
-        /// </summary>
-        public static bool FallingLine255Colors
-        {
-            get
-            {
-                return _fallingLine255Colors;
-            }
-            set
-            {
-                _fallingLine255Colors = value;
-            }
-        }
         /// <summary>
         /// [FallingLine] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -172,7 +157,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMinimumLevel = _fallingLine255Colors | _fallingLineTrueColor ? 255 : 15;
+                int FinalMinimumLevel = 255;
                 if (value <= 0)
                     value = 0;
                 if (value > FinalMinimumLevel)
@@ -245,7 +230,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMaximumLevel = _fallingLine255Colors | _fallingLineTrueColor ? 255 : 15;
+                int FinalMaximumLevel = 255;
                 if (value <= _fallingLineMinimumColorLevel)
                     value = _fallingLineMinimumColorLevel;
                 if (value > FinalMaximumLevel)
@@ -307,18 +292,12 @@ namespace KS.Misc.Screensaver.Displays
                 ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
                 ColorTools.SetConsoleColor(ColorStorage, true, true);
             }
-            else if (FallingLineSettings.FallingLine255Colors)
+            else
             {
                 int ColorNum = RandomDriver.Random(FallingLineSettings.FallingLineMinimumColorLevel, FallingLineSettings.FallingLineMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 ColorStorage = new Color(ColorNum);
                 ColorTools.SetConsoleColor(ColorStorage, true, true);
-            }
-            else
-            {
-                ConsoleBase.ConsoleWrapper.BackgroundColor = Screensaver.colors[RandomDriver.Random(FallingLineSettings.FallingLineMinimumColorLevel, FallingLineSettings.FallingLineMaximumColorLevel)];
-                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
-                ColorStorage = new Color((int)ConsoleBase.ConsoleWrapper.BackgroundColor);
             }
 
             // Make the line fall down

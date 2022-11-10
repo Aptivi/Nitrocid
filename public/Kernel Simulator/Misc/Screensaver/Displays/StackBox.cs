@@ -33,7 +33,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class StackBoxSettings
     {
 
-        private static bool _stackBox255Colors;
         private static bool _stackBoxTrueColor = true;
         private static int _stackBoxDelay = 10;
         private static bool _stackBoxFill = true;
@@ -46,20 +45,6 @@ namespace KS.Misc.Screensaver.Displays
         private static int _stackBoxMaximumBlueColorLevel = 255;
         private static int _stackBoxMaximumColorLevel = 255;
 
-        /// <summary>
-        /// [StackBox] Enable 255 color support. Has a higher priority than 16 color support.
-        /// </summary>
-        public static bool StackBox255Colors
-        {
-            get
-            {
-                return _stackBox255Colors;
-            }
-            set
-            {
-                _stackBox255Colors = value;
-            }
-        }
         /// <summary>
         /// [StackBox] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -169,7 +154,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMinimumLevel = _stackBox255Colors | _stackBoxTrueColor ? 255 : 15;
+                int FinalMinimumLevel = 255;
                 if (value <= 0)
                     value = 0;
                 if (value > FinalMinimumLevel)
@@ -242,7 +227,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMaximumLevel = _stackBox255Colors | _stackBoxTrueColor ? 255 : 15;
+                int FinalMaximumLevel = 255;
                 if (value <= _stackBoxMinimumColorLevel)
                     value = _stackBoxMinimumColorLevel;
                 if (value > FinalMaximumLevel)
@@ -329,16 +314,11 @@ namespace KS.Misc.Screensaver.Displays
                         DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                         ColorTools.SetConsoleColor(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), true, true);
                     }
-                    else if (StackBoxSettings.StackBox255Colors)
+                    else
                     {
                         int ColorNum = RandomDriver.Random(StackBoxSettings.StackBoxMinimumColorLevel, StackBoxSettings.StackBoxMaximumColorLevel);
                         DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                         ColorTools.SetConsoleColor(new Color(ColorNum), true, true);
-                    }
-                    else
-                    {
-                        ConsoleBase.ConsoleWrapper.BackgroundColor = Screensaver.colors[RandomDriver.Random(StackBoxSettings.StackBoxMinimumColorLevel, StackBoxSettings.StackBoxMaximumColorLevel)];
-                        DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
                     }
 
                     // Draw the box

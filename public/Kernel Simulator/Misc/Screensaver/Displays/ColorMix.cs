@@ -32,7 +32,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class ColorMixSettings
     {
 
-        private static bool _colorMix255Colors;
         private static bool _colorMixTrueColor = true;
         private static int _colorMixDelay = 1;
         private static string _colorMixBackgroundColor = new Color((int)ConsoleColor.Red).PlainSequence;
@@ -45,20 +44,6 @@ namespace KS.Misc.Screensaver.Displays
         private static int _colorMixMaximumBlueColorLevel = 255;
         private static int _colorMixMaximumColorLevel = 255;
 
-        /// <summary>
-        /// [ColorMix] Enable 255 color support. Has a higher priority than 16 color support.
-        /// </summary>
-        public static bool ColorMix255Colors
-        {
-            get
-            {
-                return _colorMix255Colors;
-            }
-            set
-            {
-                _colorMix255Colors = value;
-            }
-        }
         /// <summary>
         /// [ColorMix] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -168,7 +153,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMinimumLevel = _colorMix255Colors | _colorMixTrueColor ? 255 : 15;
+                int FinalMinimumLevel = 255;
                 if (value <= 0)
                     value = 0;
                 if (value > FinalMinimumLevel)
@@ -241,7 +226,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMaximumLevel = _colorMix255Colors | _colorMixTrueColor ? 255 : 15;
+                int FinalMaximumLevel = 255;
                 if (value <= _colorMixMinimumColorLevel)
                     value = _colorMixMinimumColorLevel;
                 if (value > FinalMaximumLevel)
@@ -299,7 +284,7 @@ namespace KS.Misc.Screensaver.Displays
                     ConsoleBase.ConsoleWrapper.Write(" ");
                 }
             }
-            else if (ColorMixSettings.ColorMix255Colors)
+            else
             {
                 int ColorNum = RandomDriver.Random(ColorMixSettings.ColorMixMinimumColorLevel, ColorMixSettings.ColorMixMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
@@ -308,17 +293,6 @@ namespace KS.Misc.Screensaver.Displays
                 if (!ResizeSyncing)
                 {
                     ColorTools.SetConsoleColor(new Color(ColorNum), true, true);
-                    ConsoleBase.ConsoleWrapper.Write(" ");
-                }
-            }
-            else
-            {
-                if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                    ResizeSyncing = true;
-                if (!ResizeSyncing)
-                {
-                    ConsoleBase.ConsoleWrapper.BackgroundColor = (ConsoleColor)RandomDriver.Random(ColorMixSettings.ColorMixMinimumColorLevel, ColorMixSettings.ColorMixMaximumColorLevel);
-                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
                     ConsoleBase.ConsoleWrapper.Write(" ");
                 }
             }

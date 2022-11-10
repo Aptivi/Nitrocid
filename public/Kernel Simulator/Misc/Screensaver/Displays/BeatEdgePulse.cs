@@ -29,7 +29,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class BeatEdgePulseSettings
     {
 
-        private static bool _beatedgepulse255Colors;
         private static bool _beatedgepulseTrueColor = true;
         private static bool _beatedgepulseCycleColors = true;
         private static string _beatedgepulseBeatColor = 17.ToString();
@@ -44,20 +43,6 @@ namespace KS.Misc.Screensaver.Displays
         private static int _beatedgepulseMaximumBlueColorLevel = 255;
         private static int _beatedgepulseMaximumColorLevel = 255;
 
-        /// <summary>
-        /// [BeatEdgePulse] Enable 255 color support. Has a higher priority than 16 color support. Please note that it only works if color cycling is enabled.
-        /// </summary>
-        public static bool BeatEdgePulse255Colors
-        {
-            get
-            {
-                return _beatedgepulse255Colors;
-            }
-            set
-            {
-                _beatedgepulse255Colors = value;
-            }
-        }
         /// <summary>
         /// [BeatEdgePulse] Enable truecolor support. Has a higher priority than 255 color support. Please note that it only works if color cycling is enabled.
         /// </summary>
@@ -197,7 +182,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMinimumLevel = _beatedgepulse255Colors | _beatedgepulseTrueColor ? 255 : 15;
+                int FinalMinimumLevel = 255;
                 if (value <= 0)
                     value = 0;
                 if (value > FinalMinimumLevel)
@@ -270,7 +255,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMaximumLevel = _beatedgepulse255Colors | _beatedgepulseTrueColor ? 255 : 15;
+                int FinalMaximumLevel = 255;
                 if (value <= _beatedgepulseMinimumColorLevel)
                     value = _beatedgepulseMinimumColorLevel;
                 if (value > FinalMaximumLevel)
@@ -302,7 +287,6 @@ namespace KS.Misc.Screensaver.Displays
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
             BeatEdgePulseSettingsInstance = new Animations.BeatEdgePulse.BeatEdgePulseSettings()
             {
-                BeatEdgePulse255Colors = BeatEdgePulseSettings.BeatEdgePulse255Colors,
                 BeatEdgePulseTrueColor = BeatEdgePulseSettings.BeatEdgePulseTrueColor,
                 BeatEdgePulseBeatColor = BeatEdgePulseSettings.BeatEdgePulseBeatColor,
                 BeatEdgePulseDelay = BeatEdgePulseSettings.BeatEdgePulseDelay,

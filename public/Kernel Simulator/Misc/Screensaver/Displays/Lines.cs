@@ -32,7 +32,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class LinesSettings
     {
 
-        private static bool _lines255Colors;
         private static bool _linesTrueColor = true;
         private static int _linesDelay = 500;
         private static string _linesLineChar = "-";
@@ -46,20 +45,6 @@ namespace KS.Misc.Screensaver.Displays
         private static int _linesMaximumBlueColorLevel = 255;
         private static int _linesMaximumColorLevel = 255;
 
-        /// <summary>
-        /// [Lines] Enable 255 color support. Has a higher priority than 16 color support.
-        /// </summary>
-        public static bool Lines255Colors
-        {
-            get
-            {
-                return _lines255Colors;
-            }
-            set
-            {
-                _lines255Colors = value;
-            }
-        }
         /// <summary>
         /// [Lines] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -185,7 +170,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMinimumLevel = _lines255Colors | _linesTrueColor ? 255 : 15;
+                int FinalMinimumLevel = 255;
                 if (value <= 0)
                     value = 0;
                 if (value > FinalMinimumLevel)
@@ -258,7 +243,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMaximumLevel = _lines255Colors | _linesTrueColor ? 255 : 15;
+                int FinalMaximumLevel = 255;
                 if (value <= _linesMinimumColorLevel)
                     value = _linesMinimumColorLevel;
                 if (value > FinalMaximumLevel)
@@ -310,18 +295,12 @@ namespace KS.Misc.Screensaver.Displays
                 var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
                 ColorTools.SetConsoleColor(ColorStorage);
             }
-            else if (LinesSettings.Lines255Colors)
+            else
             {
                 ColorTools.LoadBack(new Color(LinesSettings.LinesBackgroundColor), true);
                 int color = RandomDriver.Random(LinesSettings.LinesMinimumColorLevel, LinesSettings.LinesMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", color);
                 ColorTools.SetConsoleColor(new Color(color));
-            }
-            else
-            {
-                ColorTools.LoadBack(new Color(LinesSettings.LinesBackgroundColor), true);
-                ConsoleBase.ConsoleWrapper.ForegroundColor = Screensaver.colors[RandomDriver.Random(LinesSettings.LinesMinimumColorLevel, LinesSettings.LinesMaximumColorLevel)];
-                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.ForegroundColor);
             }
 
             // Draw a line

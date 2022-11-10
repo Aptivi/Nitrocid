@@ -34,7 +34,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class MarqueeSettings
     {
 
-        private static bool _marquee255Colors;
         private static bool _marqueeTrueColor = true;
         private static int _marqueeDelay = 10;
         private static string _marqueeWrite = "Kernel Simulator";
@@ -50,20 +49,6 @@ namespace KS.Misc.Screensaver.Displays
         private static int _marqueeMaximumBlueColorLevel = 255;
         private static int _marqueeMaximumColorLevel = 0;
 
-        /// <summary>
-        /// [Marquee] Enable 255 color support. Has a higher priority than 16 color support.
-        /// </summary>
-        public static bool Marquee255Colors
-        {
-            get
-            {
-                return _marquee255Colors;
-            }
-            set
-            {
-                _marquee255Colors = value;
-            }
-        }
         /// <summary>
         /// [Marquee] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -318,16 +303,11 @@ namespace KS.Misc.Screensaver.Displays
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 ColorTools.SetConsoleColor(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"));
             }
-            else if (MarqueeSettings.Marquee255Colors)
+            else
             {
                 int color = RandomDriver.Random(MarqueeSettings.MarqueeMinimumColorLevel, MarqueeSettings.MarqueeMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", color);
                 ColorTools.SetConsoleColor(new Color(color));
-            }
-            else
-            {
-                ConsoleBase.ConsoleWrapper.ForegroundColor = Screensaver.colors[RandomDriver.Random(MarqueeSettings.MarqueeMinimumColorLevel, MarqueeSettings.MarqueeMaximumColorLevel)];
-                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.ForegroundColor);
             }
 
             // If the text is at the right and is longer than the console width, crop it until it's complete.

@@ -270,42 +270,6 @@ namespace KSConverter
                 }
 
                 // Screensaver: Colors
-                if (ConfigReader.Sections["Screensaver"]?.Keys?.Contains("ColorMix - Activate 255 Color Mode") == true)
-                {
-                    ColorMixSettings.ColorMix255Colors = Convert.ToBoolean(ConfigReader.Sections["Screensaver"].Keys["ColorMix - Activate 255 Color Mode"].Value);
-                }
-                if (ConfigReader.Sections["Screensaver"]?.Keys?.Contains("Disco - Activate 255 Color Mode") == true)
-                {
-                    DiscoSettings.Disco255Colors = Convert.ToBoolean(ConfigReader.Sections["Screensaver"].Keys["Disco - Activate 255 Color Mode"].Value);
-                }
-                if (ConfigReader.Sections["Screensaver"]?.Keys?.Contains("GlitterColor - Activate 255 Color Mode") == true)
-                {
-                    GlitterColorSettings.GlitterColor255Colors = Convert.ToBoolean(ConfigReader.Sections["Screensaver"].Keys["GlitterColor - Activate 255 Color Mode"].Value);
-                }
-                if (ConfigReader.Sections["Screensaver"]?.Keys?.Contains("Lines - Activate 255 Color Mode") == true)
-                {
-                    LinesSettings.Lines255Colors = Convert.ToBoolean(ConfigReader.Sections["Screensaver"].Keys["Lines - Activate 255 Color Mode"].Value);
-                }
-                if (ConfigReader.Sections["Screensaver"]?.Keys?.Contains("Dissolve - Activate 255 Color Mode") == true)
-                {
-                    DissolveSettings.Dissolve255Colors = Convert.ToBoolean(ConfigReader.Sections["Screensaver"].Keys["Dissolve - Activate 255 Color Mode"].Value);
-                }
-                if (ConfigReader.Sections["Screensaver"]?.Keys?.Contains("BouncingBlock - Activate 255 Color Mode") == true)
-                {
-                    BouncingBlockSettings.BouncingBlock255Colors = Convert.ToBoolean(ConfigReader.Sections["Screensaver"].Keys["BouncingBlock - Activate 255 Color Mode"].Value);
-                }
-                if (ConfigReader.Sections["Screensaver"]?.Keys?.Contains("ProgressClock - Activate 255 Color Mode") == true)
-                {
-                    ProgressClockSettings.ProgressClock255Colors = Convert.ToBoolean(ConfigReader.Sections["Screensaver"].Keys["ProgressClock - Activate 255 Color Mode"].Value);
-                }
-                if (ConfigReader.Sections["Screensaver"]?.Keys?.Contains("Lighter - Activate 255 Color Mode") == true)
-                {
-                    LighterSettings.Lighter255Colors = Convert.ToBoolean(ConfigReader.Sections["Screensaver"].Keys["Lighter - Activate 255 Color Mode"].Value);
-                }
-                if (ConfigReader.Sections["Screensaver"]?.Keys?.Contains("Wipe - Activate 255 Color Mode") == true)
-                {
-                    WipeSettings.Wipe255Colors = Convert.ToBoolean(ConfigReader.Sections["Screensaver"].Keys["Wipe - Activate 255 Color Mode"].Value);
-                }
                 if (ConfigReader.Sections["Screensaver"]?.Keys?.Contains("ColorMix - Activate True Color Mode") == true)
                 {
                     ColorMixSettings.ColorMixTrueColor = Convert.ToBoolean(ConfigReader.Sections["Screensaver"].Keys["ColorMix - Activate True Color Mode"].Value);

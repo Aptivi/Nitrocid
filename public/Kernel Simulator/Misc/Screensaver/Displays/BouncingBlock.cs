@@ -33,7 +33,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class BouncingBlockSettings
     {
 
-        private static bool _bouncingBlock255Colors;
         private static bool _bouncingBlockTrueColor = true;
         private static int _bouncingBlockDelay = 10;
         private static string _bouncingBlockBackgroundColor = new Color((int)ConsoleColor.Black).PlainSequence;
@@ -47,20 +46,6 @@ namespace KS.Misc.Screensaver.Displays
         private static int _bouncingBlockMaximumBlueColorLevel = 255;
         private static int _bouncingBlockMaximumColorLevel = 255;
 
-        /// <summary>
-        /// [BouncingBlock] Enable 255 color support. Has a higher priority than 16 color support.
-        /// </summary>
-        public static bool BouncingBlock255Colors
-        {
-            get
-            {
-                return _bouncingBlock255Colors;
-            }
-            set
-            {
-                _bouncingBlock255Colors = value;
-            }
-        }
         /// <summary>
         /// [BouncingBlock] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -184,7 +169,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMinimumLevel = _bouncingBlock255Colors | _bouncingBlockTrueColor ? 255 : 15;
+                int FinalMinimumLevel = 255;
                 if (value <= 0)
                     value = 0;
                 if (value > FinalMinimumLevel)
@@ -257,7 +242,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMaximumLevel = _bouncingBlock255Colors | _bouncingBlockTrueColor ? 255 : 15;
+                int FinalMaximumLevel = 255;
                 if (value <= _bouncingBlockMinimumColorLevel)
                     value = _bouncingBlockMinimumColorLevel;
                 if (value > FinalMaximumLevel)
@@ -324,7 +309,7 @@ namespace KS.Misc.Screensaver.Displays
                     ColumnBlock = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d);
                 }
             }
-            else if (BouncingBlockSettings.BouncingBlock255Colors)
+            else
             {
                 int ColorNum = RandomDriver.Random(BouncingBlockSettings.BouncingBlockMinimumColorLevel, BouncingBlockSettings.BouncingBlockMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
@@ -333,29 +318,6 @@ namespace KS.Misc.Screensaver.Displays
                 if (!ResizeSyncing)
                 {
                     TextWriterWhereColor.WriteWhere(" ", ColumnBlock, RowBlock, true, Color.Empty, new Color(ColorNum));
-                }
-                else
-                {
-                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.W, "We're resize-syncing! Setting RowBlock and ColumnBlock to its original position...");
-                    RowBlock = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d);
-                    ColumnBlock = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d);
-                }
-            }
-            else
-            {
-                int OldColumn = ConsoleBase.ConsoleWrapper.CursorLeft;
-                int OldRow = ConsoleBase.ConsoleWrapper.CursorTop;
-                if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                    ResizeSyncing = true;
-                if (!ResizeSyncing)
-                {
-                    ConsoleBase.ConsoleWrapper.BackgroundColor = Screensaver.colors[RandomDriver.Random(BouncingBlockSettings.BouncingBlockMinimumColorLevel, BouncingBlockSettings.BouncingBlockMaximumColorLevel)];
-                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
-                    ConsoleBase.ConsoleWrapper.SetCursorPosition(ColumnBlock, RowBlock);
-                    ConsoleBase.ConsoleWrapper.Write(" ");
-                    ConsoleBase.ConsoleWrapper.SetCursorPosition(OldColumn, OldRow);
-                    ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-                    ConsoleBase.ConsoleWrapper.Write(" ");
                 }
                 else
                 {

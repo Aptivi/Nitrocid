@@ -41,7 +41,6 @@ namespace KS.Misc.Splash.Splashes
 
         public SplashBeatFader() => BeatFaderSettingsInstance = new Animations.BeatFader.BeatFaderSettings()
         {
-            BeatFader255Colors = false,
             BeatFaderTrueColor = true,
             BeatFaderCycleColors = true,
             BeatFaderBeatColor = 17.ToString(),

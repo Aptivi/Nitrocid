@@ -4,12 +4,6 @@
         "Path": "Screensaver.ColorMix",
         "Keys": [
             {
-                "Name": "Activate 255 colors",
-                "Type": "SBoolean",
-                "Variable": "ColorMix255Colors",
-                "Description": "Activates the 255 color support."
-            },
-            {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
                 "Variable": "ColorMixTrueColor",
@@ -131,12 +125,6 @@
         "Path": "Screensaver.Disco",
         "Keys": [
             {
-                "Name": "Activate 255 colors",
-                "Type": "SBoolean",
-                "Variable": "Disco255Colors",
-                "Description": "Activates the 255 color support."
-            },
-            {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
                 "Variable": "DiscoTrueColor",
@@ -237,12 +225,6 @@
         "Path": "Screensaver.Lines",
         "Keys": [
             {
-                "Name": "Activate 255 colors",
-                "Type": "SBoolean",
-                "Variable": "Lines255Colors",
-                "Description": "Activates the 255 color support."
-            },
-            {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
                 "Variable": "LinesTrueColor",
@@ -336,12 +318,6 @@
         "Path": "Screensaver.GlitterColor",
         "Keys": [
             {
-                "Name": "Activate 255 colors",
-                "Type": "SBoolean",
-                "Variable": "GlitterColor255Colors",
-                "Description": "Activates the 255 color support."
-            },
-            {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
                 "Variable": "GlitterColorTrueColor",
@@ -423,12 +399,6 @@
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.BouncingText",
         "Keys": [
-            {
-                "Name": "Activate 255 colors",
-                "Type": "SBoolean",
-                "Variable": "BouncingText255Colors",
-                "Description": "Activates the 255 color support."
-            },
             {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
@@ -528,12 +498,6 @@
         "Path": "Screensaver.Dissolve",
         "Keys": [
             {
-                "Name": "Activate 255 colors",
-                "Type": "SBoolean",
-                "Variable": "Dissolve255Colors",
-                "Description": "Activates the 255 color support."
-            },
-            {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
                 "Variable": "DissolveTrueColor",
@@ -614,12 +578,6 @@
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.BouncingBlock",
         "Keys": [
-            {
-                "Name": "Activate 255 colors",
-                "Type": "SBoolean",
-                "Variable": "BouncingBlock255Colors",
-                "Description": "Activates the 255 color support."
-            },
             {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
@@ -712,12 +670,6 @@
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.ProgressClock",
         "Keys": [
-            {
-                "Name": "Activate 255 colors",
-                "Type": "SBoolean",
-                "Variable": "ProgressClock255Colors",
-                "Description": "Activates the 255 color support."
-            },
             {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
@@ -1187,12 +1139,6 @@
         "Path": "Screensaver.Lighter",
         "Keys": [
             {
-                "Name": "Activate 255 colors",
-                "Type": "SBoolean",
-                "Variable": "Lighter255Colors",
-                "Description": "Activates the 255 color support."
-            },
-            {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
                 "Variable": "LighterTrueColor",
@@ -1426,12 +1372,6 @@
         "Path": "Screensaver.Wipe",
         "Keys": [
             {
-                "Name": "Activate 255 colors",
-                "Type": "SBoolean",
-                "Variable": "Wipe255Colors",
-                "Description": "Activates the 255 color support."
-            },
-            {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
                 "Variable": "WipeTrueColor",
@@ -1524,12 +1464,6 @@
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Marquee",
         "Keys": [
-            {
-                "Name": "Activate 255 colors",
-                "Type": "SBoolean",
-                "Variable": "Marquee255Colors",
-                "Description": "Activates the 255 color support."
-            },
             {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
@@ -1708,12 +1642,6 @@
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.BeatFader",
         "Keys": [
-            {
-                "Name": "Activate 255 colors",
-                "Type": "SBoolean",
-                "Variable": "BeatFader255Colors",
-                "Description": "Activates the 255 color support."
-            },
             {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
@@ -1950,12 +1878,6 @@
         "Path": "Screensaver.FlashColor",
         "Keys": [
             {
-                "Name": "Activate 255 colors",
-                "Type": "SBoolean",
-                "Variable": "FlashColor255Colors",
-                "Description": "Activates the 255 color support."
-            },
-            {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
                 "Variable": "FlashColorTrueColor",
@@ -2072,12 +1994,6 @@
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Ramp",
         "Keys": [
-            {
-                "Name": "Activate 255 colors",
-                "Type": "SBoolean",
-                "Variable": "Ramp255Colors",
-                "Description": "Activates the 255 color support."
-            },
             {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
@@ -2325,12 +2241,6 @@
         "Path": "Screensaver.StackBox",
         "Keys": [
             {
-                "Name": "Activate 255 colors",
-                "Type": "SBoolean",
-                "Variable": "StackBox255Colors",
-                "Description": "Activates the 255 color support."
-            },
-            {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
                 "Variable": "StackBoxTrueColor",
@@ -2419,12 +2329,6 @@
         "Path": "Screensaver.Snaker",
         "Keys": [
             {
-                "Name": "Activate 255 colors",
-                "Type": "SBoolean",
-                "Variable": "Snaker255Colors",
-                "Description": "Activates the 255 color support."
-            },
-            {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
                 "Variable": "SnakerTrueColor",
@@ -2512,12 +2416,6 @@
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.BarRot",
         "Keys": [
-            {
-                "Name": "Activate 255 colors",
-                "Type": "SBoolean",
-                "Variable": "BarRot255Colors",
-                "Description": "Activates the 255 color support."
-            },
             {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
@@ -2733,12 +2631,6 @@
         "Path": "Screensaver.Fireworks",
         "Keys": [
             {
-                "Name": "Activate 255 colors",
-                "Type": "SBoolean",
-                "Variable": "Fireworks255Colors",
-                "Description": "Activates the 255 color support."
-            },
-            {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
                 "Variable": "FireworksTrueColor",
@@ -2828,12 +2720,6 @@
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Figlet",
         "Keys": [
-            {
-                "Name": "Activate 255 colors",
-                "Type": "SBoolean",
-                "Variable": "Figlet255Colors",
-                "Description": "Activates the 255 color support."
-            },
             {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
@@ -2928,12 +2814,6 @@
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.FlashText",
         "Keys": [
-            {
-                "Name": "Activate 255 colors",
-                "Type": "SBoolean",
-                "Variable": "FlashText255Colors",
-                "Description": "Activates the 255 color support."
-            },
             {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
@@ -3098,12 +2978,6 @@
         "Path": "Screensaver.DateAndTime",
         "Keys": [
             {
-                "Name": "Activate 255 colors",
-                "Type": "SBoolean",
-                "Variable": "DateAndTime255Colors",
-                "Description": "Activates the 255 color support."
-            },
-            {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
                 "Variable": "DateAndTimeTrueColor",
@@ -3206,12 +3080,6 @@
         "Path": "Screensaver.FallingLine",
         "Keys": [
             {
-                "Name": "Activate 255 colors",
-                "Type": "SBoolean",
-                "Variable": "FallingLine255Colors",
-                "Description": "Activates the 255 color support."
-            },
-            {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
                 "Variable": "FallingLineTrueColor",
@@ -3299,12 +3167,6 @@
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Indeterminate",
         "Keys": [
-            {
-                "Name": "Activate 255 colors",
-                "Type": "SBoolean",
-                "Variable": "Indeterminate255Colors",
-                "Description": "Activates the 255 color support."
-            },
             {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
@@ -3548,12 +3410,6 @@
         "Path": "Screensaver.BeatPulse",
         "Keys": [
             {
-                "Name": "Activate 255 colors",
-                "Type": "SBoolean",
-                "Variable": "BeatPulse255Colors",
-                "Description": "Activates the 255 color support."
-            },
-            {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
                 "Variable": "BeatPulseTrueColor",
@@ -3718,12 +3574,6 @@
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.BeatEdgePulse",
         "Keys": [
-            {
-                "Name": "Activate 255 colors",
-                "Type": "SBoolean",
-                "Variable": "BeatEdgePulse255Colors",
-                "Description": "Activates the 255 color support."
-            },
             {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
@@ -4163,12 +4013,6 @@
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.SnakeFill",
         "Keys": [
-            {
-                "Name": "Activate 255 colors",
-                "Type": "SBoolean",
-                "Variable": "SnakeFill255Colors",
-                "Description": "Activates the 255 color support."
-            },
             {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",

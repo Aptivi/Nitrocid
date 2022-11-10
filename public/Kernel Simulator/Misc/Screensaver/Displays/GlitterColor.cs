@@ -32,7 +32,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class GlitterColorSettings
     {
 
-        private static bool _glitterColor255Colors;
         private static bool _glitterColorTrueColor = true;
         private static int _glitterColorDelay = 1;
         private static int _glitterColorMinimumRedColorLevel = 0;
@@ -44,20 +43,6 @@ namespace KS.Misc.Screensaver.Displays
         private static int _glitterColorMaximumBlueColorLevel = 255;
         private static int _glitterColorMaximumColorLevel = 255;
 
-        /// <summary>
-        /// [GlitterColor] Enable 255 color support. Has a higher priority than 16 color support.
-        /// </summary>
-        public static bool GlitterColor255Colors
-        {
-            get
-            {
-                return _glitterColor255Colors;
-            }
-            set
-            {
-                _glitterColor255Colors = value;
-            }
-        }
         /// <summary>
         /// [GlitterColor] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -153,7 +138,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMinimumLevel = _glitterColor255Colors | _glitterColorTrueColor ? 255 : 15;
+                int FinalMinimumLevel = 255;
                 if (value <= 0)
                     value = 0;
                 if (value > FinalMinimumLevel)
@@ -226,7 +211,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMaximumLevel = _glitterColor255Colors | _glitterColorTrueColor ? 255 : 15;
+                int FinalMaximumLevel = 255;
                 if (value <= _glitterColorMinimumColorLevel)
                     value = _glitterColorMinimumColorLevel;
                 if (value > FinalMaximumLevel)
@@ -291,7 +276,7 @@ namespace KS.Misc.Screensaver.Displays
                     ConsoleBase.ConsoleWrapper.Write(" ");
                 }
             }
-            else if (GlitterColorSettings.GlitterColor255Colors)
+            else
             {
                 int ColorNum = RandomDriver.Random(GlitterColorSettings.GlitterColorMinimumColorLevel, GlitterColorSettings.GlitterColorMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
@@ -300,17 +285,6 @@ namespace KS.Misc.Screensaver.Displays
                 if (!ResizeSyncing)
                 {
                     ColorTools.SetConsoleColor(new Color(ColorNum), true, true);
-                    ConsoleBase.ConsoleWrapper.Write(" ");
-                }
-            }
-            else
-            {
-                if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                    ResizeSyncing = true;
-                if (!ResizeSyncing)
-                {
-                    ConsoleBase.ConsoleWrapper.BackgroundColor = Screensaver.colors[RandomDriver.Random(GlitterColorSettings.GlitterColorMinimumColorLevel, GlitterColorSettings.GlitterColorMaximumColorLevel)];
-                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
                     ConsoleBase.ConsoleWrapper.Write(" ");
                 }
             }

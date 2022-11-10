@@ -62,13 +62,6 @@ namespace KS.Misc.Animations.BeatFader
                     GreenColorNum = RandomDriver.Random(Settings.BeatFaderMinimumGreenColorLevel, Settings.BeatFaderMaximumGreenColorLevel);
                     BlueColorNum = RandomDriver.Random(Settings.BeatFaderMinimumBlueColorLevel, Settings.BeatFaderMaximumBlueColorLevel);
                 }
-                else if (Settings.BeatFader255Colors)
-                {
-                    var ConsoleColor = new ConsoleColorsInfo((ConsoleColors)RandomDriver.Random(Settings.BeatFaderMinimumColorLevel, Settings.BeatFaderMaximumColorLevel));
-                    RedColorNum = ConsoleColor.R;
-                    GreenColorNum = ConsoleColor.G;
-                    BlueColorNum = ConsoleColor.B;
-                }
                 else
                 {
                     var ConsoleColor = new ConsoleColorsInfo((ConsoleColors)RandomDriver.Random(Settings.BeatFaderMinimumColorLevel, Settings.BeatFaderMaximumColorLevel));

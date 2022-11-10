@@ -29,7 +29,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class BeatPulseSettings
     {
 
-        private static bool _beatpulse255Colors;
         private static bool _beatpulseTrueColor = true;
         private static bool _beatpulseCycleColors = true;
         private static string _beatpulseBeatColor = 17.ToString();
@@ -44,20 +43,6 @@ namespace KS.Misc.Screensaver.Displays
         private static int _beatpulseMaximumBlueColorLevel = 255;
         private static int _beatpulseMaximumColorLevel = 255;
 
-        /// <summary>
-        /// [BeatPulse] Enable 255 color support. Has a higher priority than 16 color support. Please note that it only works if color cycling is enabled.
-        /// </summary>
-        public static bool BeatPulse255Colors
-        {
-            get
-            {
-                return _beatpulse255Colors;
-            }
-            set
-            {
-                _beatpulse255Colors = value;
-            }
-        }
         /// <summary>
         /// [BeatPulse] Enable truecolor support. Has a higher priority than 255 color support. Please note that it only works if color cycling is enabled.
         /// </summary>
@@ -197,7 +182,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMinimumLevel = _beatpulse255Colors | _beatpulseTrueColor ? 255 : 15;
+                int FinalMinimumLevel = 255;
                 if (value <= 0)
                     value = 0;
                 if (value > FinalMinimumLevel)
@@ -270,7 +255,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                int FinalMaximumLevel = _beatpulse255Colors | _beatpulseTrueColor ? 255 : 15;
+                int FinalMaximumLevel = 255;
                 if (value <= _beatpulseMinimumColorLevel)
                     value = _beatpulseMinimumColorLevel;
                 if (value > FinalMaximumLevel)
@@ -302,7 +287,6 @@ namespace KS.Misc.Screensaver.Displays
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
             BeatPulseSettingsInstance = new Animations.BeatPulse.BeatPulseSettings()
             {
-                BeatPulse255Colors = BeatPulseSettings.BeatPulse255Colors,
                 BeatPulseTrueColor = BeatPulseSettings.BeatPulseTrueColor,
                 BeatPulseBeatColor = BeatPulseSettings.BeatPulseBeatColor,
                 BeatPulseDelay = BeatPulseSettings.BeatPulseDelay,
