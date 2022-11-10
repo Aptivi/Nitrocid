@@ -18,6 +18,7 @@
 
 using System;
 using KS.Languages;
+using KS.Misc.Screensaver;
 using KS.Misc.Text;
 
 #if NETCOREAPP
@@ -68,6 +69,7 @@ namespace KS.ConsoleBase.Inputs
             ReadLineReboot.ReadLine.CtrlCEnabled = UseCtrlCAsInput;
             string Output = ReadLineReboot.ReadLine.Read(InputText, DefaultValue);
             ReadLineReboot.ReadLine.CtrlCEnabled = CtrlCEnabled;
+            ScreensaverDisplayer.BailFromScreensaver();
             return Output;
         }
 
@@ -112,6 +114,7 @@ namespace KS.ConsoleBase.Inputs
                 }
                 System.Threading.Thread.Sleep(1);
             }
+            ScreensaverDisplayer.BailFromScreensaver();
             return ConsoleWrapper.ReadKey(Intercept);
         }
 

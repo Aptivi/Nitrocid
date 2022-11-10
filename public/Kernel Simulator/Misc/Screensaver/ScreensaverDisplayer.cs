@@ -18,6 +18,8 @@
 
 using System;
 using System.Threading;
+using KS.Kernel.Debugging;
+using KS.Kernel;
 using KS.Misc.Threading;
 
 namespace KS.Misc.Screensaver
@@ -57,8 +59,23 @@ namespace KS.Misc.Screensaver
             }
             finally
             {
-                Screensaver.ScreensaverOutro();
                 OutOfRandom = true;
+                Screensaver.ScreensaverOutro();
+            }
+        }
+
+        internal static void BailFromScreensaver()
+        {
+            if (Screensaver.InSaver)
+            {
+                ScreensaverDisplayerThread.Stop();
+                Screensaver.SaverAutoReset.WaitOne();
+
+                // Raise event
+                DebugWriter.WriteDebug(DebugLevel.I, "Screensaver really stopped.");
+                Kernel.Events.EventsManager.FireEvent("PostShowScreensaver");
+                Screensaver.inSaver = false;
+                Flags.ScrnTimeReached = false;
             }
         }
 

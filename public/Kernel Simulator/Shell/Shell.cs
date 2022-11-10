@@ -222,19 +222,6 @@ namespace KS.Shell
                     commandBuilder.Append(" ");
                 commandBuilder.Append(strcommand);
                 FullCommand = commandBuilder.ToString();
-
-                if (Screensaver.InSaver)
-                {
-                    ScreensaverDisplayer.ScreensaverDisplayerThread.Stop();
-                    Screensaver.SaverAutoReset.WaitOne();
-
-                    // Raise event
-                    DebugWriter.WriteDebug(DebugLevel.I, "Screensaver really stopped.");
-                    Kernel.Events.EventsManager.FireEvent("PostShowScreensaver");
-                    Screensaver.inSaver = false;
-                    Flags.ScrnTimeReached = false;
-                    return;
-                }
             }
 
             // Check for a type of command

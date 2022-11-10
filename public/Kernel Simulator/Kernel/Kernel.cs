@@ -219,8 +219,11 @@ namespace KS.Kernel
                     // Show the closing screen
                     SplashReport.ReportProgress(Translate.DoTranslation("Welcome!"), 100, ColorTools.ColTypes.Success);
                     SplashManager.CloseSplash();
+                    if (!Flags.EnableSplash)
+                        TextWriterColor.Write();
 
                     // Show current time
+                    SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Welcome!"), true, ColorTools.ColTypes.Stage);
                     if (Flags.ShowCurrentTimeBeforeLogin)
                         TimeDate.TimeDate.ShowCurrentTimes();
 
