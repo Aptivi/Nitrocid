@@ -23,6 +23,12 @@ using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.Prompts;
 using KS.Shell.Prompts.Presets.UESH;
+using KS.Shell.ShellBase.Commands.UnifiedCommands;
+using KS.Arguments.ArgumentBase;
+using System.Linq;
+using KS.Users;
+using UnitsNet;
+using KS.ConsoleBase.Themes;
 
 namespace KS.Shell.Shells.UESH
 {
@@ -38,9 +44,9 @@ namespace KS.Shell.Shells.UESH
         {
             { "adduser", new CommandInfo("adduser", ShellType.Shell, "Adds users", new CommandArgumentInfo(new[] { "<userName> [password] [confirm]" }, true, 1), new AddUserCommand(), CommandFlags.Strict) },
             { "admin", new CommandInfo("admin", ShellType.Shell, "Administrative shell", new CommandArgumentInfo(), new AdminCommand(), CommandFlags.Strict) },
-            { "alias", new CommandInfo("alias", ShellType.Shell, "Adds aliases to commands", new CommandArgumentInfo( new[] { $"<rem/add> <{string.Join("/", Enum.GetNames(typeof(ShellType)))}> <alias> <cmd>" }, true, 3), new AliasCommand(), CommandFlags.Strict) },
+            { "alias", new CommandInfo("alias", ShellType.Shell, "Adds aliases to commands", new CommandArgumentInfo( new[] { $"<rem/add> <{string.Join("/", Enum.GetNames(typeof(ShellType)))}> <alias> <cmd>" }, true, 3, (_) => HelpUnifiedCommand.ListCmds(_)), new AliasCommand(), CommandFlags.Strict) },
             { "archive", new CommandInfo("archive", ShellType.Shell, "Opens the archive file to the archive shell", new CommandArgumentInfo(new[] { "<archivefile>" }, true, 1), new ArchiveCommand()) },
-            { "arginj", new CommandInfo("arginj", ShellType.Shell, "Injects arguments to the kernel (reboot required)", new CommandArgumentInfo(new[] { "[Arguments separated by spaces]" }, true, 1), new ArgInjCommand(), CommandFlags.Strict) },
+            { "arginj", new CommandInfo("arginj", ShellType.Shell, "Injects arguments to the kernel (reboot required)", new CommandArgumentInfo(new[] { "[Arguments separated by spaces]" }, true, 1, (_) => ArgumentParse.AvailableArgs.Keys.Where((src) => src.StartsWith(_)).ToArray()), new ArgInjCommand(), CommandFlags.Strict) },
             { "beep", new CommandInfo("beep", ShellType.Shell, "Beeps from the console", new CommandArgumentInfo(), new BeepCommand()) },
             { "blockdbgdev", new CommandInfo("blockdbgdev", ShellType.Shell, "Block a debug device by IP address", new CommandArgumentInfo(new[] { "<ipaddress>" }, true, 1), new BlockDbgDevCommand(), CommandFlags.Strict) },
             { "calc", new CommandInfo("calc", ShellType.Shell, "Calculator to calculate expressions.", new CommandArgumentInfo(new[] { "<expression>" }, true, 1), new CalcCommand()) },
@@ -49,12 +55,12 @@ namespace KS.Shell.Shells.UESH
             { "chattr", new CommandInfo("chattr", ShellType.Shell, "Changes attribute of a file", new CommandArgumentInfo(new[] { "<file> +/-<attributes>" }, true, 2), new ChAttrCommand()) },
             { "chdir", new CommandInfo("chdir", ShellType.Shell, "Changes directory", new CommandArgumentInfo(new[] { "<directory/..>" }, true, 1), new ChDirCommand()) },
             { "chhostname", new CommandInfo("chhostname", ShellType.Shell, "Changes host name", new CommandArgumentInfo(new[] { "<HostName>" }, true, 1), new ChHostNameCommand(), CommandFlags.Strict) },
-            { "chlang", new CommandInfo("chlang", ShellType.Shell, "Changes language", new CommandArgumentInfo(new[] { "[-alwaystransliterated|-alwaystranslated|-force] <language>" }, true, 1), new ChLangCommand(), CommandFlags.Strict) },
+            { "chlang", new CommandInfo("chlang", ShellType.Shell, "Changes language", new CommandArgumentInfo(new[] { "[-alwaystransliterated|-alwaystranslated|-force] <language>" }, true, 1, (_) => Languages.LanguageManager.Languages.Keys.Where((src) => src.StartsWith(_)).ToArray()), new ChLangCommand(), CommandFlags.Strict) },
             { "chmal", new CommandInfo("chmal", ShellType.Shell, "Changes MAL, the MOTD After Login", new CommandArgumentInfo(new[] { "[Message]" }, false, 0), new ChMalCommand(), CommandFlags.Strict) },
             { "chmotd", new CommandInfo("chmotd", ShellType.Shell, "Changes MOTD, the Message Of The Day", new CommandArgumentInfo(new[] { "[Message]" }, false, 0), new ChMotdCommand(), CommandFlags.Strict) },
             { "choice", new CommandInfo("choice", ShellType.Shell, "Makes user choices", new CommandArgumentInfo(new[] { "[-o|-t|-m|-a] [-multiple|-single] <$variable> <answers> <input> [answertitle1] [answertitle2] ..." }, true, 3), new ChoiceCommand(), CommandFlags.SettingVariable) },
-            { "chpwd", new CommandInfo("chpwd", ShellType.Shell, "Changes password for current user", new CommandArgumentInfo(new[] { "<Username> <UserPass> <newPass> <confirm>" }, true, 4), new ChPwdCommand(), CommandFlags.Strict) },
-            { "chusrname", new CommandInfo("chusrname", ShellType.Shell, "Changes user name", new CommandArgumentInfo(new[] { "<oldUserName> <newUserName>" }, true, 2), new ChUsrNameCommand(), CommandFlags.Strict) },
+            { "chpwd", new CommandInfo("chpwd", ShellType.Shell, "Changes password for current user", new CommandArgumentInfo(new[] { "<Username> <UserPass> <newPass> <confirm>" }, true, 4, (_) => UserManagement.ListAllUsers().Where((src) => src.StartsWith(_)).ToArray()), new ChPwdCommand(), CommandFlags.Strict) },
+            { "chusrname", new CommandInfo("chusrname", ShellType.Shell, "Changes user name", new CommandArgumentInfo(new[] { "<oldUserName> <newUserName>" }, true, 2, (_) => UserManagement.ListAllUsers().Where((src) => src.StartsWith(_)).ToArray()), new ChUsrNameCommand(), CommandFlags.Strict) },
             { "clearfiredevents", new CommandInfo("clearfiredevents", ShellType.Shell, "Clears all fired events", new CommandArgumentInfo(), new ClearFiredEventsCommand()) },
             { "cls", new CommandInfo("cls", ShellType.Shell, "Clears the screen", new CommandArgumentInfo(), new ClsCommand()) },
             { "colorhextorgb", new CommandInfo("colorhextorgb", ShellType.Shell, "Converts the hexadecimal representation of the color to RGB numbers.", new CommandArgumentInfo(new[] { "<#RRGGBB>" }, true, 1), new ColorHexToRgbCommand()) },
@@ -78,16 +84,16 @@ namespace KS.Shell.Shells.UESH
             { "gettimeinfo", new CommandInfo("gettimeinfo", ShellType.Shell, "Gets the date and time information", new CommandArgumentInfo(new[] { "<date>" }, true, 1), new GetTimeInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
             { "get", new CommandInfo("get", ShellType.Shell, "Downloads a file to current working directory", new CommandArgumentInfo(new[] { "<URL>" }, true, 1), new Get_Command()) },
             { "http", new CommandInfo("http", ShellType.Shell, "Starts the HTTP shell", new CommandArgumentInfo(), new HttpCommand()) },
-            { "hwinfo", new CommandInfo("hwinfo", ShellType.Shell, "Prints hardware information", new CommandArgumentInfo(new[] { "<HardwareType>" }, true, 1), new HwInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
+            { "hwinfo", new CommandInfo("hwinfo", ShellType.Shell, "Prints hardware information", new CommandArgumentInfo(new[] { "<HardwareType>" }, true, 1, (_) => new[] { "HDD", "LogicalParts", "CPU", "GPU", "Sound", "Network", "System", "Machine", "BIOS", "RAM", "all" }), new HwInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
             { "if", new CommandInfo("if", ShellType.Shell, "Executes commands once the UESH expressions are satisfied", new CommandArgumentInfo(new[] { "<uesh-expression> <command>" }, true, 2), new IfCommand()) },
             { "ifm", new CommandInfo("ifm", ShellType.Shell, "Interactive system host file manager", new CommandArgumentInfo(), new IfmCommand()) },
             { "input", new CommandInfo("input", ShellType.Shell, "Allows user to enter input", new CommandArgumentInfo(new[] { "<$variable> <question>" }, true, 2), new InputCommand(), CommandFlags.SettingVariable) },
             { "jsonbeautify", new CommandInfo("jsonbeautify", ShellType.Shell, "Beautifies the JSON file", new CommandArgumentInfo(new[] { "<jsonfile> [output]" }, true, 1), new JsonBeautifyCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
             { "jsonminify", new CommandInfo("jsonminify", ShellType.Shell, "Minifies the JSON file", new CommandArgumentInfo(new[] { "<jsonfile> [output]" }, true, 1), new JsonMinifyCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
             { "keyinfo", new CommandInfo("keyinfo", ShellType.Shell, "Gets key information for a pressed key. Useful for debugging", new CommandArgumentInfo(), new KeyInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
-            { "langman", new CommandInfo("langman", ShellType.Shell, "Manage your languages", new CommandArgumentInfo(new[] { "<reload/load/unload> <customlanguagename>", "<list/reloadall>" }, true, 1), new LangManCommand(), CommandFlags.Strict) },
+            { "langman", new CommandInfo("langman", ShellType.Shell, "Manage your languages", new CommandArgumentInfo(new[] { "<reload/load/unload> <customlanguagename>", "<list/reloadall>" }, true, 1, (_) => Languages.LanguageManager.CustomLanguages.Keys.Where((src) => src.StartsWith(_)).ToArray()), new LangManCommand(), CommandFlags.Strict) },
             { "list", new CommandInfo("list", ShellType.Shell, "List file/folder contents in current folder", new CommandArgumentInfo(new[] { "[-showdetails|-suppressmessages|-recursive] [directory]" }, false, 0), new ListCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
-            { "listunits", new CommandInfo("listunits", ShellType.Shell, "Lists all available units", new CommandArgumentInfo(new[] { "<type>" }, true, 1), new ListUnitsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
+            { "listunits", new CommandInfo("listunits", ShellType.Shell, "Lists all available units", new CommandArgumentInfo(new[] { "<type>" }, true, 1, (_) => Quantity.Infos.Select((src) => src.Name).Where((src) => src.StartsWith(_)).ToArray()), new ListUnitsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
             { "lockscreen", new CommandInfo("lockscreen", ShellType.Shell, "Locks your screen with a password", new CommandArgumentInfo(), new LockScreenCommand()) },
             { "logout", new CommandInfo("logout", ShellType.Shell, "Logs you out", new CommandArgumentInfo(), new LogoutCommand(), CommandFlags.NoMaintenance) },
             { "lsdbgdev", new CommandInfo("lsdbgdev", ShellType.Shell, "Lists debugging devices connected", new CommandArgumentInfo(), new LsDbgDevCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
@@ -102,7 +108,7 @@ namespace KS.Shell.Shells.UESH
             { "move", new CommandInfo("move", ShellType.Shell, "Moves a file to another directory", new CommandArgumentInfo(new[] { "<source> <target>" }, true, 2), new MoveCommand()) },
             { "netinfo", new CommandInfo("netinfo", ShellType.Shell, "Lists information about all available interfaces", new CommandArgumentInfo(), new NetInfoCommand(), CommandFlags.Strict) },
             { "open", new CommandInfo("open", ShellType.Shell, "Opens a URL", new CommandArgumentInfo(new[] { "<URL>" }, true, 1), new OpenCommand()) },
-            { "perm", new CommandInfo("perm", ShellType.Shell, "Manage permissions for users", new CommandArgumentInfo(new[] { "<userName> <Administrator/Disabled/Anonymous> <Allow/Disallow>" }, true, 3), new PermCommand(), CommandFlags.Strict) },
+            { "perm", new CommandInfo("perm", ShellType.Shell, "Manage permissions for users", new CommandArgumentInfo(new[] { "<userName> <Administrator/Disabled/Anonymous> <Allow/Disallow>" }, true, 3, (_) => UserManagement.ListAllUsers().Where((src) => src.StartsWith(_)).ToArray()), new PermCommand(), CommandFlags.Strict) },
             { "ping", new CommandInfo("ping", ShellType.Shell, "Pings an address", new CommandArgumentInfo(new[] { "[times] <Address1> <Address2> ..." }, true, 1), new PingCommand()) },
             { "previewsplash", new CommandInfo("previewsplash", ShellType.Shell, "Previews the splash", new CommandArgumentInfo(new[] { "[splashName]" }, false, 0), new PreviewSplashCommand()) },
             { "put", new CommandInfo("put", ShellType.Shell, "Uploads a file to specified website", new CommandArgumentInfo(new[] { "<FileName> <URL>" }, true, 2), new PutCommand()) },
@@ -114,7 +120,7 @@ namespace KS.Shell.Shells.UESH
             { "rm", new CommandInfo("rm", ShellType.Shell, "Removes a directory or a file", new CommandArgumentInfo(new[] { "<directory/file>" }, true, 1), new RmCommand()) },
             { "rdebug", new CommandInfo("rdebug", ShellType.Shell, "Enables or disables remote debugging.", new CommandArgumentInfo(), new RdebugCommand(), CommandFlags.Strict) },
             { "reportbug", new CommandInfo("reportbug", ShellType.Shell, "A bug reporting prompt.", new CommandArgumentInfo(), new ReportBugCommand()) },
-            { "rmuser", new CommandInfo("rmuser", ShellType.Shell, "Removes a user from the list", new CommandArgumentInfo(new[] { "<Username>" }, true, 1), new RmUserCommand(), CommandFlags.Strict) },
+            { "rmuser", new CommandInfo("rmuser", ShellType.Shell, "Removes a user from the list", new CommandArgumentInfo(new[] { "<Username>" }, true, 1, (_) => UserManagement.ListAllUsers().Where((src) => src.StartsWith(_)).ToArray()), new RmUserCommand(), CommandFlags.Strict) },
             { "roulette", new CommandInfo("roulette", ShellType.Shell, "Russian Roulette", new CommandArgumentInfo(), new RouletteCommand()) },
             { "rss", new CommandInfo("rss", ShellType.Shell, "Opens an RSS shell to read the feeds", new CommandArgumentInfo(new[] { "[feedlink]" }, false, 0), new RssCommand()) },
             { "savecurrdir", new CommandInfo("savecurrdir", ShellType.Shell, "Saves the current directory to kernel configuration file", new CommandArgumentInfo(), new SaveCurrDirCommand(), CommandFlags.Strict) },
@@ -141,7 +147,7 @@ namespace KS.Shell.Shells.UESH
             { "stopwatch", new CommandInfo("stopwatch", ShellType.Shell, "A simple stopwatch", new CommandArgumentInfo(), new StopwatchCommand()) },
             { "sumfile", new CommandInfo("sumfile", ShellType.Shell, "Calculates file sums.", new CommandArgumentInfo(new[] { "[-relative] <MD5/SHA1/SHA256/SHA384/SHA512/all> <file> [outputFile]" }, true, 2), new SumFileCommand()) },
             { "sumfiles", new CommandInfo("sumfiles", ShellType.Shell, "Calculates sums of files in specified directory.", new CommandArgumentInfo(new[] { "[-relative] <MD5/SHA1/SHA256/SHA384/SHA512/all> <dir> [outputFile]" }, true, 2), new SumFilesCommand()) },
-            { "themesel", new CommandInfo("themesel", ShellType.Shell, "Selects a theme and sets it", new CommandArgumentInfo(new[] { "[Theme]" }, false, 0), new ThemeSelCommand()) },
+            { "themesel", new CommandInfo("themesel", ShellType.Shell, "Selects a theme and sets it", new CommandArgumentInfo(new[] { "[Theme]" }, false, 0, (_) => ThemeTools.Themes.Keys.Where((src) => src.StartsWith(_)).ToArray()), new ThemeSelCommand()) },
             { "timer", new CommandInfo("timer", ShellType.Shell, "A simple timer", new CommandArgumentInfo(), new TimerCommand()) },
             { "unblockdbgdev", new CommandInfo("unblockdbgdev", ShellType.Shell, "Unblock a debug device by IP address", new CommandArgumentInfo(new[] { "<ipaddress>" }, true, 1), new UnblockDbgDevCommand(), CommandFlags.Strict) },
             { "unitconv", new CommandInfo("unitconv", ShellType.Shell, "Unit converter", new CommandArgumentInfo(new[] { "<unittype> <quantity> <sourceunit> <targetunit>" }, true, 4), new UnitConvCommand()) },
