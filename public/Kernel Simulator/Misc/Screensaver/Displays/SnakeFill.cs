@@ -23,6 +23,7 @@ using KS.Drivers.RNG;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
+using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.WriterBase;
 
 namespace KS.Misc.Screensaver.Displays
@@ -263,7 +264,7 @@ namespace KS.Misc.Screensaver.Displays
                         if (ResizeSyncing)
                             break;
 
-                        WriterPlainManager.CurrentPlain.WriteWherePlain(" ", x, y);
+                        TextWriterWhereColor.WriteWhere(" ", x, y);
                         ThreadManager.SleepNoBlock(SnakeFillSettings.SnakeFillDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
                         reverseHeightAxis = false;
                     }
@@ -277,7 +278,7 @@ namespace KS.Misc.Screensaver.Displays
                         if (ResizeSyncing)
                             break;
 
-                        WriterPlainManager.CurrentPlain.WriteWherePlain(" ", x, y);
+                        TextWriterWhereColor.WriteWhere(" ", x, y);
                         ThreadManager.SleepNoBlock(SnakeFillSettings.SnakeFillDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
                         reverseHeightAxis = true;
                     }

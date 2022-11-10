@@ -219,3 +219,10 @@ This class will be filled by many console checks, so renamed it according to the
 
 Affected classes:
   * `ConsoleSanityChecker` -> `ConsoleChecker`
+
+##### WriteWherePlain from TextWriterWhereColor renamed
+
+This change is necessary to fit in with the rest of the ConsoleWriters
+
+Affected functions:
+  * `WriteWherePlain` -> `WriteWhere`

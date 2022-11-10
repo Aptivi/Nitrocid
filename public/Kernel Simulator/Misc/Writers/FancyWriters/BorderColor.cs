@@ -68,18 +68,18 @@ namespace KS.Misc.Writers.FancyWriters
             try 
             {
                 // First, draw the border
-                TextWriterWhereColor.WriteWherePlain(UpperLeftCornerChar + UpperFrameChar.Repeat(InteriorWidth) + UpperRightCornerChar, Left, Top, true);
+                TextWriterWhereColor.WriteWhere(UpperLeftCornerChar + UpperFrameChar.Repeat(InteriorWidth) + UpperRightCornerChar, Left, Top, true);
                 for (int i = 1; i <= InteriorHeight; i++)
                 {
-                    TextWriterWhereColor.WriteWherePlain(LeftFrameChar, Left, Top + i, true);
-                    TextWriterWhereColor.WriteWherePlain(RightFrameChar, Left + InteriorWidth + 1, Top + i, true);
+                    TextWriterWhereColor.WriteWhere(LeftFrameChar, Left, Top + i, true);
+                    TextWriterWhereColor.WriteWhere(RightFrameChar, Left + InteriorWidth + 1, Top + i, true);
                 }
-                TextWriterWhereColor.WriteWherePlain(LowerLeftCornerChar + LowerFrameChar.Repeat(InteriorWidth) + LowerRightCornerChar, Left, Top + InteriorHeight + 1, true);
+                TextWriterWhereColor.WriteWhere(LowerLeftCornerChar + LowerFrameChar.Repeat(InteriorWidth) + LowerRightCornerChar, Left, Top + InteriorHeight + 1, true);
 
                 // Then, fill the border with spaces inside it
                 for (int x = 1; x <= InteriorWidth; x++)
                     for (int y = 1; y <= InteriorHeight; y++)
-                        TextWriterWhereColor.WriteWherePlain(" ", Left + x, Top + y, true);
+                        TextWriterWhereColor.WriteWhere(" ", Left + x, Top + y, true);
             }
             catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
             {

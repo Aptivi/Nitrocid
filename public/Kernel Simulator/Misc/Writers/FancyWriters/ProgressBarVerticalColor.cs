@@ -97,15 +97,15 @@ namespace KS.Misc.Writers.FancyWriters
                 // Draw the border
                 if (DrawBorder)
                 {
-                    WriterPlainManager.CurrentPlain.WriteWherePlain(ProgressTools.ProgressUpperLeftCornerChar + ProgressTools.ProgressUpperFrameChar + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true);
+                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressUpperLeftCornerChar + ProgressTools.ProgressUpperFrameChar + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true);
                     for (int i = 0; i < ConsoleWrapper.WindowHeight - FinalHeightOffset; i++)
-                        WriterPlainManager.CurrentPlain.WriteWherePlain(ProgressTools.ProgressLeftFrameChar + " " + ProgressTools.ProgressRightFrameChar, Left, Top + i + 1, true);
-                    WriterPlainManager.CurrentPlain.WriteWherePlain(ProgressTools.ProgressLowerLeftCornerChar + ProgressTools.ProgressLowerFrameChar + ProgressTools.ProgressLowerRightCornerChar, Left, Top + MaximumHeight + 1, true);
+                        TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLeftFrameChar + " " + ProgressTools.ProgressRightFrameChar, Left, Top + i + 1, true);
+                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLowerLeftCornerChar + ProgressTools.ProgressLowerFrameChar + ProgressTools.ProgressLowerRightCornerChar, Left, Top + MaximumHeight + 1, true);
                 }
 
                 // Draw the progress bar
                 for (int i = 0; i < ProgressFilled; i++)
-                    WriterPlainManager.CurrentPlain.WriteWherePlain("*", Left + 1, Top + MaximumHeight - i, true);
+                    TextWriterWhereColor.WriteWhere("*", Left + 1, Top + MaximumHeight - i, true);
             }
             catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
             {
@@ -320,7 +320,7 @@ namespace KS.Misc.Writers.FancyWriters
                 // Draw the progress bar
                 ColorTools.SetConsoleColor(ProgressColor, true, true);
                 for (int i = 0; i < ProgressFilled; i++)
-                    WriterPlainManager.CurrentPlain.WriteWherePlain(" ", Left + 1, Top + MaximumHeight - i, true);
+                    TextWriterWhereColor.WriteWhere(" ", Left + 1, Top + MaximumHeight - i, true);
             }
             catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
             {
@@ -404,7 +404,7 @@ namespace KS.Misc.Writers.FancyWriters
                 // Draw the progress bar
                 ColorTools.SetConsoleColor(new Color(Convert.ToInt32(ProgressColor)), true, true);
                 for (int i = 0; i < ProgressFilled; i++)
-                    WriterPlainManager.CurrentPlain.WriteWherePlain(" ", Left + 1, Top + MaximumHeight - i, true);
+                    TextWriterWhereColor.WriteWhere(" ", Left + 1, Top + MaximumHeight - i, true);
             }
             catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
             {
@@ -488,7 +488,7 @@ namespace KS.Misc.Writers.FancyWriters
                 // Draw the progress bar
                 ColorTools.SetConsoleColor(ProgressColor, true, true);
                 for (int i = 0; i < ProgressFilled; i++)
-                    WriterPlainManager.CurrentPlain.WriteWherePlain(" ", Left + 1, Top + MaximumHeight - i, true);
+                    TextWriterWhereColor.WriteWhere(" ", Left + 1, Top + MaximumHeight - i, true);
             }
             catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
             {

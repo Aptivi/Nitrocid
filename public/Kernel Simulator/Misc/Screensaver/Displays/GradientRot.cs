@@ -23,6 +23,7 @@ using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
+using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.WriterBase;
 
 namespace KS.Misc.Screensaver.Displays
@@ -407,7 +408,7 @@ namespace KS.Misc.Screensaver.Displays
 
                     // Fill the entire screen
                     for (int y = 0; y < ConsoleBase.ConsoleWrapper.WindowHeight; y++)
-                        WriterPlainManager.CurrentPlain.WriteWherePlain(" ", RampCurrentPositionLeft, y);
+                        TextWriterWhereColor.WriteWhere(" ", RampCurrentPositionLeft, y);
 
                     // Update left position
                     RampCurrentPositionLeft = ConsoleBase.ConsoleWrapper.CursorLeft;

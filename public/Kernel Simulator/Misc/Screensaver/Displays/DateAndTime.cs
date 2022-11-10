@@ -22,6 +22,7 @@ using ColorSeq;
 using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Misc.Threading;
+using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.WriterBase;
 using KS.TimeDate;
 
@@ -252,8 +253,8 @@ namespace KS.Misc.Screensaver.Displays
 
             // Write date and time
             ColorTools.SetConsoleColor(ChangeDateAndTimeColor());
-            WriterPlainManager.CurrentPlain.WriteWherePlain(TimeDateRenderers.RenderDate(), (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d - TimeDateRenderers.RenderDate().Length / 2d), (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d - 1d));
-            WriterPlainManager.CurrentPlain.WriteWherePlain(TimeDateRenderers.RenderTime(), (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d - TimeDateRenderers.RenderTime().Length / 2d), (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d));
+            TextWriterWhereColor.WriteWhere(TimeDateRenderers.RenderDate(), (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d - TimeDateRenderers.RenderDate().Length / 2d), (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d - 1d));
+            TextWriterWhereColor.WriteWhere(TimeDateRenderers.RenderTime(), (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d - TimeDateRenderers.RenderTime().Length / 2d), (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d));
 
             // Delay
             ThreadManager.SleepNoBlock(DateAndTimeSettings.DateAndTimeDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);

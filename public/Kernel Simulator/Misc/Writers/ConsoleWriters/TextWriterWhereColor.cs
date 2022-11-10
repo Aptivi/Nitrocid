@@ -39,7 +39,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="Left">Column number in console</param>
         /// <param name="Top">Row number in console</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWherePlain(string msg, int Left, int Top, params object[] vars) => WriteWherePlain(msg, Left, Top, false, vars);
+        public static void WriteWhere(string msg, int Left, int Top, params object[] vars) => WriteWhere(msg, Left, Top, false, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
@@ -49,7 +49,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="Top">Row number in console</param>
         /// <param name="Return">Whether or not to return to old position</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWherePlain(string msg, int Left, int Top, bool Return, params object[] vars)
+        public static void WriteWhere(string msg, int Left, int Top, bool Return, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
@@ -95,7 +95,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(colorType);
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
-                    WriteWherePlain(msg, Left, Top, Return, vars);
+                    WriteWhere(msg, Left, Top, Return, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -137,7 +137,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(colorTypeBackground, true);
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
-                    WriteWherePlain(msg, Left, Top, Return, vars);
+                    WriteWhere(msg, Left, Top, Return, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -176,7 +176,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
-                    WriteWherePlain(msg, Left, Top, Return, vars);
+                    WriteWhere(msg, Left, Top, Return, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -217,7 +217,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(new Color(Convert.ToInt32(BackgroundColor)));
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
-                    WriteWherePlain(msg, Left, Top, Return, vars);
+                    WriteWhere(msg, Left, Top, Return, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -256,7 +256,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
-                    WriteWherePlain(msg, Left, Top, Return, vars);
+                    WriteWhere(msg, Left, Top, Return, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -297,7 +297,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(BackgroundColor, true);
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
-                    WriteWherePlain(msg, Left, Top, Return, vars);
+                    WriteWhere(msg, Left, Top, Return, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
