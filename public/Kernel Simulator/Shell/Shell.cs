@@ -58,6 +58,7 @@ using KS.Shell.Shells.Hex;
 using KS.Shell.Shells.Archive;
 using KS.Shell.Shells.Admin;
 using KS.Users.Login;
+using System.Threading;
 
 namespace KS.Shell
 {

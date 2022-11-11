@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Threading;
 using KS.Languages;
 using KS.Misc.Screensaver;
 using KS.Misc.Text;
@@ -64,6 +65,22 @@ namespace KS.ConsoleBase.Inputs
         /// <param name="UseCtrlCAsInput">Whether to treat CTRL + C as input</param>
         public static string ReadLine(string InputText, string DefaultValue, bool UseCtrlCAsInput)
         {
+            string Output = ReadLineUnsafe(InputText, DefaultValue, UseCtrlCAsInput);
+
+            // If in lock mode, wait until release
+            while (Screensaver.LockMode)
+                Thread.Sleep(1);
+            return Output;
+        }
+
+        /// <summary>
+        /// Reads the line from the console unsafely. This doesn't wait until the screensaver lock mode is released.
+        /// </summary>
+        /// <param name="InputText">Input text to write</param>
+        /// <param name="DefaultValue">Default value</param>
+        /// <param name="UseCtrlCAsInput">Whether to treat CTRL + C as input</param>
+        public static string ReadLineUnsafe(string InputText, string DefaultValue, bool UseCtrlCAsInput)
+        {
             // Store the initial CtrlCEnabled value. This is so we can restore the state of CTRL + C being enabled.
             bool CtrlCEnabled = ReadLineReboot.ReadLine.CtrlCEnabled;
             ReadLineReboot.ReadLine.CtrlCEnabled = UseCtrlCAsInput;
@@ -92,7 +109,41 @@ namespace KS.ConsoleBase.Inputs
         /// Reads the next line of characters from the standard input stream without showing input being written by user.
         /// </summary>
         /// <param name="MaskChar">Specifies the password mask character</param>
-        public static string ReadLineNoInput(char MaskChar) => ReadLineReboot.ReadLine.ReadPassword("", MaskChar);
+        public static string ReadLineNoInput(char MaskChar)
+        {
+            string pass = ReadLineNoInputUnsafe(MaskChar);
+
+            // If in lock mode, wait until release
+            while (Screensaver.LockMode)
+                Thread.Sleep(1);
+            return pass;
+        }
+
+        /// <summary>
+        /// Reads the next line of characters from the standard input stream without showing input being written by user unsafely. This doesn't wait until the screensaver lock mode is released.
+        /// </summary>
+        public static string ReadLineNoInputUnsafe()
+        {
+            if (!string.IsNullOrEmpty(CurrentMask))
+            {
+                return ReadLineNoInputUnsafe(CurrentMask[0]);
+            }
+            else
+            {
+                return ReadLineNoInputUnsafe(Convert.ToChar(""));
+            }
+        }
+
+        /// <summary>
+        /// Reads the next line of characters from the standard input stream without showing input being written by user unsafely. This doesn't wait until the screensaver lock mode is released.
+        /// </summary>
+        /// <param name="MaskChar">Specifies the password mask character</param>
+        public static string ReadLineNoInputUnsafe(char MaskChar)
+        {
+            string pass = ReadLineReboot.ReadLine.ReadPassword("", MaskChar);
+            ScreensaverDisplayer.BailFromScreensaver();
+            return pass;
+        }
 
         /// <summary>
         /// Reads the next key from the console input stream with the timeout
@@ -100,6 +151,21 @@ namespace KS.ConsoleBase.Inputs
         /// <param name="Intercept">Whether to intercept an input</param>
         /// <param name="Timeout">Timeout</param>
         public static ConsoleKeyInfo ReadKeyTimeout(bool Intercept, TimeSpan Timeout)
+        {
+            var Output = ReadKeyTimeoutUnsafe(Intercept, Timeout);
+
+            // If in lock mode, wait until release
+            while (Screensaver.LockMode)
+                Thread.Sleep(1);
+            return Output;
+        }
+
+        /// <summary>
+        /// Reads the next key from the console input stream with the timeout
+        /// </summary>
+        /// <param name="Intercept">Whether to intercept an input</param>
+        /// <param name="Timeout">Timeout</param>
+        public static ConsoleKeyInfo ReadKeyTimeoutUnsafe(bool Intercept, TimeSpan Timeout)
         {
             var CurrentMilliseconds = default(double);
             while (!ConsoleWrapper.KeyAvailable)
@@ -110,9 +176,10 @@ namespace KS.ConsoleBase.Inputs
                 }
                 else
                 {
+                    ScreensaverDisplayer.BailFromScreensaver();
                     throw new Kernel.Exceptions.ConsoleReadTimeoutException(Translate.DoTranslation("User didn't provide any input in a timely fashion."));
                 }
-                System.Threading.Thread.Sleep(1);
+                Thread.Sleep(1);
             }
             ScreensaverDisplayer.BailFromScreensaver();
             return ConsoleWrapper.ReadKey(Intercept);

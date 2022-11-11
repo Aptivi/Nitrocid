@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Threading;
 using ColorSeq;
+using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.Kernel;
@@ -173,7 +174,7 @@ namespace KS.Misc.Screensaver
                         if (!Flags.RebootRequested)
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "Screen time has reached.");
-                            ShowSavers(DefSaverName);
+                            LockScreen();
                         }
                     }
                 }
@@ -236,6 +237,8 @@ namespace KS.Misc.Screensaver
             LockMode = true;
             ShowSavers(DefSaverName);
             Kernel.Events.EventsManager.FireEvent("PreUnlock", DefSaverName);
+            while (inSaver)
+                Thread.Sleep(1);
             if (PasswordLock)
                 Login.ShowPasswordPrompt(Login.CurrentUser.Username);
             else

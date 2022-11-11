@@ -249,7 +249,7 @@ namespace KS.Users.Login
                     }
 
                     // Get input
-                    string answerpass = Input.ReadLineNoInput();
+                    string answerpass = Input.ReadLineNoInputUnsafe();
 
                     // Compute password hash
                     DebugWriter.WriteDebug(DebugLevel.I, "Computing written password hash...");
