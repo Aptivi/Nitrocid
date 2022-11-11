@@ -4091,4 +4091,16 @@
             }
         ]
     }
+    "Equalizer": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Path": "Screensaver.Equalizer",
+        "Keys": [
+            {
+                "Name": "Next Screen Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "EqualizerNextScreenDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            }
+        ]
+    },
 }

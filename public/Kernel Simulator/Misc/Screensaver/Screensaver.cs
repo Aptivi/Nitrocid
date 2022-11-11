@@ -82,6 +82,7 @@ namespace KS.Misc.Screensaver
             { "disco", new DiscoDisplay() },
             { "dissolve", new DissolveDisplay() },
             { "edgepulse", new EdgePulseDisplay() },
+            { "equalizer", new EqualizerDisplay() },
             { "fader", new FaderDisplay() },
             { "faderback", new FaderBackDisplay() },
             { "fallingline", new FallingLineDisplay() },

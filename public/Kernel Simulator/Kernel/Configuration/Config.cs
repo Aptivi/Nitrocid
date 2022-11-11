@@ -1245,6 +1245,13 @@ namespace KS.Kernel.Configuration
             };
             ScreensaverConfig.Add("SnakeFill", SnakeFillConfig);
 
+            // Equalizer config json object
+            var EqualizerConfig = new JObject()
+            {
+                { "Next Screen Delay in Milliseconds", EqualizerSettings.EqualizerNextScreenDelay }
+            };
+            ScreensaverConfig.Add("Equalizer", EqualizerConfig);
+
             // Add a screensaver config json object to Screensaver section
             ConfigurationObject.Add("Screensaver", ScreensaverConfig);
 
@@ -2420,6 +2427,9 @@ namespace KS.Kernel.Configuration
 
             // > Spin
             SpinSettings.SpinDelay = int.TryParse((string)ConfigToken["Screensaver"]["Spin"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Spin"]["Delay in Milliseconds"] : 10;
+
+            // > Equalizer
+            EqualizerSettings.EqualizerNextScreenDelay = int.TryParse((string)ConfigToken["Screensaver"]["Equalizer"]["Next Screen Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Equalizer"]["Next Screen Delay in Milliseconds"] : 10;
 
             // Splash Section - Splash-specific settings go below:
             // > Simple

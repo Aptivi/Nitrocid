@@ -108,5 +108,6 @@ Can't combine a mix of text and binary files.
 Weekend Day Color
 Event Day Color
 Table Title Color
+Next Screen Delay in Milliseconds
 
 ==========================================================================================================================================
