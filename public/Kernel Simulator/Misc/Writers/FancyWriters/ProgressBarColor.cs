@@ -313,6 +313,7 @@ namespace KS.Misc.Writers.FancyWriters
                 // Draw the progress bar
                 ColorTools.SetConsoleColor(ProgressColor, true, true);
                 TextWriterWhereColor.WriteWhere(" ".Repeat(ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset)), Left + 1, Top + 1, true);
+                ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
             }
             catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
             {
@@ -393,6 +394,7 @@ namespace KS.Misc.Writers.FancyWriters
                 // Draw the progress bar
                 ColorTools.SetConsoleColor(new Color(Convert.ToInt32(ProgressColor)), true, true);
                 TextWriterWhereColor.WriteWhere(" ".Repeat(ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset)), Left + 1, Top + 1, true);
+                ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
             }
             catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
             {
@@ -473,6 +475,7 @@ namespace KS.Misc.Writers.FancyWriters
                 // Draw the progress bar
                 ColorTools.SetConsoleColor(ProgressColor, true, true);
                 TextWriterWhereColor.WriteWhere(" ".Repeat(ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset)), Left + 1, Top + 1, true);
+                ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
             }
             catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
             {

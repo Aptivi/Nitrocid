@@ -321,6 +321,7 @@ namespace KS.Misc.Writers.FancyWriters
                 ColorTools.SetConsoleColor(ProgressColor, true, true);
                 for (int i = 0; i < ProgressFilled; i++)
                     TextWriterWhereColor.WriteWhere(" ", Left + 1, Top + MaximumHeight - i, true);
+                ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
             }
             catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
             {
@@ -405,6 +406,7 @@ namespace KS.Misc.Writers.FancyWriters
                 ColorTools.SetConsoleColor(new Color(Convert.ToInt32(ProgressColor)), true, true);
                 for (int i = 0; i < ProgressFilled; i++)
                     TextWriterWhereColor.WriteWhere(" ", Left + 1, Top + MaximumHeight - i, true);
+                ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
             }
             catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
             {
@@ -489,6 +491,7 @@ namespace KS.Misc.Writers.FancyWriters
                 ColorTools.SetConsoleColor(ProgressColor, true, true);
                 for (int i = 0; i < ProgressFilled; i++)
                     TextWriterWhereColor.WriteWhere(" ", Left + 1, Top + MaximumHeight - i, true);
+                ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
             }
             catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
             {
