@@ -55,7 +55,7 @@ namespace KS.Misc.Calendar
             var CalendarCellOptions = new List<CellOptions>();
 
             // Populate the calendar data
-            TextWriterWhereColor.WriteWhere(CalendarTitle, (int)Math.Round((ConsoleBase.ConsoleWrapper.WindowWidth - CalendarTitle.Length) / 2d), ConsoleBase.ConsoleWrapper.CursorTop, true, ColorTools.ColTypes.NeutralText);
+            TextWriterWhereColor.WriteWhere(CalendarTitle, (int)Math.Round((ConsoleBase.ConsoleWrapper.WindowWidth - CalendarTitle.Length) / 2d), ConsoleBase.ConsoleWrapper.CursorTop, true, ColorTools.ColTypes.TableTitle);
             TextWriterColor.Write();
             for (int CurrentDay = 1; CurrentDay <= DateTo.Day; CurrentDay++)
             {
@@ -74,7 +74,7 @@ namespace KS.Misc.Calendar
                     var WeekendOptions = new CellOptions((int)CurrentDate.DayOfWeek + 1, CurrentWeek)
                     {
                         ColoredCell = true,
-                        CellColor = new Color(128, 128, 128),
+                        CellColor = ColorTools.GetColor(ColorTools.ColTypes.WeekendDay),
                         CellBackgroundColor = ColorTools.GetColor(ColorTools.ColTypes.Background)
                     };
                     CalendarCellOptions.Add(WeekendOptions);
@@ -96,7 +96,7 @@ namespace KS.Misc.Calendar
                         var EventCell = new CellOptions((int)CurrentDate.DayOfWeek + 1, CurrentWeek)
                         {
                             ColoredCell = true,
-                            CellColor = ColorTools.GetColor(ColorTools.ColTypes.Stage),
+                            CellColor = ColorTools.GetColor(ColorTools.ColTypes.EventDay),
                             CellBackgroundColor = ColorTools.GetColor(ColorTools.ColTypes.Background)
                         };
                         CalendarCellOptions.Add(EventCell);

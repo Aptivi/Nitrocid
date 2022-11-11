@@ -41,5 +41,8 @@
     "TableHeaderColor": "#FFFFFF",
     "TableValueColor": "#FFFFFF",
     "SelectedOptionColor": "#FFFFFF",
-    "AlternativeOptionColor": "#FFFFFF"
+    "AlternativeOptionColor": "#FFFFFF",
+    "WeekendDayColor": "#FFFFFF",
+    "EventDayColor": "#FFFFFF",
+    "TableTitleColor": "#FFFFFF"
 }

@@ -194,6 +194,18 @@ namespace KS.ConsoleBase.Colors
             /// </summary>
             AlternativeOption,
             /// <summary>
+            /// Weekend day
+            /// </summary>
+            WeekendDay,
+            /// <summary>
+            /// Event day
+            /// </summary>
+            EventDay,
+            /// <summary>
+            /// Table title
+            /// </summary>
+            TableTitle,
+            /// <summary>
             /// Gray color (for special purposes)
             /// </summary>
             Gray = -1,

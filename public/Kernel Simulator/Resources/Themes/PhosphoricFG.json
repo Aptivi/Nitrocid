@@ -41,5 +41,8 @@
     "TableHeaderColor": "3",
     "TableValueColor": "3",
     "SelectedOptionColor": "3",
-    "AlternativeOptionColor": "3"
+    "AlternativeOptionColor": "3",
+    "WeekendDayColor": "3",
+    "EventDayColor": "3",
+    "TableTitleColor": "3"
 }

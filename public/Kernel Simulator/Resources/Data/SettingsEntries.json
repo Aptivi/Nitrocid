@@ -448,6 +448,30 @@
                 "IsEnumerable": true,
                 "IsInternal": true,
                 "EnumerableIndex": 37
+            },
+            {
+                "Name": "Weekend Day Color",
+                "Type": "SColor",
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 38
+            },
+            {
+                "Name": "Event Day Color",
+                "Type": "SColor",
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 39
+            },
+            {
+                "Name": "Table Title Color",
+                "Type": "SColor",
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 40
             }
         ]
     },

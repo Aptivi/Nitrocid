@@ -105,5 +105,8 @@ Edits a file
 To combine binary files, use the appropriate function.
 To combine text files, use the appropriate function.
 Can't combine a mix of text and binary files.
+Weekend Day Color
+Event Day Color
+Table Title Color
 
 ==========================================================================================================================================

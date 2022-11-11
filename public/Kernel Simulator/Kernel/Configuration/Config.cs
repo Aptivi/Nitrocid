@@ -291,7 +291,10 @@ namespace KS.Kernel.Configuration
                 { "Table Header Color", ColorTools.GetColor(ColorTools.ColTypes.TableHeader).PlainSequenceEnclosed },
                 { "Table Value Color", ColorTools.GetColor(ColorTools.ColTypes.TableValue).PlainSequenceEnclosed },
                 { "Selected Option Color", ColorTools.GetColor(ColorTools.ColTypes.SelectedOption).PlainSequenceEnclosed },
-                { "Alternative Option Color", ColorTools.GetColor(ColorTools.ColTypes.AlternativeOption).PlainSequenceEnclosed }
+                { "Alternative Option Color", ColorTools.GetColor(ColorTools.ColTypes.AlternativeOption).PlainSequenceEnclosed },
+                { "Weekend Day Color", ColorTools.GetColor(ColorTools.ColTypes.WeekendDay).PlainSequenceEnclosed },
+                { "Event Day Color", ColorTools.GetColor(ColorTools.ColTypes.EventDay).PlainSequenceEnclosed },
+                { "Table Title Color", ColorTools.GetColor(ColorTools.ColTypes.TableTitle).PlainSequenceEnclosed }
             };
             ConfigurationObject.Add("Colors", ColorConfig);
 
@@ -1644,6 +1647,9 @@ namespace KS.Kernel.Configuration
             ColorTools.KernelColors[ColorTools.ColTypes.TableValue] = new Color(ConfigToken["Colors"]["Table Value Color"].ToString());
             ColorTools.KernelColors[ColorTools.ColTypes.SelectedOption] = new Color(ConfigToken["Colors"]["Selected Option Color"].ToString());
             ColorTools.KernelColors[ColorTools.ColTypes.AlternativeOption] = new Color(ConfigToken["Colors"]["Alternative Option Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.WeekendDay] = new Color(ConfigToken["Colors"]["Weekend Day Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.EventDay] = new Color(ConfigToken["Colors"]["Event Day Color"].ToString());
+            ColorTools.KernelColors[ColorTools.ColTypes.TableTitle] = new Color(ConfigToken["Colors"]["Table Title Color"].ToString());
 
             // General Section
             DebugWriter.WriteDebug(DebugLevel.I, "Parsing general section...");

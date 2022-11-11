@@ -41,5 +41,8 @@
 	"TableHeaderColor": "0",
 	"TableValueColor": "0",
 	"SelectedOptionColor": "0",
-	"AlternativeOptionColor": "0"
+	"AlternativeOptionColor": "0",
+    "WeekendDayColor": "0",
+    "EventDayColor": "0",
+    "TableTitleColor": "0"
 }
