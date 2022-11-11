@@ -226,3 +226,7 @@ This change is necessary to fit in with the rest of the ConsoleWriters
 
 Affected functions:
   * `WriteWherePlain` -> `WriteWhere`
+
+##### Removed Screensaver.colors
+
+This is to remove support for 255 colors in screensavers.

@@ -60,10 +60,6 @@ namespace KS.Misc.Screensaver
         /// </summary>
         public static bool PasswordLock = true;
         /// <summary>
-        /// 15 Console Colors
-        /// </summary>
-        public readonly static ConsoleColor[] colors = (ConsoleColor[])Enum.GetValues(typeof(ConsoleColor));
-        /// <summary>
         /// 255 Console Colors
         /// </summary>
         public readonly static ConsoleColors[] colors255 = (ConsoleColors[])Enum.GetValues(typeof(ConsoleColors));
