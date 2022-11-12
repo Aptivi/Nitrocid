@@ -24,7 +24,7 @@ using KS.Languages;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 
-namespace KS.Network
+namespace KS.Network.Base
 {
     /// <summary>
     /// Network adapter printing module

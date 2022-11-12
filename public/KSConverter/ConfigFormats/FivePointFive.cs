@@ -29,7 +29,6 @@ using KS.Shell.Shells.Text;
 using KS.Misc.Screensaver;
 using KS.Misc.Screensaver.Displays;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Network;
 using KS.Network.Mail.Directory;
 using KS.Network.RPC;
 using KS.Network.SSH;
@@ -39,6 +38,7 @@ using ManagedWeatherMap.Core;
 using ColorSeq;
 using KS.Kernel.Debugging;
 using KS.Kernel.Debugging.RemoteDebug;
+using KS.Network.Base;
 
 namespace KSConverter
 {

@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.Net.NetworkInformation;
-using KS.Network;
+using KS.Network.Base;
 using NUnit.Framework;
 using Shouldly;
 

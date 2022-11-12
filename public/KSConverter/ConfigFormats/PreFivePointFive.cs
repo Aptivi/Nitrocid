@@ -25,8 +25,8 @@ using KS.Kernel;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell;
 using ColorSeq;
-using KS.Network;
 using KS.Misc.Probers.Motd;
+using KS.Network.Base;
 
 namespace KSConverter
 {

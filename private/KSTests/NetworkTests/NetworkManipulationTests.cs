@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Kernel.Configuration;
-using KS.Network;
+using KS.Network.Base;
 using NUnit.Framework;
 using Shouldly;
 

@@ -18,7 +18,7 @@
 
 using System.Net.NetworkInformation;
 
-namespace KS.Network
+namespace KS.Network.Base
 {
     /// <summary>
     /// Network adapter instance

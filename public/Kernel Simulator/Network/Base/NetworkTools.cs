@@ -31,7 +31,7 @@ using KS.Languages;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace KS.Network
+namespace KS.Network.Base
 {
     /// <summary>
     /// Network tools module

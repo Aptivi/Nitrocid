@@ -230,3 +230,7 @@ Affected functions:
 ##### Removed Screensaver.colors
 
 This is to remove support for 255 colors in screensavers.
+
+##### Moved KS.Network classes to KS.Network.Base
+
+These classes are believed to be the base classes for the networking. These classes are used for general networking purposes.

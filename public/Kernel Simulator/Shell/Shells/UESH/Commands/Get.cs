@@ -21,7 +21,7 @@ using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Network;
+using KS.Network.Base;
 using KS.Network.Transfer;
 using KS.Shell.ShellBase.Commands;
 

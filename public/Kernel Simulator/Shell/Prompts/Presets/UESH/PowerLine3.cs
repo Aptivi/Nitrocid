@@ -24,7 +24,7 @@ using KS.Files.Folders;
 using KS.Kernel;
 using KS.Languages;
 using KS.Misc.Text;
-using KS.Network;
+using KS.Network.Base;
 using KS.Users.Login;
 
 namespace KS.Shell.Prompts.Presets.UESH

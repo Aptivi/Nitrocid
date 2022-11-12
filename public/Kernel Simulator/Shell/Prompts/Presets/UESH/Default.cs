@@ -21,7 +21,7 @@ using KS.ConsoleBase.Colors;
 using KS.Files.Folders;
 using KS.Kernel;
 using KS.Languages;
-using KS.Network;
+using KS.Network.Base;
 using KS.Users.Groups;
 using KS.Users.Login;
 

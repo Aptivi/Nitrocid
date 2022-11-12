@@ -35,6 +35,7 @@ using KS.Misc.Reflection;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
+using KS.Network.Base;
 using KS.Network.FTP.Transfer;
 using KS.Shell.Shells.FTP;
 

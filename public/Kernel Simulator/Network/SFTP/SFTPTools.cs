@@ -29,6 +29,7 @@ using KS.Misc.Probers;
 using KS.Misc.Reflection;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
+using KS.Network.Base;
 using KS.Shell.Shells.SFTP;
 using Renci.SshNet;
 

@@ -27,13 +27,13 @@ using KS.Files.Querying;
 using KS.Kernel.Configuration;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
-using KS.Network;
 using KS.Shell.ShellBase.Aliases;
 using KS.Shell.ShellBase.Shells;
 using static KS.ConsoleBase.Colors.ColorTools;
 using KS.Kernel.Debugging.RemoteDebug;
 using KS.Users.Groups;
 using KS.Users;
+using KS.Network.Base;
 
 namespace KSConverter
 {

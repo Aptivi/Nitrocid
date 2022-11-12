@@ -25,7 +25,7 @@ using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
-using KS.Network;
+using KS.Network.Base;
 using KS.Network.Mail;
 using KS.Scripting;
 using KS.Shell.Shells.FTP;

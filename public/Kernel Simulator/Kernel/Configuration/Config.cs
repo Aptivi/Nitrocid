@@ -50,7 +50,7 @@ using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters.Tools;
 using KS.Misc.Writers.MiscWriters;
 using KS.Modifications;
-using KS.Network;
+using KS.Network.Base;
 using KS.Network.Mail;
 using KS.Network.Mail.Directory;
 using KS.Network.RPC;
