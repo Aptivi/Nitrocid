@@ -26,7 +26,7 @@ using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Network.Transfer;
+using KS.Network.Base.Transfer;
 
 namespace KS.Misc.Games
 {

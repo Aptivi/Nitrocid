@@ -18,7 +18,7 @@
 
 using System;
 using KS.Kernel.Debugging;
-using KS.Network.Transfer;
+using KS.Network.Base.Transfer;
 using Newtonsoft.Json.Linq;
 
 namespace KS.Kernel.Updates

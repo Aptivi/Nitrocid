@@ -266,3 +266,7 @@ New format:
 ```
 
 The username and FTP encryption mode is now moved to Options, which is an array of options that the networking shells use. To convert your speed dial entries, you have to manually open all FTP and SFTP speed dial JSON files and make changes to transition from the old format to the new format.
+
+##### Moved network transfer functions to KS.Network.Base.Transfer
+
+We've done that to the base network classes, so why not do the same to the network transfer functions?

@@ -33,8 +33,8 @@ using KS.Misc.Notifications;
 using KS.Misc.Reflection;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
+using KS.Network.Base.Transfer;
 using KS.Network.RSS.Instance;
-using KS.Network.Transfer;
 using KS.Shell.Shells.RSS;
 using Newtonsoft.Json.Linq;
 

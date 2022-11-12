@@ -23,7 +23,7 @@ using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.Base;
-using KS.Network.Transfer;
+using KS.Network.Base.Transfer;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.UESH.Commands

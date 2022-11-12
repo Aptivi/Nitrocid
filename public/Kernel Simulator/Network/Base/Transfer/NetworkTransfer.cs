@@ -35,7 +35,7 @@ using KS.Misc.Probers;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.Base;
 
-namespace KS.Network.Transfer
+namespace KS.Network.Base.Transfer
 {
     /// <summary>
     /// Network transfer module

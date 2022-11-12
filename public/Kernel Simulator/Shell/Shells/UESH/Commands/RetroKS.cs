@@ -28,7 +28,7 @@ using KS.Files.Querying;
 using KS.Kernel.Updates;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Network.Transfer;
+using KS.Network.Base.Transfer;
 using KS.Shell.ShellBase.Commands;
 using Newtonsoft.Json.Linq;
 using SharpCompress.Archives;
