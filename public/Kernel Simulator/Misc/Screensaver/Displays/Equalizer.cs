@@ -50,7 +50,7 @@ namespace KS.Misc.Screensaver.Displays
             set
             {
                 if (value <= 0)
-                    value = 500;
+                    value = 3000;
                 _equalizerNextScreenDelay = value;
             }
         }
