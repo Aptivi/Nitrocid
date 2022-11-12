@@ -58,21 +58,6 @@ namespace KS.Network.Base
         internal static bool TransferFinished;
 
         /// <summary>
-        /// Speed dial type
-        /// </summary>
-        public enum SpeedDialType
-        {
-            /// <summary>
-            /// FTP speed dial
-            /// </summary>
-            FTP,
-            /// <summary>
-            /// SFTP speed dial
-            /// </summary>
-            SFTP
-        }
-
-        /// <summary>
         /// Checks to see if the network is available
         /// </summary>
         public static bool NetworkAvailable => NetworkInterface.GetIsNetworkAvailable();
@@ -144,114 +129,6 @@ namespace KS.Network.Base
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to change hostname: {0}", ex.Message);
             }
             return false;
-        }
-
-        /// <summary>
-        /// Adds an entry to speed dial
-        /// </summary>
-        /// <param name="Address">A speed dial address</param>
-        /// <param name="Port">A speed dial port</param>
-        /// <param name="User">A speed dial username</param>
-        /// <param name="EncryptionMode">A speed dial encryption mode</param>
-        /// <param name="SpeedDialType">Speed dial type</param>
-        /// <param name="ThrowException">Optionally throw exception</param>
-        public static void AddEntryToSpeedDial(string Address, int Port, string User, SpeedDialType SpeedDialType, FtpEncryptionMode EncryptionMode = FtpEncryptionMode.None, bool ThrowException = true)
-        {
-            string PathName = SpeedDialType == SpeedDialType.SFTP ? "SFTPSpeedDial" : "FTPSpeedDial";
-            KernelPathType SpeedDialEnum = (KernelPathType)Convert.ToInt32(Enum.Parse(typeof(KernelPathType), PathName));
-            Making.MakeFile(Paths.GetKernelPath(SpeedDialEnum), false);
-            string SpeedDialJsonContent = File.ReadAllText(Paths.GetKernelPath(SpeedDialEnum));
-            if (SpeedDialJsonContent.StartsWith("["))
-            {
-                ConvertSpeedDialEntries(SpeedDialType);
-                SpeedDialJsonContent = File.ReadAllText(Paths.GetKernelPath(SpeedDialEnum));
-            }
-            var SpeedDialToken = JObject.Parse(!string.IsNullOrEmpty(SpeedDialJsonContent) ? SpeedDialJsonContent : "{}");
-            if (SpeedDialToken[Address] is null)
-            {
-                var NewSpeedDial = new JObject(new JProperty("Address", Address), new JProperty("Port", Port), new JProperty("User", User), new JProperty("Type", SpeedDialType), new JProperty("FTP Encryption Mode", EncryptionMode));
-                SpeedDialToken.Add(Address, NewSpeedDial);
-                File.WriteAllText(Paths.GetKernelPath(SpeedDialEnum), JsonConvert.SerializeObject(SpeedDialToken, Formatting.Indented));
-            }
-            else if (ThrowException)
-            {
-                if (SpeedDialType == SpeedDialType.FTP)
-                {
-                    throw new Kernel.Exceptions.FTPNetworkException(Translate.DoTranslation("Entry already exists."));
-                }
-                else if (SpeedDialType == SpeedDialType.SFTP)
-                {
-                    throw new Kernel.Exceptions.SFTPNetworkException(Translate.DoTranslation("Entry already exists."));
-                }
-            }
-        }
-
-        /// <summary>
-        /// Adds an entry to speed dial
-        /// </summary>
-        /// <param name="Address">A speed dial address</param>
-        /// <param name="Port">A speed dial port</param>
-        /// <param name="User">A speed dial username</param>
-        /// <param name="EncryptionMode">A speed dial encryption mode</param>
-        /// <param name="SpeedDialType">Speed dial type</param>
-        /// <param name="ThrowException">Optionally throw exception</param>
-        /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool TryAddEntryToSpeedDial(string Address, int Port, string User, SpeedDialType SpeedDialType, FtpEncryptionMode EncryptionMode = FtpEncryptionMode.None, bool ThrowException = true)
-        {
-            try
-            {
-                AddEntryToSpeedDial(Address, Port, User, SpeedDialType, EncryptionMode, ThrowException);
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
-
-        /// <summary>
-        /// Lists all speed dial entries
-        /// </summary>
-        /// <param name="SpeedDialType">Speed dial type</param>
-        /// <returns>A list</returns>
-        public static Dictionary<string, JToken> ListSpeedDialEntries(SpeedDialType SpeedDialType)
-        {
-            string PathName = SpeedDialType == SpeedDialType.SFTP ? "SFTPSpeedDial" : "FTPSpeedDial";
-            KernelPathType SpeedDialEnum = (KernelPathType)Convert.ToInt32(Enum.Parse(typeof(KernelPathType), PathName));
-            Making.MakeFile(Paths.GetKernelPath(SpeedDialEnum), false);
-            string SpeedDialJsonContent = File.ReadAllText(Paths.GetKernelPath(SpeedDialEnum));
-            if (SpeedDialJsonContent.StartsWith("["))
-            {
-                ConvertSpeedDialEntries(SpeedDialType);
-                SpeedDialJsonContent = File.ReadAllText(Paths.GetKernelPath(SpeedDialEnum));
-            }
-            var SpeedDialToken = JObject.Parse(!string.IsNullOrEmpty(SpeedDialJsonContent) ? SpeedDialJsonContent : "{}");
-            var SpeedDialEntries = new Dictionary<string, JToken>();
-            foreach (var SpeedDialAddress in SpeedDialToken.Properties())
-                SpeedDialEntries.Add(SpeedDialAddress.Name, SpeedDialAddress.Value);
-            return SpeedDialEntries;
-        }
-
-        /// <summary>
-        /// Convert speed dial entries from the old jsonified version (pre-0.0.16 RC1) to the new jsonified version
-        /// </summary>
-        /// <param name="SpeedDialType">Speed dial type</param>
-        public static void ConvertSpeedDialEntries(SpeedDialType SpeedDialType)
-        {
-            string PathName = SpeedDialType == SpeedDialType.SFTP ? "SFTPSpeedDial" : "FTPSpeedDial";
-            KernelPathType SpeedDialEnum = (KernelPathType)Convert.ToInt32(Enum.Parse(typeof(KernelPathType), PathName));
-            string SpeedDialJsonContent = File.ReadAllText(Paths.GetKernelPath(SpeedDialEnum));
-            var SpeedDialToken = JArray.Parse(!string.IsNullOrEmpty(SpeedDialJsonContent) ? SpeedDialJsonContent : "[]");
-            File.Delete(Paths.GetKernelPath(SpeedDialEnum));
-            foreach (string SpeedDialEntry in SpeedDialToken)
-            {
-                var ChosenLineSeparation = SpeedDialEntry.Split(',');
-                string Address = ChosenLineSeparation[0];
-                string Port = ChosenLineSeparation[1];
-                string Username = ChosenLineSeparation[2];
-                FtpEncryptionMode Encryption = (FtpEncryptionMode)Convert.ToInt32(SpeedDialType == SpeedDialType.FTP ? Enum.Parse(typeof(FtpEncryptionMode), ChosenLineSeparation[3]) : FtpEncryptionMode.None);
-                AddEntryToSpeedDial(Address, Convert.ToInt32(Port), Username, SpeedDialType, Encryption, false);
-            }
         }
 
         /// <summary>

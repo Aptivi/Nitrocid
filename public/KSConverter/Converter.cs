@@ -34,6 +34,7 @@ using KS.Kernel.Debugging.RemoteDebug;
 using KS.Users.Groups;
 using KS.Users;
 using KS.Network.Base;
+using KS.Network.SpeedDial;
 
 namespace KSConverter
 {
@@ -162,7 +163,7 @@ namespace KSConverter
 
                         // Add the entry!
                         TextWriterColor.Write("  - Adding {0} to FTP_SpeedDial.json...", true, ColTypes.Progress, Address);
-                        NetworkTools.AddEntryToSpeedDial(Address, Convert.ToInt32(Port), Username, NetworkTools.SpeedDialType.FTP, Encryption);
+                        SpeedDialTools.AddEntryToSpeedDial(Address, Convert.ToInt32(Port), SpeedDialType.FTP, true, Username, Encryption);
                     }
                 }
                 else

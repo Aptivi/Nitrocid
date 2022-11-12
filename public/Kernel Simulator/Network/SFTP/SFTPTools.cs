@@ -30,6 +30,8 @@ using KS.Misc.Reflection;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using KS.Network.Base;
+using KS.Network.SpeedDial;
+using KS.Shell.Shells.FTP;
 using KS.Shell.Shells.SFTP;
 using Renci.SshNet;
 
@@ -121,17 +123,7 @@ namespace KS.Network.SFTP
             SFTPShellCommon.SFTPUser = SFTPShellCommon.ClientSFTP.ConnectionInfo.Username;
 
             // Write connection information to Speed Dial file if it doesn't exist there
-            var SpeedDialEntries = NetworkTools.ListSpeedDialEntries(NetworkTools.SpeedDialType.SFTP);
-            DebugWriter.WriteDebug(DebugLevel.I, "Speed dial length: {0}", SpeedDialEntries.Count);
-            if (SpeedDialEntries.ContainsKey(SFTPShellCommon.SFTPSite))
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Site already there.");
-                return;
-            }
-            // Speed dial format is below:
-            // Site,Port,Username
-            else if (SFTPShellCommon.SFTPNewConnectionsToSpeedDial)
-                NetworkTools.AddEntryToSpeedDial(SFTPShellCommon.SFTPSite, SFTPShellCommon.ClientSFTP.ConnectionInfo.Port, SFTPShellCommon.SFTPUser, NetworkTools.SpeedDialType.SFTP);
+            SpeedDialTools.TryAddEntryToSpeedDial(SFTPShellCommon.SFTPSite, SFTPShellCommon.ClientSFTP.ConnectionInfo.Port, SpeedDialType.SFTP, true, SFTPShellCommon.SFTPUser);
         }
 
         /// <summary>
@@ -139,78 +131,13 @@ namespace KS.Network.SFTP
         /// </summary>
         public static void SFTPQuickConnect()
         {
-            if (Checking.FileExists(Paths.GetKernelPath(KernelPathType.SFTPSpeedDial)))
-            {
-                var SpeedDialLines = NetworkTools.ListSpeedDialEntries(NetworkTools.SpeedDialType.SFTP);
-                DebugWriter.WriteDebug(DebugLevel.I, "Speed dial length: {0}", SpeedDialLines.Count);
-                string Answer;
-                bool Answering = true;
-                var SpeedDialHeaders = new[] { "#", Translate.DoTranslation("Host Name"), Translate.DoTranslation("Host Port"), Translate.DoTranslation("Username") };
-                var SpeedDialData = new string[SpeedDialLines.Count, 4];
-                if (!(SpeedDialLines.Count == 0))
-                {
-                    TextWriterColor.Write(Translate.DoTranslation("Select an address to connect to:"));
-                    for (int i = 0; i <= SpeedDialLines.Count - 1; i++)
-                    {
-                        string SpeedDialAddress = SpeedDialLines.Keys.ElementAtOrDefault(i);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Speed dial address: {0}", SpeedDialAddress);
-                        SpeedDialData[i, 0] = (i + 1).ToString();
-                        SpeedDialData[i, 1] = SpeedDialAddress;
-                        SpeedDialData[i, 2] = (string)SpeedDialLines[SpeedDialAddress]["Port"];
-                        SpeedDialData[i, 3] = (string)SpeedDialLines[SpeedDialAddress]["User"];
-                    }
-                    TableColor.WriteTable(SpeedDialHeaders, SpeedDialData, 2);
-                    TextWriterColor.Write();
-                    while (Answering)
-                    {
-                        TextWriterColor.Write(">> ", false, ColorTools.ColTypes.Input);
-                        Answer = Input.ReadLine();
-                        DebugWriter.WriteDebug(DebugLevel.I, "Response: {0}", Answer);
-                        if (StringQuery.IsStringNumeric(Answer))
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Response is numeric. IsStringNumeric(Answer) returned true. Checking to see if in-bounds...");
-                            int AnswerInt = Convert.ToInt32(Answer);
-                            if (AnswerInt <= SpeedDialLines.Count)
-                            {
-                                Answering = false;
-                                DebugWriter.WriteDebug(DebugLevel.I, "Response is in-bounds. Connecting...");
-                                string ChosenSpeedDialAddress = SpeedDialLines.Keys.ElementAtOrDefault(AnswerInt - 1);
-                                DebugWriter.WriteDebug(DebugLevel.I, "Chosen connection: {0}", ChosenSpeedDialAddress);
-                                string Address = ChosenSpeedDialAddress;
-                                string Port = (string)SpeedDialLines[ChosenSpeedDialAddress]["Port"];
-                                string Username = (string)SpeedDialLines[ChosenSpeedDialAddress]["User"];
-                                DebugWriter.WriteDebug(DebugLevel.I, "Address: {0}, Port: {1}, Username: {2}", Address, Port, Username);
-                                SFTPShellCommon._clientSFTP = new SftpClient(SSH.SSH.PromptConnectionInfo(Address, Convert.ToInt32(Port), Username));
-                                ConnectSFTP();
-                            }
-                            else
-                            {
-                                DebugWriter.WriteDebug(DebugLevel.I, "Response is out-of-bounds. Retrying...");
-                                TextWriterColor.Write(Translate.DoTranslation("The selection is out of range. Select between 1-{0}. Try again."), true, ColorTools.ColTypes.Error, SpeedDialLines.Count);
-                            }
-                        }
-                        else if (ReadLineReboot.ReadLine.ReadRanToCompletion)
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.W, "Response isn't numeric. IsStringNumeric(Answer) returned false.");
-                            TextWriterColor.Write(Translate.DoTranslation("The selection is not a number. Try again."), true, ColorTools.ColTypes.Error);
-                        }
-                        else
-                        {
-                            Answering = false;
-                        }
-                    }
-                }
-                else
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Speed dial is empty. Lines count is 0.");
-                    TextWriterColor.Write(Translate.DoTranslation("Speed dial is empty. Connect to a server to add an address to it."), true, ColorTools.ColTypes.Error);
-                }
-            }
-            else
-            {
-                DebugWriter.WriteDebug(DebugLevel.E, "File doesn't exist.");
-                TextWriterColor.Write(Translate.DoTranslation("Speed dial doesn't exist. Connect to a server to add an address to it."), true, ColorTools.ColTypes.Error);
-            }
+            var quickConnectInfo = SpeedDialTools.GetQuickConnectInfo(SpeedDialType.SFTP);
+            string Address = (string)quickConnectInfo["Address"];
+            string Port = (string)quickConnectInfo["Port"];
+            string Username = (string)quickConnectInfo["Options"][0];
+            DebugWriter.WriteDebug(DebugLevel.I, "Address: {0}, Port: {1}, Username: {2}", Address, Port, Username);
+            SFTPShellCommon._clientSFTP = new SftpClient(SSH.SSH.PromptConnectionInfo(Address, Convert.ToInt32(Port), Username));
+            ConnectSFTP();
         }
 
     }

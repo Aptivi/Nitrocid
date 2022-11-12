@@ -234,3 +234,35 @@ This is to remove support for 255 colors in screensavers.
 ##### Moved KS.Network classes to KS.Network.Base
 
 These classes are believed to be the base classes for the networking. These classes are used for general networking purposes.
+
+##### Condensed speed dial to KS.Network.SpeedDial
+
+The speed dial API wasn't touched for a long time, so we decided to condense the speed dial API to a single namespace to ease the addition of the speed dial feature to all the networking shells.
+
+In consequence, the speed dial format has changed.
+
+Old format:
+```json
+  "ftp.riken.jp": {
+    "Address": "ftp.riken.jp",
+    "Port": 21,
+    "User": "anonymous",
+    "Type": 0,
+    "FTP Encryption Mode": 0
+  },
+```
+
+New format:
+```json
+  "ftp.us.debian.org": {
+    "Address": "ftp.us.debian.org",
+    "Port": 21,
+    "Type": 0,
+    "Options": [
+      "anonymous",
+      0
+    ]
+  }
+```
+
+The username and FTP encryption mode is now moved to Options, which is an array of options that the networking shells use. To convert your speed dial entries, you have to manually open all FTP and SFTP speed dial JSON files and make changes to transition from the old format to the new format.

@@ -18,6 +18,7 @@
 
 using System.Diagnostics;
 using KS.Network.Base;
+using KS.Network.SpeedDial;
 using NUnit.Framework;
 using Shouldly;
 
@@ -33,14 +34,14 @@ namespace KSTests.NetworkTests
         /// </summary>
         [Test]
         [Description("Management")]
-        public void TestAddEntryToFTPSpeedDial() => NetworkTools.TryAddEntryToSpeedDial("ftp.riken.jp", 21, "anonymous", NetworkTools.SpeedDialType.FTP, FluentFTP.FtpEncryptionMode.None, false).ShouldBeTrue();
+        public void TestAddEntryToFTPSpeedDial() => SpeedDialTools.TryAddEntryToSpeedDial("ftp.riken.jp", 21, SpeedDialType.FTP, false, "anonymous", FluentFTP.FtpEncryptionMode.None).ShouldBeTrue();
 
         /// <summary>
         /// Tests adding SFTP speed dial entry
         /// </summary>
         [Test]
         [Description("Management")]
-        public void TestAddEntryToSFTPSpeedDial() => NetworkTools.TryAddEntryToSpeedDial("test.rebex.net", 22, "demo", NetworkTools.SpeedDialType.SFTP, FluentFTP.FtpEncryptionMode.None, false).ShouldBeTrue();
+        public void TestAddEntryToSFTPSpeedDial() => SpeedDialTools.TryAddEntryToSpeedDial("test.rebex.net", 22, SpeedDialType.SFTP, false, "demo", FluentFTP.FtpEncryptionMode.None).ShouldBeTrue();
 
         /// <summary>
         /// Tests listing FTP speed dial entries
@@ -49,8 +50,8 @@ namespace KSTests.NetworkTests
         [Description("Management")]
         public void TestListFTPSpeedDialEntries()
         {
-            NetworkTools.ListSpeedDialEntries(NetworkTools.SpeedDialType.FTP).ShouldNotBeEmpty();
-            Debug.WriteLine(string.Join(" | ", NetworkTools.ListSpeedDialEntries(NetworkTools.SpeedDialType.FTP).Keys));
+            SpeedDialTools.ListSpeedDialEntries(SpeedDialType.FTP).ShouldNotBeEmpty();
+            Debug.WriteLine(string.Join(" | ", SpeedDialTools.ListSpeedDialEntries(SpeedDialType.FTP).Keys));
         }
 
         /// <summary>
@@ -60,8 +61,8 @@ namespace KSTests.NetworkTests
         [Description("Management")]
         public void TestListSFTPSpeedDialEntries()
         {
-            NetworkTools.ListSpeedDialEntries(NetworkTools.SpeedDialType.SFTP).ShouldNotBeEmpty();
-            Debug.WriteLine(string.Join(" | ", NetworkTools.ListSpeedDialEntries(NetworkTools.SpeedDialType.SFTP).Keys));
+            SpeedDialTools.ListSpeedDialEntries(SpeedDialType.SFTP).ShouldNotBeEmpty();
+            Debug.WriteLine(string.Join(" | ", SpeedDialTools.ListSpeedDialEntries(SpeedDialType.SFTP).Keys));
         }
 
     }
