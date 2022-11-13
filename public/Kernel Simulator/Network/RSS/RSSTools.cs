@@ -28,6 +28,7 @@ using HtmlAgilityPack;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Notifications;
 using KS.Misc.Reflection;
@@ -114,7 +115,7 @@ namespace KS.Network.RSS
 
                 default:
                     {
-                        throw new Kernel.Exceptions.InvalidFeedTypeException(Translate.DoTranslation("Invalid RSS feed type."));
+                        throw new KernelException(KernelExceptionType.InvalidFeedType, Translate.DoTranslation("Invalid RSS feed type."));
                     }
             }
             return Articles;
@@ -248,7 +249,7 @@ namespace KS.Network.RSS
 
                 default:
                     {
-                        throw new Kernel.Exceptions.InvalidFeedTypeException(Translate.DoTranslation("Invalid RSS feed type."));
+                        throw new KernelException(KernelExceptionType.InvalidFeedType, Translate.DoTranslation("Invalid RSS feed type."));
                     }
             }
             return "";

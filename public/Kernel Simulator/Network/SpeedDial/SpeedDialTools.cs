@@ -33,6 +33,7 @@ using KS.Misc.Reflection;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using System.Linq;
+using KS.Kernel.Exceptions;
 
 namespace KS.Network.SpeedDial
 {
@@ -111,11 +112,11 @@ namespace KS.Network.SpeedDial
                 // TODO: Implement general network exception
                 if (SpeedDialType == SpeedDialType.FTP)
                 {
-                    throw new Kernel.Exceptions.FTPNetworkException(Translate.DoTranslation("Entry already exists."));
+                    throw new KernelException(KernelExceptionType.FTPNetwork, Translate.DoTranslation("Entry already exists."));
                 }
                 else if (SpeedDialType == SpeedDialType.SFTP)
                 {
-                    throw new Kernel.Exceptions.SFTPNetworkException(Translate.DoTranslation("Entry already exists."));
+                    throw new KernelException(KernelExceptionType.SFTPNetwork, Translate.DoTranslation("Entry already exists."));
                 }
             }
         }

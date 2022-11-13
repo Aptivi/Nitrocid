@@ -270,3 +270,17 @@ The username and FTP encryption mode is now moved to Options, which is an array 
 ##### Moved network transfer functions to KS.Network.Base.Transfer
 
 We've done that to the base network classes, so why not do the same to the network transfer functions?
+
+##### Kernel exception handling changed
+
+We have changed the way how the kernel exception handling works. We have simplified the code, merging all the exception classes to just one enumeration to help you filter kernel exceptions matching a specific exception.
+
+As a consequence, mods that use old handling now break, and should use this format to continue working as usual:
+
+```cs
+    catch (KernelException ke) when (ke.ExceptionType == KernelExceptionType.ErrorType)
+```
+
+...where `ErrorType` is an error type obtained from the `KernelExceptionType` enumeration.
+
+This also helps us in making dynamic suggestions to specific error type in the future.

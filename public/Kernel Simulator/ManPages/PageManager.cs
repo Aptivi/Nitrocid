@@ -18,6 +18,7 @@
 
 using System.Collections.Generic;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 
 namespace KS.ManPages
@@ -83,7 +84,7 @@ namespace KS.ManPages
                 }
                 else
                 {
-                    throw new Kernel.Exceptions.InvalidManpageException(Translate.DoTranslation("The manual page {0} is invalid."), Name);
+                    throw new KernelException(KernelExceptionType.InvalidManpage, Translate.DoTranslation("The manual page {0} is invalid."), Name);
                 }
             }
         }

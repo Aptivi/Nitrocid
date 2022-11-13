@@ -27,6 +27,7 @@ using KS.Drivers.Encryption;
 using KS.Files;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
@@ -151,7 +152,7 @@ namespace KS.Users
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                throw new Kernel.Exceptions.UserCreationException(Translate.DoTranslation("Error trying to add username.") + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), ex, ex.GetType().FullName, ex.Message);
+                throw new KernelException(KernelExceptionType.UserCreation, Translate.DoTranslation("Error trying to add username.") + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), ex, ex.GetType().FullName, ex.Message);
             }
         }
 
@@ -248,17 +249,17 @@ namespace KS.Users
             if (newUser.Contains(" "))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "There are spaces in username.");
-                throw new Kernel.Exceptions.UserCreationException(Translate.DoTranslation("Spaces are not allowed."));
+                throw new KernelException(KernelExceptionType.UserCreation, Translate.DoTranslation("Spaces are not allowed."));
             }
             else if (newUser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray()) != -1)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "There are special characters in username.");
-                throw new Kernel.Exceptions.UserCreationException(Translate.DoTranslation("Special characters are not allowed."));
+                throw new KernelException(KernelExceptionType.UserCreation, Translate.DoTranslation("Special characters are not allowed."));
             }
             else if (string.IsNullOrEmpty(newUser))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Username is blank.");
-                throw new Kernel.Exceptions.UserCreationException(Translate.DoTranslation("Blank username."));
+                throw new KernelException(KernelExceptionType.UserCreation, Translate.DoTranslation("Blank username."));
             }
             else if (!Login.Login.Users.ContainsKey(newUser))
             {
@@ -281,13 +282,13 @@ namespace KS.Users
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to create user {0}: {1}", ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    throw new Kernel.Exceptions.UserCreationException(Translate.DoTranslation("usrmgr: Failed to create username {0}: {1}"), ex, newUser, ex.Message);
+                    throw new KernelException(KernelExceptionType.UserCreation, Translate.DoTranslation("usrmgr: Failed to create username {0}: {1}"), ex, newUser, ex.Message);
                 }
             }
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "User {0} already found.", newUser);
-                throw new Kernel.Exceptions.UserCreationException(Translate.DoTranslation("usrmgr: Username {0} is already found"), newUser);
+                throw new KernelException(KernelExceptionType.UserCreation, Translate.DoTranslation("usrmgr: Username {0} is already found"), newUser);
             }
         }
 
@@ -302,33 +303,33 @@ namespace KS.Users
             if (user.Contains(" "))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "There are spaces in username.");
-                throw new Kernel.Exceptions.UserManagementException(Translate.DoTranslation("Spaces are not allowed."));
+                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Spaces are not allowed."));
             }
             else if (user.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray()) != -1)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "There are special characters in username.");
-                throw new Kernel.Exceptions.UserManagementException(Translate.DoTranslation("Special characters are not allowed."));
+                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Special characters are not allowed."));
             }
             else if (string.IsNullOrEmpty(user))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Username is blank.");
-                throw new Kernel.Exceptions.UserManagementException(Translate.DoTranslation("Blank username."));
+                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Blank username."));
             }
             else if (Login.Login.Users.ContainsKey(user) == false)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Username {0} not found in list", user);
-                throw new Kernel.Exceptions.UserManagementException(Translate.DoTranslation("User {0} not found."), user);
+                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("User {0} not found."), user);
             }
             // Try to remove user
             else if (Login.Login.Users.Keys.ToArray().Contains(user) & user == "root")
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "User is root, and is a system account");
-                throw new Kernel.Exceptions.UserManagementException(Translate.DoTranslation("User {0} isn't allowed to be removed."), user);
+                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("User {0} isn't allowed to be removed."), user);
             }
             else if (Login.Login.Users.Keys.ToArray().Contains(user) & (user ?? "") == (Login.Login.CurrentUser?.Username ?? ""))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "User has logged in, so can't delete self.");
-                throw new Kernel.Exceptions.UserManagementException(Translate.DoTranslation("User {0} is already logged in. Log-out and log-in as another admin."), user);
+                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("User {0} is already logged in. Log-out and log-in as another admin."), user);
             }
             else if (Login.Login.Users.Keys.ToArray().Contains(user) & user != "root")
             {
@@ -358,7 +359,7 @@ namespace KS.Users
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    throw new Kernel.Exceptions.UserManagementException(Translate.DoTranslation("Error trying to remove username.") + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), ex, ex.Message);
+                    throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Error trying to remove username.") + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), ex, ex.Message);
                 }
             }
         }
@@ -413,17 +414,17 @@ namespace KS.Users
                     catch (Exception ex)
                     {
                         DebugWriter.WriteDebugStackTrace(ex);
-                        throw new Kernel.Exceptions.UserManagementException(Translate.DoTranslation("Failed to rename user. {0}"), ex, ex.Message);
+                        throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Failed to rename user. {0}"), ex, ex.Message);
                     }
                 }
                 else
                 {
-                    throw new Kernel.Exceptions.UserManagementException(Translate.DoTranslation("The new name you entered is already found."));
+                    throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("The new name you entered is already found."));
                 }
             }
             else
             {
-                throw new Kernel.Exceptions.UserManagementException(Translate.DoTranslation("User {0} not found."), OldName);
+                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("User {0} not found."), OldName);
             }
         }
 
@@ -495,16 +496,16 @@ namespace KS.Users
                 }
                 else if (GroupManagement.HasGroup(Login.Login.CurrentUser.Username, GroupManagement.GroupType.Administrator) & !Login.Login.Users.ContainsKey(Target))
                 {
-                    throw new Kernel.Exceptions.UserManagementException(Translate.DoTranslation("User not found"));
+                    throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("User not found"));
                 }
                 else if (GroupManagement.HasGroup(Target, GroupManagement.GroupType.Administrator) & !GroupManagement.HasGroup(Login.Login.CurrentUser.Username, GroupManagement.GroupType.Administrator))
                 {
-                    throw new Kernel.Exceptions.UserManagementException(Translate.DoTranslation("You are not authorized to change password of {0} because the target was an admin."), Target);
+                    throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("You are not authorized to change password of {0} because the target was an admin."), Target);
                 }
             }
             else
             {
-                throw new Kernel.Exceptions.UserManagementException(Translate.DoTranslation("Wrong user password."));
+                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Wrong user password."));
             }
         }
 
@@ -738,7 +739,7 @@ namespace KS.Users
             }
             else
             {
-                throw new Kernel.Exceptions.UserManagementException(Translate.DoTranslation("User not found"));
+                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("User not found"));
             }
         }
 

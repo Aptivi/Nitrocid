@@ -34,6 +34,7 @@ using KS.Files.Folders;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Kernel.Debugging.RemoteDebug;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.ManPages;
 using KS.Misc.Games;
@@ -2551,7 +2552,7 @@ namespace KS.Kernel.Configuration
                     Notifications.NotifySend(new Notification(Translate.DoTranslation("Error loading settings"), Translate.DoTranslation("There is an error while loading settings. You may need to check the settings file."), Notifications.NotifPriority.Medium, Notifications.NotifType.Normal));
                 }
                 DebugWriter.WriteDebug(DebugLevel.E, "Error trying to read config: {0}", ex.Message);
-                throw new Exceptions.ConfigException(Translate.DoTranslation("There is an error trying to read configuration: {0}."), ex, ex.Message);
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("There is an error trying to read configuration: {0}."), ex, ex.Message);
             }
         }
 
@@ -2572,7 +2573,7 @@ namespace KS.Kernel.Configuration
             {
                 TryReadConfig();
             }
-            catch (Exceptions.ConfigException cex)
+            catch (KernelException cex) when (cex.ExceptionType == KernelExceptionType.Config)
             {
                 TextWriterColor.Write(cex.Message, true, ColorTools.ColTypes.Error);
                 DebugWriter.WriteDebugStackTrace(cex);

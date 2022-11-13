@@ -18,6 +18,7 @@
 
 using System;
 using System.Threading;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Screensaver;
 using KS.Misc.Text;
@@ -177,7 +178,7 @@ namespace KS.ConsoleBase.Inputs
                 else
                 {
                     ScreensaverDisplayer.BailFromScreensaver();
-                    throw new Kernel.Exceptions.ConsoleReadTimeoutException(Translate.DoTranslation("User didn't provide any input in a timely fashion."));
+                    throw new KernelException(KernelExceptionType.ConsoleReadTimeout, Translate.DoTranslation("User didn't provide any input in a timely fashion."));
                 }
                 Thread.Sleep(1);
             }

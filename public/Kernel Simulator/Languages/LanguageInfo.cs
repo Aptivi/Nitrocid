@@ -19,6 +19,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using KS.Kernel.Exceptions;
 using Newtonsoft.Json.Linq;
 
 namespace KS.Languages
@@ -98,7 +99,7 @@ namespace KS.Languages
             }
             else
             {
-                throw new Kernel.Exceptions.NoSuchLanguageException(Translate.DoTranslation("Invalid language") + " {0}", LangName);
+                throw new KernelException(KernelExceptionType.NoSuchLanguage, Translate.DoTranslation("Invalid language") + " {0}", LangName);
             }
         }
 
@@ -140,7 +141,7 @@ namespace KS.Languages
             }
             else
             {
-                throw new Kernel.Exceptions.LanguageParseException(Translate.DoTranslation("Length of the English language doesn't match the length of the language token provided."));
+                throw new KernelException(KernelExceptionType.LanguageParse, Translate.DoTranslation("Length of the English language doesn't match the length of the language token provided."));
             }
         }
 

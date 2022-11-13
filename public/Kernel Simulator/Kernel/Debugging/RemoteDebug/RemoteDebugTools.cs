@@ -22,6 +22,7 @@ using System.IO;
 using System.Linq;
 using KS.Files;
 using KS.Files.Operations;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -77,7 +78,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
             }
             if (!Found)
             {
-                throw new Exceptions.RemoteDebugDeviceNotFoundException(Translate.DoTranslation("Debug device {0} not found."), IPAddr);
+                throw new KernelException(KernelExceptionType.RemoteDebugDeviceNotFound, Translate.DoTranslation("Debug device {0} not found."), IPAddr);
             }
         }
 
@@ -107,7 +108,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Trying to add an already-blocked device {0}.", IP);
-                    throw new Exceptions.RemoteDebugDeviceAlreadyExistsException(Translate.DoTranslation("Device already exists in the block list."));
+                    throw new KernelException(KernelExceptionType.RemoteDebugDeviceAlreadyExists, Translate.DoTranslation("Device already exists in the block list."));
                 }
             }
         }
@@ -150,7 +151,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Trying to remove an already-unblocked device {0}. Removing from list...", IP);
                 if (!RemoteDebugger.RDebugBlocked.Remove(IP))
-                    throw new Exceptions.RemoteDebugDeviceOperationException(Translate.DoTranslation("Device doesn't exist in the block list."));
+                    throw new KernelException(KernelExceptionType.RemoteDebugDeviceOperation, Translate.DoTranslation("Device doesn't exist in the block list."));
             }
         }
 
@@ -230,7 +231,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
             }
             else
             {
-                throw new Exceptions.RemoteDebugDeviceNotFoundException(Translate.DoTranslation("No such device."));
+                throw new KernelException(KernelExceptionType.RemoteDebugDeviceNotFound, Translate.DoTranslation("No such device."));
             }
             return null;
         }
@@ -271,7 +272,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
             }
             else
             {
-                throw new Exceptions.RemoteDebugDeviceNotFoundException(Translate.DoTranslation("No such device."));
+                throw new KernelException(KernelExceptionType.RemoteDebugDeviceNotFound, Translate.DoTranslation("No such device."));
             }
         }
 
@@ -312,7 +313,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
                 File.WriteAllText(Paths.GetKernelPath(KernelPathType.DebugDevNames), JsonConvert.SerializeObject(DeviceNameToken, Formatting.Indented));
             }
             else if (ThrowException)
-                throw new Exceptions.RemoteDebugDeviceAlreadyExistsException(Translate.DoTranslation("Device already exists."));
+                throw new KernelException(KernelExceptionType.RemoteDebugDeviceAlreadyExists, Translate.DoTranslation("Device already exists."));
         }
 
         /// <summary>
@@ -349,7 +350,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
             }
             else
             {
-                throw new Exceptions.RemoteDebugDeviceNotFoundException(Translate.DoTranslation("No such device."));
+                throw new KernelException(KernelExceptionType.RemoteDebugDeviceNotFound, Translate.DoTranslation("No such device."));
             }
         }
 

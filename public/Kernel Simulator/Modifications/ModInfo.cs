@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.Collections.Generic;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 
 namespace KS.Modifications
@@ -62,7 +63,7 @@ namespace KS.Modifications
             // Check to see if the mod parts is null or zero. If so, throw exception.
             if (ModParts is null || ModParts.Count == 0)
             {
-                throw new Kernel.Exceptions.ModNoPartsException(Translate.DoTranslation("There are no parts in mod."));
+                throw new KernelException(KernelExceptionType.ModNoParts, Translate.DoTranslation("There are no parts in mod."));
             }
 
             // Install values to new instance

@@ -58,7 +58,7 @@ namespace KS.Shell.Shells.UESH.Commands
             AreAllInputsBinary = InputStates.Count == InputStates.Where((binary) => binary).Count();
             AreAllInputsText = InputStates.Count == InputStates.Where((binary) => !binary).Count();
             if (!AreAllInputsBinary && !AreAllInputsText)
-                throw new FilesystemException(Translate.DoTranslation("Can't combine a mix of text and binary files."));
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Can't combine a mix of text and binary files."));
 
             // Make a combined content array
             if (AreAllInputsText)

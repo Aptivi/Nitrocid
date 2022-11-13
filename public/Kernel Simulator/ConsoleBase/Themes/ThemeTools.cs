@@ -25,6 +25,7 @@ using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using static KS.ConsoleBase.Colors.ColorTools;
 
@@ -172,7 +173,7 @@ namespace KS.ConsoleBase.Themes
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Theme not found.");
                 Kernel.Events.EventsManager.FireEvent("ThemeSetError", theme, ThemeSetErrorReasons.NotFound);
-                throw new Kernel.Exceptions.NoSuchThemeException(Translate.DoTranslation("Invalid color template {0}"), theme);
+                throw new KernelException(KernelExceptionType.NoSuchTheme, Translate.DoTranslation("Invalid color template {0}"), theme);
             }
         }
 
@@ -206,7 +207,7 @@ namespace KS.ConsoleBase.Themes
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Theme not found.");
                 Kernel.Events.EventsManager.FireEvent("ThemeSetError", ThemeFile, ThemeSetErrorReasons.NotFound);
-                throw new Kernel.Exceptions.NoSuchThemeException(Translate.DoTranslation("Invalid color template {0}"), ThemeFile);
+                throw new KernelException(KernelExceptionType.NoSuchTheme, Translate.DoTranslation("Invalid color template {0}"), ThemeFile);
             }
         }
 
@@ -239,7 +240,7 @@ namespace KS.ConsoleBase.Themes
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 Kernel.Events.EventsManager.FireEvent("ColorSetError", ColorSetErrorReasons.InvalidColors);
-                throw new Kernel.Exceptions.ColorException(Translate.DoTranslation("One or more of the colors is invalid.") + " {0}", ex, ex.Message);
+                throw new KernelException(KernelExceptionType.Color, Translate.DoTranslation("One or more of the colors is invalid.") + " {0}", ex, ex.Message);
             }
         }
 

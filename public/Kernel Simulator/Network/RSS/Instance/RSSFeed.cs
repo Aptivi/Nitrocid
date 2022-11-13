@@ -22,6 +22,7 @@ using System;
 using KS.Languages;
 using KS.Kernel.Debugging;
 using KS.Network.Base.Transfer;
+using KS.Kernel.Exceptions;
 
 namespace KS.Network.RSS.Instance
 {
@@ -115,19 +116,19 @@ namespace KS.Network.RSS.Instance
             {
                 FeedNodeList = FeedDocument.GetElementsByTagName("rss");
                 if (FeedNodeList.Count == 0)
-                    throw new Kernel.Exceptions.InvalidFeedTypeException(Translate.DoTranslation("Invalid RSS2 feed."));
+                    throw new KernelException(KernelExceptionType.InvalidFeedType, Translate.DoTranslation("Invalid RSS2 feed."));
             }
             else if (FeedType == RSSFeedType.RSS1)
             {
                 FeedNodeList = FeedDocument.GetElementsByTagName("rdf:RDF");
                 if (FeedNodeList.Count == 0)
-                    throw new Kernel.Exceptions.InvalidFeedTypeException(Translate.DoTranslation("Invalid RSS1 feed."));
+                    throw new KernelException(KernelExceptionType.InvalidFeedType, Translate.DoTranslation("Invalid RSS1 feed."));
             }
             else if (FeedType == RSSFeedType.Atom)
             {
                 FeedNodeList = FeedDocument.GetElementsByTagName("feed");
                 if (FeedNodeList.Count == 0)
-                    throw new Kernel.Exceptions.InvalidFeedTypeException(Translate.DoTranslation("Invalid Atom feed."));
+                    throw new KernelException(KernelExceptionType.InvalidFeedType, Translate.DoTranslation("Invalid Atom feed."));
             }
 
             // Populate basic feed properties

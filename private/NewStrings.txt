@@ -110,5 +110,70 @@ Event Day Color
 Table Title Color
 Next Screen Delay in Milliseconds
 Parameters
+There is an error in the kernel or one of the kernel components. The below information may help you figure out why.
+The error type is
+The module that caused the fault provided this additional information that may help you further
+The module that caused the fault didn't provide additional information.
+Additionally, the faulty module provided this exception information
+Also, the module didn't provide the exception information, so it's usually an indicator that something is wrong.
+If the module tried to process your input, ensure that you've written all the parameters correctly.
+Unknown kernel error.
+The specified alias already exists. Make sure that you select a different alias.
+The alias system encountered an invalid operation trying to process your request.
+The specified alias isn't found.
+The specified command isn't found to alias to.
+The specified alias type isn't found.
+An error occurred while trying to process the color request. Common mistakes include specifying the wrong color specifier.
+A kernel configuration error occurred.
+User didn't provide any input in a timely fashion.
+A general filesystem error occurred. Check to make sure that the path specified is correct, and that the file or directory actually exists.
+A general FTP filesystem error occurred. Check to make sure that the path specified is correct, and that the file or directory actually exists.
+A general FTP network error occurred. Check to make sure that your internet connection is working.
+A general FTP shell error occurred.
+Hostname error.
+A general HTTP shell error occurred.
+Insane console has been detected. Kernel Simulator can't continue running, because your console is incompatible with our requirements.
+Invalid RSS feed.
+Invalid RSS feed link.
+Invalid RSS feed type.
+Invalid hash algorithm. If you're using a custom hash sum driver, check to make sure that the driver is loaded.
+Invalid hash sum. Check to make sure that you copied and pasted the hash sum correctly. If you're using a custom hash sum driver, check to make sure that the driver is loaded and that it works as expected.
+Invalid kernel path.
+Invalid manual page. Check to make sure that the mod containing the valid manual pages is loaded.
+Invalid mod. If the mod is a .NET Framework mod, make sure that you're using the .NET Framework version of Kernel Simulator. The same applies to .NET CoreCLR version. If your mod is a valid .NET assembly, check to make sure that it actually implements the interface that is necessary to start the mod.
+Invalid filesystem path. Check to make sure that it's written correctly.
+Invalid placeholder. Consult the kernel documentation for more information.
+The custom language failed to install. Check to make sure that the language file is correctly formed. Usually, the locale generator does a good job in making the localization information for your custom language.
+The custom language failed to load. Check to make sure that the language file is correctly formed. Usually, the locale generator does a good job in making the localization information for your custom language.
+The custom language failed to uninstall.
+The mail system encountered an error.
+The mod failed to install. Check to make sure that it's a valid mod file. If the mod is a .NET Framework mod, make sure that you're using the .NET Framework version of Kernel Simulator. The same applies to .NET CoreCLR version. If your mod is a valid .NET assembly, check to make sure that it actually implements the interface that is necessary to start the mod.
+The mod contains no parts. Consult with the mod vendor for a new copy.
+The mod uninstallation has failed.
+An error occurred trying to read or set the message of the day.
+There is no event by this name.
+There is no language by this name.
+There is no mail directory by this name.
+There is no mod by this name.
+There is no reflection property by this name.
+There is no reflection variable by this name.
+There is no screensaver by this name.
+There is no shell preset by this name.
+There is no theme by this name.
+There are zero users in the entire kernel. We've reached an extremely rare situation. The kernel can't continue.
+An error occurred trying to manage permissions
+The remote debug device already exists.
+The remote debug device is not found. Check to make sure that you've written an IP address of the device right.
+The remote debug device operation failed.
+The RSS network error occurred. Check to make sure that your internet connection is working.
+The RSS shell error occurred.
+The screensaver management error occurred during the operation.
+A general SFTP filesystem error occurred. Check to make sure that the path specified is correct, and that the file or directory actually exists.
+A general SFTP network error occurred. Check to make sure that your internet connection is working.
+A general SFTP shell error occurred.
+Condition parsing failed. Please check your syntax to meet the operator's expected design.
+An error occurred while trying to parse the UESH script file. Check your script file for errors and correct them.
+A user creation error occurred.
+A group management error occurred.
 
 ==========================================================================================================================================

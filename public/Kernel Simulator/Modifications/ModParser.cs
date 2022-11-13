@@ -80,7 +80,7 @@ namespace KS.Modifications
 
                     // If we didn't find anything, abort
                     if (script is null)
-                        throw new InvalidModException(Translate.DoTranslation("The modfile is invalid."));
+                        throw new KernelException(KernelExceptionType.InvalidMod, Translate.DoTranslation("The modfile is invalid."));
 
                     // Finalize the mod
                     FinalizeMods(script, modFile);

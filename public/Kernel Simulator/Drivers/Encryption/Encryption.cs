@@ -68,7 +68,7 @@ namespace KS.Drivers.Encryption
         {
             // Make sure that we don't remove EncryptionAlgorithms implemented by Kernel Simulator
             if (Enum.IsDefined(typeof(EncryptionAlgorithms), encryptorName))
-                throw new InvalidHashAlgorithmException(Translate.DoTranslation("Tried to remove an internal algorithm. This isn't possible."));
+                throw new KernelException(KernelExceptionType.InvalidHashAlgorithm, Translate.DoTranslation("Tried to remove an internal algorithm. This isn't possible."));
 
             // Remove it!
             encryptors.Remove(encryptorName);

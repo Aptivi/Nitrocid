@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Extensification.StringExts;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Scripting.Conditions.Types;
 
@@ -89,7 +90,7 @@ namespace KS.Scripting.Conditions
                     }
                 }
                 if (!ConditionFound)
-                    throw new Kernel.Exceptions.UESHConditionParseException(Translate.DoTranslation("The condition was not found in the expression."));
+                    throw new KernelException(KernelExceptionType.UESHConditionParse, Translate.DoTranslation("The condition was not found in the expression."));
 
                 // Check the expression for argument numbers and middle condition
                 int RequiredArguments = ConditionBase.ConditionRequiredArguments;
@@ -97,12 +98,12 @@ namespace KS.Scripting.Conditions
                 if (EnclosedWords.Count < RequiredArguments)
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Argument count {0} is less than the required arguments {1}", EnclosedWords.Count, RequiredArguments);
-                    throw new Kernel.Exceptions.UESHConditionParseException(Translate.DoTranslation("Condition {0} requires {1} arguments. Got {2}."), ConditionType, RequiredArguments, EnclosedWords.Count);
+                    throw new KernelException(KernelExceptionType.UESHConditionParse, Translate.DoTranslation("Condition {0} requires {1} arguments. Got {2}."), ConditionType, RequiredArguments, EnclosedWords.Count);
                 }
                 if (!AvailableConditions.ContainsKey(EnclosedWords[ConditionPosition - 1]))
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Condition should be in position {0}, but {1} is not a condition.", ConditionPosition, EnclosedWords[ConditionPosition - 1]);
-                    throw new Kernel.Exceptions.UESHConditionParseException(Translate.DoTranslation("The condition needs to be placed in the end."));
+                    throw new KernelException(KernelExceptionType.UESHConditionParse, Translate.DoTranslation("The condition needs to be placed in the end."));
                 }
 
                 // Execute the conditions
@@ -182,7 +183,7 @@ namespace KS.Scripting.Conditions
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Syntax error in {0}: {1}", ConditionToSatisfy, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    throw new Kernel.Exceptions.UESHConditionParseException(Translate.DoTranslation("Error parsing expression due to syntax error.") + " {0}: {1}", ex, ConditionToSatisfy, ex.Message);
+                    throw new KernelException(KernelExceptionType.UESHConditionParse, Translate.DoTranslation("Error parsing expression due to syntax error.") + " {0}: {1}", ex, ConditionToSatisfy, ex.Message);
                 }
             }
             return false;

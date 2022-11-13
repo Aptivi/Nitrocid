@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 
 namespace KS.Misc.Reflection
@@ -69,7 +70,7 @@ namespace KS.Misc.Reflection
             {
                 // Variable not found on any of the "flag" modules.
                 DebugWriter.WriteDebug(DebugLevel.I, "Property {0} not found.", Variable);
-                throw new Kernel.Exceptions.NoSuchReflectionVariableException(Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
+                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
             }
         }
 
@@ -112,7 +113,7 @@ namespace KS.Misc.Reflection
             {
                 // Variable not found on any of the "flag" modules.
                 DebugWriter.WriteDebug(DebugLevel.I, "Property {0} not found.", Variable);
-                throw new Kernel.Exceptions.NoSuchReflectionVariableException(Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
+                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
             }
         }
 
@@ -224,14 +225,14 @@ namespace KS.Misc.Reflection
                 {
                     // Property not found on any of the "flag" modules.
                     DebugWriter.WriteDebug(DebugLevel.I, "Property {0} not found.", Property);
-                    throw new Kernel.Exceptions.NoSuchReflectionPropertyException(Translate.DoTranslation("Property {0} is not found on any of the modules."), Property);
+                    throw new KernelException(KernelExceptionType.NoSuchReflectionProperty, Translate.DoTranslation("Property {0} is not found on any of the modules."), Property);
                 }
             }
             else
             {
                 // Variable not found on any of the "flag" modules.
                 DebugWriter.WriteDebug(DebugLevel.I, "Field {0} not found.", Variable);
-                throw new Kernel.Exceptions.NoSuchReflectionVariableException(Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
+                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
             }
         }
 

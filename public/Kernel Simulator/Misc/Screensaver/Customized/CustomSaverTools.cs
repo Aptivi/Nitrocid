@@ -20,6 +20,7 @@ using System.Collections.Generic;
 using System.IO;
 using KS.Files;
 using KS.Files.Operations;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -92,7 +93,7 @@ namespace KS.Misc.Screensaver.Customized
         public static void AddCustomSaverToSettings(string CustomSaver)
         {
             if (!CustomSavers.ContainsKey(CustomSaver))
-                throw new Kernel.Exceptions.NoSuchScreensaverException(Translate.DoTranslation("Screensaver {0} not found."), CustomSaver);
+                throw new KernelException(KernelExceptionType.NoSuchScreensaver, Translate.DoTranslation("Screensaver {0} not found."), CustomSaver);
             if (!CustomSaverSettingsToken.ContainsKey(CustomSaver))
             {
                 var NewCustomSaver = new JObject();
@@ -119,9 +120,9 @@ namespace KS.Misc.Screensaver.Customized
         public static void RemoveCustomSaverFromSettings(string CustomSaver)
         {
             if (!CustomSavers.ContainsKey(CustomSaver))
-                throw new Kernel.Exceptions.NoSuchScreensaverException(Translate.DoTranslation("Screensaver {0} not found."), CustomSaver);
+                throw new KernelException(KernelExceptionType.NoSuchScreensaver, Translate.DoTranslation("Screensaver {0} not found."), CustomSaver);
             if (!CustomSaverSettingsToken.Remove(CustomSaver))
-                throw new Kernel.Exceptions.ScreensaverManagementException(Translate.DoTranslation("Failed to remove screensaver {0} from config."), CustomSaver);
+                throw new KernelException(KernelExceptionType.ScreensaverManagement, Translate.DoTranslation("Failed to remove screensaver {0} from config."), CustomSaver);
             if (CustomSaverSettingsToken is not null)
                 File.WriteAllText(Paths.GetKernelPath(KernelPathType.CustomSaverSettings), JsonConvert.SerializeObject(CustomSaverSettingsToken, Formatting.Indented));
         }
@@ -136,7 +137,7 @@ namespace KS.Misc.Screensaver.Customized
         public static object GetCustomSaverSettings(string CustomSaver, string SaverSetting)
         {
             if (!CustomSaverSettingsToken.ContainsKey(CustomSaver))
-                throw new Kernel.Exceptions.NoSuchScreensaverException(Translate.DoTranslation("Screensaver {0} not found."), CustomSaver);
+                throw new KernelException(KernelExceptionType.NoSuchScreensaver, Translate.DoTranslation("Screensaver {0} not found."), CustomSaver);
             foreach (JProperty Setting in CustomSaverSettingsToken[CustomSaver])
             {
                 if ((Setting.Name ?? "") == (SaverSetting ?? ""))
@@ -158,7 +159,7 @@ namespace KS.Misc.Screensaver.Customized
         public static bool SetCustomSaverSettings(string CustomSaver, string SaverSetting, object Value)
         {
             if (!CustomSaverSettingsToken.ContainsKey(CustomSaver))
-                throw new Kernel.Exceptions.NoSuchScreensaverException(Translate.DoTranslation("Screensaver {0} not found."), CustomSaver);
+                throw new KernelException(KernelExceptionType.NoSuchScreensaver, Translate.DoTranslation("Screensaver {0} not found."), CustomSaver);
             var SettingFound = default(bool);
             foreach (JProperty Setting in CustomSaverSettingsToken[CustomSaver])
             {

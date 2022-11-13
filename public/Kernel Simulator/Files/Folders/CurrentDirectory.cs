@@ -23,6 +23,7 @@ using KS.Files.Querying;
 using KS.Kernel.Configuration;
 using KS.Languages;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 
 namespace KS.Files.Folders
 {
@@ -116,7 +117,7 @@ namespace KS.Files.Folders
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to save current directory: {0}", ex.Message);
-                throw new Kernel.Exceptions.FilesystemException(Translate.DoTranslation("Failed to save current directory: {0}"), ex, ex.Message);
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Failed to save current directory: {0}"), ex, ex.Message);
             }
         }
 

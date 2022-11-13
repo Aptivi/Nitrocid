@@ -19,6 +19,7 @@
 using System;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
@@ -50,7 +51,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     ShellStart.StartShell(ShellType.SFTPShell, ListArgsOnly[0]);
                 }
             }
-            catch (Kernel.Exceptions.SFTPShellException sftpex)
+            catch (KernelException sftpex) when (sftpex.ExceptionType == KernelExceptionType.SFTPShell)
             {
                 TextWriterColor.Write(sftpex.Message, true, ColorTools.ColTypes.Error);
             }

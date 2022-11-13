@@ -277,10 +277,9 @@ namespace KS.Kernel
                     // Clear all active threads as we're rebooting
                     ThreadManager.StopAllThreads();
                 }
-                catch (InsaneConsoleDetectedException icde)
+                catch (KernelException icde) when (icde.ExceptionType == KernelExceptionType.InsaneConsoleDetected)
                 {
                     ConsoleWrapper.WriteLine(icde.Message);
-                    ConsoleWrapper.WriteLine(icde.InsanityReason);
                     Flags.KernelShutdown = true;
                 }
                 catch (KernelErrorException kee)

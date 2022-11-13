@@ -37,6 +37,7 @@ using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 
 namespace KS.Modifications
 {
@@ -419,7 +420,7 @@ namespace KS.Modifications
                     {
                         Script = ModParser.GetModInstance(Assembly.LoadFrom(ModPath));
                         if (Script is null)
-                            throw new Kernel.Exceptions.ModInstallException(Translate.DoTranslation("The mod file provided is incompatible."));
+                            throw new KernelException(KernelExceptionType.ModInstall, Translate.DoTranslation("The mod file provided is incompatible."));
                     }
                     catch (ReflectionTypeLoadException ex)
                     {
@@ -435,7 +436,7 @@ namespace KS.Modifications
                         TextWriterColor.Write(Translate.DoTranslation("Contact the vendor of the mod to upgrade the mod to the compatible version."), true, ColorTools.ColTypes.Error);
                         throw;
                     }
-                    catch (Kernel.Exceptions.ModInstallException ex)
+                    catch (Exception ex)
                     {
                         throw ex;
                     }
@@ -454,7 +455,7 @@ namespace KS.Modifications
                         string ManualFileName = Path.GetFileNameWithoutExtension(ModManualFile);
                         var ManualInstance = new Manual(ModManualFile);
                         if (!ManualInstance.ValidManpage)
-                            throw new Kernel.Exceptions.ModInstallException(Translate.DoTranslation("The manual page {0} is invalid.").FormatString(ManualFileName));
+                            throw new KernelException(KernelExceptionType.ModInstall, Translate.DoTranslation("The manual page {0} is invalid.").FormatString(ManualFileName));
                         Copying.CopyFileOrDir(ModManualFile, TargetModPath + ".manual/" + ModManualFile);
                     }
                 }
@@ -501,7 +502,7 @@ namespace KS.Modifications
                         }
                         else
                         {
-                            throw new Kernel.Exceptions.ModUninstallException(Translate.DoTranslation("The manual page {0} is invalid.").FormatString(ManualFileName));
+                            throw new KernelException(KernelExceptionType.ModUninstall, Translate.DoTranslation("The manual page {0} is invalid.").FormatString(ManualFileName));
                         }
                     }
                     Directory.Delete(ModPath + ".manual", true);

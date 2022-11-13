@@ -25,6 +25,7 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using KS.Files;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Reflection;
 using Newtonsoft.Json;
@@ -228,7 +229,7 @@ namespace KS.Kernel.Configuration
             {
                 // We didn't get a category.
                 DebugWriter.WriteDebug(DebugLevel.E, "Category {0} not found!", ConfigCategory);
-                throw new Exceptions.ConfigException(Translate.DoTranslation("Config category {0} not found."), ConfigCategory);
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Config category {0} not found."), ConfigCategory);
             }
         }
 
@@ -279,14 +280,14 @@ namespace KS.Kernel.Configuration
                 {
                     // We didn't get an entry.
                     DebugWriter.WriteDebug(DebugLevel.E, "Entry {0} not found!", ConfigEntryName);
-                    throw new Exceptions.ConfigException(Translate.DoTranslation("Config entry {0} not found."), ConfigEntryName);
+                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Config entry {0} not found."), ConfigEntryName);
                 }
             }
             else
             {
                 // We didn't get a category.
                 DebugWriter.WriteDebug(DebugLevel.E, "Category {0} not found!", ConfigCategory);
-                throw new Exceptions.ConfigException(Translate.DoTranslation("Config category {0} not found."), ConfigCategory);
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Config category {0} not found."), ConfigCategory);
             }
         }
 
@@ -330,14 +331,14 @@ namespace KS.Kernel.Configuration
                 {
                     // We didn't get an entry.
                     DebugWriter.WriteDebug(DebugLevel.E, "Entry {0} not found!", ConfigEntryName);
-                    throw new Exceptions.ConfigException(Translate.DoTranslation("Config entry {0} not found."), ConfigEntryName);
+                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Config entry {0} not found."), ConfigEntryName);
                 }
             }
             else
             {
                 // We didn't get a category.
                 DebugWriter.WriteDebug(DebugLevel.E, "Category {0} not found!", ConfigCategory);
-                throw new Exceptions.ConfigException(Translate.DoTranslation("Config category {0} not found."), ConfigCategory);
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Config category {0} not found."), ConfigCategory);
             }
         }
 

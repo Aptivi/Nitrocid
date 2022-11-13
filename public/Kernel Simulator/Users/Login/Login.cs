@@ -24,6 +24,7 @@ using KS.ConsoleBase.Inputs;
 using KS.Drivers.Encryption;
 using KS.Kernel;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Probers;
 using KS.Misc.Probers.Motd;
@@ -87,7 +88,7 @@ namespace KS.Users.Login
                 {
                     // Extremely rare state reached
                     DebugWriter.WriteDebug(DebugLevel.F, "Shell reached rare state, because userword count is 0.");
-                    throw new Kernel.Exceptions.NullUsersException(Translate.DoTranslation("There are no more users remaining in the list."));
+                    throw new KernelException(KernelExceptionType.NullUsers, Translate.DoTranslation("There are no more users remaining in the list."));
                 }
                 else if (Users.Count == 1 & Users.Keys.ElementAtOrDefault(0) == "root")
                 {

@@ -21,6 +21,7 @@ using System.Threading;
 using KS.Files;
 using KS.Kernel;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Shells;
 
@@ -91,7 +92,7 @@ namespace KS.Shell.Shells.FTP
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    throw new Kernel.Exceptions.FTPShellException(Translate.DoTranslation("There was an error in the FTP shell:") + " {0}", ex, ex.Message);
+                    throw new KernelException(KernelExceptionType.FTPShell, Translate.DoTranslation("There was an error in the FTP shell:") + " {0}", ex, ex.Message);
                 }
             }
         }

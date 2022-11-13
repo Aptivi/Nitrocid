@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Exceptions;
 using KS.Languages;
 
 namespace KS.Modifications
@@ -61,7 +62,7 @@ namespace KS.Modifications
             // Check to see if the part script is null. If so, throw exception.
             if (PartScript is null)
             {
-                throw new Kernel.Exceptions.ModNoPartsException(Translate.DoTranslation("Mod part is nothing."));
+                throw new KernelException(KernelExceptionType.ModNoParts, Translate.DoTranslation("Mod part is nothing."));
             }
 
             // Install values to new instance

@@ -29,6 +29,7 @@ using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.Shells.FTP;
 
@@ -114,7 +115,7 @@ namespace KS.Network.FTP.Filesystem
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    throw new Kernel.Exceptions.FTPFilesystemException(Translate.DoTranslation("Failed to list remote files: {0}"), ex, ex.Message);
+                    throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("Failed to list remote files: {0}"), ex, ex.Message);
                 }
             }
             else
@@ -149,14 +150,14 @@ namespace KS.Network.FTP.Filesystem
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", Target);
-                    throw new Kernel.Exceptions.FTPFilesystemException(Translate.DoTranslation("{0} is not found in the server."), Target);
+                    throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("{0} is not found in the server."), Target);
                 }
                 DebugWriter.WriteDebug(DebugLevel.I, "Deleted {0}", Target);
                 return true;
             }
             else
             {
-                throw new Kernel.Exceptions.FTPFilesystemException(Translate.DoTranslation("You must connect to server with administrative privileges before performing the deletion."));
+                throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("You must connect to server with administrative privileges before performing the deletion."));
             }
         }
 
@@ -184,7 +185,7 @@ namespace KS.Network.FTP.Filesystem
                     else
                     {
                         // Directory doesn't exist, go to the old directory
-                        throw new Kernel.Exceptions.FTPFilesystemException(Translate.DoTranslation("Directory {0} not found."), Directory);
+                        throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("Directory {0} not found."), Directory);
                     }
                 }
                 else
@@ -223,7 +224,7 @@ namespace KS.Network.FTP.Filesystem
                 }
                 else
                 {
-                    throw new Kernel.Exceptions.FTPFilesystemException(Translate.DoTranslation("Local directory {0} doesn't exist."), Directory);
+                    throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("Local directory {0} doesn't exist."), Directory);
                 }
             }
             else

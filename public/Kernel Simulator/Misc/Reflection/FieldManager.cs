@@ -20,6 +20,7 @@ using System;
 using System.Collections;
 using System.Reflection;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 
 namespace KS.Misc.Reflection
@@ -71,7 +72,7 @@ namespace KS.Misc.Reflection
             {
                 // Variable not found on any of the "flag" modules.
                 DebugWriter.WriteDebug(DebugLevel.I, "Field {0} not found.", Variable);
-                throw new Kernel.Exceptions.NoSuchReflectionVariableException(Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
+                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
             }
         }
 
@@ -149,7 +150,7 @@ namespace KS.Misc.Reflection
             {
                 // Variable not found on any of the "flag" modules.
                 DebugWriter.WriteDebug(DebugLevel.I, "Field {0} not found.", Variable);
-                throw new Kernel.Exceptions.NoSuchReflectionVariableException(Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
+                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
             }
         }
 

@@ -21,6 +21,7 @@ using System.Threading;
 using KS.Files;
 using KS.Kernel;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Shells;
 
@@ -99,7 +100,7 @@ namespace KS.Shell.Shells.SFTP
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    throw new Kernel.Exceptions.SFTPShellException(Translate.DoTranslation("There was an error in the SFTP shell:") + " {0}", ex, ex.Message);
+                    throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("There was an error in the SFTP shell:") + " {0}", ex, ex.Message);
                 }
             }
         }

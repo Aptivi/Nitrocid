@@ -19,6 +19,7 @@
 using System;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
@@ -146,7 +147,7 @@ namespace KS.Misc.Games
                         TextWriterColor.Write(Translate.DoTranslation("You've pressed the wrong character."), true, ColorTools.ColTypes.Warning);
                     }
                 }
-                catch (Kernel.Exceptions.ConsoleReadTimeoutException)
+                catch (KernelException kex) when (kex.ExceptionType == KernelExceptionType.ConsoleReadTimeout)
                 {
                     TextWriterColor.Write();
                     TextWriterColor.Write(Translate.DoTranslation("Character not pressed on time."), true, ColorTools.ColTypes.Warning);

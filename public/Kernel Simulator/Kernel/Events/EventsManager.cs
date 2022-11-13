@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Modifications;
 using System;
@@ -181,7 +182,7 @@ namespace KS.Kernel.Events
         {
             // Check to see if event exists
             if (!events.Contains(EventName))
-                throw new Exceptions.NoSuchEventException(Translate.DoTranslation("Event {0} not found."), EventName);
+                throw new KernelException(KernelExceptionType.NoSuchEvent, Translate.DoTranslation("Event {0} not found."), EventName);
 
             // Add fired event to the list
             DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, $"Raising event {EventName}...");

@@ -76,11 +76,11 @@ namespace KS.Network.RSS.Bookmarks
                     if ((ex.GetType().Name ?? "") == nameof(UriFormatException))
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "Verify that {0} is actually valid.", FeedURL);
-                        throw new InvalidFeedLinkException(Translate.DoTranslation("Failed to parse feed URL:") + " {0}", ex.Message);
+                        throw new KernelException(KernelExceptionType.InvalidFeedLink, Translate.DoTranslation("Failed to parse feed URL:") + " {0}", ex.Message);
                     }
                     else
                     {
-                        throw new InvalidFeedException(Translate.DoTranslation("Failed to parse feed URL:") + " {0}", ex.Message);
+                        throw new KernelException(KernelExceptionType.InvalidFeed, Translate.DoTranslation("Failed to parse feed URL:") + " {0}", ex.Message);
                     }
                 }
             }
@@ -127,7 +127,7 @@ namespace KS.Network.RSS.Bookmarks
                     }
                     else
                     {
-                        throw new InvalidFeedLinkException(Translate.DoTranslation("The feed doesn't exist in bookmarks."));
+                        throw new KernelException(KernelExceptionType.InvalidFeedLink, Translate.DoTranslation("The feed doesn't exist in bookmarks."));
                     }
                 }
                 catch (Exception ex)
@@ -137,11 +137,11 @@ namespace KS.Network.RSS.Bookmarks
                     if ((ex.GetType().Name ?? "") == nameof(UriFormatException))
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "Verify that {0} is actually valid.", FeedURL);
-                        throw new InvalidFeedLinkException(Translate.DoTranslation("Failed to parse feed URL:") + " {0}", ex.Message);
+                        throw new KernelException(KernelExceptionType.InvalidFeedLink, Translate.DoTranslation("Failed to parse feed URL:") + " {0}", ex.Message);
                     }
                     else
                     {
-                        throw new InvalidFeedException(Translate.DoTranslation("Failed to parse feed URL:") + " {0}", ex.Message);
+                        throw new KernelException(KernelExceptionType.InvalidFeed, Translate.DoTranslation("Failed to parse feed URL:") + " {0}", ex.Message);
                     }
                 }
             }

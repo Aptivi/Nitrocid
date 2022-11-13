@@ -26,6 +26,7 @@ using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Files.Operations;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
@@ -200,17 +201,17 @@ namespace KS.Shell.ShellBase.Aliases
                 if ((SourceAlias ?? "") == (Destination ?? ""))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Assertion succeeded: {0} = {1}", SourceAlias, Destination);
-                    throw new Kernel.Exceptions.AliasInvalidOperationException(Translate.DoTranslation("Alias can't be the same name as a command."));
+                    throw new KernelException(KernelExceptionType.AliasInvalidOperation, Translate.DoTranslation("Alias can't be the same name as a command."));
                 }
                 else if (!CommandManager.IsCommandFound(Destination))
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "{0} not found in all the command lists", Destination);
-                    throw new Kernel.Exceptions.AliasNoSuchCommandException(Translate.DoTranslation("Command not found to alias to {0}."), Destination);
+                    throw new KernelException(KernelExceptionType.AliasNoSuchCommand, Translate.DoTranslation("Command not found to alias to {0}."), Destination);
                 }
                 else if (DoesAliasExist(SourceAlias, Type))
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Alias {0} already found", SourceAlias);
-                    throw new Kernel.Exceptions.AliasAlreadyExistsException(Translate.DoTranslation("Alias already found: {0}"), SourceAlias);
+                    throw new KernelException(KernelExceptionType.AliasAlreadyExists, Translate.DoTranslation("Alias already found: {0}"), SourceAlias);
                 }
                 else
                 {
@@ -223,7 +224,7 @@ namespace KS.Shell.ShellBase.Aliases
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Type {0} not found.", Type);
-                throw new Kernel.Exceptions.AliasNoSuchTypeException(Translate.DoTranslation("Invalid type {0}."), Type);
+                throw new KernelException(KernelExceptionType.AliasNoSuchType, Translate.DoTranslation("Invalid type {0}."), Type);
             }
         }
 
@@ -263,7 +264,7 @@ namespace KS.Shell.ShellBase.Aliases
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "{0} is not found in the {1} aliases", TargetAlias, Type.ToString());
-                throw new Kernel.Exceptions.AliasNoSuchAliasException(Translate.DoTranslation("Alias {0} is not found to be removed."), TargetAlias);
+                throw new KernelException(KernelExceptionType.AliasNoSuchAlias, Translate.DoTranslation("Alias {0} is not found to be removed."), TargetAlias);
             }
         }
 

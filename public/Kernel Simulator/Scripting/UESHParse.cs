@@ -20,6 +20,7 @@ using System;
 using System.IO;
 using Extensification.StringExts;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 
 namespace KS.Scripting
@@ -125,7 +126,7 @@ namespace KS.Scripting
                 Kernel.Events.EventsManager.FireEvent("UESHError", ScriptPath, ScriptArguments, ex);
                 DebugWriter.WriteDebug(DebugLevel.E, "Error trying to execute script {0} with arguments {1}: {2}", ScriptPath, ScriptArguments, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                throw new Kernel.Exceptions.UESHScriptException(Translate.DoTranslation("The script is malformed. Check the script and resolve any errors: {0}"), ex, ex.Message);
+                throw new KernelException(KernelExceptionType.UESHScript, Translate.DoTranslation("The script is malformed. Check the script and resolve any errors: {0}"), ex, ex.Message);
             }
         }
 

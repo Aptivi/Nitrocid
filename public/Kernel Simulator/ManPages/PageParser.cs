@@ -23,6 +23,7 @@ using System.Text;
 using KS.Files;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Probers;
 
@@ -161,7 +162,7 @@ namespace KS.ManPages
                 }
                 else
                 {
-                    throw new Kernel.Exceptions.InvalidManpageException(Translate.DoTranslation("The manual page {0} is invalid."), ManualFile);
+                    throw new KernelException(KernelExceptionType.InvalidManpage, Translate.DoTranslation("The manual page {0} is invalid."), ManualFile);
                 }
             }
             catch (Exception ex)

@@ -23,6 +23,7 @@ using System.Linq;
 using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
@@ -146,7 +147,7 @@ namespace KS.Users.Groups
                     default:
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "Type is invalid");
-                            throw new Kernel.Exceptions.GroupManagementException(Translate.DoTranslation("Failed to add user into group lists: invalid type {0}"), PermType);
+                            throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("Failed to add user into group lists: invalid type {0}"), PermType);
                         }
                 }
                 DebugWriter.WriteDebug(DebugLevel.I, "User {0} group added; value is now: {1}", Username, UserGroups[Username]);
@@ -154,7 +155,7 @@ namespace KS.Users.Groups
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "User {0} not found on list", Username);
-                throw new Kernel.Exceptions.GroupManagementException(Translate.DoTranslation("Failed to add user into group lists: invalid user {0}"), Username);
+                throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("Failed to add user into group lists: invalid user {0}"), Username);
             }
 
             // Save changes
@@ -224,19 +225,19 @@ namespace KS.Users.Groups
                     default:
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "Type is invalid");
-                            throw new Kernel.Exceptions.GroupManagementException(Translate.DoTranslation("Failed to remove user from group lists: invalid type {0}"), PermType);
+                            throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("Failed to remove user from group lists: invalid type {0}"), PermType);
                         }
                 }
                 DebugWriter.WriteDebug(DebugLevel.I, "User {0} group removed; value is now: {1}", Username, UserGroups[Username]);
             }
             else if ((Username ?? "") == (Login.Login.CurrentUser.Username ?? ""))
             {
-                throw new Kernel.Exceptions.GroupManagementException(Translate.DoTranslation("You are already logged in."));
+                throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("You are already logged in."));
             }
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "User {0} not found on list", Username);
-                throw new Kernel.Exceptions.GroupManagementException(Translate.DoTranslation("Failed to remove user from group lists: invalid user {0}"), Username);
+                throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("Failed to remove user from group lists: invalid user {0}"), Username);
             }
 
             // Save changes
@@ -299,12 +300,12 @@ namespace KS.Users.Groups
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    throw new Kernel.Exceptions.GroupManagementException(Translate.DoTranslation("You have either found a bug, or the group you tried to edit for a new user has failed.") + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), ex, ex.GetType().FullName, ex.Message);
+                    throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("You have either found a bug, or the group you tried to edit for a new user has failed.") + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), ex, ex.GetType().FullName, ex.Message);
                 }
             }
             else
             {
-                throw new Kernel.Exceptions.GroupManagementException(Translate.DoTranslation("One of the group lists doesn't contain username {0}."), OldName);
+                throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("One of the group lists doesn't contain username {0}."), OldName);
             }
         }
 

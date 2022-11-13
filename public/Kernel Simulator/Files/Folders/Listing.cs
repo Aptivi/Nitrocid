@@ -28,6 +28,7 @@ using KS.Files.Print;
 using KS.Files.Querying;
 using KS.Kernel;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
@@ -89,7 +90,7 @@ namespace KS.Files.Folders
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to make a list of filesystem entries for directory {0}: {1}", folder, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    throw new Kernel.Exceptions.FilesystemException(Translate.DoTranslation("Failed to make a list of filesystem entries for directory") + " {0}", ex, folder);
+                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Failed to make a list of filesystem entries for directory") + " {0}", ex, folder);
                 }
                 foreach (string Entry in enumeration)
                 {

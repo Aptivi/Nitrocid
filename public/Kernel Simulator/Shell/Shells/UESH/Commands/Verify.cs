@@ -23,6 +23,7 @@ using KS.Drivers.Encryption;
 using KS.Files;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
@@ -84,12 +85,12 @@ namespace KS.Shell.Shells.UESH.Commands
                     TextWriterColor.Write(Translate.DoTranslation("Hashes don't match."), true, ColorTools.ColTypes.Warning);
                 }
             }
-            catch (Kernel.Exceptions.InvalidHashAlgorithmException ihae)
+            catch (KernelException ihae) when (ihae.ExceptionType == KernelExceptionType.InvalidHashAlgorithm)
             {
                 DebugWriter.WriteDebugStackTrace(ihae);
                 TextWriterColor.Write(Translate.DoTranslation("Invalid encryption algorithm."), true, ColorTools.ColTypes.Error);
             }
-            catch (Kernel.Exceptions.InvalidHashException ihe)
+            catch (KernelException ihe) when (ihe.ExceptionType == KernelExceptionType.InvalidHash)
             {
                 DebugWriter.WriteDebugStackTrace(ihe);
                 TextWriterColor.Write(Translate.DoTranslation("Hashes are malformed."), true, ColorTools.ColTypes.Error);

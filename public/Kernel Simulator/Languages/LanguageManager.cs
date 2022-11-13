@@ -31,6 +31,7 @@ using KS.Files.Querying;
 using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using Newtonsoft.Json.Linq;
@@ -141,7 +142,7 @@ namespace KS.Languages
             }
             else
             {
-                throw new Kernel.Exceptions.NoSuchLanguageException(Translate.DoTranslation("Invalid language") + " {0}", lang);
+                throw new KernelException(KernelExceptionType.NoSuchLanguage, Translate.DoTranslation("Invalid language") + " {0}", lang);
             }
             return false;
         }
@@ -297,19 +298,19 @@ namespace KS.Languages
                                 else if (ThrowOnAlreadyInstalled)
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.E, "Can't add existing language.");
-                                    throw new Kernel.Exceptions.LanguageInstallException(Translate.DoTranslation("The language already exists and can't be overwritten."));
+                                    throw new KernelException(KernelExceptionType.LanguageInstall, Translate.DoTranslation("The language already exists and can't be overwritten."));
                                 }
                             }
                             else
                             {
                                 DebugWriter.WriteDebug(DebugLevel.E, "Metadata doesn't contain valid localizations!");
-                                throw new Kernel.Exceptions.LanguageInstallException(Translate.DoTranslation("The metadata information needed to install the custom language doesn't provide the necessary localizations needed."));
+                                throw new KernelException(KernelExceptionType.LanguageInstall, Translate.DoTranslation("The metadata information needed to install the custom language doesn't provide the necessary localizations needed."));
                             }
                         }
                         else
                         {
                             DebugWriter.WriteDebug(DebugLevel.E, "Metadata for language doesn't exist!");
-                            throw new Kernel.Exceptions.LanguageInstallException(Translate.DoTranslation("The metadata information needed to install the custom language doesn't exist."));
+                            throw new KernelException(KernelExceptionType.LanguageInstall, Translate.DoTranslation("The metadata information needed to install the custom language doesn't exist."));
                         }
                     }
                 }
@@ -318,7 +319,7 @@ namespace KS.Languages
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to install custom language {0}: {1}", LanguageName, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
                     Kernel.Events.EventsManager.FireEvent("LanguageInstallError", LanguageName, ex);
-                    throw new Kernel.Exceptions.LanguageInstallException(Translate.DoTranslation("Failed to install custom language {0}."), ex, LanguageName);
+                    throw new KernelException(KernelExceptionType.LanguageInstall, Translate.DoTranslation("Failed to install custom language {0}."), ex, LanguageName);
                 }
             }
         }
@@ -346,7 +347,7 @@ namespace KS.Languages
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to install custom languages: {0}", ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
                     Kernel.Events.EventsManager.FireEvent("LanguagesInstallError", ex);
-                    throw new Kernel.Exceptions.LanguageInstallException(Translate.DoTranslation("Failed to install custom languages."), ex);
+                    throw new KernelException(KernelExceptionType.LanguageInstall, Translate.DoTranslation("Failed to install custom languages."), ex);
                 }
             }
         }
@@ -377,14 +378,14 @@ namespace KS.Languages
                             if (!CustomLanguages.Remove(LanguageName))
                             {
                                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to uninstall custom language");
-                                throw new Kernel.Exceptions.LanguageUninstallException(Translate.DoTranslation("Failed to uninstall custom language. It most likely doesn't exist."));
+                                throw new KernelException(KernelExceptionType.LanguageUninstall, Translate.DoTranslation("Failed to uninstall custom language. It most likely doesn't exist."));
                             }
                             Kernel.Events.EventsManager.FireEvent("LanguageUninstalled", LanguageName);
                         }
                         else
                         {
                             DebugWriter.WriteDebug(DebugLevel.E, "Metadata for language doesn't exist!");
-                            throw new Kernel.Exceptions.LanguageUninstallException(Translate.DoTranslation("The metadata information needed to uninstall the custom language doesn't exist."));
+                            throw new KernelException(KernelExceptionType.LanguageUninstall, Translate.DoTranslation("The metadata information needed to uninstall the custom language doesn't exist."));
                         }
                     }
                 }
@@ -393,7 +394,7 @@ namespace KS.Languages
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to uninstall custom language {0}: {1}", LanguageName, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
                     Kernel.Events.EventsManager.FireEvent("LanguageUninstallError", LanguageName, ex);
-                    throw new Kernel.Exceptions.LanguageUninstallException(Translate.DoTranslation("Failed to uninstall custom language {0}."), ex, LanguageName);
+                    throw new KernelException(KernelExceptionType.LanguageUninstall, Translate.DoTranslation("Failed to uninstall custom language {0}."), ex, LanguageName);
                 }
             }
         }
@@ -420,7 +421,7 @@ namespace KS.Languages
                             if (!CustomLanguages.Remove(Language))
                             {
                                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to uninstall custom languages");
-                                throw new Kernel.Exceptions.LanguageUninstallException(Translate.DoTranslation("Failed to uninstall custom languages."));
+                                throw new KernelException(KernelExceptionType.LanguageUninstall, Translate.DoTranslation("Failed to uninstall custom languages."));
                             }
                         }
                         Kernel.Events.EventsManager.FireEvent("LanguagesUninstalled");
@@ -431,7 +432,7 @@ namespace KS.Languages
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to uninstall custom languages: {0}", ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
                     Kernel.Events.EventsManager.FireEvent("LanguagesUninstallError", ex);
-                    throw new Kernel.Exceptions.LanguageUninstallException(Translate.DoTranslation("Failed to uninstall custom languages. See the inner exception for more info."), ex);
+                    throw new KernelException(KernelExceptionType.LanguageUninstall, Translate.DoTranslation("Failed to uninstall custom languages. See the inner exception for more info."), ex);
                 }
             }
         }

@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using FluentFTP;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.Shells.FTP;
 
@@ -54,7 +55,7 @@ namespace KS.Network.FTP.Filesystem
                     else
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", File);
-                        throw new Kernel.Exceptions.FTPFilesystemException(Translate.DoTranslation("{0} is not found in the server."), File);
+                        throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("{0} is not found in the server."), File);
                     }
                 }
                 else
@@ -115,7 +116,7 @@ namespace KS.Network.FTP.Filesystem
                     else
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", Directory);
-                        throw new Kernel.Exceptions.FTPFilesystemException(Translate.DoTranslation("{0} is not found in the server."), Directory);
+                        throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("{0} is not found in the server."), Directory);
                     }
                 }
                 else

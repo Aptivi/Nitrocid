@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using KS.Files.Querying;
 using KS.Files.Read;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 
 namespace KS.Files.Operations
@@ -45,7 +46,7 @@ namespace KS.Files.Operations
                 // Add the input contents
                 Filesystem.ThrowOnInvalidPath(Input);
                 if (Parsing.IsBinaryFile(Input))
-                    throw new Kernel.Exceptions.FilesystemException(Translate.DoTranslation("To combine binary files, use the appropriate function.") + " " + nameof(CombineBinaryFiles) + "(" + Input + ")");
+                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("To combine binary files, use the appropriate function.") + " " + nameof(CombineBinaryFiles) + "(" + Input + ")");
                 CombinedContents.AddRange(FileRead.ReadContents(Input));
 
                 // Enumerate the target inputs
@@ -53,7 +54,7 @@ namespace KS.Files.Operations
                 {
                     Filesystem.ThrowOnInvalidPath(TargetInput);
                     if (Parsing.IsBinaryFile(TargetInput))
-                        throw new Kernel.Exceptions.FilesystemException(Translate.DoTranslation("To combine binary files, use the appropriate function.") + " " + nameof(CombineBinaryFiles) + "(" + TargetInput + ")");
+                        throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("To combine binary files, use the appropriate function.") + " " + nameof(CombineBinaryFiles) + "(" + TargetInput + ")");
                     CombinedContents.AddRange(FileRead.ReadContents(TargetInput));
                 }
 
@@ -64,7 +65,7 @@ namespace KS.Files.Operations
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to combine files: {0}", ex.Message);
-                throw new Kernel.Exceptions.FilesystemException(Translate.DoTranslation("Failed to combine files."), ex);
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Failed to combine files."), ex);
             }
         }
 
@@ -82,7 +83,7 @@ namespace KS.Files.Operations
                 // Add the input contents
                 Filesystem.ThrowOnInvalidPath(Input);
                 if (!Parsing.IsBinaryFile(Input))
-                    throw new Kernel.Exceptions.FilesystemException(Translate.DoTranslation("To combine text files, use the appropriate function.") + " " + nameof(CombineTextFiles) + "(" + Input + ")");
+                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("To combine text files, use the appropriate function.") + " " + nameof(CombineTextFiles) + "(" + Input + ")");
                 CombinedContents.AddRange(FileRead.ReadAllBytes(Input));
 
                 // Enumerate the target inputs
@@ -90,7 +91,7 @@ namespace KS.Files.Operations
                 {
                     Filesystem.ThrowOnInvalidPath(TargetInput);
                     if (!Parsing.IsBinaryFile(TargetInput))
-                        throw new Kernel.Exceptions.FilesystemException(Translate.DoTranslation("To combine text files, use the appropriate function.") + " " + nameof(CombineTextFiles) + "(" + TargetInput + ")");
+                        throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("To combine text files, use the appropriate function.") + " " + nameof(CombineTextFiles) + "(" + TargetInput + ")");
                     CombinedContents.AddRange(FileRead.ReadAllBytes(TargetInput));
                 }
 
@@ -101,7 +102,7 @@ namespace KS.Files.Operations
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to combine files: {0}", ex.Message);
-                throw new Kernel.Exceptions.FilesystemException(Translate.DoTranslation("Failed to combine files."), ex);
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Failed to combine files."), ex);
             }
         }
 

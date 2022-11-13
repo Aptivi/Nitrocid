@@ -65,8 +65,9 @@ namespace KS.ConsoleBase
             {
                 if (TerminalEmulator == "Apple_Terminal")
                 {
-                    throw new InsaneConsoleDetectedException("Kernel Simulator makes use of VT escape sequences, but Terminal.app has broken support for 255 and true colors." + CharManager.NewLine +
-                                                             "Possible solution: Download iTerm2 here: https://iterm2.com/downloads.html");
+                    throw new KernelException(KernelExceptionType.InsaneConsoleDetected,
+                                              "Kernel Simulator makes use of VT escape sequences, but Terminal.app has broken support for 255 and true colors." + CharManager.NewLine +
+                                              "Possible solution: Download iTerm2 here: https://iterm2.com/downloads.html");
                 }
             }
 
@@ -81,9 +82,10 @@ namespace KS.ConsoleBase
             // backend applications are console programs).
             if (ConsoleWrapper.IsDumb)
             {
-                throw new InsaneConsoleDetectedException("Kernel Simulator makes use of inputs and cursor manipulation, but the \"dumb\" terminals have no support for such tasks." + CharManager.NewLine + 
-                                                         "Possible solution: Use an appropriate terminal emulator or consult your terminal settings to set the terminal type into something other than \"dumb\"." + CharManager.NewLine +
-                                                         "                   We recommend using the \"vt100\" terminal emulators to get the most out of Kernel Simulator.");
+                throw new KernelException(KernelExceptionType.InsaneConsoleDetected,
+                                          "Kernel Simulator makes use of inputs and cursor manipulation, but the \"dumb\" terminals have no support for such tasks." + CharManager.NewLine + 
+                                          "Possible solution: Use an appropriate terminal emulator or consult your terminal settings to set the terminal type into something other than \"dumb\"." + CharManager.NewLine +
+                                          "                   We recommend using the \"vt100\" terminal emulators to get the most out of Kernel Simulator.");
             }
 
             // Third: Check if the terminal supports 256 colors

@@ -24,6 +24,7 @@ using Extensification.StringExts;
 using KS.ConsoleBase.Themes;
 using KS.Kernel;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Misc.Writers.WriterBase;
@@ -541,7 +542,7 @@ namespace KS.ConsoleBase.Colors
             }
             else
             {
-                throw new Kernel.Exceptions.ColorException(Translate.DoTranslation("Invalid hex color specifier."));
+                throw new KernelException(KernelExceptionType.Color, Translate.DoTranslation("Invalid hex color specifier."));
             }
         }
 
@@ -565,12 +566,12 @@ namespace KS.ConsoleBase.Colors
                 }
                 else
                 {
-                    throw new Kernel.Exceptions.ColorException(Translate.DoTranslation("Invalid RGB color specifier."));
+                    throw new KernelException(KernelExceptionType.Color, Translate.DoTranslation("Invalid RGB color specifier."));
                 }
             }
             else
             {
-                throw new Kernel.Exceptions.ColorException(Translate.DoTranslation("Invalid RGB color specifier."));
+                throw new KernelException(KernelExceptionType.Color, Translate.DoTranslation("Invalid RGB color specifier."));
             }
         }
 
@@ -584,11 +585,11 @@ namespace KS.ConsoleBase.Colors
         public static string ConvertFromRGBToHex(int R, int G, int B)
         {
             if (R < 0 | R > 255)
-                throw new Kernel.Exceptions.ColorException(Translate.DoTranslation("Invalid red color specifier."));
+                throw new KernelException(KernelExceptionType.Color, Translate.DoTranslation("Invalid red color specifier."));
             if (G < 0 | G > 255)
-                throw new Kernel.Exceptions.ColorException(Translate.DoTranslation("Invalid green color specifier."));
+                throw new KernelException(KernelExceptionType.Color, Translate.DoTranslation("Invalid green color specifier."));
             if (B < 0 | B > 255)
-                throw new Kernel.Exceptions.ColorException(Translate.DoTranslation("Invalid blue color specifier."));
+                throw new KernelException(KernelExceptionType.Color, Translate.DoTranslation("Invalid blue color specifier."));
             return $"#{R:X2}{G:X2}{B:X2}";
         }
 

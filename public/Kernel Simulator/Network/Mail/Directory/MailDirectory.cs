@@ -19,6 +19,7 @@
 using System;
 using System.Text;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.Shells.Mail;
 using MailKit;
@@ -51,7 +52,7 @@ namespace KS.Network.Mail.Directory
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to create folder {0}: {1}", Directory, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                throw new Kernel.Exceptions.MailException(Translate.DoTranslation("Unable to create mail folder {0}: {1}"), ex, Directory, ex.Message);
+                throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Unable to create mail folder {0}: {1}"), ex, Directory, ex.Message);
             }
         }
 
@@ -75,7 +76,7 @@ namespace KS.Network.Mail.Directory
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to delete folder {0}: {1}", Directory, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                throw new Kernel.Exceptions.MailException(Translate.DoTranslation("Unable to delete mail folder {0}: {1}"), ex, Directory, ex.Message);
+                throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Unable to delete mail folder {0}: {1}"), ex, Directory, ex.Message);
             }
         }
 
@@ -100,7 +101,7 @@ namespace KS.Network.Mail.Directory
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to delete folder {0}: {1}", Directory, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                throw new Kernel.Exceptions.MailException(Translate.DoTranslation("Unable to delete mail folder {0}: {1}"), ex, Directory, ex.Message);
+                throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Unable to delete mail folder {0}: {1}"), ex, Directory, ex.Message);
             }
         }
 
@@ -122,7 +123,7 @@ namespace KS.Network.Mail.Directory
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to open folder {0}: {1}", Directory, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                throw new Kernel.Exceptions.MailException(Translate.DoTranslation("Unable to open mail folder {0}: {1}"), ex, Directory, ex.Message);
+                throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Unable to open mail folder {0}: {1}"), ex, Directory, ex.Message);
             }
         }
 
@@ -183,7 +184,7 @@ namespace KS.Network.Mail.Directory
             }
             else
             {
-                throw new Kernel.Exceptions.NoSuchMailDirectoryException(Translate.DoTranslation("Mail folder {0} not found."), FolderString);
+                throw new KernelException(KernelExceptionType.NoSuchMailDirectory, Translate.DoTranslation("Mail folder {0} not found."), FolderString);
             }
         }
 

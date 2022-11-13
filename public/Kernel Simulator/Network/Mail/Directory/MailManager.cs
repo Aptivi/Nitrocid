@@ -22,6 +22,7 @@ using System.Linq;
 using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.Shells.Mail;
@@ -133,7 +134,7 @@ namespace KS.Network.Mail.Directory
             else if (Message > MaxMessagesIndex)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", Message, MaxMessagesIndex);
-                throw new Kernel.Exceptions.MailException(Translate.DoTranslation("Message specified is not found."));
+                throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Message specified is not found."));
             }
 
             lock (MailLogin.IMAP_Client.SyncRoot)
@@ -251,7 +252,7 @@ namespace KS.Network.Mail.Directory
             else if (Message > MaxMessagesIndex)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", Message, MaxMessagesIndex);
-                throw new Kernel.Exceptions.MailException(Translate.DoTranslation("Message specified is not found."));
+                throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Message specified is not found."));
             }
 
             lock (MailLogin.IMAP_Client.SyncRoot)

@@ -23,6 +23,7 @@ using KS.ConsoleBase.Colors;
 using KS.Files.Folders;
 using KS.Kernel;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Network.Base;
@@ -320,7 +321,7 @@ namespace KS.Misc.Probers
                 DebugWriter.WriteDebugStackTrace(ex);
                 Kernel.Events.EventsManager.FireEvent("PlaceholderParseError", text, ex);
                 if (ThrowIfFailure)
-                    throw new Kernel.Exceptions.InvalidPlaceholderException(Translate.DoTranslation("Error trying to parse placeholders. {0}"), ex.Message);
+                    throw new KernelException(KernelExceptionType.InvalidPlaceholder, Translate.DoTranslation("Error trying to parse placeholders. {0}"), ex.Message);
             }
             return text;
         }

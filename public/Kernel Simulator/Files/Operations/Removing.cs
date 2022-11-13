@@ -172,7 +172,7 @@ namespace KS.Files.Operations
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Trying to remove {0} which is not found.", Target);
-                throw new FilesystemException(Translate.DoTranslation("Can't remove {0} because it doesn't exist."), Target);
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Can't remove {0} because it doesn't exist."), Target);
             }
         }
 

@@ -19,6 +19,7 @@
 using System;
 using System.Reflection;
 using KS.Kernel;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 
 namespace KS.Files
@@ -294,7 +295,7 @@ namespace KS.Files
 
                 default:
                     {
-                        throw new Kernel.Exceptions.InvalidKernelPathException(Translate.DoTranslation("Invalid kernel path type."));
+                        throw new KernelException(KernelExceptionType.InvalidKernelPath, Translate.DoTranslation("Invalid kernel path type."));
                     }
             }
         }

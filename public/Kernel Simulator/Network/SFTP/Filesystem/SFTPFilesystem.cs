@@ -24,6 +24,7 @@ using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.Shells.SFTP;
 
@@ -101,7 +102,7 @@ namespace KS.Network.SFTP.Filesystem
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    throw new Kernel.Exceptions.SFTPFilesystemException(Translate.DoTranslation("Failed to list remote files: {0}"), ex, ex.Message);
+                    throw new KernelException(KernelExceptionType.SFTPFilesystem, Translate.DoTranslation("Failed to list remote files: {0}"), ex, ex.Message);
                 }
             }
             else
@@ -131,14 +132,14 @@ namespace KS.Network.SFTP.Filesystem
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", Target);
-                    throw new Kernel.Exceptions.SFTPFilesystemException(Translate.DoTranslation("{0} is not found in the server."), Target);
+                    throw new KernelException(KernelExceptionType.SFTPFilesystem, Translate.DoTranslation("{0} is not found in the server."), Target);
                 }
                 DebugWriter.WriteDebug(DebugLevel.I, "Deleted {0}", Target);
                 return true;
             }
             else
             {
-                throw new Kernel.Exceptions.SFTPFilesystemException(Translate.DoTranslation("You must connect to server with administrative privileges before performing the deletion."));
+                throw new KernelException(KernelExceptionType.SFTPFilesystem, Translate.DoTranslation("You must connect to server with administrative privileges before performing the deletion."));
             }
         }
 
@@ -166,7 +167,7 @@ namespace KS.Network.SFTP.Filesystem
                     else
                     {
                         // Directory doesn't exist, go to the old directory
-                        throw new Kernel.Exceptions.SFTPFilesystemException(Translate.DoTranslation("Directory {0} not found."), Directory);
+                        throw new KernelException(KernelExceptionType.SFTPFilesystem, Translate.DoTranslation("Directory {0} not found."), Directory);
                     }
                 }
                 else
@@ -198,7 +199,7 @@ namespace KS.Network.SFTP.Filesystem
                 }
                 else
                 {
-                    throw new Kernel.Exceptions.SFTPFilesystemException(Translate.DoTranslation("Local directory {0} doesn't exist."), Directory);
+                    throw new KernelException(KernelExceptionType.SFTPFilesystem, Translate.DoTranslation("Local directory {0} doesn't exist."), Directory);
                 }
             }
             else

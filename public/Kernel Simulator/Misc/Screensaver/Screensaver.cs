@@ -27,6 +27,7 @@ using KS.ConsoleBase.Inputs;
 using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Screensaver.Customized;
 using KS.Misc.Screensaver.Displays;
@@ -259,7 +260,7 @@ namespace KS.Misc.Screensaver
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "{0} is not found.", saver);
-                throw new Kernel.Exceptions.NoSuchScreensaverException(Translate.DoTranslation("Screensaver {0} not found in database. Check the name and try again."), saver);
+                throw new KernelException(KernelExceptionType.NoSuchScreensaver, Translate.DoTranslation("Screensaver {0} not found in database. Check the name and try again."), saver);
             }
         }
 
