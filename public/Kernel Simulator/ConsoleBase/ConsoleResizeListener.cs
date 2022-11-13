@@ -24,11 +24,32 @@ using System.Threading;
 
 namespace KS.ConsoleBase
 {
-    internal static class ConsoleResizeListener
+    /// <summary>
+    /// The console resize listener module
+    /// </summary>
+    public static class ConsoleResizeListener
     {
         private static int CurrentWindowWidth;
         private static int CurrentWindowHeight;
         private static readonly KernelThread ResizeListenerThread = new("Console Resize Listener Thread", true, PollForResize);
+        private static bool ResizeDetected;
+
+        /// <summary>
+        /// This property checks to see if the console has been resized since the last time it has been called or the listener has started.
+        /// </summary>
+        public static bool Resized
+        { 
+            get
+            {
+                if (ResizeDetected)
+                {
+                    // The console has been resized.
+                    ResizeDetected = false;
+                    return true;
+                }
+                return false;
+            }
+        }
 
         private static void PollForResize()
         {
@@ -39,6 +60,9 @@ namespace KS.ConsoleBase
                     Thread.Sleep(5);
                     if (CurrentWindowHeight != ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleWrapper.WindowWidth)
                     {
+                        ResizeDetected = true;
+                        DebugWriter.WriteDebug(DebugLevel.W, "Console resize detected! Old width x height: {0}x{1} | New width x height: {2}x{3}", CurrentWindowWidth, CurrentWindowHeight, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
+                        DebugWriter.WriteDebug(DebugLevel.W, "Userspace application will have to call Resized to set ResizeDetected back to false.");
                         EventsManager.FireEvent("ResizeDetected", CurrentWindowWidth, CurrentWindowHeight, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
                         CurrentWindowWidth = ConsoleWrapper.WindowWidth;
                         CurrentWindowHeight = ConsoleWrapper.WindowHeight;
