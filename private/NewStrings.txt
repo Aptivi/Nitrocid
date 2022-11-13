@@ -175,5 +175,6 @@ Condition parsing failed. Please check your syntax to meet the operator's expect
 An error occurred while trying to parse the UESH script file. Check your script file for errors and correct them.
 A user creation error occurred.
 A group management error occurred.
+A general network error occurred. Should you be trying to connect to a remote end, make sure that you're connected to the Internet or to your local network.
 
 ==========================================================================================================================================

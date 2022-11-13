@@ -109,15 +109,7 @@ namespace KS.Network.SpeedDial
             else if (ThrowException)
             {
                 // Entry already exists! Throw an exception if needed.
-                // TODO: Implement general network exception
-                if (SpeedDialType == SpeedDialType.FTP)
-                {
-                    throw new KernelException(KernelExceptionType.FTPNetwork, Translate.DoTranslation("Entry already exists."));
-                }
-                else if (SpeedDialType == SpeedDialType.SFTP)
-                {
-                    throw new KernelException(KernelExceptionType.SFTPNetwork, Translate.DoTranslation("Entry already exists."));
-                }
+                throw new KernelException(KernelExceptionType.Network, Translate.DoTranslation("Entry already exists."));
             }
         }
 

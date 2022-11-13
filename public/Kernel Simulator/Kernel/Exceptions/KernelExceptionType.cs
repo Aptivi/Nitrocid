@@ -259,5 +259,9 @@ namespace KS.Kernel.Exceptions
         /// A user management error occurred.
         /// </summary>
         UserManagement,
+        /// <summary>
+        /// A general network error occurred. Should you be trying to connect to a remote end, make sure that you're connected to the Internet or to your local network.
+        /// </summary>
+        Network,
     }
 }
