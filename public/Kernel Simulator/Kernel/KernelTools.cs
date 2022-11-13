@@ -454,11 +454,6 @@ namespace KS.Kernel
                 TextWriterColor.Write("KS: " + Translate.DoTranslation("Running from GRILO?") + $" {KernelPlatform.IsRunningFromGrilo()}");
             }
 
-            // Check to see if running on macOS, since we no longer support it.
-            // WARNING: Never localize the message as it's most likely to be removed.
-            if (KernelPlatform.IsOnMacOS())
-                TextWriterColor.Write("* You're running on macOS. This is not supported and may or may no longer work starting on January 1st, 2023. Until further notice, all support coming from macOS are denied.", true, ColorTools.ColTypes.Warning);
-
             // Check arguments
             if (Flags.ArgsOnBoot)
             {
