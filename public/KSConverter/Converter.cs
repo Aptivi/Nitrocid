@@ -50,6 +50,9 @@ namespace KSConverter
 
             try
             {
+                // Warning message
+                TextWriterColor.Write("Warning: this converter will stop being shipped with Kernel Simulator after January 2024 as part of the upcoming structural changes in Kernel Simulator. Please convert all your configuration files before this date.", true, ColTypes.Warning);
+
                 // Initialize all needed variables
                 var ListOfOldPaths = ConverterTools.GetOldPaths("");
                 var ListOfBackups = ConverterTools.GetOldPaths("KSBackup");
