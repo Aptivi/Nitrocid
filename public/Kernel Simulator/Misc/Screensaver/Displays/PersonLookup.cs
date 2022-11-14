@@ -190,7 +190,7 @@ namespace KS.Misc.Screensaver.Displays
                 TextWriterWhereColor.WriteWhere("  - Name:                {0}", 0, 1, false, GeneratedName);
                 TextWriterWhereColor.WriteWhere("  - First Name:          {0}", 0, 2, false, FirstName);
                 TextWriterWhereColor.WriteWhere("  - Last Name / Surname: {0}", 0, 3, false, LastName);
-                TextWriterWhereColor.WriteWhere("  - Age:                 {0} years old", 0, 4, false, FinalAge);
+                TextWriterWhereColor.WriteWhere("  - Age:                 {0} years old", 0, 4, false, 0, FinalAge);
                 TextWriterWhereColor.WriteWhere("  - Birth date:          {0}", 0, 5, false, TimeDateRenderers.Render(Birthdate));
 
                 // Lookup delay

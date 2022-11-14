@@ -159,13 +159,21 @@ namespace KS.Misc.Writers.WriterBase.PlainWriters
         /// Just writes text to file without line terminator, since we can't do positioning.
         /// </summary>
         /// <inheritdoc/>
-        public void WriteWherePlain(string msg, int Left, int Top, params object[] vars) => WriteWherePlain(msg, Left, Top, false, vars);
+        public void WriteWherePlain(string msg, int Left, int Top, params object[] vars) => 
+            WriteWherePlain(msg, Left, Top, false, vars);
 
         /// <summary>
         /// Just writes text to file without line terminator, since we can't do positioning.
         /// </summary>
         /// <inheritdoc/>
-        public void WriteWherePlain(string msg, int Left, int Top, bool Return, params object[] vars)
+        public void WriteWherePlain(string msg, int Left, int Top, bool Return, params object[] vars) =>
+            WriteWherePlain(msg, Left, Top, Return, 0, vars);
+
+        /// <summary>
+        /// Just writes text to file without line terminator, since we can't do positioning.
+        /// </summary>
+        /// <inheritdoc/>
+        public void WriteWherePlain(string msg, int Left, int Top, bool Return, int RightMargin, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {

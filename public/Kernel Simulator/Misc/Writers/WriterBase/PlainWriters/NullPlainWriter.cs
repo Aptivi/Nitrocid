@@ -50,6 +50,12 @@ namespace KS.Misc.Writers.WriterBase.PlainWriters
         public void WriteWherePlain(string msg, int Left, int Top, bool Return, params object[] vars) { }
 
         /// <summary>
+        /// Just writes text to the void without line terminator, since we can't do positioning.
+        /// </summary>
+        /// <inheritdoc/>
+        public void WriteWherePlain(string msg, int Left, int Top, bool Return, int RightMargin, params object[] vars) { }
+
+        /// <summary>
         /// Just writes text slowly to the void, since we can't do positioning.
         /// </summary>
         /// <inheritdoc/>

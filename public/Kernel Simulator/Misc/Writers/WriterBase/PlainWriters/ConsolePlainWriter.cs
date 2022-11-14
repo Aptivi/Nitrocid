@@ -116,10 +116,15 @@ namespace KS.Misc.Writers.WriterBase.PlainWriters
         }
 
         /// <inheritdoc/>
-        public void WriteWherePlain(string msg, int Left, int Top, params object[] vars) => WriteWherePlain(msg, Left, Top, false, vars);
+        public void WriteWherePlain(string msg, int Left, int Top, params object[] vars) => 
+            WriteWherePlain(msg, Left, Top, false, 0, vars);
 
         /// <inheritdoc/>
-        public void WriteWherePlain(string msg, int Left, int Top, bool Return, params object[] vars)
+        public void WriteWherePlain(string msg, int Left, int Top, bool Return, params object[] vars) => 
+            WriteWherePlain(msg, Left, Top, Return, 0, vars);
+
+        /// <inheritdoc/>
+        public void WriteWherePlain(string msg, int Left, int Top, bool Return, int RightMargin, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
@@ -140,7 +145,7 @@ namespace KS.Misc.Writers.WriterBase.PlainWriters
                         string MessageParagraph = Paragraphs[MessageParagraphIndex];
                         foreach (char ParagraphChar in MessageParagraph)
                         {
-                            if (ConsoleWrapper.CursorLeft == ConsoleWrapper.WindowWidth)
+                            if (ConsoleWrapper.CursorLeft == ConsoleWrapper.WindowWidth - RightMargin)
                             {
                                 if (ConsoleWrapper.CursorTop == ConsoleWrapper.BufferHeight - 1)
                                 {

@@ -39,7 +39,8 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="Left">Column number in console</param>
         /// <param name="Top">Row number in console</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhere(string msg, int Left, int Top, params object[] vars) => WriteWhere(msg, Left, Top, false, vars);
+        public static void WriteWhere(string msg, int Left, int Top, params object[] vars) => 
+            WriteWhere(msg, Left, Top, false, 0, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
@@ -49,14 +50,26 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="Top">Row number in console</param>
         /// <param name="Return">Whether or not to return to old position</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhere(string msg, int Left, int Top, bool Return, params object[] vars)
+        public static void WriteWhere(string msg, int Left, int Top, bool Return, params object[] vars) => 
+            WriteWhere(msg, Left, Top, Return, 0, vars);
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
+        /// </summary>
+        /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="Return">Whether or not to return to old position</param>
+        /// <param name="RightMargin">The right margin</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteWhere(string msg, int Left, int Top, bool Return, int RightMargin, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
                 try
                 {
                     // Write text in another place. By the way, we check the text for newlines and console width excess
-                    WriterPlainManager.CurrentPlain.WriteWherePlain(msg, Left, Top, Return, vars);
+                    WriterPlainManager.CurrentPlain.WriteWherePlain(msg, Left, Top, Return, RightMargin, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -74,7 +87,8 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="Top">Row number in console</param>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhere(string msg, int Left, int Top, ColorTools.ColTypes colorType, params object[] vars) => WriteWhere(msg, Left, Top, false, colorType, vars);
+        public static void WriteWhere(string msg, int Left, int Top, ColorTools.ColTypes colorType, params object[] vars) => 
+            WriteWhere(msg, Left, Top, false, 0, colorType, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
@@ -85,7 +99,20 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="Return">Whether or not to return to old position</param>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhere(string msg, int Left, int Top, bool Return, ColorTools.ColTypes colorType, params object[] vars)
+        public static void WriteWhere(string msg, int Left, int Top, bool Return, ColorTools.ColTypes colorType, params object[] vars) => 
+            WriteWhere(msg, Left, Top, Return, 0, colorType, vars);
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
+        /// </summary>
+        /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="Return">Whether or not to return to old position</param>
+        /// <param name="RightMargin">The right margin</param>
+        /// <param name="colorType">A type of colors that will be changed.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteWhere(string msg, int Left, int Top, bool Return, int RightMargin, ColorTools.ColTypes colorType, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
@@ -95,7 +122,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(colorType);
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
-                    WriteWhere(msg, Left, Top, Return, vars);
+                    WriteWhere(msg, Left, Top, Return, RightMargin, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -114,7 +141,8 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhere(string msg, int Left, int Top, ColorTools.ColTypes colorTypeForeground, ColorTools.ColTypes colorTypeBackground, params object[] vars) => WriteWhere(msg, Left, Top, false, colorTypeForeground, colorTypeBackground, vars);
+        public static void WriteWhere(string msg, int Left, int Top, ColorTools.ColTypes colorTypeForeground, ColorTools.ColTypes colorTypeBackground, params object[] vars) => 
+            WriteWhere(msg, Left, Top, false, 0, colorTypeForeground, colorTypeBackground, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
@@ -126,7 +154,21 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhere(string msg, int Left, int Top, bool Return, ColorTools.ColTypes colorTypeForeground, ColorTools.ColTypes colorTypeBackground, params object[] vars)
+        public static void WriteWhere(string msg, int Left, int Top, bool Return, ColorTools.ColTypes colorTypeForeground, ColorTools.ColTypes colorTypeBackground, params object[] vars) => 
+            WriteWhere(msg, Left, Top, Return, 0, colorTypeForeground, colorTypeBackground, vars);
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
+        /// </summary>
+        /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="Return">Whether or not to return to old position</param>
+        /// <param name="RightMargin">The right margin</param>
+        /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
+        /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteWhere(string msg, int Left, int Top, bool Return, int RightMargin, ColorTools.ColTypes colorTypeForeground, ColorTools.ColTypes colorTypeBackground, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
@@ -137,7 +179,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(colorTypeBackground, true);
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
-                    WriteWhere(msg, Left, Top, Return, vars);
+                    WriteWhere(msg, Left, Top, Return, RightMargin, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -155,7 +197,8 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="Top">Row number in console</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhere(string msg, int Left, int Top, ConsoleColors color, params object[] vars) => WriteWhere(msg, Left, Top, false, color, vars);
+        public static void WriteWhere(string msg, int Left, int Top, ConsoleColors color, params object[] vars) => 
+            WriteWhere(msg, Left, Top, false, 0, color, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
@@ -166,7 +209,20 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="Return">Whether or not to return to old position</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhere(string msg, int Left, int Top, bool Return, ConsoleColors color, params object[] vars)
+        public static void WriteWhere(string msg, int Left, int Top, bool Return, ConsoleColors color, params object[] vars) => 
+            WriteWhere(msg, Left, Top, Return, 0, color, vars);
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
+        /// </summary>
+        /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="Return">Whether or not to return to old position</param>
+        /// <param name="RightMargin">The right margin</param>
+        /// <param name="color">A color that will be changed to.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteWhere(string msg, int Left, int Top, bool Return, int RightMargin, ConsoleColors color, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
@@ -176,7 +232,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
-                    WriteWhere(msg, Left, Top, Return, vars);
+                    WriteWhere(msg, Left, Top, Return, RightMargin, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -195,7 +251,8 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhere(string msg, int Left, int Top, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars) => WriteWhere(msg, Left, Top, false, ForegroundColor, BackgroundColor, vars);
+        public static void WriteWhere(string msg, int Left, int Top, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars) => 
+            WriteWhere(msg, Left, Top, false, 0, ForegroundColor, BackgroundColor, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
@@ -207,7 +264,21 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhere(string msg, int Left, int Top, bool Return, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars)
+        public static void WriteWhere(string msg, int Left, int Top, bool Return, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars) => 
+            WriteWhere(msg, Left, Top, Return, 0, ForegroundColor, BackgroundColor, vars);
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
+        /// </summary>
+        /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="Return">Whether or not to return to old position</param>
+        /// <param name="RightMargin">The right margin</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteWhere(string msg, int Left, int Top, bool Return, int RightMargin, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
@@ -235,7 +306,8 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="Top">Row number in console</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhere(string msg, int Left, int Top, Color color, params object[] vars) => WriteWhere(msg, Left, Top, false, color, vars);
+        public static void WriteWhere(string msg, int Left, int Top, Color color, params object[] vars) => 
+            WriteWhere(msg, Left, Top, false, 0, color, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
@@ -246,7 +318,20 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="Return">Whether or not to return to old position</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhere(string msg, int Left, int Top, bool Return, Color color, params object[] vars)
+        public static void WriteWhere(string msg, int Left, int Top, bool Return, Color color, params object[] vars) => 
+            WriteWhere(msg, Left, Top, Return, 0, color, vars);
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
+        /// </summary>
+        /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="Return">Whether or not to return to old position</param>
+        /// <param name="RightMargin">The right margin</param>
+        /// <param name="color">A color that will be changed to.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteWhere(string msg, int Left, int Top, bool Return, int RightMargin, Color color, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
@@ -256,7 +341,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
-                    WriteWhere(msg, Left, Top, Return, vars);
+                    WriteWhere(msg, Left, Top, Return, RightMargin, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -275,7 +360,8 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhere(string msg, int Left, int Top, Color ForegroundColor, Color BackgroundColor, params object[] vars) => WriteWhere(msg, Left, Top, false, ForegroundColor, BackgroundColor, vars);
+        public static void WriteWhere(string msg, int Left, int Top, Color ForegroundColor, Color BackgroundColor, params object[] vars) => 
+            WriteWhere(msg, Left, Top, false, 0, ForegroundColor, BackgroundColor, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
@@ -287,7 +373,21 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhere(string msg, int Left, int Top, bool Return, Color ForegroundColor, Color BackgroundColor, params object[] vars)
+        public static void WriteWhere(string msg, int Left, int Top, bool Return, Color ForegroundColor, Color BackgroundColor, params object[] vars) => 
+            WriteWhere(msg, Left, Top, Return, 0, ForegroundColor, BackgroundColor, vars);
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
+        /// </summary>
+        /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="Return">Whether or not to return to old position</param>
+        /// <param name="RightMargin">The right margin</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteWhere(string msg, int Left, int Top, bool Return, int RightMargin, Color ForegroundColor, Color BackgroundColor, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
