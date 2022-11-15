@@ -46,6 +46,7 @@ namespace KS.Shell.Shells.Test
             // Show the welcome message
             TextWriterColor.Write();
             SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Welcome to Test Shell!"), true);
+            TextWriterColor.Write("We recommend that you use the newer testing facility. The kernel argument will help you get to it.");
 
             // Actual shell logic
             while (!Bail)

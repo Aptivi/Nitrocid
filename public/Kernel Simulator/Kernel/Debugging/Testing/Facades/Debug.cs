@@ -16,28 +16,31 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Arguments.ArgumentBase;
-using KS.Kernel.Debugging.Testing;
+using KS.ConsoleBase.Colors;
+using KS.Languages;
+using KS.Misc.Writers.ConsoleWriters;
 using System;
 
-namespace KS.Arguments.KernelArguments
+namespace KS.Kernel.Debugging.Testing.Facades
 {
-    class TestInteractiveArgument : ArgumentExecutor, IArgument
+    internal class Debug : TestFacade
     {
-
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override string TestName => Translate.DoTranslation("Enables the debugger");
+        public override void Run()
         {
-            Kernel.Kernel.StageTimer.Stop();
-            TestInteractive.Open();
-            Kernel.Kernel.StageTimer.Start();
-            if (TestInteractive.ShutdownFlag)
+            if (Flags.DebugMode == false)
             {
-                // Clear the console and reset the colors
-                ConsoleBase.ConsoleWrapper.ResetColor();
-                ConsoleBase.ConsoleWrapper.Clear();
-                Environment.Exit(0);
+                Flags.DebugMode = true;
+            }
+            else
+            {
+                // This is to abort the remote debugger.
+                Flags.RebootRequested = true;
+
+                // Now, do the job!
+                Flags.DebugMode = false;
+                Flags.RebootRequested = false;
             }
         }
-
     }
 }

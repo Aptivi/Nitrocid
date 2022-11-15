@@ -8,10 +8,6 @@
       "commandName": "Project",
       "commandLineArgs": "args"
     },
-    "KS - Test Shell": {
-      "commandName": "Project",
-      "commandLineArgs": "testInteractive"
-    },
     "KS - Reset": {
       "commandName": "Project",
       "commandLineArgs": "reset"
@@ -50,6 +46,10 @@
     "KS - new config paths [Debug]": {
       "commandName": "Project",
       "commandLineArgs": "newconfigpaths debug"
+    },
+    "KS - Test Interactive": {
+      "commandName": "Project",
+      "commandLineArgs": "testInteractive"
     }
   }
 }

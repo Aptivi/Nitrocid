@@ -176,5 +176,15 @@ An error occurred while trying to parse the UESH script file. Check your script 
 A user creation error occurred.
 A group management error occurred.
 A general network error occurred. Should you be trying to connect to a remote end, make sure that you're connected to the Internet or to your local network.
+Print a string to console
+Exits the testing mode and starts the kernel
+Shutdown
+Exits the testing mode and shuts down the kernel
+Choose a test facade to run
+Did the test run as expected?
+Print a string to console with formatting
+Print a string to debugger
+Print a string to debugger with formatting
+Enables the debugger
 
 ==========================================================================================================================================

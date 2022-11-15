@@ -16,28 +16,14 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Arguments.ArgumentBase;
-using KS.Kernel.Debugging.Testing;
-using System;
-
-namespace KS.Arguments.KernelArguments
+namespace KS.Kernel.Debugging.Testing
 {
-    class TestInteractiveArgument : ArgumentExecutor, IArgument
+    internal abstract class TestFacade
     {
+        internal TestStatus status;
+        public virtual TestStatus TestStatus { get => status; }
+        public virtual string TestName { get; }
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            Kernel.Kernel.StageTimer.Stop();
-            TestInteractive.Open();
-            Kernel.Kernel.StageTimer.Start();
-            if (TestInteractive.ShutdownFlag)
-            {
-                // Clear the console and reset the colors
-                ConsoleBase.ConsoleWrapper.ResetColor();
-                ConsoleBase.ConsoleWrapper.Clear();
-                Environment.Exit(0);
-            }
-        }
-
+        public virtual void Run() { }
     }
 }

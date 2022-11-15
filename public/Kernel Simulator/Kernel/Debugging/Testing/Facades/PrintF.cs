@@ -16,28 +16,18 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Arguments.ArgumentBase;
-using KS.Kernel.Debugging.Testing;
-using System;
+using KS.ConsoleBase.Colors;
+using KS.Languages;
+using KS.Misc.Writers.ConsoleWriters;
 
-namespace KS.Arguments.KernelArguments
+namespace KS.Kernel.Debugging.Testing.Facades
 {
-    class TestInteractiveArgument : ArgumentExecutor, IArgument
+    internal class PrintF : TestFacade
     {
-
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override string TestName => Translate.DoTranslation("Print a string to console with formatting");
+        public override void Run()
         {
-            Kernel.Kernel.StageTimer.Stop();
-            TestInteractive.Open();
-            Kernel.Kernel.StageTimer.Start();
-            if (TestInteractive.ShutdownFlag)
-            {
-                // Clear the console and reset the colors
-                ConsoleBase.ConsoleWrapper.ResetColor();
-                ConsoleBase.ConsoleWrapper.Clear();
-                Environment.Exit(0);
-            }
+            TextWriterColor.Write("Hi, {0}!", true, ColorTools.ColTypes.Success, "Kernel Simulator");
         }
-
     }
 }
