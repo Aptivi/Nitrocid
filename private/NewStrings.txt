@@ -186,5 +186,6 @@ Print a string to console with formatting
 Print a string to debugger
 Print a string to debugger with formatting
 Enables the debugger
+Unfortunately, an invalid message type was given, so we don't exactly know what is the problem. Try turning on the debugger and reproducing the problem.
 
 ==========================================================================================================================================
