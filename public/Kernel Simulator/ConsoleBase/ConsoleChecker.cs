@@ -39,8 +39,8 @@ namespace KS.ConsoleBase
         /// The severity of the checks can be describes in two categories:
         /// <br></br>
         /// <br></br>
-        /// 1. Error: We'll throw <see cref="InsaneConsoleDetectedException"/> when we detect that the console is not conforming to the
-        ///           standards.
+        /// 1. Error: We'll throw <see cref="KernelException"/> with type <see cref="KernelExceptionType.InsaneConsoleDetected"/> when we
+        ///           detect that the console is not conforming to the standards.
         /// <br></br>
         /// 2. Warning: We'll just issue a warning in yellow text using the plain 16-color writer when we detect that the console is not
         ///             supporting optional features, like 256-colors.

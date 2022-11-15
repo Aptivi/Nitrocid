@@ -38,7 +38,6 @@ namespace KS.Network.SFTP.Filesystem
         /// </summary>
         /// <param name="Path">Path to folder</param>
         /// <returns>The list if successful; null if unsuccessful</returns>
-        /// <exception cref="Kernel.Exceptions.SFTPFilesystemException"></exception>
         /// <exception cref="InvalidOperationException"></exception>
         public static List<string> SFTPListRemote(string Path) => SFTPListRemote(Path, SFTPShellCommon.SFTPShowDetailsInList);
 
@@ -48,7 +47,6 @@ namespace KS.Network.SFTP.Filesystem
         /// <param name="Path">Path to folder</param>
         /// <param name="ShowDetails">Shows the details of the file</param>
         /// <returns>The list if successful; null if unsuccessful</returns>
-        /// <exception cref="Kernel.Exceptions.SFTPFilesystemException"></exception>
         /// <exception cref="InvalidOperationException"></exception>
         public static List<string> SFTPListRemote(string Path, bool ShowDetails)
         {
@@ -116,7 +114,6 @@ namespace KS.Network.SFTP.Filesystem
         /// </summary>
         /// <param name="Target">Target folder or file</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        /// <exception cref="Kernel.Exceptions.SFTPFilesystemException"></exception>
         public static bool SFTPDeleteRemote(string Target)
         {
             if (SFTPShellCommon.SFTPConnected)
@@ -148,7 +145,6 @@ namespace KS.Network.SFTP.Filesystem
         /// </summary>
         /// <param name="Directory">Remote directory</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        /// <exception cref="Kernel.Exceptions.SFTPFilesystemException"></exception>
         /// <exception cref="InvalidOperationException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
         public static bool SFTPChangeRemoteDir(string Directory)

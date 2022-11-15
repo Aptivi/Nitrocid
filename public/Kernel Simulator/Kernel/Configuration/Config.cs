@@ -1353,13 +1353,11 @@ namespace KS.Kernel.Configuration
         /// <summary>
         /// Creates the kernel configuration file
         /// </summary>
-        /// <exception cref="Exceptions.ConfigException"></exception>
         public static void CreateConfig() => CreateConfig(Paths.GetKernelPath(KernelPathType.Configuration));
 
         /// <summary>
         /// Creates the kernel configuration file with custom path
         /// </summary>
-        /// <exception cref="Exceptions.ConfigException"></exception>
         public static void CreateConfig(string ConfigPath)
         {
             if (Flags.SafeMode)
@@ -1381,21 +1379,18 @@ namespace KS.Kernel.Configuration
         /// Creates the kernel configuration file
         /// </summary>
         /// <returns>True if successful; False if unsuccessful.</returns>
-        /// <exception cref="Exceptions.ConfigException"></exception>
         public static bool TryCreateConfig() => TryCreateConfig(Paths.GetKernelPath(KernelPathType.Configuration));
 
         /// <summary>
         /// Creates the kernel configuration file with custom path
         /// </summary>
         /// <returns>True if successful; False if unsuccessful.</returns>
-        /// <exception cref="Exceptions.ConfigException"></exception>
         public static bool TryCreateConfig(string ConfigPath) => TryCreateConfig(JObject.Parse(File.ReadAllText(ConfigPath)));
 
         /// <summary>
         /// Creates the kernel configuration file with custom path
         /// </summary>
         /// <returns>True if successful; False if unsuccessful.</returns>
-        /// <exception cref="Exceptions.ConfigException"></exception>
         public static bool TryCreateConfig(JToken ConfigToken)
         {
             try
@@ -1414,7 +1409,6 @@ namespace KS.Kernel.Configuration
         /// <summary>
         /// Configures the kernel according to the kernel failsafe configuration
         /// </summary>
-        /// <exception cref="Exceptions.ConfigException"></exception>
         public static void ReadFailsafeConfig()
         {
             if (Flags.OptInToNewConfigReader)
@@ -1426,7 +1420,6 @@ namespace KS.Kernel.Configuration
         /// <summary>
         /// Configures the kernel according to the kernel configuration file
         /// </summary>
-        /// <exception cref="Exceptions.ConfigException"></exception>
         public static void ReadConfig()
         {
             if (Flags.OptInToNewConfigReader)
@@ -1450,7 +1443,6 @@ namespace KS.Kernel.Configuration
         /// <summary>
         /// Configures the kernel according to the custom kernel configuration file (new)
         /// </summary>
-        /// <exception cref="Exceptions.ConfigException"></exception>
         public static void ReadConfigNew(JToken ConfigToken, bool Force = false)
         {
             if (Flags.SafeMode & !Force)
@@ -1590,7 +1582,6 @@ namespace KS.Kernel.Configuration
         /// <summary>
         /// Configures the kernel according to the custom kernel configuration file
         /// </summary>
-        /// <exception cref="Exceptions.ConfigException"></exception>
         public static void ReadConfig(JToken ConfigToken, bool Force = false)
         {
             if (Flags.SafeMode & !Force)
@@ -2515,7 +2506,6 @@ namespace KS.Kernel.Configuration
         /// Configures the kernel according to the kernel configuration file
         /// </summary>
         /// <returns>True if successful; False if unsuccessful</returns>
-        /// <exception cref="Exceptions.ConfigException"></exception>
         public static bool TryReadConfig() => TryReadConfig(Paths.GetKernelPath(KernelPathType.Configuration));
 
         /// <summary>
@@ -2532,7 +2522,6 @@ namespace KS.Kernel.Configuration
         /// Configures the kernel according to the custom kernel configuration file
         /// </summary>
         /// <returns>True if successful; False if unsuccessful</returns>
-        /// <exception cref="Exceptions.ConfigException"></exception>
         public static bool TryReadConfig(JToken ConfigToken)
         {
             try

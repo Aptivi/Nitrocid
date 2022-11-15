@@ -156,7 +156,6 @@ namespace KS.Files.Operations
         /// </summary>
         /// <param name="Target">Path to file or directory</param>
         /// <param name="secureRemove">Securely remove file by filling it with zeroes</param>
-        /// <exception cref="FilesystemException"></exception>
         public static void RemoveFileOrDir(string Target, bool secureRemove = false)
         {
             if (Checking.FileExists(Target))

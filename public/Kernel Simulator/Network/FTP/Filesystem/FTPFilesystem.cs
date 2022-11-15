@@ -46,7 +46,6 @@ namespace KS.Network.FTP.Filesystem
         /// </summary>
         /// <param name="Path">Path to folder</param>
         /// <returns>The list if successful; null if unsuccessful</returns>
-        /// <exception cref="Kernel.Exceptions.FTPFilesystemException"></exception>
         /// <exception cref="InvalidOperationException"></exception>
         public static List<string> FTPListRemote(string Path) => FTPListRemote(Path, FTPShellCommon.FtpShowDetailsInList);
 
@@ -56,7 +55,6 @@ namespace KS.Network.FTP.Filesystem
         /// <param name="Path">Path to folder</param>
         /// <param name="ShowDetails">Shows the details of the file</param>
         /// <returns>The list if successful; null if unsuccessful</returns>
-        /// <exception cref="Kernel.Exceptions.FTPFilesystemException"></exception>
         /// <exception cref="InvalidOperationException"></exception>
         public static List<string> FTPListRemote(string Path, bool ShowDetails)
         {
@@ -129,7 +127,6 @@ namespace KS.Network.FTP.Filesystem
         /// </summary>
         /// <param name="Target">Target folder or file</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        /// <exception cref="Kernel.Exceptions.FTPFilesystemException"></exception>
         public static bool FTPDeleteRemote(string Target)
         {
             if (FTPShellCommon.FtpConnected)
@@ -166,7 +163,6 @@ namespace KS.Network.FTP.Filesystem
         /// </summary>
         /// <param name="Directory">Remote directory</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        /// <exception cref="Kernel.Exceptions.FTPFilesystemException"></exception>
         /// <exception cref="InvalidOperationException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
         public static bool FTPChangeRemoteDir(string Directory)
@@ -204,7 +200,6 @@ namespace KS.Network.FTP.Filesystem
         /// </summary>
         /// <param name="Directory">Local directory to change to</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        /// <exception cref="Kernel.Exceptions.FTPFilesystemException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
         public static bool FTPChangeLocalDir(string Directory)
         {

@@ -119,7 +119,6 @@ namespace KS.Users.Groups
         /// </summary>
         /// <param name="PermType">Whether it be Admin or Disabled</param>
         /// <param name="Username">A username to be managed</param>
-        /// <exception cref="Kernel.Exceptions.GroupManagementException"></exception>
         public static void AddGroup(GroupType PermType, string Username)
         {
             // Sets the required groups to false.
@@ -178,7 +177,6 @@ namespace KS.Users.Groups
         /// <param name="PermType">Whether it be Admin or Disabled</param>
         /// <param name="Username">A username to be managed</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        /// <exception cref="Kernel.Exceptions.GroupManagementException"></exception>
         public static bool TryAddGroup(GroupType PermType, string Username)
         {
             try
@@ -197,7 +195,6 @@ namespace KS.Users.Groups
         /// </summary>
         /// <param name="PermType">Whether it be Admin or Disabled</param>
         /// <param name="Username">A username to be managed</param>
-        /// <exception cref="Kernel.Exceptions.GroupManagementException"></exception>
         public static void RemoveGroup(GroupType PermType, string Username)
         {
             // Sets the required groups to false.
@@ -259,7 +256,6 @@ namespace KS.Users.Groups
         /// <param name="PermType">Whether it be Admin or Disabled</param>
         /// <param name="Username">A username to be managed</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        /// <exception cref="Kernel.Exceptions.GroupManagementException"></exception>
         public static bool TryRemoveGroup(GroupType PermType, string Username)
         {
             try
@@ -278,7 +274,6 @@ namespace KS.Users.Groups
         /// </summary>
         /// <param name="OldName">Old username</param>
         /// <param name="Username">New username</param>
-        /// <exception cref="Kernel.Exceptions.GroupManagementException"></exception>
         public static void GroupEditForNewUser(string OldName, string Username)
         {
             // Edit username
@@ -315,7 +310,6 @@ namespace KS.Users.Groups
         /// <param name="OldName">Old username</param>
         /// <param name="Username">New username</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        /// <exception cref="Kernel.Exceptions.GroupManagementException"></exception>
         public static bool TryGroupEditForNewUser(string OldName, string Username)
         {
             try
@@ -333,7 +327,6 @@ namespace KS.Users.Groups
         /// Initializes groups for a new user with default settings
         /// </summary>
         /// <param name="NewUser">A new user name</param>
-        /// <exception cref="Kernel.Exceptions.GroupManagementException"></exception>
         public static void InitGroupsForNewUser(string NewUser)
         {
             // Initialize groups locally
@@ -346,7 +339,6 @@ namespace KS.Users.Groups
         /// </summary>
         /// <param name="NewUser">A new user name</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        /// <exception cref="Kernel.Exceptions.GroupManagementException"></exception>
         public static bool TryInitGroupsForNewUser(string NewUser)
         {
             try
@@ -363,7 +355,6 @@ namespace KS.Users.Groups
         /// <summary>
         /// Loads groups for all users
         /// </summary>
-        /// <exception cref="Kernel.Exceptions.GroupManagementException"></exception>
         public static void LoadGroups()
         {
             foreach (JObject UserToken in UserManagement.UsersToken)
@@ -398,7 +389,6 @@ namespace KS.Users.Groups
         /// Loads groups for all users
         /// </summary>
         /// <returns>True if successful; False if unsuccessful</returns>
-        /// <exception cref="Kernel.Exceptions.GroupManagementException"></exception>
         public static bool TryLoadGroups()
         {
             try

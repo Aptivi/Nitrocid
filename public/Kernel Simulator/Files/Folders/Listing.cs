@@ -70,7 +70,6 @@ namespace KS.Files.Folders
         /// <param name="Sorted">Whether the list is sorted or not</param>
         /// <param name="Recursive">Whether the list is recursive or not</param>
         /// <returns>List of filesystem entries if any. Empty list if folder is not found or is empty.</returns>
-        /// <exception cref="Kernel.Exceptions.FilesystemException"></exception>
         public static List<FileSystemInfo> CreateList(string folder, bool Sorted = false, bool Recursive = false)
         {
             Filesystem.ThrowOnInvalidPath(folder);

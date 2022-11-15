@@ -86,7 +86,6 @@ namespace KS.Users
         /// <param name="ModifyExisting">Changes the password of the existing user</param>
         /// <returns>True if successful; False if successful</returns>
         /// <exception cref="InvalidOperationException"></exception>
-        /// <exception cref="Kernel.Exceptions.UserCreationException"></exception>
         public static bool InitializeUser(string uninitUser, string unpassword = "", bool ComputationNeeded = true, bool ModifyExisting = false)
         {
             try
@@ -241,7 +240,6 @@ namespace KS.Users
         /// </summary>
         /// <param name="newUser">A new user</param>
         /// <param name="newPassword">A password</param>
-        /// <exception cref="Kernel.Exceptions.UserCreationException"></exception>
         public static bool AddUser(string newUser, string newPassword = "")
         {
             // Adds user
@@ -296,7 +294,6 @@ namespace KS.Users
         /// Removes a user from users database
         /// </summary>
         /// <param name="user">A user</param>
-        /// <exception cref="Kernel.Exceptions.UserManagementException"></exception>
         /// <remarks>This sub is an accomplice of in-shell command arguments.</remarks>
         public static void RemoveUser(string user)
         {
@@ -369,7 +366,6 @@ namespace KS.Users
         /// </summary>
         /// <param name="user">A user</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        /// <exception cref="Kernel.Exceptions.UserManagementException"></exception>
         /// <remarks>This sub is an accomplice of in-shell command arguments.</remarks>
         public static bool TryRemoveUser(string user)
         {
@@ -476,7 +472,6 @@ namespace KS.Users
         /// <param name="Target">Target username</param>
         /// <param name="CurrentPass">Current user password</param>
         /// <param name="NewPass">New user password</param>
-        /// <exception cref="Kernel.Exceptions.UserManagementException"></exception>
         public static void ChangePassword(string Target, string CurrentPass, string NewPass)
         {
             CurrentPass = Encryption.GetEncryptedString(CurrentPass, EncryptionAlgorithms.SHA256);
@@ -516,7 +511,6 @@ namespace KS.Users
         /// <param name="CurrentPass">Current user password</param>
         /// <param name="NewPass">New user password</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        /// <exception cref="Kernel.Exceptions.UserManagementException"></exception>
         public static bool TryChangePassword(string Target, string CurrentPass, string NewPass)
         {
             try

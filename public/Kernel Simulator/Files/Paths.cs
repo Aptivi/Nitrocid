@@ -223,7 +223,6 @@ namespace KS.Files
         /// </summary>
         /// <param name="PathType">Kernel path type</param>
         /// <returns>A kernel path</returns>
-        /// <exception cref="Kernel.Exceptions.InvalidKernelPathException"></exception>
         public static string GetKernelPath(KernelPathType PathType)
         {
             switch (PathType)

@@ -177,7 +177,6 @@ namespace KS.Kernel.Events
         /// </summary>
         /// <param name="EventName">Event name. Refer to <see cref="events"/>.</param>
         /// <param name="Params">Parameters for event</param>
-        /// <exception cref="Exceptions.NoSuchEventException"></exception>
         public static void FireEvent(string EventName, params object[] Params)
         {
             // Check to see if event exists
