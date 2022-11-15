@@ -66,13 +66,6 @@ namespace KS.Network.SpeedDial
             Making.MakeFile(Paths.GetKernelPath(SpeedDialEnum), false);
             string SpeedDialJsonContent = File.ReadAllText(Paths.GetKernelPath(SpeedDialEnum));
 
-            // If the speed dial file content is pre-0.0.16.0-RC1, convert it
-            if (SpeedDialJsonContent.StartsWith("["))
-            {
-                ConvertSpeedDialEntries(SpeedDialType);
-                SpeedDialJsonContent = File.ReadAllText(Paths.GetKernelPath(SpeedDialEnum));
-            }
-
             // Now, parse the contents
             return JObject.Parse(!string.IsNullOrEmpty(SpeedDialJsonContent) ? SpeedDialJsonContent : "{}");
         }
@@ -224,6 +217,7 @@ namespace KS.Network.SpeedDial
         /// </summary>
         /// <param name="SpeedDialType">Speed dial type</param>
         [Obsolete("There is a recent improvement to the speed dial functionality. We no longer support reading pre-API v1.3 KS versions.")]
+        // TODO: Consider removing this at the end of 0.1.0 Beta 1 development
         public static void ConvertSpeedDialEntries(SpeedDialType SpeedDialType)
         {
             // Get the speed dial path enumeration value from the speed dial type
