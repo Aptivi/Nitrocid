@@ -92,6 +92,7 @@ namespace KS.Kernel.Exceptions
                     { KernelExceptionType.UESHScript,                       Translate.DoTranslation("An error occurred while trying to parse the UESH script file. Check your script file for errors and correct them.") },
                     { KernelExceptionType.UserCreation,                     Translate.DoTranslation("A user creation error occurred.") },
                     { KernelExceptionType.UserManagement,                   Translate.DoTranslation("A user management error occurred.") },
+                    { KernelExceptionType.Network,                          Translate.DoTranslation("A general network error occurred. Should you be trying to connect to a remote end, make sure that you're connected to the Internet or to your local network.") },
                 };
             }
         }
