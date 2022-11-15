@@ -54,7 +54,6 @@ namespace KS.Shell.Shells.UESH.Commands
                 InputStates.Add(Parsing.IsBinaryFile(CombineInputPath));
 
             // Check to see if all inputs are either binary or text.
-            // TODO: Mixed combination?
             AreAllInputsBinary = InputStates.Count == InputStates.Where((binary) => binary).Count();
             AreAllInputsText = InputStates.Count == InputStates.Where((binary) => !binary).Count();
             if (!AreAllInputsBinary && !AreAllInputsText)
