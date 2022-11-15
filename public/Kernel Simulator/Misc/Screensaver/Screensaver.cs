@@ -60,10 +60,6 @@ namespace KS.Misc.Screensaver
         /// Password lock enabled
         /// </summary>
         public static bool PasswordLock = true;
-        /// <summary>
-        /// 255 Console Colors
-        /// </summary>
-        public readonly static ConsoleColors[] colors255 = (ConsoleColors[])Enum.GetValues(typeof(ConsoleColors));
 
         // Private variables
         internal static Dictionary<string, BaseScreensaver> Screensavers = new()
