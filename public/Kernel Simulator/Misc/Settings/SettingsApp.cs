@@ -427,6 +427,7 @@ namespace KS.Misc.Settings
                     {
                         case SettingsKeyType.SChar:
                         case SettingsKeyType.SInt:
+                        case SettingsKeyType.SDouble:
                         case SettingsKeyType.SList:
                         case SettingsKeyType.SString:
                             ConsoleBase.ConsoleWrapper.Clear();
@@ -435,8 +436,7 @@ namespace KS.Misc.Settings
                             TextWriterColor.Write(finalSection + CharManager.NewLine + "=".Repeat(finalSection.Length) + CharManager.NewLine + Translate.DoTranslation(KeyDescription), true, ColorTools.ColTypes.Question);
 
                             // Write the prompt
-                            if (!(KeyType == SettingsKeyType.SIntSlider))
-                                TextWriterColor.Write("[{0}] > ", false, ColorTools.ColTypes.Input, KeyDefaultValue);
+                            TextWriterColor.Write("[{0}] > ", false, ColorTools.ColTypes.Input, KeyDefaultValue);
 
                             // Get the target list from the method defined in the manifest (SelectionFunctionName)
                             if (KeyType == SettingsKeyType.SList)
@@ -739,7 +739,6 @@ namespace KS.Misc.Settings
                                 {
                                     // We're dealing with integers
                                     DebugWriter.WriteDebug(DebugLevel.I, "Answer is numeric and key is of the integer type.");
-                                    int AnswerIndex = AnswerInt - 1;
                                     if (AnswerInt >= 0)
                                     {
                                         DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerInt);
@@ -783,6 +782,43 @@ namespace KS.Misc.Settings
                                     {
                                         // We're dealing with the property
                                         PropertyManager.SetPropertyValue(KeyVar, AnswerInt);
+                                    }
+
+                                    break;
+                                }
+                        }
+                    }
+                    else if (double.TryParse(AnswerString, out double AnswerDbl))
+                    {
+                        switch (KeyType)
+                        {
+                            case SettingsKeyType.SDouble:
+                                {
+                                    // We're dealing with integers
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Answer is numeric and key is of the integer type.");
+                                    if (AnswerDbl >= 0.0d)
+                                    {
+                                        DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerDbl);
+                                        KeyFinished = true;
+
+                                        // Now, set the value
+                                        if (FieldManager.CheckField(KeyVar))
+                                        {
+                                            // We're dealing with the field
+                                            FieldManager.SetValue(KeyVar, AnswerDbl, true);
+                                        }
+                                        else if (PropertyManager.CheckProperty(KeyVar))
+                                        {
+                                            // We're dealing with the property
+                                            PropertyManager.SetPropertyValue(KeyVar, AnswerDbl);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        DebugWriter.WriteDebug(DebugLevel.W, "Negative values are disallowed.");
+                                        TextWriterColor.Write(Translate.DoTranslation("The answer may not be negative."), true, ColorTools.ColTypes.Error);
+                                        TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
+                                        ConsoleBase.ConsoleWrapper.ReadKey();
                                     }
 
                                     break;

@@ -61,6 +61,10 @@ namespace KS.Misc.Settings
         /// <summary>
         /// The value is of <see cref="int"/>, but has a slider which has a minimum and maximum value. Useful for numbers which are limited.
         /// </summary>
-        SIntSlider
+        SIntSlider,
+        /// <summary>
+        /// The value is of <see cref="double"/>
+        /// </summary>
+        SDouble
     }
 }

@@ -157,7 +157,7 @@
             },
             {
                 "Name": "Color blindness severity",
-                "Type": "SInt",
+                "Type": "SDouble",
                 "Variable": "BlindnessSeverity",
                 "Description": "How severe is the color blindness?"
             }
