@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
@@ -99,6 +100,8 @@ namespace KS.ConsoleBase.Inputs.Styles
                 // Variables
                 var answers = AnswersStr.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
                 var altAnswers = AlternateAnswersStr.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
+                var finalAnswers = new List<string>();
+                var finalAnswerTitles = new List<string>();
                 string answer;
 
                 // Check to see if the answer titles are the same
@@ -106,6 +109,12 @@ namespace KS.ConsoleBase.Inputs.Styles
                     Array.Resize(ref AnswersTitles, answers.Length);
                 if (altAnswers.Length != AlternateAnswersTitles.Length)
                     Array.Resize(ref AlternateAnswersTitles, altAnswers.Length);
+
+                // Populate answers to final list for below operation
+                foreach (var _answer in answers)
+                    finalAnswers.Add(_answer);
+                foreach (var _answer in altAnswers)
+                    finalAnswers.Add(_answer);
 
                 // Ask a question
                 switch (OutputType)
