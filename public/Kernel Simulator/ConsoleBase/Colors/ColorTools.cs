@@ -243,7 +243,7 @@ namespace KS.ConsoleBase.Colors
         /// <summary>
         /// Color blindness severity
         /// </summary>
-        public static double BlindnessSeverity = 0.6d;
+        public static double BlindnessSeverity { get => ColorSeq.ColorTools.ColorDeficiencySeverity; set => ColorSeq.ColorTools.ColorDeficiencySeverity = value; }
 
         /// <summary>
         /// Gets a color from the color type
