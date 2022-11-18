@@ -80,8 +80,8 @@ namespace KS.Kernel.Debugging.Testing
                     }
 
                     // Prompt the user to check to see if the test ran as expected
-                    string answer = ChoiceStyle.PromptChoice(Translate.DoTranslation("Did the test run as expected?"), "Y/N");
-                    if (answer == "Y")
+                    string answer = ChoiceStyle.PromptChoice(Translate.DoTranslation("Did the test run as expected?"), "y/n");
+                    if (answer == "y")
                         facades[listFacadesCodeNames[sel - 1]].status = TestStatus.Success;
                     else
                         facades[listFacadesCodeNames[sel - 1]].status = TestStatus.Failed;
