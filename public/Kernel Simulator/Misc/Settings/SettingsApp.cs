@@ -695,7 +695,7 @@ namespace KS.Misc.Settings
                                             {
                                                 DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerInt);
                                                 KeyFinished = true;
-                                                FinalValue = AnswerInt;
+                                                FinalValue = SelectionEnumZeroBased ? AnswerInt - 1 : AnswerInt;
                                             }
 
                                             // Now, set the value
