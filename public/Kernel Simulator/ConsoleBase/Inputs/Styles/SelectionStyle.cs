@@ -125,7 +125,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                                       AltAnswer ? ColorTools.ColTypes.AlternativeOption : ColorTools.ColTypes.Option;
                     TextWriterColor.Write(AnswerIndex == endIndex ? " " + Translate.DoTranslation("Highlight this entry to go to the next page.") : AnswerOption, true, AnswerColor);
                 }
-                ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)HighlightedAnswer / finalAnswers.Count), ConsoleWrapper.WindowWidth - 2, 0, listStartPosition, false);
+                ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)HighlightedAnswer / finalAnswers.Count), ConsoleWrapper.WindowWidth - 2, listStartPosition - 1, listStartPosition, 1, false);
 
                 // Wait for an answer
                 Answer = ConsoleWrapper.ReadKey(true);
