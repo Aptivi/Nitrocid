@@ -137,6 +137,29 @@
                 "Type": "SBoolean",
                 "Variable": "SetBackground",
                 "Description": "If you want to set the background color to your favorite terminal emulator color, set it to false. Otherwise, Kernel Simulator will set its own background colors."
+            },
+            {
+                "Name": "Enable color blindness",
+                "Type": "SBoolean",
+                "Variable": "ColorBlind",
+                "Description": "If you are color blind or if you want to simulate color blindness, then you can enable it."
+            },
+            {
+                "Name": "Color blindness deficiency",
+                "Type": "SSelection",
+                "Variable": "BlindnessDeficiency",
+                "IsEnumeration": true,
+                "EnumerationInternal": false,
+                "Enumeration": "ColorSeq.Accessibility.Deficiency",
+                "EnumerationAssembly": "ColorSeq",
+                "EnumerationZeroBased": true,
+                "Description": "The type of color blindness, whether it's protan, deuter, or tritan."
+            },
+            {
+                "Name": "Color blindness severity",
+                "Type": "SInt",
+                "Variable": "BlindnessSeverity",
+                "Description": "How severe is the color blindness?"
             }
         ]
     },

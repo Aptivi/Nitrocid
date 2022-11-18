@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using ColorSeq;
+using ColorSeq.Accessibility;
 using Extensification.StringExts;
 using KS.ConsoleBase.Themes;
 using KS.Kernel;
@@ -213,17 +214,42 @@ namespace KS.ConsoleBase.Colors
         }
 
         // Variables for colors used by previous versions of the kernel.
-        internal static readonly Dictionary<ColTypes, Color> KernelColors = PopulateColorsDefault();
+        internal static Dictionary<ColTypes, Color> KernelColors = PopulateColorsDefault();
 
         // Cache variables for background and foreground colors
         internal static string cachedForegroundColor = "";
         internal static string cachedBackgroundColor = "";
 
         /// <summary>
+        /// Enables color blindness
+        /// </summary>
+        public static bool ColorBlind
+        {
+            get
+            {
+                return ColorSeq.ColorTools.EnableColorTransformation;
+            }
+            set
+            {
+                ColorSeq.ColorTools.EnableColorTransformation = value;
+            }
+        }
+
+        /// <summary>
+        /// Color blindness deficiency
+        /// </summary>
+        public static Deficiency BlindnessDeficiency { get => ColorSeq.ColorTools.ColorDeficiency; set => ColorSeq.ColorTools.ColorDeficiency = value; }
+
+        /// <summary>
+        /// Color blindness severity
+        /// </summary>
+        public static double BlindnessSeverity = 0.6d;
+
+        /// <summary>
         /// Gets a color from the color type
         /// </summary>
         /// <param name="type">Color type</param>
-        public static Color GetColor(ColTypes type) => KernelColors[type];
+        public static Color GetColor(ColTypes type) => new(KernelColors[type].PlainSequence);
 
         /// <summary>
         /// Sets a color from the color type

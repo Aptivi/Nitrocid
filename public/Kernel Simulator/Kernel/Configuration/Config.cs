@@ -23,6 +23,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using ColorSeq;
+using ColorSeq.Accessibility;
 using Extensification.StringExts;
 using FluentFTP;
 using KS.ConsoleBase.Colors;
@@ -249,7 +250,10 @@ namespace KS.Kernel.Configuration
                 { "Splash name", SplashManager.SplashName },
                 { "Banner figlet font", KernelTools.BannerFigletFont },
                 { "Simulate No APM Mode", Flags.SimulateNoAPM },
-                { "Set console background color", Flags.SetBackground }
+                { "Set console background color", Flags.SetBackground },
+                { "Enable color blindness", ColorTools.ColorBlind },
+                { "Color blindness deficiency", ColorTools.BlindnessDeficiency.ToString() },
+                { "Color blindness severity", ColorTools.BlindnessSeverity }
             };
             ConfigurationObject.Add("General", GeneralConfig);
 
@@ -1672,6 +1676,9 @@ namespace KS.Kernel.Configuration
             SplashManager.SplashName = (string)ConfigToken["General"]["Splash name"] ?? "Simple";
             KernelTools.BannerFigletFont = (string)ConfigToken["General"]["Banner figlet font"] ?? "Banner";
             Flags.SimulateNoAPM = (bool)ConfigToken["General"]["Simulate No APM Mode"];
+            ColorTools.ColorBlind = (bool)ConfigToken["General"]["Enable color blindness"];
+            ColorTools.BlindnessDeficiency = (ConfigToken["General"]["Color blindness deficiency"] != null) ? (Deficiency)Enum.Parse(typeof(Deficiency), (string)ConfigToken["General"]["Color blindness deficiency"]) : Deficiency.Protan;
+            ColorTools.BlindnessSeverity = (double.TryParse((string)ConfigToken["General"]["Color blindness severity"], out _) ? (double)ConfigToken["General"]["Color blindness severity"] : 0.6d);
 
             // Login Section
             DebugWriter.WriteDebug(DebugLevel.I, "Parsing login section...");

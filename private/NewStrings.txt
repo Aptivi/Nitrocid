@@ -187,5 +187,11 @@ Print a string to debugger
 Print a string to debugger with formatting
 Enables the debugger
 Unfortunately, an invalid message type was given, so we don't exactly know what is the problem. Try turning on the debugger and reproducing the problem.
+Enable color blindness
+Color blindness deficiency
+Color blindness severity
+If you are color blind or if you want to simulate color blindness, then you can enable it.
+How severe is the color blindness?
+The type of color blindness, whether it's protan, deuter, or tritan.
 
 ==========================================================================================================================================
