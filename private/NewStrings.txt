@@ -195,5 +195,6 @@ How severe is the color blindness?
 The type of color blindness, whether it's protan, deuter, or tritan.
 Enable scroll bar in selection
 Enables the scroll bar in selection screens
+Enables the remote debugger
 
 ==========================================================================================================================================

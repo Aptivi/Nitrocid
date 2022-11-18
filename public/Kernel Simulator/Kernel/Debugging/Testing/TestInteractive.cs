@@ -30,11 +30,30 @@ namespace KS.Kernel.Debugging.Testing
         private static bool exiting;
         internal static Dictionary<string, TestFacade> facades = new()
         {
-            { "Print",   new Facades.Print() },
-            { "PrintF",  new Facades.PrintF() },
-            { "PrintD",  new Facades.PrintD() },
-            { "PrintDF", new Facades.PrintDF() },
-            { "Debug",   new Facades.Debug() }
+            { "Print",              new Facades.Print() },
+            { "PrintF",             new Facades.PrintF() },
+            { "PrintD",             new Facades.PrintD() },
+            { "PrintDF",            new Facades.PrintDF() },
+            { "Debug",              new Facades.Debug() },
+            { "RDebug",             new Facades.RDebug() },
+            { "TestDictWriterStr",  new Facades.TestDictWriterStr() },
+            { "TestDictWriterInt",  new Facades.TestDictWriterInt() },
+            { "TestDictWriterChar", new Facades.TestDictWriterChar() },
+            { "TestListWriterStr",  new Facades.TestListWriterStr() },
+            { "TestListWriterInt",  new Facades.TestListWriterInt() },
+            { "TestListWriterChar", new Facades.TestListWriterChar() },
+            { "TestCRC32",          new Facades.TestCRC32() },
+            { "TestMD5",            new Facades.TestMD5() },
+            { "TestSHA1",           new Facades.TestSHA1() },
+            { "TestSHA256",         new Facades.TestSHA256() },
+            { "TestSHA384",         new Facades.TestSHA384() },
+            { "TestSHA512",         new Facades.TestSHA512() },
+            { "ShowTime",           new Facades.ShowTime() },
+            { "ShowDate",           new Facades.ShowDate() },
+            { "ShowTimeDate",       new Facades.ShowTimeDate() },
+            { "ShowTimeUtc",        new Facades.ShowTimeUtc() },
+            { "ShowDateUtc",        new Facades.ShowDateUtc() },
+            { "ShowTimeDateUtc",    new Facades.ShowTimeDateUtc() }
         };
 
         internal static void Open()
