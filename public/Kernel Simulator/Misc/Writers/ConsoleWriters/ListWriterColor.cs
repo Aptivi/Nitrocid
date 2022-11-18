@@ -24,6 +24,7 @@ using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
+using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Writers.ConsoleWriters
 {

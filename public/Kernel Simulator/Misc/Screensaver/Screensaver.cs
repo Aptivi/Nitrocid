@@ -34,6 +34,7 @@ using KS.Misc.Screensaver.Displays;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Users.Login;
+using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Screensaver
 {
@@ -89,6 +90,7 @@ namespace KS.Misc.Screensaver
             { "gradient", new GradientDisplay() },
             { "gradientrot", new GradientRotDisplay() },
             { "indeterminate", new IndeterminateDisplay() },
+            { "ksx", new KSXDisplay() },
             { "lighter", new LighterDisplay() },
             { "lightspeed", new LightspeedDisplay() },
             { "lines", new LinesDisplay() },

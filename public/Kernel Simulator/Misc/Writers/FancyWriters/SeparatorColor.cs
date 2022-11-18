@@ -22,6 +22,7 @@ using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Misc.Writers.ConsoleWriters;
+using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Writers.FancyWriters
 {

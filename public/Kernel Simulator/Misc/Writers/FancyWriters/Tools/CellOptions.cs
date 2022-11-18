@@ -18,6 +18,7 @@
 
 using ColorSeq;
 using KS.ConsoleBase.Colors;
+using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Writers.FancyWriters.Tools
 {

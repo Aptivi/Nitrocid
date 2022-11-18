@@ -73,6 +73,7 @@ using ManagedWeatherMap.Core;
 using MimeKit.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Kernel.Configuration
 {

@@ -22,6 +22,7 @@ using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
+using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Shell.Shells.Test.Commands
 {

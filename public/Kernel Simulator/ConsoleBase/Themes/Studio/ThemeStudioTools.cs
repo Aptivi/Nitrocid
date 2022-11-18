@@ -22,13 +22,13 @@ using System.IO;
 using System.Linq;
 using ColorSeq;
 using Extensification.StringExts;
-using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.ConsoleBase.Themes.Studio
 {

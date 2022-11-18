@@ -34,8 +34,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Security.Cryptography;
-using static System.Net.WebRequestMethods;
+using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Files.Interactive
 {

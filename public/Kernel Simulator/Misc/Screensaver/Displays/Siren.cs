@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using ColorSeq;
 using KS.Misc.Threading;
 using KS.ConsoleBase.Colors;
+using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Screensaver.Displays
 {

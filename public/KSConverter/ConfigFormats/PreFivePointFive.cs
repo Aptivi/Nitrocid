@@ -27,6 +27,7 @@ using KS.Shell;
 using ColorSeq;
 using KS.Misc.Probers.Motd;
 using KS.Network.Base;
+using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KSConverter
 {

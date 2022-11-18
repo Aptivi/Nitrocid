@@ -22,6 +22,7 @@ using KS.Kernel;
 using System;
 using System.IO;
 using System.Text;
+using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.ConsoleBase
 {

@@ -21,6 +21,7 @@ using System.Threading;
 using ColorSeq;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
+using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Splash.Splashes
 {

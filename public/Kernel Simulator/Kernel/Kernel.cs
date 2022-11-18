@@ -53,6 +53,7 @@ using KS.Misc.Text;
 using KS.Kernel.Administration.Journalling;
 using KS.Files.Operations;
 using KS.Misc.Writers.WriterBase;
+using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Kernel
 {

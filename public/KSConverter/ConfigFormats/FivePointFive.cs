@@ -39,6 +39,7 @@ using ColorSeq;
 using KS.Kernel.Debugging;
 using KS.Kernel.Debugging.RemoteDebug;
 using KS.Network.Base;
+using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KSConverter
 {

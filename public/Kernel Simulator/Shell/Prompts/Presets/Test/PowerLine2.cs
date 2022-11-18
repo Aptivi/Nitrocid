@@ -22,6 +22,7 @@ using ColorSeq;
 using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Misc.Text;
+using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Shell.Prompts.Presets.Test
 {

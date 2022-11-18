@@ -35,6 +35,7 @@ using KS.Shell.Shells.SFTP;
 using KS.TimeDate;
 using KS.Users;
 using KS.Users.Login;
+using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Probers
 {

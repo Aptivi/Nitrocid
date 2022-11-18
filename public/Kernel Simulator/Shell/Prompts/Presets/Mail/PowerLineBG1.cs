@@ -24,6 +24,7 @@ using KS.Kernel;
 using KS.Misc.Text;
 using KS.Network.Mail;
 using KS.Shell.Shells.Mail;
+using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Shell.Prompts.Presets.Mail
 {

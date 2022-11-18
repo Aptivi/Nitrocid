@@ -24,6 +24,7 @@ using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Misc.Text;
 using KS.Shell.Shells.Text;
+using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Shell.Prompts.Presets.Text
 {

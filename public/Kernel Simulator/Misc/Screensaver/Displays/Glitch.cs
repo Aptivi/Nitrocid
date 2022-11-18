@@ -23,6 +23,7 @@ using ColorSeq;
 using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Misc.Threading;
+using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Screensaver.Displays
 {

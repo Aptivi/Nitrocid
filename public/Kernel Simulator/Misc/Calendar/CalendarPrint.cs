@@ -26,6 +26,7 @@ using KS.Misc.Calendar.Reminders;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using KS.Misc.Writers.FancyWriters.Tools;
+using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Calendar
 {
