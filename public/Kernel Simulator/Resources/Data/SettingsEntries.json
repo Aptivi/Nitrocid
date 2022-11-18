@@ -1465,6 +1465,12 @@
                 "Type": "SInt",
                 "Variable": "MeteorSpeed",
                 "Description": "Specifies the game speed in milliseconds."
+            },
+            {
+                "Name": "Enable scroll bar in selection",
+                "Type": "SBoolean",
+                "Variable": "EnableScrollBarInSelection",
+                "Description": "Enables the scroll bar in selection screens"
             }
         ]
     }

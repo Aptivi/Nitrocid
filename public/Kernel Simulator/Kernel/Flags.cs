@@ -302,6 +302,10 @@ namespace KS.Kernel
                 ReadLineReboot.ReadLine.UndoEnabled = value;
             }
         }
+        /// <summary>
+        /// Enables the scroll bar in selection screens
+        /// </summary>
+        public static bool EnableScrollBarInSelection = true;
 
         // Private flags
         /// <summary>

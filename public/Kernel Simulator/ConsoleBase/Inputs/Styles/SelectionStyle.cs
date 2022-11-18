@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
+using KS.Kernel;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
@@ -125,7 +126,10 @@ namespace KS.ConsoleBase.Inputs.Styles
                                       AltAnswer ? ColorTools.ColTypes.AlternativeOption : ColorTools.ColTypes.Option;
                     TextWriterColor.Write(AnswerIndex == endIndex ? " " + Translate.DoTranslation("Highlight this entry to go to the next page.") : AnswerOption, true, AnswerColor);
                 }
-                ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)HighlightedAnswer / finalAnswers.Count), ConsoleWrapper.WindowWidth - 2, listStartPosition - 1, listStartPosition, 1, false);
+
+                // If we need to write the vertical progress bar, do so.
+                if (Flags.EnableScrollBarInSelection)
+                    ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)HighlightedAnswer / finalAnswers.Count), ConsoleWrapper.WindowWidth - 2, listStartPosition - 1, listStartPosition, 1, false);
 
                 // Wait for an answer
                 Answer = ConsoleWrapper.ReadKey(true);

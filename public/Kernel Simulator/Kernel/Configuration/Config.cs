@@ -1349,7 +1349,8 @@ namespace KS.Kernel.Configuration
                 { "Input clipboard enabled", Flags.InputClipboardEnabled },
                 { "Input undo enabled", Flags.InputUndoEnabled },
                 { "Use PowerLine for rendering spaceship", MeteorShooter.MeteorUsePowerLine },
-                { "Meteor game speed", MeteorShooter.MeteorSpeed }
+                { "Meteor game speed", MeteorShooter.MeteorSpeed },
+                { "Enable scroll bar in selection", Flags.EnableScrollBarInSelection }
             };
             ConfigurationObject.Add("Misc", MiscConfig);
             return ConfigurationObject;
@@ -2502,6 +2503,7 @@ namespace KS.Kernel.Configuration
             Flags.InputUndoEnabled = (bool)ConfigToken["Misc"]["Input undo enabled"];
             MeteorShooter.MeteorUsePowerLine = (bool)ConfigToken["Misc"]["Use PowerLine for rendering spaceship"];
             MeteorShooter.MeteorSpeed = int.TryParse((string)ConfigToken["Misc"]["Meteor game speed"], out _) ? (int)ConfigToken["Misc"]["Meteor game speed"] : 10;
+            Flags.EnableScrollBarInSelection = (bool)ConfigToken["Misc"]["Enable scroll bar in selection"];
 
             // Check to see if the config needs fixes
             ConfigTools.RepairConfig();
