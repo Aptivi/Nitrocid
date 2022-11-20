@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using ColorSeq;
 using Extensification.StringExts;
+using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
@@ -507,9 +508,6 @@ namespace KS.Misc.Screensaver.Displays
         private int IndeterminateCurrentBlockStart;
         private int IndeterminateCurrentBlockEnd;
         private IndeterminateDirection IndeterminateCurrentBlockDirection = IndeterminateDirection.LeftToRight;
-        private int CurrentWindowWidth;
-        private int CurrentWindowHeight;
-        private bool ResizeSyncing;
 
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Indeterminate";
@@ -528,8 +526,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
-            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
             ConsoleBase.ConsoleWrapper.Clear();
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
@@ -545,8 +541,6 @@ namespace KS.Misc.Screensaver.Displays
 
             // Console resizing can sometimes cause the cursor to remain visible. This happens on Windows 10's terminal.
             ConsoleBase.ConsoleWrapper.CursorVisible = false;
-            if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                ResizeSyncing = true;
 
             // Set start and end widths for the ramp frame
             int RampFrameStartWidth = 4;
@@ -559,7 +553,7 @@ namespace KS.Misc.Screensaver.Displays
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Center position: {0}", RampCenterPosition);
 
             // Draw the frame
-            if (!ResizeSyncing)
+            if (!ConsoleResizeListener.WasResized(false))
             {
                 TextWriterWhereColor.WriteWhere(IndeterminateSettings.IndeterminateUpperLeftCornerChar, RampFrameStartWidth, RampCenterPosition - 2, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateUpperLeftCornerColor) : new Color((int)ConsoleColors.Gray));
                 TextWriterColor.Write(IndeterminateSettings.IndeterminateUpperFrameChar.Repeat(RampFrameSpaces), false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateUpperFrameColor) : new Color((int)ConsoleColors.Gray));
@@ -592,9 +586,7 @@ namespace KS.Misc.Screensaver.Displays
             // Fill the ramp!
             while (!(IndeterminateCurrentBlockEnd == RampFrameBlockEndWidth & IndeterminateCurrentBlockDirection == IndeterminateDirection.LeftToRight | IndeterminateCurrentBlockStart == RampFrameBlockStartWidth & IndeterminateCurrentBlockDirection == IndeterminateDirection.RightToLeft))
             {
-                if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                    ResizeSyncing = true;
-                if (ResizeSyncing)
+                if (ConsoleResizeListener.WasResized(false))
                     break;
 
                 // Clear the ramp
@@ -665,9 +657,7 @@ namespace KS.Misc.Screensaver.Displays
 
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
             ConsoleBase.ConsoleWrapper.Clear();
-            ResizeSyncing = false;
-            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
-            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
+            ConsoleResizeListener.WasResized();
             ThreadManager.SleepNoBlock(IndeterminateSettings.IndeterminateDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

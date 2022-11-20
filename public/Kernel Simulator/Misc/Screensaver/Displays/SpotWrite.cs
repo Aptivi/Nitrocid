@@ -22,6 +22,7 @@ using System.IO;
 using System.Text;
 using ColorSeq;
 using Extensification.StringExts;
+using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
@@ -113,10 +114,6 @@ namespace KS.Misc.Screensaver.Displays
     public class SpotWriteDisplay : BaseScreensaver, IScreensaver
     {
 
-        private int CurrentWindowWidth;
-        private int CurrentWindowHeight;
-        private bool ResizeSyncing;
-
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "SpotWrite";
 
@@ -127,8 +124,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
-            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ColorTools.SetConsoleColor(new Color(SpotWriteSettings.SpotWriteTextColor));
             ConsoleBase.ConsoleWrapper.Clear();
         }
@@ -151,9 +146,7 @@ namespace KS.Misc.Screensaver.Displays
             // For each line, write four spaces, and extra two spaces if paragraph starts.
             foreach (string Paragraph in TypeWrite.SplitNewLines())
             {
-                if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                    ResizeSyncing = true;
-                if (ResizeSyncing)
+                if (ConsoleResizeListener.WasResized(false))
                     break;
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "New paragraph: {0}", Paragraph);
 
@@ -168,9 +161,7 @@ namespace KS.Misc.Screensaver.Displays
                 int ReservedCharacters = 4;
                 foreach (char ParagraphChar in Paragraph)
                 {
-                    if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                        ResizeSyncing = true;
-                    if (ResizeSyncing)
+                    if (ConsoleResizeListener.WasResized(false))
                         break;
 
                     // Append the character into the incomplete sentence builder.
@@ -202,15 +193,11 @@ namespace KS.Misc.Screensaver.Displays
                 for (int SentenceIndex = 0; SentenceIndex <= IncompleteSentences.Count - 1; SentenceIndex++)
                 {
                     string Sentence = IncompleteSentences[SentenceIndex];
-                    if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                        ResizeSyncing = true;
-                    if (ResizeSyncing)
+                    if (ConsoleResizeListener.WasResized(false))
                         break;
                     foreach (char StruckChar in Sentence)
                     {
-                        if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                            ResizeSyncing = true;
-                        if (ResizeSyncing)
+                        if (ConsoleResizeListener.WasResized(false))
                             break;
 
                         // If we're at the end of the page, clear the screen
@@ -240,9 +227,7 @@ namespace KS.Misc.Screensaver.Displays
             }
 
             // Reset resize sync
-            ResizeSyncing = false;
-            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
-            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
+            ConsoleResizeListener.WasResized();
             ThreadManager.SleepNoBlock(SpotWriteSettings.SpotWriteDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

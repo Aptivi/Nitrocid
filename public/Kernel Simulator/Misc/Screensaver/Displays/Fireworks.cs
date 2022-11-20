@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using ColorSeq;
 using Extensification.IntegerExts;
+using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
@@ -247,10 +248,6 @@ namespace KS.Misc.Screensaver.Displays
     public class FireworksDisplay : BaseScreensaver, IScreensaver
     {
 
-        private int CurrentWindowWidth;
-        private int CurrentWindowHeight;
-        private bool ResizeSyncing;
-
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Fireworks";
 
@@ -261,8 +258,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
-            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
             ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
             ConsoleBase.ConsoleWrapper.Clear();
@@ -311,15 +306,13 @@ namespace KS.Misc.Screensaver.Displays
             }
 
             // Launch the rocket
-            if (!ResizeSyncing)
+            if (!ConsoleResizeListener.WasResized(false))
             {
                 double CurrentX = LaunchPositionX;
                 int CurrentY = LaunchPositionY;
                 while (!(CurrentX >= IgnitePositionX & CurrentY <= IgnitePositionY))
                 {
-                    if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                        ResizeSyncing = true;
-                    if (ResizeSyncing)
+                    if (ConsoleResizeListener.WasResized(false))
                         break;
                     DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Current position: {0}, {1}", CurrentX, CurrentY);
                     ConsoleBase.ConsoleWrapper.SetCursorPosition((int)Math.Round(CurrentX), CurrentY);
@@ -338,13 +331,11 @@ namespace KS.Misc.Screensaver.Displays
             }
 
             // Blow it up!
-            if (!ResizeSyncing)
+            if (!ConsoleResizeListener.WasResized(false))
             {
                 for (int Radius = 0; Radius <= FireworkRadius; Radius++)
                 {
-                    if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                        ResizeSyncing = true;
-                    if (ResizeSyncing)
+                    if (ConsoleResizeListener.WasResized(false))
                         break;
 
                     // Variables
@@ -392,9 +383,7 @@ namespace KS.Misc.Screensaver.Displays
             }
 
             // Reset resize sync
-            ResizeSyncing = false;
-            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
-            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
+            ConsoleResizeListener.WasResized();
         }
 
     }

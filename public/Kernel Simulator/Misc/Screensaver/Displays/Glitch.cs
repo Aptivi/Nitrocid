@@ -20,6 +20,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using ColorSeq;
+using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Misc.Threading;
@@ -79,10 +80,6 @@ namespace KS.Misc.Screensaver.Displays
     public class GlitchDisplay : BaseScreensaver, IScreensaver
     {
 
-        private int CurrentWindowWidth;
-        private int CurrentWindowHeight;
-        private bool ResizeSyncing;
-
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Glitch";
 
@@ -93,8 +90,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
-            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
             ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
             ConsoleBase.ConsoleWrapper.CursorVisible = false;
@@ -109,11 +104,9 @@ namespace KS.Misc.Screensaver.Displays
             int AmountOfBlocks = ConsoleBase.ConsoleWrapper.WindowWidth * ConsoleBase.ConsoleWrapper.WindowHeight;
             int BlocksToCover = (int)Math.Round(AmountOfBlocks * GlitchDense);
             var CoveredBlocks = new ArrayList();
-            while (!(CoveredBlocks.Count == BlocksToCover | ResizeSyncing))
+            while (!(CoveredBlocks.Count == BlocksToCover | ConsoleResizeListener.WasResized(false)))
             {
-                if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                    ResizeSyncing = true;
-                if (!ResizeSyncing)
+                if (!ConsoleResizeListener.WasResized(false))
                 {
                     int CoverX = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowWidth);
                     int CoverY = RandomDriver.Random(ConsoleBase.ConsoleWrapper.WindowHeight);
@@ -244,9 +237,7 @@ namespace KS.Misc.Screensaver.Displays
             }
 
             // Reset resize sync
-            ResizeSyncing = false;
-            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
-            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
+            ConsoleResizeListener.WasResized();
         }
 
     }

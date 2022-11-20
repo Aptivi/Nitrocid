@@ -21,6 +21,7 @@ using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using System.Text;
 using System;
+using KS.ConsoleBase;
 
 namespace KS.Misc.Animations.Spin
 {
@@ -32,7 +33,6 @@ namespace KS.Misc.Animations.Spin
 
         private static int CurrentWindowWidth;
         private static int CurrentWindowHeight;
-        private static bool ResizeSyncing;
         private static int currentSpinStep = 0;
         private static readonly char[] spinSteps = new[] { '/', '|', '\\', '-' };
 
@@ -60,9 +60,7 @@ namespace KS.Misc.Animations.Spin
             }
 
             // Spin!
-            if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                ResizeSyncing = true;
-            if (!ResizeSyncing)
+            if (!ConsoleResizeListener.WasResized(false))
             {
                 TextWriterWhereColor.WriteWhere(spinBuffer.ToString(), 0, 0, true, new Color(Convert.ToInt32(ConsoleColors.White)), new Color(Convert.ToInt32(ConsoleColors.Black)));
                 ThreadManager.SleepNoBlock(Settings.SpinDelay, System.Threading.Thread.CurrentThread);
@@ -74,7 +72,7 @@ namespace KS.Misc.Animations.Spin
                 currentSpinStep = 0;
 
             // Reset resize sync
-            ResizeSyncing = false;
+            ConsoleResizeListener.WasResized();
             CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
         }

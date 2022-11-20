@@ -18,6 +18,7 @@
 
 using System;
 using System.Collections.Generic;
+using KS.ConsoleBase;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
@@ -57,10 +58,6 @@ namespace KS.Misc.Screensaver.Displays
     public class MatrixDisplay : BaseScreensaver, IScreensaver
     {
 
-        private int CurrentWindowWidth;
-        private int CurrentWindowHeight;
-        private bool ResizeSyncing;
-
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Matrix";
 
@@ -71,8 +68,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
-            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
             ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.Green;
             ConsoleBase.ConsoleWrapper.Clear();
@@ -82,9 +77,7 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverLogic()
         {
             ConsoleBase.ConsoleWrapper.CursorVisible = false;
-            if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                ResizeSyncing = true;
-            if (!ResizeSyncing)
+            if (!ConsoleResizeListener.WasResized(false))
             {
                 ConsoleBase.ConsoleWrapper.Write(RandomDriver.Random(1).ToString());
             }
@@ -95,9 +88,7 @@ namespace KS.Misc.Screensaver.Displays
             }
 
             // Reset resize sync
-            ResizeSyncing = false;
-            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
-            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
+            ConsoleResizeListener.WasResized();
             ThreadManager.SleepNoBlock(MatrixSettings.MatrixDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

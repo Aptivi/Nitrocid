@@ -33,17 +33,11 @@ namespace KS.Misc.Animations.Fader
     public static class Fader
     {
 
-        private static int CurrentWindowWidth;
-        private static int CurrentWindowHeight;
-        private static bool ResizeSyncing;
-
         /// <summary>
         /// Simulates the fading animation
         /// </summary>
         public static void Simulate(FaderSettings Settings)
         {
-            CurrentWindowWidth = ConsoleWrapper.WindowWidth;
-            CurrentWindowHeight = ConsoleWrapper.WindowHeight;
             int RedColorNum = RandomDriver.Random(Settings.FaderMinimumRedColorLevel, Settings.FaderMaximumRedColorLevel);
             int GreenColorNum = RandomDriver.Random(Settings.FaderMinimumGreenColorLevel, Settings.FaderMaximumGreenColorLevel);
             int BlueColorNum = RandomDriver.Random(Settings.FaderMinimumBlueColorLevel, Settings.FaderMaximumBlueColorLevel);
@@ -74,9 +68,7 @@ namespace KS.Misc.Animations.Fader
             int CurrentColorBlueIn = 0;
             for (int CurrentStep = Settings.FaderMaxSteps; CurrentStep >= 1; CurrentStep -= 1)
             {
-                if (CurrentWindowHeight != ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleWrapper.WindowWidth)
-                    ResizeSyncing = true;
-                if (ResizeSyncing)
+                if (ConsoleResizeListener.WasResized(false))
                     break;
                 DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, Settings.FaderMaxSteps);
                 ThreadManager.SleepNoBlock(Settings.FaderDelay, System.Threading.Thread.CurrentThread);
@@ -84,9 +76,7 @@ namespace KS.Misc.Animations.Fader
                 CurrentColorGreenIn = (int)Math.Round(CurrentColorGreenIn + ThresholdGreen);
                 CurrentColorBlueIn = (int)Math.Round(CurrentColorBlueIn + ThresholdBlue);
                 DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn);
-                if (CurrentWindowHeight != ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleWrapper.WindowWidth)
-                    ResizeSyncing = true;
-                if (!ResizeSyncing)
+                if (!ConsoleResizeListener.WasResized(false))
                     TextWriterWhereColor.WriteWhere(Settings.FaderWrite, Left, Top, true, new Color(CurrentColorRedIn + ";" + CurrentColorGreenIn + ";" + CurrentColorBlueIn), new Color((int)ConsoleColors.Black));
             }
 
@@ -97,9 +87,7 @@ namespace KS.Misc.Animations.Fader
             // Fade out
             for (int CurrentStep = 1; CurrentStep <= Settings.FaderMaxSteps; CurrentStep++)
             {
-                if (CurrentWindowHeight != ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleWrapper.WindowWidth)
-                    ResizeSyncing = true;
-                if (ResizeSyncing)
+                if (ConsoleResizeListener.WasResized(false))
                     break;
                 DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, Settings.FaderMaxSteps);
                 ThreadManager.SleepNoBlock(Settings.FaderDelay, System.Threading.Thread.CurrentThread);
@@ -107,14 +95,12 @@ namespace KS.Misc.Animations.Fader
                 int CurrentColorGreenOut = (int)Math.Round(GreenColorNum - ThresholdGreen * CurrentStep);
                 int CurrentColorBlueOut = (int)Math.Round(BlueColorNum - ThresholdBlue * CurrentStep);
                 DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
-                if (!ResizeSyncing)
+                if (!ConsoleResizeListener.WasResized(false))
                     TextWriterWhereColor.WriteWhere(Settings.FaderWrite, Left, Top, true, new Color(CurrentColorRedOut + ";" + CurrentColorGreenOut + ";" + CurrentColorBlueOut), new Color((int)ConsoleColors.Black));
             }
 
             // Reset resize sync
-            ResizeSyncing = false;
-            CurrentWindowWidth = ConsoleWrapper.WindowWidth;
-            CurrentWindowHeight = ConsoleWrapper.WindowHeight;
+            ConsoleResizeListener.WasResized();
             ThreadManager.SleepNoBlock(Settings.FaderDelay, System.Threading.Thread.CurrentThread);
         }
 

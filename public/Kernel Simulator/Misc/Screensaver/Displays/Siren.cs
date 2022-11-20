@@ -88,19 +88,8 @@ namespace KS.Misc.Screensaver.Displays
         public override Dictionary<string, object> ScreensaverSettings { get; set; }
 
         /// <inheritdoc/>
-        public override void ScreensaverPreparation()
-        {
-            // Variable preparations
-            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
-            ConsoleBase.ConsoleWrapper.Clear();
-        }
-
-        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
-
             // Get step color array from siren type
             Color[] sirenColors = sirens[SirenSettings.SirenStyle];
 

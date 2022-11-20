@@ -19,6 +19,7 @@
 using System;
 using System.Collections.Generic;
 using ColorSeq;
+using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
@@ -248,9 +249,6 @@ namespace KS.Misc.Screensaver.Displays
     {
 
         private int ColumnLine;
-        private int CurrentWindowWidth;
-        private int CurrentWindowHeight;
-        private bool ResizeSyncing;
         private readonly List<Tuple<int, int>> CoveredPositions = new();
 
         /// <inheritdoc/>
@@ -263,8 +261,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
-            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
             ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
             ConsoleBase.ConsoleWrapper.Clear();
@@ -304,9 +300,7 @@ namespace KS.Misc.Screensaver.Displays
             for (int Fall = FallStart; Fall <= FallEnd; Fall++)
             {
                 // Check to see if user decided to resize
-                if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                    ResizeSyncing = true;
-                if (ResizeSyncing)
+                if (ConsoleResizeListener.WasResized(false))
                     break;
 
                 // Print a block and add the covered position to the list so fading down can be done
@@ -322,9 +316,7 @@ namespace KS.Misc.Screensaver.Displays
             for (int StepNum = 0; StepNum <= FallingLineSettings.FallingLineMaxSteps; StepNum++)
             {
                 // Check to see if user decided to resize
-                if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                    ResizeSyncing = true;
-                if (ResizeSyncing)
+                if (ConsoleResizeListener.WasResized(false))
                     break;
 
                 // Set thresholds
@@ -344,9 +336,7 @@ namespace KS.Misc.Screensaver.Displays
                 foreach (Tuple<int, int> PositionTuple in CoveredPositions)
                 {
                     // Check to see if user decided to resize
-                    if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                        ResizeSyncing = true;
-                    if (ResizeSyncing)
+                    if (ConsoleResizeListener.WasResized(false))
                         break;
 
                     // Actually fade the line out
@@ -360,9 +350,7 @@ namespace KS.Misc.Screensaver.Displays
             }
 
             // Reset resize sync
-            ResizeSyncing = false;
-            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
-            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
+            ConsoleResizeListener.WasResized();
             ThreadManager.SleepNoBlock(FallingLineSettings.FallingLineDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

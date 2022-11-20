@@ -22,6 +22,7 @@ using System.IO;
 using System.Text;
 using ColorSeq;
 using Extensification.StringExts;
+using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Files.Querying;
@@ -270,10 +271,6 @@ namespace KS.Misc.Screensaver.Displays
     internal class LinotypoDisplay : BaseScreensaver, IScreensaver
     {
 
-        private int CurrentWindowWidth;
-        private int CurrentWindowHeight;
-        private bool ResizeSyncing;
-
         public override string ScreensaverName { get; set; } = "Linotypo";
 
         public override Dictionary<string, object> ScreensaverSettings { get; set; }
@@ -281,8 +278,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
-            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ColorTools.SetConsoleColor(new Color(LinotypoSettings.LinotypoTextColor));
             ConsoleBase.ConsoleWrapper.Clear();
             ConsoleBase.ConsoleWrapper.CursorVisible = false;
@@ -336,9 +331,7 @@ namespace KS.Misc.Screensaver.Displays
             var StrikeCharsIndex1 = default(int);
             foreach (string Paragraph in LinotypeWrite.SplitNewLines())
             {
-                if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                    ResizeSyncing = true;
-                if (ResizeSyncing)
+                if (ConsoleResizeListener.WasResized(false))
                     break;
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "New paragraph: {0}", Paragraph);
 
@@ -374,9 +367,7 @@ namespace KS.Misc.Screensaver.Displays
                 int ReservedCharacters = 4;
                 foreach (char ParagraphChar in Paragraph)
                 {
-                    if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                        ResizeSyncing = true;
-                    if (ResizeSyncing)
+                    if (ConsoleResizeListener.WasResized(false))
                         break;
 
                     // Append the character into the incomplete sentence builder.
@@ -400,9 +391,7 @@ namespace KS.Misc.Screensaver.Displays
                 for (int IncompleteSentenceIndex = 0; IncompleteSentenceIndex <= IncompleteSentences.Count - 1; IncompleteSentenceIndex++)
                 {
                     string IncompleteSentence = IncompleteSentences[IncompleteSentenceIndex];
-                    if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                        ResizeSyncing = true;
-                    if (ResizeSyncing)
+                    if (ConsoleResizeListener.WasResized(false))
                         break;
 
                     // Check if we need to indent a sentence
@@ -430,9 +419,7 @@ namespace KS.Misc.Screensaver.Displays
                     // Process the incomplete sentences
                     for (int StruckCharIndex = 0; StruckCharIndex <= IncompleteSentence.Length - 1; StruckCharIndex++)
                     {
-                        if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                            ResizeSyncing = true;
-                        if (ResizeSyncing)
+                        if (ConsoleResizeListener.WasResized(false))
                             break;
 
                         // Sometimes, typing error can be made in the last line and the line is repeated on the first line in the different
@@ -650,9 +637,7 @@ namespace KS.Misc.Screensaver.Displays
             }
 
             // Reset resize sync
-            ResizeSyncing = false;
-            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
-            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
+            ConsoleResizeListener.WasResized();
             ThreadManager.SleepNoBlock(LinotypoSettings.LinotypoDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

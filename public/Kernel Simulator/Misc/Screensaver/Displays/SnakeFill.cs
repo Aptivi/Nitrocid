@@ -18,6 +18,7 @@
 
 using System.Collections.Generic;
 using ColorSeq;
+using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Kernel;
@@ -195,10 +196,6 @@ namespace KS.Misc.Screensaver.Displays
     public class SnakeFillDisplay : BaseScreensaver, IScreensaver
     {
 
-        private int CurrentWindowWidth;
-        private int CurrentWindowHeight;
-        private bool ResizeSyncing;
-
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "SnakeFill";
 
@@ -209,8 +206,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
-            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ConsoleBase.ConsoleWrapper.Clear();
             ConsoleBase.ConsoleWrapper.CursorVisible = false;
         }
@@ -219,8 +214,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverLogic()
         {
             ConsoleBase.ConsoleWrapper.CursorVisible = false;
-            if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                ResizeSyncing = true;
 
             // Select a color
             if (SnakeFillSettings.SnakeFillTrueColor)
@@ -229,14 +222,14 @@ namespace KS.Misc.Screensaver.Displays
                 int GreenColorNum = RandomDriver.Random(SnakeFillSettings.SnakeFillMinimumGreenColorLevel, SnakeFillSettings.SnakeFillMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Random(SnakeFillSettings.SnakeFillMinimumBlueColorLevel, SnakeFillSettings.SnakeFillMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
-                if (!ResizeSyncing)
+                if (!ConsoleResizeListener.WasResized(false))
                     ColorTools.SetConsoleColor(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), true, true);
             }
             else
             {
                 int ColorNum = RandomDriver.Random(SnakeFillSettings.SnakeFillMinimumColorLevel, SnakeFillSettings.SnakeFillMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
-                if (!ResizeSyncing)
+                if (!ConsoleResizeListener.WasResized(false))
                     ColorTools.SetConsoleColor(new Color(ColorNum), true, true);
             }
 
@@ -250,9 +243,7 @@ namespace KS.Misc.Screensaver.Displays
             bool reverseHeightAxis = false;
             for (int x = 0; x < ConsoleBase.ConsoleWrapper.WindowWidth; x++)
             {
-                if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                    ResizeSyncing = true;
-                if (ResizeSyncing)
+                if (ConsoleResizeListener.WasResized(false))
                     break;
 
                 // Select the height and fill the entire screen
@@ -260,9 +251,7 @@ namespace KS.Misc.Screensaver.Displays
                 {
                     for (int y = MaxWindowHeight - 1; y >= 0; y--)
                     {
-                        if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                            ResizeSyncing = true;
-                        if (ResizeSyncing)
+                        if (ConsoleResizeListener.WasResized(false))
                             break;
 
                         TextWriterWhereColor.WriteWhere(" ", x, y);
@@ -274,9 +263,7 @@ namespace KS.Misc.Screensaver.Displays
                 {
                     for (int y = 0; y < MaxWindowHeight; y++)
                     {
-                        if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                            ResizeSyncing = true;
-                        if (ResizeSyncing)
+                        if (ConsoleResizeListener.WasResized(false))
                             break;
 
                         TextWriterWhereColor.WriteWhere(" ", x, y);
@@ -286,9 +273,7 @@ namespace KS.Misc.Screensaver.Displays
                 }
             }
 
-            ResizeSyncing = false;
-            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
-            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
+            ConsoleResizeListener.WasResized();
             ThreadManager.SleepNoBlock(SnakeFillSettings.SnakeFillDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

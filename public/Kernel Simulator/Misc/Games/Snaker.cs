@@ -22,6 +22,7 @@ using System.Threading;
 using ColorSeq;
 using Extensification.DictionaryExts;
 using Extensification.ListExts;
+using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
@@ -41,9 +42,6 @@ namespace KS.Misc.Games
         public static void InitializeSnaker(bool Simulation)
         {
             // Variables
-            int CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
-            int CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
-            var ResizeSyncing = default(bool);
             int SnakeLength = 1;
             var SnakeMassPositions = new List<string>();
             var Direction = SnakeDirection.Bottom;
@@ -56,7 +54,7 @@ namespace KS.Misc.Games
             var FloorColor = ChangeSnakeColor();
 
             // Draw the floor
-            if (!ResizeSyncing)
+            if (!ConsoleResizeListener.WasResized(false))
             {
                 int FloorTopLeftEdge = 2;
                 int FloorBottomLeftEdge = 2;
@@ -112,7 +110,7 @@ namespace KS.Misc.Games
             var SnakeColor = ChangeSnakeColor();
 
             // A typical snake usually starts in the middle.
-            if (!ResizeSyncing)
+            if (!ConsoleResizeListener.WasResized(false))
             {
                 bool Dead = false;
                 int FloorTopEdge = 1;
@@ -385,6 +383,7 @@ namespace KS.Misc.Games
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
             ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
             ConsoleBase.ConsoleWrapper.Clear();
+            ConsoleResizeListener.WasResized();
         }
 
         /// <summary>

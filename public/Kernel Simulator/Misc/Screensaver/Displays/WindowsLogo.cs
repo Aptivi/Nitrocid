@@ -19,6 +19,7 @@
 using System;
 using System.Collections.Generic;
 using ColorSeq;
+using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
@@ -32,9 +33,6 @@ namespace KS.Misc.Screensaver.Displays
     public class WindowsLogoDisplay : BaseScreensaver, IScreensaver
     {
 
-        private int CurrentWindowWidth;
-        private int CurrentWindowHeight;
-        private bool ResizeSyncing;
         private bool Drawn;
 
         /// <inheritdoc/>
@@ -47,8 +45,6 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
-            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
             ConsoleBase.ConsoleWrapper.Clear();
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
@@ -58,20 +54,15 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverLogic()
         {
             ConsoleBase.ConsoleWrapper.CursorVisible = false;
-            if (ResizeSyncing)
+            if (ConsoleResizeListener.WasResized(false))
             {
                 Drawn = false;
 
                 // Reset resize sync
-                ResizeSyncing = false;
-                CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
-                CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
+                ConsoleResizeListener.WasResized();
             }
             else
             {
-                if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                    ResizeSyncing = true;
-
                 // Get the required positions for the four boxes
                 int UpperLeftBoxEndX = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d - 1d);
                 int UpperLeftBoxStartX = (int)Math.Round(UpperLeftBoxEndX / 2d);

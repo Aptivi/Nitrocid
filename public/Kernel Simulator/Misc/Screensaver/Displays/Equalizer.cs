@@ -66,19 +66,19 @@ namespace KS.Misc.Screensaver.Displays
         // Equalizer presets
         private readonly Dictionary<string, (double, double, double)> presets = new()
         {
-            // Name - 60, 910, 14k (from -12 to 12 in decibels)
-            { "Normal",         (3, 0, 3) },
-            { "Classical",      (5, -2, 4) },
-            { "Dance",          (6, 2, 1) },
-            { "Electronic",     (0, 4, 10) },
-            { "Flat",           (0, 0, 0) },
-            { "Folk",           (3, 0, -1) },
-            { "Heavy Metal",    (4, 9, 0) },
-            { "Hip-Hop",        (5, 0, 3) },
-            { "Jazz",           (4, -2, 5) },
-            { "Pop",            (-1, 5, -2) },
-            { "Rock",           (5, -1, 5) },
-            { "Small Speakers", (-1.7, 0.5, 2) }
+            // Name              60,    910,    14k (from -12 to 12 in decibels)
+            { "Normal",         (3,     0,      3) },
+            { "Classical",      (5,     -2,     4) },
+            { "Dance",          (6,     2,      1) },
+            { "Electronic",     (0,     4,      10) },
+            { "Flat",           (0,     0,      0) },
+            { "Folk",           (3,     0,      -1) },
+            { "Heavy Metal",    (4,     9,      0) },
+            { "Hip-Hop",        (5,     0,      3) },
+            { "Jazz",           (4,     -2,     5) },
+            { "Pop",            (-1,    5,      -2) },
+            { "Rock",           (5,     -1,     5) },
+            { "Small Speakers", (-1.7,  0.5,    2) }
         };
 
         /// <inheritdoc/>

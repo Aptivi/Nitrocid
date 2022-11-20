@@ -38,16 +38,6 @@ namespace KS.Misc.Screensaver.Displays
         public override Dictionary<string, object> ScreensaverSettings { get; set; }
 
         /// <inheritdoc/>
-        public override void ScreensaverPreparation()
-        {
-            // Variable preparations
-            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
-            ConsoleBase.ConsoleWrapper.Clear();
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
-        }
-
-        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             int ScreensaverIndex = RandomDriver.RandomIdx(Misc.Screensaver.Screensaver.Screensavers.Count);
