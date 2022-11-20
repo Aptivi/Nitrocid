@@ -207,5 +207,9 @@ Print a separator to console with formatting and color
 Print a figlet string to console
 Print a figlet string to console with formatting
 Test panicking the kernel
+Write a translatable string to check:
+Write a translatable string list file path to check:
+Write a color number ranging from 1 to 255:
+Color wheel returned the color of
 
 ==========================================================================================================================================
