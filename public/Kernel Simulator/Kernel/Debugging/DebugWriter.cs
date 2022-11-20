@@ -63,8 +63,8 @@ namespace KS.Kernel.Debugging
                     string Func = STrace.GetFrame(1).GetMethod().Name;
                     var OffendingIndex = new List<string>();
 
-                    // We could be calling this function by WdbgConditional, so descend a frame
-                    if (Func == "WdbgConditional")
+                    // We could be calling this function by WriteDebugConditional, so descend a frame
+                    if (Func == nameof(WriteDebugConditional))
                     {
                         Source = Path.GetFileName(STrace.GetFrame(2).GetFileName());
                         LineNum = STrace.GetFrame(2).GetFileLineNumber().ToString();
