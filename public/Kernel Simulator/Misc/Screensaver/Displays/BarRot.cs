@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using ColorSeq;
 using Extensification.StringExts;
+using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
@@ -593,10 +594,6 @@ namespace KS.Misc.Screensaver.Displays
     public class BarRotDisplay : BaseScreensaver, IScreensaver
     {
 
-        private int CurrentWindowWidth;
-        private int CurrentWindowHeight;
-        private bool ResizeSyncing;
-
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "BarRot";
 
@@ -607,19 +604,15 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
-            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
-            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
-            ConsoleBase.ConsoleWrapper.Clear();
+            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleWrapper.ForegroundColor = ConsoleColor.White;
+            ConsoleWrapper.Clear();
         }
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
-            if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                ResizeSyncing = true;
+            ConsoleWrapper.CursorVisible = false;
 
             // Select a color range for the ramp
             int RedColorNumFrom = RandomDriver.Random(BarRotSettings.BarRotMinimumRedColorLevelStart, BarRotSettings.BarRotMaximumRedColorLevelStart);
@@ -632,7 +625,7 @@ namespace KS.Misc.Screensaver.Displays
 
             // Set start and end widths for the ramp frame
             int RampFrameStartWidth = 4;
-            int RampFrameEndWidth = ConsoleBase.ConsoleWrapper.WindowWidth - RampFrameStartWidth;
+            int RampFrameEndWidth = ConsoleWrapper.WindowWidth - RampFrameStartWidth;
             int RampFrameSpaces = RampFrameEndWidth - RampFrameStartWidth;
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Start width: {0}, End width: {1}, Spaces: {2}", RampFrameStartWidth, RampFrameEndWidth, RampFrameSpaces);
 
@@ -647,7 +640,7 @@ namespace KS.Misc.Screensaver.Displays
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Steps by {0} spaces (RGB: {1};{2};{3})", RampFrameSpaces, RampColorRedSteps, RampColorGreenSteps, RampColorBlueSteps);
 
             // Let the ramp be printed in the center
-            int RampCenterPosition = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d);
+            int RampCenterPosition = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Center position: {0}", RampCenterPosition);
 
             // Set the current positions
@@ -655,7 +648,7 @@ namespace KS.Misc.Screensaver.Displays
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Current left position: {0}", RampCurrentPositionLeft);
 
             // Draw the frame
-            if (!ResizeSyncing)
+            if (!ConsoleResizeListener.WasResized(false))
             {
                 TextWriterWhereColor.WriteWhere(BarRotSettings.BarRotUpperLeftCornerChar, RampFrameStartWidth, RampCenterPosition - 2, false, BarRotSettings.BarRotUseBorderColors ? new Color(BarRotSettings.BarRotUpperLeftCornerColor) : new Color((int)ConsoleColors.Gray));
                 TextWriterColor.Write(BarRotSettings.BarRotUpperFrameChar.Repeat(RampFrameSpaces), false, BarRotSettings.BarRotUseBorderColors ? new Color(BarRotSettings.BarRotUpperFrameColor) : new Color((int)ConsoleColors.Gray));
@@ -679,9 +672,7 @@ namespace KS.Misc.Screensaver.Displays
             // Set the console color and fill the ramp!
             while (!(Convert.ToInt32(RampCurrentColorRed) == RedColorNumTo & Convert.ToInt32(RampCurrentColorGreen) == GreenColorNumTo & Convert.ToInt32(RampCurrentColorBlue) == BlueColorNumTo))
             {
-                if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                    ResizeSyncing = true;
-                if (ResizeSyncing)
+                if (ConsoleResizeListener.WasResized(false))
                     break;
 
                 // Populate the variables for sub-gradients
@@ -717,17 +708,15 @@ namespace KS.Misc.Screensaver.Displays
                 int RampSubgradientStepsMade = 0;
                 while (RampSubgradientStepsMade != RampFrameSpaces)
                 {
-                    if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                        ResizeSyncing = true;
-                    if (ResizeSyncing)
+                    if (ConsoleResizeListener.WasResized(false))
                         break;
-                    ConsoleBase.ConsoleWrapper.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition - 1);
-                    ConsoleBase.ConsoleWrapper.Write(' ');
-                    ConsoleBase.ConsoleWrapper.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition);
-                    ConsoleBase.ConsoleWrapper.Write(' ');
-                    ConsoleBase.ConsoleWrapper.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition + 1);
-                    ConsoleBase.ConsoleWrapper.Write(' ');
-                    RampCurrentPositionLeft = ConsoleBase.ConsoleWrapper.CursorLeft;
+                    ConsoleWrapper.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition - 1);
+                    ConsoleWrapper.Write(' ');
+                    ConsoleWrapper.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition);
+                    ConsoleWrapper.Write(' ');
+                    ConsoleWrapper.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition + 1);
+                    ConsoleWrapper.Write(' ');
+                    RampCurrentPositionLeft = ConsoleWrapper.CursorLeft;
                     RampSubgradientStepsMade += 1;
 
                     // Change the colors
@@ -750,16 +739,15 @@ namespace KS.Misc.Screensaver.Displays
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Current left position: {0}", RampCurrentPositionLeft);
                 ThreadManager.SleepNoBlock(BarRotSettings.BarRotDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
             }
+            if (!ConsoleResizeListener.WasResized(false))
+                ThreadManager.SleepNoBlock(BarRotSettings.BarRotNextRampDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
             // Clear the scene
-            ThreadManager.SleepNoBlock(BarRotSettings.BarRotNextRampDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleBase.ConsoleWrapper.Clear();
+            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleWrapper.Clear();
 
             // Reset resize sync
-            ResizeSyncing = false;
-            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
-            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
+            ConsoleResizeListener.WasResized();
         }
 
     }
