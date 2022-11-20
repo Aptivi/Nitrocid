@@ -36,21 +36,9 @@ namespace KS.Shell.Shells.Test
         /// </summary>
         public override Dictionary<string, CommandInfo> Commands => new()
         {
-            { "printsep", new CommandInfo("printsep", ShellType.TestShell, "Prints a separator", new CommandArgumentInfo(new[] { "<Message>" }, true, 1), new Test_PrintSepCommand()) },
-            { "printsepf", new CommandInfo("printsepf", ShellType.TestShell, "Prints a separator with format support", new CommandArgumentInfo(new[] { "<Variable1;Variable2;Variable3;...> <Message>" }, true, 2), new Test_PrintSepCommand()) },
-            { "printsepcolor", new CommandInfo("printsepcolor", ShellType.TestShell, "Prints a separator with color support", new CommandArgumentInfo(new[] { "<Color> <Message>" }, true, 2), new Test_PrintSepColorCommand()) },
-            { "printsepcolorf", new CommandInfo("printsepcolorf", ShellType.TestShell, "Prints a separator with color and format support", new CommandArgumentInfo(new[] { "<Color> <Variable1;Variable2;Variable3;...> <Message>" }, true, 3), new Test_PrintSepColorFCommand()) },
             { "probehw", new CommandInfo("probehw", ShellType.TestShell, "Tests probing the hardware", new CommandArgumentInfo(), new Test_ProbeHwCommand()) },
-            { "panic", new CommandInfo("panic", ShellType.TestShell, "Tests the kernel error facility", new CommandArgumentInfo(new[] { "<ErrorType> <Reboot> <RebootTime> <Description>" }, true, 4), new Test_PanicCommand()) },
-            { "panicf", new CommandInfo("panicf", ShellType.TestShell, "Tests the kernel error facility with format support", new CommandArgumentInfo(new[] { "<ErrorType> <Reboot> <RebootTime> <Variable1;Variable2;Variable3;...> <Description>" }, true, 5), new Test_PanicFCommand()) },
             { "translate", new CommandInfo("translate", ShellType.TestShell, "Tests translating a string that exists in resources to specific language", new CommandArgumentInfo(new[] { "<Lang> <Message>" }, true, 2), new Test_TranslateCommand()) },
-            { "places", new CommandInfo("places", ShellType.TestShell, "Prints a string to console and parses the placeholders found", new CommandArgumentInfo(new[] { "<Message>" }, true, 1), new Test_PlacesCommand()) },
             { "testregexp", new CommandInfo("testregexp", ShellType.TestShell, "Tests the regular expression facility", new CommandArgumentInfo(new[] { "<pattern> <string>" }, true, 2), new Test_TestRegExpCommand()) },
-            { "loadmods", new CommandInfo("loadmods", ShellType.TestShell, "Starts all mods", new CommandArgumentInfo(), new Test_LoadModsCommand()) },
-            { "stopmods", new CommandInfo("stopmods", ShellType.TestShell, "Stops all mods", new CommandArgumentInfo(), new Test_StopModsCommand()) },
-            { "reloadmods", new CommandInfo("reloadmods", ShellType.TestShell, "Reloads all mods", new CommandArgumentInfo(), new Test_ReloadModsCommand()) },
-            { "blacklistmod", new CommandInfo("blacklistmod", ShellType.TestShell, "Adds a mod to the blacklist", new CommandArgumentInfo(new[] { "<mod>" }, true, 1), new Test_BlacklistModCommand()) },
-            { "unblacklistmod", new CommandInfo("unblacklistmod", ShellType.TestShell, "Removes a mod from the blacklist", new CommandArgumentInfo(new[] { "<mod>" }, true, 1), new Test_UnblacklistModCommand()) },
             { "colortest", new CommandInfo("colortest", ShellType.TestShell, "Tests the VT sequence for 255 colors", new CommandArgumentInfo(new[] { "<1-255>" }, true, 1), new Test_ColorTestCommand()) },
             { "colortruetest", new CommandInfo("colortruetest", ShellType.TestShell, "Tests the VT sequence for true color", new CommandArgumentInfo(new[] { "<R;G;B>" }, true, 1), new Test_ColorTrueTestCommand()) },
             { "colorwheel", new CommandInfo("colorwheel", ShellType.TestShell, "Tests the color wheel", new CommandArgumentInfo(), new Test_ColorWheelCommand()) },
@@ -69,15 +57,11 @@ namespace KS.Shell.Shells.Test
             { "checkstrings", new CommandInfo("checkstrings", ShellType.TestShell, "Checks to see if the translatable strings exist in the KS resources", new CommandArgumentInfo(new[] { "[-missingonly] <stringlistfile>" }, true, 1), new Test_CheckStringsCommand()) },
             { "sleeptook", new CommandInfo("sleeptook", ShellType.TestShell, "How many milliseconds did it really take to sleep?", new CommandArgumentInfo(new[] { "[-t] <sleepms>" }, true, 1), new Test_SleepTookCommand()) },
             { "getlinestyle", new CommandInfo("getlinestyle", ShellType.TestShell, "Gets the line ending style from text file", new CommandArgumentInfo(new[] { "<textfile>" }, true, 1), new Test_GetLineStyleCommand()) },
-            { "printfiglet", new CommandInfo("printfiglet", ShellType.TestShell, "Prints a string to console using color type and line print with Figlet support", new CommandArgumentInfo(new[] { "<Color> <FigletFont> <Message>" }, true, 3), new Test_PrintFigletCommand()) },
-            { "printfigletf", new CommandInfo("printfigletf", ShellType.TestShell, "Prints a string to console using color type and line print with format and Figlet support", new CommandArgumentInfo(new[] { "<Color> <FigletFont> <Variable1;Variable2;Variable3;...> <Message>" }, true, 4), new Test_PrintFigletFCommand()) },
             { "powerlinetest", new CommandInfo("powerlinetest", ShellType.TestShell, "Tests your console for PowerLine support", new CommandArgumentInfo(), new Test_PowerLineTestCommand()) },
             { "testexecuteasm", new CommandInfo("testexecuteasm", ShellType.TestShell, "Tests assembly entry point execution", new CommandArgumentInfo(new[] { "<pathtoasm>" }, true, 1), new Test_TestExecuteAsmCommand()) },
             { "testevent", new CommandInfo("testevent", ShellType.TestShell, "Tests an event", new CommandArgumentInfo(new[] { "<event>" }, true, 1), new Test_TestEventCommand()) },
             { "testargs", new CommandInfo("testargs", ShellType.TestShell, "Tests arguments", new CommandArgumentInfo(), new Test_TestArgsCommand()) },
-            { "testswitches", new CommandInfo("testswitches", ShellType.TestShell, "Tests switches", new CommandArgumentInfo(), new Test_TestSwitchesCommand()) },
-            { "start", new CommandInfo("start", ShellType.TestShell, "Exits the test shell and starts the kernel", new CommandArgumentInfo(), new Test_StartCommand()) },
-            { "shutdown", new CommandInfo("shutdown", ShellType.TestShell, "Exits the test shell and shuts down the kernel", new CommandArgumentInfo(), new Test_ShutdownCommand()) }
+            { "testswitches", new CommandInfo("testswitches", ShellType.TestShell, "Tests switches", new CommandArgumentInfo(), new Test_TestSwitchesCommand()) }
         };
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

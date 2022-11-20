@@ -200,5 +200,12 @@ Beep on shutdown or reboot
 Delay on shutdown or reboot
 Enables beeping upon shutting down the kernel.
 Enables delaying upon shutting down the kernel.
+Print a separator to console
+Print a separator to console with formatting
+Print a separator to console with color
+Print a separator to console with formatting and color
+Print a figlet string to console
+Print a figlet string to console with formatting
+Test panicking the kernel
 
 ==========================================================================================================================================

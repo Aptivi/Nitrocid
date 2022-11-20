@@ -53,7 +53,21 @@ namespace KS.Kernel.Debugging.Testing
             { "ShowTimeDate",       new Facades.ShowTimeDate() },
             { "ShowTimeUtc",        new Facades.ShowTimeUtc() },
             { "ShowDateUtc",        new Facades.ShowDateUtc() },
-            { "ShowTimeDateUtc",    new Facades.ShowTimeDateUtc() }
+            { "ShowTimeDateUtc",    new Facades.ShowTimeDateUtc() },
+            { "PrintSep",           new Facades.PrintSep() },
+            { "PrintSepF",          new Facades.PrintSepF() },
+            { "PrintSepColor",      new Facades.PrintSepColor() },
+            { "PrintSepColorF",     new Facades.PrintSepColorF() },
+            { "PrintFiglet",        new Facades.PrintFiglet() },
+            { "PrintFigletF",       new Facades.PrintFigletF() },
+            { "LoadMods",           new Facades.LoadMods() },
+            { "StopMods",           new Facades.StopMods() },
+            { "ReloadMods",         new Facades.ReloadMods() },
+            { "BlacklistMod",       new Facades.BlacklistMod() },
+            { "BlacklistModUndo",   new Facades.BlacklistModUndo() },
+            { "Panic",              new Facades.Panic() },
+            { "PanicF",             new Facades.PanicF() },
+            { "PrintPlaces",        new Facades.PrintPlaces() }
         };
 
         internal static void Open()
