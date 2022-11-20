@@ -59,7 +59,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
             // Keyboard shortcut
             TextWriterColor.Write("- " + Translate.DoTranslation("Keyboard shortcut") + ": ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write($"{string.Join(" +", KeyPress.Modifiers.ToString().Split(Convert.ToChar(", ")))} + {KeyPress.Key}", true, ColorTools.ColTypes.ListValue);
+            TextWriterColor.Write($"{string.Join(" + ", KeyPress.Modifiers.ToString().Split(new string[] { ", " }, StringSplitOptions.None))} + {KeyPress.Key}", true, ColorTools.ColTypes.ListValue);
         }
 
     }
