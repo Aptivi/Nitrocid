@@ -37,18 +37,16 @@ namespace KS.ConsoleBase
         /// <summary>
         /// This property checks to see if the console has been resized since the last time it has been called or the listener has started.
         /// </summary>
-        public static bool Resized
-        { 
-            get
+        /// <param name="reset">Reset the resized value once this is called</param>
+        public static bool WasResized(bool reset = true)
+        {
+            if (ResizeDetected)
             {
-                if (ResizeDetected)
-                {
-                    // The console has been resized.
-                    ResizeDetected = false;
-                    return true;
-                }
-                return false;
+                // The console has been resized.
+                ResizeDetected = !reset;
+                return true;
             }
+            return false;
         }
 
         private static void PollForResize()
