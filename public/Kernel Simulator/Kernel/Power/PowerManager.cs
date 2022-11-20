@@ -16,11 +16,13 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.RPC;
+using System.Threading;
 
 namespace KS.Kernel.Power
 {
@@ -58,6 +60,14 @@ namespace KS.Kernel.Power
                     {
                         Events.EventsManager.FireEvent("PreShutdown");
                         TextWriterColor.Write(Translate.DoTranslation("Shutting down..."));
+
+                        // Simulate 0.0.1's behavior on shutting down
+                        if (Flags.BeepOnShutdown)
+                            ConsoleWrapper.Beep();
+                        if (Flags.DelayOnShutdown)
+                            Thread.Sleep(3000);
+
+                        // Now, reset everything
                         KernelTools.ResetEverything();
                         Events.EventsManager.FireEvent("PostShutdown");
                         Flags.RebootRequested = true;
@@ -70,6 +80,14 @@ namespace KS.Kernel.Power
                     {
                         Events.EventsManager.FireEvent("PreReboot");
                         TextWriterColor.Write(Translate.DoTranslation("Rebooting..."));
+
+                        // Simulate 0.0.1's behavior on shutting down
+                        if (Flags.BeepOnShutdown)
+                            ConsoleWrapper.Beep();
+                        if (Flags.DelayOnShutdown)
+                            Thread.Sleep(3000);
+
+                        // Now, reset everything
                         KernelTools.ResetEverything();
                         Events.EventsManager.FireEvent("PostReboot");
                         ConsoleBase.ConsoleWrapper.Clear();

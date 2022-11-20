@@ -306,6 +306,14 @@ namespace KS.Kernel
         /// Enables the scroll bar in selection screens
         /// </summary>
         public static bool EnableScrollBarInSelection = true;
+        /// <summary>
+        /// Beeps on shutdown (to restore the way of 0.0.1's shutdown)
+        /// </summary>
+        public static bool BeepOnShutdown;
+        /// <summary>
+        /// Delay on shutdown (to restore the way of 0.0.1's shutdown)
+        /// </summary>
+        public static bool DelayOnShutdown;
 
         // Private flags
         /// <summary>

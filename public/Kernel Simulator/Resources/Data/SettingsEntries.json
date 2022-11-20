@@ -160,6 +160,18 @@
                 "Type": "SDouble",
                 "Variable": "BlindnessSeverity",
                 "Description": "How severe is the color blindness?"
+            },
+            {
+                "Name": "Beep on shutdown or reboot",
+                "Type": "SBoolean",
+                "Variable": "BeepOnShutdown",
+                "Description": "Enables beeping upon shutting down the kernel."
+            },
+            {
+                "Name": "Delay on shutdown or reboot",
+                "Type": "SBoolean",
+                "Variable": "DelayOnShutdown",
+                "Description": "Enables delaying upon shutting down the kernel."
             }
         ]
     },
