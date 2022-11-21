@@ -211,5 +211,20 @@ Write a translatable string to check:
 Write a translatable string list file path to check:
 Write a color number ranging from 1 to 255:
 Color wheel returned the color of
+Write a search term:
+Write a path to assembly file:
+Write an event name:
+How many milliseconds did it really take to sleep for just one millisecond?
+How many ticks did it really take to sleep for just one millisecond?
+Test notification
+Description is here
+Sends a failing progress notification to test the receiver
+Write a string to check:
+Write a regular expression:
+Write a custom screensaver name:
+Write a setting entry name:
+Write a value:
+Error in administrative shell: {0}
+Write a calendar type:
 
 ==========================================================================================================================================

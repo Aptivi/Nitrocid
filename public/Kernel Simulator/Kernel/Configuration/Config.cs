@@ -344,7 +344,6 @@ namespace KS.Kernel.Configuration
                 { "SFTP Prompt Preset", PromptPresetManager.CurrentPresets["SFTPShell"].PresetName },
                 { "RSS Prompt Preset", PromptPresetManager.CurrentPresets["RSSShell"].PresetName },
                 { "Text Edit Prompt Preset", PromptPresetManager.CurrentPresets["TextShell"].PresetName },
-                { "Test Shell Prompt Preset", PromptPresetManager.CurrentPresets["TestShell"].PresetName },
                 { "JSON Shell Prompt Preset", PromptPresetManager.CurrentPresets["JsonShell"].PresetName },
                 { "Hex Edit Prompt Preset", PromptPresetManager.CurrentPresets["HexShell"].PresetName },
                 { "HTTP Shell Prompt Preset", PromptPresetManager.CurrentPresets["HTTPShell"].PresetName },
@@ -1713,7 +1712,6 @@ namespace KS.Kernel.Configuration
             PromptPresetManager.SetPreset((string)ConfigToken["Shell"]["SFTP Prompt Preset"] ?? "Default", ShellType.SFTPShell, false);
             PromptPresetManager.SetPreset((string)ConfigToken["Shell"]["RSS Prompt Preset"] ?? "Default", ShellType.RSSShell, false);
             PromptPresetManager.SetPreset((string)ConfigToken["Shell"]["Text Edit Prompt Preset"] ?? "Default", ShellType.TextShell, false);
-            PromptPresetManager.SetPreset((string)ConfigToken["Shell"]["Test Shell Prompt Preset"] ?? "Default", ShellType.TestShell, false);
             PromptPresetManager.SetPreset((string)ConfigToken["Shell"]["JSON Shell Prompt Preset"] ?? "Default", ShellType.JsonShell, false);
             PromptPresetManager.SetPreset((string)ConfigToken["Shell"]["Hex Edit Prompt Preset"] ?? "Default", ShellType.HexShell, false);
             PromptPresetManager.SetPreset((string)ConfigToken["Shell"]["HTTP Shell Prompt Preset"] ?? "Default", ShellType.HTTPShell, false);

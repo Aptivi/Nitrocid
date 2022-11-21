@@ -44,10 +44,6 @@ namespace KS.Shell.ShellBase.Shells
         /// </summary>
         TextShell,
         /// <summary>
-        /// Test shell
-        /// </summary>
-        TestShell,
-        /// <summary>
         /// Remote debug shell
         /// </summary>
         RemoteDebugShell,

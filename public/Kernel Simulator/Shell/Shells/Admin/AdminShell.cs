@@ -35,7 +35,7 @@ namespace KS.Shell.Shells.Admin
     {
 
         /// <inheritdoc/>
-        public override string ShellType => "TestShell";
+        public override string ShellType => "AdminShell";
 
         /// <inheritdoc/>
         public override bool Bail { get; set; }
@@ -57,7 +57,7 @@ namespace KS.Shell.Shells.Admin
                 }
                 catch (Exception ex)
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Error in test shell: {0}"), true, ColorTools.ColTypes.Error, ex.Message);
+                    TextWriterColor.Write(Translate.DoTranslation("Error in administrative shell: {0}"), true, ColorTools.ColTypes.Error, ex.Message);
                     DebugWriter.WriteDebug(DebugLevel.E, "Error: {0}", ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }

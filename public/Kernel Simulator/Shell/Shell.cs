@@ -50,7 +50,6 @@ using KS.Shell.Shells.FTP;
 using KS.Shell.Shells.Mail;
 using KS.Shell.Shells.SFTP;
 using KS.Shell.Shells.Text;
-using KS.Shell.Shells.Test;
 using KS.Shell.Shells.RSS;
 using KS.Shell.Shells.Json;
 using KS.Shell.Shells.HTTP;
@@ -101,7 +100,6 @@ namespace KS.Shell
             { "MailShell", new MailShellInfo() },
             { "SFTPShell", new SFTPShellInfo() },
             { "TextShell", new TextShellInfo() },
-            { "TestShell", new TestShellInfo() },
             { "RSSShell", new RSSShellInfo() },
             { "JsonShell", new JsonShellInfo() },
             { "HTTPShell", new HTTPShellInfo() },

@@ -45,7 +45,6 @@ namespace KS.Shell.Prompts
             { "MailShell", Shell.GetShellInfo(ShellType.MailShell).ShellPresets["Default"] },
             { "SFTPShell", Shell.GetShellInfo(ShellType.SFTPShell).ShellPresets["Default"] },
             { "TextShell", Shell.GetShellInfo(ShellType.TextShell).ShellPresets["Default"] },
-            { "TestShell", Shell.GetShellInfo(ShellType.TestShell).ShellPresets["Default"] },
             { "RSSShell", Shell.GetShellInfo(ShellType.RSSShell).ShellPresets["Default"] },
             { "JsonShell", Shell.GetShellInfo(ShellType.JsonShell).ShellPresets["Default"] },
             { "HTTPShell", Shell.GetShellInfo(ShellType.HTTPShell).ShellPresets["Default"] },
@@ -117,11 +116,6 @@ namespace KS.Shell.Prompts
                 case "Shell":
                     {
                         ConfigTools.SetConfigValue(ConfigCategory.Shell, "Prompt Preset", PresetName);
-                        break;
-                    }
-                case "TestShell":
-                    {
-                        ConfigTools.SetConfigValue(ConfigCategory.Shell, "Test Shell Prompt Preset", PresetName);
                         break;
                     }
                 case "TextShell":

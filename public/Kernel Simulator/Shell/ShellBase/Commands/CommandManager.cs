@@ -73,7 +73,6 @@ namespace KS.Shell.ShellBase.Commands
                  | GetCommands(ShellType.RSSShell).ContainsKey(Command)
                  | GetCommands(ShellType.SFTPShell).ContainsKey(Command)
                  | GetCommands(ShellType.Shell).ContainsKey(Command)
-                 | GetCommands(ShellType.TestShell).ContainsKey(Command)
                  | GetCommands(ShellType.TextShell).ContainsKey(Command)
                  | GetCommands(ShellType.HTTPShell).ContainsKey(Command)
                  | GetCommands(ShellType.HexShell).ContainsKey(Command)
