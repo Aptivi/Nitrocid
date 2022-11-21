@@ -145,9 +145,7 @@ namespace KS.Misc.Games
                         ThreadManager.SleepNoBlock(SnakerSettings.SnakerDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
                     else
                         Thread.Sleep(SnakerSettings.SnakerDelay);
-                    if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
-                        ResizeSyncing = true;
-                    if (ResizeSyncing)
+                    if (ConsoleResizeListener.WasResized(false))
                         break;
 
                     // Remove excess mass
