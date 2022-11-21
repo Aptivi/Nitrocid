@@ -186,6 +186,12 @@ namespace KS.Kernel.Configuration
                         }
                         DebugWriter.WriteDebug(DebugLevel.I, "Got color var value: {0}", VariableValue);
                     }
+                    else if (VariableType == SettingsKeyType.SPreset)
+                    {
+                        if (VariableValue is KeyValuePair<string, PromptPresetBase> preset)
+                            VariableValue = preset.Value.PresetName;
+                        DebugWriter.WriteDebug(DebugLevel.I, "Got var value: {0}", VariableValue);
+                    }
                     else
                     {
                         if (FieldManager.CheckField(Variable, VariableIsInternal))
@@ -1551,6 +1557,14 @@ namespace KS.Kernel.Configuration
                                 VariableValue = ConfigTokenFromPath[VariableKeyName].ToObject<dynamic>();
                             }
                             DebugWriter.WriteDebug(DebugLevel.I, "Got var value: {0}", VariableValue);
+                        }
+                        else if (VariableType == SettingsKeyType.SPreset)
+                        {
+                            if (VariableValue is KeyValuePair<string, PromptPresetBase> preset)
+                            {
+                                // Set the preset and bail
+                                PromptPresetManager.SetPreset(preset.Value.PresetName, preset.Key);
+                            }
                         }
                         else
                         {

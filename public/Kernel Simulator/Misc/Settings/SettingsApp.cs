@@ -37,6 +37,7 @@ using KS.Misc.Screensaver.Customized;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
+using KS.Shell.Prompts;
 using Newtonsoft.Json.Linq;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
@@ -385,6 +386,9 @@ namespace KS.Misc.Settings
                 bool NeutralizePaths = (bool)(KeyToken["IsValuePath"] ?? false);
                 string NeutralizeRootPath = ListIsPathCurrentPath ? CurrentDirectory.CurrentDir : Paths.GetKernelPath(ListValuePathType);
 
+                // Preset properties
+                string ShellType = (string)KeyToken["ShellType"];
+
                 // Inputs
                 string AnswerString = "";
 
@@ -604,6 +608,10 @@ namespace KS.Misc.Settings
                             break;
                         case SettingsKeyType.SBoolean:
                             AnswerString = Convert.ToString(Convert.ToInt32(!(bool)KeyDefaultValue));
+
+                            break;
+                        case SettingsKeyType.SPreset:
+                            PromptPresetManager.PromptForPresets(ShellType);
 
                             break;
                     }
@@ -931,7 +939,12 @@ namespace KS.Misc.Settings
                                     KeyFinished = true;
                                     break;
                                 }
-
+                            case SettingsKeyType.SPreset:
+                                {
+                                    // Already set by SetPresetInternal
+                                    KeyFinished = true;
+                                    break;
+                                }
                             default:
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.W, "Answer is not valid.");

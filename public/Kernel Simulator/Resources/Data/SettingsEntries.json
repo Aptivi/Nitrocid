@@ -649,6 +649,116 @@
                 "Enumeration": "ConsoleBase.Inputs.Styles.ChoiceStyle+ChoiceOutputType",
                 "EnumerationZeroBased": true,
                 "Description": "Default choice output type"
+            },
+            {
+                "Name": "Prompt Preset",
+                "Type": "SPreset",
+                "Variable": "CurrentPresets",
+                "IsInternal": true,
+                "IsEnumerable": true,
+                "EnumerableIndex": 0,
+                "ShellType": "Shell",
+                "Description": ""
+            },
+            {
+                "Name": "Text Edit Prompt Preset",
+                "Type": "SPreset",
+                "Variable": "CurrentPresets",
+                "IsInternal": true,
+                "IsEnumerable": true,
+                "EnumerableIndex": 4,
+                "ShellType": "TextShell",
+                "Description": ""
+            },
+            {
+                "Name": "SFTP Prompt Preset",
+                "Type": "SPreset",
+                "Variable": "CurrentPresets",
+                "IsInternal": true,
+                "IsEnumerable": true,
+                "EnumerableIndex": 3,
+                "ShellType": "SFTPTextShell",
+                "Description": ""
+            },
+            {
+                "Name": "RSS Prompt Preset",
+                "Type": "SPreset",
+                "Variable": "CurrentPresets",
+                "IsInternal": true,
+                "IsEnumerable": true,
+                "EnumerableIndex": 5,
+                "ShellType": "RSSShell",
+                "Description": ""
+            },
+            {
+                "Name": "Mail Prompt Preset",
+                "Type": "SPreset",
+                "Variable": "CurrentPresets",
+                "IsInternal": true,
+                "IsEnumerable": true,
+                "EnumerableIndex": 2,
+                "ShellType": "MailShell",
+                "Description": ""
+            },
+            {
+                "Name": "JSON Shell Prompt Preset",
+                "Type": "SPreset",
+                "Variable": "CurrentPresets",
+                "IsInternal": true,
+                "IsEnumerable": true,
+                "EnumerableIndex": 6,
+                "ShellType": "JsonShell",
+                "Description": ""
+            },
+            {
+                "Name": "HTTP Shell Prompt Preset",
+                "Type": "SPreset",
+                "Variable": "CurrentPresets",
+                "IsInternal": true,
+                "IsEnumerable": true,
+                "EnumerableIndex": 7,
+                "ShellType": "HTTPShell",
+                "Description": ""
+            },
+            {
+                "Name": "Hex Edit Prompt Preset",
+                "Type": "SPreset",
+                "Variable": "CurrentPresets",
+                "IsInternal": true,
+                "IsEnumerable": true,
+                "EnumerableIndex": 8,
+                "ShellType": "HexShell",
+                "Description": ""
+            },
+            {
+                "Name": "FTP Prompt Preset",
+                "Type": "SPreset",
+                "Variable": "CurrentPresets",
+                "IsInternal": true,
+                "IsEnumerable": true,
+                "EnumerableIndex": 1,
+                "ShellType": "FTPTextShell",
+                "Description": ""
+            },
+            {
+                "Name": "Archive Shell Prompt Preset",
+                "Type": "SPreset",
+                "Variable": "CurrentPresets",
+                "IsInternal": true,
+                "IsEnumerable": true,
+                "EnumerableIndex": 9,
+                "ShellType": "ArchiveShell",
+                "Description": ""
+            },
+            {
+                "Name": "Admin Shell Prompt Preset",
+                "Type": "SPreset",
+                "Variable": "CurrentPresets",
+                "IsInternal": true,
+                "IsEnumerable": true,
+                "EnumerableIndex": 10,
+                "ShellType": "AdminShell",
+                "Description": ""
             }
         ]
     },

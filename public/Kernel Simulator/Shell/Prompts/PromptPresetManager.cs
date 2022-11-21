@@ -250,20 +250,33 @@ namespace KS.Shell.Prompts
         /// <summary>
         /// Prompts a user to select the preset
         /// </summary>
-        public static void PromptForPresets()
+        public static void PromptForPresets() =>
+            PromptForPresets(ShellStart.ShellStack[ShellStart.ShellStack.Count - 1].ShellType);
+
+        /// <summary>
+        /// Prompts a user to select the preset
+        /// </summary>
+        /// <param name="shellType">Sets preset in shell type</param>
+        public static void PromptForPresets(ShellType shellType) =>
+            PromptForPresets(shellType.ToString());
+
+        /// <summary>
+        /// Prompts a user to select the preset
+        /// </summary>
+        /// <param name="shellType">Sets preset in shell type</param>
+        public static void PromptForPresets(string shellType)
         {
-            var ShellType = ShellStart.ShellStack[ShellStart.ShellStack.Count - 1].ShellType;
-            var Presets = GetPresetsFromShell(ShellType);
+            var Presets = GetPresetsFromShell(shellType);
 
             // Add the custom presets to the local dictionary
-            foreach (string PresetName in GetCustomPresetsFromShell(ShellType).Keys)
+            foreach (string PresetName in GetCustomPresetsFromShell(shellType).Keys)
                 Presets.Add(PresetName, Presets[PresetName]);
 
             // Now, prompt the user
             var PresetNames = Presets.Keys.ToArray();
             var PresetDisplays = Presets.Values.Select(Preset => Preset.PresetPrompt).ToArray();
-            string SelectedPreset = ChoiceStyle.PromptChoice(Translate.DoTranslation("Select preset for {0}:").FormatString(ShellType), string.Join("/", PresetNames), PresetDisplays, ChoiceStyle.ChoiceOutputType.Modern, true);
-            SetPreset(SelectedPreset, ShellType);
+            string SelectedPreset = ChoiceStyle.PromptChoice(Translate.DoTranslation("Select preset for {0}:").FormatString(shellType), string.Join("/", PresetNames), PresetDisplays, ChoiceStyle.ChoiceOutputType.Modern, true);
+            SetPreset(SelectedPreset, shellType);
         }
 
     }

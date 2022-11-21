@@ -226,5 +226,16 @@ Write a setting entry name:
 Write a value:
 Error in administrative shell: {0}
 Write a calendar type:
+Prompt Preset
+Text Edit Prompt Preset
+SFTP Prompt Preset
+RSS Prompt Preset
+Mail Prompt Preset
+JSON Shell Prompt Preset
+HTTP Shell Prompt Preset
+Hex Edit Prompt Preset
+FTP Prompt Preset
+Archive Shell Prompt Preset
+Admin Shell Prompt Preset
 
 ==========================================================================================================================================
