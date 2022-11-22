@@ -72,6 +72,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 var finalAnswerTitles = new List<string>();
                 int altAnswersFirstIdx = answers.Length;
                 ConsoleKeyInfo Answer;
+                ConsoleWrapper.CursorVisible = false;
                 ConsoleWrapper.Clear(true);
 
                 // Check to see if the answer titles are the same
