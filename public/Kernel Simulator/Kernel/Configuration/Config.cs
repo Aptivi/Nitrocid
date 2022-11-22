@@ -1563,7 +1563,8 @@ namespace KS.Kernel.Configuration
                             if (VariableValue is KeyValuePair<string, PromptPresetBase> preset)
                             {
                                 // Set the preset and bail
-                                PromptPresetManager.SetPreset(preset.Value.PresetName, preset.Key);
+                                PromptPresetManager.SetPreset((string)ConfigTokenFromPath[VariableKeyName], preset.Key);
+                                continue;
                             }
                         }
                         else
