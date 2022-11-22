@@ -4102,5 +4102,17 @@
                 "Description": "How many milliseconds to wait before making the next write?"
             }
         ]
+    },
+    "BSOD": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Path": "Screensaver.BSOD",
+        "Keys": [
+            {
+                "Name": "Screen Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "BSODDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            }
+        ]
     }
 }

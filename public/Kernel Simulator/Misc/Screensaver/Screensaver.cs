@@ -71,6 +71,7 @@ namespace KS.Misc.Screensaver
             { "beatedgepulse", new BeatEdgePulseDisplay() },
             { "bouncingblock", new BouncingBlockDisplay() },
             { "bouncingtext", new BouncingTextDisplay() },
+            { "bsod", new BSODDisplay() },
             { "colormix", new ColorMixDisplay() },
             { "dateandtime", new DateAndTimeDisplay() },
             { "disco", new DiscoDisplay() },

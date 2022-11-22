@@ -1265,6 +1265,13 @@ namespace KS.Kernel.Configuration
             };
             ScreensaverConfig.Add("Equalizer", EqualizerConfig);
 
+            // BSOD config json object
+            var BSODConfig = new JObject()
+            {
+                { "Delay in Milliseconds", BSODSettings.BSODDelay }
+            };
+            ScreensaverConfig.Add("BSOD", BSODConfig);
+
             // Add a screensaver config json object to Screensaver section
             ConfigurationObject.Add("Screensaver", ScreensaverConfig);
 
@@ -2448,6 +2455,9 @@ namespace KS.Kernel.Configuration
 
             // > Equalizer
             EqualizerSettings.EqualizerNextScreenDelay = int.TryParse((string)ConfigToken["Screensaver"]["Equalizer"]["Next Screen Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Equalizer"]["Next Screen Delay in Milliseconds"] : 10;
+
+            // > BSOD
+            BSODSettings.BSODDelay = int.TryParse((string)ConfigToken["Screensaver"]["BSOD"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["BSOD"]["Delay in Milliseconds"] : 10000;
 
             // Splash Section - Splash-specific settings go below:
             // > Simple
