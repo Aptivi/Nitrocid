@@ -117,6 +117,7 @@ namespace KS.Misc.Settings
                     DebugWriter.WriteDebug(DebugLevel.I, "Saving settings...");
                     try
                     {
+                        TextWriterColor.Write(Translate.DoTranslation("Saving settings..."), true, ColorTools.ColTypes.Progress);
                         Config.CreateConfig();
                         CustomSaverTools.SaveCustomSaverSettings();
                     }
