@@ -237,5 +237,7 @@ Hex Edit Prompt Preset
 FTP Prompt Preset
 Archive Shell Prompt Preset
 Admin Shell Prompt Preset
+Random driver name
+Which current random driver is responsible for generating random numbers?
 
 ==========================================================================================================================================

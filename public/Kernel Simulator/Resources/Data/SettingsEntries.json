@@ -1593,6 +1593,13 @@
                 "Type": "SBoolean",
                 "Variable": "EnableScrollBarInSelection",
                 "Description": "Enables the scroll bar in selection screens"
+            },
+            {
+                "Name": "Random driver name",
+                "Type": "SString",
+                "Variable": "currentRandomDriver",
+                "IsInternal": true,
+                "Description": "Which current random driver is responsible for generating random numbers?"
             }
         ]
     }
