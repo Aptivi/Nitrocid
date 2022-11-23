@@ -99,6 +99,7 @@ namespace KS.ConsoleBase
                 if (Text[i - 1] == Convert.ToChar(10) & TopSeekPosition < ConsoleWrapper.BufferHeight - 1)
                 {
                     TopSeekPosition += 1;
+                    LeftSeekPosition = 0;
                 }
                 else if (Text[i - 1] != Convert.ToChar(10))
                 {
