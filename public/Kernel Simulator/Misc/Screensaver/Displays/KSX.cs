@@ -78,7 +78,7 @@ namespace KS.Misc.Screensaver.Displays
                         int currentR = 0;
                         int currentG = 0;
                         int currentB = 0;
-                        for (int currentStep = 1; currentStep <= maxSteps; currentStep++)
+                        for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
                         {
                             if (ConsoleResizeListener.WasResized(false))
                                 break;
@@ -118,6 +118,38 @@ namespace KS.Misc.Screensaver.Displays
                             int consoleX = (ConsoleWrapper.WindowWidth / 2) - (figWidth / 2);
                             int consoleY = (ConsoleWrapper.WindowHeight / 2) - (figHeight / 2);
                             FigletWhereColor.WriteFigletWhere("X", consoleX, consoleY, true, figFont, finalCol);
+
+                            // Sleep
+                            ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        }
+                        break;
+                    case 3:
+                        colorSteps = 30;
+
+                        // Get the color thresholds
+                        thresholdR = darkGreen.R / (double)colorSteps;
+                        thresholdG = darkGreen.G / (double)colorSteps;
+                        thresholdB = darkGreen.B / (double)colorSteps;
+
+                        // Now, transition from black to the target color
+                        for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
+                        {
+                            if (ConsoleResizeListener.WasResized(false))
+                                break;
+
+                            // Remove the values according to the threshold
+                            currentR = (int)Math.Round(darkGreen.R - thresholdR * currentStep);
+                            currentG = (int)Math.Round(darkGreen.G - thresholdG * currentStep);
+                            currentB = (int)Math.Round(darkGreen.B - thresholdB * currentStep);
+
+                            // Now, make a color and write the X character using figlet
+                            Color col = new(currentR, currentG, currentB);
+                            var figFont = FigletTools.GetFigletFont("Banner");
+                            int figWidth = FigletTools.GetFigletWidth("X", figFont) / 2;
+                            int figHeight = FigletTools.GetFigletHeight("X", figFont) / 2;
+                            int consoleX = (ConsoleWrapper.WindowWidth / 2) - (figWidth / 2);
+                            int consoleY = (ConsoleWrapper.WindowHeight / 2) - (figHeight / 2);
+                            FigletWhereColor.WriteFigletWhere("X", consoleX, consoleY, true, figFont, col);
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
