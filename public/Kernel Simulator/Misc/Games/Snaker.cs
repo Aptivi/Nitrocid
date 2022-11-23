@@ -23,7 +23,6 @@ using ColorSeq;
 using Extensification.DictionaryExts;
 using Extensification.ListExts;
 using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Screensaver;

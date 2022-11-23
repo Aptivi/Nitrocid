@@ -24,7 +24,6 @@ using System.Threading;
 using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;

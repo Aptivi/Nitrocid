@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.Diagnostics;
-using KS.Network.Base;
 using KS.Network.SpeedDial;
 using NUnit.Framework;
 using Shouldly;

@@ -20,7 +20,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using ColorSeq;
-using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;

@@ -21,7 +21,6 @@ using KS.ConsoleBase.Inputs;
 using KS.Languages;
 using KS.Misc.Screensaver.Customized;
 using KS.Misc.Writers.ConsoleWriters;
-using System;
 
 namespace KS.Kernel.Debugging.Testing.Facades
 {

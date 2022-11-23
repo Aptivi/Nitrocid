@@ -19,7 +19,6 @@
 using System;
 using System.Text;
 using ColorSeq;
-using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Misc.Text;
 using KS.Shell.Shells.HTTP;

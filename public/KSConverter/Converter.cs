@@ -33,7 +33,6 @@ using static KS.ConsoleBase.Colors.ColorTools;
 using KS.Kernel.Debugging.RemoteDebug;
 using KS.Users.Groups;
 using KS.Users;
-using KS.Network.Base;
 using KS.Network.SpeedDial;
 
 namespace KSConverter

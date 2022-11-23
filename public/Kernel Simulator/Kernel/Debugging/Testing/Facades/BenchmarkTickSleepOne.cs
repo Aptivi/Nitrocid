@@ -16,17 +16,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using ColorSeq;
-using FluentFTP.Helpers;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
 using KS.Languages;
-using KS.Misc.Text;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Linq;
 
 namespace KS.Kernel.Debugging.Testing.Facades
 {

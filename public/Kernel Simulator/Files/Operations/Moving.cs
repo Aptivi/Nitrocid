@@ -19,7 +19,6 @@
 using System;
 using System.IO;
 using Extensification.StringExts;
-using KS.ConsoleBase.Colors;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Languages;

@@ -27,7 +27,6 @@ using System.Collections.Generic;
 using System.IO;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
-using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Misc.Reflection;
 using KS.Misc.Writers.ConsoleWriters;

@@ -29,7 +29,6 @@ using FluentFTP;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Inputs.Styles;
-using KS.ConsoleBase.Themes;
 using KS.Drivers;
 using KS.Files;
 using KS.Files.Folders;

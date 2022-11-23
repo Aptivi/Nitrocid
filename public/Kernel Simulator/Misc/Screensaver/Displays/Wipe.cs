@@ -21,7 +21,6 @@ using System.Collections.Generic;
 using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Kernel;
 using KS.Kernel.Debugging;

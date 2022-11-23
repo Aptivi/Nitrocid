@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using Extensification.StringExts;
-using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs.Styles;
 using KS.ConsoleBase.Themes;
 using KS.ConsoleBase.Themes.Studio;

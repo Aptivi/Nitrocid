@@ -21,7 +21,6 @@ using System.Collections;
 using System.Collections.Generic;
 using ColorSeq;
 using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Misc.Threading;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;

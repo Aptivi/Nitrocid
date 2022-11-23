@@ -18,8 +18,6 @@
 
 using System;
 using System.Collections.Generic;
-using ColorSeq;
-using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Misc.Calendar.Events;
 using KS.Misc.Calendar.Reminders;

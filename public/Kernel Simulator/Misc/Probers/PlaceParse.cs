@@ -19,7 +19,6 @@
 using System;
 using System.IO;
 using ColorSeq;
-using KS.ConsoleBase.Colors;
 using KS.Files.Folders;
 using KS.Kernel;
 using KS.Kernel.Debugging;

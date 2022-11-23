@@ -24,7 +24,6 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.IO;
-using System.Runtime.Remoting;
 
 namespace KS.Kernel.Administration.Journalling
 {

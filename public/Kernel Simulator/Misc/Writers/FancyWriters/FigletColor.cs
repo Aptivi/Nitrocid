@@ -19,7 +19,6 @@
 using System;
 using ColorSeq;
 using Figgle;
-using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Writers.FancyWriters.Tools;

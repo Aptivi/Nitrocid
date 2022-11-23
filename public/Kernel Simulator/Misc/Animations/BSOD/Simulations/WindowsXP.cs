@@ -17,16 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using ColorSeq;
-using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.WriterBase;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Animations.BSOD.Simulations

@@ -19,9 +19,7 @@
 using Figgle;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace KS.Kernel.Debugging.Testing.Facades
 {

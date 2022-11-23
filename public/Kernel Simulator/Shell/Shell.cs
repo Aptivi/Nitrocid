@@ -31,7 +31,6 @@ using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Execution;
-using KS.Misc.Screensaver;
 using KS.Misc.Text;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
@@ -57,7 +56,6 @@ using KS.Shell.Shells.Hex;
 using KS.Shell.Shells.Archive;
 using KS.Shell.Shells.Admin;
 using KS.Users.Login;
-using System.Threading;
 
 namespace KS.Shell
 {

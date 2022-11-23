@@ -20,10 +20,8 @@
 using System;
 using System.Diagnostics;
 using System.IO;
-using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Shell;
 using ColorSeq;
 using KS.Misc.Probers.Motd;
 using KS.Network.Base;

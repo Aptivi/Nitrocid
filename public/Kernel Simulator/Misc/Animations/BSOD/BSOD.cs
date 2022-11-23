@@ -16,11 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using ColorSeq;
 using KS.Misc.Threading;
-using KS.Misc.Writers.ConsoleWriters;
-using System.Text;
-using System;
 using KS.ConsoleBase;
 using System.Collections.Generic;
 using KS.Misc.Animations.BSOD.Simulations;

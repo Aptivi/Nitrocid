@@ -24,8 +24,6 @@ using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
-using UnitsNet;
-using KS.ConsoleBase.Colors;
 
 namespace KS.Files.Operations
 {

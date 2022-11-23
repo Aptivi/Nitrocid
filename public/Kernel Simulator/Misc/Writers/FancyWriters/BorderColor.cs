@@ -18,12 +18,7 @@
 
 using Extensification.StringExts;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.ConsoleBase.Colors;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static KS.ConsoleBase.Colors.ColorTools;
 using KS.Kernel.Debugging;
 using KS.Languages;

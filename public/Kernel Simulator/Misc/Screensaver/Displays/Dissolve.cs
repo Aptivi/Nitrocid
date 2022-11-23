@@ -22,7 +22,6 @@ using System.Linq;
 using System.Threading;
 using ColorSeq;
 using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;

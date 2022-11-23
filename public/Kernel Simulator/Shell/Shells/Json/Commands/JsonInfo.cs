@@ -19,7 +19,6 @@
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
-using KS.ConsoleBase.Colors;
 using Newtonsoft.Json.Linq;
 using KS.Misc.Writers.FancyWriters;
 

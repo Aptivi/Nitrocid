@@ -25,7 +25,6 @@ using ColorSeq;
 using Extensification.StringExts;
 using KS.Arguments.ArgumentBase;
 using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Files.Querying;
 using KS.Hardware;

@@ -23,7 +23,6 @@ using System.Text;
 using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;

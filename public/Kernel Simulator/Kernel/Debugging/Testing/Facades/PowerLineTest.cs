@@ -17,17 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using ColorSeq;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
-using KS.Files;
-using KS.Hardware;
-using KS.Kernel.Events;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.FancyWriters;
-using KS.TimeDate;
 using System;
-using System.Reflection;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Kernel.Debugging.Testing.Facades

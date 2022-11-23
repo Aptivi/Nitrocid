@@ -21,7 +21,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using ColorSeq;
-using KS.ConsoleBase.Colors;
 using Newtonsoft.Json.Linq;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 

@@ -18,7 +18,6 @@
 
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
-using System;
 using System.Collections.Generic;
 
 namespace KS.Drivers

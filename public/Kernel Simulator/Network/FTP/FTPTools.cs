@@ -17,16 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using System.Data;
-using System.Linq;
 using System.Net;
 using System.Net.Security;
 using FluentFTP;
 using FluentFTP.Client.BaseClient;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
-using KS.Files;
-using KS.Files.Querying;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -35,7 +31,6 @@ using KS.Misc.Reflection;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
-using KS.Network.Base;
 using KS.Network.FTP.Transfer;
 using KS.Network.SpeedDial;
 using KS.Shell.Shells.FTP;
