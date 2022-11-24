@@ -18,7 +18,7 @@
 
 using ColorSeq;
 using KS.Drivers.RNG;
-using KS.Misc.Writers.WriterBase;
+using KS.Drivers;
 using System;
 using System.Collections.Generic;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
@@ -68,7 +68,7 @@ namespace KS.Misc.Animations.BSOD.Simulations
             ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // First, write the introduction
-            WriterPlainManager.CurrentPlain.WritePlain("A problem has been detected and Windows has been shut down to prevent damage\n" +
+            DriverHandler.CurrentConsoleDriver.WritePlain("A problem has been detected and Windows has been shut down to prevent damage\n" +
                                                        "to your computer.\n", true);
 
             // Then, get the message
@@ -77,36 +77,36 @@ namespace KS.Misc.Animations.BSOD.Simulations
                                      // We're not displaying message, but display code if Russian Roulette returned true.
                                      displayCodeName ? BugCheckCode.ToString() : "";
             if (!string.IsNullOrEmpty(bugCheckMessage))
-                WriterPlainManager.CurrentPlain.WritePlain($"{bugCheckMessage}\n", true);
+                DriverHandler.CurrentConsoleDriver.WritePlain($"{bugCheckMessage}\n", true);
 
             // If this is the first time...
-            WriterPlainManager.CurrentPlain.WritePlain("If this is the first time you've seen this Stop error screen,\n" +
+            DriverHandler.CurrentConsoleDriver.WritePlain("If this is the first time you've seen this Stop error screen,\n" +
                                                        "restart your computer. If this screen appears again, follow\n" +
                                                        "these steps:\n", true);
 
             // Display some steps as to how to update your software and hardware drivers through Windows Update
-            WriterPlainManager.CurrentPlain.WritePlain("Check to make sure any new hardware or software is properly installed.\n" +
+            DriverHandler.CurrentConsoleDriver.WritePlain("Check to make sure any new hardware or software is properly installed.\n" +
                                                        "If this is a new installation, ask your hardware or software manufacturer\n" +
                                                        "for any Windows updates you might need.\n", true);
 
             // Display an unhelpful step that only applies to 2001-era computers or older
-            WriterPlainManager.CurrentPlain.WritePlain("If problems continue, disable or remove any newly installed hardware\n" +
+            DriverHandler.CurrentConsoleDriver.WritePlain("If problems continue, disable or remove any newly installed hardware\n" +
                                                        "or software. Disable BIOS memory options such as caching or shadowing.", true);
 
             // Safe mode...
-            WriterPlainManager.CurrentPlain.WritePlain("If you need to use Safe Mode to remove or disable components, restart\n" +
+            DriverHandler.CurrentConsoleDriver.WritePlain("If you need to use Safe Mode to remove or disable components, restart\n" +
                                                        "your computer, press F8 to select Advanced Startup Options, and then\n" +
                                                        "select Safe Mode.\n", true);
 
             // Display technical information
-            WriterPlainManager.CurrentPlain.WritePlain("Technical information:\n\n" +
+            DriverHandler.CurrentConsoleDriver.WritePlain("Technical information:\n\n" +
                                                       $"*** STOP: 0x{bugParams.WindowsBugCheckCode:X8} (0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8})\n\n", true);
 
             // Display dumping message and stop here
-            WriterPlainManager.CurrentPlain.WritePlain("Collecting data for crash dump...\n" +
+            DriverHandler.CurrentConsoleDriver.WritePlain("Collecting data for crash dump...\n" +
                                                        "Initializing disk for crash dump...\n" +
                                                        "Beginning dump of physical memory.", true);
-            WriterPlainManager.CurrentPlain.WritePlain("Dumping physical memory to disk:  ", false);
+            DriverHandler.CurrentConsoleDriver.WritePlain("Dumping physical memory to disk:  ", false);
         }
     }
 }

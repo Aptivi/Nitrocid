@@ -34,8 +34,7 @@ using KS.Misc.Execution;
 using KS.Misc.Text;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.WriterBase;
-using KS.Misc.Writers.WriterBase.PlainWriters;
+using KS.Drivers;
 using KS.Modifications;
 using KS.Scripting;
 using KS.Shell.Prompts;
@@ -56,6 +55,8 @@ using KS.Shell.Shells.Hex;
 using KS.Shell.Shells.Archive;
 using KS.Shell.Shells.Admin;
 using KS.Users.Login;
+using KS.Drivers.Console.Consoles;
+using File = KS.Drivers.Console.Consoles.File;
 
 namespace KS.Shell
 {
@@ -413,11 +414,11 @@ namespace KS.Shell
             }
 
             // Restore console output to its original state if any
-            if (WriterPlainManager.CurrentPlainName != "Console")
+            if (DriverHandler.currentConsoleDriver != "Terminal")
             {
-                if (WriterPlainManager.CurrentPlain is FilePlainWriter writer)
+                if (DriverHandler.CurrentConsoleDriver is File writer)
                     writer.FilterVT = false;
-                WriterPlainManager.ChangePlain("Console");
+                DriverHandler.currentConsoleDriver = "Terminal";
             }
 
             // Restore title
@@ -454,9 +455,9 @@ namespace KS.Shell
                 DebugWriter.WriteDebug(DebugLevel.I, "Output redirection found with append.");
                 string OutputFileName = Command.Substring(Command.LastIndexOf(">") + 2);
                 string OutputFilePath = Filesystem.NeutralizePath(OutputFileName);
-                WriterPlainManager.ChangePlain("File");
-                ((FilePlainWriter)WriterPlainManager.CurrentPlain).PathToWrite = OutputFilePath;
-                ((FilePlainWriter)WriterPlainManager.CurrentPlain).FilterVT = true;
+                DriverHandler.currentConsoleDriver = "File";
+                ((File)DriverHandler.CurrentConsoleDriver).PathToWrite = OutputFilePath;
+                ((File)DriverHandler.CurrentConsoleDriver).FilterVT = true;
                 Command = Command.Replace(" >>> " + OutputFileName, "");
             }
             else if (Command.Contains(">>"))
@@ -464,9 +465,9 @@ namespace KS.Shell
                 DebugWriter.WriteDebug(DebugLevel.I, "Output redirection found with overwrite.");
                 string OutputFileName = Command.Substring(Command.LastIndexOf(">") + 2);
                 string OutputFilePath = Filesystem.NeutralizePath(OutputFileName);
-                WriterPlainManager.ChangePlain("File");
-                ((FilePlainWriter)WriterPlainManager.CurrentPlain).PathToWrite = OutputFilePath;
-                ((FilePlainWriter)WriterPlainManager.CurrentPlain).FilterVT = true;
+                DriverHandler.currentConsoleDriver = "File";
+                ((File)DriverHandler.CurrentConsoleDriver).PathToWrite = OutputFilePath;
+                ((File)DriverHandler.CurrentConsoleDriver).FilterVT = true;
                 FileStream clearer = new(OutputFilePath, FileMode.OpenOrCreate, FileAccess.ReadWrite);
                 clearer.SetLength(0);
                 clearer.Close();
@@ -475,7 +476,7 @@ namespace KS.Shell
             else if (Command.EndsWith(" |SILENT|"))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Silence found. Redirecting to null writer...");
-                WriterPlainManager.ChangePlain("Null");
+                DriverHandler.currentConsoleDriver = "Null";
                 Command = Command.Replace(" |SILENT|", "");
             }
 
@@ -492,8 +493,8 @@ namespace KS.Shell
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Optional output redirection found using OutputPath ({0}).", OutputPath);
                 OutputPath = Filesystem.NeutralizePath(OutputPath);
-                WriterPlainManager.ChangePlain("File");
-                ((FilePlainWriter)WriterPlainManager.CurrentPlain).PathToWrite = OutputPath;
+                DriverHandler.currentConsoleDriver = "File";
+                ((File)DriverHandler.CurrentConsoleDriver).PathToWrite = OutputPath;
             }
         }
 

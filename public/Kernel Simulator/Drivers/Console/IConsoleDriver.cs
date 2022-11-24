@@ -16,12 +16,12 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-namespace KS.Misc.Writers.WriterBase
+namespace KS.Drivers.Console
 {
     /// <summary>
-    /// Plain console writer interface
+    /// Console driver interface
     /// </summary>
-    public interface IWriterPlain
+    public interface IConsoleDriver : IDriver
     {
         /// <summary>
         /// Outputs the new line into the terminal prompt without colors

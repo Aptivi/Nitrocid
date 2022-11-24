@@ -51,7 +51,7 @@ using KS.Kernel.Events;
 using KS.Misc.Text;
 using KS.Kernel.Administration.Journalling;
 using KS.Files.Operations;
-using KS.Misc.Writers.WriterBase;
+using KS.Drivers;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Kernel
@@ -95,7 +95,7 @@ namespace KS.Kernel
             // We no longer support macOS
             if (KernelPlatform.IsOnMacOS())
             {
-                WriterPlainManager.CurrentPlain.WritePlain("We apologize for your inconvenience, but we have ended support for running Kernel Simulator on macOS. Until further notice, Kernel Simulator can't continue.", true);
+                DriverHandler.CurrentConsoleDriver.WritePlain("We apologize for your inconvenience, but we have ended support for running Kernel Simulator on macOS. Until further notice, Kernel Simulator can't continue.", true);
                 Environment.Exit(100);
             }
 

@@ -20,7 +20,7 @@ using System;
 using ColorSeq;
 using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Writers.WriterBase;
+using KS.Drivers;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Writers.ConsoleWriters
@@ -48,7 +48,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(colorType);
 
                     // Write wrapped output
-                    WriterPlainManager.CurrentPlain.WriteWrappedPlain(Text, Line, vars);
+                    DriverHandler.CurrentConsoleDriver.WriteWrappedPlain(Text, Line, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -77,7 +77,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(colorTypeBackground, true);
 
                     // Write wrapped output
-                    WriterPlainManager.CurrentPlain.WriteWrappedPlain(Text, Line, vars);
+                    DriverHandler.CurrentConsoleDriver.WriteWrappedPlain(Text, Line, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -105,7 +105,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
 
                     // Write wrapped output
-                    WriterPlainManager.CurrentPlain.WriteWrappedPlain(Text, Line, vars);
+                    DriverHandler.CurrentConsoleDriver.WriteWrappedPlain(Text, Line, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -134,7 +134,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(new Color(Convert.ToInt32(BackgroundColor)));
 
                     // Write wrapped output
-                    WriterPlainManager.CurrentPlain.WriteWrappedPlain(Text, Line, vars);
+                    DriverHandler.CurrentConsoleDriver.WriteWrappedPlain(Text, Line, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -162,7 +162,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
 
                     // Write wrapped output
-                    WriterPlainManager.CurrentPlain.WriteWrappedPlain(Text, Line, vars);
+                    DriverHandler.CurrentConsoleDriver.WriteWrappedPlain(Text, Line, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -191,7 +191,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(BackgroundColor, true);
 
                     // Write wrapped output
-                    WriterPlainManager.CurrentPlain.WriteWrappedPlain(Text, Line, vars);
+                    DriverHandler.CurrentConsoleDriver.WriteWrappedPlain(Text, Line, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {

@@ -23,7 +23,7 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.WriterBase;
+using KS.Drivers;
 
 namespace KS.ConsoleBase
 {
@@ -75,7 +75,7 @@ namespace KS.ConsoleBase
             if (!IsConsole256Colors())
             {
                 ConsoleWrapper.ForegroundColor = ConsoleColor.Yellow;
-                WriterPlainManager.CurrentPlain.WritePlain("Warning: Kernel Simulator makes use of the 256 colors. Make sure that your terminal is set to run on 256 color mode. Your terminal is {0}. Press any key to continue.", true, TerminalType);
+                DriverHandler.CurrentConsoleDriver.WritePlain("Warning: Kernel Simulator makes use of the 256 colors. Make sure that your terminal is set to run on 256 color mode. Your terminal is {0}. Press any key to continue.", true, TerminalType);
                 ConsoleWrapper.ReadKey(true);
             }
         }

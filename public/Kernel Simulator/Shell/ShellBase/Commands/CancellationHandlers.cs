@@ -19,7 +19,7 @@
 using System;
 using KS.Kernel;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.WriterBase;
+using KS.Drivers;
 using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.ShellBase.Commands
@@ -35,12 +35,12 @@ namespace KS.Shell.ShellBase.Commands
                 {
                     Flags.CancelRequested = true;
                     TextWriterColor.Write();
-                    WriterPlainManager.ChangePlain("Null");
+                    DriverHandler.currentConsoleDriver = "Null";
                     e.Cancel = true;
                     var StartCommandThread = ShellStart.ShellStack[ShellStart.ShellStack.Count - 1].ShellCommandThread;
                     StartCommandThread.Stop();
                     Shell.ProcessStartCommandThread.Stop();
-                    WriterPlainManager.ChangePlain("Console");
+                    DriverHandler.currentConsoleDriver = "Terminal";
                 }
             }
         }

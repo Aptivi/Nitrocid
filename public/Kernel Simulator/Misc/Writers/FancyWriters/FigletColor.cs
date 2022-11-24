@@ -19,10 +19,10 @@
 using System;
 using ColorSeq;
 using Figgle;
+using KS.Drivers;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Writers.FancyWriters.Tools;
-using KS.Misc.Writers.WriterBase;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Writers.FancyWriters
@@ -44,7 +44,7 @@ namespace KS.Misc.Writers.FancyWriters
             try
             {
                 Text = FigletTools.RenderFiglet(Text, FigletFont, Vars);
-                WriterPlainManager.CurrentPlain.WritePlain(Text, true, Vars);
+                DriverHandler.CurrentConsoleDriver.WritePlain(Text, true, Vars);
             }
             catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
             {

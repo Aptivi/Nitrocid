@@ -26,6 +26,10 @@ namespace KS.Drivers
         /// <summary>
         /// Random number generator drivers
         /// </summary>
-        RNG
+        RNG,
+        /// <summary>
+        /// Console drivers
+        /// </summary>
+        Console
     }
 }

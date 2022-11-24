@@ -27,10 +27,15 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 
-namespace KS.Misc.Writers.WriterBase.PlainWriters
+namespace KS.Drivers.Console.Consoles
 {
-    internal class FilePlainWriter : IWriterPlain
+    internal class File : IConsoleDriver
     {
+
+        public string DriverName => "File";
+
+        public DriverTypes DriverType => DriverTypes.Console;
+
         internal string PathToWrite { get; set; }
         internal bool FilterVT { get; set; }
 

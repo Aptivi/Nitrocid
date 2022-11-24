@@ -26,10 +26,15 @@ using System;
 using System.Linq;
 using System.Threading;
 
-namespace KS.Misc.Writers.WriterBase.PlainWriters
+namespace KS.Drivers.Console.Consoles
 {
-    internal class ConsolePlainWriter : IWriterPlain
+    internal class Terminal : IConsoleDriver
     {
+
+        public string DriverName => "Default";
+
+        public DriverTypes DriverType => DriverTypes.Console;
+
         /// <inheritdoc/>
         public void WritePlain(string Text, bool Line, params object[] vars)
         {

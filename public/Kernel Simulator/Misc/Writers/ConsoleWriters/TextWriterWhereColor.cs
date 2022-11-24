@@ -20,7 +20,7 @@ using System;
 using ColorSeq;
 using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Writers.WriterBase;
+using KS.Drivers;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Writers.ConsoleWriters
@@ -68,7 +68,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                 try
                 {
                     // Write text in another place. By the way, we check the text for newlines and console width excess
-                    WriterPlainManager.CurrentPlain.WriteWherePlain(msg, Left, Top, Return, RightMargin, vars);
+                    DriverHandler.CurrentConsoleDriver.WriteWherePlain(msg, Left, Top, Return, RightMargin, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {

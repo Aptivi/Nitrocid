@@ -15,10 +15,15 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-namespace KS.Misc.Writers.WriterBase.PlainWriters
+namespace KS.Drivers.Console.Consoles
 {
-    internal class NullPlainWriter : IWriterPlain
+    internal class Null : IConsoleDriver
     {
+
+        public string DriverName => "Null";
+
+        public DriverTypes DriverType => DriverTypes.Console;
+
         /// <summary>
         /// Outputs text to the void
         /// </summary>

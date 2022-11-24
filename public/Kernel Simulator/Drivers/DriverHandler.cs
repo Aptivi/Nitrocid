@@ -17,8 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Drivers.RNG;
+using KS.Drivers.Console;
 using KS.Kernel.Debugging;
 using System.Collections.Generic;
+using KS.Drivers.Console.Consoles;
 
 namespace KS.Drivers
 {
@@ -28,16 +30,29 @@ namespace KS.Drivers
     public static class DriverHandler
     {
         internal static string currentRandomDriver = "Default";
+        internal static string currentConsoleDriver = "Terminal";
 
-        private static Dictionary<string, IRandomDriver> randomDrivers = new()
+        private readonly static Dictionary<string, IRandomDriver> randomDrivers = new()
         {
             { "Default", new DefaultRandom() }
+        };
+
+        private readonly static Dictionary<string, IConsoleDriver> consoleDrivers = new()
+        {
+            { "Terminal", new Terminal() },
+            { "File", new File() },
+            { "Null", new Null() }
         };
 
         /// <summary>
         /// Gets the current random driver
         /// </summary>
         public static IRandomDriver CurrentRandomDriver { get => (IRandomDriver)GetDriver(DriverTypes.RNG, currentRandomDriver); }
+
+        /// <summary>
+        /// Gets the current console driver
+        /// </summary>
+        public static IConsoleDriver CurrentConsoleDriver { get => (IConsoleDriver)GetDriver(DriverTypes.Console, currentConsoleDriver); }
 
         /// <summary>
         /// Gets the driver
@@ -47,24 +62,46 @@ namespace KS.Drivers
         /// <returns>The driver responsible for performing operations according to driver <paramref name="type"/></returns>
         public static IDriver GetDriver(DriverTypes type, string name)
         {
+            bool found;
             switch (type)
             {
                 case DriverTypes.RNG:
                     // Try to get the driver from the name.
-                    bool found = randomDrivers.TryGetValue(name, out IRandomDriver driver);
+                    found = randomDrivers.TryGetValue(name, out IRandomDriver rdriver);
 
                     // If found, bail.
                     if (found)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Got current driver of type {0}: {1}", type.ToString(), name);
-                        return driver;
+                        return rdriver;
                     }
-                    break;
+                    else
+                    {
+                        // We didn't find anything, so return default KS driver.
+                        DebugWriter.WriteDebug(DebugLevel.W, "Got default kernel driver of type {0} because {1} is not found on {0}'s driver database.", type.ToString(), name);
+                        return randomDrivers["Default"];
+                    }
+                case DriverTypes.Console:
+                    // Try to get the driver from the name.
+                    found = consoleDrivers.TryGetValue(name, out IConsoleDriver cdriver);
+
+                    // If found, bail.
+                    if (found)
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.I, "Got current driver of type {0}: {1}", type.ToString(), name);
+                        return cdriver;
+                    }
+                    else
+                    {
+                        // We didn't find anything, so return default KS driver.
+                        DebugWriter.WriteDebug(DebugLevel.W, "Got default kernel driver of type {0} because {1} is not found on {0}'s driver database.", type.ToString(), name);
+                        return consoleDrivers["Terminal"];
+                    }
             }
 
-            // We didn't find anything, so return default KS driver.
-            DebugWriter.WriteDebug(DebugLevel.W, "Got default kernel driver of type {0} because {1} is not found on {0}'s driver database.", type.ToString(), name);
-            return randomDrivers["Default"];
+            // We shouldn't be here
+            DebugWriter.WriteDebug(DebugLevel.E, "We shouldn't be returning null here. Are you sure that it's of type {0} with name {1}?", type, name);
+            return null;
         }
 
     }
