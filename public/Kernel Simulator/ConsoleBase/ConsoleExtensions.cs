@@ -80,10 +80,8 @@ namespace KS.ConsoleBase
         /// Get the filtered cursor positions (by filtered means filtered from the VT escape sequences that matches the regex in the routine)
         /// </summary>
         /// <param name="Text">The text that contains the VT sequences</param>
-        /// <param name="Left">The filtered left position</param>
-        /// <param name="Top">The filtered top position</param>
         /// <param name="Vars">Variables to be formatted in the text</param>
-        public static void GetFilteredPositions(string Text, ref int Left, ref int Top, params object[] Vars)
+        public static (int, int) GetFilteredPositions(string Text, params object[] Vars)
         {
             // Filter all text from the VT escape sequences
             Text = FilterVTSequences(Text);
@@ -120,8 +118,9 @@ namespace KS.ConsoleBase
                     }
                 }
             }
-            Left = LeftSeekPosition;
-            Top = TopSeekPosition;
+
+            // Return the filtered positions
+            return (LeftSeekPosition, TopSeekPosition);
         }
 
         /// <summary>

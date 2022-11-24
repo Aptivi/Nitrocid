@@ -45,7 +45,11 @@ namespace KS.Drivers.Console.Consoles
                     // Get the filtered positions first.
                     int FilteredLeft = default, FilteredTop = default;
                     if (!Line)
-                        ConsoleExtensions.GetFilteredPositions(Text, ref FilteredLeft, ref FilteredTop, vars);
+                    {
+                        var pos = ConsoleExtensions.GetFilteredPositions(Text, vars);
+                        FilteredLeft = pos.Item1;
+                        FilteredTop = pos.Item2;
+                    }
 
                     // Actually write
                     if (Line)

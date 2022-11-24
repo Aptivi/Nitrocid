@@ -289,3 +289,7 @@ This also helps us in making dynamic suggestions to specific error type in the f
 ##### Migrated WriterBase to Drivers
 
 This migration helps us in building the console driver model for the kernel driver manager, so we have migrated `WriterBase` from `KS.Misc.Writers` to `KS.Drivers` to make the future changes to the console stack happen.
+
+##### Changed GetFilteredPositions to tuple
+
+To aid in simplicity of the function, we've replaced the two reference variables with the tuples in their respective orders of cursor left and top positions.
