@@ -22,6 +22,7 @@ using ColorSeq;
 using KS.ConsoleBase;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
+using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using KS.Misc.Writers.FancyWriters.Tools;
 
@@ -150,6 +151,82 @@ namespace KS.Misc.Screensaver.Displays
                             int consoleX = (ConsoleWrapper.WindowWidth / 2) - (figWidth / 2);
                             int consoleY = (ConsoleWrapper.WindowHeight / 2) - (figHeight / 2);
                             FigletWhereColor.WriteFigletWhere("X", consoleX, consoleY, true, figFont, col);
+
+                            // Sleep
+                            ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        }
+
+                        // Print the 2018s
+                        string sample = "2018|";
+                        bool printDone = false;
+                        ConsoleWrapper.CursorLeft = 0;
+                        ConsoleWrapper.CursorTop = 0;
+                        while (!printDone)
+                        {
+                            // Keep writing 2018 until it reaches the end
+                            for (int currentIdx = 0; currentIdx <= sample.Length - 1 && !printDone; currentIdx++)
+                            {
+                                // Write the current character
+                                TextWriterColor.Write(sample[currentIdx].ToString(), false, darkGreen);
+
+                                // Sleep
+                                ThreadManager.SleepNoBlock(10, ScreensaverDisplayer.ScreensaverDisplayerThread);
+
+                                // Check to see if we're at the end
+                                if (ConsoleWrapper.CursorLeft == ConsoleWrapper.WindowWidth - 1 &&
+                                    ConsoleWrapper.CursorTop == ConsoleWrapper.WindowHeight - 1)
+                                {
+                                    // We're at the end. Increment the index or reset to zero
+                                    currentIdx++;
+                                    if (currentIdx > sample.Length - 1)
+                                        currentIdx = 0;
+
+                                    // Write the current character
+                                    TextWriterColor.Write(sample[currentIdx].ToString(), false, darkGreen);
+
+                                    // Reset position
+                                    ConsoleWrapper.CursorLeft = 0;
+                                    ConsoleWrapper.CursorTop = 0;
+
+                                    // Declare as done
+                                    printDone = true;
+                                }
+                            }
+                        }
+                        break;
+                    case 4:
+                        // Print the big 2018
+                        var s4figFont = FigletTools.GetFigletFont("Banner");
+                        int s4figWidth = FigletTools.GetFigletWidth("2018", s4figFont) / 2;
+                        int s4figHeight = FigletTools.GetFigletHeight("2018", s4figFont) / 2;
+                        int s4consoleX = (ConsoleWrapper.WindowWidth / 2) - (s4figWidth / 2);
+                        int s4consoleY = (ConsoleWrapper.WindowHeight / 2) - (s4figHeight / 2);
+                        FigletWhereColor.WriteFigletWhere("2018", s4consoleX, s4consoleY, true, s4figFont, green);
+                        ThreadManager.SleepNoBlock(5000, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        break;
+                    case 5:
+                        // Fade the console out
+                        colorSteps = 30;
+
+                        // Get the color thresholds
+                        thresholdR = darkGreen.R / (double)colorSteps;
+                        thresholdG = darkGreen.G / (double)colorSteps;
+                        thresholdB = darkGreen.B / (double)colorSteps;
+
+                        // Now, transition from target color to black
+                        for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
+                        {
+                            if (ConsoleResizeListener.WasResized(false))
+                                break;
+
+                            // Remove the values according to the threshold
+                            currentR = (int)Math.Round(darkGreen.R - thresholdR * currentStep);
+                            currentG = (int)Math.Round(darkGreen.G - thresholdG * currentStep);
+                            currentB = (int)Math.Round(darkGreen.B - thresholdB * currentStep);
+
+                            // Now, make a color and fill the console with it
+                            Color col = new(currentR, currentG, currentB);
+                            ConsoleBase.Colors.ColorTools.LoadBack(col, true);
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
