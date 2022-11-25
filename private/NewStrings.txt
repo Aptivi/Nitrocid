@@ -243,5 +243,13 @@ Print a string to console with new lines in string
 Enables the notification system
 The notification system has already started
 Print a string to console with null characters
+Test All
+Stats
+Tests all facades
+Shows the current test statistics
+Successful tests:
+Failed tests:
+Failed tests:
+Tests to be run:
 
 ==========================================================================================================================================

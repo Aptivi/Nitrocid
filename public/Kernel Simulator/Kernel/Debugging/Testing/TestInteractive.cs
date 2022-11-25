@@ -17,8 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase;
+using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Inputs.Styles;
 using KS.Languages;
+using KS.Misc.Writers.ConsoleWriters;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -107,11 +109,15 @@ namespace KS.Kernel.Debugging.Testing
             var listFacadesCodeNames = facades.Keys.Select((fac) => fac).ToArray();
             var listFacadesAltOptionName = new string[] 
             { 
+                Translate.DoTranslation("Test All"),
+                Translate.DoTranslation("Stats"),
                 Translate.DoTranslation("Exit"),
                 Translate.DoTranslation("Shutdown"),
             };
             var listFacadesAltOptionDesc = new string[] 
             { 
+                Translate.DoTranslation("Tests all facades"),
+                Translate.DoTranslation("Shows the current test statistics"),
                 Translate.DoTranslation("Exits the testing mode and starts the kernel"),
                 Translate.DoTranslation("Exits the testing mode and shuts down the kernel"),
             };
@@ -126,35 +132,70 @@ namespace KS.Kernel.Debugging.Testing
                 int sel = SelectionStyle.PromptSelection(Translate.DoTranslation("Choose a test facade to run"), string.Join("/", listFacadesCodeNames), listFacadesNames, string.Join("/", listFacadesAltOptionName), listFacadesAltOptionDesc);
                 if (sel <= facadeCount)
                 {
-                    // Try to...
-                    try
-                    {
-                        // ...test the facade
-                        ConsoleWrapper.Clear();
-                        facades[listFacadesCodeNames[sel - 1]].status = TestStatus.Neutral;
-                        facades[listFacadesCodeNames[sel - 1]].Run();
-                    }
-                    catch
-                    {
-                        // Facade failed unexpectedly
-                        facades[listFacadesCodeNames[sel - 1]].status = TestStatus.Failed;
-                    }
-
-                    // Prompt the user to check to see if the test ran as expected
-                    string answer = ChoiceStyle.PromptChoice(Translate.DoTranslation("Did the test run as expected?"), "y/n");
-                    if (answer == "y")
-                        facades[listFacadesCodeNames[sel - 1]].status = TestStatus.Success;
-                    else
-                        facades[listFacadesCodeNames[sel - 1]].status = TestStatus.Failed;
+                    RunFacade(facades[listFacadesCodeNames[sel - 1]]);
                 }
                 else
                 {
-                    // Selected alternative option. Exit [facadeCount + 1] or shutdown [facadeCount + 2]
-                    if (sel >= facadeCount + 2)
+                    // Selected alternative option
+                    if (sel == facadeCount + 1)
+                    {
+                        // Test All
+                        foreach (var facade in facades.Values)
+                            RunFacade(facade);
+                        ConsoleWrapper.Clear();
+                        PrintTestStats();
+                    }
+                    else if (sel == facadeCount + 2) 
+                    {
+                        // Stats
+                        PrintTestStats();
+                    }
+                    else if (sel == facadeCount + 3)
+                    {
+                        // Exit
+                        exiting = true;
+                    }
+                    else if (sel == facadeCount + 4)
+                    {
+                        // Shutdown
                         ShutdownFlag = true;
-                    exiting = true;
+                        exiting = true;
+                    }
                 }
             }
+        }
+
+        internal static void RunFacade(TestFacade facade)
+        {
+            // Try to...
+            try
+            {
+                // ...test the facade
+                ConsoleWrapper.Clear();
+                facade.status = TestStatus.Neutral;
+                facade.Run();
+
+                // ...and prompt the user to check to see if the test ran as expected
+                ConsoleWrapper.SetCursorPosition(0, ConsoleWrapper.WindowHeight - 1);
+                string answer = ChoiceStyle.PromptChoice(Translate.DoTranslation("Did the test run as expected?"), "y/n");
+                if (answer == "y")
+                    facade.status = TestStatus.Success;
+                else
+                    facade.status = TestStatus.Failed;
+            }
+            catch
+            {
+                // Facade failed unexpectedly
+                facade.status = TestStatus.Failed;
+            }
+        }
+
+        internal static void PrintTestStats()
+        {
+            TextWriterColor.Write(Translate.DoTranslation("Successful tests:") + " {0}", facades.Values.Where((fac) => fac.TestStatus == TestStatus.Success).Count());
+            TextWriterColor.Write(Translate.DoTranslation("Failed tests:") + " {0}", facades.Values.Where((fac) => fac.TestStatus == TestStatus.Failed).Count());
+            TextWriterColor.Write(Translate.DoTranslation("Tests to be run:") + " {0}", facades.Values.Where((fac) => fac.TestStatus == TestStatus.Neutral).Count());
+            Input.DetectKeypress();
         }
     }
 }
