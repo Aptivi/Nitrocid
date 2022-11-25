@@ -47,12 +47,14 @@ namespace KS.Drivers
         /// <summary>
         /// Gets the current random driver
         /// </summary>
-        public static IRandomDriver CurrentRandomDriver { get => (IRandomDriver)GetDriver(DriverTypes.RNG, currentRandomDriver); }
+        public static IRandomDriver CurrentRandomDriver => 
+            GetRandomDriver();
 
         /// <summary>
         /// Gets the current console driver
         /// </summary>
-        public static IConsoleDriver CurrentConsoleDriver { get => (IConsoleDriver)GetDriver(DriverTypes.Console, currentConsoleDriver); }
+        public static IConsoleDriver CurrentConsoleDriver => 
+            GetConsoleDriver();
 
         /// <summary>
         /// Gets the driver
@@ -62,47 +64,64 @@ namespace KS.Drivers
         /// <returns>The driver responsible for performing operations according to driver <paramref name="type"/></returns>
         public static IDriver GetDriver(DriverTypes type, string name)
         {
-            bool found;
             switch (type)
             {
                 case DriverTypes.RNG:
-                    // Try to get the driver from the name.
-                    found = randomDrivers.TryGetValue(name, out IRandomDriver rdriver);
-
-                    // If found, bail.
-                    if (found)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Got current driver of type {0}: {1}", type.ToString(), name);
-                        return rdriver;
-                    }
-                    else
-                    {
-                        // We didn't find anything, so return default KS driver.
-                        DebugWriter.WriteDebug(DebugLevel.W, "Got default kernel driver of type {0} because {1} is not found on {0}'s driver database.", type.ToString(), name);
-                        return randomDrivers["Default"];
-                    }
+                    return GetRandomDriver(name);
                 case DriverTypes.Console:
-                    // Try to get the driver from the name.
-                    found = consoleDrivers.TryGetValue(name, out IConsoleDriver cdriver);
-
-                    // If found, bail.
-                    if (found)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Got current driver of type {0}: {1}", type.ToString(), name);
-                        return cdriver;
-                    }
-                    else
-                    {
-                        // We didn't find anything, so return default KS driver.
-                        DebugWriter.WriteDebug(DebugLevel.W, "Got default kernel driver of type {0} because {1} is not found on {0}'s driver database.", type.ToString(), name);
-                        return consoleDrivers["Terminal"];
-                    }
+                    return GetConsoleDriver(name);
             }
 
             // We shouldn't be here
             DebugWriter.WriteDebug(DebugLevel.E, "We shouldn't be returning null here. Are you sure that it's of type {0} with name {1}?", type, name);
             return null;
         }
+
+        #region Individual driver getters
+        internal static IRandomDriver GetRandomDriver() =>
+            GetRandomDriver(currentRandomDriver);
+
+        internal static IRandomDriver GetRandomDriver(string name)
+        {
+            // Try to get the driver from the name.
+            bool found = randomDrivers.TryGetValue(name, out IRandomDriver rdriver);
+
+            // If found, bail.
+            if (found)
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Got current driver: {0}", name);
+                return rdriver;
+            }
+            else
+            {
+                // We didn't find anything, so return default KS driver.
+                DebugWriter.WriteDebug(DebugLevel.W, "Got default kernel driver because {0} is not found in the driver database.", name);
+                return randomDrivers["Default"];
+            }
+        }
+
+        internal static IConsoleDriver GetConsoleDriver() =>
+            GetConsoleDriver(currentConsoleDriver);
+
+        internal static IConsoleDriver GetConsoleDriver(string name)
+        {
+            // Try to get the driver from the name.
+            bool found = consoleDrivers.TryGetValue(name, out IConsoleDriver cdriver);
+
+            // If found, bail.
+            if (found)
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Got current driver: {0}", name);
+                return cdriver;
+            }
+            else
+            {
+                // We didn't find anything, so return default KS driver.
+                DebugWriter.WriteDebug(DebugLevel.W, "Got default kernel driver because {0} is not found in the driver database.", name);
+                return consoleDrivers["Terminal"];
+            }
+        }
+        #endregion
 
     }
 }
