@@ -74,36 +74,16 @@ namespace KS.Misc.Threading
         /// </summary>
         /// <param name="Time">Time in milliseconds</param>
         /// <param name="ThreadWork">The working thread</param>
-        public static void SleepNoBlock(long Time, Thread ThreadWork)
-        {
-            var WorkFinished = default(bool);
-            var TimeCount = default(long);
-            while (!(WorkFinished | TimeCount == Time))
-            {
-                Thread.Sleep(1);
-                if (!ThreadWork.IsAlive)
-                    WorkFinished = true;
-                TimeCount += 1L;
-            }
-        }
+        public static void SleepNoBlock(long Time, Thread ThreadWork) =>
+            ThreadWork.Join((int)Time);
 
         /// <summary>
         /// Sleeps until either the time specified, or the thread is no longer alive.
         /// </summary>
         /// <param name="Time">Time in milliseconds</param>
         /// <param name="ThreadWork">The working thread</param>
-        public static void SleepNoBlock(long Time, KernelThread ThreadWork)
-        {
-            var WorkFinished = default(bool);
-            var TimeCount = default(long);
-            while (!(WorkFinished | TimeCount == Time))
-            {
-                Thread.Sleep(1);
-                if (!ThreadWork.IsAlive)
-                    WorkFinished = true;
-                TimeCount += 1L;
-            }
-        }
+        public static void SleepNoBlock(long Time, KernelThread ThreadWork) => 
+            ThreadWork.Wait((int)Time);
 
         /// <summary>
         /// Gets the actual milliseconds time from the sleep time provided

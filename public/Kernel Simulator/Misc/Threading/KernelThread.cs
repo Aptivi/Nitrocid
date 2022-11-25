@@ -126,12 +126,15 @@ namespace KS.Misc.Threading
         /// </summary>
         public void Wait()
         {
+            if (!BaseThread.IsAlive)
+                return;
+
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Waiting for kernel thread {0} with ID {1}", BaseThread.Name, BaseThread.ManagedThreadId);
                 BaseThread.Join();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException) && ex.GetType().Name != nameof(ThreadStateException))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Can't wait for kernel thread: {0}", ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
@@ -143,12 +146,15 @@ namespace KS.Misc.Threading
         /// </summary>
         public bool Wait(int timeoutMs)
         {
+            if (!BaseThread.IsAlive)
+                return false;
+
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Waiting for kernel thread {0} with ID {1} for {0} milliseconds", BaseThread.Name, BaseThread.ManagedThreadId, timeoutMs);
                 return BaseThread.Join(timeoutMs);
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException) && ex.GetType().Name != nameof(ThreadStateException))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Can't wait for kernel thread: {0}", ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
