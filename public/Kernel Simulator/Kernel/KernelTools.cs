@@ -97,7 +97,7 @@ namespace KS.Kernel
         /// <param name="Description">Explanation of what happened when it errored.</param>
         /// <param name="Exc">An exception to get stack traces, etc. Used for dump files currently.</param>
         /// <param name="Variables">Optional. Specifies variables to get on text that will be printed.</param>
-        public static void KernelError(KernelErrorLevel ErrorType, bool Reboot, long RebootTime, string Description, Exception Exc, params object[] Variables)
+        internal static void KernelError(KernelErrorLevel ErrorType, bool Reboot, long RebootTime, string Description, Exception Exc, params object[] Variables)
         {
             Flags.KernelErrored = true;
             LastKernelErrorException = Exc;
@@ -253,7 +253,7 @@ namespace KS.Kernel
         /// <param name="Description">Error description</param>
         /// <param name="ErrorType">Error type</param>
         /// <param name="Exc">Exception</param>
-        public static void GeneratePanicDump(string Description, KernelErrorLevel ErrorType, Exception Exc)
+        internal static void GeneratePanicDump(string Description, KernelErrorLevel ErrorType, Exception Exc)
         {
             try
             {
@@ -341,7 +341,7 @@ namespace KS.Kernel
         /// <summary>
         /// Reset everything for the next restart
         /// </summary>
-        public static void ResetEverything()
+        internal static void ResetEverything()
         {
             // Reset every variable below
             if (Flags.ArgsInjected == false)
@@ -399,7 +399,7 @@ namespace KS.Kernel
         /// <summary>
         /// Initializes everything
         /// </summary>
-        public static void InitEverything()
+        internal static void InitEverything()
         {
             // Initialize notifications
             if (!Notifications.NotifThread.IsAlive)
@@ -490,7 +490,7 @@ namespace KS.Kernel
         /// <summary>
         /// Removes all configuration files
         /// </summary>
-        public static void FactoryReset()
+        internal static void FactoryReset()
         {
             // Delete every single thing found in KernelPaths
             foreach (string PathName in Enum.GetNames(typeof(KernelPathType)))
@@ -515,7 +515,7 @@ namespace KS.Kernel
         /// </summary>
         /// <param name="StageNumber">The stage number</param>
         /// <param name="StageText">The stage text</param>
-        public static void ReportNewStage(int StageNumber, string StageText)
+        internal static void ReportNewStage(int StageNumber, string StageText)
         {
             // Show the stage finish times
             if (StageNumber <= 1)
@@ -582,7 +582,7 @@ namespace KS.Kernel
         /// <summary>
         /// Checks for debug symbols and downloads it if not found. It'll be auto-loaded upon download.
         /// </summary>
-        public static void CheckDebugSymbols()
+        internal static void CheckDebugSymbols()
         {
 #if SPECIFIERREL
 			if (!NetworkTools.NetworkAvailable)

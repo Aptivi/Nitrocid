@@ -293,3 +293,7 @@ This migration helps us in building the console driver model for the kernel driv
 ##### Changed GetFilteredPositions to tuple
 
 To aid in simplicity of the function, we've replaced the two reference variables with the tuples in their respective orders of cursor left and top positions.
+
+##### Internalized several kernel tools
+
+These tools can be abused.
