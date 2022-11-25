@@ -20,6 +20,7 @@ using KS.Arguments.ArgumentBase;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
+using KS.ConsoleBase.Inputs;
 using System;
 
 namespace KS.Arguments.CommandLineArguments
@@ -36,7 +37,7 @@ namespace KS.Arguments.CommandLineArguments
 
             // Either start the kernel or exit it
             TextWriterColor.Write(Translate.DoTranslation("* Press any key to start the kernel or ESC to exit."), true, ColorTools.ColTypes.Tip);
-            if (ConsoleBase.ConsoleWrapper.ReadKey(true).Key == ConsoleKey.Escape)
+            if (Input.DetectKeypress().Key == ConsoleKey.Escape)
             {
                 // Clear the console and reset the colors
                 ConsoleBase.ConsoleWrapper.ResetColor();

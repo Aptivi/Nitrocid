@@ -20,6 +20,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using ColorSeq;
+using KS.ConsoleBase.Inputs;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -77,14 +78,14 @@ namespace KS.Misc.Writers.ConsoleWriters
                             OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
                             if (LinesMade == ConsoleBase.ConsoleWrapper.WindowHeight - 1)
                             {
-                                if (ConsoleBase.ConsoleWrapper.ReadKey(true).Key == ConsoleKey.Escape)
+                                if (Input.DetectKeypress().Key == ConsoleKey.Escape)
                                     break;
                                 LinesMade = 0;
                             }
                         }
                         else if (ConsoleBase.ConsoleWrapper.KeyAvailable)
                         {
-                            if (ConsoleBase.ConsoleWrapper.ReadKey(true).Key == ConsoleKey.Escape)
+                            if (Input.DetectKeypress().Key == ConsoleKey.Escape)
                                 break;
                         }
                     }
@@ -145,14 +146,14 @@ namespace KS.Misc.Writers.ConsoleWriters
                             OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
                             if (LinesMade == ConsoleBase.ConsoleWrapper.WindowHeight - 1)
                             {
-                                if (ConsoleBase.ConsoleWrapper.ReadKey(true).Key == ConsoleKey.Escape)
+                                if (Input.DetectKeypress().Key == ConsoleKey.Escape)
                                     break;
                                 LinesMade = 0;
                             }
                         }
                         else if (ConsoleBase.ConsoleWrapper.KeyAvailable)
                         {
-                            if (ConsoleBase.ConsoleWrapper.ReadKey(true).Key == ConsoleKey.Escape)
+                            if (Input.DetectKeypress().Key == ConsoleKey.Escape)
                                 break;
                         }
                     }
@@ -213,14 +214,14 @@ namespace KS.Misc.Writers.ConsoleWriters
                             OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
                             if (LinesMade == ConsoleBase.ConsoleWrapper.WindowHeight - 1)
                             {
-                                if (ConsoleBase.ConsoleWrapper.ReadKey(true).Key == ConsoleKey.Escape)
+                                if (Input.DetectKeypress().Key == ConsoleKey.Escape)
                                     break;
                                 LinesMade = 0;
                             }
                         }
                         else if (ConsoleBase.ConsoleWrapper.KeyAvailable)
                         {
-                            if (ConsoleBase.ConsoleWrapper.ReadKey(true).Key == ConsoleKey.Escape)
+                            if (Input.DetectKeypress().Key == ConsoleKey.Escape)
                                 break;
                         }
                     }
@@ -280,14 +281,14 @@ namespace KS.Misc.Writers.ConsoleWriters
                             OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
                             if (LinesMade == ConsoleBase.ConsoleWrapper.WindowHeight - 1)
                             {
-                                if (ConsoleBase.ConsoleWrapper.ReadKey(true).Key == ConsoleKey.Escape)
+                                if (Input.DetectKeypress().Key == ConsoleKey.Escape)
                                     break;
                                 LinesMade = 0;
                             }
                         }
                         else if (ConsoleBase.ConsoleWrapper.KeyAvailable)
                         {
-                            if (ConsoleBase.ConsoleWrapper.ReadKey(true).Key == ConsoleKey.Escape)
+                            if (Input.DetectKeypress().Key == ConsoleKey.Escape)
                                 break;
                         }
                     }
@@ -350,14 +351,14 @@ namespace KS.Misc.Writers.ConsoleWriters
                             OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
                             if (LinesMade == ConsoleBase.ConsoleWrapper.WindowHeight - 1)
                             {
-                                if (ConsoleBase.ConsoleWrapper.ReadKey(true).Key == ConsoleKey.Escape)
+                                if (Input.DetectKeypress().Key == ConsoleKey.Escape)
                                     break;
                                 LinesMade = 0;
                             }
                         }
                         else if (ConsoleBase.ConsoleWrapper.KeyAvailable)
                         {
-                            if (ConsoleBase.ConsoleWrapper.ReadKey(true).Key == ConsoleKey.Escape)
+                            if (Input.DetectKeypress().Key == ConsoleKey.Escape)
                                 break;
                         }
                     }
@@ -420,14 +421,14 @@ namespace KS.Misc.Writers.ConsoleWriters
                             OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
                             if (LinesMade == ConsoleBase.ConsoleWrapper.WindowHeight - 1)
                             {
-                                if (ConsoleBase.ConsoleWrapper.ReadKey(true).Key == ConsoleKey.Escape)
+                                if (Input.DetectKeypress().Key == ConsoleKey.Escape)
                                     break;
                                 LinesMade = 0;
                             }
                         }
                         else if (ConsoleBase.ConsoleWrapper.KeyAvailable)
                         {
-                            if (ConsoleBase.ConsoleWrapper.ReadKey(true).Key == ConsoleKey.Escape)
+                            if (Input.DetectKeypress().Key == ConsoleKey.Escape)
                                 break;
                         }
                     }

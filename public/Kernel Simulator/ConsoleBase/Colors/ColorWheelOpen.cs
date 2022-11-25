@@ -170,7 +170,7 @@ namespace KS.ConsoleBase.Colors
                     TextWriterColor.Write(CharManager.NewLine + "- Lorem ipsum dolor sit amet, consectetur adipiscing elit. ({0})", true, PreviewColor, PreviewColor.Hex);
 
                     // Read and get response
-                    var ConsoleResponse = ConsoleWrapper.ReadKey(true);
+                    var ConsoleResponse = Input.DetectKeypress();
                     DebugWriter.WriteDebug(DebugLevel.I, "Keypress: {0}", ConsoleResponse.Key.ToString());
                     if (ConsoleResponse.Key == ConsoleKey.LeftArrow)
                     {
@@ -422,7 +422,7 @@ namespace KS.ConsoleBase.Colors
                     TextWriterColor.Write(CharManager.NewLine + CharManager.NewLine + "- Lorem ipsum dolor sit amet, consectetur adipiscing elit. ({0})", true, PreviewColor, PreviewColor.Hex);
 
                     // Read and get response
-                    var ConsoleResponse = ConsoleWrapper.ReadKey(true);
+                    var ConsoleResponse = Input.DetectKeypress();
                     DebugWriter.WriteDebug(DebugLevel.I, "Keypress: {0}", ConsoleResponse.Key.ToString());
                     if (ConsoleResponse.Key == ConsoleKey.LeftArrow)
                     {

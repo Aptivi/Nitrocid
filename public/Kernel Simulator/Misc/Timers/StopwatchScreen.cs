@@ -27,6 +27,7 @@ using KS.ConsoleBase;
 using KS.Languages;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
+using KS.ConsoleBase.Inputs;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Timers
@@ -85,7 +86,7 @@ namespace KS.Misc.Timers
             while (KeysKeypress != ConsoleKey.Escape)
             {
                 // Wait for a keypress
-                KeysKeypress = ConsoleWrapper.ReadKey(true).Key;
+                KeysKeypress = Input.DetectKeypress().Key;
 
                 // Check for a keypress
                 switch (KeysKeypress)

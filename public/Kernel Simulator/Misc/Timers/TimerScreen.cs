@@ -128,7 +128,7 @@ namespace KS.Misc.Timers
             // Wait for a keypress
             while (KeysKeypress != ConsoleKey.Escape)
             {
-                KeysKeypress = ConsoleWrapper.ReadKey(true).Key;
+                KeysKeypress = Input.DetectKeypress().Key;
 
                 // Check for a keypress
                 switch (KeysKeypress)
@@ -157,7 +157,7 @@ namespace KS.Misc.Timers
                                     // Not numeric.
                                     TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Indicated timeout is not numeric."), 2, KeysTextTopPosition - 4, false, ColorTools.ColTypes.Error);
                                     ConsoleExtensions.ClearLineToRight();
-                                    ConsoleWrapper.ReadKey();
+                                    Input.DetectKeypress();
                                 }
                                 else if (ReadLineReboot.ReadLine.ReadRanToCompletion)
                                 {

@@ -369,7 +369,7 @@ namespace KS.Network.RSS
                 TextWriterColor.Write(CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("This country has {0} news sources."), FeedListJsonCountries[SelectedCountryIndex]["newSources"].Count());
 
                 // Read and get response
-                var ConsoleResponse = ConsoleBase.ConsoleWrapper.ReadKey(true);
+                var ConsoleResponse = Input.DetectKeypress();
                 DebugWriter.WriteDebug(DebugLevel.I, "Keypress: {0}", ConsoleResponse.Key.ToString());
                 if (ConsoleResponse.Key == ConsoleKey.LeftArrow)
                 {

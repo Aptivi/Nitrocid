@@ -24,6 +24,7 @@ using KS.Drivers.RNG;
 using KS.Languages;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
+using KS.ConsoleBase.Inputs;
 
 namespace KS.Misc.Games
 {
@@ -78,7 +79,7 @@ namespace KS.Misc.Games
                     if (ConsoleBase.ConsoleWrapper.KeyAvailable)
                     {
                         // Read the key
-                        Keypress = ConsoleBase.ConsoleWrapper.ReadKey(true);
+                        Keypress = Input.DetectKeypress();
 
                         // Select command based on key value
                         switch (Keypress.Key)

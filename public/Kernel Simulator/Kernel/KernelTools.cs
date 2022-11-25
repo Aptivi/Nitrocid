@@ -45,6 +45,7 @@ using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using KS.Misc.Writers.MiscWriters;
+using KS.ConsoleBase.Inputs;
 using KS.Modifications;
 using KS.Network.Mail;
 using KS.Network.RPC;
@@ -173,7 +174,7 @@ namespace KS.Kernel
                             TextWriterColor.Write(Translate.DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel."), true, ColorTools.ColTypes.ContKernelError, ErrorType, Description);
                             if (Flags.ShowStackTraceOnKernelError & Exc is not null)
                                 TextWriterColor.Write(Exc.StackTrace, true, ColorTools.ColTypes.ContKernelError);
-                            ConsoleWrapper.ReadKey();
+                            Input.DetectKeypress();
                             break;
                         }
 
@@ -196,7 +197,7 @@ namespace KS.Kernel
                                 TextWriterColor.Write(Translate.DoTranslation("[{0}] panic: {1} -- Press any key to shutdown."), true, ColorTools.ColTypes.UncontKernelError, ErrorType, Description);
                                 if (Flags.ShowStackTraceOnKernelError & Exc is not null)
                                     TextWriterColor.Write(Exc.StackTrace, true, ColorTools.ColTypes.UncontKernelError);
-                                ConsoleWrapper.ReadKey();
+                                Input.DetectKeypress();
                                 PowerManager.PowerManage(PowerMode.Shutdown);
                             }
 

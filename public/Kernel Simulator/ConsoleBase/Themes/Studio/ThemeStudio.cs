@@ -160,7 +160,7 @@ namespace KS.ConsoleBase.Themes.Studio
 
                                     // Pause until a key is pressed
                                     TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Press any key to go back."));
-                                    ConsoleWrapper.ReadKey();
+                                    Input.DetectKeypress();
                                     break;
                                 }
                             case 47: // Exit
@@ -183,7 +183,7 @@ namespace KS.ConsoleBase.Themes.Studio
                         DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
                         TextWriterColor.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, ColorTools.ColTypes.Error, NumericResponse);
                         TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
-                        ConsoleWrapper.ReadKey();
+                        Input.DetectKeypress();
                     }
                 }
                 else
@@ -191,7 +191,7 @@ namespace KS.ConsoleBase.Themes.Studio
                     DebugWriter.WriteDebug(DebugLevel.W, "Answer is not numeric.");
                     TextWriterColor.Write(Translate.DoTranslation("The answer must be numeric."), true, ColorTools.ColTypes.Error);
                     TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
-                    ConsoleWrapper.ReadKey();
+                    Input.DetectKeypress();
                 }
             }
 

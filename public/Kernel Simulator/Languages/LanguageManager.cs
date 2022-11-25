@@ -227,7 +227,7 @@ namespace KS.Languages
                 if (lang == "pla")
                 {
                     TextWriterColor.Write(Translate.DoTranslation("The gangsta language contains strong language that may make you feel uncomfortable reading it. Are you sure that you want to set the language anyways?"), true, ColorTools.ColTypes.Warning);
-                    if (ConsoleBase.ConsoleWrapper.ReadKey(true).Key != ConsoleKey.Y)
+                    if (Input.DetectKeypress().Key != ConsoleKey.Y)
                     {
                         return;
                     }

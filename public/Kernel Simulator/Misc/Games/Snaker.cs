@@ -28,6 +28,7 @@ using KS.Kernel.Debugging;
 using KS.Misc.Screensaver;
 using KS.Misc.Screensaver.Displays;
 using KS.Misc.Threading;
+using KS.ConsoleBase.Inputs;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Games
@@ -238,7 +239,7 @@ namespace KS.Misc.Games
                         // User pressed the arrow button to move the snake
                         if (ConsoleBase.ConsoleWrapper.KeyAvailable)
                         {
-                            var Pressed = ConsoleBase.ConsoleWrapper.ReadKey(true).Key;
+                            var Pressed = Input.DetectKeypress().Key;
                             switch (Pressed)
                             {
                                 case ConsoleKey.DownArrow:

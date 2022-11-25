@@ -25,6 +25,7 @@ using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Drivers;
 using KS.Drivers.Console.Consoles;
+using KS.ConsoleBase.Inputs;
 
 namespace KS.ConsoleBase
 {
@@ -77,7 +78,7 @@ namespace KS.ConsoleBase
             {
                 ConsoleWrapper.ForegroundColor = ConsoleColor.Yellow;
                 DriverHandler.CurrentConsoleDriver.WritePlain("Warning: Kernel Simulator makes use of the 256 colors. Make sure that your terminal is set to run on 256 color mode. Your terminal is {0}. Press any key to continue.", true, TerminalType);
-                ConsoleWrapper.ReadKey(true);
+                Input.DetectKeypress();
             }
         }
 
@@ -107,7 +108,7 @@ namespace KS.ConsoleBase
             {
                 TextWriterColor.Write(Translate.DoTranslation("Your console is too small to run properly:") + " {0}x{1} | buff: {2}x{3}", true, ColorTools.ColTypes.Warning, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, ConsoleWrapper.BufferWidth, ConsoleWrapper.BufferHeight);
                 TextWriterColor.Write(Translate.DoTranslation("To have a better experience, resize your console window while still being on this screen. Press any key to continue..."), true, ColorTools.ColTypes.Warning);
-                ConsoleWrapper.ReadKey(true);
+                Input.DetectKeypress();
             }
         }
 

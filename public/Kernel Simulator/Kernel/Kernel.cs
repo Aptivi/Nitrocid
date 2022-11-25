@@ -52,6 +52,7 @@ using KS.Misc.Text;
 using KS.Kernel.Administration.Journalling;
 using KS.Files.Operations;
 using KS.Drivers;
+using KS.ConsoleBase.Inputs;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Kernel
@@ -146,7 +147,7 @@ namespace KS.Kernel
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Looks like you're bypassing the console size detection. Things may not work properly on small screens.") + CharManager.NewLine + 
                                               Translate.DoTranslation("To have a better experience, resize your console window while still being on this screen. Press any key to continue..."), true, ColorTools.ColTypes.Warning);
-                        ConsoleWrapper.ReadKey(true);
+                        Input.DetectKeypress();
                         Flags.CheckingForConsoleSize = true;
                     }
 
@@ -312,7 +313,7 @@ namespace KS.Kernel
             if (Flags.SimulateNoAPM)
             {
                 ConsoleWrapper.WriteLine(Translate.DoTranslation("It's now safe to turn off your computer."));
-                ConsoleWrapper.ReadKey(true);
+                Input.DetectKeypress();
             }
         }
 

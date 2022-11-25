@@ -22,6 +22,7 @@ using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.FTP.Filesystem;
 using KS.Shell.ShellBase.Commands;
+using KS.ConsoleBase.Inputs;
 
 namespace KS.Shell.Shells.FTP.Commands
 {
@@ -47,7 +48,7 @@ namespace KS.Shell.Shells.FTP.Commands
 
                 // Make a confirmation message so user will not accidentally delete a file or folder
                 TextWriterColor.Write(Translate.DoTranslation("Are you sure you want to delete {0} <y/n>?") + " ", false, ColorTools.ColTypes.Input, ListArgsOnly[0]);
-                string answer = Convert.ToString(ConsoleBase.ConsoleWrapper.ReadKey().KeyChar);
+                string answer = Convert.ToString(Input.DetectKeypress().KeyChar);
                 TextWriterColor.Write();
 
                 try

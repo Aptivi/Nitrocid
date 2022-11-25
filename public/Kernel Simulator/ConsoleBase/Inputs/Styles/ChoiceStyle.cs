@@ -193,7 +193,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 }
                 else
                 {
-                    answer = Convert.ToString(ConsoleWrapper.ReadKey().KeyChar);
+                    answer = Convert.ToString(Input.DetectKeypress().KeyChar);
                     TextWriterColor.Write();
                 }
 

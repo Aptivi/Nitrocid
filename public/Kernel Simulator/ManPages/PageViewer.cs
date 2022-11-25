@@ -27,6 +27,7 @@ using KS.Languages;
 using KS.Misc.Probers;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
+using KS.ConsoleBase.Inputs;
 using VT.NET;
 
 namespace KS.ManPages
@@ -65,7 +66,7 @@ namespace KS.ManPages
                     TextWriterColor.Write(Translate.DoTranslation("This manual page needs work for:"), true, ColorTools.ColTypes.Warning);
                     ListWriterColor.WriteList(PageManager.Pages[ManualTitle].Todos, true);
                     TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Press any key to read the manual page..."), false, ColorTools.ColTypes.Warning);
-                    ConsoleBase.ConsoleWrapper.ReadKey();
+                    Input.DetectKeypress();
                 }
 
                 // Clear screen for readability
@@ -162,7 +163,7 @@ namespace KS.ManPages
                     // Check to see if we're at the end
                     if (ConsoleBase.ConsoleWrapper.CursorTop == InfoPlace - 1)
                     {
-                        var PressedKey = ConsoleBase.ConsoleWrapper.ReadKey();
+                        var PressedKey = Input.DetectKeypress();
                         if (PressedKey.Key == ConsoleKey.Escape)
                         {
                             ConsoleBase.ConsoleWrapper.Clear();
@@ -185,7 +186,7 @@ namespace KS.ManPages
 
                 // Stop on last page
                 DebugWriter.WriteDebug(DebugLevel.I, "We're on the last page.");
-                ConsoleBase.ConsoleWrapper.ReadKey();
+                Input.DetectKeypress();
 
                 // Clean up
                 DebugWriter.WriteDebug(DebugLevel.I, "Exiting...");

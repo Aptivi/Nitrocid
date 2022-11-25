@@ -19,7 +19,7 @@
 using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Inputs;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -564,7 +564,7 @@ namespace KS.Drivers.Console.Consoles
                         OldTop = ConsoleWrapper.CursorTop;
                         if (LinesMade == ConsoleWrapper.WindowHeight - 1)
                         {
-                            if (ConsoleWrapper.ReadKey(true).Key == ConsoleKey.Escape)
+                            if (Input.DetectKeypress().Key == ConsoleKey.Escape)
                                 break;
                             LinesMade = 0;
                         }

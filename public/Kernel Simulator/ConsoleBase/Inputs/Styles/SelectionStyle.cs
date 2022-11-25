@@ -133,7 +133,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                     ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)HighlightedAnswer / finalAnswers.Count), ConsoleWrapper.WindowWidth - 2, listStartPosition - 1, listStartPosition, 1, false);
 
                 // Wait for an answer
-                Answer = ConsoleWrapper.ReadKey(true);
+                Answer = Input.DetectKeypress();
 
                 // Check the answer
                 switch (Answer.Key)

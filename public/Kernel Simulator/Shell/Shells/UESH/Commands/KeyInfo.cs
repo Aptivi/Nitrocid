@@ -21,6 +21,7 @@ using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
+using KS.ConsoleBase.Inputs;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -36,7 +37,7 @@ namespace KS.Shell.Shells.UESH.Commands
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
             TextWriterColor.Write(Translate.DoTranslation("Enter a key or a combination of keys to display its information."));
-            var KeyPress = ConsoleBase.ConsoleWrapper.ReadKey(true);
+            var KeyPress = Input.DetectKeypress();
 
             // Pressed key
             TextWriterColor.Write("- " + Translate.DoTranslation("Pressed key") + ": ", false, ColorTools.ColTypes.ListEntry);

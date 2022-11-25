@@ -32,6 +32,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using KS.ConsoleBase.Inputs;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Files.Interactive
@@ -313,7 +314,7 @@ namespace KS.Files.Interactive
                 ConsoleExtensions.ClearLineToRight();
 
                 // Wait for key
-                ConsoleKey pressedKey = ConsoleWrapper.ReadKey(true).Key;
+                ConsoleKey pressedKey = Input.DetectKeypress().Key;
                 switch (pressedKey)
                 {
                     case ConsoleKey.UpArrow:

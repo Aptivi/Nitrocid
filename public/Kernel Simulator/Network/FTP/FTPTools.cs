@@ -308,7 +308,7 @@ namespace KS.Network.FTP
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Are you sure that you want to connect?") + " (y/n) ", false, ColorTools.ColTypes.Question);
                         ColorTools.SetConsoleColor(ColorTools.GetColor(ColorTools.ColTypes.Input));
-                        Answer = Convert.ToString(ConsoleBase.ConsoleWrapper.ReadKey().KeyChar);
+                        Answer = Convert.ToString(Input.DetectKeypress().KeyChar);
                         TextWriterColor.Write();
                         DebugWriter.WriteDebug(DebugLevel.I, $"Answer is {Answer}");
                         if (Answer.ToLower() == "y")

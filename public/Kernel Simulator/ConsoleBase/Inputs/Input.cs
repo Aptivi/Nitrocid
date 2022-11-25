@@ -186,6 +186,7 @@ namespace KS.ConsoleBase.Inputs
             return ConsoleWrapper.ReadKey(Intercept);
         }
 
+#if OBSOLETEFEATS
         /// <summary>
         /// Reads the next line of characters until the condition is met or the user pressed ENTER
         /// </summary>
@@ -209,7 +210,7 @@ namespace KS.ConsoleBase.Inputs
                 }
                 if (!Finished)
                 {
-                    KeyInfo = ConsoleWrapper.ReadKey(true);
+                    KeyInfo = Input.DetectKeypress();
                     KeyCharacter = KeyInfo.KeyChar;
                     if (KeyCharacter == Convert.ToChar(13) | KeyCharacter == Convert.ToChar(10))
                     {
@@ -233,19 +234,18 @@ namespace KS.ConsoleBase.Inputs
             }
             return Final;
         }
+#endif
 
         /// <summary>
         /// Detects the keypress
         /// </summary>
-        public static void DetectKeypress()
+        public static ConsoleKeyInfo DetectKeypress()
         {
 #if NETCOREAPP
             while (!ConsoleWrapper.KeyAvailable)
                 Thread.Sleep(1);
-            ConsoleWrapper.ReadKey(true);
-#else
-            ConsoleWrapper.ReadKey(true);
 #endif
+            return ConsoleWrapper.ReadKey(true);
         }
 
     }
