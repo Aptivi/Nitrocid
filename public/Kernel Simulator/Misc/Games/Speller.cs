@@ -53,7 +53,7 @@ namespace KS.Misc.Games
                 RandomWord = Words.ElementAt(RandomDriver.Random(Words.Count));
                 DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}", RandomWord);
                 TextWriterColor.Write(RandomWord, true, ColorTools.ColTypes.Input);
-                SpeltWord = Input.ReadLineNoInput(Convert.ToChar(""));
+                SpeltWord = Input.ReadLineNoInput(Convert.ToChar("\0"));
 
                 if ((SpeltWord ?? "") == (RandomWord ?? ""))
                 {

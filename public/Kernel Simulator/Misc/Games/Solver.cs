@@ -72,7 +72,7 @@ namespace KS.Misc.Games
                 TextWriterColor.Write(RandomExpression, true, ColorTools.ColTypes.Input);
 
                 // Wait for response
-                UserEvaluated = SolverShowInput ? Input.ReadLine() : Input.ReadLineNoInput(Convert.ToChar(""));
+                UserEvaluated = SolverShowInput ? Input.ReadLine() : Input.ReadLineNoInput(Convert.ToChar("\0"));
                 DebugWriter.WriteDebug(DebugLevel.I, "Evaluated: {0}", UserEvaluated);
 
                 // Check to see if the user has entered the correct answer

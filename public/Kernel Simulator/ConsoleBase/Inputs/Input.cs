@@ -102,7 +102,7 @@ namespace KS.ConsoleBase.Inputs
             }
             else
             {
-                return ReadLineNoInput(Convert.ToChar(""));
+                return ReadLineNoInput(Convert.ToChar("\0"));
             }
         }
 
@@ -131,7 +131,7 @@ namespace KS.ConsoleBase.Inputs
             }
             else
             {
-                return ReadLineNoInputUnsafe(Convert.ToChar(""));
+                return ReadLineNoInputUnsafe(Convert.ToChar("\0"));
             }
         }
 

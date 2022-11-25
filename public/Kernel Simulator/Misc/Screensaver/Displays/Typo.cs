@@ -238,7 +238,7 @@ namespace KS.Misc.Screensaver.Displays
                     {
                         // Miss is guaranteed. Simulate the missed character
                         DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Missed a character!");
-                        StruckCharAssigned = Convert.ToChar("");
+                        StruckCharAssigned = Convert.ToChar("\0");
                     }
                     // Typo is guaranteed. Select a strike string randomly until the struck key is found in between the characters
                     else
