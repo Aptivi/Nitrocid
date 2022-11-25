@@ -30,9 +30,11 @@ namespace KS.Misc.Animations.BSOD
     public static class BSOD
     {
 
-        private static List<BaseBSOD> BSODList = new()
+        private static readonly List<BaseBSOD> BSODList = new()
         {
-            new WindowsXP()
+            new WindowsXP(),
+            new Windows2K(),
+            new Windows98(),
         };
 
         /// <summary>
