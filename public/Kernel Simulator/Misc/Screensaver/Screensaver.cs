@@ -95,6 +95,7 @@ namespace KS.Misc.Screensaver
             { "marquee", new MarqueeDisplay() },
             { "matrix", new MatrixDisplay() },
             { "meteor", new MeteorDisplay() },
+            { "newyear", new NewYearDisplay() },
             { "noise", new NoiseDisplay() },
             { "personlookup", new PersonLookupDisplay() },
             { "plain", new PlainDisplay() },
