@@ -89,6 +89,7 @@ namespace KS.ConsoleBase
             // Seek through filtered text (make it seem like it came from Linux by removing CR (\r)), return to the old position, and return the filtered positions
             Text = StringManipulate.FormatString(Text, Vars);
             Text = Text.Replace(Convert.ToString(Convert.ToChar(13)), "");
+            Text = Text.Replace(Convert.ToString(Convert.ToChar(0)), "");
             int LeftSeekPosition = ConsoleWrapper.CursorLeft;
             int TopSeekPosition = ConsoleWrapper.CursorTop;
             for (int i = 1; i <= Text.Length; i++)

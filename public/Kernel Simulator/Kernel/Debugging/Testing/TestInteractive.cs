@@ -42,6 +42,7 @@ namespace KS.Kernel.Debugging.Testing
             { "PrintFigletF",           new Facades.PrintFigletF() },
             { "PrintPlaces",            new Facades.PrintPlaces() },
             { "PrintWithNewLines",      new Facades.PrintWithNewLines() },
+            { "PrintWithNulls",         new Facades.PrintWithNulls() },
             { "Debug",                  new Facades.Debug() },
             { "RDebug",                 new Facades.RDebug() },
             { "TestDictWriterStr",      new Facades.TestDictWriterStr() },
