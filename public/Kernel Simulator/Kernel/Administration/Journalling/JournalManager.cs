@@ -51,6 +51,10 @@ namespace KS.Kernel.Administration.Journalling
         /// <param name="Vars">Variables to format in message</param>
         public static void WriteJournal(string Message, JournalStatus Status, params object[] Vars)
         {
+            // If the journal path is null, bail
+            if (string.IsNullOrEmpty(JournalPath))
+                return;
+
             // If we don't have the target journal file, create it
             if (!Checking.FileExists(JournalPath))
                 Making.MakeJsonFile(JournalPath, false, true);
@@ -78,6 +82,11 @@ namespace KS.Kernel.Administration.Journalling
         /// </summary>
         public static void PrintJournalLog()
         {
+            // If the journal path is null, bail
+            if (string.IsNullOrEmpty(JournalPath))
+                return;
+
+            // Now, parse the journal
             var JournalFileObject = JArray.Parse(File.ReadAllText(JournalPath));
             for (int i = 0; i < JournalFileObject.Count; i++)
             {
