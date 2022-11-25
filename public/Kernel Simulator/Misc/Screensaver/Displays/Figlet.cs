@@ -274,18 +274,18 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
+            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleWrapper.ForegroundColor = ConsoleColor.White;
         }
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            int ConsoleMiddleWidth = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d);
-            int ConsoleMiddleHeight = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d);
+            int ConsoleMiddleWidth = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
+            int ConsoleMiddleHeight = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
             var FigletFontUsed = FigletTools.GetFigletFont(FigletSettings.FigletFont);
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
-            ConsoleBase.ConsoleWrapper.Clear();
+            ConsoleWrapper.CursorVisible = false;
+            ConsoleWrapper.Clear();
 
             // Set colors
             var ColorStorage = new Color(255, 255, 255);

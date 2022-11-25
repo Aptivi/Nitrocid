@@ -88,23 +88,23 @@ namespace KS.Misc.Screensaver.Displays
         {
             double NoiseDense = (NoiseSettings.NoiseDensity > 100 ? 100 : NoiseSettings.NoiseDensity) / 100d;
 
-            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.DarkGray;
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
-            ConsoleBase.ConsoleWrapper.Clear();
-            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleWrapper.BackgroundColor = ConsoleColor.DarkGray;
+            ConsoleWrapper.CursorVisible = false;
+            ConsoleWrapper.Clear();
+            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
 
             // Select random positions to generate noise
-            int AmountOfBlocks = ConsoleBase.ConsoleWrapper.WindowWidth * ConsoleBase.ConsoleWrapper.WindowHeight;
+            int AmountOfBlocks = ConsoleWrapper.WindowWidth * ConsoleWrapper.WindowHeight;
             int BlocksToCover = (int)Math.Round(AmountOfBlocks * NoiseDense);
             var CoveredBlocks = new ArrayList();
             while (!(CoveredBlocks.Count == BlocksToCover | ConsoleResizeListener.WasResized(false)))
             {
                 if (!ConsoleResizeListener.WasResized(false))
                 {
-                    int CoverX = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowWidth);
-                    int CoverY = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowHeight);
-                    ConsoleBase.ConsoleWrapper.SetCursorPosition(CoverX, CoverY);
-                    ConsoleBase.ConsoleWrapper.Write(" ");
+                    int CoverX = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
+                    int CoverY = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
+                    ConsoleWrapper.SetCursorPosition(CoverX, CoverY);
+                    ConsoleWrapper.Write(" ");
                     if (!CoveredBlocks.Contains(CoverX.ToString() + ", " + CoverY.ToString()))
                         CoveredBlocks.Add(CoverX.ToString() + ", " + CoverY.ToString());
                 }

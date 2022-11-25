@@ -45,10 +45,10 @@ namespace KS.Misc.Games
             int SnakeLength = 1;
             var SnakeMassPositions = new List<string>();
             var Direction = SnakeDirection.Bottom;
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
-            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
-            ConsoleBase.ConsoleWrapper.Clear();
+            ConsoleWrapper.CursorVisible = false;
+            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleWrapper.ForegroundColor = ConsoleColor.White;
+            ConsoleWrapper.Clear();
 
             // Get the floor color ready
             var FloorColor = ChangeSnakeColor();
@@ -60,49 +60,49 @@ namespace KS.Misc.Games
                 int FloorBottomLeftEdge = 2;
                 DebugWriter.WriteDebug(DebugLevel.I, "Top left edge: {0}, Bottom left edge: {1}", FloorTopLeftEdge, FloorBottomLeftEdge);
 
-                int FloorTopRightEdge = ConsoleBase.ConsoleWrapper.WindowWidth - 3;
-                int FloorBottomRightEdge = ConsoleBase.ConsoleWrapper.WindowWidth - 3;
+                int FloorTopRightEdge = ConsoleWrapper.WindowWidth - 3;
+                int FloorBottomRightEdge = ConsoleWrapper.WindowWidth - 3;
                 DebugWriter.WriteDebug(DebugLevel.I, "Top right edge: {0}, Bottom right edge: {1}", FloorTopRightEdge, FloorBottomRightEdge);
 
                 int FloorTopEdge = 2;
-                int FloorBottomEdge = ConsoleBase.ConsoleWrapper.WindowHeight - 2;
+                int FloorBottomEdge = ConsoleWrapper.WindowHeight - 2;
                 DebugWriter.WriteDebug(DebugLevel.I, "Top edge: {0}, Bottom edge: {1}", FloorTopEdge, FloorBottomEdge);
 
                 int FloorLeftEdge = 2;
-                int FloorRightEdge = ConsoleBase.ConsoleWrapper.WindowWidth - 4;
+                int FloorRightEdge = ConsoleWrapper.WindowWidth - 4;
                 DebugWriter.WriteDebug(DebugLevel.I, "Left edge: {0}, Right edge: {1}", FloorLeftEdge, FloorRightEdge);
                 ColorTools.SetConsoleColor(FloorColor, true, true);
 
                 // First, draw the floor top edge
                 for (int x = FloorTopLeftEdge; x <= FloorTopRightEdge; x++)
                 {
-                    ConsoleBase.ConsoleWrapper.SetCursorPosition(x, 1);
+                    ConsoleWrapper.SetCursorPosition(x, 1);
                     DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor top edge ({0}, {1})", x, 1);
-                    ConsoleBase.ConsoleWrapper.Write(" ");
+                    ConsoleWrapper.Write(" ");
                 }
 
                 // Second, draw the floor bottom edge
                 for (int x = FloorBottomLeftEdge; x <= FloorBottomRightEdge; x++)
                 {
-                    ConsoleBase.ConsoleWrapper.SetCursorPosition(x, FloorBottomEdge);
+                    ConsoleWrapper.SetCursorPosition(x, FloorBottomEdge);
                     DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor bottom edge ({0}, {1})", x, FloorBottomEdge);
-                    ConsoleBase.ConsoleWrapper.Write(" ");
+                    ConsoleWrapper.Write(" ");
                 }
 
                 // Third, draw the floor left edge
                 for (int y = FloorTopEdge; y <= FloorBottomEdge; y++)
                 {
-                    ConsoleBase.ConsoleWrapper.SetCursorPosition(FloorLeftEdge, y);
+                    ConsoleWrapper.SetCursorPosition(FloorLeftEdge, y);
                     DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor left edge ({0}, {1})", FloorLeftEdge, y);
-                    ConsoleBase.ConsoleWrapper.Write("  ");
+                    ConsoleWrapper.Write("  ");
                 }
 
                 // Finally, draw the floor right edge
                 for (int y = FloorTopEdge; y <= FloorBottomEdge; y++)
                 {
-                    ConsoleBase.ConsoleWrapper.SetCursorPosition(FloorRightEdge, y);
+                    ConsoleWrapper.SetCursorPosition(FloorRightEdge, y);
                     DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor right edge ({0}, {1})", FloorRightEdge, y);
-                    ConsoleBase.ConsoleWrapper.Write("  ");
+                    ConsoleWrapper.Write("  ");
                 }
             }
 
@@ -114,16 +114,16 @@ namespace KS.Misc.Games
             {
                 bool Dead = false;
                 int FloorTopEdge = 1;
-                int FloorBottomEdge = ConsoleBase.ConsoleWrapper.WindowHeight - 2;
+                int FloorBottomEdge = ConsoleWrapper.WindowHeight - 2;
                 int FloorLeftEdge = 3;
-                int FloorRightEdge = ConsoleBase.ConsoleWrapper.WindowWidth - 4;
+                int FloorRightEdge = ConsoleWrapper.WindowWidth - 4;
                 DebugWriter.WriteDebug(DebugLevel.I, "Floor top edge {0}", FloorTopEdge);
                 DebugWriter.WriteDebug(DebugLevel.I, "Floor bottom edge {0}", FloorBottomEdge);
                 DebugWriter.WriteDebug(DebugLevel.I, "Floor left edge {0}", FloorLeftEdge);
                 DebugWriter.WriteDebug(DebugLevel.I, "Floor right edge {0}", FloorRightEdge);
 
-                int SnakeCurrentX = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d);
-                int SnakeCurrentY = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d);
+                int SnakeCurrentX = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
+                int SnakeCurrentY = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
                 DebugWriter.WriteDebug(DebugLevel.I, "Initial snake position ({0}, {1})", SnakeCurrentX, SnakeCurrentY);
 
                 int SnakeAppleX = RandomDriver.Random(FloorLeftEdge + 1, FloorRightEdge - 1);
@@ -149,9 +149,9 @@ namespace KS.Misc.Games
                         break;
 
                     // Remove excess mass
-                    ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-                    ConsoleBase.ConsoleWrapper.SetCursorPosition(SnakeLastTailToWipeX, SnakeLastTailToWipeY);
-                    ConsoleBase.ConsoleWrapper.Write(" ");
+                    ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+                    ConsoleWrapper.SetCursorPosition(SnakeLastTailToWipeX, SnakeLastTailToWipeY);
+                    ConsoleWrapper.Write(" ");
 
                     // Set the snake color
                     ColorTools.SetConsoleColor(SnakeColor, true, true);
@@ -160,8 +160,8 @@ namespace KS.Misc.Games
                     if (!AppleDrawn)
                     {
                         AppleDrawn = true;
-                        ConsoleBase.ConsoleWrapper.SetCursorPosition(SnakeAppleX, SnakeAppleY);
-                        ConsoleBase.ConsoleWrapper.Write("+");
+                        ConsoleWrapper.SetCursorPosition(SnakeAppleX, SnakeAppleY);
+                        ConsoleWrapper.Write("+");
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawn apple at ({0}, {1})", SnakeAppleX, SnakeAppleY);
                     }
 
@@ -171,9 +171,9 @@ namespace KS.Misc.Games
                         var PositionStrings = SnakeMassPositions[PositionIndex].Split('/');
                         int PositionX = Convert.ToInt32(PositionStrings[0]);
                         int PositionY = Convert.ToInt32(PositionStrings[1]);
-                        ConsoleBase.ConsoleWrapper.SetCursorPosition(PositionX, PositionY);
-                        ConsoleBase.ConsoleWrapper.Write(" ");
-                        ConsoleBase.ConsoleWrapper.SetCursorPosition(PositionX, PositionY);
+                        ConsoleWrapper.SetCursorPosition(PositionX, PositionY);
+                        ConsoleWrapper.Write(" ");
+                        ConsoleWrapper.SetCursorPosition(PositionX, PositionY);
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawn snake at ({0}, {1}) for mass {2}/{3}", PositionX, PositionY, PositionIndex + 1, SnakeMassPositions.Count);
                     }
 
@@ -237,7 +237,7 @@ namespace KS.Misc.Games
                     else
                     {
                         // User pressed the arrow button to move the snake
-                        if (ConsoleBase.ConsoleWrapper.KeyAvailable)
+                        if (ConsoleWrapper.KeyAvailable)
                         {
                             var Pressed = Input.DetectKeypress().Key;
                             switch (Pressed)
@@ -350,8 +350,8 @@ namespace KS.Misc.Games
                     // If dead, show dead face
                     if (Dead)
                     {
-                        ConsoleBase.ConsoleWrapper.SetCursorPosition(SnakePreviousX, SnakePreviousY);
-                        ConsoleBase.ConsoleWrapper.Write("X");
+                        ConsoleWrapper.SetCursorPosition(SnakePreviousX, SnakePreviousY);
+                        ConsoleWrapper.Write("X");
                         DebugWriter.WriteDebug(DebugLevel.I, "Snake dead at {0}/{1}.", SnakePreviousX, SnakePreviousY);
                     }
 
@@ -378,9 +378,9 @@ namespace KS.Misc.Games
 
             // Reset mass and console display
             SnakeMassPositions.Clear();
-            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
-            ConsoleBase.ConsoleWrapper.Clear();
+            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleWrapper.ForegroundColor = ConsoleColor.White;
+            ConsoleWrapper.Clear();
             ConsoleResizeListener.WasResized();
         }
 

@@ -278,19 +278,19 @@ namespace KS.Misc.Screensaver.Displays
         {
             // Variable preparations
             ColorTools.SetConsoleColor(new Color(LinotypoSettings.LinotypoTextColor));
-            ConsoleBase.ConsoleWrapper.Clear();
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
-            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
+            ConsoleWrapper.Clear();
+            ConsoleWrapper.CursorVisible = false;
+            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
 
         public override void ScreensaverLogic()
         {
             int CpmSpeedMin = LinotypoSettings.LinotypoWritingSpeedMin * 5;
             int CpmSpeedMax = LinotypoSettings.LinotypoWritingSpeedMax * 5;
-            int MaxCharacters = (int)Math.Round((ConsoleBase.ConsoleWrapper.WindowWidth - 2) / (double)LinotypoSettings.LinotypoTextColumns - 3d);
+            int MaxCharacters = (int)Math.Round((ConsoleWrapper.WindowWidth - 2) / (double)LinotypoSettings.LinotypoTextColumns - 3d);
             int CurrentColumn = 1;
-            int CurrentColumnRowConsole = ConsoleBase.ConsoleWrapper.CursorLeft;
-            int ColumnRowConsoleThreshold = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / (double)LinotypoSettings.LinotypoTextColumns);
+            int CurrentColumnRowConsole = ConsoleWrapper.CursorLeft;
+            int ColumnRowConsoleThreshold = (int)Math.Round(ConsoleWrapper.WindowWidth / (double)LinotypoSettings.LinotypoTextColumns);
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Minimum speed from {0} WPM: {1} CPM", LinotypoSettings.LinotypoWritingSpeedMin, CpmSpeedMin);
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Maximum speed from {0} WPM: {1} CPM", LinotypoSettings.LinotypoWritingSpeedMax, CpmSpeedMax);
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Maximum characters: {0} (satisfying {1} columns)", MaxCharacters, LinotypoSettings.LinotypoTextColumns);
@@ -342,15 +342,15 @@ namespace KS.Misc.Screensaver.Displays
                 if (CurrentColumn == 1)
                 {
                     DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Column 1. Printing newline...");
-                    ConsoleBase.ConsoleWrapper.WriteLine();
+                    ConsoleWrapper.WriteLine();
                 }
                 else
                 {
                     DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Column {0}. Setting left to {1}...", CurrentColumn, CurrentColumnRowConsole);
-                    ConsoleBase.ConsoleWrapper.SetCursorPosition(CurrentColumnRowConsole, ConsoleBase.ConsoleWrapper.CursorTop + 1);
+                    ConsoleWrapper.SetCursorPosition(CurrentColumnRowConsole, ConsoleWrapper.CursorTop + 1);
                 }
-                ConsoleBase.ConsoleWrapper.Write("    ");
-                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleBase.ConsoleWrapper.CursorLeft, ConsoleBase.ConsoleWrapper.CursorTop);
+                ConsoleWrapper.Write("    ");
+                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
                 bool NewLineDone = true;
 
                 // Split the paragraph into sentences that have the length of maximum characters that can be printed for each column
@@ -399,16 +399,16 @@ namespace KS.Misc.Screensaver.Displays
                         if (CurrentColumn == 1)
                         {
                             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Column 1. Printing newline...");
-                            ConsoleBase.ConsoleWrapper.WriteLine();
+                            ConsoleWrapper.WriteLine();
                         }
                         else
                         {
                             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Column {0}. Setting left to {1}...", CurrentColumn, CurrentColumnRowConsole);
-                            ConsoleBase.ConsoleWrapper.SetCursorPosition(CurrentColumnRowConsole, ConsoleBase.ConsoleWrapper.CursorTop + 1);
+                            ConsoleWrapper.SetCursorPosition(CurrentColumnRowConsole, ConsoleWrapper.CursorTop + 1);
                         }
                     }
-                    ConsoleBase.ConsoleWrapper.Write("  ");
-                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleBase.ConsoleWrapper.CursorLeft, ConsoleBase.ConsoleWrapper.CursorTop);
+                    ConsoleWrapper.Write("  ");
+                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
 
                     // We need to store which column and which key from the linotype keyboard layout is taken.
                     int LinotypeColumnIndex = 0;
@@ -424,23 +424,23 @@ namespace KS.Misc.Screensaver.Displays
                         // Sometimes, typing error can be made in the last line and the line is repeated on the first line in the different
                         // column, but it ruins the overall beautiful look of the paragraphs, considering how it is split in columns. We
                         // need to re-indent the sentence.
-                        if (ConsoleBase.ConsoleWrapper.CursorTop == 0)
+                        if (ConsoleWrapper.CursorTop == 0)
                         {
                             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Line repeat in first line in new column. Indenting...");
                             if (CurrentColumn == 1)
                             {
                                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Column 1. Printing newline...");
-                                ConsoleBase.ConsoleWrapper.WriteLine();
+                                ConsoleWrapper.WriteLine();
                             }
                             else
                             {
                                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Column {0}. Setting left to {1}...", CurrentColumn, CurrentColumnRowConsole);
-                                ConsoleBase.ConsoleWrapper.SetCursorPosition(CurrentColumnRowConsole, ConsoleBase.ConsoleWrapper.CursorTop + 1);
+                                ConsoleWrapper.SetCursorPosition(CurrentColumnRowConsole, ConsoleWrapper.CursorTop + 1);
                             }
-                            ConsoleBase.ConsoleWrapper.Write("  ");
+                            ConsoleWrapper.Write("  ");
                             if (IncompleteSentenceIndex == 0)
-                                ConsoleBase.ConsoleWrapper.Write("    ");
-                            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleBase.ConsoleWrapper.CursorLeft, ConsoleBase.ConsoleWrapper.CursorTop);
+                                ConsoleWrapper.Write("    ");
+                            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
                         }
 
                         // Select a character
@@ -569,7 +569,7 @@ namespace KS.Misc.Screensaver.Displays
 
                         // Write the final character to the console and wait
                         if (!(StruckChar == Convert.ToChar(0)))
-                            ConsoleBase.ConsoleWrapper.Write(StruckChar);
+                            ConsoleWrapper.Write(StruckChar);
                         ThreadManager.SleepNoBlock(WriteMs, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
                         // If we're on the character counter mode, increment this for every character until the "line fill" mode starts
@@ -594,7 +594,7 @@ namespace KS.Misc.Screensaver.Displays
                             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Etaoin mode off because end of sentence.");
                             StruckCharIndex = -1;
                             EtaoinMode = false;
-                            if (ConsoleBase.ConsoleWrapper.CursorTop >= ConsoleBase.ConsoleWrapper.WindowHeight - 2)
+                            if (ConsoleWrapper.CursorTop >= ConsoleWrapper.WindowHeight - 2)
                             {
                                 HandleNextColumn(ref CurrentColumn, ref CurrentColumnRowConsole, ColumnRowConsoleThreshold);
                             }
@@ -603,15 +603,15 @@ namespace KS.Misc.Screensaver.Displays
                                 if (CurrentColumn == 1)
                                 {
                                     DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Column 1. Printing newline...");
-                                    ConsoleBase.ConsoleWrapper.WriteLine();
+                                    ConsoleWrapper.WriteLine();
                                 }
                                 else
                                 {
                                     DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Column {0}. Setting left to {1}...", CurrentColumn, CurrentColumnRowConsole);
-                                    ConsoleBase.ConsoleWrapper.SetCursorPosition(CurrentColumnRowConsole, ConsoleBase.ConsoleWrapper.CursorTop + 1);
+                                    ConsoleWrapper.SetCursorPosition(CurrentColumnRowConsole, ConsoleWrapper.CursorTop + 1);
                                 }
-                                ConsoleBase.ConsoleWrapper.Write("  ");
-                                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleBase.ConsoleWrapper.CursorLeft, ConsoleBase.ConsoleWrapper.CursorTop);
+                                ConsoleWrapper.Write("  ");
+                                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
                             }
                         }
                     }
@@ -647,42 +647,42 @@ namespace KS.Misc.Screensaver.Displays
         {
             if (LinotypoSettings.LinotypoTextColumns > 1)
             {
-                if (ConsoleBase.ConsoleWrapper.CursorTop >= ConsoleBase.ConsoleWrapper.WindowHeight - 2)
+                if (ConsoleWrapper.CursorTop >= ConsoleWrapper.WindowHeight - 2)
                 {
                     // We're on the bottom, so...
                     if (CurrentColumn >= LinotypoSettings.LinotypoTextColumns)
                     {
                         // ...wait until retry
                         DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Drawn all columns. Waiting {0} ms...", LinotypoSettings.LinotypoNewScreenDelay);
-                        ConsoleBase.ConsoleWrapper.WriteLine();
+                        ConsoleWrapper.WriteLine();
                         ThreadManager.SleepNoBlock(LinotypoSettings.LinotypoNewScreenDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
                         // ...and make a new screen
-                        ConsoleBase.ConsoleWrapper.Clear();
+                        ConsoleWrapper.Clear();
                         CurrentColumn = 1;
-                        CurrentColumnRowConsole = ConsoleBase.ConsoleWrapper.CursorLeft;
+                        CurrentColumnRowConsole = ConsoleWrapper.CursorLeft;
                     }
                     else
                     {
                         // ...we're moving to the next column
                         CurrentColumn += 1;
                         CurrentColumnRowConsole += ColumnRowConsoleThreshold;
-                        ConsoleBase.ConsoleWrapper.SetCursorPosition(CurrentColumnRowConsole, 0);
+                        ConsoleWrapper.SetCursorPosition(CurrentColumnRowConsole, 0);
                         DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "New column. Moving to {0}...", CurrentColumnRowConsole);
                     }
                 }
             }
-            else if (LinotypoSettings.LinotypoTextColumns == 1 & ConsoleBase.ConsoleWrapper.CursorTop >= ConsoleBase.ConsoleWrapper.WindowHeight - 2)
+            else if (LinotypoSettings.LinotypoTextColumns == 1 & ConsoleWrapper.CursorTop >= ConsoleWrapper.WindowHeight - 2)
             {
                 // We're on the bottom, so wait until retry...
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Drawn all text. Waiting {0} ms...", LinotypoSettings.LinotypoNewScreenDelay);
-                ConsoleBase.ConsoleWrapper.WriteLine();
+                ConsoleWrapper.WriteLine();
                 ThreadManager.SleepNoBlock(LinotypoSettings.LinotypoNewScreenDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
                 // ...and make a new screen
-                ConsoleBase.ConsoleWrapper.Clear();
+                ConsoleWrapper.Clear();
                 CurrentColumn = 1;
-                CurrentColumnRowConsole = ConsoleBase.ConsoleWrapper.CursorLeft;
+                CurrentColumnRowConsole = ConsoleWrapper.CursorLeft;
             }
         }
 

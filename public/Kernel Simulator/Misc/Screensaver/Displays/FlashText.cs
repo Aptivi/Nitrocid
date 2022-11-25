@@ -273,25 +273,25 @@ namespace KS.Misc.Screensaver.Displays
         {
             // Variable preparations
             ColorTools.LoadBack(new Color(FlashTextSettings.FlashTextBackgroundColor), true);
-            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
+            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
 
             // Select position
-            Left = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowWidth);
-            Top = RandomDriver.Random(ConsoleBase.ConsoleWrapper.WindowHeight);
+            Left = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
+            Top = RandomDriver.Random(ConsoleWrapper.WindowHeight);
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top);
         }
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
+            ConsoleWrapper.CursorVisible = false;
 
             // Make two delay halves to make up one half for screen with text and one half for screen with no text to make a flashing effect
             int HalfDelay = (int)Math.Round(FlashTextSettings.FlashTextDelay / 2d);
 
             // Make a flashing text
-            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleBase.ConsoleWrapper.Clear();
+            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleWrapper.Clear();
             if (FlashTextSettings.FlashTextTrueColor)
             {
                 int RedColorNum = RandomDriver.Random(FlashTextSettings.FlashTextMinimumRedColorLevel, FlashTextSettings.FlashTextMaximumRedColorLevel);
@@ -314,8 +314,8 @@ namespace KS.Misc.Screensaver.Displays
                 }
             }
             ThreadManager.SleepNoBlock(HalfDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleBase.ConsoleWrapper.Clear();
+            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleWrapper.Clear();
             ThreadManager.SleepNoBlock(HalfDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
             // Reset resize sync

@@ -266,27 +266,27 @@ namespace KS.Misc.Screensaver.Displays
         {
             // Variable preparations
             ColorTools.LoadBack(new Color(MarqueeSettings.MarqueeBackgroundColor), true);
-            ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
+            ConsoleWrapper.ForegroundColor = ConsoleColor.White;
             MarqueeSettings.MarqueeWrite = MarqueeSettings.MarqueeWrite.ReplaceAll(new string[] { Convert.ToChar(13).ToString(), Convert.ToChar(10).ToString() }, " - ");
         }
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
-            ConsoleBase.ConsoleWrapper.Clear();
+            ConsoleWrapper.CursorVisible = false;
+            ConsoleWrapper.Clear();
 
             // Ensure that the top position of the written text is always centered if AlwaysCentered is enabled. Else, select a random height.
-            int TopPrinted = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d);
+            int TopPrinted = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
             if (!MarqueeSettings.MarqueeAlwaysCentered)
             {
-                TopPrinted = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowHeight);
+                TopPrinted = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
             }
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Top position: {0}", TopPrinted);
 
             // Start with the left position as the right position.
-            int CurrentLeft = ConsoleBase.ConsoleWrapper.WindowWidth - 1;
-            int CurrentLeftOtherEnd = ConsoleBase.ConsoleWrapper.WindowWidth - 1;
+            int CurrentLeft = ConsoleWrapper.WindowWidth - 1;
+            int CurrentLeftOtherEnd = ConsoleWrapper.WindowWidth - 1;
             int CurrentCharacterNum = 0;
 
             // We need to set colors for the text.
@@ -312,7 +312,7 @@ namespace KS.Misc.Screensaver.Displays
                 if (ConsoleResizeListener.WasResized(false))
                     break;
                 if (MarqueeSettings.MarqueeUseConsoleAPI)
-                    ConsoleBase.ConsoleWrapper.Clear();
+                    ConsoleWrapper.Clear();
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Current left: {0} | Current left on other end: {1}", CurrentLeft, CurrentLeftOtherEnd);
 
                 // Declare variable for written marquee text
@@ -340,8 +340,8 @@ namespace KS.Misc.Screensaver.Displays
                     MarqueeWritten += Convert.ToString(CharManager.GetEsc()) + "[0K";
 
                 // Set the appropriate cursor position and write the results
-                ConsoleBase.ConsoleWrapper.SetCursorPosition(CurrentLeft, TopPrinted);
-                ConsoleBase.ConsoleWrapper.Write(MarqueeWritten);
+                ConsoleWrapper.SetCursorPosition(CurrentLeft, TopPrinted);
+                ConsoleWrapper.Write(MarqueeWritten);
                 if (Middle)
                     CurrentCharacterNum += 1;
 

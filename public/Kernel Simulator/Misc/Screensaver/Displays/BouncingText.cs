@@ -293,16 +293,16 @@ namespace KS.Misc.Screensaver.Displays
             // Variable preparations
             ColorTools.SetConsoleColor(new Color(BouncingTextSettings.BouncingTextForegroundColor));
             ColorTools.LoadBack(new Color(BouncingTextSettings.BouncingTextBackgroundColor), true);
-            RowText = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d);
-            ColumnFirstLetter = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d - BouncingTextSettings.BouncingTextWrite.Length / 2d);
-            ColumnLastLetter = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d + BouncingTextSettings.BouncingTextWrite.Length / 2d);
+            RowText = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
+            ColumnFirstLetter = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - BouncingTextSettings.BouncingTextWrite.Length / 2d);
+            ColumnLastLetter = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d + BouncingTextSettings.BouncingTextWrite.Length / 2d);
         }
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
-            ConsoleBase.ConsoleWrapper.Clear();
+            ConsoleWrapper.CursorVisible = false;
+            ConsoleWrapper.Clear();
 
             // Define the color
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Row text: {0}", RowText);
@@ -320,9 +320,9 @@ namespace KS.Misc.Screensaver.Displays
             else
             {
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.W, "We're resize-syncing! Setting RowText, ColumnFirstLetter, and ColumnLastLetter to its original position...");
-                RowText = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d);
-                ColumnFirstLetter = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d - BouncingTextSettings.BouncingTextWrite.Length / 2d);
-                ColumnLastLetter = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d + BouncingTextSettings.BouncingTextWrite.Length / 2d);
+                RowText = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
+                ColumnFirstLetter = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - BouncingTextSettings.BouncingTextWrite.Length / 2d);
+                ColumnLastLetter = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d + BouncingTextSettings.BouncingTextWrite.Length / 2d);
             }
 
             // Change the direction of text
@@ -357,7 +357,7 @@ namespace KS.Misc.Screensaver.Displays
             }
 
             // Check to see if the text is on the edge
-            if (RowText == ConsoleBase.ConsoleWrapper.WindowHeight - 2)
+            if (RowText == ConsoleWrapper.WindowHeight - 2)
             {
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "We're on the bottom.");
                 Direction = Direction.Replace("Bottom", "Top");
@@ -370,7 +370,7 @@ namespace KS.Misc.Screensaver.Displays
                 BouncingColor = ChangeBouncingTextColor();
             }
 
-            if (ColumnLastLetter == ConsoleBase.ConsoleWrapper.WindowWidth - 1)
+            if (ColumnLastLetter == ConsoleWrapper.WindowWidth - 1)
             {
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "We're on the right.");
                 Direction = Direction.Replace("Right", "Left");

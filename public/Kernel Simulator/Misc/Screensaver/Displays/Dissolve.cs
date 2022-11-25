@@ -242,19 +242,19 @@ namespace KS.Misc.Screensaver.Displays
         {
             // Variable preparations
             ColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor), true);
-            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
+            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
+            ConsoleWrapper.CursorVisible = false;
             if (ColorFilled)
                 Thread.Sleep(1);
-            int EndLeft = ConsoleBase.ConsoleWrapper.WindowWidth - 1;
-            int EndTop = ConsoleBase.ConsoleWrapper.WindowHeight - 1;
-            int Left = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowWidth);
-            int Top = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowHeight);
+            int EndLeft = ConsoleWrapper.WindowWidth - 1;
+            int EndTop = ConsoleWrapper.WindowHeight - 1;
+            int Left = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
+            int Top = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Dissolving: {0}", ColorFilled);
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "End left: {0} | End top: {1}", EndLeft, EndTop);
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got left: {0} | Got top: {1}", Left, Top);
@@ -263,7 +263,7 @@ namespace KS.Misc.Screensaver.Displays
             if (!ColorFilled)
             {
                 // NOTICE: Mono seems to have a bug in KS.ConsoleBase.ConsoleWrapper.CursorLeft and KS.ConsoleBase.ConsoleWrapper.CursorTop when printing with VT escape sequences. For info, seek EB#2:7.
-                if (!(ConsoleBase.ConsoleWrapper.CursorLeft >= EndLeft & ConsoleBase.ConsoleWrapper.CursorTop >= EndTop))
+                if (!(ConsoleWrapper.CursorLeft >= EndLeft & ConsoleWrapper.CursorTop >= EndTop))
                 {
                     if (DissolveSettings.DissolveTrueColor)
                     {
@@ -275,12 +275,12 @@ namespace KS.Misc.Screensaver.Displays
                         {
                             ColorTools.SetConsoleColor(Color.Empty);
                             ColorTools.SetConsoleColor(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), true, true);
-                            ConsoleBase.ConsoleWrapper.Write(" ");
-                            if (ConsoleBase.ConsoleWrapper.CursorLeft == ConsoleBase.ConsoleWrapper.WindowWidth - 1 &&
-                                ConsoleBase.ConsoleWrapper.CursorTop < EndTop)
+                            ConsoleWrapper.Write(" ");
+                            if (ConsoleWrapper.CursorLeft == ConsoleWrapper.WindowWidth - 1 &&
+                                ConsoleWrapper.CursorTop < EndTop)
                             {
-                                ConsoleBase.ConsoleWrapper.CursorLeft = 0;
-                                ConsoleBase.ConsoleWrapper.CursorTop += 1;
+                                ConsoleWrapper.CursorLeft = 0;
+                                ConsoleWrapper.CursorTop += 1;
                             }
                         }
                         else
@@ -299,12 +299,12 @@ namespace KS.Misc.Screensaver.Displays
                         {
                             ColorTools.SetConsoleColor(Color.Empty);
                             ColorTools.SetConsoleColor(new Color(ColorNum), true, true);
-                            ConsoleBase.ConsoleWrapper.Write(" ");
-                            if (ConsoleBase.ConsoleWrapper.CursorLeft == ConsoleBase.ConsoleWrapper.WindowWidth - 1 &&
-                                ConsoleBase.ConsoleWrapper.CursorTop < EndTop)
+                            ConsoleWrapper.Write(" ");
+                            if (ConsoleWrapper.CursorLeft == ConsoleWrapper.WindowWidth - 1 &&
+                                ConsoleWrapper.CursorTop < EndTop)
                             {
-                                ConsoleBase.ConsoleWrapper.CursorLeft = 0;
-                                ConsoleBase.ConsoleWrapper.CursorTop += 1;
+                                ConsoleWrapper.CursorLeft = 0;
+                                ConsoleWrapper.CursorTop += 1;
                             }
                         }
                         else
@@ -318,7 +318,7 @@ namespace KS.Misc.Screensaver.Displays
                 }
                 else
                 {
-                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "We're now dissolving... L: {0} = {1} | T: {2} = {3}", ConsoleBase.ConsoleWrapper.CursorLeft, EndLeft, ConsoleBase.ConsoleWrapper.CursorTop, EndTop);
+                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "We're now dissolving... L: {0} = {1} | T: {2} = {3}", ConsoleWrapper.CursorLeft, EndLeft, ConsoleWrapper.CursorTop, EndTop);
                     ColorFilled = true;
                 }
             }
@@ -332,9 +332,9 @@ namespace KS.Misc.Screensaver.Displays
                 }
                 if (!ConsoleResizeListener.WasResized(false))
                 {
-                    ConsoleBase.ConsoleWrapper.SetCursorPosition(Left, Top);
+                    ConsoleWrapper.SetCursorPosition(Left, Top);
                     ColorTools.SetConsoleColor(new Color(DissolveSettings.DissolveBackgroundColor), true, true);
-                    ConsoleBase.ConsoleWrapper.Write(" ");
+                    ConsoleWrapper.Write(" ");
                     if (CoveredPositions.Count == (EndLeft + 1) * (EndTop + 1))
                     {
                         DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "We're refilling...");

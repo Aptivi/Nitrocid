@@ -38,7 +38,7 @@ namespace KS.Misc.Animations.BeatEdgePulse
         /// </summary>
         public static void Simulate(BeatEdgePulseSettings Settings)
         {
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
+            ConsoleWrapper.CursorVisible = false;
             int BeatInterval = (int)Math.Round(60000d / Settings.BeatEdgePulseDelay);
             int BeatIntervalStep = (int)Math.Round(BeatInterval / (double)Settings.BeatEdgePulseMaxSteps);
             DebugWriter.WriteDebugConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Beat interval from {0} BPM: {1}", Settings.BeatEdgePulseDelay, BeatInterval);
@@ -143,48 +143,48 @@ namespace KS.Misc.Animations.BeatEdgePulse
             int FloorBottomLeftEdge = 0;
             DebugWriter.WriteDebug(DebugLevel.I, "Top left edge: {0}, Bottom left edge: {1}", FloorTopLeftEdge, FloorBottomLeftEdge);
 
-            int FloorTopRightEdge = ConsoleBase.ConsoleWrapper.WindowWidth - 1;
-            int FloorBottomRightEdge = ConsoleBase.ConsoleWrapper.WindowWidth - 1;
+            int FloorTopRightEdge = ConsoleWrapper.WindowWidth - 1;
+            int FloorBottomRightEdge = ConsoleWrapper.WindowWidth - 1;
             DebugWriter.WriteDebug(DebugLevel.I, "Top right edge: {0}, Bottom right edge: {1}", FloorTopRightEdge, FloorBottomRightEdge);
 
             int FloorTopEdge = 0;
-            int FloorBottomEdge = ConsoleBase.ConsoleWrapper.WindowHeight - 1;
+            int FloorBottomEdge = ConsoleWrapper.WindowHeight - 1;
             DebugWriter.WriteDebug(DebugLevel.I, "Top edge: {0}, Bottom edge: {1}", FloorTopEdge, FloorBottomEdge);
 
             int FloorLeftEdge = 0;
-            int FloorRightEdge = ConsoleBase.ConsoleWrapper.WindowWidth - 2;
+            int FloorRightEdge = ConsoleWrapper.WindowWidth - 2;
             DebugWriter.WriteDebug(DebugLevel.I, "Left edge: {0}, Right edge: {1}", FloorLeftEdge, FloorRightEdge);
 
             // First, draw the floor top edge
             for (int x = FloorTopLeftEdge; x <= FloorTopRightEdge; x++)
             {
-                ConsoleBase.ConsoleWrapper.SetCursorPosition(x, 0);
+                ConsoleWrapper.SetCursorPosition(x, 0);
                 DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor top edge ({0}, {1})", x, 1);
-                ConsoleBase.ConsoleWrapper.Write(" ");
+                ConsoleWrapper.Write(" ");
             }
 
             // Second, draw the floor bottom edge
             for (int x = FloorBottomLeftEdge; x <= FloorBottomRightEdge; x++)
             {
-                ConsoleBase.ConsoleWrapper.SetCursorPosition(x, FloorBottomEdge);
+                ConsoleWrapper.SetCursorPosition(x, FloorBottomEdge);
                 DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor bottom edge ({0}, {1})", x, FloorBottomEdge);
-                ConsoleBase.ConsoleWrapper.Write(" ");
+                ConsoleWrapper.Write(" ");
             }
 
             // Third, draw the floor left edge
             for (int y = FloorTopEdge; y <= FloorBottomEdge; y++)
             {
-                ConsoleBase.ConsoleWrapper.SetCursorPosition(FloorLeftEdge, y);
+                ConsoleWrapper.SetCursorPosition(FloorLeftEdge, y);
                 DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor left edge ({0}, {1})", FloorLeftEdge, y);
-                ConsoleBase.ConsoleWrapper.Write("  ");
+                ConsoleWrapper.Write("  ");
             }
 
             // Finally, draw the floor right edge
             for (int y = FloorTopEdge; y <= FloorBottomEdge; y++)
             {
-                ConsoleBase.ConsoleWrapper.SetCursorPosition(FloorRightEdge, y);
+                ConsoleWrapper.SetCursorPosition(FloorRightEdge, y);
                 DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor right edge ({0}, {1})", FloorRightEdge, y);
-                ConsoleBase.ConsoleWrapper.Write("  ");
+                ConsoleWrapper.Write("  ");
             }
         }
 

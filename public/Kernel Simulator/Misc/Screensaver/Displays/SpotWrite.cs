@@ -124,14 +124,14 @@ namespace KS.Misc.Screensaver.Displays
         {
             // Variable preparations
             ColorTools.SetConsoleColor(new Color(SpotWriteSettings.SpotWriteTextColor));
-            ConsoleBase.ConsoleWrapper.Clear();
+            ConsoleWrapper.Clear();
         }
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             string TypeWrite = SpotWriteSettings.SpotWriteWrite;
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
+            ConsoleWrapper.CursorVisible = false;
 
             // SpotWrite can also deal with files written on the field that is used for storing text, so check to see if the path exists.
             DebugWriter.WriteDebug(DebugLevel.I, "Checking \"{0}\" to see if it's a file path", SpotWriteSettings.SpotWriteWrite);
@@ -168,7 +168,7 @@ namespace KS.Misc.Screensaver.Displays
                     CharactersParsed += 1;
 
                     // Check to see if we're at the maximum character number
-                    if (IncompleteSentenceBuilder.Length == ConsoleBase.ConsoleWrapper.WindowWidth - 2 - ReservedCharacters | Paragraph.Length == CharactersParsed)
+                    if (IncompleteSentenceBuilder.Length == ConsoleWrapper.WindowWidth - 2 - ReservedCharacters | Paragraph.Length == CharactersParsed)
                     {
                         // We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
                         DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Adding {0} to the list... Incomplete sentences: {1}", IncompleteSentenceBuilder.ToString(), IncompleteSentences.Count);
@@ -181,11 +181,11 @@ namespace KS.Misc.Screensaver.Displays
                 }
 
                 // Prepare display (make a paragraph indentation)
-                if (!(ConsoleBase.ConsoleWrapper.CursorTop == ConsoleBase.ConsoleWrapper.WindowHeight - 2))
+                if (!(ConsoleWrapper.CursorTop == ConsoleWrapper.WindowHeight - 2))
                 {
-                    ConsoleBase.ConsoleWrapper.SetCursorPosition(0, ConsoleBase.ConsoleWrapper.CursorTop + 1);
-                    ConsoleBase.ConsoleWrapper.Write("    ");
-                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleBase.ConsoleWrapper.CursorLeft, ConsoleBase.ConsoleWrapper.CursorTop);
+                    ConsoleWrapper.SetCursorPosition(0, ConsoleWrapper.CursorTop + 1);
+                    ConsoleWrapper.Write("    ");
+                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
                 }
 
                 // Get struck character and write it
@@ -200,28 +200,28 @@ namespace KS.Misc.Screensaver.Displays
                             break;
 
                         // If we're at the end of the page, clear the screen
-                        if (ConsoleBase.ConsoleWrapper.CursorTop == ConsoleBase.ConsoleWrapper.WindowHeight - 2)
+                        if (ConsoleWrapper.CursorTop == ConsoleWrapper.WindowHeight - 2)
                         {
-                            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "We're at the end of the page! {0} = {1}", ConsoleBase.ConsoleWrapper.CursorTop, ConsoleBase.ConsoleWrapper.WindowHeight - 2);
+                            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "We're at the end of the page! {0} = {1}", ConsoleWrapper.CursorTop, ConsoleWrapper.WindowHeight - 2);
                             ThreadManager.SleepNoBlock(SpotWriteSettings.SpotWriteNewScreenDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                            ConsoleBase.ConsoleWrapper.Clear();
-                            ConsoleBase.ConsoleWrapper.WriteLine();
+                            ConsoleWrapper.Clear();
+                            ConsoleWrapper.WriteLine();
                             if (SentenceIndex == 0)
                             {
-                                ConsoleBase.ConsoleWrapper.Write("    ");
+                                ConsoleWrapper.Write("    ");
                             }
                             else
                             {
-                                ConsoleBase.ConsoleWrapper.Write(" ");
+                                ConsoleWrapper.Write(" ");
                             }
-                            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleBase.ConsoleWrapper.CursorLeft, ConsoleBase.ConsoleWrapper.CursorTop);
+                            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
                         }
 
                         // Write the final character to the console and wait
-                        ConsoleBase.ConsoleWrapper.Write(Convert.ToString(CharManager.GetEsc()) + "[1K" + Convert.ToString(StruckChar) + Convert.ToString(CharManager.GetEsc()) + "[K");
+                        ConsoleWrapper.Write(Convert.ToString(CharManager.GetEsc()) + "[1K" + Convert.ToString(StruckChar) + Convert.ToString(CharManager.GetEsc()) + "[K");
                         ThreadManager.SleepNoBlock(SpotWriteSettings.SpotWriteDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
                     }
-                    ConsoleBase.ConsoleWrapper.Write(Convert.ToString(CharManager.GetEsc()) + "[1K");
+                    ConsoleWrapper.Write(Convert.ToString(CharManager.GetEsc()) + "[1K");
                 }
             }
 

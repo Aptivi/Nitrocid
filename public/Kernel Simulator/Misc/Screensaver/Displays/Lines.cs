@@ -271,13 +271,13 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
+            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
+            ConsoleWrapper.CursorVisible = false;
 
             // Select a color
             if (LinesSettings.LinesTrueColor)
@@ -300,9 +300,9 @@ namespace KS.Misc.Screensaver.Displays
 
             // Draw a line
             string Line = "";
-            int Top = new Random().Next(ConsoleBase.ConsoleWrapper.WindowHeight);
+            int Top = new Random().Next(ConsoleWrapper.WindowHeight);
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got top position ({0})", Top);
-            for (int i = 1; i <= ConsoleBase.ConsoleWrapper.WindowWidth; i++)
+            for (int i = 1; i <= ConsoleWrapper.WindowWidth; i++)
             {
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Forming line using {0} or the default \"-\"...", LinesSettings.LinesLineChar);
                 Line += !string.IsNullOrWhiteSpace(LinesSettings.LinesLineChar) ? LinesSettings.LinesLineChar : "-";
@@ -310,8 +310,8 @@ namespace KS.Misc.Screensaver.Displays
             }
             if (!ConsoleResizeListener.WasResized(false))
             {
-                ConsoleBase.ConsoleWrapper.SetCursorPosition(0, Top);
-                ConsoleBase.ConsoleWrapper.WriteLine(Line);
+                ConsoleWrapper.SetCursorPosition(0, Top);
+                ConsoleWrapper.WriteLine(Line);
             }
 
             // Reset resize sync

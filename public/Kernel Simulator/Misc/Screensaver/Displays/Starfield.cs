@@ -72,15 +72,15 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
-            ConsoleBase.ConsoleWrapper.Clear();
+            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleWrapper.ForegroundColor = ConsoleColor.White;
+            ConsoleWrapper.Clear();
         }
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
+            ConsoleWrapper.CursorVisible = false;
 
             // Move the stars left
             for (int Star = 0; Star <= Stars.Count - 1; Star++)
@@ -105,8 +105,8 @@ namespace KS.Misc.Screensaver.Displays
             bool StarShowGuaranteed = RandomDriver.RandomChance(10);
             if (StarShowGuaranteed)
             {
-                int StarX = ConsoleBase.ConsoleWrapper.WindowWidth - 1;
-                int StarY = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowHeight);
+                int StarX = ConsoleWrapper.WindowWidth - 1;
+                int StarY = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
                 Stars.Add(new Tuple<int, int>(StarX, StarY));
             }
 
@@ -131,7 +131,7 @@ namespace KS.Misc.Screensaver.Displays
             // Reset resize sync
             ConsoleResizeListener.WasResized();
             ThreadManager.SleepNoBlock(StarfieldSettings.StarfieldDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-            ConsoleBase.ConsoleWrapper.Clear();
+            ConsoleWrapper.Clear();
         }
 
     }

@@ -260,21 +260,21 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
-            ConsoleBase.ConsoleWrapper.Clear();
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
+            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleWrapper.ForegroundColor = ConsoleColor.White;
+            ConsoleWrapper.Clear();
+            ConsoleWrapper.CursorVisible = false;
         }
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             // Choose the column for the falling line
-            ColumnLine = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowWidth);
+            ColumnLine = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
 
             // Now, determine the fall start and end position
             int FallStart = 0;
-            int FallEnd = ConsoleBase.ConsoleWrapper.WindowHeight - 1;
+            int FallEnd = ConsoleWrapper.WindowHeight - 1;
 
             // Select the color
             Color ColorStorage;

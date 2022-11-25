@@ -255,19 +255,19 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleBase.ConsoleWrapper.Clear();
-            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
+            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleWrapper.Clear();
+            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
+            ConsoleWrapper.CursorVisible = false;
             if (ConsoleResizeListener.WasResized(false))
             {
-                ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-                ConsoleBase.ConsoleWrapper.Clear();
+                ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+                ConsoleWrapper.Clear();
 
                 // Reset resize sync
                 ConsoleResizeListener.WasResized();
@@ -277,11 +277,11 @@ namespace KS.Misc.Screensaver.Displays
                 bool Drawable = true;
 
                 // Get the required positions for the box
-                int BoxStartX = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowWidth);
-                int BoxEndX = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowWidth);
+                int BoxStartX = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
+                int BoxEndX = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Box X position {0} -> {1}", BoxStartX, BoxEndX);
-                int BoxStartY = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowHeight);
-                int BoxEndY = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowHeight);
+                int BoxStartY = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
+                int BoxEndY = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Box Y position {0} -> {1}", BoxStartY, BoxEndY);
 
                 // Check to see if start is less than or equal to end
@@ -321,8 +321,8 @@ namespace KS.Misc.Screensaver.Displays
                             for (int Y = BoxStartY; Y <= BoxEndY; Y++)
                             {
                                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Filling {0},{1}...", X, Y);
-                                ConsoleBase.ConsoleWrapper.SetCursorPosition(X, Y);
-                                ConsoleBase.ConsoleWrapper.Write(" ");
+                                ConsoleWrapper.SetCursorPosition(X, Y);
+                                ConsoleWrapper.Write(" ");
                             }
                         }
                     }
@@ -331,26 +331,26 @@ namespace KS.Misc.Screensaver.Displays
                         // Draw the upper and lower borders
                         for (int X = BoxStartX; X <= BoxEndX; X++)
                         {
-                            ConsoleBase.ConsoleWrapper.SetCursorPosition(X, BoxStartY);
-                            ConsoleBase.ConsoleWrapper.Write(" ");
+                            ConsoleWrapper.SetCursorPosition(X, BoxStartY);
+                            ConsoleWrapper.Write(" ");
                             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Drawn upper border at {0}", X);
-                            ConsoleBase.ConsoleWrapper.SetCursorPosition(X, BoxEndY);
-                            ConsoleBase.ConsoleWrapper.Write(" ");
+                            ConsoleWrapper.SetCursorPosition(X, BoxEndY);
+                            ConsoleWrapper.Write(" ");
                             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Drawn lower border at {0}", X);
                         }
 
                         // Draw the left and right borders
                         for (int Y = BoxStartY; Y <= BoxEndY; Y++)
                         {
-                            ConsoleBase.ConsoleWrapper.SetCursorPosition(BoxStartX, Y);
-                            ConsoleBase.ConsoleWrapper.Write(" ");
-                            if (!(BoxStartX >= ConsoleBase.ConsoleWrapper.WindowWidth - 1))
-                                ConsoleBase.ConsoleWrapper.Write(" ");
+                            ConsoleWrapper.SetCursorPosition(BoxStartX, Y);
+                            ConsoleWrapper.Write(" ");
+                            if (!(BoxStartX >= ConsoleWrapper.WindowWidth - 1))
+                                ConsoleWrapper.Write(" ");
                             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Drawn left border at {0}", Y);
-                            ConsoleBase.ConsoleWrapper.SetCursorPosition(BoxEndX, Y);
-                            ConsoleBase.ConsoleWrapper.Write(" ");
-                            if (!(BoxEndX >= ConsoleBase.ConsoleWrapper.WindowWidth - 1))
-                                ConsoleBase.ConsoleWrapper.Write(" ");
+                            ConsoleWrapper.SetCursorPosition(BoxEndX, Y);
+                            ConsoleWrapper.Write(" ");
+                            if (!(BoxEndX >= ConsoleWrapper.WindowWidth - 1))
+                                ConsoleWrapper.Write(" ");
                             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Drawn right border at {0}", Y);
                         }
                     }

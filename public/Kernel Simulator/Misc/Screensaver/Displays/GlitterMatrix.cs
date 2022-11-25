@@ -102,25 +102,25 @@ namespace KS.Misc.Screensaver.Displays
             // Variable preparations
             ColorTools.SetConsoleColor(new Color(GlitterMatrixSettings.GlitterMatrixForegroundColor));
             ColorTools.LoadBack(new Color(GlitterMatrixSettings.GlitterMatrixBackgroundColor), true);
-            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
+            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
-            int Left = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowWidth);
-            int Top = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowHeight);
+            ConsoleWrapper.CursorVisible = false;
+            int Left = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
+            int Top = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top);
-            ConsoleBase.ConsoleWrapper.SetCursorPosition(Left, Top);
+            ConsoleWrapper.SetCursorPosition(Left, Top);
             if (!ConsoleResizeListener.WasResized(false))
             {
-                ConsoleBase.ConsoleWrapper.Write(RandomDriver.Random(1).ToString());
+                ConsoleWrapper.Write(RandomDriver.Random(1).ToString());
             }
             else
             {
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.W, "Color-syncing. Clearing...");
-                ConsoleBase.ConsoleWrapper.Clear();
+                ConsoleWrapper.Clear();
             }
 
             // Reset resize sync

@@ -298,15 +298,15 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
-            ConsoleBase.ConsoleWrapper.Clear();
+            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleWrapper.ForegroundColor = ConsoleColor.White;
+            ConsoleWrapper.Clear();
         }
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
+            ConsoleWrapper.CursorVisible = false;
 
             // Select a color range for the ramp
             int RedColorNumFrom = RandomDriver.Random(GradientSettings.GradientMinimumRedColorLevelStart, GradientSettings.GradientMaximumRedColorLevelStart);
@@ -318,7 +318,7 @@ namespace KS.Misc.Screensaver.Displays
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color from (R;G;B: {0};{1};{2}) to (R;G;B: {3};{4};{5})", RedColorNumFrom, GreenColorNumFrom, BlueColorNumFrom, RedColorNumTo, GreenColorNumTo, BlueColorNumTo);
 
             // Set thresholds for color ramp
-            int RampFrameSpaces = ConsoleBase.ConsoleWrapper.WindowWidth;
+            int RampFrameSpaces = ConsoleWrapper.WindowWidth;
             int RampColorRedThreshold = RedColorNumFrom - RedColorNumTo;
             int RampColorGreenThreshold = GreenColorNumFrom - GreenColorNumTo;
             int RampColorBlueThreshold = BlueColorNumFrom - BlueColorNumTo;
@@ -334,14 +334,14 @@ namespace KS.Misc.Screensaver.Displays
             double RampCurrentColorBlue = BlueColorNumFrom;
 
             // Fill the entire screen
-            for (int x = 0; x < ConsoleBase.ConsoleWrapper.WindowWidth; x++)
+            for (int x = 0; x < ConsoleWrapper.WindowWidth; x++)
             {
                 if (ConsoleResizeListener.WasResized(false))
                     break;
 
                 // Write the background gradient!
                 var RampCurrentColorInstance = new Color($"{Convert.ToInt32(RampCurrentColorRed)};{Convert.ToInt32(RampCurrentColorGreen)};{Convert.ToInt32(RampCurrentColorBlue)}");
-                for (int y = 0; y < ConsoleBase.ConsoleWrapper.WindowHeight; y++)
+                for (int y = 0; y < ConsoleWrapper.WindowHeight; y++)
                     TextWriterWhereColor.WriteWhere(" ", x, y, Color.Empty, RampCurrentColorInstance);
 
                 // Change the colors
@@ -353,8 +353,8 @@ namespace KS.Misc.Screensaver.Displays
 
             // Clear the scene
             ThreadManager.SleepNoBlock(GradientSettings.GradientNextRampDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleBase.ConsoleWrapper.Clear();
+            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleWrapper.Clear();
 
             // Reset resize sync
             ConsoleResizeListener.WasResized();

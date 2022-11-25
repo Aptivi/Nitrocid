@@ -273,14 +273,14 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            RowBlock = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d);
-            ColumnBlock = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d);
+            RowBlock = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
+            ColumnBlock = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
         }
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
+            ConsoleWrapper.CursorVisible = false;
             ColorTools.SetConsoleColor(new Color(BouncingBlockSettings.BouncingBlockForegroundColor));
             ColorTools.LoadBack(new Color(BouncingBlockSettings.BouncingBlockBackgroundColor), true);
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Row block: {0} | Column block: {1}", RowBlock, ColumnBlock);
@@ -299,8 +299,8 @@ namespace KS.Misc.Screensaver.Displays
                 else
                 {
                     DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.W, "We're resize-syncing! Setting RowBlock and ColumnBlock to its original position...");
-                    RowBlock = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d);
-                    ColumnBlock = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d);
+                    RowBlock = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
+                    ColumnBlock = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
                 }
             }
             else
@@ -314,12 +314,12 @@ namespace KS.Misc.Screensaver.Displays
                 else
                 {
                     DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.W, "We're resize-syncing! Setting RowBlock and ColumnBlock to its original position...");
-                    RowBlock = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d);
-                    ColumnBlock = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d);
+                    RowBlock = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
+                    ColumnBlock = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
                 }
             }
 
-            if (RowBlock == ConsoleBase.ConsoleWrapper.WindowHeight - 2)
+            if (RowBlock == ConsoleWrapper.WindowHeight - 2)
             {
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "We're on the bottom.");
                 Direction = Direction.Replace("Bottom", "Top");
@@ -330,7 +330,7 @@ namespace KS.Misc.Screensaver.Displays
                 Direction = Direction.Replace("Top", "Bottom");
             }
 
-            if (ColumnBlock == ConsoleBase.ConsoleWrapper.WindowWidth - 1)
+            if (ColumnBlock == ConsoleWrapper.WindowWidth - 1)
             {
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "We're on the right.");
                 Direction = Direction.Replace("Right", "Left");

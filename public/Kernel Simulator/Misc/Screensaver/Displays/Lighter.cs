@@ -237,19 +237,19 @@ namespace KS.Misc.Screensaver.Displays
         {
             // Variable preparations
             ColorTools.LoadBack(new Color(LighterSettings.LighterBackgroundColor), true);
-            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
+            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
+            ConsoleWrapper.CursorVisible = false;
 
             // Select a position
-            int Left = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowWidth);
-            int Top = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowHeight);
+            int Left = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
+            int Top = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top);
-            ConsoleBase.ConsoleWrapper.SetCursorPosition(Left, Top);
+            ConsoleWrapper.SetCursorPosition(Left, Top);
             if (!CoveredPositions.Any(t => t.Item1 == Left & t.Item2 == Top))
             {
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Covering position...");
@@ -268,7 +268,7 @@ namespace KS.Misc.Screensaver.Displays
                 if (!ConsoleResizeListener.WasResized(false))
                 {
                     ColorTools.SetConsoleColor(ColorStorage, true, true);
-                    ConsoleBase.ConsoleWrapper.Write(" ");
+                    ConsoleWrapper.Write(" ");
                 }
                 else
                 {
@@ -283,7 +283,7 @@ namespace KS.Misc.Screensaver.Displays
                 if (!ConsoleResizeListener.WasResized(false))
                 {
                     ColorTools.SetConsoleColor(new Color(ColorNum), true, true);
-                    ConsoleBase.ConsoleWrapper.Write(" ");
+                    ConsoleWrapper.Write(" ");
                 }
                 else
                 {
@@ -301,9 +301,9 @@ namespace KS.Misc.Screensaver.Displays
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Wiping in {0}, {1}...", WipeLeft, WipeTop);
                 if (!ConsoleResizeListener.WasResized(false))
                 {
-                    ConsoleBase.ConsoleWrapper.SetCursorPosition(WipeLeft, WipeTop);
+                    ConsoleWrapper.SetCursorPosition(WipeLeft, WipeTop);
                     ColorTools.SetConsoleColor(new Color(LighterSettings.LighterBackgroundColor), true, true);
-                    ConsoleBase.ConsoleWrapper.Write(" ");
+                    ConsoleWrapper.Write(" ");
                     CoveredPositions.RemoveAt(0);
                 }
                 else

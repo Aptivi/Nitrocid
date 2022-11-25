@@ -89,7 +89,7 @@ namespace KS.Kernel.Power
                         // Now, reset everything
                         KernelTools.ResetEverything();
                         Events.EventsManager.FireEvent("PostReboot");
-                        ConsoleBase.ConsoleWrapper.Clear();
+                        ConsoleWrapper.Clear();
                         Flags.RebootRequested = true;
                         Flags.LogoutRequested = true;
                         break;

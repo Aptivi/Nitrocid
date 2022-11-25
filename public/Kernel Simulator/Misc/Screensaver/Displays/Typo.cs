@@ -188,7 +188,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             // Variable preparations
             ColorTools.SetConsoleColor(new Color(TypoSettings.TypoTextColor));
-            ConsoleBase.ConsoleWrapper.Clear();
+            ConsoleWrapper.Clear();
         }
 
         /// <inheritdoc/>
@@ -200,12 +200,12 @@ namespace KS.Misc.Screensaver.Displays
             var CapStrikes = new List<string>() { "Q~!@WSA", "R$#EDFGT%", "U&^YHJKI*", "P)(OL:\"{_+}|", "?\":> ", "M<LKJN ", "VBHGFC ", "ZXDSA " };
             string CapSymbols = "~!@$#%&^*)(:\"{_+}|?><";
 
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
+            ConsoleWrapper.CursorVisible = false;
 
             // Prepare display (make a paragraph indentation)
-            ConsoleBase.ConsoleWrapper.WriteLine();
-            ConsoleBase.ConsoleWrapper.Write("    ");
-            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleBase.ConsoleWrapper.CursorLeft, ConsoleBase.ConsoleWrapper.CursorTop);
+            ConsoleWrapper.WriteLine();
+            ConsoleWrapper.Write("    ");
+            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
 
             // Get struck character and write it
             var StrikeCharsIndex = default(int);
@@ -276,12 +276,12 @@ namespace KS.Misc.Screensaver.Displays
 
                 // Write the final character to the console and wait
                 if (!(StruckCharAssigned == Convert.ToChar(0)))
-                    ConsoleBase.ConsoleWrapper.Write(StruckCharAssigned);
+                    ConsoleWrapper.Write(StruckCharAssigned);
                 ThreadManager.SleepNoBlock(WriteMs, ScreensaverDisplayer.ScreensaverDisplayerThread);
             }
 
             // Wait until retry
-            ConsoleBase.ConsoleWrapper.WriteLine();
+            ConsoleWrapper.WriteLine();
             if (!ConsoleResizeListener.WasResized(false))
                 ThreadManager.SleepNoBlock(TypoSettings.TypoWriteAgainDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
 

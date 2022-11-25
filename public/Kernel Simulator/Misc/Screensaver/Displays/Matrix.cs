@@ -68,23 +68,23 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.Green;
-            ConsoleBase.ConsoleWrapper.Clear();
+            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleWrapper.ForegroundColor = ConsoleColor.Green;
+            ConsoleWrapper.Clear();
         }
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
+            ConsoleWrapper.CursorVisible = false;
             if (!ConsoleResizeListener.WasResized(false))
             {
-                ConsoleBase.ConsoleWrapper.Write(RandomDriver.Random(1).ToString());
+                ConsoleWrapper.Write(RandomDriver.Random(1).ToString());
             }
             else
             {
                 DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing...");
-                ConsoleBase.ConsoleWrapper.Clear();
+                ConsoleWrapper.Clear();
             }
 
             // Reset resize sync

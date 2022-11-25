@@ -204,14 +204,14 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ConsoleBase.ConsoleWrapper.Clear();
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
+            ConsoleWrapper.Clear();
+            ConsoleWrapper.CursorVisible = false;
         }
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
+            ConsoleWrapper.CursorVisible = false;
 
             // Select a color
             if (SnakeFillSettings.SnakeFillTrueColor)
@@ -232,14 +232,14 @@ namespace KS.Misc.Screensaver.Displays
             }
 
             // Set max height according to platform
-            int MaxWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
+            int MaxWindowHeight = ConsoleWrapper.WindowHeight;
             if (KernelPlatform.IsOnUnix())
                 MaxWindowHeight -= 1;
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Max height {0}", MaxWindowHeight);
 
             // Fill the screen!
             bool reverseHeightAxis = false;
-            for (int x = 0; x < ConsoleBase.ConsoleWrapper.WindowWidth; x++)
+            for (int x = 0; x < ConsoleWrapper.WindowWidth; x++)
             {
                 if (ConsoleResizeListener.WasResized(false))
                     break;

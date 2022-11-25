@@ -174,7 +174,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             // Variable preparations
             ColorTools.SetConsoleColor(new Color(TypewriterSettings.TypewriterTextColor));
-            ConsoleBase.ConsoleWrapper.Clear();
+            ConsoleWrapper.Clear();
         }
 
         /// <inheritdoc/>
@@ -185,7 +185,7 @@ namespace KS.Misc.Screensaver.Displays
             string TypeWrite = TypewriterSettings.TypewriterWrite;
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Minimum speed from {0} WPM: {1} CPM", TypewriterSettings.TypewriterWritingSpeedMin, CpmSpeedMin);
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Maximum speed from {0} WPM: {1} CPM", TypewriterSettings.TypewriterWritingSpeedMax, CpmSpeedMax);
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
+            ConsoleWrapper.CursorVisible = false;
             // Typewriter can also deal with files written on the field that is used for storing text, so check to see if the path exists.
             DebugWriter.WriteDebug(DebugLevel.I, "Checking \"{0}\" to see if it's a file path", TypewriterSettings.TypewriterWrite);
             if (Parsing.TryParsePath(TypewriterSettings.TypewriterWrite) && Checking.FileExists(TypewriterSettings.TypewriterWrite))
@@ -221,7 +221,7 @@ namespace KS.Misc.Screensaver.Displays
                     CharactersParsed += 1;
 
                     // Check to see if we're at the maximum character number
-                    if (IncompleteSentenceBuilder.Length == ConsoleBase.ConsoleWrapper.WindowWidth - 2 - ReservedCharacters | Paragraph.Length == CharactersParsed)
+                    if (IncompleteSentenceBuilder.Length == ConsoleWrapper.WindowWidth - 2 - ReservedCharacters | Paragraph.Length == CharactersParsed)
                     {
                         // We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
                         DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Adding {0} to the list... Incomplete sentences: {1}", IncompleteSentenceBuilder.ToString(), IncompleteSentences.Count);
@@ -234,11 +234,11 @@ namespace KS.Misc.Screensaver.Displays
                 }
 
                 // Prepare display (make a paragraph indentation)
-                if (!(ConsoleBase.ConsoleWrapper.CursorTop == ConsoleBase.ConsoleWrapper.WindowHeight - 2))
+                if (!(ConsoleWrapper.CursorTop == ConsoleWrapper.WindowHeight - 2))
                 {
-                    ConsoleBase.ConsoleWrapper.WriteLine();
-                    ConsoleBase.ConsoleWrapper.Write("    ");
-                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleBase.ConsoleWrapper.CursorLeft, ConsoleBase.ConsoleWrapper.CursorTop);
+                    ConsoleWrapper.WriteLine();
+                    ConsoleWrapper.Write("    ");
+                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
                 }
 
                 // Get struck character and write it
@@ -258,42 +258,42 @@ namespace KS.Misc.Screensaver.Displays
                         DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Delay for {0} CPM: {1} ms", SelectedCpm, WriteMs);
 
                         // If we're at the end of the page, clear the screen
-                        if (ConsoleBase.ConsoleWrapper.CursorTop == ConsoleBase.ConsoleWrapper.WindowHeight - 2)
+                        if (ConsoleWrapper.CursorTop == ConsoleWrapper.WindowHeight - 2)
                         {
-                            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "We're at the end of the page! {0} = {1}", ConsoleBase.ConsoleWrapper.CursorTop, ConsoleBase.ConsoleWrapper.WindowHeight - 2);
+                            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "We're at the end of the page! {0} = {1}", ConsoleWrapper.CursorTop, ConsoleWrapper.WindowHeight - 2);
                             ThreadManager.SleepNoBlock(TypewriterSettings.TypewriterNewScreenDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                            ConsoleBase.ConsoleWrapper.Clear();
-                            ConsoleBase.ConsoleWrapper.WriteLine();
+                            ConsoleWrapper.Clear();
+                            ConsoleWrapper.WriteLine();
                             if (SentenceIndex == 0)
                             {
-                                ConsoleBase.ConsoleWrapper.Write("    ");
+                                ConsoleWrapper.Write("    ");
                             }
                             else
                             {
-                                ConsoleBase.ConsoleWrapper.Write(" ");
+                                ConsoleWrapper.Write(" ");
                             }
-                            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleBase.ConsoleWrapper.CursorLeft, ConsoleBase.ConsoleWrapper.CursorTop);
+                            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
                         }
 
                         // If we need to show the arrow indicator, update its position
                         if (TypewriterSettings.TypewriterShowArrowPos)
                         {
-                            int OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
-                            int OldLeft = ConsoleBase.ConsoleWrapper.CursorLeft;
-                            ConsoleBase.ConsoleWrapper.SetCursorPosition(OldLeft, ConsoleBase.ConsoleWrapper.WindowHeight - 1);
-                            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Arrow drawn in {0}, {1}", ConsoleBase.ConsoleWrapper.CursorLeft, ConsoleBase.ConsoleWrapper.CursorTop);
-                            ConsoleBase.ConsoleWrapper.Write(Convert.ToString(CharManager.GetEsc()) + "[1K^" + Convert.ToString(CharManager.GetEsc()) + "[K");
-                            ConsoleBase.ConsoleWrapper.SetCursorPosition(OldLeft, OldTop);
+                            int OldTop = ConsoleWrapper.CursorTop;
+                            int OldLeft = ConsoleWrapper.CursorLeft;
+                            ConsoleWrapper.SetCursorPosition(OldLeft, ConsoleWrapper.WindowHeight - 1);
+                            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Arrow drawn in {0}, {1}", ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
+                            ConsoleWrapper.Write(Convert.ToString(CharManager.GetEsc()) + "[1K^" + Convert.ToString(CharManager.GetEsc()) + "[K");
+                            ConsoleWrapper.SetCursorPosition(OldLeft, OldTop);
                             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Returned to {0}, {1}", OldLeft, OldTop);
                         }
 
                         // Write the final character to the console and wait
-                        ConsoleBase.ConsoleWrapper.Write(StruckChar);
+                        ConsoleWrapper.Write(StruckChar);
                         ThreadManager.SleepNoBlock(WriteMs, ScreensaverDisplayer.ScreensaverDisplayerThread);
                     }
-                    ConsoleBase.ConsoleWrapper.WriteLine();
-                    ConsoleBase.ConsoleWrapper.Write(" ");
-                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleBase.ConsoleWrapper.CursorLeft, ConsoleBase.ConsoleWrapper.CursorTop);
+                    ConsoleWrapper.WriteLine();
+                    ConsoleWrapper.Write(" ");
+                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
                 }
             }
 

@@ -239,21 +239,21 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleBase.ConsoleWrapper.Clear();
-            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
+            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleWrapper.Clear();
+            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
+            ConsoleWrapper.CursorVisible = false;
 
             // Select position
-            int Left = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowWidth);
-            int Top = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowHeight);
+            int Left = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
+            int Top = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top);
-            ConsoleBase.ConsoleWrapper.SetCursorPosition(Left, Top);
+            ConsoleWrapper.SetCursorPosition(Left, Top);
 
             // Make a glitter color
             if (GlitterColorSettings.GlitterColorTrueColor)
@@ -266,7 +266,7 @@ namespace KS.Misc.Screensaver.Displays
                 if (!ConsoleResizeListener.WasResized(false))
                 {
                     ColorTools.SetConsoleColor(ColorStorage, true, true);
-                    ConsoleBase.ConsoleWrapper.Write(" ");
+                    ConsoleWrapper.Write(" ");
                 }
             }
             else
@@ -276,7 +276,7 @@ namespace KS.Misc.Screensaver.Displays
                 if (!ConsoleResizeListener.WasResized(false))
                 {
                     ColorTools.SetConsoleColor(new Color(ColorNum), true, true);
-                    ConsoleBase.ConsoleWrapper.Write(" ");
+                    ConsoleWrapper.Write(" ");
                 }
             }
 

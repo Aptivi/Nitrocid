@@ -40,7 +40,7 @@ namespace KS.Misc.Animations.Pulse
             int RedColorNum = RandomDriver.Random(Settings.PulseMinimumRedColorLevel, Settings.PulseMaximumRedColorLevel);
             int GreenColorNum = RandomDriver.Random(Settings.PulseMinimumGreenColorLevel, Settings.PulseMaximumGreenColorLevel);
             int BlueColorNum = RandomDriver.Random(Settings.PulseMinimumBlueColorLevel, Settings.PulseMaximumBlueColorLevel);
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
+            ConsoleWrapper.CursorVisible = false;
 
             // Set thresholds
             double ThresholdRed = RedColorNum / (double)Settings.PulseMaxSteps;

@@ -41,9 +41,9 @@ namespace KS.Misc.Animations.Spin
         /// </summary>
         public static void Simulate(SpinSettings Settings)
         {
-            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
-            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
+            CurrentWindowWidth = ConsoleWrapper.WindowWidth;
+            CurrentWindowHeight = ConsoleWrapper.WindowHeight;
+            ConsoleWrapper.CursorVisible = false;
 
             // Get spin character from current index
             char spinStep = spinSteps[currentSpinStep];
@@ -73,8 +73,8 @@ namespace KS.Misc.Animations.Spin
 
             // Reset resize sync
             ConsoleResizeListener.WasResized();
-            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
-            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
+            CurrentWindowWidth = ConsoleWrapper.WindowWidth;
+            CurrentWindowHeight = ConsoleWrapper.WindowHeight;
         }
 
     }

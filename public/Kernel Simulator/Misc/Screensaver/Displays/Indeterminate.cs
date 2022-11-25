@@ -525,9 +525,9 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleBase.ConsoleWrapper.Clear();
-            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
+            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleWrapper.Clear();
+            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
 
         /// <inheritdoc/>
@@ -539,16 +539,16 @@ namespace KS.Misc.Screensaver.Displays
             int ColorNum = RandomDriver.Random(IndeterminateSettings.IndeterminateMinimumColorLevel, IndeterminateSettings.IndeterminateMaximumColorLevel);
 
             // Console resizing can sometimes cause the cursor to remain visible. This happens on Windows 10's terminal.
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
+            ConsoleWrapper.CursorVisible = false;
 
             // Set start and end widths for the ramp frame
             int RampFrameStartWidth = 4;
-            int RampFrameEndWidth = ConsoleBase.ConsoleWrapper.WindowWidth - RampFrameStartWidth;
+            int RampFrameEndWidth = ConsoleWrapper.WindowWidth - RampFrameStartWidth;
             int RampFrameSpaces = RampFrameEndWidth - RampFrameStartWidth;
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Start width: {0}, End width: {1}, Spaces: {2}", RampFrameStartWidth, RampFrameEndWidth, RampFrameSpaces);
 
             // Let the ramp be printed in the center
-            int RampCenterPosition = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d);
+            int RampCenterPosition = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
             DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Center position: {0}", RampCenterPosition);
 
             // Draw the frame
@@ -589,7 +589,7 @@ namespace KS.Misc.Screensaver.Displays
                     break;
 
                 // Clear the ramp
-                ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+                ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
                 if (IndeterminateCurrentBlockDirection == IndeterminateDirection.LeftToRight)
                 {
                     for (int BlockPos = RampFrameBlockStartWidth; BlockPos <= IndeterminateCurrentBlockStart; BlockPos++)
@@ -654,8 +654,8 @@ namespace KS.Misc.Screensaver.Displays
                     }
             }
 
-            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleBase.ConsoleWrapper.Clear();
+            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleWrapper.Clear();
             ConsoleResizeListener.WasResized();
             ThreadManager.SleepNoBlock(IndeterminateSettings.IndeterminateDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }

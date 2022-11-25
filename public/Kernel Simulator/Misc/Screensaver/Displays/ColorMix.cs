@@ -254,14 +254,14 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
+            ConsoleWrapper.ForegroundColor = ConsoleColor.White;
             ColorTools.LoadBack(new Color(ColorMixSettings.ColorMixBackgroundColor), true);
         }
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
+            ConsoleWrapper.CursorVisible = false;
 
             // Set colors
             if (ColorMixSettings.ColorMixTrueColor)
@@ -274,7 +274,7 @@ namespace KS.Misc.Screensaver.Displays
                 if (!ConsoleResizeListener.WasResized(false))
                 {
                     ColorTools.SetConsoleColor(ColorStorage, true, true);
-                    ConsoleBase.ConsoleWrapper.Write(" ");
+                    ConsoleWrapper.Write(" ");
                 }
             }
             else
@@ -284,7 +284,7 @@ namespace KS.Misc.Screensaver.Displays
                 if (!ConsoleResizeListener.WasResized(false))
                 {
                     ColorTools.SetConsoleColor(new Color(ColorNum), true, true);
-                    ConsoleBase.ConsoleWrapper.Write(" ");
+                    ConsoleWrapper.Write(" ");
                 }
             }
 
