@@ -240,11 +240,11 @@ namespace KS.ConsoleBase.Inputs
         public static void DetectKeypress()
         {
 #if NETCOREAPP
-            while (!KS.ConsoleBase.ConsoleWrapper.KeyAvailable)
+            while (!ConsoleWrapper.KeyAvailable)
                 Thread.Sleep(1);
-            KS.ConsoleBase.ConsoleWrapper.ReadKey(true);
+            ConsoleWrapper.ReadKey(true);
 #else
-            ConsoleWrapper.ReadKey();
+            ConsoleWrapper.ReadKey(true);
 #endif
         }
 
