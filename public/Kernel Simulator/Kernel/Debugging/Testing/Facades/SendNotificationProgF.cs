@@ -18,6 +18,7 @@
 
 using KS.Languages;
 using KS.Misc.Notifications;
+using KS.Misc.Splash;
 using System.Threading;
 
 namespace KS.Kernel.Debugging.Testing.Facades
@@ -27,6 +28,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override string TestName => Translate.DoTranslation("Sends a failing progress notification to test the receiver");
         public override void Run()
         {
+            SplashReport._KernelBooted = true;
             var Notif = new Notification(Translate.DoTranslation("Test notification"), Translate.DoTranslation("Description is here"), Notifications.NotifPriority.Low, Notifications.NotifType.Progress);
             Notifications.NotifySend(Notif);
             while (!Notif.ProgressCompleted)
@@ -36,6 +38,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
                 if (Notif.Progress == 50)
                     Notif.ProgressFailed = true;
             }
+            SplashReport._KernelBooted = false;
         }
     }
 }

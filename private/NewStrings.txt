@@ -240,5 +240,7 @@ Admin Shell Prompt Preset
 Random driver name
 Which current random driver is responsible for generating random numbers?
 Print a string to console with new lines in string
+Enables the notification system
+The notification system has already started
 
 ==========================================================================================================================================

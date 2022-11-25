@@ -18,25 +18,19 @@
 
 using KS.Languages;
 using KS.Misc.Notifications;
-using KS.Misc.Splash;
-using System;
-using System.Threading;
+using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Kernel.Debugging.Testing.Facades
 {
-    internal class SendNotification : TestFacade
+    internal class EnableNotifications : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Sends a notification to test the receiver");
+        public override string TestName => Translate.DoTranslation("Enables the notification system");
         public override void Run()
         {
-            foreach (var value in Enum.GetValues(typeof(Notifications.NotifPriority)))
-            {
-                SplashReport._KernelBooted = true;
-                var Notif = new Notification(Translate.DoTranslation("Test notification"), Translate.DoTranslation("Description is here"), (Notifications.NotifPriority)value, Notifications.NotifType.Normal);
-                Notifications.NotifySend(Notif);
-                Thread.Sleep(500);
-                SplashReport._KernelBooted = false;
-            }
+            if (!Notifications.NotifThread.IsAlive)
+                Notifications.NotifThread.Start();
+            else
+                TextWriterColor.Write(Translate.DoTranslation("The notification system has already started"));
         }
     }
 }

@@ -87,6 +87,7 @@ namespace KS.Kernel.Debugging.Testing
             { "BenchmarkSleepOne",      new Facades.BenchmarkSleepOne() },
             { "BenchmarkTickSleepOne",  new Facades.BenchmarkTickSleepOne() },
             { "ProbeHardware",          new Facades.ProbeHardware() },
+            { "EnableNotifications",    new Facades.EnableNotifications() },
             { "SendNotification",       new Facades.SendNotification() },
             { "SendNotificationProg",   new Facades.SendNotificationProg() },
             { "SendNotificationProgF",  new Facades.SendNotificationProgF() },

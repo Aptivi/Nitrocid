@@ -18,6 +18,7 @@
 
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
+using System.Linq;
 using System.Text;
 
 namespace KS.Kernel.Debugging.Testing.Facades
@@ -27,7 +28,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override string TestName => Translate.DoTranslation("Lists all supported codepages");
         public override void Run()
         {
-            var Encodings = Encoding.GetEncodings();
+            string[] Encodings = Encoding.GetEncodings().Select((ei) => $"[{ei.CodePage}] {ei.Name}: {ei.DisplayName}").ToArray();
             ListWriterColor.WriteList(Encodings);
         }
     }
