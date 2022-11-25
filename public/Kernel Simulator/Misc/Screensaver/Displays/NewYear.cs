@@ -38,9 +38,6 @@ namespace KS.Misc.Screensaver.Displays
         public override string ScreensaverName { get; set; } = "NewYear";
 
         /// <inheritdoc/>
-        public override Dictionary<string, object> ScreensaverSettings { get; set; }
-
-        /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             // Variable preparations

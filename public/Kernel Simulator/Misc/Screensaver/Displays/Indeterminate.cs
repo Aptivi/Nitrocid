@@ -512,9 +512,6 @@ namespace KS.Misc.Screensaver.Displays
         public override string ScreensaverName { get; set; } = "Indeterminate";
 
         /// <inheritdoc/>
-        public override Dictionary<string, object> ScreensaverSettings { get; set; }
-
-        /// <inheritdoc/>
         public IndeterminateDisplay()
         {
             IndeterminateCurrentBlockStart = RampFrameBlockStartWidth;

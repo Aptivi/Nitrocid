@@ -32,9 +32,6 @@ namespace KS.Misc.Screensaver.Displays
         public override string ScreensaverName { get; set; } = "Meteor";
 
         /// <inheritdoc/>
-        public override Dictionary<string, object> ScreensaverSettings { get; set; }
-
-        /// <inheritdoc/>
         public override void ScreensaverPreparation() => ConsoleBase.ConsoleWrapper.Clear();
 
         /// <inheritdoc/>

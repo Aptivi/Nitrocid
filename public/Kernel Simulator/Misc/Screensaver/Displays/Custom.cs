@@ -29,6 +29,7 @@ namespace KS.Misc.Screensaver.Displays
 
         private BaseScreensaver CustomSaver { get; set; }
 
+        // TODO: Update routine names in comments
         // To Screensaver Developers: ONLY put the effect code in your scrnSaver() sub.
         // Set colors, write welcome message, etc. with the exception of infinite loop and the effect code in preDisplay() sub
         // Recommended: Turn off console cursor, and clear the screen in preDisplay() sub.
@@ -38,9 +39,6 @@ namespace KS.Misc.Screensaver.Displays
         // This implementation doesn't call PostDisplay().
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Custom";
-
-        /// <inheritdoc/>
-        public override Dictionary<string, object> ScreensaverSettings { get; set; }
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()

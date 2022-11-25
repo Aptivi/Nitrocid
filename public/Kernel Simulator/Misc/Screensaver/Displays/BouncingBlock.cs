@@ -267,9 +267,6 @@ namespace KS.Misc.Screensaver.Displays
         public override string ScreensaverName { get; set; } = "BouncingBlock";
 
         /// <inheritdoc/>
-        public override Dictionary<string, object> ScreensaverSettings { get; set; }
-
-        /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             // Variable preparations

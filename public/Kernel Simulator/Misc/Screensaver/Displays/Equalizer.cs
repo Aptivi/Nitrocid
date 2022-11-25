@@ -83,9 +83,6 @@ namespace KS.Misc.Screensaver.Displays
         public override string ScreensaverName { get; set; } = "Equalizer";
 
         /// <inheritdoc/>
-        public override Dictionary<string, object> ScreensaverSettings { get; set; }
-
-        /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);

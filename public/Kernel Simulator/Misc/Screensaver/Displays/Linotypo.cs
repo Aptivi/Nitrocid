@@ -272,8 +272,6 @@ namespace KS.Misc.Screensaver.Displays
 
         public override string ScreensaverName { get; set; } = "Linotypo";
 
-        public override Dictionary<string, object> ScreensaverSettings { get; set; }
-
         public override void ScreensaverPreparation()
         {
             // Variable preparations

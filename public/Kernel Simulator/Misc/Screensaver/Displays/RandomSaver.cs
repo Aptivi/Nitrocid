@@ -34,9 +34,6 @@ namespace KS.Misc.Screensaver.Displays
         public override string ScreensaverName { get; set; } = "RandomSaver";
 
         /// <inheritdoc/>
-        public override Dictionary<string, object> ScreensaverSettings { get; set; }
-
-        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             int ScreensaverIndex = RandomDriver.RandomIdx(Misc.Screensaver.Screensaver.Screensavers.Count);
