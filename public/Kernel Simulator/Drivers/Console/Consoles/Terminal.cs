@@ -16,15 +16,22 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
+using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Reflection;
 using KS.Misc.Writers.ConsoleWriters;
 using System;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading;
+using ColorTools = KS.ConsoleBase.Colors.ColorTools;
+using con = System.Console;
 
 namespace KS.Drivers.Console.Consoles
 {
@@ -34,6 +41,292 @@ namespace KS.Drivers.Console.Consoles
         public string DriverName => "Default";
 
         public DriverTypes DriverType => DriverTypes.Console;
+
+        private static bool _dumbSet = false;
+        private static bool _dumb = true;
+
+        /// <summary>
+        /// Is the console a dumb console?
+        /// </summary>
+        public static bool IsDumb
+        {
+            get
+            {
+                try
+                {
+                    // Get terminal type
+                    string TerminalType = KernelPlatform.GetTerminalType();
+
+                    // Try to cache the value
+                    if (!_dumbSet)
+                    {
+                        _dumbSet = true;
+                        int _ = con.CursorLeft;
+
+                        // If it doesn't get here without throwing exceptions, assume console is dumb. Now, check to see if terminal type is dumb
+                        if (TerminalType != "dumb")
+                            _dumb = false;
+                    }
+                }
+                catch { }
+                return _dumb;
+            }
+        }
+
+        /// <inheritdoc/>
+        public TextWriter Out => con.Out;
+
+        /// <inheritdoc/>
+        public int CursorLeft
+        {
+            get
+            {
+                if (IsDumb)
+                    return 0;
+                return con.CursorLeft;
+            }
+            set
+            {
+                if (!IsDumb)
+                    con.CursorLeft = value;
+            }
+        }
+
+        /// <inheritdoc/>
+        public int CursorTop
+        {
+            get
+            {
+                if (IsDumb)
+                    return 0;
+                return con.CursorTop;
+            }
+            set
+            {
+                if (!IsDumb)
+                    con.CursorTop = value;
+            }
+        }
+
+        /// <inheritdoc/>
+        public int WindowTop
+        {
+            get
+            {
+                if (IsDumb)
+                    return 0;
+                return con.WindowTop;
+            }
+        }
+
+        /// <inheritdoc/>
+        public int WindowWidth
+        {
+            get
+            {
+                if (IsDumb)
+                    return int.MaxValue;
+                return con.WindowWidth;
+            }
+        }
+
+        /// <inheritdoc/>
+        public int WindowHeight
+        {
+            get
+            {
+                if (IsDumb)
+                    return int.MaxValue;
+                return con.WindowHeight;
+            }
+        }
+
+        /// <inheritdoc/>
+        public int BufferWidth
+        {
+            get
+            {
+                if (IsDumb)
+                    return int.MaxValue;
+                return con.BufferWidth;
+            }
+        }
+
+        /// <inheritdoc/>
+        public int BufferHeight
+        {
+            get
+            {
+                if (IsDumb)
+                    return int.MaxValue;
+                return con.BufferHeight;
+            }
+        }
+
+        /// <inheritdoc/>
+        public ConsoleColor ForegroundColor
+        {
+            get
+            {
+                if (IsDumb)
+                    return ConsoleColor.White;
+                return con.ForegroundColor;
+            }
+            set
+            {
+                if (!IsDumb)
+                    con.ForegroundColor = value;
+                ColorTools.cachedForegroundColor = new Color(Convert.ToInt32(value)).VTSequenceForeground;
+            }
+        }
+
+        /// <inheritdoc/>
+        public ConsoleColor BackgroundColor
+        {
+            get
+            {
+                if (IsDumb)
+                    return ConsoleColor.Black;
+                return con.BackgroundColor;
+            }
+            set
+            {
+                if (!IsDumb)
+                    con.BackgroundColor = value;
+                ColorTools.cachedBackgroundColor = new Color(Convert.ToInt32(value)).VTSequenceBackground;
+            }
+        }
+
+        /// <inheritdoc/>
+        public bool CursorVisible
+        {
+            set
+            {
+                if (!IsDumb)
+                    con.CursorVisible = value;
+            }
+        }
+
+        /// <inheritdoc/>
+        public Encoding OutputEncoding
+        {
+            get
+            {
+                if (IsDumb)
+                    return Encoding.Default;
+                return con.OutputEncoding;
+            }
+            set
+            {
+                if (!IsDumb)
+                    con.OutputEncoding = value;
+            }
+        }
+
+        /// <inheritdoc/>
+        public Encoding InputEncoding
+        {
+            get
+            {
+                if (IsDumb)
+                    return Encoding.Default;
+                return con.InputEncoding;
+            }
+            set
+            {
+                if (!IsDumb)
+                    con.InputEncoding = value;
+            }
+        }
+
+        /// <inheritdoc/>
+        public bool KeyAvailable
+        {
+            get
+            {
+                if (IsDumb)
+                    return false;
+                return con.KeyAvailable;
+            }
+        }
+
+        /// <inheritdoc/>
+        public void Beep() => 
+            con.Beep();
+
+        /// <inheritdoc/>
+        public void Clear(bool loadBack = false)
+        {
+            if (!IsDumb)
+            {
+                if (loadBack)
+                    ColorTools.LoadBack();
+                con.Clear();
+            }
+        }
+
+        /// <inheritdoc/>
+        public Stream OpenStandardError() =>
+            con.OpenStandardError();
+
+        /// <inheritdoc/>
+        public Stream OpenStandardInput() => 
+            con.OpenStandardInput();
+
+        /// <inheritdoc/>
+        public Stream OpenStandardOutput() =>
+            con.OpenStandardOutput();
+
+        /// <inheritdoc/>
+        public ConsoleKeyInfo ReadKey(bool intercept = false) => 
+            con.ReadKey(intercept);
+
+        /// <inheritdoc/>
+        public void ResetColor()
+        {
+            if (!IsDumb)
+                con.ResetColor();
+        }
+
+        /// <inheritdoc/>
+        public void SetCursorPosition(int left, int top)
+        {
+            if (!IsDumb)
+                con.SetCursorPosition(left, top);
+        }
+
+        /// <inheritdoc/>
+        public void SetOut(TextWriter newOut)
+        {
+            // We need to reset dumb state because the new output may not support usual console features other then reading/writing.
+            _dumbSet = false;
+            _dumb = true;
+            con.SetOut(newOut);
+        }
+
+        /// <inheritdoc/>
+        public void Write(char value) =>
+            con.Write(value);
+
+        /// <inheritdoc/>
+        public void Write(string text) =>
+            con.Write(text);
+
+        /// <inheritdoc/>
+        public void Write(string text, params object[] args) => 
+            con.Write(text, args);
+
+        /// <inheritdoc/>
+        public void WriteLine() =>
+            con.WriteLine();
+
+        /// <inheritdoc/>
+        public void WriteLine(string text) => 
+            con.WriteLine(text);
+
+        /// <inheritdoc/>
+        public void WriteLine(string text, params object[] args) =>
+            con.WriteLine(text, args);
 
         /// <inheritdoc/>
         public void WritePlain(string Text, bool Line, params object[] vars)

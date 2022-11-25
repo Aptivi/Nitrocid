@@ -24,6 +24,7 @@ using KS.Languages;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Drivers;
+using KS.Drivers.Console.Consoles;
 
 namespace KS.ConsoleBase
 {
@@ -58,7 +59,7 @@ namespace KS.ConsoleBase
             // appropriate variable, like the frontend applications that rely on console applications and their outputs to do their job (for example,
             // Brasero, a disk burning program, uses wodim, xorriso, and such applications to do its very intent of burning a blank CD-ROM. All these
             // backend applications are console programs).
-            if (ConsoleWrapper.IsDumb)
+            if (Terminal.IsDumb)
             {
                 throw new KernelException(KernelExceptionType.InsaneConsoleDetected,
                                           "Kernel Simulator makes use of inputs and cursor manipulation, but the \"dumb\" terminals have no support for such tasks." + CharManager.NewLine + 

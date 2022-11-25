@@ -26,6 +26,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Threading;
+using System.Text;
 
 namespace KS.Drivers.Console.Consoles
 {
@@ -38,6 +39,98 @@ namespace KS.Drivers.Console.Consoles
 
         internal string PathToWrite { get; set; }
         internal bool FilterVT { get; set; }
+
+        public TextWriter Out => null;
+
+        public int CursorLeft { get => 0; set => throw new NotImplementedException(); }
+
+        public int CursorTop { get => 0; set => throw new NotImplementedException(); }
+
+        public int WindowTop => 0;
+
+        public int WindowWidth => 0;
+
+        public int WindowHeight => 0;
+
+        public int BufferWidth => 0;
+
+        public int BufferHeight => 0;
+
+        public ConsoleColor ForegroundColor { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public ConsoleColor BackgroundColor { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public bool CursorVisible { set => throw new NotImplementedException(); }
+
+        public Encoding OutputEncoding { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public Encoding InputEncoding { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public bool KeyAvailable =>
+            throw new NotImplementedException();
+
+        public void Beep() =>
+            throw new NotImplementedException();
+
+        public void Clear(bool loadBack = false) =>
+            throw new NotImplementedException();
+
+        public Stream OpenStandardError() =>
+            throw new NotImplementedException();
+
+        public Stream OpenStandardInput() =>
+            throw new NotImplementedException();
+
+        public Stream OpenStandardOutput() =>
+            throw new NotImplementedException();
+
+        public ConsoleKeyInfo ReadKey(bool intercept = false) =>
+            throw new NotImplementedException();
+
+        public void ResetColor() =>
+            throw new NotImplementedException();
+
+        public void SetCursorPosition(int left, int top) =>
+            throw new NotImplementedException();
+
+        public void SetOut(TextWriter newOut) =>
+            throw new NotImplementedException();
+
+        /// <summary>
+        /// Outputs text to the void
+        /// </summary>
+        /// <inheritdoc/>
+        public void Write(char value) { }
+
+        /// <summary>
+        /// Outputs text to the void
+        /// </summary>
+        /// <inheritdoc/>
+        public void Write(string text) { }
+
+        /// <summary>
+        /// Outputs text to the void
+        /// </summary>
+        /// <inheritdoc/>
+        public void Write(string text, params object[] args) { }
+
+        /// <summary>
+        /// Outputs text to the void
+        /// </summary>
+        /// <inheritdoc/>
+        public void WriteLine() { }
+
+        /// <summary>
+        /// Outputs text to the void
+        /// </summary>
+        /// <inheritdoc/>
+        public void WriteLine(string text) { }
+
+        /// <summary>
+        /// Outputs text to the void
+        /// </summary>
+        /// <inheritdoc/>
+        public void WriteLine(string text, params object[] args) { }
 
         /// <summary>
         /// Outputs text to file
