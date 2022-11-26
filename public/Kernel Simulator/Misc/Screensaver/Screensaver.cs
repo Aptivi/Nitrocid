@@ -188,20 +188,22 @@ namespace KS.Misc.Screensaver
         {
             try
             {
-                inSaver = true;
-                Flags.ScrnTimeReached = true;
                 Kernel.Events.EventsManager.FireEvent("PreShowScreensaver");
                 DebugWriter.WriteDebug(DebugLevel.I, "Requested screensaver: {0}", saver);
                 if (Screensavers.ContainsKey(saver.ToLower()))
                 {
                     saver = saver.ToLower();
                     var BaseSaver = Screensavers[saver];
+                    inSaver = true;
+                    Flags.ScrnTimeReached = true;
                     ScreensaverDisplayer.ScreensaverDisplayerThread.Start(BaseSaver);
                     DebugWriter.WriteDebug(DebugLevel.I, "{0} started", saver);
                 }
                 else if (CustomSaverTools.CustomSavers.ContainsKey(saver))
                 {
                     // Only one custom screensaver can be used.
+                    inSaver = true;
+                    Flags.ScrnTimeReached = true;
                     ScreensaverDisplayer.ScreensaverDisplayerThread.Start(new CustomDisplay(CustomSaverTools.CustomSavers[saver].ScreensaverBase));
                     DebugWriter.WriteDebug(DebugLevel.I, "Custom screensaver {0} started", saver);
                 }

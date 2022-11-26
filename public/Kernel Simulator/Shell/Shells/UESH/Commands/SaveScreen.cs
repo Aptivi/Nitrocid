@@ -39,8 +39,11 @@ namespace KS.Shell.Shells.UESH.Commands
                 Screensaver.ShowSavers(ListArgsOnly[0]);
             else
                 Screensaver.ShowSavers(Screensaver.DefSaverName);
-            Input.DetectKeypress();
-            ScreensaverDisplayer.BailFromScreensaver();
+            if (Screensaver.inSaver)
+            {
+                Input.DetectKeypress();
+                ScreensaverDisplayer.BailFromScreensaver();
+            }
         }
 
         public override void HelpHelper()
