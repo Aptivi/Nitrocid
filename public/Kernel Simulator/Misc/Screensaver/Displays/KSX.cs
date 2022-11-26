@@ -18,9 +18,12 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using ColorSeq;
 using KS.ConsoleBase;
+using KS.Drivers;
 using KS.Kernel.Debugging;
+using KS.Misc.Text;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
@@ -54,6 +57,7 @@ namespace KS.Misc.Screensaver.Displays
             Color darkGreen = new(ConsoleColors.DarkGreen);
             Color green = new(ConsoleColors.Green);
             Color black = new(ConsoleColors.Black);
+            Color white = new(ConsoleColors.White);
 
             // Start stepping
             for (step = 1; step <= maxSteps; step++)
@@ -227,6 +231,107 @@ namespace KS.Misc.Screensaver.Displays
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        }
+                        break;
+                    case 6:
+                        // Show all released kernel versions (only the LTS versions)
+                        Dictionary<string, string> versions = new()
+                        {
+                            { "Kernel 0.0.1",  TimeDate.TimeDateRenderers.RenderDate(new DateTime(2018, 2,  22)) },
+                            { "Kernel 0.0.4",  TimeDate.TimeDateRenderers.RenderDate(new DateTime(2018, 5,  20)) },
+                            { "Kernel 0.0.8",  TimeDate.TimeDateRenderers.RenderDate(new DateTime(2020, 2,  22)) },
+                            { "Kernel 0.0.12", TimeDate.TimeDateRenderers.RenderDate(new DateTime(2020, 11, 6 )) },
+                            { "Kernel 0.0.16", TimeDate.TimeDateRenderers.RenderDate(new DateTime(2021, 6,  12)) },
+                            { "Kernel 0.0.20", TimeDate.TimeDateRenderers.RenderDate(new DateTime(2022, 2,  22)) },
+                            { "Kernel 0.0.24", TimeDate.TimeDateRenderers.RenderDate(new DateTime(2022, 8,  2 )) },
+                        };
+                        int maxKernels = versions.Count;
+                        int selectedKernel = 5;
+                        int minimumMoves = 20;
+                        bool canSelectFirst = false;
+                        bool selectedFirst = false;
+
+                        // Make a random move
+                        int currentMove = 0;
+                        while (!selectedFirst)
+                        {
+                            bool movingTop = DriverHandler.CurrentRandomDriver.RandomChance(30);
+
+                            // Make a move
+                            currentMove++;
+                            if (movingTop)
+                            {
+                                selectedKernel--;
+
+                                // If we went after the beginning, go to the end
+                                if (selectedKernel == 0)
+                                    selectedKernel = maxKernels;
+                            }
+                            else
+                            {
+                                selectedKernel++;
+
+                                // If we went after the end, go to the beginning
+                                if (selectedKernel > maxKernels)
+                                    selectedKernel = 1;
+                            }
+
+                            // Check to see if we can finally select 0.0.1
+                            if (currentMove > minimumMoves)
+                                canSelectFirst = true;
+
+                            // If we can select first, wait until the first is selected
+                            if (canSelectFirst)
+                                if (selectedKernel == 1)
+                                    selectedFirst = true;
+
+                            // Render the selection
+                            for (int i = 0; i < maxKernels; i++)
+                            {
+                                int idx = selectedKernel - 1;
+                                var ver = versions.ElementAt(i);
+                                TextWriterColor.Write("- {0}: {1}", true, i == idx ? green : darkGreen, ver.Key, ver.Value);
+                            }
+
+                            // Sleep
+                            ThreadManager.SleepNoBlock(selectedFirst ? 3000 : 250, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                            ConsoleBase.Colors.ColorTools.LoadBack(black, true);
+                        }
+                        break;
+                    case 7:
+                        // Display time warp text
+                        ConsoleBase.Colors.ColorTools.LoadBack(darkGreen, true);
+                        string timeWarpText = $"Time machine... Warping to {TimeDate.TimeDateRenderers.RenderDate(new DateTime(2018, 2, 22))}...";
+                        int textPosX = (ConsoleWrapper.WindowWidth / 2) - (timeWarpText.Length / 2);
+                        int textPosY = ConsoleWrapper.WindowHeight - 8;
+                        int textTravelledPosY = ConsoleWrapper.WindowHeight - 6;
+                        TextWriterWhereColor.WriteWhere(timeWarpText, textPosX, textPosY, black, darkGreen);
+
+                        // Display the progress
+                        int progPosX = 3;
+                        int progPosY = ConsoleWrapper.WindowHeight - 4;
+                        int maxProg = 3000;
+                        long ksEpochTick = new DateTime(2018, 2, 22).Ticks;
+                        long currentTick = TimeDate.TimeDate.KernelDateTime.Date.Ticks;
+                        long tickDiff = currentTick - ksEpochTick;
+                        for (int iteration = 0; iteration < maxProg; iteration++)
+                        {
+                            // Some power function to make the glitches intense
+                            double currentProg = Math.Pow(((double)iteration / maxProg) * 10, 2);
+                            ProgressBarColor.WriteProgress(currentProg, progPosX, progPosY, green);
+
+                            // Show current date
+                            long travelledTicks = (long)Math.Round(tickDiff * ((double)currentProg / 100));
+                            long travelledTickFromCurrent = currentTick - travelledTicks;
+                            DateTime travelled = new(travelledTickFromCurrent);
+                            string timeWarpCurrentDate = $"Travelled: {TimeDate.TimeDateRenderers.RenderDate(travelled)}";
+                            TextWriterWhereColor.WriteWhere(timeWarpCurrentDate + $"{Convert.ToString(CharManager.GetEsc()) + "[0K"}", progPosX, textTravelledPosY, black, darkGreen);
+
+                            // Sleep
+                            if (iteration >= maxProg - 1)
+                                ThreadManager.SleepNoBlock(5000, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                            else
+                                ThreadManager.SleepNoBlock(10, ScreensaverDisplayer.ScreensaverDisplayerThread);
                         }
                         break;
                 }
