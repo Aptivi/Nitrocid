@@ -196,8 +196,8 @@ namespace KS.Misc.Screensaver.Displays
                         var s4figFont = FigletTools.GetFigletFont("Banner");
                         int s4figWidth = FigletTools.GetFigletWidth("2018", s4figFont) / 2;
                         int s4figHeight = FigletTools.GetFigletHeight("2018", s4figFont) / 2;
-                        int s4consoleX = (ConsoleWrapper.WindowWidth / 2) - (s4figWidth / 2);
-                        int s4consoleY = (ConsoleWrapper.WindowHeight / 2) - (s4figHeight / 2);
+                        int s4consoleX = (ConsoleWrapper.WindowWidth / 2) - s4figWidth;
+                        int s4consoleY = (ConsoleWrapper.WindowHeight / 2) - s4figHeight;
                         FigletWhereColor.WriteFigletWhere("2018", s4consoleX, s4consoleY, true, s4figFont, green);
                         ThreadManager.SleepNoBlock(5000, ScreensaverDisplayer.ScreensaverDisplayerThread);
                         break;

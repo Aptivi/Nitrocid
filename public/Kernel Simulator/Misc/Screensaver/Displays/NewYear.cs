@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using ColorSeq;
 using KS.ConsoleBase;
 using KS.Kernel.Debugging;
+using KS.Languages;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
@@ -49,9 +50,53 @@ namespace KS.Misc.Screensaver.Displays
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            // TODO: to be filled
+            Color darkGreen = new(ConsoleColors.DarkGreen);
+            Color green = new(ConsoleColors.Green);
+
+            // Get the current year
+            int currentYear = TimeDate.TimeDate.KernelDateTime.Year;
+            var currentYearDate = new DateTime(currentYear, 1, 1);
+
+            // Select mode
+            if (TimeDate.TimeDate.KernelDateTime.Date == currentYearDate)
+            {
+                // We're at the new year!
+                string currentYearStr = currentYear.ToString();
+                var figFont = FigletTools.GetFigletFont("Banner3");
+                int figWidth = FigletTools.GetFigletWidth(currentYearStr, figFont) / 2;
+                int figHeight = FigletTools.GetFigletHeight(currentYearStr, figFont) / 2;
+                int consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidth;
+                int consoleY = (ConsoleWrapper.WindowHeight / 2) - figHeight;
+                FigletWhereColor.WriteFigletWhere(currentYearStr, consoleX, consoleY, true, figFont, green);
+
+                // Congratulate!
+                string cong = Translate.DoTranslation("Happy new year!");
+                int consoleInfoX = (ConsoleWrapper.WindowWidth / 2) - (cong.Length / 2);
+                int consoleInfoY = (ConsoleWrapper.WindowHeight / 2) + figHeight;
+                TextWriterWhereColor.WriteWhere(cong, consoleInfoX, consoleInfoY);
+            }
+            else
+            {
+                // Print the countdown, but print the next year first using Figlet
+                string nextYearStr = (currentYear + 1).ToString();
+                var figFont = FigletTools.GetFigletFont("Banner3");
+                int figWidth = FigletTools.GetFigletWidth(nextYearStr, figFont) / 2;
+                int figHeight = FigletTools.GetFigletHeight(nextYearStr, figFont) / 2;
+                int consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidth;
+                int consoleY = (ConsoleWrapper.WindowHeight / 2) - figHeight;
+                FigletWhereColor.WriteFigletWhere(nextYearStr, consoleX, consoleY, true, figFont, darkGreen);
+
+                // Print the time remaining
+                var nextYearDate = new DateTime(currentYear + 1, 1, 1);
+                var distance = nextYearDate - TimeDate.TimeDate.KernelDateTime;
+                string distanceStr = distance.ToString("dd\\d\\ hh\\:mm\\:ss");
+                int consoleInfoX = (ConsoleWrapper.WindowWidth / 2) - (distanceStr.Length / 2);
+                int consoleInfoY = (ConsoleWrapper.WindowHeight / 2) + figHeight;
+                TextWriterWhereColor.WriteWhere(distanceStr, consoleInfoX, consoleInfoY);
+            }
 
             // Reset
+            ThreadManager.SleepNoBlock(500, ScreensaverDisplayer.ScreensaverDisplayerThread);
             ConsoleResizeListener.WasResized();
         }
 
