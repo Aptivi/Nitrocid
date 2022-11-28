@@ -49,7 +49,7 @@ namespace KS.Misc.Threading
                 ActiveThread.Wait();
             }
         }
-
+#if OBSOLETEFEATS
         /// <summary>
         /// Sleeps until either the time specified, or the thread has finished or cancelled.
         /// </summary>
@@ -68,6 +68,7 @@ namespace KS.Misc.Threading
                 TimeCount += 1;
             }
         }
+#endif
 
         /// <summary>
         /// Sleeps until either the time specified, or the thread is no longer alive.
