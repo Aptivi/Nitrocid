@@ -4108,7 +4108,7 @@
         "Path": "Screensaver.BSOD",
         "Keys": [
             {
-                "Name": "Screen Delay in Milliseconds",
+                "Name": "Delay in Milliseconds",
                 "Type": "SInt",
                 "Variable": "BSODDelay",
                 "Description": "How many milliseconds to wait before making the next write?"
