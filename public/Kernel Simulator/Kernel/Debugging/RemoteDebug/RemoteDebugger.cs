@@ -157,7 +157,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
                         RDebugClient = DebugTCP.AcceptSocket();
 
                         // Set the timeout of ten milliseconds to ensure that no device "take turns in messaging"
-                        RDebugStream = new NetworkStream(RDebugClient) { ReadTimeout = 10 };
+                        RDebugStream = new NetworkStream(RDebugClient);
 
                         // Add the device to JSON
                         RDebugEndpoint = RDebugClient.RemoteEndPoint.ToString();
@@ -252,6 +252,11 @@ namespace KS.Kernel.Debugging.RemoteDebug
                     string SocketName = device.ClientName;
 
                     // Read a message from the stream
+                    if (!SocketStream.DataAvailable)
+                        if (device.ClientSocket.Connected)
+                            continue;
+                        else
+                            break;
                     SocketStream.Read(MessageBuffer, 0, 65536);
                     string Message = System.Text.Encoding.Default.GetString(MessageBuffer);
 
@@ -336,7 +341,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
                     string SocketIP = device?.ClientIP;
                     if (SE is not null)
                     {
-                        if (!(SE.SocketErrorCode == SocketError.TimedOut) & !(SE.SocketErrorCode == SocketError.WouldBlock))
+                        if (!(SE.SocketErrorCode == SocketError.WouldBlock))
                         {
                             if (SocketIP is not null)
                             {
