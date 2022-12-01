@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using KS.ConsoleBase.Colors;
@@ -75,7 +76,14 @@ namespace KS.Shell.ShellBase.Commands
         /// Executes a command
         /// </summary>
         /// <param name="ThreadParams">Thread parameters for ExecuteCommand.</param>
-        internal static void ExecuteCommand(ExecuteCommandParameters ThreadParams)
+        internal static void ExecuteCommand(ExecuteCommandParameters ThreadParams) =>
+            ExecuteCommand(ThreadParams, CommandManager.GetCommands(ThreadParams.ShellType));
+
+        /// <summary>
+        /// Executes a command
+        /// </summary>
+        /// <param name="ThreadParams">Thread parameters for ExecuteCommand.</param>
+        internal static void ExecuteCommand(ExecuteCommandParameters ThreadParams, Dictionary<string, CommandInfo> TargetCommands)
         {
             string RequestedCommand = ThreadParams.RequestedCommand;
             string ShellType = ThreadParams.ShellType;
@@ -90,7 +98,6 @@ namespace KS.Shell.ShellBase.Commands
                 var Switches = ArgumentInfo.SwitchesList;
                 string StrArgs = ArgumentInfo.ArgumentsText;
                 bool RequiredArgumentsProvided = ArgumentInfo.RequiredArgumentsProvided;
-                var TargetCommands = CommandManager.GetCommands(ShellType);
 
                 // Check to see if a requested command is obsolete
                 if (TargetCommands[Command].Flags.HasFlag(CommandFlags.Obsolete))

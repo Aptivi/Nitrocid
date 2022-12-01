@@ -132,10 +132,6 @@ namespace KS.Kernel.Debugging.RemoteDebug
                 RDebugFailedReason = sex;
                 DebugWriter.WriteDebugStackTrace(sex);
             }
-
-            // Start the listening thread
-            var RStream = new KernelThread("Remote Debug Listener Thread", false, ReadAndBroadcastAsync);
-            RStream.Start();
             RDebugBail = true;
 
             // Run forever! Until the remote debugger is stopping.
@@ -170,7 +166,8 @@ namespace KS.Kernel.Debugging.RemoteDebug
 
                         // Get the remaining properties
                         RDebugName = Convert.ToString(RemoteDebugTools.GetDeviceProperty(RDebugIP, RemoteDebugTools.DeviceProperty.Name));
-                        RDebugInstance = new RemoteDebugDevice(RDebugClient, RDebugStream, RDebugIP, RDebugName);
+                        var RDebugThread = new KernelThread($"Remote Debug Listener Thread for {RDebugIP}", false, Listen);
+                        RDebugInstance = new RemoteDebugDevice(RDebugClient, RDebugStream, RDebugIP, RDebugName, RDebugThread);
                         RDebugSWriter = RDebugInstance.ClientStreamWriter;
 
                         // Check the name
@@ -204,6 +201,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
                             // Acknowledge the debugger
                             DebugWriter.WriteDebug(DebugLevel.I, "Debug device \"{0}\" ({1}) connected.", RDebugName, RDebugIP);
                             RDebugSWriter.Flush();
+                            RDebugThread.Start(RDebugInstance);
                             Events.EventsManager.FireEvent("RemoteDebugConnectionAccepted", RDebugIP);
                         }
                     }
@@ -227,137 +225,135 @@ namespace KS.Kernel.Debugging.RemoteDebug
                 }
             }
 
-            RStream.Wait();
             RDebugStopping = false;
             DebugTCP.Stop();
             DebugDevices.Clear();
-            Thread.CurrentThread.Interrupt();
         }
 
         /// <summary>
         /// Thread to listen to messages and post them to the debugger
         /// </summary>
-        public static void ReadAndBroadcastAsync()
+        internal static void Listen(object RDebugInstance)
         {
+            if (RDebugInstance is not RemoteDebugDevice device)
+                return;
+
             while (!RDebugStopping)
             {
-                for (int DeviceIndex = 0; DeviceIndex <= DebugDevices.Count - 1; DeviceIndex++)
+                try
                 {
-                    try
+                    Thread.Sleep(1);
+
+                    // Variables
+                    var MessageBuffer = new byte[65537];
+                    var SocketStream = device.ClientStream;
+                    var SocketStreamWriter = device.ClientStreamWriter;
+                    string SocketIP = device.ClientIP;
+                    string SocketName = device.ClientName;
+
+                    // Read a message from the stream
+                    SocketStream.Read(MessageBuffer, 0, 65536);
+                    string Message = System.Text.Encoding.Default.GetString(MessageBuffer);
+
+                    // Make some fixups regarding newlines, which means remove all instances of vbCr (Mac OS 9 newlines) and vbLf (Linux newlines).
+                    // Windows hosts are affected, too, because it uses vbCrLf, which means (vbCr + vbLf)
+                    Message = Message.Replace(Convert.ToChar(13), default);
+                    Message = Message.Replace(Convert.ToChar(10), default);
+
+                    // Now, remove all null chars
+                    Message = Message.Replace(Convert.ToString(Convert.ToChar(0)), "");
+
+                    // If the message is empty, return.
+                    if (string.IsNullOrWhiteSpace(Message))
+                        continue;
+
+                    // Don't post message if it starts with a null character. On Unix, the nullchar detection always returns false even if it seems
+                    // that the message starts with the actual character, not the null character, so detect nullchar by getting the first character
+                    // from the message and comparing it to the null char ASCII number, which is 0.
+                    if (!(Convert.ToInt32(Message[0]) == 0))
                     {
-                        Thread.Sleep(1);
-
-                        // Variables
-                        var MessageBuffer = new byte[65537];
-                        var SocketStream = DebugDevices[DeviceIndex].ClientStream;
-                        var SocketStreamWriter = DebugDevices[DeviceIndex].ClientStreamWriter;
-                        string SocketIP = DebugDevices[DeviceIndex].ClientIP;
-                        string SocketName = DebugDevices[DeviceIndex].ClientName;
-
-                        // Read a message from the stream
-                        SocketStream.Read(MessageBuffer, 0, 65536);
-                        string Message = System.Text.Encoding.Default.GetString(MessageBuffer);
-
-                        // Make some fixups regarding newlines, which means remove all instances of vbCr (Mac OS 9 newlines) and vbLf (Linux newlines).
-                        // Windows hosts are affected, too, because it uses vbCrLf, which means (vbCr + vbLf)
-                        Message = Message.Replace(Convert.ToChar(13), default);
-                        Message = Message.Replace(Convert.ToChar(10), default);
-
-                        // Now, remove all null chars
-                        Message = Message.Replace(Convert.ToString(Convert.ToChar(0)), "");
-
-                        // If the message is empty, return.
-                        if (string.IsNullOrWhiteSpace(Message))
-                            continue;
-
-                        // Don't post message if it starts with a null character. On Unix, the nullchar detection always returns false even if it seems
-                        // that the message starts with the actual character, not the null character, so detect nullchar by getting the first character
-                        // from the message and comparing it to the null char ASCII number, which is 0.
-                        if (!(Convert.ToInt32(Message[0]) == 0))
+                        // Now, check the message
+                        if (Message.StartsWith("/"))
                         {
-                            // Now, check the message
-                            if (Message.StartsWith("/"))
+                            // Message is a command
+                            string FullCommand = Message.Substring(1);
+                            string Command = FullCommand.Split(' ')[0];
+                            if (RemoteDebugCmd.DebugCommands.ContainsKey(Command))
                             {
-                                // Message is a command
-                                string FullCommand = Message.Substring(1);
-                                string Command = FullCommand.Split(' ')[0];
-                                if (RemoteDebugCmd.DebugCommands.ContainsKey(Command))
-                                {
-                                    // Parsing starts here.
-                                    var Params = new CommandExecutor.ExecuteCommandParameters(FullCommand, ShellType.RemoteDebugShell, SocketStreamWriter, SocketIP);
-                                    CommandExecutor.ExecuteCommand(Params);
-                                }
-                                else if (AliasManager.DoesAliasExist(Command, ShellType.RemoteDebugShell))
-                                {
-                                    // Alias parsing starts here.
-                                    AliasExecutor.ExecuteAlias(FullCommand, ShellType.RemoteDebugShell, SocketStreamWriter, SocketIP);
-                                }
-                                else
-                                {
-                                    SocketStreamWriter.WriteLine(Translate.DoTranslation("Command {0} not found. Use \"/help\" to see the list."), Command);
-                                }
+                                // Parsing starts here.
+                                var Params = new CommandExecutor.ExecuteCommandParameters(FullCommand, ShellType.RemoteDebugShell, SocketStreamWriter, SocketIP);
+                                CommandExecutor.ExecuteCommand(Params, RemoteDebugCmd.DebugCommands);
                             }
-                            // Check to see if the unnamed stranger is trying to send a message
-                            else if (!string.IsNullOrEmpty(SocketName))
+                            else if (AliasManager.DoesAliasExist(Command, ShellType.RemoteDebugShell))
                             {
-                                // Check the message format
-                                if (string.IsNullOrWhiteSpace(RDebugMessageFormat))
-                                {
-                                    RDebugMessageFormat = "{0}> {1}";
-                                }
+                                // Alias parsing starts here.
+                                AliasExecutor.ExecuteAlias(FullCommand, ShellType.RemoteDebugShell, SocketStreamWriter, SocketIP);
+                            }
+                            else
+                            {
+                                SocketStreamWriter.WriteLine(Translate.DoTranslation("Command {0} not found. Use \"/help\" to see the list."), Command);
+                            }
+                        }
+                        // Check to see if the unnamed stranger is trying to send a message
+                        else if (!string.IsNullOrEmpty(SocketName))
+                        {
+                            // Check the message format
+                            if (string.IsNullOrWhiteSpace(RDebugMessageFormat))
+                            {
+                                RDebugMessageFormat = "{0}> {1}";
+                            }
 
-                                // Decide if we're recording the chat to the debug log
-                                if (Flags.RecordChatToDebugLog)
-                                {
-                                    DebugWriter.WriteDebug(DebugLevel.I, PlaceParse.ProbePlaces(RDebugMessageFormat), SocketName, Message);
-                                }
-                                else
-                                {
-                                    DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, PlaceParse.ProbePlaces(RDebugMessageFormat), SocketName, Message);
-                                }
+                            // Decide if we're recording the chat to the debug log
+                            if (Flags.RecordChatToDebugLog)
+                            {
+                                DebugWriter.WriteDebug(DebugLevel.I, PlaceParse.ProbePlaces(RDebugMessageFormat), SocketName, Message);
+                            }
+                            else
+                            {
+                                DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, PlaceParse.ProbePlaces(RDebugMessageFormat), SocketName, Message);
+                            }
 
-                                // Add the message to the chat history
-                                RemoteDebugTools.SetDeviceProperty(SocketIP, RemoteDebugTools.DeviceProperty.ChatHistory, "[" + TimeDateRenderers.Render() + "] " + Message);
+                            // Add the message to the chat history
+                            RemoteDebugTools.SetDeviceProperty(SocketIP, RemoteDebugTools.DeviceProperty.ChatHistory, "[" + TimeDateRenderers.Render() + "] " + Message);
+                        }
+                    }
+                }
+                catch (IOException ioex) when (ioex.Message.Contains("non-connected"))
+                {
+                    // HACK: Ugly workaround, but we have to search the message for "non-connected" to get the specific error message that we
+                    // need to react appropriately. Removing the device from the debug devices list will allow the kernel to continue working
+                    // without crashing just because of this exception. We had to search the above word in this phrase:
+                    // 
+                    // System.IO.IOException: The operation is not allowed on non-connected sockets.
+                    //                                                        ^^^^^^^^^^^^^
+                    // 
+                    // Though, we wish to have a better workaround to detect this specific error message on .NET Framework 4.8.
+                    DebugDevices.Remove(device);
+                }
+                catch (Exception ex)
+                {
+                    SocketException SE = (SocketException)ex.InnerException;
+                    string SocketIP = device?.ClientIP;
+                    if (SE is not null)
+                    {
+                        if (!(SE.SocketErrorCode == SocketError.TimedOut) & !(SE.SocketErrorCode == SocketError.WouldBlock))
+                        {
+                            if (SocketIP is not null)
+                            {
+                                DebugWriter.WriteDebug(DebugLevel.E, "Error from host {0}: {1}", SocketIP, SE.SocketErrorCode.ToString());
+                                DebugWriter.WriteDebugStackTrace(ex);
+                            }
+                            else
+                            {
+                                DebugWriter.WriteDebug(DebugLevel.E, "Error from unknown host: {0}", SE.SocketErrorCode.ToString());
+                                DebugWriter.WriteDebugStackTrace(ex);
                             }
                         }
                     }
-                    catch (IOException ioex) when (ioex.Message.Contains("non-connected"))
+                    else
                     {
-                        // HACK: Ugly workaround, but we have to search the message for "non-connected" to get the specific error message that we
-                        // need to react appropriately. Removing the device from the debug devices list will allow the kernel to continue working
-                        // without crashing just because of this exception. We had to search the above word in this phrase:
-                        // 
-                        // System.IO.IOException: The operation is not allowed on non-connected sockets.
-                        //                                                        ^^^^^^^^^^^^^
-                        // 
-                        // Though, we wish to have a better workaround to detect this specific error message on .NET Framework 4.8.
-                        DebugDevices.RemoveAt(DeviceIndex);
-                    }
-                    catch (Exception ex)
-                    {
-                        SocketException SE = (SocketException)ex.InnerException;
-                        if (SE is not null)
-                        {
-                            if (!(SE.SocketErrorCode == SocketError.TimedOut) & !(SE.SocketErrorCode == SocketError.WouldBlock))
-                            {
-                                if (DebugDevices.Count > DeviceIndex)
-                                {
-                                    string SocketIP = DebugDevices[DeviceIndex]?.ClientIP;
-                                    DebugWriter.WriteDebug(DebugLevel.E, "Error from host {0}: {1}", SocketIP, SE.SocketErrorCode.ToString());
-                                    DebugWriter.WriteDebugStackTrace(ex);
-                                }
-                                else
-                                {
-                                    DebugWriter.WriteDebug(DebugLevel.E, "Error from unknown host: {0}", SE.SocketErrorCode.ToString());
-                                    DebugWriter.WriteDebugStackTrace(ex);
-                                }
-                            }
-                        }
-                        else
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.E, "Unknown error of remote debug: {0}: {1}", ex.GetType().FullName, ex.Message);
-                            DebugWriter.WriteDebugStackTrace(ex);
-                        }
+                        DebugWriter.WriteDebug(DebugLevel.E, "Unknown error of remote debug: {0}: {1}", ex.GetType().FullName, ex.Message);
+                        DebugWriter.WriteDebugStackTrace(ex);
                     }
                 }
             }

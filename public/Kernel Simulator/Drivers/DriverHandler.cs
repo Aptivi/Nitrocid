@@ -89,7 +89,6 @@ namespace KS.Drivers
             // If found, bail.
             if (found)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Got current driver: {0}", name);
                 return rdriver;
             }
             else
@@ -111,7 +110,6 @@ namespace KS.Drivers
             // If found, bail.
             if (found)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Got current driver: {0}", name);
                 return cdriver;
             }
             else
