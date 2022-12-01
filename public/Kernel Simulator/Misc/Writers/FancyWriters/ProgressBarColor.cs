@@ -371,6 +371,74 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Left">The progress position from the upper left corner</param>
         /// <param name="Top">The progress position from the top</param>
         /// <param name="ProgressColor">The progress bar color</param>
+        /// <param name="LeftWidthOffset">Width offset from the left</param>
+        /// <param name="RightWidthOffset">Width offset from the right</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteProgress(double Progress, int Left, int Top, int LeftWidthOffset, int RightWidthOffset, ConsoleColors ProgressColor, bool DrawBorder = true)
+        {
+            try
+            {
+                WriteProgress(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, new Color(Convert.ToInt32(ProgressColor)), ColorTools.GetGray(), DrawBorder);
+            }
+            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Writes the progress bar
+        /// </summary>
+        /// <param name="Progress">The progress percentage</param>
+        /// <param name="Left">The progress position from the upper left corner</param>
+        /// <param name="Top">The progress position from the top</param>
+        /// <param name="ProgressColor">The progress bar color</param>
+        /// <param name="FrameColor">The progress bar frame color</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteProgress(double Progress, int Left, int Top, ConsoleColors ProgressColor, ConsoleColors FrameColor, bool DrawBorder = true)
+        {
+            try
+            {
+                WriteProgress(Progress, Left, Top, 10, 0, ProgressColor, FrameColor, DrawBorder);
+            }
+            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Writes the progress bar
+        /// </summary>
+        /// <param name="Progress">The progress percentage</param>
+        /// <param name="Left">The progress position from the upper left corner</param>
+        /// <param name="Top">The progress position from the top</param>
+        /// <param name="ProgressColor">The progress bar color</param>
+        /// <param name="FrameColor">The progress bar frame color</param>
+        /// <param name="WidthOffset">Width offset</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteProgress(double Progress, int Left, int Top, int WidthOffset, ConsoleColors ProgressColor, ConsoleColors FrameColor, bool DrawBorder = true)
+        {
+            try
+            {
+                WriteProgress(Progress, Left, Top, WidthOffset, 0, ProgressColor, FrameColor, DrawBorder);
+            }
+            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Writes the progress bar
+        /// </summary>
+        /// <param name="Progress">The progress percentage</param>
+        /// <param name="Left">The progress position from the upper left corner</param>
+        /// <param name="Top">The progress position from the top</param>
+        /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="FrameColor">The progress bar frame color</param>
         /// <param name="LeftWidthOffset">Width offset from the left</param>
         /// <param name="RightWidthOffset">Width offset from the right</param>
@@ -437,6 +505,74 @@ namespace KS.Misc.Writers.FancyWriters
             try
             {
                 WriteProgress(Progress, Left, Top, WidthOffset, 0, ProgressColor, ColorTools.GetGray(), DrawBorder);
+            }
+            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Writes the progress bar
+        /// </summary>
+        /// <param name="Progress">The progress percentage</param>
+        /// <param name="Left">The progress position from the upper left corner</param>
+        /// <param name="Top">The progress position from the top</param>
+        /// <param name="ProgressColor">The progress bar color</param>
+        /// <param name="LeftWidthOffset">Width offset from the left</param>
+        /// <param name="RightWidthOffset">Width offset from the right</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteProgress(double Progress, int Left, int Top, int LeftWidthOffset, int RightWidthOffset, Color ProgressColor, bool DrawBorder = true)
+        {
+            try
+            {
+                WriteProgress(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, ProgressColor, ColorTools.GetGray(), DrawBorder);
+            }
+            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Writes the progress bar
+        /// </summary>
+        /// <param name="Progress">The progress percentage</param>
+        /// <param name="Left">The progress position from the upper left corner</param>
+        /// <param name="Top">The progress position from the top</param>
+        /// <param name="ProgressColor">The progress bar color</param>
+        /// <param name="FrameColor">The progress bar frame color</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteProgress(double Progress, int Left, int Top, Color ProgressColor, Color FrameColor, bool DrawBorder = true)
+        {
+            try
+            {
+                WriteProgress(Progress, Left, Top, 10, 0, ProgressColor, FrameColor, DrawBorder);
+            }
+            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Writes the progress bar
+        /// </summary>
+        /// <param name="Progress">The progress percentage</param>
+        /// <param name="Left">The progress position from the upper left corner</param>
+        /// <param name="Top">The progress position from the top</param>
+        /// <param name="ProgressColor">The progress bar color</param>
+        /// <param name="FrameColor">The progress bar frame color</param>
+        /// <param name="WidthOffset">Width offset</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteProgress(double Progress, int Left, int Top, int WidthOffset, Color ProgressColor, Color FrameColor, bool DrawBorder = true)
+        {
+            try
+            {
+                WriteProgress(Progress, Left, Top, WidthOffset, 0, ProgressColor, FrameColor, DrawBorder);
             }
             catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
             {
