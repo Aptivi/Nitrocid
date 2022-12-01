@@ -236,6 +236,21 @@ namespace KS.ConsoleBase.Colors
         }
 
         /// <summary>
+        /// Enables simple color blindness using the Vienot 1999 formula (may not be accurate for tritanopia)
+        /// </summary>
+        public static bool ColorBlindSimple
+        {
+            get
+            {
+                return ColorSeq.ColorTools.EnableSimpleColorTransformation;
+            }
+            set
+            {
+                ColorSeq.ColorTools.EnableSimpleColorTransformation = value;
+            }
+        }
+
+        /// <summary>
         /// Color blindness deficiency
         /// </summary>
         public static Deficiency BlindnessDeficiency { get => ColorSeq.ColorTools.ColorDeficiency; set => ColorSeq.ColorTools.ColorDeficiency = value; }

@@ -261,7 +261,8 @@ namespace KS.Kernel.Configuration
                 { "Color blindness deficiency", ColorTools.BlindnessDeficiency.ToString() },
                 { "Color blindness severity", ColorTools.BlindnessSeverity },
                 { "Beep on shutdown or reboot", Flags.BeepOnShutdown },
-                { "Delay on shutdown or reboot", Flags.DelayOnShutdown }
+                { "Delay on shutdown or reboot", Flags.DelayOnShutdown },
+                { "Enable simple color blindness", ColorTools.ColorBlindSimple },
             };
             ConfigurationObject.Add("General", GeneralConfig);
 
@@ -1706,6 +1707,7 @@ namespace KS.Kernel.Configuration
             ColorTools.BlindnessSeverity = (double.TryParse((string)ConfigToken["General"]["Color blindness severity"], out _) ? (double)ConfigToken["General"]["Color blindness severity"] : 0.6d);
             Flags.BeepOnShutdown = (bool)ConfigToken["General"]["Beep on shutdown or reboot"];
             Flags.DelayOnShutdown = (bool)ConfigToken["General"]["Delay on shutdown or reboot"];
+            ColorTools.ColorBlindSimple = (bool)ConfigToken["General"]["Enable simple color blindness"];
 
             // Login Section
             DebugWriter.WriteDebug(DebugLevel.I, "Parsing login section...");

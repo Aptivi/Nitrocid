@@ -252,5 +252,7 @@ Failed tests:
 Failed tests:
 Tests to be run:
 Happy new year!
+Enable simple color blindness
+If you want the simulation of color blindness to be simple, enable this. Please note that the formula used in this simulation method may not be accurate.
 
 ==========================================================================================================================================
