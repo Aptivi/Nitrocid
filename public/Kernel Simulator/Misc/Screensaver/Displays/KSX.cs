@@ -318,7 +318,7 @@ namespace KS.Misc.Screensaver.Displays
                         {
                             // Some power function to make the glitches intense
                             double currentProg = Math.Pow(((double)iteration / maxProg) * 10, 2);
-                            ProgressBarColor.WriteProgress(currentProg, progPosX, progPosY, green);
+                            ProgressBarColor.WriteProgress(currentProg, progPosX, progPosY, black, black, darkGreen);
 
                             // Show current date
                             long travelledTicks = (long)Math.Round(tickDiff * ((double)currentProg / 100));
