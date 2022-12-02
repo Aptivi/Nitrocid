@@ -436,10 +436,6 @@ namespace KS.Modifications
                         TextWriterColor.Write(Translate.DoTranslation("Contact the vendor of the mod to upgrade the mod to the compatible version."), true, ColorTools.ColTypes.Error);
                         throw;
                     }
-                    catch (Exception ex)
-                    {
-                        throw ex;
-                    }
                 }
 
                 // Then, install the file.

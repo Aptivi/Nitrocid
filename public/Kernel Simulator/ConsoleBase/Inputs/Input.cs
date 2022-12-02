@@ -21,11 +21,6 @@ using System.Threading;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Screensaver;
-using KS.Misc.Text;
-
-#if NETCOREAPP
-using System.Threading;
-#endif
 
 namespace KS.ConsoleBase.Inputs
 {
