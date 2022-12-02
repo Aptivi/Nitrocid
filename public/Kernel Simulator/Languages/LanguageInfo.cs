@@ -57,11 +57,6 @@ namespace KS.Languages
         /// The localization information containing KS strings
         /// </summary>
         [JsonIgnore]
-        public readonly JObject LanguageResource;
-        /// <summary>
-        /// The localization information containing KS strings
-        /// </summary>
-        [JsonIgnore]
         public readonly Dictionary<string, string> Strings;
         /// <summary>
         /// List of cultures of language
@@ -102,9 +97,8 @@ namespace KS.Languages
                     Cultures.Add(CultureInfo.CurrentCulture);
                 this.Cultures = Cultures;
 
-                // Get instance of language resource and install it
+                // Get instance of language resource
                 JObject LanguageResource = (JObject)JObject.Parse(Properties.Resources.Resources.ResourceManager.GetString(LangName.Replace("-", "_"))).SelectToken("Localizations");
-                this.LanguageResource = LanguageResource;
                 Custom = false;
 
                 // Populate language strings
@@ -153,7 +147,11 @@ namespace KS.Languages
             Custom = true;
             if (LanguageToken.Count == EnglishLength)
             {
-                LanguageResource = LanguageToken;
+                // Populate language strings
+                var langStrings = new Dictionary<string, string>();
+                foreach (JProperty TranslatedProperty in LanguageToken.Properties())
+                    langStrings.Add(TranslatedProperty.Name, (string)TranslatedProperty.Value);
+                Strings = langStrings;
             }
             else
             {

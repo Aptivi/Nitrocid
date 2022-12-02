@@ -87,28 +87,5 @@ namespace KS.Languages
             }
         }
 
-        /// <summary>
-        /// Prepares the translation dictionary for a language
-        /// </summary>
-        /// <param name="lang">A specified language</param>
-        /// <returns>A dictionary of English strings and translated strings</returns>
-        public static Dictionary<string, string> PrepareDict(string lang) =>
-            PrepareDict(LanguageManager.Languages[lang]);
-
-        /// <summary>
-        /// Prepares the translation dictionary for a language
-        /// </summary>
-        /// <param name="lang">A specified language</param>
-        /// <returns>A dictionary of English strings and translated strings</returns>
-        public static Dictionary<string, string> PrepareDict(LanguageInfo lang)
-        {
-            var langStrings = new Dictionary<string, string>();
-
-            // Move final translations to dictionary
-            foreach (JProperty TranslatedProperty in lang.LanguageResource.Properties())
-                langStrings.Add(TranslatedProperty.Name, (string)TranslatedProperty.Value);
-            return langStrings;
-        }
-
     }
 }

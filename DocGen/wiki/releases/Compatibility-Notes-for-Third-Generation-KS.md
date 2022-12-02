@@ -297,3 +297,7 @@ To aid in simplicity of the function, we've replaced the two reference variables
 ##### Internalized several kernel tools
 
 These tools can be abused.
+
+##### Removed PrepareDict
+
+PrepareDict used to populate the string dictionary with definitions to the localized string. Now, because the language management routine was remodeled, we've removed PrepareDict as part of the change.

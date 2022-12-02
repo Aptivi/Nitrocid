@@ -38,7 +38,7 @@ namespace KSTests.LanguagesTests
 
             // Check for null
             InfoInstance.ShouldNotBeNull();
-            InfoInstance.LanguageResource.ShouldNotBeNull();
+            InfoInstance.Strings.ShouldNotBeNull();
             InfoInstance.Cultures.ShouldNotBeNull();
 
             // Check for property correctness
@@ -46,6 +46,7 @@ namespace KSTests.LanguagesTests
             InfoInstance.Custom.ShouldBeFalse();
             InfoInstance.FullLanguageName.ShouldBe("Arabic");
             InfoInstance.ThreeLetterLanguageName.ShouldBe("arb");
+            InfoInstance.Strings.ShouldNotBeEmpty();
             InfoInstance.Cultures.ShouldNotBeEmpty();
         }
 
