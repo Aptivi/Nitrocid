@@ -29,7 +29,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override void Run()
         {
             string Text = Input.ReadLine(Translate.DoTranslation("Write a translatable string to check:") + " ", "");
-            var LocalizedStrings = Translate.PrepareDict("eng");
+            var LocalizedStrings = LanguageManager.Languages["eng"].Strings;
             if (LocalizedStrings.ContainsKey(Text))
             {
                 TextWriterColor.Write(Translate.DoTranslation("String found in the localization resources."), true, ColorTools.ColTypes.Success);

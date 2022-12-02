@@ -34,7 +34,7 @@ namespace KSTests.LanguagesTests
         [Description("Setting")]
         public void TestUpdateCulture()
         {
-            LanguageManager.CurrentLanguage = "spa";
+            LanguageManager.currentLanguage = LanguageManager.Languages["spa"];
             string ExpectedCulture = "Spanish";
             CultureManager.UpdateCulture();
             CultureManager.CurrentCult.EnglishName.ShouldContain(ExpectedCulture);
@@ -47,7 +47,7 @@ namespace KSTests.LanguagesTests
         [Description("Setting")]
         public void TestUpdateCultureCustom()
         {
-            LanguageManager.CurrentLanguage = "spa";
+            LanguageManager.currentLanguage = LanguageManager.Languages["spa"];
             string ExpectedCulture = "Spanish";
             CultureManager.UpdateCulture(ExpectedCulture);
             CultureManager.CurrentCult.EnglishName.ShouldContain(ExpectedCulture);

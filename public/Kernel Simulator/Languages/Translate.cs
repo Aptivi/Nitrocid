@@ -28,8 +28,6 @@ namespace KS.Languages
     public static class Translate
     {
 
-        internal static Dictionary<string, string> translatedString;
-
         /// <summary>
         /// Translates string into current kernel language.
         /// </summary>
@@ -51,18 +49,7 @@ namespace KS.Languages
             // If the language is available and is not English, translate
             if (LanguageManager.Languages.ContainsKey(lang) & lang != "eng")
             {
-                // Do translation
-                if (translatedString.ContainsKey(text))
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Translating string to {0}: {1}", lang, text);
-                    return translatedString[text];
-                }
-                else // String wasn't found
-                {
-                    DebugWriter.WriteDebug(DebugLevel.W, "No string found in langlist. Lang: {0}, String: {1}", lang, text);
-                    text = "(( " + text + " ))";
-                    return text;
-                }
+                return DoTranslation(text, LanguageManager.Languages[lang]);
             }
             else if (LanguageManager.Languages.ContainsKey(lang) & lang == "eng") // If the language is available, but is English, don't translate
             {
@@ -76,16 +63,49 @@ namespace KS.Languages
         }
 
         /// <summary>
+        /// Translates string into another language, or to English if the language wasn't specified or if it's invalid.
+        /// </summary>
+        /// <param name="text">Any string that exists in Kernel Simulator's translation files</param>
+        /// <param name="lang">Language info instance</param>
+        /// <returns>Translated string</returns>
+        public static string DoTranslation(string text, LanguageInfo lang)
+        {
+            // Do translation
+            if (lang.Strings.ContainsKey(text))
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Translating string to {0}: {1}", lang, text);
+                return lang.Strings[text];
+            }
+            else if (lang.ThreeLetterLanguageName == "eng")
+                return text;
+            else
+            {
+                // String wasn't found
+                DebugWriter.WriteDebug(DebugLevel.W, "No string found in langlist. Lang: {0}, String: {1}", lang, text);
+                text = "(( " + text + " ))";
+                return text;
+            }
+        }
+
+        /// <summary>
         /// Prepares the translation dictionary for a language
         /// </summary>
         /// <param name="lang">A specified language</param>
         /// <returns>A dictionary of English strings and translated strings</returns>
-        public static Dictionary<string, string> PrepareDict(string lang)
+        public static Dictionary<string, string> PrepareDict(string lang) =>
+            PrepareDict(LanguageManager.Languages[lang]);
+
+        /// <summary>
+        /// Prepares the translation dictionary for a language
+        /// </summary>
+        /// <param name="lang">A specified language</param>
+        /// <returns>A dictionary of English strings and translated strings</returns>
+        public static Dictionary<string, string> PrepareDict(LanguageInfo lang)
         {
             var langStrings = new Dictionary<string, string>();
 
             // Move final translations to dictionary
-            foreach (JProperty TranslatedProperty in LanguageManager.Languages[lang].LanguageResource.Properties())
+            foreach (JProperty TranslatedProperty in lang.LanguageResource.Properties())
                 langStrings.Add(TranslatedProperty.Name, (string)TranslatedProperty.Value);
             return langStrings;
         }

@@ -29,7 +29,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override void Run()
         {
             string TextPath = Input.ReadLine(Translate.DoTranslation("Write a translatable string list file path to check:") + " ", "");
-            var LocalizedStrings = Translate.PrepareDict("eng");
+            var LocalizedStrings = LanguageManager.Languages["eng"].Strings;
             var Texts = FileRead.ReadContents(TextPath);
             foreach (string Text in Texts)
             {

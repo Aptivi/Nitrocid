@@ -20,6 +20,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using KS.Kernel.Exceptions;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace KS.Languages
@@ -39,24 +40,33 @@ namespace KS.Languages
         /// </summary>
         public readonly string FullLanguageName;
         /// <summary>
-        /// Whether or not the language is transliterable (Arabic, Korea, ...)
-        /// </summary>
-        public readonly bool Transliterable;
-        /// <summary>
         /// The codepage number for the language
         /// </summary>
         public readonly int Codepage;
         /// <summary>
+        /// Whether or not the language is transliterable (Arabic, Korea, ...)
+        /// </summary>
+        [JsonIgnore]
+        public readonly bool Transliterable;
+        /// <summary>
         /// Whether the language is custom
         /// </summary>
+        [JsonIgnore]
         public readonly bool Custom;
         /// <summary>
         /// The localization information containing KS strings
         /// </summary>
+        [JsonIgnore]
         public readonly JObject LanguageResource;
+        /// <summary>
+        /// The localization information containing KS strings
+        /// </summary>
+        [JsonIgnore]
+        public readonly Dictionary<string, string> Strings;
         /// <summary>
         /// List of cultures of language
         /// </summary>
+        [JsonIgnore]
         public readonly List<CultureInfo> Cultures;
 
         /// <summary>
@@ -92,10 +102,16 @@ namespace KS.Languages
                     Cultures.Add(CultureInfo.CurrentCulture);
                 this.Cultures = Cultures;
 
-                // Get instance of langauge resource and install it
+                // Get instance of language resource and install it
                 JObject LanguageResource = (JObject)JObject.Parse(Properties.Resources.Resources.ResourceManager.GetString(LangName.Replace("-", "_"))).SelectToken("Localizations");
                 this.LanguageResource = LanguageResource;
                 Custom = false;
+
+                // Populate language strings
+                var langStrings = new Dictionary<string, string>();
+                foreach (JProperty TranslatedProperty in LanguageResource.Properties())
+                    langStrings.Add(TranslatedProperty.Name, (string)TranslatedProperty.Value);
+                Strings = langStrings;
             }
             else
             {

@@ -34,7 +34,6 @@ namespace KSTests.LanguagesTests
         [Description("Action")]
         public void TestTranslate()
         {
-            Translate.translatedString = Translate.PrepareDict("spa");
             string ExpectedTranslation = "Apagando ...";
             string ActualTranslation = Translate.DoTranslation("Shutting down...", "spa");
             ActualTranslation.ShouldBe(ExpectedTranslation);

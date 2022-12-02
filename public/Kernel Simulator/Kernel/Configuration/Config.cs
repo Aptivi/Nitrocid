@@ -240,7 +240,7 @@ namespace KS.Kernel.Configuration
                 { "Check for Updates on Startup", Flags.CheckUpdateStart },
                 { "Custom Startup Banner", WelcomeMessage.CustomBanner },
                 { "Change Culture when Switching Languages", Flags.LangChangeCulture },
-                { "Language", LanguageManager.CurrentLanguage },
+                { "Language", JObject.FromObject(LanguageManager.CurrentLanguage) },
                 { "Culture", CultureManager.CurrentCult.Name },
                 { "Show app information during boot", Flags.ShowAppInfoOnBoot },
                 { "Parse command-line arguments", Flags.ParseCommandLineArguments },
@@ -1576,6 +1576,13 @@ namespace KS.Kernel.Configuration
                                 continue;
                             }
                         }
+                        else if (VariableType == SettingsKeyType.SLang)
+                        {
+                            // Set the language
+                            string lang = (string)ConfigTokenFromPath[VariableKeyName]["ThreeLetterLanguageName"];
+                            LanguageManager.SetLang(lang);
+                            continue;
+                        }
                         else
                         {
                             VariableValue = ConfigTokenFromPath[VariableKeyName].ToObject<dynamic>();
@@ -1633,7 +1640,7 @@ namespace KS.Kernel.Configuration
             {
                 CultureManager.CurrentCult = new CultureInfo((ConfigToken["General"]["Culture"] != null) ? ConfigToken["General"]["Culture"].ToString() : "en-US");
             }
-            LanguageManager.SetLang((string)ConfigToken["General"]["Language"] ?? "eng");
+            LanguageManager.SetLang((string)ConfigToken["General"]["Language"]["ThreeLetterLanguageName"] ?? "eng");
 
             // ----------------------------- General configuration -----------------------------
             // Colors Section

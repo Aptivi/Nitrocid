@@ -34,6 +34,7 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace KS.Languages
@@ -44,14 +45,16 @@ namespace KS.Languages
     public static class LanguageManager
     {
 
-        /// <summary>
-        /// Current language
-        /// </summary>
-        public static string CurrentLanguage = "eng"; // Default to English
         internal static Dictionary<string, LanguageInfo> BaseLanguages = new();
         internal static Dictionary<string, LanguageInfo> CustomLanguages = new();
         private static bool NotifyCodepageError;
         private readonly static JToken LanguageMetadata = JToken.Parse(Properties.Resources.Resources.LanguageMetadata);
+        internal static LanguageInfo currentLanguage = Languages["eng"]; // Default to English
+
+        /// <summary>
+        /// Current language
+        /// </summary>
+        public static LanguageInfo CurrentLanguage => currentLanguage;
 
         /// <summary>
         /// The installed languages list.
@@ -120,10 +123,9 @@ namespace KS.Languages
                 {
                     string OldModDescGeneric = Translate.DoTranslation("Command defined by ");
                     DebugWriter.WriteDebug(DebugLevel.I, "Translating kernel to {0}.", lang);
-                    CurrentLanguage = lang;
-                    Translate.translatedString = Translate.PrepareDict(lang);
+                    currentLanguage = Languages[lang];
                     var Token = ConfigTools.GetConfigCategory(ConfigCategory.General);
-                    ConfigTools.SetConfigValue(ConfigCategory.General, Token, "Language", CurrentLanguage);
+                    ConfigTools.SetConfigValue(ConfigCategory.General, Token, "Language", JToken.FromObject(CurrentLanguage));
                     DebugWriter.WriteDebug(DebugLevel.I, "Saved new language.");
 
                     // Update Culture if applicable
@@ -234,7 +236,7 @@ namespace KS.Languages
                 }
 
                 // Now, set the language!
-                TextWriterColor.Write(Translate.DoTranslation("Changing from: {0} to {1}..."), CurrentLanguage, lang);
+                TextWriterColor.Write(Translate.DoTranslation("Changing from: {0} to {1}..."), CurrentLanguage.ThreeLetterLanguageName, lang);
                 if (!SetLang(lang))
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Failed to set language."), true, ColorTools.ColTypes.Error);

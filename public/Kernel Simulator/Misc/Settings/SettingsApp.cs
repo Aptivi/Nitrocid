@@ -257,9 +257,11 @@ namespace KS.Misc.Settings
 
                             // Get the plain sequence from the color
                             if (CurrentValue is KeyValuePair<ColorTools.ColTypes, Color> color)
-                            {
                                 CurrentValue = color.Value.PlainSequence;
-                            }
+
+                            // Get the language name
+                            if (CurrentValue is LanguageInfo lang)
+                                CurrentValue = lang.ThreeLetterLanguageName;
                         }
                         else
                         {
@@ -492,28 +494,35 @@ namespace KS.Misc.Settings
 
                             break;
                         case SettingsKeyType.SSelection:
-                            // Determine which list we're going to select
-                            if (SelectionEnum)
+                        case SettingsKeyType.SLang:
+                            if (KeyType == SettingsKeyType.SLang)
                             {
-                                if (SelectionEnumInternal)
-                                {
-                                    // Apparently, we need to have a full assembly name for getting types.
-                                    SelectFrom = Type.GetType("KS." + KeyToken["Enumeration"].ToString() + ", " + Assembly.GetExecutingAssembly().FullName).GetEnumNames();
-                                    Selections = Type.GetType("KS." + KeyToken["Enumeration"].ToString() + ", " + Assembly.GetExecutingAssembly().FullName).GetEnumValues();
-                                    MaxKeyOptions = SelectFrom.Count();
-                                }
-                                else
-                                {
-                                    SelectFrom = Type.GetType(KeyToken["Enumeration"].ToString() + ", " + SelectionEnumAssembly).GetEnumNames();
-                                    Selections = Type.GetType(KeyToken["Enumeration"].ToString() + ", " + SelectionEnumAssembly).GetEnumValues();
-                                    MaxKeyOptions = SelectFrom.Count();
-                                }
+                                SelectFrom = LanguageManager.ListLanguages("").Keys;
+                                Selections = LanguageManager.ListLanguages("").Values;
                             }
                             else
                             {
-                                SelectFrom = (IEnumerable<object>)MethodManager.GetMethod((string)KeyToken["SelectionFunctionName"]).Invoke(KeyToken["SelectionFunctionType"], null);
-                                MaxKeyOptions = SelectFrom.Count();
+                                // Determine which list we're going to select
+                                if (SelectionEnum)
+                                {
+                                    if (SelectionEnumInternal)
+                                    {
+                                        // Apparently, we need to have a full assembly name for getting types.
+                                        SelectFrom = Type.GetType("KS." + KeyToken["Enumeration"].ToString() + ", " + Assembly.GetExecutingAssembly().FullName).GetEnumNames();
+                                        Selections = Type.GetType("KS." + KeyToken["Enumeration"].ToString() + ", " + Assembly.GetExecutingAssembly().FullName).GetEnumValues();
+                                    }
+                                    else
+                                    {
+                                        SelectFrom = Type.GetType(KeyToken["Enumeration"].ToString() + ", " + SelectionEnumAssembly).GetEnumNames();
+                                        Selections = Type.GetType(KeyToken["Enumeration"].ToString() + ", " + SelectionEnumAssembly).GetEnumValues();
+                                    }
+                                }
+                                else
+                                {
+                                    SelectFrom = (IEnumerable<object>)MethodManager.GetMethod((string)KeyToken["SelectionFunctionName"]).Invoke(KeyToken["SelectionFunctionType"], null);
+                                }
                             }
+                            MaxKeyOptions = SelectFrom.Count();
 
                             // Populate items
                             var items = new List<string>();
@@ -663,9 +672,10 @@ namespace KS.Misc.Settings
                                     break;
                                 }
                             case SettingsKeyType.SSelection:
+                            case SettingsKeyType.SLang:
                                 {
-                                    // We're dealing with selection
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Answer is numeric and key is of the selection type.");
+                                    // We're dealing with selection or language
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Answer is numeric and key is of the selection or language type.");
                                     int AnswerIndex = AnswerInt - 1;
                                     if (AnswerInt == MaxKeyOptions + 1 || AnswerInt == -1) // Go Back...
                                     {
@@ -680,10 +690,14 @@ namespace KS.Misc.Settings
                                             KeyFinished = true;
 
                                             // Now, set the value
-                                            if (FieldManager.CheckField(KeyVar))
+                                            if (FieldManager.CheckField(KeyVar, true))
                                             {
-                                                // We're dealing with the field
-                                                FieldManager.SetValue(KeyVar, selectionsArray.ToArray()[AnswerIndex], true);
+                                                // The currentLanguage is a field, so set it
+                                                if (KeyType == SettingsKeyType.SLang)
+                                                    LanguageManager.currentLanguage = (LanguageInfo)selectionsArray.ToArray()[AnswerIndex];
+                                                else
+                                                    // We're dealing with the field
+                                                    FieldManager.SetValue(KeyVar, selectionsArray.ToArray()[AnswerIndex], true);
                                             }
                                             else if (PropertyManager.CheckProperty(KeyVar))
                                             {

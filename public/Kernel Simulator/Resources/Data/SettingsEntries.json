@@ -45,6 +45,13 @@
                 "Description": "Which variant of the current language is being used to change the month names, calendar, etc.?"
             },
             {
+                "Name": "Language",
+                "Type": "SLang",
+                "Variable": "currentLanguage",
+                "IsInternal": true,
+                "Description": "Specifies the kernel language."
+            },
+            {
                 "Name": "Show app information during boot",
                 "Type": "SBoolean",
                 "Variable": "ShowAppInfoOnBoot",

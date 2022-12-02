@@ -85,7 +85,7 @@ namespace KS.Languages
         /// <summary>
         /// Gets all cultures available for the current language
         /// </summary>
-        public static List<CultureInfo> GetCulturesFromCurrentLang() => LanguageManager.Languages[LanguageManager.CurrentLanguage].Cultures;
+        public static List<CultureInfo> GetCulturesFromCurrentLang() => LanguageManager.CurrentLanguage.Cultures;
 
         /// <summary>
         /// Gets all cultures available for the current language
@@ -94,7 +94,7 @@ namespace KS.Languages
         {
             if (LanguageManager.Languages.ContainsKey(Language))
             {
-                return LanguageManager.Languages[LanguageManager.CurrentLanguage].Cultures;
+                return LanguageManager.CurrentLanguage.Cultures;
             }
             return null;
         }

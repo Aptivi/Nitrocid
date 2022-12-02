@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using ColorSeq;
+using KS.Languages;
 using KS.Shell.Prompts;
 using System.Collections.Generic;
 
@@ -70,6 +71,10 @@ namespace KS.Misc.Settings
         /// <summary>
         /// The value is a shell preset defined using <see cref="IPromptPreset"/> in <see cref="PromptPresetManager.CurrentPresets"/>
         /// </summary>
-        SPreset
+        SPreset,
+        /// <summary>
+        /// The value is a language instance defined using <see cref="LanguageInfo"/>
+        /// </summary>
+        SLang
     }
 }
