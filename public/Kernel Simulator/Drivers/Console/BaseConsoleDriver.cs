@@ -34,11 +34,16 @@ using con = System.Console;
 
 namespace KS.Drivers.Console.Consoles
 {
-    internal abstract class BaseConsoleDriver : IConsoleDriver
+    /// <summary>
+    /// Base console driver
+    /// </summary>
+    public abstract class BaseConsoleDriver : IConsoleDriver
     {
 
+        /// <inheritdoc/>
         public virtual string DriverName => "Default";
 
+        /// <inheritdoc/>
         public virtual DriverTypes DriverType => DriverTypes.Console;
 
         private static bool _dumbSet = false;

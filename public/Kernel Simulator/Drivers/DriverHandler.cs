@@ -21,6 +21,7 @@ using KS.Drivers.Console;
 using KS.Kernel.Debugging;
 using System.Collections.Generic;
 using KS.Drivers.Console.Consoles;
+using KS.Drivers.RNG.Randoms;
 
 namespace KS.Drivers
 {
