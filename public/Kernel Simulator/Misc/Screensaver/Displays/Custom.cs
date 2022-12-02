@@ -29,14 +29,10 @@ namespace KS.Misc.Screensaver.Displays
 
         private BaseScreensaver CustomSaver { get; set; }
 
-        // TODO: Update routine names in comments
-        // To Screensaver Developers: ONLY put the effect code in your scrnSaver() sub.
-        // Set colors, write welcome message, etc. with the exception of infinite loop and the effect code in preDisplay() sub
-        // Recommended: Turn off console cursor, and clear the screen in preDisplay() sub.
-        // Substitute: TextWriterColor.Write() with System.KS.ConsoleBase.ConsoleWrapper.WriteLine() or System.KS.ConsoleBase.ConsoleWrapper.Write().
+        // To Screensaver Developers: ONLY put the effect code in your ScreensaverLogic() routine.
+        // Set colors, write welcome message, etc. with the exception of infinite loop and the effect code in ScreensaverPreparation() routine
+        // Recommended: Turn off console cursor, and clear the screen in ScreensaverPreparation() routine.
 
-        // WARNING: Please refrain from using ICustomSaver; use IScreensaver instead, which is more dynamic.
-        // This implementation doesn't call PostDisplay().
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Custom";
 
