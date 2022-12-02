@@ -34,7 +34,7 @@ namespace KS.Shell.ShellBase.Commands
     /// <summary>
     /// Command parser module
     /// </summary>
-    public static class CommandExecutor
+    internal static class CommandExecutor
     {
 
         /// <summary>
@@ -72,17 +72,9 @@ namespace KS.Shell.ShellBase.Commands
             }
         }
 
-        /// <summary>
-        /// Executes a command
-        /// </summary>
-        /// <param name="ThreadParams">Thread parameters for ExecuteCommand.</param>
         internal static void ExecuteCommand(ExecuteCommandParameters ThreadParams) =>
             ExecuteCommand(ThreadParams, CommandManager.GetCommands(ThreadParams.ShellType));
 
-        /// <summary>
-        /// Executes a command
-        /// </summary>
-        /// <param name="ThreadParams">Thread parameters for ExecuteCommand.</param>
         internal static void ExecuteCommand(ExecuteCommandParameters ThreadParams, Dictionary<string, CommandInfo> TargetCommands)
         {
             string RequestedCommand = ThreadParams.RequestedCommand;
