@@ -35,7 +35,12 @@ namespace KS.Drivers
 
         private readonly static Dictionary<string, IRandomDriver> randomDrivers = new()
         {
-            { "Default", new DefaultRandom() }
+            { "Default", new DefaultRandom() },
+
+#if !SPECIFIERREL
+            // Below are excluded from the final release
+            { "DefaultDebug", new DefaultRandomDebug() }
+#endif
         };
 
         private readonly static Dictionary<string, IConsoleDriver> consoleDrivers = new()
