@@ -36,6 +36,7 @@ namespace KS.Misc.Animations.BSOD
             new Windows2K(),
             new Windows98(),
             new Linux(),
+            new VGA(),
         };
 
         /// <summary>
