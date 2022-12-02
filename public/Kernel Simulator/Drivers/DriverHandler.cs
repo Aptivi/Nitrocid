@@ -22,6 +22,7 @@ using KS.Kernel.Debugging;
 using System.Collections.Generic;
 using KS.Drivers.Console.Consoles;
 using KS.Drivers.RNG.Randoms;
+using System.Linq;
 
 namespace KS.Drivers
 {
@@ -54,6 +55,9 @@ namespace KS.Drivers
             { "TerminalDebug", new TerminalDebug() }
 #endif
         };
+
+        private readonly static Dictionary<string, IRandomDriver> customRandomDrivers = new();
+        private readonly static Dictionary<string, IConsoleDriver> customConsoleDrivers = new();
 
         /// <summary>
         /// Gets the current random driver
@@ -88,6 +92,63 @@ namespace KS.Drivers
             return null;
         }
 
+        /// <summary>
+        /// Registers the driver
+        /// </summary>
+        /// <param name="type">Type of driver to register</param>
+        /// <param name="driver">Driver to be registered</param>
+        public static void RegisterDriver(DriverTypes type, IDriver driver)
+        {
+            string name = driver.DriverName;
+            switch (type)
+            {
+                case DriverTypes.RNG:
+                    if (!IsRegistered(type, name))
+                        customRandomDrivers.Add(name, (IRandomDriver)driver);
+                    break;
+                case DriverTypes.Console:
+                    if (!IsRegistered(type, name))
+                        customConsoleDrivers.Add(name, (IConsoleDriver)driver);
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Unregisters the driver
+        /// </summary>
+        /// <param name="type">Type of driver to unregister</param>
+        /// <param name="name">Driver name to be unregistered</param>
+        public static void UnregisterDriver(DriverTypes type, string name)
+        {
+            switch (type)
+            {
+                case DriverTypes.RNG:
+                    if (IsRegistered(type, name))
+                        customRandomDrivers.Remove(name);
+                    break;
+                case DriverTypes.Console:
+                    if (IsRegistered(type, name))
+                        customConsoleDrivers.Remove(name);
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Is the driver registered?
+        /// </summary>
+        /// <param name="type">Driver type</param>
+        /// <param name="name">Driver name</param>
+        /// <returns>True if registered. Otherwise, false.</returns>
+        public static bool IsRegistered(DriverTypes type, string name)
+        {
+            return type switch
+            {
+                DriverTypes.RNG     => customRandomDrivers.Keys.Contains(name),
+                DriverTypes.Console => customConsoleDrivers.Keys.Contains(name),
+                _                   => false,
+            };
+        }
+
         #region Individual driver getters
         internal static IRandomDriver GetRandomDriver() =>
             GetRandomDriver(currentRandomDriver);
@@ -96,11 +157,16 @@ namespace KS.Drivers
         {
             // Try to get the driver from the name.
             bool found = randomDrivers.TryGetValue(name, out IRandomDriver rdriver);
+            bool customFound = customRandomDrivers.TryGetValue(name, out IRandomDriver customrdriver);
 
             // If found, bail.
             if (found)
             {
                 return rdriver;
+            }
+            else if (customFound)
+            {
+                return customrdriver;
             }
             else
             {
@@ -117,11 +183,16 @@ namespace KS.Drivers
         {
             // Try to get the driver from the name.
             bool found = consoleDrivers.TryGetValue(name, out IConsoleDriver cdriver);
+            bool customFound = customConsoleDrivers.TryGetValue(name, out IConsoleDriver customcdriver);
 
             // If found, bail.
             if (found)
             {
                 return cdriver;
+            }
+            else if (customFound)
+            {
+                return customcdriver;
             }
             else
             {
