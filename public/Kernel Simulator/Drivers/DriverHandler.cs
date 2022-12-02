@@ -41,7 +41,12 @@ namespace KS.Drivers
         {
             { "Terminal", new Terminal() },
             { "File", new File() },
-            { "Null", new Null() }
+            { "Null", new Null() },
+
+#if !SPECIFIERREL
+            // Below are excluded from the final release
+            { "TerminalDebug", new TerminalDebug() }
+#endif
         };
 
         /// <summary>

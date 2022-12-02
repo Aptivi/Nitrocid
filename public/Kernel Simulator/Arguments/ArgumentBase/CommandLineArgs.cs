@@ -35,6 +35,7 @@ namespace KS.Arguments.ArgumentBase
         {
             { "testInteractive", new ArgumentInfo("testInteractive", ArgumentType.CommandLineArgs, "Opens a test shell", new CommandArgumentInfo(), new CommandLine_TestInteractiveArgument()) },
             { "debug", new ArgumentInfo("debug", ArgumentType.CommandLineArgs, "Enables debug mode", new CommandArgumentInfo(), new CommandLine_DebugArgument()) },
+            { "terminaldebug", new ArgumentInfo("terminaldebug", ArgumentType.CommandLineArgs, "Enables terminal debug mode", new CommandArgumentInfo(), new CommandLine_TerminalDebugArgument()) },
             { "args", new ArgumentInfo("args", ArgumentType.CommandLineArgs, "Prompts for arguments", new CommandArgumentInfo(), new CommandLine_ArgsArgument()) },
             { "reset", new ArgumentInfo("reset", ArgumentType.CommandLineArgs, "Resets the kernel to the factory settings", new CommandArgumentInfo(), new CommandLine_ResetArgument()) },
             { "newreader", new ArgumentInfo("newreader", ArgumentType.CommandLineArgs, "Opts in to new config reader", new CommandArgumentInfo(), new CommandLine_NewReaderArgument()) },

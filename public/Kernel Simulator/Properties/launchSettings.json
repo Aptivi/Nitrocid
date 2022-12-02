@@ -50,6 +50,14 @@
     "KS - Test Interactive": {
       "commandName": "Project",
       "commandLineArgs": "testInteractive"
+    },
+    "KS - Console Debug": {
+      "commandName": "Project",
+      "commandLineArgs": "debug terminaldebug"
+    },
+    "KS - new config reader and writer [Console Debug]": {
+      "commandName": "Project",
+      "commandLineArgs": "newreader newwriter debug terminaldebug"
     }
   }
 }

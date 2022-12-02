@@ -21,157 +21,157 @@ using System.Text;
 
 namespace KS.Drivers.Console.Consoles
 {
-    internal class Null : IConsoleDriver
+    internal class Null : BaseConsoleDriver, IConsoleDriver
     {
 
-        public string DriverName => "Null";
+        public override string DriverName => "Null";
 
-        public DriverTypes DriverType => DriverTypes.Console;
+        public override DriverTypes DriverType => DriverTypes.Console;
 
-        public TextWriter Out => null;
+        public override TextWriter Out => null;
 
-        public int CursorLeft { get => 0; set => throw new NotImplementedException(); }
+        public override int CursorLeft { get => 0; set => throw new NotImplementedException(); }
 
-        public int CursorTop { get => 0; set => throw new NotImplementedException(); }
+        public override int CursorTop { get => 0; set => throw new NotImplementedException(); }
 
-        public int WindowTop => 0;
+        public override int WindowTop => 0;
 
-        public int WindowWidth => 0;
+        public override int WindowWidth => 0;
 
-        public int WindowHeight => 0;
+        public override int WindowHeight => 0;
 
-        public int BufferWidth => 0;
+        public override int BufferWidth => 0;
 
-        public int BufferHeight => 0;
+        public override int BufferHeight => 0;
 
-        public ConsoleColor ForegroundColor { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public override ConsoleColor ForegroundColor { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public ConsoleColor BackgroundColor { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public override ConsoleColor BackgroundColor { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public bool CursorVisible { set => throw new NotImplementedException(); }
+        public override bool CursorVisible { set => throw new NotImplementedException(); }
 
-        public Encoding OutputEncoding { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public override Encoding OutputEncoding { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public Encoding InputEncoding { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public override Encoding InputEncoding { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public bool KeyAvailable => 
+        public override bool KeyAvailable => 
             throw new NotImplementedException();
 
-        public void Beep() => 
+        public override void Beep() => 
             throw new NotImplementedException();
 
-        public void Clear(bool loadBack = false) => 
+        public override void Clear(bool loadBack = false) => 
             throw new NotImplementedException();
 
-        public Stream OpenStandardError() => 
+        public override Stream OpenStandardError() => 
             throw new NotImplementedException();
 
-        public Stream OpenStandardInput() => 
+        public override Stream OpenStandardInput() => 
             throw new NotImplementedException();
 
-        public Stream OpenStandardOutput() => 
+        public override Stream OpenStandardOutput() => 
             throw new NotImplementedException();
 
-        public ConsoleKeyInfo ReadKey(bool intercept = false) => 
+        public override ConsoleKeyInfo ReadKey(bool intercept = false) => 
             throw new NotImplementedException();
 
-        public void ResetColor() => 
+        public override void ResetColor() => 
             throw new NotImplementedException();
 
-        public void SetCursorPosition(int left, int top) => 
+        public override void SetCursorPosition(int left, int top) => 
             throw new NotImplementedException();
 
-        public void SetOut(TextWriter newOut) => 
+        public override void SetOut(TextWriter newOut) => 
             throw new NotImplementedException();
 
         /// <summary>
         /// Outputs text to the void
         /// </summary>
         /// <inheritdoc/>
-        public void Write(char value) { }
+        public override void Write(char value) { }
 
         /// <summary>
         /// Outputs text to the void
         /// </summary>
         /// <inheritdoc/>
-        public void Write(string text) { }
+        public override void Write(string text) { }
 
         /// <summary>
         /// Outputs text to the void
         /// </summary>
         /// <inheritdoc/>
-        public void Write(string text, params object[] args) { }
+        public override void Write(string text, params object[] args) { }
 
         /// <summary>
         /// Outputs text to the void
         /// </summary>
         /// <inheritdoc/>
-        public void WriteLine() { }
+        public override void WriteLine() { }
 
         /// <summary>
         /// Outputs text to the void
         /// </summary>
         /// <inheritdoc/>
-        public void WriteLine(string text) { }
+        public override void WriteLine(string text) { }
 
         /// <summary>
         /// Outputs text to the void
         /// </summary>
         /// <inheritdoc/>
-        public void WriteLine(string text, params object[] args) { }
+        public override void WriteLine(string text, params object[] args) { }
 
         /// <summary>
         /// Outputs text to the void
         /// </summary>
         /// <inheritdoc/>
-        public void WritePlain(string Text, bool Line, params object[] vars) { }
+        public override void WritePlain(string Text, bool Line, params object[] vars) { }
 
         /// <summary>
         /// Outputs new line to the void
         /// </summary>
         /// <inheritdoc/>
-        public void WritePlain() { }
+        public override void WritePlain() { }
 
         /// <summary>
         /// Outputs text slowly to the void
         /// </summary>
         /// <inheritdoc/>
-        public void WriteSlowlyPlain(string msg, bool Line, double MsEachLetter, params object[] vars) { }
+        public override void WriteSlowlyPlain(string msg, bool Line, double MsEachLetter, params object[] vars) { }
 
         /// <summary>
         /// Just writes text to the void without line terminator, since we can't do positioning.
         /// </summary>
         /// <inheritdoc/>
-        public void WriteWherePlain(string msg, int Left, int Top, params object[] vars) { }
+        public override void WriteWherePlain(string msg, int Left, int Top, params object[] vars) { }
 
         /// <summary>
         /// Just writes text to the void without line terminator, since we can't do positioning.
         /// </summary>
         /// <inheritdoc/>
-        public void WriteWherePlain(string msg, int Left, int Top, bool Return, params object[] vars) { }
+        public override void WriteWherePlain(string msg, int Left, int Top, bool Return, params object[] vars) { }
 
         /// <summary>
         /// Just writes text to the void without line terminator, since we can't do positioning.
         /// </summary>
         /// <inheritdoc/>
-        public void WriteWherePlain(string msg, int Left, int Top, bool Return, int RightMargin, params object[] vars) { }
+        public override void WriteWherePlain(string msg, int Left, int Top, bool Return, int RightMargin, params object[] vars) { }
 
         /// <summary>
         /// Just writes text slowly to the void, since we can't do positioning.
         /// </summary>
         /// <inheritdoc/>
-        public void WriteWhereSlowlyPlain(string msg, bool Line, int Left, int Top, double MsEachLetter, params object[] vars) { }
+        public override void WriteWhereSlowlyPlain(string msg, bool Line, int Left, int Top, double MsEachLetter, params object[] vars) { }
 
         /// <summary>
         /// Just writes text slowly to the void, since we can't do positioning.
         /// </summary>
         /// <inheritdoc/>
-        public void WriteWhereSlowlyPlain(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, params object[] vars) { }
+        public override void WriteWhereSlowlyPlain(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, params object[] vars) { }
 
         /// <summary>
         /// Just writes text to the void, since we can't do positioning.
         /// </summary>
         /// <inheritdoc/>
-        public void WriteWrappedPlain(string Text, bool Line, params object[] vars) { }
+        public override void WriteWrappedPlain(string Text, bool Line, params object[] vars) { }
     }
 }

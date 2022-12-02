@@ -16,8 +16,17 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-namespace KS.Drivers.Console.Consoles
+using KS.Arguments.ArgumentBase;
+using KS.Drivers;
+
+namespace KS.Arguments.CommandLineArguments
 {
-    internal class Terminal : BaseConsoleDriver, IConsoleDriver
-    { }
+    class CommandLine_TerminalDebugArgument : ArgumentExecutor, IArgument
+    {
+
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        {
+            DriverHandler.currentConsoleDriver = "TerminalDebug";
+        }
+    }
 }
