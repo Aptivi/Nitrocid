@@ -42,7 +42,7 @@ namespace KS.Misc.Animations.Glitch
         {
             // Select random positions to generate the glitch
             double GlitchDense = (Settings.GlitchDensity > 100 ? 100 : Settings.GlitchDensity) / 100d;
-            int AmountOfBlocks = ConsoleWrapper.WindowWidth * ConsoleWrapper.WindowHeight;
+            int AmountOfBlocks = ConsoleWrapper.WindowWidth * ConsoleWrapper.WindowHeight - 1;
             int BlocksToCover = (int)Math.Round(AmountOfBlocks * GlitchDense);
             var CoveredBlocks = new ArrayList();
             while (!(CoveredBlocks.Count == BlocksToCover | ConsoleResizeListener.WasResized(false)))
@@ -50,7 +50,7 @@ namespace KS.Misc.Animations.Glitch
                 if (!ConsoleResizeListener.WasResized(false))
                 {
                     int CoverX = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
-                    int CoverY = RandomDriver.Random(ConsoleWrapper.WindowHeight);
+                    int CoverY = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
                     ConsoleWrapper.SetCursorPosition(CoverX, CoverY);
 
                     // Select random glitch type
