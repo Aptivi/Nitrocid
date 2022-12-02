@@ -90,12 +90,6 @@ namespace KS.Users.Login
                     DebugWriter.WriteDebug(DebugLevel.F, "Shell reached rare state, because userword count is 0.");
                     throw new KernelException(KernelExceptionType.NullUsers, Translate.DoTranslation("There are no more users remaining in the list."));
                 }
-                else if (Users.Count == 1 & Users.Keys.ElementAtOrDefault(0) == "root")
-                {
-                    // Run a first user trigger
-                    DebugWriter.WriteDebug(DebugLevel.W, "Only root is found. Triggering first user setup...");
-                    UserManagement.FirstUserTrigger();
-                }
 
                 // Clear console if ClearOnLogin is set to True (If a user has enabled Clear Screen on Login)
                 if (Flags.ClearOnLogin == true)
