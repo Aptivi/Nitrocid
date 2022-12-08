@@ -52,6 +52,7 @@ namespace KS.ConsoleBase.Themes
             { "AyuMirage", new ThemeInfo("AyuMirage") },
             { "BlackOnWhite", new ThemeInfo("BlackOnWhite") },
             { "BedOS", new ThemeInfo("BedOS") },
+            { "BlackRose", new ThemeInfo("BlackRose") },
             { "Bloody", new ThemeInfo("Bloody") },
             { "Blue Power", new ThemeInfo("Blue_Power") },
             { "Bluesome", new ThemeInfo("Bluesome") },

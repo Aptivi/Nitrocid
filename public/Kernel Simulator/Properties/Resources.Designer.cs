@@ -354,6 +354,31 @@ namespace Properties.Resources {
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
+        ///        &quot;Name&quot;: &quot;Black Rose&quot;,
+        ///        &quot;TrueColorRequired&quot;: true
+        ///    },
+        ///    &quot;InputColor&quot;: &quot;#FF89B7&quot;,
+        ///    &quot;LicenseColor&quot;: &quot;#9D003D&quot;,
+        ///    &quot;ContKernelErrorColor&quot;: &quot;#9D003D&quot;,
+        ///    &quot;UncontKernelErrorColor&quot;: &quot;#6B0029&quot;,
+        ///    &quot;HostNameShellColor&quot;: &quot;#9D003D&quot;,
+        ///    &quot;UserNameShellColor&quot;: &quot;#6B0029&quot;,
+        ///    &quot;BackgroundColor&quot;: &quot;#000000&quot;,
+        ///    &quot;NeutralTextColor&quot;: &quot;#9D003D&quot;,
+        ///    &quot;ListEntryColor&quot;: &quot;#FF89B7&quot;,
+        ///    &quot;ListValueColor&quot;: &quot;#9D003D&quot;,
+        ///    &quot;StageColor&quot;: &quot;#FF89B7&quot;,
+        ///    &quot;ErrorColor&quot;: &quot;#6B0029&quot; [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string BlackRose {
+            get {
+                return ResourceManager.GetString("BlackRose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Bloody&quot;,
         ///        &quot;255ColorsRequired&quot;: true,
         ///        &quot;TrueColorRequired&quot;: true
@@ -2322,15 +2347,15 @@ namespace Properties.Resources {
         ///        &quot;Path&quot;: &quot;Screensaver.ColorMix&quot;,
         ///        &quot;Keys&quot;: [
         ///            {
-        ///                &quot;Name&quot;: &quot;Activate 255 colors&quot;,
-        ///                &quot;Type&quot;: &quot;SBoolean&quot;,
-        ///                &quot;Variable&quot;: &quot;ColorMix255Colors&quot;,
-        ///                &quot;Description&quot;: &quot;Activates the 255 color support.&quot;
-        ///            },
-        ///            {
         ///                &quot;Name&quot;: &quot;Activate true colors&quot;,
         ///                &quot;Type&quot;: &quot;SBoolean&quot;,
-        ///                &quot;Variable&quot; [rest of string was truncated]&quot;;.
+        ///                &quot;Variable&quot;: &quot;ColorMixTrueColor&quot;,
+        ///                &quot;Description&quot;: &quot;Activates the true color support.&quot;
+        ///            },
+        ///            {
+        ///                &quot;Name&quot;: &quot;Delay in Milliseconds&quot;,
+        ///                &quot;Type&quot;: &quot;SInt&quot;,
+        ///                &quot;Variable&quot;: [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ScreensaverSettingsEntries {
             get {
