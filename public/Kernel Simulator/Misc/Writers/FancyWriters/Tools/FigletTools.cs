@@ -37,28 +37,50 @@ namespace KS.Misc.Writers.FancyWriters.Tools
         public readonly static Dictionary<string, object> FigletFonts = PropertyManager.GetProperties(typeof(FiggleFonts));
 
         /// <summary>
+        /// Gets the figlet lines
+        /// </summary>
+        /// <param name="Text">Text</param>
+        /// <param name="FigletFont">Target figlet font</param>
+        public static string[] GetFigletLines(string Text, FiggleFont FigletFont)
+        {
+            Text = FigletFont.Render(Text);
+            var TextLines = Text.SplitNewLines();
+            List<string> lines = new(TextLines);
+
+            // Try to trim from the top
+            for (int line = 0; line < lines.Count; line++)
+            {
+                if (!string.IsNullOrWhiteSpace(lines[line]))
+                    break;
+                lines.RemoveAt(line);
+            }
+
+            // Try to trim from the bottom
+            for (int line = lines.Count - 1; line > 0; line--)
+            {
+                if (!string.IsNullOrWhiteSpace(lines[line]))
+                    break;
+                lines.RemoveAt(line);
+            }
+
+            return lines.ToArray();
+        }
+
+        /// <summary>
         /// Gets the figlet text height
         /// </summary>
         /// <param name="Text">Text</param>
         /// <param name="FigletFont">Target figlet font</param>
-        public static int GetFigletHeight(string Text, FiggleFont FigletFont)
-        {
-            Text = FigletFont.Render(Text);
-            var TextLines = Text.SplitNewLines();
-            return TextLines.Length;
-        }
+        public static int GetFigletHeight(string Text, FiggleFont FigletFont) => 
+            GetFigletLines(Text, FigletFont).Length;
 
         /// <summary>
         /// Gets the figlet text width
         /// </summary>
         /// <param name="Text">Text</param>
         /// <param name="FigletFont">Target figlet font</param>
-        public static int GetFigletWidth(string Text, FiggleFont FigletFont)
-        {
-            Text = FigletFont.Render(Text);
-            var TextLines = Text.SplitNewLines();
-            return TextLines[0].Length;
-        }
+        public static int GetFigletWidth(string Text, FiggleFont FigletFont) =>
+            GetFigletLines(Text, FigletFont)[0].Length;
 
         /// <summary>
         /// Gets the figlet font from font name
