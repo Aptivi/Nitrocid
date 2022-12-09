@@ -263,6 +263,7 @@ namespace KS.Kernel.Configuration
                 { "Beep on shutdown or reboot", Flags.BeepOnShutdown },
                 { "Delay on shutdown or reboot", Flags.DelayOnShutdown },
                 { "Enable simple color blindness", ColorTools.ColorBlindSimple },
+                { "Console supports true color", Flags.ConsoleSupportsTrueColor },
             };
             ConfigurationObject.Add("General", GeneralConfig);
 
@@ -1715,6 +1716,7 @@ namespace KS.Kernel.Configuration
             Flags.BeepOnShutdown = (bool)ConfigToken["General"]["Beep on shutdown or reboot"];
             Flags.DelayOnShutdown = (bool)ConfigToken["General"]["Delay on shutdown or reboot"];
             ColorTools.ColorBlindSimple = (bool)ConfigToken["General"]["Enable simple color blindness"];
+            Flags.ConsoleSupportsTrueColor = (bool)ConfigToken["General"]["Console supports true color"];
 
             // Login Section
             DebugWriter.WriteDebug(DebugLevel.I, "Parsing login section...");

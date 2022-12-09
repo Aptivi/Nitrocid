@@ -263,5 +263,9 @@ namespace KS.Kernel.Exceptions
         /// A general network error occurred. Should you be trying to connect to a remote end, make sure that you're connected to the Internet or to your local network.
         /// </summary>
         Network,
+        /// <summary>
+        /// An unsupported console has been detected.
+        /// </summary>
+        UnsupportedConsole
     }
 }

@@ -30,6 +30,10 @@ namespace KS.ConsoleBase.Themes
         /// <summary>
         /// Theme is not found
         /// </summary>
-        NotFound = 1
+        NotFound = 1,
+        /// <summary>
+        /// Console is unsupported or terminal doesn't support true color
+        /// </summary>
+        ConsoleUnsupported
     }
 }

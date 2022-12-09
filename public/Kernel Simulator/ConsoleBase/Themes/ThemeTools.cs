@@ -23,6 +23,7 @@ using System.Linq;
 using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Files;
+using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
@@ -163,8 +164,17 @@ namespace KS.ConsoleBase.Themes
 
                 if (!(theme == "Default"))
                 {
-                    // Set colors as appropriate
-                    SetColorsTheme(ThemeInfo);
+                    // Check if the console supports true color
+                    if ((Flags.ConsoleSupportsTrueColor && ThemeInfo.TrueColorRequired) || !ThemeInfo.TrueColorRequired)
+                        // Set colors as appropriate
+                        SetColorsTheme(ThemeInfo);
+                    else
+                    {
+                        // We're trying to apply true color on unsupported console
+                        DebugWriter.WriteDebug(DebugLevel.E, "Unsupported console or the terminal doesn't support true color.");
+                        Kernel.Events.EventsManager.FireEvent("ThemeSetError", theme, ThemeSetErrorReasons.ConsoleUnsupported);
+                        throw new KernelException(KernelExceptionType.UnsupportedConsole, Translate.DoTranslation("The theme {0} needs true color support, but your console doesn't support it."), theme);
+                    }
                 }
 
                 // Raise event

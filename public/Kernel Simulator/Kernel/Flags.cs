@@ -311,6 +311,10 @@ namespace KS.Kernel
         /// Delay on shutdown (to restore the way of 0.0.1's shutdown)
         /// </summary>
         public static bool DelayOnShutdown;
+        /// <summary>
+        /// Does your console support true color?
+        /// </summary>
+        public static bool ConsoleSupportsTrueColor = true;
 
         // Private flags
         /// <summary>
@@ -369,6 +373,10 @@ namespace KS.Kernel
         /// Opts in to the new config paths
         /// </summary>
         internal static bool OptInToNewConfigPaths;
+        /// <summary>
+        /// If this is true, prompts for console support
+        /// </summary>
+        internal static bool FirstTime;
 
     }
 }

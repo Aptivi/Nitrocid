@@ -54,6 +54,8 @@ using KS.Files.Operations;
 using KS.Drivers;
 using KS.ConsoleBase.Inputs;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
+using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Inputs.Styles;
 
 namespace KS.Kernel
 {
@@ -126,6 +128,10 @@ namespace KS.Kernel
                     if (!Checking.FolderExists(Paths.AppDataPath))
                         Making.MakeDirectory(Paths.AppDataPath, false);
 
+                    // Set the first time run variable
+                    if (!Checking.FileExists(Paths.ConfigurationPath))
+                        Flags.FirstTime = true;
+
                     // Initialize debug path
                     DebugManager.DebugPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Debugging)), Paths.GetKernelPath(KernelPathType.Debugging));
 
@@ -149,6 +155,15 @@ namespace KS.Kernel
                                               Translate.DoTranslation("To have a better experience, resize your console window while still being on this screen. Press any key to continue..."), true, ColorTools.ColTypes.Warning);
                         Input.DetectKeypress();
                         Flags.CheckingForConsoleSize = true;
+                    }
+
+                    // Ask user to adjust color wheel for true color support if this is the first time
+                    if (Flags.FirstTime)
+                    {
+                        Flags.FirstTime = false;
+                        TextWriterColor.Write(Translate.DoTranslation("Welcome to the kernel! The color wheel will open in true color mode. Select any true color to test your console with. It's usually your favorite color. We need to determine if your console supports true color. Press any key to continue."));
+                        ColorWheelOpen.ColorWheel(true);
+                        Flags.ConsoleSupportsTrueColor = ChoiceStyle.PromptChoice(Translate.DoTranslation("Your console should be able to display true color. Did it display these colors properly?"), "y/n") == "y";
                     }
 
                     // Initialize everything
