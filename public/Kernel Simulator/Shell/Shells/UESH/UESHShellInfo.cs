@@ -108,7 +108,6 @@ namespace KS.Shell.Shells.UESH
             { "modman", new CommandInfo("modman", ShellType.Shell, "Manage your mods", new CommandArgumentInfo(new[] { "<start/stop/info/reload/install/uninstall> <modfilename>", "<list/listparts> [modname]", "<reloadall/stopall/startall>" }, true, 1), new ModManCommand(), CommandFlags.Strict) },
             { "modmanual", new CommandInfo("modmanual", ShellType.Shell, "Mod manual", new CommandArgumentInfo(new[] { "[-list] <ManualTitle>" }, true, 1), new ModManualCommand()) },
             { "move", new CommandInfo("move", ShellType.Shell, "Moves a file to another directory", new CommandArgumentInfo(new[] { "<source> <target>" }, true, 2), new MoveCommand()) },
-            { "netinfo", new CommandInfo("netinfo", ShellType.Shell, "Lists information about all available interfaces", new CommandArgumentInfo(), new NetInfoCommand(), CommandFlags.Strict) },
             { "open", new CommandInfo("open", ShellType.Shell, "Opens a URL", new CommandArgumentInfo(new[] { "<URL>" }, true, 1), new OpenCommand()) },
             { "perm", new CommandInfo("perm", ShellType.Shell, "Manage permissions for users", new CommandArgumentInfo(new[] { "<userName> <Administrator/Disabled/Anonymous> <Allow/Disallow>" }, true, 3, (_) => UserManagement.ListAllUsers().Where((src) => src.StartsWith(_)).ToArray()), new PermCommand(), CommandFlags.Strict) },
             { "ping", new CommandInfo("ping", ShellType.Shell, "Pings an address", new CommandArgumentInfo(new[] { "[times] <Address1> <Address2> ..." }, true, 1), new PingCommand()) },
