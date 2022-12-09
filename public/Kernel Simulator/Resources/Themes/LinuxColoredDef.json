@@ -1,7 +1,6 @@
 {
     "Metadata": {
         "Name": "Linux (colored defaults)",
-        "255ColorsRequired": false,
         "TrueColorRequired": false
     },
     "InputColor": "7",

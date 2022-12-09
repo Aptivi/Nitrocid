@@ -1,7 +1,6 @@
 {
     "Metadata": {
         "Name": "Space Duck",
-        "255ColorsRequired": true,
         "TrueColorRequired": true
     },
     "InputColor": "#818596",

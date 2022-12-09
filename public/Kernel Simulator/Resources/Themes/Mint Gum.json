@@ -1,7 +1,6 @@
 {
     "Metadata": {
         "Name": "Mint Gum",
-        "255ColorsRequired": true,
         "TrueColorRequired": true
     },
     "InputColor": "102;17;64",

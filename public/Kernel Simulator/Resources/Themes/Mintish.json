@@ -1,7 +1,6 @@
 {
     "Metadata": {
         "Name": "Mintish",
-        "255ColorsRequired": true,
         "TrueColorRequired": true
     },
     "InputColor": "244;242;105",

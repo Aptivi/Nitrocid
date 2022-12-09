@@ -1,7 +1,6 @@
 {
     "Metadata": {
         "Name": "Red Breeze",
-        "255ColorsRequired": true,
         "TrueColorRequired": true
     },
     "InputColor": "197;201;54",

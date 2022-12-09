@@ -1,7 +1,6 @@
 {
     "Metadata": {
         "Name": "Red Console",
-        "255ColorsRequired": false,
         "TrueColorRequired": false
     },
     "InputColor": "9",

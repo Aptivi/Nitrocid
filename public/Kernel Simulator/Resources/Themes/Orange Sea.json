@@ -1,7 +1,6 @@
 {
     "Metadata": {
         "Name": "Orange Sea",
-        "255ColorsRequired": true,
         "TrueColorRequired": true
     },
     "InputColor": "54;152;217",

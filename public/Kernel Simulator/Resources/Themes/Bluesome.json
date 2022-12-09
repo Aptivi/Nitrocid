@@ -1,7 +1,6 @@
 {
     "Metadata": {
         "Name": "Bluesome",
-        "255ColorsRequired": true,
         "TrueColorRequired": true
     },
     "InputColor": "137;126;191",

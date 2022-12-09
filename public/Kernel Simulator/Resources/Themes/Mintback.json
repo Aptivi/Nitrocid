@@ -1,7 +1,6 @@
 {
     "Metadata": {
         "Name": "Mintback",
-        "255ColorsRequired": true,
         "TrueColorRequired": true
     },
     "InputColor": "23;13;28",

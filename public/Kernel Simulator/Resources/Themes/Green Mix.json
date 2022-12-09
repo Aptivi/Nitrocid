@@ -1,7 +1,6 @@
 {
     "Metadata": {
         "Name": "Green Mix",
-        "255ColorsRequired": true,
         "TrueColorRequired": true
     },
     "InputColor": "179;95;68",

@@ -1,7 +1,6 @@
 {
     "Metadata": {
         "Name": "Grays",
-        "255ColorsRequired": true,
         "TrueColorRequired": true
     },
     "InputColor": "33;33;33",

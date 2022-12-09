@@ -1,7 +1,6 @@
 {
     "Metadata": {
         "Name": "Dawn Aurora",
-        "255ColorsRequired": true,
         "TrueColorRequired": true
     },
     "InputColor": "15;31;64",
