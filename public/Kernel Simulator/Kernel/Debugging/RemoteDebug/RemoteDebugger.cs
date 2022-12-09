@@ -277,30 +277,8 @@ namespace KS.Kernel.Debugging.RemoteDebug
                     // from the message and comparing it to the null char ASCII number, which is 0.
                     if (!(Convert.ToInt32(Message[0]) == 0))
                     {
-                        // Now, check the message
-                        if (Message.StartsWith("/"))
-                        {
-                            // Message is a command
-                            string FullCommand = Message.Substring(1);
-                            string Command = FullCommand.Split(' ')[0];
-                            if (RemoteDebugCmd.DebugCommands.ContainsKey(Command))
-                            {
-                                // Parsing starts here.
-                                var Params = new CommandExecutor.ExecuteCommandParameters(FullCommand, ShellType.RemoteDebugShell, SocketStreamWriter, SocketIP);
-                                CommandExecutor.ExecuteCommand(Params, RemoteDebugCmd.DebugCommands);
-                            }
-                            else if (AliasManager.DoesAliasExist(Command, ShellType.RemoteDebugShell))
-                            {
-                                // Alias parsing starts here.
-                                AliasExecutor.ExecuteAlias(FullCommand, ShellType.RemoteDebugShell, SocketStreamWriter, SocketIP);
-                            }
-                            else
-                            {
-                                SocketStreamWriter.WriteLine(Translate.DoTranslation("Command {0} not found. Use \"/help\" to see the list."), Command);
-                            }
-                        }
                         // Check to see if the unnamed stranger is trying to send a message
-                        else if (!string.IsNullOrEmpty(SocketName))
+                        if (!string.IsNullOrEmpty(SocketName))
                         {
                             // Check the message format
                             if (string.IsNullOrWhiteSpace(RDebugMessageFormat))

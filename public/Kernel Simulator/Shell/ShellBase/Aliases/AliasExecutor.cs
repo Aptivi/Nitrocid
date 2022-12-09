@@ -33,19 +33,15 @@ namespace KS.Shell.ShellBase.Aliases
         /// </summary>
         /// <param name="aliascmd">Specifies the alias with arguments</param>
         /// <param name="ShellType">Type of shell</param>
-        /// <param name="SocketStream">A socket stream writer</param>
-        /// <param name="Address">IP Address</param>
-        public static void ExecuteAlias(string aliascmd, ShellType ShellType, StreamWriter SocketStream = null, string Address = "") =>
-            ExecuteAlias(aliascmd, Shell.GetShellTypeName(ShellType), SocketStream, Address);
+        public static void ExecuteAlias(string aliascmd, ShellType ShellType) =>
+            ExecuteAlias(aliascmd, Shell.GetShellTypeName(ShellType));
 
         /// <summary>
         /// Translates alias to actual command, preserving arguments
         /// </summary>
         /// <param name="aliascmd">Specifies the alias with arguments</param>
         /// <param name="ShellType">Type of shell</param>
-        /// <param name="SocketStream">A socket stream writer</param>
-        /// <param name="Address">IP Address</param>
-        public static void ExecuteAlias(string aliascmd, string ShellType, StreamWriter SocketStream = null, string Address = "")
+        public static void ExecuteAlias(string aliascmd, string ShellType)
         {
             var AliasesList = AliasManager.GetAliasesListFromType(ShellType);
 
@@ -55,22 +51,13 @@ namespace KS.Shell.ShellBase.Aliases
             DebugWriter.WriteDebug(DebugLevel.I, "Actual command: {0}", actualCmd);
 
             // Make thread parameters.
-            var Params = new CommandExecutor.ExecuteCommandParameters(actualCmd, ShellType, SocketStream, Address);
+            var Params = new CommandExecutor.ExecuteCommandParameters(actualCmd, ShellType);
 
-            // Check to see if we're on the shell or on the remote debug
-            if (ShellType == "RemoteDebugShell")
-            {
-                // Handle the remote debug case specially
-                CommandExecutor.ExecuteCommand(Params, RemoteDebugCmd.DebugCommands);
-            }
-            else
-            {
-                // Start the command thread
-                var StartCommandThread = ShellStart.ShellStack[ShellStart.ShellStack.Count - 1].ShellCommandThread;
-                StartCommandThread.Start(Params);
-                StartCommandThread.Wait();
-                StartCommandThread.Stop();
-            }
+            // Start the command thread
+            var StartCommandThread = ShellStart.ShellStack[ShellStart.ShellStack.Count - 1].ShellCommandThread;
+            StartCommandThread.Start(Params);
+            StartCommandThread.Wait();
+            StartCommandThread.Stop();
         }
 
     }

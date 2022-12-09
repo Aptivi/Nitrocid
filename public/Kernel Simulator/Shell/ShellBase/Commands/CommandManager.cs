@@ -69,7 +69,6 @@ namespace KS.Shell.ShellBase.Commands
                  | GetCommands(ShellType.FTPShell).ContainsKey(Command)
                  | GetCommands(ShellType.JsonShell).ContainsKey(Command)
                  | GetCommands(ShellType.MailShell).ContainsKey(Command)
-                 | RemoteDebugCmd.DebugCommands.ContainsKey(Command)
                  | GetCommands(ShellType.RSSShell).ContainsKey(Command)
                  | GetCommands(ShellType.SFTPShell).ContainsKey(Command)
                  | GetCommands(ShellType.Shell).ContainsKey(Command)

@@ -23,9 +23,9 @@ using System.Threading;
 using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Kernel.Debugging;
-using KS.Kernel.Debugging.RemoteDebug.Interface;
 using KS.Languages;
 using KS.Misc.Text;
+using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.MiscWriters;
 using KS.Shell.ShellBase.Shells;
 
@@ -50,25 +50,15 @@ namespace KS.Shell.ShellBase.Commands
             /// The shell type
             /// </summary>
             internal string ShellType;
-            /// <summary>
-            /// The debug device stream writer
-            /// </summary>
-            internal StreamWriter DebugDeviceSocket;
-            /// <summary>
-            /// Remote debug device address
-            /// </summary>
-            internal string Address;
 
-            internal ExecuteCommandParameters(string RequestedCommand, ShellType ShellType, StreamWriter DebugDeviceSocket = null, string Address = "") : 
-                this(RequestedCommand, Shell.GetShellTypeName(ShellType), DebugDeviceSocket, Address) 
+            internal ExecuteCommandParameters(string RequestedCommand, ShellType ShellType) : 
+                this(RequestedCommand, Shell.GetShellTypeName(ShellType)) 
             { }
 
-            internal ExecuteCommandParameters(string RequestedCommand, string ShellType, StreamWriter DebugDeviceSocket = null, string Address = "")
+            internal ExecuteCommandParameters(string RequestedCommand, string ShellType)
             {
                 this.RequestedCommand = RequestedCommand;
                 this.ShellType = ShellType;
-                this.DebugDeviceSocket = DebugDeviceSocket;
-                this.Address = Address;
             }
         }
 
@@ -79,8 +69,6 @@ namespace KS.Shell.ShellBase.Commands
         {
             string RequestedCommand = ThreadParams.RequestedCommand;
             string ShellType = ThreadParams.ShellType;
-            var DebugDeviceSocket = ThreadParams.DebugDeviceSocket;
-            string DebugDeviceAddress = ThreadParams.Address;
             try
             {
                 // Variables
@@ -95,7 +83,7 @@ namespace KS.Shell.ShellBase.Commands
                 if (TargetCommands[Command].Flags.HasFlag(CommandFlags.Obsolete))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "The command requested {0} is obsolete", Command);
-                    Decisive.DecisiveWrite(ShellType, DebugDeviceSocket, Translate.DoTranslation("This command is obsolete and will be removed in a future release."), true, ColorTools.ColTypes.NeutralText);
+                    TextWriterColor.Write(Translate.DoTranslation("This command is obsolete and will be removed in a future release."));
                 }
 
                 // If there are enough arguments provided, execute. Otherwise, fail with not enough arguments.
@@ -105,25 +93,19 @@ namespace KS.Shell.ShellBase.Commands
                     if (ArgInfo.ArgumentsRequired & RequiredArgumentsProvided | !ArgInfo.ArgumentsRequired)
                     {
                         var CommandBase = TargetCommands[Command].CommandBase;
-                        if ((CommandBase is RemoteDebugCommandExecutor || CommandBase.GetType().GetInterface(typeof(IRemoteDebugCommand).Name) != null) && DebugDeviceSocket != null)
-                            ((IRemoteDebugCommand)CommandBase).Execute(StrArgs, Args, Switches, DebugDeviceSocket, DebugDeviceAddress);
-                        else
-                            CommandBase.Execute(StrArgs, Args, Switches);
+                        CommandBase.Execute(StrArgs, Args, Switches);
                     }
                     else
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough arguments for {0}", Command);
-                        Decisive.DecisiveWrite(ShellType, DebugDeviceSocket, Translate.DoTranslation("There was not enough arguments. See below for usage:"), true, ColorTools.ColTypes.NeutralText);
+                        TextWriterColor.Write(Translate.DoTranslation("There was not enough arguments. See below for usage:"));
                         HelpSystem.ShowHelp(Command, ShellType);
                     }
                 }
                 else
                 {
                     var CommandBase = TargetCommands[Command].CommandBase;
-                    if ((CommandBase is RemoteDebugCommandExecutor || CommandBase.GetType().GetInterface(typeof(IRemoteDebugCommand).Name) != null) && DebugDeviceSocket != null)
-                        ((IRemoteDebugCommand)CommandBase).Execute(StrArgs, Args, Switches, DebugDeviceSocket, DebugDeviceAddress);
-                    else
-                        CommandBase.Execute(StrArgs, Args, Switches);
+                    CommandBase.Execute(StrArgs, Args, Switches);
                 }
             }
             catch (ThreadInterruptedException)
@@ -135,7 +117,7 @@ namespace KS.Shell.ShellBase.Commands
             {
                 Kernel.Events.EventsManager.FireEvent("CommandError", ShellType, RequestedCommand, ex);
                 DebugWriter.WriteDebugStackTrace(ex);
-                Decisive.DecisiveWrite(ShellType, DebugDeviceSocket, Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, ColorTools.ColTypes.Error, ex.GetType().FullName, ex.Message, RequestedCommand);
+                TextWriterColor.Write(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, ColorTools.ColTypes.Error, ex.GetType().FullName, ex.Message, RequestedCommand);
             }
         }
 

@@ -270,13 +270,6 @@ namespace KSConverter
                                         AliasManager.AddAlias(AliasCommand, ActualCommand, ShellType.Shell);
                                     break;
                                 }
-                            case "Remote":
-                                {
-                                    Dictionary<string, string> aliases = AliasManager.GetAliasesListFromType(ShellType.RemoteDebugShell);
-                                    if (!aliases.ContainsKey(AliasCommand))
-                                        AliasManager.AddAlias(AliasCommand, ActualCommand, ShellType.RemoteDebugShell);
-                                    break;
-                                }
                             case "FTPShell":
                                 {
                                     Dictionary<string, string> aliases = AliasManager.GetAliasesListFromType(ShellType.FTPShell);

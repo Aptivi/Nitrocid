@@ -19,14 +19,13 @@
 using System;
 using System.IO;
 using KS.Kernel.Debugging;
-using KS.Kernel.Debugging.RemoteDebug.Interface;
 
 namespace KS.Shell.ShellBase.Commands
 {
     /// <summary>
     /// The command executor class
     /// </summary>
-    public abstract class BaseCommand : ICommand, IRemoteDebugCommand
+    public abstract class BaseCommand : ICommand
     {
 
         /// <summary>
@@ -41,8 +40,6 @@ namespace KS.Shell.ShellBase.Commands
             DebugWriter.WriteDebug(DebugLevel.F, "We shouldn't be here!!!");
             throw new InvalidOperationException();
         }
-
-        void IRemoteDebugCommand.Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, StreamWriter SocketStreamWriter, string DeviceAddress) { }
 
         /// <summary>
         /// The help helper
