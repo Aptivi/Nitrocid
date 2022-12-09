@@ -23,6 +23,8 @@ using System.Collections.Generic;
 using KS.Drivers.Console.Consoles;
 using KS.Drivers.RNG.Randoms;
 using System.Linq;
+using KS.Drivers.Network;
+using KS.Drivers.Network.Bases;
 
 namespace KS.Drivers
 {
@@ -33,6 +35,7 @@ namespace KS.Drivers
     {
         internal static string currentRandomDriver = "Default";
         internal static string currentConsoleDriver = "Terminal";
+        internal static string currentNetworkDriver = "Default";
 
         private readonly static Dictionary<string, IRandomDriver> randomDrivers = new()
         {
@@ -56,8 +59,14 @@ namespace KS.Drivers
 #endif
         };
 
+        private readonly static Dictionary<string, INetworkDriver> networkDrivers = new()
+        {
+            { "Default", new DefaultNetwork() }
+        };
+
         private readonly static Dictionary<string, IRandomDriver> customRandomDrivers = new();
         private readonly static Dictionary<string, IConsoleDriver> customConsoleDrivers = new();
+        private readonly static Dictionary<string, INetworkDriver> customNetworkDrivers = new();
 
         /// <summary>
         /// Gets the current random driver
@@ -70,6 +79,12 @@ namespace KS.Drivers
         /// </summary>
         public static IConsoleDriver CurrentConsoleDriver => 
             GetConsoleDriver();
+
+        /// <summary>
+        /// Gets the current network driver
+        /// </summary>
+        public static INetworkDriver CurrentNetworkDriver =>
+            GetNetworkDriver();
 
         /// <summary>
         /// Gets the driver
@@ -85,6 +100,8 @@ namespace KS.Drivers
                     return GetRandomDriver(name);
                 case DriverTypes.Console:
                     return GetConsoleDriver(name);
+                case DriverTypes.Network:
+                    return GetNetworkDriver(name);
             }
 
             // We shouldn't be here
@@ -110,6 +127,10 @@ namespace KS.Drivers
                     if (!IsRegistered(type, name))
                         customConsoleDrivers.Add(name, (IConsoleDriver)driver);
                     break;
+                case DriverTypes.Network:
+                    if (!IsRegistered(type, name))
+                        customNetworkDrivers.Add(name, (INetworkDriver)driver);
+                    break;
             }
         }
 
@@ -130,6 +151,10 @@ namespace KS.Drivers
                     if (IsRegistered(type, name))
                         customConsoleDrivers.Remove(name);
                     break;
+                case DriverTypes.Network:
+                    if (IsRegistered(type, name))
+                        customNetworkDrivers.Remove(name);
+                    break;
             }
         }
 
@@ -145,6 +170,7 @@ namespace KS.Drivers
             {
                 DriverTypes.RNG     => customRandomDrivers.Keys.Contains(name),
                 DriverTypes.Console => customConsoleDrivers.Keys.Contains(name),
+                DriverTypes.Network => customNetworkDrivers.Keys.Contains(name),
                 _                   => false,
             };
         }
@@ -199,6 +225,32 @@ namespace KS.Drivers
                 // We didn't find anything, so return default KS driver.
                 DebugWriter.WriteDebug(DebugLevel.W, "Got default kernel driver because {0} is not found in the driver database.", name);
                 return consoleDrivers["Terminal"];
+            }
+        }
+
+        internal static INetworkDriver GetNetworkDriver() =>
+            GetNetworkDriver(currentNetworkDriver);
+
+        internal static INetworkDriver GetNetworkDriver(string name)
+        {
+            // Try to get the driver from the name.
+            bool found = networkDrivers.TryGetValue(name, out INetworkDriver cdriver);
+            bool customFound = customNetworkDrivers.TryGetValue(name, out INetworkDriver customcdriver);
+
+            // If found, bail.
+            if (found)
+            {
+                return cdriver;
+            }
+            else if (customFound)
+            {
+                return customcdriver;
+            }
+            else
+            {
+                // We didn't find anything, so return default KS driver.
+                DebugWriter.WriteDebug(DebugLevel.W, "Got default kernel driver because {0} is not found in the driver database.", name);
+                return networkDrivers["Default"];
             }
         }
         #endregion

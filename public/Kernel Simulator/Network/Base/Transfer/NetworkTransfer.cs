@@ -25,6 +25,7 @@ using System.Threading.Tasks;
 using FluentFTP.Helpers;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
+using KS.Drivers;
 using KS.Files;
 using KS.Files.Folders;
 using KS.Kernel;
@@ -74,7 +75,8 @@ namespace KS.Network.Base.Transfer
         /// </summary>
         /// <param name="URL">A URL to a file</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
-        public static bool DownloadFile(string URL) => DownloadFile(URL, Flags.ShowProgress);
+        public static bool DownloadFile(string URL) =>
+            DriverHandler.CurrentNetworkDriver.DownloadFile(URL);
 
         /// <summary>
         /// Downloads a file to the current working directory.
@@ -82,11 +84,8 @@ namespace KS.Network.Base.Transfer
         /// <param name="URL">A URL to a file</param>
         /// <param name="ShowProgress">Whether or not to show progress bar</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
-        public static bool DownloadFile(string URL, bool ShowProgress)
-        {
-            string FileName = NetworkTools.GetFilenameFromUrl(URL);
-            return DownloadFile(URL, ShowProgress, FileName);
-        }
+        public static bool DownloadFile(string URL, bool ShowProgress) =>
+            DriverHandler.CurrentNetworkDriver.DownloadFile(URL, ShowProgress);
 
         /// <summary>
         /// Downloads a file to the current working directory.
@@ -94,7 +93,8 @@ namespace KS.Network.Base.Transfer
         /// <param name="URL">A URL to a file</param>
         /// <param name="FileName">File name to download to</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
-        public static bool DownloadFile(string URL, string FileName) => DownloadFile(URL, Flags.ShowProgress, FileName);
+        public static bool DownloadFile(string URL, string FileName) =>
+            DriverHandler.CurrentNetworkDriver.DownloadFile(URL, FileName);
 
         /// <summary>
         /// Downloads a file to the current working directory.
@@ -103,59 +103,8 @@ namespace KS.Network.Base.Transfer
         /// <param name="ShowProgress">Whether or not to show progress bar</param>
         /// <param name="FileName">File name to download to</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
-        public static bool DownloadFile(string URL, bool ShowProgress, string FileName)
-        {
-            // Intialize variables
-            var FileUri = new Uri(URL);
-
-            // Initialize the progress bar indicator and the file completed event handler
-            if (DownloadNotificationProvoke)
-            {
-                DownloadNotif = new Notification(Translate.DoTranslation("Downloading..."), FileUri.AbsoluteUri, Notifications.NotifPriority.Low, Notifications.NotifType.Progress);
-                Notifications.NotifySend(DownloadNotif);
-            }
-            if (ShowProgress)
-                WClientProgress.HttpReceiveProgress += HttpReceiveProgressWatch;
-
-            // Send the GET request to the server for the file
-            DebugWriter.WriteDebug(DebugLevel.I, "Directory location: {0}", CurrentDirectory.CurrentDir);
-            var Response = WClient.GetAsync(FileUri, CancellationToken.Token).Result;
-            Response.EnsureSuccessStatusCode();
-
-            // Get the file stream
-            string FilePath = Filesystem.NeutralizePath(FileName);
-            var FileStream = new FileStream(FilePath, FileMode.Create, FileAccess.Write);
-
-            // Try to download the file asynchronously
-            Task.Run(() => { try { Response.Content.ReadAsStreamAsync().Result.CopyTo(FileStream); FileStream.Flush(); FileStream.Close(); DownloadChecker(null); } catch (Exception ex) { DownloadChecker(ex); } }, CancellationToken.Token);
-            while (!NetworkTools.TransferFinished)
-            {
-                if (Flags.CancelRequested)
-                {
-                    NetworkTools.TransferFinished = true;
-                    CancellationToken.Cancel();
-                }
-            }
-
-            // We're done downloading. Check to see if it's actually an error
-            NetworkTools.TransferFinished = false;
-            if (ShowProgress & !SuppressDownloadMessage)
-                TextWriterColor.Write();
-            SuppressDownloadMessage = false;
-            if (IsError)
-            {
-                if (DownloadNotificationProvoke)
-                    DownloadNotif.ProgressFailed = true;
-                CancellationToken.Cancel();
-                throw ReasonError;
-            }
-            else
-            {
-                if (DownloadNotificationProvoke)
-                    DownloadNotif.Progress = 100;
-                return true;
-            }
-        }
+        public static bool DownloadFile(string URL, bool ShowProgress, string FileName) =>
+            DriverHandler.CurrentNetworkDriver.DownloadFile(URL, ShowProgress, FileName);
 
         /// <summary>
         /// Uploads a file to the current working directory.
@@ -163,7 +112,8 @@ namespace KS.Network.Base.Transfer
         /// <param name="FileName">A target file name. Use <see cref="Filesystem.NeutralizePath(string, bool)"/> to get full path of source.</param>
         /// <param name="URL">A URL to a file</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
-        public static bool UploadFile(string FileName, string URL) => UploadFile(FileName, URL, Flags.ShowProgress);
+        public static bool UploadFile(string FileName, string URL) => 
+            DriverHandler.CurrentNetworkDriver.UploadFile(FileName, URL);
 
         /// <summary>
         /// Uploads a file from the current working directory.
@@ -172,64 +122,16 @@ namespace KS.Network.Base.Transfer
         /// <param name="URL">A URL</param>
         /// <param name="ShowProgress">Whether or not to show progress bar</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
-        public static bool UploadFile(string FileName, string URL, bool ShowProgress)
-        {
-            // Intialize variables
-            var FileUri = new Uri(URL);
-
-            // Initialize the progress bar indicator and the file completed event handler
-            if (UploadNotificationProvoke)
-            {
-                UploadNotif = new Notification(Translate.DoTranslation("Uploading..."), FileUri.AbsoluteUri, Notifications.NotifPriority.Low, Notifications.NotifType.Progress);
-                Notifications.NotifySend(DownloadNotif);
-            }
-            if (ShowProgress)
-                WClientProgress.HttpSendProgress += HttpSendProgressWatch;
-
-            // Send the GET request to the server for the file after getting the stream and target file stream
-            DebugWriter.WriteDebug(DebugLevel.I, "Directory location: {0}", CurrentDirectory.CurrentDir);
-            string FilePath = Filesystem.NeutralizePath(FileName);
-            var FileStream = new FileStream(FilePath, FileMode.Open, FileAccess.Read);
-            var Content = new StreamContent(FileStream);
-
-            // Upload now
-            try
-            {
-                var Response = WClient.PutAsync(URL, Content, CancellationToken.Token).Result;
-                Response.EnsureSuccessStatusCode();
-                UploadChecker(null);
-            }
-            catch (Exception ex)
-            {
-                UploadChecker(ex);
-            }
-
-            // We're done uploading. Check to see if it's actually an error
-            NetworkTools.TransferFinished = false;
-            if (ShowProgress & !SuppressUploadMessage)
-                TextWriterColor.Write();
-            SuppressUploadMessage = false;
-            if (IsError)
-            {
-                if (UploadNotificationProvoke)
-                    UploadNotif.ProgressFailed = true;
-                CancellationToken.Cancel();
-                throw ReasonError;
-            }
-            else
-            {
-                if (UploadNotificationProvoke)
-                    UploadNotif.Progress = 100;
-                return true;
-            }
-        }
+        public static bool UploadFile(string FileName, string URL, bool ShowProgress) =>
+            DriverHandler.CurrentNetworkDriver.UploadFile(FileName, URL, ShowProgress);
 
         /// <summary>
         /// Downloads a resource from URL as a string.
         /// </summary>
         /// <param name="URL">A URL to a file</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
-        public static string DownloadString(string URL) => DownloadString(URL, Flags.ShowProgress);
+        public static string DownloadString(string URL) => 
+            DriverHandler.CurrentNetworkDriver.DownloadString(URL);
 
         /// <summary>
         /// Downloads a resource from URL as a string.
@@ -237,58 +139,8 @@ namespace KS.Network.Base.Transfer
         /// <param name="URL">A URL</param>
         /// <param name="ShowProgress">Whether or not to show progress bar</param>
         /// <returns>A resource string if successful; Throws exception if unsuccessful.</returns>
-        public static string DownloadString(string URL, bool ShowProgress)
-        {
-            // Intialize variables
-            var StringUri = new Uri(URL);
-
-            // Initialize the progress bar indicator and the file completed event handler
-            if (DownloadNotificationProvoke)
-            {
-                DownloadNotif = new Notification(Translate.DoTranslation("Downloading..."), StringUri.AbsoluteUri, Notifications.NotifPriority.Low, Notifications.NotifType.Progress);
-                Notifications.NotifySend(DownloadNotif);
-            }
-            if (ShowProgress)
-                WClientProgress.HttpReceiveProgress += HttpReceiveProgressWatch;
-
-            // Send the GET request to the server for the file
-            DebugWriter.WriteDebug(DebugLevel.I, "Directory location: {0}", CurrentDirectory.CurrentDir);
-            var Response = WClient.GetAsync(StringUri, CancellationToken.Token).Result;
-            Response.EnsureSuccessStatusCode();
-
-            // Get the memory stream
-            var ContentStream = new MemoryStream();
-
-            // Try to download the string asynchronously
-            Task.Run(() => { try { Response.Content.ReadAsStreamAsync().Result.CopyTo(ContentStream); ContentStream.Seek(0L, SeekOrigin.Begin); DownloadChecker(null); } catch (Exception ex) { DownloadChecker(ex); } }, CancellationToken.Token);
-            while (!NetworkTools.TransferFinished)
-            {
-                if (Flags.CancelRequested)
-                {
-                    NetworkTools.TransferFinished = true;
-                    CancellationToken.Cancel();
-                }
-            }
-
-            // We're done downloading. Check to see if it's actually an error
-            NetworkTools.TransferFinished = false;
-            if (ShowProgress & !SuppressDownloadMessage)
-                TextWriterColor.Write();
-            SuppressDownloadMessage = false;
-            if (IsError)
-            {
-                if (DownloadNotificationProvoke)
-                    DownloadNotif.ProgressFailed = true;
-                CancellationToken.Cancel();
-                throw ReasonError;
-            }
-            else
-            {
-                if (DownloadNotificationProvoke)
-                    DownloadNotif.Progress = 100;
-                return new StreamReader(ContentStream).ReadToEnd();
-            }
-        }
+        public static string DownloadString(string URL, bool ShowProgress) =>
+            DriverHandler.CurrentNetworkDriver.DownloadString(URL, ShowProgress);
 
         /// <summary>
         /// Uploads a resource from URL as a string.
@@ -296,7 +148,8 @@ namespace KS.Network.Base.Transfer
         /// <param name="URL">A URL to a file</param>
         /// <param name="Data">Content to upload</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
-        public static bool UploadString(string URL, string Data) => UploadString(URL, Data, Flags.ShowProgress);
+        public static bool UploadString(string URL, string Data) =>
+            DriverHandler.CurrentNetworkDriver.UploadString(URL, Data);
 
         /// <summary>
         /// Uploads a resource from URL as a string.
@@ -305,59 +158,13 @@ namespace KS.Network.Base.Transfer
         /// <param name="Data">Content to upload</param>
         /// <param name="ShowProgress">Whether or not to show progress bar</param>
         /// <returns>A resource string if successful; Throws exception if unsuccessful.</returns>
-        public static bool UploadString(string URL, string Data, bool ShowProgress)
-        {
-            // Intialize variables
-            var StringUri = new Uri(URL);
-
-            // Initialize the progress bar indicator and the file completed event handler
-            if (UploadNotificationProvoke)
-            {
-                UploadNotif = new Notification(Translate.DoTranslation("Uploading..."), StringUri.AbsoluteUri, Notifications.NotifPriority.Low, Notifications.NotifType.Progress);
-                Notifications.NotifySend(UploadNotif);
-            }
-            if (ShowProgress)
-                WClientProgress.HttpSendProgress += HttpSendProgressWatch;
-
-            // Send the GET request to the server for the file
-            DebugWriter.WriteDebug(DebugLevel.I, "Directory location: {0}", CurrentDirectory.CurrentDir);
-            var StringContent = new StringContent(Data);
-
-            try
-            {
-                var Response = WClient.PutAsync(URL, StringContent, CancellationToken.Token).Result;
-                Response.EnsureSuccessStatusCode();
-                UploadChecker(null);
-            }
-            catch (Exception ex)
-            {
-                UploadChecker(ex);
-            }
-
-            // We're done uploading. Check to see if it's actually an error
-            NetworkTools.TransferFinished = false;
-            if (ShowProgress & !SuppressUploadMessage)
-                TextWriterColor.Write();
-            SuppressUploadMessage = false;
-            if (IsError)
-            {
-                if (UploadNotificationProvoke)
-                    UploadNotif.ProgressFailed = true;
-                CancellationToken.Cancel();
-                throw ReasonError;
-            }
-            else
-            {
-                if (UploadNotificationProvoke)
-                    UploadNotif.Progress = 100;
-                return true;
-            }
-        }
+        public static bool UploadString(string URL, string Data, bool ShowProgress) =>
+            DriverHandler.CurrentNetworkDriver.UploadString(URL, Data, ShowProgress);
 
         /// <summary>
         /// Check for errors on download completion.
         /// </summary>
-        private static void DownloadChecker(Exception e)
+        internal static void DownloadChecker(Exception e)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Download complete. Error: {0}", e?.Message);
             if (e is not null)
@@ -373,7 +180,7 @@ namespace KS.Network.Base.Transfer
         /// <summary>
         /// Thread to check for errors on download completion.
         /// </summary>
-        private static void UploadChecker(Exception e)
+        internal static void UploadChecker(Exception e)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Upload complete. Error: {0}", e?.Message);
             if (e is not null)
@@ -386,7 +193,7 @@ namespace KS.Network.Base.Transfer
             NetworkTools.TransferFinished = true;
         }
 
-        private static void HttpReceiveProgressWatch(object sender, HttpProgressEventArgs e)
+        internal static void HttpReceiveProgressWatch(object sender, HttpProgressEventArgs e)
         {
             int TotalBytes = (int)(e.TotalBytes ?? -1);
             var TransferInfo = new NetworkTransferInfo(e.BytesTransferred, TotalBytes, NetworkTransferType.Download);
@@ -394,7 +201,7 @@ namespace KS.Network.Base.Transfer
             TransferProgress(TransferInfo);
         }
 
-        private static void HttpSendProgressWatch(object sender, HttpProgressEventArgs e)
+        internal static void HttpSendProgressWatch(object sender, HttpProgressEventArgs e)
         {
             int TotalBytes = (int)(e.TotalBytes ?? -1);
             var TransferInfo = new NetworkTransferInfo(e.BytesTransferred, TotalBytes, NetworkTransferType.Upload);
@@ -405,7 +212,7 @@ namespace KS.Network.Base.Transfer
         /// <summary>
         /// Report the progress to the console.
         /// </summary>
-        private static void TransferProgress(NetworkTransferInfo TransferInfo)
+        internal static void TransferProgress(NetworkTransferInfo TransferInfo)
         {
             try
             {

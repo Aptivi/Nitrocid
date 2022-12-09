@@ -16,24 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-namespace KS.Drivers
+namespace KS.Drivers.Network.Bases
 {
-    /// <summary>
-    /// Driver types
-    /// </summary>
-    public enum DriverTypes
-    {
-        /// <summary>
-        /// Random number generator drivers
-        /// </summary>
-        RNG,
-        /// <summary>
-        /// Console drivers
-        /// </summary>
-        Console,
-        /// <summary>
-        /// Network drivers
-        /// </summary>
-        Network
-    }
+    internal class DefaultNetwork : BaseNetworkDriver, INetworkDriver
+    { }
 }
