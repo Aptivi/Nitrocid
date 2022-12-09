@@ -301,3 +301,7 @@ These tools can be abused.
 ##### Removed PrepareDict
 
 PrepareDict used to populate the string dictionary with definitions to the localized string. Now, because the language management routine was remodeled, we've removed PrepareDict as part of the change.
+
+##### Removed network adapter querying
+
+This functionality is no longer maintained.
