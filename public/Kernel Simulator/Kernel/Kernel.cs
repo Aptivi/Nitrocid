@@ -162,6 +162,7 @@ namespace KS.Kernel
                     {
                         Flags.FirstTime = false;
                         TextWriterColor.Write(Translate.DoTranslation("Welcome to the kernel! The color wheel will open in true color mode. Select any true color to test your console with. It's usually your favorite color. We need to determine if your console supports true color. Press any key to continue."));
+                        Input.DetectKeypress();
                         ColorWheelOpen.ColorWheel(true);
                         Flags.ConsoleSupportsTrueColor = ChoiceStyle.PromptChoice(Translate.DoTranslation("Your console should be able to display true color. Did it display these colors properly?"), "y/n") == "y";
                     }
