@@ -27,6 +27,7 @@ using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace KS.Shell.Shells.UESH.Commands
@@ -65,15 +66,20 @@ namespace KS.Shell.Shells.UESH.Commands
                 selectedTheme = ThemeTools.Themes.Keys.ElementAt(colorIndex);
             }
 
-            // Try to load the theme to the theme studio
+            // Load the theme to the instance
             string ThemePath = Filesystem.NeutralizePath(selectedTheme);
+            ThemeInfo Theme;
             if (Checking.FileExists(ThemePath))
-                ThemeStudioTools.LoadThemeFromFile(ThemePath);
+            {
+                var ThemeStream = new StreamReader(ThemePath);
+                Theme = new ThemeInfo(ThemeStream);
+            }
             else
-                ThemeStudioTools.LoadThemeFromResource(selectedTheme);
+                Theme = ThemeTools.GetThemeInfo(selectedTheme);
 
-            // Load the preview
-            ThemeStudioTools.PreparePreview();
+            // Now, preview the theme
+            ThemeTools.PreviewTheme(Theme);
+            TextWriterColor.Write();
 
             // Pause until a key is pressed
             string answer = ChoiceStyle.PromptChoice(Translate.DoTranslation("Would you like to set this theme to {0}?").FormatString(selectedTheme), "y/n", new[] { Translate.DoTranslation("Yes, set it!"), Translate.DoTranslation("No, don't set it.") }, ChoiceStyle.ChoiceOutputType.Modern);

@@ -305,3 +305,7 @@ PrepareDict used to populate the string dictionary with definitions to the local
 ##### Removed network adapter querying
 
 This functionality is no longer maintained.
+
+##### Theme preview is no longer exclusive to studio
+
+The theme preview routine used to depend on the theme studio to do its job, under the name of `ThemeStudioTools.PreparePreview()`. However, because there were recent improvements to the theming system, we've finally condensed the preview routine to `ThemeTools.PreviewTheme()`. You can no longer use the old method, because it also required loading the theme information to the theme studio itself. What if it was called in a context that has no relationship with the theme studio, such as in the case of `themesel`?

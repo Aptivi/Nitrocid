@@ -66,24 +66,8 @@ namespace KS.ConsoleBase.Themes.Studio
         /// Loads theme from resource and places it to the studio
         /// </summary>
         /// <param name="Theme">A theme name</param>
-        public static void LoadThemeFromResource(string Theme)
-        {
-            // Populate theme info
-            ThemeInfo ThemeInfo;
-            if (Theme == "Default")
-            {
-                ThemeInfo = new ThemeInfo();
-            }
-            else if (Theme == "3Y-Diamond")
-            {
-                ThemeInfo = new ThemeInfo("_3Y_Diamond");
-            }
-            else
-            {
-                ThemeInfo = new ThemeInfo(Theme.ReplaceAll(new[] { "-", " " }, "_"));
-            }
-            LoadThemeFromThemeInfo(ThemeInfo);
-        }
+        public static void LoadThemeFromResource(string Theme) =>
+            LoadThemeFromThemeInfo(ThemeTools.GetThemeInfo(Theme));
 
         /// <summary>
         /// Loads theme from resource and places it to the studio
@@ -197,22 +181,6 @@ namespace KS.ConsoleBase.Themes.Studio
 
             // Else, no requirement
             return false;
-        }
-
-        /// <summary>
-        /// Prepares the preview
-        /// </summary>
-        public static void PreparePreview()
-        {
-            ConsoleWrapper.Clear();
-            TextWriterColor.Write(Translate.DoTranslation("Here's how your theme will look like:") + CharManager.NewLine);
-
-            // Print every possibility of color types
-            for (int key = 0; key < SelectedColors.Count; key++)
-            {
-                TextWriterColor.Write($"*) {SelectedColors.Keys.ElementAt(key)}: ", false, ColorTools.ColTypes.Option);
-                TextWriterColor.Write("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", true, SelectedColors.Values.ElementAt(key));
-            }
         }
 
     }

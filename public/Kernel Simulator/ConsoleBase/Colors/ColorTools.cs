@@ -334,26 +334,6 @@ namespace KS.ConsoleBase.Colors
         }
 
         /// <summary>
-        /// Resets all colors to default
-        /// </summary>
-        public static void ResetColors()
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "Resetting colors");
-            var DefInfo = new ThemeInfo();
-
-            // Set colors
-            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ColTypes)).Length - 2; typeIndex++)
-            {
-                ColTypes type = KernelColors.Keys.ElementAt(typeIndex);
-                KernelColors[type] = DefInfo.ThemeColors[type];
-            }
-            LoadBack();
-
-            // Raise event
-            Kernel.Events.EventsManager.FireEvent("ColorReset");
-        }
-
-        /// <summary>
         /// Loads the background
         /// </summary>
         public static void LoadBack() =>

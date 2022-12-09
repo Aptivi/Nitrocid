@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Files;
@@ -28,7 +29,10 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
+using KS.Misc.Text;
+using KS.Misc.Writers.ConsoleWriters;
 using static KS.ConsoleBase.Colors.ColorTools;
+using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.ConsoleBase.Themes
 {
@@ -136,6 +140,33 @@ namespace KS.ConsoleBase.Themes
         };
 
         /// <summary>
+        /// Gets the theme information
+        /// </summary>
+        /// <param name="theme">Theme name</param>
+        public static ThemeInfo GetThemeInfo(string theme)
+        {
+            theme = theme.ReplaceAll(new[] { "-", " " }, "_");
+            if (theme == "3Y-Diamond")
+                return new ThemeInfo("_3Y_Diamond");
+            else
+                return new ThemeInfo(theme);
+        }
+
+        /// <summary>
+        /// Gets the colors from the theme
+        /// </summary>
+        /// <param name="theme">Theme name</param>
+        public static Dictionary<ColTypes, Color> GetColorsFromTheme(string theme) =>
+            GetColorsFromTheme(GetThemeInfo(theme));
+
+        /// <summary>
+        /// Gets the colors from the theme
+        /// </summary>
+        /// <param name="themeInfo">Theme instance</param>
+        public static Dictionary<ColTypes, Color> GetColorsFromTheme(ThemeInfo themeInfo) => 
+            themeInfo.ThemeColors;
+
+        /// <summary>
         /// Sets system colors according to the programmed templates
         /// </summary>
         /// <param name="theme">A specified theme</param>
@@ -147,34 +178,18 @@ namespace KS.ConsoleBase.Themes
                 DebugWriter.WriteDebug(DebugLevel.I, "Theme found.");
 
                 // Populate theme info
-                var ThemeInfo = default(ThemeInfo);
-                theme = theme.ReplaceAll(new[] { "-", " " }, "_");
-                if (theme == "Default")
-                {
-                    ResetColors();
-                }
-                else if (theme == "3Y-Diamond")
-                {
-                    ThemeInfo = new ThemeInfo("_3Y_Diamond");
-                }
+                var ThemeInfo = GetThemeInfo(theme);
+
+                // Check if the console supports true color
+                if ((Flags.ConsoleSupportsTrueColor && ThemeInfo.TrueColorRequired) || !ThemeInfo.TrueColorRequired)
+                    // Set colors as appropriate
+                    SetColorsTheme(ThemeInfo);
                 else
                 {
-                    ThemeInfo = new ThemeInfo(theme);
-                }
-
-                if (!(theme == "Default"))
-                {
-                    // Check if the console supports true color
-                    if ((Flags.ConsoleSupportsTrueColor && ThemeInfo.TrueColorRequired) || !ThemeInfo.TrueColorRequired)
-                        // Set colors as appropriate
-                        SetColorsTheme(ThemeInfo);
-                    else
-                    {
-                        // We're trying to apply true color on unsupported console
-                        DebugWriter.WriteDebug(DebugLevel.E, "Unsupported console or the terminal doesn't support true color.");
-                        Kernel.Events.EventsManager.FireEvent("ThemeSetError", theme, ThemeSetErrorReasons.ConsoleUnsupported);
-                        throw new KernelException(KernelExceptionType.UnsupportedConsole, Translate.DoTranslation("The theme {0} needs true color support, but your console doesn't support it."), theme);
-                    }
+                    // We're trying to apply true color on unsupported console
+                    DebugWriter.WriteDebug(DebugLevel.E, "Unsupported console or the terminal doesn't support true color.");
+                    Kernel.Events.EventsManager.FireEvent("ThemeSetError", theme, ThemeSetErrorReasons.ConsoleUnsupported);
+                    throw new KernelException(KernelExceptionType.UnsupportedConsole, Translate.DoTranslation("The theme {0} needs true color support, but your console doesn't support it."), theme);
                 }
 
                 // Raise event
@@ -270,6 +285,37 @@ namespace KS.ConsoleBase.Themes
             catch (Exception)
             {
                 return false;
+            }
+        }
+
+        /// <summary>
+        /// Prepares the preview of the theme
+        /// </summary>
+        /// <param name="theme">Theme name</param>
+        public static void PreviewTheme(string theme) =>
+            PreviewTheme(GetThemeInfo(theme));
+
+        /// <summary>
+        /// Prepares the preview of the theme
+        /// </summary>
+        /// <param name="theme">Theme instance</param>
+        public static void PreviewTheme(ThemeInfo theme) =>
+            PreviewTheme(GetColorsFromTheme(theme));
+
+        /// <summary>
+        /// Prepares the preview of the theme
+        /// </summary>
+        /// <param name="colors">Dictionary of colors</param>
+        public static void PreviewTheme(Dictionary<ColTypes, Color> colors)
+        {
+            ConsoleWrapper.Clear();
+            TextWriterColor.Write(Translate.DoTranslation("Here's how your theme will look like:") + CharManager.NewLine);
+
+            // Print every possibility of color types
+            for (int key = 0; key < colors.Count; key++)
+            {
+                TextWriterColor.Write($"*) {colors.Keys.ElementAt(key)}: ", false, ColTypes.Option);
+                TextWriterColor.Write("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", true, colors.Values.ElementAt(key));
             }
         }
 

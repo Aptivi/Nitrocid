@@ -156,7 +156,7 @@ namespace KS.ConsoleBase.Themes.Studio
                             case 46: // Preview...
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.I, "Printing text with colors of theme...");
-                                    ThemeStudioTools.PreparePreview();
+                                    ThemeTools.PreviewTheme(ThemeStudioTools.SelectedColors);
 
                                     // Pause until a key is pressed
                                     TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Press any key to go back."));
