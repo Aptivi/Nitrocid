@@ -22,7 +22,9 @@ using System.Linq;
 using ColorSeq;
 using KS.ConsoleBase;
 using KS.Drivers;
+using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
+using KS.Misc.Animations.Glitch;
 using KS.Misc.Text;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
@@ -327,8 +329,13 @@ namespace KS.Misc.Screensaver.Displays
                             string timeWarpCurrentDate = $"Travelled: {TimeDate.TimeDateRenderers.RenderDate(travelled)}";
                             TextWriterWhereColor.WriteWhere(timeWarpCurrentDate + $"{Convert.ToString(CharManager.GetEsc()) + "[0K"}", progPosX, textTravelledPosY, black, darkGreen);
 
+                            // Now, do the glitch
+                            bool isGlitch = RandomDriver.RandomChance(currentProg);
+                            if (isGlitch)
+                                Glitch.GlitchAt();
+
                             // Sleep
-                            if (iteration >= maxProg - 1)
+                            if (iteration >= maxProg - 50)
                                 ThreadManager.SleepNoBlock(5000, ScreensaverDisplayer.ScreensaverDisplayerThread);
                             else
                                 ThreadManager.SleepNoBlock(10, ScreensaverDisplayer.ScreensaverDisplayerThread);
