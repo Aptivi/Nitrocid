@@ -30,7 +30,10 @@ namespace KS.Kernel.Debugging.Testing.Facades
         {
             string Text = Input.ReadLine(Translate.DoTranslation("Write a color number ranging from 1 to 255:") + " ", "");
             if (int.TryParse(Text, out int color))
-                TextWriterColor.Write("Color {0}", true, new Color(color));
+            {
+                var colorInstance = new Color(color);
+                TextWriterColor.Write("Color {0}", true, colorInstance, colorInstance.PlainSequence);
+            }
         }
     }
 }

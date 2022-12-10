@@ -32,7 +32,10 @@ namespace KS.Kernel.Debugging.Testing.Facades
             string TextG = Input.ReadLine("G - " + Translate.DoTranslation("Write a color number ranging from 1 to 255:") + " ", "");
             string TextB = Input.ReadLine("B - " + Translate.DoTranslation("Write a color number ranging from 1 to 255:") + " ", "");
             if (int.TryParse(TextR, out int r) && int.TryParse(TextG, out int g) && int.TryParse(TextB, out int b))
-                TextWriterColor.Write("Color {0}", true, new Color(r, g, b));
+            {
+                var color = new Color(r, g, b);
+                TextWriterColor.Write("Color {0}", true, color, color.PlainSequence);
+            }
         }
     }
 }
