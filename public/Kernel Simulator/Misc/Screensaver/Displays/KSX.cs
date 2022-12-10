@@ -97,8 +97,8 @@ namespace KS.Misc.Screensaver.Displays
                             var figFont = FigletTools.GetFigletFont("Banner");
                             int figWidth = FigletTools.GetFigletWidth("X", figFont) / 2;
                             int figHeight = FigletTools.GetFigletHeight("X", figFont) / 2;
-                            int consoleX = (ConsoleWrapper.WindowWidth / 2) - (figWidth / 2);
-                            int consoleY = (ConsoleWrapper.WindowHeight / 2) - (figHeight / 2);
+                            int consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidth;
+                            int consoleY = (ConsoleWrapper.WindowHeight / 2) - figHeight;
                             FigletWhereColor.WriteFigletWhere("X", consoleX, consoleY, true, figFont, col);
 
                             // Sleep
@@ -119,8 +119,8 @@ namespace KS.Misc.Screensaver.Displays
                             var figFont = FigletTools.GetFigletFont("Banner");
                             int figWidth = FigletTools.GetFigletWidth("X", figFont) / 2;
                             int figHeight = FigletTools.GetFigletHeight("X", figFont) / 2;
-                            int consoleX = (ConsoleWrapper.WindowWidth / 2) - (figWidth / 2);
-                            int consoleY = (ConsoleWrapper.WindowHeight / 2) - (figHeight / 2);
+                            int consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidth;
+                            int consoleY = (ConsoleWrapper.WindowHeight / 2) - figHeight;
                             FigletWhereColor.WriteFigletWhere("X", consoleX, consoleY, true, figFont, finalCol);
 
                             // Sleep
@@ -151,8 +151,8 @@ namespace KS.Misc.Screensaver.Displays
                             var figFont = FigletTools.GetFigletFont("Banner");
                             int figWidth = FigletTools.GetFigletWidth("X", figFont) / 2;
                             int figHeight = FigletTools.GetFigletHeight("X", figFont) / 2;
-                            int consoleX = (ConsoleWrapper.WindowWidth / 2) - (figWidth / 2);
-                            int consoleY = (ConsoleWrapper.WindowHeight / 2) - (figHeight / 2);
+                            int consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidth;
+                            int consoleY = (ConsoleWrapper.WindowHeight / 2) - figHeight;
                             FigletWhereColor.WriteFigletWhere("X", consoleX, consoleY, true, figFont, col);
 
                             // Sleep
