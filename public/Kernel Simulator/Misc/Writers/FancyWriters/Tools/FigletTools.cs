@@ -167,7 +167,7 @@ namespace KS.Misc.Writers.FancyWriters.Tools
                     Text = StringManipulate.FormatString(Text, Vars);
 
                 // Write the font
-                Text = FigletFont.Render(Text);
+                Text = string.Join("\n", GetFigletLines(Text, FigletFont));
                 cachedFiglets.Add(cachedFigletKeyToAdd, Text);
                 return Text;
             }
