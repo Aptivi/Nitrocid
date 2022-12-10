@@ -28,6 +28,8 @@ namespace KS.Drivers.Console.Consoles
 
         public override DriverTypes DriverType => DriverTypes.Console;
 
+        public override bool DriverPromiseRequired => false;
+
         public override TextWriter Out => null;
 
         public override int CursorLeft { get => 0; set => throw new NotImplementedException(); }

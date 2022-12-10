@@ -34,6 +34,12 @@ namespace KS.Drivers.RNG
         public virtual DriverTypes DriverType => DriverTypes.RNG;
 
         /// <inheritdoc/>
+        public virtual bool DriverPromiseRequired => false;
+
+        /// <inheritdoc/>
+        public virtual Func<object[], bool> DriverPromiseAction => null;
+
+        /// <inheritdoc/>
         public virtual int Random() => Random(int.MaxValue - 1);
 
         /// <inheritdoc/>

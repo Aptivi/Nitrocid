@@ -46,6 +46,12 @@ namespace KS.Drivers.Console.Consoles
         /// <inheritdoc/>
         public virtual DriverTypes DriverType => DriverTypes.Console;
 
+        /// <inheritdoc/>
+        public virtual bool DriverPromiseRequired => true;
+
+        /// <inheritdoc/>
+        public virtual Func<object[], bool> DriverPromiseAction => (_) => !IsDumb;
+
         private static bool _dumbSet = false;
         private static bool _dumb = true;
 

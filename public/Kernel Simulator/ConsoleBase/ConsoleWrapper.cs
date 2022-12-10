@@ -18,6 +18,7 @@
 
 using ColorSeq;
 using KS.Drivers;
+using KS.Kernel.Exceptions;
 using System;
 using System.Drawing;
 using System.IO;
@@ -34,16 +35,40 @@ namespace KS.ConsoleBase
         /// <summary>
         /// The standard output stream that the console uses
         /// </summary>
-        public static TextWriter Out => 
-            DriverHandler.CurrentConsoleDriver.Out;
+        public static TextWriter Out
+        {
+            get
+            {
+                if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) ||
+                    !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                    return DriverHandler.CurrentConsoleDriver.Out;
+                else
+                    throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+            }
+        }
 
         /// <summary>
         /// The cursor left position
         /// </summary>
         public static int CursorLeft
         {
-            get => DriverHandler.CurrentConsoleDriver.CursorLeft;
-            set => DriverHandler.CurrentConsoleDriver.CursorLeft = value;
+            get
+            {
+                if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) ||
+                    !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                    return DriverHandler.CurrentConsoleDriver.CursorLeft;
+                else
+                    throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+            }
+
+            set
+            {
+                if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) ||
+                    !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                    DriverHandler.CurrentConsoleDriver.CursorLeft = value;
+                else
+                    throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+            }
         }
 
         /// <summary>
@@ -51,47 +76,120 @@ namespace KS.ConsoleBase
         /// </summary>
         public static int CursorTop
         {
-            get => DriverHandler.CurrentConsoleDriver.CursorTop;
-            set => DriverHandler.CurrentConsoleDriver.CursorTop = value;
+            get
+            {
+                if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) ||
+                    !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                    return DriverHandler.CurrentConsoleDriver.CursorTop;
+                else
+                    throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+            }
+
+            set
+            {
+                if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) ||
+                    !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                    DriverHandler.CurrentConsoleDriver.CursorTop = value;
+                else
+                    throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+            }
         }
 
         /// <summary>
         /// The console window top (rows)
         /// </summary>
-        public static int WindowTop => 
-            DriverHandler.CurrentConsoleDriver.WindowTop;
+        public static int WindowTop
+        {
+            get
+            {
+                if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) ||
+                    !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                    return DriverHandler.CurrentConsoleDriver.WindowTop;
+                else
+                    throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+            }
+        }
 
         /// <summary>
         /// The console window width (columns)
         /// </summary>
-        public static int WindowWidth => 
-            DriverHandler.CurrentConsoleDriver.WindowWidth;
+        public static int WindowWidth
+        {
+            get
+            {
+                if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) ||
+                    !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                    return DriverHandler.CurrentConsoleDriver.WindowWidth;
+                else
+                    throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+            }
+        }
 
         /// <summary>
         /// The console window height (rows)
         /// </summary>
-        public static int WindowHeight => 
-            DriverHandler.CurrentConsoleDriver.WindowHeight;
+        public static int WindowHeight
+        {
+            get
+            {
+                if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) ||
+                    !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                    return DriverHandler.CurrentConsoleDriver.WindowHeight;
+                else
+                    throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+            }
+        }
 
         /// <summary>
         /// The console buffer width (columns)
         /// </summary>
-        public static int BufferWidth =>
-            DriverHandler.CurrentConsoleDriver.BufferWidth;
+        public static int BufferWidth
+        {
+            get
+            {
+                if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) || !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                    return DriverHandler.CurrentConsoleDriver.BufferWidth;
+                else
+                    throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+            }
+        }
 
         /// <summary>
         /// The console buffer height (rows)
         /// </summary>
-        public static int BufferHeight =>
-            DriverHandler.CurrentConsoleDriver.BufferHeight;
+        public static int BufferHeight
+        {
+            get
+            {
+                if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) || !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                    return DriverHandler.CurrentConsoleDriver.BufferHeight;
+                else
+                    throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+            }
+        }
 
         /// <summary>
         /// The foreground color
         /// </summary>
         public static ConsoleColor ForegroundColor
         {
-            get => DriverHandler.CurrentConsoleDriver.ForegroundColor;
-            set => DriverHandler.CurrentConsoleDriver.ForegroundColor = value;
+            get
+            {
+                if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) ||
+                    !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                    return DriverHandler.CurrentConsoleDriver.ForegroundColor;
+                else
+                    throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+            }
+
+            set
+            {
+                if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) ||
+                    !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                    DriverHandler.CurrentConsoleDriver.ForegroundColor = value;
+                else
+                    throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+            }
         }
 
         /// <summary>
@@ -99,16 +197,38 @@ namespace KS.ConsoleBase
         /// </summary>
         public static ConsoleColor BackgroundColor
         {
-            get => DriverHandler.CurrentConsoleDriver.BackgroundColor;
-            set => DriverHandler.CurrentConsoleDriver.BackgroundColor = value;
+            get
+            {
+                if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) ||
+                    !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                    return DriverHandler.CurrentConsoleDriver.BackgroundColor;
+                else
+                    throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+            }
+
+            set
+            {
+                if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) ||
+                    !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                    DriverHandler.CurrentConsoleDriver.BackgroundColor = value;
+                else
+                    throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+            }
         }
 
         /// <summary>
         /// The cursor visibility mode
         /// </summary>
-        public static bool CursorVisible 
-        { 
-            set => DriverHandler.CurrentConsoleDriver.CursorVisible = value; 
+        public static bool CursorVisible
+        {
+            set
+            {
+                if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) ||
+                    !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                    DriverHandler.CurrentConsoleDriver.CursorVisible = value;
+                else
+                    throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+            }
         }
 
         /// <summary>
@@ -116,8 +236,23 @@ namespace KS.ConsoleBase
         /// </summary>
         public static Encoding OutputEncoding
         {
-            get => DriverHandler.CurrentConsoleDriver.OutputEncoding;
-            set => DriverHandler.CurrentConsoleDriver.OutputEncoding = value;
+            get
+            {
+                if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) ||
+                    !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                    return DriverHandler.CurrentConsoleDriver.OutputEncoding;
+                else
+                    throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+            }
+
+            set
+            {
+                if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) ||
+                    !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                    DriverHandler.CurrentConsoleDriver.OutputEncoding = value;
+                else
+                    throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+            }
         }
 
         /// <summary>
@@ -125,115 +260,219 @@ namespace KS.ConsoleBase
         /// </summary>
         public static Encoding InputEncoding
         {
-            get => DriverHandler.CurrentConsoleDriver.InputEncoding;
-            set => DriverHandler.CurrentConsoleDriver.InputEncoding = value;
+            get
+            {
+                if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) ||
+                    !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                    return DriverHandler.CurrentConsoleDriver.InputEncoding;
+                else
+                    throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+            }
+
+            set
+            {
+                if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) ||
+                    !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                    DriverHandler.CurrentConsoleDriver.InputEncoding = value;
+                else
+                    throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+            }
         }
 
         /// <summary>
         /// Whether a key is pressed
         /// </summary>
-        public static bool KeyAvailable =>
-            DriverHandler.CurrentConsoleDriver.KeyAvailable;
+        public static bool KeyAvailable
+        {
+            get
+            {
+                if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) ||
+                    !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                    return DriverHandler.CurrentConsoleDriver.KeyAvailable;
+                else
+                    throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+            }
+        }
 
         /// <summary>
         /// Clears the console screen, filling it with spaces with the selected background color.
         /// </summary>
-        public static void Clear(bool loadBack = false) =>
-            DriverHandler.CurrentConsoleDriver.Clear(loadBack);
+        public static void Clear(bool loadBack = false)
+        {
+            if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) ||
+                !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                DriverHandler.CurrentConsoleDriver.Clear(loadBack);
+            else
+                throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+        }
 
         /// <summary>
         /// Sets the cursor position
         /// </summary>
         /// <param name="left">The left to be set (from 0)</param>
         /// <param name="top">The top to be set (from 0)</param>
-        public static void SetCursorPosition(int left, int top) =>
-            DriverHandler.CurrentConsoleDriver.SetCursorPosition(left, top);
+        public static void SetCursorPosition(int left, int top)
+        {
+            if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) ||
+                !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                DriverHandler.CurrentConsoleDriver.SetCursorPosition(left, top);
+            else
+                throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+        }
 
         /// <summary>
         /// Resets console colors
         /// </summary>
-        public static void ResetColor() =>
-            DriverHandler.CurrentConsoleDriver.ResetColor();
+        public static void ResetColor()
+        {
+            if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) ||
+                !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                DriverHandler.CurrentConsoleDriver.ResetColor();
+            else
+                throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+        }
 
         /// <summary>
         /// Opens the standard input
         /// </summary>
-        public static Stream OpenStandardInput() =>
-            DriverHandler.CurrentConsoleDriver.OpenStandardInput();
+        public static Stream OpenStandardInput()
+        {
+            if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) ||
+                !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                return DriverHandler.CurrentConsoleDriver.OpenStandardInput();
+            else
+                throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+        }
 
         /// <summary>
         /// Opens the standard output
         /// </summary>
-        public static Stream OpenStandardOutput() =>
-            DriverHandler.CurrentConsoleDriver.OpenStandardOutput();
+        public static Stream OpenStandardOutput()
+        {
+            if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) ||
+                !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                return DriverHandler.CurrentConsoleDriver.OpenStandardOutput();
+            else
+                throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+        }
 
         /// <summary>
         /// Opens the standard error
         /// </summary>
-        public static Stream OpenStandardError() =>
-            DriverHandler.CurrentConsoleDriver.OpenStandardError();
+        public static Stream OpenStandardError()
+        {
+            if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) || !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                return DriverHandler.CurrentConsoleDriver.OpenStandardError();
+            else
+                throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+        }
 
         /// <summary>
         /// Sets console output
         /// </summary>
         /// <param name="newOut">New output</param>
-        public static void SetOut(TextWriter newOut) =>
-            DriverHandler.CurrentConsoleDriver.SetOut(newOut);
+        public static void SetOut(TextWriter newOut)
+        {
+            if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) || !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                DriverHandler.CurrentConsoleDriver.SetOut(newOut);
+            else
+                throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+        }
 
         /// <summary>
         /// Beeps the console
         /// </summary>
-        public static void Beep() => 
-            DriverHandler.CurrentConsoleDriver.Beep();
+        public static void Beep()
+        {
+            if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) || !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                DriverHandler.CurrentConsoleDriver.Beep();
+            else
+                throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+        }
 
         /// <summary>
         /// Reads a key
         /// </summary>
         /// <param name="intercept">Whether to intercept</param>
-        public static ConsoleKeyInfo ReadKey(bool intercept = false) =>
-            DriverHandler.CurrentConsoleDriver.ReadKey(intercept);
+        public static ConsoleKeyInfo ReadKey(bool intercept = false)
+        {
+            if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) || !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                return DriverHandler.CurrentConsoleDriver.ReadKey(intercept);
+            else
+                throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+        }
 
         /// <summary>
         /// Writes a character to console
         /// </summary>
         /// <param name="value">A character</param>
-        public static void Write(char value) =>
-            DriverHandler.CurrentConsoleDriver.Write(value);
+        public static void Write(char value)
+        {
+            if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) || !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                DriverHandler.CurrentConsoleDriver.Write(value);
+            else
+                throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+        }
 
         /// <summary>
         /// Writes text to console
         /// </summary>
         /// <param name="text">The text to write</param>
-        public static void Write(string text) =>
-            DriverHandler.CurrentConsoleDriver.Write(text);
+        public static void Write(string text)
+        {
+            if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) || !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                DriverHandler.CurrentConsoleDriver.Write(text);
+            else
+                throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+        }
 
         /// <summary>
         /// Writes text to console
         /// </summary>
         /// <param name="text">The text to write</param>
         /// <param name="args">The arguments to evaluate</param>
-        public static void Write(string text, params object[] args) =>
-            DriverHandler.CurrentConsoleDriver.Write(text, args);
+        public static void Write(string text, params object[] args)
+        {
+            if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) || !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                DriverHandler.CurrentConsoleDriver.Write(text, args);
+            else
+                throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+        }
 
         /// <summary>
         /// Writes new line to console
         /// </summary>
-        public static void WriteLine() =>
-            DriverHandler.CurrentConsoleDriver.WriteLine();
+        public static void WriteLine()
+        {
+            if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) || !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                DriverHandler.CurrentConsoleDriver.WriteLine();
+            else
+                throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+        }
 
         /// <summary>
         /// Writes text to console with line terminator
         /// </summary>
         /// <param name="text">The text to write</param>
-        public static void WriteLine(string text) =>
-            DriverHandler.CurrentConsoleDriver.WriteLine(text);
+        public static void WriteLine(string text)
+        {
+            if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) || !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                DriverHandler.CurrentConsoleDriver.WriteLine(text);
+            else
+                throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+        }
 
         /// <summary>
         /// Writes text to console with line terminator
         /// </summary>
         /// <param name="text">The text to write</param>
         /// <param name="args">The arguments to evaluate</param>
-        public static void WriteLine(string text, params object[] args) =>
-            DriverHandler.CurrentConsoleDriver.WriteLine(text, args);
+        public static void WriteLine(string text, params object[] args)
+        {
+            if ((DriverHandler.CurrentConsoleDriver.DriverPromiseRequired && DriverHandler.CurrentConsoleDriver.DriverPromiseAction.Invoke(new object[] { })) || !DriverHandler.CurrentConsoleDriver.DriverPromiseRequired)
+                DriverHandler.CurrentConsoleDriver.WriteLine(text, args);
+            else
+                throw new KernelException(KernelExceptionType.DriverPromiseBroken);
+        }
     }
 }
