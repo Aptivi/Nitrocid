@@ -24,6 +24,8 @@ using KS.ConsoleBase;
 using KS.Drivers;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
+using KS.Misc.Animations.BSOD;
+using KS.Misc.Animations.BSOD.Simulations;
 using KS.Misc.Animations.Glitch;
 using KS.Misc.Text;
 using KS.Misc.Threading;
@@ -55,10 +57,11 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverLogic()
         {
             int step;
-            int maxSteps = 19;
+            int maxSteps = 12;
             Color darkGreen = new(ConsoleColors.DarkGreen);
             Color green = new(ConsoleColors.Green);
             Color black = new(ConsoleColors.Black);
+            Color red = new(ConsoleColors.Red);
             Color white = new(ConsoleColors.White);
 
             // Start stepping
@@ -336,9 +339,115 @@ namespace KS.Misc.Screensaver.Displays
 
                             // Sleep
                             if (iteration >= maxProg - 50)
-                                ThreadManager.SleepNoBlock(5000, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                            {
+                                for (int delayed = 0; delayed < 5000; delayed += 10)
+                                {
+                                    ThreadManager.SleepNoBlock(10, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                                    if (RandomDriver.RandomChance(currentProg))
+                                        Glitch.GlitchAt();
+                                }
+                                break;
+                            }
                             else
                                 ThreadManager.SleepNoBlock(10, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        }
+                        break;
+                    case 8:
+                        // Print the big SYSTEM ERROR
+                        var s8figFont = FigletTools.GetFigletFont("Banner");
+                        int s8figWidth = FigletTools.GetFigletWidth("SYSTEM ERROR", s8figFont) / 2;
+                        int s8figHeight = FigletTools.GetFigletHeight("SYSTEM ERROR", s8figFont) / 2;
+                        int s8consoleX = (ConsoleWrapper.WindowWidth / 2) - s8figWidth;
+                        int s8consoleY = (ConsoleWrapper.WindowHeight / 2) - s8figHeight;
+                        FigletWhereColor.WriteFigletWhere("SYSTEM ERROR", s8consoleX, s8consoleY, true, s8figFont, red);
+                        for (int delayed = 0; delayed < 5000; delayed += 10)
+                        {
+                            ThreadManager.SleepNoBlock(10, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                            if (RandomDriver.RandomChance(90))
+                                Glitch.GlitchAt();
+                        }
+                        break;
+                    case 9:
+                        string SysWipeText = $"Deleting SYSTEM32...";
+                        int sysWipeTextPosX = (ConsoleWrapper.WindowWidth / 2) - (SysWipeText.Length / 2);
+                        int sysWipeTextPosY = ConsoleWrapper.WindowHeight - 8;
+                        TextWriterWhereColor.WriteWhere(SysWipeText, sysWipeTextPosX, sysWipeTextPosY, black, darkGreen);
+
+                        // Display the progress
+                        int sysWipeProgPosX = 3;
+                        int sysWipeProgPosY = ConsoleWrapper.WindowHeight - 4;
+                        int sysWipeMaxProg = 800;
+                        for (int iteration = 0; iteration < sysWipeMaxProg; iteration++)
+                        {
+                            // Some power function to make the glitches intense
+                            double currentProg = ((double)iteration / sysWipeMaxProg) * 100;
+                            ProgressBarColor.WriteProgress(currentProg, sysWipeProgPosX, sysWipeProgPosY, black, black, darkGreen);
+
+                            // Now, do the glitch
+                            Glitch.GlitchAt();
+
+                            // Sleep
+                            if (iteration >= sysWipeMaxProg - 50)
+                            {
+                                for (int delayed = 0; delayed < 1000; delayed += 10)
+                                {
+                                    ThreadManager.SleepNoBlock(10, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                                    if (RandomDriver.RandomChance(currentProg))
+                                        Glitch.GlitchAt();
+                                }
+                                break;
+                            }
+                            else
+                                ThreadManager.SleepNoBlock(10, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        }
+                        break;
+                    case 10:
+                        new WindowsXP().DisplayBugCheck(WindowsXP.BugCheckCodes.IRQL_NOT_LESS_OR_EQUAL);
+                        int width = ConsoleWrapper.CursorLeft;
+                        int height = ConsoleWrapper.CursorTop;
+                        for (int dumpIter = 0; dumpIter < 22; dumpIter++)
+                        {
+                            if (dumpIter % 10 == 0)
+                                TextWriterWhereColor.WriteWhere("{0}", width, height, dumpIter);
+                            ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        }
+                        TextWriterWhereColor.WriteWhere("Physical memory dump FAILED with status 0xC0000010", 0, height);
+                        break;
+                    case 11:
+                        for (int xIter = 0; xIter < 1000; xIter++)
+                        {
+                            int xwidth = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
+                            int xheight = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
+                            TextWriterWhereColor.WriteWhere("X", xwidth, xheight, white);
+                            ThreadManager.SleepNoBlock(10, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        }
+                        break;
+                    case 12:
+                        // Fade the console out
+                        colorSteps = 30;
+
+                        // Get the color thresholds
+                        thresholdR = white.R / (double)colorSteps;
+                        thresholdG = white.G / (double)colorSteps;
+                        thresholdB = white.B / (double)colorSteps;
+
+                        // Now, transition from target color to black
+                        for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
+                        {
+                            if (ConsoleResizeListener.WasResized(false))
+                                break;
+
+                            // Remove the values according to the threshold
+                            currentR = (int)Math.Round(white.R - thresholdR * currentStep);
+                            currentG = (int)Math.Round(white.G - thresholdG * currentStep);
+                            currentB = (int)Math.Round(white.B - thresholdB * currentStep);
+
+                            // Now, make a color and fill the console with it
+                            Color col = new(currentR, currentG, currentB);
+                            ConsoleBase.Colors.ColorTools.LoadBack(col, true);
+
+                            // Sleep
+                            ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
                         }
                         break;
                 }
