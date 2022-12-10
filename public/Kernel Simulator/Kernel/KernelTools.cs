@@ -345,12 +345,9 @@ namespace KS.Kernel
         internal static void ResetEverything()
         {
             // Reset every variable below
-            if (Flags.ArgsInjected == false)
-                ArgumentPrompt.EnteredArguments.Clear();
             GroupManagement.UserGroups.Clear();
             ReminderManager.Reminders.Clear();
             EventManager.CalendarEvents.Clear();
-            Flags.ArgsOnBoot = false;
             Flags.SafeMode = false;
             Flags.QuietKernel = false;
             Flags.Maintenance = false;
@@ -453,19 +450,6 @@ namespace KS.Kernel
                 SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("App information"), true, ColorTools.ColTypes.Stage);
                 TextWriterColor.Write("OS: " + Translate.DoTranslation("Running on {0}"), Environment.OSVersion.ToString());
                 TextWriterColor.Write("KS: " + Translate.DoTranslation("Running from GRILO?") + $" {KernelPlatform.IsRunningFromGrilo()}");
-            }
-
-            // Check arguments
-            if (Flags.ArgsOnBoot)
-            {
-                Kernel.StageTimer.Stop();
-                ArgumentPrompt.PromptArgs();
-                Kernel.StageTimer.Start();
-            }
-            if (Flags.ArgsInjected)
-            {
-                Flags.ArgsInjected = false;
-                ArgumentParse.ParseArguments(ArgumentPrompt.EnteredArguments, ArgumentType.KernelArgs);
             }
 
             // Load splash

@@ -58,12 +58,11 @@ namespace KS.Arguments.ArgumentBase
         /// Makes a new instance of the kernel argument argument info with the user-provided command text
         /// </summary>
         /// <param name="ArgumentText">Kernel argument text that the user provided</param>
-        /// <param name="ArgumentType">Kernel argument type. Consult the <see cref="ArgumentType"/> enum for information about supported shells.</param>
-        internal ProvidedArgumentArgumentsInfo(string ArgumentText, ArgumentType ArgumentType)
+        internal ProvidedArgumentArgumentsInfo(string ArgumentText)
         {
             string Argument;
             bool RequiredArgumentsProvided = true;
-            var KernelArguments = ArgumentType == ArgumentType.CommandLineArgs ? CommandLineArgs.AvailableCMDLineArgs : ArgumentParse.AvailableArgs;
+            var KernelArguments = ArgumentParse.AvailableCMDLineArgs;
 
             // Get the index of the first space (Used for step 3)
             int index = ArgumentText.IndexOf(" ");

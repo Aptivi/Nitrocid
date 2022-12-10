@@ -35,26 +35,18 @@ namespace KS.Arguments.ArgumentBase
         /// <summary>
         /// Shows the help of an argument, or argument list if nothing is specified
         /// </summary>
-        /// <param name="ArgumentType">A specified argument type</param>
-        public static void ShowArgsHelp(ArgumentType ArgumentType) => ShowArgsHelp("", ArgumentType);
+        public static void ShowArgsHelp() =>
+            ShowArgsHelp("");
 
         /// <summary>
         /// Shows the help of an argument, or argument list if nothing is specified
         /// </summary>
         /// <param name="Argument">A specified argument</param>
-        public static void ShowArgsHelp(string Argument) => ShowArgsHelp(Argument, ArgumentType.KernelArgs);
-
-        /// <summary>
-        /// Shows the help of an argument, or argument list if nothing is specified
-        /// </summary>
-        /// <param name="Argument">A specified argument</param>
-        /// <param name="ArgumentType">A specified argument type</param>
-        public static void ShowArgsHelp(string Argument, ArgumentType ArgumentType)
+        public static void ShowArgsHelp(string Argument)
         {
-            // Determine argument type
-            var ArgumentList = (ArgumentType == ArgumentType.CommandLineArgs ? CommandLineArgs.AvailableCMDLineArgs : ArgumentParse.AvailableArgs)
-                                   .OrderBy((CommandValuePair) => CommandValuePair.Key)
-                                   .ToDictionary((CommandValuePair) => CommandValuePair.Key, (CommandValuePair) => CommandValuePair.Value);
+            var ArgumentList = ArgumentParse.AvailableCMDLineArgs
+                               .OrderBy((CommandValuePair) => CommandValuePair.Key)
+                               .ToDictionary((CommandValuePair) => CommandValuePair.Key, (CommandValuePair) => CommandValuePair.Value);
 
             // Check to see if argument exists
             if (!string.IsNullOrWhiteSpace(Argument) & ArgumentList.ContainsKey(Argument))
@@ -90,8 +82,7 @@ namespace KS.Arguments.ArgumentBase
                 TextWriterColor.Write(Translate.DoTranslation("Description:") + $" {HelpDefinition}", true, ColorTools.ColTypes.ListValue);
 
                 // Extra help action for some arguments
-                if (ArgumentList[Argument].AdditionalHelpAction is not null)
-                    ArgumentList[Argument].AdditionalHelpAction.DynamicInvoke();
+                ArgumentList[Argument].AdditionalHelpAction?.DynamicInvoke();
             }
             else if (string.IsNullOrWhiteSpace(Argument))
             {

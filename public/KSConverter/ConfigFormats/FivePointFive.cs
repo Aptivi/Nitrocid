@@ -72,13 +72,6 @@ namespace KSConverter
                     else
                         Flags.Maintenance = false;
                 }
-                if (ConfigReader.Sections["General"].Keys.Contains("Prompt for Arguments on Boot"))
-                {
-                    if (ConfigReader.Sections["General"].Keys["Prompt for Arguments on Boot"].Value == "True")
-                        Flags.ArgsOnBoot = true;
-                    else
-                        Flags.ArgsOnBoot = false;
-                }
                 if (ConfigReader.Sections["General"].Keys.Contains("Check for Updates on Startup"))
                 {
                     if (ConfigReader.Sections["General"].Keys["Check for Updates on Startup"].Value == "True")

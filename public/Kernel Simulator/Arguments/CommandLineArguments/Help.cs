@@ -30,9 +30,9 @@ namespace KS.Arguments.CommandLineArguments
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            // Command-line arguments
-            TextWriterColor.Write(Translate.DoTranslation("Command-line arguments:"), true, ColorTools.ColTypes.ListTitle);
-            ArgumentHelpSystem.ShowArgsHelp(ArgumentType.CommandLineArgs);
+            // Kernel arguments
+            TextWriterColor.Write(Translate.DoTranslation("Available kernel arguments:"), true, ColorTools.ColTypes.ListTitle);
+            ArgumentHelpSystem.ShowArgsHelp();
             TextWriterColor.Write();
 
             // Either start the kernel or exit it

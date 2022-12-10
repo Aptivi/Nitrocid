@@ -105,17 +105,6 @@ namespace KSConverter
                                 Flags.Maintenance = false;
                             }
                         }
-                        else if (line.Contains("Prompt for Arguments on Boot = "))
-                        {
-                            if (line.Replace("Prompt for Arguments on Boot = ", "") == "True")
-                            {
-                                Flags.ArgsOnBoot = true;
-                            }
-                            else if (line.Replace("Prompt for Arguments on Boot = ", "") == "False")
-                            {
-                                Flags.ArgsOnBoot = false;
-                            }
-                        }
                         else if (line.Contains("Clear Screen on Log-in = "))
                         {
                             if (line.Replace("Clear Screen on Log-in = ", "") == "True")

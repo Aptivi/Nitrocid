@@ -48,7 +48,6 @@ namespace KS.Shell.Shells.UESH
             { "admin", new CommandInfo("admin", ShellType.Shell, "Administrative shell", new CommandArgumentInfo(), new AdminCommand(), CommandFlags.Strict) },
             { "alias", new CommandInfo("alias", ShellType.Shell, "Adds aliases to commands", new CommandArgumentInfo( new[] { $"<rem/add> <{string.Join("/", Enum.GetNames(typeof(ShellType)))}> <alias> <cmd>" }, true, 3, (_) => HelpUnifiedCommand.ListCmds(_)), new AliasCommand(), CommandFlags.Strict) },
             { "archive", new CommandInfo("archive", ShellType.Shell, "Opens the archive file to the archive shell", new CommandArgumentInfo(new[] { "<archivefile>" }, true, 1), new ArchiveCommand()) },
-            { "arginj", new CommandInfo("arginj", ShellType.Shell, "Injects arguments to the kernel (reboot required)", new CommandArgumentInfo(new[] { "[Arguments separated by spaces]" }, true, 1, (_) => ArgumentParse.AvailableArgs.Keys.Where((src) => src.StartsWith(_)).ToArray()), new ArgInjCommand(), CommandFlags.Strict) },
             { "beep", new CommandInfo("beep", ShellType.Shell, "Beeps from the console", new CommandArgumentInfo(), new BeepCommand()) },
             { "blockdbgdev", new CommandInfo("blockdbgdev", ShellType.Shell, "Block a debug device by IP address", new CommandArgumentInfo(new[] { "<ipaddress>" }, true, 1), new BlockDbgDevCommand(), CommandFlags.Strict) },
             { "calc", new CommandInfo("calc", ShellType.Shell, "Calculator to calculate expressions.", new CommandArgumentInfo(new[] { "<expression>" }, true, 1), new CalcCommand()) },

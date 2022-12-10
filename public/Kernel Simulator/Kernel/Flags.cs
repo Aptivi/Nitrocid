@@ -29,17 +29,9 @@ namespace KS.Kernel
         /// </summary>
         public static bool DebugMode;
         /// <summary>
-        /// A flag for checking for an argument on reboot
-        /// </summary>
-        public static bool ArgsInjected;
-        /// <summary>
         /// Maintenance Mode
         /// </summary>
         public static bool Maintenance;
-        /// <summary>
-        /// Arguments On Boot
-        /// </summary>
-        public static bool ArgsOnBoot;
         /// <summary>
         /// Clear Screen On Log-in
         /// </summary>

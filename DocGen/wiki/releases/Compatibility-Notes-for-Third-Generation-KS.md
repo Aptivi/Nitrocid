@@ -309,3 +309,14 @@ This functionality is no longer maintained.
 ##### Theme preview is no longer exclusive to theme studio
 
 The theme preview routine used to depend on the theme studio to do its job, under the name of `ThemeStudioTools.PreparePreview()`. However, because there were recent improvements to the theming system, we've finally condensed the preview routine to `ThemeTools.PreviewTheme()`. You can no longer use the old method, because it also required loading the theme information to the theme studio itself. What if it was called in a context that has no relationship with the theme studio, such as in the case of `themesel`?
+
+##### Migrated kernel arguments
+
+We used to provide two argument channels: one for the command-line kernel arguments, and one for the kernel arguments. The entry point has been provided the Args variable to get all the arguments from the command line. Since it has undergone recent improvements to the system, we've decided to remove the kernel arguments channel, so we don't have to parse the passed arguments twice.
+
+We also had to remove the arginj command, one of the commands that made appearance in first-generation versions of KS.
+
+Affected classes:
+  - ArgumentType
+  - CommandLineArgs
+  - ArgumentPrompt

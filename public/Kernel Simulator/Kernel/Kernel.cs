@@ -136,7 +136,7 @@ namespace KS.Kernel
                     DebugManager.DebugPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Debugging)), Paths.GetKernelPath(KernelPathType.Debugging));
 
                     // Check for kernel command-line arguments
-                    ArgumentParse.ParseArguments(Args.ToList(), ArgumentType.CommandLineArgs);
+                    ArgumentParse.ParseArguments(Args.ToList());
 
                     // Initialize journal path
                     JournalManager.JournalPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Journalling)), Paths.GetKernelPath(KernelPathType.Journalling));

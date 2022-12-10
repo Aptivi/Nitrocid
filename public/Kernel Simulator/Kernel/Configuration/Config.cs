@@ -235,7 +235,6 @@ namespace KS.Kernel.Configuration
             // The General Section
             var GeneralConfig = new JObject()
             {
-                { "Prompt for Arguments on Boot", Flags.ArgsOnBoot },
                 { "Maintenance Mode", Flags.Maintenance },
                 { "Check for Updates on Startup", Flags.CheckUpdateStart },
                 { "Custom Startup Banner", WelcomeMessage.CustomBanner },
@@ -1692,7 +1691,6 @@ namespace KS.Kernel.Configuration
             // General Section
             DebugWriter.WriteDebug(DebugLevel.I, "Parsing general section...");
             Flags.Maintenance = (bool)ConfigToken["General"]["Maintenance Mode"];
-            Flags.ArgsOnBoot = (bool)ConfigToken["General"]["Prompt for Arguments on Boot"];
             Flags.CheckUpdateStart = (bool)ConfigToken["General"]["Check for Updates on Startup"];
             if (!string.IsNullOrWhiteSpace((string)ConfigToken["General"]["Custom Startup Banner"]))
                 WelcomeMessage.CustomBanner = (string)ConfigToken["General"]["Custom Startup Banner"];

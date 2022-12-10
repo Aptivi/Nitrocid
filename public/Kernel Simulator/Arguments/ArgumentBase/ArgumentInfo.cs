@@ -33,10 +33,6 @@ namespace KS.Arguments.ArgumentBase
         /// </summary>
         public string Argument { get; private set; }
         /// <summary>
-        /// The type of argument
-        /// </summary>
-        public ArgumentType Type { get; private set; }
-        /// <summary>
         /// The untranslated help definition of argument. Translated by <see cref="GetTranslatedHelpEntry()"/>
         /// </summary>
         public string HelpDefinition { get; set; }
@@ -61,16 +57,14 @@ namespace KS.Arguments.ArgumentBase
         /// Installs a new instance of argument info class
         /// </summary>
         /// <param name="Argument">Argument</param>
-        /// <param name="Type">Argument type</param>
         /// <param name="HelpDefinition">Argument help definition</param>
         /// <param name="ArgArgumentInfo">Argument info</param>
         /// <param name="ArgumentBase">Kernel argument base for execution</param>
         /// <param name="Obsolete">Is the command obsolete?</param>
         /// <param name="AdditionalHelpAction">An extra help action intended to show extra information</param>
-        public ArgumentInfo(string Argument, ArgumentType Type, string HelpDefinition, CommandArgumentInfo ArgArgumentInfo, ArgumentExecutor ArgumentBase, bool Obsolete = false, Action AdditionalHelpAction = null)
+        public ArgumentInfo(string Argument, string HelpDefinition, CommandArgumentInfo ArgArgumentInfo, ArgumentExecutor ArgumentBase, bool Obsolete = false, Action AdditionalHelpAction = null)
         {
             this.Argument = Argument;
-            this.Type = Type;
             this.HelpDefinition = HelpDefinition;
             this.ArgArgumentInfo = ArgArgumentInfo;
             this.ArgumentBase = ArgumentBase;

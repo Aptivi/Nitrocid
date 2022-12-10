@@ -4,10 +4,6 @@
       "commandName": "Project",
       "commandLineArgs": "debug"
     },
-    "KS - Args": {
-      "commandName": "Project",
-      "commandLineArgs": "args"
-    },
     "KS - Reset": {
       "commandName": "Project",
       "commandLineArgs": "reset"
@@ -58,6 +54,18 @@
     "KS - new config reader and writer [Console Debug]": {
       "commandName": "Project",
       "commandLineArgs": "newreader newwriter debug terminaldebug"
+    },
+    "KS - quiet": {
+      "commandName": "Project",
+      "commandLineArgs": "quiet"
+    },
+    "KS - safe": {
+      "commandName": "Project",
+      "commandLineArgs": "safe"
+    },
+    "KS - maintenance": {
+      "commandName": "Project",
+      "commandLineArgs": "maintenance"
     }
   }
 }

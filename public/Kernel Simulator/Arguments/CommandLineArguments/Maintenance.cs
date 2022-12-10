@@ -19,12 +19,12 @@
 using KS.Arguments.ArgumentBase;
 using KS.Kernel;
 
-namespace KS.Arguments.KernelArguments
+namespace KS.Arguments.CommandLineArguments
 {
-    class SafeArgument : ArgumentExecutor, IArgument
+    class MaintenanceArgument : ArgumentExecutor, IArgument
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Flags.SafeMode = true;
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Flags.Maintenance = true;
 
     }
 }

@@ -37,7 +37,7 @@ namespace KSTests.ArgumentTests
         public void TestInitializeArgumentInfoInstanceFromCommandLineArg()
         {
             // Create instance
-            var ArgumentInstance = new ArgumentInfo("help", ArgumentType.CommandLineArgs, "Help page", new CommandArgumentInfo(), null);
+            var ArgumentInstance = new ArgumentInfo("help", "Help page", new CommandArgumentInfo(), null);
 
             // Check for null
             ArgumentInstance.ShouldNotBeNull();
@@ -50,7 +50,6 @@ namespace KSTests.ArgumentTests
             ArgumentInstance.HelpDefinition.ShouldBe("Help page");
             ArgumentInstance.ArgArgumentInfo.MinimumArguments.ShouldBe(0);
             ArgumentInstance.Obsolete.ShouldBeFalse();
-            ArgumentInstance.Type.ShouldBe(ArgumentType.CommandLineArgs);
         }
 
         /// <summary>

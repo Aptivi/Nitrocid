@@ -16,20 +16,15 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-namespace KS.Arguments.ArgumentBase
+using KS.Arguments.ArgumentBase;
+using KS.Kernel;
+
+namespace KS.Arguments.CommandLineArguments
 {
-    /// <summary>
-    /// Argument type enumeration
-    /// </summary>
-    public enum ArgumentType
+    class SafeArgument : ArgumentExecutor, IArgument
     {
-        /// <summary>
-        /// Kernel arguments
-        /// </summary>
-        KernelArgs,
-        /// <summary>
-        /// Command line arguments
-        /// </summary>
-        CommandLineArgs
+
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Flags.SafeMode = true;
+
     }
 }

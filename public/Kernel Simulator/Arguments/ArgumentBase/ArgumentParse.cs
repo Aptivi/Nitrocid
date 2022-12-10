@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Arguments.KernelArguments;
+using KS.Arguments.CommandLineArguments;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -34,28 +34,34 @@ namespace KS.Arguments.ArgumentBase
     {
 
         /// <summary>
-        /// Lists all available arguments
+        /// Available command line arguments
         /// </summary>
-        public readonly static Dictionary<string, ArgumentInfo> AvailableArgs = new()
+        public readonly static Dictionary<string, ArgumentInfo> AvailableCMDLineArgs = new()
         {
-            { "quiet", new ArgumentInfo("quiet", ArgumentType.KernelArgs, "Starts the kernel quietly", new CommandArgumentInfo(), new QuietArgument()) },
-            { "maintenance", new ArgumentInfo("maintenance", ArgumentType.KernelArgs, "Like safe mode, but also disables multi-user and some customization", new CommandArgumentInfo(), new MaintenanceArgument()) },
-            { "safe", new ArgumentInfo("safe", ArgumentType.KernelArgs, "Starts the kernel in safe mode, disabling all mods", new CommandArgumentInfo(), new SafeArgument()) },
-            { "testInteractive", new ArgumentInfo("testInteractive", ArgumentType.KernelArgs, "Opens a test shell", new CommandArgumentInfo(), new TestInteractiveArgument()) }
+            { "quiet", new ArgumentInfo("quiet", "Starts the kernel quietly", new CommandArgumentInfo(), new QuietArgument()) },
+            { "maintenance", new ArgumentInfo("maintenance", "Like safe mode, but also disables multi-user and some customization", new CommandArgumentInfo(), new MaintenanceArgument()) },
+            { "safe", new ArgumentInfo("safe", "Starts the kernel in safe mode, disabling all mods", new CommandArgumentInfo(), new SafeArgument()) },
+            { "testInteractive", new ArgumentInfo("testInteractive", "Opens a test shell", new CommandArgumentInfo(), new CommandLine_TestInteractiveArgument()) },
+            { "debug", new ArgumentInfo("debug", "Enables debug mode", new CommandArgumentInfo(), new CommandLine_DebugArgument()) },
+            { "terminaldebug", new ArgumentInfo("terminaldebug", "Enables terminal debug mode", new CommandArgumentInfo(), new CommandLine_TerminalDebugArgument()) },
+            { "reset", new ArgumentInfo("reset", "Resets the kernel to the factory settings", new CommandArgumentInfo(), new CommandLine_ResetArgument()) },
+            { "newreader", new ArgumentInfo("newreader", "Opts in to new config reader", new CommandArgumentInfo(), new CommandLine_NewReaderArgument()) },
+            { "newwriter", new ArgumentInfo("newwriter", "Opts in to new config writer", new CommandArgumentInfo(), new CommandLine_NewWriterArgument()) },
+            { "newconfigpaths", new ArgumentInfo("newconfigpaths", "Opts in to new config paths", new CommandArgumentInfo(), new CommandLine_NewPathsArgument()) },
+            { "bypasssizedetection", new ArgumentInfo("bypasssizedetection", "Bypasses the console size detection", new CommandArgumentInfo(), new CommandLine_BypassSizeDetectionArgument()) },
+            { "help", new ArgumentInfo("help", "Help page", new CommandArgumentInfo(), new CommandLine_HelpArgument()) }
         };
 
         /// <summary>
         /// Parses specified arguments
         /// </summary>
         /// <param name="ArgumentsInput">Input Arguments</param>
-        /// <param name="ArgumentType">Argument type</param>
-        public static void ParseArguments(List<string> ArgumentsInput, ArgumentType ArgumentType)
+        public static void ParseArguments(List<string> ArgumentsInput)
         {
             // Check for the arguments written by the user
             try
             {
-                // Select the argument dictionary
-                var Arguments = ArgumentType == ArgumentType.CommandLineArgs ? CommandLineArgs.AvailableCMDLineArgs : AvailableArgs;
+                var Arguments = AvailableCMDLineArgs;
 
                 // Parse them now
                 for (int i = 0; i <= ArgumentsInput.Count - 1; i++)
@@ -64,7 +70,7 @@ namespace KS.Arguments.ArgumentBase
                     if (Arguments.ContainsKey(Argument))
                     {
                         // Variables
-                        var ArgumentInfo = new ProvidedArgumentArgumentsInfo(Argument, ArgumentType);
+                        var ArgumentInfo = new ProvidedArgumentArgumentsInfo(Argument);
                         var Args = ArgumentInfo.ArgumentsList;
                         var Switches = ArgumentInfo.SwitchesList;
                         string strArgs = ArgumentInfo.ArgumentsText;

@@ -19,7 +19,7 @@
 using KS.Arguments.ArgumentBase;
 using KS.Kernel;
 
-namespace KS.Arguments.KernelArguments
+namespace KS.Arguments.CommandLineArguments
 {
     class QuietArgument : ArgumentExecutor, IArgument
     {

@@ -5,12 +5,6 @@
         "DisplayAs": "General kernel settings",
         "Keys": [
             {
-                "Name": "Prompt for Arguments on Boot",
-                "Type": "SBoolean",
-                "Variable": "ArgsOnBoot",
-                "Description": "Sets up the kernel so it prompts you for argument on boot."
-            },
-            {
                 "Name": "Maintenance Mode",
                 "Type": "SBoolean",
                 "Variable": "Maintenance",
