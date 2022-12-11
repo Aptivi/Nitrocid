@@ -68,8 +68,8 @@ namespace KSTests.KernelTests
         public void TestSetConfigValueAndWriteStandard()
         {
             var Token = ConfigTools.GetConfigCategory(ConfigCategory.General);
-            ConfigTools.SetConfigValue(ConfigCategory.General, Token, "Prompt for Arguments on Boot", true);
-            Token["Prompt for Arguments on Boot"].ToObject<bool>().ShouldBeTrue();
+            ConfigTools.SetConfigValue(ConfigCategory.General, Token, "Check for Updates on Startup", false);
+            Token["Check for Updates on Startup"].ToObject<bool>().ShouldBeFalse();
         }
 
         /// <summary>
