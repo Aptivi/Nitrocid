@@ -350,7 +350,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="BackgroundColor">The progress bar background color</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteProgress(double Progress, int Left, int Top, ConsoleColors ProgressColor, ConsoleColors FrameColor, ConsoleColors BackgroundColor, bool DrawBorder = true) =>
-            WriteProgress(Progress, Left, Top, 10, 0, ProgressColor, FrameColor, ConsoleColors.Black, DrawBorder);
+            WriteProgress(Progress, Left, Top, 10, 0, ProgressColor, FrameColor, BackgroundColor, DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -364,7 +364,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="WidthOffset">Width offset</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteProgress(double Progress, int Left, int Top, int WidthOffset, ConsoleColors ProgressColor, ConsoleColors FrameColor, ConsoleColors BackgroundColor, bool DrawBorder = true) =>
-            WriteProgress(Progress, Left, Top, WidthOffset, 0, ProgressColor, FrameColor, ConsoleColors.Black, DrawBorder);
+            WriteProgress(Progress, Left, Top, WidthOffset, 0, ProgressColor, FrameColor, BackgroundColor, DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
