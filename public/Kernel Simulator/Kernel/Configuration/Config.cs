@@ -242,7 +242,6 @@ namespace KS.Kernel.Configuration
                 { "Language", JObject.FromObject(LanguageManager.CurrentLanguage) },
                 { "Culture", CultureManager.CurrentCult.Name },
                 { "Show app information during boot", Flags.ShowAppInfoOnBoot },
-                { "Parse command-line arguments", Flags.ParseCommandLineArguments },
                 { "Show stage finish times", Flags.ShowStageFinishTimes },
                 { "Start kernel modifications on boot", Flags.StartKernelMods },
                 { "Show current time before login", Flags.ShowCurrentTimeBeforeLogin },
@@ -1695,7 +1694,6 @@ namespace KS.Kernel.Configuration
             if (!string.IsNullOrWhiteSpace((string)ConfigToken["General"]["Custom Startup Banner"]))
                 WelcomeMessage.CustomBanner = (string)ConfigToken["General"]["Custom Startup Banner"];
             Flags.ShowAppInfoOnBoot = (bool)ConfigToken["General"]["Show app information during boot"];
-            Flags.ParseCommandLineArguments = (bool)ConfigToken["General"]["Parse command-line arguments"];
             Flags.ShowStageFinishTimes = (bool)ConfigToken["General"]["Show stage finish times"];
             Flags.StartKernelMods = (bool)ConfigToken["General"]["Start kernel modifications on boot"];
             Flags.ShowCurrentTimeBeforeLogin = (bool)ConfigToken["General"]["Show current time before login"];

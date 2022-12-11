@@ -52,12 +52,6 @@
                 "Description": "Shows brief information about the application on boot."
             },
             {
-                "Name": "Parse command-line arguments",
-                "Type": "SBoolean",
-                "Variable": "ParseCommandLineArguments",
-                "Description": "Parses the command-line arguments on boot."
-            },
-            {
                 "Name": "Show stage finish times",
                 "Type": "SBoolean",
                 "Variable": "ShowStageFinishTimes",

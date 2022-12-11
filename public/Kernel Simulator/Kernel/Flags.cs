@@ -149,10 +149,6 @@ namespace KS.Kernel
         /// </summary>
         public static bool ShowAppInfoOnBoot = true;
         /// <summary>
-        /// Whether to parse the command-line arguments on boot
-        /// </summary>
-        public static bool ParseCommandLineArguments = true;
-        /// <summary>
         /// Show how much time a stage took on boot
         /// </summary>
         public static bool ShowStageFinishTimes;
