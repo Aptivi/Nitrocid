@@ -91,7 +91,7 @@ namespace KS.Kernel.Configuration
         /// <summary>
         /// Fallback configuration
         /// </summary>
-        internal readonly static JObject PristineConfigToken = GetNewConfigObject();
+        internal readonly static JObject PristineConfigToken = GetNewConfigObjectNew();
 
         /// <summary>
         /// Creates a new JSON object containing the kernel settings of all kinds
