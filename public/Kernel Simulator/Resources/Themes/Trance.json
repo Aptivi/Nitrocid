@@ -1,6 +1,6 @@
 {
     "Metadata": {
-        "Name": "Bluespire",
+        "Name": "Trance",
         "TrueColorRequired": false
     },
     "InputColor": "14",
@@ -9,7 +9,7 @@
     "UncontKernelErrorColor": "12",
     "HostNameShellColor": "12",
     "UserNameShellColor": "12",
-    "BackgroundColor": "6",
+    "BackgroundColor": "0",
     "NeutralTextColor": "14",
     "ListEntryColor": "14",
     "ListValueColor": "12",

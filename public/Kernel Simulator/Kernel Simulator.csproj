@@ -287,7 +287,6 @@
     <None Include="Resources\Themes\3Y-Diamond.json" />
     <None Include="Resources\Themes\BedOS.json" />
     <None Include="Resources\Themes\BlackOnWhite.json" />
-    <None Include="Resources\Themes\Bluespire.json" />
     <None Include="Resources\Themes\Debian.json" />
     <None Include="Resources\Themes\Default.json" />
     <None Include="Resources\Themes\GrayOnYellow.json" />
