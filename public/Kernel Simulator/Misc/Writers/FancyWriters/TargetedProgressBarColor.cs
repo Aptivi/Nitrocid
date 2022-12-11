@@ -42,18 +42,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Left">The progress position from the upper left corner</param>
         /// <param name="Top">The progress position from the top</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteProgressTargetedPlain(double Progress, int Left, int Top, bool DrawBorder = true)
-        {
-            try
-            {
-                WriteProgressTargetedPlain(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, DrawBorder);
-            }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
-            {
-                DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
-            }
-        }
+        public static void WriteProgressTargetedPlain(double Progress, int Left, int Top, bool DrawBorder = true) =>
+            WriteProgressTargetedPlain(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -92,18 +82,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Left">The progress position from the upper left corner</param>
         /// <param name="Top">The progress position from the top</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteProgressTargeted(double Progress, int Left, int Top, bool DrawBorder = true)
-        {
-            try
-            {
-                WriteProgressTargeted(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, ColorTools.ColTypes.Progress, ColorTools.ColTypes.Gray, DrawBorder);
-            }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
-            {
-                DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
-            }
-        }
+        public static void WriteProgressTargeted(double Progress, int Left, int Top, bool DrawBorder = true) =>
+            WriteProgressTargeted(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, ColorTools.ColTypes.Progress, ColorTools.ColTypes.Gray, DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -113,18 +93,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Top">The progress position from the top</param>
         /// <param name="ProgressWidth">Width of the progress bar</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteProgressTargeted(double Progress, int Left, int Top, int ProgressWidth, bool DrawBorder = true)
-        {
-            try
-            {
-                WriteProgressTargeted(Progress, Left, Top, ProgressWidth, ColorTools.ColTypes.Progress, ColorTools.ColTypes.Gray, DrawBorder);
-            }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
-            {
-                DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
-            }
-        }
+        public static void WriteProgressTargeted(double Progress, int Left, int Top, int ProgressWidth, bool DrawBorder = true) =>
+            WriteProgressTargeted(Progress, Left, Top, ProgressWidth, ColorTools.ColTypes.Progress, ColorTools.ColTypes.Gray, DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -134,18 +104,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Top">The progress position from the top</param>
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteProgressTargeted(double Progress, int Left, int Top, ConsoleColors ProgressColor, bool DrawBorder = true)
-        {
-            try
-            {
-                WriteProgressTargeted(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, new Color(Convert.ToInt32(ProgressColor)), ColorTools.GetGray(), DrawBorder);
-            }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
-            {
-                DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
-            }
-        }
+        public static void WriteProgressTargeted(double Progress, int Left, int Top, ConsoleColors ProgressColor, bool DrawBorder = true) =>
+            WriteProgressTargeted(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, new Color(Convert.ToInt32(ProgressColor)), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -156,18 +116,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="ProgressWidth">Width of the progress bar</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteProgressTargeted(double Progress, int Left, int Top, int ProgressWidth, ConsoleColors ProgressColor, bool DrawBorder = true)
-        {
-            try
-            {
-                WriteProgressTargeted(Progress, Left, Top, ProgressWidth, new Color(Convert.ToInt32(ProgressColor)), ColorTools.GetGray(), DrawBorder);
-            }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
-            {
-                DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
-            }
-        }
+        public static void WriteProgressTargeted(double Progress, int Left, int Top, int ProgressWidth, ConsoleColors ProgressColor, bool DrawBorder = true) =>
+            WriteProgressTargeted(Progress, Left, Top, ProgressWidth, new Color(Convert.ToInt32(ProgressColor)), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -178,18 +128,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="FrameColor">The progress bar frame color</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteProgressTargeted(double Progress, int Left, int Top, ConsoleColors ProgressColor, ConsoleColors FrameColor, bool DrawBorder = true)
-        {
-            try
-            {
-                WriteProgressTargeted(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, ProgressColor, FrameColor, DrawBorder);
-            }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
-            {
-                DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
-            }
-        }
+        public static void WriteProgressTargeted(double Progress, int Left, int Top, ConsoleColors ProgressColor, ConsoleColors FrameColor, bool DrawBorder = true) =>
+            WriteProgressTargeted(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, ProgressColor, FrameColor, DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -232,18 +172,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Top">The progress position from the top</param>
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteProgressTargeted(double Progress, int Left, int Top, ColorTools.ColTypes ProgressColor, bool DrawBorder = true)
-        {
-            try
-            {
-                WriteProgressTargeted(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, ProgressColor, ColorTools.ColTypes.Gray, DrawBorder);
-            }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
-            {
-                DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
-            }
-        }
+        public static void WriteProgressTargeted(double Progress, int Left, int Top, ColorTools.ColTypes ProgressColor, bool DrawBorder = true) =>
+            WriteProgressTargeted(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, ProgressColor, ColorTools.ColTypes.Gray, DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -254,18 +184,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="ProgressWidth">Width of the progress bar</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteProgressTargeted(double Progress, int Left, int Top, int ProgressWidth, ColorTools.ColTypes ProgressColor, bool DrawBorder = true)
-        {
-            try
-            {
-                WriteProgressTargeted(Progress, Left, Top, ProgressWidth, ProgressColor, ColorTools.ColTypes.Gray, DrawBorder);
-            }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
-            {
-                DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
-            }
-        }
+        public static void WriteProgressTargeted(double Progress, int Left, int Top, int ProgressWidth, ColorTools.ColTypes ProgressColor, bool DrawBorder = true) =>
+            WriteProgressTargeted(Progress, Left, Top, ProgressWidth, ProgressColor, ColorTools.ColTypes.Gray, DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -276,18 +196,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="FrameColor">The progress bar frame color</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteProgressTargeted(double Progress, int Left, int Top, ColorTools.ColTypes ProgressColor, ColorTools.ColTypes FrameColor, bool DrawBorder = true)
-        {
-            try
-            {
-                WriteProgressTargeted(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, ProgressColor, FrameColor, DrawBorder);
-            }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
-            {
-                DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
-            }
-        }
+        public static void WriteProgressTargeted(double Progress, int Left, int Top, ColorTools.ColTypes ProgressColor, ColorTools.ColTypes FrameColor, bool DrawBorder = true) =>
+            WriteProgressTargeted(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, ProgressColor, FrameColor, DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -330,18 +240,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Top">The progress position from the top</param>
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteProgressTargeted(double Progress, int Left, int Top, Color ProgressColor, bool DrawBorder = true)
-        {
-            try
-            {
-                WriteProgressTargeted(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, ProgressColor, ColorTools.GetGray(), DrawBorder);
-            }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
-            {
-                DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
-            }
-        }
+        public static void WriteProgressTargeted(double Progress, int Left, int Top, Color ProgressColor, bool DrawBorder = true) =>
+            WriteProgressTargeted(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, ProgressColor, ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -352,18 +252,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="ProgressWidth">Width of the progress bar</param>
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteProgressTargeted(double Progress, int Left, int Top, int ProgressWidth, Color ProgressColor, bool DrawBorder = true)
-        {
-            try
-            {
-                WriteProgressTargeted(Progress, Left, Top, ProgressWidth, ProgressColor, ColorTools.GetGray(), DrawBorder);
-            }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
-            {
-                DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
-            }
-        }
+        public static void WriteProgressTargeted(double Progress, int Left, int Top, int ProgressWidth, Color ProgressColor, bool DrawBorder = true) =>
+            WriteProgressTargeted(Progress, Left, Top, ProgressWidth, ProgressColor, ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -374,18 +264,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="FrameColor">The progress bar frame color</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteProgressTargeted(double Progress, int Left, int Top, Color ProgressColor, Color FrameColor, bool DrawBorder = true)
-        {
-            try
-            {
-                WriteProgressTargeted(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, ProgressColor, FrameColor, DrawBorder);
-            }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
-            {
-                DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
-            }
-        }
+        public static void WriteProgressTargeted(double Progress, int Left, int Top, Color ProgressColor, Color FrameColor, bool DrawBorder = true) =>
+            WriteProgressTargeted(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, ProgressColor, FrameColor, DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
