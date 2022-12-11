@@ -65,7 +65,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         /// <param name="LeftWidthOffset">Width offset from the left</param>
         /// <param name="RightWidthOffset">Width offset from the right</param>
-        public static void WriteProgressPlain(double Progress, int Left, int Top, int LeftWidthOffset, int RightWidthOffset, bool DrawBorder = true)
+        /// <param name="Targeted">Targeted percentage?</param>
+        public static void WriteProgressPlain(double Progress, int Left, int Top, int LeftWidthOffset, int RightWidthOffset, bool DrawBorder = true, bool Targeted = false)
         {
             try
             {
@@ -81,7 +82,10 @@ namespace KS.Misc.Writers.FancyWriters
                 }
 
                 // Draw the progress bar
-                TextWriterWhereColor.WriteWhere("*".Repeat(ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset)), Left + 1, Top + 1, true);
+                int times = Targeted ?
+                    ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, FinalWidthOffset) : 
+                    ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset);
+                TextWriterWhereColor.WriteWhere("*".Repeat(times), Left + 1, Top + 1, true);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -237,7 +241,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="LeftWidthOffset">Width offset from the left</param>
         /// <param name="RightWidthOffset">Width offset from the right</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteProgress(double Progress, int Left, int Top, int LeftWidthOffset, int RightWidthOffset, ColorTools.ColTypes ProgressColor, ColorTools.ColTypes FrameColor, ColorTools.ColTypes BackgroundColor, bool DrawBorder = true)
+        /// <param name="Targeted">Targeted percentage?</param>
+        public static void WriteProgress(double Progress, int Left, int Top, int LeftWidthOffset, int RightWidthOffset, ColorTools.ColTypes ProgressColor, ColorTools.ColTypes FrameColor, ColorTools.ColTypes BackgroundColor, bool DrawBorder = true, bool Targeted = false)
         {
             try
             {
@@ -253,8 +258,11 @@ namespace KS.Misc.Writers.FancyWriters
                 }
 
                 // Draw the progress bar
+                int times = Targeted ?
+                            ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, FinalWidthOffset) :
+                            ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset);
                 ColorTools.SetConsoleColor(ProgressColor, true, true);
-                TextWriterWhereColor.WriteWhere(" ".Repeat(ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset)), Left + 1, Top + 1, true);
+                TextWriterWhereColor.WriteWhere(" ".Repeat(times), Left + 1, Top + 1, true);
                 ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
@@ -378,7 +386,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="LeftWidthOffset">Width offset from the left</param>
         /// <param name="RightWidthOffset">Width offset from the right</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteProgress(double Progress, int Left, int Top, int LeftWidthOffset, int RightWidthOffset, ConsoleColors ProgressColor, ConsoleColors FrameColor, ConsoleColors BackgroundColor, bool DrawBorder = true)
+        /// <param name="Targeted">Targeted percentage?</param>
+        public static void WriteProgress(double Progress, int Left, int Top, int LeftWidthOffset, int RightWidthOffset, ConsoleColors ProgressColor, ConsoleColors FrameColor, ConsoleColors BackgroundColor, bool DrawBorder = true, bool Targeted = false)
         {
             try
             {
@@ -394,8 +403,11 @@ namespace KS.Misc.Writers.FancyWriters
                 }
 
                 // Draw the progress bar
+                int times = Targeted ?
+                            ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, FinalWidthOffset) :
+                            ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset);
                 ColorTools.SetConsoleColor(new Color(Convert.ToInt32(ProgressColor)), true, true);
-                TextWriterWhereColor.WriteWhere(" ".Repeat(ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset)), Left + 1, Top + 1, true);
+                TextWriterWhereColor.WriteWhere(" ".Repeat(times), Left + 1, Top + 1, true);
                 ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
@@ -519,7 +531,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="LeftWidthOffset">Width offset from the left</param>
         /// <param name="RightWidthOffset">Width offset from the right</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteProgress(double Progress, int Left, int Top, int LeftWidthOffset, int RightWidthOffset, Color ProgressColor, Color FrameColor, Color BackgroundColor, bool DrawBorder = true)
+        /// <param name="Targeted">Targeted percentage?</param>
+        public static void WriteProgress(double Progress, int Left, int Top, int LeftWidthOffset, int RightWidthOffset, Color ProgressColor, Color FrameColor, Color BackgroundColor, bool DrawBorder = true, bool Targeted = false)
         {
             try
             {
@@ -535,8 +548,11 @@ namespace KS.Misc.Writers.FancyWriters
                 }
 
                 // Draw the progress bar
+                int times = Targeted ?
+                            ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, FinalWidthOffset) :
+                            ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset);
                 ColorTools.SetConsoleColor(ProgressColor, true, true);
-                TextWriterWhereColor.WriteWhere(" ".Repeat(ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset)), Left + 1, Top + 1, true);
+                TextWriterWhereColor.WriteWhere(" ".Repeat(times), Left + 1, Top + 1, true);
                 ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))

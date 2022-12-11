@@ -252,7 +252,7 @@ namespace KS.Misc.Notifications
                                     TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", ConsoleBase.ConsoleWrapper.WindowWidth - 40, ConsoleBase.ConsoleWrapper.WindowTop, true, ColorTools.ColTypes.NeutralText);
                                     TextWriterWhereColor.WriteWhere(ProgressTitle + Convert.ToString(CharManager.GetEsc()) + "[0K", ConsoleBase.ConsoleWrapper.WindowWidth - 40, ConsoleBase.ConsoleWrapper.WindowTop + 1, true, NotifyTitleColor, NewNotification.Progress);
                                     TextWriterWhereColor.WriteWhere(Desc + Convert.ToString(CharManager.GetEsc()) + "[0K", ConsoleBase.ConsoleWrapper.WindowWidth - 40, ConsoleBase.ConsoleWrapper.WindowTop + 2, true, NotifyDescColor);
-                                    TargetedProgressBarColor.WriteProgressTargeted(NewNotification.Progress, ConsoleBase.ConsoleWrapper.WindowWidth - 40, ConsoleBase.ConsoleWrapper.WindowTop + 3, 36, NotifyProgressColor, NotifyBorderColor, Flags.DrawBorderNotification);
+                                    ProgressBarColor.WriteProgress(NewNotification.Progress, ConsoleBase.ConsoleWrapper.WindowWidth - 40, ConsoleBase.ConsoleWrapper.WindowTop + 3, 36, 0, NotifyProgressColor, NotifyBorderColor, ColorTools.GetColor(ColorTools.ColTypes.Background), Flags.DrawBorderNotification, true);
                                     Thread.Sleep(1);
                                     if (NewNotification.ProgressFailed)
                                         TextWriterWhereColor.WriteWhere(ProgressTitle + Convert.ToString(CharManager.GetEsc()) + "[0K", ConsoleBase.ConsoleWrapper.WindowWidth - 40, ConsoleBase.ConsoleWrapper.WindowTop + 1, true, NotifyProgressFailureColor, NewNotification.Progress);
