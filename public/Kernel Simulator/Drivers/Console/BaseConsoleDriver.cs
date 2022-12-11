@@ -373,7 +373,7 @@ namespace KS.Drivers.Console.Consoles
                     if (!Line)
                         ConsoleWrapper.SetCursorPosition(FilteredLeft, FilteredTop);
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
                     DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -413,7 +413,7 @@ namespace KS.Drivers.Console.Consoles
                         ConsoleWrapper.WriteLine();
                     }
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
                     DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -485,7 +485,7 @@ namespace KS.Drivers.Console.Consoles
                     if (Return)
                         ConsoleWrapper.SetCursorPosition(OldLeft, OldTop);
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
                     DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -544,7 +544,7 @@ namespace KS.Drivers.Console.Consoles
                     if (Return)
                         ConsoleWrapper.SetCursorPosition(OldLeft, OldTop);
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
                     DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -581,7 +581,7 @@ namespace KS.Drivers.Console.Consoles
                     if (Line)
                         ConsoleWrapper.WriteLine();
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
                     DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);

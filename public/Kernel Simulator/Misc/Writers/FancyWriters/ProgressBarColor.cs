@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Threading;
 using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase;
@@ -47,7 +48,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 WriteProgressPlain(Progress, Left, Top, 10, 0, DrawBorder);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -68,7 +69,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 WriteProgressPlain(Progress, Left, Top, WidthOffset, 0, DrawBorder);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -102,7 +103,7 @@ namespace KS.Misc.Writers.FancyWriters
                 // Draw the progress bar
                 TextWriterWhereColor.WriteWhere("*".Repeat(ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset)), Left + 1, Top + 1, true);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -122,7 +123,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 WriteProgress(Progress, Left, Top, 10, 0, ColorTools.ColTypes.Progress, ColorTools.ColTypes.Gray, DrawBorder);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -143,7 +144,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 WriteProgress(Progress, Left, Top, WidthOffset, 0, ColorTools.ColTypes.Progress, ColorTools.ColTypes.Gray, DrawBorder);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -165,7 +166,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 WriteProgress(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, ColorTools.ColTypes.Progress, ColorTools.ColTypes.Gray, DrawBorder);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -186,7 +187,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 WriteProgress(Progress, Left, Top, 10, 0, ProgressColor, ColorTools.ColTypes.Gray, DrawBorder);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -208,7 +209,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 WriteProgress(Progress, Left, Top, WidthOffset, 0, ProgressColor, ColorTools.ColTypes.Gray, DrawBorder);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -231,7 +232,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 WriteProgress(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, ProgressColor, ColorTools.ColTypes.Gray, DrawBorder);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -253,7 +254,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 WriteProgress(Progress, Left, Top, 10, 0, ProgressColor, FrameColor, DrawBorder);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -276,7 +277,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 WriteProgress(Progress, Left, Top, WidthOffset, 0, ProgressColor, FrameColor, DrawBorder);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -300,7 +301,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 WriteProgress(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, ProgressColor, FrameColor, ColorTools.ColTypes.Background, DrawBorder);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -323,7 +324,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 WriteProgress(Progress, Left, Top, 10, 0, ProgressColor, FrameColor, BackgroundColor, DrawBorder);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -347,7 +348,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 WriteProgress(Progress, Left, Top, WidthOffset, 0, ProgressColor, FrameColor, BackgroundColor, DrawBorder);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -386,7 +387,7 @@ namespace KS.Misc.Writers.FancyWriters
                 TextWriterWhereColor.WriteWhere(" ".Repeat(ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset)), Left + 1, Top + 1, true);
                 ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -407,7 +408,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 WriteProgress(Progress, Left, Top, 10, 0, new Color(Convert.ToInt32(ProgressColor)), ColorTools.GetGray(), DrawBorder);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -429,7 +430,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 WriteProgress(Progress, Left, Top, WidthOffset, 0, new Color(Convert.ToInt32(ProgressColor)), ColorTools.GetGray(), DrawBorder);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -452,7 +453,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 WriteProgress(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, new Color(Convert.ToInt32(ProgressColor)), ColorTools.GetGray(), DrawBorder);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -474,7 +475,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 WriteProgress(Progress, Left, Top, 10, 0, ProgressColor, FrameColor, DrawBorder);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -497,7 +498,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 WriteProgress(Progress, Left, Top, WidthOffset, 0, ProgressColor, FrameColor, DrawBorder);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -521,7 +522,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 WriteProgress(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, ProgressColor, FrameColor, ConsoleColors.Black, DrawBorder);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -544,7 +545,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 WriteProgress(Progress, Left, Top, 10, 0, ProgressColor, FrameColor, ConsoleColors.Black, DrawBorder);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -568,7 +569,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 WriteProgress(Progress, Left, Top, WidthOffset, 0, ProgressColor, FrameColor, ConsoleColors.Black, DrawBorder);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -607,7 +608,7 @@ namespace KS.Misc.Writers.FancyWriters
                 TextWriterWhereColor.WriteWhere(" ".Repeat(ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset)), Left + 1, Top + 1, true);
                 ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -628,7 +629,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 WriteProgress(Progress, Left, Top, 10, 0, ProgressColor, ColorTools.GetGray(), DrawBorder);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -650,7 +651,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 WriteProgress(Progress, Left, Top, WidthOffset, 0, ProgressColor, ColorTools.GetGray(), DrawBorder);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -673,7 +674,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 WriteProgress(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, ProgressColor, ColorTools.GetGray(), DrawBorder);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -695,7 +696,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 WriteProgress(Progress, Left, Top, 10, 0, ProgressColor, FrameColor, DrawBorder);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -718,7 +719,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 WriteProgress(Progress, Left, Top, WidthOffset, 0, ProgressColor, FrameColor, DrawBorder);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -742,7 +743,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 WriteProgress(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, ProgressColor, FrameColor, ColorTools.GetColor(ColorTools.ColTypes.Background), DrawBorder);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -765,7 +766,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 WriteProgress(Progress, Left, Top, 10, 0, ProgressColor, FrameColor, BackgroundColor, DrawBorder);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -789,7 +790,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 WriteProgress(Progress, Left, Top, WidthOffset, 0, ProgressColor, FrameColor, BackgroundColor, DrawBorder);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -828,7 +829,7 @@ namespace KS.Misc.Writers.FancyWriters
                 TextWriterWhereColor.WriteWhere(" ".Repeat(ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset)), Left + 1, Top + 1, true);
                 ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);

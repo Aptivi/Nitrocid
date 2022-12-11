@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Threading;
 using ColorSeq;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -70,7 +71,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     // Write text in another place. By the way, we check the text for newlines and console width excess
                     DriverHandler.CurrentConsoleDriver.WriteWherePlain(msg, Left, Top, Return, RightMargin, vars);
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
                     DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -123,7 +124,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     // Write text in another place. By the way, we check the text for newlines and console width excess
                     WriteWhere(msg, Left, Top, Return, RightMargin, vars);
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
                     DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -180,7 +181,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     // Write text in another place. By the way, we check the text for newlines and console width excess
                     WriteWhere(msg, Left, Top, Return, RightMargin, vars);
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
                     DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -233,7 +234,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     // Write text in another place. By the way, we check the text for newlines and console width excess
                     WriteWhere(msg, Left, Top, Return, RightMargin, vars);
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
                     DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -289,7 +290,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     // Write text in another place. By the way, we check the text for newlines and console width excess
                     WriteWhere(msg, Left, Top, Return, RightMargin, vars);
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
                     DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -342,7 +343,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     // Write text in another place. By the way, we check the text for newlines and console width excess
                     WriteWhere(msg, Left, Top, Return, RightMargin, vars);
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
                     DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -398,7 +399,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     // Write text in another place. By the way, we check the text for newlines and console width excess
                     WriteWhere(msg, Left, Top, Return, RightMargin, vars);
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
+                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
                     DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
