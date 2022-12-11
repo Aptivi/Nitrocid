@@ -48,12 +48,6 @@ namespace KS.Drivers.Network
         public DriverTypes DriverType => DriverTypes.Network;
 
         /// <inheritdoc/>
-        public virtual bool DriverPromiseRequired => false;
-
-        /// <inheritdoc/>
-        public virtual Func<object[], bool> DriverPromiseAction => null;
-
-        /// <inheritdoc/>
         public bool NetworkAvailable => NetworkInterface.GetIsNetworkAvailable();
 
         /// <inheritdoc/>

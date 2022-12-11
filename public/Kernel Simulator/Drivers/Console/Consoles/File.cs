@@ -37,8 +37,6 @@ namespace KS.Drivers.Console.Consoles
 
         public override DriverTypes DriverType => DriverTypes.Console;
 
-        public override bool DriverPromiseRequired => false;
-
         internal string PathToWrite { get; set; }
         internal bool FilterVT { get; set; }
 

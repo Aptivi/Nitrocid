@@ -266,10 +266,6 @@ namespace KS.Kernel.Exceptions
         /// <summary>
         /// An unsupported console has been detected.
         /// </summary>
-        UnsupportedConsole,
-        /// <summary>
-        /// The driver has broken the promise, which usually indicates an assertion error.
-        /// </summary>
-        DriverPromiseBroken
+        UnsupportedConsole
     }
 }

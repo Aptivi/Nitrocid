@@ -16,8 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System;
-
 namespace KS.Drivers
 {
     /// <summary>
@@ -33,13 +31,5 @@ namespace KS.Drivers
         /// Driver type
         /// </summary>
         DriverTypes DriverType { get; }
-        /// <summary>
-        /// Whether the driver is required to promise that the inputs are valid before performing an operation
-        /// </summary>
-        bool DriverPromiseRequired { get; }
-        /// <summary>
-        /// The driver promise action that will be executed if promise is required
-        /// </summary>
-        Func<object[], bool> DriverPromiseAction { get; }
     }
 }
