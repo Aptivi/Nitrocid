@@ -60,44 +60,43 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
         /// <param name="AlternateAnswersStr">Set of alternate answers. They can be written like this: Y/N/C.</param>
         /// <param name="AlternateAnswersTitles">Working titles for each alternate answer. It must be the same amount as the alternate answers.</param>
-        public static int PromptSelection(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, string[] AlternateAnswersTitles)
+        public static int PromptSelection(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, string[] AlternateAnswersTitles) =>
+            PromptSelection(Question, InputChoiceTools.GetInputChoices(AnswersStr, AnswersTitles), InputChoiceTools.GetInputChoices(AlternateAnswersStr, AlternateAnswersTitles));
+
+        /// <summary>
+        /// Prompts user for Selection
+        /// </summary>
+        /// <param name="Question">A question</param>
+        /// <param name="Answers">Set of answers.</param>
+        public static int PromptSelection(string Question, List<InputChoiceInfo> Answers) =>
+            PromptSelection(Question, Answers, new List<InputChoiceInfo>());
+
+        /// <summary>
+        /// Prompts user for Selection
+        /// </summary>
+        /// <param name="Question">A question</param>
+        /// <param name="Answers">Set of answers.</param>
+        /// <param name="AltAnswers">Set of alternate answers.</param>
+        public static int PromptSelection(string Question, List<InputChoiceInfo> Answers, List<InputChoiceInfo> AltAnswers)
         {
             int HighlightedAnswer = 1;
             while (true)
             {
                 // Variables
-                var answers = AnswersStr.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
-                var altAnswers = AlternateAnswersStr.Split(new char[] {'/'}, StringSplitOptions.RemoveEmptyEntries);
-                var finalAnswers = new List<string>();
-                var finalAnswerTitles = new List<string>();
-                int altAnswersFirstIdx = answers.Length;
+                List<InputChoiceInfo> AllAnswers = new(Answers);
+                AllAnswers.AddRange(AltAnswers);
+                int altAnswersFirstIdx = Answers.Count;
                 ConsoleKeyInfo Answer;
                 ConsoleWrapper.CursorVisible = false;
                 ConsoleWrapper.Clear(true);
 
-                // Check to see if the answer titles are the same
-                if (answers.Length != AnswersTitles.Length)
-                    Array.Resize(ref AnswersTitles, answers.Length);
-                if (altAnswers.Length != AlternateAnswersTitles.Length)
-                    Array.Resize(ref AlternateAnswersTitles, altAnswers.Length);
-
                 // Ask a question
                 TextWriterColor.Write(Question + CharManager.NewLine, true, ColorTools.ColTypes.Question);
-
-                // Populate answers to final list for below operation
-                foreach (var answer in answers)
-                    finalAnswers.Add(answer);
-                foreach (var answer in altAnswers)
-                    finalAnswers.Add(answer);
-                foreach (var answer in AnswersTitles)
-                    finalAnswerTitles.Add(answer);
-                foreach (var answer in AlternateAnswersTitles)
-                    finalAnswerTitles.Add(answer);
 
                 // Make pages based on console window height
                 int listStartPosition = ConsoleWrapper.CursorTop;
                 int listEndPosition = ConsoleWrapper.WindowHeight - ConsoleWrapper.CursorTop;
-                int pages = finalAnswers.Count / listEndPosition;
+                int pages = AllAnswers.Count / listEndPosition;
                 int answersPerPage = listEndPosition - 2;
 
                 // The reason for subtracting the highlighted answer by one is that because while the highlighted answer number is one-based, the indexes are zero-based,
@@ -107,20 +106,20 @@ namespace KS.ConsoleBase.Inputs.Styles
                 int endIndex = answersPerPage * (currentPage + 1);
 
                 // Populate the answers
-                for (int AnswerIndex = startIndex; AnswerIndex <= endIndex && AnswerIndex <= finalAnswers.Count - 1; AnswerIndex++)
+                for (int AnswerIndex = startIndex; AnswerIndex <= endIndex && AnswerIndex <= AllAnswers.Count - 1; AnswerIndex++)
                 {
                     bool AltAnswer = AnswerIndex >= altAnswersFirstIdx;
-                    string AnswerInstance = finalAnswers[AnswerIndex];
-                    string AnswerTitle = finalAnswerTitles[AnswerIndex] ?? "";
+                    var AnswerInstance = AllAnswers[AnswerIndex];
+                    string AnswerTitle = AnswerInstance.ChoiceTitle ?? "";
 
                     // Just like we told you previously in above few lines, the last option highlight to go to the next page is intentional. So, change the last option
                     // string so it says "Highlight this entry to go to the next page."
                     string AnswerOption = $" {AnswerInstance}) {AnswerTitle}";
-                    int AnswerTitleLeft = finalAnswers.Max(x => $" {x}) ".Length);
+                    int AnswerTitleLeft = AllAnswers.Max(x => $" {x.ChoiceName}) ".Length);
                     if (AnswerTitleLeft < ConsoleWrapper.WindowWidth)
                     {
-                        int blankRepeats = AnswerTitleLeft - $" {AnswerInstance}) ".Length;
-                        AnswerOption = $" {AnswerInstance}) " + " ".Repeat(blankRepeats) + $"{AnswerTitle}";
+                        int blankRepeats = AnswerTitleLeft - $" {AnswerInstance.ChoiceName}) ".Length;
+                        AnswerOption = $" {AnswerInstance.ChoiceName}) " + " ".Repeat(blankRepeats) + $"{AnswerTitle}";
                     }
                     var AnswerColor = AnswerIndex + 1 == HighlightedAnswer ? 
                                       ColorTools.ColTypes.SelectedOption : 
@@ -130,7 +129,7 @@ namespace KS.ConsoleBase.Inputs.Styles
 
                 // If we need to write the vertical progress bar, do so.
                 if (Flags.EnableScrollBarInSelection)
-                    ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)HighlightedAnswer / finalAnswers.Count), ConsoleWrapper.WindowWidth - 2, listStartPosition - 1, listStartPosition, 1, false);
+                    ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)HighlightedAnswer / AllAnswers.Count), ConsoleWrapper.WindowWidth - 2, listStartPosition - 1, listStartPosition, 1, false);
 
                 // Wait for an answer
                 Answer = Input.DetectKeypress();
@@ -142,13 +141,13 @@ namespace KS.ConsoleBase.Inputs.Styles
                         {
                             HighlightedAnswer -= 1;
                             if (HighlightedAnswer == 0)
-                                HighlightedAnswer = finalAnswers.Count;
+                                HighlightedAnswer = AllAnswers.Count;
 
                             break;
                         }
                     case ConsoleKey.DownArrow:
                         {
-                            if (HighlightedAnswer == finalAnswers.Count)
+                            if (HighlightedAnswer == AllAnswers.Count)
                                 HighlightedAnswer = 0;
                             HighlightedAnswer += 1;
                             break;
@@ -160,7 +159,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                         }
                     case ConsoleKey.PageDown:
                         {
-                            HighlightedAnswer = finalAnswers.Count;
+                            HighlightedAnswer = AllAnswers.Count;
                             break;
                         }
                     case ConsoleKey.Enter:
