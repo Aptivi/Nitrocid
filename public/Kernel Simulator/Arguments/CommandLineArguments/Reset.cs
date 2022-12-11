@@ -17,14 +17,35 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Arguments.ArgumentBase;
+using KS.Files.Querying;
+using KS.Files;
 using KS.Kernel;
+using System.IO;
+using System;
 
 namespace KS.Arguments.CommandLineArguments
 {
     class CommandLine_ResetArgument : ArgumentExecutor, IArgument
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => KernelTools.FactoryReset();
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        {
+            // Delete every single thing found in KernelPaths
+            foreach (string PathName in Enum.GetNames(typeof(KernelPathType)))
+            {
+                string TargetPath = Paths.GetKernelPath((KernelPathType)Convert.ToInt32(PathName));
+                if (Checking.FileExists(TargetPath))
+                {
+                    File.Delete(TargetPath);
+                }
+                else
+                {
+                    Directory.Delete(TargetPath, true);
+                }
+            }
 
+            // Exit now.
+            Environment.Exit(0);
+        }
     }
 }

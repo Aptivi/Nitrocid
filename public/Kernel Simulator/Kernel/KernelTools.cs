@@ -471,29 +471,6 @@ namespace KS.Kernel
         // ----------------------------------------------- Misc -----------------------------------------------
 
         /// <summary>
-        /// Removes all configuration files
-        /// </summary>
-        internal static void FactoryReset()
-        {
-            // Delete every single thing found in KernelPaths
-            foreach (string PathName in Enum.GetNames(typeof(KernelPathType)))
-            {
-                string TargetPath = Paths.GetKernelPath((KernelPathType)Convert.ToInt32(PathName));
-                if (Checking.FileExists(TargetPath))
-                {
-                    File.Delete(TargetPath);
-                }
-                else
-                {
-                    Directory.Delete(TargetPath, true);
-                }
-            }
-
-            // Exit now.
-            Environment.Exit(0);
-        }
-
-        /// <summary>
         /// Reports the new kernel stage
         /// </summary>
         /// <param name="StageNumber">The stage number</param>
