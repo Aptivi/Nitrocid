@@ -18,7 +18,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Threading;
 using KS.ConsoleBase.Colors;
 using KS.Kernel;
@@ -26,7 +25,6 @@ using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.MiscWriters;
 using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.ShellBase.Commands

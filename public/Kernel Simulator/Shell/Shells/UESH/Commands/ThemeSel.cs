@@ -19,7 +19,6 @@
 using Extensification.StringExts;
 using KS.ConsoleBase.Inputs.Styles;
 using KS.ConsoleBase.Themes;
-using KS.ConsoleBase.Themes.Studio;
 using KS.Files;
 using KS.Files.Querying;
 using KS.Kernel.Configuration;

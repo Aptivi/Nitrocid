@@ -18,7 +18,6 @@
 
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
 using KS.Misc.Threading;

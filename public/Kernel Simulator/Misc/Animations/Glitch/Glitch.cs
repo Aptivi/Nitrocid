@@ -21,8 +21,6 @@ using System.Collections;
 using ColorSeq;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
-using KS.Kernel.Debugging;
-using KS.Misc.Screensaver.Displays;
 using KS.Misc.Screensaver;
 using KS.Misc.Threading;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;

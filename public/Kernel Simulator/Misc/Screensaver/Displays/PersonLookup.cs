@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using System.Collections.Generic;
 using KS.Drivers.RNG;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;

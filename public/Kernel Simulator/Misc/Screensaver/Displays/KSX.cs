@@ -24,7 +24,6 @@ using KS.ConsoleBase;
 using KS.Drivers;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
-using KS.Misc.Animations.BSOD;
 using KS.Misc.Animations.BSOD.Simulations;
 using KS.Misc.Animations.Glitch;
 using KS.Misc.Text;

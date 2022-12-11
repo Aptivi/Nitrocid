@@ -17,8 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using ColorSeq;
-using KS.Drivers.RNG;
-using KS.Drivers;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.ConsoleBase;

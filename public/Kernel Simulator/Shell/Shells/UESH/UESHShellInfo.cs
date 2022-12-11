@@ -24,7 +24,6 @@ using KS.Shell.ShellBase.Shells;
 using KS.Shell.Prompts;
 using KS.Shell.Prompts.Presets.UESH;
 using KS.Shell.ShellBase.Commands.UnifiedCommands;
-using KS.Arguments.ArgumentBase;
 using System.Linq;
 using KS.Users;
 using UnitsNet;

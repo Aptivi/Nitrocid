@@ -18,7 +18,6 @@
 
 using Extensification.DictionaryExts;
 using KS.Kernel.Debugging;
-using KS.Kernel.Debugging.RemoteDebug;
 using KS.Shell.ShellBase.Shells;
 using System.Collections.Generic;
 

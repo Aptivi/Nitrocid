@@ -55,7 +55,6 @@ using KS.Shell.Shells.Hex;
 using KS.Shell.Shells.Archive;
 using KS.Shell.Shells.Admin;
 using KS.Users.Login;
-using KS.Drivers.Console.Consoles;
 using File = KS.Drivers.Console.Consoles.File;
 
 namespace KS.Shell

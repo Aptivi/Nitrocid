@@ -28,9 +28,6 @@ using KS.Misc.Notifications;
 using KS.Misc.Probers;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Shell.ShellBase.Aliases;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
 using KS.TimeDate;
 
 namespace KS.Kernel.Debugging.RemoteDebug

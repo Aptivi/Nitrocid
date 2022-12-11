@@ -18,7 +18,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using ColorSeq;
 using ColorSeq.Accessibility;
 using Extensification.StringExts;

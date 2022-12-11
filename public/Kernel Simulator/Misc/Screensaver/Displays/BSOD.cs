@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using System.Collections.Generic;
 using KS.Kernel.Debugging;
 
 namespace KS.Misc.Screensaver.Displays

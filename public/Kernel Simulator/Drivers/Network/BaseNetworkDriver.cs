@@ -27,10 +27,8 @@ using KS.Network.Base;
 using System;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Net.NetworkInformation;
 using System.Threading.Tasks;
-using System.Threading;
 using KS.Network.Base.Transfer;
 using System.Net.Http;
 

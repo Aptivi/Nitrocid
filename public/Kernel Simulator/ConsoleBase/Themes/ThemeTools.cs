@@ -32,7 +32,6 @@ using KS.Languages;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using static KS.ConsoleBase.Colors.ColorTools;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.ConsoleBase.Themes
 {

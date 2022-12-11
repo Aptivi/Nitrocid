@@ -17,18 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using System.IO;
 using System.Net.Http;
 using System.Net.Http.Handlers;
 using System.Threading;
-using System.Threading.Tasks;
 using FluentFTP.Helpers;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Drivers;
 using KS.Files;
-using KS.Files.Folders;
-using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Notifications;

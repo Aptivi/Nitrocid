@@ -17,14 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using ColorSeq;
 using KS.ConsoleBase;
-using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
-using KS.Misc.Threading;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Screensaver.Displays
 {
