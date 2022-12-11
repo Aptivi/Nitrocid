@@ -494,10 +494,15 @@ namespace KS.Drivers.Console.Consoles
         }
 
         /// <inheritdoc/>
-        public virtual void WriteWhereSlowlyPlain(string msg, bool Line, int Left, int Top, double MsEachLetter, params object[] vars) => WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, false, vars);
+        public virtual void WriteWhereSlowlyPlain(string msg, bool Line, int Left, int Top, double MsEachLetter, params object[] vars) =>
+            WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, false, vars);
 
         /// <inheritdoc/>
-        public virtual void WriteWhereSlowlyPlain(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, params object[] vars)
+        public virtual void WriteWhereSlowlyPlain(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, params object[] vars) =>
+            WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, 0, vars);
+
+        /// <inheritdoc/>
+        public virtual void WriteWhereSlowlyPlain(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
@@ -519,7 +524,7 @@ namespace KS.Drivers.Console.Consoles
                         foreach (char ParagraphChar in MessageParagraph)
                         {
                             Thread.Sleep((int)Math.Round(MsEachLetter));
-                            if (ConsoleWrapper.CursorLeft == ConsoleWrapper.WindowWidth)
+                            if (ConsoleWrapper.CursorLeft == ConsoleWrapper.WindowWidth - RightMargin)
                             {
                                 ConsoleWrapper.CursorTop += 1;
                                 ConsoleWrapper.CursorLeft = Left;
