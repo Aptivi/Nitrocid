@@ -287,7 +287,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(new Color(Convert.ToInt32(BackgroundColor)));
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
-                    WriteWhere(msg, Left, Top, Return, vars);
+                    WriteWhere(msg, Left, Top, Return, RightMargin, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -396,7 +396,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(BackgroundColor, true);
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
-                    WriteWhere(msg, Left, Top, Return, vars);
+                    WriteWhere(msg, Left, Top, Return, RightMargin, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
