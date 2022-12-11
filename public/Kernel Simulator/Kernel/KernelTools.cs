@@ -514,32 +514,6 @@ namespace KS.Kernel
         }
 
         /// <summary>
-        /// Gets the used compiler variables for building Kernel Simulator
-        /// </summary>
-        /// <returns>An array containing used compiler variables</returns>
-        public static string[] GetCompilerVars()
-        {
-            var CompilerVars = new List<string>();
-
-            // Determine the compiler vars used to build KS using conditional checks
-#if SPECIFIERDEV
-            CompilerVars.Add("SPECIFIER = \"DEV\"");
-#if MILESTONESPECIFIERALPHA
-            CompilerVars.Add("MILESTONESPECIFIERALPHA");
-#elif MILESTONESPECIFIERBETA
-            CompilerVars.Add("MILESTONESPECIFIERBETA");
-#endif
-#elif SPECIFIERRC
-            CompilerVars.Add("SPECIFIER = \"RC\"");
-#elif SPECIFIERREL
-            CompilerVars.Add("SPECIFIER = \"REL\"");
-#endif
-
-            // Return the compiler vars
-            return CompilerVars.ToArray();
-        }
-
-        /// <summary>
         /// Checks for debug symbols and downloads it if not found. It'll be auto-loaded upon download.
         /// </summary>
         internal static void CheckDebugSymbols()

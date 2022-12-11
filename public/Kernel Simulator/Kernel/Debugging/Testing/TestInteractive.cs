@@ -85,7 +85,6 @@ namespace KS.Kernel.Debugging.Testing
             { "ColorTrueTest",          new Facades.ColorTrueTest() },
             { "ColorWheel",             new Facades.ColorWheel() },
             { "ListCultures",           new Facades.ListCultures() },
-            { "ListCompilerVariables",  new Facades.ListCompilerVariables() },
             { "ListCodepages",          new Facades.ListCodepages() },
             { "BenchmarkSleepOne",      new Facades.BenchmarkSleepOne() },
             { "BenchmarkTickSleepOne",  new Facades.BenchmarkTickSleepOne() },

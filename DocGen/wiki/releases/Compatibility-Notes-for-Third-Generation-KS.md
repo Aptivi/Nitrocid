@@ -320,3 +320,7 @@ Affected classes:
   - ArgumentType
   - CommandLineArgs
   - ArgumentPrompt
+
+##### Removed GetCompilerVars
+
+This was only useful in conditions where getting the compiler variables for determining the kernel milestone is needed, which is seldom needed by mods. We've removed it.
