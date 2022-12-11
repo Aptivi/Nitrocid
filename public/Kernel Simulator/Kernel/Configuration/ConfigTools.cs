@@ -23,6 +23,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
+using KS.ConsoleBase.Inputs;
 using KS.Files;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
@@ -345,9 +346,9 @@ namespace KS.Kernel.Configuration
         /// <summary>
         /// Finds a setting with the matching pattern
         /// </summary>
-        public static List<string> FindSetting(string Pattern, JToken SettingsToken)
+        public static List<InputChoiceInfo> FindSetting(string Pattern, JToken SettingsToken)
         {
-            var Results = new List<string>();
+            var Results = new List<InputChoiceInfo>();
 
             // Search the settings for the given pattern
             try
@@ -363,7 +364,8 @@ namespace KS.Kernel.Configuration
                             string KeyName = Translate.DoTranslation((string)SettingToken.ToList()[KeyIndex]["Name"]);
                             if (Regex.IsMatch(KeyName, Pattern, RegexOptions.IgnoreCase))
                             {
-                                Results.Add($"[{SectionIndex + 1}/{KeyIndex + 1}] {KeyName}");
+                                InputChoiceInfo ici = new($"{SectionIndex + 1}/{KeyIndex + 1}", KeyName);
+                                Results.Add(ici);
                             }
                         }
                     }

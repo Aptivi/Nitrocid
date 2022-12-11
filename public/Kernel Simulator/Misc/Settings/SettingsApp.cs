@@ -990,15 +990,14 @@ namespace KS.Misc.Settings
         /// </summary>
         public static void VariableFinder(JToken SettingsToken)
         {
-            string SearchFor;
-            string SettingsNumber;
-            List<string> Results;
+            List<InputChoiceInfo> Results;
+            List<InputChoiceInfo> Back = new() { new InputChoiceInfo("<---", Translate.DoTranslation("Go Back...")) };
 
             // Prompt the user
             TextWriterColor.Write(Translate.DoTranslation("Write what do you want to search for."));
             DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for searching...");
             TextWriterColor.Write(">> ", false, ColorTools.ColTypes.Input);
-            SearchFor = Input.ReadLine();
+            string SearchFor = Input.ReadLine();
 
             // Search for the setting
             Results = ConfigTools.FindSetting(SearchFor, SettingsToken);
@@ -1006,25 +1005,20 @@ namespace KS.Misc.Settings
             // Write the settings
             if (!(Results.Count == 0))
             {
-                ListWriterColor.WriteList(Results);
+                // Prompt for setting
+                int sel = SelectionStyle.PromptSelection(Translate.DoTranslation("These settings are found. Please select one."), Results, Back);
 
-                // Prompt for the number of setting to go to
-                TextWriterColor.Write(Translate.DoTranslation("Write the number of the setting to go to. Any other character means go back."));
-                DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for writing...");
-                TextWriterColor.Write(">> ", false, ColorTools.ColTypes.Input);
-                SettingsNumber = Input.ReadLine();
+                // If pressed back, bail
+                if (sel == Results.Count + 1)
+                    return;
 
-                // Parse the input and go to setting
-                if (StringQuery.IsStringNumeric(SettingsNumber))
-                {
-                    int ChosenSettingIndex = Convert.ToInt32(SettingsNumber) - 1;
-                    string ChosenSetting = Results[ChosenSettingIndex];
-                    int SectionIndex = Convert.ToInt32(ChosenSetting.AsSpan().Slice(1, ChosenSetting.IndexOf("/") - 1).ToString()) - 1;
-                    int KeyNumber = Convert.ToInt32(ChosenSetting.AsSpan().Slice(ChosenSetting.IndexOf("/") + 1, ChosenSetting.IndexOf("]") - (ChosenSetting.IndexOf("/") + 1)).ToString());
-                    JProperty Section = (JProperty)SettingsToken.ToList()[SectionIndex];
-                    string SectionName = Section.Name;
-                    OpenKey(SectionName, KeyNumber, SettingsToken);
-                }
+                // Go to setting
+                var ChosenSetting = Results[sel - 1];
+                int SectionIndex = Convert.ToInt32(ChosenSetting.ChoiceName.Split('/')[0]) - 1;
+                int KeyNumber = Convert.ToInt32(ChosenSetting.ChoiceName.Split('/')[1]);
+                JProperty Section = (JProperty)SettingsToken.ToList()[SectionIndex];
+                string SectionName = Section.Name;
+                OpenKey(SectionName, KeyNumber, SettingsToken);
             }
             else
             {
