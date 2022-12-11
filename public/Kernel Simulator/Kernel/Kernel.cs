@@ -304,9 +304,8 @@ namespace KS.Kernel
                 }
                 catch (KernelException icde) when (icde.ExceptionType == KernelExceptionType.InsaneConsoleDetected)
                 {
-                    // Use Console.WriteLine here as we have an insane console here. This is to avoid promise system in this case.
-                    Console.WriteLine(icde.Message);
-                    Environment.Exit((int)KernelExceptionType.InsaneConsoleDetected);
+                    ConsoleWrapper.WriteLine(icde.Message);
+                    Flags.KernelShutdown = true;
                 }
                 catch (KernelErrorException kee)
                 {
