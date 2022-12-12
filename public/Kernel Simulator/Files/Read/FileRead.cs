@@ -18,6 +18,7 @@
 
 using System.Collections.Generic;
 using System.IO;
+using KS.Drivers;
 using KS.Kernel.Debugging;
 
 namespace KS.Files.Read
@@ -33,51 +34,23 @@ namespace KS.Files.Read
         /// </summary>
         /// <param name="filename">Full path to file</param>
         /// <returns>An array full of file contents</returns>
-        public static string[] ReadContents(string filename)
-        {
-            // Read the contents
-            Filesystem.ThrowOnInvalidPath(filename);
-            var FileContents = new List<string>();
-            filename = Filesystem.NeutralizePath(filename);
-            using (var FStream = new StreamReader(filename))
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Stream to file {0} opened.", filename);
-                while (!FStream.EndOfStream)
-                    FileContents.Add(FStream.ReadLine());
-            }
-            return FileContents.ToArray();
-        }
+        public static string[] ReadContents(string filename) =>
+            DriverHandler.CurrentFilesystemDriver.ReadContents(filename);
 
         /// <summary>
         /// Opens a file, reads all lines, and returns the array of lines
         /// </summary>
         /// <param name="path">Path to file</param>
         /// <returns>Array of lines</returns>
-        public static string[] ReadAllLinesNoBlock(string path)
-        {
-            Filesystem.ThrowOnInvalidPath(path);
-
-            // Read all the lines, bypassing the restrictions.
-            path = Filesystem.NeutralizePath(path);
-            var AllLnList = new List<string>();
-            var FOpen = new StreamReader(File.Open(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite));
-            while (!FOpen.EndOfStream)
-                AllLnList.Add(FOpen.ReadLine());
-            FOpen.Close();
-            return AllLnList.ToArray();
-        }
+        public static string[] ReadAllLinesNoBlock(string path) =>
+            DriverHandler.CurrentFilesystemDriver.ReadAllLinesNoBlock(path);
 
         /// <summary>
         /// Reads all the bytes
         /// </summary>
         /// <param name="path">Path to the file</param>
-        public static byte[] ReadAllBytes(string path)
-        {
-            // Read the bytes
-            Filesystem.ThrowOnInvalidPath(path);
-            path = Filesystem.NeutralizePath(path);
-            return File.ReadAllBytes(path);
-        }
+        public static byte[] ReadAllBytes(string path) =>
+            DriverHandler.CurrentFilesystemDriver.ReadAllBytes(path);
 
     }
 }

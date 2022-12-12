@@ -19,6 +19,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using KS.Drivers;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 
@@ -35,7 +36,8 @@ namespace KS.Files.Querying
         /// </summary>
         /// <param name="DirectoryInfo">Directory information</param>
         /// <returns>Directory Size</returns>
-        public static long GetAllSizesInFolder(DirectoryInfo DirectoryInfo) => GetAllSizesInFolder(DirectoryInfo, Flags.FullParseMode);
+        public static long GetAllSizesInFolder(DirectoryInfo DirectoryInfo) => 
+            DriverHandler.CurrentFilesystemDriver.GetAllSizesInFolder(DirectoryInfo, Flags.FullParseMode);
 
         /// <summary>
         /// Gets all file sizes in a folder, and optionally parses the entire folder
@@ -43,32 +45,8 @@ namespace KS.Files.Querying
         /// <param name="DirectoryInfo">Directory information</param>
         /// <param name="FullParseMode">Whether to parse all the directories</param>
         /// <returns>Directory Size</returns>
-        public static long GetAllSizesInFolder(DirectoryInfo DirectoryInfo, bool FullParseMode)
-        {
-            List<FileInfo> Files;
-            if (FullParseMode)
-            {
-                Files = DirectoryInfo.EnumerateFiles("*", SearchOption.AllDirectories).ToList();
-            }
-            else
-            {
-                Files = DirectoryInfo.EnumerateFiles("*", SearchOption.TopDirectoryOnly).ToList();
-            }
-            DebugWriter.WriteDebug(DebugLevel.I, "{0} files to be parsed", Files.Count);
-            long TotalSize = 0L; // In bytes
-            foreach (FileInfo DFile in Files)
-            {
-                if (DFile.Attributes == FileAttributes.Hidden & Flags.HiddenFiles | !DFile.Attributes.HasFlag(FileAttributes.Hidden))
-                {
-                    if (KernelPlatform.IsOnWindows() & (!DFile.Name.StartsWith(".") | DFile.Name.StartsWith(".") & Flags.HiddenFiles) | KernelPlatform.IsOnUnix())
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "File {0}, Size {1} bytes", DFile.Name, DFile.Length);
-                        TotalSize += DFile.Length;
-                    }
-                }
-            }
-            return TotalSize;
-        }
+        public static long GetAllSizesInFolder(DirectoryInfo DirectoryInfo, bool FullParseMode) =>
+            DriverHandler.CurrentFilesystemDriver.GetAllSizesInFolder(DirectoryInfo, FullParseMode);
 
     }
 }

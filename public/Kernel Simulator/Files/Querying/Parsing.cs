@@ -18,6 +18,7 @@
 
 using System;
 using System.IO;
+using KS.Drivers;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Misc.Text;
@@ -34,116 +35,40 @@ namespace KS.Files.Querying
         /// <summary>
         /// Gets all the invalid path characters
         /// </summary>
-        public static char[] GetInvalidPathChars()
-        {
-            var FinalInvalidPathChars = Path.GetInvalidPathChars();
-            var WindowsInvalidPathChars = new[] { '"', '<', '>' };
-            if (KernelPlatform.IsDotnetCoreClr() & KernelPlatform.IsOnWindows())
-            {
-                // It's weird of .NET 6.0 to not consider the above three Windows invalid directory chars to be invalid,
-                // so make them invalid as in .NET Framework.
-                Array.Resize(ref FinalInvalidPathChars, 36);
-                WindowsInvalidPathChars.CopyTo(FinalInvalidPathChars, FinalInvalidPathChars.Length - 3);
-            }
-            return FinalInvalidPathChars;
-        }
+        public static char[] GetInvalidPathChars() =>
+            DriverHandler.CurrentFilesystemDriver.GetInvalidPathChars();
 
         /// <summary>
         /// Tries to parse the path (For file names and only names, use <see cref="TryParseFileName(string)"/> instead.)
         /// </summary>
         /// <param name="Path">The path to be parsed</param>
         /// <returns>True if successful; false if unsuccessful</returns>
-        public static bool TryParsePath(string Path)
-        {
-            try
-            {
-                Filesystem.ThrowOnInvalidPath(Path);
-                return !(Path.IndexOfAny(GetInvalidPathChars()) >= 0);
-            }
-            catch (Exception ex)
-            {
-                DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to parse path {0}: {1}", Path, ex.Message);
-            }
-            return false;
-        }
+        public static bool TryParsePath(string Path) =>
+            DriverHandler.CurrentFilesystemDriver.TryParsePath(Path);
 
         /// <summary>
         /// Tries to parse the file name (For full paths, use <see cref="TryParsePath(string)"/> instead.)
         /// </summary>
         /// <param name="Name">The file name to be parsed</param>
         /// <returns>True if successful; false if unsuccessful</returns>
-        public static bool TryParseFileName(string Name)
-        {
-            try
-            {
-                Filesystem.ThrowOnInvalidPath(Name);
-                return !(Name.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0);
-            }
-            catch (Exception ex)
-            {
-                DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to parse file name {0}: {1}", Name, ex.Message);
-            }
-            return false;
-        }
+        public static bool TryParseFileName(string Name) =>
+            DriverHandler.CurrentFilesystemDriver.TryParseFileName(Name);
 
         /// <summary>
         /// Is the file a binary file?
         /// </summary>
         /// <param name="Path">Path to file</param>
         /// <returns></returns>
-        public static bool IsBinaryFile(string Path)
-        {
-            // Neutralize path
-            Filesystem.ThrowOnInvalidPath(Path);
-            Path = Filesystem.NeutralizePath(Path);
-
-            // Check to see if the file contains these control characters
-            using StreamReader reader = new(Path);
-            int ch;
-            while ((ch = reader.Read()) != -1)
-            {
-                // Parse character
-                if (CharManager.IsControlChar((char)ch))
-                    // Our file is binary!
-                    return true;
-            }
-
-            // Our file is not binary. Return false.
-            return false;
-        }
+        public static bool IsBinaryFile(string Path) => 
+            DriverHandler.CurrentFilesystemDriver.IsBinaryFile(Path);
 
         /// <summary>
         /// Is the file a JSON file?
         /// </summary>
         /// <param name="Path">Path to file</param>
         /// <returns></returns>
-        public static bool IsJson(string Path)
-        {
-            try
-            {
-                // Neutralize path
-                Filesystem.ThrowOnInvalidPath(Path);
-                Path = Filesystem.NeutralizePath(Path);
-
-                // Try to parse the content as JSON object
-                try
-                {
-                    var ParsedObject = JObject.Parse(File.ReadAllText(Path));
-                    return true;
-                }
-                catch
-                {
-                    var ParsedObject = JArray.Parse(File.ReadAllText(Path));
-                    return true;
-                }
-            }
-            catch
-            {
-                return false;
-            }
-        }
+        public static bool IsJson(string Path) =>
+            DriverHandler.CurrentFilesystemDriver.IsJson(Path);
 
     }
 }

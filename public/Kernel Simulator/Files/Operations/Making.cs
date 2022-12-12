@@ -19,6 +19,7 @@
 using System;
 using System.IO;
 using Extensification.StringExts;
+using KS.Drivers;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -39,23 +40,8 @@ namespace KS.Files.Operations
         /// <param name="NewDirectory">New directory</param>
         /// <param name="ThrowIfDirectoryExists">If directory exists, throw an exception.</param>
         /// <exception cref="IOException"></exception>
-        public static void MakeDirectory(string NewDirectory, bool ThrowIfDirectoryExists = true)
-        {
-            Filesystem.ThrowOnInvalidPath(NewDirectory);
-            NewDirectory = Filesystem.NeutralizePath(NewDirectory);
-            DebugWriter.WriteDebug(DebugLevel.I, "New directory: {0} ({1})", NewDirectory, Checking.FolderExists(NewDirectory));
-            if (!Checking.FolderExists(NewDirectory))
-            {
-                Directory.CreateDirectory(NewDirectory);
-
-                // Raise event
-                Kernel.Events.EventsManager.FireEvent("DirectoryCreated", NewDirectory);
-            }
-            else if (ThrowIfDirectoryExists)
-            {
-                throw new IOException(Translate.DoTranslation("Directory {0} already exists.").FormatString(NewDirectory));
-            }
-        }
+        public static void MakeDirectory(string NewDirectory, bool ThrowIfDirectoryExists = true) =>
+            DriverHandler.CurrentFilesystemDriver.MakeDirectory(NewDirectory, ThrowIfDirectoryExists);
 
         /// <summary>
         /// Makes a directory
@@ -83,34 +69,8 @@ namespace KS.Files.Operations
         /// <param name="NewFile">New file</param>
         /// <param name="ThrowIfFileExists">If file exists, throw an exception.</param>
         /// <exception cref="IOException"></exception>
-        public static void MakeFile(string NewFile, bool ThrowIfFileExists = true)
-        {
-            Filesystem.ThrowOnInvalidPath(NewFile);
-            NewFile = Filesystem.NeutralizePath(NewFile);
-            DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {1}", NewFile, Checking.FileExists(NewFile));
-            if (!Checking.FileExists(NewFile))
-            {
-                try
-                {
-                    var NewFileStream = File.Create(NewFile);
-                    DebugWriter.WriteDebug(DebugLevel.I, "File created");
-                    NewFileStream.Close();
-                    DebugWriter.WriteDebug(DebugLevel.I, "File closed");
-
-                    // Raise event
-                    Kernel.Events.EventsManager.FireEvent("FileCreated", NewFile);
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebugStackTrace(ex);
-                    throw new IOException(Translate.DoTranslation("Error trying to create a file: {0}").FormatString(ex.Message));
-                }
-            }
-            else if (ThrowIfFileExists)
-            {
-                throw new IOException(Translate.DoTranslation("File already exists."));
-            }
-        }
+        public static void MakeFile(string NewFile, bool ThrowIfFileExists = true) =>
+            DriverHandler.CurrentFilesystemDriver.MakeFile(NewFile, ThrowIfFileExists);
 
         /// <summary>
         /// Makes a file
@@ -139,38 +99,8 @@ namespace KS.Files.Operations
         /// <param name="ThrowIfFileExists">If file exists, throw an exception.</param>
         /// <param name="useArray">Use array instead of object</param>
         /// <exception cref="IOException"></exception>
-        public static void MakeJsonFile(string NewFile, bool ThrowIfFileExists = true, bool useArray = false)
-        {
-            Filesystem.ThrowOnInvalidPath(NewFile);
-            NewFile = Filesystem.NeutralizePath(NewFile);
-            DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {1}", NewFile, Checking.FileExists(NewFile));
-            if (!Checking.FileExists(NewFile))
-            {
-                try
-                {
-                    var NewFileStream = File.Create(NewFile);
-                    DebugWriter.WriteDebug(DebugLevel.I, "File created");
-                    object NewJsonObject = useArray ? JArray.Parse("[]") : JObject.Parse("{}");
-                    var NewFileWriter = new StreamWriter(NewFileStream);
-                    NewFileWriter.WriteLine(JsonConvert.SerializeObject(NewJsonObject));
-                    NewFileWriter.Flush();
-                    NewFileStream.Close();
-                    DebugWriter.WriteDebug(DebugLevel.I, "File closed");
-
-                    // Raise event
-                    Kernel.Events.EventsManager.FireEvent("FileCreated", NewFile);
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebugStackTrace(ex);
-                    throw new IOException(Translate.DoTranslation("Error trying to create a file: {0}").FormatString(ex.Message));
-                }
-            }
-            else if (ThrowIfFileExists)
-            {
-                throw new IOException(Translate.DoTranslation("File already exists."));
-            }
-        }
+        public static void MakeJsonFile(string NewFile, bool ThrowIfFileExists = true, bool useArray = false) =>
+            DriverHandler.CurrentFilesystemDriver.MakeJsonFile(NewFile, ThrowIfFileExists, useArray);
 
         /// <summary>
         /// Makes an empty JSON file

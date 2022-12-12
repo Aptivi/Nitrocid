@@ -19,6 +19,7 @@
 using System.IO;
 using FluentFTP.Helpers;
 using KS.ConsoleBase.Colors;
+using KS.Drivers;
 using KS.Files.Folders;
 using KS.Files.Querying;
 using KS.Kernel;
@@ -37,39 +38,14 @@ namespace KS.Files.Print
         /// <summary>
         /// Prints the directory information to the console
         /// </summary>
-        public static void PrintDirectoryInfo(FileSystemInfo DirectoryInfo) => PrintDirectoryInfo(DirectoryInfo, Listing.ShowFileDetailsList);
+        public static void PrintDirectoryInfo(FileSystemInfo DirectoryInfo) => 
+            DriverHandler.CurrentFilesystemDriver.PrintDirectoryInfo(DirectoryInfo, Listing.ShowFileDetailsList);
 
         /// <summary>
         /// Prints the directory information to the console
         /// </summary>
-        public static void PrintDirectoryInfo(FileSystemInfo DirectoryInfo, bool ShowDirectoryDetails)
-        {
-            if (Checking.FolderExists(DirectoryInfo.FullName))
-            {
-                // Get all file sizes in a folder
-                long TotalSize = SizeGetter.GetAllSizesInFolder((DirectoryInfo)DirectoryInfo);
-
-                // Print information
-                if (DirectoryInfo.Attributes == FileAttributes.Hidden & Flags.HiddenFiles | !DirectoryInfo.Attributes.HasFlag(FileAttributes.Hidden))
-                {
-                    if (KernelPlatform.IsOnWindows() & (!DirectoryInfo.Name.StartsWith(".") | DirectoryInfo.Name.StartsWith(".") & Flags.HiddenFiles) | KernelPlatform.IsOnUnix())
-                    {
-                        TextWriterColor.Write("- " + DirectoryInfo.Name + "/", false, ColorTools.ColTypes.ListEntry);
-                        if (ShowDirectoryDetails)
-                        {
-                            TextWriterColor.Write(": ", false, ColorTools.ColTypes.ListEntry);
-                            TextWriterColor.Write(Translate.DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), false, ColorTools.ColTypes.ListValue, TotalSize.FileSizeToString(), DirectoryInfo.CreationTime.ToShortDateString(), DirectoryInfo.CreationTime.ToShortTimeString(), DirectoryInfo.LastWriteTime.ToShortDateString(), DirectoryInfo.LastWriteTime.ToShortTimeString());
-                        }
-                        TextWriterColor.Write();
-                    }
-                }
-            }
-            else
-            {
-                TextWriterColor.Write(Translate.DoTranslation("Directory {0} not found"), true, ColorTools.ColTypes.Error, DirectoryInfo.FullName);
-                DebugWriter.WriteDebug(DebugLevel.I, "IO.FolderExists = {0}", Checking.FolderExists(DirectoryInfo.FullName));
-            }
-        }
+        public static void PrintDirectoryInfo(FileSystemInfo DirectoryInfo, bool ShowDirectoryDetails) =>
+            DriverHandler.CurrentFilesystemDriver.PrintDirectoryInfo(DirectoryInfo, ShowDirectoryDetails);
 
     }
 }

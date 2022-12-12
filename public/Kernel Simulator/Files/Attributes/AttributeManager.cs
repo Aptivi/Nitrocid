@@ -18,6 +18,7 @@
 
 using System;
 using System.IO;
+using KS.Drivers;
 using KS.Kernel.Debugging;
 
 namespace KS.Files.Attributes
@@ -33,16 +34,8 @@ namespace KS.Files.Attributes
         /// </summary>
         /// <param name="FilePath">File path</param>
         /// <param name="Attributes">Attributes</param>
-        public static void AddAttributeToFile(string FilePath, FileAttributes Attributes)
-        {
-            Filesystem.ThrowOnInvalidPath(FilePath);
-            FilePath = Filesystem.NeutralizePath(FilePath);
-            DebugWriter.WriteDebug(DebugLevel.I, "Setting file attribute to {0}...", Attributes);
-            File.SetAttributes(FilePath, Attributes);
-
-            // Raise event
-            Kernel.Events.EventsManager.FireEvent("FileAttributeAdded", FilePath, Attributes);
-        }
+        public static void AddAttributeToFile(string FilePath, FileAttributes Attributes) =>
+            DriverHandler.CurrentFilesystemDriver.AddAttributeToFile(FilePath, Attributes);
 
         /// <summary>
         /// Adds attribute to file
@@ -78,19 +71,8 @@ namespace KS.Files.Attributes
         /// </summary>
         /// <param name="FilePath">File path</param>
         /// <param name="Attributes">Attributes</param>
-        public static void RemoveAttributeFromFile(string FilePath, FileAttributes Attributes)
-        {
-            Filesystem.ThrowOnInvalidPath(FilePath);
-            FilePath = Filesystem.NeutralizePath(FilePath);
-            var Attrib = File.GetAttributes(FilePath);
-            DebugWriter.WriteDebug(DebugLevel.I, "File attributes: {0}", Attrib);
-            Attrib = Attrib.RemoveAttribute(Attributes);
-            DebugWriter.WriteDebug(DebugLevel.I, "Setting file attribute to {0}...", Attrib);
-            File.SetAttributes(FilePath, Attrib);
-
-            // Raise event
-            Kernel.Events.EventsManager.FireEvent("FileAttributeRemoved", FilePath, Attributes);
-        }
+        public static void RemoveAttributeFromFile(string FilePath, FileAttributes Attributes) =>
+            DriverHandler.CurrentFilesystemDriver.RemoveAttributeFromFile(FilePath, Attributes);
 
         /// <summary>
         /// Removes attribute from file

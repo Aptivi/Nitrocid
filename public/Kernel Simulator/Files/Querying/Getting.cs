@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Drivers;
 using System.IO;
 
 namespace KS.Files.Querying
@@ -31,26 +32,7 @@ namespace KS.Files.Querying
         /// <param name="path">Path to the directory that the generated numbered file name will situate</param>
         /// <param name="fileName">The file name with an extension</param>
         /// <returns>Numbered file name with the file number suffix applied in this format: [filename]-[number].[ext]</returns>
-        public static string GetNumberedFileName(string path, string fileName)
-        {
-            Filesystem.ThrowOnInvalidPath(path);
-            Filesystem.ThrowOnInvalidPath(fileName);
-            path = Filesystem.NeutralizePath(path);
-            string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(fileName);
-            string fileNameExtension = Path.GetExtension(fileName);
-            int fileNumber = 0;
-
-            // Check if the target file exists
-            bool fileNameValid = false;
-            do
-            {
-                string fileNameGenerated = Filesystem.NeutralizePath($"{fileNameWithoutExtension}-{fileNumber}{fileNameExtension}", path);
-                if (!Checking.FileExists(fileNameGenerated))
-                    return fileNameGenerated;
-                fileNumber++;
-            }
-            while (!fileNameValid);
-            return $"{fileNameWithoutExtension}-{fileNumber}{fileNameExtension}";
-        }
+        public static string GetNumberedFileName(string path, string fileName) =>
+            DriverHandler.CurrentFilesystemDriver.GetNumberedFileName(path, fileName);
     }
 }

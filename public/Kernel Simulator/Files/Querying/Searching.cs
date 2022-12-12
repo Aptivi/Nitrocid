@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 using Extensification.StringExts;
+using KS.Drivers;
 using KS.Kernel.Debugging;
 using KS.Languages;
 
@@ -39,33 +40,8 @@ namespace KS.Files.Querying
         /// <param name="StringLookup">String to find</param>
         /// <returns>The list if successful; null if unsuccessful</returns>
         /// <exception cref="IOException"></exception>
-        public static List<string> SearchFileForString(string FilePath, string StringLookup)
-        {
-            try
-            {
-                Filesystem.ThrowOnInvalidPath(FilePath);
-                FilePath = Filesystem.NeutralizePath(FilePath);
-                var Matches = new List<string>();
-                var Filebyte = File.ReadAllLines(FilePath);
-                int MatchNum = 1;
-                int LineNumber = 1;
-                foreach (string Str in Filebyte)
-                {
-                    if (Str.Contains(StringLookup))
-                    {
-                        Matches.Add($"[{LineNumber}] " + Translate.DoTranslation("Match {0}: {1}").FormatString(MatchNum, Str));
-                        MatchNum += 1;
-                    }
-                    LineNumber += 1;
-                }
-                return Matches;
-            }
-            catch (Exception ex)
-            {
-                DebugWriter.WriteDebugStackTrace(ex);
-                throw new IOException(Translate.DoTranslation("Unable to find file to match string \"{0}\": {1}").FormatString(StringLookup, ex.Message));
-            }
-        }
+        public static List<string> SearchFileForString(string FilePath, string StringLookup) =>
+            DriverHandler.CurrentFilesystemDriver.SearchFileForString(FilePath, StringLookup);
 
         /// <summary>
         /// Searches a file for string using regexp
@@ -74,33 +50,8 @@ namespace KS.Files.Querying
         /// <param name="StringLookup">String to find</param>
         /// <returns>The list if successful; null if unsuccessful</returns>
         /// <exception cref="IOException"></exception>
-        public static List<string> SearchFileForStringRegexp(string FilePath, Regex StringLookup)
-        {
-            try
-            {
-                Filesystem.ThrowOnInvalidPath(FilePath);
-                FilePath = Filesystem.NeutralizePath(FilePath);
-                var Matches = new List<string>();
-                var Filebyte = File.ReadAllLines(FilePath);
-                int MatchNum = 1;
-                int LineNumber = 1;
-                foreach (string Str in Filebyte)
-                {
-                    if (StringLookup.IsMatch(Str))
-                    {
-                        Matches.Add($"[{LineNumber}] " + Translate.DoTranslation("Match {0}: {1}").FormatString(MatchNum, Str));
-                        MatchNum += 1;
-                    }
-                    LineNumber += 1;
-                }
-                return Matches;
-            }
-            catch (Exception ex)
-            {
-                DebugWriter.WriteDebugStackTrace(ex);
-                throw new IOException(Translate.DoTranslation("Unable to find file to match string \"{0}\": {1}").FormatString(StringLookup, ex.Message));
-            }
-        }
+        public static List<string> SearchFileForStringRegexp(string FilePath, Regex StringLookup) =>
+            DriverHandler.CurrentFilesystemDriver.SearchFileForStringRegexp(FilePath, StringLookup);
 
     }
 }

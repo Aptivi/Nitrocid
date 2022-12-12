@@ -19,6 +19,7 @@
 using System.IO;
 using FluentFTP.Helpers;
 using KS.ConsoleBase.Colors;
+using KS.Drivers;
 using KS.Files.Folders;
 using KS.Files.Querying;
 using KS.Kernel;
@@ -37,45 +38,14 @@ namespace KS.Files.Print
         /// <summary>
         /// Prints the file information to the console
         /// </summary>
-        public static void PrintFileInfo(FileSystemInfo FileInfo) => PrintFileInfo(FileInfo, Listing.ShowFileDetailsList);
+        public static void PrintFileInfo(FileSystemInfo FileInfo) => 
+            DriverHandler.CurrentFilesystemDriver.PrintFileInfo(FileInfo, Listing.ShowFileDetailsList);
 
         /// <summary>
         /// Prints the file information to the console
         /// </summary>
-        public static void PrintFileInfo(FileSystemInfo FileInfo, bool ShowFileDetails)
-        {
-            if (Checking.FileExists(FileInfo.FullName))
-            {
-                if (FileInfo.Attributes == FileAttributes.Hidden & Flags.HiddenFiles | !FileInfo.Attributes.HasFlag(FileAttributes.Hidden))
-                {
-                    if (KernelPlatform.IsOnWindows() & (!FileInfo.Name.StartsWith(".") | FileInfo.Name.StartsWith(".") & Flags.HiddenFiles) | KernelPlatform.IsOnUnix())
-                    {
-                        if (FileInfo.Name.EndsWith(".uesh"))
-                        {
-                            TextWriterColor.Write("- " + FileInfo.Name, false, ColorTools.ColTypes.Stage);
-                            if (ShowFileDetails)
-                                TextWriterColor.Write(": ", false, ColorTools.ColTypes.Stage);
-                        }
-                        else
-                        {
-                            TextWriterColor.Write("- " + FileInfo.Name, false, ColorTools.ColTypes.ListEntry);
-                            if (ShowFileDetails)
-                                TextWriterColor.Write(": ", false, ColorTools.ColTypes.ListEntry);
-                        }
-                        if (ShowFileDetails)
-                        {
-                            TextWriterColor.Write(Translate.DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), false, ColorTools.ColTypes.ListValue, ((FileInfo)FileInfo).Length.FileSizeToString(), FileInfo.CreationTime.ToShortDateString(), FileInfo.CreationTime.ToShortTimeString(), FileInfo.LastWriteTime.ToShortDateString(), FileInfo.LastWriteTime.ToShortTimeString());
-                        }
-                        TextWriterColor.Write();
-                    }
-                }
-            }
-            else
-            {
-                TextWriterColor.Write(Translate.DoTranslation("File {0} not found"), true, ColorTools.ColTypes.Error, FileInfo.FullName);
-                DebugWriter.WriteDebug(DebugLevel.I, "IO.FileExists = {0}", Checking.FileExists(FileInfo.FullName));
-            }
-        }
+        public static void PrintFileInfo(FileSystemInfo FileInfo, bool ShowFileDetails) =>
+            DriverHandler.CurrentFilesystemDriver.PrintFileInfo(FileInfo, ShowFileDetails);
 
     }
 }

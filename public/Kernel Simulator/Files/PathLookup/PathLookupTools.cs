@@ -18,7 +18,9 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using KS.Drivers;
 using KS.Files.Querying;
 
 namespace KS.Files.PathLookup
@@ -32,32 +34,20 @@ namespace KS.Files.PathLookup
         /// <summary>
         /// Gets the lookup path list
         /// </summary>
-        public static List<string> GetPathList() => Shell.Shell.PathsToLookup.Split(Convert.ToChar(Shell.Shell.PathLookupDelimiter)).ToList();
+        public static List<string> GetPathList() =>
+            DriverHandler.CurrentFilesystemDriver.GetPathList();
 
         /// <summary>
         /// Adds a (non-)neutralized path to lookup
         /// </summary>
-        public static void AddToPathLookup(string Path)
-        {
-            Filesystem.ThrowOnInvalidPath(Path);
-            var LookupPaths = GetPathList();
-            Path = Filesystem.NeutralizePath(Path);
-            LookupPaths.Add(Path);
-            Shell.Shell.PathsToLookup = string.Join(Shell.Shell.PathLookupDelimiter, LookupPaths);
-        }
+        public static void AddToPathLookup(string Path) =>
+            DriverHandler.CurrentFilesystemDriver.AddToPathLookup(Path);
 
         /// <summary>
         /// Adds a (non-)neutralized path to lookup
         /// </summary>
-        public static void AddToPathLookup(string Path, string RootPath)
-        {
-            Filesystem.ThrowOnInvalidPath(Path);
-            Filesystem.ThrowOnInvalidPath(RootPath);
-            var LookupPaths = GetPathList();
-            Path = Filesystem.NeutralizePath(Path, RootPath);
-            LookupPaths.Add(Path);
-            Shell.Shell.PathsToLookup = string.Join(Shell.Shell.PathLookupDelimiter, LookupPaths);
-        }
+        public static void AddToPathLookup(string Path, string RootPath) =>
+            DriverHandler.CurrentFilesystemDriver.AddToPathLookup(Path, RootPath);
 
         /// <summary>
         /// Adds a (non-)neutralized path to lookup
@@ -96,27 +86,14 @@ namespace KS.Files.PathLookup
         /// <summary>
         /// Removes an existing (non-)neutralized path from lookup
         /// </summary>
-        public static void RemoveFromPathLookup(string Path)
-        {
-            Filesystem.ThrowOnInvalidPath(Path);
-            var LookupPaths = GetPathList();
-            Path = Filesystem.NeutralizePath(Path);
-            LookupPaths.Remove(Path);
-            Shell.Shell.PathsToLookup = string.Join(Shell.Shell.PathLookupDelimiter, LookupPaths);
-        }
+        public static void RemoveFromPathLookup(string Path) =>
+            DriverHandler.CurrentFilesystemDriver.RemoveFromPathLookup(Path);
 
         /// <summary>
         /// Removes an existing (non-)neutralized path from lookup
         /// </summary>
-        public static void RemoveFromPathLookup(string Path, string RootPath)
-        {
-            Filesystem.ThrowOnInvalidPath(Path);
-            Filesystem.ThrowOnInvalidPath(RootPath);
-            var LookupPaths = GetPathList();
-            Path = Filesystem.NeutralizePath(Path, RootPath);
-            LookupPaths.Remove(Path);
-            Shell.Shell.PathsToLookup = string.Join(Shell.Shell.PathLookupDelimiter, LookupPaths);
-        }
+        public static void RemoveFromPathLookup(string Path, string RootPath) =>
+            DriverHandler.CurrentFilesystemDriver.RemoveFromPathLookup(Path, RootPath);
 
         /// <summary>
         /// Removes an existing (non-)neutralized path from lookup
@@ -158,22 +135,8 @@ namespace KS.Files.PathLookup
         /// <param name="FilePath">A full path to file or just a file name</param>
         /// <param name="Result">The neutralized path</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool FileExistsInPath(string FilePath, ref string Result)
-        {
-            Filesystem.ThrowOnInvalidPath(FilePath);
-            var LookupPaths = GetPathList();
-            string ResultingPath;
-            foreach (string LookupPath in LookupPaths)
-            {
-                ResultingPath = Filesystem.NeutralizePath(FilePath, LookupPath);
-                if (Checking.FileExists(ResultingPath))
-                {
-                    Result = ResultingPath;
-                    return true;
-                }
-            }
-            return false;
-        }
+        public static bool FileExistsInPath(string FilePath, ref string Result) =>
+            DriverHandler.CurrentFilesystemDriver.FileExistsInPath(FilePath, ref Result);
 
     }
 }

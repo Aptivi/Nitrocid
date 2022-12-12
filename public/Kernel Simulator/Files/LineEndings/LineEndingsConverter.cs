@@ -19,6 +19,7 @@
 using System.IO;
 using System.Text;
 using Extensification.StringExts;
+using KS.Drivers;
 using KS.Files.Querying;
 using KS.Files.Read;
 using KS.Kernel.Debugging;
@@ -36,35 +37,16 @@ namespace KS.Files.LineEndings
         /// Converts the line endings to the newline style for the current platform
         /// </summary>
         /// <param name="TextFile">Text file name with extension or file path</param>
-        public static void ConvertLineEndings(string TextFile) => ConvertLineEndings(TextFile, LineEndingsTools.NewlineStyle);
+        public static void ConvertLineEndings(string TextFile) =>
+            DriverHandler.CurrentFilesystemDriver.ConvertLineEndings(TextFile);
 
         /// <summary>
         /// Converts the line endings to the specified newline style
         /// </summary>
         /// <param name="TextFile">Text file name with extension or file path</param>
         /// <param name="LineEndingStyle">Line ending style</param>
-        public static void ConvertLineEndings(string TextFile, FilesystemNewlineStyle LineEndingStyle)
-        {
-            Filesystem.ThrowOnInvalidPath(TextFile);
-            TextFile = Filesystem.NeutralizePath(TextFile);
-            if (!Checking.FileExists(TextFile))
-                throw new IOException(Translate.DoTranslation("File {0} not found.").FormatString(TextFile));
-
-            // Get all the file lines, regardless of the new line style on the target file
-            var FileContents = FileRead.ReadAllLinesNoBlock(TextFile);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got {0} lines. Converting newlines in {1} to {2}...", FileContents.Length, TextFile, LineEndingStyle.ToString());
-
-            // Get the newline string according to the current style
-            string NewLineString = LineEndingsTools.GetLineEndingString(LineEndingStyle);
-
-            // Convert the newlines now
-            var Result = new StringBuilder();
-            foreach (string FileContent in FileContents)
-                Result.Append(FileContent + NewLineString);
-
-            // Save the changes
-            File.WriteAllText(TextFile, Result.ToString());
-        }
+        public static void ConvertLineEndings(string TextFile, FilesystemNewlineStyle LineEndingStyle) =>
+            DriverHandler.CurrentFilesystemDriver.ConvertLineEndings(TextFile, LineEndingStyle);
 
     }
 }

@@ -24,6 +24,7 @@ using System.Linq;
 using Extensification.StringExts;
 using FluentFTP.Helpers;
 using KS.ConsoleBase.Colors;
+using KS.Drivers;
 using KS.Files.Print;
 using KS.Files.Querying;
 using KS.Kernel;
@@ -70,113 +71,10 @@ namespace KS.Files.Folders
         /// <param name="Sorted">Whether the list is sorted or not</param>
         /// <param name="Recursive">Whether the list is recursive or not</param>
         /// <returns>List of filesystem entries if any. Empty list if folder is not found or is empty.</returns>
-        public static List<FileSystemInfo> CreateList(string folder, bool Sorted = false, bool Recursive = false)
-        {
-            Filesystem.ThrowOnInvalidPath(folder);
-            DebugWriter.WriteDebug(DebugLevel.I, "Folder {0} will be listed...", folder);
-            var FilesystemEntries = new List<FileSystemInfo>();
+        public static List<FileSystemInfo> CreateList(string folder, bool Sorted = false, bool Recursive = false) =>
+            DriverHandler.CurrentFilesystemDriver.CreateList(folder, Sorted, Recursive);
 
-            // List files and folders
-            folder = Filesystem.NeutralizePath(folder);
-            if (Checking.FolderExists(folder) | folder.ContainsAnyOf(new[] { "?", "*" }))
-            {
-                IEnumerable<string> enumeration;
-                try
-                {
-                    enumeration = GetFilesystemEntries(folder, false, Recursive);
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to make a list of filesystem entries for directory {0}: {1}", folder, ex.Message);
-                    DebugWriter.WriteDebugStackTrace(ex);
-                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Failed to make a list of filesystem entries for directory") + " {0}", ex, folder);
-                }
-                foreach (string Entry in enumeration)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Enumerating {0}...", Entry);
-                    try
-                    {
-                        if (Checking.FileExists(Entry))
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Entry is a file. Adding {0} to list...", Entry);
-                            FilesystemEntries.Add(new FileInfo(Entry));
-                        }
-                        else if (Checking.FolderExists(Entry))
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Entry is a folder. Adding {0} to list...", Entry);
-                            FilesystemEntries.Add(new DirectoryInfo(Entry));
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to enumerate {0} for directory {1}: {2}", Entry, folder, ex.Message);
-                        DebugWriter.WriteDebugStackTrace(ex);
-                    }
-                }
-            }
-
-            // Return the resulting list immediately if not sorted. Otherwise, sort it.
-            if (Sorted & !(FilesystemEntries.Count == 0))
-            {
-                // We define the max string length for the largest size. This is to overcome the limitation of sorting when it comes to numbers.
-                int MaxLength = FilesystemEntries.Max(x => (x as FileInfo is not null ? (x as FileInfo).Length.GetDigits() : 1));
-
-                // Select whether or not to sort descending.
-                switch (SortDirection)
-                {
-                    case FilesystemSortDirection.Ascending:
-                        {
-                            FilesystemEntries = FilesystemEntries.OrderBy(x => SortSelector(x, MaxLength), StringComparer.OrdinalIgnoreCase).ToList();
-                            break;
-                        }
-                    case FilesystemSortDirection.Descending:
-                        {
-                            FilesystemEntries = FilesystemEntries.OrderByDescending(x => SortSelector(x, MaxLength), StringComparer.OrdinalIgnoreCase).ToList();
-                            break;
-                        }
-                }
-            }
-            return FilesystemEntries;
-        }
-
-        /// <summary>
-        /// Helper for sorting filesystem entries
-        /// </summary>
-        /// <param name="FileSystemEntry">File system entry</param>
-        /// <param name="MaxLength">For size, how many zeroes to pad the size string to the left?</param>
-        private static string SortSelector(FileSystemInfo FileSystemEntry, int MaxLength)
-        {
-            switch (SortMode)
-            {
-                case FilesystemSortOptions.FullName:
-                    {
-                        return FileSystemEntry.FullName;
-                    }
-                case FilesystemSortOptions.Length:
-                    {
-                        return (FileSystemEntry as FileInfo is not null ? (FileSystemEntry as FileInfo).Length : 0L).ToString().PadLeft(MaxLength, '0');
-                    }
-                case FilesystemSortOptions.CreationTime:
-                    {
-                        return Convert.ToString(FileSystemEntry.CreationTime);
-                    }
-                case FilesystemSortOptions.LastAccessTime:
-                    {
-                        return Convert.ToString(FileSystemEntry.LastAccessTime);
-                    }
-                case FilesystemSortOptions.LastWriteTime:
-                    {
-                        return Convert.ToString(FileSystemEntry.LastWriteTime);
-                    }
-
-                default:
-                    {
-                        return FileSystemEntry.FullName;
-                    }
-            }
-        }
-
-        private static int GetDigits(this long Number) =>
+        internal static int GetDigits(this long Number) =>
             Number == 0 ? 1 : (int)Math.Log10(Math.Abs(Number)) + 1;
 
         /// <summary>
@@ -289,51 +187,8 @@ namespace KS.Files.Folders
         /// <param name="IsFile">Is the entry a file?</param>
         /// <param name="Recursive">Whether the list is recursive or not</param>
         /// <returns>The array of full paths</returns>
-        public static string[] GetFilesystemEntries(string Path, bool IsFile = false, bool Recursive = false)
-        {
-            var Entries = Array.Empty<string>();
-            try
-            {
-                Filesystem.ThrowOnInvalidPath(Path);
-
-                // Select the pattern index
-                int SelectedPatternIndex = 0;
-                var SplitPath = Path.Split('/').Skip(1).ToArray();
-                var SplitParent = new List<string>() { Path.Split('/')[0] };
-                for (int PatternIndex = 0; PatternIndex <= SplitPath.Length - 1; PatternIndex++)
-                {
-                    if (SplitPath[PatternIndex].ContainsAnyOf(System.IO.Path.GetInvalidFileNameChars().Select(Character => Character.ToString()).ToArray()))
-                    {
-                        SelectedPatternIndex = PatternIndex;
-                        break;
-                    }
-                    SplitParent.Add(SplitPath[PatternIndex]);
-                }
-
-                // Split the path and the pattern
-                string Parent = Filesystem.NeutralizePath(System.IO.Path.GetDirectoryName(Path) + "/" + System.IO.Path.GetFileName(Path));
-                string Pattern = IsFile ? "" : "*";
-                if (Parent.ContainsAnyOf(Parsing.GetInvalidPathChars().Select(Character => Character.ToString()).ToArray()))
-                {
-                    Parent = System.IO.Path.GetDirectoryName(Path);
-                    Pattern = System.IO.Path.GetFileName(Path);
-                }
-                if (SelectedPatternIndex != 0)
-                {
-                    Parent = string.Join("/", SplitParent);
-                    Pattern = string.Join("/", SplitPath.Skip(SelectedPatternIndex));
-                }
-
-                // Split the path and the pattern and return the final result
-                Entries = GetFilesystemEntries(Parent, Pattern, Recursive);
-            }
-            catch (Exception ex)
-            {
-                DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to combine files: {0}", ex.Message);
-            }
-            return Entries;
-        }
+        public static string[] GetFilesystemEntries(string Path, bool IsFile = false, bool Recursive = false) =>
+            DriverHandler.CurrentFilesystemDriver.GetFilesystemEntries(Path, IsFile, Recursive);
 
         /// <summary>
         /// Gets the filesystem entries of the parent with the specified pattern (wildcards, ...)
@@ -342,34 +197,8 @@ namespace KS.Files.Folders
         /// <param name="Pattern">The pattern</param>
         /// <param name="Recursive">Whether the list is recursive or not</param>
         /// <returns>The array of full paths</returns>
-        public static string[] GetFilesystemEntries(string Parent, string Pattern, bool Recursive = false)
-        {
-            var Entries = Array.Empty<string>();
-            try
-            {
-                Filesystem.ThrowOnInvalidPath(Parent);
-                Filesystem.ThrowOnInvalidPath(Pattern);
-                Parent = Filesystem.NeutralizePath(Parent);
-
-                // Get the entries
-                if (Directory.Exists(Parent))
-                {
-                    SearchOption options = Recursive ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly;
-                    Entries = Directory.EnumerateFileSystemEntries(Parent, Pattern, options).ToArray();
-                    DebugWriter.WriteDebug(DebugLevel.I, "Enumerated {0} entries from parent {1} using pattern {2}", Entries.Length, Parent, Pattern);
-                }
-                else
-                {
-                    Entries = new[] { Parent };
-                }
-            }
-            catch (Exception ex)
-            {
-                DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to combine files: {0}", ex.Message);
-            }
-            return Entries;
-        }
+        public static string[] GetFilesystemEntries(string Parent, string Pattern, bool Recursive = false) =>
+            DriverHandler.CurrentFilesystemDriver.GetFilesystemEntries(Parent, Pattern, Recursive);
 
     }
 }

@@ -25,6 +25,8 @@ using KS.Drivers.RNG.Randoms;
 using System.Linq;
 using KS.Drivers.Network;
 using KS.Drivers.Network.Bases;
+using KS.Drivers.Filesystem;
+using KS.Drivers.Filesystem.Bases;
 
 namespace KS.Drivers
 {
@@ -36,6 +38,7 @@ namespace KS.Drivers
         internal static string currentRandomDriver = "Default";
         internal static string currentConsoleDriver = "Terminal";
         internal static string currentNetworkDriver = "Default";
+        internal static string currentFilesystemDriver = "Default";
 
         private readonly static Dictionary<string, IRandomDriver> randomDrivers = new()
         {
@@ -64,9 +67,15 @@ namespace KS.Drivers
             { "Default", new DefaultNetwork() }
         };
 
+        private readonly static Dictionary<string, IFilesystemDriver> filesystemDrivers = new()
+        {
+            { "Default", new DefaultFilesystem() }
+        };
+
         private readonly static Dictionary<string, IRandomDriver> customRandomDrivers = new();
         private readonly static Dictionary<string, IConsoleDriver> customConsoleDrivers = new();
         private readonly static Dictionary<string, INetworkDriver> customNetworkDrivers = new();
+        private readonly static Dictionary<string, IFilesystemDriver> customFilesystemDrivers = new();
 
         /// <summary>
         /// Gets the current random driver
@@ -87,6 +96,12 @@ namespace KS.Drivers
             GetNetworkDriver();
 
         /// <summary>
+        /// Gets the current filesystem driver
+        /// </summary>
+        public static IFilesystemDriver CurrentFilesystemDriver =>
+            GetFilesystemDriver();
+
+        /// <summary>
         /// Gets the driver
         /// </summary>
         /// <param name="type">The driver type</param>
@@ -102,6 +117,8 @@ namespace KS.Drivers
                     return GetConsoleDriver(name);
                 case DriverTypes.Network:
                     return GetNetworkDriver(name);
+                case DriverTypes.Filesystem:
+                    return GetFilesystemDriver(name);
             }
 
             // We shouldn't be here
@@ -131,6 +148,10 @@ namespace KS.Drivers
                     if (!IsRegistered(type, name))
                         customNetworkDrivers.Add(name, (INetworkDriver)driver);
                     break;
+                case DriverTypes.Filesystem:
+                    if (!IsRegistered(type, name))
+                        customFilesystemDrivers.Add(name, (IFilesystemDriver)driver);
+                    break;
             }
         }
 
@@ -155,6 +176,10 @@ namespace KS.Drivers
                     if (IsRegistered(type, name))
                         customNetworkDrivers.Remove(name);
                     break;
+                case DriverTypes.Filesystem:
+                    if (IsRegistered(type, name))
+                        customFilesystemDrivers.Remove(name);
+                    break;
             }
         }
 
@@ -168,10 +193,11 @@ namespace KS.Drivers
         {
             return type switch
             {
-                DriverTypes.RNG     => customRandomDrivers.Keys.Contains(name),
-                DriverTypes.Console => customConsoleDrivers.Keys.Contains(name),
-                DriverTypes.Network => customNetworkDrivers.Keys.Contains(name),
-                _                   => false,
+                DriverTypes.RNG         => customRandomDrivers.Keys.Contains(name),
+                DriverTypes.Console     => customConsoleDrivers.Keys.Contains(name),
+                DriverTypes.Network     => customNetworkDrivers.Keys.Contains(name),
+                DriverTypes.Filesystem  => customFilesystemDrivers.Keys.Contains(name),
+                _                       => false,
             };
         }
 
@@ -251,6 +277,32 @@ namespace KS.Drivers
                 // We didn't find anything, so return default KS driver.
                 DebugWriter.WriteDebug(DebugLevel.W, "Got default kernel driver because {0} is not found in the driver database.", name);
                 return networkDrivers["Default"];
+            }
+        }
+
+        internal static IFilesystemDriver GetFilesystemDriver() =>
+            GetFilesystemDriver(currentFilesystemDriver);
+
+        internal static IFilesystemDriver GetFilesystemDriver(string name)
+        {
+            // Try to get the driver from the name.
+            bool found = filesystemDrivers.TryGetValue(name, out IFilesystemDriver cdriver);
+            bool customFound = customFilesystemDrivers.TryGetValue(name, out IFilesystemDriver customcdriver);
+
+            // If found, bail.
+            if (found)
+            {
+                return cdriver;
+            }
+            else if (customFound)
+            {
+                return customcdriver;
+            }
+            else
+            {
+                // We didn't find anything, so return default KS driver.
+                DebugWriter.WriteDebug(DebugLevel.W, "Got default kernel driver because {0} is not found in the driver database.", name);
+                return filesystemDrivers["Default"];
             }
         }
         #endregion

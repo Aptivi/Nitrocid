@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Drivers;
 using System.IO;
 
 namespace KS.Files.Querying
@@ -32,13 +33,8 @@ namespace KS.Files.Querying
         /// <param name="File">Target file</param>
         /// <param name="Neutralize">Whether to neutralize the path</param>
         /// <returns>True if exists; False if not. Throws on trying to trigger the Windows 10/11 BSOD/corruption bug</returns>
-        public static bool FileExists(string File, bool Neutralize = false)
-        {
-            Filesystem.ThrowOnInvalidPath(File);
-            if (Neutralize)
-                File = Filesystem.NeutralizePath(File);
-            return System.IO.File.Exists(File);
-        }
+        public static bool FileExists(string File, bool Neutralize = false) =>
+            DriverHandler.CurrentFilesystemDriver.FileExists(File, Neutralize);
 
         /// <summary>
         /// Checks to see if the folder exists. Windows 10/11 bug aware.
@@ -46,13 +42,8 @@ namespace KS.Files.Querying
         /// <param name="Folder">Target folder</param>
         /// <param name="Neutralize">Whether to neutralize the path</param>
         /// <returns>True if exists; False if not. Throws on trying to trigger the Windows 10/11 BSOD/corruption bug</returns>
-        public static bool FolderExists(string Folder, bool Neutralize = false)
-        {
-            Filesystem.ThrowOnInvalidPath(Folder);
-            if (Neutralize)
-                Folder = Filesystem.NeutralizePath(Folder);
-            return Directory.Exists(Folder);
-        }
+        public static bool FolderExists(string Folder, bool Neutralize = false) =>
+            DriverHandler.CurrentFilesystemDriver.FolderExists(Folder, Neutralize);
 
     }
 }
