@@ -18,7 +18,7 @@
 
 using System.IO;
 using Extensification.StringExts;
-using KS.Files;
+using FS = KS.Files.Filesystem;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
@@ -45,8 +45,8 @@ namespace KS.Drivers.Encryption
             int ExpectedHashLength;
             string ExpectedHash = "";
 
-            FileName = Filesystem.NeutralizePath(FileName);
-            HashesFile = Filesystem.NeutralizePath(HashesFile);
+            FileName = FS.NeutralizePath(FileName);
+            HashesFile = FS.NeutralizePath(HashesFile);
             DebugWriter.WriteDebug(DebugLevel.I, "File name: {0}", FileName);
             DebugWriter.WriteDebug(DebugLevel.I, "Hashes file name: {0}", HashesFile);
             if (Checking.FileExists(FileName))
@@ -131,7 +131,7 @@ namespace KS.Drivers.Encryption
         {
             int ExpectedHashLength;
 
-            FileName = Filesystem.NeutralizePath(FileName);
+            FileName = FS.NeutralizePath(FileName);
             ExpectedHash = ExpectedHash.ToUpper();
             ActualHash = ActualHash.ToUpper();
             DebugWriter.WriteDebug(DebugLevel.I, "File name: {0}", FileName);
@@ -182,8 +182,8 @@ namespace KS.Drivers.Encryption
             string ExpectedHash = "";
             string ActualHash = "";
 
-            FileName = Filesystem.NeutralizePath(FileName);
-            HashesFile = Filesystem.NeutralizePath(HashesFile);
+            FileName = FS.NeutralizePath(FileName);
+            HashesFile = FS.NeutralizePath(HashesFile);
             DebugWriter.WriteDebug(DebugLevel.I, "File name: {0}", FileName);
             DebugWriter.WriteDebug(DebugLevel.I, "Hashes file name: {0}", HashesFile);
             if (Checking.FileExists(FileName))
@@ -267,7 +267,7 @@ namespace KS.Drivers.Encryption
         {
             int ExpectedHashLength;
             string ActualHash;
-            FileName = Filesystem.NeutralizePath(FileName);
+            FileName = FS.NeutralizePath(FileName);
             ExpectedHash = ExpectedHash.ToUpper();
             DebugWriter.WriteDebug(DebugLevel.I, "File name: {0}", FileName);
             if (Checking.FileExists(FileName))

@@ -24,6 +24,7 @@ using KS.Files;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
+using FS = KS.Files.Filesystem;
 
 namespace KS.Drivers.Encryption
 {
@@ -129,7 +130,7 @@ namespace KS.Drivers.Encryption
         /// <returns>Encrypted hash sum</returns>
         public static string GetEncryptedFile(string Path, EncryptionAlgorithms algorithm)
         {
-            Path = Filesystem.NeutralizePath(Path);
+            Path = FS.NeutralizePath(Path);
             var Str = new FileStream(Path, FileMode.Open);
             string Encrypted = GetEncryptedFile(Str, algorithm);
             Str.Close();

@@ -16,8 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Files;
 using System.Net.NetworkInformation;
+using FS = KS.Files.Filesystem;
 
 namespace KS.Drivers.Network
 {
@@ -82,7 +82,7 @@ namespace KS.Drivers.Network
         /// <summary>
         /// Uploads a file to the current working directory.
         /// </summary>
-        /// <param name="FileName">A target file name. Use <see cref="Filesystem.NeutralizePath(string, bool)"/> to get full path of source.</param>
+        /// <param name="FileName">A target file name. Use <see cref="FS.NeutralizePath(string, bool)"/> to get full path of source.</param>
         /// <param name="URL">A URL to a file</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
         bool UploadFile(string FileName, string URL);
@@ -90,7 +90,7 @@ namespace KS.Drivers.Network
         /// <summary>
         /// Uploads a file from the current working directory.
         /// </summary>
-        /// <param name="FileName">A target file name. Use <see cref="Filesystem.NeutralizePath(string, bool)"/> to get full path of source.</param>
+        /// <param name="FileName">A target file name. Use <see cref="FS.NeutralizePath(string, bool)"/> to get full path of source.</param>
         /// <param name="URL">A URL</param>
         /// <param name="ShowProgress">Whether or not to show progress bar</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>

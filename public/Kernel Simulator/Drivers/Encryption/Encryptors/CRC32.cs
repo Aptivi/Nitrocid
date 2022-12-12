@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using Force.Crc32;
-using KS.Files;
+using FS = KS.Files.Filesystem;
 using KS.Kernel.Debugging;
 using System.IO;
 using System.Text;
@@ -46,7 +46,7 @@ namespace KS.Drivers.Encryption.Encryptors
         /// <inheritdoc/>
         public string GetEncryptedFile(string Path)
         {
-            Path = Filesystem.NeutralizePath(Path);
+            Path = FS.NeutralizePath(Path);
             var Str = new FileStream(Path, FileMode.Open);
             string Encrypted = GetEncryptedFile(Str);
             Str.Close();

@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Files.Folders;
-using KS.Files;
+using FS = KS.Files.Filesystem;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -84,7 +84,7 @@ namespace KS.Drivers.Network
             Response.EnsureSuccessStatusCode();
 
             // Get the file stream
-            string FilePath = Filesystem.NeutralizePath(FileName);
+            string FilePath = FS.NeutralizePath(FileName);
             var FileStream = new FileStream(FilePath, FileMode.Create, FileAccess.Write);
 
             // Try to download the file asynchronously
@@ -243,7 +243,7 @@ namespace KS.Drivers.Network
 
             // Send the GET request to the server for the file after getting the stream and target file stream
             DebugWriter.WriteDebug(DebugLevel.I, "Directory location: {0}", CurrentDirectory.CurrentDir);
-            string FilePath = Filesystem.NeutralizePath(FileName);
+            string FilePath = FS.NeutralizePath(FileName);
             var FileStream = new FileStream(FilePath, FileMode.Open, FileAccess.Read);
             var Content = new StreamContent(FileStream);
 
