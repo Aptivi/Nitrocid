@@ -102,6 +102,10 @@ namespace KS.Kernel
                 Environment.Exit(100);
             }
 
+            // Display warning for those who still use .NET Framework
+            if (!KernelPlatform.IsDotnetCoreClr())
+                DriverHandler.CurrentConsoleDriver.WritePlain("We know that you're still using the .NET Framework version of Kernel Simulator. However, we'll take out .NET Framework support starting from Beta 1 for performance reasons. We suggest you to start using the .NET CoreCLR version of the kernel.", true);
+
             // This is a kernel entry point
             while (!Flags.KernelShutdown)
             {
