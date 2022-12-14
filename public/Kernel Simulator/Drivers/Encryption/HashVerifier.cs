@@ -40,7 +40,7 @@ namespace KS.Drivers.Encryption
         /// <param name="ActualHash">Actual hash calculated from hash tool</param>
         /// <returns>True if they match; else, false.</returns>
         /// <exception cref="FileNotFoundException"></exception>
-        public static bool VerifyHashFromHashesFile(string FileName, EncryptionAlgorithms HashType, string HashesFile, string ActualHash)
+        public static bool VerifyHashFromHashesFile(string FileName, string HashType, string HashesFile, string ActualHash)
         {
             int ExpectedHashLength;
             string ExpectedHash = "";
@@ -127,7 +127,7 @@ namespace KS.Drivers.Encryption
         /// <param name="ActualHash">Actual hash calculated from hash tool</param>
         /// <returns>True if they match; else, false.</returns>
         /// <exception cref="FileNotFoundException"></exception>
-        public static bool VerifyHashFromHash(string FileName, EncryptionAlgorithms HashType, string ExpectedHash, string ActualHash)
+        public static bool VerifyHashFromHash(string FileName, string HashType, string ExpectedHash, string ActualHash)
         {
             int ExpectedHashLength;
 
@@ -176,7 +176,7 @@ namespace KS.Drivers.Encryption
         /// <param name="HashesFile">Hashes file that contains the target file</param>
         /// <returns>True if they match; else, false.</returns>
         /// <exception cref="FileNotFoundException"></exception>
-        public static bool VerifyUncalculatedHashFromHashesFile(string FileName, EncryptionAlgorithms HashType, string HashesFile)
+        public static bool VerifyUncalculatedHashFromHashesFile(string FileName, string HashType, string HashesFile)
         {
             int ExpectedHashLength;
             string ExpectedHash = "";
@@ -263,7 +263,7 @@ namespace KS.Drivers.Encryption
         /// <param name="ExpectedHash">Expected hash of a target file</param>
         /// <returns>True if they match; else, false.</returns>
         /// <exception cref="FileNotFoundException"></exception>
-        public static bool VerifyUncalculatedHashFromHash(string FileName, EncryptionAlgorithms HashType, string ExpectedHash)
+        public static bool VerifyUncalculatedHashFromHash(string FileName, string HashType, string ExpectedHash)
         {
             int ExpectedHashLength;
             string ActualHash;
@@ -311,7 +311,8 @@ namespace KS.Drivers.Encryption
         /// </summary>
         /// <param name="HashType">An encryption algorithm</param>
         /// <returns>The expected hash length</returns>
-        public static int GetExpectedHashLength(EncryptionAlgorithms HashType) => Encryption.encryptors[HashType.ToString()].HashLength;
+        public static int GetExpectedHashLength(string HashType) =>
+            DriverHandler.GetEncryptionDriver(HashType).HashLength;
 
     }
 }

@@ -228,7 +228,7 @@ namespace KS.Users.Login
                 string UserPassword = Users[usernamerequested];
 
                 // Check if there's a password
-                if (!((UserPassword ?? "") == (Encryption.GetEmptyHash(EncryptionAlgorithms.SHA256) ?? ""))) // No password
+                if (!((UserPassword ?? "") == (Encryption.GetEmptyHash("SHA256") ?? ""))) // No password
                 {
                     // Wait for input
                     DebugWriter.WriteDebug(DebugLevel.I, "Password not empty");
@@ -246,7 +246,7 @@ namespace KS.Users.Login
 
                     // Compute password hash
                     DebugWriter.WriteDebug(DebugLevel.I, "Computing written password hash...");
-                    answerpass = Encryption.GetEncryptedString(answerpass, EncryptionAlgorithms.SHA256);
+                    answerpass = Encryption.GetEncryptedString(answerpass, "SHA256");
 
                     // Parse password input
                     if (Users.TryGetValue(usernamerequested, out UserPassword) && (UserPassword ?? "") == (answerpass ?? ""))

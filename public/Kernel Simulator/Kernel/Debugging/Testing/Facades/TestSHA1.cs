@@ -30,7 +30,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         {
             var spent = new Stopwatch();
             spent.Start(); // Time when you're on a breakpoint is counted
-            TextWriterColor.Write(Encryption.GetEncryptedString("Kernel Simulator", EncryptionAlgorithms.SHA1));
+            TextWriterColor.Write(Encryption.GetEncryptedString("Kernel Simulator", "SHA1"));
             TextWriterColor.Write(Translate.DoTranslation("Time spent: {0} milliseconds"), spent.ElapsedMilliseconds);
             spent.Stop();
         }

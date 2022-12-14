@@ -67,7 +67,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 string HashFile = Filesystem.NeutralizePath(ListArgsOnly[2]);
                 if (Checking.FileExists(HashFile))
                 {
-                    if (HashVerifier.VerifyHashFromHashesFile(ListArgsOnly[3], (EncryptionAlgorithms)Convert.ToInt32(Enum.Parse(typeof(EncryptionAlgorithms), ListArgsOnly[0])), ListArgsOnly[2], ListArgsOnly[1]))
+                    if (HashVerifier.VerifyHashFromHashesFile(ListArgsOnly[3], ListArgsOnly[0], ListArgsOnly[2], ListArgsOnly[1]))
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Hashes match."));
                     }
@@ -76,7 +76,7 @@ namespace KS.Shell.Shells.UESH.Commands
                         TextWriterColor.Write(Translate.DoTranslation("Hashes don't match."), true, ColorTools.ColTypes.Warning);
                     }
                 }
-                else if (HashVerifier.VerifyHashFromHash(ListArgsOnly[3], (EncryptionAlgorithms)Convert.ToInt32(Enum.Parse(typeof(EncryptionAlgorithms), ListArgsOnly[0])), ListArgsOnly[2], ListArgsOnly[1]))
+                else if (HashVerifier.VerifyHashFromHash(ListArgsOnly[3], ListArgsOnly[0], ListArgsOnly[2], ListArgsOnly[1]))
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Hashes match."));
                 }

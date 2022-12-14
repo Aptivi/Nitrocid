@@ -23,7 +23,7 @@ namespace KS.Drivers.Encryption
     /// <summary>
     /// Base encryptor interface for an encryption algorithm
     /// </summary>
-    public interface IEncryptor
+    public interface IEncryptionDriver : IDriver
     {
         /// <summary>
         /// Gets empty hash

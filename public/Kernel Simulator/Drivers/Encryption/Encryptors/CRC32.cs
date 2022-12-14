@@ -27,16 +27,22 @@ namespace KS.Drivers.Encryption.Encryptors
     /// <summary>
     /// CRC32 encryptor
     /// </summary>
-    public class CRC32 : IEncryptor
+    public class CRC32 : BaseEncryptionDriver, IEncryptionDriver
     {
         /// <inheritdoc/>
-        public string EmptyHash => GetEncryptedString("");
+        public override string DriverName => "CRC32";
 
         /// <inheritdoc/>
-        public int HashLength => 8;
+        public override DriverTypes DriverType => DriverTypes.Encryption;
 
         /// <inheritdoc/>
-        public string GetEncryptedFile(Stream stream)
+        public override string EmptyHash => GetEncryptedString("");
+
+        /// <inheritdoc/>
+        public override int HashLength => 8;
+
+        /// <inheritdoc/>
+        public override string GetEncryptedFile(Stream stream)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Stream length: {0}", stream.Length);
             var hashbyte = new Crc32Algorithm().ComputeHash(stream);
@@ -44,7 +50,7 @@ namespace KS.Drivers.Encryption.Encryptors
         }
 
         /// <inheritdoc/>
-        public string GetEncryptedFile(string Path)
+        public override string GetEncryptedFile(string Path)
         {
             Path = FS.NeutralizePath(Path);
             var Str = new FileStream(Path, FileMode.Open);
@@ -54,7 +60,7 @@ namespace KS.Drivers.Encryption.Encryptors
         }
 
         /// <inheritdoc/>
-        public string GetEncryptedString(string str)
+        public override string GetEncryptedString(string str)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "String length: {0}", str.Length);
             var hashbyte = new Crc32Algorithm().ComputeHash(Encoding.UTF8.GetBytes(str));
@@ -62,15 +68,19 @@ namespace KS.Drivers.Encryption.Encryptors
         }
 
         /// <inheritdoc/>
-        public bool VerifyHashFromHash(string FileName, string ExpectedHash, string ActualHash) => HashVerifier.VerifyHashFromHash(FileName, EncryptionAlgorithms.CRC32, ExpectedHash, ActualHash);
+        public override bool VerifyHashFromHash(string FileName, string ExpectedHash, string ActualHash) =>
+            HashVerifier.VerifyHashFromHash(FileName, DriverName, ExpectedHash, ActualHash);
 
         /// <inheritdoc/>
-        public bool VerifyHashFromHashesFile(string FileName, string HashesFile, string ActualHash) => HashVerifier.VerifyHashFromHashesFile(FileName, EncryptionAlgorithms.CRC32, HashesFile, ActualHash);
+        public override bool VerifyHashFromHashesFile(string FileName, string HashesFile, string ActualHash) =>
+            HashVerifier.VerifyHashFromHashesFile(FileName, DriverName, HashesFile, ActualHash);
 
         /// <inheritdoc/>
-        public bool VerifyUncalculatedHashFromHash(string FileName, string ExpectedHash) => HashVerifier.VerifyUncalculatedHashFromHash(FileName, EncryptionAlgorithms.CRC32, ExpectedHash);
+        public override bool VerifyUncalculatedHashFromHash(string FileName, string ExpectedHash) =>
+            HashVerifier.VerifyUncalculatedHashFromHash(FileName, DriverName, ExpectedHash);
 
         /// <inheritdoc/>
-        public bool VerifyUncalculatedHashFromHashesFile(string FileName, string HashesFile) => HashVerifier.VerifyUncalculatedHashFromHashesFile(FileName, EncryptionAlgorithms.CRC32, HashesFile);
+        public override bool VerifyUncalculatedHashFromHashesFile(string FileName, string HashesFile) =>
+            HashVerifier.VerifyUncalculatedHashFromHashesFile(FileName, DriverName, HashesFile);
     }
 }

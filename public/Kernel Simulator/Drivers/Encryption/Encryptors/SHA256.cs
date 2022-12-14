@@ -16,61 +16,10 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Kernel.Debugging;
-using System.IO;
-using System.Text;
-using Encryptor = System.Security.Cryptography.SHA256;
-using FS = KS.Files.Filesystem;
-
 namespace KS.Drivers.Encryption.Encryptors
 {
     /// <summary>
     /// SHA256 encryptor
     /// </summary>
-    public class SHA256 : IEncryptor
-    {
-        /// <inheritdoc/>
-        public string EmptyHash => GetEncryptedString("");
-
-        /// <inheritdoc/>
-        public int HashLength => 64;
-
-        /// <inheritdoc/>
-        public string GetEncryptedFile(Stream stream)
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "Stream length: {0}", stream.Length);
-            var hashbyte = Encryptor.Create().ComputeHash(stream);
-            return Encryption.GetArrayEnc(hashbyte);
-        }
-
-        /// <inheritdoc/>
-        public string GetEncryptedFile(string Path)
-        {
-            Path = FS.NeutralizePath(Path);
-            var Str = new FileStream(Path, FileMode.Open);
-            string Encrypted = GetEncryptedFile(Str);
-            Str.Close();
-            return Encrypted;
-        }
-
-        /// <inheritdoc/>
-        public string GetEncryptedString(string str)
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "String length: {0}", str.Length);
-            var hashbyte = Encryptor.Create().ComputeHash(Encoding.UTF8.GetBytes(str));
-            return Encryption.GetArrayEnc(hashbyte);
-        }
-
-        /// <inheritdoc/>
-        public bool VerifyHashFromHash(string FileName, string ExpectedHash, string ActualHash) => HashVerifier.VerifyHashFromHash(FileName, EncryptionAlgorithms.SHA256, ExpectedHash, ActualHash);
-
-        /// <inheritdoc/>
-        public bool VerifyHashFromHashesFile(string FileName, string HashesFile, string ActualHash) => HashVerifier.VerifyHashFromHashesFile(FileName, EncryptionAlgorithms.SHA256, HashesFile, ActualHash);
-
-        /// <inheritdoc/>
-        public bool VerifyUncalculatedHashFromHash(string FileName, string ExpectedHash) => HashVerifier.VerifyUncalculatedHashFromHash(FileName, EncryptionAlgorithms.SHA256, ExpectedHash);
-
-        /// <inheritdoc/>
-        public bool VerifyUncalculatedHashFromHashesFile(string FileName, string HashesFile) => HashVerifier.VerifyUncalculatedHashFromHashesFile(FileName, EncryptionAlgorithms.SHA256, HashesFile);
-    }
+    public class SHA256 : BaseEncryptionDriver, IEncryptionDriver { }
 }

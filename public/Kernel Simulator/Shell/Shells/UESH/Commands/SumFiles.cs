@@ -22,6 +22,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using KS.ConsoleBase.Colors;
+using KS.Drivers;
 using KS.Drivers.Encryption;
 using KS.Files;
 using KS.Files.Querying;
@@ -57,42 +58,20 @@ namespace KS.Shell.Shells.UESH.Commands
                 {
                     string finalFile = Filesystem.NeutralizePath(file);
                     SeparatorWriterColor.WriteSeparator(finalFile, true);
-                    EncryptionAlgorithms AlgorithmEnum;
-                    if (ListArgsOnly[0] == "all")
-                    {
-                        foreach (string Algorithm in Enum.GetNames(typeof(EncryptionAlgorithms)))
-                        {
-                            AlgorithmEnum = (EncryptionAlgorithms)Convert.ToInt32(Enum.Parse(typeof(EncryptionAlgorithms), Algorithm));
-                            var spent = new Stopwatch();
-                            spent.Start(); // Time when you're on a breakpoint is counted
-                            string encrypted = Encryption.GetEncryptedFile(finalFile, AlgorithmEnum);
-                            TextWriterColor.Write("{0} ({1})", encrypted, AlgorithmEnum);
-                            TextWriterColor.Write(Translate.DoTranslation("Time spent: {0} milliseconds"), spent.ElapsedMilliseconds);
-                            if (UseRelative)
-                            {
-                                FileBuilder.AppendLine($"- {ListArgsOnly[1]}: {encrypted} ({AlgorithmEnum})");
-                            }
-                            else
-                            {
-                                FileBuilder.AppendLine($"- {finalFile}: {encrypted} ({AlgorithmEnum})");
-                            }
-                            spent.Stop();
-                        }
-                    }
-                    else if (Enum.TryParse(ListArgsOnly[0], out AlgorithmEnum))
+                    if (DriverHandler.IsRegistered(DriverTypes.Encryption, ListArgsOnly[0]))
                     {
                         var spent = new Stopwatch();
                         spent.Start(); // Time when you're on a breakpoint is counted
-                        string encrypted = Encryption.GetEncryptedFile(finalFile, AlgorithmEnum);
+                        string encrypted = Encryption.GetEncryptedFile(finalFile, ListArgsOnly[0]);
                         TextWriterColor.Write(encrypted);
                         TextWriterColor.Write(Translate.DoTranslation("Time spent: {0} milliseconds"), spent.ElapsedMilliseconds);
                         if (UseRelative)
                         {
-                            FileBuilder.AppendLine($"- {ListArgsOnly[1]}: {encrypted} ({AlgorithmEnum})");
+                            FileBuilder.AppendLine($"- {ListArgsOnly[1]}: {encrypted} ({ListArgsOnly[0]})");
                         }
                         else
                         {
-                            FileBuilder.AppendLine($"- {finalFile}: {encrypted} ({AlgorithmEnum})");
+                            FileBuilder.AppendLine($"- {finalFile}: {encrypted} ({ListArgsOnly[0]})");
                         }
                         spent.Stop();
                     }

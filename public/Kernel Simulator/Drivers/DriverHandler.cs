@@ -27,6 +27,8 @@ using KS.Drivers.Network;
 using KS.Drivers.Network.Bases;
 using KS.Drivers.Filesystem;
 using KS.Drivers.Filesystem.Bases;
+using KS.Drivers.Encryption;
+using KS.Drivers.Encryption.Encryptors;
 
 namespace KS.Drivers
 {
@@ -39,6 +41,7 @@ namespace KS.Drivers
         internal static string currentConsoleDriver = "Terminal";
         internal static string currentNetworkDriver = "Default";
         internal static string currentFilesystemDriver = "Default";
+        internal static string currentEncryptionDriver = "SHA256";
 
         private readonly static Dictionary<string, IRandomDriver> randomDrivers = new()
         {
@@ -72,10 +75,21 @@ namespace KS.Drivers
             { "Default", new DefaultFilesystem() }
         };
 
+        private readonly static Dictionary<string, IEncryptionDriver> encryptionDrivers = new()
+        {
+            { "CRC32", new CRC32() },
+            { "MD5", new MD5() },
+            { "SHA1", new SHA1() },
+            { "SHA256", new SHA256() },
+            { "SHA384", new SHA384() },
+            { "SHA512", new SHA512() },
+        };
+
         private readonly static Dictionary<string, IRandomDriver> customRandomDrivers = new();
         private readonly static Dictionary<string, IConsoleDriver> customConsoleDrivers = new();
         private readonly static Dictionary<string, INetworkDriver> customNetworkDrivers = new();
         private readonly static Dictionary<string, IFilesystemDriver> customFilesystemDrivers = new();
+        private readonly static Dictionary<string, IEncryptionDriver> customEncryptionDrivers = new();
 
         /// <summary>
         /// Gets the current random driver
@@ -102,6 +116,12 @@ namespace KS.Drivers
             GetFilesystemDriver();
 
         /// <summary>
+        /// Gets the current encryption driver
+        /// </summary>
+        public static IEncryptionDriver CurrentEncryptionDriver =>
+            GetEncryptionDriver();
+
+        /// <summary>
         /// Gets the driver
         /// </summary>
         /// <param name="type">The driver type</param>
@@ -119,6 +139,8 @@ namespace KS.Drivers
                     return GetNetworkDriver(name);
                 case DriverTypes.Filesystem:
                     return GetFilesystemDriver(name);
+                case DriverTypes.Encryption:
+                    return GetEncryptionDriver(name);
             }
 
             // We shouldn't be here
@@ -152,6 +174,10 @@ namespace KS.Drivers
                     if (!IsRegistered(type, name))
                         customFilesystemDrivers.Add(name, (IFilesystemDriver)driver);
                     break;
+                case DriverTypes.Encryption:
+                    if (!IsRegistered(type, name))
+                        customEncryptionDrivers.Add(name, (IEncryptionDriver)driver);
+                    break;
             }
         }
 
@@ -180,6 +206,10 @@ namespace KS.Drivers
                     if (IsRegistered(type, name))
                         customFilesystemDrivers.Remove(name);
                     break;
+                case DriverTypes.Encryption:
+                    if (IsRegistered(type, name))
+                        customEncryptionDrivers.Remove(name);
+                    break;
             }
         }
 
@@ -197,6 +227,7 @@ namespace KS.Drivers
                 DriverTypes.Console     => customConsoleDrivers.Keys.Contains(name),
                 DriverTypes.Network     => customNetworkDrivers.Keys.Contains(name),
                 DriverTypes.Filesystem  => customFilesystemDrivers.Keys.Contains(name),
+                DriverTypes.Encryption  => customEncryptionDrivers.Keys.Contains(name),
                 _                       => false,
             };
         }
@@ -303,6 +334,32 @@ namespace KS.Drivers
                 // We didn't find anything, so return default KS driver.
                 DebugWriter.WriteDebug(DebugLevel.W, "Got default kernel driver because {0} is not found in the driver database.", name);
                 return filesystemDrivers["Default"];
+            }
+        }
+
+        internal static IEncryptionDriver GetEncryptionDriver() =>
+            GetEncryptionDriver(currentEncryptionDriver);
+
+        internal static IEncryptionDriver GetEncryptionDriver(string name)
+        {
+            // Try to get the driver from the name.
+            bool found = encryptionDrivers.TryGetValue(name, out IEncryptionDriver cdriver);
+            bool customFound = customEncryptionDrivers.TryGetValue(name, out IEncryptionDriver customcdriver);
+
+            // If found, bail.
+            if (found)
+            {
+                return cdriver;
+            }
+            else if (customFound)
+            {
+                return customcdriver;
+            }
+            else
+            {
+                // We didn't find anything, so return default KS driver.
+                DebugWriter.WriteDebug(DebugLevel.W, "Got default kernel driver because {0} is not found in the driver database.", name);
+                return encryptionDrivers["Default"];
             }
         }
         #endregion

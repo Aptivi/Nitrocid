@@ -88,10 +88,10 @@ namespace KS.Users
             try
             {
                 // Compute hash of a password
-                var Regexp = new Regex("^([a-fA-F0-9]{64})$");
+                var Regexp = new Regex("^([a-fA-F0-9]{64})$"); // TODO: Consolidate this to Encryption Driver
                 if (ComputationNeeded)
                 {
-                    unpassword = Encryption.GetEncryptedString(unpassword, EncryptionAlgorithms.SHA256);
+                    unpassword = Encryption.GetEncryptedString(unpassword, "SHA256");
                     DebugWriter.WriteDebug(DebugLevel.I, "Hash computed.");
                 }
                 else if (!Regexp.IsMatch(unpassword))
@@ -471,13 +471,13 @@ namespace KS.Users
         /// <param name="NewPass">New user password</param>
         public static void ChangePassword(string Target, string CurrentPass, string NewPass)
         {
-            CurrentPass = Encryption.GetEncryptedString(CurrentPass, EncryptionAlgorithms.SHA256);
+            CurrentPass = Encryption.GetEncryptedString(CurrentPass, "SHA256");
             if ((CurrentPass ?? "") == (Login.Login.Users[Target] ?? ""))
             {
                 if (GroupManagement.HasGroup(Login.Login.CurrentUser.Username, GroupManagement.GroupType.Administrator) & Login.Login.Users.ContainsKey(Target))
                 {
                     // Change password locally
-                    NewPass = Encryption.GetEncryptedString(NewPass, EncryptionAlgorithms.SHA256);
+                    NewPass = Encryption.GetEncryptedString(NewPass, "SHA256");
                     Login.Login.Users[Target] = NewPass;
 
                     // Change password globally

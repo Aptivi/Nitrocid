@@ -19,30 +19,30 @@
 using KS.Kernel.Debugging;
 using System.IO;
 using System.Text;
-using Encryptor = System.Security.Cryptography.SHA512;
+using Encryptor = System.Security.Cryptography.SHA256;
 using FS = KS.Files.Filesystem;
 
 namespace KS.Drivers.Encryption.Encryptors
 {
     /// <summary>
-    /// SHA512 encryptor
+    /// SHA256 encryptor
     /// </summary>
-    public class SHA512 : BaseEncryptionDriver, IEncryptionDriver
+    public abstract class BaseEncryptionDriver : IEncryptionDriver
     {
         /// <inheritdoc/>
-        public override string DriverName => "SHA512";
+        public virtual string DriverName => "SHA256";
 
         /// <inheritdoc/>
-        public override DriverTypes DriverType => DriverTypes.Encryption;
+        public virtual DriverTypes DriverType => DriverTypes.Encryption;
 
         /// <inheritdoc/>
-        public override string EmptyHash => GetEncryptedString("");
+        public virtual string EmptyHash => GetEncryptedString("");
 
         /// <inheritdoc/>
-        public override int HashLength => 128;
+        public virtual int HashLength => 64;
 
         /// <inheritdoc/>
-        public override string GetEncryptedFile(Stream stream)
+        public virtual string GetEncryptedFile(Stream stream)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Stream length: {0}", stream.Length);
             var hashbyte = Encryptor.Create().ComputeHash(stream);
@@ -50,7 +50,7 @@ namespace KS.Drivers.Encryption.Encryptors
         }
 
         /// <inheritdoc/>
-        public override string GetEncryptedFile(string Path)
+        public virtual string GetEncryptedFile(string Path)
         {
             Path = FS.NeutralizePath(Path);
             var Str = new FileStream(Path, FileMode.Open);
@@ -60,7 +60,7 @@ namespace KS.Drivers.Encryption.Encryptors
         }
 
         /// <inheritdoc/>
-        public override string GetEncryptedString(string str)
+        public virtual string GetEncryptedString(string str)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "String length: {0}", str.Length);
             var hashbyte = Encryptor.Create().ComputeHash(Encoding.UTF8.GetBytes(str));
@@ -68,19 +68,19 @@ namespace KS.Drivers.Encryption.Encryptors
         }
 
         /// <inheritdoc/>
-        public override bool VerifyHashFromHash(string FileName, string ExpectedHash, string ActualHash) => 
+        public virtual bool VerifyHashFromHash(string FileName, string ExpectedHash, string ActualHash) => 
             HashVerifier.VerifyHashFromHash(FileName, DriverName, ExpectedHash, ActualHash);
 
         /// <inheritdoc/>
-        public override bool VerifyHashFromHashesFile(string FileName, string HashesFile, string ActualHash) => 
+        public virtual bool VerifyHashFromHashesFile(string FileName, string HashesFile, string ActualHash) => 
             HashVerifier.VerifyHashFromHashesFile(FileName, DriverName, HashesFile, ActualHash);
 
         /// <inheritdoc/>
-        public override bool VerifyUncalculatedHashFromHash(string FileName, string ExpectedHash) => 
+        public virtual bool VerifyUncalculatedHashFromHash(string FileName, string ExpectedHash) =>
             HashVerifier.VerifyUncalculatedHashFromHash(FileName, DriverName, ExpectedHash);
 
         /// <inheritdoc/>
-        public override bool VerifyUncalculatedHashFromHashesFile(string FileName, string HashesFile) => 
+        public virtual bool VerifyUncalculatedHashFromHashesFile(string FileName, string HashesFile) => 
             HashVerifier.VerifyUncalculatedHashFromHashesFile(FileName, DriverName, HashesFile);
     }
 }

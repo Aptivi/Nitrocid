@@ -38,6 +38,10 @@ namespace KS.Drivers
         /// <summary>
         /// Filesystem drivers
         /// </summary>
-        Filesystem
+        Filesystem,
+        /// <summary>
+        /// Encryption drivers
+        /// </summary>
+        Encryption
     }
 }
