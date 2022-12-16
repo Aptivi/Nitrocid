@@ -20,6 +20,7 @@ using System;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Net.Sockets;
 using KS.Files;
 using KS.Files.Operations;
 using KS.Kernel.Exceptions;
@@ -60,26 +61,18 @@ namespace KS.Kernel.Debugging.RemoteDebug
         /// <param name="IPAddr">An IP address of the connected debug device</param>
         public static void DisconnectDbgDev(string IPAddr)
         {
-            var Found = default(bool);
-            for (int i = 0; i <= RemoteDebugger.DebugDevices.Count - 1; i++)
+            var devices = RemoteDebugger.DebugDevices.Where((rdd) => rdd.ClientIP == IPAddr).ToList();
+            for (int i = 0; i <= devices.Count - 1; i++)
             {
-                if (Found)
-                {
-                    return;
-                }
-                else if ((IPAddr ?? "") == (RemoteDebugger.DebugDevices[i].ClientIP ?? ""))
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Debug device {0} disconnected.", RemoteDebugger.DebugDevices[i].ClientIP);
-                    Found = true;
-                    RemoteDebugger.DebugDevices[i].ClientSocket.Disconnect(true);
-                    RemoteDebugger.DebugDevices.RemoveAt(i);
-                    Events.EventsManager.FireEvent("RemoteDebugConnectionDisconnected", IPAddr);
-                }
+                string clientIp = RemoteDebugger.DebugDevices[i].ClientIP;
+                string clientName = RemoteDebugger.DebugDevices[i].ClientName;
+                RemoteDebugger.DebugDevices[i].ClientSocket.Disconnect(true);
+                Events.EventsManager.FireEvent("RemoteDebugConnectionDisconnected", IPAddr);
+                RemoteDebugger.DebugDevices.RemoveAt(i);
+                DebugWriter.WriteDebug(DebugLevel.W, "Debug device {0} ({1}) disconnected.", clientName, clientIp);
             }
-            if (!Found)
-            {
+            if (!devices.Any())
                 throw new KernelException(KernelExceptionType.RemoteDebugDeviceNotFound, Translate.DoTranslation("Debug device {0} not found."), IPAddr);
-            }
         }
 
         /// <summary>
@@ -381,6 +374,32 @@ namespace KS.Kernel.Debugging.RemoteDebug
             string DeviceJsonContent = File.ReadAllText(Paths.GetKernelPath(KernelPathType.DebugDevNames));
             var DeviceNameToken = JObject.Parse(!string.IsNullOrEmpty(DeviceJsonContent) ? DeviceJsonContent : "{}");
             return DeviceNameToken.Properties().Select(p => p.Name).ToArray();
+        }
+
+        /// <summary>
+        /// Disconnects debug device depending on exception
+        /// </summary>
+        /// <param name="exception">Exception</param>
+        /// <param name="deviceIndex">Device index</param>
+        internal static void DisconnectDependingOnException(Exception exception, int deviceIndex)
+        {
+            SocketException SE = (SocketException)exception.InnerException;
+            if (SE is not null)
+            {
+                if ((SE.SocketErrorCode == SocketError.TimedOut) |
+                    (SE.SocketErrorCode == SocketError.WouldBlock) |
+                    (SE.SocketErrorCode == SocketError.ConnectionAborted))
+                {
+                    DisconnectDbgDev(RemoteDebugger.DebugDevices[deviceIndex].ClientIP);
+                }
+                else
+                    DebugWriter.WriteDebugStackTrace(exception);
+            }
+            else
+            {
+                DisconnectDbgDev(RemoteDebugger.DebugDevices[deviceIndex].ClientIP);
+                DebugWriter.WriteDebugStackTrace(exception);
+            }
         }
 
     }

@@ -61,7 +61,7 @@ namespace KS.Kernel.Debugging
                 try
                 {
                     var STrace = new DebugStackFrame();
-                    var OffendingIndex = new List<string>();
+                    string message = "";
 
                     // We could be calling this function by WriteDebugConditional, so descend a frame
                     if (STrace.RoutineName == nameof(WriteDebugConditional))
@@ -69,76 +69,27 @@ namespace KS.Kernel.Debugging
 
                     // Check to see if source file name is not empty.
                     if (STrace.RoutineFileName is not null & !(STrace.RoutineLineNumber == 0))
-                    {
-                        // Debug to file and all connected debug devices (raw mode)
-                        DebugStreamWriter.WriteLine($"{TimeDate.TimeDate.KernelDateTime.ToShortDateString()} {TimeDate.TimeDate.KernelDateTime.ToShortTimeString()} [{Level}] ({STrace.RoutineName} - {STrace.RoutineFileName}:{STrace.RoutineLineNumber}): {text}", vars);
-                        for (int i = 0; i <= RemoteDebugger.DebugDevices.Count - 1; i++)
-                        {
-                            try
-                            {
-                                RemoteDebugger.DebugDevices[i].ClientStreamWriter.WriteLine($"{TimeDate.TimeDate.KernelDateTime.ToShortDateString()} {TimeDate.TimeDate.KernelDateTime.ToShortTimeString()} [{Level}] ({STrace.RoutineName} - {STrace.RoutineFileName}:{STrace.RoutineLineNumber}): {text}", vars);
-                            }
-                            catch (Exception ex)
-                            {
-                                SocketException SE = (SocketException)ex.InnerException;
-                                if (SE is not null)
-                                {
-                                    if ((SE.SocketErrorCode == SocketError.TimedOut) | (SE.SocketErrorCode == SocketError.WouldBlock) | (SE.SocketErrorCode == SocketError.ConnectionAborted))
-                                        OffendingIndex.Add(i.ToString());
-                                    else
-                                        WriteDebugStackTrace(ex);
-                                }
-                                else
-                                {
-                                    OffendingIndex.Add(i.ToString());
-                                    WriteDebugStackTrace(ex);
-                                }
-                            }
-                        }
-                    }
-                    else // Rare case, unless debug symbol is not found on archives.
-                    {
-                        DebugStreamWriter.WriteLine($"{TimeDate.TimeDate.KernelDateTime.ToShortDateString()} {TimeDate.TimeDate.KernelDateTime.ToShortTimeString()} [{Level}] {text}", vars);
-                        for (int i = 0; i <= RemoteDebugger.DebugDevices.Count - 1; i++)
-                        {
-                            try
-                            {
-                                RemoteDebugger.DebugDevices[i].ClientStreamWriter.WriteLine($"{TimeDate.TimeDate.KernelDateTime.ToShortDateString()} {TimeDate.TimeDate.KernelDateTime.ToShortTimeString()} [{Level}] {text}", vars);
-                            }
-                            catch (Exception ex)
-                            {
-                                SocketException SE = (SocketException)ex.InnerException;
-                                if (SE is not null)
-                                {
-                                    if ((SE.SocketErrorCode == SocketError.TimedOut) | (SE.SocketErrorCode == SocketError.WouldBlock) | (SE.SocketErrorCode == SocketError.ConnectionAborted))
-                                        OffendingIndex.Add(i.ToString());
-                                    else
-                                        WriteDebugStackTrace(ex);
-                                }
-                                else
-                                {
-                                    OffendingIndex.Add(i.ToString());
-                                    WriteDebugStackTrace(ex);
-                                }
-                            }
-                        }
-                    }
+                        // Show stack information
+                        message = $"{TimeDate.TimeDate.KernelDateTime.ToShortDateString()} {TimeDate.TimeDate.KernelDateTime.ToShortTimeString()} [{Level}] ({STrace.RoutineName} - {STrace.RoutineFileName}:{STrace.RoutineLineNumber}): {text}";
+                    else
+                        // Rare case, unless debug symbol is not found on archives.
+                        message = $"{TimeDate.TimeDate.KernelDateTime.ToShortDateString()} {TimeDate.TimeDate.KernelDateTime.ToShortTimeString()} [{Level}] {text}";
 
-                    // Disconnect offending clients who are disconnected
-                    foreach (string si in OffendingIndex)
+                    // Debug to file and all connected debug devices (raw mode)
+                    DebugStreamWriter.WriteLine(message, vars);
+                    for (int i = 0; i <= RemoteDebugger.DebugDevices.Count - 1; i++)
                     {
-                        int i = int.Parse(si);
-                        if (i != -1 && i < RemoteDebugger.DebugDevices.Count)
+                        try
                         {
-                            string clientIp = RemoteDebugger.DebugDevices[i].ClientIP;
-                            string clientName = RemoteDebugger.DebugDevices[i].ClientName;
-                            RemoteDebugger.DebugDevices[i].ClientSocket.Disconnect(true);
-                            Events.EventsManager.FireEvent("RemoteDebugConnectionDisconnected", clientIp);
-                            RemoteDebugger.DebugDevices.RemoveAt(i);
-                            WriteDebug(DebugLevel.W, "Debug device {0} ({1}) disconnected.", clientName, clientIp);
+                            RemoteDebugger.DebugDevices[i].ClientStreamWriter.WriteLine(message, vars);
+                        }
+                        catch (Exception ex)
+                        {
+                            RemoteDebugTools.DisconnectDependingOnException(ex, i);
+                            if (i > 0)
+                                i--;
                         }
                     }
-                    OffendingIndex.Clear();
                 }
                 catch (Exception ex)
                 {
@@ -171,9 +122,6 @@ namespace KS.Kernel.Debugging
         {
             if (Flags.DebugMode)
             {
-                var OffendingIndex = new List<string>();
-
-                // For contributors who are testing new code: Define ENABLEIMMEDIATEWINDOWDEBUG for immediate debugging (Immediate Window)
                 for (int i = 0; i <= RemoteDebugger.DebugDevices.Count - 1; i++)
                 {
                     try
@@ -182,37 +130,11 @@ namespace KS.Kernel.Debugging
                     }
                     catch (Exception ex)
                     {
-                        SocketException SE = (SocketException)ex.InnerException;
-                        if (SE is not null)
-                        {
-                            if ((SE.SocketErrorCode == SocketError.TimedOut) | (SE.SocketErrorCode == SocketError.WouldBlock) | (SE.SocketErrorCode == SocketError.ConnectionAborted))
-                                OffendingIndex.Add(i.ToString());
-                            else
-                                WriteDebugStackTrace(ex);
-                        }
-                        else
-                        {
-                            OffendingIndex.Add(i.ToString());
-                            WriteDebugStackTrace(ex);
-                        }
+                        RemoteDebugTools.DisconnectDependingOnException(ex, i);
+                        if (i > 0)
+                            i--;
                     }
                 }
-
-                // Disconnect offending clients who are disconnected
-                foreach (string si in OffendingIndex)
-                {
-                    int i = int.Parse(si);
-                    if (i != -1 && i < RemoteDebugger.DebugDevices.Count)
-                    {
-                        string clientIp = RemoteDebugger.DebugDevices[i].ClientIP;
-                        string clientName = RemoteDebugger.DebugDevices[i].ClientName;
-                        RemoteDebugger.DebugDevices[i].ClientSocket.Disconnect(true);
-                        Events.EventsManager.FireEvent("RemoteDebugConnectionDisconnected", clientIp);
-                        RemoteDebugger.DebugDevices.RemoveAt(i);
-                        WriteDebug(DebugLevel.W, "Debug device {0} ({1}) disconnected.", clientName, clientIp);
-                    }
-                }
-                OffendingIndex.Clear();
             }
         }
 
