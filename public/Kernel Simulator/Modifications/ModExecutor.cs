@@ -52,7 +52,7 @@ namespace KS.Modifications
                     var script = PartInfo.PartScript;
                     if (script.Commands is not null)
                     {
-                        if (script.Commands.ContainsKey(actualCmd) & !string.IsNullOrEmpty(script.Name) & (actualCmd ?? "") != (script.Name ?? ""))
+                        if (script.Commands.ContainsKey(actualCmd) & !string.IsNullOrEmpty(script.Name) & actualCmd != script.Name)
                         {
                             // The commands in the script has the actual command, the mod name is not null, and the command doesn't equal the mod name.
                             // In this case, make the actual command executed the script name.

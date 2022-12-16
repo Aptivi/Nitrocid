@@ -92,7 +92,7 @@ namespace KS.Misc.Archive
 
             // Define local destination while getting an entry from target
             string LocalDestination = Where + "/";
-            var ArchiveEntry = ArchiveShellCommon.ArchiveShell_Archive.Entries.Where(x => (x.Key ?? "") == (AbsoluteTarget ?? "")).ToArray()[0];
+            var ArchiveEntry = ArchiveShellCommon.ArchiveShell_Archive.Entries.Where(x => x.Key == AbsoluteTarget).ToArray()[0];
             if (FullTargetPath)
             {
                 LocalDestination += ArchiveEntry.Key;
@@ -106,7 +106,7 @@ namespace KS.Misc.Archive
             var ArchiveReader = ReaderFactory.Open(ArchiveShellCommon.ArchiveShell_FileStream);
             while (ArchiveReader.MoveToNextEntry())
             {
-                if ((ArchiveReader.Entry.Key ?? "") == (ArchiveEntry.Key ?? "") & !ArchiveReader.Entry.IsDirectory)
+                if (ArchiveReader.Entry.Key == ArchiveEntry.Key & !ArchiveReader.Entry.IsDirectory)
                 {
                     ArchiveReader.WriteEntryToFile(LocalDestination + ArchiveEntry.Key);
                 }

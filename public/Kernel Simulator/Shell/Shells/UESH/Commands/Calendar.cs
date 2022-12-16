@@ -45,7 +45,7 @@ namespace KS.Shell.Shells.UESH.Commands
             // Enumerate based on action
             int ActionMinimumArguments = 1;
             var ActionArguments = ListArgsOnly.Skip(1).ToArray();
-            switch (Action ?? "")
+            switch (Action)
             {
                 case "show":
                     {
@@ -82,7 +82,7 @@ namespace KS.Shell.Shells.UESH.Commands
                         {
                             // User provided any of add, remove, and list. However, the first two arguments need minimum arguments of three parameters, so check.
                             string ActionType = ActionArguments[0];
-                            switch (ActionType ?? "")
+                            switch (ActionType)
                             {
                                 case "add":
                                     {
@@ -172,7 +172,7 @@ namespace KS.Shell.Shells.UESH.Commands
                         {
                             // User provided any of add, remove, and list. However, the first two arguments need minimum arguments of three parameters, so check.
                             string ActionType = ActionArguments[0];
-                            switch (ActionType ?? "")
+                            switch (ActionType)
                             {
                                 case "add":
                                     {

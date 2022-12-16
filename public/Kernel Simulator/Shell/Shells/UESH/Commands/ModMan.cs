@@ -50,7 +50,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 string ModListTerm = "";
 
                 // These command modes require two arguments to be passed, so re-check here and there. Optional arguments also lie there.
-                switch (CommandMode ?? "")
+                switch (CommandMode)
                 {
                     case "start":
                     case "stop":
@@ -90,7 +90,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 }
 
                 // Now, the actual logic
-                switch (CommandMode ?? "")
+                switch (CommandMode)
                 {
                     case "start":
                         {
@@ -107,7 +107,7 @@ namespace KS.Shell.Shells.UESH.Commands
                         {
                             foreach (string script in ModManager.Mods.Keys)
                             {
-                                if ((ModManager.Mods[script].ModFilePath ?? "") == (TargetModPath ?? ""))
+                                if (ModManager.Mods[script].ModFilePath == TargetModPath)
                                 {
                                     SeparatorWriterColor.WriteSeparator(script, true);
                                     TextWriterColor.Write("- " + Translate.DoTranslation("Mod name:") + " ", false, ColorTools.ColTypes.ListEntry);

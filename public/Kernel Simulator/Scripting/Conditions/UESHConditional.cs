@@ -171,7 +171,7 @@ namespace KS.Scripting.Conditions
 
                         default:
                             {
-                                var Variables = EnclosedWords.SkipWhile(str => (str ?? "") == (EnclosedWords[ConditionPosition - 1] ?? "")).ToArray();
+                                var Variables = EnclosedWords.SkipWhile(str => str == EnclosedWords[ConditionPosition - 1]).ToArray();
                                 Satisfied = ConditionBase.IsConditionSatisfied(Variables);
                                 break;
                             }

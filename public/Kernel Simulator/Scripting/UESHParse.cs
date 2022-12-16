@@ -97,7 +97,7 @@ namespace KS.Scripting
                         {
                             for (int j = 0; j <= SplitArguments.Length - 1; j++)
                             {
-                                if ((SplitWords[i] ?? "") == ($"{{{j}}}" ?? ""))
+                                if (SplitWords[i] == $"{{{j}}}")
                                 {
                                     Line = Line.Replace(SplitWords[i], SplitArguments[j]);
                                 }

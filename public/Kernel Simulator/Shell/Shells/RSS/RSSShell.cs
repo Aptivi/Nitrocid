@@ -108,7 +108,7 @@ namespace KS.Shell.Shells.RSS
                     // Make a new RSS feed instance
                     try
                     {
-                        if ((OldRSSFeedLink ?? "") != (RSSShellCommon.RSSFeedLink ?? ""))
+                        if (OldRSSFeedLink != RSSShellCommon.RSSFeedLink)
                         {
                             if (RSSShellCommon.RSSFeedLink == "select")
                             {

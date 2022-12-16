@@ -322,7 +322,7 @@ namespace KS.Drivers.Filesystem
             if (Sorted & !(FilesystemEntries.Count == 0))
             {
                 // We define the max string length for the largest size. This is to overcome the limitation of sorting when it comes to numbers.
-                int MaxLength = FilesystemEntries.Max(x => (x as FileInfo is not null ? (x as FileInfo).Length.GetDigits() : 1));
+                int MaxLength = FilesystemEntries.Max(x => x as FileInfo is not null ? (x as FileInfo).Length.GetDigits() : 1);
 
                 // Select whether or not to sort descending.
                 switch (Listing.SortDirection)

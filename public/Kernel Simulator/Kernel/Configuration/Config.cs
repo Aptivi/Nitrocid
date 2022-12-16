@@ -1705,7 +1705,7 @@ namespace KS.Kernel.Configuration
             Flags.SimulateNoAPM = (bool)ConfigToken["General"]["Simulate No APM Mode"];
             ColorTools.ColorBlind = (bool)ConfigToken["General"]["Enable color blindness"];
             ColorTools.BlindnessDeficiency = (ConfigToken["General"]["Color blindness deficiency"] != null) ? (Deficiency)Enum.Parse(typeof(Deficiency), (string)ConfigToken["General"]["Color blindness deficiency"]) : Deficiency.Protan;
-            ColorTools.BlindnessSeverity = (double.TryParse((string)ConfigToken["General"]["Color blindness severity"], out _) ? (double)ConfigToken["General"]["Color blindness severity"] : 0.6d);
+            ColorTools.BlindnessSeverity = double.TryParse((string)ConfigToken["General"]["Color blindness severity"], out _) ? (double)ConfigToken["General"]["Color blindness severity"] : 0.6d;
             Flags.BeepOnShutdown = (bool)ConfigToken["General"]["Beep on shutdown or reboot"];
             Flags.DelayOnShutdown = (bool)ConfigToken["General"]["Delay on shutdown or reboot"];
             ColorTools.ColorBlindSimple = (bool)ConfigToken["General"]["Enable simple color blindness"];

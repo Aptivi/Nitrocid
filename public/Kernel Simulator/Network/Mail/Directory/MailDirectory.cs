@@ -142,7 +142,7 @@ namespace KS.Network.Mail.Directory
                 DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
                 foreach (MailFolder dir in MailLogin.IMAP_Client.GetFolders(nmspc))
                 {
-                    if ((dir.Name.ToLower() ?? "") == (FolderString.ToLower() ?? ""))
+                    if (dir.Name.ToLower() == FolderString.ToLower())
                     {
                         dir.Open(FolderMode);
                         Opened = dir;
@@ -156,7 +156,7 @@ namespace KS.Network.Mail.Directory
                 DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
                 foreach (MailFolder dir in MailLogin.IMAP_Client.GetFolders(nmspc))
                 {
-                    if ((dir.Name.ToLower() ?? "") == (FolderString.ToLower() ?? ""))
+                    if (dir.Name.ToLower() == FolderString.ToLower())
                     {
                         dir.Open(FolderMode);
                         Opened = dir;
@@ -170,7 +170,7 @@ namespace KS.Network.Mail.Directory
                 DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
                 foreach (MailFolder dir in MailLogin.IMAP_Client.GetFolders(nmspc))
                 {
-                    if ((dir.Name.ToLower() ?? "") == (FolderString.ToLower() ?? ""))
+                    if (dir.Name.ToLower() == FolderString.ToLower())
                     {
                         dir.Open(FolderMode);
                         Opened = dir;

@@ -95,7 +95,7 @@ namespace KS.Drivers.Encryption
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Hashes are consistent.");
                     DebugWriter.WriteDebug(DebugLevel.I, "Hashes {0} and {1}", ActualHash, ExpectedHash);
-                    if ((ActualHash ?? "") == (ExpectedHash ?? ""))
+                    if (ActualHash == ExpectedHash)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Hashes match.");
                         return true;
@@ -145,7 +145,7 @@ namespace KS.Drivers.Encryption
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Hashes are consistent.");
                     DebugWriter.WriteDebug(DebugLevel.I, "Hashes {0} and {1}", ActualHash, ExpectedHash);
-                    if ((ActualHash ?? "") == (ExpectedHash ?? ""))
+                    if (ActualHash == ExpectedHash)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Hashes match.");
                         return true;
@@ -232,7 +232,7 @@ namespace KS.Drivers.Encryption
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Hashes are consistent.");
                     DebugWriter.WriteDebug(DebugLevel.I, "Hashes {0} and {1}", ActualHash, ExpectedHash);
-                    if ((ActualHash ?? "") == (ExpectedHash ?? ""))
+                    if (ActualHash == ExpectedHash)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Hashes match.");
                         return true;
@@ -283,7 +283,7 @@ namespace KS.Drivers.Encryption
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Hashes are consistent.");
                     DebugWriter.WriteDebug(DebugLevel.I, "Hashes {0} and {1}", ActualHash, ExpectedHash);
-                    if ((ActualHash ?? "") == (ExpectedHash ?? ""))
+                    if (ActualHash == ExpectedHash)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Hashes match.");
                         return true;

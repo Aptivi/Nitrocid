@@ -54,7 +54,7 @@ namespace KS.Network.SFTP
                     string SftpPort = address.Replace("sftp://", "").Replace(SftpHost + ":", "");
 
                     // Check to see if no port is provided by client
-                    if ((SftpHost ?? "") == (SftpPort ?? ""))
+                    if (SftpHost == SftpPort)
                     {
                         SftpPort = 22.ToString();
                     }

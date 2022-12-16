@@ -190,7 +190,7 @@ namespace KS.Shell.ShellBase.Aliases
         {
             if (Enum.IsDefined(typeof(ShellType), Type))
             {
-                if ((SourceAlias ?? "") == (Destination ?? ""))
+                if (SourceAlias == Destination)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Assertion succeeded: {0} = {1}", SourceAlias, Destination);
                     throw new KernelException(KernelExceptionType.AliasInvalidOperation, Translate.DoTranslation("Alias can't be the same name as a command."));

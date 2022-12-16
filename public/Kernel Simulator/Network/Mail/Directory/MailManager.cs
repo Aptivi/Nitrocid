@@ -91,7 +91,7 @@ namespace KS.Network.Mail.Directory
                         }
                         MsgFrom = Msg.From.ToString();
                         MsgSubject = Msg.Subject;
-                        MsgPreview = (Msg.GetTextBody(MimeKit.Text.TextFormat.Text) ?? "").Truncate(200);
+                        MsgPreview = Msg.GetTextBody(MimeKit.Text.TextFormat.Text).Truncate(200);
                     }
                     DebugWriter.WriteDebug(DebugLevel.I, "From {0}: {1}", MsgFrom, MsgSubject);
 
@@ -191,7 +191,7 @@ namespace KS.Network.Mail.Directory
 
                         foreach (var address in Msg.From)
                         {
-                            if ((address.Name ?? "") == (Sender ?? ""))
+                            if (address.Name == Sender)
                             {
                                 if (!string.IsNullOrEmpty(MailShellCommon.IMAP_CurrentDirectory) & !(MailShellCommon.IMAP_CurrentDirectory == "Inbox"))
                                 {
@@ -309,7 +309,7 @@ namespace KS.Network.Mail.Directory
 
                         foreach (var address in Msg.From)
                         {
-                            if ((address.Name ?? "") == (Sender ?? ""))
+                            if (address.Name == Sender)
                             {
                                 if (!string.IsNullOrEmpty(MailShellCommon.IMAP_CurrentDirectory) & !(MailShellCommon.IMAP_CurrentDirectory == "Inbox"))
                                 {

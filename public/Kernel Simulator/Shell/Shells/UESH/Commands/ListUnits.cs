@@ -38,7 +38,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            var Quantities = Quantity.Infos.Where(x => (x.Name ?? "") == (ListArgsOnly[0] ?? ""));
+            var Quantities = Quantity.Infos.Where(x => x.Name == ListArgsOnly[0]);
             if (Quantities.Count() != 0)
             {
                 TextWriterColor.Write(Translate.DoTranslation("Available unit types and their units:"));

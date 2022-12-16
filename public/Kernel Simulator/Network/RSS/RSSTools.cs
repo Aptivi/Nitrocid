@@ -210,7 +210,7 @@ namespace KS.Network.RSS
                         {
                             foreach (XmlNode Child in Node.ChildNodes)
                             {
-                                if ((Child.Name ?? "") == (FeedProperty ?? ""))
+                                if (Child.Name == FeedProperty)
                                 {
                                     return Child.InnerXml;
                                 }
@@ -225,7 +225,7 @@ namespace KS.Network.RSS
                         {
                             foreach (XmlNode Child in Node.ChildNodes)
                             {
-                                if ((Child.Name ?? "") == (FeedProperty ?? ""))
+                                if (Child.Name == FeedProperty)
                                 {
                                     return Child.InnerXml;
                                 }
@@ -238,7 +238,7 @@ namespace KS.Network.RSS
                     {
                         foreach (XmlNode Node in FeedNode[0]) // Children of <feed>
                         {
-                            if ((Node.Name ?? "") == (FeedProperty ?? ""))
+                            if (Node.Name == FeedProperty)
                             {
                                 return Node.InnerXml;
                             }
@@ -274,7 +274,7 @@ namespace KS.Network.RSS
                         // Check for new feeds
                         NewFeedsList = RSSShellCommon.RSSFeedInstance.FeedArticles.Except(OldFeedsList).ToList();
                         string OldFeedTitle = OldFeedsList.Count == 0 ? "" : OldFeedsList[0].ArticleTitle;
-                        if (NewFeedsList.Count > 0 && (NewFeedsList[0].ArticleTitle ?? "") != (OldFeedTitle ?? ""))
+                        if (NewFeedsList.Count > 0 && NewFeedsList[0].ArticleTitle != OldFeedTitle)
                         {
                             // Update the list
                             DebugWriter.WriteDebug(DebugLevel.W, "Feeds received! Recents count was {0}, Old count was {1}", RSSShellCommon.RSSFeedInstance.FeedArticles.Count, OldFeedsList.Count);

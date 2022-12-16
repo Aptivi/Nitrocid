@@ -48,7 +48,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 string LanguageListTerm = "";
 
                 // These command modes require two arguments to be passed, so re-check here and there. Optional arguments also lie there.
-                switch (CommandMode ?? "")
+                switch (CommandMode)
                 {
                     case "reload":
                     case "load":
@@ -84,7 +84,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 }
 
                 // Now, the actual logic
-                switch (CommandMode ?? "")
+                switch (CommandMode)
                 {
                     case "reload":
                         {

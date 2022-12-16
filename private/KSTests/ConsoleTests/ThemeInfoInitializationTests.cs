@@ -63,7 +63,7 @@ namespace KSTests.ConsoleTests
 
                 // Special naming cases
                 string ThemeName = ResourceName.ReplaceAll(new[] { "-", " " }, "_");
-                switch (ResourceName ?? "")
+                switch (ResourceName)
                 {
                     case "Default":
                         {

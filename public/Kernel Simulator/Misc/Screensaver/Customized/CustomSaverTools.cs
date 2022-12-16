@@ -136,7 +136,7 @@ namespace KS.Misc.Screensaver.Customized
                 throw new KernelException(KernelExceptionType.NoSuchScreensaver, Translate.DoTranslation("Screensaver {0} not found."), CustomSaver);
             foreach (JProperty Setting in CustomSaverSettingsToken[CustomSaver])
             {
-                if ((Setting.Name ?? "") == (SaverSetting ?? ""))
+                if (Setting.Name == SaverSetting)
                 {
                     return Setting.Value.ToObject(typeof(object));
                 }
@@ -158,7 +158,7 @@ namespace KS.Misc.Screensaver.Customized
             var SettingFound = default(bool);
             foreach (JProperty Setting in CustomSaverSettingsToken[CustomSaver])
             {
-                if ((Setting.Name ?? "") == (SaverSetting ?? ""))
+                if (Setting.Name == SaverSetting)
                 {
                     SettingFound = true;
                     CustomSaverSettingsToken[CustomSaver][SaverSetting] = Value.ToString();

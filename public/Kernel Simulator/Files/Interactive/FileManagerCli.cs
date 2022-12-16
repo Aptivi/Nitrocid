@@ -293,7 +293,7 @@ namespace KS.Files.Interactive
                 try
                 {
                     bool infoIsDirectory = Checking.FolderExists(FileInfoCurrentPane.FullName);
-                    finalInfoRendered = (
+                    finalInfoRendered = 
                         // Name and directory indicator
                         $" [{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.Name} | " + 
 
@@ -302,7 +302,7 @@ namespace KS.Files.Interactive
 
                         // Modified date
                         $"{(!infoIsDirectory ? TimeDateRenderers.Render(((FileInfo)FileInfoCurrentPane).LastWriteTime) : "")}"
-                    );
+                    ;
                 }
                 catch (Exception ex)
                 {

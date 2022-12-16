@@ -261,7 +261,7 @@ namespace KSConverter
 
                         // Add the entry!
                         TextWriterColor.Write("  - Adding {0} to Aliases.json...", true, ColTypes.Progress, AliasCommand);
-                        switch (AliasType ?? "")
+                        switch (AliasType)
                         {
                             case "Shell":
                                 {

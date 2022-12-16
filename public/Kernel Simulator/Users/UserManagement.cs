@@ -117,7 +117,7 @@ namespace KS.Users
                     var ExistingIndex = default(int);
                     foreach (JObject UserToken in UsersToken)
                     {
-                        if ((UserToken["username"].ToString() ?? "") == (uninitUser ?? ""))
+                        if (UserToken["username"].ToString() == uninitUser)
                         {
                             UserExists = true;
                             break;
@@ -186,7 +186,7 @@ namespace KS.Users
         {
             foreach (JObject UserToken in UsersToken)
             {
-                if ((UserToken["username"].ToString() ?? "") == (User ?? ""))
+                if (UserToken["username"].ToString() == User)
                 {
                     return UserToken.SelectToken(PropertyType.ToString().ToLower());
                 }
@@ -204,7 +204,7 @@ namespace KS.Users
         {
             foreach (JObject UserToken in UsersToken)
             {
-                if ((UserToken["username"].ToString() ?? "") == (User ?? ""))
+                if (UserToken["username"].ToString() == User)
                 {
                     switch (PropertyType)
                     {
@@ -321,7 +321,7 @@ namespace KS.Users
                 DebugWriter.WriteDebug(DebugLevel.W, "User is root, and is a system account");
                 throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("User {0} isn't allowed to be removed."), user);
             }
-            else if (Login.Login.Users.Keys.ToArray().Contains(user) & (user ?? "") == (Login.Login.CurrentUser?.Username ?? ""))
+            else if (Login.Login.Users.Keys.ToArray().Contains(user) & user == (Login.Login.CurrentUser?.Username))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "User has logged in, so can't delete self.");
                 throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("User {0} is already logged in. Log-out and log-in as another admin."), user);
@@ -340,7 +340,7 @@ namespace KS.Users
                     // Remove user from Users.json
                     foreach (JObject UserToken in UsersToken)
                     {
-                        if ((UserToken["username"].ToString() ?? "") == (user ?? ""))
+                        if (UserToken["username"].ToString() == user)
                         {
                             UserToken.Remove();
                             break;
@@ -473,7 +473,7 @@ namespace KS.Users
         public static void ChangePassword(string Target, string CurrentPass, string NewPass)
         {
             CurrentPass = Encryption.GetEncryptedString(CurrentPass, "SHA256");
-            if ((CurrentPass ?? "") == (Login.Login.Users[Target] ?? ""))
+            if (CurrentPass == Login.Login.Users[Target])
             {
                 if (GroupManagement.HasGroup(Login.Login.CurrentUser.Username, GroupManagement.GroupType.Administrator) & Login.Login.Users.ContainsKey(Target))
                 {
@@ -564,7 +564,7 @@ namespace KS.Users
         {
             var UsersList = ListAllUsers(IncludeAnonymous, IncludeDisabled);
             string SelectedUsername = UsersList[UserNumber - 1];
-            return Login.Login.Users.Keys.First(x => (x ?? "") == (SelectedUsername ?? ""));
+            return Login.Login.Users.Keys.First(x => x == SelectedUsername);
         }
 
         /// <summary>

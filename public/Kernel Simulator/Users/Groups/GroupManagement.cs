@@ -160,7 +160,7 @@ namespace KS.Users.Groups
             // Save changes
             foreach (JObject UserToken in UserManagement.UsersToken)
             {
-                if ((UserToken["username"].ToString() ?? "") == (Username ?? ""))
+                if (UserToken["username"].ToString() == Username)
                 {
                     if (Convert.ToBoolean(!((JArray)UserToken["groups"]).ToObject<List<string>>().Contains(PermType.ToString())))
                     {
@@ -198,7 +198,7 @@ namespace KS.Users.Groups
         public static void RemoveGroup(GroupType PermType, string Username)
         {
             // Sets the required groups to false.
-            if (Login.Login.Users.Keys.ToArray().Contains(Username) & (Username ?? "") != (Login.Login.CurrentUser?.Username ?? ""))
+            if (Login.Login.Users.Keys.ToArray().Contains(Username) & Username != (Login.Login.CurrentUser?.Username))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Type is {0}", PermType);
                 switch (PermType)
@@ -227,7 +227,7 @@ namespace KS.Users.Groups
                 }
                 DebugWriter.WriteDebug(DebugLevel.I, "User {0} group removed; value is now: {1}", Username, UserGroups[Username]);
             }
-            else if ((Username ?? "") == (Login.Login.CurrentUser.Username ?? ""))
+            else if (Username == Login.Login.CurrentUser.Username)
             {
                 throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("You are already logged in."));
             }
@@ -240,7 +240,7 @@ namespace KS.Users.Groups
             // Save changes
             foreach (JObject UserToken in UserManagement.UsersToken)
             {
-                if ((UserToken["username"].ToString() ?? "") == (Username ?? ""))
+                if (UserToken["username"].ToString() == Username)
                 {
                     List<string> GroupArray = (List<string>)UserToken["groups"].ToObject(typeof(List<string>));
                     GroupArray.Remove(PermType.ToString());
@@ -363,7 +363,7 @@ namespace KS.Users.Groups
                 UserGroups[User] = GroupType.None;
                 foreach (string Perm in (JArray)UserToken["groups"])
                 {
-                    switch (Perm ?? "")
+                    switch (Perm)
                     {
                         case "Administrator":
                             {

@@ -321,7 +321,7 @@ namespace KS.Misc.Screensaver.Displays
                         for (int iteration = 0; iteration < maxProg; iteration++)
                         {
                             // Some power function to make the glitches intense
-                            double currentProg = Math.Pow(((double)iteration / maxProg) * 10, 2);
+                            double currentProg = Math.Pow((double)iteration / maxProg * 10, 2);
                             ProgressBarColor.WriteProgress(currentProg, progPosX, progPosY, black, black, darkGreen);
 
                             // Show current date
@@ -379,7 +379,7 @@ namespace KS.Misc.Screensaver.Displays
                         for (int iteration = 0; iteration < sysWipeMaxProg; iteration++)
                         {
                             // Some power function to make the glitches intense
-                            double currentProg = ((double)iteration / sysWipeMaxProg) * 100;
+                            double currentProg = (double)iteration / sysWipeMaxProg * 100;
                             ProgressBarColor.WriteProgress(currentProg, sysWipeProgPosX, sysWipeProgPosY, black, black, darkGreen);
 
                             // Now, do the glitch

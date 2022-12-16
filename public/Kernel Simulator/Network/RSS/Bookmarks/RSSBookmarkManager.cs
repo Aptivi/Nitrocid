@@ -73,7 +73,7 @@ namespace KS.Network.RSS.Bookmarks
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to add {0} to RSS bookmarks: {1}", FeedURL, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    if ((ex.GetType().Name ?? "") == nameof(UriFormatException))
+                    if (ex.GetType().Name == nameof(UriFormatException))
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "Verify that {0} is actually valid.", FeedURL);
                         throw new KernelException(KernelExceptionType.InvalidFeedLink, Translate.DoTranslation("Failed to parse feed URL:") + " {0}", ex.Message);
@@ -134,7 +134,7 @@ namespace KS.Network.RSS.Bookmarks
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to remove {0} from RSS bookmarks: {1}", FeedURL, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    if ((ex.GetType().Name ?? "") == nameof(UriFormatException))
+                    if (ex.GetType().Name == nameof(UriFormatException))
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "Verify that {0} is actually valid.", FeedURL);
                         throw new KernelException(KernelExceptionType.InvalidFeedLink, Translate.DoTranslation("Failed to parse feed URL:") + " {0}", ex.Message);

@@ -49,11 +49,11 @@ namespace KS.Shell.Shells.UESH.Commands
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Spaces are not allowed."), true, ColorTools.ColTypes.Error);
                 }
-                else if ((ListArgsOnly[3] ?? "") == (ListArgsOnly[2] ?? ""))
+                else if (ListArgsOnly[3] == ListArgsOnly[2])
                 {
                     UserManagement.ChangePassword(ListArgsOnly[0], ListArgsOnly[1], ListArgsOnly[2]);
                 }
-                else if ((ListArgsOnly[3] ?? "") != (ListArgsOnly[2] ?? ""))
+                else if (ListArgsOnly[3] != ListArgsOnly[2])
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Passwords doesn't match."), true, ColorTools.ColTypes.Error);
                 }

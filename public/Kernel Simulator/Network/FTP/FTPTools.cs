@@ -110,7 +110,7 @@ namespace KS.Network.FTP
                     string FtpPort = address.Replace("ftpes://", "").Replace("ftps://", "").Replace("ftp://", "").Replace(FtpHost + ":", "");
 
                     // Check to see if no port is provided by client
-                    if ((FtpHost ?? "") == (FtpPort ?? ""))
+                    if (FtpHost == FtpPort)
                     {
                         FtpPort = 0.ToString(); // Used for detecting of SSL is being used or not dynamically on connection
                     }

@@ -247,7 +247,7 @@ namespace KS.Modifications
 
                             // Try to stop the mod and all associated parts
                             DebugWriter.WriteDebug(DebugLevel.I, "Checking mod {0}...", TargetMod.ModName);
-                            if ((TargetMod.ModFileName ?? "") == (ModFilename ?? ""))
+                            if (TargetMod.ModFileName == ModFilename)
                             {
                                 DebugWriter.WriteDebug(DebugLevel.I, "Found mod to be stopped. Stopping...");
 
@@ -337,7 +337,7 @@ namespace KS.Modifications
                 foreach (string PartName in Mods[ModName].ModParts.Keys)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Checking part {0}...", PartName);
-                    if ((Mods[ModName].ModParts[PartName].PartFilePath ?? "") == (ModFilename ?? ""))
+                    if (Mods[ModName].ModParts[PartName].PartFilePath == ModFilename)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Found part {0} ({1}). Returning True...", PartName, ModFilename);
                         return true;

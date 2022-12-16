@@ -95,7 +95,7 @@ namespace KS.Network.RPC
                     // Check the request type
                     string RequestType = Cmd.Substring(Cmd.IndexOf(":") + 1, Finish: Cmd.IndexOf(">"));
                     var ByteMsg = Array.Empty<byte>();
-                    switch (RequestType ?? "")
+                    switch (RequestType)
                     {
                         case "Shutdown":
                         case "Reboot":

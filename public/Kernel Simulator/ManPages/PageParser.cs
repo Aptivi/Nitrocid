@@ -98,7 +98,7 @@ namespace KS.ManPages
                             if (BodyParsing)
                             {
                                 // If we're not at the end of the body
-                                if ((ManLine ?? "") != (BodyEndConstant ?? ""))
+                                if (ManLine != BodyEndConstant)
                                 {
                                     if (!string.IsNullOrWhiteSpace(ManLine))
                                         DebugWriter.WriteDebug(DebugLevel.I, "Appending {0} to builder", ManLine);

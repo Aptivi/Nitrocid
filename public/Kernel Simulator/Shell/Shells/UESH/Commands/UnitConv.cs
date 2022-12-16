@@ -44,7 +44,7 @@ namespace KS.Shell.Shells.UESH.Commands
             int QuantityNum = Convert.ToInt32(ListArgsOnly[1]);
             string SourceUnit = ListArgsOnly[2];
             string TargetUnit = ListArgsOnly[3];
-            var QuantityInfos = Quantity.Infos.Where(x => (x.Name ?? "") == (UnitType ?? "")).ToArray();
+            var QuantityInfos = Quantity.Infos.Where(x => x.Name == UnitType).ToArray();
             var TargetUnitInstance = UnitParser.Default.Parse(TargetUnit, QuantityInfos[0].UnitType);
             var ConvertedUnit = Quantity.Parse(QuantityInfos[0].ValueType, $"{QuantityNum} {SourceUnit}").ToUnit(TargetUnitInstance);
             TextWriterColor.Write("- {0} => {1}: ", false, ColorTools.ColTypes.ListEntry, SourceUnit, TargetUnit);

@@ -49,7 +49,7 @@ namespace KS.Languages
             DebugWriter.WriteDebug(DebugLevel.I, "Parsing {0} cultures for {1}", Cults.Length, StrCult);
             foreach (CultureInfo Cult in Cults)
             {
-                if ((Cult.EnglishName ?? "") == (StrCult ?? ""))
+                if (Cult.EnglishName == StrCult)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Found. Changing culture...");
                     CurrentCult = Cult;
@@ -70,7 +70,7 @@ namespace KS.Languages
             var Cultures = GetCulturesFromCurrentLang();
             foreach (CultureInfo Cult in Cultures)
             {
-                if ((Cult.EnglishName ?? "") == (Culture ?? ""))
+                if (Cult.EnglishName == Culture)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Found. Changing culture...");
                     CurrentCult = Cult;

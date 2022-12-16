@@ -55,7 +55,7 @@ namespace KS.Misc.Games
                 TextWriterColor.Write(RandomWord, true, ColorTools.ColTypes.Input);
                 SpeltWord = Input.ReadLineNoInput(Convert.ToChar("\0"));
 
-                if ((SpeltWord ?? "") == (RandomWord ?? ""))
+                if (SpeltWord == RandomWord)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Spelt: {0} = {1}", SpeltWord, RandomWord);
                     TextWriterColor.Write(Translate.DoTranslation("Spelt perfectly!"), true, ColorTools.ColTypes.Success);
