@@ -266,5 +266,6 @@ These settings are found. Please select one.
 The kernel host name to communicate with the rest of the computers
 How many e-mail messages to display in one page?
 Which screensaver do you want to lock your screen with?
+Stack frame number shouldn't exceed current amount of frames or shouldn't be negative.
 
 ==========================================================================================================================================
