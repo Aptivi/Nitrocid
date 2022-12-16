@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace KS.Drivers.Encryption
 {
@@ -35,6 +36,11 @@ namespace KS.Drivers.Encryption
         /// The expected hash length
         /// </summary>
         abstract int HashLength { get; }
+
+        /// <summary>
+        /// Regular expression to match hashes
+        /// </summary>
+        abstract Regex HashRegex { get; }
 
         /// <summary>
         /// Encrypts a string

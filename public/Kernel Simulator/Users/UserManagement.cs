@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using KS.Drivers;
 using KS.Drivers.Encryption;
 using KS.Files;
 using KS.Files.Querying;
@@ -88,7 +89,7 @@ namespace KS.Users
             try
             {
                 // Compute hash of a password
-                var Regexp = new Regex("^([a-fA-F0-9]{64})$"); // TODO: Consolidate this to Encryption Driver
+                var Regexp = DriverHandler.GetEncryptionDriver("SHA256").HashRegex;
                 if (ComputationNeeded)
                 {
                     unpassword = Encryption.GetEncryptedString(unpassword, "SHA256");

@@ -19,6 +19,7 @@
 using KS.Kernel.Debugging;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using Encryptor = System.Security.Cryptography.SHA384;
 using FS = KS.Files.Filesystem;
 
@@ -40,6 +41,9 @@ namespace KS.Drivers.Encryption.Encryptors
 
         /// <inheritdoc/>
         public override int HashLength => 96;
+
+        /// <inheritdoc/>
+        public override Regex HashRegex => new("^([a-fA-F0-9]{96})$");
 
         /// <inheritdoc/>
         public override string GetEncryptedFile(Stream stream)
