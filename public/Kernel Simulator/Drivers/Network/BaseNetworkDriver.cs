@@ -40,31 +40,31 @@ namespace KS.Drivers.Network
     public abstract class BaseNetworkDriver : INetworkDriver
     {
         /// <inheritdoc/>
-        public string DriverName => "Default";
+        public virtual string DriverName => "Default";
 
         /// <inheritdoc/>
-        public DriverTypes DriverType => DriverTypes.Network;
+        public virtual DriverTypes DriverType => DriverTypes.Network;
 
         /// <inheritdoc/>
-        public bool NetworkAvailable => NetworkInterface.GetIsNetworkAvailable();
+        public virtual bool NetworkAvailable => NetworkInterface.GetIsNetworkAvailable();
 
         /// <inheritdoc/>
-        public bool DownloadFile(string URL) =>
+        public virtual bool DownloadFile(string URL) =>
             DownloadFile(URL, Flags.ShowProgress);
 
         /// <inheritdoc/>
-        public bool DownloadFile(string URL, bool ShowProgress)
+        public virtual bool DownloadFile(string URL, bool ShowProgress)
         {
             string FileName = NetworkTools.GetFilenameFromUrl(URL);
             return DownloadFile(URL, ShowProgress, FileName);
         }
 
         /// <inheritdoc/>
-        public bool DownloadFile(string URL, string FileName) =>
+        public virtual bool DownloadFile(string URL, string FileName) =>
             DownloadFile(URL, Flags.ShowProgress, FileName);
 
         /// <inheritdoc/>
-        public bool DownloadFile(string URL, bool ShowProgress, string FileName)
+        public virtual bool DownloadFile(string URL, bool ShowProgress, string FileName)
         {
             // Intialize variables
             var FileUri = new Uri(URL);
@@ -132,11 +132,11 @@ namespace KS.Drivers.Network
         }
 
         /// <inheritdoc/>
-        public string DownloadString(string URL) =>
+        public virtual string DownloadString(string URL) =>
             DownloadString(URL, Flags.ShowProgress);
 
         /// <inheritdoc/>
-        public string DownloadString(string URL, bool ShowProgress)
+        public virtual string DownloadString(string URL, bool ShowProgress)
         {
             // Intialize variables
             var StringUri = new Uri(URL);
@@ -202,7 +202,7 @@ namespace KS.Drivers.Network
         }
 
         /// <inheritdoc/>
-        public string GetFilenameFromUrl(string Url)
+        public virtual string GetFilenameFromUrl(string Url)
         {
             string FileName = Url.Split('/').Last();
             DebugWriter.WriteDebug(DebugLevel.I, "Prototype Filename: {0}", FileName);
@@ -215,7 +215,7 @@ namespace KS.Drivers.Network
         }
 
         /// <inheritdoc/>
-        public PingReply PingAddress(string Address, int Timeout, byte[] Buffer)
+        public virtual PingReply PingAddress(string Address, int Timeout, byte[] Buffer)
         {
             var Pinger = new Ping();
             var PingerOpts = new PingOptions() { DontFragment = true };
@@ -223,11 +223,11 @@ namespace KS.Drivers.Network
         }
 
         /// <inheritdoc/>
-        public bool UploadFile(string FileName, string URL) =>
+        public virtual bool UploadFile(string FileName, string URL) =>
             UploadFile(FileName, URL, Flags.ShowProgress);
 
         /// <inheritdoc/>
-        public bool UploadFile(string FileName, string URL, bool ShowProgress)
+        public virtual bool UploadFile(string FileName, string URL, bool ShowProgress)
         {
             // Intialize variables
             var FileUri = new Uri(URL);
@@ -280,11 +280,11 @@ namespace KS.Drivers.Network
         }
 
         /// <inheritdoc/>
-        public bool UploadString(string URL, string Data) => 
+        public virtual bool UploadString(string URL, string Data) => 
             UploadString(URL, Data, Flags.ShowProgress);
 
         /// <inheritdoc/>
-        public bool UploadString(string URL, string Data, bool ShowProgress)
+        public virtual bool UploadString(string URL, string Data, bool ShowProgress)
         {
             // Intialize variables
             var StringUri = new Uri(URL);
