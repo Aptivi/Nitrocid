@@ -266,7 +266,7 @@ namespace KS.Kernel
                     // Show license
                     TextWriterColor.Write();
                     SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("License information"), true, ColorTools.ColTypes.Stage);
-                    WelcomeMessage.WriteLicense(false);
+                    WelcomeMessage.WriteLicense();
 
 #if SPECIFIERDEV
                     TextWriterColor.Write();

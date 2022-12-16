@@ -328,3 +328,7 @@ This was only useful in conditions where getting the compiler variables for dete
 ##### Migrated encryptors to Kernel Drivers
 
 The kernel drivers are benefical, so we decided to give the encryptors a chance to appear in kernel drivers. This caused us to remove `EncryptionAlgorithms` and `IEncryptor` and replace them with `IEncryptionDriver`, handled by the kernel driver handler.
+
+##### Removed TwoNewlines argument from WriteLicense
+
+This argument was unused, so we decided to remove it from `WriteLicense()`.

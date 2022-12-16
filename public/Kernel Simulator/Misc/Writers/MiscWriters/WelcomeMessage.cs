@@ -86,7 +86,7 @@ namespace KS.Misc.Writers.MiscWriters
         /// <summary>
         /// Writes the license
         /// </summary>
-        public static void WriteLicense(bool TwoNewlines)
+        public static void WriteLicense()
         {
             TextWriterColor.Write(CharManager.NewLine + "    Kernel Simulator  Copyright (C) 2018-2022  Aptivi" + 
                                   CharManager.NewLine + "    This program comes with ABSOLUTELY NO WARRANTY, not even " + 
@@ -94,8 +94,6 @@ namespace KS.Misc.Writers.MiscWriters
                                   CharManager.NewLine + "    This is free software, and you are welcome to redistribute it" + 
                                   CharManager.NewLine + "    under certain conditions; See COPYING file in source code." + CharManager.NewLine, true, ColorTools.ColTypes.License);
             TextWriterColor.Write("* " + Translate.DoTranslation("For more information about the terms and conditions of using this software, visit") + " http://www.gnu.org/licenses/", true, ColorTools.ColTypes.License);
-            if (TwoNewlines)
-                TextWriterColor.Write();
         }
 
     }
