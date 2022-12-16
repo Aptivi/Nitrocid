@@ -29,6 +29,13 @@
                 "Description": "When switching languages, change the month names, calendar, etc."
             },
             {
+                "Name": "Language",
+                "Type": "SLang",
+                "Variable": "currentLanguage",
+                "IsInternal": true,
+                "Description": "Specifies the kernel language."
+            },
+            {
                 "Name": "Culture",
                 "Type": "SSelection",
                 "Variable": "CurrentCultStr",
@@ -37,13 +44,6 @@
                 "SelectionFunctionType": "Translate",
                 "SelectionFallback": [ "en-US (English (United States))" ],
                 "Description": "Which variant of the current language is being used to change the month names, calendar, etc.?"
-            },
-            {
-                "Name": "Language",
-                "Type": "SLang",
-                "Variable": "currentLanguage",
-                "IsInternal": true,
-                "Description": "Specifies the kernel language."
             },
             {
                 "Name": "Show app information during boot",
@@ -188,20 +188,20 @@
         "DisplayAs": "Color settings",
         "Keys": [
             {
-                "Name": "Input Color",
+                "Name": "User Name Shell Color",
                 "Type": "SColor",
                 "Variable": "KernelColors",
                 "IsEnumerable": true,
                 "IsInternal": true,
-                "EnumerableIndex": 0
+                "EnumerableIndex": 5
             },
             {
-                "Name": "License Color",
+                "Name": "Host Name Shell Color",
                 "Type": "SColor",
                 "Variable": "KernelColors",
                 "IsEnumerable": true,
                 "IsInternal": true,
-                "EnumerableIndex": 1
+                "EnumerableIndex": 4
             },
             {
                 "Name": "Continuable Kernel Error Color",
@@ -220,20 +220,20 @@
                 "EnumerableIndex": 3
             },
             {
-                "Name": "Host Name Shell Color",
+                "Name": "Text Color",
                 "Type": "SColor",
                 "Variable": "KernelColors",
                 "IsEnumerable": true,
                 "IsInternal": true,
-                "EnumerableIndex": 4
+                "EnumerableIndex": 7
             },
             {
-                "Name": "User Name Shell Color",
+                "Name": "License Color",
                 "Type": "SColor",
                 "Variable": "KernelColors",
                 "IsEnumerable": true,
                 "IsInternal": true,
-                "EnumerableIndex": 5
+                "EnumerableIndex": 1
             },
             {
                 "Name": "Background Color",
@@ -244,12 +244,12 @@
                 "EnumerableIndex": 6
             },
             {
-                "Name": "Text Color",
+                "Name": "Input Color",
                 "Type": "SColor",
                 "Variable": "KernelColors",
                 "IsEnumerable": true,
                 "IsInternal": true,
-                "EnumerableIndex": 7
+                "EnumerableIndex": 0
             },
             {
                 "Name": "List Entry Color",
@@ -560,6 +560,12 @@
                 "Description": "Clear screen before displaying login screen."
             },
             {
+                "Name": "Host Name",
+                "Type": "SString",
+                "Variable": "HostName",
+                "Description": "The kernel host name to communicate with the rest of the computers"
+            },
+            {
                 "Name": "Show available usernames",
                 "Type": "SBoolean",
                 "Variable": "ShowAvailableUsers",
@@ -642,22 +648,6 @@
                 "Description": "Group of paths separated by the colon. It works the same as PATH. Write a full path to a folder or a folder name. When you're finished, write \"q\". Write a minus sign next to the path to remove an existing directory."
             },
             {
-                "Name": "Start color wheel in true color mode",
-                "Type": "SBoolean",
-                "Variable": "ColorWheelTrueColor",
-                "Description": "Start color wheel in true color mode"
-            },
-            {
-                "Name": "Default choice output type",
-                "Type": "SSelection",
-                "Variable": "DefaultChoiceOutputType",
-                "IsEnumeration": true,
-                "EnumerationInternal": true,
-                "Enumeration": "ConsoleBase.Inputs.Styles.ChoiceStyle+ChoiceOutputType",
-                "EnumerationZeroBased": true,
-                "Description": "Default choice output type"
-            },
-            {
                 "Name": "Prompt Preset",
                 "Type": "SPreset",
                 "Variable": "CurrentPresets",
@@ -668,13 +658,23 @@
                 "Description": ""
             },
             {
-                "Name": "Text Edit Prompt Preset",
+                "Name": "FTP Prompt Preset",
                 "Type": "SPreset",
                 "Variable": "CurrentPresets",
                 "IsInternal": true,
                 "IsEnumerable": true,
-                "EnumerableIndex": 4,
-                "ShellType": "TextShell",
+                "EnumerableIndex": 1,
+                "ShellType": "FTPTextShell",
+                "Description": ""
+            },
+            {
+                "Name": "Mail Prompt Preset",
+                "Type": "SPreset",
+                "Variable": "CurrentPresets",
+                "IsInternal": true,
+                "IsEnumerable": true,
+                "EnumerableIndex": 2,
+                "ShellType": "MailShell",
                 "Description": ""
             },
             {
@@ -698,13 +698,13 @@
                 "Description": ""
             },
             {
-                "Name": "Mail Prompt Preset",
+                "Name": "Text Edit Prompt Preset",
                 "Type": "SPreset",
                 "Variable": "CurrentPresets",
                 "IsInternal": true,
                 "IsEnumerable": true,
-                "EnumerableIndex": 2,
-                "ShellType": "MailShell",
+                "EnumerableIndex": 4,
+                "ShellType": "TextShell",
                 "Description": ""
             },
             {
@@ -718,16 +718,6 @@
                 "Description": ""
             },
             {
-                "Name": "HTTP Shell Prompt Preset",
-                "Type": "SPreset",
-                "Variable": "CurrentPresets",
-                "IsInternal": true,
-                "IsEnumerable": true,
-                "EnumerableIndex": 7,
-                "ShellType": "HTTPShell",
-                "Description": ""
-            },
-            {
                 "Name": "Hex Edit Prompt Preset",
                 "Type": "SPreset",
                 "Variable": "CurrentPresets",
@@ -738,13 +728,13 @@
                 "Description": ""
             },
             {
-                "Name": "FTP Prompt Preset",
+                "Name": "HTTP Shell Prompt Preset",
                 "Type": "SPreset",
                 "Variable": "CurrentPresets",
                 "IsInternal": true,
                 "IsEnumerable": true,
-                "EnumerableIndex": 1,
-                "ShellType": "FTPTextShell",
+                "EnumerableIndex": 7,
+                "ShellType": "HTTPShell",
                 "Description": ""
             },
             {
@@ -766,6 +756,22 @@
                 "EnumerableIndex": 10,
                 "ShellType": "AdminShell",
                 "Description": ""
+            },
+            {
+                "Name": "Start color wheel in true color mode",
+                "Type": "SBoolean",
+                "Variable": "ColorWheelTrueColor",
+                "Description": "Start color wheel in true color mode"
+            },
+            {
+                "Name": "Default choice output type",
+                "Type": "SSelection",
+                "Variable": "DefaultChoiceOutputType",
+                "IsEnumeration": true,
+                "EnumerationInternal": true,
+                "Enumeration": "ConsoleBase.Inputs.Styles.ChoiceStyle+ChoiceOutputType",
+                "EnumerationZeroBased": true,
+                "Description": "Default choice output type"
             }
         ]
     },
@@ -1131,6 +1137,14 @@
                 "Description": "Whether to recursively hash a directory. Please note that not all the FTP servers support that."
             },
             {
+                "Name": "Maximum number of e-mails in one page",
+                "Type": "SIntSlider",
+                "Variable": "Mail_MaxMessagesInPage",
+                "Description": "How many e-mail messages to display in one page?",
+                "MinimumValue": 0,
+                "MaximumValue": 25
+            },
+            {
                 "Name": "Show mail transfer progress",
                 "Type": "SBoolean",
                 "Variable": "Mail_ShowProgress",
@@ -1208,6 +1222,12 @@
         "Path": "Screensaver",
         "DisplayAs": "Basic screensaver settings",
         "Keys": [
+            {
+                "Name": "Screensaver",
+                "Type": "SString",
+                "Variable": "DefSaverName",
+                "Description": "Which screensaver do you want to lock your screen with?"
+            },
             {
                 "Name": "Screensaver Timeout in ms",
                 "Type": "SInt",
@@ -1335,16 +1355,16 @@
                 "Description": "A character that resembles the upper left corner. Be sure to only input one character."
             },
             {
-                "Name": "Lower left corner character for notification border",
-                "Type": "SChar",
-                "Variable": "NotifyLowerLeftCornerChar",
-                "Description": "A character that resembles the lower left corner. Be sure to only input one character."
-            },
-            {
                 "Name": "Upper right corner character for notification border",
                 "Type": "SChar",
                 "Variable": "NotifyUpperRightCornerChar",
                 "Description": "A character that resembles the upper right corner. Be sure to only input one character."
+            },
+            {
+                "Name": "Lower left corner character for notification border",
+                "Type": "SChar",
+                "Variable": "NotifyLowerLeftCornerChar",
+                "Description": "A character that resembles the lower left corner. Be sure to only input one character."
             },
             {
                 "Name": "Lower right corner character for notification border",
@@ -1423,16 +1443,16 @@
                 "Description": "A character that resembles the upper left corner. Be sure to only input one character."
             },
             {
-                "Name": "Lower left corner character for RGB color wheel",
-                "Type": "SChar",
-                "Variable": "WheelLowerLeftCornerChar",
-                "Description": "A character that resembles the lower left corner. Be sure to only input one character."
-            },
-            {
                 "Name": "Upper right corner character for RGB color wheel",
                 "Type": "SChar",
                 "Variable": "WheelUpperRightCornerChar",
                 "Description": "A character that resembles the upper right corner. Be sure to only input one character."
+            },
+            {
+                "Name": "Lower left corner character for RGB color wheel",
+                "Type": "SChar",
+                "Variable": "WheelLowerLeftCornerChar",
+                "Description": "A character that resembles the lower left corner. Be sure to only input one character."
             },
             {
                 "Name": "Lower right corner character for RGB color wheel",
@@ -1524,16 +1544,16 @@
                 "Description": "A character that resembles the upper left corner. Be sure to only input one character."
             },
             {
-                "Name": "Lower left corner character for progress bars",
-                "Type": "SChar",
-                "Variable": "ProgressLowerLeftCornerChar",
-                "Description": "A character that resembles the lower left corner. Be sure to only input one character."
-            },
-            {
                 "Name": "Upper right corner character for progress bars",
                 "Type": "SChar",
                 "Variable": "ProgressUpperRightCornerChar",
                 "Description": "A character that resembles the upper right corner. Be sure to only input one character."
+            },
+            {
+                "Name": "Lower left corner character for progress bars",
+                "Type": "SChar",
+                "Variable": "ProgressLowerLeftCornerChar",
+                "Description": "A character that resembles the lower left corner. Be sure to only input one character."
             },
             {
                 "Name": "Lower right corner character for progress bars",

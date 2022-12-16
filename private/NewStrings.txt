@@ -263,5 +263,8 @@ Console supports true color
 If you are sure that the console supports true color, or if you want to change your terminal to a terminal that supports true color, change this value.
 The theme {0} needs true color support, but your console doesn't support it.
 These settings are found. Please select one.
+The kernel host name to communicate with the rest of the computers
+How many e-mail messages to display in one page?
+Which screensaver do you want to lock your screen with?
 
 ==========================================================================================================================================
