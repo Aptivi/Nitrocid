@@ -455,11 +455,6 @@ namespace KSConverter
                     else
                         Flags.CornerTimeDate = false;
                 }
-                if (ConfigReader.Sections["Misc"].Keys.Contains("Debug Size Quota in Bytes"))
-                {
-                    if (int.TryParse(ConfigReader.Sections["Misc"].Keys["Debug Size Quota in Bytes"].Value, out int argresult26))
-                        DebugManager.DebugQuota = Convert.ToDouble(ConfigReader.Sections["Misc"].Keys["Debug Size Quota in Bytes"].Value);
-                }
                 if (ConfigReader.Sections["Misc"].Keys.Contains("Size parse mode"))
                 {
                     if (ConfigReader.Sections["Misc"].Keys["Size parse mode"].Value == "True")
