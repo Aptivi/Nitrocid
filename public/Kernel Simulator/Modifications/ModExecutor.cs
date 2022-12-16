@@ -47,7 +47,7 @@ namespace KS.Modifications
             // Check to see if the command written needs normalization
             foreach (ModInfo ModPart in ModManager.Mods.Values)
             {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
+                foreach (ModPartInfo PartInfo in ModPart.ModParts.Values)
                 {
                     var script = PartInfo.PartScript;
                     if (script.Commands is not null)

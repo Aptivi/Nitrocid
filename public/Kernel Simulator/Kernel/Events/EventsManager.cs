@@ -190,7 +190,7 @@ namespace KS.Kernel.Events
             // Now, respond to the event
             foreach (ModInfo ModPart in ModManager.Mods.Values)
             {
-                foreach (PartInfo PartInfo in ModPart.ModParts.Values)
+                foreach (ModPartInfo PartInfo in ModPart.ModParts.Values)
                 {
                     try
                     {

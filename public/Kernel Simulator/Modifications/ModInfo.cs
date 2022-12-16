@@ -43,7 +43,7 @@ namespace KS.Modifications
         /// <summary>
         /// The mod parts and their scripts
         /// </summary>
-        internal Dictionary<string, PartInfo> ModParts { get; set; }
+        internal Dictionary<string, ModPartInfo> ModParts { get; set; }
         /// <summary>
         /// The mod version. We recommend using <seealso href="https://semver.org/">Semantic Versioning</seealso> scheme.
         /// </summary>
@@ -52,7 +52,7 @@ namespace KS.Modifications
         /// <summary>
         /// Creates new mod info instance
         /// </summary>
-        internal ModInfo(string ModName, string ModFileName, string ModFilePath, Dictionary<string, PartInfo> ModParts, string ModVersion)
+        internal ModInfo(string ModName, string ModFileName, string ModFilePath, Dictionary<string, ModPartInfo> ModParts, string ModVersion)
         {
             // Validate values. Check to see if the name is null. If so, it will take the mod file name.
             if (string.IsNullOrWhiteSpace(ModName))

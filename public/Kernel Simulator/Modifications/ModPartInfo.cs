@@ -24,7 +24,7 @@ namespace KS.Modifications
     /// <summary>
     /// Mod part information
     /// </summary>
-    public class PartInfo
+    public class ModPartInfo
     {
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace KS.Modifications
         /// <summary>
         /// Creates new mod info instance
         /// </summary>
-        internal PartInfo(string ModName, string PartName, string PartFileName, string PartFilePath, IScript PartScript)
+        internal ModPartInfo(string ModName, string PartName, string PartFileName, string PartFilePath, IScript PartScript)
         {
             // Validate values. Check to see if the name is null. If so, it will take the mod file name.
             if (string.IsNullOrWhiteSpace(ModName))

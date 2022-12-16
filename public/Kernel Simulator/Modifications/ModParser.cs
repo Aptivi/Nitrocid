@@ -119,9 +119,9 @@ namespace KS.Modifications
         /// <param name="modFile">Mod file name with extension. It should end with .dll</param>
         public static void FinalizeMods(IScript script, string modFile)
         {
-            var ModParts = new Dictionary<string, PartInfo>();
+            var ModParts = new Dictionary<string, ModPartInfo>();
             ModInfo ModInstance;
-            PartInfo PartInstance;
+            ModPartInfo PartInstance;
 
             // Try to finalize mod
             if (script is not null)
@@ -202,7 +202,7 @@ namespace KS.Modifications
                     }
 
                     // Now, add the part
-                    PartInstance = new PartInfo(ModName, script.ModPart, modFile, Filesystem.NeutralizePath(modFile, ModPath), script);
+                    PartInstance = new ModPartInfo(ModName, script.ModPart, modFile, Filesystem.NeutralizePath(modFile, ModPath), script);
                     Parts.Add(script.ModPart, PartInstance);
                     ModInstance = new ModInfo(ModName, modFile, Filesystem.NeutralizePath(modFile, ModPath), Parts, script.Version);
                     ModManager.Mods.AddIfNotFound(ModName, ModInstance);

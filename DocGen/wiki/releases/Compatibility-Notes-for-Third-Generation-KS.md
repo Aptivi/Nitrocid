@@ -332,3 +332,7 @@ The kernel drivers are benefical, so we decided to give the encryptors a chance 
 ##### Removed TwoNewlines argument from WriteLicense
 
 This argument was unused, so we decided to remove it from `WriteLicense()`.
+
+##### Renamed PartInfo to ModPartInfo
+
+Add `Mod` next to `PartInfo` to clarify which module uses this.
