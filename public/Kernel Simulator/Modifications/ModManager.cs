@@ -30,7 +30,6 @@ using KS.Files.Querying;
 using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Languages;
-using KS.ManPages;
 using KS.Misc.Screensaver.Customized;
 using KS.Misc.Splash;
 using KS.Misc.Writers.ConsoleWriters;
@@ -38,6 +37,7 @@ using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
+using KS.Modifications.ManPages;
 
 namespace KS.Modifications
 {

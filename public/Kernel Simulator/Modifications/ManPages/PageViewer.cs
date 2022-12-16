@@ -30,7 +30,7 @@ using KS.Misc.Writers.ConsoleWriters;
 using KS.ConsoleBase.Inputs;
 using VT.NET;
 
-namespace KS.ManPages
+namespace KS.Modifications.ManPages
 {
     /// <summary>
     /// Mod manual page viewer module

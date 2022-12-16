@@ -18,8 +18,8 @@
 
 using System;
 using System.Linq;
-using KS.ManPages;
 using KS.Misc.Writers.ConsoleWriters;
+using KS.Modifications.ManPages;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.UESH.Commands

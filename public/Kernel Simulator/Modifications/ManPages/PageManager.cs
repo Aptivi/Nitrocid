@@ -21,7 +21,7 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 
-namespace KS.ManPages
+namespace KS.Modifications.ManPages
 {
     /// <summary>
     /// Mod manual page management module

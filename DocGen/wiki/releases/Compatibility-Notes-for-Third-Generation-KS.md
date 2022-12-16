@@ -336,3 +336,7 @@ This argument was unused, so we decided to remove it from `WriteLicense()`.
 ##### Renamed PartInfo to ModPartInfo
 
 Add `Mod` next to `PartInfo` to clarify which module uses this.
+
+##### Manual pages moved to Modifications
+
+These manual pages are used by mods to host documentation, so we moved it to `KS.Modifications.ManPages` to reflect its purpose.

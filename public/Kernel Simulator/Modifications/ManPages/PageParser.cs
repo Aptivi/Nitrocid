@@ -27,7 +27,7 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Probers;
 
-namespace KS.ManPages
+namespace KS.Modifications.ManPages
 {
     static class PageParser
     {

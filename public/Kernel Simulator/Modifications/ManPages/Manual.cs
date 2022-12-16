@@ -19,7 +19,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace KS.ManPages
+namespace KS.Modifications.ManPages
 {
     /// <summary>
     /// Manual page class instance
