@@ -82,12 +82,6 @@
                 "Description": "If there is any kernel error, choose whether or not to print the stack trace to the console."
             },
             {
-                "Name": "Check debug quota",
-                "Type": "SBoolean",
-                "Variable": "CheckDebugQuota",
-                "Description": "Do we check if the debug system needs to check for quota before writing to the debugger?"
-            },
-            {
                 "Name": "Automatically download updates",
                 "Type": "SBoolean",
                 "Variable": "AutoDownloadUpdate",
@@ -799,12 +793,6 @@
                 "Enumeration": "Files.Folders.FilesystemSortDirection",
                 "EnumerationZeroBased": false,
                 "Description": "Controls the direction of filesystem sorting whether it's ascending or descending."
-            },
-            {
-                "Name": "Debug Size Quota in Bytes",
-                "Type": "SInt",
-                "Variable": "DebugQuota",
-                "Description": "Write how many bytes can the debug log store. It must be numeric."
             },
             {
                 "Name": "Show Hidden Files",

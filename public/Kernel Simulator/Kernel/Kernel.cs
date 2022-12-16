@@ -137,7 +137,7 @@ namespace KS.Kernel
                         Flags.FirstTime = true;
 
                     // Initialize debug path
-                    DebugManager.DebugPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Debugging)), Paths.GetKernelPath(KernelPathType.Debugging));
+                    DebugWriter.DebugPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Debugging)), Paths.GetKernelPath(KernelPathType.Debugging));
 
                     // Check for kernel command-line arguments
                     ArgumentParse.ParseArguments(Args.ToList());

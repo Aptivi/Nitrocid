@@ -193,10 +193,6 @@ namespace KS.Kernel
         /// </summary>
         public static bool ShowStackTraceOnKernelError;
         /// <summary>
-        /// Whether to check the debug log to see if it exceeds the quota
-        /// </summary>
-        public static bool CheckDebugQuota = true;
-        /// <summary>
         /// Deletes all events and/or reminders before saving them using saveall
         /// </summary>
         public static bool SaveEventsRemindersDestructively;

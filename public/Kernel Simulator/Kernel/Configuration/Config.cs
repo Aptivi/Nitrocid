@@ -247,7 +247,6 @@ namespace KS.Kernel.Configuration
                 { "Show current time before login", Flags.ShowCurrentTimeBeforeLogin },
                 { "Notify for any fault during boot", Flags.NotifyFaultsBoot },
                 { "Show stack trace on kernel error", Flags.ShowStackTraceOnKernelError },
-                { "Check debug quota", Flags.CheckDebugQuota },
                 { "Automatically download updates", Flags.AutoDownloadUpdate },
                 { "Enable event debugging", Flags.EventDebug },
                 { "Stylish splash screen", Flags.EnableSplash },
@@ -365,7 +364,6 @@ namespace KS.Kernel.Configuration
             {
                 { "Filesystem sort mode", Listing.SortMode.ToString() },
                 { "Filesystem sort direction", Listing.SortDirection.ToString() },
-                { "Debug Size Quota in Bytes", DebugManager.DebugQuota },
                 { "Show Hidden Files", Flags.HiddenFiles },
                 { "Size parse mode", Flags.FullParseMode },
                 { "Show progress on filesystem operations", Filesystem.ShowFilesystemProgress },
@@ -1699,7 +1697,6 @@ namespace KS.Kernel.Configuration
             Flags.ShowCurrentTimeBeforeLogin = (bool)ConfigToken["General"]["Show current time before login"];
             Flags.NotifyFaultsBoot = (bool)ConfigToken["General"]["Notify for any fault during boot"];
             Flags.ShowStackTraceOnKernelError = (bool)ConfigToken["General"]["Show stack trace on kernel error"];
-            Flags.CheckDebugQuota = (bool)ConfigToken["General"]["Check debug quota"];
             Flags.AutoDownloadUpdate = (bool)ConfigToken["General"]["Automatically download updates"];
             Flags.EventDebug = (bool)ConfigToken["General"]["Enable event debugging"];
             Flags.EnableSplash = (bool)ConfigToken["General"]["Stylish splash screen"];
@@ -1752,7 +1749,6 @@ namespace KS.Kernel.Configuration
 
             // Filesystem Section
             DebugWriter.WriteDebug(DebugLevel.I, "Parsing filesystem section...");
-            DebugManager.DebugQuota = (double)(int.TryParse((string)ConfigToken["Filesystem"]["Debug Size Quota in Bytes"], out _) ? (int)ConfigToken["Filesystem"]["Debug Size Quota in Bytes"] : 1073741824);
             Flags.FullParseMode = (bool)ConfigToken["Filesystem"]["Size parse mode"];
             Flags.HiddenFiles = (bool)ConfigToken["Filesystem"]["Show Hidden Files"];
             Listing.SortMode = (ConfigToken["Filesystem"]["Filesystem sort mode"] != null) ? (Enum.TryParse((string)ConfigToken["Filesystem"]["Filesystem sort mode"], out Listing.SortMode) ? Listing.SortMode : FilesystemSortOptions.FullName) : FilesystemSortOptions.FullName;

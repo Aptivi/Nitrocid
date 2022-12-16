@@ -37,6 +37,7 @@ namespace KS.Kernel.Debugging
         /// Debug stack trace list
         /// </summary>
         public readonly static List<string> DebugStackTraces = new();
+        internal static string DebugPath = "";
         internal static StreamWriter DebugStreamWriter;
 
         /// <summary>
@@ -50,7 +51,7 @@ namespace KS.Kernel.Debugging
             if (Flags.DebugMode)
             {
                 // Open debugging stream
-                string debugFilePath = DebugManager.DebugPath;
+                string debugFilePath = DebugPath;
                 if (DebugStreamWriter is null | DebugStreamWriter?.BaseStream is null)
                     DebugStreamWriter = new StreamWriter(debugFilePath, true) { AutoFlush = true };
 
@@ -79,10 +80,6 @@ namespace KS.Kernel.Debugging
                             Source = Source.Split('\\')[Source.Split('\\').Length - 1];
                         }
                     }
-
-                    // Check for debug quota
-                    if (Flags.CheckDebugQuota)
-                        DebugManager.CheckForDebugQuotaExceed();
 
                     // Check to see if source file name is not empty.
                     if (Source is not null & !(Convert.ToDouble(LineNum) == 0d))
