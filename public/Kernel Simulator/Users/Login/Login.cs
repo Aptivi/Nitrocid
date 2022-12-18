@@ -146,7 +146,7 @@ namespace KS.Users.Login
                                 TextWriterColor.Write(Translate.DoTranslation("The answer must be numeric."), true, ColorTools.ColTypes.Error);
                             }
                         }
-                        else if (ReadLineReboot.ReadLine.ReadRanToCompletion)
+                        else
                         {
                             TextWriterColor.Write(Translate.DoTranslation("Please enter a user number."), true, ColorTools.ColTypes.Error);
                         }
@@ -197,7 +197,7 @@ namespace KS.Users.Login
                             Kernel.Events.EventsManager.FireEvent("LoginError", answeruser, LoginErrorReasons.Disabled);
                         }
                     }
-                    else if (ReadLineReboot.ReadLine.ReadRanToCompletion)
+                    else
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "Username not found.");
                         TextWriterColor.Write(Translate.DoTranslation("Wrong username."), true, ColorTools.ColTypes.Error);

@@ -195,8 +195,7 @@ namespace KS.Network.SpeedDial
                             TextWriterColor.Write(Translate.DoTranslation("The selection is out of range. Select between 1-{0}. Try again."), true, ColorTools.ColTypes.Error, SpeedDialEntries.Count);
                         }
                     }
-                    else if (ReadLineReboot.ReadLine.ReadRanToCompletion)
-                    {
+                    else {
                         DebugWriter.WriteDebug(DebugLevel.W, "Response isn't numeric. IsStringNumeric(Answer) returned false.");
                         TextWriterColor.Write(Translate.DoTranslation("The selection is not a number. Try again."), true, ColorTools.ColTypes.Error);
                     }

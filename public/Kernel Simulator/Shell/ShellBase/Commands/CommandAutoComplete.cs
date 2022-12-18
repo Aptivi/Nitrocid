@@ -21,10 +21,11 @@ using System.Linq;
 using Extensification.StringExts;
 using KS.Files.Folders;
 using KS.Shell.ShellBase.Shells;
-using ReadLineReboot;
 
 namespace KS.Shell.ShellBase.Commands
 {
+#warning TermRead needs to implement auto complete handler here.
+#if false
     /// <summary>
     /// Command auto completion class
     /// </summary>
@@ -109,4 +110,5 @@ namespace KS.Shell.ShellBase.Commands
         protected internal CommandAutoComplete(string ShellType = "Shell") => ShellTypeToAutocomplete = ShellType;
 
     }
+#endif
 }

@@ -41,7 +41,6 @@ using KS.Misc.Writers.FancyWriters;
 using KS.Misc.Writers.MiscWriters;
 using KS.Modifications;
 using KS.Network.RPC;
-using ReadLineReboot;
 using KS.Kernel.Debugging;
 using KS.Kernel.Debugging.RemoteDebug;
 using KS.Users.Groups;
@@ -115,10 +114,7 @@ namespace KS.Kernel
                     ConsoleExtensions.SetTitle(ConsoleTitle);
 
                     // Initial ReadLine settings
-                    ReadLine.CtrlCEnabled = true;
                     Flags.InputHistoryEnabled = true;
-                    ReadLine.PrewriteDefaultValue = true;
-                    ReadLine.AutoCompletionEnabled = true;
 
                     // Check for terminal
                     ConsoleChecker.CheckConsole();

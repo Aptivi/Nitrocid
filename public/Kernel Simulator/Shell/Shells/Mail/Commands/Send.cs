@@ -124,8 +124,7 @@ namespace KS.Shell.Shells.Mail.Commands
                     TextWriterColor.Write(Translate.DoTranslation("Error sending message."), true, ColorTools.ColTypes.Error);
                 }
             }
-            else if (ReadLineReboot.ReadLine.ReadRanToCompletion)
-            {
+            else {
                 DebugWriter.WriteDebug(DebugLevel.E, "Mail format unsatisfied." + Receiver);
                 TextWriterColor.Write(Translate.DoTranslation("Invalid e-mail address. Make sure you've written the address correctly and that it matches the format of the example shown:") + " john.s@example.com", true, ColorTools.ColTypes.Error);
             }

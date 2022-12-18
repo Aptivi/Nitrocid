@@ -21,6 +21,7 @@ using System.Threading;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Screensaver;
+using TermRead.Reader;
 
 namespace KS.ConsoleBase.Inputs
 {
@@ -77,11 +78,7 @@ namespace KS.ConsoleBase.Inputs
         /// <param name="UseCtrlCAsInput">Whether to treat CTRL + C as input</param>
         public static string ReadLineUnsafe(string InputText, string DefaultValue, bool UseCtrlCAsInput)
         {
-            // Store the initial CtrlCEnabled value. This is so we can restore the state of CTRL + C being enabled.
-            bool CtrlCEnabled = ReadLineReboot.ReadLine.CtrlCEnabled;
-            ReadLineReboot.ReadLine.CtrlCEnabled = UseCtrlCAsInput;
-            string Output = ReadLineReboot.ReadLine.Read(InputText, DefaultValue);
-            ReadLineReboot.ReadLine.CtrlCEnabled = CtrlCEnabled;
+            string Output = TermReader.Read(InputText, DefaultValue);
             ScreensaverDisplayer.BailFromScreensaver();
             return Output;
         }
@@ -136,7 +133,8 @@ namespace KS.ConsoleBase.Inputs
         /// <param name="MaskChar">Specifies the password mask character</param>
         public static string ReadLineNoInputUnsafe(char MaskChar)
         {
-            string pass = ReadLineReboot.ReadLine.ReadPassword("", MaskChar);
+#warning TermRead needs to implement masked input here.
+            string pass = TermReader.Read();
             ScreensaverDisplayer.BailFromScreensaver();
             return pass;
         }

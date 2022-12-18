@@ -152,14 +152,14 @@ namespace KS.Misc.Timers
 
                                 // Try to parse the interval
                                 string UnparsedInterval = Input.ReadLine();
-                                if (!double.TryParse(UnparsedInterval, out TimerInterval) & ReadLineReboot.ReadLine.ReadRanToCompletion)
+                                if (!double.TryParse(UnparsedInterval, out TimerInterval))
                                 {
                                     // Not numeric.
                                     TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Indicated timeout is not numeric."), 2, KeysTextTopPosition - 4, false, ColorTools.ColTypes.Error);
                                     ConsoleExtensions.ClearLineToRight();
                                     Input.DetectKeypress();
                                 }
-                                else if (ReadLineReboot.ReadLine.ReadRanToCompletion)
+                                else
                                 {
                                     // Update the remaining time
                                     string RemainingString = TimeDate.TimeDate.GetRemainingTimeFromNow((int)Math.Round(TimerInterval));

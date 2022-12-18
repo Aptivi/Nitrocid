@@ -446,15 +446,10 @@ namespace KS.Network.RSS
                         TextWriterColor.Write(Translate.DoTranslation("The selection is out of range. Select between 1-{0}. Try again."), true, ColorTools.ColTypes.Error, FeedListJsonNewsSources.Length);
                     }
                 }
-                else if (ReadLineReboot.ReadLine.ReadRanToCompletion)
+                else
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Answer is not numeric.");
                     TextWriterColor.Write(Translate.DoTranslation("The answer must be numeric."), true, ColorTools.ColTypes.Error);
-                }
-                else
-                {
-                    // We're aborting
-                    return;
                 }
             }
 
@@ -499,15 +494,10 @@ namespace KS.Network.RSS
                         TextWriterColor.Write(Translate.DoTranslation("The selection is out of range. Select between 1-{0}. Try again."), true, ColorTools.ColTypes.Error, FeedListJsonNewsSourceFeeds.Length);
                     }
                 }
-                else if (ReadLineReboot.ReadLine.ReadRanToCompletion)
+                else
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Answer is not numeric.");
                     TextWriterColor.Write(Translate.DoTranslation("The answer must be numeric."), true, ColorTools.ColTypes.Error);
-                }
-                else
-                {
-                    // We're aborting
-                    return;
                 }
             }
 

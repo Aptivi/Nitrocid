@@ -76,13 +76,10 @@ namespace KS.Network.SFTP
                     }
 
                     // Check to see if we're aborting or not
-                    if (ReadLineReboot.ReadLine.ReadRanToCompletion)
-                    {
-                        SFTPShellCommon._clientSFTP = new SftpClient(SSH.SSH.PromptConnectionInfo(SftpHost, Convert.ToInt32(SftpPort), SFTPShellCommon.SFTPUser));
+                    SFTPShellCommon._clientSFTP = new SftpClient(SSH.SSH.PromptConnectionInfo(SftpHost, Convert.ToInt32(SftpPort), SFTPShellCommon.SFTPUser));
 
-                        // Connect to SFTP
-                        ConnectSFTP();
-                    }
+                    // Connect to SFTP
+                    ConnectSFTP();
                 }
                 catch (Exception ex)
                 {

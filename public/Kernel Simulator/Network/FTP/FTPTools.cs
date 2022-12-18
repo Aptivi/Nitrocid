@@ -152,8 +152,7 @@ namespace KS.Network.FTP
                     }
 
                     // If we didn't abort, prompt for password
-                    if (ReadLineReboot.ReadLine.ReadRanToCompletion)
-                        PromptForPassword(FTPShellCommon.FtpUser);
+                    PromptForPassword(FTPShellCommon.FtpUser);
                 }
                 catch (Exception ex)
                 {
@@ -218,11 +217,6 @@ namespace KS.Network.FTP
                                 TextWriterColor.Write(Translate.DoTranslation("Invalid profile selection.") + CharManager.NewLine, true, ColorTools.ColTypes.Error);
                                 DebugWriter.WriteDebugStackTrace(ex);
                             }
-                        }
-                        else if (!ReadLineReboot.ReadLine.ReadRanToCompletion)
-                        {
-                            // We're aborting.
-                            return;
                         }
                     }
                 }

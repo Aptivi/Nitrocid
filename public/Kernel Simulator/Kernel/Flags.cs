@@ -241,6 +241,10 @@ namespace KS.Kernel
         /// Sets the console background color using the VT sequence if true.
         /// </summary>
         public static bool SetBackground = true;
+#warning Tank these after implementation on TermRead
+        private static bool inputHistoryEnabled = true;
+        private static bool inputClipboardEnabled = true;
+        private static bool inputUndoEnabled = true;
         /// <summary>
         /// Whether the input history is enabled
         /// </summary>
@@ -248,11 +252,11 @@ namespace KS.Kernel
         {
             get
             {
-                return ReadLineReboot.ReadLine.HistoryEnabled;
+                return inputHistoryEnabled;
             }
             set
             {
-                ReadLineReboot.ReadLine.HistoryEnabled = value;
+                inputHistoryEnabled = value;
             }
         }
         /// <summary>
@@ -262,11 +266,11 @@ namespace KS.Kernel
         {
             get
             {
-                return ReadLineReboot.ReadLine.ClipboardEnabled;
+                return inputClipboardEnabled;
             }
             set
             {
-                ReadLineReboot.ReadLine.ClipboardEnabled = value;
+                inputClipboardEnabled = value;
             }
         }
         /// <summary>
@@ -276,11 +280,11 @@ namespace KS.Kernel
         {
             get
             {
-                return ReadLineReboot.ReadLine.UndoEnabled;
+                return inputUndoEnabled;
             }
             set
             {
-                ReadLineReboot.ReadLine.UndoEnabled = value;
+                inputUndoEnabled = value;
             }
         }
         /// <summary>

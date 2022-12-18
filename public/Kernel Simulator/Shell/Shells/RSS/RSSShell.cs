@@ -74,18 +74,11 @@ namespace KS.Shell.Shells.RSS
                                 TextWriterColor.Write(Translate.DoTranslation("Enter an RSS feed URL:") + " ", false, ColorTools.ColTypes.Input);
                             }
                             RSSShellCommon.RSSFeedLink = Input.ReadLine();
-                            if (ReadLineReboot.ReadLine.ReadRanToCompletion)
-                            {
-                                // The user entered the feed URL
-                                RSSShellCommon.RSSFeedInstance = new RSSFeed(RSSShellCommon.RSSFeedLink, RSSFeedType.Infer);
-                                RSSShellCommon.RSSFeedLink = RSSShellCommon.RSSFeedInstance.FeedUrl;
-                                OldRSSFeedLink = RSSShellCommon.RSSFeedLink;
-                            }
-                            else
-                            {
-                                // We're aborting.
-                                Bail = true;
-                            }
+
+                            // The user entered the feed URL
+                            RSSShellCommon.RSSFeedInstance = new RSSFeed(RSSShellCommon.RSSFeedLink, RSSFeedType.Infer);
+                            RSSShellCommon.RSSFeedLink = RSSShellCommon.RSSFeedInstance.FeedUrl;
+                            OldRSSFeedLink = RSSShellCommon.RSSFeedLink;
                             BailFromEnter = true;
                         }
                         catch (ThreadInterruptedException)

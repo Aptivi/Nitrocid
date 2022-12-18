@@ -85,7 +85,7 @@ namespace KS.Network.Mail
 
             // Try to get the username or e-mail address from the input
             string InputMailAddress = Input.ReadLine();
-            if (!string.IsNullOrWhiteSpace(Mail_UserPromptStyle) & ReadLineReboot.ReadLine.ReadRanToCompletion)
+            if (!string.IsNullOrWhiteSpace(Mail_UserPromptStyle))
             {
                 PromptPassword(InputMailAddress);
             }

@@ -848,7 +848,7 @@ namespace KS.Misc.Settings
                                 }
                         }
                     }
-                    else if (ReadLineReboot.ReadLine.ReadRanToCompletion)
+                    else
                     {
                         switch (KeyType)
                         {

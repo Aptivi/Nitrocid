@@ -96,7 +96,7 @@ namespace KS.Misc.Games
                     DebugWriter.WriteDebug(DebugLevel.W, "User requested exit.");
                     break;
                 }
-                else if (ReadLineReboot.ReadLine.ReadRanToCompletion)
+                else
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "User evaluated \"{0}\". However, it's not numeric.", UserEvaluated);
                     TextWriterColor.Write(Translate.DoTranslation("You can only write the numbers."), true, ColorTools.ColTypes.Error);
