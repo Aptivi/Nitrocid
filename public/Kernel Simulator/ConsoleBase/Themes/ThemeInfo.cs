@@ -78,9 +78,9 @@ namespace KS.ConsoleBase.Themes
             {
                 ColorTools.ColTypes type = ThemeColors.Keys.ElementAt(typeIndex);
                 ThemeColors[type] = new Color(ThemeResourceJson.SelectToken($"{type}Color").ToString());
-                Name = ThemeResourceJson["Metadata"]["Name"].ToString();
-                TrueColorRequired = (bool)ThemeResourceJson["Metadata"]["TrueColorRequired"];
             }
+            Name = ThemeResourceJson["Metadata"]["Name"].ToString();
+            TrueColorRequired = (bool)ThemeResourceJson["Metadata"]["TrueColorRequired"];
         }
 
     }
