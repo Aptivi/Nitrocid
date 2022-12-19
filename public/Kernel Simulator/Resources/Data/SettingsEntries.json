@@ -1615,6 +1615,12 @@
                 "Variable": "currentRandomDriver",
                 "IsInternal": true,
                 "Description": "Which current random driver is responsible for generating random numbers?"
+            },
+            {
+                "Name": "Do Not Disturb",
+                "Type": "SBoolean",
+                "Variable": "DoNotDisturb",
+                "Description": "If Do Not Disturb is enabled, all notifications received will be supressed from the display. This means that you won't be able to see any notification to help you focus."
             }
         ]
     }

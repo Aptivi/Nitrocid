@@ -1364,7 +1364,8 @@ namespace KS.Kernel.Configuration
                 { "Use PowerLine for rendering spaceship", MeteorShooter.MeteorUsePowerLine },
                 { "Meteor game speed", MeteorShooter.MeteorSpeed },
                 { "Enable scroll bar in selection", Flags.EnableScrollBarInSelection },
-                { "Random driver name", DriverHandler.currentRandomDriver }
+                { "Random driver name", DriverHandler.currentRandomDriver },
+                { "Do Not Disturb", NotificationManager.DoNotDisturb }
             };
             ConfigurationObject.Add("Misc", MiscConfig);
             return ConfigurationObject;
@@ -2537,6 +2538,7 @@ namespace KS.Kernel.Configuration
             MeteorShooter.MeteorSpeed = int.TryParse((string)ConfigToken["Misc"]["Meteor game speed"], out _) ? (int)ConfigToken["Misc"]["Meteor game speed"] : 10;
             Flags.EnableScrollBarInSelection = (bool)ConfigToken["Misc"]["Enable scroll bar in selection"];
             DriverHandler.currentRandomDriver = (string)(ConfigToken["Misc"]["Random driver name"] ?? "Default");
+            NotificationManager.DoNotDisturb = (bool)ConfigToken["Misc"]["Do Not Disturb"];
 
             // Check to see if the config needs fixes
             ConfigTools.RepairConfig();

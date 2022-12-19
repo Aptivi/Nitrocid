@@ -365,6 +365,7 @@ namespace KS.Kernel
         /// If this is true, prompts for console support
         /// </summary>
         internal static bool FirstTime;
+        internal static bool DoNotDisturb;
 
     }
 }

@@ -79,6 +79,13 @@ namespace KS.Misc.Notifications
         /// Right frame character for the notfication box
         /// </summary>
         public static string NotifyRightFrameChar = "║";
+        /// <summary>
+        /// Don't disturb, meaning don't show any notification when this mode is on
+        /// </summary>
+        public static bool DoNotDisturb { 
+            get => Flags.DoNotDisturb;
+            set => Flags.DoNotDisturb = value;
+        }
 
         /// <summary>
         /// Notification priority
@@ -145,6 +152,11 @@ namespace KS.Misc.Notifications
                         foreach (Notification NewNotification in NewNotificationsList)
                         {
                             EventsManager.FireEvent(EventType.NotificationReceived, NewNotification);
+
+                            // If do not disturb is enabled, don't show.
+                            if (DoNotDisturb)
+                                // However, fire event for other notifications
+                                continue;
 
                             // Populate title and description
                             string Title, Desc;
