@@ -35,7 +35,6 @@ namespace KS.Arguments.CommandLineArguments
             DebugWriter.WriteDebug(DebugLevel.I, "Kernel initialized, version {0}.", KernelTools.KernelVersion.ToString());
             DebugWriter.WriteDebug(DebugLevel.I, "Kernel mod API version {0}.", KernelTools.KernelApiVersion.ToString());
             DebugWriter.WriteDebug(DebugLevel.I, "OS: {0}", Environment.OSVersion.ToString());
-            DebugWriter.WriteDebug(DebugLevel.I, "Framework: {0}", KernelPlatform.IsDotnetCoreClr() ? ".NET CoreCLR" : ".NET Framework");
         }
     }
 }

@@ -84,7 +84,7 @@ namespace KS.Kernel
 #endif
 
         // Final console window title
-        internal readonly static string ConsoleTitle = $"[{(KernelPlatform.IsDotnetCoreClr() ? ".NET CoreCLR" : ".NET Framework")}] [{ReleaseSpecifier}] - Kernel Simulator v{KernelTools.KernelVersion} (API v{KernelTools.KernelApiVersion})";
+        internal readonly static string ConsoleTitle = $"[{ReleaseSpecifier}] - Kernel Simulator v{KernelTools.KernelVersion} (API v{KernelTools.KernelApiVersion})";
 
         /// <summary>
         /// Entry point

@@ -262,7 +262,7 @@ namespace KS.Kernel
 
                 // Write info (Header)
                 Dump.AutoFlush = true;
-                Dump.WriteLine(Translate.DoTranslation("----------------------------- Kernel panic dump -----------------------------") + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation(">> Panic information <<") + CharManager.NewLine + Translate.DoTranslation("> Description: {0}") + CharManager.NewLine + Translate.DoTranslation("> Error type: {1}") + CharManager.NewLine + Translate.DoTranslation("> Date and Time: {2}") + CharManager.NewLine + Translate.DoTranslation("> Framework Type: {3}") + CharManager.NewLine, Description, ErrorType.ToString(), TimeDateRenderers.Render(), KernelPlatform.IsDotnetCoreClr() ? ".NET CoreCLR" : ".NET Framework");
+                Dump.WriteLine(Translate.DoTranslation("----------------------------- Kernel panic dump -----------------------------") + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation(">> Panic information <<") + CharManager.NewLine + Translate.DoTranslation("> Description: {0}") + CharManager.NewLine + Translate.DoTranslation("> Error type: {1}") + CharManager.NewLine + Translate.DoTranslation("> Date and Time: {2}") + CharManager.NewLine, Description, ErrorType.ToString(), TimeDateRenderers.Render());
 
                 // Write Info (Exception)
                 if (Exc is not null)
