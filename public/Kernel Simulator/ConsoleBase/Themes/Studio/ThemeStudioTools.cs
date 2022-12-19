@@ -120,14 +120,12 @@ namespace KS.ConsoleBase.Themes.Studio
                  * 
                  *     "Metadata": {
                  *         "Name": "ThemeName",
-                 *         "255ColorsRequired": true,
                  *         "TrueColorRequired": true
                  *     },
                  */
                 new("Metadata",
                     new JObject(
                         new JProperty("Name", SelectedThemeName),
-                        new JProperty("255ColorsRequired", Is255ColorsRequired()),
                         new JProperty("TrueColorRequired", IsTrueColorRequired())
                     )
                 );

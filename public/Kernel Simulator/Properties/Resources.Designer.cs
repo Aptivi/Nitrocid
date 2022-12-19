@@ -119,7 +119,6 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Amaya&quot;,
-        ///        &quot;255ColorsRequired&quot;: true,
         ///        &quot;TrueColorRequired&quot;: true
         ///    },
         ///    &quot;InputColor&quot;: &quot;#b491c5&quot;,
