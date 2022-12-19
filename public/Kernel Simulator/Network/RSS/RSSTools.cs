@@ -281,8 +281,8 @@ namespace KS.Network.RSS
                             OldFeedsList = new List<RSSArticle>(RSSShellCommon.RSSFeedInstance.FeedArticles);
                             foreach (RSSArticle NewFeed in NewFeedsList)
                             {
-                                var FeedNotif = new Notification(NewFeed.ArticleTitle, NewFeed.ArticleDescription, Notifications.NotifPriority.Low, Notifications.NotifType.Normal);
-                                Notifications.NotifySend(FeedNotif);
+                                var FeedNotif = new Notification(NewFeed.ArticleTitle, NewFeed.ArticleDescription, NotificationManager.NotifPriority.Low, NotificationManager.NotifType.Normal);
+                                NotificationManager.NotifySend(FeedNotif);
                             }
                         }
                     }

@@ -29,11 +29,11 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override string TestName => Translate.DoTranslation("Sends a notification to test the receiver");
         public override void Run()
         {
-            foreach (var value in Enum.GetValues(typeof(Notifications.NotifPriority)))
+            foreach (var value in Enum.GetValues(typeof(NotificationManager.NotifPriority)))
             {
                 SplashReport._KernelBooted = true;
-                var Notif = new Notification(Translate.DoTranslation("Test notification"), Translate.DoTranslation("Description is here"), (Notifications.NotifPriority)value, Notifications.NotifType.Normal);
-                Notifications.NotifySend(Notif);
+                var Notif = new Notification(Translate.DoTranslation("Test notification"), Translate.DoTranslation("Description is here"), (NotificationManager.NotifPriority)value, NotificationManager.NotifType.Normal);
+                NotificationManager.NotifySend(Notif);
                 Thread.Sleep(500);
                 SplashReport._KernelBooted = false;
             }

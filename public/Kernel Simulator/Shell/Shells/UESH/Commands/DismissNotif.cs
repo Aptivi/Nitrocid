@@ -39,7 +39,7 @@ namespace KS.Shell.Shells.UESH.Commands
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
             int NotifIndex = (int)Math.Round(Convert.ToDouble(ListArgsOnly[0]) - 1d);
-            if (Notifications.NotifDismiss(NotifIndex))
+            if (NotificationManager.NotifDismiss(NotifIndex))
             {
                 TextWriterColor.Write(Translate.DoTranslation("Notification dismissed successfully."));
             }

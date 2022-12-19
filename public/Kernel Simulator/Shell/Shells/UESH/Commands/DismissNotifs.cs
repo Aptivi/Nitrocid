@@ -32,7 +32,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class DismissNotifsCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Notifications.NotifRecents.Clear();
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => NotificationManager.NotifRecents.Clear();
 
     }
 }

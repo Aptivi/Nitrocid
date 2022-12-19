@@ -36,13 +36,13 @@ namespace KS.Shell.Shells.UESH.Commands
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
             int Count = 1;
-            if (!(Notifications.NotifRecents.Count == 0))
+            if (!(NotificationManager.NotifRecents.Count == 0))
             {
-                foreach (Notification Notif in Notifications.NotifRecents)
+                foreach (Notification Notif in NotificationManager.NotifRecents)
                 {
-                    TextWriterColor.Write($"[{Count}/{Notifications.NotifRecents.Count}] {Notif.Title}: ", false, ColorTools.ColTypes.ListEntry);
+                    TextWriterColor.Write($"[{Count}/{NotificationManager.NotifRecents.Count}] {Notif.Title}: ", false, ColorTools.ColTypes.ListEntry);
                     TextWriterColor.Write(Notif.Desc, false, ColorTools.ColTypes.ListValue);
-                    if (Notif.Type == Notifications.NotifType.Progress)
+                    if (Notif.Type == NotificationManager.NotifType.Progress)
                     {
                         TextWriterColor.Write($" ({Notif.Progress}%)", false, Notif.ProgressFailed ? ColorTools.ColTypes.Error : ColorTools.ColTypes.Success);
                     }

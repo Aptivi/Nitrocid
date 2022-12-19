@@ -212,8 +212,8 @@ namespace KS.Kernel.Debugging.RemoteDebug
                 {
                     if (Flags.NotifyOnRemoteDebugConnectionError)
                     {
-                        var RemoteDebugError = new Notification(Translate.DoTranslation("Remote debugger connection error"), ex.Message, Notifications.NotifPriority.Medium, Notifications.NotifType.Normal);
-                        Notifications.NotifySend(RemoteDebugError);
+                        var RemoteDebugError = new Notification(Translate.DoTranslation("Remote debugger connection error"), ex.Message, NotificationManager.NotifPriority.Medium, NotificationManager.NotifType.Normal);
+                        NotificationManager.NotifySend(RemoteDebugError);
                     }
                     else
                     {

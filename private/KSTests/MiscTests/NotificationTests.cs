@@ -35,7 +35,7 @@ namespace KSTests.MiscTests
         [Test]
         public void TestNotifyCreate()
         {
-            var Notif = new Notification("This is the title.", "This is the description.", Notifications.NotifPriority.Medium, Notifications.NotifType.Normal);
+            var Notif = new Notification("This is the title.", "This is the description.", NotificationManager.NotifPriority.Medium, NotificationManager.NotifType.Normal);
             Notif.ShouldNotBeNull();
         }
 
@@ -45,7 +45,7 @@ namespace KSTests.MiscTests
         [Test]
         public void TestNotifyCreateCustom()
         {
-            var Notif = new Notification("This is the title.", "This is the description.", Notifications.NotifPriority.Custom, Notifications.NotifType.Normal)
+            var Notif = new Notification("This is the title.", "This is the description.", NotificationManager.NotifPriority.Custom, NotificationManager.NotifType.Normal)
             {
                 CustomBeepTimes = 5,
                 CustomColor = new Color(4),
@@ -71,9 +71,9 @@ namespace KSTests.MiscTests
         [Test]
         public void TestNotifySend()
         {
-            var Notif = new Notification("Notification title", "This is a high priority notification", Notifications.NotifPriority.High, Notifications.NotifType.Normal);
-            Notifications.NotifySend(Notif);
-            Notifications.NotifRecents.ShouldNotBeEmpty();
+            var Notif = new Notification("Notification title", "This is a high priority notification", NotificationManager.NotifPriority.High, NotificationManager.NotifType.Normal);
+            NotificationManager.NotifySend(Notif);
+            NotificationManager.NotifRecents.ShouldNotBeEmpty();
         }
 
         /// <summary>
@@ -82,12 +82,12 @@ namespace KSTests.MiscTests
         [Test]
         public void TestNotifySendRange()
         {
-            var Notif1 = new Notification("High notification title", "This is a high priority notification", Notifications.NotifPriority.High, Notifications.NotifType.Normal);
-            var Notif2 = new Notification("Medium notification title", "This is a medium priority notification", Notifications.NotifPriority.Medium, Notifications.NotifType.Normal);
-            var Notif3 = new Notification("Low notification title", "This is a low priority notification", Notifications.NotifPriority.Low, Notifications.NotifType.Normal);
+            var Notif1 = new Notification("High notification title", "This is a high priority notification", NotificationManager.NotifPriority.High, NotificationManager.NotifType.Normal);
+            var Notif2 = new Notification("Medium notification title", "This is a medium priority notification", NotificationManager.NotifPriority.Medium, NotificationManager.NotifType.Normal);
+            var Notif3 = new Notification("Low notification title", "This is a low priority notification", NotificationManager.NotifPriority.Low, NotificationManager.NotifType.Normal);
             var Notifs = new List<Notification>() { Notif1, Notif2, Notif3 };
-            Notifications.NotifySendRange(Notifs);
-            Notifications.NotifRecents.ShouldNotBeEmpty();
+            NotificationManager.NotifySendRange(Notifs);
+            NotificationManager.NotifRecents.ShouldNotBeEmpty();
         }
 
         /// <summary>
@@ -96,9 +96,9 @@ namespace KSTests.MiscTests
         [Test]
         public void TestNotifyDismiss()
         {
-            var Notif = new Notification("Redundant title", "This is a redundant notification", Notifications.NotifPriority.Low, Notifications.NotifType.Normal);
-            Notifications.NotifySend(Notif);
-            Notifications.NotifDismiss(Notifications.NotifRecents.Count - 1).ShouldBeTrue();
+            var Notif = new Notification("Redundant title", "This is a redundant notification", NotificationManager.NotifPriority.Low, NotificationManager.NotifType.Normal);
+            NotificationManager.NotifySend(Notif);
+            NotificationManager.NotifDismiss(NotificationManager.NotifRecents.Count - 1).ShouldBeTrue();
         }
 
     }

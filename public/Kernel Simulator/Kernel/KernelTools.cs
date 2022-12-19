@@ -399,8 +399,8 @@ namespace KS.Kernel
         internal static void InitEverything()
         {
             // Initialize notifications
-            if (!Notifications.NotifThread.IsAlive)
-                Notifications.NotifThread.Start();
+            if (!NotificationManager.NotifThread.IsAlive)
+                NotificationManager.NotifThread.Start();
 
             // Initialize events and reminders
             if (!ReminderManager.ReminderThread.IsAlive)

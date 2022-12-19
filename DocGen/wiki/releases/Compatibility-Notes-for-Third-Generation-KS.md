@@ -209,23 +209,23 @@ This is to aid in trying to autocomplete subjects starting from the last argumen
 
 Base command class had the name of `CommandExecutor`. However, it behaved like the base class for your mod commands, so we renamed it to `BaseCommand`. This caused us to rename the command execution class to `CommandExecutor`.
 
-Affected classes:
-  * `CommandExecutor` -> `BaseCommand`
-  * `GetCommand` -> `CommandExecutor`
+* Affected classes:
+  - `CommandExecutor` -> `BaseCommand`
+  - `GetCommand` -> `CommandExecutor`
 
 ##### Renamed ConsoleSanityChecker to ConsoleChecker
 
 This class will be filled by many console checks, so renamed it according to the purpose.
 
-Affected classes:
-  * `ConsoleSanityChecker` -> `ConsoleChecker`
+* Affected classes:
+  - `ConsoleSanityChecker` -> `ConsoleChecker`
 
 ##### WriteWherePlain from TextWriterWhereColor renamed
 
 This change is necessary to fit in with the rest of the ConsoleWriters
 
-Affected functions:
-  * `WriteWherePlain` -> `WriteWhere`
+* Affected functions:
+  - `WriteWherePlain` -> `WriteWhere`
 
 ##### Removed Screensaver.colors
 
@@ -316,7 +316,7 @@ We used to provide two argument channels: one for the command-line kernel argume
 
 We also had to remove the arginj command, one of the commands that made appearance in first-generation versions of KS.
 
-Affected classes:
+* Affected classes:
   - ArgumentType
   - CommandLineArgs
   - ArgumentPrompt
@@ -340,3 +340,10 @@ Add `Mod` next to `PartInfo` to clarify which module uses this.
 ##### Manual pages moved to Modifications
 
 These manual pages are used by mods to host documentation, so we moved it to `KS.Modifications.ManPages` to reflect its purpose.
+
+##### Changed Notifications to NotificationManager
+
+We felt that both the `Notification` and `Notifications` classes are confusing for some people, so we decided to make these clearer by renaming the `Notifications` class to `NotificationManager`
+
+* Affected classes:
+  - `Notification` -> `NotificationManager`

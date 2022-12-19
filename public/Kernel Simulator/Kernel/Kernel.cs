@@ -256,7 +256,7 @@ namespace KS.Kernel
                     if (Flags.NotifyKernelError)
                     {
                         Flags.NotifyKernelError = false;
-                        Notifications.NotifySend(new Notification(Translate.DoTranslation("Previous boot failed"), KernelTools.LastKernelErrorException.Message, Notifications.NotifPriority.High, Notifications.NotifType.Normal));
+                        NotificationManager.NotifySend(new Notification(Translate.DoTranslation("Previous boot failed"), KernelTools.LastKernelErrorException.Message, NotificationManager.NotifPriority.High, NotificationManager.NotifType.Normal));
                     }
 
                     // Show license

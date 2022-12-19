@@ -69,7 +69,7 @@ namespace KS.Network.Mail
             if (Folder.Count > MailShellCommon.IMAP_Messages.Count())
             {
                 int NewMessagesCount = Folder.Count - MailShellCommon.IMAP_Messages.Count();
-                Notifications.NotifySend(new Notification(Translate.DoTranslation("{0} new messages arrived in inbox.").FormatString(NewMessagesCount), Translate.DoTranslation("Open \"mail\" to see them."), Notifications.NotifPriority.Medium, Notifications.NotifType.Normal));
+                NotificationManager.NotifySend(new Notification(Translate.DoTranslation("{0} new messages arrived in inbox.").FormatString(NewMessagesCount), Translate.DoTranslation("Open \"mail\" to see them."), NotificationManager.NotifPriority.Medium, NotificationManager.NotifType.Normal));
             }
         }
 

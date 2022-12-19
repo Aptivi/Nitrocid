@@ -44,12 +44,12 @@ namespace KS.Misc.Notifications
         /// <summary>
         /// Notification priority
         /// </summary>
-        public Notifications.NotifPriority Priority { get; set; }
+        public NotificationManager.NotifPriority Priority { get; set; }
 
         /// <summary>
         /// Notification type
         /// </summary>
-        public Notifications.NotifType Type { get; set; }
+        public NotificationManager.NotifType Type { get; set; }
 
         /// <summary>
         /// Whether the progress failed
@@ -187,7 +187,7 @@ namespace KS.Misc.Notifications
             }
             set
             {
-                if (!(Priority == Notifications.NotifPriority.Custom))
+                if (!(Priority == NotificationManager.NotifPriority.Custom))
                 {
                     _NotificationBorderColor = value;
                 }
@@ -201,7 +201,7 @@ namespace KS.Misc.Notifications
         /// <param name="Desc">Description of notification</param>
         /// <param name="Priority">Priority of notification</param>
         /// <param name="Type">Notification type</param>
-        public Notification(string Title, string Desc, Notifications.NotifPriority Priority, Notifications.NotifType Type)
+        public Notification(string Title, string Desc, NotificationManager.NotifPriority Priority, NotificationManager.NotifType Type)
         {
             this.Title = Title;
             this.Desc = Desc;

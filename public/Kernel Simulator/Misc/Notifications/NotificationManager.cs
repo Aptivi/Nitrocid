@@ -36,7 +36,7 @@ namespace KS.Misc.Notifications
     /// <summary>
     /// Notifications module
     /// </summary>
-    public static class Notifications
+    public static class NotificationManager
     {
 
         /// <summary>

@@ -47,7 +47,7 @@ namespace KS.Misc.Calendar.Reminders
         /// <summary>
         /// Current reminder notification importance
         /// </summary>
-        public static Notifications.Notifications.NotifPriority CurrentReminderImportance = Notifications.Notifications.NotifPriority.Low;
+        public static Notifications.NotificationManager.NotifPriority CurrentReminderImportance = Notifications.NotificationManager.NotifPriority.Low;
         /// <summary>
         /// Reminder thread
         /// </summary>
@@ -98,7 +98,7 @@ namespace KS.Misc.Calendar.Reminders
         /// <param name="ReminderDate">Reminder date and time</param>
         /// <param name="ReminderTitle">Reminder title</param>
         /// <param name="ReminderImportance">Reminder importance</param>
-        public static void AddReminder(DateTime ReminderDate, string ReminderTitle, Notifications.Notifications.NotifPriority ReminderImportance)
+        public static void AddReminder(DateTime ReminderDate, string ReminderTitle, Notifications.NotificationManager.NotifPriority ReminderImportance)
         {
             if (string.IsNullOrWhiteSpace(ReminderTitle))
                 ReminderTitle = Translate.DoTranslation("Untitled reminder");

@@ -27,8 +27,8 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override string TestName => Translate.DoTranslation("Enables the notification system");
         public override void Run()
         {
-            if (!Notifications.NotifThread.IsAlive)
-                Notifications.NotifThread.Start();
+            if (!NotificationManager.NotifThread.IsAlive)
+                NotificationManager.NotifThread.Start();
             else
                 TextWriterColor.Write(Translate.DoTranslation("The notification system has already started"));
         }
