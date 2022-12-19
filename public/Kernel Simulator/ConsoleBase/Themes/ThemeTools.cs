@@ -318,5 +318,73 @@ namespace KS.ConsoleBase.Themes
             }
         }
 
+        /// <summary>
+        /// Is the 255 color support required?
+        /// </summary>
+        /// <param name="theme">Theme name</param>
+        /// <returns>If required, then true.</returns>
+        public static bool Is255ColorsRequired(string theme) =>
+            Is255ColorsRequired(GetThemeInfo(theme));
+
+        /// <summary>
+        /// Is the 255 color support required?
+        /// </summary>
+        /// <param name="theme">Theme instance</param>
+        /// <returns>If required, then true.</returns>
+        public static bool Is255ColorsRequired(ThemeInfo theme) =>
+            Is255ColorsRequired(GetColorsFromTheme(theme));
+
+        /// <summary>
+        /// Is the 255 color support required?
+        /// </summary>
+        /// <param name="colors">Dictionary of colors</param>
+        /// <returns>If required, then true.</returns>
+        public static bool Is255ColorsRequired(Dictionary<ColTypes, Color> colors)
+        {
+            // Check for true color requirement
+            if (IsTrueColorRequired(colors))
+                return true;
+
+            // Now, check for 255-color requirement
+            for (int key = 0; key < colors.Count; key++)
+                if (colors.Values.ElementAt(key).Type == ColorType._255Color)
+                    return true;
+
+            // Else, 255 color support is not required
+            return false;
+        }
+
+        /// <summary>
+        /// Is the 255 color support required?
+        /// </summary>
+        /// <param name="theme">Theme name</param>
+        /// <returns>If required, then true.</returns>
+        public static bool IsTrueColorRequired(string theme) =>
+            IsTrueColorRequired(GetThemeInfo(theme));
+
+        /// <summary>
+        /// Is the 255 color support required?
+        /// </summary>
+        /// <param name="theme">Theme instance</param>
+        /// <returns>If required, then true.</returns>
+        public static bool IsTrueColorRequired(ThemeInfo theme) =>
+            IsTrueColorRequired(GetColorsFromTheme(theme));
+
+        /// <summary>
+        /// Is the true color support required?
+        /// </summary>
+        /// <param name="colors">Dictionary of colors</param>
+        /// <returns>If required, then true.</returns>
+        public static bool IsTrueColorRequired(Dictionary<ColTypes, Color> colors)
+        {
+            // Check for true color requirement according to color type
+            for (int key = 0; key < colors.Count; key++)
+                if (colors.Values.ElementAt(key).Type == ColorType.TrueColor)
+                    return true;
+
+            // Else, no requirement
+            return false;
+        }
+
     }
 }

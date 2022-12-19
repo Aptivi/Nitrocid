@@ -126,7 +126,7 @@ namespace KS.ConsoleBase.Themes.Studio
                 new("Metadata",
                     new JObject(
                         new JProperty("Name", SelectedThemeName),
-                        new JProperty("TrueColorRequired", IsTrueColorRequired())
+                        new JProperty("TrueColorRequired", ThemeTools.IsTrueColorRequired(SelectedColors))
                     )
                 );
             themeJson.Add(metadata);
@@ -141,40 +141,6 @@ namespace KS.ConsoleBase.Themes.Studio
 
             // Return the final object with the metadata
             return themeJson;
-        }
-
-        /// <summary>
-        /// Is the 255 color support required?
-        /// </summary>
-        /// <returns>If required, then true.</returns>
-        public static bool Is255ColorsRequired()
-        {
-            // Check for true color requirement
-            if (IsTrueColorRequired())
-                return true;
-
-            // Now, check for 255-color requirement
-            for (int key = 0; key < SelectedColors.Count; key++)
-                if (SelectedColors.Values.ElementAt(key).Type == ColorType._255Color)
-                    return true;
-
-            // Else, 255 color support is not required
-            return false;
-        }
-
-        /// <summary>
-        /// Is the true color support required?
-        /// </summary>
-        /// <returns>If required, then true.</returns>
-        public static bool IsTrueColorRequired()
-        {
-            // Check for true color requirement according to color type
-            for (int key = 0; key < SelectedColors.Count; key++)
-                if (SelectedColors.Values.ElementAt(key).Type == ColorType.TrueColor)
-                    return true;
-
-            // Else, no requirement
-            return false;
         }
 
     }
