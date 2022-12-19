@@ -61,7 +61,7 @@ namespace KS.ConsoleBase
                         ResizeDetected = true;
                         DebugWriter.WriteDebug(DebugLevel.W, "Console resize detected! Old width x height: {0}x{1} | New width x height: {2}x{3}", CurrentWindowWidth, CurrentWindowHeight, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
                         DebugWriter.WriteDebug(DebugLevel.W, "Userspace application will have to call Resized to set ResizeDetected back to false.");
-                        EventsManager.FireEvent("ResizeDetected", CurrentWindowWidth, CurrentWindowHeight, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
+                        EventsManager.FireEvent(EventType.ResizeDetected, CurrentWindowWidth, CurrentWindowHeight, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
                         CurrentWindowWidth = ConsoleWrapper.WindowWidth;
                         CurrentWindowHeight = ConsoleWrapper.WindowHeight;
                     }

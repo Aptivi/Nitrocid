@@ -32,111 +32,6 @@ namespace KS.Kernel.Events
     public static class EventsManager
     {
 
-        private static readonly string[] events = 
-        {
-            "StartKernel",
-            "KernelStarted",
-            "PreLogin",
-            "PostLogin",
-            "LoginError",
-            "ShellInitialized",
-            "PreExecuteCommand",
-            "PostExecuteCommand",
-            "KernelError",
-            "ContKernelError",
-            "PreShutdown",
-            "PostShutdown",
-            "PreReboot",
-            "PostReboot",
-            "PreShowScreensaver",
-            "PostShowScreensaver",
-            "PreUnlock",
-            "PostUnlock",
-            "CommandError",
-            "PreReloadConfig",
-            "PostReloadConfig",
-            "PlaceholderParsing",
-            "PlaceholderParsed",
-            "PlaceholderParseError",
-            "GarbageCollected",
-            "FTPPreDownload",
-            "FTPPostDownload",
-            "FTPPreUpload",
-            "FTPPostUpload",
-            "RemoteDebugConnectionAccepted",
-            "RemoteDebugConnectionDisconnected",
-            "RemoteDebugExecuteCommand",
-            "RemoteDebugCommandError",
-            "RPCCommandSent",
-            "RPCCommandReceived",
-            "RPCCommandError",
-            "SFTPPreDownload",
-            "SFTPPostDownload",
-            "SFTPDownloadError",
-            "SFTPPreUpload",
-            "SFTPPostUpload",
-            "SFTPUploadError",
-            "SSHConnected",
-            "SSHDisconnected",
-            "SSHPreExecuteCommand",
-            "SSHPostExecuteCommand",
-            "SSHCommandError",
-            "SSHError",
-            "UESHPreExecute",
-            "UESHPostExecute",
-            "UESHError",
-            "NotificationSent",
-            "NotificationsSent",
-            "NotificationReceived",
-            "NotificationsReceived",
-            "NotificationDismissed",
-            "ConfigSaved",
-            "ConfigSaveError",
-            "ConfigRead",
-            "ConfigReadError",
-            "PreExecuteModCommand",
-            "PostExecuteModCommand",
-            "ModParsed",
-            "ModParseError",
-            "ModFinalized",
-            "ModFinalizationFailed",
-            "UserAdded",
-            "UserRemoved",
-            "UsernameChanged",
-            "UserPasswordChanged",
-            "HardwareProbing",
-            "HardwareProbed",
-            "CurrentDirectoryChanged",
-            "FileCreated",
-            "DirectoryCreated",
-            "FileCopied",
-            "DirectoryCopied",
-            "FileMoved",
-            "DirectoryMoved",
-            "FileRemoved",
-            "DirectoryRemoved",
-            "FileAttributeAdded",
-            "FileAttributeRemoved",
-            "ColorReset",
-            "ThemeSet",
-            "ThemeSetError",
-            "ColorSet",
-            "ColorSetError",
-            "ThemeStudioStarted",
-            "ThemeStudioExit",
-            "ArgumentsInjected",
-            "ProcessError",
-            "LanguageInstalled",
-            "LanguageUninstalled",
-            "LanguageInstallError",
-            "LanguageUninstallError",
-            "LanguagesInstalled",
-            "LanguagesUninstalled",
-            "LanguagesInstallError",
-            "LanguagesUninstallError",
-            "ResizeDetected"
-        };
-
         /// <summary>
         /// Recently fired events
         /// </summary>
@@ -175,17 +70,17 @@ namespace KS.Kernel.Events
         /// <summary>
         /// Fires a kernel event
         /// </summary>
-        /// <param name="EventName">Event name. Refer to <see cref="events"/>.</param>
+        /// <param name="Event">Event</param>
         /// <param name="Params">Parameters for event</param>
-        public static void FireEvent(string EventName, params object[] Params)
+        public static void FireEvent(EventType Event, params object[] Params)
         {
             // Check to see if event exists
-            if (!events.Contains(EventName))
-                throw new KernelException(KernelExceptionType.NoSuchEvent, Translate.DoTranslation("Event {0} not found."), EventName);
+            if (!Enum.IsDefined(typeof(EventType), Event))
+                throw new KernelException(KernelExceptionType.NoSuchEvent, Translate.DoTranslation("Event {0} not found."), Event);
 
             // Add fired event to the list
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, $"Raising event {EventName}...");
-            FiredEvents.Add($"[{FiredEvents.Count}] {EventName}", Params);
+            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, $"Raising event {Event}...");
+            FiredEvents.Add($"[{FiredEvents.Count}] {Event}", Params);
 
             // Now, respond to the event
             foreach (ModInfo ModPart in ModManager.Mods.Values)
@@ -195,8 +90,8 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event {3}...", script.ModPart, script.Name, script.Version, EventName);
-                        script.InitEvents(EventName, Params);
+                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event {3}...", script.ModPart, script.Name, script.Version, Event);
+                        script.InitEvents(Event, Params);
                     }
                     catch (Exception ex)
                     {

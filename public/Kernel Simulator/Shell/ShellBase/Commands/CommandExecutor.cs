@@ -26,6 +26,7 @@ using KS.Languages;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Shells;
+using KS.Kernel.Events;
 
 namespace KS.Shell.ShellBase.Commands
 {
@@ -113,7 +114,7 @@ namespace KS.Shell.ShellBase.Commands
             }
             catch (Exception ex)
             {
-                Kernel.Events.EventsManager.FireEvent("CommandError", ShellType, RequestedCommand, ex);
+                EventsManager.FireEvent(EventType.CommandError, ShellType, RequestedCommand, ex);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriterColor.Write(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, ColorTools.ColTypes.Error, ex.GetType().FullName, ex.Message, RequestedCommand);
             }

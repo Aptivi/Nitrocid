@@ -27,6 +27,7 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using KS.Kernel.Events;
 
 namespace KS.Kernel.Debugging.RemoteDebug
 {
@@ -67,7 +68,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
                 string clientIp = RemoteDebugger.DebugDevices[i].ClientIP;
                 string clientName = RemoteDebugger.DebugDevices[i].ClientName;
                 RemoteDebugger.DebugDevices[i].ClientSocket.Disconnect(true);
-                Events.EventsManager.FireEvent("RemoteDebugConnectionDisconnected", IPAddr);
+                EventsManager.FireEvent(EventType.RemoteDebugConnectionDisconnected, IPAddr);
                 RemoteDebugger.DebugDevices.RemoveAt(i);
                 DebugWriter.WriteDebug(DebugLevel.W, "Debug device {0} ({1}) disconnected.", clientName, clientIp);
             }

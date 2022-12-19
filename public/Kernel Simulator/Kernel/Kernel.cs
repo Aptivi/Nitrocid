@@ -227,7 +227,7 @@ namespace KS.Kernel
                     {
                         SplashReport.ReportProgress(Translate.DoTranslation("Running in safe mode. Skipping stage..."), 0, ColorTools.ColTypes.NeutralText);
                     }
-                    EventsManager.FireEvent("StartKernel");
+                    EventsManager.FireEvent(EventType.StartKernel);
 
                     // Phase 4: Log-in
                     KernelTools.ReportNewStage(4, Translate.DoTranslation("- Stage 4: Log in"));

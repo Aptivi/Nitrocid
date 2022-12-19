@@ -24,6 +24,7 @@ using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using KS.Users.Groups;
 using KS.Users.Login;
+using KS.Kernel.Events;
 
 namespace KS.Modifications
 {
@@ -36,7 +37,7 @@ namespace KS.Modifications
         /// <param name="cmd">A mod command with arguments</param>
         public static void ExecuteModCommand(string cmd)
         {
-            Kernel.Events.EventsManager.FireEvent("PreExecuteModCommand", cmd);
+            EventsManager.FireEvent(EventType.PreExecuteModCommand, cmd);
 
             // Variables
             var parts = cmd.SplitEncloseDoubleQuotes(" ");
@@ -124,7 +125,7 @@ namespace KS.Modifications
             }
 
             // Raise event
-            Kernel.Events.EventsManager.FireEvent("PostExecuteModCommand", cmd);
+            EventsManager.FireEvent(EventType.PostExecuteModCommand, cmd);
             DebugWriter.WriteDebug(DebugLevel.I, "Command executed successfully.");
         }
 

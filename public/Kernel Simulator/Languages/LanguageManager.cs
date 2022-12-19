@@ -35,6 +35,7 @@ using KS.Kernel.Exceptions;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using Newtonsoft.Json.Linq;
+using KS.Kernel.Events;
 
 namespace KS.Languages
 {
@@ -294,7 +295,7 @@ namespace KS.Languages
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.I, "Language exists. Installing...");
                                     CustomLanguages.Add(LanguageName, ParsedLanguageInfo);
-                                    Kernel.Events.EventsManager.FireEvent("LanguageInstalled", LanguageName);
+                                    EventsManager.FireEvent(EventType.LanguageInstalled, LanguageName);
                                 }
                                 else if (ThrowOnAlreadyInstalled)
                                 {
@@ -319,7 +320,7 @@ namespace KS.Languages
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to install custom language {0}: {1}", LanguageName, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    Kernel.Events.EventsManager.FireEvent("LanguageInstallError", LanguageName, ex);
+                    EventsManager.FireEvent(EventType.LanguageInstallError, LanguageName, ex);
                     throw new KernelException(KernelExceptionType.LanguageInstall, Translate.DoTranslation("Failed to install custom language {0}."), ex, LanguageName);
                 }
             }
@@ -341,13 +342,13 @@ namespace KS.Languages
                         string LanguageName = Path.GetFileNameWithoutExtension(Language);
                         InstallCustomLanguage(LanguageName, false);
                     }
-                    Kernel.Events.EventsManager.FireEvent("LanguagesInstalled");
+                    EventsManager.FireEvent(EventType.LanguagesInstalled);
                 }
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to install custom languages: {0}", ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    Kernel.Events.EventsManager.FireEvent("LanguagesInstallError", ex);
+                    EventsManager.FireEvent(EventType.LanguagesInstallError, ex);
                     throw new KernelException(KernelExceptionType.LanguageInstall, Translate.DoTranslation("Failed to install custom languages."), ex);
                 }
             }
@@ -381,7 +382,7 @@ namespace KS.Languages
                                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to uninstall custom language");
                                 throw new KernelException(KernelExceptionType.LanguageUninstall, Translate.DoTranslation("Failed to uninstall custom language. It most likely doesn't exist."));
                             }
-                            Kernel.Events.EventsManager.FireEvent("LanguageUninstalled", LanguageName);
+                            EventsManager.FireEvent(EventType.LanguageUninstalled, LanguageName);
                         }
                         else
                         {
@@ -394,7 +395,7 @@ namespace KS.Languages
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to uninstall custom language {0}: {1}", LanguageName, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    Kernel.Events.EventsManager.FireEvent("LanguageUninstallError", LanguageName, ex);
+                    EventsManager.FireEvent(EventType.LanguageUninstallError, LanguageName, ex);
                     throw new KernelException(KernelExceptionType.LanguageUninstall, Translate.DoTranslation("Failed to uninstall custom language {0}."), ex, LanguageName);
                 }
             }
@@ -425,14 +426,14 @@ namespace KS.Languages
                                 throw new KernelException(KernelExceptionType.LanguageUninstall, Translate.DoTranslation("Failed to uninstall custom languages."));
                             }
                         }
-                        Kernel.Events.EventsManager.FireEvent("LanguagesUninstalled");
+                        EventsManager.FireEvent(EventType.LanguagesUninstalled);
                     }
                 }
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to uninstall custom languages: {0}", ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    Kernel.Events.EventsManager.FireEvent("LanguagesUninstallError", ex);
+                    EventsManager.FireEvent(EventType.LanguagesUninstallError, ex);
                     throw new KernelException(KernelExceptionType.LanguageUninstall, Translate.DoTranslation("Failed to uninstall custom languages. See the inner exception for more info."), ex);
                 }
             }

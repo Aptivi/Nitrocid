@@ -24,6 +24,7 @@ using KS.Kernel.Configuration;
 using KS.Languages;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
+using KS.Kernel.Events;
 
 namespace KS.Files.Folders
 {
@@ -69,7 +70,7 @@ namespace KS.Files.Folders
             CurrentDir = dir;
 
             // Raise event
-            Kernel.Events.EventsManager.FireEvent("CurrentDirectoryChanged");
+            EventsManager.FireEvent(EventType.CurrentDirectoryChanged);
         }
 
         /// <summary>

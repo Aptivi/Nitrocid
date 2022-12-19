@@ -29,6 +29,7 @@ using KS.Misc.Text;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
+using KS.Kernel.Events;
 
 namespace KS.Misc.Notifications
 {
@@ -135,7 +136,7 @@ namespace KS.Misc.Notifications
                         // Update the old notifications list
                         DebugWriter.WriteDebug(DebugLevel.W, "Notifications received! Recents count was {0}, Old count was {1}", NotifRecents.Count, OldNotificationsList.Count);
                         OldNotificationsList = new List<Notification>(NotifRecents);
-                        Kernel.Events.EventsManager.FireEvent("NotificationsReceived", NewNotificationsList);
+                        EventsManager.FireEvent(EventType.NotificationsReceived, NewNotificationsList);
 
                         // Iterate through new notifications. If we're on the booting stage, ensure that the notifications are only queued until the
                         // kernel has finished booting.
@@ -143,7 +144,7 @@ namespace KS.Misc.Notifications
                             Thread.Sleep(100);
                         foreach (Notification NewNotification in NewNotificationsList)
                         {
-                            Kernel.Events.EventsManager.FireEvent("NotificationReceived", NewNotification);
+                            EventsManager.FireEvent(EventType.NotificationReceived, NewNotification);
 
                             // Populate title and description
                             string Title, Desc;
@@ -323,7 +324,7 @@ namespace KS.Misc.Notifications
             if (!NotifRecents.Contains(notif))
             {
                 NotifRecents.Add(notif);
-                Kernel.Events.EventsManager.FireEvent("NotificationSent", notif);
+                EventsManager.FireEvent(EventType.NotificationSent, notif);
             }
         }
 
@@ -335,7 +336,7 @@ namespace KS.Misc.Notifications
         {
             foreach (Notification notif in notifs)
                 NotifySend(notif);
-            Kernel.Events.EventsManager.FireEvent("NotificationsSent", notifs);
+            EventsManager.FireEvent(EventType.NotificationsSent, notifs);
         }
 
         /// <summary>
@@ -348,7 +349,7 @@ namespace KS.Misc.Notifications
             {
                 NotifRecents.RemoveAt(ind);
                 DebugWriter.WriteDebug(DebugLevel.I, "Removed index {0} from notification list", ind);
-                Kernel.Events.EventsManager.FireEvent("NotificationDismissed");
+                EventsManager.FireEvent(EventType.NotificationDismissed);
                 return true;
             }
             catch (Exception ex)

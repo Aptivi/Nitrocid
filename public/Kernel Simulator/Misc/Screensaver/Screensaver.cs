@@ -30,6 +30,7 @@ using KS.Misc.Screensaver.Displays;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Users.Login;
+using KS.Kernel.Events;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Screensaver
@@ -188,7 +189,7 @@ namespace KS.Misc.Screensaver
         {
             try
             {
-                Kernel.Events.EventsManager.FireEvent("PreShowScreensaver");
+                EventsManager.FireEvent(EventType.PreShowScreensaver);
                 DebugWriter.WriteDebug(DebugLevel.I, "Requested screensaver: {0}", saver);
                 if (Screensavers.ContainsKey(saver.ToLower()))
                 {
@@ -232,7 +233,7 @@ namespace KS.Misc.Screensaver
         {
             LockMode = true;
             ShowSavers(DefSaverName);
-            Kernel.Events.EventsManager.FireEvent("PreUnlock", DefSaverName);
+            EventsManager.FireEvent(EventType.PreUnlock, DefSaverName);
             while (inSaver)
                 Thread.Sleep(1);
             if (PasswordLock)

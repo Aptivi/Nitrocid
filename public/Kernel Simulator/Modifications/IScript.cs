@@ -18,6 +18,7 @@
 
 using System;
 using System.Collections.Generic;
+using KS.Kernel.Events;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Modifications
@@ -58,13 +59,13 @@ namespace KS.Modifications
         /// <summary>
         /// Code executed when initializing events
         /// </summary>
-        /// <param name="ev">Event name. Look it up on <see cref="Kernel.Events.EventsManager.events"/></param>
-        void InitEvents(string ev);
+        /// <param name="Event">Event</param>
+        void InitEvents(EventType Event);
         /// <summary>
         /// Code executed when initializing events
         /// </summary>
-        /// <param name="ev">Event name. Look it up on <see cref="Kernel.Events.EventsManager.events"/></param>
-        /// <param name="Args">Arguments.</param>
-        void InitEvents(string ev, params object[] Args);
+        /// <param name="Event">Event</param>
+        /// <param name="Args">Arguments</param>
+        void InitEvents(EventType Event, params object[] Args);
     }
 }

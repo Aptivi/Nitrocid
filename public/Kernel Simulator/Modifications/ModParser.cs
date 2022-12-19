@@ -36,6 +36,7 @@ using KS.Misc.Screensaver.Customized;
 using KS.Misc.Splash;
 using KS.Modifications.ManPages;
 using KS.Shell.ShellBase.Commands;
+using KS.Kernel.Events;
 
 namespace KS.Modifications
 {
@@ -127,7 +128,7 @@ namespace KS.Modifications
             if (script is not null)
             {
                 string ModPath = Paths.GetKernelPath(KernelPathType.Mods);
-                Kernel.Events.EventsManager.FireEvent("ModParsed", modFile);
+                EventsManager.FireEvent(EventType.ModParsed, modFile);
                 try
                 {
                     // Add mod dependencies folder (if any) to the private appdomain lookup folder
@@ -264,18 +265,18 @@ namespace KS.Modifications
                     }
 
                     // Raise event
-                    Kernel.Events.EventsManager.FireEvent("ModFinalized", modFile);
+                    EventsManager.FireEvent(EventType.ModFinalized, modFile);
                 }
                 catch (Exception ex)
                 {
-                    Kernel.Events.EventsManager.FireEvent("ModFinalizationFailed", modFile, ex.Message);
+                    EventsManager.FireEvent(EventType.ModFinalizationFailed, modFile, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
                     SplashReport.ReportProgressError(Translate.DoTranslation("Failed to finalize mod {0}: {1}"), modFile, ex.Message);
                 }
             }
             else
             {
-                Kernel.Events.EventsManager.FireEvent("ModParseError", modFile);
+                EventsManager.FireEvent(EventType.ModParseError, modFile);
             }
         }
 

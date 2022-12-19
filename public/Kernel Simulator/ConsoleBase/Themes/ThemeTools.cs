@@ -31,6 +31,7 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
+using KS.Kernel.Events;
 using static KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.ConsoleBase.Themes
@@ -187,17 +188,17 @@ namespace KS.ConsoleBase.Themes
                 {
                     // We're trying to apply true color on unsupported console
                     DebugWriter.WriteDebug(DebugLevel.E, "Unsupported console or the terminal doesn't support true color.");
-                    Kernel.Events.EventsManager.FireEvent("ThemeSetError", theme, ThemeSetErrorReasons.ConsoleUnsupported);
+                    EventsManager.FireEvent(EventType.ThemeSetError, theme, ThemeSetErrorReasons.ConsoleUnsupported);
                     throw new KernelException(KernelExceptionType.UnsupportedConsole, Translate.DoTranslation("The theme {0} needs true color support, but your console doesn't support it."), theme);
                 }
 
                 // Raise event
-                Kernel.Events.EventsManager.FireEvent("ThemeSet", theme);
+                EventsManager.FireEvent(EventType.ThemeSet, theme);
             }
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Theme not found.");
-                Kernel.Events.EventsManager.FireEvent("ThemeSetError", theme, ThemeSetErrorReasons.NotFound);
+                EventsManager.FireEvent(EventType.ThemeSetError, theme, ThemeSetErrorReasons.NotFound);
                 throw new KernelException(KernelExceptionType.NoSuchTheme, Translate.DoTranslation("Invalid color template {0}"), theme);
             }
         }
@@ -226,12 +227,12 @@ namespace KS.ConsoleBase.Themes
                 }
 
                 // Raise event
-                Kernel.Events.EventsManager.FireEvent("ThemeSet", ThemeFile);
+                EventsManager.FireEvent(EventType.ThemeSet, ThemeFile);
             }
             catch (FileNotFoundException)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Theme not found.");
-                Kernel.Events.EventsManager.FireEvent("ThemeSetError", ThemeFile, ThemeSetErrorReasons.NotFound);
+                EventsManager.FireEvent(EventType.ThemeSetError, ThemeFile, ThemeSetErrorReasons.NotFound);
                 throw new KernelException(KernelExceptionType.NoSuchTheme, Translate.DoTranslation("Invalid color template {0}"), ThemeFile);
             }
         }
@@ -258,12 +259,12 @@ namespace KS.ConsoleBase.Themes
                 Config.CreateConfig();
 
                 // Raise event
-                Kernel.Events.EventsManager.FireEvent("ColorSet");
+                EventsManager.FireEvent(EventType.ColorSet);
             }
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                Kernel.Events.EventsManager.FireEvent("ColorSetError", ColorSetErrorReasons.InvalidColors);
+                EventsManager.FireEvent(EventType.ColorSetError, ColorSetErrorReasons.InvalidColors);
                 throw new KernelException(KernelExceptionType.Color, Translate.DoTranslation("One or more of the colors is invalid.") + " {0}", ex, ex.Message);
             }
         }

@@ -42,6 +42,7 @@ using KS.Kernel;
 using KS.ConsoleBase.Colors;
 using Extensification.LongExts;
 using KS.Misc.Text;
+using KS.Kernel.Events;
 
 namespace KS.Drivers.Filesystem
 {
@@ -65,7 +66,7 @@ namespace KS.Drivers.Filesystem
             File.SetAttributes(FilePath, Attributes);
 
             // Raise event
-            Kernel.Events.EventsManager.FireEvent("FileAttributeAdded", FilePath, Attributes);
+            EventsManager.FireEvent(EventType.FileAttributeAdded, FilePath, Attributes);
         }
 
         /// <inheritdoc/>
@@ -247,7 +248,7 @@ namespace KS.Drivers.Filesystem
                 CopyDirectory(Source, Destination);
 
                 // Raise event
-                Kernel.Events.EventsManager.FireEvent("DirectoryCopied", Source, Destination);
+                EventsManager.FireEvent(EventType.DirectoryCopied, Source, Destination);
             }
             else if (Checking.FileExists(Source) & Checking.FolderExists(Destination))
             {
@@ -255,7 +256,7 @@ namespace KS.Drivers.Filesystem
                 File.Copy(Source, Destination + "/" + FileName, true);
 
                 // Raise event
-                Kernel.Events.EventsManager.FireEvent("FileCopied", Source, Destination + "/" + FileName);
+                EventsManager.FireEvent(EventType.FileCopied, Source, Destination + "/" + FileName);
             }
             else if (Checking.FileExists(Source))
             {
@@ -263,7 +264,7 @@ namespace KS.Drivers.Filesystem
                 File.Copy(Source, Destination, true);
 
                 // Raise event
-                Kernel.Events.EventsManager.FireEvent("FileCopied", Source, Destination);
+                EventsManager.FireEvent(EventType.FileCopied, Source, Destination);
             }
             else
             {
@@ -703,7 +704,7 @@ namespace KS.Drivers.Filesystem
                 Directory.CreateDirectory(NewDirectory);
 
                 // Raise event
-                Kernel.Events.EventsManager.FireEvent("DirectoryCreated", NewDirectory);
+                EventsManager.FireEvent(EventType.DirectoryCreated, NewDirectory);
             }
             else if (ThrowIfDirectoryExists)
             {
@@ -727,7 +728,7 @@ namespace KS.Drivers.Filesystem
                     DebugWriter.WriteDebug(DebugLevel.I, "File closed");
 
                     // Raise event
-                    Kernel.Events.EventsManager.FireEvent("FileCreated", NewFile);
+                    EventsManager.FireEvent(EventType.FileCreated, NewFile);
                 }
                 catch (Exception ex)
                 {
@@ -761,7 +762,7 @@ namespace KS.Drivers.Filesystem
                     DebugWriter.WriteDebug(DebugLevel.I, "File closed");
 
                     // Raise event
-                    Kernel.Events.EventsManager.FireEvent("FileCreated", NewFile);
+                    EventsManager.FireEvent(EventType.FileCreated, NewFile);
                 }
                 catch (Exception ex)
                 {
@@ -842,7 +843,7 @@ namespace KS.Drivers.Filesystem
                 MoveDirectory(Source, Destination);
 
                 // Raise event
-                Kernel.Events.EventsManager.FireEvent("DirectoryMoved", Source, Destination);
+                EventsManager.FireEvent(EventType.DirectoryMoved, Source, Destination);
             }
             else if (Checking.FileExists(Source) & Checking.FolderExists(Destination))
             {
@@ -850,7 +851,7 @@ namespace KS.Drivers.Filesystem
                 File.Move(Source, Destination + "/" + FileName);
 
                 // Raise event
-                Kernel.Events.EventsManager.FireEvent("FileMoved", Source, Destination + "/" + FileName);
+                EventsManager.FireEvent(EventType.FileMoved, Source, Destination + "/" + FileName);
             }
             else if (Checking.FileExists(Source))
             {
@@ -858,7 +859,7 @@ namespace KS.Drivers.Filesystem
                 File.Move(Source, Destination);
 
                 // Raise event
-                Kernel.Events.EventsManager.FireEvent("FileMoved", Source, Destination);
+                EventsManager.FireEvent(EventType.FileMoved, Source, Destination);
             }
             else
             {
@@ -1028,7 +1029,7 @@ namespace KS.Drivers.Filesystem
             File.SetAttributes(FilePath, Attrib);
 
             // Raise event
-            Kernel.Events.EventsManager.FireEvent("FileAttributeRemoved", FilePath, Attributes);
+            EventsManager.FireEvent(EventType.FileAttributeRemoved, FilePath, Attributes);
         }
 
         /// <inheritdoc/>
@@ -1071,7 +1072,7 @@ namespace KS.Drivers.Filesystem
 
             // Raise event
             Directory.Delete(Target, true);
-            Kernel.Events.EventsManager.FireEvent("DirectoryRemoved", Target);
+            EventsManager.FireEvent(EventType.DirectoryRemoved, Target);
         }
 
         /// <inheritdoc/>
@@ -1092,7 +1093,7 @@ namespace KS.Drivers.Filesystem
             File.Delete(Dir);
 
             // Raise event
-            Kernel.Events.EventsManager.FireEvent("FileRemoved", Target);
+            EventsManager.FireEvent(EventType.FileRemoved, Target);
         }
 
         /// <inheritdoc/>

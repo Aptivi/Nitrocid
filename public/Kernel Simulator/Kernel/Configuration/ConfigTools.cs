@@ -31,6 +31,7 @@ using KS.Languages;
 using KS.Misc.Reflection;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using KS.Kernel.Events;
 using static KS.Kernel.Configuration.Config;
 
 namespace KS.Kernel.Configuration
@@ -46,9 +47,9 @@ namespace KS.Kernel.Configuration
         /// </summary>
         public static void ReloadConfig()
         {
-            Events.EventsManager.FireEvent("PreReloadConfig");
+            EventsManager.FireEvent(EventType.PreReloadConfig);
             InitializeConfig();
-            Events.EventsManager.FireEvent("PostReloadConfig");
+            EventsManager.FireEvent(EventType.PostReloadConfig);
         }
 
         /// <summary>

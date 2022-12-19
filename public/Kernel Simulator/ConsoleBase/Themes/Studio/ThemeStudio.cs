@@ -23,6 +23,7 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.Files.Folders;
 using KS.Kernel.Debugging;
+using KS.Kernel.Events;
 using KS.Languages;
 using KS.Misc.Reflection;
 using KS.Misc.Text;
@@ -41,7 +42,7 @@ namespace KS.ConsoleBase.Themes.Studio
         public static void StartThemeStudio(string ThemeName)
         {
             // Inform user that we're on the studio
-            Kernel.Events.EventsManager.FireEvent("ThemeStudioStarted");
+            EventsManager.FireEvent(EventType.ThemeStudioStarted);
             DebugWriter.WriteDebug(DebugLevel.I, "Starting theme studio with theme name {0}", ThemeName);
             ThemeStudioTools.SelectedThemeName = ThemeName;
             string Response;
@@ -196,7 +197,7 @@ namespace KS.ConsoleBase.Themes.Studio
             }
 
             // Raise event
-            Kernel.Events.EventsManager.FireEvent("ThemeStudioExit");
+            EventsManager.FireEvent(EventType.ThemeStudioExit);
         }
 
     }

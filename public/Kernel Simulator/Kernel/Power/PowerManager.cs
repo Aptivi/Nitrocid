@@ -22,6 +22,7 @@ using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.RPC;
 using System.Threading;
+using KS.Kernel.Events;
 
 namespace KS.Kernel.Power
 {
@@ -57,7 +58,7 @@ namespace KS.Kernel.Power
             {
                 case PowerMode.Shutdown:
                     {
-                        Events.EventsManager.FireEvent("PreShutdown");
+                        EventsManager.FireEvent(EventType.PreShutdown);
                         TextWriterColor.Write(Translate.DoTranslation("Shutting down..."));
 
                         // Simulate 0.0.1's behavior on shutting down
@@ -68,7 +69,7 @@ namespace KS.Kernel.Power
 
                         // Now, reset everything
                         KernelTools.ResetEverything();
-                        Events.EventsManager.FireEvent("PostShutdown");
+                        EventsManager.FireEvent(EventType.PostShutdown);
                         Flags.RebootRequested = true;
                         Flags.LogoutRequested = true;
                         Flags.KernelShutdown = true;
@@ -77,7 +78,7 @@ namespace KS.Kernel.Power
                 case PowerMode.Reboot:
                 case PowerMode.RebootSafe:
                     {
-                        Events.EventsManager.FireEvent("PreReboot");
+                        EventsManager.FireEvent(EventType.PreReboot);
                         TextWriterColor.Write(Translate.DoTranslation("Rebooting..."));
 
                         // Simulate 0.0.1's behavior on shutting down
@@ -88,7 +89,7 @@ namespace KS.Kernel.Power
 
                         // Now, reset everything
                         KernelTools.ResetEverything();
-                        Events.EventsManager.FireEvent("PostReboot");
+                        EventsManager.FireEvent(EventType.PostReboot);
                         ConsoleWrapper.Clear();
                         Flags.RebootRequested = true;
                         Flags.LogoutRequested = true;

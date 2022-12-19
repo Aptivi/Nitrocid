@@ -24,6 +24,7 @@ using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Splash;
+using KS.Kernel.Events;
 
 namespace KS.Hardware
 {
@@ -41,7 +42,7 @@ namespace KS.Hardware
         public static void StartProbing()
         {
             // We will probe hardware
-            Kernel.Events.EventsManager.FireEvent("HardwareProbing");
+            EventsManager.FireEvent(EventType.HardwareProbing);
             try
             {
                 InxiTrace.DebugDataReceived += WriteInxiDebugData;
@@ -65,7 +66,7 @@ namespace KS.Hardware
             }
 
             // Raise event
-            Kernel.Events.EventsManager.FireEvent("HardwareProbed");
+            EventsManager.FireEvent(EventType.HardwareProbed);
         }
 
         /// <summary>

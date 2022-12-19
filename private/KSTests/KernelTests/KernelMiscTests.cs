@@ -34,7 +34,7 @@ namespace KSTests.KernelTests
         [Description("Misc")]
         public void TestRaiseEvent()
         {
-            EventsManager.FireEvent("StartKernel");
+            EventsManager.FireEvent(EventType.StartKernel);
             EventsManager.ListAllFiredEvents().ShouldContainKey("[" + (EventsManager.ListAllFiredEvents().Count - 1).ToString() + "] StartKernel");
         }
 

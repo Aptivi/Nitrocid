@@ -34,6 +34,7 @@ using KS.Shell.Shells.SFTP;
 using KS.TimeDate;
 using KS.Users;
 using KS.Users.Login;
+using KS.Kernel.Events;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Probers
@@ -52,7 +53,7 @@ namespace KS.Misc.Probers
         /// <returns>A string that has the parsed placeholders</returns>
         public static string ProbePlaces(string text, bool ThrowIfFailure = false)
         {
-            Kernel.Events.EventsManager.FireEvent("PlaceholderParsing", text);
+            EventsManager.FireEvent(EventType.PlaceholderParsing, text);
             try
             {
                 // Parse the text for the following placeholders:
@@ -313,13 +314,13 @@ namespace KS.Misc.Probers
                 }
 
                 // If successful, raise the parsed event
-                Kernel.Events.EventsManager.FireEvent("PlaceholderParsed", text);
+                EventsManager.FireEvent(EventType.PlaceholderParsed, text);
             }
             catch (Exception ex)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to parse placeholder {0}: {1}", text, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                Kernel.Events.EventsManager.FireEvent("PlaceholderParseError", text, ex);
+                EventsManager.FireEvent(EventType.PlaceholderParseError, text, ex);
                 if (ThrowIfFailure)
                     throw new KernelException(KernelExceptionType.InvalidPlaceholder, Translate.DoTranslation("Error trying to parse placeholders. {0}"), ex.Message);
             }

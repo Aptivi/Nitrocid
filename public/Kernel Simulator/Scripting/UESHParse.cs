@@ -22,6 +22,7 @@ using Extensification.StringExts;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
+using KS.Kernel.Events;
 
 namespace KS.Scripting
 {
@@ -41,7 +42,7 @@ namespace KS.Scripting
             try
             {
                 // Raise event
-                Kernel.Events.EventsManager.FireEvent("UESHPreExecute", ScriptPath, ScriptArguments);
+                EventsManager.FireEvent(EventType.UESHPreExecute, ScriptPath, ScriptArguments);
 
                 // Open the script file for reading
                 var FileStream = new StreamReader(ScriptPath);
@@ -119,11 +120,11 @@ namespace KS.Scripting
 
                 // Close the stream
                 FileStream.Close();
-                Kernel.Events.EventsManager.FireEvent("UESHPostExecute", ScriptPath, ScriptArguments);
+                EventsManager.FireEvent(EventType.UESHPostExecute, ScriptPath, ScriptArguments);
             }
             catch (Exception ex)
             {
-                Kernel.Events.EventsManager.FireEvent("UESHError", ScriptPath, ScriptArguments, ex);
+                EventsManager.FireEvent(EventType.UESHError, ScriptPath, ScriptArguments, ex);
                 DebugWriter.WriteDebug(DebugLevel.E, "Error trying to execute script {0} with arguments {1}: {2}", ScriptPath, ScriptArguments, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 throw new KernelException(KernelExceptionType.UESHScript, Translate.DoTranslation("The script is malformed. Check the script and resolve any errors: {0}"), ex, ex.Message);

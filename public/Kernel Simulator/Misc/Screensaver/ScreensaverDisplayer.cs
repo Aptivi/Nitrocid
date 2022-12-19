@@ -21,6 +21,7 @@ using System.Threading;
 using KS.Kernel.Debugging;
 using KS.Kernel;
 using KS.Misc.Threading;
+using KS.Kernel.Events;
 
 namespace KS.Misc.Screensaver
 {
@@ -73,7 +74,7 @@ namespace KS.Misc.Screensaver
 
                 // Raise event
                 DebugWriter.WriteDebug(DebugLevel.I, "Screensaver really stopped.");
-                Kernel.Events.EventsManager.FireEvent("PostShowScreensaver");
+                EventsManager.FireEvent(EventType.PostShowScreensaver);
                 Screensaver.inSaver = false;
                 Flags.ScrnTimeReached = false;
             }

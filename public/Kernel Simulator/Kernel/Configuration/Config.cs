@@ -74,6 +74,7 @@ using ManagedWeatherMap.Core;
 using MimeKit.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using KS.Kernel.Events;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Kernel.Configuration
@@ -1391,7 +1392,7 @@ namespace KS.Kernel.Configuration
 
             // Save Config
             File.WriteAllText(ConfigPath, JsonConvert.SerializeObject(ConfigurationObject, Formatting.Indented));
-            Events.EventsManager.FireEvent("ConfigSaved");
+            EventsManager.FireEvent(EventType.ConfigSaved);
         }
 
         /// <summary>
@@ -1419,7 +1420,7 @@ namespace KS.Kernel.Configuration
             }
             catch (Exception ex)
             {
-                Events.EventsManager.FireEvent("ConfigSaveError", ex);
+                EventsManager.FireEvent(EventType.ConfigSaveError, ex);
                 DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
@@ -2541,7 +2542,7 @@ namespace KS.Kernel.Configuration
             ConfigTools.RepairConfig();
 
             // Raise event
-            Events.EventsManager.FireEvent("ConfigRead");
+            EventsManager.FireEvent(EventType.ConfigRead);
         }
 
         /// <summary>
@@ -2576,7 +2577,7 @@ namespace KS.Kernel.Configuration
             }
             catch (Exception ex)
             {
-                Events.EventsManager.FireEvent("ConfigReadError", ex);
+                EventsManager.FireEvent(EventType.ConfigReadError, ex);
                 DebugWriter.WriteDebugStackTrace(ex);
                 if (!SplashReport.KernelBooted)
                 {

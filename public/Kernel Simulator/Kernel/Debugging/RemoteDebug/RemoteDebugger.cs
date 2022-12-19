@@ -29,6 +29,7 @@ using KS.Misc.Probers;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.TimeDate;
+using KS.Kernel.Events;
 
 namespace KS.Kernel.Debugging.RemoteDebug
 {
@@ -199,7 +200,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
                             DebugWriter.WriteDebug(DebugLevel.I, "Debug device \"{0}\" ({1}) connected.", RDebugName, RDebugIP);
                             RDebugSWriter.Flush();
                             RDebugThread.Start(RDebugInstance);
-                            Events.EventsManager.FireEvent("RemoteDebugConnectionAccepted", RDebugIP);
+                            EventsManager.FireEvent(EventType.RemoteDebugConnectionAccepted, RDebugIP);
                         }
                     }
                 }

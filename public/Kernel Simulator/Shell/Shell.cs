@@ -55,6 +55,7 @@ using KS.Shell.Shells.Hex;
 using KS.Shell.Shells.Archive;
 using KS.Shell.Shells.Admin;
 using KS.Users.Login;
+using KS.Kernel.Events;
 using File = KS.Drivers.Console.Consoles.File;
 
 namespace KS.Shell
@@ -206,7 +207,7 @@ namespace KS.Shell
                 }
 
                 // Raise shell initialization event
-                Kernel.Events.EventsManager.FireEvent("ShellInitialized", ShellType);
+                EventsManager.FireEvent(EventType.ShellInitialized, ShellType);
 
                 // Wait for command
                 DebugWriter.WriteDebug(DebugLevel.I, "Waiting for command");
@@ -229,7 +230,7 @@ namespace KS.Shell
                 string Command = SplitCommands[i];
 
                 // Fire an event of PreExecuteCommand
-                Kernel.Events.EventsManager.FireEvent("PreExecuteCommand", ShellType, Command);
+                EventsManager.FireEvent(EventType.PreExecuteCommand, ShellType, Command);
 
                 // Check to see if the command is a comment
                 if ((string.IsNullOrEmpty(Command) | (Command?.StartsWithAnyOf(new[] { " ", "#" }))) == false)
@@ -409,7 +410,7 @@ namespace KS.Shell
                 }
 
                 // Fire an event of PostExecuteCommand
-                Kernel.Events.EventsManager.FireEvent("PostExecuteCommand", ShellType, Command);
+                EventsManager.FireEvent(EventType.PostExecuteCommand, ShellType, Command);
             }
 
             // Restore console output to its original state if any

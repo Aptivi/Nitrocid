@@ -19,6 +19,8 @@
 using KS.ConsoleBase.Inputs;
 using KS.Kernel.Events;
 using KS.Languages;
+using KS.Misc.Writers.ConsoleWriters;
+using System;
 
 namespace KS.Kernel.Debugging.Testing.Facades
 {
@@ -29,7 +31,10 @@ namespace KS.Kernel.Debugging.Testing.Facades
         {
             string Text = Input.ReadLine(Translate.DoTranslation("Write an event name:") + " ", "");
             string[] eventArgs = new string[] { "RanByTest" };
-            EventsManager.FireEvent(Text, eventArgs);
+            if (Enum.TryParse(typeof(EventType), Text, out object eventType))
+                EventsManager.FireEvent((EventType)eventType, eventArgs);
+            else
+                TextWriterColor.Write(Translate.DoTranslation("Event {0} not found."), Text);
         }
     }
 }

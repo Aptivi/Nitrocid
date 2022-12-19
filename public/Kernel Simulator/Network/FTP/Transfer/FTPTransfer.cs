@@ -23,6 +23,7 @@ using FluentFTP.Helpers;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Shell.Shells.FTP;
+using KS.Kernel.Events;
 
 namespace KS.Network.FTP.Transfer
 {
@@ -57,7 +58,7 @@ namespace KS.Network.FTP.Transfer
                 try
                 {
                     // Show a message to download
-                    Kernel.Events.EventsManager.FireEvent("FTPPreDownload", File);
+                    EventsManager.FireEvent(EventType.FTPPreDownload, File);
                     DebugWriter.WriteDebug(DebugLevel.I, "Downloading file {0}...", File);
 
                     // Try to download 3 times
@@ -66,14 +67,14 @@ namespace KS.Network.FTP.Transfer
 
                     // Show a message that it's downloaded
                     DebugWriter.WriteDebug(DebugLevel.I, "Downloaded file {0}.", File);
-                    Kernel.Events.EventsManager.FireEvent("FTPPostDownload", File, Result.IsSuccess());
+                    EventsManager.FireEvent(EventType.FTPPostDownload, File, Result.IsSuccess());
                     return true;
                 }
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
                     DebugWriter.WriteDebug(DebugLevel.E, "Download failed for file {0}: {1}", File, ex.Message);
-                    Kernel.Events.EventsManager.FireEvent("FTPPostDownload", File, false);
+                    EventsManager.FireEvent(EventType.FTPPostDownload, File, false);
                 }
             }
             else
@@ -103,7 +104,7 @@ namespace KS.Network.FTP.Transfer
                 try
                 {
                     // Show a message to download
-                    Kernel.Events.EventsManager.FireEvent("FTPPreDownload", Folder);
+                    EventsManager.FireEvent(EventType.FTPPreDownload, Folder);
                     DebugWriter.WriteDebug(DebugLevel.I, "Downloading folder {0}...", Folder);
 
                     // Try to download folder
@@ -133,7 +134,7 @@ namespace KS.Network.FTP.Transfer
                             }
                             Failed = true;
                         }
-                        Kernel.Events.EventsManager.FireEvent("FTPPostDownload", Result.Name, !Failed);
+                        EventsManager.FireEvent(EventType.FTPPostDownload, Result.Name, !Failed);
                     }
 
                     // Show a message that it's downloaded
@@ -145,14 +146,14 @@ namespace KS.Network.FTP.Transfer
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Downloaded folder {0} partially due to failure.", Folder);
                     }
-                    Kernel.Events.EventsManager.FireEvent("FTPPostDownload", Folder, !Failed);
+                    EventsManager.FireEvent(EventType.FTPPostDownload, Folder, !Failed);
                     return !Failed;
                 }
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
                     DebugWriter.WriteDebug(DebugLevel.E, "Download failed for folder {0}: {1}", Folder, ex.Message);
-                    Kernel.Events.EventsManager.FireEvent("FTPPostDownload", Folder, false);
+                    EventsManager.FireEvent(EventType.FTPPostDownload, Folder, false);
                 }
             }
             else
@@ -180,7 +181,7 @@ namespace KS.Network.FTP.Transfer
             if (FTPShellCommon.FtpConnected)
             {
                 // Show a message to download
-                Kernel.Events.EventsManager.FireEvent("FTPPreUpload", File);
+                EventsManager.FireEvent(EventType.FTPPreUpload, File);
                 DebugWriter.WriteDebug(DebugLevel.I, "Uploading file {0}...", LocalFile);
                 DebugWriter.WriteDebug(DebugLevel.I, "Where in the remote: {0}", File);
 
@@ -188,7 +189,7 @@ namespace KS.Network.FTP.Transfer
                 string LocalFilePath = Files.Filesystem.NeutralizePath(LocalFile, FTPShellCommon.FtpCurrentDirectory);
                 bool Success = Convert.ToBoolean(FTPShellCommon.ClientFTP.UploadFile(LocalFilePath, File, FtpRemoteExists.Resume, true, FtpVerify.Retry, FTPTransferProgress.FileProgress));
                 DebugWriter.WriteDebug(DebugLevel.I, "Uploaded file {0} to {1} with status {2}.", LocalFile, File, Success);
-                Kernel.Events.EventsManager.FireEvent("FTPPostUpload", File, Success);
+                EventsManager.FireEvent(EventType.FTPPostUpload, File, Success);
                 return Success;
             }
             else
@@ -215,7 +216,7 @@ namespace KS.Network.FTP.Transfer
             if (FTPShellCommon.FtpConnected)
             {
                 // Show a message to download
-                Kernel.Events.EventsManager.FireEvent("FTPPreUpload", Folder);
+                EventsManager.FireEvent(EventType.FTPPreUpload, Folder);
                 DebugWriter.WriteDebug(DebugLevel.I, "Uploading folder {0}...", Folder);
 
                 // Try to upload
@@ -245,7 +246,7 @@ namespace KS.Network.FTP.Transfer
                         }
                         Failed = true;
                     }
-                    Kernel.Events.EventsManager.FireEvent("FTPPostUpload", Result.Name, !Failed);
+                    EventsManager.FireEvent(EventType.FTPPostUpload, Result.Name, !Failed);
                 }
 
                 // Show a message that it's downloaded
@@ -257,7 +258,7 @@ namespace KS.Network.FTP.Transfer
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Uploaded folder {0} partially due to failure.", Folder);
                 }
-                Kernel.Events.EventsManager.FireEvent("FTPPostUpload", Folder, !Failed);
+                EventsManager.FireEvent(EventType.FTPPostUpload, Folder, !Failed);
                 return !Failed;
             }
             else
@@ -278,7 +279,7 @@ namespace KS.Network.FTP.Transfer
                 try
                 {
                     // Show a message to download
-                    Kernel.Events.EventsManager.FireEvent("FTPPreDownload", File);
+                    EventsManager.FireEvent(EventType.FTPPreDownload, File);
                     DebugWriter.WriteDebug(DebugLevel.I, "Downloading {0}...", File);
 
                     // Try to download 3 times
@@ -290,14 +291,14 @@ namespace KS.Network.FTP.Transfer
 
                     // Show a message that it's downloaded
                     DebugWriter.WriteDebug(DebugLevel.I, "Downloaded {0}.", File);
-                    Kernel.Events.EventsManager.FireEvent("FTPPostDownload", File, Downloaded);
+                    EventsManager.FireEvent(EventType.FTPPostDownload, File, Downloaded);
                     return DownloadedContent.ToString();
                 }
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
                     DebugWriter.WriteDebug(DebugLevel.E, "Download failed for {0}: {1}", File, ex.Message);
-                    Kernel.Events.EventsManager.FireEvent("FTPPostDownload", File, false);
+                    EventsManager.FireEvent(EventType.FTPPostDownload, File, false);
                 }
             }
             else

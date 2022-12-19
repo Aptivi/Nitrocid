@@ -32,6 +32,7 @@ using KS.Misc.Text;
 using KS.Users.Groups;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using KS.Kernel.Events;
 
 namespace KS.Users
 {
@@ -271,7 +272,7 @@ namespace KS.Users
                         DebugWriter.WriteDebug(DebugLevel.I, "Initializing user with password");
                         InitializeUser(newUser, newPassword);
                     }
-                    Kernel.Events.EventsManager.FireEvent("UserAdded", newUser);
+                    EventsManager.FireEvent(EventType.UserAdded, newUser);
                     return true;
                 }
                 catch (Exception ex)
@@ -349,7 +350,7 @@ namespace KS.Users
                     File.WriteAllText(Paths.GetKernelPath(KernelPathType.Users), JsonConvert.SerializeObject(UsersToken, Formatting.Indented));
 
                     // Raise event
-                    Kernel.Events.EventsManager.FireEvent("UserRemoved", user);
+                    EventsManager.FireEvent(EventType.UserRemoved, user);
                 }
                 catch (Exception ex)
                 {
@@ -403,7 +404,7 @@ namespace KS.Users
                         SetUserProperty(OldName, UserProperty.Username, Username);
 
                         // Raise event
-                        Kernel.Events.EventsManager.FireEvent("UsernameChanged", OldName, Username);
+                        EventsManager.FireEvent(EventType.UsernameChanged, OldName, Username);
                     }
                     catch (Exception ex)
                     {
@@ -485,7 +486,7 @@ namespace KS.Users
                     SetUserProperty(Target, UserProperty.Password, NewPass);
 
                     // Raise event
-                    Kernel.Events.EventsManager.FireEvent("UserPasswordChanged", Target);
+                    EventsManager.FireEvent(EventType.UserPasswordChanged, Target);
                 }
                 else if (GroupManagement.HasGroup(Login.Login.CurrentUser.Username, GroupManagement.GroupType.Administrator) & !Login.Login.Users.ContainsKey(Target))
                 {
