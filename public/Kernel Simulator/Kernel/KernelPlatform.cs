@@ -78,7 +78,6 @@ namespace KS.Kernel
         /// <summary>
         /// Is Kernel Simulator running from .NET CoreCLR?
         /// </summary>
-        /// <returns></returns>
         public static bool IsDotnetCoreClr() =>
 #if NETCOREAPP
             true;

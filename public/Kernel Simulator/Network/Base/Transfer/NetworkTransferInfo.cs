@@ -40,7 +40,6 @@ namespace KS.Network.Base.Transfer
         /// <summary>
         /// Whether the message is suppressed. Once set, it can't be unset.
         /// </summary>
-        /// <returns></returns>
         public bool MessageSuppressed
         {
             get

@@ -61,7 +61,6 @@ namespace KS.Network.RSS.Instance
         /// <summary>
         /// Feed articles
         /// </summary>
-        /// <returns></returns>
         public List<RSSArticle> FeedArticles => _FeedArticles;
 
         /// <summary>

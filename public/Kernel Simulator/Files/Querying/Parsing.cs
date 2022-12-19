@@ -58,7 +58,6 @@ namespace KS.Files.Querying
         /// Is the file a binary file?
         /// </summary>
         /// <param name="Path">Path to file</param>
-        /// <returns></returns>
         public static bool IsBinaryFile(string Path) => 
             DriverHandler.CurrentFilesystemDriver.IsBinaryFile(Path);
 
@@ -66,7 +65,6 @@ namespace KS.Files.Querying
         /// Is the file a JSON file?
         /// </summary>
         /// <param name="Path">Path to file</param>
-        /// <returns></returns>
         public static bool IsJson(string Path) =>
             DriverHandler.CurrentFilesystemDriver.IsJson(Path);
 

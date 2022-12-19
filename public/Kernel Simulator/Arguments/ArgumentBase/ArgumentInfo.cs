@@ -75,7 +75,6 @@ namespace KS.Arguments.ArgumentBase
         /// <summary>
         /// Gets the translated version of help entry (KS built-in arguments only)
         /// </summary>
-        /// <returns></returns>
         public string GetTranslatedHelpEntry() => Translate.DoTranslation(HelpDefinition);
 
     }
