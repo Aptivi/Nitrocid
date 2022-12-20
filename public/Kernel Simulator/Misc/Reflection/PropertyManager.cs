@@ -216,7 +216,7 @@ namespace KS.Misc.Reflection
             // Get the properties and get their values
             foreach (PropertyInfo VarProperty in Properties)
             {
-                var PropertyValue = VarProperty.GetValue(VariableType);
+                var PropertyValue = ExpressionGetPropertyValue(VarProperty);
                 PropertyDict.Add(VarProperty.Name, PropertyValue);
             }
             return PropertyDict;
