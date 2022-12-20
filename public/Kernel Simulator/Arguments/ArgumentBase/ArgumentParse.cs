@@ -45,9 +45,9 @@ namespace KS.Arguments.ArgumentBase
             { "debug", new ArgumentInfo("debug", "Enables debug mode", new CommandArgumentInfo(), new CommandLine_DebugArgument()) },
             { "terminaldebug", new ArgumentInfo("terminaldebug", "Enables terminal debug mode", new CommandArgumentInfo(), new CommandLine_TerminalDebugArgument()) },
             { "reset", new ArgumentInfo("reset", "Resets the kernel to the factory settings", new CommandArgumentInfo(), new CommandLine_ResetArgument()) },
-            { "newreader", new ArgumentInfo("newreader", "Opts in to new config reader", new CommandArgumentInfo(), new CommandLine_NewReaderArgument()) },
-            { "newwriter", new ArgumentInfo("newwriter", "Opts in to new config writer", new CommandArgumentInfo(), new CommandLine_NewWriterArgument()) },
-            { "newconfigpaths", new ArgumentInfo("newconfigpaths", "Opts in to new config paths", new CommandArgumentInfo(), new CommandLine_NewPathsArgument()) },
+            { "newreader", new ArgumentInfo("newreader", "Opts in to new config reader", new CommandArgumentInfo(), new CommandLine_NewReaderArgument(), true) },
+            { "newwriter", new ArgumentInfo("newwriter", "Opts in to new config writer", new CommandArgumentInfo(), new CommandLine_NewWriterArgument(), true) },
+            { "newconfigpaths", new ArgumentInfo("newconfigpaths", "Opts in to new config paths", new CommandArgumentInfo(), new CommandLine_NewPathsArgument(), true) },
             { "bypasssizedetection", new ArgumentInfo("bypasssizedetection", "Bypasses the console size detection", new CommandArgumentInfo(), new CommandLine_BypassSizeDetectionArgument()) },
             { "help", new ArgumentInfo("help", "Help page", new CommandArgumentInfo(), new CommandLine_HelpArgument()) }
         };
