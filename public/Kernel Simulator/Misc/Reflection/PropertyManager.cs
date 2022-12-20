@@ -18,6 +18,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Reflection;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
@@ -36,7 +37,8 @@ namespace KS.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <param name="VariableValue">New value</param>
-        public static void SetPropertyValue(string Variable, object VariableValue) => SetPropertyValue(Variable, VariableValue, null);
+        public static void SetPropertyValue(string Variable, object VariableValue) => 
+            SetPropertyValue(Variable, VariableValue, null);
 
         /// <summary>
         /// Sets the value of a property to the new value dynamically
@@ -60,11 +62,9 @@ namespace KS.Misc.Reflection
             // Set the variable if found
             if (TargetProperty is not null)
             {
-                // The "obj" description says this: "The object whose field value will be set."
-                // Apparently, SetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
-                // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
+                // Expressions are claimed that it's faster than Reflection, but let's see!
                 DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}. Setting to {1}...", TargetProperty.Name, VariableValue);
-                TargetProperty.SetValue(Variable, VariableValue);
+                ExpressionSetPropertyStatic(TargetProperty, VariableValue);
             }
             else
             {
@@ -72,6 +72,22 @@ namespace KS.Misc.Reflection
                 DebugWriter.WriteDebug(DebugLevel.I, "Property {0} not found.", Variable);
                 throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
             }
+        }
+
+        private static void ExpressionSetPropertyStatic(PropertyInfo propertyInfo, object value)
+        {
+            if (propertyInfo is null)
+                throw new ArgumentNullException(nameof(propertyInfo));
+            if (value is null)
+                throw new ArgumentNullException(nameof(value));
+
+            var argumentParam = Expression.Parameter(typeof(object));
+            var convExpr = Expression.Convert(argumentParam, propertyInfo.PropertyType);
+            var callExpr = Expression.Call(propertyInfo.GetSetMethod(), convExpr);
+
+            var expression = Expression.Lambda<Action<object>>(callExpr, argumentParam).Compile();
+
+            expression(value);
         }
 
         /// <summary>
@@ -107,7 +123,7 @@ namespace KS.Misc.Reflection
                 // Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
                 // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
                 DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}.", TargetProperty.Name);
-                return TargetProperty.GetValue(Variable);
+                return ExpressionGetPropertyValue(TargetProperty);
             }
             else
             {
@@ -115,6 +131,19 @@ namespace KS.Misc.Reflection
                 DebugWriter.WriteDebug(DebugLevel.I, "Property {0} not found.", Variable);
                 throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
             }
+        }
+
+        private static object ExpressionGetPropertyValue(PropertyInfo propertyInfo)
+        {
+            if (propertyInfo is null)
+                throw new ArgumentNullException(nameof(propertyInfo));
+
+            var callExpr = Expression.Call(propertyInfo.GetGetMethod());
+            var convExpr = Expression.Convert(callExpr, typeof(object));
+
+            var expression = Expression.Lambda<Func<object>>(convExpr).Compile();
+
+            return expression();
         }
 
         /// <summary>
@@ -147,7 +176,7 @@ namespace KS.Misc.Reflection
             PropertyInfo PossibleProperty;
 
             // Get types of possible flag locations
-            PossibleTypes = Assembly.GetExecutingAssembly().GetTypes();
+            PossibleTypes = ReflectionCommon.KernelTypes;
 
             // Get fields of flag modules
             foreach (Type PossibleType in PossibleTypes)

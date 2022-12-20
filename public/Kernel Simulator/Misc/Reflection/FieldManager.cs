@@ -18,6 +18,7 @@
 
 using System;
 using System.Collections;
+using System.Linq.Expressions;
 using System.Reflection;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
@@ -62,11 +63,9 @@ namespace KS.Misc.Reflection
             // Set the variable if found
             if (TargetField is not null)
             {
-                // The "obj" description says this: "The object whose field value will be set."
-                // Apparently, SetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
-                // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
+                // Expressions are claimed that it's faster than Reflection, but let's see!
                 DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}. Setting to {1}...", TargetField.Name, VariableValue);
-                TargetField.SetValue(Variable, VariableValue);
+                ExpressionSetFieldValue(TargetField, VariableValue);
             }
             else
             {
@@ -74,6 +73,21 @@ namespace KS.Misc.Reflection
                 DebugWriter.WriteDebug(DebugLevel.I, "Field {0} not found.", Variable);
                 throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
             }
+        }
+
+        private static void ExpressionSetFieldValue(FieldInfo fieldInfo, object value)
+        {
+            if (fieldInfo is null)
+                throw new ArgumentNullException(nameof(fieldInfo));
+
+            var argumentParam = Expression.Parameter(typeof(object));
+            var assignExpr = Expression.Field(null, fieldInfo.DeclaringType, fieldInfo.Name);
+            var convertExpr = Expression.Convert(argumentParam, assignExpr.Type);
+            var setExpr = Expression.Assign(assignExpr, convertExpr);
+
+            var expression = Expression.Lambda<Action<object>>(setExpr, argumentParam).Compile();
+
+            expression(value);
         }
 
         /// <summary>
@@ -144,7 +158,7 @@ namespace KS.Misc.Reflection
                 // Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
                 // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
                 DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}.", TargetField.Name);
-                return TargetField.GetValue(Variable);
+                return ExpressionGetFieldValue(TargetField);
             }
             else
             {
@@ -152,6 +166,19 @@ namespace KS.Misc.Reflection
                 DebugWriter.WriteDebug(DebugLevel.I, "Field {0} not found.", Variable);
                 throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
             }
+        }
+
+        private static object ExpressionGetFieldValue(FieldInfo fieldInfo)
+        {
+            if (fieldInfo is null)
+                throw new ArgumentNullException(nameof(fieldInfo));
+
+            var assignExpr = Expression.Field(null, fieldInfo.DeclaringType, fieldInfo.Name);
+            var convExpr = Expression.Convert(assignExpr, typeof(object));
+
+            var expression = Expression.Lambda<Func<object>>(convExpr).Compile();
+
+            return expression();
         }
 
         /// <summary>
@@ -194,7 +221,7 @@ namespace KS.Misc.Reflection
             FieldInfo PossibleField;
 
             // Get types of possible flag locations
-            PossibleTypes = Assembly.GetExecutingAssembly().GetTypes();
+            PossibleTypes = ReflectionCommon.KernelTypes;
 
             // Get fields of flag modules
             foreach (Type PossibleType in PossibleTypes)
