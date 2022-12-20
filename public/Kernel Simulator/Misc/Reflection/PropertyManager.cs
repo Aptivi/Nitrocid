@@ -64,7 +64,7 @@ namespace KS.Misc.Reflection
             {
                 // Expressions are claimed that it's faster than Reflection, but let's see!
                 DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}. Setting to {1}...", TargetProperty.Name, VariableValue);
-                ExpressionSetPropertyStatic(TargetProperty, VariableValue);
+                ExpressionSetPropertyValue(TargetProperty, VariableValue);
             }
             else
             {
@@ -74,7 +74,7 @@ namespace KS.Misc.Reflection
             }
         }
 
-        private static void ExpressionSetPropertyStatic(PropertyInfo propertyInfo, object value)
+        private static void ExpressionSetPropertyValue(PropertyInfo propertyInfo, object value)
         {
             if (propertyInfo is null)
                 throw new ArgumentNullException(nameof(propertyInfo));
@@ -87,7 +87,8 @@ namespace KS.Misc.Reflection
 
             var expression = Expression.Lambda<Action<object>>(callExpr, argumentParam).Compile();
 
-            expression(value);
+            var finalValue = Convert.ChangeType(value, propertyInfo.PropertyType);
+            expression(finalValue);
         }
 
         /// <summary>
