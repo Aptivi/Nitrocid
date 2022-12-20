@@ -243,7 +243,6 @@ namespace KS.Kernel
         public static bool SetBackground = true;
 #warning Tank these after implementation on TermRead
         private static bool inputHistoryEnabled = true;
-        private static bool inputClipboardEnabled = true;
         private static bool inputUndoEnabled = true;
         /// <summary>
         /// Whether the input history is enabled
@@ -257,20 +256,6 @@ namespace KS.Kernel
             set
             {
                 inputHistoryEnabled = value;
-            }
-        }
-        /// <summary>
-        /// Whether the clipboard and yanking (CTRL + Y) is enabled
-        /// </summary>
-        public static bool InputClipboardEnabled
-        {
-            get
-            {
-                return inputClipboardEnabled;
-            }
-            set
-            {
-                inputClipboardEnabled = value;
             }
         }
         /// <summary>

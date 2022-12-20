@@ -1359,7 +1359,6 @@ namespace KS.Kernel.Configuration
                 { "Left frame character for progress bars", ProgressTools.ProgressLeftFrameChar },
                 { "Right frame character for progress bars", ProgressTools.ProgressRightFrameChar },
                 { "Input history enabled", Flags.InputHistoryEnabled },
-                { "Input clipboard enabled", Flags.InputClipboardEnabled },
                 { "Input undo enabled", Flags.InputUndoEnabled },
                 { "Use PowerLine for rendering spaceship", MeteorShooter.MeteorUsePowerLine },
                 { "Meteor game speed", MeteorShooter.MeteorSpeed },
@@ -2532,7 +2531,6 @@ namespace KS.Kernel.Configuration
             ProgressTools.ProgressLeftFrameChar = (string)(ConfigToken["Misc"]["Left frame character for progress bars"] ?? "║");
             ProgressTools.ProgressRightFrameChar = (string)(ConfigToken["Misc"]["Right frame character for progress bars"] ?? "║");
             Flags.InputHistoryEnabled = (bool)ConfigToken["Misc"]["Input history enabled"];
-            Flags.InputClipboardEnabled = (bool)ConfigToken["Misc"]["Input clipboard enabled"];
             Flags.InputUndoEnabled = (bool)ConfigToken["Misc"]["Input undo enabled"];
             MeteorShooter.MeteorUsePowerLine = (bool)ConfigToken["Misc"]["Use PowerLine for rendering spaceship"];
             MeteorShooter.MeteorSpeed = int.TryParse((string)ConfigToken["Misc"]["Meteor game speed"], out _) ? (int)ConfigToken["Misc"]["Meteor game speed"] : 10;
