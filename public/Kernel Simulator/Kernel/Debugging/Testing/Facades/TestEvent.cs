@@ -31,8 +31,8 @@ namespace KS.Kernel.Debugging.Testing.Facades
         {
             string Text = Input.ReadLine(Translate.DoTranslation("Write an event name:") + " ", "");
             string[] eventArgs = new string[] { "RanByTest" };
-            if (Enum.TryParse(typeof(EventType), Text, out object eventType))
-                EventsManager.FireEvent((EventType)eventType, eventArgs);
+            if (Enum.TryParse(Text, out EventType eventType))
+                EventsManager.FireEvent(eventType, eventArgs);
             else
                 TextWriterColor.Write(Translate.DoTranslation("Event {0} not found."), Text);
         }
