@@ -96,16 +96,5 @@ namespace KSTests.MiscTests
             Properties.ShouldNotBeEmpty();
         }
 
-        /// <summary>
-        /// Tests getting property value from variable
-        /// </summary>
-        [Test]
-        [Description("Management")]
-        public void TestGetPropertyValueInVariable()
-        {
-            string Value = Convert.ToString(PropertyManager.GetPropertyValueInVariable(nameof(CultureManager.CurrentCult), nameof(CultureManager.CurrentCult.Name)));
-            Value.ShouldNotBeNullOrEmpty();
-        }
-
     }
 }

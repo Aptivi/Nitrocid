@@ -232,42 +232,33 @@ namespace KS.Misc.Settings
                         var Setting = SectionToken[SectionIndex];
                         object CurrentValue = "Unknown";
                         string Variable = (string)Setting["Variable"];
-                        string VariableProperty = (string)Setting["VariableProperty"];
                         bool VariableIsInternal = (bool)(Setting["IsInternal"] ?? false);
                         bool VariableIsEnumerable = (bool)(Setting["IsEnumerable"] ?? false);
                         int VariableEnumerableIndex = (int)(Setting["EnumerableIndex"] ?? 0);
                         SettingsKeyType VariableType = (SettingsKeyType)Convert.ToInt32(Enum.Parse(typeof(SettingsKeyType), (string)Setting["Type"]));
 
                         // Print the option by determining how to get the current value
-                        if (VariableProperty is null)
+                        if (FieldManager.CheckField(Variable, VariableIsInternal))
                         {
-                            if (FieldManager.CheckField(Variable, VariableIsInternal))
-                            {
-                                // We're dealing with the field, get the value from it. However, check to see if that field is an enumerable
-                                if (VariableIsEnumerable)
-                                    CurrentValue = FieldManager.GetValueFromEnumerable(Variable, VariableEnumerableIndex, VariableIsInternal);
-                                else
-                                    CurrentValue = FieldManager.GetValue(Variable, VariableIsInternal);
-                            }
-                            else if (PropertyManager.CheckProperty(Variable))
-                            {
-                                // We're dealing with the property, get the value from it
-                                CurrentValue = PropertyManager.GetPropertyValue(Variable);
-                            }
-
-                            // Get the plain sequence from the color
-                            if (CurrentValue is KeyValuePair<ColorTools.ColTypes, Color> color)
-                                CurrentValue = color.Value.PlainSequence;
-
-                            // Get the language name
-                            if (CurrentValue is LanguageInfo lang)
-                                CurrentValue = lang.ThreeLetterLanguageName;
+                            // We're dealing with the field, get the value from it. However, check to see if that field is an enumerable
+                            if (VariableIsEnumerable)
+                                CurrentValue = FieldManager.GetValueFromEnumerable(Variable, VariableEnumerableIndex, VariableIsInternal);
+                            else
+                                CurrentValue = FieldManager.GetValue(Variable, VariableIsInternal);
                         }
-                        else
+                        else if (PropertyManager.CheckProperty(Variable))
                         {
-                            // Get the property value from variable
-                            CurrentValue = PropertyManager.GetPropertyValueInVariable(Variable, VariableProperty);
+                            // We're dealing with the property, get the value from it
+                            CurrentValue = PropertyManager.GetPropertyValue(Variable);
                         }
+
+                        // Get the plain sequence from the color
+                        if (CurrentValue is KeyValuePair<ColorTools.ColTypes, Color> color)
+                            CurrentValue = color.Value.PlainSequence;
+
+                        // Get the language name
+                        if (CurrentValue is LanguageInfo lang)
+                            CurrentValue = lang.ThreeLetterLanguageName;
                         sections.Add($"{Setting["Name"]} [{CurrentValue}]");
                         sectionNums.Add(SectionIndex + 1);
                     }
@@ -354,7 +345,6 @@ namespace KS.Misc.Settings
                 string KeyDescription = (string)KeyToken["Description"];
                 SettingsKeyType KeyType = (SettingsKeyType)Convert.ToInt32(Enum.Parse(typeof(SettingsKeyType), (string)KeyToken["Type"]));
                 string KeyVar = (string)KeyToken["Variable"];
-                string KeyVarProperty = (string)KeyToken["VariableProperty"];
                 bool KeyIsInternal = (bool)(KeyToken["IsInternal"] ?? false);
                 bool KeyIsEnumerable = (bool)(KeyToken["IsEnumerable"] ?? false);
                 int KeyEnumerableIndex = (int)(KeyToken["EnumerableIndex"] ?? 0);
@@ -401,32 +391,24 @@ namespace KS.Misc.Settings
                         break;
 
                     // Determine how to get key default value
-                    if (KeyVarProperty is null)
+                    if (FieldManager.CheckField(KeyVar, KeyIsInternal))
                     {
-                        if (FieldManager.CheckField(KeyVar, KeyIsInternal))
-                        {
-                            // We're dealing with the field, get the value from it. However, check to see if that field is an enumerable
-                            if (KeyIsEnumerable)
-                                KeyDefaultValue = FieldManager.GetValueFromEnumerable(KeyVar, KeyEnumerableIndex, KeyIsInternal);
-                            else
-                                KeyDefaultValue = FieldManager.GetValue(KeyVar, KeyIsInternal);
-                        }
-                        else if (PropertyManager.CheckProperty(KeyVar))
-                        {
-                            // We're dealing with the property, get the value from it
-                            KeyDefaultValue = PropertyManager.GetPropertyValue(KeyVar);
-                        }
-
-                        // Get the plain sequence from the color
-                        if (KeyDefaultValue is Color color)
-                        {
-                            KeyDefaultValue = color.PlainSequence;
-                        }
+                        // We're dealing with the field, get the value from it. However, check to see if that field is an enumerable
+                        if (KeyIsEnumerable)
+                            KeyDefaultValue = FieldManager.GetValueFromEnumerable(KeyVar, KeyEnumerableIndex, KeyIsInternal);
+                        else
+                            KeyDefaultValue = FieldManager.GetValue(KeyVar, KeyIsInternal);
                     }
-                    else
+                    else if (PropertyManager.CheckProperty(KeyVar))
                     {
-                        // Get the property value from variable
-                        KeyDefaultValue = PropertyManager.GetPropertyValueInVariable(KeyVar, KeyVarProperty);
+                        // We're dealing with the property, get the value from it
+                        KeyDefaultValue = PropertyManager.GetPropertyValue(KeyVar);
+                    }
+
+                    // Get the plain sequence from the color
+                    if (KeyDefaultValue is Color color)
+                    {
+                        KeyDefaultValue = color.PlainSequence;
                     }
 
                     // How the settings app displays the options and parses the output varies by the keytype

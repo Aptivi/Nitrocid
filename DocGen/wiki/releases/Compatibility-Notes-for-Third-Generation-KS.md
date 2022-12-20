@@ -347,3 +347,7 @@ We felt that both the `Notification` and `Notifications` classes are confusing f
 
 * Affected classes:
   - `Notification` -> `NotificationManager`
+
+##### Removed getting property value in variable
+
+VariableProperty is no longer used, so we decided to remove it. As a consequence, we also had to remove the `PropertyManager.GetPropertyValueInVariable()` routine.
