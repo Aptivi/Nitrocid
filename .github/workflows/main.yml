@@ -18,7 +18,7 @@ jobs:
       with: 
         nuget-version: "latest"
     - name: MSBuild Installation
-      uses: microsoft/setup-msbuild@v1.0.2
+      uses: microsoft/setup-msbuild@v1.3
     - name: Dependency Restoration
       run: msbuild "Kernel Simulator.sln" -t:restore -p:Configuration=Release
     - name: Solution Compilation
