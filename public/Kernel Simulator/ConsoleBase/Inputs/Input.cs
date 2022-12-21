@@ -133,8 +133,8 @@ namespace KS.ConsoleBase.Inputs
         /// <param name="MaskChar">Specifies the password mask character</param>
         public static string ReadLineNoInputUnsafe(char MaskChar)
         {
-#warning TermRead needs to implement masked input here.
-            string pass = TermReader.ReadPassword(MaskChar);
+            TermReaderSettings.PasswordMaskChar = MaskChar;
+            string pass = TermReader.ReadPassword();
             ScreensaverDisplayer.BailFromScreensaver();
             return pass;
         }
