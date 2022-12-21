@@ -134,7 +134,7 @@ namespace KS.ConsoleBase.Inputs
         public static string ReadLineNoInputUnsafe(char MaskChar)
         {
 #warning TermRead needs to implement masked input here.
-            string pass = TermReader.Read();
+            string pass = TermReader.ReadPassword(MaskChar);
             ScreensaverDisplayer.BailFromScreensaver();
             return pass;
         }
