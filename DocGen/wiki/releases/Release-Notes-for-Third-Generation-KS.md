@@ -10,7 +10,7 @@ We have outlined in our old product documentation that `0.1.x` is real beta, so 
 ### KS 0.1.0 (WIP)
 
 > [!NOTE]
-> This version is WIP as of 8/10/2022.
+> This version is WIP as of 8/10/2022. It is currently in Milestone X.
 
 1. Updated all libraries
 2. Added new commands
