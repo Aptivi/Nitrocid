@@ -29,12 +29,12 @@ jobs:
       run: dotnet test "Kernel Simulator.sln"
     - uses: actions/upload-artifact@v3
       with:
-      name: ks-build
-      path: "public/Kernel Simulator/KSBuild/net6.0/"
+        name: ks-build
+        path: "public/Kernel Simulator/KSBuild/net6.0/"
     - uses: actions/upload-artifact@v3
       with:
-      name: ks-build
-      path: "public/Kernel Simulator/KSBuild/*.nupkg"
+        name: ks-build
+        path: "public/Kernel Simulator/KSBuild/*.nupkg"
 
   notify:
 
