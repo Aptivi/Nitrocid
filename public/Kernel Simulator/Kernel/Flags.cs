@@ -335,18 +335,6 @@ namespace KS.Kernel
         /// </summary>
         internal static bool KernelShutdown;
         /// <summary>
-        /// Opts in to the new config reader
-        /// </summary>
-        internal static bool OptInToNewConfigReader;
-        /// <summary>
-        /// Opts in to the new config writer
-        /// </summary>
-        internal static bool OptInToNewConfigWriter;
-        /// <summary>
-        /// Opts in to the new config paths
-        /// </summary>
-        internal static bool OptInToNewConfigPaths;
-        /// <summary>
         /// If this is true, prompts for console support
         /// </summary>
         internal static bool FirstTime;

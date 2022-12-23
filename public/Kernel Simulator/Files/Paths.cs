@@ -35,7 +35,8 @@ namespace KS.Files
         /// <summary>
         /// Path to KS executable folder
         /// </summary>
-        public static string ExecPath => System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        public static string ExecPath =>
+            System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
         /// <summary>
         /// Platform-dependent home path
@@ -126,13 +127,13 @@ namespace KS.Files
         /// Mods path
         /// </summary>
         public static string ModsPath =>
-            Flags.OptInToNewConfigPaths ? Filesystem.NeutralizePath(AppDataPath + "/KSMods/") : Filesystem.NeutralizePath(HomePath + "/KSMods/");
+            Filesystem.NeutralizePath(AppDataPath + "/KSMods/");
 
         /// <summary>
         /// Configuration path
         /// </summary>
         public static string ConfigurationPath =>
-            Flags.OptInToNewConfigPaths ? Filesystem.NeutralizePath(AppDataPath + "/KernelConfig.json") : Filesystem.NeutralizePath(HomePath + "/KernelConfig.json");
+            Filesystem.NeutralizePath(AppDataPath + "/KernelConfig.json");
 
         /// <summary>
         /// Debugging path
@@ -144,73 +145,73 @@ namespace KS.Files
         /// Aliases path
         /// </summary>
         public static string AliasesPath =>
-            Flags.OptInToNewConfigPaths ? Filesystem.NeutralizePath(AppDataPath + "/Aliases.json") : Filesystem.NeutralizePath(HomePath + "/Aliases.json");
+            Filesystem.NeutralizePath(AppDataPath + "/Aliases.json");
 
         /// <summary>
         /// Users path
         /// </summary>
         public static string UsersPath =>
-            Flags.OptInToNewConfigPaths ? Filesystem.NeutralizePath(AppDataPath + "/Users.json") : Filesystem.NeutralizePath(HomePath + "/Users.json");
+            Filesystem.NeutralizePath(AppDataPath + "/Users.json");
 
         /// <summary>
         /// FTPSpeedDial path
         /// </summary>
         public static string FTPSpeedDialPath =>
-            Flags.OptInToNewConfigPaths ? Filesystem.NeutralizePath(AppDataPath + "/FTP_SpeedDial.json") : Filesystem.NeutralizePath(HomePath + "/FTP_SpeedDial.json");
+            Filesystem.NeutralizePath(AppDataPath + "/FTP_SpeedDial.json");
 
         /// <summary>
         /// SFTPSpeedDial path
         /// </summary>
         public static string SFTPSpeedDialPath =>
-            Flags.OptInToNewConfigPaths ? Filesystem.NeutralizePath(AppDataPath + "/SFTP_SpeedDial.json") : Filesystem.NeutralizePath(HomePath + "/SFTP_SpeedDial.json");
+            Filesystem.NeutralizePath(AppDataPath + "/SFTP_SpeedDial.json");
 
         /// <summary>
         /// DebugDevNames path
         /// </summary>
         public static string DebugDevNamesPath =>
-            Flags.OptInToNewConfigPaths ? Filesystem.NeutralizePath(AppDataPath + "/DebugDeviceNames.json") : Filesystem.NeutralizePath(HomePath + "/DebugDeviceNames.json");
+            Filesystem.NeutralizePath(AppDataPath + "/DebugDeviceNames.json");
 
         /// <summary>
         /// MOTD path
         /// </summary>
         public static string MOTDPath =>
-            Flags.OptInToNewConfigPaths ? Filesystem.NeutralizePath(AppDataPath + "/MOTD.txt") : Filesystem.NeutralizePath(HomePath + "/MOTD.txt");
+            Filesystem.NeutralizePath(AppDataPath + "/MOTD.txt");
 
         /// <summary>
         /// MAL path
         /// </summary>
         public static string MALPath =>
-            Flags.OptInToNewConfigPaths ? Filesystem.NeutralizePath(AppDataPath + "/MAL.txt") : Filesystem.NeutralizePath(HomePath + "/MAL.txt");
+            Filesystem.NeutralizePath(AppDataPath + "/MAL.txt");
 
         /// <summary>
         /// CustomSaverSettings path
         /// </summary>
         public static string CustomSaverSettingsPath =>
-            Flags.OptInToNewConfigPaths ? Filesystem.NeutralizePath(AppDataPath + "/CustomSaverSettings.json") : Filesystem.NeutralizePath(HomePath + "/CustomSaverSettings.json");
+            Filesystem.NeutralizePath(AppDataPath + "/CustomSaverSettings.json");
 
         /// <summary>
         /// Events path
         /// </summary>
         public static string EventsPath =>
-            Flags.OptInToNewConfigPaths ? Filesystem.NeutralizePath(AppDataPath + "/KSEvents/") : Filesystem.NeutralizePath(HomePath + "/KSEvents/");
+            Filesystem.NeutralizePath(AppDataPath + "/KSEvents/");
 
         /// <summary>
         /// Reminders path
         /// </summary>
         public static string RemindersPath =>
-            Flags.OptInToNewConfigPaths ? Filesystem.NeutralizePath(AppDataPath + "/KSReminders/") : Filesystem.NeutralizePath(HomePath + "/KSReminders/");
+            Filesystem.NeutralizePath(AppDataPath + "/KSReminders/");
 
         /// <summary>
         /// CustomLanguages path
         /// </summary>
         public static string CustomLanguagesPath =>
-            Flags.OptInToNewConfigPaths ? Filesystem.NeutralizePath(AppDataPath + "/KSLanguages/") : Filesystem.NeutralizePath(HomePath + "/KSLanguages/");
+            Filesystem.NeutralizePath(AppDataPath + "/KSLanguages/");
 
         /// <summary>
         /// CustomSplashes path
         /// </summary>
         public static string CustomSplashesPath =>
-            Flags.OptInToNewConfigPaths ? Filesystem.NeutralizePath(AppDataPath + "/KSSplashes/") : Filesystem.NeutralizePath(HomePath + "/KSSplashes/");
+            Filesystem.NeutralizePath(AppDataPath + "/KSSplashes/");
 
         /// <summary>
         /// Journalling path

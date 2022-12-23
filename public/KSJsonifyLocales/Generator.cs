@@ -212,8 +212,8 @@ namespace KSJsonifyLocales
                     Debug.WriteLine("Saving as {0}...", fileName + ".json");
                     if (language.CustomLanguage)
                     {
-                        Directory.CreateDirectory(Paths.HomePath + "/KSLanguages/");
-                        File.WriteAllText(Paths.HomePath + "/KSLanguages/" + fileName + ".json", serializedLocale);
+                        Directory.CreateDirectory(Paths.CustomLanguagesPath);
+                        File.WriteAllText(Paths.CustomLanguagesPath + fileName + ".json", serializedLocale);
                     }
                     else if (copyToResources)
                     {

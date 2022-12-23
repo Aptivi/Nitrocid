@@ -11,38 +11,6 @@
     "KS": {
       "commandName": "Project"
     },
-    "KS - new config reader": {
-      "commandName": "Project",
-      "commandLineArgs": "newreader"
-    },
-    "KS - new config writer": {
-      "commandName": "Project",
-      "commandLineArgs": "newwriter"
-    },
-    "KS - new config reader and writer": {
-      "commandName": "Project",
-      "commandLineArgs": "newwriter newreader"
-    },
-    "KS - new config reader [Debug]": {
-      "commandName": "Project",
-      "commandLineArgs": "newreader debug"
-    },
-    "KS - new config writer [Debug]": {
-      "commandName": "Project",
-      "commandLineArgs": "newwriter debug"
-    },
-    "KS - new config reader and writer [Debug]": {
-      "commandName": "Project",
-      "commandLineArgs": "newreader newwriter debug"
-    },
-    "KS - new config paths": {
-      "commandName": "Project",
-      "commandLineArgs": "newconfigpaths"
-    },
-    "KS - new config paths [Debug]": {
-      "commandName": "Project",
-      "commandLineArgs": "newconfigpaths debug"
-    },
     "KS - Test Interactive": {
       "commandName": "Project",
       "commandLineArgs": "testInteractive"
@@ -50,10 +18,6 @@
     "KS - Console Debug": {
       "commandName": "Project",
       "commandLineArgs": "debug terminaldebug"
-    },
-    "KS - new config reader and writer [Console Debug]": {
-      "commandName": "Project",
-      "commandLineArgs": "newreader newwriter debug terminaldebug"
     },
     "KS - quiet": {
       "commandName": "Project",

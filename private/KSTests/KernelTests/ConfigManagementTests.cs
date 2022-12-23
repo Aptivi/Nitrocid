@@ -33,13 +33,6 @@ namespace KSTests.KernelTests
         public void TestGetNewConfigObject() => Config.GetNewConfigObject().ShouldNotBeNull();
 
         /// <summary>
-        /// Tests creating a new JSON object containing the kernel settings of all kinds (new)
-        /// </summary>
-        [Test]
-        [Description("Management")]
-        public void TestGetNewConfigObjectNew() => Config.GetNewConfigObjectNew().ShouldNotBeNull();
-
-        /// <summary>
         /// Tests config repair (Actually, it checks to see if any of the config entries is missing. If any one of them is missing, unit test fails.)
         /// </summary>
         [Test]
