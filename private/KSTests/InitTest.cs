@@ -86,7 +86,7 @@ namespace KSTests
             if (Checking.FileExists(Paths.GetKernelPath(KernelPathType.Configuration) + ".old"))
             {
                 if (Checking.FileExists(Paths.GetKernelPath(KernelPathType.Configuration)))
-                    File.Delete(Paths.HomePath + "/KernelConfig.json");
+                    File.Delete(Paths.GetKernelPath(KernelPathType.Configuration));
                 File.Move(Paths.GetKernelPath(KernelPathType.Configuration) + ".old", Paths.GetKernelPath(KernelPathType.Configuration));
             }
         }
