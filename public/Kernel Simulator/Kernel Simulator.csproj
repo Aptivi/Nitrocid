@@ -88,7 +88,6 @@
     <PackageReference Include="MailKit" Version="3.4.3" />
     <PackageReference Include="ManagedWeatherMap" Version="1.0.2" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9" />
-    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" Condition="'$(Configuration)' == 'Debug' Or '$(Configuration)' == 'Release'" />
     <PackageReference Include="Namer" Version="1.0.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     <PackageReference Include="NuGet.Build.Tasks.Pack" Version="6.4.0">
@@ -177,80 +176,6 @@
     </None>
   </ItemGroup>
   <!-- KS Launchers and Manpages End -->
-
-  <!-- KS Themes -->
-  <ItemGroup>
-    <None Include="Resources\Themes\Aquatic.json" />
-    <None Include="Resources\Themes\Bloody.json" />
-    <None Include="Resources\Themes\Blue Power.json" />
-    <None Include="Resources\Themes\Bluesome.json" />
-    <None Include="Resources\Themes\Dawn Aurora.json" />
-    <None Include="Resources\Themes\Fire.json" />
-    <None Include="Resources\Themes\Grape Kiwi.json" />
-    <None Include="Resources\Themes\Grape.json" />
-    <None Include="Resources\Themes\Grays.json" />
-    <None Include="Resources\Themes\Green Mix.json" />
-    <None Include="Resources\Themes\Grink.json" />
-    <None Include="Resources\Themes\Lemon.json" />
-    <None Include="Resources\Themes\Light Planks.json" />
-    <None Include="Resources\Themes\Materialistic.json" />
-    <None Include="Resources\Themes\Mint Gum.json" />
-    <None Include="Resources\Themes\Mint.json" />
-    <None Include="Resources\Themes\Mintback.json" />
-    <None Include="Resources\Themes\Mintish.json" />
-    <None Include="Resources\Themes\Planted Wood.json" />
-    <None Include="Resources\Themes\Purlow.json" />
-    <None Include="Resources\Themes\Red Breeze.json" />
-    <None Include="Resources\Themes\Reddish.json" />
-    <None Include="Resources\Themes\Tealed.json" />
-    <None Include="Resources\Themes\Breeze.json" />
-    <None Include="Resources\Themes\BreezeDark.json" />
-    <None Include="Resources\Themes\AyuDark.json" />
-    <None Include="Resources\Themes\AyuLight.json" />
-    <None Include="Resources\Themes\AyuMirage.json" />
-    <None Include="Resources\Themes\Metallic.json" />
-    <None Include="Resources\Themes\NeonBreeze.json" />
-    <None Include="Resources\Themes\Neutralized.json" />
-    <None Include="Resources\Themes\Orange Sea.json" />
-    <None Include="Resources\Themes\Pastel 1.json" />
-    <None Include="Resources\Themes\Pastel 2.json" />
-    <None Include="Resources\Themes\Pastel 3.json" />
-    <None Include="Resources\Themes\PhosphoricBG.json" />
-    <None Include="Resources\Themes\PhosphoricFG.json" />
-    <None Include="Resources\Themes\SolarizedDark.json" />
-    <None Include="Resources\Themes\SolarizedLight.json" />
-    <None Include="Resources\Themes\Windows11.json" />
-    <None Include="Resources\Themes\Windows11Light.json" />
-    <None Include="Resources\Themes\Wood.json" />
-    <None Include="Resources\Themes\YellowBG.json" />
-    <None Include="Resources\Themes\YellowFG.json" />
-    <None Include="Resources\Themes\3Y-Diamond.json" />
-    <None Include="Resources\Themes\BedOS.json" />
-    <None Include="Resources\Themes\BlackOnWhite.json" />
-    <None Include="Resources\Themes\Debian.json" />
-    <None Include="Resources\Themes\Default.json" />
-    <None Include="Resources\Themes\GrayOnYellow.json" />
-    <None Include="Resources\Themes\GTASA.json" />
-    <None Include="Resources\Themes\Hacker.json" />
-    <None Include="Resources\Themes\LinuxColoredDef.json" />
-    <None Include="Resources\Themes\LinuxUncolored.json" />
-    <None Include="Resources\Themes\NFSHP-Cop.json" />
-    <None Include="Resources\Themes\NFSHP-Racer.json" />
-    <None Include="Resources\Themes\RedConsole.json" />
-    <None Include="Resources\Themes\TealerOS.json" />
-    <None Include="Resources\Themes\Ubuntu.json" />
-    <None Include="Resources\Themes\TrafficLight.json" />
-    <None Include="Resources\Themes\Windows95.json" />
-  </ItemGroup>
-  <!-- KS Themes End -->
-
-  <!-- KS Data -->
-  <ItemGroup>
-    <None Include="Resources\Data\SplashSettingsEntries.json" />
-    <None Include="Resources\Data\ScreensaverSettingsEntries.json" />
-    <None Include="Resources\Data\SettingsEntries.json" />
-  </ItemGroup>
-  <!-- KS Data End -->
 
   <!-- KS Manifest -->
   <ItemGroup>
