@@ -56,11 +56,6 @@ namespace KS.Kernel
         }
 
         /// <summary>
-        /// Are we running KS on Mono?
-        /// </summary>
-        public static bool IsOnMonoRuntime() => Type.GetType("Mono.Runtime") is not null;
-
-        /// <summary>
         /// Polls $TERM_PROGRAM to get terminal emulator
         /// </summary>
         public static string GetTerminalEmulator() => Environment.GetEnvironmentVariable("TERM_PROGRAM") ?? "";
@@ -74,16 +69,6 @@ namespace KS.Kernel
         /// Is Kernel Simulator running from GRILO?
         /// </summary>
         public static bool IsRunningFromGrilo() => (System.Reflection.Assembly.GetEntryAssembly()?.GetName()?.Name?.StartsWith("GRILO")) ?? false;
-
-        /// <summary>
-        /// Is Kernel Simulator running from .NET CoreCLR?
-        /// </summary>
-        public static bool IsDotnetCoreClr() =>
-#if NETCOREAPP
-            true;
-#else
-            false;
-#endif
 
         /// <summary>
         /// Is Kernel Simulator running from TMUX?

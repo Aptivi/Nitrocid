@@ -5,6 +5,9 @@
 > [!WARNING]
 > When upgrading your mods to support 0.1.0, you must follow the compatibility notes to ensure that your mod works with 0.1.0. If you want to support both the first-generation and the second-generation KS, you must separate your mod codebase to three parts: one for the first-gen, the other for the second-gen, and the other for the third-gen. They can't coexist with each other in your KSMods directory.
 
+> [!IMPORTANT]
+> .NET Framework 4.8 is no longer supported as of 0.1.0 Beta 1. Please consider using .NET 6.0 instead to continue using Kernel Simulator. This is to improve multi-platform support without having to go to one environment (dotnetfx on Windows and mono on Linux and macOS) for each platform.
+
 ##### Moved events to KS.Kernel.Events
 
 All of the event-related code files are moved to `KS.Kernel.Events` to separate these from the actual kernel code. However, because events are part of the kernel, we prefer to put it on `KS.Kernel` namespace rather than `KS.Misc`.

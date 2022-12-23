@@ -555,7 +555,7 @@ namespace KS.Drivers.Filesystem
         {
             var FinalInvalidPathChars = Path.GetInvalidPathChars();
             var WindowsInvalidPathChars = new[] { '"', '<', '>' };
-            if (KernelPlatform.IsDotnetCoreClr() & KernelPlatform.IsOnWindows())
+            if (KernelPlatform.IsOnWindows())
             {
                 // It's weird of .NET 6.0 to not consider the above three Windows invalid directory chars to be invalid,
                 // so make them invalid as in .NET Framework.

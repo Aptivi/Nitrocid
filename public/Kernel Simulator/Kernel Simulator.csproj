@@ -2,8 +2,6 @@
   <!-- KS NuGet Information -->
   <PropertyGroup>
     <PackageId>KS</PackageId>
-    <PackageId Condition=" '$(Configuration)' == 'Debug-dotnet' ">KS.CoreCLR</PackageId>
-    <PackageId Condition=" '$(Configuration)' == 'Release-dotnet' ">KS.CoreCLR</PackageId>
     <Authors>Aptivi</Authors>
     <Title>Kernel Simulator</Title>
     <PackageDescription>Simulates our future-planned kernel</PackageDescription>
@@ -21,7 +19,7 @@
     <!-- Repository set up -->
     <RepositoryUrl>https://github.com/Aptivi/Kernel-Simulator.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <Configurations>Debug;Release;Debug-dotnet;Release-dotnet</Configurations>
+    <Configurations>Debug;Release</Configurations>
   </PropertyGroup>
   <!-- KS NuGet Information End -->
 
@@ -53,17 +51,6 @@
 
   <!-- KS Platform Information -->
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <TargetFramework>net48</TargetFramework>
-    <DebugSymbols>true</DebugSymbols>
-    <DefineDebug>true</DefineDebug>
-    <DefineTrace>true</DefineTrace>
-    <DocumentationFile>$(OutputPath)Kernel Simulator.xml</DocumentationFile>
-    <DebugType>portable</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <Optimize>false</Optimize>
-    <DefineConstants>SPECIFIERDEV;MILESTONESPECIFIERALPHA</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-dotnet|AnyCPU'">
     <TargetFramework>net6.0</TargetFramework>
     <DebugSymbols>true</DebugSymbols>
     <DefineDebug>true</DefineDebug>
@@ -75,16 +62,6 @@
     <DefineConstants>SPECIFIERDEV;MILESTONESPECIFIERALPHA</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <TargetFramework>net48</TargetFramework>
-    <DebugSymbols>true</DebugSymbols>
-    <DefineTrace>true</DefineTrace>
-    <DocumentationFile>$(OutputPath)Kernel Simulator.xml</DocumentationFile>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DefineConstants>SPECIFIERREL</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-dotnet|AnyCPU'">
     <TargetFramework>net6.0</TargetFramework>
     <DebugSymbols>true</DebugSymbols>
     <DefineTrace>true</DefineTrace>

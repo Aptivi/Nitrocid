@@ -26,12 +26,14 @@ jobs:
     - name: Solution Compilation
       run: dotnet build --configuration Debug "Kernel Simulator.sln"
     - name: Testing
-      run: dotnet test "Kernel Simulator.sln"
+      run: dotnet test --configuration Debug "Kernel Simulator.sln"
     - uses: actions/upload-artifact@v3
+      if: success() || failure()
       with:
         name: ks-build
         path: "public/Kernel Simulator/KSBuild/net6.0/"
     - uses: actions/upload-artifact@v3
+      if: success() || failure()
       with:
         name: ks-build
         path: "public/Kernel Simulator/KSBuild/*.nupkg"

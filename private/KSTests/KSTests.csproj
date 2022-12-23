@@ -7,7 +7,6 @@
     <OutputType>Library</OutputType>
     <RootNamespace>KSTests</RootNamespace>
     <AssemblyName>KSTests</AssemblyName>
-    <MyType Condition="'$(TargetFramework)' == 'net48'">Windows</MyType>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <Description>Unit tests for Kernel Simulator</Description>
     <Copyright>Copyright © Aptivi 2018 - 2022</Copyright>
@@ -23,17 +22,10 @@
     <OptionInfer>On</OptionInfer>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <Version>0.1.0</Version>
-    <Configurations>Debug;Release;Debug-dotnet;Release-dotnet</Configurations>
+    <Configurations>Debug;Release</Configurations>
     <GenerateDocumentationFile>False</GenerateDocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <TargetFramework>net48</TargetFramework>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <DefineDebug>true</DefineDebug>
-    <DefineTrace>true</DefineTrace>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-dotnet|AnyCPU'">
     <TargetFramework>net6.0</TargetFramework>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -41,26 +33,12 @@
     <DefineTrace>true</DefineTrace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <TargetFramework>net48</TargetFramework>
-    <DebugType>pdbonly</DebugType>
-    <DefineDebug>false</DefineDebug>
-    <DefineTrace>true</DefineTrace>
-    <Optimize>true</Optimize>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-dotnet|AnyCPU'">
     <TargetFramework>net6.0</TargetFramework>
     <DebugType>pdbonly</DebugType>
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
   </PropertyGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-  </ItemGroup>
   <ItemGroup>
     <Import Include="ColorSeq" />
     <Import Include="KS.Files" />
