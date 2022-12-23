@@ -217,7 +217,7 @@ namespace KSJsonifyLocales
                     }
                     else if (copyToResources)
                     {
-                        File.WriteAllText("../../Resources/" + fileName + ".json", serializedLocale);
+                        File.WriteAllText("../../Resources/Languages/" + fileName + ".json", serializedLocale);
                     }
                     else
                     {

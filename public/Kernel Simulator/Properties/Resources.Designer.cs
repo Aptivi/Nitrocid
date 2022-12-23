@@ -131,7 +131,9 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;#808080&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;#b491c5&quot;,
         ///    &quot;ListValueColor&quot;: &quot;#33218a&quot;,
-        ///    &quot;StageColor&quot;: &quot;#b491c5 [rest of string was truncated]&quot;;.
+        ///    &quot;StageColor&quot;: &quot;#b491c5&quot;,
+        ///    &quot;ErrorColor&quot;: &quot;#68228b&quot;,
+        ///   [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Amaya {
             get {

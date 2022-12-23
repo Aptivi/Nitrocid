@@ -178,43 +178,6 @@
   </ItemGroup>
   <!-- KS Launchers and Manpages End -->
 
-  <!-- KS Languages -->
-  <ItemGroup>
-    <None Include="Resources\arb-T.json" />
-    <None Include="Resources\arb.json" />
-    <None Include="Resources\chi-T.json" />
-    <None Include="Resources\chi.json" />
-    <None Include="Resources\cnt-T.json" />
-    <None Include="Resources\cnt.json" />
-    <None Include="Resources\cze.json" />
-    <None Include="Resources\dtc.json" />
-    <None Include="Resources\eng.json" />
-    <None Include="Resources\fre.json" />
-    <None Include="Resources\ger.json" />
-    <None Include="Resources\hxr-1.json" />
-    <None Include="Resources\hxr-2.json" />
-    <None Include="Resources\hxr-3.json" />
-    <None Include="Resources\ind-T.json" />
-    <None Include="Resources\ind.json" />
-    <None Include="Resources\ita.json" />
-    <None Include="Resources\jpn.json" />
-    <None Include="Resources\kor-T.json" />
-    <None Include="Resources\kor.json" />
-    <None Include="Resources\pir.json" />
-    <None Include="Resources\pla.json" />
-    <None Include="Resources\ptg.json" />
-    <None Include="Resources\rus-T.json" />
-    <None Include="Resources\rus.json" />
-    <None Include="Resources\sms.json" />
-    <None Include="Resources\spa.json" />
-    <None Include="Resources\ssp.json" />
-    <None Include="Resources\tky.json" />
-    <None Include="Resources\ukr-T.json" />
-    <None Include="Resources\ukr.json" />
-    <None Include="Resources\vtn.json" />
-  </ItemGroup>
-  <!-- KS Languages End -->
-
   <!-- KS Themes -->
   <ItemGroup>
     <None Include="Resources\Themes\Aquatic.json" />
