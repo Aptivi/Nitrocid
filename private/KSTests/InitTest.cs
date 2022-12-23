@@ -23,6 +23,7 @@ using KS.Files.Querying;
 using KS.Kernel.Configuration;
 using NUnit.Framework;
 using KS.Users;
+using KS.Files.Operations;
 
 namespace KSTests
 {
@@ -37,6 +38,11 @@ namespace KSTests
         {
             if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.Configuration)))
             {
+                // Check to see if we have an appdata folder for KS
+                if (!Checking.FolderExists(Paths.AppDataPath))
+                    Making.MakeDirectory(Paths.AppDataPath, false);
+
+                // Now, create config
                 Config.CreateConfig();
             }
             else
