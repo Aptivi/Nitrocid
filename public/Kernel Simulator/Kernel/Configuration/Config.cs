@@ -303,6 +303,7 @@ namespace KS.Kernel.Configuration
 
                     // Count the options
                     int MaxOptions = SectionToken.Count();
+                    bool repairRequired = false;
                     DebugWriter.WriteDebug(DebugLevel.I, "Number of options: {0}", MaxOptions);
                     for (int OptionIndex = 0; OptionIndex <= MaxOptions - 1; OptionIndex++)
                     {
@@ -384,10 +385,17 @@ namespace KS.Kernel.Configuration
                             LanguageManager.SetLang(lang);
                             continue;
                         }
-                        else
+                        else if (ConfigTokenFromPath[VariableKeyName] is not null)
                         {
                             VariableValue = ConfigTokenFromPath[VariableKeyName].ToObject<dynamic>();
                             DebugWriter.WriteDebug(DebugLevel.I, "Got var value: {0}", VariableValue);
+                        }
+                        else
+                        {
+                            DebugWriter.WriteDebug(DebugLevel.W, "Might be a new config entry: [{0}] {1}", Variable, VariableKeyName);
+                            DebugWriter.WriteDebug(DebugLevel.W, "Setting dirty config flag...");
+                            repairRequired = true;
+                            continue;
                         }
 
                         // Check to see if the value is numeric
@@ -414,6 +422,10 @@ namespace KS.Kernel.Configuration
                             PropertyManager.SetPropertyValue(Variable, VariableValue);
                         }
                     }
+
+                    // If the config needs repair, just fix it!
+                    if (repairRequired)
+                        ConfigTools.RepairConfig();
                 }
             }
         }
