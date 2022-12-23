@@ -100,9 +100,10 @@ namespace KS.Network.Mail.Directory
                     TextWriterColor.Write(MsgSubject, true, ColorTools.ColTypes.ListValue);
                     if (ShowPreview & !string.IsNullOrWhiteSpace(MsgPreview))
                     {
-                        // TODO: For more efficient preview, use the PREVIEW extension as documented in RFC-8970 (https://tools.ietf.org/html/rfc8970). However,
+                        // For more efficient preview, use the PREVIEW extension as documented in RFC-8970 (https://tools.ietf.org/html/rfc8970). However,
                         // this is impossible at this time because no server and no client support this extension. It supports the LAZY modifier. It only
                         // displays 200 character long body.
+                        //
                         // Concept: Msg.Preview(LazyMode:=True)
                         TextWriterColor.Write(MsgPreview, true, ColorTools.ColTypes.ListValue);
                     }
