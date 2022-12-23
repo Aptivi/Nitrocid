@@ -269,5 +269,13 @@ Which screensaver do you want to lock your screen with?
 Stack frame number shouldn't exceed current amount of frames or shouldn't be negative.
 Do Not Disturb
 If Do Not Disturb is enabled, all notifications received will be supressed from the display. This means that you won't be able to see any notification to help you focus.
+Upper left corner character for general border
+Upper right corner character for general border
+Lower left corner character for general border
+Lower right corner character for general border
+Upper frame character for general border
+Lower frame character for general border
+Left frame character for general border
+Right frame character for general border
 
 ==========================================================================================================================================

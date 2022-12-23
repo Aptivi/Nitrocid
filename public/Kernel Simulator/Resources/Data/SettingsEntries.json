@@ -1615,6 +1615,54 @@
                 "Type": "SBoolean",
                 "Variable": "DoNotDisturb",
                 "Description": "If Do Not Disturb is enabled, all notifications received will be supressed from the display. This means that you won't be able to see any notification to help you focus."
+            },
+            {
+                "Name": "Upper left corner character for general border",
+                "Type": "SChar",
+                "Variable": "BorderUpperLeftCornerChar",
+                "Description": "A character that resembles the upper left corner. Be sure to only input one character."
+            },
+            {
+                "Name": "Upper right corner character for general border",
+                "Type": "SChar",
+                "Variable": "BorderUpperRightCornerChar",
+                "Description": "A character that resembles the upper right corner. Be sure to only input one character."
+            },
+            {
+                "Name": "Lower left corner character for general border",
+                "Type": "SChar",
+                "Variable": "BorderLowerLeftCornerChar",
+                "Description": "A character that resembles the lower left corner. Be sure to only input one character."
+            },
+            {
+                "Name": "Lower right corner character for general border",
+                "Type": "SChar",
+                "Variable": "BorderLowerRightCornerChar",
+                "Description": "A character that resembles the lower right corner. Be sure to only input one character."
+            },
+            {
+                "Name": "Upper frame character for general border",
+                "Type": "SChar",
+                "Variable": "BorderUpperFrameChar",
+                "Description": "A character that resembles the upper frame. Be sure to only input one character."
+            },
+            {
+                "Name": "Lower frame character for general border",
+                "Type": "SChar",
+                "Variable": "BorderLowerFrameChar",
+                "Description": "A character that resembles the lower frame. Be sure to only input one character."
+            },
+            {
+                "Name": "Left frame character for general border",
+                "Type": "SChar",
+                "Variable": "BorderLeftFrameChar",
+                "Description": "A character that resembles the left frame. Be sure to only input one character."
+            },
+            {
+                "Name": "Right frame character for general border",
+                "Type": "SChar",
+                "Variable": "BorderRightFrameChar",
+                "Description": "A character that resembles the right frame. Be sure to only input one character."
             }
         ]
     }

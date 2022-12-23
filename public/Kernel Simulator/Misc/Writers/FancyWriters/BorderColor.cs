@@ -24,6 +24,7 @@ using static KS.ConsoleBase.Colors.ColorTools;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using ColorSeq;
+using KS.Misc.Writers.FancyWriters.Tools;
 
 namespace KS.Misc.Writers.FancyWriters
 {
@@ -40,7 +41,11 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         public static void WriteBorderPlain(int Left, int Top, int InteriorWidth, int InteriorHeight) =>
-            WriteBorderPlain(Left, Top, InteriorWidth, InteriorHeight, "╔", "╚", "╗", "╝", "═", "═", "║", "║");
+            WriteBorderPlain(Left, Top, InteriorWidth, InteriorHeight,
+                             BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
+                             BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
+                             BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
+                             BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar);
 
         /// <summary>
         /// Writes the border plainly
@@ -92,7 +97,12 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight) =>
-            WriteBorder(Left, Top, InteriorWidth, InteriorHeight, "╔", "╚", "╗", "╝", "═", "═", "║", "║", ColTypes.Separator, ColTypes.Background);
+            WriteBorder(Left, Top, InteriorWidth, InteriorHeight,
+                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
+                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
+                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
+                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
+                        ColTypes.Separator, ColTypes.Background);
 
         /// <summary>
         /// Writes the border plainly
@@ -103,7 +113,12 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="BorderColor">Border color from Kernel Simulator's <see cref="ColTypes"/></param>
         public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight, ColTypes BorderColor) =>
-            WriteBorder(Left, Top, InteriorWidth, InteriorHeight, "╔", "╚", "╗", "╝", "═", "═", "║", "║", BorderColor, ColTypes.Background);
+            WriteBorder(Left, Top, InteriorWidth, InteriorHeight,
+                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
+                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
+                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
+                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
+                        BorderColor, ColTypes.Background);
 
         /// <summary>
         /// Writes the border plainly
@@ -115,7 +130,12 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="BorderColor">Border color from Kernel Simulator's <see cref="ColTypes"/></param>
         /// <param name="BackgroundColor">Border background color from Kernel Simulator's <see cref="ColTypes"/></param>
         public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight, ColTypes BorderColor, ColTypes BackgroundColor) =>
-            WriteBorder(Left, Top, InteriorWidth, InteriorHeight, "╔", "╚", "╗", "╝", "═", "═", "║", "║", BorderColor, BackgroundColor);
+            WriteBorder(Left, Top, InteriorWidth, InteriorHeight,
+                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
+                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
+                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
+                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
+                        BorderColor, BackgroundColor);
 
         /// <summary>
         /// Writes the border plainly
@@ -126,7 +146,12 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="BorderColor">Border color from Kernel Simulator's <see cref="ColTypes"/></param>
         public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight, ConsoleColors BorderColor) =>
-            WriteBorder(Left, Top, InteriorWidth, InteriorHeight, "╔", "╚", "╗", "╝", "═", "═", "║", "║", new Color(Convert.ToInt32(BorderColor)), GetColor(ColTypes.Background));
+            WriteBorder(Left, Top, InteriorWidth, InteriorHeight,
+                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
+                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
+                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
+                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
+                        new Color(Convert.ToInt32(BorderColor)), GetColor(ColTypes.Background));
 
         /// <summary>
         /// Writes the border plainly
@@ -138,7 +163,12 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="BorderColor">Border color from Kernel Simulator's <see cref="Color"/></param>
         /// <param name="BackgroundColor">Border background color from Kernel Simulator's <see cref="Color"/></param>
         public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight, ConsoleColors BorderColor, ConsoleColors BackgroundColor) =>
-            WriteBorder(Left, Top, InteriorWidth, InteriorHeight, "╔", "╚", "╗", "╝", "═", "═", "║", "║", new Color(Convert.ToInt32(BorderColor)), new Color(Convert.ToInt32(BackgroundColor)));
+            WriteBorder(Left, Top, InteriorWidth, InteriorHeight,
+                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
+                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
+                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
+                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
+                        new Color(Convert.ToInt32(BorderColor)), new Color(Convert.ToInt32(BackgroundColor)));
 
         /// <summary>
         /// Writes the border plainly
@@ -149,7 +179,12 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="BorderColor">Border color from Kernel Simulator's <see cref="ColTypes"/></param>
         public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight, Color BorderColor) =>
-            WriteBorder(Left, Top, InteriorWidth, InteriorHeight, "╔", "╚", "╗", "╝", "═", "═", "║", "║", BorderColor, GetColor(ColTypes.Background));
+            WriteBorder(Left, Top, InteriorWidth, InteriorHeight,
+                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
+                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
+                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
+                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
+                        BorderColor, GetColor(ColTypes.Background));
 
         /// <summary>
         /// Writes the border plainly
@@ -161,7 +196,12 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="BorderColor">Border color from Kernel Simulator's <see cref="Color"/></param>
         /// <param name="BackgroundColor">Border background color from Kernel Simulator's <see cref="Color"/></param>
         public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight, Color BorderColor, Color BackgroundColor) =>
-            WriteBorder(Left, Top, InteriorWidth, InteriorHeight, "╔", "╚", "╗", "╝", "═", "═", "║", "║", BorderColor, BackgroundColor);
+            WriteBorder(Left, Top, InteriorWidth, InteriorHeight,
+                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
+                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
+                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
+                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
+                        BorderColor, BackgroundColor);
 
         /// <summary>
         /// Writes the border plainly
