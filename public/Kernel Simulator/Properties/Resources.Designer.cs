@@ -2707,6 +2707,34 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Ubuntu&quot;,
+        ///        &quot;TrueColorRequired&quot;: true
+        ///    },
+        ///    &quot;InputColor&quot;: &quot;15&quot;,
+        ///    &quot;LicenseColor&quot;: &quot;15&quot;,
+        ///    &quot;ContKernelErrorColor&quot;: &quot;15&quot;,
+        ///    &quot;UncontKernelErrorColor&quot;: &quot;15&quot;,
+        ///    &quot;HostNameShellColor&quot;: &quot;7&quot;,
+        ///    &quot;UserNameShellColor&quot;: &quot;7&quot;,
+        ///    &quot;BackgroundColor&quot;: &quot;53&quot;,
+        ///    &quot;NeutralTextColor&quot;: &quot;15&quot;,
+        ///    &quot;ListEntryColor&quot;: &quot;15&quot;,
+        ///    &quot;ListValueColor&quot;: &quot;15&quot;,
+        ///    &quot;StageColor&quot;: &quot;15&quot;,
+        ///    &quot;ErrorColor&quot;: &quot;7&quot;,
+        ///    &quot;WarningColor&quot;: &quot;15&quot;,
+        ///    &quot;OptionColor&quot;: &quot;15&quot;,
+        ///    &quot;Banner [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Ubuntu {
+            get {
+                return ResourceManager.GetString("Ubuntu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///    &quot;Metadata&quot;: {
+        ///        &quot;Name&quot;: &quot;Ubuntu (Legacy)&quot;,
         ///        &quot;TrueColorRequired&quot;: false
         ///    },
         ///    &quot;InputColor&quot;: &quot;15&quot;,
@@ -2723,11 +2751,11 @@ namespace Properties.Resources {
         ///    &quot;ErrorColor&quot;: &quot;7&quot;,
         ///    &quot;WarningColor&quot;: &quot;15&quot;,
         ///    &quot;OptionColor&quot;: &quot;15&quot;,
-        ///    &quot;Banne [rest of string was truncated]&quot;;.
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string Ubuntu {
+        public static string UbuntuLegacy {
             get {
-                return ResourceManager.GetString("Ubuntu", resourceCulture);
+                return ResourceManager.GetString("UbuntuLegacy", resourceCulture);
             }
         }
         

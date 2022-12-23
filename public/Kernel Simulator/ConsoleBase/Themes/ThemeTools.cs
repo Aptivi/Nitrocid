@@ -126,6 +126,7 @@ namespace KS.ConsoleBase.Themes
             { "Techno", new ThemeInfo("Techno") },
             { "TrafficLight", new ThemeInfo("TrafficLight") },
             { "Trance", new ThemeInfo("Trance") },
+            { "UbuntuLegacy", new ThemeInfo("UbuntuLegacy") },
             { "Ubuntu", new ThemeInfo("Ubuntu") },
             { "ViceCity", new ThemeInfo("ViceCity") },
             { "VisualStudioDark", new ThemeInfo("VisualStudioDark") },
