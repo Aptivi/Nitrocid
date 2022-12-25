@@ -80,7 +80,7 @@ namespace KSTests.FilesTests
         [TestCase(@"C:\Windows", IncludePlatform = "win", ExpectedResult = true)]
         [TestCase(@"C:\Windows<>", IncludePlatform = "win", ExpectedResult = false)]
         [TestCase("/usr/bin", IncludePlatform = "linux,unix,macosx", ExpectedResult = true)]
-        [TestCase("/usr/bin<>", IncludePlatform = "linux,unix,macosx", ExpectedResult = false)]
+        [TestCase("/usr/bin\0", IncludePlatform = "linux,unix,macosx", ExpectedResult = false)]
         [Description("Querying")]
         public bool TestTryParsePath(string Path) => Parsing.TryParsePath(Path);
 
