@@ -127,16 +127,18 @@ namespace KS.ConsoleBase.Inputs.Styles
                         {
                             string[] answers = Answers.Select((ici) => ici.ChoiceName).ToArray();
                             string[] altAnswers = AltAnswers.Select((ici) => ici.ChoiceName).ToArray();
+                            string answersPlace = altAnswers.Length > 0 ? " <{0}/{1}> " : " <{0}> ";
                             TextWriterColor.Write(Question, false, ColorTools.ColTypes.Question);
-                            TextWriterColor.Write(" <{0}/{1}> ", false, ColorTools.ColTypes.Input, string.Join("/", answers), string.Join("/", altAnswers));
+                            TextWriterColor.Write(answersPlace, false, ColorTools.ColTypes.Input, string.Join("/", answers), string.Join("/", altAnswers));
                             break;
                         }
                     case ChoiceOutputType.TwoLines:
                         {
                             string[] answers = Answers.Select((ici) => ici.ChoiceName).ToArray();
                             string[] altAnswers = AltAnswers.Select((ici) => ici.ChoiceName).ToArray();
+                            string answersPlace = altAnswers.Length > 0 ? "<{0}/{1}> " : "<{0}> ";
                             TextWriterColor.Write(Question, true, ColorTools.ColTypes.Question);
-                            TextWriterColor.Write("<{0}/{1}> ", false, ColorTools.ColTypes.Input, string.Join("/", answers), string.Join("/", altAnswers));
+                            TextWriterColor.Write(answersPlace, false, ColorTools.ColTypes.Input, string.Join("/", answers), string.Join("/", altAnswers));
                             break;
                         }
                     case ChoiceOutputType.Modern:
