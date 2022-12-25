@@ -80,7 +80,7 @@ namespace KS.ConsoleBase.Themes
                 ThemeColors[type] = new Color(ThemeResourceJson.SelectToken($"{type}Color").ToString());
             }
             Name = ThemeResourceJson["Metadata"]["Name"].ToString();
-            TrueColorRequired = (bool)ThemeResourceJson["Metadata"]["TrueColorRequired"];
+            TrueColorRequired = ThemeTools.IsTrueColorRequired(ThemeColors);
         }
 
     }

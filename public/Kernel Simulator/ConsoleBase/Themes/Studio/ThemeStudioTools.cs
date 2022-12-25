@@ -119,14 +119,12 @@ namespace KS.ConsoleBase.Themes.Studio
                  * Metadata instance with the format of:
                  * 
                  *     "Metadata": {
-                 *         "Name": "ThemeName",
-                 *         "TrueColorRequired": true
+                 *         "Name": "ThemeName"
                  *     },
                  */
                 new("Metadata",
                     new JObject(
-                        new JProperty("Name", SelectedThemeName),
-                        new JProperty("TrueColorRequired", ThemeTools.IsTrueColorRequired(SelectedColors))
+                        new JProperty("Name", SelectedThemeName)
                     )
                 );
             themeJson.Add(metadata);
