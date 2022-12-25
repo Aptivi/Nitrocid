@@ -169,20 +169,35 @@ namespace KS.Kernel.Debugging.Testing
         internal static void RunFacade(TestFacade facade)
         {
             // Try to...
+            bool tested = false;
             try
             {
-                // ...test the facade
-                ConsoleWrapper.Clear();
-                facade.status = TestStatus.Neutral;
-                facade.Run();
+                while (!tested)
+                {
+                    // ...test the facade
+                    ConsoleWrapper.Clear();
+                    facade.status = TestStatus.Neutral;
+                    facade.Run();
 
-                // ...and prompt the user to check to see if the test ran as expected
-                ConsoleWrapper.SetCursorPosition(0, ConsoleWrapper.WindowHeight - 1);
-                string answer = ChoiceStyle.PromptChoice(Translate.DoTranslation("Did the test run as expected?"), "y/n");
-                if (answer == "y")
-                    facade.status = TestStatus.Success;
-                else
-                    facade.status = TestStatus.Failed;
+                    // ...and prompt the user to check to see if the test ran as expected
+                    ConsoleWrapper.SetCursorPosition(0, ConsoleWrapper.WindowHeight - 1);
+                    string answer = ChoiceStyle.PromptChoice(Translate.DoTranslation("Did the test run as expected?"), "y/n/r");
+
+                    // Set status or retry
+                    switch (answer)
+                    {
+                        case "y":
+                            facade.status = TestStatus.Success;
+                            tested = true;
+                            break;
+                        case "r":
+                            break;
+                        default:
+                            facade.status = TestStatus.Failed;
+                            tested = true;
+                            break;
+                    }
+                }
             }
             catch
             {
