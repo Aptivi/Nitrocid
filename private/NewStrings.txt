@@ -278,5 +278,8 @@ Lower frame character for general border
 Left frame character for general border
 Right frame character for general border
 You can log in to these accounts:
+Tests the random number generator
+Returned numbers:
+Tests the cryptographically secure random number generator
 
 ==========================================================================================================================================

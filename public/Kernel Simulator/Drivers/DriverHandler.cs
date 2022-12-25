@@ -46,6 +46,7 @@ namespace KS.Drivers
         private readonly static Dictionary<string, IRandomDriver> randomDrivers = new()
         {
             { "Default", new DefaultRandom() },
+            { "Cryptographic", new CryptographicRandom() },
 
 #if !SPECIFIERREL
             // Below are excluded from the final release

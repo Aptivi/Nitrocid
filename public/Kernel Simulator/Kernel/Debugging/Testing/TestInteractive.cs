@@ -97,6 +97,8 @@ namespace KS.Kernel.Debugging.Testing
             { "TestTranslate",          new Facades.TestTranslate() },
             { "GetCustomSaverSetting",  new Facades.GetCustomSaverSetting() },
             { "SetCustomSaverSetting",  new Facades.SetCustomSaverSetting() },
+            { "TestRNG",                new Facades.TestRNG() },
+            { "TestCryptoRNG",          new Facades.TestCryptoRNG() },
         };
 
         internal static void Open()
