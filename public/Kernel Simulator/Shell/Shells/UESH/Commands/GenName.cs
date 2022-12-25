@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.Collections.Generic;
+using System.Linq;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using static Namer.NameGenerator;
@@ -28,6 +29,16 @@ namespace KS.Shell.Shells.UESH.Commands
     /// </summary>
     /// <remarks>
     /// If you're stuck trying to make out your character names (male or female) in your story, or if you just like to generate names, you can use this command. Please note that it requires Internet access.
+    /// <list type="table">
+    /// <listheader>
+    /// <term>Switches</term>
+    /// <description>Description</description>
+    /// </listheader>
+    /// <item>
+    /// <term>-t</term>
+    /// <description>Generate nametags (umlauts are currently not supported)</description>
+    /// </item>
+    /// </list>
     /// </remarks>
     class GenNameCommand : BaseCommand, ICommand
     {
@@ -39,6 +50,7 @@ namespace KS.Shell.Shells.UESH.Commands
             string NameSuffix = "";
             string SurnamePrefix = "";
             string SurnameSuffix = "";
+            bool nametags = ListSwitchesOnly.Contains("-t");
             List<string> NamesList;
             if (ListArgsOnly.Length >= 1)
                 NamesCount = int.Parse(ListArgsOnly[0]);
@@ -54,6 +66,11 @@ namespace KS.Shell.Shells.UESH.Commands
             // Generate n names
             PopulateNames();
             NamesList = GenerateNames(NamesCount, NamePrefix, NameSuffix, SurnamePrefix, SurnameSuffix);
+
+            // Check to see if we need to modify the list to have nametags
+            if (nametags)
+                for (int i = 0; i < NamesList.Count; i++)
+                    NamesList[i] = "@" + NamesList[i].ToLower().Replace(" ", ".");
             ListWriterColor.WriteList(NamesList);
         }
 
