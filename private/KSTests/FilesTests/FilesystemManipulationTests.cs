@@ -380,7 +380,7 @@ namespace KSTests.FilesTests
             string RootPath = KernelPlatform.IsOnWindows() ? @"C:\Program Files" : "/";
             string NeutralizedPath = Filesystem.NeutralizePath(Path, RootPath);
             PathLookupTools.TryRemoveFromPathLookup(Path, RootPath).ShouldBeTrue();
-            Shell.PathsToLookup.ShouldNotContain(NeutralizedPath);
+            PathLookupTools.GetPathList().ShouldNotContain(NeutralizedPath);
         }
 
         /// <summary>

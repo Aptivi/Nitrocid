@@ -37,7 +37,7 @@ namespace KSTests.FilesTests
         public void TestSetCurrDir()
         {
             CurrentDirectory.CurrentDir = Paths.HomePath;
-            string Path = Paths.HomePath + "/Documents";
+            string Path = Paths.AppDataPath;
             CurrentDirectory.SetCurrDir(Path);
             Path.ShouldBe(CurrentDirectory.CurrentDir);
         }
@@ -50,7 +50,7 @@ namespace KSTests.FilesTests
         public void TestTrySetCurrDir()
         {
             CurrentDirectory.CurrentDir = Paths.HomePath;
-            string Path = Paths.HomePath + "/Documents";
+            string Path = Paths.AppDataPath;
             CurrentDirectory.TrySetCurrDir(Path).ShouldBeTrue();
             Path.ShouldBe(CurrentDirectory.CurrentDir);
         }
