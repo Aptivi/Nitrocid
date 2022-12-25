@@ -124,7 +124,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                     var AnswerColor = AnswerIndex + 1 == HighlightedAnswer ? 
                                       ColorTools.ColTypes.SelectedOption : 
                                       AltAnswer ? ColorTools.ColTypes.AlternativeOption : ColorTools.ColTypes.Option;
-                    TextWriterColor.Write(AnswerIndex == endIndex ? " " + Translate.DoTranslation("Highlight this entry to go to the next page.") : AnswerOption, true, AnswerColor);
+                    TextWriterColor.Write(AnswerIndex == endIndex ? " " + Translate.DoTranslation("Highlight this entry to go to the next page.") : AnswerOption.Truncate(ConsoleWrapper.WindowWidth - 3), true, AnswerColor);
                 }
 
                 // If we need to write the vertical progress bar, do so.
