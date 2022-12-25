@@ -16,87 +16,44 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using FluentFTP;
 using KS.Kernel.Debugging;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 
 namespace KS.Network.FTP
 {
     /// <summary>
     /// FTP logger class
     /// </summary>
-    public class FTPLogger : ILogger
+    public class FTPLogger : IFtpLogger
     {
         /// <summary>
-        /// Enabled log levels
-        /// </summary>
-        public readonly List<LogLevel> enabledLevels = new()
-        {
-            LogLevel.Critical,
-            LogLevel.Information,
-            LogLevel.Warning,
-            LogLevel.Error,
-            LogLevel.Debug
-        };
-
-        /// <summary>
-        /// Begins the logical logging scope
-        /// </summary>
-        /// <typeparam name="TState">State type</typeparam>
-        /// <param name="state">State</param>
-        public IDisposable BeginScope<TState>(TState state) => default!;
-
-        /// <summary>
-        /// Whether a specific log level is enabled
-        /// </summary>
-        /// <param name="logLevel">Log level to query</param>
-        public bool IsEnabled(LogLevel logLevel) => enabledLevels.Contains(logLevel);
-
-        /// <summary>
-        /// Instructs the logger to write logging information to the debugger
-        /// </summary>
-        /// <typeparam name="TState">State type</typeparam>
-        /// <param name="logLevel">Log level</param>
-        /// <param name="eventId"></param>
-        /// <param name="state">State</param>
-        /// <param name="exception"></param>
-        /// <param name="formatter"></param>
-        public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception exception, Func<TState, Exception, string> formatter)
-        {
-            // Translate log level to debug level used by KS
-            DebugLevel level = TranslateLogLevel(logLevel);
-
-            // Render the string and print it
-            string renderedString = formatter.Invoke(state, exception);
-            DebugWriter.WriteDebug(level, renderedString);
-
-            // Optionally, check to see if we have an exception. Print its stack trace if found.
-            if (exception is not null)
-                DebugWriter.WriteDebugStackTrace(exception);
-        }
-
-        /// <summary>
-        /// Translates a value of <see cref="Microsoft.Extensions.Logging.LogLevel"/> to <see cref="DebugLevel"/>
+        /// Translates a value of <see cref="FtpTraceLevel"/> to <see cref="DebugLevel"/>
         /// </summary>
         /// <param name="logLevel">Log level from logger</param>
         /// <returns>Debug level</returns>
-        public static DebugLevel TranslateLogLevel(LogLevel logLevel)
+        public static DebugLevel TranslateLogLevel(FtpTraceLevel logLevel)
         {
-            switch (logLevel)
+            return logLevel switch
             {
-                case LogLevel.Critical:
-                case LogLevel.Error:
-                    return DebugLevel.E;
-                case LogLevel.Warning:
-                    return DebugLevel.W;
-                case LogLevel.Information:
-                    return DebugLevel.I;
-                case LogLevel.Debug:
-                    return DebugLevel.D;
-                default:
-                    return DebugLevel.D;
-            }
+                FtpTraceLevel.Error => DebugLevel.E,
+                FtpTraceLevel.Warn  => DebugLevel.W,
+                FtpTraceLevel.Info  => DebugLevel.I,
+                _                   => DebugLevel.D,
+            };
+        }
+
+        /// <inheritdoc/>
+        public void Log(FtpLogEntry entry)
+        {
+            // Translate log level to debug level used by KS
+            DebugLevel level = TranslateLogLevel(entry.Severity);
+
+            // Render the string and print it
+            DebugWriter.WriteDebug(level, entry.Message);
+
+            // Optionally, check to see if we have an exception. Print its stack trace if found.
+            if (entry.Exception is not null)
+                DebugWriter.WriteDebugStackTrace(entry.Exception);
         }
     }
 }

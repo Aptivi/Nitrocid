@@ -15,6 +15,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using TermRead.Reader;
+
 namespace KS.Kernel
 {
     /// <summary>
@@ -241,8 +243,6 @@ namespace KS.Kernel
         /// Sets the console background color using the VT sequence if true.
         /// </summary>
         public static bool SetBackground = true;
-#warning Tank these after implementation on TermRead
-        private static bool inputHistoryEnabled = true;
         /// <summary>
         /// Whether the input history is enabled
         /// </summary>
@@ -250,11 +250,11 @@ namespace KS.Kernel
         {
             get
             {
-                return inputHistoryEnabled;
+                return TermReaderSettings.HistoryEnabled;
             }
             set
             {
-                inputHistoryEnabled = value;
+                TermReaderSettings.HistoryEnabled = value;
             }
         }
         /// <summary>
