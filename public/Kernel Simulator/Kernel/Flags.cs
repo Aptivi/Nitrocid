@@ -243,7 +243,6 @@ namespace KS.Kernel
         public static bool SetBackground = true;
 #warning Tank these after implementation on TermRead
         private static bool inputHistoryEnabled = true;
-        private static bool inputUndoEnabled = true;
         /// <summary>
         /// Whether the input history is enabled
         /// </summary>
@@ -256,20 +255,6 @@ namespace KS.Kernel
             set
             {
                 inputHistoryEnabled = value;
-            }
-        }
-        /// <summary>
-        /// Whether the undo function is enabled
-        /// </summary>
-        public static bool InputUndoEnabled
-        {
-            get
-            {
-                return inputUndoEnabled;
-            }
-            set
-            {
-                inputUndoEnabled = value;
             }
         }
         /// <summary>

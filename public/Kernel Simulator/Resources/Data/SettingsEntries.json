@@ -1580,12 +1580,6 @@
                 "Description": "Whether the input history is enabled or not. If enabled, you can access recently typed commands using the up or down arrow keys."
             },
             {
-                "Name": "Input undo enabled",
-                "Type": "SBoolean",
-                "Variable": "InputUndoEnabled",
-                "Description": "Whether the input undo feature is enabled or not."
-            },
-            {
                 "Name": "Use PowerLine for rendering spaceship",
                 "Type": "SBoolean",
                 "Variable": "MeteorUsePowerLine",
