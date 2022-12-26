@@ -248,6 +248,10 @@ namespace KS.ConsoleBase.Themes
             if (ThemeInfo is null)
                 throw new ArgumentNullException(nameof(ThemeInfo));
 
+            // Check to see if we're trying to preview theme on non-true color console
+            if (IsTrueColorRequired(ThemeInfo) && !Flags.ConsoleSupportsTrueColor)
+                throw new KernelException(KernelExceptionType.UnsupportedConsole, Translate.DoTranslation("Your console must support true color to use this theme."));
+
             // Set the colors
             try
             {
@@ -309,6 +313,10 @@ namespace KS.ConsoleBase.Themes
         /// <param name="colors">Dictionary of colors</param>
         public static void PreviewTheme(Dictionary<ColTypes, Color> colors)
         {
+            // Check to see if we're trying to preview theme on non-true color console
+            if (IsTrueColorRequired(colors) && !Flags.ConsoleSupportsTrueColor)
+                throw new KernelException(KernelExceptionType.UnsupportedConsole, Translate.DoTranslation("Your console must support true color to use this theme."));
+
             ConsoleWrapper.Clear();
             TextWriterColor.Write(Translate.DoTranslation("Here's how your theme will look like:") + CharManager.NewLine);
 

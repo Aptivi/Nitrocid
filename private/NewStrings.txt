@@ -281,5 +281,6 @@ You can log in to these accounts:
 Tests the random number generator
 Returned numbers:
 Tests the cryptographically secure random number generator
+Your console must support true color to use this theme.
 
 ==========================================================================================================================================
