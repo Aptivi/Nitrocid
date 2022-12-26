@@ -97,7 +97,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 int listStartPosition = ConsoleWrapper.CursorTop;
                 int listEndPosition = ConsoleWrapper.WindowHeight - ConsoleWrapper.CursorTop;
                 int pages = AllAnswers.Count / listEndPosition;
-                int answersPerPage = listEndPosition - 2;
+                int answersPerPage = listEndPosition - 5;
 
                 // The reason for subtracting the highlighted answer by one is that because while the highlighted answer number is one-based, the indexes are zero-based,
                 // causing confusion. Pages, again, are one-based. Highlighting the last option causes us to go to the next page. This is intentional.
@@ -129,7 +129,15 @@ namespace KS.ConsoleBase.Inputs.Styles
 
                 // If we need to write the vertical progress bar, do so.
                 if (Flags.EnableScrollBarInSelection)
-                    ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)HighlightedAnswer / AllAnswers.Count), ConsoleWrapper.WindowWidth - 2, listStartPosition - 1, listStartPosition, 1, false);
+                    ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)HighlightedAnswer / AllAnswers.Count), ConsoleWrapper.WindowWidth - 2, listStartPosition - 1, listStartPosition, 4, false);
+
+                // Write description area
+                int descSepArea = ConsoleWrapper.WindowHeight - 3;
+                int descArea = ConsoleWrapper.WindowHeight - 2;
+                TextWriterWhereColor.WriteWhere("=".Repeat(ConsoleWrapper.WindowWidth), 0, descSepArea, ColorTools.ColTypes.Separator);
+                TextWriterWhereColor.WriteWhere(" ".Repeat(ConsoleWrapper.WindowWidth), 0, descArea);
+                TextWriterWhereColor.WriteWhere(" ".Repeat(ConsoleWrapper.WindowWidth), 0, descArea + 1);
+                TextWriterWhereColor.WriteWhere(AllAnswers[HighlightedAnswer - 1].ChoiceDescription.Truncate((ConsoleWrapper.WindowWidth * 2) - 3), 0, descArea, ColorTools.ColTypes.NeutralText);
 
                 // Wait for an answer
                 Answer = Input.DetectKeypress();

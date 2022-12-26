@@ -99,6 +99,7 @@ namespace KS.Kernel.Debugging.Testing
             { "SetCustomSaverSetting",  new Facades.SetCustomSaverSetting() },
             { "TestRNG",                new Facades.TestRNG() },
             { "TestCryptoRNG",          new Facades.TestCryptoRNG() },
+            { "TestInputSelection",     new Facades.TestInputSelection() },
         };
 
         internal static void Open()
