@@ -266,6 +266,10 @@ namespace KS.Kernel.Exceptions
         /// <summary>
         /// An unsupported console has been detected.
         /// </summary>
-        UnsupportedConsole
+        UnsupportedConsole,
+        /// <summary>
+        /// An assertion failure has been detected in the kernel! This is most likely a bug in the kernel module that should be fixed on our end.
+        /// </summary>
+        AssertionFailure
     }
 }
