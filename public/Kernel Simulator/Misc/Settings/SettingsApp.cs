@@ -61,44 +61,44 @@ namespace KS.Misc.Settings
             while (!PromptFinished)
             {
                 // Populate sections
-                var sections = new List<string>();
-                var sectionNums = new List<int>();
-                var altSections = new List<string>()
-                {
-                    Translate.DoTranslation("Find a Setting"),
-                    Translate.DoTranslation("Save Settings"),
-                    Translate.DoTranslation("Save Settings As"),
-                    Translate.DoTranslation("Load Settings From"),
-                    Translate.DoTranslation("Exit"),
-                };
-                var altSectionNums = new List<int>()
-                {
-                    MaxSections + 1,
-                    MaxSections + 2,
-                    MaxSections + 3,
-                    MaxSections + 4,
-                    MaxSections + 5
-                };
+                var sections = new List<InputChoiceInfo>();
                 for (int SectionIndex = 0; SectionIndex <= MaxSections - 1; SectionIndex++)
                 {
                     JProperty Section = (JProperty)SettingsToken.ToList()[SectionIndex];
                     if (SettingsType != SettingsType.Normal)
                     {
-                        sections.Add(Section.Name);
-                        sectionNums.Add(SectionIndex + 1);
+                        var ici = new InputChoiceInfo(
+                            $"{SectionIndex + 1}",
+                            Translate.DoTranslation(Section.Name),
+                            Translate.DoTranslation(Section.First["Desc"].ToString())
+                        );
+                        sections.Add(ici);
                     }
                     else
                     {
-                        sections.Add(Section.First["DisplayAs"].ToString());
-                        sectionNums.Add(SectionIndex + 1);
+                        var ici = new InputChoiceInfo(
+                            $"{SectionIndex + 1}",
+                            Translate.DoTranslation(Section.First["DisplayAs"].ToString()),
+                            Translate.DoTranslation(Section.First["Desc"].ToString())
+                        );
+                        sections.Add(ici);
                     }
                 }
+
+                // Alternative options
+                var altSections = new List<InputChoiceInfo>()
+                {
+                    new InputChoiceInfo($"{MaxSections + 1}", Translate.DoTranslation("Find a Setting")),
+                    new InputChoiceInfo($"{MaxSections + 2}", Translate.DoTranslation("Save Settings")),
+                    new InputChoiceInfo($"{MaxSections + 3}", Translate.DoTranslation("Save Settings As")),
+                    new InputChoiceInfo($"{MaxSections + 4}", Translate.DoTranslation("Load Settings From")),
+                    new InputChoiceInfo($"{MaxSections + 5}", Translate.DoTranslation("Exit")),
+                };
 
                 // Prompt for selection and check the answer
                 string finalTitle = Translate.DoTranslation("Welcome to Settings!");
                 int Answer = SelectionStyle.PromptSelection(finalTitle + CharManager.NewLine + "=".Repeat(finalTitle.Length) + CharManager.NewLine + Translate.DoTranslation("Select section:"), 
-                    string.Join("/", sectionNums), sections.ToArray(), 
-                    string.Join("/", altSectionNums), altSections.ToArray());
+                    sections, altSections);
                 if (Answer >= 1 & Answer <= MaxSections)
                 {
                     // The selected answer is a section
@@ -217,15 +217,10 @@ namespace KS.Misc.Settings
                 while (!SectionFinished)
                 {
                     // Populate sections
-                    var sections = new List<string>();
-                    var sectionNums = new List<int>();
-                    var altSections = new List<string>()
+                    var sections = new List<InputChoiceInfo>();
+                    var altSections = new List<InputChoiceInfo>()
                     {
-                        Translate.DoTranslation("Go Back...")
-                    };
-                    var altSectionNums = new List<int>()
-                    {
-                        MaxOptions + 1
+                        new InputChoiceInfo($"{MaxOptions + 1}", Translate.DoTranslation("Go Back..."))
                     };
                     for (int SectionIndex = 0; SectionIndex <= MaxOptions - 1; SectionIndex++)
                     {
@@ -259,26 +254,29 @@ namespace KS.Misc.Settings
                         // Get the language name
                         if (CurrentValue is LanguageInfo lang)
                             CurrentValue = lang.ThreeLetterLanguageName;
-                        sections.Add($"{Setting["Name"]} [{CurrentValue}]");
-                        sectionNums.Add(SectionIndex + 1);
+                        var ici = new InputChoiceInfo(
+                            $"{SectionIndex + 1}",
+                            $"{Translate.DoTranslation(Setting["Name"].ToString())} [{CurrentValue}]",
+                            Translate.DoTranslation(Setting["Description"]?.ToString() ?? "")
+                        );
+                        sections.Add(ici);
                     }
                     if (SettingsType == SettingsType.Screensaver)
                     {
-                        altSections.Add(Translate.DoTranslation("Preview screensaver"));
-                        altSectionNums.Add(MaxOptions + 2);
+                        var ici = new InputChoiceInfo($"{MaxOptions + 2}", Translate.DoTranslation("Preview screensaver"));
+                        altSections.Add(ici);
                     }
                     else if (SettingsType == SettingsType.Splash)
                     {
-                        altSections.Add(Translate.DoTranslation("Preview splash"));
-                        altSectionNums.Add(MaxOptions + 2);
+                        var ici = new InputChoiceInfo($"{MaxOptions + 2}", Translate.DoTranslation("Preview splash"));
+                        altSections.Add(ici);
                     }
                     DebugWriter.WriteDebug(DebugLevel.W, "Section {0} has {1} selections.", Section, MaxOptions);
 
                     // Prompt user and check for input
                     string finalSection = SectionTranslateName ? Translate.DoTranslation((string)SectionDisplayName) : (string)SectionDisplayName;
                     int Answer = SelectionStyle.PromptSelection(finalSection + CharManager.NewLine + "=".Repeat(finalSection.Length) + CharManager.NewLine + Translate.DoTranslation((string)SectionDescription),
-                        string.Join("/", sectionNums), sections.ToArray(),
-                        string.Join("/", altSectionNums), altSections.ToArray());
+                        sections, altSections);
                     DebugWriter.WriteDebug(DebugLevel.I, "Succeeded. Checking the answer if it points to the right direction...");
                     if (Answer >= 1 & Answer <= MaxOptions)
                     {
