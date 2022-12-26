@@ -257,8 +257,8 @@ If you want the simulation of color blindness to be simple, enable this. Please 
 Language
 Specifies the kernel language.
 Enables terminal debug mode
-Welcome to the kernel! The color wheel will open in true color mode. Select any true color to test your console with. It's usually your favorite color. We need to determine if your console supports true color. Press any key to continue.
-Your console should be able to display true color. Did it display these colors properly?
+Welcome to the kernel! Since this is the first time you start the kernel up, we'll initiate a simple console testing to determine whether it supports true color. Press any key to continue.
+Do these ramps look right to you? They should transition smoothly.
 Console supports true color
 If you are sure that the console supports true color, or if you want to change your terminal to a terminal that supports true color, change this value.
 The theme {0} needs true color support, but your console doesn't support it.

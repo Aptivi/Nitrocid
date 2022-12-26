@@ -153,14 +153,24 @@ namespace KS.Kernel
                         Flags.CheckingForConsoleSize = true;
                     }
 
-                    // Ask user to adjust color wheel for true color support if this is the first time
+                    // Ask user for true color support if this is the first time
                     if (Flags.FirstTime)
                     {
                         Flags.FirstTime = false;
-                        TextWriterColor.Write(Translate.DoTranslation("Welcome to the kernel! The color wheel will open in true color mode. Select any true color to test your console with. It's usually your favorite color. We need to determine if your console supports true color. Press any key to continue."));
+                        TextWriterColor.Write(Translate.DoTranslation("Welcome to the kernel! Since this is the first time you start the kernel up, we'll initiate a simple console testing to determine whether it supports true color. Press any key to continue."));
                         Input.DetectKeypress();
-                        ColorWheelOpen.ColorWheel(true);
-                        Flags.ConsoleSupportsTrueColor = ChoiceStyle.PromptChoice(Translate.DoTranslation("Your console should be able to display true color. Did it display these colors properly?"), "y/n") == "y";
+                        ConsoleWrapper.Clear();
+
+                        // Show three color bands
+                        int times = ConsoleWrapper.WindowWidth;
+                        double threshold = 255 / (double)times;
+                        for (double i = 0; i < 255; i += threshold)
+                            TextWriterColor.Write(" ", false, Color.Empty, new Color(Convert.ToInt32(i), 0, 0));
+                        for (double i = 0; i < 255; i += threshold)
+                            TextWriterColor.Write(" ", false, Color.Empty, new Color(0, Convert.ToInt32(i), 0));
+                        for (double i = 0; i < 255; i += threshold)
+                            TextWriterColor.Write(" ", false, Color.Empty, new Color(0, 0, Convert.ToInt32(i)));
+                        Flags.ConsoleSupportsTrueColor = ChoiceStyle.PromptChoice(Translate.DoTranslation("Do these ramps look right to you? They should transition smoothly."), "y/n") == "y";
                     }
 
                     // Initialize everything
