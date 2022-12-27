@@ -40,12 +40,12 @@ namespace KS.Shell.Shells.HTTP.Commands
             try
             {
                 var SiteUri = new Uri(StringArgs);
-                TextWriterColor.Write(Translate.DoTranslation("Setting site to") + " {0}...", true, ColorTools.ColTypes.Progress, SiteUri.ToString());
+                TextWriterColor.Write(Translate.DoTranslation("Setting site to") + " {0}...", true, KernelColorType.Progress, SiteUri.ToString());
                 HTTPShellCommon.HTTPSite = SiteUri.ToString();
             }
             catch (Exception)
             {
-                TextWriterColor.Write(Translate.DoTranslation("The site URI format is invalid."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("The site URI format is invalid."), true, KernelColorType.Error);
             }
         }
 

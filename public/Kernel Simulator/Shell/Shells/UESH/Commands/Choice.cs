@@ -107,18 +107,18 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             TextWriterColor.Write(Translate.DoTranslation("where <$variable> is any variable that will be used to store response") + CharManager.NewLine + Translate.DoTranslation("where <answers> are one-lettered answers of the question separated in slashes"));
             TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"));
-            TextWriterColor.Write("  -multiple: ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Indicate that the answer can take more than one character"), true, ColorTools.ColTypes.ListValue);
-            TextWriterColor.Write("  -single: ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Indicate that the answer can take just one character"), true, ColorTools.ColTypes.ListValue);
-            TextWriterColor.Write("  -o: ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Print the question and the answers in one line"), true, ColorTools.ColTypes.ListValue);
-            TextWriterColor.Write("  -t: ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Print the question and the answers in two lines"), true, ColorTools.ColTypes.ListValue);
-            TextWriterColor.Write("  -m: ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Print the question and the answers in the modern way"), true, ColorTools.ColTypes.ListValue);
-            TextWriterColor.Write("  -a: ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Print the question and the answers in a table"), true, ColorTools.ColTypes.ListValue);
+            TextWriterColor.Write("  -multiple: ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Translate.DoTranslation("Indicate that the answer can take more than one character"), true, KernelColorType.ListValue);
+            TextWriterColor.Write("  -single: ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Translate.DoTranslation("Indicate that the answer can take just one character"), true, KernelColorType.ListValue);
+            TextWriterColor.Write("  -o: ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Translate.DoTranslation("Print the question and the answers in one line"), true, KernelColorType.ListValue);
+            TextWriterColor.Write("  -t: ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Translate.DoTranslation("Print the question and the answers in two lines"), true, KernelColorType.ListValue);
+            TextWriterColor.Write("  -m: ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Translate.DoTranslation("Print the question and the answers in the modern way"), true, KernelColorType.ListValue);
+            TextWriterColor.Write("  -a: ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Translate.DoTranslation("Print the question and the answers in a table"), true, KernelColorType.ListValue);
         }
 
     }

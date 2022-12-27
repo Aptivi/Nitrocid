@@ -40,12 +40,12 @@ namespace KS.Kernel.Debugging.Testing.Facades
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Failed to set a setting for screensaver") + " {0}.", true, ColorTools.ColTypes.Error, Screensaver);
+                    TextWriterColor.Write(Translate.DoTranslation("Failed to set a setting for screensaver") + " {0}.", true, KernelColorType.Error, Screensaver);
                 }
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Screensaver {0} not found."), true, ColorTools.ColTypes.Error, Screensaver);
+                TextWriterColor.Write(Translate.DoTranslation("Screensaver {0} not found."), true, KernelColorType.Error, Screensaver);
             }
         }
     }

@@ -177,7 +177,7 @@ namespace KS.Network.SpeedDial
                 TextWriterColor.Write();
                 while (true)
                 {
-                    TextWriterColor.Write(">> ", false, ColorTools.ColTypes.Input);
+                    TextWriterColor.Write(">> ", false, KernelColorType.Input);
                     Answer = Input.ReadLine();
                     DebugWriter.WriteDebug(DebugLevel.I, "Response: {0}", Answer);
                     if (StringQuery.IsStringNumeric(Answer))
@@ -192,19 +192,19 @@ namespace KS.Network.SpeedDial
                         else
                         {
                             DebugWriter.WriteDebug(DebugLevel.I, "Response is out-of-bounds. Retrying...");
-                            TextWriterColor.Write(Translate.DoTranslation("The selection is out of range. Select between 1-{0}. Try again."), true, ColorTools.ColTypes.Error, SpeedDialEntries.Count);
+                            TextWriterColor.Write(Translate.DoTranslation("The selection is out of range. Select between 1-{0}. Try again."), true, KernelColorType.Error, SpeedDialEntries.Count);
                         }
                     }
                     else {
                         DebugWriter.WriteDebug(DebugLevel.W, "Response isn't numeric. IsStringNumeric(Answer) returned false.");
-                        TextWriterColor.Write(Translate.DoTranslation("The selection is not a number. Try again."), true, ColorTools.ColTypes.Error);
+                        TextWriterColor.Write(Translate.DoTranslation("The selection is not a number. Try again."), true, KernelColorType.Error);
                     }
                 }
             }
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Speed dial is empty. Lines count is 0.");
-                TextWriterColor.Write(Translate.DoTranslation("Speed dial is empty. Connect to a server to add an address to it."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("Speed dial is empty. Connect to a server to add an address to it."), true, KernelColorType.Error);
             }
             return null;
         }

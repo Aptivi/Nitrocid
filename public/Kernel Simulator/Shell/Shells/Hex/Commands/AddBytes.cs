@@ -44,7 +44,7 @@ namespace KS.Shell.Shells.Hex.Commands
             TextWriterColor.Write(Translate.DoTranslation("Enter a byte on its own line that you want to append to the end of the file. When you're done, write \"EOF\" on its own line."));
             while (FinalByte != "EOF")
             {
-                TextWriterColor.Write(">> ", false, ColorTools.ColTypes.Input);
+                TextWriterColor.Write(">> ", false, KernelColorType.Input);
                 FinalByte = Input.ReadLine(false);
                 if (!(FinalByte == "EOF"))
                 {
@@ -55,7 +55,7 @@ namespace KS.Shell.Shells.Hex.Commands
                     }
                     else
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("Not a valid byte."), true, ColorTools.ColTypes.Error);
+                        TextWriterColor.Write(Translate.DoTranslation("Not a valid byte."), true, KernelColorType.Error);
                     }
                 }
             }

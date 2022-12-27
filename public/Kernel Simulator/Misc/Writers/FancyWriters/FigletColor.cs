@@ -21,6 +21,7 @@ using System.Threading;
 using ColorSeq;
 using Figgle;
 using KS.Drivers;
+using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Writers.FancyWriters.Tools;
@@ -61,7 +62,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="ColTypes">A type of colors that will be changed.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteFiglet(string Text, FiggleFont FigletFont, ColorTools.ColTypes ColTypes, params object[] Vars)
+        public static void WriteFiglet(string Text, FiggleFont FigletFont, KernelColorType ColTypes, params object[] Vars)
         {
             try
             {
@@ -86,7 +87,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteFiglet(string Text, FiggleFont FigletFont, ColorTools.ColTypes colorTypeForeground, ColorTools.ColTypes colorTypeBackground, params object[] Vars)
+        public static void WriteFiglet(string Text, FiggleFont FigletFont, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars)
         {
             try
             {

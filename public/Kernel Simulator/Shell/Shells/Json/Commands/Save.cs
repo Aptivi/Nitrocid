@@ -66,10 +66,10 @@ namespace KS.Shell.Shells.Json.Commands
         public override void HelpHelper()
         {
             TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"));
-            TextWriterColor.Write("  -b: ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Saves the JSON file, beautifying it in the process"), true, ColorTools.ColTypes.ListValue);
-            TextWriterColor.Write("  -m: ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Saves the JSON file, minifying it in the process"), true, ColorTools.ColTypes.ListValue);
+            TextWriterColor.Write("  -b: ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Translate.DoTranslation("Saves the JSON file, beautifying it in the process"), true, KernelColorType.ListValue);
+            TextWriterColor.Write("  -m: ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Translate.DoTranslation("Saves the JSON file, minifying it in the process"), true, KernelColorType.ListValue);
         }
 
     }

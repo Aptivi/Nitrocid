@@ -18,6 +18,7 @@
 
 using ColorSeq;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
+using KS.ConsoleBase.Colors;
 
 namespace KS.Misc.Writers.FancyWriters.Tools
 {
@@ -50,11 +51,11 @@ namespace KS.Misc.Writers.FancyWriters.Tools
         /// <summary>
         /// The custom cell color
         /// </summary>
-        public Color CellColor { get; set; } = ColorTools.GetColor(ColorTools.ColTypes.NeutralText);
+        public Color CellColor { get; set; } = ColorTools.GetColor(KernelColorType.NeutralText);
         /// <summary>
         /// The custom background cell color
         /// </summary>
-        public Color CellBackgroundColor { get; set; } = ColorTools.GetColor(ColorTools.ColTypes.Background);
+        public Color CellBackgroundColor { get; set; } = ColorTools.GetColor(KernelColorType.Background);
 
         /// <summary>
         /// Makes a new instance of the cell options class

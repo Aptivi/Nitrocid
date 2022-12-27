@@ -37,7 +37,7 @@ using KS.Shell.Prompts;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using KS.Kernel.Events;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
+using KS.ConsoleBase.Colors;
 
 namespace KS.Kernel.Configuration
 {
@@ -130,7 +130,7 @@ namespace KS.Kernel.Configuration
                     if (VariableType == SettingsKeyType.SColor)
                     {
                         // Get the plain sequence from the color
-                        if (VariableValue is KeyValuePair<ColorTools.ColTypes, Color> color)
+                        if (VariableValue is KeyValuePair<KernelColorType, Color> color)
                             VariableValue = color.Value.PlainSequence;
                         else
                         {
@@ -330,7 +330,7 @@ namespace KS.Kernel.Configuration
                         if (VariableType == SettingsKeyType.SColor)
                         {
                             // Get the plain sequence from the color
-                            if (VariableValue is KeyValuePair<ColorTools.ColTypes, Color> color)
+                            if (VariableValue is KeyValuePair<KernelColorType, Color> color)
                                 VariableValue = color.Value.PlainSequence;
                             else
                                 VariableValue = new Color(((string)ConfigTokenFromPath[VariableKeyName]).ReleaseDoubleQuotes());
@@ -489,9 +489,9 @@ namespace KS.Kernel.Configuration
             }
             catch (KernelException cex) when (cex.ExceptionType == KernelExceptionType.Config)
             {
-                TextWriterColor.Write(cex.Message, true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(cex.Message, true, KernelColorType.Error);
                 DebugWriter.WriteDebugStackTrace(cex);
-                TextWriterColor.Write(Translate.DoTranslation("Trying to fix configuration..."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("Trying to fix configuration..."), true, KernelColorType.Error);
                 ConfigTools.RepairConfig();
             }
         }

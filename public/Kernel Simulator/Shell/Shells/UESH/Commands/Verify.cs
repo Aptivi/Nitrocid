@@ -73,7 +73,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     }
                     else
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("Hashes don't match."), true, ColorTools.ColTypes.Warning);
+                        TextWriterColor.Write(Translate.DoTranslation("Hashes don't match."), true, KernelColorType.Warning);
                     }
                 }
                 else if (HashVerifier.VerifyHashFromHash(ListArgsOnly[3], ListArgsOnly[0], ListArgsOnly[2], ListArgsOnly[1]))
@@ -82,23 +82,23 @@ namespace KS.Shell.Shells.UESH.Commands
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Hashes don't match."), true, ColorTools.ColTypes.Warning);
+                    TextWriterColor.Write(Translate.DoTranslation("Hashes don't match."), true, KernelColorType.Warning);
                 }
             }
             catch (KernelException ihae) when (ihae.ExceptionType == KernelExceptionType.InvalidHashAlgorithm)
             {
                 DebugWriter.WriteDebugStackTrace(ihae);
-                TextWriterColor.Write(Translate.DoTranslation("Invalid encryption algorithm."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("Invalid encryption algorithm."), true, KernelColorType.Error);
             }
             catch (KernelException ihe) when (ihe.ExceptionType == KernelExceptionType.InvalidHash)
             {
                 DebugWriter.WriteDebugStackTrace(ihe);
-                TextWriterColor.Write(Translate.DoTranslation("Hashes are malformed."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("Hashes are malformed."), true, KernelColorType.Error);
             }
             catch (FileNotFoundException fnfe)
             {
                 DebugWriter.WriteDebugStackTrace(fnfe);
-                TextWriterColor.Write(Translate.DoTranslation("{0} is not found."), true, ColorTools.ColTypes.Error, ListArgsOnly[3]);
+                TextWriterColor.Write(Translate.DoTranslation("{0} is not found."), true, KernelColorType.Error, ListArgsOnly[3]);
             }
         }
 

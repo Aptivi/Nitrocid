@@ -48,7 +48,7 @@ namespace KS.Shell.Shells.FTP.Commands
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Invalid encryption algorithm."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("Invalid encryption algorithm."), true, KernelColorType.Error);
             }
         }
 

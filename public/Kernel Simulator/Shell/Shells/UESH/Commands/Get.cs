@@ -57,19 +57,19 @@ namespace KS.Shell.Shells.UESH.Commands
                         }
                         else
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("Specify the address"), true, ColorTools.ColTypes.Error);
+                            TextWriterColor.Write(Translate.DoTranslation("Specify the address"), true, KernelColorType.Error);
                         }
                     }
                     else
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("Please use \"ftp\" if you are going to download files from the FTP server."), true, ColorTools.ColTypes.Error);
+                        TextWriterColor.Write(Translate.DoTranslation("Please use \"ftp\" if you are going to download files from the FTP server."), true, KernelColorType.Error);
                     }
                     return;
                 }
                 catch (Exception ex)
                 {
                     NetworkTools.TransferFinished = false;
-                    TextWriterColor.Write(Translate.DoTranslation("Download failed in try {0}: {1}"), true, ColorTools.ColTypes.Error, RetryCount, ex.Message);
+                    TextWriterColor.Write(Translate.DoTranslation("Download failed in try {0}: {1}"), true, KernelColorType.Error, RetryCount, ex.Message);
                     RetryCount += 1;
                     DebugWriter.WriteDebug(DebugLevel.I, "Try count: {0}", RetryCount);
                     DebugWriter.WriteDebugStackTrace(ex);

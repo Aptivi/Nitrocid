@@ -101,7 +101,7 @@ namespace KS.Modifications
                             {
                                 // User wasn't authorized.
                                 DebugWriter.WriteDebug(DebugLevel.E, "User {0} doesn't have permission to use {1} from {2}!", Login.CurrentUser.Username, parts[0], ModPart);
-                                TextWriterColor.Write(Translate.DoTranslation("You don't have permission to use {0}"), true, ColorTools.ColTypes.Error, parts[0]);
+                                TextWriterColor.Write(Translate.DoTranslation("You don't have permission to use {0}"), true, KernelColorType.Error, parts[0]);
                             }
                         }
                         else

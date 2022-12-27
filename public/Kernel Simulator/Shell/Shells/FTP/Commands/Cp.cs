@@ -45,16 +45,16 @@ namespace KS.Shell.Shells.FTP.Commands
                 TextWriterColor.Write(Translate.DoTranslation("Copying {0} to {1}..."), ListArgsOnly[0], ListArgsOnly[1]);
                 if (FTPFilesystem.FTPCopyItem(ListArgsOnly[0], ListArgsOnly[1]))
                 {
-                    TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Copied successfully"), true, ColorTools.ColTypes.Success);
+                    TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Copied successfully"), true, KernelColorType.Success);
                 }
                 else
                 {
-                    TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Failed to copy {0} to {1}."), true, ColorTools.ColTypes.Error, ListArgsOnly[0], ListArgsOnly[1]);
+                    TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Failed to copy {0} to {1}."), true, KernelColorType.Error, ListArgsOnly[0], ListArgsOnly[1]);
                 }
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("You must connect to server before performing transmission."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("You must connect to server before performing transmission."), true, KernelColorType.Error);
             }
         }
 

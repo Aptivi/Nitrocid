@@ -128,8 +128,8 @@ namespace KS.ConsoleBase.Inputs.Styles
                             string[] answers = Answers.Select((ici) => ici.ChoiceName).ToArray();
                             string[] altAnswers = AltAnswers.Select((ici) => ici.ChoiceName).ToArray();
                             string answersPlace = altAnswers.Length > 0 ? " <{0}/{1}> " : " <{0}> ";
-                            TextWriterColor.Write(Question, false, ColorTools.ColTypes.Question);
-                            TextWriterColor.Write(answersPlace, false, ColorTools.ColTypes.Input, string.Join("/", answers), string.Join("/", altAnswers));
+                            TextWriterColor.Write(Question, false, KernelColorType.Question);
+                            TextWriterColor.Write(answersPlace, false, KernelColorType.Input, string.Join("/", answers), string.Join("/", altAnswers));
                             break;
                         }
                     case ChoiceOutputType.TwoLines:
@@ -137,15 +137,15 @@ namespace KS.ConsoleBase.Inputs.Styles
                             string[] answers = Answers.Select((ici) => ici.ChoiceName).ToArray();
                             string[] altAnswers = AltAnswers.Select((ici) => ici.ChoiceName).ToArray();
                             string answersPlace = altAnswers.Length > 0 ? "<{0}/{1}> " : "<{0}> ";
-                            TextWriterColor.Write(Question, true, ColorTools.ColTypes.Question);
-                            TextWriterColor.Write(answersPlace, false, ColorTools.ColTypes.Input, string.Join("/", answers), string.Join("/", altAnswers));
+                            TextWriterColor.Write(Question, true, KernelColorType.Question);
+                            TextWriterColor.Write(answersPlace, false, KernelColorType.Input, string.Join("/", answers), string.Join("/", altAnswers));
                             break;
                         }
                     case ChoiceOutputType.Modern:
                         {
                             string[] answers = Answers.Select((ici) => ici.ChoiceName).ToArray();
                             string[] altAnswers = AltAnswers.Select((ici) => ici.ChoiceName).ToArray();
-                            TextWriterColor.Write(Question + CharManager.NewLine, true, ColorTools.ColTypes.Question);
+                            TextWriterColor.Write(Question + CharManager.NewLine, true, KernelColorType.Question);
                             for (int AnswerIndex = 0; AnswerIndex <= Answers.Count - 1; AnswerIndex++)
                             {
                                 var AnswerInstance = Answers[AnswerIndex];
@@ -157,10 +157,10 @@ namespace KS.ConsoleBase.Inputs.Styles
                                     int blankRepeats = AnswerTitleLeft - $" {AnswerInstance.ChoiceName}) ".Length;
                                     AnswerOption = $" {AnswerInstance.ChoiceName}) " + " ".Repeat(blankRepeats) + $"{AnswerTitle}";
                                 }
-                                TextWriterColor.Write(AnswerOption, true, ColorTools.ColTypes.Option);
+                                TextWriterColor.Write(AnswerOption, true, KernelColorType.Option);
                             }
                             if (AltAnswers.Count > 0)
-                                TextWriterColor.Write(" ----------------", true, ColorTools.ColTypes.AlternativeOption);
+                                TextWriterColor.Write(" ----------------", true, KernelColorType.AlternativeOption);
                             for (int AnswerIndex = 0; AnswerIndex <= AltAnswers.Count - 1; AnswerIndex++)
                             {
                                 var AnswerInstance = AltAnswers[AnswerIndex];
@@ -172,16 +172,16 @@ namespace KS.ConsoleBase.Inputs.Styles
                                     int blankRepeats = AnswerTitleLeft - $" {AnswerInstance.ChoiceName}) ".Length;
                                     AnswerOption = $" {AnswerInstance.ChoiceName}) " + " ".Repeat(blankRepeats) + $"{AnswerTitle}";
                                 }
-                                TextWriterColor.Write(AnswerOption, true, ColorTools.ColTypes.AlternativeOption);
+                                TextWriterColor.Write(AnswerOption, true, KernelColorType.AlternativeOption);
                             }
-                            TextWriterColor.Write(CharManager.NewLine + ">> ", false, ColorTools.ColTypes.Input);
+                            TextWriterColor.Write(CharManager.NewLine + ">> ", false, KernelColorType.Input);
                             break;
                         }
                     case ChoiceOutputType.Table:
                         {
                             var ChoiceHeader = new[] { Translate.DoTranslation("Possible answers"), Translate.DoTranslation("Answer description") };
                             var ChoiceData = new string[Answers.Count + AltAnswers.Count, 2];
-                            TextWriterColor.Write(Question, true, ColorTools.ColTypes.Question);
+                            TextWriterColor.Write(Question, true, KernelColorType.Question);
                             for (int AnswerIndex = 0; AnswerIndex <= Answers.Count - 1; AnswerIndex++)
                             {
                                 ChoiceData[AnswerIndex, 0] = Answers[AnswerIndex].ChoiceName;
@@ -193,7 +193,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                                 ChoiceData[Answers.Count - 1 + AnswerIndex, 1] = AltAnswers[AnswerIndex].ChoiceTitle ?? "";
                             }
                             TableColor.WriteTable(ChoiceHeader, ChoiceData, 2);
-                            TextWriterColor.Write(CharManager.NewLine + ">> ", false, ColorTools.ColTypes.Input);
+                            TextWriterColor.Write(CharManager.NewLine + ">> ", false, KernelColorType.Input);
                             break;
                         }
                 }

@@ -57,24 +57,24 @@ namespace KS.ConsoleBase.Themes.Studio
 
                 // List options
                 for (int key = 0; key < ThemeStudioTools.SelectedColors.Count; key++)
-                    TextWriterColor.Write("{0}) " + ThemeStudioTools.SelectedColors.Keys.ElementAt(key) + ": [{1}] ", true, ColorTools.ColTypes.Option, key + 1, ThemeStudioTools.SelectedColors.Values.ElementAt(key).PlainSequence);
+                    TextWriterColor.Write("{0}) " + ThemeStudioTools.SelectedColors.Keys.ElementAt(key) + ": [{1}] ", true, KernelColorType.Option, key + 1, ThemeStudioTools.SelectedColors.Values.ElementAt(key).PlainSequence);
                 TextWriterColor.Write();
 
                 // List saving and loading options
-                TextWriterColor.Write("39) " + Translate.DoTranslation("Save Theme to Current Directory"), true, ColorTools.ColTypes.AlternativeOption);
-                TextWriterColor.Write("40) " + Translate.DoTranslation("Save Theme to Another Directory..."), true, ColorTools.ColTypes.AlternativeOption);
-                TextWriterColor.Write("41) " + Translate.DoTranslation("Save Theme to Current Directory as..."), true, ColorTools.ColTypes.AlternativeOption);
-                TextWriterColor.Write("42) " + Translate.DoTranslation("Save Theme to Another Directory as..."), true, ColorTools.ColTypes.AlternativeOption);
-                TextWriterColor.Write("43) " + Translate.DoTranslation("Load Theme From File..."), true, ColorTools.ColTypes.AlternativeOption);
-                TextWriterColor.Write("44) " + Translate.DoTranslation("Load Theme From Prebuilt Themes..."), true, ColorTools.ColTypes.AlternativeOption);
-                TextWriterColor.Write("45) " + Translate.DoTranslation("Load Current Colors"), true, ColorTools.ColTypes.AlternativeOption);
-                TextWriterColor.Write("46) " + Translate.DoTranslation("Preview..."), true, ColorTools.ColTypes.AlternativeOption);
-                TextWriterColor.Write("47) " + Translate.DoTranslation("Exit"), true, ColorTools.ColTypes.AlternativeOption);
+                TextWriterColor.Write("39) " + Translate.DoTranslation("Save Theme to Current Directory"), true, KernelColorType.AlternativeOption);
+                TextWriterColor.Write("40) " + Translate.DoTranslation("Save Theme to Another Directory..."), true, KernelColorType.AlternativeOption);
+                TextWriterColor.Write("41) " + Translate.DoTranslation("Save Theme to Current Directory as..."), true, KernelColorType.AlternativeOption);
+                TextWriterColor.Write("42) " + Translate.DoTranslation("Save Theme to Another Directory as..."), true, KernelColorType.AlternativeOption);
+                TextWriterColor.Write("43) " + Translate.DoTranslation("Load Theme From File..."), true, KernelColorType.AlternativeOption);
+                TextWriterColor.Write("44) " + Translate.DoTranslation("Load Theme From Prebuilt Themes..."), true, KernelColorType.AlternativeOption);
+                TextWriterColor.Write("45) " + Translate.DoTranslation("Load Current Colors"), true, KernelColorType.AlternativeOption);
+                TextWriterColor.Write("46) " + Translate.DoTranslation("Preview..."), true, KernelColorType.AlternativeOption);
+                TextWriterColor.Write("47) " + Translate.DoTranslation("Exit"), true, KernelColorType.AlternativeOption);
                 TextWriterColor.Write();
 
                 // Prompt user
                 DebugWriter.WriteDebug(DebugLevel.I, "Waiting for user input...");
-                TextWriterColor.Write("> ", false, ColorTools.ColTypes.Input);
+                TextWriterColor.Write("> ", false, KernelColorType.Input);
                 Response = Input.ReadLine();
                 DebugWriter.WriteDebug(DebugLevel.I, "Got response: {0}", Response);
 
@@ -98,7 +98,7 @@ namespace KS.ConsoleBase.Themes.Studio
                             case 40: // Save theme to another directory...
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for directory name...");
-                                    TextWriterColor.Write(Translate.DoTranslation("Specify directory to save theme to:") + " [{0}] ", false, ColorTools.ColTypes.Input, CurrentDirectory.CurrentDir);
+                                    TextWriterColor.Write(Translate.DoTranslation("Specify directory to save theme to:") + " [{0}] ", false, KernelColorType.Input, CurrentDirectory.CurrentDir);
                                     string DirectoryName = Input.ReadLine(false);
                                     DirectoryName = string.IsNullOrWhiteSpace(DirectoryName) ? CurrentDirectory.CurrentDir : DirectoryName;
                                     DebugWriter.WriteDebug(DebugLevel.I, "Got directory name {0}.", DirectoryName);
@@ -108,7 +108,7 @@ namespace KS.ConsoleBase.Themes.Studio
                             case 41: // Save theme to current directory as...
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
-                                    TextWriterColor.Write(Translate.DoTranslation("Specify theme name:") + " [{0}] ", false, ColorTools.ColTypes.Input, ThemeName);
+                                    TextWriterColor.Write(Translate.DoTranslation("Specify theme name:") + " [{0}] ", false, KernelColorType.Input, ThemeName);
                                     string AltThemeName = Input.ReadLine(false);
                                     AltThemeName = string.IsNullOrWhiteSpace(AltThemeName) ? ThemeName : AltThemeName;
                                     DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", AltThemeName);
@@ -118,12 +118,12 @@ namespace KS.ConsoleBase.Themes.Studio
                             case 42: // Save theme to another directory as...
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme and directory name...");
-                                    TextWriterColor.Write(Translate.DoTranslation("Specify directory to save theme to:") + " [{0}] ", false, ColorTools.ColTypes.Input, CurrentDirectory.CurrentDir);
+                                    TextWriterColor.Write(Translate.DoTranslation("Specify directory to save theme to:") + " [{0}] ", false, KernelColorType.Input, CurrentDirectory.CurrentDir);
                                     string DirectoryName = Input.ReadLine(false);
                                     DirectoryName = string.IsNullOrWhiteSpace(DirectoryName) ? CurrentDirectory.CurrentDir : DirectoryName;
                                     DebugWriter.WriteDebug(DebugLevel.I, "Got directory name {0}.", DirectoryName);
                                     DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
-                                    TextWriterColor.Write(Translate.DoTranslation("Specify theme name:") + " [{0}] ", false, ColorTools.ColTypes.Input, ThemeName);
+                                    TextWriterColor.Write(Translate.DoTranslation("Specify theme name:") + " [{0}] ", false, KernelColorType.Input, ThemeName);
                                     string AltThemeName = Input.ReadLine(false);
                                     AltThemeName = string.IsNullOrWhiteSpace(AltThemeName) ? ThemeName : AltThemeName;
                                     DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", AltThemeName);
@@ -133,7 +133,7 @@ namespace KS.ConsoleBase.Themes.Studio
                             case 43: // Load Theme From File...
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
-                                    TextWriterColor.Write(Translate.DoTranslation("Specify theme file name wihout the .json extension:") + " ", false, ColorTools.ColTypes.Input);
+                                    TextWriterColor.Write(Translate.DoTranslation("Specify theme file name wihout the .json extension:") + " ", false, KernelColorType.Input);
                                     string AltThemeName = Input.ReadLine(false) + ".json";
                                     DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", AltThemeName);
                                     ThemeStudioTools.LoadThemeFromFile(AltThemeName);
@@ -142,7 +142,7 @@ namespace KS.ConsoleBase.Themes.Studio
                             case 44: // Load Theme From Prebuilt Themes...
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
-                                    TextWriterColor.Write(Translate.DoTranslation("Specify theme name:") + " ", false, ColorTools.ColTypes.Input);
+                                    TextWriterColor.Write(Translate.DoTranslation("Specify theme name:") + " ", false, KernelColorType.Input);
                                     string AltThemeName = Input.ReadLine(false);
                                     DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", AltThemeName);
                                     ThemeStudioTools.LoadThemeFromResource(AltThemeName);
@@ -182,16 +182,16 @@ namespace KS.ConsoleBase.Themes.Studio
                     else
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
-                        TextWriterColor.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, ColorTools.ColTypes.Error, NumericResponse);
-                        TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
+                        TextWriterColor.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, KernelColorType.Error, NumericResponse);
+                        TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
                         Input.DetectKeypress();
                     }
                 }
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Answer is not numeric.");
-                    TextWriterColor.Write(Translate.DoTranslation("The answer must be numeric."), true, ColorTools.ColTypes.Error);
-                    TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
+                    TextWriterColor.Write(Translate.DoTranslation("The answer must be numeric."), true, KernelColorType.Error);
+                    TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
                     Input.DetectKeypress();
                 }
             }

@@ -52,11 +52,11 @@ namespace KS.TimeDate
                     {
                         oldWid = ConsoleBase.ConsoleWrapper.WindowWidth - TimeString.Length - 1;
                         oldTop = ConsoleBase.ConsoleWrapper.WindowTop;
-                        TextWriterWhereColor.WriteWhere(TimeString, ConsoleBase.ConsoleWrapper.WindowWidth - TimeString.Length - 1, ConsoleBase.ConsoleWrapper.WindowTop, true, ColorTools.ColTypes.NeutralText);
+                        TextWriterWhereColor.WriteWhere(TimeString, ConsoleBase.ConsoleWrapper.WindowWidth - TimeString.Length - 1, ConsoleBase.ConsoleWrapper.WindowTop, true, KernelColorType.NeutralText);
                     }
                     Thread.Sleep(1000);
                     if (oldWid != 0)
-                        TextWriterWhereColor.WriteWhere(" ".Repeat(TimeString.Length), oldWid, oldTop, true, ColorTools.ColTypes.NeutralText);
+                        TextWriterWhereColor.WriteWhere(" ".Repeat(TimeString.Length), oldWid, oldTop, true, KernelColorType.NeutralText);
                 }
             }
             catch (ThreadInterruptedException)

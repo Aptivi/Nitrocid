@@ -43,7 +43,7 @@ namespace KS.Network.SFTP
         {
             if (SFTPShellCommon.SFTPConnected == true)
             {
-                TextWriterColor.Write(Translate.DoTranslation("You should disconnect from server before connecting to another server"), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("You should disconnect from server before connecting to another server"), true, KernelColorType.Error);
             }
             else
             {
@@ -62,11 +62,11 @@ namespace KS.Network.SFTP
                     // Prompt for username
                     if (!string.IsNullOrWhiteSpace(SFTPShellCommon.SFTPUserPromptStyle))
                     {
-                        TextWriterColor.Write(PlaceParse.ProbePlaces(SFTPShellCommon.SFTPUserPromptStyle), false, ColorTools.ColTypes.Input, address);
+                        TextWriterColor.Write(PlaceParse.ProbePlaces(SFTPShellCommon.SFTPUserPromptStyle), false, KernelColorType.Input, address);
                     }
                     else
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("Username for {0}: "), false, ColorTools.ColTypes.Input, address);
+                        TextWriterColor.Write(Translate.DoTranslation("Username for {0}: "), false, KernelColorType.Input, address);
                     }
                     SFTPShellCommon.SFTPUser = Input.ReadLine();
                     if (string.IsNullOrEmpty(SFTPShellCommon.SFTPUser))
@@ -85,7 +85,7 @@ namespace KS.Network.SFTP
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Error connecting to {0}: {1}", address, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriterColor.Write(Translate.DoTranslation("Error when trying to connect to {0}: {1}"), true, ColorTools.ColTypes.Error, address, ex.Message);
+                    TextWriterColor.Write(Translate.DoTranslation("Error when trying to connect to {0}: {1}"), true, KernelColorType.Error, address, ex.Message);
                 }
             }
         }

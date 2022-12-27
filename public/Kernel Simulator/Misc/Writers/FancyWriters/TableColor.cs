@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using ColorSeq;
 using Extensification.StringExts;
+using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters.Tools;
@@ -42,7 +43,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="SeparateRows">Separate the rows?</param>
         /// <param name="CellOptions">Specifies the cell options</param>
         public static void WriteTable(string[] Headers, string[,] Rows, int Margin, bool SeparateRows = true, List<CellOptions> CellOptions = null) => 
-            WriteTable(Headers, Rows, Margin, ColorTools.ColTypes.TableSeparator, ColorTools.ColTypes.TableHeader, ColorTools.ColTypes.TableValue, ColorTools.ColTypes.Background, SeparateRows, CellOptions);
+            WriteTable(Headers, Rows, Margin, KernelColorType.TableSeparator, KernelColorType.TableHeader, KernelColorType.TableValue, KernelColorType.Background, SeparateRows, CellOptions);
 
         /// <summary>
         /// Draw a table with text
@@ -56,7 +57,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="colorTypeHeaderForeground">A type of colors that will be changed for the header foreground color.</param>
         /// <param name="colorTypeValueForeground">A type of colors that will be changed for the value foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
-        public static void WriteTable(string[] Headers, string[,] Rows, int Margin, ColorTools.ColTypes colorTypeSeparatorForeground, ColorTools.ColTypes colorTypeHeaderForeground, ColorTools.ColTypes colorTypeValueForeground, ColorTools.ColTypes colorTypeBackground, bool SeparateRows = true, List<CellOptions> CellOptions = null) =>
+        public static void WriteTable(string[] Headers, string[,] Rows, int Margin, KernelColorType colorTypeSeparatorForeground, KernelColorType colorTypeHeaderForeground, KernelColorType colorTypeValueForeground, KernelColorType colorTypeBackground, bool SeparateRows = true, List<CellOptions> CellOptions = null) =>
             WriteTable(Headers, Rows, Margin, ColorTools.GetColor(colorTypeSeparatorForeground), ColorTools.GetColor(colorTypeHeaderForeground), ColorTools.GetColor(colorTypeValueForeground), ColorTools.GetColor(colorTypeBackground), SeparateRows, CellOptions);
 
         /// <summary>
@@ -138,8 +139,8 @@ namespace KS.Misc.Writers.FancyWriters
                 for (int RowValueIndex = 0; RowValueIndex <= Rows.GetLength(1) - 1; RowValueIndex++)
                 {
                     var ColoredCell = false;
-                    var CellColor = ColorTools.GetColor(ColorTools.ColTypes.NeutralText);
-                    var CellBackgroundColor = ColorTools.GetColor(ColorTools.ColTypes.Background);
+                    var CellColor = ColorTools.GetColor(KernelColorType.NeutralText);
+                    var CellBackgroundColor = ColorTools.GetColor(KernelColorType.Background);
                     string RowValue = Rows[RowIndex, RowValueIndex];
                     int ColumnPosition = ColumnPositions[RowValueIndex];
                     RowValue ??= "";

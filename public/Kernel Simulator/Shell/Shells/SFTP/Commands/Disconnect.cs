@@ -50,7 +50,7 @@ namespace KS.Shell.Shells.SFTP.Commands
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("You haven't connected to any server yet"), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("You haven't connected to any server yet"), true, KernelColorType.Error);
             }
         }
 

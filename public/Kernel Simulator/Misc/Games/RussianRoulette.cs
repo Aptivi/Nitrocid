@@ -43,9 +43,9 @@ namespace KS.Misc.Games
 
             // Finally, check if the user is lucky or not
             if (unlucky)
-                TextWriterColor.Write(Translate.DoTranslation("But, you're unlucky. Loser."), true, ColorTools.ColTypes.Warning);
+                TextWriterColor.Write(Translate.DoTranslation("But, you're unlucky. Loser."), true, KernelColorType.Warning);
             else
-                TextWriterColor.Write(Translate.DoTranslation("You're lucky! Winner!"), true, ColorTools.ColTypes.Success);
+                TextWriterColor.Write(Translate.DoTranslation("You're lucky! Winner!"), true, KernelColorType.Success);
         }
     }
 }

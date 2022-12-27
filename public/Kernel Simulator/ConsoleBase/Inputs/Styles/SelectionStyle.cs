@@ -91,7 +91,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 ConsoleWrapper.Clear(true);
 
                 // Ask a question
-                TextWriterColor.Write(Question + CharManager.NewLine, true, ColorTools.ColTypes.Question);
+                TextWriterColor.Write(Question + CharManager.NewLine, true, KernelColorType.Question);
 
                 // Make pages based on console window height
                 int listStartPosition = ConsoleWrapper.CursorTop;
@@ -122,8 +122,8 @@ namespace KS.ConsoleBase.Inputs.Styles
                         AnswerOption = $" {AnswerInstance.ChoiceName}) " + " ".Repeat(blankRepeats) + $"{AnswerTitle}";
                     }
                     var AnswerColor = AnswerIndex + 1 == HighlightedAnswer ? 
-                                      ColorTools.ColTypes.SelectedOption : 
-                                      AltAnswer ? ColorTools.ColTypes.AlternativeOption : ColorTools.ColTypes.Option;
+                                      KernelColorType.SelectedOption : 
+                                      AltAnswer ? KernelColorType.AlternativeOption : KernelColorType.Option;
                     TextWriterColor.Write(AnswerIndex == endIndex ? " vvvvvvvvvv " + Translate.DoTranslation("Highlight this entry to go to the next page.") + " vvvvvvvvvv " : AnswerOption.Truncate(ConsoleWrapper.WindowWidth - 3), true, AnswerColor);
                 }
 
@@ -134,10 +134,10 @@ namespace KS.ConsoleBase.Inputs.Styles
                 // Write description area
                 int descSepArea = ConsoleWrapper.WindowHeight - 3;
                 int descArea = ConsoleWrapper.WindowHeight - 2;
-                TextWriterWhereColor.WriteWhere("=".Repeat(ConsoleWrapper.WindowWidth), 0, descSepArea, ColorTools.ColTypes.Separator);
+                TextWriterWhereColor.WriteWhere("=".Repeat(ConsoleWrapper.WindowWidth), 0, descSepArea, KernelColorType.Separator);
                 TextWriterWhereColor.WriteWhere(" ".Repeat(ConsoleWrapper.WindowWidth), 0, descArea);
                 TextWriterWhereColor.WriteWhere(" ".Repeat(ConsoleWrapper.WindowWidth), 0, descArea + 1);
-                TextWriterWhereColor.WriteWhere(AllAnswers[HighlightedAnswer - 1].ChoiceDescription.Truncate((ConsoleWrapper.WindowWidth * 2) - 3), 0, descArea, ColorTools.ColTypes.NeutralText);
+                TextWriterWhereColor.WriteWhere(AllAnswers[HighlightedAnswer - 1].ChoiceDescription.Truncate((ConsoleWrapper.WindowWidth * 2) - 3), 0, descArea, KernelColorType.NeutralText);
 
                 // Wait for an answer
                 Answer = Input.DetectKeypress();

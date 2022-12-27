@@ -76,11 +76,11 @@ namespace KS.Network.Mail
             // Username or mail address
             if (!string.IsNullOrWhiteSpace(Mail_UserPromptStyle))
             {
-                TextWriterColor.Write(PlaceParse.ProbePlaces(Mail_UserPromptStyle), false, ColorTools.ColTypes.Input);
+                TextWriterColor.Write(PlaceParse.ProbePlaces(Mail_UserPromptStyle), false, KernelColorType.Input);
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Enter username or mail address: "), false, ColorTools.ColTypes.Input);
+                TextWriterColor.Write(Translate.DoTranslation("Enter username or mail address: "), false, KernelColorType.Input);
             }
 
             // Try to get the username or e-mail address from the input
@@ -102,11 +102,11 @@ namespace KS.Network.Mail
             Mail_Authentication.UserName = Username;
             if (!string.IsNullOrWhiteSpace(Mail_PassPromptStyle))
             {
-                TextWriterColor.Write(PlaceParse.ProbePlaces(Mail_PassPromptStyle), false, ColorTools.ColTypes.Input);
+                TextWriterColor.Write(PlaceParse.ProbePlaces(Mail_PassPromptStyle), false, KernelColorType.Input);
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Enter password: "), false, ColorTools.ColTypes.Input);
+                TextWriterColor.Write(Translate.DoTranslation("Enter password: "), false, KernelColorType.Input);
             }
             Mail_Authentication.Password = Input.ReadLineNoInput();
 
@@ -135,11 +135,11 @@ namespace KS.Network.Mail
             // IMAP server address and port
             if (!string.IsNullOrWhiteSpace(Mail_IMAPPromptStyle))
             {
-                TextWriterColor.Write(PlaceParse.ProbePlaces(Mail_IMAPPromptStyle), false, ColorTools.ColTypes.Input);
+                TextWriterColor.Write(PlaceParse.ProbePlaces(Mail_IMAPPromptStyle), false, KernelColorType.Input);
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Enter IMAP server address and port (<address> or <address>:[port]): "), false, ColorTools.ColTypes.Input);
+                TextWriterColor.Write(Translate.DoTranslation("Enter IMAP server address and port (<address> or <address>:[port]): "), false, KernelColorType.Input);
             }
             IMAP_Address = Input.ReadLine(false);
             DebugWriter.WriteDebug(DebugLevel.I, "IMAP Server: \"{0}\"", IMAP_Address);
@@ -147,11 +147,11 @@ namespace KS.Network.Mail
             // SMTP server address and port
             if (!string.IsNullOrWhiteSpace(Mail_SMTPPromptStyle))
             {
-                TextWriterColor.Write(PlaceParse.ProbePlaces(Mail_SMTPPromptStyle), false, ColorTools.ColTypes.Input);
+                TextWriterColor.Write(PlaceParse.ProbePlaces(Mail_SMTPPromptStyle), false, KernelColorType.Input);
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Enter SMTP server address and port (<address> or <address>:[port]): "), false, ColorTools.ColTypes.Input);
+                TextWriterColor.Write(Translate.DoTranslation("Enter SMTP server address and port (<address> or <address>:[port]): "), false, KernelColorType.Input);
             }
             SMTP_Address = Input.ReadLine(false);
             SMTP_Port = 587;
@@ -274,7 +274,7 @@ namespace KS.Network.Mail
             }
             catch (Exception ex)
             {
-                TextWriterColor.Write(Translate.DoTranslation("Error while connecting to {0}: {1}"), true, ColorTools.ColTypes.Error, Address, ex.Message);
+                TextWriterColor.Write(Translate.DoTranslation("Error while connecting to {0}: {1}"), true, KernelColorType.Error, Address, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 IMAP_Client.Disconnect(true);
                 SMTP_Client.Disconnect(true);

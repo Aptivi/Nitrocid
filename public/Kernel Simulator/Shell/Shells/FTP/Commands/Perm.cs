@@ -42,16 +42,16 @@ namespace KS.Shell.Shells.FTP.Commands
             {
                 if (FTPFilesystem.FTPChangeGroups(ListArgsOnly[0], Convert.ToInt32(ListArgsOnly[1])))
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Permissions set successfully for file") + " {0}", true, ColorTools.ColTypes.Success, ListArgsOnly[0]);
+                    TextWriterColor.Write(Translate.DoTranslation("Permissions set successfully for file") + " {0}", true, KernelColorType.Success, ListArgsOnly[0]);
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Failed to set permissions of {0} to {1}."), true, ColorTools.ColTypes.Error, ListArgsOnly[0], ListArgsOnly[1]);
+                    TextWriterColor.Write(Translate.DoTranslation("Failed to set permissions of {0} to {1}."), true, KernelColorType.Error, ListArgsOnly[0], ListArgsOnly[1]);
                 }
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("You must connect to server before performing filesystem operations."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("You must connect to server before performing filesystem operations."), true, KernelColorType.Error);
             }
         }
 

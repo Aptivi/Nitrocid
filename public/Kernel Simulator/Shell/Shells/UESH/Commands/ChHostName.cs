@@ -45,11 +45,11 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             if (string.IsNullOrEmpty(ListArgsOnly[0]))
             {
-                TextWriterColor.Write(Translate.DoTranslation("Blank host name."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("Blank host name."), true, KernelColorType.Error);
             }
             else if (ListArgsOnly[0].IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray()) != -1)
             {
-                TextWriterColor.Write(Translate.DoTranslation("Special characters are not allowed."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("Special characters are not allowed."), true, KernelColorType.Error);
             }
             else
             {

@@ -21,6 +21,7 @@ using System.Threading;
 using ColorSeq;
 using KS.Kernel.Debugging;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
+using KS.ConsoleBase.Colors;
 
 namespace KS.Misc.Splash.Splashes
 {
@@ -79,7 +80,7 @@ namespace KS.Misc.Splash.Splashes
         public void Closing()
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Splash closing. Clearing console...");
-            ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
+            ColorTools.SetConsoleColor(KernelColorType.Background, true);
             ConsoleBase.ConsoleWrapper.Clear();
         }
 

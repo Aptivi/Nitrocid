@@ -96,8 +96,8 @@ namespace KS.Network.Mail.Directory
                     DebugWriter.WriteDebug(DebugLevel.I, "From {0}: {1}", MsgFrom, MsgSubject);
 
                     // Display them now.
-                    TextWriterColor.Write($"- [{i + 1}/{MaxMessagesIndex + 1}] {MsgFrom}: ", false, ColorTools.ColTypes.ListEntry);
-                    TextWriterColor.Write(MsgSubject, true, ColorTools.ColTypes.ListValue);
+                    TextWriterColor.Write($"- [{i + 1}/{MaxMessagesIndex + 1}] {MsgFrom}: ", false, KernelColorType.ListEntry);
+                    TextWriterColor.Write(MsgSubject, true, KernelColorType.ListValue);
                     if (ShowPreview & !string.IsNullOrWhiteSpace(MsgPreview))
                     {
                         // For more efficient preview, use the PREVIEW extension as documented in RFC-8970 (https://tools.ietf.org/html/rfc8970). However,
@@ -105,7 +105,7 @@ namespace KS.Network.Mail.Directory
                         // displays 200 character long body.
                         //
                         // Concept: Msg.Preview(LazyMode:=True)
-                        TextWriterColor.Write(MsgPreview, true, ColorTools.ColTypes.ListValue);
+                        TextWriterColor.Write(MsgPreview, true, KernelColorType.ListValue);
                     }
                 }
                 else

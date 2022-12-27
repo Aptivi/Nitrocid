@@ -20,6 +20,7 @@ using System;
 using System.Threading;
 using ColorSeq;
 using KS.Kernel.Debugging;
+using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Drivers;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
@@ -67,7 +68,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="Highlight">Highlight the text written</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, bool Highlight, params object[] vars) => Write(Text, Line, Highlight, ColorTools.ColTypes.NeutralText, vars);
+        public static void Write(string Text, bool Line, bool Highlight, params object[] vars) => Write(Text, Line, Highlight, KernelColorType.NeutralText, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt, and sets colors as needed.
@@ -76,7 +77,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, ColorTools.ColTypes colorType, params object[] vars) => Write(Text, Line, false, colorType, vars);
+        public static void Write(string Text, bool Line, KernelColorType colorType, params object[] vars) => Write(Text, Line, false, colorType, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt, and sets colors as needed.
@@ -86,7 +87,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="Highlight">Highlight the text written</param>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, bool Highlight, ColorTools.ColTypes colorType, params object[] vars)
+        public static void Write(string Text, bool Line, bool Highlight, KernelColorType colorType, params object[] vars)
         {
             lock (WriteLock)
             {
@@ -100,7 +101,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     {
                         DriverHandler.CurrentConsoleDriver.WritePlain(Text, false, vars);
                         ColorTools.SetConsoleColor(colorType);
-                        ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
+                        ColorTools.SetConsoleColor(KernelColorType.Background, true);
                         DriverHandler.CurrentConsoleDriver.WritePlain("", Line);
                     }
                     else
@@ -124,7 +125,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, ColorTools.ColTypes colorTypeForeground, ColorTools.ColTypes colorTypeBackground, params object[] vars) => Write(Text, Line, false, colorTypeForeground, colorTypeBackground, vars);
+        public static void Write(string Text, bool Line, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars) => Write(Text, Line, false, colorTypeForeground, colorTypeBackground, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt, and sets colors as needed.
@@ -135,7 +136,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, bool Highlight, ColorTools.ColTypes colorTypeForeground, ColorTools.ColTypes colorTypeBackground, params object[] vars)
+        public static void Write(string Text, bool Line, bool Highlight, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
         {
             lock (WriteLock)
             {
@@ -197,7 +198,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     {
                         DriverHandler.CurrentConsoleDriver.WritePlain(Text, false, vars);
                         ColorTools.SetConsoleColor(new Color(Convert.ToInt32(color)));
-                        ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
+                        ColorTools.SetConsoleColor(KernelColorType.Background, true);
                         DriverHandler.CurrentConsoleDriver.WritePlain("", Line);
                     }
                     else
@@ -288,14 +289,14 @@ namespace KS.Misc.Writers.ConsoleWriters
                 {
                     // Try to write to console
                     ColorTools.SetConsoleColor(color, Highlight, Highlight);
-                    ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, !Highlight, !Highlight);
+                    ColorTools.SetConsoleColor(KernelColorType.Background, !Highlight, !Highlight);
 
                     // Write the text to console
                     if (Highlight)
                     {
                         DriverHandler.CurrentConsoleDriver.WritePlain(Text, false, vars);
                         ColorTools.SetConsoleColor(color);
-                        ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
+                        ColorTools.SetConsoleColor(KernelColorType.Background, true);
                         DriverHandler.CurrentConsoleDriver.WritePlain("", Line);
                     }
                     else

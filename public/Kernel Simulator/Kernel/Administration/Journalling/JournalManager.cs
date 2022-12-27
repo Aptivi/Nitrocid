@@ -98,8 +98,8 @@ namespace KS.Kernel.Administration.Journalling
                 string Message = (string)journal["message"];
 
                 // Now, print the entries
-                TextWriterColor.Write($"[{Date} {Time}] [{i + 1}] [{Status}]: ", false, ColorTools.ColTypes.ListEntry);
-                TextWriterColor.Write(Message, true, ColorTools.ColTypes.ListEntry);
+                TextWriterColor.Write($"[{Date} {Time}] [{i + 1}] [{Status}]: ", false, KernelColorType.ListEntry);
+                TextWriterColor.Write(Message, true, KernelColorType.ListEntry);
             }
         }
 

@@ -42,7 +42,7 @@ namespace KS.Misc.Games
         {
             string RandomWord;
             string SpeltWord;
-            TextWriterColor.Write(Translate.DoTranslation("Press CTRL+C to exit."), true, ColorTools.ColTypes.Tip);
+            TextWriterColor.Write(Translate.DoTranslation("Press CTRL+C to exit."), true, KernelColorType.Tip);
             if (Words.Count == 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Downloading words...");
@@ -52,18 +52,18 @@ namespace KS.Misc.Games
             {
                 RandomWord = Words.ElementAt(RandomDriver.Random(Words.Count));
                 DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}", RandomWord);
-                TextWriterColor.Write(RandomWord, true, ColorTools.ColTypes.Input);
+                TextWriterColor.Write(RandomWord, true, KernelColorType.Input);
                 SpeltWord = Input.ReadLineNoInput(Convert.ToChar("\0"));
 
                 if (SpeltWord == RandomWord)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Spelt: {0} = {1}", SpeltWord, RandomWord);
-                    TextWriterColor.Write(Translate.DoTranslation("Spelt perfectly!"), true, ColorTools.ColTypes.Success);
+                    TextWriterColor.Write(Translate.DoTranslation("Spelt perfectly!"), true, KernelColorType.Success);
                 }
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Spelt: {0} != {1}", SpeltWord, RandomWord);
-                    TextWriterColor.Write(Translate.DoTranslation("Spelt incorrectly."), true, ColorTools.ColTypes.Warning);
+                    TextWriterColor.Write(Translate.DoTranslation("Spelt incorrectly."), true, KernelColorType.Warning);
                 }
             }
         }

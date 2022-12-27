@@ -63,9 +63,9 @@ namespace KS.Modifications.ManPages
                 if (PageManager.Pages[ManualTitle].Todos.Count != 0)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Todos are found in manpage.");
-                    TextWriterColor.Write(Translate.DoTranslation("This manual page needs work for:"), true, ColorTools.ColTypes.Warning);
+                    TextWriterColor.Write(Translate.DoTranslation("This manual page needs work for:"), true, KernelColorType.Warning);
                     ListWriterColor.WriteList(PageManager.Pages[ManualTitle].Todos, true);
-                    TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Press any key to read the manual page..."), false, ColorTools.ColTypes.Warning);
+                    TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Press any key to read the manual page..."), false, KernelColorType.Warning);
                     Input.DetectKeypress();
                 }
 
@@ -75,11 +75,11 @@ namespace KS.Modifications.ManPages
                 // Write the information to the console
                 if (!string.IsNullOrWhiteSpace(ManpageInfoStyle))
                 {
-                    TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(ManpageInfoStyle), ConsoleBase.ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.GetColor(ColorTools.ColTypes.Background), ColorTools.GetColor(ColorTools.ColTypes.NeutralText), PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
+                    TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(ManpageInfoStyle), ConsoleBase.ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.GetColor(KernelColorType.Background), ColorTools.GetColor(KernelColorType.NeutralText), PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
                 }
                 else
                 {
-                    TextWriterWhereColor.WriteWhere(" {0} [v{1}] ", ConsoleBase.ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.GetColor(ColorTools.ColTypes.Background), ColorTools.GetColor(ColorTools.ColTypes.NeutralText), PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
+                    TextWriterWhereColor.WriteWhere(" {0} [v{1}] ", ConsoleBase.ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.GetColor(KernelColorType.Background), ColorTools.GetColor(KernelColorType.NeutralText), PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
                 }
 
                 // Disable blinking cursor
@@ -174,11 +174,11 @@ namespace KS.Modifications.ManPages
                             ConsoleBase.ConsoleWrapper.Clear();
                             if (!string.IsNullOrWhiteSpace(ManpageInfoStyle))
                             {
-                                TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(ManpageInfoStyle), ConsoleBase.ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.GetColor(ColorTools.ColTypes.Background), ColorTools.GetColor(ColorTools.ColTypes.NeutralText), PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
+                                TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(ManpageInfoStyle), ConsoleBase.ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.GetColor(KernelColorType.Background), ColorTools.GetColor(KernelColorType.NeutralText), PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
                             }
                             else
                             {
-                                TextWriterWhereColor.WriteWhere(" {0} (v{1}) ", ConsoleBase.ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.GetColor(ColorTools.ColTypes.Background), ColorTools.GetColor(ColorTools.ColTypes.NeutralText), PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
+                                TextWriterWhereColor.WriteWhere(" {0} (v{1}) ", ConsoleBase.ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.GetColor(KernelColorType.Background), ColorTools.GetColor(KernelColorType.NeutralText), PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
                             }
                         }
                     }

@@ -58,7 +58,7 @@ namespace KS.Shell.Shells.UESH.Commands
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to satisfy condition. See above for more information: {0}", ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.Write(Translate.DoTranslation("Failed to satisfy condition. More info here:") + " {0}", true, ColorTools.ColTypes.Error, ex.Message);
+                TextWriterColor.Write(Translate.DoTranslation("Failed to satisfy condition. More info here:") + " {0}", true, KernelColorType.Error, ex.Message);
             }
         }
 

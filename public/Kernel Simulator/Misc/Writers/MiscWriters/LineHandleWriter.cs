@@ -37,7 +37,7 @@ namespace KS.Misc.Writers.MiscWriters
         /// <param name="Filename">Path to text file</param>
         /// <param name="LineNumber">Line number (not index)</param>
         /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
-        public static void PrintLineWithHandleConditional(bool Condition, string Filename, int LineNumber, int ColumnNumber) => PrintLineWithHandleConditional(Condition, Filename, LineNumber, ColumnNumber, ColorTools.ColTypes.NeutralText);
+        public static void PrintLineWithHandleConditional(bool Condition, string Filename, int LineNumber, int ColumnNumber) => PrintLineWithHandleConditional(Condition, Filename, LineNumber, ColumnNumber, KernelColorType.NeutralText);
 
         /// <summary>
         /// Prints the line of a text file with the specified line number and the column number if the specified condition is satisfied
@@ -46,7 +46,7 @@ namespace KS.Misc.Writers.MiscWriters
         /// <param name="Array">A string array containing the contents of the file</param>
         /// <param name="LineNumber">Line number (not index)</param>
         /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
-        public static void PrintLineWithHandleConditional(bool Condition, string[] Array, int LineNumber, int ColumnNumber) => PrintLineWithHandleConditional(Condition, Array, LineNumber, ColumnNumber, ColorTools.ColTypes.NeutralText);
+        public static void PrintLineWithHandleConditional(bool Condition, string[] Array, int LineNumber, int ColumnNumber) => PrintLineWithHandleConditional(Condition, Array, LineNumber, ColumnNumber, KernelColorType.NeutralText);
 
         /// <summary>
         /// Prints the line of a text file with the specified line number and the column number if the specified condition is satisfied
@@ -56,7 +56,7 @@ namespace KS.Misc.Writers.MiscWriters
         /// <param name="LineNumber">Line number (not index)</param>
         /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
         /// <param name="ColorType">The type of color</param>
-        public static void PrintLineWithHandleConditional(bool Condition, string Filename, int LineNumber, int ColumnNumber, ColorTools.ColTypes ColorType)
+        public static void PrintLineWithHandleConditional(bool Condition, string Filename, int LineNumber, int ColumnNumber, KernelColorType ColorType)
         {
             if (Condition)
             {
@@ -72,7 +72,7 @@ namespace KS.Misc.Writers.MiscWriters
         /// <param name="LineNumber">Line number (not index)</param>
         /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
         /// <param name="ColorType">The type of color</param>
-        public static void PrintLineWithHandleConditional(bool Condition, string[] Array, int LineNumber, int ColumnNumber, ColorTools.ColTypes ColorType)
+        public static void PrintLineWithHandleConditional(bool Condition, string[] Array, int LineNumber, int ColumnNumber, KernelColorType ColorType)
         {
             if (Condition)
             {
@@ -86,7 +86,7 @@ namespace KS.Misc.Writers.MiscWriters
         /// <param name="Filename">Path to text file</param>
         /// <param name="LineNumber">Line number (not index)</param>
         /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
-        public static void PrintLineWithHandle(string Filename, int LineNumber, int ColumnNumber) => PrintLineWithHandle(Filename, LineNumber, ColumnNumber, ColorTools.ColTypes.NeutralText);
+        public static void PrintLineWithHandle(string Filename, int LineNumber, int ColumnNumber) => PrintLineWithHandle(Filename, LineNumber, ColumnNumber, KernelColorType.NeutralText);
 
         /// <summary>
         /// Prints the line of a text file with the specified line number and the column number
@@ -94,7 +94,7 @@ namespace KS.Misc.Writers.MiscWriters
         /// <param name="Array">A string array containing the contents of the file</param>
         /// <param name="LineNumber">Line number (not index)</param>
         /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
-        public static void PrintLineWithHandle(string[] Array, int LineNumber, int ColumnNumber) => PrintLineWithHandle(Array, LineNumber, ColumnNumber, ColorTools.ColTypes.NeutralText);
+        public static void PrintLineWithHandle(string[] Array, int LineNumber, int ColumnNumber) => PrintLineWithHandle(Array, LineNumber, ColumnNumber, KernelColorType.NeutralText);
 
         /// <summary>
         /// Prints the line of a text file with the specified line number and the column number
@@ -103,7 +103,7 @@ namespace KS.Misc.Writers.MiscWriters
         /// <param name="LineNumber">Line number (not index)</param>
         /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
         /// <param name="ColorType">The type of color</param>
-        public static void PrintLineWithHandle(string Filename, int LineNumber, int ColumnNumber, ColorTools.ColTypes ColorType)
+        public static void PrintLineWithHandle(string Filename, int LineNumber, int ColumnNumber, KernelColorType ColorType)
         {
             // Read the contents
             Filesystem.ThrowOnInvalidPath(Filename);
@@ -121,7 +121,7 @@ namespace KS.Misc.Writers.MiscWriters
         /// <param name="LineNumber">Line number (not index)</param>
         /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
         /// <param name="ColorType">The type of color</param>
-        public static void PrintLineWithHandle(string[] Array, int LineNumber, int ColumnNumber, ColorTools.ColTypes ColorType)
+        public static void PrintLineWithHandle(string[] Array, int LineNumber, int ColumnNumber, KernelColorType ColorType)
         {
             // Get the line index from number
             if (LineNumber <= 0)

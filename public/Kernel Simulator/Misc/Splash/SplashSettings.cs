@@ -37,7 +37,7 @@ namespace KS.Misc.Splash
         /// <summary>
         /// [Progress] The progress color
         /// </summary>
-        public static string ProgressProgressColor = ColorTools.GetColor(ColorTools.ColTypes.Progress).PlainSequence;
+        public static string ProgressProgressColor = ColorTools.GetColor(KernelColorType.Progress).PlainSequence;
         /// <summary>
         /// [Progress] The progress text location
         /// </summary>
@@ -47,7 +47,7 @@ namespace KS.Misc.Splash
         /// <summary>
         /// [PowerLineProgress] The progress color
         /// </summary>
-        public static string PowerLineProgressProgressColor = ColorTools.GetColor(ColorTools.ColTypes.Progress).PlainSequence;
+        public static string PowerLineProgressProgressColor = ColorTools.GetColor(KernelColorType.Progress).PlainSequence;
         /// <summary>
         /// [PowerLineProgress] The progress text location
         /// </summary>

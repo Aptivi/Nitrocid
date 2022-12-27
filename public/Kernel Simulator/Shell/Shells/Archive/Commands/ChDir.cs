@@ -37,7 +37,7 @@ namespace KS.Shell.Shells.Archive.Commands
         {
             if (!ArchiveTools.ChangeWorkingArchiveLocalDirectory(ListArgsOnly[0]))
             {
-                TextWriterColor.Write(Translate.DoTranslation("Directory {0} doesn't exist"), true, ColorTools.ColTypes.Error, ListArgsOnly[0]);
+                TextWriterColor.Write(Translate.DoTranslation("Directory {0} doesn't exist"), true, KernelColorType.Error, ListArgsOnly[0]);
             }
         }
 

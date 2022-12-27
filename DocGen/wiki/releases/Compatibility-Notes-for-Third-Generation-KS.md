@@ -354,3 +354,7 @@ We felt that both the `Notification` and `Notifications` classes are confusing f
 ##### Removed getting property value in variable
 
 VariableProperty is no longer used, so we decided to remove it. As a consequence, we also had to remove the `PropertyManager.GetPropertyValueInVariable()` routine.
+
+##### Moved ColTypes to KernelColorType
+
+This is an enumeration which simply tells the difference of all the defined and known kernel color types. We have moved ColTypes to KernelColorType.

@@ -105,7 +105,7 @@ namespace KS.Users.Login
                 DebugWriter.WriteDebug(DebugLevel.I, "showMOTDOnceFlag = {0}, showMOTD = {1}", Flags.ShowMOTDOnceFlag, Flags.ShowMOTD);
                 if (Flags.ShowMOTDOnceFlag == true & Flags.ShowMOTD == true)
                 {
-                    TextWriterColor.Write(CharManager.NewLine + PlaceParse.ProbePlaces(MotdParse.MOTDMessage), true, ColorTools.ColTypes.Banner);
+                    TextWriterColor.Write(CharManager.NewLine + PlaceParse.ProbePlaces(MotdParse.MOTDMessage), true, KernelColorType.Banner);
                 }
                 Flags.ShowMOTDOnceFlag = false;
 
@@ -120,7 +120,7 @@ namespace KS.Users.Login
                     // Prompt user to choose a user
                     while (AnswerUserInt == 0)
                     {
-                        TextWriterColor.Write(">> ", false, ColorTools.ColTypes.Input);
+                        TextWriterColor.Write(">> ", false, KernelColorType.Input);
                         string AnswerUserString = Input.ReadLine();
 
                         // Parse input
@@ -138,18 +138,18 @@ namespace KS.Users.Login
                                 else
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.W, "User can't log in. (User is in disabled list)");
-                                    TextWriterColor.Write(Translate.DoTranslation("User is disabled."), true, ColorTools.ColTypes.Error);
+                                    TextWriterColor.Write(Translate.DoTranslation("User is disabled."), true, KernelColorType.Error);
                                     EventsManager.FireEvent(EventType.LoginError, SelectedUser, LoginErrorReasons.Disabled);
                                 }
                             }
                             else
                             {
-                                TextWriterColor.Write(Translate.DoTranslation("The answer must be numeric."), true, ColorTools.ColTypes.Error);
+                                TextWriterColor.Write(Translate.DoTranslation("The answer must be numeric."), true, KernelColorType.Error);
                             }
                         }
                         else
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("Please enter a user number."), true, ColorTools.ColTypes.Error);
+                            TextWriterColor.Write(Translate.DoTranslation("Please enter a user number."), true, KernelColorType.Error);
                         }
                     }
                 }
@@ -165,11 +165,11 @@ namespace KS.Users.Login
                     // Prompt user to login
                     if (!string.IsNullOrWhiteSpace(UsernamePrompt))
                     {
-                        TextWriterColor.Write(PlaceParse.ProbePlaces(UsernamePrompt), false, ColorTools.ColTypes.Input);
+                        TextWriterColor.Write(PlaceParse.ProbePlaces(UsernamePrompt), false, KernelColorType.Input);
                     }
                     else
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("Username: "), false, ColorTools.ColTypes.Input);
+                        TextWriterColor.Write(Translate.DoTranslation("Username: "), false, KernelColorType.Input);
                     }
                     string answeruser = Input.ReadLine();
 
@@ -177,13 +177,13 @@ namespace KS.Users.Login
                     if (answeruser.Contains(" "))
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Spaces found in username.");
-                        TextWriterColor.Write(Translate.DoTranslation("Spaces are not allowed."), true, ColorTools.ColTypes.Error);
+                        TextWriterColor.Write(Translate.DoTranslation("Spaces are not allowed."), true, KernelColorType.Error);
                         EventsManager.FireEvent(EventType.LoginError, answeruser, LoginErrorReasons.Spaces);
                     }
                     else if (answeruser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray()) != -1)
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Unknown characters found in username.");
-                        TextWriterColor.Write(Translate.DoTranslation("Special characters are not allowed."), true, ColorTools.ColTypes.Error);
+                        TextWriterColor.Write(Translate.DoTranslation("Special characters are not allowed."), true, KernelColorType.Error);
                         EventsManager.FireEvent(EventType.LoginError, answeruser, LoginErrorReasons.SpecialCharacters);
                     }
                     else if (Users.ContainsKey(answeruser))
@@ -197,14 +197,14 @@ namespace KS.Users.Login
                         else
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "User can't log in. (User is in disabled list)");
-                            TextWriterColor.Write(Translate.DoTranslation("User is disabled."), true, ColorTools.ColTypes.Error);
+                            TextWriterColor.Write(Translate.DoTranslation("User is disabled."), true, KernelColorType.Error);
                             EventsManager.FireEvent(EventType.LoginError, answeruser, LoginErrorReasons.Disabled);
                         }
                     }
                     else
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "Username not found.");
-                        TextWriterColor.Write(Translate.DoTranslation("Wrong username."), true, ColorTools.ColTypes.Error);
+                        TextWriterColor.Write(Translate.DoTranslation("Wrong username."), true, KernelColorType.Error);
                         EventsManager.FireEvent(EventType.LoginError, answeruser, LoginErrorReasons.NotFound);
                     }
                 }
@@ -238,11 +238,11 @@ namespace KS.Users.Login
                     DebugWriter.WriteDebug(DebugLevel.I, "Password not empty");
                     if (!string.IsNullOrWhiteSpace(PasswordPrompt))
                     {
-                        TextWriterColor.Write(PlaceParse.ProbePlaces(PasswordPrompt), false, ColorTools.ColTypes.Input);
+                        TextWriterColor.Write(PlaceParse.ProbePlaces(PasswordPrompt), false, KernelColorType.Input);
                     }
                     else
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("{0}'s password: "), false, ColorTools.ColTypes.Input, usernamerequested);
+                        TextWriterColor.Write(Translate.DoTranslation("{0}'s password: "), false, KernelColorType.Input, usernamerequested);
                     }
 
                     // Get input
@@ -263,7 +263,7 @@ namespace KS.Users.Login
                     else
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Passowrd written wrong...");
-                        TextWriterColor.Write(Translate.DoTranslation("Wrong password."), true, ColorTools.ColTypes.Error);
+                        TextWriterColor.Write(Translate.DoTranslation("Wrong password."), true, KernelColorType.Error);
                         EventsManager.FireEvent(EventType.LoginError, usernamerequested, LoginErrorReasons.WrongPassword);
                         if (!Flags.Maintenance)
                         {
@@ -307,7 +307,7 @@ namespace KS.Users.Login
             CurrentUserInfo = new UserInfo(signedInUser);
             Flags.ShowMOTDOnceFlag = true;
             if (Flags.ShowMAL)
-                TextWriterColor.Write(PlaceParse.ProbePlaces(MalParse.MAL), true, ColorTools.ColTypes.Banner);
+                TextWriterColor.Write(PlaceParse.ProbePlaces(MalParse.MAL), true, KernelColorType.Banner);
             RSSTools.ShowHeadlineLogin();
 
             // Fire event PostLogin

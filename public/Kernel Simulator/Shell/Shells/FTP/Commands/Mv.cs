@@ -40,19 +40,19 @@ namespace KS.Shell.Shells.FTP.Commands
         {
             if (FTPShellCommon.FtpConnected)
             {
-                TextWriterColor.Write(Translate.DoTranslation("Moving {0} to {1}..."), true, ColorTools.ColTypes.Progress, ListArgsOnly[0], ListArgsOnly[1]);
+                TextWriterColor.Write(Translate.DoTranslation("Moving {0} to {1}..."), true, KernelColorType.Progress, ListArgsOnly[0], ListArgsOnly[1]);
                 if (FTPFilesystem.FTPMoveItem(ListArgsOnly[0], ListArgsOnly[1]))
                 {
-                    TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Moved successfully"), true, ColorTools.ColTypes.Success);
+                    TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Moved successfully"), true, KernelColorType.Success);
                 }
                 else
                 {
-                    TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Failed to move {0} to {1}."), true, ColorTools.ColTypes.Error, ListArgsOnly[0], ListArgsOnly[1]);
+                    TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Failed to move {0} to {1}."), true, KernelColorType.Error, ListArgsOnly[0], ListArgsOnly[1]);
                 }
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("You must connect to server before performing transmission."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("You must connect to server before performing transmission."), true, KernelColorType.Error);
             }
         }
 

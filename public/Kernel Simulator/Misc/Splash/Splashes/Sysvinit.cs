@@ -72,7 +72,7 @@ namespace KS.Misc.Splash.Splashes
         {
             if (!Beginning)
                 TextWriterColor.Write(".");
-            TextWriterColor.Write($"{ProgressReport}:", false, ColorTools.ColTypes.NeutralText, Vars);
+            TextWriterColor.Write($"{ProgressReport}:", false, KernelColorType.NeutralText, Vars);
             Beginning = false;
         }
 
@@ -80,7 +80,7 @@ namespace KS.Misc.Splash.Splashes
         {
             if (!Beginning)
                 TextWriterColor.Write(".");
-            TextWriterColor.Write($"{ErrorReport}:", false, ColorTools.ColTypes.NeutralText, Vars);
+            TextWriterColor.Write($"{ErrorReport}:", false, KernelColorType.NeutralText, Vars);
             Beginning = false;
         }
 

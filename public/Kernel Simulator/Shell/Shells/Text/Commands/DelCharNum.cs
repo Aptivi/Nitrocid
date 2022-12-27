@@ -43,16 +43,16 @@ namespace KS.Shell.Shells.Text.Commands
                 if (Convert.ToInt32(ListArgsOnly[1]) <= TextEditShellCommon.TextEdit_FileLines.Count)
                 {
                     TextEditTools.TextEdit_DeleteChar(Convert.ToInt32(ListArgsOnly[0]), Convert.ToInt32(ListArgsOnly[1]));
-                    TextWriterColor.Write(Translate.DoTranslation("Character deleted."), true, ColorTools.ColTypes.Success);
+                    TextWriterColor.Write(Translate.DoTranslation("Character deleted."), true, KernelColorType.Success);
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, ColorTools.ColTypes.Error);
+                    TextWriterColor.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
                 }
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("One or both of the numbers are not numeric."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("One or both of the numbers are not numeric."), true, KernelColorType.Error);
                 DebugWriter.WriteDebug(DebugLevel.E, "{0} and {1} are not numeric values.", ListArgsOnly[0], ListArgsOnly[1]);
             }
         }

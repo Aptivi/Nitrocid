@@ -46,13 +46,13 @@ namespace KS.Shell.Shells.FTP.Commands
                 var HashResults = FTPHashing.FTPGetHashes(RemoteDirectory, (FtpHashAlgorithm)Convert.ToInt32(Enum.Parse(typeof(FtpHashAlgorithm), Hash)));
                 foreach (string Filename in HashResults.Keys)
                 {
-                    TextWriterColor.Write("- " + Filename + ": ", false, ColorTools.ColTypes.ListEntry);
-                    TextWriterColor.Write(HashResults[Filename].Value, true, ColorTools.ColTypes.ListValue);
+                    TextWriterColor.Write("- " + Filename + ": ", false, KernelColorType.ListEntry);
+                    TextWriterColor.Write(HashResults[Filename].Value, true, KernelColorType.ListValue);
                 }
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Invalid encryption algorithm."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("Invalid encryption algorithm."), true, KernelColorType.Error);
             }
         }
 

@@ -22,6 +22,7 @@ using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.Kernel.Debugging;
+using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters.Tools;
@@ -105,7 +106,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         /// <param name="Targeted">Targeted percentage?</param>
         public static void WriteProgress(double Progress, int Left, int Top, bool DrawBorder = true, bool Targeted = false) =>
-            WriteProgress(Progress, Left, Top, 10, 0, ColorTools.ColTypes.Progress, ColorTools.ColTypes.Gray, DrawBorder, Targeted);
+            WriteProgress(Progress, Left, Top, 10, 0, KernelColorType.Progress, KernelColorType.Gray, DrawBorder, Targeted);
 
         /// <summary>
         /// Writes the progress bar
@@ -117,7 +118,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         /// <param name="Targeted">Targeted percentage?</param>
         public static void WriteProgress(double Progress, int Left, int Top, int WidthOffset, bool DrawBorder = true, bool Targeted = false) =>
-            WriteProgress(Progress, Left, Top, WidthOffset, 0, ColorTools.ColTypes.Progress, ColorTools.ColTypes.Gray, DrawBorder, Targeted);
+            WriteProgress(Progress, Left, Top, WidthOffset, 0, KernelColorType.Progress, KernelColorType.Gray, DrawBorder, Targeted);
 
         /// <summary>
         /// Writes the progress bar
@@ -130,7 +131,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         /// <param name="Targeted">Targeted percentage?</param>
         public static void WriteProgress(double Progress, int Left, int Top, int LeftWidthOffset, int RightWidthOffset, bool DrawBorder = true, bool Targeted = false) =>
-            WriteProgress(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, ColorTools.ColTypes.Progress, ColorTools.ColTypes.Gray, DrawBorder, Targeted);
+            WriteProgress(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, KernelColorType.Progress, KernelColorType.Gray, DrawBorder, Targeted);
 
         /// <summary>
         /// Writes the progress bar
@@ -141,8 +142,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         /// <param name="Targeted">Targeted percentage?</param>
-        public static void WriteProgress(double Progress, int Left, int Top, ColorTools.ColTypes ProgressColor, bool DrawBorder = true, bool Targeted = false) =>
-            WriteProgress(Progress, Left, Top, 10, 0, ProgressColor, ColorTools.ColTypes.Gray, DrawBorder, Targeted);
+        public static void WriteProgress(double Progress, int Left, int Top, KernelColorType ProgressColor, bool DrawBorder = true, bool Targeted = false) =>
+            WriteProgress(Progress, Left, Top, 10, 0, ProgressColor, KernelColorType.Gray, DrawBorder, Targeted);
 
         /// <summary>
         /// Writes the progress bar
@@ -154,8 +155,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="WidthOffset">Width offset</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         /// <param name="Targeted">Targeted percentage?</param>
-        public static void WriteProgress(double Progress, int Left, int Top, int WidthOffset, ColorTools.ColTypes ProgressColor, bool DrawBorder = true, bool Targeted = false) =>
-            WriteProgress(Progress, Left, Top, WidthOffset, 0, ProgressColor, ColorTools.ColTypes.Gray, DrawBorder, Targeted);
+        public static void WriteProgress(double Progress, int Left, int Top, int WidthOffset, KernelColorType ProgressColor, bool DrawBorder = true, bool Targeted = false) =>
+            WriteProgress(Progress, Left, Top, WidthOffset, 0, ProgressColor, KernelColorType.Gray, DrawBorder, Targeted);
 
         /// <summary>
         /// Writes the progress bar
@@ -168,8 +169,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="RightWidthOffset">Width offset from the right</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         /// <param name="Targeted">Targeted percentage?</param>
-        public static void WriteProgress(double Progress, int Left, int Top, int LeftWidthOffset, int RightWidthOffset, ColorTools.ColTypes ProgressColor, bool DrawBorder = true, bool Targeted = false) =>
-            WriteProgress(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, ProgressColor, ColorTools.ColTypes.Gray, DrawBorder, Targeted);
+        public static void WriteProgress(double Progress, int Left, int Top, int LeftWidthOffset, int RightWidthOffset, KernelColorType ProgressColor, bool DrawBorder = true, bool Targeted = false) =>
+            WriteProgress(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, ProgressColor, KernelColorType.Gray, DrawBorder, Targeted);
 
         /// <summary>
         /// Writes the progress bar
@@ -181,7 +182,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="FrameColor">The progress bar frame color</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         /// <param name="Targeted">Targeted percentage?</param>
-        public static void WriteProgress(double Progress, int Left, int Top, ColorTools.ColTypes ProgressColor, ColorTools.ColTypes FrameColor, bool DrawBorder = true, bool Targeted = false) =>
+        public static void WriteProgress(double Progress, int Left, int Top, KernelColorType ProgressColor, KernelColorType FrameColor, bool DrawBorder = true, bool Targeted = false) =>
             WriteProgress(Progress, Left, Top, 10, 0, ProgressColor, FrameColor, DrawBorder, Targeted);
 
         /// <summary>
@@ -195,7 +196,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="WidthOffset">Width offset</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         /// <param name="Targeted">Targeted percentage?</param>
-        public static void WriteProgress(double Progress, int Left, int Top, int WidthOffset, ColorTools.ColTypes ProgressColor, ColorTools.ColTypes FrameColor, bool DrawBorder = true, bool Targeted = false) =>
+        public static void WriteProgress(double Progress, int Left, int Top, int WidthOffset, KernelColorType ProgressColor, KernelColorType FrameColor, bool DrawBorder = true, bool Targeted = false) =>
             WriteProgress(Progress, Left, Top, WidthOffset, 0, ProgressColor, FrameColor, DrawBorder, Targeted);
 
         /// <summary>
@@ -210,8 +211,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="RightWidthOffset">Width offset from the right</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         /// <param name="Targeted">Targeted percentage?</param>
-        public static void WriteProgress(double Progress, int Left, int Top, int LeftWidthOffset, int RightWidthOffset, ColorTools.ColTypes ProgressColor, ColorTools.ColTypes FrameColor, bool DrawBorder = true, bool Targeted = false) =>
-            WriteProgress(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, ProgressColor, FrameColor, ColorTools.ColTypes.Background, DrawBorder, Targeted);
+        public static void WriteProgress(double Progress, int Left, int Top, int LeftWidthOffset, int RightWidthOffset, KernelColorType ProgressColor, KernelColorType FrameColor, bool DrawBorder = true, bool Targeted = false) =>
+            WriteProgress(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, ProgressColor, FrameColor, KernelColorType.Background, DrawBorder, Targeted);
 
         /// <summary>
         /// Writes the progress bar
@@ -224,7 +225,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="BackgroundColor">The progress bar background color</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         /// <param name="Targeted">Targeted percentage?</param>
-        public static void WriteProgress(double Progress, int Left, int Top, ColorTools.ColTypes ProgressColor, ColorTools.ColTypes FrameColor, ColorTools.ColTypes BackgroundColor, bool DrawBorder = true, bool Targeted = false) =>
+        public static void WriteProgress(double Progress, int Left, int Top, KernelColorType ProgressColor, KernelColorType FrameColor, KernelColorType BackgroundColor, bool DrawBorder = true, bool Targeted = false) =>
             WriteProgress(Progress, Left, Top, 10, 0, ProgressColor, FrameColor, BackgroundColor, DrawBorder, Targeted);
 
         /// <summary>
@@ -239,7 +240,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="WidthOffset">Width offset</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         /// <param name="Targeted">Targeted percentage?</param>
-        public static void WriteProgress(double Progress, int Left, int Top, int WidthOffset, ColorTools.ColTypes ProgressColor, ColorTools.ColTypes FrameColor, ColorTools.ColTypes BackgroundColor, bool DrawBorder = true, bool Targeted = false) =>
+        public static void WriteProgress(double Progress, int Left, int Top, int WidthOffset, KernelColorType ProgressColor, KernelColorType FrameColor, KernelColorType BackgroundColor, bool DrawBorder = true, bool Targeted = false) =>
             WriteProgress(Progress, Left, Top, WidthOffset, 0, ProgressColor, FrameColor, BackgroundColor, DrawBorder, Targeted);
 
         /// <summary>
@@ -255,7 +256,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="RightWidthOffset">Width offset from the right</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         /// <param name="Targeted">Targeted percentage?</param>
-        public static void WriteProgress(double Progress, int Left, int Top, int LeftWidthOffset, int RightWidthOffset, ColorTools.ColTypes ProgressColor, ColorTools.ColTypes FrameColor, ColorTools.ColTypes BackgroundColor, bool DrawBorder = true, bool Targeted = false)
+        public static void WriteProgress(double Progress, int Left, int Top, int LeftWidthOffset, int RightWidthOffset, KernelColorType ProgressColor, KernelColorType FrameColor, KernelColorType BackgroundColor, bool DrawBorder = true, bool Targeted = false)
         {
             try
             {
@@ -276,7 +277,7 @@ namespace KS.Misc.Writers.FancyWriters
                             ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset);
                 ColorTools.SetConsoleColor(ProgressColor, true, true);
                 TextWriterWhereColor.WriteWhere(" ".Repeat(times), Left + 1, Top + 1, true);
-                ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
+                ColorTools.SetConsoleColor(KernelColorType.Background, true);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -429,7 +430,7 @@ namespace KS.Misc.Writers.FancyWriters
                             ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset);
                 ColorTools.SetConsoleColor(new Color(Convert.ToInt32(ProgressColor)), true, true);
                 TextWriterWhereColor.WriteWhere(" ".Repeat(times), Left + 1, Top + 1, true);
-                ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
+                ColorTools.SetConsoleColor(KernelColorType.Background, true);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -517,7 +518,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         /// <param name="Targeted">Targeted percentage?</param>
         public static void WriteProgress(double Progress, int Left, int Top, int LeftWidthOffset, int RightWidthOffset, Color ProgressColor, Color FrameColor, bool DrawBorder = true, bool Targeted = false) =>
-            WriteProgress(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, ProgressColor, FrameColor, ColorTools.GetColor(ColorTools.ColTypes.Background), DrawBorder, Targeted);
+            WriteProgress(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, ProgressColor, FrameColor, ColorTools.GetColor(KernelColorType.Background), DrawBorder, Targeted);
 
         /// <summary>
         /// Writes the progress bar
@@ -582,7 +583,7 @@ namespace KS.Misc.Writers.FancyWriters
                             ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset);
                 ColorTools.SetConsoleColor(ProgressColor, true, true);
                 TextWriterWhereColor.WriteWhere(" ".Repeat(times), Left + 1, Top + 1, true);
-                ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
+                ColorTools.SetConsoleColor(KernelColorType.Background, true);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {

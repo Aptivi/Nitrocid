@@ -36,8 +36,8 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             foreach (string VarName in UESHVariables.GetVariables().Keys)
             {
-                TextWriterColor.Write($"- {VarName}: ", false, ColorTools.ColTypes.ListEntry);
-                TextWriterColor.Write(UESHVariables.GetVariables()[VarName], true, ColorTools.ColTypes.ListValue);
+                TextWriterColor.Write($"- {VarName}: ", false, KernelColorType.ListEntry);
+                TextWriterColor.Write(UESHVariables.GetVariables()[VarName], true, KernelColorType.ListValue);
             }
         }
 

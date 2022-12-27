@@ -34,12 +34,12 @@ namespace KS.Kernel.Debugging.Testing.Facades
             string SettingEntry = Input.ReadLine(Translate.DoTranslation("Write a setting entry name:") + " ", "");
             if (CustomSaverTools.CustomSavers.ContainsKey(Screensaver))
             {
-                TextWriterColor.Write("- {0} -> {1}: ", false, ColorTools.ColTypes.ListEntry, Screensaver, SettingEntry);
-                TextWriterColor.Write(Convert.ToString(CustomSaverTools.GetCustomSaverSettings(Screensaver, SettingEntry)), true, ColorTools.ColTypes.ListValue);
+                TextWriterColor.Write("- {0} -> {1}: ", false, KernelColorType.ListEntry, Screensaver, SettingEntry);
+                TextWriterColor.Write(Convert.ToString(CustomSaverTools.GetCustomSaverSettings(Screensaver, SettingEntry)), true, KernelColorType.ListValue);
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Screensaver {0} not found."), true, ColorTools.ColTypes.Error, Screensaver);
+                TextWriterColor.Write(Translate.DoTranslation("Screensaver {0} not found."), true, KernelColorType.Error, Screensaver);
             }
         }
     }

@@ -29,6 +29,7 @@ using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.ConsoleBase.Inputs;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
+using KS.ConsoleBase.Colors;
 
 namespace KS.Misc.Timers
 {
@@ -40,7 +41,7 @@ namespace KS.Misc.Timers
 
         internal static List<LapDisplayInfo> Laps = new();
         internal static KernelThread StopwatchUpdate = new("Stopwatch ETA Updater", true, UpdateStopwatchElapsedDisplay);
-        internal static Color LapColor = ColorTools.GetColor(ColorTools.ColTypes.NeutralText);
+        internal static Color LapColor = ColorTools.GetColor(KernelColorType.NeutralText);
         internal static Stopwatch Stopwatch = new();
         internal static Stopwatch LappedStopwatch = new();
         internal static bool NewLapAcknowledged;
@@ -70,7 +71,7 @@ namespace KS.Misc.Timers
             var KeysKeypress = default(ConsoleKey);
 
             // Print the keys text
-            TextWriterWhereColor.WriteWhere(KeysText, KeysTextLeftPosition, KeysTextTopPosition, true, ColorTools.ColTypes.Tip);
+            TextWriterWhereColor.WriteWhere(KeysText, KeysTextLeftPosition, KeysTextTopPosition, true, KernelColorType.Tip);
 
             // Print the time interval and the current lap
             TextWriterWhereColor.WriteWhere(Stopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult), TimeLeftPosition, TimeTopPosition, true, LapColor);
@@ -80,7 +81,7 @@ namespace KS.Misc.Timers
             MakeBorder();
 
             // Print informational messages
-            TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Ready!"), 1, 0, false, ColorTools.ColTypes.NeutralText);
+            TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Ready!"), 1, 0, false, KernelColorType.NeutralText);
             ConsoleExtensions.ClearLineToRight();
 
             while (KeysKeypress != ConsoleKey.Escape)
@@ -105,7 +106,7 @@ namespace KS.Misc.Timers
                                 Stopwatch.Stop();
                             else
                                 Stopwatch.Start();
-                            TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Stopwatch running!"), 1, 0, false, ColorTools.ColTypes.NeutralText);
+                            TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Stopwatch running!"), 1, 0, false, KernelColorType.NeutralText);
                             ConsoleExtensions.ClearLineToRight();
                             break;
                         }
@@ -146,14 +147,14 @@ namespace KS.Misc.Timers
                             }
 
                             // Reset the indicators
-                            LapColor = ColorTools.GetColor(ColorTools.ColTypes.NeutralText);
+                            LapColor = ColorTools.GetColor(KernelColorType.NeutralText);
                             TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Lap") + " {0}: {1}", LapsCurrentLapLeftPosition, LapsCurrentLapTopPosition, false, LapColor, Laps.Count + 1, LappedStopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult));
                             ConsoleExtensions.ClearLineToRight();
                             ConsoleWrapper.SetCursorPosition(0, TimeTopPosition);
                             ConsoleExtensions.ClearLineToRight();
                             TextWriterWhereColor.WriteWhere(Stopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult), TimeLeftPosition, TimeTopPosition, false, LapColor);
                             MakeBorder();
-                            TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Ready!"), 1, 0, false, ColorTools.ColTypes.NeutralText);
+                            TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Ready!"), 1, 0, false, KernelColorType.NeutralText);
                             ConsoleExtensions.ClearLineToRight();
                             break;
                         }
@@ -163,7 +164,7 @@ namespace KS.Misc.Timers
                                 LappedStopwatch.Reset();
                             if (Stopwatch.IsRunning)
                                 Stopwatch.Reset();
-                            LapColor = ColorTools.GetColor(ColorTools.ColTypes.NeutralText);
+                            LapColor = ColorTools.GetColor(KernelColorType.NeutralText);
                             if (StopwatchUpdate.IsAlive)
                                 StopwatchUpdate.Stop();
                             break;
@@ -232,12 +233,12 @@ namespace KS.Misc.Timers
         {
             int KeysTextTopPosition = ConsoleWrapper.WindowHeight - 2;
             int HalfWidth = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
-            TextWriterWhereColor.WriteWhere("═".Repeat(ConsoleWrapper.WindowWidth), 0, KeysTextTopPosition - 2, true, ColorTools.ColTypes.Gray);
-            TextWriterWhereColor.WriteWhere("═".Repeat(ConsoleWrapper.WindowWidth), 0, 1, true, ColorTools.ColTypes.Gray);
+            TextWriterWhereColor.WriteWhere("═".Repeat(ConsoleWrapper.WindowWidth), 0, KeysTextTopPosition - 2, true, KernelColorType.Gray);
+            TextWriterWhereColor.WriteWhere("═".Repeat(ConsoleWrapper.WindowWidth), 0, 1, true, KernelColorType.Gray);
             for (int Height = 2; Height <= KeysTextTopPosition - 2; Height++)
-                TextWriterWhereColor.WriteWhere("║", HalfWidth, Height, true, ColorTools.ColTypes.Gray);
-            TextWriterWhereColor.WriteWhere("╩", HalfWidth, KeysTextTopPosition - 2, true, ColorTools.ColTypes.Gray);
-            TextWriterWhereColor.WriteWhere("╦", HalfWidth, 1, true, ColorTools.ColTypes.Gray);
+                TextWriterWhereColor.WriteWhere("║", HalfWidth, Height, true, KernelColorType.Gray);
+            TextWriterWhereColor.WriteWhere("╩", HalfWidth, KeysTextTopPosition - 2, true, KernelColorType.Gray);
+            TextWriterWhereColor.WriteWhere("╦", HalfWidth, 1, true, KernelColorType.Gray);
         }
 
     }

@@ -57,7 +57,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("File {0} not found."), true, ColorTools.ColTypes.Error, JsonFile);
+                TextWriterColor.Write(Translate.DoTranslation("File {0} not found."), true, KernelColorType.Error, JsonFile);
             }
         }
 

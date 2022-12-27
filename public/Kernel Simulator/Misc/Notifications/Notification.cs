@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using ColorSeq;
+using KS.ConsoleBase.Colors;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Notifications
@@ -109,27 +110,27 @@ namespace KS.Misc.Notifications
         /// <summary>
         /// Custom color (for custom priority notfications)
         /// </summary>
-        public Color CustomColor { get; set; } = ColorTools.GetColor(ColorTools.ColTypes.LowPriorityBorder);
+        public Color CustomColor { get; set; } = ColorTools.GetColor(KernelColorType.LowPriorityBorder);
 
         /// <summary>
         /// Custom title color (for custom priority notfications)
         /// </summary>
-        public Color CustomTitleColor { get; set; } = ColorTools.GetColor(ColorTools.ColTypes.NotificationTitle);
+        public Color CustomTitleColor { get; set; } = ColorTools.GetColor(KernelColorType.NotificationTitle);
 
         /// <summary>
         /// Custom description color (for custom priority notfications)
         /// </summary>
-        public Color CustomDescriptionColor { get; set; } = ColorTools.GetColor(ColorTools.ColTypes.NotificationDescription);
+        public Color CustomDescriptionColor { get; set; } = ColorTools.GetColor(KernelColorType.NotificationDescription);
 
         /// <summary>
         /// Custom progress color (for custom priority notfications)
         /// </summary>
-        public Color CustomProgressColor { get; set; } = ColorTools.GetColor(ColorTools.ColTypes.NotificationProgress);
+        public Color CustomProgressColor { get; set; } = ColorTools.GetColor(KernelColorType.NotificationProgress);
 
         /// <summary>
         /// Custom progress failure color (for custom priority notfications)
         /// </summary>
-        public Color CustomProgressFailureColor { get; set; } = ColorTools.GetColor(ColorTools.ColTypes.NotificationFailure);
+        public Color CustomProgressFailureColor { get; set; } = ColorTools.GetColor(KernelColorType.NotificationFailure);
 
         /// <summary>
         /// Upper left corner character for custom priority notification

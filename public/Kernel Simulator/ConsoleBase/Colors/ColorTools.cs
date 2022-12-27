@@ -37,183 +37,8 @@ namespace KS.ConsoleBase.Colors
     public static class ColorTools
     {
 
-        /// <summary>
-        /// Enumeration for color types
-        /// </summary>
-        public enum ColTypes : int
-        {
-            /// <summary>
-            /// Input text
-            /// </summary>
-            Input,
-            /// <summary>
-            /// License color
-            /// </summary>
-            License,
-            /// <summary>
-            /// Continuable kernel panic text (usually sync'd with Warning)
-            /// </summary>
-            ContKernelError,
-            /// <summary>
-            /// Uncontinuable kernel panic text (usually sync'd with Error)
-            /// </summary>
-            UncontKernelError,
-            /// <summary>
-            /// Host name color
-            /// </summary>
-            HostNameShell,
-            /// <summary>
-            /// User name color
-            /// </summary>
-            UserNameShell,
-            /// <summary>
-            /// Background color
-            /// </summary>
-            Background,
-            /// <summary>
-            /// Neutral text (for general purposes)
-            /// </summary>
-            NeutralText,
-            /// <summary>
-            /// List entry text
-            /// </summary>
-            ListEntry,
-            /// <summary>
-            /// List value text
-            /// </summary>
-            ListValue,
-            /// <summary>
-            /// Stage text
-            /// </summary>
-            Stage,
-            /// <summary>
-            /// Error text
-            /// </summary>
-            Error,
-            /// <summary>
-            /// Warning text
-            /// </summary>
-            Warning,
-            /// <summary>
-            /// Option text
-            /// </summary>
-            Option,
-            /// <summary>
-            /// Banner text
-            /// </summary>
-            Banner,
-            /// <summary>
-            /// Notification title text
-            /// </summary>
-            NotificationTitle,
-            /// <summary>
-            /// Notification description text
-            /// </summary>
-            NotificationDescription,
-            /// <summary>
-            /// Notification progress text
-            /// </summary>
-            NotificationProgress,
-            /// <summary>
-            /// Notification failure text
-            /// </summary>
-            NotificationFailure,
-            /// <summary>
-            /// Question text
-            /// </summary>
-            Question,
-            /// <summary>
-            /// Success text
-            /// </summary>
-            Success,
-            /// <summary>
-            /// User dollar sign on shell text
-            /// </summary>
-            UserDollar,
-            /// <summary>
-            /// Tip text
-            /// </summary>
-            Tip,
-            /// <summary>
-            /// Separator text
-            /// </summary>
-            SeparatorText,
-            /// <summary>
-            /// Separator color
-            /// </summary>
-            Separator,
-            /// <summary>
-            /// List title text
-            /// </summary>
-            ListTitle,
-            /// <summary>
-            /// Development warning text
-            /// </summary>
-            DevelopmentWarning,
-            /// <summary>
-            /// Stage time text
-            /// </summary>
-            StageTime,
-            /// <summary>
-            /// General progress text
-            /// </summary>
-            Progress,
-            /// <summary>
-            /// Back option text
-            /// </summary>
-            BackOption,
-            /// <summary>
-            /// Low priority notification border color
-            /// </summary>
-            LowPriorityBorder,
-            /// <summary>
-            /// Medium priority notification border color
-            /// </summary>
-            MediumPriorityBorder,
-            /// <summary>
-            /// High priority notification border color
-            /// </summary>
-            HighPriorityBorder,
-            /// <summary>
-            /// Table separator
-            /// </summary>
-            TableSeparator,
-            /// <summary>
-            /// Table header
-            /// </summary>
-            TableHeader,
-            /// <summary>
-            /// Table value
-            /// </summary>
-            TableValue,
-            /// <summary>
-            /// Selected option
-            /// </summary>
-            SelectedOption,
-            /// <summary>
-            /// Alternative option
-            /// </summary>
-            AlternativeOption,
-            /// <summary>
-            /// Weekend day
-            /// </summary>
-            WeekendDay,
-            /// <summary>
-            /// Event day
-            /// </summary>
-            EventDay,
-            /// <summary>
-            /// Table title
-            /// </summary>
-            TableTitle,
-            /// <summary>
-            /// Gray color (for special purposes)
-            /// </summary>
-            Gray = -1,
-        }
-
         // Variables for colors used by previous versions of the kernel.
-        internal static Dictionary<ColTypes, Color> KernelColors = PopulateColorsDefault();
+        internal static Dictionary<KernelColorType, Color> KernelColors = PopulateColorsDefault();
 
         // Cache variables for background and foreground colors
         internal static string cachedForegroundColor = "";
@@ -263,42 +88,42 @@ namespace KS.ConsoleBase.Colors
         /// Gets a color from the color type
         /// </summary>
         /// <param name="type">Color type</param>
-        public static Color GetColor(ColTypes type) => new(KernelColors[type].PlainSequence);
+        public static Color GetColor(KernelColorType type) => new(KernelColors[type].PlainSequence);
 
         /// <summary>
         /// Sets a color from the color type
         /// </summary>
         /// <param name="type">Color type</param>
         /// <param name="color">Color to be set</param>
-        public static Color SetColor(ColTypes type, Color color) => KernelColors[type] = color;
+        public static Color SetColor(KernelColorType type, Color color) => KernelColors[type] = color;
 
         /// <summary>
         /// Populate the empty color dictionary
         /// </summary>
-        public static Dictionary<ColTypes, Color> PopulateColorsEmpty() => PopulateColors(0);
+        public static Dictionary<KernelColorType, Color> PopulateColorsEmpty() => PopulateColors(0);
 
         /// <summary>
         /// Populate the default color dictionary
         /// </summary>
-        public static Dictionary<ColTypes, Color> PopulateColorsDefault() => PopulateColors(1);
+        public static Dictionary<KernelColorType, Color> PopulateColorsDefault() => PopulateColors(1);
 
         /// <summary>
         /// Populate the current color dictionary
         /// </summary>
-        public static Dictionary<ColTypes, Color> PopulateColorsCurrent() => PopulateColors(2);
+        public static Dictionary<KernelColorType, Color> PopulateColorsCurrent() => PopulateColors(2);
 
-        private static Dictionary<ColTypes, Color> PopulateColors(int populationType)
+        private static Dictionary<KernelColorType, Color> PopulateColors(int populationType)
         {
-            Dictionary<ColTypes, Color> colors = new();
+            Dictionary<KernelColorType, Color> colors = new();
 
             // Select population type
             switch (populationType)
             {
                 case 0:
                     // Population type is empty colors
-                    for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ColTypes)).Length - 1; typeIndex++)
+                    for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length - 1; typeIndex++)
                     {
-                        ColTypes type = (ColTypes)Enum.Parse(typeof(ColTypes), typeIndex.ToString());
+                        KernelColorType type = (KernelColorType)Enum.Parse(typeof(KernelColorType), typeIndex.ToString());
                         Color color = Color.Empty;
                         DebugWriter.WriteDebug(DebugLevel.I, "Adding color type {0} with color {1}...", type, color.PlainSequence);
                         colors.Add(type, color);
@@ -307,9 +132,9 @@ namespace KS.ConsoleBase.Colors
                 case 1:
                     // Population type is default colors
                     ThemeInfo themeInfo = new();
-                    for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ColTypes)).Length - 1; typeIndex++)
+                    for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length - 1; typeIndex++)
                     {
-                        ColTypes type = (ColTypes)Enum.Parse(typeof(ColTypes), typeIndex.ToString());
+                        KernelColorType type = (KernelColorType)Enum.Parse(typeof(KernelColorType), typeIndex.ToString());
                         Color color = themeInfo.GetColor(type);
                         DebugWriter.WriteDebug(DebugLevel.I, "Adding color type {0} with color {1}...", type, color.PlainSequence);
                         colors.Add(type, color);
@@ -317,9 +142,9 @@ namespace KS.ConsoleBase.Colors
                     break;
                 case 2:
                     // Population type is current colors
-                    for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ColTypes)).Length - 1; typeIndex++)
+                    for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length - 1; typeIndex++)
                     {
-                        ColTypes type = (ColTypes)Enum.Parse(typeof(ColTypes), typeIndex.ToString());
+                        KernelColorType type = (KernelColorType)Enum.Parse(typeof(KernelColorType), typeIndex.ToString());
                         Color color = GetColor(type);
                         DebugWriter.WriteDebug(DebugLevel.I, "Adding color type {0} with color {1}...", type, color.PlainSequence);
                         colors.Add(type, color);
@@ -336,7 +161,7 @@ namespace KS.ConsoleBase.Colors
         /// Loads the background
         /// </summary>
         public static void LoadBack() =>
-            LoadBack(GetColor(ColTypes.Background));
+            LoadBack(GetColor(KernelColorType.Background));
 
         /// <summary>
         /// Loads the background
@@ -362,9 +187,9 @@ namespace KS.ConsoleBase.Colors
         /// </summary>
         public static Color GetGray()
         {
-            if (GetColor(ColTypes.Background).IsBright)
+            if (GetColor(KernelColorType.Background).IsBright)
             {
-                return GetColor(ColTypes.NeutralText);
+                return GetColor(KernelColorType.NeutralText);
             }
             else
             {
@@ -376,7 +201,7 @@ namespace KS.ConsoleBase.Colors
         /// Sets the console color
         /// </summary>
         /// <param name="colorType">A type of colors that will be changed.</param>
-        public static void SetConsoleColor(ColTypes colorType) => SetConsoleColor(colorType, false);
+        public static void SetConsoleColor(KernelColorType colorType) => SetConsoleColor(colorType, false);
 
         /// <summary>
         /// Sets the console color
@@ -384,11 +209,11 @@ namespace KS.ConsoleBase.Colors
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="Background">Is the color a background color?</param>
         /// <param name="ForceSet">Force set color</param>
-        public static void SetConsoleColor(ColTypes colorType, bool Background, bool ForceSet = false)
+        public static void SetConsoleColor(KernelColorType colorType, bool Background, bool ForceSet = false)
         {
             switch (colorType)
             {
-                case ColTypes.Gray:
+                case KernelColorType.Gray:
                     {
                         SetConsoleColor(GetGray(), Background, ForceSet);
                         break;
@@ -400,7 +225,7 @@ namespace KS.ConsoleBase.Colors
                     }
             }
             if (!Background)
-                SetConsoleColor(GetColor(ColTypes.Background), true);
+                SetConsoleColor(GetColor(KernelColorType.Background), true);
         }
 
         /// <summary>
@@ -443,7 +268,7 @@ namespace KS.ConsoleBase.Colors
         /// </summary>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool TrySetConsoleColor(ColTypes colorType) => TrySetConsoleColor(colorType, false);
+        public static bool TrySetConsoleColor(KernelColorType colorType) => TrySetConsoleColor(colorType, false);
 
         /// <summary>
         /// Sets the console color
@@ -451,7 +276,7 @@ namespace KS.ConsoleBase.Colors
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="Background">Is the color a background color?</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool TrySetConsoleColor(ColTypes colorType, bool Background)
+        public static bool TrySetConsoleColor(KernelColorType colorType, bool Background)
         {
             try
             {

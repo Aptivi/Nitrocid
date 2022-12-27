@@ -44,10 +44,10 @@ namespace KS.Shell.Shells.FTP.Commands
             if (FTPShellCommon.FtpConnected == true)
             {
                 // Print a message
-                TextWriterColor.Write(Translate.DoTranslation("Deleting {0}..."), true, ColorTools.ColTypes.Progress, ListArgsOnly[0]);
+                TextWriterColor.Write(Translate.DoTranslation("Deleting {0}..."), true, KernelColorType.Progress, ListArgsOnly[0]);
 
                 // Make a confirmation message so user will not accidentally delete a file or folder
-                TextWriterColor.Write(Translate.DoTranslation("Are you sure you want to delete {0} <y/n>?") + " ", false, ColorTools.ColTypes.Input, ListArgsOnly[0]);
+                TextWriterColor.Write(Translate.DoTranslation("Are you sure you want to delete {0} <y/n>?") + " ", false, KernelColorType.Input, ListArgsOnly[0]);
                 string answer = Convert.ToString(Input.DetectKeypress().KeyChar);
                 TextWriterColor.Write();
 
@@ -57,12 +57,12 @@ namespace KS.Shell.Shells.FTP.Commands
                 }
                 catch (Exception ex)
                 {
-                    TextWriterColor.Write(ex.Message, true, ColorTools.ColTypes.Error);
+                    TextWriterColor.Write(ex.Message, true, KernelColorType.Error);
                 }
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("You must connect to server with administrative privileges before performing the deletion."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("You must connect to server with administrative privileges before performing the deletion."), true, KernelColorType.Error);
             }
         }
 

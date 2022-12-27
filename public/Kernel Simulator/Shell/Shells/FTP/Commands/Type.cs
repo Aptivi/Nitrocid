@@ -40,19 +40,19 @@ namespace KS.Shell.Shells.FTP.Commands
                 FTPShellCommon.ClientFTP.Config.DownloadDataType = FtpDataType.ASCII;
                 FTPShellCommon.ClientFTP.Config.ListingDataType = FtpDataType.ASCII;
                 FTPShellCommon.ClientFTP.Config.UploadDataType = FtpDataType.ASCII;
-                TextWriterColor.Write(Translate.DoTranslation("Data type set to ASCII!"), true, ColorTools.ColTypes.Success);
-                TextWriterColor.Write(Translate.DoTranslation("Beware that most files won't download or upload properly using this mode, so we highly recommend using the Binary mode on most situations."), true, ColorTools.ColTypes.Warning);
+                TextWriterColor.Write(Translate.DoTranslation("Data type set to ASCII!"), true, KernelColorType.Success);
+                TextWriterColor.Write(Translate.DoTranslation("Beware that most files won't download or upload properly using this mode, so we highly recommend using the Binary mode on most situations."), true, KernelColorType.Warning);
             }
             else if (ListArgsOnly[0].ToLower() == "b")
             {
                 FTPShellCommon.ClientFTP.Config.DownloadDataType = FtpDataType.Binary;
                 FTPShellCommon.ClientFTP.Config.ListingDataType = FtpDataType.Binary;
                 FTPShellCommon.ClientFTP.Config.UploadDataType = FtpDataType.Binary;
-                TextWriterColor.Write(Translate.DoTranslation("Data type set to Binary!"), true, ColorTools.ColTypes.Success);
+                TextWriterColor.Write(Translate.DoTranslation("Data type set to Binary!"), true, KernelColorType.Success);
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Invalid data type."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("Invalid data type."), true, KernelColorType.Error);
             }
         }
 

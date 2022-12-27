@@ -41,11 +41,11 @@ namespace KS.Network.Mail.PGP
         {
             if (!string.IsNullOrWhiteSpace(MailLogin.Mail_GPGPromptStyle))
             {
-                TextWriterColor.Write(PlaceParse.ProbePlaces(MailLogin.Mail_GPGPromptStyle), false, ColorTools.ColTypes.Input, key.KeyId);
+                TextWriterColor.Write(PlaceParse.ProbePlaces(MailLogin.Mail_GPGPromptStyle), false, KernelColorType.Input, key.KeyId);
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Write password for key ID {0}") + ": ", false, ColorTools.ColTypes.Input, key.KeyId);
+                TextWriterColor.Write(Translate.DoTranslation("Write password for key ID {0}") + ": ", false, KernelColorType.Input, key.KeyId);
             }
             string Password = Input.ReadLineNoInput();
             return Password;

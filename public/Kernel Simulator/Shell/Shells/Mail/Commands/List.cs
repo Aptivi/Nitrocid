@@ -47,7 +47,7 @@ namespace KS.Shell.Shells.Mail.Commands
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Page is not a numeric value."), true, ColorTools.ColTypes.Error);
+                    TextWriterColor.Write(Translate.DoTranslation("Page is not a numeric value."), true, KernelColorType.Error);
                 }
             }
             else

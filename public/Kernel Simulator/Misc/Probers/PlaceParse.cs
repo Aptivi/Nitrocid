@@ -36,6 +36,7 @@ using KS.Users;
 using KS.Users.Login;
 using KS.Kernel.Events;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
+using KS.ConsoleBase.Colors;
 
 namespace KS.Misc.Probers
 {
@@ -259,14 +260,14 @@ namespace KS.Misc.Probers
                 if (text.Contains("<f:reset>"))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Foreground color reset placeholder found.");
-                    text = text.Replace("<f:reset>", ColorTools.GetColor(ColorTools.ColTypes.NeutralText).VTSequenceForeground);
+                    text = text.Replace("<f:reset>", ColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground);
                 }
 
                 // -> Background color reset placeholder
                 if (text.Contains("<b:reset>"))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Background color reset placeholder found.");
-                    text = text.Replace("<b:reset>", Flags.SetBackground ? ColorTools.GetColor(ColorTools.ColTypes.Background).VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m");
+                    text = text.Replace("<b:reset>", Flags.SetBackground ? ColorTools.GetColor(KernelColorType.Background).VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m");
                 }
 
                 // -> Foreground color placeholder

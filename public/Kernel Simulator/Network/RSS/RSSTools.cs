@@ -307,15 +307,15 @@ namespace KS.Network.RSS
                     var Feed = new RSSFeed(RssHeadlineUrl, RSSFeedType.Infer);
                     if (!(Feed.FeedArticles.Count == 0))
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("Latest news:") + " ", false, ColorTools.ColTypes.ListEntry);
-                        TextWriterColor.Write(Feed.FeedArticles[0].ArticleTitle, true, ColorTools.ColTypes.ListValue);
+                        TextWriterColor.Write(Translate.DoTranslation("Latest news:") + " ", false, KernelColorType.ListEntry);
+                        TextWriterColor.Write(Feed.FeedArticles[0].ArticleTitle, true, KernelColorType.ListValue);
                     }
                 }
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriterColor.Write(Translate.DoTranslation("Failed to get the latest news."), true, ColorTools.ColTypes.Error);
+                    TextWriterColor.Write(Translate.DoTranslation("Failed to get the latest news."), true, KernelColorType.Error);
                 }
             }
         }
@@ -338,7 +338,7 @@ namespace KS.Network.RSS
             // Try to get the feed list
             try
             {
-                TextWriterColor.Write(Translate.DoTranslation("Downloading feed list..."), true, ColorTools.ColTypes.Progress);
+                TextWriterColor.Write(Translate.DoTranslation("Downloading feed list..."), true, KernelColorType.Progress);
                 if (string.IsNullOrEmpty(FeedListJsonText))
                     FeedListJsonText = NetworkTransfer.DownloadString("https://cdn.jsdelivr.net/gh/yavuz/news-feed-list-of-countries@master/news-feed-list-of-countries.json");
                 FeedListJson = JToken.Parse(FeedListJsonText);
@@ -348,7 +348,7 @@ namespace KS.Network.RSS
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to get feed list: {0}", ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.Write(Translate.DoTranslation("Failed to download feed list."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("Failed to download feed list."), true, KernelColorType.Error);
             }
 
             // Country selection
@@ -356,16 +356,16 @@ namespace KS.Network.RSS
             {
                 // If the JSON token is actually full, show the list of countries
                 ConsoleBase.ConsoleWrapper.Clear();
-                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Select your country by pressing the arrow left or arrow right keys. Press ENTER to confirm your selection."), 0, 1, false, ColorTools.ColTypes.NeutralText);
-                TextWriterColor.Write(CharManager.NewLine + CharManager.NewLine + "   < ", false, ColorTools.ColTypes.Gray);
+                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Select your country by pressing the arrow left or arrow right keys. Press ENTER to confirm your selection."), 0, 1, false, KernelColorType.NeutralText);
+                TextWriterColor.Write(CharManager.NewLine + CharManager.NewLine + "   < ", false, KernelColorType.Gray);
 
                 // The cursor positions for the arrow elements
                 int MaxLength = FeedListJsonCountries.Max(x => x["name"].ToString().Length);
                 string ItemName = $"{FeedListJsonCountries[SelectedCountryIndex]["name"]} [{FeedListJsonCountries[SelectedCountryIndex]["iso"]}]";
                 int ArrowLeftXPosition = ConsoleBase.ConsoleWrapper.CursorLeft + MaxLength + $" [{FeedListJsonCountries[SelectedCountryIndex]["iso"]}]".Length;
                 int ItemNameXPosition = (int)Math.Round(ConsoleBase.ConsoleWrapper.CursorLeft + (ArrowLeftXPosition - ConsoleBase.ConsoleWrapper.CursorLeft) / 2d - ItemName.Length / 2d);
-                TextWriterWhereColor.WriteWhere(ItemName, ItemNameXPosition, ConsoleBase.ConsoleWrapper.CursorTop, true, ColorTools.ColTypes.Option);
-                TextWriterWhereColor.WriteWhere(" >", ArrowLeftXPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, ColorTools.ColTypes.Gray);
+                TextWriterWhereColor.WriteWhere(ItemName, ItemNameXPosition, ConsoleBase.ConsoleWrapper.CursorTop, true, KernelColorType.Option);
+                TextWriterWhereColor.WriteWhere(" >", ArrowLeftXPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, KernelColorType.Gray);
                 TextWriterColor.Write(CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("This country has {0} news sources."), FeedListJsonCountries[SelectedCountryIndex]["newSources"].Count());
 
                 // Read and get response
@@ -416,14 +416,14 @@ namespace KS.Network.RSS
             {
                 var NewsSource = FeedListJsonNewsSources[SourceIndex];
                 string NewsSourceTitle = NewsSource["site"]["title"].ToString().Trim();
-                TextWriterColor.Write("{0}) {1}", true, ColorTools.ColTypes.Option, SourceIndex + 1, NewsSourceTitle);
+                TextWriterColor.Write("{0}) {1}", true, KernelColorType.Option, SourceIndex + 1, NewsSourceTitle);
             }
             TextWriterColor.Write();
             while (StepNumber == 2)
             {
                 // Print input
                 DebugWriter.WriteDebug(DebugLevel.W, "{0} news sources.", FeedListJsonNewsSources.Length);
-                TextWriterColor.Write(">> ", false, ColorTools.ColTypes.Input);
+                TextWriterColor.Write(">> ", false, KernelColorType.Input);
 
                 // Read and parse the answer
                 string AnswerStr = Input.ReadLine();
@@ -443,13 +443,13 @@ namespace KS.Network.RSS
                     else
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Answer is out of range.");
-                        TextWriterColor.Write(Translate.DoTranslation("The selection is out of range. Select between 1-{0}. Try again."), true, ColorTools.ColTypes.Error, FeedListJsonNewsSources.Length);
+                        TextWriterColor.Write(Translate.DoTranslation("The selection is out of range. Select between 1-{0}. Try again."), true, KernelColorType.Error, FeedListJsonNewsSources.Length);
                     }
                 }
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Answer is not numeric.");
-                    TextWriterColor.Write(Translate.DoTranslation("The answer must be numeric."), true, ColorTools.ColTypes.Error);
+                    TextWriterColor.Write(Translate.DoTranslation("The answer must be numeric."), true, KernelColorType.Error);
                 }
             }
 
@@ -465,14 +465,14 @@ namespace KS.Network.RSS
                     NewsSourceTitle = (string)FeedListJsonNewsSources[SelectedNewsSourceIndex]["site"]["title"];
                 }
                 NewsSourceTitle = NewsSourceTitle.Trim();
-                TextWriterColor.Write("{0}) {1}: {2}", true, ColorTools.ColTypes.Option, SourceFeedIndex + 1, NewsSourceTitle, NewsSourceFeed["url"]);
+                TextWriterColor.Write("{0}) {1}: {2}", true, KernelColorType.Option, SourceFeedIndex + 1, NewsSourceTitle, NewsSourceFeed["url"]);
             }
             TextWriterColor.Write();
             while (StepNumber == 3)
             {
                 // Print input
                 DebugWriter.WriteDebug(DebugLevel.W, "{0} news source feeds.", FeedListJsonNewsSourceFeeds.Length);
-                TextWriterColor.Write(">> ", false, ColorTools.ColTypes.Input);
+                TextWriterColor.Write(">> ", false, KernelColorType.Input);
 
                 // Read and parse the answer
                 string AnswerStr = Input.ReadLine();
@@ -491,13 +491,13 @@ namespace KS.Network.RSS
                     else
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Answer is out of range.");
-                        TextWriterColor.Write(Translate.DoTranslation("The selection is out of range. Select between 1-{0}. Try again."), true, ColorTools.ColTypes.Error, FeedListJsonNewsSourceFeeds.Length);
+                        TextWriterColor.Write(Translate.DoTranslation("The selection is out of range. Select between 1-{0}. Try again."), true, KernelColorType.Error, FeedListJsonNewsSourceFeeds.Length);
                     }
                 }
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Answer is not numeric.");
-                    TextWriterColor.Write(Translate.DoTranslation("The answer must be numeric."), true, ColorTools.ColTypes.Error);
+                    TextWriterColor.Write(Translate.DoTranslation("The answer must be numeric."), true, KernelColorType.Error);
                 }
             }
 

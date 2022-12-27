@@ -46,7 +46,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Reloading not allowed in safe mode."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("Reloading not allowed in safe mode."), true, KernelColorType.Error);
             }
         }
 

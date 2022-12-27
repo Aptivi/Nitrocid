@@ -60,7 +60,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Can't get information about nonexistent directory."), true, ColorTools.ColTypes.Error);
+                    TextWriterColor.Write(Translate.DoTranslation("Can't get information about nonexistent directory."), true, KernelColorType.Error);
                 }
             }
         }

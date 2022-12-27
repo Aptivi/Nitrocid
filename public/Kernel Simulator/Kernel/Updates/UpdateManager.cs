@@ -71,28 +71,28 @@ namespace KS.Kernel.Updates
             }
 
             // Check for updates now
-            SplashReport.ReportProgress(Translate.DoTranslation("Checking for system updates..."), 10, ColorTools.ColTypes.NeutralText);
+            SplashReport.ReportProgress(Translate.DoTranslation("Checking for system updates..."), 10, KernelColorType.NeutralText);
             var AvailableUpdate = FetchKernelUpdates();
             if (AvailableUpdate is not null)
             {
                 if (!AvailableUpdate.Updated)
                 {
-                    SplashReport.ReportProgress(Translate.DoTranslation("Found new version: "), 10, ColorTools.ColTypes.ListEntry);
-                    SplashReport.ReportProgress(AvailableUpdate.UpdateVersion.ToString(), 10, ColorTools.ColTypes.ListValue);
+                    SplashReport.ReportProgress(Translate.DoTranslation("Found new version: "), 10, KernelColorType.ListEntry);
+                    SplashReport.ReportProgress(AvailableUpdate.UpdateVersion.ToString(), 10, KernelColorType.ListValue);
                     if (Flags.AutoDownloadUpdate)
                     {
                         NetworkTransfer.DownloadFile(AvailableUpdate.UpdateURL.ToString(), Path.Combine(Paths.ExecPath, "update.rar"));
-                        SplashReport.ReportProgress(Translate.DoTranslation("Downloaded the update successfully!"), 10, ColorTools.ColTypes.Success);
+                        SplashReport.ReportProgress(Translate.DoTranslation("Downloaded the update successfully!"), 10, KernelColorType.Success);
                     }
                     else
                     {
-                        SplashReport.ReportProgress(Translate.DoTranslation("You can download it at: "), 10, ColorTools.ColTypes.ListEntry);
-                        SplashReport.ReportProgress(AvailableUpdate.UpdateURL.ToString(), 10, ColorTools.ColTypes.ListValue);
+                        SplashReport.ReportProgress(Translate.DoTranslation("You can download it at: "), 10, KernelColorType.ListEntry);
+                        SplashReport.ReportProgress(AvailableUpdate.UpdateURL.ToString(), 10, KernelColorType.ListValue);
                     }
                 }
                 else
                 {
-                    SplashReport.ReportProgress(Translate.DoTranslation("You're up to date!"), 10, ColorTools.ColTypes.NeutralText);
+                    SplashReport.ReportProgress(Translate.DoTranslation("You're up to date!"), 10, KernelColorType.NeutralText);
                 }
             }
             else if (AvailableUpdate is null)

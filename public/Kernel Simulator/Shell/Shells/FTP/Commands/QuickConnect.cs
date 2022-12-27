@@ -43,7 +43,7 @@ namespace KS.Shell.Shells.FTP.Commands
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("You should disconnect from server before connecting to another server"), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("You should disconnect from server before connecting to another server"), true, KernelColorType.Error);
             }
         }
 

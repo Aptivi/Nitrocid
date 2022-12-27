@@ -148,7 +148,7 @@ namespace KS.Kernel
                     else
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Looks like you're bypassing the console size detection. Things may not work properly on small screens.") + CharManager.NewLine + 
-                                              Translate.DoTranslation("To have a better experience, resize your console window while still being on this screen. Press any key to continue..."), true, ColorTools.ColTypes.Warning);
+                                              Translate.DoTranslation("To have a better experience, resize your console window while still being on this screen. Press any key to continue..."), true, KernelColorType.Warning);
                         Input.DetectKeypress();
                         Flags.CheckingForConsoleSize = true;
                     }
@@ -254,7 +254,7 @@ namespace KS.Kernel
                         TextWriterColor.Write();
 
                     // Show current time
-                    SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Welcome!"), true, ColorTools.ColTypes.Stage);
+                    SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Welcome!"), true, KernelColorType.Stage);
                     if (Flags.ShowCurrentTimeBeforeLogin)
                         TimeDate.TimeDate.ShowCurrentTimes();
 
@@ -267,13 +267,13 @@ namespace KS.Kernel
 
 #if SPECIFIERDEV
                     TextWriterColor.Write();
-                    TextWriterColor.Write("* " + Translate.DoTranslation("You're running the development version of the kernel. While you can experience upcoming features which may exist in the final release, you may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible."), true, ColorTools.ColTypes.DevelopmentWarning);
+                    TextWriterColor.Write("* " + Translate.DoTranslation("You're running the development version of the kernel. While you can experience upcoming features which may exist in the final release, you may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible."), true, KernelColorType.DevelopmentWarning);
 #elif SPECIFIERRC
                     TextWriterColor.Write();
-                    TextWriterColor.Write("* " + Translate.DoTranslation("You're running the release candidate version of the kernel. While you can experience the final touches, you may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible."), true, ColorTools.ColTypes.DevelopmentWarning);
+                    TextWriterColor.Write("* " + Translate.DoTranslation("You're running the release candidate version of the kernel. While you can experience the final touches, you may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible."), true, KernelColorType.DevelopmentWarning);
 #elif SPECIFIERREL == false
                     TextWriterColor.Write();
-                    TextWriterColor.Write("* " + Translate.DoTranslation("We recommend against running this version of the kernel, because it is unsupported. If you have downloaded this kernel from unknown sources, this message may appear. Please download from our official downloads page."), true, ColorTools.ColTypes.DevelopmentWarning);
+                    TextWriterColor.Write("* " + Translate.DoTranslation("We recommend against running this version of the kernel, because it is unsupported. If you have downloaded this kernel from unknown sources, this message may appear. Please download from our official downloads page."), true, KernelColorType.DevelopmentWarning);
 #endif
 
                     // Initialize login prompt

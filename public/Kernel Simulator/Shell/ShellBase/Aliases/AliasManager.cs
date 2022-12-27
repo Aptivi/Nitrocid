@@ -134,7 +134,7 @@ namespace KS.Shell.ShellBase.Aliases
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "Failed to add alias. Stack trace written using WStkTrc(). {0}", ex.Message);
                         DebugWriter.WriteDebugStackTrace(ex);
-                        TextWriterColor.Write(ex.Message, true, ColorTools.ColTypes.Error);
+                        TextWriterColor.Write(ex.Message, true, KernelColorType.Error);
                     }
                 }
                 else if (mode == "rem")
@@ -150,13 +150,13 @@ namespace KS.Shell.ShellBase.Aliases
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "Failed to remove alias. Stack trace written using WStkTrc(). {0}", ex.Message);
                         DebugWriter.WriteDebugStackTrace(ex);
-                        TextWriterColor.Write(ex.Message, true, ColorTools.ColTypes.Error);
+                        TextWriterColor.Write(ex.Message, true, KernelColorType.Error);
                     }
                 }
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Mode {0} was neither add nor rem.", mode);
-                    TextWriterColor.Write(Translate.DoTranslation("Invalid mode {0}."), true, ColorTools.ColTypes.Error, mode);
+                    TextWriterColor.Write(Translate.DoTranslation("Invalid mode {0}."), true, KernelColorType.Error, mode);
                 }
 
                 // Save all aliases
@@ -165,7 +165,7 @@ namespace KS.Shell.ShellBase.Aliases
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Type {0} not found.", Type);
-                TextWriterColor.Write(Translate.DoTranslation("Invalid type {0}."), true, ColorTools.ColTypes.Error, Type);
+                TextWriterColor.Write(Translate.DoTranslation("Invalid type {0}."), true, KernelColorType.Error, Type);
             }
         }
 

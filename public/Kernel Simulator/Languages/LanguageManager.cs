@@ -186,12 +186,12 @@ namespace KS.Languages
                             else
                             {
                                 TextWriterColor.Write(Translate.DoTranslation("The language you've selected contains two variants. Select one:") + CharManager.NewLine);
-                                TextWriterColor.Write(" 1) " + Translate.DoTranslation("Transliterated version", lang), true, ColorTools.ColTypes.Option);
-                                TextWriterColor.Write(" 2) " + Translate.DoTranslation("Translated version", lang + "-T") + CharManager.NewLine, true, ColorTools.ColTypes.Option);
+                                TextWriterColor.Write(" 1) " + Translate.DoTranslation("Transliterated version", lang), true, KernelColorType.Option);
+                                TextWriterColor.Write(" 2) " + Translate.DoTranslation("Translated version", lang + "-T") + CharManager.NewLine, true, KernelColorType.Option);
                                 var LanguageSet = default(bool);
                                 while (!LanguageSet)
                                 {
-                                    TextWriterColor.Write(">> ", false, ColorTools.ColTypes.Input);
+                                    TextWriterColor.Write(">> ", false, KernelColorType.Input);
                                     int Answer;
                                     string AnswerString = Input.ReadLine(false);
                                     if (int.TryParse(AnswerString, out Answer))
@@ -210,14 +210,14 @@ namespace KS.Languages
 
                                             default:
                                                 {
-                                                    TextWriterColor.Write(Translate.DoTranslation("Invalid choice. Try again."), true, ColorTools.ColTypes.Error);
+                                                    TextWriterColor.Write(Translate.DoTranslation("Invalid choice. Try again."), true, KernelColorType.Error);
                                                     break;
                                                 }
                                         }
                                     }
                                     else
                                     {
-                                        TextWriterColor.Write(Translate.DoTranslation("The answer must be numeric."), true, ColorTools.ColTypes.Error);
+                                        TextWriterColor.Write(Translate.DoTranslation("The answer must be numeric."), true, KernelColorType.Error);
                                     }
                                 }
                             }
@@ -228,7 +228,7 @@ namespace KS.Languages
                 // Gangsta language contains strong language, so warn the user before setting
                 if (lang == "pla")
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("The gangsta language contains strong language that may make you feel uncomfortable reading it. Are you sure that you want to set the language anyways?"), true, ColorTools.ColTypes.Warning);
+                    TextWriterColor.Write(Translate.DoTranslation("The gangsta language contains strong language that may make you feel uncomfortable reading it. Are you sure that you want to set the language anyways?"), true, KernelColorType.Warning);
                     if (Input.DetectKeypress().Key != ConsoleKey.Y)
                     {
                         return;
@@ -239,17 +239,17 @@ namespace KS.Languages
                 TextWriterColor.Write(Translate.DoTranslation("Changing from: {0} to {1}..."), CurrentLanguage.ThreeLetterLanguageName, lang);
                 if (!SetLang(lang))
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Failed to set language."), true, ColorTools.ColTypes.Error);
+                    TextWriterColor.Write(Translate.DoTranslation("Failed to set language."), true, KernelColorType.Error);
                 }
                 if (NotifyCodepageError)
                 {
                     NotifyCodepageError = false;
-                    TextWriterColor.Write(Translate.DoTranslation("Unable to set codepage. The language may not display properly."), true, ColorTools.ColTypes.Error);
+                    TextWriterColor.Write(Translate.DoTranslation("Unable to set codepage. The language may not display properly."), true, KernelColorType.Error);
                 }
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Invalid language") + " {0}", true, ColorTools.ColTypes.Error, lang);
+                TextWriterColor.Write(Translate.DoTranslation("Invalid language") + " {0}", true, KernelColorType.Error, lang);
             }
         }
 

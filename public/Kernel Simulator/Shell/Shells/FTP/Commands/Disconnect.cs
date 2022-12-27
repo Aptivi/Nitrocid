@@ -54,7 +54,7 @@ namespace KS.Shell.Shells.FTP.Commands
                 FTPShellCommon.FtpConnected = false;
                 FTPShellCommon.ClientFTP.Config.DisconnectWithQuit = ListSwitchesOnly.Contains("-f");
                 FTPShellCommon.ClientFTP.Disconnect();
-                TextWriterColor.Write(Translate.DoTranslation("Disconnected from {0}"), true, ColorTools.ColTypes.Success, FTPShellCommon.FtpSite);
+                TextWriterColor.Write(Translate.DoTranslation("Disconnected from {0}"), true, KernelColorType.Success, FTPShellCommon.FtpSite);
 
                 // Clean up everything
                 FTPShellCommon.FtpSite = "";
@@ -64,15 +64,15 @@ namespace KS.Shell.Shells.FTP.Commands
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("You haven't connected to any server yet"), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("You haven't connected to any server yet"), true, KernelColorType.Error);
             }
         }
 
         public override void HelpHelper()
         {
             TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"));
-            TextWriterColor.Write("  -f: ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Disconnects from server disgracefully"), true, ColorTools.ColTypes.ListValue);
+            TextWriterColor.Write("  -f: ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Translate.DoTranslation("Disconnects from server disgracefully"), true, KernelColorType.ListValue);
         }
 
     }

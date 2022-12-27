@@ -49,7 +49,7 @@ namespace KS.Shell.Shells.Admin.Commands
                 }
                 catch (Exception ex)
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Debug log removal failed: {0}"), true, ColorTools.ColTypes.Error, ex.Message);
+                    TextWriterColor.Write(Translate.DoTranslation("Debug log removal failed: {0}"), true, KernelColorType.Error, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }

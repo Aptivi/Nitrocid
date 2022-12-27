@@ -194,7 +194,7 @@ namespace KS.Kernel
             // Some information
             if (Flags.ShowAppInfoOnBoot & !Flags.EnableSplash)
             {
-                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Kernel environment information"), true, ColorTools.ColTypes.Stage);
+                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Kernel environment information"), true, KernelColorType.Stage);
                 TextWriterColor.Write("  OS: " +    Translate.DoTranslation("Running on {0}"), Environment.OSVersion.ToString());
                 TextWriterColor.Write("  KS: " +    Translate.DoTranslation("Running from GRILO?") + $" {KernelPlatform.IsRunningFromGrilo()}");
                 TextWriterColor.Write("  KSAPI: " + $"v{KernelApiVersion}");
@@ -202,7 +202,7 @@ namespace KS.Kernel
 
             // Show license
             TextWriterColor.Write();
-            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("License information"), true, ColorTools.ColTypes.Stage);
+            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("License information"), true, KernelColorType.Stage);
             WelcomeMessage.WriteLicense();
 
             // Load splash
@@ -262,7 +262,7 @@ namespace KS.Kernel
                 if (!Flags.EnableSplash & !Flags.QuietKernel)
                 {
                     TextWriterColor.Write();
-                    SeparatorWriterColor.WriteSeparator(StageText, false, ColorTools.ColTypes.Stage);
+                    SeparatorWriterColor.WriteSeparator(StageText, false, KernelColorType.Stage);
                 }
                 DebugWriter.WriteDebug(DebugLevel.I, $"- Kernel stage {StageNumber} | Text: {StageText}");
             }

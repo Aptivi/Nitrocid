@@ -40,24 +40,24 @@ namespace KS.Shell.Shells.UESH.Commands
             // Check to see if we have the numeric arguments
             if (!int.TryParse(ListArgsOnly[0], out R))
             {
-                TextWriterColor.Write(Translate.DoTranslation("The red color level must be numeric."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("The red color level must be numeric."), true, KernelColorType.Error);
                 return;
             }
             if (!int.TryParse(ListArgsOnly[1], out G))
             {
-                TextWriterColor.Write(Translate.DoTranslation("The green color level must be numeric."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("The green color level must be numeric."), true, KernelColorType.Error);
                 return;
             }
             if (!int.TryParse(ListArgsOnly[2], out B))
             {
-                TextWriterColor.Write(Translate.DoTranslation("The blue color level must be numeric."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("The blue color level must be numeric."), true, KernelColorType.Error);
                 return;
             }
 
             // Do the job
             Hex = ColorTools.ConvertFromRGBToHex(R, G, B);
-            TextWriterColor.Write("- " + Translate.DoTranslation("Color hexadecimal representation:") + " ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Hex, true, ColorTools.ColTypes.ListValue);
+            TextWriterColor.Write("- " + Translate.DoTranslation("Color hexadecimal representation:") + " ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Hex, true, KernelColorType.ListValue);
         }
 
     }

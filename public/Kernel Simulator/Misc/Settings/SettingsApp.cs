@@ -117,13 +117,13 @@ namespace KS.Misc.Settings
                     DebugWriter.WriteDebug(DebugLevel.I, "Saving settings...");
                     try
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("Saving settings..."), true, ColorTools.ColTypes.Progress);
+                        TextWriterColor.Write(Translate.DoTranslation("Saving settings..."), true, KernelColorType.Progress);
                         Config.CreateConfig();
                         CustomSaverTools.SaveCustomSaverSettings();
                     }
                     catch (Exception ex)
                     {
-                        TextWriterColor.Write(ex.Message, true, ColorTools.ColTypes.Error);
+                        TextWriterColor.Write(ex.Message, true, KernelColorType.Error);
                         DebugWriter.WriteDebugStackTrace(ex);
                         Input.DetectKeypress();
                     }
@@ -131,7 +131,7 @@ namespace KS.Misc.Settings
                 else if (Answer == MaxSections + 3)
                 {
                     // The selected answer is "Save Settings As"
-                    TextWriterColor.Write(Translate.DoTranslation("Where do you want to save the current kernel settings?"), true, ColorTools.ColTypes.Question);
+                    TextWriterColor.Write(Translate.DoTranslation("Where do you want to save the current kernel settings?"), true, KernelColorType.Question);
                     string Location = Filesystem.NeutralizePath(Input.ReadLine());
                     if (!Checking.FileExists(Location))
                     {
@@ -141,21 +141,21 @@ namespace KS.Misc.Settings
                         }
                         catch (Exception ex)
                         {
-                            TextWriterColor.Write(ex.Message, true, ColorTools.ColTypes.Error);
+                            TextWriterColor.Write(ex.Message, true, KernelColorType.Error);
                             DebugWriter.WriteDebugStackTrace(ex);
                             Input.DetectKeypress();
                         }
                     }
                     else
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("Can't save kernel settings on top of existing file."), true, ColorTools.ColTypes.Error);
+                        TextWriterColor.Write(Translate.DoTranslation("Can't save kernel settings on top of existing file."), true, KernelColorType.Error);
                         Input.DetectKeypress();
                     }
                 }
                 else if (Answer == MaxSections + 4)
                 {
                     // The selected answer is "Load Settings From"
-                    TextWriterColor.Write(Translate.DoTranslation("Where do you want to load the current kernel settings from?"), true, ColorTools.ColTypes.Question);
+                    TextWriterColor.Write(Translate.DoTranslation("Where do you want to load the current kernel settings from?"), true, KernelColorType.Question);
                     string Location = Filesystem.NeutralizePath(Input.ReadLine());
                     if (Checking.FileExists(Location))
                     {
@@ -166,14 +166,14 @@ namespace KS.Misc.Settings
                         }
                         catch (Exception ex)
                         {
-                            TextWriterColor.Write(ex.Message, true, ColorTools.ColTypes.Error);
+                            TextWriterColor.Write(ex.Message, true, KernelColorType.Error);
                             DebugWriter.WriteDebugStackTrace(ex);
                             Input.DetectKeypress();
                         }
                     }
                     else
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("File not found."), true, ColorTools.ColTypes.Error);
+                        TextWriterColor.Write(Translate.DoTranslation("File not found."), true, KernelColorType.Error);
                         Input.DetectKeypress();
                     }
                 }
@@ -188,8 +188,8 @@ namespace KS.Misc.Settings
                 {
                     // Invalid selection
                     DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
-                    TextWriterColor.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, ColorTools.ColTypes.Error, Answer);
-                    TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
+                    TextWriterColor.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, KernelColorType.Error, Answer);
+                    TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
                     Input.DetectKeypress();
                 }
             }
@@ -248,7 +248,7 @@ namespace KS.Misc.Settings
                         }
 
                         // Get the plain sequence from the color
-                        if (CurrentValue is KeyValuePair<ColorTools.ColTypes, Color> color)
+                        if (CurrentValue is KeyValuePair<KernelColorType, Color> color)
                             CurrentValue = color.Value.PlainSequence;
 
                         // Get the language name
@@ -304,8 +304,8 @@ namespace KS.Misc.Settings
                     else
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
-                        TextWriterColor.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, ColorTools.ColTypes.Error, Answer);
-                        TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
+                        TextWriterColor.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, KernelColorType.Error, Answer);
+                        TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
                         Input.DetectKeypress();
                     }
                 }
@@ -315,9 +315,9 @@ namespace KS.Misc.Settings
                 ConsoleBase.ConsoleWrapper.Clear();
                 DebugWriter.WriteDebug(DebugLevel.I, "Error trying to open section: {0}", ex.Message);
                 string finalSection = Translate.DoTranslation("You're Lost!");
-                TextWriterColor.Write(finalSection + CharManager.NewLine + "=".Repeat(finalSection.Length) + CharManager.NewLine + Translate.DoTranslation("Invalid section entered. Please go back."), true, ColorTools.ColTypes.Error);
-                TextWriterColor.Write(Translate.DoTranslation("If you're sure that you've opened the right section, check this message out:"), true, ColorTools.ColTypes.Error);
-                TextWriterColor.Write(ex.Message, true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(finalSection + CharManager.NewLine + "=".Repeat(finalSection.Length) + CharManager.NewLine + Translate.DoTranslation("Invalid section entered. Please go back."), true, KernelColorType.Error);
+                TextWriterColor.Write(Translate.DoTranslation("If you're sure that you've opened the right section, check this message out:"), true, KernelColorType.Error);
+                TextWriterColor.Write(ex.Message, true, KernelColorType.Error);
                 Input.DetectKeypress();
             }
         }
@@ -420,22 +420,22 @@ namespace KS.Misc.Settings
                             ConsoleBase.ConsoleWrapper.Clear();
 
                             // Make an introductory banner
-                            TextWriterColor.Write(finalSection + CharManager.NewLine + "=".Repeat(finalSection.Length) + CharManager.NewLine + Translate.DoTranslation(KeyDescription), true, ColorTools.ColTypes.Question);
+                            TextWriterColor.Write(finalSection + CharManager.NewLine + "=".Repeat(finalSection.Length) + CharManager.NewLine + Translate.DoTranslation(KeyDescription), true, KernelColorType.Question);
 
                             // Write the prompt
-                            TextWriterColor.Write("[{0}] > ", false, ColorTools.ColTypes.Input, KeyDefaultValue);
+                            TextWriterColor.Write("[{0}] > ", false, KernelColorType.Input, KeyDefaultValue);
 
                             // Get the target list from the method defined in the manifest (SelectionFunctionName)
                             if (KeyType == SettingsKeyType.SList)
                             {
                                 TargetList = (IEnumerable<object>)MethodManager.GetMethod(ListFunctionName).Invoke(ListFunctionType, null);
-                                TextWriterColor.Write(Translate.DoTranslation("Current items:"), true, ColorTools.ColTypes.ListTitle);
+                                TextWriterColor.Write(Translate.DoTranslation("Current items:"), true, KernelColorType.ListTitle);
                                 ListWriterColor.WriteList(TargetList);
                                 TextWriterColor.Write();
-                                TextWriterColor.Write(CharManager.NewLine + " q) " + Translate.DoTranslation("Save Changes...") + CharManager.NewLine, true, ColorTools.ColTypes.Option);
+                                TextWriterColor.Write(CharManager.NewLine + " q) " + Translate.DoTranslation("Save Changes...") + CharManager.NewLine, true, KernelColorType.Option);
 
                                 // Prompt the user and parse the answer
-                                TextWriterColor.Write("> ", false, ColorTools.ColTypes.Input);
+                                TextWriterColor.Write("> ", false, KernelColorType.Input);
                                 while (AnswerString != "q")
                                 {
                                     AnswerString = Input.ReadLine();
@@ -458,7 +458,7 @@ namespace KS.Misc.Settings
                                             TargetList = TargetList.Except(DeletedItems);
                                         }
                                         DebugWriter.WriteDebug(DebugLevel.I, "Added answer {0} to list.", AnswerString);
-                                        TextWriterColor.Write("> ", false, ColorTools.ColTypes.Input);
+                                        TextWriterColor.Write("> ", false, KernelColorType.Input);
                                     }
                                 }
                             }
@@ -536,7 +536,7 @@ namespace KS.Misc.Settings
                             Color keyColorValue = Color.Empty;
 
                             // Check to see if the color is contained in the dictionary
-                            if (KeyDefaultValue is KeyValuePair<ColorTools.ColTypes, Color> keyColorValuePair)
+                            if (KeyDefaultValue is KeyValuePair<KernelColorType, Color> keyColorValuePair)
                                 keyColorValue = keyColorValuePair.Value;
                             else if (KeyDefaultValue is string keyColorString)
                                 keyColorValue = new Color(keyColorString);
@@ -568,7 +568,7 @@ namespace KS.Misc.Settings
                                 ProgressBarColor.WriteProgress(100d * (CurrentValue / (double)IntSliderMaximumValue), 4, ConsoleBase.ConsoleWrapper.WindowHeight - 4);
 
                                 // Show the current value
-                                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Current value:") + " {0} / {1} - {2}" + Convert.ToString(CharManager.GetEsc()) + "[0K", 5, ConsoleBase.ConsoleWrapper.WindowHeight - 5, false, ColorTools.ColTypes.NeutralText, CurrentValue, IntSliderMinimumValue, IntSliderMaximumValue);
+                                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Current value:") + " {0} / {1} - {2}" + Convert.ToString(CharManager.GetEsc()) + "[0K", 5, ConsoleBase.ConsoleWrapper.WindowHeight - 5, false, KernelColorType.NeutralText, CurrentValue, IntSliderMinimumValue, IntSliderMaximumValue);
 
                                 // Parse the user input
                                 PressedKey = Input.DetectKeypress().Key;
@@ -716,23 +716,23 @@ namespace KS.Misc.Settings
                                         else
                                         {
                                             DebugWriter.WriteDebug(DebugLevel.W, "Answer is not valid.");
-                                            TextWriterColor.Write(Translate.DoTranslation("The answer may not exceed the entries shown."), true, ColorTools.ColTypes.Error);
-                                            TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
+                                            TextWriterColor.Write(Translate.DoTranslation("The answer may not exceed the entries shown."), true, KernelColorType.Error);
+                                            TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
                                             Input.DetectKeypress();
                                         }
                                     }
                                     else if (AnswerInt == 0 & !SelectionEnumZeroBased)
                                     {
                                         DebugWriter.WriteDebug(DebugLevel.W, "Zero is not allowed.");
-                                        TextWriterColor.Write(Translate.DoTranslation("The answer may not be zero."), true, ColorTools.ColTypes.Error);
-                                        TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
+                                        TextWriterColor.Write(Translate.DoTranslation("The answer may not be zero."), true, KernelColorType.Error);
+                                        TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
                                         Input.DetectKeypress();
                                     }
                                     else
                                     {
                                         DebugWriter.WriteDebug(DebugLevel.W, "Negative values are disallowed.");
-                                        TextWriterColor.Write(Translate.DoTranslation("The answer may not be negative."), true, ColorTools.ColTypes.Error);
-                                        TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
+                                        TextWriterColor.Write(Translate.DoTranslation("The answer may not be negative."), true, KernelColorType.Error);
+                                        TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
                                         Input.DetectKeypress();
                                     }
 
@@ -762,8 +762,8 @@ namespace KS.Misc.Settings
                                     else
                                     {
                                         DebugWriter.WriteDebug(DebugLevel.W, "Negative values are disallowed.");
-                                        TextWriterColor.Write(Translate.DoTranslation("The answer may not be negative."), true, ColorTools.ColTypes.Error);
-                                        TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
+                                        TextWriterColor.Write(Translate.DoTranslation("The answer may not be negative."), true, KernelColorType.Error);
+                                        TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
                                         Input.DetectKeypress();
                                     }
 
@@ -819,8 +819,8 @@ namespace KS.Misc.Settings
                                     else
                                     {
                                         DebugWriter.WriteDebug(DebugLevel.W, "Negative values are disallowed.");
-                                        TextWriterColor.Write(Translate.DoTranslation("The answer may not be negative."), true, ColorTools.ColTypes.Error);
-                                        TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
+                                        TextWriterColor.Write(Translate.DoTranslation("The answer may not be negative."), true, KernelColorType.Error);
+                                        TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
                                         Input.DetectKeypress();
                                     }
 
@@ -904,7 +904,7 @@ namespace KS.Misc.Settings
                                     // KeyVar is not always KernelColors, which is a dictionary. This applies to standard settings. Everything else should
                                     // be either the Color type or a String type.
                                     if (FieldManager.CheckField(KeyVar, KeyIsInternal) &&
-                                        FieldManager.GetValue(KeyVar, KeyIsInternal) is Dictionary<ColorTools.ColTypes, Color> colors)
+                                        FieldManager.GetValue(KeyVar, KeyIsInternal) is Dictionary<KernelColorType, Color> colors)
                                     {
                                         var colorTypeOnDict = colors.ElementAt(KeyEnumerableIndex).Key;
                                         colors[colorTypeOnDict] = new Color(ColorValue.ToString());
@@ -943,8 +943,8 @@ namespace KS.Misc.Settings
                             default:
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.W, "Answer is not valid.");
-                                    TextWriterColor.Write(Translate.DoTranslation("The answer is invalid. Check to make sure that the answer is numeric for config entries that need numbers as answers."), true, ColorTools.ColTypes.Error);
-                                    TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
+                                    TextWriterColor.Write(Translate.DoTranslation("The answer is invalid. Check to make sure that the answer is numeric for config entries that need numbers as answers."), true, KernelColorType.Error);
+                                    TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
                                     Input.DetectKeypress();
                                     break;
                                 }
@@ -958,9 +958,9 @@ namespace KS.Misc.Settings
                 DebugWriter.WriteDebug(DebugLevel.I, "Error trying to open section: {0}", ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 string finalSection = Translate.DoTranslation("You're Lost!");
-                TextWriterColor.Write(finalSection + CharManager.NewLine + "=".Repeat(finalSection.Length) + CharManager.NewLine + Translate.DoTranslation("Invalid section entered. Please go back."), true, ColorTools.ColTypes.Error);
-                TextWriterColor.Write(Translate.DoTranslation("If you're sure that you've opened the right section, check this message out:"), true, ColorTools.ColTypes.Error);
-                TextWriterColor.Write(ex.Message, true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(finalSection + CharManager.NewLine + "=".Repeat(finalSection.Length) + CharManager.NewLine + Translate.DoTranslation("Invalid section entered. Please go back."), true, KernelColorType.Error);
+                TextWriterColor.Write(Translate.DoTranslation("If you're sure that you've opened the right section, check this message out:"), true, KernelColorType.Error);
+                TextWriterColor.Write(ex.Message, true, KernelColorType.Error);
                 Input.DetectKeypress();
             }
         }
@@ -976,7 +976,7 @@ namespace KS.Misc.Settings
             // Prompt the user
             TextWriterColor.Write(Translate.DoTranslation("Write what do you want to search for."));
             DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for searching...");
-            TextWriterColor.Write(">> ", false, ColorTools.ColTypes.Input);
+            TextWriterColor.Write(">> ", false, KernelColorType.Input);
             string SearchFor = Input.ReadLine();
 
             // Search for the setting
@@ -1002,7 +1002,7 @@ namespace KS.Misc.Settings
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Nothing is found. Make sure that you've written the setting correctly."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("Nothing is found. Make sure that you've written the setting correctly."), true, KernelColorType.Error);
                 Input.DetectKeypress();
             }
         }

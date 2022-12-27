@@ -43,7 +43,7 @@ namespace KS.Shell.Shells.Hex.Commands
                 byte ByteFrom = Convert.ToByte(ListArgsOnly[0], 16);
                 byte ByteWith = Convert.ToByte(ListArgsOnly[1], 16);
                 HexEditTools.HexEdit_Replace(ByteFrom, ByteWith);
-                TextWriterColor.Write(Translate.DoTranslation("Byte replaced."), true, ColorTools.ColTypes.Success);
+                TextWriterColor.Write(Translate.DoTranslation("Byte replaced."), true, KernelColorType.Success);
             }
             else if (ListArgsOnly.Length == 3)
             {
@@ -54,11 +54,11 @@ namespace KS.Shell.Shells.Hex.Commands
                         byte ByteFrom = Convert.ToByte(ListArgsOnly[0], 16);
                         byte ByteWith = Convert.ToByte(ListArgsOnly[1], 16);
                         HexEditTools.HexEdit_Replace(ByteFrom, ByteWith, Convert.ToInt64(ListArgsOnly[2]));
-                        TextWriterColor.Write(Translate.DoTranslation("Byte replaced."), true, ColorTools.ColTypes.Success);
+                        TextWriterColor.Write(Translate.DoTranslation("Byte replaced."), true, KernelColorType.Success);
                     }
                     else
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("The specified byte number may not be larger than the file size."), true, ColorTools.ColTypes.Error);
+                        TextWriterColor.Write(Translate.DoTranslation("The specified byte number may not be larger than the file size."), true, KernelColorType.Error);
                     }
                 }
             }
@@ -74,11 +74,11 @@ namespace KS.Shell.Shells.Hex.Commands
                         long ByteNumberEnd = Convert.ToInt64(ListArgsOnly[3]);
                         ByteNumberStart.SwapIfSourceLarger(ref ByteNumberEnd);
                         HexEditTools.HexEdit_Replace(ByteFrom, ByteWith, ByteNumberStart, ByteNumberEnd);
-                        TextWriterColor.Write(Translate.DoTranslation("Byte replaced."), true, ColorTools.ColTypes.Success);
+                        TextWriterColor.Write(Translate.DoTranslation("Byte replaced."), true, KernelColorType.Success);
                     }
                     else
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("The specified byte number may not be larger than the file size."), true, ColorTools.ColTypes.Error);
+                        TextWriterColor.Write(Translate.DoTranslation("The specified byte number may not be larger than the file size."), true, KernelColorType.Error);
                     }
                 }
             }

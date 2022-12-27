@@ -37,11 +37,11 @@ namespace KS.Shell.Shells.Mail.Commands
         {
             if (MailManager.MailMoveAllBySender(ListArgsOnly[0], ListArgsOnly[1]))
             {
-                TextWriterColor.Write(Translate.DoTranslation("All mail made by {0} are moved successfully."), true, ColorTools.ColTypes.Success, ListArgsOnly[0]);
+                TextWriterColor.Write(Translate.DoTranslation("All mail made by {0} are moved successfully."), true, KernelColorType.Success, ListArgsOnly[0]);
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Failed to move all mail made by {0}."), true, ColorTools.ColTypes.Error, ListArgsOnly[0]);
+                TextWriterColor.Write(Translate.DoTranslation("Failed to move all mail made by {0}."), true, KernelColorType.Error, ListArgsOnly[0]);
             }
         }
 

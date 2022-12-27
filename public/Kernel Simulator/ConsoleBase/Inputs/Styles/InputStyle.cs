@@ -40,8 +40,8 @@ namespace KS.ConsoleBase.Inputs.Styles
                 DebugWriter.WriteDebug(DebugLevel.I, "Question: {0}", Question);
 
                 // Ask a question
-                TextWriterColor.Write(Question, false, ColorTools.ColTypes.Question);
-                ColorTools.SetConsoleColor(ColorTools.ColTypes.Input);
+                TextWriterColor.Write(Question, false, KernelColorType.Question);
+                ColorTools.SetConsoleColor(KernelColorType.Input);
 
                 // Wait for an answer
                 Answer = Input.ReadLine();

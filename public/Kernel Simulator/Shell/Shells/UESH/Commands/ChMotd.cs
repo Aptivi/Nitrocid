@@ -47,7 +47,7 @@ namespace KS.Shell.Shells.UESH.Commands
             {
                 if (string.IsNullOrEmpty(StringArgs))
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Blank message of the day."), true, ColorTools.ColTypes.Error);
+                    TextWriterColor.Write(Translate.DoTranslation("Blank message of the day."), true, KernelColorType.Error);
                 }
                 else
                 {

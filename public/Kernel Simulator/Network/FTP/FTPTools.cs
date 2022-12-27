@@ -74,11 +74,11 @@ namespace KS.Network.FTP
             // Prompt for password
             if (!string.IsNullOrWhiteSpace(FTPShellCommon.FtpPassPromptStyle))
             {
-                TextWriterColor.Write(PlaceParse.ProbePlaces(FTPShellCommon.FtpPassPromptStyle), false, ColorTools.ColTypes.Input, user);
+                TextWriterColor.Write(PlaceParse.ProbePlaces(FTPShellCommon.FtpPassPromptStyle), false, KernelColorType.Input, user);
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Password for {0}: "), false, ColorTools.ColTypes.Input, user);
+                TextWriterColor.Write(Translate.DoTranslation("Password for {0}: "), false, KernelColorType.Input, user);
             }
 
             // Get input
@@ -99,7 +99,7 @@ namespace KS.Network.FTP
         {
             if (FTPShellCommon.FtpConnected == true)
             {
-                TextWriterColor.Write(Translate.DoTranslation("You should disconnect from server before connecting to another server"), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("You should disconnect from server before connecting to another server"), true, KernelColorType.Error);
             }
             else
             {
@@ -138,11 +138,11 @@ namespace KS.Network.FTP
                     // Prompt for username
                     if (!string.IsNullOrWhiteSpace(FTPShellCommon.FtpUserPromptStyle))
                     {
-                        TextWriterColor.Write(PlaceParse.ProbePlaces(FTPShellCommon.FtpUserPromptStyle), false, ColorTools.ColTypes.Input, address);
+                        TextWriterColor.Write(PlaceParse.ProbePlaces(FTPShellCommon.FtpUserPromptStyle), false, KernelColorType.Input, address);
                     }
                     else
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("Username for {0}: "), false, ColorTools.ColTypes.Input, address);
+                        TextWriterColor.Write(Translate.DoTranslation("Username for {0}: "), false, KernelColorType.Input, address);
                     }
                     FTPShellCommon.FtpUser = Input.ReadLine();
                     if (string.IsNullOrEmpty(FTPShellCommon.FtpUser))
@@ -158,7 +158,7 @@ namespace KS.Network.FTP
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Error connecting to {0}: {1}", address, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriterColor.Write(Translate.DoTranslation("Error when trying to connect to {0}: {1}"), true, ColorTools.ColTypes.Error, address, ex.Message);
+                    TextWriterColor.Write(Translate.DoTranslation("Error when trying to connect to {0}: {1}"), true, KernelColorType.Error, address, ex.Message);
                 }
             }
         }
@@ -199,7 +199,7 @@ namespace KS.Network.FTP
                     TableColor.WriteTable(ProfHeaders, ProfData, 2);
                     while (!profanswered)
                     {
-                        TextWriterColor.Write(CharManager.NewLine + ">> ", false, ColorTools.ColTypes.Input);
+                        TextWriterColor.Write(CharManager.NewLine + ">> ", false, KernelColorType.Input);
                         profanswer = Input.ReadLine();
                         DebugWriter.WriteDebug(DebugLevel.I, "Selection: {0}", profanswer);
                         if (StringQuery.IsStringNumeric(profanswer))
@@ -214,7 +214,7 @@ namespace KS.Network.FTP
                             catch (Exception ex)
                             {
                                 DebugWriter.WriteDebug(DebugLevel.I, "Profile invalid");
-                                TextWriterColor.Write(Translate.DoTranslation("Invalid profile selection.") + CharManager.NewLine, true, ColorTools.ColTypes.Error);
+                                TextWriterColor.Write(Translate.DoTranslation("Invalid profile selection.") + CharManager.NewLine, true, KernelColorType.Error);
                                 DebugWriter.WriteDebugStackTrace(ex);
                             }
                         }
@@ -227,7 +227,7 @@ namespace KS.Network.FTP
             }
             else // Failed trying to get profiles
             {
-                TextWriterColor.Write(Translate.DoTranslation("Error when trying to connect to {0}: Connection timeout or lost connection"), true, ColorTools.ColTypes.Error, FTPShellCommon.ClientFTP.Host);
+                TextWriterColor.Write(Translate.DoTranslation("Error when trying to connect to {0}: Connection timeout or lost connection"), true, KernelColorType.Error, FTPShellCommon.ClientFTP.Host);
                 return;
             }
 
@@ -237,7 +237,7 @@ namespace KS.Network.FTP
             FTPShellCommon.ClientFTP.Connect(profsel);
 
             // Show that it's connected
-            TextWriterColor.Write(Translate.DoTranslation("Connected to {0}"), true, ColorTools.ColTypes.Success, FTPShellCommon.ClientFTP.Host);
+            TextWriterColor.Write(Translate.DoTranslation("Connected to {0}"), true, KernelColorType.Success, FTPShellCommon.ClientFTP.Host);
             DebugWriter.WriteDebug(DebugLevel.I, "Connected.");
             FTPShellCommon.FtpConnected = true;
 
@@ -246,11 +246,11 @@ namespace KS.Network.FTP
             {
                 if (FTPShellCommon.ClientFTP.FileExists("welcome.msg"))
                 {
-                    TextWriterColor.Write(FTPTransfer.FTPDownloadToString("welcome.msg"), true, ColorTools.ColTypes.Banner);
+                    TextWriterColor.Write(FTPTransfer.FTPDownloadToString("welcome.msg"), true, KernelColorType.Banner);
                 }
                 else if (FTPShellCommon.ClientFTP.FileExists(".message"))
                 {
-                    TextWriterColor.Write(FTPTransfer.FTPDownloadToString(".message"), true, ColorTools.ColTypes.Banner);
+                    TextWriterColor.Write(FTPTransfer.FTPDownloadToString(".message"), true, KernelColorType.Banner);
                 }
             }
 
@@ -287,8 +287,8 @@ namespace KS.Network.FTP
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.W, $"Certificate error is {e.PolicyErrors}");
-                TextWriterColor.Write(Translate.DoTranslation("During certificate validation, there are certificate errors. It might be the first time you've connected to the server or the certificate might have been expired. Here's an error:"), true, ColorTools.ColTypes.Error);
-                TextWriterColor.Write("- {0}", true, ColorTools.ColTypes.Error, e.PolicyErrors.ToString());
+                TextWriterColor.Write(Translate.DoTranslation("During certificate validation, there are certificate errors. It might be the first time you've connected to the server or the certificate might have been expired. Here's an error:"), true, KernelColorType.Error);
+                TextWriterColor.Write("- {0}", true, KernelColorType.Error, e.PolicyErrors.ToString());
                 if (FTPShellCommon.FtpAlwaysAcceptInvalidCerts)
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Certificate accepted, although there are errors.");
@@ -300,8 +300,8 @@ namespace KS.Network.FTP
                     string Answer = "";
                     while (!(Answer.ToLower() == "y" | Answer.ToLower() == "n"))
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("Are you sure that you want to connect?") + " (y/n) ", false, ColorTools.ColTypes.Question);
-                        ColorTools.SetConsoleColor(ColorTools.GetColor(ColorTools.ColTypes.Input));
+                        TextWriterColor.Write(Translate.DoTranslation("Are you sure that you want to connect?") + " (y/n) ", false, KernelColorType.Question);
+                        ColorTools.SetConsoleColor(ColorTools.GetColor(KernelColorType.Input));
                         Answer = Convert.ToString(Input.DetectKeypress().KeyChar);
                         TextWriterColor.Write();
                         DebugWriter.WriteDebug(DebugLevel.I, $"Answer is {Answer}");
@@ -314,7 +314,7 @@ namespace KS.Network.FTP
                         else if (Answer.ToLower() != "n")
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "Invalid answer.");
-                            TextWriterColor.Write(Translate.DoTranslation("Invalid answer. Please try again."), true, ColorTools.ColTypes.Error);
+                            TextWriterColor.Write(Translate.DoTranslation("Invalid answer. Please try again."), true, KernelColorType.Error);
                         }
                     }
                 }

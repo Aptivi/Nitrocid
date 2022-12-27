@@ -63,11 +63,11 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             if (ListSwitchesOnly.Contains("-list"))
             {
-                TextWriterColor.Write(Translate.DoTranslation("Available languages:"), true, ColorTools.ColTypes.ListTitle);
+                TextWriterColor.Write(Translate.DoTranslation("Available languages:"), true, KernelColorType.ListTitle);
                 foreach (string Language in LanguageManager.Languages.Keys)
                 {
-                    TextWriterColor.Write("- {0}: ", false, ColorTools.ColTypes.ListEntry, Language);
-                    TextWriterColor.Write(LanguageManager.Languages[Language].FullLanguageName, true, ColorTools.ColTypes.ListValue);
+                    TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, Language);
+                    TextWriterColor.Write(LanguageManager.Languages[Language].FullLanguageName, true, KernelColorType.ListValue);
                 }
             }
             else
@@ -86,14 +86,14 @@ namespace KS.Shell.Shells.UESH.Commands
         public override void HelpHelper()
         {
             TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"));
-            TextWriterColor.Write("  -alwaystransliterated: ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Always use the transliterated version"), true, ColorTools.ColTypes.ListValue);
-            TextWriterColor.Write("  -alwaystranslated: ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Always use the translated version"), true, ColorTools.ColTypes.ListValue);
-            TextWriterColor.Write("  -force: ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Force switching language"), true, ColorTools.ColTypes.ListValue);
-            TextWriterColor.Write("  -list: ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Lists available languages"), true, ColorTools.ColTypes.ListValue);
+            TextWriterColor.Write("  -alwaystransliterated: ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Translate.DoTranslation("Always use the transliterated version"), true, KernelColorType.ListValue);
+            TextWriterColor.Write("  -alwaystranslated: ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Translate.DoTranslation("Always use the translated version"), true, KernelColorType.ListValue);
+            TextWriterColor.Write("  -force: ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Translate.DoTranslation("Force switching language"), true, KernelColorType.ListValue);
+            TextWriterColor.Write("  -list: ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Translate.DoTranslation("Lists available languages"), true, KernelColorType.ListValue);
         }
 
     }

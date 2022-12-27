@@ -49,7 +49,7 @@ namespace KS.Shell.Prompts.Presets.SFTP
                 PresetStringBuilder.Append("[");
 
                 // SFTP user
-                PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.UserNameShell).VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
                 PresetStringBuilder.AppendFormat("{0}", SFTPShellCommon.SFTPUser);
 
                 // "at" sign
@@ -57,20 +57,20 @@ namespace KS.Shell.Prompts.Presets.SFTP
                 PresetStringBuilder.Append("@");
 
                 // SFTP site
-                PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.HostNameShell).VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.HostNameShell).VTSequenceForeground);
                 PresetStringBuilder.AppendFormat("{0}", SFTPShellCommon.SFTPSite);
 
                 // Closing
                 PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
                 PresetStringBuilder.AppendFormat("]{0}> ", SFTPShellCommon.SFTPCurrentRemoteDir);
-                PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.Input).VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
             }
             else
             {
                 // Current directory
                 PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
                 PresetStringBuilder.AppendFormat("{0}> ", SFTPShellCommon.SFTPCurrDirect);
-                PresetStringBuilder.Append(ColorTools.GetColor(ColorTools.ColTypes.Input).VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
             }
 
             // Present final string

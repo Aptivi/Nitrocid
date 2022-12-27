@@ -75,7 +75,7 @@ namespace KS.Misc.Splash.Splashes
         public void Report(int Progress, string ProgressReport, params object[] Vars)
         {
             if (!Beginning)
-                TextWriterWhereColor.WriteWhere("  OK  ", IndicatorLeft, IndicatorTop, true, ColorTools.ColTypes.Success);
+                TextWriterWhereColor.WriteWhere("  OK  ", IndicatorLeft, IndicatorTop, true, KernelColorType.Success);
             TextWriterColor.Write($" [      ] {ProgressReport}", Vars);
             if (!Beginning)
             {
@@ -88,7 +88,7 @@ namespace KS.Misc.Splash.Splashes
         public void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars)
         {
             if (!Beginning)
-                TextWriterWhereColor.WriteWhere("FAILED", IndicatorLeft, IndicatorTop, true, ColorTools.ColTypes.Error);
+                TextWriterWhereColor.WriteWhere("FAILED", IndicatorLeft, IndicatorTop, true, KernelColorType.Error);
             TextWriterColor.Write($" [      ] {ErrorReport}", Vars);
             if (!Beginning)
             {

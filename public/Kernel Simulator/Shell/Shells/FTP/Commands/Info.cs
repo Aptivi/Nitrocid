@@ -38,28 +38,28 @@ namespace KS.Shell.Shells.FTP.Commands
             if (FTPShellCommon.FtpConnected)
             {
                 SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("FTP server information"), true);
-                TextWriterColor.Write(Translate.DoTranslation("Server address:") + " ", false, ColorTools.ColTypes.ListEntry);
-                TextWriterColor.Write(FTPShellCommon.ClientFTP.Host, false, ColorTools.ColTypes.ListEntry);
-                TextWriterColor.Write(Translate.DoTranslation("Server port:") + " ", false, ColorTools.ColTypes.ListEntry);
-                TextWriterColor.Write(FTPShellCommon.ClientFTP.Port.ToString(), false, ColorTools.ColTypes.ListEntry);
-                TextWriterColor.Write(Translate.DoTranslation("Server type:") + " ", false, ColorTools.ColTypes.ListEntry);
-                TextWriterColor.Write(FTPShellCommon.ClientFTP.ServerType.ToString(), false, ColorTools.ColTypes.ListEntry);
-                TextWriterColor.Write(Translate.DoTranslation("Server system type:") + " ", false, ColorTools.ColTypes.ListEntry);
-                TextWriterColor.Write(FTPShellCommon.ClientFTP.SystemType, false, ColorTools.ColTypes.ListEntry);
-                TextWriterColor.Write(Translate.DoTranslation("Server system:") + " ", false, ColorTools.ColTypes.ListEntry);
-                TextWriterColor.Write(FTPShellCommon.ClientFTP.ServerOS.ToString(), false, ColorTools.ColTypes.ListEntry);
-                TextWriterColor.Write(Translate.DoTranslation("Server encryption mode:") + " ", false, ColorTools.ColTypes.ListEntry);
-                TextWriterColor.Write(FTPShellCommon.ClientFTP.Config.EncryptionMode.ToString(), false, ColorTools.ColTypes.ListEntry);
-                TextWriterColor.Write(Translate.DoTranslation("Server data connection type:") + " ", false, ColorTools.ColTypes.ListEntry);
-                TextWriterColor.Write(FTPShellCommon.ClientFTP.Config.DataConnectionType.ToString(), false, ColorTools.ColTypes.ListEntry);
-                TextWriterColor.Write(Translate.DoTranslation("Server download data type:") + " ", false, ColorTools.ColTypes.ListEntry);
-                TextWriterColor.Write(FTPShellCommon.ClientFTP.Config.DownloadDataType.ToString(), false, ColorTools.ColTypes.ListEntry);
-                TextWriterColor.Write(Translate.DoTranslation("Server upload data type:") + " ", false, ColorTools.ColTypes.ListEntry);
-                TextWriterColor.Write(FTPShellCommon.ClientFTP.Config.UploadDataType.ToString(), false, ColorTools.ColTypes.ListEntry);
+                TextWriterColor.Write(Translate.DoTranslation("Server address:") + " ", false, KernelColorType.ListEntry);
+                TextWriterColor.Write(FTPShellCommon.ClientFTP.Host, false, KernelColorType.ListEntry);
+                TextWriterColor.Write(Translate.DoTranslation("Server port:") + " ", false, KernelColorType.ListEntry);
+                TextWriterColor.Write(FTPShellCommon.ClientFTP.Port.ToString(), false, KernelColorType.ListEntry);
+                TextWriterColor.Write(Translate.DoTranslation("Server type:") + " ", false, KernelColorType.ListEntry);
+                TextWriterColor.Write(FTPShellCommon.ClientFTP.ServerType.ToString(), false, KernelColorType.ListEntry);
+                TextWriterColor.Write(Translate.DoTranslation("Server system type:") + " ", false, KernelColorType.ListEntry);
+                TextWriterColor.Write(FTPShellCommon.ClientFTP.SystemType, false, KernelColorType.ListEntry);
+                TextWriterColor.Write(Translate.DoTranslation("Server system:") + " ", false, KernelColorType.ListEntry);
+                TextWriterColor.Write(FTPShellCommon.ClientFTP.ServerOS.ToString(), false, KernelColorType.ListEntry);
+                TextWriterColor.Write(Translate.DoTranslation("Server encryption mode:") + " ", false, KernelColorType.ListEntry);
+                TextWriterColor.Write(FTPShellCommon.ClientFTP.Config.EncryptionMode.ToString(), false, KernelColorType.ListEntry);
+                TextWriterColor.Write(Translate.DoTranslation("Server data connection type:") + " ", false, KernelColorType.ListEntry);
+                TextWriterColor.Write(FTPShellCommon.ClientFTP.Config.DataConnectionType.ToString(), false, KernelColorType.ListEntry);
+                TextWriterColor.Write(Translate.DoTranslation("Server download data type:") + " ", false, KernelColorType.ListEntry);
+                TextWriterColor.Write(FTPShellCommon.ClientFTP.Config.DownloadDataType.ToString(), false, KernelColorType.ListEntry);
+                TextWriterColor.Write(Translate.DoTranslation("Server upload data type:") + " ", false, KernelColorType.ListEntry);
+                TextWriterColor.Write(FTPShellCommon.ClientFTP.Config.UploadDataType.ToString(), false, KernelColorType.ListEntry);
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("You haven't connected to any server yet"), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("You haven't connected to any server yet"), true, KernelColorType.Error);
             }
         }
 

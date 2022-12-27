@@ -110,20 +110,20 @@ namespace KS.Misc.Timers
             var KeysKeypress = default(ConsoleKey);
 
             // Print the keys text
-            TextWriterWhereColor.WriteWhere(KeysText, KeysTextLeftPosition, KeysTextTopPosition, true, ColorTools.ColTypes.Tip);
+            TextWriterWhereColor.WriteWhere(KeysText, KeysTextLeftPosition, KeysTextTopPosition, true, KernelColorType.Tip);
 
             // Print the time interval
             if (Flags.EnableFigletTimer)
             {
-                FigletWhereColor.WriteFigletWhere(CurrentRemainingString, TimeLeftPosition, TimeTopPosition, true, FigletFont, ColorTools.ColTypes.NeutralText);
+                FigletWhereColor.WriteFigletWhere(CurrentRemainingString, TimeLeftPosition, TimeTopPosition, true, FigletFont, KernelColorType.NeutralText);
             }
             else
             {
-                TextWriterWhereColor.WriteWhere(CurrentRemainingString, TimeLeftPosition, TimeTopPosition, true, ColorTools.ColTypes.NeutralText);
+                TextWriterWhereColor.WriteWhere(CurrentRemainingString, TimeLeftPosition, TimeTopPosition, true, KernelColorType.NeutralText);
             }
 
             // Print the border
-            TextWriterWhereColor.WriteWhere("═".Repeat(ConsoleWrapper.WindowWidth), 0, KeysTextTopPosition - 2, true, ColorTools.ColTypes.Gray);
+            TextWriterWhereColor.WriteWhere("═".Repeat(ConsoleWrapper.WindowWidth), 0, KeysTextTopPosition - 2, true, KernelColorType.Gray);
 
             // Wait for a keypress
             while (KeysKeypress != ConsoleKey.Escape)
@@ -148,14 +148,14 @@ namespace KS.Misc.Timers
                             // User requested to specify the timeout in milliseconds
                             if (!Timer.Enabled)
                             {
-                                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Specify the timeout in milliseconds") + " [{0}] ", 2, KeysTextTopPosition - 4, false, ColorTools.ColTypes.Question, TimerInterval);
+                                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Specify the timeout in milliseconds") + " [{0}] ", 2, KeysTextTopPosition - 4, false, KernelColorType.Question, TimerInterval);
 
                                 // Try to parse the interval
                                 string UnparsedInterval = Input.ReadLine();
                                 if (!double.TryParse(UnparsedInterval, out TimerInterval))
                                 {
                                     // Not numeric.
-                                    TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Indicated timeout is not numeric."), 2, KeysTextTopPosition - 4, false, ColorTools.ColTypes.Error);
+                                    TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Indicated timeout is not numeric."), 2, KeysTextTopPosition - 4, false, KernelColorType.Error);
                                     ConsoleExtensions.ClearLineToRight();
                                     Input.DetectKeypress();
                                 }
@@ -167,11 +167,11 @@ namespace KS.Misc.Timers
                                     ClearRemainingTimeDisplay(RemainingString, FigletTimeOldWidth, FigletTimeOldWidthEnd);
                                     if (Flags.EnableFigletTimer)
                                     {
-                                        FigletWhereColor.WriteFigletWhere(RemainingString, TimeLeftPosition, TimeTopPosition, true, FigletFont, ColorTools.ColTypes.NeutralText);
+                                        FigletWhereColor.WriteFigletWhere(RemainingString, TimeLeftPosition, TimeTopPosition, true, FigletFont, KernelColorType.NeutralText);
                                     }
                                     else
                                     {
-                                        TextWriterWhereColor.WriteWhere(RemainingString, TimeLeftPosition, TimeTopPosition, true, ColorTools.ColTypes.NeutralText);
+                                        TextWriterWhereColor.WriteWhere(RemainingString, TimeLeftPosition, TimeTopPosition, true, KernelColorType.NeutralText);
                                     }
                                 }
 
@@ -221,11 +221,11 @@ namespace KS.Misc.Timers
                 TimerUpdate.Stop();
             if (Flags.EnableFigletTimer)
             {
-                FigletWhereColor.WriteFigletWhere(ElapsedText, TimeLeftPosition, TimeTopPosition, true, FigletFont, ColorTools.ColTypes.Success);
+                FigletWhereColor.WriteFigletWhere(ElapsedText, TimeLeftPosition, TimeTopPosition, true, FigletFont, KernelColorType.Success);
             }
             else
             {
-                TextWriterWhereColor.WriteWhere(ElapsedText, TimeLeftPosition, TimeTopPosition, true, ColorTools.ColTypes.Success);
+                TextWriterWhereColor.WriteWhere(ElapsedText, TimeLeftPosition, TimeTopPosition, true, KernelColorType.Success);
             }
             Timer.Stop();
         }
@@ -254,11 +254,11 @@ namespace KS.Misc.Timers
                     // Actually display the remaining time
                     if (Flags.EnableFigletTimer)
                     {
-                        FigletWhereColor.WriteFigletWhere(UntilText, TimeLeftPosition, TimeTopPosition, true, FigletFont, ColorTools.ColTypes.NeutralText);
+                        FigletWhereColor.WriteFigletWhere(UntilText, TimeLeftPosition, TimeTopPosition, true, FigletFont, KernelColorType.NeutralText);
                     }
                     else
                     {
-                        TextWriterWhereColor.WriteWhere(UntilText, TimeLeftPosition, TimeTopPosition, true, ColorTools.ColTypes.NeutralText);
+                        TextWriterWhereColor.WriteWhere(UntilText, TimeLeftPosition, TimeTopPosition, true, KernelColorType.NeutralText);
                     }
                 }
                 catch (ThreadInterruptedException)
@@ -314,12 +314,12 @@ namespace KS.Misc.Timers
                     for (int Position = FigletOldWidth - 1; Position <= FigletTimeLeftPosition - 1; Position++)
                     {
                         ConsoleWrapper.CursorLeft = Position;
-                        TextWriterColor.Write(" ", false, ColorTools.GetColor(ColorTools.ColTypes.NeutralText), ColorTools.GetColor(ColorTools.ColTypes.Background));
+                        TextWriterColor.Write(" ", false, ColorTools.GetColor(KernelColorType.NeutralText), ColorTools.GetColor(KernelColorType.Background));
                     }
                     for (int Position = FigletOldWidthEnd; Position <= FigletTimeLeftEndPosition + 1; Position++)
                     {
                         ConsoleWrapper.CursorLeft = Position;
-                        TextWriterColor.Write(" ", false, ColorTools.GetColor(ColorTools.ColTypes.NeutralText), ColorTools.GetColor(ColorTools.ColTypes.Background));
+                        TextWriterColor.Write(" ", false, ColorTools.GetColor(KernelColorType.NeutralText), ColorTools.GetColor(KernelColorType.Background));
                     }
                 }
             }

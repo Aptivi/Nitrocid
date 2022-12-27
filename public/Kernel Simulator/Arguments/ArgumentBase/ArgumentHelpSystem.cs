@@ -70,8 +70,8 @@ namespace KS.Arguments.ArgumentBase
                     {
                         // Indent, if necessary
                         if (Indent)
-                            TextWriterColor.Write(" ".Repeat(UsageLength), false, ColorTools.ColTypes.ListEntry);
-                        TextWriterColor.Write($" {Argument} {HelpUsage}", true, ColorTools.ColTypes.ListEntry);
+                            TextWriterColor.Write(" ".Repeat(UsageLength), false, KernelColorType.ListEntry);
+                        TextWriterColor.Write($" {Argument} {HelpUsage}", true, KernelColorType.ListEntry);
                         Indent = true;
                     }
                 }
@@ -79,7 +79,7 @@ namespace KS.Arguments.ArgumentBase
                 // Write the description now
                 if (string.IsNullOrEmpty(HelpDefinition))
                     HelpDefinition = Translate.DoTranslation("Command defined by ") + Argument;
-                TextWriterColor.Write(Translate.DoTranslation("Description:") + $" {HelpDefinition}", true, ColorTools.ColTypes.ListValue);
+                TextWriterColor.Write(Translate.DoTranslation("Description:") + $" {HelpDefinition}", true, KernelColorType.ListValue);
 
                 // Extra help action for some arguments
                 ArgumentList[Argument].AdditionalHelpAction?.DynamicInvoke();
@@ -91,19 +91,19 @@ namespace KS.Arguments.ArgumentBase
                 {
                     foreach (string cmd in ArgumentList.Keys)
                     {
-                        TextWriterColor.Write("- {0}: ", false, ColorTools.ColTypes.ListEntry, cmd);
-                        TextWriterColor.Write("{0}", true, ColorTools.ColTypes.ListValue, ArgumentList[cmd].GetTranslatedHelpEntry());
+                        TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, cmd);
+                        TextWriterColor.Write("{0}", true, KernelColorType.ListValue, ArgumentList[cmd].GetTranslatedHelpEntry());
                     }
                 }
                 else
                 {
                     foreach (string cmd in ArgumentList.Keys)
-                        TextWriterColor.Write("{0}, ", false, ColorTools.ColTypes.ListEntry, cmd);
+                        TextWriterColor.Write("{0}, ", false, KernelColorType.ListEntry, cmd);
                 }
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("No help for argument \"{0}\"."), true, ColorTools.ColTypes.Error, Argument);
+                TextWriterColor.Write(Translate.DoTranslation("No help for argument \"{0}\"."), true, KernelColorType.Error, Argument);
             }
         }
 

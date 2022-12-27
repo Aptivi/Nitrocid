@@ -20,6 +20,7 @@ using System;
 using System.Threading;
 using ColorSeq;
 using KS.Kernel.Debugging;
+using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Drivers;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
@@ -42,7 +43,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, ColorTools.ColTypes colorType, params object[] vars) =>
+        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, KernelColorType colorType, params object[] vars) =>
             WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, false, 0, colorType, vars);
 
         /// <summary>
@@ -56,7 +57,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="Return">Whether or not to return to old position</param>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, ColorTools.ColTypes colorType, params object[] vars) =>
+        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, KernelColorType colorType, params object[] vars) =>
             WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, Return, 0, colorType, vars);
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="RightMargin">The right margin</param>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, ColorTools.ColTypes colorType, params object[] vars)
+        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, KernelColorType colorType, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
@@ -102,7 +103,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, ColorTools.ColTypes colorTypeForeground, ColorTools.ColTypes colorTypeBackground, params object[] vars) =>
+        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars) =>
             WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, false, 0, colorTypeForeground, colorTypeBackground, vars);
 
         /// <summary>
@@ -117,7 +118,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, ColorTools.ColTypes colorTypeForeground, ColorTools.ColTypes colorTypeBackground, params object[] vars) =>
+        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars) =>
             WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, Return, 0, colorTypeForeground, colorTypeBackground, vars);
 
         /// <summary>
@@ -133,7 +134,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, ColorTools.ColTypes colorTypeForeground, ColorTools.ColTypes colorTypeBackground, params object[] vars)
+        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
@@ -200,7 +201,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                 try
                 {
                     ColorTools.SetConsoleColor(new Color(Convert.ToInt32(color)));
-                    ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
+                    ColorTools.SetConsoleColor(KernelColorType.Background, true);
 
                     // Write text in another place slowly
                     DriverHandler.CurrentConsoleDriver.WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
@@ -321,7 +322,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                 try
                 {
                     ColorTools.SetConsoleColor(color);
-                    ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
+                    ColorTools.SetConsoleColor(KernelColorType.Background, true);
 
                     // Write text in another place slowly
                     DriverHandler.CurrentConsoleDriver.WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);

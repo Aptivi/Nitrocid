@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using ColorSeq;
+using KS.ConsoleBase.Colors;
 using Newtonsoft.Json.Linq;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
@@ -32,7 +33,7 @@ namespace KS.ConsoleBase.Themes
     public class ThemeInfo
     {
 
-        internal readonly Dictionary<ColorTools.ColTypes, Color> ThemeColors = ColorTools.PopulateColorsEmpty();
+        internal readonly Dictionary<KernelColorType, Color> ThemeColors = ColorTools.PopulateColorsEmpty();
 
         /// <summary>
         /// Theme name
@@ -48,7 +49,7 @@ namespace KS.ConsoleBase.Themes
         /// Gets a color from the color type
         /// </summary>
         /// <param name="type">Color type</param>
-        public Color GetColor(ColorTools.ColTypes type) => ThemeColors[type];
+        public Color GetColor(KernelColorType type) => ThemeColors[type];
 
         /// <summary>
         /// Generates a new theme info from KS resources
@@ -74,9 +75,9 @@ namespace KS.ConsoleBase.Themes
         protected ThemeInfo(JToken ThemeResourceJson)
         {
             // Place information to the class
-            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ColorTools.ColTypes)).Length - 1; typeIndex++)
+            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length - 1; typeIndex++)
             {
-                ColorTools.ColTypes type = ThemeColors.Keys.ElementAt(typeIndex);
+                KernelColorType type = ThemeColors.Keys.ElementAt(typeIndex);
                 ThemeColors[type] = new Color(ThemeResourceJson.SelectToken($"{type}Color").ToString());
             }
             Name = ThemeResourceJson["Metadata"]["Name"].ToString();

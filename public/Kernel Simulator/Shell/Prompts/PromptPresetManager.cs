@@ -227,7 +227,7 @@ namespace KS.Shell.Prompts
         public static void WriteShellPrompt(string ShellType)
         {
             var CurrentPresetBase = GetCurrentPresetBaseFromShell(ShellType);
-            TextWriterColor.Write(CurrentPresetBase.PresetPrompt, false, ColorTools.ColTypes.Input);
+            TextWriterColor.Write(CurrentPresetBase.PresetPrompt, false, KernelColorType.Input);
         }
 
         /// <summary>
@@ -244,7 +244,7 @@ namespace KS.Shell.Prompts
         public static void WriteShellCompletionPrompt(string ShellType)
         {
             var CurrentPresetBase = GetCurrentPresetBaseFromShell(ShellType);
-            TextWriterColor.Write(CurrentPresetBase.PresetPromptCompletion, false, ColorTools.ColTypes.Input);
+            TextWriterColor.Write(CurrentPresetBase.PresetPromptCompletion, false, KernelColorType.Input);
         }
 
         /// <summary>

@@ -54,17 +54,17 @@ namespace KS.Shell.Shells.Text.Commands
                         {
                             string Line = TextEditShellCommon.TextEdit_FileLines[LineNumber - 1];
                             DebugWriter.WriteDebug(DebugLevel.I, "Line number: {0} ({1})", LineNumber, Line);
-                            TextWriterColor.Write("- {0}: ", false, ColorTools.ColTypes.ListEntry, LineNumber);
-                            TextWriterColor.Write(Line, true, ColorTools.ColTypes.ListValue);
+                            TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, LineNumber);
+                            TextWriterColor.Write(Line, true, KernelColorType.ListValue);
                         }
                         else
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, ColorTools.ColTypes.Error);
+                            TextWriterColor.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
                         }
                     }
                     else
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, ColorTools.ColTypes.Error, ListArgsOnly[0]);
+                        TextWriterColor.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error, ListArgsOnly[0]);
                         DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly[0]);
                     }
                 }
@@ -85,18 +85,18 @@ namespace KS.Shell.Shells.Text.Commands
                             {
                                 string Line = TextEditShellCommon.TextEdit_FileLines[LineNumber - 1];
                                 DebugWriter.WriteDebug(DebugLevel.I, "Line number: {0} ({1})", LineNumber, Line);
-                                TextWriterColor.Write("- {0}: ", false, ColorTools.ColTypes.ListEntry, LineNumber);
-                                TextWriterColor.Write(Line, true, ColorTools.ColTypes.ListValue);
+                                TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, LineNumber);
+                                TextWriterColor.Write(Line, true, KernelColorType.ListValue);
                             }
                         }
                         else
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, ColorTools.ColTypes.Error);
+                            TextWriterColor.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
                         }
                     }
                     else
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, ColorTools.ColTypes.Error, ListArgsOnly[0]);
+                        TextWriterColor.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error, ListArgsOnly[0]);
                         DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly[0]);
                     }
                 }
@@ -106,8 +106,8 @@ namespace KS.Shell.Shells.Text.Commands
                 foreach (string Line in TextEditShellCommon.TextEdit_FileLines)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Line number: {0} ({1})", LineNumber, Line);
-                    TextWriterColor.Write("- {0}: ", false, ColorTools.ColTypes.ListEntry, LineNumber);
-                    TextWriterColor.Write(Line, true, ColorTools.ColTypes.ListValue);
+                    TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, LineNumber);
+                    TextWriterColor.Write(Line, true, KernelColorType.ListValue);
                     LineNumber += 1;
                 }
             }

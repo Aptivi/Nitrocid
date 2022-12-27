@@ -47,7 +47,7 @@ namespace KS.Shell.Shells.UESH.Commands
             {
                 if (ListArgsOnly[3].Contains(" "))
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Spaces are not allowed."), true, ColorTools.ColTypes.Error);
+                    TextWriterColor.Write(Translate.DoTranslation("Spaces are not allowed."), true, KernelColorType.Error);
                 }
                 else if (ListArgsOnly[3] == ListArgsOnly[2])
                 {
@@ -55,12 +55,12 @@ namespace KS.Shell.Shells.UESH.Commands
                 }
                 else if (ListArgsOnly[3] != ListArgsOnly[2])
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Passwords doesn't match."), true, ColorTools.ColTypes.Error);
+                    TextWriterColor.Write(Translate.DoTranslation("Passwords doesn't match."), true, KernelColorType.Error);
                 }
             }
             catch (Exception ex)
             {
-                TextWriterColor.Write(Translate.DoTranslation("Failed to change password of username: {0}"), true, ColorTools.ColTypes.Error, ex.Message);
+                TextWriterColor.Write(Translate.DoTranslation("Failed to change password of username: {0}"), true, KernelColorType.Error, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }

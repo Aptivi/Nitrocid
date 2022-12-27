@@ -61,8 +61,8 @@ namespace KS.Shell.Shells.UESH.Commands
         public override void HelpHelper()
         {
             TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"));
-            TextWriterColor.Write("  -modapi: ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Opens the mod API documentation for the structure of the source code in its most current form"), true, ColorTools.ColTypes.ListValue);
+            TextWriterColor.Write("  -modapi: ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Translate.DoTranslation("Opens the mod API documentation for the structure of the source code in its most current form"), true, KernelColorType.ListValue);
         }
 
     }

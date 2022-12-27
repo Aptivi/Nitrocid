@@ -51,10 +51,10 @@ namespace KS.Shell.Shells.Archive.Commands
             }
             foreach (IArchiveEntry Entry in Entries)
             {
-                TextWriterColor.Write("- {0}: ", false, ColorTools.ColTypes.ListEntry, Entry.Key);
+                TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, Entry.Key);
                 if (!Entry.IsDirectory) // Entry is a file
                 {
-                    TextWriterColor.Write("{0} ({1})", true, ColorTools.ColTypes.ListValue, Entry.CompressedSize.FileSizeToString(), Entry.Size.FileSizeToString());
+                    TextWriterColor.Write("{0} ({1})", true, KernelColorType.ListValue, Entry.CompressedSize.FileSizeToString(), Entry.Size.FileSizeToString());
                 }
                 else
                 {

@@ -53,12 +53,12 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             catch (KernelException ftpex) when (ftpex.ExceptionType == KernelExceptionType.FTPShell)
             {
-                TextWriterColor.Write(ftpex.Message, true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(ftpex.Message, true, KernelColorType.Error);
             }
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.Write(Translate.DoTranslation("Unknown FTP shell error:") + " {0}", true, ColorTools.ColTypes.Error, ex.Message);
+                TextWriterColor.Write(Translate.DoTranslation("Unknown FTP shell error:") + " {0}", true, KernelColorType.Error, ex.Message);
             }
         }
 

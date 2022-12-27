@@ -40,7 +40,7 @@ namespace KS.Shell.Shells.SFTP.Commands
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("You must connect to server before getting current remote directory."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("You must connect to server before getting current remote directory."), true, KernelColorType.Error);
             }
         }
 

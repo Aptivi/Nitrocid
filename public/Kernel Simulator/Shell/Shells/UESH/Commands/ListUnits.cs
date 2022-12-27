@@ -44,17 +44,17 @@ namespace KS.Shell.Shells.UESH.Commands
                 TextWriterColor.Write(Translate.DoTranslation("Available unit types and their units:"));
                 foreach (QuantityInfo QuantityInfo in Quantities)
                 {
-                    TextWriterColor.Write("- {0}:", true, ColorTools.ColTypes.ListEntry, QuantityInfo.Name);
+                    TextWriterColor.Write("- {0}:", true, KernelColorType.ListEntry, QuantityInfo.Name);
                     foreach (Enum UnitValues in QuantityInfo.UnitInfos.Select(x => x.Value))
                     {
-                        TextWriterColor.Write("  - {0}: ", false, ColorTools.ColTypes.ListEntry, string.Join(", ", UnitAbbreviationsCache.Default.GetDefaultAbbreviation(UnitValues.GetType(), Convert.ToInt32(UnitValues))));
-                        TextWriterColor.Write(UnitValues.ToString(), true, ColorTools.ColTypes.ListValue);
+                        TextWriterColor.Write("  - {0}: ", false, KernelColorType.ListEntry, string.Join(", ", UnitAbbreviationsCache.Default.GetDefaultAbbreviation(UnitValues.GetType(), Convert.ToInt32(UnitValues))));
+                        TextWriterColor.Write(UnitValues.ToString(), true, KernelColorType.ListValue);
                     }
                 }
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("No such unit type:") + " {0}", true, ColorTools.ColTypes.Error, ListArgsOnly[0]);
+                TextWriterColor.Write(Translate.DoTranslation("No such unit type:") + " {0}", true, KernelColorType.Error, ListArgsOnly[0]);
             }
         }
 
@@ -62,7 +62,7 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             TextWriterColor.Write(Translate.DoTranslation("Available unit types:"));
             foreach (QuantityInfo QuantityInfo in Quantity.Infos)
-                TextWriterColor.Write("- {0}", true, ColorTools.ColTypes.ListEntry, QuantityInfo.Name);
+                TextWriterColor.Write("- {0}", true, KernelColorType.ListEntry, QuantityInfo.Name);
         }
 
     }

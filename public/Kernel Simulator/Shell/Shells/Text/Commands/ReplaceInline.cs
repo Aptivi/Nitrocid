@@ -46,16 +46,16 @@ namespace KS.Shell.Shells.Text.Commands
                     if (Convert.ToInt32(ListArgsOnly[2]) <= TextEditShellCommon.TextEdit_FileLines.Count)
                     {
                         TextEditTools.TextEdit_Replace(ListArgsOnly[0], ListArgsOnly[1], Convert.ToInt32(ListArgsOnly[2]));
-                        TextWriterColor.Write(Translate.DoTranslation("String replaced."), true, ColorTools.ColTypes.Success);
+                        TextWriterColor.Write(Translate.DoTranslation("String replaced."), true, KernelColorType.Success);
                     }
                     else
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, ColorTools.ColTypes.Error);
+                        TextWriterColor.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
                     }
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, ColorTools.ColTypes.Error, ListArgsOnly[2]);
+                    TextWriterColor.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error, ListArgsOnly[2]);
                     DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly[2]);
                 }
             }
@@ -71,12 +71,12 @@ namespace KS.Shell.Shells.Text.Commands
                         for (int LineNumber = LineNumberStart; LineNumber <= LineNumberEnd; LineNumber++)
                         {
                             TextEditTools.TextEdit_Replace(ListArgsOnly[0], ListArgsOnly[1], LineNumber);
-                            TextWriterColor.Write(Translate.DoTranslation("String replaced in line {0}."), true, ColorTools.ColTypes.Success, LineNumber);
+                            TextWriterColor.Write(Translate.DoTranslation("String replaced in line {0}."), true, KernelColorType.Success, LineNumber);
                         }
                     }
                     else
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, ColorTools.ColTypes.Error);
+                        TextWriterColor.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
                     }
                 }
             }

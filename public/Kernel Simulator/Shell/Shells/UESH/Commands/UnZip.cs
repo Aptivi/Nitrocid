@@ -75,8 +75,8 @@ namespace KS.Shell.Shells.UESH.Commands
         public override void HelpHelper()
         {
             TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"));
-            TextWriterColor.Write("  -createdir: ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Creates a directory that contains the contents of the ZIP file"), true, ColorTools.ColTypes.ListValue);
+            TextWriterColor.Write("  -createdir: ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Translate.DoTranslation("Creates a directory that contains the contents of the ZIP file"), true, KernelColorType.ListValue);
         }
 
     }

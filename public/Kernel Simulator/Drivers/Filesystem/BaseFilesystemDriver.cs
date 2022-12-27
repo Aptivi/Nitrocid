@@ -355,7 +355,7 @@ namespace KS.Drivers.Filesystem
                 //    0x00000020  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
                 //    0x00000030  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
                 // ... and so on.
-                TextWriterColor.Write($"0x{StartByte - 1L:X8}", false, ColorTools.ColTypes.ListEntry);
+                TextWriterColor.Write($"0x{StartByte - 1L:X8}", false, KernelColorType.ListEntry);
                 int ByteWritePositionX = $"0x{StartByte - 1L:X8}".Length + 2;
                 int ByteCharWritePositionX = 61 + (ByteWritePositionX - 12);
                 int ByteNumberEachSixteen = 1;
@@ -377,8 +377,8 @@ namespace KS.Drivers.Filesystem
                         RenderedByteChar = ProjectedByteChar;
                     }
                     DebugWriter.WriteDebug(DebugLevel.I, "Rendered byte char: {0}", ProjectedByteChar);
-                    TextWriterWhereColor.WriteWhere($"{CurrentByte:X2}", ByteWritePositionX + 3 * (ByteNumberEachSixteen - 1), ConsoleBase.ConsoleWrapper.CursorTop, false, ColorTools.ColTypes.ListValue);
-                    TextWriterWhereColor.WriteWhere($"{RenderedByteChar}", ByteCharWritePositionX + (ByteNumberEachSixteen - 1), ConsoleBase.ConsoleWrapper.CursorTop, false, ColorTools.ColTypes.ListValue);
+                    TextWriterWhereColor.WriteWhere($"{CurrentByte:X2}", ByteWritePositionX + 3 * (ByteNumberEachSixteen - 1), ConsoleBase.ConsoleWrapper.CursorTop, false, KernelColorType.ListValue);
+                    TextWriterWhereColor.WriteWhere($"{RenderedByteChar}", ByteCharWritePositionX + (ByteNumberEachSixteen - 1), ConsoleBase.ConsoleWrapper.CursorTop, false, KernelColorType.ListValue);
 
                     // Increase the byte number
                     ByteNumberEachSixteen += 1;
@@ -387,7 +387,7 @@ namespace KS.Drivers.Filesystem
                     if (ByteNumberEachSixteen > 16)
                     {
                         // OK, let's increase the byte iteration and get the next line ready
-                        TextWriterColor.Write(CharManager.NewLine + $"0x{CurrentByteNumber:X8}", false, ColorTools.ColTypes.ListEntry);
+                        TextWriterColor.Write(CharManager.NewLine + $"0x{CurrentByteNumber:X8}", false, KernelColorType.ListEntry);
                         ByteWritePositionX = $"0x{CurrentByteNumber:X8}".Length + 2;
                         ByteCharWritePositionX = 61 + (ByteWritePositionX - 12);
                         ByteNumberEachSixteen = 1;
@@ -397,11 +397,11 @@ namespace KS.Drivers.Filesystem
             }
             else if (StartByte > FileByte.LongLength)
             {
-                TextWriterColor.Write(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, KernelColorType.Error);
             }
             else if (EndByte > FileByte.LongLength)
             {
-                TextWriterColor.Write(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, KernelColorType.Error);
             }
         }
 
@@ -895,7 +895,7 @@ namespace KS.Drivers.Filesystem
                     {
                         if (PrintLineNumbers)
                         {
-                            TextWriterColor.Write("{0,4}: ", false, ColorTools.ColTypes.ListEntry, ContentIndex + 1);
+                            TextWriterColor.Write("{0,4}: ", false, KernelColorType.ListEntry, ContentIndex + 1);
                         }
                         TextWriterColor.Write(Contents[ContentIndex]);
                     }
@@ -920,11 +920,11 @@ namespace KS.Drivers.Filesystem
                 {
                     if (KernelPlatform.IsOnWindows() & (!DirectoryInfo.Name.StartsWith(".") | DirectoryInfo.Name.StartsWith(".") & Flags.HiddenFiles) | KernelPlatform.IsOnUnix())
                     {
-                        TextWriterColor.Write("- " + DirectoryInfo.Name + "/", false, ColorTools.ColTypes.ListEntry);
+                        TextWriterColor.Write("- " + DirectoryInfo.Name + "/", false, KernelColorType.ListEntry);
                         if (ShowDirectoryDetails)
                         {
-                            TextWriterColor.Write(": ", false, ColorTools.ColTypes.ListEntry);
-                            TextWriterColor.Write(Translate.DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), false, ColorTools.ColTypes.ListValue, TotalSize.FileSizeToString(), DirectoryInfo.CreationTime.ToShortDateString(), DirectoryInfo.CreationTime.ToShortTimeString(), DirectoryInfo.LastWriteTime.ToShortDateString(), DirectoryInfo.LastWriteTime.ToShortTimeString());
+                            TextWriterColor.Write(": ", false, KernelColorType.ListEntry);
+                            TextWriterColor.Write(Translate.DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), false, KernelColorType.ListValue, TotalSize.FileSizeToString(), DirectoryInfo.CreationTime.ToShortDateString(), DirectoryInfo.CreationTime.ToShortTimeString(), DirectoryInfo.LastWriteTime.ToShortDateString(), DirectoryInfo.LastWriteTime.ToShortTimeString());
                         }
                         TextWriterColor.Write();
                     }
@@ -932,7 +932,7 @@ namespace KS.Drivers.Filesystem
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Directory {0} not found"), true, ColorTools.ColTypes.Error, DirectoryInfo.FullName);
+                TextWriterColor.Write(Translate.DoTranslation("Directory {0} not found"), true, KernelColorType.Error, DirectoryInfo.FullName);
                 DebugWriter.WriteDebug(DebugLevel.I, "IO.FolderExists = {0}", Checking.FolderExists(DirectoryInfo.FullName));
             }
         }
@@ -952,19 +952,19 @@ namespace KS.Drivers.Filesystem
                     {
                         if (FileInfo.Name.EndsWith(".uesh"))
                         {
-                            TextWriterColor.Write("- " + FileInfo.Name, false, ColorTools.ColTypes.Stage);
+                            TextWriterColor.Write("- " + FileInfo.Name, false, KernelColorType.Stage);
                             if (ShowFileDetails)
-                                TextWriterColor.Write(": ", false, ColorTools.ColTypes.Stage);
+                                TextWriterColor.Write(": ", false, KernelColorType.Stage);
                         }
                         else
                         {
-                            TextWriterColor.Write("- " + FileInfo.Name, false, ColorTools.ColTypes.ListEntry);
+                            TextWriterColor.Write("- " + FileInfo.Name, false, KernelColorType.ListEntry);
                             if (ShowFileDetails)
-                                TextWriterColor.Write(": ", false, ColorTools.ColTypes.ListEntry);
+                                TextWriterColor.Write(": ", false, KernelColorType.ListEntry);
                         }
                         if (ShowFileDetails)
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), false, ColorTools.ColTypes.ListValue, ((FileInfo)FileInfo).Length.FileSizeToString(), FileInfo.CreationTime.ToShortDateString(), FileInfo.CreationTime.ToShortTimeString(), FileInfo.LastWriteTime.ToShortDateString(), FileInfo.LastWriteTime.ToShortTimeString());
+                            TextWriterColor.Write(Translate.DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), false, KernelColorType.ListValue, ((FileInfo)FileInfo).Length.FileSizeToString(), FileInfo.CreationTime.ToShortDateString(), FileInfo.CreationTime.ToShortTimeString(), FileInfo.LastWriteTime.ToShortDateString(), FileInfo.LastWriteTime.ToShortTimeString());
                         }
                         TextWriterColor.Write();
                     }
@@ -972,7 +972,7 @@ namespace KS.Drivers.Filesystem
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("File {0} not found"), true, ColorTools.ColTypes.Error, FileInfo.FullName);
+                TextWriterColor.Write(Translate.DoTranslation("File {0} not found"), true, KernelColorType.Error, FileInfo.FullName);
                 DebugWriter.WriteDebug(DebugLevel.I, "IO.FileExists = {0}", Checking.FileExists(FileInfo.FullName));
             }
         }

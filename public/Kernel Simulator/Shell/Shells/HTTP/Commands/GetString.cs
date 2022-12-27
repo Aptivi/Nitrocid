@@ -39,7 +39,7 @@ namespace KS.Shell.Shells.HTTP.Commands
             if (HTTPShellCommon.HTTPConnected == true)
             {
                 // Print a message
-                TextWriterColor.Write(Translate.DoTranslation("Getting {0}..."), true, ColorTools.ColTypes.Progress, ListArgsOnly[0]);
+                TextWriterColor.Write(Translate.DoTranslation("Getting {0}..."), true, KernelColorType.Progress, ListArgsOnly[0]);
 
                 try
                 {
@@ -50,24 +50,24 @@ namespace KS.Shell.Shells.HTTP.Commands
                 }
                 catch (AggregateException aex)
                 {
-                    TextWriterColor.Write(aex.Message + ":", true, ColorTools.ColTypes.Error);
+                    TextWriterColor.Write(aex.Message + ":", true, KernelColorType.Error);
                     foreach (Exception InnerException in aex.InnerExceptions)
                     {
-                        TextWriterColor.Write("- " + InnerException.Message, true, ColorTools.ColTypes.Error);
+                        TextWriterColor.Write("- " + InnerException.Message, true, KernelColorType.Error);
                         if (InnerException.InnerException is not null)
                         {
-                            TextWriterColor.Write("- " + InnerException.InnerException.Message, true, ColorTools.ColTypes.Error);
+                            TextWriterColor.Write("- " + InnerException.InnerException.Message, true, KernelColorType.Error);
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    TextWriterColor.Write(ex.Message, true, ColorTools.ColTypes.Error);
+                    TextWriterColor.Write(ex.Message, true, KernelColorType.Error);
                 }
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("You must connect to server before performing transmission."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("You must connect to server before performing transmission."), true, KernelColorType.Error);
             }
         }
 

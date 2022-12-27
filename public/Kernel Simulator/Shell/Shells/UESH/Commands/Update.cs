@@ -44,7 +44,7 @@ namespace KS.Shell.Shells.UESH.Commands
 #if SPECIFIERREL
             UpdateManager.CheckKernelUpdates();
 #else
-            TextWriterColor.Write(Translate.DoTranslation("Checking for updates is disabled because you're running a development version."), true, ColorTools.ColTypes.Error);
+            TextWriterColor.Write(Translate.DoTranslation("Checking for updates is disabled because you're running a development version."), true, KernelColorType.Error);
 #endif
 
 

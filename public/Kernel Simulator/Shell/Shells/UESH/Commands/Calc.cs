@@ -47,7 +47,7 @@ namespace KS.Shell.Shells.UESH.Commands
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Error trying to calculate expression {0}: {1}", StringArgs, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.Write(Translate.DoTranslation("Error in calculation.") + " {0}", true, ColorTools.ColTypes.Error, ex.Message);
+                TextWriterColor.Write(Translate.DoTranslation("Error in calculation.") + " {0}", true, KernelColorType.Error, ex.Message);
             }
         }
 

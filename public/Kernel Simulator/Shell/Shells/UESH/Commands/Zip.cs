@@ -80,12 +80,12 @@ namespace KS.Shell.Shells.UESH.Commands
         public override void HelpHelper()
         {
             TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"));
-            TextWriterColor.Write("  -fast: ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Fast compression"), true, ColorTools.ColTypes.ListValue);
-            TextWriterColor.Write("  -nocomp: ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("No compression"), true, ColorTools.ColTypes.ListValue);
-            TextWriterColor.Write("  -nobasedir: ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Don't create base directory in archive"), true, ColorTools.ColTypes.ListValue);
+            TextWriterColor.Write("  -fast: ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Translate.DoTranslation("Fast compression"), true, KernelColorType.ListValue);
+            TextWriterColor.Write("  -nocomp: ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Translate.DoTranslation("No compression"), true, KernelColorType.ListValue);
+            TextWriterColor.Write("  -nobasedir: ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Translate.DoTranslation("Don't create base directory in archive"), true, KernelColorType.ListValue);
         }
 
     }

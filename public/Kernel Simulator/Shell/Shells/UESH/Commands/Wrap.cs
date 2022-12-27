@@ -59,7 +59,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     Shell.GetLine(StringArgs, WrapOutputPath);
                     var WrapOutputStream = new StreamReader(WrapOutputPath);
                     string WrapOutput = WrapOutputStream.ReadToEnd();
-                    TextWriterWrappedColor.WriteWrapped(WrapOutput, false, ColorTools.ColTypes.NeutralText);
+                    TextWriterWrappedColor.WriteWrapped(WrapOutput, false, KernelColorType.NeutralText);
                     if (!WrapOutput.EndsWith(CharManager.NewLine))
                         TextWriterColor.Write();
                     WrapOutputStream.Close();
@@ -73,12 +73,12 @@ namespace KS.Shell.Shells.UESH.Commands
                         if (CommandInfo.Flags.HasFlag(CommandFlags.Wrappable))
                             WrappableCmds.Add(CommandInfo.Command);
                     }
-                    TextWriterColor.Write(Translate.DoTranslation("The command is not wrappable. These commands are wrappable:") + " {0}", true, ColorTools.ColTypes.Error, string.Join(", ", WrappableCmds.ToArray()));
+                    TextWriterColor.Write(Translate.DoTranslation("The command is not wrappable. These commands are wrappable:") + " {0}", true, KernelColorType.Error, string.Join(", ", WrappableCmds.ToArray()));
                 }
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("The wrappable command is not found."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("The wrappable command is not found."), true, KernelColorType.Error);
             }
         }
 

@@ -157,14 +157,14 @@ namespace KS.ConsoleBase.Themes
         /// Gets the colors from the theme
         /// </summary>
         /// <param name="theme">Theme name</param>
-        public static Dictionary<ColTypes, Color> GetColorsFromTheme(string theme) =>
+        public static Dictionary<KernelColorType, Color> GetColorsFromTheme(string theme) =>
             GetColorsFromTheme(GetThemeInfo(theme));
 
         /// <summary>
         /// Gets the colors from the theme
         /// </summary>
         /// <param name="themeInfo">Theme instance</param>
-        public static Dictionary<ColTypes, Color> GetColorsFromTheme(ThemeInfo themeInfo) => 
+        public static Dictionary<KernelColorType, Color> GetColorsFromTheme(ThemeInfo themeInfo) => 
             themeInfo.ThemeColors;
 
         /// <summary>
@@ -255,9 +255,9 @@ namespace KS.ConsoleBase.Themes
             // Set the colors
             try
             {
-                for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ColTypes)).Length - 2; typeIndex++)
+                for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length - 2; typeIndex++)
                 {
-                    ColTypes type = KernelColors.Keys.ElementAt(typeIndex);
+                    KernelColorType type = KernelColors.Keys.ElementAt(typeIndex);
                     KernelColors[type] = ThemeInfo.ThemeColors[type];
                 }
                 LoadBack();
@@ -311,7 +311,7 @@ namespace KS.ConsoleBase.Themes
         /// Prepares the preview of the theme
         /// </summary>
         /// <param name="colors">Dictionary of colors</param>
-        public static void PreviewTheme(Dictionary<ColTypes, Color> colors)
+        public static void PreviewTheme(Dictionary<KernelColorType, Color> colors)
         {
             // Check to see if we're trying to preview theme on non-true color console
             if (IsTrueColorRequired(colors) && !Flags.ConsoleSupportsTrueColor)
@@ -323,7 +323,7 @@ namespace KS.ConsoleBase.Themes
             // Print every possibility of color types
             for (int key = 0; key < colors.Count; key++)
             {
-                TextWriterColor.Write($"*) {colors.Keys.ElementAt(key)}: ", false, ColTypes.Option);
+                TextWriterColor.Write($"*) {colors.Keys.ElementAt(key)}: ", false, KernelColorType.Option);
                 TextWriterColor.Write("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", true, colors.Values.ElementAt(key));
             }
         }
@@ -349,7 +349,7 @@ namespace KS.ConsoleBase.Themes
         /// </summary>
         /// <param name="colors">Dictionary of colors</param>
         /// <returns>If required, then true.</returns>
-        public static bool Is255ColorsRequired(Dictionary<ColTypes, Color> colors)
+        public static bool Is255ColorsRequired(Dictionary<KernelColorType, Color> colors)
         {
             // Check for true color requirement
             if (IsTrueColorRequired(colors))
@@ -385,7 +385,7 @@ namespace KS.ConsoleBase.Themes
         /// </summary>
         /// <param name="colors">Dictionary of colors</param>
         /// <returns>If required, then true.</returns>
-        public static bool IsTrueColorRequired(Dictionary<ColTypes, Color> colors)
+        public static bool IsTrueColorRequired(Dictionary<KernelColorType, Color> colors)
         {
             // Check for true color requirement according to color type
             for (int key = 0; key < colors.Count; key++)

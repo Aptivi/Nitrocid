@@ -311,7 +311,7 @@ namespace KS.Misc.Editors.HexEdit
                         {
                             long ByteRenderStart = ByteNumber - 2L;
                             long ByteRenderEnd = ByteNumber + 2L;
-                            TextWriterColor.Write($"- 0x{ByteNumber:X8}: ", false, ColorTools.ColTypes.ListEntry);
+                            TextWriterColor.Write($"- 0x{ByteNumber:X8}: ", false, KernelColorType.ListEntry);
                             for (long ByteRenderNumber = ByteRenderStart; ByteRenderNumber <= ByteRenderEnd; ByteRenderNumber++)
                             {
                                 if (ByteRenderStart < 0L)
@@ -330,7 +330,7 @@ namespace KS.Misc.Editors.HexEdit
                                     DebugWriter.WriteDebug(DebugLevel.I, "Char is not a whitespace.");
                                     RenderedByteChar = ProjectedByteChar;
                                 }
-                                TextWriterColor.Write($"0x{ByteRenderNumber:X2}({RenderedByteChar}) ", false, UseHighlight ? ColorTools.ColTypes.Success : ColorTools.ColTypes.ListValue);
+                                TextWriterColor.Write($"0x{ByteRenderNumber:X2}({RenderedByteChar}) ", false, UseHighlight ? KernelColorType.Success : KernelColorType.ListValue);
                             }
                             TextWriterColor.Write();
                         }
@@ -338,11 +338,11 @@ namespace KS.Misc.Editors.HexEdit
                 }
                 else if (StartByte > HexEditShellCommon.HexEdit_FileBytes.LongLength)
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, ColorTools.ColTypes.Error);
+                    TextWriterColor.Write(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, KernelColorType.Error);
                 }
                 else if (EndByte > HexEditShellCommon.HexEdit_FileBytes.LongLength)
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, ColorTools.ColTypes.Error);
+                    TextWriterColor.Write(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, KernelColorType.Error);
                 }
             }
             else
@@ -392,11 +392,11 @@ namespace KS.Misc.Editors.HexEdit
                 }
                 else if (StartByte > HexEditShellCommon.HexEdit_FileBytes.LongLength)
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, ColorTools.ColTypes.Error);
+                    TextWriterColor.Write(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, KernelColorType.Error);
                 }
                 else if (EndByte > HexEditShellCommon.HexEdit_FileBytes.LongLength)
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, ColorTools.ColTypes.Error);
+                    TextWriterColor.Write(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, KernelColorType.Error);
                 }
             }
             else

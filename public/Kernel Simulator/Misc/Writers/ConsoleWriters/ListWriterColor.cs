@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using System.Threading;
 using ColorSeq;
 using KS.ConsoleBase.Inputs;
+using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -48,7 +49,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
         /// <param name="Wrap">Wraps the output as needed.</param>
         public static void WriteList<TKey, TValue>(Dictionary<TKey, TValue> List, bool Wrap) =>
-            WriteList(List, ColorTools.GetColor(ColorTools.ColTypes.ListEntry), ColorTools.GetColor(ColorTools.ColTypes.ListValue), Wrap);
+            WriteList(List, ColorTools.GetColor(KernelColorType.ListEntry), ColorTools.GetColor(KernelColorType.ListValue), Wrap);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
@@ -56,7 +57,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
         /// <param name="ListKeyColor">A key color.</param>
         /// <param name="ListValueColor">A value color.</param>
-        public static void WriteList<TKey, TValue>(Dictionary<TKey, TValue> List, ColorTools.ColTypes ListKeyColor, ColorTools.ColTypes ListValueColor) => 
+        public static void WriteList<TKey, TValue>(Dictionary<TKey, TValue> List, KernelColorType ListKeyColor, KernelColorType ListValueColor) => 
             WriteList(List, ListKeyColor, ListValueColor, Flags.WrapListOutputs);
 
         /// <summary>
@@ -66,7 +67,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="ListKeyColor">A key color.</param>
         /// <param name="ListValueColor">A value color.</param>
         /// <param name="Wrap">Wraps the output as needed.</param>
-        public static void WriteList<TKey, TValue>(Dictionary<TKey, TValue> List, ColorTools.ColTypes ListKeyColor, ColorTools.ColTypes ListValueColor, bool Wrap) =>
+        public static void WriteList<TKey, TValue>(Dictionary<TKey, TValue> List, KernelColorType ListKeyColor, KernelColorType ListValueColor, bool Wrap) =>
             WriteList(List, ColorTools.GetColor(ListKeyColor), ColorTools.GetColor(ListValueColor), Wrap);
 
         /// <summary>
@@ -172,7 +173,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
         /// <param name="Wrap">Wraps the output as needed.</param>
         public static void WriteList<T>(IEnumerable<T> List, bool Wrap) =>
-            WriteList(List, ColorTools.GetColor(ColorTools.ColTypes.ListEntry), ColorTools.GetColor(ColorTools.ColTypes.ListValue), Wrap);
+            WriteList(List, ColorTools.GetColor(KernelColorType.ListEntry), ColorTools.GetColor(KernelColorType.ListValue), Wrap);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
@@ -180,7 +181,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
         /// <param name="ListKeyColor">A key color.</param>
         /// <param name="ListValueColor">A value color.</param>
-        public static void WriteList<T>(IEnumerable<T> List, ColorTools.ColTypes ListKeyColor, ColorTools.ColTypes ListValueColor) => 
+        public static void WriteList<T>(IEnumerable<T> List, KernelColorType ListKeyColor, KernelColorType ListValueColor) => 
             WriteList(List, ListKeyColor, ListValueColor, Flags.WrapListOutputs);
 
         /// <summary>
@@ -190,7 +191,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="ListKeyColor">A key color.</param>
         /// <param name="ListValueColor">A value color.</param>
         /// <param name="Wrap">Wraps the output as needed.</param>
-        public static void WriteList<T>(IEnumerable<T> List, ColorTools.ColTypes ListKeyColor, ColorTools.ColTypes ListValueColor, bool Wrap) =>
+        public static void WriteList<T>(IEnumerable<T> List, KernelColorType ListKeyColor, KernelColorType ListValueColor, bool Wrap) =>
             WriteList(List, ColorTools.GetColor(ListKeyColor), ColorTools.GetColor(ListValueColor), Wrap);
 
         /// <summary>

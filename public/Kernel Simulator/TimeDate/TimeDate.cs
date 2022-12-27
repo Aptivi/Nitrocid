@@ -58,14 +58,14 @@ namespace KS.TimeDate
         /// </summary>
         public static void ShowCurrentTimes()
         {
-            TextWriterColor.Write("datetime: ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Current time is {0}"), true, ColorTools.ColTypes.ListValue, TimeDateRenderers.RenderTime());
-            TextWriterColor.Write("datetime: ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Today is {0}"), true, ColorTools.ColTypes.ListValue, TimeDateRenderers.RenderDate());
-            TextWriterColor.Write("datetime: ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Time and date in UTC: {0}"), true, ColorTools.ColTypes.ListValue, TimeDateRenderersUtc.RenderUtc());
-            TextWriterColor.Write("datetime: ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Time Zone:") + " {0} ({1})", true, ColorTools.ColTypes.ListValue, TimeZoneInfo.Local.StandardName, TimeZoneInfo.Local.GetUtcOffset(KernelDateTime).ToString((TimeZoneInfo.Local.GetUtcOffset(KernelDateTime) < TimeSpan.Zero ? @"\-" : @"\+") + @"hh\:mm\:ss"));
+            TextWriterColor.Write("datetime: ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Translate.DoTranslation("Current time is {0}"), true, KernelColorType.ListValue, TimeDateRenderers.RenderTime());
+            TextWriterColor.Write("datetime: ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Translate.DoTranslation("Today is {0}"), true, KernelColorType.ListValue, TimeDateRenderers.RenderDate());
+            TextWriterColor.Write("datetime: ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Translate.DoTranslation("Time and date in UTC: {0}"), true, KernelColorType.ListValue, TimeDateRenderersUtc.RenderUtc());
+            TextWriterColor.Write("datetime: ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Translate.DoTranslation("Time Zone:") + " {0} ({1})", true, KernelColorType.ListValue, TimeZoneInfo.Local.StandardName, TimeZoneInfo.Local.GetUtcOffset(KernelDateTime).ToString((TimeZoneInfo.Local.GetUtcOffset(KernelDateTime) < TimeSpan.Zero ? @"\-" : @"\+") + @"hh\:mm\:ss"));
         }
 
         /// <summary>

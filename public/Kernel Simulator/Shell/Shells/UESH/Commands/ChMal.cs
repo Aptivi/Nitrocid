@@ -47,7 +47,7 @@ namespace KS.Shell.Shells.UESH.Commands
             {
                 if (string.IsNullOrEmpty(StringArgs))
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Blank MAL After Login."), true, ColorTools.ColTypes.Error);
+                    TextWriterColor.Write(Translate.DoTranslation("Blank MAL After Login."), true, KernelColorType.Error);
                 }
                 else
                 {

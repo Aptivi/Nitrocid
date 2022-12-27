@@ -28,6 +28,7 @@ using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
+using KS.ConsoleBase.Colors;
 
 namespace KS.Misc.Splash.Splashes
 {
@@ -103,8 +104,8 @@ namespace KS.Misc.Splash.Splashes
         public void Closing()
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Splash closing. Clearing console...");
-            ColorTools.SetConsoleColor(ColorTools.ColTypes.NeutralText);
-            ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
+            ColorTools.SetConsoleColor(KernelColorType.NeutralText);
+            ColorTools.SetConsoleColor(KernelColorType.Background, true);
             ConsoleWrapper.Clear();
         }
 
@@ -146,11 +147,11 @@ namespace KS.Misc.Splash.Splashes
 
             // Transition
             PresetStringBuilder.Append(LastTransitionForeground.VTSequenceForeground);
-            PresetStringBuilder.Append(Flags.SetBackground ? ColorTools.GetColor(ColorTools.ColTypes.Background).VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m");
+            PresetStringBuilder.Append(Flags.SetBackground ? ColorTools.GetColor(KernelColorType.Background).VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m");
             PresetStringBuilder.AppendFormat("{0} ", TransitionChar);
 
             // Display the text and percentage
-            TextWriterWhereColor.WriteWhere(PresetStringBuilder.ToString(), 0, ProgressWritePositionY, false, ColorTools.ColTypes.Progress, Vars);
+            TextWriterWhereColor.WriteWhere(PresetStringBuilder.ToString(), 0, ProgressWritePositionY, false, KernelColorType.Progress, Vars);
             ConsoleExtensions.ClearLineToRight();
 
             // Display the progress bar

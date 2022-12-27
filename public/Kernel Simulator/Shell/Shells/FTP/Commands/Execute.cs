@@ -40,19 +40,19 @@ namespace KS.Shell.Shells.FTP.Commands
                 var ExecutedReply = FTPShellCommon.ClientFTP.Execute(StringArgs);
                 if (ExecutedReply.Success)
                 {
-                    TextWriterColor.Write(">>> [{0}] M: {1}", true, ColorTools.ColTypes.Success, ExecutedReply.Code, ExecutedReply.Message);
-                    TextWriterColor.Write(">>> [{0}] I: {1}", true, ColorTools.ColTypes.Success, ExecutedReply.Code, ExecutedReply.InfoMessages);
+                    TextWriterColor.Write(">>> [{0}] M: {1}", true, KernelColorType.Success, ExecutedReply.Code, ExecutedReply.Message);
+                    TextWriterColor.Write(">>> [{0}] I: {1}", true, KernelColorType.Success, ExecutedReply.Code, ExecutedReply.InfoMessages);
                 }
                 else
                 {
-                    TextWriterColor.Write(">>> [{0}] M: {1}", true, ColorTools.ColTypes.Error, ExecutedReply.Code, ExecutedReply.Message);
-                    TextWriterColor.Write(">>> [{0}] I: {1}", true, ColorTools.ColTypes.Error, ExecutedReply.Code, ExecutedReply.InfoMessages);
-                    TextWriterColor.Write(">>> [{0}] E: {1}", true, ColorTools.ColTypes.Error, ExecutedReply.Code, ExecutedReply.ErrorMessage);
+                    TextWriterColor.Write(">>> [{0}] M: {1}", true, KernelColorType.Error, ExecutedReply.Code, ExecutedReply.Message);
+                    TextWriterColor.Write(">>> [{0}] I: {1}", true, KernelColorType.Error, ExecutedReply.Code, ExecutedReply.InfoMessages);
+                    TextWriterColor.Write(">>> [{0}] E: {1}", true, KernelColorType.Error, ExecutedReply.Code, ExecutedReply.ErrorMessage);
                 }
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("You haven't connected to any server yet"), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("You haven't connected to any server yet"), true, KernelColorType.Error);
             }
         }
 

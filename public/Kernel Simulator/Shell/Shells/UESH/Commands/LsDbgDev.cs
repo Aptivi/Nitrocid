@@ -38,8 +38,8 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             foreach (RemoteDebugDevice DebugDevice in RemoteDebugger.DebugDevices)
             {
-                TextWriterColor.Write($"- {DebugDevice.ClientIP}: ", false, ColorTools.ColTypes.ListEntry);
-                TextWriterColor.Write(DebugDevice.ClientName, true, ColorTools.ColTypes.ListValue);
+                TextWriterColor.Write($"- {DebugDevice.ClientIP}: ", false, KernelColorType.ListEntry);
+                TextWriterColor.Write(DebugDevice.ClientName, true, KernelColorType.ListValue);
             }
         }
 

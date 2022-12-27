@@ -65,13 +65,13 @@ namespace KS.Shell.Shells.UESH.Commands
                                 TargetModPath = Filesystem.NeutralizePath(TargetMod, Paths.GetKernelPath(KernelPathType.Mods));
                                 if (!(Parsing.TryParsePath(TargetModPath) && Checking.FileExists(TargetModPath)))
                                 {
-                                    TextWriterColor.Write(Translate.DoTranslation("Mod not found or file has invalid characters."), true, ColorTools.ColTypes.Error);
+                                    TextWriterColor.Write(Translate.DoTranslation("Mod not found or file has invalid characters."), true, KernelColorType.Error);
                                     return;
                                 }
                             }
                             else
                             {
-                                TextWriterColor.Write(Translate.DoTranslation("Mod file is not specified."), true, ColorTools.ColTypes.Error);
+                                TextWriterColor.Write(Translate.DoTranslation("Mod file is not specified."), true, KernelColorType.Error);
                                 return;
                             }
 
@@ -110,57 +110,57 @@ namespace KS.Shell.Shells.UESH.Commands
                                 if (ModManager.Mods[script].ModFilePath == TargetModPath)
                                 {
                                     SeparatorWriterColor.WriteSeparator(script, true);
-                                    TextWriterColor.Write("- " + Translate.DoTranslation("Mod name:") + " ", false, ColorTools.ColTypes.ListEntry);
-                                    TextWriterColor.Write(ModManager.Mods[script].ModName, true, ColorTools.ColTypes.ListValue);
-                                    TextWriterColor.Write("- " + Translate.DoTranslation("Mod file name:") + " ", false, ColorTools.ColTypes.ListEntry);
-                                    TextWriterColor.Write(ModManager.Mods[script].ModFileName, true, ColorTools.ColTypes.ListValue);
-                                    TextWriterColor.Write("- " + Translate.DoTranslation("Mod file path:") + " ", false, ColorTools.ColTypes.ListEntry);
-                                    TextWriterColor.Write(ModManager.Mods[script].ModFilePath, true, ColorTools.ColTypes.ListValue);
-                                    TextWriterColor.Write("- " + Translate.DoTranslation("Mod version:") + " ", false, ColorTools.ColTypes.ListEntry);
-                                    TextWriterColor.Write(ModManager.Mods[script].ModVersion, true, ColorTools.ColTypes.ListValue);
-                                    TextWriterColor.Write("- " + Translate.DoTranslation("Mod parts:") + " ", false, ColorTools.ColTypes.ListEntry);
-                                    TextWriterColor.Write(ModManager.Mods[script].ModParts.Count.ToString(), true, ColorTools.ColTypes.ListValue);
+                                    TextWriterColor.Write("- " + Translate.DoTranslation("Mod name:") + " ", false, KernelColorType.ListEntry);
+                                    TextWriterColor.Write(ModManager.Mods[script].ModName, true, KernelColorType.ListValue);
+                                    TextWriterColor.Write("- " + Translate.DoTranslation("Mod file name:") + " ", false, KernelColorType.ListEntry);
+                                    TextWriterColor.Write(ModManager.Mods[script].ModFileName, true, KernelColorType.ListValue);
+                                    TextWriterColor.Write("- " + Translate.DoTranslation("Mod file path:") + " ", false, KernelColorType.ListEntry);
+                                    TextWriterColor.Write(ModManager.Mods[script].ModFilePath, true, KernelColorType.ListValue);
+                                    TextWriterColor.Write("- " + Translate.DoTranslation("Mod version:") + " ", false, KernelColorType.ListEntry);
+                                    TextWriterColor.Write(ModManager.Mods[script].ModVersion, true, KernelColorType.ListValue);
+                                    TextWriterColor.Write("- " + Translate.DoTranslation("Mod parts:") + " ", false, KernelColorType.ListEntry);
+                                    TextWriterColor.Write(ModManager.Mods[script].ModParts.Count.ToString(), true, KernelColorType.ListValue);
                                     foreach (string ModPart in ModManager.Mods[script].ModParts.Keys)
                                     {
                                         SeparatorWriterColor.WriteSeparator("-- {0}", false, ModPart);
-                                        TextWriterColor.Write("- " + Translate.DoTranslation("Part version:") + " ", false, ColorTools.ColTypes.ListEntry);
-                                        TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Version, true, ColorTools.ColTypes.ListValue);
-                                        TextWriterColor.Write("- " + Translate.DoTranslation("Part file name:") + " ", false, ColorTools.ColTypes.ListEntry);
-                                        TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartFileName, true, ColorTools.ColTypes.ListValue);
-                                        TextWriterColor.Write("- " + Translate.DoTranslation("Part file path:") + " ", false, ColorTools.ColTypes.ListEntry);
-                                        TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartFilePath, true, ColorTools.ColTypes.ListValue);
+                                        TextWriterColor.Write("- " + Translate.DoTranslation("Part version:") + " ", false, KernelColorType.ListEntry);
+                                        TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Version, true, KernelColorType.ListValue);
+                                        TextWriterColor.Write("- " + Translate.DoTranslation("Part file name:") + " ", false, KernelColorType.ListEntry);
+                                        TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartFileName, true, KernelColorType.ListValue);
+                                        TextWriterColor.Write("- " + Translate.DoTranslation("Part file path:") + " ", false, KernelColorType.ListEntry);
+                                        TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartFilePath, true, KernelColorType.ListValue);
                                         if (ModManager.Mods[script].ModParts[ModPart].PartScript.Commands is not null)
                                         {
                                             foreach (string ModCommand in ModManager.Mods[script].ModParts[ModPart].PartScript.Commands.Keys)
                                             {
                                                 SeparatorWriterColor.WriteSeparator("--- {0}", false, ModCommand);
-                                                TextWriterColor.Write("- " + Translate.DoTranslation("Command name:") + " ", false, ColorTools.ColTypes.ListEntry);
-                                                TextWriterColor.Write(ModCommand, true, ColorTools.ColTypes.ListValue);
-                                                TextWriterColor.Write("- " + Translate.DoTranslation("Command definition:") + " ", false, ColorTools.ColTypes.ListEntry);
-                                                TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].HelpDefinition, true, ColorTools.ColTypes.ListValue);
-                                                TextWriterColor.Write("- " + Translate.DoTranslation("Command type:") + " ", false, ColorTools.ColTypes.ListEntry);
-                                                TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].Type.ToString(), true, ColorTools.ColTypes.ListValue);
-                                                TextWriterColor.Write("- " + Translate.DoTranslation("Strict command?") + " ", false, ColorTools.ColTypes.ListEntry);
-                                                TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].Flags.HasFlag(CommandFlags.Strict).ToString(), true, ColorTools.ColTypes.ListValue);
-                                                TextWriterColor.Write("- " + Translate.DoTranslation("Setting shell variable?") + " ", false, ColorTools.ColTypes.ListEntry);
-                                                TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].Flags.HasFlag(CommandFlags.SettingVariable).ToString(), true, ColorTools.ColTypes.ListValue);
-                                                TextWriterColor.Write("- " + Translate.DoTranslation("Can not run in maintenance mode?") + " ", false, ColorTools.ColTypes.ListEntry);
-                                                TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].Flags.HasFlag(CommandFlags.NoMaintenance).ToString(), true, ColorTools.ColTypes.ListValue);
-                                                TextWriterColor.Write("- " + Translate.DoTranslation("Obsolete?") + " ", false, ColorTools.ColTypes.ListEntry);
-                                                TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].Flags.HasFlag(CommandFlags.Obsolete).ToString(), true, ColorTools.ColTypes.ListValue);
-                                                TextWriterColor.Write("- " + Translate.DoTranslation("Redirection supported?") + " ", false, ColorTools.ColTypes.ListEntry);
-                                                TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].Flags.HasFlag(CommandFlags.RedirectionSupported).ToString(), true, ColorTools.ColTypes.ListValue);
+                                                TextWriterColor.Write("- " + Translate.DoTranslation("Command name:") + " ", false, KernelColorType.ListEntry);
+                                                TextWriterColor.Write(ModCommand, true, KernelColorType.ListValue);
+                                                TextWriterColor.Write("- " + Translate.DoTranslation("Command definition:") + " ", false, KernelColorType.ListEntry);
+                                                TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].HelpDefinition, true, KernelColorType.ListValue);
+                                                TextWriterColor.Write("- " + Translate.DoTranslation("Command type:") + " ", false, KernelColorType.ListEntry);
+                                                TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].Type.ToString(), true, KernelColorType.ListValue);
+                                                TextWriterColor.Write("- " + Translate.DoTranslation("Strict command?") + " ", false, KernelColorType.ListEntry);
+                                                TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].Flags.HasFlag(CommandFlags.Strict).ToString(), true, KernelColorType.ListValue);
+                                                TextWriterColor.Write("- " + Translate.DoTranslation("Setting shell variable?") + " ", false, KernelColorType.ListEntry);
+                                                TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].Flags.HasFlag(CommandFlags.SettingVariable).ToString(), true, KernelColorType.ListValue);
+                                                TextWriterColor.Write("- " + Translate.DoTranslation("Can not run in maintenance mode?") + " ", false, KernelColorType.ListEntry);
+                                                TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].Flags.HasFlag(CommandFlags.NoMaintenance).ToString(), true, KernelColorType.ListValue);
+                                                TextWriterColor.Write("- " + Translate.DoTranslation("Obsolete?") + " ", false, KernelColorType.ListEntry);
+                                                TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].Flags.HasFlag(CommandFlags.Obsolete).ToString(), true, KernelColorType.ListValue);
+                                                TextWriterColor.Write("- " + Translate.DoTranslation("Redirection supported?") + " ", false, KernelColorType.ListEntry);
+                                                TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].Flags.HasFlag(CommandFlags.RedirectionSupported).ToString(), true, KernelColorType.ListValue);
                                                 if (ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].CommandArgumentInfo is not null)
                                                 {
                                                     foreach (string Usage in ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].CommandArgumentInfo.HelpUsages)
                                                     {
-                                                        TextWriterColor.Write("- " + Translate.DoTranslation("Command usage:") + " ", false, ColorTools.ColTypes.ListEntry);
-                                                        TextWriterColor.Write(Usage, true, ColorTools.ColTypes.ListValue);
+                                                        TextWriterColor.Write("- " + Translate.DoTranslation("Command usage:") + " ", false, KernelColorType.ListEntry);
+                                                        TextWriterColor.Write(Usage, true, KernelColorType.ListValue);
                                                     }
-                                                    TextWriterColor.Write("- " + Translate.DoTranslation("Arguments required?") + " ", false, ColorTools.ColTypes.ListEntry);
-                                                    TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].CommandArgumentInfo.ArgumentsRequired.ToString(), true, ColorTools.ColTypes.ListValue);
-                                                    TextWriterColor.Write("- " + Translate.DoTranslation("Minimum count of required arguments:") + " ", false, ColorTools.ColTypes.ListEntry);
-                                                    TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].CommandArgumentInfo.MinimumArguments.ToString(), true, ColorTools.ColTypes.ListValue);
+                                                    TextWriterColor.Write("- " + Translate.DoTranslation("Arguments required?") + " ", false, KernelColorType.ListEntry);
+                                                    TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].CommandArgumentInfo.ArgumentsRequired.ToString(), true, KernelColorType.ListValue);
+                                                    TextWriterColor.Write("- " + Translate.DoTranslation("Minimum count of required arguments:") + " ", false, KernelColorType.ListEntry);
+                                                    TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].CommandArgumentInfo.MinimumArguments.ToString(), true, KernelColorType.ListValue);
                                                 }
                                             }
                                         }
@@ -190,16 +190,16 @@ namespace KS.Shell.Shells.UESH.Commands
                             foreach (string Mod in ModManager.ListMods(ModListTerm).Keys)
                             {
                                 SeparatorWriterColor.WriteSeparator(Mod, true);
-                                TextWriterColor.Write("- " + Translate.DoTranslation("Mod name:") + " ", false, ColorTools.ColTypes.ListEntry);
-                                TextWriterColor.Write(ModManager.Mods[Mod].ModName, true, ColorTools.ColTypes.ListValue);
-                                TextWriterColor.Write("- " + Translate.DoTranslation("Mod file name:") + " ", false, ColorTools.ColTypes.ListEntry);
-                                TextWriterColor.Write(ModManager.Mods[Mod].ModFileName, true, ColorTools.ColTypes.ListValue);
-                                TextWriterColor.Write("- " + Translate.DoTranslation("Mod file path:") + " ", false, ColorTools.ColTypes.ListEntry);
-                                TextWriterColor.Write(ModManager.Mods[Mod].ModFilePath, true, ColorTools.ColTypes.ListValue);
-                                TextWriterColor.Write("- " + Translate.DoTranslation("Mod version:") + " ", false, ColorTools.ColTypes.ListEntry);
-                                TextWriterColor.Write(ModManager.Mods[Mod].ModVersion, true, ColorTools.ColTypes.ListValue);
-                                TextWriterColor.Write("- " + Translate.DoTranslation("Mod parts:") + " ", false, ColorTools.ColTypes.ListEntry);
-                                TextWriterColor.Write(ModManager.Mods[Mod].ModParts.Count.ToString(), true, ColorTools.ColTypes.ListValue);
+                                TextWriterColor.Write("- " + Translate.DoTranslation("Mod name:") + " ", false, KernelColorType.ListEntry);
+                                TextWriterColor.Write(ModManager.Mods[Mod].ModName, true, KernelColorType.ListValue);
+                                TextWriterColor.Write("- " + Translate.DoTranslation("Mod file name:") + " ", false, KernelColorType.ListEntry);
+                                TextWriterColor.Write(ModManager.Mods[Mod].ModFileName, true, KernelColorType.ListValue);
+                                TextWriterColor.Write("- " + Translate.DoTranslation("Mod file path:") + " ", false, KernelColorType.ListEntry);
+                                TextWriterColor.Write(ModManager.Mods[Mod].ModFilePath, true, KernelColorType.ListValue);
+                                TextWriterColor.Write("- " + Translate.DoTranslation("Mod version:") + " ", false, KernelColorType.ListEntry);
+                                TextWriterColor.Write(ModManager.Mods[Mod].ModVersion, true, KernelColorType.ListValue);
+                                TextWriterColor.Write("- " + Translate.DoTranslation("Mod parts:") + " ", false, KernelColorType.ListEntry);
+                                TextWriterColor.Write(ModManager.Mods[Mod].ModParts.Count.ToString(), true, KernelColorType.ListValue);
                             }
 
                             break;
@@ -212,12 +212,12 @@ namespace KS.Shell.Shells.UESH.Commands
                                 foreach (string Part in ModList[Mod].ModParts.Keys)
                                 {
                                     SeparatorWriterColor.WriteSeparator($"{Mod} > {Part}", true);
-                                    TextWriterColor.Write("- " + Translate.DoTranslation("Mod part name:") + " ", false, ColorTools.ColTypes.ListEntry);
-                                    TextWriterColor.Write(ModList[Mod].ModParts[Part].PartName, true, ColorTools.ColTypes.ListValue);
-                                    TextWriterColor.Write("- " + Translate.DoTranslation("Mod part file name:") + " ", false, ColorTools.ColTypes.ListEntry);
-                                    TextWriterColor.Write(ModManager.Mods[Mod].ModParts[Part].PartFileName, true, ColorTools.ColTypes.ListValue);
-                                    TextWriterColor.Write("- " + Translate.DoTranslation("Mod part file path:") + " ", false, ColorTools.ColTypes.ListEntry);
-                                    TextWriterColor.Write(ModManager.Mods[Mod].ModParts[Part].PartFilePath, true, ColorTools.ColTypes.ListValue);
+                                    TextWriterColor.Write("- " + Translate.DoTranslation("Mod part name:") + " ", false, KernelColorType.ListEntry);
+                                    TextWriterColor.Write(ModList[Mod].ModParts[Part].PartName, true, KernelColorType.ListValue);
+                                    TextWriterColor.Write("- " + Translate.DoTranslation("Mod part file name:") + " ", false, KernelColorType.ListEntry);
+                                    TextWriterColor.Write(ModManager.Mods[Mod].ModParts[Part].PartFileName, true, KernelColorType.ListValue);
+                                    TextWriterColor.Write("- " + Translate.DoTranslation("Mod part file path:") + " ", false, KernelColorType.ListEntry);
+                                    TextWriterColor.Write(ModManager.Mods[Mod].ModParts[Part].PartFilePath, true, KernelColorType.ListValue);
                                 }
                             }
 
@@ -241,7 +241,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
                     default:
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("Invalid command {0}. Check the usage below:"), true, ColorTools.ColTypes.Error, CommandMode);
+                            TextWriterColor.Write(Translate.DoTranslation("Invalid command {0}. Check the usage below:"), true, KernelColorType.Error, CommandMode);
                             HelpSystem.ShowHelp("modman");
                             break;
                         }
@@ -249,7 +249,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Mod management is disabled in safe mode."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("Mod management is disabled in safe mode."), true, KernelColorType.Error);
             }
         }
 

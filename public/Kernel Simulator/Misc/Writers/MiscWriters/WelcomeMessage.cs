@@ -70,11 +70,11 @@ namespace KS.Misc.Writers.MiscWriters
                 // Finally, write the message
                 if (Flags.StartScroll)
                 {
-                    TextWriterSlowColor.WriteSlowly(MessageWrite, true, 10d, ColorTools.ColTypes.Banner, KernelTools.KernelVersion.ToString());
+                    TextWriterSlowColor.WriteSlowly(MessageWrite, true, 10d, KernelColorType.Banner, KernelTools.KernelVersion.ToString());
                 }
                 else
                 {
-                    TextWriterColor.Write(MessageWrite, true, ColorTools.ColTypes.Banner, KernelTools.KernelVersion.ToString());
+                    TextWriterColor.Write(MessageWrite, true, KernelColorType.Banner, KernelTools.KernelVersion.ToString());
                 }
 
                 string FigletRenderedBanner = FigletTools.RenderFiglet($"{KernelTools.KernelVersion}", KernelTools.BannerFigletFont);
@@ -92,8 +92,8 @@ namespace KS.Misc.Writers.MiscWriters
                                   CharManager.NewLine + "    This program comes with ABSOLUTELY NO WARRANTY, not even " + 
                                   CharManager.NewLine + "    MERCHANTABILITY or FITNESS for particular purposes." + 
                                   CharManager.NewLine + "    This is free software, and you are welcome to redistribute it" + 
-                                  CharManager.NewLine + "    under certain conditions; See COPYING file in source code." + CharManager.NewLine, true, ColorTools.ColTypes.License);
-            TextWriterColor.Write("* " + Translate.DoTranslation("For more information about the terms and conditions of using this software, visit") + " http://www.gnu.org/licenses/", true, ColorTools.ColTypes.License);
+                                  CharManager.NewLine + "    under certain conditions; See COPYING file in source code." + CharManager.NewLine, true, KernelColorType.License);
+            TextWriterColor.Write("* " + Translate.DoTranslation("For more information about the terms and conditions of using this software, visit") + " http://www.gnu.org/licenses/", true, KernelColorType.License);
         }
 
     }

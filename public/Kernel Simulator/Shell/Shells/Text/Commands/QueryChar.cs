@@ -47,13 +47,13 @@ namespace KS.Shell.Shells.Text.Commands
                         var QueriedChars = TextEditTools.TextEdit_QueryChar(Convert.ToChar(ListArgsOnly[0]), Convert.ToInt32(ListArgsOnly[1]));
                         foreach (int CharIndex in QueriedChars.Keys)
                         {
-                            TextWriterColor.Write("- {0}: ", false, ColorTools.ColTypes.ListEntry, CharIndex);
-                            TextWriterColor.Write("{0} ({1})", true, ColorTools.ColTypes.ListValue, ListArgsOnly[0], QueriedChars[CharIndex]);
+                            TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, CharIndex);
+                            TextWriterColor.Write("{0} ({1})", true, KernelColorType.ListValue, ListArgsOnly[0], QueriedChars[CharIndex]);
                         }
                     }
                     else
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, ColorTools.ColTypes.Error);
+                        TextWriterColor.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
                     }
                 }
                 else if (ListArgsOnly[1].ToLower() == "all")
@@ -63,8 +63,8 @@ namespace KS.Shell.Shells.Text.Commands
                     {
                         foreach (int CharIndex in QueriedChars[LineIndex].Keys)
                         {
-                            TextWriterColor.Write("- {0}:{1}: ", false, ColorTools.ColTypes.ListEntry, LineIndex, CharIndex);
-                            TextWriterColor.Write("{0} ({1})", true, ColorTools.ColTypes.ListValue, ListArgsOnly[0], TextEditShellCommon.TextEdit_FileLines[LineIndex]);
+                            TextWriterColor.Write("- {0}:{1}: ", false, KernelColorType.ListEntry, LineIndex, CharIndex);
+                            TextWriterColor.Write("{0} ({1})", true, KernelColorType.ListValue, ListArgsOnly[0], TextEditShellCommon.TextEdit_FileLines[LineIndex]);
                         }
                     }
                 }
@@ -83,14 +83,14 @@ namespace KS.Shell.Shells.Text.Commands
                             var QueriedChars = TextEditTools.TextEdit_QueryChar(Convert.ToChar(ListArgsOnly[0]), LineNumber);
                             foreach (int CharIndex in QueriedChars.Keys)
                             {
-                                TextWriterColor.Write("- {0}:{1}: ", false, ColorTools.ColTypes.ListEntry, LineNumber, CharIndex);
-                                TextWriterColor.Write("{0} ({1})", true, ColorTools.ColTypes.ListValue, ListArgsOnly[0], QueriedChars[CharIndex]);
+                                TextWriterColor.Write("- {0}:{1}: ", false, KernelColorType.ListEntry, LineNumber, CharIndex);
+                                TextWriterColor.Write("{0} ({1})", true, KernelColorType.ListValue, ListArgsOnly[0], QueriedChars[CharIndex]);
                             }
                         }
                     }
                     else
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, ColorTools.ColTypes.Error);
+                        TextWriterColor.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
                     }
                 }
             }

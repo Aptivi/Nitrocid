@@ -125,8 +125,8 @@ namespace KS.Misc.Calendar.Events
         {
             foreach (EventInfo EventInstance in CalendarEvents)
             {
-                TextWriterColor.Write("- {0}: ", false, ColorTools.ColTypes.ListEntry, EventInstance.EventDate);
-                TextWriterColor.Write(EventInstance.EventTitle, true, ColorTools.ColTypes.ListValue);
+                TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, EventInstance.EventDate);
+                TextWriterColor.Write(EventInstance.EventTitle, true, KernelColorType.ListValue);
             }
         }
 

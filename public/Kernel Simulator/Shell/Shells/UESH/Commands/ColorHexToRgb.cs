@@ -40,12 +40,12 @@ namespace KS.Shell.Shells.UESH.Commands
 
             // Do the job
             Hex.ConvertFromHexToRgb(ref R, ref G, ref B);
-            TextWriterColor.Write("- " + Translate.DoTranslation("Red color level:") + " ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write($"{R}", true, ColorTools.ColTypes.ListValue);
-            TextWriterColor.Write("- " + Translate.DoTranslation("Green color level:") + " ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write($"{G}", true, ColorTools.ColTypes.ListValue);
-            TextWriterColor.Write("- " + Translate.DoTranslation("Blue color level:") + " ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write($"{B}", true, ColorTools.ColTypes.ListValue);
+            TextWriterColor.Write("- " + Translate.DoTranslation("Red color level:") + " ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write($"{R}", true, KernelColorType.ListValue);
+            TextWriterColor.Write("- " + Translate.DoTranslation("Green color level:") + " ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write($"{G}", true, KernelColorType.ListValue);
+            TextWriterColor.Write("- " + Translate.DoTranslation("Blue color level:") + " ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write($"{B}", true, KernelColorType.ListValue);
         }
 
     }

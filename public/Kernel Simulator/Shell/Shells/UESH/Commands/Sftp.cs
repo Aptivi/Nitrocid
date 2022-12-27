@@ -53,12 +53,12 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             catch (KernelException sftpex) when (sftpex.ExceptionType == KernelExceptionType.SFTPShell)
             {
-                TextWriterColor.Write(sftpex.Message, true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(sftpex.Message, true, KernelColorType.Error);
             }
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.Write(Translate.DoTranslation("Unknown SFTP shell error:") + " {0}", true, ColorTools.ColTypes.Error, ex.Message);
+                TextWriterColor.Write(Translate.DoTranslation("Unknown SFTP shell error:") + " {0}", true, KernelColorType.Error, ex.Message);
             }
         }
 

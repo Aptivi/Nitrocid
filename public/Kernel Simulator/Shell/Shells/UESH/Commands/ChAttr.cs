@@ -96,26 +96,26 @@ namespace KS.Shell.Shells.UESH.Commands
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Attribute \"{0}\" is invalid."), true, ColorTools.ColTypes.Error, ListArgsOnly[1]);
+                    TextWriterColor.Write(Translate.DoTranslation("Attribute \"{0}\" is invalid."), true, KernelColorType.Error, ListArgsOnly[1]);
                 }
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("File not found."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("File not found."), true, KernelColorType.Error);
             }
         }
 
         public override void HelpHelper()
         {
             TextWriterColor.Write(Translate.DoTranslation("where <attributes> is one of the following:"));
-            TextWriterColor.Write("- Normal: ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("The file is a normal file"), true, ColorTools.ColTypes.ListValue);                   // Normal   = 128
-            TextWriterColor.Write("- ReadOnly: ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("The file is a read-only file"), true, ColorTools.ColTypes.ListValue);              // ReadOnly = 1
-            TextWriterColor.Write("- Hidden: ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("The file is a hidden file"), true, ColorTools.ColTypes.ListValue);                   // Hidden   = 2
-            TextWriterColor.Write("- Archive: ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("The file is an archive. Used for backups."), true, ColorTools.ColTypes.ListValue);  // Archive  = 32
+            TextWriterColor.Write("- Normal: ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Translate.DoTranslation("The file is a normal file"), true, KernelColorType.ListValue);                   // Normal   = 128
+            TextWriterColor.Write("- ReadOnly: ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Translate.DoTranslation("The file is a read-only file"), true, KernelColorType.ListValue);              // ReadOnly = 1
+            TextWriterColor.Write("- Hidden: ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Translate.DoTranslation("The file is a hidden file"), true, KernelColorType.ListValue);                   // Hidden   = 2
+            TextWriterColor.Write("- Archive: ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Translate.DoTranslation("The file is an archive. Used for backups."), true, KernelColorType.ListValue);  // Archive  = 32
         }
 
     }

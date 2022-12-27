@@ -27,7 +27,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override string TestName => Translate.DoTranslation("Print a separator to console with color");
         public override void Run()
         {
-            SeparatorWriterColor.WriteSeparator("Hello world!", true, ColorTools.ColTypes.Success);
+            SeparatorWriterColor.WriteSeparator("Hello world!", true, KernelColorType.Success);
         }
     }
 }

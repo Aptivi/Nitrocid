@@ -27,7 +27,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override string TestName => Translate.DoTranslation("Print a string to console");
         public override void Run()
         {
-            TextWriterColor.Write("Hello world!", true, ColorTools.ColTypes.Success);
+            TextWriterColor.Write("Hello world!", true, KernelColorType.Success);
         }
     }
 }

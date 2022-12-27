@@ -139,8 +139,8 @@ namespace KS.Misc.Calendar.Reminders
         {
             foreach (ReminderInfo Reminder in Reminders)
             {
-                TextWriterColor.Write("- {0}: ", false, ColorTools.ColTypes.ListEntry, Reminder.ReminderDate);
-                TextWriterColor.Write(Reminder.ReminderTitle, true, ColorTools.ColTypes.ListValue);
+                TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, Reminder.ReminderDate);
+                TextWriterColor.Write(Reminder.ReminderTitle, true, KernelColorType.ListValue);
             }
         }
 

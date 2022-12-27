@@ -43,16 +43,16 @@ namespace KS.Shell.Shells.Hex.Commands
                 if (Convert.ToInt32(ListArgsOnly[0]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
                 {
                     HexEditTools.HexEdit_DeleteByte(Convert.ToInt64(ListArgsOnly[0]));
-                    TextWriterColor.Write(Translate.DoTranslation("Byte deleted."), true, ColorTools.ColTypes.Success);
+                    TextWriterColor.Write(Translate.DoTranslation("Byte deleted."), true, KernelColorType.Success);
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("The specified byte number may not be larger than the file size."), true, ColorTools.ColTypes.Error);
+                    TextWriterColor.Write(Translate.DoTranslation("The specified byte number may not be larger than the file size."), true, KernelColorType.Error);
                 }
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("The byte number is not numeric."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("The byte number is not numeric."), true, KernelColorType.Error);
                 DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly[0]);
             }
         }

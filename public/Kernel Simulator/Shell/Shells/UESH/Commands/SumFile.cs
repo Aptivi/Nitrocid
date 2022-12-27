@@ -72,7 +72,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Invalid encryption algorithm."), true, ColorTools.ColTypes.Error);
+                    TextWriterColor.Write(Translate.DoTranslation("Invalid encryption algorithm."), true, KernelColorType.Error);
                 }
                 if (!string.IsNullOrEmpty(@out))
                 {
@@ -83,15 +83,15 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("{0} is not found."), true, ColorTools.ColTypes.Error, file);
+                TextWriterColor.Write(Translate.DoTranslation("{0} is not found."), true, KernelColorType.Error, file);
             }
         }
 
         public override void HelpHelper()
         {
             TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"));
-            TextWriterColor.Write("  -relative: ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Uses relative path instead of absolute"), true, ColorTools.ColTypes.ListValue);
+            TextWriterColor.Write("  -relative: ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Translate.DoTranslation("Uses relative path instead of absolute"), true, KernelColorType.ListValue);
         }
 
     }

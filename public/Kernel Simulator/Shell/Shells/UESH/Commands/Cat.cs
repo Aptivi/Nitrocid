@@ -71,17 +71,17 @@ namespace KS.Shell.Shells.UESH.Commands
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.Write(ex.Message, true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(ex.Message, true, KernelColorType.Error);
             }
         }
 
         public override void HelpHelper()
         {
             TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"));
-            TextWriterColor.Write("  -lines: ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Prints the line numbers that follow the line being printed"), true, ColorTools.ColTypes.ListValue);
-            TextWriterColor.Write("  -nolines: ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Prevents printing the line numbers"), true, ColorTools.ColTypes.ListValue);
+            TextWriterColor.Write("  -lines: ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Translate.DoTranslation("Prints the line numbers that follow the line being printed"), true, KernelColorType.ListValue);
+            TextWriterColor.Write("  -nolines: ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Translate.DoTranslation("Prevents printing the line numbers"), true, KernelColorType.ListValue);
         }
 
     }

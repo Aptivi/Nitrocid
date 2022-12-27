@@ -38,7 +38,7 @@ namespace KS.Misc.Writers.MiscWriters
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void DecisiveWrite(ShellType CommandType, StreamWriter DebugDeviceSocket, string Text, bool Line, ColorTools.ColTypes colorType, params object[] vars) =>
+        public static void DecisiveWrite(ShellType CommandType, StreamWriter DebugDeviceSocket, string Text, bool Line, KernelColorType colorType, params object[] vars) =>
             DecisiveWrite(Shell.Shell.GetShellTypeName(CommandType), DebugDeviceSocket, Text, Line, colorType, vars);
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace KS.Misc.Writers.MiscWriters
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void DecisiveWrite(string CommandType, StreamWriter DebugDeviceSocket, string Text, bool Line, ColorTools.ColTypes colorType, params object[] vars)
+        public static void DecisiveWrite(string CommandType, StreamWriter DebugDeviceSocket, string Text, bool Line, KernelColorType colorType, params object[] vars)
         {
             if (!(CommandType == "RemoteDebugShell"))
             {

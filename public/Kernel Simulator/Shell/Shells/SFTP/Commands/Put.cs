@@ -40,18 +40,18 @@ namespace KS.Shell.Shells.SFTP.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            TextWriterColor.Write(Translate.DoTranslation("Uploading file {0}..."), true, ColorTools.ColTypes.Progress, ListArgsOnly[0]);
+            TextWriterColor.Write(Translate.DoTranslation("Uploading file {0}..."), true, KernelColorType.Progress, ListArgsOnly[0]);
 
             // Begin the uploading process
             if (SFTPTransfer.SFTPUploadFile(ListArgsOnly[0]))
             {
                 TextWriterColor.Write();
-                TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Uploaded file {0}"), true, ColorTools.ColTypes.Success, ListArgsOnly[0]);
+                TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Uploaded file {0}"), true, KernelColorType.Success, ListArgsOnly[0]);
             }
             else
             {
                 TextWriterColor.Write();
-                TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Failed to upload {0}"), true, ColorTools.ColTypes.Error, ListArgsOnly[0]);
+                TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Failed to upload {0}"), true, KernelColorType.Error, ListArgsOnly[0]);
             }
         }
 

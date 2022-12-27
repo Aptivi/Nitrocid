@@ -42,17 +42,17 @@ namespace KS.Shell.Shells.FTP.Commands
         {
             string LocalFolder = ListArgsOnly[0];
             string RemoteFolder = ListArgsOnly.Length > 1 ? ListArgsOnly[1] : "";
-            TextWriterColor.Write(Translate.DoTranslation("Uploading folder {0}..."), true, ColorTools.ColTypes.Progress, ListArgsOnly[0]);
+            TextWriterColor.Write(Translate.DoTranslation("Uploading folder {0}..."), true, KernelColorType.Progress, ListArgsOnly[0]);
             bool Result = !string.IsNullOrWhiteSpace(LocalFolder) ? FTPTransfer.FTPUploadFolder(RemoteFolder, LocalFolder) : FTPTransfer.FTPUploadFolder(RemoteFolder);
             if (Result)
             {
                 TextWriterColor.Write();
-                TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Uploaded folder {0}"), true, ColorTools.ColTypes.Success, ListArgsOnly[0]);
+                TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Uploaded folder {0}"), true, KernelColorType.Success, ListArgsOnly[0]);
             }
             else
             {
                 TextWriterColor.Write();
-                TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Failed to upload {0}"), true, ColorTools.ColTypes.Error, ListArgsOnly[0]);
+                TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Failed to upload {0}"), true, KernelColorType.Error, ListArgsOnly[0]);
             }
         }
 

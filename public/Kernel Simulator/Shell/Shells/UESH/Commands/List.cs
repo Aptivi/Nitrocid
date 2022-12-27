@@ -79,10 +79,10 @@ namespace KS.Shell.Shells.UESH.Commands
         public override void HelpHelper()
         {
             TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"));
-            TextWriterColor.Write("  -showdetails: ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Shows the file details in the list"), true, ColorTools.ColTypes.ListValue);
-            TextWriterColor.Write("  -suppressmessages: ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Suppresses the annoying \"permission denied\" messages"), true, ColorTools.ColTypes.ListValue);
+            TextWriterColor.Write("  -showdetails: ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Translate.DoTranslation("Shows the file details in the list"), true, KernelColorType.ListValue);
+            TextWriterColor.Write("  -suppressmessages: ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Translate.DoTranslation("Suppresses the annoying \"permission denied\" messages"), true, KernelColorType.ListValue);
         }
 
     }

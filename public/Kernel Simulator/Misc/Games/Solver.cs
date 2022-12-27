@@ -69,7 +69,7 @@ namespace KS.Misc.Games
                 // Generate the expression
                 RandomExpression = FirstNumber.ToString() + Operations.ElementAt(OperationIndex) + SecondNumber.ToString();
                 DebugWriter.WriteDebug(DebugLevel.I, "Expression to be solved: {0}", RandomExpression);
-                TextWriterColor.Write(RandomExpression, true, ColorTools.ColTypes.Input);
+                TextWriterColor.Write(RandomExpression, true, KernelColorType.Input);
 
                 // Wait for response
                 UserEvaluated = SolverShowInput ? Input.ReadLine() : Input.ReadLineNoInput(Convert.ToChar("\0"));
@@ -99,7 +99,7 @@ namespace KS.Misc.Games
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "User evaluated \"{0}\". However, it's not numeric.", UserEvaluated);
-                    TextWriterColor.Write(Translate.DoTranslation("You can only write the numbers."), true, ColorTools.ColTypes.Error);
+                    TextWriterColor.Write(Translate.DoTranslation("You can only write the numbers."), true, KernelColorType.Error);
                 }
             }
         }

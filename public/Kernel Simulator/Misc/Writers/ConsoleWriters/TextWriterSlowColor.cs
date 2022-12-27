@@ -20,6 +20,7 @@ using System;
 using System.Threading;
 using ColorSeq;
 using KS.Kernel.Debugging;
+using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Drivers;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
@@ -40,7 +41,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteSlowly(string msg, bool Line, double MsEachLetter, ColorTools.ColTypes colorType, params object[] vars)
+        public static void WriteSlowly(string msg, bool Line, double MsEachLetter, KernelColorType colorType, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
@@ -69,7 +70,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteSlowly(string msg, bool Line, double MsEachLetter, ColorTools.ColTypes colorTypeForeground, ColorTools.ColTypes colorTypeBackground, params object[] vars)
+        public static void WriteSlowly(string msg, bool Line, double MsEachLetter, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
@@ -105,7 +106,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                 try
                 {
                     ColorTools.SetConsoleColor(new Color(Convert.ToInt32(color)));
-                    ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
+                    ColorTools.SetConsoleColor(KernelColorType.Background, true);
 
                     // Write text slowly
                     DriverHandler.CurrentConsoleDriver.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
@@ -162,7 +163,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                 try
                 {
                     ColorTools.SetConsoleColor(color);
-                    ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
+                    ColorTools.SetConsoleColor(KernelColorType.Background, true);
 
                     // Write text slowly
                     DriverHandler.CurrentConsoleDriver.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);

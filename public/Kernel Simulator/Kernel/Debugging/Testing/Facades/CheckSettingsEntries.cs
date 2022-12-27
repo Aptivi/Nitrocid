@@ -45,7 +45,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
             // Warn if not found
             if (NotFound.Count > 0)
             {
-                TextWriterColor.Write(Translate.DoTranslation("These configuration entries have invalid variables or enumerations and need to be fixed:"), true, ColorTools.ColTypes.Warning);
+                TextWriterColor.Write(Translate.DoTranslation("These configuration entries have invalid variables or enumerations and need to be fixed:"), true, KernelColorType.Warning);
                 ListWriterColor.WriteList(NotFound);
             }
         }

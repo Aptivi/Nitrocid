@@ -20,6 +20,7 @@ using System;
 using System.Threading;
 using ColorSeq;
 using KS.Kernel.Debugging;
+using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Drivers;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
@@ -87,7 +88,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="Top">Row number in console</param>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhere(string msg, int Left, int Top, ColorTools.ColTypes colorType, params object[] vars) => 
+        public static void WriteWhere(string msg, int Left, int Top, KernelColorType colorType, params object[] vars) => 
             WriteWhere(msg, Left, Top, false, 0, colorType, vars);
 
         /// <summary>
@@ -99,7 +100,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="Return">Whether or not to return to old position</param>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhere(string msg, int Left, int Top, bool Return, ColorTools.ColTypes colorType, params object[] vars) => 
+        public static void WriteWhere(string msg, int Left, int Top, bool Return, KernelColorType colorType, params object[] vars) => 
             WriteWhere(msg, Left, Top, Return, 0, colorType, vars);
 
         /// <summary>
@@ -112,7 +113,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="RightMargin">The right margin</param>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhere(string msg, int Left, int Top, bool Return, int RightMargin, ColorTools.ColTypes colorType, params object[] vars)
+        public static void WriteWhere(string msg, int Left, int Top, bool Return, int RightMargin, KernelColorType colorType, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
@@ -141,7 +142,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhere(string msg, int Left, int Top, ColorTools.ColTypes colorTypeForeground, ColorTools.ColTypes colorTypeBackground, params object[] vars) => 
+        public static void WriteWhere(string msg, int Left, int Top, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars) => 
             WriteWhere(msg, Left, Top, false, 0, colorTypeForeground, colorTypeBackground, vars);
 
         /// <summary>
@@ -154,7 +155,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhere(string msg, int Left, int Top, bool Return, ColorTools.ColTypes colorTypeForeground, ColorTools.ColTypes colorTypeBackground, params object[] vars) => 
+        public static void WriteWhere(string msg, int Left, int Top, bool Return, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars) => 
             WriteWhere(msg, Left, Top, Return, 0, colorTypeForeground, colorTypeBackground, vars);
 
         /// <summary>
@@ -168,7 +169,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhere(string msg, int Left, int Top, bool Return, int RightMargin, ColorTools.ColTypes colorTypeForeground, ColorTools.ColTypes colorTypeBackground, params object[] vars)
+        public static void WriteWhere(string msg, int Left, int Top, bool Return, int RightMargin, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
@@ -229,7 +230,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                 try
                 {
                     ColorTools.SetConsoleColor(new Color(Convert.ToInt32(color)));
-                    ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
+                    ColorTools.SetConsoleColor(KernelColorType.Background, true);
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
                     WriteWhere(msg, Left, Top, Return, RightMargin, vars);
@@ -338,7 +339,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                 try
                 {
                     ColorTools.SetConsoleColor(color);
-                    ColorTools.SetConsoleColor(ColorTools.ColTypes.Background, true);
+                    ColorTools.SetConsoleColor(KernelColorType.Background, true);
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
                     WriteWhere(msg, Left, Top, Return, RightMargin, vars);

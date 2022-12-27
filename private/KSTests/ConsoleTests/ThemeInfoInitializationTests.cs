@@ -18,6 +18,7 @@
 
 using System.IO;
 using Extensification.StringExts;
+using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Themes;
 using NUnit.Framework;
 using Shouldly;
@@ -44,9 +45,9 @@ namespace KSTests.ConsoleTests
 
             // Check for null
             ThemeInfoInstance.ThemeColors.ShouldNotBeNull();
-            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ColTypes)).Length - 2; typeIndex++)
+            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length - 2; typeIndex++)
             {
-                ColTypes type = ThemeInfoInstance.ThemeColors.Keys.ElementAt(typeIndex);
+                KernelColorType type = ThemeInfoInstance.ThemeColors.Keys.ElementAt(typeIndex);
                 ThemeInfoInstance.ThemeColors[type].ShouldNotBeNull();
             }
         }
@@ -82,9 +83,9 @@ namespace KSTests.ConsoleTests
 
                 // Check for null
                 ThemeInfoInstance.ThemeColors.ShouldNotBeNull();
-                for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ColTypes)).Length - 2; typeIndex++)
+                for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length - 2; typeIndex++)
                 {
-                    ColTypes type = ThemeInfoInstance.ThemeColors.Keys.ElementAt(typeIndex);
+                    KernelColorType type = ThemeInfoInstance.ThemeColors.Keys.ElementAt(typeIndex);
                     ThemeInfoInstance.ThemeColors[type].ShouldNotBeNull();
                 }
             }
@@ -105,9 +106,9 @@ namespace KSTests.ConsoleTests
 
             // Check for null
             ThemeInfoInstance.ThemeColors.ShouldNotBeNull();
-            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ColTypes)).Length - 2; typeIndex++)
+            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length - 2; typeIndex++)
             {
-                ColTypes type = ThemeInfoInstance.ThemeColors.Keys.ElementAt(typeIndex);
+                KernelColorType type = ThemeInfoInstance.ThemeColors.Keys.ElementAt(typeIndex);
                 ThemeInfoInstance.ThemeColors[type].ShouldNotBeNull();
             }
         }

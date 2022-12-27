@@ -37,17 +37,17 @@ namespace KS.Shell.Shells.FTP.Commands
         {
             string RemoteFile = ListArgsOnly[0];
             string LocalFile = ListArgsOnly.Length > 1 ? ListArgsOnly[1] : "";
-            TextWriterColor.Write(Translate.DoTranslation("Downloading file {0}..."), false, ColorTools.ColTypes.Progress, RemoteFile);
+            TextWriterColor.Write(Translate.DoTranslation("Downloading file {0}..."), false, KernelColorType.Progress, RemoteFile);
             bool Result = !string.IsNullOrWhiteSpace(LocalFile) ? FTPTransfer.FTPGetFile(RemoteFile, LocalFile) : FTPTransfer.FTPGetFile(RemoteFile);
             if (Result)
             {
                 TextWriterColor.Write();
-                TextWriterColor.Write(Translate.DoTranslation("Downloaded file {0}."), true, ColorTools.ColTypes.Success, RemoteFile);
+                TextWriterColor.Write(Translate.DoTranslation("Downloaded file {0}."), true, KernelColorType.Success, RemoteFile);
             }
             else
             {
                 TextWriterColor.Write();
-                TextWriterColor.Write(Translate.DoTranslation("Download failed for file {0}."), true, ColorTools.ColTypes.Error, RemoteFile);
+                TextWriterColor.Write(Translate.DoTranslation("Download failed for file {0}."), true, KernelColorType.Error, RemoteFile);
             }
         }
 

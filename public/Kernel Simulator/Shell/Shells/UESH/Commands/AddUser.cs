@@ -53,7 +53,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Passwords don't match."), true, ColorTools.ColTypes.Error);
+                    TextWriterColor.Write(Translate.DoTranslation("Passwords don't match."), true, KernelColorType.Error);
                 }
             }
         }

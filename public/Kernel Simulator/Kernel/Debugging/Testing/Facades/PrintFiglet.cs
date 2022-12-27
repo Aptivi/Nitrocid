@@ -28,7 +28,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override string TestName => Translate.DoTranslation("Print a figlet string to console");
         public override void Run()
         {
-            FigletColor.WriteFiglet("Hello world!", FiggleFonts.Small, ColorTools.ColTypes.Success);
+            FigletColor.WriteFiglet("Hello world!", FiggleFonts.Small, KernelColorType.Success);
         }
     }
 }

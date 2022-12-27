@@ -90,13 +90,13 @@ namespace KS.Misc.Splash
                     }
                     else if (!Flags.QuietKernel)
                     {
-                        TextWriterColor.Write($"  [{_Progress}%] {Text}", true, ColorTools.ColTypes.Tip, Vars);
+                        TextWriterColor.Write($"  [{_Progress}%] {Text}", true, KernelColorType.Tip, Vars);
                     }
                 }
             }
             else
             {
-                TextWriterColor.Write(Text, true, ColorTools.ColTypes.Tip, Vars);
+                TextWriterColor.Write(Text, true, KernelColorType.Tip, Vars);
             }
             JournalManager.WriteJournal(Text, Vars);
         }
@@ -151,13 +151,13 @@ namespace KS.Misc.Splash
                     }
                     else if (!Flags.QuietKernel)
                     {
-                        TextWriterColor.Write($"[{_Progress}%] Error: {Text}", true, ColorTools.ColTypes.Error, Vars);
+                        TextWriterColor.Write($"[{_Progress}%] Error: {Text}", true, KernelColorType.Error, Vars);
                     }
                 }
             }
             else
             {
-                TextWriterColor.Write(Text, true, ColorTools.ColTypes.Error, Vars);
+                TextWriterColor.Write(Text, true, KernelColorType.Error, Vars);
             }
             JournalManager.WriteJournal(Text, JournalStatus.Error, Vars);
         }

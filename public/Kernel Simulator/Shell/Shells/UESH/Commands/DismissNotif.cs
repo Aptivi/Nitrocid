@@ -45,7 +45,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Error trying to dismiss notification."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("Error trying to dismiss notification."), true, KernelColorType.Error);
             }
         }
 

@@ -28,8 +28,8 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override string TestName => Translate.DoTranslation("Print a string to console with null characters");
         public override void Run()
         {
-            TextWriterColor.Write("Hello world!\nHow's your day going? \0Should be after this:\0\0\0", false, ColorTools.ColTypes.Success);
-            TextWriterColor.Write(" [{0}, {1}] ", true, ColorTools.ColTypes.NeutralText, ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
+            TextWriterColor.Write("Hello world!\nHow's your day going? \0Should be after this:\0\0\0", false, KernelColorType.Success);
+            TextWriterColor.Write(" [{0}, {1}] ", true, KernelColorType.NeutralText, ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
         }
     }
 }

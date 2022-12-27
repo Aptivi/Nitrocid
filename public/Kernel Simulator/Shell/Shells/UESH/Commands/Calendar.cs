@@ -65,7 +65,7 @@ namespace KS.Shell.Shells.UESH.Commands
                             catch (Exception ex)
                             {
                                 DebugWriter.WriteDebugStackTrace(ex);
-                                TextWriterColor.Write(Translate.DoTranslation("Failed to add or remove an event.") + " {0}", true, ColorTools.ColTypes.Error, ex.Message);
+                                TextWriterColor.Write(Translate.DoTranslation("Failed to add or remove an event.") + " {0}", true, KernelColorType.Error, ex.Message);
                             }
                         }
                         else
@@ -101,12 +101,12 @@ namespace KS.Shell.Shells.UESH.Commands
                                             catch (Exception ex)
                                             {
                                                 DebugWriter.WriteDebugStackTrace(ex);
-                                                TextWriterColor.Write(Translate.DoTranslation("Failed to add an event.") + " {0}", true, ColorTools.ColTypes.Error, ex.Message);
+                                                TextWriterColor.Write(Translate.DoTranslation("Failed to add an event.") + " {0}", true, KernelColorType.Error, ex.Message);
                                             }
                                         }
                                         else
                                         {
-                                            TextWriterColor.Write(Translate.DoTranslation("Not enough arguments provided to add an event."), true, ColorTools.ColTypes.Error);
+                                            TextWriterColor.Write(Translate.DoTranslation("Not enough arguments provided to add an event."), true, KernelColorType.Error);
                                         }
 
                                         break;
@@ -127,12 +127,12 @@ namespace KS.Shell.Shells.UESH.Commands
                                             catch (Exception ex)
                                             {
                                                 DebugWriter.WriteDebugStackTrace(ex);
-                                                TextWriterColor.Write(Translate.DoTranslation("Failed to remove an event.") + " {0}", true, ColorTools.ColTypes.Error, ex.Message);
+                                                TextWriterColor.Write(Translate.DoTranslation("Failed to remove an event.") + " {0}", true, KernelColorType.Error, ex.Message);
                                             }
                                         }
                                         else
                                         {
-                                            TextWriterColor.Write(Translate.DoTranslation("Not enough arguments provided to remove an event."), true, ColorTools.ColTypes.Error);
+                                            TextWriterColor.Write(Translate.DoTranslation("Not enough arguments provided to remove an event."), true, KernelColorType.Error);
                                         }
 
                                         break;
@@ -153,14 +153,14 @@ namespace KS.Shell.Shells.UESH.Commands
                                 default:
                                     {
                                         // Invalid action.
-                                        TextWriterColor.Write(Translate.DoTranslation("Invalid action."), true, ColorTools.ColTypes.Error);
+                                        TextWriterColor.Write(Translate.DoTranslation("Invalid action."), true, KernelColorType.Error);
                                         break;
                                     }
                             }
                         }
                         else
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("Not enough arguments provided for event manipulation."), true, ColorTools.ColTypes.Error);
+                            TextWriterColor.Write(Translate.DoTranslation("Not enough arguments provided for event manipulation."), true, KernelColorType.Error);
                         }
 
                         break;
@@ -191,12 +191,12 @@ namespace KS.Shell.Shells.UESH.Commands
                                             catch (Exception ex)
                                             {
                                                 DebugWriter.WriteDebugStackTrace(ex);
-                                                TextWriterColor.Write(Translate.DoTranslation("Failed to add a reminder.") + " {0}", true, ColorTools.ColTypes.Error, ex.Message);
+                                                TextWriterColor.Write(Translate.DoTranslation("Failed to add a reminder.") + " {0}", true, KernelColorType.Error, ex.Message);
                                             }
                                         }
                                         else
                                         {
-                                            TextWriterColor.Write(Translate.DoTranslation("Not enough arguments provided to add a reminder."), true, ColorTools.ColTypes.Error);
+                                            TextWriterColor.Write(Translate.DoTranslation("Not enough arguments provided to add a reminder."), true, KernelColorType.Error);
                                         }
 
                                         break;
@@ -217,12 +217,12 @@ namespace KS.Shell.Shells.UESH.Commands
                                             catch (Exception ex)
                                             {
                                                 DebugWriter.WriteDebugStackTrace(ex);
-                                                TextWriterColor.Write(Translate.DoTranslation("Failed to remove a reminder.") + " {0}", true, ColorTools.ColTypes.Error, ex.Message);
+                                                TextWriterColor.Write(Translate.DoTranslation("Failed to remove a reminder.") + " {0}", true, KernelColorType.Error, ex.Message);
                                             }
                                         }
                                         else
                                         {
-                                            TextWriterColor.Write(Translate.DoTranslation("Not enough arguments provided to remove a reminder."), true, ColorTools.ColTypes.Error);
+                                            TextWriterColor.Write(Translate.DoTranslation("Not enough arguments provided to remove a reminder."), true, KernelColorType.Error);
                                         }
 
                                         break;
@@ -243,14 +243,14 @@ namespace KS.Shell.Shells.UESH.Commands
                                 default:
                                     {
                                         // Invalid action.
-                                        TextWriterColor.Write(Translate.DoTranslation("Invalid action."), true, ColorTools.ColTypes.Error);
+                                        TextWriterColor.Write(Translate.DoTranslation("Invalid action."), true, KernelColorType.Error);
                                         break;
                                     }
                             }
                         }
                         else
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("Not enough arguments provided for reminder manipulation."), true, ColorTools.ColTypes.Error);
+                            TextWriterColor.Write(Translate.DoTranslation("Not enough arguments provided for reminder manipulation."), true, KernelColorType.Error);
                         }
 
                         break;
@@ -259,7 +259,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 default:
                     {
                         // Invalid action.
-                        TextWriterColor.Write(Translate.DoTranslation("Invalid action."), true, ColorTools.ColTypes.Error);
+                        TextWriterColor.Write(Translate.DoTranslation("Invalid action."), true, KernelColorType.Error);
                         break;
                     }
             }

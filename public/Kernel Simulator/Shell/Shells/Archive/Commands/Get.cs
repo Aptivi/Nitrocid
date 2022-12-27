@@ -67,8 +67,8 @@ namespace KS.Shell.Shells.Archive.Commands
         public override void HelpHelper()
         {
             TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"));
-            TextWriterColor.Write("  -absolute: ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Indicates that the target path is absolute"), true, ColorTools.ColTypes.ListValue);
+            TextWriterColor.Write("  -absolute: ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write(Translate.DoTranslation("Indicates that the target path is absolute"), true, KernelColorType.ListValue);
         }
 
     }

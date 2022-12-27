@@ -46,7 +46,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("File doesn't exist."), true, ColorTools.ColTypes.Error);
+                TextWriterColor.Write(Translate.DoTranslation("File doesn't exist."), true, KernelColorType.Error);
             }
         }
 

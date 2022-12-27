@@ -104,12 +104,12 @@ namespace KS.Users.Groups
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Mode is invalid");
-                    TextWriterColor.Write(Translate.DoTranslation("Invalid mode {0}"), true, ColorTools.ColTypes.Error, GroupMode);
+                    TextWriterColor.Write(Translate.DoTranslation("Invalid mode {0}"), true, KernelColorType.Error, GroupMode);
                 }
             }
             catch (Exception ex)
             {
-                TextWriterColor.Write(Translate.DoTranslation("You have either found a bug, or the group you tried to add or remove is already done, or other error.") + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, ColorTools.ColTypes.Error, ex.GetType().FullName, ex.Message);
+                TextWriterColor.Write(Translate.DoTranslation("You have either found a bug, or the group you tried to add or remove is already done, or other error.") + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }
