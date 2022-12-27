@@ -182,30 +182,30 @@ namespace KS.Kernel
                     KernelTools.ReportNewStage(1, Translate.DoTranslation("- Stage 1: System initialization"));
                     if (RemoteDebugger.RDebugAutoStart & Flags.DebugMode)
                     {
-                        SplashReport.ReportProgress(Translate.DoTranslation("Starting the remote debugger..."), 3, ColorTools.ColTypes.NeutralText);
+                        SplashReport.ReportProgress(Translate.DoTranslation("Starting the remote debugger..."), 3);
                         RemoteDebugger.StartRDebugThread();
                         if (!RemoteDebugger.RDebugFailed)
                         {
-                            SplashReport.ReportProgress(Translate.DoTranslation("Debug listening on all addresses using port {0}.").FormatString(RemoteDebugger.DebugPort), 5, ColorTools.ColTypes.NeutralText);
+                            SplashReport.ReportProgress(Translate.DoTranslation("Debug listening on all addresses using port {0}.").FormatString(RemoteDebugger.DebugPort), 5);
                         }
                         else
                         {
                             SplashReport.ReportProgressError(Translate.DoTranslation("Remote debug failed to start: {0}").FormatString(RemoteDebugger.RDebugFailedReason.Message));
                         }
                     }
-                    SplashReport.ReportProgress(Translate.DoTranslation("Starting RPC..."), 3, ColorTools.ColTypes.NeutralText);
+                    SplashReport.ReportProgress(Translate.DoTranslation("Starting RPC..."), 3);
                     RemoteProcedure.WrapperStartRPC();
 
                     // If the two files are not found, create two MOTD files with current config.
                     if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.MOTD)))
                     {
                         MotdParse.SetMotd(Translate.DoTranslation("Welcome to Kernel!"));
-                        SplashReport.ReportProgress(Translate.DoTranslation("Generated default MOTD."), 3, ColorTools.ColTypes.NeutralText);
+                        SplashReport.ReportProgress(Translate.DoTranslation("Generated default MOTD."), 3);
                     }
                     if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.MAL)))
                     {
                         MalParse.SetMal(Translate.DoTranslation("Logged in successfully as <user>"));
-                        SplashReport.ReportProgress(Translate.DoTranslation("Generated default MAL."), 3, ColorTools.ColTypes.NeutralText);
+                        SplashReport.ReportProgress(Translate.DoTranslation("Generated default MAL."), 3);
                     }
 
                     // Check for kernel updates
@@ -215,7 +215,7 @@ namespace KS.Kernel
                     // Phase 2: Probe hardware
                     KernelTools.ReportNewStage(2, Translate.DoTranslation("- Stage 2: Hardware detection"));
                     if (!Flags.QuietHardwareProbe)
-                        SplashReport.ReportProgress(Translate.DoTranslation("hwprobe: Your hardware will be probed. Please wait..."), 15, ColorTools.ColTypes.Progress);
+                        SplashReport.ReportProgress(Translate.DoTranslation("hwprobe: Your hardware will be probed. Please wait..."), 15);
                     HardwareProbe.StartProbing();
                     if (!Flags.EnableSplash & !Flags.QuietKernel)
                         HardwareList.ListHardware();
@@ -231,24 +231,24 @@ namespace KS.Kernel
                     }
                     else
                     {
-                        SplashReport.ReportProgress(Translate.DoTranslation("Running in safe mode. Skipping stage..."), 0, ColorTools.ColTypes.NeutralText);
+                        SplashReport.ReportProgress(Translate.DoTranslation("Running in safe mode. Skipping stage..."), 0);
                     }
                     EventsManager.FireEvent(EventType.StartKernel);
 
                     // Phase 4: Log-in
                     KernelTools.ReportNewStage(4, Translate.DoTranslation("- Stage 4: Log in"));
                     UserManagement.InitializeSystemAccount();
-                    SplashReport.ReportProgress(Translate.DoTranslation("System account initialized"), 5, ColorTools.ColTypes.NeutralText);
+                    SplashReport.ReportProgress(Translate.DoTranslation("System account initialized"), 5);
                     UserManagement.InitializeUsers();
-                    SplashReport.ReportProgress(Translate.DoTranslation("Users initialized"), 5, ColorTools.ColTypes.NeutralText);
+                    SplashReport.ReportProgress(Translate.DoTranslation("Users initialized"), 5);
                     GroupManagement.LoadGroups();
-                    SplashReport.ReportProgress(Translate.DoTranslation("Groups loaded"), 5, ColorTools.ColTypes.NeutralText);
+                    SplashReport.ReportProgress(Translate.DoTranslation("Groups loaded"), 5);
 
                     // Reset console state and stop stage timer
                     KernelTools.ReportNewStage(5, "");
 
                     // Show the closing screen
-                    SplashReport.ReportProgress(Translate.DoTranslation("Welcome!"), 100, ColorTools.ColTypes.Success);
+                    SplashReport.ReportProgress(Translate.DoTranslation("Welcome!"), 100);
                     SplashManager.CloseSplash();
                     if (!Flags.EnableSplash)
                         TextWriterColor.Write();
@@ -264,11 +264,6 @@ namespace KS.Kernel
                         Flags.NotifyKernelError = false;
                         NotificationManager.NotifySend(new Notification(Translate.DoTranslation("Previous boot failed"), KernelPanic.LastKernelErrorException.Message, NotificationManager.NotifPriority.High, NotificationManager.NotifType.Normal));
                     }
-
-                    // Show license
-                    TextWriterColor.Write();
-                    SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("License information"), true, ColorTools.ColTypes.Stage);
-                    WelcomeMessage.WriteLicense();
 
 #if SPECIFIERDEV
                     TextWriterColor.Write();

@@ -194,10 +194,16 @@ namespace KS.Kernel
             // Some information
             if (Flags.ShowAppInfoOnBoot & !Flags.EnableSplash)
             {
-                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("App information"), true, ColorTools.ColTypes.Stage);
-                TextWriterColor.Write("OS: " + Translate.DoTranslation("Running on {0}"), Environment.OSVersion.ToString());
-                TextWriterColor.Write("KS: " + Translate.DoTranslation("Running from GRILO?") + $" {KernelPlatform.IsRunningFromGrilo()}");
+                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Kernel environment information"), true, ColorTools.ColTypes.Stage);
+                TextWriterColor.Write("  OS: " +    Translate.DoTranslation("Running on {0}"), Environment.OSVersion.ToString());
+                TextWriterColor.Write("  KS: " +    Translate.DoTranslation("Running from GRILO?") + $" {KernelPlatform.IsRunningFromGrilo()}");
+                TextWriterColor.Write("  KSAPI: " + $"v{KernelApiVersion}");
             }
+
+            // Show license
+            TextWriterColor.Write();
+            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("License information"), true, ColorTools.ColTypes.Stage);
+            WelcomeMessage.WriteLicense();
 
             // Load splash
             SplashManager.OpenSplash();
@@ -231,7 +237,7 @@ namespace KS.Kernel
             {
                 if (Flags.ShowStageFinishTimes)
                 {
-                    SplashReport.ReportProgress(Translate.DoTranslation("Internal initialization finished in") + $" {Kernel.StageTimer.Elapsed}", 0, ColorTools.ColTypes.StageTime);
+                    SplashReport.ReportProgress(Translate.DoTranslation("Internal initialization finished in") + $" {Kernel.StageTimer.Elapsed}", 0);
                     Kernel.StageTimer.Restart();
                 }
             }
@@ -239,14 +245,14 @@ namespace KS.Kernel
             {
                 if (Flags.ShowStageFinishTimes)
                 {
-                    SplashReport.ReportProgress(Translate.DoTranslation("Stage finished in") + $" {Kernel.StageTimer.Elapsed}", 10, ColorTools.ColTypes.StageTime);
+                    SplashReport.ReportProgress(Translate.DoTranslation("Stage finished in") + $" {Kernel.StageTimer.Elapsed}", 10);
                     Kernel.StageTimer.Reset();
                     TextWriterColor.Write();
                 }
             }
             else if (Flags.ShowStageFinishTimes)
             {
-                SplashReport.ReportProgress(Translate.DoTranslation("Stage finished in") + $" {Kernel.StageTimer.Elapsed}", 10, ColorTools.ColTypes.StageTime);
+                SplashReport.ReportProgress(Translate.DoTranslation("Stage finished in") + $" {Kernel.StageTimer.Elapsed}", 10);
                 Kernel.StageTimer.Restart();
             }
 

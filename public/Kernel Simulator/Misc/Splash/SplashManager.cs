@@ -305,7 +305,7 @@ namespace KS.Misc.Splash
             for (int i = 1; i <= 5; i++)
             {
                 int prog = i * 20;
-                SplashReport.ReportProgress($"{prog}%", 20, true, splash, ColorTools.ColTypes.NeutralText);
+                SplashReport.ReportProgress($"{prog}%", 20, true, splash);
                 Thread.Sleep(1000);
             }
 

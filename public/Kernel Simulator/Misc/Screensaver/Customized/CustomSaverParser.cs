@@ -61,7 +61,7 @@ namespace KS.Misc.Screensaver.Customized
                         {
                             // This screensaver uses the modern BaseScreensaver and IScreensaver interfaces
                             DebugWriter.WriteDebug(DebugLevel.I, "{0} is a valid screensaver!", SaverFileName);
-                            SplashReport.ReportProgress(Translate.DoTranslation("{0} has been initialized properly."), 0, ColorTools.ColTypes.NeutralText, SaverFileName);
+                            SplashReport.ReportProgress(Translate.DoTranslation("{0} has been initialized properly."), 0, SaverFileName);
                             string SaverName = ScreensaverBase.ScreensaverName;
                             CustomSaverInfo SaverInstance;
                             SaverInstance = new CustomSaverInfo(SaverName, SaverFileName, FinalScreensaverPath, ScreensaverBase);

@@ -27,6 +27,7 @@ using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Reflection;
+using KS.Misc.Splash;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 
@@ -41,7 +42,7 @@ namespace KS.Hardware
         /// <summary>
         /// Lists simple information about hardware
         /// </summary>
-        public static void ListHardware()
+        internal static void ListHardware()
         {
             if (HardwareProbe.HardwareInfo is not null)
             {
@@ -49,28 +50,28 @@ namespace KS.Hardware
                 if (HardwareProbe.HardwareInfo.Hardware.CPU is null | HardwareProbe.HardwareInfo.Hardware.CPU is not null & HardwareProbe.HardwareInfo.Hardware.CPU.Count == 0)
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "CPU failed to probe.");
-                    TextWriterColor.Write(Translate.DoTranslation("CPU: One or more of the CPU cores failed to be probed. Showing information anyway..."), true, ColorTools.ColTypes.Warning);
+                    SplashReport.ReportProgressError(Translate.DoTranslation("CPU: One or more of the CPU cores failed to be probed. Showing information anyway..."));
                 }
 
                 // then RAM
                 if (HardwareProbe.HardwareInfo.Hardware.RAM is null)
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "RAM failed to probe.");
-                    TextWriterColor.Write(Translate.DoTranslation("RAM: One or more of the RAM chips failed to be probed. Showing information anyway..."), true, ColorTools.ColTypes.Warning);
+                    SplashReport.ReportProgressError(Translate.DoTranslation("RAM: One or more of the RAM chips failed to be probed. Showing information anyway..."));
                 }
 
                 // then GPU
                 if (HardwareProbe.HardwareInfo.Hardware.GPU is null)
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "GPU failed to probe.");
-                    TextWriterColor.Write(Translate.DoTranslation("GPU: One or more of the graphics cards failed to be probed. Showing information anyway..."), true, ColorTools.ColTypes.Warning);
+                    SplashReport.ReportProgressError(Translate.DoTranslation("GPU: One or more of the graphics cards failed to be probed. Showing information anyway..."));
                 }
 
                 // and finally HDD
                 if (HardwareProbe.HardwareInfo.Hardware.HDD is null | HardwareProbe.HardwareInfo.Hardware.HDD is not null & HardwareProbe.HardwareInfo.Hardware.HDD.Count == 0)
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "HDD failed to probe.");
-                    TextWriterColor.Write(Translate.DoTranslation("HDD: One or more of the hard drives failed to be probed. Showing information anyway..."), true, ColorTools.ColTypes.Warning);
+                    SplashReport.ReportProgressError(Translate.DoTranslation("HDD: One or more of the hard drives failed to be probed. Showing information anyway..."));
                 }
 
                 // Print information about the probed hardware
@@ -78,55 +79,37 @@ namespace KS.Hardware
                 foreach (string ProcessorInfo in HardwareProbe.HardwareInfo.Hardware.CPU.Keys)
                 {
                     var TargetProcessor = HardwareProbe.HardwareInfo.Hardware.CPU[ProcessorInfo];
-                    TextWriterColor.Write("CPU: " + Translate.DoTranslation("Processor name:"), false, ColorTools.ColTypes.ListEntry);
-                    TextWriterColor.Write(" {0}", true, ColorTools.ColTypes.ListValue, ProcessorInfo);
-                    TextWriterColor.Write("CPU: " + Translate.DoTranslation("Processor clock speed:"), false, ColorTools.ColTypes.ListEntry);
-                    TextWriterColor.Write(" {0}", true, ColorTools.ColTypes.ListValue, TargetProcessor.Speed);
-                    TextWriterColor.Write("CPU: " + Translate.DoTranslation("Processor bits:"), false, ColorTools.ColTypes.ListEntry);
-                    TextWriterColor.Write(" {0}-bit", true, ColorTools.ColTypes.ListValue, TargetProcessor.Bits);
-                    TextWriterColor.Write("CPU: " + Translate.DoTranslation("Processor SSE2 support:"), false, ColorTools.ColTypes.ListEntry);
-                    TextWriterColor.Write(" {0}", true, ColorTools.ColTypes.ListValue, TargetProcessor.Flags.Contains("sse2") | TargetProcessor.Flags.Contains("SSE2"));
+                    SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Processor name:") + " {0}", 0, ProcessorInfo);
+                    SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Processor clock speed:") + " {0}", 0, TargetProcessor.Speed);
+                    SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Processor bits:") + $" {TargetProcessor.Bits}-bit", 0);
+                    SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Processor SSE2 support:") + " {0}", 0, Vars: (TargetProcessor.Flags.Contains("sse2") | TargetProcessor.Flags.Contains("SSE2")).ToString());
                 }
-                TextWriterColor.Write("CPU: " + Translate.DoTranslation("Total number of processors:"), false, ColorTools.ColTypes.ListEntry);
-                TextWriterColor.Write(" {0}", true, ColorTools.ColTypes.ListValue, Environment.ProcessorCount);
+                SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Total number of processors:") + $" {Environment.ProcessorCount}", 3);
 
                 // Print RAM info
-                TextWriterColor.Write("RAM: " + Translate.DoTranslation("Total memory:"), false, ColorTools.ColTypes.ListEntry);
-                TextWriterColor.Write(" {0}", true, ColorTools.ColTypes.ListValue, KernelPlatform.IsOnWindows() ? ((long)Math.Round(Convert.ToDouble(HardwareProbe.HardwareInfo.Hardware.RAM.TotalMemory) * 1024d)).FileSizeToString() : HardwareProbe.HardwareInfo.Hardware.RAM.TotalMemory);
+                SplashReport.ReportProgress("RAM: " + Translate.DoTranslation("Total memory:") + " {0}", 2, KernelPlatform.IsOnWindows() ? ((long)Math.Round(Convert.ToDouble(HardwareProbe.HardwareInfo.Hardware.RAM.TotalMemory) * 1024d)).FileSizeToString() : HardwareProbe.HardwareInfo.Hardware.RAM.TotalMemory);
 
                 // GPU info
                 foreach (string GPUInfo in HardwareProbe.HardwareInfo.Hardware.GPU.Keys)
                 {
                     var TargetGraphics = HardwareProbe.HardwareInfo.Hardware.GPU[GPUInfo];
-                    TextWriterColor.Write("GPU: " + Translate.DoTranslation("Graphics card:"), false, ColorTools.ColTypes.ListEntry);
-                    TextWriterColor.Write(" {0}", true, ColorTools.ColTypes.ListValue, TargetGraphics.Name);
+                    SplashReport.ReportProgress("GPU: " + Translate.DoTranslation("Graphics card:") + " {0}", 0, TargetGraphics.Name);
                 }
 
                 // Drive Info
                 foreach (string DriveInfo in HardwareProbe.HardwareInfo.Hardware.HDD.Keys)
                 {
                     var TargetDrive = HardwareProbe.HardwareInfo.Hardware.HDD[DriveInfo];
-                    if (TargetDrive.Vendor == "(Standard disk drives)")
-                    {
-                        TextWriterColor.Write("HDD: " + Translate.DoTranslation("Disk model:"), false, ColorTools.ColTypes.ListEntry);
-                        TextWriterColor.Write(" {0}", true, ColorTools.ColTypes.ListValue, TargetDrive.Model);
-                        TextWriterColor.Write("HDD: " + Translate.DoTranslation("Disk size:"), false, ColorTools.ColTypes.ListEntry);
-                        TextWriterColor.Write(" {0}", true, ColorTools.ColTypes.ListValue, KernelPlatform.IsOnWindows() ? Convert.ToInt64(TargetDrive.Size).FileSizeToString() : TargetDrive.Size);
-                    }
-                    else
-                    {
-                        TextWriterColor.Write("HDD: " + Translate.DoTranslation("Disk model:"), false, ColorTools.ColTypes.ListEntry);
-                        TextWriterColor.Write(" {0} {1}", true, ColorTools.ColTypes.ListValue, TargetDrive.Vendor, TargetDrive.Model);
-                        TextWriterColor.Write("HDD: " + Translate.DoTranslation("Disk size:"), false, ColorTools.ColTypes.ListEntry);
-                        TextWriterColor.Write(" {0}", true, ColorTools.ColTypes.ListValue, KernelPlatform.IsOnWindows() ? Convert.ToInt64(TargetDrive.Size).FileSizeToString() : TargetDrive.Size);
-                    }
+                    string DriveModel = TargetDrive.Vendor == "(Standard disk drives)" ? $" {TargetDrive.Model}" : $" {TargetDrive.Vendor} {TargetDrive.Model}";
+                    SplashReport.ReportProgress("HDD: " + Translate.DoTranslation("Disk model:") + " {0}", 0, DriveModel);
+                    SplashReport.ReportProgress("HDD: " + Translate.DoTranslation("Disk size:") + " {0}", 0, KernelPlatform.IsOnWindows() ? Convert.ToInt64(TargetDrive.Size).FileSizeToString() : TargetDrive.Size);
+
+                    // Partition info
                     foreach (string PartInfo in TargetDrive.Partitions.Keys)
                     {
                         var TargetPart = TargetDrive.Partitions[PartInfo];
-                        TextWriterColor.Write("HDD ({0}): " + Translate.DoTranslation("Partition size:"), false, ColorTools.ColTypes.ListEntry, TargetPart.ID);
-                        TextWriterColor.Write(" {0}", true, ColorTools.ColTypes.ListValue, KernelPlatform.IsOnWindows() ? Convert.ToInt64(TargetPart.Size).FileSizeToString() : TargetPart.Size);
-                        TextWriterColor.Write("HDD ({0}): " + Translate.DoTranslation("Partition filesystem:"), false, ColorTools.ColTypes.ListEntry, TargetPart.ID);
-                        TextWriterColor.Write(" {0}", true, ColorTools.ColTypes.ListValue, TargetPart.FileSystem);
+                        SplashReport.ReportProgress("HDD [{0}]: " + Translate.DoTranslation("Partition size:") + " {1}", 0, TargetPart.ID, KernelPlatform.IsOnWindows() ? Convert.ToInt64(TargetPart.Size).FileSizeToString() : TargetPart.Size);
+                        SplashReport.ReportProgress("HDD [{0}]: " + Translate.DoTranslation("Partition filesystem:") + " {1}", 0, TargetPart.ID, TargetPart.FileSystem);
                     }
                 }
             }

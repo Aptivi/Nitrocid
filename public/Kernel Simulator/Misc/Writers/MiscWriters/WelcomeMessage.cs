@@ -78,7 +78,7 @@ namespace KS.Misc.Writers.MiscWriters
                 }
 
                 string FigletRenderedBanner = FigletTools.RenderFiglet($"{KernelTools.KernelVersion}", KernelTools.BannerFigletFont);
-                TextWriterColor.Write(CharManager.NewLine + CharManager.NewLine + FigletRenderedBanner);
+                TextWriterColor.Write(CharManager.NewLine + FigletRenderedBanner + CharManager.NewLine );
                 ConsoleBase.ConsoleWrapper.CursorVisible = true;
             }
         }

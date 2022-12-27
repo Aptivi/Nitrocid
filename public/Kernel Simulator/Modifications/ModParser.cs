@@ -148,7 +148,7 @@ namespace KS.Modifications
                     catch
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Trying to load mod {0} that has undeterminable minimum API version.", modFile);
-                        SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} may not work properly with this API version. Mod may fail to start up. Contact the mod vendor to get a latest copy."), 0, ColorTools.ColTypes.Warning, modFile);
+                        SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} may not work properly with this API version. Mod may fail to start up. Contact the mod vendor to get a latest copy."), 0, modFile);
                     }
 
                     // Start the mod
@@ -184,7 +184,7 @@ namespace KS.Modifications
                         // Mod has no name! Give it a file name.
                         ModName = modFile;
                         DebugWriter.WriteDebug(DebugLevel.W, "No name for {0}", modFile);
-                        SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} does not have the name. Review the source code."), 0, ColorTools.ColTypes.Warning, modFile);
+                        SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} does not have the name. Review the source code."), 0, modFile);
                     }
                     else
                     {
@@ -212,12 +212,12 @@ namespace KS.Modifications
                     if (string.IsNullOrWhiteSpace(script.Version) & !string.IsNullOrWhiteSpace(script.Name))
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "{0}.Version = \"\" | {0}.Name = {1}", modFile, script.Name);
-                        SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} does not have the version."), 0, ColorTools.ColTypes.Warning, script.Name);
+                        SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} does not have the version."), 0, script.Name);
                     }
                     else if (!string.IsNullOrWhiteSpace(script.Name) & !string.IsNullOrWhiteSpace(script.Version))
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "{0}.Version = {2} | {0}.Name = {1}", modFile, script.Name, script.Version);
-                        SplashReport.ReportProgress(Translate.DoTranslation("{0} v{1} started") + " ({2})", 0, ColorTools.ColTypes.Success, script.Name, script.Version, script.ModPart);
+                        SplashReport.ReportProgress(Translate.DoTranslation("{0} v{1} started") + " ({2})", 0, script.Name, script.Version, script.ModPart);
                     }
 
                     // Process the commands that are defined in a mod
@@ -241,7 +241,7 @@ namespace KS.Modifications
                             {
                                 if (string.IsNullOrEmpty(script.Commands[ActualCommand].HelpDefinition))
                                 {
-                                    SplashReport.ReportProgress(Translate.DoTranslation("No definition for command {0}."), 0, ColorTools.ColTypes.Warning, Command);
+                                    SplashReport.ReportProgress(Translate.DoTranslation("No definition for command {0}."), 0, Command);
                                     DebugWriter.WriteDebug(DebugLevel.W, "{0}.Def = Nothing, {0}.Def = \"Command defined by {1} ({2})\"", Command, script.Name, script.ModPart);
                                     script.Commands[ActualCommand].HelpDefinition = Translate.DoTranslation("Command defined by ") + script.Name + " (" + script.ModPart + ")";
                                 }

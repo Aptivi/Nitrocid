@@ -54,14 +54,13 @@ namespace KS.Misc.Splash
         /// </summary>
         /// <param name="Text">The progress text to indicate how did the kernel progress</param>
         /// <param name="Progress">The progress indicator of the kernel</param>
-        /// <param name="ColTypes">A type of colors that will be changed.</param>
         /// <param name="Vars">Varibales to be expanded to text</param>
         /// <remarks>
         /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
         /// it will report the progress to the splash system. You can force it to report the progress by passing force.
         /// </remarks>
-        internal static void ReportProgress(string Text, int Progress, ColorTools.ColTypes ColTypes = ColorTools.ColTypes.NeutralText, params string[] Vars) => 
-            ReportProgress(Text, Progress, false, SplashManager.CurrentSplash, ColTypes, Vars);
+        internal static void ReportProgress(string Text, int Progress, params string[] Vars) => 
+            ReportProgress(Text, Progress, false, SplashManager.CurrentSplash, Vars);
 
         /// <summary>
         /// Reports the progress for the splash screen while the kernel is booting.
@@ -70,13 +69,12 @@ namespace KS.Misc.Splash
         /// <param name="Progress">The progress indicator of the kernel</param>
         /// <param name="force">Force report progress to splash</param>
         /// <param name="splash">Splash interface</param>
-        /// <param name="ColTypes">A type of colors that will be changed.</param>
         /// <param name="Vars">Varibales to be expanded to text</param>
         /// <remarks>
         /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
         /// it will report the progress to the splash system. You can force it to report the progress by passing force.
         /// </remarks>
-        internal static void ReportProgress(string Text, int Progress, bool force = false, ISplash splash = null, ColorTools.ColTypes ColTypes = ColorTools.ColTypes.NeutralText, params string[] Vars)
+        internal static void ReportProgress(string Text, int Progress, bool force = false, ISplash splash = null, params string[] Vars)
         {
             if (!KernelBooted || force)
             {
@@ -92,13 +90,13 @@ namespace KS.Misc.Splash
                     }
                     else if (!Flags.QuietKernel)
                     {
-                        TextWriterColor.Write($"  [{_Progress}%] {Text}", true, ColTypes, Vars);
+                        TextWriterColor.Write($"  [{_Progress}%] {Text}", true, ColorTools.ColTypes.Tip, Vars);
                     }
                 }
             }
             else
             {
-                TextWriterColor.Write(Text, true, ColTypes, Vars);
+                TextWriterColor.Write(Text, true, ColorTools.ColTypes.Tip, Vars);
             }
             JournalManager.WriteJournal(Text, Vars);
         }

@@ -71,7 +71,7 @@ namespace KS.Modifications
                 // Check to see if we have mods
                 if (count != 0)
                 {
-                    SplashReport.ReportProgress(Translate.DoTranslation("mod: Loading mods..."), 0, ColorTools.ColTypes.NeutralText);
+                    SplashReport.ReportProgress(Translate.DoTranslation("mod: Loading mods..."), 0);
                     DebugWriter.WriteDebug(DebugLevel.I, "Mods are being loaded. Total mods with screensavers = {0}", count);
                     int CurrentCount = 1;
                     foreach (string modFilePath in Directory.EnumerateFiles(ModPath))
@@ -80,20 +80,20 @@ namespace KS.Modifications
                         if (!GetBlacklistedMods().Contains(modFile))
                         {
                             DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} is not blacklisted.", modFile);
-                            SplashReport.ReportProgress("[{1}/{2}] " + Translate.DoTranslation("Starting mod") + " {0}...", 0, ColorTools.ColTypes.Progress, modFile, CurrentCount.ToString(), count.ToString());
+                            SplashReport.ReportProgress("[{1}/{2}] " + Translate.DoTranslation("Starting mod") + " {0}...", 0, modFile, CurrentCount.ToString(), count.ToString());
                             ModParser.ParseMod(modFile);
                         }
                         else
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "Trying to start blacklisted mod {0}. Ignoring...", modFile);
-                            SplashReport.ReportProgress("[{1}/{2}] " + Translate.DoTranslation("Mod {0} is blacklisted."), 0, ColorTools.ColTypes.Warning, modFile, CurrentCount.ToString(), count.ToString());
+                            SplashReport.ReportProgress("[{1}/{2}] " + Translate.DoTranslation("Mod {0} is blacklisted."), 0, modFile, CurrentCount.ToString(), count.ToString());
                         }
                         CurrentCount += 1;
                     }
                 }
                 else
                 {
-                    SplashReport.ReportProgress(Translate.DoTranslation("mod: No mods detected."), 0, ColorTools.ColTypes.NeutralText);
+                    SplashReport.ReportProgress(Translate.DoTranslation("mod: No mods detected."), 0);
                 }
             }
             else
@@ -123,13 +123,13 @@ namespace KS.Modifications
                         if (!GetBlacklistedMods().Contains(PathToMod))
                         {
                             DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} is not blacklisted.", ModFilename);
-                            SplashReport.ReportProgress(Translate.DoTranslation("Starting mod") + " {0}...", 0, ColorTools.ColTypes.NeutralText, ModFilename);
+                            SplashReport.ReportProgress(Translate.DoTranslation("Starting mod") + " {0}...", 0, ModFilename);
                             ModParser.ParseMod(ModFilename);
                         }
                         else
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "Trying to start blacklisted mod {0}. Ignoring...", ModFilename);
-                            SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} is blacklisted."), 0, ColorTools.ColTypes.Warning, ModFilename);
+                            SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} is blacklisted."), 0, ModFilename);
                         }
                     }
                     else
@@ -139,7 +139,7 @@ namespace KS.Modifications
                 }
                 else
                 {
-                    SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} not found."), 0, ColorTools.ColTypes.NeutralText, ModFilename);
+                    SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} not found."), 0, ModFilename);
                 }
             }
             else

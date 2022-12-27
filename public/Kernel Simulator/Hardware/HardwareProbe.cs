@@ -77,7 +77,7 @@ namespace KS.Hardware
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Hardware {0} ({1}) successfully probed.", Hardware, Hardware.ToString());
             if (!Flags.QuietHardwareProbe & Flags.VerboseHardwareProbe | Flags.EnableSplash)
-                SplashReport.ReportProgress(Translate.DoTranslation("Successfully probed {0}.").FormatString(Hardware.ToString()), 5, ColorTools.ColTypes.NeutralText);
+                SplashReport.ReportProgress(Translate.DoTranslation("Successfully probed {0}.").FormatString(Hardware.ToString()), 5);
         }
 
         /// <summary>
