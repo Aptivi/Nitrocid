@@ -84,11 +84,12 @@ namespace KS.Misc.Reflection
             if (value is null)
                 throw new ArgumentNullException(nameof(value));
 
+            var finalValue = Convert.ChangeType(value, propertyInfo.PropertyType);
             string cachedName = $"{propertyInfo.DeclaringType.FullName} - {propertyInfo.Name}";
             if (cachedSetters.ContainsKey(cachedName))
             {
                 var cachedExpression = cachedSetters[cachedName];
-                cachedExpression(value);
+                cachedExpression(finalValue);
                 return;
             }
 
@@ -99,7 +100,6 @@ namespace KS.Misc.Reflection
             var expression = Expression.Lambda<Action<object>>(callExpr, argumentParam).Compile();
 
             cachedSetters.Add(cachedName, expression);
-            var finalValue = Convert.ChangeType(value, propertyInfo.PropertyType);
             expression(finalValue);
         }
 
