@@ -22,7 +22,7 @@ using System;
 namespace KS.Kernel.Exceptions
 {
     /// <summary>
-    /// Thrown when there was a kernel error. Used for <see cref="KernelTools.KernelError(KernelErrorLevel, bool, long, string, Exception, object[])"/>
+    /// Thrown when there was a kernel error. Used for <see cref="KernelPanic.KernelError(KernelErrorLevel, bool, long, string, Exception, object[])"/>
     /// </summary>
     public class KernelErrorException : Exception
     {

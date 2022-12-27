@@ -262,7 +262,7 @@ namespace KS.Kernel
                     if (Flags.NotifyKernelError)
                     {
                         Flags.NotifyKernelError = false;
-                        NotificationManager.NotifySend(new Notification(Translate.DoTranslation("Previous boot failed"), KernelTools.LastKernelErrorException.Message, NotificationManager.NotifPriority.High, NotificationManager.NotifType.Normal));
+                        NotificationManager.NotifySend(new Notification(Translate.DoTranslation("Previous boot failed"), KernelPanic.LastKernelErrorException.Message, NotificationManager.NotifPriority.High, NotificationManager.NotifType.Normal));
                     }
 
                     // Show license
@@ -323,7 +323,7 @@ namespace KS.Kernel
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    KernelTools.KernelError(KernelErrorLevel.U, true, 5L, Translate.DoTranslation("Kernel Error while booting: {0}"), ex, ex.Message);
+                    KernelPanic.KernelError(KernelErrorLevel.U, true, 5L, Translate.DoTranslation("Kernel Error while booting: {0}"), ex, ex.Message);
                 }
             }
 
@@ -347,7 +347,7 @@ namespace KS.Kernel
             if (Flags.KernelErrored)
             {
                 Flags.KernelErrored = false;
-                throw new KernelErrorException(Translate.DoTranslation("Kernel Error while booting: {0}"), KernelTools.LastKernelErrorException, KernelTools.LastKernelErrorException.Message);
+                throw new KernelErrorException(Translate.DoTranslation("Kernel Error while booting: {0}"), KernelPanic.LastKernelErrorException, KernelPanic.LastKernelErrorException.Message);
             }
         }
 

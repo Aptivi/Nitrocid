@@ -47,7 +47,7 @@ namespace KS.Kernel.Debugging
                 DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Condition is false!");
                 DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Failure at {0} routine in {1}:{2}", trace.RoutineName, trace.RoutineFileName, trace.RoutineLineNumber);
                 DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Message: {0}", message);
-                KernelTools.KernelError(KernelErrorLevel.C, false, 0, Translate.DoTranslation("Assertion failure.") + $" {message}", exc);
+                KernelPanic.KernelError(KernelErrorLevel.C, false, 0, Translate.DoTranslation("Assertion failure.") + $" {message}", exc);
                 throw exc;
             }
         }
@@ -73,7 +73,7 @@ namespace KS.Kernel.Debugging
                 DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Value is null!");
                 DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Failure at {0} routine in {1}:{2}", trace.RoutineName, trace.RoutineFileName, trace.RoutineLineNumber);
                 DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Message: {0}", message);
-                KernelTools.KernelError(KernelErrorLevel.C, false, 0, Translate.DoTranslation("Assertion failure.") + $" {message}", exc);
+                KernelPanic.KernelError(KernelErrorLevel.C, false, 0, Translate.DoTranslation("Assertion failure.") + $" {message}", exc);
                 throw exc;
             }
         }

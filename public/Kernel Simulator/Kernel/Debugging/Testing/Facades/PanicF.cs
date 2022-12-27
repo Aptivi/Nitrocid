@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Languages;
+using KS.Kernel.Exceptions;
 
 namespace KS.Kernel.Debugging.Testing.Facades
 {
@@ -25,7 +26,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override string TestName => Translate.DoTranslation("Tests the kernel error facility with format support");
         public override void Run()
         {
-            KernelTools.KernelError(KernelErrorLevel.C, false, 3000, "{0}", null, Translate.DoTranslation("Test panicking the kernel"));
+            KernelPanic.KernelError(KernelErrorLevel.C, false, 3000, "{0}", null, Translate.DoTranslation("Test panicking the kernel"));
         }
     }
 }

@@ -22,6 +22,7 @@ using InxiFrontend;
 using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Splash;
 using KS.Kernel.Events;
@@ -62,7 +63,7 @@ namespace KS.Hardware
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to probe hardware: {0}", ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                KernelTools.KernelError(KernelErrorLevel.F, true, 10L, Translate.DoTranslation("There was an error when probing hardware: {0}"), ex, ex.Message);
+                KernelPanic.KernelError(KernelErrorLevel.F, true, 10L, Translate.DoTranslation("There was an error when probing hardware: {0}"), ex, ex.Message);
             }
 
             // Raise event
