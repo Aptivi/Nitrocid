@@ -30,7 +30,15 @@ namespace KS.Kernel.Debugging
         /// Asserts and checks to see if the condition is satisfied
         /// </summary>
         /// <param name="condition">Condition</param>
-        public static void Assert(bool condition)
+        public static void Assert(bool condition) =>
+            Assert(condition, "");
+
+        /// <summary>
+        /// Asserts and checks to see if the condition is satisfied
+        /// </summary>
+        /// <param name="condition">Condition</param>
+        /// <param name="message">A message to clarify why the assert failed</param>
+        public static void Assert(bool condition, string message)
         {
             if (!condition)
             {
@@ -38,7 +46,8 @@ namespace KS.Kernel.Debugging
                 var exc = new KernelException(KernelExceptionType.AssertionFailure, "condition is false.");
                 DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Condition is false!");
                 DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Failure at {0} routine in {1}:{2}", trace.RoutineName, trace.RoutineFileName, trace.RoutineLineNumber);
-                KernelTools.KernelError(KernelErrorLevel.C, false, 0, Translate.DoTranslation("Assertion failure."), exc);
+                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Message: {0}", message);
+                KernelTools.KernelError(KernelErrorLevel.C, false, 0, Translate.DoTranslation("Assertion failure.") + $" {message}", exc);
                 throw exc;
             }
         }
@@ -47,7 +56,15 @@ namespace KS.Kernel.Debugging
         /// Asserts and checks to see if the value is null
         /// </summary>
         /// <param name="value">Condition</param>
-        public static void AssertNull<T>(T value)
+        public static void AssertNull<T>(T value) =>
+            AssertNull(value, "");
+
+        /// <summary>
+        /// Asserts and checks to see if the value is null
+        /// </summary>
+        /// <param name="value">Condition</param>
+        /// <param name="message">A message to clarify why the assert failed</param>
+        public static void AssertNull<T>(T value, string message)
         {
             if (value is null)
             {
@@ -55,7 +72,8 @@ namespace KS.Kernel.Debugging
                 var exc = new KernelException(KernelExceptionType.AssertionFailure, "value is null.");
                 DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Value is null!");
                 DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Failure at {0} routine in {1}:{2}", trace.RoutineName, trace.RoutineFileName, trace.RoutineLineNumber);
-                KernelTools.KernelError(KernelErrorLevel.C, false, 0, Translate.DoTranslation("Assertion failure."), exc);
+                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Message: {0}", message);
+                KernelTools.KernelError(KernelErrorLevel.C, false, 0, Translate.DoTranslation("Assertion failure.") + $" {message}", exc);
                 throw exc;
             }
         }
