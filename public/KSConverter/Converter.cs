@@ -50,7 +50,7 @@ namespace KSConverter
             try
             {
                 // Warning message
-                TextWriterColor.Write("Warning: this converter will stop being shipped with Kernel Simulator after January 2024 as part of the upcoming structural changes in Kernel Simulator. Please convert all your configuration files before this date.", true, ColTypes.Warning);
+                TextWriterColor.Write("Warning: this converter will stop being shipped with Kernel Simulator starting from 0.1.0 Beta 1. It's no longer able to convert kernel configuration files.", true, ColTypes.Warning);
 
                 // Initialize all needed variables
                 var ListOfOldPaths = ConverterTools.GetOldPaths("");
@@ -60,7 +60,7 @@ namespace KSConverter
                 UserManagement.LoadUserToken();
 
                 // Make backup directory
-                SeparatorWriterColor.WriteSeparator("[1/7] Making backup directory", true, ColTypes.Stage);
+                SeparatorWriterColor.WriteSeparator("[1/6] Making backup directory", true, ColTypes.Stage);
                 Debug.WriteLine($"Backup directory: {ConverterTools.GetHomeDirectory() + "/KSBackup"}");
                 Debug.WriteLine($"FolderExists = {Checking.FolderExists(ConverterTools.GetHomeDirectory() + "/KSBackup")}");
                 if (!Checking.FolderExists(ConverterTools.GetHomeDirectory() + "/KSBackup"))
@@ -79,7 +79,7 @@ namespace KSConverter
                 Console.WriteLine();
 
                 // Make backup of old configuration files in case something goes wrong during conversion.
-                SeparatorWriterColor.WriteSeparator("[2/7] Making backup of old configuration files", true, ColTypes.Stage);
+                SeparatorWriterColor.WriteSeparator("[2/6] Making backup of old configuration files", true, ColTypes.Stage);
                 foreach (string ConfigEntry in ListOfOldPaths.Keys)
                 {
                     Debug.WriteLine($"Old path config entry: {ConfigEntry}");
@@ -107,7 +107,7 @@ namespace KSConverter
                 Console.WriteLine();
 
                 // Import all blocked devices to DebugDeviceNames.json
-                SeparatorWriterColor.WriteSeparator("[3/7] Importing all blocked devices to DebugDeviceNames.json", true, ColTypes.Stage);
+                SeparatorWriterColor.WriteSeparator("[3/6] Importing all blocked devices to DebugDeviceNames.json", true, ColTypes.Stage);
                 Debug.WriteLine($"Blocked device backup exists = {Checking.FileExists(ListOfBackups["BlockedDevices"])}");
                 if (Checking.FileExists(ListOfBackups["BlockedDevices"]))
                 {
@@ -137,7 +137,7 @@ namespace KSConverter
                 Console.WriteLine();
 
                 // Import all FTP speed dial settings to JSON
-                SeparatorWriterColor.WriteSeparator("[4/7] Importing all FTP speed dial addresses to FTP_SpeedDial.json", true, ColTypes.Stage);
+                SeparatorWriterColor.WriteSeparator("[4/6] Importing all FTP speed dial addresses to FTP_SpeedDial.json", true, ColTypes.Stage);
                 Debug.WriteLine($"Speed dial addresses exists = {Checking.FileExists(ListOfBackups["FTPSpeedDial"])}");
                 if (Checking.FileExists(ListOfBackups["FTPSpeedDial"]))
                 {
@@ -177,7 +177,7 @@ namespace KSConverter
                 Console.WriteLine();
 
                 // Import all users to JSON
-                SeparatorWriterColor.WriteSeparator("[5/7] Importing all users to Users.json", true, ColTypes.Stage);
+                SeparatorWriterColor.WriteSeparator("[5/6] Importing all users to Users.json", true, ColTypes.Stage);
                 Debug.WriteLine($"Users file exists = {Checking.FileExists(ListOfBackups["Users"])}");
                 if (Checking.FileExists(ListOfBackups["Users"]))
                 {
@@ -235,7 +235,7 @@ namespace KSConverter
                 Console.WriteLine();
 
                 // Import all aliases to JSON
-                SeparatorWriterColor.WriteSeparator("[6/7] Importing all aliases to Aliases.json", true, ColTypes.Stage);
+                SeparatorWriterColor.WriteSeparator("[6/6] Importing all aliases to Aliases.json", true, ColTypes.Stage);
                 Debug.WriteLine($"Aliases file exists = {Checking.FileExists(ListOfBackups["Aliases"])}");
                 if (Checking.FileExists(ListOfBackups["Aliases"]))
                 {
@@ -309,43 +309,6 @@ namespace KSConverter
                     // File not found. Skip stage.
                     Debug.WriteLine("We don't have file.");
                     TextWriterColor.Write("  - Warning: aliases.csv not found in home directory.", true, ColTypes.Warning);
-                }
-                Console.WriteLine();
-
-                // Import all config to JSON
-                SeparatorWriterColor.WriteSeparator("[7/7] Importing all kernel config to KernelConfig.json", true, ColTypes.Stage);
-                Debug.WriteLine($"Config file exists = {Checking.FileExists(ListOfBackups["Configuration"])}");
-                if (Checking.FileExists(ListOfBackups["Configuration"]))
-                {
-#if !NETCOREAPP
-                    // Read all config from old file
-                    TextWriterColor.Write("  - Reading config from kernelConfig.ini...", true, ColTypes.Progress);
-                    Debug.WriteLine("Reading configuration...");
-                    if (!PreFivePointFive.ReadPreFivePointFiveConfig(ListOfBackups["Configuration"]))
-                    {
-                        if (!FivePointFive.ReadFivePointFiveConfig(ListOfBackups["Configuration"]))
-                        {
-                            Debug.WriteLine("Incompatible format. Both ReadPreFivePointFiveConfig and ReadFivePointFiveConfig returned False. Regenerating...");
-                            TextWriterColor.Write("  - Warning: kernelConfig.ini has incompatible format. Generating new config anyways...", true, ColTypes.Warning);
-                        }
-                    }
-
-                    // Save the changes
-                    Debug.WriteLine("Saving...");
-                    TextWriterColor.Write("  - Saving configuration to KernelConfig.json...", true, ColTypes.Progress);
-                    Config.CreateConfig();
-#else
-                    // We need to use .NET Framework version of KSConverter to be able to fully use MadMilkman.Ini
-                    // as we used it back when Kernel Simulator and MadMilkman.Ini were so tied to .NET Framework.
-                    Debug.WriteLine("Config conversion needs to be done in .NET Framework.");
-                    TextWriterColor.Write("  - Warning: To convert kernel configuration from kernelConfig.ini to KernelConfig.json, you need to run the .NET Framework version of KSConverter.", true, ColTypes.Warning);
-#endif
-                }
-                else
-                {
-                    // File not found. Skip stage.
-                    Debug.WriteLine("We don't have file.");
-                    TextWriterColor.Write("  - Warning: kernelConfig.ini not found in home directory.", true, ColTypes.Warning);
                 }
                 Console.WriteLine();
 
