@@ -32,6 +32,9 @@ namespace KS.Misc.Reflection
     public static class PropertyManager
     {
 
+        private static readonly Dictionary<string, Action<object>> cachedSetters = new();
+        private static readonly Dictionary<string, Func<object>> cachedGetters = new();
+
         /// <summary>
         /// Sets the value of a property to the new value dynamically
         /// </summary>
@@ -81,12 +84,21 @@ namespace KS.Misc.Reflection
             if (value is null)
                 throw new ArgumentNullException(nameof(value));
 
+            string cachedName = $"{propertyInfo.DeclaringType.FullName} - {propertyInfo.Name}";
+            if (cachedSetters.ContainsKey(cachedName))
+            {
+                var cachedExpression = cachedSetters[cachedName];
+                cachedExpression(value);
+                return;
+            }
+
             var argumentParam = Expression.Parameter(typeof(object));
             var convExpr = Expression.Convert(argumentParam, propertyInfo.PropertyType);
             var callExpr = Expression.Call(propertyInfo.GetSetMethod(), convExpr);
 
             var expression = Expression.Lambda<Action<object>>(callExpr, argumentParam).Compile();
 
+            cachedSetters.Add(cachedName, expression);
             var finalValue = Convert.ChangeType(value, propertyInfo.PropertyType);
             expression(finalValue);
         }
@@ -139,11 +151,19 @@ namespace KS.Misc.Reflection
             if (propertyInfo is null)
                 throw new ArgumentNullException(nameof(propertyInfo));
 
+            string cachedName = $"{propertyInfo.DeclaringType.FullName} - {propertyInfo.Name}";
+            if (cachedGetters.ContainsKey(cachedName))
+            {
+                var cachedExpression = cachedGetters[cachedName];
+                return cachedExpression();
+            }
+
             var callExpr = Expression.Call(propertyInfo.GetGetMethod());
             var convExpr = Expression.Convert(callExpr, typeof(object));
 
             var expression = Expression.Lambda<Func<object>>(convExpr).Compile();
 
+            cachedGetters.Add(cachedName, expression);
             return expression();
         }
 

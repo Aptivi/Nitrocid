@@ -18,6 +18,7 @@
 
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Reflection;
 using KS.Kernel.Debugging;
@@ -31,6 +32,9 @@ namespace KS.Misc.Reflection
     /// </summary>
     public static class FieldManager
     {
+
+        private static readonly Dictionary<string, Action<object>> cachedSetters = new();
+        private static readonly Dictionary<string, Func<object>> cachedGetters = new();
 
         /// <summary>
         /// Sets the value of a variable to the new value dynamically
@@ -80,6 +84,14 @@ namespace KS.Misc.Reflection
             if (fieldInfo is null)
                 throw new ArgumentNullException(nameof(fieldInfo));
 
+            string cachedName = $"{fieldInfo.DeclaringType.FullName} - {fieldInfo.Name}";
+            if (cachedSetters.ContainsKey(cachedName))
+            {
+                var cachedExpression = cachedSetters[cachedName];
+                cachedExpression(value);
+                return;
+            }
+
             var argumentParam = Expression.Parameter(typeof(object));
             var assignExpr = Expression.Field(null, fieldInfo.DeclaringType, fieldInfo.Name);
             var convertExpr = Expression.Convert(argumentParam, assignExpr.Type);
@@ -87,6 +99,7 @@ namespace KS.Misc.Reflection
 
             var expression = Expression.Lambda<Action<object>>(setExpr, argumentParam).Compile();
 
+            cachedSetters.Add(cachedName, expression);
             expression(value);
         }
 
@@ -173,11 +186,19 @@ namespace KS.Misc.Reflection
             if (fieldInfo is null)
                 throw new ArgumentNullException(nameof(fieldInfo));
 
+            string cachedName = $"{fieldInfo.DeclaringType.FullName} - {fieldInfo.Name}";
+            if (cachedGetters.ContainsKey(cachedName))
+            {
+                var cachedExpression = cachedGetters[cachedName];
+                return cachedExpression();
+            }
+
             var assignExpr = Expression.Field(null, fieldInfo.DeclaringType, fieldInfo.Name);
             var convExpr = Expression.Convert(assignExpr, typeof(object));
 
             var expression = Expression.Lambda<Func<object>>(convExpr).Compile();
 
+            cachedGetters.Add(cachedName, expression);
             return expression();
         }
 
