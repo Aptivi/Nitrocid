@@ -18,9 +18,7 @@
 
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.IO;
-using System.Linq;
 using Extensification.StringExts;
 using FluentFTP.Helpers;
 using KS.ConsoleBase.Colors;
@@ -29,7 +27,6 @@ using KS.Files.Print;
 using KS.Files.Querying;
 using KS.Kernel;
 using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;

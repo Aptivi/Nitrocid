@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Drivers;
-using System.IO;
 
 namespace KS.Files.Querying
 {

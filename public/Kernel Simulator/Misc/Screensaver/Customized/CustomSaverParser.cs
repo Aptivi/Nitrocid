@@ -19,7 +19,6 @@
 using System;
 using System.IO;
 using System.Reflection;
-using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;

@@ -24,7 +24,6 @@ using System.Linq;
 using System.Reflection;
 using System.Threading;
 using Extensification.DictionaryExts;
-using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Files.Folders;
 using KS.Files.Operations;

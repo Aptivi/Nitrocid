@@ -17,13 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using System.IO;
-using Extensification.StringExts;
-using KS.Kernel.Exceptions;
-using KS.Files.Querying;
 using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Drivers;
 
 namespace KS.Files.Operations

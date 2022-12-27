@@ -18,12 +18,8 @@
 
 using System;
 using System.IO;
-using Extensification.StringExts;
 using KS.Drivers;
-using KS.Files.Querying;
 using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Files.Operations
 {

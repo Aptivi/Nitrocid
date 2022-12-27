@@ -22,7 +22,6 @@ using KS.Languages;
 using KS.Modifications;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace KS.Kernel.Events
 {

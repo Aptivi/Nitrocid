@@ -38,7 +38,6 @@ using KS.Misc.Splash;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
-using KS.Misc.Writers.MiscWriters;
 using KS.Modifications;
 using KS.Network.RPC;
 using KS.Kernel.Debugging;
@@ -52,7 +51,6 @@ using KS.Kernel.Administration.Journalling;
 using KS.Files.Operations;
 using KS.Drivers;
 using KS.ConsoleBase.Inputs;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs.Styles;
 

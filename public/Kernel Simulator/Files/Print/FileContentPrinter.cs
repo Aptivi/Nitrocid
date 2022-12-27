@@ -16,19 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using Extensification.LongExts;
-using KS.ConsoleBase.Colors;
 using KS.Drivers;
-using KS.Files.Folders;
-using KS.Files.Querying;
-using KS.Files.Read;
 using KS.Kernel;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Misc.Text;
-using KS.Misc.Writers.ConsoleWriters;
-using System;
-using System.IO;
 
 namespace KS.Files.Print
 {

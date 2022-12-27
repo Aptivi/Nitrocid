@@ -28,7 +28,6 @@ using KS.Languages;
 using KS.Misc.Reflection;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.ConsoleBase.Themes.Studio
 {

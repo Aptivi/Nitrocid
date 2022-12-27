@@ -16,12 +16,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using KS.Drivers;
 using KS.Kernel;
-using KS.Kernel.Debugging;
 
 namespace KS.Files.Querying
 {

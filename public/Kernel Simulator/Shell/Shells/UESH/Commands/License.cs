@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase.Colors;
-using KS.Files;
 using KS.Languages;
 using KS.Misc.Writers.FancyWriters;
 using KS.Misc.Writers.MiscWriters;

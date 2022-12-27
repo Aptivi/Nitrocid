@@ -18,14 +18,11 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.Net.Sockets;
 using Extensification.StringExts;
 using KS.Kernel.Debugging.RemoteDebug;
 using KS.Kernel.Debugging.Trace;
 using KS.Misc.Text;
-using UnitsNet;
 
 namespace KS.Kernel.Debugging
 {

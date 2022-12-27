@@ -39,7 +39,6 @@ using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using KS.Shell.Prompts;
 using Newtonsoft.Json.Linq;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Settings
 {

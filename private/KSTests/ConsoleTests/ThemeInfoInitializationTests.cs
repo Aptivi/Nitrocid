@@ -22,7 +22,6 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Themes;
 using NUnit.Framework;
 using Shouldly;
-using static KS.ConsoleBase.Colors.ColorTools;
 using System;
 using System.Linq;
 

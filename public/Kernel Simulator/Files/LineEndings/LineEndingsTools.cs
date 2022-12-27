@@ -17,11 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using System.IO;
-using static Extensification.CharExts.Querying;
-using Extensification.StringExts;
-using KS.Files.Querying;
-using KS.Languages;
 using KS.Misc.Text;
 using KS.Drivers;
 

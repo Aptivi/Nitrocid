@@ -18,10 +18,7 @@
 
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using KS.Drivers;
-using KS.Files.Querying;
 
 namespace KS.Files.PathLookup
 {

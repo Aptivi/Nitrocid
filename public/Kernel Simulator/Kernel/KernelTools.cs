@@ -17,16 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
-using System.Threading;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
-using KS.Files;
-using KS.Files.Querying;
 using KS.Hardware;
-using KS.Kernel.Administration.Journalling;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Debugging.RemoteDebug;
@@ -35,15 +29,12 @@ using KS.Languages;
 using KS.Misc.Calendar.Events;
 using KS.Misc.Calendar.Reminders;
 using KS.Misc.Notifications;
-using KS.Misc.Reflection;
 using KS.Misc.Screensaver;
 using KS.Misc.Splash;
-using KS.Misc.Text;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using KS.Misc.Writers.MiscWriters;
-using KS.ConsoleBase.Inputs;
 using KS.Modifications;
 using KS.Network.Mail;
 using KS.Network.RPC;
@@ -54,7 +45,6 @@ using KS.TimeDate;
 using KS.Users;
 using KS.Users.Groups;
 using System.Reflection;
-using KS.Kernel.Events;
 
 #if SPECIFIERREL
 using static KS.ConsoleBase.Colors.ColorTools;

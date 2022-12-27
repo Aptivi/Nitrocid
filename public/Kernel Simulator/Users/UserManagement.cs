@@ -20,7 +20,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text.RegularExpressions;
 using KS.Drivers;
 using KS.Drivers.Encryption;
 using KS.Files;
