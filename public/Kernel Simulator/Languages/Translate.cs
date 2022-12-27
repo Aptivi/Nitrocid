@@ -31,7 +31,8 @@ namespace KS.Languages
         /// </summary>
         /// <param name="text">Any string that exists in Kernel Simulator's translation files</param>
         /// <returns>Translated string</returns>
-        public static string DoTranslation(string text) => DoTranslation(text, LanguageManager.CurrentLanguage);
+        public static string DoTranslation(string text) =>
+            DoTranslation(text, LanguageManager.CurrentLanguage);
 
         /// <summary>
         /// Translates string into another language, or to English if the language wasn't specified or if it's invalid.
@@ -41,17 +42,20 @@ namespace KS.Languages
         /// <returns>Translated string</returns>
         public static string DoTranslation(string text, string lang)
         {
+            if (string.IsNullOrWhiteSpace(text))
+                return "";
+
             if (string.IsNullOrWhiteSpace(lang))
                 lang = "eng";
 
-            // If the language is available and is not English, translate
-            if (LanguageManager.Languages.ContainsKey(lang) & lang != "eng")
+            // If the language is available, translate
+            if (LanguageManager.Languages.ContainsKey(lang))
             {
-                return DoTranslation(text, LanguageManager.Languages[lang]);
-            }
-            else if (LanguageManager.Languages.ContainsKey(lang) & lang == "eng") // If the language is available, but is English, don't translate
-            {
-                return text;
+                if (lang != "eng")
+                    // Language is not English. Translate.
+                    return DoTranslation(text, LanguageManager.Languages[lang]);
+                else
+                    return text;
             }
             else // If the language is invalid
             {
@@ -68,6 +72,9 @@ namespace KS.Languages
         /// <returns>Translated string</returns>
         public static string DoTranslation(string text, LanguageInfo lang)
         {
+            if (string.IsNullOrWhiteSpace(text))
+                return "";
+
             // Do translation
             if (lang.Strings.ContainsKey(text))
             {
