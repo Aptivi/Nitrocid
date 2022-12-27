@@ -1,6 +1,7 @@
 {
     "Metadata": {
         "Name": "Default",
+        "Description": "The default theme for the kernel"
     },
     "InputColor": "15",
     "LicenseColor": "15",
