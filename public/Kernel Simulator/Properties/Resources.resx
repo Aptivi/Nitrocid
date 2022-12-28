@@ -278,10 +278,10 @@
     <value>..\Resources\Themes\Windows11Light.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
   <data name="ScreensaverSettingsEntries" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Data\ScreensaverSettingsEntries.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+    <value>..\Resources\Settings\ScreensaverSettingsEntries.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
   <data name="SettingsEntries" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Data\SettingsEntries.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+    <value>..\Resources\Settings\SettingsEntries.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
   <data name="Metallic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\Metallic.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
@@ -314,7 +314,7 @@
     <value>..\Resources\Languages\ukr-T.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="SplashSettingsEntries" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Data\SplashSettingsEntries.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+    <value>..\Resources\Settings\SplashSettingsEntries.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
   <data name="Aquatic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\Aquatic.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
