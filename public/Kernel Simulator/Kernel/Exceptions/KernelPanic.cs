@@ -216,20 +216,38 @@ namespace KS.Kernel.Exceptions
 
                 // Write info (Header)
                 Dump.AutoFlush = true;
-                Dump.WriteLine(Translate.DoTranslation("----------------------------- Kernel panic dump -----------------------------") + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation(">> Panic information <<") + CharManager.NewLine + Translate.DoTranslation("> Description: {0}") + CharManager.NewLine + Translate.DoTranslation("> Error type: {1}") + CharManager.NewLine + Translate.DoTranslation("> Date and Time: {2}") + CharManager.NewLine, Description, ErrorType.ToString(), TimeDateRenderers.Render());
+                Dump.WriteLine(Translate.DoTranslation("----------------------------- Kernel panic dump -----------------------------") + CharManager.NewLine + CharManager.NewLine +
+                               Translate.DoTranslation(">> Panic information <<") + CharManager.NewLine + 
+                               Translate.DoTranslation("> Description: {0}") + CharManager.NewLine + 
+                               Translate.DoTranslation("> Error type: {1}") + CharManager.NewLine + 
+                               Translate.DoTranslation("> Date and Time: {2}") + CharManager.NewLine, 
+                               Description, ErrorType.ToString(), TimeDateRenderers.Render());
 
                 // Write Info (Exception)
                 if (Exc is not null)
                 {
                     int Count = 1;
-                    Dump.WriteLine(Translate.DoTranslation(">> Exception information <<") + CharManager.NewLine + Translate.DoTranslation("> Exception: {0}") + CharManager.NewLine + Translate.DoTranslation("> Description: {1}") + CharManager.NewLine + Translate.DoTranslation("> HRESULT: {2}") + CharManager.NewLine + Translate.DoTranslation("> Source: {3}") + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("> Stack trace <") + CharManager.NewLine + CharManager.NewLine + Exc.StackTrace + CharManager.NewLine + CharManager.NewLine, Exc.GetType().FullName, Exc.Message, Exc.HResult, Exc.Source);
+                    Dump.WriteLine(Translate.DoTranslation(">> Exception information <<") + CharManager.NewLine + 
+                                   Translate.DoTranslation("> Exception: {0}") + CharManager.NewLine +
+                                   Translate.DoTranslation("> Description: {1}") + CharManager.NewLine +
+                                   Translate.DoTranslation("> HRESULT: {2}") + CharManager.NewLine + 
+                                   Translate.DoTranslation("> Source: {3}") + CharManager.NewLine + CharManager.NewLine + 
+                                   Translate.DoTranslation("> Stack trace <") + CharManager.NewLine + CharManager.NewLine + 
+                                   Exc.StackTrace + CharManager.NewLine + CharManager.NewLine, 
+                                   Exc.GetType().FullName, Exc.Message, Exc.HResult, Exc.Source);
                     Dump.WriteLine(Translate.DoTranslation(">> Inner exception {0} information <<"), Count);
 
                     // Write info (Inner exceptions)
                     var InnerExc = Exc.InnerException;
                     while (InnerExc is not null)
                     {
-                        Dump.WriteLine(Translate.DoTranslation("> Exception: {0}") + CharManager.NewLine + Translate.DoTranslation("> Description: {1}") + CharManager.NewLine + Translate.DoTranslation("> HRESULT: {2}") + CharManager.NewLine + Translate.DoTranslation("> Source: {3}") + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("> Stack trace <") + CharManager.NewLine + CharManager.NewLine + InnerExc.StackTrace + CharManager.NewLine, InnerExc.GetType().FullName, InnerExc.Message, InnerExc.HResult, InnerExc.Source);
+                        Dump.WriteLine(Translate.DoTranslation("> Exception: {0}") + CharManager.NewLine + 
+                                       Translate.DoTranslation("> Description: {1}") + CharManager.NewLine +
+                                       Translate.DoTranslation("> HRESULT: {2}") + CharManager.NewLine + 
+                                       Translate.DoTranslation("> Source: {3}") + CharManager.NewLine + CharManager.NewLine + 
+                                       Translate.DoTranslation("> Stack trace <") + CharManager.NewLine + CharManager.NewLine + 
+                                       InnerExc.StackTrace + CharManager.NewLine, 
+                                       InnerExc.GetType().FullName, InnerExc.Message, InnerExc.HResult, InnerExc.Source);
                         InnerExc = InnerExc.InnerException;
                         if (InnerExc is not null)
                         {
