@@ -282,19 +282,19 @@ namespace KS.Misc.Settings
                         DebugWriter.WriteDebug(DebugLevel.I, "Opening key {0} from section {1}...", Answer, Section);
                         OpenKey(Section, Answer, SettingsToken);
                     }
-                    else if (Answer == MaxOptions + 1 & SettingsType == SettingsType.Screensaver)
+                    else if (Answer == MaxOptions + 2 & SettingsType == SettingsType.Screensaver)
                     {
                         // Preview screensaver
                         DebugWriter.WriteDebug(DebugLevel.I, "User requested screensaver preview.");
                         Screensaver.Screensaver.ShowSavers(Section);
                     }
-                    else if (Answer == MaxOptions + 1 & SettingsType == SettingsType.Splash)
+                    else if (Answer == MaxOptions + 2 & SettingsType == SettingsType.Splash)
                     {
                         // Preview splash
                         DebugWriter.WriteDebug(DebugLevel.I, "User requested splash preview.");
                         Splash.SplashManager.PreviewSplash(Section);
                     }
-                    else if (Answer == MaxOptions + 1 | Answer == MaxOptions + 2 & (SettingsType == SettingsType.Screensaver || SettingsType == SettingsType.Splash) | Answer == -1)
+                    else if (Answer == MaxOptions + 1 | Answer == -1)
                     {
                         // Go Back...
                         DebugWriter.WriteDebug(DebugLevel.I, "User requested exit. Returning...");
