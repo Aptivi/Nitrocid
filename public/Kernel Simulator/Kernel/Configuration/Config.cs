@@ -385,7 +385,8 @@ namespace KS.Kernel.Configuration
                             LanguageManager.SetLang(lang);
                             continue;
                         }
-                        else if (ConfigTokenFromPath[VariableKeyName] is not null)
+                        else if (ConfigTokenFromPath is not null && 
+                                 ConfigTokenFromPath[VariableKeyName] is not null)
                         {
                             VariableValue = ConfigTokenFromPath[VariableKeyName].ToObject<dynamic>();
                             DebugWriter.WriteDebug(DebugLevel.I, "Got var value: {0}", VariableValue);
