@@ -286,7 +286,7 @@ namespace KS.Misc.Notifications
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Shutting down botification thread because of {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Shutting down notification thread because of {0}", ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }
