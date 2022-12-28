@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using Extensification.StringExts;
+using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Inputs.Styles;
 using KS.ConsoleBase.Themes;
 using KS.Files;
@@ -47,14 +48,13 @@ namespace KS.Shell.Shells.UESH.Commands
             if (ListArgsOnly.Length == 0)
             {
                 // Let the user select a theme
-                List<string> themeAnswers = new();
-                List<string> themeWorkingNames = new();
+                List<InputChoiceInfo> themeChoices = new();
                 foreach (string theme in ThemeTools.Themes.Keys)
                 {
-                    themeAnswers.Add(theme);
-                    themeWorkingNames.Add(ThemeTools.Themes[theme].Name);
+                    var ici = new InputChoiceInfo(theme, ThemeTools.Themes[theme].Name, ThemeTools.Themes[theme].Description);
+                    themeChoices.Add(ici);
                 }
-                int colorIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a theme"), string.Join("/", themeAnswers), themeWorkingNames.ToArray()) - 1;
+                int colorIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a theme"), themeChoices) - 1;
 
                 // If the color index is -2, exit. PromptSelection returns -1 if ESC is pressed to cancel selecting. However, the index just decreases to -2
                 // even if that PromptSelection returned the abovementioned value, so bail if index is -2

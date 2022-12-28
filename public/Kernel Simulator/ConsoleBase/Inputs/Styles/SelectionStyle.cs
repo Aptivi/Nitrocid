@@ -134,10 +134,11 @@ namespace KS.ConsoleBase.Inputs.Styles
                 // Write description area
                 int descSepArea = ConsoleWrapper.WindowHeight - 3;
                 int descArea = ConsoleWrapper.WindowHeight - 2;
+                string descFinal = AllAnswers[HighlightedAnswer - 1].ChoiceDescription is not null ? AllAnswers[HighlightedAnswer - 1].ChoiceDescription.Truncate((ConsoleWrapper.WindowWidth * 2) - 3) : "";
                 TextWriterWhereColor.WriteWhere("=".Repeat(ConsoleWrapper.WindowWidth), 0, descSepArea, KernelColorType.Separator);
                 TextWriterWhereColor.WriteWhere(" ".Repeat(ConsoleWrapper.WindowWidth), 0, descArea);
                 TextWriterWhereColor.WriteWhere(" ".Repeat(ConsoleWrapper.WindowWidth), 0, descArea + 1);
-                TextWriterWhereColor.WriteWhere(AllAnswers[HighlightedAnswer - 1].ChoiceDescription.Truncate((ConsoleWrapper.WindowWidth * 2) - 3), 0, descArea, KernelColorType.NeutralText);
+                TextWriterWhereColor.WriteWhere(descFinal, 0, descArea, KernelColorType.NeutralText);
 
                 // Wait for an answer
                 Answer = Input.DetectKeypress();

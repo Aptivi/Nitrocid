@@ -41,6 +41,11 @@ namespace KS.ConsoleBase.Themes
         public string Name { get; }
 
         /// <summary>
+        /// Theme description
+        /// </summary>
+        public string Description { get; }
+
+        /// <summary>
         /// Is true color required?
         /// </summary>
         public bool TrueColorRequired { get; }
@@ -81,6 +86,7 @@ namespace KS.ConsoleBase.Themes
                 ThemeColors[type] = new Color(ThemeResourceJson.SelectToken($"{type}Color").ToString());
             }
             Name = ThemeResourceJson["Metadata"]["Name"].ToString();
+            Description = ThemeResourceJson["Metadata"]["Description"]?.ToString();
             TrueColorRequired = ThemeTools.IsTrueColorRequired(ThemeColors);
         }
 
