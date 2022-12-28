@@ -12,7 +12,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("Converts existing Kenel Simulator settings (0.0.15.x or lower) to newer format")]
 [assembly: AssemblyCompany("Aptivi")]
 [assembly: AssemblyProduct("Kernel Simulator")]
-[assembly: AssemblyCopyright("Copyright © Aptivi 2018 - 2022")]
+[assembly: AssemblyCopyright("Copyright © Aptivi 2018 - 2023")]
 [assembly: AssemblyTrademark("")]
 
 [assembly: ComVisible(false)]

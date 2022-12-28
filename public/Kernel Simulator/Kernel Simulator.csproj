@@ -34,7 +34,7 @@
     <StartupObject>KS.Kernel.Kernel</StartupObject>
     <AssemblyName>Kernel Simulator</AssemblyName>
     <Description>Simulates our future kernel</Description>
-    <Copyright>Copyright © Aptivi 2018 - 2022</Copyright>
+    <Copyright>Copyright © Aptivi 2018 - 2023</Copyright>
     <OutputPath>KSBuild\</OutputPath>
     <ApplicationIcon>OfficialAppIcon-KernelSimulator-256.ico</ApplicationIcon>
     <OptionExplicit>On</OptionExplicit>

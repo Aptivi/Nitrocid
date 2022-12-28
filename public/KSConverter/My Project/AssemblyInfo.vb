@@ -9,9 +9,9 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("KSConverter")>
 <Assembly: AssemblyDescription("Converts existing Kenel Simulator settings (0.0.15.x or lower) to newer format")>
-<Assembly: AssemblyCompany("EoflaOE")>
+<Assembly: AssemblyCompany("Aptivi")>
 <Assembly: AssemblyProduct("Kernel Simulator")>
-<Assembly: AssemblyCopyright("Copyright © EoflaOE 2018 - 2022")>
+<Assembly: AssemblyCopyright("Copyright © Aptivi 2018 - 2023")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>

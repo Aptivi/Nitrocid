@@ -11,7 +11,7 @@
     <Deterministic>true</Deterministic>
     <OutputPath>..\Kernel Simulator\KSBuild\</OutputPath>
     <Description>Converts bare text files for KS localizations to a parsable format for KS</Description>
-    <Copyright>Copyright © Aptivi 2018 - 2022</Copyright>
+    <Copyright>Copyright © Aptivi 2018 - 2023</Copyright>
     <OptionExplicit>On</OptionExplicit>
     <OptionCompare>Binary</OptionCompare>
     <OptionStrict>Off</OptionStrict>

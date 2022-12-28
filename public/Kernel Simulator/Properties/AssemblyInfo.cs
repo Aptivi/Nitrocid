@@ -14,7 +14,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("Simulates our future kernel")]
 [assembly: AssemblyCompany("Aptivi")]
 [assembly: AssemblyProduct("Kernel Simulator")]
-[assembly: AssemblyCopyright("Copyright © Aptivi 2018 - 2022")]
+[assembly: AssemblyCopyright("Copyright © Aptivi 2018 - 2023")]
 [assembly: AssemblyTrademark("")]
 
 [assembly: ComVisible(false)]

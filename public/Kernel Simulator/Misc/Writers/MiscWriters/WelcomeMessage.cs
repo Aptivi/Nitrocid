@@ -1,5 +1,5 @@
 ﻿
-// Kernel Simulator  Copyright (C) 2018-2022  Aptivi
+// Kernel Simulator  Copyright (C) 2018-2023  Aptivi
 // 
 // This file is part of Kernel Simulator
 // 
@@ -88,7 +88,7 @@ namespace KS.Misc.Writers.MiscWriters
         /// </summary>
         public static void WriteLicense()
         {
-            TextWriterColor.Write(CharManager.NewLine + "    Kernel Simulator  Copyright (C) 2018-2022  Aptivi" + 
+            TextWriterColor.Write(CharManager.NewLine + "    Kernel Simulator  Copyright (C) 2018-2023  Aptivi" + 
                                   CharManager.NewLine + "    This program comes with ABSOLUTELY NO WARRANTY, not even " + 
                                   CharManager.NewLine + "    MERCHANTABILITY or FITNESS for particular purposes." + 
                                   CharManager.NewLine + "    This is free software, and you are welcome to redistribute it" + 

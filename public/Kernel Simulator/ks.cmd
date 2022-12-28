@@ -1,6 +1,6 @@
 @echo off
 
-REM    Kernel Simulator  Copyright (C) 2018-2022  Aptivi
+REM    Kernel Simulator  Copyright (C) 2018-2023  Aptivi
 REM
 REM    This file is part of Kernel Simulator
 REM
