@@ -52,10 +52,6 @@
     <None Include="CustomLanguages\Metadata.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="My Project\Application.myapp">
-      <Generator>MyApplicationCodeGenerator</Generator>
-      <LastGenOutput>Application.Designer.cs</LastGenOutput>
-    </None>
     <None Include="Translations\Metadata.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
