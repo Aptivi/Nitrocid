@@ -144,14 +144,8 @@ namespace KS.ConsoleBase.Themes
         /// Gets the theme information
         /// </summary>
         /// <param name="theme">Theme name</param>
-        public static ThemeInfo GetThemeInfo(string theme)
-        {
-            theme = theme.ReplaceAll(new[] { "-", " " }, "_");
-            if (theme == "3Y-Diamond")
-                return new ThemeInfo("_3Y_Diamond");
-            else
-                return new ThemeInfo(theme);
-        }
+        public static ThemeInfo GetThemeInfo(string theme) =>
+            Themes[theme];
 
         /// <summary>
         /// Gets the colors from the theme
