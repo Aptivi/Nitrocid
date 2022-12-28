@@ -96,6 +96,7 @@ namespace KS.Misc.Screensaver
             { "linotypo", new LinotypoDisplay() },
             { "marquee", new MarqueeDisplay() },
             { "matrix", new MatrixDisplay() },
+            { "memdump", new MemdumpDisplay() },
             { "meteor", new MeteorDisplay() },
             { "newyear", new NewYearDisplay() },
             { "noise", new NoiseDisplay() },
