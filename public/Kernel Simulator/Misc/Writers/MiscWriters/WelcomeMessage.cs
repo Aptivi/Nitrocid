@@ -22,6 +22,7 @@ using KS.Languages;
 using KS.Misc.Probers;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
+using KS.Misc.Writers.FancyWriters;
 using KS.Misc.Writers.FancyWriters.Tools;
 
 namespace KS.Misc.Writers.MiscWriters
@@ -88,6 +89,7 @@ namespace KS.Misc.Writers.MiscWriters
         /// </summary>
         public static void WriteLicense()
         {
+            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("License information"), true, KernelColorType.Stage);
             TextWriterColor.Write(CharManager.NewLine + "    Kernel Simulator  Copyright (C) 2018-2023  Aptivi" + 
                                   CharManager.NewLine + "    This program comes with ABSOLUTELY NO WARRANTY, not even " + 
                                   CharManager.NewLine + "    MERCHANTABILITY or FITNESS for particular purposes." + 

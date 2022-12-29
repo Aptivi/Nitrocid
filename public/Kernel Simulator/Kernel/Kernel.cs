@@ -53,6 +53,7 @@ using KS.Drivers;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs.Styles;
+using KS.Misc.Writers.MiscWriters;
 
 namespace KS.Kernel
 {
@@ -261,6 +262,13 @@ namespace KS.Kernel
                     {
                         Flags.NotifyKernelError = false;
                         NotificationManager.NotifySend(new Notification(Translate.DoTranslation("Previous boot failed"), KernelPanic.LastKernelErrorException.Message, NotificationManager.NotifPriority.High, NotificationManager.NotifType.Normal));
+                    }
+
+                    // Show license if splash is enabled
+                    if (Flags.EnableSplash)
+                    {
+                        TextWriterColor.Write();
+                        WelcomeMessage.WriteLicense();
                     }
 
 #if SPECIFIERDEV

@@ -189,10 +189,9 @@ namespace KS.Kernel
                 TextWriterColor.Write("  KS: " +    Translate.DoTranslation("Running from GRILO?") + $" {KernelPlatform.IsRunningFromGrilo()}");
                 TextWriterColor.Write("  KSAPI: " + $"v{KernelApiVersion}");
             }
+            TextWriterColor.Write();
 
             // Show license
-            TextWriterColor.Write();
-            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("License information"), true, KernelColorType.Stage);
             WelcomeMessage.WriteLicense();
 
             // Load splash

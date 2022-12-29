@@ -16,9 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.ConsoleBase.Colors;
-using KS.Languages;
-using KS.Misc.Writers.FancyWriters;
 using KS.Misc.Writers.MiscWriters;
 using KS.Shell.ShellBase.Commands;
 
@@ -30,12 +27,9 @@ namespace KS.Shell.Shells.UESH.Commands
     class LicenseCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>
             // Show license
-            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("License information"), true, KernelColorType.Stage);
             WelcomeMessage.WriteLicense();
-        }
 
     }
 }
