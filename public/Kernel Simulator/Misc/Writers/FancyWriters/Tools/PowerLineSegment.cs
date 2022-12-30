@@ -43,6 +43,11 @@ namespace KS.Misc.Writers.FancyWriters.Tools
         public char SegmentIcon { get; } = default;
 
         /// <summary>
+        /// Segment transition icon. This should be an iconic character.
+        /// </summary>
+        public char SegmentTransitionIcon { get; } = default;
+
+        /// <summary>
         /// Segment text. Usually a status.
         /// </summary>
         public string SegmentText { get; }
@@ -50,12 +55,13 @@ namespace KS.Misc.Writers.FancyWriters.Tools
         /// <summary>
         /// Installs the segment values to the instance
         /// </summary>
-        public PowerLineSegment(Color segmentForeground, Color segmentBackground, string segmentText, char segmentIcon = default)
+        public PowerLineSegment(Color segmentForeground, Color segmentBackground, string segmentText, char segmentIcon = default, char segmentTransitionIcon = default)
         {
             SegmentForeground = segmentForeground;
             SegmentBackground = segmentBackground;
             SegmentIcon = segmentIcon;
             SegmentText = segmentText;
+            SegmentTransitionIcon = segmentTransitionIcon;
         }
     }
 }

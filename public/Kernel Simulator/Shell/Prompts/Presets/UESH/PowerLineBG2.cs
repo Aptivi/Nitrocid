@@ -27,6 +27,8 @@ using KS.Network.Base;
 using KS.Users.Login;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Colors;
+using KS.Misc.Writers.FancyWriters.Tools;
+using System.Collections.Generic;
 
 namespace KS.Shell.Prompts.Presets.UESH
 {
@@ -45,18 +47,16 @@ namespace KS.Shell.Prompts.Presets.UESH
         internal override string PresetPromptBuilder()
         {
             // PowerLine glyphs
-            char TransitionChar = Convert.ToChar(0xE0B0);
             char TransitionPartChar = Convert.ToChar(0xE0B1);
             char PadlockChar = Convert.ToChar(0xE0A2);
 
-            // PowerLine preset colors
-            var FirstColorSegmentForeground = new Color(255, 85, 255);
-            var FirstColorSegmentBackground = new Color(25, 25, 25);
-            var SecondColorSegmentForeground = new Color(255, 85, 255);
-            var SecondColorSegmentBackground = new Color(25, 25, 25);
-            var ThirdColorSegmentForeground = new Color(255, 85, 255);
-            var ThirdColorSegmentBackground = new Color(25, 25, 25);
-            var LastTransitionForeground = new Color(25, 25, 25);
+            // PowerLine presets
+            List<PowerLineSegment> segments = new()
+            {
+                new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), Login.CurrentUser.Username, default, TransitionPartChar),
+                new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), NetworkTools.HostName, PadlockChar, TransitionPartChar),
+                new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), CurrentDirectory.CurrentDir, default, TransitionPartChar),
+            };
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -64,35 +64,8 @@ namespace KS.Shell.Prompts.Presets.UESH
             // Build the preset
             if (!Flags.Maintenance)
             {
-                // Current username
-                PresetStringBuilder.Append(FirstColorSegmentForeground.VTSequenceForeground);
-                PresetStringBuilder.Append(FirstColorSegmentBackground.VTSequenceBackground);
-                PresetStringBuilder.AppendFormat(" {0} ", Login.CurrentUser.Username);
-
-                // Transition
-                PresetStringBuilder.Append(FirstColorSegmentForeground.VTSequenceForeground);
-                PresetStringBuilder.Append(SecondColorSegmentBackground.VTSequenceBackground);
-                PresetStringBuilder.AppendFormat("{0}", TransitionPartChar);
-
-                // Current hostname
-                PresetStringBuilder.Append(SecondColorSegmentForeground.VTSequenceForeground);
-                PresetStringBuilder.Append(SecondColorSegmentBackground.VTSequenceBackground);
-                PresetStringBuilder.AppendFormat(" {0} {1} ", PadlockChar, NetworkTools.HostName);
-
-                // Transition
-                PresetStringBuilder.Append(SecondColorSegmentForeground.VTSequenceForeground);
-                PresetStringBuilder.Append(ThirdColorSegmentBackground.VTSequenceBackground);
-                PresetStringBuilder.AppendFormat("{0}", TransitionPartChar);
-
-                // Current directory
-                PresetStringBuilder.Append(ThirdColorSegmentForeground.VTSequenceForeground);
-                PresetStringBuilder.Append(ThirdColorSegmentBackground.VTSequenceBackground);
-                PresetStringBuilder.AppendFormat(" {0} ", CurrentDirectory.CurrentDir);
-
-                // Transition
-                PresetStringBuilder.Append(LastTransitionForeground.VTSequenceForeground);
-                PresetStringBuilder.Append(Flags.SetBackground ? ColorTools.GetColor(KernelColorType.Background).VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m");
-                PresetStringBuilder.AppendFormat("{0} ", TransitionChar);
+                // Use RenderSegments to render our segments
+                PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
                 PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
             }
             else

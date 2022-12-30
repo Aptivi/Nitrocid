@@ -71,7 +71,7 @@ namespace KS.Misc.Writers.FancyWriters.Tools
                     // Now, put transition to our string
                     SegmentStringBuilder.Append(backAsFore.VTSequenceForeground);
                     SegmentStringBuilder.Append(nextBack.VTSequenceBackground);
-                    SegmentStringBuilder.AppendFormat("{0}", transitionChar);
+                    SegmentStringBuilder.AppendFormat("{0}", segment.SegmentTransitionIcon != default ? segment.SegmentTransitionIcon : transitionChar);
                 }
 
                 // Now, try to append the PowerLine segment and its contents
