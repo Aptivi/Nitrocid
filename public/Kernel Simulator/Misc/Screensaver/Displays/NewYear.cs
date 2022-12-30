@@ -88,9 +88,9 @@ namespace KS.Misc.Screensaver.Displays
                 // Print the time remaining
                 var nextYearDate = new DateTime(currentYear + 1, 1, 1);
                 var distance = nextYearDate - TimeDate.TimeDate.KernelDateTime;
-                string distanceStr = distance.ToString("dd\\d\\ hh\\:mm\\:ss");
+                string distanceStr = distance.ToString("dd\\d\\ hh\\:mm\\:ss") + " left till " + nextYearStr;
                 int consoleInfoX = (ConsoleWrapper.WindowWidth / 2) - (distanceStr.Length / 2);
-                int consoleInfoY = (ConsoleWrapper.WindowHeight / 2) + figHeight;
+                int consoleInfoY = (ConsoleWrapper.WindowHeight / 2) + figHeight + 2;
                 TextWriterWhereColor.WriteWhere(distanceStr, consoleInfoX, consoleInfoY);
             }
 
