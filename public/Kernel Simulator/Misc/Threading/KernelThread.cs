@@ -17,8 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.CodeDom.Compiler;
 using System.Threading;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
+using KS.Languages;
 
 namespace KS.Misc.Threading
 {
@@ -30,7 +33,9 @@ namespace KS.Misc.Threading
 
         private Thread BaseThread;
         private readonly ThreadStart ThreadDelegate;
+        private readonly ThreadStart InitialThreadDelegate;
         private readonly ParameterizedThreadStart ThreadDelegateParameterized;
+        private readonly ParameterizedThreadStart InitialThreadDelegateParameterized;
         private readonly bool IsParameterized;
 
         /// <summary>
@@ -56,6 +61,8 @@ namespace KS.Misc.Threading
         /// <param name="Executor">The thread delegate</param>
         public KernelThread(string ThreadName, bool Background, ThreadStart Executor)
         {
+            InitialThreadDelegate = Executor;
+            Executor = () => StartInternalNormal(InitialThreadDelegate);
             BaseThread = new Thread(Executor) { Name = ThreadName, IsBackground = Background };
             IsParameterized = false;
             ThreadDelegate = Executor;
@@ -73,6 +80,8 @@ namespace KS.Misc.Threading
         /// <param name="Executor">The thread delegate</param>
         public KernelThread(string ThreadName, bool Background, ParameterizedThreadStart Executor)
         {
+            InitialThreadDelegateParameterized = Executor;
+            Executor = (Parameter) => StartInternalParameterized(InitialThreadDelegateParameterized, Parameter);
             BaseThread = new Thread(Executor) { Name = ThreadName, IsBackground = Background };
             IsParameterized = true;
             ThreadDelegateParameterized = Executor;
@@ -156,10 +165,42 @@ namespace KS.Misc.Threading
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException) && ex.GetType().Name != nameof(ThreadStateException))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Can't wait for kernel thread: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Can't wait for kernel thread: {0}", ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;
+        }
+
+        private void StartInternalNormal(ThreadStart action)
+        {
+            try
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Starting action...");
+                action();
+                DebugWriter.WriteDebug(DebugLevel.I, "Thread exited peacefully.");
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Thread {0} [{1}] failed: {2}", Name, BaseThread.ManagedThreadId, ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+                KernelPanic.KernelError(Kernel.KernelErrorLevel.C, false, 0, Translate.DoTranslation("Kernel thread {0} failed.") + " {1}", ex, Name, ex.Message);
+            }
+        }
+
+        private void StartInternalParameterized(ParameterizedThreadStart action, object arg)
+        {
+            try
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Starting action...");
+                action(arg);
+                DebugWriter.WriteDebug(DebugLevel.I, "Thread exited peacefully.");
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Thread {0} [{1}] failed: {2}", Name, BaseThread.ManagedThreadId, ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+                KernelPanic.KernelError(Kernel.KernelErrorLevel.C, false, 0, Translate.DoTranslation("Kernel thread {0} failed.") + " {1}", ex, Name, ex.Message);
+            }
         }
 
     }

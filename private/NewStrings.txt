@@ -289,5 +289,6 @@ Kernel environment information
 Shows license information for the kernel
 How many milliseconds to wait before the next lyric?
 Plays a lyric file
+Kernel thread {0} failed.
 
 ==========================================================================================================================================
