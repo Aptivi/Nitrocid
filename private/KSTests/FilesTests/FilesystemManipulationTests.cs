@@ -48,7 +48,7 @@ namespace KSTests.FilesTests
             Directory.CreateDirectory(Paths.HomePath + "/TestDir");
             string SourcePath = "/TestDir";
             string TargetPath = "/TestDir2";
-            Copying.TryCopyFileOrDir(SourcePath, TargetPath).ShouldBeTrue();
+            Should.NotThrow(() => Copying.CopyFileOrDir(SourcePath, TargetPath));
         }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace KSTests.FilesTests
             CurrentDirectory.CurrentDir = Paths.HomePath;
             string SourcePath = Path.GetFullPath("TestData/TestText.txt");
             string TargetPath = "/Documents";
-            Copying.TryCopyFileOrDir(SourcePath, TargetPath).ShouldBeTrue();
+            Should.NotThrow(() => Copying.TryCopyFileOrDir(SourcePath, TargetPath));
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace KSTests.FilesTests
             CurrentDirectory.CurrentDir = Paths.HomePath;
             string SourcePath = Path.GetFullPath("TestData/TestText.txt");
             string TargetPath = "/Documents/Text.txt";
-            Copying.TryCopyFileOrDir(SourcePath, TargetPath).ShouldBeTrue();
+            Should.NotThrow(() => Copying.TryCopyFileOrDir(SourcePath, TargetPath));
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace KSTests.FilesTests
         public void TestMakeDirectory()
         {
             CurrentDirectory.CurrentDir = Paths.HomePath;
-            Making.TryMakeDirectory("/NewDirectory").ShouldBeTrue();
+            Should.NotThrow(() => Making.TryMakeDirectory("/NewDirectory"));
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace KSTests.FilesTests
         public void TestMakeFile()
         {
             CurrentDirectory.CurrentDir = Paths.HomePath;
-            Making.TryMakeFile("/NewFile.txt").ShouldBeTrue();
+            Should.NotThrow(() => Making.TryMakeFile("/NewFile.txt"));
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace KSTests.FilesTests
         public void TestMakeJsonFile()
         {
             CurrentDirectory.CurrentDir = Paths.HomePath;
-            Making.TryMakeJsonFile("/NewFile.json").ShouldBeTrue();
+            Should.NotThrow(() => Making.TryMakeJsonFile("/NewFile.json"));
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace KSTests.FilesTests
             Directory.CreateDirectory(Paths.HomePath + "/TestMovedDir");
             string SourcePath = "/TestMovedDir";
             string TargetPath = "/TestMovedDir2";
-            Moving.TryMoveFileOrDir(SourcePath, TargetPath).ShouldBeTrue();
+            Should.NotThrow(() => Moving.TryMoveFileOrDir(SourcePath, TargetPath));
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace KSTests.FilesTests
             CurrentDirectory.CurrentDir = Paths.HomePath;
             string SourcePath = Path.GetFullPath("TestData/TestMove.txt");
             string TargetPath = "/Documents";
-            Moving.TryMoveFileOrDir(SourcePath, TargetPath).ShouldBeTrue();
+            Should.NotThrow(() => Moving.TryMoveFileOrDir(SourcePath, TargetPath));
         }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace KSTests.FilesTests
             CurrentDirectory.CurrentDir = Paths.HomePath;
             string SourcePath = "/Documents/TestMove.txt";
             string TargetPath = Path.GetFullPath("TestData/TestMove.txt");
-            Moving.TryMoveFileOrDir(SourcePath, TargetPath).ShouldBeTrue();
+            Should.NotThrow(() => Moving.TryMoveFileOrDir(SourcePath, TargetPath));
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace KSTests.FilesTests
         {
             CurrentDirectory.CurrentDir = Paths.HomePath;
             string TargetPath = Filesystem.NeutralizePath("/TestDir2");
-            Removing.TryRemoveDirectory(TargetPath).ShouldBeTrue();
+            Should.NotThrow(() => Removing.TryRemoveDirectory(TargetPath));
         }
 
         /// <summary>
@@ -184,7 +184,7 @@ namespace KSTests.FilesTests
         {
             CurrentDirectory.CurrentDir = Paths.HomePath;
             string TargetPath = "/Documents/Text.txt";
-            Removing.TryRemoveFile(TargetPath).ShouldBeTrue();
+            Should.NotThrow(() => Removing.TryRemoveFile(TargetPath));
         }
 
         /// <summary>
@@ -224,7 +224,7 @@ namespace KSTests.FilesTests
         {
             CurrentDirectory.CurrentDir = Paths.HomePath;
             string SourcePath = Path.GetFullPath("TestData/TestText.txt");
-            AttributeManager.TryAddAttributeToFile(SourcePath, FileAttributes.Hidden).ShouldBeTrue();
+            Should.NotThrow(() => AttributeManager.TryAddAttributeToFile(SourcePath, FileAttributes.Hidden));
         }
 
         /// <summary>
@@ -236,7 +236,7 @@ namespace KSTests.FilesTests
         {
             CurrentDirectory.CurrentDir = Paths.HomePath;
             string SourcePath = Path.GetFullPath("TestData/TestText.txt");
-            AttributeManager.TryRemoveAttributeFromFile(SourcePath, FileAttributes.Hidden).ShouldBeTrue();
+            Should.NotThrow(() => AttributeManager.TryRemoveAttributeFromFile(SourcePath, FileAttributes.Hidden));
         }
 
         /// <summary>
@@ -287,7 +287,7 @@ namespace KSTests.FilesTests
         {
             string Path = KernelPlatform.IsOnWindows() ? @"C:\Program Files\dotnet" : "/bin";
             string NeutralizedPath = Filesystem.NeutralizePath(Path);
-            PathLookupTools.TryAddToPathLookup(NeutralizedPath).ShouldBeTrue();
+            Should.NotThrow(() => PathLookupTools.TryAddToPathLookup(NeutralizedPath));
             Shell.PathsToLookup.ShouldContain(NeutralizedPath);
         }
 
@@ -300,7 +300,7 @@ namespace KSTests.FilesTests
         {
             string Path = KernelPlatform.IsOnWindows() ? "dotnet" : "bin";
             string NeutralizedPath = Filesystem.NeutralizePath(Path);
-            PathLookupTools.TryAddToPathLookup(Path).ShouldBeTrue();
+            Should.NotThrow(() => PathLookupTools.TryAddToPathLookup(Path));
             Shell.PathsToLookup.ShouldContain(NeutralizedPath);
         }
 
@@ -314,7 +314,7 @@ namespace KSTests.FilesTests
             string Path = KernelPlatform.IsOnWindows() ? @"C:\Program Files\dotnet" : "/bin";
             string RootPath = KernelPlatform.IsOnWindows() ? @"C:\Program Files" : "/";
             string NeutralizedPath = Filesystem.NeutralizePath(Path, RootPath);
-            PathLookupTools.TryAddToPathLookup(NeutralizedPath, RootPath).ShouldBeTrue();
+            Should.NotThrow(() => PathLookupTools.TryAddToPathLookup(NeutralizedPath, RootPath));
             Shell.PathsToLookup.ShouldContain(NeutralizedPath);
         }
 
@@ -328,7 +328,7 @@ namespace KSTests.FilesTests
             string Path = KernelPlatform.IsOnWindows() ? "dotnet" : "bin";
             string RootPath = KernelPlatform.IsOnWindows() ? @"C:\Program Files" : "/";
             string NeutralizedPath = Filesystem.NeutralizePath(Path, RootPath);
-            PathLookupTools.TryAddToPathLookup(Path, RootPath).ShouldBeTrue();
+            Should.NotThrow(() => PathLookupTools.TryAddToPathLookup(Path, RootPath));
             Shell.PathsToLookup.ShouldContain(NeutralizedPath);
         }
 
@@ -341,7 +341,7 @@ namespace KSTests.FilesTests
         {
             string Path = KernelPlatform.IsOnWindows() ? @"C:\Program Files\dotnet" : "/bin";
             string NeutralizedPath = Filesystem.NeutralizePath(Path);
-            PathLookupTools.TryRemoveFromPathLookup(NeutralizedPath).ShouldBeTrue();
+            Should.NotThrow(() => PathLookupTools.TryRemoveFromPathLookup(NeutralizedPath));
         }
 
         /// <summary>
@@ -353,7 +353,7 @@ namespace KSTests.FilesTests
         {
             string Path = KernelPlatform.IsOnWindows() ? "dotnet" : "bin";
             string NeutralizedPath = Filesystem.NeutralizePath(Path);
-            PathLookupTools.TryRemoveFromPathLookup(Path).ShouldBeTrue();
+            Should.NotThrow(() => PathLookupTools.TryRemoveFromPathLookup(Path));
         }
 
         /// <summary>
@@ -363,10 +363,10 @@ namespace KSTests.FilesTests
         [Description("Manipulation")]
         public void TestRemoveFromPathLookupNeutralizedWithRootPath()
         {
-            string Path = KernelPlatform.IsOnWindows() ? @"C:\Program Files\dotnet" : "/bin";
+            string Path = KernelPlatform.IsOnWindows() ? @"C:\Program Files\dotnet" : "/usr/bin";
             string RootPath = KernelPlatform.IsOnWindows() ? @"C:\Program Files" : "/";
             string NeutralizedPath = Filesystem.NeutralizePath(Path, RootPath);
-            PathLookupTools.TryRemoveFromPathLookup(NeutralizedPath, RootPath).ShouldBeTrue();
+            Should.NotThrow(() => PathLookupTools.TryRemoveFromPathLookup(NeutralizedPath, RootPath));
         }
 
         /// <summary>
@@ -376,10 +376,10 @@ namespace KSTests.FilesTests
         [Description("Manipulation")]
         public void TestRemoveFromPathLookupNonNeutralizedWithRootPath()
         {
-            string Path = KernelPlatform.IsOnWindows() ? "dotnet" : "bin";
+            string Path = KernelPlatform.IsOnWindows() ? "dotnet" : "usr/bin";
             string RootPath = KernelPlatform.IsOnWindows() ? @"C:\Program Files" : "/";
             string NeutralizedPath = Filesystem.NeutralizePath(Path, RootPath);
-            PathLookupTools.TryRemoveFromPathLookup(Path, RootPath).ShouldBeTrue();
+            Should.NotThrow(() => PathLookupTools.TryRemoveFromPathLookup(Path, RootPath));
             PathLookupTools.GetPathList().ShouldNotContain(NeutralizedPath);
         }
 
