@@ -4125,5 +4125,17 @@
                 "Description": "How many milliseconds to wait before making the next write?"
             }
         ]
+    },
+    "Lyrics": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Path": "Screensaver.Lyrics",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "LyricsDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            }
+        ]
     }
 }

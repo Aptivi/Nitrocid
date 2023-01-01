@@ -94,6 +94,7 @@ namespace KS.Misc.Screensaver
             { "lightspeed", new LightspeedDisplay() },
             { "lines", new LinesDisplay() },
             { "linotypo", new LinotypoDisplay() },
+            { "lyrics", new LyricsDisplay() },
             { "marquee", new MarqueeDisplay() },
             { "matrix", new MatrixDisplay() },
             { "memdump", new MemdumpDisplay() },

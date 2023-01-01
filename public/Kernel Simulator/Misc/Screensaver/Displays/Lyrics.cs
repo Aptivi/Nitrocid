@@ -1,0 +1,80 @@
+﻿
+// Kernel Simulator  Copyright (C) 2018-2023  Aptivi
+// 
+// This file is part of Kernel Simulator
+// 
+// Kernel Simulator is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+// 
+// Kernel Simulator is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+// 
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+using System;
+using ColorSeq;
+using KS.Kernel.Debugging;
+using ColorTools = KS.ConsoleBase.Colors.ColorTools;
+
+namespace KS.Misc.Screensaver.Displays
+{
+    /// <summary>
+    /// Settings for Lyrics
+    /// </summary>
+    public static class LyricsSettings
+    {
+
+        private static int _faderDelay = 10000;
+
+        /// <summary>
+        /// [Lyrics] How many milliseconds to wait before the next lyric?
+        /// </summary>
+        public static int LyricsDelay
+        {
+            get
+            {
+                return _faderDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 10000;
+                _faderDelay = value;
+            }
+        }
+
+    }
+
+    /// <summary>
+    /// Display code for Lyrics
+    /// </summary>
+    public class LyricsDisplay : BaseScreensaver, IScreensaver
+    {
+
+        private Animations.Lyrics.LyricsSettings LyricsSettingsInstance;
+
+        /// <inheritdoc/>
+        public override string ScreensaverName { get; set; } = "Lyrics";
+
+        /// <inheritdoc/>
+        public override void ScreensaverPreparation()
+        {
+            // Variable preparations
+            ColorTools.LoadBack();
+            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
+            LyricsSettingsInstance = new Animations.Lyrics.LyricsSettings()
+            {
+                LyricsDelay = LyricsSettings.LyricsDelay
+            };
+        }
+
+        /// <inheritdoc/>
+        public override void ScreensaverLogic() => Animations.Lyrics.Lyrics.Simulate(LyricsSettingsInstance);
+
+    }
+}

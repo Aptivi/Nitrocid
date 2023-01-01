@@ -287,5 +287,7 @@ An assertion failure has been detected in the kernel! This is most likely a bug 
 Assertion failure.
 Kernel environment information
 Shows license information for the kernel
+How many milliseconds to wait before the next lyric?
+Plays a lyric file
 
 ==========================================================================================================================================
