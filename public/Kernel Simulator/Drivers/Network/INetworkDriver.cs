@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System.Net;
 using System.Net.NetworkInformation;
 using FS = KS.Files.Filesystem;
 
@@ -127,6 +128,11 @@ namespace KS.Drivers.Network
         /// <param name="ShowProgress">Whether or not to show progress bar</param>
         /// <returns>A resource string if successful; Throws exception if unsuccessful.</returns>
         bool UploadString(string URL, string Data, bool ShowProgress);
+
+        /// <summary>
+        /// Gets the online devices in your network, including the router and the broadcast address
+        /// </summary>
+        IPAddress[] GetOnlineDevicesInNetwork();
 
     }
 }

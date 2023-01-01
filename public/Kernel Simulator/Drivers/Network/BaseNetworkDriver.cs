@@ -31,6 +31,10 @@ using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using KS.Network.Base.Transfer;
 using System.Net.Http;
+using KS.Kernel.Exceptions;
+using System.Collections.Generic;
+using System.Net.Sockets;
+using System.Net;
 
 namespace KS.Drivers.Network
 {
@@ -331,6 +335,51 @@ namespace KS.Drivers.Network
                     NetworkTransfer.UploadNotif.Progress = 100;
                 return true;
             }
+        }
+
+        /// <summary>
+        /// Gets the online devices in your network, including the router and the broadcast address
+        /// </summary>
+        public IPAddress[] GetOnlineDevicesInNetwork()
+        {
+            if (!NetworkTools.NetworkAvailable)
+                throw new KernelException(KernelExceptionType.NetworkOffline);
+
+            // Get the local hostname and get its IP address information from the list
+            List<IPAddress> onlineAddresses = new();
+            string hostname = Dns.GetHostName();
+            var hostnameEntry = Dns.GetHostEntry(hostname);
+
+            // Enumerate through different addresses
+            // TODO: Add support for IPv6
+            for (int i = 0; i < hostnameEntry.AddressList.Length; i++)
+            {
+                var address = hostnameEntry.AddressList[i];
+
+                // If IPv4 or IPv6 (not implemented), go ahead
+                if (address.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    // Get the octets
+                    byte[] addressBytes = address.GetAddressBytes();
+
+                    // Now, scan the entire network
+                    for (byte fourthOctet = 0; fourthOctet <= 255; fourthOctet++)
+                    {
+                        // Get the address to be scanned
+                        byte[] bytes = { addressBytes[0], addressBytes[1], addressBytes[2], fourthOctet };
+                        string addressString = string.Join(".", bytes);
+
+                        // Ping it and time it out to 10 milliseconds
+                        var reply = NetworkTools.PingAddress(addressString, 10);
+
+                        // Check the reply
+                        if (reply.Status == IPStatus.Success)
+                            onlineAddresses.Add(new IPAddress(bytes));
+                    }
+                }
+            }
+
+            return onlineAddresses.ToArray();
         }
     }
 }

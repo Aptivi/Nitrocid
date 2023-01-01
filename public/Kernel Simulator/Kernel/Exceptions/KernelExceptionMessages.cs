@@ -93,6 +93,7 @@ namespace KS.Kernel.Exceptions
                     { KernelExceptionType.Network,                          Translate.DoTranslation("A general network error occurred. Should you be trying to connect to a remote end, make sure that you're connected to the Internet or to your local network.") },
                     { KernelExceptionType.UnsupportedConsole,               Translate.DoTranslation("An unsupported console has been detected.") },
                     { KernelExceptionType.AssertionFailure,                 Translate.DoTranslation("An assertion failure has been detected in the kernel! This is most likely a bug in the kernel module that should be fixed on our end.") },
+                    { KernelExceptionType.NetworkOffline,                   Translate.DoTranslation("Your networks needs to be online before being able to perform operations related to networking. Connect your network adapter and try again.") },
                 };
             }
         }
