@@ -272,7 +272,7 @@ namespace KS.Kernel.Exceptions
         /// </summary>
         AssertionFailure,
         /// <summary>
-        /// Your networks needs to be online before being able to perform operations related to networking. Connect your network adapter and try again.
+        /// Your network needs to be online before being able to perform operations related to networking. Connect your network adapter and try again.
         /// </summary>
         NetworkOffline
     }

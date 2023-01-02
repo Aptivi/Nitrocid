@@ -290,7 +290,7 @@ Shows license information for the kernel
 How many milliseconds to wait before the next lyric?
 Plays a lyric file
 Kernel thread {0} failed.
-Your networks needs to be online before being able to perform operations related to networking. Connect your network adapter and try again.
+Your network needs to be online before being able to perform operations related to networking. Connect your network adapter and try again.
 Lists online network devices
 Unknown host
 
