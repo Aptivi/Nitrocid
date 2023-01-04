@@ -25,224 +25,223 @@ namespace KS.Kernel
     public static class Flags
     {
 
-        // Variables
         /// <summary>
         /// Toggle Debugging mode
         /// </summary>
-        public static bool DebugMode;
+        public static bool DebugMode { get; set; }
         /// <summary>
         /// Maintenance Mode
         /// </summary>
-        public static bool Maintenance;
+        public static bool Maintenance { get; set; }
         /// <summary>
         /// Clear Screen On Log-in
         /// </summary>
-        public static bool ClearOnLogin;
+        public static bool ClearOnLogin { get; set; }
         /// <summary>
         /// Show MOTD on log-in
         /// </summary>
-        public static bool ShowMOTD = true;
+        public static bool ShowMOTD { get; set; } = true;
         /// <summary>
         /// Show MAL on log-in
         /// </summary>
-        public static bool ShowMAL = true;
+        public static bool ShowMAL { get; set; } = true;
         /// <summary>
         /// Simplified Help Command
         /// </summary>
-        public static bool SimHelp;
+        public static bool SimHelp { get; set; }
         /// <summary>
         /// Probe slots
         /// </summary>
-        public static bool SlotProbe = true;
+        public static bool SlotProbe { get; set; } = true;
         /// <summary>
         /// Probe the hardware quietly. This overrides the <see cref="VerboseHardwareProbe"/> flag.
         /// </summary>
-        public static bool QuietHardwareProbe;
+        public static bool QuietHardwareProbe { get; set; }
         /// <summary>
         /// Show Time/Date on corner
         /// </summary>
-        public static bool CornerTimeDate;
+        public static bool CornerTimeDate { get; set; }
         /// <summary>
         /// A signal when user logs out.
         /// </summary>
-        public static bool LogoutRequested;
+        public static bool LogoutRequested { get; set; }
         /// <summary>
         /// Reboot requested
         /// </summary>
-        public static bool RebootRequested;
+        public static bool RebootRequested { get; set; }
         /// <summary>
         /// Log username for FTP
         /// </summary>
-        public static bool FTPLoggerUsername;
+        public static bool FTPLoggerUsername { get; set; }
         /// <summary>
         /// Log IP address for FTP
         /// </summary>
-        public static bool FTPLoggerIP;
+        public static bool FTPLoggerIP { get; set; }
         /// <summary>
         /// Only first profile will be returned
         /// </summary>
-        public static bool FTPFirstProfileOnly;
+        public static bool FTPFirstProfileOnly { get; set; }
         /// <summary>
         /// Whether safe mode is enabled
         /// </summary>
-        public static bool SafeMode;
+        public static bool SafeMode { get; set; }
         /// <summary>
         /// Whether or not to parse whole directory for size
         /// </summary>
-        public static bool FullParseMode;
-        /// <summary>
-        /// When the screensaver timer has reached
-        /// </summary>
-        public static bool ScrnTimeReached;
+        public static bool FullParseMode { get; set; }
         /// <summary>
         /// Enable marquee on startup
         /// </summary>
-        public static bool StartScroll = true;
+        public static bool StartScroll { get; set; } = true;
         /// <summary>
         /// Whether or not to render time and dates short or long
         /// </summary>
-        public static bool LongTimeDate = true;
-        /// <summary>
-        /// Whether or not to detect if the user is logged in
-        /// </summary>
-        public static bool LoggedIn;
+        public static bool LongTimeDate { get; set; } = true;
         /// <summary>
         /// Whether or not to show available usernames on login
         /// </summary>
-        public static bool ShowAvailableUsers = true;
+        public static bool ShowAvailableUsers { get; set; } = true;
         /// <summary>
         /// Whether or not to show hidden files
         /// </summary>
-        public static bool HiddenFiles;
+        public static bool HiddenFiles { get; set; }
         /// <summary>
         /// Whether or not to check for updates on startup
         /// </summary>
-        public static bool CheckUpdateStart = true;
+        public static bool CheckUpdateStart { get; set; } = true;
         /// <summary>
         /// Change culture when changing language
         /// </summary>
-        public static bool LangChangeCulture;
+        public static bool LangChangeCulture { get; set; }
         /// <summary>
         /// Shows the progress bar while downloading using the {Down|Up}load{File|String}() API.
         /// </summary>
-        public static bool ShowProgress = true;
+        public static bool ShowProgress { get; set; } = true;
         /// <summary>
         /// Records remote debug chat to debug log
         /// </summary>
-        public static bool RecordChatToDebugLog = true;
+        public static bool RecordChatToDebugLog { get; set; } = true;
         /// <summary>
         /// Wraps the list outputs
         /// </summary>
-        public static bool WrapListOutputs;
+        public static bool WrapListOutputs { get; set; }
         /// <summary>
         /// Ensures that all hardware will be probed
         /// </summary>
-        public static bool FullHardwareProbe;
+        public static bool FullHardwareProbe { get; set; }
         /// <summary>
         /// Makes the hardware prober a bit talkative
         /// </summary>
-        public static bool VerboseHardwareProbe;
+        public static bool VerboseHardwareProbe { get; set; }
         /// <summary>
         /// Draws the border around the notification
         /// </summary>
-        public static bool DrawBorderNotification;
+        public static bool DrawBorderNotification { get; set; }
         /// <summary>
         /// Whether to show the app information on boot
         /// </summary>
-        public static bool ShowAppInfoOnBoot = true;
+        public static bool ShowAppInfoOnBoot { get; set; } = true;
         /// <summary>
         /// Show how much time a stage took on boot
         /// </summary>
-        public static bool ShowStageFinishTimes;
+        public static bool ShowStageFinishTimes { get; set; }
         /// <summary>
         /// Whether to start the kernel mods on boot
         /// </summary>
-        public static bool StartKernelMods = true;
+        public static bool StartKernelMods { get; set; } = true;
         /// <summary>
         /// Whether to show the current time before login
         /// </summary>
-        public static bool ShowCurrentTimeBeforeLogin = true;
+        public static bool ShowCurrentTimeBeforeLogin { get; set; } = true;
         /// <summary>
         /// Whether to notify the user about minor boot faults
         /// </summary>
-        public static bool NotifyFaultsBoot = true;
-        /// <summary>
-        /// Whether to show more information about adapters
-        /// </summary>
-        public static bool ExtensiveAdapterInformation = true;
-        /// <summary>
-        /// Whether to print general network information
-        /// </summary>
-        public static bool GeneralNetworkInformation = true;
+        public static bool NotifyFaultsBoot { get; set; } = true;
         /// <summary>
         /// Whether to start the default color wheel in true color mode
         /// </summary>
-        public static bool ColorWheelTrueColor = true;
+        public static bool ColorWheelTrueColor { get; set; } = true;
         /// <summary>
         /// Whether to suppress the unauthorized messages while listing directory contents
         /// </summary>
-        public static bool SuppressUnauthorizedMessages = true;
+        public static bool SuppressUnauthorizedMessages { get; set; } = true;
         /// <summary>
         /// Print the line numbers while listing file contents
         /// </summary>
-        public static bool PrintLineNumbers;
+        public static bool PrintLineNumbers { get; set; }
         /// <summary>
         /// Whether to let the user choose which user they want to sign in or write it themselves
         /// </summary>
-        public static bool ChooseUser;
+        public static bool ChooseUser { get; set; }
         /// <summary>
         /// Whether to print the stack trace on kernel error
         /// </summary>
-        public static bool ShowStackTraceOnKernelError;
+        public static bool ShowStackTraceOnKernelError { get; set; }
         /// <summary>
         /// Deletes all events and/or reminders before saving them using saveall
         /// </summary>
-        public static bool SaveEventsRemindersDestructively;
+        public static bool SaveEventsRemindersDestructively { get; set; }
         /// <summary>
         /// Automatically downloads the kernel updates and notifies the user
         /// </summary>
-        public static bool AutoDownloadUpdate = true;
+        public static bool AutoDownloadUpdate { get; set; } = true;
         /// <summary>
         /// Enables event debugging
         /// </summary>
-        public static bool EventDebug;
+        public static bool EventDebug { get; set; }
         /// <summary>
         /// Enable the stylish splash screen in place of the regular verbose boot messages
         /// </summary>
-        public static bool EnableSplash = true;
+        public static bool EnableSplash { get; set; } = true;
         /// <summary>
         /// When there is a remote debug connection error, notify the user
         /// </summary>
-        public static bool NotifyOnRemoteDebugConnectionError = true;
+        public static bool NotifyOnRemoteDebugConnectionError { get; set; } = true;
         /// <summary>
         /// Enables the Figlet font for the timer
         /// </summary>
-        public static bool EnableFigletTimer;
+        public static bool EnableFigletTimer { get; set; }
         /// <summary>
         /// Shows how many commands available in help for shells
         /// </summary>
-        public static bool ShowCommandsCount;
+        public static bool ShowCommandsCount { get; set; }
         /// <summary>
         /// Shows how many shell commands available in help for shells
         /// </summary>
-        public static bool ShowShellCommandsCount = true;
+        public static bool ShowShellCommandsCount { get; set; } = true;
         /// <summary>
         /// Shows how many mod commands available in help for shells
         /// </summary>
-        public static bool ShowModCommandsCount = true;
+        public static bool ShowModCommandsCount { get; set; } = true;
         /// <summary>
         /// Shows how many aliases available in help for shells
         /// </summary>
-        public static bool ShowShellAliasesCount = true;
+        public static bool ShowShellAliasesCount { get; set; } = true;
         /// <summary>
         /// Whether to simulate a situation where there is no APM available. If enabled, it shows the "It's now safe to
         /// turn off your computer" text.
         /// </summary>
-        public static bool SimulateNoAPM;
+        public static bool SimulateNoAPM { get; set; }
         /// <summary>
         /// Sets the console background color using the VT sequence if true.
         /// </summary>
-        public static bool SetBackground = true;
+        public static bool SetBackground { get; set; } = true;
+        /// <summary>
+        /// Enables the scroll bar in selection screens
+        /// </summary>
+        public static bool EnableScrollBarInSelection { get; set; } = true;
+        /// <summary>
+        /// Beeps on shutdown (to restore the way of 0.0.1's shutdown)
+        /// </summary>
+        public static bool BeepOnShutdown { get; set; }
+        /// <summary>
+        /// Delay on shutdown (to restore the way of 0.0.1's shutdown)
+        /// </summary>
+        public static bool DelayOnShutdown { get; set; }
+        /// <summary>
+        /// Does your console support true color?
+        /// </summary>
+        public static bool ConsoleSupportsTrueColor { get; set; } = true;
         /// <summary>
         /// Whether the input history is enabled
         /// </summary>
@@ -257,22 +256,6 @@ namespace KS.Kernel
                 TermReaderSettings.HistoryEnabled = value;
             }
         }
-        /// <summary>
-        /// Enables the scroll bar in selection screens
-        /// </summary>
-        public static bool EnableScrollBarInSelection = true;
-        /// <summary>
-        /// Beeps on shutdown (to restore the way of 0.0.1's shutdown)
-        /// </summary>
-        public static bool BeepOnShutdown;
-        /// <summary>
-        /// Delay on shutdown (to restore the way of 0.0.1's shutdown)
-        /// </summary>
-        public static bool DelayOnShutdown;
-        /// <summary>
-        /// Does your console support true color?
-        /// </summary>
-        public static bool ConsoleSupportsTrueColor = true;
 
         // Private flags
         /// <summary>
@@ -324,6 +307,8 @@ namespace KS.Kernel
         /// </summary>
         internal static bool FirstTime;
         internal static bool DoNotDisturb;
+        internal static bool ScrnTimeReached;
+        internal static bool LoggedIn;
 
     }
 }

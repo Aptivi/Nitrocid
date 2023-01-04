@@ -1095,18 +1095,6 @@
                 "Description": "How many milliseconds to wait before declaring timeout?"
             },
             {
-                "Name": "Show extensive adapter info",
-                "Type": "SBoolean",
-                "Variable": "ExtensiveAdapterInformation",
-                "Description": "Prints the extensive adapter information, such as packet information."
-            },
-            {
-                "Name": "Show general network information",
-                "Type": "SBoolean",
-                "Variable": "GeneralNetworkInformation",
-                "Description": "Shows the general information about network."
-            },
-            {
                 "Name": "Download percentage text",
                 "Type": "SString",
                 "Variable": "DownloadPercentagePrint",
