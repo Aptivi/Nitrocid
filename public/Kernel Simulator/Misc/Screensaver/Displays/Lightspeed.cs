@@ -31,15 +31,15 @@ namespace KS.Misc.Screensaver.Displays
     public static class LightspeedSettings
     {
 
-        private static bool _lightspeedCycleColors;
-        private static int _lightspeedMinimumRedColorLevel = 0;
-        private static int _lightspeedMinimumGreenColorLevel = 0;
-        private static int _lightspeedMinimumBlueColorLevel = 0;
-        private static int _lightspeedMinimumColorLevel = 0;
-        private static int _lightspeedMaximumRedColorLevel = 255;
-        private static int _lightspeedMaximumGreenColorLevel = 255;
-        private static int _lightspeedMaximumBlueColorLevel = 255;
-        private static int _lightspeedMaximumColorLevel = 255;
+        private static bool _CycleColors;
+        private static int _MinimumRedColorLevel = 0;
+        private static int _MinimumGreenColorLevel = 0;
+        private static int _MinimumBlueColorLevel = 0;
+        private static int _MinimumColorLevel = 0;
+        private static int _MaximumRedColorLevel = 255;
+        private static int _MaximumGreenColorLevel = 255;
+        private static int _MaximumBlueColorLevel = 255;
+        private static int _MaximumColorLevel = 255;
 
         /// <summary>
         /// [Lightspeed] Enable color cycling
@@ -48,11 +48,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _lightspeedCycleColors;
+                return _CycleColors;
             }
             set
             {
-                _lightspeedCycleColors = value;
+                _CycleColors = value;
             }
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _lightspeedMinimumRedColorLevel;
+                return _MinimumRedColorLevel;
             }
             set
             {
@@ -70,7 +70,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _lightspeedMinimumRedColorLevel = value;
+                _MinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -80,7 +80,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _lightspeedMinimumGreenColorLevel;
+                return _MinimumGreenColorLevel;
             }
             set
             {
@@ -88,7 +88,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _lightspeedMinimumGreenColorLevel = value;
+                _MinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -98,7 +98,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _lightspeedMinimumBlueColorLevel;
+                return _MinimumBlueColorLevel;
             }
             set
             {
@@ -106,7 +106,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _lightspeedMinimumBlueColorLevel = value;
+                _MinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -116,7 +116,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _lightspeedMinimumColorLevel;
+                return _MinimumColorLevel;
             }
             set
             {
@@ -124,7 +124,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _lightspeedMinimumColorLevel = value;
+                _MinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -134,15 +134,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _lightspeedMaximumRedColorLevel;
+                return _MaximumRedColorLevel;
             }
             set
             {
-                if (value <= _lightspeedMinimumRedColorLevel)
-                    value = _lightspeedMinimumRedColorLevel;
+                if (value <= _MinimumRedColorLevel)
+                    value = _MinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                _lightspeedMaximumRedColorLevel = value;
+                _MaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -152,15 +152,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _lightspeedMaximumGreenColorLevel;
+                return _MaximumGreenColorLevel;
             }
             set
             {
-                if (value <= _lightspeedMinimumGreenColorLevel)
-                    value = _lightspeedMinimumGreenColorLevel;
+                if (value <= _MinimumGreenColorLevel)
+                    value = _MinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                _lightspeedMaximumGreenColorLevel = value;
+                _MaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -170,15 +170,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _lightspeedMaximumBlueColorLevel;
+                return _MaximumBlueColorLevel;
             }
             set
             {
-                if (value <= _lightspeedMinimumBlueColorLevel)
-                    value = _lightspeedMinimumBlueColorLevel;
+                if (value <= _MinimumBlueColorLevel)
+                    value = _MinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                _lightspeedMaximumBlueColorLevel = value;
+                _MaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -188,15 +188,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _lightspeedMaximumColorLevel;
+                return _MaximumColorLevel;
             }
             set
             {
-                if (value <= _lightspeedMinimumColorLevel)
-                    value = _lightspeedMinimumColorLevel;
+                if (value <= _MinimumColorLevel)
+                    value = _MinimumColorLevel;
                 if (value > 255)
                     value = 255;
-                _lightspeedMaximumColorLevel = value;
+                _MaximumColorLevel = value;
             }
         }
 

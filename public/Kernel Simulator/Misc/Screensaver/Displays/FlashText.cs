@@ -33,18 +33,18 @@ namespace KS.Misc.Screensaver.Displays
     public static class FlashTextSettings
     {
 
-        private static bool _flashTextTrueColor = true;
-        private static int _flashTextDelay = 20;
-        private static string _flashTextWrite = "Kernel Simulator";
-        private static string _flashTextBackgroundColor = new Color((int)ConsoleColor.Black).PlainSequence;
-        private static int _flashTextMinimumRedColorLevel = 0;
-        private static int _flashTextMinimumGreenColorLevel = 0;
-        private static int _flashTextMinimumBlueColorLevel = 0;
-        private static int _flashTextMinimumColorLevel = 0;
-        private static int _flashTextMaximumRedColorLevel = 255;
-        private static int _flashTextMaximumGreenColorLevel = 255;
-        private static int _flashTextMaximumBlueColorLevel = 255;
-        private static int _flashTextMaximumColorLevel = 0;
+        private static bool _TrueColor = true;
+        private static int _Delay = 20;
+        private static string _Write = "Kernel Simulator";
+        private static string _BackgroundColor = new Color((int)ConsoleColor.Black).PlainSequence;
+        private static int _MinimumRedColorLevel = 0;
+        private static int _MinimumGreenColorLevel = 0;
+        private static int _MinimumBlueColorLevel = 0;
+        private static int _MinimumColorLevel = 0;
+        private static int _MaximumRedColorLevel = 255;
+        private static int _MaximumGreenColorLevel = 255;
+        private static int _MaximumBlueColorLevel = 255;
+        private static int _MaximumColorLevel = 0;
 
         /// <summary>
         /// [FlashText] Enable truecolor support. Has a higher priority than 255 color support.
@@ -53,11 +53,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _flashTextTrueColor;
+                return _TrueColor;
             }
             set
             {
-                _flashTextTrueColor = value;
+                _TrueColor = value;
             }
         }
         /// <summary>
@@ -67,13 +67,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _flashTextDelay;
+                return _Delay;
             }
             set
             {
                 if (value <= 0)
                     value = 20;
-                _flashTextDelay = value;
+                _Delay = value;
             }
         }
         /// <summary>
@@ -83,11 +83,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _flashTextWrite;
+                return _Write;
             }
             set
             {
-                _flashTextWrite = value;
+                _Write = value;
             }
         }
         /// <summary>
@@ -97,11 +97,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _flashTextBackgroundColor;
+                return _BackgroundColor;
             }
             set
             {
-                _flashTextBackgroundColor = value;
+                _BackgroundColor = value;
             }
         }
         /// <summary>
@@ -111,7 +111,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _flashTextMinimumRedColorLevel;
+                return _MinimumRedColorLevel;
             }
             set
             {
@@ -119,7 +119,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _flashTextMinimumRedColorLevel = value;
+                _MinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -129,7 +129,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _flashTextMinimumGreenColorLevel;
+                return _MinimumGreenColorLevel;
             }
             set
             {
@@ -137,7 +137,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _flashTextMinimumGreenColorLevel = value;
+                _MinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -147,7 +147,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _flashTextMinimumBlueColorLevel;
+                return _MinimumBlueColorLevel;
             }
             set
             {
@@ -155,7 +155,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _flashTextMinimumBlueColorLevel = value;
+                _MinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -165,7 +165,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _flashTextMinimumColorLevel;
+                return _MinimumColorLevel;
             }
             set
             {
@@ -174,7 +174,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                _flashTextMinimumColorLevel = value;
+                _MinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -184,15 +184,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _flashTextMaximumRedColorLevel;
+                return _MaximumRedColorLevel;
             }
             set
             {
-                if (value <= _flashTextMinimumRedColorLevel)
-                    value = _flashTextMinimumRedColorLevel;
+                if (value <= _MinimumRedColorLevel)
+                    value = _MinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                _flashTextMaximumRedColorLevel = value;
+                _MaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -202,15 +202,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _flashTextMaximumGreenColorLevel;
+                return _MaximumGreenColorLevel;
             }
             set
             {
-                if (value <= _flashTextMinimumGreenColorLevel)
-                    value = _flashTextMinimumGreenColorLevel;
+                if (value <= _MinimumGreenColorLevel)
+                    value = _MinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                _flashTextMaximumGreenColorLevel = value;
+                _MaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -220,15 +220,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _flashTextMaximumBlueColorLevel;
+                return _MaximumBlueColorLevel;
             }
             set
             {
-                if (value <= _flashTextMinimumBlueColorLevel)
-                    value = _flashTextMinimumBlueColorLevel;
+                if (value <= _MinimumBlueColorLevel)
+                    value = _MinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                _flashTextMaximumBlueColorLevel = value;
+                _MaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -238,16 +238,16 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _flashTextMaximumColorLevel;
+                return _MaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= _flashTextMinimumColorLevel)
-                    value = _flashTextMinimumColorLevel;
+                if (value <= _MinimumColorLevel)
+                    value = _MinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                _flashTextMaximumColorLevel = value;
+                _MaximumColorLevel = value;
             }
         }
 

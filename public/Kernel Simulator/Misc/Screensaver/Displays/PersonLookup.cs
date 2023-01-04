@@ -31,12 +31,12 @@ namespace KS.Misc.Screensaver.Displays
     public static class PersonLookupSettings
     {
 
-        private static int _personLookupDelay = 75;
-        private static int _personLookupLookedUpDelay = 10000;
-        private static int _personLookupMinimumNames = 10;
-        private static int _personLookupMaximumNames = 100;
-        private static int _personLookupMinimumAgeYears = 18;
-        private static int _personLookupMaximumAgeYears = 100;
+        private static int _Delay = 75;
+        private static int _LookedUpDelay = 10000;
+        private static int _MinimumNames = 10;
+        private static int _MaximumNames = 100;
+        private static int _MinimumAgeYears = 18;
+        private static int _MaximumAgeYears = 100;
 
         /// <summary>
         /// [PersonLookup] How many milliseconds to wait before getting the new name?
@@ -45,13 +45,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _personLookupDelay;
+                return _Delay;
             }
             set
             {
                 if (value <= 0)
                     value = 75;
-                _personLookupDelay = value;
+                _Delay = value;
             }
         }
         /// <summary>
@@ -61,13 +61,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _personLookupLookedUpDelay;
+                return _LookedUpDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 10000;
-                _personLookupLookedUpDelay = value;
+                _LookedUpDelay = value;
             }
         }
         /// <summary>
@@ -77,7 +77,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _personLookupMinimumNames;
+                return _MinimumNames;
             }
             set
             {
@@ -85,7 +85,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 10;
                 if (value > 1000)
                     value = 1000;
-                _personLookupMinimumNames = value;
+                _MinimumNames = value;
             }
         }
         /// <summary>
@@ -95,15 +95,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _personLookupMaximumNames;
+                return _MaximumNames;
             }
             set
             {
-                if (value <= _personLookupMinimumNames)
-                    value = _personLookupMinimumNames;
+                if (value <= _MinimumNames)
+                    value = _MinimumNames;
                 if (value > 1000)
                     value = 1000;
-                _personLookupMaximumNames = value;
+                _MaximumNames = value;
             }
         }
         /// <summary>
@@ -113,7 +113,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _personLookupMinimumAgeYears;
+                return _MinimumAgeYears;
             }
             set
             {
@@ -121,7 +121,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 18;
                 if (value > 100)
                     value = 100;
-                _personLookupMinimumAgeYears = value;
+                _MinimumAgeYears = value;
             }
         }
         /// <summary>
@@ -131,15 +131,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _personLookupMaximumAgeYears;
+                return _MaximumAgeYears;
             }
             set
             {
-                if (value <= _personLookupMinimumAgeYears)
-                    value = _personLookupMinimumAgeYears;
+                if (value <= _MinimumAgeYears)
+                    value = _MinimumAgeYears;
                 if (value > 100)
                     value = 100;
-                _personLookupMaximumAgeYears = value;
+                _MaximumAgeYears = value;
             }
         }
 

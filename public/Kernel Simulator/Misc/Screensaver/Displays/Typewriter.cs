@@ -38,13 +38,13 @@ namespace KS.Misc.Screensaver.Displays
     public static class TypewriterSettings
     {
 
-        private static int _typewriterDelay = 50;
-        private static int _typewriterNewScreenDelay = 3000;
-        private static string _typewriterWrite = "Kernel Simulator";
-        private static int _typewriterWritingSpeedMin = 50;
-        private static int _typewriterWritingSpeedMax = 80;
-        private static bool _typewriterShowArrowPos = true;
-        private static string _typewriterTextColor = new Color((int)ConsoleColor.White).PlainSequence;
+        private static int _Delay = 50;
+        private static int _NewScreenDelay = 3000;
+        private static string _Write = "Kernel Simulator";
+        private static int _WritingSpeedMin = 50;
+        private static int _WritingSpeedMax = 80;
+        private static bool _ShowArrowPos = true;
+        private static string _TextColor = new Color((int)ConsoleColor.White).PlainSequence;
 
         /// <summary>
         /// [Typewriter] How many milliseconds to wait before making the next write?
@@ -53,13 +53,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _typewriterDelay;
+                return _Delay;
             }
             set
             {
                 if (value <= 0)
                     value = 50;
-                _typewriterDelay = value;
+                _Delay = value;
             }
         }
         /// <summary>
@@ -69,13 +69,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _typewriterNewScreenDelay;
+                return _NewScreenDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 3000;
-                _typewriterNewScreenDelay = value;
+                _NewScreenDelay = value;
             }
         }
         /// <summary>
@@ -85,13 +85,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _typewriterWrite;
+                return _Write;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "Kernel Simulator";
-                _typewriterWrite = value;
+                _Write = value;
             }
         }
         /// <summary>
@@ -101,13 +101,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _typewriterWritingSpeedMin;
+                return _WritingSpeedMin;
             }
             set
             {
                 if (value <= 0)
                     value = 50;
-                _typewriterWritingSpeedMin = value;
+                _WritingSpeedMin = value;
             }
         }
         /// <summary>
@@ -117,13 +117,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _typewriterWritingSpeedMax;
+                return _WritingSpeedMax;
             }
             set
             {
                 if (value <= 0)
                     value = 80;
-                _typewriterWritingSpeedMax = value;
+                _WritingSpeedMax = value;
             }
         }
         /// <summary>
@@ -133,11 +133,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _typewriterShowArrowPos;
+                return _ShowArrowPos;
             }
             set
             {
-                _typewriterShowArrowPos = value;
+                _ShowArrowPos = value;
             }
         }
         /// <summary>
@@ -147,11 +147,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _typewriterTextColor;
+                return _TextColor;
             }
             set
             {
-                _typewriterTextColor = new Color(value).PlainSequence;
+                _TextColor = new Color(value).PlainSequence;
             }
         }
 

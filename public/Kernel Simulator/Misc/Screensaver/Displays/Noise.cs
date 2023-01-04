@@ -30,8 +30,8 @@ namespace KS.Misc.Screensaver.Displays
     public static class NoiseSettings
     {
 
-        private static int _noiseNewScreenDelay = 5000;
-        private static int _noiseDensity = 40;
+        private static int _NewScreenDelay = 5000;
+        private static int _Density = 40;
 
         /// <summary>
         /// [Noise] How many milliseconds to wait before making the new screen?
@@ -40,13 +40,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _noiseNewScreenDelay;
+                return _NewScreenDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 5000;
-                _noiseNewScreenDelay = value;
+                _NewScreenDelay = value;
             }
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _noiseDensity;
+                return _Density;
             }
             set
             {
@@ -64,7 +64,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 40;
                 if (value > 100)
                     value = 40;
-                _noiseDensity = value;
+                _Density = value;
             }
         }
 

@@ -34,38 +34,38 @@ namespace KS.Misc.Screensaver.Displays
     public static class BarRotSettings
     {
 
-        private static bool _barRotTrueColor = true;
-        private static int _barRotDelay = 10;
-        private static int _barRotNextRampDelay = 250;
-        private static string _barRotUpperLeftCornerChar = "╔";
-        private static string _barRotUpperRightCornerChar = "╗";
-        private static string _barRotLowerLeftCornerChar = "╚";
-        private static string _barRotLowerRightCornerChar = "╝";
-        private static string _barRotUpperFrameChar = "═";
-        private static string _barRotLowerFrameChar = "═";
-        private static string _barRotLeftFrameChar = "║";
-        private static string _barRotRightFrameChar = "║";
-        private static int _barRotMinimumRedColorLevelStart = 0;
-        private static int _barRotMinimumGreenColorLevelStart = 0;
-        private static int _barRotMinimumBlueColorLevelStart = 0;
-        private static int _barRotMaximumRedColorLevelStart = 255;
-        private static int _barRotMaximumGreenColorLevelStart = 255;
-        private static int _barRotMaximumBlueColorLevelStart = 255;
-        private static int _barRotMinimumRedColorLevelEnd = 0;
-        private static int _barRotMinimumGreenColorLevelEnd = 0;
-        private static int _barRotMinimumBlueColorLevelEnd = 0;
-        private static int _barRotMaximumRedColorLevelEnd = 255;
-        private static int _barRotMaximumGreenColorLevelEnd = 255;
-        private static int _barRotMaximumBlueColorLevelEnd = 255;
-        private static string _barRotUpperLeftCornerColor = "192;192;192";
-        private static string _barRotUpperRightCornerColor = "192;192;192";
-        private static string _barRotLowerLeftCornerColor = "192;192;192";
-        private static string _barRotLowerRightCornerColor = "192;192;192";
-        private static string _barRotUpperFrameColor = "192;192;192";
-        private static string _barRotLowerFrameColor = "192;192;192";
-        private static string _barRotLeftFrameColor = "192;192;192";
-        private static string _barRotRightFrameColor = "192;192;192";
-        private static bool _barRotUseBorderColors;
+        private static bool _TrueColor = true;
+        private static int _Delay = 10;
+        private static int _NextRampDelay = 250;
+        private static string _UpperLeftCornerChar = "╔";
+        private static string _UpperRightCornerChar = "╗";
+        private static string _LowerLeftCornerChar = "╚";
+        private static string _LowerRightCornerChar = "╝";
+        private static string _UpperFrameChar = "═";
+        private static string _LowerFrameChar = "═";
+        private static string _LeftFrameChar = "║";
+        private static string _RightFrameChar = "║";
+        private static int _MinimumRedColorLevelStart = 0;
+        private static int _MinimumGreenColorLevelStart = 0;
+        private static int _MinimumBlueColorLevelStart = 0;
+        private static int _MaximumRedColorLevelStart = 255;
+        private static int _MaximumGreenColorLevelStart = 255;
+        private static int _MaximumBlueColorLevelStart = 255;
+        private static int _MinimumRedColorLevelEnd = 0;
+        private static int _MinimumGreenColorLevelEnd = 0;
+        private static int _MinimumBlueColorLevelEnd = 0;
+        private static int _MaximumRedColorLevelEnd = 255;
+        private static int _MaximumGreenColorLevelEnd = 255;
+        private static int _MaximumBlueColorLevelEnd = 255;
+        private static string _UpperLeftCornerColor = "192;192;192";
+        private static string _UpperRightCornerColor = "192;192;192";
+        private static string _LowerLeftCornerColor = "192;192;192";
+        private static string _LowerRightCornerColor = "192;192;192";
+        private static string _UpperFrameColor = "192;192;192";
+        private static string _LowerFrameColor = "192;192;192";
+        private static string _LeftFrameColor = "192;192;192";
+        private static string _RightFrameColor = "192;192;192";
+        private static bool _UseBorderColors;
 
         /// <summary>
         /// [BarRot] Enable truecolor support. Has a higher priority than 255 color support.
@@ -74,11 +74,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _barRotTrueColor;
+                return _TrueColor;
             }
             set
             {
-                _barRotTrueColor = value;
+                _TrueColor = value;
             }
         }
         /// <summary>
@@ -88,13 +88,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _barRotDelay;
+                return _Delay;
             }
             set
             {
                 if (value <= 0)
                     value = 10;
-                _barRotDelay = value;
+                _Delay = value;
             }
         }
         /// <summary>
@@ -104,13 +104,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _barRotNextRampDelay;
+                return _NextRampDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 250;
-                _barRotNextRampDelay = value;
+                _NextRampDelay = value;
             }
         }
         /// <summary>
@@ -120,13 +120,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _barRotUpperLeftCornerChar;
+                return _UpperLeftCornerChar;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "╔";
-                _barRotUpperLeftCornerChar = value;
+                _UpperLeftCornerChar = value;
             }
         }
         /// <summary>
@@ -136,13 +136,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _barRotUpperRightCornerChar;
+                return _UpperRightCornerChar;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "╗";
-                _barRotUpperRightCornerChar = value;
+                _UpperRightCornerChar = value;
             }
         }
         /// <summary>
@@ -152,13 +152,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _barRotLowerLeftCornerChar;
+                return _LowerLeftCornerChar;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "╚";
-                _barRotLowerLeftCornerChar = value;
+                _LowerLeftCornerChar = value;
             }
         }
         /// <summary>
@@ -168,13 +168,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _barRotLowerRightCornerChar;
+                return _LowerRightCornerChar;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "╝";
-                _barRotLowerRightCornerChar = value;
+                _LowerRightCornerChar = value;
             }
         }
         /// <summary>
@@ -184,13 +184,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _barRotUpperFrameChar;
+                return _UpperFrameChar;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "═";
-                _barRotUpperFrameChar = value;
+                _UpperFrameChar = value;
             }
         }
         /// <summary>
@@ -200,13 +200,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _barRotLowerFrameChar;
+                return _LowerFrameChar;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "═";
-                _barRotLowerFrameChar = value;
+                _LowerFrameChar = value;
             }
         }
         /// <summary>
@@ -216,13 +216,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _barRotLeftFrameChar;
+                return _LeftFrameChar;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "║";
-                _barRotLeftFrameChar = value;
+                _LeftFrameChar = value;
             }
         }
         /// <summary>
@@ -232,13 +232,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _barRotRightFrameChar;
+                return _RightFrameChar;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "║";
-                _barRotRightFrameChar = value;
+                _RightFrameChar = value;
             }
         }
         /// <summary>
@@ -248,7 +248,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _barRotMinimumRedColorLevelStart;
+                return _MinimumRedColorLevelStart;
             }
             set
             {
@@ -256,7 +256,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _barRotMinimumRedColorLevelStart = value;
+                _MinimumRedColorLevelStart = value;
             }
         }
         /// <summary>
@@ -266,7 +266,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _barRotMinimumGreenColorLevelStart;
+                return _MinimumGreenColorLevelStart;
             }
             set
             {
@@ -274,7 +274,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _barRotMinimumGreenColorLevelStart = value;
+                _MinimumGreenColorLevelStart = value;
             }
         }
         /// <summary>
@@ -284,7 +284,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _barRotMinimumBlueColorLevelStart;
+                return _MinimumBlueColorLevelStart;
             }
             set
             {
@@ -292,7 +292,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _barRotMinimumBlueColorLevelStart = value;
+                _MinimumBlueColorLevelStart = value;
             }
         }
         /// <summary>
@@ -302,15 +302,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _barRotMaximumRedColorLevelStart;
+                return _MaximumRedColorLevelStart;
             }
             set
             {
-                if (value <= _barRotMinimumRedColorLevelStart)
-                    value = _barRotMinimumRedColorLevelStart;
+                if (value <= _MinimumRedColorLevelStart)
+                    value = _MinimumRedColorLevelStart;
                 if (value > 255)
                     value = 255;
-                _barRotMaximumRedColorLevelStart = value;
+                _MaximumRedColorLevelStart = value;
             }
         }
         /// <summary>
@@ -320,15 +320,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _barRotMaximumGreenColorLevelStart;
+                return _MaximumGreenColorLevelStart;
             }
             set
             {
-                if (value <= _barRotMinimumGreenColorLevelStart)
-                    value = _barRotMinimumGreenColorLevelStart;
+                if (value <= _MinimumGreenColorLevelStart)
+                    value = _MinimumGreenColorLevelStart;
                 if (value > 255)
                     value = 255;
-                _barRotMaximumGreenColorLevelStart = value;
+                _MaximumGreenColorLevelStart = value;
             }
         }
         /// <summary>
@@ -338,15 +338,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _barRotMaximumBlueColorLevelStart;
+                return _MaximumBlueColorLevelStart;
             }
             set
             {
-                if (value <= _barRotMinimumBlueColorLevelStart)
-                    value = _barRotMinimumBlueColorLevelStart;
+                if (value <= _MinimumBlueColorLevelStart)
+                    value = _MinimumBlueColorLevelStart;
                 if (value > 255)
                     value = 255;
-                _barRotMaximumBlueColorLevelStart = value;
+                _MaximumBlueColorLevelStart = value;
             }
         }
         /// <summary>
@@ -356,7 +356,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _barRotMinimumRedColorLevelEnd;
+                return _MinimumRedColorLevelEnd;
             }
             set
             {
@@ -364,7 +364,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _barRotMinimumRedColorLevelEnd = value;
+                _MinimumRedColorLevelEnd = value;
             }
         }
         /// <summary>
@@ -374,7 +374,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _barRotMinimumGreenColorLevelEnd;
+                return _MinimumGreenColorLevelEnd;
             }
             set
             {
@@ -382,7 +382,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _barRotMinimumGreenColorLevelEnd = value;
+                _MinimumGreenColorLevelEnd = value;
             }
         }
         /// <summary>
@@ -392,7 +392,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _barRotMinimumBlueColorLevelEnd;
+                return _MinimumBlueColorLevelEnd;
             }
             set
             {
@@ -400,7 +400,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _barRotMinimumBlueColorLevelEnd = value;
+                _MinimumBlueColorLevelEnd = value;
             }
         }
         /// <summary>
@@ -410,15 +410,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _barRotMaximumRedColorLevelEnd;
+                return _MaximumRedColorLevelEnd;
             }
             set
             {
-                if (value <= _barRotMinimumRedColorLevelEnd)
-                    value = _barRotMinimumRedColorLevelEnd;
+                if (value <= _MinimumRedColorLevelEnd)
+                    value = _MinimumRedColorLevelEnd;
                 if (value > 255)
                     value = 255;
-                _barRotMaximumRedColorLevelEnd = value;
+                _MaximumRedColorLevelEnd = value;
             }
         }
         /// <summary>
@@ -428,15 +428,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _barRotMaximumGreenColorLevelEnd;
+                return _MaximumGreenColorLevelEnd;
             }
             set
             {
-                if (value <= _barRotMinimumGreenColorLevelEnd)
-                    value = _barRotMinimumGreenColorLevelEnd;
+                if (value <= _MinimumGreenColorLevelEnd)
+                    value = _MinimumGreenColorLevelEnd;
                 if (value > 255)
                     value = 255;
-                _barRotMaximumGreenColorLevelEnd = value;
+                _MaximumGreenColorLevelEnd = value;
             }
         }
         /// <summary>
@@ -446,15 +446,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _barRotMaximumBlueColorLevelEnd;
+                return _MaximumBlueColorLevelEnd;
             }
             set
             {
-                if (value <= _barRotMinimumBlueColorLevelEnd)
-                    value = _barRotMinimumBlueColorLevelEnd;
+                if (value <= _MinimumBlueColorLevelEnd)
+                    value = _MinimumBlueColorLevelEnd;
                 if (value > 255)
                     value = 255;
-                _barRotMaximumBlueColorLevelEnd = value;
+                _MaximumBlueColorLevelEnd = value;
             }
         }
         /// <summary>
@@ -464,11 +464,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _barRotUpperLeftCornerColor;
+                return _UpperLeftCornerColor;
             }
             set
             {
-                _barRotUpperLeftCornerColor = new Color(value).PlainSequence;
+                _UpperLeftCornerColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -478,11 +478,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _barRotUpperRightCornerColor;
+                return _UpperRightCornerColor;
             }
             set
             {
-                _barRotUpperRightCornerColor = new Color(value).PlainSequence;
+                _UpperRightCornerColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -492,11 +492,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _barRotLowerLeftCornerColor;
+                return _LowerLeftCornerColor;
             }
             set
             {
-                _barRotLowerLeftCornerColor = new Color(value).PlainSequence;
+                _LowerLeftCornerColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -506,11 +506,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _barRotLowerRightCornerColor;
+                return _LowerRightCornerColor;
             }
             set
             {
-                _barRotLowerRightCornerColor = new Color(value).PlainSequence;
+                _LowerRightCornerColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -520,11 +520,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _barRotUpperFrameColor;
+                return _UpperFrameColor;
             }
             set
             {
-                _barRotUpperFrameColor = new Color(value).PlainSequence;
+                _UpperFrameColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -534,11 +534,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _barRotLowerFrameColor;
+                return _LowerFrameColor;
             }
             set
             {
-                _barRotLowerFrameColor = new Color(value).PlainSequence;
+                _LowerFrameColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -548,11 +548,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _barRotLeftFrameColor;
+                return _LeftFrameColor;
             }
             set
             {
-                _barRotLeftFrameColor = new Color(value).PlainSequence;
+                _LeftFrameColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -562,11 +562,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _barRotRightFrameColor;
+                return _RightFrameColor;
             }
             set
             {
-                _barRotRightFrameColor = new Color(value).PlainSequence;
+                _RightFrameColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -576,11 +576,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _barRotUseBorderColors;
+                return _UseBorderColors;
             }
             set
             {
-                _barRotUseBorderColors = value;
+                _UseBorderColors = value;
             }
         }
 

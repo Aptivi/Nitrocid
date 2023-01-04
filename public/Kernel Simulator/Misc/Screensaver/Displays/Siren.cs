@@ -29,8 +29,8 @@ namespace KS.Misc.Screensaver.Displays
     public static class SirenSettings
     {
 
-        private static int _sirenDelay = 500;
-        private static string _sirenStyle = "Cop";
+        private static int _Delay = 500;
+        private static string _Style = "Cop";
 
         /// <summary>
         /// [Siren] How many milliseconds to wait before making the next write?
@@ -39,13 +39,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _sirenDelay;
+                return _Delay;
             }
             set
             {
                 if (value <= 0)
                     value = 500;
-                _sirenDelay = value;
+                _Delay = value;
             }
         }
 
@@ -56,11 +56,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _sirenStyle;
+                return _Style;
             }
             set
             {
-                _sirenStyle = SirenDisplay.sirens.ContainsKey(value) ? value : "Cop";
+                _Style = SirenDisplay.sirens.ContainsKey(value) ? value : "Cop";
             }
         }
 

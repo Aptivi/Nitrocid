@@ -28,8 +28,8 @@ namespace KS.Misc.Screensaver.Displays
     public static class GlitchSettings
     {
 
-        private static int _GlitchDelay = 10;
-        private static int _GlitchDensity = 40;
+        private static int _Delay = 10;
+        private static int _Density = 40;
 
         /// <summary>
         /// [Glitch] How many milliseconds to wait before making the next write?
@@ -38,13 +38,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _GlitchDelay;
+                return _Delay;
             }
             set
             {
                 if (value <= 0)
                     value = 10;
-                _GlitchDelay = value;
+                _Delay = value;
             }
         }
         /// <summary>
@@ -54,7 +54,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _GlitchDensity;
+                return _Density;
             }
             set
             {
@@ -62,7 +62,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 40;
                 if (value > 100)
                     value = 40;
-                _GlitchDensity = value;
+                _Density = value;
             }
         }
 

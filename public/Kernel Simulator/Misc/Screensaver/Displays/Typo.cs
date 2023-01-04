@@ -33,14 +33,14 @@ namespace KS.Misc.Screensaver.Displays
     public static class TypoSettings
     {
 
-        private static int _typoDelay = 50;
-        private static int _typoWriteAgainDelay = 3000;
-        private static string _typoWrite = "Kernel Simulator";
-        private static int _typoWritingSpeedMin = 50;
-        private static int _typoWritingSpeedMax = 80;
-        private static int _typoMissStrikePossibility = 20;
-        private static int _typoMissPossibility = 10;
-        private static string _typoTextColor = new Color((int)ConsoleColor.White).PlainSequence;
+        private static int _Delay = 50;
+        private static int _WriteAgainDelay = 3000;
+        private static string _Write = "Kernel Simulator";
+        private static int _WritingSpeedMin = 50;
+        private static int _WritingSpeedMax = 80;
+        private static int _MissStrikePossibility = 20;
+        private static int _MissPossibility = 10;
+        private static string _TextColor = new Color((int)ConsoleColor.White).PlainSequence;
 
         /// <summary>
         /// [Typo] How many milliseconds to wait before making the next write?
@@ -49,13 +49,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _typoDelay;
+                return _Delay;
             }
             set
             {
                 if (value <= 0)
                     value = 50;
-                _typoDelay = value;
+                _Delay = value;
             }
         }
         /// <summary>
@@ -65,13 +65,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _typoWriteAgainDelay;
+                return _WriteAgainDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 3000;
-                _typoWriteAgainDelay = value;
+                _WriteAgainDelay = value;
             }
         }
         /// <summary>
@@ -81,13 +81,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _typoWrite;
+                return _Write;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "Kernel Simulator";
-                _typoWrite = value;
+                _Write = value;
             }
         }
         /// <summary>
@@ -97,13 +97,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _typoWritingSpeedMin;
+                return _WritingSpeedMin;
             }
             set
             {
                 if (value <= 0)
                     value = 50;
-                _typoWritingSpeedMin = value;
+                _WritingSpeedMin = value;
             }
         }
         /// <summary>
@@ -113,13 +113,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _typoWritingSpeedMax;
+                return _WritingSpeedMax;
             }
             set
             {
                 if (value <= 0)
                     value = 80;
-                _typoWritingSpeedMax = value;
+                _WritingSpeedMax = value;
             }
         }
         /// <summary>
@@ -129,13 +129,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _typoMissStrikePossibility;
+                return _MissStrikePossibility;
             }
             set
             {
                 if (value <= 0)
                     value = 20;
-                _typoMissStrikePossibility = value;
+                _MissStrikePossibility = value;
             }
         }
         /// <summary>
@@ -145,13 +145,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _typoMissPossibility;
+                return _MissPossibility;
             }
             set
             {
                 if (value <= 0)
                     value = 10;
-                _typoMissPossibility = value;
+                _MissPossibility = value;
             }
         }
         /// <summary>
@@ -161,11 +161,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _typoTextColor;
+                return _TextColor;
             }
             set
             {
-                _typoTextColor = new Color(value).PlainSequence;
+                _TextColor = new Color(value).PlainSequence;
             }
         }
 

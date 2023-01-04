@@ -32,18 +32,18 @@ namespace KS.Misc.Screensaver.Displays
     public static class LinesSettings
     {
 
-        private static bool _linesTrueColor = true;
-        private static int _linesDelay = 500;
-        private static string _linesLineChar = "-";
-        private static string _linesBackgroundColor = new Color((int)ConsoleColor.Black).PlainSequence;
-        private static int _linesMinimumRedColorLevel = 0;
-        private static int _linesMinimumGreenColorLevel = 0;
-        private static int _linesMinimumBlueColorLevel = 0;
-        private static int _linesMinimumColorLevel = 0;
-        private static int _linesMaximumRedColorLevel = 255;
-        private static int _linesMaximumGreenColorLevel = 255;
-        private static int _linesMaximumBlueColorLevel = 255;
-        private static int _linesMaximumColorLevel = 255;
+        private static bool _TrueColor = true;
+        private static int _Delay = 500;
+        private static string _LineChar = "-";
+        private static string _BackgroundColor = new Color((int)ConsoleColor.Black).PlainSequence;
+        private static int _MinimumRedColorLevel = 0;
+        private static int _MinimumGreenColorLevel = 0;
+        private static int _MinimumBlueColorLevel = 0;
+        private static int _MinimumColorLevel = 0;
+        private static int _MaximumRedColorLevel = 255;
+        private static int _MaximumGreenColorLevel = 255;
+        private static int _MaximumBlueColorLevel = 255;
+        private static int _MaximumColorLevel = 255;
 
         /// <summary>
         /// [Lines] Enable truecolor support. Has a higher priority than 255 color support.
@@ -52,11 +52,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _linesTrueColor;
+                return _TrueColor;
             }
             set
             {
-                _linesTrueColor = value;
+                _TrueColor = value;
             }
         }
         /// <summary>
@@ -66,13 +66,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _linesDelay;
+                return _Delay;
             }
             set
             {
                 if (value <= 0)
                     value = 500;
-                _linesDelay = value;
+                _Delay = value;
             }
         }
         /// <summary>
@@ -82,13 +82,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _linesLineChar;
+                return _LineChar;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "-";
-                _linesLineChar = value;
+                _LineChar = value;
             }
         }
         /// <summary>
@@ -98,11 +98,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _linesBackgroundColor;
+                return _BackgroundColor;
             }
             set
             {
-                _linesBackgroundColor = new Color(value).PlainSequence;
+                _BackgroundColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -112,7 +112,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _linesMinimumRedColorLevel;
+                return _MinimumRedColorLevel;
             }
             set
             {
@@ -120,7 +120,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _linesMinimumRedColorLevel = value;
+                _MinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -130,7 +130,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _linesMinimumGreenColorLevel;
+                return _MinimumGreenColorLevel;
             }
             set
             {
@@ -138,7 +138,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _linesMinimumGreenColorLevel = value;
+                _MinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -148,7 +148,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _linesMinimumBlueColorLevel;
+                return _MinimumBlueColorLevel;
             }
             set
             {
@@ -156,7 +156,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _linesMinimumBlueColorLevel = value;
+                _MinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -166,7 +166,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _linesMinimumColorLevel;
+                return _MinimumColorLevel;
             }
             set
             {
@@ -175,7 +175,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                _linesMinimumColorLevel = value;
+                _MinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -185,15 +185,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _linesMaximumRedColorLevel;
+                return _MaximumRedColorLevel;
             }
             set
             {
-                if (value <= _linesMinimumRedColorLevel)
-                    value = _linesMinimumRedColorLevel;
+                if (value <= _MinimumRedColorLevel)
+                    value = _MinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                _linesMaximumRedColorLevel = value;
+                _MaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -203,15 +203,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _linesMaximumGreenColorLevel;
+                return _MaximumGreenColorLevel;
             }
             set
             {
-                if (value <= _linesMinimumGreenColorLevel)
-                    value = _linesMinimumGreenColorLevel;
+                if (value <= _MinimumGreenColorLevel)
+                    value = _MinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                _linesMaximumGreenColorLevel = value;
+                _MaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -221,15 +221,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _linesMaximumBlueColorLevel;
+                return _MaximumBlueColorLevel;
             }
             set
             {
-                if (value <= _linesMinimumBlueColorLevel)
-                    value = _linesMinimumBlueColorLevel;
+                if (value <= _MinimumBlueColorLevel)
+                    value = _MinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                _linesMaximumBlueColorLevel = value;
+                _MaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -239,16 +239,16 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _linesMaximumColorLevel;
+                return _MaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= _linesMinimumColorLevel)
-                    value = _linesMinimumColorLevel;
+                if (value <= _MinimumColorLevel)
+                    value = _MinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                _linesMaximumColorLevel = value;
+                _MaximumColorLevel = value;
             }
         }
 

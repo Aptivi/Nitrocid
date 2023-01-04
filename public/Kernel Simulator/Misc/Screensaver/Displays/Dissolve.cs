@@ -34,16 +34,16 @@ namespace KS.Misc.Screensaver.Displays
     public static class DissolveSettings
     {
 
-        private static bool _dissolveTrueColor = true;
-        private static string _dissolveBackgroundColor = new Color((int)ConsoleColor.Black).PlainSequence;
-        private static int _dissolveMinimumRedColorLevel = 0;
-        private static int _dissolveMinimumGreenColorLevel = 0;
-        private static int _dissolveMinimumBlueColorLevel = 0;
-        private static int _dissolveMinimumColorLevel = 0;
-        private static int _dissolveMaximumRedColorLevel = 255;
-        private static int _dissolveMaximumGreenColorLevel = 255;
-        private static int _dissolveMaximumBlueColorLevel = 255;
-        private static int _dissolveMaximumColorLevel = 255;
+        private static bool _TrueColor = true;
+        private static string _BackgroundColor = new Color((int)ConsoleColor.Black).PlainSequence;
+        private static int _MinimumRedColorLevel = 0;
+        private static int _MinimumGreenColorLevel = 0;
+        private static int _MinimumBlueColorLevel = 0;
+        private static int _MinimumColorLevel = 0;
+        private static int _MaximumRedColorLevel = 255;
+        private static int _MaximumGreenColorLevel = 255;
+        private static int _MaximumBlueColorLevel = 255;
+        private static int _MaximumColorLevel = 255;
 
         /// <summary>
         /// [Dissolve] Enable truecolor support. Has a higher priority than 255 color support.
@@ -52,11 +52,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _dissolveTrueColor;
+                return _TrueColor;
             }
             set
             {
-                _dissolveTrueColor = value;
+                _TrueColor = value;
             }
         }
         /// <summary>
@@ -66,11 +66,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _dissolveBackgroundColor;
+                return _BackgroundColor;
             }
             set
             {
-                _dissolveBackgroundColor = new Color(value).PlainSequence;
+                _BackgroundColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -80,7 +80,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _dissolveMinimumRedColorLevel;
+                return _MinimumRedColorLevel;
             }
             set
             {
@@ -88,7 +88,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _dissolveMinimumRedColorLevel = value;
+                _MinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -98,7 +98,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _dissolveMinimumGreenColorLevel;
+                return _MinimumGreenColorLevel;
             }
             set
             {
@@ -106,7 +106,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _dissolveMinimumGreenColorLevel = value;
+                _MinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -116,7 +116,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _dissolveMinimumBlueColorLevel;
+                return _MinimumBlueColorLevel;
             }
             set
             {
@@ -124,7 +124,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _dissolveMinimumBlueColorLevel = value;
+                _MinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -134,7 +134,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _dissolveMinimumColorLevel;
+                return _MinimumColorLevel;
             }
             set
             {
@@ -143,7 +143,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                _dissolveMinimumColorLevel = value;
+                _MinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -153,15 +153,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _dissolveMaximumRedColorLevel;
+                return _MaximumRedColorLevel;
             }
             set
             {
-                if (value <= _dissolveMinimumRedColorLevel)
-                    value = _dissolveMinimumRedColorLevel;
+                if (value <= _MinimumRedColorLevel)
+                    value = _MinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                _dissolveMaximumRedColorLevel = value;
+                _MaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -171,15 +171,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _dissolveMaximumGreenColorLevel;
+                return _MaximumGreenColorLevel;
             }
             set
             {
-                if (value <= _dissolveMinimumGreenColorLevel)
-                    value = _dissolveMinimumGreenColorLevel;
+                if (value <= _MinimumGreenColorLevel)
+                    value = _MinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                _dissolveMaximumGreenColorLevel = value;
+                _MaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -189,15 +189,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _dissolveMaximumBlueColorLevel;
+                return _MaximumBlueColorLevel;
             }
             set
             {
-                if (value <= _dissolveMinimumBlueColorLevel)
-                    value = _dissolveMinimumBlueColorLevel;
+                if (value <= _MinimumBlueColorLevel)
+                    value = _MinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                _dissolveMaximumBlueColorLevel = value;
+                _MaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -207,16 +207,16 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _dissolveMaximumColorLevel;
+                return _MaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= _dissolveMinimumColorLevel)
-                    value = _dissolveMinimumColorLevel;
+                if (value <= _MinimumColorLevel)
+                    value = _MinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                _dissolveMaximumColorLevel = value;
+                _MaximumColorLevel = value;
             }
         }
 

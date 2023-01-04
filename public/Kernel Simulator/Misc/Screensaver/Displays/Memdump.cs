@@ -35,7 +35,7 @@ namespace KS.Misc.Screensaver.Displays
     public static class MemdumpSettings
     {
 
-        private static int _memdumpDelay = 500;
+        private static int _Delay = 500;
 
         /// <summary>
         /// [Memdump] How many milliseconds to wait before making the next write?
@@ -44,13 +44,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _memdumpDelay;
+                return _Delay;
             }
             set
             {
                 if (value <= 0)
                     value = 500;
-                _memdumpDelay = value;
+                _Delay = value;
             }
         }
 

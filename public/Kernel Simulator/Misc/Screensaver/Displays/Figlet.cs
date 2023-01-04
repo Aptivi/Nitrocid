@@ -35,18 +35,18 @@ namespace KS.Misc.Screensaver.Displays
     public static class FigletSettings
     {
 
-        private static bool _figletTrueColor = true;
-        private static int _figletDelay = 1000;
-        private static string _figletText = "Kernel Simulator";
-        private static string _figletFont = "Small";
-        private static int _figletMinimumRedColorLevel = 0;
-        private static int _figletMinimumGreenColorLevel = 0;
-        private static int _figletMinimumBlueColorLevel = 0;
-        private static int _figletMinimumColorLevel = 0;
-        private static int _figletMaximumRedColorLevel = 255;
-        private static int _figletMaximumGreenColorLevel = 255;
-        private static int _figletMaximumBlueColorLevel = 255;
-        private static int _figletMaximumColorLevel = 255;
+        private static bool _TrueColor = true;
+        private static int _Delay = 1000;
+        private static string _Text = "Kernel Simulator";
+        private static string _Font = "Small";
+        private static int _MinimumRedColorLevel = 0;
+        private static int _MinimumGreenColorLevel = 0;
+        private static int _MinimumBlueColorLevel = 0;
+        private static int _MinimumColorLevel = 0;
+        private static int _MaximumRedColorLevel = 255;
+        private static int _MaximumGreenColorLevel = 255;
+        private static int _MaximumBlueColorLevel = 255;
+        private static int _MaximumColorLevel = 255;
 
         /// <summary>
         /// [Figlet] Enable truecolor support. Has a higher priority than 255 color support.
@@ -55,11 +55,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _figletTrueColor;
+                return _TrueColor;
             }
             set
             {
-                _figletTrueColor = value;
+                _TrueColor = value;
             }
         }
         /// <summary>
@@ -69,13 +69,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _figletDelay;
+                return _Delay;
             }
             set
             {
                 if (value <= 0)
                     value = 1000;
-                _figletDelay = value;
+                _Delay = value;
             }
         }
         /// <summary>
@@ -85,13 +85,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _figletText;
+                return _Text;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "Kernel Simulator";
-                _figletText = value;
+                _Text = value;
             }
         }
         /// <summary>
@@ -101,11 +101,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _figletFont;
+                return _Font;
             }
             set
             {
-                _figletFont = value;
+                _Font = value;
             }
         }
         /// <summary>
@@ -115,7 +115,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _figletMinimumRedColorLevel;
+                return _MinimumRedColorLevel;
             }
             set
             {
@@ -123,7 +123,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _figletMinimumRedColorLevel = value;
+                _MinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -133,7 +133,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _figletMinimumGreenColorLevel;
+                return _MinimumGreenColorLevel;
             }
             set
             {
@@ -141,7 +141,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _figletMinimumGreenColorLevel = value;
+                _MinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -151,7 +151,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _figletMinimumBlueColorLevel;
+                return _MinimumBlueColorLevel;
             }
             set
             {
@@ -159,7 +159,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _figletMinimumBlueColorLevel = value;
+                _MinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -169,7 +169,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _figletMinimumColorLevel;
+                return _MinimumColorLevel;
             }
             set
             {
@@ -178,7 +178,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                _figletMinimumColorLevel = value;
+                _MinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -188,15 +188,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _figletMaximumRedColorLevel;
+                return _MaximumRedColorLevel;
             }
             set
             {
-                if (value <= _figletMinimumRedColorLevel)
-                    value = _figletMinimumRedColorLevel;
+                if (value <= _MinimumRedColorLevel)
+                    value = _MinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                _figletMaximumRedColorLevel = value;
+                _MaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -206,15 +206,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _figletMaximumGreenColorLevel;
+                return _MaximumGreenColorLevel;
             }
             set
             {
-                if (value <= _figletMinimumGreenColorLevel)
-                    value = _figletMinimumGreenColorLevel;
+                if (value <= _MinimumGreenColorLevel)
+                    value = _MinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                _figletMaximumGreenColorLevel = value;
+                _MaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -224,15 +224,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _figletMaximumBlueColorLevel;
+                return _MaximumBlueColorLevel;
             }
             set
             {
-                if (value <= _figletMinimumBlueColorLevel)
-                    value = _figletMinimumBlueColorLevel;
+                if (value <= _MinimumBlueColorLevel)
+                    value = _MinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                _figletMaximumBlueColorLevel = value;
+                _MaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -242,16 +242,16 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _figletMaximumColorLevel;
+                return _MaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= _figletMinimumColorLevel)
-                    value = _figletMinimumColorLevel;
+                if (value <= _MinimumColorLevel)
+                    value = _MinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                _figletMaximumColorLevel = value;
+                _MaximumColorLevel = value;
             }
         }
 

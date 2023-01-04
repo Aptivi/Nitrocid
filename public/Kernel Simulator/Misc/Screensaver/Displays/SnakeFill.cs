@@ -33,16 +33,16 @@ namespace KS.Misc.Screensaver.Displays
     public static class SnakeFillSettings
     {
 
-        private static bool _snakeFillTrueColor = true;
-        private static int _snakeFillDelay = 10;
-        private static int _snakeFillMinimumRedColorLevel = 0;
-        private static int _snakeFillMinimumGreenColorLevel = 0;
-        private static int _snakeFillMinimumBlueColorLevel = 0;
-        private static int _snakeFillMinimumColorLevel = 0;
-        private static int _snakeFillMaximumRedColorLevel = 255;
-        private static int _snakeFillMaximumGreenColorLevel = 255;
-        private static int _snakeFillMaximumBlueColorLevel = 255;
-        private static int _snakeFillMaximumColorLevel = 255;
+        private static bool _TrueColor = true;
+        private static int _Delay = 10;
+        private static int _MinimumRedColorLevel = 0;
+        private static int _MinimumGreenColorLevel = 0;
+        private static int _MinimumBlueColorLevel = 0;
+        private static int _MinimumColorLevel = 0;
+        private static int _MaximumRedColorLevel = 255;
+        private static int _MaximumGreenColorLevel = 255;
+        private static int _MaximumBlueColorLevel = 255;
+        private static int _MaximumColorLevel = 255;
 
         /// <summary>
         /// [SnakeFill] Enable truecolor support. Has a higher priority than 255 color support.
@@ -51,11 +51,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _snakeFillTrueColor;
+                return _TrueColor;
             }
             set
             {
-                _snakeFillTrueColor = value;
+                _TrueColor = value;
             }
         }
         /// <summary>
@@ -65,11 +65,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _snakeFillDelay;
+                return _Delay;
             }
             set
             {
-                _snakeFillDelay = value;
+                _Delay = value;
             }
         }
         /// <summary>
@@ -79,11 +79,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _snakeFillMinimumRedColorLevel;
+                return _MinimumRedColorLevel;
             }
             set
             {
-                _snakeFillMinimumRedColorLevel = value;
+                _MinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -93,11 +93,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _snakeFillMinimumGreenColorLevel;
+                return _MinimumGreenColorLevel;
             }
             set
             {
-                _snakeFillMinimumGreenColorLevel = value;
+                _MinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -107,11 +107,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _snakeFillMinimumBlueColorLevel;
+                return _MinimumBlueColorLevel;
             }
             set
             {
-                _snakeFillMinimumBlueColorLevel = value;
+                _MinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -121,11 +121,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _snakeFillMinimumColorLevel;
+                return _MinimumColorLevel;
             }
             set
             {
-                _snakeFillMinimumColorLevel = value;
+                _MinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -135,11 +135,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _snakeFillMaximumRedColorLevel;
+                return _MaximumRedColorLevel;
             }
             set
             {
-                _snakeFillMaximumRedColorLevel = value;
+                _MaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -149,11 +149,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _snakeFillMaximumGreenColorLevel;
+                return _MaximumGreenColorLevel;
             }
             set
             {
-                _snakeFillMaximumGreenColorLevel = value;
+                _MaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -163,11 +163,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _snakeFillMaximumBlueColorLevel;
+                return _MaximumBlueColorLevel;
             }
             set
             {
-                _snakeFillMaximumBlueColorLevel = value;
+                _MaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -177,11 +177,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _snakeFillMaximumColorLevel;
+                return _MaximumColorLevel;
             }
             set
             {
-                _snakeFillMaximumColorLevel = value;
+                _MaximumColorLevel = value;
             }
         }
 

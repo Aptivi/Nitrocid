@@ -33,7 +33,7 @@ namespace KS.Misc.Screensaver.Displays
     public static class StarfieldSettings
     {
 
-        private static int _starfieldDelay = 10;
+        private static int _Delay = 10;
 
         /// <summary>
         /// [Starfield] How many milliseconds to wait before making the next write?
@@ -42,13 +42,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _starfieldDelay;
+                return _Delay;
             }
             set
             {
                 if (value <= 0)
                     value = 10;
-                _starfieldDelay = value;
+                _Delay = value;
             }
         }
 

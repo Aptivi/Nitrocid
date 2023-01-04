@@ -29,7 +29,7 @@ namespace KS.Misc.Screensaver.Displays
     public static class LyricsSettings
     {
 
-        private static int _lyricsDelay = 10000;
+        private static int _Delay = 10000;
 
         /// <summary>
         /// [Lyrics] How many milliseconds to wait before the next lyric?
@@ -38,13 +38,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _lyricsDelay;
+                return _Delay;
             }
             set
             {
                 if (value <= 0)
                     value = 10000;
-                _lyricsDelay = value;
+                _Delay = value;
             }
         }
 

@@ -33,20 +33,20 @@ namespace KS.Misc.Screensaver.Displays
     public static class GradientRotSettings
     {
 
-        private static int _gradientRotDelay = 10;
-        private static int _gradientRotNextScreenDelay = 250;
-        private static int _gradientRotMinimumRedColorLevelStart = 0;
-        private static int _gradientRotMinimumGreenColorLevelStart = 0;
-        private static int _gradientRotMinimumBlueColorLevelStart = 0;
-        private static int _gradientRotMaximumRedColorLevelStart = 255;
-        private static int _gradientRotMaximumGreenColorLevelStart = 255;
-        private static int _gradientRotMaximumBlueColorLevelStart = 255;
-        private static int _gradientRotMinimumRedColorLevelEnd = 0;
-        private static int _gradientRotMinimumGreenColorLevelEnd = 0;
-        private static int _gradientRotMinimumBlueColorLevelEnd = 0;
-        private static int _gradientRotMaximumRedColorLevelEnd = 255;
-        private static int _gradientRotMaximumGreenColorLevelEnd = 255;
-        private static int _gradientRotMaximumBlueColorLevelEnd = 255;
+        private static int _Delay = 10;
+        private static int _NextScreenDelay = 250;
+        private static int _MinimumRedColorLevelStart = 0;
+        private static int _MinimumGreenColorLevelStart = 0;
+        private static int _MinimumBlueColorLevelStart = 0;
+        private static int _MaximumRedColorLevelStart = 255;
+        private static int _MaximumGreenColorLevelStart = 255;
+        private static int _MaximumBlueColorLevelStart = 255;
+        private static int _MinimumRedColorLevelEnd = 0;
+        private static int _MinimumGreenColorLevelEnd = 0;
+        private static int _MinimumBlueColorLevelEnd = 0;
+        private static int _MaximumRedColorLevelEnd = 255;
+        private static int _MaximumGreenColorLevelEnd = 255;
+        private static int _MaximumBlueColorLevelEnd = 255;
 
         /// <summary>
         /// [GradientRot] How many milliseconds to wait before making the next write?
@@ -55,13 +55,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _gradientRotDelay;
+                return _Delay;
             }
             set
             {
                 if (value <= 0)
                     value = 10;
-                _gradientRotDelay = value;
+                _Delay = value;
             }
         }
         /// <summary>
@@ -71,13 +71,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _gradientRotNextScreenDelay;
+                return _NextScreenDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 250;
-                _gradientRotNextScreenDelay = value;
+                _NextScreenDelay = value;
             }
         }
         /// <summary>
@@ -87,7 +87,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _gradientRotMinimumRedColorLevelStart;
+                return _MinimumRedColorLevelStart;
             }
             set
             {
@@ -95,7 +95,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _gradientRotMinimumRedColorLevelStart = value;
+                _MinimumRedColorLevelStart = value;
             }
         }
         /// <summary>
@@ -105,7 +105,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _gradientRotMinimumGreenColorLevelStart;
+                return _MinimumGreenColorLevelStart;
             }
             set
             {
@@ -113,7 +113,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _gradientRotMinimumGreenColorLevelStart = value;
+                _MinimumGreenColorLevelStart = value;
             }
         }
         /// <summary>
@@ -123,7 +123,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _gradientRotMinimumBlueColorLevelStart;
+                return _MinimumBlueColorLevelStart;
             }
             set
             {
@@ -131,7 +131,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _gradientRotMinimumBlueColorLevelStart = value;
+                _MinimumBlueColorLevelStart = value;
             }
         }
         /// <summary>
@@ -141,15 +141,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _gradientRotMaximumRedColorLevelStart;
+                return _MaximumRedColorLevelStart;
             }
             set
             {
-                if (value <= _gradientRotMinimumRedColorLevelStart)
-                    value = _gradientRotMinimumRedColorLevelStart;
+                if (value <= _MinimumRedColorLevelStart)
+                    value = _MinimumRedColorLevelStart;
                 if (value > 255)
                     value = 255;
-                _gradientRotMaximumRedColorLevelStart = value;
+                _MaximumRedColorLevelStart = value;
             }
         }
         /// <summary>
@@ -159,15 +159,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _gradientRotMaximumGreenColorLevelStart;
+                return _MaximumGreenColorLevelStart;
             }
             set
             {
-                if (value <= _gradientRotMinimumGreenColorLevelStart)
-                    value = _gradientRotMinimumGreenColorLevelStart;
+                if (value <= _MinimumGreenColorLevelStart)
+                    value = _MinimumGreenColorLevelStart;
                 if (value > 255)
                     value = 255;
-                _gradientRotMaximumGreenColorLevelStart = value;
+                _MaximumGreenColorLevelStart = value;
             }
         }
         /// <summary>
@@ -177,15 +177,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _gradientRotMaximumBlueColorLevelStart;
+                return _MaximumBlueColorLevelStart;
             }
             set
             {
-                if (value <= _gradientRotMinimumBlueColorLevelStart)
-                    value = _gradientRotMinimumBlueColorLevelStart;
+                if (value <= _MinimumBlueColorLevelStart)
+                    value = _MinimumBlueColorLevelStart;
                 if (value > 255)
                     value = 255;
-                _gradientRotMaximumBlueColorLevelStart = value;
+                _MaximumBlueColorLevelStart = value;
             }
         }
         /// <summary>
@@ -195,7 +195,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _gradientRotMinimumRedColorLevelEnd;
+                return _MinimumRedColorLevelEnd;
             }
             set
             {
@@ -203,7 +203,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _gradientRotMinimumRedColorLevelEnd = value;
+                _MinimumRedColorLevelEnd = value;
             }
         }
         /// <summary>
@@ -213,7 +213,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _gradientRotMinimumGreenColorLevelEnd;
+                return _MinimumGreenColorLevelEnd;
             }
             set
             {
@@ -221,7 +221,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _gradientRotMinimumGreenColorLevelEnd = value;
+                _MinimumGreenColorLevelEnd = value;
             }
         }
         /// <summary>
@@ -231,7 +231,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _gradientRotMinimumBlueColorLevelEnd;
+                return _MinimumBlueColorLevelEnd;
             }
             set
             {
@@ -239,7 +239,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _gradientRotMinimumBlueColorLevelEnd = value;
+                _MinimumBlueColorLevelEnd = value;
             }
         }
         /// <summary>
@@ -249,15 +249,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _gradientRotMaximumRedColorLevelEnd;
+                return _MaximumRedColorLevelEnd;
             }
             set
             {
-                if (value <= _gradientRotMinimumRedColorLevelEnd)
-                    value = _gradientRotMinimumRedColorLevelEnd;
+                if (value <= _MinimumRedColorLevelEnd)
+                    value = _MinimumRedColorLevelEnd;
                 if (value > 255)
                     value = 255;
-                _gradientRotMaximumRedColorLevelEnd = value;
+                _MaximumRedColorLevelEnd = value;
             }
         }
         /// <summary>
@@ -267,15 +267,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _gradientRotMaximumGreenColorLevelEnd;
+                return _MaximumGreenColorLevelEnd;
             }
             set
             {
-                if (value <= _gradientRotMinimumGreenColorLevelEnd)
-                    value = _gradientRotMinimumGreenColorLevelEnd;
+                if (value <= _MinimumGreenColorLevelEnd)
+                    value = _MinimumGreenColorLevelEnd;
                 if (value > 255)
                     value = 255;
-                _gradientRotMaximumGreenColorLevelEnd = value;
+                _MaximumGreenColorLevelEnd = value;
             }
         }
         /// <summary>
@@ -285,15 +285,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _gradientRotMaximumBlueColorLevelEnd;
+                return _MaximumBlueColorLevelEnd;
             }
             set
             {
-                if (value <= _gradientRotMinimumBlueColorLevelEnd)
-                    value = _gradientRotMinimumBlueColorLevelEnd;
+                if (value <= _MinimumBlueColorLevelEnd)
+                    value = _MinimumBlueColorLevelEnd;
                 if (value > 255)
                     value = 255;
-                _gradientRotMaximumBlueColorLevelEnd = value;
+                _MaximumBlueColorLevelEnd = value;
             }
         }
 

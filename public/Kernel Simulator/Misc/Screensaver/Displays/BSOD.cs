@@ -27,7 +27,7 @@ namespace KS.Misc.Screensaver.Displays
     public static class BSODSettings
     {
 
-        private static int _bsodDelay = 10000;
+        private static int _Delay = 10000;
 
         /// <summary>
         /// [BSOD] How many beats per minute to wait before making the next write?
@@ -36,13 +36,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _bsodDelay;
+                return _Delay;
             }
             set
             {
                 if (value <= 0)
                     value = 10000;
-                _bsodDelay = value;
+                _Delay = value;
             }
         }
 

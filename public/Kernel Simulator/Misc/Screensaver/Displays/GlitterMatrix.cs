@@ -32,9 +32,9 @@ namespace KS.Misc.Screensaver.Displays
     public static class GlitterMatrixSettings
     {
 
-        private static int _glitterMatrixDelay = 1;
-        private static string _glitterMatrixBackgroundColor = new Color((int)ConsoleColor.Black).PlainSequence;
-        private static string _glitterMatrixForegroundColor = new Color((int)ConsoleColor.Green).PlainSequence;
+        private static int _Delay = 1;
+        private static string _BackgroundColor = new Color((int)ConsoleColor.Black).PlainSequence;
+        private static string _ForegroundColor = new Color((int)ConsoleColor.Green).PlainSequence;
 
         /// <summary>
         /// [GlitterMatrix] How many milliseconds to wait before making the next write?
@@ -43,13 +43,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _glitterMatrixDelay;
+                return _Delay;
             }
             set
             {
                 if (value <= 0)
                     value = 1;
-                _glitterMatrixDelay = value;
+                _Delay = value;
             }
         }
         /// <summary>
@@ -59,11 +59,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _glitterMatrixBackgroundColor;
+                return _BackgroundColor;
             }
             set
             {
-                _glitterMatrixBackgroundColor = new Color(value).PlainSequence;
+                _BackgroundColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -73,11 +73,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _glitterMatrixForegroundColor;
+                return _ForegroundColor;
             }
             set
             {
-                _glitterMatrixForegroundColor = new Color(value).PlainSequence;
+                _ForegroundColor = new Color(value).PlainSequence;
             }
         }
 

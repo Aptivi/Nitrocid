@@ -32,16 +32,16 @@ namespace KS.Misc.Screensaver.Displays
     public static class DateAndTimeSettings
     {
 
-        private static bool _dateAndTimeTrueColor = true;
-        private static int _dateAndTimeDelay = 1000;
-        private static int _dateAndTimeMinimumRedColorLevel = 0;
-        private static int _dateAndTimeMinimumGreenColorLevel = 0;
-        private static int _dateAndTimeMinimumBlueColorLevel = 0;
-        private static int _dateAndTimeMinimumColorLevel = 0;
-        private static int _dateAndTimeMaximumRedColorLevel = 255;
-        private static int _dateAndTimeMaximumGreenColorLevel = 255;
-        private static int _dateAndTimeMaximumBlueColorLevel = 255;
-        private static int _dateAndTimeMaximumColorLevel = 255;
+        private static bool _TrueColor = true;
+        private static int _Delay = 1000;
+        private static int _MinimumRedColorLevel = 0;
+        private static int _MinimumGreenColorLevel = 0;
+        private static int _MinimumBlueColorLevel = 0;
+        private static int _MinimumColorLevel = 0;
+        private static int _MaximumRedColorLevel = 255;
+        private static int _MaximumGreenColorLevel = 255;
+        private static int _MaximumBlueColorLevel = 255;
+        private static int _MaximumColorLevel = 255;
 
         /// <summary>
         /// [DateAndTime] Enable truecolor support. Has a higher priority than 255 color support.
@@ -50,11 +50,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _dateAndTimeTrueColor;
+                return _TrueColor;
             }
             set
             {
-                _dateAndTimeTrueColor = value;
+                _TrueColor = value;
             }
         }
         /// <summary>
@@ -64,13 +64,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _dateAndTimeDelay;
+                return _Delay;
             }
             set
             {
                 if (value <= 0)
                     value = 1000;
-                _dateAndTimeDelay = value;
+                _Delay = value;
             }
         }
         /// <summary>
@@ -80,7 +80,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _dateAndTimeMinimumRedColorLevel;
+                return _MinimumRedColorLevel;
             }
             set
             {
@@ -88,7 +88,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _dateAndTimeMinimumRedColorLevel = value;
+                _MinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -98,7 +98,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _dateAndTimeMinimumGreenColorLevel;
+                return _MinimumGreenColorLevel;
             }
             set
             {
@@ -106,7 +106,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _dateAndTimeMinimumGreenColorLevel = value;
+                _MinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -116,7 +116,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _dateAndTimeMinimumBlueColorLevel;
+                return _MinimumBlueColorLevel;
             }
             set
             {
@@ -124,7 +124,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _dateAndTimeMinimumBlueColorLevel = value;
+                _MinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -134,7 +134,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _dateAndTimeMinimumColorLevel;
+                return _MinimumColorLevel;
             }
             set
             {
@@ -143,7 +143,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                _dateAndTimeMinimumColorLevel = value;
+                _MinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -153,15 +153,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _dateAndTimeMaximumRedColorLevel;
+                return _MaximumRedColorLevel;
             }
             set
             {
-                if (value <= _dateAndTimeMinimumRedColorLevel)
-                    value = _dateAndTimeMinimumRedColorLevel;
+                if (value <= _MinimumRedColorLevel)
+                    value = _MinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                _dateAndTimeMaximumRedColorLevel = value;
+                _MaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -171,15 +171,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _dateAndTimeMaximumGreenColorLevel;
+                return _MaximumGreenColorLevel;
             }
             set
             {
-                if (value <= _dateAndTimeMinimumGreenColorLevel)
-                    value = _dateAndTimeMinimumGreenColorLevel;
+                if (value <= _MinimumGreenColorLevel)
+                    value = _MinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                _dateAndTimeMaximumGreenColorLevel = value;
+                _MaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -189,15 +189,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _dateAndTimeMaximumBlueColorLevel;
+                return _MaximumBlueColorLevel;
             }
             set
             {
-                if (value <= _dateAndTimeMinimumBlueColorLevel)
-                    value = _dateAndTimeMinimumBlueColorLevel;
+                if (value <= _MinimumBlueColorLevel)
+                    value = _MinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                _dateAndTimeMaximumBlueColorLevel = value;
+                _MaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -207,16 +207,16 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _dateAndTimeMaximumColorLevel;
+                return _MaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= _dateAndTimeMinimumColorLevel)
-                    value = _dateAndTimeMinimumColorLevel;
+                if (value <= _MinimumColorLevel)
+                    value = _MinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                _dateAndTimeMaximumColorLevel = value;
+                _MaximumColorLevel = value;
             }
         }
 

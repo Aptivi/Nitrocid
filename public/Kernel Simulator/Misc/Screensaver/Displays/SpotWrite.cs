@@ -37,10 +37,10 @@ namespace KS.Misc.Screensaver.Displays
     public static class SpotWriteSettings
     {
 
-        private static int _spotWriteDelay = 100;
-        private static string _spotWriteWrite = "Kernel Simulator";
-        private static int _spotWriteNewScreenDelay = 3000;
-        private static string _spotWriteTextColor = new Color((int)ConsoleColor.White).PlainSequence;
+        private static int _Delay = 100;
+        private static string _Write = "Kernel Simulator";
+        private static int _NewScreenDelay = 3000;
+        private static string _TextColor = new Color((int)ConsoleColor.White).PlainSequence;
 
         /// <summary>
         /// [SpotWrite] How many milliseconds to wait before making the next write?
@@ -49,13 +49,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _spotWriteDelay;
+                return _Delay;
             }
             set
             {
                 if (value <= 0)
                     value = 100;
-                _spotWriteDelay = value;
+                _Delay = value;
             }
         }
         /// <summary>
@@ -65,13 +65,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _spotWriteWrite;
+                return _Write;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "Kernel Simulator";
-                _spotWriteWrite = value;
+                _Write = value;
             }
         }
         /// <summary>
@@ -81,13 +81,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _spotWriteNewScreenDelay;
+                return _NewScreenDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 3000;
-                _spotWriteNewScreenDelay = value;
+                _NewScreenDelay = value;
             }
         }
         /// <summary>
@@ -97,11 +97,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _spotWriteTextColor;
+                return _TextColor;
             }
             set
             {
-                _spotWriteTextColor = new Color(value).PlainSequence;
+                _TextColor = new Color(value).PlainSequence;
             }
         }
 

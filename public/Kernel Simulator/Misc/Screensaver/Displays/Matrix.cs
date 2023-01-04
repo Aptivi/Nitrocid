@@ -30,7 +30,7 @@ namespace KS.Misc.Screensaver.Displays
     public static class MatrixSettings
     {
 
-        private static int _matrixDelay = 1;
+        private static int _Delay = 1;
 
         /// <summary>
         /// [Matrix] How many milliseconds to wait before making the next write?
@@ -39,13 +39,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _matrixDelay;
+                return _Delay;
             }
             set
             {
                 if (value <= 0)
                     value = 1;
-                _matrixDelay = value;
+                _Delay = value;
             }
         }
 

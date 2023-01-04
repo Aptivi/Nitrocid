@@ -29,17 +29,17 @@ namespace KS.Misc.Screensaver.Displays
     public static class FaderSettings
     {
 
-        private static int _faderDelay = 50;
-        private static int _faderFadeOutDelay = 3000;
-        private static string _faderWrite = "Kernel Simulator";
-        private static int _faderMaxSteps = 25;
-        private static string _faderBackgroundColor = new Color((int)ConsoleColor.Black).PlainSequence;
-        private static int _faderMinimumRedColorLevel = 0;
-        private static int _faderMinimumGreenColorLevel = 0;
-        private static int _faderMinimumBlueColorLevel = 0;
-        private static int _faderMaximumRedColorLevel = 255;
-        private static int _faderMaximumGreenColorLevel = 255;
-        private static int _faderMaximumBlueColorLevel = 255;
+        private static int _Delay = 50;
+        private static int _FadeOutDelay = 3000;
+        private static string _Write = "Kernel Simulator";
+        private static int _MaxSteps = 25;
+        private static string _BackgroundColor = new Color((int)ConsoleColor.Black).PlainSequence;
+        private static int _MinimumRedColorLevel = 0;
+        private static int _MinimumGreenColorLevel = 0;
+        private static int _MinimumBlueColorLevel = 0;
+        private static int _MaximumRedColorLevel = 255;
+        private static int _MaximumGreenColorLevel = 255;
+        private static int _MaximumBlueColorLevel = 255;
 
         /// <summary>
         /// [Fader] How many milliseconds to wait before making the next write?
@@ -48,13 +48,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _faderDelay;
+                return _Delay;
             }
             set
             {
                 if (value <= 0)
                     value = 50;
-                _faderDelay = value;
+                _Delay = value;
             }
         }
         /// <summary>
@@ -64,13 +64,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _faderFadeOutDelay;
+                return _FadeOutDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 3000;
-                _faderFadeOutDelay = value;
+                _FadeOutDelay = value;
             }
         }
         /// <summary>
@@ -80,13 +80,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _faderWrite;
+                return _Write;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "Kernel Simulator";
-                _faderWrite = value;
+                _Write = value;
             }
         }
         /// <summary>
@@ -96,13 +96,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _faderMaxSteps;
+                return _MaxSteps;
             }
             set
             {
                 if (value <= 0)
                     value = 25;
-                _faderMaxSteps = value;
+                _MaxSteps = value;
             }
         }
         /// <summary>
@@ -112,11 +112,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _faderBackgroundColor;
+                return _BackgroundColor;
             }
             set
             {
-                _faderBackgroundColor = new Color(value).PlainSequence;
+                _BackgroundColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -126,7 +126,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _faderMinimumRedColorLevel;
+                return _MinimumRedColorLevel;
             }
             set
             {
@@ -134,7 +134,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _faderMinimumRedColorLevel = value;
+                _MinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -144,7 +144,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _faderMinimumGreenColorLevel;
+                return _MinimumGreenColorLevel;
             }
             set
             {
@@ -152,7 +152,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _faderMinimumGreenColorLevel = value;
+                _MinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -162,7 +162,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _faderMinimumBlueColorLevel;
+                return _MinimumBlueColorLevel;
             }
             set
             {
@@ -170,7 +170,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _faderMinimumBlueColorLevel = value;
+                _MinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -180,15 +180,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _faderMaximumRedColorLevel;
+                return _MaximumRedColorLevel;
             }
             set
             {
-                if (value <= _faderMinimumRedColorLevel)
-                    value = _faderMinimumRedColorLevel;
+                if (value <= _MinimumRedColorLevel)
+                    value = _MinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                _faderMaximumRedColorLevel = value;
+                _MaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -198,15 +198,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _faderMaximumGreenColorLevel;
+                return _MaximumGreenColorLevel;
             }
             set
             {
-                if (value <= _faderMinimumGreenColorLevel)
-                    value = _faderMinimumGreenColorLevel;
+                if (value <= _MinimumGreenColorLevel)
+                    value = _MinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                _faderMaximumGreenColorLevel = value;
+                _MaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -216,15 +216,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _faderMaximumBlueColorLevel;
+                return _MaximumBlueColorLevel;
             }
             set
             {
-                if (value <= _faderMinimumBlueColorLevel)
-                    value = _faderMinimumBlueColorLevel;
+                if (value <= _MinimumBlueColorLevel)
+                    value = _MinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                _faderMaximumBlueColorLevel = value;
+                _MaximumBlueColorLevel = value;
             }
         }
 

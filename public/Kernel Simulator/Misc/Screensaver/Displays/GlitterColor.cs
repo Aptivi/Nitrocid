@@ -32,16 +32,16 @@ namespace KS.Misc.Screensaver.Displays
     public static class GlitterColorSettings
     {
 
-        private static bool _glitterColorTrueColor = true;
-        private static int _glitterColorDelay = 1;
-        private static int _glitterColorMinimumRedColorLevel = 0;
-        private static int _glitterColorMinimumGreenColorLevel = 0;
-        private static int _glitterColorMinimumBlueColorLevel = 0;
-        private static int _glitterColorMinimumColorLevel = 0;
-        private static int _glitterColorMaximumRedColorLevel = 255;
-        private static int _glitterColorMaximumGreenColorLevel = 255;
-        private static int _glitterColorMaximumBlueColorLevel = 255;
-        private static int _glitterColorMaximumColorLevel = 255;
+        private static bool _TrueColor = true;
+        private static int _Delay = 1;
+        private static int _MinimumRedColorLevel = 0;
+        private static int _MinimumGreenColorLevel = 0;
+        private static int _MinimumBlueColorLevel = 0;
+        private static int _MinimumColorLevel = 0;
+        private static int _MaximumRedColorLevel = 255;
+        private static int _MaximumGreenColorLevel = 255;
+        private static int _MaximumBlueColorLevel = 255;
+        private static int _MaximumColorLevel = 255;
 
         /// <summary>
         /// [GlitterColor] Enable truecolor support. Has a higher priority than 255 color support.
@@ -50,11 +50,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _glitterColorTrueColor;
+                return _TrueColor;
             }
             set
             {
-                _glitterColorTrueColor = value;
+                _TrueColor = value;
             }
         }
         /// <summary>
@@ -64,13 +64,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _glitterColorDelay;
+                return _Delay;
             }
             set
             {
                 if (value <= 0)
                     value = 1;
-                _glitterColorDelay = value;
+                _Delay = value;
             }
         }
         /// <summary>
@@ -80,7 +80,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _glitterColorMinimumRedColorLevel;
+                return _MinimumRedColorLevel;
             }
             set
             {
@@ -88,7 +88,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _glitterColorMinimumRedColorLevel = value;
+                _MinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -98,7 +98,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _glitterColorMinimumGreenColorLevel;
+                return _MinimumGreenColorLevel;
             }
             set
             {
@@ -106,7 +106,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _glitterColorMinimumGreenColorLevel = value;
+                _MinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -116,7 +116,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _glitterColorMinimumBlueColorLevel;
+                return _MinimumBlueColorLevel;
             }
             set
             {
@@ -124,7 +124,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _glitterColorMinimumBlueColorLevel = value;
+                _MinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -134,7 +134,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _glitterColorMinimumColorLevel;
+                return _MinimumColorLevel;
             }
             set
             {
@@ -143,7 +143,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                _glitterColorMinimumColorLevel = value;
+                _MinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -153,15 +153,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _glitterColorMaximumRedColorLevel;
+                return _MaximumRedColorLevel;
             }
             set
             {
-                if (value <= _glitterColorMinimumRedColorLevel)
-                    value = _glitterColorMinimumRedColorLevel;
+                if (value <= _MinimumRedColorLevel)
+                    value = _MinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                _glitterColorMaximumRedColorLevel = value;
+                _MaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -171,15 +171,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _glitterColorMaximumGreenColorLevel;
+                return _MaximumGreenColorLevel;
             }
             set
             {
-                if (value <= _glitterColorMinimumGreenColorLevel)
-                    value = _glitterColorMinimumGreenColorLevel;
+                if (value <= _MinimumGreenColorLevel)
+                    value = _MinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                _glitterColorMaximumGreenColorLevel = value;
+                _MaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -189,15 +189,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _glitterColorMaximumBlueColorLevel;
+                return _MaximumBlueColorLevel;
             }
             set
             {
-                if (value <= _glitterColorMinimumBlueColorLevel)
-                    value = _glitterColorMinimumBlueColorLevel;
+                if (value <= _MinimumBlueColorLevel)
+                    value = _MinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                _glitterColorMaximumBlueColorLevel = value;
+                _MaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -207,16 +207,16 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _glitterColorMaximumColorLevel;
+                return _MaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= _glitterColorMinimumColorLevel)
-                    value = _glitterColorMinimumColorLevel;
+                if (value <= _MinimumColorLevel)
+                    value = _MinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                _glitterColorMaximumColorLevel = value;
+                _MaximumColorLevel = value;
             }
         }
 

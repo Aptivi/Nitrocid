@@ -34,18 +34,18 @@ namespace KS.Misc.Screensaver.Displays
     public static class LighterSettings
     {
 
-        private static bool _lighterTrueColor = true;
-        private static int _lighterDelay = 100;
-        private static int _lighterMaxPositions = 10;
-        private static string _lighterBackgroundColor = new Color((int)ConsoleColor.Black).PlainSequence;
-        private static int _lighterMinimumRedColorLevel = 0;
-        private static int _lighterMinimumGreenColorLevel = 0;
-        private static int _lighterMinimumBlueColorLevel = 0;
-        private static int _lighterMinimumColorLevel = 0;
-        private static int _lighterMaximumRedColorLevel = 255;
-        private static int _lighterMaximumGreenColorLevel = 255;
-        private static int _lighterMaximumBlueColorLevel = 255;
-        private static int _lighterMaximumColorLevel = 255;
+        private static bool _TrueColor = true;
+        private static int _Delay = 100;
+        private static int _MaxPositions = 10;
+        private static string _BackgroundColor = new Color((int)ConsoleColor.Black).PlainSequence;
+        private static int _MinimumRedColorLevel = 0;
+        private static int _MinimumGreenColorLevel = 0;
+        private static int _MinimumBlueColorLevel = 0;
+        private static int _MinimumColorLevel = 0;
+        private static int _MaximumRedColorLevel = 255;
+        private static int _MaximumGreenColorLevel = 255;
+        private static int _MaximumBlueColorLevel = 255;
+        private static int _MaximumColorLevel = 255;
 
         /// <summary>
         /// [Lighter] Enable truecolor support. Has a higher priority than 255 color support.
@@ -54,11 +54,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _lighterTrueColor;
+                return _TrueColor;
             }
             set
             {
-                _lighterTrueColor = value;
+                _TrueColor = value;
             }
         }
         /// <summary>
@@ -68,11 +68,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _lighterDelay;
+                return _Delay;
             }
             set
             {
-                _lighterDelay = value;
+                _Delay = value;
             }
         }
         /// <summary>
@@ -82,11 +82,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _lighterMaxPositions;
+                return _MaxPositions;
             }
             set
             {
-                _lighterMaxPositions = value;
+                _MaxPositions = value;
             }
         }
         /// <summary>
@@ -96,11 +96,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _lighterBackgroundColor;
+                return _BackgroundColor;
             }
             set
             {
-                _lighterBackgroundColor = value;
+                _BackgroundColor = value;
             }
         }
         /// <summary>
@@ -110,11 +110,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _lighterMinimumRedColorLevel;
+                return _MinimumRedColorLevel;
             }
             set
             {
-                _lighterMinimumRedColorLevel = value;
+                _MinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -124,11 +124,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _lighterMinimumGreenColorLevel;
+                return _MinimumGreenColorLevel;
             }
             set
             {
-                _lighterMinimumGreenColorLevel = value;
+                _MinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -138,11 +138,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _lighterMinimumBlueColorLevel;
+                return _MinimumBlueColorLevel;
             }
             set
             {
-                _lighterMinimumBlueColorLevel = value;
+                _MinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -152,11 +152,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _lighterMinimumColorLevel;
+                return _MinimumColorLevel;
             }
             set
             {
-                _lighterMinimumColorLevel = value;
+                _MinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -166,11 +166,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _lighterMaximumRedColorLevel;
+                return _MaximumRedColorLevel;
             }
             set
             {
-                _lighterMaximumRedColorLevel = value;
+                _MaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -180,11 +180,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _lighterMaximumGreenColorLevel;
+                return _MaximumGreenColorLevel;
             }
             set
             {
-                _lighterMaximumGreenColorLevel = value;
+                _MaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -194,11 +194,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _lighterMaximumBlueColorLevel;
+                return _MaximumBlueColorLevel;
             }
             set
             {
-                _lighterMaximumBlueColorLevel = value;
+                _MaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -208,11 +208,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _lighterMaximumColorLevel;
+                return _MaximumColorLevel;
             }
             set
             {
-                _lighterMaximumColorLevel = value;
+                _MaximumColorLevel = value;
             }
         }
 

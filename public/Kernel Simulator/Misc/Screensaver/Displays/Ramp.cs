@@ -34,42 +34,42 @@ namespace KS.Misc.Screensaver.Displays
     public static class RampSettings
     {
 
-        private static bool _rampTrueColor = true;
-        private static int _rampDelay = 20;
-        private static int _rampNextRampDelay = 250;
-        private static string _rampUpperLeftCornerChar = "╔";
-        private static string _rampUpperRightCornerChar = "╗";
-        private static string _rampLowerLeftCornerChar = "╚";
-        private static string _rampLowerRightCornerChar = "╝";
-        private static string _rampUpperFrameChar = "═";
-        private static string _rampLowerFrameChar = "═";
-        private static string _rampLeftFrameChar = "║";
-        private static string _rampRightFrameChar = "║";
-        private static int _rampMinimumRedColorLevelStart = 0;
-        private static int _rampMinimumGreenColorLevelStart = 0;
-        private static int _rampMinimumBlueColorLevelStart = 0;
-        private static int _rampMinimumColorLevelStart = 0;
-        private static int _rampMaximumRedColorLevelStart = 255;
-        private static int _rampMaximumGreenColorLevelStart = 255;
-        private static int _rampMaximumBlueColorLevelStart = 255;
-        private static int _rampMaximumColorLevelStart = 255;
-        private static int _rampMinimumRedColorLevelEnd = 0;
-        private static int _rampMinimumGreenColorLevelEnd = 0;
-        private static int _rampMinimumBlueColorLevelEnd = 0;
-        private static int _rampMinimumColorLevelEnd = 0;
-        private static int _rampMaximumRedColorLevelEnd = 255;
-        private static int _rampMaximumGreenColorLevelEnd = 255;
-        private static int _rampMaximumBlueColorLevelEnd = 255;
-        private static int _rampMaximumColorLevelEnd = 255;
-        private static string _rampUpperLeftCornerColor = 7.ToString();
-        private static string _rampUpperRightCornerColor = 7.ToString();
-        private static string _rampLowerLeftCornerColor = 7.ToString();
-        private static string _rampLowerRightCornerColor = 7.ToString();
-        private static string _rampUpperFrameColor = 7.ToString();
-        private static string _rampLowerFrameColor = 7.ToString();
-        private static string _rampLeftFrameColor = 7.ToString();
-        private static string _rampRightFrameColor = 7.ToString();
-        private static bool _rampUseBorderColors;
+        private static bool _TrueColor = true;
+        private static int _Delay = 20;
+        private static int _NextRampDelay = 250;
+        private static string _UpperLeftCornerChar = "╔";
+        private static string _UpperRightCornerChar = "╗";
+        private static string _LowerLeftCornerChar = "╚";
+        private static string _LowerRightCornerChar = "╝";
+        private static string _UpperFrameChar = "═";
+        private static string _LowerFrameChar = "═";
+        private static string _LeftFrameChar = "║";
+        private static string _RightFrameChar = "║";
+        private static int _MinimumRedColorLevelStart = 0;
+        private static int _MinimumGreenColorLevelStart = 0;
+        private static int _MinimumBlueColorLevelStart = 0;
+        private static int _MinimumColorLevelStart = 0;
+        private static int _MaximumRedColorLevelStart = 255;
+        private static int _MaximumGreenColorLevelStart = 255;
+        private static int _MaximumBlueColorLevelStart = 255;
+        private static int _MaximumColorLevelStart = 255;
+        private static int _MinimumRedColorLevelEnd = 0;
+        private static int _MinimumGreenColorLevelEnd = 0;
+        private static int _MinimumBlueColorLevelEnd = 0;
+        private static int _MinimumColorLevelEnd = 0;
+        private static int _MaximumRedColorLevelEnd = 255;
+        private static int _MaximumGreenColorLevelEnd = 255;
+        private static int _MaximumBlueColorLevelEnd = 255;
+        private static int _MaximumColorLevelEnd = 255;
+        private static string _UpperLeftCornerColor = 7.ToString();
+        private static string _UpperRightCornerColor = 7.ToString();
+        private static string _LowerLeftCornerColor = 7.ToString();
+        private static string _LowerRightCornerColor = 7.ToString();
+        private static string _UpperFrameColor = 7.ToString();
+        private static string _LowerFrameColor = 7.ToString();
+        private static string _LeftFrameColor = 7.ToString();
+        private static string _RightFrameColor = 7.ToString();
+        private static bool _UseBorderColors;
 
         /// <summary>
         /// [Ramp] Enable truecolor support. Has a higher priority than 255 color support.
@@ -78,11 +78,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampTrueColor;
+                return _TrueColor;
             }
             set
             {
-                _rampTrueColor = value;
+                _TrueColor = value;
             }
         }
         /// <summary>
@@ -92,13 +92,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampDelay;
+                return _Delay;
             }
             set
             {
                 if (value <= 0)
                     value = 20;
-                _rampDelay = value;
+                _Delay = value;
             }
         }
         /// <summary>
@@ -108,13 +108,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampNextRampDelay;
+                return _NextRampDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 250;
-                _rampNextRampDelay = value;
+                _NextRampDelay = value;
             }
         }
         /// <summary>
@@ -124,13 +124,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampUpperLeftCornerChar;
+                return _UpperLeftCornerChar;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "╔";
-                _rampUpperLeftCornerChar = value;
+                _UpperLeftCornerChar = value;
             }
         }
         /// <summary>
@@ -140,13 +140,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampUpperRightCornerChar;
+                return _UpperRightCornerChar;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "╗";
-                _rampUpperRightCornerChar = value;
+                _UpperRightCornerChar = value;
             }
         }
         /// <summary>
@@ -156,13 +156,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampLowerLeftCornerChar;
+                return _LowerLeftCornerChar;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "╚";
-                _rampLowerLeftCornerChar = value;
+                _LowerLeftCornerChar = value;
             }
         }
         /// <summary>
@@ -172,13 +172,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampLowerRightCornerChar;
+                return _LowerRightCornerChar;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "╝";
-                _rampLowerRightCornerChar = value;
+                _LowerRightCornerChar = value;
             }
         }
         /// <summary>
@@ -188,13 +188,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampUpperFrameChar;
+                return _UpperFrameChar;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "═";
-                _rampUpperFrameChar = value;
+                _UpperFrameChar = value;
             }
         }
         /// <summary>
@@ -204,13 +204,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampLowerFrameChar;
+                return _LowerFrameChar;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "═";
-                _rampLowerFrameChar = value;
+                _LowerFrameChar = value;
             }
         }
         /// <summary>
@@ -220,13 +220,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampLeftFrameChar;
+                return _LeftFrameChar;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "║";
-                _rampLeftFrameChar = value;
+                _LeftFrameChar = value;
             }
         }
         /// <summary>
@@ -236,13 +236,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampRightFrameChar;
+                return _RightFrameChar;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "║";
-                _rampRightFrameChar = value;
+                _RightFrameChar = value;
             }
         }
         /// <summary>
@@ -252,7 +252,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampMinimumRedColorLevelStart;
+                return _MinimumRedColorLevelStart;
             }
             set
             {
@@ -260,7 +260,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _rampMinimumRedColorLevelStart = value;
+                _MinimumRedColorLevelStart = value;
             }
         }
         /// <summary>
@@ -270,7 +270,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampMinimumGreenColorLevelStart;
+                return _MinimumGreenColorLevelStart;
             }
             set
             {
@@ -278,7 +278,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _rampMinimumGreenColorLevelStart = value;
+                _MinimumGreenColorLevelStart = value;
             }
         }
         /// <summary>
@@ -288,7 +288,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampMinimumBlueColorLevelStart;
+                return _MinimumBlueColorLevelStart;
             }
             set
             {
@@ -296,7 +296,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _rampMinimumBlueColorLevelStart = value;
+                _MinimumBlueColorLevelStart = value;
             }
         }
         /// <summary>
@@ -306,7 +306,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampMinimumColorLevelStart;
+                return _MinimumColorLevelStart;
             }
             set
             {
@@ -315,7 +315,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                _rampMinimumColorLevelStart = value;
+                _MinimumColorLevelStart = value;
             }
         }
         /// <summary>
@@ -325,15 +325,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampMaximumRedColorLevelStart;
+                return _MaximumRedColorLevelStart;
             }
             set
             {
-                if (value <= _rampMinimumRedColorLevelStart)
-                    value = _rampMinimumRedColorLevelStart;
+                if (value <= _MinimumRedColorLevelStart)
+                    value = _MinimumRedColorLevelStart;
                 if (value > 255)
                     value = 255;
-                _rampMaximumRedColorLevelStart = value;
+                _MaximumRedColorLevelStart = value;
             }
         }
         /// <summary>
@@ -343,15 +343,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampMaximumGreenColorLevelStart;
+                return _MaximumGreenColorLevelStart;
             }
             set
             {
-                if (value <= _rampMinimumGreenColorLevelStart)
-                    value = _rampMinimumGreenColorLevelStart;
+                if (value <= _MinimumGreenColorLevelStart)
+                    value = _MinimumGreenColorLevelStart;
                 if (value > 255)
                     value = 255;
-                _rampMaximumGreenColorLevelStart = value;
+                _MaximumGreenColorLevelStart = value;
             }
         }
         /// <summary>
@@ -361,15 +361,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampMaximumBlueColorLevelStart;
+                return _MaximumBlueColorLevelStart;
             }
             set
             {
-                if (value <= _rampMinimumBlueColorLevelStart)
-                    value = _rampMinimumBlueColorLevelStart;
+                if (value <= _MinimumBlueColorLevelStart)
+                    value = _MinimumBlueColorLevelStart;
                 if (value > 255)
                     value = 255;
-                _rampMaximumBlueColorLevelStart = value;
+                _MaximumBlueColorLevelStart = value;
             }
         }
         /// <summary>
@@ -379,16 +379,16 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampMaximumColorLevelStart;
+                return _MaximumColorLevelStart;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= _rampMinimumColorLevelStart)
-                    value = _rampMinimumColorLevelStart;
+                if (value <= _MinimumColorLevelStart)
+                    value = _MinimumColorLevelStart;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                _rampMaximumColorLevelStart = value;
+                _MaximumColorLevelStart = value;
             }
         }
         /// <summary>
@@ -398,7 +398,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampMinimumRedColorLevelEnd;
+                return _MinimumRedColorLevelEnd;
             }
             set
             {
@@ -406,7 +406,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _rampMinimumRedColorLevelEnd = value;
+                _MinimumRedColorLevelEnd = value;
             }
         }
         /// <summary>
@@ -416,7 +416,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampMinimumGreenColorLevelEnd;
+                return _MinimumGreenColorLevelEnd;
             }
             set
             {
@@ -424,7 +424,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _rampMinimumGreenColorLevelEnd = value;
+                _MinimumGreenColorLevelEnd = value;
             }
         }
         /// <summary>
@@ -434,7 +434,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampMinimumBlueColorLevelEnd;
+                return _MinimumBlueColorLevelEnd;
             }
             set
             {
@@ -442,7 +442,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _rampMinimumBlueColorLevelEnd = value;
+                _MinimumBlueColorLevelEnd = value;
             }
         }
         /// <summary>
@@ -452,7 +452,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampMinimumColorLevelEnd;
+                return _MinimumColorLevelEnd;
             }
             set
             {
@@ -461,7 +461,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                _rampMinimumColorLevelEnd = value;
+                _MinimumColorLevelEnd = value;
             }
         }
         /// <summary>
@@ -471,15 +471,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampMaximumRedColorLevelEnd;
+                return _MaximumRedColorLevelEnd;
             }
             set
             {
-                if (value <= _rampMinimumRedColorLevelEnd)
-                    value = _rampMinimumRedColorLevelEnd;
+                if (value <= _MinimumRedColorLevelEnd)
+                    value = _MinimumRedColorLevelEnd;
                 if (value > 255)
                     value = 255;
-                _rampMaximumRedColorLevelEnd = value;
+                _MaximumRedColorLevelEnd = value;
             }
         }
         /// <summary>
@@ -489,15 +489,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampMaximumGreenColorLevelEnd;
+                return _MaximumGreenColorLevelEnd;
             }
             set
             {
-                if (value <= _rampMinimumGreenColorLevelEnd)
-                    value = _rampMinimumGreenColorLevelEnd;
+                if (value <= _MinimumGreenColorLevelEnd)
+                    value = _MinimumGreenColorLevelEnd;
                 if (value > 255)
                     value = 255;
-                _rampMaximumGreenColorLevelEnd = value;
+                _MaximumGreenColorLevelEnd = value;
             }
         }
         /// <summary>
@@ -507,15 +507,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampMaximumBlueColorLevelEnd;
+                return _MaximumBlueColorLevelEnd;
             }
             set
             {
-                if (value <= _rampMinimumBlueColorLevelEnd)
-                    value = _rampMinimumBlueColorLevelEnd;
+                if (value <= _MinimumBlueColorLevelEnd)
+                    value = _MinimumBlueColorLevelEnd;
                 if (value > 255)
                     value = 255;
-                _rampMaximumBlueColorLevelEnd = value;
+                _MaximumBlueColorLevelEnd = value;
             }
         }
         /// <summary>
@@ -525,16 +525,16 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampMaximumColorLevelEnd;
+                return _MaximumColorLevelEnd;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= _rampMinimumColorLevelEnd)
-                    value = _rampMinimumColorLevelEnd;
+                if (value <= _MinimumColorLevelEnd)
+                    value = _MinimumColorLevelEnd;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                _rampMaximumColorLevelEnd = value;
+                _MaximumColorLevelEnd = value;
             }
         }
         /// <summary>
@@ -544,11 +544,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampUpperLeftCornerColor;
+                return _UpperLeftCornerColor;
             }
             set
             {
-                _rampUpperLeftCornerColor = new Color(value).PlainSequence;
+                _UpperLeftCornerColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -558,11 +558,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampUpperRightCornerColor;
+                return _UpperRightCornerColor;
             }
             set
             {
-                _rampUpperRightCornerColor = new Color(value).PlainSequence;
+                _UpperRightCornerColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -572,11 +572,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampLowerLeftCornerColor;
+                return _LowerLeftCornerColor;
             }
             set
             {
-                _rampLowerLeftCornerColor = new Color(value).PlainSequence;
+                _LowerLeftCornerColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -586,11 +586,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampLowerRightCornerColor;
+                return _LowerRightCornerColor;
             }
             set
             {
-                _rampLowerRightCornerColor = new Color(value).PlainSequence;
+                _LowerRightCornerColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -600,11 +600,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampUpperFrameColor;
+                return _UpperFrameColor;
             }
             set
             {
-                _rampUpperFrameColor = new Color(value).PlainSequence;
+                _UpperFrameColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -614,11 +614,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampLowerFrameColor;
+                return _LowerFrameColor;
             }
             set
             {
-                _rampLowerFrameColor = new Color(value).PlainSequence;
+                _LowerFrameColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -628,11 +628,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampLeftFrameColor;
+                return _LeftFrameColor;
             }
             set
             {
-                _rampLeftFrameColor = new Color(value).PlainSequence;
+                _LeftFrameColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -642,11 +642,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampRightFrameColor;
+                return _RightFrameColor;
             }
             set
             {
-                _rampRightFrameColor = new Color(value).PlainSequence;
+                _RightFrameColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -656,11 +656,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _rampUseBorderColors;
+                return _UseBorderColors;
             }
             set
             {
-                _rampUseBorderColors = value;
+                _UseBorderColors = value;
             }
         }
 

@@ -33,17 +33,17 @@ namespace KS.Misc.Screensaver.Displays
     public static class StackBoxSettings
     {
 
-        private static bool _stackBoxTrueColor = true;
-        private static int _stackBoxDelay = 10;
-        private static bool _stackBoxFill = true;
-        private static int _stackBoxMinimumRedColorLevel = 0;
-        private static int _stackBoxMinimumGreenColorLevel = 0;
-        private static int _stackBoxMinimumBlueColorLevel = 0;
-        private static int _stackBoxMinimumColorLevel = 0;
-        private static int _stackBoxMaximumRedColorLevel = 255;
-        private static int _stackBoxMaximumGreenColorLevel = 255;
-        private static int _stackBoxMaximumBlueColorLevel = 255;
-        private static int _stackBoxMaximumColorLevel = 255;
+        private static bool _TrueColor = true;
+        private static int _Delay = 10;
+        private static bool _Fill = true;
+        private static int _MinimumRedColorLevel = 0;
+        private static int _MinimumGreenColorLevel = 0;
+        private static int _MinimumBlueColorLevel = 0;
+        private static int _MinimumColorLevel = 0;
+        private static int _MaximumRedColorLevel = 255;
+        private static int _MaximumGreenColorLevel = 255;
+        private static int _MaximumBlueColorLevel = 255;
+        private static int _MaximumColorLevel = 255;
 
         /// <summary>
         /// [StackBox] Enable truecolor support. Has a higher priority than 255 color support.
@@ -52,11 +52,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _stackBoxTrueColor;
+                return _TrueColor;
             }
             set
             {
-                _stackBoxTrueColor = value;
+                _TrueColor = value;
             }
         }
         /// <summary>
@@ -66,13 +66,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _stackBoxDelay;
+                return _Delay;
             }
             set
             {
                 if (value <= 0)
                     value = 10;
-                _stackBoxDelay = value;
+                _Delay = value;
             }
         }
         /// <summary>
@@ -82,11 +82,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _stackBoxFill;
+                return _Fill;
             }
             set
             {
-                _stackBoxFill = value;
+                _Fill = value;
             }
         }
         /// <summary>
@@ -96,7 +96,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _stackBoxMinimumRedColorLevel;
+                return _MinimumRedColorLevel;
             }
             set
             {
@@ -104,7 +104,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _stackBoxMinimumRedColorLevel = value;
+                _MinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -114,7 +114,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _stackBoxMinimumGreenColorLevel;
+                return _MinimumGreenColorLevel;
             }
             set
             {
@@ -122,7 +122,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _stackBoxMinimumGreenColorLevel = value;
+                _MinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -132,7 +132,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _stackBoxMinimumBlueColorLevel;
+                return _MinimumBlueColorLevel;
             }
             set
             {
@@ -140,7 +140,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _stackBoxMinimumBlueColorLevel = value;
+                _MinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -150,7 +150,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _stackBoxMinimumColorLevel;
+                return _MinimumColorLevel;
             }
             set
             {
@@ -159,7 +159,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                _stackBoxMinimumColorLevel = value;
+                _MinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -169,15 +169,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _stackBoxMaximumRedColorLevel;
+                return _MaximumRedColorLevel;
             }
             set
             {
-                if (value <= _stackBoxMinimumRedColorLevel)
-                    value = _stackBoxMinimumRedColorLevel;
+                if (value <= _MinimumRedColorLevel)
+                    value = _MinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                _stackBoxMaximumRedColorLevel = value;
+                _MaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -187,15 +187,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _stackBoxMaximumGreenColorLevel;
+                return _MaximumGreenColorLevel;
             }
             set
             {
-                if (value <= _stackBoxMinimumGreenColorLevel)
-                    value = _stackBoxMinimumGreenColorLevel;
+                if (value <= _MinimumGreenColorLevel)
+                    value = _MinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                _stackBoxMaximumGreenColorLevel = value;
+                _MaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -205,15 +205,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _stackBoxMaximumBlueColorLevel;
+                return _MaximumBlueColorLevel;
             }
             set
             {
-                if (value <= _stackBoxMinimumBlueColorLevel)
-                    value = _stackBoxMinimumBlueColorLevel;
+                if (value <= _MinimumBlueColorLevel)
+                    value = _MinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                _stackBoxMaximumBlueColorLevel = value;
+                _MaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -223,16 +223,16 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _stackBoxMaximumColorLevel;
+                return _MaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= _stackBoxMinimumColorLevel)
-                    value = _stackBoxMinimumColorLevel;
+                if (value <= _MinimumColorLevel)
+                    value = _MinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                _stackBoxMaximumColorLevel = value;
+                _MaximumColorLevel = value;
             }
         }
 

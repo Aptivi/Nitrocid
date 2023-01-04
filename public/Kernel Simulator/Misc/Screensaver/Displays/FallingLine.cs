@@ -34,17 +34,17 @@ namespace KS.Misc.Screensaver.Displays
     public static class FallingLineSettings
     {
 
-        private static bool _fallingLineTrueColor = true;
-        private static int _fallingLineDelay = 10;
-        private static int _fallingLineMaxSteps = 25;
-        private static int _fallingLineMinimumRedColorLevel = 0;
-        private static int _fallingLineMinimumGreenColorLevel = 0;
-        private static int _fallingLineMinimumBlueColorLevel = 0;
-        private static int _fallingLineMinimumColorLevel = 0;
-        private static int _fallingLineMaximumRedColorLevel = 255;
-        private static int _fallingLineMaximumGreenColorLevel = 255;
-        private static int _fallingLineMaximumBlueColorLevel = 255;
-        private static int _fallingLineMaximumColorLevel = 255;
+        private static bool _TrueColor = true;
+        private static int _Delay = 10;
+        private static int _MaxSteps = 25;
+        private static int _MinimumRedColorLevel = 0;
+        private static int _MinimumGreenColorLevel = 0;
+        private static int _MinimumBlueColorLevel = 0;
+        private static int _MinimumColorLevel = 0;
+        private static int _MaximumRedColorLevel = 255;
+        private static int _MaximumGreenColorLevel = 255;
+        private static int _MaximumBlueColorLevel = 255;
+        private static int _MaximumColorLevel = 255;
 
         /// <summary>
         /// [FallingLine] Enable truecolor support. Has a higher priority than 255 color support.
@@ -53,11 +53,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _fallingLineTrueColor;
+                return _TrueColor;
             }
             set
             {
-                _fallingLineTrueColor = value;
+                _TrueColor = value;
             }
         }
         /// <summary>
@@ -67,13 +67,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _fallingLineDelay;
+                return _Delay;
             }
             set
             {
                 if (value <= 0)
                     value = 10;
-                _fallingLineDelay = value;
+                _Delay = value;
             }
         }
         /// <summary>
@@ -83,13 +83,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _fallingLineMaxSteps;
+                return _MaxSteps;
             }
             set
             {
                 if (value <= 0)
                     value = 25;
-                _fallingLineMaxSteps = value;
+                _MaxSteps = value;
             }
         }
         /// <summary>
@@ -99,7 +99,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _fallingLineMinimumRedColorLevel;
+                return _MinimumRedColorLevel;
             }
             set
             {
@@ -107,7 +107,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _fallingLineMinimumRedColorLevel = value;
+                _MinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -117,7 +117,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _fallingLineMinimumGreenColorLevel;
+                return _MinimumGreenColorLevel;
             }
             set
             {
@@ -125,7 +125,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _fallingLineMinimumGreenColorLevel = value;
+                _MinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -135,7 +135,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _fallingLineMinimumBlueColorLevel;
+                return _MinimumBlueColorLevel;
             }
             set
             {
@@ -143,7 +143,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _fallingLineMinimumBlueColorLevel = value;
+                _MinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -153,7 +153,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _fallingLineMinimumColorLevel;
+                return _MinimumColorLevel;
             }
             set
             {
@@ -162,7 +162,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                _fallingLineMinimumColorLevel = value;
+                _MinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -172,15 +172,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _fallingLineMaximumRedColorLevel;
+                return _MaximumRedColorLevel;
             }
             set
             {
-                if (value <= _fallingLineMinimumRedColorLevel)
-                    value = _fallingLineMinimumRedColorLevel;
+                if (value <= _MinimumRedColorLevel)
+                    value = _MinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                _fallingLineMaximumRedColorLevel = value;
+                _MaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -190,15 +190,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _fallingLineMaximumGreenColorLevel;
+                return _MaximumGreenColorLevel;
             }
             set
             {
-                if (value <= _fallingLineMinimumGreenColorLevel)
-                    value = _fallingLineMinimumGreenColorLevel;
+                if (value <= _MinimumGreenColorLevel)
+                    value = _MinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                _fallingLineMaximumGreenColorLevel = value;
+                _MaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -208,15 +208,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _fallingLineMaximumBlueColorLevel;
+                return _MaximumBlueColorLevel;
             }
             set
             {
-                if (value <= _fallingLineMinimumBlueColorLevel)
-                    value = _fallingLineMinimumBlueColorLevel;
+                if (value <= _MinimumBlueColorLevel)
+                    value = _MinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                _fallingLineMaximumBlueColorLevel = value;
+                _MaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -226,16 +226,16 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _fallingLineMaximumColorLevel;
+                return _MaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= _fallingLineMinimumColorLevel)
-                    value = _fallingLineMinimumColorLevel;
+                if (value <= _MinimumColorLevel)
+                    value = _MinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                _fallingLineMaximumColorLevel = value;
+                _MaximumColorLevel = value;
             }
         }
 

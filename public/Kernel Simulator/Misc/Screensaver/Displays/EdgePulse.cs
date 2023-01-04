@@ -28,14 +28,14 @@ namespace KS.Misc.Screensaver.Displays
     public static class EdgePulseSettings
     {
 
-        private static int _edgepulseDelay = 50;
-        private static int _edgepulseMaxSteps = 25;
-        private static int _edgepulseMinimumRedColorLevel = 0;
-        private static int _edgepulseMinimumGreenColorLevel = 0;
-        private static int _edgepulseMinimumBlueColorLevel = 0;
-        private static int _edgepulseMaximumRedColorLevel = 255;
-        private static int _edgepulseMaximumGreenColorLevel = 255;
-        private static int _edgepulseMaximumBlueColorLevel = 255;
+        private static int _Delay = 50;
+        private static int _MaxSteps = 25;
+        private static int _MinimumRedColorLevel = 0;
+        private static int _MinimumGreenColorLevel = 0;
+        private static int _MinimumBlueColorLevel = 0;
+        private static int _MaximumRedColorLevel = 255;
+        private static int _MaximumGreenColorLevel = 255;
+        private static int _MaximumBlueColorLevel = 255;
 
         /// <summary>
         /// [EdgePulse] How many milliseconds to wait before making the next write?
@@ -44,13 +44,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _edgepulseDelay;
+                return _Delay;
             }
             set
             {
                 if (value <= 0)
                     value = 50;
-                _edgepulseDelay = value;
+                _Delay = value;
             }
         }
         /// <summary>
@@ -60,13 +60,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _edgepulseMaxSteps;
+                return _MaxSteps;
             }
             set
             {
                 if (value <= 0)
                     value = 25;
-                _edgepulseMaxSteps = value;
+                _MaxSteps = value;
             }
         }
         /// <summary>
@@ -76,7 +76,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _edgepulseMinimumRedColorLevel;
+                return _MinimumRedColorLevel;
             }
             set
             {
@@ -84,7 +84,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _edgepulseMinimumRedColorLevel = value;
+                _MinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -94,7 +94,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _edgepulseMinimumGreenColorLevel;
+                return _MinimumGreenColorLevel;
             }
             set
             {
@@ -102,7 +102,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _edgepulseMinimumGreenColorLevel = value;
+                _MinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -112,7 +112,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _edgepulseMinimumBlueColorLevel;
+                return _MinimumBlueColorLevel;
             }
             set
             {
@@ -120,7 +120,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _edgepulseMinimumBlueColorLevel = value;
+                _MinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -130,15 +130,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _edgepulseMaximumRedColorLevel;
+                return _MaximumRedColorLevel;
             }
             set
             {
-                if (value <= _edgepulseMinimumRedColorLevel)
-                    value = _edgepulseMinimumRedColorLevel;
+                if (value <= _MinimumRedColorLevel)
+                    value = _MinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                _edgepulseMaximumRedColorLevel = value;
+                _MaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -148,15 +148,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _edgepulseMaximumGreenColorLevel;
+                return _MaximumGreenColorLevel;
             }
             set
             {
-                if (value <= _edgepulseMinimumGreenColorLevel)
-                    value = _edgepulseMinimumGreenColorLevel;
+                if (value <= _MinimumGreenColorLevel)
+                    value = _MinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                _edgepulseMaximumGreenColorLevel = value;
+                _MaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -166,15 +166,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _edgepulseMaximumBlueColorLevel;
+                return _MaximumBlueColorLevel;
             }
             set
             {
-                if (value <= _edgepulseMinimumBlueColorLevel)
-                    value = _edgepulseMinimumBlueColorLevel;
+                if (value <= _MinimumBlueColorLevel)
+                    value = _MinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                _edgepulseMaximumBlueColorLevel = value;
+                _MaximumBlueColorLevel = value;
             }
         }
 

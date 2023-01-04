@@ -28,7 +28,7 @@ namespace KS.Misc.Screensaver.Displays
     public static class SpinSettings
     {
 
-        private static int _spinDelay = 10;
+        private static int _Delay = 10;
 
         /// <summary>
         /// [Spin] How many milliseconds to wait before making the next write?
@@ -37,13 +37,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _spinDelay;
+                return _Delay;
             }
             set
             {
                 if (value <= 0)
                     value = 50;
-                _spinDelay = value;
+                _Delay = value;
             }
         }
 

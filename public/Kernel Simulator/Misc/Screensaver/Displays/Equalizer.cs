@@ -34,7 +34,7 @@ namespace KS.Misc.Screensaver.Displays
     public static class EqualizerSettings
     {
 
-        private static int _equalizerNextScreenDelay = 3000;
+        private static int _NextScreenDelay = 3000;
 
         /// <summary>
         /// [Equalizer] How many milliseconds to wait before going to next equalizer preset?
@@ -43,13 +43,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _equalizerNextScreenDelay;
+                return _NextScreenDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 3000;
-                _equalizerNextScreenDelay = value;
+                _NextScreenDelay = value;
             }
         }
 

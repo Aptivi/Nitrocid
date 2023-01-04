@@ -33,17 +33,17 @@ namespace KS.Misc.Screensaver.Displays
     public static class FireworksSettings
     {
 
-        private static bool _fireworksTrueColor = true;
-        private static int _fireworksDelay = 10;
-        private static int _fireworksRadius = 5;
-        private static int _fireworksMinimumRedColorLevel = 0;
-        private static int _fireworksMinimumGreenColorLevel = 0;
-        private static int _fireworksMinimumBlueColorLevel = 0;
-        private static int _fireworksMinimumColorLevel = 0;
-        private static int _fireworksMaximumRedColorLevel = 255;
-        private static int _fireworksMaximumGreenColorLevel = 255;
-        private static int _fireworksMaximumBlueColorLevel = 255;
-        private static int _fireworksMaximumColorLevel = 255;
+        private static bool _TrueColor = true;
+        private static int _Delay = 10;
+        private static int _Radius = 5;
+        private static int _MinimumRedColorLevel = 0;
+        private static int _MinimumGreenColorLevel = 0;
+        private static int _MinimumBlueColorLevel = 0;
+        private static int _MinimumColorLevel = 0;
+        private static int _MaximumRedColorLevel = 255;
+        private static int _MaximumGreenColorLevel = 255;
+        private static int _MaximumBlueColorLevel = 255;
+        private static int _MaximumColorLevel = 255;
 
         /// <summary>
         /// [Fireworks] Enable truecolor support. Has a higher priority than 255 color support.
@@ -52,11 +52,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _fireworksTrueColor;
+                return _TrueColor;
             }
             set
             {
-                _fireworksTrueColor = value;
+                _TrueColor = value;
             }
         }
         /// <summary>
@@ -66,13 +66,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _fireworksDelay;
+                return _Delay;
             }
             set
             {
                 if (value <= 0)
                     value = 10;
-                _fireworksDelay = value;
+                _Delay = value;
             }
         }
         /// <summary>
@@ -82,13 +82,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _fireworksRadius;
+                return _Radius;
             }
             set
             {
                 if (value <= 0)
                     value = 5;
-                _fireworksRadius = value;
+                _Radius = value;
             }
         }
         /// <summary>
@@ -98,7 +98,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _fireworksMinimumRedColorLevel;
+                return _MinimumRedColorLevel;
             }
             set
             {
@@ -106,7 +106,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _fireworksMinimumRedColorLevel = value;
+                _MinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -116,7 +116,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _fireworksMinimumGreenColorLevel;
+                return _MinimumGreenColorLevel;
             }
             set
             {
@@ -124,7 +124,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _fireworksMinimumGreenColorLevel = value;
+                _MinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -134,7 +134,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _fireworksMinimumBlueColorLevel;
+                return _MinimumBlueColorLevel;
             }
             set
             {
@@ -142,7 +142,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _fireworksMinimumBlueColorLevel = value;
+                _MinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -152,7 +152,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _fireworksMinimumColorLevel;
+                return _MinimumColorLevel;
             }
             set
             {
@@ -161,7 +161,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                _fireworksMinimumColorLevel = value;
+                _MinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -171,15 +171,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _fireworksMaximumRedColorLevel;
+                return _MaximumRedColorLevel;
             }
             set
             {
-                if (value <= _fireworksMinimumRedColorLevel)
-                    value = _fireworksMinimumRedColorLevel;
+                if (value <= _MinimumRedColorLevel)
+                    value = _MinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                _fireworksMaximumRedColorLevel = value;
+                _MaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -189,15 +189,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _fireworksMaximumGreenColorLevel;
+                return _MaximumGreenColorLevel;
             }
             set
             {
-                if (value <= _fireworksMinimumGreenColorLevel)
-                    value = _fireworksMinimumGreenColorLevel;
+                if (value <= _MinimumGreenColorLevel)
+                    value = _MinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                _fireworksMaximumGreenColorLevel = value;
+                _MaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -207,15 +207,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _fireworksMaximumBlueColorLevel;
+                return _MaximumBlueColorLevel;
             }
             set
             {
-                if (value <= _fireworksMinimumBlueColorLevel)
-                    value = _fireworksMinimumBlueColorLevel;
+                if (value <= _MinimumBlueColorLevel)
+                    value = _MinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                _fireworksMaximumBlueColorLevel = value;
+                _MaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -225,16 +225,16 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _fireworksMaximumColorLevel;
+                return _MaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= _fireworksMinimumColorLevel)
-                    value = _fireworksMinimumColorLevel;
+                if (value <= _MinimumColorLevel)
+                    value = _MinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                _fireworksMaximumColorLevel = value;
+                _MaximumColorLevel = value;
             }
         }
 

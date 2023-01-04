@@ -28,19 +28,19 @@ namespace KS.Misc.Screensaver.Displays
     public static class BeatFaderSettings
     {
 
-        private static bool _beatFaderTrueColor = true;
-        private static bool _beatFaderCycleColors = true;
-        private static string _beatFaderBeatColor = 17.ToString();
-        private static int _beatFaderDelay = 120;
-        private static int _beatFaderMaxSteps = 25;
-        private static int _beatFaderMinimumRedColorLevel = 0;
-        private static int _beatFaderMinimumGreenColorLevel = 0;
-        private static int _beatFaderMinimumBlueColorLevel = 0;
-        private static int _beatFaderMinimumColorLevel = 0;
-        private static int _beatFaderMaximumRedColorLevel = 255;
-        private static int _beatFaderMaximumGreenColorLevel = 255;
-        private static int _beatFaderMaximumBlueColorLevel = 255;
-        private static int _beatFaderMaximumColorLevel = 255;
+        private static bool _TrueColor = true;
+        private static bool _CycleColors = true;
+        private static string _BeatColor = 17.ToString();
+        private static int _Delay = 120;
+        private static int _MaxSteps = 25;
+        private static int _MinimumRedColorLevel = 0;
+        private static int _MinimumGreenColorLevel = 0;
+        private static int _MinimumBlueColorLevel = 0;
+        private static int _MinimumColorLevel = 0;
+        private static int _MaximumRedColorLevel = 255;
+        private static int _MaximumGreenColorLevel = 255;
+        private static int _MaximumBlueColorLevel = 255;
+        private static int _MaximumColorLevel = 255;
 
         /// <summary>
         /// [BeatFader] Enable truecolor support. Has a higher priority than 255 color support. Please note that it only works if color cycling is enabled.
@@ -49,11 +49,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _beatFaderTrueColor;
+                return _TrueColor;
             }
             set
             {
-                _beatFaderTrueColor = value;
+                _TrueColor = value;
             }
         }
         /// <summary>
@@ -63,11 +63,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _beatFaderCycleColors;
+                return _CycleColors;
             }
             set
             {
-                _beatFaderCycleColors = value;
+                _CycleColors = value;
             }
         }
         /// <summary>
@@ -77,11 +77,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _beatFaderBeatColor;
+                return _BeatColor;
             }
             set
             {
-                _beatFaderBeatColor = new Color(value).PlainSequence;
+                _BeatColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -91,13 +91,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _beatFaderDelay;
+                return _Delay;
             }
             set
             {
                 if (value <= 0)
                     value = 120;
-                _beatFaderDelay = value;
+                _Delay = value;
             }
         }
         /// <summary>
@@ -107,13 +107,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _beatFaderMaxSteps;
+                return _MaxSteps;
             }
             set
             {
                 if (value <= 0)
                     value = 25;
-                _beatFaderMaxSteps = value;
+                _MaxSteps = value;
             }
         }
         /// <summary>
@@ -123,7 +123,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _beatFaderMinimumRedColorLevel;
+                return _MinimumRedColorLevel;
             }
             set
             {
@@ -131,7 +131,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _beatFaderMinimumRedColorLevel = value;
+                _MinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -141,7 +141,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _beatFaderMinimumGreenColorLevel;
+                return _MinimumGreenColorLevel;
             }
             set
             {
@@ -149,7 +149,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _beatFaderMinimumGreenColorLevel = value;
+                _MinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -159,7 +159,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _beatFaderMinimumBlueColorLevel;
+                return _MinimumBlueColorLevel;
             }
             set
             {
@@ -167,7 +167,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _beatFaderMinimumBlueColorLevel = value;
+                _MinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -177,7 +177,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _beatFaderMinimumColorLevel;
+                return _MinimumColorLevel;
             }
             set
             {
@@ -186,7 +186,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                _beatFaderMinimumColorLevel = value;
+                _MinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -196,15 +196,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _beatFaderMaximumRedColorLevel;
+                return _MaximumRedColorLevel;
             }
             set
             {
-                if (value <= _beatFaderMinimumRedColorLevel)
-                    value = _beatFaderMinimumRedColorLevel;
+                if (value <= _MinimumRedColorLevel)
+                    value = _MinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                _beatFaderMaximumRedColorLevel = value;
+                _MaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -214,15 +214,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _beatFaderMaximumGreenColorLevel;
+                return _MaximumGreenColorLevel;
             }
             set
             {
-                if (value <= _beatFaderMinimumGreenColorLevel)
-                    value = _beatFaderMinimumGreenColorLevel;
+                if (value <= _MinimumGreenColorLevel)
+                    value = _MinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                _beatFaderMaximumGreenColorLevel = value;
+                _MaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -232,15 +232,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _beatFaderMaximumBlueColorLevel;
+                return _MaximumBlueColorLevel;
             }
             set
             {
-                if (value <= _beatFaderMinimumBlueColorLevel)
-                    value = _beatFaderMinimumBlueColorLevel;
+                if (value <= _MinimumBlueColorLevel)
+                    value = _MinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                _beatFaderMaximumBlueColorLevel = value;
+                _MaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -250,16 +250,16 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _beatFaderMaximumColorLevel;
+                return _MaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= _beatFaderMinimumColorLevel)
-                    value = _beatFaderMinimumColorLevel;
+                if (value <= _MinimumColorLevel)
+                    value = _MinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                _beatFaderMaximumColorLevel = value;
+                _MaximumColorLevel = value;
             }
         }
 

@@ -34,18 +34,18 @@ namespace KS.Misc.Screensaver.Displays
     public static class WipeSettings
     {
 
-        private static bool _wipeTrueColor = true;
-        private static int _wipeDelay = 10;
-        private static int _wipeWipesNeededToChangeDirection = 10;
-        private static string _wipeBackgroundColor = new Color((int)ConsoleColor.Black).PlainSequence;
-        private static int _wipeMinimumRedColorLevel = 0;
-        private static int _wipeMinimumGreenColorLevel = 0;
-        private static int _wipeMinimumBlueColorLevel = 0;
-        private static int _wipeMinimumColorLevel = 0;
-        private static int _wipeMaximumRedColorLevel = 255;
-        private static int _wipeMaximumGreenColorLevel = 255;
-        private static int _wipeMaximumBlueColorLevel = 255;
-        private static int _wipeMaximumColorLevel = 255;
+        private static bool _TrueColor = true;
+        private static int _Delay = 10;
+        private static int _WipesNeededToChangeDirection = 10;
+        private static string _BackgroundColor = new Color((int)ConsoleColor.Black).PlainSequence;
+        private static int _MinimumRedColorLevel = 0;
+        private static int _MinimumGreenColorLevel = 0;
+        private static int _MinimumBlueColorLevel = 0;
+        private static int _MinimumColorLevel = 0;
+        private static int _MaximumRedColorLevel = 255;
+        private static int _MaximumGreenColorLevel = 255;
+        private static int _MaximumBlueColorLevel = 255;
+        private static int _MaximumColorLevel = 255;
 
         /// <summary>
         /// [Wipe] Enable truecolor support. Has a higher priority than 255 color support.
@@ -54,11 +54,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _wipeTrueColor;
+                return _TrueColor;
             }
             set
             {
-                _wipeTrueColor = value;
+                _TrueColor = value;
             }
         }
         /// <summary>
@@ -68,11 +68,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _wipeDelay;
+                return _Delay;
             }
             set
             {
-                _wipeDelay = value;
+                _Delay = value;
             }
         }
         /// <summary>
@@ -82,11 +82,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _wipeWipesNeededToChangeDirection;
+                return _WipesNeededToChangeDirection;
             }
             set
             {
-                _wipeWipesNeededToChangeDirection = value;
+                _WipesNeededToChangeDirection = value;
             }
         }
         /// <summary>
@@ -96,11 +96,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _wipeBackgroundColor;
+                return _BackgroundColor;
             }
             set
             {
-                _wipeBackgroundColor = value;
+                _BackgroundColor = value;
             }
         }
         /// <summary>
@@ -110,11 +110,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _wipeMinimumRedColorLevel;
+                return _MinimumRedColorLevel;
             }
             set
             {
-                _wipeMinimumRedColorLevel = value;
+                _MinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -124,11 +124,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _wipeMinimumGreenColorLevel;
+                return _MinimumGreenColorLevel;
             }
             set
             {
-                _wipeMinimumGreenColorLevel = value;
+                _MinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -138,11 +138,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _wipeMinimumBlueColorLevel;
+                return _MinimumBlueColorLevel;
             }
             set
             {
-                _wipeMinimumBlueColorLevel = value;
+                _MinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -152,11 +152,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _wipeMinimumColorLevel;
+                return _MinimumColorLevel;
             }
             set
             {
-                _wipeMinimumColorLevel = value;
+                _MinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -166,11 +166,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _wipeMaximumRedColorLevel;
+                return _MaximumRedColorLevel;
             }
             set
             {
-                _wipeMaximumRedColorLevel = value;
+                _MaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -180,11 +180,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _wipeMaximumGreenColorLevel;
+                return _MaximumGreenColorLevel;
             }
             set
             {
-                _wipeMaximumGreenColorLevel = value;
+                _MaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -194,11 +194,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _wipeMaximumBlueColorLevel;
+                return _MaximumBlueColorLevel;
             }
             set
             {
-                _wipeMaximumBlueColorLevel = value;
+                _MaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -208,11 +208,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _wipeMaximumColorLevel;
+                return _MaximumColorLevel;
             }
             set
             {
-                _wipeMaximumColorLevel = value;
+                _MaximumColorLevel = value;
             }
         }
 

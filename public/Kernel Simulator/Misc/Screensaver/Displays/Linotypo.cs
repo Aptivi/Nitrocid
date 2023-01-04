@@ -37,18 +37,18 @@ namespace KS.Misc.Screensaver.Displays
     public static class LinotypoSettings
     {
 
-        private static int _linotypoDelay = 50;
-        private static int _linotypoNewScreenDelay = 3000;
-        private static string _linotypoWrite = "Kernel Simulator";
-        private static int _linotypoWritingSpeedMin = 50;
-        private static int _linotypoWritingSpeedMax = 80;
-        private static int _linotypoMissStrikePossibility = 1;
-        private static int _linotypoTextColumns = 3;
-        private static int _linotypoEtaoinThreshold = 5;
-        private static int _linotypoEtaoinCappingPossibility = 5;
-        private static FillType _linotypoEtaoinType = FillType.EtaoinPattern;
-        private static int _linotypoMissPossibility = 10;
-        private static string _linotypoTextColor = new Color((int)ConsoleColor.White).PlainSequence;
+        private static int _Delay = 50;
+        private static int _NewScreenDelay = 3000;
+        private static string _Write = "Kernel Simulator";
+        private static int _WritingSpeedMin = 50;
+        private static int _WritingSpeedMax = 80;
+        private static int _MissStrikePossibility = 1;
+        private static int _TextColumns = 3;
+        private static int _EtaoinThreshold = 5;
+        private static int _EtaoinCappingPossibility = 5;
+        private static FillType _EtaoinType = FillType.EtaoinPattern;
+        private static int _MissPossibility = 10;
+        private static string _TextColor = new Color((int)ConsoleColor.White).PlainSequence;
 
         /// <summary>
         /// [Linotypo] How many milliseconds to wait before making the next write?
@@ -57,13 +57,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _linotypoDelay;
+                return _Delay;
             }
             set
             {
                 if (value <= 0)
                     value = 50;
-                _linotypoDelay = value;
+                _Delay = value;
             }
         }
         /// <summary>
@@ -73,13 +73,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _linotypoNewScreenDelay;
+                return _NewScreenDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 3000;
-                _linotypoNewScreenDelay = value;
+                _NewScreenDelay = value;
             }
         }
         /// <summary>
@@ -89,13 +89,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _linotypoWrite;
+                return _Write;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "Kernel Simulator";
-                _linotypoWrite = value;
+                _Write = value;
             }
         }
         /// <summary>
@@ -105,13 +105,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _linotypoWritingSpeedMin;
+                return _WritingSpeedMin;
             }
             set
             {
                 if (value <= 0)
                     value = 50;
-                _linotypoWritingSpeedMin = value;
+                _WritingSpeedMin = value;
             }
         }
         /// <summary>
@@ -121,13 +121,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _linotypoWritingSpeedMax;
+                return _WritingSpeedMax;
             }
             set
             {
                 if (value <= 0)
                     value = 80;
-                _linotypoWritingSpeedMax = value;
+                _WritingSpeedMax = value;
             }
         }
         /// <summary>
@@ -137,13 +137,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _linotypoMissStrikePossibility;
+                return _MissStrikePossibility;
             }
             set
             {
                 if (value <= 0)
                     value = 1;
-                _linotypoMissStrikePossibility = value;
+                _MissStrikePossibility = value;
             }
         }
         /// <summary>
@@ -153,7 +153,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _linotypoTextColumns;
+                return _TextColumns;
             }
             set
             {
@@ -161,7 +161,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 3;
                 if (value > 3)
                     value = 3;
-                _linotypoTextColumns = value;
+                _TextColumns = value;
             }
         }
         /// <summary>
@@ -171,7 +171,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _linotypoEtaoinThreshold;
+                return _EtaoinThreshold;
             }
             set
             {
@@ -179,7 +179,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 5;
                 if (value > 8)
                     value = 8;
-                _linotypoEtaoinThreshold = value;
+                _EtaoinThreshold = value;
             }
         }
         /// <summary>
@@ -189,13 +189,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _linotypoEtaoinCappingPossibility;
+                return _EtaoinCappingPossibility;
             }
             set
             {
                 if (value <= 0)
                     value = 5;
-                _linotypoEtaoinCappingPossibility = value;
+                _EtaoinCappingPossibility = value;
             }
         }
         /// <summary>
@@ -205,11 +205,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _linotypoEtaoinType;
+                return _EtaoinType;
             }
             set
             {
-                _linotypoEtaoinType = value;
+                _EtaoinType = value;
             }
         }
         /// <summary>
@@ -219,13 +219,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _linotypoMissPossibility;
+                return _MissPossibility;
             }
             set
             {
                 if (value <= 0)
                     value = 10;
-                _linotypoMissPossibility = value;
+                _MissPossibility = value;
             }
         }
         /// <summary>
@@ -235,11 +235,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _linotypoTextColor;
+                return _TextColor;
             }
             set
             {
-                _linotypoTextColor = new Color(value).PlainSequence;
+                _TextColor = new Color(value).PlainSequence;
             }
         }
 
