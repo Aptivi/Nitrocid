@@ -293,5 +293,6 @@ Kernel thread {0} failed.
 Your network needs to be online before being able to perform operations related to networking. Connect your network adapter and try again.
 Lists online network devices
 Unknown host
+Not connected
 
 ==========================================================================================================================================

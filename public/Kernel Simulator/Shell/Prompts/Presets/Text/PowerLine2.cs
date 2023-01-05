@@ -25,6 +25,8 @@ using KS.Misc.Text;
 using KS.Shell.Shells.Text;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Colors;
+using KS.Misc.Writers.FancyWriters.Tools;
+using System.Collections.Generic;
 
 namespace KS.Shell.Prompts.Presets.Text
 {
@@ -45,26 +47,17 @@ namespace KS.Shell.Prompts.Presets.Text
 
         internal override string PresetPromptBuilder()
         {
-            // PowerLine glyphs
-            char TransitionChar = Convert.ToChar(0xE0B0);
-
-            // PowerLine preset colors
-            var FirstColorSegmentForeground = new Color(255, 85, 255);
-            var FirstColorSegmentBackground = new Color(127, 43, 127);
-            var LastTransitionForeground = new Color(255, 255, 255);
+            // PowerLine presets
+            List<PowerLineSegment> segments = new()
+            {
+                new PowerLineSegment(new Color(255, 85, 255), new Color(127, 43, 127), Path.GetFileName(TextEditShellCommon.TextEdit_FileStream.Name))
+            };
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
 
-            // File name
-            PresetStringBuilder.Append(FirstColorSegmentForeground.VTSequenceForeground);
-            PresetStringBuilder.Append(FirstColorSegmentBackground.VTSequenceBackground);
-            PresetStringBuilder.AppendFormat(" {0} ", Path.GetFileName(TextEditShellCommon.TextEdit_FileStream.Name));
-
-            // Transition
-            PresetStringBuilder.Append(FirstColorSegmentBackground.VTSequenceForeground);
-            PresetStringBuilder.Append(Flags.SetBackground ? ColorTools.GetColor(KernelColorType.Background).VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m");
-            PresetStringBuilder.AppendFormat("{0} ", TransitionChar);
+            // Use RenderSegments to render our segments
+            PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
             PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
 
             // Present final string

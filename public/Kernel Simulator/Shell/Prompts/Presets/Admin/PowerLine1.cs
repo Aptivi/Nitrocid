@@ -23,6 +23,10 @@ using KS.Kernel;
 using KS.Misc.Text;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Colors;
+using KS.Misc.Writers.FancyWriters.Tools;
+using KS.Shell.Shells.Archive;
+using System.Collections.Generic;
+using System.IO;
 
 namespace KS.Shell.Prompts.Presets.Admin
 {
@@ -43,26 +47,17 @@ namespace KS.Shell.Prompts.Presets.Admin
 
         internal override string PresetPromptBuilder()
         {
-            // PowerLine glyphs
-            char TransitionChar = Convert.ToChar(0xE0B0);
-
-            // PowerLine preset colors
-            var FirstColorSegmentForeground = new Color(85, 255, 255);
-            var FirstColorSegmentBackground = new Color(43, 127, 127);
-            var LastTransitionForeground = new Color(255, 255, 255);
+            // Segments
+            List<PowerLineSegment> segments = new()
+            {
+                new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), "Admin"),
+            };
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
 
-            // File name
-            PresetStringBuilder.Append(FirstColorSegmentForeground.VTSequenceForeground);
-            PresetStringBuilder.Append(FirstColorSegmentBackground.VTSequenceBackground);
-            PresetStringBuilder.AppendFormat(" Admin ");
-
-            // Transition
-            PresetStringBuilder.Append(FirstColorSegmentBackground.VTSequenceForeground);
-            PresetStringBuilder.Append(Flags.SetBackground ? ColorTools.GetColor(KernelColorType.Background).VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m");
-            PresetStringBuilder.AppendFormat("{0} ", TransitionChar);
+            // Use RenderSegments to render our segments
+            PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
             PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
 
             // Present final string

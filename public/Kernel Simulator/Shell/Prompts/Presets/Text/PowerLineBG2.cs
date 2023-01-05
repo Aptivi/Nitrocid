@@ -25,6 +25,9 @@ using KS.Misc.Text;
 using KS.Shell.Shells.Text;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Colors;
+using KS.Misc.Writers.FancyWriters.Tools;
+using KS.Users.Login;
+using System.Collections.Generic;
 
 namespace KS.Shell.Prompts.Presets.Text
 {
@@ -46,26 +49,19 @@ namespace KS.Shell.Prompts.Presets.Text
         internal override string PresetPromptBuilder()
         {
             // PowerLine glyphs
-            char TransitionChar = Convert.ToChar(0xE0B0);
             char TransitionPartChar = Convert.ToChar(0xE0B1);
 
-            // PowerLine preset colors
-            var FirstColorSegmentForeground = new Color(255, 85, 255);
-            var FirstColorSegmentBackground = new Color(25, 25, 25);
-            var LastTransitionForeground = new Color(25, 25, 25);
+            // PowerLine presets
+            List<PowerLineSegment> segments = new()
+            {
+                new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), Path.GetFileName(TextEditShellCommon.TextEdit_FileStream.Name), default, TransitionPartChar)
+            };
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
 
-            // File name
-            PresetStringBuilder.Append(FirstColorSegmentForeground.VTSequenceForeground);
-            PresetStringBuilder.Append(FirstColorSegmentBackground.VTSequenceBackground);
-            PresetStringBuilder.AppendFormat(" {0} ", Path.GetFileName(TextEditShellCommon.TextEdit_FileStream.Name));
-
-            // Transition
-            PresetStringBuilder.Append(LastTransitionForeground.VTSequenceForeground);
-            PresetStringBuilder.Append(Flags.SetBackground ? ColorTools.GetColor(KernelColorType.Background).VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m");
-            PresetStringBuilder.AppendFormat("{0} ", TransitionChar);
+            // Use RenderSegments to render our segments
+            PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
             PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
 
             // Present final string

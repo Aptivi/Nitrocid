@@ -24,6 +24,9 @@ using KS.Misc.Text;
 using KS.Shell.Shells.HTTP;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Colors;
+using KS.Languages;
+using KS.Misc.Writers.FancyWriters.Tools;
+using System.Collections.Generic;
 
 namespace KS.Shell.Prompts.Presets.HTTP
 {
@@ -45,49 +48,30 @@ namespace KS.Shell.Prompts.Presets.HTTP
         internal override string PresetPromptBuilder()
         {
             // PowerLine glyphs
-            char TransitionChar = Convert.ToChar(0xE0B0);
-            char TransitionPartChar = Convert.ToChar(0xE0B1);
             char PadlockChar = Convert.ToChar(0xE0A2);
 
-            // PowerLine preset colors
-            var FirstColorSegmentForeground = new Color(255, 255, 85);
-            var FirstColorSegmentBackground = new Color(25, 25, 25);
-            var SecondColorSegmentForeground = new Color(255, 255, 85);
-            var SecondColorSegmentBackground = new Color(25, 25, 25);
-            var ThirdColorSegmentForeground = new Color(255, 255, 85);
-            var ThirdColorSegmentBackground = new Color(25, 25, 25);
-            var LastTransitionForeground = new Color(25, 25, 25);
+            // Segments
+            List<PowerLineSegment> segments = new()
+            {
+                new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), HTTPShellCommon.HTTPSite, PadlockChar)
+            };
+            List<PowerLineSegment> segmentsDisconnected = new()
+            {
+                new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), Translate.DoTranslation("Not connected"))
+            };
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
 
             // Build the preset
             if (HTTPShellCommon.HTTPConnected)
-            {
-                // Current username
-                PresetStringBuilder.Append(FirstColorSegmentForeground.VTSequenceForeground);
-                PresetStringBuilder.Append(FirstColorSegmentBackground.VTSequenceBackground);
-                PresetStringBuilder.AppendFormat(" {0} {1} ", PadlockChar, HTTPShellCommon.HTTPSite);
-
-                // Transition
-                PresetStringBuilder.Append(LastTransitionForeground.VTSequenceForeground);
-                PresetStringBuilder.Append(Flags.SetBackground ? ColorTools.GetColor(KernelColorType.Background).VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m");
-                PresetStringBuilder.AppendFormat("{0} ", TransitionChar);
-                PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
-            }
+                // Use RenderSegments to render our segments
+                PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
             else
-            {
-                // HTTP current directory
-                PresetStringBuilder.Append(FirstColorSegmentForeground.VTSequenceForeground);
-                PresetStringBuilder.Append(FirstColorSegmentBackground.VTSequenceBackground);
-                PresetStringBuilder.AppendFormat(" Not connected ");
+                // Use RenderSegments to render our segments
+                PresetStringBuilder.Append(PowerLineTools.RenderSegments(segmentsDisconnected));
 
-                // Transition
-                PresetStringBuilder.Append(LastTransitionForeground.VTSequenceForeground);
-                PresetStringBuilder.Append(Flags.SetBackground ? ColorTools.GetColor(KernelColorType.Background).VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m");
-                PresetStringBuilder.AppendFormat("{0} ", TransitionChar);
-                PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
-            }
+            PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
 
             // Present final string
             return PresetStringBuilder.ToString();

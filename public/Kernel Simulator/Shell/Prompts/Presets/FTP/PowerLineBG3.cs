@@ -24,6 +24,9 @@ using KS.Misc.Text;
 using KS.Shell.Shells.FTP;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Colors;
+using KS.Misc.Writers.FancyWriters.Tools;
+using KS.Shell.Shells.SFTP;
+using System.Collections.Generic;
 
 namespace KS.Shell.Prompts.Presets.FTP
 {
@@ -45,69 +48,31 @@ namespace KS.Shell.Prompts.Presets.FTP
         internal override string PresetPromptBuilder()
         {
             // PowerLine glyphs
-            char TransitionChar = Convert.ToChar(0xE0B0);
             char TransitionPartChar = Convert.ToChar(0xE0B1);
             char PadlockChar = Convert.ToChar(0xE0A2);
 
-            // PowerLine preset colors
-            var FirstColorSegmentForeground = new Color(255, 255, 85);
-            var FirstColorSegmentBackground = new Color(25, 25, 25);
-            var SecondColorSegmentForeground = new Color(255, 255, 85);
-            var SecondColorSegmentBackground = new Color(25, 25, 25);
-            var ThirdColorSegmentForeground = new Color(255, 255, 85);
-            var ThirdColorSegmentBackground = new Color(25, 25, 25);
-            var LastTransitionForeground = new Color(25, 25, 25);
+            // Segments
+            List<PowerLineSegment> segments = new()
+            {
+                new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), FTPShellCommon.FtpUser, default, TransitionPartChar),
+                new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), FTPShellCommon.FtpSite, PadlockChar, TransitionPartChar),
+                new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), FTPShellCommon.FtpCurrentRemoteDir, default, TransitionPartChar),
+            };
+            List<PowerLineSegment> segmentsDisconnected = new()
+            {
+                new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), FTPShellCommon.FtpCurrentDirectory, default, TransitionPartChar)
+            };
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
 
             // Build the preset
-            if (FTPShellCommon.FtpConnected)
-            {
-                // Current username
-                PresetStringBuilder.Append(FirstColorSegmentForeground.VTSequenceForeground);
-                PresetStringBuilder.Append(FirstColorSegmentBackground.VTSequenceBackground);
-                PresetStringBuilder.AppendFormat(" {0} ", FTPShellCommon.FtpUser);
-
-                // Transition
-                PresetStringBuilder.Append(FirstColorSegmentForeground.VTSequenceForeground);
-                PresetStringBuilder.Append(SecondColorSegmentBackground.VTSequenceBackground);
-                PresetStringBuilder.AppendFormat("{0}", TransitionPartChar);
-
-                // Current hostname
-                PresetStringBuilder.Append(SecondColorSegmentForeground.VTSequenceForeground);
-                PresetStringBuilder.Append(SecondColorSegmentBackground.VTSequenceBackground);
-                PresetStringBuilder.AppendFormat(" {0} {1} ", PadlockChar, FTPShellCommon.FtpSite);
-
-                // Transition
-                PresetStringBuilder.Append(SecondColorSegmentForeground.VTSequenceForeground);
-                PresetStringBuilder.Append(ThirdColorSegmentBackground.VTSequenceBackground);
-                PresetStringBuilder.AppendFormat("{0}", TransitionPartChar);
-
-                // Current directory
-                PresetStringBuilder.Append(ThirdColorSegmentForeground.VTSequenceForeground);
-                PresetStringBuilder.Append(ThirdColorSegmentBackground.VTSequenceBackground);
-                PresetStringBuilder.AppendFormat(" {0} ", FTPShellCommon.FtpCurrentRemoteDir);
-
-                // Transition
-                PresetStringBuilder.Append(LastTransitionForeground.VTSequenceForeground);
-                PresetStringBuilder.Append(Flags.SetBackground ? ColorTools.GetColor(KernelColorType.Background).VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m");
-                PresetStringBuilder.AppendFormat("{0} ", TransitionChar);
-                PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
-            }
+            if (SFTPShellCommon.SFTPConnected)
+                // Use RenderSegments to render our segments
+                PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
             else
-            {
-                // FTP current directory
-                PresetStringBuilder.Append(FirstColorSegmentForeground.VTSequenceForeground);
-                PresetStringBuilder.Append(FirstColorSegmentBackground.VTSequenceBackground);
-                PresetStringBuilder.AppendFormat(" {0} ", FTPShellCommon.FtpCurrentDirectory);
-
-                // Transition
-                PresetStringBuilder.Append(LastTransitionForeground.VTSequenceForeground);
-                PresetStringBuilder.Append(Flags.SetBackground ? ColorTools.GetColor(KernelColorType.Background).VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m");
-                PresetStringBuilder.AppendFormat("{0} ", TransitionChar);
-                PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
-            }
+                // Use RenderSegments to render our segments
+                PresetStringBuilder.Append(PowerLineTools.RenderSegments(segmentsDisconnected));
 
             // Present final string
             return PresetStringBuilder.ToString();

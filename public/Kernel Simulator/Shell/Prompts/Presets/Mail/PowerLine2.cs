@@ -25,6 +25,8 @@ using KS.Network.Mail;
 using KS.Shell.Shells.Mail;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Colors;
+using KS.Misc.Writers.FancyWriters.Tools;
+using System.Collections.Generic;
 
 namespace KS.Shell.Prompts.Presets.Mail
 {
@@ -45,38 +47,18 @@ namespace KS.Shell.Prompts.Presets.Mail
 
         internal override string PresetPromptBuilder()
         {
-            // PowerLine glyphs
-            char TransitionChar = Convert.ToChar(0xE0B0);
-
-            // PowerLine preset colors
-            var FirstColorSegmentForeground = new Color(255, 85, 255);
-            var FirstColorSegmentBackground = new Color(127, 43, 127);
-            var SecondColorSegmentForeground = new Color(0, 0, 0);
-            var SecondColorSegmentBackground = new Color(255, 85, 255);
-            var LastTransitionForeground = new Color(255, 255, 255);
+            // Segments
+            List<PowerLineSegment> segments = new()
+            {
+                new PowerLineSegment(new Color(255, 85, 255), new Color(127, 43, 127), MailLogin.Mail_Authentication.UserName),
+                new PowerLineSegment(new Color(0, 0, 0), new Color(255, 85, 255), MailShellCommon.IMAP_CurrentDirectory),
+            };
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
 
-            // File name
-            PresetStringBuilder.Append(FirstColorSegmentForeground.VTSequenceForeground);
-            PresetStringBuilder.Append(FirstColorSegmentBackground.VTSequenceBackground);
-            PresetStringBuilder.AppendFormat(" {0} ", MailLogin.Mail_Authentication.UserName);
-
-            // Transition
-            PresetStringBuilder.Append(FirstColorSegmentBackground.VTSequenceForeground);
-            PresetStringBuilder.Append(SecondColorSegmentBackground.VTSequenceBackground);
-            PresetStringBuilder.AppendFormat("{0}", TransitionChar);
-
-            // Current archive directory
-            PresetStringBuilder.Append(SecondColorSegmentForeground.VTSequenceForeground);
-            PresetStringBuilder.Append(SecondColorSegmentBackground.VTSequenceBackground);
-            PresetStringBuilder.AppendFormat(" {0} ", MailShellCommon.IMAP_CurrentDirectory);
-
-            // Transition
-            PresetStringBuilder.Append(SecondColorSegmentBackground.VTSequenceForeground);
-            PresetStringBuilder.Append(Flags.SetBackground ? ColorTools.GetColor(KernelColorType.Background).VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m");
-            PresetStringBuilder.AppendFormat("{0} ", TransitionChar);
+            // Use RenderSegments to render our segments
+            PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
             PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
 
             // Present final string
