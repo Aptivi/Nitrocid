@@ -361,3 +361,4 @@ This is an enumeration which simply tells the difference of all the defined and 
 
 ##### Removed ref from conditional debug writers
 
+The conditional debug writers don't do anything to the boolean condition that causes it to change its state, so we decided to pass the boolean value by value and not by reference.
