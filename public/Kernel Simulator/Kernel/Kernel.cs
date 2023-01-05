@@ -67,7 +67,7 @@ namespace KS.Kernel
 
         // #ifdef'd variables ... Release specifiers (SPECIFIER: REL, RC, or DEV | MILESTONESPECIFIER: ALPHA, BETA, NONE | None satisfied: Unsupported Release)
 #if SPECIFIERREL
-        internal readonly static string ReleaseSpecifier = $"RTM";
+        internal readonly static string ReleaseSpecifier = $"REL";
 #elif SPECIFIERRC
         internal readonly static string ReleaseSpecifier = $"RC";
 #elif SPECIFIERDEV
