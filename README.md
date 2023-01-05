@@ -156,8 +156,8 @@ that may make you feel uncomfortable reading it.
 [Latest]: https://github.com/Aptivi/Kernel-Simulator/releases/latest
 [NuGet]: https://www.nuget.org/packages/KS/
 
-[Servicing]: https://github.com/Aptivi/Kernel-Simulator/actions/workflows/build-windows.yml
-[Master]: https://github.com/Aptivi/Kernel-Simulator/actions/workflows/build-windows.yml
+[Servicing]: https://github.com/Aptivi/Kernel-Simulator/actions/workflows/build-win.yml
+[Master]: https://github.com/Aptivi/Kernel-Simulator/actions/workflows/build-win.yml
 [Servicing Linux]: https://github.com/Aptivi/Kernel-Simulator/actions/workflows/build-linux.yml
 [Master Linux]: https://github.com/Aptivi/Kernel-Simulator/actions/workflows/build-linux.yml
 
@@ -175,8 +175,8 @@ that may make you feel uncomfortable reading it.
 [Badge NuGet]: https://img.shields.io/nuget/vpre/KS?color=012f52&style=for-the-badge&logoColor=white&logo=NuGet&labelColor=004880
 [Badge Size]: https://img.shields.io/github/repo-size/Aptivi/Kernel-Simulator?color=bb4a28&label=size&logoColor=white&style=for-the-badge&logo=GoogleAnalytics&labelColor=E85C33
 
-[Badge Servicing]: https://github.com/Aptivi/Kernel-Simulator/actions/workflows/build-windows.yml/badge.svg?branch=servicing
-[Badge Master]: https://github.com/Aptivi/Kernel-Simulator/actions/workflows/build-windows.yml/badge.svg
+[Badge Servicing]: https://github.com/Aptivi/Kernel-Simulator/actions/workflows/build-win.yml/badge.svg?branch=servicing
+[Badge Master]: https://github.com/Aptivi/Kernel-Simulator/actions/workflows/build-win.yml/badge.svg
 [Badge Servicing Linux]: https://github.com/Aptivi/Kernel-Simulator/actions/workflows/build-linux.yml/badge.svg?branch=servicing
 [Badge Master Linux]: https://github.com/Aptivi/Kernel-Simulator/actions/workflows/build-linux.yml/badge.svg
 
