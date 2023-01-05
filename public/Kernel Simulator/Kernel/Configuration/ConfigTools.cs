@@ -365,7 +365,8 @@ namespace KS.Kernel.Configuration
                             string KeyName = Translate.DoTranslation((string)SettingToken.ToList()[KeyIndex]["Name"]);
                             if (Regex.IsMatch(KeyName, Pattern, RegexOptions.IgnoreCase))
                             {
-                                InputChoiceInfo ici = new($"{SectionIndex + 1}/{KeyIndex + 1}", KeyName);
+                                string desc = (string)SettingToken.ToList()[KeyIndex]["Description"] ?? "";
+                                InputChoiceInfo ici = new($"{SectionIndex + 1}/{KeyIndex + 1}", KeyName, desc);
                                 Results.Add(ici);
                             }
                         }
