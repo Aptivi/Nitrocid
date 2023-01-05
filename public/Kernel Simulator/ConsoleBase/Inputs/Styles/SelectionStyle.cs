@@ -35,6 +35,8 @@ namespace KS.ConsoleBase.Inputs.Styles
     public static class SelectionStyle
     {
 
+        private static int savedPos = 1;
+
         /// <summary>
         /// Prompts user for selection
         /// </summary>
@@ -79,12 +81,18 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="AltAnswers">Set of alternate answers.</param>
         public static int PromptSelection(string Question, List<InputChoiceInfo> Answers, List<InputChoiceInfo> AltAnswers)
         {
-            int HighlightedAnswer = 1;
+            int HighlightedAnswer = savedPos;
             while (true)
             {
                 // Variables
                 List<InputChoiceInfo> AllAnswers = new(Answers);
                 AllAnswers.AddRange(AltAnswers);
+
+                // Before we proceed, we need to check the highlighted answer number
+                if (HighlightedAnswer > AllAnswers.Count)
+                    HighlightedAnswer = 1;
+
+                // First alt answer index
                 int altAnswersFirstIdx = Answers.Count;
                 ConsoleKeyInfo Answer;
                 ConsoleWrapper.CursorVisible = false;
@@ -156,9 +164,9 @@ namespace KS.ConsoleBase.Inputs.Styles
                         }
                     case ConsoleKey.DownArrow:
                         {
-                            if (HighlightedAnswer == AllAnswers.Count)
-                                HighlightedAnswer = 0;
                             HighlightedAnswer += 1;
+                            if (HighlightedAnswer > AllAnswers.Count)
+                                HighlightedAnswer = 1;
                             break;
                         }
                     case ConsoleKey.PageUp:
@@ -174,11 +182,13 @@ namespace KS.ConsoleBase.Inputs.Styles
                     case ConsoleKey.Enter:
                         {
                             TextWriterColor.Write();
+                            savedPos = HighlightedAnswer;
                             return HighlightedAnswer;
                         }
                     case ConsoleKey.Escape:
                         {
                             TextWriterColor.Write();
+                            savedPos = HighlightedAnswer;
                             return -1;
                         }
                 }
