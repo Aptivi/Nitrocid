@@ -33,6 +33,9 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using KS.Kernel.Events;
 using static KS.Kernel.Configuration.Config;
+using KS.Misc.Settings;
+using KS.ConsoleBase.Colors;
+using ColorSeq;
 
 namespace KS.Kernel.Configuration
 {
@@ -362,10 +365,12 @@ namespace KS.Kernel.Configuration
                         var SettingToken = SectionToken.ToList()[SettingIndex]["Keys"];
                         for (int KeyIndex = 0; KeyIndex <= SettingToken.Count() - 1; KeyIndex++)
                         {
-                            string KeyName = Translate.DoTranslation((string)SettingToken.ToList()[KeyIndex]["Name"]);
+                            var Setting = SettingToken.ToList()[KeyIndex];
+                            object CurrentValue = GetValueFromEntry(Setting);
+                            string KeyName = Translate.DoTranslation((string)Setting["Name"]) + $" [{CurrentValue}]";
                             if (Regex.IsMatch(KeyName, Pattern, RegexOptions.IgnoreCase))
                             {
-                                string desc = (string)SettingToken.ToList()[KeyIndex]["Description"] ?? "";
+                                string desc = (string)Setting["Description"] ?? "";
                                 InputChoiceInfo ici = new($"{SectionIndex + 1}/{KeyIndex + 1}", KeyName, desc);
                                 Results.Add(ici);
                             }
@@ -435,6 +440,45 @@ namespace KS.Kernel.Configuration
 
             // Return the results
             return Results;
+        }
+
+        /// <summary>
+        /// Gets the value from a settings entry
+        /// </summary>
+        /// <param name="Setting">An entry to get the value from</param>
+        /// <returns>The value</returns>
+        public static object GetValueFromEntry(JToken Setting)
+        {
+            object CurrentValue = "Unknown";
+            string Variable = (string)Setting["Variable"];
+            bool VariableIsInternal = (bool)(Setting["IsInternal"] ?? false);
+            bool VariableIsEnumerable = (bool)(Setting["IsEnumerable"] ?? false);
+            int VariableEnumerableIndex = (int)(Setting["EnumerableIndex"] ?? 0);
+
+            // Print the option by determining how to get the current value
+            if (FieldManager.CheckField(Variable, VariableIsInternal))
+            {
+                // We're dealing with the field, get the value from it. However, check to see if that field is an enumerable
+                if (VariableIsEnumerable)
+                    CurrentValue = FieldManager.GetValueFromEnumerable(Variable, VariableEnumerableIndex, VariableIsInternal);
+                else
+                    CurrentValue = FieldManager.GetValue(Variable, VariableIsInternal);
+            }
+            else if (PropertyManager.CheckProperty(Variable))
+            {
+                // We're dealing with the property, get the value from it
+                CurrentValue = PropertyManager.GetPropertyValue(Variable);
+            }
+
+            // Get the plain sequence from the color
+            if (CurrentValue is KeyValuePair<KernelColorType, Color> color)
+                CurrentValue = color.Value.PlainSequence;
+
+            // Get the language name
+            if (CurrentValue is LanguageInfo lang)
+                CurrentValue = lang.ThreeLetterLanguageName;
+
+            return CurrentValue;
         }
 
     }
