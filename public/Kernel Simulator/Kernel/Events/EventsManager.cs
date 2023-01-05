@@ -78,7 +78,7 @@ namespace KS.Kernel.Events
                 throw new KernelException(KernelExceptionType.NoSuchEvent, Translate.DoTranslation("Event {0} not found."), Event);
 
             // Add fired event to the list
-            DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, $"Raising event {Event}...");
+            DebugWriter.WriteDebugConditional(Flags.EventDebug, DebugLevel.I, $"Raising event {Event}...");
             FiredEvents.Add($"[{FiredEvents.Count}] {Event}", Params);
 
             // Now, respond to the event
@@ -89,13 +89,13 @@ namespace KS.Kernel.Events
                     try
                     {
                         var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event {3}...", script.ModPart, script.Name, script.Version, Event);
+                        DebugWriter.WriteDebugConditional(Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event {3}...", script.ModPart, script.Name, script.Version, Event);
                         script.InitEvents(Event, Params);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WriteDebugConditional(ref Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(ref Flags.EventDebug, ex);
+                        DebugWriter.WriteDebugConditional(Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTraceConditional(Flags.EventDebug, ex);
                     }
                 }
             }

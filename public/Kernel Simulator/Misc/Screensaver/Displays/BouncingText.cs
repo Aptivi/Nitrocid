@@ -301,12 +301,12 @@ namespace KS.Misc.Screensaver.Displays
             ConsoleWrapper.Clear();
 
             // Define the color
-            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Row text: {0}", RowText);
-            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Column first letter of text: {0}", ColumnFirstLetter);
-            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Column last letter of text: {0}", ColumnLastLetter);
+            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Row text: {0}", RowText);
+            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Column first letter of text: {0}", ColumnFirstLetter);
+            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Column last letter of text: {0}", ColumnLastLetter);
             if (BouncingColor is null)
             {
-                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Defining color...");
+                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Defining color...");
                 BouncingColor = ChangeBouncingTextColor();
             }
             if (!ConsoleResizeListener.WasResized(false))
@@ -315,38 +315,38 @@ namespace KS.Misc.Screensaver.Displays
             }
             else
             {
-                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.W, "We're resize-syncing! Setting RowText, ColumnFirstLetter, and ColumnLastLetter to its original position...");
+                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.W, "We're resize-syncing! Setting RowText, ColumnFirstLetter, and ColumnLastLetter to its original position...");
                 RowText = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
                 ColumnFirstLetter = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - BouncingTextSettings.BouncingTextWrite.Length / 2d);
                 ColumnLastLetter = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d + BouncingTextSettings.BouncingTextWrite.Length / 2d);
             }
 
             // Change the direction of text
-            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Text is facing {0}.", Direction);
+            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Text is facing {0}.", Direction);
             if (Direction == "BottomRight")
             {
-                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Increasing row and column text position");
+                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Increasing row and column text position");
                 RowText += 1;
                 ColumnFirstLetter += 1;
                 ColumnLastLetter += 1;
             }
             else if (Direction == "BottomLeft")
             {
-                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Increasing row and decreasing column text position");
+                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Increasing row and decreasing column text position");
                 RowText += 1;
                 ColumnFirstLetter -= 1;
                 ColumnLastLetter -= 1;
             }
             else if (Direction == "TopRight")
             {
-                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Decreasing row and increasing column text position");
+                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Decreasing row and increasing column text position");
                 RowText -= 1;
                 ColumnFirstLetter += 1;
                 ColumnLastLetter += 1;
             }
             else if (Direction == "TopLeft")
             {
-                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Decreasing row and column text position");
+                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Decreasing row and column text position");
                 RowText -= 1;
                 ColumnFirstLetter -= 1;
                 ColumnLastLetter -= 1;
@@ -355,26 +355,26 @@ namespace KS.Misc.Screensaver.Displays
             // Check to see if the text is on the edge
             if (RowText == ConsoleWrapper.WindowHeight - 2)
             {
-                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "We're on the bottom.");
+                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "We're on the bottom.");
                 Direction = Direction.Replace("Bottom", "Top");
                 BouncingColor = ChangeBouncingTextColor();
             }
             else if (RowText == 1)
             {
-                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "We're on the top.");
+                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "We're on the top.");
                 Direction = Direction.Replace("Top", "Bottom");
                 BouncingColor = ChangeBouncingTextColor();
             }
 
             if (ColumnLastLetter == ConsoleWrapper.WindowWidth - 1)
             {
-                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "We're on the right.");
+                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "We're on the right.");
                 Direction = Direction.Replace("Right", "Left");
                 BouncingColor = ChangeBouncingTextColor();
             }
             else if (ColumnFirstLetter == 1)
             {
-                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "We're on the left.");
+                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "We're on the left.");
                 Direction = Direction.Replace("Left", "Right");
                 BouncingColor = ChangeBouncingTextColor();
             }

@@ -103,7 +103,7 @@ namespace KS.Kernel.Debugging
         /// <param name="Level">Debug level</param>
         /// <param name="text">A sentence that will be written to the the debugger file. Supports {0}, {1}, ...</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteDebugConditional(ref bool Condition, DebugLevel Level, string text, params object[] vars)
+        public static void WriteDebugConditional(bool Condition, DebugLevel Level, string text, params object[] vars)
         {
             if (Condition)
                 WriteDebug(Level, text, vars);
@@ -140,7 +140,7 @@ namespace KS.Kernel.Debugging
         /// </summary>
         /// <param name="Condition">The condition that must be satisfied</param>
         /// <param name="Ex">An exception</param>
-        public static void WriteDebugStackTraceConditional(ref bool Condition, Exception Ex)
+        public static void WriteDebugStackTraceConditional(bool Condition, Exception Ex)
         {
             if (Condition)
                 WriteDebugStackTrace(Ex);

@@ -275,10 +275,10 @@ namespace KS.Misc.Screensaver.Displays
                 // Get the required positions for the box
                 int BoxStartX = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
                 int BoxEndX = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
-                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Box X position {0} -> {1}", BoxStartX, BoxEndX);
+                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Box X position {0} -> {1}", BoxStartX, BoxEndX);
                 int BoxStartY = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
                 int BoxEndY = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
-                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Box Y position {0} -> {1}", BoxStartY, BoxEndY);
+                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Box Y position {0} -> {1}", BoxStartY, BoxEndY);
 
                 // Check to see if start is less than or equal to end
                 BoxStartX.SwapIfSourceLarger(ref BoxEndX);
@@ -286,7 +286,7 @@ namespace KS.Misc.Screensaver.Displays
                 if (BoxStartX == BoxEndX | BoxStartY == BoxEndY)
                 {
                     // Don't draw; it won't be shown anyways
-                    DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Asking StackBox not to draw. Consult above two lines.");
+                    DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Asking StackBox not to draw. Consult above two lines.");
                     Drawable = false;
                 }
 
@@ -298,13 +298,13 @@ namespace KS.Misc.Screensaver.Displays
                         int RedColorNum = RandomDriver.Random(StackBoxSettings.StackBoxMinimumRedColorLevel, StackBoxSettings.StackBoxMaximumRedColorLevel);
                         int GreenColorNum = RandomDriver.Random(StackBoxSettings.StackBoxMinimumGreenColorLevel, StackBoxSettings.StackBoxMaximumGreenColorLevel);
                         int BlueColorNum = RandomDriver.Random(StackBoxSettings.StackBoxMinimumBlueColorLevel, StackBoxSettings.StackBoxMaximumBlueColorLevel);
-                        DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                        DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                         ColorTools.SetConsoleColor(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), true, true);
                     }
                     else
                     {
                         int ColorNum = RandomDriver.Random(StackBoxSettings.StackBoxMinimumColorLevel, StackBoxSettings.StackBoxMaximumColorLevel);
-                        DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
+                        DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                         ColorTools.SetConsoleColor(new Color(ColorNum), true, true);
                     }
 
@@ -316,7 +316,7 @@ namespace KS.Misc.Screensaver.Displays
                         {
                             for (int Y = BoxStartY; Y <= BoxEndY; Y++)
                             {
-                                DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Filling {0},{1}...", X, Y);
+                                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Filling {0},{1}...", X, Y);
                                 ConsoleWrapper.SetCursorPosition(X, Y);
                                 ConsoleWrapper.Write(" ");
                             }
@@ -329,10 +329,10 @@ namespace KS.Misc.Screensaver.Displays
                         {
                             ConsoleWrapper.SetCursorPosition(X, BoxStartY);
                             ConsoleWrapper.Write(" ");
-                            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Drawn upper border at {0}", X);
+                            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Drawn upper border at {0}", X);
                             ConsoleWrapper.SetCursorPosition(X, BoxEndY);
                             ConsoleWrapper.Write(" ");
-                            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Drawn lower border at {0}", X);
+                            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Drawn lower border at {0}", X);
                         }
 
                         // Draw the left and right borders
@@ -342,12 +342,12 @@ namespace KS.Misc.Screensaver.Displays
                             ConsoleWrapper.Write(" ");
                             if (!(BoxStartX >= ConsoleWrapper.WindowWidth - 1))
                                 ConsoleWrapper.Write(" ");
-                            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Drawn left border at {0}", Y);
+                            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Drawn left border at {0}", Y);
                             ConsoleWrapper.SetCursorPosition(BoxEndX, Y);
                             ConsoleWrapper.Write(" ");
                             if (!(BoxEndX >= ConsoleWrapper.WindowWidth - 1))
                                 ConsoleWrapper.Write(" ");
-                            DebugWriter.WriteDebugConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Drawn right border at {0}", Y);
+                            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Drawn right border at {0}", Y);
                         }
                     }
                 }

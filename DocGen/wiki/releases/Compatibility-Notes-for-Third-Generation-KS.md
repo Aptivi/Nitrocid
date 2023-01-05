@@ -358,3 +358,6 @@ VariableProperty is no longer used, so we decided to remove it. As a consequence
 ##### Moved ColTypes to KernelColorType
 
 This is an enumeration which simply tells the difference of all the defined and known kernel color types. We have moved ColTypes to KernelColorType.
+
+##### Removed ref from conditional debug writers
+
