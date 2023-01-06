@@ -294,5 +294,8 @@ Your network needs to be online before being able to perform operations related 
 Lists online network devices
 Unknown host
 Not connected
+Untitled presentation
+Untitled presentation page
+Tests the presentation system
 
 ==========================================================================================================================================

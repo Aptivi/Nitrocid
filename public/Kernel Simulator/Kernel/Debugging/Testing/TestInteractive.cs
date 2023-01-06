@@ -100,6 +100,7 @@ namespace KS.Kernel.Debugging.Testing
             { "TestRNG",                new Facades.TestRNG() },
             { "TestCryptoRNG",          new Facades.TestCryptoRNG() },
             { "TestInputSelection",     new Facades.TestInputSelection() },
+            { "TestPresentation",       new Facades.TestPresentation() },
         };
 
         internal static void Open()
