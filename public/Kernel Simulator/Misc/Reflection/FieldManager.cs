@@ -33,6 +33,11 @@ namespace KS.Misc.Reflection
     public static class FieldManager
     {
 
+        /// <summary>
+        /// Dummy variable intended for field maagement tests (unit tests). Don't remove!
+        /// </summary>
+        internal static bool Dummy = false;
+
         private static readonly Dictionary<string, Action<object>> cachedSetters = new();
         private static readonly Dictionary<string, Func<object>> cachedGetters = new();
 

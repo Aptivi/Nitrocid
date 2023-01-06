@@ -33,7 +33,7 @@ namespace KSTests.MiscTests
         /// </summary>
         [Test]
         [Description("Management")]
-        public void TestCheckField() => FieldManager.CheckField("HiddenFiles").ShouldBeTrue();
+        public void TestCheckField() => FieldManager.CheckField("Dummy", true).ShouldBeTrue();
 
         /// <summary>
         /// Tests getting value
@@ -42,7 +42,7 @@ namespace KSTests.MiscTests
         [Description("Management")]
         public void TestGetValue()
         {
-            string Value = Convert.ToString(FieldManager.GetValue("HiddenFiles"));
+            string Value = Convert.ToString(FieldManager.GetValue("Dummy", true));
             Value.ShouldNotBeNullOrEmpty();
         }
 
@@ -53,9 +53,9 @@ namespace KSTests.MiscTests
         [Description("Management")]
         public void TestSetValue()
         {
-            FieldManager.SetValue("HiddenFiles", false);
-            string Value = Convert.ToString(FieldManager.GetValue("HiddenFiles"));
-            Value.ShouldBe("False");
+            FieldManager.SetValue("Dummy", true, true);
+            string Value = Convert.ToString(FieldManager.GetValue("Dummy", true));
+            Value.ShouldBe("True");
         }
 
         /// <summary>
@@ -65,8 +65,9 @@ namespace KSTests.MiscTests
         [Description("Management")]
         public void TestGetField()
         {
-            var Field = FieldManager.GetField("HiddenFiles");
-            Field.Name.ShouldBe("HiddenFiles");
+            var Field = FieldManager.GetField("Dummy", true);
+            Field.ShouldNotBeNull();
+            Field.Name.ShouldBe("Dummy");
         }
 
     }
