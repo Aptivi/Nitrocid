@@ -21,7 +21,6 @@ using System.Collections.Generic;
 using System.Text;
 using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
-using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Probers;
@@ -29,6 +28,7 @@ using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.ConsoleBase.Inputs;
 using VT.NET;
+using KS.ConsoleBase;
 
 namespace KS.Modifications.ManPages
 {
@@ -55,7 +55,7 @@ namespace KS.Modifications.ManPages
                 int InfoPlace;
 
                 // Get the bottom place
-                InfoPlace = ConsoleBase.ConsoleWrapper.WindowHeight - 1;
+                InfoPlace = ConsoleWrapper.WindowHeight - 1;
                 DebugWriter.WriteDebug(DebugLevel.I, "Bottom info height is {0}", InfoPlace);
 
                 // If there is any To-do, write them to the console
@@ -70,35 +70,26 @@ namespace KS.Modifications.ManPages
                 }
 
                 // Clear screen for readability
-                ConsoleBase.ConsoleWrapper.Clear();
+                ConsoleWrapper.Clear();
 
                 // Write the information to the console
                 if (!string.IsNullOrWhiteSpace(ManpageInfoStyle))
                 {
-                    TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(ManpageInfoStyle), ConsoleBase.ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.GetColor(KernelColorType.Background), ColorTools.GetColor(KernelColorType.NeutralText), PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
+                    TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(ManpageInfoStyle), ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.GetColor(KernelColorType.Background), ColorTools.GetColor(KernelColorType.NeutralText), PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
                 }
                 else
                 {
-                    TextWriterWhereColor.WriteWhere(" {0} [v{1}] ", ConsoleBase.ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.GetColor(KernelColorType.Background), ColorTools.GetColor(KernelColorType.NeutralText), PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
+                    TextWriterWhereColor.WriteWhere(" {0} [v{1}] ", ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.GetColor(KernelColorType.Background), ColorTools.GetColor(KernelColorType.NeutralText), PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
                 }
 
                 // Disable blinking cursor
-                ConsoleBase.ConsoleWrapper.CursorVisible = false;
+                ConsoleWrapper.CursorVisible = false;
 
                 // Split the sentences to parts to deal with sentence lengths that are longer than the console window width
                 var IncompleteSentences = new List<string>();
                 var IncompleteSentenceBuilder = new StringBuilder();
-                int CharactersParsed;
-                int EscapeCharacters;
-                int EscapeCharactersCountInside;
-                var EscapeIndex = default(int);
-                var InEsc = default(bool);
                 foreach (string line in PageManager.Pages[ManualTitle].Body.ToString().SplitNewLines())
                 {
-                    CharactersParsed = 0;
-                    EscapeCharacters = 0;
-                    EscapeCharactersCountInside = 0;
-
                     // Deal with empty lines
                     if (string.IsNullOrEmpty(line))
                     {
@@ -106,47 +97,26 @@ namespace KS.Modifications.ManPages
                         continue;
                     }
 
-                    // Get all escapes
-                    var Escapes = Matches.MatchVTSequences(line);
-
                     // Now, enumerate through each character in the string
-                    foreach (char LineChar in line)
+                    for (int i = 0; i < line.Length; i++)
                     {
-                        // Get escape from escape index
-                        var Escape = Escapes.Count > 0 ? Escapes[EscapeIndex] : null;
-
-                        // If the character is Escape, run through the escape sequence until the end
-                        if (LineChar == CharManager.GetEsc())
-                            InEsc = true;
-                        if (InEsc)
-                            EscapeCharactersCountInside += 1;
-                        if (InEsc && EscapeCharactersCountInside == Escape.Length)
-                        {
-                            EscapeCharacters += 1;
-                            EscapeCharactersCountInside = 0;
-                            InEsc = false;
-                        }
+                        char LineChar = line[i];
 
                         // Append the character into the incomplete sentence builder.
                         IncompleteSentenceBuilder.Append(LineChar);
-                        CharactersParsed += 1;
 
-                        // Check to see if we're at the maximum character number
-                        if (!InEsc)
+                        // Check to see if the length of the VT-filtered built string is equal or greater than the console width
+                        string built = IncompleteSentenceBuilder.ToString();
+                        string vtFilteredBuilt = Filters.FilterVTSequences(built);
+                        if (vtFilteredBuilt.Length >= ConsoleWrapper.WindowWidth ||
+                            i == line.Length - 1)
                         {
-                            if (IncompleteSentenceBuilder.Length - EscapeCharacters == ConsoleBase.ConsoleWrapper.WindowWidth - Convert.ToInt32(KernelPlatform.IsOnUnix()) | line.Length == CharactersParsed)
-                            {
-                                // We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
-                                DebugWriter.WriteDebug(DebugLevel.I, "Adding {0} to the list... Incomplete sentences: {1}", IncompleteSentenceBuilder.ToString(), IncompleteSentences.Count);
-                                IncompleteSentences.Add(IncompleteSentenceBuilder.ToString());
+                            // We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
+                            DebugWriter.WriteDebug(DebugLevel.I, "Adding {0} to the list... Incomplete sentences: {1}", IncompleteSentenceBuilder.ToString(), IncompleteSentences.Count);
+                            IncompleteSentences.Add(IncompleteSentenceBuilder.ToString());
 
-                                // Clean everything up
-                                IncompleteSentenceBuilder.Clear();
-                            }
-                        }
-                        else
-                        {
-                            EscapeCharacters += 1;
+                            // Clean everything up
+                            IncompleteSentenceBuilder.Clear();
                         }
                     }
                 }
@@ -155,30 +125,30 @@ namespace KS.Modifications.ManPages
                 foreach (string line in IncompleteSentences)
                 {
                     // Write the line
-                    int OldTop = ConsoleBase.ConsoleWrapper.CursorTop + 1;
+                    int OldTop = ConsoleWrapper.CursorTop + 1;
                     TextWriterColor.Write(line);
-                    if (OldTop != ConsoleBase.ConsoleWrapper.CursorTop)
-                        ConsoleBase.ConsoleWrapper.CursorTop = OldTop;
+                    if (OldTop != ConsoleWrapper.CursorTop)
+                        ConsoleWrapper.CursorTop = OldTop;
 
                     // Check to see if we're at the end
-                    if (ConsoleBase.ConsoleWrapper.CursorTop == InfoPlace - 1)
+                    if (ConsoleWrapper.CursorTop == InfoPlace - 1)
                     {
                         var PressedKey = Input.DetectKeypress();
                         if (PressedKey.Key == ConsoleKey.Escape)
                         {
-                            ConsoleBase.ConsoleWrapper.Clear();
+                            ConsoleWrapper.Clear();
                             return;
                         }
                         else
                         {
-                            ConsoleBase.ConsoleWrapper.Clear();
+                            ConsoleWrapper.Clear();
                             if (!string.IsNullOrWhiteSpace(ManpageInfoStyle))
                             {
-                                TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(ManpageInfoStyle), ConsoleBase.ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.GetColor(KernelColorType.Background), ColorTools.GetColor(KernelColorType.NeutralText), PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
+                                TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(ManpageInfoStyle), ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.GetColor(KernelColorType.Background), ColorTools.GetColor(KernelColorType.NeutralText), PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
                             }
                             else
                             {
-                                TextWriterWhereColor.WriteWhere(" {0} (v{1}) ", ConsoleBase.ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.GetColor(KernelColorType.Background), ColorTools.GetColor(KernelColorType.NeutralText), PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
+                                TextWriterWhereColor.WriteWhere(" {0} (v{1}) ", ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.GetColor(KernelColorType.Background), ColorTools.GetColor(KernelColorType.NeutralText), PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
                             }
                         }
                     }
@@ -190,7 +160,7 @@ namespace KS.Modifications.ManPages
 
                 // Clean up
                 DebugWriter.WriteDebug(DebugLevel.I, "Exiting...");
-                ConsoleBase.ConsoleWrapper.Clear();
+                ConsoleWrapper.Clear();
             }
             else
             {
