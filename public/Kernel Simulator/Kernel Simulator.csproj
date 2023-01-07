@@ -80,7 +80,7 @@
     <PackageReference Include="Crc32.NET" Version="1.2.0" />
     <PackageReference Include="Dictify" Version="1.0.0.1" />
     <PackageReference Include="Extensification" Version="2022.4.1" />
-    <PackageReference Include="Figgle" Version="0.4.1" />
+    <PackageReference Include="Figgle" Version="0.5.1" />
     <PackageReference Include="FluentFTP" Version="43.0.1" />
     <PackageReference Include="GRILO.Boot" Version="0.1.0" />
     <PackageReference Include="HtmlAgilityPack" Version="1.11.46" />
@@ -99,7 +99,7 @@
     <PackageReference Include="SSH.NET" Version="2020.0.2" />
     <PackageReference Include="StringMath" Version="4.1.0" />
     <PackageReference Include="TermRead" Version="0.2.0" />
-    <PackageReference Include="UnitsNet" Version="4.149.0" />
+    <PackageReference Include="UnitsNet" Version="4.150.0" />
     <PackageReference Include="Aptivi.VT.NET" Version="0.2.0" />
   </ItemGroup>
   <!-- KS Dependencies Information End -->
