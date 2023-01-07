@@ -69,16 +69,8 @@ namespace KS.Users.Login
         /// </summary>
         public static void LoginPrompt()
         {
-            while (true)
+            while (!(Flags.RebootRequested | Flags.KernelShutdown))
             {
-                // Check to see if the reboot is requested
-                if (Flags.RebootRequested | Flags.KernelShutdown)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.W, "Reboot has been requested. Exiting...");
-                    Flags.RebootRequested = false;
-                    return;
-                }
-
                 // Fire event PreLogin
                 EventsManager.FireEvent(EventType.PreLogin);
 
@@ -106,52 +98,14 @@ namespace KS.Users.Login
                 if (Flags.ShowMOTDOnceFlag == true & Flags.ShowMOTD == true)
                 {
                     TextWriterColor.Write(CharManager.NewLine + PlaceParse.ProbePlaces(MotdParse.MOTDMessage), true, KernelColorType.Banner);
+                    Flags.ShowMOTDOnceFlag = false;
                 }
-                Flags.ShowMOTDOnceFlag = false;
 
                 // How do we prompt user to login?
                 var UsersList = UserManagement.ListAllUsers();
-                if (Flags.ChooseUser)
+                if (Flags.ModernLogon)
                 {
-                    // Generate user list
-                    ListWriterColor.WriteList(UsersList);
-                    int AnswerUserInt = 0;
-
-                    // Prompt user to choose a user
-                    while (AnswerUserInt == 0)
-                    {
-                        TextWriterColor.Write(">> ", false, KernelColorType.Input);
-                        string AnswerUserString = Input.ReadLine();
-
-                        // Parse input
-                        if (!string.IsNullOrWhiteSpace(AnswerUserString))
-                        {
-                            if (int.TryParse(AnswerUserString, out AnswerUserInt))
-                            {
-                                string SelectedUser = UserManagement.SelectUser(AnswerUserInt);
-                                DebugWriter.WriteDebug(DebugLevel.I, "Username correct. Finding if the user is disabled...");
-                                if (!GroupManagement.HasGroup(SelectedUser, GroupManagement.GroupType.Disabled))
-                                {
-                                    DebugWriter.WriteDebug(DebugLevel.I, "User can log in. (User is not in disabled list)");
-                                    ShowPasswordPrompt(SelectedUser);
-                                }
-                                else
-                                {
-                                    DebugWriter.WriteDebug(DebugLevel.W, "User can't log in. (User is in disabled list)");
-                                    TextWriterColor.Write(Translate.DoTranslation("User is disabled."), true, KernelColorType.Error);
-                                    EventsManager.FireEvent(EventType.LoginError, SelectedUser, LoginErrorReasons.Disabled);
-                                }
-                            }
-                            else
-                            {
-                                TextWriterColor.Write(Translate.DoTranslation("The answer must be numeric."), true, KernelColorType.Error);
-                            }
-                        }
-                        else
-                        {
-                            TextWriterColor.Write(Translate.DoTranslation("Please enter a user number."), true, KernelColorType.Error);
-                        }
-                    }
+                    
                 }
                 else
                 {
@@ -164,51 +118,20 @@ namespace KS.Users.Login
 
                     // Prompt user to login
                     if (!string.IsNullOrWhiteSpace(UsernamePrompt))
-                    {
                         TextWriterColor.Write(PlaceParse.ProbePlaces(UsernamePrompt), false, KernelColorType.Input);
-                    }
                     else
-                    {
                         TextWriterColor.Write(Translate.DoTranslation("Username: "), false, KernelColorType.Input);
-                    }
                     string answeruser = Input.ReadLine();
 
                     // Parse input
-                    if (answeruser.Contains(" "))
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.W, "Spaces found in username.");
-                        TextWriterColor.Write(Translate.DoTranslation("Spaces are not allowed."), true, KernelColorType.Error);
-                        EventsManager.FireEvent(EventType.LoginError, answeruser, LoginErrorReasons.Spaces);
-                    }
-                    else if (answeruser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray()) != -1)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.W, "Unknown characters found in username.");
-                        TextWriterColor.Write(Translate.DoTranslation("Special characters are not allowed."), true, KernelColorType.Error);
-                        EventsManager.FireEvent(EventType.LoginError, answeruser, LoginErrorReasons.SpecialCharacters);
-                    }
-                    else if (Users.ContainsKey(answeruser))
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Username correct. Finding if the user is disabled...");
-                        if (!GroupManagement.HasGroup(answeruser, GroupManagement.GroupType.Disabled))
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.I, "User can log in. (User is not in disabled list)");
-                            ShowPasswordPrompt(answeruser);
-                        }
-                        else
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.W, "User can't log in. (User is in disabled list)");
-                            TextWriterColor.Write(Translate.DoTranslation("User is disabled."), true, KernelColorType.Error);
-                            EventsManager.FireEvent(EventType.LoginError, answeruser, LoginErrorReasons.Disabled);
-                        }
-                    }
+                    if (UserManagement.ValidateUsername(answeruser))
+                        ShowPasswordPrompt(answeruser);
                     else
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Username not found.");
-                        TextWriterColor.Write(Translate.DoTranslation("Wrong username."), true, KernelColorType.Error);
-                        EventsManager.FireEvent(EventType.LoginError, answeruser, LoginErrorReasons.NotFound);
-                    }
+                        TextWriterColor.Write(Translate.DoTranslation("Wrong username or username not found."), true, KernelColorType.Error);
                 }
             }
+
+            Flags.RebootRequested = false;
         }
 
         /// <summary>
@@ -218,60 +141,35 @@ namespace KS.Users.Login
         public static void ShowPasswordPrompt(string usernamerequested)
         {
             // Prompts user to enter a user's password
-            while (true)
+            while (!(Flags.RebootRequested | Flags.KernelShutdown))
             {
-                // Check to see if reboot is requested
-                if (Flags.RebootRequested | Flags.KernelShutdown)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.W, "Reboot has been requested. Exiting...");
-                    Flags.RebootRequested = false;
-                    return;
-                }
-
                 // Get the password from dictionary
                 string UserPassword = Users[usernamerequested];
 
                 // Check if there's a password
-                if (!(UserPassword == Encryption.GetEmptyHash("SHA256"))) // No password
+                if (UserPassword != Encryption.GetEmptyHash("SHA256"))
                 {
                     // Wait for input
                     DebugWriter.WriteDebug(DebugLevel.I, "Password not empty");
                     if (!string.IsNullOrWhiteSpace(PasswordPrompt))
-                    {
                         TextWriterColor.Write(PlaceParse.ProbePlaces(PasswordPrompt), false, KernelColorType.Input);
-                    }
                     else
-                    {
                         TextWriterColor.Write(Translate.DoTranslation("{0}'s password: "), false, KernelColorType.Input, usernamerequested);
-                    }
 
                     // Get input
                     string answerpass = Input.ReadLineNoInputUnsafe();
 
-                    // Compute password hash
-                    DebugWriter.WriteDebug(DebugLevel.I, "Computing written password hash...");
-                    answerpass = Encryption.GetEncryptedString(answerpass, "SHA256");
-
-                    // Parse password input
-                    if (Users.TryGetValue(usernamerequested, out UserPassword) && UserPassword == answerpass)
+                    if (UserManagement.ValidatePassword(usernamerequested, answerpass))
                     {
-                        // Log-in instantly
-                        DebugWriter.WriteDebug(DebugLevel.I, "Password written correctly. Entering shell...");
                         SignIn(usernamerequested);
                         return;
                     }
                     else
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Passowrd written wrong...");
                         TextWriterColor.Write(Translate.DoTranslation("Wrong password."), true, KernelColorType.Error);
-                        EventsManager.FireEvent(EventType.LoginError, usernamerequested, LoginErrorReasons.WrongPassword);
                         if (!Flags.Maintenance)
-                        {
                             if (!Screensaver.LockMode)
-                            {
                                 return;
-                            }
-                        }
                     }
                 }
                 else
@@ -283,6 +181,7 @@ namespace KS.Users.Login
                 }
             }
 
+            Flags.RebootRequested = false;
         }
 
         /// <summary>

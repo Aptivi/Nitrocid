@@ -32,6 +32,11 @@ using KS.Users.Groups;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using KS.Kernel.Events;
+using KS.Users.Login;
+using KS.ConsoleBase.Colors;
+using KS.Kernel;
+using KS.Misc.Screensaver;
+using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Users
 {
@@ -598,6 +603,86 @@ namespace KS.Users
             else
             {
                 throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("User not found"));
+            }
+        }
+
+        /// <summary>
+        /// Validates the username
+        /// </summary>
+        /// <param name="User">The user name to be validated</param>
+        /// <param name="CheckExistence">Checks for existence</param>
+        /// <returns>True if the user doesn't contain spaces and unknown characters and is found and not disabled</returns>
+        public static bool ValidateUsername(string User, bool CheckExistence = true)
+        {
+            if (User.Contains(' '))
+            {
+                // Usernames shouldn't contain spaces
+                DebugWriter.WriteDebug(DebugLevel.W, "Spaces found in username.");
+                EventsManager.FireEvent(EventType.LoginError, User, LoginErrorReasons.Spaces);
+                return false;
+            }
+            else if (User.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray()) != -1)
+            {
+                // Usernames shouldn't contain unknown characters
+                DebugWriter.WriteDebug(DebugLevel.W, "Unknown characters found in username.");
+                EventsManager.FireEvent(EventType.LoginError, User, LoginErrorReasons.SpecialCharacters);
+                return false;
+            }
+            else if (CheckExistence && !UserExists(User))
+            {
+                // User should exist
+                DebugWriter.WriteDebug(DebugLevel.E, "Username not found.");
+                EventsManager.FireEvent(EventType.LoginError, User, LoginErrorReasons.NotFound);
+                return false;
+            }
+            else
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Username correct. Finding if the user is disabled...");
+                if (!UserExists(User) || !GroupManagement.HasGroup(User, GroupManagement.GroupType.Disabled))
+                {
+                    // User is not disabled
+                    DebugWriter.WriteDebug(DebugLevel.I, "User validation complete");
+                    return true;
+                }
+                else
+                {
+                    // User is disabled
+                    DebugWriter.WriteDebug(DebugLevel.W, "User can't log in. (User is in disabled list)");
+                    EventsManager.FireEvent(EventType.LoginError, User, LoginErrorReasons.Disabled);
+                    return false;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Validates the password
+        /// </summary>
+        /// <param name="User">Username of the target</param>
+        /// <param name="Password">Password of the target</param>
+        /// <returns>True if correct</returns>
+        public static bool ValidatePassword(string User, string Password)
+        {
+            // If the user is not even valid, assume that the password is wrong
+            if (!ValidateUsername(User))
+                return false;
+
+            // Encrypt the password with SHA256
+            Password = Encryption.GetEncryptedString(Password, "SHA256");
+            DebugWriter.WriteDebug(DebugLevel.I, "Hash computed.");
+
+            // Now, check to see if the password matches
+            if (Login.Login.Users.TryGetValue(User, out string UserPassword) && UserPassword == Password)
+            {
+                // Password matches
+                DebugWriter.WriteDebug(DebugLevel.I, "Password written correctly.");
+                return true;
+            }
+            else
+            {
+                // Password doesn't match
+                DebugWriter.WriteDebug(DebugLevel.I, "Passowrd written wrong...");
+                EventsManager.FireEvent(EventType.LoginError, User, LoginErrorReasons.WrongPassword);
+                return false;
             }
         }
 

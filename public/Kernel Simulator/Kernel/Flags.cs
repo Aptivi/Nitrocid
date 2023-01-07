@@ -170,9 +170,9 @@ namespace KS.Kernel
         /// </summary>
         public static bool PrintLineNumbers { get; set; }
         /// <summary>
-        /// Whether to let the user choose which user they want to sign in or write it themselves
+        /// Whether to use the modern way to present log-on screen or the classic way (write your username)
         /// </summary>
-        public static bool ChooseUser { get; set; }
+        public static bool ModernLogon { get; set; };
         /// <summary>
         /// Whether to print the stack trace on kernel error
         /// </summary>

@@ -610,6 +610,12 @@
                 "Type": "SBoolean",
                 "Variable": "IncludeDisabled",
                 "Description": "Includes the disabled users in the list"
+            },
+            {
+                "Name": "Modern logon",
+                "Type": "SBoolean",
+                "Variable": "ModernLogon",
+                "Description": "Whether to use the modern way to present log-on screen or the classic way (write your username)"
             }
         ]
     },

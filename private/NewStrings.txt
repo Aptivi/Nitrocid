@@ -298,5 +298,8 @@ Untitled presentation
 Untitled presentation page
 Tests the presentation system
 Renames group of files to selected format
+Whether to use the modern way to present log-on screen or the classic way (write your username)
+Modern logon
+Wrong username or username not found.
 
 ==========================================================================================================================================
