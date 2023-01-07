@@ -106,11 +106,11 @@ namespace KS.Users
                 }
 
                 // Add user locally
-                if (!Login.Login.Users.ContainsKey(uninitUser))
+                if (!UserExists(uninitUser))
                 {
                     Login.Login.Users.Add(uninitUser, unpassword);
                 }
-                else if (Login.Login.Users.ContainsKey(uninitUser) & ModifyExisting)
+                else if (UserExists(uninitUser) & ModifyExisting)
                 {
                     Login.Login.Users[uninitUser] = unpassword;
                 }
@@ -166,7 +166,7 @@ namespace KS.Users
             // Opens file stream
             string UsersTokenContent = File.ReadAllText(Paths.GetKernelPath(KernelPathType.Users));
             var UninitUsersToken = JArray.Parse(!string.IsNullOrEmpty(UsersTokenContent) ? UsersTokenContent : "[]");
-            foreach (JObject UserToken in UninitUsersToken)
+            foreach (var UserToken in UninitUsersToken)
                 InitializeUser((string)UserToken["username"], (string)UserToken["password"], false);
         }
 
@@ -189,13 +189,9 @@ namespace KS.Users
         /// <returns>JSON token of user property</returns>
         public static JToken GetUserProperty(string User, UserProperty PropertyType)
         {
-            foreach (JObject UserToken in UsersToken)
-            {
+            foreach (var UserToken in UsersToken)
                 if (UserToken["username"].ToString() == User)
-                {
                     return UserToken.SelectToken(PropertyType.ToString().ToLower());
-                }
-            }
             return null;
         }
 
@@ -207,7 +203,7 @@ namespace KS.Users
         /// <param name="Value">Value</param>
         public static void SetUserProperty(string User, UserProperty PropertyType, string Value)
         {
-            foreach (JObject UserToken in UsersToken)
+            foreach (var UserToken in UsersToken)
             {
                 if (UserToken["username"].ToString() == User)
                 {
@@ -262,7 +258,7 @@ namespace KS.Users
                 DebugWriter.WriteDebug(DebugLevel.W, "Username is blank.");
                 throw new KernelException(KernelExceptionType.UserCreation, Translate.DoTranslation("Blank username."));
             }
-            else if (!Login.Login.Users.ContainsKey(newUser))
+            else if (!UserExists(newUser))
             {
                 try
                 {
@@ -315,7 +311,7 @@ namespace KS.Users
                 DebugWriter.WriteDebug(DebugLevel.W, "Username is blank.");
                 throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Blank username."));
             }
-            else if (Login.Login.Users.ContainsKey(user) == false)
+            else if (UserExists(user) == false)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Username {0} not found in list", user);
                 throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("User {0} not found."), user);
@@ -343,7 +339,7 @@ namespace KS.Users
                     Login.Login.Users.Remove(user);
 
                     // Remove user from Users.json
-                    foreach (JObject UserToken in UsersToken)
+                    foreach (var UserToken in UsersToken)
                     {
                         if (UserToken["username"].ToString() == user)
                         {
@@ -390,9 +386,9 @@ namespace KS.Users
         /// <param name="Username">New username</param>
         public static void ChangeUsername(string OldName, string Username)
         {
-            if (Login.Login.Users.ContainsKey(OldName))
+            if (UserExists(OldName))
             {
-                if (!Login.Login.Users.ContainsKey(Username))
+                if (!UserExists(Username))
                 {
                     try
                     {
@@ -480,7 +476,7 @@ namespace KS.Users
             CurrentPass = Encryption.GetEncryptedString(CurrentPass, "SHA256");
             if (CurrentPass == Login.Login.Users[Target])
             {
-                if (GroupManagement.HasGroup(Login.Login.CurrentUser.Username, GroupManagement.GroupType.Administrator) & Login.Login.Users.ContainsKey(Target))
+                if (GroupManagement.HasGroup(Login.Login.CurrentUser.Username, GroupManagement.GroupType.Administrator) & UserExists(Target))
                 {
                     // Change password locally
                     NewPass = Encryption.GetEncryptedString(NewPass, "SHA256");
@@ -492,7 +488,7 @@ namespace KS.Users
                     // Raise event
                     EventsManager.FireEvent(EventType.UserPasswordChanged, Target);
                 }
-                else if (GroupManagement.HasGroup(Login.Login.CurrentUser.Username, GroupManagement.GroupType.Administrator) & !Login.Login.Users.ContainsKey(Target))
+                else if (GroupManagement.HasGroup(Login.Login.CurrentUser.Username, GroupManagement.GroupType.Administrator) & !UserExists(Target))
                 {
                     throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("User not found"));
                 }

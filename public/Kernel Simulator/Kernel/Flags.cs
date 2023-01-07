@@ -172,7 +172,7 @@ namespace KS.Kernel
         /// <summary>
         /// Whether to use the modern way to present log-on screen or the classic way (write your username)
         /// </summary>
-        public static bool ModernLogon { get; set; };
+        public static bool ModernLogon { get; set; }
         /// <summary>
         /// Whether to print the stack trace on kernel error
         /// </summary>
