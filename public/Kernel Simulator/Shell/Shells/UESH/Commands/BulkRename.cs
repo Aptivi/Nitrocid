@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Files;
 using KS.Files.Folders;
 using KS.Files.Operations;
 using KS.Files.Querying;
@@ -55,7 +56,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
                 // Now, construct the file name and rename it to that
                 string finalName = $"{newName}-{fileNo}{Path.GetExtension(file)}";
-                Moving.MoveFileOrDir(file, finalName);
+                Moving.MoveFileOrDir(file, Filesystem.NeutralizePath(finalName, targetDir));
 
                 // Increment the number
                 fileNo += 1;
