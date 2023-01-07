@@ -35,8 +35,10 @@ namespace KSTests.LoginTests
         [Description("Management")]
         public void TestAddUser()
         {
-            UserManagement.AddUser("Account1").ShouldBeTrue();
-            UserManagement.AddUser("Account2", "password").ShouldBeTrue();
+            UserManagement.AddUser("Account1");
+            UserManagement.AddUser("Account2", "password");
+            UserManagement.UserExists("Account1").ShouldBeTrue();
+            UserManagement.UserExists("Account2").ShouldBeTrue();
         }
 
         /// <summary>

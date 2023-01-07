@@ -301,5 +301,7 @@ Renames group of files to selected format
 Whether to use the modern way to present log-on screen or the classic way (write your username)
 Modern logon
 Wrong username or username not found.
+Can't add username. Make sure that the username doesn't exist.
+Can't remove username. Make sure that the username exists.
 
 ==========================================================================================================================================

@@ -239,26 +239,11 @@ namespace KS.Users
         /// </summary>
         /// <param name="newUser">A new user</param>
         /// <param name="newPassword">A password</param>
-        public static bool AddUser(string newUser, string newPassword = "")
+        public static void AddUser(string newUser, string newPassword = "")
         {
             // Adds user
             DebugWriter.WriteDebug(DebugLevel.I, "Creating user {0}...", newUser);
-            if (newUser.Contains(" "))
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, "There are spaces in username.");
-                throw new KernelException(KernelExceptionType.UserCreation, Translate.DoTranslation("Spaces are not allowed."));
-            }
-            else if (newUser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray()) != -1)
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, "There are special characters in username.");
-                throw new KernelException(KernelExceptionType.UserCreation, Translate.DoTranslation("Special characters are not allowed."));
-            }
-            else if (string.IsNullOrEmpty(newUser))
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, "Username is blank.");
-                throw new KernelException(KernelExceptionType.UserCreation, Translate.DoTranslation("Blank username."));
-            }
-            else if (!UserExists(newUser))
+            if (ValidateUsername(newUser, false) && !UserExists(newUser))
             {
                 try
                 {
@@ -273,7 +258,6 @@ namespace KS.Users
                         InitializeUser(newUser, newPassword);
                     }
                     EventsManager.FireEvent(EventType.UserAdded, newUser);
-                    return true;
                 }
                 catch (Exception ex)
                 {
@@ -283,10 +267,7 @@ namespace KS.Users
                 }
             }
             else
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, "User {0} already found.", newUser);
-                throw new KernelException(KernelExceptionType.UserCreation, Translate.DoTranslation("usrmgr: Username {0} is already found"), newUser);
-            }
+                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Can't add username. Make sure that the username doesn't exist."));
         }
 
         /// <summary>
@@ -296,68 +277,53 @@ namespace KS.Users
         /// <remarks>This sub is an accomplice of in-shell command arguments.</remarks>
         public static void RemoveUser(string user)
         {
-            if (user.Contains(" "))
+            if (ValidateUsername(user))
             {
-                DebugWriter.WriteDebug(DebugLevel.W, "There are spaces in username.");
-                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Spaces are not allowed."));
-            }
-            else if (user.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray()) != -1)
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, "There are special characters in username.");
-                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Special characters are not allowed."));
-            }
-            else if (string.IsNullOrEmpty(user))
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, "Username is blank.");
-                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Blank username."));
-            }
-            else if (UserExists(user) == false)
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, "Username {0} not found in list", user);
-                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("User {0} not found."), user);
-            }
-            // Try to remove user
-            else if (Login.Login.Users.Keys.ToArray().Contains(user) & user == "root")
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, "User is root, and is a system account");
-                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("User {0} isn't allowed to be removed."), user);
-            }
-            else if (Login.Login.Users.Keys.ToArray().Contains(user) & user == (Login.Login.CurrentUser?.Username))
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, "User has logged in, so can't delete self.");
-                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("User {0} is already logged in. Log-out and log-in as another admin."), user);
-            }
-            else if (Login.Login.Users.Keys.ToArray().Contains(user) & user != "root")
-            {
-                try
+                // Try to remove user
+                if (user == "root")
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Removing permissions...");
-                    GroupManagement.UserGroups.Remove(user);
-
-                    // Remove user
-                    DebugWriter.WriteDebug(DebugLevel.I, "Removing username {0}...", user);
-                    Login.Login.Users.Remove(user);
-
-                    // Remove user from Users.json
-                    foreach (var UserToken in UsersToken)
+                    DebugWriter.WriteDebug(DebugLevel.W, "User is root, and is a system account");
+                    throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("User {0} isn't allowed to be removed."), user);
+                }
+                else if (user == (Login.Login.CurrentUser?.Username))
+                {
+                    DebugWriter.WriteDebug(DebugLevel.W, "User has logged in, so can't delete self.");
+                    throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("User {0} is already logged in. Log-out and log-in as another admin."), user);
+                }
+                else
+                {
+                    try
                     {
-                        if (UserToken["username"].ToString() == user)
-                        {
-                            UserToken.Remove();
-                            break;
-                        }
-                    }
-                    File.WriteAllText(Paths.GetKernelPath(KernelPathType.Users), JsonConvert.SerializeObject(UsersToken, Formatting.Indented));
+                        DebugWriter.WriteDebug(DebugLevel.I, "Removing permissions...");
+                        GroupManagement.UserGroups.Remove(user);
 
-                    // Raise event
-                    EventsManager.FireEvent(EventType.UserRemoved, user);
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebugStackTrace(ex);
-                    throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Error trying to remove username.") + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), ex, ex.Message);
+                        // Remove user
+                        DebugWriter.WriteDebug(DebugLevel.I, "Removing username {0}...", user);
+                        Login.Login.Users.Remove(user);
+
+                        // Remove user from Users.json
+                        foreach (var UserToken in UsersToken)
+                        {
+                            if (UserToken["username"].ToString() == user)
+                            {
+                                UserToken.Remove();
+                                break;
+                            }
+                        }
+                        File.WriteAllText(Paths.GetKernelPath(KernelPathType.Users), JsonConvert.SerializeObject(UsersToken, Formatting.Indented));
+
+                        // Raise event
+                        EventsManager.FireEvent(EventType.UserRemoved, user);
+                    }
+                    catch (Exception ex)
+                    {
+                        DebugWriter.WriteDebugStackTrace(ex);
+                        throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Error trying to remove username.") + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), ex, ex.Message);
+                    }
                 }
             }
+            else
+                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Can't remove username. Make sure that the username exists."));
         }
 
         /// <summary>

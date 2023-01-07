@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
@@ -39,7 +40,8 @@ namespace KS.Shell.Shells.UESH.Commands
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
             UserManagement.RemoveUser(ListArgsOnly[0]);
-            TextWriterColor.Write(Translate.DoTranslation("User {0} removed."), ListArgsOnly[0]);
+            if (!UserManagement.UserExists(ListArgsOnly[0]))
+                TextWriterColor.Write(Translate.DoTranslation("User {0} removed."), ListArgsOnly[0]);
         }
 
     }
