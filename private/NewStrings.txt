@@ -297,5 +297,6 @@ Not connected
 Untitled presentation
 Untitled presentation page
 Tests the presentation system
+Renames group of files to selected format
 
 ==========================================================================================================================================
