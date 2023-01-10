@@ -205,11 +205,10 @@ namespace KS.Misc.Screensaver.Displays
             DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
 
             // Get struck character and write it
-            var StrikeCharsIndex = default(int);
-            char StruckCharAssigned = default(char);
+            var StrikeCharsIndex = 0;
             foreach (char StruckChar in TypoSettings.TypoWrite)
             {
-                StruckCharAssigned = StruckChar;
+                char StruckCharAssigned = StruckChar;
 
                 // Check to see if we can go ahead
                 if (ConsoleResizeListener.WasResized(false))

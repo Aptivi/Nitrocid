@@ -62,7 +62,7 @@ namespace KS.Arguments.ArgumentBase
                 // Print usage information
                 if (HelpUsages.Length != 0)
                 {
-                    var Indent = default(bool);
+                    var Indent = false;
                     TextWriterColor.Write(Translate.DoTranslation("Usage:"));
 
                     // Enumerate through the available help usages

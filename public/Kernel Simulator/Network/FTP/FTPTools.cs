@@ -182,7 +182,7 @@ namespace KS.Network.FTP
                 else
                 {
                     string profanswer;
-                    var profanswered = default(bool);
+                    var profanswered = false;
                     var ProfHeaders = new[] { "#", Translate.DoTranslation("Host Name"), Translate.DoTranslation("Username"), Translate.DoTranslation("Data Type"), Translate.DoTranslation("Encoding"), Translate.DoTranslation("Encryption"), Translate.DoTranslation("Protocols") };
                     var ProfData = new string[profiles.Count, 7];
                     TextWriterColor.Write(Translate.DoTranslation("More than one profile found. Select one:"));

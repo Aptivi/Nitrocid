@@ -161,7 +161,7 @@ namespace KS.ConsoleBase.Inputs
         /// <param name="Timeout">Timeout</param>
         public static ConsoleKeyInfo ReadKeyTimeoutUnsafe(bool Intercept, TimeSpan Timeout)
         {
-            var CurrentMilliseconds = default(double);
+            var CurrentMilliseconds = 0d;
             while (!ConsoleWrapper.KeyAvailable)
             {
                 if (!(CurrentMilliseconds == Timeout.TotalMilliseconds))
@@ -188,7 +188,7 @@ namespace KS.ConsoleBase.Inputs
         public static string ReadLineUntil(ref bool Condition)
         {
             string Final = "";
-            var Finished = default(bool);
+            var Finished = false;
             while (!Finished)
             {
                 ConsoleKeyInfo KeyInfo;

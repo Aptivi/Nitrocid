@@ -106,7 +106,7 @@ namespace KS.Shell.ShellBase.Commands
                 if (HelpUsages.Length != 0)
                 {
                     // Print the usage information holder
-                    var Indent = default(bool);
+                    var Indent = false;
                     Decisive.DecisiveWrite(CommandType, DebugDeviceSocket, Translate.DoTranslation("Usage:"), false, KernelColorType.ListEntry);
 
                     // If remote debug, set the command to be prepended by the slash

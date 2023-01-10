@@ -81,7 +81,7 @@ namespace KS.Kernel.Configuration
         public static bool RepairConfig()
         {
             // Variables
-            var FixesNeeded = default(bool);
+            var FixesNeeded = false;
 
             // General sections
             int ExpectedSections = PristineConfigToken.Count;

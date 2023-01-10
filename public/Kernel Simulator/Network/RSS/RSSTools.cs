@@ -331,7 +331,7 @@ namespace KS.Network.RSS
             var FeedListJsonNewsSources = Array.Empty<JToken>();
             var FeedListJsonNewsSourceFeeds = Array.Empty<JToken>();
             int SelectedCountryIndex = 0;
-            var SelectedNewsSourceIndex = default(int);
+            var SelectedNewsSourceIndex = 0;
             int SelectedNewsSourceFeedIndex;
             string FinalFeedUrl = "";
 

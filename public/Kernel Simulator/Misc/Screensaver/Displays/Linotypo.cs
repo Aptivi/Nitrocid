@@ -309,10 +309,10 @@ namespace KS.Misc.Screensaver.Displays
             };
 
             // Other variables
-            var CountingCharacters = default(bool);
-            var CharacterCounter = default(int);
-            var EtaoinMode = default(bool);
-            var CappedEtaoin = default(bool);
+            var CountingCharacters = false;
+            var CharacterCounter = 0;
+            var EtaoinMode = false;
+            var CappedEtaoin = false;
             string LinotypeWrite = LinotypoSettings.LinotypoWrite;
 
             // Linotypo can also deal with files written on the field that is used for storing text, so check to see if the path exists.
@@ -325,7 +325,7 @@ namespace KS.Misc.Screensaver.Displays
             }
 
             // For each line, write four spaces, and extra two spaces if paragraph starts.
-            var StrikeCharsIndex1 = default(int);
+            var StrikeCharsIndex1 = 0;
             foreach (string Paragraph in LinotypeWrite.SplitNewLines())
             {
                 if (ConsoleResizeListener.WasResized(false))

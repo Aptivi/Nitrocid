@@ -239,7 +239,7 @@ namespace KS.Network.FTP.Filesystem
         {
             if (FTPShellCommon.FtpConnected)
             {
-                var Success = default(bool);
+                var Success = false;
 
                 // Begin the moving process
                 string SourceFile = Source.Split('/').Last();

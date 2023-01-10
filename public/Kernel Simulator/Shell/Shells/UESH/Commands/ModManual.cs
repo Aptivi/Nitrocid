@@ -47,7 +47,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            var ListMode = default(bool);
+            var ListMode = false;
             if (ListSwitchesOnly.Contains("-list"))
                 ListMode = true;
             if (!ListMode)

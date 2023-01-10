@@ -118,8 +118,8 @@ namespace KS.Users
                 // Add user globally
                 if (!(UsersToken.Count == 0))
                 {
-                    var UserExists = default(bool);
-                    var ExistingIndex = default(int);
+                    var UserExists = false;
+                    var ExistingIndex = 0;
                     foreach (JObject UserToken in UsersToken)
                     {
                         if (UserToken["username"].ToString() == uninitUser)

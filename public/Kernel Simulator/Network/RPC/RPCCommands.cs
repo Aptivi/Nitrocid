@@ -88,7 +88,7 @@ namespace KS.Network.RPC
                 DebugWriter.WriteDebug(DebugLevel.I, "Finished Arg: {0}", Arg);
 
                 // Check the command
-                var Malformed = default(bool);
+                var Malformed = false;
                 if (RPCCommandsField.Contains(Cmd))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Command found.");

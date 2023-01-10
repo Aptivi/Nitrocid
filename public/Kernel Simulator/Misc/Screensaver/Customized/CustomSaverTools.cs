@@ -155,7 +155,7 @@ namespace KS.Misc.Screensaver.Customized
         {
             if (!CustomSaverSettingsToken.ContainsKey(CustomSaver))
                 throw new KernelException(KernelExceptionType.NoSuchScreensaver, Translate.DoTranslation("Screensaver {0} not found."), CustomSaver);
-            var SettingFound = default(bool);
+            var SettingFound = false;
             foreach (JProperty Setting in CustomSaverSettingsToken[CustomSaver])
             {
                 if (Setting.Name == SaverSetting)

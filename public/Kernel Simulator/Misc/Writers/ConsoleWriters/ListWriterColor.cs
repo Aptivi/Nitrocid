@@ -112,7 +112,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                 try
                 {
                     // Variables
-                    var LinesMade = default(int);
+                    var LinesMade = 0;
                     int OldTop;
 
                     // Try to write list to console
@@ -236,7 +236,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                 try
                 {
                     // Variables
-                    var LinesMade = default(int);
+                    var LinesMade = 0;
                     int OldTop;
                     int EntryNumber = 1;
 

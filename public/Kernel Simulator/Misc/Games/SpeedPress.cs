@@ -75,7 +75,7 @@ namespace KS.Misc.Games
         /// <param name="CustomTimeout">Custom game timeout</param>
         public static void InitializeSpeedPress(SpeedPressDifficulty Difficulty, int CustomTimeout = 0)
         {
-            var SpeedTimeout = default(int);
+            var SpeedTimeout = 0;
             char SelectedChar;
             var WrittenChar = default(ConsoleKeyInfo);
             var RandomEngine = new Random();

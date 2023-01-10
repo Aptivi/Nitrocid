@@ -109,12 +109,12 @@ namespace KS.ConsoleBase.Colors
             int CurrentColorG = DefaultColorG;
             int CurrentColorB = DefaultColorB;
             char CurrentRange = 'R';
-            var ColorWheelExiting = default(bool);
+            var ColorWheelExiting = false;
             DebugWriter.WriteDebug(DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", CurrentColorR, CurrentColorG, CurrentColorB);
             DebugWriter.WriteDebug(DebugLevel.I, "Got color ({0})", CurrentColor);
 
             ConsoleWrapper.CursorVisible = false;
-            var _DefaultColor = default(int);
+            var _DefaultColor = 0;
             while (!ColorWheelExiting)
             {
                 ConsoleWrapper.Clear();

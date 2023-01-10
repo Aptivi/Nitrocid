@@ -73,7 +73,7 @@ namespace KS.Shell.Shells.UESH.Commands
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
             var Titles = new List<string>();
-            var PressEnter = default(bool);
+            var PressEnter = false;
             var OutputType = ChoiceStyle.DefaultChoiceOutputType;
             if (ListSwitchesOnly.Contains("-multiple"))
                 PressEnter = true;

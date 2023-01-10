@@ -135,8 +135,8 @@ namespace KS.Misc.Games
                 bool AppleDrawn = false;
                 int SnakePreviousX;
                 int SnakePreviousY;
-                var SnakeLastTailToWipeX = default(int);
-                var SnakeLastTailToWipeY = default(int);
+                var SnakeLastTailToWipeX = 0;
+                var SnakeLastTailToWipeY = 0;
 
                 while (!Dead)
                 {

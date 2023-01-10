@@ -112,7 +112,7 @@ namespace KS.Network.FTP.Transfer
                     var Results = FTPShellCommon.ClientFTP.DownloadDirectory(LocalFolderPath, Folder, FtpFolderSyncMode.Update, FtpLocalExists.Resume, (FtpVerify)((int)FtpVerify.Retry + (int)FtpVerify.Throw), null, FTPTransferProgress.MultipleProgress);
 
                     // Print download results to debugger
-                    var Failed = default(bool);
+                    var Failed = false;
                     DebugWriter.WriteDebug(DebugLevel.I, "Folder download result:");
                     foreach (FtpResult Result in Results)
                     {
@@ -224,7 +224,7 @@ namespace KS.Network.FTP.Transfer
                 var Results = FTPShellCommon.ClientFTP.UploadDirectory(LocalFolderPath, Folder, FtpFolderSyncMode.Update, FtpRemoteExists.Resume, FtpVerify.Retry, null, FTPTransferProgress.MultipleProgress);
 
                 // Print upload results to debugger
-                var Failed = default(bool);
+                var Failed = false;
                 DebugWriter.WriteDebug(DebugLevel.I, "Folder upload result:");
                 foreach (FtpResult Result in Results)
                 {

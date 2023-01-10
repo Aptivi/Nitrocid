@@ -53,7 +53,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            var ShowAll = default(bool);
+            var ShowAll = false;
             if (ListSwitchesOnly.Contains("-all"))
                 ShowAll = true;
             if (ShowAll)

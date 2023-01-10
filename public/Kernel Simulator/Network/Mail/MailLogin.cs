@@ -129,7 +129,7 @@ namespace KS.Network.Mail
         public static void PromptServer()
         {
             string IMAP_Address;
-            var IMAP_Port = default(int);
+            var IMAP_Port = 0;
             string SMTP_Address = "";
             int SMTP_Port;
             // IMAP server address and port
@@ -197,7 +197,7 @@ namespace KS.Network.Mail
             // Get the mail server dynamically
             var DynamicConfiguration = Tools.GetIspConfig(Address);
             string ReturnedMailAddress = "";
-            var ReturnedMailPort = default(int);
+            var ReturnedMailPort = 0;
             switch (Type)
             {
                 case ServerType.IMAP:

@@ -166,7 +166,7 @@ namespace KS.Misc.Archive
                 DebugWriter.WriteDebug(DebugLevel.I, "Target contains going back. Counting...");
                 var CADSplit = ArchiveShellCommon.ArchiveShell_CurrentArchiveDirectory.Split('/').ToList();
                 var TargetSplit = Target.Split('/').ToList();
-                var CADBackSteps = default(int);
+                var CADBackSteps = 0;
 
                 // Add back steps if target is ".."
                 DebugWriter.WriteDebug(DebugLevel.I, "Target length: {0}", TargetSplit.Count);

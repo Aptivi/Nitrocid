@@ -72,7 +72,7 @@ namespace KS.Modifications.ManPages
 
                 // First, get all lines in the file
                 var ManLines = File.ReadAllLines(ManualFile);
-                var BodyParsing = default(bool);
+                var BodyParsing = false;
                 foreach (string ManLine in ManLines)
                 {
                     // Check for the rest if the manpage has MAN START section

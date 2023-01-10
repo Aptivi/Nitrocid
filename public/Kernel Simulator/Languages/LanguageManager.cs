@@ -188,7 +188,7 @@ namespace KS.Languages
                                 TextWriterColor.Write(Translate.DoTranslation("The language you've selected contains two variants. Select one:") + CharManager.NewLine);
                                 TextWriterColor.Write(" 1) " + Translate.DoTranslation("Transliterated version", lang), true, KernelColorType.Option);
                                 TextWriterColor.Write(" 2) " + Translate.DoTranslation("Translated version", lang + "-T") + CharManager.NewLine, true, KernelColorType.Option);
-                                var LanguageSet = default(bool);
+                                var LanguageSet = false;
                                 while (!LanguageSet)
                                 {
                                     TextWriterColor.Write(">> ", false, KernelColorType.Input);

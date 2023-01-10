@@ -46,7 +46,7 @@ namespace KS.ConsoleBase.Themes.Studio
             ThemeStudioTools.SelectedThemeName = ThemeName;
             string Response;
             int MaximumOptions = ThemeStudioTools.SelectedColors.Count + 9; // Colors + options
-            var StudioExiting = default(bool);
+            var StudioExiting = false;
 
             while (!StudioExiting)
             {

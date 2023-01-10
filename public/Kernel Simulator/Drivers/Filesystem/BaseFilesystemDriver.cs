@@ -578,9 +578,9 @@ namespace KS.Drivers.Filesystem
             var TextFileStream = new FileStream(TextFile, FileMode.Open, FileAccess.Read);
             int CarriageReturnCode = Convert.ToChar(LineEndingsTools.GetLineEndingString(FilesystemNewlineStyle.CR)).GetAsciiCode();
             int LineFeedCode = Convert.ToChar(LineEndingsTools.GetLineEndingString(FilesystemNewlineStyle.LF)).GetAsciiCode();
-            var CarriageReturnSpotted = default(bool);
-            var LineFeedSpotted = default(bool);
-            var ExitOnSpotted = default(bool);
+            var CarriageReturnSpotted = false;
+            var LineFeedSpotted = false;
+            var ExitOnSpotted = false;
 
             // Search for new line style
             while (TextFileStream.Position != TextFileStream.Length)

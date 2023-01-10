@@ -78,7 +78,7 @@ namespace KS.TimeDate
         public static bool ShowTimeZones(string Zone)
         {
             var ZoneTimes = GetTimeZones();
-            var ZoneFound = default(bool);
+            var ZoneFound = false;
             foreach (string ZoneName in ZoneTimes.Keys)
             {
                 if (ZoneName.Contains(Zone))

@@ -76,7 +76,7 @@ namespace KS.Scripting.Conditions
                 // First, check for the existence of one of the conditional words
                 DebugWriter.WriteDebug(DebugLevel.I, "Checking expression {0} for condition", ConditionToSatisfy);
                 var EnclosedWords = ConditionToSatisfy.SplitEncloseDoubleQuotes(" ")?.ToList();
-                var ConditionFound = default(bool);
+                var ConditionFound = false;
                 string ConditionType = "none";
                 var ConditionBase = AvailableConditions[ConditionType];
                 foreach (string Condition in AvailableConditions.Keys)

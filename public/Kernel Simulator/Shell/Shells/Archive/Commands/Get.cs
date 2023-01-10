@@ -51,7 +51,7 @@ namespace KS.Shell.Shells.Archive.Commands
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
             string Where = "";
-            var Absolute = default(bool);
+            var Absolute = false;
             if (ListArgsOnly.Length > 1)
             {
                 if (!(ListSwitchesOnly[0] == "-absolute"))

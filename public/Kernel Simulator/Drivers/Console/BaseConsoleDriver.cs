@@ -557,7 +557,7 @@ namespace KS.Drivers.Console.Consoles
         {
             lock (TextWriterColor.WriteLock)
             {
-                var LinesMade = default(int);
+                var LinesMade = 0;
                 int OldTop;
                 try
                 {

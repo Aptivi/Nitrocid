@@ -50,7 +50,7 @@ namespace KS.Shell.Shells.SFTP
 
             // Actual shell logic
             string SFTPStrCmd;
-            var SFTPInitialized = default(bool);
+            var SFTPInitialized = false;
             while (!Bail)
             {
                 try
