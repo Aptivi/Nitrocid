@@ -105,7 +105,8 @@ namespace KS.Users.Login
                 var UsersList = UserManagement.ListAllUsers();
                 if (Flags.ModernLogon)
                 {
-                    
+                    // Invoke the modern logon handler
+                    ModernLogonScreen.ShowLogon();
                 }
                 else
                 {

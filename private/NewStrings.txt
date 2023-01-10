@@ -303,5 +303,8 @@ Modern logon
 Wrong username or username not found.
 Can't add username. Make sure that the username doesn't exist.
 Can't remove username. Make sure that the username exists.
+Select a user account you want to log in with.
+Enter the password for user
+Wrong password for user.
 
 ==========================================================================================================================================

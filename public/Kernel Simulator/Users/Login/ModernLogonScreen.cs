@@ -16,16 +16,77 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using KS.ConsoleBase;
+using KS.Misc.Writers.ConsoleWriters;
+using KS.Misc.Writers.FancyWriters.Tools;
+using KS.Misc.Writers.FancyWriters;
+using KS.ConsoleBase.Colors;
+using KS.TimeDate;
+using KS.ConsoleBase.Inputs;
+using KS.Languages;
+using KS.ConsoleBase.Inputs.Styles;
+using KS.Drivers.Encryption;
 
 namespace KS.Users.Login
 {
     internal static class ModernLogonScreen
     {
+        internal static void ShowLogon()
+        {
+            // Clear the console
+            ConsoleWrapper.CursorVisible = false;
+            ConsoleWrapper.Clear();
 
+            // Show the date and the time in the modern way
+            // TODO: update this while waiting for input at the same time
+            string timeStr = TimeDateRenderers.RenderTime();
+            var figFont = FigletTools.GetFigletFont("Banner3");
+            int figWidth = FigletTools.GetFigletWidth(timeStr, figFont) / 2;
+            int figHeight = FigletTools.GetFigletHeight(timeStr, figFont) / 2;
+            int consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidth;
+            int consoleY = (ConsoleWrapper.WindowHeight / 2) - figHeight;
+            FigletWhereColor.WriteFigletWhere(timeStr, consoleX, consoleY, true, figFont, KernelColorType.Stage);
+
+            // Print the date
+            string dateStr = TimeDateRenderers.RenderDate();
+            int consoleInfoX = (ConsoleWrapper.WindowWidth / 2) - (dateStr.Length / 2);
+            int consoleInfoY = (ConsoleWrapper.WindowHeight / 2) + figHeight + 2;
+            TextWriterWhereColor.WriteWhere(dateStr, consoleInfoX, consoleInfoY);
+
+            // Wait for the keypress
+            Input.DetectKeypress();
+
+            // Now, clear the console again and prompt for username
+            bool loggedIn = false;
+            string userName = "";
+            while (!loggedIn)
+            {
+                // First, get the user number from the selection input
+                // TODO: Implement user full name, basic info, etc.
+                int userNum = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a user account you want to log in with."), string.Join("/", UserManagement.ListAllUsers().ToArray()));
+
+                // Then, get the user from the number and prompt for password if found
+                userName = UserManagement.SelectUser(userNum);
+                if (Login.Users[userName] != Encryption.GetEmptyHash("SHA256"))
+                {
+                    // The password is not empty. Prompt for password.
+                    TextWriterColor.Write(Translate.DoTranslation("Enter the password for user") + " {0}: ", false, userName);
+                    string pass = Input.ReadLineNoInput();
+
+                    // Validate the password
+                    if (UserManagement.ValidatePassword(userName, pass))
+                        // Password written correctly. Log in.
+                        loggedIn = true;
+                    else
+                        // Wrong password.
+                        TextWriterColor.Write(Translate.DoTranslation("Wrong password for user."), KernelColorType.Error);
+                }
+                else
+                    loggedIn = true;
+            }
+
+            // Finally, launch the shell
+            Login.SignIn(userName);
+        }
     }
 }
