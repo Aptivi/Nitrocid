@@ -92,6 +92,7 @@ namespace KS.Users.Login
             }
 
             // Finally, launch the shell
+            ConsoleWrapper.Clear();
             Login.SignIn(userName);
         }
     }

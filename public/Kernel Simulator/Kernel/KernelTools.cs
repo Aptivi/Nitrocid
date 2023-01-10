@@ -189,9 +189,6 @@ namespace KS.Kernel
             }
             TextWriterColor.Write();
 
-            // Show license
-            WelcomeMessage.WriteLicense();
-
             // Load splash
             SplashManager.OpenSplash();
 

@@ -32,6 +32,7 @@ using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.RSS;
 using KS.Shell.ShellBase.Shells;
 using KS.Kernel.Events;
+using KS.Misc.Writers.MiscWriters;
 
 namespace KS.Users.Login
 {
@@ -204,13 +205,18 @@ namespace KS.Users.Login
 
             // Sign in to user.
             CurrentUserInfo = new UserInfo(signedInUser);
+
+            // Fire event PostLogin
+            EventsManager.FireEvent(EventType.PostLogin, CurrentUser.Username);
+
+            // Show license information
+            WelcomeMessage.WriteLicense();
+
+            // Show MOTD
             Flags.ShowMOTDOnceFlag = true;
             if (Flags.ShowMAL)
                 TextWriterColor.Write(PlaceParse.ProbePlaces(MalParse.MAL), true, KernelColorType.Banner);
             RSSTools.ShowHeadlineLogin();
-
-            // Fire event PostLogin
-            EventsManager.FireEvent(EventType.PostLogin, CurrentUser.Username);
 
             // Initialize shell
             DebugWriter.WriteDebug(DebugLevel.I, "Shell is being initialized...");
