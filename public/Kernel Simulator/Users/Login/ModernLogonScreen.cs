@@ -53,6 +53,12 @@ namespace KS.Users.Login
             int consoleInfoY = (ConsoleWrapper.WindowHeight / 2) + figHeight + 2;
             TextWriterWhereColor.WriteWhere(dateStr, consoleInfoX, consoleInfoY);
 
+            // Print the instructions
+            string instStr = Translate.DoTranslation("Press any key to start...");
+            int consoleInstX = (ConsoleWrapper.WindowWidth / 2) - (dateStr.Length / 2);
+            int consoleInstY = ConsoleWrapper.WindowHeight - 2;
+            TextWriterWhereColor.WriteWhere(instStr, consoleInstX, consoleInstY);
+
             // Wait for the keypress
             Input.DetectKeypress();
 
