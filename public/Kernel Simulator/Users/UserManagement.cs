@@ -28,15 +28,11 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text;
-using KS.Users.Groups;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using KS.Kernel.Events;
 using KS.Users.Login;
-using KS.ConsoleBase.Colors;
-using KS.Kernel;
-using KS.Misc.Screensaver;
-using KS.Misc.Writers.ConsoleWriters;
+using Org.BouncyCastle.Asn1.X509;
 
 namespace KS.Users
 {
@@ -74,9 +70,17 @@ namespace KS.Users
             /// </summary>
             Password,
             /// <summary>
-            /// List of permissions
+            /// The user is an administrative account
             /// </summary>
-            Groups
+            Admin,
+            /// <summary>
+            /// The user is anonymous
+            /// </summary>
+            Anonymous,
+            /// <summary>
+            /// The user is disabled
+            /// </summary>
+            Disabled
         }
 
         // ---------- User Management ----------
@@ -120,7 +124,7 @@ namespace KS.Users
                 {
                     var UserExists = false;
                     var ExistingIndex = 0;
-                    foreach (JObject UserToken in UsersToken)
+                    foreach (JToken UserToken in UsersToken)
                     {
                         if (UserToken["username"].ToString() == uninitUser)
                         {
@@ -131,7 +135,13 @@ namespace KS.Users
                     }
                     if (!UserExists)
                     {
-                        var NewUser = new JObject(new JProperty("username", uninitUser), new JProperty("password", unpassword), new JProperty("groups", new JArray()));
+                        var NewUser = new JObject(
+                            new JProperty("username", uninitUser),
+                            new JProperty("password", unpassword),
+                            new JProperty("admin", false),
+                            new JProperty("anonymous", false),
+                            new JProperty("disabled", false)
+                        );
                         UsersToken.Add(NewUser);
                     }
                     else if (UserExists & ModifyExisting)
@@ -141,14 +151,19 @@ namespace KS.Users
                 }
                 else
                 {
-                    var NewUser = new JObject(new JProperty("username", uninitUser), new JProperty("password", unpassword), new JProperty("groups", new JArray()));
+                    var NewUser = new JObject(
+                        new JProperty("username", uninitUser),
+                        new JProperty("password", unpassword),
+                        new JProperty("admin", false),
+                        new JProperty("anonymous", false),
+                        new JProperty("disabled", false)
+                    );
                     UsersToken.Add(NewUser);
                 }
                 File.WriteAllText(Paths.GetKernelPath(KernelPathType.Users), JsonConvert.SerializeObject(UsersToken, Formatting.Indented));
 
                 // Ready permissions
                 DebugWriter.WriteDebug(DebugLevel.I, "Username {0} added. Readying permissions...", uninitUser);
-                GroupManagement.InitGroupsForNewUser(uninitUser);
                 return true;
             }
             catch (Exception ex)
@@ -201,34 +216,14 @@ namespace KS.Users
         /// <param name="User">Target user</param>
         /// <param name="PropertyType">Property type</param>
         /// <param name="Value">Value</param>
-        public static void SetUserProperty(string User, UserProperty PropertyType, string Value)
+        public static void SetUserProperty(string User, UserProperty PropertyType, JToken Value)
         {
             foreach (var UserToken in UsersToken)
             {
                 if (UserToken["username"].ToString() == User)
                 {
-                    switch (PropertyType)
-                    {
-                        case UserProperty.Username:
-                            {
-                                UserToken["username"] = Value;
-                                break;
-                            }
-                        case UserProperty.Password:
-                            {
-                                UserToken["password"] = Value;
-                                break;
-                            }
-                        case UserProperty.Groups:
-                            {
-                                throw new NotSupportedException("Use AddGroup and RemoveGroup for this.");
-                            }
-
-                        default:
-                            {
-                                throw new ArgumentException("Property type is invalid");
-                            }
-                    }
+                    string propertyTypeNameJson = PropertyType.ToString().ToLower();
+                    UserToken[propertyTypeNameJson] = Value;
                 }
             }
             File.WriteAllText(Paths.GetKernelPath(KernelPathType.Users), JsonConvert.SerializeObject(UsersToken, Formatting.Indented));
@@ -295,7 +290,6 @@ namespace KS.Users
                     try
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Removing permissions...");
-                        GroupManagement.UserGroups.Remove(user);
 
                         // Remove user
                         DebugWriter.WriteDebug(DebugLevel.I, "Removing username {0}...", user);
@@ -364,7 +358,6 @@ namespace KS.Users
                         // Rename username in dictionary
                         Login.Login.Users.Remove(OldName);
                         Login.Login.Users.Add(Username, Temporary);
-                        GroupManagement.GroupEditForNewUser(OldName, Username);
 
                         // Rename username in Users.json
                         SetUserProperty(OldName, UserProperty.Username, Username);
@@ -413,22 +406,23 @@ namespace KS.Users
         /// </summary>
         public static void InitializeSystemAccount()
         {
+            string systemAccountName = "root";
             if (Checking.FileExists(Paths.GetKernelPath(KernelPathType.Users)))
             {
-                if (GetUserProperty("root", UserProperty.Password) is not null)
+                if (GetUserProperty(systemAccountName, UserProperty.Password) is not null)
                 {
-                    InitializeUser("root", (string)GetUserProperty("root", UserProperty.Password), false, true);
+                    InitializeUser(systemAccountName, (string)GetUserProperty(systemAccountName, UserProperty.Password), false, true);
                 }
                 else
                 {
-                    InitializeUser("root", "", true, true);
+                    InitializeUser(systemAccountName, "", true, true);
                 }
             }
             else
             {
-                InitializeUser("root", "", true, true);
+                InitializeUser(systemAccountName, "", true, true);
             }
-            GroupManagement.AddGroup(GroupManagement.GroupType.Administrator, "root");
+            SetUserProperty(systemAccountName, UserProperty.Admin, true);
         }
 
         /// <summary>
@@ -439,10 +433,12 @@ namespace KS.Users
         /// <param name="NewPass">New user password</param>
         public static void ChangePassword(string Target, string CurrentPass, string NewPass)
         {
+            bool currentUserAdmin = (bool)GetUserProperty(Login.Login.CurrentUser.Username, UserProperty.Admin);
+            bool targetUserAdmin = (bool)GetUserProperty(Target, UserProperty.Admin);
             CurrentPass = Encryption.GetEncryptedString(CurrentPass, "SHA256");
             if (CurrentPass == Login.Login.Users[Target])
             {
-                if (GroupManagement.HasGroup(Login.Login.CurrentUser.Username, GroupManagement.GroupType.Administrator) & UserExists(Target))
+                if (currentUserAdmin & UserExists(Target))
                 {
                     // Change password locally
                     NewPass = Encryption.GetEncryptedString(NewPass, "SHA256");
@@ -454,11 +450,11 @@ namespace KS.Users
                     // Raise event
                     EventsManager.FireEvent(EventType.UserPasswordChanged, Target);
                 }
-                else if (GroupManagement.HasGroup(Login.Login.CurrentUser.Username, GroupManagement.GroupType.Administrator) & !UserExists(Target))
+                else if (currentUserAdmin & !UserExists(Target))
                 {
                     throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("User not found"));
                 }
-                else if (GroupManagement.HasGroup(Target, GroupManagement.GroupType.Administrator) & !GroupManagement.HasGroup(Login.Login.CurrentUser.Username, GroupManagement.GroupType.Administrator))
+                else if (targetUserAdmin & !currentUserAdmin)
                 {
                     throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("You are not authorized to change password of {0} because the target was an admin."), Target);
                 }
@@ -503,13 +499,10 @@ namespace KS.Users
         {
             var UsersList = new List<string>(Login.Login.Users.Keys);
             if (!IncludeAnonymous)
-            {
-                UsersList.RemoveAll(new Predicate<string>(x => GroupManagement.HasGroup(x, GroupManagement.GroupType.Anonymous) == true));
-            }
+                UsersList.RemoveAll(new Predicate<string>(x => (bool)GetUserProperty(x, UserProperty.Anonymous) == true));
             if (!IncludeDisabled)
-            {
-                UsersList.RemoveAll(new Predicate<string>(x => GroupManagement.HasGroup(x, GroupManagement.GroupType.Disabled) == true));
-            }
+                UsersList.RemoveAll(new Predicate<string>(x => (bool)GetUserProperty(x, UserProperty.Disabled) == true));
+
             return UsersList;
         }
 
@@ -553,7 +546,7 @@ namespace KS.Users
         {
             if (UserExists(User))
             {
-                if (GroupManagement.HasGroup(User, GroupManagement.GroupType.Administrator))
+                if ((bool)GetUserProperty(User, UserProperty.Admin))
                 {
                     return "#";
                 }
@@ -600,7 +593,7 @@ namespace KS.Users
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Username correct. Finding if the user is disabled...");
-                if (!UserExists(User) || !GroupManagement.HasGroup(User, GroupManagement.GroupType.Disabled))
+                if (!UserExists(User) || !(bool)GetUserProperty(User, UserProperty.Disabled))
                 {
                     // User is not disabled
                     DebugWriter.WriteDebug(DebugLevel.I, "User validation complete");

@@ -56,7 +56,7 @@ namespace KSTests.LoginTests
         public void TestGetUserProperty()
         {
             UserManagement.GetUserProperty("Account3", UserManagement.UserProperty.Username).ShouldBe("Account3");
-            ((JArray)UserManagement.GetUserProperty("Account3", UserManagement.UserProperty.Groups)).ShouldBeEmpty();
+            ((bool)UserManagement.GetUserProperty("Account3", UserManagement.UserProperty.Admin)).ShouldBeFalse();
         }
 
         /// <summary>

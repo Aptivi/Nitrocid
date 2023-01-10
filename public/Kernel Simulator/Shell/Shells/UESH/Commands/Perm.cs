@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
-using KS.Users.Groups;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -35,7 +35,8 @@ namespace KS.Shell.Shells.UESH.Commands
     class PermCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => GroupManagement.Group((GroupManagement.GroupType)Convert.ToInt32(Enum.Parse(typeof(GroupManagement.GroupType), ListArgsOnly[1])), ListArgsOnly[0], (GroupManagement.GroupManagementMode)Convert.ToInt32(Enum.Parse(typeof(GroupManagement.GroupManagementMode), ListArgsOnly[2])));
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>
+            TextWriterColor.Write("The new permission system is coming soon. Please come back soon.");
 
     }
 }

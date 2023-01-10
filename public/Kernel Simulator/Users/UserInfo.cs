@@ -16,8 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Users.Groups;
-
 namespace KS.Users
 {
     /// <summary>
@@ -30,10 +28,6 @@ namespace KS.Users
         /// The username
         /// </summary>
         public string Username { get; private set; }
-        /// <summary>
-        /// The user permissions
-        /// </summary>
-        public GroupManagement.GroupType Groups { get; private set; }
 
         /// <summary>
         /// Makes a new class instance of current user info
@@ -41,7 +35,6 @@ namespace KS.Users
         protected internal UserInfo(string Username)
         {
             this.Username = Username;
-            Groups = GroupManagement.UserGroups[Username];
         }
 
     }

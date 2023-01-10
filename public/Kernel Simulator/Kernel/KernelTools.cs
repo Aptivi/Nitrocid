@@ -43,7 +43,6 @@ using KS.Shell.ShellBase.Aliases;
 using KS.Shell.ShellBase.Commands;
 using KS.TimeDate;
 using KS.Users;
-using KS.Users.Groups;
 using System.Reflection;
 
 #if SPECIFIERREL
@@ -82,7 +81,6 @@ namespace KS.Kernel
         internal static void ResetEverything()
         {
             // Reset every variable below
-            GroupManagement.UserGroups.Clear();
             ReminderManager.Reminders.Clear();
             EventManager.CalendarEvents.Clear();
             Flags.SafeMode = false;

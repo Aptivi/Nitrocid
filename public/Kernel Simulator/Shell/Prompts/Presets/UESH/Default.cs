@@ -22,7 +22,7 @@ using KS.Files.Folders;
 using KS.Kernel;
 using KS.Languages;
 using KS.Network.Base;
-using KS.Users.Groups;
+using KS.Users;
 using KS.Users.Login;
 
 namespace KS.Shell.Prompts.Presets.UESH
@@ -42,14 +42,14 @@ namespace KS.Shell.Prompts.Presets.UESH
         internal override string PresetPromptBuilder()
         {
             var PresetStringBuilder = new StringBuilder();
-            char UserDollarSign = GroupManagement.HasGroup(Login.CurrentUser.Username, GroupManagement.GroupType.Administrator) ? '#' : '$';
+            string UserDollarSign = UserManagement.GetUserDollarSign(Login.CurrentUser.Username);
 
             // Build the preset
             if (!Flags.Maintenance)
             {
                 // Opening
                 PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
-                PresetStringBuilder.Append("[");
+                PresetStringBuilder.Append('[');
 
                 // Current username
                 PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
@@ -57,7 +57,7 @@ namespace KS.Shell.Prompts.Presets.UESH
 
                 // "At" sign
                 PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
-                PresetStringBuilder.Append("@");
+                PresetStringBuilder.Append('@');
 
                 // Current hostname
                 PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.HostNameShell).VTSequenceForeground);

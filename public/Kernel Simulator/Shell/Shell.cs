@@ -42,7 +42,6 @@ using KS.Shell.ShellBase.Aliases;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.ShellBase.Commands.UnifiedCommands;
-using KS.Users.Groups;
 using KS.Shell.Shells.UESH;
 using KS.Shell.Shells.FTP;
 using KS.Shell.Shells.Mail;
@@ -57,6 +56,7 @@ using KS.Shell.Shells.Admin;
 using KS.Users.Login;
 using KS.Kernel.Events;
 using File = KS.Drivers.Console.Consoles.File;
+using static KS.Users.UserManagement;
 
 namespace KS.Shell
 {
@@ -295,7 +295,7 @@ namespace KS.Shell
                                     // Check to see if a user is able to execute a command
                                     if (ShellType == "Shell")
                                     {
-                                        if (GroupManagement.HasGroup(Login.CurrentUser.Username, GroupManagement.GroupType.Administrator) == false & Commands[commandName].Flags.HasFlag(CommandFlags.Strict))
+                                        if (!(bool)GetUserProperty(Login.CurrentUser.Username, UserProperty.Admin) & Commands[commandName].Flags.HasFlag(CommandFlags.Strict))
                                         {
                                             DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", commandName);
                                             TextWriterColor.Write(Translate.DoTranslation("You don't have permission to use {0}"), true, KernelColorType.Error, commandName);

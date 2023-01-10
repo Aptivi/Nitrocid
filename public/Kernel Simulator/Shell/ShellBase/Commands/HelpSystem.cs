@@ -29,8 +29,8 @@ using KS.Misc.Writers.MiscWriters;
 using KS.Modifications;
 using KS.Shell.ShellBase.Aliases;
 using KS.Shell.ShellBase.Shells;
-using KS.Users.Groups;
 using KS.Users.Login;
+using static KS.Users.UserManagement;
 
 namespace KS.Shell.ShellBase.Commands
 {
@@ -145,7 +145,7 @@ namespace KS.Shell.ShellBase.Commands
                         Decisive.DecisiveWrite(CommandType, DebugDeviceSocket, "- " + Translate.DoTranslation("Shell commands not implemented!!!"), true, KernelColorType.Warning);
                     foreach (string cmd in CommandList.Keys)
                     {
-                        if ((!CommandList[cmd].Flags.HasFlag(CommandFlags.Strict) | CommandList[cmd].Flags.HasFlag(CommandFlags.Strict) & GroupManagement.HasGroup(Login.CurrentUser?.Username, GroupManagement.GroupType.Administrator)) & (Flags.Maintenance & !CommandList[cmd].Flags.HasFlag(CommandFlags.NoMaintenance) | !Flags.Maintenance))
+                        if ((!CommandList[cmd].Flags.HasFlag(CommandFlags.Strict) | CommandList[cmd].Flags.HasFlag(CommandFlags.Strict) & (bool)GetUserProperty(Login.CurrentUser?.Username, UserProperty.Admin)) & (Flags.Maintenance & !CommandList[cmd].Flags.HasFlag(CommandFlags.NoMaintenance) | !Flags.Maintenance))
                         {
                             Decisive.DecisiveWrite(CommandType, DebugDeviceSocket, "- {0}: ", false, Shell.UnifiedCommandDict.ContainsKey(cmd) ? KernelColorType.Success : KernelColorType.ListEntry, cmd);
                             Decisive.DecisiveWrite(CommandType, DebugDeviceSocket, "{0}", true, KernelColorType.ListValue, CommandList[cmd].GetTranslatedHelpEntry());
@@ -181,7 +181,7 @@ namespace KS.Shell.ShellBase.Commands
                     // The built-in commands
                     foreach (string cmd in CommandList.Keys)
                     {
-                        if ((!CommandList[cmd].Flags.HasFlag(CommandFlags.Strict) | CommandList[cmd].Flags.HasFlag(CommandFlags.Strict) & GroupManagement.HasGroup(Login.CurrentUser?.Username, GroupManagement.GroupType.Administrator)) & (Flags.Maintenance & !CommandList[cmd].Flags.HasFlag(CommandFlags.NoMaintenance) | !Flags.Maintenance))
+                        if ((!CommandList[cmd].Flags.HasFlag(CommandFlags.Strict) | CommandList[cmd].Flags.HasFlag(CommandFlags.Strict) & (bool)GetUserProperty(Login.CurrentUser?.Username, UserProperty.Admin)) & (Flags.Maintenance & !CommandList[cmd].Flags.HasFlag(CommandFlags.NoMaintenance) | !Flags.Maintenance))
                         {
                             Decisive.DecisiveWrite(CommandType, DebugDeviceSocket, "{0}, ", false, KernelColorType.ListEntry, cmd);
                         }

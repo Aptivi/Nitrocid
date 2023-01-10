@@ -31,7 +31,6 @@ using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.RSS;
 using KS.Shell.ShellBase.Shells;
-using KS.Users.Groups;
 using KS.Kernel.Events;
 
 namespace KS.Users.Login

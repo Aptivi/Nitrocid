@@ -42,7 +42,6 @@ using KS.Modifications;
 using KS.Network.RPC;
 using KS.Kernel.Debugging;
 using KS.Kernel.Debugging.RemoteDebug;
-using KS.Users.Groups;
 using KS.Users.Login;
 using KS.Users;
 using KS.Kernel.Events;
@@ -240,8 +239,6 @@ namespace KS.Kernel
                     SplashReport.ReportProgress(Translate.DoTranslation("System account initialized"), 5);
                     UserManagement.InitializeUsers();
                     SplashReport.ReportProgress(Translate.DoTranslation("Users initialized"), 5);
-                    GroupManagement.LoadGroups();
-                    SplashReport.ReportProgress(Translate.DoTranslation("Groups loaded"), 5);
 
                     // Reset console state and stop stage timer
                     KernelTools.ReportNewStage(5, "");
