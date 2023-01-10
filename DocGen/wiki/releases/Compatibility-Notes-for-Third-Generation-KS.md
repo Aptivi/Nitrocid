@@ -366,3 +366,7 @@ The conditional debug writers don't do anything to the boolean condition that ca
 ##### Removed GroupManagement
 
 The GroupManagement module was removed in preparation for the new permission system.
+
+##### Removed obsolete functions
+
+ReadLineUntil(), SleepNoBlock(), and ConvertSpeedDialEntries() are removed.

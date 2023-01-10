@@ -48,26 +48,6 @@ namespace KS.Misc.Threading
                 ActiveThread.Wait();
             }
         }
-#if OBSOLETEFEATS
-        /// <summary>
-        /// Sleeps until either the time specified, or the thread has finished or cancelled.
-        /// </summary>
-        /// <param name="Time">Time in milliseconds</param>
-        /// <param name="ThreadWork">The working thread</param>
-        public static void SleepNoBlock(long Time, BackgroundWorker ThreadWork)
-        {
-            bool WorkFinished = false;
-            long TimeCount = 0;
-            ThreadWork.RunWorkerCompleted += (_, _) => WorkFinished = true;
-            while (!(WorkFinished || TimeCount == Time))
-            {
-                Thread.Sleep(1);
-                if (ThreadWork.CancellationPending)
-                    WorkFinished = true;
-                TimeCount += 1;
-            }
-        }
-#endif
 
         /// <summary>
         /// Sleeps until either the time specified, or the thread is no longer alive.

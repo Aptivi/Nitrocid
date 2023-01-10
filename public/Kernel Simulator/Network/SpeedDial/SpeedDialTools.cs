@@ -208,31 +208,5 @@ namespace KS.Network.SpeedDial
             }
             return null;
         }
-
-        // TODO: Consider removing all OBSOLETEFEATS at the end of 0.1.0 Beta 1 development
-#if OBSOLETEFEATS
-        /// <summary>
-        /// Convert speed dial entries from the old jsonified version (pre-0.0.16 RC1) to the new jsonified version
-        /// </summary>
-        /// <param name="SpeedDialType">Speed dial type</param>
-        [Obsolete("There is a recent improvement to the speed dial functionality. We no longer support reading pre-API v1.3 KS versions.")]
-        public static void ConvertSpeedDialEntries(SpeedDialType SpeedDialType)
-        {
-            // Get the speed dial path enumeration value from the speed dial type
-            var SpeedDialEnum = GetPathTypeFromSpeedDialType(SpeedDialType);
-            string SpeedDialJsonContent = File.ReadAllText(Paths.GetKernelPath(SpeedDialEnum));
-            var SpeedDialToken = JArray.Parse(!string.IsNullOrEmpty(SpeedDialJsonContent) ? SpeedDialJsonContent : "[]");
-            File.Delete(Paths.GetKernelPath(SpeedDialEnum));
-            foreach (string SpeedDialEntry in SpeedDialToken)
-            {
-                var ChosenLineSeparation = SpeedDialEntry.Split(',');
-                string Address = ChosenLineSeparation[0];
-                string Port = ChosenLineSeparation[1];
-                string Username = ChosenLineSeparation[2];
-                FtpEncryptionMode Encryption = (FtpEncryptionMode)Convert.ToInt32(SpeedDialType == SpeedDialType.FTP ? Enum.Parse(typeof(FtpEncryptionMode), ChosenLineSeparation[3]) : FtpEncryptionMode.None);
-                AddEntryToSpeedDial(Address, Convert.ToInt32(Port), SpeedDialType, false, Username, Encryption);
-            }
-        }
-#endif
     }
 }

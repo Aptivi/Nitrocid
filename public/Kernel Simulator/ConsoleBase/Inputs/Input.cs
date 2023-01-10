@@ -179,56 +179,6 @@ namespace KS.ConsoleBase.Inputs
             return ConsoleWrapper.ReadKey(Intercept);
         }
 
-#if OBSOLETEFEATS
-        /// <summary>
-        /// Reads the next line of characters until the condition is met or the user pressed ENTER
-        /// </summary>
-        /// <param name="Condition">The condition to be met</param>
-        [Obsolete("It'll make its return on a new generation of ReadLine.Reboot")]
-        public static string ReadLineUntil(ref bool Condition)
-        {
-            string Final = "";
-            var Finished = false;
-            while (!Finished)
-            {
-                ConsoleKeyInfo KeyInfo;
-                char KeyCharacter;
-                while (!ConsoleWrapper.KeyAvailable)
-                {
-                    if (Condition)
-                        Finished = true;
-                    System.Threading.Thread.Sleep(1);
-                    if (Finished)
-                        break;
-                }
-                if (!Finished)
-                {
-                    KeyInfo = Input.DetectKeypress();
-                    KeyCharacter = KeyInfo.KeyChar;
-                    if (KeyCharacter == Convert.ToChar(13) | KeyCharacter == Convert.ToChar(10))
-                    {
-                        Finished = true;
-                    }
-                    else if (KeyInfo.Key == ConsoleKey.Backspace)
-                    {
-                        if (!(Final.Length == 0))
-                        {
-                            Final = Final.Remove(Final.Length - 1);
-                            ConsoleWrapper.Write(Convert.ToString(CharManager.GetEsc()) + "D"); // Cursor backwards by one character
-                            ConsoleWrapper.Write(Convert.ToString(CharManager.GetEsc()) + "[1X"); // Remove a character
-                        }
-                    }
-                    else
-                    {
-                        Final += Convert.ToString(KeyCharacter);
-                        ConsoleWrapper.Write(KeyCharacter);
-                    }
-                }
-            }
-            return Final;
-        }
-#endif
-
         /// <summary>
         /// Detects the keypress
         /// </summary>
