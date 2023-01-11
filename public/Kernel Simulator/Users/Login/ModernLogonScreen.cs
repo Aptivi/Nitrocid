@@ -39,7 +39,7 @@ namespace KS.Users.Login
 
             // Show the date and the time in the modern way
             // TODO: update this while waiting for input at the same time
-            string timeStr = TimeDateRenderers.RenderTime();
+            string timeStr = TimeDateRenderers.RenderTime(TimeDate.TimeDate.FormatType.Short);
             var figFont = FigletTools.GetFigletFont("Banner3");
             int figWidth = FigletTools.GetFigletWidth(timeStr, figFont) / 2;
             int figHeight = FigletTools.GetFigletHeight(timeStr, figFont) / 2;
