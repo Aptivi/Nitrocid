@@ -307,5 +307,18 @@ Select a user account you want to log in with.
 Enter the password for user
 Wrong password for user.
 Press any key to start...
+Kernel first-run
+Welcome to the kernel! Thank you for trying the kernel out!
+To get started, press ENTER.
+Create your first user
+We'll help you create your own username. Select any name you want. This could be your nickname or your short name, as long as your username doesn't contain spaces and special characters.
+Enter the username
+Congratulations! You now have a user account, {0}!
+Get Started!
+Press the ENTER key to get started using the kernel and log-in to your new account. Good luck!
+We apologize for your inconvenience, but the out-of-box experience has crashed. If you're sure that this is a defect in the experience, please report the crash to us with debugging logs.
+Press any key to start the shell anyways, but please note that you may have to create your new user manually.
+Failed to create username. Please ensure that your username doesn't contain spaces and special characters.
+Press the ENTER key to continue.
 
 ==========================================================================================================================================

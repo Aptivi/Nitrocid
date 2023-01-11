@@ -154,7 +154,6 @@ namespace KS.Kernel
                     // Ask user for true color support if this is the first time
                     if (Flags.FirstTime)
                     {
-                        Flags.FirstTime = false;
                         TextWriterColor.Write(Translate.DoTranslation("Welcome to the kernel! Since this is the first time you start the kernel up, we'll initiate a simple console testing to determine whether it supports true color. Press any key to continue."));
                         Input.DetectKeypress();
                         ConsoleWrapper.Clear();
@@ -266,6 +265,13 @@ namespace KS.Kernel
                     {
                         TextWriterColor.Write();
                         WelcomeMessage.WriteLicense();
+                    }
+
+                    // If this is the first time, run the first run presentation
+                    if (Flags.FirstTime)
+                    {
+                        Flags.FirstTime = false;
+                        KernelFirstRun.PresentFirstRun();
                     }
 
 #if SPECIFIERDEV

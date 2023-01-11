@@ -157,5 +157,23 @@ namespace KS.Misc.Presentation
             ConsoleWrapper.Clear();
             ConsoleWrapper.CursorVisible = true;
         }
+
+        /// <summary>
+        /// Checks to see if the presentation contains input
+        /// </summary>
+        /// <param name="presentation">Target presentation</param>
+        /// <returns>True if one of the elements in a page contains input</returns>
+        public static bool PresentationContainsInput(Presentation presentation)
+        {
+            // Check every page
+            foreach (var page in presentation.Pages)
+                foreach (var element in page.Elements)
+                    if (element.IsInput)
+                        // One of the elements contains input
+                        return true;
+
+            // If not input, then false
+            return false;
+        }
     }
 }
