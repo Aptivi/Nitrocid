@@ -157,7 +157,10 @@ namespace KS.Shell.Shells.UESH
             { "verify", new CommandInfo("verify", ShellType.Shell, "Verifies sanity of the file", new CommandArgumentInfo(new[] { "<MD5/SHA1/SHA256/SHA384/SHA512> <calculatedhash> <hashfile/expectedhash> <file>" }, true, 4), new VerifyCommand()) },
             { "weather", new CommandInfo("weather", ShellType.Shell, "Shows weather info for specified city. Uses OpenWeatherMap.", new CommandArgumentInfo(new[] { "[-list] <CityID/CityName> [apikey]" }, true, 1), new WeatherCommand()) },
             { "wrap", new CommandInfo("wrap", ShellType.Shell, "Wraps the console output", new CommandArgumentInfo(new[] { "<command>" }, true, 1), new WrapCommand()) },
-            { "zip", new CommandInfo("zip", ShellType.Shell, "Creates a ZIP archive", new CommandArgumentInfo(new[] { "<zipfile> <path> [-fast|-nocomp|-nobasedir]" }, true, 2), new ZipCommand()) }
+            { "zip", new CommandInfo("zip", ShellType.Shell, "Creates a ZIP archive", new CommandArgumentInfo(new[] { "<zipfile> <path> [-fast|-nocomp|-nobasedir]" }, true, 2), new ZipCommand()) },
+
+            // Hidden
+            { "2018", new CommandInfo("2018", ShellType.Shell, "Commemorates the 5-year anniversary of the kernel release", new CommandArgumentInfo(), new AnniversaryCommand(), CommandFlags.Hidden) }
         };
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

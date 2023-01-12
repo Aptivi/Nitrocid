@@ -320,5 +320,18 @@ We apologize for your inconvenience, but the out-of-box experience has crashed. 
 Press any key to start the shell anyways, but please note that you may have to create your new user manually.
 Failed to create username. Please ensure that your username doesn't contain spaces and special characters.
 Press the ENTER key to continue.
+Commemorates the 5-year anniversary of the kernel release
+Commemorating the 5-year anniversary of the kernel
+First ever release
+This kernel was first released on February 22, 2018 to make a minimalistic simulator that actually simulates how the core of the kernel works.
+It used to only host one shell, and a few commands, and it only worked with Windows due to its usage of the Windows Management Instrumentation tool.
+It also didn't have its own documentation.
+Kernel Refinement
+Versions of the kernel were released, such as the second major release to add coloring and basic features, and the fourth major release to add configuration.
+Documentation started on the sixth major release, and various nice things have been slowly added to the kernel.
+Current version
+This version now refines the kernel to the point that it no longer behaves like the old versions.
+Because the new groundbreaking features got released, we decided to name this version...
+Happy 5-year anniversary!
 
 ==========================================================================================================================================
