@@ -46,8 +46,8 @@ namespace KSTests.FilesTests
         {
             CurrentDirectory.CurrentDir = Paths.HomePath;
             Directory.CreateDirectory(Paths.HomePath + "/TestDir");
-            string SourcePath = "/TestDir";
-            string TargetPath = "/TestDir2";
+            string SourcePath = "TestDir";
+            string TargetPath = "TestDir2";
             Should.NotThrow(() => Copying.CopyFileOrDir(SourcePath, TargetPath));
         }
 
@@ -60,7 +60,7 @@ namespace KSTests.FilesTests
         {
             CurrentDirectory.CurrentDir = Paths.HomePath;
             string SourcePath = Path.GetFullPath("TestData/TestText.txt");
-            string TargetPath = "/Documents";
+            string TargetPath = "Documents";
             Should.NotThrow(() => Copying.CopyFileOrDir(SourcePath, TargetPath));
         }
 
@@ -73,7 +73,7 @@ namespace KSTests.FilesTests
         {
             CurrentDirectory.CurrentDir = Paths.HomePath;
             string SourcePath = Path.GetFullPath("TestData/TestText.txt");
-            string TargetPath = "/Documents/Text.txt";
+            string TargetPath = "Documents/Text.txt";
             Should.NotThrow(() => Copying.CopyFileOrDir(SourcePath, TargetPath));
         }
 
@@ -85,7 +85,7 @@ namespace KSTests.FilesTests
         public void TestMakeDirectory()
         {
             CurrentDirectory.CurrentDir = Paths.HomePath;
-            Should.NotThrow(() => Making.MakeDirectory("/NewDirectory"));
+            Should.NotThrow(() => Making.MakeDirectory("NewDirectory"));
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace KSTests.FilesTests
         public void TestMakeFile()
         {
             CurrentDirectory.CurrentDir = Paths.HomePath;
-            Should.NotThrow(() => Making.MakeFile("/NewFile.txt"));
+            Should.NotThrow(() => Making.MakeFile("NewFile.txt"));
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace KSTests.FilesTests
         public void TestMakeJsonFile()
         {
             CurrentDirectory.CurrentDir = Paths.HomePath;
-            Should.NotThrow(() => Making.MakeJsonFile("/NewFile.json"));
+            Should.NotThrow(() => Making.MakeJsonFile("NewFile.json"));
         }
 
         /// <summary>
@@ -119,8 +119,8 @@ namespace KSTests.FilesTests
         {
             CurrentDirectory.CurrentDir = Paths.HomePath;
             Directory.CreateDirectory(Paths.HomePath + "/TestMovedDir");
-            string SourcePath = "/TestMovedDir";
-            string TargetPath = "/TestMovedDir2";
+            string SourcePath = "TestMovedDir";
+            string TargetPath = "TestMovedDir2";
             Should.NotThrow(() => Moving.MoveFileOrDir(SourcePath, TargetPath));
         }
 
@@ -133,7 +133,7 @@ namespace KSTests.FilesTests
         {
             CurrentDirectory.CurrentDir = Paths.HomePath;
             string SourcePath = Path.GetFullPath("TestData/TestMove.txt");
-            string TargetPath = "/Documents";
+            string TargetPath = "Documents";
             Should.NotThrow(() => Moving.MoveFileOrDir(SourcePath, TargetPath));
         }
 
@@ -145,13 +145,13 @@ namespace KSTests.FilesTests
         public void TestMoveFileToFile()
         {
             CurrentDirectory.CurrentDir = Paths.HomePath;
-            string SourcePath = "/Documents/TestMove.txt";
+            string SourcePath = "Documents/TestMove.txt";
             string TargetPath = Path.GetFullPath("TestData/TestMove.txt");
             Should.NotThrow(() => Moving.MoveFileOrDir(SourcePath, TargetPath));
         }
 
         /// <summary>
-        /// Tests attribute removal implementation
+        /// Tests the theory of attribute removal implementation
         /// </summary>
         [Test]
         [Description("Manipulation")]
@@ -171,7 +171,7 @@ namespace KSTests.FilesTests
         public void TestRemoveDirectory()
         {
             CurrentDirectory.CurrentDir = Paths.HomePath;
-            string TargetPath = Filesystem.NeutralizePath("/TestDir2");
+            string TargetPath = Filesystem.NeutralizePath("TestDir2");
             Should.NotThrow(() => Removing.RemoveDirectory(TargetPath));
         }
 
@@ -183,7 +183,7 @@ namespace KSTests.FilesTests
         public void TestRemoveFile()
         {
             CurrentDirectory.CurrentDir = Paths.HomePath;
-            string TargetPath = "/Documents/Text.txt";
+            string TargetPath = "Documents/Text.txt";
             Should.NotThrow(() => Removing.RemoveFile(TargetPath));
         }
 
