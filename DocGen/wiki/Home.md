@@ -1,3 +1,7 @@
+
+> [!IMPORTANT]
+> This documentation is no longer updated, because an entirely new documentation is coming in the way
+
 # Kernel Simulator
 
 Kernel Simulator is an application which simulates our future-planned kernel as we've imagined it. It has all the usual applications, including filesystem manipulation, kernel mods, basic scripting, and many more awesome features.
