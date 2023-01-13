@@ -274,6 +274,14 @@ namespace KS.Kernel.Exceptions
         /// <summary>
         /// Your network needs to be online before being able to perform operations related to networking. Connect your network adapter and try again.
         /// </summary>
-        NetworkOffline
+        NetworkOffline,
+        /// <summary>
+        /// Permission denied trying to perform an operation.
+        /// </summary>
+        PermissionDenied,
+        /// <summary>
+        /// User doesn't exist. Check to make sure that you've written the user correctly.
+        /// </summary>
+        NoSuchUser
     }
 }

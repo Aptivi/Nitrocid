@@ -16,31 +16,24 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-namespace KS.Users
+namespace KS.Users.Permissions
 {
     /// <summary>
-    /// User information class
+    /// All permission types
     /// </summary>
-    public class UserInfo
+    public enum PermissionTypes
     {
-
         /// <summary>
-        /// The username
+        /// Allows the user to manage power
         /// </summary>
-        public string Username { get; private set; }
-
-        internal string Password { get; set; }
-        internal string[] Permissions { get; set; }
-
+        ManagePower = 1,
         /// <summary>
-        /// Makes a new class instance of current user info
+        /// Allows the user to manage permissions
         /// </summary>
-        protected internal UserInfo(string username, string password, string[] permissions)
-        {
-            Username = username;
-            Password = password;
-            Permissions = permissions;
-        }
-
+        ManagePermissions = 2,
+        /// <summary>
+        /// Allows the user to run strict commands
+        /// </summary>
+        RunStrictCommands = 4
     }
 }

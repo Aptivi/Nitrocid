@@ -94,6 +94,8 @@ namespace KS.Kernel.Exceptions
                     { KernelExceptionType.UnsupportedConsole,               Translate.DoTranslation("An unsupported console has been detected.") },
                     { KernelExceptionType.AssertionFailure,                 Translate.DoTranslation("An assertion failure has been detected in the kernel! This is most likely a bug in the kernel module that should be fixed on our end.") },
                     { KernelExceptionType.NetworkOffline,                   Translate.DoTranslation("Your network needs to be online before being able to perform operations related to networking. Connect your network adapter and try again.") },
+                    { KernelExceptionType.PermissionDenied,                 Translate.DoTranslation("Permission denied trying to perform an operation.") },
+                    { KernelExceptionType.NoSuchUser,                       Translate.DoTranslation("User doesn't exist. Check to make sure that you've written the user correctly.") },
                 };
             }
         }

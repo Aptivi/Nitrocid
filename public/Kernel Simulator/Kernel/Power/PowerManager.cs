@@ -23,6 +23,8 @@ using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.RPC;
 using System.Threading;
 using KS.Kernel.Events;
+using KS.Kernel.Exceptions;
+using KS.Users.Permissions;
 
 namespace KS.Kernel.Power
 {
@@ -53,6 +55,10 @@ namespace KS.Kernel.Power
         /// <param name="Port">Port of the remote system running KS RPC</param>
         public static void PowerManage(PowerMode PowerMode, string IP, int Port)
         {
+            // Check to see if the current user is granted power management or not
+            if (!PermissionsTools.IsPermissionGranted(PermissionTypes.ManagePower))
+                throw new KernelException(KernelExceptionType.PermissionDenied);
+
             DebugWriter.WriteDebug(DebugLevel.I, "Power management has the argument of {0}", PowerMode);
             switch (PowerMode)
             {

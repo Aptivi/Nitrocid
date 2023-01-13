@@ -33,6 +33,7 @@ using Newtonsoft.Json.Linq;
 using KS.Kernel.Events;
 using KS.Users.Login;
 using Org.BouncyCastle.Asn1.X509;
+using KS.Users.Permissions;
 
 namespace KS.Users
 {
@@ -80,7 +81,11 @@ namespace KS.Users
             /// <summary>
             /// The user is disabled
             /// </summary>
-            Disabled
+            Disabled,
+            /// <summary>
+            /// List of permissions
+            /// </summary>
+            Permissions
         }
 
         // ---------- User Management ----------
@@ -110,13 +115,14 @@ namespace KS.Users
                 }
 
                 // Add user locally
+                var initedUser = new UserInfo(uninitUser, unpassword, Array.Empty<string>());
                 if (!UserExists(uninitUser))
                 {
-                    Login.Login.Users.Add(uninitUser, unpassword);
+                    Login.Login.Users.Add(uninitUser, initedUser);
                 }
                 else if (UserExists(uninitUser) & ModifyExisting)
                 {
-                    Login.Login.Users[uninitUser] = unpassword;
+                    Login.Login.Users[uninitUser] = initedUser;
                 }
 
                 // Add user globally
@@ -140,7 +146,8 @@ namespace KS.Users
                             new JProperty("password", unpassword),
                             new JProperty("admin", false),
                             new JProperty("anonymous", false),
-                            new JProperty("disabled", false)
+                            new JProperty("disabled", false),
+                            new JProperty("permissions", Array.Empty<string>())
                         );
                         UsersToken.Add(NewUser);
                     }
@@ -156,7 +163,8 @@ namespace KS.Users
                         new JProperty("password", unpassword),
                         new JProperty("admin", false),
                         new JProperty("anonymous", false),
-                        new JProperty("disabled", false)
+                        new JProperty("disabled", false),
+                        new JProperty("permissions", Array.Empty<string>())
                     );
                     UsersToken.Add(NewUser);
                 }
@@ -182,7 +190,14 @@ namespace KS.Users
             string UsersTokenContent = File.ReadAllText(Paths.GetKernelPath(KernelPathType.Users));
             var UninitUsersToken = JArray.Parse(!string.IsNullOrEmpty(UsersTokenContent) ? UsersTokenContent : "[]");
             foreach (var UserToken in UninitUsersToken)
-                InitializeUser((string)UserToken["username"], (string)UserToken["password"], false);
+            {
+                string user = (string)UserToken["username"];
+                var perms = UserToken["permissions"]?.ToArray() ?? Array.Empty<JToken>();
+                InitializeUser(user, (string)UserToken["password"], false);
+                foreach (var perm in perms)
+                    if (Enum.TryParse(typeof(PermissionTypes), (string)perm, out object permEnum))
+                        PermissionsTools.GrantPermission(user, (PermissionTypes)permEnum);
+            }
         }
 
         /// <summary>
@@ -352,12 +367,13 @@ namespace KS.Users
                 {
                     try
                     {
-                        // Store user password
-                        string Temporary = Login.Login.Users[OldName];
+                        // Store user info
+                        var oldInfo = Login.Login.Users[OldName];
+                        var newInfo = new UserInfo(Username, oldInfo.Password, oldInfo.Permissions);
 
                         // Rename username in dictionary
                         Login.Login.Users.Remove(OldName);
-                        Login.Login.Users.Add(Username, Temporary);
+                        Login.Login.Users.Add(Username, newInfo);
 
                         // Rename username in Users.json
                         SetUserProperty(OldName, UserProperty.Username, Username);
@@ -436,13 +452,13 @@ namespace KS.Users
             bool currentUserAdmin = (bool)GetUserProperty(Login.Login.CurrentUser.Username, UserProperty.Admin);
             bool targetUserAdmin = (bool)GetUserProperty(Target, UserProperty.Admin);
             CurrentPass = Encryption.GetEncryptedString(CurrentPass, "SHA256");
-            if (CurrentPass == Login.Login.Users[Target])
+            if (CurrentPass == Login.Login.Users[Target].Password)
             {
                 if (currentUserAdmin & UserExists(Target))
                 {
                     // Change password locally
                     NewPass = Encryption.GetEncryptedString(NewPass, "SHA256");
-                    Login.Login.Users[Target] = NewPass;
+                    Login.Login.Users[Target].Password = NewPass;
 
                     // Change password globally
                     SetUserProperty(Target, UserProperty.Password, NewPass);
@@ -626,7 +642,7 @@ namespace KS.Users
             DebugWriter.WriteDebug(DebugLevel.I, "Hash computed.");
 
             // Now, check to see if the password matches
-            if (Login.Login.Users.TryGetValue(User, out string UserPassword) && UserPassword == Password)
+            if (Login.Login.Users.TryGetValue(User, out UserInfo UserPassword) && UserPassword.Password == Password)
             {
                 // Password matches
                 DebugWriter.WriteDebug(DebugLevel.I, "Password written correctly.");

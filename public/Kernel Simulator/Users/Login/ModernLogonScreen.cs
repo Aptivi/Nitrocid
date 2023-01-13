@@ -74,7 +74,7 @@ namespace KS.Users.Login
 
                 // Then, get the user from the number and prompt for password if found
                 userName = UserManagement.SelectUser(userNum);
-                if (Login.Users[userName] != Encryption.GetEmptyHash("SHA256"))
+                if (Login.Users[userName].Password != Encryption.GetEmptyHash("SHA256"))
                 {
                     // The password is not empty. Prompt for password.
                     TextWriterColor.Write(Translate.DoTranslation("Enter the password for user") + " {0}: ", false, userName);

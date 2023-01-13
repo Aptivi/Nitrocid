@@ -57,6 +57,7 @@ using KS.Users.Login;
 using KS.Kernel.Events;
 using File = KS.Drivers.Console.Consoles.File;
 using static KS.Users.UserManagement;
+using KS.Users.Permissions;
 
 namespace KS.Shell
 {
@@ -295,11 +296,15 @@ namespace KS.Shell
                                     // Check to see if a user is able to execute a command
                                     if (ShellType == "Shell")
                                     {
-                                        if (!(bool)GetUserProperty(Login.CurrentUser.Username, UserProperty.Admin) & Commands[commandName].Flags.HasFlag(CommandFlags.Strict))
+                                        if (Commands[commandName].Flags.HasFlag(CommandFlags.Strict))
                                         {
-                                            DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", commandName);
-                                            TextWriterColor.Write(Translate.DoTranslation("You don't have permission to use {0}"), true, KernelColorType.Error, commandName);
-                                            break;
+                                            if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) && 
+                                                !(bool)GetUserProperty(Login.CurrentUser.Username, UserProperty.Admin))
+                                            {
+                                                DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", commandName);
+                                                TextWriterColor.Write(Translate.DoTranslation("You don't have permission to use {0}"), true, KernelColorType.Error, commandName);
+                                                break;
+                                            }
                                         }
                                     }
 

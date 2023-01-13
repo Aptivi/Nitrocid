@@ -33,6 +33,7 @@ using KS.Network.RSS;
 using KS.Shell.ShellBase.Shells;
 using KS.Kernel.Events;
 using KS.Misc.Writers.MiscWriters;
+using System;
 
 namespace KS.Users.Login
 {
@@ -51,13 +52,13 @@ namespace KS.Users.Login
         /// </summary>
         public static string PasswordPrompt;
         /// <summary>
-        /// List of usernames and passwords
+        /// List of usernames
         /// </summary>
-        internal static Dictionary<string, string> Users = new();
+        internal static Dictionary<string, UserInfo> Users = new();
         /// <summary>
         /// Current username
         /// </summary>
-        private static UserInfo CurrentUserInfo;
+        private static UserInfo CurrentUserInfo = new("root", Encryption.GetEncryptedString("", "SHA256"), Array.Empty<string>());
 
         /// <summary>
         /// Current username
@@ -145,7 +146,7 @@ namespace KS.Users.Login
             while (!(Flags.RebootRequested | Flags.KernelShutdown))
             {
                 // Get the password from dictionary
-                string UserPassword = Users[usernamerequested];
+                string UserPassword = Users[usernamerequested].Password;
 
                 // Check if there's a password
                 if (UserPassword != Encryption.GetEmptyHash("SHA256"))
@@ -204,7 +205,7 @@ namespace KS.Users.Login
             Flags.LoggedIn = true;
 
             // Sign in to user.
-            CurrentUserInfo = new UserInfo(signedInUser);
+            CurrentUserInfo = Users[signedInUser];
 
             // Fire event PostLogin
             EventsManager.FireEvent(EventType.PostLogin, CurrentUser.Username);

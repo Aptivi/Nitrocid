@@ -17,8 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Linq;
+using KS.Kernel.Exceptions;
+using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
+using KS.Users.Permissions;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -35,8 +39,26 @@ namespace KS.Shell.Shells.UESH.Commands
     class PermCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>
-            TextWriterColor.Write("The new permission system is coming soon. Please come back soon.");
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        {
+            string target = ListArgsOnly[0];
+            string mode = ListArgsOnly[1];
+            string perm = ListArgsOnly[2];
+
+            if (!Enum.TryParse(typeof(PermissionTypes), perm, out object permission))
+                // Permission not found
+                throw new KernelException(KernelExceptionType.PermissionManagement, Translate.DoTranslation("No such permission"));
+
+            if (mode == "allow")
+                // Granting permission.
+                PermissionsTools.GrantPermission(target, (PermissionTypes)permission);
+            else if (mode == "revoke")
+                // Revoking permission.
+                PermissionsTools.RevokePermission(target, (PermissionTypes)permission);
+            else
+                // No mode
+                throw new KernelException(KernelExceptionType.PermissionManagement, Translate.DoTranslation("No such permission mode"));
+        }
 
     }
 }
