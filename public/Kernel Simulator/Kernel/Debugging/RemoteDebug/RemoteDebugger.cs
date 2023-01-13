@@ -78,7 +78,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
         internal static bool RDebugFailed;
         internal static Exception RDebugFailedReason;
         private readonly static string RDebugVersion = "0.7.1";
-        private static bool RDebugBail;
+        private static readonly AutoResetEvent RDebugBailer = new(false);
 
         /// <summary>
         /// Whether to start or stop the remote debugger
@@ -90,10 +90,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
                 if (!RDebugThread.IsAlive)
                 {
                     RDebugThread.Start();
-                    while (!RDebugBail)
-                    {
-                    }
-                    RDebugBail = false;
+                    RDebugBailer.WaitOne();
                 }
             }
         }
@@ -130,7 +127,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
                 RDebugFailedReason = sex;
                 DebugWriter.WriteDebugStackTrace(sex);
             }
-            RDebugBail = true;
+            RDebugBailer.Set();
 
             // Run forever! Until the remote debugger is stopping.
             while (!RDebugStopping)
