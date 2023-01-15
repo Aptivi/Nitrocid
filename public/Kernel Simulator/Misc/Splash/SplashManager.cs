@@ -45,7 +45,7 @@ namespace KS.Misc.Splash
         /// <summary>
         /// Current splash name
         /// </summary>
-        public static string SplashName = "Simple";
+        public static string SplashName = "Dots";
         internal static KernelThread SplashThread = new("Kernel Splash Thread", false, (splash) => GetSplashFromName((string)splash).EntryPoint.Display());
         private readonly static Dictionary<string, SplashInfo> InstalledSplashes = new()
         {
@@ -64,7 +64,8 @@ namespace KS.Misc.Splash
             { "BeatEdgePulse", new SplashInfo("BeatEdgePulse", new SplashBeatEdgePulse()) },
             { "PowerLine", new SplashInfo("PowerLine", new SplashPowerLine()) },
             { "PowerLineProgress", new SplashInfo("PowerLine", new SplashPowerLineProgress()) },
-            { "Spin", new SplashInfo("Spin", new SplashSpin()) }
+            { "Spin", new SplashInfo("Spin", new SplashSpin()) },
+            { "Dots", new SplashInfo("Dots", new SplashDots()) }
         };
 
         /// <summary>
