@@ -16,17 +16,12 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System;
-using System.IO;
 using System.Text;
 using ColorSeq;
-using KS.Kernel;
-using KS.Misc.Text;
 using KS.Shell.Shells.Json;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Colors;
 using KS.Misc.Writers.FancyWriters.Tools;
-using KS.Shell.Shells.FTP;
 using System.Collections.Generic;
 
 namespace KS.Shell.Prompts.Presets.Json

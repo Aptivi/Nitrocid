@@ -24,7 +24,6 @@ using KS.ConsoleBase.Colors;
 using KS.Files.Folders;
 using KS.Kernel;
 using KS.Languages;
-using KS.Misc.Text;
 using KS.Misc.Writers.FancyWriters.Tools;
 using KS.Network.Base;
 using KS.Users.Login;

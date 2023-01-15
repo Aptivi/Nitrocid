@@ -20,9 +20,6 @@ using KS.Files;
 using KS.Files.Folders;
 using KS.Files.Operations;
 using KS.Files.Querying;
-using KS.Kernel.Debugging.RemoteDebug;
-using KS.Languages;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using System.IO;
 

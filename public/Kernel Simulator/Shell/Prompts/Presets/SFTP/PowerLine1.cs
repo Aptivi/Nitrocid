@@ -19,15 +19,10 @@
 using System;
 using System.Text;
 using ColorSeq;
-using KS.Kernel;
-using KS.Misc.Text;
 using KS.Shell.Shells.SFTP;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Colors;
-using KS.Files.Folders;
 using KS.Misc.Writers.FancyWriters.Tools;
-using KS.Network.Base;
-using KS.Users.Login;
 using System.Collections.Generic;
 
 namespace KS.Shell.Prompts.Presets.SFTP

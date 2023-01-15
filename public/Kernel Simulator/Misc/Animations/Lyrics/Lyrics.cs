@@ -16,14 +16,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
 using System.Threading;
-using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
@@ -35,7 +30,6 @@ using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using SharpLyrics;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Animations.Lyrics
 {

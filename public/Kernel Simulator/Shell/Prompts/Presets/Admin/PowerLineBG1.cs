@@ -16,11 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System;
 using System.Text;
 using ColorSeq;
-using KS.Kernel;
-using KS.Misc.Text;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Colors;
 using KS.Misc.Writers.FancyWriters.Tools;

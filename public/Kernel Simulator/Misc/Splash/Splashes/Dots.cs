@@ -20,7 +20,6 @@ using System;
 using System.Threading;
 using ColorSeq;
 using KS.Kernel.Debugging;
-using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.ConsoleBase;
 using VT.NET;

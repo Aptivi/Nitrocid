@@ -18,7 +18,6 @@
 
 using Extensification.StringExts;
 using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;

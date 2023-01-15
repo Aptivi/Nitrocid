@@ -26,7 +26,6 @@ using KS.Misc.Writers.ConsoleWriters;
 using KS.Users;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace KS.Kernel
 {

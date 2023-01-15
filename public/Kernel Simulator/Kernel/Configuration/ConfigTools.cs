@@ -33,7 +33,6 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using KS.Kernel.Events;
 using static KS.Kernel.Configuration.Config;
-using KS.Misc.Settings;
 using KS.ConsoleBase.Colors;
 using ColorSeq;
 

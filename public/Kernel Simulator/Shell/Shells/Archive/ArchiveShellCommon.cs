@@ -16,11 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
-using KS.Shell.Shells.Archive.Commands;
 using SharpCompress.Archives;
-using System.Collections.Generic;
 using System.IO;
 
 namespace KS.Shell.Shells.Archive

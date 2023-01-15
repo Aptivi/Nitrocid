@@ -22,7 +22,6 @@ using ColorSeq;
 using KS.Files.Folders;
 using KS.Kernel;
 using KS.Languages;
-using KS.Misc.Text;
 using KS.Network.Base;
 using KS.Users.Login;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;

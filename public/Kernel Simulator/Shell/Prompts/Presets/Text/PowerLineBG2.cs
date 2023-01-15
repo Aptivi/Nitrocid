@@ -20,13 +20,10 @@ using System;
 using System.IO;
 using System.Text;
 using ColorSeq;
-using KS.Kernel;
-using KS.Misc.Text;
 using KS.Shell.Shells.Text;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Colors;
 using KS.Misc.Writers.FancyWriters.Tools;
-using KS.Users.Login;
 using System.Collections.Generic;
 
 namespace KS.Shell.Prompts.Presets.Text

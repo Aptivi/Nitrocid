@@ -18,7 +18,6 @@
 
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
-using KS.Kernel.Debugging.RemoteDebug;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.Base;

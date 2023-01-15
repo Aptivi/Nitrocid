@@ -21,7 +21,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using ColorSeq;
-using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Kernel;
