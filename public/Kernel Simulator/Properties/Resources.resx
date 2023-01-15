@@ -502,4 +502,19 @@
   <data name="BlackRose" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\BlackRose.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
+  <data name="Minecraft-Creeper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Minecraft-Creeper.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Minecraft-Grass" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Minecraft-Grass.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Minecraft-Obsidian" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Minecraft-Obsidian.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Quantum" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Quantum.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="RetroWindows" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\RetroWindows.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
 </root>

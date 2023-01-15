@@ -1515,6 +1515,78 @@ namespace Properties.Resources {
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
+        ///        &quot;Name&quot;: &quot;Minecraft - Creeper&quot;,
+        ///        &quot;Description&quot;: &quot;Creepers in the world of Minecraft blow you up! Can you survive?&quot;
+        ///    },
+        ///    &quot;InputColor&quot;: &quot;#8fe38f&quot;,
+        ///    &quot;LicenseColor&quot;: &quot;#0db50d&quot;,
+        ///    &quot;ContKernelErrorColor&quot;: &quot;#609e60&quot;,
+        ///    &quot;UncontKernelErrorColor&quot;: &quot;#609e60&quot;,
+        ///    &quot;HostNameShellColor&quot;: &quot;#0f800f&quot;,
+        ///    &quot;UserNameShellColor&quot;: &quot;#0f800f&quot;,
+        ///    &quot;BackgroundColor&quot;: &quot;#004500&quot;,
+        ///    &quot;NeutralTextColor&quot;: &quot;#609e60&quot;,
+        ///    &quot;ListEntryColor&quot;: &quot;#0db50d&quot;,
+        ///    &quot;ListValueColor&quot;: &quot;#60 [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Minecraft_Creeper {
+            get {
+                return ResourceManager.GetString("Minecraft-Creeper", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///    &quot;Metadata&quot;: {
+        ///        &quot;Name&quot;: &quot;Minecraft - Grass&quot;,
+        ///        &quot;Description&quot;: &quot;Grass from Minecraft&quot;
+        ///    },
+        ///    &quot;InputColor&quot;: &quot;#4a6f28&quot;,
+        ///    &quot;LicenseColor&quot;: &quot;#5b8b32&quot;,
+        ///    &quot;ContKernelErrorColor&quot;: &quot;#527a2d&quot;,
+        ///    &quot;UncontKernelErrorColor&quot;: &quot;#527a2d&quot;,
+        ///    &quot;HostNameShellColor&quot;: &quot;#5b8731&quot;,
+        ///    &quot;UserNameShellColor&quot;: &quot;#5b8731&quot;,
+        ///    &quot;BackgroundColor&quot;: &quot;#3e5c20&quot;,
+        ///    &quot;NeutralTextColor&quot;: &quot;#527a2d&quot;,
+        ///    &quot;ListEntryColor&quot;: &quot;#5b8b32&quot;,
+        ///    &quot;ListValueColor&quot;: &quot;#527a2d&quot;,
+        ///    &quot;StageColor&quot;: &quot;#5b8b32&quot;,
+        ///    &quot;Err [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Minecraft_Grass {
+            get {
+                return ResourceManager.GetString("Minecraft-Grass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///    &quot;Metadata&quot;: {
+        ///        &quot;Name&quot;: &quot;Minecraft - Obsidian&quot;,
+        ///        &quot;Description&quot;: &quot;Obsidian block from Minecraft&quot;
+        ///    },
+        ///    &quot;InputColor&quot;: &quot;#3d2856&quot;,
+        ///    &quot;LicenseColor&quot;: &quot;#281f3f&quot;,
+        ///    &quot;ContKernelErrorColor&quot;: &quot;#110d1d&quot;,
+        ///    &quot;UncontKernelErrorColor&quot;: &quot;#110d1d&quot;,
+        ///    &quot;HostNameShellColor&quot;: &quot;#3d2856&quot;,
+        ///    &quot;UserNameShellColor&quot;: &quot;#3d2856&quot;,
+        ///    &quot;BackgroundColor&quot;: &quot;#06030c&quot;,
+        ///    &quot;NeutralTextColor&quot;: &quot;#110d1d&quot;,
+        ///    &quot;ListEntryColor&quot;: &quot;#281f3f&quot;,
+        ///    &quot;ListValueColor&quot;: &quot;#110d1d&quot;,
+        ///    &quot;StageColor&quot;: &quot;#281f3f [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Minecraft_Obsidian {
+            get {
+                return ResourceManager.GetString("Minecraft-Obsidian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Mint&quot;,
         ///    },
         ///    &quot;InputColor&quot;: &quot;50;161;61&quot;,
@@ -2152,6 +2224,31 @@ namespace Properties.Resources {
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
+        ///        &quot;Name&quot;: &quot;Quantum&quot;,
+        ///        &quot;Description&quot;: &quot;Are you a quantum fan?&quot;
+        ///    },
+        ///    &quot;InputColor&quot;: &quot;#623004&quot;,
+        ///    &quot;LicenseColor&quot;: &quot;#f7780c&quot;,
+        ///    &quot;ContKernelErrorColor&quot;: &quot;#f9a054&quot;,
+        ///    &quot;UncontKernelErrorColor&quot;: &quot;#f9a054&quot;,
+        ///    &quot;HostNameShellColor&quot;: &quot;#c56009&quot;,
+        ///    &quot;UserNameShellColor&quot;: &quot;#c56009&quot;,
+        ///    &quot;BackgroundColor&quot;: &quot;#fde4ce&quot;,
+        ///    &quot;NeutralTextColor&quot;: &quot;#f9a054&quot;,
+        ///    &quot;ListEntryColor&quot;: &quot;#f7780c&quot;,
+        ///    &quot;ListValueColor&quot;: &quot;#f9a054&quot;,
+        ///    &quot;StageColor&quot;: &quot;#f7780c&quot;,
+        ///    &quot;ErrorColor&quot; [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Quantum {
+            get {
+                return ResourceManager.GetString("Quantum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Mourning the death of Mahsa Amini&quot;,
         ///    },
         ///    &quot;InputColor&quot;: &quot;#EEEEEE&quot;,
@@ -2249,6 +2346,28 @@ namespace Properties.Resources {
         public static string Reddish {
             get {
                 return ResourceManager.GetString("Reddish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///    &quot;Metadata&quot;: {
+        ///        &quot;Name&quot;: &quot;Retro Windows (1990s)&quot;,
+        ///        &quot;Description&quot;: &quot;Did you remember using your Windows computer in the &apos;90s? Bring back nostalgia with this color theme!&quot;
+        ///    },
+        ///    &quot;InputColor&quot;: &quot;#bebebe&quot;,
+        ///    &quot;LicenseColor&quot;: &quot;#fe00ff&quot;,
+        ///    &quot;ContKernelErrorColor&quot;: &quot;#fe0000&quot;,
+        ///    &quot;UncontKernelErrorColor&quot;: &quot;#fe0000&quot;,
+        ///    &quot;HostNameShellColor&quot;: &quot;#06ff04&quot;,
+        ///    &quot;UserNameShellColor&quot;: &quot;#06ff04&quot;,
+        ///    &quot;BackgroundColor&quot;: &quot;#047e7e&quot;,
+        ///    &quot;NeutralTextColor&quot;: &quot;#fe0000&quot;,
+        ///    &quot;ListEntryColor&quot;: [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string RetroWindows {
+            get {
+                return ResourceManager.GetString("RetroWindows", resourceCulture);
             }
         }
         
