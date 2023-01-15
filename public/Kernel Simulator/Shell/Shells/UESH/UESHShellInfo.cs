@@ -99,6 +99,7 @@ namespace KS.Shell.Shells.UESH
             { "logout", new CommandInfo("logout", ShellType.Shell, "Logs you out", new CommandArgumentInfo(), new LogoutCommand(), CommandFlags.NoMaintenance) },
             { "lsdbgdev", new CommandInfo("lsdbgdev", ShellType.Shell, "Lists debugging devices connected", new CommandArgumentInfo(), new LsDbgDevCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
             { "lsnet", new CommandInfo("lsnet", ShellType.Shell, "Lists online network devices", new CommandArgumentInfo(), new LsNetCommand(), CommandFlags.Strict) },
+            { "lsusers", new CommandInfo("lsusers", ShellType.Shell, "Lists the users", new CommandArgumentInfo(), new LsUsersCommand()) },
             { "lsvars", new CommandInfo("lsvars", ShellType.Shell, "Lists available UESH variables", new CommandArgumentInfo(), new LsVarsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
             { "mail", new CommandInfo("mail", ShellType.Shell, "Opens the mail client", new CommandArgumentInfo(new[] { "[emailAddress]" }, false, 0), new MailCommand()) },
             { "md", new CommandInfo("md", ShellType.Shell, "Creates a directory", new CommandArgumentInfo(new[] { "<directory>" }, true, 1), new MdCommand()) },
