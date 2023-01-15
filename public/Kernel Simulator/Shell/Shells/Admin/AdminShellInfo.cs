@@ -36,9 +36,9 @@ namespace KS.Shell.Shells.Admin
         /// </summary>
         public override Dictionary<string, CommandInfo> Commands => new()
         {
-            { "cdbglog", new CommandInfo("cdbglog", ShellType.AdminShell, "Deletes everything in debug log", new CommandArgumentInfo(), new Admin_CdbgLogCommand()) },
-            { "journal", new CommandInfo("journal", ShellType.AdminShell, "Gets current kernel journal log", new CommandArgumentInfo(), new JournalCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported) },
-            { "lsevents", new CommandInfo("lsevents", ShellType.AdminShell, "Lists all fired events", new CommandArgumentInfo(), new LsEventsCommand()) },
+            { "cdbglog", new CommandInfo("cdbglog", ShellType, "Deletes everything in debug log", new CommandArgumentInfo(), new Admin_CdbgLogCommand()) },
+            { "journal", new CommandInfo("journal", ShellType, "Gets current kernel journal log", new CommandArgumentInfo(), new JournalCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported) },
+            { "lsevents", new CommandInfo("lsevents", ShellType, "Lists all fired events", new CommandArgumentInfo(), new LsEventsCommand()) },
         };
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

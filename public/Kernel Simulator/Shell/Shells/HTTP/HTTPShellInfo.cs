@@ -36,10 +36,10 @@ namespace KS.Shell.Shells.HTTP
         /// </summary>
         public override Dictionary<string, CommandInfo> Commands => new()
         {
-            { "delete", new CommandInfo("delete", ShellType.HTTPShell, "Deletes content from HTTP server", new CommandArgumentInfo(new[] { "<request>" }, true, 1), new HTTP_DeleteCommand()) },
-            { "get", new CommandInfo("get", ShellType.HTTPShell, "Gets the response from the HTTP server using the specified request", new CommandArgumentInfo(new[] { "<request>" }, true, 1), new HTTP_GetCommand()) },
-            { "getstring", new CommandInfo("getstring", ShellType.HTTPShell, "Gets the string from the HTTP server using the specified request", new CommandArgumentInfo(new[] { "<request>" }, true, 1), new HTTP_GetStringCommand()) },
-            { "setsite", new CommandInfo("setsite", ShellType.HTTPShell, "Sets the HTTP site. Must be a valid URI.", new CommandArgumentInfo(new[] { "<uri>" }, true, 1), new HTTP_SetSiteCommand()) }
+            { "delete", new CommandInfo("delete", ShellType, "Deletes content from HTTP server", new CommandArgumentInfo(new[] { "<request>" }, true, 1), new HTTP_DeleteCommand()) },
+            { "get", new CommandInfo("get", ShellType, "Gets the response from the HTTP server using the specified request", new CommandArgumentInfo(new[] { "<request>" }, true, 1), new HTTP_GetCommand()) },
+            { "getstring", new CommandInfo("getstring", ShellType, "Gets the string from the HTTP server using the specified request", new CommandArgumentInfo(new[] { "<request>" }, true, 1), new HTTP_GetStringCommand()) },
+            { "setsite", new CommandInfo("setsite", ShellType, "Sets the HTTP site. Must be a valid URI.", new CommandArgumentInfo(new[] { "<uri>" }, true, 1), new HTTP_SetSiteCommand()) }
         };
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

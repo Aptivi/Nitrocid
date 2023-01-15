@@ -36,12 +36,12 @@ namespace KS.Shell.Shells.Archive
         /// </summary>
         public override Dictionary<string, CommandInfo> Commands => new()
         {
-            { "cdir", new CommandInfo("cdir", ShellType.ArchiveShell, "Gets current local directory", new CommandArgumentInfo(), new ArchiveShell_CDirCommand()) },
-            { "chdir", new CommandInfo("chdir", ShellType.ArchiveShell, "Changes directory", new CommandArgumentInfo(new[] { "<directory>" }, true, 1), new ArchiveShell_ChDirCommand()) },
-            { "chadir", new CommandInfo("chadir", ShellType.ArchiveShell, "Changes archive directory", new CommandArgumentInfo(new[] { "<archivedirectory>" }, true, 1), new ArchiveShell_ChADirCommand()) },
-            { "get", new CommandInfo("get", ShellType.ArchiveShell, "Extracts a file to a specified directory or a current directory", new CommandArgumentInfo(new[] { "<entry> [where] [-absolute]" }, true, 1), new ArchiveShell_GetCommand()) },
-            { "list", new CommandInfo("list", ShellType.ArchiveShell, "Lists all files inside the archive", new CommandArgumentInfo(new[] { "[directory]" }, false, 0), new ArchiveShell_ListCommand()) },
-            { "pack", new CommandInfo("pack", ShellType.ArchiveShell, "Packs a local file to the archive", new CommandArgumentInfo(new[] { "<localfile> [where]" }, true, 1), new ArchiveShell_PackCommand()) }
+            { "cdir", new CommandInfo("cdir", ShellType, "Gets current local directory", new CommandArgumentInfo(), new ArchiveShell_CDirCommand()) },
+            { "chdir", new CommandInfo("chdir", ShellType, "Changes directory", new CommandArgumentInfo(new[] { "<directory>" }, true, 1), new ArchiveShell_ChDirCommand()) },
+            { "chadir", new CommandInfo("chadir", ShellType, "Changes archive directory", new CommandArgumentInfo(new[] { "<archivedirectory>" }, true, 1), new ArchiveShell_ChADirCommand()) },
+            { "get", new CommandInfo("get", ShellType, "Extracts a file to a specified directory or a current directory", new CommandArgumentInfo(new[] { "<entry> [where] [-absolute]" }, true, 1), new ArchiveShell_GetCommand()) },
+            { "list", new CommandInfo("list", ShellType, "Lists all files inside the archive", new CommandArgumentInfo(new[] { "[directory]" }, false, 0), new ArchiveShell_ListCommand()) },
+            { "pack", new CommandInfo("pack", ShellType, "Packs a local file to the archive", new CommandArgumentInfo(new[] { "<localfile> [where]" }, true, 1), new ArchiveShell_PackCommand()) }
         };
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
