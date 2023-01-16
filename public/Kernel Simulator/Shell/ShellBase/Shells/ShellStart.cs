@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using KS.Languages;
 using KS.Misc.Threading;
 using KS.Shell.ShellBase.Commands;
+using TermRead.Reader;
 
 namespace KS.Shell.ShellBase.Shells
 {
@@ -81,8 +82,8 @@ namespace KS.Shell.ShellBase.Shells
                 var ShellInfo = new ShellExecuteInfo(ShellType, ShellExecute, ShellCommandThread);
 
                 // Now, initialize the command autocomplete handler. This will not be invoked if we have auto completion disabled.
-                //ReadLine.AutoCompletionHandler = new CommandAutoComplete(ShellType);
-#warning TermRead needs to implement auto complete handler here.
+                TermReaderSettings.Suggestions = CommandAutoComplete.GetSuggestions;
+                TermReaderSettings.SuggestionsDelimiters = new[] { ' ' };
 
                 // Add a new shell to the shell stack to indicate that we have a new shell (a visitor)!
                 ShellStack.Add(ShellInfo);

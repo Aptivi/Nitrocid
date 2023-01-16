@@ -41,7 +41,7 @@ namespace KS.Shell.ShellBase.Commands
         /// <summary>
         /// Auto completion function delegate
         /// </summary>
-        public Func<string, string[]> AutoCompleter { get; private set; }
+        public Func<string, int, char[], string[]> AutoCompleter { get; private set; }
 
         /// <summary>
         /// Installs a new instance of the command argument info class
@@ -57,7 +57,7 @@ namespace KS.Shell.ShellBase.Commands
         /// <param name="ArgumentsRequired">Arguments required</param>
         /// <param name="MinimumArguments">Minimum arguments</param>
         /// <param name="AutoCompleter">Auto completion function</param>
-        public CommandArgumentInfo(string[] HelpUsages, bool ArgumentsRequired, int MinimumArguments, Func<string, string[]> AutoCompleter = null)
+        public CommandArgumentInfo(string[] HelpUsages, bool ArgumentsRequired, int MinimumArguments, Func<string, int, char[], string[]> AutoCompleter = null)
         {
             this.HelpUsages = HelpUsages;
             this.ArgumentsRequired = ArgumentsRequired;

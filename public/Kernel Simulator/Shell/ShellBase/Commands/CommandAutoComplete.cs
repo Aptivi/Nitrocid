@@ -15,34 +15,30 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using Extensification.StringExts;
+using KS.Files.Folders;
+using KS.Shell.ShellBase.Shells;
+using System.Linq;
+
 namespace KS.Shell.ShellBase.Commands
 {
-#warning TermRead needs to implement auto complete handler here.
-#if false
     /// <summary>
     /// Command auto completion class
     /// </summary>
-    public class CommandAutoComplete : IAutoCompleteHandler
+    internal static class CommandAutoComplete
     {
 
-        private readonly string ShellTypeToAutocomplete = "Shell";
-
-        /// <summary>
-        /// Command separators
-        /// </summary>
-        public char[] Separators { get; set; } = new[] { ' ' };
-
         /// <inheritdoc/>
-        public string[] GetSuggestions(string text, int index)
+        public static string[] GetSuggestions(string text, int index, char[] delims)
         {
-            var ShellCommands = CommandManager.GetCommands(ShellTypeToAutocomplete);
             if (ShellStart.ShellStack.Count > 0)
             {
+                var ShellCommands = CommandManager.GetCommands(ShellStart.ShellStack[ShellStart.ShellStack.Count - 1].ShellType);
                 if (string.IsNullOrEmpty(text))
                 {
                     return ShellCommands.Keys.ToArray();
                 }
-                else if (text.Contains(" "))
+                else if (text.Contains(' '))
                 {
                     // We're providing completion for argument.
                     string CommandName = text.SplitEncloseDoubleQuotes(" ")[0];
@@ -62,7 +58,7 @@ namespace KS.Shell.ShellBase.Commands
                             if (AutoCompleter is not null)
                             {
                                 // We have the delegate! Invoke it.
-                                return AutoCompleter.Invoke(LastArgument);
+                                return AutoCompleter.Invoke(LastArgument, index, delims);
                             }
                             else
                             {
@@ -90,18 +86,5 @@ namespace KS.Shell.ShellBase.Commands
             }
         }
 
-        /// <summary>
-        /// Command auto complete constructor
-        /// </summary>
-        /// <param name="ShellType">Shell type</param>
-        protected internal CommandAutoComplete(ShellType ShellType = ShellType.Shell) => ShellTypeToAutocomplete = Shell.GetShellTypeName(ShellType);
-
-        /// <summary>
-        /// Command auto complete constructor
-        /// </summary>
-        /// <param name="ShellType">Shell type</param>
-        protected internal CommandAutoComplete(string ShellType = "Shell") => ShellTypeToAutocomplete = ShellType;
-
     }
-#endif
 }

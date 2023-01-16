@@ -87,7 +87,7 @@ namespace KS.Shell
         {
             { "presets", new CommandInfo("presets", ShellType.Shell, "Opens the shell preset library", new CommandArgumentInfo(), new PresetsUnifiedCommand()) },
             { "exit", new CommandInfo("exit", ShellType.Shell, "Exits the shell if running on subshell", new CommandArgumentInfo(), new ExitUnifiedCommand()) },
-            { "help", new CommandInfo("help", ShellType.Shell, "Help page", new CommandArgumentInfo(new[] { "[command]" }, false, 0, (_) => HelpUnifiedCommand.ListCmds(_)), new HelpUnifiedCommand()) }
+            { "help", new CommandInfo("help", ShellType.Shell, "Help page", new CommandArgumentInfo(new[] { "[command]" }, false, 0, (startFrom, _, _) => HelpUnifiedCommand.ListCmds(startFrom)), new HelpUnifiedCommand()) }
         };
 
         /// <summary>
