@@ -16,36 +16,26 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-namespace KS.Drivers
+namespace KS.Drivers.Regexp
 {
     /// <summary>
-    /// Driver types
+    /// Regexp driver interface for drivers
     /// </summary>
-    public enum DriverTypes
+    public interface IRegexpDriver : IDriver
     {
         /// <summary>
-        /// Random number generator drivers
+        /// Check to see if the provided pattern is a valid Regex pattern
         /// </summary>
-        RNG,
+        /// <param name="pattern">Regular expression pattern</param>
+        /// <returns>True if valid. Otherwise, false</returns>
+        bool IsValidRegex(string pattern);
+
         /// <summary>
-        /// Console drivers
+        /// Checks to see whether the pattern matches
         /// </summary>
-        Console,
-        /// <summary>
-        /// Network drivers
-        /// </summary>
-        Network,
-        /// <summary>
-        /// Filesystem drivers
-        /// </summary>
-        Filesystem,
-        /// <summary>
-        /// Encryption drivers
-        /// </summary>
-        Encryption,
-        /// <summary>
-        /// Regular expression drivers
-        /// </summary>
-        Regexp
+        /// <param name="text">The text to be matched</param>
+        /// <param name="pattern">Regular expression pattern for matching</param>
+        /// <returns>True if there are matches. Otherwise, false</returns>
+        bool IsMatch(string text, string pattern);
     }
 }

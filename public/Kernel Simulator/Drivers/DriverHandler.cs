@@ -29,6 +29,8 @@ using KS.Drivers.Filesystem;
 using KS.Drivers.Filesystem.Bases;
 using KS.Drivers.Encryption;
 using KS.Drivers.Encryption.Encryptors;
+using KS.Drivers.Regexp;
+using KS.Drivers.Regexp.Bases;
 
 namespace KS.Drivers
 {
@@ -42,6 +44,7 @@ namespace KS.Drivers
         internal static string currentNetworkDriver = "Default";
         internal static string currentFilesystemDriver = "Default";
         internal static string currentEncryptionDriver = "SHA256";
+        internal static string currentRegexpDriver = "Default";
 
         private readonly static Dictionary<string, IRandomDriver> randomDrivers = new()
         {
@@ -86,11 +89,17 @@ namespace KS.Drivers
             { "SHA512", new SHA512() },
         };
 
+        private readonly static Dictionary<string, IRegexpDriver> regexpDrivers = new()
+        {
+            { "Default", new DefaultRegexp() }
+        };
+
         private readonly static Dictionary<string, IRandomDriver> customRandomDrivers = new();
         private readonly static Dictionary<string, IConsoleDriver> customConsoleDrivers = new();
         private readonly static Dictionary<string, INetworkDriver> customNetworkDrivers = new();
         private readonly static Dictionary<string, IFilesystemDriver> customFilesystemDrivers = new();
         private readonly static Dictionary<string, IEncryptionDriver> customEncryptionDrivers = new();
+        private readonly static Dictionary<string, IRegexpDriver> customRegexpDrivers = new();
 
         /// <summary>
         /// Gets the current random driver
@@ -123,6 +132,12 @@ namespace KS.Drivers
             GetEncryptionDriver();
 
         /// <summary>
+        /// Gets the current regexp driver
+        /// </summary>
+        public static IRegexpDriver CurrentRegexpDriver =>
+            GetRegexpDriver();
+
+        /// <summary>
         /// Gets the driver
         /// </summary>
         /// <param name="type">The driver type</param>
@@ -142,6 +157,8 @@ namespace KS.Drivers
                     return GetFilesystemDriver(name);
                 case DriverTypes.Encryption:
                     return GetEncryptionDriver(name);
+                case DriverTypes.Regexp:
+                    return GetRegexpDriver(name);
             }
 
             // We shouldn't be here
@@ -179,6 +196,10 @@ namespace KS.Drivers
                     if (!IsRegistered(type, name))
                         customEncryptionDrivers.Add(name, (IEncryptionDriver)driver);
                     break;
+                case DriverTypes.Regexp:
+                    if (!IsRegistered(type, name))
+                        customRegexpDrivers.Add(name, (IRegexpDriver)driver);
+                    break;
             }
         }
 
@@ -211,6 +232,10 @@ namespace KS.Drivers
                     if (IsRegistered(type, name))
                         customEncryptionDrivers.Remove(name);
                     break;
+                case DriverTypes.Regexp:
+                    if (IsRegistered(type, name))
+                        customRegexpDrivers.Remove(name);
+                    break;
             }
         }
 
@@ -229,6 +254,7 @@ namespace KS.Drivers
                 DriverTypes.Network     => customNetworkDrivers.Keys.Contains(name),
                 DriverTypes.Filesystem  => customFilesystemDrivers.Keys.Contains(name),
                 DriverTypes.Encryption  => customEncryptionDrivers.Keys.Contains(name),
+                DriverTypes.Regexp      => customRegexpDrivers.Keys.Contains(name),
                 _                       => false,
             };
         }
@@ -361,6 +387,32 @@ namespace KS.Drivers
                 // We didn't find anything, so return default KS driver.
                 DebugWriter.WriteDebug(DebugLevel.W, "Got default kernel driver because {0} is not found in the driver database.", name);
                 return encryptionDrivers["Default"];
+            }
+        }
+
+        internal static IRegexpDriver GetRegexpDriver() =>
+            GetRegexpDriver(currentRegexpDriver);
+
+        internal static IRegexpDriver GetRegexpDriver(string name)
+        {
+            // Try to get the driver from the name.
+            bool found = regexpDrivers.TryGetValue(name, out IRegexpDriver cdriver);
+            bool customFound = customRegexpDrivers.TryGetValue(name, out IRegexpDriver customcdriver);
+
+            // If found, bail.
+            if (found)
+            {
+                return cdriver;
+            }
+            else if (customFound)
+            {
+                return customcdriver;
+            }
+            else
+            {
+                // We didn't find anything, so return default KS driver.
+                DebugWriter.WriteDebug(DebugLevel.W, "Got default kernel driver because {0} is not found in the driver database.", name);
+                return regexpDrivers["Default"];
             }
         }
         #endregion
