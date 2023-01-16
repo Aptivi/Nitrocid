@@ -338,5 +338,8 @@ User doesn't exist. Check to make sure that you've written the user correctly.
 No such permission
 No such permission mode
 Lists the users
+You're hung!
+Starts the Hangman game
+You win!
 
 ==========================================================================================================================================
