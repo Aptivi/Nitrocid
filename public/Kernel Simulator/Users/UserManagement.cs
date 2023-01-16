@@ -33,6 +33,7 @@ using Newtonsoft.Json.Linq;
 using KS.Kernel.Events;
 using KS.Users.Login;
 using KS.Users.Permissions;
+using KS.Misc.Probers.Regexp;
 
 namespace KS.Users
 {
@@ -591,7 +592,7 @@ namespace KS.Users
                 EventsManager.FireEvent(EventType.LoginError, User, LoginErrorReasons.Spaces);
                 return false;
             }
-            else if (User.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray()) != -1)
+            else if (!RegexpTools.IsMatch(User, @"^[\w.-]+$"))
             {
                 // Usernames shouldn't contain unknown characters
                 DebugWriter.WriteDebug(DebugLevel.W, "Unknown characters found in username.");
