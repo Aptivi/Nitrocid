@@ -341,5 +341,9 @@ Lists the users
 You're hung!
 Starts the Hangman game
 You win!
+Checks for the connection to the Internet
+Internet availability is
+Checks for the network connection
+Network availability is
 
 ==========================================================================================================================================

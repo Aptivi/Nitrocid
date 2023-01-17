@@ -19,11 +19,13 @@
 using System;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Net.NetworkInformation;
 using System.Text;
 using KS.Drivers;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
+using KS.Network.Base.Transfer;
 
 namespace KS.Network.Base
 {
@@ -54,7 +56,14 @@ namespace KS.Network.Base
         /// <summary>
         /// Checks to see if the network is available
         /// </summary>
-        public static bool NetworkAvailable => NetworkInterface.GetIsNetworkAvailable();
+        public static bool NetworkAvailable => 
+            NetworkInterface.GetIsNetworkAvailable();
+
+        /// <summary>
+        /// Checks to see if the Internet connection is available
+        /// </summary>
+        public static bool InternetAvailable => 
+            IsInternetAvailable();
 
         /// <summary>
         /// Pings an address
@@ -146,6 +155,25 @@ namespace KS.Network.Base
         /// </summary>
         public static IPAddress[] GetOnlineDevicesInNetwork() =>
             DriverHandler.CurrentNetworkDriver.GetOnlineDevicesInNetwork();
+
+        private static bool IsInternetAvailable()
+        {
+            try
+            {
+                // Return false on systems without network
+                if (!NetworkAvailable)
+                    return false;
+
+                // Try to ping the connectivity check site
+                var status = NetworkTransfer.WClient.GetAsync("https://connectivitycheck.gstatic.com/generate_204").Result.StatusCode;
+                return status == HttpStatusCode.NoContent;
+            }
+            catch
+            {
+                // Network or connection error. Return false.
+                return false;
+            }
+        }
 
     }
 }
