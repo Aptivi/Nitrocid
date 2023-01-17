@@ -28,11 +28,11 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override string TestName => Translate.DoTranslation("Tests the cryptographically secure random number generator");
         public override void Run()
         {
-            DriverHandler.currentRandomDriver = "Cryptographic";
+            DriverHandler.SetDriver<IRandomDriver>("Cryptographic");
             int randomNum = RandomDriver.Random();
             double randomDbl = RandomDriver.RandomDouble();
             TextWriterColor.Write(Translate.DoTranslation("Returned numbers:") + $" [{randomNum} | {randomDbl}]");
-            DriverHandler.currentRandomDriver = "Default";
+            DriverHandler.SetDriver<IRandomDriver>("Default");
         }
     }
 }

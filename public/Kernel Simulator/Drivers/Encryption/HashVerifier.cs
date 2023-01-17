@@ -312,7 +312,7 @@ namespace KS.Drivers.Encryption
         /// <param name="HashType">An encryption algorithm</param>
         /// <returns>The expected hash length</returns>
         public static int GetExpectedHashLength(string HashType) =>
-            DriverHandler.GetEncryptionDriver(HashType).HashLength;
+            DriverHandler.GetDriver<IEncryptionDriver>(HashType).HashLength;
 
     }
 }

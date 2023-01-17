@@ -58,6 +58,7 @@ using KS.Kernel.Events;
 using File = KS.Drivers.Console.Consoles.File;
 using static KS.Users.UserManagement;
 using KS.Users.Permissions;
+using KS.Drivers.Console;
 
 namespace KS.Shell
 {
@@ -419,11 +420,11 @@ namespace KS.Shell
             }
 
             // Restore console output to its original state if any
-            if (DriverHandler.currentConsoleDriver != "Terminal")
+            if (DriverHandler.CurrentConsoleDriver.DriverName != "Terminal")
             {
                 if (DriverHandler.CurrentConsoleDriver is File writer)
                     writer.FilterVT = false;
-                DriverHandler.currentConsoleDriver = "Terminal";
+                DriverHandler.SetDriver<IConsoleDriver>("Terminal");
             }
 
             // Restore title
@@ -460,7 +461,7 @@ namespace KS.Shell
                 DebugWriter.WriteDebug(DebugLevel.I, "Output redirection found with append.");
                 string OutputFileName = Command.Substring(Command.LastIndexOf(">") + 2);
                 string OutputFilePath = Filesystem.NeutralizePath(OutputFileName);
-                DriverHandler.currentConsoleDriver = "File";
+                DriverHandler.SetDriver<IConsoleDriver>("File");
                 ((File)DriverHandler.CurrentConsoleDriver).PathToWrite = OutputFilePath;
                 ((File)DriverHandler.CurrentConsoleDriver).FilterVT = true;
                 Command = Command.Replace(" >>> " + OutputFileName, "");
@@ -470,7 +471,7 @@ namespace KS.Shell
                 DebugWriter.WriteDebug(DebugLevel.I, "Output redirection found with overwrite.");
                 string OutputFileName = Command.Substring(Command.LastIndexOf(">") + 2);
                 string OutputFilePath = Filesystem.NeutralizePath(OutputFileName);
-                DriverHandler.currentConsoleDriver = "File";
+                DriverHandler.SetDriver<IConsoleDriver>("File");
                 ((File)DriverHandler.CurrentConsoleDriver).PathToWrite = OutputFilePath;
                 ((File)DriverHandler.CurrentConsoleDriver).FilterVT = true;
                 FileStream clearer = new(OutputFilePath, FileMode.OpenOrCreate, FileAccess.ReadWrite);
@@ -481,7 +482,7 @@ namespace KS.Shell
             else if (Command.EndsWith(" |SILENT|"))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Silence found. Redirecting to null writer...");
-                DriverHandler.currentConsoleDriver = "Null";
+                DriverHandler.SetDriver<IConsoleDriver>("Null");
                 Command = Command.Replace(" |SILENT|", "");
             }
 
@@ -498,7 +499,7 @@ namespace KS.Shell
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Optional output redirection found using OutputPath ({0}).", OutputPath);
                 OutputPath = Filesystem.NeutralizePath(OutputPath);
-                DriverHandler.currentConsoleDriver = "File";
+                DriverHandler.SetDriver<IConsoleDriver>("File");
                 ((File)DriverHandler.CurrentConsoleDriver).PathToWrite = OutputPath;
             }
         }

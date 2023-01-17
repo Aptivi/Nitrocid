@@ -103,7 +103,7 @@ namespace KS.Users
             try
             {
                 // Compute hash of a password
-                var Regexp = DriverHandler.GetEncryptionDriver("SHA256").HashRegex;
+                var Regexp = DriverHandler.GetDriver<IEncryptionDriver>("SHA256").HashRegex;
                 if (ComputationNeeded)
                 {
                     unpassword = Encryption.GetEncryptedString(unpassword, "SHA256");

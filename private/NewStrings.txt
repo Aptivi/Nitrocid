@@ -345,5 +345,6 @@ Checks for the connection to the Internet
 Internet availability is
 Checks for the network connection
 Network availability is
+Driver doesn't exist. Check to make sure that you've written the driver name correctly, and that the driver is registered properly.
 
 ==========================================================================================================================================

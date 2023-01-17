@@ -18,6 +18,7 @@
 
 using KS.Arguments.ArgumentBase;
 using KS.Drivers;
+using KS.Drivers.Console;
 
 namespace KS.Arguments.CommandLineArguments
 {
@@ -26,7 +27,7 @@ namespace KS.Arguments.CommandLineArguments
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            DriverHandler.currentConsoleDriver = "TerminalDebug";
+            DriverHandler.SetDriver<IConsoleDriver>("TerminalDebug");
         }
     }
 }

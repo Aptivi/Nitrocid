@@ -57,7 +57,7 @@ namespace KS.Drivers.Encryption
             DebugWriter.WriteDebug(DebugLevel.I, "String length: {0}", str.Length);
 
             // Get the encryptor
-            return DriverHandler.GetEncryptionDriver(algorithm).GetEncryptedString(str);
+            return DriverHandler.GetDriver<IEncryptionDriver>(algorithm).GetEncryptedString(str);
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace KS.Drivers.Encryption
             DebugWriter.WriteDebug(DebugLevel.I, "Stream length: {0}", str.Length);
 
             // Get the encryptor
-            return DriverHandler.GetEncryptionDriver(algorithm).GetEncryptedFile(str);
+            return DriverHandler.GetDriver<IEncryptionDriver>(algorithm).GetEncryptedFile(str);
         }
 
         /// <summary>
@@ -95,8 +95,8 @@ namespace KS.Drivers.Encryption
         /// </summary>
         /// <param name="Algorithm">Algorithm</param>
         /// <returns>Empty hash</returns>
-        public static string GetEmptyHash(string Algorithm) => 
-            DriverHandler.GetEncryptionDriver(Algorithm).EmptyHash;
+        public static string GetEmptyHash(string Algorithm) =>
+            DriverHandler.GetDriver<IEncryptionDriver>(Algorithm).EmptyHash;
 
     }
 }

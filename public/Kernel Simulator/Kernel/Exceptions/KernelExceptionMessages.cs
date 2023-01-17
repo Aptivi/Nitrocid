@@ -96,6 +96,7 @@ namespace KS.Kernel.Exceptions
                     { KernelExceptionType.NetworkOffline,                   Translate.DoTranslation("Your network needs to be online before being able to perform operations related to networking. Connect your network adapter and try again.") },
                     { KernelExceptionType.PermissionDenied,                 Translate.DoTranslation("Permission denied trying to perform an operation.") },
                     { KernelExceptionType.NoSuchUser,                       Translate.DoTranslation("User doesn't exist. Check to make sure that you've written the user correctly.") },
+                    { KernelExceptionType.NoSuchDriver,                     Translate.DoTranslation("Driver doesn't exist. Check to make sure that you've written the driver name correctly, and that the driver is registered properly.") },
                 };
             }
         }

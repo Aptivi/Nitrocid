@@ -31,6 +31,8 @@ using KS.Drivers.Encryption;
 using KS.Drivers.Encryption.Encryptors;
 using KS.Drivers.Regexp;
 using KS.Drivers.Regexp.Bases;
+using KS.Kernel.Exceptions;
+using FluentFTP;
 
 namespace KS.Drivers
 {
@@ -39,13 +41,6 @@ namespace KS.Drivers
     /// </summary>
     public static class DriverHandler
     {
-        internal static string currentRandomDriver = "Default";
-        internal static string currentConsoleDriver = "Terminal";
-        internal static string currentNetworkDriver = "Default";
-        internal static string currentFilesystemDriver = "Default";
-        internal static string currentEncryptionDriver = "SHA256";
-        internal static string currentRegexpDriver = "Default";
-
         private readonly static Dictionary<string, IRandomDriver> randomDrivers = new()
         {
             { "Default", new DefaultRandom() },
@@ -101,69 +96,117 @@ namespace KS.Drivers
         private readonly static Dictionary<string, IEncryptionDriver> customEncryptionDrivers = new();
         private readonly static Dictionary<string, IRegexpDriver> customRegexpDrivers = new();
 
+        // Don't move this field to the top, or NullReferenceException will haunt you!!!
+        internal static Dictionary<DriverTypes, IDriver> currentDrivers = new()
+        {
+            { DriverTypes.Console,      consoleDrivers["Terminal"] },
+            { DriverTypes.RNG,          randomDrivers["Default"]  },
+            { DriverTypes.Network,      networkDrivers["Default"]  },
+            { DriverTypes.Filesystem,   filesystemDrivers["Default"]  },
+            { DriverTypes.Encryption,   encryptionDrivers["SHA256"]   },
+            { DriverTypes.Regexp,       regexpDrivers["Default"]  },
+        };
+
         /// <summary>
         /// Gets the current random driver
         /// </summary>
-        public static IRandomDriver CurrentRandomDriver => 
-            GetRandomDriver();
+        public static IRandomDriver CurrentRandomDriver =>
+            (IRandomDriver)currentDrivers[DriverTypes.RNG];
 
         /// <summary>
         /// Gets the current console driver
         /// </summary>
-        public static IConsoleDriver CurrentConsoleDriver => 
-            GetConsoleDriver();
+        public static IConsoleDriver CurrentConsoleDriver =>
+            (IConsoleDriver)currentDrivers[DriverTypes.Console];
 
         /// <summary>
         /// Gets the current network driver
         /// </summary>
         public static INetworkDriver CurrentNetworkDriver =>
-            GetNetworkDriver();
+            (INetworkDriver)currentDrivers[DriverTypes.Network];
 
         /// <summary>
         /// Gets the current filesystem driver
         /// </summary>
         public static IFilesystemDriver CurrentFilesystemDriver =>
-            GetFilesystemDriver();
+            (IFilesystemDriver)currentDrivers[DriverTypes.Filesystem];
 
         /// <summary>
         /// Gets the current encryption driver
         /// </summary>
         public static IEncryptionDriver CurrentEncryptionDriver =>
-            GetEncryptionDriver();
+            (IEncryptionDriver)currentDrivers[DriverTypes.Encryption];
 
         /// <summary>
         /// Gets the current regexp driver
         /// </summary>
         public static IRegexpDriver CurrentRegexpDriver =>
-            GetRegexpDriver();
+            (IRegexpDriver)currentDrivers[DriverTypes.Regexp];
 
         /// <summary>
         /// Gets the driver
         /// </summary>
-        /// <param name="type">The driver type</param>
         /// <param name="name">The driver name</param>
-        /// <returns>The driver responsible for performing operations according to driver <paramref name="type"/></returns>
-        public static IDriver GetDriver(DriverTypes type, string name)
+        /// <returns>The driver responsible for performing operations according to driver type</returns>
+        public static TResult GetDriver<TResult>(string name)
         {
-            switch (type)
+            // First, infer the type from the TResult
+            var driverType = InferDriverTypeFromDriverInterfaceType<TResult>();
+
+            // Then, get the actual driver from name
+            switch (driverType)
             {
                 case DriverTypes.RNG:
-                    return GetRandomDriver(name);
+                    if (randomDrivers.ContainsKey(name))
+                        // Found a driver under the kernel driver list
+                        return (TResult)randomDrivers[name];
+                    else if (IsRegistered(driverType, name))
+                        // Found a driver under the custom driver list
+                        return (TResult)customRandomDrivers[name];
+                    else
+                        // Found no driver under both lists
+                        return (TResult)randomDrivers["SHA256"];
+                    // Same goes as for below...
                 case DriverTypes.Console:
-                    return GetConsoleDriver(name);
+                    if (consoleDrivers.ContainsKey(name))
+                        return (TResult)consoleDrivers[name];
+                    else if (IsRegistered(driverType, name))
+                        return (TResult)customConsoleDrivers[name];
+                    else
+                        return (TResult)consoleDrivers["Terminal"];
                 case DriverTypes.Network:
-                    return GetNetworkDriver(name);
+                    if (networkDrivers.ContainsKey(name))
+                        return (TResult)networkDrivers[name];
+                    else if (IsRegistered(driverType, name))
+                        return (TResult)customNetworkDrivers[name];
+                    else
+                        return (TResult)networkDrivers["Terminal"];
                 case DriverTypes.Filesystem:
-                    return GetFilesystemDriver(name);
+                    if (filesystemDrivers.ContainsKey(name))
+                        return (TResult)filesystemDrivers[name];
+                    else if (IsRegistered(driverType, name))
+                        return (TResult)customFilesystemDrivers[name];
+                    else
+                        return (TResult)filesystemDrivers["Terminal"];
                 case DriverTypes.Encryption:
-                    return GetEncryptionDriver(name);
+                    if (encryptionDrivers.ContainsKey(name))
+                        return (TResult)encryptionDrivers[name];
+                    else if (IsRegistered(driverType, name))
+                        return (TResult)customEncryptionDrivers[name];
+                    else
+                        return (TResult)encryptionDrivers["Terminal"];
                 case DriverTypes.Regexp:
-                    return GetRegexpDriver(name);
+                    if (regexpDrivers.ContainsKey(name))
+                        return (TResult)regexpDrivers[name];
+                    else if (IsRegistered(driverType, name))
+                        return (TResult)customRegexpDrivers[name];
+                    else
+                        return (TResult)regexpDrivers["Terminal"];
             }
 
             // We shouldn't be here
-            DebugWriter.WriteDebug(DebugLevel.E, "We shouldn't be returning null here. Are you sure that it's of type {0} with name {1}?", type, name);
-            return null;
+            DebugWriter.WriteDebug(DebugLevel.E, "We shouldn't be returning null here. Are you sure that it's of type {0} with name {1}?", typeof(TResult).Name, name);
+            return default;
         }
 
         /// <summary>
@@ -249,173 +292,46 @@ namespace KS.Drivers
         {
             return type switch
             {
-                DriverTypes.RNG         => customRandomDrivers.Keys.Contains(name),
-                DriverTypes.Console     => customConsoleDrivers.Keys.Contains(name),
-                DriverTypes.Network     => customNetworkDrivers.Keys.Contains(name),
-                DriverTypes.Filesystem  => customFilesystemDrivers.Keys.Contains(name),
-                DriverTypes.Encryption  => customEncryptionDrivers.Keys.Contains(name),
-                DriverTypes.Regexp      => customRegexpDrivers.Keys.Contains(name),
+                DriverTypes.RNG         => customRandomDrivers.ContainsKey(name),
+                DriverTypes.Console     => customConsoleDrivers.ContainsKey(name),
+                DriverTypes.Network     => customNetworkDrivers.ContainsKey(name),
+                DriverTypes.Filesystem  => customFilesystemDrivers.ContainsKey(name),
+                DriverTypes.Encryption  => customEncryptionDrivers.ContainsKey(name),
+                DriverTypes.Regexp      => customRegexpDrivers.ContainsKey(name),
                 _                       => false,
             };
         }
 
-        #region Individual driver getters
-        internal static IRandomDriver GetRandomDriver() =>
-            GetRandomDriver(currentRandomDriver);
-
-        internal static IRandomDriver GetRandomDriver(string name)
+        /// <summary>
+        /// Sets the kernel driver
+        /// </summary>
+        /// <param name="name">Name of the available kernel driver to set to</param>
+        /// <exception cref="KernelException"></exception>
+        public static void SetDriver<T>(string name)
         {
-            // Try to get the driver from the name.
-            bool found = randomDrivers.TryGetValue(name, out IRandomDriver rdriver);
-            bool customFound = customRandomDrivers.TryGetValue(name, out IRandomDriver customrdriver);
+            // First, infer the type from the T
+            var driverType = InferDriverTypeFromDriverInterfaceType<T>();
 
-            // If found, bail.
-            if (found)
-            {
-                return rdriver;
-            }
-            else if (customFound)
-            {
-                return customrdriver;
-            }
-            else
-            {
-                // We didn't find anything, so return default KS driver.
-                DebugWriter.WriteDebug(DebugLevel.W, "Got default kernel driver because {0} is not found in the driver database.", name);
-                return randomDrivers["Default"];
-            }
+            // Then, try to set the driver
+            currentDrivers[driverType] = (IDriver)GetDriver<T>(name);
         }
 
-        internal static IConsoleDriver GetConsoleDriver() =>
-            GetConsoleDriver(currentConsoleDriver);
-
-        internal static IConsoleDriver GetConsoleDriver(string name)
+        private static DriverTypes InferDriverTypeFromDriverInterfaceType<T>()
         {
-            // Try to get the driver from the name.
-            bool found = consoleDrivers.TryGetValue(name, out IConsoleDriver cdriver);
-            bool customFound = customConsoleDrivers.TryGetValue(name, out IConsoleDriver customcdriver);
-
-            // If found, bail.
-            if (found)
-            {
-                return cdriver;
-            }
-            else if (customFound)
-            {
-                return customcdriver;
-            }
-            else
-            {
-                // We didn't find anything, so return default KS driver.
-                DebugWriter.WriteDebug(DebugLevel.W, "Got default kernel driver because {0} is not found in the driver database.", name);
-                return consoleDrivers["Terminal"];
-            }
+            var driverType = default(DriverTypes);
+            if (typeof(T) == typeof(IEncryptionDriver))
+                driverType = DriverTypes.Encryption;
+            else if (typeof(T) == typeof(IConsoleDriver))
+                driverType = DriverTypes.Console;
+            else if (typeof(T) == typeof(INetworkDriver))
+                driverType = DriverTypes.Network;
+            else if (typeof(T) == typeof(IFilesystemDriver))
+                driverType = DriverTypes.Filesystem;
+            else if (typeof(T) == typeof(IEncryptionDriver))
+                driverType = DriverTypes.Encryption;
+            else if (typeof(T) == typeof(IRegexpDriver))
+                driverType = DriverTypes.Regexp;
+            return driverType;
         }
-
-        internal static INetworkDriver GetNetworkDriver() =>
-            GetNetworkDriver(currentNetworkDriver);
-
-        internal static INetworkDriver GetNetworkDriver(string name)
-        {
-            // Try to get the driver from the name.
-            bool found = networkDrivers.TryGetValue(name, out INetworkDriver cdriver);
-            bool customFound = customNetworkDrivers.TryGetValue(name, out INetworkDriver customcdriver);
-
-            // If found, bail.
-            if (found)
-            {
-                return cdriver;
-            }
-            else if (customFound)
-            {
-                return customcdriver;
-            }
-            else
-            {
-                // We didn't find anything, so return default KS driver.
-                DebugWriter.WriteDebug(DebugLevel.W, "Got default kernel driver because {0} is not found in the driver database.", name);
-                return networkDrivers["Default"];
-            }
-        }
-
-        internal static IFilesystemDriver GetFilesystemDriver() =>
-            GetFilesystemDriver(currentFilesystemDriver);
-
-        internal static IFilesystemDriver GetFilesystemDriver(string name)
-        {
-            // Try to get the driver from the name.
-            bool found = filesystemDrivers.TryGetValue(name, out IFilesystemDriver cdriver);
-            bool customFound = customFilesystemDrivers.TryGetValue(name, out IFilesystemDriver customcdriver);
-
-            // If found, bail.
-            if (found)
-            {
-                return cdriver;
-            }
-            else if (customFound)
-            {
-                return customcdriver;
-            }
-            else
-            {
-                // We didn't find anything, so return default KS driver.
-                DebugWriter.WriteDebug(DebugLevel.W, "Got default kernel driver because {0} is not found in the driver database.", name);
-                return filesystemDrivers["Default"];
-            }
-        }
-
-        internal static IEncryptionDriver GetEncryptionDriver() =>
-            GetEncryptionDriver(currentEncryptionDriver);
-
-        internal static IEncryptionDriver GetEncryptionDriver(string name)
-        {
-            // Try to get the driver from the name.
-            bool found = encryptionDrivers.TryGetValue(name, out IEncryptionDriver cdriver);
-            bool customFound = customEncryptionDrivers.TryGetValue(name, out IEncryptionDriver customcdriver);
-
-            // If found, bail.
-            if (found)
-            {
-                return cdriver;
-            }
-            else if (customFound)
-            {
-                return customcdriver;
-            }
-            else
-            {
-                // We didn't find anything, so return default KS driver.
-                DebugWriter.WriteDebug(DebugLevel.W, "Got default kernel driver because {0} is not found in the driver database.", name);
-                return encryptionDrivers["Default"];
-            }
-        }
-
-        internal static IRegexpDriver GetRegexpDriver() =>
-            GetRegexpDriver(currentRegexpDriver);
-
-        internal static IRegexpDriver GetRegexpDriver(string name)
-        {
-            // Try to get the driver from the name.
-            bool found = regexpDrivers.TryGetValue(name, out IRegexpDriver cdriver);
-            bool customFound = customRegexpDrivers.TryGetValue(name, out IRegexpDriver customcdriver);
-
-            // If found, bail.
-            if (found)
-            {
-                return cdriver;
-            }
-            else if (customFound)
-            {
-                return customcdriver;
-            }
-            else
-            {
-                // We didn't find anything, so return default KS driver.
-                DebugWriter.WriteDebug(DebugLevel.W, "Got default kernel driver because {0} is not found in the driver database.", name);
-                return regexpDrivers["Default"];
-            }
-        }
-        #endregion
-
     }
 }

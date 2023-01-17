@@ -282,6 +282,10 @@ namespace KS.Kernel.Exceptions
         /// <summary>
         /// User doesn't exist. Check to make sure that you've written the user correctly.
         /// </summary>
-        NoSuchUser
+        NoSuchUser,
+        /// <summary>
+        /// Driver doesn't exist. Check to make sure that you've written the driver name correctly, and that the driver is registered properly.
+        /// </summary>
+        NoSuchDriver
     }
 }
