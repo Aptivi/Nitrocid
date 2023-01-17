@@ -338,6 +338,10 @@ namespace KS.Kernel
                 ConsoleWrapper.WriteLine(Translate.DoTranslation("It's now safe to turn off your computer."));
                 Input.DetectKeypress();
             }
+
+            // Load main buffer
+            if (!KernelPlatform.IsOnWindows())
+                TextWriterColor.Write("\u001b[?1049l");
         }
 
         /// <summary>
