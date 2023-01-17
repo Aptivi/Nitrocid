@@ -167,6 +167,7 @@ namespace KS.Kernel
                             TextWriterColor.Write(" ", false, Color.Empty, new Color(0, Convert.ToInt32(i), 0));
                         for (double i = 0; i < 255; i += threshold)
                             TextWriterColor.Write(" ", false, Color.Empty, new Color(0, 0, Convert.ToInt32(i)));
+                        TextWriterColor.Write();
                         Flags.ConsoleSupportsTrueColor = ChoiceStyle.PromptChoice(Translate.DoTranslation("Do these ramps look right to you? They should transition smoothly."), "y/n") == "y";
                     }
 
