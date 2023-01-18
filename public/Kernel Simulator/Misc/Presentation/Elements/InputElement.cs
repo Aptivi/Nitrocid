@@ -25,6 +25,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TermRead.Reader;
 using VT.NET;
 
 namespace KS.Misc.Presentation.Elements
@@ -86,9 +87,10 @@ namespace KS.Misc.Presentation.Elements
                 TextWriterWhereColor.WriteWhere(line, PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop);
 
             // Get the input
-#warning TermRead needs to implement the margin system
             ConsoleWrapper.CursorVisible = true;
+            TermReaderSettings.LeftMargin = TermReaderSettings.RightMargin = PresentationTools.PresentationUpperInnerBorderLeft;
             WrittenInput = Input.ReadLine();
+            TermReaderSettings.LeftMargin = TermReaderSettings.RightMargin = 0;
             ConsoleWrapper.CursorVisible = false;
         }
 
