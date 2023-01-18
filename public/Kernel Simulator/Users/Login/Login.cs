@@ -58,7 +58,7 @@ namespace KS.Users.Login
         /// <summary>
         /// Current username
         /// </summary>
-        private static UserInfo CurrentUserInfo = new("root", Encryption.GetEncryptedString("", "SHA256"), Array.Empty<string>());
+        private static UserInfo CurrentUserInfo = new("root", Encryption.GetEncryptedString("", "SHA256"), Array.Empty<string>(), "System Account");
 
         /// <summary>
         /// Current username

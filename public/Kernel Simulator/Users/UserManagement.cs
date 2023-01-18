@@ -85,7 +85,11 @@ namespace KS.Users
             /// <summary>
             /// List of permissions
             /// </summary>
-            Permissions
+            Permissions,
+            /// <summary>
+            /// Full name
+            /// </summary>
+            FullName
         }
 
         // ---------- User Management ----------
@@ -115,7 +119,7 @@ namespace KS.Users
                 }
 
                 // Add user locally
-                var initedUser = new UserInfo(uninitUser, unpassword, Array.Empty<string>());
+                var initedUser = new UserInfo(uninitUser, unpassword, Array.Empty<string>(), "");
                 if (!UserExists(uninitUser))
                 {
                     Login.Login.Users.Add(uninitUser, initedUser);
@@ -147,7 +151,8 @@ namespace KS.Users
                             new JProperty("admin", false),
                             new JProperty("anonymous", false),
                             new JProperty("disabled", false),
-                            new JProperty("permissions", Array.Empty<string>())
+                            new JProperty("permissions", Array.Empty<string>()),
+                            new JProperty("fullname", "")
                         );
                         UsersToken.Add(NewUser);
                     }
@@ -164,7 +169,8 @@ namespace KS.Users
                         new JProperty("admin", false),
                         new JProperty("anonymous", false),
                         new JProperty("disabled", false),
-                        new JProperty("permissions", Array.Empty<string>())
+                        new JProperty("permissions", Array.Empty<string>()),
+                        new JProperty("fullname", "")
                     );
                     UsersToken.Add(NewUser);
                 }
@@ -197,6 +203,8 @@ namespace KS.Users
                 foreach (var perm in perms)
                     if (Enum.TryParse(typeof(PermissionTypes), (string)perm, out object permEnum))
                         PermissionsTools.GrantPermission(user, (PermissionTypes)permEnum);
+                string fullname = (string)UserToken["fullname"];
+                Login.Login.Users[user].FullName = fullname;
             }
         }
 
@@ -369,7 +377,7 @@ namespace KS.Users
                     {
                         // Store user info
                         var oldInfo = Login.Login.Users[OldName];
-                        var newInfo = new UserInfo(Username, oldInfo.Password, oldInfo.Permissions);
+                        var newInfo = new UserInfo(Username, oldInfo.Password, oldInfo.Permissions, oldInfo.FullName);
 
                         // Rename username in dictionary
                         Login.Login.Users.Remove(OldName);

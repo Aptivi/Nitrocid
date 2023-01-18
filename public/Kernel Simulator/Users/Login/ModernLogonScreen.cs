@@ -26,6 +26,7 @@ using KS.ConsoleBase.Inputs;
 using KS.Languages;
 using KS.ConsoleBase.Inputs.Styles;
 using KS.Drivers.Encryption;
+using System.Linq;
 
 namespace KS.Users.Login
 {
@@ -69,8 +70,9 @@ namespace KS.Users.Login
             while (!loggedIn)
             {
                 // First, get the user number from the selection input
-                // TODO: Implement user full name, basic info, etc.
-                int userNum = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a user account you want to log in with."), string.Join("/", UserManagement.ListAllUsers().ToArray()));
+                var users = UserManagement.ListAllUsers().ToArray();
+                var userFullNames = users.Select((user) => UserManagement.GetUserProperty(user, UserManagement.UserProperty.FullName).ToString()).ToArray();
+                int userNum = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a user account you want to log in with."), string.Join("/", users), userFullNames);
 
                 // Then, get the user from the number and prompt for password if found
                 userName = UserManagement.SelectUser(userNum);
