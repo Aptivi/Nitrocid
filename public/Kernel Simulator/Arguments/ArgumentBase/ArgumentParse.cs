@@ -47,6 +47,7 @@ namespace KS.Arguments.ArgumentBase
             { "terminaldebug", new ArgumentInfo("terminaldebug", "Enables terminal debug mode", new CommandArgumentInfo(), new CommandLine_TerminalDebugArgument()) },
             { "reset", new ArgumentInfo("reset", "Resets the kernel to the factory settings", new CommandArgumentInfo(), new CommandLine_ResetArgument()) },
             { "bypasssizedetection", new ArgumentInfo("bypasssizedetection", "Bypasses the console size detection", new CommandArgumentInfo(), new CommandLine_BypassSizeDetectionArgument()) },
+            { "noaltbuffer", new ArgumentInfo("noaltbuffer", "Prevents the kernel from using the alternative buffer", new CommandArgumentInfo(), new NoAltBufferArgument()) },
             { "help", new ArgumentInfo("help", "Help page", new CommandArgumentInfo(), new CommandLine_HelpArgument()) }
         };
 

@@ -172,7 +172,7 @@ namespace KS.Kernel
                 Config.ReadFailsafeConfig();
 
             // Load alternative buffer (only supported on Linux, because Windows doesn't seem to respect CursorVisible = false on alt buffers)
-            if (!KernelPlatform.IsOnWindows())
+            if (!KernelPlatform.IsOnWindows() && Flags.UseAltBuffer)
             {
                 TextWriterColor.Write("\u001b[?1049h");
                 ConsoleWrapper.SetCursorPosition(0, 0);

@@ -309,6 +309,7 @@ namespace KS.Kernel
         internal static bool DoNotDisturb;
         internal static bool ScrnTimeReached;
         internal static bool LoggedIn;
+        internal static bool UseAltBuffer = true;
 
     }
 }
