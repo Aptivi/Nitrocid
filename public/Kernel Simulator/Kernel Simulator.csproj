@@ -45,7 +45,7 @@
     <GenerateManifests>false</GenerateManifests>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <Version>0.1.0</Version>
-    <PackageVersion>0.1.0.0-alpha10</PackageVersion>
+    <PackageVersion>0.1.0.0-beta1</PackageVersion>
   </PropertyGroup>
   <!-- KS General Information End -->
 
