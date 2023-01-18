@@ -28,66 +28,9 @@ namespace KS.Shell.Shells.FTP
     public static class FTPShellCommon
     {
 
-        /// <summary>
-        /// FTP current local directory
-        /// </summary>
-        public static string FtpCurrentDirectory;
-        /// <summary>
-        /// FTP current remote directory
-        /// </summary>
-        public static string FtpCurrentRemoteDir;
-        /// <summary>
-        /// FTP show details in list
-        /// </summary>
-        public static bool FtpShowDetailsInList = true;
-        /// <summary>
-        /// FTP user prompt style
-        /// </summary>
-        public static string FtpUserPromptStyle = "";
-        /// <summary>
-        /// FTP password prompt style
-        /// </summary>
-        public static string FtpPassPromptStyle = "";
-        /// <summary>
-        /// FTP always use first profile
-        /// </summary>
-        public static bool FtpUseFirstProfile;
-        /// <summary>
-        /// FTP add new connections to speed dial
-        /// </summary>
-        public static bool FtpNewConnectionsToSpeedDial = true;
-        /// <summary>
-        /// FTP try to validate the certificate
-        /// </summary>
-        public static bool FtpTryToValidateCertificate = true;
-        /// <summary>
-        /// FTP recursive hashing
-        /// </summary>
-        public static bool FtpRecursiveHashing;
-        /// <summary>
-        /// FTP show MOTD
-        /// </summary>
-        public static bool FtpShowMotd = true;
-        /// <summary>
-        /// FTP always accept invalid certificates. Turning it on is not recommended.
-        /// </summary>
-        public static bool FtpAlwaysAcceptInvalidCerts;
-        /// <summary>
-        /// FTP verify retry attempts
-        /// </summary>
-        public static int FtpVerifyRetryAttempts = 3;
-        /// <summary>
-        /// FTP connection timeout in milliseconds
-        /// </summary>
-        public static int FtpConnectTimeout = 15000;
-        /// <summary>
-        /// FTP data connection timeout in milliseconds
-        /// </summary>
-        public static int FtpDataConnectTimeout = 15000;
-        /// <summary>
-        /// FTP protocol versions
-        /// </summary>
-        public static FtpIpVersion FtpProtocolVersions = FtpIpVersion.ANY;
+        internal static int verifyRetryAttempts = 3;
+        internal static int connectTimeout = 15000;
+        internal static int dataConnectTimeout = 15000;
         internal static FtpClient _clientFTP;
         internal static bool FtpConnected;
         internal static string FtpSite;
@@ -99,6 +42,78 @@ namespace KS.Shell.Shells.FTP
         /// The FTP client used to connect to the FTP server
         /// </summary>
         public static FtpClient ClientFTP => _clientFTP;
+        /// <summary>
+        /// FTP verify retry attempts
+        /// </summary>
+        public static int FtpVerifyRetryAttempts
+        {
+            get => verifyRetryAttempts;
+            set => verifyRetryAttempts = value < 0 ? 3 : value;
+        }
+        /// <summary>
+        /// FTP connection timeout in milliseconds
+        /// </summary>
+        public static int FtpConnectTimeout
+        {
+            get => connectTimeout;
+            set => connectTimeout = value < 0 ? 15000 : value;
+        }
+        /// <summary>
+        /// FTP data connection timeout in milliseconds
+        /// </summary>
+        public static int FtpDataConnectTimeout
+        {
+            get => dataConnectTimeout;
+            set => dataConnectTimeout = value < 0 ? 15000 : value;
+        }
+        /// <summary>
+        /// FTP current local directory
+        /// </summary>
+        public static string FtpCurrentDirectory { get; set; }
+        /// <summary>
+        /// FTP current remote directory
+        /// </summary>
+        public static string FtpCurrentRemoteDir { get; set; }
+        /// <summary>
+        /// FTP show details in list
+        /// </summary>
+        public static bool FtpShowDetailsInList { get; set; } = true;
+        /// <summary>
+        /// FTP user prompt style
+        /// </summary>
+        public static string FtpUserPromptStyle { get; set; } = "";
+        /// <summary>
+        /// FTP password prompt style
+        /// </summary>
+        public static string FtpPassPromptStyle { get; set; } = "";
+        /// <summary>
+        /// FTP always use first profile
+        /// </summary>
+        public static bool FtpUseFirstProfile { get; set; }
+        /// <summary>
+        /// FTP add new connections to speed dial
+        /// </summary>
+        public static bool FtpNewConnectionsToSpeedDial { get; set; } = true;
+        /// <summary>
+        /// FTP try to validate the certificate
+        /// </summary>
+        public static bool FtpTryToValidateCertificate { get; set; } = true;
+        /// <summary>
+        /// FTP recursive hashing
+        /// </summary>
+        public static bool FtpRecursiveHashing { get; set; }
+        /// <summary>
+        /// FTP show MOTD
+        /// </summary>
+        public static bool FtpShowMotd { get; set; } = true;
+        /// <summary>
+        /// FTP always accept invalid certificates. Turning it on is not recommended.
+        /// </summary>
+        public static bool FtpAlwaysAcceptInvalidCerts { get; set; }
+        /// <summary>
+        /// FTP protocol versions
+        /// </summary>
+        public static FtpIpVersion FtpProtocolVersions { get; set; } = FtpIpVersion.ANY;
 
     }
 }

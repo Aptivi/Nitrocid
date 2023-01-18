@@ -40,7 +40,7 @@ namespace KS.Network.Mail.Directory
         /// <summary>
         /// Whether to show the message preview or not
         /// </summary>
-        public static bool ShowPreview;
+        public static bool ShowPreview { get; set; }
 
         /// <summary>
         /// Lists messages

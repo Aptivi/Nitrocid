@@ -34,10 +34,12 @@ namespace KS.ConsoleBase.Inputs.Styles
     public static class ChoiceStyle
     {
 
+        private static ChoiceOutputType defaultChoiceOutputType = ChoiceOutputType.Modern;
+
         /// <summary>
         /// Default input choice output type
         /// </summary>
-        public static ChoiceOutputType DefaultChoiceOutputType = ChoiceOutputType.Modern;
+        public static ChoiceOutputType DefaultChoiceOutputType { get; set; } = defaultChoiceOutputType;
 
         /// <summary>
         /// The enumeration for the choice command output type

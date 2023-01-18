@@ -73,10 +73,6 @@ namespace KS.Shell
         internal static KernelThread ProcessStartCommandThread = new("Executable Command Thread", false, (processParams) => ProcessExecutor.ExecuteProcess((ProcessExecutor.ExecuteProcessThreadParameters)processParams));
 
         /// <summary>
-        /// Specifies where to lookup for executables in these paths. Same as in PATH implementation.
-        /// </summary>
-        public static string PathsToLookup = Environment.GetEnvironmentVariable("PATH");
-        /// <summary>
         /// Path lookup delimiter, depending on the operating system
         /// </summary>
         public readonly static string PathLookupDelimiter = Convert.ToString(Path.PathSeparator);
@@ -138,6 +134,11 @@ namespace KS.Shell
                 }
             }
         }
+
+        /// <summary>
+        /// Specifies where to lookup for executables in these paths. Same as in PATH implementation.
+        /// </summary>
+        public static string PathsToLookup { get; set; } = Environment.GetEnvironmentVariable("PATH");
 
         /// <summary>
         /// Inputs for command then parses a specified command.

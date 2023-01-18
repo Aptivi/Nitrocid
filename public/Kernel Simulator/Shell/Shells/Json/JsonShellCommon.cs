@@ -30,31 +30,31 @@ namespace KS.Shell.Shells.Json
     public static class JsonShellCommon
     {
 
-        /// <summary>
-        /// JSON shell file stream
-        /// </summary>
-        public static FileStream JsonShell_FileStream;
+        internal static JToken JsonShell_FileTokenOrig = JToken.Parse("{}");
+        internal static FileStream JsonShell_FileStream;
+        internal static KernelThread JsonShell_AutoSave = new("JSON Shell Autosave Thread", false, JsonTools.JsonShell_HandleAutoSaveJsonFile);
+        private static int autoSaveInterval = 60;
+
         /// <summary>
         /// JSON shell file token
         /// </summary>
-        public static JToken JsonShell_FileToken = JToken.Parse("{}");
-        /// <summary>
-        /// JSON shell auto save thread
-        /// </summary>
-        public static KernelThread JsonShell_AutoSave = new("JSON Shell Autosave Thread", false, JsonTools.JsonShell_HandleAutoSaveJsonFile);
+        public static JToken JsonShell_FileToken { get; set; } = JToken.Parse("{}");
         /// <summary>
         /// Auto save flag
         /// </summary>
-        public static bool JsonShell_AutoSaveFlag = true;
-        /// <summary>
-        /// Auto save interval in seconds
-        /// </summary>
-        public static int JsonShell_AutoSaveInterval = 60;
+        public static bool JsonShell_AutoSaveFlag { get; set; } = true;
         /// <summary>
         /// JSON formatting
         /// </summary>
-        public static Formatting JsonShell_Formatting = Formatting.Indented;
-        internal static JToken JsonShell_FileTokenOrig = JToken.Parse("{}");
+        public static Formatting JsonShell_Formatting { get; set; } = Formatting.Indented;
+        /// <summary>
+        /// Auto save interval in seconds
+        /// </summary>
+        public static int JsonShell_AutoSaveInterval
+        {
+            get => autoSaveInterval;
+            set => autoSaveInterval = value < 0 ? 60 : value;
+        }
 
     }
 }

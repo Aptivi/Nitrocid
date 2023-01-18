@@ -31,27 +31,27 @@ namespace KS.Misc.Splash
         /// <summary>
         /// [Simple] The progress text location
         /// </summary>
-        public static TextLocation SimpleProgressTextLocation = TextLocation.Top;
+        public static TextLocation SimpleProgressTextLocation { get; set; } = TextLocation.Top;
 
         // -> Progress
         /// <summary>
         /// [Progress] The progress color
         /// </summary>
-        public static string ProgressProgressColor = ColorTools.GetColor(KernelColorType.Progress).PlainSequence;
+        public static string ProgressProgressColor { get; set; } = ColorTools.GetColor(KernelColorType.Progress).PlainSequence;
         /// <summary>
         /// [Progress] The progress text location
         /// </summary>
-        public static TextLocation ProgressProgressTextLocation = TextLocation.Top;
+        public static TextLocation ProgressProgressTextLocation { get; set; } = TextLocation.Top;
 
         // -> PowerLineProgress
         /// <summary>
         /// [PowerLineProgress] The progress color
         /// </summary>
-        public static string PowerLineProgressProgressColor = ColorTools.GetColor(KernelColorType.Progress).PlainSequence;
+        public static string PowerLineProgressProgressColor { get; set; } = ColorTools.GetColor(KernelColorType.Progress).PlainSequence;
         /// <summary>
         /// [PowerLineProgress] The progress text location
         /// </summary>
-        public static TextLocation PowerLineProgressProgressTextLocation = TextLocation.Top;
+        public static TextLocation PowerLineProgressProgressTextLocation { get; set; } = TextLocation.Top;
 
     }
 }

@@ -43,23 +43,23 @@ namespace KS.Files.Folders
         /// <summary>
         /// Whether to sort the list or not
         /// </summary>
-        public static bool SortList = true;
+        public static bool SortList { get; set; } = true;
         /// <summary>
         /// Sort mode
         /// </summary>
-        public static FilesystemSortOptions SortMode = FilesystemSortOptions.FullName;
+        public static FilesystemSortOptions SortMode { get; set; } = FilesystemSortOptions.FullName;
         /// <summary>
         /// Sort direction
         /// </summary>
-        public static FilesystemSortDirection SortDirection = FilesystemSortDirection.Ascending;
+        public static FilesystemSortDirection SortDirection { get; set; } = FilesystemSortDirection.Ascending;
         /// <summary>
         /// Show file details when listing
         /// </summary>
-        public static bool ShowFileDetailsList = true;
+        public static bool ShowFileDetailsList { get; set; } = true;
         /// <summary>
         /// Show total size when listing
         /// </summary>
-        public static bool ShowTotalSizeInList;
+        public static bool ShowTotalSizeInList { get; set; }
 
         /// <summary>
         /// Creates a list of files and directories

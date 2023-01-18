@@ -35,23 +35,39 @@ namespace KS.Network.Base
     public static class NetworkTools
     {
 
+        internal static int downloadRetries = 3;
+        internal static int uploadRetries = 3;
+        internal static int pingTimeout = 60000;
+        internal static bool TransferFinished;
+
         /// <summary>
         /// Current kernel host name
         /// </summary>
-        public static string HostName = "kernel";
+        public static string HostName { get; set; } = "kernel";
         /// <summary>
         /// Download retries before giving up
         /// </summary>
-        public static int DownloadRetries = 3;
+        public static int DownloadRetries
+        {
+            get => downloadRetries;
+            set => downloadRetries = value < 0 ? 3 : value;
+        }
         /// <summary>
         /// Upload retries before giving up
         /// </summary>
-        public static int UploadRetries = 3;
+        public static int UploadRetries
+        {
+            get => uploadRetries;
+            set => uploadRetries = value < 0 ? 3 : value;
+        }
         /// <summary>
         /// Ping timeout in milliseconds
         /// </summary>
-        public static int PingTimeout = 60000;
-        internal static bool TransferFinished;
+        public static int PingTimeout
+        {
+            get => pingTimeout;
+            set => pingTimeout = value < 0 ? 60000 : value;
+        }
 
         /// <summary>
         /// Checks to see if the network is available

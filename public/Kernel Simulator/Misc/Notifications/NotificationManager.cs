@@ -39,46 +39,85 @@ namespace KS.Misc.Notifications
     public static class NotificationManager
     {
 
+        internal static string notifyUpperLeftCornerChar = "╔";
+        internal static string notifyUpperRightCornerChar = "╗";
+        internal static string notifyLowerLeftCornerChar = "╚";
+        internal static string notifyLowerRightCornerChar = "╝";
+        internal static string notifyUpperFrameChar = "═";
+        internal static string notifyLowerFrameChar = "═";
+        internal static string notifyLeftFrameChar = "║";
+        internal static string notifyRightFrameChar = "║";
+        internal static KernelThread NotifThread = new("Notification Thread", false, NotifListen);
+        private static readonly List<Notification> notifRecents = new();
+
         /// <summary>
         /// Recent notifications
         /// </summary>
-        public static List<Notification> NotifRecents = new();
-        /// <summary>
-        /// Notification listener thread
-        /// </summary>
-        public static KernelThread NotifThread = new("Notification Thread", false, NotifListen);
+        public static List<Notification> NotifRecents => notifRecents;
         /// <summary>
         /// Upper left corner character for the notfication box
         /// </summary>
-        public static string NotifyUpperLeftCornerChar = "╔";
+        public static string NotifyUpperLeftCornerChar
+        {
+            get => notifyUpperLeftCornerChar;
+            set => notifyUpperLeftCornerChar = string.IsNullOrEmpty(value) ? "╔" : value[0].ToString();
+        }
         /// <summary>
         /// Upper right corner character for the notfication box
         /// </summary>
-        public static string NotifyUpperRightCornerChar = "╗";
+        public static string NotifyUpperRightCornerChar
+        {
+            get => notifyUpperRightCornerChar;
+            set => notifyUpperRightCornerChar = string.IsNullOrEmpty(value) ? "╗" : value[0].ToString();
+        }
         /// <summary>
         /// Lower left corner character for the notfication box
         /// </summary>
-        public static string NotifyLowerLeftCornerChar = "╚";
+        public static string NotifyLowerLeftCornerChar
+        {
+            get => notifyLowerLeftCornerChar;
+            set => notifyLowerLeftCornerChar = string.IsNullOrEmpty(value) ? "╚" : value[0].ToString();
+        }
         /// <summary>
         /// Lower right corner character for the notfication box
         /// </summary>
-        public static string NotifyLowerRightCornerChar = "╝";
+        public static string NotifyLowerRightCornerChar
+        {
+            get => notifyLowerRightCornerChar;
+            set => notifyLowerRightCornerChar = string.IsNullOrEmpty(value) ? "╝" : value[0].ToString();
+        }
         /// <summary>
         /// Upper frame character for the notfication box
         /// </summary>
-        public static string NotifyUpperFrameChar = "═";
+        public static string NotifyUpperFrameChar
+        {
+            get => notifyUpperFrameChar;
+            set => notifyUpperFrameChar = string.IsNullOrEmpty(value) ? "═" : value[0].ToString();
+        }
         /// <summary>
         /// Lower frame character for the notfication box
         /// </summary>
-        public static string NotifyLowerFrameChar = "═";
+        public static string NotifyLowerFrameChar
+        {
+            get => notifyLowerFrameChar;
+            set => notifyLowerFrameChar = string.IsNullOrEmpty(value) ? "═" : value[0].ToString();
+        }
         /// <summary>
         /// Left frame character for the notfication box
         /// </summary>
-        public static string NotifyLeftFrameChar = "║";
+        public static string NotifyLeftFrameChar
+        {
+            get => notifyLeftFrameChar;
+            set => notifyLeftFrameChar = string.IsNullOrEmpty(value) ? "║" : value[0].ToString();
+        }
         /// <summary>
         /// Right frame character for the notfication box
         /// </summary>
-        public static string NotifyRightFrameChar = "║";
+        public static string NotifyRightFrameChar
+        {
+            get => notifyRightFrameChar;
+            set => notifyRightFrameChar = string.IsNullOrEmpty(value) ? "║" : value[0].ToString();
+        }
         /// <summary>
         /// Don't disturb, meaning don't show any notification when this mode is on
         /// </summary>

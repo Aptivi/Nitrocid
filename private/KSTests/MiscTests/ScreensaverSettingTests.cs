@@ -35,7 +35,7 @@ namespace KSTests.MiscTests
         public void TestSetDefaultScreensaver()
         {
             Screensaver.SetDefaultScreensaver("matrix");
-            Screensaver.DefSaverName.ShouldBe("matrix");
+            Screensaver.DefaultSaverName.ShouldBe("matrix");
         }
 
     }

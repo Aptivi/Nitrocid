@@ -26,26 +26,6 @@ namespace KS.Shell.Shells.SFTP
     public static class SFTPShellCommon
     {
 
-        /// <summary>
-        /// SFTP current local directory
-        /// </summary>
-        public static string SFTPCurrDirect;
-        /// <summary>
-        /// SFTP current remote directory
-        /// </summary>
-        public static string SFTPCurrentRemoteDir;
-        /// <summary>
-        /// SFTP show file details in list
-        /// </summary>
-        public static bool SFTPShowDetailsInList = true;
-        /// <summary>
-        /// SFTP user prompt style
-        /// </summary>
-        public static string SFTPUserPromptStyle = "";
-        /// <summary>
-        /// SFTP add new connections to speed dial
-        /// </summary>
-        public static bool SFTPNewConnectionsToSpeedDial = true;
         internal static bool SFTPConnected;
         internal static SftpClient _clientSFTP;
         internal static string SFTPSite;
@@ -56,6 +36,26 @@ namespace KS.Shell.Shells.SFTP
         /// The SFTP client used to connect to the SFTP server
         /// </summary>
         public static SftpClient ClientSFTP => _clientSFTP;
+        /// <summary>
+        /// SFTP current local directory
+        /// </summary>
+        public static string SFTPCurrDirect { get; set; }
+        /// <summary>
+        /// SFTP current remote directory
+        /// </summary>
+        public static string SFTPCurrentRemoteDir { get; set; }
+        /// <summary>
+        /// SFTP show file details in list
+        /// </summary>
+        public static bool SFTPShowDetailsInList { get; set; } = true;
+        /// <summary>
+        /// SFTP user prompt style
+        /// </summary>
+        public static string SFTPUserPromptStyle { get; set; } = "";
+        /// <summary>
+        /// SFTP add new connections to speed dial
+        /// </summary>
+        public static bool SFTPNewConnectionsToSpeedDial { get; set; } = true;
 
     }
 }

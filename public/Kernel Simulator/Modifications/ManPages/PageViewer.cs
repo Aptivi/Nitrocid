@@ -41,7 +41,7 @@ namespace KS.Modifications.ManPages
         /// <summary>
         /// Manual page information style
         /// </summary>
-        public static string ManpageInfoStyle = "";
+        public static string ManpageInfoStyle { get; set; } = "";
 
         /// <summary>
         /// Previews the manual page

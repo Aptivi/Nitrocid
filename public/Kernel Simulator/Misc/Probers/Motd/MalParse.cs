@@ -33,11 +33,11 @@ namespace KS.Misc.Probers.Motd
         /// <summary>
         /// MAL file path
         /// </summary>
-        public static string MalFilePath = Paths.GetKernelPath(KernelPathType.MAL);
+        public static string MalFilePath { get; set; } = Paths.GetKernelPath(KernelPathType.MAL);
         /// <summary>
         /// Current MAL message
         /// </summary>
-        public static string MAL;
+        public static string MAL { get; set; }
 
         /// <summary>
         /// Sets the MAL

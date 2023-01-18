@@ -1207,13 +1207,13 @@
             {
                 "Name": "Screensaver",
                 "Type": "SString",
-                "Variable": "DefSaverName",
+                "Variable": "DefaultSaverName",
                 "Description": "Which screensaver do you want to lock your screen with?"
             },
             {
                 "Name": "Screensaver Timeout in ms",
                 "Type": "SInt",
-                "Variable": "ScrnTimeout",
+                "Variable": "ScreenTimeout",
                 "Description": "Write when to launch screensaver after specified milliseconds. It must be numeric."
             },
             {

@@ -30,33 +30,45 @@ namespace KS.Shell.Shells.RSS
     public static class RSSShellCommon
     {
 
-        /// <summary>
-        /// RSS feed instance
-        /// </summary>
-        public static RSSFeed RSSFeedInstance;
-        /// <summary>
-        /// RSS feed URL prompt style
-        /// </summary>
-        public static string RSSFeedUrlPromptStyle = "";
-        /// <summary>
-        /// RSS fetch timeout in milliseconds
-        /// </summary>
-        public static int RSSFetchTimeout = 60000;
-        /// <summary>
-        /// Whether to refresh RSS feeds or not
-        /// </summary>
-        public static bool RSSRefreshFeeds = true;
-        /// <summary>
-        /// RSS refresh interval in milliseconds
-        /// </summary>
-        public static int RSSRefreshInterval = 60000;
-        /// <summary>
-        /// Whether to keep the connection alive or not
-        /// </summary>
-        public static bool RSSKeepAlive;
+        internal static RSSFeed feedInstance;
+        internal static int fetchTimeout = 60000;
+        internal static int refreshInterval = 60000;
         internal static KernelThread RSSRefresher = new("RSS Feed Refresher", false, RSSTools.RefreshFeeds);
         internal static HttpClient RSSRefresherClient = new() { Timeout = TimeSpan.FromMilliseconds(RSSFetchTimeout) };
         internal static string RSSFeedLink;
+
+        /// <summary>
+        /// RSS feed instance
+        /// </summary>
+        public static RSSFeed RSSFeedInstance => feedInstance;
+        /// <summary>
+        /// RSS feed URL prompt style
+        /// </summary>
+        public static string RSSFeedUrlPromptStyle { get; set; } = "";
+        /// <summary>
+        /// RSS fetch timeout in milliseconds
+        /// </summary>
+        public static int RSSFetchTimeout
+        {
+            get => fetchTimeout;
+            set => fetchTimeout = value < 0 ? 60000 : value;
+        }
+        /// <summary>
+        /// Whether to refresh RSS feeds or not
+        /// </summary>
+        public static bool RSSRefreshFeeds { get; set; } = true;
+        /// <summary>
+        /// RSS refresh interval in milliseconds
+        /// </summary>
+        public static int RSSRefreshInterval
+        {
+            get => refreshInterval;
+            set => refreshInterval = value < 0 ? 60000 : value;
+        }
+        /// <summary>
+        /// Whether to keep the connection alive or not
+        /// </summary>
+        public static bool RSSKeepAlive { get; set; }
 
     }
 }

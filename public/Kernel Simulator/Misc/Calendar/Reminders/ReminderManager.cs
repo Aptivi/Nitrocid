@@ -29,6 +29,7 @@ using KS.Files.Querying;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
+using KS.Misc.Notifications;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 
@@ -41,17 +42,11 @@ namespace KS.Misc.Calendar.Reminders
     {
 
         /// <summary>
-        /// List of reminders
-        /// </summary>
-        public static List<ReminderInfo> Reminders = new();
-        /// <summary>
         /// Current reminder notification importance
         /// </summary>
-        public static Notifications.NotificationManager.NotifPriority CurrentReminderImportance = Notifications.NotificationManager.NotifPriority.Low;
-        /// <summary>
-        /// Reminder thread
-        /// </summary>
-        public static KernelThread ReminderThread = new("Reminder Thread", false, ReminderListen);
+        public static NotificationManager.NotifPriority CurrentReminderImportance { get; set; } = NotificationManager.NotifPriority.Low;
+        internal static List<ReminderInfo> Reminders = new();
+        internal static KernelThread ReminderThread = new("Reminder Thread", false, ReminderListen);
         internal static object ReminderManagerLock = new();
 
         /// <summary>

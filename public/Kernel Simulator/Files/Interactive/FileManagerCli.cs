@@ -85,51 +85,51 @@ namespace KS.Files.Interactive
         /// <summary>
         /// File manager background color
         /// </summary>
-        public static Color FileManagerBackgroundColor = new(Convert.ToInt32(ConsoleColors.DarkBlue));
+        public static Color FileManagerBackgroundColor { get; set; } = new(Convert.ToInt32(ConsoleColors.DarkBlue));
         /// <summary>
         /// File manager foreground color
         /// </summary>
-        public static Color FileManagerForegroundColor = new(Convert.ToInt32(ConsoleColors.Yellow));
+        public static Color FileManagerForegroundColor { get; set; } = new(Convert.ToInt32(ConsoleColors.Yellow));
         /// <summary>
         /// File manager pane background color
         /// </summary>
-        public static Color FileManagerPaneBackgroundColor = new(Convert.ToInt32(ConsoleColors.Blue3));
+        public static Color FileManagerPaneBackgroundColor { get; set; } = new(Convert.ToInt32(ConsoleColors.Blue3));
         /// <summary>
         /// File manager pane separator color
         /// </summary>
-        public static Color FileManagerPaneSeparatorColor = new(Convert.ToInt32(ConsoleColors.DarkGreen_005f00));
+        public static Color FileManagerPaneSeparatorColor { get; set; } = new(Convert.ToInt32(ConsoleColors.DarkGreen_005f00));
         /// <summary>
         /// File manager selected pane separator color
         /// </summary>
-        public static Color FileManagerPaneSelectedSeparatorColor = new(Convert.ToInt32(ConsoleColors.Green3_00d700));
+        public static Color FileManagerPaneSelectedSeparatorColor { get; set; } = new(Convert.ToInt32(ConsoleColors.Green3_00d700));
         /// <summary>
         /// File manager pane selected file color (foreground)
         /// </summary>
-        public static Color FileManagerPaneSelectedFileForeColor = new(Convert.ToInt32(ConsoleColors.Yellow));
+        public static Color FileManagerPaneSelectedFileForeColor { get; set; } = new(Convert.ToInt32(ConsoleColors.Yellow));
         /// <summary>
         /// File manager pane selected file color (background)
         /// </summary>
-        public static Color FileManagerPaneSelectedFileBackColor = new(Convert.ToInt32(ConsoleColors.DarkBlue));
+        public static Color FileManagerPaneSelectedFileBackColor { get; set; } = new(Convert.ToInt32(ConsoleColors.DarkBlue));
         /// <summary>
         /// File manager pane file color (foreground)
         /// </summary>
-        public static Color FileManagerPaneFileForeColor = new(Convert.ToInt32(ConsoleColors.DarkYellow));
+        public static Color FileManagerPaneFileForeColor { get; set; } = new(Convert.ToInt32(ConsoleColors.DarkYellow));
         /// <summary>
         /// File manager pane file color (background)
         /// </summary>
-        public static Color FileManagerPaneFileBackColor = new(Convert.ToInt32(ConsoleColors.Blue3));
+        public static Color FileManagerPaneFileBackColor { get; set; } = new(Convert.ToInt32(ConsoleColors.Blue3));
         /// <summary>
         /// File manager option background color
         /// </summary>
-        public static Color FileManagerOptionBackgroundColor = new(Convert.ToInt32(ConsoleColors.DarkCyan));
+        public static Color FileManagerOptionBackgroundColor { get; set; } = new(Convert.ToInt32(ConsoleColors.DarkCyan));
         /// <summary>
         /// File manager key binding in option color
         /// </summary>
-        public static Color FileManagerKeyBindingOptionColor = new(Convert.ToInt32(ConsoleColors.Black));
+        public static Color FileManagerKeyBindingOptionColor { get; set; } = new(Convert.ToInt32(ConsoleColors.Black));
         /// <summary>
         /// File manager option foreground color
         /// </summary>
-        public static Color FileManagerOptionForegroundColor = new(Convert.ToInt32(ConsoleColors.Cyan));
+        public static Color FileManagerOptionForegroundColor { get; set; } = new(Convert.ToInt32(ConsoleColors.Cyan));
 
         /// <summary>
         /// Opens the file manager to the current path

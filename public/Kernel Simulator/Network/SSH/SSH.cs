@@ -49,7 +49,7 @@ namespace KS.Network.SSH
         /// <summary>
         /// Whether or not to show the SSH banner on connection
         /// </summary>
-        public static bool SSHBanner;
+        public static bool SSHBanner { get; set; }
 
         /// <summary>
         /// Specifies SSH connection type

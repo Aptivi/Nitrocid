@@ -39,16 +39,12 @@ namespace KS.Misc.Timers
     /// </summary>
     public static class TimerScreen
     {
-
-        /// <summary>
-        /// Timer figlet font
-        /// </summary>
-        public static string TimerFigletFont = "Small";
         internal static KernelThread TimerUpdate = new("Timer Remaining Time Updater", true, UpdateTimerElapsedDisplay);
         internal static DateTime TimerStarted;
         internal static int FigletTimeOldWidth;
         internal static int FigletTimeOldWidthEnd;
         private static Timer _Timer;
+        private static string timerFigletFont = "Small";
 
         internal static Timer Timer
         {
@@ -75,6 +71,15 @@ namespace KS.Misc.Timers
         }
 
         static TimerScreen() => Timer = new Timer();
+
+        /// <summary>
+        /// Timer figlet font
+        /// </summary>
+        public static string TimerFigletFont
+        {
+            get => timerFigletFont;
+            set => timerFigletFont = FigletTools.FigletFonts.ContainsKey(value) ? value : "Small";
+        }
 
         /// <summary>
         /// Opens the timer screen

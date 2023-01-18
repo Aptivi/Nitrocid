@@ -46,19 +46,11 @@ namespace KS.Misc.Screensaver
         /// <summary>
         /// Screensaver debugging
         /// </summary>
-        public static bool ScreensaverDebug;
-        /// <summary>
-        /// Default screensaver name
-        /// </summary>
-        public static string DefSaverName = "matrix";
-        /// <summary>
-        /// Screen timeout in milliseconds
-        /// </summary>
-        public static int ScrnTimeout = 300000;
+        public static bool ScreensaverDebug { get; set; }
         /// <summary>
         /// Password lock enabled
         /// </summary>
-        public static bool PasswordLock = true;
+        public static bool PasswordLock { get; set; } = true;
 
         // Private variables
         internal static Dictionary<string, BaseScreensaver> Screensavers = new()
@@ -119,6 +111,8 @@ namespace KS.Misc.Screensaver
             { "windowslogo", new WindowsLogoDisplay() },
             { "wipe", new WipeDisplay() }
         };
+        private static int scrnTimeout = 300000;
+        private static string defSaverName = "matrix";
         internal static bool LockMode;
         internal static bool inSaver;
         internal static AutoResetEvent SaverAutoReset = new(false);
@@ -128,6 +122,24 @@ namespace KS.Misc.Screensaver
         /// Whether the kernel is on the screensaver mode
         /// </summary>
         public static bool InSaver => inSaver;
+
+        /// <summary>
+        /// Screen timeout in milliseconds
+        /// </summary>
+        public static int ScreenTimeout
+        {
+            get => scrnTimeout;
+            set => scrnTimeout = value < 0 ? 300000 : value;
+        }
+
+        /// <summary>
+        /// Default screensaver name
+        /// </summary>
+        public static string DefaultSaverName
+        {
+            get => defSaverName;
+            set => defSaverName = Screensavers.ContainsKey(value) ? value : "matrix";
+        }
 
         /// <summary>
         /// Handles the screensaver time so that when it reaches the time threshold, the screensaver launches
@@ -143,7 +155,7 @@ namespace KS.Misc.Screensaver
                     if (!Flags.ScrnTimeReached)
                     {
                         bool exitWhile = false;
-                        for (CountedTime = 0; CountedTime <= ScrnTimeout; CountedTime++)
+                        for (CountedTime = 0; CountedTime <= ScreenTimeout; CountedTime++)
                         {
                             Thread.Sleep(1);
                             if (ConsoleBase.ConsoleWrapper.KeyAvailable | OldCursorLeft != ConsoleBase.ConsoleWrapper.CursorLeft)
@@ -151,7 +163,7 @@ namespace KS.Misc.Screensaver
                                 CountedTime = 0;
                             }
                             OldCursorLeft = ConsoleBase.ConsoleWrapper.CursorLeft;
-                            if (CountedTime > ScrnTimeout)
+                            if (CountedTime > ScreenTimeout)
                             {
                                 // This shouldn't happen, but the counted time is bigger than the screen timeout. Just bail.
                                 break;
@@ -235,8 +247,8 @@ namespace KS.Misc.Screensaver
         public static void LockScreen()
         {
             LockMode = true;
-            ShowSavers(DefSaverName);
-            EventsManager.FireEvent(EventType.PreUnlock, DefSaverName);
+            ShowSavers(DefaultSaverName);
+            EventsManager.FireEvent(EventType.PreUnlock, DefaultSaverName);
             while (inSaver)
                 Thread.Sleep(1);
             if (PasswordLock)
@@ -255,7 +267,7 @@ namespace KS.Misc.Screensaver
             if (Screensavers.ContainsKey(saver) | CustomSaverTools.CustomSavers.ContainsKey(saver))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "{0} is found. Setting it to default...", saver);
-                DefSaverName = saver;
+                DefaultSaverName = saver;
                 var Token = ConfigTools.GetConfigCategory(ConfigCategory.Screensaver);
                 ConfigTools.SetConfigValue(ConfigCategory.Screensaver, Token, "Screensaver", saver);
             }

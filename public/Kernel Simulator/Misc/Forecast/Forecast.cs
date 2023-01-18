@@ -35,7 +35,7 @@ namespace KS.Misc.Forecast
         /// <summary>
         /// Preferred unit for forecast measurements
         /// </summary>
-        public static UnitMeasurement PreferredUnit = UnitMeasurement.Metric;
+        public static UnitMeasurement PreferredUnit { get; set; } = UnitMeasurement.Metric;
         internal static string ApiKey = "";
 
         /// <summary>

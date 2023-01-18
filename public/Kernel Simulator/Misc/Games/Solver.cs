@@ -34,18 +34,29 @@ namespace KS.Misc.Games
     public static class Solver
     {
 
+        private static int minimumNumber = 0;
+        private static int maximumNumber = 1000;
+
         /// <summary>
         /// Minimum number for solver
         /// </summary>
-        public static int SolverMinimumNumber = 0;
+        public static int SolverMinimumNumber
+        {
+            get => minimumNumber;
+            set => minimumNumber = value < 0 ? 0 : value;
+        }
         /// <summary>
         /// Maximum number for solver
         /// </summary>
-        public static int SolverMaximumNumber = 1000;
+        public static int SolverMaximumNumber
+        {
+            get => maximumNumber;
+            set => maximumNumber = value < 0 ? 1000 : value;
+        }
         /// <summary>
         /// Whether to show the input or not
         /// </summary>
-        public static bool SolverShowInput;
+        public static bool SolverShowInput { get; set; }
 
         /// <summary>
         /// Initializes the game

@@ -32,24 +32,28 @@ namespace KS.Network.RPC
     public static class RemoteProcedure
     {
 
-        /// <summary>
-        /// RPC listener client
-        /// </summary>
-        public static UdpClient RPCListen;
-        /// <summary>
-        /// RPC port
-        /// </summary>
-        public static int RPCPort = 12345;
-        /// <summary>
-        /// Whether the RPC is enabled or not
-        /// </summary>
-        public static bool RPCEnabled = true;
+        private static int rpcPort = 12345;
+        internal static UdpClient RPCListen;
         internal static KernelThread RPCThread = new("RPC Thread", true, RPCCommands.ReceiveCommand);
 
         /// <summary>
         /// Whether the RPC started
         /// </summary>
         public static bool RPCStarted => RPCThread.IsAlive;
+
+        /// <summary>
+        /// RPC port
+        /// </summary>
+        public static int RPCPort
+        {
+            get => rpcPort;
+            set => rpcPort = value < 0 ? 12345 : value;
+        }
+
+        /// <summary>
+        /// Whether the RPC is enabled or not
+        /// </summary>
+        public static bool RPCEnabled { get; set; } = true;
 
         /// <summary>
         /// Starts the RPC listener

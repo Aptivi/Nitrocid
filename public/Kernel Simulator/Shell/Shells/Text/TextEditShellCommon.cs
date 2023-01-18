@@ -29,27 +29,32 @@ namespace KS.Shell.Shells.Text
     public static class TextEditShellCommon
     {
 
+        internal static List<string> fileLines = new();
+        internal static FileStream fileStream;
+        internal static int autoSaveInterval = 60;
+        internal static List<string> TextEdit_FileLinesOrig;
+        internal static KernelThread TextEdit_AutoSave = new("Text Edit Autosave Thread", false, TextEditTools.TextEdit_HandleAutoSaveTextFile);
+
         /// <summary>
         /// File lines for text editor
         /// </summary>
-        public static List<string> TextEdit_FileLines;
+        public static List<string> TextEdit_FileLines => fileLines;
         /// <summary>
         /// File stream for text editor
         /// </summary>
-        public static FileStream TextEdit_FileStream;
-        /// <summary>
-        /// Auto save thread for the text editor
-        /// </summary>
-        public static KernelThread TextEdit_AutoSave = new("Text Edit Autosave Thread", false, TextEditTools.TextEdit_HandleAutoSaveTextFile);
+        public static FileStream TextEdit_FileStream => fileStream;
         /// <summary>
         /// Auto save flag
         /// </summary>
-        public static bool TextEdit_AutoSaveFlag = true;
+        public static bool TextEdit_AutoSaveFlag { get; set; } = true;
         /// <summary>
         /// Auto save interval in seconds
         /// </summary>
-        public static int TextEdit_AutoSaveInterval = 60;
-        internal static List<string> TextEdit_FileLinesOrig;
+        public static int TextEdit_AutoSaveInterval
+        {
+            get => autoSaveInterval;
+            set => autoSaveInterval = value < 0 ? 60 : value;
+        }
 
     }
 }

@@ -33,11 +33,11 @@ namespace KS.Misc.Probers.Motd
         /// <summary>
         /// MOTD file path
         /// </summary>
-        public static string MotdFilePath = Paths.GetKernelPath(KernelPathType.MOTD);
+        public static string MotdFilePath { get; set; } = Paths.GetKernelPath(KernelPathType.MOTD);
         /// <summary>
         /// Current MOTD message
         /// </summary>
-        public static string MOTDMessage;
+        public static string MOTDMessage { get; set; }
 
         /// <summary>
         /// Sets the Message of the Day

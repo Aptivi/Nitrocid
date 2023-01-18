@@ -47,11 +47,12 @@ namespace KS.Modifications
     public static class ModManager
     {
 
+        internal static Dictionary<string, ModInfo> Mods = new();
+
         /// <summary>
         /// Blacklisted mods split by semicolons
         /// </summary>
-        public static string BlacklistedModsString = "";
-        internal static Dictionary<string, ModInfo> Mods = new();
+        public static string BlacklistedModsString { get; set; } = "";
 
         /// <summary>
         /// Loads all mods in KSMods

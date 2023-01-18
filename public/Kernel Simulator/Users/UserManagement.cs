@@ -47,11 +47,11 @@ namespace KS.Users
         /// <summary>
         /// Include anonymous users in list
         /// </summary>
-        public static bool IncludeAnonymous;
+        public static bool IncludeAnonymous { set; get; }
         /// <summary>
         /// Include disabled users in list
         /// </summary>
-        public static bool IncludeDisabled;
+        public static bool IncludeDisabled { set; get; }
         /// <summary>
         /// The users token
         /// </summary>

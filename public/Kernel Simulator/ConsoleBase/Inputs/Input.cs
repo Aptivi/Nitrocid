@@ -34,7 +34,16 @@ namespace KS.ConsoleBase.Inputs
         /// <summary>
         /// Current mask character
         /// </summary>
-        public static string CurrentMask = Convert.ToString('*');
+        private static string currentMask = "*";
+
+        /// <summary>
+        /// Current mask character
+        /// </summary>
+        public static string CurrentMask
+        {
+            get => currentMask;
+            set => currentMask = string.IsNullOrEmpty(value) ? "*" : value[0].ToString();
+        }
 
         /// <summary>
         /// Reads the line from the console

@@ -37,13 +37,19 @@ namespace KS.Misc.Games
         /// <summary>
         /// Use PowerLine characters for the spaceship?
         /// </summary>
-        public static bool MeteorUsePowerLine = true;
+        public static bool MeteorUsePowerLine { get; set; } = true;
         /// <summary>
         /// Meteor speed in milliseconds
         /// </summary>
-        public static int MeteorSpeed = 10;
+        public static int MeteorSpeed
+        {
+            get => meteorSpeed;
+            set => meteorSpeed = value < 0 ? 10 : value;
+        }
+
         internal readonly static KernelThread MeteorDrawThread = new("Meteor Shooter Draw Thread", true, DrawGame);
         internal static bool GameEnded = false;
+        private static int meteorSpeed = 10;
         private static int SpaceshipHeight = 0;
         private readonly static int MaxBullets = 10;
         private readonly static List<Tuple<int, int>> Bullets = new();

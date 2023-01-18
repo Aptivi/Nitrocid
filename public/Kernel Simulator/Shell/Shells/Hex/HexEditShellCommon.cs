@@ -28,27 +28,24 @@ namespace KS.Shell.Shells.Hex
     public static class HexEditShellCommon
     {
 
-        /// <summary>
-        /// File stream for the hex editor
-        /// </summary>
-        public static FileStream HexEdit_FileStream;
-        /// <summary>
-        /// File bytes for the hex editor
-        /// </summary>
-        public static byte[] HexEdit_FileBytes;
-        /// <summary>
-        /// Auto save thread for file
-        /// </summary>
-        public static KernelThread HexEdit_AutoSave = new("Hex Edit Autosave Thread", false, HexEditTools.HexEdit_HandleAutoSaveBinaryFile);
+        private static int autoSaveInterval = 60;
+        internal static byte[] HexEdit_FileBytesOrig;
+        internal static FileStream HexEdit_FileStream;
+        internal static byte[] HexEdit_FileBytes;
+        internal static KernelThread HexEdit_AutoSave = new("Hex Edit Autosave Thread", false, HexEditTools.HexEdit_HandleAutoSaveBinaryFile);
+
         /// <summary>
         /// Auto save flag
         /// </summary>
-        public static bool HexEdit_AutoSaveFlag = true;
+        public static bool HexEdit_AutoSaveFlag { get; set; } = true;
         /// <summary>
         /// Auto save interval in seconds
         /// </summary>
-        public static int HexEdit_AutoSaveInterval = 60;
-        internal static byte[] HexEdit_FileBytesOrig;
+        public static int HexEdit_AutoSaveInterval
+        {
+            get => autoSaveInterval;
+            set => autoSaveInterval = value < 0 ? 60 : value;
+        }
 
     }
 }

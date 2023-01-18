@@ -29,48 +29,64 @@ namespace KS.Shell.Shells.Mail
     public static class MailShellCommon
     {
 
+        internal static bool KeepAlive;
+        internal static IEnumerable<UniqueId> IMAP_Messages;
+        internal static int imapPingInterval = 30000;
+        internal static int smtpPingInterval = 30000;
+        internal static int maxMessagesInPage = 10;
+
         /// <summary>
         /// IMAP current directory name
         /// </summary>
-        public static string IMAP_CurrentDirectory = "Inbox";
+        public static string IMAP_CurrentDirectory { get; set; } = "Inbox";
         /// <summary>
         /// Notify on new mail arrival
         /// </summary>
-        public static bool Mail_NotifyNewMail = true;
+        public static bool Mail_NotifyNewMail { get; set; } = true;
         /// <summary>
         /// IMAP ping interval in milliseconds
         /// </summary>
-        public static int Mail_ImapPingInterval = 30000;
+        public static int Mail_ImapPingInterval
+        {
+            get => imapPingInterval;
+            set => imapPingInterval = value < 0 ? 30000 : value;
+        }
         /// <summary>
         /// SMTP ping interval in milliseconds
         /// </summary>
-        public static int Mail_SmtpPingInterval = 30000;
+        public static int Mail_SmtpPingInterval
+        {
+            get => smtpPingInterval;
+            set => smtpPingInterval = value < 0 ? 30000 : value;
+        }
         /// <summary>
         /// Max messages per page
         /// </summary>
-        public static int Mail_MaxMessagesInPage = 10;
+        public static int Mail_MaxMessagesInPage
+        {
+            get => maxMessagesInPage;
+            set => maxMessagesInPage = value < 0 ? 10 : value;
+        }
         /// <summary>
         /// Message text format
         /// </summary>
-        public static TextFormat Mail_TextFormat = TextFormat.Plain;
+        public static TextFormat Mail_TextFormat { get; set; } = TextFormat.Plain;
         /// <summary>
         /// Show progress on mail transfer
         /// </summary>
-        public static bool Mail_ShowProgress = true;
+        public static bool Mail_ShowProgress { get; set; } = true;
         /// <summary>
         /// Mail progress style
         /// </summary>
-        public static string Mail_ProgressStyle = "";
+        public static string Mail_ProgressStyle { get; set; } = "";
         /// <summary>
         /// Mail progress style (single)
         /// </summary>
-        public static string Mail_ProgressStyleSingle = "";
+        public static string Mail_ProgressStyleSingle { get; set; } = "";
         /// <summary>
         /// The mail progress
         /// </summary>
         public readonly static MailTransferProgress Mail_Progress = new();
-        internal static bool KeepAlive;
-        internal static IEnumerable<UniqueId> IMAP_Messages;
 
     }
 }

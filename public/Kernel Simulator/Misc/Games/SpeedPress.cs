@@ -35,11 +35,17 @@ namespace KS.Misc.Games
         /// <summary>
         /// Current difficulty for the game
         /// </summary>
-        public static SpeedPressDifficulty SpeedPressCurrentDifficulty = SpeedPressDifficulty.Medium;
+        public static SpeedPressDifficulty SpeedPressCurrentDifficulty { get; set; } = SpeedPressDifficulty.Medium;
         /// <summary>
         /// Timeout in milliseconds before declaring that the time is up
         /// </summary>
-        public static int SpeedPressTimeout = 3000;
+        public static int SpeedPressTimeout
+        {
+            get => speedPressTimeout;
+            set => speedPressTimeout = value < 0 ? 3000 : value;
+        }
+
+        private static int speedPressTimeout = 3000;
 
         /// <summary>
         /// SpeedPress difficulty

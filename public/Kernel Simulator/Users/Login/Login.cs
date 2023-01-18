@@ -44,14 +44,6 @@ namespace KS.Users.Login
     {
 
         /// <summary>
-        /// Username prompt
-        /// </summary>
-        public static string UsernamePrompt;
-        /// <summary>
-        /// Password prompt
-        /// </summary>
-        public static string PasswordPrompt;
-        /// <summary>
         /// List of usernames
         /// </summary>
         internal static Dictionary<string, UserInfo> Users = new();
@@ -64,6 +56,14 @@ namespace KS.Users.Login
         /// Current username
         /// </summary>
         public static UserInfo CurrentUser => CurrentUserInfo;
+        /// <summary>
+        /// Username prompt
+        /// </summary>
+        public static string UsernamePrompt { get; set; } = "";
+        /// <summary>
+        /// Password prompt
+        /// </summary>
+        public static string PasswordPrompt { get; set; } = "";
 
         /// <summary>
         /// Prompts user for login information
@@ -197,7 +197,7 @@ namespace KS.Users.Login
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Releasing lock and getting back to shell...");
                 Screensaver.LockMode = false;
-                EventsManager.FireEvent(EventType.PostUnlock, Screensaver.DefSaverName);
+                EventsManager.FireEvent(EventType.PostUnlock, Screensaver.DefaultSaverName);
                 return;
             }
 

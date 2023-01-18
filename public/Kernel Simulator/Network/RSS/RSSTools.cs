@@ -46,19 +46,19 @@ namespace KS.Network.RSS
     /// </summary>
     public static class RSSTools
     {
-
-        /// <summary>
-        /// Whether to show the RSS headline each login
-        /// </summary>
-        public static bool ShowHeadlineOnLogin;
-        /// <summary>
-        /// RSS headline URL
-        /// </summary>
-        public static string RssHeadlineUrl = "https://www.techrepublic.com/rssfeeds/articles/";
         /// <summary>
         /// Cached feed list JSON
         /// </summary>
         private static string FeedListJsonText = "";
+
+        /// <summary>
+        /// Whether to show the RSS headline each login
+        /// </summary>
+        public static bool ShowHeadlineOnLogin { get; set; }
+        /// <summary>
+        /// RSS headline URL
+        /// </summary>
+        public static string RssHeadlineUrl { get; set; } = "https://www.techrepublic.com/rssfeeds/articles/";
 
         /// <summary>
         /// Make instances of RSS Article from feed node and type

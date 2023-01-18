@@ -76,7 +76,7 @@ namespace KS.Shell.Shells.RSS
                             RSSShellCommon.RSSFeedLink = Input.ReadLine();
 
                             // The user entered the feed URL
-                            RSSShellCommon.RSSFeedInstance = new RSSFeed(RSSShellCommon.RSSFeedLink, RSSFeedType.Infer);
+                            RSSShellCommon.feedInstance = new RSSFeed(RSSShellCommon.RSSFeedLink, RSSFeedType.Infer);
                             RSSShellCommon.RSSFeedLink = RSSShellCommon.RSSFeedInstance.FeedUrl;
                             OldRSSFeedLink = RSSShellCommon.RSSFeedLink;
                             BailFromEnter = true;
@@ -107,7 +107,7 @@ namespace KS.Shell.Shells.RSS
                             {
                                 RSSTools.OpenFeedSelector();
                             }
-                            RSSShellCommon.RSSFeedInstance = new RSSFeed(RSSShellCommon.RSSFeedLink, RSSFeedType.Infer);
+                            RSSShellCommon.feedInstance = new RSSFeed(RSSShellCommon.RSSFeedLink, RSSFeedType.Infer);
                             RSSShellCommon.RSSFeedLink = RSSShellCommon.RSSFeedInstance.FeedUrl;
                         }
                         OldRSSFeedLink = RSSShellCommon.RSSFeedLink;
@@ -165,7 +165,7 @@ namespace KS.Shell.Shells.RSS
                 if (RSSShellCommon.RSSRefreshFeeds)
                     RSSShellCommon.RSSRefresher.Stop();
                 RSSShellCommon.RSSFeedLink = "";
-                RSSShellCommon.RSSFeedInstance = null;
+                RSSShellCommon.feedInstance = null;
             }
         }
 

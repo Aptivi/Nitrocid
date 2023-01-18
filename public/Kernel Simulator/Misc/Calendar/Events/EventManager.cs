@@ -40,15 +40,9 @@ namespace KS.Misc.Calendar.Events
     public static class EventManager
     {
 
-        /// <summary>
-        /// Calendar events
-        /// </summary>
-        public static List<EventInfo> CalendarEvents = new();
-        /// <summary>
-        /// Event thread
-        /// </summary>
-        public static KernelThread EventThread = new("Event Thread", false, EventListen);
         internal static object EventManagerLock = new();
+        internal static KernelThread EventThread = new("Event Thread", false, EventListen);
+        internal static List<EventInfo> CalendarEvents = new();
 
         /// <summary>
         /// Listens for events and notifies the user if the date is due to the event

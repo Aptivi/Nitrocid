@@ -38,7 +38,7 @@ namespace KS.Files
         /// <summary>
         /// Shows the filesystem progress
         /// </summary>
-        public static bool ShowFilesystemProgress = true;
+        public static bool ShowFilesystemProgress { get; set; } = true;
 
         /// <summary>
         /// Simplifies the path to the correct one. It converts the path format to the unified format.

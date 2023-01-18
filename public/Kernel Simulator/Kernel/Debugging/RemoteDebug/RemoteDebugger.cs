@@ -42,41 +42,31 @@ namespace KS.Kernel.Debugging.RemoteDebug
         /// <summary>
         /// Remote debugger port
         /// </summary>
-        public static int DebugPort = 3014;
-        /// <summary>
-        /// Remote debugger client
-        /// </summary>
-        public static Socket RDebugClient;
-        /// <summary>
-        /// Remote debugger TCP listener
-        /// </summary>
-        public static TcpListener DebugTCP;
-        /// <summary>
-        /// Remote debug devices
-        /// </summary>
-        public static List<RemoteDebugDevice> DebugDevices = new();
-        /// <summary>
-        /// Remote debug thread
-        /// </summary>
-        public static KernelThread RDebugThread = new("Remote Debug Thread", true, StartRDebugger);
-        /// <summary>
-        /// Blocked remote debug device IP addresses
-        /// </summary>
-        public static List<string> RDebugBlocked = new();
+        public static int DebugPort
+        {
+            get => debugPort;
+            set => debugPort = value < 0 ? 3014 : value;
+        }
         /// <summary>
         /// Whether the remote debug is stopping
         /// </summary>
-        public static bool RDebugStopping;
+        public static bool RDebugStopping { get; set; }
         /// <summary>
         /// Whether to automatically start the remote debugger
         /// </summary>
-        public static bool RDebugAutoStart = true;
+        public static bool RDebugAutoStart { get; set; } = true;
         /// <summary>
         /// Remote debug message format
         /// </summary>
-        public static string RDebugMessageFormat = "";
+        public static string RDebugMessageFormat { get; set; } = "";
         internal static bool RDebugFailed;
         internal static Exception RDebugFailedReason;
+        internal static KernelThread RDebugThread = new("Remote Debug Thread", true, StartRDebugger);
+        internal static List<string> RDebugBlocked = new();
+        internal static List<RemoteDebugDevice> DebugDevices = new();
+        internal static Socket RDebugClient;
+        internal static TcpListener DebugTCP;
+        private static int debugPort = 3014;
         private readonly static string RDebugVersion = "0.7.1";
         private static readonly AutoResetEvent RDebugBailer = new(false);
 

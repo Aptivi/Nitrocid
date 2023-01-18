@@ -28,19 +28,21 @@ namespace KS.Shell.Shells.HTTP
         /// <summary>
         /// HTTP site URL
         /// </summary>
-        public static string HTTPSite;
+        public static string HTTPSite { get; set; }
+
         /// <summary>
         /// HTTP shell prompt style
         /// </summary>
-        public static string HTTPShellPromptStyle = "";
-        /// <summary>
-        /// HTTP client
-        /// </summary>
-        public static HttpClient ClientHTTP = new();
+        public static string HTTPShellPromptStyle { get; set; } = "";
 
         /// <summary>
         /// See if the HTTP shell is connected
         /// </summary>
         public static bool HTTPConnected => !string.IsNullOrEmpty(HTTPSite);
+
+        /// <summary>
+        /// An HTTP client
+        /// </summary>
+        public static HttpClient ClientHTTP { get; } = new();
     }
 }

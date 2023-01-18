@@ -42,19 +42,19 @@ namespace KS.Network.Base.Transfer
         /// <summary>
         /// Download percentage print style
         /// </summary>
-        public static string DownloadPercentagePrint = "";
+        public static string DownloadPercentagePrint { get; set; } = "";
         /// <summary>
         /// Upload percentage print style
         /// </summary>
-        public static string UploadPercentagePrint = "";
+        public static string UploadPercentagePrint { get; set; } = "";
         /// <summary>
         /// Whether to provoke the notification upon download starts
         /// </summary>
-        public static bool DownloadNotificationProvoke;
+        public static bool DownloadNotificationProvoke { get; set; }
         /// <summary>
         /// Whether to provoke the notification upon upload starts
         /// </summary>
-        public static bool UploadNotificationProvoke;
+        public static bool UploadNotificationProvoke { get; set; }
         internal static bool IsError;
         internal static Exception ReasonError;
         internal static CancellationTokenSource CancellationToken = new();

@@ -48,8 +48,8 @@ namespace KS.Misc.Editors.TextEdit
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to open file {0}...", File);
-                TextEditShellCommon.TextEdit_FileStream = new FileStream(File, FileMode.Open);
-                TextEditShellCommon.TextEdit_FileLines ??= new List<string>();
+                TextEditShellCommon.fileStream = new FileStream(File, FileMode.Open);
+                TextEditShellCommon.fileLines ??= new List<string>();
                 TextEditShellCommon.TextEdit_FileLinesOrig ??= new List<string>();
                 DebugWriter.WriteDebug(DebugLevel.I, "File {0} is open. Length: {1}, Pos: {2}", File, TextEditShellCommon.TextEdit_FileStream.Length, TextEditShellCommon.TextEdit_FileStream.Position);
                 var TextFileStreamReader = new StreamReader(TextEditShellCommon.TextEdit_FileStream);
@@ -80,7 +80,7 @@ namespace KS.Misc.Editors.TextEdit
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to close file...");
                 TextEditShellCommon.TextEdit_FileStream.Close();
-                TextEditShellCommon.TextEdit_FileStream = null;
+                TextEditShellCommon.fileStream = null;
                 DebugWriter.WriteDebug(DebugLevel.I, "File is no longer open.");
                 TextEditShellCommon.TextEdit_FileLines.Clear();
                 TextEditShellCommon.TextEdit_FileLinesOrig.Clear();

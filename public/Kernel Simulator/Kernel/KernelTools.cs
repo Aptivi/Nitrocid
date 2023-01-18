@@ -44,6 +44,7 @@ using KS.Shell.ShellBase.Commands;
 using KS.TimeDate;
 using KS.Users;
 using System.Reflection;
+using KS.Misc.Writers.FancyWriters.Tools;
 
 #if SPECIFIERREL
 using static KS.ConsoleBase.Colors.ColorTools;
@@ -60,6 +61,9 @@ namespace KS.Kernel
     public static class KernelTools
     {
 
+        internal static KernelThread RPCPowerListener = new("RPC Power Listener Thread", true, (object arg) => PowerManager.PowerManage((PowerMode)arg));
+        private static string bannerFigletFont = "Banner";
+
         /// <summary>
         /// Kernel version
         /// </summary>
@@ -71,8 +75,11 @@ namespace KS.Kernel
         /// <summary>
         /// Current banner figlet font
         /// </summary>
-        public static string BannerFigletFont = "Banner";
-        internal static KernelThread RPCPowerListener = new("RPC Power Listener Thread", true, (object arg) => PowerManager.PowerManage((PowerMode)arg));
+        public static string BannerFigletFont
+        {
+            get => bannerFigletFont;
+            set => bannerFigletFont = FigletTools.FigletFonts.ContainsKey(value) ? value : "Banner";
+        }
 
         // ----------------------------------------------- Init and reset -----------------------------------------------
         /// <summary>
@@ -191,8 +198,8 @@ namespace KS.Kernel
             if (Flags.ShowAppInfoOnBoot & !Flags.EnableSplash)
             {
                 SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Kernel environment information"), true, KernelColorType.Stage);
-                TextWriterColor.Write("  OS: " +    Translate.DoTranslation("Running on {0}"), Environment.OSVersion.ToString());
-                TextWriterColor.Write("  KS: " +    Translate.DoTranslation("Running from GRILO?") + $" {KernelPlatform.IsRunningFromGrilo()}");
+                TextWriterColor.Write("  OS: " + Translate.DoTranslation("Running on {0}"), Environment.OSVersion.ToString());
+                TextWriterColor.Write("  KS: " + Translate.DoTranslation("Running from GRILO?") + $" {KernelPlatform.IsRunningFromGrilo()}");
                 TextWriterColor.Write("  KSAPI: " + $"v{KernelApiVersion}");
             }
             TextWriterColor.Write();

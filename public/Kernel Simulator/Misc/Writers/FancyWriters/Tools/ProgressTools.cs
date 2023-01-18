@@ -24,38 +24,79 @@ namespace KS.Misc.Writers.FancyWriters.Tools
     public static class ProgressTools
     {
 
+        private static string progressUpperLeftCornerChar = "╔";
+        private static string progressUpperRightCornerChar = "╗";
+        private static string progressLowerLeftCornerChar = "╚";
+        private static string progressLowerRightCornerChar = "╝";
+        private static string progressUpperFrameChar = "═";
+        private static string progressLowerFrameChar = "═";
+        private static string progressLeftFrameChar = "║";
+        private static string progressRightFrameChar = "║";
+
         /// <summary>
         /// Upper left corner character for the progress bar
         /// </summary>
-        public static string ProgressUpperLeftCornerChar = "╔";
+        public static string ProgressUpperLeftCornerChar
+        {
+            get => progressUpperLeftCornerChar;
+            set => progressUpperLeftCornerChar = string.IsNullOrEmpty(value) ? "╔" : value[0].ToString();
+        }
         /// <summary>
         /// Upper right corner character for the progress bar
         /// </summary>
-        public static string ProgressUpperRightCornerChar = "╗";
+        public static string ProgressUpperRightCornerChar
+        {
+            get => progressUpperRightCornerChar;
+            set => progressUpperRightCornerChar = string.IsNullOrEmpty(value) ? "╗" : value[0].ToString();
+        }
         /// <summary>
         /// Lower left corner character for the progress bar
         /// </summary>
-        public static string ProgressLowerLeftCornerChar = "╚";
+        public static string ProgressLowerLeftCornerChar
+        {
+            get => progressLowerLeftCornerChar;
+            set => progressLowerLeftCornerChar = string.IsNullOrEmpty(value) ? "╚" : value[0].ToString();
+        }
         /// <summary>
         /// Lower right corner character for the progress bar
         /// </summary>
-        public static string ProgressLowerRightCornerChar = "╝";
+        public static string ProgressLowerRightCornerChar
+        {
+            get => progressLowerRightCornerChar;
+            set => progressLowerRightCornerChar = string.IsNullOrEmpty(value) ? "╝" : value[0].ToString();
+        }
         /// <summary>
         /// Upper frame character for the progress bar
         /// </summary>
-        public static string ProgressUpperFrameChar = "═";
+        public static string ProgressUpperFrameChar
+        {
+            get => progressUpperFrameChar;
+            set => progressUpperFrameChar = string.IsNullOrEmpty(value) ? "═" : value[0].ToString();
+        }
         /// <summary>
         /// Lower frame character for the progress bar
         /// </summary>
-        public static string ProgressLowerFrameChar = "═";
+        public static string ProgressLowerFrameChar
+        {
+            get => progressLowerFrameChar;
+            set => progressLowerFrameChar = string.IsNullOrEmpty(value) ? "═" : value[0].ToString();
+        }
         /// <summary>
         /// Left frame character for the progress bar
         /// </summary>
-        public static string ProgressLeftFrameChar = "║";
+        public static string ProgressLeftFrameChar
+        {
+            get => progressLeftFrameChar;
+            set => progressLeftFrameChar = string.IsNullOrEmpty(value) ? "║" : value[0].ToString();
+        }
         /// <summary>
         /// Right frame character for the progress bar
         /// </summary>
-        public static string ProgressRightFrameChar = "║";
+        public static string ProgressRightFrameChar
+        {
+            get => progressRightFrameChar;
+            set => progressRightFrameChar = string.IsNullOrEmpty(value) ? "║" : value[0].ToString();
+        }
 
     }
 }

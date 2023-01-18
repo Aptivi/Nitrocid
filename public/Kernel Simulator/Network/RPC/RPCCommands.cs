@@ -177,7 +177,7 @@ namespace KS.Network.RPC
                         else if (Message.StartsWith("SaveScrConfirm"))
                         {
                             DebugWriter.WriteDebug(DebugLevel.I, "Save screen confirmed from remote access.");
-                            Screensaver.ShowSavers(Screensaver.DefSaverName);
+                            Screensaver.ShowSavers(Screensaver.DefaultSaverName);
                         }
                         else if (Message.StartsWith("ExecConfirm"))
                         {

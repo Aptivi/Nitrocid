@@ -34,38 +34,79 @@ namespace KS.ConsoleBase.Colors
     public static class ColorWheelOpen
     {
 
+        private static string wheelUpperLeftCornerChar = "╔";
+        private static string wheelUpperRightCornerChar = "╗";
+        private static string wheelLowerLeftCornerChar = "╚";
+        private static string wheelLowerRightCornerChar = "╝";
+        private static string wheelUpperFrameChar = "═";
+        private static string wheelLowerFrameChar = "═";
+        private static string wheelLeftFrameChar = "║";
+        private static string wheelRightFrameChar = "║";
+
         /// <summary>
         /// Upper left corner character for color wheel
         /// </summary>
-        public static string WheelUpperLeftCornerChar = "╔";
+        public static string WheelUpperLeftCornerChar
+        {
+            get => wheelUpperLeftCornerChar;
+            set => wheelUpperLeftCornerChar = string.IsNullOrEmpty(value) ? "╔" : value[0].ToString();
+        }
         /// <summary>
         /// Upper right corner character for color wheel
         /// </summary>
-        public static string WheelUpperRightCornerChar = "╗";
+        public static string WheelUpperRightCornerChar
+        {
+            get => wheelUpperRightCornerChar;
+            set => wheelUpperRightCornerChar = string.IsNullOrEmpty(value) ? "╗" : value[0].ToString();
+        }
         /// <summary>
         /// Lower left corner character for color wheel
         /// </summary>
-        public static string WheelLowerLeftCornerChar = "╚";
+        public static string WheelLowerLeftCornerChar
+        {
+            get => wheelLowerLeftCornerChar;
+            set => wheelLowerLeftCornerChar = string.IsNullOrEmpty(value) ? "╚" : value[0].ToString();
+        }
         /// <summary>
         /// Lower right corner character for color wheel
         /// </summary>
-        public static string WheelLowerRightCornerChar = "╝";
+        public static string WheelLowerRightCornerChar
+        {
+            get => wheelLowerRightCornerChar;
+            set => wheelLowerRightCornerChar = string.IsNullOrEmpty(value) ? "╝" : value[0].ToString();
+        }
         /// <summary>
         /// Upper frame character for color wheel
         /// </summary>
-        public static string WheelUpperFrameChar = "═";
+        public static string WheelUpperFrameChar
+        {
+            get => wheelUpperFrameChar;
+            set => wheelUpperFrameChar = string.IsNullOrEmpty(value) ? "═" : value[0].ToString();
+        }
         /// <summary>
         /// Lower frame character for color wheel
         /// </summary>
-        public static string WheelLowerFrameChar = "═";
+        public static string WheelLowerFrameChar
+        {
+            get => wheelLowerFrameChar;
+            set => wheelLowerFrameChar = string.IsNullOrEmpty(value) ? "═" : value[0].ToString();
+        }
         /// <summary>
         /// Left frame character for color wheel
         /// </summary>
-        public static string WheelLeftFrameChar = "║";
+        public static string WheelLeftFrameChar
+        {
+            get => wheelLeftFrameChar;
+            set => wheelLeftFrameChar = string.IsNullOrEmpty(value) ? "║" : value[0].ToString();
+        }
         /// <summary>
         /// Right frame character for color wheel
         /// </summary>
-        public static string WheelRightFrameChar = "║";
+        public static string WheelRightFrameChar
+        {
+            get => wheelRightFrameChar;
+            set => wheelRightFrameChar = string.IsNullOrEmpty(value) ? "║" : value[0].ToString();
+        }
 
         /// <summary>
         /// Initializes color wheel

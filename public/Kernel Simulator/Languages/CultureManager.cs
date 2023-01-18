@@ -32,11 +32,11 @@ namespace KS.Languages
         /// <summary>
         /// Current culture
         /// </summary>
-        public static string CurrentCultStr = "en-US";
+        public static string CurrentCultStr { get; set; } = "en-US";
         /// <summary>
         /// Current culture
         /// </summary>
-        public static CultureInfo CurrentCult = new(CurrentCultStr);
+        public static CultureInfo CurrentCult => new(CurrentCultStr);
 
         /// <summary>
         /// Updates current culture based on current language. If there are no cultures in the curent language, assume current culture.
@@ -52,7 +52,7 @@ namespace KS.Languages
                 if (Cult.EnglishName == StrCult)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Found. Changing culture...");
-                    CurrentCult = Cult;
+                    CurrentCultStr = Cult.Name;
                     var Token = ConfigTools.GetConfigCategory(ConfigCategory.General);
                     ConfigTools.SetConfigValue(ConfigCategory.General, Token, "Culture", CurrentCult.Name);
                     DebugWriter.WriteDebug(DebugLevel.I, "Saved new culture.");
@@ -73,7 +73,7 @@ namespace KS.Languages
                 if (Cult.EnglishName == Culture)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Found. Changing culture...");
-                    CurrentCult = Cult;
+                    CurrentCultStr = Cult.Name;
                     var Token = ConfigTools.GetConfigCategory(ConfigCategory.General);
                     ConfigTools.SetConfigValue(ConfigCategory.General, Token, "Culture", CurrentCult.Name);
                     DebugWriter.WriteDebug(DebugLevel.I, "Saved new culture.");
