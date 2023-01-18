@@ -22,7 +22,7 @@ using KS.Drivers.Console;
 
 namespace KS.Arguments.CommandLineArguments
 {
-    class CommandLine_TerminalDebugArgument : ArgumentExecutor, IArgument
+    class TerminalDebugArgument : ArgumentExecutor, IArgument
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

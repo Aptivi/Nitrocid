@@ -23,7 +23,7 @@ using System;
 
 namespace KS.Arguments.CommandLineArguments
 {
-    class CommandLine_DebugArgument : ArgumentExecutor, IArgument
+    class DebugArgument : ArgumentExecutor, IArgument
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

@@ -42,13 +42,13 @@ namespace KS.Arguments.ArgumentBase
             { "quiet", new ArgumentInfo("quiet", "Starts the kernel quietly", new CommandArgumentInfo(), new QuietArgument()) },
             { "maintenance", new ArgumentInfo("maintenance", "Like safe mode, but also disables multi-user and some customization", new CommandArgumentInfo(), new MaintenanceArgument()) },
             { "safe", new ArgumentInfo("safe", "Starts the kernel in safe mode, disabling all mods", new CommandArgumentInfo(), new SafeArgument()) },
-            { "testInteractive", new ArgumentInfo("testInteractive", "Opens a test shell", new CommandArgumentInfo(), new CommandLine_TestInteractiveArgument()) },
-            { "debug", new ArgumentInfo("debug", "Enables debug mode", new CommandArgumentInfo(), new CommandLine_DebugArgument()) },
-            { "terminaldebug", new ArgumentInfo("terminaldebug", "Enables terminal debug mode", new CommandArgumentInfo(), new CommandLine_TerminalDebugArgument()) },
-            { "reset", new ArgumentInfo("reset", "Resets the kernel to the factory settings", new CommandArgumentInfo(), new CommandLine_ResetArgument()) },
-            { "bypasssizedetection", new ArgumentInfo("bypasssizedetection", "Bypasses the console size detection", new CommandArgumentInfo(), new CommandLine_BypassSizeDetectionArgument()) },
+            { "testInteractive", new ArgumentInfo("testInteractive", "Opens a test shell", new CommandArgumentInfo(), new TestInteractiveArgument()) },
+            { "debug", new ArgumentInfo("debug", "Enables debug mode", new CommandArgumentInfo(), new DebugArgument()) },
+            { "terminaldebug", new ArgumentInfo("terminaldebug", "Enables terminal debug mode", new CommandArgumentInfo(), new TerminalDebugArgument()) },
+            { "reset", new ArgumentInfo("reset", "Resets the kernel to the factory settings", new CommandArgumentInfo(), new ResetArgument()) },
+            { "bypasssizedetection", new ArgumentInfo("bypasssizedetection", "Bypasses the console size detection", new CommandArgumentInfo(), new BypassSizeDetectionArgument()) },
             { "noaltbuffer", new ArgumentInfo("noaltbuffer", "Prevents the kernel from using the alternative buffer", new CommandArgumentInfo(), new NoAltBufferArgument()) },
-            { "help", new ArgumentInfo("help", "Help page", new CommandArgumentInfo(), new CommandLine_HelpArgument()) }
+            { "help", new ArgumentInfo("help", "Help page", new CommandArgumentInfo(), new HelpArgument()) }
         };
 
         /// <summary>

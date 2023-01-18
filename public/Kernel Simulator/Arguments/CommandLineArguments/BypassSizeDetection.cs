@@ -21,7 +21,7 @@ using KS.Kernel;
 
 namespace KS.Arguments.CommandLineArguments
 {
-    class CommandLine_BypassSizeDetectionArgument : ArgumentExecutor, IArgument
+    class BypassSizeDetectionArgument : ArgumentExecutor, IArgument
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Flags.CheckingForConsoleSize = false;

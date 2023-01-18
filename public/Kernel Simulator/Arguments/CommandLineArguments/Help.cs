@@ -25,7 +25,7 @@ using System;
 
 namespace KS.Arguments.CommandLineArguments
 {
-    class CommandLine_HelpArgument : ArgumentExecutor, IArgument
+    class HelpArgument : ArgumentExecutor, IArgument
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
