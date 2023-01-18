@@ -145,10 +145,10 @@
   <data name="LinuxUncolored" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\LinuxUncolored.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
-  <data name="NFSHP_Cop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="NFSHP-Cop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\NFSHP-Cop.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
-  <data name="NFSHP_Racer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="NFSHP-Racer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\NFSHP-Racer.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
   <data name="RedConsole" type="System.Resources.ResXFileRef, System.Windows.Forms">

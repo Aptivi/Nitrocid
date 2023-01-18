@@ -1785,7 +1785,7 @@ namespace Properties.Resources {
         /// </summary>
         public static string NFSHP_Cop {
             get {
-                return ResourceManager.GetString("NFSHP_Cop", resourceCulture);
+                return ResourceManager.GetString("NFSHP-Cop", resourceCulture);
             }
         }
         
@@ -1812,7 +1812,7 @@ namespace Properties.Resources {
         /// </summary>
         public static string NFSHP_Racer {
             get {
-                return ResourceManager.GetString("NFSHP_Racer", resourceCulture);
+                return ResourceManager.GetString("NFSHP-Racer", resourceCulture);
             }
         }
         
