@@ -60,7 +60,7 @@ namespace KSTests.FilesTests
         {
             CurrentDirectory.CurrentDir = Paths.HomePath;
             string SourcePath = Path.GetFullPath("TestData/TestText.txt");
-            string TargetPath = "Documents";
+            string TargetPath = "Documents/";
             Should.NotThrow(() => Copying.CopyFileOrDir(SourcePath, TargetPath));
         }
 
