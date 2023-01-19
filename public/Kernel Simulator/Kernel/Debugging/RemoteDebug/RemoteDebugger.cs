@@ -61,11 +61,11 @@ namespace KS.Kernel.Debugging.RemoteDebug
         public static string RDebugMessageFormat { get; set; } = "";
         internal static bool RDebugFailed;
         internal static Exception RDebugFailedReason;
-        internal static KernelThread RDebugThread = new("Remote Debug Thread", true, StartRDebugger);
         internal static List<string> RDebugBlocked = new();
         internal static List<RemoteDebugDevice> DebugDevices = new();
         internal static Socket RDebugClient;
         internal static TcpListener DebugTCP;
+        internal static KernelThread RDebugThread = new("Remote Debug Thread", true, StartRDebugger);
         private static int debugPort = 3014;
         private readonly static string RDebugVersion = "0.7.1";
         private static readonly AutoResetEvent RDebugBailer = new(false);
