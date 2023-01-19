@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Kernel.Exceptions;
+using KS.Languages;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -58,6 +59,17 @@ namespace KS.Users.Permissions
         }
 
         /// <summary>
+        /// Checks to see whether the current user is granted the permission. Fails if permission is not granted.
+        /// </summary>
+        /// <param name="permissionType">A permission type to query</param>
+        /// <exception cref="KernelException"></exception>
+        public static void Demand(PermissionTypes permissionType)
+        {
+            if (!IsPermissionGranted(permissionType))
+                throw new KernelException(KernelExceptionType.PermissionDenied, Translate.DoTranslation("Permission not granted") + ": {0}", permissionType.ToString());
+        }
+
+        /// <summary>
         /// Grants the user a permission
         /// </summary>
         /// <param name="User">Username to give the permission to</param>
@@ -69,8 +81,7 @@ namespace KS.Users.Permissions
                 throw new KernelException(KernelExceptionType.NoSuchUser);
 
             // Check to see if the current user is granted permission management or not
-            if (!IsPermissionGranted(PermissionTypes.ManagePermissions))
-                throw new KernelException(KernelExceptionType.PermissionDenied);
+            Demand(PermissionTypes.ManagePermissions);
 
             // Get all the permission types
             foreach (PermissionTypes type in Enum.GetValues(typeof(PermissionTypes)))
@@ -107,8 +118,7 @@ namespace KS.Users.Permissions
                 throw new KernelException(KernelExceptionType.NoSuchUser);
 
             // Check to see if the current user is granted permission management or not
-            if (!IsPermissionGranted(PermissionTypes.ManagePermissions))
-                throw new KernelException(KernelExceptionType.PermissionDenied);
+            Demand(PermissionTypes.ManagePermissions);
 
             // Get all the permission types
             foreach (PermissionTypes type in Enum.GetValues(typeof(PermissionTypes)))

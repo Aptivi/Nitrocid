@@ -56,8 +56,7 @@ namespace KS.Kernel.Power
         public static void PowerManage(PowerMode PowerMode, string IP, int Port)
         {
             // Check to see if the current user is granted power management or not
-            if (!PermissionsTools.IsPermissionGranted(PermissionTypes.ManagePower))
-                throw new KernelException(KernelExceptionType.PermissionDenied);
+            PermissionsTools.Demand(PermissionTypes.ManagePower);
 
             DebugWriter.WriteDebug(DebugLevel.I, "Power management has the argument of {0}", PowerMode);
             switch (PowerMode)
