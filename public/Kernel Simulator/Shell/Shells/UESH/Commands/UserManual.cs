@@ -54,7 +54,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             else
             {
-                Process.Start("https://aptivi.github.io/Kernel-Simulator/wiki/Home.html");
+                Process.Start("https://aptivi.gitbook.io/kernel-simulator-manual/");
             }
         }
 
