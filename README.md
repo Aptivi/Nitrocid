@@ -31,6 +31,8 @@
 
 <div align = right>
 
+[![Button Manual]][Manual]
+
 [![Button Install]][Install]
 
 [![Button Requirements]][Requirements]
@@ -166,6 +168,7 @@ that may make you feel uncomfortable reading it.
 [Packaging]: Documentation/Packaging.md
 [Building]: Documentation/Building
 [Install]: Documentation/Installation
+[Manual]: https://aptivi.gitbook.io/kernel-simulator-manual/
 
 <!----------------------------------[ Badges ]--------------------------------->
 
@@ -188,3 +191,4 @@ that may make you feel uncomfortable reading it.
 [Button Packaging]: https://img.shields.io/badge/Packaging-36A9AE?style=for-the-badge&logoColor=white&logo=GitLFS
 [Button Building]: https://img.shields.io/badge/Building-5D4F85?style=for-the-badge&logoColor=white&logo=Hackaday
 [Button Install]: https://img.shields.io/badge/Installation-2F8D46?style=for-the-badge&logoColor=white&logo=DocuSign
+[Button Manual]: https://img.shields.io/badge/Docs-blueviolet?style=for-the-badge&logoColor=white&logo=GitBook

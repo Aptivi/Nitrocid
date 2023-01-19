@@ -1,6 +1,6 @@
 
 > [!IMPORTANT]
-> This documentation is no longer updated, because an entirely new documentation is coming in the way
+> This documentation is no longer updated and will be removed at the end of the development cycle of 0.1.0. Consult the new documentation hosted on [GitBook](https://aptivi.gitbook.io/kernel-simulator-manual/).
 
 # Kernel Simulator
 

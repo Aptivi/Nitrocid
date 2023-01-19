@@ -16,7 +16,7 @@
     <tags>ks kernel simulator vb.net</tags>
     <summary>Simulates our future-planned kernel</summary>
     <description>Kernel Simulator is the program that lets you simulate our early aspects of the kernel that will be made in the future. For more information, please go to the project URL. This version is a .NET version of KS.</description>
-    <releaseNotes>https://github.com/Aptivi/Kernel-Simulator/wiki/Release-Notes-for-Third-Generation-KS</releaseNotes>
+    <releaseNotes>https://aptivi.gitbook.io/kernel-simulator-manual/versions-and-compatibility/version-release-notes/v0.1.x.x-series</releaseNotes>
 
     <dependencies>
       <dependency id="dotnet-6.0-sdk" version="6.0.300"/>

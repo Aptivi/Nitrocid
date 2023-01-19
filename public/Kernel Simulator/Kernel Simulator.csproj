@@ -10,7 +10,7 @@
     <PackageProjectUrl>https://github.com/Aptivi/Kernel-Simulator</PackageProjectUrl>
     <PackageIcon>OfficialAppIcon-KernelSimulator-256.png</PackageIcon>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
-    <PackageReleaseNotes>Detailed explanation: https://aptivi.github.io/Kernel-Simulator/wiki/releases/Release-Notes-for-Third-Generation-KS.html</PackageReleaseNotes>
+    <PackageReleaseNotes>Detailed explanation: https://aptivi.gitbook.io/kernel-simulator-manual/versions-and-compatibility/version-release-notes/v0.1.x.x-series</PackageReleaseNotes>
     <!-- MSBuild Tags -->
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeSymbols>True</IncludeSymbols>
