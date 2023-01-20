@@ -180,7 +180,7 @@
                 "Variable": "AltCalendar",
                 "IsEnumeration": true,
                 "EnumerationInternal": true,
-                "Enumeration": "KS.Misc.Calendar.CalendarTypes",
+                "Enumeration": "Misc.Calendar.CalendarTypes",
                 "EnumerationZeroBased": true,
                 "Description": "The type of alternative calendar."
             }
