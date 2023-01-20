@@ -27,6 +27,7 @@ using KS.Languages;
 using KS.ConsoleBase.Inputs.Styles;
 using KS.Drivers.Encryption;
 using System.Linq;
+using KS.Misc.Calendar;
 
 namespace KS.Users.Login
 {
@@ -40,7 +41,6 @@ namespace KS.Users.Login
 
             // Show the date and the time in the modern way
             // TODO: update this while waiting for input at the same time
-            // TODO: Implement showing multiple calendars
             string timeStr = TimeDateRenderers.RenderTime(TimeDate.TimeDate.FormatType.Short);
             var figFont = FigletTools.GetFigletFont("Banner3");
             int figWidth = FigletTools.GetFigletWidth(timeStr, figFont) / 2;
@@ -54,6 +54,12 @@ namespace KS.Users.Login
             int consoleInfoX = (ConsoleWrapper.WindowWidth / 2) - (dateStr.Length / 2);
             int consoleInfoY = (ConsoleWrapper.WindowHeight / 2) + figHeight + 2;
             TextWriterWhereColor.WriteWhere(dateStr, consoleInfoX, consoleInfoY);
+
+            // Print the date using the alternative calendar, if any
+            string dateAltStr = TimeDateRenderers.RenderDate(CalendarTools.GetCultureFromCalendar(CalendarTools.AltCalendar));
+            int consoleAltInfoX = (ConsoleWrapper.WindowWidth / 2) - (dateAltStr.Length / 2);
+            int consoleAltInfoY = (ConsoleWrapper.WindowHeight / 2) + figHeight + 3;
+            TextWriterWhereColor.WriteWhere(dateAltStr, consoleAltInfoX, consoleAltInfoY);
 
             // Print the instructions
             string instStr = Translate.DoTranslation("Press any key to start...");

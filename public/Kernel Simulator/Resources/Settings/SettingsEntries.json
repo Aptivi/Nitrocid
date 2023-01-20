@@ -173,6 +173,16 @@
                 "Type": "SBoolean",
                 "Variable": "ConsoleSupportsTrueColor",
                 "Description": "If you are sure that the console supports true color, or if you want to change your terminal to a terminal that supports true color, change this value."
+            },
+            {
+                "Name": "Alternative calendar",
+                "Type": "SSelection",
+                "Variable": "AltCalendar",
+                "IsEnumeration": true,
+                "EnumerationInternal": true,
+                "Enumeration": "KS.Misc.Calendar.CalendarTypes",
+                "EnumerationZeroBased": true,
+                "Description": "The type of alternative calendar."
             }
         ]
     },

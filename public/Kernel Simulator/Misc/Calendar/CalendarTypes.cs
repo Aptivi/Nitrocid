@@ -16,23 +16,32 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Languages;
-using KS.Misc.Calendar;
-using KS.Misc.Writers.ConsoleWriters;
-using KS.TimeDate;
-using System;
-
-namespace KS.Kernel.Debugging.Testing.Facades
+namespace KS.Misc.Calendar
 {
-    internal class ShowDateDiffCalendar : TestFacade
+    /// <summary>
+    /// Calendar types
+    /// </summary>
+    public enum CalendarTypes
     {
-        public override string TestName => Translate.DoTranslation("Tests printing date using different calendars");
-        public override void Run()
-        {
-            TextWriterColor.Write(Translate.DoTranslation("Make sure your terminal supports Right-to-Left rendering!") + "\n");
-            var types = Enum.GetValues(typeof(CalendarTypes));
-            foreach (var type in types)
-                TextWriterColor.Write($"{(CalendarTypes)type}: {TimeDateRenderers.RenderDate(CalendarTools.GetCultureFromCalendar((CalendarTypes)type))}");
-        }
+        /// <summary>
+        /// The Gregorian calendar (en-US culture)
+        /// </summary>
+        Gregorian,
+        /// <summary>
+        /// The Hijri calendar (ar culture)
+        /// </summary>
+        Hijri,
+        /// <summary>
+        /// The Persian calendar (fa culture)
+        /// </summary>
+        Persian,
+        /// <summary>
+        /// The Saudi-Hijri calendar (ar-SA culture)
+        /// </summary>
+        SaudiHijri,
+        /// <summary>
+        /// The Thai-Buddhist calendar (th-TH culture)
+        /// </summary>
+        ThaiBuddhist
     }
 }
