@@ -11,9 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KSJsonifyLocales", "public\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Launchers and Manpages", "Launchers and Manpages", "{F319014C-BA17-4399-9BB9-CEFDB0AC5743}"
 	ProjectSection(SolutionItems) = preProject
-		public\Kernel Simulator\ks-converter.1 = public\Kernel Simulator\ks-converter.1
-		public\Kernel Simulator\ks-converter.cmd = public\Kernel Simulator\ks-converter.cmd
-		public\Kernel Simulator\ks-converter.sh = public\Kernel Simulator\ks-converter.sh
 		public\Kernel Simulator\ks-jl.1 = public\Kernel Simulator\ks-jl.1
 		public\Kernel Simulator\ks-jl.cmd = public\Kernel Simulator\ks-jl.cmd
 		public\Kernel Simulator\ks-jl.sh = public\Kernel Simulator\ks-jl.sh
