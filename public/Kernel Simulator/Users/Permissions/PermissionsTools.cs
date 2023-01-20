@@ -65,8 +65,16 @@ namespace KS.Users.Permissions
         /// <exception cref="KernelException"></exception>
         public static void Demand(PermissionTypes permissionType)
         {
-            if (!IsPermissionGranted(permissionType))
-                throw new KernelException(KernelExceptionType.PermissionDenied, Translate.DoTranslation("Permission not granted") + ": {0}", permissionType.ToString());
+            // Get all the permission types
+            foreach (PermissionTypes type in Enum.GetValues(typeof(PermissionTypes)))
+            {
+                // Check to see if one or more permissions exist
+                if (permissionType.HasFlag(type))
+                {
+                    if (!IsPermissionGranted(type))
+                        throw new KernelException(KernelExceptionType.PermissionDenied, Translate.DoTranslation("Permission not granted") + ": {0}", permissionType.ToString());
+                }
+            }
         }
 
         /// <summary>
