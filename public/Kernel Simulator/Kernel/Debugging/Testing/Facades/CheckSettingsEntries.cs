@@ -17,16 +17,20 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Inputs;
 using KS.Kernel.Configuration;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace KS.Kernel.Debugging.Testing.Facades
 {
     internal class CheckSettingsEntries : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Checks all the KS settings to see if the variables are written correctly");
+        public override bool TestInteractive => false;
+        public override object TestExpectedValue => false;
         public override void Run()
         {
             var Results = ConfigTools.CheckConfigVariables();
@@ -48,6 +52,8 @@ namespace KS.Kernel.Debugging.Testing.Facades
                 TextWriterColor.Write(Translate.DoTranslation("These configuration entries have invalid variables or enumerations and need to be fixed:"), true, KernelColorType.Warning);
                 ListWriterColor.WriteList(NotFound);
             }
+
+            TestActualValue = NotFound.Any();
         }
     }
 }

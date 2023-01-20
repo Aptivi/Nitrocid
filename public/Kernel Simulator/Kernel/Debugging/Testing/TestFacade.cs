@@ -23,6 +23,9 @@ namespace KS.Kernel.Debugging.Testing
         internal TestStatus status;
         public virtual TestStatus TestStatus { get => status; }
         public virtual string TestName { get; }
+        public virtual bool TestInteractive { get; } = true;
+        public virtual object TestExpectedValue { get; }
+        public virtual object TestActualValue { get; set; }
 
         public virtual void Run() { }
     }

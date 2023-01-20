@@ -183,23 +183,42 @@ namespace KS.Kernel.Debugging.Testing
                     facade.status = TestStatus.Neutral;
                     facade.Run();
 
-                    // ...and prompt the user to check to see if the test ran as expected
-                    ConsoleWrapper.SetCursorPosition(0, ConsoleWrapper.WindowHeight - 1);
-                    string answer = ChoiceStyle.PromptChoice(Translate.DoTranslation("Did the test run as expected?"), "y/n/r");
-
-                    // Set status or retry
-                    switch (answer)
+                    if (facade.TestInteractive)
                     {
-                        case "y":
-                            facade.status = TestStatus.Success;
-                            tested = true;
-                            break;
-                        case "r":
-                            break;
-                        default:
+                        // Prompt the user to check to see if the test ran as expected
+                        ConsoleWrapper.SetCursorPosition(0, ConsoleWrapper.WindowHeight - 1);
+                        string answer = ChoiceStyle.PromptChoice(Translate.DoTranslation("Did the test run as expected?"), "y/n/r");
+
+                        // Set status or retry
+                        switch (answer)
+                        {
+                            case "y":
+                                facade.status = TestStatus.Success;
+                                tested = true;
+                                break;
+                            case "r":
+                                break;
+                            default:
+                                facade.status = TestStatus.Failed;
+                                tested = true;
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        // Compare the actual value with the expected value
+                        if (!facade.TestActualValue.Equals(facade.TestExpectedValue))
+                        {
+                            TextWriterColor.Write(Translate.DoTranslation("The test failed. Expected value is {0}, but actual value is {1}."), true, ConsoleBase.Colors.KernelColorType.Error, facade.TestExpectedValue.ToString(), facade.TestActualValue.ToString());
+                            Input.DetectKeypress();
                             facade.status = TestStatus.Failed;
                             tested = true;
-                            break;
+                        }
+                        else
+                        {
+                            facade.status = TestStatus.Success;
+                            tested = true;
+                        }
                     }
                 }
             }

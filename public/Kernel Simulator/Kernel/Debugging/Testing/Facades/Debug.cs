@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Languages;
+using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Kernel.Debugging.Testing.Facades
 {
@@ -25,6 +26,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override string TestName => Translate.DoTranslation("Enables the debugger");
         public override void Run()
         {
+            TextWriterColor.Write(Translate.DoTranslation("Previous value") + ": {0}", Flags.DebugMode);
             if (Flags.DebugMode == false)
             {
                 Flags.DebugMode = true;
@@ -38,6 +40,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
                 Flags.DebugMode = false;
                 Flags.RebootRequested = false;
             }
+            TextWriterColor.Write(Translate.DoTranslation("Current value") + ": {0}", Flags.DebugMode);
         }
     }
 }

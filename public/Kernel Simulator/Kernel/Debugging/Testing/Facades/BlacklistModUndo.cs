@@ -24,9 +24,12 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class BlacklistModUndo : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Removes a mod from the blacklist");
+        public override bool TestInteractive => false;
+        public override object TestExpectedValue => false;
         public override void Run()
         {
             ModManager.RemoveModFromBlacklist("MaliciousMod");
+            TestActualValue = ModManager.GetBlacklistedMods().Contains("MaliciousMod");
         }
     }
 }

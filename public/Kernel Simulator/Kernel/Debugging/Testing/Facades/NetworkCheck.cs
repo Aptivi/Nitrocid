@@ -25,9 +25,13 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class NetworkCheck : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Checks for the network connection");
+        public override bool TestInteractive => false;
+        public override object TestExpectedValue => true;
         public override void Run()
         {
-            TextWriterColor.Write(Translate.DoTranslation("Network availability is") + $": {NetworkTools.NetworkAvailable}");
+            bool netFound = NetworkTools.NetworkAvailable;
+            TextWriterColor.Write(Translate.DoTranslation("Network availability is") + $": {netFound}");
+            TestActualValue = netFound;
         }
     }
 }

@@ -26,18 +26,23 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class CheckStrings : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Checks to see if the translatable strings exist in the KS resources");
+        public override bool TestInteractive => false;
+        public override object TestExpectedValue => false;
         public override void Run()
         {
             string TextPath = Input.ReadLine(Translate.DoTranslation("Write a translatable string list file path to check:") + " ", "");
             var LocalizedStrings = LanguageManager.Languages["eng"].Strings;
             var Texts = FileRead.ReadContents(TextPath);
+            bool hasMissingEntries = false;
             foreach (string Text in Texts)
             {
                 if (!LocalizedStrings.ContainsKey(Text))
                 {
                     TextWriterColor.Write("[-] {0}", Text);
+                    hasMissingEntries = true;
                 }
             }
+            TestActualValue = hasMissingEntries;
         }
     }
 }

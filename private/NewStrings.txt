@@ -351,5 +351,8 @@ Permission not granted
 Make sure your terminal supports Right-to-Left rendering!
 Alternative calendar
 The type of alternative calendar.
+The test failed. Expected value is {0}, but actual value is {1}.
+Previous value
+Current value
 
 ==========================================================================================================================================
