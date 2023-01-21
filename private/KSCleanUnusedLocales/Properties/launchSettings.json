@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "KSCleanUnusedLocales": {
+      "commandName": "Project"
+    },
+    "KSCleanUnusedLocales - Dry": {
+      "commandName": "Project",
+      "commandLineArgs": "-dry"
+    }
+  }
+}

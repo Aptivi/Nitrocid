@@ -22,7 +22,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Launchers and Manpages", "L
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Public", "Public", "{A32F9CED-BCDB-48A7-A42D-E98E33BD6E65}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Internal", "Internal", "{61916ED1-66D6-4938-9F1A-D0DF38D16E20}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Private", "Private", "{61916ED1-66D6-4938-9F1A-D0DF38D16E20}"
 	ProjectSection(SolutionItems) = preProject
 		private\NewStrings.txt = private\NewStrings.txt
 	EndProjectSection

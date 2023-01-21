@@ -19,13 +19,17 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace KSCleanUnusedLocales
 {
     internal class Cleaner
     {
-        static void Main()
+        static void Main(string[] Args)
         {
+            // If on dry mode, set as appropriate
+            bool dry = Args.Contains("-dry");
+
             // Check to see if we're running on the KS repo
             string engFile = "../../../../../public/KSJsonifyLocales/Translations/eng.txt";
             if (File.Exists(engFile))
@@ -84,7 +88,7 @@ namespace KSCleanUnusedLocales
                 }
 
                 // Now, list all localization files
-                if (redundantIndexes.Count > 0)
+                if (redundantIndexes.Count > 0 && !dry)
                 {
                     Console.WriteLine("Cleaning up...");
                     var langs = LocalizationLister.PopulateLanguages();
