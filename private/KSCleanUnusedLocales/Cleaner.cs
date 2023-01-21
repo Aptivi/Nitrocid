@@ -50,8 +50,7 @@ namespace KSCleanUnusedLocales
                     {
                         // Check to see if the string exists in the source
                         if (source.Contains($"DoTranslation(\"{engString.Replace("\"", "\\\"")}\"") ||
-                            source.Contains($"Shell, \"{engString.Replace("\"", "\\\"")}\", ") ||
-                            source.Contains($"Args, \"{engString.Replace("\"", "\\\"")}\", "))
+                            source.Contains($"/* Localizable */ \"{engString.Replace("\"", "\\\"")}\", "))
                         {
                             found = true;
                             break;

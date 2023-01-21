@@ -36,20 +36,20 @@ namespace KS.Shell.Shells.Mail
         /// </summary>
         public override Dictionary<string, CommandInfo> Commands => new()
         {
-            { "cd", new CommandInfo("cd", ShellType, "Changes current mail directory", new CommandArgumentInfo(new[] { "<folder>" }, true, 1), new Mail_CdCommand()) },
-            { "lsdirs", new CommandInfo("lsdirs", ShellType, "Lists directories in your mail address", new CommandArgumentInfo(), new Mail_LsDirsCommand()) },
-            { "list", new CommandInfo("list", ShellType, "Downloads messages and lists them", new CommandArgumentInfo(new[] { "[pagenum]" }, false, 0), new Mail_ListCommand()) },
-            { "mkdir", new CommandInfo("mkdir", ShellType, "Makes a directory in the current working directory", new CommandArgumentInfo(new[] { "<foldername>" }, true, 1), new Mail_MkdirCommand()) },
-            { "mv", new CommandInfo("mv", ShellType, "Moves a message", new CommandArgumentInfo(new[] { "<mailid> <targetfolder>" }, true, 2), new Mail_MvCommand()) },
-            { "mvall", new CommandInfo("mvall", ShellType, "Moves all messages from recipient", new CommandArgumentInfo(new[] { "<sendername> <targetfolder>" }, true, 2), new Mail_MvAllCommand()) },
-            { "read", new CommandInfo("read", ShellType, "Opens a message", new CommandArgumentInfo(new[] { "<mailid>" }, true, 1), new Mail_ReadCommand()) },
-            { "readenc", new CommandInfo("readenc", ShellType, "Opens an encrypted message", new CommandArgumentInfo(new[] { "<mailid>" }, true, 1), new Mail_ReadEncCommand()) },
-            { "ren", new CommandInfo("ren", ShellType, "Renames a folder", new CommandArgumentInfo(new[] { "<oldfoldername> <newfoldername>" }, true, 2), new Mail_RenCommand()) },
-            { "rm", new CommandInfo("rm", ShellType, "Removes a message", new CommandArgumentInfo(new[] { "<mailid>" }, true, 1), new Mail_RmCommand()) },
-            { "rmall", new CommandInfo("rmall", ShellType, "Removes all messages from recipient", new CommandArgumentInfo(new[] { "<sendername>" }, true, 1), new Mail_RmAllCommand()) },
-            { "rmdir", new CommandInfo("rmdir", ShellType, "Removes a directory from the current working directory", new CommandArgumentInfo(new[] { "<foldername>" }, true, 1), new Mail_RmdirCommand()) },
-            { "send", new CommandInfo("send", ShellType, "Sends a message to an address", new CommandArgumentInfo(), new Mail_SendCommand()) },
-            { "sendenc", new CommandInfo("sendenc", ShellType, "Sends an encrypted message to an address", new CommandArgumentInfo(), new Mail_SendEncCommand()) }
+            { "cd", new CommandInfo("cd", ShellType, /* Localizable */ "Changes current mail directory", new CommandArgumentInfo(new[] { "<folder>" }, true, 1), new Mail_CdCommand()) },
+            { "lsdirs", new CommandInfo("lsdirs", ShellType, /* Localizable */ "Lists directories in your mail address", new CommandArgumentInfo(), new Mail_LsDirsCommand()) },
+            { "list", new CommandInfo("list", ShellType, /* Localizable */ "Downloads messages and lists them", new CommandArgumentInfo(new[] { "[pagenum]" }, false, 0), new Mail_ListCommand()) },
+            { "mkdir", new CommandInfo("mkdir", ShellType, /* Localizable */ "Makes a directory in the current working directory", new CommandArgumentInfo(new[] { "<foldername>" }, true, 1), new Mail_MkdirCommand()) },
+            { "mv", new CommandInfo("mv", ShellType, /* Localizable */ "Moves a message", new CommandArgumentInfo(new[] { "<mailid> <targetfolder>" }, true, 2), new Mail_MvCommand()) },
+            { "mvall", new CommandInfo("mvall", ShellType, /* Localizable */ "Moves all messages from recipient", new CommandArgumentInfo(new[] { "<sendername> <targetfolder>" }, true, 2), new Mail_MvAllCommand()) },
+            { "read", new CommandInfo("read", ShellType, /* Localizable */ "Opens a message", new CommandArgumentInfo(new[] { "<mailid>" }, true, 1), new Mail_ReadCommand()) },
+            { "readenc", new CommandInfo("readenc", ShellType, /* Localizable */ "Opens an encrypted message", new CommandArgumentInfo(new[] { "<mailid>" }, true, 1), new Mail_ReadEncCommand()) },
+            { "ren", new CommandInfo("ren", ShellType, /* Localizable */ "Renames a folder", new CommandArgumentInfo(new[] { "<oldfoldername> <newfoldername>" }, true, 2), new Mail_RenCommand()) },
+            { "rm", new CommandInfo("rm", ShellType, /* Localizable */ "Removes a message", new CommandArgumentInfo(new[] { "<mailid>" }, true, 1), new Mail_RmCommand()) },
+            { "rmall", new CommandInfo("rmall", ShellType, /* Localizable */ "Removes all messages from recipient", new CommandArgumentInfo(new[] { "<sendername>" }, true, 1), new Mail_RmAllCommand()) },
+            { "rmdir", new CommandInfo("rmdir", ShellType, /* Localizable */ "Removes a directory from the current working directory", new CommandArgumentInfo(new[] { "<foldername>" }, true, 1), new Mail_RmdirCommand()) },
+            { "send", new CommandInfo("send", ShellType, /* Localizable */ "Sends a message to an address", new CommandArgumentInfo(), new Mail_SendCommand()) },
+            { "sendenc", new CommandInfo("sendenc", ShellType, /* Localizable */ "Sends an encrypted message to an address", new CommandArgumentInfo(), new Mail_SendEncCommand()) }
         };
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
