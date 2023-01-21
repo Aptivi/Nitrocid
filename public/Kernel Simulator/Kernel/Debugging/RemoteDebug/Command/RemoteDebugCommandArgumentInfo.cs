@@ -38,10 +38,6 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
         /// User must specify at least this number of arguments
         /// </summary>
         public int MinimumArguments { get; private set; }
-        /// <summary>
-        /// Auto completion function delegate
-        /// </summary>
-        public Func<string, int, char[], string[]> AutoCompleter { get; private set; }
 
         /// <summary>
         /// Installs a new instance of the command argument info class
