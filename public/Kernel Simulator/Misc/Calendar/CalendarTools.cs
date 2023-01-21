@@ -55,6 +55,10 @@ namespace KS.Misc.Calendar
                     return new CultureInfo("ar-SA");
                 case CalendarTypes.ThaiBuddhist:
                     return new CultureInfo("th-TH");
+                case CalendarTypes.Chinese:
+                    return new CultureInfo("zh-CN");
+                case CalendarTypes.Japanese:
+                    return new CultureInfo("ja-JP");
                 default:
                     return new CultureInfo("en-US");
             }

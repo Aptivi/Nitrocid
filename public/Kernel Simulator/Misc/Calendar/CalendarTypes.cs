@@ -42,6 +42,14 @@ namespace KS.Misc.Calendar
         /// <summary>
         /// The Thai-Buddhist calendar (th-TH culture)
         /// </summary>
-        ThaiBuddhist
+        ThaiBuddhist,
+        /// <summary>
+        /// The Chinese calendar (zh-CN culture)
+        /// </summary>
+        Chinese,
+        /// <summary>
+        /// The Japanese calendar (ja-JP culture)
+        /// </summary>
+        Japanese
     }
 }
