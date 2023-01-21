@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.IO;
-using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Themes;
 using NUnit.Framework;

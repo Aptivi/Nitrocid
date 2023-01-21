@@ -23,7 +23,6 @@ using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.RPC;
 using System.Threading;
 using KS.Kernel.Events;
-using KS.Kernel.Exceptions;
 using KS.Users.Permissions;
 
 namespace KS.Kernel.Power

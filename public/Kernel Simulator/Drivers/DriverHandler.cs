@@ -22,7 +22,6 @@ using KS.Kernel.Debugging;
 using System.Collections.Generic;
 using KS.Drivers.Console.Consoles;
 using KS.Drivers.RNG.Randoms;
-using System.Linq;
 using KS.Drivers.Network;
 using KS.Drivers.Network.Bases;
 using KS.Drivers.Filesystem;
@@ -32,7 +31,6 @@ using KS.Drivers.Encryption.Encryptors;
 using KS.Drivers.Regexp;
 using KS.Drivers.Regexp.Bases;
 using KS.Kernel.Exceptions;
-using FluentFTP;
 
 namespace KS.Drivers
 {

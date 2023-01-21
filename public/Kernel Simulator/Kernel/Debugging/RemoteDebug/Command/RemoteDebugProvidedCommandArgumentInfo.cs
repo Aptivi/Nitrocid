@@ -19,7 +19,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Extensification.StringExts;
-using KS.Modifications;
 
 namespace KS.Kernel.Debugging.RemoteDebug.Command
 {
