@@ -78,7 +78,7 @@ namespace KS.Languages
             // Do translation
             if (lang.Strings.ContainsKey(text))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Translating string to {0}: {1}", lang, text);
+                DebugWriter.WriteDebug(DebugLevel.I, "Translating string to {0}: {1}", lang.ThreeLetterLanguageName, text);
                 return lang.Strings[text];
             }
             else if (lang.ThreeLetterLanguageName == "eng")
