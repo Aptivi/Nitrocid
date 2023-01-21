@@ -36,7 +36,9 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
         {
             { "help", new RemoteDebugCommandInfo("help", /* Localizable */ "Help page", new RemoteDebugCommandArgumentInfo(new string[] { "[command]" }, false, 0), new HelpCommand()) },
             { "register", new RemoteDebugCommandInfo("register", /* Localizable */ "Registers your name to your remote debug device", new RemoteDebugCommandArgumentInfo(new string[] { "<name>" }, true, 1), new RegisterCommand()) },
-            { "exit", new RemoteDebugCommandInfo("exit", /* Localizable */ "Disconnects from the remote debugger", new RemoteDebugCommandArgumentInfo(new string[] { "<name>" }, true, 1), new RegisterCommand()) }
+            { "exit", new RemoteDebugCommandInfo("exit", /* Localizable */ "Disconnects from the remote debugger", new RemoteDebugCommandArgumentInfo(), new ExitCommand()) },
+            { "trace", new RemoteDebugCommandInfo("trace", /* Localizable */ "Shows last stack trace on exception", new RemoteDebugCommandArgumentInfo(new string[] { "<tracenumber>" }, true, 1), new TraceCommand()) },
+            { "username", new RemoteDebugCommandInfo("username", /* Localizable */ "Shows current username in the session", new RemoteDebugCommandArgumentInfo(), new UsernameCommand()) }
         };
 
         internal static void ExecuteCommand(string RequestedCommand, string DeviceAddress)
