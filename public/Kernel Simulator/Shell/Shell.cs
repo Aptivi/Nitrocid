@@ -257,25 +257,21 @@ namespace KS.Shell
                             // Set title
                             ConsoleExtensions.SetTitle($"{Kernel.Kernel.ConsoleTitle} - {Command}");
 
-                            // Iterate through mod commands
-                            DebugWriter.WriteDebug(DebugLevel.I, "Mod commands probing started with {0} from {1}", commandName, Command);
                             if (ModManager.ListModCommands(ShellType).ContainsKey(commandName))
                             {
-                                DebugWriter.WriteDebug(DebugLevel.I, "Mod command: {0}", commandName);
-                                ModExecutor.ExecuteModCommand(commandName);
+                                // Iterate through mod commands
+                                DebugWriter.WriteDebug(DebugLevel.I, "Mod commands probing started with {0} from {1}", commandName, Command);
+                                ModExecutor.ExecuteModCommand(Command);
                             }
-
-                            // Iterate through alias commands
-                            DebugWriter.WriteDebug(DebugLevel.I, "Aliases probing started with {0} from {1}", commandName, Command);
-                            if (AliasManager.GetAliasesListFromType(ShellType).ContainsKey(commandName))
+                            else if (AliasManager.GetAliasesListFromType(ShellType).ContainsKey(commandName))
                             {
-                                DebugWriter.WriteDebug(DebugLevel.I, "Alias: {0}", commandName);
-                                AliasExecutor.ExecuteAlias(commandName, ShellType);
+                                // Iterate through alias commands
+                                DebugWriter.WriteDebug(DebugLevel.I, "Aliases probing started with {0} from {1}", Command, Command);
+                                AliasExecutor.ExecuteAlias(Command, ShellType);
                             }
-
-                            // Execute the built-in command
-                            if (Commands.ContainsKey(commandName))
+                            else if (Commands.ContainsKey(commandName))
                             {
+                                // Execute the built-in command
                                 DebugWriter.WriteDebug(DebugLevel.I, "Executing built-in command");
 
                                 // Check to see if the command supports redirection
@@ -320,31 +316,7 @@ namespace KS.Shell
                                     {
                                         DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded. Running with {1}", commandName, Command);
                                         var Params = new CommandExecutor.ExecuteCommandParameters(Command, ShellType);
-
-                                        // Since we're probably trying to run a command using the alternative command threads, if the main shell command thread
-                                        // is running, use that to execute the command. This ensures that commands like "wrap" that also execute commands from the
-                                        // shell can do their job.
-                                        var ShellInstance = ShellStart.ShellStack[ShellStart.ShellStack.Count - 1];
-                                        var StartCommandThread = ShellInstance.ShellCommandThread;
-                                        bool CommandThreadValid = true;
-                                        if (StartCommandThread.IsAlive)
-                                        {
-                                            if (ShellInstance.AltCommandThreads.Count > 0)
-                                            {
-                                                StartCommandThread = ShellInstance.AltCommandThreads[ShellInstance.AltCommandThreads.Count - 1];
-                                            }
-                                            else
-                                            {
-                                                DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: Alt command threads are not there.");
-                                                CommandThreadValid = false;
-                                            }
-                                        }
-                                        if (CommandThreadValid)
-                                        {
-                                            StartCommandThread.Start(Params);
-                                            StartCommandThread.Wait();
-                                            StartCommandThread.Stop();
-                                        }
+                                        CommandExecutor.StartCommandThread(Params);
                                     }
                                 }
                             }

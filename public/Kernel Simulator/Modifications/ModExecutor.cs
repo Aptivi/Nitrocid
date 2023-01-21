@@ -25,6 +25,7 @@ using KS.Shell.ShellBase.Commands;
 using KS.Users.Login;
 using KS.Kernel.Events;
 using static KS.Users.UserManagement;
+using KS.Shell.ShellBase.Shells;
 
 namespace KS.Modifications
 {
@@ -41,7 +42,6 @@ namespace KS.Modifications
 
             // Variables
             var parts = cmd.SplitEncloseDoubleQuotes(" ");
-            string args = "";
             string actualCmd = parts[0];
             DebugWriter.WriteDebug(DebugLevel.I, "Command = {0}", actualCmd);
 
@@ -64,62 +64,24 @@ namespace KS.Modifications
                 }
             }
 
-            // Prepare the argument string.
-            if (cmd.StartsWith(parts[0] + " ") | cmd.StartsWith("\"" + parts[0] + "\" "))
-            {
-                // These below will be executed if there are arguments
-                args = cmd.Replace($"{parts[0]} ", "").Replace($"\"{parts[0]}\" ", "");
-                DebugWriter.WriteDebug(DebugLevel.I, "Command {0} will be run with arguments: {1}", actualCmd, args);
-            }
-
             // Try to execute the command.
-            foreach (string ModPart in ModManager.Mods[actualCmd].ModParts.Keys)
+            foreach (var mod in ModManager.Mods.Values)
             {
-                var Script = ModManager.Mods[actualCmd].ModParts[ModPart].PartScript;
-                if (Script.Commands is not null)
+                foreach (var modPart in mod.ModParts.Values)
                 {
-                    // Found commands dictionary! Now, check it for the command
-                    if (Script.Commands.ContainsKey(parts[0]))
+                    var Script = modPart.PartScript;
+                    if (Script.Commands is not null)
                     {
-                        // Populate the arguments info and command base variables
-                        var ScriptCommandExecutable = false;
-                        var ScriptCommandBase = Script.Commands[parts[0]].CommandBase;
-                        var ScriptCommandArgsInfo = new ProvidedCommandArgumentsInfo(cmd, Script.Commands[parts[0]].Type);
-                        var ScriptCommandArgs = ScriptCommandArgsInfo.ArgumentsList;
-                        var ScriptCommandSwitches = ScriptCommandArgsInfo.SwitchesList;
-
-                        // Check to see if we're in the shell type command.
-                        if (Script.Commands[parts[0]].Type == "Shell")
+                        // Found commands dictionary! Now, check it for the command
+                        if (Script.Commands.ContainsKey(parts[0]))
                         {
-                            // Command type is of shell. Check the user privileges for restricted commands.
-                            if (Script.Commands[parts[0]].Flags.HasFlag(CommandFlags.Strict) & (bool)GetUserProperty(Login.CurrentUser.Username, UserProperty.Admin) |
-                                !Script.Commands[parts[0]].Flags.HasFlag(CommandFlags.Strict))
+                            var cmdInfo = Script.Commands[parts[0]];
+                            var Params = new CommandExecutor.ExecuteCommandParameters(cmd, cmdInfo.Type)
                             {
-                                // User is authorized to use the command, or the command isn't strict
-                                ScriptCommandExecutable = true;
-                            }
-                            else
-                            {
-                                // User wasn't authorized.
-                                DebugWriter.WriteDebug(DebugLevel.E, "User {0} doesn't have permission to use {1} from {2}!", Login.CurrentUser.Username, parts[0], ModPart);
-                                TextWriterColor.Write(Translate.DoTranslation("You don't have permission to use {0}"), true, KernelColorType.Error, parts[0]);
-                            }
-                        }
-                        else
-                        {
-                            // Command type is not of shell. Execute anyway.
-                            ScriptCommandExecutable = true;
-                        }
-
-                        // If the command check went all well without any hiccups, execute the command.
-                        if (ScriptCommandExecutable)
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Using command {0} from {1} to be executed...", parts[0], ModPart);
-                            if (ScriptCommandBase is not null)
-                            {
-                                // Use the modern CommandBase.Execute() command
-                                ScriptCommandBase.Execute(args, ScriptCommandArgs, ScriptCommandSwitches);
-                            }
+                                CustomCommand = true,
+                                ModCommands = Script.Commands
+                            };
+                            CommandExecutor.StartCommandThread(Params);
                         }
                     }
                 }

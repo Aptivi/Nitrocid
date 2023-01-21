@@ -49,6 +49,14 @@ namespace KS.Shell.ShellBase.Commands
             /// The shell type
             /// </summary>
             internal string ShellType;
+            /// <summary>
+            /// Is the command the custom command?
+            /// </summary>
+            internal bool CustomCommand;
+            /// <summary>
+            /// Mod commands
+            /// </summary>
+            internal Dictionary<string, CommandInfo> ModCommands;
 
             internal ExecuteCommandParameters(string RequestedCommand, ShellType ShellType) : 
                 this(RequestedCommand, Shell.GetShellTypeName(ShellType)) 
@@ -61,10 +69,38 @@ namespace KS.Shell.ShellBase.Commands
             }
         }
 
-        internal static void ExecuteCommand(ExecuteCommandParameters ThreadParams) =>
-            ExecuteCommand(ThreadParams, CommandManager.GetCommands(ThreadParams.ShellType));
+        internal static void StartCommandThread(ExecuteCommandParameters ThreadParams)
+        {
+            // Since we're probably trying to run a command using the alternative command threads, if the main shell command thread
+            // is running, use that to execute the command. This ensures that commands like "wrap" that also execute commands from the
+            // shell can do their job.
+            var ShellInstance = ShellStart.ShellStack[ShellStart.ShellStack.Count - 1];
+            var StartCommandThread = ShellInstance.ShellCommandThread;
+            bool CommandThreadValid = true;
+            if (StartCommandThread.IsAlive)
+            {
+                if (ShellInstance.AltCommandThreads.Count > 0)
+                {
+                    StartCommandThread = ShellInstance.AltCommandThreads[ShellInstance.AltCommandThreads.Count - 1];
+                }
+                else
+                {
+                    DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: Alt command threads are not there.");
+                    CommandThreadValid = false;
+                }
+            }
+            if (CommandThreadValid)
+            {
+                StartCommandThread.Start(ThreadParams);
+                StartCommandThread.Wait();
+                StartCommandThread.Stop();
+            }
+        }
 
-        internal static void ExecuteCommand(ExecuteCommandParameters ThreadParams, Dictionary<string, CommandInfo> TargetCommands)
+        internal static void ExecuteCommand(ExecuteCommandParameters ThreadParams) =>
+            ExecuteCommand(ThreadParams, ThreadParams.ModCommands is not null ? ThreadParams.ModCommands : CommandManager.GetCommands(ThreadParams.ShellType));
+
+        private static void ExecuteCommand(ExecuteCommandParameters ThreadParams, Dictionary<string, CommandInfo> TargetCommands)
         {
             string RequestedCommand = ThreadParams.RequestedCommand;
             string ShellType = ThreadParams.ShellType;
