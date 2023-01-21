@@ -30,6 +30,7 @@ using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.TimeDate;
 using KS.Kernel.Events;
+using KS.Kernel.Debugging.RemoteDebug.Command;
 
 namespace KS.Kernel.Debugging.RemoteDebug
 {
@@ -267,22 +268,23 @@ namespace KS.Kernel.Debugging.RemoteDebug
                         {
                             // Check the message format
                             if (string.IsNullOrWhiteSpace(RDebugMessageFormat))
-                            {
                                 RDebugMessageFormat = "{0}> {1}";
-                            }
 
                             // Decide if we're recording the chat to the debug log
                             if (Flags.RecordChatToDebugLog)
-                            {
                                 DebugWriter.WriteDebug(DebugLevel.I, PlaceParse.ProbePlaces(RDebugMessageFormat), SocketName, Message);
-                            }
                             else
-                            {
                                 DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, PlaceParse.ProbePlaces(RDebugMessageFormat), SocketName, Message);
-                            }
 
                             // Add the message to the chat history
                             RemoteDebugTools.SetDeviceProperty(SocketIP, RemoteDebugTools.DeviceProperty.ChatHistory, "[" + TimeDateRenderers.Render() + "] " + Message);
+                        }
+
+                        // Now, check to see if the message is a command
+                        if (Message.StartsWith("/"))
+                        {
+                            string finalCommand = Message.Substring(1);
+                            RemoteDebugCommandExecutor.ExecuteCommand(finalCommand, device.ClientIP);
                         }
                     }
                 }
