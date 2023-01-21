@@ -86,7 +86,7 @@ namespace KS.Languages
             else
             {
                 // String wasn't found
-                DebugWriter.WriteDebug(DebugLevel.W, "No string found in langlist. Lang: {0}, String: {1}", lang, text);
+                DebugWriter.WriteDebug(DebugLevel.W, "No string found in langlist. Lang: {0}, String: {1}", lang.ThreeLetterLanguageName, text);
                 text = "(( " + text + " ))";
                 return text;
             }
