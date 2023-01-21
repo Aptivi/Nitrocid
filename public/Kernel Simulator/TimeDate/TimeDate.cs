@@ -19,6 +19,7 @@
 using System;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
+using KS.Misc.Calendar;
 using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.TimeDate
@@ -58,14 +59,12 @@ namespace KS.TimeDate
         /// </summary>
         public static void ShowCurrentTimes()
         {
-            TextWriterColor.Write("datetime: ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Current time is {0}"), true, KernelColorType.ListValue, TimeDateRenderers.RenderTime());
-            TextWriterColor.Write("datetime: ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Today is {0}"), true, KernelColorType.ListValue, TimeDateRenderers.RenderDate());
-            TextWriterColor.Write("datetime: ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Time and date in UTC: {0}"), true, KernelColorType.ListValue, TimeDateRenderersUtc.RenderUtc());
-            TextWriterColor.Write("datetime: ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Time Zone:") + " {0} ({1})", true, KernelColorType.ListValue, TimeZoneInfo.Local.StandardName, TimeZoneInfo.Local.GetUtcOffset(KernelDateTime).ToString((TimeZoneInfo.Local.GetUtcOffset(KernelDateTime) < TimeSpan.Zero ? @"\-" : @"\+") + @"hh\:mm\:ss"));
+            TextWriterColor.Write(Translate.DoTranslation("Current time is {0}"), TimeDateRenderers.RenderTime());
+            TextWriterColor.Write(Translate.DoTranslation("Today is {0}"), TimeDateRenderers.RenderDate());
+            if (CalendarTools.EnableAltCalendar)
+                TextWriterColor.Write(Translate.DoTranslation("Current time in {0} is {1}"), CalendarTools.AltCalendar.ToString(), TimeDateRenderers.Render(CalendarTools.GetCultureFromCalendar(CalendarTools.AltCalendar)));
+            TextWriterColor.Write(Translate.DoTranslation("Time and date in UTC: {0}"), TimeDateRenderersUtc.RenderUtc());
+            TextWriterColor.Write(Translate.DoTranslation("Time Zone:") + " {0} ({1})", TimeZoneInfo.Local.StandardName, TimeZoneInfo.Local.GetUtcOffset(KernelDateTime).ToString((TimeZoneInfo.Local.GetUtcOffset(KernelDateTime) < TimeSpan.Zero ? @"\-" : @"\+") + @"hh\:mm\:ss"));
         }
 
         /// <summary>

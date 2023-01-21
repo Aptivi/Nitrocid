@@ -356,5 +356,6 @@ Previous value
 Current value
 Enable alternative calendar
 If you want the logon screen or the date and time viewer to also show the alternative calendar, enable it.
+Current time in {0} is {1}
 
 ==========================================================================================================================================
