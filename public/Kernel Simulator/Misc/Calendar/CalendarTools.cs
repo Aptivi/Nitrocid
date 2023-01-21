@@ -16,12 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KS.Misc.Calendar
 {
@@ -30,6 +25,10 @@ namespace KS.Misc.Calendar
     /// </summary>
     public static class CalendarTools
     {
+        /// <summary>
+        /// Enables the alternative calendar
+        /// </summary>
+        public static bool EnableAltCalendar { get; set; }
         /// <summary>
         /// Alternative calendar
         /// </summary>

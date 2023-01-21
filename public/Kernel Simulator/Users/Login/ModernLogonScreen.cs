@@ -56,10 +56,13 @@ namespace KS.Users.Login
             TextWriterWhereColor.WriteWhere(dateStr, consoleInfoX, consoleInfoY);
 
             // Print the date using the alternative calendar, if any
-            string dateAltStr = TimeDateRenderers.RenderDate(CalendarTools.GetCultureFromCalendar(CalendarTools.AltCalendar));
-            int consoleAltInfoX = (ConsoleWrapper.WindowWidth / 2) - (dateAltStr.Length / 2);
-            int consoleAltInfoY = (ConsoleWrapper.WindowHeight / 2) + figHeight + 3;
-            TextWriterWhereColor.WriteWhere(dateAltStr, consoleAltInfoX, consoleAltInfoY);
+            if (CalendarTools.EnableAltCalendar)
+            {
+                string dateAltStr = TimeDateRenderers.RenderDate(CalendarTools.GetCultureFromCalendar(CalendarTools.AltCalendar));
+                int consoleAltInfoX = (ConsoleWrapper.WindowWidth / 2) - (dateAltStr.Length / 2);
+                int consoleAltInfoY = (ConsoleWrapper.WindowHeight / 2) + figHeight + 3;
+                TextWriterWhereColor.WriteWhere(dateAltStr, consoleAltInfoX, consoleAltInfoY);
+            }
 
             // Print the instructions
             string instStr = Translate.DoTranslation("Press any key to start...");
