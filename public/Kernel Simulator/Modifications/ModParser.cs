@@ -75,6 +75,7 @@ namespace KS.Modifications
                     var script = GetModInstance(Assembly.LoadFrom(ModPath + modFile));
 
                     // Check to see if the DLL is actually a screensaver
+                    // TODO: Separate mods from screensavers
                     if (script is null)
                         CustomSaverParser.ParseCustomSaver(ModPath + modFile);
 
