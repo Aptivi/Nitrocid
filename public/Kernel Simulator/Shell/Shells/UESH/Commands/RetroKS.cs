@@ -48,11 +48,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-#if NETCOREAPP
             string ExecutableName = "RetroKS.dll";
-#else
-            string ExecutableName = "RetroKS.exe";
-#endif
             TextWriterColor.Write(Translate.DoTranslation("Checking for updates..."));
 
             // Because api.github.com requires the UserAgent header to be put, else, 403 error occurs. Fortunately for us, "Aptivi" is enough.
@@ -67,18 +63,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 var RetroKSVer = new Version(RetroKS.SelectToken("tag_name").ToString());
                 string RetroKSURL;
                 var RetroKSAssets = RetroKS.SelectToken("assets");
-#if NETCOREAPP
                 RetroKSURL = (string)RetroKSAssets[0]["browser_download_url"];
-#else
-                if (RetroKSAssets.Count() > 1)
-                {
-                    RetroKSURL = (string)RetroKSAssets[1]["browser_download_url"];
-                }
-                else
-                {
-                    RetroKSURL = (string)RetroKSAssets[0]["browser_download_url"];
-                }
-#endif
                 var RetroKSInfo = new KernelUpdateInfo(RetroKSVer, RetroKSURL);
                 SortedVersions.Add(RetroKSInfo);
             }

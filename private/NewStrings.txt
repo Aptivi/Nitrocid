@@ -140,14 +140,14 @@ Invalid hash algorithm. If you're using a custom hash sum driver, check to make 
 Invalid hash sum. Check to make sure that you copied and pasted the hash sum correctly. If you're using a custom hash sum driver, check to make sure that the driver is loaded and that it works as expected.
 Invalid kernel path.
 Invalid manual page. Check to make sure that the mod containing the valid manual pages is loaded.
-Invalid mod. If the mod is a .NET Framework mod, make sure that you're using the .NET Framework version of Kernel Simulator. The same applies to .NET CoreCLR version. If your mod is a valid .NET assembly, check to make sure that it actually implements the interface that is necessary to start the mod.
+Invalid mod. If your mod is a valid .NET assembly, check to make sure that it actually implements the interface that is necessary to start the mod.
 Invalid filesystem path. Check to make sure that it's written correctly.
 Invalid placeholder. Consult the kernel documentation for more information.
 The custom language failed to install. Check to make sure that the language file is correctly formed. Usually, the locale generator does a good job in making the localization information for your custom language.
 The custom language failed to load. Check to make sure that the language file is correctly formed. Usually, the locale generator does a good job in making the localization information for your custom language.
 The custom language failed to uninstall.
 The mail system encountered an error.
-The mod failed to install. Check to make sure that it's a valid mod file. If the mod is a .NET Framework mod, make sure that you're using the .NET Framework version of Kernel Simulator. The same applies to .NET CoreCLR version. If your mod is a valid .NET assembly, check to make sure that it actually implements the interface that is necessary to start the mod.
+The mod failed to install. Check to make sure that it's a valid mod file. If your mod is a valid .NET assembly, check to make sure that it actually implements the interface that is necessary to start the mod.
 The mod contains no parts. Consult with the mod vendor for a new copy.
 The mod uninstallation has failed.
 An error occurred trying to read or set the message of the day.

@@ -99,7 +99,6 @@ namespace KS.Files
         {
             get
             {
-#if NETCOREAPP
                 if (KernelPlatform.IsOnUnix())
                 {
                     return Environment.GetEnvironmentVariable("HOME") + "/.config/retroks/exec/coreclr";
@@ -108,16 +107,6 @@ namespace KS.Files
                 {
                     return (Environment.GetEnvironmentVariable("LOCALAPPDATA") + "/RetroKS/exec/coreclr").Replace("\\", "/");
                 }
-#else
-                if (KernelPlatform.IsOnUnix())
-                {
-                    return Environment.GetEnvironmentVariable("HOME") + "/.config/retroks/exec/fx";
-                }
-                else
-                {
-                    return (Environment.GetEnvironmentVariable("LOCALAPPDATA") + "/RetroKS/exec/fx").Replace(@"\", "/");
-                }
-#endif
             }
         }
 

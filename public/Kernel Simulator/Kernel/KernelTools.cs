@@ -288,11 +288,7 @@ namespace KS.Kernel
 				{
 					try
 					{
-#if NETCOREAPP
 						NetworkTransfer.DownloadFile($"https://github.com/Aptivi/Kernel-Simulator/releases/download/v{Kernel.KernelVersion}-beta/{Kernel.KernelVersion}-dotnet.pdb", Assembly.GetExecutingAssembly().Location.Replace(".exe", ".pdb"));
-#else
-                        NetworkTransfer.DownloadFile($"https://github.com/Aptivi/Kernel-Simulator/releases/download/v{Kernel.KernelVersion}-beta/{Kernel.KernelVersion}.pdb", Assembly.GetExecutingAssembly().Location.Replace(".exe", ".pdb"));
-#endif
 					}
 					catch (Exception)
 					{

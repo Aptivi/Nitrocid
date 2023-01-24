@@ -120,7 +120,7 @@ namespace KS.Kernel.Exceptions
         /// </summary>
         InvalidManpage,
         /// <summary>
-        /// Invalid mod. If the mod is a .NET Framework mod, make sure that you're using the .NET Framework version of Kernel Simulator. The same applies to .NET CoreCLR version. If your mod is a valid .NET assembly, check to make sure that it actually implements the interface that is necessary to start the mod.
+        /// Invalid mod. If your mod is a valid .NET assembly, check to make sure that it actually implements the interface that is necessary to start the mod.
         /// </summary>
         InvalidMod,
         /// <summary>
@@ -148,7 +148,7 @@ namespace KS.Kernel.Exceptions
         /// </summary>
         Mail,
         /// <summary>
-        /// The mod failed to install. Check to make sure that it's a valid mod file. If the mod is a .NET Framework mod, make sure that you're using the .NET Framework version of Kernel Simulator. The same applies to .NET CoreCLR version. If your mod is a valid .NET assembly, check to make sure that it actually implements the interface that is necessary to start the mod.
+        /// The mod failed to install. Check to make sure that it's a valid mod file. If your mod is a valid .NET assembly, check to make sure that it actually implements the interface that is necessary to start the mod.
         /// </summary>
         ModInstall,
         /// <summary>

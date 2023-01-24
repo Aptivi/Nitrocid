@@ -193,10 +193,8 @@ namespace KS.ConsoleBase.Inputs
         /// </summary>
         public static ConsoleKeyInfo DetectKeypress()
         {
-#if NETCOREAPP
             while (!ConsoleWrapper.KeyAvailable)
                 Thread.Sleep(1);
-#endif
             return ConsoleWrapper.ReadKey(true);
         }
 

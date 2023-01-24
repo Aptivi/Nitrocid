@@ -41,7 +41,6 @@ namespace KS.Kernel
         /// Is this system a macOS system?
         /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "We already have IsOnUnix() to do the job, so it returns false when Windows is detected.")]
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("CodeQuality", "IDE0079:Remove unnecessary suppression", Justification = ".NET Framework doesn't have CA1416.")]
         public static bool IsOnMacOS()
         {
             if (IsOnUnix())
