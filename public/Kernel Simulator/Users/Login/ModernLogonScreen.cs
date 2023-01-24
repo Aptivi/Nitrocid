@@ -28,50 +28,31 @@ using KS.ConsoleBase.Inputs.Styles;
 using KS.Drivers.Encryption;
 using System.Linq;
 using KS.Misc.Calendar;
+using System.Threading;
+using KS.Misc.Threading;
+using KS.Kernel.Debugging;
 
 namespace KS.Users.Login
 {
     internal static class ModernLogonScreen
     {
+        private static readonly KernelThread DateTimeUpdateThread = new("Date and Time Update Thread for Modern Logon", true, DateTimeWidgetUpdater);
+
         internal static void ShowLogon()
         {
             // Clear the console
             ConsoleWrapper.CursorVisible = false;
             ConsoleWrapper.Clear();
+            TextWriterColor.Write(Translate.DoTranslation("Loading modern logon... This shouldn't take long."), true, KernelColorType.Progress);
 
-            // Show the date and the time in the modern way
-            // TODO: update this while waiting for input at the same time
-            string timeStr = TimeDateRenderers.RenderTime(TimeDate.TimeDate.FormatType.Short);
-            var figFont = FigletTools.GetFigletFont("Banner3");
-            int figWidth = FigletTools.GetFigletWidth(timeStr, figFont) / 2;
-            int figHeight = FigletTools.GetFigletHeight(timeStr, figFont) / 2;
-            int consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidth;
-            int consoleY = (ConsoleWrapper.WindowHeight / 2) - figHeight;
-            FigletWhereColor.WriteFigletWhere(timeStr, consoleX, consoleY, true, figFont, KernelColorType.Stage);
-
-            // Print the date
-            string dateStr = TimeDateRenderers.RenderDate();
-            int consoleInfoX = (ConsoleWrapper.WindowWidth / 2) - (dateStr.Length / 2);
-            int consoleInfoY = (ConsoleWrapper.WindowHeight / 2) + figHeight + 2;
-            TextWriterWhereColor.WriteWhere(dateStr, consoleInfoX, consoleInfoY);
-
-            // Print the date using the alternative calendar, if any
-            if (CalendarTools.EnableAltCalendar)
-            {
-                string dateAltStr = TimeDateRenderers.RenderDate(CalendarTools.GetCultureFromCalendar(CalendarTools.AltCalendar));
-                int consoleAltInfoX = (ConsoleWrapper.WindowWidth / 2) - (dateAltStr.Length / 2);
-                int consoleAltInfoY = (ConsoleWrapper.WindowHeight / 2) + figHeight + 3;
-                TextWriterWhereColor.WriteWhere(dateAltStr, consoleAltInfoX, consoleAltInfoY);
-            }
-
-            // Print the instructions
-            string instStr = Translate.DoTranslation("Press any key to start...");
-            int consoleInstX = (ConsoleWrapper.WindowWidth / 2) - (dateStr.Length / 2);
-            int consoleInstY = ConsoleWrapper.WindowHeight - 2;
-            TextWriterWhereColor.WriteWhere(instStr, consoleInstX, consoleInstY);
+            // Start the date and time update thread to show time and date in the modern way
+            DateTimeUpdateThread.Start();
 
             // Wait for the keypress
             Input.DetectKeypress();
+
+            // Stop the thread
+            DateTimeUpdateThread.Stop();
 
             // Now, clear the console again and prompt for username
             bool loggedIn = false;
@@ -106,6 +87,58 @@ namespace KS.Users.Login
             // Finally, launch the shell
             ConsoleWrapper.Clear();
             Login.SignIn(userName);
+        }
+
+        private static void DateTimeWidgetUpdater()
+        {
+            try
+            {
+                string cachedTimeStr = "";
+                while (true)
+                {
+                    // Print the time
+                    string timeStr = TimeDateRenderers.RenderTime(TimeDate.TimeDate.FormatType.Short);
+                    if (timeStr != cachedTimeStr)
+                    {
+                        ConsoleWrapper.Clear();
+                        cachedTimeStr = TimeDateRenderers.RenderTime(TimeDate.TimeDate.FormatType.Short);
+                        var figFont = FigletTools.GetFigletFont("Banner3");
+                        int figWidth = FigletTools.GetFigletWidth(timeStr, figFont) / 2;
+                        int figHeight = FigletTools.GetFigletHeight(timeStr, figFont) / 2;
+                        int consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidth;
+                        int consoleY = (ConsoleWrapper.WindowHeight / 2) - figHeight;
+                        FigletWhereColor.WriteFigletWhere(timeStr, consoleX, consoleY, true, figFont, KernelColorType.Stage);
+
+                        // Print the date
+                        string dateStr = TimeDateRenderers.RenderDate();
+                        int consoleInfoX = (ConsoleWrapper.WindowWidth / 2) - (dateStr.Length / 2);
+                        int consoleInfoY = (ConsoleWrapper.WindowHeight / 2) + figHeight + 2;
+                        TextWriterWhereColor.WriteWhere(dateStr, consoleInfoX, consoleInfoY);
+
+                        // Print the date using the alternative calendar, if any
+                        if (CalendarTools.EnableAltCalendar)
+                        {
+                            string dateAltStr = TimeDateRenderers.RenderDate(CalendarTools.GetCultureFromCalendar(CalendarTools.AltCalendar));
+                            int consoleAltInfoX = (ConsoleWrapper.WindowWidth / 2) - (dateAltStr.Length / 2);
+                            int consoleAltInfoY = (ConsoleWrapper.WindowHeight / 2) + figHeight + 3;
+                            TextWriterWhereColor.WriteWhere(dateAltStr, consoleAltInfoX, consoleAltInfoY);
+                        }
+
+                        // Print the instructions
+                        string instStr = Translate.DoTranslation("Press any key to start...");
+                        int consoleInstX = (ConsoleWrapper.WindowWidth / 2) - (dateStr.Length / 2);
+                        int consoleInstY = ConsoleWrapper.WindowHeight - 2;
+                        TextWriterWhereColor.WriteWhere(instStr, consoleInstX, consoleInstY);
+                    }
+
+                    // Wait for 1 second
+                    Thread.Sleep(1000);
+                }
+            }
+            catch (ThreadInterruptedException)
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "User pressed a key to exit the date and time update thread for modern logon. Proceeding...");
+            }
         }
     }
 }
