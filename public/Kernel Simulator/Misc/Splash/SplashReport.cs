@@ -151,7 +151,7 @@ namespace KS.Misc.Splash
                     }
                     else if (!Flags.QuietKernel)
                     {
-                        TextWriterColor.Write($"[{_Progress}%] Error: {Text}", true, KernelColorType.Error, Vars);
+                        TextWriterColor.Write($"  [{_Progress}%] Error: {Text}", true, KernelColorType.Error, Vars);
                     }
                 }
             }
