@@ -53,6 +53,7 @@ using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs.Styles;
 using KS.Misc.Writers.MiscWriters;
+using KS.Misc.Screensaver.Customized;
 
 namespace KS.Kernel
 {
@@ -206,6 +207,8 @@ namespace KS.Kernel
                     {
                         if (Flags.StartKernelMods)
                             ModManager.StartMods();
+                        if (Flags.StartCustomScreensavers)
+                            CustomSaverParser.ParseCustomSavers();
                     }
                     else
                     {

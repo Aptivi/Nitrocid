@@ -18,9 +18,12 @@
 
 using System;
 using System.IO;
+using System.Linq;
 using System.Reflection;
+using Extensification.DictionaryExts;
 using KS.Files;
 using KS.Files.Querying;
+using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Splash;
@@ -32,6 +35,45 @@ namespace KS.Misc.Screensaver.Customized
     /// </summary>
     public static class CustomSaverParser
     {
+
+        /// <summary>
+        /// Parses all the custom screensavers found in KSScreensavers
+        /// </summary>
+        public static void ParseCustomSavers()
+        {
+            string SaversPath = Paths.GetKernelPath(KernelPathType.Screensavers);
+            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", Flags.SafeMode);
+            if (!Flags.SafeMode)
+            {
+                // We're not in safe mode. We're good now.
+                if (!Checking.FolderExists(SaversPath))
+                    Directory.CreateDirectory(SaversPath);
+                int count = Directory.EnumerateFiles(SaversPath).Count();
+                DebugWriter.WriteDebug(DebugLevel.I, "Files count: {0}", count);
+
+                // Check to see if we have screensavers
+                if (count != 0)
+                {
+                    SplashReport.ReportProgress(Translate.DoTranslation("Loading custom screensavers..."), 0);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Screensavers are being loaded. Total mods = {0}", count);
+                    foreach (string saverFilePath in Directory.EnumerateFiles(SaversPath))
+                    {
+                        string saverFile = Path.GetFileName(saverFilePath);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Starting screensaver {0}...", saverFile);
+                        SplashReport.ReportProgress(Translate.DoTranslation("Loading screensaver") + " {0}...", 0, saverFile);
+                        ParseCustomSaver(saverFilePath);
+                    }
+                }
+                else
+                {
+                    SplashReport.ReportProgress(Translate.DoTranslation("No screensavers detected."), 0);
+                }
+            }
+            else
+            {
+                SplashReport.ReportProgressError(Translate.DoTranslation("Parsing screensavers not allowed on safe mode."));
+            }
+        }
 
         /// <summary>
         /// Compiles the custom screensaver file and configures it so it can be viewed
@@ -64,7 +106,9 @@ namespace KS.Misc.Screensaver.Customized
                             string SaverName = ScreensaverBase.ScreensaverName;
                             CustomSaverInfo SaverInstance;
                             SaverInstance = new CustomSaverInfo(SaverName, SaverFileName, FinalScreensaverPath, ScreensaverBase);
-                            CustomSaverTools.CustomSavers.Add(SaverName, SaverInstance);
+                            if (CustomSaverTools.CustomSavers.ContainsKey(SaverName))
+                                SplashReport.ReportProgress(Translate.DoTranslation("{0} has already been initialized. Updating screensaver..."), 0, SaverFileName);
+                            CustomSaverTools.CustomSavers.AddOrModify(SaverName, SaverInstance);
                         }
                         else
                         {

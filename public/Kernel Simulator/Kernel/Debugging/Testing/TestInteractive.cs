@@ -103,6 +103,7 @@ namespace KS.Kernel.Debugging.Testing
             { "TestPresentation",       new Facades.TestPresentation() },
             { "InternetCheck",          new Facades.InternetCheck() },
             { "NetworkCheck",           new Facades.NetworkCheck() },
+            { "LoadSavers",             new Facades.LoadSavers() },
         };
 
         internal static void Open()

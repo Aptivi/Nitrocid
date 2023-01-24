@@ -74,11 +74,6 @@ namespace KS.Modifications
                     // Check to see if the DLL is actually a mod
                     var script = GetModInstance(Assembly.LoadFrom(ModPath + modFile));
 
-                    // Check to see if the DLL is actually a screensaver
-                    // TODO: Separate mods from screensavers
-                    if (script is null)
-                        CustomSaverParser.ParseCustomSaver(ModPath + modFile);
-
                     // If we didn't find anything, abort
                     if (script is null)
                         throw new KernelException(KernelExceptionType.InvalidMod, Translate.DoTranslation("The modfile is invalid."));

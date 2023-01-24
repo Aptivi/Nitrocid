@@ -73,23 +73,11 @@ namespace KS.Modifications
                 if (count != 0)
                 {
                     SplashReport.ReportProgress(Translate.DoTranslation("mod: Loading mods..."), 0);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Mods are being loaded. Total mods with screensavers = {0}", count);
-                    int CurrentCount = 1;
+                    DebugWriter.WriteDebug(DebugLevel.I, "Mods are being loaded. Total mods = {0}", count);
                     foreach (string modFilePath in Directory.EnumerateFiles(ModPath))
                     {
                         string modFile = Path.GetFileName(modFilePath);
-                        if (!GetBlacklistedMods().Contains(modFile))
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} is not blacklisted.", modFile);
-                            SplashReport.ReportProgress("[{1}/{2}] " + Translate.DoTranslation("Starting mod") + " {0}...", 0, modFile, CurrentCount.ToString(), count.ToString());
-                            ModParser.ParseMod(modFile);
-                        }
-                        else
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.W, "Trying to start blacklisted mod {0}. Ignoring...", modFile);
-                            SplashReport.ReportProgress("[{1}/{2}] " + Translate.DoTranslation("Mod {0} is blacklisted."), 0, modFile, CurrentCount.ToString(), count.ToString());
-                        }
-                        CurrentCount += 1;
+                        StartMod(modFile);
                     }
                 }
                 else

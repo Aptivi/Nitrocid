@@ -360,5 +360,13 @@ Current time in {0} is {1}
 Registers your name to your remote debug device
 Successfully registered! Hi, {0}!
 Disconnects from the remote debugger
+Loading custom screensavers...
+Loading screensaver
+Load custom screensavers on boot
+Automatically load the custom screensavers on boot.
+Starts all custom screensavers
+No screensavers detected.
+Parsing screensavers not allowed on safe mode.
+{0} has already been initialized. Updating screensaver...
 
 ==========================================================================================================================================

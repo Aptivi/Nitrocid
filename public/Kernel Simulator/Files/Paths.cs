@@ -220,84 +220,39 @@ namespace KS.Files
             Filesystem.NeutralizePath(AppDataPath + "/KSJournal.json");
 
         /// <summary>
+        /// Screensavers path
+        /// </summary>
+        public static string ScreensaversPath =>
+            Filesystem.NeutralizePath(AppDataPath + "/KSScreensavers/");
+
+        /// <summary>
         /// Gets the neutralized kernel path
         /// </summary>
         /// <param name="PathType">Kernel path type</param>
         /// <returns>A kernel path</returns>
         public static string GetKernelPath(KernelPathType PathType)
         {
-            switch (PathType)
+            return PathType switch
             {
-                case KernelPathType.Aliases:
-                    {
-                        return AliasesPath;
-                    }
-                case KernelPathType.Configuration:
-                    {
-                        return ConfigurationPath;
-                    }
-                case KernelPathType.CustomLanguages:
-                    {
-                        return CustomLanguagesPath;
-                    }
-                case KernelPathType.CustomSaverSettings:
-                    {
-                        return CustomSaverSettingsPath;
-                    }
-                case KernelPathType.CustomSplashes:
-                    {
-                        return CustomSplashesPath;
-                    }
-                case KernelPathType.DebugDevNames:
-                    {
-                        return DebugDevNamesPath;
-                    }
-                case KernelPathType.Debugging:
-                    {
-                        return DebuggingPath;
-                    }
-                case KernelPathType.Events:
-                    {
-                        return EventsPath;
-                    }
-                case KernelPathType.FTPSpeedDial:
-                    {
-                        return FTPSpeedDialPath;
-                    }
-                case KernelPathType.MAL:
-                    {
-                        return MALPath;
-                    }
-                case KernelPathType.Mods:
-                    {
-                        return ModsPath;
-                    }
-                case KernelPathType.MOTD:
-                    {
-                        return MOTDPath;
-                    }
-                case KernelPathType.Reminders:
-                    {
-                        return RemindersPath;
-                    }
-                case KernelPathType.SFTPSpeedDial:
-                    {
-                        return SFTPSpeedDialPath;
-                    }
-                case KernelPathType.Users:
-                    {
-                        return UsersPath;
-                    }
-                case KernelPathType.Journalling:
-                    {
-                        return JournallingPath;
-                    }
-
-                default:
-                    {
-                        throw new KernelException(KernelExceptionType.InvalidKernelPath, Translate.DoTranslation("Invalid kernel path type."));
-                    }
-            }
+                KernelPathType.Aliases =>               AliasesPath,
+                KernelPathType.Configuration =>         ConfigurationPath,
+                KernelPathType.CustomLanguages =>       CustomLanguagesPath,
+                KernelPathType.CustomSaverSettings =>   CustomSaverSettingsPath,
+                KernelPathType.CustomSplashes =>        CustomSplashesPath,
+                KernelPathType.DebugDevNames =>         DebugDevNamesPath,
+                KernelPathType.Debugging =>             DebuggingPath,
+                KernelPathType.Events =>                EventsPath,
+                KernelPathType.FTPSpeedDial =>          FTPSpeedDialPath,
+                KernelPathType.MAL =>                   MALPath,
+                KernelPathType.Mods =>                  ModsPath,
+                KernelPathType.MOTD =>                  MOTDPath,
+                KernelPathType.Reminders =>             RemindersPath,
+                KernelPathType.SFTPSpeedDial =>         SFTPSpeedDialPath,
+                KernelPathType.Users =>                 UsersPath,
+                KernelPathType.Journalling =>           JournallingPath,
+                KernelPathType.Screensavers =>          ScreensaversPath,
+                _ => throw new KernelException(KernelExceptionType.InvalidKernelPath, Translate.DoTranslation("Invalid kernel path type.")),
+            };
         }
 
     }

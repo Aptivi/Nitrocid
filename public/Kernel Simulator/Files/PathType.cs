@@ -86,6 +86,10 @@ namespace KS.Files
         /// <summary>
         /// Journal file
         /// </summary>
-        Journalling
+        Journalling,
+        /// <summary>
+        /// Custom screensaver directory
+        /// </summary>
+        Screensavers
     }
 }

@@ -243,6 +243,10 @@ namespace KS.Kernel
         /// </summary>
         public static bool ConsoleSupportsTrueColor { get; set; } = true;
         /// <summary>
+        /// Whether to start the screensavers on boot
+        /// </summary>
+        public static bool StartCustomScreensavers { get; set; } = true;
+        /// <summary>
         /// Whether the input history is enabled
         /// </summary>
         public static bool InputHistoryEnabled
