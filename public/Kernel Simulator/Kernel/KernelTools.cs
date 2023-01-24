@@ -202,7 +202,6 @@ namespace KS.Kernel
                 TextWriterColor.Write("  KS: " + Translate.DoTranslation("Running from GRILO?") + $" {KernelPlatform.IsRunningFromGrilo()}");
                 TextWriterColor.Write("  KSAPI: " + $"v{KernelApiVersion}");
             }
-            TextWriterColor.Write();
 
             // Load splash
             SplashManager.OpenSplash();
