@@ -35,6 +35,7 @@ using KS.Kernel.Exceptions;
 using System.Collections.Generic;
 using System.Net.Sockets;
 using System.Net;
+using Org.BouncyCastle.Utilities;
 
 namespace KS.Drivers.Network
 {
@@ -351,7 +352,6 @@ namespace KS.Drivers.Network
             var hostnameEntry = Dns.GetHostEntry(hostname);
 
             // Enumerate through different addresses
-            // TODO: Add support for IPv6
             for (int i = 0; i < hostnameEntry.AddressList.Length; i++)
             {
                 var address = hostnameEntry.AddressList[i];
@@ -376,6 +376,14 @@ namespace KS.Drivers.Network
                         if (reply.Status == IPStatus.Success)
                             onlineAddresses.Add(new IPAddress(bytes));
                     }
+                }
+                else if (address.AddressFamily == AddressFamily.InterNetworkV6)
+                {
+                    var reply = NetworkTools.PingAddress("ff02::1", 10);
+
+                    // Check the reply
+                    if (reply.Status == IPStatus.Success)
+                        onlineAddresses.Add(reply.Address);
                 }
             }
 
