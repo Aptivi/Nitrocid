@@ -36,7 +36,7 @@ namespace KS.Drivers.Regexp
         {
             try
             {
-                _ = new Regex(pattern);
+                Regex.Match(string.Empty, pattern);
                 return true;
             }
             catch 
