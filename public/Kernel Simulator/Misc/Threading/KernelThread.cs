@@ -159,7 +159,7 @@ namespace KS.Misc.Threading
 
             try
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Waiting for kernel thread {0} with ID {1} for {0} milliseconds", BaseThread.Name, BaseThread.ManagedThreadId, timeoutMs);
+                DebugWriter.WriteDebug(DebugLevel.I, "Waiting for kernel thread {0} with ID {1} for {2} milliseconds", BaseThread.Name, BaseThread.ManagedThreadId, timeoutMs);
                 return BaseThread.Join(timeoutMs);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException) && ex.GetType().Name != nameof(ThreadStateException))
