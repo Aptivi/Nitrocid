@@ -124,7 +124,7 @@ namespace KS.Misc.Writers.FancyWriters
             RepeatTimes = ConsoleBase.ConsoleWrapper.WindowWidth - ConsoleBase.ConsoleWrapper.CursorLeft - Margin * 2;
             if (Margin > 0)
                 TextWriterColor.Write(" ".Repeat(Margin), false, SeparatorForegroundColor, BackgroundColor);
-            TextWriterColor.Write("-".Repeat(RepeatTimes), true, SeparatorForegroundColor, BackgroundColor);
+            TextWriterColor.Write("═".Repeat(RepeatTimes), true, SeparatorForegroundColor, BackgroundColor);
 
             // Fix CursorTop value on Unix systems.
             if (KernelPlatform.IsOnUnix())
@@ -160,14 +160,11 @@ namespace KS.Misc.Writers.FancyWriters
                     }
 
                     // Now, write the cell value
+                    string FinalRowValue = RowValue.Truncate(ColumnCapacity - 3 - Margin);
                     if (ColoredCell)
-                    {
-                        TextWriterWhereColor.WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, CellColor, CellBackgroundColor);
-                    }
+                        TextWriterWhereColor.WriteWhere(FinalRowValue, ColumnPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, CellColor, CellBackgroundColor);
                     else
-                    {
-                        TextWriterWhereColor.WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, ValueForegroundColor, BackgroundColor);
-                    }
+                        TextWriterWhereColor.WriteWhere(FinalRowValue, ColumnPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, ValueForegroundColor, BackgroundColor);
                 }
                 TextWriterColor.Write();
 
@@ -179,7 +176,7 @@ namespace KS.Misc.Writers.FancyWriters
                     RepeatTimes = ConsoleBase.ConsoleWrapper.WindowWidth - ConsoleBase.ConsoleWrapper.CursorLeft - Margin * 2;
                     if (Margin > 0)
                         TextWriterColor.Write(" ".Repeat(Margin), false, SeparatorForegroundColor, BackgroundColor);
-                    TextWriterColor.Write("-".Repeat(RepeatTimes), true, SeparatorForegroundColor, BackgroundColor);
+                    TextWriterColor.Write("═".Repeat(RepeatTimes), true, SeparatorForegroundColor, BackgroundColor);
 
                     // Fix CursorTop value on Unix systems.
                     if (KernelPlatform.IsOnUnix())
