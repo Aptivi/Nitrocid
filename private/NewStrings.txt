@@ -371,5 +371,6 @@ Parsing screensavers not allowed on safe mode.
 Loading modern logon... This shouldn't take long.
 Welcome to Nitrocid Kernel! - Version
 Welcome to Nitrocid Kernel!
+The thread is not ready yet. The user code might have forgotten to regenerate the kernel thread after stopping it manually.
 
 ==========================================================================================================================================

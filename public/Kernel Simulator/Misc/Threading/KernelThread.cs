@@ -31,6 +31,7 @@ namespace KS.Misc.Threading
     {
 
         private Thread BaseThread;
+        private bool isReady;
         private readonly ThreadStart ThreadDelegate;
         private readonly ThreadStart InitialThreadDelegate;
         private readonly ParameterizedThreadStart ThreadDelegateParameterized;
@@ -53,6 +54,11 @@ namespace KS.Misc.Threading
         public bool IsAlive => BaseThread.IsAlive;
 
         /// <summary>
+        /// Is the kernel thread ready to start?
+        /// </summary>
+        public bool IsReady => isReady;
+
+        /// <summary>
         /// Makes a new kernel thread
         /// </summary>
         /// <param name="ThreadName">The thread name</param>
@@ -67,6 +73,7 @@ namespace KS.Misc.Threading
             ThreadDelegate = Executor;
             Name = ThreadName;
             IsBackground = Background;
+            isReady = true;
             DebugWriter.WriteDebug(DebugLevel.I, "Made a new kernel thread {0} with ID {1}", ThreadName, BaseThread.ManagedThreadId);
             ThreadManager.KernelThreads.Add(this);
         }
@@ -86,6 +93,7 @@ namespace KS.Misc.Threading
             ThreadDelegateParameterized = Executor;
             Name = ThreadName;
             IsBackground = Background;
+            isReady = true;
             DebugWriter.WriteDebug(DebugLevel.I, "Made a new kernel thread {0} with ID {1}", ThreadName, BaseThread.ManagedThreadId);
             ThreadManager.KernelThreads.Add(this);
         }
@@ -95,6 +103,9 @@ namespace KS.Misc.Threading
         /// </summary>
         public void Start()
         {
+            if (!IsReady)
+                throw new KernelException(KernelExceptionType.ThreadNotReadyYet);
+
             DebugWriter.WriteDebug(DebugLevel.I, "Starting kernel thread {0} with ID {1}", BaseThread.Name, BaseThread.ManagedThreadId);
             BaseThread.Start();
         }
@@ -105,6 +116,9 @@ namespace KS.Misc.Threading
         /// <param name="Parameter">The parameter class instance containing multiple parameters, or a usual single parameter</param>
         public void Start(object Parameter)
         {
+            if (!IsReady)
+                throw new KernelException(KernelExceptionType.ThreadNotReadyYet);
+
             DebugWriter.WriteDebug(DebugLevel.I, "Starting kernel thread {0} with ID {1} with parameters", BaseThread.Name, BaseThread.ManagedThreadId);
             BaseThread.Start(Parameter);
         }
@@ -112,21 +126,20 @@ namespace KS.Misc.Threading
         /// <summary>
         /// Stops the kernel thread
         /// </summary>
-        public void Stop()
+        public void Stop() =>
+            Stop(true);
+
+        /// <summary>
+        /// Stops the kernel thread
+        /// </summary>
+        /// <param name="regen">Whether to regenerate the kernel thread</param>
+        public void Stop(bool regen)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Stopping kernel thread {0} with ID {1}", Name, BaseThread.ManagedThreadId);
             BaseThread.Interrupt();
-
-            // Remake the thread to avoid illegal state exceptions
-            if (IsParameterized)
-            {
-                BaseThread = new Thread(ThreadDelegateParameterized) { Name = Name, IsBackground = IsBackground };
-            }
-            else
-            {
-                BaseThread = new Thread(ThreadDelegate) { Name = Name, IsBackground = IsBackground };
-            }
-            DebugWriter.WriteDebug(DebugLevel.I, "Made a new kernel thread {0} with ID {1}", Name, BaseThread.ManagedThreadId);
+            isReady = false;
+            if (regen)
+                Regen();
         }
 
         /// <summary>
@@ -168,6 +181,20 @@ namespace KS.Misc.Threading
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;
+        }
+
+        /// <summary>
+        /// Regenerates the kernel thread
+        /// </summary>
+        public void Regen()
+        {
+            // Remake the thread to avoid illegal state exceptions
+            if (IsParameterized)
+                BaseThread = new Thread(ThreadDelegateParameterized) { Name = Name, IsBackground = IsBackground };
+            else
+                BaseThread = new Thread(ThreadDelegate) { Name = Name, IsBackground = IsBackground };
+            DebugWriter.WriteDebug(DebugLevel.I, "Made a new kernel thread {0} with ID {1}", Name, BaseThread.ManagedThreadId);
+            isReady = true;
         }
 
         private void StartInternalNormal(ThreadStart action)

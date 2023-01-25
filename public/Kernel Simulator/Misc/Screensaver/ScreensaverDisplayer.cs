@@ -69,7 +69,7 @@ namespace KS.Misc.Screensaver
         {
             if (Screensaver.InSaver)
             {
-                ScreensaverDisplayerThread.Stop();
+                ScreensaverDisplayerThread.Stop(false);
                 Screensaver.SaverAutoReset.WaitOne();
 
                 // Raise event
@@ -77,6 +77,7 @@ namespace KS.Misc.Screensaver
                 EventsManager.FireEvent(EventType.PostShowScreensaver);
                 Screensaver.inSaver = false;
                 Flags.ScrnTimeReached = false;
+                ScreensaverDisplayerThread.Regen();
             }
         }
 

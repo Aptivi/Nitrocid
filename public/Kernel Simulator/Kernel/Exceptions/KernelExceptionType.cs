@@ -286,6 +286,10 @@ namespace KS.Kernel.Exceptions
         /// <summary>
         /// Driver doesn't exist. Check to make sure that you've written the driver name correctly, and that the driver is registered properly.
         /// </summary>
-        NoSuchDriver
+        NoSuchDriver,
+        /// <summary>
+        /// The thread is not ready yet. The user code might have forgotten to regenerate the kernel thread after stopping it manually.
+        /// </summary>
+        ThreadNotReadyYet
     }
 }
