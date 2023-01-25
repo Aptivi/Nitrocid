@@ -257,7 +257,7 @@ If you want the simulation of color blindness to be simple, enable this. Please 
 Language
 Specifies the kernel language.
 Enables terminal debug mode
-Welcome to the kernel! Since this is the first time you start the kernel up, we'll initiate a simple console testing to determine whether it supports true color. Press any key to continue.
+Welcome to Nitrocid Kernel! Since this is the first time you start Nitrocid Kernel up, we'll initiate a simple console testing to determine whether it supports true color. Press any key to continue.
 Do these ramps look right to you? They should transition smoothly.
 Console supports true color
 If you are sure that the console supports true color, or if you want to change your terminal to a terminal that supports true color, change this value.
@@ -308,7 +308,7 @@ Enter the password for user
 Wrong password for user.
 Press any key to start...
 Kernel first-run
-Welcome to the kernel! Thank you for trying the kernel out!
+Welcome to Nitrocid Kernel! Thank you for trying it out!
 To get started, press ENTER.
 Create your first user
 We'll help you create your own username. Select any name you want. This could be your nickname or your short name, as long as your username doesn't contain spaces and special characters.
@@ -369,5 +369,7 @@ No screensavers detected.
 Parsing screensavers not allowed on safe mode.
 {0} has already been initialized. Updating screensaver...
 Loading modern logon... This shouldn't take long.
+Welcome to Nitrocid Kernel! - Version
+Welcome to Nitrocid Kernel!
 
 ==========================================================================================================================================

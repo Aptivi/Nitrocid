@@ -46,7 +46,7 @@ namespace KS.Misc.Writers.MiscWriters
         public static string GetCustomBanner()
         {
             // The default message to write
-            string MessageWrite = "      >> " + Translate.DoTranslation("Welcome to the kernel! - Version {0}") + " <<      ";
+            string MessageWrite = "     --> " + Translate.DoTranslation("Welcome to Nitrocid Kernel! - Version") + " v{0} <--     ";
 
             // Check to see if user specified custom message
             if (!string.IsNullOrWhiteSpace(customBanner))

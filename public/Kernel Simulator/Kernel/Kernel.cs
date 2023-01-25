@@ -83,7 +83,7 @@ namespace KS.Kernel
 #endif
 
         // Final console window title
-        internal readonly static string ConsoleTitle = $"[{ReleaseSpecifier}] - Kernel Simulator v{KernelTools.KernelVersion} (API v{KernelTools.KernelApiVersion})";
+        internal readonly static string ConsoleTitle = $"[{ReleaseSpecifier}] - Nitrocid Kernel v{KernelTools.KernelVersion} (API v{KernelTools.KernelApiVersion})";
 
         /// <summary>
         /// Entry point
@@ -91,12 +91,12 @@ namespace KS.Kernel
         internal static void Main(string[] Args)
         {
             // Set main thread name
-            Thread.CurrentThread.Name = "Main Kernel Thread";
+            Thread.CurrentThread.Name = "Main Nitrocid Kernel Thread";
 
             // We no longer support macOS
             if (KernelPlatform.IsOnMacOS())
             {
-                DriverHandler.CurrentConsoleDriver.WritePlain("We apologize for your inconvenience, but we have ended support for running Kernel Simulator on macOS. Until further notice, Kernel Simulator can't continue.", true);
+                DriverHandler.CurrentConsoleDriver.WritePlain("We apologize for your inconvenience, but we have ended support for running Nitrocid Kernel on macOS. Until further notice, Nitrocid Kernel can't continue.", true);
                 Environment.Exit(100);
             }
 
@@ -178,7 +178,7 @@ namespace KS.Kernel
                     // If the two files are not found, create two MOTD files with current config.
                     if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.MOTD)))
                     {
-                        MotdParse.SetMotd(Translate.DoTranslation("Welcome to Kernel!"));
+                        MotdParse.SetMotd(Translate.DoTranslation("Welcome to Nitrocid Kernel!"));
                         SplashReport.ReportProgress(Translate.DoTranslation("Generated default MOTD."), 3);
                     }
                     if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.MAL)))
@@ -256,7 +256,7 @@ namespace KS.Kernel
                     {
                         Flags.FirstTime = false;
                         TextWriterColor.Write();
-                        TextWriterColor.Write(Translate.DoTranslation("Welcome to the kernel! Since this is the first time you start the kernel up, we'll initiate a simple console testing to determine whether it supports true color. Press any key to continue."));
+                        TextWriterColor.Write(Translate.DoTranslation("Welcome to Nitrocid Kernel! Since this is the first time you start Nitrocid Kernel up, we'll initiate a simple console testing to determine whether it supports true color. Press any key to continue."));
                         Input.DetectKeypress();
                         ConsoleWrapper.Clear();
 

@@ -60,7 +60,7 @@ namespace KS.Kernel
                                 { 
                                     Arguments = new object[] 
                                     { 
-                                        Translate.DoTranslation("Welcome to the kernel! Thank you for trying the kernel out!") + "\n"
+                                        Translate.DoTranslation("Welcome to Nitrocid Kernel! Thank you for trying it out!") + "\n"
                                     }
                                 },
                                 new TextElement()
