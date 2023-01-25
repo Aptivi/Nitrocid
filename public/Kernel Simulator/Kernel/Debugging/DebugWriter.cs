@@ -172,7 +172,7 @@ namespace KS.Kernel.Debugging
                 for (int i = 0; i <= NewStackTraces.Count - 1; i++)
                     StkTrcs.AddRange(NewStackTraces[i].SplitNewLines());
                 for (int i = 0; i <= StkTrcs.Count - 1; i++)
-                    WriteDebug(DebugLevel.E, StkTrcs[i]);
+                    WriteDebug(DebugLevel.T, StkTrcs[i]);
                 DebugStackTraces.AddRange(NewStackTraces);
             }
         }
