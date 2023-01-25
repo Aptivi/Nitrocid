@@ -262,10 +262,8 @@ namespace KS.Misc.Screensaver.Displays
                     ColorTools.SetConsoleColor(new Color(ColorNum), true, true);
             }
 
-            // Set max height according to platform
-            int MaxWindowHeight = ConsoleWrapper.WindowHeight;
-            if (KernelPlatform.IsOnUnix())
-                MaxWindowHeight -= 1;
+            // Set max height
+            int MaxWindowHeight = ConsoleWrapper.WindowHeight - 1;
             DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Max height {0}", MaxWindowHeight);
 
             // Print a space {Column} times until the entire screen is wiped.

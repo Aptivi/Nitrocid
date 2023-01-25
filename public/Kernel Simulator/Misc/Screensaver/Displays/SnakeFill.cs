@@ -227,10 +227,8 @@ namespace KS.Misc.Screensaver.Displays
                     ColorTools.SetConsoleColor(new Color(ColorNum), true, true);
             }
 
-            // Set max height according to platform
-            int MaxWindowHeight = ConsoleWrapper.WindowHeight;
-            if (KernelPlatform.IsOnUnix())
-                MaxWindowHeight -= 1;
+            // Set max height
+            int MaxWindowHeight = ConsoleWrapper.WindowHeight - 1;
             DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Max height {0}", MaxWindowHeight);
 
             // Fill the screen!
@@ -243,7 +241,7 @@ namespace KS.Misc.Screensaver.Displays
                 // Select the height and fill the entire screen
                 if (reverseHeightAxis)
                 {
-                    for (int y = MaxWindowHeight - 1; y >= 0; y--)
+                    for (int y = MaxWindowHeight; y >= 0; y--)
                     {
                         if (ConsoleResizeListener.WasResized(false))
                             break;
@@ -255,7 +253,7 @@ namespace KS.Misc.Screensaver.Displays
                 }
                 else
                 {
-                    for (int y = 0; y < MaxWindowHeight; y++)
+                    for (int y = 0; y <= MaxWindowHeight; y++)
                     {
                         if (ConsoleResizeListener.WasResized(false))
                             break;
