@@ -168,6 +168,11 @@ namespace KS.ConsoleBase.Inputs
         public static ConsoleKeyInfo ReadKeyTimeoutUnsafe(bool Intercept, TimeSpan Timeout)
         {
             SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable, Timeout);
+            if (!ConsoleWrapper.KeyAvailable)
+            {
+                ScreensaverDisplayer.BailFromScreensaver();
+                throw new KernelException(KernelExceptionType.ConsoleReadTimeout, Translate.DoTranslation("User didn't provide any input in a timely fashion."));
+            }
             ScreensaverDisplayer.BailFromScreensaver();
             return ConsoleWrapper.ReadKey(Intercept);
         }
