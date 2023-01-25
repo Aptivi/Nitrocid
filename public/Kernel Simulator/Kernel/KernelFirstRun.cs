@@ -108,7 +108,7 @@ namespace KS.Kernel
                                         (args) => 
                                             user = string.IsNullOrWhiteSpace((string)args[0]) ? "owner" : (string)args[0]
                                 },
-                                new InputElement()
+                                new MaskedInputElement()
                                 {
                                     Arguments = new object[]
                                     {
