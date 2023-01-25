@@ -74,8 +74,7 @@ namespace KS.ConsoleBase.Inputs
             string Output = ReadLineUnsafe(InputText, DefaultValue, UseCtrlCAsInput);
 
             // If in lock mode, wait until release
-            while (Screensaver.LockMode)
-                Thread.Sleep(1);
+            SpinWait.SpinUntil(() => !Screensaver.LockMode);
             return Output;
         }
 
@@ -116,8 +115,7 @@ namespace KS.ConsoleBase.Inputs
             string pass = ReadLineNoInputUnsafe(MaskChar);
 
             // If in lock mode, wait until release
-            while (Screensaver.LockMode)
-                Thread.Sleep(1);
+            SpinWait.SpinUntil(() => !Screensaver.LockMode);
             return pass;
         }
 
@@ -158,8 +156,7 @@ namespace KS.ConsoleBase.Inputs
             var Output = ReadKeyTimeoutUnsafe(Intercept, Timeout);
 
             // If in lock mode, wait until release
-            while (Screensaver.LockMode)
-                Thread.Sleep(1);
+            SpinWait.SpinUntil(() => !Screensaver.LockMode);
             return Output;
         }
 
@@ -170,20 +167,7 @@ namespace KS.ConsoleBase.Inputs
         /// <param name="Timeout">Timeout</param>
         public static ConsoleKeyInfo ReadKeyTimeoutUnsafe(bool Intercept, TimeSpan Timeout)
         {
-            var CurrentMilliseconds = 0d;
-            while (!ConsoleWrapper.KeyAvailable)
-            {
-                if (!(CurrentMilliseconds == Timeout.TotalMilliseconds))
-                {
-                    CurrentMilliseconds += 1d;
-                }
-                else
-                {
-                    ScreensaverDisplayer.BailFromScreensaver();
-                    throw new KernelException(KernelExceptionType.ConsoleReadTimeout, Translate.DoTranslation("User didn't provide any input in a timely fashion."));
-                }
-                Thread.Sleep(1);
-            }
+            SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable, Timeout);
             ScreensaverDisplayer.BailFromScreensaver();
             return ConsoleWrapper.ReadKey(Intercept);
         }
