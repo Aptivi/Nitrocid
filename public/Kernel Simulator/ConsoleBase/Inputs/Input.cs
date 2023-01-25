@@ -193,8 +193,7 @@ namespace KS.ConsoleBase.Inputs
         /// </summary>
         public static ConsoleKeyInfo DetectKeypress()
         {
-            while (!ConsoleWrapper.KeyAvailable)
-                Thread.Sleep(1);
+            SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable);
             return ConsoleWrapper.ReadKey(true);
         }
 
