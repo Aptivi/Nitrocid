@@ -290,6 +290,10 @@ namespace KS.Kernel.Exceptions
         /// <summary>
         /// The thread is not ready yet. The user code might have forgotten to regenerate the kernel thread after stopping it manually.
         /// </summary>
-        ThreadNotReadyYet
+        ThreadNotReadyYet,
+        /// <summary>
+        /// A thread operation is invalid in the current state. Refer to the additional message the kernel manager gave you for additional information.
+        /// </summary>
+        ThreadOperation
     }
 }

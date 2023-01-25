@@ -98,6 +98,7 @@ namespace KS.Kernel.Exceptions
                     { KernelExceptionType.NoSuchUser,                       Translate.DoTranslation("User doesn't exist. Check to make sure that you've written the user correctly.") },
                     { KernelExceptionType.NoSuchDriver,                     Translate.DoTranslation("Driver doesn't exist. Check to make sure that you've written the driver name correctly, and that the driver is registered properly.") },
                     { KernelExceptionType.ThreadNotReadyYet,                Translate.DoTranslation("The thread is not ready yet. The user code might have forgotten to regenerate the kernel thread after stopping it manually.") },
+                    { KernelExceptionType.ThreadOperation,                  Translate.DoTranslation("A thread operation is invalid in the current state. Refer to the additional message the kernel manager gave you for additional information.") },
                 };
             }
         }

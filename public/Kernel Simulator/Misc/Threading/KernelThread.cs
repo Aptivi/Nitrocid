@@ -188,6 +188,10 @@ namespace KS.Misc.Threading
         /// </summary>
         public void Regen()
         {
+            // We can't regen the kernel thread unless Stop() is called first.
+            if (IsReady)
+                throw new KernelException(KernelExceptionType.ThreadOperation, Translate.DoTranslation("Can't regenerate the kernel thread while the same thread is already running."));
+
             // Remake the thread to avoid illegal state exceptions
             if (IsParameterized)
                 BaseThread = new Thread(ThreadDelegateParameterized) { Name = Name, IsBackground = IsBackground };
