@@ -382,5 +382,29 @@ Critical
 Ready
 Failed to get task information.
 Kernel task is already killed.
+File manager background color
+File manager foreground color
+File manager pane background color
+File manager pane separator color
+File manager selected pane separator color
+File manager selected pane file foreground color
+File manager selected pane file background color
+File manager pane file foreground color
+File manager pane file background color
+File manager option background color
+File manager option foreground color
+File manager option binding name color
+Task manager background color
+Task manager foreground color
+Task manager pane background color
+Task manager pane separator color
+Task manager selected pane separator color
+Task manager selected pane task foreground color
+Task manager selected pane task background color
+Task manager pane task foreground color
+Task manager pane task background color
+Task manager option background color
+Task manager option foreground color
+Task manager option binding name color
 
 ==========================================================================================================================================

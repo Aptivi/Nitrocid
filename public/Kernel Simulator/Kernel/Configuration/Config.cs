@@ -135,9 +135,21 @@ namespace KS.Kernel.Configuration
                         else
                         {
                             if (FieldManager.CheckField(Variable, VariableIsInternal))
-                                VariableValue = new Color(((string)FieldManager.GetValue(Variable, VariableIsInternal)).ReleaseDoubleQuotes());
+                            {
+                                var finalVal = FieldManager.GetValue(Variable, VariableIsInternal);
+                                if (finalVal.GetType() == typeof(Color))
+                                    VariableValue = finalVal;
+                                else
+                                    VariableValue = new Color(((string)finalVal).ReleaseDoubleQuotes());
+                            }
                             else
-                                VariableValue = new Color(((string)PropertyManager.GetPropertyValue(Variable)).ReleaseDoubleQuotes());
+                            {
+                                var finalVal = PropertyManager.GetPropertyValue(Variable);
+                                if (finalVal.GetType() == typeof(Color))
+                                    VariableValue = finalVal;
+                                else
+                                    VariableValue = new Color(((string)finalVal).ReleaseDoubleQuotes());
+                            }
                         }
 
                         // Setting entry is color, but the variable could be either String or Color.

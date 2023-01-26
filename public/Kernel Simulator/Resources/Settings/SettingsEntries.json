@@ -1666,6 +1666,121 @@
                 "Type": "SChar",
                 "Variable": "BorderRightFrameChar",
                 "Description": "A character that resembles the right frame. Be sure to only input one character."
+            },
+            {
+                "Name": "File manager background color",
+                "Type": "SColor",
+                "Variable": "FileManagerBackgroundColor"
+            },
+            {
+                "Name": "File manager foreground color",
+                "Type": "SColor",
+                "Variable": "FileManagerForegroundColor"
+            },
+            {
+                "Name": "File manager pane background color",
+                "Type": "SColor",
+                "Variable": "FileManagerPaneBackgroundColor"
+            },
+            {
+                "Name": "File manager pane separator color",
+                "Type": "SColor",
+                "Variable": "FileManagerPaneSeparatorColor"
+            },
+            {
+                "Name": "File manager selected pane separator color",
+                "Type": "SColor",
+                "Variable": "FileManagerPaneSelectedSeparatorColor"
+            },
+            {
+                "Name": "File manager selected pane file foreground color",
+                "Type": "SColor",
+                "Variable": "FileManagerPaneSelectedFileForeColor"
+            },
+            {
+                "Name": "File manager selected pane file background color",
+                "Type": "SColor",
+                "Variable": "FileManagerPaneSelectedFileBackColor"
+            },
+            {
+                "Name": "File manager pane file foreground color",
+                "Type": "SColor",
+                "Variable": "FileManagerPaneFileForeColor"
+            },
+            {
+                "Name": "File manager pane file background color",
+                "Type": "SColor",
+                "Variable": "FileManagerPaneFileBackColor"
+            },
+            {
+                "Name": "File manager option background color",
+                "Type": "SColor",
+                "Variable": "FileManagerOptionBackgroundColor"
+            },
+            {
+                "Name": "File manager option foreground color",
+                "Type": "SColor",
+                "Variable": "FileManagerOptionForegroundColor"
+            },
+            {
+                "Name": "File manager option binding name color",
+                "Type": "SColor",
+                "Variable": "FileManagerKeyBindingOptionColor"
+            },
+            {
+                "Name": "Task manager background color",
+                "Type": "SColor",
+                "Variable": "TaskManagerBackgroundColor"
+            },
+            {
+                "Name": "Task manager foreground color",
+                "Type": "SColor",
+                "Variable": "TaskManagerForegroundColor"
+            },
+            {
+                "Name": "Task manager pane background color",
+                "Type": "SColor",
+                "Variable": "TaskManagerPaneBackgroundColor"
+            },
+            {
+                "Name": "Task manager pane separator color",
+                "Type": "SColor",
+                "Variable": "TaskManagerPaneSeparatorColor"
+            },
+            {
+                "Name": "Task manager selected pane task foreground color",
+                "Type": "SColor",
+                "Variable": "TaskManagerPaneSelectedTaskForeColor"
+            },
+            {
+                "Name": "Task manager selected pane task background color",
+                "Type": "SColor",
+                "Variable": "TaskManagerPaneSelectedTaskBackColor"
+            },
+            {
+                "Name": "Task manager pane task foreground color",
+                "Type": "SColor",
+                "Variable": "TaskManagerPaneTaskForeColor"
+            },
+            {
+                "Name": "Task manager pane task background color",
+                "Type": "SColor",
+                "Variable": "TaskManagerPaneTaskBackColor"
+            },
+            {
+                "Name": "Task manager option background color",
+                "Type": "SColor",
+                "Variable": "TaskManagerOptionBackgroundColor"
+            },
+            {
+                "Name": "Task manager option foreground color",
+                "Type": "SColor",
+                "Variable": "TaskManagerOptionForegroundColor"
+            },
+            {
+                "Name": "Task manager option binding name color",
+                "Type": "SColor",
+                "Variable": "TaskManagerKeyBindingOptionColor"
             }
         ]
     }
