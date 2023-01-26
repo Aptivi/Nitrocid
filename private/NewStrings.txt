@@ -374,5 +374,13 @@ Welcome to Nitrocid Kernel!
 The thread is not ready yet. The user code might have forgotten to regenerate the kernel thread after stopping it manually.
 A thread operation is invalid in the current state. Refer to the additional message the kernel manager gave you for additional information.
 Can't regenerate the kernel thread while the same thread is already running.
+Task manager
+Kernel task is critical and can't be killed.
+Alive
+Background
+Critical
+Ready
+Failed to get task information.
+Kernel task is already killed.
 
 ==========================================================================================================================================

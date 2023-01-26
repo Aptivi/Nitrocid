@@ -149,6 +149,7 @@ namespace KS.Shell.Shells.UESH
             { "stopwatch", new CommandInfo("stopwatch", ShellType, /* Localizable */ "A simple stopwatch", new CommandArgumentInfo(), new StopwatchCommand()) },
             { "sumfile", new CommandInfo("sumfile", ShellType, /* Localizable */ "Calculates file sums.", new CommandArgumentInfo(new[] { "[-relative] <MD5/SHA1/SHA256/SHA384/SHA512/all> <file> [outputFile]" }, true, 2), new SumFileCommand()) },
             { "sumfiles", new CommandInfo("sumfiles", ShellType, /* Localizable */ "Calculates sums of files in specified directory.", new CommandArgumentInfo(new[] { "[-relative] <MD5/SHA1/SHA256/SHA384/SHA512/all> <dir> [outputFile]" }, true, 2), new SumFilesCommand()) },
+            { "taskman", new CommandInfo("taskman", ShellType, /* Localizable */ "Task manager", new CommandArgumentInfo(), new TaskManCommand()) },
             { "themesel", new CommandInfo("themesel", ShellType, /* Localizable */ "Selects a theme and sets it", new CommandArgumentInfo(new[] { "[Theme]" }, false, 0, (startFrom, _, _) => ThemeTools.Themes.Keys.Where((src) => src.StartsWith(startFrom)).ToArray()), new ThemeSelCommand()) },
             { "timer", new CommandInfo("timer", ShellType, /* Localizable */ "A simple timer", new CommandArgumentInfo(), new TimerCommand()) },
             { "unblockdbgdev", new CommandInfo("unblockdbgdev", ShellType, /* Localizable */ "Unblock a debug device by IP address", new CommandArgumentInfo(new[] { "<ipaddress>" }, true, 1), new UnblockDbgDevCommand(), CommandFlags.Strict) },
