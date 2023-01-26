@@ -36,7 +36,7 @@ namespace KS.Users.Login
 {
     internal static class ModernLogonScreen
     {
-        private static readonly KernelThread DateTimeUpdateThread = new("Date and Time Update Thread for Modern Logon", true, DateTimeWidgetUpdater);
+        private static readonly KernelThread DateTimeUpdateThread = new("Date and Time Update Thread for Modern Logon", true, DateTimeWidgetUpdater) { isCritical = true };
 
         internal static void ShowLogon()
         {

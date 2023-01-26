@@ -70,7 +70,7 @@ namespace KS.Shell
 
         internal static StreamWriter OutputTextWriter;
         internal static FileStream OutputStream;
-        internal static KernelThread ProcessStartCommandThread = new("Executable Command Thread", false, (processParams) => ProcessExecutor.ExecuteProcess((ProcessExecutor.ExecuteProcessThreadParameters)processParams));
+        internal static KernelThread ProcessStartCommandThread = new("Executable Command Thread", false, (processParams) => ProcessExecutor.ExecuteProcess((ProcessExecutor.ExecuteProcessThreadParameters)processParams)) { isCritical = true };
 
         /// <summary>
         /// Path lookup delimiter, depending on the operating system

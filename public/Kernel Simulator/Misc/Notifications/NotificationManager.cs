@@ -47,7 +47,7 @@ namespace KS.Misc.Notifications
         internal static string notifyLowerFrameChar = "═";
         internal static string notifyLeftFrameChar = "║";
         internal static string notifyRightFrameChar = "║";
-        internal static KernelThread NotifThread = new("Notification Thread", false, NotifListen);
+        internal static KernelThread NotifThread = new("Notification Thread", false, NotifListen) { isCritical = true };
         private static readonly List<Notification> notifRecents = new();
 
         /// <summary>

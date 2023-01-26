@@ -46,7 +46,7 @@ namespace KS.Misc.Splash
         /// Current splash name
         /// </summary>
         public static string SplashName = "Dots";
-        internal static KernelThread SplashThread = new("Kernel Splash Thread", false, (splash) => GetSplashFromName((string)splash).EntryPoint.Display());
+        internal static KernelThread SplashThread = new("Kernel Splash Thread", false, (splash) => GetSplashFromName((string)splash).EntryPoint.Display()) { isCritical = true };
         private readonly static Dictionary<string, SplashInfo> InstalledSplashes = new()
         {
             { "Simple", new SplashInfo("Simple", new SplashSimple()) },

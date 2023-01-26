@@ -66,7 +66,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
         internal static List<RemoteDebugDevice> DebugDevices = new();
         internal static Socket RDebugClient;
         internal static TcpListener DebugTCP;
-        internal static KernelThread RDebugThread = new("Remote Debug Thread", true, StartRDebugger);
+        internal static KernelThread RDebugThread = new("Remote Debug Thread", true, StartRDebugger) { isCritical = true };
         private static int debugPort = 3014;
         private readonly static string RDebugVersion = "0.7.1";
         private static readonly AutoResetEvent RDebugBailer = new(false);

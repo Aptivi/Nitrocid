@@ -61,7 +61,7 @@ namespace KS.Kernel
     public static class KernelTools
     {
 
-        internal static KernelThread RPCPowerListener = new("RPC Power Listener Thread", true, (object arg) => PowerManager.PowerManage((PowerMode)arg));
+        internal static KernelThread RPCPowerListener = new("RPC Power Listener Thread", true, (object arg) => PowerManager.PowerManage((PowerMode)arg)) { isCritical = true };
         private static string bannerFigletFont = "Banner";
 
         /// <summary>

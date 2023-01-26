@@ -116,7 +116,7 @@ namespace KS.Misc.Screensaver
         internal static bool LockMode;
         internal static bool inSaver;
         internal static AutoResetEvent SaverAutoReset = new(false);
-        internal static KernelThread Timeout = new("Screensaver timeout thread", false, HandleTimeout);
+        internal static KernelThread Timeout = new("Screensaver timeout thread", false, HandleTimeout) { isCritical = true };
 
         /// <summary>
         /// Whether the kernel is on the screensaver mode

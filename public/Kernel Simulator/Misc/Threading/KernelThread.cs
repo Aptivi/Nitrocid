@@ -30,6 +30,7 @@ namespace KS.Misc.Threading
     public class KernelThread
     {
 
+        internal bool isCritical;
         private Thread BaseThread;
         private bool isReady;
         private readonly ThreadStart ThreadDelegate;
@@ -57,6 +58,11 @@ namespace KS.Misc.Threading
         /// Is the kernel thread ready to start?
         /// </summary>
         public bool IsReady => isReady;
+
+        /// <summary>
+        /// Is the kernel thread critical (essential for the kernel)? Unkillable by the kernel task manager
+        /// </summary>
+        public bool IsCritical => isCritical;
 
         /// <summary>
         /// Makes a new kernel thread

@@ -35,7 +35,7 @@ namespace KS.TimeDate
     {
 
         // Variables
-        internal static KernelThread TimeTopRightChange = new("Time/date top right corner updater thread", true, TimeTopRightChange_DoWork);
+        internal static KernelThread TimeTopRightChange = new("Time/date top right corner updater thread", true, TimeTopRightChange_DoWork) { isCritical = true };
 
         /// <summary>
         /// Updates the time and date. Also updates the time and date corner if it was enabled in kernel configuration.

@@ -31,7 +31,7 @@ namespace KS.ConsoleBase
     {
         private static int CurrentWindowWidth;
         private static int CurrentWindowHeight;
-        private static readonly KernelThread ResizeListenerThread = new("Console Resize Listener Thread", true, PollForResize);
+        private static readonly KernelThread ResizeListenerThread = new("Console Resize Listener Thread", true, PollForResize) { isCritical = true };
         private static bool ResizeDetected;
 
         /// <summary>
