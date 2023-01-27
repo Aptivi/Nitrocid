@@ -1728,6 +1728,16 @@
                 "Variable": "FileManagerKeyBindingOptionColor"
             },
             {
+                "Name": "File manager box background color",
+                "Type": "SColor",
+                "Variable": "FileManagerBoxBackgroundColor"
+            },
+            {
+                "Name": "File manager box foreground color",
+                "Type": "SColor",
+                "Variable": "FileManagerBoxForegroundColor"
+            },
+            {
                 "Name": "Task manager background color",
                 "Type": "SColor",
                 "Variable": "TaskManagerBackgroundColor"

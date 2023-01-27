@@ -34,6 +34,10 @@ using System.IO;
 using System.Linq;
 using KS.ConsoleBase.Inputs;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
+using MimeKit;
+using KS.Files.LineEndings;
+using SharpCompress.Common;
+using System.Text;
 
 namespace KS.Files.Interactive
 {
@@ -57,29 +61,12 @@ namespace KS.Files.Interactive
             new FileManagerBinding("Copy",   ConsoleKey.F1, (destinationPath, sourcePath) => Copying.CopyFileOrDir(sourcePath.FullName, destinationPath)),
             new FileManagerBinding("Move",   ConsoleKey.F2, (destinationPath, sourcePath) => Moving.MoveFileOrDir(sourcePath.FullName, destinationPath)),
             new FileManagerBinding("Delete", ConsoleKey.F3, (_,               sourcePath) => Removing.RemoveFileOrDir(sourcePath.FullName)),
-            new FileManagerBinding("Up",     ConsoleKey.F4, (_,               sourcePath) => 
-            {
-                if (currentPane == 2)
-                {
-                    secondPanePath = Filesystem.NeutralizePath(secondPanePath + "/..");
-                    secondPaneCurrentSelection = 1;
-                }
-                else
-                {
-                    firstPanePath = Filesystem.NeutralizePath(firstPanePath + "/..");
-                    firstPaneCurrentSelection = 1;
-                }
-            }),
+            new FileManagerBinding("Up",     ConsoleKey.F4, (_,               _         ) => GoUp()),
+            new FileManagerBinding("Info",   ConsoleKey.F5, (_,               sourcePath) => PrintFileSystemInfo(sourcePath)),
 
             // Misc bindings
             new FileManagerBinding("Exit"  , ConsoleKey.Escape, (_, _) => isExiting = true),
-            new FileManagerBinding("Switch", ConsoleKey.Tab   , (_, _) =>
-            {
-                currentPane++;
-                if (currentPane > 2)
-                    currentPane = 1;
-                redrawRequired = true;
-            }),
+            new FileManagerBinding("Switch", ConsoleKey.Tab   , (_, _) => Switch()),
         };
 
         /// <summary>
@@ -130,6 +117,14 @@ namespace KS.Files.Interactive
         /// File manager option foreground color
         /// </summary>
         public static Color FileManagerOptionForegroundColor { get; set; } = new(Convert.ToInt32(ConsoleColors.Cyan));
+        /// <summary>
+        /// File manager box background color
+        /// </summary>
+        public static Color FileManagerBoxBackgroundColor { get; set; } = new(Convert.ToInt32(ConsoleColors.Red));
+        /// <summary>
+        /// File manager box foreground color
+        /// </summary>
+        public static Color FileManagerBoxForegroundColor { get; set; } = new(Convert.ToInt32(ConsoleColors.White));
 
         /// <summary>
         /// Opens the file manager to the current path
@@ -381,6 +376,92 @@ namespace KS.Files.Interactive
 
             // Clear the console to clean up
             ColorTools.LoadBack();
+        }
+
+        private static void GoUp()
+        {
+            if (currentPane == 2)
+            {
+                secondPanePath = Filesystem.NeutralizePath(secondPanePath + "/..");
+                secondPaneCurrentSelection = 1;
+            }
+            else
+            {
+                firstPanePath = Filesystem.NeutralizePath(firstPanePath + "/..");
+                firstPaneCurrentSelection = 1;
+            }
+        }
+
+        private static void Switch()
+        {
+            currentPane++;
+            if (currentPane > 2)
+                currentPane = 1;
+            redrawRequired = true;
+        }
+
+        private static void PrintFileSystemInfo(FileSystemInfo currentFileSystemInfo)
+        {
+            // Render the final information string
+            var finalInfoRendered = new StringBuilder();
+            string fullPath = currentFileSystemInfo.FullName;
+            if (Checking.FolderExists(fullPath))
+            {
+                // The file system info instance points to a folder
+                var DirInfo = new DirectoryInfo(fullPath);
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Name: {0}").FormatString(DirInfo.Name));
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Full name: {0}").FormatString(Filesystem.NeutralizePath(DirInfo.FullName)));
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Size: {0}").FormatString(SizeGetter.GetAllSizesInFolder(DirInfo).FileSizeToString()));
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Creation time: {0}").FormatString(TimeDateRenderers.Render(DirInfo.CreationTime)));
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Last access time: {0}").FormatString(TimeDateRenderers.Render(DirInfo.LastAccessTime)));
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Last write time: {0}").FormatString(TimeDateRenderers.Render(DirInfo.LastWriteTime)));
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Attributes: {0}").FormatString(DirInfo.Attributes));
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Parent directory: {0}").FormatString(Filesystem.NeutralizePath(DirInfo.Parent.FullName)));
+            }
+            else
+            {
+                // The file system info instance points to a file
+                FileInfo fileInfo = new(fullPath);
+                var Style = LineEndingsTools.GetLineEndingFromFile(fullPath);
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Name: {0}").FormatString(fileInfo.Name));
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Full name: {0}").FormatString(Filesystem.NeutralizePath(fileInfo.FullName)));
+                finalInfoRendered.AppendLine(Translate.DoTranslation("File size: {0}").FormatString(fileInfo.Length.FileSizeToString()));
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Creation time: {0}").FormatString(TimeDateRenderers.Render(fileInfo.CreationTime)));
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Last access time: {0}").FormatString(TimeDateRenderers.Render(fileInfo.LastAccessTime)));
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Last write time: {0}").FormatString(TimeDateRenderers.Render(fileInfo.LastWriteTime)));
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Attributes: {0}").FormatString(fileInfo.Attributes));
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Where to find: {0}").FormatString(Filesystem.NeutralizePath(fileInfo.DirectoryName)));
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Newline style:") + " {0}".FormatString(Style.ToString()));
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Binary file:") + " {0}".FormatString(Parsing.IsBinaryFile(fileInfo.FullName)));
+                finalInfoRendered.AppendLine(Translate.DoTranslation("MIME metadata:") + " {0}".FormatString(MimeTypes.GetMimeType(Filesystem.NeutralizePath(fileInfo.FullName))));
+            }
+            finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
+
+            // Now, render the info box
+            string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
+            int maxWidth = splitLines.Max((str) => str.Length);
+            if (maxWidth >= ConsoleWrapper.WindowWidth)
+                maxWidth = ConsoleWrapper.WindowWidth - 4;
+            int maxHeight = splitLines.Length;
+            if (maxHeight >= ConsoleWrapper.WindowHeight)
+                maxHeight = ConsoleWrapper.WindowHeight - 4;
+            int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
+            int borderX = (ConsoleWrapper.WindowWidth / 2) - (maxWidth / 2);
+            int borderY = (ConsoleWrapper.WindowHeight / 2) - (maxHeight / 2);
+            BorderColor.WriteBorder(borderX, borderY, maxWidth, maxHeight, FileManagerBoxForegroundColor, FileManagerBoxBackgroundColor);
+
+            // Render text inside it
+            for (int i = 0; i < splitLines.Length; i++)
+            {
+                var line = splitLines[i];
+                TextWriterWhereColor.WriteWhere(line.Truncate(maxRenderWidth), borderX + 1, borderY + 1 + i);
+                if (i % maxHeight == 0 && i > 0)
+                    Input.DetectKeypress();
+            }
+
+            // Wait until the user presses any key to close the window and re-render the file manager
+            Input.DetectKeypress();
+            redrawRequired = true;
         }
     }
 }

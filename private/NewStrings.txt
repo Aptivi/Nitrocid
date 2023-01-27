@@ -414,5 +414,8 @@ Total processor time
 Task state
 Priority level
 Task memory address
+Press any key to close this window.
+File manager box background color
+File manager box foreground color
 
 ==========================================================================================================================================
