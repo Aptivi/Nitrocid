@@ -54,7 +54,7 @@ namespace KS.Files.Interactive
         {
             // Operations
             new TaskManagerBinding("Kill",   ConsoleKey.F1,  KillThread),
-            new TaskManagerBinding("Switch", ConsoleKey.Tab, (_) => osThreadMode = !osThreadMode),
+            new TaskManagerBinding("Switch", ConsoleKey.Tab, (_) => SwitchMode()),
 
             // Misc bindings
             new TaskManagerBinding("Exit"  , ConsoleKey.Escape, (_) => isExiting = true)
@@ -302,6 +302,12 @@ namespace KS.Files.Interactive
                     status = Translate.DoTranslation("Kernel task is critical and can't be killed.");
             else
                 status = Translate.DoTranslation("OS threads can't be killed.");
+        }
+
+        private static void SwitchMode()
+        {
+            osThreadMode = !osThreadMode;
+            paneCurrentSelection = 1;
         }
     }
 }
