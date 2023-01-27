@@ -36,6 +36,7 @@ using KS.ConsoleBase.Inputs;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.Misc.Threading.Interactive;
 using KS.Misc.Threading;
+using System.Diagnostics;
 
 namespace KS.Files.Interactive
 {
@@ -46,12 +47,14 @@ namespace KS.Files.Interactive
     {
         private static bool redrawRequired = true;
         private static bool isExiting = false;
+        private static bool osThreadMode = false;
         private static int paneCurrentSelection = 1;
         private static string status = "";
         private static readonly List<TaskManagerBinding> TaskManagerBindings = new()
         {
             // Operations
             new TaskManagerBinding("Kill",   ConsoleKey.F1, KillThread),
+            new TaskManagerBinding("Switch", ConsoleKey.Tab, (_) => osThreadMode = !osThreadMode),
 
             // Misc bindings
             new TaskManagerBinding("Exit"  , ConsoleKey.Escape, (_) => isExiting = true)
@@ -170,7 +173,8 @@ namespace KS.Files.Interactive
 
                 // Render the task lists
                 var threads = ThreadManager.KernelThreads;
-                int pages = threads.Count / SeparatorMaximumHeightInterior;
+                var unmanagedThreads = ThreadManager.OperatingSystemThreads;
+                int pages = (osThreadMode ? unmanagedThreads.Count : threads.Count) / SeparatorMaximumHeightInterior;
                 int answersPerPage = SeparatorMaximumHeightInterior - 1;
                 int currentPage = (paneCurrentSelection - 1) / answersPerPage;
                 int startIndex = answersPerPage * currentPage;
@@ -180,10 +184,21 @@ namespace KS.Files.Interactive
                     // Populate the first pane
                     string finalEntry = "";
                     int finalIndex = i + startIndex;
-                    if (finalIndex <= threads.Count - 1)
+                    if (osThreadMode)
                     {
-                        KernelThread thread = threads[finalIndex];
-                        finalEntry = $"{thread.Name}".Truncate(SeparatorHalfConsoleWidthInterior - 4);
+                        if (finalIndex <= unmanagedThreads.Count - 1)
+                        {
+                            ProcessThread thread = unmanagedThreads[finalIndex];
+                            finalEntry = $"{thread.Id}".Truncate(SeparatorHalfConsoleWidthInterior - 4);
+                        }
+                    }
+                    else
+                    {
+                        if (finalIndex <= threads.Count - 1)
+                        {
+                            KernelThread thread = threads[finalIndex];
+                            finalEntry = $"{thread.Name}".Truncate(SeparatorHalfConsoleWidthInterior - 4);
+                        }
                     }
 
                     var finalForeColor = finalIndex == paneCurrentSelection - 1 ? TaskManagerPaneSelectedTaskForeColor : TaskManagerPaneTaskForeColor;
@@ -253,12 +268,15 @@ namespace KS.Files.Interactive
 
         private static void KillThread(int id)
         {
-            if (!ThreadManager.KernelThreads[id].IsCritical && ThreadManager.KernelThreads[id].IsAlive)
-                ThreadManager.KernelThreads[id].Stop();
-            else if (!ThreadManager.KernelThreads[id].IsAlive)
-                status = Translate.DoTranslation("Kernel task is already killed.");
+            if (!osThreadMode)
+                if (!ThreadManager.kernelThreads[id].IsCritical && ThreadManager.kernelThreads[id].IsAlive)
+                    ThreadManager.kernelThreads[id].Stop();
+                else if (!ThreadManager.kernelThreads[id].IsAlive)
+                    status = Translate.DoTranslation("Kernel task is already killed.");
+                else
+                    status = Translate.DoTranslation("Kernel task is critical and can't be killed.");
             else
-                status = Translate.DoTranslation("Kernel task is critical and can't be killed.");
+                status = Translate.DoTranslation("OS threads can't be killed.");
         }
     }
 }

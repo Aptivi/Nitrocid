@@ -81,7 +81,7 @@ namespace KS.Misc.Threading
             IsBackground = Background;
             isReady = true;
             DebugWriter.WriteDebug(DebugLevel.I, "Made a new kernel thread {0} with ID {1}", ThreadName, BaseThread.ManagedThreadId);
-            ThreadManager.KernelThreads.Add(this);
+            ThreadManager.kernelThreads.Add(this);
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace KS.Misc.Threading
             IsBackground = Background;
             isReady = true;
             DebugWriter.WriteDebug(DebugLevel.I, "Made a new kernel thread {0} with ID {1}", ThreadName, BaseThread.ManagedThreadId);
-            ThreadManager.KernelThreads.Add(this);
+            ThreadManager.kernelThreads.Add(this);
         }
 
         /// <summary>

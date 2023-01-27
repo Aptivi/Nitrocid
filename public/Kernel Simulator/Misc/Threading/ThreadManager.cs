@@ -30,12 +30,25 @@ namespace KS.Misc.Threading
     public static class ThreadManager
     {
 
-        internal static List<KernelThread> KernelThreads = new();
+        internal static List<KernelThread> kernelThreads = new();
+
+        /// <summary>
+        /// Gets the operating system threads that Nitrocid makes use of within the host OS
+        /// </summary>
+        public static ProcessThreadCollection OperatingSystemThreads =>
+            Process.GetCurrentProcess().Threads;
+
+        /// <summary>
+        /// Gets all the kernel threads
+        /// </summary>
+        public static List<KernelThread> KernelThreads =>
+            kernelThreads;
 
         /// <summary>
         /// Gets active threads
         /// </summary>
-        public static List<KernelThread> ActiveThreads => KernelThreads.Where(x => x.IsAlive).ToList();
+        public static List<KernelThread> ActiveThreads =>
+            kernelThreads.Where(x => x.IsAlive).ToList();
 
         /// <summary>
         /// Stops all active threads
