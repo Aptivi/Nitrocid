@@ -71,6 +71,14 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 // Get the final height offset
                 int FinalHeightOffset = TopHeightOffset + BottomHeightOffset;
+
+                // Check the progress value
+                if (Progress > 100)
+                    Progress = 100;
+                if (Progress < 0)
+                    Progress = 0;
+
+                // Fill the progress
                 int MaximumHeight = ConsoleWrapper.WindowHeight - FinalHeightOffset;
                 int ProgressFilled = ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, MaximumHeight);
 
@@ -205,6 +213,14 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 // Get the final height offset
                 int FinalHeightOffset = TopHeightOffset + BottomHeightOffset;
+
+                // Check the progress value
+                if (Progress > 100)
+                    Progress = 100;
+                if (Progress < 0)
+                    Progress = 0;
+
+                // Fill the progress
                 int MaximumHeight = ConsoleWrapper.WindowHeight - FinalHeightOffset;
                 int ProgressFilled = ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, MaximumHeight);
 
@@ -308,6 +324,14 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 // Get the final height offset
                 int FinalHeightOffset = TopHeightOffset + BottomHeightOffset;
+
+                // Check the progress value
+                if (Progress > 100)
+                    Progress = 100;
+                if (Progress < 0)
+                    Progress = 0;
+
+                // Fill the progress
                 int MaximumHeight = ConsoleWrapper.WindowHeight - FinalHeightOffset;
                 int ProgressFilled = ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, MaximumHeight);
 
@@ -411,6 +435,14 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 // Get the final height offset
                 int FinalHeightOffset = TopHeightOffset + BottomHeightOffset;
+
+                // Check the progress value
+                if (Progress > 100)
+                    Progress = 100;
+                if (Progress < 0)
+                    Progress = 0;
+
+                // Fill the progress
                 int MaximumHeight = ConsoleWrapper.WindowHeight - FinalHeightOffset;
                 int ProgressFilled = ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, MaximumHeight);
 

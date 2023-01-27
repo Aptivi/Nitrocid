@@ -76,6 +76,12 @@ namespace KS.Misc.Writers.FancyWriters
                 // Get the final width offset
                 int FinalWidthOffset = LeftWidthOffset + RightWidthOffset;
 
+                // Check the progress value
+                if (Progress > 100)
+                    Progress = 100;
+                if (Progress < 0)
+                    Progress = 0;
+
                 // Draw the border
                 if (DrawBorder)
                 {
@@ -263,6 +269,12 @@ namespace KS.Misc.Writers.FancyWriters
                 // Get the final width offset
                 int FinalWidthOffset = LeftWidthOffset + RightWidthOffset;
 
+                // Check the progress value
+                if (Progress > 100)
+                    Progress = 100;
+                if (Progress < 0)
+                    Progress = 0;
+
                 // Draw the border
                 if (DrawBorder)
                 {
@@ -416,6 +428,12 @@ namespace KS.Misc.Writers.FancyWriters
                 // Get the final width offset
                 int FinalWidthOffset = LeftWidthOffset + RightWidthOffset;
 
+                // Check the progress value
+                if (Progress > 100)
+                    Progress = 100;
+                if (Progress < 0)
+                    Progress = 0;
+
                 // Draw the border
                 if (DrawBorder)
                 {
@@ -568,6 +586,12 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 // Get the final width offset
                 int FinalWidthOffset = LeftWidthOffset + RightWidthOffset;
+
+                // Check the progress value
+                if (Progress > 100)
+                    Progress = 100;
+                if (Progress < 0)
+                    Progress = 0;
 
                 // Draw the border
                 if (DrawBorder)
