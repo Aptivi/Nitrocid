@@ -53,7 +53,7 @@ namespace KS.Files.Interactive
         private static readonly List<TaskManagerBinding> TaskManagerBindings = new()
         {
             // Operations
-            new TaskManagerBinding("Kill",   ConsoleKey.F1, KillThread),
+            new TaskManagerBinding("Kill",   ConsoleKey.F1,  KillThread),
             new TaskManagerBinding("Switch", ConsoleKey.Tab, (_) => osThreadMode = !osThreadMode),
 
             // Misc bindings
@@ -174,7 +174,8 @@ namespace KS.Files.Interactive
                 // Render the task lists
                 var threads = ThreadManager.KernelThreads;
                 var unmanagedThreads = ThreadManager.OperatingSystemThreads;
-                int pages = (osThreadMode ? unmanagedThreads.Count : threads.Count) / SeparatorMaximumHeightInterior;
+                int threadsCount = osThreadMode ? unmanagedThreads.Count : threads.Count;
+                int pages = threadsCount / SeparatorMaximumHeightInterior;
                 int answersPerPage = SeparatorMaximumHeightInterior - 1;
                 int currentPage = (paneCurrentSelection - 1) / answersPerPage;
                 int startIndex = answersPerPage * currentPage;
@@ -205,23 +206,47 @@ namespace KS.Files.Interactive
                     var finalBackColor = finalIndex == paneCurrentSelection - 1 ? TaskManagerPaneSelectedTaskBackColor : TaskManagerPaneTaskBackColor;
                     TextWriterWhereColor.WriteWhere(finalEntry + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalEntry.Length), 1, SeparatorMinimumHeightInterior + finalIndex - startIndex, finalForeColor, finalBackColor);
                 }
-                ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)paneCurrentSelection / threads.Count), SeparatorHalfConsoleWidthInterior - 1, 1, 2, 2, false);
+                ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)paneCurrentSelection / threadsCount), SeparatorHalfConsoleWidthInterior - 1, 1, 2, 2, false);
 
                 // Write status and task info
                 string finalInfoRendered = "";
                 try
                 {
-                    var selectedThread = threads[paneCurrentSelection - 1];
-                    string finalRenderedTaskName = Translate.DoTranslation("Task name") + $": {selectedThread.Name}".Truncate(ConsoleWrapper.WindowWidth - 3);
-                    string finalRenderedTaskAlive = Translate.DoTranslation("Alive") + $": {selectedThread.IsAlive}".Truncate(ConsoleWrapper.WindowWidth - 3);
-                    string finalRenderedTaskBackground = Translate.DoTranslation("Background") + $": {selectedThread.IsBackground}".Truncate(ConsoleWrapper.WindowWidth - 3);
-                    string finalRenderedTaskCritical = Translate.DoTranslation("Critical") + $": {selectedThread.IsCritical}".Truncate(ConsoleWrapper.WindowWidth - 3);
-                    string finalRenderedTaskReady = Translate.DoTranslation("Ready") + $": {selectedThread.IsReady}".Truncate(ConsoleWrapper.WindowWidth - 3);
-                    TextWriterWhereColor.WriteWhere(finalRenderedTaskName + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskName.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 0, TaskManagerForegroundColor, TaskManagerPaneTaskBackColor);
-                    TextWriterWhereColor.WriteWhere(finalRenderedTaskAlive + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskAlive.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 2, TaskManagerForegroundColor, TaskManagerPaneTaskBackColor);
-                    TextWriterWhereColor.WriteWhere(finalRenderedTaskBackground + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskBackground.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 3, TaskManagerForegroundColor, TaskManagerPaneTaskBackColor);
-                    TextWriterWhereColor.WriteWhere(finalRenderedTaskCritical + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskCritical.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 4, TaskManagerForegroundColor, TaskManagerPaneTaskBackColor);
-                    TextWriterWhereColor.WriteWhere(finalRenderedTaskReady + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskReady.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 5, TaskManagerForegroundColor, TaskManagerPaneTaskBackColor);
+                    if (osThreadMode)
+                    {
+                        var selectedThread = unmanagedThreads[paneCurrentSelection - 1];
+                        string finalRenderedTaskID = Translate.DoTranslation("Task ID") + $": {selectedThread.Id}".Truncate(ConsoleWrapper.WindowWidth - 3);
+                        string finalRenderedTaskPPT = Translate.DoTranslation("Privileged processor time") + $": {selectedThread.PrivilegedProcessorTime}".Truncate(ConsoleWrapper.WindowWidth - 3);
+                        string finalRenderedTaskUPT = Translate.DoTranslation("User processor time") + $": {selectedThread.UserProcessorTime}".Truncate(ConsoleWrapper.WindowWidth - 3);
+                        string finalRenderedTaskTPT = Translate.DoTranslation("Total processor time") + $": {selectedThread.TotalProcessorTime}".Truncate(ConsoleWrapper.WindowWidth - 3);
+                        string finalRenderedTaskState = Translate.DoTranslation("Task state") + $": {selectedThread.ThreadState}".Truncate(ConsoleWrapper.WindowWidth - 3);
+                        string finalRenderedTaskPriority = Translate.DoTranslation("Priority level") + $": {selectedThread.CurrentPriority}".Truncate(ConsoleWrapper.WindowWidth - 3);
+                        string finalRenderedTaskMemAddress = Translate.DoTranslation("Task memory address") + $": 0x{selectedThread.StartAddress:X8}".Truncate(ConsoleWrapper.WindowWidth - 3);
+                        TextWriterWhereColor.WriteWhere(finalRenderedTaskID + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskID.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 0, TaskManagerForegroundColor, TaskManagerPaneTaskBackColor);
+                        TextWriterWhereColor.WriteWhere(finalRenderedTaskPPT + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskPPT.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 2, TaskManagerForegroundColor, TaskManagerPaneTaskBackColor);
+                        TextWriterWhereColor.WriteWhere(finalRenderedTaskUPT + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskUPT.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 3, TaskManagerForegroundColor, TaskManagerPaneTaskBackColor);
+                        TextWriterWhereColor.WriteWhere(finalRenderedTaskTPT + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskTPT.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 4, TaskManagerForegroundColor, TaskManagerPaneTaskBackColor);
+                        TextWriterWhereColor.WriteWhere(finalRenderedTaskState + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskState.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 5, TaskManagerForegroundColor, TaskManagerPaneTaskBackColor);
+                        TextWriterWhereColor.WriteWhere(finalRenderedTaskPriority + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskPriority.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 6, TaskManagerForegroundColor, TaskManagerPaneTaskBackColor);
+                        TextWriterWhereColor.WriteWhere(finalRenderedTaskMemAddress + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskMemAddress.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 7, TaskManagerForegroundColor, TaskManagerPaneTaskBackColor);
+                    }
+                    else
+                    {
+                        var selectedThread = threads[paneCurrentSelection - 1];
+                        string finalRenderedTaskName = Translate.DoTranslation("Task name") + $": {selectedThread.Name}".Truncate(ConsoleWrapper.WindowWidth - 3);
+                        string finalRenderedTaskAlive = Translate.DoTranslation("Alive") + $": {selectedThread.IsAlive}".Truncate(ConsoleWrapper.WindowWidth - 3);
+                        string finalRenderedTaskBackground = Translate.DoTranslation("Background") + $": {selectedThread.IsBackground}".Truncate(ConsoleWrapper.WindowWidth - 3);
+                        string finalRenderedTaskCritical = Translate.DoTranslation("Critical") + $": {selectedThread.IsCritical}".Truncate(ConsoleWrapper.WindowWidth - 3);
+                        string finalRenderedTaskReady = Translate.DoTranslation("Ready") + $": {selectedThread.IsReady}".Truncate(ConsoleWrapper.WindowWidth - 3);
+                        TextWriterWhereColor.WriteWhere(finalRenderedTaskName + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskName.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 0, TaskManagerForegroundColor, TaskManagerPaneTaskBackColor);
+                        TextWriterWhereColor.WriteWhere(finalRenderedTaskAlive + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskAlive.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 2, TaskManagerForegroundColor, TaskManagerPaneTaskBackColor);
+                        TextWriterWhereColor.WriteWhere(finalRenderedTaskBackground + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskBackground.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 3, TaskManagerForegroundColor, TaskManagerPaneTaskBackColor);
+                        TextWriterWhereColor.WriteWhere(finalRenderedTaskCritical + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskCritical.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 4, TaskManagerForegroundColor, TaskManagerPaneTaskBackColor);
+                        TextWriterWhereColor.WriteWhere(finalRenderedTaskReady + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskReady.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 5, TaskManagerForegroundColor, TaskManagerPaneTaskBackColor);
+                        TextWriterWhereColor.WriteWhere(" ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskReady.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 6, TaskManagerForegroundColor, TaskManagerPaneTaskBackColor);
+                        TextWriterWhereColor.WriteWhere(" ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskReady.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 7, TaskManagerForegroundColor, TaskManagerPaneTaskBackColor);
+                    }
+                    
                     finalInfoRendered = $" {status}";
                     status = Translate.DoTranslation("Ready");
                 }
@@ -241,18 +266,18 @@ namespace KS.Files.Interactive
                     case ConsoleKey.UpArrow:
                         paneCurrentSelection--;
                         if (paneCurrentSelection < 1)
-                            paneCurrentSelection = threads.Count;
+                            paneCurrentSelection = threadsCount;
                         break;
                     case ConsoleKey.DownArrow:
                         paneCurrentSelection++;
-                        if (paneCurrentSelection > threads.Count)
+                        if (paneCurrentSelection > threadsCount)
                             paneCurrentSelection = 1;
                         break;
                     case ConsoleKey.PageUp:
                         paneCurrentSelection = 1;
                         break;
                     case ConsoleKey.PageDown:
-                        paneCurrentSelection = threads.Count;
+                        paneCurrentSelection = threadsCount;
                         break;
                     default:
                         var implementedBindings = TaskManagerBindings.Where((binding) => binding.BindingKeyName == pressedKey);

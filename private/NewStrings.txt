@@ -407,5 +407,12 @@ Task manager option background color
 Task manager option foreground color
 Task manager option binding name color
 OS threads can't be killed.
+Task ID
+Privileged processor time
+User processor time
+Total processor time
+Task state
+Priority level
+Task memory address
 
 ==========================================================================================================================================
