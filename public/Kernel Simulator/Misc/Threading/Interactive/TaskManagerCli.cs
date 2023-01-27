@@ -192,16 +192,22 @@ namespace KS.Files.Interactive
                 }
                 ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)paneCurrentSelection / threads.Count), SeparatorHalfConsoleWidthInterior - 1, 1, 2, 2, false);
 
-                // Write file info
+                // Write status and task info
                 string finalInfoRendered = "";
                 try
                 {
-                    var thread = threads[paneCurrentSelection - 1];
-                    finalInfoRendered = $" {status} | {thread.Name} | " +
-                                        Translate.DoTranslation("Alive") + $": {thread.IsAlive} | " +
-                                        Translate.DoTranslation("Background") + $": {thread.IsBackground} | " +
-                                        Translate.DoTranslation("Critical") + $": {thread.IsCritical} | " +
-                                        Translate.DoTranslation("Ready") + $": {thread.IsReady}";
+                    var selectedThread = threads[paneCurrentSelection - 1];
+                    string finalRenderedTaskName = Translate.DoTranslation("Task name") + $": {selectedThread.Name}".Truncate(ConsoleWrapper.WindowWidth - 3);
+                    string finalRenderedTaskAlive = Translate.DoTranslation("Alive") + $": {selectedThread.IsAlive}".Truncate(ConsoleWrapper.WindowWidth - 3);
+                    string finalRenderedTaskBackground = Translate.DoTranslation("Background") + $": {selectedThread.IsBackground}".Truncate(ConsoleWrapper.WindowWidth - 3);
+                    string finalRenderedTaskCritical = Translate.DoTranslation("Critical") + $": {selectedThread.IsCritical}".Truncate(ConsoleWrapper.WindowWidth - 3);
+                    string finalRenderedTaskReady = Translate.DoTranslation("Ready") + $": {selectedThread.IsReady}".Truncate(ConsoleWrapper.WindowWidth - 3);
+                    TextWriterWhereColor.WriteWhere(finalRenderedTaskName + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskName.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 0, TaskManagerForegroundColor, TaskManagerPaneTaskBackColor);
+                    TextWriterWhereColor.WriteWhere(finalRenderedTaskAlive + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskAlive.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 2, TaskManagerForegroundColor, TaskManagerPaneTaskBackColor);
+                    TextWriterWhereColor.WriteWhere(finalRenderedTaskBackground + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskBackground.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 3, TaskManagerForegroundColor, TaskManagerPaneTaskBackColor);
+                    TextWriterWhereColor.WriteWhere(finalRenderedTaskCritical + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskCritical.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 4, TaskManagerForegroundColor, TaskManagerPaneTaskBackColor);
+                    TextWriterWhereColor.WriteWhere(finalRenderedTaskReady + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskReady.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 5, TaskManagerForegroundColor, TaskManagerPaneTaskBackColor);
+                    finalInfoRendered = $" {status}";
                     status = Translate.DoTranslation("Ready");
                 }
                 catch (Exception ex)
