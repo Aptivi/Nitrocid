@@ -28,6 +28,7 @@ using KS.ConsoleBase.Inputs;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Languages;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.Base.Transfer;
 
@@ -36,28 +37,16 @@ namespace KS.Misc.Games
     static class Hangman
     {
 
-        public static List<string> Words = new();
-
         /// <summary>
         /// Initializes the game
         /// </summary>
         public static void InitializeHangman()
         {
-            string RandomWord;
+            string RandomWord = WordManager.GetRandomWord();
             bool hung = false;
             int currentAttempt = 0;
             List<char> gotChars = new();
             List<char> wrongChars = new();
-
-            // Download the words if not done
-            if (Words.Count == 0)
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Downloading words...");
-                Words.AddRange(NetworkTransfer.DownloadString("https://cdn.jsdelivr.net/gh/sindresorhus/word-list/words.txt").SplitNewLines().ToList());
-            }
-
-            // Now, select a random word
-            RandomWord = Words[RandomDriver.RandomIdx(Words.Count)];
 
             while (!hung)
             {

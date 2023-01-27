@@ -417,5 +417,7 @@ Task memory address
 Press any key to close this window.
 File manager box background color
 File manager box foreground color
+The Wordle game simulator
+You guessed the right word! You win!
 
 ==========================================================================================================================================

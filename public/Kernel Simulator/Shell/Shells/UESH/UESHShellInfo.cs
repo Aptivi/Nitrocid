@@ -159,6 +159,7 @@ namespace KS.Shell.Shells.UESH
             { "usermanual", new CommandInfo("usermanual", ShellType, /* Localizable */ "Takes you to our GitHub Wiki.", new CommandArgumentInfo(new[] { "[-modapi]" }, false, 0), new UserManualCommand()) },
             { "verify", new CommandInfo("verify", ShellType, /* Localizable */ "Verifies sanity of the file", new CommandArgumentInfo(new[] { "<MD5/SHA1/SHA256/SHA384/SHA512> <calculatedhash> <hashfile/expectedhash> <file>" }, true, 4), new VerifyCommand()) },
             { "weather", new CommandInfo("weather", ShellType, /* Localizable */ "Shows weather info for specified city. Uses OpenWeatherMap.", new CommandArgumentInfo(new[] { "[-list] <CityID/CityName> [apikey]" }, true, 1), new WeatherCommand()) },
+            { "wordle", new CommandInfo("wordle", ShellType, /* Localizable */ "The Wordle game simulator", new CommandArgumentInfo(), new WordleCommand()) },
             { "wrap", new CommandInfo("wrap", ShellType, /* Localizable */ "Wraps the console output", new CommandArgumentInfo(new[] { "<command>" }, true, 1), new WrapCommand()) },
             { "zip", new CommandInfo("zip", ShellType, /* Localizable */ "Creates a ZIP archive", new CommandArgumentInfo(new[] { "<zipfile> <path> [-fast|-nocomp|-nobasedir]" }, true, 2), new ZipCommand()) },
 
