@@ -138,17 +138,17 @@ namespace KS.Kernel.Configuration
                             {
                                 var finalVal = FieldManager.GetValue(Variable, VariableIsInternal);
                                 if (finalVal.GetType() == typeof(Color))
-                                    VariableValue = finalVal;
+                                    VariableValue = ((Color)finalVal).PlainSequence;
                                 else
-                                    VariableValue = new Color(((string)finalVal).ReleaseDoubleQuotes());
+                                    VariableValue = new Color(((string)finalVal).ReleaseDoubleQuotes()).PlainSequence;
                             }
                             else
                             {
                                 var finalVal = PropertyManager.GetPropertyValue(Variable);
                                 if (finalVal.GetType() == typeof(Color))
-                                    VariableValue = finalVal;
+                                    VariableValue = ((Color)finalVal).PlainSequence;
                                 else
-                                    VariableValue = new Color(((string)finalVal).ReleaseDoubleQuotes());
+                                    VariableValue = new Color(((string)finalVal).ReleaseDoubleQuotes()).PlainSequence;
                             }
                         }
 
@@ -157,7 +157,7 @@ namespace KS.Kernel.Configuration
                             (PropertyManager.CheckProperty(Variable) && PropertyManager.GetProperty(Variable).PropertyType == typeof(string)))
                         {
                             // We're dealing with the field or the property which takes color but is a string containing plain sequence
-                            VariableValue = ((Color)VariableValue).PlainSequence;
+                            VariableValue = new Color((string)VariableValue).PlainSequence;
                         }
                         DebugWriter.WriteDebug(DebugLevel.I, "Got color var value: {0}", VariableValue);
                     }
