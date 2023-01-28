@@ -61,7 +61,12 @@ namespace KS.Users.Login
             {
                 // First, get the user number from the selection input
                 var users = UserManagement.ListAllUsers().ToArray();
-                var userFullNames = users.Select((user) => UserManagement.GetUserProperty(user, UserManagement.UserProperty.FullName).ToString()).ToArray();
+                var userFullNames = users.Select(
+                    (user) => 
+                        UserManagement.GetUserProperty(user, UserManagement.UserProperty.FullName) is not null ? 
+                        UserManagement.GetUserProperty(user, UserManagement.UserProperty.FullName).ToString() :
+                        ""
+                ).ToArray();
                 int userNum = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a user account you want to log in with."), string.Join("/", users), userFullNames);
 
                 // Then, get the user from the number and prompt for password if found
