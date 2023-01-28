@@ -31,6 +31,7 @@ using KS.Kernel;
 using ColorSeq;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using con = System.Console;
+using VT.NET;
 
 namespace KS.Drivers.Console.Consoles
 {
@@ -403,10 +404,32 @@ namespace KS.Drivers.Console.Consoles
 
                     // Write text slowly
                     var chars = msg.ToCharArray().ToList();
-                    foreach (char ch in chars)
+                    for (int i = 0; i < chars.Count; i++)
                     {
+                        char ch = chars[i];
+
+                        // Sleep for a while
                         Thread.Sleep((int)Math.Round(MsEachLetter));
-                        ConsoleWrapper.Write(ch);
+
+                        // Grab each VT sequence from the message and fetch their indexes
+                        var sequences = Matches.MatchVTSequences(msg);
+                        int vtSeqIdx = 0;
+
+                        // Then, handle the VT sequences. See a comment posted on WriteWherePlain() for more info
+                        string seq = "";
+                        if (sequences.Count > 0 && sequences[vtSeqIdx].Index == i)
+                        {
+                            // We're at an index which is the same as the captured VT sequence. Get the sequence
+                            seq = sequences[vtSeqIdx].Value;
+
+                            // Raise the index in case we have the next sequence, but only if we're sure that we have another
+                            if (vtSeqIdx + 1 < sequences.Count)
+                                vtSeqIdx++;
+
+                            // Raise the paragraph index by the length of the sequence
+                            i += seq.Length - 1;
+                        }
+                        ConsoleWrapper.Write(!string.IsNullOrEmpty(seq) ? seq : ch.ToString());
                     }
                     if (Line)
                     {
@@ -449,7 +472,13 @@ namespace KS.Drivers.Console.Consoles
                     {
                         // We can now check to see if we're writing a letter past the console window width
                         string MessageParagraph = Paragraphs[MessageParagraphIndex];
-                        foreach (char ParagraphChar in MessageParagraph)
+
+                        // Grab each VT sequence from the paragraph and fetch their indexes
+                        var sequences = Matches.MatchVTSequences(MessageParagraph);
+                        int vtSeqIdx = 0;
+
+                        // Now, parse every character
+                        for (int i = 0; i < MessageParagraph.Length; i++)
                         {
                             if (ConsoleWrapper.CursorLeft == ConsoleWrapper.WindowWidth - RightMargin)
                             {
@@ -464,7 +493,35 @@ namespace KS.Drivers.Console.Consoles
                                 }
                                 ConsoleWrapper.CursorLeft = Left;
                             }
-                            ConsoleWrapper.Write(ParagraphChar);
+
+                            // Before printing the character, check to see if we're surrounded by the VT sequence. This is to work around
+                            // the problem in .NET 6.0 Linux that prevents it from actually parsing the VT sequences like it's supposed to
+                            // do in Windows.
+                            //
+                            // Windows 10, Windows 11, and higher contain cmd.exe that checks to see if we passed it the escape character
+                            // alone, and it tries to parse each sequence passed to it.
+                            //
+                            // Linux, on the other hand, the terminal emulator has a completely different behavior, because it just omits
+                            // the escape character, which results in the entire sequence being printed except the Escape \u001b key, which
+                            // is not the way that it's supposed to work.
+                            //
+                            // To overcome this limitation, we need to print the whole sequence to the console found by the virtual terminal
+                            // control sequence matcher to match how it works on Windows.
+                            char ParagraphChar = MessageParagraph[i];
+                            string seq = "";
+                            if (sequences.Count > 0 && sequences[vtSeqIdx].Index == i)
+                            {
+                                // We're at an index which is the same as the captured VT sequence. Get the sequence
+                                seq = sequences[vtSeqIdx].Value;
+
+                                // Raise the index in case we have the next sequence, but only if we're sure that we have another
+                                if (vtSeqIdx + 1 < sequences.Count)
+                                    vtSeqIdx++;
+
+                                // Raise the paragraph index by the length of the sequence
+                                i += seq.Length - 1;
+                            }
+                            ConsoleWrapper.Write(!string.IsNullOrEmpty(seq) ? seq : ParagraphChar.ToString());
                         }
 
                         // We're starting with the new paragraph, so we increase the CursorTop value by 1.
@@ -519,17 +576,40 @@ namespace KS.Drivers.Console.Consoles
                     ConsoleWrapper.SetCursorPosition(Left, Top);
                     for (int MessageParagraphIndex = 0; MessageParagraphIndex <= Paragraphs.Length - 1; MessageParagraphIndex++)
                     {
-                        // We can now check to see if we're writing a letter past the console window width
+                        // Get the paragraph
                         string MessageParagraph = Paragraphs[MessageParagraphIndex];
-                        foreach (char ParagraphChar in MessageParagraph)
+
+                        // Grab each VT sequence from the paragraph and fetch their indexes
+                        var sequences = Matches.MatchVTSequences(MessageParagraph);
+                        int vtSeqIdx = 0;
+
+                        // We can now check to see if we're writing a letter past the console window width
+                        for (int i = 0; i < MessageParagraph.Length; i++)
                         {
+                            // Sleep for a few milliseconds
                             Thread.Sleep((int)Math.Round(MsEachLetter));
                             if (ConsoleWrapper.CursorLeft == ConsoleWrapper.WindowWidth - RightMargin)
                             {
                                 ConsoleWrapper.CursorTop += 1;
                                 ConsoleWrapper.CursorLeft = Left;
                             }
-                            ConsoleWrapper.Write(ParagraphChar);
+
+                            // Then, handle the VT sequences. See a comment posted on WriteWherePlain() for more info
+                            char ParagraphChar = MessageParagraph[i];
+                            string seq = "";
+                            if (sequences.Count > 0 && sequences[vtSeqIdx].Index == i)
+                            {
+                                // We're at an index which is the same as the captured VT sequence. Get the sequence
+                                seq = sequences[vtSeqIdx].Value;
+
+                                // Raise the index in case we have the next sequence, but only if we're sure that we have another
+                                if (vtSeqIdx + 1 < sequences.Count)
+                                    vtSeqIdx++;
+
+                                // Raise the paragraph index by the length of the sequence
+                                i += seq.Length - 1;
+                            }
+                            ConsoleWrapper.Write(!string.IsNullOrEmpty(seq) ? seq : ParagraphChar.ToString());
                             if (Line)
                                 ConsoleWrapper.WriteLine();
                         }
