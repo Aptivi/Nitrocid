@@ -1,18 +1,18 @@
 [
     {
-        "OverrideTitle": "Kernel Simulator 0.1.0",
+        "OverrideTitle": "Nitrocid 0.1.0",
         "Arguments": [ "noaltbuffer" ]
     },
     {
-        "OverrideTitle": "Kernel Simulator 0.1.0 - args",
+        "OverrideTitle": "Nitrocid 0.1.0 - args",
         "Arguments": [ "noaltbuffer", "args" ]
     },
     {
-        "OverrideTitle": "Kernel Simulator 0.1.0 - debug",
+        "OverrideTitle": "Nitrocid 0.1.0 - debug",
         "Arguments": [ "noaltbuffer", "debug" ]
     },
     {
-        "OverrideTitle": "Kernel Simulator 0.1.0 - force on small console",
+        "OverrideTitle": "Nitrocid 0.1.0 - force on small console",
         "Arguments": [ "noaltbuffer", "bypasssizedetection" ]
     }
 ]
