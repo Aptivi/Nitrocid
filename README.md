@@ -114,7 +114,7 @@ that may make you feel uncomfortable reading it.
 
 **jonasjacek**  -  *[Console color data]*
 
-**sindresorhus**  -  *Word list*
+**dwyl**  -  *[Word list]*
 
 **ayu-theme**  -  *Ayu Theme*
 
@@ -149,6 +149,7 @@ that may make you feel uncomfortable reading it.
 [Breezy Theme]: https://github.com/fneu/breezy
 [Papercolor]: https://github.com/NLKNguyen/papercolor-theme
 [Chocolatey]: https://chocolatey.org/packages/KS/
+[Word list]: https://github.com/dwyl/english-words
 [SpaceCamp]: https://github.com/jaredgorski/SpaceCamp
 [NamesList]: https://github.com/Aptivi/NamesList
 [RSS Feed]: https://github.com/yavuz/news-feed-list-of-countries/

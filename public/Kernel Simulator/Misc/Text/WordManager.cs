@@ -41,7 +41,7 @@ namespace KS.Misc.Text
             if (Words.Count == 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Downloading words...");
-                Words.AddRange(NetworkTransfer.DownloadString("https://cdn.jsdelivr.net/gh/sindresorhus/word-list/words.txt").SplitNewLines().ToList());
+                Words.AddRange(NetworkTransfer.DownloadString("https://cdn.jsdelivr.net/gh/dwyl/english-words/words_alpha.txt").SplitNewLines().ToList());
             }
         }
 

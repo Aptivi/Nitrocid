@@ -125,12 +125,10 @@
 
 <br>
 
-### ReadLine.Reboot
+### TermRead
 
-[![Button Source]][ReadLine.Reboot]   
-[![Button MIT]][License ReadLine.Reboot]
-
-© 2017 Toni Solarin-Sodara
+[![Button Source]][TermRead]   
+[![Button MIT]][License TermRead]
 
 © 2022 - Present Aptivi
 
@@ -181,7 +179,7 @@
 [Extensification]: https://github.com/Aptivi/Extensification/
 [HtmlAgilityPack]:  https://github.com/zzzprojects/html-agility-pack/
 [Newtonsoft.Json]: https://github.com/JamesNK/Newtonsoft.Json
-[ReadLine.Reboot]: https://github.com/Aptivi/ReadLine.Reboot/
+[TermRead]: https://github.com/Aptivi/TermRead/
 [Addresstigator]: https://github.com/Aptivi/Addresstigator/
 [SharpCompress]: https://github.com/adamhathcock/sharpcompress
 [StringMath]: https://github.com/miroiu/string-math
@@ -200,7 +198,7 @@
 [License Extensification]: https://github.com/Aptivi/Extensification/blob/master/LICENSE
 [License HtmlAgilityPack]: https://github.com/zzzprojects/html-agility-pack/blob/master/LICENSE
 [License Newtonsoft.Json]: https://github.com/JamesNK/Newtonsoft.Json/blob/master/LICENSE.md
-[License ReadLine.Reboot]: https://github.com/Aptivi/ReadLine.Reboot/blob/master/LICENSE
+[License TermRead]: https://github.com/Aptivi/TermRead/blob/master/LICENSE
 [License Addresstigator]: https://github.com/Aptivi/Addresstigator/blob/main/LICENSE.txt
 [License SharpCompress]: https://github.com/adamhathcock/sharpcompress/blob/master/LICENSE.txt
 [License StringMath]: https://github.com/miroiu/string-math/blob/dev/LICENSE
