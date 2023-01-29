@@ -55,36 +55,8 @@ namespace KS.Misc.Presentation.Elements
             object[] finalArgs = Arguments.Length > 1 ? Arguments.Skip(1).ToArray() : Array.Empty<object>();
             string text = ((string)(Arguments.Length > 0 ? Arguments[0] : "")).FormatString(finalArgs);
 
-            // Split the text to lines that fit well to the console
-            List<string> textLines = new();
-            var lineBuilder = new StringBuilder();
-            for (int i = 0; i < text.Length; i++)
-            {
-                // Add the character to the builder
-                lineBuilder.Append(text[i]);
-
-                // Check to see if the length of the VT-filtered built string is equal or greater than the presentation width limit
-                string built = lineBuilder.ToString();
-                string vtFilteredBuilt = Filters.FilterVTSequences(built);
-                if (vtFilteredBuilt.Length >= PresentationTools.PresentationLowerInnerBorderLeft ||
-                    i == text.Length - 1)
-                {
-                    // Add the built string with VT sequences to the lines list
-                    if (i == text.Length - 1)
-                    {
-                        built += ColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground;
-                        built += ColorTools.GetColor(KernelColorType.Background).VTSequenceBackground;
-                        textLines.Add(built);
-                    }
-                    else
-                        textLines.Add(built + "\n");
-                    lineBuilder.Clear();
-                }
-            }
-
             // Now, write the lines
-            foreach (var line in textLines)
-                TextWriterWhereColor.WriteWhere(line, PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop);
+            TextWriterWhereColor.WriteWhere(text, PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft);
 
             // Get the input
             ConsoleWrapper.CursorVisible = true;
