@@ -16,6 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Drivers;
+using KS.Drivers.Console;
 using KS.Kernel.Debugging;
 using KS.Kernel.Events;
 using KS.Misc.Threading;
@@ -53,17 +55,22 @@ namespace KS.ConsoleBase
         {
             try
             {
+                var termDriver = DriverHandler.GetDriver<IConsoleDriver>("Terminal");
                 while (ResizeListenerThread.IsAlive)
                 {
                     Thread.Sleep(5);
-                    if (CurrentWindowHeight != ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleWrapper.WindowWidth)
+
+                    // We need to call the WindowHeight and WindowWidth properties on the Terminal console driver, because
+                    // this polling works for all the terminals. Other drivers that don't use the terminal may not even
+                    // implement these two properties.
+                    if (CurrentWindowHeight != termDriver.WindowHeight | CurrentWindowWidth != termDriver.WindowWidth)
                     {
                         ResizeDetected = true;
-                        DebugWriter.WriteDebug(DebugLevel.W, "Console resize detected! Old width x height: {0}x{1} | New width x height: {2}x{3}", CurrentWindowWidth, CurrentWindowHeight, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
+                        DebugWriter.WriteDebug(DebugLevel.W, "Console resize detected! Old width x height: {0}x{1} | New width x height: {2}x{3}", CurrentWindowWidth, CurrentWindowHeight, termDriver.WindowWidth, termDriver.WindowHeight);
                         DebugWriter.WriteDebug(DebugLevel.W, "Userspace application will have to call Resized to set ResizeDetected back to false.");
-                        EventsManager.FireEvent(EventType.ResizeDetected, CurrentWindowWidth, CurrentWindowHeight, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
-                        CurrentWindowWidth = ConsoleWrapper.WindowWidth;
-                        CurrentWindowHeight = ConsoleWrapper.WindowHeight;
+                        EventsManager.FireEvent(EventType.ResizeDetected, CurrentWindowWidth, CurrentWindowHeight, termDriver.WindowWidth, termDriver.WindowHeight);
+                        CurrentWindowWidth = termDriver.WindowWidth;
+                        CurrentWindowHeight = termDriver.WindowHeight;
                     }
                 }
             }

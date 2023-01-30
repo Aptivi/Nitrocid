@@ -33,6 +33,8 @@ using KS.Users.Login;
 using KS.Kernel.Events;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Colors;
+using KS.Drivers.Console;
+using KS.Drivers;
 
 namespace KS.Misc.Screensaver
 {
@@ -149,7 +151,8 @@ namespace KS.Misc.Screensaver
             try
             {
                 int CountedTime;
-                int OldCursorLeft = ConsoleBase.ConsoleWrapper.CursorLeft;
+                var termDriver = DriverHandler.GetDriver<IConsoleDriver>("Terminal");
+                int OldCursorLeft = termDriver.CursorLeft;
                 while (!Flags.KernelShutdown)
                 {
                     if (!Flags.ScrnTimeReached)
@@ -158,11 +161,11 @@ namespace KS.Misc.Screensaver
                         for (CountedTime = 0; CountedTime <= ScreenTimeout; CountedTime++)
                         {
                             Thread.Sleep(1);
-                            if (ConsoleBase.ConsoleWrapper.KeyAvailable | OldCursorLeft != ConsoleBase.ConsoleWrapper.CursorLeft)
+                            if (termDriver.KeyAvailable | OldCursorLeft != termDriver.CursorLeft)
                             {
                                 CountedTime = 0;
                             }
-                            OldCursorLeft = ConsoleBase.ConsoleWrapper.CursorLeft;
+                            OldCursorLeft = termDriver.CursorLeft;
                             if (CountedTime > ScreenTimeout)
                             {
                                 // This shouldn't happen, but the counted time is bigger than the screen timeout. Just bail.
