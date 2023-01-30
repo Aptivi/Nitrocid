@@ -20,6 +20,8 @@ using System;
 using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
+using KS.Drivers;
+using KS.Drivers.Console.Consoles;
 using KS.Kernel;
 using KS.Misc.Writers.ConsoleWriters;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
@@ -65,18 +67,22 @@ namespace KS.Misc.Writers.FancyWriters
                         }
                     }
                 }
-                TextWriterColor.Write(Text.Truncate(ConsoleBase.ConsoleWrapper.WindowWidth - 6), false, KernelColorType.SeparatorText, Vars);
+
+                // Render the text accordingly
+                string renderedText = DriverHandler.CurrentConsoleDriver.GetType() == typeof(Terminal) ? Text.Truncate(ConsoleBase.ConsoleWrapper.WindowWidth - 6) : Text;
+                TextWriterColor.Write(renderedText, false, KernelColorType.SeparatorText, Vars);
             }
 
             // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
             int RepeatTimes;
-            if (!(ConsoleBase.ConsoleWrapper.CursorLeft == 0))
+            if (ConsoleBase.ConsoleWrapper.CursorLeft == 0)
             {
                 RepeatTimes = ConsoleBase.ConsoleWrapper.WindowWidth - ConsoleBase.ConsoleWrapper.CursorLeft;
             }
             else
             {
-                RepeatTimes = ConsoleBase.ConsoleWrapper.WindowWidth - (Text.Truncate(ConsoleBase.ConsoleWrapper.WindowWidth - 6) + " ").Length - 1;
+                string renderedText = DriverHandler.CurrentConsoleDriver.GetType() == typeof(Terminal) ? Text.Truncate(ConsoleBase.ConsoleWrapper.WindowWidth - 6) : Text;
+                RepeatTimes = ConsoleBase.ConsoleWrapper.WindowWidth - (renderedText + " ").Length - 1;
             }
 
             // Write the closing minus sign.
@@ -160,18 +166,22 @@ namespace KS.Misc.Writers.FancyWriters
                     Text = "- " + Text;
                 if (!Text.EndsWith("-"))
                     Text += " ";
-                TextWriterColor.Write(Text.Truncate(ConsoleBase.ConsoleWrapper.WindowWidth - 6), false, ForegroundColor, BackgroundColor, Vars);
+
+                // Render the text accordingly
+                string renderedText = DriverHandler.CurrentConsoleDriver.GetType() == typeof(Terminal) ? Text.Truncate(ConsoleBase.ConsoleWrapper.WindowWidth - 6) : Text;
+                TextWriterColor.Write(renderedText, false, ForegroundColor, BackgroundColor, Vars);
             }
 
             // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
             int RepeatTimes;
-            if (!(ConsoleBase.ConsoleWrapper.CursorLeft == 0))
+            if (ConsoleBase.ConsoleWrapper.CursorLeft == 0)
             {
                 RepeatTimes = ConsoleBase.ConsoleWrapper.WindowWidth - ConsoleBase.ConsoleWrapper.CursorLeft;
             }
             else
             {
-                RepeatTimes = ConsoleBase.ConsoleWrapper.WindowWidth - (Text.Truncate(ConsoleBase.ConsoleWrapper.WindowWidth - 6) + " ").Length - 1;
+                string renderedText = DriverHandler.CurrentConsoleDriver.GetType() == typeof(Terminal) ? Text.Truncate(ConsoleBase.ConsoleWrapper.WindowWidth - 6) : Text;
+                RepeatTimes = ConsoleBase.ConsoleWrapper.WindowWidth - (renderedText + " ").Length - 1;
             }
 
             // Write the closing minus sign.
