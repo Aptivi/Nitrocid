@@ -472,6 +472,8 @@ namespace KS.Kernel.Configuration
             // Get the plain sequence from the color
             if (CurrentValue is KeyValuePair<KernelColorType, Color> color)
                 CurrentValue = color.Value.PlainSequence;
+            if (CurrentValue is Color color2)
+                CurrentValue = color2.PlainSequence;
 
             // Get the language name
             if (CurrentValue is LanguageInfo lang)

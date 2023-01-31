@@ -865,8 +865,17 @@ namespace KS.Misc.Settings
                                         colors[colorTypeOnDict] = new Color(ColorValue.ToString());
                                         FinalColor = colors;
                                     }
-                                    else if (FieldManager.CheckField(KeyVar, KeyIsInternal) &&
-                                             FieldManager.GetField(KeyVar, KeyIsInternal).FieldType == typeof(Color))
+                                    else if (PropertyManager.CheckProperty(KeyVar) &&
+                                             PropertyManager.GetPropertyValue(KeyVar) is Dictionary<KernelColorType, Color> colors2)
+                                    {
+                                        var colorTypeOnDict = colors2.ElementAt(KeyEnumerableIndex).Key;
+                                        colors2[colorTypeOnDict] = new Color(ColorValue.ToString());
+                                        FinalColor = colors2;
+                                    }
+                                    else if ((FieldManager.CheckField(KeyVar, KeyIsInternal) &&
+                                              FieldManager.GetField(KeyVar, KeyIsInternal).FieldType == typeof(Color)) ||
+                                             (PropertyManager.CheckProperty(KeyVar) &&
+                                              PropertyManager.GetProperty(KeyVar).PropertyType == typeof(Color)))
                                     {
                                         FinalColor = new Color(ColorValue.ToString());
                                     }
