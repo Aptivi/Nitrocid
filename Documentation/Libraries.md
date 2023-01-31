@@ -170,6 +170,15 @@
 
 <br>
 
+### Wordament
+
+[![Button Source]][Wordament]   
+[![Button MIT]][License Wordament]
+
+© 2023 - Present Aptivi
+
+<br>
+
 
 <!----------------------------------------------------------------------------->
 
@@ -183,6 +192,7 @@
 [Addresstigator]: https://github.com/Aptivi/Addresstigator/
 [SharpCompress]: https://github.com/adamhathcock/sharpcompress
 [StringMath]: https://github.com/miroiu/string-math
+[Wordament]: https://github.com/Aptivi/Wordament/
 [CRC32.NET]: https://github.com/force-net/CRC32.NET
 [FluentFTP]: https://github.com/robinrodricks/FluentFTP
 [UnitsNet]: https://github.com/angularsen/UnitsNet
@@ -202,6 +212,7 @@
 [License Addresstigator]: https://github.com/Aptivi/Addresstigator/blob/main/LICENSE.txt
 [License SharpCompress]: https://github.com/adamhathcock/sharpcompress/blob/master/LICENSE.txt
 [License StringMath]: https://github.com/miroiu/string-math/blob/dev/LICENSE
+[License Wordament]: https://github.com/Aptivi/Wordament/blob/main/LICENSE
 [License FluentFTP]: https://github.com/robinrodricks/FluentFTP/blob/master/LICENSE.TXT
 [License CRC32.NET]: https://github.com/force-net/Crc32.NET/blob/develop/LICENSE
 [License UnitsNet]: https://github.com/angularsen/UnitsNet/blob/master/LICENSE
