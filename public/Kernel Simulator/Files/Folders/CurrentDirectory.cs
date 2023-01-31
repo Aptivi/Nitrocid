@@ -55,7 +55,7 @@ namespace KS.Files.Folders
                 }
                 else
                 {
-                    throw new DirectoryNotFoundException(Translate.DoTranslation("Directory {0} not found").FormatString(value));
+                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Directory {0} not found").FormatString(value));
                 }
             }
         }

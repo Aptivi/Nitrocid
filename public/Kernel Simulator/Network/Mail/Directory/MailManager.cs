@@ -129,7 +129,7 @@ namespace KS.Network.Mail.Directory
             if (Message < 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Trying to remove message 0 or less than 0.");
-                throw new ArgumentException(Translate.DoTranslation("Message number may not be negative or zero."));
+                throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Message number may not be negative or zero."));
             }
             else if (Message > MaxMessagesIndex)
             {
@@ -246,7 +246,7 @@ namespace KS.Network.Mail.Directory
             if (Message < 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Trying to move message 0 or less than 0.");
-                throw new ArgumentException(Translate.DoTranslation("Message number may not be negative or zero."));
+                throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Message number may not be negative or zero."));
             }
             else if (Message > MaxMessagesIndex)
             {

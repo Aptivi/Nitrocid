@@ -18,6 +18,7 @@
 
 using System;
 using System.Collections.Generic;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Threading;
 using KS.Shell.ShellBase.Commands;
@@ -113,7 +114,7 @@ namespace KS.Shell.ShellBase.Shells
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("Can not kill the mother shell!"));
+                throw new KernelException(KernelExceptionType.ShellOperation, Translate.DoTranslation("Can not kill the mother shell!"));
             }
         }
 

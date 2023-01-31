@@ -419,5 +419,14 @@ File manager box background color
 File manager box foreground color
 The Wordle game simulator
 You guessed the right word! You win!
+An invalid shell operation is being attempted.
+This function or feature is not implemented yet.
+An operation was attempted on the remote procedure system that is invalid.
+An invalid encryption operation is being performed.
+An invalid debugging operation is being performed.
+An invalid archive operation is being performed.
+An invalid hex editor operation is being performed.
+An invalid JSON editor operation is being performed.
+An invalid text editor operation is being performed.
 
 ==========================================================================================================================================

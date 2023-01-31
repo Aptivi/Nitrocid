@@ -18,6 +18,7 @@
 
 using System;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 
 namespace KS.Arguments.ArgumentBase
 {
@@ -37,7 +38,7 @@ namespace KS.Arguments.ArgumentBase
         public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
             DebugWriter.WriteDebug(DebugLevel.F, "We shouldn't be here!!!");
-            throw new InvalidOperationException();
+            throw new KernelException(KernelExceptionType.NotImplementedYet);
         }
 
     }

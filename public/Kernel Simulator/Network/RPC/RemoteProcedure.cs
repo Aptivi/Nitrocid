@@ -20,6 +20,7 @@ using System.Net.Sockets;
 using System.Threading;
 using Extensification.StringExts;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Splash;
 using KS.Misc.Threading;
@@ -72,12 +73,12 @@ namespace KS.Network.RPC
                 }
                 else
                 {
-                    throw new ThreadStateException(Translate.DoTranslation("Trying to start RPC while it's already started."));
+                    throw new KernelException(KernelExceptionType.RemoteProcedure, Translate.DoTranslation("Trying to start RPC while it's already started."));
                 }
             }
             else
             {
-                throw new ThreadStateException(Translate.DoTranslation("Not starting RPC because it's disabled."));
+                throw new KernelException(KernelExceptionType.RemoteProcedure, Translate.DoTranslation("Not starting RPC because it's disabled."));
             }
         }
 

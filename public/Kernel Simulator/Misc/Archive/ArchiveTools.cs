@@ -26,6 +26,7 @@ using KS.Files;
 using KS.Files.Operations;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.Shells.Archive;
 using SharpCompress.Archives;
@@ -80,7 +81,7 @@ namespace KS.Misc.Archive
         public static bool ExtractFileEntry(string Target, string Where, bool FullTargetPath = false)
         {
             if (string.IsNullOrWhiteSpace(Target))
-                throw new ArgumentException(Translate.DoTranslation("Can't extract nothing."));
+                throw new KernelException(KernelExceptionType.Archive, Translate.DoTranslation("Can't extract nothing."));
             if (string.IsNullOrWhiteSpace(Where))
                 Where = ArchiveShellCommon.ArchiveShell_CurrentDirectory;
 
@@ -122,11 +123,11 @@ namespace KS.Misc.Archive
         public static bool PackFile(string Target, string Where)
         {
             if (string.IsNullOrWhiteSpace(Target))
-                throw new ArgumentException(Translate.DoTranslation("Can't pack nothing."));
+                throw new KernelException(KernelExceptionType.Archive, Translate.DoTranslation("Can't pack nothing."));
             if (string.IsNullOrWhiteSpace(Where))
                 Where = ArchiveShellCommon.ArchiveShell_CurrentDirectory;
             if (ArchiveShellCommon.ArchiveShell_Archive is not IWritableArchive)
-                throw new ArgumentException(Translate.DoTranslation("Archive is not writable because type is") + " {0}.".FormatString(ArchiveShellCommon.ArchiveShell_Archive.Type));
+                throw new KernelException(KernelExceptionType.Archive, Translate.DoTranslation("Archive is not writable because type is") + " {0}.".FormatString(ArchiveShellCommon.ArchiveShell_Archive.Type));
 
             // Define absolute archive target
             string ArchiveTarget = ArchiveShellCommon.ArchiveShell_CurrentArchiveDirectory + "/" + Target;

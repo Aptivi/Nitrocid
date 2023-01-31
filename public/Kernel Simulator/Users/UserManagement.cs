@@ -101,7 +101,6 @@ namespace KS.Users
         /// <param name="ComputationNeeded">Whether or not a password encryption is needed</param>
         /// <param name="ModifyExisting">Changes the password of the existing user</param>
         /// <returns>True if successful; False if successful</returns>
-        /// <exception cref="InvalidOperationException"></exception>
         public static bool InitializeUser(string uninitUser, string unpassword = "", bool ComputationNeeded = true, bool ModifyExisting = false)
         {
             try
@@ -115,7 +114,7 @@ namespace KS.Users
                 }
                 else if (!Regexp.IsMatch(unpassword))
                 {
-                    throw new InvalidOperationException("Trying to add unencrypted password to users list.");
+                    throw new KernelException(KernelExceptionType.UserManagement, "Trying to add unencrypted password to users list.");
                 }
 
                 // Add user locally

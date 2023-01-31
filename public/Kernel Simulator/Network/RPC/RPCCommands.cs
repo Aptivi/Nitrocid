@@ -31,6 +31,7 @@ using KS.Misc.Screensaver;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Kernel.Events;
+using KS.Kernel.Exceptions;
 
 namespace KS.Network.RPC
 {
@@ -132,7 +133,7 @@ namespace KS.Network.RPC
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("Trying to send an RPC command while RPC didn't start."));
+                throw new KernelException(KernelExceptionType.RemoteProcedure, Translate.DoTranslation("Trying to send an RPC command while RPC didn't start."));
             }
         }
 

@@ -237,7 +237,7 @@ namespace KS.ConsoleBase.Colors
         public static void SetConsoleColor(Color ColorSequence, bool Background = false, bool ForceSet = false)
         {
             if (ColorSequence is null)
-                throw new ArgumentNullException(nameof(ColorSequence));
+                throw new KernelException(KernelExceptionType.Color, nameof(ColorSequence));
 
             // Define reset background sequence
             string resetSequence = CharManager.GetEsc() + $"[49m";

@@ -26,6 +26,7 @@ using KS.Files.Querying;
 using KS.Languages;
 using KS.Kernel.Debugging;
 using KS.Kernel;
+using KS.Kernel.Exceptions;
 
 namespace KS.Files
 {
@@ -86,7 +87,7 @@ namespace KS.Files
                 if (Checking.FileExists(Path) | Checking.FolderExists(Path))
                     return Path;
                 else
-                    throw new FileNotFoundException(Translate.DoTranslation("Neutralized a non-existent path.") + " {0}".FormatString(Path));
+                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Neutralized a non-existent path.") + " {0}".FormatString(Path));
             else
                 return Path;
         }
@@ -105,7 +106,7 @@ namespace KS.Files
             if (KernelPlatform.IsOnWindows() & (Path.Contains("$i30") | Path.Contains(@"\\.\globalroot\device\condrv\kernelconnect")))
             {
                 DebugWriter.WriteDebug(DebugLevel.F, "Trying to access invalid path. Path was {0}", Path);
-                throw new ArgumentException(Translate.DoTranslation("Trying to access invalid path."), nameof(Path));
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Trying to access invalid path."), nameof(Path));
             }
         }
 

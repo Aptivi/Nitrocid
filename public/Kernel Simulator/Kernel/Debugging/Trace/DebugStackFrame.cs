@@ -16,6 +16,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Files;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using System;
 using System.Diagnostics;
@@ -39,7 +40,7 @@ namespace KS.Kernel.Debugging.Trace
             var trace = new StackTrace(true);
             frameNumber += 1;
             if (frameNumber <= 0 || frameNumber > trace.FrameCount)
-                throw new ArgumentOutOfRangeException(nameof(frameNumber), frameNumber, Translate.DoTranslation("Stack frame number shouldn't exceed current amount of frames or shouldn't be negative."));
+                throw new KernelException(KernelExceptionType.Debug, Translate.DoTranslation("Stack frame number shouldn't exceed current amount of frames or shouldn't be negative."));
 
             string FrameFilePath = Filesystem.NeutralizePath(trace.GetFrame(frameNumber).GetFileName());
             string Source = Path.GetFileName(FrameFilePath);

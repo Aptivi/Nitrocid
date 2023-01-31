@@ -27,6 +27,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Text;
+using KS.Kernel.Exceptions;
 
 namespace KS.Drivers.Console.Consoles
 {
@@ -44,9 +45,9 @@ namespace KS.Drivers.Console.Consoles
 
         public override TextWriter Out => null;
 
-        public override int CursorLeft { get => 0; set => throw new NotImplementedException(); }
+        public override int CursorLeft { get => 0; set => throw new KernelException(KernelExceptionType.NotImplementedYet); }
 
-        public override int CursorTop { get => 0; set => throw new NotImplementedException(); }
+        public override int CursorTop { get => 0; set => throw new KernelException(KernelExceptionType.NotImplementedYet); }
 
         public override int WindowTop => 0;
 
@@ -58,45 +59,45 @@ namespace KS.Drivers.Console.Consoles
 
         public override int BufferHeight => 0;
 
-        public override ConsoleColor ForegroundColor { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public override ConsoleColor ForegroundColor { get => throw new KernelException(KernelExceptionType.NotImplementedYet); set => throw new KernelException(KernelExceptionType.NotImplementedYet); }
 
-        public override ConsoleColor BackgroundColor { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public override ConsoleColor BackgroundColor { get => throw new KernelException(KernelExceptionType.NotImplementedYet); set => throw new KernelException(KernelExceptionType.NotImplementedYet); }
 
-        public override bool CursorVisible { set => throw new NotImplementedException(); }
+        public override bool CursorVisible { set => throw new KernelException(KernelExceptionType.NotImplementedYet); }
 
-        public override Encoding OutputEncoding { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public override Encoding OutputEncoding { get => throw new KernelException(KernelExceptionType.NotImplementedYet); set => throw new KernelException(KernelExceptionType.NotImplementedYet); }
 
-        public override Encoding InputEncoding { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public override Encoding InputEncoding { get => throw new KernelException(KernelExceptionType.NotImplementedYet); set => throw new KernelException(KernelExceptionType.NotImplementedYet); }
 
         public override bool KeyAvailable =>
-            throw new NotImplementedException();
+            throw new KernelException(KernelExceptionType.NotImplementedYet);
 
         public override void Beep() =>
-            throw new NotImplementedException();
+            throw new KernelException(KernelExceptionType.NotImplementedYet);
 
         public override void Clear(bool loadBack = false) =>
-            throw new NotImplementedException();
+            throw new KernelException(KernelExceptionType.NotImplementedYet);
 
         public override Stream OpenStandardError() =>
-            throw new NotImplementedException();
+            throw new KernelException(KernelExceptionType.NotImplementedYet);
 
         public override Stream OpenStandardInput() =>
-            throw new NotImplementedException();
+            throw new KernelException(KernelExceptionType.NotImplementedYet);
 
         public override Stream OpenStandardOutput() =>
-            throw new NotImplementedException();
+            throw new KernelException(KernelExceptionType.NotImplementedYet);
 
         public override ConsoleKeyInfo ReadKey(bool intercept = false) =>
-            throw new NotImplementedException();
+            throw new KernelException(KernelExceptionType.NotImplementedYet);
 
         public override void ResetColor() =>
-            throw new NotImplementedException();
+            throw new KernelException(KernelExceptionType.NotImplementedYet);
 
         public override void SetCursorPosition(int left, int top) =>
-            throw new NotImplementedException();
+            throw new KernelException(KernelExceptionType.NotImplementedYet);
 
         public override void SetOut(TextWriter newOut) =>
-            throw new NotImplementedException();
+            throw new KernelException(KernelExceptionType.NotImplementedYet);
 
         /// <summary>
         /// Outputs text to the void

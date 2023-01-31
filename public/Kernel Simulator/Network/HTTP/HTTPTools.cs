@@ -19,6 +19,7 @@
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.Shells.HTTP;
 
@@ -43,7 +44,7 @@ namespace KS.Network.HTTP
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("You must connect to server with administrative privileges before performing the deletion."));
+                throw new KernelException(KernelExceptionType.HTTPShell, Translate.DoTranslation("You must connect to server with administrative privileges before performing the deletion."));
             }
         }
 
@@ -60,7 +61,7 @@ namespace KS.Network.HTTP
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("You must connect to server before performing transmission."));
+                throw new KernelException(KernelExceptionType.HTTPShell, Translate.DoTranslation("You must connect to server before performing transmission."));
             }
         }
 
@@ -77,7 +78,7 @@ namespace KS.Network.HTTP
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("You must connect to server before performing transmission."));
+                throw new KernelException(KernelExceptionType.HTTPShell, Translate.DoTranslation("You must connect to server before performing transmission."));
             }
         }
 

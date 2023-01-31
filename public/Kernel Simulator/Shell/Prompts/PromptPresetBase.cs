@@ -18,6 +18,7 @@
 
 using System;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 
 namespace KS.Shell.Prompts
 {
@@ -42,7 +43,7 @@ namespace KS.Shell.Prompts
         internal virtual string PresetPromptBuilder()
         {
             DebugWriter.WriteDebug(DebugLevel.E, "Tried to call prompt builder on base.");
-            throw new NotImplementedException();
+            throw new KernelException(KernelExceptionType.NotImplementedYet);
         }
 
         string IPromptPreset.PresetPromptBuilder() => PresetPromptBuilder();
@@ -50,7 +51,7 @@ namespace KS.Shell.Prompts
         internal virtual string PresetPromptCompletionBuilder()
         {
             DebugWriter.WriteDebug(DebugLevel.E, "Tried to call prompt builder on base.");
-            throw new NotImplementedException();
+            throw new KernelException(KernelExceptionType.NotImplementedYet);
         }
 
         string IPromptPreset.PresetPromptCompletionBuilder() => PresetPromptCompletionBuilder();

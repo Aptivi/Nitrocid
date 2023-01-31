@@ -244,7 +244,7 @@ namespace KS.ConsoleBase.Themes
         public static void SetColorsTheme(ThemeInfo ThemeInfo)
         {
             if (ThemeInfo is null)
-                throw new ArgumentNullException(nameof(ThemeInfo));
+                throw new KernelException(KernelExceptionType.Color, nameof(ThemeInfo));
 
             // Check to see if we're trying to preview theme on non-true color console
             if (IsTrueColorRequired(ThemeInfo) && !Flags.ConsoleSupportsTrueColor)

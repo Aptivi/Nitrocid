@@ -99,6 +99,15 @@ namespace KS.Kernel.Exceptions
                     { KernelExceptionType.NoSuchDriver,                     Translate.DoTranslation("Driver doesn't exist. Check to make sure that you've written the driver name correctly, and that the driver is registered properly.") },
                     { KernelExceptionType.ThreadNotReadyYet,                Translate.DoTranslation("The thread is not ready yet. The user code might have forgotten to regenerate the kernel thread after stopping it manually.") },
                     { KernelExceptionType.ThreadOperation,                  Translate.DoTranslation("A thread operation is invalid in the current state. Refer to the additional message the kernel manager gave you for additional information.") },
+                    { KernelExceptionType.ShellOperation,                   Translate.DoTranslation("An invalid shell operation is being attempted.") },
+                    { KernelExceptionType.NotImplementedYet,                Translate.DoTranslation("This function or feature is not implemented yet.") },
+                    { KernelExceptionType.RemoteProcedure,                  Translate.DoTranslation("An operation was attempted on the remote procedure system that is invalid.") },
+                    { KernelExceptionType.Encryption,                       Translate.DoTranslation("An invalid encryption operation is being performed.") },
+                    { KernelExceptionType.Debug,                            Translate.DoTranslation("An invalid debugging operation is being performed.") },
+                    { KernelExceptionType.Archive,                          Translate.DoTranslation("An invalid archive operation is being performed.") },
+                    { KernelExceptionType.HexEditor,                        Translate.DoTranslation("An invalid hex editor operation is being performed.") },
+                    { KernelExceptionType.JsonEditor,                       Translate.DoTranslation("An invalid JSON editor operation is being performed.") },
+                    { KernelExceptionType.TextEditor,                       Translate.DoTranslation("An invalid text editor operation is being performed.") },
                 };
             }
         }

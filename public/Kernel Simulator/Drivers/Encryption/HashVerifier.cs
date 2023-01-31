@@ -88,7 +88,7 @@ namespace KS.Drivers.Encryption
                 }
                 else
                 {
-                    throw new FileNotFoundException("Hashes file {0} not found.".FormatString(HashesFile));
+                    throw new KernelException(KernelExceptionType.Encryption, "Hashes file {0} not found.".FormatString(HashesFile));
                 }
 
                 if (ActualHash.Length == ExpectedHashLength & ExpectedHash.Length == ExpectedHashLength)
@@ -114,7 +114,7 @@ namespace KS.Drivers.Encryption
             }
             else
             {
-                throw new FileNotFoundException("File {0} not found.".FormatString(FileName));
+                throw new KernelException(KernelExceptionType.Encryption, "File {0} not found.".FormatString(FileName));
             }
         }
 
@@ -164,7 +164,7 @@ namespace KS.Drivers.Encryption
             }
             else
             {
-                throw new FileNotFoundException("File {0} not found.".FormatString(FileName));
+                throw new KernelException(KernelExceptionType.Encryption, "File {0} not found.".FormatString(FileName));
             }
         }
 
@@ -225,7 +225,7 @@ namespace KS.Drivers.Encryption
                 }
                 else
                 {
-                    throw new FileNotFoundException("Hashes file {0} not found.".FormatString(HashesFile));
+                    throw new KernelException(KernelExceptionType.Encryption, "Hashes file {0} not found.".FormatString(HashesFile));
                 }
 
                 if (ActualHash.Length == ExpectedHashLength & ExpectedHash.Length == ExpectedHashLength)
@@ -251,7 +251,7 @@ namespace KS.Drivers.Encryption
             }
             else
             {
-                throw new FileNotFoundException("File {0} not found.".FormatString(FileName));
+                throw new KernelException(KernelExceptionType.Encryption, "File {0} not found.".FormatString(FileName));
             }
         }
 
@@ -302,7 +302,7 @@ namespace KS.Drivers.Encryption
             }
             else
             {
-                throw new FileNotFoundException("File {0} not found.".FormatString(FileName));
+                throw new KernelException(KernelExceptionType.Encryption, "File {0} not found.".FormatString(FileName));
             }
         }
 

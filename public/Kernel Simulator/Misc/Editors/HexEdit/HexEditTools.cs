@@ -26,6 +26,7 @@ using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Files.Print;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.Shells.Hex;
@@ -165,7 +166,7 @@ namespace KS.Misc.Editors.HexEdit
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("The hex editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The hex editor hasn't opened a file stream yet."));
             }
         }
 
@@ -182,7 +183,7 @@ namespace KS.Misc.Editors.HexEdit
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("The hex editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The hex editor hasn't opened a file stream yet."));
             }
         }
 
@@ -208,12 +209,12 @@ namespace KS.Misc.Editors.HexEdit
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(nameof(ByteNumber), ByteNumber, Translate.DoTranslation("The specified byte number may not be larger than the file size."));
+                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The specified byte number may not be larger than the file size."));
                 }
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("The hex editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The hex editor hasn't opened a file stream yet."));
             }
         }
 
@@ -251,16 +252,16 @@ namespace KS.Misc.Editors.HexEdit
                 }
                 else if (StartByteNumber > HexEditShellCommon.HexEdit_FileBytes.LongLength)
                 {
-                    throw new ArgumentOutOfRangeException(nameof(StartByteNumber), StartByteNumber, Translate.DoTranslation("The specified start byte number may not be larger than the file size."));
+                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The specified start byte number may not be larger than the file size."));
                 }
                 else if (EndByteNumber > HexEditShellCommon.HexEdit_FileBytes.LongLength)
                 {
-                    throw new ArgumentOutOfRangeException(nameof(EndByteNumber), EndByteNumber, Translate.DoTranslation("The specified end byte number may not be larger than the file size."));
+                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The specified end byte number may not be larger than the file size."));
                 }
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("The hex editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The hex editor hasn't opened a file stream yet."));
             }
         }
 
@@ -282,7 +283,7 @@ namespace KS.Misc.Editors.HexEdit
             if (HexEditShellCommon.HexEdit_FileStream is not null)
                 FileContentPrinter.DisplayInHex(StartByte, EndByte, HexEditShellCommon.HexEdit_FileBytes);
             else
-                throw new InvalidOperationException(Translate.DoTranslation("The hex editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The hex editor hasn't opened a file stream yet."));
         }
 
         /// <summary>
@@ -347,7 +348,7 @@ namespace KS.Misc.Editors.HexEdit
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("The hex editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The hex editor hasn't opened a file stream yet."));
             }
         }
 
@@ -401,7 +402,7 @@ namespace KS.Misc.Editors.HexEdit
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("The hex editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The hex editor hasn't opened a file stream yet."));
             }
         }
 

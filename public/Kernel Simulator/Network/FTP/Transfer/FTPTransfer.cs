@@ -24,6 +24,7 @@ using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Shell.Shells.FTP;
 using KS.Kernel.Events;
+using KS.Kernel.Exceptions;
 
 namespace KS.Network.FTP.Transfer
 {
@@ -79,7 +80,7 @@ namespace KS.Network.FTP.Transfer
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("You must connect to server before performing transmission."));
+                throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("You must connect to server before performing transmission."));
             }
             return false;
         }
@@ -158,7 +159,7 @@ namespace KS.Network.FTP.Transfer
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("You must connect to server before performing transmission."));
+                throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("You must connect to server before performing transmission."));
             }
             return false;
         }
@@ -194,7 +195,7 @@ namespace KS.Network.FTP.Transfer
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("You must connect to server before performing transmission."));
+                throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("You must connect to server before performing transmission."));
             }
         }
 
@@ -263,7 +264,7 @@ namespace KS.Network.FTP.Transfer
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("You must connect to server before performing transmission."));
+                throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("You must connect to server before performing transmission."));
             }
         }
 
@@ -303,7 +304,7 @@ namespace KS.Network.FTP.Transfer
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("You must connect to server before performing transmission."));
+                throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("You must connect to server before performing transmission."));
             }
             return "";
         }

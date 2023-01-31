@@ -24,6 +24,7 @@ using System.Threading;
 using Extensification.StreamReaderExts;
 using KS.Files;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.Shells.Json;
 using Newtonsoft.Json;
@@ -167,12 +168,12 @@ namespace KS.Misc.Editors.JsonShell
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(nameof(Property), Property, Translate.DoTranslation("The property inside the JSON file isn't found."));
+                    throw new KernelException(KernelExceptionType.JsonEditor, Translate.DoTranslation("The property inside the JSON file isn't found."));
                 }
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("The JSON editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.JsonEditor, Translate.DoTranslation("The JSON editor hasn't opened a file stream yet."));
             }
         }
 

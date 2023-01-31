@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Exceptions;
 using System;
 
 namespace KS.Kernel.Debugging.RemoteDebug.Command
@@ -37,7 +38,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
         public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, string Address)
         {
             DebugWriter.WriteDebug(DebugLevel.F, "We shouldn't be here!!!");
-            throw new InvalidOperationException();
+            throw new KernelException(KernelExceptionType.NotImplementedYet);
         }
 
         /// <summary>

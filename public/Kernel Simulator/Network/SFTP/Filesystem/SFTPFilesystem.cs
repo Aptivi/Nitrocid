@@ -105,7 +105,7 @@ namespace KS.Network.SFTP.Filesystem
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("You should connect to server before listing all remote files."));
+                throw new KernelException(KernelExceptionType.SFTPFilesystem, Translate.DoTranslation("You should connect to server before listing all remote files."));
             }
         }
 
@@ -168,12 +168,12 @@ namespace KS.Network.SFTP.Filesystem
                 }
                 else
                 {
-                    throw new ArgumentNullException(Directory, Translate.DoTranslation("Enter a remote directory. \"..\" to go back"));
+                    throw new KernelException(KernelExceptionType.SFTPFilesystem, Translate.DoTranslation("Enter a remote directory. \"..\" to go back"));
                 }
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("You must connect to a server before changing directory"));
+                throw new KernelException(KernelExceptionType.SFTPFilesystem, Translate.DoTranslation("You must connect to a server before changing directory"));
             }
         }
 
@@ -200,7 +200,7 @@ namespace KS.Network.SFTP.Filesystem
             }
             else
             {
-                throw new ArgumentNullException(Directory, Translate.DoTranslation("Enter a local directory. \"..\" to go back."));
+                throw new KernelException(KernelExceptionType.SFTPFilesystem, Translate.DoTranslation("Enter a local directory. \"..\" to go back."));
             }
         }
 
@@ -225,7 +225,7 @@ namespace KS.Network.SFTP.Filesystem
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("You must connect to server before performing filesystem operations."));
+                throw new KernelException(KernelExceptionType.SFTPFilesystem, Translate.DoTranslation("You must connect to server before performing filesystem operations."));
             }
         }
 

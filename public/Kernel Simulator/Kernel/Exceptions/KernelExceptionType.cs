@@ -294,6 +294,42 @@ namespace KS.Kernel.Exceptions
         /// <summary>
         /// A thread operation is invalid in the current state. Refer to the additional message the kernel manager gave you for additional information.
         /// </summary>
-        ThreadOperation
+        ThreadOperation,
+        /// <summary>
+        /// An invalid shell operation is being attempted.
+        /// </summary>
+        ShellOperation,
+        /// <summary>
+        /// This function or feature is not implemented yet.
+        /// </summary>
+        NotImplementedYet,
+        /// <summary>
+        /// An operation was attempted on the remote procedure system that is invalid.
+        /// </summary>
+        RemoteProcedure,
+        /// <summary>
+        /// An invalid encryption operation is being performed.
+        /// </summary>
+        Encryption,
+        /// <summary>
+        /// An invalid debugging operation is being performed.
+        /// </summary>
+        Debug,
+        /// <summary>
+        /// An invalid archive operation is being performed.
+        /// </summary>
+        Archive,
+        /// <summary>
+        /// An invalid hex editor operation is being performed.
+        /// </summary>
+        HexEditor,
+        /// <summary>
+        /// An invalid JSON editor operation is being performed.
+        /// </summary>
+        JsonEditor,
+        /// <summary>
+        /// An invalid text editor operation is being performed.
+        /// </summary>
+        TextEditor
     }
 }

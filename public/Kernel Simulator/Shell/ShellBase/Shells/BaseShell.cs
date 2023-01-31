@@ -18,6 +18,7 @@
 
 using System;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 
 namespace KS.Shell.ShellBase.Shells
 {
@@ -37,7 +38,7 @@ namespace KS.Shell.ShellBase.Shells
         public virtual void InitializeShell(params object[] ShellArgs)
         {
             DebugWriter.WriteDebug(DebugLevel.F, "We shouldn't be here!!!");
-            throw new InvalidOperationException();
+            throw new KernelException(KernelExceptionType.NotImplementedYet);
         }
 
     }

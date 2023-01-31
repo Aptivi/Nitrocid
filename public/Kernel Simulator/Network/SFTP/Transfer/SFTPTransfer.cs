@@ -21,6 +21,7 @@ using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Shell.Shells.SFTP;
 using KS.Kernel.Events;
+using KS.Kernel.Exceptions;
 
 namespace KS.Network.SFTP.Transfer
 {
@@ -62,7 +63,7 @@ namespace KS.Network.SFTP.Transfer
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("You must connect to server before performing transmission."));
+                throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("You must connect to server before performing transmission."));
             }
             return false;
         }
@@ -97,7 +98,7 @@ namespace KS.Network.SFTP.Transfer
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("You must connect to server before performing transmission."));
+                throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("You must connect to server before performing transmission."));
             }
             return false;
         }

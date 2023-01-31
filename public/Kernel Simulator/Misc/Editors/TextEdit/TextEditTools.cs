@@ -26,6 +26,7 @@ using System.Threading;
 using FluentFTP.Helpers;
 using KS.Files;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Shell.Shells.Text;
@@ -172,7 +173,7 @@ namespace KS.Misc.Editors.TextEdit
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
             }
         }
 
@@ -189,7 +190,7 @@ namespace KS.Misc.Editors.TextEdit
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
             }
         }
 
@@ -211,12 +212,12 @@ namespace KS.Misc.Editors.TextEdit
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(nameof(LineNumber), LineNumber, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
+                    throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
                 }
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
             }
         }
 
@@ -228,7 +229,7 @@ namespace KS.Misc.Editors.TextEdit
         public static void TextEdit_ReplaceRegex(string From, string With)
         {
             if (string.IsNullOrEmpty(From))
-                throw new ArgumentNullException(nameof(From));
+                throw new KernelException(KernelExceptionType.TextEditor, nameof(From));
             if (TextEditShellCommon.TextEdit_FileStream is not null)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}", From, With);
@@ -240,7 +241,7 @@ namespace KS.Misc.Editors.TextEdit
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
             }
         }
 
@@ -253,7 +254,7 @@ namespace KS.Misc.Editors.TextEdit
         public static void TextEdit_ReplaceRegex(string From, string With, int LineNumber)
         {
             if (string.IsNullOrEmpty(From))
-                throw new ArgumentNullException(nameof(From));
+                throw new KernelException(KernelExceptionType.TextEditor, nameof(From));
             if (TextEditShellCommon.TextEdit_FileStream is not null)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}, Line Number: {2}", From, With, LineNumber);
@@ -266,12 +267,12 @@ namespace KS.Misc.Editors.TextEdit
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(nameof(LineNumber), LineNumber, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
+                    throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
                 }
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
             }
         }
 
@@ -283,7 +284,7 @@ namespace KS.Misc.Editors.TextEdit
         public static void TextEdit_Replace(string From, string With)
         {
             if (string.IsNullOrEmpty(From))
-                throw new ArgumentNullException(nameof(From));
+                throw new KernelException(KernelExceptionType.TextEditor, nameof(From));
             if (TextEditShellCommon.TextEdit_FileStream is not null)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}", From, With);
@@ -295,7 +296,7 @@ namespace KS.Misc.Editors.TextEdit
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
             }
         }
 
@@ -308,7 +309,7 @@ namespace KS.Misc.Editors.TextEdit
         public static void TextEdit_Replace(string From, string With, int LineNumber)
         {
             if (string.IsNullOrEmpty(From))
-                throw new ArgumentNullException(nameof(From));
+                throw new KernelException(KernelExceptionType.TextEditor, nameof(From));
             if (TextEditShellCommon.TextEdit_FileStream is not null)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}, Line Number: {2}", From, With, LineNumber);
@@ -321,12 +322,12 @@ namespace KS.Misc.Editors.TextEdit
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(nameof(LineNumber), LineNumber, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
+                    throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
                 }
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
             }
         }
 
@@ -338,7 +339,7 @@ namespace KS.Misc.Editors.TextEdit
         public static void TextEdit_DeleteWord(string Word, int LineNumber)
         {
             if (string.IsNullOrEmpty(Word))
-                throw new ArgumentNullException(nameof(Word));
+                throw new KernelException(KernelExceptionType.TextEditor, nameof(Word));
             if (TextEditShellCommon.TextEdit_FileStream is not null)
             {
                 int LineIndex = LineNumber - 1;
@@ -352,12 +353,12 @@ namespace KS.Misc.Editors.TextEdit
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(nameof(LineNumber), LineNumber, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
+                    throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
                 }
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
             }
         }
 
@@ -383,12 +384,12 @@ namespace KS.Misc.Editors.TextEdit
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(nameof(LineNumber), LineNumber, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
+                    throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
                 }
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
             }
         }
 
@@ -420,7 +421,7 @@ namespace KS.Misc.Editors.TextEdit
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
             }
         }
 
@@ -450,13 +451,13 @@ namespace KS.Misc.Editors.TextEdit
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(nameof(LineNumber), LineNumber, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
+                    throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
                 }
                 return Results;
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
             }
         }
 
@@ -489,7 +490,7 @@ namespace KS.Misc.Editors.TextEdit
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
             }
         }
 
@@ -520,13 +521,13 @@ namespace KS.Misc.Editors.TextEdit
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(nameof(LineNumber), LineNumber, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
+                    throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
                 }
                 return Results;
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
             }
         }
 
@@ -557,7 +558,7 @@ namespace KS.Misc.Editors.TextEdit
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
             }
         }
 
@@ -586,13 +587,13 @@ namespace KS.Misc.Editors.TextEdit
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(nameof(LineNumber), LineNumber, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
+                    throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
                 }
                 return Results;
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
             }
         }
 

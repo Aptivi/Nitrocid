@@ -59,12 +59,12 @@ namespace KS.Network.FTP.Filesystem
                 }
                 else
                 {
-                    throw new ArgumentNullException(File, Translate.DoTranslation("Enter a remote file to be hashed."));
+                    throw new KernelException(KernelExceptionType.FTPNetwork, Translate.DoTranslation("Enter a remote file to be hashed."));
                 }
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("You must connect to a server before performing this operation."));
+                throw new KernelException(KernelExceptionType.FTPNetwork, Translate.DoTranslation("You must connect to a server before performing this operation."));
             }
         }
 
@@ -118,12 +118,12 @@ namespace KS.Network.FTP.Filesystem
                 }
                 else
                 {
-                    throw new ArgumentNullException(Directory, Translate.DoTranslation("Enter a remote directory."));
+                    throw new KernelException(KernelExceptionType.FTPNetwork, Translate.DoTranslation("Enter a remote directory."));
                 }
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("You must connect to a server before performing this operation."));
+                throw new KernelException(KernelExceptionType.FTPNetwork, Translate.DoTranslation("You must connect to a server before performing this operation."));
             }
         }
 

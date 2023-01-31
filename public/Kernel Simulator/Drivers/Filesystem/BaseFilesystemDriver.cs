@@ -166,7 +166,7 @@ namespace KS.Drivers.Filesystem
             FS.ThrowOnInvalidPath(TextFile);
             TextFile = FS.NeutralizePath(TextFile);
             if (!Checking.FileExists(TextFile))
-                throw new IOException(Translate.DoTranslation("File {0} not found.").FormatString(TextFile));
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File {0} not found.").FormatString(TextFile));
 
             // Get all the file lines, regardless of the new line style on the target file
             var FileContents = FileRead.ReadAllLinesNoBlock(TextFile);
@@ -194,7 +194,7 @@ namespace KS.Drivers.Filesystem
             FS.ThrowOnInvalidPath(Source);
             FS.ThrowOnInvalidPath(Destination);
             if (!Checking.FolderExists(Source))
-                throw new IOException(Translate.DoTranslation("Directory {0} not found.").FormatString(Source));
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Directory {0} not found.").FormatString(Source));
 
             // Get all source directories and files
             var SourceDirInfo = new DirectoryInfo(Source);
@@ -269,7 +269,7 @@ namespace KS.Drivers.Filesystem
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Source or destination are invalid.");
-                throw new IOException(Translate.DoTranslation("The path is neither a file nor a directory."));
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The path is neither a file nor a directory."));
             }
         }
 
@@ -571,7 +571,7 @@ namespace KS.Drivers.Filesystem
             FS.ThrowOnInvalidPath(TextFile);
             TextFile = FS.NeutralizePath(TextFile);
             if (!Checking.FileExists(TextFile))
-                throw new IOException(Translate.DoTranslation("File {0} not found.").FormatString(TextFile));
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File {0} not found.").FormatString(TextFile));
 
             // Open the file stream
             var NewlineStyle = LineEndingsTools.NewlineStyle;
@@ -708,7 +708,7 @@ namespace KS.Drivers.Filesystem
             }
             else if (ThrowIfDirectoryExists)
             {
-                throw new IOException(Translate.DoTranslation("Directory {0} already exists.").FormatString(NewDirectory));
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Directory {0} already exists.").FormatString(NewDirectory));
             }
         }
 
@@ -733,12 +733,12 @@ namespace KS.Drivers.Filesystem
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    throw new IOException(Translate.DoTranslation("Error trying to create a file: {0}").FormatString(ex.Message));
+                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Error trying to create a file: {0}").FormatString(ex.Message));
                 }
             }
             else if (ThrowIfFileExists)
             {
-                throw new IOException(Translate.DoTranslation("File already exists."));
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File already exists."));
             }
         }
 
@@ -767,12 +767,12 @@ namespace KS.Drivers.Filesystem
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    throw new IOException(Translate.DoTranslation("Error trying to create a file: {0}").FormatString(ex.Message));
+                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Error trying to create a file: {0}").FormatString(ex.Message));
                 }
             }
             else if (ThrowIfFileExists)
             {
-                throw new IOException(Translate.DoTranslation("File already exists."));
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File already exists."));
             }
         }
 
@@ -786,7 +786,7 @@ namespace KS.Drivers.Filesystem
             FS.ThrowOnInvalidPath(Source);
             FS.ThrowOnInvalidPath(Destination);
             if (!Checking.FolderExists(Source))
-                throw new IOException(Translate.DoTranslation("Directory {0} not found.").FormatString(Source));
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Directory {0} not found.").FormatString(Source));
 
             // Get all source directories and files
             var SourceDirInfo = new DirectoryInfo(Source);
@@ -864,7 +864,7 @@ namespace KS.Drivers.Filesystem
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Source or destination are invalid.");
-                throw new IOException(Translate.DoTranslation("The path is neither a file nor a directory."));
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The path is neither a file nor a directory."));
             }
         }
 
@@ -1041,7 +1041,7 @@ namespace KS.Drivers.Filesystem
         {
             FS.ThrowOnInvalidPath(Target);
             if (!Checking.FolderExists(Target))
-                throw new IOException(Translate.DoTranslation("Directory {0} not found.").FormatString(Target));
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Directory {0} not found.").FormatString(Target));
 
             // Get all source directories and files
             var SourceDirInfo = new DirectoryInfo(Target);
@@ -1084,7 +1084,8 @@ namespace KS.Drivers.Filesystem
             {
                 // Open the file stream and fill it with zeroes
                 if (!Checking.FileExists(Dir))
-                    throw new FileNotFoundException();
+                    throw new KernelException(KernelExceptionType.Filesystem);
+
                 var target = File.OpenWrite(Dir);
                 byte[] zeroes = new byte[target.Length];
                 target.Write(zeroes, 0, zeroes.Length);
@@ -1162,7 +1163,7 @@ namespace KS.Drivers.Filesystem
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                throw new IOException(Translate.DoTranslation("Unable to find file to match string \"{0}\": {1}").FormatString(StringLookup, ex.Message));
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Unable to find file to match string \"{0}\": {1}").FormatString(StringLookup, ex.Message));
             }
         }
 
@@ -1191,7 +1192,7 @@ namespace KS.Drivers.Filesystem
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                throw new IOException(Translate.DoTranslation("Unable to find file to match string \"{0}\": {1}").FormatString(StringLookup, ex.Message));
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Unable to find file to match string \"{0}\": {1}").FormatString(StringLookup, ex.Message));
             }
         }
 

@@ -118,7 +118,7 @@ namespace KS.Network.FTP.Filesystem
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("You should connect to server before listing all remote files."));
+                throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("You should connect to server before listing all remote files."));
             }
         }
 
@@ -186,12 +186,12 @@ namespace KS.Network.FTP.Filesystem
                 }
                 else
                 {
-                    throw new ArgumentNullException(Directory, Translate.DoTranslation("Enter a remote directory. \"..\" to go back"));
+                    throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("Enter a remote directory. \"..\" to go back"));
                 }
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("You must connect to a server before changing directory"));
+                throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("You must connect to a server before changing directory"));
             }
         }
 
@@ -224,7 +224,7 @@ namespace KS.Network.FTP.Filesystem
             }
             else
             {
-                throw new ArgumentNullException(Directory, Translate.DoTranslation("Enter a local directory. \"..\" to go back."));
+                throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("Enter a local directory. \"..\" to go back."));
             }
         }
 
@@ -261,7 +261,7 @@ namespace KS.Network.FTP.Filesystem
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("You must connect to server before performing transmission."));
+                throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("You must connect to server before performing transmission."));
             }
         }
 
@@ -325,7 +325,7 @@ namespace KS.Network.FTP.Filesystem
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("You must connect to server before performing transmission."));
+                throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("You must connect to server before performing transmission."));
             }
         }
 
@@ -352,7 +352,7 @@ namespace KS.Network.FTP.Filesystem
             }
             else
             {
-                throw new InvalidOperationException(Translate.DoTranslation("You must connect to server before performing filesystem operations."));
+                throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("You must connect to server before performing filesystem operations."));
             }
             return false;
         }
