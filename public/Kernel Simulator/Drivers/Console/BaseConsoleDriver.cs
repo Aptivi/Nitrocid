@@ -53,7 +53,7 @@ namespace KS.Drivers.Console.Consoles
         /// <summary>
         /// Is the console a dumb console?
         /// </summary>
-        public static bool IsDumb
+        public virtual bool IsDumb
         {
             get
             {

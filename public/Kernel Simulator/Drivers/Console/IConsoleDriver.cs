@@ -28,6 +28,11 @@ namespace KS.Drivers.Console
     public interface IConsoleDriver : IDriver
     {
         /// <summary>
+        /// Is the console a dumb console?
+        /// </summary>
+        bool IsDumb { get; }
+
+        /// <summary>
         /// Outputs the new line into the terminal prompt without colors
         /// </summary>
         void WritePlain();

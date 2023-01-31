@@ -19,6 +19,7 @@
 using System;
 using ColorSeq;
 using Extensification.StringExts;
+using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Drivers;
 using KS.Drivers.Console.Consoles;
@@ -42,6 +43,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteSeparator(string Text, bool PrintSuffix, params object[] Vars)
         {
+            bool canPosition = !DriverHandler.CurrentConsoleDriver.IsDumb;
+
             // Print the suffix and the text
             if (!string.IsNullOrWhiteSpace(Text))
             {
@@ -69,31 +72,24 @@ namespace KS.Misc.Writers.FancyWriters
                 }
 
                 // Render the text accordingly
-                string renderedText = DriverHandler.CurrentConsoleDriver.GetType() == typeof(Terminal) ? Text.Truncate(ConsoleBase.ConsoleWrapper.WindowWidth - 6) : Text;
-                TextWriterColor.Write(renderedText, false, KernelColorType.SeparatorText, Vars);
+                Text = canPosition ? Text.Truncate(ConsoleWrapper.WindowWidth - 6) : Text;
+                TextWriterColor.Write(Text, false, KernelColorType.SeparatorText, Vars);
             }
 
             // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
-            int RepeatTimes;
-            if (ConsoleBase.ConsoleWrapper.CursorLeft == 0)
-            {
-                RepeatTimes = ConsoleBase.ConsoleWrapper.WindowWidth - ConsoleBase.ConsoleWrapper.CursorLeft;
-            }
-            else
-            {
-                string renderedText = DriverHandler.CurrentConsoleDriver.GetType() == typeof(Terminal) ? Text.Truncate(ConsoleBase.ConsoleWrapper.WindowWidth - 6) : Text;
-                RepeatTimes = ConsoleBase.ConsoleWrapper.WindowWidth - (renderedText + " ").Length - 1;
-            }
+            int RepeatTimes = 0;
+            if (canPosition)
+                RepeatTimes = ConsoleWrapper.WindowWidth - (Text + " ").Length - 1;
 
             // Write the closing minus sign.
-            int OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
+            int OldTop = ConsoleWrapper.CursorTop;
             TextWriterColor.Write("-".Repeat(RepeatTimes), true, KernelColorType.Separator);
 
             // Fix CursorTop value on Unix systems. Mono...
-            if (KernelPlatform.IsOnUnix())
+            if (KernelPlatform.IsOnUnix() && canPosition)
             {
-                if (!(ConsoleBase.ConsoleWrapper.CursorTop == ConsoleBase.ConsoleWrapper.WindowHeight - 1) | OldTop == ConsoleBase.ConsoleWrapper.WindowHeight - 3)
-                    ConsoleBase.ConsoleWrapper.CursorTop -= 1;
+                if (!(ConsoleWrapper.CursorTop == ConsoleWrapper.WindowHeight - 1) | OldTop == ConsoleWrapper.WindowHeight - 3)
+                    ConsoleWrapper.CursorTop -= 1;
             }
         }
 
@@ -159,6 +155,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteSeparator(string Text, bool PrintSuffix, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
         {
+            bool canPosition = !DriverHandler.CurrentConsoleDriver.IsDumb;
+
             // Print the suffix and the text
             if (!string.IsNullOrWhiteSpace(Text))
             {
@@ -168,31 +166,24 @@ namespace KS.Misc.Writers.FancyWriters
                     Text += " ";
 
                 // Render the text accordingly
-                string renderedText = DriverHandler.CurrentConsoleDriver.GetType() == typeof(Terminal) ? Text.Truncate(ConsoleBase.ConsoleWrapper.WindowWidth - 6) : Text;
-                TextWriterColor.Write(renderedText, false, ForegroundColor, BackgroundColor, Vars);
+                Text = canPosition ? Text.Truncate(ConsoleWrapper.WindowWidth - 6) : Text;
+                TextWriterColor.Write(Text, false, ForegroundColor, BackgroundColor, Vars);
             }
 
             // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
-            int RepeatTimes;
-            if (ConsoleBase.ConsoleWrapper.CursorLeft == 0)
-            {
-                RepeatTimes = ConsoleBase.ConsoleWrapper.WindowWidth - ConsoleBase.ConsoleWrapper.CursorLeft;
-            }
-            else
-            {
-                string renderedText = DriverHandler.CurrentConsoleDriver.GetType() == typeof(Terminal) ? Text.Truncate(ConsoleBase.ConsoleWrapper.WindowWidth - 6) : Text;
-                RepeatTimes = ConsoleBase.ConsoleWrapper.WindowWidth - (renderedText + " ").Length - 1;
-            }
+            int RepeatTimes = 0;
+            if (canPosition)
+                RepeatTimes = ConsoleWrapper.WindowWidth - (Text + " ").Length + 1;
 
             // Write the closing minus sign.
-            int OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
+            int OldTop = ConsoleWrapper.CursorTop;
             TextWriterColor.Write("-".Repeat(RepeatTimes), true, ForegroundColor, BackgroundColor);
 
             // Fix CursorTop value on Unix systems. Mono...
-            if (KernelPlatform.IsOnUnix())
+            if (KernelPlatform.IsOnUnix() && canPosition)
             {
-                if (!(ConsoleBase.ConsoleWrapper.CursorTop == ConsoleBase.ConsoleWrapper.WindowHeight - 1) | OldTop == ConsoleBase.ConsoleWrapper.WindowHeight - 3)
-                    ConsoleBase.ConsoleWrapper.CursorTop -= 1;
+                if (!(ConsoleWrapper.CursorTop == ConsoleWrapper.WindowHeight - 1) | OldTop == ConsoleWrapper.WindowHeight - 3)
+                    ConsoleWrapper.CursorTop -= 1;
             }
         }
 

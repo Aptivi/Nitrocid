@@ -40,6 +40,8 @@ namespace KS.Drivers.Console.Consoles
         internal string PathToWrite { get; set; }
         internal bool FilterVT { get; set; }
 
+        public override bool IsDumb => true;
+
         public override TextWriter Out => null;
 
         public override int CursorLeft { get => 0; set => throw new NotImplementedException(); }
@@ -296,13 +298,21 @@ namespace KS.Drivers.Console.Consoles
         /// Just writes text slowly to file, since we can't do positioning.
         /// </summary>
         /// <inheritdoc/>
-        public override void WriteWhereSlowlyPlain(string msg, bool Line, int Left, int Top, double MsEachLetter, params object[] vars) => WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, false, vars);
+        public override void WriteWhereSlowlyPlain(string msg, bool Line, int Left, int Top, double MsEachLetter, params object[] vars) =>
+            WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, false, 0, vars);
 
         /// <summary>
         /// Just writes text slowly to file, since we can't do positioning.
         /// </summary>
         /// <inheritdoc/>
-        public override void WriteWhereSlowlyPlain(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, params object[] vars)
+        public override void WriteWhereSlowlyPlain(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, params object[] vars) =>
+            WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, 0, vars);
+
+        /// <summary>
+        /// Just writes text slowly to file, since we can't do positioning.
+        /// </summary>
+        /// <inheritdoc/>
+        public override void WriteWhereSlowlyPlain(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {

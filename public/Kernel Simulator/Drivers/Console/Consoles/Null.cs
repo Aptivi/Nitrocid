@@ -28,6 +28,8 @@ namespace KS.Drivers.Console.Consoles
 
         public override DriverTypes DriverType => DriverTypes.Console;
 
+        public override bool IsDumb => true;
+
         public override TextWriter Out => null;
 
         public override int CursorLeft { get => 0; set => throw new NotImplementedException(); }
@@ -167,6 +169,12 @@ namespace KS.Drivers.Console.Consoles
         /// </summary>
         /// <inheritdoc/>
         public override void WriteWhereSlowlyPlain(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, params object[] vars) { }
+
+        /// <summary>
+        /// Just writes text slowly to the void, since we can't do positioning.
+        /// </summary>
+        /// <inheritdoc/>
+        public override void WriteWhereSlowlyPlain(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, params object[] vars) { }
 
         /// <summary>
         /// Just writes text to the void, since we can't do positioning.
