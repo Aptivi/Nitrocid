@@ -35,6 +35,7 @@ using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Colors;
 using KS.Drivers.Console;
 using KS.Drivers;
+using System.Linq;
 
 namespace KS.Misc.Screensaver
 {
@@ -142,6 +143,12 @@ namespace KS.Misc.Screensaver
             get => defSaverName;
             set => defSaverName = Screensavers.ContainsKey(value) ? value : "matrix";
         }
+
+        /// <summary>
+        /// Gets the name of the screensavers
+        /// </summary>
+        public static string[] GetScreensaverNames() =>
+            Screensavers.Keys.ToArray();
 
         /// <summary>
         /// Handles the screensaver time so that when it reaches the time threshold, the screensaver launches

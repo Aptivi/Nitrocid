@@ -1228,8 +1228,12 @@
         "Keys": [
             {
                 "Name": "Screensaver",
-                "Type": "SString",
+                "Type": "SSelection",
                 "Variable": "DefaultSaverName",
+                "IsEnumeration": false,
+                "SelectionFunctionName": "GetScreensaverNames",
+                "SelectionFunctionType": "Screensaver",
+                "SelectionFallback": [ "matrix" ],
                 "Description": "Which screensaver do you want to lock your screen with?"
             },
             {
