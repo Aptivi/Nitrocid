@@ -38,6 +38,7 @@ namespace KS.Kernel.Debugging
         public readonly static List<string> DebugStackTraces = new();
         internal static string DebugPath = "";
         internal static StreamWriter DebugStreamWriter;
+        internal static object WriteLock = new();
 
         /// <summary>
         /// Outputs the text into the debugger file, and sets the time stamp.
@@ -47,51 +48,54 @@ namespace KS.Kernel.Debugging
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteDebug(DebugLevel Level, string text, params object[] vars)
         {
-            if (Flags.DebugMode)
+            lock (WriteLock)
             {
-                // Open debugging stream
-                string debugFilePath = DebugPath;
-                if (DebugStreamWriter is null | DebugStreamWriter?.BaseStream is null)
-                    DebugStreamWriter = new StreamWriter(debugFilePath, true) { AutoFlush = true };
-
-                // Try to debug...
-                try
+                if (Flags.DebugMode)
                 {
-                    var STrace = new DebugStackFrame();
-                    string message = "";
+                    // Open debugging stream
+                    string debugFilePath = DebugPath;
+                    if (DebugStreamWriter is null | DebugStreamWriter?.BaseStream is null)
+                        DebugStreamWriter = new StreamWriter(debugFilePath, true) { AutoFlush = true };
 
-                    // We could be calling this function by WriteDebugConditional, so descend a frame
-                    if (STrace.RoutineName == nameof(WriteDebugConditional))
-                        STrace = new DebugStackFrame(3);
-
-                    // Check to see if source file name is not empty.
-                    if (STrace.RoutineFileName is not null & !(STrace.RoutineLineNumber == 0))
-                        // Show stack information
-                        message = $"{TimeDate.TimeDate.KernelDateTime.ToShortDateString()} {TimeDate.TimeDate.KernelDateTime.ToShortTimeString()} [{Level}] ({STrace.RoutineName} - {STrace.RoutineFileName}:{STrace.RoutineLineNumber}): {text}";
-                    else
-                        // Rare case, unless debug symbol is not found on archives.
-                        message = $"{TimeDate.TimeDate.KernelDateTime.ToShortDateString()} {TimeDate.TimeDate.KernelDateTime.ToShortTimeString()} [{Level}] {text}";
-
-                    // Debug to file and all connected debug devices (raw mode)
-                    DebugStreamWriter.WriteLine(message, vars);
-                    for (int i = 0; i <= RemoteDebugger.DebugDevices.Count - 1; i++)
+                    // Try to debug...
+                    try
                     {
-                        try
+                        var STrace = new DebugStackFrame();
+                        string message = "";
+
+                        // We could be calling this function by WriteDebugConditional, so descend a frame
+                        if (STrace.RoutineName == nameof(WriteDebugConditional))
+                            STrace = new DebugStackFrame(3);
+
+                        // Check to see if source file name is not empty.
+                        if (STrace.RoutineFileName is not null & !(STrace.RoutineLineNumber == 0))
+                            // Show stack information
+                            message = $"{TimeDate.TimeDate.KernelDateTime.ToShortDateString()} {TimeDate.TimeDate.KernelDateTime.ToShortTimeString()} [{Level}] ({STrace.RoutineName} - {STrace.RoutineFileName}:{STrace.RoutineLineNumber}): {text}";
+                        else
+                            // Rare case, unless debug symbol is not found on archives.
+                            message = $"{TimeDate.TimeDate.KernelDateTime.ToShortDateString()} {TimeDate.TimeDate.KernelDateTime.ToShortTimeString()} [{Level}] {text}";
+
+                        // Debug to file and all connected debug devices (raw mode)
+                        DebugStreamWriter.WriteLine(message, vars);
+                        for (int i = 0; i <= RemoteDebugger.DebugDevices.Count - 1; i++)
                         {
-                            RemoteDebugger.DebugDevices[i].ClientStreamWriter.WriteLine(message, vars);
-                        }
-                        catch (Exception ex)
-                        {
-                            RemoteDebugTools.DisconnectDependingOnException(ex, i);
-                            if (i > 0)
-                                i--;
+                            try
+                            {
+                                RemoteDebugger.DebugDevices[i].ClientStreamWriter.WriteLine(message, vars);
+                            }
+                            catch (Exception ex)
+                            {
+                                RemoteDebugTools.DisconnectDependingOnException(ex, i);
+                                if (i > 0)
+                                    i--;
+                            }
                         }
                     }
-                }
-                catch (Exception ex)
-                {
-                    WriteDebug(DebugLevel.F, "Debugger error: {0}", ex.Message);
-                    WriteDebugStackTrace(ex);
+                    catch (Exception ex)
+                    {
+                        WriteDebug(DebugLevel.F, "Debugger error: {0}", ex.Message);
+                        WriteDebugStackTrace(ex);
+                    }
                 }
             }
         }
@@ -105,8 +109,11 @@ namespace KS.Kernel.Debugging
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteDebugConditional(bool Condition, DebugLevel Level, string text, params object[] vars)
         {
-            if (Condition)
-                WriteDebug(Level, text, vars);
+            lock (WriteLock)
+            {
+                if (Condition)
+                    WriteDebug(Level, text, vars);
+            }
         }
 
         /// <summary>
@@ -117,19 +124,22 @@ namespace KS.Kernel.Debugging
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteDebugDevicesOnly(DebugLevel Level, string text, params object[] vars)
         {
-            if (Flags.DebugMode)
+            lock (WriteLock)
             {
-                for (int i = 0; i <= RemoteDebugger.DebugDevices.Count - 1; i++)
+                if (Flags.DebugMode)
                 {
-                    try
+                    for (int i = 0; i <= RemoteDebugger.DebugDevices.Count - 1; i++)
                     {
-                        RemoteDebugger.DebugDevices[i].ClientStreamWriter.WriteLine($"{TimeDate.TimeDate.KernelDateTime.ToShortDateString()} {TimeDate.TimeDate.KernelDateTime.ToShortTimeString()} [{Level}] {text}", vars);
-                    }
-                    catch (Exception ex)
-                    {
-                        RemoteDebugTools.DisconnectDependingOnException(ex, i);
-                        if (i > 0)
-                            i--;
+                        try
+                        {
+                            RemoteDebugger.DebugDevices[i].ClientStreamWriter.WriteLine($"{TimeDate.TimeDate.KernelDateTime.ToShortDateString()} {TimeDate.TimeDate.KernelDateTime.ToShortTimeString()} [{Level}] {text}", vars);
+                        }
+                        catch (Exception ex)
+                        {
+                            RemoteDebugTools.DisconnectDependingOnException(ex, i);
+                            if (i > 0)
+                                i--;
+                        }
                     }
                 }
             }
@@ -142,8 +152,11 @@ namespace KS.Kernel.Debugging
         /// <param name="Ex">An exception</param>
         public static void WriteDebugStackTraceConditional(bool Condition, Exception Ex)
         {
-            if (Condition)
-                WriteDebugStackTrace(Ex);
+            lock (WriteLock)
+            {
+                if (Condition)
+                    WriteDebugStackTrace(Ex);
+            }
         }
 
         /// <summary>
@@ -152,28 +165,31 @@ namespace KS.Kernel.Debugging
         /// <param name="Ex">An exception</param>
         public static void WriteDebugStackTrace(Exception Ex)
         {
-            if (Flags.DebugMode)
+            lock (WriteLock)
             {
-                // These two NewLines are padding for accurate stack tracing.
-                var Inner = Ex.InnerException;
-                int InnerNumber = 1;
-                var NewStackTraces = new List<string>() { $"{CharManager.NewLine}{Ex.ToString().Substring(0, Ex.ToString().IndexOf(":"))}: {Ex.Message}{CharManager.NewLine}{Ex.StackTrace}{CharManager.NewLine}" };
-
-                // Get all the inner exceptions
-                while (Inner is not null)
+                if (Flags.DebugMode)
                 {
-                    NewStackTraces.Add($"[{InnerNumber}] {Inner.ToString().Substring(0, Inner.ToString().IndexOf(":"))}: {Inner.Message}{CharManager.NewLine}{Inner.StackTrace}{CharManager.NewLine}");
-                    InnerNumber += 1;
-                    Inner = Inner.InnerException;
-                }
+                    // These two NewLines are padding for accurate stack tracing.
+                    var Inner = Ex.InnerException;
+                    int InnerNumber = 1;
+                    var NewStackTraces = new List<string>() { $"{CharManager.NewLine}{Ex.ToString().Substring(0, Ex.ToString().IndexOf(":"))}: {Ex.Message}{CharManager.NewLine}{Ex.StackTrace}{CharManager.NewLine}" };
 
-                // Print stack trace to debugger
-                var StkTrcs = new List<string>();
-                for (int i = 0; i <= NewStackTraces.Count - 1; i++)
-                    StkTrcs.AddRange(NewStackTraces[i].SplitNewLines());
-                for (int i = 0; i <= StkTrcs.Count - 1; i++)
-                    WriteDebug(DebugLevel.T, StkTrcs[i]);
-                DebugStackTraces.AddRange(NewStackTraces);
+                    // Get all the inner exceptions
+                    while (Inner is not null)
+                    {
+                        NewStackTraces.Add($"[{InnerNumber}] {Inner.ToString().Substring(0, Inner.ToString().IndexOf(":"))}: {Inner.Message}{CharManager.NewLine}{Inner.StackTrace}{CharManager.NewLine}");
+                        InnerNumber += 1;
+                        Inner = Inner.InnerException;
+                    }
+
+                    // Print stack trace to debugger
+                    var StkTrcs = new List<string>();
+                    for (int i = 0; i <= NewStackTraces.Count - 1; i++)
+                        StkTrcs.AddRange(NewStackTraces[i].SplitNewLines());
+                    for (int i = 0; i <= StkTrcs.Count - 1; i++)
+                        WriteDebug(DebugLevel.T, StkTrcs[i]);
+                    DebugStackTraces.AddRange(NewStackTraces);
+                }
             }
         }
 
