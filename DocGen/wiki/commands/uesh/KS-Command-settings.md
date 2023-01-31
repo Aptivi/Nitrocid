@@ -6,7 +6,7 @@ Lets you change kernel settings
 
 ### Description
 
-This command starts up the Settings application, which allows you to change the kernel settings available to you. It's the successor to the defunct `Kernel Simulator Configuration Tool` application, and is native to the kernel.
+This command starts up the Settings application, which allows you to change the kernel settings available to you. It's the successor to the defunct `Nitrocid KS Configuration Tool` application, and is native to the kernel.
 
 It starts with the list of sections to start from. Once the user selects one, they'll be greeted with various options that are configurable. When they choose one, they'll be able to change the setting there.
 

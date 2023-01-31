@@ -33,7 +33,7 @@
     <br>
 
 4.  Click `Open...` and select the <br>
-    `Kernel Simulator.sln` file.
+    `Nitrocid KS.sln` file.
 
     <br>
 
@@ -50,4 +50,4 @@
 <!----------------------------------------------------------------------------->
 
 
-[Download]: https://github.com/Aptivi/Kernel-Simulator/archive/refs/heads/master.zip
+[Download]: https://github.com/Aptivi/NitrocidKS/archive/refs/heads/master.zip

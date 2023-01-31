@@ -1,15 +1,15 @@
 #!/bin/bash
 
-#    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE
+#    Nitrocid KS  Copyright (C) 2018-2021  Aptivi
 #
-#    This file is part of Kernel Simulator
+#    This file is part of Nitrocid KS
 #
-#    Kernel Simulator is free software: you can redistribute it and/or modify
+#    Nitrocid KS is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
 #    (at your option) any later version.
 #
-#    Kernel Simulator is distributed in the hope that it will be useful,
+#    Nitrocid KS is distributed in the hope that it will be useful,
 #    but WITHOUT ANY WARRANTY; without even the implied warranty of
 #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #    GNU General Public License for more details.
@@ -29,7 +29,7 @@ fi
 
 # Pack binary
 echo Packing binary...
-"$rarpath" a -ep1 -r -m5 /tmp/$ksversion-bin-dotnet.rar "../Kernel Simulator/KSBuild/net6.0/"
+"$rarpath" a -ep1 -r -m5 /tmp/$ksversion-bin-dotnet.rar "../Nitrocid/KSBuild/net6.0/"
 if [ ! $? == 0 ]; then
 	echo Packing using rar failed.
 	exit 1
@@ -37,6 +37,6 @@ fi
 
 # Inform success
 mv ~/tmp/$ksversion-bin-dotnet.rar .
-cp "../Kernel Simulator/KSBuild/net6.0/Kernel Simulator.pdb" ./$ksversion.pdb
+cp "../Nitrocid/KSBuild/net6.0/Nitrocid.pdb" ./$ksversion-dotnet.pdb
 echo Build and pack successful.
 exit 0

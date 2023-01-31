@@ -1,10 +1,10 @@
 # Introduction to the Kernel
 
-## What is the Kernel? How about Kernel Simulator?
+## What is the Kernel? How about Nitrocid KS?
 
 The kernel in general is a computer program that is the core of a computer's operating system, with complete control over everything in the system. On most systems, it is one of the first programs loaded on start-up (after the bootloader). It handles the rest of start-up as well as input/output requests from software, translating them into data-processing instructions for the central processing unit. It handles memory and peripherals like keyboards, monitors, printers, and speakers.
 
-However Kernel Simulator is the actual first Simulation, and not Emulation, app that can simulate these kinds of behaviors, except it's limited as we're still in the Alpha stage, and it's also showing you the transition on how is our kernel improved and built over time. Starting from 0.0.5.6, we have implemented support for kernel simulation under Unix systems. The first version is extremely limited, and so we can use it as an example on how the kernel was built. The first version can also be fit on the diskettes as it doesn't exceed 1.44MB floppy disk limits. You can even sell the floppy disk of our simulator to your local computing museum for everyone to see how the kernel was first built.
+However Nitrocid KS is the actual first Simulation, and not Emulation, app that can simulate these kinds of behaviors, except it's limited as we're still in the Alpha stage, and it's also showing you the transition on how is our kernel improved and built over time. Starting from 0.0.5.6, we have implemented support for kernel simulation under Unix systems. The first version is extremely limited, and so we can use it as an example on how the kernel was built. The first version can also be fit on the diskettes as it doesn't exceed 1.44MB floppy disk limits. You can even sell the floppy disk of our simulator to your local computing museum for everyone to see how the kernel was first built.
 
 ### The history of Unix and Linux.
 

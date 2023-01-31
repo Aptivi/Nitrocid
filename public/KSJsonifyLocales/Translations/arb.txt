@@ -20,7 +20,7 @@ aldhuer almzdwj: nawe alkhata {0} ghyr salihin.
 aldhuer almzdwj: elt alnawat: {0}
 aghlaq...
 'iieadat tashghil ...
-mathil akhar min Kernel Simulator qayd altashghaylu. 'iighlaq fi halat altadakhul.
+mathil akhar min Nitrocid KS qayd altashghaylu. 'iighlaq fi halat altadakhul.
 'akhfaq 'iidafatan mustkhdm 'iilaa qawayim al'udhunat: nawe ghayr salih {0}
 'akhfaq 'iidafatan mustkhdm 'iilaa qawayim al'udhunat: mustakhdam ghayr salih {0}
 fashilun fi 'iizalat almustakhdam min qawayim altsaryh: alnawe ghyr sahih {0}
@@ -1682,7 +1682,7 @@ ta'akad min astikhdam khati wahdat tahakum yadeam alhuruf alrusumiat la PowerLin
 yaftah maktabat shell almaeadat msbqan
 lam yatima aleuthur ealaa al'iiedad almusbaq almuhadad {0}.
 'ant safinat fada' walnayazik qadimat litudamiraka. hal yumkinuk hifzuhu?
-Retro Kernel Simulator mabni ealaa 0.0.4.1
+Retro Nitrocid KS mabni ealaa 0.0.4.1
 aljihaz mawjud bialfiel fi qayimat alhazri.
 aljihaz ghayr mawjud fi qayimat alhazri.
 aikhtibarat tanfidh nuqtat dukhul altajamue

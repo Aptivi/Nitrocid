@@ -20,7 +20,7 @@ DOUBLE PANIC: Fehlertyp {0} ist ungültig.
 DOUBLE PANIC: Kernel Bug: {0}
 Herunterfahren ...
 Neustart ...
-Eine andere Instanz von Kernel Simulator wird ausgeführt. Herunterfahren bei Störungen.
+Eine andere Instanz von Nitrocid KS wird ausgeführt. Herunterfahren bei Störungen.
 Fehler beim Hinzufügen eines Benutzers zu Berechtigungslisten: ungültiger Typ {0}
 Fehler beim Hinzufügen eines Benutzers zu Berechtigungslisten: ungültiger Benutzer {0}
 Fehler beim Entfernen des Benutzers aus den Berechtigungslisten: ungültiger Typ {0}
@@ -1682,7 +1682,7 @@ Stellen Sie sicher, dass Sie eine Konsolenschriftart verwenden, die PowerLine-Gl
 Öffnet die Shell-Preset-Bibliothek
 Die angegebene Voreinstellung {0} wurde nicht gefunden.
 Du bist ein Raumschiff und die Meteore kommen, um dich zu zerstören. Kannst du es speichern?
-Retro-Kernel-Simulator basierend auf 0.0.4.1
+Retro-Nitrocid-KS basierend auf 0.0.4.1
 Gerät existiert bereits in der Sperrliste.
 Das Gerät existiert nicht in der Sperrliste.
 Testet die Ausführung des Assembly-Einstiegspunkts

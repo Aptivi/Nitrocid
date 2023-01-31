@@ -37,7 +37,7 @@
 3.  Insert the following for the URL:
 
     ```
-    https://github.com/Aptivi/Kernel-Simulator.git
+    https://github.com/Aptivi/NitrocidKS.git
     ```
     
     Press  <kbd>  Test  </kbd>  to verify your connectivity.
@@ -57,7 +57,7 @@
     
     <br>
 
-2.  Ensure you're building `Kernel Simulator.sln`.
+2.  Ensure you're building `Nitrocid KS.sln`.
 
     *`KS.DotNetSdk.sln` is not ready yet*
     

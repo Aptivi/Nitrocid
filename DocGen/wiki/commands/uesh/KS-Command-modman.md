@@ -6,7 +6,7 @@ Manages your mods
 
 ### Description
 
-You can manage all your mods installed in Kernel Simulator by this command. It allows you to stop, start, reload, get info, and list all your mods.
+You can manage all your mods installed in Nitrocid KS by this command. It allows you to stop, start, reload, get info, and list all your mods.
 
 ### Command usage
 

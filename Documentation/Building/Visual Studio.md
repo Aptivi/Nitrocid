@@ -16,7 +16,7 @@
 3.  In Repository Location, enter 
     
     ```
-    https://github.com/Aptivi/Kernel-Simulator.git
+    https://github.com/Aptivi/NitrocidKS.git
     ```
 
 4.  Wait until it has finished cloning, this may take a few <br>
@@ -28,7 +28,7 @@
 
     <br>
 
-6.  Click on `Kernel Simulator.sln`
+6.  Click on `Nitrocid KS.sln`
 
     <br>
 

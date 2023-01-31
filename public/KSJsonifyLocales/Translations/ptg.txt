@@ -20,7 +20,7 @@ PÂNICO DUPLO: Tipo de erro {0} inválido.
 PANIC DUPLO: Bug do Kernel: {0}
 Desligando ...
 Reiniciando ...
-Outra instância do Kernel Simulator está sendo executada. Desligando em caso de interferência.
+Outra instância do Nitrocid KS está sendo executada. Desligando em caso de interferência.
 Falha ao adicionar usuário nas listas de permissão: tipo inválido {0}
 Falha ao adicionar usuário nas listas de permissão: usuário inválido {0}
 Falha ao remover o usuário das listas de permissão: tipo inválido {0}
@@ -1682,7 +1682,7 @@ Certifique-se de usar uma fonte de console compatível com glifos PowerLine, ou 
 Abre a biblioteca de predefinições do shell
 A predefinição especificada {0} não foi encontrada.
 Você é uma nave espacial e os meteoros estão vindo para destruí-lo. Você pode salvá-lo?
-Retro Kernel Simulator baseado em 0.0.4.1
+Retro Nitrocid KS baseado em 0.0.4.1
 O dispositivo já existe na lista de bloqueio.
 O dispositivo não existe na lista de bloqueio.
 Testa a execução do ponto de entrada do assembly

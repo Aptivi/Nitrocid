@@ -16,7 +16,7 @@ Since 0.0.10, the shell scripting support has been added to automate the sets of
 
 ## Scripting format
 
-Any normal command that you would normally execute in the shell of Kernel Simulator can be written in the file as if you're writing a command. It supports the arguments. It can be written like below:
+Any normal command that you would normally execute in the shell of Nitrocid KS can be written in the file as if you're writing a command. It supports the arguments. It can be written like below:
 
 ```
 echo Hello World!

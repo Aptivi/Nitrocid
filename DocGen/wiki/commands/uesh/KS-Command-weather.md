@@ -6,7 +6,7 @@ Shows weather information for a specified city
 
 ### Description
 
-We credit OpenWeatherMap for their decent free API service for weather information for the cities around the world. It requires that you have your own API key for OpenWeatherMap. Don't worry, Kernel Simulator only accesses free features; all you have to do is make an account and generate your own API key [here](https://home.openweathermap.org/api_keys).
+We credit OpenWeatherMap for their decent free API service for weather information for the cities around the world. It requires that you have your own API key for OpenWeatherMap. Don't worry, Nitrocid KS only accesses free features; all you have to do is make an account and generate your own API key [here](https://home.openweathermap.org/api_keys).
 
 This command lets you get current weather information for a specified city by city ID as recommended by OpenWeatherMap. If you want a list, use the switch s indicated below.
 

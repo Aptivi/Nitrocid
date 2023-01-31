@@ -20,7 +20,7 @@ PODVIYNA PANIKA: Typ pomylky {0} nediysnyy.
 PODVIYNA PANIKA: Pomylka yadra: {0}
 Zakryttya...
 Perezavantazhennya...
-Zapushcheno inshyy ekzemplyar Kernel Simulator. Vymknennya u razi pereshkod.
+Zapushcheno inshyy ekzemplyar Nitrocid KS. Vymknennya u razi pereshkod.
 Ne vdalosya dodaty korystuvacha do spyskiv dozvoliv: nediysnyy typ {0}
 Ne vdalosya dodaty korystuvacha do spyskiv dozvoliv: nediysnyy korystuvach {0}
 Ne vdalosya vydalyty korystuvacha zi spyskiv dozvoliv: nediysnyy typ {0}

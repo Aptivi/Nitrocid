@@ -9,7 +9,7 @@
     <AssemblyName>KSJsonifyLocales</AssemblyName>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <OutputPath>..\Kernel Simulator\KSBuild\</OutputPath>
+    <OutputPath>..\Nitrocid\KSBuild\</OutputPath>
     <Description>Converts bare text files for KS localizations to a parsable format for KS</Description>
     <Copyright>Copyright © Aptivi 2018 - 2023</Copyright>
     <OptionExplicit>On</OptionExplicit>
@@ -164,9 +164,9 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Kernel Simulator\Kernel Simulator.csproj">
+    <ProjectReference Include="..\Nitrocid\Nitrocid.csproj">
       <Project>{c7b37899-c361-423d-9512-fe0a87a46866}</Project>
-      <Name>Kernel Simulator</Name>
+      <Name>Nitrocid</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

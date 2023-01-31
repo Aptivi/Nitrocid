@@ -6,9 +6,9 @@ Makes a new theme
 
 ### Description
 
-This opens up a theme studio to manage the newly-created theme colors that you can adjust. This will allow you to create your own themes for Kernel Simulator.
+This opens up a theme studio to manage the newly-created theme colors that you can adjust. This will allow you to create your own themes for Nitrocid KS.
 
-If you want your theme to be included in the default Kernel Simulator themes, let us know.
+If you want your theme to be included in the default Nitrocid KS themes, let us know.
 
 ### Command usage
 

@@ -6,7 +6,7 @@ Manages your custom languages
 
 ### Description
 
-You can manage all your custom languages installed in Kernel Simulator by this command.
+You can manage all your custom languages installed in Nitrocid KS by this command.
 
 ### Command usage
 

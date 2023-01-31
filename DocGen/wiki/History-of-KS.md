@@ -171,7 +171,7 @@ As a result, the build times are faster and doesn't use too much I/O during the 
 
 ### The Truth of SSH.NET 2020.0.0 Beta 1
 
-In development versions of 0.0.12.0, we've upgraded SSH.NET to 2020.0.0-beta1 hoping that it would someday have a full release for the SSH library that Kernel Simulator uses. When we've reached the final version of 0.0.12, we've seen that SSH.NET is still on 2020.0.0-beta1 instead of continuing development, so we've left it.
+In development versions of 0.0.12.0, we've upgraded SSH.NET to 2020.0.0-beta1 hoping that it would someday have a full release for the SSH library that Nitrocid KS uses. When we've reached the final version of 0.0.12, we've seen that SSH.NET is still on 2020.0.0-beta1 instead of continuing development, so we've left it.
 
 After we've released 0.0.12.1, we've tested installing KS from NuGet, and we've seen an error message about SSH.NET, so we've installed 2020.0.0-beta1 first, then installed KS, and found that NuGet installed it successfully. Because this brings extra steps and we wanted simplicity, we've decided to downgrade SSH.NET to 2016.1.0 as its latest stable version.
 
@@ -197,4 +197,4 @@ We have fears of hard drives thrashing, especially the SSDs that they have read 
 
 #### Removal history
 
-* Removed filesystem parsing according to commit [a9fc2de6](https://github.com/Aptivi/Kernel-Simulator/commit/a9fc2de6cfa79c4580331fa5bea5c7e5ad9326fe)
+* Removed filesystem parsing according to commit [a9fc2de6](https://github.com/Aptivi/NitrocidKS/commit/a9fc2de6cfa79c4580331fa5bea5c7e5ad9326fe)

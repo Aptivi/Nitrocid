@@ -277,7 +277,7 @@ The changelog says that it has better Error Handling for "ping" command and fixe
 
 ### KS 0.0.4.9 (7/21/2018)
 
-The changelog says that it has better Error Handling for "unitconv" command, Added temporary aliases (not final because there is no "showaliases" command), fix some bugs, added time zones ("showtdzone", and show current time zone in "showtd"), Added "alias", "chmal", and "showmal", Made MOTD after login customizable, Allowed special characters on passwords to ensure security, Made Kernel Simulator single-instance to avoid interferences, and more.
+The changelog says that it has better Error Handling for "unitconv" command, Added temporary aliases (not final because there is no "showaliases" command), fix some bugs, added time zones ("showtdzone", and show current time zone in "showtd"), Added "alias", "chmal", and "showmal", Made MOTD after login customizable, Allowed special characters on passwords to ensure security, Made Nitrocid KS single-instance to avoid interferences, and more.
 
 1. Multiple-instance check has been added using mutex to avoid interference with two or more KS processes that interfere with each other.
 2. Added the MOTD After Login
@@ -447,7 +447,7 @@ The changelog says "Improved probers, username list on log-in, better compatibil
 
 ### KS 0.0.5.7 (10/13/2018)
 
-The changelog says "Fixed crash when starting when running on a file name that is other than "Kernel Simulator.exe", Better error handling for FTP, Added current directory printing in FTP, removed "version" command, fixed the "Quiet Probe" value being set "Quiet Probe", Expanded "sysinfo", Fixed configuration reader not closing when exiting kernel, (Unix) Fixed a known bug"
+The changelog says "Fixed crash when starting when running on a file name that is other than "Nitrocid KS.exe", Better error handling for FTP, Added current directory printing in FTP, removed "version" command, fixed the "Quiet Probe" value being set "Quiet Probe", Expanded "sysinfo", Fixed configuration reader not closing when exiting kernel, (Unix) Fixed a known bug"
 
 1. Now KS can get current theme name
 2. Fixed the known bug "Any error messages that is handled will crash the handler with a continuable kernel error."

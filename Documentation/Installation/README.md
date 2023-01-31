@@ -1,7 +1,7 @@
 
 # Installation
 
-*How to install **Kernel Simulator**.*
+*How to install **Nitrocid KS**.*
 
 <br>
 

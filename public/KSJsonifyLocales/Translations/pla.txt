@@ -20,7 +20,7 @@ DOUBLE PANIZZLE: Error Type {0} invalid.
 DOUBLE PANIC: Kernel bug to increase tha peace: {0}
 Playa hatin' down...
 Saggin'...
-Bitch instance of Kernel Simulator be runn'n. Messin' down 'n caze of interference. Put ya mutha fuckin choppers up if ya feel this.
+Bitch instance of Nitrocid KS be runn'n. Messin' down 'n caze of interference. Put ya mutha fuckin choppers up if ya feel this.
 Failed ta add hustla into permission lists: Yippie yo, you can't see my flow. invalid type {0}
 Failed ta add usa into permission lists: invalid pusha {0}
 Failed ta remove homey from permission lists: invalid type {0}
@@ -1682,7 +1682,7 @@ Be sure ta uze a cizzle font support'n PowerLine glyphs, or tha output mizzay no
 Opens tha shell preset library
 Tha specizzle preset {0} be nizzy found.
 Yizzay be a spaceship n thizzay meteors be coming ta destroy you. Can you sizzy it fo gettin yo pimp on?
-R-to-tha-izzetro Kernel Simulator baze' on 0.0.4.1
+R-to-tha-izzetro Nitrocid KS baze' on 0.0.4.1
 Device already exists 'n tha block liznist.
 Dizzle doesn't exist 'n tha block list.
 Tizzay assembly entrizzle point execution

@@ -4,18 +4,18 @@
   <metadata>
     <id>KS</id>
     <version>0.1.0</version>
-    <packageSourceUrl>http://github.com/Aptivi/Kernel-Simulator</packageSourceUrl>
+    <packageSourceUrl>http://github.com/Aptivi/NitrocidKS</packageSourceUrl>
 
-    <title>Kernel Simulator</title>
+    <title>Nitrocid KS</title>
     <authors>Aptivi</authors>
-    <projectUrl>http://github.com/Aptivi/Kernel-Simulator</projectUrl>
-    <iconUrl>https://rawcdn.githack.com/Aptivi/Kernel-Simulator/5efe4e48acea326f21af56ecfd9cd1c1f9bc2056/Kernel%20Simulator/OfficialAppIcon-KernelSimulator-256.ico</iconUrl>
+    <projectUrl>http://github.com/Aptivi/NitrocidKS</projectUrl>
+    <iconUrl>https://rawcdn.githack.com/Aptivi/NitrocidKS/5efe4e48acea326f21af56ecfd9cd1c1f9bc2056/Kernel%20Simulator/OfficialAppIcon-KernelSimulator-256.ico</iconUrl>
     <copyright>Copyright © 2018-2022 Aptivi, All rights reserved.</copyright>
-    <licenseUrl>https://github.com/Aptivi/Kernel-Simulator/blob/master/LICENSE</licenseUrl>
+    <licenseUrl>https://github.com/Aptivi/NitrocidKS/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <tags>ks kernel simulator vb.net</tags>
     <summary>Simulates our future-planned kernel</summary>
-    <description>Kernel Simulator is the program that lets you simulate our early aspects of the kernel that will be made in the future. For more information, please go to the project URL. This version is a .NET version of KS.</description>
+    <description>Nitrocid KS is the program that lets you simulate our early aspects of the kernel that will be made in the future. For more information, please go to the project URL. This version is a .NET version of KS.</description>
     <releaseNotes>https://aptivi.gitbook.io/kernel-simulator-manual/versions-and-compatibility/version-release-notes/v0.1.x.x-series</releaseNotes>
 
     <dependencies>

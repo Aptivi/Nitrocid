@@ -20,7 +20,7 @@ DUBBELE PANIEK: Fout Type {0} ongeldig.
 DUBBELE PANIEK: kernel bug: {0}
 Afsluiten...
 Herstarten van ...
-Er is nog een exemplaar van Kernel Simulator actief. Afsluiten in geval van interferentie.
+Er is nog een exemplaar van Nitrocid KS actief. Afsluiten in geval van interferentie.
 Toevoegen van gebruiker aan machtigingslijsten is mislukt: ongeldig type {0}
 Kan gebruiker niet toevoegen aan machtigingenlijsten: ongeldige gebruiker {0}
 Kan gebruiker niet uit toestemmingslijsten verwijderen: ongeldig type {0}
@@ -1682,7 +1682,7 @@ Zorg ervoor dat u een consolelettertype gebruikt dat PowerLine-glyphs ondersteun
 Opent de shell-presetbibliotheek
 De opgegeven voorinstelling {0} is niet gevonden.
 Je bent een ruimteschip en de meteoren komen om je te vernietigen. Kun je het redden?
-Retro Kernel Simulator gebaseerd op 0.0.4.1
+Retro Nitrocid KS gebaseerd op 0.0.4.1
 Apparaat bestaat al in de blokkeerlijst.
 Apparaat bestaat niet in de blokkeerlijst.
 Test de uitvoering van het ingangspunt van de assemblage

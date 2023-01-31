@@ -20,7 +20,7 @@ DOUBLE PANIC: Tipo di errore {0} non valido.
 DOUBLE PANIC: bug del kernel: {0}
 Chiudere...
 Riavvio ...
-È in esecuzione un'altra istanza di Kernel Simulator. Arresto in caso di interferenza.
+È in esecuzione un'altra istanza di Nitrocid KS. Arresto in caso di interferenza.
 Impossibile aggiungere l'utente negli elenchi di autorizzazioni: tipo non valido {0}
 Impossibile aggiungere l'utente negli elenchi di autorizzazioni: utente non valido {0}
 Impossibile rimuovere l'utente dagli elenchi di autorizzazioni: tipo non valido {0}

@@ -6,7 +6,7 @@ Output redirection allows you to pipe the output of a command that needs to be s
 
 In Unix systems, not only it allows you to redirect an output of a command to a file, but it also allows you to redirect it to a device like COM1, COM2, and so on. For example, there is a `/dev` blob that allows you to play sound just by piping the contents of a sound file to the device, and can be done in the `root` user like this: `cat sound.wav > /dev/dsp`. It can be done if the Linux kernel supports that device blob.
 
-## In Kernel Simulator
+## In Nitrocid KS
 
 Currently, you can pipe the output of the command to a file like this: `list >>>list.txt`. It only supports `Console.Out`, so it doesn't work when piping an output coming from `Console.Err`.
 

@@ -24,19 +24,19 @@ jobs:
       with:
         dotnet-version: '6.0.x'
     - name: Solution Compilation
-      run: dotnet build --configuration Debug "Kernel Simulator.sln"
+      run: dotnet build --configuration Debug "Nitrocid.sln"
     - name: Testing
-      run: dotnet test --configuration Debug "Kernel Simulator.sln"
+      run: dotnet test --configuration Debug "Nitrocid.sln"
     - uses: actions/upload-artifact@v3
       if: success() || failure()
       with:
         name: ks-build
-        path: "public/Kernel Simulator/KSBuild/net6.0/"
+        path: "public/Nitrocid/KSBuild/net6.0/"
     - uses: actions/upload-artifact@v3
       if: success() || failure()
       with:
         name: ks-build
-        path: "public/Kernel Simulator/KSBuild/*.nupkg"
+        path: "public/Nitrocid/KSBuild/*.nupkg"
 
   notify:
 

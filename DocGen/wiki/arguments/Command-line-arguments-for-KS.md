@@ -2,7 +2,7 @@
 
 ## How do I run command-line arguments?
 
-You can run these arguments to make the simulator behave differently, by running Kernel Simulator like below examples:
+You can run these arguments to make the simulator behave differently, by running Nitrocid KS like below examples:
 ```cmd
 ks.cmd debug
 ks.cmd args

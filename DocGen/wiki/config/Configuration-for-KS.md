@@ -18,7 +18,7 @@ Some of the configuration entries support placeholders. Refer to [Placeholders](
 | Maintenance Mode                        | `boolean` | `true` or `false`                       | You can make the kernel not to parse any mods and screensavers when booting, and gives you the opportunity to repair your kernel. It's also known as Safe Mode.
 | Change Culture when Switching Languages | `boolean` | `true` or `false`                       | You can make the kernel change the culture based on language.
 | Check for Updates on Startup            | `boolean` | `true` or `false`                       | If true, the kernel will check for updates on startup.
-| Language                                | `string`  | Three-letter language name (e.g. `eng`) | Localizes Kernel Simulator to your country.
+| Language                                | `string`  | Three-letter language name (e.g. `eng`) | Localizes Nitrocid KS to your country.
 | Culture                                 | `string`  | ISO language format (e.g. `en-US`)      | Culture of the language
 | Custom Startup Banner                   | `string`  | Style with placeholder                  | If specified, it will display customized startup banner with placeholder support. You can use {0} for kernel version.
 | Show app information during boot        | `boolean` | `true` or `false`                       | Shows brief information about the application on boot
@@ -218,7 +218,7 @@ See ConsoleColor for more information.
 | Ask for password after locking | `boolean` | `true` or `false`            | After locking the screen, ask for password
 
 > [!NOTE]
-> These screensavers are built-in directly to Kernel Simulator and are always available. If you want your screensaver to be included by default to Kernel Simulator, let us know. Consult [Screensaver Configuration](Screensaver-settings-for-KS.md) for configuration entries for specific screensavers.
+> These screensavers are built-in directly to Nitrocid KS and are always available. If you want your screensaver to be included by default to Nitrocid KS, let us know. Consult [Screensaver Configuration](Screensaver-settings-for-KS.md) for configuration entries for specific screensavers.
 
 ### Misc
 

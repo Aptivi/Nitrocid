@@ -114,7 +114,7 @@ According to [this report](https://www.hybrid-analysis.com/sample/756b94b872cada
 [{0}] panic: {1} -- Press any key to continue using the kernel.
 [{0}] panic: {1} -- Press any key to shutdown.
 [{0}] panic: {1} -- Rebooting in {2} seconds...
-\r\n Kernel Simulator Copyright (C) 2018-2019 Aptivi\r\n This program comes with ABSOLUTELY NO WARRANTY, not even \r\n MERCHANTABILITY or FITNESS for particular purposes.\r\n This is free software, and you are welcome to redistribute it\r\n under certain conditions; See COPYING file in source code.\r\n
+\r\n Nitrocid KS Copyright (C) 2018-2019 Aptivi\r\n This program comes with ABSOLUTELY NO WARRANTY, not even \r\n MERCHANTABILITY or FITNESS for particular purposes.\r\n This is free software, and you are welcome to redistribute it\r\n under certain conditions; See COPYING file in source code.\r\n
 DOUBLE PANIC: Error Type {0} invalid.
 DOUBLE PANIC: Kernel bug: {0}
 DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.

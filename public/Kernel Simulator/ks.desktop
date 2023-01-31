@@ -1,9 +1,0 @@
-[Desktop Entry]
-Version=0.0
-Name=Kernel Simulator
-Comment=Simulates our future-planned kernel
-Exec=/usr/bin/ks
-Icon=/usr/lib/ks/ks.png
-Terminal=true
-Type=Application
-Categories=Utility;Application;

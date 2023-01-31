@@ -8,7 +8,7 @@ KSJsonifyLocales is the new tool that can convert the language files consisting 
 
 KSJsonifyLocales contains the Translations folder that has the translation text files inside. When this program is run, it reads the entire folder, parses all the files, and converts them to the JSON output, which can be found in Translations/Done folder in the same place as the executable.
 
-If run with `--CopyToResources`, it will copy the results directly to Kernel Simulator's resources, assuming that it's run on KSBuild found inside the source code folder. This usually works with git clones of KS.
+If run with `--CopyToResources`, it will copy the results directly to Nitrocid KS's resources, assuming that it's run on KSBuild found inside the source code folder. This usually works with git clones of KS.
 
 To illustrate this, KSJsonifyLocales will:
 
@@ -17,7 +17,7 @@ To illustrate this, KSJsonifyLocales will:
 - add them to the list of language files,
 - read both the English and the target language lines,
 - save them to JSON, and
-- save them to Translations/Done or (optionally) ../../Resources, assuming that the executable is found one level above the Kernel Simulator source folder
+- save them to Translations/Done or (optionally) ../../Resources, assuming that the executable is found one level above the Nitrocid KS source folder
 
 #### What else can it do?
 
@@ -29,11 +29,11 @@ These switches can change the way how KSJsonifyLocales runs. In ordrer to use an
 | `--NormalOnly`      | Parses the normal languages only.
 | `--All`             | Parses all the languages.
 | `--Singular`        | Parses a single language only.
-| `--CopyToResources` | Copies the result to the resources folder of Kernel Simulator. Requires a copy of source code.
+| `--CopyToResources` | Copies the result to the resources folder of Nitrocid KS. Requires a copy of source code.
 
 ### Custom languages
 
-The CustomLanguages folder is for the custom languages which change the language of the messages found in Kernel Simulator. This folder can be used to store the text files of your custom languages, but you have to place the metadata information for each custom language to be read by the kernel as it starts up. It can be accessed in the same location as the Kernel Simulator executable.
+The CustomLanguages folder is for the custom languages which change the language of the messages found in Nitrocid KS. This folder can be used to store the text files of your custom languages, but you have to place the metadata information for each custom language to be read by the kernel as it starts up. It can be accessed in the same location as the Nitrocid KS executable.
 
 This metadata information should be stored in a file called Metadata.json in the format below to be jsonified by this tool. It should not be removed.
 ```json
@@ -64,5 +64,5 @@ If there's a transliterable version of a language that you're going to add, you 
 
 ### How to use
 
-- On Windows, you can just double-click on the KSJsonifyLocales.exe file. It's usually found on the same directory as Kernel Simulator.
+- On Windows, you can just double-click on the KSJsonifyLocales.exe file. It's usually found on the same directory as Nitrocid KS.
 - On Linux, you can run `mono KSJsonifyLocales.exe`

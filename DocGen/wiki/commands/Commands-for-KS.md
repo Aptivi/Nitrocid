@@ -17,7 +17,7 @@ These commands that are mentioned below are available in all of the shells.
 
 ## UESH shell commands
 
-The below commands for Kernel Simulator can be used in the normal UESH shell, the one that is started after you log in to your account.
+The below commands for Nitrocid KS can be used in the normal UESH shell, the one that is started after you log in to your account.
 
 For more information about every command, click the command.
 
@@ -111,7 +111,7 @@ For more information about every command, click the command.
 | [rm](uesh/KS-Command-rm.md)                                 | You can remove a directory or file.
 | [reboot](uesh/KS-Command-reboot.md)                         | You can restart your kernel if you have made manual or tool configuration changes for them to be reflected, or if you want to see the boot sequence again.
 | [reportbug](uesh/KS-Command-reportbug.md)                   | Opens a prompt to let you file a bug report.
-| [retroks](uesh/KS-Command-retroks.md)                       | Retro Kernel Simulator based on 0.0.4.1
+| [retroks](uesh/KS-Command-retroks.md)                       | Retro Nitrocid KS based on 0.0.4.1
 | [rss](uesh/KS-Command-rss.md)                               | Opens an RSS shell.
 | [savescreen](uesh/KS-Command-savescreen.md)                 | You can show the screensaver to prevent screen burn-outs.
 | [search](uesh/KS-Command-search.md)                         | Searches for a specific string in a specific file using regular expressions.
@@ -134,7 +134,7 @@ For more information about every command, click the command.
 | [timer](uesh/KS-Command-timer.md)                           | A simple timer
 | [unitconv](uesh/KS-Command-unitconv.md)                     | Unit conversion
 | [unzip](uesh/KS-Command-unzip.md)                           | Extracts a zip file
-| [usermanual](uesh/KS-Command-usermanual.md)                 | Opens the Kernel Simulator wiki
+| [usermanual](uesh/KS-Command-usermanual.md)                 | Opens the Nitrocid KS wiki
 | [verify](uesh/KS-Command-verify.md)                         | Verifies a file.
 | [weather](uesh/KS-Command-weather.md)                       | Gets weather information for a city.
 | [wrap](uesh/KS-Command-wrap.md)                             | Wraps a command

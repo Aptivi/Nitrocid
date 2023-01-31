@@ -1,7 +1,7 @@
 
 # Building
 
-*How to build the **Kernel Simulator**.*
+*How to build the **Nitrocid KS**.*
 
 <br>
 

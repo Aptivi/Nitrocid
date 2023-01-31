@@ -74,7 +74,7 @@ Mod manual=>SE1
 
 ## Format
 
-Open your favorite text editor and write the `(*MAN START*)` tag, because every single manual page must contain this tag in the first line. Then, write the below specifiers to let Kernel Simulator know the title and the version of your manual page.
+Open your favorite text editor and write the `(*MAN START*)` tag, because every single manual page must contain this tag in the first line. Then, write the below specifiers to let Nitrocid KS know the title and the version of your manual page.
 
 ### Title and Revision
 
@@ -137,4 +137,4 @@ KSMods/
         |
         +-> manual.man
 ```
-Run Kernel Simulator, log-in to your account, and write `modman <manual title>`. If your manual title is enclosed in spaces, you may surround the title with the double quotes, for example, `modman "First Mod Manual"`.
+Run Nitrocid KS, log-in to your account, and write `modman <manual title>`. If your manual title is enclosed in spaces, you may surround the title with the double quotes, for example, `modman "First Mod Manual"`.

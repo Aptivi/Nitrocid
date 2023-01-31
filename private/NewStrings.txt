@@ -10,9 +10,9 @@ Error when trying to set MAL: {0}
 Error when trying to get MAL: {0}
 Error when trying to set MOTD: {0}
 Error when trying to get MOTD: {0}
-Use apt to update Kernel Simulator.
+Use apt to update Nitrocid KS.
 Set console background color
-If you want to set the background color to your favorite terminal emulator color, set it to false. Otherwise, Kernel Simulator will set its own background colors.
+If you want to set the background color to your favorite terminal emulator color, set it to false. Otherwise, Nitrocid KS will set its own background colors.
 Next gradient rot interval
 How many milliseconds to wait before rotting the next screen?
 Siren style
@@ -41,7 +41,7 @@ Failed to remove user from group lists: invalid user {0}
 You have either found a bug, or the group you tried to edit for a new user has failed.
 One of the group lists doesn't contain username {0}.
 Groups loaded
-Mod {0} requires minimum API version {1}, but you have version {2}. Upgrading Kernel Simulator usually helps. Mod parsing failed.
+Mod {0} requires minimum API version {1}, but you have version {2}. Upgrading Nitrocid KS usually helps. Mod parsing failed.
 Mod {0} may not work properly with this API version. Mod may fail to start up. Contact the mod vendor to get a latest copy.
 Preview splash
 General kernel settings
@@ -132,7 +132,7 @@ A general FTP network error occurred. Check to make sure that your internet conn
 A general FTP shell error occurred.
 Hostname error.
 A general HTTP shell error occurred.
-Insane console has been detected. Kernel Simulator can't continue running, because your console is incompatible with our requirements.
+Insane console has been detected. Nitrocid KS can't continue running, because your console is incompatible with our requirements.
 Invalid RSS feed.
 Invalid RSS feed link.
 Invalid RSS feed type.

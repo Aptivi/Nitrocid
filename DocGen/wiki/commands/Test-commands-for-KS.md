@@ -14,7 +14,7 @@ C = Continuable
 ```
 `<RebootTime>` is measured in seconds. It is used if `<Reboot>` is True or 1.
 
-You can find strings inside the text files in the [Resources](https://github.com/Aptivi/Kernel-Simulator/tree/master/Kernel%20Simulator/Resources) folder.
+You can find strings inside the text files in the [Resources](https://github.com/Aptivi/NitrocidKS/tree/master/Kernel%20Simulator/Resources) folder.
 
 Refer to [this document](../misc/Placeholders.md) for the list of placeholders.
 
@@ -57,7 +57,7 @@ The testing shell provides these commands:
 | sendnotprog            | It lets you test the notification system by sending the notification with the specified title and description on a specific priority with progress support to test the incrementation. It can be set to fail at a specific percentage (0-100). | `sendnot <Priority> <title> <desc> <failat>`
 | dcalend                | It lets you render date using different calendar types (one of Gregorian, Hijri, Persian, Saudi-Hijri, Thai-Buddhist) | `dcalend <CalendType>`
 | listcodepages          | It lets you list all the available codepages installed on the system. | `listcodepages`
-| lscompilervars         | It lets you list all the compiler variables used to build Kernel Simulator. | `lscompilervars`
+| lscompilervars         | It lets you list all the compiler variables used to build Nitrocid KS. | `lscompilervars`
 | testlistwriterst       | It lets you test the list writer using the String type. | `testlistwriterstr`
 | testlistwriterint      | It lets you test the list writer using the Integer type. | `testlistwriterint`
 | testlistwriterchar     | It lets you test the list writer using the Char type. | `testlistwriterchar`

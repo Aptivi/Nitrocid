@@ -1,8 +1,8 @@
 ## Compatibility notes for first-gen KS
 
-The first-generation versions of Kernel Simulator are not compatible with the second-generation versions, due to too many structural changes. Here are the breaking changes per generation.
+The first-generation versions of Nitrocid KS are not compatible with the second-generation versions, due to too many structural changes. Here are the breaking changes per generation.
 
-During the lifecycle of Kernel Simulator, new versions tend to appear frequently. This causes some of the functions and APIs that we think are no longer relevant to be deleted. It doesn't list fields and screensaver codes, although they may be part of the API, because they're out of scope for this document.
+During the lifecycle of Nitrocid KS, new versions tend to appear frequently. This causes some of the functions and APIs that we think are no longer relevant to be deleted. It doesn't list fields and screensaver codes, although they may be part of the API, because they're out of scope for this document.
 
 ### How to Read the List
 

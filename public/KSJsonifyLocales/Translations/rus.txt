@@ -20,7 +20,7 @@ DOUBLE PANIC: Oshibka tipa {0} nedopustima.
 DVOYNAYA PANIKA: Oshibka yadra: {0}
 Vyklyucheniye...
 Rebooting ...
-Yeshche odin ekzemplyar Kernel Simulator rabotayet. Vyklyucheniye v sluchaye pomekh.
+Yeshche odin ekzemplyar Nitrocid KS rabotayet. Vyklyucheniye v sluchaye pomekh.
 Ne udalos' dobavit' pol'zovatelya v spiski razresheniy: nedopustimyy tip {0}
 Ne udalos' dobavit' pol'zovatelya v spiski razresheniy: nedopustimyy pol'zovatel' {0}
 Ne udalos' udalit' pol'zovatelya iz spiskov razresheniy: nedopustimyy tip {0}

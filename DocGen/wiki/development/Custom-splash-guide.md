@@ -5,7 +5,7 @@
 The custom splash is an assembly file that loads before the splash is displayed. It allows you to create custom splashes from simple progress bars to complex console art.
 
 > [!TIP]
-> To get started to our Kernel Simulator API, visit [this page](https://aptivi.github.io/Kernel-Simulator/).
+> To get started to our Nitrocid KS API, visit [this page](https://aptivi.github.io/NitrocidKS/).
 
 ## Custom splash format
 
@@ -21,7 +21,7 @@ If you're going to make your custom splash, follow these steps:
 1. On the Start Page, click on `New Project`
 2. Click on `Class Library (.NET Framework)` or `Class Library`, select VB or C#, and name your splash. Select Framework as `.NET Framework 4.8` or `.NET 6.0`. When you're finished, click `Create`.
 3. Right-click on References in the Solution Explorer, and press `Manage NuGet packages...`
-4. Go to `Browse`, and find `Kernel Simulator` and install it.
+4. Go to `Browse`, and find `Nitrocid KS` and install it.
 5. You will see that your KS executable files are added to the references. In your project file, this will be added:
 ```xml
     <PackageReference Include="KS">
@@ -75,7 +75,7 @@ End Sub
 ```
 8. Right-click on the solution and press Build.
 9. Copy the output `.dll` file to KSSplashes directory in your profile folder (`/home/<user>/` in Linux, and `Users\<user>\` in Windows)
-10. Run your Kernel Simulator you've just referenced to in your project, and set it to display your splash using the `settings` command. Be sure to reboot the kernel.
+10. Run your Nitrocid KS you've just referenced to in your project, and set it to display your splash using the `settings` command. Be sure to reboot the kernel.
 
 ## Optional Stuff
 

@@ -20,7 +20,7 @@ dabal painik: truti prakaar {0} amaany.
 dabal painik: karnel bag: {0}
 band karana ...
 reeboot kar raha hai ...
-Kernel Simulator ka ek aur udaaharan chal raha hai. hastakshep ke maamale mein band karana.
+Nitrocid KS ka ek aur udaaharan chal raha hai. hastakshep ke maamale mein band karana.
 anumati soochee mein upayogakarta jodane mein viphal: amaany prakaar {0}
 anumati soochee mein upayogakarta jodane mein viphal: amaany upayogakarta {0}
 anumati soochee se upayogakarta ko hataane mein viphal: amaany prakaar {0}

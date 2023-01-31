@@ -8,7 +8,7 @@
     <RootNamespace>KSTests</RootNamespace>
     <AssemblyName>KSTests</AssemblyName>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <Description>Unit tests for Kernel Simulator</Description>
+    <Description>Unit tests for Nitrocid KS</Description>
     <Copyright>Copyright © Aptivi 2018 - 2023</Copyright>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -123,13 +123,13 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\public\Kernel Simulator\Kernel Simulator.csproj">
+    <ProjectReference Include="..\..\public\Nitrocid\Nitrocid.csproj">
       <Project>{c7b37899-c361-423d-9512-fe0a87a46866}</Project>
-      <Name>Kernel Simulator</Name>
+      <Name>Nitrocid</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Copy SourceFiles="..\..\public\Kernel Simulator\Resources\Themes\Hacker.json" DestinationFolder="TestData"></Copy>
+    <Copy SourceFiles="..\..\public\Nitrocid\Resources\Themes\Hacker.json" DestinationFolder="TestData"></Copy>
   </Target>
 </Project>

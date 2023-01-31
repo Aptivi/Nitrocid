@@ -1,15 +1,15 @@
 #!/bin/bash
 
-#    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE
+#    Nitrocid KS  Copyright (C) 2018-2021  Aptivi
 #
-#    This file is part of Kernel Simulator
+#    This file is part of Nitrocid KS
 #
-#    Kernel Simulator is free software: you can redistribute it and/or modify
+#    Nitrocid KS is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
 #    (at your option) any later version.
 #
-#    Kernel Simulator is distributed in the hope that it will be useful,
+#    Nitrocid KS is distributed in the hope that it will be useful,
 #    but WITHOUT ANY WARRANTY; without even the implied warranty of
 #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #    GNU General Public License for more details.
@@ -33,7 +33,7 @@ fi
 
 # Download packages
 echo Downloading packages...
-"$msbuildpath" "../Kernel Simulator.sln" -t:restore -p:Configuration=$ksreleaseconf
+"$msbuildpath" "../Nitrocid.sln" -t:restore -p:Configuration=$ksreleaseconf
 if [ ! $? == 0 ]; then
 	echo Download failed.
 	exit 1
@@ -41,7 +41,7 @@ fi
 
 # Build KS
 echo Building KS...
-"$msbuildpath" "../Kernel Simulator.sln" -p:Configuration=$ksreleaseconf
+"$msbuildpath" "../Nitrocid.sln" -p:Configuration=$ksreleaseconf
 if [ ! $? == 0 ]; then
 	echo Build failed.
 	exit 1

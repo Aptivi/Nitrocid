@@ -6,7 +6,7 @@
 > When upgrading your mods to support 0.1.0, you must follow the compatibility notes to ensure that your mod works with 0.1.0. If you want to support both the first-generation and the second-generation KS, you must separate your mod codebase to three parts: one for the first-gen, the other for the second-gen, and the other for the third-gen. They can't coexist with each other in your KSMods directory.
 
 > [!IMPORTANT]
-> .NET Framework 4.8 is no longer supported as of 0.1.0 Beta 1. Please consider using .NET 6.0 instead to continue using Kernel Simulator. This is to improve multi-platform support without having to go to one environment (dotnetfx on Windows and mono on Linux and macOS) for each platform.
+> .NET Framework 4.8 is no longer supported as of 0.1.0 Beta 1. Please consider using .NET 6.0 instead to continue using Nitrocid KS. This is to improve multi-platform support without having to go to one environment (dotnetfx on Windows and mono on Linux and macOS) for each platform.
 
 ##### Moved events to KS.Kernel.Events
 
@@ -21,7 +21,7 @@ It has come to the conclusion that `PlatformDetector` is now promoted to the Ker
 
 ##### Separated the MOTD and MAL parsers
 
-MOTD and MAL parsers were unified since early versions of Kernel Simulator. However, it didn't occur to us that we need to separate them for a very long time. Now is the time to separate them, effectively removing `MessageType` enumeration.
+MOTD and MAL parsers were unified since early versions of Nitrocid KS. However, it didn't occur to us that we need to separate them for a very long time. Now is the time to separate them, effectively removing `MessageType` enumeration.
 
 ##### Moved GetTerminal* to KernelPlatform
 
@@ -56,7 +56,7 @@ These power management functions were there in `KernelTools` since the earliest 
 
 ##### Removed `InitPaths` in favor of properties
 
-Now, we don't have to initialize paths everytime we make an internal app that depends on Kernel Simulator's paths. The call to the function that gets the path, `GetKernelPath`, however won't be removed because it's widely used and is unaffected. This reduces the `NullReferenceException` bugs regarding paths.
+Now, we don't have to initialize paths everytime we make an internal app that depends on Nitrocid KS's paths. The call to the function that gets the path, `GetKernelPath`, however won't be removed because it's widely used and is unaffected. This reduces the `NullReferenceException` bugs regarding paths.
 
 ##### Moved kernel update code to `Kernel.Updates`
 

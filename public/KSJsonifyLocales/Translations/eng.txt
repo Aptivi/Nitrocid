@@ -20,7 +20,7 @@ DOUBLE PANIC: Error Type {0} invalid.
 DOUBLE PANIC: Kernel bug: {0}
 Shutting down...
 Rebooting...
-Another instance of Kernel Simulator is running. Shutting down in case of interference.
+Another instance of Nitrocid KS is running. Shutting down in case of interference.
 Failed to add user into permission lists: invalid type {0}
 Failed to add user into permission lists: invalid user {0}
 Failed to remove user from permission lists: invalid type {0}
@@ -1682,7 +1682,7 @@ Be sure to use a console font supporting PowerLine glyphs, or the output may not
 Opens the shell preset library
 The specified preset {0} is not found.
 You are a spaceship and the meteors are coming to destroy you. Can you save it?
-Retro Kernel Simulator based on 0.0.4.1
+Retro Nitrocid KS based on 0.0.4.1
 Device already exists in the block list.
 Device doesn't exist in the block list.
 Tests assembly entry point execution

@@ -1,7 +1,7 @@
 
 # MacOS
 
-*How to install the **Kernel Simulator**.*
+*How to install the **Nitrocid KS**.*
 
 <br>
 
@@ -20,7 +20,7 @@
 
 <br>
 
-1.  **[Download]** the Kernel Simulator binaries
+1.  **[Download]** the Nitrocid KS binaries
 
     <br>
 
@@ -32,7 +32,7 @@
     that contains **KS**, and start it with:
 
     ```shell
-    mono "Kernel Simulator.exe"
+    mono "Nitrocid KS.exe"
     ```
 
 <br>
@@ -41,5 +41,5 @@
 <!----------------------------------------------------------------------------->
 
 [Mono Runtime]: https://www.mono-project.com/download/stable/#download-mac
-[Download]: https://github.com/Aptivi/Kernel-Simulator/releases
+[Download]: https://github.com/Aptivi/NitrocidKS/releases
 [iTerm2]: https://iterm2.com/downloads.html

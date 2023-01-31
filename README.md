@@ -12,7 +12,7 @@
 
 <br>
 
-# Kernel Simulator
+# Nitrocid KS
 
 *A simulator for the kernel that we are building.*
 
@@ -108,7 +108,7 @@ that may make you feel uncomfortable reading it.
 
 <br>
 
-**Aptivi**  -  *Owner of Kernel Simulator*
+**Aptivi**  -  *Owner of Nitrocid KS*
 
 **OpenWeatherMap**  -  *Weather API*
 
@@ -153,36 +153,36 @@ that may make you feel uncomfortable reading it.
 [SpaceCamp]: https://github.com/jaredgorski/SpaceCamp
 [NamesList]: https://github.com/Aptivi/NamesList
 [RSS Feed]: https://github.com/yavuz/news-feed-list-of-countries/
-[Releases]: https://github.com/Aptivi/Kernel-Simulator/releases
+[Releases]: https://github.com/Aptivi/NitrocidKS/releases
 [Darcula]: https://github.com/doums/darcula
 [Melange]: https://github.com/savq/melange
-[Latest]: https://github.com/Aptivi/Kernel-Simulator/releases/latest
+[Latest]: https://github.com/Aptivi/NitrocidKS/releases/latest
 [NuGet]: https://www.nuget.org/packages/KS/
 
-[Servicing]: https://github.com/Aptivi/Kernel-Simulator/actions/workflows/build-win.yml
-[Master]: https://github.com/Aptivi/Kernel-Simulator/actions/workflows/build-win.yml
-[Servicing Linux]: https://github.com/Aptivi/Kernel-Simulator/actions/workflows/build-linux.yml
-[Master Linux]: https://github.com/Aptivi/Kernel-Simulator/actions/workflows/build-linux.yml
+[Servicing]: https://github.com/Aptivi/NitrocidKS/actions/workflows/build-win.yml
+[Master]: https://github.com/Aptivi/NitrocidKS/actions/workflows/build-win.yml
+[Servicing Linux]: https://github.com/Aptivi/NitrocidKS/actions/workflows/build-linux.yml
+[Master Linux]: https://github.com/Aptivi/NitrocidKS/actions/workflows/build-linux.yml
 
 [Requirements]: Documentation/Requirements.md
 [Libraries]: Documentation/Libraries.md
 [Packaging]: Documentation/Packaging.md
 [Building]: Documentation/Building
 [Install]: Documentation/Installation
-[Manual]: https://aptivi.gitbook.io/kernel-simulator-manual/
+[Manual]: https://aptivi.gitbook.io/NitrocidKS-manual/
 
 <!----------------------------------[ Badges ]--------------------------------->
 
 [Badge Chocolatey]: https://img.shields.io/chocolatey/v/ks?color=5e85a7&include_prereleases&style=for-the-badge&logoColor=white&logo=Chocolatey&labelColor=80B5E3
-[Badge Downloads]: https://img.shields.io/github/downloads/Aptivi/Kernel-Simulator/total?color=217346&label=Downloads&style=for-the-badge&logoColor=white&logo=DocuSign&labelColor=2d9d5f
-[Badge Latest]: https://img.shields.io/github/v/release/Aptivi/Kernel-Simulator?color=212121&include_prereleases&label=github&style=for-the-badge&logoColor=white&logo=AzureArtifacts&labelColor=303030
+[Badge Downloads]: https://img.shields.io/github/downloads/Aptivi/NitrocidKS/total?color=217346&label=Downloads&style=for-the-badge&logoColor=white&logo=DocuSign&labelColor=2d9d5f
+[Badge Latest]: https://img.shields.io/github/v/release/Aptivi/NitrocidKS?color=212121&include_prereleases&label=github&style=for-the-badge&logoColor=white&logo=AzureArtifacts&labelColor=303030
 [Badge NuGet]: https://img.shields.io/nuget/vpre/KS?color=012f52&style=for-the-badge&logoColor=white&logo=NuGet&labelColor=004880
-[Badge Size]: https://img.shields.io/github/repo-size/Aptivi/Kernel-Simulator?color=bb4a28&label=size&logoColor=white&style=for-the-badge&logo=GoogleAnalytics&labelColor=E85C33
+[Badge Size]: https://img.shields.io/github/repo-size/Aptivi/NitrocidKS?color=bb4a28&label=size&logoColor=white&style=for-the-badge&logo=GoogleAnalytics&labelColor=E85C33
 
-[Badge Servicing]: https://github.com/Aptivi/Kernel-Simulator/actions/workflows/build-win.yml/badge.svg?branch=servicing
-[Badge Master]: https://github.com/Aptivi/Kernel-Simulator/actions/workflows/build-win.yml/badge.svg
-[Badge Servicing Linux]: https://github.com/Aptivi/Kernel-Simulator/actions/workflows/build-linux.yml/badge.svg?branch=servicing
-[Badge Master Linux]: https://github.com/Aptivi/Kernel-Simulator/actions/workflows/build-linux.yml/badge.svg
+[Badge Servicing]: https://github.com/Aptivi/NitrocidKS/actions/workflows/build-win.yml/badge.svg?branch=servicing
+[Badge Master]: https://github.com/Aptivi/NitrocidKS/actions/workflows/build-win.yml/badge.svg
+[Badge Servicing Linux]: https://github.com/Aptivi/NitrocidKS/actions/workflows/build-linux.yml/badge.svg?branch=servicing
+[Badge Master Linux]: https://github.com/Aptivi/NitrocidKS/actions/workflows/build-linux.yml/badge.svg
 
 
 <!---------------------------------[ Buttons ]--------------------------------->

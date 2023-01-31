@@ -1682,7 +1682,7 @@ Ujistěte se, že používáte konzolové písmo podporující glyfy PowerLine, 
 Otevře knihovnu přednastavení prostředí
 Zadaná předvolba {0} nebyla nalezena.
 Jste vesmírná loď a meteory vás přicházejí zničit. Můžete to uložit?
-Retro Kernel Simulator založený na 0.0.4.1
+Retro Nitrocid KS založený na 0.0.4.1
 Zařízení již v seznamu blokovaných existuje.
 Zařízení v seznamu blokovaných neexistuje.
 Testuje provádění vstupního bodu sestavy

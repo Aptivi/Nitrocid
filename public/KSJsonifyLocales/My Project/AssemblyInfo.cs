@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("KS Locale JSON-ifier")]
 [assembly: AssemblyDescription("Converts bare text files for KS localizations to a parsable format for KS")]
 [assembly: AssemblyCompany("Aptivi")]
-[assembly: AssemblyProduct("Kernel Simulator")]
+[assembly: AssemblyProduct("Nitrocid KS")]
 [assembly: AssemblyCopyright("Copyright © Aptivi 2018 - 2023")]
 [assembly: AssemblyTrademark("")]
 

@@ -1,6 +1,6 @@
 ## Compatibility notes for second-gen KS
 
-The second-generation versions of Kernel Simulator are not backwards-compatible with the first-generation versions, due to too many structural changes as outlined below. Here are the breaking changes per generation.
+The second-generation versions of Nitrocid KS are not backwards-compatible with the first-generation versions, due to too many structural changes as outlined below. Here are the breaking changes per generation.
 
 ### Breaking API changes (Second-generation, Revision 0)
 
@@ -503,7 +503,7 @@ These are the technical information about **some** of the above breaking changes
 
 ##### Consolidated the obsolete functions
 
-The three deprecated functions are just wrappers to the reflection routines in Kernel Simulator. The one sub is about finding settings, but since we already have `FindSetting(String, JToken)`, why don't we just go ahead and remove the `FindSetting(String, Boolean)` one, since it doesn't support splashes?
+The three deprecated functions are just wrappers to the reflection routines in Nitrocid KS. The one sub is about finding settings, but since we already have `FindSetting(String, JToken)`, why don't we just go ahead and remove the `FindSetting(String, Boolean)` one, since it doesn't support splashes?
 
 * Affected functions:
   - FindSetting(String, Boolean)
@@ -650,7 +650,7 @@ It was previously inside the Colors255 module. Now, it resides in its own code f
 
 ##### Removed KS.Misc.Dictionary to substitute with Dictify
 
-We have removed this namespace that existed in 0.0.23.0 to use the Dictify library so if we try to update it for bug fixes or feature additions, we don't depend on Kernel Simulator for this feature.
+We have removed this namespace that existed in 0.0.23.0 to use the Dictify library so if we try to update it for bug fixes or feature additions, we don't depend on Nitrocid KS for this feature.
 
 * Affected functions:
   - `GetWordInfo()`

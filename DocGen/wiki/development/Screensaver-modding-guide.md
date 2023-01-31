@@ -7,7 +7,7 @@ The screensaver is the idle process that will activate if your computer went idl
 The screensaver can also be customized, and we'll teach you how to make your first screensaver, to make from the simplest screensavers to the legendary ones. The custom screensavers are glorified dynamic mods.
 
 > [!TIP]
-> To get started to our Kernel Simulator API, visit [this page](https://aptivi.github.io/Kernel-Simulator/).
+> To get started to our Nitrocid KS API, visit [this page](https://aptivi.github.io/NitrocidKS/).
 
 ## How to start your own screensaver on Visual Studio?
 
@@ -19,7 +19,7 @@ If you're going to make your mod, follow these steps:
 1. On the Start Page, click on `New Project`
 2. Click on `Class Library (.NET Framework)` or `Class Library`, select VB or C#, and name your mod or modpack. Select Framework as `.NET Framework 4.8` or `.NET 6.0`. When you're finished, click `Create`.
 3. Right-click on References in the Solution Explorer, and press `Manage NuGet packages...`
-4. Go to `Browse`, and find `Kernel Simulator` and install it.
+4. Go to `Browse`, and find `Nitrocid KS` and install it.
 5. You will see that your KS executable files are added to the references. In your project file, this will be added:
 ```xml
     <PackageReference Include="KS">
@@ -66,7 +66,7 @@ Now, follow these steps:
     End Sub
 ```
 7. Run the build. When the build is successful, ignore the dialog box that appears.
-8. Run your Kernel Simulator you've just referenced to in your project, and load, set default, and lock your screen and your screensaver is there.
+8. Run your Nitrocid KS you've just referenced to in your project, and load, set default, and lock your screen and your screensaver is there.
 
 ## Optional stuff
 

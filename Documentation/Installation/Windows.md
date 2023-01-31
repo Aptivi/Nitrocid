@@ -1,7 +1,7 @@
 
 # Windows
 
-*How to install the **Kernel Simulator**.*
+*How to install the **Nitrocid KS**.*
 
 <br>
 
@@ -34,7 +34,7 @@
 
 <br>
 
-1. **[Download]** the Kernel Simulator binaries.
+1. **[Download]** the Nitrocid KS binaries.
 
     <br>
 
@@ -42,7 +42,7 @@
 
     <br>
 
-3. Run it by double-clicking `Kernel Simulator.exe`
+3. Run it by double-clicking `Nitrocid KS.exe`
 
 <br>
 
@@ -50,4 +50,4 @@
 <!----------------------------------------------------------------------------->
 
 [Chocolatey]: https://chocolatey.org/install
-[Download]: https://github.com/Aptivi/Kernel-Simulator/releases
+[Download]: https://github.com/Aptivi/NitrocidKS/releases

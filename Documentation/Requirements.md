@@ -1,6 +1,6 @@
 # System Requirements
 
-*What you need to run **Kernel Simulator**.*
+*What you need to run **Nitrocid KS**.*
 
 <br>
 

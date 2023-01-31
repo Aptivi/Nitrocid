@@ -20,7 +20,7 @@ NHÂN ĐÔI: Loại lỗi {0} không hợp lệ.
 NHÂN ĐÔI: Lỗi hạt nhân: {0}
 Đang Tắt...
 Khởi động lại ...
-Một phiên bản khác của Kernel Simulator đang chạy. Tắt trong trường hợp can thiệp.
+Một phiên bản khác của Nitrocid KS đang chạy. Tắt trong trường hợp can thiệp.
 Không thể thêm người dùng vào danh sách quyền: loại không hợp lệ {0}
 Không thể thêm người dùng vào danh sách quyền: người dùng không hợp lệ {0}
 Không thể xóa người dùng khỏi danh sách quyền: loại không hợp lệ {0}
@@ -1682,7 +1682,7 @@ Kiểm tra bảng điều khiển của bạn để được hỗ trợ PowerLin
 Mở thư viện đặt trước shell
 Không tìm thấy giá trị đặt trước đã chỉ định {0}.
 Bạn là một con tàu vũ trụ và các thiên thạch đang đến để tiêu diệt bạn. Bạn có thể cứu nó?
-Retro Kernel Simulator dựa trên 0.0.4.1
+Retro Nitrocid KS dựa trên 0.0.4.1
 Thiết bị đã tồn tại trong danh sách chặn.
 Thiết bị không tồn tại trong danh sách chặn.
 Kiểm tra việc thực hiện điểm vào lắp ráp

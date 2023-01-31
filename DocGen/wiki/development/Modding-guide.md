@@ -7,7 +7,7 @@ The mod is the kernel extension file that loads on boot and adds extensions to t
 This is useful if you want to add your own extensions to the kernel, like event handlers for the kernel.
 
 > [!TIP]
-> To get started to our Kernel Simulator API, visit [this page](https://aptivi.github.io/Kernel-Simulator/).
+> To get started to our Nitrocid KS API, visit [this page](https://aptivi.github.io/NitrocidKS/).
 
 ## Mod format
 
@@ -23,7 +23,7 @@ If you're going to make your mod, follow these steps:
 1. On the Start Page, click on `New Project`
 2. Click on `Class Library (.NET Framework)` or `Class Library`, select VB or C#, and name your mod or modpack. Select Framework as `.NET Framework 4.8` or `.NET 6.0`. When you're finished, click `Create`.
 3. Right-click on References in the Solution Explorer, and press `Manage NuGet packages...`
-4. Go to `Browse`, and find `Kernel Simulator` and install it.
+4. Go to `Browse`, and find `Nitrocid KS` and install it.
 5. You will see that your KS executable files are added to the references. In your project file, this will be added:
 ```xml
     <PackageReference Include="KS">
@@ -153,7 +153,7 @@ End Sub
 ```
 9. Right-click on the solution and press Build.
 10. Copy the output `.dll` file to KSMods directory in your profile folder (`/home/<user>/` in Linux, and `Users\<user>\` in Windows)
-11. Run your Kernel Simulator you've just referenced to in your project.
+11. Run your Nitrocid KS you've just referenced to in your project.
 
 ## Optional Stuff
 

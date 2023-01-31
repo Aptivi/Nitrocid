@@ -9,7 +9,7 @@ You can run arguments on the next reboot by using the `arginj` command when on s
 You can make the prompt appear in two methods:
 
 1. By changing config option `Prompt for Arguments on Boot` to True (For more information about config, see [Kernel Configuration](../config/Configuration-for-KS.md))
-2. By running Kernel Simulator with the promptArgs cmdline argument (eg. `"Kernel Simulator.exe" promptArgs`)
+2. By running Nitrocid KS with the promptArgs cmdline argument (eg. `"Nitrocid KS.exe" promptArgs`)
 
 You can separate multiple argument with commas without spaces. For example, `quiet,safe`
 

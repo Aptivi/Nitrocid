@@ -20,7 +20,7 @@ DOUBLE PANIQUE: Type d'erreur {0} invalide.
 DOUBLE PANIC: Bug du noyau: {0}
 Éteindre...
 Redémarrage ...
-Une autre instance de Kernel Simulator est en cours d'exécution. Fermeture en cas d'interférence.
+Une autre instance de Nitrocid KS est en cours d'exécution. Fermeture en cas d'interférence.
 Échec de l'ajout d'utilisateur dans les listes d'autorisations: type non valide {0}
 Échec de l'ajout d'utilisateur dans les listes d'autorisations: utilisateur non valide {0}
 Échec de suppression de l'utilisateur des listes d'autorisations: type non valide {0}
