@@ -19,14 +19,13 @@
 using ColorSeq;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Inputs;
-using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using System.Collections.Generic;
 using System;
 using KS.Languages;
-using KS.Misc.Threading;
 using System.Threading;
+using Wordament;
 
 namespace KS.Misc.Games
 {
