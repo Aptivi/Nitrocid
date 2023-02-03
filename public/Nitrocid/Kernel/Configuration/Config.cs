@@ -341,18 +341,33 @@ namespace KS.Kernel.Configuration
                         // Check the variable type, and deal with it as appropriate
                         if (VariableType == SettingsKeyType.SColor)
                         {
-                            // Get the plain sequence from the color
-                            if (VariableValue is KeyValuePair<KernelColorType, Color> color)
-                                VariableValue = color.Value.PlainSequence;
-                            else
-                                VariableValue = new Color(((string)ConfigTokenFromPath[VariableKeyName]).ReleaseDoubleQuotes());
+                            string ColorValue = ((string)ConfigTokenFromPath[VariableKeyName]).ReleaseDoubleQuotes();
 
-                            // Setting entry is color, but the variable could be either String or Color.
-                            if ((FieldManager.CheckField(Variable, VariableIsInternal) && FieldManager.GetField(Variable, VariableIsInternal).FieldType == typeof(string)) ||
-                                (PropertyManager.CheckProperty(Variable) && PropertyManager.GetProperty(Variable).PropertyType == typeof(string)))
+                            // Get the plain sequence from the color
+                            if (FieldManager.CheckField(Variable, VariableIsInternal) &&
+                                FieldManager.GetValue(Variable, VariableIsInternal) is Dictionary<KernelColorType, Color> colors)
                             {
-                                // We're dealing with the field or the property which takes color but is a string containing plain sequence
-                                VariableValue = ((Color)VariableValue).PlainSequence;
+                                var colorTypeOnDict = colors.ElementAt(VariableEnumerableIndex).Key;
+                                colors[colorTypeOnDict] = new Color(ColorValue);
+                                VariableValue = colors;
+                            }
+                            else if (PropertyManager.CheckProperty(Variable) &&
+                                     PropertyManager.GetPropertyValue(Variable) is Dictionary<KernelColorType, Color> colors2)
+                            {
+                                var colorTypeOnDict = colors2.ElementAt(VariableEnumerableIndex).Key;
+                                colors2[colorTypeOnDict] = new Color(ColorValue);
+                                VariableValue = colors2;
+                            }
+                            else if ((FieldManager.CheckField(Variable, VariableIsInternal) &&
+                                      FieldManager.GetField(Variable, VariableIsInternal).FieldType == typeof(Color)) ||
+                                     (PropertyManager.CheckProperty(Variable) &&
+                                      PropertyManager.GetProperty(Variable).PropertyType == typeof(Color)))
+                            {
+                                VariableValue = new Color(ColorValue);
+                            }
+                            else
+                            {
+                                VariableValue = ColorValue;
                             }
                             DebugWriter.WriteDebug(DebugLevel.I, "Got color var value: {0}", VariableValue);
                         }
@@ -422,11 +437,11 @@ namespace KS.Kernel.Configuration
                         }
 
                         // Now, set the value
-                        if (FieldManager.CheckField(Variable))
+                        if (FieldManager.CheckField(Variable, VariableIsInternal))
                         {
                             // We're dealing with the field
                             DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0}...", Variable);
-                            FieldManager.SetValue(Variable, VariableValue, true);
+                            FieldManager.SetValue(Variable, VariableValue, VariableIsInternal);
                         }
                         else if (PropertyManager.CheckProperty(Variable))
                         {
