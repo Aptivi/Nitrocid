@@ -289,7 +289,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                 {
                     // Try to write to console
                     ColorTools.SetConsoleColor(color, Highlight, Highlight);
-                    ColorTools.SetConsoleColor(KernelColorType.Background, !Highlight, !Highlight);
+                    ColorTools.SetConsoleColor(KernelColorType.Background, !Highlight, Highlight);
 
                     // Write the text to console
                     if (Highlight)
@@ -339,7 +339,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                 {
                     // Try to write to console
                     ColorTools.SetConsoleColor(ForegroundColor, Highlight, Highlight);
-                    ColorTools.SetConsoleColor(BackgroundColor, !Highlight, !Highlight);
+                    ColorTools.SetConsoleColor(BackgroundColor, !Highlight, Highlight);
 
                     // Write the text to console
                     if (Highlight)
