@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using ColorSeq;
 using Extensification.StringExts;
+using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Misc.Writers.ConsoleWriters;
@@ -89,15 +90,15 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         public static void WriteTable(string[] Headers, string[,] Rows, int Margin, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, bool SeparateRows = true, List<CellOptions> CellOptions = null)
         {
-            int ColumnCapacity = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / (double)Headers.Length);
+            int ColumnCapacity = (int)Math.Round(ConsoleWrapper.WindowWidth / (double)Headers.Length);
             var ColumnPositions = new List<int>();
             int RepeatTimes;
 
             // Populate the positions
             TextWriterColor.Write();
-            for (int ColumnPosition = Margin; ColumnCapacity >= 0 ? ColumnPosition <= ConsoleBase.ConsoleWrapper.WindowWidth : ColumnPosition >= ConsoleBase.ConsoleWrapper.WindowWidth; ColumnPosition += ColumnCapacity)
+            for (int ColumnPosition = Margin; ColumnCapacity >= 0 ? ColumnPosition <= ConsoleWrapper.WindowWidth : ColumnPosition >= ConsoleWrapper.WindowWidth; ColumnPosition += ColumnCapacity)
             {
-                if (!(ColumnPosition >= ConsoleBase.ConsoleWrapper.WindowWidth))
+                if (!(ColumnPosition >= ConsoleWrapper.WindowWidth))
                 {
                     ColumnPositions.Add(ColumnPosition);
                     if (ColumnPositions.Count == 1)
@@ -115,23 +116,15 @@ namespace KS.Misc.Writers.FancyWriters
                 string Header = Headers[HeaderIndex];
                 int ColumnPosition = ColumnPositions[HeaderIndex];
                 Header ??= "";
-                TextWriterWhereColor.WriteWhere(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, HeaderForegroundColor, BackgroundColor);
+                TextWriterWhereColor.WriteWhere(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleWrapper.CursorTop, false, HeaderForegroundColor, BackgroundColor);
             }
             TextWriterColor.Write();
 
             // Write the closing minus sign.
-            int OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
-            RepeatTimes = ConsoleBase.ConsoleWrapper.WindowWidth - ConsoleBase.ConsoleWrapper.CursorLeft - Margin * 2;
+            RepeatTimes = ConsoleWrapper.WindowWidth - ConsoleWrapper.CursorLeft - Margin * 2;
             if (Margin > 0)
                 TextWriterColor.Write(" ".Repeat(Margin), false, SeparatorForegroundColor, BackgroundColor);
             TextWriterColor.Write("═".Repeat(RepeatTimes), true, SeparatorForegroundColor, BackgroundColor);
-
-            // Fix CursorTop value on Unix systems.
-            if (KernelPlatform.IsOnUnix())
-            {
-                if (!(ConsoleBase.ConsoleWrapper.CursorTop == ConsoleBase.ConsoleWrapper.WindowHeight - 1) | OldTop == ConsoleBase.ConsoleWrapper.WindowHeight - 3)
-                    ConsoleBase.ConsoleWrapper.CursorTop -= 1;
-            }
 
             // Write the rows
             for (int RowIndex = 0; RowIndex <= Rows.GetLength(0) - 1; RowIndex++)
@@ -162,9 +155,9 @@ namespace KS.Misc.Writers.FancyWriters
                     // Now, write the cell value
                     string FinalRowValue = RowValue.Truncate(ColumnCapacity - 3 - Margin);
                     if (ColoredCell)
-                        TextWriterWhereColor.WriteWhere(FinalRowValue, ColumnPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, CellColor, CellBackgroundColor);
+                        TextWriterWhereColor.WriteWhere(FinalRowValue, ColumnPosition, ConsoleWrapper.CursorTop, false, CellColor, CellBackgroundColor);
                     else
-                        TextWriterWhereColor.WriteWhere(FinalRowValue, ColumnPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, ValueForegroundColor, BackgroundColor);
+                        TextWriterWhereColor.WriteWhere(FinalRowValue, ColumnPosition, ConsoleWrapper.CursorTop, false, ValueForegroundColor, BackgroundColor);
                 }
                 TextWriterColor.Write();
 
@@ -172,18 +165,10 @@ namespace KS.Misc.Writers.FancyWriters
                 if (SeparateRows)
                 {
                     // Write the closing minus sign.
-                    OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
-                    RepeatTimes = ConsoleBase.ConsoleWrapper.WindowWidth - ConsoleBase.ConsoleWrapper.CursorLeft - Margin * 2;
+                    RepeatTimes = ConsoleWrapper.WindowWidth - ConsoleWrapper.CursorLeft - Margin * 2;
                     if (Margin > 0)
                         TextWriterColor.Write(" ".Repeat(Margin), false, SeparatorForegroundColor, BackgroundColor);
                     TextWriterColor.Write("═".Repeat(RepeatTimes), true, SeparatorForegroundColor, BackgroundColor);
-
-                    // Fix CursorTop value on Unix systems.
-                    if (KernelPlatform.IsOnUnix())
-                    {
-                        if (!(ConsoleBase.ConsoleWrapper.CursorTop == ConsoleBase.ConsoleWrapper.WindowHeight - 1) | OldTop == ConsoleBase.ConsoleWrapper.WindowHeight - 3)
-                            ConsoleBase.ConsoleWrapper.CursorTop -= 1;
-                    }
                 }
             }
         }
