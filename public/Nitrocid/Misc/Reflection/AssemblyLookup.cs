@@ -22,6 +22,7 @@ using System.IO;
 using System.Reflection;
 using KS.Files;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 
 namespace KS.Misc.Reflection
 {
@@ -58,6 +59,9 @@ namespace KS.Misc.Reflection
             Assembly FinalAssembly = null;
             string DepAssemblyName = new AssemblyName(args.Name).Name;
             DebugWriter.WriteDebug(DebugLevel.I, "Requested to load {0}.", args.Name);
+
+            if (DepAssemblyName == "Kernel Simulator")
+                throw new KernelException(KernelExceptionType.OldModDetected);
 
             // Try to load assembly from lookup path
             foreach (string LookupPath in AssemblyLookupPaths)

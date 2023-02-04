@@ -108,6 +108,7 @@ namespace KS.Kernel.Exceptions
                     { KernelExceptionType.HexEditor,                        Translate.DoTranslation("An invalid hex editor operation is being performed.") },
                     { KernelExceptionType.JsonEditor,                       Translate.DoTranslation("An invalid JSON editor operation is being performed.") },
                     { KernelExceptionType.TextEditor,                       Translate.DoTranslation("An invalid text editor operation is being performed.") },
+                    { KernelExceptionType.OldModDetected,                   Translate.DoTranslation("When the kernel tried to load the specified mod, it requested loading \"Kernel Simulator\". Since the main application is renamed to Nitrocid KS, this mod can't be run safely. We advice you to upgrade the mod.") },
                 };
             }
         }

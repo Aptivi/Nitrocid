@@ -330,6 +330,10 @@ namespace KS.Kernel.Exceptions
         /// <summary>
         /// An invalid text editor operation is being performed.
         /// </summary>
-        TextEditor
+        TextEditor,
+        /// <summary>
+        /// When the kernel tried to load the specified mod, it requested loading "Kernel Simulator". Since the main application is renamed to Nitrocid KS, this mod can't be run safely. We advice you to upgrade the mod.
+        /// </summary>
+        OldModDetected
     }
 }
