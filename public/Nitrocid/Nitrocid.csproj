@@ -25,6 +25,10 @@
 
   <!-- KS General Information -->
   <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineTrace>true</DefineTrace>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <OutputType>Exe</OutputType>
     <RootNamespace>KS</RootNamespace>
     <LangVersion>latest</LangVersion>
@@ -33,42 +37,31 @@
     <ProjectGuid>{C7B37899-C361-423D-9512-FE0A87A46866}</ProjectGuid>
     <StartupObject>KS.Kernel.Kernel</StartupObject>
     <AssemblyName>Nitrocid</AssemblyName>
-    <Description>Simulates our future kernel</Description>
+    <AssemblyTitle>Simulates our future kernel, Nitrocid Kernel</AssemblyTitle>
+    <Description>Simulates our future kernel, Nitrocid Kernel</Description>
+    <Company>Aptivi</Company>
+    <Product>Nitrocid</Product>
     <Copyright>Copyright © Aptivi 2018 - 2023</Copyright>
     <OutputPath>KSBuild\</OutputPath>
     <ApplicationIcon>OfficialAppIcon-KernelSimulator-256.ico</ApplicationIcon>
-    <OptionExplicit>On</OptionExplicit>
-    <OptionCompare>Binary</OptionCompare>
-    <OptionStrict>Off</OptionStrict>
-    <OptionInfer>On</OptionInfer>
-    <ApplicationManifest>Properties/app.manifest</ApplicationManifest>
-    <GenerateManifests>false</GenerateManifests>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <Version>0.1.0</Version>
+    <AssemblyVersion>0.1.0</AssemblyVersion>
+    <FileVersion>3.0.25.0</FileVersion>
     <PackageVersion>0.1.0.0-beta1</PackageVersion>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
   <!-- KS General Information End -->
 
   <!-- KS Platform Information -->
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <TargetFramework>net6.0</TargetFramework>
-    <DebugSymbols>true</DebugSymbols>
     <DefineDebug>true</DefineDebug>
-    <DefineTrace>true</DefineTrace>
-    <DocumentationFile>$(OutputPath)Nitrocid.xml</DocumentationFile>
-    <DebugType>portable</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <Optimize>false</Optimize>
+    <DebugType>portable</DebugType>
     <DefineConstants>SPECIFIERDEV;MILESTONESPECIFIERALPHA</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <TargetFramework>net6.0</TargetFramework>
-    <DebugSymbols>true</DebugSymbols>
-    <DefineTrace>true</DefineTrace>
-    <DocumentationFile>$(OutputPath)Nitrocid.xml</DocumentationFile>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DefineConstants>SPECIFIERREL</DefineConstants>
   </PropertyGroup>
   <!-- KS Platform Information End -->
