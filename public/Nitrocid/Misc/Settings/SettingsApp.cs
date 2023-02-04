@@ -597,12 +597,12 @@ namespace KS.Misc.Settings
                                     if (FieldManager.CheckField(KeyVar))
                                     {
                                         // We're dealing with the field
-                                        FieldManager.SetValue(KeyVar, (object)FinalBool, true);
+                                        FieldManager.SetValue(KeyVar, FinalBool, true);
                                     }
                                     else if (PropertyManager.CheckProperty(KeyVar))
                                     {
                                         // We're dealing with the property
-                                        PropertyManager.SetPropertyValue(KeyVar, (object)FinalBool);
+                                        PropertyManager.SetPropertyValue(KeyVar, FinalBool);
                                     }
                                     break;
                                 }
