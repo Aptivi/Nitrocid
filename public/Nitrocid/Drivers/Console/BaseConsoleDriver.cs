@@ -32,6 +32,7 @@ using ColorSeq;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using con = System.Console;
 using VT.NET;
+using System.Runtime.InteropServices;
 
 namespace KS.Drivers.Console.Consoles
 {
@@ -402,39 +403,23 @@ namespace KS.Drivers.Console.Consoles
                     if (!(vars.Length == 0))
                         msg = StringManipulate.FormatString(msg, vars);
 
-                    // Write text slowly
-                    var chars = msg.ToCharArray().ToList();
-                    for (int i = 0; i < chars.Count; i++)
-                    {
-                        char ch = chars[i];
+                    // Grab each VT sequence from the message and fetch their indexes
+                    var sequences = Matches.MatchVTSequences(msg);
+                    int vtSeqIdx = 0;
 
+                    // Write text slowly
+                    for (int i = 0; i < msg.Length; i++)
+                    {
                         // Sleep for a while
                         Thread.Sleep((int)Math.Round(MsEachLetter));
 
-                        // Grab each VT sequence from the message and fetch their indexes
-                        var sequences = Matches.MatchVTSequences(msg);
-                        int vtSeqIdx = 0;
-
-                        // Then, handle the VT sequences. See a comment posted on WriteWherePlain() for more info
-                        string seq = "";
-                        if (sequences.Count > 0 && sequences[vtSeqIdx].Index == i)
-                        {
-                            // We're at an index which is the same as the captured VT sequence. Get the sequence
-                            seq = sequences[vtSeqIdx].Value;
-
-                            // Raise the index in case we have the next sequence, but only if we're sure that we have another
-                            if (vtSeqIdx + 1 < sequences.Count)
-                                vtSeqIdx++;
-
-                            // Raise the paragraph index by the length of the sequence
-                            i += seq.Length - 1;
-                        }
-                        ConsoleWrapper.Write(!string.IsNullOrEmpty(seq) ? seq : ch.ToString());
+                        // Write a character individually
+                        WriteChar(msg, ref i, ref vtSeqIdx);
                     }
+
+                    // If we're writing a new line, write it
                     if (Line)
-                    {
                         ConsoleWrapper.WriteLine();
-                    }
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
                 {
@@ -480,7 +465,8 @@ namespace KS.Drivers.Console.Consoles
                         // Now, parse every character
                         for (int i = 0; i < MessageParagraph.Length; i++)
                         {
-                            if (ConsoleWrapper.CursorLeft == ConsoleWrapper.WindowWidth - RightMargin)
+                            if (ConsoleWrapper.CursorLeft == ConsoleWrapper.WindowWidth - RightMargin ||
+                                MessageParagraph[i] == '\n')
                             {
                                 if (ConsoleWrapper.CursorTop == ConsoleWrapper.BufferHeight - 1)
                                 {
@@ -494,34 +480,9 @@ namespace KS.Drivers.Console.Consoles
                                 ConsoleWrapper.CursorLeft = Left;
                             }
 
-                            // Before printing the character, check to see if we're surrounded by the VT sequence. This is to work around
-                            // the problem in .NET 6.0 Linux that prevents it from actually parsing the VT sequences like it's supposed to
-                            // do in Windows.
-                            //
-                            // Windows 10, Windows 11, and higher contain cmd.exe that checks to see if we passed it the escape character
-                            // alone, and it tries to parse each sequence passed to it.
-                            //
-                            // Linux, on the other hand, the terminal emulator has a completely different behavior, because it just omits
-                            // the escape character, which results in the entire sequence being printed except the Escape \u001b key, which
-                            // is not the way that it's supposed to work.
-                            //
-                            // To overcome this limitation, we need to print the whole sequence to the console found by the virtual terminal
-                            // control sequence matcher to match how it works on Windows.
-                            char ParagraphChar = MessageParagraph[i];
-                            string seq = "";
-                            if (sequences.Count > 0 && sequences[vtSeqIdx].Index == i)
-                            {
-                                // We're at an index which is the same as the captured VT sequence. Get the sequence
-                                seq = sequences[vtSeqIdx].Value;
-
-                                // Raise the index in case we have the next sequence, but only if we're sure that we have another
-                                if (vtSeqIdx + 1 < sequences.Count)
-                                    vtSeqIdx++;
-
-                                // Raise the paragraph index by the length of the sequence
-                                i += seq.Length - 1;
-                            }
-                            ConsoleWrapper.Write(!string.IsNullOrEmpty(seq) ? seq : ParagraphChar.ToString());
+                            // Write a character individually
+                            if (MessageParagraph[i] != '\n')
+                                WriteChar(MessageParagraph, ref i, ref vtSeqIdx);
                         }
 
                         // We're starting with the new paragraph, so we increase the CursorTop value by 1.
@@ -588,28 +549,26 @@ namespace KS.Drivers.Console.Consoles
                         {
                             // Sleep for a few milliseconds
                             Thread.Sleep((int)Math.Round(MsEachLetter));
-                            if (ConsoleWrapper.CursorLeft == ConsoleWrapper.WindowWidth - RightMargin)
+                            if (ConsoleWrapper.CursorLeft == ConsoleWrapper.WindowWidth - RightMargin ||
+                                MessageParagraph[i] == '\n')
                             {
-                                ConsoleWrapper.CursorTop += 1;
+                                if (ConsoleWrapper.CursorTop == ConsoleWrapper.BufferHeight - 1)
+                                {
+                                    // We've reached the end of buffer. Write the line to scroll.
+                                    ConsoleWrapper.WriteLine();
+                                }
+                                else
+                                {
+                                    ConsoleWrapper.CursorTop += 1;
+                                }
                                 ConsoleWrapper.CursorLeft = Left;
                             }
 
-                            // Then, handle the VT sequences. See a comment posted on WriteWherePlain() for more info
-                            char ParagraphChar = MessageParagraph[i];
-                            string seq = "";
-                            if (sequences.Count > 0 && sequences[vtSeqIdx].Index == i)
-                            {
-                                // We're at an index which is the same as the captured VT sequence. Get the sequence
-                                seq = sequences[vtSeqIdx].Value;
+                            // Write a character individually
+                            if (MessageParagraph[i] != '\n')
+                                WriteChar(MessageParagraph, ref i, ref vtSeqIdx);
 
-                                // Raise the index in case we have the next sequence, but only if we're sure that we have another
-                                if (vtSeqIdx + 1 < sequences.Count)
-                                    vtSeqIdx++;
-
-                                // Raise the paragraph index by the length of the sequence
-                                i += seq.Length - 1;
-                            }
-                            ConsoleWrapper.Write(!string.IsNullOrEmpty(seq) ? seq : ParagraphChar.ToString());
+                            // If we're writing a new line, write it
                             if (Line)
                                 ConsoleWrapper.WriteLine();
                         }
@@ -617,7 +576,15 @@ namespace KS.Drivers.Console.Consoles
                         // We're starting with the new paragraph, so we increase the CursorTop value by 1.
                         if (!(MessageParagraphIndex == Paragraphs.Length - 1))
                         {
-                            ConsoleWrapper.CursorTop += 1;
+                            if (ConsoleWrapper.CursorTop == ConsoleWrapper.BufferHeight - 1)
+                            {
+                                // We've reached the end of buffer. Write the line to scroll.
+                                ConsoleWrapper.WriteLine();
+                            }
+                            else
+                            {
+                                ConsoleWrapper.CursorTop += 1;
+                            }
                             ConsoleWrapper.CursorLeft = Left;
                         }
                     }
@@ -645,10 +612,17 @@ namespace KS.Drivers.Console.Consoles
                     if (!(vars.Length == 0))
                         Text = StringManipulate.FormatString(Text, vars);
 
+                    // Grab each VT sequence from the paragraph and fetch their indexes
+                    var sequences = Matches.MatchVTSequences(Text);
+                    int vtSeqIdx = 0;
+
                     OldTop = ConsoleWrapper.CursorTop;
-                    foreach (char TextChar in Text.ToString().ToCharArray())
+                    for (int i = 0; i < Text.Length; i++)
                     {
-                        ConsoleWrapper.Write(TextChar);
+                        char TextChar = Text[i];
+
+                        // Write a character individually
+                        WriteChar(Text, ref i, ref vtSeqIdx);
                         LinesMade += ConsoleWrapper.CursorTop - OldTop;
                         OldTop = ConsoleWrapper.CursorTop;
                         if (LinesMade == ConsoleWrapper.WindowHeight - 1)
@@ -667,6 +641,41 @@ namespace KS.Drivers.Console.Consoles
                     DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
                 }
             }
+        }
+
+        internal void WriteChar(string text, ref int i, ref int vtSeqIdx)
+        {
+            // Grab each VT sequence from the message
+            char ch = text[i];
+            var sequences = Matches.MatchVTSequences(text);
+
+            // Before printing the character, check to see if we're surrounded by the VT sequence. This is to work around
+            // the problem in .NET 6.0 Linux that prevents it from actually parsing the VT sequences like it's supposed to
+            // do in Windows.
+            //
+            // Windows 10, Windows 11, and higher contain cmd.exe that checks to see if we passed it the escape character
+            // alone, and it tries to parse each sequence passed to it.
+            //
+            // Linux, on the other hand, the terminal emulator has a completely different behavior, because it just omits
+            // the escape character, which results in the entire sequence being printed except the Escape \u001b key, which
+            // is not the way that it's supposed to work.
+            //
+            // To overcome this limitation, we need to print the whole sequence to the console found by the virtual terminal
+            // control sequence matcher to match how it works on Windows.
+            string seq = "";
+            if (sequences.Count > 0 && sequences[vtSeqIdx].Index == i)
+            {
+                // We're at an index which is the same as the captured VT sequence. Get the sequence
+                seq = sequences[vtSeqIdx].Value;
+
+                // Raise the index in case we have the next sequence, but only if we're sure that we have another
+                if (vtSeqIdx + 1 < sequences.Count)
+                    vtSeqIdx++;
+
+                // Raise the paragraph index by the length of the sequence
+                i += seq.Length - 1;
+            }
+            ConsoleWrapper.Write(!string.IsNullOrEmpty(seq) ? seq : ch.ToString());
         }
 
     }
