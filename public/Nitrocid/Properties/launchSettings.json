@@ -1,33 +1,33 @@
 {
   "profiles": {
-    "KS - Debug": {
+    "Nitrocid KS - Debug": {
       "commandName": "Project",
       "commandLineArgs": "debug"
     },
-    "KS - Reset": {
+    "Nitrocid KS - Reset": {
       "commandName": "Project",
       "commandLineArgs": "reset"
     },
-    "KS": {
+    "Nitrocid KS": {
       "commandName": "Project"
     },
-    "KS - Test Interactive": {
+    "Nitrocid KS - Test Interactive": {
       "commandName": "Project",
       "commandLineArgs": "testInteractive"
     },
-    "KS - Console Debug": {
+    "Nitrocid KS - Console Debug": {
       "commandName": "Project",
       "commandLineArgs": "debug terminaldebug"
     },
-    "KS - quiet": {
+    "Nitrocid KS - quiet": {
       "commandName": "Project",
       "commandLineArgs": "quiet"
     },
-    "KS - safe": {
+    "Nitrocid KS - safe": {
       "commandName": "Project",
       "commandLineArgs": "safe"
     },
-    "KS - maintenance": {
+    "Nitrocid KS - maintenance": {
       "commandName": "Project",
       "commandLineArgs": "maintenance"
     }
