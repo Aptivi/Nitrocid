@@ -643,7 +643,7 @@ namespace KS.Drivers.Console.Consoles
             }
         }
 
-        internal void WriteChar(string text, ref int i, ref int vtSeqIdx)
+        internal static void WriteChar(string text, ref int i, ref int vtSeqIdx)
         {
             // Grab each VT sequence from the message
             char ch = text[i];
