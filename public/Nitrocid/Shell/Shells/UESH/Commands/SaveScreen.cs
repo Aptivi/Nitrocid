@@ -38,7 +38,7 @@ namespace KS.Shell.Shells.UESH.Commands
             if (!(ListArgsOnly.Length == 0))
                 Screensaver.ShowSavers(ListArgsOnly[0]);
             else
-                Screensaver.ShowSavers(Screensaver.DefaultSaverName);
+                Screensaver.ShowSavers();
             if (Screensaver.inSaver)
             {
                 Input.DetectKeypress();

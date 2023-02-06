@@ -209,6 +209,12 @@ namespace KS.Misc.Screensaver
         /// <summary>
         /// Shows the screensaver
         /// </summary>
+        public static void ShowSavers() =>
+            ShowSavers(DefaultSaverName);
+
+        /// <summary>
+        /// Shows the screensaver
+        /// </summary>
         /// <param name="saver">A specified screensaver</param>
         public static void ShowSavers(string saver)
         {
@@ -257,7 +263,7 @@ namespace KS.Misc.Screensaver
         public static void LockScreen()
         {
             LockMode = true;
-            ShowSavers(DefaultSaverName);
+            ShowSavers();
             EventsManager.FireEvent(EventType.PreUnlock, DefaultSaverName);
             while (inSaver)
                 Thread.Sleep(1);

@@ -32,6 +32,7 @@ using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Kernel.Events;
 using KS.Kernel.Exceptions;
+using KS.ConsoleBase.Inputs;
 
 namespace KS.Network.RPC
 {
@@ -178,7 +179,9 @@ namespace KS.Network.RPC
                         else if (Message.StartsWith("SaveScrConfirm"))
                         {
                             DebugWriter.WriteDebug(DebugLevel.I, "Save screen confirmed from remote access.");
-                            Screensaver.ShowSavers(Screensaver.DefaultSaverName);
+                            Screensaver.ShowSavers();
+                            while (Screensaver.inSaver)
+                                Thread.Sleep(1);
                         }
                         else if (Message.StartsWith("ExecConfirm"))
                         {

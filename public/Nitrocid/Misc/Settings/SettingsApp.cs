@@ -33,6 +33,7 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Reflection;
+using KS.Misc.Screensaver;
 using KS.Misc.Screensaver.Customized;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
@@ -261,6 +262,11 @@ namespace KS.Misc.Settings
                         // Preview screensaver
                         DebugWriter.WriteDebug(DebugLevel.I, "User requested screensaver preview.");
                         Screensaver.Screensaver.ShowSavers(Section);
+                        if (Screensaver.Screensaver.inSaver)
+                        {
+                            Input.DetectKeypress();
+                            ScreensaverDisplayer.BailFromScreensaver();
+                        }
                     }
                     else if (Answer == MaxOptions + 2 & SettingsType == SettingsType.Splash)
                     {
