@@ -288,43 +288,11 @@ namespace KS.Kernel.Debugging.RemoteDebug
                         }
                     }
                 }
-                catch (IOException ioex) when (ioex.Message.Contains("non-connected"))
+                catch
                 {
-                    // HACK: Ugly workaround, but we have to search the message for "non-connected" to get the specific error message that we
-                    // need to react appropriately. Removing the device from the debug devices list will allow the kernel to continue working
-                    // without crashing just because of this exception. We had to search the above word in this phrase:
-                    // 
-                    // System.IO.IOException: The operation is not allowed on non-connected sockets.
-                    //                                                        ^^^^^^^^^^^^^
-                    // 
-                    // Though, we wish to have a better workaround to detect this specific error message on .NET
-                    DebugDevices.Remove(device);
-                }
-                catch (Exception ex)
-                {
-                    SocketException SE = (SocketException)ex.InnerException;
                     string SocketIP = device?.ClientIP;
-                    if (SE is not null)
-                    {
-                        if (!(SE.SocketErrorCode == SocketError.WouldBlock))
-                        {
-                            if (SocketIP is not null)
-                            {
-                                DebugWriter.WriteDebug(DebugLevel.E, "Error from host {0}: {1}", SocketIP, SE.SocketErrorCode.ToString());
-                                DebugWriter.WriteDebugStackTrace(ex);
-                            }
-                            else
-                            {
-                                DebugWriter.WriteDebug(DebugLevel.E, "Error from unknown host: {0}", SE.SocketErrorCode.ToString());
-                                DebugWriter.WriteDebugStackTrace(ex);
-                            }
-                        }
-                    }
-                    else
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Unknown error of remote debug: {0}: {1}", ex.GetType().FullName, ex.Message);
-                        DebugWriter.WriteDebugStackTrace(ex);
-                    }
+                    if (!string.IsNullOrWhiteSpace(SocketIP))
+                        RemoteDebugTools.DisconnectDbgDev(SocketIP);
                 }
             }
         }

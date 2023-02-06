@@ -68,8 +68,8 @@ namespace KS.Kernel.Debugging.RemoteDebug
                 string clientIp = RemoteDebugger.DebugDevices[i].ClientIP;
                 string clientName = RemoteDebugger.DebugDevices[i].ClientName;
                 RemoteDebugger.DebugDevices[i].ClientSocket.Disconnect(true);
-                EventsManager.FireEvent(EventType.RemoteDebugConnectionDisconnected, IPAddr);
                 RemoteDebugger.DebugDevices.RemoveAt(i);
+                EventsManager.FireEvent(EventType.RemoteDebugConnectionDisconnected, IPAddr);
                 DebugWriter.WriteDebug(DebugLevel.W, "Debug device {0} ({1}) disconnected.", clientName, clientIp);
             }
             if (!devices.Any())
@@ -389,11 +389,12 @@ namespace KS.Kernel.Debugging.RemoteDebug
             {
                 if ((SE.SocketErrorCode == SocketError.TimedOut) |
                     (SE.SocketErrorCode == SocketError.WouldBlock) |
-                    (SE.SocketErrorCode == SocketError.ConnectionAborted))
-                {
+                    (SE.SocketErrorCode == SocketError.ConnectionAborted) |
+                    (SE.SocketErrorCode == SocketError.Shutdown))
+                    // A device was disconnected
                     DisconnectDbgDev(RemoteDebugger.DebugDevices[deviceIndex].ClientIP);
-                }
                 else
+                    // Other error with the device occurred
                     DebugWriter.WriteDebugStackTrace(exception);
             }
             else
