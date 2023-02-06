@@ -28,7 +28,6 @@ namespace KS.Misc.Screensaver.Displays
     public class RandomSaverDisplay : BaseScreensaver, IScreensaver
     {
 
-
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "RandomSaver";
 

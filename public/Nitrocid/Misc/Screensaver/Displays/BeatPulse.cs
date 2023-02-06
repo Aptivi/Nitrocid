@@ -280,10 +280,6 @@ namespace KS.Misc.Screensaver.Displays
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
-            // Variable preparations
-            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
-            ConsoleBase.ConsoleWrapper.Clear();
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
             BeatPulseSettingsInstance = new Animations.BeatPulse.BeatPulseSettings()
             {
@@ -301,6 +297,7 @@ namespace KS.Misc.Screensaver.Displays
                 BeatPulseMaximumBlueColorLevel = BeatPulseSettings.BeatPulseMaximumBlueColorLevel,
                 BeatPulseMaximumColorLevel = BeatPulseSettings.BeatPulseMaximumColorLevel
             };
+            base.ScreensaverPreparation();
         }
 
         /// <inheritdoc/>

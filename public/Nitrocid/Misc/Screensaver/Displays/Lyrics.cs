@@ -62,13 +62,12 @@ namespace KS.Misc.Screensaver.Displays
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
-            // Variable preparations
-            ColorTools.LoadBack();
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
             LyricsSettingsInstance = new Animations.Lyrics.LyricsSettings()
             {
                 LyricsDelay = LyricsSettings.LyricsDelay
             };
+            base.ScreensaverPreparation();
         }
 
         /// <inheritdoc/>

@@ -66,15 +66,6 @@ namespace KS.Misc.Screensaver.Displays
         public override string ScreensaverName { get; set; } = "Starfield";
 
         /// <inheritdoc/>
-        public override void ScreensaverPreparation()
-        {
-            // Variable preparations
-            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleWrapper.ForegroundColor = ConsoleColor.White;
-            ConsoleWrapper.Clear();
-        }
-
-        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             ConsoleWrapper.CursorVisible = false;

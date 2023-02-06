@@ -596,13 +596,8 @@ namespace KS.Misc.Screensaver.Displays
         public override string ScreensaverName { get; set; } = "BarRot";
 
         /// <inheritdoc/>
-        public override void ScreensaverPreparation()
-        {
-            // Variable preparations
-            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleWrapper.ForegroundColor = ConsoleColor.White;
-            ConsoleWrapper.Clear();
-        }
+        public override void ScreensaverPreparation() => 
+            ColorTools.LoadBack();
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()

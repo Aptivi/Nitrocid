@@ -279,15 +279,6 @@ namespace KS.Misc.Screensaver.Displays
         public override string ScreensaverName { get; set; } = "Disco";
 
         /// <inheritdoc/>
-        public override void ScreensaverPreparation()
-        {
-            // Variable preparations
-            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleBase.ConsoleWrapper.Clear();
-            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
-        }
-
-        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             int MaximumColors = DiscoSettings.DiscoMaximumColorLevel;
@@ -298,8 +289,6 @@ namespace KS.Misc.Screensaver.Displays
             DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", MaximumColorsG);
             int MaximumColorsB = DiscoSettings.DiscoMaximumBlueColorLevel;
             DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", MaximumColorsB);
-
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
 
             // Select the background color
             DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Cycling colors: {0}", DiscoSettings.DiscoCycleColors);

@@ -82,16 +82,13 @@ namespace KS.Misc.Screensaver.Displays
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
-            // Variable preparations
-            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleWrapper.ForegroundColor = ConsoleColor.White;
-            ConsoleWrapper.Clear();
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
             GlitchSettingsInstance = new Animations.Glitch.GlitchSettings()
             {
                 GlitchDelay = GlitchSettings.GlitchDelay,
                 GlitchDensity = GlitchSettings.GlitchDensity
             };
+            base.ScreensaverPreparation();
         }
 
         /// <inheritdoc/>

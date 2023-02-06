@@ -26,6 +26,7 @@ using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters.Tools;
+using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Screensaver.Displays
 {
@@ -267,12 +268,8 @@ namespace KS.Misc.Screensaver.Displays
         public override string ScreensaverName { get; set; } = "Figlet";
 
         /// <inheritdoc/>
-        public override void ScreensaverPreparation()
-        {
-            // Variable preparations
-            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleWrapper.ForegroundColor = ConsoleColor.White;
-        }
+        public override void ScreensaverPreparation() =>
+            ColorTools.LoadBack();
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()

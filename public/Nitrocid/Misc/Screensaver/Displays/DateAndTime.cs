@@ -233,17 +233,8 @@ namespace KS.Misc.Screensaver.Displays
         public override string ScreensaverName { get; set; } = "DateAndTime";
 
         /// <inheritdoc/>
-        public override void ScreensaverPreparation()
-        {
-            // Variable preparations
-            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleBase.ConsoleWrapper.Clear();
-        }
-
-        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
             ConsoleBase.ConsoleWrapper.Clear();
 
             // Write date and time

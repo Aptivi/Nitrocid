@@ -279,9 +279,6 @@ namespace KS.Misc.Screensaver.Displays
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
-            // Variable preparations
-            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleBase.ConsoleWrapper.Clear();
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
             BeatFaderSettingsInstance = new Animations.BeatFader.BeatFaderSettings()
             {
@@ -299,6 +296,7 @@ namespace KS.Misc.Screensaver.Displays
                 BeatFaderMaximumBlueColorLevel = BeatFaderSettings.BeatFaderMaximumBlueColorLevel,
                 BeatFaderMaximumColorLevel = BeatFaderSettings.BeatFaderMaximumColorLevel
             };
+            base.ScreensaverPreparation();
         }
 
         /// <inheritdoc/>

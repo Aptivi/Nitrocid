@@ -250,19 +250,10 @@ namespace KS.Misc.Screensaver.Displays
         public override string ScreensaverName { get; set; } = "Fireworks";
 
         /// <inheritdoc/>
-        public override void ScreensaverPreparation()
-        {
-            // Variable preparations
-            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleWrapper.ForegroundColor = ConsoleColor.White;
-            ConsoleWrapper.Clear();
-            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
-        }
-
-        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             ConsoleWrapper.CursorVisible = false;
+
             // Variables
             int HalfHeight = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
             int LaunchPositionX = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
