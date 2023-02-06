@@ -100,7 +100,7 @@ namespace KS.Misc.Presentation
                 TextWriterWhereColor.WriteWhere(" ".Repeat(PresentationLowerInnerBorderLeft), PresentationUpperBorderLeft, PresentationInformationalTop);
 
                 // Write the name and the page number
-                TextWriterWhereColor.WriteWhere($"{(!kiosk ? $"{i + 1}/{pages.Count}] - " : "")}{page.Name} - {presentation.Name}".Truncate(PresentationLowerInnerBorderLeft + 1), PresentationUpperBorderLeft, PresentationInformationalTop);
+                TextWriterWhereColor.WriteWhere($"{(!kiosk ? $"[{i + 1}/{pages.Count}] - " : "")}{page.Name} - {presentation.Name}".Truncate(PresentationLowerInnerBorderLeft + 1), PresentationUpperBorderLeft, PresentationInformationalTop);
 
                 // Seek to the first position inside the border
                 ConsoleWrapper.SetCursorPosition(PresentationUpperInnerBorderLeft, PresentationUpperInnerBorderTop);

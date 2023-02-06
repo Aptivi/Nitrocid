@@ -94,8 +94,14 @@ namespace KS.Kernel
                                 {
                                     Arguments = new object[]
                                     {
-                                        Translate.DoTranslation("We'll help you create your own username. Select any name you want. This could be your nickname or your short name, as long as your username doesn't contain spaces and special characters.") + "\n" +
-                                        (string.IsNullOrWhiteSpace(stepFailureReason) ? (stepFailureReason + "\n") : "")
+                                        Translate.DoTranslation("We'll help you create your own username. Select any name you want. This could be your nickname or your short name, as long as your username doesn't contain spaces and special characters.")
+                                    }
+                                },
+                                new DynamicTextElement()
+                                {
+                                    Arguments = new object[]
+                                    {
+                                        () => stepFailureReason
                                     }
                                 },
                                 new InputElement()
@@ -104,8 +110,8 @@ namespace KS.Kernel
                                     {
                                         Translate.DoTranslation("Enter the username") + ": "
                                     },
-                                    InvokeActionInput = 
-                                        (args) => 
+                                    InvokeActionInput =
+                                        (args) =>
                                             user = string.IsNullOrWhiteSpace((string)args[0]) ? "owner" : (string)args[0]
                                 },
                                 new MaskedInputElement()
@@ -114,12 +120,13 @@ namespace KS.Kernel
                                     {
                                         Translate.DoTranslation("Enter the password") + ": "
                                     },
-                                    InvokeActionInput = 
+                                    InvokeActionInput =
                                         (args) => {
                                             try
                                             {
                                                 UserManagement.AddUser(user, (string)args[0]);
                                                 DebugWriter.WriteDebug(DebugLevel.I, "We shall move on.");
+                                                stepFailureReason = "";
                                                 moveOn = true;
                                             }
                                             catch (Exception ex)

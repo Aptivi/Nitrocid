@@ -23,6 +23,7 @@ using KS.Languages;
 using KS.Misc.Presentation;
 using KS.Misc.Presentation.Elements;
 using KS.Misc.Writers.ConsoleWriters;
+using KS.TimeDate;
 using System.Collections.Generic;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
@@ -95,6 +96,19 @@ namespace KS.Kernel.Debugging.Testing.Facades
                                     },
                                     InvokeActionInput = 
                                         (objs) => TextWriterWhereColor.WriteWhere($"You said \"{objs[0]}\".", PresentationTools.PresentationUpperInnerBorderLeft, ConsoleWrapper.CursorTop)
+                                }
+                            }
+                        ),
+                        #endregion
+                        
+                        #region Third page - Debugging dynamic text
+                        new PresentationPage("Third page - Debugging dynamic text",
+                            new List<IElement>()
+                            {
+                                new DynamicTextElement() {
+                                    Arguments = new object[] {
+                                        () => TimeDateRenderers.Render()
+                                    }
                                 }
                             }
                         )
