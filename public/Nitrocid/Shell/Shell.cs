@@ -393,11 +393,11 @@ namespace KS.Shell
             }
 
             // Restore console output to its original state if any
-            if (DriverHandler.CurrentConsoleDriver.DriverName != "Terminal")
+            if (DriverHandler.CurrentConsoleDriver.DriverName != "Default")
             {
                 if (DriverHandler.CurrentConsoleDriver is File writer)
                     writer.FilterVT = false;
-                DriverHandler.SetDriver<IConsoleDriver>("Terminal");
+                DriverHandler.SetDriver<IConsoleDriver>("Default");
             }
 
             // Restore title

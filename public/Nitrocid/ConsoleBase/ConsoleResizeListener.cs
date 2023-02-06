@@ -55,7 +55,7 @@ namespace KS.ConsoleBase
         {
             try
             {
-                var termDriver = DriverHandler.GetDriver<IConsoleDriver>("Terminal");
+                var termDriver = DriverHandler.GetDriver<IConsoleDriver>("Default");
                 while (ResizeListenerThread.IsAlive)
                 {
                     Thread.Sleep(5);

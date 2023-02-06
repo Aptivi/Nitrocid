@@ -158,7 +158,7 @@ namespace KS.Misc.Screensaver
             try
             {
                 int CountedTime;
-                var termDriver = DriverHandler.GetDriver<IConsoleDriver>("Terminal");
+                var termDriver = DriverHandler.GetDriver<IConsoleDriver>("Default");
                 int OldCursorLeft = termDriver.CursorLeft;
                 while (!Flags.KernelShutdown)
                 {

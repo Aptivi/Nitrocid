@@ -52,7 +52,7 @@ namespace KS.Drivers
 
         private readonly static Dictionary<string, IConsoleDriver> consoleDrivers = new()
         {
-            { "Terminal", new Terminal() },
+            { "Default", new Terminal() },
             { "File", new File() },
             { "Null", new Null() },
 
@@ -74,10 +74,10 @@ namespace KS.Drivers
 
         private readonly static Dictionary<string, IEncryptionDriver> encryptionDrivers = new()
         {
+            { "Default", new SHA256() },
             { "CRC32", new CRC32() },
             { "MD5", new MD5() },
             { "SHA1", new SHA1() },
-            { "SHA256", new SHA256() },
             { "SHA384", new SHA384() },
             { "SHA512", new SHA512() },
         };
@@ -97,11 +97,11 @@ namespace KS.Drivers
         // Don't move this field to the top, or NullReferenceException will haunt you!!!
         internal static Dictionary<DriverTypes, IDriver> currentDrivers = new()
         {
-            { DriverTypes.Console,      consoleDrivers["Terminal"] },
+            { DriverTypes.Console,      consoleDrivers["Default"] },
             { DriverTypes.RNG,          randomDrivers["Default"]  },
             { DriverTypes.Network,      networkDrivers["Default"]  },
             { DriverTypes.Filesystem,   filesystemDrivers["Default"]  },
-            { DriverTypes.Encryption,   encryptionDrivers["SHA256"]   },
+            { DriverTypes.Encryption,   encryptionDrivers["Default"]   },
             { DriverTypes.Regexp,       regexpDrivers["Default"]  },
         };
 
@@ -163,7 +163,7 @@ namespace KS.Drivers
                         return (TResult)customRandomDrivers[name];
                     else
                         // Found no driver under both lists
-                        return (TResult)randomDrivers["SHA256"];
+                        return (TResult)randomDrivers["Default"];
                     // Same goes as for below...
                 case DriverTypes.Console:
                     if (consoleDrivers.ContainsKey(name))
@@ -171,35 +171,35 @@ namespace KS.Drivers
                     else if (IsRegistered(driverType, name))
                         return (TResult)customConsoleDrivers[name];
                     else
-                        return (TResult)consoleDrivers["Terminal"];
+                        return (TResult)consoleDrivers["Default"];
                 case DriverTypes.Network:
                     if (networkDrivers.ContainsKey(name))
                         return (TResult)networkDrivers[name];
                     else if (IsRegistered(driverType, name))
                         return (TResult)customNetworkDrivers[name];
                     else
-                        return (TResult)networkDrivers["Terminal"];
+                        return (TResult)networkDrivers["Default"];
                 case DriverTypes.Filesystem:
                     if (filesystemDrivers.ContainsKey(name))
                         return (TResult)filesystemDrivers[name];
                     else if (IsRegistered(driverType, name))
                         return (TResult)customFilesystemDrivers[name];
                     else
-                        return (TResult)filesystemDrivers["Terminal"];
+                        return (TResult)filesystemDrivers["Default"];
                 case DriverTypes.Encryption:
                     if (encryptionDrivers.ContainsKey(name))
                         return (TResult)encryptionDrivers[name];
                     else if (IsRegistered(driverType, name))
                         return (TResult)customEncryptionDrivers[name];
                     else
-                        return (TResult)encryptionDrivers["Terminal"];
+                        return (TResult)encryptionDrivers["Default"];
                 case DriverTypes.Regexp:
                     if (regexpDrivers.ContainsKey(name))
                         return (TResult)regexpDrivers[name];
                     else if (IsRegistered(driverType, name))
                         return (TResult)customRegexpDrivers[name];
                     else
-                        return (TResult)regexpDrivers["Terminal"];
+                        return (TResult)regexpDrivers["Default"];
             }
 
             // We shouldn't be here

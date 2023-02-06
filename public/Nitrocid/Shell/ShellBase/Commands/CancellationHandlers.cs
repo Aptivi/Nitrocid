@@ -41,7 +41,7 @@ namespace KS.Shell.ShellBase.Commands
                     var StartCommandThread = ShellStart.ShellStack[ShellStart.ShellStack.Count - 1].ShellCommandThread;
                     StartCommandThread.Stop();
                     Shell.ProcessStartCommandThread.Stop();
-                    DriverHandler.SetDriver<IConsoleDriver>("Terminal");
+                    DriverHandler.SetDriver<IConsoleDriver>("Default");
                 }
             }
         }
