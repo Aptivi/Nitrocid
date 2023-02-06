@@ -26,6 +26,7 @@ using KS.ConsoleBase;
 using KS.Drivers.RNG;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
+using KS.Misc.Text;
 using KS.Misc.Threading;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
@@ -355,37 +356,10 @@ namespace KS.Misc.Screensaver.Displays
                 // in various terminal sizes. This enables us to easily tell if we're going to re-write the line after a typo and the
                 // line completion that consists of "Etaoin shrdlu" and other nonsense written sometimes on newspapers or ads back in
                 // the early 20th century.
-                var IncompleteSentences = new List<string>();
-                var IncompleteSentenceBuilder = new StringBuilder();
-                int CharactersParsed = 0;
-
-                // This reserved characters count tells us how many spaces are used for indenting the paragraph. This is only four for
-                // the first time and will be reverted back to zero after the incomplete sentence is formed.
-                int ReservedCharacters = 4;
-                foreach (char ParagraphChar in Paragraph)
-                {
-                    if (ConsoleResizeListener.WasResized(false))
-                        break;
-
-                    // Append the character into the incomplete sentence builder.
-                    IncompleteSentenceBuilder.Append(ParagraphChar);
-                    CharactersParsed += 1;
-
-                    // Check to see if we're at the maximum character number
-                    if (IncompleteSentenceBuilder.Length == MaxCharacters - ReservedCharacters | Paragraph.Length == CharactersParsed)
-                    {
-                        // We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
-                        DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Adding {0} to the list... Incomplete sentences: {1}", IncompleteSentenceBuilder.ToString(), IncompleteSentences.Count);
-                        IncompleteSentences.Add(IncompleteSentenceBuilder.ToString());
-
-                        // Clean everything up
-                        IncompleteSentenceBuilder.Clear();
-                        ReservedCharacters = 0;
-                    }
-                }
+                var IncompleteSentences = TextTools.GetWrappedSentences(Paragraph, MaxCharacters, 4);
 
                 // Get struck character and write it
-                for (int IncompleteSentenceIndex = 0; IncompleteSentenceIndex <= IncompleteSentences.Count - 1; IncompleteSentenceIndex++)
+                for (int IncompleteSentenceIndex = 0; IncompleteSentenceIndex <= IncompleteSentences.Length - 1; IncompleteSentenceIndex++)
                 {
                     string IncompleteSentence = IncompleteSentences[IncompleteSentenceIndex];
                     if (ConsoleResizeListener.WasResized(false))

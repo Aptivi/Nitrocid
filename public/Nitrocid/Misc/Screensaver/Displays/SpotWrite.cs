@@ -148,34 +148,7 @@ namespace KS.Misc.Screensaver.Displays
 
                 // Split the paragraph into sentences that have the length of maximum characters that can be printed in various terminal
                 // sizes.
-                var IncompleteSentences = new List<string>();
-                var IncompleteSentenceBuilder = new StringBuilder();
-                int CharactersParsed = 0;
-
-                // This reserved characters count tells us how many spaces are used for indenting the paragraph. This is only four for
-                // the first time and will be reverted back to zero after the incomplete sentence is formed.
-                int ReservedCharacters = 4;
-                foreach (char ParagraphChar in Paragraph)
-                {
-                    if (ConsoleResizeListener.WasResized(false))
-                        break;
-
-                    // Append the character into the incomplete sentence builder.
-                    IncompleteSentenceBuilder.Append(ParagraphChar);
-                    CharactersParsed += 1;
-
-                    // Check to see if we're at the maximum character number
-                    if (IncompleteSentenceBuilder.Length == ConsoleWrapper.WindowWidth - 2 - ReservedCharacters | Paragraph.Length == CharactersParsed)
-                    {
-                        // We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
-                        DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Adding {0} to the list... Incomplete sentences: {1}", IncompleteSentenceBuilder.ToString(), IncompleteSentences.Count);
-                        IncompleteSentences.Add(IncompleteSentenceBuilder.ToString());
-
-                        // Clean everything up
-                        IncompleteSentenceBuilder.Clear();
-                        ReservedCharacters = 0;
-                    }
-                }
+                var IncompleteSentences = TextTools.GetWrappedSentences(Paragraph, ConsoleWrapper.WindowWidth - 2, 4);
 
                 // Prepare display (make a paragraph indentation)
                 if (!(ConsoleWrapper.CursorTop == ConsoleWrapper.WindowHeight - 2))
@@ -186,7 +159,7 @@ namespace KS.Misc.Screensaver.Displays
                 }
 
                 // Get struck character and write it
-                for (int SentenceIndex = 0; SentenceIndex <= IncompleteSentences.Count - 1; SentenceIndex++)
+                for (int SentenceIndex = 0; SentenceIndex <= IncompleteSentences.Length - 1; SentenceIndex++)
                 {
                     string Sentence = IncompleteSentences[SentenceIndex];
                     if (ConsoleResizeListener.WasResized(false))

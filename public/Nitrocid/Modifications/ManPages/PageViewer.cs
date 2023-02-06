@@ -87,39 +87,9 @@ namespace KS.Modifications.ManPages
 
                 // Split the sentences to parts to deal with sentence lengths that are longer than the console window width
                 var IncompleteSentences = new List<string>();
-                var IncompleteSentenceBuilder = new StringBuilder();
                 foreach (string line in PageManager.Pages[ManualTitle].Body.ToString().SplitNewLines())
-                {
-                    // Deal with empty lines
-                    if (string.IsNullOrEmpty(line))
-                    {
-                        IncompleteSentences.Add("");
-                        continue;
-                    }
-
-                    // Now, enumerate through each character in the string
-                    for (int i = 0; i < line.Length; i++)
-                    {
-                        char LineChar = line[i];
-
-                        // Append the character into the incomplete sentence builder.
-                        IncompleteSentenceBuilder.Append(LineChar);
-
-                        // Check to see if the length of the VT-filtered built string is equal or greater than the console width
-                        string built = IncompleteSentenceBuilder.ToString();
-                        string vtFilteredBuilt = Filters.FilterVTSequences(built);
-                        if (vtFilteredBuilt.Length >= ConsoleWrapper.WindowWidth ||
-                            i == line.Length - 1)
-                        {
-                            // We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
-                            DebugWriter.WriteDebug(DebugLevel.I, "Adding {0} to the list... Incomplete sentences: {1}", IncompleteSentenceBuilder.ToString(), IncompleteSentences.Count);
-                            IncompleteSentences.Add(IncompleteSentenceBuilder.ToString());
-
-                            // Clean everything up
-                            IncompleteSentenceBuilder.Clear();
-                        }
-                    }
-                }
+                    // Form incomplete sentences from the text
+                    IncompleteSentences.AddRange(TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth));
 
                 // Write the body
                 foreach (string line in IncompleteSentences)
