@@ -68,7 +68,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
         internal static TcpListener DebugTCP;
         internal static KernelThread RDebugThread = new("Remote Debug Thread", true, StartRDebugger) { isCritical = true };
         private static int debugPort = 3014;
-        private readonly static string RDebugVersion = "0.7.1";
+        private readonly static string RDebugVersion = "0.7.2";
         private static readonly AutoResetEvent RDebugBailer = new(false);
 
         /// <summary>
@@ -173,16 +173,12 @@ namespace KS.Kernel.Debugging.RemoteDebug
                         {
                             // Not blocked yet. Add the connection.
                             DebugDevices.Add(RDebugInstance);
-                            RDebugSWriter.WriteLine(Translate.DoTranslation(">> Remote Debug and Chat: version") + " {0}", RDebugVersion);
-                            RDebugSWriter.WriteLine(Translate.DoTranslation(">> Your address is {0}."), RDebugIP);
+                            RDebugSWriter.Write(Translate.DoTranslation(">> Remote Debug and Chat: version") + " {0}\r\n", RDebugVersion);
+                            RDebugSWriter.Write(Translate.DoTranslation(">> Your address is {0}.") + "\r\n", RDebugIP);
                             if (string.IsNullOrEmpty(RDebugName))
-                            {
-                                RDebugSWriter.WriteLine(Translate.DoTranslation(">> Welcome! This is your first time entering remote debug and chat. Use \"/register <name>\" to register.") + " ", RDebugName);
-                            }
+                                RDebugSWriter.Write(Translate.DoTranslation(">> Welcome! This is your first time entering remote debug and chat. Use \"/register <name>\" to register.") + "\r\n", RDebugName);
                             else
-                            {
-                                RDebugSWriter.WriteLine(Translate.DoTranslation(">> Your name is {0}."), RDebugName);
-                            }
+                                RDebugSWriter.Write(Translate.DoTranslation(">> Your name is {0}.") + "\r\n", RDebugName);
 
                             // Acknowledge the debugger
                             DebugWriter.WriteDebug(DebugLevel.I, "Debug device \"{0}\" ({1}) connected.", RDebugName, RDebugIP);

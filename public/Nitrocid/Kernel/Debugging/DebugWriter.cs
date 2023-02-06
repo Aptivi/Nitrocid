@@ -75,13 +75,17 @@ namespace KS.Kernel.Debugging
                             // Rare case, unless debug symbol is not found on archives.
                             message = $"{TimeDate.TimeDate.KernelDateTime.ToShortDateString()} {TimeDate.TimeDate.KernelDateTime.ToShortTimeString()} [{Level}] {text}";
 
-                        // Debug to file and all connected debug devices (raw mode)
-                        DebugStreamWriter.WriteLine(message, vars);
+                        // Debug to file and all connected debug devices (raw mode). The reason for the /r/n is that because
+                        // Nitrocid on the Linux host tends to use /n only for new lines, and Windows considers /r/n as the
+                        // new line. This causes the staircase effect on text written to the remote debugger, which messes up
+                        // the output on Windows.
+                        message += "\r\n";
+                        DebugStreamWriter.Write(message, vars);
                         for (int i = 0; i <= RemoteDebugger.DebugDevices.Count - 1; i++)
                         {
                             try
                             {
-                                RemoteDebugger.DebugDevices[i].ClientStreamWriter.WriteLine(message, vars);
+                                RemoteDebugger.DebugDevices[i].ClientStreamWriter.Write(message, vars);
                             }
                             catch (Exception ex)
                             {
@@ -132,7 +136,7 @@ namespace KS.Kernel.Debugging
                     {
                         try
                         {
-                            RemoteDebugger.DebugDevices[i].ClientStreamWriter.WriteLine($"{TimeDate.TimeDate.KernelDateTime.ToShortDateString()} {TimeDate.TimeDate.KernelDateTime.ToShortTimeString()} [{Level}] {text}", vars);
+                            RemoteDebugger.DebugDevices[i].ClientStreamWriter.Write($"{TimeDate.TimeDate.KernelDateTime.ToShortDateString()} {TimeDate.TimeDate.KernelDateTime.ToShortTimeString()} [{Level}] {text}\r\n", vars);
                         }
                         catch (Exception ex)
                         {
