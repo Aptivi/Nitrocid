@@ -68,6 +68,6 @@ namespace KS.Misc.Presentation.Elements
         public Action<object[]> InvokeActionInput { get; set; }
 
         /// <inheritdoc/>
-        public Action InvokeAction { get; set; }
+        public Action InvokeAction { get; }
     }
 }
