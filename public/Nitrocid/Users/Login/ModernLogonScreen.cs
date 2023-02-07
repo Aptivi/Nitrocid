@@ -31,6 +31,8 @@ using KS.Misc.Calendar;
 using System.Threading;
 using KS.Misc.Threading;
 using KS.Kernel.Debugging;
+using KS.Misc.Probers.Motd;
+using KS.Misc.Text;
 
 namespace KS.Users.Login
 {
@@ -128,6 +130,12 @@ namespace KS.Users.Login
                             int consoleAltInfoY = (ConsoleWrapper.WindowHeight / 2) + figHeight + 3;
                             TextWriterWhereColor.WriteWhere(dateAltStr, consoleAltInfoX, consoleAltInfoY);
                         }
+
+                        // Print the MOTD
+                        string motdStr = MotdParse.MOTDMessage;
+                        int consoleMotdInfoX = (ConsoleWrapper.WindowWidth / 2) - (motdStr.Length / 2);
+                        int consoleMotdInfoY = (ConsoleWrapper.WindowHeight / 2) + figHeight + 5;
+                        TextWriterWhereColor.WriteWhere(motdStr, consoleMotdInfoX, consoleMotdInfoY);
 
                         // Print the instructions
                         string instStr = Translate.DoTranslation("Press any key to start...");
