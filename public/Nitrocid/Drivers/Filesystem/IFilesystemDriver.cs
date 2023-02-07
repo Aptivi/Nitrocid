@@ -394,5 +394,11 @@ namespace KS.Drivers.Filesystem
         /// <param name="path">Path to the file</param>
         byte[] ReadAllBytes(string path);
 
+        /// <summary>
+        /// Clears the contents of a file
+        /// </summary>
+        /// <param name="path">Path to an existing file</param>
+        void ClearFile(string path);
+
     }
 }

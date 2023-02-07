@@ -91,6 +91,15 @@ namespace KS.Drivers.Filesystem
         }
 
         /// <inheritdoc/>
+        public virtual void ClearFile(string Path)
+        {
+            FS.ThrowOnInvalidPath(Path);
+            FileStream clearer = new(Path, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            clearer.SetLength(0);
+            clearer.Close();
+        }
+
+        /// <inheritdoc/>
         public virtual byte[] CombineBinaryFiles(string Input, string[] TargetInputs)
         {
             try

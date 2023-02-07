@@ -59,6 +59,8 @@ using File = KS.Drivers.Console.Consoles.File;
 using static KS.Users.UserManagement;
 using KS.Users.Permissions;
 using KS.Drivers.Console;
+using KS.Files.Operations;
+using Manipulation = KS.Files.Operations.Manipulation;
 
 namespace KS.Shell
 {
@@ -439,11 +441,7 @@ namespace KS.Shell
                 ((File)DriverHandler.CurrentConsoleDriver).PathToWrite = OutputFilePath;
                 ((File)DriverHandler.CurrentConsoleDriver).FilterVT = true;
                 if (isOverwrite)
-                {
-                    FileStream clearer = new(OutputFilePath, FileMode.OpenOrCreate, FileAccess.ReadWrite);
-                    clearer.SetLength(0);
-                    clearer.Close();
-                }
+                    Manipulation.ClearFile(OutputFilePath);
                 Command = Command.Replace(redirectSyntax + OutputFileName, "");
             }
             else if (Command.EndsWith(" |SILENT|"))
