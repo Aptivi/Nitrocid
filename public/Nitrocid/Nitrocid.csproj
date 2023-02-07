@@ -57,7 +57,7 @@
     <DefineDebug>true</DefineDebug>
     <Optimize>false</Optimize>
     <DebugType>portable</DebugType>
-    <DefineConstants>SPECIFIERDEV;MILESTONESPECIFIERALPHA</DefineConstants>
+    <DefineConstants>SPECIFIERDEV;MILESTONESPECIFIERBETA</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <Optimize>true</Optimize>

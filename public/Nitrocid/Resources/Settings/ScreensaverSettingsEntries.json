@@ -4137,5 +4137,116 @@
                 "Description": "How many milliseconds to wait before making the next write?"
             }
         ]
+    },
+    "ExcaliBeats": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Path": "Screensaver.ExcaliBeats",
+        "Keys": [
+            {
+                "Name": "Activate true colors",
+                "Type": "SBoolean",
+                "Variable": "ExcaliBeatsTrueColor",
+                "Description": "Activates the true color support."
+            },
+            {
+                "Name": "Delay in Beats Per Minute",
+                "Type": "SInt",
+                "Variable": "ExcaliBeatsDelay",
+                "Description": "How many beats per minute to wait before making the next write?"
+            },
+            {
+                "Name": "Cycle colors",
+                "Type": "SBoolean",
+                "Variable": "ExcaliBeatsCycleColors",
+                "Description": "ExcaliBeats will select random colors if it's enabled. Otherwise, use colors from config."
+            },
+            {
+                "Name": "Explicit mode",
+                "Type": "SBoolean",
+                "Variable": "ExcaliBeatsExplicit",
+                "Description": "Explicitly change the text to Excalibur"
+            },
+            {
+                "Name": "Trance mode",
+                "Type": "SBoolean",
+                "Variable": "ExcaliBeatsTranceMode",
+                "Description": "Trance mode - Multiplies the BPM by 2 to simulate the trance music style"
+            },
+            {
+                "Name": "Beat color",
+                "Type": "SColor",
+                "Variable": "ExcaliBeatsBeatColor"
+            },
+            {
+                "Name": "Max Fade Steps",
+                "Type": "SInt",
+                "Variable": "ExcaliBeatsMaxSteps",
+                "Description": "How many fade steps to do?"
+            },
+            {
+                "Name": "Minimum red color level",
+                "Type": "SIntSlider",
+                "Variable": "ExcaliBeatsMinimumRedColorLevel",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Minimum green color level",
+                "Type": "SIntSlider",
+                "Variable": "ExcaliBeatsMinimumGreenColorLevel",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Minimum blue color level",
+                "Type": "SIntSlider",
+                "Variable": "ExcaliBeatsMinimumBlueColorLevel",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Minimum color level",
+                "Type": "SIntSlider",
+                "Variable": "ExcaliBeatsMinimumColorLevel",
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum red color level",
+                "Type": "SIntSlider",
+                "Variable": "ExcaliBeatsMaximumRedColorLevel",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum green color level",
+                "Type": "SIntSlider",
+                "Variable": "ExcaliBeatsMaximumGreenColorLevel",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum blue color level",
+                "Type": "SIntSlider",
+                "Variable": "ExcaliBeatsMaximumBlueColorLevel",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum color level",
+                "Type": "SIntSlider",
+                "Variable": "ExcaliBeatsMaximumColorLevel",
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            }
+        ]
     }
 }

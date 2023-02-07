@@ -47,6 +47,20 @@ namespace KS.Misc.Writers.ConsoleWriters
         }
 
         /// <summary>
+        /// Outputs the text into the terminal prompt plainly.
+        /// </summary>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Line">Whether to print a new line or not</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WritePlain(string Text, bool Line, params object[] vars)
+        {
+            lock (WriteLock)
+            {
+                DriverHandler.CurrentConsoleDriver.WritePlain(Text, Line, vars);
+            }
+        }
+
+        /// <summary>
         /// Outputs the text into the terminal prompt.
         /// </summary>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
@@ -99,14 +113,14 @@ namespace KS.Misc.Writers.ConsoleWriters
                     // Write the text to console
                     if (Highlight)
                     {
-                        DriverHandler.CurrentConsoleDriver.WritePlain(Text, false, vars);
+                        WritePlain(Text, false, vars);
                         ColorTools.SetConsoleColor(colorType);
                         ColorTools.SetConsoleColor(KernelColorType.Background, true);
-                        DriverHandler.CurrentConsoleDriver.WritePlain("", Line);
+                        WritePlain("", Line);
                     }
                     else
                     {
-                        DriverHandler.CurrentConsoleDriver.WritePlain(Text, Line, vars);
+                        WritePlain(Text, Line, vars);
                     }
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
@@ -149,14 +163,14 @@ namespace KS.Misc.Writers.ConsoleWriters
                     // Write the text to console
                     if (Highlight)
                     {
-                        DriverHandler.CurrentConsoleDriver.WritePlain(Text, false, vars);
+                        WritePlain(Text, false, vars);
                         ColorTools.SetConsoleColor(colorTypeForeground);
                         ColorTools.SetConsoleColor(colorTypeBackground, true);
-                        DriverHandler.CurrentConsoleDriver.WritePlain("", Line);
+                        WritePlain("", Line);
                     }
                     else
                     {
-                        DriverHandler.CurrentConsoleDriver.WritePlain(Text, Line, vars);
+                        WritePlain(Text, Line, vars);
                     }
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
@@ -196,14 +210,14 @@ namespace KS.Misc.Writers.ConsoleWriters
                     // Write the text to console
                     if (Highlight)
                     {
-                        DriverHandler.CurrentConsoleDriver.WritePlain(Text, false, vars);
+                        WritePlain(Text, false, vars);
                         ColorTools.SetConsoleColor(new Color(Convert.ToInt32(color)));
                         ColorTools.SetConsoleColor(KernelColorType.Background, true);
-                        DriverHandler.CurrentConsoleDriver.WritePlain("", Line);
+                        WritePlain("", Line);
                     }
                     else
                     {
-                        DriverHandler.CurrentConsoleDriver.WritePlain(Text, Line, vars);
+                        WritePlain(Text, Line, vars);
                     }
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
@@ -246,14 +260,14 @@ namespace KS.Misc.Writers.ConsoleWriters
                     // Write the text to console
                     if (Highlight)
                     {
-                        DriverHandler.CurrentConsoleDriver.WritePlain(Text, false, vars);
+                        WritePlain(Text, false, vars);
                         ColorTools.SetConsoleColor(new Color(Convert.ToInt32(ForegroundColor)));
                         ColorTools.SetConsoleColor(new Color(Convert.ToInt32(BackgroundColor)), true);
-                        DriverHandler.CurrentConsoleDriver.WritePlain("", Line);
+                        WritePlain("", Line);
                     }
                     else
                     {
-                        DriverHandler.CurrentConsoleDriver.WritePlain(Text, Line, vars);
+                        WritePlain(Text, Line, vars);
                     }
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
@@ -294,14 +308,14 @@ namespace KS.Misc.Writers.ConsoleWriters
                     // Write the text to console
                     if (Highlight)
                     {
-                        DriverHandler.CurrentConsoleDriver.WritePlain(Text, false, vars);
+                        WritePlain(Text, false, vars);
                         ColorTools.SetConsoleColor(color);
                         ColorTools.SetConsoleColor(KernelColorType.Background, true);
-                        DriverHandler.CurrentConsoleDriver.WritePlain("", Line);
+                        WritePlain("", Line);
                     }
                     else
                     {
-                        DriverHandler.CurrentConsoleDriver.WritePlain(Text, Line, vars);
+                        WritePlain(Text, Line, vars);
                     }
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
@@ -344,14 +358,14 @@ namespace KS.Misc.Writers.ConsoleWriters
                     // Write the text to console
                     if (Highlight)
                     {
-                        DriverHandler.CurrentConsoleDriver.WritePlain(Text, false, vars);
+                        WritePlain(Text, false, vars);
                         ColorTools.SetConsoleColor(ForegroundColor);
                         ColorTools.SetConsoleColor(BackgroundColor, true);
-                        DriverHandler.CurrentConsoleDriver.WritePlain("", Line);
+                        WritePlain("", Line);
                     }
                     else
                     {
-                        DriverHandler.CurrentConsoleDriver.WritePlain(Text, Line, vars);
+                        WritePlain(Text, Line, vars);
                     }
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
