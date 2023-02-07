@@ -48,16 +48,15 @@ namespace KS.Languages
             if (string.IsNullOrWhiteSpace(lang))
                 lang = "eng";
 
+            if (lang == "eng")
+                return text;
+
             // If the language is available, translate
             if (LanguageManager.Languages.ContainsKey(lang))
             {
-                if (lang != "eng")
-                    // Language is not English. Translate.
-                    return DoTranslation(text, LanguageManager.Languages[lang]);
-                else
-                    return text;
+                return DoTranslation(text, LanguageManager.Languages[lang]);
             }
-            else // If the language is invalid
+            else
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "{0} isn't in language list", lang);
                 return text;
@@ -75,14 +74,15 @@ namespace KS.Languages
             if (string.IsNullOrWhiteSpace(text))
                 return "";
 
+            if (lang.ThreeLetterLanguageName == "eng")
+                return text;
+
             // Do translation
             if (lang.Strings.ContainsKey(text))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Translating string to {0}: {1}", lang.ThreeLetterLanguageName, text);
                 return lang.Strings[text];
             }
-            else if (lang.ThreeLetterLanguageName == "eng")
-                return text;
             else
             {
                 // String wasn't found
