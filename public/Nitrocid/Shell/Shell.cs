@@ -82,9 +82,9 @@ namespace KS.Shell
         /// </summary>
         public readonly static Dictionary<string, CommandInfo> UnifiedCommandDict = new()
         {
-            { "presets", new CommandInfo("presets", ShellType.Shell, "Opens the shell preset library", new CommandArgumentInfo(), new PresetsUnifiedCommand()) },
-            { "exit", new CommandInfo("exit", ShellType.Shell, "Exits the shell if running on subshell", new CommandArgumentInfo(), new ExitUnifiedCommand()) },
-            { "help", new CommandInfo("help", ShellType.Shell, "Help page", new CommandArgumentInfo(new[] { "[command]" }, false, 0, (startFrom, _, _) => HelpUnifiedCommand.ListCmds(startFrom)), new HelpUnifiedCommand()) }
+            { "presets", new CommandInfo("presets", ShellType.Shell, /* Localizable */ "Opens the shell preset library", new CommandArgumentInfo(), new PresetsUnifiedCommand()) },
+            { "exit", new CommandInfo("exit", ShellType.Shell, /* Localizable */ "Exits the shell if running on subshell", new CommandArgumentInfo(), new ExitUnifiedCommand()) },
+            { "help", new CommandInfo("help", ShellType.Shell, /* Localizable */ "Help page", new CommandArgumentInfo(new[] { "[command]" }, false, 0, (startFrom, _, _) => HelpUnifiedCommand.ListCmds(startFrom)), new HelpUnifiedCommand()) }
         };
 
         /// <summary>
