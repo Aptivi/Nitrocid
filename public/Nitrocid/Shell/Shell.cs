@@ -428,29 +428,23 @@ namespace KS.Shell
         private static string InitializeRedirection(string Command)
         {
             // If requested command has output redirection sign after arguments, remove it from final command string and set output to that file
-            DebugWriter.WriteDebug(DebugLevel.I, "Does the command contain the redirection sign \">>>\" or \">>\"? {0} and {1}", Command.Contains(">>>"), Command.Contains(">>"));
-            if (Command.Contains(">>>"))
+            if (Command.Contains(" >> "))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Output redirection found with append.");
+                bool isOverwrite = !Command.Contains(" >>> ");
+                string redirectSyntax = isOverwrite ? " >> " : " >>> ";
+                DebugWriter.WriteDebug(DebugLevel.I, "Output redirection found with overwrite mode [{0}].", isOverwrite);
                 string OutputFileName = Command.Substring(Command.LastIndexOf(">") + 2);
                 string OutputFilePath = Filesystem.NeutralizePath(OutputFileName);
                 DriverHandler.SetDriver<IConsoleDriver>("File");
                 ((File)DriverHandler.CurrentConsoleDriver).PathToWrite = OutputFilePath;
                 ((File)DriverHandler.CurrentConsoleDriver).FilterVT = true;
-                Command = Command.Replace(" >>> " + OutputFileName, "");
-            }
-            else if (Command.Contains(">>"))
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Output redirection found with overwrite.");
-                string OutputFileName = Command.Substring(Command.LastIndexOf(">") + 2);
-                string OutputFilePath = Filesystem.NeutralizePath(OutputFileName);
-                DriverHandler.SetDriver<IConsoleDriver>("File");
-                ((File)DriverHandler.CurrentConsoleDriver).PathToWrite = OutputFilePath;
-                ((File)DriverHandler.CurrentConsoleDriver).FilterVT = true;
-                FileStream clearer = new(OutputFilePath, FileMode.OpenOrCreate, FileAccess.ReadWrite);
-                clearer.SetLength(0);
-                clearer.Close();
-                Command = Command.Replace(" >> " + OutputFileName, "");
+                if (isOverwrite)
+                {
+                    FileStream clearer = new(OutputFilePath, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                    clearer.SetLength(0);
+                    clearer.Close();
+                }
+                Command = Command.Replace(redirectSyntax + OutputFileName, "");
             }
             else if (Command.EndsWith(" |SILENT|"))
             {
