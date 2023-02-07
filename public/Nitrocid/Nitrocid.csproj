@@ -72,7 +72,7 @@
     <PackageReference Include="ColorSeq" Version="1.1.1" />
     <PackageReference Include="Crc32.NET" Version="1.2.0" />
     <PackageReference Include="Dictify" Version="1.0.0.1" />
-    <PackageReference Include="Extensification" Version="2022.4.1" />
+    <PackageReference Include="Extensification" Version="2022.4.1.1" />
     <PackageReference Include="Figgle" Version="0.5.1" />
     <PackageReference Include="FluentFTP" Version="44.0.1" />
     <PackageReference Include="GRILO.Boot" Version="0.1.0.1" />
