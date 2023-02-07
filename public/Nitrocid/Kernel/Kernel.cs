@@ -222,6 +222,8 @@ namespace KS.Kernel
                     SplashReport.ReportProgress(Translate.DoTranslation("System account initialized"), 5);
                     UserManagement.InitializeUsers();
                     SplashReport.ReportProgress(Translate.DoTranslation("Users initialized"), 5);
+                    MotdParse.ReadMotd();
+                    MalParse.ReadMal();
 
                     // Reset console state and stop stage timer
                     KernelTools.ReportNewStage(5, "");
@@ -264,8 +266,6 @@ namespace KS.Kernel
                     }
                     else
                     {
-                        MotdParse.ReadMotd();
-                        MalParse.ReadMal();
                         TextWriterColor.Write(Translate.DoTranslation("Enter the admin password for maintenance."));
                         if (Login.Users.ContainsKey("root"))
                         {

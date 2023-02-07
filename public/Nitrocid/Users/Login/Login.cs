@@ -90,10 +90,6 @@ namespace KS.Users.Login
                     ConsoleBase.ConsoleWrapper.Clear();
                 }
 
-                // Read MOTD and MAL
-                MotdParse.ReadMotd();
-                MalParse.ReadMal();
-
                 // Show MOTD once
                 DebugWriter.WriteDebug(DebugLevel.I, "showMOTDOnceFlag = {0}, showMOTD = {1}", Flags.ShowMOTDOnceFlag, Flags.ShowMOTD);
                 if (Flags.ShowMOTDOnceFlag == true & Flags.ShowMOTD == true)
