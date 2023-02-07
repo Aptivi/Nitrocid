@@ -104,6 +104,7 @@ namespace KS.Kernel.Debugging.Testing
             { "InternetCheck",          new Facades.InternetCheck() },
             { "NetworkCheck",           new Facades.NetworkCheck() },
             { "LoadSavers",             new Facades.LoadSavers() },
+            { "ChangeLanguage",         new Facades.ChangeLanguage() },
         };
 
         internal static void Open()

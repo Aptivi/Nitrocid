@@ -252,27 +252,7 @@ namespace KS.Kernel
                     }
 
                     // If this is the first time, run the first run presentation
-                    if (Flags.FirstTime)
-                    {
-                        Flags.FirstTime = false;
-                        TextWriterColor.Write();
-                        TextWriterColor.Write(Translate.DoTranslation("Welcome to Nitrocid Kernel! Since this is the first time you start Nitrocid Kernel up, we'll initiate a simple console testing to determine whether it supports true color. Press any key to continue."));
-                        Input.DetectKeypress();
-                        ConsoleWrapper.Clear();
-
-                        // Show three color bands
-                        int times = ConsoleWrapper.WindowWidth;
-                        double threshold = 255 / (double)times;
-                        for (double i = 0; i < 255; i += threshold)
-                            TextWriterColor.Write(" ", false, Color.Empty, new Color(Convert.ToInt32(i), 0, 0));
-                        for (double i = 0; i < 255; i += threshold)
-                            TextWriterColor.Write(" ", false, Color.Empty, new Color(0, Convert.ToInt32(i), 0));
-                        for (double i = 0; i < 255; i += threshold)
-                            TextWriterColor.Write(" ", false, Color.Empty, new Color(0, 0, Convert.ToInt32(i)));
-                        TextWriterColor.Write();
-                        Flags.ConsoleSupportsTrueColor = ChoiceStyle.PromptChoice(Translate.DoTranslation("Do these ramps look right to you? They should transition smoothly."), "y/n") == "y";
-                        KernelFirstRun.PresentFirstRun();
-                    }
+                    KernelTools.FirstRun();
 
 #if SPECIFIERDEV
                     TextWriterColor.Write();
