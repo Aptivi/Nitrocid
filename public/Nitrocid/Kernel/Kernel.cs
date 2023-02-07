@@ -270,15 +270,14 @@ namespace KS.Kernel
                         if (Login.Users.ContainsKey("root"))
                         {
                             DebugWriter.WriteDebug(DebugLevel.I, "Root account found. Prompting for password...");
-                            Login.ShowPasswordPrompt("root");
                         }
                         else
                         {
                             // Some malicious mod removed the root account, or rare situation happened and it was gone.
                             DebugWriter.WriteDebug(DebugLevel.W, "Root account not found for maintenance. Initializing it...");
                             UserManagement.InitializeSystemAccount();
-                            Login.ShowPasswordPrompt("root");
                         }
+                        Login.ShowPasswordPrompt("root");
                     }
 
                     // Clear all active threads as we're rebooting
