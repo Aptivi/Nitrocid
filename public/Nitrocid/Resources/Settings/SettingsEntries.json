@@ -1405,12 +1405,6 @@
                 "Description": "A character that resembles the right frame. Be sure to only input one character."
             },
             {
-                "Name": "Manual page information style",
-                "Type": "SString",
-                "Variable": "ManpageInfoStyle",
-                "Description": "Write how you want your manpage information to be. Leave blank to use default style. Placeholders are parsed. {0} for manual title, {1} for revision."
-            },
-            {
                 "Name": "Default difficulty for SpeedPress",
                 "Type": "SSelection",
                 "Variable": "SpeedPressCurrentDifficulty",
