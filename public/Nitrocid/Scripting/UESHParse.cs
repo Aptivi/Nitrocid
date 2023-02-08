@@ -23,6 +23,8 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Kernel.Events;
+using KS.Scripting.Conditions;
+using System.Linq;
 
 namespace KS.Scripting
 {
@@ -67,11 +69,33 @@ namespace KS.Scripting
                 FileStream.BaseStream.Seek(0L, SeekOrigin.Begin);
 
                 // Get all lines and parse comments, commands, and arguments
+                string[] commandBlocks = new string[] { "if" };
+                int lineNum = 1;
+                int commandStackNum = 0;
+                bool newCommandStackRequired = false;
                 while (!FileStream.EndOfStream)
                 {
                     // Get line
                     string Line = FileStream.ReadLine();
                     DebugWriter.WriteDebug(DebugLevel.I, "Line {0}: \"{1}\"", LineNo, Line);
+
+                    // First, trim the line from the left after checking the stack
+                    string stackIndicator = new('|', commandStackNum);
+                    if (Line.StartsWith(stackIndicator))
+                    {
+                        newCommandStackRequired = false;
+
+                        // Get the actual command
+                        Line = Line[commandStackNum..];
+
+                        // If it still starts with the new stack indicator, throw an error
+                        if (Line.StartsWith('|'))
+                            throw new KernelException(KernelExceptionType.UESHScript, Translate.DoTranslation("You can't declare the new block before you place expressions that support the creation, like conditions or loops. The stack number is {0}.") + " {1}:{2}", commandStackNum, ScriptPath, lineNum);
+                    }
+                    else if (!Line.StartsWith(stackIndicator) && newCommandStackRequired)
+                        throw new KernelException(KernelExceptionType.UESHScript, Translate.DoTranslation("When starting a new block, make sure that you've indented the stack correctly. The stack number is {0}.") + " {1}:{2}", commandStackNum, ScriptPath, lineNum);
+                    else
+                        commandStackNum = 0;
 
                     // See if the line contains variable, and replace every instance of it with its value
                     var SplitWords = Line.SplitEncloseDoubleQuotes(" ");
@@ -97,14 +121,55 @@ namespace KS.Scripting
                                 if (SplitWords[i] == $"{{{j}}}")
                                     Line = Line.Replace(SplitWords[i], SplitArguments[j]);
 
+                    // See if the line is a command that starts with the if statement
+                    if (SplitWords is not null)
+                    {
+                        string Command = SplitWords[0];
+                        string Arguments = Line.TrimStart($"{Command} ".ToCharArray());
+                        bool isBlock = commandBlocks.Contains(Command);
+                        if (isBlock)
+                        {
+                            bool satisfied = false;
+                            switch (Command)
+                            {
+                                case "if":
+                                    satisfied = UESHConditional.ConditionSatisfied(Arguments);
+                                    break;
+                            }
+                            if (satisfied)
+                            {
+                                // New stack required
+                                newCommandStackRequired = true;
+                                commandStackNum++;
+                                continue;
+                            }
+                            else
+                            {
+                                // Skip all the if block until we reach our stack
+                                while (true)
+                                {
+                                    Line = FileStream.ReadLine();
+                                    string blockStackIndicator = new('|', commandStackNum + 1);
+                                    if (!Line.StartsWith(blockStackIndicator))
+                                        break;
+                                }
+                                Line = Line.TrimStart('|');
+                            }
+                        }
+                    }
+
                     // See if the line is a comment or command
                     if (!Line.StartsWith("#") & !Line.StartsWith(" "))
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Line {0} is not a comment.", Line);
                         Shell.Shell.GetLine(Line);
                     }
-                    else // For debugging purposes
+                    else
+                        // For debugging purposes
                         DebugWriter.WriteDebug(DebugLevel.I, "Line {0} is a comment.", Line);
+
+                    // Increment the new line number
+                    lineNum++;
                 }
 
                 // Close the stream
