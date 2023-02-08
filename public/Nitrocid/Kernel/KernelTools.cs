@@ -146,6 +146,17 @@ namespace KS.Kernel
         /// </summary>
         internal static void InitEverything()
         {
+            // Load alternative buffer (only supported on Linux, because Windows doesn't seem to respect CursorVisible = false on alt buffers)
+            if (!KernelPlatform.IsOnWindows() && Flags.UseAltBuffer)
+            {
+                TextWriterColor.Write("\u001b[?1049h");
+                ConsoleWrapper.SetCursorPosition(0, 0);
+                ConsoleWrapper.CursorVisible = false;
+            }
+
+            // Show initializing
+            TextWriterColor.Write(Translate.DoTranslation("Starting Nitrocid..."));
+
             // Initialize notifications
             if (!NotificationManager.NotifThread.IsAlive)
                 NotificationManager.NotifThread.Start();
@@ -175,14 +186,6 @@ namespace KS.Kernel
             // Read failsafe config
             if (Flags.SafeMode)
                 Config.ReadFailsafeConfig();
-
-            // Load alternative buffer (only supported on Linux, because Windows doesn't seem to respect CursorVisible = false on alt buffers)
-            if (!KernelPlatform.IsOnWindows() && Flags.UseAltBuffer)
-            {
-                TextWriterColor.Write("\u001b[?1049h");
-                ConsoleWrapper.SetCursorPosition(0, 0);
-                ConsoleWrapper.CursorVisible = false;
-            }
 
             // Create config file and then read it
             Config.InitializeConfig();

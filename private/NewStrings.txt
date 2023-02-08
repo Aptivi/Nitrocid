@@ -441,5 +441,6 @@ Sets the initial pre-boot environment language
 Tests the presentation system (kiosk)
 Tests the presentation system (required)
 Tests the presentation system (kiosk and required)
+Starting Nitrocid...
 
 ==========================================================================================================================================
