@@ -30,7 +30,7 @@ namespace KS.Misc.Animations.BeatEdgePulse
         private int _beatedgepulseDelay = 120;
         private int _beatedgepulseMaxSteps = 30;
         private bool _beatedgepulseCycleColors = true;
-        private string _beatedgepulseBeatColor = 17.ToString();
+        private string _beatedgepulseBeatColor = "17";
         private int _beatedgepulseMinimumRedColorLevel = 0;
         private int _beatedgepulseMinimumGreenColorLevel = 0;
         private int _beatedgepulseMinimumBlueColorLevel = 0;

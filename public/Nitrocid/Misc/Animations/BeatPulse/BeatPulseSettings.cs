@@ -30,7 +30,7 @@ namespace KS.Misc.Animations.BeatPulse
         private int _beatpulseDelay = 120;
         private int _beatpulseMaxSteps = 30;
         private bool _beatpulseCycleColors = true;
-        private string _beatpulseBeatColor = 17.ToString();
+        private string _beatpulseBeatColor = "17";
         private int _beatpulseMinimumRedColorLevel = 0;
         private int _beatpulseMinimumGreenColorLevel = 0;
         private int _beatpulseMinimumBlueColorLevel = 0;

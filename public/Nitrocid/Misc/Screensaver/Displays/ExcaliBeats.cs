@@ -32,7 +32,7 @@ namespace KS.Misc.Screensaver.Displays
         private static bool _CycleColors = true;
         private static bool _Explicit = true;
         private static bool _TranceMode = true;
-        private static string _BeatColor = 17.ToString();
+        private static string _BeatColor = "17";
         private static int _Delay = 140;
         private static int _MaxSteps = 25;
         private static int _MinimumRedColorLevel = 0;

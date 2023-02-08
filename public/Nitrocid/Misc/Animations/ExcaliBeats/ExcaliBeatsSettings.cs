@@ -32,7 +32,7 @@ namespace KS.Misc.Animations.ExcaliBeats
         private bool _ExcaliBeatsCycleColors = true;
         private bool _ExcaliBeatsExplicit = true;
         private bool _ExcaliBeatsTranceMode = true;
-        private string _ExcaliBeatsBeatColor = 17.ToString();
+        private string _ExcaliBeatsBeatColor = "17";
         private int _ExcaliBeatsMinimumRedColorLevel = 0;
         private int _ExcaliBeatsMinimumGreenColorLevel = 0;
         private int _ExcaliBeatsMinimumBlueColorLevel = 0;

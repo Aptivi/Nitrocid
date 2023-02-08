@@ -30,7 +30,7 @@ namespace KS.Misc.Animations.BeatFader
         private int _beatFaderDelay = 120;
         private int _beatFaderMaxSteps = 30;
         private bool _beatFaderCycleColors = true;
-        private string _beatFaderBeatColor = 17.ToString();
+        private string _beatFaderBeatColor = "17";
         private int _beatFaderMinimumRedColorLevel = 0;
         private int _beatFaderMinimumGreenColorLevel = 0;
         private int _beatFaderMinimumBlueColorLevel = 0;

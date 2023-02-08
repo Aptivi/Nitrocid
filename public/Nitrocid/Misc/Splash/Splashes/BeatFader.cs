@@ -43,7 +43,7 @@ namespace KS.Misc.Splash.Splashes
         {
             BeatFaderTrueColor = true,
             BeatFaderCycleColors = true,
-            BeatFaderBeatColor = 17.ToString(),
+            BeatFaderBeatColor = "17",
             BeatFaderDelay = 50,
             BeatFaderMaxSteps = 30,
             BeatFaderMinimumRedColorLevel = 0,
