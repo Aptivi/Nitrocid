@@ -438,5 +438,8 @@ The specified main flag type is invalid
 Tests changing the language to your preferred language
 Choose your language
 Sets the initial pre-boot environment language
+Tests the presentation system (kiosk)
+Tests the presentation system (required)
+Tests the presentation system (kiosk and required)
 
 ==========================================================================================================================================

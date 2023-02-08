@@ -21,10 +21,10 @@ using KS.Misc.Presentation;
 
 namespace KS.Kernel.Debugging.Testing.Facades
 {
-    internal class TestPresentation : TestFacade
+    internal class TestPresentationRequired : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Tests the presentation system");
+        public override string TestName => Translate.DoTranslation("Tests the presentation system (required)");
         public override void Run() =>
-            PresentationTools.Present(PresentationDebugInt.Debug);
+            PresentationTools.Present(PresentationDebugInt.Debug, false, true);
     }
 }
