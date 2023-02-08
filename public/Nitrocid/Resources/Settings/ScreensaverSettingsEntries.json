@@ -4170,7 +4170,8 @@
                 "Name": "Trance mode",
                 "Type": "SBoolean",
                 "Variable": "ExcaliBeatsTranceMode",
-                "Description": "Trance mode - Multiplies the BPM by 2 to simulate the trance music style"
+                "Description": "Trance mode - Multiplies the BPM by 2 to simulate the trance music style",
+                "UnsupportedPlatforms": [ "Windows" ]
             },
             {
                 "Name": "Beat color",

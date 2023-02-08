@@ -29,6 +29,7 @@ using KS.ConsoleBase.Inputs.Styles;
 using KS.Files;
 using KS.Files.Folders;
 using KS.Files.Querying;
+using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -223,9 +224,39 @@ namespace KS.Misc.Settings
                         new InputChoiceInfo($"{MaxOptions + 1}", Translate.DoTranslation("Go Back..."))
                     };
 
+                    string Notes = "";
                     for (int SectionIndex = 0; SectionIndex <= MaxOptions - 1; SectionIndex++)
                     {
                         var Setting = SectionToken[SectionIndex];
+
+                        // Check to see if the host platform is supported
+                        string[] keyUnsupportedPlatforms = ((JArray)Setting["UnsupportedPlatforms"])?.Values<string>().ToArray() ?? Array.Empty<string>();
+                        bool platformUnsupported = false;
+                        foreach (string platform in keyUnsupportedPlatforms)
+                        {
+                            switch (platform.ToLower())
+                            {
+                                case "windows":
+                                    if (KernelPlatform.IsOnWindows())
+                                        platformUnsupported = true;
+                                    break;
+                                case "unix":
+                                    if (KernelPlatform.IsOnUnix())
+                                        platformUnsupported = true;
+                                    break;
+                                case "macos":
+                                    if (KernelPlatform.IsOnMacOS())
+                                        platformUnsupported = true;
+                                    break;
+                            }
+                        }
+                        if (platformUnsupported)
+                        {
+                            Notes = Translate.DoTranslation("One or more of the settings found in this section are unsupported in your platform.");
+                            continue;
+                        }
+
+                        // Now, populate the input choice info
                         object CurrentValue = ConfigTools.GetValueFromEntry(Setting);
                         var ici = new InputChoiceInfo(
                             $"{SectionIndex + 1}",
@@ -249,15 +280,19 @@ namespace KS.Misc.Settings
 
                     // Prompt user and check for input
                     string finalSection = SectionTranslateName ? Translate.DoTranslation((string)SectionDisplayName) : (string)SectionDisplayName;
-                    int Answer = SelectionStyle.PromptSelection(finalSection + CharManager.NewLine + "=".Repeat(finalSection.Length) + CharManager.NewLine + Translate.DoTranslation((string)SectionDescription),
+                    int Answer = SelectionStyle.PromptSelection(finalSection + CharManager.NewLine + "=".Repeat(finalSection.Length) + CharManager.NewLine + Translate.DoTranslation((string)SectionDescription) + (!string.IsNullOrEmpty(Notes) ? CharManager.NewLine + Notes : ""),
                         sections, altSections);
+
+                    // Check the answer
+                    var allSections = sections.Union(altSections).ToArray();
+                    int finalAnswer = Answer < 0 ? 0 : Convert.ToInt32(allSections[Answer - 1].ChoiceName);
                     DebugWriter.WriteDebug(DebugLevel.I, "Succeeded. Checking the answer if it points to the right direction...");
-                    if (Answer >= 1 & Answer <= MaxOptions)
+                    if (finalAnswer >= 1 & finalAnswer <= MaxOptions)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Opening key {0} from section {1}...", Answer, Section);
-                        OpenKey(Section, Answer, SettingsToken);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Opening key {0} from section {1}...", finalAnswer, Section);
+                        OpenKey(Section, finalAnswer, SettingsToken);
                     }
-                    else if (Answer == MaxOptions + 2 & SettingsType == SettingsType.Screensaver)
+                    else if (finalAnswer == MaxOptions + 2 & SettingsType == SettingsType.Screensaver)
                     {
                         // Preview screensaver
                         DebugWriter.WriteDebug(DebugLevel.I, "User requested screensaver preview.");
@@ -268,13 +303,13 @@ namespace KS.Misc.Settings
                             ScreensaverDisplayer.BailFromScreensaver();
                         }
                     }
-                    else if (Answer == MaxOptions + 2 & SettingsType == SettingsType.Splash)
+                    else if (finalAnswer == MaxOptions + 2 & SettingsType == SettingsType.Splash)
                     {
                         // Preview splash
                         DebugWriter.WriteDebug(DebugLevel.I, "User requested splash preview.");
                         Splash.SplashManager.PreviewSplash(Section);
                     }
-                    else if (Answer == MaxOptions + 1 | Answer == -1)
+                    else if (finalAnswer == MaxOptions + 1 | Answer == -1)
                     {
                         // Go Back...
                         DebugWriter.WriteDebug(DebugLevel.I, "User requested exit. Returning...");
@@ -361,7 +396,6 @@ namespace KS.Misc.Settings
 
                 // Inputs
                 string AnswerString = "";
-
                 while (!KeyFinished)
                 {
                     if (KeyType == SettingsKeyType.SUnknown)
