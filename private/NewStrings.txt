@@ -331,7 +331,7 @@ Versions of the kernel were released, such as the second major release to add co
 Documentation started on the sixth major release, and various nice things have been slowly added to the kernel.
 Current version
 This version now refines the kernel to the point that it no longer behaves like the old versions.
-Because the new groundbreaking features got released, we decided to name this version...
+Because the new groundbreaking features got released, we decided to name this kernel...
 Happy 5-year anniversary!
 Permission denied trying to perform an operation.
 User doesn't exist. Check to make sure that you've written the user correctly.
