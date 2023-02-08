@@ -59,12 +59,8 @@ namespace KS.Scripting
                     // If $variable is found in string, initialize it
                     var SplitWords = Line.Split(' ');
                     for (int i = 0; i <= SplitWords.Length - 1; i++)
-                    {
                         if (!UESHVariables.ShellVariables.ContainsKey(SplitWords[i]) & SplitWords[i].StartsWith("$"))
-                        {
                             UESHVariables.InitializeVariable(SplitWords[i]);
-                        }
-                    }
                 }
 
                 // Seek to the beginning
@@ -80,31 +76,26 @@ namespace KS.Scripting
                     // See if the line contains variable, and replace every instance of it with its value
                     var SplitWords = Line.SplitEncloseDoubleQuotes(" ");
                     if (SplitWords is not null)
-                    {
+                        // Iterate every word
                         for (int i = 0; i <= SplitWords.Length - 1; i++)
-                        {
+                            // Every word that start with the $ sign means it's a variable that should be replaced with the
+                            // value from the UESH variable manager.
                             if (SplitWords[i].StartsWith("$"))
-                            {
                                 Line = UESHVariables.GetVariableCommand(SplitWords[i], Line);
-                            }
-                        }
-                    }
 
                     // See if the line contains argument placeholder, and replace every instance of it with its value
                     var SplitArguments = ScriptArguments.SplitEncloseDoubleQuotes(" ");
                     if (SplitArguments is not null)
-                    {
+                        // Iterate every word
                         for (int i = 0; i <= SplitWords.Length - 1; i++)
-                        {
+                            // Iterate every script argument
                             for (int j = 0; j <= SplitArguments.Length - 1; j++)
-                            {
+                                // If there is a placeholder variable like so:
+                                //     echo Hello, {0}
+                                // ...then proceed to replace the placeholder that contains an index of argument with the
+                                // actual value
                                 if (SplitWords[i] == $"{{{j}}}")
-                                {
                                     Line = Line.Replace(SplitWords[i], SplitArguments[j]);
-                                }
-                            }
-                        }
-                    }
 
                     // See if the line is a comment or command
                     if (!Line.StartsWith("#") & !Line.StartsWith(" "))
@@ -113,9 +104,7 @@ namespace KS.Scripting
                         Shell.Shell.GetLine(Line);
                     }
                     else // For debugging purposes
-                    {
                         DebugWriter.WriteDebug(DebugLevel.I, "Line {0} is a comment.", Line);
-                    }
                 }
 
                 // Close the stream
