@@ -85,7 +85,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 }
             );
 
-            PresentationTools.Present(annivPres, true);
+            PresentationTools.Present(annivPres, true, false);
         }
 
     }

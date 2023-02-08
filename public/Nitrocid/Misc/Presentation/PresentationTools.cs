@@ -64,14 +64,15 @@ namespace KS.Misc.Presentation
         /// </summary>
         /// <param name="presentation">Presentation instance</param>
         public static void Present(Presentation presentation) =>
-            Present(presentation, false);
+            Present(presentation, false, false);
 
         /// <summary>
         /// Present the presentation
         /// </summary>
         /// <param name="presentation">Presentation instance</param>
         /// <param name="kiosk">Prevent any key other than ENTER from being pressed</param>
-        public static void Present(Presentation presentation, bool kiosk)
+        /// <param name="required">Prevents exiting the presentation</param>
+        public static void Present(Presentation presentation, bool kiosk, bool required)
         {
             // Clear the console
             ConsoleWrapper.Clear();
@@ -132,25 +133,19 @@ namespace KS.Misc.Presentation
                     var key = Input.DetectKeypress();
 
                     // Now, check for the key
-                    if (kiosk)
+                    switch (key.Key)
                     {
-                        // Kiosk mode. Check for ENTER
-                        if (key.Key == ConsoleKey.Enter)
+                        case ConsoleKey.Escape:
+                            if (required)
+                                break;
+                            if (kiosk)
+                                break;
+                            presentExit = true;
                             pageExit = true;
-                    }
-                    else
-                    {
-                        // Normal mode. Do action based on key
-                        switch (key.Key)
-                        {
-                            case ConsoleKey.Escape:
-                                presentExit = true;
-                                pageExit = true;
-                                break;
-                            case ConsoleKey.Enter:
-                                pageExit = true;
-                                break;
-                        }
+                            break;
+                        case ConsoleKey.Enter:
+                            pageExit = true;
+                            break;
                     }
                 }
             }

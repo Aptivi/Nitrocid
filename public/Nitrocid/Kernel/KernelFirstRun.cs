@@ -196,13 +196,13 @@ namespace KS.Kernel
                         // Contains input.
                         DebugWriter.WriteDebug(DebugLevel.I, "Presentation contains input.");
                         while (!moveOn)
-                            PresentationTools.Present(firstRun, true);
+                            PresentationTools.Present(firstRun, true, true);
                         moveOn = false;
                     }
                     else
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Presentation doesn't contain input.");
-                        PresentationTools.Present(firstRun, true);
+                        PresentationTools.Present(firstRun, true, true);
                     }
                 }
                 DebugWriter.WriteDebug(DebugLevel.I, "Out of first run");
