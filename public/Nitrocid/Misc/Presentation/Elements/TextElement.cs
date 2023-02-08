@@ -17,7 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using Extensification.StringExts;
+using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Inputs;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using System;
 using System.Collections.Generic;
@@ -51,7 +54,37 @@ namespace KS.Misc.Presentation.Elements
             // Get the text and the arguments
             object[] finalArgs = Arguments.Length > 1 ? Arguments.Skip(1).ToArray() : Array.Empty<object>();
             string text = ((string)(Arguments.Length > 0 ? Arguments[0] : "")).FormatString(finalArgs);
-            TextWriterWhereColor.WriteWhere(text + "\n", PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft);
+
+            // Check the bounds
+            string[] splitText = TextTools.GetWrappedSentences(text, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperBorderLeft + 2);
+            foreach (string split in splitText)
+            {
+                int maxHeight = PresentationTools.PresentationLowerInnerBorderTop - ConsoleWrapper.CursorTop + 2;
+                if (maxHeight < 0)
+                {
+                    // If the text is going to overflow the presentation view, clear the presentation and finish writing the parts
+                    Input.DetectKeypress();
+                    PresentationTools.ClearPresentation();
+                }
+
+                // Write the part
+                TextWriterWhereColor.WriteWhere(split + "\n", PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft);
+            }
+        }
+
+        /// <summary>
+        /// Checks to see if the text is possibly overflowing the slideshow display
+        /// </summary>
+        public bool IsPossibleOutOfBounds()
+        {
+            // Get the text and the arguments
+            object[] finalArgs = Arguments.Length > 1 ? Arguments.Skip(1).ToArray() : Array.Empty<object>();
+            string text = ((string)(Arguments.Length > 0 ? Arguments[0] : "")).FormatString(finalArgs);
+
+            // Check the bounds
+            string[] splitText = TextTools.GetWrappedSentences(text, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperInnerBorderLeft);
+            int maxHeight = PresentationTools.PresentationLowerInnerBorderTop - ConsoleWrapper.CursorTop + 2;
+            return splitText.Length > maxHeight;
         }
 
         /// <inheritdoc/>

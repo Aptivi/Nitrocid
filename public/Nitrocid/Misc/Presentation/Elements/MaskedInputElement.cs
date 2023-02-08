@@ -20,6 +20,7 @@ using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using System;
 using System.Collections.Generic;
@@ -55,8 +56,22 @@ namespace KS.Misc.Presentation.Elements
             object[] finalArgs = Arguments.Length > 1 ? Arguments.Skip(1).ToArray() : Array.Empty<object>();
             string text = ((string)(Arguments.Length > 0 ? Arguments[0] : "")).FormatString(finalArgs);
 
-            // Now, write the lines
-            TextWriterWhereColor.WriteWhere(text, PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft);
+            // Check the bounds
+            string[] splitText = TextTools.GetWrappedSentences(text, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperBorderLeft + 2);
+            for (int i = 0; i < splitText.Length; i++)
+            {
+                string split = splitText[i];
+                int maxHeight = PresentationTools.PresentationLowerInnerBorderTop - ConsoleWrapper.CursorTop + 2;
+                if (maxHeight < 0)
+                {
+                    // If the text is going to overflow the presentation view, clear the presentation and finish writing the parts
+                    Input.DetectKeypress();
+                    PresentationTools.ClearPresentation();
+                }
+
+                // Write the part
+                TextWriterWhereColor.WriteWhere(split + (i == splitText.Length - 1 ? "" : "\n"), PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft);
+            }
 
             // Get the input
             ConsoleWrapper.CursorVisible = true;
@@ -64,6 +79,21 @@ namespace KS.Misc.Presentation.Elements
             WrittenInput = Input.ReadLineNoInput();
             TermReaderSettings.LeftMargin = TermReaderSettings.RightMargin = 0;
             ConsoleWrapper.CursorVisible = false;
+        }
+
+        /// <summary>
+        /// Checks to see if the text is possibly overflowing the slideshow display
+        /// </summary>
+        public bool IsPossibleOutOfBounds()
+        {
+            // Get the text and the arguments
+            object[] finalArgs = Arguments.Length > 1 ? Arguments.Skip(1).ToArray() : Array.Empty<object>();
+            string text = ((string)(Arguments.Length > 0 ? Arguments[0] : "")).FormatString(finalArgs);
+
+            // Check the bounds
+            string[] splitText = TextTools.GetWrappedSentences(text, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperInnerBorderLeft);
+            int maxHeight = PresentationTools.PresentationLowerInnerBorderTop - ConsoleWrapper.CursorTop + 2;
+            return splitText.Length > maxHeight;
         }
 
         /// <inheritdoc/>

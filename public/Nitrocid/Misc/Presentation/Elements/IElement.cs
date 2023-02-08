@@ -46,6 +46,11 @@ namespace KS.Misc.Presentation.Elements
         void Render();
 
         /// <summary>
+        /// Pre-print, check for possible out of bounds when rendering
+        /// </summary>
+        bool IsPossibleOutOfBounds();
+
+        /// <summary>
         /// Invokes the action after rendering the element (input)
         /// </summary>
         Action<object[]> InvokeActionInput { get; }

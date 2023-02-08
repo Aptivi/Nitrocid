@@ -92,23 +92,26 @@ namespace KS.Misc.Presentation
                 // Get the page
                 var page = pages[i];
 
-                // Clear the presentation screen
-                for (int y = PresentationUpperInnerBorderTop; y <= PresentationLowerInnerBorderTop + 1; y++)
-                    TextWriterWhereColor.WriteWhere(" ".Repeat(PresentationLowerInnerBorderLeft), PresentationUpperInnerBorderLeft, y);
-
                 // Clear the informational screen
                 TextWriterWhereColor.WriteWhere(" ".Repeat(PresentationLowerInnerBorderLeft), PresentationUpperBorderLeft, PresentationInformationalTop);
 
                 // Write the name and the page number
                 TextWriterWhereColor.WriteWhere($"{(!kiosk ? $"[{i + 1}/{pages.Count}] - " : "")}{page.Name} - {presentation.Name}".Truncate(PresentationLowerInnerBorderLeft + 1), PresentationUpperBorderLeft, PresentationInformationalTop);
 
-                // Seek to the first position inside the border
-                ConsoleWrapper.SetCursorPosition(PresentationUpperInnerBorderLeft, PresentationUpperInnerBorderTop);
+                // Clear the presentation screen
+                ClearPresentation();
 
                 // Render all elements
                 var pageElements = page.Elements;
                 foreach (var element in pageElements)
                 {
+                    // Check for possible out-of-bounds
+                    if (element.IsPossibleOutOfBounds())
+                    {
+                        Input.DetectKeypress();
+                        ClearPresentation();
+                    }
+
                     // Render it to the view
                     element.Render();
 
@@ -173,6 +176,19 @@ namespace KS.Misc.Presentation
 
             // If not input, then false
             return false;
+        }
+
+        /// <summary>
+        /// Clears the presentation
+        /// </summary>
+        public static void ClearPresentation()
+        {
+            // Clear the presentation screen
+            for (int y = PresentationUpperInnerBorderTop; y <= PresentationLowerInnerBorderTop + 1; y++)
+                TextWriterWhereColor.WriteWhere(" ".Repeat(PresentationLowerInnerBorderLeft), PresentationUpperInnerBorderLeft, y);
+
+            // Seek to the first position inside the border
+            ConsoleWrapper.SetCursorPosition(PresentationUpperInnerBorderLeft, PresentationUpperInnerBorderTop);
         }
     }
 }

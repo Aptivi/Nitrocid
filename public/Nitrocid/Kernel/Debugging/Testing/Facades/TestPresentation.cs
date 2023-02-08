@@ -111,7 +111,70 @@ namespace KS.Kernel.Debugging.Testing.Facades
                                     }
                                 }
                             }
-                        )
+                        ),
+                        #endregion
+                        
+                        #region Fourth page - Debugging overflow check
+                        new PresentationPage("Fourth page - Debugging overflow check",
+                            new List<IElement>()
+                            {
+                                new TextElement() {
+                                    Arguments = new object[] {
+                                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt " +
+                                        "ut labore et dolore magna aliqua. Risus sed vulputate odio ut enim blandit. Ac tortor vitae " +
+                                        "purus faucibus. Quis eleifend quam adipiscing vitae. Enim blandit volutpat maecenas volutpat " +
+                                        "blandit aliquam. Ultricies mi eget mauris pharetra. Vitae elementum curabitur vitae nunc sed " +
+                                        "velit dignissim. Tempor orci dapibus ultrices in iaculis nunc sed augue lacus. Cras tincidunt " +
+                                        "lobortis feugiat vivamus at. Scelerisque fermentum dui faucibus in ornare quam viverra. " +
+                                        "Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin."
+                                    }
+                                },
+                                new TextElement() {
+                                    Arguments = new object[] {
+                                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt " +
+                                        "ut labore et dolore magna aliqua. Risus sed vulputate odio ut enim blandit. Ac tortor vitae " +
+                                        "purus faucibus. Quis eleifend quam adipiscing vitae. Enim blandit volutpat maecenas volutpat " +
+                                        "blandit aliquam. Ultricies mi eget mauris pharetra. Vitae elementum curabitur vitae nunc sed " +
+                                        "velit dignissim. Tempor orci dapibus ultrices in iaculis nunc sed augue lacus. Cras tincidunt " +
+                                        "lobortis feugiat vivamus at. Scelerisque fermentum dui faucibus in ornare quam viverra. " +
+                                        "Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin."
+                                    }
+                                },
+                                new TextElement() {
+                                    Arguments = new object[] {
+                                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt " +
+                                        "ut labore et dolore magna aliqua. Risus sed vulputate odio ut enim blandit. Ac tortor vitae " +
+                                        "purus faucibus. Quis eleifend quam adipiscing vitae. Enim blandit volutpat maecenas volutpat " +
+                                        "blandit aliquam. Ultricies mi eget mauris pharetra. Vitae elementum curabitur vitae nunc sed " +
+                                        "velit dignissim. Tempor orci dapibus ultrices in iaculis nunc sed augue lacus. Cras tincidunt " +
+                                        "lobortis feugiat vivamus at. Scelerisque fermentum dui faucibus in ornare quam viverra. " +
+                                        "Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin."
+                                    }
+                                },
+                                new TextElement() {
+                                    Arguments = new object[] {
+                                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt " +
+                                        "ut labore et dolore magna aliqua. Risus sed vulputate odio ut enim blandit. Ac tortor vitae " +
+                                        "purus faucibus. Quis eleifend quam adipiscing vitae. Enim blandit volutpat maecenas volutpat " +
+                                        "blandit aliquam. Ultricies mi eget mauris pharetra. Vitae elementum curabitur vitae nunc sed " +
+                                        "velit dignissim. Tempor orci dapibus ultrices in iaculis nunc sed augue lacus. Cras tincidunt " +
+                                        "lobortis feugiat vivamus at. Scelerisque fermentum dui faucibus in ornare quam viverra. " +
+                                        "Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin."
+                                    }
+                                },
+                                new TextElement() {
+                                    Arguments = new object[] {
+                                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt " +
+                                        "ut labore et dolore magna aliqua. Risus sed vulputate odio ut enim blandit. Ac tortor vitae " +
+                                        "purus faucibus. Quis eleifend quam adipiscing vitae. Enim blandit volutpat maecenas volutpat " +
+                                        "blandit aliquam. Ultricies mi eget mauris pharetra. Vitae elementum curabitur vitae nunc sed " +
+                                        "velit dignissim. Tempor orci dapibus ultrices in iaculis nunc sed augue lacus. Cras tincidunt " +
+                                        "lobortis feugiat vivamus at. Scelerisque fermentum dui faucibus in ornare quam viverra. " +
+                                        "Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin."
+                                    }
+                                }
+                            }
+                        ),
                         #endregion
                     }
                 );

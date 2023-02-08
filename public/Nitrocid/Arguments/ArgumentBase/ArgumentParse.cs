@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using Extensification.StringExts;
 using KS.Arguments.CommandLineArguments;
 using KS.Kernel;
 using KS.Kernel.Debugging;
@@ -67,7 +68,7 @@ namespace KS.Arguments.ArgumentBase
                 for (int i = 0; i <= ArgumentsInput.Count - 1; i++)
                 {
                     string Argument = ArgumentsInput[i];
-                    string ArgumentName = Argument[..Argument.IndexOf(' ')];
+                    string ArgumentName = Argument.SplitSpacesEncloseDoubleQuotes()[0];
                     if (Arguments.ContainsKey(ArgumentName))
                     {
                         // Variables
