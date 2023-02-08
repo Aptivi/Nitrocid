@@ -17,7 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Runtime.Versioning;
 using ColorSeq;
+using KS.Kernel;
 using KS.Kernel.Debugging;
 
 namespace KS.Misc.Screensaver.Displays
@@ -31,7 +33,7 @@ namespace KS.Misc.Screensaver.Displays
         private static bool _TrueColor = true;
         private static bool _CycleColors = true;
         private static bool _Explicit = true;
-        private static bool _TranceMode = true;
+        private static bool _TranceMode = false;
         private static string _BeatColor = "17";
         private static int _Delay = 140;
         private static int _MaxSteps = 25;
@@ -87,7 +89,7 @@ namespace KS.Misc.Screensaver.Displays
             }
         }
         /// <summary>
-        /// [ExcaliBeats] Trance mode - Multiplies the BPM by 2 to simulate the trance music style
+        /// [ExcaliBeats] [Linux only] Trance mode - Multiplies the BPM by 2 to simulate the trance music style
         /// </summary>
         public static bool ExcaliBeatsTranceMode
         {
@@ -95,9 +97,13 @@ namespace KS.Misc.Screensaver.Displays
             {
                 return _TranceMode;
             }
+            [UnsupportedOSPlatform("windows")]
             set
             {
-                _TranceMode = value;
+                if (KernelPlatform.IsOnUnix())
+                    _TranceMode = value;
+                else
+                    _TranceMode = false;
             }
         }
         /// <summary>

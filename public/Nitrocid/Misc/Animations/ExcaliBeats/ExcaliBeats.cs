@@ -40,8 +40,10 @@ namespace KS.Misc.Animations.ExcaliBeats
         public static void Simulate(ExcaliBeatsSettings Settings)
         {
             ConsoleWrapper.CursorVisible = false;
-            int BeatInterval = Settings.ExcaliBeatsTranceMode ? (int)Math.Round(60000d / Settings.ExcaliBeatsDelay) / 2 : (int)Math.Round(60000d / Settings.ExcaliBeatsDelay);
-            int maxSteps = Settings.ExcaliBeatsTranceMode ? Settings.ExcaliBeatsMaxSteps / 4 : Settings.ExcaliBeatsMaxSteps;
+
+            // Trance mode isn't supported on Windows since the minimum limit for sleeping is 16ms.
+            int BeatInterval = Settings.ExcaliBeatsTranceMode ? (int)Math.Round(60000d / (Settings.ExcaliBeatsDelay * 2)) : (int)Math.Round(60000d / Settings.ExcaliBeatsDelay);
+            int maxSteps = Settings.ExcaliBeatsMaxSteps;
             int BeatIntervalStep = (int)Math.Round(BeatInterval / (double)maxSteps);
             DebugWriter.WriteDebugConditional(Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Beat interval from {0} BPM: {1}", Settings.ExcaliBeatsDelay, BeatInterval);
             DebugWriter.WriteDebugConditional(Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Beat steps: {0} ms", Settings.ExcaliBeatsDelay, BeatIntervalStep);

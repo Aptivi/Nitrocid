@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using ColorSeq;
+using KS.Kernel;
+using System.Runtime.Versioning;
 
 namespace KS.Misc.Animations.ExcaliBeats
 {
@@ -31,7 +33,7 @@ namespace KS.Misc.Animations.ExcaliBeats
         private int _ExcaliBeatsMaxSteps = 30;
         private bool _ExcaliBeatsCycleColors = true;
         private bool _ExcaliBeatsExplicit = true;
-        private bool _ExcaliBeatsTranceMode = true;
+        private bool _ExcaliBeatsTranceMode = false;
         private string _ExcaliBeatsBeatColor = "17";
         private int _ExcaliBeatsMinimumRedColorLevel = 0;
         private int _ExcaliBeatsMinimumGreenColorLevel = 0;
@@ -85,7 +87,7 @@ namespace KS.Misc.Animations.ExcaliBeats
             }
         }
         /// <summary>
-        /// [ExcaliBeats] Trance mode - Multiplies the BPM by 2 to simulate the trance music style
+        /// [ExcaliBeats] [Linux only] Trance mode - Multiplies the BPM by 2 to simulate the trance music style
         /// </summary>
         public bool ExcaliBeatsTranceMode
         {
@@ -93,9 +95,13 @@ namespace KS.Misc.Animations.ExcaliBeats
             {
                 return _ExcaliBeatsTranceMode;
             }
+            [UnsupportedOSPlatform("windows")]
             set
             {
-                _ExcaliBeatsTranceMode = value;
+                if (KernelPlatform.IsOnUnix())
+                    _ExcaliBeatsTranceMode = value;
+                else
+                    _ExcaliBeatsTranceMode = false;
             }
         }
         /// <summary>
