@@ -11,10 +11,18 @@
 [![Badge Downloads]][Releases]
 
 <br>
+    
+<img
+  src = 'https://cdn.jsdelivr.net/gh/Aptivi/NitrocidKS@latest/public/Nitrocid/OfficialAppIcon-KernelSimulator-256.png'
+  width = 256
+  align = center
+/>
+
+<br>
 
 # Nitrocid KS
-
-*A simulator for the kernel that we are building.*
+    
+*A simulator for our future-planned kernel, Nitrocid Kernel!*
 
 <br>
 <br>
@@ -35,11 +43,7 @@
 
 [![Button Install]][Install]
 
-[![Button Requirements]][Requirements]
-
 [![Button Building]][Building]
-
-[![Button Packaging]][Packaging]
 
 [![Button Libraries]][Libraries]
 
@@ -55,13 +59,15 @@
 
 <br>
 
-<kbd>  <br>  UESH - A Built-In Shell  <br>  </kbd>  
-<kbd>  <br>  Built-In Applications  <br>  </kbd>  
-<kbd>  <br>  Basic Commands  <br>  </kbd>
+<kbd>  <br>  UESH, a built-in shell  <br>  </kbd>  
+<kbd>  <br>  Built-in applications  <br>  </kbd>  
+<kbd>  <br>  Custom modifications  <br>  </kbd>
 
-<kbd>  <br>  Network Support  <br>  </kbd>  
-<kbd>  <br>  Script Support  <br>  </kbd>  
-<kbd>  <br>  The Kernel  <br>  </kbd>  
+<kbd>  <br>  Network support  <br>  </kbd>  
+<kbd>  <br>  Script support  <br>  </kbd>  
+<kbd>  <br>  The kernel  <br>  </kbd>  
+
+*...and much more...*
 
 <br>
 <br>
@@ -75,34 +81,8 @@
 
 <br>
 <br>
-
-## ⚠  Warnings  ⚠
-
-<br>
-
-The 3rd generation versions of **KS** are not backwards <br>
-compatible with the 2nd generation versions.
-
-*Upgrade your mods to support the latest API changes.*
-
-<br>
-
-<br>
-
-The 2nd generation versions of **KS** are not backwards <br>
-compatible with the 1st generation versions.
-
-*Upgrade your mods to support the latest API changes.*
-
-<br>
-
-The gangsta language contains strong language <br>
-that may make you feel uncomfortable reading it.
-
+    
 </div>
-
-<br>
-<br>
 
 ## Credits
 
@@ -130,14 +110,14 @@ that may make you feel uncomfortable reading it.
 
 **yavuz**  -  *[RSS Feed]*
 
-**All contributors**
-
 **VIM Theme Makers**
 
 - *[SpaceCamp]*
 - *[Papercolor]*
 - *[Melange]*
 - *[Darcula]*
+
+**And all contributors who helped us form Nitrocid KS**
 
 <br>
 
@@ -164,12 +144,10 @@ that may make you feel uncomfortable reading it.
 [Servicing Linux]: https://github.com/Aptivi/NitrocidKS/actions/workflows/build-linux.yml
 [Master Linux]: https://github.com/Aptivi/NitrocidKS/actions/workflows/build-linux.yml
 
-[Requirements]: Documentation/Requirements.md
 [Libraries]: Documentation/Libraries.md
-[Packaging]: Documentation/Packaging.md
-[Building]: Documentation/Building
-[Install]: Documentation/Installation
-[Manual]: https://aptivi.gitbook.io/NitrocidKS-manual/
+[Building]: https://aptivi.gitbook.io/kernel-simulator-manual/advanced-and-power-users/building-the-kernel
+[Install]: https://aptivi.gitbook.io/kernel-simulator-manual/installation-and-maintenance/installing-the-kernel
+[Manual]: https://aptivi.gitbook.io/kernel-simulator-manual/
 
 <!----------------------------------[ Badges ]--------------------------------->
 
@@ -187,9 +165,7 @@ that may make you feel uncomfortable reading it.
 
 <!---------------------------------[ Buttons ]--------------------------------->
 
-[Button Requirements]: https://img.shields.io/badge/Requirements-0170CE?style=for-the-badge&logoColor=white&logo=Leanpub
 [Button Libraries]: https://img.shields.io/badge/Libraries-EA8220?style=for-the-badge&logoColor=white&logo=AzureArtifacts
-[Button Packaging]: https://img.shields.io/badge/Packaging-36A9AE?style=for-the-badge&logoColor=white&logo=GitLFS
 [Button Building]: https://img.shields.io/badge/Building-5D4F85?style=for-the-badge&logoColor=white&logo=Hackaday
 [Button Install]: https://img.shields.io/badge/Installation-2F8D46?style=for-the-badge&logoColor=white&logo=DocuSign
 [Button Manual]: https://img.shields.io/badge/Docs-blueviolet?style=for-the-badge&logoColor=white&logo=GitBook
