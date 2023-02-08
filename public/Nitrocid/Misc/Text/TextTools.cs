@@ -56,6 +56,9 @@ namespace KS.Misc.Text
             var IncompleteSentences = new List<string>();
             var IncompleteSentenceBuilder = new StringBuilder();
 
+            // Make the text look like it came from Linux
+            text = text.Replace(Convert.ToString(Convert.ToChar(13)), "");
+
             // This indent length count tells us how many spaces are used for indenting the paragraph. This is only set for
             // the first time and will be reverted back to zero after the incomplete sentence is formed.
             var sequences = Matches.MatchVTSequences(text);
@@ -65,6 +68,7 @@ namespace KS.Misc.Text
             {
                 // Check the character to see if we're at the VT sequence
                 char ParagraphChar = text[i];
+                bool isNewLine = text[i] == '\n';
                 string seq = "";
                 if (sequences.Count > 0 && sequences[vtSeqIdx].Index == i)
                 {
@@ -81,10 +85,17 @@ namespace KS.Misc.Text
                 }
 
                 // Append the character into the incomplete sentence builder.
-                IncompleteSentenceBuilder.Append(!string.IsNullOrEmpty(seq) ? seq : ParagraphChar.ToString());
+                if (!isNewLine)
+                    IncompleteSentenceBuilder.Append(!string.IsNullOrEmpty(seq) ? seq : ParagraphChar.ToString());
 
-                // Check to see if we're at the maximum character number
-                if (IncompleteSentenceBuilder.Length == maximumLength - indentLength + vtSeqCompensate | i == text.Length - 1)
+                // Also, compensate the \0 characters
+                if (text[i] == '\0')
+                    vtSeqCompensate++;
+
+                // Check to see if we're at the maximum character number or at the new line
+                if (IncompleteSentenceBuilder.Length == maximumLength - indentLength + vtSeqCompensate |
+                    i == text.Length - 1 |
+                    isNewLine)
                 {
                     // We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
                     DebugWriter.WriteDebug(DebugLevel.I, "Adding {0} to the list... Incomplete sentences: {1}", IncompleteSentenceBuilder.ToString(), IncompleteSentences.Count);
