@@ -58,16 +58,33 @@ namespace KS.Misc.Text
 
             // This indent length count tells us how many spaces are used for indenting the paragraph. This is only set for
             // the first time and will be reverted back to zero after the incomplete sentence is formed.
+            var sequences = Matches.MatchVTSequences(text);
+            int vtSeqIdx = 0;
+            int vtSeqCompensate = 0;
             for (int i = 0; i < text.Length; i++)
             {
                 // Check the character to see if we're at the VT sequence
                 char ParagraphChar = text[i];
+                string seq = "";
+                if (sequences.Count > 0 && sequences[vtSeqIdx].Index == i)
+                {
+                    // We're at an index which is the same as the captured VT sequence. Get the sequence
+                    seq = sequences[vtSeqIdx].Value;
+
+                    // Raise the index in case we have the next sequence, but only if we're sure that we have another
+                    if (vtSeqIdx + 1 < sequences.Count)
+                        vtSeqIdx++;
+
+                    // Raise the paragraph index by the length of the sequence
+                    i += seq.Length - 1;
+                    vtSeqCompensate += seq.Length;
+                }
 
                 // Append the character into the incomplete sentence builder.
-                IncompleteSentenceBuilder.Append(ParagraphChar);
+                IncompleteSentenceBuilder.Append(!string.IsNullOrEmpty(seq) ? seq : ParagraphChar.ToString());
 
                 // Check to see if we're at the maximum character number
-                if (IncompleteSentenceBuilder.Length == maximumLength - indentLength | i == text.Length - 1)
+                if (IncompleteSentenceBuilder.Length == maximumLength - indentLength + vtSeqCompensate | i == text.Length - 1)
                 {
                     // We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
                     DebugWriter.WriteDebug(DebugLevel.I, "Adding {0} to the list... Incomplete sentences: {1}", IncompleteSentenceBuilder.ToString(), IncompleteSentences.Count);
@@ -76,6 +93,7 @@ namespace KS.Misc.Text
                     // Clean everything up
                     IncompleteSentenceBuilder.Clear();
                     indentLength = 0;
+                    vtSeqCompensate = 0;
                 }
             }
 
