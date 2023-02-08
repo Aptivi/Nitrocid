@@ -41,7 +41,7 @@ namespace KS.Languages
         /// <summary>
         /// Updates current culture based on current language. If there are no cultures in the curent language, assume current culture.
         /// </summary>
-        public static void UpdateCulture()
+        public static void UpdateCultureDry()
         {
             string StrCult = !(GetCulturesFromCurrentLang().Count == 0) ? GetCulturesFromCurrentLang()[0].EnglishName : CultureInfo.CurrentCulture.EnglishName;
             DebugWriter.WriteDebug(DebugLevel.I, "Culture for {0} is {1}", LanguageManager.CurrentLanguage, StrCult);
@@ -53,9 +53,35 @@ namespace KS.Languages
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Found. Changing culture...");
                     CurrentCultStr = Cult.Name;
-                    var Token = ConfigTools.GetConfigCategory(ConfigCategory.General);
-                    ConfigTools.SetConfigValue(ConfigCategory.General, Token, "Culture", CurrentCult.Name);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Saved new culture.");
+                    break;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Updates current culture based on current language. If there are no cultures in the curent language, assume current culture.
+        /// </summary>
+        public static void UpdateCulture()
+        {
+            UpdateCultureDry();
+            var Token = ConfigTools.GetConfigCategory(ConfigCategory.General);
+            ConfigTools.SetConfigValue(ConfigCategory.General, Token, "Culture", CurrentCult.Name);
+            DebugWriter.WriteDebug(DebugLevel.I, "Saved new culture.");
+        }
+
+        /// <summary>
+        /// Updates current culture based on current language and custom culture
+        /// </summary>
+        /// <param name="Culture">Full culture name</param>
+        public static void UpdateCultureDry(string Culture)
+        {
+            var Cultures = GetCulturesFromCurrentLang();
+            foreach (CultureInfo Cult in Cultures)
+            {
+                if (Cult.EnglishName == Culture)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Found. Changing culture...");
+                    CurrentCultStr = Cult.Name;
                     break;
                 }
             }
@@ -67,25 +93,17 @@ namespace KS.Languages
         /// <param name="Culture">Full culture name</param>
         public static void UpdateCulture(string Culture)
         {
-            var Cultures = GetCulturesFromCurrentLang();
-            foreach (CultureInfo Cult in Cultures)
-            {
-                if (Cult.EnglishName == Culture)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Found. Changing culture...");
-                    CurrentCultStr = Cult.Name;
-                    var Token = ConfigTools.GetConfigCategory(ConfigCategory.General);
-                    ConfigTools.SetConfigValue(ConfigCategory.General, Token, "Culture", CurrentCult.Name);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Saved new culture.");
-                    break;
-                }
-            }
+            UpdateCultureDry(Culture);
+            var Token = ConfigTools.GetConfigCategory(ConfigCategory.General);
+            ConfigTools.SetConfigValue(ConfigCategory.General, Token, "Culture", CurrentCult.Name);
+            DebugWriter.WriteDebug(DebugLevel.I, "Saved new culture.");
         }
 
         /// <summary>
         /// Gets all cultures available for the current language
         /// </summary>
-        public static List<CultureInfo> GetCulturesFromCurrentLang() => LanguageManager.CurrentLanguage.Cultures;
+        public static List<CultureInfo> GetCulturesFromCurrentLang() =>
+            LanguageManager.CurrentLanguage.Cultures;
 
         /// <summary>
         /// Gets all cultures available for the current language

@@ -31,7 +31,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
             var langCodes = InputChoiceTools.GetInputChoices(string.Join("/", LanguageManager.Languages.Keys), LanguageManager.Languages.Values.Select((lang) => lang.FullLanguageName).ToArray());
             int langIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Choose your language"), langCodes) - 1;
             string lang = LanguageManager.Languages.Keys.ElementAt(langIndex);
-            LanguageManager.SetLang(lang);
+            LanguageManager.SetLangDry(lang);
         }
     }
 }

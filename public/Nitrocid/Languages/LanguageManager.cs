@@ -95,11 +95,11 @@ namespace KS.Languages
         }
 
         /// <summary>
-        /// Sets a system language permanently
+        /// Sets a system language temporarily
         /// </summary>
         /// <param name="lang">A specified language</param>
         /// <returns>True if successful, False if unsuccessful.</returns>
-        public static bool SetLang(string lang)
+        public static bool SetLangDry(string lang)
         {
             if (Languages.ContainsKey(lang))
             {
@@ -121,18 +121,14 @@ namespace KS.Languages
                 // Set current language
                 try
                 {
-                    string OldModDescGeneric = Translate.DoTranslation("Command defined by ");
                     DebugWriter.WriteDebug(DebugLevel.I, "Translating kernel to {0}.", lang);
                     currentLanguage = Languages[lang];
-                    var Token = ConfigTools.GetConfigCategory(ConfigCategory.General);
-                    ConfigTools.SetConfigValue(ConfigCategory.General, Token, "Language", JToken.FromObject(CurrentLanguage));
-                    DebugWriter.WriteDebug(DebugLevel.I, "Saved new language.");
 
                     // Update Culture if applicable
                     if (Flags.LangChangeCulture)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Updating culture.");
-                        CultureManager.UpdateCulture();
+                        CultureManager.UpdateCultureDry();
                     }
                     return true;
                 }
@@ -147,6 +143,21 @@ namespace KS.Languages
                 throw new KernelException(KernelExceptionType.NoSuchLanguage, Translate.DoTranslation("Invalid language") + " {0}", lang);
             }
             return false;
+        }
+
+        /// <summary>
+        /// Sets a system language permanently
+        /// </summary>
+        /// <param name="lang">A specified language</param>
+        /// <returns>True if successful, False if unsuccessful.</returns>
+        public static bool SetLang(string lang)
+        {
+            SetLangDry(lang);
+            var Token = ConfigTools.GetConfigCategory(ConfigCategory.General);
+            ConfigTools.SetConfigValue(ConfigCategory.General, Token, "Language", JToken.FromObject(CurrentLanguage));
+            DebugWriter.WriteDebug(DebugLevel.I, "Saved new language. Updating culture...");
+            CultureManager.UpdateCulture();
+            return true;
         }
 
         /// <summary>
