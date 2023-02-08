@@ -430,7 +430,7 @@ namespace KS.Shell
         private static string InitializeRedirection(string Command)
         {
             // If requested command has output redirection sign after arguments, remove it from final command string and set output to that file
-            if (Command.Contains(" >> "))
+            if (Command.Contains(" >> ") || Command.Contains(" >>> "))
             {
                 bool isOverwrite = !Command.Contains(" >>> ");
                 string redirectSyntax = isOverwrite ? " >> " : " >>> ";
