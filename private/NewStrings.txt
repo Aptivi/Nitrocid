@@ -437,5 +437,6 @@ Manipulates with the user main flags
 The specified main flag type is invalid
 Tests changing the language to your preferred language
 Choose your language
+Sets the initial pre-boot environment language
 
 ==========================================================================================================================================

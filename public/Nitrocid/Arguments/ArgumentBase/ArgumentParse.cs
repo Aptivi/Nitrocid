@@ -48,6 +48,7 @@ namespace KS.Arguments.ArgumentBase
             { "reset", new ArgumentInfo("reset", /* Localizable */ "Resets the kernel to the factory settings", new CommandArgumentInfo(), new ResetArgument()) },
             { "bypasssizedetection", new ArgumentInfo("bypasssizedetection", /* Localizable */ "Bypasses the console size detection", new CommandArgumentInfo(), new BypassSizeDetectionArgument()) },
             { "noaltbuffer", new ArgumentInfo("noaltbuffer", /* Localizable */ "Prevents the kernel from using the alternative buffer", new CommandArgumentInfo(), new NoAltBufferArgument()) },
+            { "lang", new ArgumentInfo("lang", /* Localizable */ "Sets the initial pre-boot environment language", new CommandArgumentInfo(new string[]{ "<lang>" }, true, 1), new LangArgument()) },
             { "help", new ArgumentInfo("help", /* Localizable */ "Help page", new CommandArgumentInfo(), new HelpArgument()) }
         };
 
@@ -66,19 +67,21 @@ namespace KS.Arguments.ArgumentBase
                 for (int i = 0; i <= ArgumentsInput.Count - 1; i++)
                 {
                     string Argument = ArgumentsInput[i];
-                    if (Arguments.ContainsKey(Argument))
+                    string ArgumentName = Argument[..Argument.IndexOf(' ')];
+                    if (Arguments.ContainsKey(ArgumentName))
                     {
                         // Variables
                         var ArgumentInfo = new ProvidedArgumentArgumentsInfo(Argument);
+                        var Arg = Arguments[ArgumentName];
                         var Args = ArgumentInfo.ArgumentsList;
                         var Switches = ArgumentInfo.SwitchesList;
                         string strArgs = ArgumentInfo.ArgumentsText;
                         bool RequiredArgumentsProvided = ArgumentInfo.RequiredArgumentsProvided;
 
                         // If there are enough arguments provided, execute. Otherwise, fail with not enough arguments.
-                        if (Arguments[Argument].ArgArgumentInfo.ArgumentsRequired & RequiredArgumentsProvided | !Arguments[Argument].ArgArgumentInfo.ArgumentsRequired)
+                        if (Arg.ArgArgumentInfo.ArgumentsRequired & RequiredArgumentsProvided | !Arg.ArgArgumentInfo.ArgumentsRequired)
                         {
-                            var ArgumentBase = Arguments[Argument].ArgumentBase;
+                            var ArgumentBase = Arg.ArgumentBase;
                             ArgumentBase.Execute(strArgs, Args, Switches);
                         }
                         else

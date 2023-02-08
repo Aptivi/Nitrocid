@@ -30,6 +30,10 @@
     "Nitrocid KS - maintenance": {
       "commandName": "Project",
       "commandLineArgs": "maintenance"
+    },
+    "Nitrocid KS - Pre-boot in Spanish": {
+      "commandName": "Project",
+      "commandLineArgs": "\"lang spa\""
     }
   }
 }
