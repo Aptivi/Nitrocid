@@ -255,7 +255,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalProgress(double Progress, int Left, int Top, ConsoleColors ProgressColor, bool DrawBorder = true) =>
-            WriteVerticalProgress(Progress, Left, Top, 2, 0, new Color(Convert.ToInt32(ProgressColor)), ColorTools.GetGray(), DrawBorder);
+            WriteVerticalProgress(Progress, Left, Top, 2, 0, new Color(ProgressColor), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -267,7 +267,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="HeightOffset">Height offset</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalProgress(double Progress, int Left, int Top, int HeightOffset, ConsoleColors ProgressColor, bool DrawBorder = true) =>
-            WriteVerticalProgress(Progress, Left, Top, HeightOffset, 0, new Color(Convert.ToInt32(ProgressColor)), ColorTools.GetGray(), DrawBorder);
+            WriteVerticalProgress(Progress, Left, Top, HeightOffset, 0, new Color(ProgressColor), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -280,7 +280,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="BottomHeightOffset">Height offset from the bottom</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalProgress(double Progress, int Left, int Top, int TopHeightOffset, int BottomHeightOffset, ConsoleColors ProgressColor, bool DrawBorder = true) =>
-            WriteVerticalProgress(Progress, Left, Top, TopHeightOffset, BottomHeightOffset, new Color(Convert.ToInt32(ProgressColor)), ColorTools.GetGray(), DrawBorder);
+            WriteVerticalProgress(Progress, Left, Top, TopHeightOffset, BottomHeightOffset, new Color(ProgressColor), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -345,7 +345,7 @@ namespace KS.Misc.Writers.FancyWriters
                 }
 
                 // Draw the progress bar
-                ColorTools.SetConsoleColor(new Color(Convert.ToInt32(ProgressColor)), true, true);
+                ColorTools.SetConsoleColor(new Color(ProgressColor), true, true);
                 for (int i = 0; i < ProgressFilled; i++)
                     TextWriterWhereColor.WriteWhere(" ", Left + 1, Top + MaximumHeight - i, true);
                 ColorTools.SetConsoleColor(KernelColorType.Background, true);

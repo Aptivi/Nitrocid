@@ -559,15 +559,11 @@ namespace KS.Misc.Screensaver.Displays
             int RampFrameBlockEndWidth = RampFrameEndWidth;
             Color RampCurrentColorInstance;
             if (IndeterminateSettings.IndeterminateTrueColor)
-            {
                 // Set the current colors
-                RampCurrentColorInstance = new Color($"{Convert.ToInt32(RedColorNum)};{Convert.ToInt32(GreenColorNum)};{Convert.ToInt32(BlueColorNum)}");
-            }
+                RampCurrentColorInstance = new Color(RedColorNum, GreenColorNum, BlueColorNum);
             else
-            {
                 // Set the current colors
-                RampCurrentColorInstance = new Color(Convert.ToInt32(ColorNum));
-            }
+                RampCurrentColorInstance = new Color(ColorNum);
 
             // Fill the ramp!
             while (!(IndeterminateCurrentBlockEnd == RampFrameBlockEndWidth & IndeterminateCurrentBlockDirection == IndeterminateDirection.LeftToRight | IndeterminateCurrentBlockStart == RampFrameBlockStartWidth & IndeterminateCurrentBlockDirection == IndeterminateDirection.RightToLeft))

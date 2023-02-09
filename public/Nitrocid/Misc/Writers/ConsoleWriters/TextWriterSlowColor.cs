@@ -105,7 +105,7 @@ namespace KS.Misc.Writers.ConsoleWriters
             {
                 try
                 {
-                    ColorTools.SetConsoleColor(new Color(Convert.ToInt32(color)));
+                    ColorTools.SetConsoleColor(new Color(color));
                     ColorTools.SetConsoleColor(KernelColorType.Background, true);
 
                     // Write text slowly
@@ -134,8 +134,8 @@ namespace KS.Misc.Writers.ConsoleWriters
             {
                 try
                 {
-                    ColorTools.SetConsoleColor(new Color(Convert.ToInt32(ForegroundColor)));
-                    ColorTools.SetConsoleColor(new Color(Convert.ToInt32(BackgroundColor)));
+                    ColorTools.SetConsoleColor(new Color(ForegroundColor));
+                    ColorTools.SetConsoleColor(new Color(BackgroundColor));
 
                     // Write text slowly
                     DriverHandler.CurrentConsoleDriver.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);

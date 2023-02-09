@@ -98,7 +98,7 @@ namespace KS.Misc.Writers.FancyWriters
         {
             try
             {
-                SetConsoleColor(new Color(Convert.ToInt32(BoxColor)), true, true);
+                SetConsoleColor(new Color(BoxColor), true, true);
                 WriteBoxPlain(Left, Top, InteriorWidth, InteriorHeight);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))

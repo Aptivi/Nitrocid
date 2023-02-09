@@ -73,7 +73,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="ValueForegroundColor">A value foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         public static void WriteTable(string[] Headers, string[,] Rows, int Margin, ConsoleColors SeparatorForegroundColor, ConsoleColors HeaderForegroundColor, ConsoleColors ValueForegroundColor, ConsoleColors BackgroundColor, bool SeparateRows = true, List<CellOptions> CellOptions = null) =>
-            WriteTable(Headers, Rows, Margin, new Color(Convert.ToInt32(SeparatorForegroundColor)), new Color(Convert.ToInt32(HeaderForegroundColor)), new Color(Convert.ToInt32(ValueForegroundColor)), new Color(Convert.ToInt32(BackgroundColor)), SeparateRows, CellOptions);
+            WriteTable(Headers, Rows, Margin, new Color(SeparatorForegroundColor), new Color(HeaderForegroundColor), new Color(ValueForegroundColor), new Color(BackgroundColor), SeparateRows, CellOptions);
 
         /// <summary>
         /// Draw a table with text

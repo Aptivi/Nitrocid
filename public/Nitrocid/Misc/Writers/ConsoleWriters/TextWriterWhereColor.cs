@@ -229,7 +229,7 @@ namespace KS.Misc.Writers.ConsoleWriters
             {
                 try
                 {
-                    ColorTools.SetConsoleColor(new Color(Convert.ToInt32(color)));
+                    ColorTools.SetConsoleColor(new Color(color));
                     ColorTools.SetConsoleColor(KernelColorType.Background, true);
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
@@ -285,8 +285,8 @@ namespace KS.Misc.Writers.ConsoleWriters
             {
                 try
                 {
-                    ColorTools.SetConsoleColor(new Color(Convert.ToInt32(ForegroundColor)));
-                    ColorTools.SetConsoleColor(new Color(Convert.ToInt32(BackgroundColor)));
+                    ColorTools.SetConsoleColor(new Color(ForegroundColor));
+                    ColorTools.SetConsoleColor(new Color(BackgroundColor));
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
                     WriteWhere(msg, Left, Top, Return, RightMargin, vars);

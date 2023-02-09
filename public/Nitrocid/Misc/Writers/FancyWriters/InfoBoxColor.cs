@@ -155,7 +155,7 @@ namespace KS.Misc.Writers.FancyWriters
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(Convert.ToInt32(InfoBoxColor)), GetColor(KernelColorType.Background), vars);
+                        new Color(InfoBoxColor), GetColor(KernelColorType.Background), vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -170,7 +170,7 @@ namespace KS.Misc.Writers.FancyWriters
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(Convert.ToInt32(InfoBoxColor)), new Color(Convert.ToInt32(BackgroundColor)), vars);
+                        new Color(InfoBoxColor), new Color(BackgroundColor), vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -343,7 +343,7 @@ namespace KS.Misc.Writers.FancyWriters
                                        string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar,
                                        string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar,
                                        ConsoleColors InfoBoxColor, params object[] vars) =>
-            WriteInfoBox(text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(Convert.ToInt32(InfoBoxColor)), GetColor(KernelColorType.Background), vars);
+            WriteInfoBox(text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(InfoBoxColor), GetColor(KernelColorType.Background), vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -367,8 +367,8 @@ namespace KS.Misc.Writers.FancyWriters
         {
             try
             {
-                SetConsoleColor(new Color(Convert.ToInt32(InfoBoxColor)), false);
-                SetConsoleColor(new Color(Convert.ToInt32(BackgroundColor)), true, true);
+                SetConsoleColor(new Color(InfoBoxColor), false);
+                SetConsoleColor(new Color(BackgroundColor), true, true);
                 WriteInfoBoxPlain(text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, vars);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))

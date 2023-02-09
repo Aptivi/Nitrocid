@@ -142,7 +142,7 @@ namespace KS.Misc.Writers.FancyWriters
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(Convert.ToInt32(BorderColor)), GetColor(KernelColorType.Background));
+                        new Color(BorderColor), GetColor(KernelColorType.Background));
 
         /// <summary>
         /// Writes the border plainly
@@ -159,7 +159,7 @@ namespace KS.Misc.Writers.FancyWriters
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(Convert.ToInt32(BorderColor)), new Color(Convert.ToInt32(BackgroundColor)));
+                        new Color(BorderColor), new Color(BackgroundColor));
 
         /// <summary>
         /// Writes the border plainly
@@ -348,7 +348,7 @@ namespace KS.Misc.Writers.FancyWriters
                                        string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar, 
                                        string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar, 
                                        ConsoleColors BorderColor) =>
-            WriteBorder(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(Convert.ToInt32(BorderColor)), GetColor(KernelColorType.Background));
+            WriteBorder(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(BorderColor), GetColor(KernelColorType.Background));
 
         /// <summary>
         /// Writes the border plainly
@@ -374,8 +374,8 @@ namespace KS.Misc.Writers.FancyWriters
         {
             try
             {
-                SetConsoleColor(new Color(Convert.ToInt32(BorderColor)), false);
-                SetConsoleColor(new Color(Convert.ToInt32(BackgroundColor)), true, true);
+                SetConsoleColor(new Color(BorderColor), false);
+                SetConsoleColor(new Color(BackgroundColor), true, true);
                 WriteBorderPlain(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))

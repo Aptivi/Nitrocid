@@ -147,7 +147,7 @@ namespace KS.Misc.Writers.FancyWriters
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(Convert.ToInt32(BoxFrameColor)), GetColor(KernelColorType.Background));
+                        new Color(BoxFrameColor), GetColor(KernelColorType.Background));
 
         /// <summary>
         /// Writes the box frame plainly
@@ -164,7 +164,7 @@ namespace KS.Misc.Writers.FancyWriters
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(Convert.ToInt32(BoxFrameColor)), new Color(Convert.ToInt32(BackgroundColor)));
+                        new Color(BoxFrameColor), new Color(BackgroundColor));
 
         /// <summary>
         /// Writes the box frame plainly
@@ -353,7 +353,7 @@ namespace KS.Misc.Writers.FancyWriters
                                        string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar, 
                                        string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar, 
                                        ConsoleColors BoxFrameColor) =>
-            WriteBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(Convert.ToInt32(BoxFrameColor)), GetColor(KernelColorType.Background));
+            WriteBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(BoxFrameColor), GetColor(KernelColorType.Background));
 
         /// <summary>
         /// Writes the box frame plainly
@@ -379,8 +379,8 @@ namespace KS.Misc.Writers.FancyWriters
         {
             try
             {
-                SetConsoleColor(new Color(Convert.ToInt32(BoxFrameColor)), false);
-                SetConsoleColor(new Color(Convert.ToInt32(BackgroundColor)), true, true);
+                SetConsoleColor(new Color(BoxFrameColor), false);
+                SetConsoleColor(new Color(BackgroundColor), true, true);
                 WriteBoxFramePlain(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))

@@ -205,13 +205,13 @@ namespace KS.Misc.Writers.ConsoleWriters
                 try
                 {
                     // Try to write to console
-                    ColorTools.SetConsoleColor(new Color(Convert.ToInt32(color)), Highlight);
+                    ColorTools.SetConsoleColor(new Color(color), Highlight);
 
                     // Write the text to console
                     if (Highlight)
                     {
                         WritePlain(Text, false, vars);
-                        ColorTools.SetConsoleColor(new Color(Convert.ToInt32(color)));
+                        ColorTools.SetConsoleColor(new Color(color));
                         ColorTools.SetConsoleColor(KernelColorType.Background, true);
                         WritePlain("", Line);
                     }
@@ -254,15 +254,15 @@ namespace KS.Misc.Writers.ConsoleWriters
                 try
                 {
                     // Try to write to console
-                    ColorTools.SetConsoleColor(new Color(Convert.ToInt32(ForegroundColor)), Highlight);
-                    ColorTools.SetConsoleColor(new Color(Convert.ToInt32(BackgroundColor)), !Highlight);
+                    ColorTools.SetConsoleColor(new Color(ForegroundColor), Highlight);
+                    ColorTools.SetConsoleColor(new Color(BackgroundColor), !Highlight);
 
                     // Write the text to console
                     if (Highlight)
                     {
                         WritePlain(Text, false, vars);
-                        ColorTools.SetConsoleColor(new Color(Convert.ToInt32(ForegroundColor)));
-                        ColorTools.SetConsoleColor(new Color(Convert.ToInt32(BackgroundColor)), true);
+                        ColorTools.SetConsoleColor(new Color(ForegroundColor));
+                        ColorTools.SetConsoleColor(new Color(BackgroundColor), true);
                         WritePlain("", Line);
                     }
                     else

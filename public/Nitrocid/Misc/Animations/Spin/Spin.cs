@@ -62,7 +62,7 @@ namespace KS.Misc.Animations.Spin
             // Spin!
             if (!ConsoleResizeListener.WasResized(false))
             {
-                TextWriterWhereColor.WriteWhere(spinBuffer.ToString(), 0, 0, true, new Color(Convert.ToInt32(ConsoleColors.White)), new Color(Convert.ToInt32(ConsoleColors.Black)));
+                TextWriterWhereColor.WriteWhere(spinBuffer.ToString(), 0, 0, true, new Color(ConsoleColors.White), new Color(ConsoleColors.Black));
                 ThreadManager.SleepNoBlock(Settings.SpinDelay, System.Threading.Thread.CurrentThread);
             }
 
