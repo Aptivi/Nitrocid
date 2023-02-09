@@ -293,7 +293,7 @@ namespace KS.Files.Interactive
                         $" [{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.Name} | " + 
 
                         // File size or directory size
-                        $"{(!infoIsDirectory ? ((FileInfo)FileInfoCurrentPane).Length.FileSizeToString() : SizeGetter.GetAllSizesInFolder((DirectoryInfo)FileInfoCurrentPane))} | " + 
+                        $"{(!infoIsDirectory ? ((FileInfo)FileInfoCurrentPane).Length.FileSizeToString() : SizeGetter.GetAllSizesInFolder((DirectoryInfo)FileInfoCurrentPane).FileSizeToString())} | " + 
 
                         // Modified date
                         $"{(!infoIsDirectory ? TimeDateRenderers.Render(((FileInfo)FileInfoCurrentPane).LastWriteTime) : "")}"
