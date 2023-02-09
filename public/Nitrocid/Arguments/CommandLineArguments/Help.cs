@@ -38,12 +38,7 @@ namespace KS.Arguments.CommandLineArguments
             // Either start the kernel or exit it
             TextWriterColor.Write(Translate.DoTranslation("* Press any key to start the kernel or ESC to exit."), true, KernelColorType.Tip);
             if (Input.DetectKeypress().Key == ConsoleKey.Escape)
-            {
-                // Clear the console and reset the colors
-                ConsoleBase.ConsoleWrapper.ResetColor();
-                ConsoleBase.ConsoleWrapper.Clear();
                 Environment.Exit(0);
-            }
         }
 
     }
