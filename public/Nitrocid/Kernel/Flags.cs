@@ -259,7 +259,7 @@ namespace KS.Kernel
             {
                 TermReaderSettings.HistoryEnabled = value;
             }
-        }
+        } = true;
 
         // Private flags
         /// <summary>

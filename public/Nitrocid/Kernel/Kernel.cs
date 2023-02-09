@@ -103,9 +103,6 @@ namespace KS.Kernel
             {
                 try
                 {
-                    // Initial ReadLine settings
-                    Flags.InputHistoryEnabled = true;
-
                     // Check for terminal
                     ConsoleChecker.CheckConsole();
 
