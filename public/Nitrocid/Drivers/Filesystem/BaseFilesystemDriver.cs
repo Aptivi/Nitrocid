@@ -472,11 +472,8 @@ namespace KS.Drivers.Filesystem
             {
                 if (DFile.Attributes == FileAttributes.Hidden & Flags.HiddenFiles | !DFile.Attributes.HasFlag(FileAttributes.Hidden))
                 {
-                    if (KernelPlatform.IsOnWindows() & (!DFile.Name.StartsWith(".") | DFile.Name.StartsWith(".") & Flags.HiddenFiles) | KernelPlatform.IsOnUnix())
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "File {0}, Size {1} bytes", DFile.Name, DFile.Length);
-                        TotalSize += DFile.Length;
-                    }
+                    DebugWriter.WriteDebug(DebugLevel.I, "File {0}, Size {1} bytes", DFile.Name, DFile.Length);
+                    TotalSize += DFile.Length;
                 }
             }
             return TotalSize;
@@ -542,7 +539,11 @@ namespace KS.Drivers.Filesystem
                 // Get the entries
                 if (Directory.Exists(Parent))
                 {
-                    SearchOption options = Recursive ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly;
+                    EnumerationOptions options = new()
+                    {
+                        RecurseSubdirectories = Recursive,
+                        AttributesToSkip = Flags.HiddenFiles ? FileAttributes.System : FileAttributes.Hidden | FileAttributes.System
+                    };
                     Entries = Directory.EnumerateFileSystemEntries(Parent, Pattern, options).ToArray();
                     DebugWriter.WriteDebug(DebugLevel.I, "Enumerated {0} entries from parent {1} using pattern {2}", Entries.Length, Parent, Pattern);
                 }
@@ -927,16 +928,13 @@ namespace KS.Drivers.Filesystem
                 // Print information
                 if (DirectoryInfo.Attributes == FileAttributes.Hidden & Flags.HiddenFiles | !DirectoryInfo.Attributes.HasFlag(FileAttributes.Hidden))
                 {
-                    if (KernelPlatform.IsOnWindows() & (!DirectoryInfo.Name.StartsWith(".") | DirectoryInfo.Name.StartsWith(".") & Flags.HiddenFiles) | KernelPlatform.IsOnUnix())
+                    TextWriterColor.Write("- " + DirectoryInfo.Name + "/", false, KernelColorType.ListEntry);
+                    if (ShowDirectoryDetails)
                     {
-                        TextWriterColor.Write("- " + DirectoryInfo.Name + "/", false, KernelColorType.ListEntry);
-                        if (ShowDirectoryDetails)
-                        {
-                            TextWriterColor.Write(": ", false, KernelColorType.ListEntry);
-                            TextWriterColor.Write(Translate.DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), false, KernelColorType.ListValue, TotalSize.FileSizeToString(), DirectoryInfo.CreationTime.ToShortDateString(), DirectoryInfo.CreationTime.ToShortTimeString(), DirectoryInfo.LastWriteTime.ToShortDateString(), DirectoryInfo.LastWriteTime.ToShortTimeString());
-                        }
-                        TextWriterColor.Write();
+                        TextWriterColor.Write(": ", false, KernelColorType.ListEntry);
+                        TextWriterColor.Write(Translate.DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), false, KernelColorType.ListValue, TotalSize.FileSizeToString(), DirectoryInfo.CreationTime.ToShortDateString(), DirectoryInfo.CreationTime.ToShortTimeString(), DirectoryInfo.LastWriteTime.ToShortDateString(), DirectoryInfo.LastWriteTime.ToShortTimeString());
                     }
+                    TextWriterColor.Write();
                 }
             }
             else
@@ -957,26 +955,23 @@ namespace KS.Drivers.Filesystem
             {
                 if (FileInfo.Attributes == FileAttributes.Hidden & Flags.HiddenFiles | !FileInfo.Attributes.HasFlag(FileAttributes.Hidden))
                 {
-                    if (KernelPlatform.IsOnWindows() & (!FileInfo.Name.StartsWith(".") | FileInfo.Name.StartsWith(".") & Flags.HiddenFiles) | KernelPlatform.IsOnUnix())
+                    if (FileInfo.Name.EndsWith(".uesh"))
                     {
-                        if (FileInfo.Name.EndsWith(".uesh"))
-                        {
-                            TextWriterColor.Write("- " + FileInfo.Name, false, KernelColorType.Stage);
-                            if (ShowFileDetails)
-                                TextWriterColor.Write(": ", false, KernelColorType.Stage);
-                        }
-                        else
-                        {
-                            TextWriterColor.Write("- " + FileInfo.Name, false, KernelColorType.ListEntry);
-                            if (ShowFileDetails)
-                                TextWriterColor.Write(": ", false, KernelColorType.ListEntry);
-                        }
+                        TextWriterColor.Write("- " + FileInfo.Name, false, KernelColorType.Stage);
                         if (ShowFileDetails)
-                        {
-                            TextWriterColor.Write(Translate.DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), false, KernelColorType.ListValue, ((FileInfo)FileInfo).Length.FileSizeToString(), FileInfo.CreationTime.ToShortDateString(), FileInfo.CreationTime.ToShortTimeString(), FileInfo.LastWriteTime.ToShortDateString(), FileInfo.LastWriteTime.ToShortTimeString());
-                        }
-                        TextWriterColor.Write();
+                            TextWriterColor.Write(": ", false, KernelColorType.Stage);
                     }
+                    else
+                    {
+                        TextWriterColor.Write("- " + FileInfo.Name, false, KernelColorType.ListEntry);
+                        if (ShowFileDetails)
+                            TextWriterColor.Write(": ", false, KernelColorType.ListEntry);
+                    }
+                    if (ShowFileDetails)
+                    {
+                        TextWriterColor.Write(Translate.DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), false, KernelColorType.ListValue, ((FileInfo)FileInfo).Length.FileSizeToString(), FileInfo.CreationTime.ToShortDateString(), FileInfo.CreationTime.ToShortTimeString(), FileInfo.LastWriteTime.ToShortDateString(), FileInfo.LastWriteTime.ToShortTimeString());
+                    }
+                    TextWriterColor.Write();
                 }
             }
             else
