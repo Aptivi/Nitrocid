@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Runtime.InteropServices;
 using KS.Drivers;
 using KS.Misc.Reflection;
 using KS.Misc.Text;
@@ -136,6 +137,27 @@ namespace KS.ConsoleBase
             Console.Title = Text;
             DriverHandler.CurrentConsoleDriver.WritePlain(Sequence, false);
         }
+
+        #region Windows-specific
+        [DllImport("kernel32.dll", SetLastError = true)]
+        private static extern bool SetConsoleMode(IntPtr hConsoleHandle, int mode);
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        private static extern bool GetConsoleMode(IntPtr handle, out int mode);
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        private static extern IntPtr GetStdHandle(int handle);
+
+        internal static void InitializeSequences()
+        {
+            IntPtr stdHandle = GetStdHandle(-11);
+            GetConsoleMode(stdHandle, out var mode);
+            if (mode != 7)
+            {
+                SetConsoleMode(stdHandle, mode | 4);
+            }
+        }
+        #endregion
 
     }
 }

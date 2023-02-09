@@ -21,7 +21,6 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using System.IO;
-using ColorSeq;
 using Extensification.StringExts;
 using KS.Arguments.ArgumentBase;
 using KS.ConsoleBase;
@@ -51,7 +50,6 @@ using KS.Files.Operations;
 using KS.Drivers;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs.Styles;
 using KS.Misc.Writers.MiscWriters;
 using KS.Misc.Screensaver.Customized;
 
@@ -105,9 +103,6 @@ namespace KS.Kernel
             {
                 try
                 {
-                    // A title
-                    ConsoleExtensions.SetTitle(ConsoleTitle);
-
                     // Initial ReadLine settings
                     Flags.InputHistoryEnabled = true;
 
@@ -116,8 +111,11 @@ namespace KS.Kernel
 
                     // Initialize crucial things
                     if (!KernelPlatform.IsOnUnix())
-                        Color255.Initialize255();
+                        ConsoleExtensions.InitializeSequences();
                     AppDomain.CurrentDomain.AssemblyResolve += AssemblyLookup.LoadFromAssemblySearchPaths;
+
+                    // A title
+                    ConsoleExtensions.SetTitle(ConsoleTitle);
 
                     // Check to see if we have an appdata folder for KS
                     if (!Checking.FolderExists(Paths.AppDataPath))
