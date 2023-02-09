@@ -82,10 +82,6 @@ namespace KS.Shell.ShellBase.Shells
                 var ShellCommandThread = new KernelThread($"{ShellType} Command Thread", false, (cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutor.ExecuteCommandParameters)cmdThreadParams));
                 var ShellInfo = new ShellExecuteInfo(ShellType, ShellExecute, ShellCommandThread);
 
-                // Now, initialize the command autocomplete handler. This will not be invoked if we have auto completion disabled.
-                TermReaderSettings.Suggestions = CommandAutoComplete.GetSuggestions;
-                TermReaderSettings.SuggestionsDelimiters = new[] { ' ' };
-
                 // Add a new shell to the shell stack to indicate that we have a new shell (a visitor)!
                 ShellStack.Add(ShellInfo);
                 ShellExecute.InitializeShell(ShellArgs);

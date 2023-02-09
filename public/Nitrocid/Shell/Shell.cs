@@ -61,6 +61,7 @@ using KS.Users.Permissions;
 using KS.Drivers.Console;
 using KS.Files.Operations;
 using Manipulation = KS.Files.Operations.Manipulation;
+using TermRead.Reader;
 
 namespace KS.Shell
 {
@@ -189,6 +190,10 @@ namespace KS.Shell
             // Variables
             string TargetFile = "";
             string TargetFileName = "";
+
+            // Now, initialize the command autocomplete handler. This will not be invoked if we have auto completion disabled.
+            TermReaderSettings.Suggestions = CommandAutoComplete.GetSuggestions;
+            TermReaderSettings.SuggestionsDelimiters = new[] { ' ' };
 
             // Check to see if the full command string ends with the semicolon
             while (FullCommand.EndsWith(";") || string.IsNullOrEmpty(FullCommand))
