@@ -172,7 +172,10 @@ namespace KS.Kernel
 
             // Install cancellation handler
             if (!Flags.CancellationHandlerInstalled)
+            {
                 Console.CancelKeyPress += CancellationHandlers.CancelCommand;
+                Flags.CancellationHandlerInstalled = true;
+            }
 
             // Initialize aliases
             AliasManager.InitAliases();

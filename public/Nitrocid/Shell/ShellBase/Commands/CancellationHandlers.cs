@@ -30,6 +30,12 @@ namespace KS.Shell.ShellBase.Commands
 
         public static void CancelCommand(object sender, ConsoleCancelEventArgs e)
         {
+            if (ShellStart.ShellStack.Count <= 0)
+            {
+                e.Cancel = true;
+                return;
+            }
+
             lock (GetCancelSyncLock(Shell.CurrentShellType))
             {
                 if (e.SpecialKey == ConsoleSpecialKey.ControlC)
@@ -46,9 +52,11 @@ namespace KS.Shell.ShellBase.Commands
             }
         }
 
-        public static object GetCancelSyncLock(ShellType ShellType) => GetCancelSyncLock(Shell.GetShellTypeName(ShellType));
+        public static object GetCancelSyncLock(ShellType ShellType) =>
+            GetCancelSyncLock(Shell.GetShellTypeName(ShellType));
 
-        public static object GetCancelSyncLock(string ShellType) => Shell.GetShellInfo(ShellType).ShellLock;
+        public static object GetCancelSyncLock(string ShellType) =>
+            Shell.GetShellInfo(ShellType).ShellLock;
 
     }
 }
