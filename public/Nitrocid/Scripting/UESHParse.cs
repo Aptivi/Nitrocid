@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using System.IO;
 using Extensification.StringExts;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
@@ -25,6 +24,7 @@ using KS.Languages;
 using KS.Kernel.Events;
 using KS.Scripting.Conditions;
 using System.Linq;
+using KS.Files.Read;
 
 namespace KS.Scripting
 {
@@ -47,15 +47,15 @@ namespace KS.Scripting
                 EventsManager.FireEvent(EventType.UESHPreExecute, ScriptPath, ScriptArguments);
 
                 // Open the script file for reading
-                var FileStream = new StreamReader(ScriptPath);
+                var FileLines = FileRead.ReadAllLinesNoBlock(ScriptPath);
                 int LineNo = 1;
                 DebugWriter.WriteDebug(DebugLevel.I, "Stream opened. Parsing script");
 
                 // Look for $variables and initialize them
-                while (!FileStream.EndOfStream)
+                for (int l = 0; l < FileLines.Length; l++)
                 {
                     // Get line
-                    string Line = FileStream.ReadLine();
+                    string Line = FileLines[l];
                     DebugWriter.WriteDebug(DebugLevel.I, "Line {0}: \"{1}\"", LineNo, Line);
 
                     // If $variable is found in string, initialize it
@@ -63,20 +63,17 @@ namespace KS.Scripting
                     for (int i = 0; i <= SplitWords.Length - 1; i++)
                         if (!UESHVariables.ShellVariables.ContainsKey(SplitWords[i]) & SplitWords[i].StartsWith("$"))
                             UESHVariables.InitializeVariable(SplitWords[i]);
+                    LineNo++;
                 }
-
-                // Seek to the beginning
-                FileStream.BaseStream.Seek(0L, SeekOrigin.Begin);
 
                 // Get all lines and parse comments, commands, and arguments
                 string[] commandBlocks = new string[] { "if" };
-                int lineNum = 1;
                 int commandStackNum = 0;
                 bool newCommandStackRequired = false;
-                while (!FileStream.EndOfStream)
+                for (int l = 0; l < FileLines.Length; l++)
                 {
                     // Get line
-                    string Line = FileStream.ReadLine();
+                    string Line = FileLines[l];
                     DebugWriter.WriteDebug(DebugLevel.I, "Line {0}: \"{1}\"", LineNo, Line);
 
                     // First, trim the line from the left after checking the stack
@@ -90,10 +87,10 @@ namespace KS.Scripting
 
                         // If it still starts with the new stack indicator, throw an error
                         if (Line.StartsWith('|'))
-                            throw new KernelException(KernelExceptionType.UESHScript, Translate.DoTranslation("You can't declare the new block before you place expressions that support the creation, like conditions or loops. The stack number is {0}.") + " {1}:{2}", commandStackNum, ScriptPath, lineNum);
+                            throw new KernelException(KernelExceptionType.UESHScript, Translate.DoTranslation("You can't declare the new block before you place expressions that support the creation, like conditions or loops. The stack number is {0}.") + " {1}:{2}", commandStackNum, ScriptPath, LineNo);
                     }
                     else if (!Line.StartsWith(stackIndicator) && newCommandStackRequired)
-                        throw new KernelException(KernelExceptionType.UESHScript, Translate.DoTranslation("When starting a new block, make sure that you've indented the stack correctly. The stack number is {0}.") + " {1}:{2}", commandStackNum, ScriptPath, lineNum);
+                        throw new KernelException(KernelExceptionType.UESHScript, Translate.DoTranslation("When starting a new block, make sure that you've indented the stack correctly. The stack number is {0}.") + " {1}:{2}", commandStackNum, ScriptPath, LineNo);
                     else
                         commandStackNum = 0;
 
@@ -148,7 +145,8 @@ namespace KS.Scripting
                                 // Skip all the if block until we reach our stack
                                 while (true)
                                 {
-                                    Line = FileStream.ReadLine();
+                                    l++;
+                                    Line = FileLines[l];
                                     string blockStackIndicator = new('|', commandStackNum + 1);
                                     if (!Line.StartsWith(blockStackIndicator))
                                         break;
@@ -169,11 +167,8 @@ namespace KS.Scripting
                         DebugWriter.WriteDebug(DebugLevel.I, "Line {0} is a comment.", Line);
 
                     // Increment the new line number
-                    lineNum++;
+                    LineNo++;
                 }
-
-                // Close the stream
-                FileStream.Close();
                 EventsManager.FireEvent(EventType.UESHPostExecute, ScriptPath, ScriptArguments);
             }
             catch (Exception ex)
