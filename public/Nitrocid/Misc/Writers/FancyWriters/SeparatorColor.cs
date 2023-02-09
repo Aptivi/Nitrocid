@@ -22,7 +22,6 @@ using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Drivers;
-using KS.Drivers.Console.Consoles;
 using KS.Kernel;
 using KS.Misc.Writers.ConsoleWriters;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;

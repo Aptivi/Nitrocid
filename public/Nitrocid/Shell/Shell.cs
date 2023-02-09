@@ -59,7 +59,6 @@ using File = KS.Drivers.Console.Consoles.File;
 using static KS.Users.UserManagement;
 using KS.Users.Permissions;
 using KS.Drivers.Console;
-using KS.Files.Operations;
 using Manipulation = KS.Files.Operations.Manipulation;
 using TermRead.Reader;
 using KS.Misc.Probers.Regexp;

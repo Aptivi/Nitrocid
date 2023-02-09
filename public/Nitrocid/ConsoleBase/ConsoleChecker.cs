@@ -24,7 +24,6 @@ using KS.Languages;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Drivers;
-using KS.Drivers.Console.Consoles;
 using KS.ConsoleBase.Inputs;
 
 namespace KS.ConsoleBase

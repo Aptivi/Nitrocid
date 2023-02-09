@@ -36,7 +36,6 @@ using KS.ConsoleBase.Inputs;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using MimeKit;
 using KS.Files.LineEndings;
-using SharpCompress.Common;
 using System.Text;
 
 namespace KS.Files.Interactive

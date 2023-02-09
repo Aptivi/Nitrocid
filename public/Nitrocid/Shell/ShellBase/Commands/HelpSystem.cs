@@ -26,7 +26,6 @@ using KS.Kernel;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.MiscWriters;
 using KS.Modifications;
 using KS.Shell.ShellBase.Aliases;
 using KS.Shell.ShellBase.Shells;

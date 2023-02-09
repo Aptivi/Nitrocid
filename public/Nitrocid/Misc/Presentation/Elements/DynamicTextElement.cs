@@ -18,15 +18,11 @@
 
 using Extensification.StringExts;
 using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using VT.NET;
 
 namespace KS.Misc.Presentation.Elements
 {

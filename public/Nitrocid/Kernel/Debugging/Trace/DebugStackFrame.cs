@@ -18,7 +18,6 @@
 using KS.Files;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using System;
 using System.Diagnostics;
 using System.IO;
 

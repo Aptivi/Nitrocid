@@ -22,7 +22,6 @@ using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
-using KS.Kernel;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters.Tools;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;

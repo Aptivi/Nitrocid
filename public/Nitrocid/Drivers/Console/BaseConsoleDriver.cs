@@ -24,7 +24,6 @@ using KS.Misc.Reflection;
 using KS.Misc.Writers.ConsoleWriters;
 using System;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Threading;
 using KS.Kernel;
@@ -32,7 +31,6 @@ using ColorSeq;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using con = System.Console;
 using VT.NET;
-using System.Runtime.InteropServices;
 
 namespace KS.Drivers.Console.Consoles
 {

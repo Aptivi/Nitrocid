@@ -31,7 +31,6 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Reflection;
-using KS.Misc.Screensaver.Customized;
 using KS.Misc.Splash;
 using KS.Modifications.ManPages;
 using KS.Shell.ShellBase.Commands;

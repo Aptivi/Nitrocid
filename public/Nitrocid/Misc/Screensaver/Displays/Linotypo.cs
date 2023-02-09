@@ -19,7 +19,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase;

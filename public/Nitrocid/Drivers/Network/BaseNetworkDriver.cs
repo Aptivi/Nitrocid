@@ -35,7 +35,6 @@ using KS.Kernel.Exceptions;
 using System.Collections.Generic;
 using System.Net.Sockets;
 using System.Net;
-using Org.BouncyCastle.Utilities;
 
 namespace KS.Drivers.Network
 {

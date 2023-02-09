@@ -32,7 +32,6 @@ using System.Threading;
 using KS.Misc.Threading;
 using KS.Kernel.Debugging;
 using KS.Misc.Probers.Motd;
-using KS.Misc.Text;
 
 namespace KS.Users.Login
 {
