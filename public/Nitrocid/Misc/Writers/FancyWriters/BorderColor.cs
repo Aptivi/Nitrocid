@@ -16,8 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using Extensification.StringExts;
-using KS.Misc.Writers.ConsoleWriters;
 using System;
 using System.Threading;
 using static KS.ConsoleBase.Colors.ColorTools;
@@ -70,18 +68,10 @@ namespace KS.Misc.Writers.FancyWriters
             try 
             {
                 // First, draw the border
-                TextWriterWhereColor.WriteWhere(UpperLeftCornerChar + UpperFrameChar.Repeat(InteriorWidth) + UpperRightCornerChar, Left, Top, true);
-                for (int i = 1; i <= InteriorHeight; i++)
-                {
-                    TextWriterWhereColor.WriteWhere(LeftFrameChar, Left, Top + i, true);
-                    TextWriterWhereColor.WriteWhere(RightFrameChar, Left + InteriorWidth + 1, Top + i, true);
-                }
-                TextWriterWhereColor.WriteWhere(LowerLeftCornerChar + LowerFrameChar.Repeat(InteriorWidth) + LowerRightCornerChar, Left, Top + InteriorHeight + 1, true);
+                BoxFrameColor.WriteBoxFramePlain(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
 
                 // Then, fill the border with spaces inside it
-                for (int x = 1; x <= InteriorWidth; x++)
-                    for (int y = 1; y <= InteriorHeight; y++)
-                        TextWriterWhereColor.WriteWhere(" ", Left + x, Top + y, true);
+                BoxColor.WriteBoxPlain(Left + 1, Top, InteriorWidth, InteriorHeight);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {

@@ -23,6 +23,7 @@ using KS.ConsoleBase;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
+using KS.Misc.Writers.FancyWriters;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Screensaver.Displays
@@ -283,6 +284,8 @@ namespace KS.Misc.Screensaver.Displays
 
                 if (Drawable)
                 {
+                    Color color;
+
                     // Select color
                     if (StackBoxSettings.StackBoxTrueColor)
                     {
@@ -290,57 +293,20 @@ namespace KS.Misc.Screensaver.Displays
                         int GreenColorNum = RandomDriver.Random(StackBoxSettings.StackBoxMinimumGreenColorLevel, StackBoxSettings.StackBoxMaximumGreenColorLevel);
                         int BlueColorNum = RandomDriver.Random(StackBoxSettings.StackBoxMinimumBlueColorLevel, StackBoxSettings.StackBoxMaximumBlueColorLevel);
                         DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
-                        ColorTools.SetConsoleColor(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), true, true);
+                        color = new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}");
                     }
                     else
                     {
                         int ColorNum = RandomDriver.Random(StackBoxSettings.StackBoxMinimumColorLevel, StackBoxSettings.StackBoxMaximumColorLevel);
                         DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
-                        ColorTools.SetConsoleColor(new Color(ColorNum), true, true);
+                        color = new Color(ColorNum);
                     }
 
                     // Draw the box
                     if (StackBoxSettings.StackBoxFill)
-                    {
-                        // Cover all the positions
-                        for (int X = BoxStartX; X <= BoxEndX; X++)
-                        {
-                            for (int Y = BoxStartY; Y <= BoxEndY; Y++)
-                            {
-                                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Filling {0},{1}...", X, Y);
-                                ConsoleWrapper.SetCursorPosition(X, Y);
-                                ConsoleWrapper.Write(" ");
-                            }
-                        }
-                    }
+                        BoxColor.WriteBox(BoxStartX, BoxStartY, BoxEndX - BoxStartX, BoxEndY - BoxStartY, color);
                     else
-                    {
-                        // Draw the upper and lower borders
-                        for (int X = BoxStartX; X <= BoxEndX; X++)
-                        {
-                            ConsoleWrapper.SetCursorPosition(X, BoxStartY);
-                            ConsoleWrapper.Write(" ");
-                            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Drawn upper border at {0}", X);
-                            ConsoleWrapper.SetCursorPosition(X, BoxEndY);
-                            ConsoleWrapper.Write(" ");
-                            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Drawn lower border at {0}", X);
-                        }
-
-                        // Draw the left and right borders
-                        for (int Y = BoxStartY; Y <= BoxEndY; Y++)
-                        {
-                            ConsoleWrapper.SetCursorPosition(BoxStartX, Y);
-                            ConsoleWrapper.Write(" ");
-                            if (!(BoxStartX >= ConsoleWrapper.WindowWidth - 1))
-                                ConsoleWrapper.Write(" ");
-                            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Drawn left border at {0}", Y);
-                            ConsoleWrapper.SetCursorPosition(BoxEndX, Y);
-                            ConsoleWrapper.Write(" ");
-                            if (!(BoxEndX >= ConsoleWrapper.WindowWidth - 1))
-                                ConsoleWrapper.Write(" ");
-                            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Drawn right border at {0}", Y);
-                        }
-                    }
+                        BoxFrameColor.WriteBoxFrame(BoxStartX, BoxStartY, BoxEndX - BoxStartX, BoxEndY - BoxStartY, color);
                 }
             }
             ThreadManager.SleepNoBlock(StackBoxSettings.StackBoxDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);

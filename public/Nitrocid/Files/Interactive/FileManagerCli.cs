@@ -438,29 +438,7 @@ namespace KS.Files.Interactive
             finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
 
             // Now, render the info box
-            string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
-            int maxWidth = splitLines.Max((str) => str.Length);
-            if (maxWidth >= ConsoleWrapper.WindowWidth)
-                maxWidth = ConsoleWrapper.WindowWidth - 4;
-            int maxHeight = splitLines.Length;
-            if (maxHeight >= ConsoleWrapper.WindowHeight)
-                maxHeight = ConsoleWrapper.WindowHeight - 4;
-            int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
-            int borderX = (ConsoleWrapper.WindowWidth / 2) - (maxWidth / 2);
-            int borderY = (ConsoleWrapper.WindowHeight / 2) - (maxHeight / 2);
-            BorderColor.WriteBorder(borderX, borderY, maxWidth, maxHeight, FileManagerBoxForegroundColor, FileManagerBoxBackgroundColor);
-
-            // Render text inside it
-            for (int i = 0; i < splitLines.Length; i++)
-            {
-                var line = splitLines[i];
-                TextWriterWhereColor.WriteWhere(line.Truncate(maxRenderWidth), borderX + 1, borderY + 1 + i);
-                if (i % maxHeight == 0 && i > 0)
-                    Input.DetectKeypress();
-            }
-
-            // Wait until the user presses any key to close the window and re-render the file manager
-            Input.DetectKeypress();
+            InfoBoxColor.WriteInfoBox(finalInfoRendered.ToString(), FileManagerBoxForegroundColor, FileManagerBoxBackgroundColor);
             redrawRequired = true;
         }
     }
