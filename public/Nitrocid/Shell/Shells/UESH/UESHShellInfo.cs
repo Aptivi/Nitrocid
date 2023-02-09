@@ -141,6 +141,7 @@ namespace KS.Shell.Shells.UESH
             { "showtd", new CommandInfo("showtd", ShellType, /* Localizable */ "Shows date and time", new CommandArgumentInfo(), new ShowTdCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
             { "showtdzone", new CommandInfo("showtdzone", ShellType, /* Localizable */ "Shows date and time in zones", new CommandArgumentInfo(new[] { "[-all] <timezone>" }, true, 1), new ShowTdZoneCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
             { "shutdown", new CommandInfo("shutdown", ShellType, /* Localizable */ "The kernel will be shut down", new CommandArgumentInfo(new[] { "[ip] [port]" }, false, 0), new ShutdownCommand()) },
+            { "sleep", new CommandInfo("sleep", ShellType, /* Localizable */ "Sleeps for specified milliseconds", new CommandArgumentInfo(new[] { "<ms>" }, true, 1), new SleepCommand()) },
             { "snaker", new CommandInfo("snaker", ShellType, /* Localizable */ "The snake game!", new CommandArgumentInfo(), new SnakerCommand()) },
             { "solver", new CommandInfo("solver", ShellType, /* Localizable */ "See if you can solve mathematical equations on time", new CommandArgumentInfo(), new SolverCommand()) },
             { "speedpress", new CommandInfo("speedpress", ShellType, /* Localizable */ "See if you can press a key on time", new CommandArgumentInfo(new[] { "[-e|-m|-h|-v|-c] [timeout]" }, false, 0), new SpeedPressCommand()) },
