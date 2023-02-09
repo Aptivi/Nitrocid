@@ -62,6 +62,11 @@ using KS.Drivers.Console;
 using KS.Files.Operations;
 using Manipulation = KS.Files.Operations.Manipulation;
 using TermRead.Reader;
+using KS.Misc.Probers.Regexp;
+using System.Text.RegularExpressions;
+using System.Linq;
+using KS.Drivers.Console.Consoles;
+using FluentFTP.Helpers;
 
 namespace KS.Shell
 {
@@ -435,25 +440,32 @@ namespace KS.Shell
         private static string InitializeRedirection(string Command)
         {
             // If requested command has output redirection sign after arguments, remove it from final command string and set output to that file
-            if (Command.Contains(" >> ") || Command.Contains(" >>> "))
+            string RedirectionPattern = /*lang=regex*/ @"( (>>|>>>) .+?)+$";
+            if (RegexpTools.IsMatch(Command, RedirectionPattern))
             {
-                bool isOverwrite = !Command.Contains(" >>> ");
-                string redirectSyntax = isOverwrite ? " >> " : " >>> ";
-                DebugWriter.WriteDebug(DebugLevel.I, "Output redirection found with overwrite mode [{0}].", isOverwrite);
-                string OutputFileName = Command.Substring(Command.LastIndexOf(">") + 2);
-                string OutputFilePath = Filesystem.NeutralizePath(OutputFileName);
-                DriverHandler.SetDriver<IConsoleDriver>("File");
-                ((File)DriverHandler.CurrentConsoleDriver).PathToWrite = OutputFilePath;
-                ((File)DriverHandler.CurrentConsoleDriver).FilterVT = true;
-                if (isOverwrite)
-                    Manipulation.ClearFile(OutputFilePath);
-                Command = Command.Replace(redirectSyntax + OutputFileName, "");
+                var outputMatch = Regex.Match(Command, RedirectionPattern);
+                var outputFiles = outputMatch.Groups[1].Captures.Select((cap) => cap.Value);
+                List<string> filePaths = new();
+                foreach (var outputFile in outputFiles)
+                {
+                    bool isOverwrite = !outputFile.StartsWith(" >>> ");
+                    string OutputFileName = outputFile[(outputFile.LastIndexOf(">") + 2)..];
+                    string OutputFilePath = Filesystem.NeutralizePath(OutputFileName);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Output redirection found for file {1} with overwrite mode [{0}].", isOverwrite, OutputFilePath);
+                    if (isOverwrite)
+                        Manipulation.ClearFile(OutputFilePath);
+                    filePaths.Add(OutputFilePath);
+                }
+                DriverHandler.SetDriver<IConsoleDriver>("FileSequence");
+                ((FileSequence)DriverHandler.CurrentConsoleDriver).PathsToWrite = filePaths.ToArray();
+                ((FileSequence)DriverHandler.CurrentConsoleDriver).FilterVT = true;
+                Command = Command.RemovePostfix(outputMatch.Value);
             }
             else if (Command.EndsWith(" |SILENT|"))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Silence found. Redirecting to null writer...");
                 DriverHandler.SetDriver<IConsoleDriver>("Null");
-                Command = Command.Replace(" |SILENT|", "");
+                Command = Command.RemovePostfix(" |SILENT|");
             }
 
             return Command;

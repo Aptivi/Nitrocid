@@ -54,6 +54,7 @@ namespace KS.Drivers
         {
             { "Default", new Terminal() },
             { "File", new File() },
+            { "FileSequence", new FileSequence() },
             { "Null", new Null() },
 
 #if !SPECIFIERREL
