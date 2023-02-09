@@ -21,6 +21,7 @@ using ColorSeq;
 using KS.ConsoleBase;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
+using KS.Misc.Writers.FancyWriters;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Screensaver.Displays
@@ -87,51 +88,19 @@ namespace KS.Misc.Screensaver.Displays
                 {
                     ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
                     ConsoleWrapper.Clear();
-                    ColorTools.SetConsoleColor(new Color($"0;120;212"), true, true);
+                    var windows11Color = new Color($"0;120;212");
 
                     // First, draw the upper left box
-                    for (int X = UpperLeftBoxStartX; X <= UpperLeftBoxEndX; X++)
-                    {
-                        for (int Y = UpperLeftBoxStartY; Y <= UpperLeftBoxEndY; Y++)
-                        {
-                            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Filling upper left box {0},{1}...", X, Y);
-                            ConsoleWrapper.SetCursorPosition(X, Y);
-                            ConsoleWrapper.Write(" ");
-                        }
-                    }
+                    BoxColor.WriteBox(UpperLeftBoxStartX, UpperLeftBoxStartY, UpperLeftBoxEndX - UpperLeftBoxStartX, UpperLeftBoxEndY - UpperLeftBoxStartY, windows11Color);
 
                     // Second, draw the lower left box
-                    for (int X = LowerLeftBoxStartX; X <= LowerLeftBoxEndX; X++)
-                    {
-                        for (int Y = LowerLeftBoxStartY; Y <= LowerLeftBoxEndY; Y++)
-                        {
-                            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Filling lower left box {0},{1}...", X, Y);
-                            ConsoleWrapper.SetCursorPosition(X, Y);
-                            ConsoleWrapper.Write(" ");
-                        }
-                    }
+                    BoxColor.WriteBox(LowerLeftBoxStartX, LowerLeftBoxStartY, LowerLeftBoxEndX - LowerLeftBoxStartX, LowerLeftBoxEndY - LowerLeftBoxStartY, windows11Color);
 
                     // Third, draw the upper right box
-                    for (int X = UpperRightBoxStartX; X <= UpperRightBoxEndX; X++)
-                    {
-                        for (int Y = UpperRightBoxStartY; Y <= UpperRightBoxEndY; Y++)
-                        {
-                            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Filling upper right box {0},{1}...", X, Y);
-                            ConsoleWrapper.SetCursorPosition(X, Y);
-                            ConsoleWrapper.Write(" ");
-                        }
-                    }
+                    BoxColor.WriteBox(UpperRightBoxStartX, UpperRightBoxStartY, UpperRightBoxEndX - UpperRightBoxStartX, UpperRightBoxEndY - UpperRightBoxStartY, windows11Color);
 
                     // Fourth, draw the lower right box
-                    for (int X = LowerRightBoxStartX; X <= LowerRightBoxEndX; X++)
-                    {
-                        for (int Y = LowerRightBoxStartY; Y <= LowerRightBoxEndY; Y++)
-                        {
-                            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Filling lower right box {0},{1}...", X, Y);
-                            ConsoleWrapper.SetCursorPosition(X, Y);
-                            ConsoleWrapper.Write(" ");
-                        }
-                    }
+                    BoxColor.WriteBox(LowerRightBoxStartX, LowerRightBoxStartY, LowerRightBoxEndX - LowerRightBoxStartX, LowerRightBoxEndY - LowerRightBoxStartY, windows11Color);
 
                     // Set drawn
                     Drawn = true;
