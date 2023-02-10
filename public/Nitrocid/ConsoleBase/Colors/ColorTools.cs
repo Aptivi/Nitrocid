@@ -122,7 +122,7 @@ namespace KS.ConsoleBase.Colors
             {
                 case 0:
                     // Population type is empty colors
-                    for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length - 1; typeIndex++)
+                    for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length; typeIndex++)
                     {
                         KernelColorType type = (KernelColorType)Enum.Parse(typeof(KernelColorType), typeIndex.ToString());
                         Color color = Color.Empty;
@@ -133,7 +133,7 @@ namespace KS.ConsoleBase.Colors
                 case 1:
                     // Population type is default colors
                     ThemeInfo themeInfo = new();
-                    for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length - 1; typeIndex++)
+                    for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length; typeIndex++)
                     {
                         KernelColorType type = (KernelColorType)Enum.Parse(typeof(KernelColorType), typeIndex.ToString());
                         Color color = themeInfo.GetColor(type);
@@ -143,7 +143,7 @@ namespace KS.ConsoleBase.Colors
                     break;
                 case 2:
                     // Population type is current colors
-                    for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length - 1; typeIndex++)
+                    for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length; typeIndex++)
                     {
                         KernelColorType type = (KernelColorType)Enum.Parse(typeof(KernelColorType), typeIndex.ToString());
                         Color color = GetColor(type);
@@ -212,19 +212,7 @@ namespace KS.ConsoleBase.Colors
         /// <param name="ForceSet">Force set color</param>
         public static void SetConsoleColor(KernelColorType colorType, bool Background, bool ForceSet = false)
         {
-            switch (colorType)
-            {
-                case KernelColorType.Gray:
-                    {
-                        SetConsoleColor(GetGray(), Background, ForceSet);
-                        break;
-                    }
-                default:
-                    {
-                        SetConsoleColor(GetColor(colorType), Background, ForceSet);
-                        break;
-                    }
-            }
+            SetConsoleColor(GetColor(colorType), Background, ForceSet);
             if (!Background)
                 SetConsoleColor(GetColor(KernelColorType.Background), true);
         }

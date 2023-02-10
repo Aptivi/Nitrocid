@@ -187,9 +187,5 @@ namespace KS.ConsoleBase.Colors
         /// Table title
         /// </summary>
         TableTitle,
-        /// <summary>
-        /// Gray color (for special purposes)
-        /// </summary>
-        Gray = -1,
     }
 }

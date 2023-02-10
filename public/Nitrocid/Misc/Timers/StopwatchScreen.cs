@@ -233,12 +233,12 @@ namespace KS.Misc.Timers
         {
             int KeysTextTopPosition = ConsoleWrapper.WindowHeight - 2;
             int HalfWidth = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
-            TextWriterWhereColor.WriteWhere("═".Repeat(ConsoleWrapper.WindowWidth), 0, KeysTextTopPosition - 2, true, KernelColorType.Gray);
-            TextWriterWhereColor.WriteWhere("═".Repeat(ConsoleWrapper.WindowWidth), 0, 1, true, KernelColorType.Gray);
+            TextWriterWhereColor.WriteWhere("═".Repeat(ConsoleWrapper.WindowWidth), 0, KeysTextTopPosition - 2, true, ColorTools.GetGray());
+            TextWriterWhereColor.WriteWhere("═".Repeat(ConsoleWrapper.WindowWidth), 0, 1, true, ColorTools.GetGray());
             for (int Height = 2; Height <= KeysTextTopPosition - 2; Height++)
-                TextWriterWhereColor.WriteWhere("║", HalfWidth, Height, true, KernelColorType.Gray);
-            TextWriterWhereColor.WriteWhere("╩", HalfWidth, KeysTextTopPosition - 2, true, KernelColorType.Gray);
-            TextWriterWhereColor.WriteWhere("╦", HalfWidth, 1, true, KernelColorType.Gray);
+                TextWriterWhereColor.WriteWhere("║", HalfWidth, Height, true, ColorTools.GetGray());
+            TextWriterWhereColor.WriteWhere("╩", HalfWidth, KeysTextTopPosition - 2, true, ColorTools.GetGray());
+            TextWriterWhereColor.WriteWhere("╦", HalfWidth, 1, true, ColorTools.GetGray());
         }
 
     }

@@ -110,7 +110,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Top">The progress position from the top</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalProgress(double Progress, int Left, int Top, bool DrawBorder = true) =>
-            WriteVerticalProgress(Progress, Left, Top, 2, 0, KernelColorType.Progress, KernelColorType.Gray, DrawBorder);
+            WriteVerticalProgress(Progress, Left, Top, 2, 0, ColorTools.GetColor(KernelColorType.Progress), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -121,7 +121,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="HeightOffset">Height offset</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalProgress(double Progress, int Left, int Top, int HeightOffset, bool DrawBorder = true) =>
-             WriteVerticalProgress(Progress, Left, Top, HeightOffset, 0, KernelColorType.Progress, KernelColorType.Gray, DrawBorder);
+             WriteVerticalProgress(Progress, Left, Top, HeightOffset, 0, ColorTools.GetColor(KernelColorType.Progress), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -133,7 +133,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="BottomHeightOffset">Height offset from the bottom</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalProgress(double Progress, int Left, int Top, int TopHeightOffset, int BottomHeightOffset, bool DrawBorder = true) =>
-            WriteVerticalProgress(Progress, Left, Top, TopHeightOffset, BottomHeightOffset, KernelColorType.Progress, KernelColorType.Gray, DrawBorder);
+            WriteVerticalProgress(Progress, Left, Top, TopHeightOffset, BottomHeightOffset, ColorTools.GetColor(KernelColorType.Progress), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -144,7 +144,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalProgress(double Progress, int Left, int Top, KernelColorType ProgressColor, bool DrawBorder = true) =>
-            WriteVerticalProgress(Progress, Left, Top, 2, 0, ProgressColor, KernelColorType.Gray, DrawBorder);
+            WriteVerticalProgress(Progress, Left, Top, 2, 0, ColorTools.GetColor(ProgressColor), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -156,7 +156,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="HeightOffset">Height offset</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalProgress(double Progress, int Left, int Top, int HeightOffset, KernelColorType ProgressColor, bool DrawBorder = true) =>
-            WriteVerticalProgress(Progress, Left, Top, HeightOffset, 0, ProgressColor, KernelColorType.Gray, DrawBorder);
+            WriteVerticalProgress(Progress, Left, Top, HeightOffset, 0, ColorTools.GetColor(ProgressColor), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -169,7 +169,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="BottomHeightOffset">Height offset from the bottom</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalProgress(double Progress, int Left, int Top, int TopHeightOffset, int BottomHeightOffset, KernelColorType ProgressColor, bool DrawBorder = true) =>
-            WriteVerticalProgress(Progress, Left, Top, TopHeightOffset, BottomHeightOffset, ProgressColor, KernelColorType.Gray, DrawBorder);
+            WriteVerticalProgress(Progress, Left, Top, TopHeightOffset, BottomHeightOffset, ColorTools.GetColor(ProgressColor), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar

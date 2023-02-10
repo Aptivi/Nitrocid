@@ -357,7 +357,7 @@ namespace KS.Network.RSS
                 // If the JSON token is actually full, show the list of countries
                 ConsoleBase.ConsoleWrapper.Clear();
                 TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Select your country by pressing the arrow left or arrow right keys. Press ENTER to confirm your selection."), 0, 1, false, KernelColorType.NeutralText);
-                TextWriterColor.Write(CharManager.NewLine + CharManager.NewLine + "   < ", false, KernelColorType.Gray);
+                TextWriterColor.Write(CharManager.NewLine + CharManager.NewLine + "   < ", false, KernelColorType.NeutralText);
 
                 // The cursor positions for the arrow elements
                 int MaxLength = FeedListJsonCountries.Max(x => x["name"].ToString().Length);
@@ -365,7 +365,7 @@ namespace KS.Network.RSS
                 int ArrowLeftXPosition = ConsoleBase.ConsoleWrapper.CursorLeft + MaxLength + $" [{FeedListJsonCountries[SelectedCountryIndex]["iso"]}]".Length;
                 int ItemNameXPosition = (int)Math.Round(ConsoleBase.ConsoleWrapper.CursorLeft + (ArrowLeftXPosition - ConsoleBase.ConsoleWrapper.CursorLeft) / 2d - ItemName.Length / 2d);
                 TextWriterWhereColor.WriteWhere(ItemName, ItemNameXPosition, ConsoleBase.ConsoleWrapper.CursorTop, true, KernelColorType.Option);
-                TextWriterWhereColor.WriteWhere(" >", ArrowLeftXPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, KernelColorType.Gray);
+                TextWriterWhereColor.WriteWhere(" >", ArrowLeftXPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, KernelColorType.NeutralText);
                 TextWriterColor.Write(CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("This country has {0} news sources."), FeedListJsonCountries[SelectedCountryIndex]["newSources"].Count());
 
                 // Read and get response
