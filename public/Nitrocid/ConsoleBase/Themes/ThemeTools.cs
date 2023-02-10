@@ -99,6 +99,7 @@ namespace KS.ConsoleBase.Themes
             { "Neutralized", new ThemeInfo("Neutralized") },
             { "NFSHP-Cop", new ThemeInfo("NFSHP-Cop") },
             { "NFSHP-Racer", new ThemeInfo("NFSHP-Racer") },
+            { "NitricAcid", new ThemeInfo("NitricAcid") },
             { "NoFrilsAcme", new ThemeInfo("NoFrilsAcme") },
             { "NoFrilsDark", new ThemeInfo("NoFrilsDark") },
             { "NoFrilsLight", new ThemeInfo("NoFrilsLight") },
