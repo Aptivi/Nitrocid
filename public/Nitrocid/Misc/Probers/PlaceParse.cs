@@ -37,6 +37,7 @@ using KS.Users.Login;
 using KS.Kernel.Events;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Colors;
+using KS.Files.Querying;
 
 namespace KS.Misc.Probers
 {
@@ -254,6 +255,20 @@ namespace KS.Misc.Probers
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Dollar placeholder found.");
                     text = text.Replace("<dollar>", UserManagement.GetUserDollarSign());
+                }
+
+                // -> Random file placeholder
+                if (text.Contains("<randomfile>"))
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Random file placeholder found.");
+                    text = text.Replace("<randomfile>", Getting.GetRandomFileName());
+                }
+
+                // -> Random folder placeholder
+                if (text.Contains("<randomfolder>"))
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Random folder placeholder found.");
+                    text = text.Replace("<randomfolder>", Getting.GetRandomFolderName());
                 }
 
                 // -> Foreground color reset placeholder

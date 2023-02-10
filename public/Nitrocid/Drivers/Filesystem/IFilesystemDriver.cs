@@ -217,6 +217,18 @@ namespace KS.Drivers.Filesystem
         List<string> GetPathList();
 
         /// <summary>
+        /// Gets the randomized file name
+        /// </summary>
+        /// <returns>Randomized file name in the temporary directory for your system</returns>
+        string GetRandomFileName();
+
+        /// <summary>
+        /// Gets the randomized folder name
+        /// </summary>
+        /// <returns>Randomized folder name in the temporary directory for your system</returns>
+        string GetRandomFolderName();
+
+        /// <summary>
         /// Adds a (non-)neutralized path to lookup
         /// </summary>
         void AddToPathLookup(string Path);

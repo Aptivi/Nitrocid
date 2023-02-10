@@ -19,6 +19,7 @@
 using System;
 using System.IO;
 using KS.Drivers;
+using KS.Files.Querying;
 
 namespace KS.Files.Operations
 {
@@ -115,6 +116,24 @@ namespace KS.Files.Operations
                 return false;
             }
         }
+
+        /// <summary>
+        /// Makes a randomized file name
+        /// </summary>
+        public static void MakeRandomFile() =>
+            MakeFile(Getting.GetRandomFileName());
+
+        /// <summary>
+        /// Makes a randomized folder name
+        /// </summary>
+        public static void MakeRandomFolder() =>
+            MakeDirectory(Getting.GetRandomFolderName());
+
+        /// <summary>
+        /// Makes a randomized JSON file name
+        /// </summary>
+        public static void MakeRandomJsonFile() =>
+            MakeJsonFile(Getting.GetRandomFileName());
 
     }
 }

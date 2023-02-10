@@ -43,6 +43,7 @@ using KS.ConsoleBase.Colors;
 using Extensification.LongExts;
 using KS.Misc.Text;
 using KS.Kernel.Events;
+using KS.Files;
 
 namespace KS.Drivers.Filesystem
 {
@@ -653,6 +654,14 @@ namespace KS.Drivers.Filesystem
         /// <inheritdoc/>
         public virtual List<string> GetPathList() =>
             Shell.Shell.PathsToLookup.Split(Convert.ToChar(Shell.Shell.PathLookupDelimiter)).ToList();
+
+        /// <inheritdoc/>
+        public string GetRandomFileName() =>
+            FS.NeutralizePath(Path.GetRandomFileName(), Paths.TempPath);
+
+        /// <inheritdoc/>
+        public string GetRandomFolderName() =>
+            FS.NeutralizePath(Path.GetRandomFileName() + "/", Paths.TempPath);
 
         /// <inheritdoc/>
         public virtual bool IsBinaryFile(string Path)
