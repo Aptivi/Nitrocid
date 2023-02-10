@@ -452,11 +452,11 @@ namespace KS.ConsoleBase.Colors
 
                     // The color selection
                     TextWriterColor.Write(CharManager.NewLine + "   < ", false, KernelColorType.NeutralText);
-                    TextWriterWhereColor.WriteWhere($"{CurrentColor} [{Convert.ToInt32((int)CurrentColor)}]", (int)Math.Round((ConsoleWrapper.CursorLeft + 38 - $"{CurrentColor} [{Convert.ToInt32((int)CurrentColor)}]".Length) / 2d), ConsoleWrapper.CursorTop, true, new Color((int)CurrentColor));
+                    TextWriterWhereColor.WriteWhere($"{CurrentColor} [{Convert.ToInt32((int)CurrentColor)}]", (int)Math.Round((ConsoleWrapper.CursorLeft + 38 - $"{CurrentColor} [{Convert.ToInt32((int)CurrentColor)}]".Length) / 2d), ConsoleWrapper.CursorTop, true, new Color(CurrentColor));
                     TextWriterWhereColor.WriteWhere(" >", ConsoleWrapper.CursorLeft + 32, ConsoleWrapper.CursorTop, KernelColorType.NeutralText);
 
                     // Show prompt
-                    var PreviewColor = new Color((int)CurrentColor);
+                    var PreviewColor = new Color(CurrentColor);
                     TextWriterColor.Write(CharManager.NewLine + CharManager.NewLine + "- Lorem ipsum dolor sit amet, consectetur adipiscing elit. ({0})", true, PreviewColor, PreviewColor.Hex);
 
                     // Read and get response

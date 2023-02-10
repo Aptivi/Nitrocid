@@ -34,7 +34,7 @@ namespace KS.Misc.Screensaver.Displays
 
         private static bool _TrueColor = true;
         private static int _Delay = 1;
-        private static string _BackgroundColor = new Color((int)ConsoleColor.Red).PlainSequence;
+        private static string _BackgroundColor = new Color(ConsoleColors.Red).PlainSequence;
         private static int _MinimumRedColorLevel = 0;
         private static int _MinimumGreenColorLevel = 0;
         private static int _MinimumBlueColorLevel = 0;

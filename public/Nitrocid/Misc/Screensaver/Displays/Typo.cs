@@ -40,7 +40,7 @@ namespace KS.Misc.Screensaver.Displays
         private static int _WritingSpeedMax = 80;
         private static int _MissStrikePossibility = 20;
         private static int _MissPossibility = 10;
-        private static string _TextColor = new Color((int)ConsoleColor.White).PlainSequence;
+        private static string _TextColor = new Color(ConsoleColors.White).PlainSequence;
 
         /// <summary>
         /// [Typo] How many milliseconds to wait before making the next write?

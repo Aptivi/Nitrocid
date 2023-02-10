@@ -38,7 +38,7 @@ namespace KS.Misc.Screensaver.Displays
         private static int _Delay = 100;
         private static string _Write = "Nitrocid KS";
         private static int _NewScreenDelay = 3000;
-        private static string _TextColor = new Color((int)ConsoleColor.White).PlainSequence;
+        private static string _TextColor = new Color(ConsoleColors.White).PlainSequence;
 
         /// <summary>
         /// [SpotWrite] How many milliseconds to wait before making the next write?

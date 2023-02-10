@@ -48,7 +48,7 @@ namespace KS.Misc.Screensaver.Displays
         private static int _EtaoinCappingPossibility = 5;
         private static FillType _EtaoinType = FillType.EtaoinPattern;
         private static int _MissPossibility = 10;
-        private static string _TextColor = new Color((int)ConsoleColor.White).PlainSequence;
+        private static string _TextColor = new Color(ConsoleColors.White).PlainSequence;
 
         /// <summary>
         /// [Linotypo] How many milliseconds to wait before making the next write?

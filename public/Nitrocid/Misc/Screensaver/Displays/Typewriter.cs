@@ -42,7 +42,7 @@ namespace KS.Misc.Screensaver.Displays
         private static int _WritingSpeedMin = 50;
         private static int _WritingSpeedMax = 80;
         private static bool _ShowArrowPos = true;
-        private static string _TextColor = new Color((int)ConsoleColor.White).PlainSequence;
+        private static string _TextColor = new Color(ConsoleColors.White).PlainSequence;
 
         /// <summary>
         /// [Typewriter] How many milliseconds to wait before making the next write?

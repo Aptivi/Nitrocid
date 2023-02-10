@@ -45,7 +45,7 @@ namespace KS.Misc.Splash.Splashes
         {
             FaderDelay = 50,
             FaderWrite = "Nitrocid KS",
-            FaderBackgroundColor = new Color((int)ConsoleColor.Black).PlainSequence,
+            FaderBackgroundColor = new Color(ConsoleColors.Black).PlainSequence,
             FaderFadeOutDelay = 3000,
             FaderMaxSteps = 30,
             FaderMinimumRedColorLevel = 0,

@@ -33,8 +33,8 @@ namespace KS.Misc.Screensaver.Displays
     {
 
         private static int _Delay = 1;
-        private static string _BackgroundColor = new Color((int)ConsoleColor.Black).PlainSequence;
-        private static string _ForegroundColor = new Color((int)ConsoleColor.Green).PlainSequence;
+        private static string _BackgroundColor = new Color(ConsoleColors.Black).PlainSequence;
+        private static string _ForegroundColor = new Color(ConsoleColors.Green).PlainSequence;
 
         /// <summary>
         /// [GlitterMatrix] How many milliseconds to wait before making the next write?

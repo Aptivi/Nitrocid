@@ -31,7 +31,7 @@ namespace KS.Misc.Animations.Fader
         private int _faderFadeOutDelay = 3000;
         private string _faderWrite = "Nitrocid KS";
         private int _faderMaxSteps = 25;
-        private string _faderBackgroundColor = new Color((int)ConsoleColor.Black).PlainSequence;
+        private string _faderBackgroundColor = new Color(ConsoleColors.Black).PlainSequence;
         private int _faderMinimumRedColorLevel = 0;
         private int _faderMinimumGreenColorLevel = 0;
         private int _faderMinimumBlueColorLevel = 0;

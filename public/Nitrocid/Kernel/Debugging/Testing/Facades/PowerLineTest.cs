@@ -33,13 +33,13 @@ namespace KS.Kernel.Debugging.Testing.Facades
             char PadlockChar = Convert.ToChar(0xE0A2);
             char GitBranchChar = Convert.ToChar(0xE0A0);
             TextWriterColor.Write(Translate.DoTranslation("Be sure to use a console font supporting PowerLine glyphs, or the output may not render properly. We recommend") + " Cascadia Code/Mono PL", true, KernelColorType.Warning);
-            TextWriterColor.Write(" One ", false, new Color((int)ConsoleColor.Black), new Color(85, 255, 255));
+            TextWriterColor.Write(" One ", false, new Color(ConsoleColors.Black), new Color(85, 255, 255));
             TextWriterColor.Write(Convert.ToString(TransitionChar), false, new Color(85, 255, 255), new Color(255, 85, 255));
-            TextWriterColor.Write(" Two ", false, new Color((int)ConsoleColor.Black), new Color(255, 85, 255));
+            TextWriterColor.Write(" Two ", false, new Color(ConsoleColors.Black), new Color(255, 85, 255));
             TextWriterColor.Write(Convert.ToString(TransitionChar), false, new Color(255, 85, 255), new Color(255, 255, 85));
-            TextWriterColor.Write($" {PadlockChar} Secure ", false, new Color((int)ConsoleColor.Black), new Color(255, 255, 85));
+            TextWriterColor.Write($" {PadlockChar} Secure ", false, new Color(ConsoleColors.Black), new Color(255, 255, 85));
             TextWriterColor.Write(Convert.ToString(TransitionChar), false, new Color(255, 255, 85), new Color(255, 255, 255));
-            TextWriterColor.Write($" {GitBranchChar} master ", false, new Color((int)ConsoleColor.Black), new Color(255, 255, 255));
+            TextWriterColor.Write($" {GitBranchChar} master ", false, new Color(ConsoleColors.Black), new Color(255, 255, 255));
             TextWriterColor.Write(Convert.ToString(TransitionChar), true, new Color(255, 255, 255));
         }
     }
