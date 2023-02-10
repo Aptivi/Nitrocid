@@ -194,7 +194,7 @@ namespace KS.ConsoleBase.Colors
             }
             else
             {
-                return new Color((int)ConsoleColors.Gray);
+                return new Color(ConsoleColors.Gray);
             }
         }
 
