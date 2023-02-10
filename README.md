@@ -84,58 +84,11 @@
     
 </div>
 
-## Credits
-
-<br>
-
-**Aptivi**  -  *Owner of Nitrocid KS*
-
-**OpenWeatherMap**  -  *Weather API*
-
-**jonasjacek**  -  *[Console color data]*
-
-**dwyl**  -  *[Word list]*
-
-**ayu-theme**  -  *Ayu Theme*
-
-**Ethan Schoonover**  -  *Solarized Theme*
-
-**Fabian Neuschmidt**  -  *[Breezy Theme]*
-
-**TechRepublic**  -  Articles RSS Feed Url
-
-**Aptivi**  -  *[NamesList]*
-
-**smashew**  -  *[Name Databases]*
-
-**yavuz**  -  *[RSS Feed]*
-
-**VIM Theme Makers**
-
-- *[SpaceCamp]*
-- *[Papercolor]*
-- *[Melange]*
-- *[Darcula]*
-
-**And all contributors who helped us form Nitrocid KS**
-
-<br>
-
 
 <!----------------------------------------------------------------------------->
 
-[Console color data]: https://jonasjacek.github.io/colors/
-[Name Databases]: https://github.com/smashew/NameDatabases
-[Breezy Theme]: https://github.com/fneu/breezy
-[Papercolor]: https://github.com/NLKNguyen/papercolor-theme
 [Chocolatey]: https://chocolatey.org/packages/KS/
-[Word list]: https://github.com/dwyl/english-words
-[SpaceCamp]: https://github.com/jaredgorski/SpaceCamp
-[NamesList]: https://github.com/Aptivi/NamesList
-[RSS Feed]: https://github.com/yavuz/news-feed-list-of-countries/
 [Releases]: https://github.com/Aptivi/NitrocidKS/releases
-[Darcula]: https://github.com/doums/darcula
-[Melange]: https://github.com/savq/melange
 [Latest]: https://github.com/Aptivi/NitrocidKS/releases/latest
 [NuGet]: https://www.nuget.org/packages/KS/
 
@@ -144,7 +97,7 @@
 [Servicing Linux]: https://github.com/Aptivi/NitrocidKS/actions/workflows/build-linux.yml
 [Master Linux]: https://github.com/Aptivi/NitrocidKS/actions/workflows/build-linux.yml
 
-[Libraries]: Documentation/Libraries.md
+[Libraries]: https://aptivi.gitbook.io/kernel-simulator-manual/project-dependencies
 [Building]: https://aptivi.gitbook.io/kernel-simulator-manual/advanced-and-power-users/building-the-kernel
 [Install]: https://aptivi.gitbook.io/kernel-simulator-manual/installation-and-maintenance/installing-the-kernel
 [Manual]: https://aptivi.gitbook.io/kernel-simulator-manual/
