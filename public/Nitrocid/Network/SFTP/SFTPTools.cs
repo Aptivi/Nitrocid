@@ -21,7 +21,7 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Probers;
+using KS.Misc.Probers.Placeholder;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.SpeedDial;
 using KS.Shell.Shells.SFTP;

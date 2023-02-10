@@ -28,7 +28,7 @@ using KS.Files;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Notifications;
-using KS.Misc.Probers;
+using KS.Misc.Probers.Placeholder;
 using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Network.Base.Transfer

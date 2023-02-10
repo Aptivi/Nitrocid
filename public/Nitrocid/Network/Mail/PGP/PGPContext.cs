@@ -19,7 +19,7 @@
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.Languages;
-using KS.Misc.Probers;
+using KS.Misc.Probers.Placeholder;
 using KS.Misc.Writers.ConsoleWriters;
 using MimeKit.Cryptography;
 using Org.BouncyCastle.Bcpg.OpenPgp;

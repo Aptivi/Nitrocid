@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Misc.Probers;
+using KS.Misc.Probers.Placeholder;
 using NUnit.Framework;
 using Shouldly;
 using System.Collections.Generic;

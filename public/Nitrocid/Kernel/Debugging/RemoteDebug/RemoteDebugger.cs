@@ -25,12 +25,12 @@ using System.Threading;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Misc.Notifications;
-using KS.Misc.Probers;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.TimeDate;
 using KS.Kernel.Events;
 using KS.Kernel.Debugging.RemoteDebug.Command;
+using KS.Misc.Probers.Placeholder;
 
 namespace KS.Kernel.Debugging.RemoteDebug
 {

@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Languages;
-using KS.Misc.Probers;
+using KS.Misc.Probers.Placeholder;
 using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Kernel.Debugging.Testing.Facades

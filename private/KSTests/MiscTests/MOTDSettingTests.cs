@@ -18,8 +18,8 @@
 
 using System.IO;
 using KS.Files;
-using KS.Misc.Probers;
 using KS.Misc.Probers.Motd;
+using KS.Misc.Probers.Placeholder;
 using NUnit.Framework;
 using Shouldly;
 

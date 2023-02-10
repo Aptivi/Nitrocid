@@ -20,7 +20,7 @@ using System;
 using FluentFTP.Helpers;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
-using KS.Misc.Probers;
+using KS.Misc.Probers.Placeholder;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.Shells.Mail;

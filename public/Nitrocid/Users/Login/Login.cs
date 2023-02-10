@@ -24,7 +24,6 @@ using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Misc.Probers;
 using KS.Misc.Probers.Motd;
 using KS.Misc.Screensaver;
 using KS.Misc.Text;
@@ -34,6 +33,7 @@ using KS.Shell.ShellBase.Shells;
 using KS.Kernel.Events;
 using KS.Misc.Writers.MiscWriters;
 using System;
+using KS.Misc.Probers.Placeholder;
 
 namespace KS.Users.Login
 {

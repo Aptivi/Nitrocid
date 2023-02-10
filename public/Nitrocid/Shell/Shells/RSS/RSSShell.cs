@@ -23,7 +23,7 @@ using KS.ConsoleBase.Inputs;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Probers;
+using KS.Misc.Probers.Placeholder;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.RSS;
