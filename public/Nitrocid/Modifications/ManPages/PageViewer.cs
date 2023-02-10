@@ -65,13 +65,12 @@ namespace KS.Modifications.ManPages
                 // Prepare the presentation for the manual page
                 var manPres = new Presentation
                 (
-                    $" {man.Title} [v{man.Revision}] ",
+                    man.Name,
                     new List<PresentationPage>()
                     {
                         new PresentationPage
                         (
-                            // Kept blank because manual pages don't currently natively support page names
-                            "",
+                            $"{man.Title} [v{man.Revision}]",
                             new List<IElement>()
                             {
                                 new TextElement()

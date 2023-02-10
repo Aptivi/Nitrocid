@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace KS.Modifications.ManPages
@@ -27,6 +28,10 @@ namespace KS.Modifications.ManPages
     public class Manual
     {
 
+        /// <summary>
+        /// Manual page file name
+        /// </summary>
+        public string Name { get; private set; }
         /// <summary>
         /// The manual page title
         /// </summary>
@@ -64,6 +69,7 @@ namespace KS.Modifications.ManPages
                 this.Revision = Revision;
                 this.Body = Body;
                 this.Todos = Todos;
+                Name = Path.GetFileName(ManualFileName);
             }
         }
 
