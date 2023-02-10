@@ -28,6 +28,7 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text;
+using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.ConsoleBase.Colors
 {
@@ -247,18 +248,18 @@ namespace KS.ConsoleBase.Colors
             {
                 if ((Flags.SetBackground | ForceSet) && cachedBackgroundColor != ColorSequence.VTSequenceBackground)
                 {
-                    DriverHandler.CurrentConsoleDriver.WritePlain(ColorSequence.VTSequenceBackground, false);
+                    TextWriterColor.WritePlain(ColorSequence.VTSequenceBackground, false);
                     cachedBackgroundColor = ColorSequence.VTSequenceBackground;
                 }
                 else if (!Flags.SetBackground && cachedBackgroundColor != resetSequence)
                 {
-                    DriverHandler.CurrentConsoleDriver.WritePlain(resetSequence, false);
+                    TextWriterColor.WritePlain(resetSequence, false);
                     cachedBackgroundColor = resetSequence;
                 }
             }
             else if (cachedForegroundColor != ColorSequence.VTSequenceForeground)
             {
-                DriverHandler.CurrentConsoleDriver.WritePlain(ColorSequence.VTSequenceForeground, false);
+                TextWriterColor.WritePlain(ColorSequence.VTSequenceForeground, false);
                 cachedForegroundColor = ColorSequence.VTSequenceForeground;
             }
         }

@@ -76,7 +76,7 @@ namespace KS.ConsoleBase
             if (!IsConsole256Colors())
             {
                 ConsoleWrapper.ForegroundColor = ConsoleColor.Yellow;
-                DriverHandler.CurrentConsoleDriver.WritePlain("Warning: Nitrocid KS makes use of the 256 colors. Make sure that your terminal is set to run on 256 color mode. Your terminal is {0}. Press any key to continue.", true, TerminalType);
+                TextWriterColor.WritePlain("Warning: Nitrocid KS makes use of the 256 colors. Make sure that your terminal is set to run on 256 color mode. Your terminal is {0}. Press any key to continue.", true, TerminalType);
                 Input.DetectKeypress();
             }
         }

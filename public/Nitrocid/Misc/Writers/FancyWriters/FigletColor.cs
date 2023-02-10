@@ -26,6 +26,7 @@ using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Writers.FancyWriters.Tools;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
+using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Misc.Writers.FancyWriters
 {
@@ -46,7 +47,7 @@ namespace KS.Misc.Writers.FancyWriters
             try
             {
                 Text = FigletTools.RenderFiglet(Text, FigletFont, Vars);
-                DriverHandler.CurrentConsoleDriver.WritePlain(Text, true, Vars);
+                TextWriterColor.WritePlain(Text, true, Vars);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {

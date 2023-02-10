@@ -94,7 +94,7 @@ namespace KS.Kernel
             // We no longer support macOS
             if (KernelPlatform.IsOnMacOS())
             {
-                DriverHandler.CurrentConsoleDriver.WritePlain("We apologize for your inconvenience, but we have ended support for running Nitrocid Kernel on macOS. Until further notice, Nitrocid Kernel can't continue.", true);
+                TextWriterColor.WritePlain("We apologize for your inconvenience, but we have ended support for running Nitrocid Kernel on macOS. Until further notice, Nitrocid Kernel can't continue.", true);
                 Environment.Exit(100);
             }
 

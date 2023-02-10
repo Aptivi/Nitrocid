@@ -20,6 +20,7 @@ using ColorSeq;
 using KS.Drivers.RNG;
 using KS.Drivers;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
+using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Misc.Animations.BSOD.Simulations
 {
@@ -31,23 +32,23 @@ namespace KS.Misc.Animations.BSOD.Simulations
             ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // Display technical information
-            DriverHandler.CurrentConsoleDriver.WritePlain($"\n*** STOP: 0x0000007B (0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8})\n", true);
+            TextWriterColor.WritePlain($"\n*** STOP: 0x0000007B (0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8})\n", true);
 
             // If this is the first time...
-            DriverHandler.CurrentConsoleDriver.WritePlain("If this is the first time you've seen this Stop error screen,\n" +
-                                                          "restart your computer. If this screen appears again, follow\n" +
-                                                          "these steps:\n", true);
+            TextWriterColor.WritePlain("If this is the first time you've seen this Stop error screen,\n" +
+                                       "restart your computer. If this screen appears again, follow\n" +
+                                       "these steps:\n", true);
 
             // Display some steps
-            DriverHandler.CurrentConsoleDriver.WritePlain("Check for viruses on your computer. Remove any newly installed.\n" +
-                                                          "hard drives or hard drive controllers. Check your hard drive\n" +
-                                                          "to make sure it is properly configured and terminated.\n" +
-                                                          "Run CHKDSK /F to check for hard drive corruption, and then\n" +
-                                                          "restart your computer.\n", true);
+            TextWriterColor.WritePlain("Check for viruses on your computer. Remove any newly installed.\n" +
+                                       "hard drives or hard drive controllers. Check your hard drive\n" +
+                                       "to make sure it is properly configured and terminated.\n" +
+                                       "Run CHKDSK /F to check for hard drive corruption, and then\n" +
+                                       "restart your computer.\n", true);
 
             // Getting Started manual reference
-            DriverHandler.CurrentConsoleDriver.WritePlain("Refer to your Getting Started manual for more information on\n" +
-                                                          "troubleshooting Stop errors.", true);
+            TextWriterColor.WritePlain("Refer to your Getting Started manual for more information on\n" +
+                                       "troubleshooting Stop errors.", true);
         }
     }
 }

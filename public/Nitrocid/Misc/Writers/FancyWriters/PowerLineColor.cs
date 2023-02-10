@@ -26,6 +26,7 @@ using KS.Languages;
 using KS.Misc.Writers.FancyWriters.Tools;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using System.Collections.Generic;
+using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Misc.Writers.FancyWriters
 {
@@ -72,7 +73,7 @@ namespace KS.Misc.Writers.FancyWriters
             try
             {
                 string Text = PowerLineTools.RenderSegments(Segments, EndingColor);
-                DriverHandler.CurrentConsoleDriver.WritePlain(Text, Line);
+                TextWriterColor.WritePlain(Text, Line);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {

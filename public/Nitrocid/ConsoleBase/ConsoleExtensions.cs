@@ -21,6 +21,7 @@ using System.Runtime.InteropServices;
 using KS.Drivers;
 using KS.Misc.Reflection;
 using KS.Misc.Text;
+using KS.Misc.Writers.ConsoleWriters;
 using VT.NET;
 
 namespace KS.ConsoleBase
@@ -135,7 +136,7 @@ namespace KS.ConsoleBase
             char EscapeChar = Convert.ToChar(27);
             string Sequence = $"{EscapeChar}]0;{Text}{BellChar}";
             Console.Title = Text;
-            DriverHandler.CurrentConsoleDriver.WritePlain(Sequence, false);
+            TextWriterColor.WritePlain(Sequence, false);
         }
 
         #region Windows-specific
