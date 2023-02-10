@@ -164,12 +164,11 @@ namespace KS.Kernel
                             // Page elements
                             new List<IElement>()
                             {
-                                new TextElement()
+                                new DynamicTextElement()
                                 {
                                     Arguments = new object[]
                                     {
-                                        Translate.DoTranslation("Congratulations! You now have a user account, {0}!") + "\n",
-                                        user
+                                        () => string.Format(Translate.DoTranslation("Congratulations! You now have a user account, {0}!"), user) + "\n"
                                     }
                                 },
                                 new TextElement()
