@@ -116,7 +116,6 @@ namespace KS.ConsoleBase.Themes
             { "Purlow", new ThemeInfo("Purlow") },
             { "Quantum", new ThemeInfo("Quantum") },
             { "Red Breeze", new ThemeInfo("Red_Breeze") },
-            { "RecentDisaster", new ThemeInfo("RecentDisaster") },
             { "RedConsole", new ThemeInfo("RedConsole") },
             { "Reddish", new ThemeInfo("Reddish") },
             { "RetroWindows", new ThemeInfo("RetroWindows") },

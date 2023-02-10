@@ -2273,31 +2273,6 @@ namespace Properties.Resources {
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Mourning the death of Mahsa Amini&quot;,
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;#EEEEEE&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;#00EE00&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;#EE0000&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;#EE0000&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;#EEEEEE&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;#00EE00&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;#006600&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;#EEEEEE&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;#00EE00&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;#EEEEEE&quot;,
-        ///    &quot;StageColor&quot;: &quot;#00EE00&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;#EE0000&quot;,
-        ///    &quot;Warn [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string RecentDisaster {
-            get {
-                return ResourceManager.GetString("RecentDisaster", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Red Breeze&quot;,
         ///    },
         ///    &quot;InputColor&quot;: &quot;197;201;54&quot;,
