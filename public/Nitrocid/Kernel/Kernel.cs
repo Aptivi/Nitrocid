@@ -249,7 +249,7 @@ namespace KS.Kernel
                     }
 
                     // If this is the first time, run the first run presentation
-                    KernelTools.FirstRun();
+                    KernelFirstRun.FirstRun();
 
                     // Show development disclaimer
                     KernelTools.ShowDevelopmentDisclaimer();

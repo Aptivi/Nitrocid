@@ -310,40 +310,6 @@ namespace KS.Kernel
 #endif
         }
 
-        internal static void FirstRun()
-        {
-            if (Flags.FirstTime)
-            {
-                Flags.FirstTime = false;
-                TextWriterColor.Write();
-                TextWriterColor.Write(Translate.DoTranslation("Welcome to Nitrocid Kernel! Since this is the first time you start Nitrocid Kernel up, we'll initiate a simple console testing to determine whether it supports true color. Press any key to continue."));
-                Input.DetectKeypress();
-                ConsoleWrapper.Clear();
-
-                // Show three color bands
-                int times = ConsoleWrapper.WindowWidth;
-                double threshold = 255 / (double)times;
-                for (double i = 0; i < 255; i += threshold)
-                    TextWriterColor.Write(" ", false, Color.Empty, new Color(Convert.ToInt32(i), 0, 0));
-                for (double i = 0; i < 255; i += threshold)
-                    TextWriterColor.Write(" ", false, Color.Empty, new Color(0, Convert.ToInt32(i), 0));
-                for (double i = 0; i < 255; i += threshold)
-                    TextWriterColor.Write(" ", false, Color.Empty, new Color(0, 0, Convert.ToInt32(i)));
-                TextWriterColor.Write();
-                Flags.ConsoleSupportsTrueColor = ChoiceStyle.PromptChoice(Translate.DoTranslation("Do these ramps look right to you? They should transition smoothly."), "y/n") == "y";
-                ConsoleWrapper.Clear();
-
-                // Select a language
-                var langCodes = InputChoiceTools.GetInputChoices(string.Join("/", LanguageManager.Languages.Keys), LanguageManager.Languages.Values.Select((lang) => lang.FullLanguageName).ToArray());
-                int langIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Choose your language"), langCodes) - 1;
-                string lang = LanguageManager.Languages.Keys.ElementAt(langIndex);
-                LanguageManager.SetLang(lang);
-
-                // Run the presentation
-                KernelFirstRun.PresentFirstRun();
-            }
-        }
-
         internal static void ShowDevelopmentDisclaimer()
         {
             // Show development disclaimer
