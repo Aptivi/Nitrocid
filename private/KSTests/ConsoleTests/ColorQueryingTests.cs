@@ -79,6 +79,31 @@ namespace KSTests.ConsoleTests
         }
 
         /// <summary>
+        /// Tests trying to parse the color from RGB
+        /// </summary>
+        [TestCase("4;4;4", ExpectedResult = true)]
+        [TestCase("400;4;4", ExpectedResult = false)]
+        [TestCase("4;400;4", ExpectedResult = false)]
+        [TestCase("4;4;400", ExpectedResult = false)]
+        [TestCase("4;400;400", ExpectedResult = false)]
+        [TestCase("400;4;400", ExpectedResult = false)]
+        [TestCase("400;400;4", ExpectedResult = false)]
+        [TestCase("400;400;400", ExpectedResult = false)]
+        [TestCase("-4;4;4", ExpectedResult = false)]
+        [TestCase("4;-4;4", ExpectedResult = false)]
+        [TestCase("4;4;-4", ExpectedResult = false)]
+        [TestCase("4;-4;-4", ExpectedResult = false)]
+        [TestCase("-4;4;-4", ExpectedResult = false)]
+        [TestCase("-4;-4;4", ExpectedResult = false)]
+        [TestCase("-4;-4;-4", ExpectedResult = false)]
+        [Description("Querying")]
+        public bool TestTryParseColorFromSpecifier(string specifier)
+        {
+            Debug.WriteLine($"Trying rgb specifier {specifier}...");
+            return ColorTools.TryParseColor(specifier);
+        }
+
+        /// <summary>
         /// Tests trying to convert from hex to RGB
         /// </summary>
         [Test]
