@@ -124,6 +124,7 @@ namespace KS.Users.Login
                         int consoleInfoX = (ConsoleWrapper.WindowWidth / 2) - (dateStr.Length / 2);
                         int consoleInfoY = (ConsoleWrapper.WindowHeight / 2) + figHeight + 2;
                         TextWriterWhereColor.WriteWhere(dateStr, consoleInfoX, consoleInfoY);
+                        ColorTools.SetConsoleColor(KernelColorType.NeutralText);
 
                         // Print the date using the alternative calendar, if any
                         if (CalendarTools.EnableAltCalendar)
