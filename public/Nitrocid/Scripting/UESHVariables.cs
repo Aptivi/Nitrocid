@@ -75,7 +75,8 @@ namespace KS.Scripting
         {
             var CommandArgumentsInfo = new ProvidedCommandArgumentsInfo(cmd, ShellType.Shell);
             string NewCommand = $"{CommandArgumentsInfo.Command} ";
-            if (!Shell.Shell.GetShellInfo(ShellType.Shell).Commands[CommandArgumentsInfo.Command].Flags.HasFlag(CommandFlags.SettingVariable))
+            if (!CommandManager.IsCommandFound(CommandArgumentsInfo.Command) ||
+                !Shell.Shell.GetShellInfo(ShellType.Shell).Commands[CommandArgumentsInfo.Command].Flags.HasFlag(CommandFlags.SettingVariable))
             {
                 foreach (string Word in CommandArgumentsInfo.ArgumentsList)
                 {

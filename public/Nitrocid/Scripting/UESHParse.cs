@@ -25,6 +25,8 @@ using KS.Kernel.Events;
 using KS.Scripting.Conditions;
 using System.Linq;
 using KS.Files.Read;
+using System.Collections.Generic;
+using FluentFTP.Helpers;
 
 namespace KS.Scripting
 {
@@ -67,9 +69,11 @@ namespace KS.Scripting
                 }
 
                 // Get all lines and parse comments, commands, and arguments
-                string[] commandBlocks = new string[] { "if" };
+                string[] commandBlocks = new string[] { "if", "while", "until" };
                 int commandStackNum = 0;
                 bool newCommandStackRequired = false;
+                bool retryLoopCondition = false;
+                List<(int, int)> whilePlaces = new();
                 for (int l = 0; l < FileLines.Length; l++)
                 {
                     // Get line
@@ -92,7 +96,17 @@ namespace KS.Scripting
                     else if (!Line.StartsWith(stackIndicator) && newCommandStackRequired)
                         throw new KernelException(KernelExceptionType.UESHScript, Translate.DoTranslation("When starting a new block, make sure that you've indented the stack correctly. The stack number is {0}.") + " {1}:{2}", commandStackNum, ScriptPath, LineNo);
                     else
-                        commandStackNum = 0;
+                    {
+                        if (retryLoopCondition)
+                        {
+                            (int, int) whilePlace = whilePlaces[whilePlaces.Count - 1];
+                            commandStackNum = whilePlace.Item2;
+                            l = whilePlace.Item1;
+                            Line = FileLines[l][commandStackNum..];
+                        }
+                        else
+                            commandStackNum = 0;
+                    }
 
                     // See if the line contains variable, and replace every instance of it with its value
                     var SplitWords = Line.SplitEncloseDoubleQuotes(" ");
@@ -122,7 +136,7 @@ namespace KS.Scripting
                     if (SplitWords is not null)
                     {
                         string Command = SplitWords[0];
-                        string Arguments = Line.TrimStart($"{Command} ".ToCharArray());
+                        string Arguments = Line.RemovePrefix($"{Command} ");
                         bool isBlock = commandBlocks.Contains(Command);
                         if (isBlock)
                         {
@@ -130,7 +144,20 @@ namespace KS.Scripting
                             switch (Command)
                             {
                                 case "if":
+                                case "while":
                                     satisfied = UESHConditional.ConditionSatisfied(Arguments);
+                                    if (Command == "while")
+                                    {
+                                        if (!whilePlaces.Contains((l, commandStackNum)))
+                                            whilePlaces.Add((l, commandStackNum));
+                                        retryLoopCondition = true;
+                                    }
+                                    break;
+                                case "until":
+                                    satisfied = !UESHConditional.ConditionSatisfied(Arguments);
+                                    if (!whilePlaces.Contains((l, commandStackNum)))
+                                        whilePlaces.Add((l, commandStackNum));
+                                    retryLoopCondition = true;
                                     break;
                             }
                             if (satisfied)
@@ -149,9 +176,20 @@ namespace KS.Scripting
                                     Line = FileLines[l];
                                     string blockStackIndicator = new('|', commandStackNum + 1);
                                     if (!Line.StartsWith(blockStackIndicator))
+                                    {
+                                        int newStackNum = 0;
+                                        int charNum = 0;
+                                        while (Line[charNum] == '|')
+                                        {
+                                            newStackNum++;
+                                            charNum++;
+                                        }
+                                        commandStackNum = newStackNum;
                                         break;
+                                    }
                                 }
-                                Line = Line.TrimStart('|');
+                                Line = Line[commandStackNum..];
+                                retryLoopCondition = false;
                             }
                         }
                     }
