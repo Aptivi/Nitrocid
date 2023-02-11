@@ -118,6 +118,7 @@ namespace KS.Users.Login
                         int consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidth;
                         int consoleY = (ConsoleWrapper.WindowHeight / 2) - figHeight;
                         FigletWhereColor.WriteFigletWhere(timeStr, consoleX, consoleY, true, figFont, KernelColorType.Stage);
+                        ColorTools.SetConsoleColor(KernelColorType.NeutralText);
 
                         // Print the date
                         string dateStr = TimeDateRenderers.RenderDate();
