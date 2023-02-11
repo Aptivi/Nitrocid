@@ -136,7 +136,7 @@ namespace KS.Misc.Games
             }
         }
 
-        // TODO: Remove this once Wordle gets updated with this new condition
+        // TODO: Remove this once Wordament gets updated with this new condition
         private static string GetRandomWordFiveLetters()
         {
             string RandomWord = "";
