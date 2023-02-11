@@ -16,8 +16,10 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Network.RSS;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
+using System.Linq;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -32,14 +34,12 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            if (!(ListArgsOnly.Length == 0))
-            {
+            if (ListArgsOnly.Length > 0)
                 ShellStart.StartShell(ShellType.RSSShell, ListArgsOnly[0]);
-            }
-            else
-            {
+            else if (ListSwitchesOnly.Length > 0 && ListSwitchesOnly.Contains("-m"))
                 ShellStart.StartShell(ShellType.RSSShell);
-            }
+            else
+                ShellStart.StartShell(ShellType.RSSShell, RSSTools.RssHeadlineUrl);
         }
 
     }
