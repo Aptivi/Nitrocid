@@ -32,58 +32,22 @@ namespace KS.Misc.Games
     internal class Wordle
     {
 
-        public static void InitializeWordle()
+        public static void InitializeWordle(bool orig = false)
         {
-            string RandomWord = WordManager.GetRandomWordConditional(8, "", "");
+            string RandomWord = orig ? GetRandomWordFiveLetters() : WordManager.GetRandomWordConditional(8, "", "");
             bool done = false;
             int currentGuessTry = 1;
             int currentGuessChar = 1;
-            int maxGuesses = 8;
+            int maxGuesses = orig ? 5 : 8;
             char[,] currentTries = new char[maxGuesses, RandomWord.Length];
-            var boxColorNeutral = new Color(ConsoleColors.Gray);
-            var boxColorRightChar = new Color(ConsoleColors.Green);
-            var boxColorMatchingChar = new Color(ConsoleColors.DarkOrange);
 
             while (!done)
             {
                 ConsoleWrapper.CursorVisible = false;
                 ConsoleWrapper.Clear();
 
-                // Make 1x1 boxes according to the maximum guesses and the current word length and put their character positions
-                // to the store
-                for (int g = 1; g <= maxGuesses; g++)
-                {
-                    bool isWrongAttempt = false;
-                    for (int l = 1; l <= RandomWord.Length; l++)
-                    {
-                        var finalColor = boxColorNeutral;
-                        char currChar = currentTries[g - 1, l - 1];
-
-                        // If the character in the current guess matches the character in the random word, judge whether this guess
-                        // is a wrong attempt and set the colors as necessary.
-                        if (currentTries[g - 1, l - 1] == RandomWord[l - 1])
-                        {
-                            if (isWrongAttempt)
-                                finalColor = boxColorMatchingChar;
-                            else
-                                finalColor = boxColorRightChar;
-                        }
-                        else
-                            // User put a wrong character in the current guess.
-                            isWrongAttempt = true;
-
-                        // Render the 1x1 box
-                        int marginX = 2;
-                        int marginY = 1;
-                        int boxExteriorLength = 3;
-                        int currentX = marginX + ((boxExteriorLength + 2) * (l - 1));
-                        int currentY = marginY + (boxExteriorLength * (g - 1));
-                        BorderColor.WriteBorder(currentX, currentY, 3, 1, finalColor);
-
-                        // Render a character inside it
-                        TextWriterWhereColor.WriteWhere(currChar.ToString(), currentX + 2, currentY + 1);
-                    }
-                }
+                // Make 1x1 boxes
+                RenderBoxes(RandomWord, maxGuesses, currentTries);
 
                 // Let the user decide the character
                 var pressedChar = Input.DetectKeypress();
@@ -106,7 +70,8 @@ namespace KS.Misc.Games
                                 chars.Add(currentTries[currentGuessTry - 1, i]);
                             if (string.Join("", chars) == RandomWord)
                             {
-                                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("You guessed the right word! You win!") + " \"{0}\"", 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Green, RandomWord);
+                                RenderBoxes(RandomWord, maxGuesses, currentTries);
+                                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("You guessed the right word! You win!"), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Green);
                                 Thread.Sleep(3000);
                                 done = true;
                                 break;
@@ -114,6 +79,7 @@ namespace KS.Misc.Games
                             currentGuessTry++;
                             if (currentGuessTry > maxGuesses)
                             {
+                                RenderBoxes(RandomWord, maxGuesses, currentTries);
                                 TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Game over"), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red);
                                 Thread.Sleep(3000);
                                 done = true;
@@ -126,5 +92,59 @@ namespace KS.Misc.Games
             // Clean up
             ConsoleWrapper.Clear();
         }
+
+        private static void RenderBoxes(string RandomWord, int maxGuesses, char[,] currentTries)
+        {
+            var boxColorNeutral = new Color(ConsoleColors.Gray);
+            var boxColorRightChar = new Color(ConsoleColors.Green);
+            var boxColorMatchingChar = new Color(ConsoleColors.DarkOrange);
+
+            // Make 1x1 boxes according to the maximum guesses and the current word length and put their character positions
+            // to the store
+            for (int g = 1; g <= maxGuesses; g++)
+            {
+                bool isWrongAttempt = false;
+                for (int l = 1; l <= RandomWord.Length; l++)
+                {
+                    var finalColor = boxColorNeutral;
+                    char currChar = currentTries[g - 1, l - 1];
+
+                    // If the character in the current guess matches the character in the random word, judge whether this guess
+                    // is a wrong attempt and set the colors as necessary.
+                    if (currentTries[g - 1, l - 1] == RandomWord[l - 1])
+                    {
+                        if (isWrongAttempt)
+                            finalColor = boxColorMatchingChar;
+                        else
+                            finalColor = boxColorRightChar;
+                    }
+                    else
+                        // User put a wrong character in the current guess.
+                        isWrongAttempt = true;
+
+                    // Render the 1x1 box
+                    int marginX = 2;
+                    int marginY = 1;
+                    int boxExteriorLength = 3;
+                    int currentX = marginX + ((boxExteriorLength + 2) * (l - 1));
+                    int currentY = marginY + (boxExteriorLength * (g - 1));
+                    BorderColor.WriteBorder(currentX, currentY, 3, 1, finalColor);
+
+                    // Render a character inside it
+                    TextWriterWhereColor.WriteWhere(currChar.ToString(), currentX + 2, currentY + 1);
+                }
+            }
+        }
+
+        // TODO: Remove this once Wordle gets updated with this new condition
+        private static string GetRandomWordFiveLetters()
+        {
+            string RandomWord = "";
+            while (RandomWord.Length != 5)
+                // Loop through all the random words for a word that has exactly five letters
+                RandomWord = WordManager.GetRandomWordConditional(5, "", "");
+            return RandomWord;
+        }
+
     }
 }

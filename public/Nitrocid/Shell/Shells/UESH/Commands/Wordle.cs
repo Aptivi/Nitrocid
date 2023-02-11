@@ -18,6 +18,7 @@
 
 using KS.Misc.Games;
 using KS.Shell.ShellBase.Commands;
+using System.Linq;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -25,7 +26,7 @@ namespace KS.Shell.Shells.UESH.Commands
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => 
-            Wordle.InitializeWordle();
+            Wordle.InitializeWordle(ListSwitchesOnly.Length > 0 && ListSwitchesOnly.Contains("-orig"));
 
     }
 }
