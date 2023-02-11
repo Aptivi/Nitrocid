@@ -47,7 +47,6 @@ using KS.Kernel.Events;
 using KS.Misc.Text;
 using KS.Kernel.Administration.Journalling;
 using KS.Files.Operations;
-using KS.Drivers;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Colors;
 using KS.Misc.Writers.MiscWriters;

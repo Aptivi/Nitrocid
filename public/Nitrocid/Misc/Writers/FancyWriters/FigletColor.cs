@@ -20,7 +20,6 @@ using System;
 using System.Threading;
 using ColorSeq;
 using Figgle;
-using KS.Drivers;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
 using KS.Languages;

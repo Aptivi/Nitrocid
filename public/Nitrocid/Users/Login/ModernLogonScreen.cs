@@ -33,7 +33,6 @@ using KS.Misc.Threading;
 using KS.Kernel.Debugging;
 using KS.Misc.Probers.Motd;
 using KS.Network.RSS.Instance;
-using KS.Kernel;
 using System;
 using KS.Network.RSS;
 

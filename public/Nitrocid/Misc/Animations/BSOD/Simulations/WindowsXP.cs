@@ -18,7 +18,6 @@
 
 using ColorSeq;
 using KS.Drivers.RNG;
-using KS.Drivers;
 using System;
 using System.Collections.Generic;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;

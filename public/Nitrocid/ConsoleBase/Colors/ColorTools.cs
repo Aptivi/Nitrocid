@@ -22,7 +22,6 @@ using ColorSeq;
 using ColorSeq.Accessibility;
 using Extensification.StringExts;
 using KS.ConsoleBase.Themes;
-using KS.Drivers;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;

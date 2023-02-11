@@ -20,7 +20,6 @@ using ColorSeq;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using System.Text;
-using System;
 using KS.ConsoleBase;
 
 namespace KS.Misc.Animations.Spin

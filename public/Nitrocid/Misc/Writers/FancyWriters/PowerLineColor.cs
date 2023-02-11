@@ -19,7 +19,6 @@
 using System;
 using System.Threading;
 using ColorSeq;
-using KS.Drivers;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
 using KS.Languages;

@@ -45,11 +45,7 @@ using KS.TimeDate;
 using KS.Users;
 using System.Reflection;
 using KS.Misc.Writers.FancyWriters.Tools;
-using KS.ConsoleBase.Inputs.Styles;
-using KS.ConsoleBase.Inputs;
-using ColorSeq;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
-using System.Linq;
 
 #if SPECIFIERREL
 using static KS.ConsoleBase.Colors.ColorTools;
