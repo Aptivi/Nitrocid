@@ -112,27 +112,21 @@ namespace KS.Users.Login
                         ConsoleWrapper.Clear();
                         cachedTimeStr = TimeDateRenderers.RenderTime(TimeDate.TimeDate.FormatType.Short);
                         var figFont = FigletTools.GetFigletFont("Banner3");
-                        int figWidth = FigletTools.GetFigletWidth(timeStr, figFont) / 2;
                         int figHeight = FigletTools.GetFigletHeight(timeStr, figFont) / 2;
-                        int consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidth;
-                        int consoleY = (ConsoleWrapper.WindowHeight / 2) - figHeight;
-                        FigletWhereColor.WriteFigletWhere(timeStr, consoleX, consoleY, true, figFont, KernelColorType.Stage);
-                        ColorTools.SetConsoleColor(KernelColorType.NeutralText);
+                        CenteredFigletTextColor.WriteCenteredFiglet(figFont, timeStr, KernelColorType.Stage);
 
                         // Print the date
                         string dateStr = TimeDateRenderers.RenderDate();
-                        int consoleInfoX = (ConsoleWrapper.WindowWidth / 2) - (dateStr.Length / 2);
                         int consoleInfoY = (ConsoleWrapper.WindowHeight / 2) + figHeight + 2;
-                        TextWriterWhereColor.WriteWhere(dateStr, consoleInfoX, consoleInfoY);
+                        CenteredTextColor.WriteCentered(consoleInfoY, dateStr);
                         ColorTools.SetConsoleColor(KernelColorType.NeutralText);
 
                         // Print the date using the alternative calendar, if any
                         if (CalendarTools.EnableAltCalendar)
                         {
                             string dateAltStr = TimeDateRenderers.RenderDate(CalendarTools.GetCultureFromCalendar(CalendarTools.AltCalendar));
-                            int consoleAltInfoX = (ConsoleWrapper.WindowWidth / 2) - (dateAltStr.Length / 2);
                             int consoleAltInfoY = (ConsoleWrapper.WindowHeight / 2) + figHeight + 3;
-                            TextWriterWhereColor.WriteWhere(dateAltStr, consoleAltInfoX, consoleAltInfoY);
+                            CenteredTextColor.WriteCentered(consoleAltInfoY, dateAltStr);
                         }
 
                         // Print the headline
@@ -153,23 +147,20 @@ namespace KS.Users.Login
                             }
                             finally
                             {
-                                int consoleHeadlineInfoX = (ConsoleWrapper.WindowWidth / 2) - (headlineStr.Length / 2);
                                 int consoleHeadlineInfoY = (ConsoleWrapper.WindowHeight / 2) - figHeight - 2;
-                                TextWriterWhereColor.WriteWhere(headlineStr, consoleHeadlineInfoX, consoleHeadlineInfoY);
+                                CenteredTextColor.WriteCentered(consoleHeadlineInfoY, headlineStr);
                             }
                         }
 
                         // Print the MOTD
                         string motdStr = MotdParse.MOTDMessage;
-                        int consoleMotdInfoX = (ConsoleWrapper.WindowWidth / 2) - (motdStr.Length / 2);
                         int consoleMotdInfoY = (ConsoleWrapper.WindowHeight / 2) - figHeight - 3;
-                        TextWriterWhereColor.WriteWhere(motdStr, consoleMotdInfoX, consoleMotdInfoY);
+                        CenteredTextColor.WriteCentered(consoleMotdInfoY, motdStr);
 
                         // Print the instructions
                         string instStr = Translate.DoTranslation("Press any key to start...");
-                        int consoleInstX = (ConsoleWrapper.WindowWidth / 2) - (dateStr.Length / 2);
                         int consoleInstY = ConsoleWrapper.WindowHeight - 2;
-                        TextWriterWhereColor.WriteWhere(instStr, consoleInstX, consoleInstY);
+                        CenteredTextColor.WriteCentered(consoleInstY, instStr);
                     }
 
                     // Wait for 1 second
