@@ -152,10 +152,10 @@ namespace KS.Shell.Shells.UESH.Commands
                                                 TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].Flags.HasFlag(CommandFlags.RedirectionSupported).ToString(), true, KernelColorType.ListValue);
                                                 if (ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].CommandArgumentInfo is not null)
                                                 {
-                                                    foreach (string Usage in ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].CommandArgumentInfo.HelpUsages)
+                                                    foreach (var Usage in ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].CommandArgumentInfo.HelpUsages)
                                                     {
                                                         TextWriterColor.Write("- " + Translate.DoTranslation("Command usage:") + " ", false, KernelColorType.ListEntry);
-                                                        TextWriterColor.Write(Usage, true, KernelColorType.ListValue);
+                                                        TextWriterColor.Write($"{string.Join(" ", Usage.Switches)} {string.Join(" ", Usage.Arguments)}", true, KernelColorType.ListValue);
                                                     }
                                                     TextWriterColor.Write("- " + Translate.DoTranslation("Arguments required?") + " ", false, KernelColorType.ListEntry);
                                                     TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].CommandArgumentInfo.ArgumentsRequired.ToString(), true, KernelColorType.ListValue);

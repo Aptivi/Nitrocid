@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Collections.Generic;
 
 namespace KS.Shell.ShellBase.Commands
 {
@@ -29,7 +30,7 @@ namespace KS.Shell.ShellBase.Commands
         /// <summary>
         /// The help usages of command.
         /// </summary>
-        public string[] HelpUsages { get; private set; }
+        public HelpUsage[] HelpUsages { get; private set; }
         /// <summary>
         /// Does the command require arguments?
         /// </summary>
@@ -46,9 +47,8 @@ namespace KS.Shell.ShellBase.Commands
         /// <summary>
         /// Installs a new instance of the command argument info class
         /// </summary>
-        public CommandArgumentInfo() : this(Array.Empty<string>(), false, 0)
-        {
-        }
+        public CommandArgumentInfo()
+            : this(Array.Empty<string>(), false, 0) { }
 
         /// <summary>
         /// Installs a new instance of the command argument info class
@@ -58,6 +58,24 @@ namespace KS.Shell.ShellBase.Commands
         /// <param name="MinimumArguments">Minimum arguments</param>
         /// <param name="AutoCompleter">Auto completion function</param>
         public CommandArgumentInfo(string[] HelpUsages, bool ArgumentsRequired, int MinimumArguments, Func<string, int, char[], string[]> AutoCompleter = null)
+        {
+            List<HelpUsage> usages = new();
+            foreach (string helpUsage in HelpUsages)
+                usages.Add(new HelpUsage(helpUsage));
+            this.HelpUsages = usages.ToArray();
+            this.ArgumentsRequired = ArgumentsRequired;
+            this.MinimumArguments = MinimumArguments;
+            this.AutoCompleter = AutoCompleter;
+        }
+
+        /// <summary>
+        /// Installs a new instance of the command argument info class
+        /// </summary>
+        /// <param name="HelpUsages">Help usages</param>
+        /// <param name="ArgumentsRequired">Arguments required</param>
+        /// <param name="MinimumArguments">Minimum arguments</param>
+        /// <param name="AutoCompleter">Auto completion function</param>
+        public CommandArgumentInfo(HelpUsage[] HelpUsages, bool ArgumentsRequired, int MinimumArguments, Func<string, int, char[], string[]> AutoCompleter = null)
         {
             this.HelpUsages = HelpUsages;
             this.ArgumentsRequired = ArgumentsRequired;

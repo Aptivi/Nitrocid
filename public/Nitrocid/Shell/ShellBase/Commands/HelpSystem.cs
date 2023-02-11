@@ -94,13 +94,11 @@ namespace KS.Shell.ShellBase.Commands
                 string FinalCommand = IsMod ? command : IsAlias ? AliasedCommandList[command] : command;
                 string HelpDefinition = IsMod ? FinalCommandList[FinalCommand].HelpDefinition : FinalCommandList[FinalCommand].GetTranslatedHelpEntry();
                 int UsageLength = Translate.DoTranslation("Usage:").Length;
-                var HelpUsages = Array.Empty<string>();
+                var HelpUsages = Array.Empty<HelpUsage>();
 
                 // Populate help usages
                 if (FinalCommandList[FinalCommand].CommandArgumentInfo is not null)
-                {
                     HelpUsages = FinalCommandList[FinalCommand].CommandArgumentInfo.HelpUsages;
-                }
 
                 // Print usage information
                 if (HelpUsages.Length != 0)
@@ -110,12 +108,12 @@ namespace KS.Shell.ShellBase.Commands
                     TextWriterColor.Write(Translate.DoTranslation("Usage:"), false, KernelColorType.ListEntry);
 
                     // Enumerate through the available help usages
-                    foreach (string HelpUsage in HelpUsages)
+                    foreach (var HelpUsage in HelpUsages)
                     {
                         // Indent, if necessary
                         if (Indent)
                             TextWriterColor.Write(" ".Repeat(UsageLength), false, KernelColorType.ListEntry);
-                        TextWriterColor.Write($" {FinalCommand} {HelpUsage}", true, KernelColorType.ListEntry);
+                        TextWriterColor.Write($" {FinalCommand} {string.Join(" ", HelpUsage.Switches)} {string.Join(" ", HelpUsage.Arguments)}", true, KernelColorType.ListEntry);
                         Indent = true;
                     }
                 }

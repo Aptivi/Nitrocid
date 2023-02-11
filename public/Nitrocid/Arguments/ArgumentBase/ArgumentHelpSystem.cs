@@ -21,6 +21,7 @@ using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
+using KS.Shell.ShellBase.Commands;
 using System;
 using System.Linq;
 
@@ -53,7 +54,7 @@ namespace KS.Arguments.ArgumentBase
             {
                 string HelpDefinition = ArgumentList[Argument].GetTranslatedHelpEntry();
                 int UsageLength = Translate.DoTranslation("Usage:").Length;
-                var HelpUsages = Array.Empty<string>();
+                var HelpUsages = Array.Empty<HelpUsage>();
 
                 // Populate help usages
                 if (ArgumentList[Argument].ArgArgumentInfo is not null)
@@ -66,12 +67,12 @@ namespace KS.Arguments.ArgumentBase
                     TextWriterColor.Write(Translate.DoTranslation("Usage:"));
 
                     // Enumerate through the available help usages
-                    foreach (string HelpUsage in HelpUsages)
+                    foreach (var HelpUsage in HelpUsages)
                     {
                         // Indent, if necessary
                         if (Indent)
                             TextWriterColor.Write(" ".Repeat(UsageLength), false, KernelColorType.ListEntry);
-                        TextWriterColor.Write($" {Argument} {HelpUsage}", true, KernelColorType.ListEntry);
+                        TextWriterColor.Write($" {Argument} {string.Join(" ", HelpUsage.Switches)} {string.Join(" ", HelpUsage.Arguments)}", true, KernelColorType.ListEntry);
                         Indent = true;
                     }
                 }
