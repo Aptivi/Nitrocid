@@ -32,6 +32,10 @@ using System.Threading;
 using KS.Misc.Threading;
 using KS.Kernel.Debugging;
 using KS.Misc.Probers.Motd;
+using KS.Network.RSS.Instance;
+using KS.Kernel;
+using System;
+using KS.Network.RSS;
 
 namespace KS.Users.Login
 {
@@ -130,10 +134,34 @@ namespace KS.Users.Login
                             TextWriterWhereColor.WriteWhere(dateAltStr, consoleAltInfoX, consoleAltInfoY);
                         }
 
+                        // Print the headline
+                        string headlineStr = "";
+                        if (RSSTools.ShowHeadlineOnLogin)
+                        {
+                            try
+                            {
+                                var Feed = new RSSFeed(RSSTools.RssHeadlineUrl, RSSFeedType.Infer);
+                                if (Feed.FeedArticles.Count > 0)
+                                    headlineStr = Translate.DoTranslation("From") + $" {Feed.FeedTitle}: {Feed.FeedArticles[0].ArticleTitle}";
+                            }
+                            catch (Exception ex)
+                            {
+                                DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", ex.Message);
+                                DebugWriter.WriteDebugStackTrace(ex);
+                                headlineStr = Translate.DoTranslation("Failed to get the latest news.");
+                            }
+                            finally
+                            {
+                                int consoleHeadlineInfoX = (ConsoleWrapper.WindowWidth / 2) - (headlineStr.Length / 2);
+                                int consoleHeadlineInfoY = (ConsoleWrapper.WindowHeight / 2) - figHeight - 2;
+                                TextWriterWhereColor.WriteWhere(headlineStr, consoleHeadlineInfoX, consoleHeadlineInfoY);
+                            }
+                        }
+
                         // Print the MOTD
                         string motdStr = MotdParse.MOTDMessage;
                         int consoleMotdInfoX = (ConsoleWrapper.WindowWidth / 2) - (motdStr.Length / 2);
-                        int consoleMotdInfoY = (ConsoleWrapper.WindowHeight / 2) + figHeight + 5;
+                        int consoleMotdInfoY = (ConsoleWrapper.WindowHeight / 2) - figHeight - 3;
                         TextWriterWhereColor.WriteWhere(motdStr, consoleMotdInfoX, consoleMotdInfoY);
 
                         // Print the instructions

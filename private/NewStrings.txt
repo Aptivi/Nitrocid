@@ -446,5 +446,7 @@ One or more of the settings found in this section are unsupported in your platfo
 You can't declare the new block before you place expressions that support the creation, like conditions or loops. The stack number is {0}.
 When starting a new block, make sure that you've indented the stack correctly. The stack number is {0}.
 Sleeps for specified milliseconds
+From
+Latest news from
 
 ==========================================================================================================================================

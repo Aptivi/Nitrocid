@@ -213,7 +213,8 @@ namespace KS.Users.Login
             Flags.ShowMOTDOnceFlag = true;
             if (Flags.ShowMAL)
                 TextWriterColor.Write(PlaceParse.ProbePlaces(MalParse.MAL), true, KernelColorType.Banner);
-            RSSTools.ShowHeadlineLogin();
+            if (!Flags.ModernLogon)
+                RSSTools.ShowHeadlineLogin();
 
             // Initialize shell
             DebugWriter.WriteDebug(DebugLevel.I, "Shell is being initialized...");

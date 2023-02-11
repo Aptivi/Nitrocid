@@ -305,9 +305,9 @@ namespace KS.Network.RSS
                 try
                 {
                     var Feed = new RSSFeed(RssHeadlineUrl, RSSFeedType.Infer);
-                    if (!(Feed.FeedArticles.Count == 0))
+                    if (Feed.FeedArticles.Count > 0)
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("Latest news:") + " ", false, KernelColorType.ListEntry);
+                        TextWriterColor.Write(Translate.DoTranslation("Latest news from") + " {0}: ", false, KernelColorType.ListEntry, Feed.FeedTitle);
                         TextWriterColor.Write(Feed.FeedArticles[0].ArticleTitle, true, KernelColorType.ListValue);
                     }
                 }
