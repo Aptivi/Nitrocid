@@ -23,6 +23,7 @@ using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.SFTP.Filesystem;
 using KS.Shell.ShellBase.Commands;
 using KS.ConsoleBase.Inputs;
+using KS.ConsoleBase.Inputs.Styles;
 
 namespace KS.Shell.Shells.SFTP.Commands
 {
@@ -47,9 +48,9 @@ namespace KS.Shell.Shells.SFTP.Commands
                 TextWriterColor.Write(Translate.DoTranslation("Deleting {0}..."), true, KernelColorType.Progress, ListArgsOnly[0]);
 
                 // Make a confirmation message so user will not accidentally delete a file or folder
-                TextWriterColor.Write(Translate.DoTranslation("Are you sure you want to delete {0} <y/n>?") + " ", false, KernelColorType.Input, ListArgsOnly[0]);
-                string answer = Convert.ToString(Input.DetectKeypress().KeyChar);
-                TextWriterColor.Write();
+                string answer = ChoiceStyle.PromptChoice(string.Format(Translate.DoTranslation("Are you sure you want to delete {0}?"), ListArgsOnly[0]), "y/n");
+                if (answer != "y")
+                    return;
 
                 try
                 {

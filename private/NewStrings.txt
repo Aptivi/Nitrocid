@@ -448,5 +448,6 @@ When starting a new block, make sure that you've indented the stack correctly. T
 Sleeps for specified milliseconds
 From
 Latest news from
+Are you sure you want to delete {0}?
 
 ==========================================================================================================================================
