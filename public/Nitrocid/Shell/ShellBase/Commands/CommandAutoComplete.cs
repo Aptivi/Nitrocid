@@ -31,6 +31,7 @@ namespace KS.Shell.ShellBase.Commands
         /// <inheritdoc/>
         public static string[] GetSuggestions(string text, int index, char[] delims)
         {
+            // TODO: Re-adjust the function calls for suggestions on CommandArgumentInfo instances on each shell
             if (ShellStart.ShellStack.Count > 0)
             {
                 var ShellCommands = CommandManager.GetCommands(ShellStart.ShellStack[ShellStart.ShellStack.Count - 1].ShellType);
