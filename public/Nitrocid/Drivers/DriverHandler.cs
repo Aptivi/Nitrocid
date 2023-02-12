@@ -42,11 +42,12 @@ namespace KS.Drivers
         private readonly static Dictionary<string, IRandomDriver> randomDrivers = new()
         {
             { "Default", new DefaultRandom() },
-            { "Cryptographic", new CryptographicRandom() },
+            { "Standard", new StandardRandom() },
 
 #if !SPECIFIERREL
             // Below are excluded from the final release
-            { "DefaultDebug", new DefaultRandomDebug() }
+            { "DefaultDebug", new DefaultRandomDebug() },
+            { "StandardDebug", new StandardRandomDebug() }
 #endif
         };
 

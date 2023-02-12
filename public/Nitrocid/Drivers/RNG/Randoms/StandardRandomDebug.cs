@@ -17,56 +17,85 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Kernel.Debugging;
-using System.Security.Cryptography;
 
 namespace KS.Drivers.RNG.Randoms
 {
-    internal class DefaultRandomDebug : BaseRandomDriver, IRandomDriver
+    internal class StandardRandomDebug : BaseRandomDriver, IRandomDriver
     {
         /// <inheritdoc/>
-        public override string DriverName => "CryptographicDebug";
+        public override string DriverName => "Default";
 
         /// <inheritdoc/>
         public override DriverTypes DriverType => DriverTypes.RNG;
 
         /// <inheritdoc/>
-        public override int Random() => Random(int.MaxValue - 1);
+        public override int Random()
+        {
+            int num = base.Random();
+            DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}]", num, nameof(Random));
+            return num;
+        }
 
         /// <inheritdoc/>
-        public override int Random(int max) => Random(0, max);
+        public override int Random(int max)
+        {
+            int num = base.Random(max);
+            DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}, max = {2}]", num, nameof(Random), max);
+            return num;
+        }
 
         /// <inheritdoc/>
         public override int Random(int min, int max)
         {
-            int num = RandomNumberGenerator.GetInt32(min, max + 1);
+            int num = random.Next(min, max + 1);
             DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}, min = {2}, max = {3}]", num, nameof(Random), min, max + 1);
             return num;
         }
 
         /// <inheritdoc/>
-        public override short RandomShort() => RandomShort(short.MaxValue);
+        public override short RandomShort()
+        {
+            short num = base.RandomShort();
+            DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}]", num, nameof(RandomShort));
+            return num;
+        }
 
         /// <inheritdoc/>
-        public override short RandomShort(short max) => RandomShort(0, max);
+        public override short RandomShort(short max)
+        {
+            short num = base.RandomShort(max);
+            DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}, max = {2}]", num, nameof(RandomShort), max);
+            return num;
+        }
 
         /// <inheritdoc/>
         public override short RandomShort(short min, short max)
         {
-            short num = (short)Random(min, max);
+            short num = (short)base.Random(min, max);
             DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}, min = {2}, max = {3}]", num, nameof(RandomShort), min, max);
             return num;
         }
 
         /// <inheritdoc/>
-        public override int RandomIdx() => RandomIdx(int.MaxValue);
+        public override int RandomIdx()
+        {
+            int num = base.RandomIdx();
+            DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}]", num, nameof(RandomIdx));
+            return num;
+        }
 
         /// <inheritdoc/>
-        public override int RandomIdx(int max) => RandomIdx(0, max);
+        public override int RandomIdx(int max)
+        {
+            int num = base.RandomIdx(max);
+            DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}, max = {2}]", num, nameof(RandomIdx), max);
+            return num;
+        }
 
         /// <inheritdoc/>
         public override int RandomIdx(int min, int max)
         {
-            int num = RandomNumberGenerator.GetInt32(min, max);
+            int num = random.Next(min, max);
             DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}, min = {2}, max = {3}]", num, nameof(RandomIdx), min, max);
             return num;
         }
@@ -74,7 +103,7 @@ namespace KS.Drivers.RNG.Randoms
         /// <inheritdoc/>
         public override double RandomDouble()
         {
-            double num = Random() / (double)(int.MaxValue - 1);
+            double num = random.NextDouble();
             DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}]", num, nameof(RandomDouble));
             return num;
         }
@@ -82,7 +111,7 @@ namespace KS.Drivers.RNG.Randoms
         /// <inheritdoc/>
         public override double RandomDouble(double max)
         {
-            double num = RandomDouble() * max;
+            double num = random.NextDouble() * max;
             DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}, max = {2}]", num, nameof(RandomDouble), max);
             return num;
         }
@@ -90,7 +119,7 @@ namespace KS.Drivers.RNG.Randoms
         /// <inheritdoc/>
         public override bool RandomChance(double prob)
         {
-            bool status = RandomDouble() < prob;
+            bool status = random.NextDouble() < prob;
             DebugWriter.WriteDebug(DebugLevel.I, "[Value = {0}, Type = {1}, prob = {2}]", status, nameof(RandomChance), prob);
             return status;
         }
@@ -98,7 +127,7 @@ namespace KS.Drivers.RNG.Randoms
         /// <inheritdoc/>
         public override bool RandomChance(int probPercent)
         {
-            bool status = RandomChance((probPercent >= 0 && probPercent <= 100 ? probPercent : Random(100)) / 100d);
+            bool status = base.RandomChance((probPercent >= 0 && probPercent <= 100 ? probPercent : base.Random(100)) / 100d);
             DebugWriter.WriteDebug(DebugLevel.I, "[Value = {0}, Type = {1}, probPercent = {2}]", status, nameof(RandomChance), probPercent);
             return status;
         }
@@ -106,7 +135,7 @@ namespace KS.Drivers.RNG.Randoms
         /// <inheritdoc/>
         public override bool RandomRussianRoulette()
         {
-            bool status = (RandomShort() % 6) == 0;
+            bool status = (base.RandomShort() % 6) == 0;
             DebugWriter.WriteDebug(DebugLevel.I, "[Value = {0}, Type = {1}]", status, nameof(RandomRussianRoulette));
             return status;
         }
