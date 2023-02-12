@@ -34,10 +34,10 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            foreach (string VarName in UESHVariables.GetVariables().Keys)
+            foreach (string VarName in UESHVariables.Variables.Keys)
             {
                 TextWriterColor.Write($"- {VarName}: ", false, KernelColorType.ListEntry);
-                TextWriterColor.Write(UESHVariables.GetVariables()[VarName], true, KernelColorType.ListValue);
+                TextWriterColor.Write(UESHVariables.Variables[VarName], true, KernelColorType.ListValue);
             }
         }
 

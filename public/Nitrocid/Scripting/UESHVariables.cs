@@ -117,7 +117,8 @@ namespace KS.Scripting
         /// <summary>
         /// Gets the variables and returns the available variables as a dictionary
         /// </summary>
-        public static Dictionary<string, string> GetVariables() => ShellVariables;
+        public static Dictionary<string, string> Variables =>
+            ShellVariables;
 
         /// <summary>
         /// Sets a $variable

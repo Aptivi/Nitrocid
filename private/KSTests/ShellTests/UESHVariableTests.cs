@@ -35,7 +35,7 @@ namespace KSTests.ShellTests
         public void TestVariables()
         {
             UESHVariables.InitializeVariable("$test_var");
-            UESHVariables.GetVariables().ShouldNotBeEmpty();
+            UESHVariables.Variables.ShouldNotBeEmpty();
             UESHVariables.SetVariable("$test_var", "test").ShouldBeTrue();
             UESHVariables.GetVariable("$test_var").ShouldBe("test");
             string ExpectedCommand = "echo test";
