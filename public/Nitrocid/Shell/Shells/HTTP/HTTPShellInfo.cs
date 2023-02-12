@@ -39,6 +39,7 @@ namespace KS.Shell.Shells.HTTP
             { "delete", new CommandInfo("delete", ShellType, /* Localizable */ "Deletes content from HTTP server", new CommandArgumentInfo(new[] { "<request>" }, true, 1), new HTTP_DeleteCommand()) },
             { "get", new CommandInfo("get", ShellType, /* Localizable */ "Gets the response from the HTTP server using the specified request", new CommandArgumentInfo(new[] { "<request>" }, true, 1), new HTTP_GetCommand()) },
             { "getstring", new CommandInfo("getstring", ShellType, /* Localizable */ "Gets the string from the HTTP server using the specified request", new CommandArgumentInfo(new[] { "<request>" }, true, 1), new HTTP_GetStringCommand()) },
+            { "putstring", new CommandInfo("putstring", ShellType, /* Localizable */ "Puts the string to the HTTP server using the specified request", new CommandArgumentInfo(new[] { "<request> <string>" }, true, 2), new HTTP_PutStringCommand()) },
             { "setsite", new CommandInfo("setsite", ShellType, /* Localizable */ "Sets the HTTP site. Must be a valid URI.", new CommandArgumentInfo(new[] { "<uri>" }, true, 1), new HTTP_SetSiteCommand()) }
         };
 

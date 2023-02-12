@@ -83,6 +83,25 @@ namespace KS.Network.HTTP
         }
 
         /// <summary>
+        /// Puts the specified content string to the HTTP server
+        /// </summary>
+        /// <param name="ContentUri">Content URI (starts after the HTTP hostname)</param>
+        /// <param name="ContentString">String to put to the HTTP server</param>
+        public async static Task<HttpResponseMessage> HttpPutString(string ContentUri, string ContentString)
+        {
+            if (HTTPShellCommon.HTTPConnected)
+            {
+                var TargetUri = new Uri(NeutralizeUri(ContentUri));
+                var stringContent = new StringContent(ContentString);
+                return await HTTPShellCommon.ClientHTTP.PutAsync(TargetUri, stringContent);
+            }
+            else
+            {
+                throw new KernelException(KernelExceptionType.HTTPShell, Translate.DoTranslation("You must connect to server before performing transmission."));
+            }
+        }
+
+        /// <summary>
         /// Neutralize the URI so the host name, <see cref="HTTPShellCommon.HTTPSite"/>, doesn't appear twice.
         /// </summary>
         /// <param name="ContentUri">Content URI (starts after the HTTP hostname, e.g. "filetoget.html")</param>
