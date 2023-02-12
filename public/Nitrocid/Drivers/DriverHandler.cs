@@ -100,11 +100,11 @@ namespace KS.Drivers
         internal static Dictionary<DriverTypes, IDriver> currentDrivers = new()
         {
             { DriverTypes.Console,      consoleDrivers["Default"] },
-            { DriverTypes.RNG,          randomDrivers["Default"]  },
-            { DriverTypes.Network,      networkDrivers["Default"]  },
-            { DriverTypes.Filesystem,   filesystemDrivers["Default"]  },
-            { DriverTypes.Encryption,   encryptionDrivers["Default"]   },
-            { DriverTypes.Regexp,       regexpDrivers["Default"]  },
+            { DriverTypes.RNG,          randomDrivers["Default"] },
+            { DriverTypes.Network,      networkDrivers["Default"] },
+            { DriverTypes.Filesystem,   filesystemDrivers["Default"] },
+            { DriverTypes.Encryption,   encryptionDrivers["Default"] },
+            { DriverTypes.Regexp,       regexpDrivers["Default"] },
         };
 
         /// <summary>
