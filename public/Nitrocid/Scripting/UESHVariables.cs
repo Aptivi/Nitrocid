@@ -103,7 +103,9 @@ namespace KS.Scripting
             try
             {
                 string FinalVar = SanitizeVariableName(var);
-                return ShellVariables[FinalVar];
+                if (ShellVariables.ContainsKey(FinalVar))
+                    return ShellVariables[FinalVar];
+                return var;
             }
             catch (Exception ex)
             {
