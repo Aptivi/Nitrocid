@@ -18,7 +18,6 @@
 
 using KS.Drivers.RNG;
 using KS.Drivers.Console;
-using KS.Kernel.Debugging;
 using System.Collections.Generic;
 using KS.Drivers.Console.Consoles;
 using KS.Drivers.RNG.Randoms;
@@ -39,72 +38,85 @@ namespace KS.Drivers
     /// </summary>
     public static class DriverHandler
     {
-        private readonly static Dictionary<string, IRandomDriver> randomDrivers = new()
+        internal static Dictionary<DriverTypes, Dictionary<string, IDriver>> drivers = new()
         {
-            { "Default", new DefaultRandom() },
-            { "Standard", new StandardRandom() },
+            { 
+                DriverTypes.Console, new()
+                {
+                    { "Default", new Terminal() },
+                    { "File", new File() },
+                    { "FileSequence", new FileSequence() },
+                    { "Null", new Null() },
 
 #if !SPECIFIERREL
-            // Below are excluded from the final release
-            { "DefaultDebug", new DefaultRandomDebug() },
-            { "StandardDebug", new StandardRandomDebug() }
+                    // Below are excluded from the final release
+                    { "TerminalDebug", new TerminalDebug() }
 #endif
-        };
-
-        private readonly static Dictionary<string, IConsoleDriver> consoleDrivers = new()
-        {
-            { "Default", new Terminal() },
-            { "File", new File() },
-            { "FileSequence", new FileSequence() },
-            { "Null", new Null() },
+                }
+            },
+            { 
+                DriverTypes.RNG, new()
+                {
+                    { "Default", new DefaultRandom() },
+                    { "Standard", new StandardRandom() },
 
 #if !SPECIFIERREL
-            // Below are excluded from the final release
-            { "TerminalDebug", new TerminalDebug() }
+                    // Below are excluded from the final release
+                    { "DefaultDebug", new DefaultRandomDebug() },
+                    { "StandardDebug", new StandardRandomDebug() }
 #endif
+                }
+            },
+            { 
+                DriverTypes.Network, new()
+                { 
+                    { "Default", new DefaultNetwork() }
+                }
+            },
+            { 
+                DriverTypes.Filesystem, new()
+                { 
+                    { "Default", new DefaultFilesystem() }
+                }
+            },
+            { 
+                DriverTypes.Encryption, new()
+                {
+                    { "Default", new SHA256() },
+                    { "CRC32", new CRC32() },
+                    { "MD5", new MD5() },
+                    { "SHA1", new SHA1() },
+                    { "SHA256", new SHA256() },
+                    { "SHA384", new SHA384() },
+                    { "SHA512", new SHA512() }
+                }
+            },
+            { 
+                DriverTypes.Regexp, new()
+                { 
+                    { "Default", new DefaultRegexp() }
+                }
+            }
         };
 
-        private readonly static Dictionary<string, INetworkDriver> networkDrivers = new()
+        internal static Dictionary<DriverTypes, Dictionary<string, IDriver>> customDrivers = new()
         {
-            { "Default", new DefaultNetwork() }
+            { DriverTypes.Console,      new() },
+            { DriverTypes.RNG,          new() },
+            { DriverTypes.Network,      new() },
+            { DriverTypes.Filesystem,   new() },
+            { DriverTypes.Encryption,   new() },
+            { DriverTypes.Regexp,       new() },
         };
 
-        private readonly static Dictionary<string, IFilesystemDriver> filesystemDrivers = new()
-        {
-            { "Default", new DefaultFilesystem() }
-        };
-
-        private readonly static Dictionary<string, IEncryptionDriver> encryptionDrivers = new()
-        {
-            { "Default", new SHA256() },
-            { "CRC32", new CRC32() },
-            { "MD5", new MD5() },
-            { "SHA1", new SHA1() },
-            { "SHA384", new SHA384() },
-            { "SHA512", new SHA512() },
-        };
-
-        private readonly static Dictionary<string, IRegexpDriver> regexpDrivers = new()
-        {
-            { "Default", new DefaultRegexp() }
-        };
-
-        private readonly static Dictionary<string, IRandomDriver> customRandomDrivers = new();
-        private readonly static Dictionary<string, IConsoleDriver> customConsoleDrivers = new();
-        private readonly static Dictionary<string, INetworkDriver> customNetworkDrivers = new();
-        private readonly static Dictionary<string, IFilesystemDriver> customFilesystemDrivers = new();
-        private readonly static Dictionary<string, IEncryptionDriver> customEncryptionDrivers = new();
-        private readonly static Dictionary<string, IRegexpDriver> customRegexpDrivers = new();
-
-        // Don't move this field to the top, or NullReferenceException will haunt you!!!
         internal static Dictionary<DriverTypes, IDriver> currentDrivers = new()
         {
-            { DriverTypes.Console,      consoleDrivers["Default"] },
-            { DriverTypes.RNG,          randomDrivers["Default"] },
-            { DriverTypes.Network,      networkDrivers["Default"] },
-            { DriverTypes.Filesystem,   filesystemDrivers["Default"] },
-            { DriverTypes.Encryption,   encryptionDrivers["Default"] },
-            { DriverTypes.Regexp,       regexpDrivers["Default"] },
+            { DriverTypes.Console,      drivers[DriverTypes.Console]["Default"] },
+            { DriverTypes.RNG,          drivers[DriverTypes.RNG]["Default"] },
+            { DriverTypes.Network,      drivers[DriverTypes.Network]["Default"] },
+            { DriverTypes.Filesystem,   drivers[DriverTypes.Filesystem]["Default"] },
+            { DriverTypes.Encryption,   drivers[DriverTypes.Encryption]["Default"] },
+            { DriverTypes.Regexp,       drivers[DriverTypes.Regexp]["Default"] },
         };
 
         /// <summary>
@@ -154,59 +166,15 @@ namespace KS.Drivers
             var driverType = InferDriverTypeFromDriverInterfaceType<TResult>();
 
             // Then, get the actual driver from name
-            switch (driverType)
-            {
-                case DriverTypes.RNG:
-                    if (randomDrivers.ContainsKey(name))
-                        // Found a driver under the kernel driver list
-                        return (TResult)randomDrivers[name];
-                    else if (IsRegistered(driverType, name))
-                        // Found a driver under the custom driver list
-                        return (TResult)customRandomDrivers[name];
-                    else
-                        // Found no driver under both lists
-                        return (TResult)randomDrivers["Default"];
-                    // Same goes as for below...
-                case DriverTypes.Console:
-                    if (consoleDrivers.ContainsKey(name))
-                        return (TResult)consoleDrivers[name];
-                    else if (IsRegistered(driverType, name))
-                        return (TResult)customConsoleDrivers[name];
-                    else
-                        return (TResult)consoleDrivers["Default"];
-                case DriverTypes.Network:
-                    if (networkDrivers.ContainsKey(name))
-                        return (TResult)networkDrivers[name];
-                    else if (IsRegistered(driverType, name))
-                        return (TResult)customNetworkDrivers[name];
-                    else
-                        return (TResult)networkDrivers["Default"];
-                case DriverTypes.Filesystem:
-                    if (filesystemDrivers.ContainsKey(name))
-                        return (TResult)filesystemDrivers[name];
-                    else if (IsRegistered(driverType, name))
-                        return (TResult)customFilesystemDrivers[name];
-                    else
-                        return (TResult)filesystemDrivers["Default"];
-                case DriverTypes.Encryption:
-                    if (encryptionDrivers.ContainsKey(name))
-                        return (TResult)encryptionDrivers[name];
-                    else if (IsRegistered(driverType, name))
-                        return (TResult)customEncryptionDrivers[name];
-                    else
-                        return (TResult)encryptionDrivers["Default"];
-                case DriverTypes.Regexp:
-                    if (regexpDrivers.ContainsKey(name))
-                        return (TResult)regexpDrivers[name];
-                    else if (IsRegistered(driverType, name))
-                        return (TResult)customRegexpDrivers[name];
-                    else
-                        return (TResult)regexpDrivers["Default"];
-            }
-
-            // We shouldn't be here
-            DebugWriter.WriteDebug(DebugLevel.E, "We shouldn't be returning null here. Are you sure that it's of type {0} with name {1}?", typeof(TResult).Name, name);
-            return default;
+            if (drivers[driverType].ContainsKey(name))
+                // Found a driver under the kernel driver list
+                return (TResult)drivers[driverType][name];
+            else if (IsRegistered(driverType, name))
+                // Found a driver under the custom driver list
+                return (TResult)customDrivers[driverType][name];
+            else
+                // Found no driver under both lists
+                return (TResult)drivers[driverType]["Default"];
         }
 
         /// <summary>
@@ -214,36 +182,11 @@ namespace KS.Drivers
         /// </summary>
         /// <param name="type">Type of driver to register</param>
         /// <param name="driver">Driver to be registered</param>
-        public static void RegisterDriver(DriverTypes type, IDriver driver)
+        public static void RegisterDriver<TDriver>(DriverTypes type, IDriver driver)
         {
             string name = driver.DriverName;
-            switch (type)
-            {
-                case DriverTypes.RNG:
-                    if (!IsRegistered(type, name))
-                        customRandomDrivers.Add(name, (IRandomDriver)driver);
-                    break;
-                case DriverTypes.Console:
-                    if (!IsRegistered(type, name))
-                        customConsoleDrivers.Add(name, (IConsoleDriver)driver);
-                    break;
-                case DriverTypes.Network:
-                    if (!IsRegistered(type, name))
-                        customNetworkDrivers.Add(name, (INetworkDriver)driver);
-                    break;
-                case DriverTypes.Filesystem:
-                    if (!IsRegistered(type, name))
-                        customFilesystemDrivers.Add(name, (IFilesystemDriver)driver);
-                    break;
-                case DriverTypes.Encryption:
-                    if (!IsRegistered(type, name))
-                        customEncryptionDrivers.Add(name, (IEncryptionDriver)driver);
-                    break;
-                case DriverTypes.Regexp:
-                    if (!IsRegistered(type, name))
-                        customRegexpDrivers.Add(name, (IRegexpDriver)driver);
-                    break;
-            }
+            if (!IsRegistered(type, name) && driver.DriverType == type)
+                customDrivers[type].Add(name, driver);
         }
 
         /// <summary>
@@ -253,33 +196,8 @@ namespace KS.Drivers
         /// <param name="name">Driver name to be unregistered</param>
         public static void UnregisterDriver(DriverTypes type, string name)
         {
-            switch (type)
-            {
-                case DriverTypes.RNG:
-                    if (IsRegistered(type, name))
-                        customRandomDrivers.Remove(name);
-                    break;
-                case DriverTypes.Console:
-                    if (IsRegistered(type, name))
-                        customConsoleDrivers.Remove(name);
-                    break;
-                case DriverTypes.Network:
-                    if (IsRegistered(type, name))
-                        customNetworkDrivers.Remove(name);
-                    break;
-                case DriverTypes.Filesystem:
-                    if (IsRegistered(type, name))
-                        customFilesystemDrivers.Remove(name);
-                    break;
-                case DriverTypes.Encryption:
-                    if (IsRegistered(type, name))
-                        customEncryptionDrivers.Remove(name);
-                    break;
-                case DriverTypes.Regexp:
-                    if (IsRegistered(type, name))
-                        customRegexpDrivers.Remove(name);
-                    break;
-            }
+            if (IsRegistered(type, name) && customDrivers[type][name].DriverType == type)
+                customDrivers[type].Remove(name);
         }
 
         /// <summary>
@@ -288,19 +206,8 @@ namespace KS.Drivers
         /// <param name="type">Driver type</param>
         /// <param name="name">Driver name</param>
         /// <returns>True if registered. Otherwise, false.</returns>
-        public static bool IsRegistered(DriverTypes type, string name)
-        {
-            return type switch
-            {
-                DriverTypes.RNG         => customRandomDrivers.ContainsKey(name),
-                DriverTypes.Console     => customConsoleDrivers.ContainsKey(name),
-                DriverTypes.Network     => customNetworkDrivers.ContainsKey(name),
-                DriverTypes.Filesystem  => customFilesystemDrivers.ContainsKey(name),
-                DriverTypes.Encryption  => customEncryptionDrivers.ContainsKey(name),
-                DriverTypes.Regexp      => customRegexpDrivers.ContainsKey(name),
-                _                       => false,
-            };
-        }
+        public static bool IsRegistered(DriverTypes type, string name) =>
+            customDrivers[type].ContainsKey(name) || drivers[type].ContainsKey(name);
 
         /// <summary>
         /// Sets the kernel driver
