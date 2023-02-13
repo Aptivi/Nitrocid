@@ -22,23 +22,16 @@ for /f "tokens=* USEBACKQ" %%f in (`type version`) do set ksversion=%%f
 set releaseconfig=%1
 if "%releaseconfig%" == "" set releaseconfig=Release
 
-echo Finding MSBuild...
-for /f "delims=" %%i in ('"%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -latest -prerelease -products * -requires Microsoft.Component.MSBuild -find MSBuild\**\Bin\MSBuild.exe') do set msbuildpath=%%i
-if %errorlevel% == 0 goto :download
-echo There was an error trying to find MSBuild (%errorlevel%).
-goto :finished
-
 :download
-echo MSBuild found in %msbuildpath%
 echo Downloading packages...
-"%msbuildpath%" "..\Nitrocid.sln" -t:restore -p:Configuration=%releaseconfig%
+"%ProgramFiles%\dotnet\dotnet.exe" msbuild "..\Nitrocid.sln" -t:restore -p:Configuration=%releaseconfig%
 if %errorlevel% == 0 goto :build
 echo There was an error trying to download packages (%errorlevel%).
 goto :finished
 
 :build
 echo Building Nitrocid KS...
-"%msbuildpath%" "..\Nitrocid.sln" -p:Configuration=%releaseconfig%
+"%ProgramFiles%\dotnet\dotnet.exe" msbuild "..\Nitrocid.sln" -p:Configuration=%releaseconfig%
 if %errorlevel% == 0 goto :success
 echo There was an error trying to build (%errorlevel%).
 goto :finished

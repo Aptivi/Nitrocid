@@ -17,7 +17,7 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-# This script builds KS. Use when you have MSBuild installed.
+# This script builds KS. Use when you have dotnet installed.
 ksversion=$(cat version)
 ksreleaseconf=$1
 if [ -z $ksreleaseconf ]; then
@@ -25,15 +25,15 @@ if [ -z $ksreleaseconf ]; then
 fi
 
 # Check for dependencies
-msbuildpath=`which msbuild`
+dotnetpath=`which dotnet`
 if [ ! $? == 0 ]; then
-	echo MSBuild is not found.
+	echo dotnet is not found.
 	exit 1
 fi
 
 # Download packages
 echo Downloading packages...
-"$msbuildpath" "../Nitrocid.sln" -t:restore -p:Configuration=$ksreleaseconf
+"$dotnetpath" msbuild "../Nitrocid.sln" -t:restore -p:Configuration=$ksreleaseconf
 if [ ! $? == 0 ]; then
 	echo Download failed.
 	exit 1
@@ -41,7 +41,7 @@ fi
 
 # Build KS
 echo Building KS...
-"$msbuildpath" "../Nitrocid.sln" -p:Configuration=$ksreleaseconf
+"$dotnetpath" msbuild "../Nitrocid.sln" -p:Configuration=$ksreleaseconf
 if [ ! $? == 0 ]; then
 	echo Build failed.
 	exit 1
