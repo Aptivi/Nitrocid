@@ -180,9 +180,11 @@ namespace KS.Kernel
             LanguageManager.InstallCustomLanguages();
 
             // Initialize splashes
+            TextWriterColor.Write(Translate.DoTranslation("Loading custom splashes..."));
             SplashManager.LoadSplashes();
 
             // Read failsafe config
+            TextWriterColor.Write(Translate.DoTranslation("Loading configuration..."));
             if (Flags.SafeMode)
                 Config.ReadFailsafeConfig();
 

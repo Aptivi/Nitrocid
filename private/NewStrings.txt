@@ -455,5 +455,7 @@ Checks a UESH script for syntax errors
 Script lint succeeded.
 Script lint failed. Most likely there is a syntax error. Check your script for errors and retry running the linter.
 Script linter failed unexpectedly trying to parse your script.
+Loading custom splashes...
+Loading configuration...
 
 ==========================================================================================================================================
