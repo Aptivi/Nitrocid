@@ -32,6 +32,10 @@ namespace KS.Users
         /// The full name
         /// </summary>
         public string FullName { get; set; }
+        /// <summary>
+        /// The preferred language
+        /// </summary>
+        public string PreferredLanguage { get; set; }
 
         internal string Password { get; set; }
         internal string[] Permissions { get; set; }
@@ -39,12 +43,13 @@ namespace KS.Users
         /// <summary>
         /// Makes a new class instance of current user info
         /// </summary>
-        protected internal UserInfo(string username, string password, string[] permissions, string fullName)
+        protected internal UserInfo(string username, string password, string[] permissions, string fullName, string preferredLanguage)
         {
             Username = username;
             Password = password;
             Permissions = permissions;
             FullName = fullName;
+            PreferredLanguage = preferredLanguage;
         }
 
     }

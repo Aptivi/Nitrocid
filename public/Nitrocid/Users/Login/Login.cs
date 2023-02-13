@@ -50,7 +50,7 @@ namespace KS.Users.Login
         /// <summary>
         /// Current username
         /// </summary>
-        private static UserInfo CurrentUserInfo = new("root", Encryption.GetEncryptedString("", "SHA256"), Array.Empty<string>(), "System Account");
+        private static UserInfo CurrentUserInfo = new("root", Encryption.GetEncryptedString("", "SHA256"), Array.Empty<string>(), "System Account", "");
 
         /// <summary>
         /// Current username
@@ -202,6 +202,12 @@ namespace KS.Users.Login
 
             // Sign in to user.
             CurrentUserInfo = Users[signedInUser];
+
+            // Set preferred language
+            if (!string.IsNullOrWhiteSpace(Login.CurrentUser.PreferredLanguage))
+                LanguageManager.currentUserLanguage = LanguageManager.Languages[CurrentUserInfo.PreferredLanguage];
+            else
+                LanguageManager.currentUserLanguage = LanguageManager.currentLanguage;
 
             // Fire event PostLogin
             EventsManager.FireEvent(EventType.PostLogin, CurrentUser.Username);

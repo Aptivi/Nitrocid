@@ -36,6 +36,8 @@ using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using Newtonsoft.Json.Linq;
 using KS.Kernel.Events;
+using KS.Users;
+using KS.Users.Login;
 
 namespace KS.Languages
 {
@@ -49,12 +51,13 @@ namespace KS.Languages
         internal static Dictionary<string, LanguageInfo> CustomLanguages = new();
         private static bool NotifyCodepageError;
         private readonly static JToken LanguageMetadata = JToken.Parse(Properties.Resources.Resources.LanguageMetadata);
-        internal static LanguageInfo currentLanguage = Languages["eng"]; // Default to English
+        internal static LanguageInfo currentLanguage = Languages["eng"];
+        internal static LanguageInfo currentUserLanguage = Languages["eng"];
 
         /// <summary>
         /// Current language
         /// </summary>
-        public static LanguageInfo CurrentLanguage => currentLanguage;
+        public static LanguageInfo CurrentLanguage => Flags.LoggedIn ? currentUserLanguage : currentLanguage;
 
         /// <summary>
         /// The installed languages list.

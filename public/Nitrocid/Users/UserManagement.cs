@@ -89,7 +89,11 @@ namespace KS.Users
             /// <summary>
             /// Full name
             /// </summary>
-            FullName
+            FullName,
+            /// <summary>
+            /// Preferred language
+            /// </summary>
+            PreferredLanguage,
         }
 
         // ---------- User Management ----------
@@ -118,7 +122,7 @@ namespace KS.Users
                 }
 
                 // Add user locally
-                var initedUser = new UserInfo(uninitUser, unpassword, Array.Empty<string>(), "");
+                var initedUser = new UserInfo(uninitUser, unpassword, Array.Empty<string>(), "", "");
                 if (!UserExists(uninitUser))
                 {
                     Login.Login.Users.Add(uninitUser, initedUser);
@@ -151,7 +155,8 @@ namespace KS.Users
                             new JProperty("anonymous", false),
                             new JProperty("disabled", false),
                             new JProperty("permissions", Array.Empty<string>()),
-                            new JProperty("fullname", "")
+                            new JProperty("fullname", ""),
+                            new JProperty("preferredlanguage", "")
                         );
                         UsersToken.Add(NewUser);
                     }
@@ -169,7 +174,8 @@ namespace KS.Users
                         new JProperty("anonymous", false),
                         new JProperty("disabled", false),
                         new JProperty("permissions", Array.Empty<string>()),
-                        new JProperty("fullname", "")
+                        new JProperty("fullname", ""),
+                        new JProperty("preferredlanguage", "")
                     );
                     UsersToken.Add(NewUser);
                 }
@@ -203,7 +209,9 @@ namespace KS.Users
                     if (Enum.TryParse(typeof(PermissionTypes), (string)perm, out object permEnum))
                         PermissionsTools.GrantPermission(user, (PermissionTypes)permEnum);
                 string fullname = (string)UserToken["fullname"];
+                string preferredlanguage = (string)UserToken["preferredlanguage"];
                 Login.Login.Users[user].FullName = fullname;
+                Login.Login.Users[user].PreferredLanguage = preferredlanguage;
             }
         }
 
@@ -376,7 +384,7 @@ namespace KS.Users
                     {
                         // Store user info
                         var oldInfo = Login.Login.Users[OldName];
-                        var newInfo = new UserInfo(Username, oldInfo.Password, oldInfo.Permissions, oldInfo.FullName);
+                        var newInfo = new UserInfo(Username, oldInfo.Password, oldInfo.Permissions, oldInfo.FullName, oldInfo.PreferredLanguage);
 
                         // Rename username in dictionary
                         Login.Login.Users.Remove(OldName);
