@@ -41,7 +41,8 @@ namespace KS.Scripting
         /// </summary>
         /// <param name="ScriptPath">Full path to script</param>
         /// <param name="ScriptArguments">Script arguments</param>
-        public static void Execute(string ScriptPath, string ScriptArguments)
+        /// <param name="justLint">If true, just lints the script and throws exception if there are parsing errors</param>
+        public static void Execute(string ScriptPath, string ScriptArguments, bool justLint = false)
         {
             try
             {
@@ -97,7 +98,7 @@ namespace KS.Scripting
                         throw new KernelException(KernelExceptionType.UESHScript, Translate.DoTranslation("When starting a new block, make sure that you've indented the stack correctly. The stack number is {0}.") + " {1}:{2}", commandStackNum, ScriptPath, LineNo);
                     else
                     {
-                        if (retryLoopCondition)
+                        if (retryLoopCondition && !justLint)
                         {
                             (int, int) whilePlace = whilePlaces[whilePlaces.Count - 1];
                             commandStackNum = whilePlace.Item2;
@@ -145,7 +146,7 @@ namespace KS.Scripting
                             {
                                 case "if":
                                 case "while":
-                                    satisfied = UESHConditional.ConditionSatisfied(Arguments);
+                                    satisfied = justLint ? true : UESHConditional.ConditionSatisfied(Arguments);
                                     if (Command == "while")
                                     {
                                         if (!whilePlaces.Contains((l, commandStackNum)))
@@ -154,7 +155,7 @@ namespace KS.Scripting
                                     }
                                     break;
                                 case "until":
-                                    satisfied = !UESHConditional.ConditionSatisfied(Arguments);
+                                    satisfied = justLint ? true : !UESHConditional.ConditionSatisfied(Arguments);
                                     if (!whilePlaces.Contains((l, commandStackNum)))
                                         whilePlaces.Add((l, commandStackNum));
                                     retryLoopCondition = true;
@@ -167,7 +168,7 @@ namespace KS.Scripting
                                 commandStackNum++;
                                 continue;
                             }
-                            else
+                            else if (!justLint)
                             {
                                 // Skip all the if block until we reach our stack
                                 while (true)
@@ -198,7 +199,8 @@ namespace KS.Scripting
                     if (!Line.StartsWith("#") & !Line.StartsWith(" "))
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Line {0} is not a comment.", Line);
-                        Shell.Shell.GetLine(Line);
+                        if (!justLint)
+                            Shell.Shell.GetLine(Line);
                     }
                     else
                         // For debugging purposes
