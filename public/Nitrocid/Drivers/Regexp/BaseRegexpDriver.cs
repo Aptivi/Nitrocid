@@ -16,6 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Exceptions;
+using KS.Languages;
 using System.Text.RegularExpressions;
 
 namespace KS.Drivers.Regexp
@@ -54,5 +56,40 @@ namespace KS.Drivers.Regexp
             return new Regex(pattern).IsMatch(text);
         }
 
+        /// <inheritdoc/>
+        public Match Match(string text, string pattern)
+        {
+            if (!IsValidRegex(pattern))
+                throw new KernelException(KernelExceptionType.RegularExpression, Translate.DoTranslation("Invalid regular expression syntax."));
+
+            return new Regex(pattern).Match(text);
+        }
+
+        /// <inheritdoc/>
+        public string Filter(string text, string pattern)
+        {
+            if (!IsValidRegex(pattern))
+                throw new KernelException(KernelExceptionType.RegularExpression, Translate.DoTranslation("Invalid regular expression syntax."));
+
+            return new Regex(pattern).Replace(text, "");
+        }
+
+        /// <inheritdoc/>
+        public string Filter(string text, string pattern, string replaceWith)
+        {
+            if (!IsValidRegex(pattern))
+                throw new KernelException(KernelExceptionType.RegularExpression, Translate.DoTranslation("Invalid regular expression syntax."));
+
+            return new Regex(pattern).Replace(text, replaceWith);
+        }
+
+        /// <inheritdoc/>
+        public string[] Split(string text, string pattern)
+        {
+            if (!IsValidRegex(pattern))
+                throw new KernelException(KernelExceptionType.RegularExpression, Translate.DoTranslation("Invalid regular expression syntax."));
+
+            return new Regex(pattern).Split(text);
+        }
     }
 }

@@ -16,6 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System.Text.RegularExpressions;
+
 namespace KS.Drivers.Regexp
 {
     /// <summary>
@@ -37,5 +39,38 @@ namespace KS.Drivers.Regexp
         /// <param name="pattern">Regular expression pattern for matching</param>
         /// <returns>True if there are matches. Otherwise, false</returns>
         bool IsMatch(string text, string pattern);
+
+        /// <summary>
+        /// Matches the pattern with the text given
+        /// </summary>
+        /// <param name="text">The text to be matched</param>
+        /// <param name="pattern">Regular expression pattern for matching</param>
+        /// <returns>A <see cref="System.Text.RegularExpressions.Match"/> that contains information about the current match</returns>
+        Match Match(string text, string pattern);
+
+        /// <summary>
+        /// Filters the string from the substrings matched by the given pattern
+        /// </summary>
+        /// <param name="text">The text to be processed</param>
+        /// <param name="pattern">Regular expression pattern for replacing</param>
+        /// <returns>Filtered text</returns>
+        string Filter(string text, string pattern);
+
+        /// <summary>
+        /// Filters the string from the substrings matched by the given pattern
+        /// </summary>
+        /// <param name="text">The text to be processed</param>
+        /// <param name="pattern">Regular expression pattern for replacing</param>
+        /// <param name="replaceWith">Replaces the matched substrings with the specified text</param>
+        /// <returns>Filtered text</returns>
+        string Filter(string text, string pattern, string replaceWith);
+
+        /// <summary>
+        /// Splits the string using the matched substrings as the delimiters
+        /// </summary>
+        /// <param name="text">The text to be split</param>
+        /// <param name="pattern">Regular expression pattern for splitting</param>
+        /// <returns>Array of strings</returns>
+        string[] Split(string text, string pattern);
     }
 }

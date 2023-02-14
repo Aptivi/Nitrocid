@@ -334,6 +334,10 @@ namespace KS.Kernel.Exceptions
         /// <summary>
         /// When the kernel tried to load the specified mod, it requested loading "Kernel Simulator". Since the main application is renamed to Nitrocid KS, this mod can't be run safely. We advice you to upgrade the mod.
         /// </summary>
-        OldModDetected
+        OldModDetected,
+        /// <summary>
+        /// A regular expression error happened while the text is being processed. Check your regular expression syntax and try again. If the time-out occurred, ensure that you don't recurse too much (don't be greedy).
+        /// </summary>
+        RegularExpression
     }
 }
