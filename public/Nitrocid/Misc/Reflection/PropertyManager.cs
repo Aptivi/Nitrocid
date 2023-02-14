@@ -54,13 +54,9 @@ namespace KS.Misc.Reflection
             // Get field for specified variable
             PropertyInfo TargetProperty;
             if (VariableType is not null)
-            {
                 TargetProperty = GetProperty(Variable, VariableType);
-            }
             else
-            {
                 TargetProperty = GetProperty(Variable);
-            }
 
             // Set the variable if found
             if (TargetProperty is not null)

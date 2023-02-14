@@ -374,6 +374,7 @@ namespace KS.Misc.Settings
                 string SelectionEnumAssembly = (string)KeyToken["EnumerationAssembly"];
                 bool SelectionEnumInternal = (bool)(KeyToken["EnumerationInternal"] ?? false);
                 bool SelectionEnumZeroBased = (bool)(KeyToken["EnumerationZeroBased"] ?? false);
+                Type SelectionEnumType = default;
 
                 // Color properties
                 object ColorValue = "";
@@ -483,13 +484,15 @@ namespace KS.Misc.Settings
                                     if (SelectionEnumInternal)
                                     {
                                         // Apparently, we need to have a full assembly name for getting types.
-                                        SelectFrom = Type.GetType("KS." + KeyToken["Enumeration"].ToString() + ", " + Assembly.GetExecutingAssembly().FullName).GetEnumNames();
-                                        Selections = Type.GetType("KS." + KeyToken["Enumeration"].ToString() + ", " + Assembly.GetExecutingAssembly().FullName).GetEnumValues();
+                                        SelectionEnumType = Type.GetType("KS." + KeyToken["Enumeration"].ToString() + ", " + Assembly.GetExecutingAssembly().FullName);
+                                        SelectFrom = SelectionEnumType.GetEnumNames();
+                                        Selections = SelectionEnumType.GetEnumValues();
                                     }
                                     else
                                     {
-                                        SelectFrom = Type.GetType(KeyToken["Enumeration"].ToString() + ", " + SelectionEnumAssembly).GetEnumNames();
-                                        Selections = Type.GetType(KeyToken["Enumeration"].ToString() + ", " + SelectionEnumAssembly).GetEnumValues();
+                                        SelectionEnumType = Type.GetType(KeyToken["Enumeration"].ToString() + ", " + SelectionEnumAssembly);
+                                        SelectFrom = SelectionEnumType.GetEnumNames();
+                                        Selections = SelectionEnumType.GetEnumValues();
                                     }
                                 }
                                 else
@@ -683,18 +686,11 @@ namespace KS.Misc.Settings
                                         else if (!(AnswerInt > MaxKeyOptions))
                                         {
                                             object FinalValue;
-                                            if (!SelectionEnum)
-                                            {
-                                                DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerInt);
-                                                KeyFinished = true;
-                                                FinalValue = SelectFrom.ElementAtOrDefault(AnswerInt - 1);
-                                            }
-                                            else
-                                            {
-                                                DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerInt);
-                                                KeyFinished = true;
-                                                FinalValue = SelectionEnumZeroBased ? AnswerInt - 1 : AnswerInt;
-                                            }
+                                            DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerInt);
+                                            KeyFinished = true;
+                                            FinalValue = SelectFrom.ElementAtOrDefault(AnswerInt - 1);
+                                            if (SelectionEnum)
+                                                FinalValue = Enum.Parse(SelectionEnumType, FinalValue.ToString());
 
                                             // Now, set the value
                                             if (FieldManager.CheckField(KeyVar))
