@@ -116,7 +116,7 @@ namespace KS.Misc.Screensaver
             { "wipe", new WipeDisplay() }
         };
         private static int scrnTimeout = 300000;
-        private static string defSaverName = "matrix";
+        private static string defSaverName = "plain";
         internal static bool LockMode;
         internal static bool inSaver;
         internal static AutoResetEvent SaverAutoReset = new(false);
@@ -142,7 +142,7 @@ namespace KS.Misc.Screensaver
         public static string DefaultSaverName
         {
             get => defSaverName;
-            set => defSaverName = Screensavers.ContainsKey(value) ? value : "matrix";
+            set => defSaverName = Screensavers.ContainsKey(value) ? value : "plain";
         }
 
         /// <summary>
