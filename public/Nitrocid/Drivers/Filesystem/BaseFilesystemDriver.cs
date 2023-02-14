@@ -1210,37 +1210,16 @@ namespace KS.Drivers.Filesystem
         }
 
         /// <inheritdoc/>
-        public virtual string SortSelector(FileSystemInfo FileSystemEntry, int MaxLength)
-        {
-            switch (Listing.SortMode)
+        public virtual string SortSelector(FileSystemInfo FileSystemEntry, int MaxLength) =>
+            Listing.SortMode switch
             {
-                case FilesystemSortOptions.FullName:
-                    {
-                        return FileSystemEntry.FullName;
-                    }
-                case FilesystemSortOptions.Length:
-                    {
-                        return (FileSystemEntry as FileInfo is not null ? (FileSystemEntry as FileInfo).Length : 0L).ToString().PadLeft(MaxLength, '0');
-                    }
-                case FilesystemSortOptions.CreationTime:
-                    {
-                        return Convert.ToString(FileSystemEntry.CreationTime);
-                    }
-                case FilesystemSortOptions.LastAccessTime:
-                    {
-                        return Convert.ToString(FileSystemEntry.LastAccessTime);
-                    }
-                case FilesystemSortOptions.LastWriteTime:
-                    {
-                        return Convert.ToString(FileSystemEntry.LastWriteTime);
-                    }
-
-                default:
-                    {
-                        return FileSystemEntry.FullName;
-                    }
-            }
-        }
+                FilesystemSortOptions.FullName       => FileSystemEntry.FullName,
+                FilesystemSortOptions.Length         => (FileSystemEntry as FileInfo is not null ? (FileSystemEntry as FileInfo).Length : 0L).ToString().PadLeft(MaxLength, '0'),
+                FilesystemSortOptions.CreationTime   => Convert.ToString(FileSystemEntry.CreationTime),
+                FilesystemSortOptions.LastAccessTime => Convert.ToString(FileSystemEntry.LastAccessTime),
+                FilesystemSortOptions.LastWriteTime  => Convert.ToString(FileSystemEntry.LastWriteTime),
+                _                                    => FileSystemEntry.FullName,
+            };
 
         /// <inheritdoc/>
         public virtual bool TryParseFileName(string Name)
