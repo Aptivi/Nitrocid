@@ -1213,12 +1213,16 @@ namespace KS.Drivers.Filesystem
         public virtual string SortSelector(FileSystemInfo FileSystemEntry, int MaxLength) =>
             Listing.SortMode switch
             {
-                FilesystemSortOptions.FullName       => FileSystemEntry.FullName,
-                FilesystemSortOptions.Length         => (FileSystemEntry as FileInfo is not null ? (FileSystemEntry as FileInfo).Length : 0L).ToString().PadLeft(MaxLength, '0'),
-                FilesystemSortOptions.CreationTime   => Convert.ToString(FileSystemEntry.CreationTime),
-                FilesystemSortOptions.LastAccessTime => Convert.ToString(FileSystemEntry.LastAccessTime),
-                FilesystemSortOptions.LastWriteTime  => Convert.ToString(FileSystemEntry.LastWriteTime),
-                _                                    => FileSystemEntry.FullName,
+                FilesystemSortOptions.FullName          => FileSystemEntry.FullName,
+                FilesystemSortOptions.Length            => (FileSystemEntry as FileInfo is not null ? (FileSystemEntry as FileInfo).Length : 0L).ToString().PadLeft(MaxLength, '0'),
+                FilesystemSortOptions.CreationTime      => Convert.ToString(FileSystemEntry.CreationTime),
+                FilesystemSortOptions.LastAccessTime    => Convert.ToString(FileSystemEntry.LastAccessTime),
+                FilesystemSortOptions.LastWriteTime     => Convert.ToString(FileSystemEntry.LastWriteTime),
+                FilesystemSortOptions.Extension         => FileSystemEntry.Extension,
+                FilesystemSortOptions.CreationTimeUtc   => Convert.ToString(FileSystemEntry.CreationTimeUtc),
+                FilesystemSortOptions.LastAccessTimeUtc => Convert.ToString(FileSystemEntry.LastAccessTimeUtc),
+                FilesystemSortOptions.LastWriteTimeUtc  => Convert.ToString(FileSystemEntry.LastWriteTimeUtc),
+                _                                       => FileSystemEntry.FullName,
             };
 
         /// <inheritdoc/>

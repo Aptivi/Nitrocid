@@ -42,6 +42,22 @@ namespace KS.Files.Folders
         /// <summary>
         /// Sort by last access time
         /// </summary>
-        LastAccessTime
+        LastAccessTime,
+        /// <summary>
+        /// Sort by file extension
+        /// </summary>
+        Extension,
+        /// <summary>
+        /// Sort by the UTC creation time
+        /// </summary>
+        CreationTimeUtc,
+        /// <summary>
+        /// Sort by the UTC last write time
+        /// </summary>
+        LastWriteTimeUtc,
+        /// <summary>
+        /// Sort by the UTC last access time
+        /// </summary>
+        LastAccessTimeUtc,
     }
 }
