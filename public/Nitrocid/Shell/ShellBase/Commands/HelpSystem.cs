@@ -62,16 +62,14 @@ namespace KS.Shell.ShellBase.Commands
         /// </summary>
         /// <param name="command">A specified command</param>
         /// <param name="CommandType">A specified shell type</param>
-        /// <param name="DebugDeviceSocket">Only for remote debug shell. Specifies the debug device socket.</param>
-        public static void ShowHelp(string command, ShellType CommandType, StreamWriter DebugDeviceSocket = null) => ShowHelp(command, Shell.GetShellTypeName(CommandType), DebugDeviceSocket);
+        public static void ShowHelp(string command, ShellType CommandType) => ShowHelp(command, Shell.GetShellTypeName(CommandType));
 
         /// <summary>
         /// Shows the help of a command, or command list under the specified shell type if nothing is specified
         /// </summary>
         /// <param name="command">A specified command</param>
         /// <param name="CommandType">A specified shell type</param>
-        /// <param name="DebugDeviceSocket">Only for remote debug shell. Specifies the debug device socket.</param>
-        public static void ShowHelp(string command, string CommandType, StreamWriter DebugDeviceSocket = null)
+        public static void ShowHelp(string command, string CommandType)
         {
             // Determine command type
             var CommandList = CommandManager.GetCommands(CommandType)
@@ -113,10 +111,14 @@ namespace KS.Shell.ShellBase.Commands
                         // Indent, if necessary
                         if (Indent)
                             TextWriterColor.Write(" ".Repeat(UsageLength), false, KernelColorType.ListEntry);
-                        TextWriterColor.Write($" {FinalCommand} {string.Join(" ", HelpUsage.Switches)} {string.Join(" ", HelpUsage.Arguments)}", true, KernelColorType.ListEntry);
+                        TextWriterColor.Write($" {FinalCommand}" +
+                            $"{(HelpUsage.Switches.Length > 0 ? " " + string.Join(" ", HelpUsage.Switches) : "")}" +
+                            $"{(HelpUsage.Arguments.Length > 0 ? " " + string.Join(" ", HelpUsage.Arguments) : "")}", true, KernelColorType.ListEntry);
                         Indent = true;
                     }
                 }
+                else
+                    TextWriterColor.Write(Translate.DoTranslation("Usage:") + $" {FinalCommand}", true, KernelColorType.ListEntry);
 
                 // Write the description now
                 if (string.IsNullOrEmpty(HelpDefinition))
