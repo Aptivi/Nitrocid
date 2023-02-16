@@ -47,7 +47,6 @@ namespace KS.Misc.Calendar
             var CalendarDays = CultureManager.CurrentCult.DateTimeFormat.DayNames;
             var CalendarMonths = CultureManager.CurrentCult.DateTimeFormat.MonthNames;
             var CalendarData = new string[6, CalendarDays.Length];
-            var DateFrom = new DateTime(Year, Month, 1, CultureManager.CurrentCult.Calendar);
             var DateTo = new DateTime(Year, Month, DateTime.DaysInMonth(Year, Month), CultureManager.CurrentCult.Calendar);
             int CurrentWeek = 1;
             string CalendarTitle = CalendarMonths[Month - 1] + " " + Year;
@@ -66,6 +65,7 @@ namespace KS.Misc.Calendar
                 bool ReminderMarked = false;
                 bool EventMarked = false;
                 bool IsWeekend = CurrentDate.DayOfWeek == DayOfWeek.Friday | CurrentDate.DayOfWeek == DayOfWeek.Saturday;
+                bool IsToday = CurrentDate == DateTime.Today;
 
                 // Dim out the weekends
                 if (IsWeekend)
@@ -77,6 +77,18 @@ namespace KS.Misc.Calendar
                         CellBackgroundColor = ColorTools.GetColor(KernelColorType.Background)
                     };
                     CalendarCellOptions.Add(WeekendOptions);
+                }
+
+                // Highlight today
+                if (IsToday)
+                {
+                    var TodayOptions = new CellOptions((int)CurrentDate.DayOfWeek + 1, CurrentWeek)
+                    {
+                        ColoredCell = true,
+                        CellColor = ColorTools.GetColor(KernelColorType.TodayDay),
+                        CellBackgroundColor = ColorTools.GetColor(KernelColorType.Background)
+                    };
+                    CalendarCellOptions.Add(TodayOptions);
                 }
 
                 // Know where and how to put the day number

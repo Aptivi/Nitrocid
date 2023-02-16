@@ -187,5 +187,9 @@ namespace KS.ConsoleBase.Colors
         /// Table title
         /// </summary>
         TableTitle,
+        /// <summary>
+        /// Today
+        /// </summary>
+        TodayDay,
     }
 }

@@ -42,5 +42,6 @@
     "AlternativeOptionColor": "69;140;90",
     "WeekendDayColor": "62;128;85",
     "EventDayColor": "62;128;85",
-    "TableTitleColor": "62;128;85"
+    "TableTitleColor": "62;128;85",
+    "TodayDayColor": "62;128;85"
 }

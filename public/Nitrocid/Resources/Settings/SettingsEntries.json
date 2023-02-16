@@ -530,6 +530,14 @@
                 "IsEnumerable": true,
                 "IsInternal": true,
                 "EnumerableIndex": 40
+            },
+            {
+                "Name": "Today Day Color",
+                "Type": "SColor",
+                "Variable": "KernelColors",
+                "IsEnumerable": true,
+                "IsInternal": true,
+                "EnumerableIndex": 41
             }
         ]
     },
