@@ -327,141 +327,150 @@ namespace KS.Kernel.Configuration
                     DebugWriter.WriteDebug(DebugLevel.I, "Number of options: {0}", MaxOptions);
                     for (int OptionIndex = 0; OptionIndex <= MaxOptions - 1; OptionIndex++)
                     {
-                        // Get the setting token and fetch information
-                        DebugWriter.WriteDebug(DebugLevel.I, "Option index: {0}", OptionIndex);
-                        var Setting = SectionToken[OptionIndex];
-                        string VariableKeyName = (string)Setting["Name"];
-                        string Variable = (string)Setting["Variable"];
-                        bool VariableIsInternal = (bool)(Setting["IsInternal"] ?? false);
-                        bool VariableIsEnumerable = (bool)(Setting["IsEnumerable"] ?? false);
-                        int VariableEnumerableIndex = (int)(Setting["EnumerableIndex"] ?? 0);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Variable key name: {0} [reflecting {1}] with int: {2}, enum: {3}, enumidx: {4}", VariableKeyName, Variable, VariableIsInternal, VariableIsEnumerable, VariableEnumerableIndex);
-
-                        // Get variable value and type
-                        SettingsKeyType VariableType = (SettingsKeyType)Convert.ToInt32(Enum.Parse(typeof(SettingsKeyType), (string)Setting["Type"]));
-                        DebugWriter.WriteDebug(DebugLevel.I, "Got variable type: {0}", VariableType);
-                        object VariableValue = null;
-
-                        // Check the value if we're dealing with an enumerable
-                        if (FieldManager.CheckField(Variable, VariableIsInternal) && VariableIsEnumerable)
-                            VariableValue = FieldManager.GetValueFromEnumerable(Variable, VariableEnumerableIndex, VariableIsInternal);
-
-                        // Check the variable type, and deal with it as appropriate
-                        if (VariableType == SettingsKeyType.SColor)
+                        try
                         {
-                            string ColorValue = ((string)ConfigTokenFromPath[VariableKeyName]).ReleaseDoubleQuotes();
+                            // Get the setting token and fetch information
+                            DebugWriter.WriteDebug(DebugLevel.I, "Option index: {0}", OptionIndex);
+                            var Setting = SectionToken[OptionIndex];
+                            string VariableKeyName = (string)Setting["Name"];
+                            string Variable = (string)Setting["Variable"];
+                            bool VariableIsInternal = (bool)(Setting["IsInternal"] ?? false);
+                            bool VariableIsEnumerable = (bool)(Setting["IsEnumerable"] ?? false);
+                            int VariableEnumerableIndex = (int)(Setting["EnumerableIndex"] ?? 0);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Variable key name: {0} [reflecting {1}] with int: {2}, enum: {3}, enumidx: {4}", VariableKeyName, Variable, VariableIsInternal, VariableIsEnumerable, VariableEnumerableIndex);
 
-                            // Get the plain sequence from the color
-                            if (FieldManager.CheckField(Variable, VariableIsInternal) &&
-                                FieldManager.GetValue(Variable, VariableIsInternal) is Dictionary<KernelColorType, Color> colors)
+                            // Get variable value and type
+                            SettingsKeyType VariableType = (SettingsKeyType)Convert.ToInt32(Enum.Parse(typeof(SettingsKeyType), (string)Setting["Type"]));
+                            DebugWriter.WriteDebug(DebugLevel.I, "Got variable type: {0}", VariableType);
+                            object VariableValue = null;
+
+                            // Check the value if we're dealing with an enumerable
+                            if (FieldManager.CheckField(Variable, VariableIsInternal) && VariableIsEnumerable)
+                                VariableValue = FieldManager.GetValueFromEnumerable(Variable, VariableEnumerableIndex, VariableIsInternal);
+
+                            // Check the variable type, and deal with it as appropriate
+                            if (VariableType == SettingsKeyType.SColor)
                             {
-                                var colorTypeOnDict = colors.ElementAt(VariableEnumerableIndex).Key;
-                                colors[colorTypeOnDict] = new Color(ColorValue);
-                                VariableValue = colors;
-                            }
-                            else if (PropertyManager.CheckProperty(Variable) &&
-                                     PropertyManager.GetPropertyValue(Variable) is Dictionary<KernelColorType, Color> colors2)
-                            {
-                                var colorTypeOnDict = colors2.ElementAt(VariableEnumerableIndex).Key;
-                                colors2[colorTypeOnDict] = new Color(ColorValue);
-                                VariableValue = colors2;
-                            }
-                            else if ((FieldManager.CheckField(Variable, VariableIsInternal) &&
-                                      FieldManager.GetField(Variable, VariableIsInternal).FieldType == typeof(Color)) ||
-                                     (PropertyManager.CheckProperty(Variable) &&
-                                      PropertyManager.GetProperty(Variable).PropertyType == typeof(Color)))
-                            {
-                                VariableValue = new Color(ColorValue);
-                            }
-                            else
-                            {
-                                VariableValue = ColorValue;
-                            }
-                            DebugWriter.WriteDebug(DebugLevel.I, "Got color var value: {0}", VariableValue);
-                        }
-                        else if (VariableType == SettingsKeyType.SSelection)
-                        {
-                            bool SelectionEnum = (bool)(Setting["IsEnumeration"] ?? false);
-                            string SelectionEnumAssembly = (string)Setting["EnumerationAssembly"];
-                            bool SelectionEnumInternal = (bool)(Setting["EnumerationInternal"] ?? false);
-                            if (SelectionEnum)
-                            {
-                                if (SelectionEnumInternal)
+                                string ColorValue = ((string)ConfigTokenFromPath[VariableKeyName]).ReleaseDoubleQuotes();
+
+                                // Get the plain sequence from the color
+                                if (FieldManager.CheckField(Variable, VariableIsInternal) &&
+                                    FieldManager.GetValue(Variable, VariableIsInternal) is Dictionary<KernelColorType, Color> colors)
                                 {
-                                    // Apparently, we need to have a full assembly name for getting types.
-                                    Type enumType = Type.GetType("KS." + Setting["Enumeration"].ToString() + ", " + Assembly.GetExecutingAssembly().FullName);
-                                    VariableValue = Enum.Parse(enumType, ((string)ConfigTokenFromPath[VariableKeyName]).ReleaseDoubleQuotes());
+                                    var colorTypeOnDict = colors.ElementAt(VariableEnumerableIndex).Key;
+                                    colors[colorTypeOnDict] = new Color(ColorValue);
+                                    VariableValue = colors;
+                                }
+                                else if (PropertyManager.CheckProperty(Variable) &&
+                                         PropertyManager.GetPropertyValue(Variable) is Dictionary<KernelColorType, Color> colors2)
+                                {
+                                    var colorTypeOnDict = colors2.ElementAt(VariableEnumerableIndex).Key;
+                                    colors2[colorTypeOnDict] = new Color(ColorValue);
+                                    VariableValue = colors2;
+                                }
+                                else if ((FieldManager.CheckField(Variable, VariableIsInternal) &&
+                                          FieldManager.GetField(Variable, VariableIsInternal).FieldType == typeof(Color)) ||
+                                         (PropertyManager.CheckProperty(Variable) &&
+                                          PropertyManager.GetProperty(Variable).PropertyType == typeof(Color)))
+                                {
+                                    VariableValue = new Color(ColorValue);
                                 }
                                 else
                                 {
-                                    Type enumType = Type.GetType(Setting["Enumeration"].ToString() + ", " + SelectionEnumAssembly);
-                                    VariableValue = Enum.Parse(enumType, ((string)ConfigTokenFromPath[VariableKeyName]).ReleaseDoubleQuotes());
+                                    VariableValue = ColorValue;
                                 }
+                                DebugWriter.WriteDebug(DebugLevel.I, "Got color var value: {0}", VariableValue);
+                            }
+                            else if (VariableType == SettingsKeyType.SSelection)
+                            {
+                                bool SelectionEnum = (bool)(Setting["IsEnumeration"] ?? false);
+                                string SelectionEnumAssembly = (string)Setting["EnumerationAssembly"];
+                                bool SelectionEnumInternal = (bool)(Setting["EnumerationInternal"] ?? false);
+                                if (SelectionEnum)
+                                {
+                                    if (SelectionEnumInternal)
+                                    {
+                                        // Apparently, we need to have a full assembly name for getting types.
+                                        Type enumType = Type.GetType("KS." + Setting["Enumeration"].ToString() + ", " + Assembly.GetExecutingAssembly().FullName);
+                                        VariableValue = Enum.Parse(enumType, ((string)ConfigTokenFromPath[VariableKeyName]).ReleaseDoubleQuotes());
+                                    }
+                                    else
+                                    {
+                                        Type enumType = Type.GetType(Setting["Enumeration"].ToString() + ", " + SelectionEnumAssembly);
+                                        VariableValue = Enum.Parse(enumType, ((string)ConfigTokenFromPath[VariableKeyName]).ReleaseDoubleQuotes());
+                                    }
+                                }
+                                else
+                                {
+                                    VariableValue = ConfigTokenFromPath[VariableKeyName].ToObject<dynamic>();
+                                }
+                                DebugWriter.WriteDebug(DebugLevel.I, "Got var value: {0}", VariableValue);
+                            }
+                            else if (VariableType == SettingsKeyType.SPreset)
+                            {
+                                if (VariableValue is KeyValuePair<string, PromptPresetBase> preset)
+                                {
+                                    // Set the preset and bail
+                                    PromptPresetManager.SetPreset((string)ConfigTokenFromPath[VariableKeyName], preset.Key);
+                                    continue;
+                                }
+                            }
+                            else if (VariableType == SettingsKeyType.SLang)
+                            {
+                                // Set the language. The reason for adding the type check is that pre-beta 1 0.1.0 versions tend to
+                                // set the language configuration to an object, which should have been a string instance. In order
+                                // to workaround this, we need to verify the type before fetching the language from the configuration
+                                // to avoid errors.
+                                string lang = 
+                                    ConfigTokenFromPath[VariableKeyName].Type == JTokenType.Object ?
+                                    (string)ConfigTokenFromPath[VariableKeyName]["ThreeLetterLanguageName"] :
+                                    (string)ConfigTokenFromPath[VariableKeyName];
+                                LanguageManager.SetLang(lang);
+                                continue;
+                            }
+                            else if (ConfigTokenFromPath is not null && 
+                                     ConfigTokenFromPath[VariableKeyName] is not null)
+                            {
+                                VariableValue = ConfigTokenFromPath[VariableKeyName].ToObject<dynamic>();
+                                DebugWriter.WriteDebug(DebugLevel.I, "Got var value: {0}", VariableValue);
                             }
                             else
                             {
-                                VariableValue = ConfigTokenFromPath[VariableKeyName].ToObject<dynamic>();
-                            }
-                            DebugWriter.WriteDebug(DebugLevel.I, "Got var value: {0}", VariableValue);
-                        }
-                        else if (VariableType == SettingsKeyType.SPreset)
-                        {
-                            if (VariableValue is KeyValuePair<string, PromptPresetBase> preset)
-                            {
-                                // Set the preset and bail
-                                PromptPresetManager.SetPreset((string)ConfigTokenFromPath[VariableKeyName], preset.Key);
+                                DebugWriter.WriteDebug(DebugLevel.W, "Might be a new config entry: [{0}] {1}", Variable, VariableKeyName);
+                                DebugWriter.WriteDebug(DebugLevel.W, "Setting dirty config flag...");
+                                repairRequired = true;
                                 continue;
                             }
+
+                            // Check to see if the value is numeric
+                            if (VariableValue is int or long)
+                            {
+                                if (Convert.ToInt64(VariableValue) <= int.MaxValue)
+                                    VariableValue = int.Parse(Convert.ToString(VariableValue));
+                                else if (Convert.ToInt64(VariableValue) <= long.MaxValue)
+                                    VariableValue = long.Parse(Convert.ToString(VariableValue));
+                                DebugWriter.WriteDebug(DebugLevel.I, "Made necessary conversion for value: {0} [{1}]", VariableValue, VariableValue.GetType());
+                            }
+
+                            // Now, set the value
+                            if (FieldManager.CheckField(Variable, VariableIsInternal))
+                            {
+                                // We're dealing with the field
+                                DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0}...", Variable);
+                                FieldManager.SetValue(Variable, VariableValue, VariableIsInternal);
+                            }
+                            else if (PropertyManager.CheckProperty(Variable))
+                            {
+                                // We're dealing with the property
+                                DebugWriter.WriteDebug(DebugLevel.I, "Setting property {0}...", Variable);
+                                PropertyManager.SetPropertyValue(Variable, VariableValue);
+                            }
                         }
-                        else if (VariableType == SettingsKeyType.SLang)
+                        catch (Exception ex)
                         {
-                            // Set the language. The reason for adding the type check is that pre-beta 1 0.1.0 versions tend to
-                            // set the language configuration to an object, which should have been a string instance. In order
-                            // to workaround this, we need to verify the type before fetching the language from the configuration
-                            // to avoid errors.
-                            string lang = 
-                                ConfigTokenFromPath[VariableKeyName].Type == JTokenType.Object ?
-                                (string)ConfigTokenFromPath[VariableKeyName]["ThreeLetterLanguageName"] :
-                                (string)ConfigTokenFromPath[VariableKeyName];
-                            LanguageManager.SetLang(lang);
-                            continue;
-                        }
-                        else if (ConfigTokenFromPath is not null && 
-                                 ConfigTokenFromPath[VariableKeyName] is not null)
-                        {
-                            VariableValue = ConfigTokenFromPath[VariableKeyName].ToObject<dynamic>();
-                            DebugWriter.WriteDebug(DebugLevel.I, "Got var value: {0}", VariableValue);
-                        }
-                        else
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.W, "Might be a new config entry: [{0}] {1}", Variable, VariableKeyName);
-                            DebugWriter.WriteDebug(DebugLevel.W, "Setting dirty config flag...");
+                            DebugWriter.WriteDebug(DebugLevel.E, "Failed to read configuration entry {0}/{1} in config section {2} [{3}/{4}]: {5}", OptionIndex + 1, MaxOptions, SectionTokenGeneral, SectionIndex + 1, MaxSections, ex.Message);
+                            DebugWriter.WriteDebug(DebugLevel.E, "Setting dirty config flag...");
                             repairRequired = true;
-                            continue;
-                        }
-
-                        // Check to see if the value is numeric
-                        if (VariableValue is int or long)
-                        {
-                            if (Convert.ToInt64(VariableValue) <= int.MaxValue)
-                                VariableValue = int.Parse(Convert.ToString(VariableValue));
-                            else if (Convert.ToInt64(VariableValue) <= long.MaxValue)
-                                VariableValue = long.Parse(Convert.ToString(VariableValue));
-                            DebugWriter.WriteDebug(DebugLevel.I, "Made necessary conversion for value: {0} [{1}]", VariableValue, VariableValue.GetType());
-                        }
-
-                        // Now, set the value
-                        if (FieldManager.CheckField(Variable, VariableIsInternal))
-                        {
-                            // We're dealing with the field
-                            DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0}...", Variable);
-                            FieldManager.SetValue(Variable, VariableValue, VariableIsInternal);
-                        }
-                        else if (PropertyManager.CheckProperty(Variable))
-                        {
-                            // We're dealing with the property
-                            DebugWriter.WriteDebug(DebugLevel.I, "Setting property {0}...", Variable);
-                            PropertyManager.SetPropertyValue(Variable, VariableValue);
                         }
                     }
 
