@@ -157,7 +157,7 @@ namespace KS.Languages
         {
             SetLangDry(lang);
             var Token = ConfigTools.GetConfigCategory(ConfigCategory.General);
-            ConfigTools.SetConfigValue(ConfigCategory.General, Token, "Language", JToken.FromObject(CurrentLanguage));
+            ConfigTools.SetConfigValue(ConfigCategory.General, Token, "Language", lang);
             DebugWriter.WriteDebug(DebugLevel.I, "Saved new language. Updating culture...");
             CultureManager.UpdateCulture();
             return true;

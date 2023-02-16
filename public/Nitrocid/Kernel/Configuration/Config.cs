@@ -167,6 +167,14 @@ namespace KS.Kernel.Configuration
                             VariableValue = preset.Value.PresetName;
                         DebugWriter.WriteDebug(DebugLevel.I, "Got var value: {0}", VariableValue);
                     }
+                    else if (VariableType == SettingsKeyType.SLang)
+                    {
+                        if (FieldManager.CheckField(Variable, VariableIsInternal))
+                            VariableValue = ((LanguageInfo)FieldManager.GetValue(Variable, VariableIsInternal)).ThreeLetterLanguageName;
+                        else
+                            VariableValue = ((LanguageInfo)PropertyManager.GetPropertyValue(Variable)).ThreeLetterLanguageName;
+                        DebugWriter.WriteDebug(DebugLevel.I, "Got var value: {0}", VariableValue);
+                    }
                     else
                     {
                         if (FieldManager.CheckField(Variable, VariableIsInternal))
@@ -407,8 +415,14 @@ namespace KS.Kernel.Configuration
                         }
                         else if (VariableType == SettingsKeyType.SLang)
                         {
-                            // Set the language
-                            string lang = (string)ConfigTokenFromPath[VariableKeyName]["ThreeLetterLanguageName"];
+                            // Set the language. The reason for adding the type check is that pre-beta 1 0.1.0 versions tend to
+                            // set the language configuration to an object, which should have been a string instance. In order
+                            // to workaround this, we need to verify the type before fetching the language from the configuration
+                            // to avoid errors.
+                            string lang = 
+                                ConfigTokenFromPath[VariableKeyName].Type == JTokenType.Object ?
+                                (string)ConfigTokenFromPath[VariableKeyName]["ThreeLetterLanguageName"] :
+                                (string)ConfigTokenFromPath[VariableKeyName];
                             LanguageManager.SetLang(lang);
                             continue;
                         }
