@@ -43,7 +43,7 @@ namespace KSTests.ConsoleTests
 
             // Check for null
             ThemeInfoInstance.ThemeColors.ShouldNotBeNull();
-            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length - 2; typeIndex++)
+            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length - 1; typeIndex++)
             {
                 KernelColorType type = ThemeInfoInstance.ThemeColors.Keys.ElementAt(typeIndex);
                 ThemeInfoInstance.ThemeColors[type].ShouldNotBeNull();
@@ -81,7 +81,7 @@ namespace KSTests.ConsoleTests
 
                 // Check for null
                 ThemeInfoInstance.ThemeColors.ShouldNotBeNull();
-                for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length - 2; typeIndex++)
+                for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length - 1; typeIndex++)
                 {
                     KernelColorType type = ThemeInfoInstance.ThemeColors.Keys.ElementAt(typeIndex);
                     ThemeInfoInstance.ThemeColors[type].ShouldNotBeNull();
@@ -104,7 +104,7 @@ namespace KSTests.ConsoleTests
 
             // Check for null
             ThemeInfoInstance.ThemeColors.ShouldNotBeNull();
-            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length - 2; typeIndex++)
+            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length - 1; typeIndex++)
             {
                 KernelColorType type = ThemeInfoInstance.ThemeColors.Keys.ElementAt(typeIndex);
                 ThemeInfoInstance.ThemeColors[type].ShouldNotBeNull();

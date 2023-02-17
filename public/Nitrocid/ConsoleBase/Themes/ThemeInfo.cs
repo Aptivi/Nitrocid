@@ -80,7 +80,7 @@ namespace KS.ConsoleBase.Themes
         protected ThemeInfo(JToken ThemeResourceJson)
         {
             // Place information to the class
-            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length - 1; typeIndex++)
+            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length; typeIndex++)
             {
                 KernelColorType type = ThemeColors.Keys.ElementAt(typeIndex);
                 ThemeColors[type] = new Color(ThemeResourceJson.SelectToken($"{type}Color").ToString());
