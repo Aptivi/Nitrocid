@@ -65,7 +65,8 @@ namespace KS.Kernel.Updates
             var SortedVersions = new List<KernelUpdateInfo>();
             foreach (JToken KernelUpdate in UpdateToken)
             {
-                var KernelUpdateVer = new Version(KernelUpdate.SelectToken("tag_name").ToString().ReplaceAll(new[] { "v", "-alpha", "-beta" }, ""));
+                string tagName = KernelUpdate.SelectToken("tag_name").ToString();
+                var KernelUpdateVer = new Version(tagName[1..tagName.IndexOf('-')]);
                 string KernelUpdateURL = (string)KernelUpdate.SelectToken("assets")[0]["browser_download_url"];
                 var KernelUpdateInfo = new KernelUpdateInfo(KernelUpdateVer, KernelUpdateURL);
                 SortedVersions.Add(KernelUpdateInfo);
