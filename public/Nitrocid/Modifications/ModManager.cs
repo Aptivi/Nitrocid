@@ -388,7 +388,7 @@ namespace KS.Modifications
         public static void InstallMod(string ModPath)
         {
             string TargetModPath = Filesystem.NeutralizePath(Path.GetFileName(ModPath), Paths.GetKernelPath(KernelPathType.Mods));
-            IScript Script;
+            IMod Script;
             ModPath = Filesystem.NeutralizePath(ModPath, true);
             DebugWriter.WriteDebug(DebugLevel.I, "Installing mod {0} to {1}...", ModPath, TargetModPath);
 

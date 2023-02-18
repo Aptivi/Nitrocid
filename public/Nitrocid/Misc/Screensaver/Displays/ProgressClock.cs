@@ -1353,37 +1353,37 @@ namespace KS.Misc.Screensaver.Displays
                 TextWriterWhereColor.WriteWhere(ProgressClockSettings.ProgressClockUpperLeftCornerCharSeconds + ProgressClockSettings.ProgressClockUpperFrameCharSeconds.Repeat(ConsoleWrapper.WindowWidth - 10) + ProgressClockSettings.ProgressClockUpperRightCornerCharSeconds, 4, (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) + 7, true, ColorStorageSeconds); // Top of Seconds
 
                 // Fill progress for hours, minutes, and seconds
-                if (!(TimeDate.TimeDate.KernelDateTime.Hour == 0))
-                    TextWriterWhereColor.WriteWhere(" ".Repeat(ConsoleExtensions.PercentRepeat(TimeDate.TimeDate.KernelDateTime.Hour, 24, 10)), 5, ProgressFillPositionHours, true, Color.Empty, ColorStorageHours);
-                if (!(TimeDate.TimeDate.KernelDateTime.Minute == 0))
-                    TextWriterWhereColor.WriteWhere(" ".Repeat(ConsoleExtensions.PercentRepeat(TimeDate.TimeDate.KernelDateTime.Minute, 60, 10)), 5, ProgressFillPositionMinutes, true, Color.Empty, ColorStorageMinutes);
-                if (!(TimeDate.TimeDate.KernelDateTime.Second == 0))
-                    TextWriterWhereColor.WriteWhere(" ".Repeat(ConsoleExtensions.PercentRepeat(TimeDate.TimeDate.KernelDateTime.Second, 60, 10)), 5, ProgressFillPositionSeconds, true, Color.Empty, ColorStorageSeconds);
+                if (!(TimeDate.TimeDateTools.KernelDateTime.Hour == 0))
+                    TextWriterWhereColor.WriteWhere(" ".Repeat(ConsoleExtensions.PercentRepeat(TimeDate.TimeDateTools.KernelDateTime.Hour, 24, 10)), 5, ProgressFillPositionHours, true, Color.Empty, ColorStorageHours);
+                if (!(TimeDate.TimeDateTools.KernelDateTime.Minute == 0))
+                    TextWriterWhereColor.WriteWhere(" ".Repeat(ConsoleExtensions.PercentRepeat(TimeDate.TimeDateTools.KernelDateTime.Minute, 60, 10)), 5, ProgressFillPositionMinutes, true, Color.Empty, ColorStorageMinutes);
+                if (!(TimeDate.TimeDateTools.KernelDateTime.Second == 0))
+                    TextWriterWhereColor.WriteWhere(" ".Repeat(ConsoleExtensions.PercentRepeat(TimeDate.TimeDateTools.KernelDateTime.Second, 60, 10)), 5, ProgressFillPositionSeconds, true, Color.Empty, ColorStorageSeconds);
 
                 // Print information
                 if (!string.IsNullOrEmpty(ProgressClockSettings.ProgressClockInfoTextHours))
                 {
-                    TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(ProgressClockSettings.ProgressClockInfoTextHours), 4, InformationPositionHours, true, ColorStorageHours, TimeDate.TimeDate.KernelDateTime.Hour);
+                    TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(ProgressClockSettings.ProgressClockInfoTextHours), 4, InformationPositionHours, true, ColorStorageHours, TimeDate.TimeDateTools.KernelDateTime.Hour);
                 }
                 else
                 {
-                    TextWriterWhereColor.WriteWhere("H: {0}/24", 4, InformationPositionHours, true, ColorStorageHours, TimeDate.TimeDate.KernelDateTime.Hour);
+                    TextWriterWhereColor.WriteWhere("H: {0}/24", 4, InformationPositionHours, true, ColorStorageHours, TimeDate.TimeDateTools.KernelDateTime.Hour);
                 }
                 if (!string.IsNullOrEmpty(ProgressClockSettings.ProgressClockInfoTextMinutes))
                 {
-                    TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(ProgressClockSettings.ProgressClockInfoTextMinutes), 4, InformationPositionMinutes, true, ColorStorageMinutes, TimeDate.TimeDate.KernelDateTime.Minute);
+                    TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(ProgressClockSettings.ProgressClockInfoTextMinutes), 4, InformationPositionMinutes, true, ColorStorageMinutes, TimeDate.TimeDateTools.KernelDateTime.Minute);
                 }
                 else
                 {
-                    TextWriterWhereColor.WriteWhere("M: {0}/60", 4, InformationPositionMinutes, true, ColorStorageMinutes, TimeDate.TimeDate.KernelDateTime.Minute);
+                    TextWriterWhereColor.WriteWhere("M: {0}/60", 4, InformationPositionMinutes, true, ColorStorageMinutes, TimeDate.TimeDateTools.KernelDateTime.Minute);
                 }
                 if (!string.IsNullOrEmpty(ProgressClockSettings.ProgressClockInfoTextHours))
                 {
-                    TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(ProgressClockSettings.ProgressClockInfoTextSeconds), 4, InformationPositionSeconds, true, ColorStorageSeconds, TimeDate.TimeDate.KernelDateTime.Second);
+                    TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(ProgressClockSettings.ProgressClockInfoTextSeconds), 4, InformationPositionSeconds, true, ColorStorageSeconds, TimeDate.TimeDateTools.KernelDateTime.Second);
                 }
                 else
                 {
-                    TextWriterWhereColor.WriteWhere("S: {0}/60", 4, InformationPositionSeconds, true, ColorStorageSeconds, TimeDate.TimeDate.KernelDateTime.Second);
+                    TextWriterWhereColor.WriteWhere("S: {0}/60", 4, InformationPositionSeconds, true, ColorStorageSeconds, TimeDate.TimeDateTools.KernelDateTime.Second);
                 }
 
                 // Print date information

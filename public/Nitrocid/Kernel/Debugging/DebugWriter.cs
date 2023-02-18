@@ -70,10 +70,10 @@ namespace KS.Kernel.Debugging
                         // Check to see if source file name is not empty.
                         if (STrace.RoutineFileName is not null & !(STrace.RoutineLineNumber == 0))
                             // Show stack information
-                            message = $"{TimeDate.TimeDate.KernelDateTime.ToShortDateString()} {TimeDate.TimeDate.KernelDateTime.ToShortTimeString()} [{Level}] ({STrace.RoutineName} - {STrace.RoutineFileName}:{STrace.RoutineLineNumber}): {text}";
+                            message = $"{TimeDate.TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDate.TimeDateTools.KernelDateTime.ToShortTimeString()} [{Level}] ({STrace.RoutineName} - {STrace.RoutineFileName}:{STrace.RoutineLineNumber}): {text}";
                         else
                             // Rare case, unless debug symbol is not found on archives.
-                            message = $"{TimeDate.TimeDate.KernelDateTime.ToShortDateString()} {TimeDate.TimeDate.KernelDateTime.ToShortTimeString()} [{Level}] {text}";
+                            message = $"{TimeDate.TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDate.TimeDateTools.KernelDateTime.ToShortTimeString()} [{Level}] {text}";
 
                         // Debug to file and all connected debug devices (raw mode). The reason for the /r/n is that because
                         // Nitrocid on the Linux host tends to use /n only for new lines, and Windows considers /r/n as the
@@ -136,7 +136,7 @@ namespace KS.Kernel.Debugging
                     {
                         try
                         {
-                            RemoteDebugger.DebugDevices[i].ClientStreamWriter.Write($"{TimeDate.TimeDate.KernelDateTime.ToShortDateString()} {TimeDate.TimeDate.KernelDateTime.ToShortTimeString()} [{Level}] {text}\r\n", vars);
+                            RemoteDebugger.DebugDevices[i].ClientStreamWriter.Write($"{TimeDate.TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDate.TimeDateTools.KernelDateTime.ToShortTimeString()} [{Level}] {text}\r\n", vars);
                         }
                         catch (Exception ex)
                         {

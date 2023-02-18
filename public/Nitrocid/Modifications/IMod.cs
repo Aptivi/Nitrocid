@@ -26,7 +26,7 @@ namespace KS.Modifications
     /// <summary>
     /// Interface for mods
     /// </summary>
-    public interface IScript
+    public interface IMod
     {
         /// <summary>
         /// List of commands for mod

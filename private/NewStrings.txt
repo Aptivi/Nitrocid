@@ -460,5 +460,6 @@ Loading configuration...
 A regular expression error happened while the text is being processed. Check your regular expression syntax and try again. If the time-out occurred, ensure that you don't recurse too much (don't be greedy).
 Invalid regular expression syntax.
 Today Day Color
+Manages your contacts
 
 ==========================================================================================================================================

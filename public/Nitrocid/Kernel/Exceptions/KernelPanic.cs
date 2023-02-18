@@ -211,8 +211,8 @@ namespace KS.Kernel.Exceptions
             try
             {
                 // Open a file stream for dump
-                var Dump = new StreamWriter($"{Paths.AppDataPath}/dmp_{TimeDateRenderers.RenderDate(TimeDate.TimeDate.FormatType.Short).Replace("/", "-")}_{TimeDateRenderers.RenderTime(TimeDate.TimeDate.FormatType.Long).Replace(":", "-")}.txt");
-                DebugWriter.WriteDebug(DebugLevel.I, "Opened file stream in home directory, saved as dmp_{0}.txt", $"{TimeDateRenderers.RenderDate(TimeDate.TimeDate.FormatType.Short).Replace("/", "-")}_{TimeDateRenderers.RenderTime(TimeDate.TimeDate.FormatType.Long).Replace(":", "-")}");
+                var Dump = new StreamWriter($"{Paths.AppDataPath}/dmp_{TimeDateRenderers.RenderDate(TimeDate.TimeDateTools.FormatType.Short).Replace("/", "-")}_{TimeDateRenderers.RenderTime(TimeDate.TimeDateTools.FormatType.Long).Replace(":", "-")}.txt");
+                DebugWriter.WriteDebug(DebugLevel.I, "Opened file stream in home directory, saved as dmp_{0}.txt", $"{TimeDateRenderers.RenderDate(TimeDate.TimeDateTools.FormatType.Short).Replace("/", "-")}_{TimeDateRenderers.RenderTime(TimeDate.TimeDateTools.FormatType.Long).Replace(":", "-")}");
 
                 // Write info (Header)
                 Dump.AutoFlush = true;

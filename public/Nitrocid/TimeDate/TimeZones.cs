@@ -48,7 +48,7 @@ namespace KS.TimeDate
 
             // Adds date and time to every single time zone to the list
             foreach (var Zone in Zones)
-                ZoneTimes.Add(Zone.Id, ConvertTime(TimeDate.KernelDateTime, FindSystemTimeZoneById(Zone.Id)));
+                ZoneTimes.Add(Zone.Id, ConvertTime(TimeDateTools.KernelDateTime, FindSystemTimeZoneById(Zone.Id)));
 
             // Return the populated array
             return ZoneTimes;
@@ -65,7 +65,7 @@ namespace KS.TimeDate
             bool ZoneFound = ZoneTimes.ContainsKey(Zone);
             if (ZoneFound)
             {
-                TextWriterColor.Write(Translate.DoTranslation("- Time of {0}: {1}") + " ({2})", Zone, ZoneTimes[Zone].ToString(), FindSystemTimeZoneById(Zone).GetUtcOffset(TimeDate.KernelDateTime).ToString());
+                TextWriterColor.Write(Translate.DoTranslation("- Time of {0}: {1}") + " ({2})", Zone, ZoneTimes[Zone].ToString(), FindSystemTimeZoneById(Zone).GetUtcOffset(TimeDateTools.KernelDateTime).ToString());
             }
             return ZoneFound;
         }
@@ -84,7 +84,7 @@ namespace KS.TimeDate
                 if (ZoneName.Contains(Zone))
                 {
                     ZoneFound = true;
-                    TextWriterColor.Write(Translate.DoTranslation("- Time of {0}: {1}") + " ({2})", ZoneName, ZoneTimes[ZoneName].ToString(), FindSystemTimeZoneById(ZoneName).GetUtcOffset(TimeDate.KernelDateTime).ToString());
+                    TextWriterColor.Write(Translate.DoTranslation("- Time of {0}: {1}") + " ({2})", ZoneName, ZoneTimes[ZoneName].ToString(), FindSystemTimeZoneById(ZoneName).GetUtcOffset(TimeDateTools.KernelDateTime).ToString());
                 }
             }
             return ZoneFound;
@@ -97,7 +97,7 @@ namespace KS.TimeDate
         {
             var ZoneTimes = GetTimeZones();
             foreach (var TimeZone in ZoneTimes.Keys)
-                TextWriterColor.Write(Translate.DoTranslation("- Time of {0}: {1}") + " ({2})", TimeZone, ZoneTimes[TimeZone].ToString(), FindSystemTimeZoneById(TimeZone).GetUtcOffset(TimeDate.KernelDateTime).ToString());
+                TextWriterColor.Write(Translate.DoTranslation("- Time of {0}: {1}") + " ({2})", TimeZone, ZoneTimes[TimeZone].ToString(), FindSystemTimeZoneById(TimeZone).GetUtcOffset(TimeDateTools.KernelDateTime).ToString());
         }
 
     }

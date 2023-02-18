@@ -99,7 +99,7 @@ namespace KS.Misc.Timers
             // Populate the positions for time
             int HalfWidth = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
             int HalfHeight = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
-            string CurrentRemainingString = TimeDate.TimeDate.GetRemainingTimeFromNow((int)Math.Round(TimerInterval));
+            string CurrentRemainingString = TimeDate.TimeDateTools.GetRemainingTimeFromNow((int)Math.Round(TimerInterval));
             int TimeLeftPosition = 0;
             int TimeTopPosition = 0;
             UpdateRemainingPositions(CurrentRemainingString, ref TimeLeftPosition, ref TimeTopPosition);
@@ -167,7 +167,7 @@ namespace KS.Misc.Timers
                                 else
                                 {
                                     // Update the remaining time
-                                    string RemainingString = TimeDate.TimeDate.GetRemainingTimeFromNow((int)Math.Round(TimerInterval));
+                                    string RemainingString = TimeDate.TimeDateTools.GetRemainingTimeFromNow((int)Math.Round(TimerInterval));
                                     UpdateRemainingPositions(RemainingString, ref TimeLeftPosition, ref TimeTopPosition);
                                     ClearRemainingTimeDisplay(RemainingString, FigletTimeOldWidth, FigletTimeOldWidthEnd);
                                     if (Flags.EnableFigletTimer)

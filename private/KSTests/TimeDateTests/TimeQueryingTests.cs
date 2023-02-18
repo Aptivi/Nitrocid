@@ -34,7 +34,7 @@ namespace KSTests.TimeDateTests
         [Description("Querying")]
         public void TestGetRemainingTimeFromNow()
         {
-            string RemainingTime = TimeDate.GetRemainingTimeFromNow(1000);
+            string RemainingTime = TimeDateTools.GetRemainingTimeFromNow(1000);
             RemainingTime.ShouldNotBeNullOrEmpty();
             RemainingTime.ShouldBe("0.00:00:01.000");
         }

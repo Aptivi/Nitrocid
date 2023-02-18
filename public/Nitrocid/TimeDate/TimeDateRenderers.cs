@@ -37,11 +37,11 @@ namespace KS.TimeDate
         {
             if (Flags.LongTimeDate)
             {
-                return TimeDate.KernelDateTime.ToString(CultureManager.CurrentCult.DateTimeFormat.LongTimePattern, CultureManager.CurrentCult);
+                return TimeDateTools.KernelDateTime.ToString(CultureManager.CurrentCult.DateTimeFormat.LongTimePattern, CultureManager.CurrentCult);
             }
             else
             {
-                return TimeDate.KernelDateTime.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCult);
+                return TimeDateTools.KernelDateTime.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCult);
             }
         }
 
@@ -50,15 +50,15 @@ namespace KS.TimeDate
         /// </summary>
         /// <param name="FormatType">Date/time format type</param>
         /// <returns>A long or short time</returns>
-        public static string RenderTime(TimeDate.FormatType FormatType)
+        public static string RenderTime(TimeDateTools.FormatType FormatType)
         {
-            if (FormatType == TimeDate.FormatType.Long)
+            if (FormatType == TimeDateTools.FormatType.Long)
             {
-                return TimeDate.KernelDateTime.ToString(CultureManager.CurrentCult.DateTimeFormat.LongTimePattern, CultureManager.CurrentCult);
+                return TimeDateTools.KernelDateTime.ToString(CultureManager.CurrentCult.DateTimeFormat.LongTimePattern, CultureManager.CurrentCult);
             }
             else
             {
-                return TimeDate.KernelDateTime.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCult);
+                return TimeDateTools.KernelDateTime.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCult);
             }
         }
 
@@ -71,11 +71,11 @@ namespace KS.TimeDate
         {
             if (Flags.LongTimeDate)
             {
-                return TimeDate.KernelDateTime.ToString(Cult.DateTimeFormat.LongTimePattern, Cult);
+                return TimeDateTools.KernelDateTime.ToString(Cult.DateTimeFormat.LongTimePattern, Cult);
             }
             else
             {
-                return TimeDate.KernelDateTime.ToString(Cult.DateTimeFormat.ShortTimePattern, Cult);
+                return TimeDateTools.KernelDateTime.ToString(Cult.DateTimeFormat.ShortTimePattern, Cult);
             }
         }
 
@@ -85,15 +85,15 @@ namespace KS.TimeDate
         /// <param name="Cult">A culture.</param>
         /// <param name="FormatType">Date/time format type</param>
         /// <returns>A time</returns>
-        public static string RenderTime(CultureInfo Cult, TimeDate.FormatType FormatType)
+        public static string RenderTime(CultureInfo Cult, TimeDateTools.FormatType FormatType)
         {
-            if (FormatType == TimeDate.FormatType.Long)
+            if (FormatType == TimeDateTools.FormatType.Long)
             {
-                return TimeDate.KernelDateTime.ToString(Cult.DateTimeFormat.LongTimePattern, Cult);
+                return TimeDateTools.KernelDateTime.ToString(Cult.DateTimeFormat.LongTimePattern, Cult);
             }
             else
             {
-                return TimeDate.KernelDateTime.ToString(Cult.DateTimeFormat.ShortTimePattern, Cult);
+                return TimeDateTools.KernelDateTime.ToString(Cult.DateTimeFormat.ShortTimePattern, Cult);
             }
         }
 
@@ -120,9 +120,9 @@ namespace KS.TimeDate
         /// <param name="DT">Specified time</param>
         /// <param name="FormatType">Date/time format type</param>
         /// <returns>A long or short time</returns>
-        public static string RenderTime(DateTime DT, TimeDate.FormatType FormatType)
+        public static string RenderTime(DateTime DT, TimeDateTools.FormatType FormatType)
         {
-            if (FormatType == TimeDate.FormatType.Long)
+            if (FormatType == TimeDateTools.FormatType.Long)
             {
                 return DT.ToString(CultureManager.CurrentCult.DateTimeFormat.LongTimePattern, CultureManager.CurrentCult);
             }
@@ -157,9 +157,9 @@ namespace KS.TimeDate
         /// <param name="Cult">A culture</param>
         /// <param name="FormatType">Date/time format type</param>
         /// <returns>A time</returns>
-        public static string RenderTime(DateTime DT, CultureInfo Cult, TimeDate.FormatType FormatType)
+        public static string RenderTime(DateTime DT, CultureInfo Cult, TimeDateTools.FormatType FormatType)
         {
-            if (FormatType == TimeDate.FormatType.Long)
+            if (FormatType == TimeDateTools.FormatType.Long)
             {
                 return DT.ToString(Cult.DateTimeFormat.LongTimePattern, Cult);
             }
@@ -177,11 +177,11 @@ namespace KS.TimeDate
         {
             if (Flags.LongTimeDate)
             {
-                return TimeDate.KernelDateTime.ToString(CultureManager.CurrentCult.DateTimeFormat.LongDatePattern, CultureManager.CurrentCult);
+                return TimeDateTools.KernelDateTime.ToString(CultureManager.CurrentCult.DateTimeFormat.LongDatePattern, CultureManager.CurrentCult);
             }
             else
             {
-                return TimeDate.KernelDateTime.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCult);
+                return TimeDateTools.KernelDateTime.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCult);
             }
         }
 
@@ -190,15 +190,15 @@ namespace KS.TimeDate
         /// </summary>
         /// <param name="FormatType">Date/time format type</param>
         /// <returns>A long or short date</returns>
-        public static string RenderDate(TimeDate.FormatType FormatType)
+        public static string RenderDate(TimeDateTools.FormatType FormatType)
         {
-            if (FormatType == TimeDate.FormatType.Long)
+            if (FormatType == TimeDateTools.FormatType.Long)
             {
-                return TimeDate.KernelDateTime.ToString(CultureManager.CurrentCult.DateTimeFormat.LongDatePattern, CultureManager.CurrentCult);
+                return TimeDateTools.KernelDateTime.ToString(CultureManager.CurrentCult.DateTimeFormat.LongDatePattern, CultureManager.CurrentCult);
             }
             else
             {
-                return TimeDate.KernelDateTime.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCult);
+                return TimeDateTools.KernelDateTime.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCult);
             }
         }
 
@@ -211,11 +211,11 @@ namespace KS.TimeDate
         {
             if (Flags.LongTimeDate)
             {
-                return TimeDate.KernelDateTime.ToString(Cult.DateTimeFormat.LongDatePattern, Cult);
+                return TimeDateTools.KernelDateTime.ToString(Cult.DateTimeFormat.LongDatePattern, Cult);
             }
             else
             {
-                return TimeDate.KernelDateTime.ToString(Cult.DateTimeFormat.ShortDatePattern, Cult);
+                return TimeDateTools.KernelDateTime.ToString(Cult.DateTimeFormat.ShortDatePattern, Cult);
             }
         }
 
@@ -225,15 +225,15 @@ namespace KS.TimeDate
         /// <param name="Cult">A culture.</param>
         /// <param name="FormatType">Date/time format type</param>
         /// <returns>A date</returns>
-        public static string RenderDate(CultureInfo Cult, TimeDate.FormatType FormatType)
+        public static string RenderDate(CultureInfo Cult, TimeDateTools.FormatType FormatType)
         {
-            if (FormatType == TimeDate.FormatType.Long)
+            if (FormatType == TimeDateTools.FormatType.Long)
             {
-                return TimeDate.KernelDateTime.ToString(Cult.DateTimeFormat.LongDatePattern, Cult);
+                return TimeDateTools.KernelDateTime.ToString(Cult.DateTimeFormat.LongDatePattern, Cult);
             }
             else
             {
-                return TimeDate.KernelDateTime.ToString(Cult.DateTimeFormat.ShortDatePattern, Cult);
+                return TimeDateTools.KernelDateTime.ToString(Cult.DateTimeFormat.ShortDatePattern, Cult);
             }
         }
 
@@ -260,9 +260,9 @@ namespace KS.TimeDate
         /// <param name="DT">Specified date</param>
         /// <param name="FormatType">Date/time format type</param>
         /// <returns>A long or short date</returns>
-        public static string RenderDate(DateTime DT, TimeDate.FormatType FormatType)
+        public static string RenderDate(DateTime DT, TimeDateTools.FormatType FormatType)
         {
-            if (FormatType == TimeDate.FormatType.Long)
+            if (FormatType == TimeDateTools.FormatType.Long)
             {
                 return DT.ToString(CultureManager.CurrentCult.DateTimeFormat.LongDatePattern, CultureManager.CurrentCult);
             }
@@ -297,9 +297,9 @@ namespace KS.TimeDate
         /// <param name="Cult">A culture</param>
         /// <param name="FormatType">Date/time format type</param>
         /// <returns>A date</returns>
-        public static string RenderDate(DateTime DT, CultureInfo Cult, TimeDate.FormatType FormatType)
+        public static string RenderDate(DateTime DT, CultureInfo Cult, TimeDateTools.FormatType FormatType)
         {
-            if (FormatType == TimeDate.FormatType.Long)
+            if (FormatType == TimeDateTools.FormatType.Long)
             {
                 return DT.ToString(Cult.DateTimeFormat.LongDatePattern, Cult);
             }
@@ -317,11 +317,11 @@ namespace KS.TimeDate
         {
             if (Flags.LongTimeDate)
             {
-                return TimeDate.KernelDateTime.ToString(CultureManager.CurrentCult.DateTimeFormat.FullDateTimePattern, CultureManager.CurrentCult);
+                return TimeDateTools.KernelDateTime.ToString(CultureManager.CurrentCult.DateTimeFormat.FullDateTimePattern, CultureManager.CurrentCult);
             }
             else
             {
-                return TimeDate.KernelDateTime.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCult) + " - " + TimeDate.KernelDateTime.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCult);
+                return TimeDateTools.KernelDateTime.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCult) + " - " + TimeDateTools.KernelDateTime.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCult);
             }
         }
 
@@ -330,15 +330,15 @@ namespace KS.TimeDate
         /// </summary>
         /// <param name="FormatType">Date/time format type</param>
         /// <returns>A long or short time and date</returns>
-        public static string Render(TimeDate.FormatType FormatType)
+        public static string Render(TimeDateTools.FormatType FormatType)
         {
-            if (FormatType == TimeDate.FormatType.Long)
+            if (FormatType == TimeDateTools.FormatType.Long)
             {
-                return TimeDate.KernelDateTime.ToString(CultureManager.CurrentCult.DateTimeFormat.FullDateTimePattern, CultureManager.CurrentCult);
+                return TimeDateTools.KernelDateTime.ToString(CultureManager.CurrentCult.DateTimeFormat.FullDateTimePattern, CultureManager.CurrentCult);
             }
             else
             {
-                return TimeDate.KernelDateTime.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCult) + " - " + TimeDate.KernelDateTime.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCult);
+                return TimeDateTools.KernelDateTime.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCult) + " - " + TimeDateTools.KernelDateTime.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCult);
             }
         }
 
@@ -351,11 +351,11 @@ namespace KS.TimeDate
         {
             if (Flags.LongTimeDate)
             {
-                return TimeDate.KernelDateTime.ToString(Cult.DateTimeFormat.FullDateTimePattern, Cult);
+                return TimeDateTools.KernelDateTime.ToString(Cult.DateTimeFormat.FullDateTimePattern, Cult);
             }
             else
             {
-                return TimeDate.KernelDateTime.ToString(Cult.DateTimeFormat.ShortDatePattern, Cult) + " - " + TimeDate.KernelDateTime.ToString(Cult.DateTimeFormat.ShortTimePattern, Cult);
+                return TimeDateTools.KernelDateTime.ToString(Cult.DateTimeFormat.ShortDatePattern, Cult) + " - " + TimeDateTools.KernelDateTime.ToString(Cult.DateTimeFormat.ShortTimePattern, Cult);
             }
         }
 
@@ -365,15 +365,15 @@ namespace KS.TimeDate
         /// <param name="Cult">A culture.</param>
         /// <param name="FormatType">Date/time format type</param>
         /// <returns>A time and date</returns>
-        public static string Render(CultureInfo Cult, TimeDate.FormatType FormatType)
+        public static string Render(CultureInfo Cult, TimeDateTools.FormatType FormatType)
         {
-            if (FormatType == TimeDate.FormatType.Long)
+            if (FormatType == TimeDateTools.FormatType.Long)
             {
-                return TimeDate.KernelDateTime.ToString(Cult.DateTimeFormat.FullDateTimePattern, Cult);
+                return TimeDateTools.KernelDateTime.ToString(Cult.DateTimeFormat.FullDateTimePattern, Cult);
             }
             else
             {
-                return TimeDate.KernelDateTime.ToString(Cult.DateTimeFormat.ShortDatePattern, Cult) + " - " + TimeDate.KernelDateTime.ToString(Cult.DateTimeFormat.ShortTimePattern, Cult);
+                return TimeDateTools.KernelDateTime.ToString(Cult.DateTimeFormat.ShortDatePattern, Cult) + " - " + TimeDateTools.KernelDateTime.ToString(Cult.DateTimeFormat.ShortTimePattern, Cult);
             }
         }
 
@@ -400,9 +400,9 @@ namespace KS.TimeDate
         /// <param name="DT">Specified time and date</param>
         /// <param name="FormatType">Date/time format type</param>
         /// <returns>A long or short time and date</returns>
-        public static string Render(DateTime DT, TimeDate.FormatType FormatType)
+        public static string Render(DateTime DT, TimeDateTools.FormatType FormatType)
         {
-            if (FormatType == TimeDate.FormatType.Long)
+            if (FormatType == TimeDateTools.FormatType.Long)
             {
                 return DT.ToString(CultureManager.CurrentCult.DateTimeFormat.FullDateTimePattern, CultureManager.CurrentCult);
             }
@@ -437,9 +437,9 @@ namespace KS.TimeDate
         /// <param name="Cult">A culture</param>
         /// <param name="FormatType">Date/time format type</param>
         /// <returns>A time and date</returns>
-        public static string Render(DateTime DT, CultureInfo Cult, TimeDate.FormatType FormatType)
+        public static string Render(DateTime DT, CultureInfo Cult, TimeDateTools.FormatType FormatType)
         {
-            if (FormatType == TimeDate.FormatType.Long)
+            if (FormatType == TimeDateTools.FormatType.Long)
             {
                 return DT.ToString(Cult.DateTimeFormat.FullDateTimePattern, Cult);
             }

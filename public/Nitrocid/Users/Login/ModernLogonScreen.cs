@@ -106,11 +106,11 @@ namespace KS.Users.Login
                 while (true)
                 {
                     // Print the time
-                    string timeStr = TimeDateRenderers.RenderTime(TimeDate.TimeDate.FormatType.Short);
+                    string timeStr = TimeDateRenderers.RenderTime(TimeDate.TimeDateTools.FormatType.Short);
                     if (timeStr != cachedTimeStr)
                     {
                         ConsoleWrapper.Clear();
-                        cachedTimeStr = TimeDateRenderers.RenderTime(TimeDate.TimeDate.FormatType.Short);
+                        cachedTimeStr = TimeDateRenderers.RenderTime(TimeDate.TimeDateTools.FormatType.Short);
                         var figFont = FigletTools.GetFigletFont("Banner3");
                         int figHeight = FigletTools.GetFigletHeight(timeStr, figFont) / 2;
                         CenteredFigletTextColor.WriteCenteredFiglet(figFont, timeStr, KernelColorType.Stage);

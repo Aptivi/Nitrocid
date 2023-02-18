@@ -231,7 +231,7 @@ namespace KS.Kernel
                     // Show current time
                     SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Welcome!"), true, KernelColorType.Stage);
                     if (Flags.ShowCurrentTimeBeforeLogin)
-                        TimeDate.TimeDate.ShowCurrentTimes();
+                        TimeDate.TimeDateTools.ShowCurrentTimes();
 
                     // Notify user of errors if appropriate
                     if (Flags.NotifyKernelError)

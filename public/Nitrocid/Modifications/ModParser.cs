@@ -48,12 +48,12 @@ namespace KS.Modifications
         /// Gets the mod instance from compiled assembly
         /// </summary>
         /// <param name="Assembly">An assembly</param>
-        public static IScript GetModInstance(Assembly Assembly)
+        public static IMod GetModInstance(Assembly Assembly)
         {
             foreach (Type t in Assembly.GetTypes())
             {
-                if (t.GetInterface(typeof(IScript).Name) is not null)
-                    return (IScript)Assembly.CreateInstance(t.FullName);
+                if (t.GetInterface(typeof(IMod).Name) is not null)
+                    return (IMod)Assembly.CreateInstance(t.FullName);
             }
             return null;
         }
@@ -112,7 +112,7 @@ namespace KS.Modifications
         /// </summary>
         /// <param name="script">Instance of script</param>
         /// <param name="modFile">Mod file name with extension. It should end with .dll</param>
-        public static void FinalizeMods(IScript script, string modFile)
+        public static void FinalizeMods(IMod script, string modFile)
         {
             var ModParts = new Dictionary<string, ModPartInfo>();
             ModInfo ModInstance;

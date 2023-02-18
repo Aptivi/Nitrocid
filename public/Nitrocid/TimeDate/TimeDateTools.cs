@@ -26,7 +26,7 @@ namespace KS.TimeDate
     /// <summary>
     /// Time and date module
     /// </summary>
-    public static class TimeDate
+    public static class TimeDateTools
     {
 
         /// <summary>

@@ -316,7 +316,7 @@ namespace KS.Misc.Screensaver.Displays
                         int progPosY = ConsoleWrapper.WindowHeight - 4;
                         int maxProg = 3000;
                         long ksEpochTick = new DateTime(2018, 2, 22).Ticks;
-                        long currentTick = TimeDate.TimeDate.KernelDateTime.Date.Ticks;
+                        long currentTick = TimeDate.TimeDateTools.KernelDateTime.Date.Ticks;
                         long tickDiff = currentTick - ksEpochTick;
                         for (int iteration = 0; iteration < maxProg; iteration++)
                         {
