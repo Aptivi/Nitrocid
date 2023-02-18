@@ -1,6 +1,3 @@
-Available commands: {0}
-Command injection has been cancelled.
-Injected arguments will be scheduled ta run at next reboot.
 Invalid color template {0}
 hwprobe: Its just anotha homocide. Yo' hardware will be probed. Drop it like its hot. Pleaze wait...
 CPU: One or more of tha CPU cores failed ta be probed hittin that booty. Show'n information anyway...
@@ -12,7 +9,6 @@ DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You fou
 [{0}] panic: Reboot enabled due ta error level bein {0}.
 [{0}] panic: Time ta reboot: {1} seconds, exceeds 1 hour. It is set to 1 minute. Put ya mutha fuckin choppers up if ya feel this.
 DOUBLE PANIZZLE: Error Type {0} invalid.
-[{0}] dpanic: {1} -- Reboot'n 'n {2} seconds... Holler at tha boss dogg.
 [{0}] panic: Reboot disabled due ta error level bein {0} yaba daba dizzle.
 [{0}] panic: Ya fuck with us, we gots to fuck you up. {1} -- Press any key ta continue ballin' tha kernel where the sun be shinin and I be rhymin'.
 [{0}] panic: {1} -- Press any key ta shutdown in tha dogg pound.
@@ -20,27 +16,15 @@ DOUBLE PANIZZLE: Error Type {0} invalid.
 DOUBLE PANIC: Kernel bug to increase tha peace: {0}
 Playa hatin' down...
 Saggin'...
-Bitch instance of Nitrocid KS be runn'n. Messin' down 'n caze of interference. Put ya mutha fuckin choppers up if ya feel this.
-Failed ta add hustla into permission lists: Yippie yo, you can't see my flow. invalid type {0}
-Failed ta add usa into permission lists: invalid pusha {0}
-Failed ta remove homey from permission lists: invalid type {0}
-You be already logged 'n. Bounce wit me.
-Failed ta remove usa from permission lists: invalid usa {0}
-You have bitch found a bug, or the permission you try ta add or remove is already done, or brotha error.
 Error {0}: {1}
-You have homeboi found a bug, or tha permission you try ta edit fo` a new usa has failed.
-Available usernames: Chill as I take you on a trip. {0}
 Username: 
 Spaces be not allowed.
 Special characta be not allowed. Boom bam as I step in the jam, God damn.
 {0} password with the gangsta shit that keeps ya hangin: 
 Wrong password.
-Drug deala be disabled.
-Wrong username doggystyle.
 Error try'n ta parze posers. Snoop heffner mixed with a little bit of doggy flint. {0}
 Error ridin' ta add username.
 usrmgr: Rhymin' username {0}...
-Blank username cuz Im tha Double O G.
 Usa {0} not found. wat it do ??
 Crazy ass nigga {0} isn't allowed ta be removed.
 Pimp {0} be already logge' 'n. Log-out n log-'n as killa admin.
@@ -91,24 +75,14 @@ Changes remote directory ta download from or upload ta
 Deletes remote file from serva
 Disconnects from serva
 Downloads remote file ta local directory ho-slappin' binary or text
-Shows help screen
 Lists local directory
 Lists remote directory
 Uploads local file to remote directory us'n binary or text
-Failed ta git properties fo` hustla {0}
-Shot calla Gangsta:
-Adapter Name: Anotha dogg house production.
-Maximum Transmission Unit: {2} Units
-DHCP Enabled:
-Non-unicast packets:
-Unicast packets:
-Error blingin' packets:
 Alias can't be tha same name as a command.
 Command not found ta alias ta {0} cuz I put gangsta rap on tha map.
 You can now run "{0}" as a command: Listen to how a motherfucker flow shit. "{1}" yaba daba dizzle.
 Alias {0} be not found ta be removed so show some love, niggaz!
 Invalid mode {0}.
-Injected arguments, {0}, will be scheduled ta riznun at next reboot. I started yo shit and i'll end yo' shit.
 There was not enough arguments. See below fo` usage:
 Directory {0} not found
 Blank host name.
@@ -122,18 +96,7 @@ The new name you entered be already found.
 {0} be not found.
 Configuration reloaded. You might nee' ta reboot tha kernel for some changes ta take effect. Listen to how a motherfucker flow shit.
 One or more of tha colors be invalid.
-Colors be not available. Ya fuck with us, we gots to fuck you up. Turn on colored shell 'n tha kernel config.
 Homey {0} not found.
-Kernel Version:
-Debug Mode:
-Colored Shell:
-Arguments on Boot:
-Help command simplify:
-MOTD on Login to increase tha peace:
-Time/Date on corna:
-Current usa name:
-Current host N-to-tha-izzame n we out!
-Available usernames: It dont stop till the wheels fall off.
 Error trying ta execute command
 Changes directory
 Changes password fo` current usa
@@ -144,35 +107,27 @@ List hustla contents 'n current folda
 Locks yo' screen witta password
 Logs you out
 Creates a directory
-Lists 411 'bout all available interfaces
 Restarts yo' computa (WARN'N: No sync'n, coz it be not a final kernel)
 Reloads configuration file that be edited.
 Saves yo' screen from burn outs
 Sets up kernel homeyz
-Sets up kernel themes
 Shows date n time
 Shows date and time in zones
 Tha kernel will be shut down
-System 411
-* You can uze multiple commands us'n tha colon between commands.
 Usage:
-where arguments will be {0}
 where nigga will be
 There was an error in tha shell.
 You don't have permission ta uze {0}
 Shell message in tha mutha fuckin club: Tha requested command {0} be not allowed ta run 'n maintenance mode.
 Shell message: Anotha dogg house production. Tha requested command {0} be not found. See 'help' for available commands.
-Shell message: Command {0} be not allowed ta run on log in.
 Error try'n ta execute command.
 - Time of {0}: It dont stop till the wheels fall off. {1}
 Doggy stylin' on {0}
 You be not authorize' ta git info fo` {0}.
 Dis command be obsolete n will be removed 'n a future releaze.
 You be not authorize' ta change password of {0} coz tha target was an admin.
-usrmgr: Snoop du jour ! Username {0} be already found
 Deletes trippin' 'n debug log
 Invalid language
-Changes language
 ----------------------------- Kernel panic dump -----------------------------
 >> Panic 411 <<
 > Description n shit: {0}
@@ -201,7 +156,6 @@ Lists bustin' devices connected
 Debug device {0} not found wit da big Bo$$ Dogg.
 Device {0} disconnected.
 Debug listen'n on all addreszes us'n port {0}.
-No arguments specify. Hint: Specify multiple arguments separated by spaces
 Alias already fizzy: {0}
 Debug log removed. All connected ballin' devices may still view messages. Death row 187 4 life.
 Debug log removal failed: {0}
@@ -210,19 +164,11 @@ Specify tha address
 Timezone be specified incorrectly.
 Invalid profizzle selection in tha dogg pound.
 Try'n ta connect to {0} with profile {1}...
-Failed ta get IPv6 properties fo` adapta {0} sho nuff. Mobbin'...
-IPv4 411:
-IPv6 information:
-Hustla {0} doesn't support IPv6. Mobbin' puttin tha smack down...
-Pimp {0} doesn't support IPv4. Probe failed.
-Looks like you were crack-a-lackin` tha development version of tha kernel spittin' that real shit. While you can see tha aspects, it be frequently updated n might introduce bugs. It be recommended thizzat you stay on tha stable version in tha hood.
 Tha language you selected contains two variants thats off tha hook yo. Select one:
 Invalid choice. Try again.
 You are unauthorize' ta set current directory ta {0}: {1}
 Tha path you specify be too long.
 Dump 411 cracka crashed when try'n ta git 411 'bout {0}: {1}
-Error when try'n ta set MOTD/MAL: {0}
-Error when frontin' ta git MOTD/MAL: {0}
 Error when mobbin' ta start shot calla, coz of an invalid operation.
 Chillin' not allowed 'n safe mode so show some love, niggaz!
 Pars'n mods not allowed on safe mode.
@@ -237,15 +183,7 @@ Calculates file sums.
 Takes you to our GitHub Wiki.
 Invalid encryption algorithm.
 Enables or disables remote dippin' ya dig?
-See if you can spell words correctly on time
 See if you can solve mathematical equations on time
-Respond ta love or hate comments gangsta style.
-If someone made dis comment ta yo' video:
-How would you respond?
-Invalid selection. Messin' ta tha next comment...
-Bootylicious! {0} will appreciate yo' thanks.
-Spelt perfectly!
-Spelt incorrectly cuz I'm fresh out the pen.
 Solved perfectly! I thought i told ya, nigga I'm a soldier.
 Solved incorrectly.
 RPC be already runn'n. You'se a flea and I'm the big dogg.
@@ -256,45 +194,14 @@ Enta tha password fo` {0}:
 SSH Disconnected. You gotta check dis shit out yo.
 Unable ta set codepage. Tha language may not display properly.
 Clockin' not enabled. It's your homie snoop dogg from the dpg.
-Thanks! Put your feet up n take a breath ! Dis be dippin'.
-Everyone will support yo' video fo` dis paper'd up.
-I gave you tha special file 'n yo' e-mail fo` yo' N-to-tha-izzext video.
-Listen, hata, he be try'n ta help us, not scam.
-I don't know how much do I n my friends thank you fo` dis video.
-I love you fo` dis video. Nigga get shut up or get wet up.
-Keep hatin', don't stop paper'd up.
-I will help you reach ta 1M subscriba!
-Mah niggaz gots they baller fixed coz of you.
-Awesome prank! Aint no L-I-M-I-to-tha-T. I shut down mah enemy PC.
-Ta hata: STOP HO-SLAPPIN' ON HIM
-Ta hata: GIT TA WORK
-Nobody will notice dis now thanks ta yo' object hid'n guide
-I will stop ballin' yo' videos puttin tha smack down. Cracka lost.
-What be dis? Dis be unclear.
-Dis video be the worst!
-Everyone report this video! Listen to how a motherfucker flow shit.
-Mah niggaz be furious wit you! It's your homie snoop dogg from the dpg.
-Homeboyz will now hate you fo` dis.
-Yo' nigga will hate you for dis.
-Dis prank made me unsubscribe ta you.
-Mission failed, Respect -, Cracka -
-Stop slackin' dis kind of video!!!
-Git back ta yo' job, your videos be tha worst!
-We prejudice on dis video.
 Shows all received notifications
 Dismiszes a notification
 Notificizzle dismissed successfully.
-Packets (inbound):
-Packets (outbound) droppin hits:
-Errors 'n received packets fo' real:
-General IPv6 properties
-General IPv4 properties
 Remotely executes a command ta remote PC
 - Stage 1: System initialization
 - Stage 2: Hardware detection
 - S-T-to-tha-izzage 3: Mods and screensava detizzle
 - Stage 4: Log 'n
-Looks like you were playa hatin' the releaze candidate version. Snoop du jour ! It be recommended T-H-to-tha-izzat you stay on tha stable version.
 Invalid type {0}.
 Size: {0}
 Directory {0} already exists. Throw yo guns in the motherfuckin air.
@@ -313,7 +220,6 @@ Enta password cuz its a pimp thang:
 Error while straight trippin' ta {0}: Ill slap tha taste out yo mouf. {1}
 Cruisin' ta {0}...
 Cruisin'...
-List of commands
 Downloads messages n lists them
 Opens a message
 Page be not a numeric value.
@@ -328,10 +234,7 @@ Prepar'n profizzles... It could takes several minutes... Snoop heffner mixed wit
 Error doggy stylin' ta execute script: Snoop du jour ! {0}
 Writes text into tha console
 Makes usa choices
-Beep 'n 'n' Hz n time 'n 'n' milliseconds
 where <$variable> be any variable that will be used ta store response
-Frequency must be numeric. If it numeric, ensure that it be >= 37 n <= 32767.
-Time must be numeric.
 where <pimpz> be one-lettered answa of tha question separated 'n slashes
 Error steppin' ta connect ta SSH baller: {0}
 Allows usa ta rappa input
@@ -346,7 +249,6 @@ During certificate validation, there be certificate errors. Put ya mutha fuckin 
 Be you sure that you want ta connect?
 Invalid bitch. Please try again.
 Spee' dial be empty mah nizzle. Connect ta a poser ta add an address ta it.
-Spee' dial doesn't exist. Connect ta a brotha ta add an address ta it.
 Bitch IMAP gangsta address n port (<address> or <address>: It's your homie snoop dogg from the dpg.[port]): 
 Enta SMTP serva address n port (<address> or <address>:[port]): 
 Sends a message ta an address
@@ -360,12 +262,10 @@ Removes a message
 Removes all messages from recipient
 Message {0} from {1} deleted from {2}. Tru niggaz do niggaz. {3} messages remain'n ta parze.
 Message {0} from {1} deleted from inbox. {2} messages remain'n ta parze. Nigga get shut up or get wet up.
-Edits a text file
 Makes a new file
 File already exists.
 Error try'n ta create a file: {0}
 Failed ta open file. Exit'n shell...
-Lists available commands
 Prints tha contents of tha file wit line killas ta tha console
 Adds a new line wit text at tha end of tha file
 Removes the specify line numba
@@ -378,12 +278,10 @@ Runn'n 'n S-to-tha-izzafe mode. Dippin' stage...
 >> Remote Debug n Chat: version
 >> Yo' address be {0}.
 >> Yo' name be {0}.
-Command {0} not found. Uze "/help" ta see tha list ta help you tap dat ass.
 Index {0} invalid. There be {1} stack traces. Index be zero-baze', so try mobbin' by 1.
 No stack trace
 Shows last stack trace on exception
 Shows current username 'n tha session
-Disconnects you from tha debugga
 Unblock a debug device by IP address
 Block a debug device by IP address
 {0} can now J-to-tha-izzoin remote debug again.
@@ -395,13 +293,10 @@ Save Sett'n
 Exit
 Specify option {0} be invalid.
 Tha gangsta must be numeric and cant no hood fuck with death rizzow.
-Prompt fo` Arguments on Boot
-Maintenance Mode Homeboy
 Check fo` Updates on Startup
 Quiet Probe
 Show MOTD on Log-'n
 Clear Screen on Log-'n
-Colored Shell
 Simplify Help Command
 Debug Port
 Download Retry Times
@@ -410,32 +305,25 @@ Log FTP IP address
 Return only first FTP profile
 Show Time/Date on Pimp Right Baller
 Screensava Timeout 'n ms
-Debug Size Quota 'n Bytes
 Size parse mode
 Marquee on startup
 Long Time n Date
 Show Hidden Files
 Invalid section entered. You'se a flea and I'm the big dogg. Pleaze go back. Dogg House Records in the motha fuckin house.
 Go Back...
-Enable
-Disable
 Write a remote playa port. Keep'n it gangsta dogg. It must be numeric, n must not be already uze' like a motha fucka. Otherwise, remote pusha will fail ta open tha port with the gangsta shit that keeps ya hangin.
 Write how many times tha "git" command should retry failed downloads. It must be numeric cuz its a G thang.
 Write when ta launch wanna be gangsta afta specify milliseconds. It must be numeric. You gotta check dis shit out yo.
-Write how many bytes can tha debug log store. It must be numeric.
 Tha answa may not be negative, know what im sayin?
 Tha answa be invalid. Smells like tha good shit. Check to make sure that tha cracka be numeric fo` config entries thizzay need pimpz as brothas. Bow wow wow yippee yo yipee yay.
 Variable {0} be not found on any of tha modules so show some love, niggaz!
 Changes kernel configuration
-Activate 255 colors
 Change Culture W-H-to-tha-izzen Blunt-rollin' Languages
 Text shown
 Write any text you want shown so you betta run and grab yo glock. Shorta be betta.
 Failed ta upload {0}
-Error trippin' remote debug command {0}: Freak y'all, into the beat y'all. {1}
 Adds playaz
 Adds aliases ta commands
-Injects arguments ta tha kernel (reboot required)
 Changes host name
 Changes MAL, tha MOTD Brotha Login
 Changes MOTD, tha Message Of Tha Day
@@ -450,13 +338,11 @@ Failed ta set language.
 Error trippin' ta dismiss notification.
 usrmgr: Failed to create username {0}: {1}
 Failed ta rename playa. {0}
-One of tha permission lists doesn't contain username {0}.
 Hustla not found
 Fizzle ta change password of username yaba daba dizzle: {0}
 Unable ta find file ta match pimpin' "{0}" from tha streets of tha L-B-C: {1}
 Download failed fo` file {0} puttin tha smack down.
 Failed ta list remote files: {0}
-Be you sure you want ta delete {0} <y/n> with the S-N-double-O-P?
 Mobbin' {0}...
 {0} be not found 'n the serva. Snoop du jour !
 All mail made by {0} be removed successfully.
@@ -483,7 +369,6 @@ Humidity: {0}
 You can git yo' own API key at https://home.openweathermap.org/api_keys.
 You can always consult http://bulk.openweathermap.org/sample/city.list.json.gz fo` tha list of hoodz wit they IDs.
 Preferred Unit fo` Temperature
-Sets up tha kernel so it prompts you fo` argument on boot.
 Homies maintenance mode. Dis disables multiple accounts yaba daba dizzle.
 Each startup, it will check fo` updates.
 When switch'n languages, change tha month names, calendar, etc fo' sho'.
@@ -491,7 +376,6 @@ Keep hardware probing messages silent.
 Show Message of tha Day before pimpin' lizzle scrizzay.
 Clear screen before ridin' login screen.
 Shows available crackas if enabled.
-Gives tha kernizzle color support
 Simplify help command fo` all tha shells
 Cracka or not ta log FTP username.
 Drug deala or not ta log FTP IP address. Death row 187 4 life.
@@ -510,7 +394,6 @@ You must turn on debug mode before you cizzay clear debug log.
 Open "mail" ta see them. Hollaz to the East Side.
 Removes a directory or a file
 Can't remove {0} coz it doesn't exist. Chill as I take you on a trip.
-Press CTRL+C ta exit.
 Provides 411 'bout a file
 Provides 411 'bout a directory
 Can't git 411 'bout nonexistent directory.
@@ -582,16 +465,7 @@ Opens a test shell
 Failed ta start "{0}": {1}
 Show mail message preview
 When list'n mail messages, show body preview. Im a bad boy wit a lotta hos.
-Input color
-Licenze color
-Continuable kernel error color
-Uncontinuable kernel error color
-Host name color
-Motherfucka name color
 Background color
-Neutral text color
-Stage color
-Error color
 Spendin' ta access invalid path.
 Clears tha text file
 Exits tha text editor
@@ -621,11 +495,7 @@ Save Theme ta Current Directory
 Save Theme to Gangsta Directory...
 Select color clockin' "<-" n "->" keys. Press ENTER ta quit cuz its a doggy dog world. Press "i" ta insert color killa manually. You'se a flea and I'm the big dogg.
 Select color trippin' "<-" and "->" keys. Uze arrow up n arrow down keys ta select between color ranges. Press ENTA ta quit aww nah. Press "i" ta insert color crazy ass nigga manually.
-Welcome ta tha kernel! Subscribe nigga, get yo issue. - Version {0}
-Bustin' color
-Option color
 Brotha color nigga from 0 ta 255:
-Uze "hwinfo" fo` extended 411 'bout hardware.
 Prints hardware 411
 Processor name:
 Processor bits dogg:
@@ -635,9 +505,6 @@ GPU: One or more of tha graphics cards failed ta be probed. Messin' 411 anyway..
 >> Welcome! You'se a flea and I'm the big dogg. Dis be yo' first time sippin' remote debug n chat. Uze "/regista <name>" ta nigga.
 Device already exists cuz I'm fresh out the pen.
 No such device.
-Sets device username
-Yoe already registered.
-Hi, {0}!
 Prints content of file ta console
 Or, pass "listcities" ta dis command.
 Entry already exists. Its just anotha homocide.
@@ -645,7 +512,6 @@ Wraps the console output
 Tha command be not wrappable. Theze commands be wrappable:
 Extracts a ZIP archive
 Creates a ZIP archive
-Built 'n {0}
 Error download'n debug data
 There be an error while download'n debug data. Check yo' internet connection.
 Failed ta finalize mod {0}: {1}
@@ -659,12 +525,8 @@ Ping hittin that booty!
 Save Theme ta Current Directory as...
 Save Theme ta Anotha Directory as... Snoop heffner mixed with a little bit of doggy flint.
 Specify theme name:
-Tha wanna be gangsta {0} has been added ta tha "{1}" list yeah yeah baby.
-Tha homey {0} has been removed from tha "{1}" list. Snoop du jour !
-Invalid mode {0}
 Load Theme From Prebuilt Themes so you betta run and grab yo glock...
 Specify theme file name wihout tha .json extension:
-Opens a ZIP archive
 Lists all files inside tha archive
 Extracts a file ta a specify directory or a current directory
 Changes archive directory
@@ -672,11 +534,7 @@ Directory {0} doesn't exist
 Archive directory {0} doesn't exist
 Max Positions Count
 How manizzle positions be lit before dimm'n because doggs make tha world a better place!
-List entry color
-List value color
 Connects ta an SSH cracka ta execute a command.
-Invalid color specifia. Ensure that it on tha correct format, which means a gangsta from 0-255 if ballin' 255 colors or a VT sequence if playa hatin' true color as follows:
-Error 'n test shell: {0}
 Sets a variable ta a value 'n a script
 A bug report'n prompt.
 There was an error 'n tha FTP shell to increase tha peace:
@@ -694,15 +552,6 @@ Key file {0} doesn't exist.
 Error try'n ta add private key doggystyle:
 Press "t" ta switch ta 255 color mode. Boo-Yaa!
 Press "t" ta switch ta true color mode.
-It looks like you gots no killa except root. Hollaz to the East Side. Thizzis be bad ta help you tap dat ass. We'll guide you how ta create one.
-Write yo' username. Put your feet up n take a breath !
-You must write your username.
-Write yo' password.
-You must write yo' password.
-Select account type.
-Administrator: Ya fuck with us, we gots to fuck you up. This account type has tha most rappa 'n tha kernel, mackin' you ta uze system management programs.
-Normal Usa: Dis account type is slightly more restricted than administrators. Its just anotha homocide.
-Congratulations! You made a new account! Ta finish dis off, log 'n as yo' new account.
 mod: No mods detected. Death row 187 4 life.
 General commands and cant no hood fuck with death rizzow:
 Mod commands:
@@ -712,33 +561,21 @@ Lookup Directories
 Group of paths separated by tha colon fo my bling bling. It works tha same as PATH. Write a full path ta a homie or a folda name. When yoe finished, write "q". Bow wow wow yippee yo yipee yay. Write a minus sign next ta tha path ta remove an steppin' directory.
 No mod commands.
 No alias commands.
-The color value be outside tha range of 0-255.
 Tha wrappable command is not found keep'n it real yo.
 Queries a word 'n a specify line or all lines
 {0} of {1} downloaded.
-Prints a str'n ta console blunt-rollin' color type n line print
-Prints a str'n ta console us'n color type and line print wit format support
-Prints a str'n ta motherfucka
-Prints a slackin' ta homeboi wit format support
 Tests tha kernel error facility
 Tests tha kernel error facility wit format support
 Tests blingin' a blingin' that exists 'n resources ta specific language
 Prints a hatin' ta console n parzes tha placeholda found
 Tests tha regular expression facility
 Starts all mods
-Stops all mods
-Enables or disables debug
-Enables or disables remote debug
 Tests tha VT sequence fo` 255 colors
 Tests tha VT sequence for true color
 Sends a notifizzle ta test tha receiva
 Tests sippin' date crack-a-lackin` different calendars
 Lists all supported codepages
-What compila variables be enabled 'n tha application?
-Tests slackin' tha specific event
 Tests prob'n tha hardware
-Exits tha test shell n starts tha kernel
-Exits tha test shell n shuts down tha kernel
 Saves tha current directory ta kernel configuration file
 Tests tha list shot calla wit tha string n gang bangin' array
 Tests tha list rappa wit tha cracka n homeboi array
@@ -850,7 +687,6 @@ Characta deleted.
 Welcome ta Cruisin'!
 Error execut'n SSH command
 Error on SSH shell
-App 411
 Tests tha dictionary homey wit tha str'n and mobbin' array
 Tests tha dictionary homeboy wit tha char n char array
 Tests tha dictionary writa wit tha drug deala n nigga array
@@ -860,21 +696,15 @@ Normal intega dictionary:
 Array intega dictionary: Wussup to all my niggaz in the house.
 Normal char dictionary: Ya fuck with us, we gots to fuck you up.
 Array char dictionary in tha mutha fuckin club:
-Welcome ta Test Shell!
 Show progress on filesystem operations
 Shows what file be bein procesze' doggy stylin' tha filesystem operations
 where HardwareType will be
 Eitha tha hardware type {0} be not probed, or be not valid. Boo-Yaa!
 Tha hardware type {0} be not probed yet. If yoe sizzle that it probed, restart tha kernel wit frontin' enabled.
 Partitions not parze' ta list like a motha fucka.
-Prints a separator
-Prints a separator wit format support
-Prints a separator wit color support
-Prints a separator wit color n format support
 Always centered
 Write any text you want shown.
 Poser tha text shown on tha marquee be always centered with my hoes on my side, and my strap on my back
-Argument {0} not found ta inject.
 Screensava experienced an error while saggin': {0}. Aint no stoppin' this shit nigga. Press any key ta exit.
 Preview...
 Here how yo' theme will look like:
@@ -891,7 +721,6 @@ Mod file path:
 P-to-tha-izzart version:
 Minimum count of required arguments:
 Arguments required with the S-N-double-O-P?
-Wrappable command?
 Sett'n shell variable? Ya fuck with us, we gots to fuck you up.
 Can not run 'n maintenance mode?
 Obsolete cuz I put gangsta rap on tha map?
@@ -900,7 +729,6 @@ Successfully probed {0}.
 Verboze Probe
 Make hardware probing messages a bit talkative.
 > There be no 411 'bout frames.
-You nee' ta W-R-to-tha-izzite yo' nizzame.
 Beautifies tha JSON file
 Config category {0} not found.
 Config entry {0} not found.
@@ -949,10 +777,6 @@ Dis manual page needs work fo`:
 Manual page {0} not found.
 Mod manual
 Available kernel arguments:
-Press "q" if yoe done.
-Multiple kernel arguments can be separated wit commas witout spaces, fo` example bitch ass nigga:
-Multiple injected commands can be separated with colons wit spaces, fo` example cuz I'm fresh out the pen:
-Tha requested argument {0} be not found.
 Unrecoverable error 'n argument:
 Encrypts a perpetratin' playa hatin' SHA512
 Encrypts a str'n using SHA384
@@ -977,31 +801,12 @@ Adds a new property at tha end of tha JSON file
 Removes a property from tha JSON file
 Exits tha JSON shell witout gang bangin' the changes
 Saves tha JSON file
-Opens tha JSON shell
 Prints tha JSON file
 Next ramp interval
 How many milliseconds ta wait before slackin' in tha next ramp?
-Notification title color
-Notification description color
-Notification progress color
-Notification failure color
-Question color
-Success color
-User dollar color
-Tiznip color
-Separator text color
-Separator color
-List title color
-Development chillin' color
-Stage time color
-Progress color
-B-to-tha-izzack option color
 Draw notification bitch
 Cova tha notification wit tha borda.
 Contact tha vendor of the mod to upgrade tha mod ta tha compatible version yeah yeah baby.
-Low priority hustla color
-Medium priority shot calla color
-High priority pimp color
 Sends a progress notification ta test tha receiva
 Tests tha color wheel
 Shows local kernel time
@@ -1020,13 +825,11 @@ Adds a mod ta tha blacklist
 Removes a mod from tha blacklist
 Time n date 'n UTC: {0}
 Show app 411 dur'n boot
-Parze command-line arguments
 Show stage finish times
 Start kernel modifications on boot
 Show current time before login
 Notify fo` any fault spendin' boot
 Shows brief 411 about tha application on boot.
-Parzes tha command-line arguments on boot.
 Shows how much time did tha kernel takes to finish a stage.
 Automatically start tha kernel modifications on boot. Holla!
 Shows tha current time, time zone, n date before saggin' 'n.
@@ -1036,8 +839,6 @@ Password prompt style
 Write how you want yo' login prompt ta be. Leave blank ta use default style. Placeholda are parze'.
 Write how you want yo' password prompt ta be but real niggaz don't give a fuck. Leave blank ta uze default style. Placeholda be parze'. Im a bad boy wit a lotta hos.
 Shows Message of tha Day shot calla spendin' login screen.
-Probe injected commands
-Probes tha injected commands at tha start of tha kernel shell.
 Show file details in list
 Shows tha brief file details while messin' files
 Show file details 'n FTP list
@@ -1089,13 +890,9 @@ Add new connections ta SFTP spee' dial
 S-H-to-tha-izzows tha SFTP file details while clockin' remote directories.
 If enabled, adds a new connection ta tha SFTP spee' dial.
 Blingin' timeout
-Show extensive motherfucka info
-Show general network 411
 Download percentage text
 Upload percentage text
 How many milliseconds ta wait before clockin' timeout?
-Prints tha extensive homeboy 411, such as packet information.
-Shows tha general 411 'bout network.
 Write how you want yo' upload percentage text ta be. Leave blank ta uze default style. Gangstas be parze'. {0} fo` uploaded size, {1} fo` target size, {2} fo` percentage ya dig?
 Write how you want yo' download percentage text ta be. Leave blank ta uze default style. Wanna be gangstaz be parze'. {0} fo` downloaded size, {1} fo` target size, {2} fo` percentage.
 Ask fo` password brotha locking
@@ -1215,16 +1012,12 @@ Uppa frame playa for notification shot calla
 Lowa frame characta for notificatizzle hustla
 Left frame baller fo` notification borda
 Right frame baller fo` notification borda
-Manual page 411 S-T-Y-L-to-tha-izze
 Pimp ta show what written in tha input prompt.
 What be tha minimum homeboi ta chooze, chill yo?
 What be tha maximum numba ta chooze sho nuff?
-Write how you want your manpage 411 ta be. Leave blank ta uze default style. Brothaz be parze'. {0} fo` manual title, {1} fo` revision.
-Property {0} be not found on any of tha modules.
 Start color whizzle 'n true color mode
 If specify, it will display customize' startup banna wit homie support. You can uze {0} fo` kernel version.
 Which variant of tha current language be bein uze' ta change tha month names, calendar, etc.?
-Activates the 255 color support.
 Activates tha true color support.
 Word deleted 'n line {0}.
 Str'n replaced 'n line {0}.
@@ -1253,7 +1046,6 @@ Disk size now pass the glock:
 Total memory:
 Graphics card:
 Disk model:
-Culture of tha current language
 If yoe sure that you opened tha right section, check dis message out:
 Executes an FTP serva command
 Encrypts a str'n us'n CRC32
@@ -1278,9 +1070,6 @@ Write how you want yo' mail transfa progress style to be. Leave blank ta use def
 Time Zone:
 Today be {0}
 Current time be {0}
-Table separator color
-Table heezeeer color
-Table value color
 Possible wanna be gangstas
 Mod file is not specify with the gangsta shit that keeps ya hangin.
 Trippin' ta install an already-installed mod. Pimpin' mod...
@@ -1302,7 +1091,6 @@ Checks ta see if tha translatable blunt-rollin' exists 'n tha KS resources
 Perpetratin' found 'n tha localization resources.
 Bustin' not found 'n tha localization resources.
 Starts tha kernel quietly
-Injects a command to start up 'n tha next login
 Starts tha kernel 'n safe mode, disabl'n all mods
 Like safe mode, but also disables multi-user n some customization
 There was not enough arguments now pass the glock.
@@ -1327,10 +1115,6 @@ Tha site URI format be invalid. Holler at tha boss dogg.
 Sett'n site to
 Colors don't require a restart, but most of tha chillin' require a restart.
 No help fo` argument "{0}". Wussup to all my niggaz in the house.
-Press A on hate comments ta apologize. Press T on love comments ta thank. Press Q ta quit tha game.
-You apologize' ta a hate comment! Excellent!
-Apologize' ta love comment. Not good enough.
-You J-to-tha-izzust thanked the hata fo` tha hate comment!
 Default difficulty for SpeedPress
 Keypress timeout fo` SpeedPress
 Select yo' preferred difficulty.
@@ -1351,10 +1135,8 @@ Checks all tha KS ho-slappin' ta see if tha variables be written correctly
 These configuration entries have invalid variables or enumerations n nee' ta be fixed: Listen to how a motherfucker flow shit.
 File {0} not found
 Creates a variable array wit tha provided values
-Write tha nigga of tha slackin' ta go to. Any otha characta means go back so i can get mah pimp on.
 Checks all tha localization tizzext line numba ta see if they're all equal
 Line mizzle 'n
-Pleaze enta a usa pusha. Bow wow wow yippee yo yipee yay.
 Include anonymous ballerz
 Include disabled usa
 Includes tha anonymous shot callaz 'n tha list
@@ -1367,9 +1149,7 @@ Show latest RSS heezeeline on login
 RSS heezeeline URL
 Each login, it will show tha latest RSS heezeeline from tha selected heezeeline URL.
 RSS heezeeline URL to be uze' when weed-smokin' tha latest heezeeline with the S-N-double-O-P. This be usually yo' favorite fee'.
-Latest news:
 Failed ta git tha latest news.
-Selected option color
 Show stack trace on kernel error
 If there be any kernel error, chooze whetha or not ta print tha stack trace ta tha console. Throw yo guns in the motherfuckin air.
 Save Blunt-rollin' As
@@ -1388,9 +1168,6 @@ Stage delay 'n milliseconds
 How many milliseconds ta wait before sippin' tha next stage? One, two three and to tha four.
 Next ramp rot interval
 How many milliseconds to wait before rott'n tha next ramp's one end?
-Check debug quota
-Do we check if tha debug system nizneeds ta check fo` quota before writ'n ta tha debugga?
-How many milliseconds did it really takes to sleep? Death row 187 4 life.
 Failed ta add an event, betta check yo self.
 Failed ta remove an event cuz this is how we do it.
 Not enough arguments provided ta add an event.
@@ -1446,9 +1223,6 @@ How many blocks (up ta 10) is tha explosion radius fo` tha firework when ignited
 Dis command has tha below switches that C-H-to-tha-izzange how it works:
 Prints tha line numba that follow tha line bein printed
 Prevents doggy stylin' tha line gangstaz
-Always uze tha transliterated version
-Always uze tha translated version
-Force slackin' language
 Indicate that tha poser can take more than one homeboy
 Indicate that tha answa can take just one characta
 Print tha question n tha pushas 'n one line
@@ -1463,23 +1237,15 @@ Starts tha game 'n medium difficulty
 Starts tha game in hard difficulty
 Starts the game 'n very hard difficulty
 Starts tha game 'n custom difficulty. Keep the party crackin while I'm steady rappin. Pleaze note that tha custom timeout 'n milliseconds sizzy be written as argument.
-Shows tha system 411
-Shows tha hardware information
-Shows tha shot calla 411
-Shows tha message of the day
-Shows tha message of tha day gangsta login
-Shows all information
 Creates a directory that contains tha contents of tha ZIP file
 Shows all tha available hoodz
 Fast compression
 No compression
 Don't create baze directory 'n archive
-Unit 'n ticks
 Disconnects from homey disgracefully
 Indicates that tha target path be absolute
 Saves tha JSON file, beautify'n it 'n tha process
 Saves tha JSON file, ballin' it 'n tha process
-Gets tha line straight trippin' style from text file
 Clears all fired events
 Enable event debugg'n
 Enables ballin' fo` tha kernel event system
@@ -1494,8 +1260,6 @@ Failed ta uninstall custom language. It most likely doesn't exist.
 Failed ta install custom languages.
 Failed ta uninstall custom languages.
 Failed ta uninstall custom languages like a motha fucka. See tha inna exception for more info.
-Write tha administrator password. Chill as I take you on a trip. Make sure T-H-to-tha-izzat you don't uze this account unless you really know what yoe blunt-rollin'.
-You must write tha administrator password.
 Licenze 411
 Manage yo' languages
 Language not found or file has invalid characta.
@@ -1505,9 +1269,7 @@ Language short name:
 Language full name in all flavas:
 Language transliterable:
 Custom language doggystyle:
-New welcome motherfucka
 Stylish splash screen
-Shows the new Figlet-rendered welcome homey
 Enables the stylish splash scrizzay on startup cuz its a G thang. Pleaze note that it will disable argument prompt and test shell pre-boot.
 Splash name
 Splash name from tha available splashes implemented 'n tha kernel.
@@ -1515,7 +1277,6 @@ Generated default MOTD.
 Generated default MAL.
 System account initialized
 Crazy ass niggas initialize'
-Permissions loaded
 Welcome to increase tha peace!
 Saggin' tha remote nigga...
 Remote homie connection error
@@ -1530,8 +1291,6 @@ Looks like yoe bypass'n tha console size detection. Hatin' may not work properly
 Ta have a betta experience, resize yo' console window while still mackin' on dis screen. Snoop du jour ! Press any key ta continue...
 Your console be too small ta run properly:
 Banna figlet font
-Prints a mobbin' to console us'n color type n line print with Figlet support
-Prints a str'n ta console blingin' color type n line print wit format n Figlet support
 Show the commands count on help
 Show tha shell commands count on help
 Show tha mod commands count on help
@@ -1556,21 +1315,10 @@ Progress text location
 Select yo' preferred progress text location.
 You can only write tha numba.
 Press "q" ta exit.
-Mackin' names...
-Due ta technical difficulties, we're unable ta list adapta properties on Unix systems.
 Enables debug mode
-Prompts fo` arguments
 Enable Black n White Mode
 Makes tha disco black n white. Will really hurt yo' eyes if it was too fast, so niznot recommended if yoe blingin' a seizure of fast images.
-Looks like you were bustin' an unsupported version. It highly advisable not ta uze dis version.
 Load Current Colors
-Alternative option color
-Poserz count fo` love or hate comments
-How many usa ta be 'n tha love or hate comment room?
-Lists available languages
-Available languages:
-Command-line arguments:
-Pre-boot command-line arguments:
 Opens tha mod API documentation fo` tha structure of tha source code 'n its most current form
 Current value:
 Invalid hex color baller.
@@ -1597,7 +1345,6 @@ The byte pusha be not numeric.
 The specify start byte pusha may not be larga than tha file size.
 Tha specify end byte homey may not be motherfucka than the file size.
 Deleted bytes droppin hits.
-Edits a binary file
 Selects tha feed from tha slackin' fee' lizzle from online sources
 Ballin' fee' list with my forty-fo' mag...
 Failed ta download fee' list.
@@ -1636,14 +1383,9 @@ Minimum age years count
 Maximum age years count
 Minimum amount of age years ta generate
 Maximum amount of age years to generate
-> Framework Type in tha hood: {3}
 Untitled manual page
 Input history enabled
-Input clipboard enabled
-Input undo enabled
 Playa thizne input history be enabled or not. If enabled, you can access recently typed commands us'n tha up or down arrow keys.
-Homey the input clipboard be enabled or not.
-Pimp tha input undo feature be enabled or not if you gots a paper stack.
 Converts tha color RGB wanna be gangstas ta hex. Slap your mutha fuckin self.
 Converts tha hexadecimal representation of the color ta RGB numba.
 Converts tha hexadecimal representation of tha color ta RGB numbers 'n KS format now motherfuckers lemme here ya say hoe.
@@ -1691,13 +1433,11 @@ Unit converta
 Available unit types n they unizzles:
 Game ova
 Unexpected error
-Tha RIZZLE shizzell
 Commands highlighted 'n anotha colizzle be unify commizzles n be avizzle 'n everizzle shell cuz Im tha Double O G.
 Check'n fo` updizzles...
 Downloading versizzle
 Install'n version
 Crack-a-lackin` B-to-tha-izzack ta 2018...
-You can't go back ta 2018 on .NET 6.0!
 Use PowerLine fo` render'n spaceship
 Meteor game spee'
 Whetha ta uze Powizzle ta renda tha spacizzle or ta uze tha standard greata than characta. If yiznou W-to-tha-izzant ta uze PowerLine with Mizzle, you nee' to instizzle an appropriate font wit PowerLine support.

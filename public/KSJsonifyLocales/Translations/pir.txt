@@ -1,6 +1,3 @@
-Available commands: {0}
-command injection been cancelled.
-injected arguments be scheduled to run at next reboot.
 invalid color template {0}
 'wprobe: yer 'ardware be probed. Please wait...
  cpu: one or more o' the cpu cores failed to be probed. Showin' information anyway...
@@ -12,7 +9,6 @@ double panic: reboot time exceeds maximum allowed {0} error reboot time. Ye foun
  [{0}] panic: reboot enabled due to error level bein' {0}.
  [{0}] panic: time to reboot: {1} seconds, exceeds 1 'our. It be set to 1 minute.
  double panic: error type {0} invalid.
- [{0}] dpanic: {1} -- rebootin' in {2} seconds...
  [{0}] panic: reboot disabled due to error level bein' {0}.
  [{0}] panic: {1} -- press any key to continue usin' the kernel.
  [{0}] panic: {1} -- press any key to shutdown.
@@ -20,27 +16,15 @@ double panic: reboot time exceeds maximum allowed {0} error reboot time. Ye foun
  double panic: kernel bug: {0}
 shuttin' down...
  rebootin'...
- another instance o' kernel simulator be runnin'. Shuttin' down in case o' interference.
- failed to add user into permission lists: invalid type {0}
-failed to add user into permission lists: invalid user {0}
-failed to remove user from permission lists: invalid type {0}
-ye be already logged in.
- failed to remove user from permission lists: invalid user {0}
-ye 'ave either found a bug, or the permission ye tried to add or remove be already done, or other error.
  error {0}: {1}
-ye 'ave either found a bug, or the permission ye tried to edit fer a new user 'as failed.
- available usernames: {0}
 username: 
 spaces ain't allowed.
  special characters ain't allowed.
  {0}'s password: 
 wrong password.
- user be disabled.
- wrong username.
 error tryin' to parse placeholders. {0}
 error tryin' to add username.
  usrmgr: creatin' username {0}...
- blank username.
  user {0} not found.
  user {0} isn't allowed to be removed.
  user {0} be already logged in. Log-out an' log-in as another admin.
@@ -91,24 +75,14 @@ changes remote directory to download from or upload to
 deletes remote file from server
 disconnects from server
 downloads remote file to local directory usin' binary or text
-shows 'elp screen
 lists local directory
 lists remote directory
 uploads local file to remote directory usin' binary or text
- failed to get properties fer adapter {0}
-adapter number:
-adapter name:
-maximum transmission unit: {2} units
-dhcp enabled:
-non-unicast packets:
-unicast packets:
-error incoming/outgoin' packets:
 alias can't be the same name as a command.
  command not found to alias to {0}.
  ye can now run "{0}" as a command: "{1}".
  alias {0} be not found to be removed.
  invalid mode {0}.
- injected arguments, {0}, be scheduled to run at next reboot.
  there been not enough arguments. See below fer usage:
 directory {0} not found
 blank 'ost name.
@@ -122,18 +96,7 @@ the new name ye entered be already found.
  {0} be not found.
  configuration reloaded. Ye might need to reboot the kernel fer some changes to take effect.
  one or more o' the colors be invalid.
- colors ain't available. Turn on colored shell in the kernel config.
  screensaver {0} not found.
-kernel version:
-debug mode:
-colored shell:
-arguments on boot:
-'elp command simplified:
-motd on login:
-time/date on corner:
-current user name:
-current 'ost name:
-available usernames:
 error tryin' to execute command
 changes directory
 changes password fer current user
@@ -144,35 +107,27 @@ list file/folder contents in current folder
 locks yer screen with a password
 logs ye out
 creates a directory
-lists information about all available interfaces
 restarts yer computer (warning: no syncing, because it be not a final kernel)
 reloads configuration file that there be edited.
  saves yer screen from burn outs
 sets to the sky kernel screensavers
-sets to the sky kernel themes
 shows date an' time
 shows date an' time in zones
 the kernel be shut down
-system information
-* ye can use multiple commands usin' the colon between commands.
  usage:
-where arguments be {0}
 where customsaver be
  there been an error in the shell.
 Ye don't 'ave permission to use {0}
 shell message: the requested command {0} be not allowed to run in maintenance mode.
  shell message: the requested command {0} be not found. See 'help' fer available commands.
- shell message: command {0} be not allowed to run on log in.
  error tryin' to execute command.
 - time o' {0}: {1}
  runnin' on {0}
 ye ain't authorized to get info fer {0}.
  this here command be obsolete an' be removed in a future release.
  ye ain't authorized to change password o' {0} because the target been an admin.
- usrmgr: username {0} be already found
 deletes everythin' in debug log
 invalid language
-changes language
 ----------------------------- kernel panic dump -----------------------------
 >> panic information <<
 > description: {0}
@@ -201,7 +156,6 @@ lists debuggin' devices connected
 debug device {0} not found.
  device {0} disconnected.
 debug listenin' on all addresses usin' port {0}.
- no arguments specified. 'int: specify multiple arguments separated by spaces
 alias already found: {0}
 debug log removed. All connected debuggin' devices may still view messages.
  debug log removal failed: {0}
@@ -210,19 +164,11 @@ specify the address
 timezone be specified incorrectly.
  invalid profile selection.
  tryin' to connect to {0} with profile {1}...
- failed to get ipv6 properties fer adapter {0}. Continuin'...
- ipv4 information:
-ipv6 information:
-adapter {0} doesn't support ipv6. Continuin'...
- adapter {0} doesn't support ipv4. Probe failed.
- looks such as yerself was runnin' the development version o' the kernel. While ye can see the aspects, it be frequently updated an' might introduce bugs. It be recommended that there ye stay on the stable version.
  the language ye've selected contains two variants. Select one:
 invalid choice. Try again.
  ye be unauthorized to set current directory to {0}: {1}
 the path ye've specified be too long.
  dump information gatherer crashed when tryin' to get information about {0}: {1}
-error when tryin' to set motd/mal: {0}
-error when tryin' to get motd/mal: {0}
 error when tryin' to start screensaver, because o' an invalid operation.
  reloadin' not allowed in safe mode.
  parsin' mods not allowed on safe mode.
@@ -237,15 +183,7 @@ calculates file sums.
  takes ye to our github wiki.
  invalid encryption algorithm.
  enables or disables remote debuggin'.
- see if ye can spell words correctly on time
 see if ye can solve mathematical equations on time
-Respond to love or 'ate comments.
- if someone made this here comment to yer video:
-'ow would ye respond?
-invalid selection. Goin' to the next comment...
- jolly! {0} will appreciate yer thanks.
- spelt perfectly!
-spelt incorrectly.
  solved perfectly!
 solved incorrectly.
  rpc be already runnin'.
@@ -256,45 +194,14 @@ solved incorrectly.
 ssh disconnected.
  unable to set codepage. The language may not display properly.
  debuggin' not enabled.
- thanks! this here be interestin'.
- everyone will support yer video fer this here.
- I gave ye the special file in yer e-mail fer yer next video.
- listen, 'aters, 'e be tryin' to 'elp us, not scam.
- I don't know 'ow much do I an' me mates thank ye fer this here video.
- I love ye fer this here video.
- keep going, don't avast.
- I will 'elp ye reach to 1m subscribers!
-me mates got their computer fixed because o' ye.
- awesome prank! I shut down me enemy's pc.
- to 'aters: avast 'atin' on 'im
-to 'aters: get to work
-nobody will notice this here now thanks to yer object 'idin' guide
-I will avast watchin' yer videos. Subscriber lost.
- what be this here? this here be unclearrr.
- this here video be the worst!
-everyone report this here video!
-me mates be furious with ye!
-lovers will now 'ate ye fer this here.
- yer mate will 'ate ye fer this here.
- this here prank made me unsubscribe to ye.
- mission failed, respect -, subscriber -
-avast makin' this here kind o' video!!!
-get aft to yer job, yer videos be the worst!
-we prejudice on this here video.
  shows all received notifications
 dismisses a notification
 notification dismissed successfully.
- packets (inbound):
-packets (outbound):
-errors in received packets:
-general ipv6 properties
-general ipv4 properties
 remotely executes a command to remote pc
 - stage 1: system initialization
 - stage 2: 'ardware detection
 - stage 3: mods an' screensavers detection
 - stage 4: log in
-looks such as yerself was runnin' the release candidate version. It be recommended that there ye stay on the stable version.
  invalid type {0}.
  size: {0}
 directory {0} already exists.
@@ -313,7 +220,6 @@ enter password:
 error while connectin' to {0}: {1}
 connectin' to {0}...
  authenticatin'...
-list o' commands
 downloads messages an' lists them
 opens a message
  page be not a numeric value.
@@ -328,10 +234,7 @@ preparin' profiles... It could take several minutes...
 error tryin' to execute script: {0}
 writes text into the console
 makes user choices
-beep in 'n' 'z an' time in 'n' milliseconds
 where <$variable> be any variable that there be used to store response
-Frequency must be numeric. If it be numeric, ensure that there it be >= 37 an' <= 32767.
- time must be numeric.
  where <answers> be one-lettered answers o' the question separated in slashes
 error tryin' to connect to ssh server: {0}
 allows user to enter input
@@ -346,7 +249,6 @@ the selection be out o' range. Select between 1-{0}. Try again.
 be ye sure that there ye want to connect?
 invalid answer. Please try again.
  speed dial be empty. Connect to a server to add an address to it.
- speed dial doesn't exist. Connect to a server to add an address to it.
  enter imap server address an' port (<address> or <address>:[port]): 
 enter smtp server address an' port (<address> or <address>:[port]): 
 sends a message to an address
@@ -360,12 +262,10 @@ removes a message
 removes all messages from recipient
 message {0} from {1} deleted from {2}. {3} messages remainin' to parse.
  message {0} from {1} deleted from inbox. {2} messages remainin' to parse.
- edits a text file
 makes a new file
 file already exists.
  error tryin' to create a file: {0}
 failed to open file. Exitin' shell...
- lists available commands
 prints the contents o' the file with line numbers to the console
 adds a new line with text at the end o' the file
 removes the specified line number
@@ -378,12 +278,10 @@ runnin' in safe mode. Skippin' stage...
  >> remote debug an' chat: version
 >> yer address be {0}.
  >> yer name be {0}.
- command {0} not found. Use "/help" to see the list.
  index {0} invalid. There be {1} stack traces. Index be zero-based, so try subtractin' by 1.
  no stack trace
 shows last stack trace on exception
 shows current username in the session
-disconnects ye from the debugger
 unblock a debug device by ip address
 block a debug device by ip address
 {0} can now join remote debug again.
@@ -395,13 +293,10 @@ there be an error while loadin' settings. Ye may need to check the settings file
 exit
 specified option {0} be invalid.
  the answer must be numeric.
- prompt fer arguments on boot
-maintenance mode trigger
  check fer updates on startup
 quiet probe
 show motd on log-in
 clearrr screen on log-in
-colored shell
 simplified 'elp command
 debug port
 download retry times
@@ -410,32 +305,25 @@ log ftp ip address
 return only first ftp profile
 show time/date on upper right corner
 screensaver timeout in Miss
-debug size quota in bytes
 size parse mode
 marquee on startup
 long time an' date
 show 'idden files
 invalid section entered. Please go aft.
  go aft...
-Enable
-disable
  write a remote debugger port. It must be numeric, an' must not be already used. Otherwise, remote debugger will fail to open the port.
  write 'ow many times the "get" command should retry failed downloads. It must be numeric.
  write when to launch screensaver after specified milliseconds. It must be numeric.
- write 'ow many bytes can the debug log store. It must be numeric.
  the answer may not be negative.
  the answer be invalid. Check to make sure that there the answer be numeric fer config entries that there need numbers as answers.
  variable {0} be not found on any o' the modules.
  changes kernel configuration
- activate 255 colors
  change culture when switchin' languages
 text shown
 write any text ye want shown. Shorter be better.
  failed to upload {0}
-error executin' remote debug command {0}: {1}
 adds users
 adds aliases to commands
-injects arguments to the kernel (reboot required)
 changes 'ost name
 changes mal, the motd after login
 changes motd, the message o' the day
@@ -450,13 +338,11 @@ removed alias {0} successfully.
  error tryin' to dismiss notification.
  usrmgr: failed to create username {0}: {1}
 failed to rename user. {0}
-one o' the permission lists doesn't contain username {0}.
 user not found
 failed to change password o' username: {0}
 unable to find file to match strin' "{0}": {1}
 download failed fer file {0}.
  failed to list remote files: {0}
- be ye sure ye want to delete {0} <y/n>?
 deletin' {0}...
  {0} be not found in the server.
  all mail made by {0} be removed successfully.
@@ -483,7 +369,6 @@ pressure: {0}
 ye can get yer own api key at 'ttps://home.openweathermap.org/api_keys.
  ye can always consult 'ttp://bulk.openweathermap.org/sample/city.list.json.gz fer the list o' cities with their ids.
  preferred unit fer temperature
-sets up the kernel so it prompts ye fer argument on boot.
  triggers maintenance mode. This here disables multiple accounts.
  each startup, it will check fer updates.
  when switchin' languages, change the month names, calendar, etc.
@@ -491,7 +376,6 @@ sets up the kernel so it prompts ye fer argument on boot.
  show message o' the day before displayin' login screen.
  clearrr screen before displayin' login screen.
  shows available users if enabled.
- gives the kernel color support
 simplified 'elp command fer all the shells
 whether or not to log ftp username.
  whether or not to log ftp ip address.
@@ -510,7 +394,6 @@ mod {0} does not 'ave the part name. Mod parsin' failed. Review the source code.
  open "lsmail" to see them.
 removes a directory or a file
 can't remove {0} because it doesn't exist.
- press ctrl+c to exit.
  provides information about a file
 provides information about a directory
 can't get information about nonexistent directory.
@@ -582,16 +465,7 @@ opens a test shell
  failed to start "{0}": {1}
 show mail message preview
 when listin' mail messages, show body preview.
- input color
-license color
-continuable kernel error color
-uncontinuable kernel error color
-'ost name color
-user name color
 background color
-neutral text color
-stage color
-error color
  tryin' to access invalid path.
  clears the text file
 exits the text editor
@@ -621,11 +495,7 @@ makin' a new theme "{0}".
 save theme to another directory...
  select color usin' "<-" an' "->" keys. Press enter to quit. Press "i" to insert color number manually.
  select color usin' "<-" an' "->" keys. Use arrow up an' arrow down keys to select between color ranges. Press enter to quit. Press "i" to insert color number manually.
- ye be welcome to the kernel! - version {0}
-warnin' color
-option color
 enter color number from 0 to 255:
-use "hwinfo" fer extended information about 'ardware.
  prints 'ardware information
 processor name:
 processor bits:
@@ -635,9 +505,6 @@ gpu: one or more o' the graphics cards failed to be probed. Showin' information 
  >> ye be welcome! this here be yer first time enterin' remote debug an' chat. Use "/register <name>" to register.
  device already exists.
  no such device.
-Sets device username
-ye be already registered.
- Ahoy, {0}!
 prints content o' file to console
 or, pass "listcities" to this here command.
  entry already exists.
@@ -645,7 +512,6 @@ or, pass "listcities" to this here command.
 the command be not wrappable. These commands be wrappable:
 extracts a zip archive
 creates a zip archive
-built in {0}
 error downloadin' debug data
 there be an error while downloadin' debug data. Check yer internet connection.
  failed to finalize mod {0}: {1}
@@ -659,12 +525,8 @@ wraps the list outputs if it seems too long fer the current console geometry.
  save theme to current directory as...
  save theme to another directory as...
  specify theme name:
-the user {0} been added to the "{1}" list.
- the user {0} been removed from the "{1}" list.
- invalid mode {0}
  load theme from prebuilt themes...
  specify theme file name wihout the.json extension:
-opens a zip archive
 lists all files inside the archive
 extracts a file to a specified directory or a current directory
 changes archive directory
@@ -672,11 +534,7 @@ changes archive directory
 archive directory {0} doesn't exist
 max positions count
 'ow many positions be lit before dimming?
- list entry color
-list value color
 connects to an ssh server to execute a command.
-invalid color specifier. Ensure that there it be on the correct format, which means a number from 0-255 if usin' 255 colors or a vt sequence if usin' true color as follows:
-error in test shell: {0}
 sets a variable to a value in a script
 a bug reportin' prompt.
  there been an error in the ftp shell:
@@ -694,15 +552,6 @@ neutralized a non-existent path.
  error tryin' to add private key:
 press "t" to switch to 255 color mode.
  press "t" to switch to true color mode.
- it looks such as yerself've got no user except root. This here be bad. We'll guide ye 'ow to create one.
- write yer username.
- ye must write yer username.
- write yer password.
- ye must write yer password.
- select account type.
- administrator: this here account type 'as the most power in the kernel, allowin' ye to use system management programs.
- normal user: this here account type be slightly more restricted than administrators.
- congratulations! ye've made a new account! to finish this here off, log in as yer new account.
  mod: no mods detected.
  general commands:
 mod commands:
@@ -712,33 +561,21 @@ lookup directories
 crew o' paths separated by the colon. It works the same as path. Write a full path to a folder or a folder name. When ye be finished, write "q". Write a minus sign next to the path to remove an existin' directory.
  no mod commands.
  no alias commands.
- the color value be outside the range o' 0-255.
  the wrappable command be not found.
  queries a word in a specified line or all lines
 {0} o' {1} downloaded.
- prints a strin' to console usin' color type an' line print
-Prints a strin' to console usin' color type an' line print with format support
-prints a strin' to debugger
-prints a strin' to debugger with format support
 tests the kernel error facility
 tests the kernel error facility with format support
 tests translatin' a strin' that there exists in resources to specific language
 prints a strin' to console an' parses the placeholders found
 tests the regularrr expression facility
 starts all mods
-stops all mods
-enables or disables debug
-enables or disables remote debug
 tests the vt sequence fer 255 colors
 tests the vt sequence fer true color
 sends a notification to test the receiver
 tests printin' date usin' different calendars
 lists all supported codepages
-what compiler variables be enabled in the application?
-tests raisin' the specific event
 tests probin' the 'ardware
-exits the test shell an' starts the kernel
-exits the test shell an' shuts down the kernel
 saves the current directory to kernel configuration file
 tests the list writer with the strin' an' strin' array
 tests the list writer with the integer an' integer array
@@ -850,7 +687,6 @@ the text editor 'asn't opened a file stream yet.
  ye be welcome to settings!
 error executin' ssh command
 error on ssh shell
-- app information
  tests the dictionary writer with the strin' an' strin' array
 tests the dictionary writer with the charrr an' charrr array
 tests the dictionary writer with the integer an' integer array
@@ -860,21 +696,15 @@ normal integer dictionary:
 array integer dictionary:
 normal charrr dictionary:
 array charrr dictionary:
-ye be welcome to test shell!
 show progress on filesystem operations
 shows what file be bein' processed durin' the filesystem operations
 where 'ardwaretype be
 either the 'ardware type {0} be not probed, or be not valid.
  the 'ardware type {0} be not probed yet. If ye be sure that there it be probed, restart the kernel with debuggin' enabled.
  partitions not parsed to list.
- prints a separator
-prints a separator with format support
-prints a separator with color support
-prints a separator with color an' format support
 always centered
  write any text ye want shown.
  whether the text shown on the marquee be always centered.
- argument {0} not found to inject.
 screensaver experienced an error while displaying: {0}. Press any key to exit.
  preview...
  'ere's 'ow yer theme will look like:
@@ -891,7 +721,6 @@ mod file path:
 part version:
 minimum count o' required arguments:
 arguments required?
-wrappable command?
 settin' shell variable?
 can not run in maintenance mode?
 obsolete?
@@ -900,7 +729,6 @@ folder be empty.
  verbose probe
 make 'ardware probin' messages a bit talkative.
  > there be no information about frames.
- ye need to write yer name.
  beautifies the json file
 config category {0} not found.
  config entry {0} not found.
@@ -949,10 +777,6 @@ check yer internet connection an' try again.
 manual page {0} not found.
  mod manual
 Available kernel arguments:
-press "q" if ye be done.
- multiple kernel arguments can be separated with commas without spaces, fer example:
-multiple injected commands can be separated with colons with spaces, fer example:
-the requested argument {0} be not found.
  unrecoverable error in argument:
 encrypts a strin' usin' sha512
 encrypts a strin' usin' sha384
@@ -977,31 +801,12 @@ the json editor 'asn't opened a file stream yet.
 removes a property from the json file
 exits the json shell without savin' the changes
 saves the json file
-opens the json shell
 prints the json file
 next ramp interval
  'ow many milliseconds to wait before fillin' in the next ramp?
-notification title color
-notification description color
-notification progress color
-notification failure color
-question color
-success color
-user dollarrr color
-tip color
-separator text color
-separator color
-list title color
-development warnin' color
-stage time color
-progress color
-aft option color
 draw notification border
 covers the notification with the border.
  contact the vendor o' the mod to upgrade the mod to the compatible version.
- low priority border color
-medium priority border color
-'igh priority border color
 sends a progress notification to test the receiver
 tests the color wheel
 shows local kernel time
@@ -1020,13 +825,11 @@ adds a mod to the blacklist
 removes a mod from the blacklist
 time an' date in utc: {0}
  show app information durin' boot
-parse command-line arguments
 show stage finish times
 start kernel modifications on boot
 show current time before login
 notify fer any fault durin' boot
 shows brief information about the application on boot.
- parses the command-line arguments on boot.
  shows 'ow much time did the kernel take to finish a stage.
  automatically start the kernel modifications on boot.
  shows the current time, time zone, an' date before loggin' in.
@@ -1036,8 +839,6 @@ password prompt style
 write 'ow ye want yer login prompt to be. Set sail blank to use default style. Placeholders be parsed.
  write 'ow ye want yer password prompt to be. Set sail blank to use default style. Placeholders be parsed.
  shows message o' the day after displayin' login screen.
-probe injected commands
-probes the injected commands at the start o' the kernel shell.
  show file details in list
 shows the brief file details while listin' files
 show file details in ftp list
@@ -1089,13 +890,9 @@ add new connections to sftp speed dial
 shows the sftp file details while listin' remote directories.
  if enabled, adds a new connection to the sftp speed dial.
  pin' timeout
-show extensive adapter info
-show general network information
 download percentage text
 upload percentage text
 'ow many milliseconds to wait before declarin' timeout?
-prints the extensive adapter information, such as packet information.
- shows the general information about network.
  write 'ow ye want yer upload percentage text to be. Set sail blank to use default style. Placeholders be parsed. {0} fer uploaded size, {1} fer target size, {2} fer percentage.
  write 'ow ye want yer download percentage text to be. Set sail blank to use default style. Placeholders be parsed. {0} fer downloaded size, {1} fer target size, {2} fer percentage.
  ask fer password after lockin'
@@ -1215,16 +1012,12 @@ upper frame character fer notification border
 lower frame character fer notification border
 left frame character fer notification border
 right frame character fer notification border
-manual page information style
 whether to show what's written in the input prompt.
  what be the minimum number to choose?
 what be the maximum number to choose?
-write 'ow ye want yer manpage information to be. Set sail blank to use default style. Placeholders be parsed. {0} fer manual title, {1} fer revision.
- property {0} be not found on any o' the modules.
  start color wheel in true color mode
 if specified, it will display customized startup banner with placeholder support. Ye can use {0} fer kernel version.
  which variant o' the current language be bein' used to change the month names, calendar, etc.?
-activates the 255 color support.
  activates the true color support.
  word deleted in line {0}.
  strin' replaced in line {0}.
@@ -1253,7 +1046,6 @@ disk size:
 total memory:
 graphics card:
 disk model:
-culture o' the current language
 if ye be sure that there ye've opened starboard section, check this here message out:
  executes an ftp server command
  encrypts a strin' usin' crc32
@@ -1278,9 +1070,6 @@ if enabled, the mail shell will show 'ow many bytes transmitted when downloadin'
  time zone:
 today be {0}
 current time be {0}
-table separator color
-table 'eader color
-table value color
 possible answers
 mod file be not specified.
  tryin' to install an already-installed mod. Updatin' mod...
@@ -1302,7 +1091,6 @@ shows the notification showin' the download progress.
 strin' found in the localization resources.
  strin' not found in the localization resources.
  starts the kernel quietly
-injects a command to start to the sky in the next login
 starts the kernel in safe mode, disablin' all mods
 like safe mode, but also disables multi-user an' some customization
 there been not enough arguments.
@@ -1327,10 +1115,6 @@ gettin' {0}...
  settin' site to
 colors don't require a restart, but most o' the settings require a restart.
  no 'elp fer argument "{0}".
- press a on 'ate comments to apologize. Press t on love comments to thank. Press q to quit the game.
- ye've apologized to a 'ate comment! excellent!
-apologized to love comment. Not jolly enough.
- ye just thanked the 'ater fer the 'ate comment!
 default difficulty fer speedpress
 keypress timeout fer speedpress
 select yer preferred difficulty.
@@ -1351,10 +1135,8 @@ checks all the ks settings to see if the variables be written correctly
 these configuration entries 'ave invalid variables or enumerations an' need to be fixed:
 file {0} not found
 creates a variable array with the provided values
-write the number o' the settin' to go to. Any other character means go aft.
  checks all the localization text line numbers to see if they be all equal
 line mismatch in
-please enter a user number.
  include anonymous users
 include disabled users
 includes the anonymous users in the list
@@ -1367,9 +1149,7 @@ show latest rss 'eadline on login
 rss 'eadline url
 each login, it will show the latest rss 'eadline from the selected 'eadline url.
  rss 'eadline url to be used when showin' the latest 'eadline. This here be usually yer favorite feed.
- latest news:
 failed to get the latest news.
- selected option color
 show stack trace on kernel error
 if there be any kernel error, choose whether or not to print the stack trace to the console.
 save settings as
@@ -1388,9 +1168,6 @@ stage delay in milliseconds
 'ow many milliseconds to wait before drawin' the next stage?
 next ramp rot interval
 'ow many milliseconds to wait before rottin' the next ramp's one end?
-check debug quota
-do we check if the debug system needs to check fer quota before writin' to the debugger?
-'ow many milliseconds did it really take to sleep?
 failed to add an event.
  failed to remove an event.
  not enough arguments provided to add an event.
@@ -1446,9 +1223,6 @@ if there be any update, the kernel will automatically download it.
 this here command 'as the below switches that there change 'ow it works:
 prints the line numbers that there follow the line bein' printed
 prevents printin' the line numbers
-always use the transliterated version
-always use the translated version
-force switchin' language
 indicate that there the answer can take more than one character
 indicate that there the answer can take just one character
 print the question an' the answers in one line
@@ -1463,23 +1237,15 @@ starts the game in medium difficulty
 starts the game in 'ard difficulty
 starts the game in very 'ard difficulty
 starts the game in custom difficulty. Please note that there the custom timeout in milliseconds should be written as argument.
- shows the system information
-shows the 'ardware information
-shows the user information
-shows the message o' the day
-shows the message o' the day after login
-shows all information
 creates a directory that there contains the contents o' the zip file
 shows all the available cities
 fast compression
 no compression
 don't create base directory in archive
-unit in ticks
 disconnects from server disgracefully
 indicates that there the target path be absolute
 saves the json file, beautifyin' it in the process
 saves the json file, minifyin' it in the process
-gets the line endin' style from text file
 clears all fired events
 enable event debuggin'
 enables debuggin' fer the kernel event system
@@ -1494,8 +1260,6 @@ failed to install custom language {0}.
  failed to install custom languages.
  failed to uninstall custom languages.
  failed to uninstall custom languages. See the inner exception fer more info.
- write the administrator password. Make sure that there ye don't use this here account unless ye really know what ye be doin'.
- ye must write the administrator password.
  license information
 manage yer languages
 language not found or file 'as invalid characters.
@@ -1505,9 +1269,7 @@ language not found or file 'as invalid characters.
 language full name:
 language transliterable:
 custom language:
-new ye be welcome banner
 stylish splash screen
-shows the new figlet-rendered ye be welcome banner
 enables the stylish splash screen on startup. Please note that there it will disable argument prompt an' test shell pre-boot.
  splash name
 splash name from the available splashes implemented in the kernel.
@@ -1515,7 +1277,6 @@ splash name from the available splashes implemented in the kernel.
  generated default mal.
  system account initialized
 users initialized
-permissions loaded
 ye be welcome!
 startin' the remote debugger...
  remote debugger connection error
@@ -1530,8 +1291,6 @@ looks like ye be bypassin' the console size detection. Things may not work prope
  to 'ave a better experience, resize yer console window while still bein' on this here screen. Press any key to continue...
  yer console be too small to run properly:
 banner figlet font
-prints a strin' to console usin' color type an' line print with figlet support
-prints a strin' to console usin' color type an' line print with format an' figlet support
  show the commands count on 'elp
 show the shell commands count on 'elp
 show the mod commands count on 'elp
@@ -1556,21 +1315,10 @@ progress text location
 select yer preferred progress text location.
  ye can only write the numbers.
  press "q" to exit.
- downloadin' names...
- due to technical difficulties, we be unable to list adapter properties on unix systems.
  enables debug mode
-prompts fer arguments
 enable black an' white mode
 makes the disco black an' white. Will really 'urt yer eyes if it been too fast, so not recommended if ye be experiencin' a seizure o' fast images.
- looks such as yerself was runnin' an unsupported version. It be 'ighly advisable not to use this here version.
  load current colors
-alternative option color
-users count fer love or 'ate comments
-'ow many users to be in the love or 'ate comment room?
-lists available languages
-available languages:
-command-line arguments:
-pre-boot command-line arguments:
 opens the mod api documentation fer the structure o' the source code in its most current form
 Current value:
 invalid 'ex color specifier.
@@ -1597,7 +1345,6 @@ byte replaced.
  the specified start byte number may not be larger than the file size.
  the specified end byte number may not be larger than the file size.
  deleted bytes.
-edits a binary file
 selects the feed from the existin' feed list from online sources
 downloadin' feed list...
  failed to download feed list.
@@ -1636,14 +1383,9 @@ minimum age years count
 maximum age years count
 minimum amount o' age years to generate
 maximum amount o' age years to generate
-> framework type: {3}
 untitled manual page
 input 'istory enabled
-input clipboard enabled
-input undo enabled
 whether the input 'istory be enabled or not. If enabled, ye can access recently typed commands usin' the to the sky or down arrow keys.
- whether the input clipboard be enabled or not.
- whether the input undo feature be enabled or not.
  converts the color rgb numbers to 'ex.
  converts the 'exadecimal representation o' the color to rgb numbers.
  converts the 'exadecimal representation o' the color to rgb numbers in ks format.
@@ -1691,13 +1433,11 @@ unit converter
 available unit types an' their units:
 game o'er
 unexpected error
-the arr, that be a .zip file shell
 commands 'ighlighted in another color be unified commands an' be available in every shell.
  checkin' fer updates...
  downloadin' version
 installin' version
 goin' aft to 2018...
-Ye can't go aft to 2018 on.Net 6.0!
 use powerline fer renderin' spaceship
 meteor game speed
 whether to use powerline to render the spaceship or to use the standard greater than character. If ye want to use powerline with meteor, ye need to install an appropriate font with powerline support.

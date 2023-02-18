@@ -9,7 +9,7 @@
             ],
             "dest": "api",
             "disableGitFeatures": false,
-            "disableDefaultFilter": true,
+            "disableDefaultFilter": false,
             "filter": "filterConfig.yml"
         }
     ],
@@ -21,9 +21,6 @@
                     "index.md",
                     "toc.yml"
                 ]
-            },
-            {
-                "files": [ "wiki/**/*.md" ]
             }
         ],
         "resource": [

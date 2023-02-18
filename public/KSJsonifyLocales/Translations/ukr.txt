@@ -1,6 +1,3 @@
-Dostupni komandy: {0}
-Vvedennya komandy skasovano.
-Vvedeni arhumenty budutʹ zaplanovani na zapusk pid chas nastupnoho perezavantazhennya.
 Nediysnyy shablon kolʹoru {0}
 hwprobe: vashe obladnannya bude perevireno. Budʹ laska, zachekayte...
 TSP: ne vdalosya pereviryty odne abo kilʹka yader TSP. Pokaz informatsiyi vse odno...
@@ -12,7 +9,6 @@ PODVIYNA PANIKA: chas perezavantazhennya perevyshchuye maksymalʹno dozvolenyy c
 [{0}] panika: perezavantazhennya vvimkneno cherez rivenʹ pomylky {0}.
 [{0}] panika: chas perezavantazhennya: {1} sekund, bilʹshe 1 hodyny. Vin vstanovlenyy na 1 khvylynu.
 PODVIYNA PANIKA: Typ pomylky {0} nediysnyy.
-[{0}] dpanic: {1} -- Perezavantazhennya cherez {2} sekund...
 [{0}] panika: perezavantazhennya vymkneno cherez rivenʹ pomylky {0}.
 [{0}] panika: {1} -- Natysnitʹ budʹ-yaku klavishu, shchob prodovzhyty vykorystannya yadra.
 [{0}] panika: {1} -- Natysnitʹ budʹ-yaku klavishu, shchob vymknuty.
@@ -20,27 +16,15 @@ PODVIYNA PANIKA: Typ pomylky {0} nediysnyy.
 PODVIYNA PANIKA: Pomylka yadra: {0}
 Zakryttya...
 Perezavantazhennya...
-Zapushcheno inshyy ekzemplyar Nitrocid KS. Vymknennya u razi pereshkod.
-Ne vdalosya dodaty korystuvacha do spyskiv dozvoliv: nediysnyy typ {0}
-Ne vdalosya dodaty korystuvacha do spyskiv dozvoliv: nediysnyy korystuvach {0}
-Ne vdalosya vydalyty korystuvacha zi spyskiv dozvoliv: nediysnyy typ {0}
-Vy vzhe vviyshly.
-Ne vdalosya vydalyty korystuvacha zi spyskiv dozvoliv: nediysnyy korystuvach {0}
-Vy abo znayshly pomylku, abo dozvil, yakyy vy namahalysya dodaty chy vydalyty, uzhe vykonano, abo insha pomylka.
 Pomylka {0}: {1}
-Vy abo znayshly pomylku, abo dozvil, yakyy vy namahalysya zminyty dlya novoho korystuvacha, ne vdalosya.
-Dostupni imena korystuvachiv: {0}
 Im'ya korystuvacha:
 Probily zaboroneni.
 Spetsialʹni symvoly ne dopuskayutʹsya.
 Parolʹ korystuvacha {0}:
 Nepravylʹnyy parolʹ.
-Korystuvach vidklyuchenyy.
-Nepravylʹne imʺya korystuvacha.
 Pomylka pry sprobi proanalizuvaty zapovnyuvachi. {0}
 Pomylka sproby dodaty imʺya korystuvacha.
 usrmgr: stvorennya imeni korystuvacha {0}...
-Porozhnye imʺya korystuvacha.
 Korystuvacha {0} ne znaydeno.
 Korystuvacha {0} ne mozhna vydalyty.
 Korystuvach {0} vzhe vviyshov u systemu. Vyyditʹ i vviyditʹ yak inshyy administrator.
@@ -91,24 +75,14 @@ Zminyuye viddalenyy kataloh dlya zavantazhennya abo zavantazhennya
 Vydalyaye viddalenyy fayl iz servera
 Vid'yednuyetʹsya vid servera
 Zavantazhuye viddalenyy fayl u lokalʹnyy kataloh, vykorystovuyuchy dviykovyy abo tekstovyy fayl
-Pokazuye ekran dovidky
 Perelichuye lokalʹnyy kataloh
 Perelichuye viddalenyy kataloh
 Zavantazhuye lokalʹnyy fayl u viddalenyy kataloh za dopomohoyu dviykovoho abo tekstovoho faylu
-Ne vdalosya otrymaty vlastyvosti dlya adaptera {0}
-Nomer adaptera:
-Nazva adaptera:
-Maksymalʹna odynytsya peredachi: {2} odynytsʹ
-DHCP uvimkneno:
-Pakety bez odnoadresnoyi peredachi:
-Odnoadresni pakety:
-Pomylka vkhidnykh/vykhidnykh paketiv:
 Psevdonim ne mozhe zbihatysya z imʺyam komandy.
 Ne znaydeno komandu dlya psevdonima {0}.
 Teper vy mozhete zapustyty "{0}" yak komandu: "{1}".
 Psevdonim {0} ne znaydeno dlya vydalennya.
 Nediysnyy rezhym {0}.
-Vvedeni arhumenty, {0}, budutʹ zaplanovani na zapusk pid chas nastupnoho perezavantazhennya.
 Arhumentiv ne vystachalo. Dyvitʹsya nyzhche shchodo vykorystannya:
 Kataloh {0} ne znaydeno
 Porozhnye imʺya khosta.
@@ -122,18 +96,7 @@ Nove imʺya, yake vy vvely, uzhe znaydeno.
 {0} ne znaydeno.
 Konfihuratsiya perezavantazhena. Mozhlyvo, vam dovedetʹsya perezavantazhyty yadro, shchob deyaki zminy vstupyly v sylu.
 Odyn abo kilʹka kolʹoriv nediysni.
-Kolʹory nedostupni. Uvimknitʹ kolʹorovu obolonku v konfihuratsiyi yadra.
 Zastavku {0} ne znaydeno.
-Versiya yadra:
-Rezhym nalahodzhennya:
-Kolʹorova obolonka:
-Arhumenty shchodo zavantazhennya:
-Komanda dovidky sproshchena:
-MOTD pid chas vkhodu:
-Chas/Data na kutku:
-Potochne im'ya korystuvacha:
-Potochne im'ya khosta:
-Dostupni imena korystuvachiv:
 Pomylka sproby vykonaty komandu
 Zminyuye kataloh
 Zminyuye parolʹ dlya potochnoho korystuvacha
@@ -144,35 +107,27 @@ Perelik vmistu faylu/papky v potochniy paptsi
 Blokuye ekran za dopomohoyu parolya
 Vykhodytʹ iz systemy
 Stvoryuye kataloh
-Perelichuye informatsiyu pro vsi dostupni interfeysy
 Perezavantazhuye kompʺyuter (POPEREDZHENNYA: nemaye synkhronizatsiyi, oskilʹky tse ne ostatochne yadro)
 Perezavantazhuye fayl konfihuratsiyi, yakyy redahuyetʹsya.
 Zakhyshchaye vash ekran vid vyhoryannya
 Vstanovlyuye zastavky yadra
-Vstanovlyuye temy yadra
 Pokazuye datu ta chas
 Pokazuye datu ta chas u zonakh
 Yadro bude vymkneno
-Informatsiya pro systemu
-* Vy mozhete vykorystovuvaty dekilʹka komand, vykorystovuyuchy dvokrapku mizh komandamy.
 Vykorystannya:
-de arhumenty budutʹ {0}
 de bude mytnyk
 Stalasya pomylka v obolontsi.
 Vy ne mayete dozvolu vykorystovuvaty {0}
 Povidomlennya obolonky: zapytanu komandu {0} zaboroneno vykonuvaty v rezhymi obsluhovuvannya.
 Povidomlennya obolonky: zapytanu komandu {0} ne znaydeno. Dostupni komandy dyv. u rozdili «Dovidka».
-Povidomlennya obolonky: komandi {0} zaboroneno vykonuvaty pid chas vkhodu.
 Pomylka sproby vykonaty komandu.
 - Chas {0}: {1}
 Zapusk na {0}
 Vy ne mayete prava otrymuvaty informatsiyu pro {0}.
 Tsya komanda zastarila i bude vyluchena v maybutnʹomu vypusku.
 Vy ne mayete prava zminyuvaty parolʹ {0}, oskilʹky tsilʹ buv administratorom.
-usrmgr: Im'ya korystuvacha {0} vzhe znaydeno
 Vydalyaye vse v zhurnali nalahodzhennya
 Nediysna mova
-Zminyuye movu
 ----------------------------- Damp paniky yadra ------------------ -----------
 >> Informatsiya pro paniku <<
 > Opys: {0}
@@ -201,7 +156,6 @@ Perelichuye pidklyucheni prystroyi dlya nalahodzhennya
 Nalahodzhuvalʹnyy prystriy {0} ne znaydeno.
 Prystriy {0} vidklyucheno.
 Nalahodzhennya proslukhovuvannya vsikh adres za dopomohoyu portu {0}.
-Arhumenty ne vkazani. Pidkazka: vkazhitʹ kilʹka arhumentiv, rozdilenykh probilamy
 Psevdonim uzhe znaydeno: {0}
 Zhurnal nalahodzhennya vydaleno. Usi pidklyucheni prystroyi dlya nalahodzhennya vse shche mozhutʹ perehlyadaty povidomlennya.
 Pomylka vydalennya zhurnalu nalahodzhennya: {0}
@@ -210,19 +164,11 @@ Vkazhitʹ adresu
 Chasovyy poyas vkazano nepravylʹno.
 Nediysnyy vybir profilyu.
 Sproba pidklyuchytysya do {0} za dopomohoyu profilyu {1}...
-Ne vdalosya otrymaty vlastyvosti IPv6 dlya adaptera {0}. Prodovzhennya...
-Informatsiya pro IPv4:
-Informatsiya pro IPv6:
-Adapter {0} ne pidtrymuye IPv6. Prodovzhennya...
-Adapter {0} ne pidtrymuye IPv4. Pomylka zonda.
-Skhozhe, vy zapuskaly versiyu yadra dlya rozrobky. Khocha vy mozhete pobachyty aspekty, vin chasto onovlyuyetʹsya i mozhe vnosyty pomylky. Rekomenduyetʹsya zalyshatysya na stabilʹniy versiyi.
 Vybrana mova mistytʹ dva varianty. Oberitʹ odne:
 Nediysnyy vybir. Sprobuyte shche raz.
 Vy ne mayete prava vstanovlyuvaty potochnyy kataloh na {0}: {1}
 Shlyakh, yakyy vy vkazaly, zanadto dovhyy.
 Pid chas sproby otrymaty informatsiyu pro {0} zavershyvsya zbiy zbirnyka damp informatsiyi: {1}
-Pomylka pid chas sproby vstanovyty MOTD/MAL: {0}
-Pomylka pid chas sproby otrymaty MOTD/MAL: {0}
 Pomylka pid chas sproby zapustyty zastavku cherez nediysnu operatsiyu.
 Perezavantazhennya zaboroneno v bezpechnomu rezhymi.
 Rozbir modiv zaboroneno v bezpechnomu rezhymi.
@@ -237,15 +183,7 @@ Obchyslyuye sumy fayliv.
 Perenese vas do nashoyi Wiki GitHub.
 Nediysnyy alhorytm shyfruvannya.
 Vmykaye abo vymykaye viddalene nalahodzhennya.
-Perevirte, chy vmiyete vy pravylʹno pysaty slova vchasno
 Perevirte, chy vmiyete vy rozvʺyazuvaty matematychni rivnyannya vchasno
-Vidpovidayte na komentari z lyubovʺyu chy nenavystyu.
-Yakshcho khtosʹ zrobyv takyy komentar do vashoho video:
-Yak by vy vidpovily?
-Nediysnyy vybir. Perekhodzhu do nastupnoho komentarya...
-Chudovo! {0} bude vdyachnyy za vashu podyaku.
-Napysano idealʹno!
-Napysano nepravylʹno.
 Vyrisheno idealʹno!
 Vyrisheno nepravylʹno.
 RPC vzhe zapushcheno.
@@ -256,45 +194,14 @@ Vveditʹ parolʹ dlya {0}:
 SSH vidklyucheno.
 Ne vdalosya vstanovyty kodovu storinku. Mova mozhe vidobrazhatysya nepravylʹno.
 Nalahodzhennya ne vvimkneno.
-Dyakuyu! Tse tsikavo.
-Usi pidtrymayutʹ vashe video dlya tsʹoho.
-YA nadav vam spetsialʹnyy fayl u vashiy elektronniy poshti dlya vashoho nastupnoho video.
-Slukhayte, kheytery, vin namahayetʹsya nam dopomohty, a ne shakhray.
-Ne znayu, naskilʹky ya ta moyi druzi dyakuyemo vam za tse video.
-YA lyublyu tebe za tse video.
-Prodovzhuyte, ne zupynyaytesya.
-YA dopomozhu vam dosyahty 1 mln peredplatnykiv!
-Cherez vas moyi druzi polahodyly kompʺyuter.
-Chudova vytivka! YA vymknuv PK svoho voroha.
-Nenavysnykam: PRYPYNITʹ NENAVYDYTY YOHO
-Nenavysnykam: DO ROBOTY
-Teper tsʹoho nikhto ne pomitytʹ zavdyaky vashomu posibnyku z prykhovuvannya obʺyektiv
-YA perestanu dyvytysya vashi video. Abonent vtratyv.
-Shcho tse? Tse nezrozumilo.
-Tse video nayhirshe!
-Usi povidomlyayutʹ pro tse video!
-Moyi druzi v hnivi na tebe!
-Zakokhani teper budutʹ nenavydity vas za tse.
-Vash druh nenavydytʹ vas za tse.
-Tsya vytivka zmusyla mene vidmovytysya vid vas.
-Misiya ne vykonana, Povaha -, Pidpysnyk -
-Prypynitʹ znimaty take video!!!
-Povernitʹsya do svoyeyi roboty, vashi video nayhirshi!
-My uperedzhuyemo tse video.
 Pokazuye vsi otrymani spovishchennya
 Vidkhylyaye spovishchennya
 Spovishchennya uspishno vidkhyleno.
-Pakety (vkhidni):
-Pakety (vykhidni):
-Pomylky v otrymanykh paketakh:
-Zahalʹni vlastyvosti IPv6
-Zahalʹni vlastyvosti IPv4
 Viddaleno vykonuye komandu na viddalenyy PK
 - Etap 1: Initsializatsiya systemy
 - Etap 2: vyyavlennya obladnannya
 - Etap 3: vyyavlennya modiv i zastavok
 - Etap 4: Uviyditʹ
-Skhozhe, vy zapuskaly versiyu-kandydat na vypusk. Rekomenduyetʹsya zalyshatysya na stabilʹniy versiyi.
 Nediysnyy typ {0}.
 Rozmir: {0}
 Kataloh {0} vzhe isnuye.
@@ -313,7 +220,6 @@ Vveditʹ parolʹ:
 Pomylka pid chas pidklyuchennya do {0}: {1}
 Pidklyuchennya do {0}...
 Autentyfikatsiya...
-Spysok komand
 Zavantazhuye povidomlennya ta pererakhovuye yikh
 Vidkryvaye povidomlennya
 Storinka ne ye chyslovym znachennyam.
@@ -328,10 +234,7 @@ Pidhotovka profiliv... Tse mozhe zaynyaty kilʹka khvylyn...
 Pomylka sproby vykonaty stsenariy: {0}
 Zapysuye tekst u konsolʹ
 Robytʹ vybir korystuvacha
-Zvukovyy syhnal u 'n' Hts i chas u 'n' milisekundakh
 de <$variable> – budʹ-yaka zminna, yaka bude vykorystovuvatysya dlya zberihannya vidpovidi
-Chastota maye buty chyslovoyu. Yakshcho vono chyslove, perekonaytesya, shcho vono >= 37 i <= 32767.
-Chas maye buty chyslovym.
 de <answers> — vidpovidi na zapytannya z odniyeyi litery, rozdileni kosymy ryskamy
 Pomylka pidklyuchennya do SSH-servera: {0}
 Dozvolyaye korystuvachevi vvodyty vvedennya
@@ -346,7 +249,6 @@ Pid chas perevirky sertyfikata vynykayutʹ pomylky sertyfikata. Mozhlyvo, vy vpe
 Vy vpevneni, shcho khochete pidklyuchytysya?
 Nevirna vidpovidʹ. Budʹ laska sprobuyte shche raz.
 Shvydkyy nabir porozhniy. Pidklyuchitʹsya do servera, shchob dodaty do nʹoho adresu.
-Shvydkoho naboru ne isnuye. Pidklyuchitʹsya do servera, shchob dodaty do nʹoho adresu.
 Vveditʹ adresu ta port servera IMAP (<adresa> abo <adresa>:[port]):
 Vveditʹ adresu ta port SMTP-servera (<adresa> abo <adresa>:[port]):
 Nadsylaye povidomlennya na adresu
@@ -360,12 +262,10 @@ Vydalyaye povidomlennya
 Vydalyaye vsi povidomlennya vid oderzhuvacha
 Povidomlennya {0} vid {1} vydaleno z {2}. Zalyshylosya proanalizuvaty {3} povidomlenʹ.
 Povidomlennya {0} vid {1} vydaleno z papky "Vkhidni". Zalyshylosya proanalizuvaty {2} povidomlenʹ.
-Redahuye tekstovyy fayl
 Stvoryuye novyy fayl
 Fayl uzhe isnuye.
 Pomylka sproby stvoryty fayl: {0}
 Ne vdalosya vidkryty fayl. Vykhid z obolonky...
-Perelichuye dostupni komandy
 Vyvodytʹ na konsolʹ vmist faylu z nomeramy ryadkiv
 Dodaye novyy ryadok z tekstom u kintsi faylu
 Vydalyaye vkazanyy nomer ryadka
@@ -378,12 +278,10 @@ Zapusk u bezpechnomu rezhymi. Propusk etapu...
 >> Viddalene nalahodzhennya ta chat: versiya
 >> Vasha adresa: {0}.
 >> Vashe im'ya {0}.
-Komandu {0} ne znaydeno. Vykorystovuyte «/help», shchob perehlyanuty spysok.
 Indeks {0} nediysnyy. Isnuye {1} trasuvannya steka. Indeks zasnovanyy na nuli, tomu sprobuyte vidnyaty na 1.
 Nemaye trasuvannya steka
 Pokazuye ostannyu trasuvannya steka za vynyatkom
 Pokazuye potochne imʺya korystuvacha v seansi
-Vidʺyednuye vas vid nalahodzhuvacha
 Rozblokuyte prystriy dlya nalahodzhennya za IP-adresoyu
 Blokuyte prystriy dlya nalahodzhennya za IP-adresoyu
 {0} teper mozhe znovu pryyednatysya do viddalenoho nalahodzhennya.
@@ -395,13 +293,10 @@ Zberehty nalashtuvannya
 Vykhid
 Vkazanyy parametr {0} nediysnyy.
 Vidpovidʹ maye buty chyslovoyu.
-Pidkazka arhumentiv pid chas zavantazhennya
-Tryher rezhymu obsluhovuvannya
 Perevirte nayavnistʹ onovlenʹ pid chas zapusku
 Tykhyy zond
 Pokazaty MOTD pid chas vkhodu
 Ochystyty ekran pid chas vkhodu
-Kolʹorova obolonka
 Sproshchena komanda dovidky
 Port nalahodzhennya
 Zavantazhte chas povtoriv
@@ -410,32 +305,25 @@ Zareyestruyte IP-adresu FTP
 Povernuty lyshe pershyy profilʹ FTP
 Pokazaty chas/datu u verkhnʹomu pravomu kuti
 Chas ochikuvannya zastavky v ms
-Kvota rozmiru nalahodzhennya v baytakh
 Rezhym analizu rozmiru
 Vydil pid chas zapusku
 Dovhyy chas i data
 Pokazaty prykhovani fayly
 Vvedeno nediysnyy rozdil. Budʹ laska, povernitʹsya.
 Povertaysya...
-Uvimknuty
-Vymknuty
 Napyshitʹ port viddalenoho nalahodzhuvacha. Vin maye buty chyslovym i ne povynen buty vzhe vykorystanyy. Inakshe viddalenyy nalahodzhuvach ne zmozhe vidkryty port.
 Napyshitʹ, skilʹky raziv komanda "get" maye povtoryty nevdali zavantazhennya. Vono maye buty chyslovym.
 Napyshitʹ, koly zapuskaty zastavku cherez vkazani milisekundy. Vono maye buty chyslovym.
-Napyshitʹ, skilʹky baytiv mozhe zberihaty zhurnal nalahodzhennya. Vono maye buty chyslovym.
 Vidpovidʹ mozhe buty ne nehatyvnoyu.
 Vidpovidʹ nediysna. Perekonaytesya, shcho vidpovidʹ ye chyslovoyu dlya zapysiv konfihuratsiyi, yaki potrebuyutʹ chysla yak vidpovidi.
 Zminna {0} ne znaydena v zhodnomu z moduliv.
 Zminyuye konfihuratsiyu yadra
-Aktyvuyte 255 kolʹoriv
 Zminitʹ kulʹturu pry zmini movy
 Pokazanyy tekst
 Napyshitʹ budʹ-yakyy tekst, yakyy khochete pokazaty. Korotshe - krashche.
 Ne vdalosya zavantazhyty {0}
-Pomylka vykonannya komandy viddalenoho nalahodzhennya {0}: {1}
 Dodaye korystuvachiv
 Dodaye psevdonimy do komand
-Vvodytʹ arhumenty v yadro ​​(potribne perezavantazhennya)
 Zminyuye im'ya khosta
 Zminyuye MAL, MOTD pislya vkhodu
 Zminy MOTD, povidomlennya dnya
@@ -450,13 +338,11 @@ Ne vdalosya vstanovyty movu.
 Pomylka sproby zakryty spovishchennya.
 usrmgr: Ne vdalosya stvoryty im'ya korystuvacha {0}: {1}
 Ne vdalosya pereymenuvaty korystuvacha. {0}
-Odyn zi spyskiv dozvoliv ne mistytʹ imeni korystuvacha {0}.
 Korystuvach ne znaydenyy
 Ne vdalosya zminyty parolʹ imeni korystuvacha: {0}
 Ne vdayetʹsya znayty fayl, yakyy vidpovidaye ryadku "{0}": {1}
 Ne vdalosya zavantazhyty fayl {0}.
 Pomylka spysku viddalenykh fayliv: {0}
-Vy vpevneni, shcho khochete vydalyty {0} <y/n>?
 Vydalennya {0}...
 {0} ne znaydeno na serveri.
 Usi lysty, nadislani {0}, uspishno vydaleno.
@@ -483,7 +369,6 @@ Volohistʹ: {0}
 Vy mozhete otrymaty vlasnyy klyuch API na https://home.openweathermap.org/api_keys.
 Vy zavzhdy mozhete zvernutysya do http://bulk.openweathermap.org/sample/city.list.json.gz, shchob otrymaty spysok mist z yikhnimy identyfikatoramy.
 Bazhana odynytsya vymiryuvannya temperatury
-Nalashtovuye yadro, shchob vono zaproponuvalo vam arhument pid chas zavantazhennya.
 Aktyvuye rezhym obsluhovuvannya. Tse vymykaye kilʹka oblikovykh zapysiv.
 Pry kozhnomu zapusku vin pereviryatyme nayavnistʹ onovlenʹ.
 Pry zmini movy zminyuyte nazvy misyatsiv, kalendar toshcho.
@@ -491,7 +376,6 @@ Zberihayte movchannya povidomlenʹ pro aparatne testuvannya.
 Pokazuvaty povidomlennya dnya pered vidobrazhennyam ekrana vkhodu.
 Ochystitʹ ekran pered vidobrazhennyam ekrana vkhodu.
 Pokazuye dostupnykh korystuvachiv, yakshcho vvimkneno.
-Nadaye pidtrymku kolʹoru yadra
 Sproshchena komanda dopomohy dlya vsikh obolonok
 Chy potribno reyestruvaty imʺya korystuvacha FTP.
 Chy reyestruvaty IP-adresu FTP.
@@ -510,7 +394,6 @@ U papku "Vkhidni" nadiyshlo {0} novykh povidomlenʹ.
 Vidkryyte «lsmail», shchob pobachyty yikh.
 Vydalyaye kataloh abo fayl
 Ne vdayetʹsya vydalyty {0}, oskilʹky vin ne isnuye.
-Natysnitʹ CTRL+C, shchob vyyty.
 Nadaye informatsiyu pro fayl
 Nadaye informatsiyu pro kataloh
 Ne vdayetʹsya otrymaty informatsiyu pro neisnuyuchyy kataloh.
@@ -582,16 +465,7 @@ Vidkryvaye testovu obolonku
 Ne vdalosya zapustyty "{0}": {1}
 Pokazaty poperedniy perehlyad poshtovykh povidomlenʹ
 U spysku poshtovykh povidomlenʹ vidobrazhaty poperedniy perehlyad osnovnoho tekstu.
-Kolir vvedennya
-Kolir litsenziyi
-Kolir pomylky yadra, shcho prodovzhuyetʹsya
-Kolir pomylky yadra, yakyy ne mozhna prodovzhuvaty
-Kolir imeni khosta
-Kolir imeni korystuvacha
 Kolir fonu
-Neytralʹnyy kolir tekstu
-Kolir stseny
-Kolir pomylky
 Sproba otrymaty dostup do nediysnoho shlyakhu.
 Ochyshchaye tekstovyy fayl
 Vykhid iz tekstovoho redaktora
@@ -621,11 +495,7 @@ Zberehty temu v potochnomu katalozi
 Zberehty temu v inshyy kataloh...
 Vyberitʹ kolir za dopomohoyu klavish «<-» ta «->». Natysnitʹ ENTER, shchob vyyty. Natysnitʹ «i», shchob vvesty nomer kolʹoru vruchnu.
 Vyberitʹ kolir za dopomohoyu klavish «<-» ta «->». Vykorystovuyte klavishi zi strilkamy vhoru ta vnyz, shchob vybraty mizh kolʹorovymy diapazonamy. Natysnitʹ ENTER, shchob vyyty. Natysnitʹ «i», shchob vvesty nomer kolʹoru vruchnu.
-Laskavo prosymo do yadra! - Versiya {0}
-Poperedzhuvalʹnyy kolir
-Variant kolʹoru
 Vveditʹ nomer kolʹoru vid 0 do 255:
-Vykorystovuyte «hwinfo» dlya otrymannya dodatkovoyi informatsiyi pro obladnannya.
 Drukuye informatsiyu pro obladnannya
 Nazva protsesora:
 Bity protsesora:
@@ -635,9 +505,6 @@ GPU: ne vdalosya pereviryty odnu abo kilʹka videokart. Pokaz informatsiyi vse o
 >> Laskavo prosymo! Tse vash pershyy raz, koly vy vkhodyte v viddalene nalahodzhennya ta chat. Vykorystovuyte "/register <im'ya>", shchob zareyestruvatysya.
 Prystriy vzhe isnuye.
 Nemaye takoho prystroyu.
-Vstanovlyuye imʺya korystuvacha prystroyu
-Vy vzhe zareyestrovani.
-Pryvit, {0}!
 Vyvodytʹ vmist faylu na konsolʹ
 Abo peredayte tsiy komandi "spysky mist".
 Zapys uzhe isnuye.
@@ -645,7 +512,6 @@ Obhortaye vykhid konsoli
 Komandu ne mozhna obhornuty. Tsi komandy mozhna obhornuty:
 Rozpakovuye ZIP-arkhiv
 Stvoryuye ZIP-arkhiv
-Vbudovanyy u {0}
 Pomylka zavantazhennya nalahodzhuvalʹnykh danykh
 Pid chas zavantazhennya nalahodzhuvalʹnykh danykh stalasya pomylka. Perevirte pidklyuchennya do Internetu.
 Ne vdalosya zavershyty mod {0}: {1}
@@ -659,12 +525,8 @@ Pinh!
 Zberehty temu v potochnomu katalozi yak...
 Zberehty temu v inshomu katalozi yak...
 Vkazhitʹ nazvu temy:
-Korystuvacha {0} dodano do spysku "{1}".
-Korystuvacha {0} vydaleno zi spysku "{1}".
-Nediysnyy rezhym {0}
 Zavantazhyty temu iz poperednʹo stvorenykh tem...
 Vkazhitʹ nazvu faylu temy bez rozshyrennya .json:
-Vidkryvaye ZIP-arkhiv
 Perelichuye vsi fayly v arkhivi
 Rozpakovuye fayl u vkazanyy kataloh abo potochnyy kataloh
 Zminyuye kataloh arkhivu
@@ -672,11 +534,7 @@ Kataloh {0} ne isnuye
 Arkhivnyy kataloh {0} ne isnuye
 Maksymalʹna kilʹkistʹ pozytsiy
 Skilʹky pozytsiy osvitleno pered zatemnennyam?
-Kolir zapysu spysku
-Kolir znachennya spysku
 Pidklyuchayetʹsya do servera SSH dlya vykonannya komandy.
-Nediysnyy spetsyfikator kolʹoru. Perekonaytesya, shcho vin u pravylʹnomu formati, shcho oznachaye chyslo vid 0-255, yakshcho vykorystovuyetʹsya 255 kolʹoriv, abo poslidovnistʹ VT, yakshcho vykorystovuyetʹsya spravzhniy kolir, yak pokazano nyzhche:
-Pomylka v testoviy obolontsi: {0}
 Vstanovlyuye zminniy znachennya v stsenariyi
 Pidkazka povidomyty pro pomylku.
 Stalasya pomylka v obolontsi FTP:
@@ -694,15 +552,6 @@ Klyuchovyy fayl {0} ne isnuye.
 Pomylka sproby dodaty zakrytyy klyuch:
 Natysnitʹ «t», shchob pereyty v rezhym 255 kolʹoriv.
 Natysnitʹ «t», shchob pereyty v rezhym istynnoho kolʹoru.
-Skhozhe, u vas nemaye korystuvacha, krim root. Tse pohano. My pidkazhemo vam, yak yoho stvoryty.
-Napyshitʹ svoye im'ya korystuvacha.
-Vy povynni napysaty svoye im'ya korystuvacha.
-Napyshitʹ sviy parolʹ.
-Vy povynni napysaty sviy parolʹ.
-Vyberitʹ typ oblikovoho zapysu.
-Administrator: tsey typ oblikovoho zapysu maye naybilʹshu potuzhnistʹ u yadri, shcho dozvolyaye vykorystovuvaty prohramy keruvannya systemoyu.
-Zvychaynyy korystuvach: tsey typ oblikovoho zapysu deshcho bilʹsh obmezhenyy, nizh administratory.
-Vitayu! Vy stvoryly novyy oblikovyy zapys! Shchob zavershyty tse, uviyditʹ u sviy novyy oblikovyy zapys.
 mod: mody ne vyyavleni.
 Zahalʹni komandy:
 Komandy mod:
@@ -712,33 +561,21 @@ Poshuk katalohiv
 Hrupa shlyakhiv, rozdilenykh dvokrapkoyu. Vin pratsyuye tak samo, yak PATH. Napyshitʹ povnyy shlyakh do papky abo nazvu papky. Koly vy zakinchyte, napyshitʹ «q». Napyshitʹ znak minus bilya shlyakhu, shchob vydalyty isnuyuchyy kataloh.
 Nemaye komand mod.
 Nemaye komand psevdonima.
-Znachennya kolʹoru znakhodytʹsya za mezhamy diapazonu 0-255.
 Komandu, yaku mozhna obhornuty, ne znaydeno.
 Zapytuye slovo u vkazanomu ryadku abo v usikh ryadkakh
 Zavantazheno: {0} z {1}.
-Drukuye ryadok na konsolʹ iz vykorystannyam kolʹorovoho typu ta ryadkovoho druku
-Drukuye ryadok na konsoli, vykorystovuyuchy kolʹorovyy typ i ryadkovyy druk z pidtrymkoyu formatu
-Drukuye ryadok u nalahodzhuvach
-Drukuye ryadok u nalahodzhuvach iz pidtrymkoyu formatu
 Testuye mozhlyvistʹ pomylok yadra
 Testuye mozhlyvistʹ pomylok yadra z pidtrymkoyu formatuvannya
 Testy perekladu ryadka, yakyy isnuye v resursakh, na pevnu movu
 Drukuye ryadok na konsolʹ i analizuye znaydeni zapovnyuvachi
 Testuye zasib rehulyarnykh vyraziv
 Zapuskaye vsi mody
-Zupynyaye vsi mody
-Vmykaye abo vymykaye nalahodzhennya
-Vmykaye abo vymykaye viddalene nalahodzhennya
 Testuye poslidovnistʹ VT dlya 255 kolʹoriv
 Pereviryaye poslidovnistʹ VT na spravzhniy kolir
 Nadsylaye spovishchennya dlya perevirky pryymacha
 Pereviryaye druk daty za dopomohoyu riznykh kalendariv
 Perelik usikh pidtrymuvanykh kodovykh storinok
-Yaki zminni kompilyatora vklyucheni v prohrami?
-Testy, shcho stosuyutʹsya konkretnoyi podiyi
 Testy testuvannya obladnannya
-Vykhodytʹ z testovoyi obolonky ta zapuskaye yadro
-Vykhodytʹ z testovoyi obolonky ta vymykaye yadro
 Zberihaye potochnyy kataloh u fayli konfihuratsiyi yadra
 Testuye zapysuvach spysku za dopomohoyu ryadka ta masyvu ryadkiv
 Testuye zapysuvach spysku za dopomohoyu tsiloho ta tsiloho masyvu
@@ -850,7 +687,6 @@ Symvol vydaleno.
 Laskavo prosymo do Nalashtuvanʹ!
 Pomylka vykonannya komandy SSH
 Pomylka obolonky SSH
-- Informatsiya pro dodatok
 Testuye redaktor slovnyka za dopomohoyu ryadka ta masyvu ryadkiv
 Testuye redaktor slovnyka za dopomohoyu masyvu char i char
 Testuye redaktor slovnyka za dopomohoyu tsiloho ta tsiloho masyvu
@@ -860,21 +696,15 @@ Zvychaynyy tsilochyselʹnyy slovnyk:
 Slovnyk tsiloho masyvu:
 Zvychaynyy slovnyk symvoliv:
 Slovnyk masyvu symvoliv:
-Laskavo prosymo do Test Shell!
 Pokazaty prohres operatsiy z faylovoyu systemoyu
 Pokazuye, yakyy fayl obroblyayetʹsya pid chas operatsiy faylovoyi systemy
 de bude HardwareType
 Typ aparatnoho zabezpechennya {0} ne perevirenyy, abo nediysnyy.
 Typ aparatnoho zabezpechennya {0} shche ne perevireno. Yakshcho vy vpevneni, shcho vin perevirenyy, perezapustitʹ yadro ​​z uvimknenym nalahodzhennyam.
 Rozdily ne proanalizovano dlya spysku.
-Drukuye rozdilʹnyk
-Drukuye rozdilʹnyk iz pidtrymkoyu formatu
-Drukuye rozdilʹnyk iz pidtrymkoyu kolʹoru
-Drukuye rozdilʹnyk iz pidtrymkoyu kolʹoru ta formatu
 Zavzhdy po tsentru
 Napyshitʹ budʹ-yakyy tekst, yakyy khochete pokazaty.
 Chy zavzhdy tekst, pokazanyy na ramtsi, vidtsentrovanyy.
-Arhument {0} ne znaydeno dlya vvedennya.
 Pid chas vidobrazhennya zastavky stalasya pomylka: {0}. Natysnitʹ budʹ-yaku klavishu, shchob vyyty.
 Poperedniy perehlyad...
 Osʹ yak bude vyhlyadaty vasha tema:
@@ -891,7 +721,6 @@ Shlyakh do faylu modu:
 Versiya chastyny:
 Minimalʹna kilʹkistʹ neobkhidnykh arhumentiv:
 Potribni arhumenty?
-Komanda, yaku mozhna obhornuty?
 Vstanovyty zminnu obolonky?
 Ne mozhna zapustyty v rezhymi obsluhovuvannya?
 Zastarilo?
@@ -900,7 +729,6 @@ Uspishno perevireno {0}.
 Detalʹnyy zond
 Zrobitʹ povidomlennya z aparatnym testuvannyam trokhy balakuchymy.
 > Informatsiyi pro ramky nemaye.
-Vam potribno napysaty svoye imʺya.
 Pokrashchuye fayl JSON
 Katehoriyu konfihuratsiyi {0} ne znaydeno.
 Zapys konfihuratsiyi {0} ne znaydeno.
@@ -949,10 +777,6 @@ Tsya storinka posibnyka potrebuye roboty dlya:
 Storinku posibnyka {0} ne znaydeno.
 Kerivnytstvo po modu
 Dostupni arhumenty yadra:
-Natysnitʹ "q", yakshcho vy zakinchyly.
-Kilʹka arhumentiv yadra mozhna rozdilyty komamy bez probiliv, napryklad:
-Kilʹka vvedenykh komand mozhna rozdilyty dvokrapkamy z probilamy, napryklad:
-Zapytuvanyy arhument {0} ne znaydeno.
 Nevypravna pomylka v arhumenti:
 Shyfruye ryadok za dopomohoyu SHA512
 Shyfruye ryadok za dopomohoyu SHA384
@@ -977,31 +801,12 @@ Dodaye novu vlastyvistʹ v kinetsʹ faylu JSON
 Vydalyaye vlastyvistʹ z faylu JSON
 Vykhodytʹ z obolonky JSON bez zberezhennya zmin
 Zberihaye fayl JSON
-Vidkryvaye obolonku JSON
 Drukuye fayl JSON
 Nastupnyy interval narostannya
 Skilʹky milisekund chekaty, persh nizh zapovnyty nastupnu rampu?
-Kolir zaholovka spovishchennya
-Kolir opysu spovishchennya
-Kolir perebihu spovishchenʹ
-Kolir povidomlennya pro pomylku
-Kolir pytannya
-Kolir uspikhu
-Kolir dolara korystuvacha
-Kolir nakonechnyka
-Kolir tekstu rozdilʹnyka
-Kolir rozdilʹnyka
-Kolir zaholovka spysku
-Kolir poperedzhennya rozvytku
-Kolir stsenichnoho chasu
-Kolir prohresu
-Kolir zadnʹoho variantu
 Namalyuyte mezhu spovishchenʹ
 Pokryvaye spovishchennya kordonom.
 Zvʺyazhitʹsya z postachalʹnykom moda, shchob onovyty mod do sumisnoyi versiyi.
-Kolir ramky z nyzʹkym priorytetom
-Kolir ramky serednʹoho priorytetu
-Kolir mezhi vysokoho priorytetu
 Nadsylaye spovishchennya pro khid dlya perevirky pryymacha
 Testuye kolirnyy kruh
 Pokazuye mistsevyy chas yadra
@@ -1020,13 +825,11 @@ Dodaye mod do chornoho spysku
 Vydalyaye mod z chornoho spysku
 Chas i data v UTC: {0}
 Pokazuvaty informatsiyu pro prohramu pid chas zavantazhennya
-Proanalizuyte arhumenty komandnoho ryadka
 Pokazaty chas zakinchennya etapu
 Pochnitʹ modyfikatsiyu yadra pid chas zavantazhennya
 Pokazaty potochnyy chas pered vkhodom
 Povidomte pro budʹ-yaki nespravnosti pid chas zavantazhennya
 Pokazuye korotku informatsiyu pro prohramu pid chas zavantazhennya.
-Pid chas zavantazhennya analizuye arhumenty komandnoho ryadka.
 Pokazuye, skilʹky chasu znadobylosya yadru, shchob zavershyty etap.
 Avtomatychno zapuskaty modyfikatsiyi yadra pid chas zavantazhennya.
 Pokazuye potochnyy chas, chasovyy poyas i datu pered vkhodom v systemu.
@@ -1036,8 +839,6 @@ Stylʹ pidkazky parolya
 Napyshitʹ, yak vy khochete, shchob vasha pidkazka vkhodu bula. Zalyshte porozhnim, shchob vykorystovuvaty stylʹ za zamovchuvannyam. Zapovnyuvachi analizuyutʹsya.
 Napyshitʹ, yak vy khochete, shchob pidkazka vvedennya parolya bula. Zalyshte porozhnim, shchob vykorystovuvaty stylʹ za zamovchuvannyam. Zapovnyuvachi analizuyutʹsya.
 Pokazuye povidomlennya dnya pislya vidobrazhennya ekrana vkhodu.
-Zonduvaty vvedeni komandy
-Pereviryaye vvedeni komandy na pochatku obolonky yadra.
 Pokazaty detali faylu v spysku
 Pokazuye korotku informatsiyu pro fayl pid chas pereliku fayliv
 Pokazaty detali faylu v spysku FTP
@@ -1089,13 +890,9 @@ Dodayte novi pidklyuchennya do shvydkoho naboru SFTP
 Pokazuye detali faylu SFTP pid chas pereliku viddalenykh katalohiv.
 Yakshcho vvimkneno, dodaye nove pidklyuchennya do shvydkoho naboru SFTP.
 Taym-aut ping
-Pokazaty dokladnu informatsiyu pro adapter
-Pokazaty zahalʹnu informatsiyu pro merezhu
 Zavantazhyty vidsotkovyy tekst
 Zavantazhte vidsotkovyy tekst
 Skilʹky milisekund potribno chekaty, persh nizh oholoshuvaty taym-aut?
-Drukuye rozshyrenu informatsiyu pro adapter, napryklad informatsiyu pro pakety.
-Pokazuye zahalʹnu informatsiyu pro merezhu.
 Napyshitʹ, yak vy khochete vyhlyadaty tekst u vidsotkakh zavantazhennya. Zalyshte porozhnim, shchob vykorystovuvaty stylʹ za zamovchuvannyam. Zapovnyuvachi analizuyutʹsya. {0} dlya zavantazhenoho rozmiru, {1} dlya tsilʹovoho rozmiru, {2} dlya vidsotka.
 Napyshitʹ, yak vy khochete vyhlyadaty tekst vidsotka zavantazhennya. Zalyshte porozhnim, shchob vykorystovuvaty stylʹ za zamovchuvannyam. Zapovnyuvachi analizuyutʹsya. {0} dlya zavantazhenoho rozmiru, {1} dlya tsilʹovoho rozmiru, {2} dlya vidsotka.
 Zapytayte parolʹ pislya blokuvannya
@@ -1215,16 +1012,12 @@ Symvol verkhnʹoyi ramky dlya ramky spovishchennya
 Symvol nyzhnʹoyi ramky dlya ramky spovishchennya
 Symvol livoyi ramky dlya ramky spovishchennya
 Symvol pravoyi ramky dlya ramky spovishchennya
-Stylʹ informatsiyi storinky vruchnu
 Chy pokazuvaty te, shcho napysano u pidkaztsi vvedennya.
 Yaku minimalʹnu kilʹkistʹ vybraty?
 Yaku maksymalʹnu kilʹkistʹ vybraty?
-Napyshitʹ, yak vy khochete, shchob informatsiya na vashiy tsiy storintsi bula. Zalyshte porozhnim, shchob vykorystovuvaty stylʹ za zamovchuvannyam. Zapovnyuvachi analizuyutʹsya. {0} dlya nazvy vruchnu, {1} dlya redaktsiyi.
-Vlastyvistʹ {0} ne znaydeno v zhodnomu z moduliv.
 Zapustitʹ kolirne koleso v rezhymi realʹnoho kolʹoru
 Yakshcho vkazano, vidobrazhatymetʹsya nalashtovanyy baner zapusku z pidtrymkoyu zapovnyuvacha. Vy mozhete vykorystovuvaty {0} dlya versiyi yadra.
 Yakyy variant potochnoyi movy vykorystovuyetʹsya dlya zminy nazv misyatsiv, kalendarya toshcho?
-Aktyvuye pidtrymku 255 kolʹoriv.
 Aktyvuye pidtrymku realʹnoho kolʹoru.
 Slovo vydaleno v ryadku {0}.
 Ryadok zamineno v ryadku {0}.
@@ -1253,7 +1046,6 @@ Rozmir dyska:
 Zahalʹna pam'yatʹ:
 videokarta:
 Modelʹ dyska:
-Kulʹtura suchasnoyi movy
 Yakshcho vy vpevneni, shcho vidkryly pravylʹnyy rozdil, perehlyanʹte tse povidomlennya:
 Vykonuye komandu FTP-servera
 Shyfruye ryadok za dopomohoyu CRC32
@@ -1278,9 +1070,6 @@ Napyshitʹ, yakym vy khochete vyhlyadaty vash stylʹ peredachi poshty. Zalyshte 
 Chasovyy poyas:
 Sʹohodni {0}
 Potochnyy chas: {0}
-Kolir rozdilʹnyka tablytsi
-Kolir zaholovka tablytsi
-Kolir znachenʹ tablytsi
 Mozhlyvi vidpovidi
 Fayl modu ne vkazano.
 Sproba vstanovyty vzhe vstanovlenyy mod. Onovlennya modu...
@@ -1302,7 +1091,6 @@ Pereviryaye, chy isnuye perekladenyy ryadok u resursakh KS
 Ryadok znaydeno v resursakh lokalizatsiyi.
 Ryadok ne znaydeno v resursakh lokalizatsiyi.
 Tykho zapuskaye yadro
-Vvodytʹ komandu dlya zapusku pid chas nastupnoho vkhodu
 Zapuskaye yadro ​​v bezpechnomu rezhymi, vidklyuchayuchy vsi mody
 Yak i bezpechnyy rezhym, ale takozh vymykaye bahatokorystuvatsʹkyy rezhym i deyaki nalashtuvannya
 Arhumentiv ne vystachalo.
@@ -1327,10 +1115,6 @@ Format URI saytu nediysnyy.
 Nalashtuvannya saytu na
 Kolʹory ne vymahayutʹ perezavantazhennya, ale bilʹshistʹ nalashtuvanʹ vymahayutʹ perezavantazhennya.
 Nemaye dopomohy dlya arhumentu "{0}".
-Shchob poprosyty vybachennya, natysnitʹ A na komentaryakh, shcho vyklykayutʹ nenavystʹ. Natysnitʹ T na lyubovnykh komentaryakh, shchob podyakuvaty. Natysnitʹ Q, shchob vyyty z hry.
-Vy vybachylysya za nenavysnyy komentar! Chudovo!
-Proshu vybachennya za lyubovnyy komentar. Nedostatnʹo dobre.
-Vy shchoyno podyakuvaly kheyteru za komentar nenavysti!
 Skladnistʹ za zamovchuvannyam dlya SpeedPress
 Taym-aut natyskannya klavishi dlya SpeedPress
 Vyberitʹ bazhanu skladnistʹ.
@@ -1351,10 +1135,8 @@ Pereviryaye vsi nalashtuvannya KS, shchob pereviryty, chy zminni zapysani pravyl
 Tsi zapysy konfihuratsiyi mayutʹ nediysni zminni abo pererakhuvannya, i yikh potribno vypravyty:
 Fayl {0} ne znaydeno
 Stvoryuye masyv zminnykh iz nadanymy znachennyamy
-Napyshitʹ nomer nalashtuvannya, do yakoho potribno pereyty. Budʹ-yakyy inshyy symvol oznachaye povernennya.
 Pereviryaye vsi nomery ryadkiv tekstu lokalizatsiyi, shchob pereviryty, chy vsi vony rivni
 Nevidpovidnistʹ ryadkiv v
-Budʹ laska, vveditʹ nomer korystuvacha.
 Vklyuchyty anonimnykh korystuvachiv
 Vklyuchyty korystuvachiv z obmezhenymy mozhlyvostyamy
 Vklyuchaye anonimnykh korystuvachiv u spysok
@@ -1367,9 +1149,7 @@ Pokazuvaty ostanniy zaholovok RSS pid chas vkhodu
 URL-adresa zaholovka RSS
 Pid chas kozhnoho vkhodu vin pokazuvatyme ostanniy zaholovok RSS iz vybranoyi URL-adresy zaholovka.
 URL-adresa zaholovka RSS, yaka bude vykorystovuvatysya pid chas pokazu ostannʹoho zaholovka. Zazvychay tse vasha ulyublena strichka.
-Ostanni novyny:
 Ne vdalosya otrymaty ostanni novyny.
-Vybranyy variant kolʹoru
 Pokazaty trasuvannya steka pry pomyltsi yadra
 Yakshcho ye pomylka yadra, vyberitʹ, chy potribno drukuvaty trasuvannya steka na konsoli.
 Zberehty nalashtuvannya yak
@@ -1388,9 +1168,6 @@ Zatrymka etapu v milisekundakh
 Skilʹky milisekund potribno chekaty, persh nizh namalyuvaty nastupnyy etap?
 Nastupnyy interval hnyttya narostu
 Skilʹky milisekund chekaty, persh nizh z·hnyvaty odyn kinetsʹ nastupnoyi rampy?
-Perevirte kvotu nalahodzhennya
-Chy pereviryayemo my, chy potribno systemi nalahodzhennya pereviryaty kvotu, persh nizh pysaty v nalahodzhuvach?
-Skilʹky milisekund naspravdi znadobylosya dlya snu?
 Ne vdalosya dodaty podiyu.
 Ne vdalosya vydalyty podiyu.
 Nedostatnʹo arhumentiv, shchob dodaty podiyu.
@@ -1446,9 +1223,6 @@ Skilʹky blokiv (do 10) maye radius vybukhu feyerverku pry zapalenni?
 Tsya komanda maye peremykachi nyzhche, yaki zminyuyutʹ yiyi robotu:
 Drukuye nomery ryadkiv, yaki sliduyutʹ za ryadkom, shcho drukuyetʹsya
 Zapobihaye druku nomeriv ryadkiv
-Zavzhdy vykorystovuyte transliterovanu versiyu
-Zavzhdy vykorystovuyte perekladenu versiyu
-Prymusove peremykannya movy
 Vkazhitʹ, shcho vidpovidʹ mozhe mistyty bilʹshe odnoho symvolu
 Vkazhitʹ, shcho vidpovidʹ mozhe pryymaty lyshe odyn symvol
 Rozdrukuyte pytannya ta vidpovidi v odnomu ryadku
@@ -1463,23 +1237,15 @@ Pochynaye hru na serednʹomu rivni skladnosti
 Pochynaye hru u vazhkiy skladnosti
 Pochynaye hru z duzhe vazhkoyu skladnistyu
 Pochynaye hru na spetsialʹnomu rivni skladnosti. Zvernitʹ uvahu, shcho spetsialʹnyy taym-aut u milisekundakh slid zapysaty yak arhument.
-Pokazuye informatsiyu pro systemu
-Pokazuye informatsiyu pro obladnannya
-Pokazuye informatsiyu pro korystuvacha
-Pokazuye povidomlennya dnya
-Pokazuye povidomlennya dnya pislya vkhodu
-Pokazuye vsyu informatsiyu
 Stvoryuye kataloh, yakyy mistytʹ vmist ZIP-faylu
 Pokazuye vsi dostupni mista
 Shvydke stysnennya
 Bez kompresiyi
 Ne stvoryuyte bazovyy kataloh v arkhivi
-Odynytsya v klishchakh
 Hanebno vidklyuchayetʹsya vid servera
 Vkazuye, shcho tsilʹovyy shlyakh ye absolyutnym
 Zberihaye fayl JSON, pokrashchuyuchy yoho v protsesi
 Zberihaye fayl JSON, minimizuyuchy yoho v protsesi
-Oderzhuye stylʹ zakinchennya ryadka z tekstovoho faylu
 Ochyshchaye vsi zapushcheni podiyi
 Uvimknuty nalahodzhennya podiy
 Vmykaye nalahodzhennya dlya systemy podiy yadra
@@ -1494,8 +1260,6 @@ Ne vdalosya vydalyty spetsialʹnu movu. Yoho, shvydshe za vse, ne isnuye.
 Ne vdalosya vstanovyty spetsialʹni movy.
 Ne vdalosya vydalyty spetsialʹni movy.
 Ne vdalosya vydalyty spetsialʹni movy. Dlya otrymannya dodatkovoyi informatsiyi dyv. vnutrishniy vynyatok.
-Vveditʹ parolʹ administratora. Perekonaytesya, shcho vy ne vykorystovuyete tsey oblikovyy zapys, yakshcho vy diysno ne znayete, shcho robyte.
-Vy povynni vvesty parolʹ administratora.
 Informatsiya pro litsenziyu
 Keruyte svoyimy movamy
 Ne znaydeno movy abo fayl mistytʹ nediysni symvoly.
@@ -1505,9 +1269,7 @@ Korotka nazva movy:
 Povna nazva movy:
 Mova transliterovana:
 Spetsialʹna mova:
-Novyy vitalʹnyy baner
 Stylʹna zastavka
-Pokazuye novyy pryvitalʹnyy baner, vidtvorenyy u fihleti
 Vmykaye stylʹnyy zastavku pid chas zapusku. Zauvazhte, shcho tse vymkne pidkazku arhumentiv i perevirytʹ obolonku pered zavantazhennyam.
 Im'ya splesku
 Im'ya spleshu z dostupnykh spleshey, realizovanykh v yadri.
@@ -1515,7 +1277,6 @@ Z·henerovanyy za zamovchuvannyam MOTD.
 Z·henerovanyy za zamovchuvannyam MAL.
 Systemnyy oblikovyy zapys initsializovano
 Korystuvachi initsializovani
-Dozvoly zavantazheno
 Laskavo prosymo!
 Zapusk viddalenoho nalahodzhuvacha...
 Pomylka pidklyuchennya viddalenoho nalahodzhuvacha
@@ -1530,8 +1291,6 @@ Skhozhe, vy obkhodyte vyznachennya rozmiru konsoli. Na malenʹkykh ekranakh vse 
 Shchob pokrashchyty robotu, zminitʹ rozmir vikna konsoli, perebuvayuchy na tsʹomu ekrani. Natysnitʹ budʹ-yaku knopku, shchob prodovzhyty...
 Vasha konsolʹ zamala dlya pravylʹnoyi roboty:
 Baner figlet shryft
-Drukuye ryadok na konsolʹ iz vykorystannyam kolʹorovoho typu ta druku ryadkiv iz pidtrymkoyu Filet
-Drukuye ryadok na konsoli, vykorystovuyuchy kolʹorovyy typ i ryadkovyy druk iz pidtrymkoyu formatu ta filet
 Pokazaty komandy rozrakhovuvaty na dopomohu
 Pokazaty, shcho komandy obolonky rozrakhovuyutʹ na dopomohu
 Pokazaty, shcho komandy moda rozrakhovuyutʹ na dopomohu
@@ -1556,21 +1315,10 @@ Roztashuvannya tekstu vykonannya
 Vyberitʹ bazhane roztashuvannya tekstu prohresu.
 Vy mozhete napysaty tilʹky chysla.
 Natysnitʹ "q", shchob vyyty.
-Zavantazhennya imen...
-Cherez tekhnichni trudnoshchi my ne mozhemo pererakhuvaty vlastyvosti adaptera v systemakh Unix.
 Vmykaye rezhym nalahodzhennya
-Pidkazky arhumentiv
 Uvimknitʹ chorno-bilyy rezhym
 Robytʹ dyskoteku chorno-biloyu. Tse spravdi poshkodytʹ vashi ochi, yakshcho tse bulo zanadto shvydko, tomu ne rekomenduyetʹsya, yakshcho vy vidchuvayete zakhoplennya shvydkykh zobrazhenʹ.
-Skhozhe, vy vykorystovuvaly nepidtrymuvanu versiyu. Nastiyno bazhano ne vykorystovuvaty tsyu versiyu.
 Zavantazhyty potochni kolʹory
-Alʹternatyvnyy variant kolʹoru
-Korystuvachi vrakhovuyutʹ komentari z lyubovʺyu chy nenavystyu
-Skilʹky korystuvachiv maye buty v kimnati komentariv lyubovi chy nenavysti?
-Perelichuye dostupni movy
-Dostupni movy:
-Arhumenty komandnoho ryadka:
-Arhumenty komandnoho ryadka pered zavantazhennyam:
 Vidkryvaye dokumentatsiyu API mod dlya struktury vykhidnoho kodu v naynovishiy formi
 Potochne znachennya:
 Nediysnyy shistnadtsyatkovyy spetsyfikator kolʹoru.
@@ -1597,7 +1345,6 @@ Nomer bayta ne ye chyslovym.
 Vkazanyy nomer pochatkovoho bayta ne mozhe buty bilʹshym za rozmir faylu.
 Vkazanyy nomer kintsevoho bayta ne mozhe buty bilʹshym za rozmir faylu.
 Vydaleni bayty.
-Redahuye dviykovyy fayl
 Vybyraye kanal iz nayavnoho spysku kanaliv iz onlayn-dzherel
 Zavantazhennya spysku kanaliv...
 Ne vdalosya zavantazhyty spysok kanaliv.
@@ -1636,14 +1383,9 @@ Vrakhovuyetʹsya minimalʹnyy vik
 Pidrakhunok maksymalʹnoho viku
 Minimalʹna kilʹkistʹ rokiv dlya stvorennya
 Maksymalʹna kilʹkistʹ rokiv dlya stvorennya
-> Typ karkasa: {3}
 Storinka posibnyka bez nazvy
 Istoriya vvedennya vvimkneno
-Bufer vvedennya vvimkneno
-Skasuvannya vvedennya vvimkneno
 Chy vvimkneno istoriyu vvedennya chy ni. Yakshcho vvimkneno, vy mozhete otrymaty dostup do neshchodavno vvedenykh komand za dopomohoyu klavish zi strilkamy vhoru abo vnyz.
-Chy vvimkneno bufer obminu vvedennyam chy ni.
-Chy vvimkneno funktsiyu skasuvannya vvedennya chy ni.
 Peretvoryuye nomery kolʹoru RGB u shistnadtsyatkovi.
 Peretvoryuye shistnadtsyatkove predstavlennya kolʹoru v chysla RGB.
 Peretvoryuye shistnadtsyatkove predstavlennya kolʹoru v chysla RGB u formati KS.
@@ -1691,13 +1433,11 @@ Peretvoryuvach odynytsʹ
 Dostupni typy odynytsʹ ta yikhni odynytsi:
 Hra zavershena
 Neochikuvana pomylka
-Obolonka RAR
 Komandy, vydileni inshym kolʹorom, ye unifikovanymy komandamy ta dostupni v kozhniy obolontsi.
 Perevirka onovlenʹ...
 Zavantazhennya versiyi
 Ustanovka versiyi
 Povertayuchysʹ u 2018 rik...
-Vy ne mozhete povernutysya do 2018 roku na .NET 6.0!
 Vykorystovuyte PowerLine dlya vizualizatsiyi kosmichnoho korablya
 Shvydkistʹ hry Meteor
 Chy vykorystovuvaty PowerLine dlya vizualizatsiyi kosmichnoho korablya, chy vykorystovuvaty standartnyy symvol «bilʹshe». Yakshcho vy khochete vykorystovuvaty PowerLine z Meteor, vam potribno vstanovyty vidpovidnyy shryft iz pidtrymkoyu PowerLine.

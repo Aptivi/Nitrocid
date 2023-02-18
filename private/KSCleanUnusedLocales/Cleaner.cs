@@ -71,7 +71,8 @@ namespace KSCleanUnusedLocales
                         // Now, check to see if the string exists in the data
                         if (dataSource.Contains($"                \"Description\": \"{engString.Replace("\"", "\\\"")}\"") ||
                             dataSource.Contains($"                \"Name\": \"{engString.Replace("\"", "\\\"")}\"") ||
-                            dataSource.Contains($"        \"DisplayAs\": \"{engString.Replace("\"", "\\\"")}\""))
+                            dataSource.Contains($"        \"DisplayAs\": \"{engString.Replace("\"", "\\\"")}\"") ||
+                            dataSource.Contains($"        \"Desc\": \"{engString.Replace("\"", "\\\"")}\""))
                         {
                             found = true;
                             break;

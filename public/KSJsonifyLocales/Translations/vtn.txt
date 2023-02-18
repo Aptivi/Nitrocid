@@ -1,6 +1,3 @@
-Các lệnh khả dụng: {0}
-Lệnh tiêm đã bị hủy bỏ.
-Các đối số được tiêm sẽ được lên lịch để chạy trong lần khởi động lại tiếp theo.
 Mẫu màu không hợp lệ {0}
 hwprobe: Phần cứng của bạn sẽ được thăm dò. Xin vui lòng chờ ...
 CPU: Một hoặc nhiều lõi CPU không được phát hiện. Dù sao cũng hiển thị thông tin ...
@@ -12,7 +9,6 @@ NHÂN ĐÔI: Thời gian khởi động lại vượt quá thời gian khởi đ
 [{0}] hoảng loạn: Đã bật lại do mức lỗi là {0}.
 [{0}] hoảng loạn: Thời gian để khởi động lại: {1} giây, vượt quá 1 giờ. Nó được đặt thành 1 phút.
 NHÂN ĐÔI: Loại lỗi {0} không hợp lệ.
-[{0}] dpanic: {1} - Khởi động lại sau {2} giây ...
 [{0}] hoảng loạn: Khởi động lại bị vô hiệu hóa do mức lỗi là {0}.
 [{0}] hoảng loạn: {1} - Nhấn phím bất kỳ để tiếp tục sử dụng kernel.
 [{0}] hoảng loạn: {1} - Nhấn phím bất kỳ để tắt máy.
@@ -20,27 +16,15 @@ NHÂN ĐÔI: Loại lỗi {0} không hợp lệ.
 NHÂN ĐÔI: Lỗi hạt nhân: {0}
 Đang Tắt...
 Khởi động lại ...
-Một phiên bản khác của Nitrocid KS đang chạy. Tắt trong trường hợp can thiệp.
-Không thể thêm người dùng vào danh sách quyền: loại không hợp lệ {0}
-Không thể thêm người dùng vào danh sách quyền: người dùng không hợp lệ {0}
-Không thể xóa người dùng khỏi danh sách quyền: loại không hợp lệ {0}
-Bạn đã đăng nhập.
-Không thể xóa người dùng khỏi danh sách quyền: người dùng không hợp lệ {0}
-Bạn đã tìm thấy một lỗi, hoặc sự cho phép bạn đã cố gắng thêm hoặc xóa đã được thực hiện hoặc lỗi khác.
 Lỗi {0}: {1}
-Bạn đã tìm thấy một lỗi hoặc sự cho phép mà bạn đã cố gắng chỉnh sửa cho người dùng mới đã thất bại.
-Tên người dùng khả dụng: {0}
 Tên tài khoản:
 Không gian không được phép.
 Nhân vật đặc biệt không được phép.
 Mật khẩu của {0}:
 Sai mật khẩu.
-Người dùng bị vô hiệu hóa.
-Tên người dùng sai.
 Lỗi cố gắng phân tích giữ chỗ. {0}
 Lỗi khi cố thêm tên người dùng.
 usrmgr: Tạo tên người dùng {0} ...
-Tên người dùng trống.
 Không tìm thấy người dùng {0}.
 Người dùng {0} không được phép xóa.
 Người dùng {0} đã đăng nhập. Đăng xuất và đăng nhập với tư cách quản trị viên khác.
@@ -91,24 +75,14 @@ Thay đổi thư mục từ xa để tải xuống từ hoặc tải lên
 Xóa tập tin từ xa khỏi máy chủ
 Ngắt kết nối với máy chủ
 Tải tập tin từ xa vào thư mục cục bộ bằng cách sử dụng nhị phân hoặc văn bản
-Hiển thị màn hình trợ giúp
 Liệt kê thư mục địa phương
 Liệt kê thư mục từ xa
 Tải tập tin cục bộ lên thư mục từ xa bằng cách sử dụng nhị phân hoặc văn bản
-Không thể lấy thuộc tính cho bộ điều hợp {0}
-Số bộ điều hợp:
-Tên bộ điều hợp:
-Đơn vị truyền tối đa: {2} Đơn vị
-Đã bật DHCP:
-Các gói không unicast:
-Gói Unicast:
-Lỗi các gói đến / đi:
 Bí danh không thể cùng tên với một lệnh.
 Lệnh không tìm thấy bí danh cho {0}.
 Bây giờ bạn có thể chạy "{0}" dưới dạng lệnh: "{1}".
 Bí danh {0} không được tìm thấy để xóa.
 Chế độ không hợp lệ {0}.
-Các đối số được chèn, {0}, sẽ được lên lịch để chạy ở lần khởi động lại tiếp theo.
 Không có đủ lý lẽ. Xem bên dưới để sử dụng:
 Không tìm thấy thư mục {0}
 Tên máy chủ trống.
@@ -122,18 +96,7 @@ Tên mới bạn đã nhập đã được tìm thấy.
 {0} không được tìm thấy.
 Cấu hình tải lại. Bạn có thể cần phải khởi động lại kernel để một số thay đổi có hiệu lực.
 Một hoặc nhiều màu không hợp lệ.
-Màu sắc không có sẵn. Bật vỏ màu trong cấu hình kernel.
 Trình bảo vệ màn hình {0} không tìm thấy.
-Phiên bản hạt nhân:
-Chế độ kiểm tra sửa lỗi:
-Vỏ màu:
-Đối số khi khởi động:
-Lệnh trợ giúp được đơn giản hóa:
-MOTD khi đăng nhập:
-Thời gian / Ngày ở góc:
-Tên người dùng hiện tại:
-Tên máy chủ hiện tại:
-Tên người dùng có sẵn:
 Lỗi khi cố thực thi lệnh
 Thay đổi thư mục
 Thay đổi mật khẩu cho người dùng hiện tại
@@ -144,35 +107,27 @@ Liệt kê nội dung tập tin / thư mục trong thư mục hiện tại
 Khóa màn hình của bạn bằng mật khẩu
 Đăng xuất bạn
 Tạo một thư mục
-Liệt kê thông tin về tất cả các giao diện có sẵn
 Khởi động lại máy tính của bạn (CẢNH BÁO: Không đồng bộ hóa, vì đó không phải là hạt nhân cuối cùng)
 Tải lại tập tin cấu hình được chỉnh sửa.
 Lưu màn hình của bạn khỏi bị cháy
 Thiết lập trình bảo vệ màn hình kernel
-Thiết lập chủ đề kernel
 Hiển thị ngày giờ
 Hiển thị ngày và giờ trong khu vực
 Nhân sẽ bị tắt
-Thông tin hệ thống
-* Bạn có thể sử dụng nhiều lệnh bằng cách sử dụng dấu hai chấm giữa các lệnh.
 Sử dụng:
-trong đó các đối số sẽ là {0}
 customsaver sẽ ở đâu
 Có một lỗi trong vỏ.
 Bạn không có quyền sử dụng {0}
 Thông báo Shell: Lệnh được yêu cầu {0} không được phép chạy trong chế độ bảo trì.
 Thông báo Shell: Không tìm thấy lệnh được yêu cầu {0}. Xem 'trợ giúp' cho các lệnh có sẵn.
-Thông báo Shell: Lệnh {0} không được phép chạy khi đăng nhập.
 Lỗi khi cố thực thi lệnh.
 - Thời gian của {0}: {1}
 Chạy trên {0}
 Bạn không được phép lấy thông tin cho {0}.
 Lệnh này đã lỗi thời và sẽ bị xóa trong phiên bản tương lai.
 Bạn không được phép thay đổi mật khẩu của {0} vì mục tiêu là quản trị viên.
-usrmgr: Tên người dùng {0} đã được tìm thấy
 Xóa mọi thứ trong nhật ký gỡ lỗi
 Ngôn ngữ không hợp lệ
-Thay đổi ngôn ngữ
 ----------------------------- Hạt nhân hoảng loạn ------------------ -----------
 >> Thông tin hoảng loạn <<
 > Mô tả: {0}
@@ -201,7 +156,6 @@ Liệt kê các thiết bị gỡ lỗi được kết nối
 Không tìm thấy thiết bị gỡ lỗi {0}.
 Thiết bị {0} bị ngắt kết nối.
 Nghe gỡ lỗi trên tất cả các địa chỉ bằng cổng {0}.
-Không có đối số được chỉ định. Gợi ý: Chỉ định nhiều đối số được phân tách bằng dấu cách
 Bí danh đã được tìm thấy: {0}
 Nhật ký gỡ lỗi được gỡ bỏ. Tất cả các thiết bị gỡ lỗi được kết nối vẫn có thể xem tin nhắn.
 Xóa nhật ký gỡ lỗi không thành công: {0}
@@ -210,19 +164,11 @@ Chỉ định địa chỉ
 Múi giờ được chỉ định không chính xác.
 Lựa chọn hồ sơ không hợp lệ.
 Đang cố gắng kết nối với {0} với hồ sơ {1} ...
-Không thể nhận các thuộc tính IPv6 cho bộ điều hợp {0}. Tiếp tục ...
-Thông tin về IPv4:
-Thông tin IPv6:
-Bộ điều hợp {0} không hỗ trợ IPv6. Tiếp tục ...
-Bộ điều hợp {0} không hỗ trợ IPv4. Thăm dò thất bại.
-Có vẻ như bạn đang chạy phiên bản phát triển của kernel. Mặc dù bạn có thể thấy các khía cạnh, nó thường xuyên được cập nhật và có thể giới thiệu các lỗi. Bạn nên ở phiên bản ổn định.
 Ngôn ngữ bạn đã chọn chứa hai biến thể. Chọn một:
 Lựa chọn không hợp lệ. Thử lại.
 Bạn không được phép đặt thư mục hiện tại thành {0}: {1}
 Đường dẫn bạn đã chỉ định quá dài.
 Trình thu thập thông tin kết xuất bị hỏng khi cố gắng lấy thông tin về {0}: {1}
-Lỗi khi cố gắng đặt MOTD / MAL: {0}
-Lỗi khi cố lấy MOTD / MAL: {0}
 Lỗi khi cố gắng khởi động trình bảo vệ màn hình, do hoạt động không hợp lệ.
 Tải lại không được phép trong chế độ an toàn.
 Phân tích cú pháp mod không được phép trên chế độ an toàn.
@@ -237,15 +183,7 @@ Tính toán tổng số tập tin.
 Đưa bạn đến Wiki GitHub của chúng tôi.
 Thuật toán mã hóa không hợp lệ.
 Cho phép hoặc vô hiệu hóa gỡ lỗi từ xa.
-Xem bạn có thể đánh vần các từ đúng thời gian không
 Xem nếu bạn có thể giải phương trình toán học đúng thời gian
-Trả lời yêu hay ghét bình luận.
-Nếu ai đó đưa ra nhận xét này cho video của bạn:
-Làm thế nào bạn sẽ trả lời?
-Lựa chọn không hợp lệ. Đi đến bình luận tiếp theo ...
-Tuyệt quá! {0} sẽ đánh giá cao lời cảm ơn của bạn.
-Đánh vần hoàn hảo!
-Viết sai chính tả.
 Giải quyết hoàn hảo!
 Giải quyết không chính xác.
 RPC đã chạy.
@@ -256,45 +194,14 @@ Nhập mật khẩu cho {0}:
 SSH bị ngắt kết nối.
 Không thể đặt codepage. Ngôn ngữ có thể không hiển thị đúng.
 Gỡ lỗi không được kích hoạt.
-Cảm ơn! Hay đấy.
-Mọi người sẽ ủng hộ video của bạn cho việc này.
-Tôi đã đưa cho bạn tệp đặc biệt trong e-mail cho video tiếp theo của bạn.
-Nghe này, ghét, anh ta đang cố giúp chúng tôi, không lừa đảo.
-Tôi không biết tôi và bạn bè của tôi cảm ơn bạn như thế nào về video này.
-Tôi yêu bạn vì video này.
-Tiếp tục đi, đừng dừng lại.
-Tôi sẽ giúp bạn đạt tới 1 triệu người đăng ký!
-Bạn bè của tôi đã sửa máy tính của họ vì bạn.
-Chơi khăm tuyệt vời! Tôi tắt PC của kẻ thù.
-To haters: STOP HATING ON HIM
-Để ghét: NHẬN LÀM VIỆC
-Không ai sẽ nhận thấy điều này bây giờ nhờ vào hướng dẫn ẩn đối tượng của bạn
-Tôi sẽ ngừng xem video của bạn. Thuê bao bị mất.
-Cái này là cái gì? Điều này không rõ ràng.
-Video này là tồi tệ nhất!
-Mọi người báo cáo video này!
-Bạn bè của tôi đang tức giận với bạn!
-Những người yêu bây giờ sẽ ghét bạn vì điều này.
-Bạn của bạn sẽ ghét bạn vì điều này.
-Trò đùa này khiến tôi không đăng ký với bạn.
-Nhiệm vụ thất bại, Tôn trọng -, Thuê bao -
-Ngừng làm loại video này !!!
-Quay trở lại với công việc của bạn, video của bạn là tồi tệ nhất!
-Chúng tôi định kiến ​​về video này.
 Hiển thị tất cả các thông báo nhận được
 Bỏ thông báo
 Thông báo bác bỏ thành công.
-Gói (trong nước):
-Gói (bên ngoài):
-Lỗi trong các gói đã nhận:
-Thuộc tính IPv6 chung
-Thuộc tính chung của IPv4
 Điều khiển từ xa một lệnh đến PC từ xa
 - Giai đoạn 1: Khởi tạo hệ thống
 - Giai đoạn 2: Phát hiện phần cứng
 - Giai đoạn 3: Phát hiện mod và trình bảo vệ màn hình
 - Giai đoạn 4: Đăng nhập
-Có vẻ như bạn đang chạy phiên bản ứng viên phát hành. Bạn nên ở phiên bản ổn định.
 Loại không hợp lệ {0}.
 Kích thước: {0}
 Thư mục {0} đã tồn tại.
@@ -313,7 +220,6 @@ Nhập mật khẩu:
 Lỗi khi kết nối với {0}: {1}
 Đang kết nối với {0} ...
 Xác thực ...
-Danh sách các lệnh
 Tải tin nhắn và liệt kê chúng
 Mở một tin nhắn
 Trang không phải là một giá trị số.
@@ -328,10 +234,7 @@ Chuẩn bị hồ sơ ... Có thể mất vài phút ...
 Lỗi khi cố thực thi tập lệnh: {0}
 Viết văn bản vào bảng điều khiển
 Làm cho người dùng lựa chọn
-Tiếng bíp trong 'n' Hz và thời gian tính bằng 'n' mili giây
 trong đó <$biến> là bất kỳ biến nào sẽ được sử dụng để lưu trữ phản hồi
-Tần số phải là số. Nếu là số, hãy đảm bảo rằng đó là >= 37 và <= 32767.
-Thời gian phải là số.
 trong đó <answer> là các câu trả lời một chữ cái của câu hỏi được phân tách bằng dấu gạch chéo
 Lỗi khi cố gắng kết nối với máy chủ SSH: {0}
 Cho phép người dùng nhập dữ liệu đầu vào
@@ -346,7 +249,6 @@ Trong quá trình xác nhận chứng chỉ, có lỗi chứng chỉ. Đây có 
 Bạn có chắc chắn rằng bạn muốn kết nối?
 Câu trả lời không hợp lệ. Vui lòng thử lại.
 Quay số nhanh là trống rỗng. Kết nối với một máy chủ để thêm một địa chỉ cho nó.
-Quay số nhanh không tồn tại. Kết nối với một máy chủ để thêm một địa chỉ cho nó.
 Nhập địa chỉ máy chủ IMAP và cổng (<địa chỉ> hoặc <địa chỉ>: [cổng]):
 Nhập địa chỉ và cổng máy chủ SMTP (<địa chỉ> hoặc <địa chỉ>: [cổng]):
 Gửi tin nhắn đến một địa chỉ
@@ -360,12 +262,10 @@ Xóa tin nhắn
 Xóa tất cả tin nhắn khỏi người nhận
 Tin nhắn {0} từ {1} đã bị xóa khỏi {2}. {3} tin nhắn còn lại để phân tích.
 Tin nhắn {0} từ {1} đã bị xóa khỏi hộp thư đến. {2} tin nhắn còn lại để phân tích.
-Chỉnh sửa tệp văn bản
 Tạo một tệp mới
 Tập tin đã tồn tại.
 Lỗi khi tạo tệp: {0}
 Không thể mở tập tin. Thoát khỏi vỏ ...
-Liệt kê các lệnh có sẵn
 In nội dung của tệp với số dòng vào bảng điều khiển
 Thêm một dòng mới với văn bản ở cuối tập tin
 Xóa số dòng được chỉ định
@@ -378,12 +278,10 @@ Chạy ở chế độ an toàn. Bỏ qua giai đoạn ...
 >> Gỡ lỗi và trò chuyện từ xa: phiên bản
 >> Địa chỉ của bạn là {0}.
 >> Tên của bạn là {0}.
-Lệnh {0} không tìm thấy. Sử dụng "/help" để xem danh sách.
 Chỉ số {0} không hợp lệ. Có {1} dấu vết ngăn xếp. Chỉ số là không dựa trên, vì vậy hãy thử trừ đi 1.
 Không có dấu vết ngăn xếp
 Hiển thị dấu vết ngăn xếp cuối cùng trên ngoại lệ
 Hiển thị tên người dùng hiện tại trong phiên
-Ngắt kết nối bạn khỏi trình gỡ lỗi
 Bỏ chặn một thiết bị gỡ lỗi bằng địa chỉ IP
 Chặn thiết bị gỡ lỗi theo địa chỉ IP
 {0} bây giờ có thể tham gia gỡ lỗi từ xa một lần nữa.
@@ -395,13 +293,10 @@ Lưu các thiết lập
 Lối ra
 Tùy chọn đã chỉ định {0} không hợp lệ.
 Câu trả lời phải là số.
-Nhắc đối số khi khởi động
-Kích hoạt chế độ bảo trì
 Kiểm tra các bản cập nhật khi khởi động
 Thăm dò yên lặng
 Hiển thị MOTD khi đăng nhập
 Xóa màn hình khi đăng nhập
-Vỏ màu
 Lệnh trợ giúp được đơn giản hóa
 Cổng gỡ lỗi
 Tải xuống thời gian thử lại
@@ -410,32 +305,25 @@ Ghi địa chỉ IP FTP
 Chỉ trả lại hồ sơ FTP đầu tiên
 Hiển thị thời gian / ngày ở góc trên bên phải
 Thời gian chờ của trình bảo vệ màn hình tính bằng mili giây
-Hạn ngạch kích thước gỡ lỗi tính bằng byte
 Chế độ phân tích kích thước
 Marquee khi khởi động
 Thời gian và Ngày dài
 Hiển thị cac file bị ẩn
 Đã nhập phần không hợp lệ. Hãy quay lại.
 Quay lại...
-Kích hoạt
-Vô hiệu hóa
 Viết một cổng gỡ lỗi từ xa. Nó phải là số và không được sử dụng. Nếu không, trình gỡ lỗi từ xa sẽ không mở được cổng.
 Viết số lần lệnh "" get "" sẽ thử lại các lần tải xuống không thành công. Nó phải là số.
 Viết thời điểm khởi chạy trình bảo vệ màn hình sau phần nghìn giây được chỉ định. Nó phải là số.
-Ghi bao nhiêu byte có thể lưu trữ nhật ký gỡ lỗi. Nó phải là số.
 Câu trả lời có thể không phủ định.
 Câu trả lời là không hợp lệ. Kiểm tra để đảm bảo rằng câu trả lời là số cho các mục nhập cấu hình cần số làm câu trả lời.
 Biến {0} không được tìm thấy trên bất kỳ mô-đun nào.
 Thay đổi cấu hình hạt nhân
-Kích hoạt 255 màu
 Thay đổi văn hóa khi chuyển đổi ngôn ngữ
 Văn bản được hiển thị
 Viết bất kỳ văn bản nào bạn muốn hiển thị. Ngắn hơn là tốt hơn.
 Không tải lên được {0}
-Lỗi khi thực thi lệnh gỡ lỗi từ xa {0}: {1}
 Thêm người dùng
 Thêm bí danh vào lệnh
-Chèn đối số vào hạt nhân (yêu cầu khởi động lại)
 Thay đổi tên máy chủ
 Thay đổi MAL, MOTD sau khi đăng nhập
 Thay đổi MOTD, Thông điệp trong ngày
@@ -450,13 +338,11 @@ Không đặt được ngôn ngữ.
 Lỗi khi cố gắng loại bỏ thông báo.
 usrmgr: Không tạo được tên người dùng {0}: {1}
 Không thể đổi tên người dùng. {0}
-Một trong các danh sách quyền không chứa tên người dùng {0}.
 Không tìm thấy người dùng
 Không thể thay đổi mật khẩu của tên người dùng: {0}
 Không thể tìm thấy tệp để khớp với chuỗi "{0}": {1}
 Không tải xuống được tệp {0}.
 Không liệt kê được các tệp từ xa: {0}
-Bạn có chắc chắn muốn xóa {0} <y / n> không?
 Đang xóa {0} ...
 {0} không được tìm thấy trong máy chủ.
 Tất cả thư do {0} tạo đều được xóa thành công.
@@ -483,7 +369,6 @@ Thời tiết: {0}
 Bạn có thể lấy khóa API của riêng mình tại https://home.openweathermap.org/api_keys.
 Bạn luôn có thể tham khảo http://bulk.openweathermap.org/sample/city.list.json.gz để biết danh sách các thành phố có ID của họ.
 Đơn vị ưu tiên cho nhiệt độ
-Thiết lập hạt nhân để nó nhắc bạn đối số khi khởi động.
 Kích hoạt chế độ bảo trì. Điều này vô hiệu hóa nhiều tài khoản.
 Mỗi lần khởi động, nó sẽ kiểm tra các bản cập nhật.
 Khi chuyển đổi ngôn ngữ, hãy thay đổi tên tháng, lịch, v.v.
@@ -491,7 +376,6 @@ Giữ im lặng các thông báo thăm dò phần cứng.
 Hiển thị Thông báo trong ngày trước khi hiển thị màn hình đăng nhập.
 Xóa màn hình trước khi hiển thị màn hình đăng nhập.
 Hiển thị những người dùng hiện có nếu được bật.
-Cung cấp hỗ trợ màu hạt nhân
 Lệnh trợ giúp đơn giản hóa cho tất cả các shell
 Có đăng nhập tên người dùng FTP hay không.
 Có đăng nhập địa chỉ IP FTP hay không.
@@ -510,7 +394,6 @@ Bạn phải bật chế độ gỡ lỗi trước khi có thể xóa nhật ký
 Mở "mail" để xem chúng.
 Xóa một thư mục hoặc một tệp
 Không thể xóa {0} vì nó không tồn tại.
-Nhấn CTRL + C để thoát.
 Cung cấp thông tin về tệp
 Cung cấp thông tin về một thư mục
 Không thể lấy thông tin về thư mục không tồn tại.
@@ -582,16 +465,7 @@ Mở vỏ thử nghiệm
 Không khởi động được "{0}": {1}
 Hiển thị bản xem trước thư
 Khi liệt kê các thư, hãy hiển thị phần xem trước nội dung.
-Màu đầu vào
-Màu giấy phép
-Màu lỗi hạt nhân liên tục
-Màu lỗi hạt nhân không thể kiểm soát
-Màu tên máy chủ
-Màu tên người dùng
 Màu nền
-Màu văn bản trung tính
-Màu sân khấu
-Màu lỗi
 Đang cố gắng truy cập đường dẫn không hợp lệ.
 Xóa tệp văn bản
 Thoát khỏi trình soạn thảo văn bản
@@ -621,11 +495,7 @@ Lưu chủ đề vào thư mục hiện tại
 Lưu chủ đề vào một thư mục khác ...
 Chọn màu bằng phím "<-" và "->". Nhấn ENTER để thoát. Nhấn "i" để chèn số màu theo cách thủ công.
 Chọn màu bằng phím "<-" và "->". Sử dụng các phím mũi tên lên và mũi tên xuống để chọn giữa các dải màu. Nhấn ENTER để thoát. Nhấn "i" để chèn số màu theo cách thủ công.
-Chào mừng bạn đến với hạt nhân! - Phiên bản {0}
-Màu cảnh báo
-Màu tùy chọn
 Nhập số màu từ 0 đến 255:
-Sử dụng "hwinfo" để biết thông tin mở rộng về phần cứng.
 In thông tin phần cứng
 Tên bộ xử lý:
 Bộ xử lý bit:
@@ -635,9 +505,6 @@ GPU: Không thể thăm dò một hoặc nhiều cạc đồ họa. Vẫn hiển
 >> Chào mừng bạn! Đây là lần đầu tiên bạn vào gỡ lỗi và trò chuyện từ xa. Sử dụng "/ register <name>" để đăng ký.
 Thiết bị đã tồn tại.
 Không có thiết bị như vậy.
-Đặt tên người dùng thiết bị
-Bạn đã đăng ký.
-Xin chào, {0}!
 In nội dung của tệp vào bảng điều khiển
 Hoặc, chuyển "listcities" vào lệnh này.
 Mục nhập đã tồn tại.
@@ -645,7 +512,6 @@ Bao bọc đầu ra bảng điều khiển
 Lệnh không thể kết thúc. Các lệnh này có thể được bao bọc:
 Giải nén một kho lưu trữ ZIP
 Tạo một kho lưu trữ ZIP
-Được xây dựng trong {0}
 Lỗi khi tải xuống dữ liệu gỡ lỗi
 Đã xảy ra lỗi khi tải xuống dữ liệu gỡ lỗi. Kiểm tra kết nối Internet của bạn.
 Không thể hoàn thiện bản sửa đổi {0}: {1}
@@ -659,12 +525,8 @@ Ping!
 Lưu Chủ đề vào Thư mục Hiện tại dưới dạng ...
 Lưu Chủ đề vào Thư mục Khác dưới dạng ...
 Chỉ định tên chủ đề:
-Người dùng {0} đã được thêm vào danh sách "{1}".
-Người dùng {0} đã bị xóa khỏi danh sách "{1}".
-Chế độ không hợp lệ {0}
 Tải chủ đề từ chủ đề dựng sẵn ...
 Chỉ định tên tệp chủ đề mà không có phần mở rộng .json:
-Mở kho lưu trữ ZIP
 Liệt kê tất cả các tệp bên trong kho lưu trữ
 Giải nén một tập tin vào một thư mục cụ thể hoặc một thư mục hiện tại
 Thay đổi thư mục lưu trữ
@@ -672,11 +534,7 @@ Thư mục {0} không tồn tại
 Thư mục lưu trữ {0} không tồn tại
 Số lượng vị trí tối đa
 Có bao nhiêu vị trí sáng trước khi mờ?
-Màu mục nhập danh sách
-Màu giá trị danh sách
 Kết nối với máy chủ SSH để thực hiện lệnh.
-Bộ chỉ định màu không hợp lệ. Đảm bảo rằng nó ở đúng định dạng, có nghĩa là một số từ 0-255 nếu sử dụng 255 màu hoặc chuỗi VT nếu sử dụng màu thực như sau:
-Lỗi trong trình bao thử nghiệm: {0}
 Đặt một biến thành một giá trị trong một tập lệnh
 Lời nhắc báo cáo lỗi.
 Đã xảy ra lỗi trong FTP shell:
@@ -694,15 +552,6 @@ Tệp khóa {0} không tồn tại.
 Lỗi khi cố thêm khóa cá nhân:
 Nhấn "t" để chuyển sang chế độ 255 màu.
 Nhấn "t" để chuyển sang chế độ màu thực.
-Có vẻ như bạn không có người dùng nào ngoại trừ root. Điều này thật tệ. Chúng tôi sẽ hướng dẫn bạn cách tạo một tài khoản.
-Viết tên người dùng của bạn.
-Bạn phải viết tên người dùng của mình.
-Viết mật khẩu của bạn.
-Bạn phải viết mật khẩu của mình.
-Chọn loại tài khoản.
-Quản trị viên: Loại tài khoản này có nhiều quyền lực nhất trong nhân, cho phép bạn sử dụng các chương trình quản lý hệ thống.
-Người dùng bình thường: Loại tài khoản này bị hạn chế hơn một chút so với quản trị viên.
-Xin chúc mừng! Bạn đã tạo một tài khoản mới! Để hoàn tất việc này, hãy đăng nhập bằng tài khoản mới của bạn.
 mod: Không có mod nào được phát hiện.
 Các lệnh chung:
 Lệnh mod:
@@ -712,33 +561,21 @@ Thư mục tra cứu
 Nhóm đường dẫn cách nhau bởi dấu hai chấm. Nó hoạt động giống như PATH. Viết một đường dẫn đầy đủ đến một thư mục hoặc tên thư mục. Khi bạn hoàn thành, hãy viết "q". Viết một dấu trừ bên cạnh đường dẫn để xóa một thư mục hiện có.
 Không có lệnh mod.
 Không có lệnh bí danh.
-Giá trị màu nằm ngoài phạm vi 0-255.
 Không tìm thấy lệnh có thể bao bọc.
 Truy vấn một từ trong một dòng cụ thể hoặc tất cả các dòng
 Đã tải xuống {0} trong tổng số {1}.
-In một chuỗi vào bảng điều khiển bằng cách sử dụng loại màu và in dòng
-In một chuỗi vào bảng điều khiển bằng cách sử dụng loại màu và in dòng với hỗ trợ định dạng
-In một chuỗi để gỡ lỗi
-In một chuỗi để gỡ lỗi với hỗ trợ định dạng
 Kiểm tra cơ sở lỗi hạt nhân
 Kiểm tra cơ sở lỗi hạt nhân với hỗ trợ định dạng
 Kiểm tra dịch một chuỗi tồn tại trong tài nguyên sang ngôn ngữ cụ thể
 In một chuỗi vào bảng điều khiển và phân tích cú pháp các trình giữ chỗ được tìm thấy
 Kiểm tra cơ sở biểu thức chính quy
 Bắt đầu tất cả các mod
-Dừng tất cả các mod
-Bật hoặc tắt gỡ lỗi
-Bật hoặc tắt gỡ lỗi từ xa
 Kiểm tra chuỗi VT cho 255 màu
 Kiểm tra chuỗi VT cho màu sắc trung thực
 Gửi thông báo để kiểm tra người nhận
 Kiểm tra ngày in bằng các lịch khác nhau
 Liệt kê tất cả các mã được hỗ trợ
-Những biến trình biên dịch nào được kích hoạt trong ứng dụng?
-Thử nghiệm nâng cao sự kiện cụ thể
 Kiểm tra thăm dò phần cứng
-Thoát khỏi vỏ thử nghiệm và khởi động hạt nhân
-Thoát khỏi vỏ thử nghiệm và tắt hạt nhân
 Lưu thư mục hiện tại vào tệp cấu hình hạt nhân
 Kiểm tra trình ghi danh sách với chuỗi và mảng chuỗi
 Kiểm tra trình ghi danh sách với mảng số nguyên và số nguyên
@@ -850,7 +687,6 @@ Ký tự đã bị xóa.
 Chào mừng bạn đến với Cài đặt!
 Lỗi khi thực hiện lệnh SSH
 Lỗi trên SSH shell
-Thông tin ứng dụng
 Kiểm tra trình viết từ điển với chuỗi và mảng chuỗi
 Kiểm tra trình viết từ điển với mảng char và char
 Kiểm tra trình viết từ điển với mảng số nguyên và số nguyên
@@ -860,21 +696,15 @@ Từ điển số nguyên bình thường:
 Từ điển số nguyên mảng:
 Từ điển char bình thường:
 Từ điển char mảng:
-Chào mừng bạn đến với Test Shell!
 Hiển thị tiến trình hoạt động của hệ thống tệp
 Hiển thị tệp nào đang được xử lý trong các hoạt động của hệ thống tệp
 HardwareType sẽ ở đâu
 Loại phần cứng {0} không được thăm dò hoặc không hợp lệ.
 Loại phần cứng {0} chưa được thăm dò. Nếu bạn chắc chắn rằng nó đã được thăm dò, hãy khởi động lại hạt nhân với tính năng gỡ lỗi được bật.
 Các phần không được phân tích cú pháp thành danh sách.
-In dấu phân tách
-In dấu phân tách có hỗ trợ định dạng
-In dấu phân cách với hỗ trợ màu
-In dấu phân tách với hỗ trợ màu và định dạng
 Luôn luôn tập trung
 Viết bất kỳ văn bản nào bạn muốn hiển thị.
 Cho dù văn bản được hiển thị trên bảng điều khiển luôn được căn giữa.
-Đối số {0} không được tìm thấy để đưa vào.
 Trình bảo vệ màn hình gặp lỗi khi hiển thị: {0}. Nhấn bất kì phím nào để thoát.
 Xem trước ...
 Đây là cách chủ đề của bạn sẽ trông như thế nào:
@@ -891,7 +721,6 @@ Tên tệp mod:
 Phiên bản một phần:
 Số lượng tối thiểu các đối số bắt buộc:
 Lập luận bắt buộc?
-Lệnh có thể quấn?
 Đặt biến shell?
 Không thể chạy ở chế độ bảo trì?
 Đã lỗi thời?
@@ -900,7 +729,6 @@ Tệp này rỗng.
 Verbose Probe
 Làm cho các tin nhắn thăm dò phần cứng trở nên nói nhiều.
 > Không có thông tin về khung.
-Bạn cần phải viết tên của bạn.
 Làm đẹp tệp JSON
 Không tìm thấy danh mục cấu hình {0}.
 Không tìm thấy mục nhập cấu hình {0}.
@@ -949,10 +777,6 @@ Trang hướng dẫn này cần hoạt động cho:
 Không tìm thấy trang thủ công {0}.
 Hướng dẫn mod
 Các đối số hạt nhân có sẵn:
-Nhấn "q" nếu bạn hoàn tất.
-Nhiều đối số hạt nhân có thể được phân tách bằng dấu phẩy không có dấu cách, ví dụ:
-Nhiều lệnh được đưa vào có thể được phân tách bằng dấu hai chấm có dấu cách, ví dụ:
-Đối số được yêu cầu {0} không được tìm thấy.
 Lỗi không thể khôi phục trong đối số:
 Mã hóa một chuỗi bằng SHA512
 Mã hóa một chuỗi bằng SHA384
@@ -977,31 +801,12 @@ Thêm thuộc tính mới vào cuối tệp JSON
 Xóa một thuộc tính khỏi tệp JSON
 Thoát khỏi trình bao JSON mà không lưu các thay đổi
 Lưu tệp JSON
-Mở trình bao JSON
 In tệp JSON
 Khoảng đoạn đường nối tiếp theo
 Phải đợi bao nhiêu mili giây trước khi điền vào đoạn đường nối tiếp theo?
-Màu tiêu đề thông báo
-Màu mô tả thông báo
-Màu tiến trình thông báo
-Màu thông báo lỗi
-Màu câu hỏi
-Màu thành công
-Màu đô la của người dùng
-Mẹo màu
-Màu văn bản phân tách
-Màu phân cách
-Màu tiêu đề danh sách
-Màu cảnh báo phát triển
-Màu thời gian sân khấu
-Màu tiến độ
-Màu tùy chọn quay lại
 Vẽ đường viền thông báo
 Che thông báo bằng đường viền.
 Liên hệ với nhà cung cấp mod để nâng cấp mod lên phiên bản tương thích.
-Màu đường viền có mức độ ưu tiên thấp
-Màu đường viền ưu tiên trung bình
-Màu đường viền ưu tiên cao
 Gửi thông báo tiến độ để kiểm tra người nhận
 Kiểm tra bánh xe màu
 Hiển thị thời gian hạt nhân cục bộ
@@ -1020,13 +825,11 @@ Thêm một mod vào danh sách đen
 Xóa một mod khỏi danh sách đen
 Ngày và giờ theo UTC: {0}
 Hiển thị thông tin ứng dụng trong khi khởi động
-Phân tích cú pháp các đối số dòng lệnh
 Hiển thị thời gian kết thúc giai đoạn
 Bắt đầu sửa đổi hạt nhân khi khởi động
 Hiển thị thời gian hiện tại trước khi đăng nhập
 Thông báo cho bất kỳ lỗi nào trong quá trình khởi động
 Hiển thị thông tin ngắn gọn về ứng dụng khi khởi động.
-Phân tích cú pháp các đối số dòng lệnh khi khởi động.
 Cho biết nhân đã mất bao nhiêu thời gian để hoàn thành một giai đoạn.
 Tự động bắt đầu sửa đổi hạt nhân khi khởi động.
 Hiển thị thời gian, múi giờ và ngày hiện tại trước khi đăng nhập.
@@ -1036,8 +839,6 @@ Kiểu nhắc mật khẩu
 Viết cách bạn muốn lời nhắc đăng nhập của mình. Để trống để sử dụng kiểu mặc định. Phần giữ chỗ được phân tích cú pháp.
 Viết cách bạn muốn lời nhắc mật khẩu của mình. Để trống để sử dụng kiểu mặc định. Phần giữ chỗ được phân tích cú pháp.
 Hiển thị Thông báo trong ngày sau khi hiển thị màn hình đăng nhập.
-Thăm dò các lệnh đã tiêm
-Thăm dò các lệnh được đưa vào khi bắt đầu vỏ hạt nhân.
 Hiển thị chi tiết tệp trong danh sách
 Hiển thị chi tiết tệp ngắn gọn trong khi liệt kê tệp
 Hiển thị chi tiết tệp trong danh sách FTP
@@ -1089,13 +890,9 @@ Thêm kết nối mới vào quay số nhanh SFTP
 Hiển thị chi tiết tệp SFTP trong khi liệt kê các thư mục từ xa.
 Nếu được bật, hãy thêm một kết nối mới vào quay số nhanh SFTP.
 Ping hết thời gian
-Hiển thị thông tin bộ điều hợp mở rộng
-Hiển thị thông tin mạng chung
 Tải xuống văn bản phần trăm
 Tải lên văn bản phần trăm
 Phải đợi bao nhiêu mili giây trước khi tuyên bố thời gian chờ?
-In thông tin bộ điều hợp mở rộng, chẳng hạn như thông tin gói.
-Hiển thị thông tin chung về mạng.
 Viết văn bản phần trăm tải lên của bạn như thế nào. Để trống để sử dụng kiểu mặc định. Phần giữ chỗ được phân tích cú pháp. {0} cho kích thước đã tải lên, {1} cho kích thước mục tiêu, {2} cho phần trăm.
 Viết văn bản phần trăm tải xuống của bạn như thế nào. Để trống để sử dụng kiểu mặc định. Phần giữ chỗ được phân tích cú pháp. {0} cho kích thước đã tải xuống, {1} cho kích thước mục tiêu, {2} cho phần trăm.
 Yêu cầu mật khẩu sau khi khóa
@@ -1215,16 +1012,12 @@ Ký tự khung trên cho đường viền thông báo
 Ký tự khung dưới cho đường viền thông báo
 Ký tự khung bên trái cho đường viền thông báo
 Ký tự khung bên phải cho đường viền thông báo
-Kiểu thông tin trang thủ công
 Có hiển thị những gì được viết trong lời nhắc đầu vào hay không.
 Số lượng tối thiểu để chọn là gì?
 Số lượng tối đa để chọn là bao nhiêu?
-Viết thông tin trang chủ của bạn như thế nào. Để trống để sử dụng kiểu mặc định. Phần giữ chỗ được phân tích cú pháp. {0} cho tiêu đề thủ công, {1} để sửa đổi.
-Thuộc tính {0} không được tìm thấy trên bất kỳ mô-đun nào.
 Bắt đầu bánh xe màu ở chế độ màu thực
 Nếu được chỉ định, nó sẽ hiển thị biểu ngữ khởi động tùy chỉnh với hỗ trợ giữ chỗ. Bạn có thể sử dụng {0} cho phiên bản hạt nhân.
 Biến thể nào của ngôn ngữ hiện tại đang được sử dụng để thay đổi tên tháng, lịch, v.v.?
-Kích hoạt hỗ trợ 255 màu.
 Kích hoạt hỗ trợ màu sắc trung thực.
 Đã xóa từ trong dòng {0}.
 Chuỗi được thay thế trong dòng {0}.
@@ -1253,7 +1046,6 @@ Kích thước đĩa:
 Tổng bộ nhớ:
 Card đồ họa:
 Mô hình đĩa:
-Văn hóa của ngôn ngữ hiện tại
 Nếu bạn chắc chắn rằng bạn đã mở đúng phần, hãy kiểm tra thông báo này:
 Thực thi một lệnh máy chủ FTP
 Mã hóa một chuỗi bằng CRC32
@@ -1278,9 +1070,6 @@ Viết như thế nào bạn muốn kiểu tiến trình chuyển thư của b�
 Múi giờ:
 Hôm nay là {0}
 Giờ hiện tại là {0}
-Màu phân cách bảng
-Màu tiêu đề bảng
-Màu giá trị bảng
 Câu trả lời có thể
 Tệp mod không được chỉ định.
 Đang cố gắng cài đặt một mod đã được cài đặt sẵn. Đang cập nhật mod ...
@@ -1302,7 +1091,6 @@ Kiểm tra xem chuỗi có thể dịch được tồn tại trong tài nguyên 
 Chuỗi được tìm thấy trong tài nguyên bản địa hóa.
 Không tìm thấy chuỗi trong tài nguyên bản địa hóa.
 Khởi động hạt nhân một cách lặng lẽ
-Chèn lệnh để khởi động trong lần đăng nhập tiếp theo
 Khởi động hạt nhân ở chế độ an toàn, tắt tất cả các mod
 Giống như chế độ an toàn, nhưng cũng vô hiệu hóa nhiều người dùng và một số tùy chỉnh
 Không có đủ đối số.
@@ -1327,10 +1115,6 @@ Bắt {0} ...
 Đặt trang web thành
 Màu sắc không yêu cầu khởi động lại, nhưng hầu hết các cài đặt yêu cầu khởi động lại.
 Không có trợ giúp cho đối số "{0}".
-Nhấn A trên bình luận thù địch để xin lỗi. Nhấn T vào bình luận tình yêu để cảm ơn. Nhấn Q để thoát trò chơi.
-Bạn đã xin lỗi vì một nhận xét thù địch! Thông minh!
-Xin lỗi vì tình yêu bình luận. Không đủ tốt.
-Bạn vừa cảm ơn người ghét vì nhận xét đáng ghét!
 Độ khó mặc định cho SpeedPress
 Thời gian chờ khi nhấn phím cho SpeedPress
 Chọn khó khăn ưa thích của bạn.
@@ -1351,10 +1135,8 @@ Kiểm tra tất cả các cài đặt KS để xem các biến có được vi�
 Các mục cấu hình này có các biến hoặc bảng liệt kê không hợp lệ và cần được sửa:
 Tệp {0} không được tìm thấy
 Tạo một mảng biến với các giá trị được cung cấp
-Viết số của cài đặt sẽ chuyển đến. Bất kỳ ký tự nào khác có nghĩa là quay trở lại.
 Kiểm tra tất cả các số dòng văn bản bản địa hóa để xem chúng có bằng nhau không
 Dòng không khớp trong
-Vui lòng nhập số người dùng.
 Bao gồm những người dùng ẩn danh
 Bao gồm những người dùng bị khuyết tật
 Bao gồm những người dùng ẩn danh trong danh sách
@@ -1367,9 +1149,7 @@ Hiển thị tiêu đề RSS mới nhất khi đăng nhập
 URL dòng tiêu đề RSS
 Mỗi lần đăng nhập, nó sẽ hiển thị dòng tiêu đề RSS mới nhất từ ​​URL dòng tiêu đề đã chọn.
 URL dòng tiêu đề RSS sẽ được sử dụng khi hiển thị dòng tiêu đề mới nhất. Đây thường là nguồn cấp dữ liệu yêu thích của bạn.
-Tin mới nhất:
 Không nhận được tin tức mới nhất.
-Màu tùy chọn đã chọn
 Hiển thị dấu vết ngăn xếp trên lỗi hạt nhân
 Nếu có bất kỳ lỗi hạt nhân nào, hãy chọn có in dấu vết ngăn xếp vào bảng điều khiển hay không.
 Lưu cài đặt thành
@@ -1388,9 +1168,6 @@ Giai đoạn trễ tính bằng mili giây
 Phải đợi bao nhiêu mili giây trước khi vẽ giai đoạn tiếp theo?
 Khoảng thời gian quay đoạn đường nối tiếp theo
 Phải đợi bao nhiêu mili giây trước khi làm mục nát một đầu của đoạn đường nối tiếp theo?
-Kiểm tra hạn ngạch gỡ lỗi
-Chúng ta có kiểm tra xem hệ thống gỡ lỗi có cần kiểm tra hạn ngạch trước khi ghi vào trình gỡ lỗi không?
-Nó thực sự mất bao nhiêu mili giây để ngủ?
 Không thêm được sự kiện.
 Không thể xóa sự kiện.
 Không cung cấp đủ đối số để thêm một sự kiện.
@@ -1446,9 +1223,6 @@ Bán kính nổ của pháo hoa khi bắt lửa là bao nhiêu khối (tối đa
 Lệnh này có các công tắc bên dưới thay đổi cách nó hoạt động:
 In các số dòng tiếp theo dòng đang được in
 Ngăn in số dòng
-Luôn sử dụng phiên bản đã chuyển ngữ
-Luôn sử dụng phiên bản đã dịch
-Buộc chuyển đổi ngôn ngữ
 Cho biết rằng câu trả lời có thể có nhiều hơn một ký tự
 Cho biết rằng câu trả lời chỉ có một ký tự
 In câu hỏi và câu trả lời trong một dòng
@@ -1463,23 +1237,15 @@ Bắt đầu trò chơi ở độ khó trung bình
 Bắt đầu trò chơi một cách khó khăn
 Bắt đầu trò chơi trong độ khó rất khó
 Bắt đầu trò chơi với độ khó tùy chỉnh. Xin lưu ý rằng thời gian chờ tùy chỉnh tính bằng mili giây nên được viết dưới dạng đối số.
-Hiển thị thông tin hệ thống
-Hiển thị thông tin phần cứng
-Hiển thị thông tin người dùng
-Hiển thị thông điệp trong ngày
-Hiển thị thông báo của ngày sau khi đăng nhập
-Hiển thị tất cả thông tin
 Tạo một thư mục chứa nội dung của tệp ZIP
 Hiển thị tất cả các thành phố có sẵn
 Nén nhanh
 Không nén
 Không tạo thư mục cơ sở trong kho lưu trữ
-Đơn vị tính bằng tích tắc
 Ngắt kết nối khỏi máy chủ một cách đáng xấu hổ
 Cho biết rằng đường dẫn mục tiêu là tuyệt đối
 Lưu tệp JSON, làm đẹp nó trong quá trình này
 Lưu tệp JSON, giảm thiểu nó trong quá trình này
-Nhận kiểu kết thúc dòng từ tệp văn bản
 Xóa tất cả các sự kiện đã kích hoạt
 Bật gỡ lỗi sự kiện
 Cho phép gỡ lỗi cho hệ thống sự kiện hạt nhân
@@ -1494,8 +1260,6 @@ Không gỡ cài đặt được ngôn ngữ tùy chỉnh. Nó rất có thể k
 Không cài đặt được các ngôn ngữ tùy chỉnh.
 Không gỡ cài đặt được các ngôn ngữ tùy chỉnh.
 Không gỡ cài đặt được các ngôn ngữ tùy chỉnh. Xem ngoại lệ bên trong để biết thêm thông tin.
-Viết mật khẩu quản trị viên. Đảm bảo rằng bạn không sử dụng tài khoản này trừ khi bạn thực sự biết mình đang làm gì.
-Bạn phải viết mật khẩu quản trị viên.
 Thông tin giấy phép
 Quản lý ngôn ngữ của bạn
 Không tìm thấy ngôn ngữ hoặc tệp có ký tự không hợp lệ.
@@ -1505,9 +1269,7 @@ Tên viết tắt của ngôn ngữ:
 Tên đầy đủ của ngôn ngữ:
 Ngôn ngữ có thể chuyển ngữ:
 Ngôn ngữ tùy chỉnh:
-Biểu ngữ chào mừng mới
 Màn hình giật gân thời trang
-Hiển thị biểu ngữ chào mừng mới do Figlet kết xuất
 Bật màn hình giật gân phong cách khi khởi động. Xin lưu ý rằng nó sẽ vô hiệu hóa lời nhắc đối số và kiểm tra khởi động trước trình bao.
 Splash tên
 Splash tên từ các Splash có sẵn được triển khai trong kernel.
@@ -1515,7 +1277,6 @@ Splash tên từ các Splash có sẵn được triển khai trong kernel.
 Đã tạo MAL mặc định.
 Tài khoản hệ thống được khởi tạo
 Người dùng đã khởi tạo
-Quyền đã được tải
 Chào mừng!
 Khởi động trình gỡ lỗi từ xa ...
 Lỗi kết nối trình gỡ lỗi từ xa
@@ -1530,8 +1291,6 @@ Có vẻ như bạn đang bỏ qua phần phát hiện kích thước bảng đi
 Để có trải nghiệm tốt hơn, hãy thay đổi kích thước cửa sổ bảng điều khiển của bạn khi vẫn ở trên màn hình này. Bấm phím bất kỳ để tiếp tục...
 Bảng điều khiển của bạn quá nhỏ để chạy bình thường:
 Phông chữ tượng nhỏ biểu ngữ
-In một chuỗi vào bảng điều khiển bằng cách sử dụng loại màu và in dòng với sự hỗ trợ của Figlet
-In một chuỗi vào bảng điều khiển bằng cách sử dụng loại màu và in dòng với định dạng và hỗ trợ Figlet
 Hiển thị các lệnh đếm trên trợ giúp
 Hiển thị các lệnh shell đếm trên trợ giúp
 Hiển thị số lệnh mod khi được trợ giúp
@@ -1556,21 +1315,10 @@ Tiến trình vị trí văn bản
 Chọn vị trí văn bản tiến trình ưa thích của bạn.
 Bạn chỉ có thể viết các con số.
 Nhấn "q" để thoát.
-Đang tải xuống tên ...
-Do sự cố kỹ thuật, chúng tôi không thể liệt kê các thuộc tính bộ điều hợp trên hệ thống Unix.
 Bật chế độ gỡ lỗi
-Lời nhắc cho các đối số
 Bật chế độ đen trắng
 Làm cho vũ trường có màu đen và trắng. Sẽ thực sự làm tổn thương mắt của bạn nếu nó quá nhanh, vì vậy không nên sử dụng nếu bạn đang gặp phải tình trạng thu giữ hình ảnh nhanh.
-Có vẻ như bạn đang chạy một phiên bản không được hỗ trợ. Bạn không nên sử dụng phiên bản này.
 Tải màu hiện tại
-Màu tùy chọn thay thế
-Người dùng tính cho các bình luận yêu thích hoặc ghét bỏ
-Có bao nhiêu người dùng trong phòng bình luận yêu hoặc ghét?
-Liệt kê các ngôn ngữ có sẵn
-Ngon ngu co san:
-Đối số dòng lệnh:
-Các đối số dòng lệnh trước khi khởi động:
 Mở tài liệu API mod cho cấu trúc của mã nguồn ở dạng mới nhất
 Giá trị hiện tại:
 Chỉ định màu hệ lục phân không hợp lệ.
@@ -1597,7 +1345,6 @@ Số byte không phải là số.
 Số byte bắt đầu được chỉ định không được lớn hơn kích thước tệp.
 Số byte kết thúc được chỉ định không được lớn hơn kích thước tệp.
 Đã xóa các byte.
-Chỉnh sửa tệp nhị phân
 Chọn nguồn cấp dữ liệu từ danh sách nguồn cấp dữ liệu hiện có từ các nguồn trực tuyến
 Đang tải xuống danh sách nguồn cấp dữ liệu ...
 Không tải xuống được danh sách nguồn cấp dữ liệu.
@@ -1636,14 +1383,9 @@ Số tuổi tối thiểu
 Số tuổi tối đa
 Số năm tuổi tối thiểu để tạo
 Số năm tuổi tối đa để tạo
-> Loại khung: {3}
 Trang hướng dẫn không có tiêu đề
 Đã bật lịch sử nhập liệu
-Đã bật khay nhớ tạm nhập
-Đã bật tính năng hoàn tác nhập liệu
 Lịch sử đầu vào có được bật hay không. Nếu được bật, bạn có thể truy cập các lệnh đã nhập gần đây bằng các phím mũi tên lên hoặc xuống.
-Khay nhớ tạm đầu vào có được bật hay không.
-Tính năng hoàn tác đầu vào có được bật hay không.
 Chuyển đổi số RGB màu thành hex.
 Chuyển đổi biểu diễn thập lục phân của màu thành số RGB.
 Chuyển đổi biểu diễn thập lục phân của màu thành số RGB ở định dạng KS.
@@ -1691,13 +1433,11 @@ Bộ chuyển đổi đơn vị
 Các loại đơn vị có sẵn và đơn vị của chúng:
 Trò chơi kết thúc
 Lỗi không mong đợi
-Vỏ RAR
 Các lệnh được tô sáng bằng màu khác là các lệnh hợp nhất và có sẵn trong mọi trình bao.
 Đang kiểm tra các bản cập nhật ...
 Đang tải xuống phiên bản
 Đang cài đặt phiên bản
 Quay trở lại năm 2018 ...
-Bạn không thể quay lại năm 2018 trên .NET 6.0!
 Sử dụng PowerLine để kết xuất tàu vũ trụ
 Tốc độ trò chơi Meteor
 Sử dụng PowerLine để kết xuất tàu vũ trụ hay sử dụng tiêu chuẩn lớn hơn ký tự. Nếu bạn muốn sử dụng PowerLine với Meteor, bạn cần cài đặt một phông chữ thích hợp có hỗ trợ PowerLine.

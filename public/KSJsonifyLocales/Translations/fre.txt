@@ -1,6 +1,3 @@
-Commandes disponibles: {0}
-L'injection de commande a été annulée.
-Les arguments injectés seront programmés pour s'exécuter au prochain redémarrage.
 Modèle de couleur non valide {0}
 hwprobe: Votre matériel sera sondé. S'il vous plaît, attendez...
 CPU: Un ou plusieurs des cœurs de la CPU n'ont pas été sondés. Montrer des informations quand même ...
@@ -12,7 +9,6 @@ DOUBLE PANIQUE: le temps de redémarrage dépasse le temps de redémarrage maxim
 [{0}] panique: le redémarrage est activé car le niveau d'erreur est {0}.
 [{0}] panique: heure de redémarrage: {1} secondes, dépasse 1 heure. Il est réglé à 1 minute.
 DOUBLE PANIQUE: Type d'erreur {0} invalide.
-[{0}] dpanic: {1} - Redémarrage en {2} secondes ...
 [{0}] panique: le redémarrage est désactivé car le niveau d'erreur est {0}.
 [{0}] panique: {1} - appuyez sur n'importe quelle touche pour continuer à utiliser le noyau.
 [{0}] panique: {1} - appuyez sur n’importe quelle touche pour l’arrêter.
@@ -20,27 +16,15 @@ DOUBLE PANIQUE: Type d'erreur {0} invalide.
 DOUBLE PANIC: Bug du noyau: {0}
 Éteindre...
 Redémarrage ...
-Une autre instance de Nitrocid KS est en cours d'exécution. Fermeture en cas d'interférence.
-Échec de l'ajout d'utilisateur dans les listes d'autorisations: type non valide {0}
-Échec de l'ajout d'utilisateur dans les listes d'autorisations: utilisateur non valide {0}
-Échec de suppression de l'utilisateur des listes d'autorisations: type non valide {0}
-Vous êtes déjà connecté.
-Échec de suppression de l'utilisateur des listes d'autorisations: utilisateur non valide {0}
-Vous avez soit trouvé un bogue, soit l'autorisation que vous avez essayé d'ajouter ou de supprimer est déjà faite, ou une autre erreur.
 Erreur {0}: {1}
-Vous avez trouvé un bogue ou l'autorisation que vous avez tenté de modifier pour un nouvel utilisateur a échoué.
-Noms d'utilisateur disponibles: {0}
 Nom d'utilisateur: 
 Les espaces ne sont pas autorisés.
 Les caractères spéciaux ne sont pas autorisés.
 Le mot de passe de {0}: 
 Mauvais mot de passe.
-L'utilisateur est désactivé.
-Mauvais nom d'utilisateur.
 Erreur lors de la tentative d'analyse des espaces réservés. {0}
 Erreur lors de la tentative d’ajout de nom d’utilisateur.
 usrmgr: Création du nom d'utilisateur {0} ...
-Nom d'utilisateur vide.
 Utilisateur {0} introuvable.
 L'utilisateur {0} n'est pas autorisé à être supprimé.
 L'utilisateur {0} est déjà connecté. Déconnectez-vous et connectez-vous en tant qu'autre administrateur.
@@ -91,24 +75,14 @@ Modifie le répertoire distant vers lequel télécharger ou télécharger
 Supprime le fichier distant du serveur
 Déconnecte du serveur
 Télécharge un fichier distant dans un répertoire local à l'aide de binaire ou de texte
-Affiche l'écran d'aide
 Répertorie le répertoire local
 Répertorie le répertoire distant
 Télécharge un fichier local dans un répertoire distant à l'aide de binaire ou de texte
-Échec d'obtention des propriétés pour l'adaptateur {0}.
-Numéro de l'adaptateur:
-Nom de l'adaptateur:
-Unité de transmission maximale: {2} unités
-DHCP activé:
-Paquets non monodiffusés:
-Paquets de monodiffusion:
-Erreur paquets entrants / sortants:
 L'alias ne peut pas être le même nom qu'une commande.
 Commande introuvable pour un alias pour {0}.
 Vous pouvez maintenant exécuter "{0}" en tant que commande: "{1}".
 L'alias {0} ne semble pas avoir été supprimé.
 Mode non valide {0}.
-Les arguments injectés, {0}, seront programmés pour s'exécuter au prochain redémarrage.
 Il n'y avait pas assez d'arguments. Voir ci-dessous pour l'utilisation:
 Répertoire {0} introuvable
 Nom d'hôte vide.
@@ -122,18 +96,7 @@ Le nouveau nom que vous avez entré est déjà trouvé.
 {0} introuvable.
 Configuration rechargée. Vous devrez peut-être redémarrer le noyau pour que certaines modifications prennent effet.
 Une ou plusieurs des couleurs sont invalides.
-Les couleurs ne sont pas disponibles. Activer le shell coloré dans la configuration du noyau.
 Économiseur d'écran {0} introuvable.
-Version du noyau:
-Mode débogage:
-Coquille Colorée:
-Arguments au démarrage:
-Commande d'aide simplifiée:
-MOTD sur Login:
-Heure / Date sur le coin:
-Nom d'utilisateur actuel:
-Nom d'hôte actuel:
-Noms d'utilisateur disponibles:
 Erreur lors de la tentative d'exécution de la commande
 Répertoire de modifications
 Change le mot de passe pour l'utilisateur actuel
@@ -144,35 +107,27 @@ Liste le contenu du fichier / dossier dans le dossier actuel
 Verrouille votre écran avec un mot de passe
 Vous déconnecte
 Crée un répertoire
-Répertorie des informations sur toutes les interfaces disponibles
 Redémarre votre ordinateur (ATTENTION: pas de synchronisation, car ce n'est pas un noyau final)
 Recharge le fichier de configuration qui est édité.
 Enregistre votre écran des burn-out
 Configure les écrans de veille du noyau
-Met en place les thèmes du noyau
 Affiche la date et l'heure
 Affiche la date et l'heure dans les zones
 Le noyau sera arrêté
-Informations système
-* Vous pouvez utiliser plusieurs commandes en utilisant les deux points entre les commandes.
 Usage:
-où les arguments seront {0}
 où customsaver sera
 Il y avait une erreur dans le shell.
 Vous n'êtes pas autorisé à utiliser {0}
 Message Shell: La commande demandée {0} n'est pas autorisée à être exécutée en mode maintenance.
 Message shell: La commande demandée {0} est introuvable. Voir 'help' pour les commandes disponibles.
-Message Shell: La commande {0} n'est pas autorisée à s'exécuter lors de la connexion.
 Erreur lors de la tentative d'exécution de la commande.
 - Heure de {0}: {1}
 en cours d'exécution sur {0}
 Vous n'êtes pas autorisé à obtenir des informations pour {0}.
 Cette commande est obsolète et sera supprimée dans une prochaine version.
 Vous n'êtes pas autorisé à changer le mot de passe de {0} car la cible était un administrateur.
-usrmgr: le nom d'utilisateur {0} est déjà trouvé
 Supprime tout dans le journal de débogage
 Langue invalide
-Change de langue
 ----------------------------- Dommage panique du noyau ------------------------------
 >> Information sur la panique <<
 > Description: {0}
@@ -201,7 +156,6 @@ Répertorie les périphériques de débogage connectés
 Dispositif de débogage {0} introuvable.
 Périphérique {0} déconnecté.
 Déboguer l’écoute sur toutes les adresses en utilisant le port {0}.
-Aucun argument spécifié. Astuce: spécifiez plusieurs arguments séparés par des espaces
 Alias déjà trouvé: {0}
 Journal de débogage supprimé. Tous les périphériques de débogage connectés peuvent toujours voir les messages.
 La suppression du journal de débogage a échoué: {0}
@@ -210,19 +164,11 @@ Spécifiez l'adresse
 Le fuseau horaire est spécifié de manière incorrecte.
 Sélection de profil invalide.
 Vous essayez de vous connecter à {0} avec le profil {1} ...
-Échec d'obtention des propriétés IPv6 pour l'adaptateur {0}. En continuant ...
-Informations IPv4:
-Informations IPv6:
-L'adaptateur {0} ne prend pas en charge IPv6. En continuant ...
-L'adaptateur {0} ne prend pas en charge IPv4. La sonde a échoué.
-Il semble que vous exécutiez la version de développement du noyau. Bien que vous puissiez voir les aspects, il est fréquemment mis à jour et peut introduire des bogues. Il est recommandé de rester sur la version stable.
 La langue que vous avez sélectionnée contient deux variantes. Sélectionnez-en un:
 Choix invalide. Réessayer.
 Vous n'êtes pas autorisé à définir le répertoire actuel sur {0}: {1}
 Le chemin que vous avez spécifié est trop long.
 Le regroupeur d'informations de vidage s'est arrêté lors de la tentative d'obtention d'informations sur {0}: {1}
-Erreur lors de la tentative de définition de MOTD / MAL: {0}
-Erreur lors de la tentative d'obtention de MOTD / MAL: {0}
 Erreur lors de la tentative de démarrage de l'économiseur d'écran, en raison d'une opération non valide.
 Le rechargement n'est pas autorisé en mode sans échec.
 L'analyse des mods n'est pas autorisée en mode sans échec.
@@ -237,15 +183,7 @@ Calcule les sommes des fichiers.
 Vous amène à notre GitHub Wiki.
 Algorithme de chiffrement non valide.
 Active ou désactive le débogage distant.
-Voyez si vous pouvez épeler correctement les mots à temps
 Voyez si vous pouvez résoudre des équations mathématiques à temps
-Répondez aux commentaires d'amour ou de haine.
-Si quelqu'un a fait ce commentaire sur votre vidéo:
-Comment répondriez-vous?
-Selection invalide. Passer au commentaire suivant ...
-Génial! {0} appréciera vos remerciements.
-Épelé parfaitement!
-Orthographe incorrecte.
 Résolu parfaitement!
 Résolu incorrectement.
 RPC est déjà en cours d'exécution.
@@ -256,45 +194,14 @@ Entrez le mot de passe pour {0}:
 SSH déconnecté.
 Impossible de définir la page de code. La langue peut ne pas s'afficher correctement.
 Le débogage n'est pas activé.
-Merci! C'est intéressant.
-Tout le monde soutiendra votre vidéo pour cela.
-Je vous ai donné le fichier spécial dans votre e-mail pour votre prochaine vidéo.
-Écoutez, haineux, il essaie de nous aider, pas d'escroquerie.
-Je ne sais pas combien moi et mes amis vous remercions pour cette vidéo.
-Je t'aime pour cette vidéo.
-Continuez, ne vous arrêtez pas.
-Je vais vous aider à atteindre 1M d'abonnés!
-Mes amis ont réparé leur ordinateur à cause de vous.
-Super blague! J'ai arrêté le PC de mon ennemi.
-Aux ennemis: ARRÊTEZ DE HAÏTRE SUR LUI
-Pour haineux: OBTENIR AU TRAVAIL
-Personne ne le remarquera maintenant grâce à votre guide de masquage d'objet
-Je vais arrêter de regarder vos vidéos. Abonné perdu.
-Qu'est-ce que c'est? Ce n'est pas clair.
-Cette vidéo est la pire!
-Tout le monde rapporte cette vidéo!
-Mes amis sont furieux contre vous!
-Les amoureux vous détesteront maintenant pour cela.
-Votre ami vous détestera pour cela.
-Cette farce m'a fait vous désinscrire.
-Mission échouée, Respect -, Abonné -
-Arrêtez de faire ce genre de vidéo !!!
-Revenez à votre travail, vos vidéos sont les pires!
-Nous préjugons sur cette vidéo.
 Affiche toutes les notifications reçues
 Rejette une notification
 Notification rejetée avec succès.
-Paquets (entrants):
-Paquets (sortants):
-Erreurs dans les paquets reçus:
-Propriétés générales IPv6
-Propriétés IPv4 générales
 Exécute à distance une commande vers un PC distant
 - Étage 1: Initialisation du système
 - Étage 2: Détection matérielle
 - Étage 3: Détection de mods et d'économiseurs d'écran
 - Étage 4: Connectez-vous
-Il semble que vous exécutiez la version candidate à la sortie. Il est recommandé de rester sur la version stable.
 Type non valide {0}.
 Taille: {0}
 Le répertoire {0} existe déjà.
@@ -313,7 +220,6 @@ Entrer le mot de passe:
 Erreur lors de la connexion à {0}: {1}
 Connexion à {0} ...
 Authentification ...
-Liste des commandes
 Télécharge les messages et les répertorie
 Ouvre un message
 La page n'est pas une valeur numérique.
@@ -328,10 +234,7 @@ Préparation des profils ... Cela peut prendre plusieurs minutes ...
 Erreur lors de la tentative d'exécution du script: {0}
 Écrit du texte dans la console
 Fait des choix d'utilisateur
-Bip en 'n' Hz et temps en 'n' millisecondes
 où <$variable> est une variable qui sera utilisée pour stocker la réponse
-La fréquence doit être numérique. S'il est numérique, assurez-vous qu'il est >= 37 et <= 32767.
-L'heure doit être numérique.
 où <réponses> sont des réponses à une lettre de la question séparées par des barres obliques
 Erreur lors de la tentative de connexion au serveur SSH: {0}
 Permet à l'utilisateur d'entrer une entrée
@@ -346,7 +249,6 @@ Lors de la validation du certificat, il y a des erreurs de certificat. Cela peut
 Êtes-vous sûr de vouloir vous connecter?
 Réponse invalide. Veuillez réessayer.
 Le numéro abrégé est vide. Connectez-vous à un serveur pour y ajouter une adresse.
-La numérotation abrégée n'existe pas. Connectez-vous à un serveur pour y ajouter une adresse.
 Entrez l'adresse et le port du serveur IMAP (<adresse> ou <adresse>: [port]):
 Entrez l'adresse et le port du serveur SMTP (<adresse> ou <adresse>: [port]):
 Envoie un message à une adresse
@@ -360,12 +262,10 @@ Supprime un message
 Supprime tous les messages du destinataire
 Message {0} de {1} supprimé de {2}. {3} messages restants à analyser.
 Message {0} de {1} supprimé de la boîte de réception. {2} messages restants à analyser.
-Modifie un fichier texte
 Crée un nouveau fichier
 Le fichier existe déjà.
 Erreur lors de la tentative de création d'un fichier: {0}
 Échec de l'ouverture du fichier. Sortie du shell ...
-Répertorie les commandes disponibles
 Imprime le contenu du fichier avec les numéros de ligne sur la console
 Ajoute une nouvelle ligne avec du texte à la fin du fichier
 Supprime le numéro de ligne spécifié
@@ -378,12 +278,10 @@ Exécution en mode sans échec. Sauter l'étage ...
 >> Débogage et discussion à distance: version
 >> Votre adresse est {0}.
 >> Votre nom est {0}.
-Commande {0} introuvable. Utilisez "/help" pour voir la liste.
 Index {0} non valide. Il existe {1} traces de pile. L'index est basé sur zéro, alors essayez de soustraire par 1.
 Aucune trace de pile
 Affiche la dernière trace de pile en cas d'exception
 Affiche le nom d'utilisateur actuel dans la session
-Vous déconnecte du débogueur
 Débloquer un périphérique de débogage par adresse IP
 Bloquer un périphérique de débogage par adresse IP
 {0} peut à nouveau rejoindre le débogage à distance.
@@ -395,13 +293,10 @@ Enregistrer les paramètres
 Sortie
 L'option spécifiée {0} n'est pas valide.
 La réponse doit être numérique.
-Demander des arguments au démarrage
-Déclencheur du mode maintenance
 Rechercher des mises à jour au démarrage
 Sonde silencieuse
 Afficher MOTD lors de la connexion
 Effacer l'écran lors de la connexion
-Coquille colorée
 Commande d'aide simplifiée
 Port de débogage
 Télécharger les heures de réessai
@@ -410,32 +305,25 @@ Adresse IP FTP du journal
 Renvoyer uniquement le premier profil FTP
 Afficher l'heure / la date dans le coin supérieur droit
 Délai d'attente de l'économiseur d'écran en ms
-Quota de taille de débogage en octets
 Mode d'analyse de taille
 Marquee au démarrage
 Heure et date longues
 Montrer les fichiers cachés
 Section non valide saisie. Veuillez revenir en arrière.
 Retourner...
-Activer
-Désactiver
 Ecrivez un port de débogage distant. Il doit être numérique et ne doit pas être déjà utilisé. Sinon, le débogueur distant ne parviendra pas à ouvrir le port.
 Indiquez combien de fois la commande "" get "" doit réessayer les téléchargements ayant échoué. Il doit être numérique.
 Écrivez quand lancer l'économiseur d'écran après des millisecondes spécifiées. Il doit être numérique.
-Écrivez le nombre d'octets que le journal de débogage peut stocker. Il doit être numérique.
 La réponse n'est peut-être pas négative.
 La réponse est invalide. Assurez-vous que la réponse est numérique pour les entrées de configuration qui nécessitent des nombres comme réponses.
 La variable {0} n'est trouvée sur aucun des modules.
 Modifie la configuration du noyau
-Activer 255 couleurs
 Changer de culture lors du changement de langue
 Texte affiché
 Écrivez le texte que vous souhaitez afficher. Plus c'est court, c'est mieux.
 Échec de l'importation de {0}
-Erreur lors de l'exécution de la commande de débogage à distance {0}: {1}
 Ajoute des utilisateurs
 Ajoute des alias aux commandes
-Injecte des arguments dans le noyau (redémarrage requis)
 Modifie le nom d'hôte
 Modifie MAL, le MOTD après la connexion
 Change MOTD, le message du jour
@@ -450,13 +338,11 @@ Il ne reste plus d'utilisateurs dans la liste.
 Erreur lors de la tentative de rejet de la notification.
 usrmgr: échec de la création du nom d'utilisateur {0}: {1}
 Échec du changement de nom de l'utilisateur. {0}
-L'une des listes d'autorisations ne contient pas le nom d'utilisateur {0}.
 Utilisateur non trouvé
 Échec de la modification du mot de passe du nom d'utilisateur: {0}
 Impossible de trouver le fichier correspondant à la chaîne "{0}": {1}
 Le téléchargement a échoué pour le fichier {0}.
 Échec de la liste des fichiers distants: {0}
-Voulez-vous vraiment supprimer {0} <y / n>?
 Suppression de {0} ...
 {0} est introuvable sur le serveur.
 Tous les messages envoyés par {0} ont été supprimés avec succès.
@@ -483,7 +369,6 @@ Humidité: {0}
 Vous pouvez obtenir votre propre clé API sur https://home.openweathermap.org/api_keys.
 Vous pouvez toujours consulter http://bulk.openweathermap.org/sample/city.list.json.gz pour la liste des villes avec leurs identifiants.
 Unité préférée pour la température
-Configure le noyau pour qu'il vous demande un argument au démarrage.
 Déclenche le mode maintenance. Cela désactive plusieurs comptes.
 À chaque démarrage, il vérifiera les mises à jour.
 Lorsque vous changez de langue, changez les noms de mois, le calendrier, etc.
@@ -491,7 +376,6 @@ Gardez les messages de détection du matériel silencieux.
 Afficher le message du jour avant d'afficher l'écran de connexion.
 Effacer l'écran avant d'afficher l'écran de connexion.
 Affiche les utilisateurs disponibles si activé.
-Donne le support de la couleur du noyau
 Commande d'aide simplifiée pour tous les shells
 S'il faut ou non enregistrer le nom d'utilisateur FTP.
 S'il faut ou non enregistrer l'adresse IP FTP.
@@ -510,7 +394,6 @@ Vous devez activer le mode débogage avant de pouvoir effacer le journal de déb
 Ouvrez «mail» pour les voir.
 Supprime un répertoire ou un fichier
 Impossible de supprimer {0}, car il n'existe pas.
-Appuyez sur CTRL + C pour quitter.
 Fournit des informations sur un fichier
 Fournit des informations sur un annuaire
 Impossible d'obtenir des informations sur un répertoire inexistant.
@@ -582,16 +465,7 @@ Ouvre un shell de test
 Échec du démarrage de «{0}»: {1}
 Afficher l'aperçu du message électronique
 Lors de la liste des messages électroniques, affichez l'aperçu du corps.
-Couleur d'entrée
-Couleur de la licence
-Couleur d'erreur continue du noyau
-Couleur d'erreur du noyau indisponible
-Couleur du nom d'hôte
-Couleur du nom d'utilisateur
 Couleur de l'arrière plan
-Couleur de texte neutre
-Couleur de la scène
-Couleur d'erreur
 Tentative d'accès à un chemin non valide.
 Efface le fichier texte
 Quitte l'éditeur de texte
@@ -621,11 +495,7 @@ Enregistrer le thème dans le répertoire actuel
 Enregistrer le thème dans un autre répertoire...
 Sélectionnez la couleur à l'aide des touches "<-" et "->". Appuyez sur ENTER pour quitter. Appuyez sur "i" pour insérer le numéro de couleur manuellement.
 Sélectionnez la couleur à l'aide des touches "<-" et "->". Utilisez les touches fléchées vers le haut et vers le bas pour sélectionner entre les gammes de couleurs. Appuyez sur ENTER pour quitter. Appuyez sur "i" pour insérer le numéro de couleur manuellement.
-Bienvenue dans le noyau ! - Version {0}
-Couleur d'avertissement
-Couleur de l'option
 Entrez le numéro de couleur de 0 à 255 :
-Utilisez "hwinfo" pour des informations détaillées sur le matériel.
 Imprime les informations sur le matériel
 Nom du processeur :
 Bits du processeur :
@@ -635,9 +505,6 @@ GPU : une ou plusieurs des cartes graphiques n'ont pas pu être testées. Affich
 >> Bienvenue ! C'est la première fois que vous entrez dans le débogage et le chat à distance. Utilisez "/register <nom>" pour vous inscrire.
 L'appareil existe déjà.
 Pas de tel appareil.
-Définit le nom d'utilisateur de l'appareil
-Vous êtes déjà inscrit.
-Salut, {0} !
 Imprime le contenu du fichier sur la console
 Ou passez "listcities" à cette commande.
 L'entrée existe déjà.
@@ -645,7 +512,6 @@ Enveloppe la sortie de la console
 La commande n'est pas enveloppable. Ces commandes sont enveloppables :
 Extrait une archive ZIP
 Crée une archive ZIP
-Intégré {0}
 Erreur lors du téléchargement des données de débogage
 Une erreur s'est produite lors du téléchargement des données de débogage. Vérifiez votre connection internet.
 Échec de la finalisation du module {0} : {1}
@@ -659,12 +525,8 @@ Ping !
 Enregistrer le thème dans le répertoire actuel sous...
 Enregistrer le thème dans un autre répertoire sous...
 Spécifiez le nom du thème :
-L'utilisateur {0} a été ajouté à la liste "{1}".
-L'utilisateur {0} a été supprimé de la liste "{1}".
-Mode invalide {0}
 Charger le thème à partir des thèmes prédéfinis...
 Spécifiez le nom du fichier de thème sans l'extension .json :
-Ouvre une archive ZIP
 Répertorie tous les fichiers à l'intérieur de l'archive
 Extrait un fichier dans un répertoire spécifié ou un répertoire courant
 Change le répertoire d'archives
@@ -672,11 +534,7 @@ Le répertoire {0} n'existe pas
 Le répertoire d'archive {0} n'existe pas
 Nombre maximal de positions
 Combien de positions sont allumées avant la gradation ?
-Couleur de l'entrée de liste
-Couleur de la valeur de liste
 Se connecte à un serveur SSH pour exécuter une commande.
-Spécificateur de couleur non valide. Assurez-vous qu'il est au bon format, ce qui signifie un nombre de 0 à 255 si vous utilisez 255 couleurs ou une séquence VT si vous utilisez de vraies couleurs comme suit :
-Erreur dans le shell de test : {0}
 Définit une variable à une valeur dans un script
 Une invite de rapport de bogue.
 Une erreur s'est produite dans le shell FTP :
@@ -694,15 +552,6 @@ Le fichier de clé {0} n'existe pas.
 Erreur lors de la tentative d'ajout de clé privée :
 Appuyez sur "t" pour passer en mode 255 couleurs.
 Appuyez sur "t" pour passer en mode couleurs vraies.
-Il semble que vous n'ayez aucun utilisateur à part root. C'est mauvais. Nous vous expliquerons comment en créer un.
-Écrivez votre nom d'utilisateur.
-Vous devez écrire votre nom d'utilisateur.
-Écrivez votre mot de passe.
-Vous devez écrire votre mot de passe.
-Sélectionnez le type de compte.
-Administrateur : ce type de compte a le plus de puissance dans le noyau, vous permettant d'utiliser des programmes de gestion de système.
-Utilisateur normal : ce type de compte est légèrement plus restreint que les administrateurs.
-Toutes nos félicitations! Vous avez créé un nouveau compte ! Pour terminer, connectez-vous en tant que nouveau compte.
 mod : aucun mod détecté.
 Commandes générales :
 Commandes de modules :
@@ -712,33 +561,21 @@ Répertoires de recherche
 Groupe de chemins séparés par les deux points. Cela fonctionne de la même manière que PATH. Écrivez un chemin complet vers un dossier ou un nom de dossier. Lorsque vous avez terminé, écrivez "q". Écrivez un signe moins à côté du chemin pour supprimer un répertoire existant.
 Aucune commande de mod.
 Aucune commande d'alias.
-La valeur de la couleur est en dehors de la plage de 0-255.
 La commande enveloppable est introuvable.
 Interroge un mot dans une ligne spécifiée ou toutes les lignes
 {0} sur {1} téléchargés.
-Imprime une chaîne sur la console en utilisant le type de couleur et l'impression de ligne
-Imprime une chaîne sur la console à l'aide du type de couleur et de l'impression de ligne avec prise en charge du format
-Imprime une chaîne au débogueur
-Imprime une chaîne dans le débogueur avec prise en charge du format
 Teste la fonction d'erreur du noyau
 Teste la fonction d'erreur du noyau avec la prise en charge du format
 Teste la traduction d'une chaîne qui existe dans les ressources vers une langue spécifique
 Imprime une chaîne dans la console et analyse les espaces réservés trouvés
 Teste la fonction d'expression régulière
 Démarre tous les mods
-Arrête tous les mods
-Active ou désactive le débogage
-Active ou désactive le débogage à distance
 Teste la séquence VT pour 255 couleurs
 Teste la séquence VT pour la vraie couleur
 Envoie une notification pour tester le récepteur
 Teste la date d'impression à l'aide de différents calendriers
 Répertorie toutes les pages de codes prises en charge
-Quelles variables du compilateur sont activées dans l'application ?
-Tests soulevant l'événement spécifique
 Tests sondant le matériel
-Quitte le shell de test et démarre le noyau
-Quitte le shell de test et arrête le noyau
 Enregistre le répertoire actuel dans le fichier de configuration du noyau
 Teste le rédacteur de liste avec la chaîne et le tableau de chaînes
 Teste le rédacteur de liste avec l'entier et le tableau d'entiers
@@ -850,7 +687,6 @@ Caractère supprimé.
 Bienvenue dans Paramètres !
 Erreur lors de l'exécution de la commande SSH
 Erreur sur le shell SSH
- Informations sur l'application
 Teste le rédacteur de dictionnaire avec la chaîne et le tableau de chaînes
 Teste le rédacteur de dictionnaire avec le tableau char et char
 Teste le rédacteur de dictionnaire avec l'entier et le tableau d'entiers
@@ -860,21 +696,15 @@ Dictionnaire d'entiers normaux :
 Dictionnaire d'entiers de tableau :
 Dictionnaire de caractères normaux :
 Dictionnaire de caractères de tableau :
-Bienvenue dans Test Shell !
 Afficher la progression des opérations du système de fichiers
 Affiche quel fichier est en cours de traitement pendant les opérations du système de fichiers
 où HardwareType sera
 Soit le type de matériel {0} n'est pas testé, soit il n'est pas valide.
 Le type de matériel {0} n'est pas encore sondé. Si vous êtes sûr qu'il est testé, redémarrez le noyau avec le débogage activé.
 Partitions non analysées pour la liste.
-Imprime un séparateur
-Imprime un séparateur avec prise en charge du format
-Imprime un séparateur avec prise en charge des couleurs
-Imprime un séparateur avec prise en charge des couleurs et des formats
 Toujours centré
 Écrivez le texte que vous souhaitez afficher.
 Si le texte affiché sur le rectangle de sélection est toujours centré.
-Argument {0} introuvable pour l'injection.
 L'économiseur d'écran a rencontré une erreur lors de l'affichage : {0}. Appuyez sur une touche pour quitter.
 Aperçu...
 Voici à quoi ressemblera votre thème :
@@ -891,7 +721,6 @@ Chemin du fichier de modification :
 Version de la pièce :
 Nombre minimum d'arguments requis :
 Arguments requis ?
-Commande enveloppable ?
 Paramétrer la variable shell ?
 Impossible de fonctionner en mode maintenance ?
 Obsolète?
@@ -900,7 +729,6 @@ Le dossier est vide.
 Ausführliche Sonde
 Machen Sie Hardware-Probing-Meldungen etwas gesprächig.
 > Es liegen keine Informationen zu Frames vor.
-Sie müssen Ihren Namen schreiben.
 Verschönert die JSON-Datei
 Konfigurationskategorie {0} nicht gefunden.
 Konfigurationseintrag {0} nicht gefunden.
@@ -949,10 +777,6 @@ Cette page de manuel a besoin de travail pour :
 Page de manuel {0} introuvable.
 Mode d'emploi
 Arguments de noyau disponibles :
-Appuyez sur "q" si vous avez terminé.
-Plusieurs arguments du noyau peuvent être séparés par des virgules sans espaces, par exemple :
-Plusieurs commandes injectées peuvent être séparées par des deux-points avec des espaces, par exemple :
-L'argument demandé {0} est introuvable.
 Erreur irrécupérable dans l'argument :
 Crypte une chaîne à l'aide de SHA512
 Crypte une chaîne à l'aide de SHA384
@@ -977,31 +801,12 @@ Ajoute une nouvelle propriété à la fin du fichier JSON
 Supprime une propriété du fichier JSON
 Quitte le shell JSON sans enregistrer les modifications
 Enregistre le fichier JSON
-Ouvre le shell JSON
 Imprime le fichier JSON
 Prochain intervalle de rampe
 Combien de millisecondes attendre avant de remplir la rampe suivante ?
-Couleur du titre de la notification
-Couleur de la description des notifications
-Couleur de progression des notifications
-Couleur d'échec de notification
-Couleur des questions
-Couleur du succès
-Couleur du dollar de l'utilisateur
-Couleur de la pointe
-Couleur du texte du séparateur
-Couleur du séparateur
-Couleur du titre de la liste
-Couleur d'avertissement de développement
-Couleur de l'heure de la scène
-Couleur de progression
-Couleur de l'option arrière
 Dessiner la bordure de notification
 Couvre la notification avec la bordure.
 Contactez le vendeur du mod pour mettre à niveau le mod vers la version compatible.
-Couleur de bordure de faible priorité
-Couleur de bordure de priorité moyenne
-Couleur de bordure prioritaire
 Envoie une notification de progression pour tester le récepteur
 Teste la roue des couleurs
 Affiche l'heure du noyau local
@@ -1020,13 +825,11 @@ Ajoute un mod à la liste noire
 Supprime un mod de la liste noire
 Heure et date en UTC : {0}
 Afficher les informations de l'application au démarrage
-Analyser les arguments de ligne de commande
 Afficher les heures d'arrivée des étapes
 Démarrer les modifications du noyau au démarrage
 Afficher l'heure actuelle avant la connexion
 Avertir de tout défaut lors du démarrage
 Affiche de brèves informations sur l'application au démarrage.
-Analyse les arguments de la ligne de commande au démarrage.
 Indique combien de temps le noyau a mis pour terminer une étape.
 Démarre automatiquement les modifications du noyau au démarrage.
 Affiche l'heure actuelle, le fuseau horaire et la date avant la connexion.
@@ -1036,8 +839,6 @@ Style d'invite de mot de passe
 Écrivez comment vous voulez que votre invite de connexion soit. Laissez vide pour utiliser le style par défaut. Les espaces réservés sont analysés.
 Écrivez comment vous voulez que votre invite de mot de passe soit. Laissez vide pour utiliser le style par défaut. Les espaces réservés sont analysés.
 Affiche le message du jour après avoir affiché l'écran de connexion.
-Sonder les commandes injectées
-Sonde les commandes injectées au démarrage du shell du noyau.
 Afficher les détails du fichier dans la liste
 Affiche les brefs détails du fichier lors de la liste des fichiers
 Afficher les détails du fichier dans la liste FTP
@@ -1089,13 +890,9 @@ Ajouter de nouvelles connexions à la numérotation abrégée SFTP
 Affiche les détails du fichier SFTP lors de la liste des répertoires distants.
 Si activé, ajoute une nouvelle connexion à la numérotation abrégée SFTP.
 Délai d'expiration du ping
-Afficher des informations détaillées sur l'adaptateur
-Afficher les informations générales sur le réseau
 Télécharger le texte du pourcentage
 Télécharger le texte du pourcentage
 Combien de millisecondes attendre avant de déclarer le timeout ?
-Imprime les informations détaillées sur l'adaptateur, telles que les informations sur les paquets.
-Affiche les informations générales sur le réseau.
 Écrivez comment vous voulez que votre texte de pourcentage de téléchargement soit. Laissez vide pour utiliser le style par défaut. Les espaces réservés sont analysés. {0} pour la taille téléchargée, {1} pour la taille cible, {2} pour le pourcentage.
 Écrivez comment vous voulez que votre texte de pourcentage de téléchargement soit. Laissez vide pour utiliser le style par défaut. Les espaces réservés sont analysés. {0} pour la taille téléchargée, {1} pour la taille cible, {2} pour le pourcentage.
 Demander le mot de passe après le verrouillage
@@ -1215,16 +1012,12 @@ Caractère de cadre supérieur pour la bordure de notification
 Caractère de cadre inférieur pour la bordure de notification
 Caractère de cadre gauche pour la bordure de notification
 Caractère de cadre droit pour la bordure de notification
-Style des informations de la page de manuel
 Indique s'il faut afficher ce qui est écrit dans l'invite de saisie.
 Quel est le nombre minimum à choisir ?
 Quel est le nombre maximum à choisir ?
-Écrivez comment vous voulez que les informations de votre page de manuel soient. Laissez vide pour utiliser le style par défaut. Les espaces réservés sont analysés. {0} pour le titre du manuel, {1} pour la révision.
-La propriété {0} n'est trouvée sur aucun des modules.
 Démarrer la roue chromatique en mode couleurs vraies
 Si spécifié, il affichera une bannière de démarrage personnalisée avec prise en charge des espaces réservés. Vous pouvez utiliser {0} pour la version du noyau.
 Quelle variante de la langue actuelle est utilisée pour modifier les noms de mois, le calendrier, etc. ?
-Active la prise en charge de 255 couleurs.
 Active la prise en charge des couleurs vraies.
 Mot supprimé à la ligne {0}.
 Chaîne remplacée à la ligne {0}.
@@ -1253,7 +1046,6 @@ Taille du disque :
 Mémoire totale:
 Carte graphique:
 Modèle de disque :
-Culture de la langue actuelle
 Si vous êtes sûr d'avoir ouvert la bonne section, consultez ce message :
 Exécute une commande de serveur FTP
 Crypte une chaîne en utilisant CRC32
@@ -1278,9 +1070,6 @@ S'il est activé, le shell de messagerie affichera le nombre d'octets transmis l
 Fuseau horaire:
 Aujourd'hui, c'est {0}
 L'heure actuelle est {0}
-Couleur du séparateur de tableau
-Couleur de l'en-tête du tableau
-Couleur de la valeur du tableau
 Des réponses possibles
 Le fichier de mod n'est pas spécifié.
 Essayer d'installer un mod déjà installé. Mise à jour du module...
@@ -1302,7 +1091,6 @@ Vérifie si la chaîne traduisible existe dans les ressources KS
 Chaîne trouvée dans les ressources de localisation.
 Chaîne introuvable dans les ressources de localisation.
 Démarre le noyau en silence
-Injecte une commande pour démarrer à la prochaine connexion
 Démarre le noyau en mode sans échec, en désactivant tous les mods
 Comme le mode sans échec, mais désactive également le multi-utilisateur et certaines personnalisations
 Il n'y avait pas assez d'arguments.
@@ -1327,10 +1115,6 @@ Le format URI du site n'est pas valide.
 Paramétrer le site sur
 Les couleurs ne nécessitent pas de redémarrage, mais la plupart des paramètres nécessitent un redémarrage.
 Aucune aide pour l'argument "{0}".
-Appuyez sur A sur les commentaires haineux pour vous excuser. Appuyez sur T sur les commentaires d'amour pour remercier. Appuyez sur Q pour quitter le jeu.
-Vous vous êtes excusé pour un commentaire haineux ! Excellent!
-Excusé d'aimer le commentaire. Pas assez bon.
-Vous venez de remercier le haineux pour le commentaire haineux !
 Difficulté par défaut pour SpeedPress
 Délai d'expiration de la touche pour SpeedPress
 Sélectionnez votre difficulté préférée.
@@ -1351,10 +1135,8 @@ Vérifie tous les paramètres KS pour voir si les variables sont écrites correc
 Ces entrées de configuration contiennent des variables ou des énumérations non valides et doivent être corrigées :
 Fichier {0} introuvable
 Crée un tableau de variables avec les valeurs fournies
-Écrivez le numéro du paramètre à atteindre. Tout autre caractère signifie retour en arrière.
 Vérifie tous les numéros de ligne de texte de localisation pour voir s'ils sont tous égaux
 Incompatibilité de ligne dans
-Veuillez entrer un numéro d'utilisateur.
 Inclure les utilisateurs anonymes
 Inclure les utilisateurs désactivés
 Inclut les utilisateurs anonymes dans la liste
@@ -1367,9 +1149,7 @@ Afficher le dernier titre RSS lors de la connexion
 URL du titre RSS
 À chaque connexion, il affichera le dernier titre RSS à partir de l'URL du titre sélectionné.
 URL du titre RSS à utiliser lors de l'affichage du dernier titre. Il s'agit généralement de votre flux préféré.
-Dernières nouvelles:
 Impossible d'obtenir les dernières nouvelles.
-Couleur de l'option sélectionnée
 Afficher la trace de la pile en cas d'erreur du noyau
 S'il y a une erreur de noyau, choisissez d'imprimer ou non la trace de la pile sur la console.
 Enregistrer les paramètres sous
@@ -1388,9 +1168,6 @@ Délai d'étape en millisecondes
 Combien de millisecondes attendre avant de dessiner l'étape suivante ?
 Prochain intervalle de pourriture de la rampe
 Combien de millisecondes attendre avant de pourrir une extrémité de la rampe suivante ?
-Vérifier le quota de débogage
-Vérifions-nous si le système de débogage doit vérifier le quota avant d'écrire dans le débogueur ?
-Combien de millisecondes a-t-il vraiment fallu pour dormir ?
 Impossible d'ajouter un événement.
 Échec de la suppression d'un événement.
 Pas assez d'arguments fournis pour ajouter un événement.
@@ -1446,9 +1223,6 @@ Combien de blocs (jusqu'à 10) est le rayon d'explosion du feu d'artifice lorsqu
 Cette commande a les commutateurs ci-dessous qui changent son fonctionnement :
 Imprime les numéros de ligne qui suivent la ligne en cours d'impression
 Empêche l'impression des numéros de ligne
-Utilisez toujours la version translittérée
-Utilisez toujours la version traduite
-Forcer le changement de langue
 Indiquez que la réponse peut prendre plus d'un caractère
 Indiquez que la réponse ne peut prendre qu'un seul caractère
 Imprimer la question et les réponses sur une seule ligne
@@ -1463,23 +1237,15 @@ Commence le jeu en difficulté moyenne
 Démarre le jeu en difficulté difficile
 Démarre le jeu en difficulté très difficile
 Démarre le jeu en difficulté personnalisée. Veuillez noter que le délai d'attente personnalisé en millisecondes doit être écrit en argument.
-Affiche les informations système
-Affiche les informations sur le matériel
-Affiche les informations de l'utilisateur
-Affiche le message du jour
-Affiche le message du jour après la connexion
-Affiche toutes les informations
 Crée un répertoire qui contient le contenu du fichier ZIP
 Affiche toutes les villes disponibles
 Compression rapide
 Pas de compression
 Ne pas créer de répertoire de base dans l'archive
-Unité en ticks
 Se déconnecte honteusement du serveur
 Indique que le chemin cible est absolu
 Enregistre le fichier JSON, l'embellissant dans le processus
 Enregistre le fichier JSON, en le minimisant dans le processus
-Obtient le style de fin de ligne à partir du fichier texte
 Efface tous les événements déclenchés
 Activer le débogage des événements
 Active le débogage pour le système d'événements du noyau
@@ -1494,8 +1260,6 @@ La langue existe déjà et ne peut pas être écrasée.
 Échec de l'installation des langues personnalisées.
 Échec de la désinstallation des langues personnalisées.
 Échec de la désinstallation des langues personnalisées. Voir l'exception interne pour plus d'informations.
-Écrivez le mot de passe administrateur. Assurez-vous de ne pas utiliser ce compte à moins de savoir vraiment ce que vous faites.
-Vous devez écrire le mot de passe administrateur.
 Informations sur la licence
 Gérez vos langues
 Langue introuvable ou le fichier contient des caractères non valides.
@@ -1505,9 +1269,7 @@ Nom abrégé de la langue :
 Nom complet de la langue :
 Langue translittérable :
 Langue personnalisée :
-Nouvelle bannière de bienvenue
 Écran de démarrage élégant
-Affiche la nouvelle bannière de bienvenue rendue par Figlet
 Active l'écran de démarrage élégant au démarrage. Veuillez noter que cela désactivera l'invite d'arguments et testera le pré-démarrage du shell.
 Nom de l'éclaboussure
 Nom du splash parmi les splash disponibles implémentés dans le noyau.
@@ -1515,7 +1277,6 @@ MOTD par défaut généré.
 MAL par défaut généré.
 Compte système initialisé
 Utilisateurs initialisés
-Autorisations chargées
 Bienvenue!
 Démarrage du débogueur distant...
 Erreur de connexion au débogueur distant
@@ -1530,8 +1291,6 @@ On dirait que vous contournez la détection de la taille de la console. Les chos
 Pour avoir une meilleure expérience, redimensionnez la fenêtre de votre console tout en étant toujours sur cet écran. Appuyez sur n'importe quelle touche pour continuer...
 Votre console est trop petite pour fonctionner correctement :
 Police figlet de la bannière
-Imprime une chaîne sur la console en utilisant le type de couleur et l'impression de ligne avec le support Figlet
-Imprime une chaîne sur la console en utilisant le type de couleur et l'impression de ligne avec le format et la prise en charge de Figlet
 Afficher le nombre de commandes dans l'aide
 Afficher le nombre de commandes shell dans l'aide
 Afficher les commandes de mod comptent sur l'aide
@@ -1556,21 +1315,10 @@ Emplacement du texte de progression
 Sélectionnez votre emplacement de texte de progression préféré.
 Vous ne pouvez écrire que les chiffres.
 Appuyez sur "q" pour quitter.
-Téléchargement des noms...
-En raison de difficultés techniques, nous ne sommes pas en mesure de répertorier les propriétés de l'adaptateur sur les systèmes Unix.
 Active le mode débogage
-Demande d'arguments
 Activer le mode noir et blanc
 Rend la discothèque en noir et blanc. Cela vous fera vraiment mal aux yeux si c'était trop rapide, donc déconseillé si vous rencontrez une crise d'images rapides.
-Il semble que vous exécutiez une version non prise en charge. Il est fortement déconseillé d'utiliser cette version.
 Charger les couleurs actuelles
-Couleur d'option alternative
-Les utilisateurs comptent pour les commentaires d'amour ou de haine
-Combien d'utilisateurs doivent être dans la salle des commentaires d'amour ou de haine ?
-Répertorie les langues disponibles
-Langues disponibles:
-Arguments de ligne de commande :
-Arguments de ligne de commande de pré-démarrage :
 Ouvre la documentation de l'API mod pour la structure du code source dans sa forme la plus actuelle
 Valeur actuelle:
 Spécificateur de couleur hexadécimal non valide.
@@ -1597,7 +1345,6 @@ Le numéro d'octet n'est pas numérique.
 Le nombre d'octets de début spécifié ne doit pas être supérieur à la taille du fichier.
 Le nombre d'octets de fin spécifié ne doit pas être supérieur à la taille du fichier.
 Octets supprimés.
-Edite un fichier binaire
 Sélectionne le flux dans la liste de flux existante à partir de sources en ligne
 Téléchargement de la liste des flux...
 Échec du téléchargement de la liste de flux.
@@ -1636,14 +1383,9 @@ Les années d'âge minimum comptent
 Nombre maximal d'années d'âge
 Nombre minimum d'années d'âge à générer
 Nombre maximal d'années d'âge à générer
-> Type de cadre : {3}
 Page de manuel sans titre
 Historique des saisies activé
-Presse-papiers d'entrée activé
-Annulation d'entrée activée
 Si l'historique des entrées est activé ou non. Si cette option est activée, vous pouvez accéder aux commandes récemment saisies à l'aide des touches fléchées vers le haut ou vers le bas.
-Si le presse-papiers d'entrée est activé ou non.
-Si la fonction d'annulation d'entrée est activée ou non.
 Convertit les nombres RVB de couleur en hexadécimal.
 Convertit la représentation hexadécimale de la couleur en nombres RVB.
 Convertit la représentation hexadécimale de la couleur en nombres RVB au format KS.
@@ -1691,13 +1433,11 @@ Convertisseur d'unité
 Types d'unités disponibles et leurs unités :
 Jeu terminé
 Erreur inattendue
-La coque RAR
 Les commandes surlignées dans une autre couleur sont des commandes unifiées et sont disponibles dans chaque shell.
 Vérification des mises à jour...
 Version de téléchargement
 Version d'installation
 Retour en 2018...
-Vous ne pouvez pas revenir en arrière en 2018 sur .NET 6.0 !
 Utilisez PowerLine pour le rendu du vaisseau spatial
 Vitesse de jeu Meteor
 Que ce soit pour utiliser PowerLine pour rendre le vaisseau spatial ou pour utiliser le caractère standard supérieur à. Si vous souhaitez utiliser PowerLine avec Meteor, vous devez installer une police appropriée avec le support PowerLine.

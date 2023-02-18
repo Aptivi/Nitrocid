@@ -1,6 +1,3 @@
-Comandos disponibles: {0}
-La inyección de comandos ha sido cancelada.
-Los argumentos inyectados se programarán para ejecutarse en el próximo reinicio.
 Plantilla de color no válida {0}
 hwprobe: Su hardware será probado. Por favor espere ...
 CPU: uno o más de los núcleos de la CPU no pudieron ser probados. Mostrando información de todos modos ...
@@ -12,7 +9,6 @@ DOBLE PÁNICO: el tiempo de reinicio excede el máximo permitido {0} tiempo de r
 Pánico [{0}]: reinicio habilitado debido a que el nivel de error es {0}.
 Pánico [{0}]: tiempo de reinicio: {1} segundos, excede de 1 hora. Se establece en 1 minuto.
 DOBLE PÁNICO: Tipo de error {0} no válido.
-[{0}] dpanic: {1} - Reiniciando en {2} segundos ...
 Pánico [{0}]: reinicio deshabilitado debido a que el nivel de error es {0}.
 [{0}] pánico: {1} - Presione cualquier tecla para continuar usando el kernel.
 [{0}] pánico: {1} - Presione cualquier tecla para apagar.
@@ -20,27 +16,15 @@ Pánico [{0}]: {1} - Reiniciando en {2} segundos ...
 DOBLE PÁNICO: Error del núcleo: {0}
 Apagando ...
 Reiniciando ...
-Se está ejecutando otra instancia de Nitrocid KS. Apagado en caso de interferencia.
-Error al agregar usuario a las listas de permisos: tipo no válido {0}
-Error al agregar usuario a las listas de permisos: usuario inválido {0}
-Error al eliminar el usuario de las listas de permisos: tipo no válido {0}
-Ya has iniciado sesión.
-Error al eliminar el usuario de las listas de permisos: usuario no válido {0}
-Ha encontrado un error, o el permiso que intentó agregar o eliminar ya está hecho, u otro error.
 Error {0}: {1}
-Ha encontrado un error o el permiso que intentó editar para un nuevo usuario ha fallado.
-Nombres de usuario disponibles: {0}
 Nombre de usuario: 
 No se permiten espacios.
 Caracteres especiales no están permitidos.
 Contraseña de {0}: 
 Contraseña incorrecta.
-El usuario está deshabilitado.
-Nombre de usuario incorrecto.
 Error al intentar analizar los marcadores de posición. {0}
 Error al intentar agregar el nombre de usuario.
 usrmgr: Creando nombre de usuario {0} ...
-Nombre de usuario en blanco.
 Usuario {0} no encontrado.
 El usuario {0} no puede ser eliminado.
 El usuario {0} ya ha iniciado sesión. Cerrar sesión e iniciar sesión como otro administrador.
@@ -91,24 +75,14 @@ Cambia el directorio remoto para descargar o subir a
 Borra el archivo remoto del servidor
 Desconecta del servidor
 Descarga el archivo remoto al directorio local usando binario o texto
-Muestra la pantalla de ayuda
 Lista del directorio local
 Lista del directorio remoto
 Carga el archivo local al directorio remoto usando binario o texto
-Error al obtener las propiedades para el adaptador {0}
-Número de adaptador:
-Nombre del adaptador:
-Unidad de transmisión máxima: {2} Unidades
-DHCP habilitado:
-Paquetes no unicast:
-Paquetes de unidifusión:
-Error de paquetes entrantes / salientes:
 Alias ​​no puede ser el mismo nombre que un comando.
 Comando no encontrado alias a {0}.
 Ahora puede ejecutar "{0}" como comando: "{1}".
 El alias {0} no se encuentra eliminado.
 Modo no válido {0}.
-Los argumentos inyectados, {0}, se programarán para ejecutarse en el próximo reinicio.
 No hubo suficientes argumentos. Vea abajo para uso:
 Directorio {0} no encontrado
 Nombre de host en blanco.
@@ -122,18 +96,7 @@ El nuevo nombre que ingresaste ya está encontrado.
 {0} no se encuentra.
 Configuración recargada. Es posible que deba reiniciar el kernel para que algunos cambios surtan efecto.
 Uno o más de los colores no son válidos.
-Los colores no están disponibles. Activar shell coloreado en la configuración del kernel.
 Protector de pantalla {0} no encontrado.
-Versión del kernel:
-Modo de depuración:
-Concha de color:
-Argumentos en el arranque:
-Comando de ayuda simplificado:
-MOTD en el inicio de sesión:
-Hora / Fecha en la esquina:
-Nombre de usuario actual:
-Nombre de host actual:
-Nombres de usuario disponibles:
 Error al intentar ejecutar el comando
 Directorio de cambios
 Cambia la contraseña para el usuario actual
@@ -144,35 +107,27 @@ Lista de contenidos de carpetas / archivos en la carpeta actual
 Bloquea tu pantalla con una contraseña
 Cierra la sesión
 Crea un directorio
-Lista información sobre todas las interfaces disponibles
 Reinicia su computadora (ADVERTENCIA: No se sincroniza, porque no es un núcleo final)
 Vuelve a cargar el archivo de configuración que se edita.
 Guarda tu pantalla de quemados
 Configura los salvapantallas del kernel
-Configura temas del núcleo
 Muestra fecha y hora
 Muestra fecha y hora en zonas
 El núcleo se cerrará
-Información del sistema
-* Puedes usar varios comandos usando los dos puntos entre los comandos.
 Uso:
-donde los argumentos serán {0}
 donde customsaver será
 Hubo un error en el shell.
 No tienes permiso para usar {0}
 Mensaje de shell: el comando solicitado {0} no se puede ejecutar en modo de mantenimiento.
 Mensaje de shell: el comando solicitado {0} no se encuentra. Ver 'ayuda' para los comandos disponibles.
-Mensaje de shell: el comando {0} no se puede ejecutar al iniciar sesión.
 Error al intentar ejecutar el comando.
 - Tiempo de {0}: {1}
 ejecutándose en {0}
 No estás autorizado para obtener información para {0}.
 Este comando está obsoleto y se eliminará en una versión futura.
 No tiene autorización para cambiar la contraseña de {0} porque el objetivo era un administrador.
-usrmgr: el nombre de usuario {0} ya se encuentra
 Borra todo en el registro de depuración
 Idioma inválido
-Cambia el idioma
 ----------------------------- volcado de pánico del kernel ------------------------------
 >> Información de pánico <<
 > Descripción: {0}
@@ -201,7 +156,6 @@ Enumera los dispositivos de depuración conectados
 Dispositivo de depuración {0} no encontrado.
 Dispositivo {0} desconectado.
 Depure la escucha en todas las direcciones utilizando el puerto {0}.
-No hay argumentos especificados. Sugerencia: especifique varios argumentos separados por espacios
 Alias ya encontrado: {0}
 Registro de depuración eliminado. Todos los dispositivos de depuración conectados aún pueden ver mensajes.
 Error al eliminar el registro de depuración: {0}
@@ -210,19 +164,11 @@ Especifique la dirección
 La zona horaria está especificada incorrectamente.
 Selección de perfil no válida
 Intentando conectarse a {0} con el perfil {1} ...
-Error al obtener las propiedades de IPv6 para el adaptador {0}. Continuo...
-Información de IPv4:
-Información de IPv6:
-El adaptador {0} no es compatible con IPv6. Continuo...
-El adaptador {0} no es compatible con IPv4. La sonda falló.
-Parece que estabas ejecutando la versión de desarrollo del kernel. Si bien puede ver los aspectos, se actualiza con frecuencia y puede introducir errores. Se recomienda que permanezca en la versión estable.
 El idioma que ha seleccionado contiene dos variantes. Seleccione uno:
 Elección inválida. Inténtalo de nuevo.
 No está autorizado para establecer el directorio actual en {0}: {1}
 La ruta que ha especificado es demasiado larga.
 El recopilador de información de volcado se bloqueó al intentar obtener información sobre {0}: {1}
-Error al intentar configurar MOTD / MAL: {0}
-Error al intentar obtener MOTD / MAL: {0}
 Error al intentar iniciar el protector de pantalla, debido a una operación no válida.
 La recarga no está permitida en modo seguro.
 No se permiten las modificaciones de análisis en modo seguro.
@@ -237,15 +183,7 @@ Calcula sumas de archivos.
 Te lleva a nuestra Wiki de GitHub.
 Algoritmo de cifrado no válido
 Habilita o deshabilita la depuración remota.
-Vea si puede deletrear palabras correctamente a tiempo
 Vea si puede resolver ecuaciones matemáticas a tiempo
-Responda a los comentarios de amor u odio.
-Si alguien hizo este comentario a tu video:
-¿Cómo responderías?
-Selección invalida. Pasando al siguiente comentario ...
-¡Excelente! {0} apreciará tu agradecimiento.
-Deletreado perfectamente!
-Deletreado incorrectamente.
 Resuelto perfectamente!
 Resuelto incorrectamente
 RPC ya se está ejecutando.
@@ -256,45 +194,14 @@ Ingrese la contraseña para {0}:
 SSH desconectado.
 No se puede establecer la página de códigos. Es posible que el idioma no se muestre correctamente.
 Depuración no habilitada.
-¡Gracias! Esto es interesante.
-Todos apoyarán tu video para esto.
-Te di el archivo especial en tu correo electrónico para tu próximo video.
-Escuchen, enemigos, él está tratando de ayudarnos, no estafa.
-No sé cuánto les agradezco a mí y a mis amigos por este video.
-Te amo por este video
-Sigue adelante, no te detengas.
-¡Te ayudaré a llegar a 1 millón de suscriptores!
-Mis amigos arreglaron su computadora por tu culpa.
-Broma impresionante! Apagué la PC de mi enemigo.
-Para los que odian: DEJEN DE ODIARLO
-Para los que odian: LLEGAR AL TRABAJO
-Nadie lo notará ahora gracias a su guía de ocultación de objetos.
-Dejaré de ver tus videos. Suscriptor perdido.
-¿Que es esto? Esto no está claro.
-¡Este video es el peor!
-¡Todos denuncien este video!
-¡Mis amigos están furiosos contigo!
-Los amantes ahora te odiarán por esto.
-Tu amigo te odiará por esto.
-Esta broma me hizo darme de baja.
-Misión fallida, Respeto -, Suscriptor -
-Deja de hacer este tipo de video !!!
-¡Vuelve a tu trabajo, tus videos son los peores!
-Nos perjudicamos en este video.
 Muestra todas las notificaciones recibidas.
 Descarta una notificación
 Notificación rechazada con éxito.
-Paquetes (entrantes):
-Paquetes (salientes):
-Errores en paquetes recibidos:
-Propiedades generales de IPv6
-Propiedades generales de IPv4
 Ejecuta un comando de forma remota en una PC remota
 - Etapa 1: inicialización del sistema
 - Etapa 2: detección de hardware
 - Etapa 3: detección de modificaciones y salvapantallas
 - Etapa 4: Iniciar sesión
-Parece que estabas ejecutando la versión candidata de lanzamiento. Se recomienda que permanezca en la versión estable.
 Tipo no válido {0}.
 Tamaño: {0}
 El directorio {0} ya existe.
@@ -313,7 +220,6 @@ Introducir la contraseña:
 Error al conectarse a {0}: {1}
 Conectando a {0} ...
 Autenticando ...
-Lista de comandos
 Descarga mensajes y los enumera
 Abre un mensaje
 La página no es un valor numérico.
@@ -328,10 +234,7 @@ Preparando perfiles ... Podría tomar varios minutos ...
 Error al intentar ejecutar el script: {0}
 Escribe texto en la consola
 Hace elecciones de usuario
-Pitido en 'n' Hz y tiempo en 'n' milisegundos
 donde <$variable> es cualquier variable que se utilizará para almacenar la respuesta
-La frecuencia debe ser numérica. Si es numérico, asegúrese de que sea >= 37 y <= 32767.
-El tiempo debe ser numérico.
 donde <answers> son respuestas con una letra de la pregunta separadas en barras
 Error al intentar conectarse al servidor SSH: {0}
 Permite al usuario ingresar la entrada
@@ -346,7 +249,6 @@ Durante la validación del certificado, hay errores de certificado. Es posible q
 ¿Estás seguro de que quieres conectarte?
 Respuesta invalida. Inténtalo de nuevo.
 La marcación rápida está vacía. Conéctese a un servidor para agregarle una dirección.
-La marcación rápida no existe. Conéctese a un servidor para agregarle una dirección.
 Ingrese la dirección del servidor IMAP y el puerto (<dirección> o <dirección>: [puerto]):
 Ingrese la dirección del servidor SMTP y el puerto (<dirección> o <dirección>: [puerto]):
 Envía un mensaje a una dirección
@@ -360,12 +262,10 @@ Elimina un mensaje
 Elimina todos los mensajes del destinatario
 Mensaje {0} de {1} eliminado de {2}. Quedan {3} mensajes por analizar.
 Mensaje {0} de {1} eliminado de la bandeja de entrada. Quedan {2} mensajes por analizar.
-Edita un archivo de texto
 Crea un nuevo archivo
 El archivo ya existe.
 Error al intentar crear un archivo: {0}
 Fallo al abrir el archivo. Saliendo de la carcasa ...
-Enumera los comandos disponibles.
 Imprime el contenido del archivo con números de línea en la consola
 Agrega una nueva línea con texto al final del archivo
 Elimina el número de línea especificado.
@@ -378,12 +278,10 @@ Corriendo en modo seguro. Saltando la etapa ...
 >> Depuración remota y chat: versión
 >> Su dirección es {0}.
 >> Tu nombre es {0}.
-Comando {0} no encontrado. Use "/help" para ver la lista.
 Índice {0} inválido. Hay {1} trazas de pila. El índice está basado en cero, así que intenta restar por 1.
 Sin rastro de pila
 Muestra el último seguimiento de pila en la excepción
 Muestra el nombre de usuario actual en la sesión
-Te desconecta del depurador
 Desbloquee un dispositivo de depuración por dirección IP
 Bloquear un dispositivo de depuración por dirección IP
 {0} ahora puede unirse a la depuración remota nuevamente.
@@ -395,13 +293,10 @@ Guardar ajustes
 Salida
 La opción {0} especificada no es válida.
 La respuesta debe ser numérica.
-Solicitud de argumentos en el arranque
-Activador del modo de mantenimiento
 Buscar actualizaciones al iniciar
 Sonda silenciosa
 Mostrar MOTD al iniciar sesión
 Limpiar la pantalla al iniciar sesión
-Concha coloreada
 Comando de ayuda simplificado
 Puerto de depuración
 Descargar tiempos de reintento
@@ -410,32 +305,25 @@ Registrar la dirección IP de FTP
 Devuelve solo el primer perfil FTP
 Mostrar hora / fecha en la esquina superior derecha
 Tiempo de espera del salvapantallas en ms
-Cuota de tamaño de depuración en bytes
 Modo de análisis de tamaño
 Marquesina al inicio
 Hora y fecha largas
 Mostrar archivos ocultos
 Se ingresó una sección no válida. Por favor regrese.
 Regresa...
-Habilitar
-Inhabilitar
 Escribe un puerto depurador remoto. Debe ser numérico y no debe estar ya en uso. De lo contrario, el depurador remoto no podrá abrir el puerto.
 Escriba cuántas veces el comando "" get "" debe reintentar descargas fallidas. Debe ser numérico.
 Escriba cuándo iniciar el protector de pantalla después de milisegundos especificados. Debe ser numérico.
-Escriba cuántos bytes puede almacenar el registro de depuración. Debe ser numérico.
 Puede que la respuesta no sea negativa.
 La respuesta no es válida. Verifique para asegurarse de que la respuesta sea numérica para las entradas de configuración que necesitan números como respuestas.
 La variable {0} no se encuentra en ninguno de los módulos.
 Cambia la configuración del kernel
-Activar 255 colores
 Cambiar de cultura al cambiar de idioma
 Texto mostrado
 Escriba el texto que desee que se muestre. Cuanto más corto, mejor.
 Error al cargar {0}
-Error al ejecutar el comando de depuración remota {0}: {1}
 Agrega usuarios
 Agrega alias a los comandos
-Inyecta argumentos al kernel (es necesario reiniciar)
 Cambia el nombre de host
 Cambia MAL, el MOTD después de iniciar sesión
 Cambia MOTD, el mensaje del día
@@ -450,13 +338,11 @@ No se pudo establecer el idioma.
 Error al intentar ignorar la notificación.
 usrmgr: no se pudo crear el nombre de usuario {0}: {1}
 No se pudo cambiar el nombre del usuario. {0}
-Una de las listas de permisos no contiene el nombre de usuario {0}.
 Usuario no encontrado
 No se pudo cambiar la contraseña del nombre de usuario: {0}
 No se pudo encontrar el archivo que coincida con la cadena "{0}": {1}
 Error al descargar el archivo {0}.
 No se pudieron enumerar los archivos remotos: {0}
-¿Está seguro de que desea eliminar {0} <y / n>?
 Eliminando {0} ...
 {0} no se encuentra en el servidor.
 Todos los correos enviados por {0} se eliminan correctamente.
@@ -483,7 +369,6 @@ Humedad: {0}
 Puede obtener su propia clave API en https://home.openweathermap.org/api_keys.
 Siempre puede consultar http://bulk.openweathermap.org/sample/city.list.json.gz para obtener la lista de ciudades con sus ID.
 Unidad preferida para temperatura
-Configura el kernel para que le solicite un argumento al arrancar.
 Activa el modo de mantenimiento. Esto deshabilita varias cuentas.
 Cada inicio, buscará actualizaciones.
 Al cambiar de idioma, cambie los nombres de los meses, el calendario, etc.
@@ -491,7 +376,6 @@ Mantenga los mensajes de prueba de hardware en silencio.
 Muestra el mensaje del día antes de mostrar la pantalla de inicio de sesión.
 Limpiar la pantalla antes de mostrar la pantalla de inicio de sesión.
 Muestra los usuarios disponibles si está habilitado.
-Da soporte al color del kernel
 Comando de ayuda simplificado para todos los proyectiles
 Si se registra o no el nombre de usuario de FTP.
 Si se registra o no la dirección IP de FTP.
@@ -510,7 +394,6 @@ Debe activar el modo de depuración antes de poder borrar el registro de depurac
 Abra "mail" para verlos.
 Elimina un directorio o un archivo
 No se puede eliminar {0} porque no existe.
-Presione CTRL + C para salir.
 Proporciona información sobre un archivo.
 Proporciona información sobre un directorio.
 No se puede obtener información sobre un directorio inexistente.
@@ -582,16 +465,7 @@ Abre una carcasa de prueba
 No se pudo iniciar "{0}": {1}
 Mostrar vista previa del mensaje de correo
 Cuando enumere los mensajes de correo, muestre la vista previa del cuerpo.
-Color de entrada
-Color de la licencia
-Color de error de kernel continuable
-Color de error de kernel incontinible
-Color del nombre de host
-Color del nombre de usuario
 Color de fondo
-Color de texto neutro
-Color del escenario
-Color de error
 Intentando acceder a una ruta no válida.
 Borra el archivo de texto
 Sale del editor de texto.
@@ -621,11 +495,7 @@ Guardar tema en el directorio actual
 Guardar tema en otro directorio ...
 Seleccione el color con las teclas "<-" y "->". Presione ENTER para salir. Presione "i" para insertar el número de color manualmente.
 Seleccione el color con las teclas "<-" y "->". Utilice las teclas de flecha hacia arriba y flecha hacia abajo para seleccionar entre los rangos de color. Presione ENTER para salir. Presione "i" para insertar el número de color manualmente.
-¡Bienvenido al kernel! - Versión {0}
-Color de advertencia
-Color de la opción
 Ingrese el número de color de 0 a 255:
-Utilice "hwinfo" para obtener información ampliada sobre el hardware.
 Imprime información de hardware
 Nombre del procesador:
 Bits del procesador:
@@ -635,9 +505,6 @@ GPU: no se pudieron probar una o más de las tarjetas gráficas. Mostrando infor
 >> ¡Bienvenidos! Esta es la primera vez que ingresa a la depuración y el chat remotos. Utilice "/ register <nombre>" para registrarse.
 El dispositivo ya existe.
 Hay tal dispositivo.
-Establece el nombre de usuario del dispositivo
-Ya estás registrado.
-¡Hola, {0}!
 Imprime el contenido del archivo en la consola
 O pase "listcities" a este comando.
 La entrada ya existe.
@@ -645,7 +512,6 @@ Envuelve la salida de la consola
 El comando no se puede envolver. Estos comandos se pueden envolver:
 Extrae un archivo ZIP
 Crea un archivo ZIP
-Construido en {0}
 Error al descargar datos de depuración
 Hay un error al descargar los datos de depuración. Comprueba tu conexión a Internet.
 No se pudo finalizar el mod {0}: {1}
@@ -659,12 +525,8 @@ Envuelve las salidas de la lista si parece demasiado larga para la geometría de
 Guardar tema en el directorio actual como ...
 Guardar tema en otro directorio como ...
 Especifique el nombre del tema:
-El usuario {0} se ha agregado a la lista "{1}".
-El usuario {0} se ha eliminado de la lista "{1}".
-Modo no válido {0}
 Cargar tema desde temas prediseñados ...
 Especifique el nombre del archivo del tema sin la extensión .json:
-Abre un archivo ZIP
 Muestra todos los archivos dentro del archivo.
 Extrae un archivo a un directorio específico o un directorio actual
 Cambia el directorio de archivos
@@ -672,11 +534,7 @@ El directorio {0} no existe
 El directorio de archivo {0} no existe
 Número máximo de posiciones
 ¿Cuántas posiciones se encienden antes de atenuar?
-Color de entrada de lista
-Color del valor de lista
 Se conecta a un servidor SSH para ejecutar un comando.
-Especificador de color no válido. Asegúrese de que esté en el formato correcto, lo que significa un número de 0 a 255 si usa 255 colores o una secuencia VT si usa color verdadero de la siguiente manera:
-Error en el shell de prueba: {0}
 Establece una variable en un valor en un script
 Un mensaje de notificación de errores.
 Hubo un error en el shell de FTP:
@@ -694,15 +552,6 @@ El archivo de clave {0} no existe.
 Error al intentar agregar la clave privada:
 Presione "t" para cambiar al modo de 255 colores.
 Presione "t" para cambiar al modo de color verdadero.
-Parece que no tienes ningún usuario excepto root. Esto es malo. Te guiaremos sobre cómo crear uno.
-Escribe tu nombre de usuario.
-Debes escribir tu nombre de usuario.
-Escribe tu contraseña.
-Debes escribir tu contraseña.
-Seleccione el tipo de cuenta.
-Administrador: este tipo de cuenta tiene la mayor potencia en el kernel, lo que le permite utilizar programas de administración del sistema.
-Usuario normal: este tipo de cuenta está un poco más restringido que los administradores.
-¡Felicidades! ¡Has creado una nueva cuenta! Para finalizar, inicie sesión como su nueva cuenta.
 mod: No se detectaron mods.
 Comandos generales:
 Comandos de mod:
@@ -712,33 +561,21 @@ Directorios de búsqueda
 Grupo de caminos separados por dos puntos. Funciona igual que PATH. Escriba una ruta completa a una carpeta o un nombre de carpeta. Cuando haya terminado, escriba "q". Escriba un signo menos junto a la ruta para eliminar un directorio existente.
 Sin comandos de modificación.
 Sin comandos de alias.
-El valor del color está fuera del rango de 0-255.
 No se encuentra el comando wrappable.
 Consulta una palabra en una línea específica o en todas las líneas.
 {0} de {1} descargado.
-Imprime una cadena en la consola usando el tipo de color y la impresión de líneas
-Imprime una cadena en la consola usando tipo de color e impresión de línea con soporte de formato
-Imprime una cadena para depurar
-Imprime una cadena para depurar con soporte de formato
 Prueba la facilidad de error del kernel
 Prueba la función de error del kernel con soporte de formato
 Prueba la traducción de una cadena que existe en recursos a un idioma específico
 Imprime una cadena en la consola y analiza los marcadores de posición encontrados
 Prueba la facilidad de expresión regular
 Inicia todas las modificaciones
-Detiene todas las modificaciones
-Habilita o deshabilita la depuración
-Habilita o deshabilita la depuración remota
 Prueba la secuencia VT para 255 colores
 Prueba la secuencia VT para ver el color verdadero
 Envía una notificación para probar el receptor
 Prueba la fecha de impresión usando diferentes calendarios
 Muestra todas las páginas de códigos compatibles
-¿Qué variables del compilador están habilitadas en la aplicación?
-Pruebas que plantean el evento específico
 Pruebas que prueban el hardware
-Sale del shell de prueba e inicia el kernel.
-Sale del shell de prueba y apaga el kernel.
 Guarda el directorio actual en el archivo de configuración del kernel
 Prueba el escritor de listas con la cadena y la matriz de cadenas
 Prueba el escritor de listas con la matriz de enteros y enteros
@@ -850,7 +687,6 @@ Personaje eliminado.
 ¡Bienvenido a Configuración!
 Error al ejecutar el comando SSH
 Error en el shell SSH
-Información de la aplicación
 Prueba el escritor del diccionario con la cadena y la matriz de cadenas
 Prueba el escritor del diccionario con la matriz char y char
 Prueba el escritor del diccionario con la matriz de enteros y enteros
@@ -860,21 +696,15 @@ Diccionario de enteros normal:
 Diccionario de enteros de matriz:
 Diccionario char normal:
 Diccionario de caracteres de matriz:
-¡Bienvenido a Test Shell!
 Muestra el progreso en las operaciones del sistema de archivos
 Muestra qué archivo se está procesando durante las operaciones del sistema de archivos
 donde será HardwareType
 El tipo de hardware {0} no está probado o no es válido.
 El tipo de hardware {0} aún no se ha probado. Si está seguro de que está probado, reinicie el kernel con la depuración habilitada.
 Particiones no analizadas para listar.
-Imprime un separador
-Imprime un separador con soporte de formato
-Imprime un separador con soporte de color
-Imprime un separador compatible con colores y formatos.
 Siempre centrado
 Escriba el texto que desee que se muestre.
 Si el texto que se muestra en el recuadro siempre está centrado.
-No se encontró el argumento {0} para inyectar.
 El protector de pantalla experimentó un error al mostrar: {0}. Presiona cualquier tecla para salir.
 Avance...
 Así es como se verá su tema:
@@ -891,7 +721,6 @@ Ruta del archivo Mod:
 Versión de la pieza:
 Cantidad mínima de argumentos requeridos:
 ¿Se requieren argumentos?
-¿Comando envolvente?
 ¿Configurando la variable de shell?
 ¿No se puede ejecutar en modo de mantenimiento?
 ¿Obsoleto?
@@ -900,7 +729,6 @@ Probado con éxito {0}.
 Sonda detallada
 Haga que los mensajes de sondeo de hardware sean un poco locuaces.
 > No hay información sobre marcos.
-Necesitas escribir tu nombre.
 Embellece el archivo JSON
 No se encontró la categoría de configuración {0}.
 No se encontró la entrada de configuración {0}.
@@ -949,10 +777,6 @@ Esta página de manual necesita trabajo para:
 No se encontró la página manual {0}.
 Mod manual
 Argumentos del kernel disponibles:
-Presione "q" si ha terminado.
-Varios argumentos del núcleo se pueden separar con comas sin espacios, por ejemplo:
-Los comandos inyectados múltiples se pueden separar con dos puntos con espacios, por ejemplo:
-No se encuentra el argumento solicitado {0}.
 Error irrecuperable en el argumento:
 Cifra una cadena usando SHA512
 Cifra una cadena usando SHA384
@@ -977,31 +801,12 @@ Agrega una nueva propiedad al final del archivo JSON
 Elimina una propiedad del archivo JSON
 Sale del shell JSON sin guardar los cambios.
 Guarda el archivo JSON
-Abre el shell JSON
 Imprime el archivo JSON
 Siguiente intervalo de rampa
 ¿Cuántos milisegundos hay que esperar antes de llenar la siguiente rampa?
-Color del título de la notificación
-Color de la descripción de la notificación
-Color de progreso de notificación
-Color de error de notificación
-color de la pregunta
-color de exito
-Color de dólar de usuario
-color de la punta
-Color del texto separador
-Color del separador
-Color del título de la lista
-Color de advertencia de desarrollo
-Color de tiempo de etapa
-color de progreso
-Color de la opción trasera
 Dibujar borde de notificación
 Cubre la notificación con el borde.
 Póngase en contacto con el proveedor del mod para actualizar el mod a la versión compatible.
-Color de borde de prioridad baja
-Color de borde de prioridad media
-Color de borde de alta prioridad
 Envía una notificación de progreso para probar el receptor
 Prueba la rueda de color
 Muestra la hora del núcleo local
@@ -1020,13 +825,11 @@ Agrega un mod a la lista negra
 Elimina un mod de la lista negra
 Hora y fecha en UTC: {0}
 Mostrar información de la aplicación durante el arranque
-Analizar argumentos de la línea de comandos
 Mostrar tiempos de finalización de etapa
 Iniciar modificaciones del kernel en el arranque
 Mostrar la hora actual antes de iniciar sesión
 Notificar por cualquier falla durante el arranque
 Muestra información breve sobre la aplicación en el arranque.
-Analiza los argumentos de la línea de comandos en el arranque.
 Muestra cuánto tiempo tardó el núcleo en terminar una etapa.
 Inicie automáticamente las modificaciones del kernel en el arranque.
 Muestra la hora actual, la zona horaria y la fecha antes de iniciar sesión.
@@ -1036,8 +839,6 @@ Estilo de solicitud de contraseña
 Escribe cómo quieres que sea tu indicador de inicio de sesión. Déjelo en blanco para usar el estilo predeterminado. Los marcadores de posición se analizan.
 Escribe cómo quieres que sea tu solicitud de contraseña. Déjelo en blanco para usar el estilo predeterminado. Los marcadores de posición se analizan.
 Muestra el mensaje del día después de mostrar la pantalla de inicio de sesión.
-Comandos inyectados con sonda
-Sondea los comandos inyectados al comienzo del shell del kernel.
 Mostrar detalles del archivo en la lista
 Muestra los detalles breves del archivo mientras enumera los archivos
 Mostrar detalles del archivo en la lista de FTP
@@ -1089,13 +890,9 @@ Agregar nuevas conexiones a la marcación rápida SFTP
 Muestra los detalles del archivo SFTP mientras enumera los directorios remotos.
 Si está habilitado, agrega una nueva conexión a la marcación rápida SFTP.
 Tiempo de espera de ping
-Mostrar información detallada del adaptador
-Mostrar información general de la red
 Descargar texto de porcentaje
 Subir texto de porcentaje
 ¿Cuántos milisegundos hay que esperar antes de declarar el tiempo de espera?
-Imprime la información completa del adaptador, como la información del paquete.
-Muestra la información general sobre la red.
 Escribe cómo quieres que sea tu texto de porcentaje de carga. Déjelo en blanco para usar el estilo predeterminado. Los marcadores de posición se analizan. {0} para el tamaño subido, {1} para el tamaño objetivo, {2} para el porcentaje.
 Escribe cómo quieres que sea el texto de tu porcentaje de descarga. Déjelo en blanco para usar el estilo predeterminado. Los marcadores de posición se analizan. {0} para el tamaño descargado, {1} para el tamaño objetivo, {2} para el porcentaje.
 Pedir contraseña después de bloquear
@@ -1215,16 +1012,12 @@ Carácter de marco superior para borde de notificación
 Carácter de marco inferior para borde de notificación
 Carácter de marco izquierdo para borde de notificación
 Carácter de marco derecho para borde de notificación
-Estilo de información de página manual
 Ya sea para mostrar lo que está escrito en el indicador de entrada.
 ¿Cuál es el número mínimo para elegir?
 ¿Cuál es el número máximo a elegir?
-Escribe cómo quieres que sea la información de tu página de manual. Déjelo en blanco para usar el estilo predeterminado. Los marcadores de posición se analizan. {0} para título manual, {1} para revisión.
-La propiedad {0} no se encuentra en ninguno de los módulos.
 Inicie la rueda de colores en el modo de color verdadero
 Si se especifica, mostrará un banner de inicio personalizado con soporte de marcador de posición. Puede usar {0} para la versión del kernel.
 ¿Qué variante del idioma actual se está utilizando para cambiar los nombres de los meses, el calendario, etc.?
-Activa el soporte de 255 colores.
 Activa el soporte de color verdadero.
 Palabra eliminada en la línea {0}.
 Cadena reemplazada en la línea {0}.
@@ -1253,7 +1046,6 @@ Tamaño del disco:
 Memoria total:
 Tarjeta grafica:
 Modelo de disco:
-Cultura de la lengua actual
 Si está seguro de haber abierto la sección correcta, consulte este mensaje:
 Ejecuta un comando de servidor FTP
 Cifra una cadena usando CRC32
@@ -1278,9 +1070,6 @@ Escribe cómo quieres que sea el estilo de progreso de tu transferencia de corre
 Zona horaria:
 hoy es {0}
 La hora actual es {0}
-Color del separador de mesa
-Color del encabezado de la tabla
-Color del valor de la tabla
 Respuestas posibles
 El archivo de modificación no está especificado.
 Intentando instalar un mod ya instalado. Actualizando mod...
@@ -1302,7 +1091,6 @@ Comprueba si la cadena traducible existe en los recursos de KS
 Cadena encontrada en los recursos de localización.
 Cadena no encontrada en los recursos de localización.
 Inicia el kernel silenciosamente
-Inyecta un comando para iniciar en el próximo inicio de sesión
 Inicia el kernel en modo seguro, deshabilitando todas las modificaciones.
 Me gusta el modo seguro, pero también deshabilita el modo multiusuario y algunas personalizaciones
 No hubo suficientes argumentos.
@@ -1327,10 +1115,6 @@ El formato del URI del sitio no es válido.
 Configuración del sitio para
 Los colores no requieren un reinicio, pero la mayoría de las configuraciones requieren un reinicio.
 No hay ayuda para el argumento "{0}".
-Presiona A en los comentarios de odio para disculparte. Presione T en los comentarios de amor para agradecer. Presiona Q para salir del juego.
-¡Te has disculpado por un comentario de odio! ¡Excelente!
-Me disculpé por el comentario de amor. No es suficiente.
-¡Acabas de agradecer al hater por el comentario de odio!
 Dificultad predeterminada para SpeedPress
 Tiempo de espera de pulsación de tecla para SpeedPress
 Selecciona tu dificultad preferida.
@@ -1351,10 +1135,8 @@ Comprueba todas las configuraciones de KS para ver si las variables están escri
 Estas entradas de configuración tienen variables o enumeraciones no válidas y deben corregirse:
 Archivo {0} no encontrado
 Crea una matriz de variables con los valores proporcionados.
-Escriba el número de la configuración para ir. Cualquier otro carácter significa volver atrás.
 Comprueba todos los números de línea de texto de localización para ver si todos son iguales
 Desajuste de línea en
-Por favor, introduzca un número de usuario.
 Incluir usuarios anónimos
 Incluir usuarios deshabilitados
 Incluye los usuarios anónimos en la lista.
@@ -1367,9 +1149,7 @@ Mostrar el último titular RSS al iniciar sesión
 URL del título RSS
 Cada inicio de sesión, mostrará el último titular RSS de la URL del titular seleccionado.
 URL del título RSS que se utilizará cuando se muestre el título más reciente. Este suele ser tu feed favorito.
-Últimas noticias:
 Error al obtener las últimas noticias.
-Color de la opción seleccionada
 Mostrar seguimiento de pila en error de kernel
 Si hay algún error del kernel, elija si desea o no imprimir el seguimiento de la pila en la consola.
 Guardar configuración como
@@ -1388,9 +1168,6 @@ Retardo de etapa en milisegundos
 ¿Cuántos milisegundos esperar antes de dibujar la siguiente etapa?
 Siguiente intervalo de podredumbre de rampa
 ¿Cuántos milisegundos hay que esperar antes de que se pudra el extremo de la siguiente rampa?
-Comprobar la cuota de depuración
-¿Verificamos si el sistema de depuración necesita verificar la cuota antes de escribir en el depurador?
-¿Cuántos milisegundos tardó realmente en dormirse?
 No se pudo agregar un evento.
 No se pudo eliminar un evento.
 No se proporcionaron suficientes argumentos para agregar un evento.
@@ -1446,9 +1223,6 @@ Radio de explosión de fuegos artificiales
 Este comando tiene los siguientes interruptores que cambian su funcionamiento:
 Imprime los números de línea que siguen a la línea que se está imprimiendo
 Evita imprimir los números de línea.
-Utilice siempre la versión transliterada
-Utilice siempre la versión traducida
-Forzar cambio de idioma
 Indicar que la respuesta puede tomar más de un carácter
 Indicar que la respuesta puede tomar un solo carácter
 Imprime la pregunta y las respuestas en una línea
@@ -1463,23 +1237,15 @@ Comienza el juego en dificultad media.
 Comienza el juego en dificultad difícil.
 Comienza el juego en dificultad muy difícil.
 Inicia el juego en dificultad personalizada. Tenga en cuenta que el tiempo de espera personalizado en milisegundos debe escribirse como argumento.
-Muestra la información del sistema.
-Muestra la información del hardware.
-Muestra la información del usuario.
-Muestra el mensaje del día.
-Muestra el mensaje del día después de iniciar sesión
-Muestra toda la información
 Crea un directorio que contiene el contenido del archivo ZIP
 Muestra todas las ciudades disponibles
 Compresión rápida
 Sin compresión
 No cree el directorio base en el archivo
-Unidad en ticks
 Se desconecta del servidor vergonzosamente
 Indica que la ruta de destino es absoluta
 Guarda el archivo JSON, embelleciéndolo en el proceso
 Guarda el archivo JSON, minificándolo en el proceso
-Obtiene el estilo de final de línea del archivo de texto
 Borra todos los eventos disparados
 Habilitar la depuración de eventos
 Habilita la depuración para el sistema de eventos del kernel.
@@ -1494,8 +1260,6 @@ No se pudo desinstalar el idioma personalizado. Lo más probable es que no exist
 Error al instalar idiomas personalizados.
 No se pudieron desinstalar los idiomas personalizados.
 No se pudieron desinstalar los idiomas personalizados. Consulte la excepción interna para obtener más información.
-Escriba la contraseña del administrador. Asegúrese de no usar esta cuenta a menos que realmente sepa lo que está haciendo.
-Debe escribir la contraseña de administrador.
 Información de licencia
 Administra tus idiomas
 No se encontró el idioma o el archivo tiene caracteres no válidos.
@@ -1505,9 +1269,7 @@ Nombre corto del idioma:
 Idioma nombre completo:
 Idioma transliterable:
 Idioma personalizado:
-Nuevo cartel de bienvenida
 Pantalla de bienvenida con estilo
-Muestra el nuevo banner de bienvenida representado por Figlet
 Habilita la elegante pantalla de bienvenida al inicio. Tenga en cuenta que deshabilitará el indicador de argumentos y probará el prearranque del shell.
 Nombre de bienvenida
 Nombre de presentación de las presentaciones disponibles implementadas en el kernel.
@@ -1515,7 +1277,6 @@ MOTD predeterminado generado.
 MAL predeterminada generada.
 Cuenta del sistema inicializada
 Usuarios inicializados
-Permisos cargados
 ¡Bienvenidos!
 Iniciando el depurador remoto...
 Error de conexión del depurador remoto
@@ -1530,8 +1291,6 @@ Parece que estás pasando por alto la detección del tamaño de la consola. Es p
 Para tener una mejor experiencia, cambie el tamaño de la ventana de su consola mientras aún está en esta pantalla. Pulse cualquier tecla para continuar...
 Su consola es demasiado pequeña para funcionar correctamente:
 Fuente de banner figlet
-Imprime una cadena en la consola utilizando el tipo de color y la impresión de líneas con soporte Figlet
-Imprime una cadena en la consola utilizando el tipo de color y la impresión de líneas con formato y compatibilidad con Figlet
 Mostrar los comandos contar con ayuda
 Mostrar los comandos de shell contar con ayuda
 Mostrar los comandos mod contar con ayuda
@@ -1556,21 +1315,10 @@ Ubicación del texto de progreso
 Seleccione su ubicación de texto de progreso preferida.
 Solo puedes escribir los números.
 Presione "q" para salir.
-Descargando nombres...
-Debido a dificultades técnicas, no podemos enumerar las propiedades del adaptador en los sistemas Unix.
 Habilita el modo de depuración
-Solicitudes de argumentos
 Habilitar el modo en blanco y negro
 Hace que la discoteca sea en blanco y negro. Realmente lastimará sus ojos si fue demasiado rápido, por lo que no se recomienda si está experimentando un ataque de imágenes rápidas.
-Parece que estaba ejecutando una versión no compatible. Es muy recomendable no utilizar esta versión.
 Cargar colores actuales
-Color de la opción alternativa
-Los usuarios cuentan para comentarios de amor u odio
-¿Cuántos usuarios hay que estar en la sala de comentarios de amor u odio?
-Enumera los idiomas disponibles
-Idiomas Disponibles:
-Argumentos de la línea de comandos:
-Argumentos de línea de comandos previos al arranque:
 Abre la documentación de la API mod para la estructura del código fuente en su forma más actual
 Valor actual:
 Especificador de color hexadecimal no válido.
@@ -1597,7 +1345,6 @@ El número de byte no es numérico.
 El número de byte de inicio especificado no puede ser mayor que el tamaño del archivo.
 El número de byte final especificado no puede ser mayor que el tamaño del archivo.
 Bytes eliminados.
-Edita un archivo binario
 Selecciona el feed de la lista de feeds existente de fuentes en línea
 Descargando lista de fuentes...
 No se pudo descargar la lista de feeds.
@@ -1636,14 +1383,9 @@ Los años de edad mínima cuentan
 Número máximo de años de edad
 Cantidad mínima de años de edad para generar
 Cantidad máxima de años de edad para generar
-> Tipo de marco: {3}
 Página del manual sin título
 Historial de entrada habilitado
-Portapapeles de entrada habilitado
-Entrada deshacer habilitada
 Si el historial de entrada está habilitado o no. Si está habilitado, puede acceder a los comandos escritos recientemente usando las teclas de flecha hacia arriba o hacia abajo.
-Si el portapapeles de entrada está habilitado o no.
-Si la función de deshacer entrada está habilitada o no.
 Convierte los números de color RGB a hexadecimal.
 Convierte la representación hexadecimal del color en números RGB.
 Convierte la representación hexadecimal del color a números RGB en formato KS.
@@ -1691,13 +1433,11 @@ Convertidor de unidades
 Tipos de unidades disponibles y sus unidades:
 Juego terminado
 Error inesperado
-La carcasa RAR
 Los comandos resaltados en otro color son comandos unificados y están disponibles en todos los shells.
 Comprobando actualizaciones...
 Descargando versión
 Versión de instalación
 Volviendo al 2018...
-¡No puede volver a 2018 en .NET 6.0!
 Usa PowerLine para renderizar una nave espacial
 Velocidad del juego de meteoritos
 Ya sea para usar PowerLine para renderizar la nave espacial o para usar el carácter estándar mayor que. Si desea utilizar PowerLine con Meteor, debe instalar una fuente adecuada compatible con PowerLine.

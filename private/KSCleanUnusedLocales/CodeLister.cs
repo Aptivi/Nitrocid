@@ -40,7 +40,7 @@ namespace KSCleanUnusedLocales
         private static string[] ListDataFilesForKS()
         {
             // Check to see if we have the Nitrocid KS folder
-            string kernelSimulatorDataSource = "../../../../../public/Nitrocid/Resources/Data/";
+            string kernelSimulatorDataSource = "../../../../../public/Nitrocid/Resources/Settings/";
             if (Directory.Exists(kernelSimulatorDataSource))
             {
                 // Iterate through all the data files for Nitrocid KS

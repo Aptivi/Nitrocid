@@ -1,6 +1,3 @@
-Comandi disponibili: {0}
-L'iniezione del comando è stata annullata.
-Gli argomenti iniettati saranno programmati per essere eseguiti al successivo riavvio.
 Modello di colore non valido {0}
 hwprobe: il tuo hardware verrà verificato. Attendere prego...
 CPU: uno o più core della CPU non sono stati rilevati. Mostrare informazioni comunque ...
@@ -12,7 +9,6 @@ DOPPIO PANICO: il tempo di riavvio supera il tempo massimo consentito per il ria
 [{0}] panico: riavvio attivato a causa del livello di errore {0}.
 [{0}] panico: tempo di riavvio: {1} secondi, superiore a 1 ora. È impostato su 1 minuto.
 DOUBLE PANIC: Tipo di errore {0} non valido.
-[{0}] Dpanic: {1} - Riavvio in {2} secondi ...
 [{0}] panico: riavvio disabilitato a causa del livello di errore {0}.
 [{0}] panico: {1}: premi un tasto qualsiasi per continuare a utilizzare il kernel.
 [{0}] panico: {1}: premi un tasto qualsiasi per chiudere.
@@ -20,27 +16,15 @@ DOUBLE PANIC: Tipo di errore {0} non valido.
 DOUBLE PANIC: bug del kernel: {0}
 Chiudere...
 Riavvio ...
-È in esecuzione un'altra istanza di Nitrocid KS. Arresto in caso di interferenza.
-Impossibile aggiungere l'utente negli elenchi di autorizzazioni: tipo non valido {0}
-Impossibile aggiungere l'utente negli elenchi di autorizzazioni: utente non valido {0}
-Impossibile rimuovere l'utente dagli elenchi di autorizzazioni: tipo non valido {0}
-Sei già loggato.
-Impossibile rimuovere l'utente dagli elenchi di autorizzazioni: utente non valido {0}
-Hai trovato un bug o il permesso che hai provato ad aggiungere o rimuovere è già stato fatto, o altro errore.
 Errore {0}: {1}
-Hai trovato un bug o il permesso che hai provato a modificare per un nuovo utente non è riuscito.
-Nomi utente disponibili: {0}
 Nome utente:
 Gli spazi non sono ammessi.
 I caratteri speciali non sono ammessi.
 La password di {0}:
 Password errata.
-L'utente è disabilitato
-Username sbagliato.
 Errore durante il tentativo di analizzare i segnaposti. {0}
 Errore durante il tentativo di aggiungere il nome utente.
 usrmgr: Creazione del nome utente {0} ...
-Nome utente vuoto
 Utente {0} non trovato.
 L'utente {0} non può essere rimosso.
 L'utente {0} è già connesso. Disconnettersi e accedere come altro amministratore.
@@ -91,24 +75,14 @@ Cambia la directory remota da scaricare o caricare in
 Elimina il file remoto dal server
 Disconnette dal server
 Scarica il file remoto nella directory locale usando binari o testo
-Mostra la schermata di aiuto
 Elenca la directory locale
 Elenca la directory remota
 Carica il file locale nella directory remota usando binari o testo
-Impossibile ottenere le proprietà per la scheda {0}
-Numero di scheda:
-Nome dell'adattatore:
-Unità di trasmissione massima: {2} Unità
-DHCP abilitato:
-Pacchetti non unicast:
-Pacchetti unicast:
-Errore nell'ingresso / uscita dei pacchetti:
 L'alias non può essere lo stesso nome di un comando.
 Comando non trovato per l'alias su {0}.
 Ora puoi eseguire "{0}" come comando: "{1}".
 Alias ​​{0} non è stato trovato per essere rimosso.
 Modalità non valida {0}.
-Gli argomenti iniettati, {0}, saranno programmati per essere eseguiti al prossimo riavvio.
 Non c'erano abbastanza argomenti. Vedi sotto per l'uso:
 Directory {0} non trovata
 Nome host vuoto.
@@ -122,18 +96,7 @@ Il nuovo nome che hai inserito è già stato trovato.
 {0} non trovato.
 Configurazione ricaricata. Potrebbe essere necessario riavviare il kernel affinché alcune modifiche abbiano effetto.
 Uno o più colori non sono validi.
-I colori non sono disponibili. Attiva la shell colorata nella configurazione del kernel.
 Screensaver {0} non trovato.
-Versione del kernel:
-Modalità di debug:
-Guscio colorato:
-Argomenti all'avvio:
-Aiuta il comando semplificato:
-MOTD on Login:
-Ora / data nell'angolo:
-Nome utente corrente:
-Nome host attuale:
-Nomi utente disponibili:
 Errore durante il tentativo di eseguire il comando
 Cambia directory
 Cambia la password per l'utente corrente
@@ -144,35 +107,27 @@ Elenca il contenuto del file / cartella nella cartella corrente
 Blocca lo schermo con una password
 Esci
 Crea una directory
-Elenca le informazioni su tutte le interfacce disponibili
 Riavvia il computer (ATTENZIONE: nessuna sincronizzazione, perché non è un kernel finale)
 Ricarica il file di configurazione che è stato modificato.
 Salva lo schermo dai burn out
 Imposta gli screensaver del kernel
-Imposta i temi del kernel
 Mostra data e ora
 Mostra data e ora nelle zone
 Il kernel verrà spento
-Informazioni di sistema
-* Puoi usare più comandi usando i due punti tra i comandi.
 Uso:
-dove gli argomenti saranno {0}
 dove sarà customsaver
 Si è verificato un errore nella shell.
 Non hai il permesso di usare {0}
 Messaggio shell: il comando richiesto {0} non può essere eseguito in modalità di manutenzione.
 Messaggio shell: il comando richiesto {0} non è stato trovato. Vedi 'aiuto' per i comandi disponibili.
-Messaggio shell: il comando {0} non può essere eseguito all'accesso.
 Errore durante il tentativo di eseguire il comando.
 - Tempo di {0}: {1}
 In esecuzione su {0}
 Non sei autorizzato a ricevere informazioni per {0}.
 Questo comando è obsoleto e verrà rimosso in una versione futura.
 Non sei autorizzato a cambiare la password di {0} perché il target era un amministratore.
-usrmgr: il nome utente {0} è già stato trovato
 Elimina tutto nel registro di debug
 Lingua non valida
-Cambia lingua
 ----------------------------- Dump di panico del kernel ------------------------------
 >> Informazioni di panico <<
 > Descrizione: {0}
@@ -201,7 +156,6 @@ Elenca i dispositivi di debug collegati
 Dispositivo di debug {0} non trovato.
 Dispositivo {0} disconnesso.
 Debug in ascolto su tutti gli indirizzi utilizzando la porta {0}.
-Nessun argomento specificato. Suggerimento: specificare più argomenti separati da spazi
 Alias già trovato: {0}
 Registro di debug rimosso. Tutti i dispositivi di debug collegati possono comunque visualizzare i messaggi.
 Rimozione del registro di debug non riuscita: {0}
@@ -210,19 +164,11 @@ Specifica l'indirizzo
 Il fuso orario non è specificato correttamente.
 Selezione profilo non valida.
 Tentativo di connessione a {0} con il profilo {1} ...
-Impossibile ottenere le proprietà IPv6 per l'adattatore {0}. Proseguendo ...
-Informazioni IPv4:
-Informazioni IPv6:
-L'adattatore {0} non supporta IPv6. Proseguendo ...
-L'adattatore {0} non supporta IPv4. Sonda non riuscita.
-Sembra che tu stia eseguendo la versione di sviluppo del kernel. Mentre puoi vedere gli aspetti, viene aggiornato frequentemente e potrebbe introdurre bug. Si consiglia di rimanere nella versione stabile.
 La lingua che hai selezionato contiene due varianti. Seleziona uno:
 Scelta non valida. Riprova.
 Non sei autorizzato a impostare la directory corrente su {0}: {1}
 Il percorso che hai specificato è troppo lungo.
 Il raccoglitore di informazioni sul dump si è arrestato in modo anomalo durante il tentativo di ottenere informazioni su {0}: {1}
-Errore durante il tentativo di impostare MOTD / MAL: {0}
-Errore durante il tentativo di ottenere MOTD / MAL: {0}
 Errore durante il tentativo di avvio dello screensaver, a causa di un'operazione non valida.
 Ricarica non consentita in modalità provvisoria.
 Mod di analisi non consentite in modalità provvisoria.
@@ -237,15 +183,7 @@ Calcola le somme dei file.
 Ti porta al nostro GitHub Wiki.
 Algoritmo di crittografia non valido.
 Abilita o disabilita il debug remoto.
-Vedi se riesci a pronunciare correttamente le parole in tempo
 Vedi se riesci a risolvere le equazioni matematiche in tempo
-Rispondi ai commenti di amore o odio.
-Se qualcuno ha fatto questo commento al tuo video:
-Come risponderesti?
-Selezione non valida Andando al prossimo commento ...
-Grande! {0} apprezzerà i tuoi ringraziamenti.
-Scritto perfettamente!
-Ortografia errata.
 Risolto perfettamente!
 Risolto in modo errato
 RPC è già in esecuzione.
@@ -256,45 +194,14 @@ Inserisci la password per {0}:
 SSH disconnesso.
 Impossibile impostare la tabella codici. La lingua potrebbe non essere visualizzata correttamente.
 Debug non abilitato.
-Grazie! Questo è interessante.
-Tutti supporteranno il tuo video per questo.
-Ti ho dato il file speciale nella tua e-mail per il tuo prossimo video.
-Ascolta, odia, sta cercando di aiutarci, non di imbrogliare.
-Non so quanto io e i miei amici vi ringraziamo per questo video.
-Ti amo per questo video.
-Continua, non fermarti.
-Ti aiuterò a raggiungere gli abbonati 1M!
-I miei amici hanno riparato il loro computer grazie a te.
-Fantastico scherzo! Spengo il PC del mio nemico.
-Per gli odiatori: smettere di odiare su di lui
-Per gli odiatori: mettersi al lavoro
-Nessuno lo noterà ora grazie alla guida per nascondere gli oggetti
-Smetterò di guardare i tuoi video. Abbonato perso.
-Cos'è questo? Questo non è chiaro.
-Questo video è il peggiore!
-Tutti segnalano questo video!
-I miei amici sono furiosi con te!
-Gli amanti ora ti odieranno per questo.
-Il tuo amico ti odierà per questo.
-Questo scherzo mi ha fatto annullare l'iscrizione a te.
-Missione fallita, Rispetto -, Abbonato -
-Smetti di fare questo tipo di video !!!
-Torna al tuo lavoro, i tuoi video sono i peggiori!
-Preghiamo per questo video.
 Mostra tutte le notifiche ricevute
 Respinge una notifica
 Notifica respinta correttamente.
-Pacchetti (in entrata):
-Pacchetti (in uscita):
-Errori nei pacchetti ricevuti:
-Proprietà generali IPv6
-Proprietà generali di IPv4
 Esegue da remoto un comando sul PC remoto
 - Fase 1: inizializzazione del sistema
 - Fase 2: rilevamento dell'hardware
 - Fase 3: rilevamento di mod e screensaver
 - Fase 4: accesso
-Sembra che tu stia eseguendo la versione candidata al rilascio. Si consiglia di rimanere nella versione stabile.
 Tipo non valido {0}.
 Dimensione: {0}
 La directory {0} esiste già.
@@ -313,7 +220,6 @@ Inserire la password:
 Errore durante la connessione a {0}: {1}
 Connessione a {0} ...
 Autenticazione in ...
-Elenco dei comandi
 Scarica i messaggi e li elenca
 Apre un messaggio
 La pagina non è un valore numerico.
@@ -328,10 +234,7 @@ Preparazione dei profili ... Potrebbero essere necessari diversi minuti ...
 Errore durante il tentativo di eseguire lo script: {0}
 Scrive il testo nella console
 Fa le scelte dell'utente
-Segnale acustico in 'n' Hz e tempo in 'n' millisecondi
 dove <$ variabile> è qualsiasi variabile che verrà utilizzata per memorizzare la risposta
-La frequenza deve essere numerica. Se è numerico, assicurarsi che sia> = 37 e <= 32767.
-Il tempo deve essere numerico.
 dove <risposte> sono le risposte di una lettera della domanda separate da barre
 Errore durante il tentativo di connessione al server SSH: {0}
 Consente all'utente di inserire input
@@ -346,7 +249,6 @@ Durante la convalida del certificato, ci sono errori di certificato. Potrebbe es
 Sei sicuro di voler connetterti?
 Risposta non valida Per favore riprova.
 La composizione rapida è vuota. Connettiti a un server per aggiungere un indirizzo ad esso.
-La composizione rapida non esiste. Connettiti a un server per aggiungere un indirizzo ad esso.
 Immettere l'indirizzo e la porta del server IMAP (<indirizzo> o <indirizzo>: [porta]):
 Immettere l'indirizzo e la porta del server SMTP (<indirizzo> o <indirizzo>: [porta]):
 Invia un messaggio a un indirizzo
@@ -360,12 +262,10 @@ Rimuove un messaggio
 Rimuove tutti i messaggi dal destinatario
 Messaggio {0} da {1} eliminato da {2}. {3} messaggi rimanenti da analizzare.
 Messaggio {0} da {1} eliminato dalla posta in arrivo. {2} messaggi rimanenti da analizzare.
-Modifica un file di testo
 Crea un nuovo file
 Il file esiste già.
 Errore durante il tentativo di creare un file: {0}
 Impossibile aprire il file. Uscita dalla shell ...
-Elenca i comandi disponibili
 Stampa il contenuto del file con i numeri di riga sulla console
 Aggiunge una nuova riga con testo alla fine del file
 Rimuove il numero di riga specificato
@@ -378,12 +278,10 @@ In esecuzione in modalità provvisoria. Saltare il palco ...
 >> Debug remoto e chat: versione
 >> Il tuo indirizzo è {0}.
 >> Il tuo nome è {0}.
-Comando {0} non trovato. Utilizzare "/help" per visualizzare l'elenco.
 Indice {0} non valido. Ci sono {1} tracce dello stack. L'indice è a base zero, quindi prova a sottrarre 1.
 Nessuna traccia dello stack
 Mostra l'ultima traccia dello stack su eccezione
 Mostra il nome utente corrente nella sessione
-Ti disconnette dal debugger
 Sblocca un dispositivo di debug in base all'indirizzo IP
 Blocca un dispositivo di debug per indirizzo IP
 {0} ora può ricollegarsi al debug remoto.
@@ -395,13 +293,10 @@ Salva le impostazioni
 Uscita
 L'opzione specificata {0} non è valida.
 La risposta deve essere numerica.
-Richiedi argomenti all'avvio
-Trigger della modalità di manutenzione
 Verifica la disponibilità di aggiornamenti all'avvio
 Sonda silenziosa
 Mostra MOTD all'accesso
 Cancella schermo all'accesso
-Guscio colorato
 Comando di aiuto semplificato
 Porta di debug
 Scarica i tempi di riprova
@@ -410,32 +305,25 @@ Registra indirizzo IP FTP
 Restituisce solo il primo profilo FTP
 Mostra ora / data nell'angolo superiore destro
 Timeout salvaschermo in ms
-Quota dimensione di debug in byte
 Modalità di analisi delle dimensioni
 Marquee all'avvio
 Tempo e data lunghi
 Mostra file nascosti
 Sezione non valida inserita. Per favore torna indietro.
 Torna indietro...
-Abilitare
-disattivare
 Scrivi una porta del debugger remoto. Deve essere numerico e non deve essere già utilizzato. In caso contrario, il debugger remoto non riuscirà ad aprire la porta.
 Scrivi quante volte il comando "" get "" deve ritentare i download non riusciti. Deve essere numerico.
 Scrivi quando avviare lo screensaver dopo i millisecondi specificati. Deve essere numerico.
-Scrivi quanti byte può memorizzare il log di debug. Deve essere numerico.
 La risposta potrebbe non essere negativa.
 La risposta non è valida. Verificare che la risposta sia numerica per le voci di configurazione che richiedono numeri come risposte.
 La variabile {0} non è stata trovata su nessuno dei moduli.
 Modifica la configurazione del kernel
-Attiva 255 colori
 Cambia cultura quando si cambia lingua
 Testo mostrato
 Scrivi il testo che desideri venga mostrato. Più corto è meglio.
 Impossibile caricare {0}
-Errore durante l'esecuzione del comando di debug remoto {0}: {1}
 Aggiunge utenti
 Aggiunge alias ai comandi
-Inserisce argomenti nel kernel (riavvio richiesto)
 Modifica il nome host
 Cambia MAL, il MOTD dopo il login
 Cambia MOTD, il messaggio del giorno
@@ -450,13 +338,11 @@ Impossibile impostare la lingua.
 Errore durante il tentativo di ignorare la notifica.
 usrmgr: impossibile creare il nome utente {0}: {1}
 Impossibile rinominare l'utente. {0}
-Uno degli elenchi di autorizzazioni non contiene il nome utente {0}.
 Utente non trovato
 Impossibile modificare la password del nome utente: {0}
 Impossibile trovare il file che corrisponda alla stringa "{0}": {1}
 Download non riuscito per il file {0}.
 Impossibile elencare i file remoti: {0}
-Sei sicuro di voler eliminare {0} <y / n>?
 Eliminazione di {0} in corso ...
 {0} non è stato trovato nel server.
 Tutta la posta inviata da {0} viene rimossa correttamente.
@@ -483,7 +369,6 @@ Umidità: {0}
 Puoi ottenere la tua chiave API su https://home.openweathermap.org/api_keys.
 Puoi sempre consultare http://bulk.openweathermap.org/sample/city.list.json.gz per l'elenco delle città con i loro ID.
 Unità preferita per la temperatura
-Imposta il kernel in modo che richieda un argomento all'avvio.
 Attiva la modalità di manutenzione. Questo disabilita più account.
 Ad ogni avvio, verificherà la presenza di aggiornamenti.
 Quando si cambia lingua, modificare i nomi dei mesi, il calendario, ecc.
@@ -491,7 +376,6 @@ Mantieni silenziosi i messaggi di verifica hardware.
 Mostra il messaggio del giorno prima di visualizzare la schermata di accesso.
 Cancella lo schermo prima di visualizzare la schermata di accesso.
 Mostra gli utenti disponibili se abilitati.
-Fornisce il supporto per il colore del kernel
 Comando di aiuto semplificato per tutte le shell
 Se registrare o meno il nome utente FTP.
 Se registrare o meno l'indirizzo IP FTP.
@@ -510,7 +394,6 @@ La mod {0} non ha il nome della parte. Analisi mod non riuscita. Rivedi il codic
 Apri "mail" per vederli.
 Rimuove una directory o un file
 Impossibile rimuovere {0} perché non esiste.
-Premere CTRL + C per uscire.
 Fornisce informazioni su un file
 Fornisce informazioni su una directory
 Impossibile ottenere informazioni su una directory inesistente.
@@ -582,16 +465,7 @@ Apre una shell di prova
 Impossibile avviare "{0}": {1}
 Mostra l'anteprima del messaggio di posta
 Quando si elencano i messaggi di posta, mostra l'anteprima del corpo.
-Colore di input
-Colore della licenza
-Colore errore kernel continuativo
-Colore di errore del kernel irreversibile
-Colore del nome host
-Colore nome utente
 Colore di sfondo
-Colore del testo neutro
-Colore del palco
-Colore errore
 Tentativo di accesso a un percorso non valido.
 Cancella il file di testo
 Esce dall'editor di testo
@@ -621,11 +495,7 @@ Salva tema nella directory corrente
 Salva tema in un'altra directory...
 Selezionare il colore utilizzando i tasti "<-" e "->". Premere INVIO per uscire. Premere "i" per inserire manualmente il numero del colore.
 Selezionare il colore utilizzando i tasti "<-" e "->". Utilizzare i tasti freccia su e freccia giù per selezionare tra le gamme di colori. Premere INVIO per uscire. Premere "i" per inserire manualmente il numero del colore.
-Benvenuto nel kernel! - Versione {0}
-Colore di avviso
-Colore opzione
 Inserisci il numero del colore da 0 a 255:
-Utilizzare "hwinfo" per informazioni estese sull'hardware.
 Stampa le informazioni sull'hardware
 Nome del processore:
 Bit del processore:
@@ -635,9 +505,6 @@ GPU: impossibile rilevare una o più schede grafiche. Visualizzazione delle info
 >> Benvenuto! Questa è la prima volta che accedi al debug e alla chat remoti. Usa "/register <name>" per registrarti.
 Il dispositivo esiste già.
 Nessun apparecchio di questo tipo.
-Imposta il nome utente del dispositivo
-Sei già registrato.
-Ciao, {0}!
 Stampa il contenuto del file sulla console
 Oppure passa "listcities" a questo comando.
 La voce esiste già.
@@ -645,7 +512,6 @@ Avvolge l'output della console
 Il comando non è avvolgente. Questi comandi sono wrappabili:
 Estrae un archivio ZIP
 Crea un archivio ZIP
-Costruito in {0}
 Errore durante il download dei dati di debug
 Si è verificato un errore durante il download dei dati di debug. Controlla la tua connessione Internet.
 Impossibile finalizzare la mod {0}: {1}
@@ -659,12 +525,8 @@ Ping!
 Salva tema nella directory corrente come...
 Salva tema in un'altra directory come...
 Specifica il nome del tema:
-L'utente {0} è stato aggiunto all'elenco "{1}".
-L'utente {0} è stato rimosso dall'elenco "{1}".
-Modalità non valida {0}
 Carica tema da temi predefiniti...
 Specifica il nome del file del tema senza l'estensione .json:
-Apre un archivio ZIP
 Elenca tutti i file all'interno dell'archivio
 Estrae un file in una directory specificata o in una directory corrente
 Cambia la directory dell'archivio
@@ -672,11 +534,7 @@ La directory {0} non esiste
 La directory di archivio {0} non esiste
 Numero massimo di posizioni
 Quante posizioni sono illuminate prima dell'oscuramento?
-Colore voce elenco
-Colore valore elenco
 Si connette a un server SSH per eseguire un comando.
-Identificatore di colore non valido. Assicurati che sia nel formato corretto, il che significa un numero compreso tra 0 e 255 se usi 255 colori o una sequenza VT se usi il colore vero come segue:
-Errore nella shell di prova: {0}
 Imposta una variabile su un valore in uno script
 Una richiesta di segnalazione di bug.
 Si è verificato un errore nella shell FTP:
@@ -694,15 +552,6 @@ Il file chiave {0} non esiste.
 Errore durante il tentativo di aggiungere la chiave privata:
 Premere "t" per passare alla modalità 255 colori.
 Premere "t" per passare alla modalità True Color.
-Sembra che tu non abbia utenti tranne root. Questo non va bene. Ti guideremo come crearne uno.
-Scrivi il tuo nome utente.
-Devi scrivere il tuo nome utente.
-Scrivi la tua password.
-Devi scrivere la tua password.
-Seleziona il tipo di conto.
-Amministratore: questo tipo di account ha la massima potenza nel kernel, consentendoti di utilizzare i programmi di gestione del sistema.
-Utente normale: questo tipo di account è leggermente più limitato rispetto agli amministratori.
-Congratulazioni! Hai creato un nuovo account! Per finire, accedi come il tuo nuovo account.
 mod: nessuna mod rilevata.
 Comandi generali:
 Comandi mod:
@@ -712,33 +561,21 @@ Directory di ricerca
 Gruppo di percorsi separati dai due punti. Funziona come PATH. Scrivi un percorso completo di una cartella o il nome di una cartella. Quando hai finito, scrivi "q". Scrivi un segno meno accanto al percorso per rimuovere una directory esistente.
 Nessun comando mod.
 Nessun comando alias.
-Il valore del colore non è compreso nell'intervallo 0-255.
 Il comando wrappable non è stato trovato.
 Interroga una parola in una riga specificata o in tutte le righe
 {0} di {1} scaricati.
-Stampa una stringa sulla console utilizzando il tipo di colore e la stampa della linea
-Stampa una stringa sulla console utilizzando il tipo di colore e la stampa a righe con supporto del formato
-Stampa una stringa sul debugger
-Stampa una stringa sul debugger con supporto del formato
 Verifica la funzionalità di errore del kernel
 Verifica la funzione di errore del kernel con il supporto del formato
 Verifica la traduzione di una stringa esistente nelle risorse in una lingua specifica
 Stampa una stringa su console e analizza i segnaposto trovati
 Verifica la funzione di espressione regolare
 Avvia tutte le mod
-Interrompe tutte le modifiche
-Abilita o disabilita il debug
-Abilita o disabilita il debug remoto
 Testa la sequenza VT per 255 colori
 Verifica la sequenza VT per il colore reale
 Invia una notifica per testare il ricevitore
 Prova la data di stampa utilizzando calendari diversi
 Elenca tutte le codepage supportate
-Quali variabili del compilatore sono abilitate nell'applicazione?
-Test che sollevano l'evento specifico
 Test che sondano l'hardware
-Esce dalla shell di test e avvia il kernel
-Esce dalla shell di test e chiude il kernel
 Salva la directory corrente nel file di configurazione del kernel
 Verifica il writer dell'elenco con la stringa e l'array di stringhe
 Verifica il writer dell'elenco con l'intero e l'array intero
@@ -850,7 +687,6 @@ Personaggio cancellato.
 Benvenuto in Impostazioni!
 Errore durante l'esecuzione del comando SSH
 Errore sulla shell SSH
-Informazioni sull'app
 Verifica il writer del dizionario con la stringa e l'array di stringhe
 Testa lo scrittore del dizionario con l'array char e char
 Testa lo scrittore del dizionario con l'intero e l'array intero
@@ -860,21 +696,15 @@ Dizionario intero normale:
 Dizionario intero array:
 Dizionario di caratteri normali:
 Dizionario dei caratteri di matrice:
-Benvenuto in Test Shell!
 Mostra i progressi sulle operazioni del filesystem file
 Mostra quale file viene elaborato durante le operazioni del filesystem
 dove sarà HardwareType
 Il tipo di hardware {0} non è stato verificato o non è valido.
 Il tipo di hardware {0} non è ancora stato verificato. Se sei sicuro che sia stato verificato, riavvia il kernel con il debug abilitato.
 Partizioni non analizzate nell'elenco.
-Stampa un separatore
-Stampa un separatore con supporto formato
-Stampa un separatore con supporto colore
-Stampa un separatore con supporto per colore e formato
 Sempre centrato
 Scrivi il testo che vuoi mostrare.
 Se il testo mostrato sul riquadro di selezione è sempre centrato.
-Argomento {0} non trovato da iniettare.
 Screensaver ha riscontrato un errore durante la visualizzazione: {0}. Premi qualsiasi tasto per uscire.
 Anteprima...
 Ecco come sarà il tuo tema:
@@ -891,7 +721,6 @@ Percorso file mod:
 Versione parziale:
 Conteggio minimo di argomenti richiesti:
 Argomenti richiesti?
-Comando avvolgibile?
 Impostazione variabile shell?
 Non è possibile eseguire in modalità di manutenzione?
 Obsoleto?
@@ -900,7 +729,6 @@ Sondaggio {0} riuscito.
 Sonda verbosa
 Rendi un po' loquaci i messaggi di ispezione dell'hardware.
 > Non ci sono informazioni sui frame.
-Devi scrivere il tuo nome.
 Abbellisce il file JSON
 Categoria di configurazione {0} non trovata.
 Voce di configurazione {0} non trovata.
@@ -949,10 +777,6 @@ Questa pagina di manuale necessita di lavori per:
 Pagina del manuale {0} non trovata.
 Manuale del modulo
 Argomenti del kernel disponibili:
-Premi "q" se hai finito.
-È possibile separare più argomenti del kernel con virgole senza spazi, ad esempio:
-Più comandi inseriti possono essere separati da due punti con spazi, ad esempio:
-L'argomento richiesto {0} non è stato trovato.
 Errore irreversibile nell'argomento:
 Crittografa una stringa utilizzando SHA512
 Crittografa una stringa usando SHA384
@@ -977,31 +801,12 @@ Aggiunge una nuova proprietà alla fine del file JSON
 Rimuove una proprietà dal file JSON
 Esce dalla shell JSON senza salvare le modifiche
 Salva il file JSON
-Apre la shell JSON
 Stampa il file JSON
 Prossimo intervallo di rampa
 Quanti millisecondi devono aspettare prima di riempire la rampa successiva?
-Colore del titolo della notifica
-Colore descrizione notifica
-Colore di avanzamento della notifica
-Colore di errore di notifica
-Colore della domanda
-Colore di successo
-Colore dollaro utente
-Colore della punta
-Colore del testo separatore
-Colore separatore
-Elenca il colore del titolo
-Colore di avviso di sviluppo
-Colore del tempo di scena
-Colore di avanzamento
-Colore opzione posteriore
 Disegna il bordo di notifica
 Copre la notifica con il confine.
 Contatta il fornitore della mod per aggiornare la mod alla versione compatibile.
-Colore del bordo a bassa priorità
-Colore del bordo a priorità media
-Colore del bordo ad alta priorità
 Invia una notifica di avanzamento per testare il ricevitore
 Testa la ruota dei colori
 Mostra l'ora del kernel locale
@@ -1020,13 +825,11 @@ Aggiunge una mod alla lista nera
 Rimuove una mod dalla lista nera
 Ora e data in UTC: {0}
 Mostra le informazioni sull'app durante l'avvio
-Analizza gli argomenti della riga di comando
 Mostra i tempi di fine della fase
 Avvia le modifiche al kernel all'avvio
 Mostra l'ora corrente prima dell'accesso
 Notificare eventuali guasti durante l'avvio
 Mostra brevi informazioni sull'applicazione all'avvio.
-Analizza gli argomenti della riga di comando all'avvio.
 Mostra quanto tempo ha impiegato il kernel per completare una fase.
 Avvia automaticamente le modifiche del kernel all'avvio.
 Mostra l'ora corrente, il fuso orario e la data prima dell'accesso.
@@ -1036,8 +839,6 @@ Stile di richiesta password
 Scrivi come vuoi che sia la tua richiesta di accesso. Lascia vuoto per usare lo stile predefinito. I segnaposto vengono analizzati.
 Scrivi come vuoi che sia richiesta la password. Lascia vuoto per usare lo stile predefinito. I segnaposto vengono analizzati.
 Mostra il messaggio del giorno dopo aver visualizzato la schermata di accesso.
-Comandi iniettati sonda
-Rileva i comandi iniettati all'inizio della shell del kernel.
 Mostra i dettagli del file nell'elenco
 Mostra i brevi dettagli del file durante l'elenco dei file
 Mostra i dettagli del file nell'elenco FTP
@@ -1089,13 +890,9 @@ Aggiungi nuove connessioni alla composizione rapida SFTP
 Mostra i dettagli del file SFTP durante l'elenco delle directory remote.
 Se abilitato, aggiunge una nuova connessione alla composizione rapida SFTP.
 Timeout ping
-Mostra informazioni dettagliate sull'adattatore
-Mostra informazioni generali sulla rete
 Scarica testo percentuale
 Carica testo percentuale
 Quanti millisecondi devono attendere prima di dichiarare il timeout?
-Stampa le informazioni complete sull'adattatore, come le informazioni sui pacchetti.
-Mostra le informazioni generali sulla rete.
 Scrivi come vuoi che sia il testo della percentuale di caricamento. Lascia vuoto per usare lo stile predefinito. I segnaposto vengono analizzati. {0} per la dimensione caricata, {1} per la dimensione target, {2} per la percentuale.
 Scrivi come vuoi che sia il testo della percentuale di download. Lascia vuoto per usare lo stile predefinito. I segnaposto vengono analizzati. {0} per la dimensione scaricata, {1} per la dimensione target, {2} per la percentuale.
 Richiedi la password dopo il blocco
@@ -1215,16 +1012,12 @@ Carattere della cornice superiore per il bordo di notifica
 Carattere della cornice inferiore per il bordo di notifica
 Carattere del frame sinistro per il bordo di notifica
 Carattere della cornice destra per il bordo di notifica
-Stile delle informazioni della pagina manuale
 Se mostrare ciò che è scritto nel prompt di input.
 Qual è il numero minimo da scegliere?
 Qual è il numero massimo da scegliere?
-Scrivi come vuoi che siano le informazioni della tua pagina di manuale. Lascia vuoto per usare lo stile predefinito. I segnaposto vengono analizzati. {0} per il titolo del manuale, {1} per la revisione.
-La proprietà {0} non è stata trovata su nessuno dei moduli.
 Avvia la ruota dei colori in modalità True Color
 Se specificato, visualizzerà un banner di avvio personalizzato con supporto per segnaposto. Puoi usare {0} per la versione del kernel.
 Quale variante della lingua corrente viene utilizzata per modificare i nomi dei mesi, il calendario, ecc.?
-Attiva il supporto 255 colori.
 Attiva il supporto True Color.
 Parola eliminata nella riga {0}.
 Stringa sostituita nella riga {0}.
@@ -1253,7 +1046,6 @@ Dimensione del disco:
 Memoria totale:
 Scheda grafica:
 Modello del disco:
-Cultura della lingua attuale
 Se sei sicuro di aver aperto la sezione giusta, controlla questo messaggio:
 Esegue un comando del server FTP
 Crittografa una stringa usando CRC32
@@ -1278,9 +1070,6 @@ Scrivi come vuoi che sia lo stile di avanzamento del tuo trasferimento di posta.
 Fuso orario:
 Oggi è {0}
 L'ora attuale è {0}
-Colore separatore tabella
-Colore dell'intestazione della tabella
-Colore valore tabella
 Possibili risposte
 Il file mod non è specificato.
 Tentativo di installare una mod già installata. Aggiornamento mod...
@@ -1302,7 +1091,6 @@ Verifica se la stringa traducibile esiste nelle risorse KS
 Stringa trovata nelle risorse di localizzazione.
 Stringa non trovata nelle risorse di localizzazione.
 Avvia il kernel in modo silenzioso
-Inserisce un comando per l'avvio al prossimo accesso
 Avvia il kernel in modalità provvisoria, disabilitando tutte le mod
 Come la modalità provvisoria, ma disabilita anche il multiutente e alcune personalizzazioni
 Non c'erano abbastanza argomenti.
@@ -1327,10 +1115,6 @@ Il formato dell'URI del sito non è valido.
 Impostazione del sito su
 I colori non richiedono un riavvio, ma la maggior parte delle impostazioni richiede un riavvio.
 Nessun aiuto per l'argomento "{0}".
-Premi A sui commenti di odio per scusarti. Premi T sui commenti d'amore per ringraziare. Premi Q per uscire dal gioco.
-Ti sei scusato con un commento di odio! Eccellente!
-Mi scuso per il commento d'amore. Non buono abbastanza.
-Hai appena ringraziato l'hater per il commento di odio!
 Difficoltà predefinita per SpeedPress
 Timeout pressione tasti per SpeedPress
 Seleziona la tua difficoltà preferita.
@@ -1351,10 +1135,8 @@ Controlla tutte le impostazioni di KS per vedere se le variabili sono scritte co
 Queste voci di configurazione hanno variabili o enumerazioni non valide e devono essere corrette:
 File {0} non trovato
 Crea una matrice di variabili con i valori forniti
-Scrivi il numero dell'impostazione a cui andare. Qualsiasi altro carattere significa tornare indietro.
 Controlla tutti i numeri delle righe di testo di localizzazione per vedere se sono tutti uguali
 Mancata corrispondenza della linea
-Si prega di inserire un numero utente.
 Includi utenti anonimi
 Includi utenti disabili
 Include gli utenti anonimi nell'elenco
@@ -1367,9 +1149,7 @@ Mostra l'ultimo titolo RSS all'accesso
 URL del titolo RSS
 Ad ogni accesso, mostrerà l'ultimo titolo RSS dall'URL del titolo selezionato.
 URL del titolo RSS da utilizzare durante la visualizzazione dell'ultimo titolo. Di solito è il tuo feed preferito.
-Ultime notizie:
 Impossibile ricevere le ultime notizie.
-Colore opzione selezionato
 Mostra traccia dello stack in caso di errore del kernel
 Se si verifica un errore del kernel, scegliere se stampare o meno la traccia dello stack sulla console.
 Salva impostazioni come
@@ -1388,9 +1168,6 @@ Ritardo di fase in millisecondi
 Quanti millisecondi devono aspettare prima di disegnare la fase successiva?
 Prossimo intervallo di marciume della rampa
 Quanti millisecondi devono aspettare prima di far marcire l'estremità della rampa successiva?
-Controlla la quota di debug
-Controlliamo se il sistema di debug deve verificare la quota prima di scrivere al debugger?
-Quanti millisecondi ci sono voluti davvero per dormire?
 Impossibile aggiungere un evento.
 Impossibile rimuovere un evento.
 Argomenti forniti non sufficienti per aggiungere un evento.
@@ -1446,9 +1223,6 @@ Quanti blocchi (fino a 10) è il raggio di esplosione dei fuochi d'artificio qua
 Questo comando ha le seguenti opzioni che cambiano il modo in cui funziona:
 Stampa i numeri di riga che seguono la riga in fase di stampa
 Impedisce la stampa dei numeri di riga
-Utilizzare sempre la versione traslitterata
-Usa sempre la versione tradotta
-Forza il cambio di lingua
 Indica che la risposta può richiedere più di un carattere
 Indica che la risposta può richiedere un solo carattere
 Stampa la domanda e le risposte in una riga
@@ -1463,23 +1237,15 @@ Inizia il gioco a difficoltà media
 Avvia il gioco in difficoltà difficile
 Inizia il gioco in difficoltà molto difficile
 Avvia il gioco a difficoltà personalizzata. Si noti che il timeout personalizzato in millisecondi deve essere scritto come argomento.
-Mostra le informazioni di sistema
-Mostra le informazioni sull'hardware
-Mostra le informazioni sull'utente
-Mostra il messaggio del giorno
-Mostra il messaggio del giorno dopo il login
-Mostra tutte le informazioni
 Crea una directory che contiene il contenuto del file ZIP
 Mostra tutte le città disponibili
 Compressione veloce
 Nessuna compressione
 Non creare la directory di base nell'archivio
-Unità in tick
 Si disconnette dal server in modo vergognoso
 Indica che il percorso di destinazione è assoluto
 Salva il file JSON, abbellendolo nel processo
 Salva il file JSON, minimizzandolo nel processo
-Ottiene lo stile di fine riga dal file di testo
 Cancella tutti gli eventi attivati
 Abilita il debug degli eventi
 Abilita il debug per il sistema di eventi del kernel
@@ -1494,8 +1260,6 @@ Impossibile disinstallare la lingua personalizzata. Molto probabilmente non esis
 Impossibile installare le lingue personalizzate.
 Impossibile disinstallare le lingue personalizzate.
 Impossibile disinstallare le lingue personalizzate. Vedere l'eccezione interna per ulteriori informazioni.
-Scrivi la password dell'amministratore. Assicurati di non utilizzare questo account a meno che tu non sappia davvero cosa stai facendo.
-È necessario scrivere la password dell'amministratore.
 Informazioni sulla licenza
 Gestisci le tue lingue
 Lingua non trovata o il file contiene caratteri non validi.
@@ -1505,9 +1269,7 @@ Nome abbreviato della lingua:
 Nome completo della lingua:
 Lingua traslitterabile:
 Lingua personalizzata:
-Nuovo banner di benvenuto
 Schermata iniziale alla moda
-Mostra il nuovo banner di benvenuto con rendering di Figlet
 Abilita l'elegante schermata iniziale all'avvio. Si noti che disabiliterà il prompt degli argomenti e testerà il pre-avvio della shell.
 Nome splash
 Nome splash dagli splash disponibili implementati nel kernel.
@@ -1515,7 +1277,6 @@ MOTD predefinito generato.
 MAL predefinito generato.
 Account di sistema inizializzato
 Utenti inizializzati
-Autorizzazioni caricate
 Ben arrivato!
 Avvio del debugger remoto...
 Errore di connessione del debugger remoto
@@ -1530,8 +1291,6 @@ Sembra che tu stia ignorando il rilevamento delle dimensioni della console. Le c
 Per avere un'esperienza migliore, ridimensiona la finestra della console mentre sei ancora su questa schermata. Premere un tasto qualsiasi per continuare...
 La tua console è troppo piccola per funzionare correttamente:
 Carattere di Figlet Banner
-Stampa una stringa sulla console utilizzando il tipo di colore e la stampa della linea con il supporto Figlet
-Stampa una stringa sulla console utilizzando il tipo di colore e la stampa della linea con formato e supporto Figlet
 Mostra i comandi contano sull'aiuto
 Mostra i comandi della shell contano sull'aiuto
 Mostra i comandi mod contano sull'aiuto
@@ -1556,21 +1315,10 @@ Posizione del testo di avanzamento
 Seleziona la posizione del testo di avanzamento preferita.
 Puoi solo scrivere i numeri.
 Premere "q" per uscire.
-Download nomi in corso...
-A causa di difficoltà tecniche, non siamo in grado di elencare le proprietà dell'adattatore sui sistemi Unix.
 Abilita la modalità di debug
-Richieste di argomentazioni
 Abilita la modalità bianco e nero
 Rende la discoteca in bianco e nero. Ti farà davvero male agli occhi se è stato troppo veloce, quindi non consigliato se stai riscontrando un sequestro di immagini veloci.
-Sembra che tu stia eseguendo una versione non supportata. Si consiglia vivamente di non utilizzare questa versione.
 Carica i colori correnti
-Colore opzione alternativo
-Gli utenti contano per i commenti di amore o odio
-Quanti utenti devono essere nella stanza dei commenti di amore o odio?
-Elenca le lingue disponibili
-Lingue disponibili:
-Argomenti della riga di comando:
-Argomenti della riga di comando di pre-avvio:
 Apre la documentazione dell'API mod per la struttura del codice sorgente nella sua forma più recente
 Valore corrente:
 Identificatore di colore esadecimale non valido.
@@ -1597,7 +1345,6 @@ Il numero di byte non è numerico.
 Il numero di byte iniziale specificato potrebbe non essere maggiore della dimensione del file.
 Il numero di byte finale specificato potrebbe non essere maggiore della dimensione del file.
 Byte cancellati.
-Modifica un file binario
 Seleziona il feed dall'elenco di feed esistente da fonti online
 Download elenco feed in corso...
 Impossibile scaricare l'elenco dei feed.
@@ -1636,14 +1383,9 @@ Contano gli anni di età minima
 Conteggio anni di età massima
 Quantità minima di anni di età da generare
 Quantità massima di anni di età da generare
-> Tipo di struttura: {3}
 Pagina di manuale senza titolo
 Cronologia di input abilitata
-Appunti di input abilitato
-Ingresso annulla abilitato
 Se la cronologia di input è abilitata o meno. Se abilitato, puoi accedere ai comandi digitati di recente utilizzando i tasti freccia su o giù.
-Se gli appunti di input sono abilitati o meno.
-Se la funzione di annullamento dell'input è abilitata o meno.
 Converte i numeri RGB dei colori in esadecimali.
 Converte la rappresentazione esadecimale del colore in numeri RGB.
 Converte la rappresentazione esadecimale del colore in numeri RGB in formato KS.
@@ -1691,13 +1433,11 @@ Convertitore di unità
 Tipi di unità disponibili e relative unità:
 Gioco finito
 Errore inaspettato
-La shell RAR
 I comandi evidenziati in un altro colore sono comandi unificati e sono disponibili in ogni shell.
 Verifica aggiornamenti...
 Download della versione
 Installazione della versione
 Tornando al 2018...
-Non puoi tornare al 2018 su .NET 6.0!
 Usa PowerLine per il rendering dell'astronave
 Velocità di gioco della meteora
 Se utilizzare PowerLine per rendere l'astronave o utilizzare lo standard maggiore del carattere. Se si desidera utilizzare PowerLine con Meteor, è necessario installare un font appropriato con supporto PowerLine.

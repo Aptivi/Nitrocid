@@ -1,6 +1,3 @@
-Avlbl cmmnds: {0}
-cmmnd njctn hs bn cnclld.
- injctd rgmnts wll b schdld t rn t nxt rbt.
  invld clr tmplt {0}
 hwprb: yr hrdwr wll b prbd. Pls wt...
  cpu: on r mr f th cpu crs fld t b prbd. Shwng nfrmtn nywy...
@@ -12,7 +9,6 @@ double panic: rbt tm xcds mxmm llwd {0} rrr rbt tm. Y fnd  krnl bg.
  [{0}] pnc: rbt nbld d t rrr lvl bng {0}.
  [{0}] pnc: tm t rbt: {1} scnds, xcds 1 hr. It s st t 1 mnt.
  double panic: errr typ {0} nvld.
- [{0}] dpnc: {1} -- rbtng n {2} scnds...
  [{0}] pnc: rbt dsbld d t rrr lvl bng {0}.
  [{0}] pnc: {1} -- prss ny ky t cntn sng th krnl.
  [{0}] pnc: {1} -- prss ny ky t shtdwn.
@@ -20,27 +16,15 @@ double panic: rbt tm xcds mxmm llwd {0} rrr rbt tm. Y fnd  krnl bg.
  double panic: krnl bg: {0}
 shttng dwn...
  rbtng...
- anthr nstnc f krnl smltr s rnnng. Shttng dwn n cs f ntrfrnc.
- fld t dd sr nt prmssn lsts: nvld typ {0}
-fld t dd sr nt prmssn lsts: nvld sr {0}
-fld t rmv sr frm prmssn lsts: nvld typ {0}
-y r lrdy lggd n.
- fld t rmv sr frm prmssn lsts: nvld sr {0}
-y hv thr fnd  bg, r th prmssn y trd t dd r rmv s lrdy dn, r thr rrr.
  errr {0}: {1}
-y hv thr fnd  bg, r th prmssn y trd t dt fr  nw sr hs fld.
- avlbl srnms: {0}
 usrnm: 
 spcs r nt llwd.
  spcl chrctrs r nt llwd.
  {0}'s psswrd: 
 wrng psswrd.
- usr s dsbld.
- wrng srnm.
  errr tryng t prs plchldrs. {0}
 errr tryng t dd srnm.
  srmgr: crtng srnm {0}...
- blnk srnm.
  usr {0} nt fnd.
  usr {0} sn't llwd t b rmvd.
  usr {0} s lrdy lggd n. Lg-t nd lg-n s nthr dmn.
@@ -91,24 +75,14 @@ chngs rmt drctry t dwnld frm r pld t
 dlts rmt fl frm srvr
 dscnncts frm srvr
 dwnlds rmt fl t lcl drctry sng bnry r txt
-shws hlp scrn
 lsts lcl drctry
 lsts rmt drctry
 uplds lcl fl t rmt drctry sng bnry r txt
-fld t gt prprts fr dptr {0}
-adptr nmbr:
-adptr nm:
-mxmm trnsmssn unt: {2} unts
-dhcp enbld:
-nn-ncst pckts:
-uncst pckts:
-errr ncmng/tgng pckts:
 als cn't b th sm nm s  cmmnd.
  cmmnd nt fnd t ls t {0}.
  y cn nw rn "{0}" s  cmmnd: "{1}".
  als {0} s nt fnd t b rmvd.
  invld md {0}.
- injctd rgmnts, {0}, wll b schdld t rn t nxt rbt.
  thr ws nt ngh rgmnts. S blw fr sg:
 drctry {0} nt fnd
 blnk hst nm.
@@ -122,18 +96,7 @@ th nw nm y ntrd s lrdy fnd.
  {0} s nt fnd.
  cnfgrtn rldd. Y mght nd t rbt th krnl fr sm chngs t tk ffct.
  on r mr f th clrs s nvld.
- clrs r nt vlbl. Trn n clrd shll n th krnl cnfg.
  scrnsvr {0} nt fnd.
- krnl vrsn:
-dbg md:
-clrd shll:
-argmnts n bt:
-hlp cmmnd smplfd:
-motd n lgn:
-tm/dt n crnr:
-crrnt sr nm:
-crrnt hst nm:
-avlbl srnms:
 errr tryng t xct cmmnd
 chngs drctry
 chngs psswrd fr crrnt sr
@@ -144,35 +107,27 @@ lst fl/fldr cntnts n crrnt fldr
 lcks yr scrn wth  psswrd
 lgs y t
 crts  drctry
-lsts nfrmtn bt ll vlbl ntrfcs
 rstrts yr cmptr (warning: n syncng, bcs t s nt  fnl krnl)
 rlds cnfgrtn fl tht s dtd.
  svs yr scrn frm brn ts
 sts p krnl scrnsvrs
-sts p krnl thms
 shws dt nd tm
 shws dt nd tm n zns
 th krnl wll b sht dwn
-systm nfrmtn
-* y cn s mltpl cmmnds sng th cln btwn cmmnds.
  usg:
-whr rgmnts wll b {0}
 whr cstmsvr wll b
 thr ws n rrr n th shll.
  y dn't hv prmssn t s {0}
 shll mssg: th rqstd cmmnd {0} s nt llwd t rn n mntnnc md.
  shll mssg: th rqstd cmmnd {0} s nt fnd. S 'hlp' fr vlbl cmmnds.
- shll mssg: cmmnd {0} s nt llwd t rn n lg n.
  errr tryng t xct cmmnd.
  - tm f {0}: {1}
 rnnng n {0}
 y r nt thrzd t gt nf fr {0}.
  ths cmmnd s bslt nd wll b rmvd n  ftr rls.
  y r nt thrzd t chng psswrd f {0} bcs th trgt ws n dmn.
- srmgr: usrnm {0} s lrdy fnd
 dlts vrythng n dbg lg
 invld lngg
-chngs lngg
 ----------------------------- krnl pnc dmp -----------------------------
 >> pnc nfrmtn <<
 > dscrptn: {0}
@@ -201,7 +156,6 @@ lsts dbggng dvcs cnnctd
 dbg dvc {0} nt fnd.
  dvc {0} dscnnctd.
  dbg lstnng n ll ddrsss sng prt {0}.
- n rgmnts spcfd. Hnt: spcfy mltpl rgmnts sprtd by spcs
 als lrdy fnd: {0}
 dbg lg rmvd. All cnnctd dbggng dvcs my stll vw mssgs.
  dbg lg rmvl fld: {0}
@@ -210,19 +164,11 @@ spcfy th ddrss
 tmzn s spcfd ncrrctly.
  invld prfl slctn.
  tryng t cnnct t {0} wth prfl {1}...
- fld t gt ipv6 prprts fr dptr {0}. Cntnng...
- ipv4 nfrmtn:
-ipv6 nfrmtn:
-adptr {0} dsn't spprt ipv6. Cntnng...
- adptr {0} dsn't spprt ipv4. Prb fld.
- lks lk y wr rnnng th dvlpmnt vrsn f th krnl. Whl y cn s th spcts, t s frqntly pdtd nd mght ntrdc bgs. It s rcmmndd tht y sty n th stbl vrsn.
  th lngg y'v slctd cntns tw vrnts. Slct n:
 invld chc. Try gn.
  y r nthrzd t st crrnt drctry t {0}: {1}
 th pth y'v spcfd s t lng.
  dmp nfrmtn gthrr crshd whn tryng t gt nfrmtn bt {0}: {1}
-errr whn tryng t st motd/mal: {0}
-errr whn tryng t gt motd/mal: {0}
 errr whn tryng t strt scrnsvr, bcs f n nvld prtn.
  rldng nt llwd n sf md.
  prsng mds nt llwd n sf md.
@@ -237,15 +183,7 @@ clclts fl sms.
  tks y t r gthb wk.
  invld ncryptn lgrthm.
  enbls r dsbls rmt dbggng.
- s f y cn spll wrds crrctly n tm
 s f y cn slv mthmtcl qtns n tm
-rspnd t lv r ht cmmnts.
- if smn md ths cmmnt t yr vd:
-hw wld y rspnd?
-invld slctn. Gng t th nxt cmmnt...
- grt! {0} wll pprct yr thnks.
- splt prfctly!
-splt ncrrctly.
  slvd prfctly!
 slvd ncrrctly.
  rpc s lrdy rnnng.
@@ -256,45 +194,14 @@ slvd ncrrctly.
 ssh dscnnctd.
  unbl t st cdpg. Th lngg my nt dsply prprly.
  dbggng nt nbld.
- thnks! ths s ntrstng.
- evryn wll spprt yr vd fr ths.
- i gv y th spcl fl n yr -ml fr yr nxt vd.
- lstn, htrs, h s tryng t hlp s, nt scm.
- i dn't knw hw mch d i nd my frnds thnk y fr ths vd.
- i lv y fr ths vd.
- kp gng, dn't stp.
- i wll hlp y rch t 1m sbscrbrs!
-my frnds gt thr cmptr fxd bcs f y.
- awsm prnk! i sht dwn my nmy's pc.
- t htrs: stop hating on him
-t htrs: get 2 work
-nbdy wll ntc ths nw thnks t yr bjct hdng gd
-i wll stp wtchng yr vds. Sbscrbr lst.
- wht s ths? ths s nclr.
- ths vd s th wrst!
-evryn rprt ths vd!
-my frnds r frs wth y!
-lvrs wll nw ht y fr ths.
- yr frnd wll ht y fr ths.
- ths prnk md m nsbscrb t y.
- mssn fld, rspct -, sbscrbr -
-stp mkng ths knd f vd!!!
-gt bck t yr jb, yr vds r th wrst!
-w prjdc n ths vd.
  shws ll rcvd ntfctns
 dsmsss  ntfctn
 ntfctn dsmssd sccssflly.
- pckts (nbnd):
-pckts (tbnd):
-errrs n rcvd pckts:
-gnrl ipv6 prprts
-gnrl ipv4 prprts
 rmtly xcts  cmmnd t rmt pc
 - stg 1: systm ntlztn
 - stg 2: hrdwr dtctn
 - stg 3: mds nd scrnsvrs dtctn
 - stg 4: lg n
-lks lk y wr rnnng th rls cnddt vrsn. It s rcmmndd tht y sty n th stbl vrsn.
  invld typ {0}.
  sz: {0}
 drctry {0} lrdy xsts.
@@ -313,7 +220,6 @@ entr psswrd:
 errr whl cnnctng t {0}: {1}
 cnnctng t {0}...
  athntctng...
-lst f cmmnds
 dwnlds mssgs nd lsts thm
 opns  mssg
 pg s nt  nmrc vl.
@@ -328,10 +234,7 @@ prprng prfls... It cld tk svrl mnts...
  errr tryng t xct scrpt: {0}
 wrts txt nt th cnsl
 mks sr chcs
-bp n 'n' hz nd tm n 'n' mllscnds
 whr <$vrbl> s ny vrbl tht wll b sd t str rspns
-frqncy mst b nmrc. If t's nmrc, nsr tht t s >= 37 nd <= 32767.
- tm mst b nmrc.
  whr <nswrs> r n-lttrd nswrs f th qstn sprtd n slshs
 errr tryng t cnnct t ssh srvr: {0}
 allws sr t ntr npt
@@ -346,7 +249,6 @@ th slctn s t f rng. Slct btwn 1-{0}. Try gn.
 ar y sr tht y wnt t cnnct?
 invld nswr. Pls try gn.
  spd dl s mpty. Cnnct t  srvr t dd n ddrss t t.
- spd dl dsn't xst. Cnnct t  srvr t dd n ddrss t t.
  entr imap srvr ddrss nd prt (<ddrss> r <ddrss>:[prt]): 
 entr smtp srvr ddrss nd prt (<ddrss> r <ddrss>:[prt]): 
 snds  mssg t n ddrss
@@ -360,12 +262,10 @@ rmvs  mssg
 rmvs ll mssgs frm rcpnt
 mssg {0} frm {1} dltd frm {2}. {3} mssgs rmnng t prs.
  mssg {0} frm {1} dltd frm nbx. {2} mssgs rmnng t prs.
- edts  txt fl
 mks  nw fl
 fl lrdy xsts.
  errr tryng t crt  fl: {0}
 fld t pn fl. Extng shll...
- lsts vlbl cmmnds
 prnts th cntnts f th fl wth ln nmbrs t th cnsl
 adds  nw ln wth txt t th nd f th fl
 rmvs th spcfd ln nmbr
@@ -378,12 +278,10 @@ rmvd ln.
  >> rmt dbg nd cht: vrsn
 >> yr ddrss s {0}.
  >> yr nm s {0}.
- cmmnd {0} nt fnd. Us "/hlp" t s th lst.
  indx {0} nvld. Thr r {1} stck trcs. Indx s zr-bsd, s try sbtrctng by 1.
  n stck trc
 shws lst stck trc n xcptn
 shws crrnt srnm n th sssn
-dscnncts y frm th dbggr
 unblck  dbg dvc by ip ddrss
 blck  dbg dvc by ip ddrss
 {0} cn nw jn rmt dbg gn.
@@ -395,13 +293,10 @@ sv sttngs
 ext
 spcfd ptn {0} s nvld.
  th nswr mst b nmrc.
- prmpt fr argmnts n bt
-mntnnc md trggr
 chck fr updts n strtp
 qt prb
 shw motd n lg-n
 clr scrn n lg-n
-clrd shll
 smplfd hlp cmmnd
 dbg prt
 dwnld rtry tms
@@ -410,32 +305,25 @@ lg ftp ip ddrss
 rtrn nly frst ftp prfl
 shw tm/dt n uppr rght crnr
 scrnsvr tmt n ms
-dbg sz qt n byts
 sz prs md
 mrq n strtp
 lng tm nd dt
 shw hddn fls
 invld sctn ntrd. Pls g bck.
  g bck...
- enbl
-dsbl
 wrt  rmt dbggr prt. It mst b nmrc, nd mst nt b lrdy sd. Othrws, rmt dbggr wll fl t pn th prt.
  wrt hw mny tms th "gt" cmmnd shld rtry fld dwnlds. It mst b nmrc.
  wrt whn t lnch scrnsvr ftr spcfd mllscnds. It mst b nmrc.
- wrt hw mny byts cn th dbg lg str. It mst b nmrc.
  th nswr my nt b ngtv.
  th nswr s nvld. Chck t mk sr tht th nswr s nmrc fr cnfg ntrs tht nd nmbrs s nswrs.
  vrbl {0} s nt fnd n ny f th mdls.
  chngs krnl cnfgrtn
-actvt 255 clrs
  chng cltr whn swtchng lnggs
 txt shwn
 wrt ny txt y wnt shwn. Shrtr s bttr.
  fld t pld {0}
-errr xctng rmt dbg cmmnd {0}: {1}
 adds srs
 adds lss t cmmnds
-injcts rgmnts t th krnl (rbt rqrd)
 chngs hst nm
 chngs mal, th motd aftr lgn
 chngs motd, th mssg of th dy
@@ -450,13 +338,11 @@ rmvd ls {0} sccssflly.
  errr tryng t dsmss ntfctn.
  srmgr: fld t crt srnm {0}: {1}
 fld t rnm sr. {0}
-on f th prmssn lsts dsn't cntn srnm {0}.
 usr nt fnd
 fld t chng psswrd f srnm: {0}
 unbl t fnd fl t mtch strng "{0}": {1}
 dwnld fld fr fl {0}.
  fld t lst rmt fls: {0}
-ar y sr y wnt t dlt {0} <y/n>?
 dltng {0}...
  {0} s nt fnd n th srvr.
  all ml md by {0} r rmvd sccssflly.
@@ -483,7 +369,6 @@ hmdty: {0}
 y cn gt yr wn api ky t https://hm.pnwthrmp.rg/p_kys.
  y cn lwys cnslt http://blk.pnwthrmp.rg/smpl/cty.lst.jsn.gz fr th lst f cts wth thr ids.
  prfrrd unt fr tmprtr
-sts p th krnl s t prmpts y fr rgmnt n bt.
  trggrs mntnnc md. Ths dsbls mltpl ccnts.
  ech strtp, t wll chck fr pdts.
  whn swtchng lnggs, chng th mnth nms, clndr, tc.
@@ -491,7 +376,6 @@ sts p th krnl s t prmpts y fr rgmnt n bt.
  shw mssg f th dy bfr dsplyng lgn scrn.
  clr scrn bfr dsplyng lgn scrn.
  shws vlbl srs f nbld.
- gvs th krnl clr spprt
 smplfd hlp cmmnd fr ll th shlls
 whthr r nt t lg ftp srnm.
  whthr r nt t lg ftp ip ddrss.
@@ -510,7 +394,6 @@ md {0} ds nt hv th prt nm. Md prsng fld. Rvw th src cd.
  opn "ml" t s thm.
 rmvs  drctry r  fl
 cn't rmv {0} bcs t dsn't xst.
- prss ctrl+c t xt.
  prvds nfrmtn bt  fl
 prvds nfrmtn bt  drctry
 cn't gt nfrmtn bt nnxstnt drctry.
@@ -582,16 +465,7 @@ opns  tst shll
  fld t strt "{0}": {1}
 shw ml mssg prvw
 whn lstng ml mssgs, shw bdy prvw.
- inpt clr
-lcns clr
-cntnbl krnl rrr clr
-uncntnbl krnl rrr clr
-hst nm clr
-usr nm clr
 bckgrnd clr
-ntrl txt clr
-stg clr
-errr clr
 tryng t ccss nvld pth.
  clrs th txt fl
 exts th txt dtr
@@ -621,11 +495,7 @@ mkng  nw thm "{0}".
 sv thm t anthr drctry...
  slct clr sng "<-" nd "->" kys. Prss enter t qt. Prss "" t nsrt clr nmbr mnlly.
  slct clr sng "<-" nd "->" kys. Us rrw p nd rrw dwn kys t slct btwn clr rngs. Prss enter t qt. Prss "" t nsrt clr nmbr mnlly.
- wlcm t th krnl! - vrsn {0}
-wrnng clr
-optn clr
 entr clr nmbr frm 0 t 255:
-us "hwnf" fr xtndd nfrmtn bt hrdwr.
  prnts hrdwr nfrmtn
 prcssr nm:
 prcssr bts:
@@ -635,9 +505,6 @@ gpu: on r mr f th grphcs crds fld t b prbd. Shwng nfrmtn nywy...
  >> wlcm! ths s yr frst tm ntrng rmt dbg nd cht. Us "/rgstr <nm>" t rgstr.
  dvc lrdy xsts.
  n sch dvc.
- sts dvc srnm
-y'r lrdy rgstrd.
- h, {0}!
 prnts cntnt f fl t cnsl
 or, pss "lstcts" t ths cmmnd.
  entry lrdy xsts.
@@ -645,7 +512,6 @@ or, pss "lstcts" t ths cmmnd.
 th cmmnd s nt wrppbl. Ths cmmnds r wrppbl:
 extrcts  zip rchv
 crts  zip rchv
-blt n {0}
 errr dwnldng dbg dt
 thr s n rrr whl dwnldng dbg dt. Chck yr ntrnt cnnctn.
  fld t fnlz md {0}: {1}
@@ -659,12 +525,8 @@ wrps th lst tpts f t sms t lng fr th crrnt cnsl gmtry.
  sv thm t crrnt drctry s...
  sv thm t anthr drctry s...
  spcfy thm nm:
-th sr {0} hs bn ddd t th "{1}" lst.
- th sr {0} hs bn rmvd frm th "{1}" lst.
- invld md {0}
 ld thm frm prblt thms...
  spcfy thm fl nm wht th.jsn xtnsn:
-opns  zip rchv
 lsts ll fls nsd th rchv
 extrcts  fl t  spcfd drctry r  crrnt drctry
 chngs rchv drctry
@@ -672,11 +534,7 @@ drctry {0} dsn't xst
 archv drctry {0} dsn't xst
 mx pstns cnt
 hw mny pstns r lt bfr dmmng?
-lst ntry clr
-lst vl clr
 cnncts t n ssh srvr t xct  cmmnd.
- invld clr spcfr. Ensr tht t's n th crrct frmt, whch mns  nmbr frm 0-255 f sng 255 clrs r  vt sqnc f sng tr clr s fllws:
-errr n tst shll: {0}
 sts  vrbl t  vl n  scrpt
 a bg rprtng prmpt.
  thr ws n rrr n th ftp shll:
@@ -694,15 +552,6 @@ ntrlzd  nn-xstnt pth.
  errr tryng t dd prvt ky:
 prss "t" t swtch t 255 clr md.
  prss "t" t swtch t tr clr md.
- it lks lk y'v gt n sr xcpt rt. Ths s bd. W'll gd y hw t crt n.
- wrt yr srnm.
- y mst wrt yr srnm.
- wrt yr psswrd.
- y mst wrt yr psswrd.
- slct ccnt typ.
- admnstrtr: ths ccnt typ hs th mst pwr n th krnl, llwng y t s systm mngmnt prgrms.
- nrml usr: ths ccnt typ s slghtly mr rstrctd thn dmnstrtrs.
- cngrtltns! y'v md  nw ccnt! t fnsh ths ff, lg n s yr nw ccnt.
  md: n mds dtctd.
  gnrl cmmnds:
 md cmmnds:
@@ -712,33 +561,21 @@ lkp drctrs
 grp f pths sprtd by th cln. It wrks th sm s path. Wrt  fll pth t  fldr r  fldr nm. Whn y'r fnshd, wrt "q". Wrt  mns sgn nxt t th pth t rmv n xstng drctry.
  n md cmmnds.
  n ls cmmnds.
- th clr vl s tsd th rng f 0-255.
  th wrppbl cmmnd s nt fnd.
  qrs  wrd n  spcfd ln r ll lns
 {0} f {1} dwnldd.
- prnts  strng t cnsl sng clr typ nd ln prnt
-prnts  strng t cnsl sng clr typ nd ln prnt wth frmt spprt
-prnts  strng t dbggr
-prnts  strng t dbggr wth frmt spprt
 tsts th krnl rrr fclty
 tsts th krnl rrr fclty wth frmt spprt
 tsts trnsltng  strng tht xsts n rsrcs t spcfc lngg
 prnts  strng t cnsl nd prss th plchldrs fnd
 tsts th rglr xprssn fclty
 strts ll mds
-stps ll mds
-enbls r dsbls dbg
-enbls r dsbls rmt dbg
 tsts th vt sqnc fr 255 clrs
 tsts th vt sqnc fr tr clr
 snds  ntfctn t tst th rcvr
 tsts prntng dt sng dffrnt clndrs
 lsts ll spprtd cdpgs
-wht cmplr vrbls r nbld n th pplctn?
-tsts rsng th spcfc vnt
 tsts prbng th hrdwr
-exts th tst shll nd strts th krnl
-exts th tst shll nd shts dwn th krnl
 svs th crrnt drctry t krnl cnfgrtn fl
 tsts th lst wrtr wth th strng nd strng rry
 tsts th lst wrtr wth th ntgr nd ntgr rry
@@ -850,7 +687,6 @@ md {0} nt fnd.
  wlcm t sttngs!
 errr xctng ssh cmmnd
 errr n ssh shll
-app nfrmtn
 tsts th dctnry wrtr wth th strng nd strng rry
 tsts th dctnry wrtr wth th chr nd chr rry
 tsts th dctnry wrtr wth th ntgr nd ntgr rry
@@ -860,21 +696,15 @@ nrml ntgr dctnry:
 arry ntgr dctnry:
 nrml chr dctnry:
 arry chr dctnry:
-wlcm t tst shll!
 shw prgrss n flsystm prtns
 shws wht fl s bng prcssd drng th flsystm prtns
 whr hrdwrtyp wll b
 ethr th hrdwr typ {0} s nt prbd, r s nt vld.
  th hrdwr typ {0} s nt prbd yt. If y'r sr tht t's prbd, rstrt th krnl wth dbggng nbld.
  prttns nt prsd t lst.
- prnts  sprtr
-prnts  sprtr wth frmt spprt
-prnts  sprtr wth clr spprt
-prnts  sprtr wth clr nd frmt spprt
 alwys cntrd
 wrt ny txt y wnt shwn.
  whthr th txt shwn n th mrq s lwys cntrd.
- argmnt {0} nt fnd t njct.
  scrnsvr xprncd n rrr whl dsplyng: {0}. Prss ny ky t xt.
  prvw...
  hr's hw yr thm wll lk lk:
@@ -891,7 +721,6 @@ md fl pth:
 prt vrsn:
 mnmm cnt f rqrd rgmnts:
 argmnts rqrd?
-wrppbl cmmnd?
 sttng shll vrbl?
 cn nt rn n mntnnc md?
 obslt?
@@ -900,7 +729,6 @@ fldr s mpty.
  vrbs prb
 mk hrdwr prbng mssgs  bt tlktv.
  > thr r n nfrmtn bt frms.
- y nd t wrt yr nm.
  btfs th json fl
 cnfg ctgry {0} nt fnd.
  cnfg ntry {0} nt fnd.
@@ -949,10 +777,6 @@ chck yr ntrnt cnnctn nd try gn.
 mnl pg {0} nt fnd.
  md mnl
 avlbl krnl rgmnts:
-prss "q" f y'r dn.
- mltpl krnl rgmnts cn b sprtd wth cmms wtht spcs, fr xmpl:
-mltpl njctd cmmnds cn b sprtd wth clns wth spcs, fr xmpl:
-th rqstd rgmnt {0} s nt fnd.
  unrcvrbl rrr n rgmnt:
 encrypts  strng sng sha512
 encrypts  strng sng sha384
@@ -977,31 +801,12 @@ th json dtr hsn't pnd  fl strm yt.
 rmvs  prprty frm th json fl
 exts th json shll wtht svng th chngs
 svs th json fl
-opns th json shll
 prnts th json fl
 nxt rmp ntrvl
 hw mny mllscnds t wt bfr fllng n th nxt rmp?
-ntfctn ttl clr
-ntfctn dscrptn clr
-ntfctn prgrss clr
-ntfctn flr clr
-qstn clr
-sccss clr
-usr dllr clr
-tp clr
-sprtr txt clr
-sprtr clr
-lst ttl clr
-dvlpmnt wrnng clr
-stg tm clr
-prgrss clr
-bck ptn clr
 drw ntfctn brdr
 cvrs th ntfctn wth th brdr.
  cntct th vndr f th md t pgrd th md t th cmptbl vrsn.
- lw prrty brdr clr
-mdm prrty brdr clr
-hgh prrty brdr clr
 snds  prgrss ntfctn t tst th rcvr
 tsts th clr whl
 shws lcl krnl tm
@@ -1020,13 +825,11 @@ adds  md t th blcklst
 rmvs  md frm th blcklst
 tm nd dt n utc: {0}
 shw pp nfrmtn drng bt
-prs cmmnd-ln rgmnts
 shw stg fnsh tms
 strt krnl mdfctns n bt
 shw crrnt tm bfr lgn
 ntfy fr ny flt drng bt
 shws brf nfrmtn bt th pplctn n bt.
- prss th cmmnd-ln rgmnts n bt.
  shws hw mch tm dd th krnl tk t fnsh  stg.
  atmtclly strt th krnl mdfctns n bt.
  shws th crrnt tm, tm zn, nd dt bfr lggng n.
@@ -1036,8 +839,6 @@ psswrd prmpt styl
 wrt hw y wnt yr lgn prmpt t b. Lv blnk t s dflt styl. Plchldrs r prsd.
  wrt hw y wnt yr psswrd prmpt t b. Lv blnk t s dflt styl. Plchldrs r prsd.
  shws mssg f th dy ftr dsplyng lgn scrn.
-prb njctd cmmnds
-prbs th njctd cmmnds t th strt f th krnl shll.
  shw fl dtls n lst
 shws th brf fl dtls whl lstng fls
 shw fl dtls n ftp lst
@@ -1089,13 +890,9 @@ add nw cnnctns t sftp spd dl
 shws th sftp fl dtls whl lstng rmt drctrs.
  if nbld, dds  nw cnnctn t th sftp spd dl.
  png tmt
-shw xtnsv dptr nf
-shw gnrl ntwrk nfrmtn
 dwnld prcntg txt
 upld prcntg txt
 hw mny mllscnds t wt bfr dclrng tmt?
-prnts th xtnsv dptr nfrmtn, sch s pckt nfrmtn.
- shws th gnrl nfrmtn bt ntwrk.
  wrt hw y wnt yr pld prcntg txt t b. Lv blnk t s dflt styl. Plchldrs r prsd. {0} fr pldd sz, {1} fr trgt sz, {2} fr prcntg.
  wrt hw y wnt yr dwnld prcntg txt t b. Lv blnk t s dflt styl. Plchldrs r prsd. {0} fr dwnldd sz, {1} fr trgt sz, {2} fr prcntg.
  ask fr psswrd ftr lckng
@@ -1215,16 +1012,12 @@ uppr frm chrctr fr ntfctn brdr
 lwr frm chrctr fr ntfctn brdr
 lft frm chrctr fr ntfctn brdr
 rght frm chrctr fr ntfctn brdr
-mnl pg nfrmtn styl
 whthr t shw wht's wrttn n th npt prmpt.
  wht s th mnmm nmbr t chs?
 wht s th mxmm nmbr t chs?
-wrt hw y wnt yr mnpg nfrmtn t b. Lv blnk t s dflt styl. Plchldrs r prsd. {0} fr mnl ttl, {1} fr rvsn.
- prprty {0} s nt fnd n ny f th mdls.
  strt clr whl n tr clr md
 if spcfd, t wll dsply cstmzd strtp bnnr wth plchldr spprt. Y cn s {0} fr krnl vrsn.
  whch vrnt f th crrnt lngg s bng sd t chng th mnth nms, clndr, tc.?
-actvts th 255 clr spprt.
  actvts th tr clr spprt.
  wrd dltd n ln {0}.
  strng rplcd n ln {0}.
@@ -1253,7 +1046,6 @@ dsk sz:
 ttl mmry:
 grphcs crd:
 dsk mdl:
-cltr f th crrnt lngg
 if y'r sr tht y'v pnd th rght sctn, chck ths mssg t:
 excts n ftp srvr cmmnd
  encrypts  strng sng crc32
@@ -1278,9 +1070,6 @@ if nbld, th ml shll wll shw hw mny byts trnsmttd whn dwnldng ml.
  tm zn:
 tdy s {0}
 crrnt tm s {0}
-tbl sprtr clr
-tbl hdr clr
-tbl vl clr
 pssbl nswrs
 md fl s nt spcfd.
  tryng t nstll n lrdy-nstlld md. Updtng md...
@@ -1302,7 +1091,6 @@ shws th ntfctn shwng th dwnld prgrss.
 strng fnd n th lclztn rsrcs.
  strng nt fnd n th lclztn rsrcs.
  strts th krnl qtly
-injcts  cmmnd t strt p n th nxt lgn
 strts th krnl n sf md, dsblng ll mds
 lk sf md, bt ls dsbls mlt-sr nd sm cstmztn
 thr ws nt ngh rgmnts.
@@ -1327,10 +1115,6 @@ gttng {0}...
  sttng st t
 clrs dn't rqr  rstrt, bt mst f th sttngs rqr  rstrt.
  n hlp fr rgmnt "{0}".
- prss a n ht cmmnts t plgz. Prss t n lv cmmnts t thnk. Prss q t qt th gm.
- y'v plgzd t  ht cmmnt! excllnt!
-aplgzd t lv cmmnt. Nt gd ngh.
- y jst thnkd th htr fr th ht cmmnt!
 dflt dffclty fr spdprss
 kyprss tmt fr spdprss
 slct yr prfrrd dffclty.
@@ -1351,10 +1135,8 @@ chcks ll th ks sttngs t s f th vrbls r wrttn crrctly
 ths cnfgrtn ntrs hv nvld vrbls r nmrtns nd nd t b fxd:
 fl {0} nt fnd
 crts  vrbl rry wth th prvdd vls
-wrt th nmbr f th sttng t g t. Any thr chrctr mns g bck.
  chcks ll th lclztn txt ln nmbrs t s f thy'r ll ql
 ln msmtch n
-pls ntr  sr nmbr.
  incld nnyms srs
 incld dsbld srs
 inclds th nnyms srs n th lst
@@ -1367,9 +1149,7 @@ shw ltst rss hdln n lgn
 rss hdln url
 ech lgn, t wll shw th ltst rss hdln frm th slctd hdln url.
  rss hdln url t b sd whn shwng th ltst hdln. Ths s slly yr fvrt fd.
- ltst nws:
 fld t gt th ltst nws.
- slctd ptn clr
 shw stck trc n krnl rrr
 if thr s ny krnl rrr, chs whthr r nt t prnt th stck trc t th cnsl.
  sv sttngs as
@@ -1388,9 +1168,6 @@ stg dly n mllscnds
 hw mny mllscnds t wt bfr drwng th nxt stg?
 nxt rmp rt ntrvl
 hw mny mllscnds t wt bfr rttng th nxt rmp's n nd?
-chck dbg qt
-d w chck f th dbg systm nds t chck fr qt bfr wrtng t th dbggr?
-hw mny mllscnds dd t rlly tk t slp?
 fld t dd n vnt.
  fld t rmv n vnt.
  nt ngh rgmnts prvdd t dd n vnt.
@@ -1446,9 +1223,6 @@ hw mny blcks (p t 10) s th xplsn rds fr th frwrk whn gntd?
 ths cmmnd hs th blw swtchs tht chng hw t wrks:
 prnts th ln nmbrs tht fllw th ln bng prntd
 prvnts prntng th ln nmbrs
-alwys s th trnsltrtd vrsn
-alwys s th trnsltd vrsn
-frc swtchng lngg
 indct tht th nswr cn tk mr thn n chrctr
 indct tht th nswr cn tk jst n chrctr
 prnt th qstn nd th nswrs n n ln
@@ -1463,23 +1237,15 @@ strts th gm n mdm dffclty
 strts th gm n hrd dffclty
 strts th gm n vry hrd dffclty
 strts th gm n cstm dffclty. Pls nt tht th cstm tmt n mllscnds shld b wrttn s rgmnt.
- shws th systm nfrmtn
-shws th hrdwr nfrmtn
-shws th sr nfrmtn
-shws th mssg f th dy
-shws th mssg f th dy ftr lgn
-shws ll nfrmtn
 crts  drctry tht cntns th cntnts f th zip fl
 shws ll th vlbl cts
 fst cmprssn
 n cmprssn
 dn't crt bs drctry n rchv
-unt n tcks
 dscnncts frm srvr dsgrcflly
 indcts tht th trgt pth s bslt
 svs th json fl, btfyng t n th prcss
 svs th json fl, mnfyng t n th prcss
-gts th ln ndng styl frm txt fl
 clrs ll frd vnts
 enbl vnt dbggng
 enbls dbggng fr th krnl vnt systm
@@ -1494,8 +1260,6 @@ fld t nstll cstm lngg {0}.
  fld t nstll cstm lnggs.
  fld t nnstll cstm lnggs.
  fld t nnstll cstm lnggs. S th nnr xcptn fr mr nf.
- wrt th dmnstrtr psswrd. Mk sr tht y dn't s ths ccnt nlss y rlly knw wht y'r dng.
- y mst wrt th dmnstrtr psswrd.
  lcns nfrmtn
 mng yr lnggs
 lngg nt fnd r fl hs nvld chrctrs.
@@ -1505,9 +1269,7 @@ lngg nt fnd r fl hs nvld chrctrs.
 lngg fll nm:
 lngg trnsltrbl:
 cstm lngg:
-nw wlcm bnnr
 stylsh splsh scrn
-shws th nw fglt-rndrd wlcm bnnr
 enbls th stylsh splsh scrn n strtp. Pls nt tht t wll dsbl rgmnt prmpt nd tst shll pr-bt.
  splsh nm
 splsh nm frm th vlbl splshs mplmntd n th krnl.
@@ -1515,7 +1277,6 @@ splsh nm frm th vlbl splshs mplmntd n th krnl.
  gnrtd dflt mal.
  systm ccnt ntlzd
 usrs ntlzd
-prmssns ldd
 wlcm!
 strtng th rmt dbggr...
  rmt dbggr cnnctn rrr
@@ -1530,8 +1291,6 @@ lks lk y'r bypssng th cnsl sz dtctn. Thngs my nt wrk prprly n smll scrns.
  t hv  bttr xprnc, rsz yr cnsl wndw whl stll bng n ths scrn. Prss ny ky t cntn...
  yr cnsl s t smll t rn prprly:
 bnnr fglt fnt
-prnts  strng t cnsl sng clr typ nd ln prnt wth fglt spprt
-prnts  strng t cnsl sng clr typ nd ln prnt wth frmt nd fglt spprt
 shw th cmmnds cnt n hlp
 shw th shll cmmnds cnt n hlp
 shw th md cmmnds cnt n hlp
@@ -1556,21 +1315,10 @@ prgrss txt lctn
 slct yr prfrrd prgrss txt lctn.
  y cn nly wrt th nmbrs.
  prss "q" t xt.
- dwnldng nms...
- d t tchncl dffclts, w'r nbl t lst dptr prprts n unx systms.
  enbls dbg md
-prmpts fr rgmnts
 enbl blck nd wht md
 mks th dsc blck nd wht. Wll rlly hrt yr ys f t ws t fst, s nt rcmmndd f y'r xprncng  szr f fst mgs.
- lks lk y wr rnnng n nspprtd vrsn. It's hghly dvsbl nt t s ths vrsn.
  ld crrnt clrs
-altrntv ptn clr
-usrs cnt fr lv r ht cmmnts
-hw mny srs t b n th lv r ht cmmnt rm?
-lsts vlbl lnggs
-avlbl lnggs:
-cmmnd-ln rgmnts:
-pr-bt cmmnd-ln rgmnts:
 opns th md api dcmnttn fr th strctr f th src cd n ts mst crrnt frm
 crrnt vl:
 invld hx clr spcfr.
@@ -1597,7 +1345,6 @@ byt rplcd.
  th spcfd strt byt nmbr my nt b lrgr thn th fl sz.
  th spcfd nd byt nmbr my nt b lrgr thn th fl sz.
  dltd byts.
-edts  bnry fl
 slcts th fd frm th xstng fd lst frm nln srcs
 dwnldng fd lst...
  fld t dwnld fd lst.
@@ -1636,14 +1383,9 @@ mnmm g yrs cnt
 mxmm g yrs cnt
 mnmm mnt f g yrs t gnrt
 mxmm mnt f g yrs t gnrt
-> frmwrk typ: {3}
 unttld mnl pg
 inpt hstry nbld
-inpt clpbrd nbld
-inpt nd nbld
 whthr th npt hstry s nbld r nt. If nbld, y cn ccss rcntly typd cmmnds sng th p r dwn rrw kys.
- whthr th npt clpbrd s nbld r nt.
- whthr th npt nd ftr s nbld r nt.
  cnvrts th clr rgb nmbrs t hx.
  cnvrts th hxdcml rprsnttn f th clr t rgb nmbrs.
  cnvrts th hxdcml rprsnttn f th clr t rgb nmbrs n ks frmt.
@@ -1691,13 +1433,11 @@ unt cnvrtr
 avlbl nt typs nd thr nts:
 gm vr
 unxpctd rrr
-th rar shll
 cmmnds hghlghtd n nthr clr r nfd cmmnds nd r vlbl n vry shll.
  chckng fr pdts...
  dwnldng vrsn
 instllng vrsn
 gng bck t 2018...
-Y cn't g bck t 2018 n.Net 6.0!
 us pwrln fr rndrng spcshp
 mtr gm spd
 whthr t s pwrln t rndr th spcshp r t s th stndrd grtr thn chrctr. If y wnt t s pwrln wth mtr, y nd t nstll n pprprt fnt wth pwrln spprt.

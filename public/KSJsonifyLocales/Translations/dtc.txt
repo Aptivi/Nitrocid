@@ -1,6 +1,3 @@
-Beschikbare opdrachten: {0}
-Commando-injectie is geannuleerd.
-Geïnjecteerde argumenten worden gepland om te worden uitgevoerd bij het volgende opnieuw opstarten.
 Ongeldige kleurensjabloon {0}
 hwprobe: Uw hardware wordt ondervraagd. Even geduld aub...
 CPU: een of meer van de CPU-kernen konden niet worden getest. Informatie toch laten zien ...
@@ -12,7 +9,6 @@ DUBBELE PANIEK: Herstarttijd overschrijdt de maximale toegestane {0} reboottijd.
 [{0}] paniek: reboot ingeschakeld vanwege het foutniveau van {0}.
 [{0}] paniek: Tijd om opnieuw op te starten: {1} seconden, overschrijdt 1 uur. Het is ingesteld op 1 minuut.
 DUBBELE PANIEK: Fout Type {0} ongeldig.
-[{0}] dpanic: {1} - Rebooten in {2} seconden ...
 [{0}] paniek: reboot uitgeschakeld omdat het foutniveau {0} is.
 [{0}] paniek: {1} - Druk op een willekeurige toets om door te gaan met het gebruik van de kernel.
 [{0}] paniek: {1} - Druk op een willekeurige toets om af te sluiten.
@@ -20,27 +16,15 @@ DUBBELE PANIEK: Fout Type {0} ongeldig.
 DUBBELE PANIEK: kernel bug: {0}
 Afsluiten...
 Herstarten van ...
-Er is nog een exemplaar van Nitrocid KS actief. Afsluiten in geval van interferentie.
-Toevoegen van gebruiker aan machtigingslijsten is mislukt: ongeldig type {0}
-Kan gebruiker niet toevoegen aan machtigingenlijsten: ongeldige gebruiker {0}
-Kan gebruiker niet uit toestemmingslijsten verwijderen: ongeldig type {0}
-Je bent al ingelogd.
-Kan gebruiker niet uit toestemmingslijsten verwijderen: ongeldige gebruiker {0}
-U hebt een bug gevonden of de toestemming die u probeerde toe te voegen of te verwijderen, is al voltooid of een andere fout.
 Fout {0}: {1}
-U hebt een bug gevonden of de toestemming die u probeerde te bewerken voor een nieuwe gebruiker is mislukt.
-Beschikbare gebruikersnamen: {0}
 Gebruikersnaam:
 Spaties zijn niet toegestaan.
 Speciale karakters zijn niet toegestaan.
 {0} wachtwoord:
 Verkeerd wachtwoord.
-Gebruiker is uitgeschakeld.
-Verkeerde gebruikersnaam.
 Fout bij proberen plaatsaanduidingen te ontleden. {0}
 Fout bij proberen gebruikersnaam toe te voegen.
 usrmgr: gebruikersnaam {0} maken ...
-Lege gebruikersnaam.
 Gebruiker {0} niet gevonden.
 Gebruiker {0} mag niet worden verwijderd.
 Gebruiker {0} is al aangemeld. Uitloggen en inloggen als een andere beheerder.
@@ -91,24 +75,14 @@ Hiermee wordt de externe map gewijzigd om te downloaden van of te uploaden naar
 Wist het externe bestand van de server
 Verbreekt de verbinding met de server
 Download het externe bestand naar de lokale map met binair of tekst
-Toont helpscherm
 Geeft een lokale map weer
 Geeft de externe map weer
 Uploadt lokaal bestand naar de externe map met binaire of tekst
-Kan eigenschappen voor adapter {0} niet ophalen
-Adapter nummer:
-Adapternaam:
-Maximale verzendeenheid: {2} Eenheden
-DHCP ingeschakeld:
-Niet-unicast-pakketten:
-Unicast-pakketten:
-Fout inkomende / uitgaande pakketten:
 Alias ​​kan niet dezelfde naam zijn als een opdracht.
 Opdracht niet gevonden als alias naar {0}.
 U kunt nu "{0}" als opdracht uitvoeren: "{1}".
 Alias ​​{0} kan niet worden verwijderd.
 Ongeldige modus {0}.
-Ingevoerde argumenten, {0}, worden gepland om te worden uitgevoerd bij het volgende opnieuw opstarten.
 Er waren niet genoeg argumenten. Zie hieronder voor gebruik:
 Directory {0} niet gevonden
 Lege hostnaam.
@@ -122,18 +96,7 @@ De nieuwe naam die u hebt ingevoerd, is al gevonden.
 {0} is niet gevonden.
 Configuratie opnieuw geladen. Mogelijk moet u de kernel opnieuw opstarten om een ​​aantal wijzigingen door te voeren.
 Een of meer van de kleuren is ongeldig.
-Kleuren zijn niet beschikbaar. Schakel gekleurde shell in de kernelconfiguratie in.
 Screensaver {0} niet gevonden.
-Kernel-versie:
-Foutopsporingsmodus:
-Gekleurde Shell:
-Argumenten op Boot:
-Help-opdracht vereenvoudigd:
-MOTD bij inloggen:
-Tijd / datum op hoek:
-Huidige gebruikersnaam:
-Huidige hostnaam:
-Beschikbare gebruikersnamen:
 Fout bij proberen opdracht uit te voeren
 Wijzigingenmap
 Verandert het wachtwoord voor de huidige gebruiker
@@ -144,35 +107,27 @@ Geef de inhoud van bestanden / mappen weer in de huidige map
 Vergrendelt uw scherm met een wachtwoord
 Logt je uit
 Creëert een map
-Bevat informatie over alle beschikbare interfaces
 Start uw computer opnieuw op (WAARSCHUWING: geen synchronisatie, omdat het geen laatste kernel is)
 Laadt het configuratiebestand opnieuw dat is bewerkt.
 Slaat uw scherm op tegen burn-outs
 Stelt kernel-screensavers in
-Stelt kernelthema's in
 Toont datum en tijd
 Toont datum en tijd in zones
 De kernel zal worden afgesloten
-Systeem informatie
-* U kunt meerdere opdrachten gebruiken met behulp van de dubbele punt tussen opdrachten.
 Gebruik:
-waar argumenten zullen zijn {0}
 waar customsaver zal zijn
 Er is een fout opgetreden in de shell.
 U bent niet gemachtigd om {0} te gebruiken
 Shell-bericht: het gevraagde commando {0} mag niet worden uitgevoerd in de onderhoudsmodus.
 Shell-bericht: het gevraagde commando {0} is niet gevonden. Zie 'help' voor beschikbare commando's.
-Shell-bericht: Commando {0} mag niet worden uitgevoerd bij inloggen.
 Fout bij proberen opdracht uit te voeren.
 - Tijd van {0}: {1}
 Draait op {0}
 U bent niet gemachtigd om informatie voor {0} te krijgen.
 Deze opdracht is verouderd en wordt in een toekomstige versie verwijderd.
 U bent niet gemachtigd om het wachtwoord van {0} te wijzigen omdat het doel een beheerder was.
-usrmgr: gebruikersnaam {0} is al gevonden
 Hiermee verwijdert u alles in het logboek voor foutopsporing
 Ongeldige taal
-Verandert de taal
 ----------------------------- Kernel paniekdump ------------------------------
 >> Paniekinformatie <<
 > Beschrijving: {0}
@@ -201,7 +156,6 @@ Toont foutopsporingsapparaten aangesloten
 Foutopsporingsapparaat {0} niet gevonden.
 Apparaat {0} verbroken.
 Debug luisteren op alle adressen met behulp van poort {0}.
-Geen argumenten opgegeven. Hint: specificeer meerdere argumenten gescheiden door spaties
 Alias al gevonden: {0}
 Foutopsporingslogboek verwijderd. Alle aangesloten foutopsporingsapparaten kunnen nog steeds berichten bekijken.
 Verwijderen van logboek voor foutopsporing is mislukt: {0}
@@ -210,19 +164,11 @@ Geef het adres op
 Tijdzone is onjuist opgegeven.
 Ongeldige profielselectie.
 Probeer verbinding te maken met {0} met profiel {1} ...
-Kan IPv6-eigenschappen voor adapter {0} niet ophalen. Voortzetting van ...
-IPv4-informatie:
-IPv6-informatie:
-Adapter {0} ondersteunt geen IPv6. Voortzetting van ...
-Adapter {0} ondersteunt geen IPv4. Sonde is mislukt.
-Het lijkt erop dat je de ontwikkelingsversie van de kernel gebruikte. Hoewel je de aspecten kunt zien, wordt het regelmatig bijgewerkt en kunnen er bugs optreden. Het wordt aanbevolen dat u op de stabiele versie blijft.
 De geselecteerde taal bevat twee varianten. Kies een:
 Ongeldige keuze Probeer het opnieuw.
 U bent niet gemachtigd om de huidige map in te stellen op {0}: {1}
 Het opgegeven pad is te lang.
 Dump-informatieverzamelaar is gecrasht bij het proberen informatie te krijgen over {0}: {1}
-Fout bij het instellen van MOTD / MAL: {0}
-Fout bij het verkrijgen van MOTD / MAL: {0}
 Fout bij het starten van de screensaver vanwege een ongeldige bewerking.
 Herladen niet toegestaan ​​in veilige modus.
 Mods voor parseren niet toegestaan ​​in veilige modus.
@@ -237,15 +183,7 @@ Berekent bestandssommen.
 Brengt je naar onze GitHub Wiki.
 Ongeldig coderingsalgoritme.
 Schakelt foutopsporing op afstand in of uit.
-Kijk of je woorden op tijd correct kunt spellen
 Kijk of je wiskundige vergelijkingen op tijd kunt oplossen
-Reageer op liefde of haat reacties.
-Als iemand deze opmerking bij je video heeft gemaakt:
-Hoe zou u reageren?
-Ongeldige selectie. Naar de volgende reactie gaan ...
-Super goed! {0} zal uw dank waarderen.
-Perfect gespeld!
-Onjuist gespeld.
 Perfect opgelost!
 Onjuist opgelost.
 RPC is al actief.
@@ -256,45 +194,14 @@ Voer het wachtwoord in voor {0}:
 SSH Verbinding verbroken.
 Kan codepagina niet instellen. De taal wordt mogelijk niet correct weergegeven.
 Foutopsporing niet ingeschakeld.
-Bedankt! Dit is interessant.
-Iedereen zal hiervoor je video ondersteunen.
-Ik gaf je het speciale bestand in je e-mail voor je volgende video.
-Luister, haters, hij probeert ons te helpen, niet oplichterij.
-Ik weet niet hoeveel ik en mijn vrienden je bedanken voor deze video.
-Ik hou van je voor deze video.
-Blijf doorgaan, stop niet.
-Ik zal je helpen om 1M-abonnees te bereiken!
-Mijn vrienden hebben hun computer gerepareerd vanwege jou.
-Geweldige grap! Ik heb de pc van mijn vijand afgesloten.
-Tegen haters: STOP MET HATEN OP HEM
-Tegen haters: AAN DE SLAG
-Niemand zal dit nu opmerken dankzij uw gids voor het verbergen van objecten
-Ik stop met het bekijken van je video's. Abonnee verloren.
-Wat is dit? Dit is onduidelijk.
-Deze video is het ergst!
-Iedereen meldt deze video!
-Mijn vrienden zijn woedend op jou!
-Liefhebbers zullen je hier nu om haten.
-Je vriend zal je hierom haten.
-Deze grap maakte me uitschrijven voor jou.
-Missie mislukt, respect -, abonnee -
-Stop met het maken van dit soort video's !!!
-Ga terug naar je werk, je video's zijn het slechtst!
-We hebben vooroordelen over deze video.
 Toont alle ontvangen meldingen
 Wijst een melding af
 Melding met succes afgewezen.
-Pakketten (inkomend):
-Pakketten (uitgaand):
-Fouten in ontvangen pakketten:
-Algemene IPv6-eigenschappen
-Algemene IPv4-eigenschappen
 Voert op afstand een opdracht uit naar een externe pc
 - Fase 1: systeeminitialisatie
 - Fase 2: hardwaredetectie
 - Fase 3: detectie van mods en screensavers
 - Fase 4: inloggen
-Het lijkt erop dat u de release-kandidaatversie gebruikte. Het wordt aanbevolen dat u op de stabiele versie blijft.
 Ongeldig type {0}.
 Grootte: {0}
 Directory {0} bestaat al.
@@ -313,7 +220,6 @@ Voer wachtwoord in:
 Fout bij verbinden met {0}: {1}
 Verbinding maken met {0} ...
 Verifiëren ...
-Lijst met opdrachten
 Downloadt berichten en geeft ze weer
 Opent een bericht
 Pagina is geen numerieke waarde.
@@ -328,10 +234,7 @@ Profielen voorbereiden ... Het kan enkele minuten duren ...
 Fout bij het uitvoeren van script: {0}
 Schrijft tekst in de console
 Maakt keuzes voor gebruikers
-Piept in 'n' Hz en tijd in 'n' milliseconden
 waarbij <$variabele> elke variabele is die zal worden gebruikt om de reactie op te slaan
-Frequentie moet numeriek zijn. Als het numeriek is, zorg er dan voor dat het >= 37 en <= 32767 is.
-Tijd moet numeriek zijn.
 waar <antwoorden> zijn antwoorden met één letter van de vraag, gescheiden door schuine strepen
 Fout bij verbinding maken met SSH-server: {0}
 Hiermee kan de gebruiker invoer invoeren
@@ -346,7 +249,6 @@ Tijdens certificaatvalidatie zijn er certificaatfouten. Het is mogelijk de eerst
 Weet u zeker dat u verbinding wilt maken?
 Ongeldig antwoord. Probeer het alstublieft opnieuw.
 Snelkiezen is leeg. Maak verbinding met een server om er een adres aan toe te voegen.
-Snelkiezen bestaat niet. Maak verbinding met een server om er een adres aan toe te voegen.
 Voer het IMAP-serveradres en de poort in (<adres> of <adres>:[poort]):
 Voer het SMTP-serveradres en de poort in (<adres> of <adres>:[poort]):
 Stuurt een bericht naar een adres
@@ -360,12 +262,10 @@ Verwijdert een bericht
 Verwijdert alle berichten van de ontvanger
 Bericht {0} van {1} verwijderd van {2}. {3} berichten die nog moeten worden geparseerd.
 Bericht {0} van {1} verwijderd uit inbox. {2} berichten die nog moeten worden geparseerd.
-Bewerkt een tekstbestand
 Maakt een nieuw bestand
 Bestand bestaat al.
 Fout bij het maken van een bestand: {0}
 Gefaald om het document te openen. Shell afsluiten ...
-Geeft beschikbare opdrachten weer
 Drukt de inhoud van het bestand met regelnummers af naar de console
 Voegt een nieuwe regel met tekst toe aan het einde van het bestand
 Verwijdert het opgegeven regelnummer
@@ -378,12 +278,10 @@ Draait in veilige modus. Etappe overslaan ...
 >> Remote Debug and Chat: versie
 >> Uw adres is {0}.
 >> Je naam is {0}.
-Command {0} niet gevonden. Gebruik "/help" om de lijst te zien.
 Index {0} ongeldig. Er zijn {1} stacktraces. Index is op nul gebaseerd, dus probeer af te trekken met 1.
 Geen stacktracering
 Toont laatste stacktracering bij uitzondering
 Toont de huidige gebruikersnaam in de sessie
-Verbreekt de verbinding met de debugger
 Deblokkeer een debug-apparaat op IP-adres
 Blokkeer een apparaat voor foutopsporing op IP-adres
 {0} kan nu opnieuw deelnemen aan debuggen op afstand.
@@ -395,13 +293,10 @@ Instellingen opslaan
 Uitgang
 Opgegeven optie {0} is ongeldig.
 Het antwoord moet numeriek zijn.
-Vragen om argumenten bij opstarten
-Trigger voor onderhoudsmodus
 Controleer op updates bij het opstarten
 Stille sonde
 Toon MOTD bij inloggen
 Scherm wissen bij inloggen
-Gekleurde schelp
 Vereenvoudigde Help-opdracht
 Debug-poort
 Download Retry Times
@@ -410,32 +305,25 @@ Log FTP IP-adres
 Retourneer alleen het eerste FTP-profiel
 Toon tijd / datum in de rechterbovenhoek
 Screensaver Time-out in ms
-Foutopsporingsquotum in bytes
 Grootte parse-modus
 Selectiekader bij opstarten
 Lange tijd en datum
 Toon verborgen bestanden
 Ongeldige sectie ingevoerd. Ga alsjeblieft terug.
 Ga terug...
-Inschakelen
-Uitschakelen
 Schrijf een poort voor foutopsporing op afstand. Het moet numeriek zijn en mag niet al worden gebruikt. Anders kan de externe debugger de poort niet openen.
 Schrijf op hoe vaak de opdracht "" get "" mislukte downloads opnieuw moet proberen. Het moet numeriek zijn.
 Schrijf wanneer de screensaver moet worden gestart na gespecificeerde milliseconden. Het moet numeriek zijn.
-Schrijf hoeveel bytes het foutopsporingslogboek kan opslaan. Het moet numeriek zijn.
 Het antwoord mag niet negatief zijn.
 Het antwoord is ongeldig. Controleer of het antwoord numeriek is voor configuratie-items die getallen nodig hebben als antwoorden.
 Variabele {0} is niet gevonden in een van de modules.
 Verandert de kernelconfiguratie
-Activeer 255 kleuren
 Verander de cultuur bij het wisselen van taal
 Tekst getoond
 Schrijf elke gewenste tekst. Korter is beter.
 Uploaden van {0} is mislukt
-Fout bij het uitvoeren van opdracht voor foutopsporing op afstand {0}: {1}
 Voegt gebruikers toe
 Voegt aliassen toe aan opdrachten
-Injecteert argumenten in de kernel (opnieuw opstarten vereist)
 Wijzigt de hostnaam
 Verandert MAL, de MOTD na inloggen
 Verandert MOTD, de boodschap van de dag
@@ -450,13 +338,11 @@ Instellen van taal is mislukt.
 Fout bij het negeren van melding.
 usrmgr: kan geen gebruikersnaam {0} maken: {1}
 Het wijzigen van de naam van de gebruiker is mislukt. {0}
-Een van de toestemmingslijsten bevat geen gebruikersnaam {0}.
 Gebruiker niet gevonden
 Kan wachtwoord van gebruikersnaam niet wijzigen: {0}
 Kan bestand niet vinden dat overeenkomt met tekenreeks "{0}": {1}
 Downloaden voor bestand {0} mislukt.
 Kan externe bestanden niet weergeven: {0}
-Weet u zeker dat u {0} <y / n> wilt verwijderen?
 {0} verwijderen ...
 {0} is niet gevonden op de server.
 Alle e-mail van {0} is succesvol verwijderd.
@@ -483,7 +369,6 @@ Vochtigheid: {0}
 U kunt uw eigen API-sleutel krijgen op https://home.openweathermap.org/api_keys.
 U kunt altijd http://bulk.openweathermap.org/sample/city.list.json.gz raadplegen voor de lijst met steden met hun ID's.
 Voorkeurseenheid voor temperatuur
-Stelt de kernel zo in dat hij bij het opstarten om een ​​argument vraagt.
 Activeert de onderhoudsmodus. Hierdoor worden meerdere accounts uitgeschakeld.
 Elke keer dat het opstart, controleert het op updates.
 Wijzig bij het wisselen van taal de maandnamen, de kalender, enz.
@@ -491,7 +376,6 @@ Houd hardware-onderzoekende berichten stil.
 Toon het bericht van de dag voordat het inlogscherm wordt weergegeven.
 Scherm wissen voordat het inlogscherm wordt weergegeven.
 Toont beschikbare gebruikers indien ingeschakeld.
-Geeft de kernelkleurondersteuning
 Vereenvoudigde helpopdracht voor alle shells
 Of de FTP-gebruikersnaam moet worden geregistreerd.
 Of het FTP-IP-adres al dan niet moet worden geregistreerd.
@@ -510,7 +394,6 @@ U moet de foutopsporingsmodus inschakelen voordat u het foutopsporingslogboek ku
 Open "mail" om ze te zien.
 Verwijdert een map of een bestand
 Kan {0} niet verwijderen omdat het niet bestaat.
-Druk op CTRL + C om af te sluiten.
 Geeft informatie over een bestand
 Geeft informatie over een directory
 Kan geen informatie krijgen over niet-bestaande directory.
@@ -582,16 +465,7 @@ Opent een testshell
 Starten van "{0}" is mislukt: {1}
 Voorbeeld van e-mailbericht weergeven
 Geef bij het weergeven van e-mailberichten een voorbeeld van het hoofdgedeelte weer.
-Invoerkleur
-Licentie kleur
-Kleur van aanhoudende kernelfout
-Kleur van onhoudbare kernelfout
-Hostnaam kleur
-Kleur gebruikersnaam
 Achtergrond kleur
-Neutrale tekstkleur
-Stage kleur
-Foutkleur
 Probeert toegang te krijgen tot een ongeldig pad.
 Wist het tekstbestand
 Verlaat de teksteditor
@@ -621,11 +495,7 @@ Thema opslaan in huidige map
 Thema opslaan in een andere map...
 Selecteer kleur met behulp van de toetsen "<-" en "->". Druk op ENTER om te stoppen. Druk op "i" om het kleurnummer handmatig in te voeren.
 Selecteer kleur met behulp van de toetsen "<-" en "->". Gebruik de pijltoetsen omhoog en omlaag om tussen kleurbereiken te kiezen. Druk op ENTER om te stoppen. Druk op "i" om het kleurnummer handmatig in te voeren.
-Welkom in de kern! - Versie {0}
-Waarschuwingskleur
-Optie kleur
 Voer het kleurnummer in van 0 tot 255:
-Gebruik "hwinfo" voor uitgebreide informatie over hardware.
 Drukt hardware-informatie af
 Naam processor:
 Processorbits:
@@ -635,9 +505,6 @@ GPU: het testen van een of meer grafische kaarten is mislukt. Toch informatie we
 >> Welkom! Dit is de eerste keer dat u op afstand debuggen en chatten. Gebruik "/register <naam>" om te registreren.
 Apparaat bestaat al.
 Geen dergelijk apparaat.
-Stelt de gebruikersnaam van het apparaat in
-Je bent al geregistreerd.
-Hallo, {0}!
 Drukt inhoud van bestand af naar console
 Of geef "listcities" door aan dit commando.
 Invoer bestaat al.
@@ -645,7 +512,6 @@ Wikkelt de console-uitvoer
 De opdracht kan niet worden ingepakt. Deze commando's zijn wrappable:
 Pakt een ZIP-archief uit
 Creëert een ZIP-archief
-Ingebouwd {0}
 Fout bij downloaden van foutopsporingsgegevens
 Er is een fout opgetreden bij het downloaden van foutopsporingsgegevens. Controleer je internetverbinding.
 Kan mod {0} niet voltooien: {1}
@@ -659,12 +525,8 @@ Ping!
 Thema opslaan in huidige map als...
 Thema opslaan in een andere map als...
 Geef themanaam op:
-De gebruiker {0} is toegevoegd aan de lijst "{1}".
-De gebruiker {0} is verwijderd uit de lijst "{1}".
-Ongeldige modus {0}
 Thema laden vanuit vooraf gemaakte thema's...
 Geef de naam van het themabestand op zonder de .json-extensie:
-Opent een ZIP-archief
 Geeft een overzicht van alle bestanden in het archief
 Extraheert een bestand naar een opgegeven map of een huidige map
 Wijzigingen archiefmap
@@ -672,11 +534,7 @@ Directory {0} bestaat niet
 Archiefmap {0} bestaat niet
 Max aantal posities
 Hoeveel standen branden er voordat er wordt gedimd?
-Kleur van lijstinvoer
-Lijstwaarde kleur
 Maakt verbinding met een SSH-server om een ​​opdracht uit te voeren.
-Ongeldige kleurspecificatie. Zorg ervoor dat het de juiste indeling heeft, wat een getal van 0-255 betekent als u 255 kleuren gebruikt of een VT-reeks als u ware kleuren als volgt gebruikt:
-Fout in testshell: {0}
 Stelt een variabele in op een waarde in een script
 Een prompt voor het melden van fouten.
 Er is een fout opgetreden in de FTP-shell:
@@ -694,15 +552,6 @@ Sleutelbestand {0} bestaat niet.
 Fout bij het toevoegen van een persoonlijke sleutel:
 Druk op "t" om over te schakelen naar de 255 kleurmodus.
 Druk op "t" om over te schakelen naar de modus voor ware kleuren.
-Het lijkt erop dat je geen gebruiker hebt behalve root. Dit is slecht. We zullen u begeleiden hoe u er een kunt maken.
-Schrijf uw gebruikersnaam.
-U moet uw gebruikersnaam schrijven.
-Schrijf uw wachtwoord.
-U moet uw wachtwoord schrijven.
-Selecteer accounttype.
-Beheerder: Dit accounttype heeft de meeste kracht in de kernel, waardoor je systeembeheerprogramma's kunt gebruiken.
-Normale gebruiker: dit accounttype is iets beperkter dan beheerders.
-Gefeliciteerd! Je hebt een nieuw account gemaakt! Om dit af te ronden, logt u in als uw nieuwe account.
 mod: Geen mods gedetecteerd.
 Algemene commando's:
 Mod-commando's:
@@ -712,33 +561,21 @@ Directory's opzoeken
 Groep paden gescheiden door de dubbele punt. Het werkt hetzelfde als PATH. Schrijf een volledig pad naar een map of een mapnaam. Als je klaar bent, schrijf je "q". Schrijf een minteken naast het pad om een ​​bestaande map te verwijderen.
 Geen mod-commando's.
 Geen alias-opdrachten.
-De kleurwaarde ligt buiten het bereik van 0-255.
 De wrappable-opdracht is niet gevonden.
 Vraagt ​​een woord in een opgegeven regel of alle regels
 {0} van {1} gedownload.
-Drukt een string af naar console met behulp van kleurtype en lijnafdruk
-Drukt een string af naar console met kleurtype en lijnafdruk met formaatondersteuning with
-Drukt een string af naar debugger
-Drukt een string af naar debugger met formaatondersteuning
 Test de kernelfoutfaciliteit
 Test de kernelfoutfaciliteit met formaatondersteuning
 Tests die een tekenreeks vertalen die in bronnen voorkomt naar een specifieke taal
 Drukt een string af naar console en analyseert de gevonden tijdelijke aanduidingen
 Test de reguliere expressie-faciliteit
 Start alle mods
-Stopt alle mods
-Schakelt foutopsporing in of uit
-Schakelt foutopsporing op afstand in of uit
 Test de VT-reeks voor 255 kleuren
 Test de VT-reeks op ware kleuren
 Stuurt een melding om de ontvanger te testen
 Test de afdrukdatum met verschillende kalenders
 Geeft een overzicht van alle ondersteunde codepagina's
-Welke compilervariabelen zijn ingeschakeld in de toepassing?
-Tests die de specifieke gebeurtenis verhogen
 Tests die de hardware onderzoeken
-Sluit de testshell af en start de kernel
-Sluit de testshell af en sluit de kernel af
 Slaat de huidige map op in het kernelconfiguratiebestand
 Test de lijstschrijver met de tekenreeks en tekenreeksarray
 Test de lijstschrijver met de integer en integer array
@@ -850,7 +687,6 @@ Karakter verwijderd.
 Welkom bij Instellingen!
 Fout bij uitvoeren van SSH-opdracht
 Fout op SSH-shell
-App-informatie
 Test de woordenboekschrijver met de tekenreeks en tekenreeksarray
 Test de woordenboekschrijver met de char en char array
 Test de woordenboekschrijver met de integer en integer array
@@ -860,21 +696,15 @@ Normaal integer woordenboek:
 Array integer woordenboek:
 Normaal char woordenboek:
 Array char-woordenboek:
-Welkom bij Test Shell!
 Voortgang weergeven op bestandssysteembewerkingen
 Toont welk bestand wordt verwerkt tijdens de bewerkingen van het bestandssysteem
 waar HardwareType zal zijn
 Het hardwaretype {0} is niet onderzocht of is niet geldig.
 Het hardwaretype {0} is nog niet onderzocht. Als je zeker weet dat het wordt onderzocht, herstart dan de kernel met debugging ingeschakeld.
 Partities niet geparseerd naar lijst.
-Drukt een scheidingsteken af
-Drukt een scheidingsteken af ​​met formaatondersteuning
-Drukt een scheidingsteken af ​​met kleurondersteuning
-Drukt een scheidingsteken af ​​met ondersteuning voor kleur en formaat
 Altijd gecentreerd
 Schrijf elke tekst die u wilt laten zien.
 Of de tekst op het selectiekader altijd gecentreerd is.
-Argument {0} niet gevonden om te injecteren.
 Er is een fout opgetreden in de screensaver bij het weergeven van: {0}. Druk op een willekeurige toets om af te sluiten.
 Voorbeeld...
 Zo ziet je thema eruit:
@@ -891,7 +721,6 @@ Mod-bestandspad:
 Deel versie:
 Minimaal aantal vereiste argumenten:
 Argumenten nodig?
-Inpakbare opdracht?
 Shell-variabele instellen?
 Kan niet worden uitgevoerd in de onderhoudsmodus?
 Verouderd?
@@ -900,7 +729,6 @@ Map is leeg.
 Uitgebreide sonde
 Maak hardware indringende berichten een beetje spraakzaam.
 > Er is geen informatie over frames.
-Je moet je naam schrijven.
 Verfraait het JSON-bestand
 Configuratiecategorie {0} niet gevonden.
 Configuratie-item {0} niet gevonden.
@@ -949,10 +777,6 @@ Deze handleiding heeft werk nodig voor:
 Handleiding pagina {0} niet gevonden.
 Mod-handleiding
 Beschikbare kernelargumenten:
-Druk op "q" als je klaar bent.
-Meerdere kernelargumenten kunnen worden gescheiden met komma's zonder spaties, bijvoorbeeld:
-Meerdere geïnjecteerde opdrachten kunnen worden gescheiden door dubbele punten met spaties, bijvoorbeeld:
-Het gevraagde argument {0} is niet gevonden.
 Onherstelbare fout in argument:
 Codeert een string met SHA512
 Codeert een string met SHA384
@@ -977,31 +801,12 @@ Voegt een nieuwe eigenschap toe aan het einde van het JSON-bestand
 Verwijdert een eigenschap uit het JSON-bestand
 Sluit de JSON-shell af zonder de wijzigingen op te slaan
 Slaat het JSON-bestand op
-Opent de JSON-shell
 Drukt het JSON-bestand af
 Volgende hellingsinterval
 Hoeveel milliseconden wachten voordat de volgende helling wordt ingevuld?
-Kleur van meldingstitel
-Kleur van meldingsbeschrijving
-Kleur van melding voortgang
-Kleur melding fout
-Vraag kleur
-Succes kleur
-Gebruiker dollar kleur
-Kleur punt
-Tekstkleur scheidingsteken
-Kleur van scheidingsteken
-Kleur van lijsttitel
-Ontwikkeling waarschuwingskleur
-Stage tijd kleur
-Voortgangskleur
-Terug optie kleur
 Meldingsrand tekenen
 Omvat de melding met de rand.
 Neem contact op met de leverancier van de mod om de mod te upgraden naar de compatibele versie.
-Randkleur met lage prioriteit
-Randkleur met gemiddelde prioriteit
-Randkleur met hoge prioriteit
 Stuurt een voortgangsmelding om de ontvanger te testen
 Test het kleurenwiel
 Toont lokale kerneltijd
@@ -1020,13 +825,11 @@ Voegt een mod toe aan de zwarte lijst
 Verwijdert een mod van de zwarte lijst
 Tijd en datum in UTC: {0}
 App-informatie tonen tijdens opstarten
-Opdrachtregelargumenten ontleden
 Eindtijden etappe weergeven
 Start kernel-modificaties bij het opstarten
 Toon huidige tijd voor inloggen
 Melden voor elke fout tijdens het opstarten
 Toont korte informatie over de toepassing bij het opstarten.
-Parseert de opdrachtregelargumenten bij het opstarten.
 Toont hoeveel tijd de kernel nodig had om een ​​fase te voltooien.
 Start automatisch de kernelwijzigingen bij het opstarten.
 Toont de huidige tijd, tijdzone en datum voordat u zich aanmeldt.
@@ -1036,8 +839,6 @@ Stijl voor wachtwoordprompt
 Schrijf hoe u wilt dat uw aanmeldingsprompt is. Laat leeg om de standaardstijl te gebruiken. Tijdelijke aanduidingen worden geparseerd.
 Schrijf hoe u wilt dat uw wachtwoordprompt is. Laat leeg om de standaardstijl te gebruiken. Tijdelijke aanduidingen worden geparseerd.
 Toont Bericht van de Dag na het weergeven van het inlogscherm.
-Probe-geïnjecteerde opdrachten
-Onderzoekt de geïnjecteerde opdrachten aan het begin van de kernelshell.
 Toon bestandsdetails in lijst
 Toont de korte bestandsdetails tijdens het weergeven van bestanden
 Bestandsdetails weergeven in FTP-lijst
@@ -1089,13 +890,9 @@ Nieuwe verbindingen toevoegen aan SFTP-snelkiesnummers
 Toont de details van het SFTP-bestand bij het weergeven van externe mappen.
 Voegt, indien ingeschakeld, een nieuwe verbinding toe aan het SFTP-snelkiesnummer.
 Time-out voor ping
-Toon uitgebreide adapterinfo
-Algemene netwerkinformatie weergeven
 Percentage tekst downloaden
 Upload percentage tekst
 Hoeveel milliseconden moet ik wachten voordat de time-out wordt aangegeven?
-Drukt de uitgebreide adapterinformatie af, zoals pakketinformatie.
-Toont de algemene informatie over het netwerk.
 Schrijf hoe u wilt dat uw uploadpercentagetekst is. Laat leeg om de standaardstijl te gebruiken. Tijdelijke aanduidingen worden geparseerd. {0} voor geüploade grootte, {1} voor doelgrootte, {2} voor percentage.
 Schrijf hoe u wilt dat uw downloadpercentagetekst is. Laat leeg om de standaardstijl te gebruiken. Tijdelijke aanduidingen worden geparseerd. {0} voor gedownloade grootte, {1} voor doelgrootte, {2} voor percentage.
 Wachtwoord vragen na vergrendeling
@@ -1215,16 +1012,12 @@ Bovenste frameteken voor meldingsrand
 Onderste framekarakter voor meldingsrand
 Teken in linkerframe voor meldingsrand
 Rechterkaderteken voor meldingsrand
-Stijl handmatige pagina-informatie
 Of er moet worden weergegeven wat er in de invoerprompt staat.
 Wat is het minimum aantal om te kiezen?
 Wat is het maximale aantal om te kiezen?
-Schrijf hoe u wilt dat uw manpage-informatie is. Laat leeg om de standaardstijl te gebruiken. Tijdelijke aanduidingen worden geparseerd. {0} voor handmatige titel, {1} voor revisie.
-Eigenschap {0} is niet gevonden op een van de modules.
 Start kleurenwiel in ware kleurenmodus
 Indien opgegeven, wordt een aangepaste opstartbanner weergegeven met ondersteuning voor tijdelijke aanduidingen. U kunt {0} gebruiken voor de kernelversie.
 Welke variant van de huidige taal wordt gebruikt om de maandnamen, kalender, enz. te wijzigen?
-Activeert de 255 kleurenondersteuning.
 Activeert de ondersteuning voor ware kleuren.
 Woord verwijderd in regel {0}.
 String vervangen in regel {0}.
@@ -1253,7 +1046,6 @@ Schijfgrootte:
 Totaal geheugen:
 Grafische kaart:
 Schijfmodel:
-Cultuur van de huidige taal
 Als je zeker weet dat je de juiste sectie hebt geopend, bekijk dan dit bericht:
 Voert een FTP-serveropdracht uit
 Codeert een string met CRC32
@@ -1278,9 +1070,6 @@ Schrijf hoe u wilt dat uw voortgangsstijl voor e-mailoverdracht is. Laat leeg om
 Tijdzone:
 Vandaag is het {0}
 De huidige tijd is {0}
-Kleur tafelscheiding
-Kleur tabelkop
-Tabel waarde kleur
 Mogelijke antwoorden
 Mod-bestand is niet gespecificeerd.
 Ik probeer een reeds geïnstalleerde mod te installeren. Modus bijwerken...
@@ -1302,7 +1091,6 @@ Controleert of de vertaalbare tekenreeks bestaat in de KS-bronnen
 Tekenreeks gevonden in de lokalisatiebronnen.
 Tekenreeks niet gevonden in de lokalisatiebronnen.
 Start de kernel stil
-Injecteert een commando om op te starten bij de volgende login
 Start de kernel in de veilige modus, waarbij alle mods worden uitgeschakeld
 Zoals de veilige modus, maar schakelt ook multi-user en enige aanpassing uit
 Er waren niet genoeg argumenten.
@@ -1327,10 +1115,6 @@ De indeling van de site-URI is ongeldig.
 Site instellen op
 Kleuren vereisen geen herstart, maar de meeste instellingen vereisen een herstart.
 Geen hulp voor argument "{0}".
-Druk op A bij haatreacties om je excuses aan te bieden. Druk op T op liefdescommentaar om te bedanken. Druk op Q om het spel af te sluiten.
-Je hebt je excuses aangeboden voor een haatcommentaar! Excellent!
-Excuses voor liefdescommentaar. Niet goed genoeg.
-Je hebt zojuist de hater bedankt voor de haatcommentaar!
 Standaard moeilijkheidsgraad voor SpeedPress
 Time-out toetsaanslag voor SpeedPress
 Selecteer de moeilijkheidsgraad van uw voorkeur.
@@ -1351,10 +1135,8 @@ Controleert alle KS-instellingen om te zien of de variabelen correct zijn geschr
 Deze configuratie-items bevatten ongeldige variabelen of opsommingen en moeten worden opgelost:
 Bestand {0} niet gevonden
 Creëert een variabele array met de opgegeven waarden
-Schrijf het nummer van de instelling om naar toe te gaan. Elk ander karakter betekent teruggaan.
 Controleert alle regelnummers van de lokalisatietekst om te zien of ze allemaal gelijk zijn
 Regel komt niet overeen in
-Voer een gebruikersnummer in.
 Anonieme gebruikers opnemen
 Gehandicapte gebruikers opnemen
 Bevat de anonieme gebruikers in de lijst
@@ -1367,9 +1149,7 @@ Toon laatste RSS-kop bij inloggen
 URL van RSS-kop
 Elke keer dat u inlogt, wordt de laatste RSS-kop van de geselecteerde kop-URL weergegeven.
 RSS-kop-URL die moet worden gebruikt bij het weergeven van de laatste kop. Dit is meestal je favoriete feed.
-Laatste nieuws:
 Het laatste nieuws is niet ontvangen.
-Geselecteerde optiekleur
 Toon stacktracering op kernelfout
 Als er een kernelfout is, kiest u of u de stacktracering naar de console wilt afdrukken of niet.
 Instellingen opslaan als
@@ -1388,9 +1168,6 @@ Stagevertraging in milliseconden
 Hoeveel milliseconden wachten voordat de volgende fase wordt getekend?
 Volgende hellingrot-interval
 Hoeveel milliseconden moet je wachten voordat het ene uiteinde van de volgende helling verrot?
-Quotum voor foutopsporing controleren
-Controleren we of het debug-systeem moet controleren op quota voordat we naar de debugger schrijven?
-Hoeveel milliseconden duurde het echt om te slapen?
 Kan geen evenement toevoegen.
 Kan een evenement niet verwijderen.
 Er zijn niet genoeg argumenten opgegeven om een ​​evenement toe te voegen.
@@ -1446,9 +1223,6 @@ Hoeveel blokken (maximaal 10) is de explosieradius voor het vuurwerk wanneer het
 Deze opdracht heeft de onderstaande schakelaars die de manier waarop het werkt veranderen:
 Drukt de regelnummers af die volgen op de regel die wordt afgedrukt
 Voorkomt dat de regelnummers worden afgedrukt
-Gebruik altijd de getranscribeerde versie
-Gebruik altijd de vertaalde versie
-Schakelen van taal forceren
 Geef aan dat het antwoord meer dan één teken kan bevatten
 Geef aan dat het antwoord slechts één teken kan bevatten
 Print de vraag en de antwoorden op één regel
@@ -1463,23 +1237,15 @@ Start het spel met gemiddelde moeilijkheidsgraad
 Start het spel in moeilijkheidsgraad
 Start het spel in zeer moeilijke moeilijkheidsgraad
 Start het spel in aangepaste moeilijkheidsgraad. Houd er rekening mee dat de aangepaste time-out in milliseconden als argument moet worden geschreven.
-Toont de systeeminformatie
-Toont de hardware-informatie
-Toont de gebruikersinformatie
-Toont de boodschap van de dag
-Toont het bericht van de dag na inloggen
-Toont alle informatie
 Creëert een map die de inhoud van het ZIP-bestand bevat
 Toont alle beschikbare steden
 Snelle compressie
 Geen compressie
 Maak geen basismap in archief
-Eenheid in teken
 Verbreekt de verbinding met de server op schandelijke wijze
 Geeft aan dat het doelpad absoluut is
 Slaat het JSON-bestand op en verfraait het tijdens het proces
 Slaat het JSON-bestand op en verkleint het tijdens het proces
-Haalt de stijl van het einde van de regel uit het tekstbestand
 Wist alle ontslagen gebeurtenissen
 Foutopsporing bij gebeurtenissen inschakelen
 Schakelt foutopsporing in voor het kernelgebeurtenissysteem
@@ -1494,8 +1260,6 @@ Kan aangepaste taal niet verwijderen. Die bestaat hoogstwaarschijnlijk niet.
 Kan aangepaste talen niet installeren.
 Kan aangepaste talen niet verwijderen.
 Kan aangepaste talen niet verwijderen. Zie de innerlijke uitzondering voor meer info.
-Schrijf het beheerderswachtwoord. Zorg ervoor dat u dit account niet gebruikt, tenzij u echt weet wat u doet.
-U moet het beheerderswachtwoord schrijven.
 Licentie-informatie
 Beheer uw talen
 Taal niet gevonden of bestand bevat ongeldige tekens.
@@ -1505,9 +1269,7 @@ Taal korte naam:
 Volledige naam taal:
 Taal translitereerbaar:
 Aangepaste taal:
-Nieuwe welkomstbanner
 Stijlvol opstartscherm
-Toont de nieuwe door Figlet weergegeven welkomstbanner
 Schakelt het stijlvolle opstartscherm in bij het opstarten. Houd er rekening mee dat het de argumentprompt en het pre-boot testen van de shell zal uitschakelen.
 Splash-naam
 Splash-naam van de beschikbare splashes die in de kernel zijn geïmplementeerd.
@@ -1515,7 +1277,6 @@ Gegenereerde standaard MOTD.
 Gegenereerde standaard MAL.
 Systeemaccount geïnitialiseerd
 Gebruikers geïnitialiseerd
-Machtigingen geladen
 Welkom!
 De debugger op afstand starten...
 Verbindingsfout met externe debugger
@@ -1530,8 +1291,6 @@ Het lijkt erop dat je de detectie van de consolegrootte omzeilt. Het kan zijn da
 Voor een betere ervaring, verander je het formaat van je consolevenster terwijl je nog op dit scherm bent. Druk op een willekeurige toets om door te gaan...
 Uw console is te klein om goed te werken:
 Lettertype spandoek
-Drukt een string af naar console met behulp van kleurtype en lijnafdruk met Figlet-ondersteuning
-Drukt een string af naar console met behulp van kleurtype en lijnafdruk met formaat en Figlet-ondersteuning
 Toon de commando's rekenen op hulp
 Toon de shell-commando's rekenen op hulp
 Toon de mod-commando's rekenen op hulp
@@ -1556,21 +1315,10 @@ Locatie van voortgangstekst
 Selecteer de gewenste voortgangstekstlocatie.
 U kunt alleen de cijfers schrijven.
 Druk op "q" om af te sluiten.
-Namen downloaden...
-Wegens technische problemen kunnen we geen adaptereigenschappen weergeven op Unix-systemen.
 Schakelt debug-modus in
-Vragen om argumenten
 Zwart-witmodus inschakelen
 Maakt de disco zwart-wit. Het doet echt pijn aan je ogen als het te snel gaat, dus niet aanbevolen als je last hebt van snelle beelden.
-Het lijkt erop dat u een niet-ondersteunde versie gebruikt. Het is ten zeerste aan te raden deze versie niet te gebruiken.
 Huidige kleuren laden
-Alternatieve optie kleur
-Gebruikers tellen voor liefdes- of haatreacties
-Hoeveel gebruikers moeten er in de ruimte voor liefdes- of haatcommentaar zijn?
-Geeft beschikbare talen weer
-Beschikbare talen:
-Opdrachtregelargumenten:
-Pre-boot opdrachtregelargumenten:
 Opent de mod API-documentatie voor de structuur van de broncode in de meest actuele vorm
 Huidige waarde:
 Ongeldige hexadecimale kleurspecificatie.
@@ -1597,7 +1345,6 @@ Het bytenummer is niet numeriek.
 Het opgegeven startbytenummer mag niet groter zijn dan de bestandsgrootte.
 Het opgegeven eindbytenummer mag niet groter zijn dan de bestandsgrootte.
 Byte verwijderd.
-Bewerkt een binair bestand
 Selecteert de feed uit de bestaande feedlijst van online bronnen
 Feedlijst downloaden...
 Kan feedlijst niet downloaden.
@@ -1636,14 +1383,9 @@ Minimum leeftijd jaren tellen
 Maximale leeftijd jaren tellen
 Minimum aantal leeftijdsjaren om te genereren
 Maximaal aantal te genereren leeftijdsjaren
-> Kadertype: {3}
 Naamloze handleiding
 Invoergeschiedenis ingeschakeld
-Invoerklembord ingeschakeld
-Invoer ongedaan maken ingeschakeld
 Of de invoergeschiedenis is ingeschakeld of niet. Indien ingeschakeld, hebt u toegang tot recent getypte opdrachten met de pijltoetsen omhoog of omlaag.
-Of het invoerklembord is ingeschakeld of niet.
-Of de invoer ongedaan maken-functie is ingeschakeld of niet.
 Converteert de kleur RGB-nummers naar hex.
 Converteert de hexadecimale weergave van de kleur naar RGB-nummers.
 Converteert de hexadecimale weergave van de kleur naar RGB-nummers in KS-indeling.
@@ -1691,13 +1433,11 @@ Eenheidsomzetter
 Beschikbare unittypes en hun units:
 Spel is over
 Onverwachte fout
-De RAR-shell
 Commando's die in een andere kleur zijn gemarkeerd, zijn uniforme commando's en zijn beschikbaar in elke shell.
 Controleren op updates...
 Versie downloaden
 Versie installeren
 Even terug naar 2018...
-Je kunt niet terug naar 2018 op .NET 6.0!
 Gebruik PowerLine voor het renderen van een ruimteschip
 Meteor spelsnelheid
 Of je nu PowerLine wilt gebruiken om het ruimteschip weer te geven of om de standaard groter dan karakter te gebruiken. Als u PowerLine met Meteor wilt gebruiken, moet u een geschikt lettertype installeren met PowerLine-ondersteuning.

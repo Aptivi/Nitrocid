@@ -1,6 +1,3 @@
-Available commands: {0}
-Command injection has been cancelled.
-Injected arguments will be scheduled to run at next reboot.
 Invalid colour template {0}
 hwprobe: Your hardware will be probed. Please wait...
 CPU: One or more of the CPU cores failed to be probed. Showing information anyway...
@@ -12,7 +9,6 @@ DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You fou
 [{0}] panic: Reboot enabled due to error level being {0}.
 [{0}] panic: Time to reboot: {1} seconds, exceeds 1 hour. It is set to 1 minute.
 DOUBLE PANIC: Error Type {0} invalid.
-[{0}] dpanic: {1} -- Rebooting in {2} seconds...
 [{0}] panic: Reboot disabled due to error level being {0}.
 [{0}] panic: {1} -- Press any key to continue using the kernel.
 [{0}] panic: {1} -- Press any key to shutdown.
@@ -20,27 +16,15 @@ DOUBLE PANIC: Error Type {0} invalid.
 DOUBLE PANIC: Kernel bug: {0}
 Shutting down...
 Rebooting...
-Another instance of Nitrocid KS is running. Shutting down in case of interference.
-Failed to add user into permission lists: invalid type {0}
-Failed to add user into permission lists: invalid user {0}
-Failed to remove user from permission lists: invalid type {0}
-You are already logged in.
-Failed to remove user from permission lists: invalid user {0}
-You have either found a bug, or the permission you tried to add or remove is already done, or other error.
 Error {0}: {1}
-You have either found a bug, or the permission you tried to edit for a new user has failed.
-Available usernames: {0}
 Username: 
 Spaces are not allowed.
 Special characters are not allowed.
 {0}'s password: 
 Wrong password.
-User is disabled.
-Wrong username.
 Error trying to parse placeholders. {0}
 Error trying to add username.
 usrmgr: Creating username {0}...
-Blank username.
 User {0} not found.
 User {0} isn't allowed to be removed.
 User {0} is already logged in. Log-out and log-in as another admin.
@@ -91,24 +75,14 @@ Changes remote directory to download from or upload to
 Deletes remote file from server
 Disconnects from server
 Downloads remote file to local directory using binary or text
-Shows help screen
 Lists local directory
 Lists remote directory
 Uploads local file to remote directory using binary or text
-Failed to get properties for adaptor {0}
-Adaptor Number:
-Adaptor Name:
-Maximum Transmission Unit: {2} Units
-DHCP Enabled:
-Non-unicast packets:
-Unicast packets:
-Error incoming/outgoing packets:
 Alias can't be the same name as a command.
 Command not found to alias to {0}.
 You can now run "{0}" as a command: "{1}".
 Alias {0} is not found to be removed.
 Invalid mode {0}.
-Injected arguments, {0}, will be scheduled to run at next reboot.
 There was not enough arguments. See below for usage:
 Directory {0} not found
 Blank host name.
@@ -122,18 +96,7 @@ The new name you entered is already found.
 {0} is not found.
 Configuration reloaded. You might need to reboot the kernel for some changes to take effect.
 One or more of the colours is invalid.
-Colours are not available. Turn on coloured shell in the kernel config.
 Screensaver {0} not found.
-Kernel Version:
-Debug Mode:
-Coloured Shell:
-Arguments on Boot:
-Help command simplified:
-MOTD on Login:
-Time/Date on corner:
-Current user name:
-Current host name:
-Available usernames:
 Error trying to execute command
 Changes directory
 Changes password for current user
@@ -144,35 +107,27 @@ List file/folder contents in current folder
 Locks your screen with a password
 Logs you out
 Creates a directory
-Lists information about all available interfaces
 Restarts your computer (WARNING: No syncing, because it is not a final kernel)
 Reloads configuration file that is edited.
 Saves your screen from burn outs
 Sets up kernel screensavers
-Sets up kernel themes
 Shows date and time
 Shows date and time in zones
 The kernel will be shut down
-System information
-* You can use multiple commands using the colon between commands.
 Usage:
-where arguments will be {0}
 where customsaver will be
 There was an error in the shell.
 You don't have permission to use {0}
 Shell message: The requested command {0} is not allowed to run in maintenance mode.
 Shell message: The requested command {0} is not found. See 'help' for available commands.
-Shell message: Command {0} is not allowed to run on log in.
 Error trying to execute command.
 - Time of {0}: {1}
 Running on {0}
 You are not authorised to get info for {0}.
 This command is obsolete and will be removed in a future release.
 You are not authorised to change password of {0} because the target was an admin.
-usrmgr: Username {0} is already found
 Deletes everything in debug log
 Invalid language
-Changes language
 ----------------------------- Kernel panic dump -----------------------------
 >> Panic information <<
 > Description: {0}
@@ -201,7 +156,6 @@ Lists debugging devices connected
 Debug device {0} not found.
 Device {0} disconnected.
 Debug listening on all addresses using port {0}.
-No arguments specified. Hint: Specify multiple arguments separated by spaces
 Alias already found: {0}
 Debug log removed. All connected debugging devices may still view messages.
 Debug log removal failed: {0}
@@ -210,19 +164,11 @@ Specify the address
 Timezone is specified incorrectly.
 Invalid profile selection.
 Trying to connect to {0} with profile {1}...
-Failed to get IPv6 properties for adaptor {0}. Continuing...
-IPv4 information:
-IPv6 information:
-Adaptor {0} doesn't support IPv6. Continuing...
-Adaptor {0} doesn't support IPv4. Probe failed.
-Looks like you were running the development version of the kernel. While you can see the aspects, it is frequently updated and might introduce bugs. It is recommended that you stay on the stable version.
 The language you've selected contains two variants. Select one:
 Invalid choice. Try again.
 You are unauthorised to set current directory to {0}: {1}
 The path you've specified is too long.
 Dump information gatherer crashed when trying to get information about {0}: {1}
-Error when trying to set MOTD/MAL: {0}
-Error when trying to get MOTD/MAL: {0}
 Error when trying to start screensaver, because of an invalid operation.
 Reloading not allowed in safe mode.
 Parsing mods not allowed on safe mode.
@@ -237,15 +183,7 @@ Calculates file sums.
 Takes you to our GitHub Wiki.
 Invalid encryption algorithm.
 Enables or disables remote debugging.
-See if you can spell words correctly on time
 See if you can solve mathematical equations on time
-Respond to love or hate comments.
-If someone made this comment to your video:
-How would you respond?
-Invalid selection. Going to the next comment...
-Great! {0} will appreciate your thanks.
-Spelt perfectly!
-Spelt incorrectly.
 Solved perfectly!
 Solved incorrectly.
 RPC is already running.
@@ -256,45 +194,14 @@ Enter the password for {0}:
 SSH Disconnected.
 Unable to set codepage. The language may not display properly.
 Debugging not enabled.
-Thanks! This is interesting.
-Everyone will support your video for this.
-I gave you the special file in your e-mail for your next video.
-Listen, haters, he is trying to help us, not scam.
-I don't know how much do I and my friends thank you for this video.
-I love you for this video.
-Keep going, don't stop.
-I will help you reach to 1M subscribers!
-My friends got their computer fixed because of you.
-Awesome prank! I shut down my enemy's PC.
-To haters: STOP HATING ON HIM
-To haters: GET TO WORK
-Nobody will notice this now thanks to your object hiding guide
-I will stop watching your videos. Subscriber lost.
-What is this? This is unclear.
-This video is the worst!
-Everyone report this video!
-My friends are furious with you!
-Lovers will now hate you for this.
-Your friend will hate you for this.
-This prank made me unsubscribe to you.
-Mission failed, Respect -, Subscriber -
-Stop making this kind of video!!!
-Get back to your job, your videos are the worst!
-We prejudice on this video.
 Shows all received notifications
 Dismisses a notification
 Notification dismissed successfully.
-Packets (inbound):
-Packets (outbound):
-Errors in received packets:
-General IPv6 properties
-General IPv4 properties
 Remotely executes a command to remote PC
 - Stage 1: System initialisation
 - Stage 2: Hardware detection
 - Stage 3: Mods and screensavers detection
 - Stage 4: Log in
-Looks like you were running the release candidate version. It is recommended that you stay on the stable version.
 Invalid type {0}.
 Size: {0}
 Directory {0} already exists.
@@ -313,7 +220,6 @@ Enter password:
 Error while connecting to {0}: {1}
 Connecting to {0}...
 Authenticating...
-List of commands
 Downloads messages and lists them
 Opens a message
 Page is not a numeric value.
@@ -328,10 +234,7 @@ Preparing profiles... It could take several minutes...
 Error trying to execute script: {0}
 Writes text into the console
 Makes user choices
-Beep in 'n' Hz and time in 'n' milliseconds
 where <$variable> is any variable that will be used to store response
-Frequency must be numeric. If it's numeric, ensure that it is >= 37 and <= 32767.
-Time must be numeric.
 where <answers> are one-lettered answers of the question separated in slashes
 Error trying to connect to SSH server: {0}
 Allows user to enter input
@@ -346,7 +249,6 @@ During certificate validation, there are certificate errors. It might be the fir
 Are you sure that you want to connect?
 Invalid answer. Please try again.
 Speed dial is empty. Connect to a server to add an address to it.
-Speed dial doesn't exist. Connect to a server to add an address to it.
 Enter IMAP server address and port (<address> or <address>:[port]): 
 Enter SMTP server address and port (<address> or <address>:[port]): 
 Sends a message to an address
@@ -360,12 +262,10 @@ Removes a message
 Removes all messages from recipient
 Message {0} from {1} deleted from {2}. {3} messages remaining to parse.
 Message {0} from {1} deleted from inbox. {2} messages remaining to parse.
-Edits a text file
 Makes a new file
 File already exists.
 Error trying to create a file: {0}
 Failed to open file. Exiting shell...
-Lists available commands
 Prints the contents of the file with line numbers to the console
 Adds a new line with text at the end of the file
 Removes the specified line number
@@ -378,12 +278,10 @@ Running in safe mode. Skipping stage...
 >> Remote Debug and Chat: version
 >> Your address is {0}.
 >> Your name is {0}.
-Command {0} not found. Use "/help" to see the list.
 Index {0} invalid. There are {1} stack traces. Index is zero-based, so try subtracting by 1.
 No stack trace
 Shows last stack trace on exception
 Shows current username in the session
-Disconnects you from the debugger
 Unblock a debug device by IP address
 Block a debug device by IP address
 {0} can now join remote debug again.
@@ -395,13 +293,10 @@ Save Settings
 Exit
 Specified option {0} is invalid.
 The answer must be numeric.
-Prompt for Arguments on Boot
-Maintenance Mode Trigger
 Check for Updates on Startup
 Quiet Probe
 Show MOTD on Log-in
 Clear Screen on Log-in
-Coloured Shell
 Simplified Help Command
 Debug Port
 Download Retry Times
@@ -410,32 +305,25 @@ Log FTP IP address
 Return only first FTP profile
 Show Time/Date on Upper Right Corner
 Screensaver Timeout in ms
-Debug Size Quota in Bytes
 Size parse mode
 Marquee on startup
 Long Time and Date
 Show Hidden Files
 Invalid section entered. Please go back.
 Go Back...
-Enable
-Disable
 Write a remote debugger port. It must be numeric, and must not be already used. Otherwise, remote debugger will fail to open the port.
 Write how many times the "get" command should retry failed downloads. It must be numeric.
 Write when to launch screensaver after specified milliseconds. It must be numeric.
-Write how many bytes can the debug log store. It must be numeric.
 The answer may not be negative.
 The answer is invalid. Check to make sure that the answer is numeric for config entries that need numbers as answers.
 Variable {0} is not found on any of the modules.
 Changes kernel configuration
-Activate 255 colours
 Change Culture when Switching Languages
 Text shown
 Write any text you want shown. Shorter is better.
 Failed to upload {0}
-Error executing remote debug command {0}: {1}
 Adds users
 Adds aliases to commands
-Injects arguments to the kernel (reboot required)
 Changes host name
 Changes MAL, the MOTD After Login
 Changes MOTD, the Message Of The Day
@@ -450,13 +338,11 @@ Failed to set language.
 Error trying to dismiss notification.
 usrmgr: Failed to create username {0}: {1}
 Failed to rename user. {0}
-One of the permission lists doesn't contain username {0}.
 User not found
 Failed to change password of username: {0}
 Unable to find file to match string "{0}": {1}
 Download failed for file {0}.
 Failed to list remote files: {0}
-Are you sure you want to delete {0} <y/n>?
 Deleting {0}...
 {0} is not found in the server.
 All mail made by {0} are removed successfully.
@@ -483,7 +369,6 @@ Humidity: {0}
 You can get your own API key at https://home.openweathermap.org/api_keys.
 You can always consult http://bulk.openweathermap.org/sample/city.list.json.gz for the list of cities with their IDs.
 Preferred Unit for Temperature
-Sets up the kernel so it prompts you for argument on boot.
 Triggers maintenance mode. This disables multiple accounts.
 Each startup, it will check for updates.
 When switching languages, change the month names, calendar, etc.
@@ -491,7 +376,6 @@ Keep hardware probing messages silent.
 Show Message of the Day before displaying login screen.
 Clear screen before displaying login screen.
 Shows available users if enabled.
-Gives the kernel colour support
 Simplified help command for all the shells
 Whether or not to log FTP username.
 Whether or not to log FTP IP address.
@@ -510,7 +394,6 @@ You must turn on debug mode before you can clear debug log.
 Open "mail" to see them.
 Removes a directory or a file
 Can't remove {0} because it doesn't exist.
-Press CTRL+C to exit.
 Provides information about a file
 Provides information about a directory
 Can't get information about nonexistent directory.
@@ -582,16 +465,7 @@ Opens a test shell
 Failed to start "{0}": {1}
 Show mail message preview
 When listing mail messages, show body preview.
-Input colour
-Licence colour
-Continuable kernel error colour
-Uncontinuable kernel error colour
-Host name colour
-User name colour
 Background colour
-Neutral text colour
-Stage colour
-Error colour
 Trying to access invalid path.
 Clears the text file
 Exits the text editor
@@ -621,11 +495,7 @@ Save Theme to Current Directory
 Save Theme to Another Directory...
 Select colour using "<-" and "->" keys. Press ENTER to quit. Press "i" to insert colour number manually.
 Select colour using "<-" and "->" keys. Use arrow up and arrow down keys to select between colour ranges. Press ENTER to quit. Press "i" to insert colour number manually.
-Welcome to the kernel! - Version {0}
-Warning colour
-Option colour
 Enter colour number from 0 to 255:
-Use "hwinfo" for extended information about hardware.
 Prints hardware information
 Processor name:
 Processor bits:
@@ -635,9 +505,6 @@ GPU: One or more of the graphics cards failed to be probed. Showing information 
 >> Welcome! This is your first time entering remote debug and chat. Use "/register <name>" to register.
 Device already exists.
 No such device.
-Sets device username
-You're already registered.
-Hi, {0}!
 Prints content of file to console
 Or, pass "listcities" to this command.
 Entry already exists.
@@ -645,7 +512,6 @@ Wraps the console output
 The command is not wrappable. These commands are wrappable:
 Extracts a ZIP archive
 Creates a ZIP archive
-Built in {0}
 Error downloading debug data
 There is an error while downloading debug data. Check your internet connection.
 Failed to finalise mod {0}: {1}
@@ -659,12 +525,8 @@ Ping!
 Save Theme to Current Directory as...
 Save Theme to Another Directory as...
 Specify theme name:
-The user {0} has been added to the "{1}" list.
-The user {0} has been removed from the "{1}" list.
-Invalid mode {0}
 Load Theme From Prebuilt Themes...
 Specify theme file name wihout the .json extension:
-Opens a ZIP archive
 Lists all files inside the archive
 Extracts a file to a specified directory or a current directory
 Changes archive directory
@@ -672,11 +534,7 @@ Directory {0} doesn't exist
 Archive directory {0} doesn't exist
 Max Positions Count
 How many positions are lit before dimming?
-List entry colour
-List value colour
 Connects to an SSH server to execute a command.
-Invalid colour specifier. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colours or a VT sequence if using true colour as follows:
-Error in test shell: {0}
 Sets a variable to a value in a script
 A bug reporting prompt.
 There was an error in the FTP shell:
@@ -694,15 +552,6 @@ Key file {0} doesn't exist.
 Error trying to add private key:
 Press "t" to switch to 255 colour mode.
 Press "t" to switch to true colour mode.
-It looks like you've got no user except root. This is bad. We'll guide you how to create one.
-Write your username.
-You must write your username.
-Write your password.
-You must write your password.
-Select account type.
-Administrator: This account type has the most power in the kernel, allowing you to use system management programmes.
-Normal User: This account type is slightly more restricted than administrators.
-Congratulations! You've made a new account! To finish this off, log in as your new account.
 mod: No mods detected.
 General commands:
 Mod commands:
@@ -712,33 +561,21 @@ Lookup Directories
 Group of paths separated by the colon. It works the same as PATH. Write a full path to a folder or a folder name. When you're finished, write "q". Write a minus sign next to the path to remove an existing directory.
 No mod commands.
 No alias commands.
-The colour value is outside the range of 0-255.
 The wrappable command is not found.
 Queries a word in a specified line or all lines
 {0} of {1} downloaded.
-Prints a string to console using colour type and line print
-Prints a string to console using colour type and line print with format support
-Prints a string to debugger
-Prints a string to debugger with format support
 Tests the kernel error facility
 Tests the kernel error facility with format support
 Tests translating a string that exists in resources to specific language
 Prints a string to console and parses the placeholders found
 Tests the regular expression facility
 Starts all mods
-Stops all mods
-Enables or disables debug
-Enables or disables remote debug
 Tests the VT sequence for 255 colours
 Tests the VT sequence for true colour
 Sends a notification to test the receiver
 Tests printing date using different calendars
 Lists all supported codepages
-What compiler variables are enabled in the application?
-Tests raising the specific event
 Tests probing the hardware
-Exits the test shell and starts the kernel
-Exits the test shell and shuts down the kernel
 Saves the current directory to kernel configuration file
 Tests the list writer with the string and string array
 Tests the list writer with the integer and integer array
@@ -850,7 +687,6 @@ Character deleted.
 Welcome to Settings!
 Error executing SSH command
 Error on SSH shell
-App information
 Tests the dictionary writer with the string and string array
 Tests the dictionary writer with the char and char array
 Tests the dictionary writer with the integer and integer array
@@ -860,21 +696,15 @@ Normal integer dictionary:
 Array integer dictionary:
 Normal char dictionary:
 Array char dictionary:
-Welcome to Test Shell!
 Show progress on filesystem operations
 Shows what file is being processed during the filesystem operations
 where HardwareType will be
 Either the hardware type {0} is not probed, or is not valid.
 The hardware type {0} is not probed yet. If you're sure that it's probed, restart the kernel with debugging enabled.
 Partitions not parsed to list.
-Prints a separator
-Prints a separator with format support
-Prints a separator with colour support
-Prints a separator with colour and format support
 Always centred
 Write any text you want shown.
 Whether the text shown on the marquee is always centred.
-Argument {0} not found to inject.
 Screensaver experienced an error while displaying: {0}. Press any key to exit.
 Preview...
 Here's how your theme will look like:
@@ -891,7 +721,6 @@ Mod file path:
 Part version:
 Minimum count of required arguments:
 Arguments required?
-Wrappable command?
 Setting shell variable?
 Can not run in maintenance mode?
 Obsolete?
@@ -900,7 +729,6 @@ Successfully probed {0}.
 Verbose Probe
 Make hardware probing messages a bit talkative.
 > There are no information about frames.
-You need to write your name.
 Beautifies the JSON file
 Config category {0} not found.
 Config entry {0} not found.
@@ -949,10 +777,6 @@ This manual page needs work for:
 Manual page {0} not found.
 Mod manual
 Available kernel arguments:
-Press "q" if you're done.
-Multiple kernel arguments can be separated with commas without spaces, for example:
-Multiple injected commands can be separated with colons with spaces, for example:
-The requested argument {0} is not found.
 Unrecoverable error in argument:
 Encrypts a string using SHA512
 Encrypts a string using SHA384
@@ -977,31 +801,12 @@ Adds a new property at the end of the JSON file
 Removes a property from the JSON file
 Exits the JSON shell without saving the changes
 Saves the JSON file
-Opens the JSON shell
 Prints the JSON file
 Next ramp interval
 How many milliseconds to wait before filling in the next ramp?
-Notification title colour
-Notification description colour
-Notification progress colour
-Notification failure colour
-Question colour
-Success colour
-User dollar colour
-Tip colour
-Separator text colour
-Separator colour
-List title colour
-Development warning colour
-Stage time colour
-Progress colour
-Back option colour
 Draw notification border
 Covers the notification with the border.
 Contact the vendor of the mod to upgrade the mod to the compatible version.
-Low priority border colour
-Medium priority border colour
-High priority border colour
 Sends a progress notification to test the receiver
 Tests the colour wheel
 Shows local kernel time
@@ -1020,13 +825,11 @@ Adds a mod to the blacklist
 Removes a mod from the blacklist
 Time and date in UTC: {0}
 Show app information during boot
-Parse command-line arguments
 Show stage finish times
 Start kernel modifications on boot
 Show current time before login
 Notify for any fault during boot
 Shows brief information about the application on boot.
-Parses the command-line arguments on boot.
 Shows how much time did the kernel take to finish a stage.
 Automatically start the kernel modifications on boot.
 Shows the current time, time zone, and date before logging in.
@@ -1036,8 +839,6 @@ Password prompt style
 Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed.
 Write how you want your password prompt to be. Leave blank to use default style. Placeholders are parsed.
 Shows Message of the Day after displaying login screen.
-Probe injected commands
-Probes the injected commands at the start of the kernel shell.
 Show file details in list
 Shows the brief file details while listing files
 Show file details in FTP list
@@ -1089,13 +890,9 @@ Add new connections to SFTP speed dial
 Shows the SFTP file details while listing remote directories.
 If enabled, adds a new connection to the SFTP speed dial.
 Ping timeout
-Show extensive adaptor info
-Show general network information
 Download percentage text
 Upload percentage text
 How many milliseconds to wait before declaring timeout?
-Prints the extensive adaptor information, such as packet information.
-Shows the general information about network.
 Write how you want your upload percentage text to be. Leave blank to use default style. Placeholders are parsed. {0} for uploaded size, {1} for target size, {2} for percentage.
 Write how you want your download percentage text to be. Leave blank to use default style. Placeholders are parsed. {0} for downloaded size, {1} for target size, {2} for percentage.
 Ask for password after locking
@@ -1215,16 +1012,12 @@ Upper frame character for notification border
 Lower frame character for notification border
 Left frame character for notification border
 Right frame character for notification border
-Manual page information style
 Whether to show what's written in the input prompt.
 What is the minimum number to choose?
 What is the maximum number to choose?
-Write how you want your manpage information to be. Leave blank to use default style. Placeholders are parsed. {0} for manual title, {1} for revision.
-Property {0} is not found on any of the modules.
 Start colour wheel in true colour mode
 If specified, it will display customised startup banner with placeholder support. You can use {0} for kernel version.
 Which variant of the current language is being used to change the month names, calendar, etc.?
-Activates the 255 colour support.
 Activates the true colour support.
 Word deleted in line {0}.
 String replaced in line {0}.
@@ -1253,7 +1046,6 @@ Disk size:
 Total memory:
 Graphics card:
 Disk model:
-Culture of the current language
 If you're sure that you've opened the right section, check this message out:
 Executes an FTP server command
 Encrypts a string using CRC32
@@ -1278,9 +1070,6 @@ Write how you want your mail transfer progress style to be. Leave blank to use d
 Time Zone:
 Today is {0}
 Current time is {0}
-Table separator colour
-Table header colour
-Table value colour
 Possible answers
 Mod file is not specified.
 Trying to install an already-installed mod. Updating mod...
@@ -1302,7 +1091,6 @@ Checks to see if the translatable string exists in the KS resources
 String found in the localisation resources.
 String not found in the localisation resources.
 Starts the kernel quietly
-Injects a command to start up in the next login
 Starts the kernel in safe mode, disabling all mods
 Like safe mode, but also disables multi-user and some customisation
 There was not enough arguments.
@@ -1327,10 +1115,6 @@ The site URI format is invalid.
 Setting site to
 Colours don't require a restart, but most of the settings require a restart.
 No help for argument "{0}".
-Press A on hate comments to apologise. Press T on love comments to thank. Press Q to quit the game.
-You've apologised to a hate comment! Excellent!
-Apologised to love comment. Not good enough.
-You just thanked the hater for the hate comment!
 Default difficulty for SpeedPress
 Keypress timeout for SpeedPress
 Select your preferred difficulty.
@@ -1351,10 +1135,8 @@ Checks all the KS settings to see if the variables are written correctly
 These configuration entries have invalid variables or enumerations and need to be fixed:
 File {0} not found
 Creates a variable array with the provided values
-Write the number of the setting to go to. Any other character means go back.
 Checks all the localisation text line numbers to see if they're all equal
 Line mismatch in
-Please enter a user number.
 Include anonymous users
 Include disabled users
 Includes the anonymous users in the list
@@ -1367,9 +1149,7 @@ Show latest RSS headline on login
 RSS headline URL
 Each login, it will show the latest RSS headline from the selected headline URL.
 RSS headline URL to be used when showing the latest headline. This is usually your favourite feed.
-Latest news:
 Failed to get the latest news.
-Selected option colour
 Show stack trace on kernel error
 If there is any kernel error, choose whether or not to print the stack trace to the console.
 Save Settings As
@@ -1388,9 +1168,6 @@ Stage delay in milliseconds
 How many milliseconds to wait before drawing the next stage?
 Next ramp rot interval
 How many milliseconds to wait before rotting the next ramp's one end?
-Check debug quota
-Do we check if the debug system needs to check for quota before writing to the debugger?
-How many milliseconds did it really take to sleep?
 Failed to add an event.
 Failed to remove an event.
 Not enough arguments provided to add an event.
@@ -1446,9 +1223,6 @@ How many blocks (up to 10) is the explosion radius for the firework when ignited
 This command has the below switches that change how it works:
 Prints the line numbers that follow the line being printed
 Prevents printing the line numbers
-Always use the transliterated version
-Always use the translated version
-Force switching language
 Indicate that the answer can take more than one character
 Indicate that the answer can take just one character
 Print the question and the answers in one line
@@ -1463,23 +1237,15 @@ Starts the game in medium difficulty
 Starts the game in hard difficulty
 Starts the game in very hard difficulty
 Starts the game in custom difficulty. Please note that the custom timeout in milliseconds should be written as argument.
-Shows the system information
-Shows the hardware information
-Shows the user information
-Shows the message of the day
-Shows the message of the day after login
-Shows all information
 Creates a directory that contains the contents of the ZIP file
 Shows all the available cities
 Fast compression
 No compression
 Don't create base directory in archive
-Unit in ticks
 Disconnects from server disgracefully
 Indicates that the target path is absolute
 Saves the JSON file, beautifying it in the process
 Saves the JSON file, minifying it in the process
-Gets the line ending style from text file
 Clears all fired events
 Enable event debugging
 Enables debugging for the kernel event system
@@ -1494,8 +1260,6 @@ Failed to uninstall custom language. It most likely doesn't exist.
 Failed to install custom languages.
 Failed to uninstall custom languages.
 Failed to uninstall custom languages. See the inner exception for more info.
-Write the administrator password. Make sure that you don't use this account unless you really know what you're doing.
-You must write the administrator password.
 Licence information
 Manage your languages
 Language not found or file has invalid characters.
@@ -1505,9 +1269,7 @@ Language short name:
 Language full name:
 Language transliterable:
 Custom language:
-New welcome banner
 Stylish splash screen
-Shows the new Figlet-rendered welcome banner
 Enables the stylish splash screen on startup. Please note that it will disable argument prompt and test shell pre-boot.
 Splash name
 Splash name from the available splashes implemented in the kernel.
@@ -1515,7 +1277,6 @@ Generated default MOTD.
 Generated default MAL.
 System account initialised
 Users initialised
-Permissions loaded
 Welcome!
 Starting the remote debugger...
 Remote debugger connection error
@@ -1530,8 +1291,6 @@ Looks like you're bypassing the console size detection. Things may not work prop
 To have a better experience, resize your console window while still being on this screen. Press any key to continue...
 Your console is too small to run properly:
 Banner figlet font
-Prints a string to console using colour type and line print with Figlet support
-Prints a string to console using colour type and line print with format and Figlet support
 Show the commands count on help
 Show the shell commands count on help
 Show the mod commands count on help
@@ -1556,21 +1315,10 @@ Progress text location
 Select your preferred progress text location.
 You can only write the numbers.
 Press "q" to exit.
-Downloading names...
-Due to technical difficulties, we're unable to list adaptor properties on Unix systems.
 Enables debug mode
-Prompts for arguments
 Enable Black and White Mode
 Makes the disco black and white. Will really hurt your eyes if it was too fast, so not recommended if you're experiencing a seizure of fast images.
-Looks like you were running an unsupported version. It's highly advisable not to use this version.
 Load Current Colours
-Alternative option colour
-Users count for love or hate comments
-How many users to be in the love or hate comment room?
-Lists available languages
-Available languages:
-Command-line arguments:
-Pre-boot command-line arguments:
 Opens the mod API documentation for the structure of the source code in its most current form
 Current value:
 Invalid hex colour specifier.
@@ -1597,7 +1345,6 @@ The byte number is not numeric.
 The specified start byte number may not be larger than the file size.
 The specified end byte number may not be larger than the file size.
 Deleted bytes.
-Edits a binary file
 Selects the feed from the existing feed list from online sources
 Downloading feed list...
 Failed to download feed list.
@@ -1636,14 +1383,9 @@ Minimum age years count
 Maximum age years count
 Minimum amount of age years to generate
 Maximum amount of age years to generate
-> Framework Type: {3}
 Untitled manual page
 Input history enabled
-Input clipboard enabled
-Input undo enabled
 Whether the input history is enabled or not. If enabled, you can access recently typed commands using the up or down arrow keys.
-Whether the input clipboard is enabled or not.
-Whether the input undo feature is enabled or not.
 Converts the colour RGB numbers to hex.
 Converts the hexadecimal representation of the colour to RGB numbers.
 Converts the hexadecimal representation of the colour to RGB numbers in KS format.
@@ -1691,13 +1433,11 @@ Unit converter
 Available unit types and their units:
 Game over
 Unexpected error
-The RAR shell
 Commands highlighted in another colour are unified commands and are available in every shell.
 Checking for updates...
 Downloading version
 Installing version
 Going back to 2018...
-You can't go back to 2018 on .NET 6.0!
 Use PowerLine for rendering spaceship
 Meteor game speed
 Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with Meteor, you need to install an appropriate font with PowerLine support.

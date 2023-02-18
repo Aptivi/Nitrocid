@@ -64,23 +64,27 @@ namespace KS.Kernel
 
         // #ifdef'd variables ... Release specifiers (SPECIFIER: REL, RC, or DEV | MILESTONESPECIFIER: ALPHA, BETA, NONE | None satisfied: Unsupported Release)
 #if SPECIFIERREL
-        internal readonly static string ReleaseSpecifier = $"REL";
+        internal readonly static string ReleaseSpecifier = $"Final";
 #elif SPECIFIERRC
-        internal readonly static string ReleaseSpecifier = $"RC";
+        internal readonly static string ReleaseSpecifier = $"Release Candidate";
 #elif SPECIFIERDEV
 #if MILESTONESPECIFIERALPHA
-        internal readonly static string ReleaseSpecifier = $"DEV - Milestone 1";
+        internal readonly static string ReleaseSpecifier = $"Milestone 1";
 #elif MILESTONESPECIFIERBETA
-        internal readonly static string ReleaseSpecifier = $"DEV - B1";
+        internal readonly static string ReleaseSpecifier = $"Beta 1";
 #else
-        internal readonly static string ReleaseSpecifier = $"DEV - PRE";
+        internal readonly static string ReleaseSpecifier = $"Developer Preview";
 #endif
 #else
-        internal readonly static string ReleaseSpecifier = $"UNSUPPORTED";
+        internal readonly static string ReleaseSpecifier = $"- UNSUPPORTED -";
 #endif
 
         // Final console window title
-        internal readonly static string ConsoleTitle = $"[{ReleaseSpecifier}] - Nitrocid Kernel v{KernelTools.KernelVersion} (API v{KernelTools.KernelApiVersion})";
+#if SPECIFIERREL
+        internal readonly static string ConsoleTitle = $"Nitrocid Kernel v{KernelTools.KernelVersion} (API v{KernelTools.KernelApiVersion})";
+#else
+        internal readonly static string ConsoleTitle = $"Nitrocid Kernel v{KernelTools.KernelVersion} {ReleaseSpecifier} (API v{KernelTools.KernelApiVersion})";
+#endif
 
         /// <summary>
         /// Entry point

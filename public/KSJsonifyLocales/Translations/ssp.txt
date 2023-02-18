@@ -1,6 +1,3 @@
-Available hests: {0}
-hest injection hast been cancell'd. 
- did inject arguments shall beest schedul'd to runneth at next reboot. 
  invalid col'r template {0}
 hwprobe: thy hardware shall beest prob'd.  Prithee wait. 
  cpu: one 'r moo of the cpu cores did fail to beest prob'd.  Showing information concluded, be it. 
@@ -12,7 +9,6 @@ double panic: reboot time exceeds maximum did allow {0} err'r reboot time.  Thee
  [{0}] panic: reboot enabl'd due to err'r level being {0}. 
  [{0}] panic: time to reboot: {1} seconds, exceeds 1 hour.  T is setteth to 1 minute. 
  double panic: err'r type {0} invalid. 
- [{0}] dpanic: {1} -- rebooting in {2} seconds. 
  [{0}] panic: reboot disabl'd due to err'r level being {0}. 
  [{0}] panic: {1} -- press any key to continueth using the kernel. 
  [{0}] panic: {1} -- press any key to shutdown. 
@@ -20,27 +16,15 @@ double panic: reboot time exceeds maximum did allow {0} err'r reboot time.  Thee
  double panic: kernel bug: {0}
 shutting down. 
  rebooting. 
- another instance of kernel simulat'r is running.  Shutting down lest of interference. 
- did fail to add user into permission lists: invalid type {0}
-did fail to add user into permission lists: invalid user {0}
-did fail to remove user from permission lists: invalid type {0}
-thou art already logg'd in. 
- did fail to remove user from permission lists: invalid user {0}
-thee has't either hath found a bug, 'r the permission thee hath tried to add 'r remove is already done, 'r other err'r. 
  err'r {0}: {1}
-thee has't either hath found a bug, 'r the permission thee hath tried to edit f'r a new user hast did fail. 
- available usernames: {0}
 username: 
 spaces art not did allow. 
  special characters art not did allow. 
  {0}'s password: 
 wrong password. 
- user is disabl'd. 
- wrong username. 
  err'r trying to parse placeholders.  {0}
 err'r trying to add username. 
  usrmgr: creating username {0}. 
- blank username. 
  user {0} not hath found. 
  user {0} isn't did allow to beest did remove. 
  user {0} is already logg'd in.  Log-out and log-in as another admin. 
@@ -91,24 +75,14 @@ changes remote directory to download from 'r upload to
 deletes remote file from serv'r
 disconnects from serv'r
 downloads remote file to local directory using binary 'r text
-shows holp screen
 lists local directory
 lists remote directory
 uploads local file to remote directory using binary 'r text
-did fail to receiveth properties f'r adapter {0}
-adapter number:
-adapter name:
-maximum transmission unit: {2} units
-dhcp enabled:
-non-unicast packets:
-unicast packets:
-err'r incoming/outgoing packets:
 alias can't beest the same name as a hest. 
  hest not hath found to alias to {0}. 
  thee can anon runneth "{0}" as a hest: "{1}". 
  alias {0} is not hath found to beest did remove. 
  invalid mode {0}. 
- did inject arguments, {0}, shall beest schedul'd to runneth at next reboot. 
  thither wast not enow arguments.  See below f'r usage:
 directory {0} not hath found
 blank host name. 
@@ -122,18 +96,7 @@ the new name thee did enter is already hath found.
  {0} is not hath found. 
  configuration reload'd.  Thee might needeth to reboot the kernel f'r some changes to taketh effect. 
  one 'r moo of the colors is invalid. 
- colors art not available.  Turn on color'd shell in the kernel config. 
  screensav'r {0} not hath found. 
- kernel version:
-debug mode:
-color'd shell:
-arguments on boot:
-holp hest simplified:
-motd on login:
-time/date on corner:
-current user name:
-current host name:
-available usernames:
 err'r trying to execute hest
 changes directory
 changes password f'r current user
@@ -144,35 +107,27 @@ list file/folder contents in current folder
 locks thy screen with a password
 logs thee out
 creates a directory
-lists information about all available interfaces
 restarts thy computer (warning: nay syncing, because t is not a final kernel)
 reloads configuration file yond is edit'd. 
  saves thy screen from burn outs
 sets up kernel screensavers
-sets up kernel themes
 shows date and time
 shows date and time in zones
 the kernel shall beest did shut down
-system information
-* thee can useth multiple hests using the colon between hests. 
  usage:
-whither arguments shall beest {0}
 whither customsav'r shall beest
 thither wast an err'r in the shell. 
  thee has't not permission to useth {0}
 shell message: the did request hest {0} is not did allow to runneth in maintenance mode. 
  shell message: the did request hest {0} is not hath found.  See 'help' f'r available hests. 
- shell message: hest {0} is not did allow to runneth on log in. 
  err'r trying to execute hest. 
  - time of {0}: {1}
 running on {0}
 thou art not authoriz'd to receiveth info f'r {0}. 
  this hest is obsolete and shall beest did remove in a future release. 
  thou art not authoriz'd to changeth password of {0} because the target wast an admin. 
- usrmgr: username {0} is already hath found
 deletes everything in debug log
 invalid language
-changes language
 ----------------------------- kernel panic dump -----------------------------
 >> panic information <<
 > description: {0}
@@ -201,7 +156,6 @@ lists debugging devices did connect
 debug device {0} not hath found. 
  device {0} disconnect'd. 
  debug listening on all addresses using port {0}. 
- nay arguments specifi'd.  Hint: specify multiple arguments did separate by spaces
 alias already hath found: {0}
 debug log did remove.  All did connect debugging devices may still view messages. 
  debug log removal did fail: {0}
@@ -210,19 +164,11 @@ specify the address
 timezone is specifi'd incorrectly. 
  invalid profile selection. 
  trying to connect to {0} with profile {1}. 
- did fail to receiveth ipv6 properties f'r adapter {0}.  Continuing. 
- ipv4 information:
-ipv6 information:
-adapter {0} doesn't supporteth ipv6.  Continuing. 
- adapter {0} doesn't supporteth ipv4.  Probe did fail. 
- looks like thee wast running the development version of the kernel.  While thee can see the aspects, t is frequently updat'd and might introduce bugs.  T is recommend'd yond thee stayeth on the stable version. 
  the language thee've did select enwheels two variants.  Select one:
 invalid choice.  Tryeth again. 
  thou art unauthoriz'd to setteth current directory to {0}: {1}
 the path thee've specifi'd is too long. 
  dump information gatherer did crash at which hour trying to receiveth information about {0}: {1}
-err'r at which hour trying to setteth motd/mal: {0}
-err'r at which hour trying to receiveth motd/mal: {0}
 err'r at which hour trying to start screensaver, because of an invalid operation. 
  reloading not did allow in safe mode. 
  parsing mods not did allow on safe mode. 
@@ -237,15 +183,7 @@ calculates file sums.
  doth take thee to our github wiki. 
  invalid encryption algorithm. 
  enables 'r disables remote debugging. 
- see if 't be true thee can spell words correctly most carefully upon the hour
 see if 't be true thee can solve mathematical equations most carefully upon the hour
-respond to love 'r misprise comments. 
- if 't be true someone madeth this comment to thy video:
-how would thee respond?
-invalid selection.  Going to the next comment. 
- most wondrous! {0} shall appreciate thy grant you mercy. 
- did spell perfectly!
-did spell incorrectly. 
  did solve perfectly!
 did solve incorrectly. 
  rpc is already running. 
@@ -256,45 +194,14 @@ did solve incorrectly.
 ssh disconnect'd. 
  unable to setteth codepage.  The language may not display properly. 
  debugging not enabl'd. 
- grant you mercy! this is interesting. 
- everyone shall supporteth thy video f'r this. 
- i gaveth thee the special file in thy e-mail f'r thy next video. 
- hark, haters, he is trying to holp us, not scam. 
- i knoweth not how much doth i and mine own cater-cousins thank thee f'r this video. 
- i love thee f'r this video. 
- keepeth going, stand not ho. 
- i shall holp thee reacheth to 1m subscribers!
-mine own cater-cousins did get their computer did fix because of thee. 
- most wondrous prank! i did shut down mine own foe's pc. 
- to haters: stand ho hating on him
-to haters: receiveth to worketh
-nobody shall notice this anon grant you mercy to thy object hiding guide
-i shall stand ho watching thy videos.  Subscriber hath lost. 
- what is this? this is unclear. 
- this video is the worst!
-everyone report this video!
-mine own cater-cousins art furious with thee!
-lovers shall anon misprise thee f'r this. 
- thy cousin shall misprise thee f'r this. 
- this prank madeth me unsubscribe to thee. 
- mission did fail, respect -, subscriber -
-stand ho making this kind of video!!!
-receiveth back to thy job, thy videos art the worst!
-we prejudice on this video. 
  shows all hath taken notifications
 dismisses a notification
 notification cashiered successfully. 
- packets (inbound):
-packets (outbound):
-errors in hath taken packets:
-general ipv6 properties
-general ipv4 properties
 remotely executes a hest to remote pc
 - stage 1: system initialization
 - stage 2: hardware detection
 - stage 3: mods and screensavers detection
 - stage 4: log in
-looks like thee wast running the release candidate version.  T is recommend'd yond thee stayeth on the stable version. 
  invalid type {0}. 
  size: {0}
 directory {0} already exists. 
@@ -313,7 +220,6 @@ enter password:
 err'r while connecting to {0}: {1}
 connecting to {0}. 
  authenticating. 
-list of hests
 downloads messages and lists those folk
 opens a message
 page is not a numeric value. 
@@ -328,10 +234,7 @@ preparing profiles.  T couldst taketh several minutes.
  err'r trying to execute script: {0}
 writes text into the console
 maketh user choices
-beep in 'n' hz and time in 'n' milliseconds
 whither <$variable> is any variable yond shall beest hath used to store response
-frequency wilt beest numeric.  If 't be true t's numeric, ensure yond t is >= 37 and <= 32767. 
- time wilt beest numeric. 
  whither <answers> art one-letter'd answers of the question did separate in slashes
 err'r trying to connect to ssh server: {0}
 allows user to enter did input
@@ -346,7 +249,6 @@ the selection is out of range.  Select between 1-{0}.  Tryeth again.
 art thee sure yond thee wanteth to connect?
 invalid answer.  Prithee tryeth again. 
  spe'd dial is exsufflicate.  Connect to a serv'r to add an address to t. 
- spe'd dial doesn't exist.  Connect to a serv'r to add an address to t. 
  enter imap serv'r address and port (<address> 'r <address>:[port]): 
 enter smtp serv'r address and port (<address> 'r <address>:[port]): 
 sends a message to an address
@@ -360,12 +262,10 @@ removes a message
 removes all messages from recipient
 message {0} from {1} did delete from {2}.  {3} messages remaining to parse. 
  message {0} from {1} did delete from inbox.  {2} messages remaining to parse. 
- edits a text file
 maketh a new file
 file already exists. 
  err'r trying to maketh a file: {0}
 did fail to ope file.  Exiting shell. 
- lists available hests
 prints the contents of the file with line numbers to the console
 adds a new line with text at the end of the file
 removes the specifi'd line number
@@ -378,12 +278,10 @@ did remove line.
  >> remote debug and chat: version
 >> thy address is {0}. 
  >> thy name is {0}. 
- hest {0} not hath found.  Useth "/help" to see the list. 
  index {0} invalid.  Thither art {1} stack traces.  Index is zero-based, so tryeth subtracting by 1. 
  nay stack trace
 shows last stack trace on exception
 shows current username in the session
-disconnects thee from the debugger
 unblock a debug device by ip address
 block a debug device by ip address
 {0} can anon join remote debug again. 
@@ -395,13 +293,10 @@ save settings
 exit
 specifi'd option {0} is invalid. 
  the answer might not but beest numeric. 
- prompt f'r arguments on boot
-maintenance mode trigger
 check f'r updates on startup
 quiet probe
 showeth motd on log-in
 clear screen on log-in
-color'd shell
 simplifi'd holp hest
 debug port
 download retry times
@@ -410,32 +305,25 @@ log ftp ip address
 returneth only first ftp profile
 showeth time/date on upper right corner
 screensav'r timeout in ms
-debug size quota in bytes
 size parse mode
 marquee on startup
 long time and date
 showeth enshielf files
 invalid section did enter.  Prithee wend back. 
  wend back. 
- enable
-disable
 writeth a remote debugger port.  T wilt beest numeric, and wilt not beest already hath used.  Otherwise, remote debugger shall fail to ope the port. 
  writeth how many times the "get" hest shouldst retry did fail downloads.  T might not but beest numeric. 
  writeth at which hour to launch screensav'r after specifi'd milliseconds.  T wilt beest numeric. 
- writeth how many bytes can the debug log store.  T wilt beest numeric. 
  the answer may not beest negative. 
  the answer is invalid.  Check to maketh sure yond the answer is numeric f'r config entries yond needeth numbers as answers. 
  variable {0} is not hath found on any of the modules. 
  changes kernel configuration
-activate 255 colors
  changeth culture at which hour switching languages
 text shown
 writeth any text thee wanteth shown.  Shorter is better. 
  did fail to upload {0}
-err'r executing remote debug hest {0}: {1}
 adds users
 adds aliases to hests
-injects arguments to the kernel (reboot required)
 changes host name
 changes mal, the motd after login
 changes motd, the message of the day
@@ -450,13 +338,11 @@ did remove alias {0} successfully.
  err'r trying to dismiss notification. 
  usrmgr: did fail to maketh username {0}: {1}
 did fail to rename user.  {0}
-one of the permission lists doesn't enwheel username {0}. 
 user not hath found
 did fail to changeth password of username: {0}
 unable to findeth file to match string "{0}": {1}
 download did fail f'r file {0}. 
  did fail to list remote files: {0}
-art thee sure thee wanteth to fordid {0} <y/n>?
 deleting {0}. 
  {0} is not hath found in the serv'r. 
  all mail madeth by {0} art did remove successfully. 
@@ -483,7 +369,6 @@ humidity: {0}
 thee can receiveth thy own api key at https://home. openweathermap. org/api_keys. 
  thee can at each moment consult http://bulk. openweathermap. org/sample/city. list. json. gz f'r the list of cities with their ids. 
  did prefer unit f'r temperature
-sets up the kernel so t prompts thee f'r argument on boot. 
  triggers maintenance mode.  This disables multiple accounts. 
  each startup, 'twill check f'r updates. 
  at which hour switching languages, changeth the month names, calendar, etc. 
@@ -491,7 +376,6 @@ sets up the kernel so t prompts thee f'r argument on boot.
  showeth message of the day ere displaying login screen. 
  clear screen ere displaying login screen. 
  shows available users if 't be true enabl'd. 
- gives the kernel col'r supporteth
 simplifi'd holp hest f'r all the shells
 whe'r 'r not to log ftp username. 
  whe'r 'r not to log ftp ip address. 
@@ -510,7 +394,6 @@ mod {0} doest not has't the part name.  Mod parsing did fail.  Review the source
  ope "mail" to see those folk. 
 removes a directory 'r a file
 can't remove {0} because t doesn't exist. 
- press ctrl+c to exit. 
  provides information about a file
 provides information about a directory
 can't receiveth information about nonexistent directory. 
@@ -582,16 +465,7 @@ opens a test shell
  did fail to start "{0}": {1}
 showeth mail message preview
 at which hour listing mail messages, showeth corse preview. 
- did input col'r
-license col'r
-continuable kernel err'r col'r
-uncontinuable kernel err'r col'r
-host name col'r
-user name col'r
 background col'r
-neutral text col'r
-stage col'r
-err'r col'r
 trying to access invalid path. 
  clears the text file
 exits the text edit'r
@@ -621,11 +495,7 @@ making a new theme "{0}".
 save theme to another directory. 
  select col'r using "<-" and "->" keys.  Press enter to did quit.  Press "i" to insert col'r number manually. 
  select col'r using "<-" and "->" keys.  Useth arrow up and arrow down keys to select between col'r ranges.  Press enter to did quit.  Press "i" to insert col'r number manually. 
- welcome to the kernel! - version {0}
-warning col'r
-option col'r
 enter col'r number from 0 to 255:
-useth "hwinfo" f'r did extend information about hardware. 
  prints hardware information
 process'r name:
 process'r bits:
@@ -635,9 +505,6 @@ gpu: one 'r moo of the graphics cards did fail to beest prob'd.  Showing informa
  >> welcome! this is thy first time entering remote debug and chat.  Useth "/register <name>" to register. 
  device already exists. 
  nay such device. 
- sets device username
-thou art already register'd. 
- good morrow, {0}!
 prints content of file to console
 or, passeth "listcities" to this hest. 
  entry already exists. 
@@ -645,7 +512,6 @@ or, passeth "listcities" to this hest.
 the hest is not wrappable.  These hests art wrappable:
 extracts a zip archive
 creates a zip archive
-hath built in {0}
 err'r downloading debug data
 thither is an err'r while downloading debug data.  Check thy internet connection. 
  did fail to finalize mod {0}: {1}
@@ -659,12 +525,8 @@ wraps the list outputs if 't be true t seemeth too long f'r the current console 
  save theme to current directory as. 
  save theme to another directory as. 
  specify theme name:
-the user {0} hast been did add to the "{1}" list. 
- the user {0} hast been did remove from the "{1}" list. 
- invalid mode {0}
 load theme from prebuilt themes. 
  specify theme file name wihout the. json extension:
-opens a zip archive
 lists all files inside the archive
 extracts a file to a specifi'd directory 'r a current directory
 changes archive directory
@@ -672,11 +534,7 @@ directory {0} doesn't exist
 archive directory {0} doesn't exist
 max positions count
 how many positions art did light ere dimming?
-list entry col'r
-list value col'r
 connects to an ssh serv'r to execute a hest. 
- invalid col'r specifier.  Ensure yond t's on the correct format, which means a number from 0-255 if 't be true using 255 colors 'r a vt sequence if 't be true using true col'r as follows:
-err'r in test shell: {0}
 sets a variable to a value in a script
 a bug reporting prompt. 
  thither wast an err'r in the ftp shell:
@@ -694,15 +552,6 @@ neutraliz'd a non-existent path.
  err'r trying to add private key:
 press "t" to switch to 255 col'r mode. 
  press "t" to switch to true col'r mode. 
- t looks like thee've did get nay user except root.  This is lacking valor.  We'll guide thee how to maketh one. 
- writeth thy username. 
- thee might not but writeth thy username. 
- writeth thy password. 
- thee might not but writeth thy password. 
- select account type. 
- administrator: this account type hast the most power in the kernel, allowing thee to useth system management programs. 
- ingraft user: this account type is slightly moo restrict'd than administrators. 
- congratulations! thee've madeth a new account! to finish this off, log in as thy new account. 
  mod: nay mods did detect. 
  general hests:
 mod hests:
@@ -712,33 +561,21 @@ lookup directories
 group of paths did separate by the colon.  T worketh the same as path.  Writeth a full path to a folder 'r a folder name.  At which hour thou art did finish, writeth "q".  Writeth a minus sign next to the path to remove an existing directory. 
  nay mod hests. 
  nay alias hests. 
- the col'r value is outside the range of 0-255. 
  the wrappable hest is not hath found. 
  queries a word in a specifi'd line 'r all lines
 {0} of {1} did download. 
- prints a string to console using col'r type and line print
-prints a string to console using col'r type and line print with format supporteth
-prints a string to debugger
-prints a string to debugger with format supporteth
 tests the kernel err'r facility
 tests the kernel err'r facility with format supporteth
 tests translating a string yond exists in resources to specific language
 prints a string to console and parses the placeholders hath found
 tests the regular expression facility
 starts all mods
-stops all mods
-enables 'r disables debug
-enables 'r disables remote debug
 tests the vt sequence f'r 255 colors
 tests the vt sequence f'r true col'r
 sends a notification to test the receiv'r
 tests printing date using different calendars
 lists all did support codepages
-what compiler variables art enabl'd in the application?
-tests raising the specific nonce
 tests probing the hardware
-exits the test shell and starts the kernel
-exits the test shell and shuts down the kernel
 saves the current directory to kernel configuration file
 tests the list writer with the string and string array
 tests the list writer with the integer and integer array
@@ -850,7 +687,6 @@ mod {0} not hath found.
  welcome to settings!
 err'r executing ssh hest
 err'r on ssh shell
-app information
 tests the dictionary writer with the string and string array
 tests the dictionary writer with the char and char array
 tests the dictionary writer with the integer and integer array
@@ -860,21 +696,15 @@ ingraft integer dictionary:
 array integer dictionary:
 ingraft char dictionary:
 array char dictionary:
-welcome to test shell!
 showeth progress on filesystem operations
 shows what file is being process'd during the filesystem operations
 whither hardwaretype shall beest
 either the hardware type {0} is not probed, 'r is not valid. 
  the hardware type {0} is not prob'd yet.  If 't be true thou art sure yond t's probed, restart the kernel with debugging enabl'd. 
  partitions not pars'd to list. 
- prints a separat'r
-prints a separat'r with format supporteth
-prints a separat'r with col'r supporteth
-prints a separat'r with col'r and format supporteth
 at each moment center'd
 writeth any text thee wanteth shown. 
  whe'r the text shown on the marquee is at each moment center'd. 
- argument {0} not hath found to inject. 
  screensav'r experienc'd an err'r while displaying: {0}.  Press any key to exit. 
  preview. 
  hither's how thy theme shall behold like:
@@ -891,7 +721,6 @@ mod file path:
 part version:
 minimum count of requir'd arguments:
 arguments required?
-wrappable hest?
 setting shell variable?
 can not runneth in maintenance mode?
 obsolete?
@@ -900,7 +729,6 @@ folder is exsufflicate.
  verbose probe
 maketh hardware probing messages a did bite talkative. 
  > thither art nay information about frames. 
- thee needeth to writeth thy name. 
  beautifies the json file
 config category {0} not hath found. 
  config entry {0} not hath found. 
@@ -949,10 +777,6 @@ check thy internet connection and tryeth again.
 manual page {0} not hath found. 
  mod manual
 available kernel arguments:
-press "q" if 't be true thou art done. 
- multiple kernel arguments can beest did separate with commas without spaces, f'r example:
-multiple did inject hests can beest did separate with colons with spaces, f'r example:
-the did request argument {0} is not hath found. 
  unrecoverable err'r in argument:
 encrypts a string using sha512
 encrypts a string using sha384
@@ -977,31 +801,12 @@ the json edit'r hasn't hath opened a file stream yet.
 removes a property from the json file
 exits the json shell without saving the changes
 saves the json file
-opens the json shell
 prints the json file
 next ramp interval
 how many milliseconds to wait ere filling in the next ramp?
-notification title col'r
-notification description col'r
-notification progress col'r
-notification failure col'r
-question col'r
-success col'r
-user dollar col'r
-tip col'r
-separat'r text col'r
-separat'r col'r
-list title col'r
-development warning col'r
-stage time col'r
-progress col'r
-back option col'r
 draweth notification border
 covers the notification with the border. 
  contact the vend'r of the mod to upgrade the mod to the compatible version. 
- base priority border col'r
-medium priority border col'r
-high priority border col'r
 sends a progress notification to test the receiv'r
 tests the col'r wheel
 shows local kernel time
@@ -1020,13 +825,11 @@ adds a mod to the blacklist
 removes a mod from the blacklist
 time and date in utc: {0}
 showeth app information during boot
-parse command-line arguments
 showeth stage finish times
 start kernel modifications on boot
 showeth current time ere login
 notify f'r any fault during boot
 shows brief information about the application on boot. 
- parses the command-line arguments on boot. 
  shows how much time didst the kernel taketh to finish a stage. 
  automatically start the kernel modifications on boot. 
  shows the current time, time zone, and date ere logging in. 
@@ -1036,8 +839,6 @@ password prompt style
 writeth how thee wanteth thy login prompt to beest.  Leaveth blank to useth default style.  Placeholders art pars'd. 
  writeth how thee wanteth thy password prompt to beest.  Leaveth blank to useth default style.  Placeholders art pars'd. 
  shows message of the day after displaying login screen. 
-probe did inject hests
-probes the did inject hests at the start of the kernel shell. 
  showeth file details in list
 shows the brief file details while listing files
 showeth file details in ftp list
@@ -1089,13 +890,9 @@ add new connections to sftp spe'd dial
 shows the sftp file details while listing remote directories. 
  if 't be true enabled, adds a new connection to the sftp spe'd dial. 
  ping timeout
-showeth extensive adapter info
-showeth general network information
 download percentage text
 upload percentage text
 how many milliseconds to wait ere declaring timeout?
-prints the extensive adapter information, such as packet information. 
- shows the general information about network. 
  writeth how thee wanteth thy upload percentage text to beest.  Leaveth blank to useth default style.  Placeholders art pars'd.  {0} f'r upload'd size, {1} f'r target size, {2} f'r percentage. 
  writeth how thee wanteth thy download percentage text to beest.  Leaveth blank to useth default style.  Placeholders art pars'd.  {0} f'r did download size, {1} f'r target size, {2} f'r percentage. 
  asketh f'r password after locking
@@ -1215,16 +1012,12 @@ upper frame character f'r notification border
 lower frame character f'r notification border
 hath left frame character f'r notification border
 right frame character f'r notification border
-manual page information style
 whe'r to showeth what's writ in the did input prompt. 
  what is the minimum number to chooseth?
 what is the maximum number to chooseth?
-writeth how thee wanteth thy manpage information to beest.  Leaveth blank to useth default style.  Placeholders art pars'd.  {0} f'r manual title, {1} f'r revision. 
- property {0} is not hath found on any of the modules. 
  start col'r wheel in true col'r mode
 if 't be true specified, 'twill display customiz'd startup banner with placeholder supporteth.  Thee can useth {0} f'r kernel version. 
  which variant of the current language is being hath used to changeth the month names, calendar, etc. ?
-activates the 255 col'r supporteth. 
  activates the true col'r supporteth. 
  word did delete in line {0}. 
  string did replace in line {0}. 
@@ -1253,7 +1046,6 @@ disk size:
 total memory:
 graphics card:
 disk model:
-culture of the current language
 if 't be true thou art sure yond thee've hath opened the right section, check this message out:
 executes an ftp serv'r hest
  encrypts a string using crc32
@@ -1278,9 +1070,6 @@ if 't be true enabled, the mail shell shall showeth how many bytes transmitt'd a
  time zone:
 the present day is {0}
 current time is {0}
-table separat'r col'r
-table header col'r
-table value col'r
 possible answers
 mod file is not specifi'd. 
  trying to install an already-install'd mod.  Updating mod. 
@@ -1302,7 +1091,6 @@ shows the notification showing the download progress.
 string hath found in the localization resources. 
  string not hath found in the localization resources. 
  starts the kernel quietly
-injects a hest to start up in the next login
 starts the kernel in safe mode, disabling all mods
 like safe mode, but eke disables multi-user and some customization
 thither wast not enow arguments. 
@@ -1327,10 +1115,6 @@ getting {0}.
  setting site to
 colors require not a restart, but most of the settings require a restart. 
  nay holp f'r argument "{0}". 
- press a on misprise comments to apologize.  Press t on love comments to thank.  Press q to did quit the game. 
- thee've did apologize to a misprise comment! excellent!
-did apologize to love comment.  Not valorous enow. 
- thee just did thank the hater f'r the misprise comment!
 default difficulty f'r speedpress
 keypress timeout f'r speedpress
 select thy did prefer difficulty. 
@@ -1351,10 +1135,8 @@ checks all the ks settings to see if 't be true the variables art writ correctly
 these configuration entries has't invalid variables 'r enumerations and needeth to beest did fix:
 file {0} not hath found
 creates a variable array with the did provide values
-writeth the number of the setting to wend to.  Any other character means wend back. 
  checks all the localization text line numbers to see if 't be true they're all equal
 line mismatch in
-prithee enter a user number. 
  includeth anonymous users
 includeth disabl'd users
 enwheels the anonymous users in the list
@@ -1367,9 +1149,7 @@ showeth latest rss headline on login
 rss headline url
 each login, 'twill showeth the latest rss headline from the did select headline url. 
  rss headline url to beest hath used at which hour showing the latest headline.  This is usually thy highest in estimation fe'd. 
- latest news:
 did fail to receiveth the latest news. 
- did select option col'r
 showeth stack trace on kernel err'r
 if 't be true thither is any kernel error, chooseth whe'r 'r not to print the stack trace to the console. 
  save settings as
@@ -1388,9 +1168,6 @@ stage peize in milliseconds
 how many milliseconds to wait ere drawing the next stage?
 next ramp rot interval
 how many milliseconds to wait ere rotting the next ramp's one end?
-check debug quota
-doth we check if 't be true the debug system needeth to check f'r quota ere writing to the debugger?
-how many milliseconds didst t very much taketh to catch but a wink?
 did fail to add an nonce. 
  did fail to remove an nonce. 
  not enow arguments did provide to add an nonce. 
@@ -1446,9 +1223,6 @@ how many blocks (up to 10) is the explosion radius f'r the firework at which hou
 this hest hast the below switches yond changeth how t worketh:
 prints the line numbers yond followeth the line being did print
 prevents printing the line numbers
-at each moment useth the transliterat'd version
-at each moment useth the did translate version
-force switching language
 betoken yond the answer can taketh moo than one character
 betoken yond the answer can taketh just one character
 print the question and the answers in one line
@@ -1463,23 +1237,15 @@ starts the game in medium difficulty
 starts the game in hard difficulty
 starts the game in very hard difficulty
 starts the game in custom difficulty.  Prithee note yond the custom timeout in milliseconds shouldst beest writ as argument. 
- shows the system information
-shows the hardware information
-shows the user information
-shows the message of the day
-shows the message of the day after login
-shows all information
 creates a directory yond enwheels the contents of the zip file
 shows all the available cities
 festinate compression
 nay compression
 maketh not base directory in archive
-unit in ticks
 disconnects from serv'r disgracefully
 indicates yond the target path is absolute
 saves the json file, beautifying t in the process
 saves the json file, minifying t in the process
-gets the line ending style from text file
 clears all fir'd events
 enable nonce debugging
 enables debugging f'r the kernel nonce system
@@ -1494,8 +1260,6 @@ did fail to install custom language {0}.
  did fail to install custom languages. 
  did fail to uninstall custom languages. 
  did fail to uninstall custom languages.  See the inner exception f'r moo info. 
- writeth the administrat'r password.  Maketh sure yond thee useth not this account unless thee very much knoweth what thou art doing. 
- thee wilt writeth the administrat'r password. 
  license information
 make shift thy languages
 language not hath found 'r file hast invalid characters. 
@@ -1505,9 +1269,7 @@ language not hath found 'r file hast invalid characters.
 language full name:
 language transliterable:
 custom language:
-new welcome banner
 stylish splash screen
-shows the new figlet-render'd welcome banner
 enables the stylish splash screen on startup.  Prithee note yond 'twill disable argument prompt and test shell pre-boot. 
  splash name
 splash name from the available splashes implement'd in the kernel. 
@@ -1515,7 +1277,6 @@ splash name from the available splashes implement'd in the kernel.
  generat'd default mal. 
  system account initializ'd
 users initializ'd
-permissions load'd
 welcome!
 starting the remote debugger. 
  remote debugger connection err'r
@@ -1530,8 +1291,6 @@ looks like thou art bypassing the console size detection.  Things may not worket
  to has't a better experience, resize thy console window while still being on this screen.  Press any key to continueth. 
  thy console is too bawbling to runneth properly:
 banner figlet font
-prints a string to console using col'r type and line print with figlet supporteth
-prints a string to console using col'r type and line print with format and figlet supporteth
 showeth the hests count on holp
 showeth the shell hests count on holp
 showeth the mod hests count on holp
@@ -1556,21 +1315,10 @@ progress text location
 select thy did prefer progress text location. 
  thee can only writeth the numbers. 
  press "q" to exit. 
- downloading names. 
- due to technical difficulties, we're unable to list adapter properties on unix systems. 
  enables debug mode
-prompts f'r arguments
 enable black and white mode
 maketh the disco black and white.  Shall very much did hurt thy eyes if 't be true t wast too festinate, so not recommend'd if 't be true thou art experiencing a seizure of festinate images. 
- looks like thee wast running an unsupport'd version.  T's highly advisable not to useth this version. 
  load current colors
-alternative option col'r
-users count f'r love 'r misprise comments
-how many users to beest in the love 'r misprise comment cubiculo?
-lists available languages
-available languages:
-command-line arguments:
-pre-boot command-line arguments:
 opens the mod api documentation f'r the structure of the source code in its most current form
 current value:
 invalid hex col'r specifier. 
@@ -1597,7 +1345,6 @@ byte did replace.
  the specifi'd start byte number may not beest larger than the file size. 
  the specifi'd end byte number may not beest larger than the file size. 
  did delete bytes. 
-edits a binary file
 selects the fe'd from the existing fe'd list from online sources
 downloading fe'd list. 
  did fail to download fe'd list. 
@@ -1636,14 +1383,9 @@ minimum age years count
 maximum age years count
 minimum amount of age years to generate
 maximum amount of age years to generate
-> framework type: {3}
 untitl'd manual page
 did input history enabl'd
-did input clipboard enabl'd
-did input undo enabl'd
 whe'r the did input history is enabl'd 'r not.  If 't be true enabled, thee can access recently did type hests using the up 'r down arrow keys. 
- whe'r the did input clipboard is enabl'd 'r not. 
- whe'r the did input undo favour is enabl'd 'r not. 
  converts the col'r rgb numbers to hex. 
  converts the hexadecimal representation of the col'r to rgb numbers. 
  converts the hexadecimal representation of the col'r to rgb numbers in ks format. 
@@ -1691,13 +1433,11 @@ unit converter
 available unit types and their units:
 game ov'r
 unexpect'd err'r
-the rar shell
 hests highlight'd in another col'r art unifi'd hests and art available in every shell. 
  checking f'r updates. 
  downloading version
 installing version
 going back to 2018
-Thee can't wend back to 2018 on. Meshes 6. 0!
 useth powerline f'r rendering spaceship
 mete'r game spe'd
 whe'r to useth powerline to render the spaceship 'r to useth the standard ranker than character.  If 't be true thee wanteth to useth powerline with meteor, thee needeth to install an appropriate font with powerline supporteth. 
