@@ -138,6 +138,11 @@ namespace KS.Misc.Splash
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Could not handle splash file {0}! {1}", FilePath, ex.Message);
                         DebugWriter.WriteDebugStackTrace(ex);
+                        foreach (Exception LoaderException in ex.LoaderExceptions)
+                        {
+                            DebugWriter.WriteDebug(DebugLevel.E, "Loader exception: {0}", LoaderException.Message);
+                            DebugWriter.WriteDebugStackTrace(LoaderException);
+                        }
                     }
                 }
                 else

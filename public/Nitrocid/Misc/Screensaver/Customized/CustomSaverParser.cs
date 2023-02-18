@@ -125,6 +125,8 @@ namespace KS.Misc.Screensaver.Customized
                             DebugWriter.WriteDebug(DebugLevel.E, "Loader exception: {0}", LoaderException.Message);
                             DebugWriter.WriteDebugStackTrace(LoaderException);
                             SplashReport.ReportProgressError(LoaderException.Message);
+                            if (LoaderException.GetType() == typeof(FileLoadException) && ((FileLoadException)LoaderException).FileName.Contains("Kernel Simulator"))
+                                SplashReport.ReportProgressError(Translate.DoTranslation("When the kernel tried to load the specified screensaver, it requested loading \"Kernel Simulator\". Since the main application is renamed to Nitrocid KS, this screensaver can't be run safely. We advice you to upgrade the screensaver."));
                         }
                     }
                     catch (Exception ex)
