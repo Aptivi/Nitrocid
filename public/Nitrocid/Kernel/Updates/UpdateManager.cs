@@ -21,6 +21,13 @@ using KS.Kernel.Debugging;
 using KS.Network.Base.Transfer;
 using Newtonsoft.Json.Linq;
 
+#if SPECIFIERREL
+using KS.Files;
+using KS.Misc.Splash;
+using KS.Languages;
+using System.IO;
+#endif
+
 namespace KS.Kernel.Updates
 {
     /// <summary>
@@ -71,28 +78,28 @@ namespace KS.Kernel.Updates
             }
 
             // Check for updates now
-            SplashReport.ReportProgress(Translate.DoTranslation("Checking for system updates..."), 10, KernelColorType.NeutralText);
+            SplashReport.ReportProgress(Translate.DoTranslation("Checking for system updates..."), 10);
             var AvailableUpdate = FetchKernelUpdates();
             if (AvailableUpdate is not null)
             {
                 if (!AvailableUpdate.Updated)
                 {
-                    SplashReport.ReportProgress(Translate.DoTranslation("Found new version: "), 10, KernelColorType.ListEntry);
-                    SplashReport.ReportProgress(AvailableUpdate.UpdateVersion.ToString(), 10, KernelColorType.ListValue);
+                    SplashReport.ReportProgress(Translate.DoTranslation("Found new version: "), 10);
+                    SplashReport.ReportProgress(AvailableUpdate.UpdateVersion.ToString(), 10);
                     if (Flags.AutoDownloadUpdate)
                     {
                         NetworkTransfer.DownloadFile(AvailableUpdate.UpdateURL.ToString(), Path.Combine(Paths.ExecPath, "update.rar"));
-                        SplashReport.ReportProgress(Translate.DoTranslation("Downloaded the update successfully!"), 10, KernelColorType.Success);
+                        SplashReport.ReportProgress(Translate.DoTranslation("Downloaded the update successfully!"), 10);
                     }
                     else
                     {
-                        SplashReport.ReportProgress(Translate.DoTranslation("You can download it at: "), 10, KernelColorType.ListEntry);
-                        SplashReport.ReportProgress(AvailableUpdate.UpdateURL.ToString(), 10, KernelColorType.ListValue);
+                        SplashReport.ReportProgress(Translate.DoTranslation("You can download it at: "), 10);
+                        SplashReport.ReportProgress(AvailableUpdate.UpdateURL.ToString(), 10);
                     }
                 }
                 else
                 {
-                    SplashReport.ReportProgress(Translate.DoTranslation("You're up to date!"), 10, KernelColorType.NeutralText);
+                    SplashReport.ReportProgress(Translate.DoTranslation("You're up to date!"), 10);
                 }
             }
             else if (AvailableUpdate is null)

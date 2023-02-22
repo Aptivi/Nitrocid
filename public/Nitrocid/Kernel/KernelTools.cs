@@ -48,10 +48,11 @@ using KS.Misc.Writers.FancyWriters.Tools;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 #if SPECIFIERREL
-using static KS.ConsoleBase.Colors.ColorTools;
-using static KS.Misc.Notifications.Notifications;
-using KS.Network;
-using KS.Network.Transfer;
+using static KS.Misc.Notifications.NotificationManager;
+using KS.Files;
+using KS.Files.Querying;
+using KS.Network.Base;
+using KS.Network.Base.Transfer;
 #endif
 
 namespace KS.Kernel
@@ -297,7 +298,7 @@ namespace KS.Kernel
 				{
 					try
 					{
-						NetworkTransfer.DownloadFile($"https://github.com/Aptivi/NitrocidKS/releases/download/v{Kernel.KernelVersion}-beta/{Kernel.KernelVersion}-dotnet.pdb", Assembly.GetExecutingAssembly().Location.Replace(".exe", ".pdb"));
+						NetworkTransfer.DownloadFile($"https://github.com/Aptivi/NitrocidKS/releases/download/v{KernelVersion}-beta/{KernelVersion}.pdb", Assembly.GetExecutingAssembly().Location.Replace(".exe", ".pdb"));
 					}
 					catch (Exception)
 					{
