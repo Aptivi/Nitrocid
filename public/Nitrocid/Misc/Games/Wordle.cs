@@ -34,7 +34,7 @@ namespace KS.Misc.Games
 
         public static void InitializeWordle(bool orig = false)
         {
-            string RandomWord = orig ? GetRandomWordFiveLetters() : WordManager.GetRandomWordConditional(8, "", "");
+            string RandomWord = WordManager.GetRandomWordConditional(8, "", "", orig ? 5 : 0);
             bool done = false;
             int currentGuessTry = 1;
             int currentGuessChar = 1;
@@ -134,16 +134,6 @@ namespace KS.Misc.Games
                     TextWriterWhereColor.WriteWhere(currChar.ToString(), currentX + 2, currentY + 1);
                 }
             }
-        }
-
-        // TODO: Remove this once Wordament gets updated with this new condition
-        private static string GetRandomWordFiveLetters()
-        {
-            string RandomWord = "";
-            while (RandomWord.Length != 5)
-                // Loop through all the random words for a word that has exactly five letters
-                RandomWord = WordManager.GetRandomWordConditional(5, "", "");
-            return RandomWord;
         }
 
     }
