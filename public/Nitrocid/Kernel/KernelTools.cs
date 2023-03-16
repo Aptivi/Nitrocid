@@ -46,6 +46,7 @@ using KS.Users;
 using System.Reflection;
 using KS.Misc.Writers.FancyWriters.Tools;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
+using KS.ConsoleBase.Inputs;
 
 #if SPECIFIERREL
 using static KS.Misc.Notifications.NotificationManager;
@@ -150,6 +151,9 @@ namespace KS.Kernel
                 ConsoleWrapper.SetCursorPosition(0, 0);
                 ConsoleWrapper.CursorVisible = false;
             }
+
+            // Initialize console wrappers for TermRead
+            Input.InitializeInputWrappers();
 
             // Show initializing
             TextWriterColor.Write(Translate.DoTranslation("Starting Nitrocid..."));
