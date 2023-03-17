@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Reflection;
+using ColorPrint.Core.Wheel;
 using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
@@ -540,20 +541,7 @@ namespace KS.Misc.Settings
                                 keyColorValue = new Color(keyColorString);
 
                             // Get the color value from the color wheel
-                            ColorValue = ColorWheelOpen.ColorWheel(
-                                // Determine if the color is true color
-                                keyColorValue.Type == ColorType.TrueColor,
-
-                                // Get the ConsoleColors number from the current color value
-                                (ConsoleColors)Convert.ToInt32(
-                                    keyColorValue.Type == ColorType._255Color || keyColorValue.Type == ColorType._16Color ?
-                                    keyColorValue.PlainSequence :
-                                    ConsoleColors.White
-                                ),
-
-                                // Now, get the RGB from the color class
-                                keyColorValue.R, keyColorValue.G, keyColorValue.B
-                            );
+                            ColorValue = ColorWheel.InputForColor(keyColorValue).PlainSequence;
 
                             break;
                         case SettingsKeyType.SIntSlider:

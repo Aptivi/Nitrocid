@@ -83,7 +83,6 @@ namespace KS.Kernel.Debugging.Testing
             { "CheckSettingsEntries",           new Facades.CheckSettingsEntries() },
             { "ColorTest",                      new Facades.ColorTest() },
             { "ColorTrueTest",                  new Facades.ColorTrueTest() },
-            { "ColorWheel",                     new Facades.ColorWheel() },
             { "ListCultures",                   new Facades.ListCultures() },
             { "ListCodepages",                  new Facades.ListCodepages() },
             { "BenchmarkSleepOne",              new Facades.BenchmarkSleepOne() },

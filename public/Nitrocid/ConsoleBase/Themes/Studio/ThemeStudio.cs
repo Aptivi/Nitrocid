@@ -18,6 +18,7 @@
 
 using System;
 using System.Linq;
+using ColorPrint.Core.Wheel;
 using ColorSeq;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
@@ -172,7 +173,7 @@ namespace KS.ConsoleBase.Themes.Studio
                             default:
                                 {
                                     SelectedColorInstance = ThemeStudioTools.SelectedColors[ThemeStudioTools.SelectedColors.Keys.ElementAt(NumericResponse - 1)];
-                                    string ColorWheelReturn = ColorWheelOpen.ColorWheel(SelectedColorInstance.Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(SelectedColorInstance.Type == ColorType._255Color ? SelectedColorInstance.PlainSequence : global::ColorSeq.ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B);
+                                    string ColorWheelReturn = ColorWheel.InputForColor(SelectedColorInstance).PlainSequence;
                                     ThemeStudioTools.SelectedColors[ThemeStudioTools.SelectedColors.Keys.ElementAt(NumericResponse - 1)] = new Color(ColorWheelReturn);
                                     break;
                                 }

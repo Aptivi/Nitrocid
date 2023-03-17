@@ -158,10 +158,6 @@ namespace KS.Kernel
         /// </summary>
         public static bool NotifyFaultsBoot { get; set; } = true;
         /// <summary>
-        /// Whether to start the default color wheel in true color mode
-        /// </summary>
-        public static bool ColorWheelTrueColor { get; set; } = true;
-        /// <summary>
         /// Whether to suppress the unauthorized messages while listing directory contents
         /// </summary>
         public static bool SuppressUnauthorizedMessages { get; set; } = true;
