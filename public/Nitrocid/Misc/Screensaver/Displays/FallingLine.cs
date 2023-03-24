@@ -335,6 +335,9 @@ namespace KS.Misc.Screensaver.Displays
                 ThreadManager.SleepNoBlock(FallingLineSettings.FallingLineDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
             }
 
+            // Reset covered positions
+            CoveredPositions.Clear();
+
             // Reset resize sync
             ConsoleResizeListener.WasResized();
             ThreadManager.SleepNoBlock(FallingLineSettings.FallingLineDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
