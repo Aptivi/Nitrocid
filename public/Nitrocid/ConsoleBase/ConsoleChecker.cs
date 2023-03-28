@@ -37,7 +37,7 @@ namespace KS.ConsoleBase
         /// <summary>
         /// Checks the running console for sanity, like the incompatible consoles, insane console types, etc.
         /// <br></br>
-        /// The severity of the checks can be describes in two categories:
+        /// The severity of the checks can be described in two categories:
         /// <br></br>
         /// <br></br>
         /// 1. Error: We'll throw <see cref="KernelException"/> with type <see cref="KernelExceptionType.InsaneConsoleDetected"/> when we
