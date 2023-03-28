@@ -47,6 +47,7 @@ using System.Reflection;
 using KS.Misc.Writers.FancyWriters.Tools;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Inputs;
+using KS.Misc.Contacts;
 
 #if SPECIFIERREL
 using static KS.Misc.Notifications.NotificationManager;
@@ -230,6 +231,9 @@ namespace KS.Kernel
             // Load all events and reminders
             EventManager.LoadEvents();
             ReminderManager.LoadReminders();
+
+            // Load all contacts
+            ContactsManager.InstallContacts();
 
             // Load system env vars and convert them
             UESHVariables.ConvertSystemEnvironmentVariables();

@@ -90,6 +90,14 @@ namespace KS.Files
         /// <summary>
         /// Custom screensaver directory
         /// </summary>
-        Screensavers
+        Screensavers,
+        /// <summary>
+        /// Contacts directory
+        /// </summary>
+        Contacts,
+        /// <summary>
+        /// Contacts import directory
+        /// </summary>
+        ContactsImport,
     }
 }

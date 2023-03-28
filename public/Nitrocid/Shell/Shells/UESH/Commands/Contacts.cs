@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Files.Interactive;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.UESH.Commands
@@ -23,8 +24,8 @@ namespace KS.Shell.Shells.UESH.Commands
     class ContactsCommand : BaseCommand, ICommand
     {
 
-        // TODO: Implement this
-        // public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) { }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>
+            ContactsManagerCli.OpenMain();
 
     }
 }

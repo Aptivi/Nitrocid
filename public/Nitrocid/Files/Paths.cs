@@ -215,6 +215,18 @@ namespace KS.Files
             Filesystem.NeutralizePath(AppDataPath + "/KSScreensavers/");
 
         /// <summary>
+        /// Contacts path
+        /// </summary>
+        public static string ContactsPath =>
+            Filesystem.NeutralizePath(AppDataPath + "/KSContacts/");
+
+        /// <summary>
+        /// Contacts path
+        /// </summary>
+        public static string ContactsImportPath =>
+            Filesystem.NeutralizePath(AppDataPath + "/KSContactsImport/");
+
+        /// <summary>
         /// Gets the neutralized kernel path
         /// </summary>
         /// <param name="PathType">Kernel path type</param>
@@ -240,6 +252,8 @@ namespace KS.Files
                 KernelPathType.Users =>                 UsersPath,
                 KernelPathType.Journalling =>           JournallingPath,
                 KernelPathType.Screensavers =>          ScreensaversPath,
+                KernelPathType.Contacts =>              ContactsPath,
+                KernelPathType.ContactsImport =>        ContactsImportPath,
                 _ => throw new KernelException(KernelExceptionType.InvalidKernelPath, Translate.DoTranslation("Invalid kernel path type.")),
             };
         }
