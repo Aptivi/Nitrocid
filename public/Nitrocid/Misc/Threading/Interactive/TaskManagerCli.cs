@@ -47,11 +47,11 @@ namespace KS.Files.Interactive
         private static readonly List<TaskManagerBinding> TaskManagerBindings = new()
         {
             // Operations
-            new TaskManagerBinding("Kill",   ConsoleKey.F1,  KillThread),
-            new TaskManagerBinding("Switch", ConsoleKey.Tab, (_) => SwitchMode()),
+            new TaskManagerBinding(/* Localizable */ "Kill",   ConsoleKey.F1,  KillThread, true),
+            new TaskManagerBinding(/* Localizable */ "Switch", ConsoleKey.Tab, (_) => SwitchMode(), true),
 
             // Misc bindings
-            new TaskManagerBinding("Exit"  , ConsoleKey.Escape, (_) => isExiting = true)
+            new TaskManagerBinding(/* Localizable */ "Exit"  , ConsoleKey.Escape, (_) => isExiting = true, true)
         };
 
         /// <summary>
@@ -157,7 +157,7 @@ namespace KS.Files.Interactive
                         if (!($" {binding.BindingKeyName} {binding.BindingName}  ".Length + ConsoleWrapper.CursorLeft >= ConsoleWrapper.WindowWidth))
                         {
                             TextWriterWhereColor.WriteWhere($" {binding.BindingKeyName} ", ConsoleWrapper.CursorLeft + 0, ConsoleWrapper.WindowHeight - 1, TaskManagerKeyBindingOptionColor, TaskManagerOptionBackgroundColor);
-                            TextWriterWhereColor.WriteWhere($"{binding.BindingName}  ", ConsoleWrapper.CursorLeft + 1, ConsoleWrapper.WindowHeight - 1, TaskManagerOptionForegroundColor, TaskManagerBackgroundColor);
+                            TextWriterWhereColor.WriteWhere($"{(binding._localizable ? Translate.DoTranslation(binding.BindingName) : binding.BindingName)}  ", ConsoleWrapper.CursorLeft + 1, ConsoleWrapper.WindowHeight - 1, TaskManagerOptionForegroundColor, TaskManagerBackgroundColor);
                         }
                     }
 

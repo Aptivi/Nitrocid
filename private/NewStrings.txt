@@ -492,5 +492,14 @@ No contact titles
 Contact notes
 No contact notes
 Another kernel exception has been returned.
+Delete
+Delete All
+Import
+Info
+Copy
+Move
+Up
+Switch
+Kill
 
 ==========================================================================================================================================

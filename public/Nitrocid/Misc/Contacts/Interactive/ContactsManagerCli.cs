@@ -47,13 +47,13 @@ namespace KS.Files.Interactive
         private static readonly List<ContactsManagerBinding> ContactsManagerBindings = new()
         {
             // Operations
-            new ContactsManagerBinding("Delete",     ConsoleKey.F1, (index) => ContactsManager.RemoveContact(index)),
-            new ContactsManagerBinding("Delete All", ConsoleKey.F2, (_) => ContactsManager.RemoveContacts()),
-            new ContactsManagerBinding("Import",     ConsoleKey.F3, (_) => ImportContacts()),
-            new ContactsManagerBinding("Info",       ConsoleKey.F4, ShowContactInfo),
+            new ContactsManagerBinding(/* Localizable */ "Delete",     ConsoleKey.F1, (index) => ContactsManager.RemoveContact(index), true),
+            new ContactsManagerBinding(/* Localizable */ "Delete All", ConsoleKey.F2, (_) => ContactsManager.RemoveContacts(), true),
+            new ContactsManagerBinding(/* Localizable */ "Import",     ConsoleKey.F3, (_) => ImportContacts(), true),
+            new ContactsManagerBinding(/* Localizable */ "Info",       ConsoleKey.F4, ShowContactInfo, true),
 
             // Misc bindings
-            new ContactsManagerBinding("Exit",       ConsoleKey.Escape, (_) => isExiting = true)
+            new ContactsManagerBinding(/* Localizable */ "Exit",       ConsoleKey.Escape, (_) => isExiting = true, true)
         };
 
         /// <summary>
@@ -167,7 +167,7 @@ namespace KS.Files.Interactive
                         if (!($" {binding.BindingKeyName} {binding.BindingName}  ".Length + ConsoleWrapper.CursorLeft >= ConsoleWrapper.WindowWidth))
                         {
                             TextWriterWhereColor.WriteWhere($" {binding.BindingKeyName} ", ConsoleWrapper.CursorLeft + 0, ConsoleWrapper.WindowHeight - 1, ContactsManagerKeyBindingOptionColor, ContactsManagerOptionBackgroundColor);
-                            TextWriterWhereColor.WriteWhere($"{binding.BindingName}  ", ConsoleWrapper.CursorLeft + 1, ConsoleWrapper.WindowHeight - 1, ContactsManagerOptionForegroundColor, ContactsManagerBackgroundColor);
+                            TextWriterWhereColor.WriteWhere($"{(binding._localizable ? Translate.DoTranslation(binding.BindingName) : binding.BindingName)}  ", ConsoleWrapper.CursorLeft + 1, ConsoleWrapper.WindowHeight - 1, ContactsManagerOptionForegroundColor, ContactsManagerBackgroundColor);
                         }
                     }
 

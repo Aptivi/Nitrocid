@@ -29,6 +29,7 @@ namespace KS.Files.Interactive
         private string _bindingName;
         private ConsoleKey _bindingKeyName;
         private Action<string, FileSystemInfo> _bindingAction;
+        internal bool _localizable;
 
         /// <summary>
         /// Key binding name
@@ -47,11 +48,12 @@ namespace KS.Files.Interactive
         /// </summary>
         public Action<string, FileSystemInfo> BindingAction { get => _bindingAction; }
 
-        internal FileManagerBinding(string bindingName, ConsoleKey bindingKeyName, Action<string, FileSystemInfo> bindingAction)
+        internal FileManagerBinding(string bindingName, ConsoleKey bindingKeyName, Action<string, FileSystemInfo> bindingAction, bool localizable)
         {
             _bindingName = bindingName;
             _bindingKeyName = bindingKeyName;
             _bindingAction = bindingAction;
+            _localizable = localizable;
         }
     }
 }

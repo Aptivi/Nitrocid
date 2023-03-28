@@ -28,6 +28,7 @@ namespace KS.Misc.Threading.Interactive
         private string _bindingName;
         private ConsoleKey _bindingKeyName;
         private Action<int> _bindingAction;
+        internal bool _localizable;
 
         /// <summary>
         /// Key binding name
@@ -45,11 +46,12 @@ namespace KS.Misc.Threading.Interactive
         /// </summary>
         public Action<int> BindingAction { get => _bindingAction; }
 
-        internal TaskManagerBinding(string bindingName, ConsoleKey bindingKeyName, Action<int> bindingAction)
+        internal TaskManagerBinding(string bindingName, ConsoleKey bindingKeyName, Action<int> bindingAction, bool localizable)
         {
             _bindingName = bindingName;
             _bindingKeyName = bindingKeyName;
             _bindingAction = bindingAction;
+            _localizable = localizable;
         }
     }
 }

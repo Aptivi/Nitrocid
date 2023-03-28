@@ -57,15 +57,15 @@ namespace KS.Files.Interactive
         private static readonly List<FileManagerBinding> fileManagerBindings = new()
         {
             // Operations
-            new FileManagerBinding("Copy",   ConsoleKey.F1, (destinationPath, sourcePath) => Copying.CopyFileOrDir(sourcePath.FullName, destinationPath)),
-            new FileManagerBinding("Move",   ConsoleKey.F2, (destinationPath, sourcePath) => Moving.MoveFileOrDir(sourcePath.FullName, destinationPath)),
-            new FileManagerBinding("Delete", ConsoleKey.F3, (_,               sourcePath) => Removing.RemoveFileOrDir(sourcePath.FullName)),
-            new FileManagerBinding("Up",     ConsoleKey.F4, (_,               _         ) => GoUp()),
-            new FileManagerBinding("Info",   ConsoleKey.F5, (_,               sourcePath) => PrintFileSystemInfo(sourcePath)),
+            new FileManagerBinding(/* Localizable */ "Copy",   ConsoleKey.F1, (destinationPath, sourcePath) => Copying.CopyFileOrDir(sourcePath.FullName, destinationPath), true),
+            new FileManagerBinding(/* Localizable */ "Move",   ConsoleKey.F2, (destinationPath, sourcePath) => Moving.MoveFileOrDir(sourcePath.FullName, destinationPath), true),
+            new FileManagerBinding(/* Localizable */ "Delete", ConsoleKey.F3, (_,               sourcePath) => Removing.RemoveFileOrDir(sourcePath.FullName), true),
+            new FileManagerBinding(/* Localizable */ "Up",     ConsoleKey.F4, (_,               _         ) => GoUp(), true),
+            new FileManagerBinding(/* Localizable */ "Info",   ConsoleKey.F5, (_,               sourcePath) => PrintFileSystemInfo(sourcePath), true),
 
             // Misc bindings
-            new FileManagerBinding("Exit"  , ConsoleKey.Escape, (_, _) => isExiting = true),
-            new FileManagerBinding("Switch", ConsoleKey.Tab   , (_, _) => Switch()),
+            new FileManagerBinding(/* Localizable */ "Exit"  , ConsoleKey.Escape, (_, _) => isExiting = true, true),
+            new FileManagerBinding(/* Localizable */ "Switch", ConsoleKey.Tab   , (_, _) => Switch(), true),
         };
 
         /// <summary>
@@ -203,7 +203,7 @@ namespace KS.Files.Interactive
                         if (!($" {binding.BindingKeyName} {binding.BindingName}  ".Length + ConsoleWrapper.CursorLeft >= ConsoleWrapper.WindowWidth))
                         {
                             TextWriterWhereColor.WriteWhere($" {binding.BindingKeyName} ", ConsoleWrapper.CursorLeft + 0, ConsoleWrapper.WindowHeight - 1, FileManagerKeyBindingOptionColor, FileManagerOptionBackgroundColor);
-                            TextWriterWhereColor.WriteWhere($"{binding.BindingName}  ", ConsoleWrapper.CursorLeft + 1, ConsoleWrapper.WindowHeight - 1, FileManagerOptionForegroundColor, FileManagerBackgroundColor);
+                            TextWriterWhereColor.WriteWhere($"{(binding._localizable ? Translate.DoTranslation(binding.BindingName) : binding.BindingName)}  ", ConsoleWrapper.CursorLeft + 1, ConsoleWrapper.WindowHeight - 1, FileManagerOptionForegroundColor, FileManagerBackgroundColor);
                         }
                     }
 
