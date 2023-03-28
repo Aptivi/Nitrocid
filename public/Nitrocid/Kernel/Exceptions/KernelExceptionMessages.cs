@@ -119,27 +119,38 @@ namespace KS.Kernel.Exceptions
         {
             StringBuilder builder = new();
 
-            // Display error type
-            builder.AppendLine(Translate.DoTranslation("There is an error in the kernel or one of the kernel components. The below information may help you figure out why.") + "\n");
-            builder.AppendLine(Translate.DoTranslation("The error type is") + $" {exceptionType} [{Convert.ToInt32(exceptionType)}]");
-            builder.AppendLine((messages.ContainsKey(exceptionType) ? 
-                                messages[exceptionType] : 
-                                Translate.DoTranslation("Unfortunately, an invalid message type was given, so we don't exactly know what is the problem. Try turning on the debugger and reproducing the problem."))
-                               + "\n");
-
-            // Display error message
-            if (!string.IsNullOrWhiteSpace(message))
-                builder.AppendLine(Translate.DoTranslation("The module that caused the fault provided this additional information that may help you further") + $": {message.FormatString(vars)}\n");
+            // Check to see if the exception type is a KernelException
+            if (e is not null && e.GetType() == typeof(KernelException))
+            {
+                // Display message and some extra info
+                builder.AppendLine(Translate.DoTranslation("Another kernel exception has been returned.") + $" {message.FormatString(vars)}\n");
+                builder.Append(e.Message);
+            }
             else
-                builder.AppendLine(Translate.DoTranslation("The module that caused the fault didn't provide additional information.") + "\n");
+            {
+                // Display error type
+                builder.AppendLine(Translate.DoTranslation("There is an error in the kernel or one of the kernel components. The below information may help you figure out why.") + "\n");
+                builder.AppendLine(Translate.DoTranslation("The error type is") + $" {exceptionType} [{Convert.ToInt32(exceptionType)}]");
+                builder.AppendLine((messages.ContainsKey(exceptionType) ? 
+                                    messages[exceptionType] : 
+                                    Translate.DoTranslation("Unfortunately, an invalid message type was given, so we don't exactly know what is the problem. Try turning on the debugger and reproducing the problem."))
+                                   + "\n");
 
-            // Display exception
-            if (e != null)
-                builder.AppendLine(Translate.DoTranslation("Additionally, the faulty module provided this exception information") + $": {e.GetType().Name}: {e.Message}\n");
-            else
-                builder.AppendLine(Translate.DoTranslation("Also, the module didn't provide the exception information, so it's usually an indicator that something is wrong.") + "\n");
+                // Display error message
+                if (!string.IsNullOrWhiteSpace(message))
+                    builder.AppendLine(Translate.DoTranslation("The module that caused the fault provided this additional information that may help you further") + $": {message.FormatString(vars)}\n");
+                else
+                    builder.AppendLine(Translate.DoTranslation("The module that caused the fault didn't provide additional information.") + "\n");
 
-            builder.Append(Translate.DoTranslation("If the module tried to process your input, ensure that you've written all the parameters correctly."));
+                // Display exception
+                if (e != null)
+                    builder.AppendLine(Translate.DoTranslation("Additionally, the faulty module provided this exception information") + $": {e.GetType().Name}: {e.Message}\n");
+                else
+                    builder.AppendLine(Translate.DoTranslation("Also, the module didn't provide the exception information, so it's usually an indicator that something is wrong.") + "\n");
+
+                builder.Append(Translate.DoTranslation("If the module tried to process your input, ensure that you've written all the parameters correctly."));
+            }
+
             return builder.ToString();
         }
     }
