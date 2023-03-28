@@ -91,7 +91,7 @@
     <PackageReference Include="TermRead" Version="0.3.1.1" />
     <PackageReference Include="UnitsNet" Version="5.9.0" />
     <PackageReference Include="Aptivi.VT.NET" Version="0.2.0.1" />
-    <PackageReference Include="VisualCard" Version="0.2.0" />
+    <PackageReference Include="VisualCard" Version="0.3.0" />
     <PackageReference Include="Wordament" Version="0.1.1" />
   </ItemGroup>
   <!-- KS Dependencies Information End -->
