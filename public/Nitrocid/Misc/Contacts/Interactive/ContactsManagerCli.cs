@@ -289,16 +289,8 @@ namespace KS.Files.Interactive
             ColorTools.LoadBack();
         }
 
-        private static void ImportContacts()
-        {
-            var finalInfoRendered = new StringBuilder();
-            finalInfoRendered.AppendLine("Not implemented yet");
-            finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
-
-            // Now, render the info box
-            InfoBoxColor.WriteInfoBox(finalInfoRendered.ToString(), ContactsManagerBoxForegroundColor, ContactsManagerBoxBackgroundColor);
-            redrawRequired = true;
-        }
+        private static void ImportContacts() =>
+            ContactsManager.ImportContacts();
 
         private static void ShowContactInfo(int index)
         {

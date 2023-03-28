@@ -27,6 +27,7 @@ using KS.Languages;
 using KS.Files;
 using KS.Files.Folders;
 using KS.Files.Operations;
+using System.Linq;
 
 namespace KS.Misc.Contacts
 {
@@ -47,13 +48,10 @@ namespace KS.Misc.Contacts
         /// <summary>
         /// Installs the contacts to the manager
         /// </summary>
-        public static void InstallContacts()
+        public static void ImportContacts()
         {
             // Get the contact files
-            string contactsPath = Paths.GetKernelPath(KernelPathType.Contacts);
             string contactsImportPath = Paths.GetKernelPath(KernelPathType.ContactsImport);
-            if (!Checking.FolderExists(contactsPath))
-                Making.MakeDirectory(contactsPath);
             if (!Checking.FolderExists(contactsImportPath))
                 Making.MakeDirectory(contactsImportPath);
             var contactFiles = Listing.GetFilesystemEntries(Paths.GetKernelPath(KernelPathType.ContactsImport) + "/*.vcf");
@@ -61,6 +59,22 @@ namespace KS.Misc.Contacts
             // Now, enumerate through each contact file
             foreach (var contact in contactFiles)
                 InstallContacts(contact);
+        }
+
+        /// <summary>
+        /// Installs the contacts to the manager
+        /// </summary>
+        public static void InstallContacts()
+        {
+            // Get the contact files
+            string contactsPath = Paths.GetKernelPath(KernelPathType.Contacts);
+            if (!Checking.FolderExists(contactsPath))
+                Making.MakeDirectory(contactsPath);
+            var contactFiles = Listing.GetFilesystemEntries(Paths.GetKernelPath(KernelPathType.Contacts) + "/*.vcf");
+
+            // Now, enumerate through each contact file
+            foreach (var contact in contactFiles)
+                InstallContacts(contact, false);
         }
 
         /// <summary>
@@ -93,7 +107,8 @@ namespace KS.Misc.Contacts
 
                         // Now, parse the card
                         var card = parser.Parse();
-                        cards.Add(card);
+                        if (cards.Where((c) => c == card).Count() == 0)
+                            cards.Add(card);
                         addedCards.Add(card);
                         DebugWriter.WriteDebug(DebugLevel.I, "Parser successfully processed contact {0}.", cards[^1].ContactFullName);
                         DebugWriter.WriteDebug(DebugLevel.I, "Cards: {0}", cards.Count);
@@ -172,6 +187,41 @@ namespace KS.Misc.Contacts
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to remove contact {0}: {1}", contactIndex, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 throw new KernelException(KernelExceptionType.Contacts, contactIndex.ToString(), ex);
+            }
+        }
+
+        /// <summary>
+        /// Removes all the contacts from the contact store and, optionally, removes it from the file
+        /// </summary>
+        /// <param name="removeFromPath">Removes the contact from the path</param>
+        public static void RemoveContacts(bool removeFromPath = true)
+        {
+            try
+            {
+                // Check to see if we're dealing with the non-existent index file
+                string contactsPath = Paths.GetKernelPath(KernelPathType.Contacts);
+                if (cards.Count <= 0)
+                    throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("There are no contacts to remove."));
+
+                // Now, remove the contacts
+                cards.Clear();
+
+                // Now, remove the contacts from the contacts path if possible
+                if (removeFromPath)
+                {
+                    if (Checking.FolderExists(contactsPath))
+                    {
+                        var contactFiles = Listing.GetFilesystemEntries(Paths.GetKernelPath(KernelPathType.Contacts) + "/*.vcf");
+                        foreach (var contactFile in contactFiles)
+                            Removing.RemoveFile(contactFile);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to remove contacts {0}: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+                throw new KernelException(KernelExceptionType.Contacts, ex);
             }
         }
 

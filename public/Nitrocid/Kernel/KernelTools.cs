@@ -136,6 +136,9 @@ namespace KS.Kernel
             // Disable safe mode
             Flags.SafeMode = false;
 
+            // Unload all contacts
+            ContactsManager.RemoveContacts(false);
+
             // Stop the time/date change thread
             TimeDateTopRight.TimeTopRightChange.Stop();
         }
