@@ -107,7 +107,7 @@ namespace KS.Misc.Contacts
 
                         // Now, parse the card
                         var card = parser.Parse();
-                        if (cards.Where((c) => c == card).Count() == 0)
+                        if (!cards.Where((c) => c == card).Any())
                             cards.Add(card);
                         addedCards.Add(card);
                         DebugWriter.WriteDebug(DebugLevel.I, "Parser successfully processed contact {0}.", cards[^1].ContactFullName);

@@ -47,9 +47,10 @@ namespace KS.Files.Interactive
         private static readonly List<ContactsManagerBinding> ContactsManagerBindings = new()
         {
             // Operations
-            new ContactsManagerBinding("Delete",     ConsoleKey.F4, (index) => ContactsManager.RemoveContact(index)),
-            new ContactsManagerBinding("Import",     ConsoleKey.F1, (_) => ImportContacts()),
-            new ContactsManagerBinding("Info",       ConsoleKey.F6, ShowContactInfo),
+            new ContactsManagerBinding("Delete",     ConsoleKey.F1, (index) => ContactsManager.RemoveContact(index)),
+            new ContactsManagerBinding("Delete All", ConsoleKey.F2, (_) => ContactsManager.RemoveContacts()),
+            new ContactsManagerBinding("Import",     ConsoleKey.F3, (_) => ImportContacts()),
+            new ContactsManagerBinding("Info",       ConsoleKey.F4, ShowContactInfo),
 
             // Misc bindings
             new ContactsManagerBinding("Exit",       ConsoleKey.Escape, (_) => isExiting = true)
