@@ -28,6 +28,7 @@ using KS.Files;
 using KS.Files.Folders;
 using KS.Files.Operations;
 using System.Linq;
+using KS.Misc.Probers.Regexp;
 
 namespace KS.Misc.Contacts
 {
@@ -37,6 +38,8 @@ namespace KS.Misc.Contacts
     public static class ContactsManager
     {
         private static readonly List<Card> cards = new();
+        private static int searchedIdx = -1;
+        private static string cachedSearchExpression = "";
 
         /// <summary>
         /// Gets all the available contacts from KSContacts directory
@@ -247,6 +250,110 @@ namespace KS.Misc.Contacts
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to remove contact {0}: {1}", contactIndex, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 throw new KernelException(KernelExceptionType.Contacts, contactIndex.ToString(), ex);
+            }
+        }
+
+        /// <summary>
+        /// Searches the contact database for the next card that the full name satisfies the cached expression.
+        /// </summary>
+        /// <returns>Next card that satisfies the cached expression</returns>
+        public static Card SearchNext() =>
+            SearchNext(cachedSearchExpression);
+
+        /// <summary>
+        /// Searches the contact database for the next card that the full name satisfies the specified <paramref name="expression"/>.
+        /// </summary>
+        /// <param name="expression">Expression to search all cards</param>
+        /// <returns>Next card that satisfies the expression</returns>
+        public static Card SearchNext(string expression)
+        {
+            try
+            {
+                // Check to see if we're dealing with the non-existent index
+                if (cards.Count <= 0)
+                    throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("There are no contacts to search for."));
+
+                // Validate the expression
+                if (!RegexpTools.IsValidRegex(expression))
+                    throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("Regular expression is invalid."));
+
+                // Compare between the cached expression and the given expression
+                if (expression == cachedSearchExpression)
+                    searchedIdx++;
+                else
+                    searchedIdx = 0;
+                cachedSearchExpression = expression;
+
+                // Get the list of cards satisfying the expression
+                var satisfiedCards = cards.Where((card) => RegexpTools.IsMatch(card.ContactFullName, expression)).ToArray();
+
+                // Return a card if the index is valid
+                if (satisfiedCards.Length > 0)
+                {
+                    if (searchedIdx >= satisfiedCards.Length)
+                        searchedIdx = 0;
+                }
+                else
+                    return null;
+                return satisfiedCards[searchedIdx];
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to search contact for {0}: {1}", expression, ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+                throw new KernelException(KernelExceptionType.Contacts, expression, ex);
+            }
+        }
+
+        /// <summary>
+        /// Searches the contact database for the previous card that the full name satisfies the cached expression.
+        /// </summary>
+        /// <returns>Previous card that satisfies the cached expression</returns>
+        public static Card SearchPrevious() =>
+            SearchPrevious(cachedSearchExpression);
+
+        /// <summary>
+        /// Searches the contact database for the previous card that the full name satisfies the specified <paramref name="expression"/>.
+        /// </summary>
+        /// <param name="expression">Expression to search all cards</param>
+        /// <returns>Previous card that satisfies the expression</returns>
+        public static Card SearchPrevious(string expression)
+        {
+            try
+            {
+                // Check to see if we're dealing with the non-existent index
+                if (cards.Count <= 0)
+                    throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("There are no contacts to search for."));
+
+                // Validate the expression
+                if (!RegexpTools.IsValidRegex(expression))
+                    throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("Regular expression is invalid."));
+
+                // Get the list of cards satisfying the expression
+                var satisfiedCards = cards.Where((card) => RegexpTools.IsMatch(card.ContactFullName, expression)).ToArray();
+
+                // Compare between the cached expression and the given expression
+                if (expression == cachedSearchExpression)
+                    searchedIdx--;
+                else
+                    searchedIdx = satisfiedCards.Length - 1;
+                cachedSearchExpression = expression;
+
+                // Return a card if the index is valid
+                if (satisfiedCards.Length > 0)
+                {
+                    if (searchedIdx < 0)
+                        searchedIdx = satisfiedCards.Length - 1;
+                }
+                else
+                    return null;
+                return satisfiedCards[searchedIdx];
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to search contact for {0}: {1}", expression, ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+                throw new KernelException(KernelExceptionType.Contacts, expression, ex);
             }
         }
     }

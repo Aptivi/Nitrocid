@@ -501,5 +501,12 @@ Move
 Up
 Switch
 Kill
+There are no contacts to search for.
+Enter regular expression to search the contacts.
+Regular expression is invalid.
+There are no contacts that contains your requested expression.
+Search
+Search Next
+Search Back
 
 ==========================================================================================================================================

@@ -32,6 +32,7 @@ using KS.Misc.Threading.Interactive;
 using KS.Misc.Contacts;
 using VisualCard.Parts;
 using System.Text;
+using KS.Misc.Probers.Regexp;
 
 namespace KS.Files.Interactive
 {
@@ -47,10 +48,13 @@ namespace KS.Files.Interactive
         private static readonly List<ContactsManagerBinding> ContactsManagerBindings = new()
         {
             // Operations
-            new ContactsManagerBinding(/* Localizable */ "Delete",     ConsoleKey.F1, (index) => ContactsManager.RemoveContact(index), true),
-            new ContactsManagerBinding(/* Localizable */ "Delete All", ConsoleKey.F2, (_) => ContactsManager.RemoveContacts(), true),
-            new ContactsManagerBinding(/* Localizable */ "Import",     ConsoleKey.F3, (_) => ImportContacts(), true),
-            new ContactsManagerBinding(/* Localizable */ "Info",       ConsoleKey.F4, ShowContactInfo, true),
+            new ContactsManagerBinding(/* Localizable */ "Delete",      ConsoleKey.F1, (index) => ContactsManager.RemoveContact(index), true),
+            new ContactsManagerBinding(/* Localizable */ "Delete All",  ConsoleKey.F2, (_) => ContactsManager.RemoveContacts(), true),
+            new ContactsManagerBinding(/* Localizable */ "Import",      ConsoleKey.F3, (_) => ImportContacts(), true),
+            new ContactsManagerBinding(/* Localizable */ "Info",        ConsoleKey.F4, ShowContactInfo, true),
+            new ContactsManagerBinding(/* Localizable */ "Search",      ConsoleKey.F5, (_) => SearchBox(), true),
+            new ContactsManagerBinding(/* Localizable */ "Search Next", ConsoleKey.F6, (_) => SearchNext(), true),
+            new ContactsManagerBinding(/* Localizable */ "Search Back", ConsoleKey.F7, (_) => SearchPrevious(), true),
 
             // Misc bindings
             new ContactsManagerBinding(/* Localizable */ "Exit",       ConsoleKey.Escape, (_) => isExiting = true, true)
@@ -367,6 +371,58 @@ namespace KS.Files.Interactive
             // Now, render the info box
             InfoBoxColor.WriteInfoBox(finalInfoRendered.ToString(), ContactsManagerBoxForegroundColor, ContactsManagerBoxBackgroundColor);
             redrawRequired = true;
+        }
+
+        private static void SearchBox()
+        {
+            // Render the search box
+            var finalInfoRendered = new StringBuilder();
+            finalInfoRendered.AppendLine(Translate.DoTranslation("Enter regular expression to search the contacts."));
+            var finalInfoRendered1 = new StringBuilder();
+            finalInfoRendered1.AppendLine(Translate.DoTranslation("Regular expression is invalid."));
+            var finalInfoRendered2 = new StringBuilder();
+            finalInfoRendered2.AppendLine(Translate.DoTranslation("There are no contacts that contains your requested expression."));
+
+            // Now, render the search box
+            InfoBoxColor.WriteInfoBox(finalInfoRendered.ToString(), ContactsManagerBoxForegroundColor, ContactsManagerBoxBackgroundColor);
+            string exp = Input.ReadLine();
+            if (RegexpTools.IsValidRegex(exp))
+            {
+                // Initiate the search
+                var foundCard = ContactsManager.SearchNext(exp);
+                if (foundCard is null)
+                    InfoBoxColor.WriteInfoBox(finalInfoRendered2.ToString(), ContactsManagerBoxForegroundColor, ContactsManagerBoxBackgroundColor);
+                UpdateIndex(foundCard);
+            }
+            else
+                InfoBoxColor.WriteInfoBox(finalInfoRendered1.ToString(), ContactsManagerBoxForegroundColor, ContactsManagerBoxBackgroundColor);
+            redrawRequired = true;
+        }
+
+        private static void SearchNext()
+        {
+            // Initiate the search
+            var foundCard = ContactsManager.SearchNext();
+            UpdateIndex(foundCard);
+        }
+
+        private static void SearchPrevious()
+        {
+            // Initiate the search
+            var foundCard = ContactsManager.SearchPrevious();
+            UpdateIndex(foundCard);
+        }
+
+        private static void UpdateIndex(Card foundCard)
+        {
+            var contacts = ContactsManager.GetContacts();
+            if (foundCard is not null)
+            {
+                // Get the index from the instance
+                int idx = Array.FindIndex(contacts, (card) => card == foundCard);
+                DebugCheck.Assert(idx != -1);
+                paneCurrentSelection = idx + 1;
+            }
         }
     }
 }
