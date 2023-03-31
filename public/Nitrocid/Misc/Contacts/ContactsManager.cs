@@ -223,7 +223,7 @@ namespace KS.Misc.Contacts
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to remove contacts {0}: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to remove contacts: {0}", ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 throw new KernelException(KernelExceptionType.Contacts, ex);
             }
