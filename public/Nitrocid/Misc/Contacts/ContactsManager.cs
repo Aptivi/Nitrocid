@@ -172,8 +172,6 @@ namespace KS.Misc.Contacts
             {
                 // Check to see if we're dealing with the non-existent index file
                 string contactsPath = Paths.GetKernelPath(KernelPathType.Contacts);
-                if (cards.Count <= 0)
-                    throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("There are no contacts to remove."));
                 if (contactIndex < 0 || contactIndex >= cards.Count)
                     throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("Contact index is out of range. Maximum index is {0} while provided index is {1}."), cards.Count - 1, contactIndex);
 
@@ -205,7 +203,7 @@ namespace KS.Misc.Contacts
                 // Check to see if we're dealing with the non-existent index file
                 string contactsPath = Paths.GetKernelPath(KernelPathType.Contacts);
                 if (cards.Count <= 0)
-                    throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("There are no contacts to remove."));
+                    return;
 
                 // Now, remove the contacts
                 cards.Clear();
