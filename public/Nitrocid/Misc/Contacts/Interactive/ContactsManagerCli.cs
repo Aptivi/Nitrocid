@@ -302,8 +302,7 @@ namespace KS.Files.Interactive
         private static void ImportContactsFrom()
         {
             // Now, render the search box
-            InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Enter path to a VCF file containing your contact. Android's contacts2.db file is also supported."), ContactsManagerBoxForegroundColor, ContactsManagerBoxBackgroundColor);
-            string path = Input.ReadLine();
+            string path = InfoBoxColor.WriteInfoBoxInput(Translate.DoTranslation("Enter path to a VCF file containing your contact. Android's contacts2.db file is also supported."), ContactsManagerBoxForegroundColor, ContactsManagerBoxBackgroundColor);
             if (Checking.FileExists(path))
             {
                 try
@@ -400,8 +399,7 @@ namespace KS.Files.Interactive
         private static void SearchBox()
         {
             // Now, render the search box
-            InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Enter regular expression to search the contacts."), ContactsManagerBoxForegroundColor, ContactsManagerBoxBackgroundColor);
-            string exp = Input.ReadLine();
+            string exp = InfoBoxColor.WriteInfoBoxInput(Translate.DoTranslation("Enter regular expression to search the contacts."), ContactsManagerBoxForegroundColor, ContactsManagerBoxBackgroundColor);
             if (RegexpTools.IsValidRegex(exp))
             {
                 // Initiate the search
