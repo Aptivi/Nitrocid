@@ -508,5 +508,9 @@ There are no contacts that contains your requested expression.
 Search
 Search Next
 Search Back
+Import From
+Enter path to a VCF file containing your contact. Android's contacts2.db file is also supported.
+File doesn't exist. Make sure that you've written the correct path to a VCF file or to a contacts2.db file.
+Contact file is invalid.
 
 ==========================================================================================================================================

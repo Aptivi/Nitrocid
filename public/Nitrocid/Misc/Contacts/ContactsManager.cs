@@ -30,6 +30,8 @@ using KS.Files.Operations;
 using System.Linq;
 using KS.Misc.Probers.Regexp;
 using KS.Drivers.Encryption;
+using System.IO;
+using VisualCard.Converters;
 
 namespace KS.Misc.Contacts
 {
@@ -95,8 +97,14 @@ namespace KS.Misc.Contacts
                 if (!Checking.FileExists(pathToContactFile))
                     throw new KernelException(KernelExceptionType.Contacts, pathToContactFile);
 
+                // Check to see if we're given the Android contacts2.db file
+                bool isAndroidContactDb = Path.GetFileName(pathToContactFile) == "contacts2.db";
+
                 // Now, ensure that the parser is able to return the base parsers required to parse contacts
-                var parsers = CardTools.GetCardParsers(pathToContactFile);
+                var parsers =
+                    isAndroidContactDb ?
+                    AndroidContactsDb.GetContactsFromDb(pathToContactFile) :
+                    CardTools.GetCardParsers(pathToContactFile);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got {0} parsers from {1}.", parsers.Count, pathToContactFile);
 
                 // Iterate through the contacts

@@ -33,6 +33,7 @@ using KS.Misc.Contacts;
 using VisualCard.Parts;
 using System.Text;
 using KS.Misc.Probers.Regexp;
+using KS.Files.Querying;
 
 namespace KS.Files.Interactive
 {
@@ -51,10 +52,11 @@ namespace KS.Files.Interactive
             new ContactsManagerBinding(/* Localizable */ "Delete",      ConsoleKey.F1, (index) => ContactsManager.RemoveContact(index), true),
             new ContactsManagerBinding(/* Localizable */ "Delete All",  ConsoleKey.F2, (_) => ContactsManager.RemoveContacts(), true),
             new ContactsManagerBinding(/* Localizable */ "Import",      ConsoleKey.F3, (_) => ImportContacts(), true),
-            new ContactsManagerBinding(/* Localizable */ "Info",        ConsoleKey.F4, ShowContactInfo, true),
-            new ContactsManagerBinding(/* Localizable */ "Search",      ConsoleKey.F5, (_) => SearchBox(), true),
-            new ContactsManagerBinding(/* Localizable */ "Search Next", ConsoleKey.F6, (_) => SearchNext(), true),
-            new ContactsManagerBinding(/* Localizable */ "Search Back", ConsoleKey.F7, (_) => SearchPrevious(), true),
+            new ContactsManagerBinding(/* Localizable */ "Import From", ConsoleKey.F4, (_) => ImportContactsFrom(), true),
+            new ContactsManagerBinding(/* Localizable */ "Info",        ConsoleKey.F5, ShowContactInfo, true),
+            new ContactsManagerBinding(/* Localizable */ "Search",      ConsoleKey.F6, (_) => SearchBox(), true),
+            new ContactsManagerBinding(/* Localizable */ "Search Next", ConsoleKey.F7, (_) => SearchNext(), true),
+            new ContactsManagerBinding(/* Localizable */ "Search Back", ConsoleKey.F8, (_) => SearchPrevious(), true),
 
             // Misc bindings
             new ContactsManagerBinding(/* Localizable */ "Exit",       ConsoleKey.Escape, (_) => isExiting = true, true)
@@ -297,6 +299,28 @@ namespace KS.Files.Interactive
         private static void ImportContacts() =>
             ContactsManager.ImportContacts();
 
+        private static void ImportContactsFrom()
+        {
+            // Now, render the search box
+            InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Enter path to a VCF file containing your contact. Android's contacts2.db file is also supported."), ContactsManagerBoxForegroundColor, ContactsManagerBoxBackgroundColor);
+            string path = Input.ReadLine();
+            if (Checking.FileExists(path))
+            {
+                try
+                {
+                    // Initiate installation
+                    ContactsManager.InstallContacts(path);
+                }
+                catch
+                {
+                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Contact file is invalid."), ContactsManagerBoxForegroundColor, ContactsManagerBoxBackgroundColor);
+                }
+            }
+            else
+                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("File doesn't exist. Make sure that you've written the correct path to a VCF file or to a contacts2.db file."), ContactsManagerBoxForegroundColor, ContactsManagerBoxBackgroundColor);
+            redrawRequired = true;
+        }
+
         private static void ShowContactInfo(int index)
         {
             // Render the final information string
@@ -375,27 +399,19 @@ namespace KS.Files.Interactive
 
         private static void SearchBox()
         {
-            // Render the search box
-            var finalInfoRendered = new StringBuilder();
-            finalInfoRendered.AppendLine(Translate.DoTranslation("Enter regular expression to search the contacts."));
-            var finalInfoRendered1 = new StringBuilder();
-            finalInfoRendered1.AppendLine(Translate.DoTranslation("Regular expression is invalid."));
-            var finalInfoRendered2 = new StringBuilder();
-            finalInfoRendered2.AppendLine(Translate.DoTranslation("There are no contacts that contains your requested expression."));
-
             // Now, render the search box
-            InfoBoxColor.WriteInfoBox(finalInfoRendered.ToString(), ContactsManagerBoxForegroundColor, ContactsManagerBoxBackgroundColor);
+            InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Enter regular expression to search the contacts."), ContactsManagerBoxForegroundColor, ContactsManagerBoxBackgroundColor);
             string exp = Input.ReadLine();
             if (RegexpTools.IsValidRegex(exp))
             {
                 // Initiate the search
                 var foundCard = ContactsManager.SearchNext(exp);
                 if (foundCard is null)
-                    InfoBoxColor.WriteInfoBox(finalInfoRendered2.ToString(), ContactsManagerBoxForegroundColor, ContactsManagerBoxBackgroundColor);
+                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("There are no contacts that contains your requested expression."), ContactsManagerBoxForegroundColor, ContactsManagerBoxBackgroundColor);
                 UpdateIndex(foundCard);
             }
             else
-                InfoBoxColor.WriteInfoBox(finalInfoRendered1.ToString(), ContactsManagerBoxForegroundColor, ContactsManagerBoxBackgroundColor);
+                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Regular expression is invalid."), ContactsManagerBoxForegroundColor, ContactsManagerBoxBackgroundColor);
             redrawRequired = true;
         }
 
