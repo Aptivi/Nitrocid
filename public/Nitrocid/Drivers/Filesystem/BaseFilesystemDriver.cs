@@ -494,7 +494,11 @@ namespace KS.Drivers.Filesystem
                 var SplitParent = new List<string>() { Path.Split('/')[0] };
                 for (int PatternIndex = 0; PatternIndex <= SplitPath.Length - 1; PatternIndex++)
                 {
-                    if (SplitPath[PatternIndex].ContainsAnyOf(System.IO.Path.GetInvalidFileNameChars().Select(Character => Character.ToString()).ToArray()))
+                    // We used to use System.IO.Path.GetInvalidFileNameChars(), but this is under the assumption that the caller
+                    // is calling this function under Windows. Linux doesn't consider the wildcard characters, '*' and '?', to be
+                    // illegal file name characters, so we have to add an extra check to ensure that such wildcard characters get
+                    // the same treatment in Linux as in Windows.
+                    if (SplitPath[PatternIndex].ContainsAnyOf(GetInvalidFileChars().Select(Character => Character.ToString()).ToArray()))
                     {
                         SelectedPatternIndex = PatternIndex;
                         break;
@@ -574,6 +578,20 @@ namespace KS.Drivers.Filesystem
                 WindowsInvalidPathChars.CopyTo(FinalInvalidPathChars, FinalInvalidPathChars.Length - 3);
             }
             return FinalInvalidPathChars;
+        }
+
+        /// <inheritdoc/>
+        public virtual char[] GetInvalidFileChars()
+        {
+            var FinalInvalidFileChars = Path.GetInvalidFileNameChars();
+            var WindowsInvalidFileChars = new[] { '*', '?' };
+            if (KernelPlatform.IsOnUnix())
+            {
+                // If running on Linux, ensure that the wildcard characters, '*' and '?', is not valid.
+                Array.Resize(ref FinalInvalidFileChars, 4);
+                WindowsInvalidFileChars.CopyTo(FinalInvalidFileChars, FinalInvalidFileChars.Length - 2);
+            }
+            return FinalInvalidFileChars;
         }
 
         /// <inheritdoc/>
