@@ -29,6 +29,7 @@ using KS.Files.Folders;
 using KS.Files.Operations;
 using System.Linq;
 using KS.Misc.Probers.Regexp;
+using KS.Drivers.Encryption;
 
 namespace KS.Misc.Contacts
 {
@@ -146,7 +147,7 @@ namespace KS.Misc.Contacts
                     for (int i = 0; i < cards.Count; i++)
                     {
                         Card card = cards[i];
-                        string path = contactsPath + $"/contact-{i}.vcf";
+                        string path = contactsPath + $"/contact-{Encryption.GetEncryptedString(card.SaveToString(), "SHA256")}.vcf";
                         if (!Checking.FileExists(path))
                             card.SaveTo(path);
                     }
@@ -171,13 +172,13 @@ namespace KS.Misc.Contacts
             {
                 // Check to see if we're dealing with the non-existent index file
                 string contactsPath = Paths.GetKernelPath(KernelPathType.Contacts);
-                string contactPath = contactsPath + $"/contact-{contactIndex}.vcf";
                 if (cards.Count <= 0)
                     throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("There are no contacts to remove."));
                 if (contactIndex < 0 || contactIndex >= cards.Count)
                     throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("Contact index is out of range. Maximum index is {0} while provided index is {1}."), cards.Count - 1, contactIndex);
 
                 // Now, remove the contact
+                string contactPath = contactsPath + $"/contact-{Encryption.GetEncryptedString(cards[contactIndex].SaveToString(), "SHA256")}.vcf";
                 cards.RemoveAt(contactIndex);
 
                 // Now, remove the contacts from the contacts path if possible
