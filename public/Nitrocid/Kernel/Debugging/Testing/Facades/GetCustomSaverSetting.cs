@@ -30,8 +30,8 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override string TestName => Translate.DoTranslation("Gets custom saver settings");
         public override void Run()
         {
-            string Screensaver = Input.ReadLine(Translate.DoTranslation("Write a custom screensaver name:") + " ", "");
-            string SettingEntry = Input.ReadLine(Translate.DoTranslation("Write a setting entry name:") + " ", "");
+            string Screensaver = Input.ReadLine(Translate.DoTranslation("Write a custom screensaver name:") + " ");
+            string SettingEntry = Input.ReadLine(Translate.DoTranslation("Write a setting entry name:") + " ");
             if (CustomSaverTools.CustomSavers.ContainsKey(Screensaver))
             {
                 TextWriterColor.Write("- {0} -> {1}: ", false, KernelColorType.ListEntry, Screensaver, SettingEntry);

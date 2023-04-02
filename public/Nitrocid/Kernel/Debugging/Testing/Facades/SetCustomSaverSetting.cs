@@ -29,9 +29,9 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override string TestName => Translate.DoTranslation("Sets custom saver settings");
         public override void Run()
         {
-            string Screensaver = Input.ReadLine(Translate.DoTranslation("Write a custom screensaver name:") + " ", "");
-            string SettingEntry = Input.ReadLine(Translate.DoTranslation("Write a setting entry name:") + " ", "");
-            string Value = Input.ReadLine(Translate.DoTranslation("Write a value:") + " ", "");
+            string Screensaver = Input.ReadLine(Translate.DoTranslation("Write a custom screensaver name:") + " ");
+            string SettingEntry = Input.ReadLine(Translate.DoTranslation("Write a setting entry name:") + " ");
+            string Value = Input.ReadLine(Translate.DoTranslation("Write a value:") + " ");
             if (CustomSaverTools.CustomSavers.ContainsKey(Screensaver))
             {
                 if (CustomSaverTools.SetCustomSaverSettings(Screensaver, SettingEntry, Value))

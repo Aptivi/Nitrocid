@@ -28,7 +28,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override string TestName => Translate.DoTranslation("Checks to see if the translatable string exists in the KS resources");
         public override void Run()
         {
-            string Text = Input.ReadLine(Translate.DoTranslation("Write a translatable string to check:") + " ", "");
+            string Text = Input.ReadLine(Translate.DoTranslation("Write a translatable string to check:") + " ");
             var LocalizedStrings = LanguageManager.Languages["eng"].Strings;
             if (LocalizedStrings.ContainsKey(Text))
             {

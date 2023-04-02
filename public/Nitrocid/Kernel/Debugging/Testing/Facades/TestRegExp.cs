@@ -28,8 +28,8 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override string TestName => Translate.DoTranslation("Tests the regular expression facility");
         public override void Run()
         {
-            string Text = Input.ReadLine(Translate.DoTranslation("Write a string to check:") + " ", "");
-            string Regex = Input.ReadLine(Translate.DoTranslation("Write a regular expression:") + " ", "");
+            string Text = Input.ReadLine(Translate.DoTranslation("Write a string to check:") + " ");
+            string Regex = Input.ReadLine(Translate.DoTranslation("Write a regular expression:") + " ");
             var Reg = new Regex(Regex);
             var Matches = Reg.Matches(Text);
             int MatchNum = 1;

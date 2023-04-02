@@ -28,7 +28,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override string TestName => Translate.DoTranslation("Lists supported cultures");
         public override void Run()
         {
-            string Text = Input.ReadLine(Translate.DoTranslation("Write a search term:") + " ", "");
+            string Text = Input.ReadLine(Translate.DoTranslation("Write a search term:") + " ");
             var Cults = CultureInfo.GetCultures(CultureTypes.AllCultures);
             foreach (CultureInfo Cult in Cults)
             {

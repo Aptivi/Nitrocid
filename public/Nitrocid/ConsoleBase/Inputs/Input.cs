@@ -59,6 +59,12 @@ namespace KS.ConsoleBase.Inputs
         /// Reads the line from the console
         /// </summary>
         /// <param name="InputText">Input text to write</param>
+        public static string ReadLine(string InputText) => ReadLine(InputText, "", true);
+
+        /// <summary>
+        /// Reads the line from the console
+        /// </summary>
+        /// <param name="InputText">Input text to write</param>
         /// <param name="DefaultValue">Default value</param>
         public static string ReadLine(string InputText, string DefaultValue) => ReadLine(InputText, DefaultValue, true);
 

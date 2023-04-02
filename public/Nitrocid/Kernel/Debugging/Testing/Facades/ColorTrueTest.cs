@@ -28,9 +28,9 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override string TestName => Translate.DoTranslation("Tests the VT sequence for true color");
         public override void Run()
         {
-            string TextR = Input.ReadLine("R - " + Translate.DoTranslation("Write a color number ranging from 1 to 255:") + " ", "");
-            string TextG = Input.ReadLine("G - " + Translate.DoTranslation("Write a color number ranging from 1 to 255:") + " ", "");
-            string TextB = Input.ReadLine("B - " + Translate.DoTranslation("Write a color number ranging from 1 to 255:") + " ", "");
+            string TextR = Input.ReadLine("R - " + Translate.DoTranslation("Write a color number ranging from 1 to 255:") + " ");
+            string TextG = Input.ReadLine("G - " + Translate.DoTranslation("Write a color number ranging from 1 to 255:") + " ");
+            string TextB = Input.ReadLine("B - " + Translate.DoTranslation("Write a color number ranging from 1 to 255:") + " ");
             if (int.TryParse(TextR, out int r) && int.TryParse(TextG, out int g) && int.TryParse(TextB, out int b))
             {
                 var color = new Color(r, g, b);
