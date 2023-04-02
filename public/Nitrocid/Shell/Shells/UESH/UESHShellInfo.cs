@@ -167,6 +167,7 @@ namespace KS.Shell.Shells.UESH
             { "zip", new CommandInfo("zip", ShellType, /* Localizable */ "Creates a ZIP archive", new CommandArgumentInfo(new[] { "<zipfile> <path> [-fast|-nocomp|-nobasedir]" }, true, 2), new ZipCommand()) },
 
             // Hidden
+            { "2015", new CommandInfo("2015", ShellType, /* Localizable */ "Starts the joke program, HDD Uncleaner 2015.", new CommandArgumentInfo(), new HddUncleanerCommand(), CommandFlags.Hidden) },
             { "2018", new CommandInfo("2018", ShellType, /* Localizable */ "Commemorates the 5-year anniversary of the kernel release", new CommandArgumentInfo(), new AnniversaryCommand(), CommandFlags.Hidden) }
         };
 
