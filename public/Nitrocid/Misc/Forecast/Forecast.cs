@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Reflection;
@@ -32,11 +33,13 @@ namespace KS.Misc.Forecast
     public static class Forecast
     {
 
+        internal static string ApiKey = "";
+
         /// <summary>
         /// Preferred unit for forecast measurements
         /// </summary>
-        public static UnitMeasurement PreferredUnit { get; set; } = UnitMeasurement.Metric;
-        internal static string ApiKey = "";
+        public static UnitMeasurement PreferredUnit =>
+            (UnitMeasurement)Config.MainConfig.PreferredUnit;
 
         /// <summary>
         /// Gets current weather info from OpenWeatherMap

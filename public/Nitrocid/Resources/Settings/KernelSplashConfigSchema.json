@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "SimpleProgressTextLocation": {
+            "type": "integer"
+        },
+        "ProgressProgressColor": {
+            "type": "string"
+        },
+        "ProgressProgressTextLocation": {
+            "type": "integer"
+        },
+        "PowerLineProgressProgressColor": {
+            "type": "string"
+        },
+        "PowerLineProgressProgressTextLocation": {
+            "type": "integer"
+        }
+    },
+    "required": [
+        "SimpleProgressTextLocation",
+        "ProgressProgressColor",
+        "ProgressProgressTextLocation",
+        "PowerLineProgressProgressColor",
+        "PowerLineProgressProgressTextLocation"
+    ]
+}

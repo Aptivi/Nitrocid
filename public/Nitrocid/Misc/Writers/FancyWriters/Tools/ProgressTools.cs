@@ -24,14 +24,14 @@ namespace KS.Misc.Writers.FancyWriters.Tools
     public static class ProgressTools
     {
 
-        private static string progressUpperLeftCornerChar = "╔";
-        private static string progressUpperRightCornerChar = "╗";
-        private static string progressLowerLeftCornerChar = "╚";
-        private static string progressLowerRightCornerChar = "╝";
-        private static string progressUpperFrameChar = "═";
-        private static string progressLowerFrameChar = "═";
-        private static string progressLeftFrameChar = "║";
-        private static string progressRightFrameChar = "║";
+        internal static string progressUpperLeftCornerChar = "╔";
+        internal static string progressUpperRightCornerChar = "╗";
+        internal static string progressLowerLeftCornerChar = "╚";
+        internal static string progressLowerRightCornerChar = "╝";
+        internal static string progressUpperFrameChar = "═";
+        internal static string progressLowerFrameChar = "═";
+        internal static string progressLeftFrameChar = "║";
+        internal static string progressRightFrameChar = "║";
 
         /// <summary>
         /// Upper left corner character for the progress bar

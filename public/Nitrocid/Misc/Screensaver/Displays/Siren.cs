@@ -18,6 +18,7 @@
 
 using System.Collections.Generic;
 using ColorSeq;
+using KS.Kernel.Configuration;
 using KS.Misc.Threading;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
@@ -29,9 +30,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class SirenSettings
     {
 
-        private static int _Delay = 500;
-        private static string _Style = "Cop";
-
         /// <summary>
         /// [Siren] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -39,13 +37,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.SirenDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 500;
-                _Delay = value;
+                Config.SaverConfig.SirenDelay = value;
             }
         }
 
@@ -56,11 +54,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Style;
+                return Config.SaverConfig.SirenStyle;
             }
             set
             {
-                _Style = SirenDisplay.sirens.ContainsKey(value) ? value : "Cop";
+                Config.SaverConfig.SirenStyle = SirenDisplay.sirens.ContainsKey(value) ? value : "Cop";
             }
         }
 

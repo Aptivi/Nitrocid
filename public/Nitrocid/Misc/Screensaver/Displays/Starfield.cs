@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using ColorSeq;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
@@ -33,8 +34,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class StarfieldSettings
     {
 
-        private static int _Delay = 10;
-
         /// <summary>
         /// [Starfield] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -42,13 +41,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.StarfieldDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 10;
-                _Delay = value;
+                Config.SaverConfig.StarfieldDelay = value;
             }
         }
 

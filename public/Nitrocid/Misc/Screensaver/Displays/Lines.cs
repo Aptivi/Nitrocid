@@ -20,6 +20,7 @@ using System;
 using ColorSeq;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
@@ -32,19 +33,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class LinesSettings
     {
 
-        private static bool _TrueColor = true;
-        private static int _Delay = 500;
-        private static string _LineChar = "-";
-        private static string _BackgroundColor = new Color(ConsoleColors.Black).PlainSequence;
-        private static int _MinimumRedColorLevel = 0;
-        private static int _MinimumGreenColorLevel = 0;
-        private static int _MinimumBlueColorLevel = 0;
-        private static int _MinimumColorLevel = 0;
-        private static int _MaximumRedColorLevel = 255;
-        private static int _MaximumGreenColorLevel = 255;
-        private static int _MaximumBlueColorLevel = 255;
-        private static int _MaximumColorLevel = 255;
-
         /// <summary>
         /// [Lines] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -52,11 +40,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _TrueColor;
+                return Config.SaverConfig.LinesTrueColor;
             }
             set
             {
-                _TrueColor = value;
+                Config.SaverConfig.LinesTrueColor = value;
             }
         }
         /// <summary>
@@ -66,13 +54,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.LinesDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 500;
-                _Delay = value;
+                Config.SaverConfig.LinesDelay = value;
             }
         }
         /// <summary>
@@ -82,13 +70,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _LineChar;
+                return Config.SaverConfig.LinesLineChar;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "-";
-                _LineChar = value;
+                Config.SaverConfig.LinesLineChar = value;
             }
         }
         /// <summary>
@@ -98,11 +86,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _BackgroundColor;
+                return Config.SaverConfig.LinesBackgroundColor;
             }
             set
             {
-                _BackgroundColor = new Color(value).PlainSequence;
+                Config.SaverConfig.LinesBackgroundColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -112,7 +100,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumRedColorLevel;
+                return Config.SaverConfig.LinesMinimumRedColorLevel;
             }
             set
             {
@@ -120,7 +108,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumRedColorLevel = value;
+                Config.SaverConfig.LinesMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -130,7 +118,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumGreenColorLevel;
+                return Config.SaverConfig.LinesMinimumGreenColorLevel;
             }
             set
             {
@@ -138,7 +126,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumGreenColorLevel = value;
+                Config.SaverConfig.LinesMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -148,7 +136,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumBlueColorLevel;
+                return Config.SaverConfig.LinesMinimumBlueColorLevel;
             }
             set
             {
@@ -156,7 +144,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumBlueColorLevel = value;
+                Config.SaverConfig.LinesMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -166,7 +154,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumColorLevel;
+                return Config.SaverConfig.LinesMinimumColorLevel;
             }
             set
             {
@@ -175,7 +163,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                _MinimumColorLevel = value;
+                Config.SaverConfig.LinesMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -185,15 +173,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumRedColorLevel;
+                return Config.SaverConfig.LinesMaximumRedColorLevel;
             }
             set
             {
-                if (value <= _MinimumRedColorLevel)
-                    value = _MinimumRedColorLevel;
+                if (value <= Config.SaverConfig.LinesMinimumRedColorLevel)
+                    value = Config.SaverConfig.LinesMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumRedColorLevel = value;
+                Config.SaverConfig.LinesMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -203,15 +191,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumGreenColorLevel;
+                return Config.SaverConfig.LinesMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= _MinimumGreenColorLevel)
-                    value = _MinimumGreenColorLevel;
+                if (value <= Config.SaverConfig.LinesMinimumGreenColorLevel)
+                    value = Config.SaverConfig.LinesMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumGreenColorLevel = value;
+                Config.SaverConfig.LinesMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -221,15 +209,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumBlueColorLevel;
+                return Config.SaverConfig.LinesMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= _MinimumBlueColorLevel)
-                    value = _MinimumBlueColorLevel;
+                if (value <= Config.SaverConfig.LinesMinimumBlueColorLevel)
+                    value = Config.SaverConfig.LinesMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumBlueColorLevel = value;
+                Config.SaverConfig.LinesMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -239,16 +227,16 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumColorLevel;
+                return Config.SaverConfig.LinesMaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= _MinimumColorLevel)
-                    value = _MinimumColorLevel;
+                if (value <= Config.SaverConfig.LinesMinimumColorLevel)
+                    value = Config.SaverConfig.LinesMinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                _MaximumColorLevel = value;
+                Config.SaverConfig.LinesMaximumColorLevel = value;
             }
         }
 

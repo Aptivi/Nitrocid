@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using ColorSeq;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
@@ -34,18 +35,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class FallingLineSettings
     {
 
-        private static bool _TrueColor = true;
-        private static int _Delay = 10;
-        private static int _MaxSteps = 25;
-        private static int _MinimumRedColorLevel = 0;
-        private static int _MinimumGreenColorLevel = 0;
-        private static int _MinimumBlueColorLevel = 0;
-        private static int _MinimumColorLevel = 0;
-        private static int _MaximumRedColorLevel = 255;
-        private static int _MaximumGreenColorLevel = 255;
-        private static int _MaximumBlueColorLevel = 255;
-        private static int _MaximumColorLevel = 255;
-
         /// <summary>
         /// [FallingLine] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -53,11 +42,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _TrueColor;
+                return Config.SaverConfig.FallingLineTrueColor;
             }
             set
             {
-                _TrueColor = value;
+                Config.SaverConfig.FallingLineTrueColor = value;
             }
         }
         /// <summary>
@@ -67,13 +56,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.FallingLineDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 10;
-                _Delay = value;
+                Config.SaverConfig.FallingLineDelay = value;
             }
         }
         /// <summary>
@@ -83,13 +72,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaxSteps;
+                return Config.SaverConfig.FallingLineMaxSteps;
             }
             set
             {
                 if (value <= 0)
                     value = 25;
-                _MaxSteps = value;
+                Config.SaverConfig.FallingLineMaxSteps = value;
             }
         }
         /// <summary>
@@ -99,7 +88,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumRedColorLevel;
+                return Config.SaverConfig.FallingLineMinimumRedColorLevel;
             }
             set
             {
@@ -107,7 +96,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumRedColorLevel = value;
+                Config.SaverConfig.FallingLineMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -117,7 +106,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumGreenColorLevel;
+                return Config.SaverConfig.FallingLineMinimumGreenColorLevel;
             }
             set
             {
@@ -125,7 +114,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumGreenColorLevel = value;
+                Config.SaverConfig.FallingLineMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -135,7 +124,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumBlueColorLevel;
+                return Config.SaverConfig.FallingLineMinimumBlueColorLevel;
             }
             set
             {
@@ -143,7 +132,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumBlueColorLevel = value;
+                Config.SaverConfig.FallingLineMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -153,7 +142,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumColorLevel;
+                return Config.SaverConfig.FallingLineMinimumColorLevel;
             }
             set
             {
@@ -162,7 +151,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                _MinimumColorLevel = value;
+                Config.SaverConfig.FallingLineMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -172,15 +161,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumRedColorLevel;
+                return Config.SaverConfig.FallingLineMaximumRedColorLevel;
             }
             set
             {
-                if (value <= _MinimumRedColorLevel)
-                    value = _MinimumRedColorLevel;
+                if (value <= Config.SaverConfig.FallingLineMinimumRedColorLevel)
+                    value = Config.SaverConfig.FallingLineMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumRedColorLevel = value;
+                Config.SaverConfig.FallingLineMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -190,15 +179,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumGreenColorLevel;
+                return Config.SaverConfig.FallingLineMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= _MinimumGreenColorLevel)
-                    value = _MinimumGreenColorLevel;
+                if (value <= Config.SaverConfig.FallingLineMinimumGreenColorLevel)
+                    value = Config.SaverConfig.FallingLineMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumGreenColorLevel = value;
+                Config.SaverConfig.FallingLineMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -208,15 +197,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumBlueColorLevel;
+                return Config.SaverConfig.FallingLineMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= _MinimumBlueColorLevel)
-                    value = _MinimumBlueColorLevel;
+                if (value <= Config.SaverConfig.FallingLineMinimumBlueColorLevel)
+                    value = Config.SaverConfig.FallingLineMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumBlueColorLevel = value;
+                Config.SaverConfig.FallingLineMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -226,16 +215,16 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumColorLevel;
+                return Config.SaverConfig.FallingLineMaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= _MinimumColorLevel)
-                    value = _MinimumColorLevel;
+                if (value <= Config.SaverConfig.FallingLineMinimumColorLevel)
+                    value = Config.SaverConfig.FallingLineMinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                _MaximumColorLevel = value;
+                Config.SaverConfig.FallingLineMaximumColorLevel = value;
             }
         }
 

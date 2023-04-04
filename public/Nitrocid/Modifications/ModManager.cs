@@ -52,7 +52,8 @@ namespace KS.Modifications
         /// <summary>
         /// Blacklisted mods split by semicolons
         /// </summary>
-        public static string BlacklistedModsString { get; set; } = "";
+        public static string BlacklistedModsString =>
+            Config.MainConfig.BlacklistedModsString;
 
         /// <summary>
         /// Loads all mods in KSMods
@@ -352,9 +353,8 @@ namespace KS.Modifications
                 DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} not on the blacklist. Adding...", ModFilename);
                 BlacklistedMods.Add(ModFilename);
             }
-            BlacklistedModsString = string.Join(";", BlacklistedMods);
-            var Token = ConfigTools.GetConfigCategory(ConfigCategory.Misc);
-            ConfigTools.SetConfigValue(ConfigCategory.Misc, Token, "Blacklisted mods", BlacklistedModsString);
+            Config.MainConfig.BlacklistedModsString = string.Join(";", BlacklistedMods);
+            Config.CreateConfig();
         }
 
         /// <summary>
@@ -371,9 +371,8 @@ namespace KS.Modifications
                 DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} on the blacklist. Removing...", ModFilename);
                 BlacklistedMods.Remove(ModFilename);
             }
-            BlacklistedModsString = string.Join(";", BlacklistedMods);
-            var Token = ConfigTools.GetConfigCategory(ConfigCategory.Misc);
-            ConfigTools.SetConfigValue(ConfigCategory.Misc, Token, "Blacklisted mods", BlacklistedModsString);
+            Config.MainConfig.BlacklistedModsString = string.Join(";", BlacklistedMods);
+            Config.CreateConfig();
         }
 
         /// <summary>

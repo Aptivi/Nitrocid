@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Configuration;
 using System.Globalization;
 
 namespace KS.Misc.Calendar
@@ -28,11 +29,13 @@ namespace KS.Misc.Calendar
         /// <summary>
         /// Enables the alternative calendar
         /// </summary>
-        public static bool EnableAltCalendar { get; set; }
+        public static bool EnableAltCalendar =>
+            Config.MainConfig.EnableAltCalendar;
         /// <summary>
         /// Alternative calendar
         /// </summary>
-        public static CalendarTypes AltCalendar { get; set; } = CalendarTypes.Hijri;
+        public static CalendarTypes AltCalendar =>
+            (CalendarTypes)Config.MainConfig.AltCalendar;
 
         /// <summary>
         /// Gets the culture from the culture type

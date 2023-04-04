@@ -122,7 +122,7 @@ namespace KS.Files
         /// Configuration path
         /// </summary>
         public static string ConfigurationPath =>
-            Filesystem.NeutralizePath(AppDataPath + "/KernelConfig.json");
+            Filesystem.NeutralizePath(AppDataPath + "/KernelMainConfig.json");
 
         /// <summary>
         /// Debugging path
@@ -227,6 +227,18 @@ namespace KS.Files
             Filesystem.NeutralizePath(AppDataPath + "/KSContactsImport/");
 
         /// <summary>
+        /// Configuration path
+        /// </summary>
+        public static string SaverConfigurationPath =>
+            Filesystem.NeutralizePath(AppDataPath + "/KernelSaverConfig.json");
+
+        /// <summary>
+        /// Configuration path
+        /// </summary>
+        public static string SplashConfigurationPath =>
+            Filesystem.NeutralizePath(AppDataPath + "/KernelSplashConfig.json");
+
+        /// <summary>
         /// Gets the neutralized kernel path
         /// </summary>
         /// <param name="PathType">Kernel path type</param>
@@ -254,6 +266,8 @@ namespace KS.Files
                 KernelPathType.Screensavers =>          ScreensaversPath,
                 KernelPathType.Contacts =>              ContactsPath,
                 KernelPathType.ContactsImport =>        ContactsImportPath,
+                KernelPathType.SaverConfiguration =>    SaverConfigurationPath,
+                KernelPathType.SplashConfiguration =>   SplashConfigurationPath,
                 _ => throw new KernelException(KernelExceptionType.InvalidKernelPath, Translate.DoTranslation("Invalid kernel path type.")),
             };
         }

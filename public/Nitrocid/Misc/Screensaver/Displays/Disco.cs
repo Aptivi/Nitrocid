@@ -19,6 +19,7 @@
 using System;
 using ColorSeq;
 using KS.Drivers.RNG;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
@@ -31,20 +32,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class DiscoSettings
     {
 
-        private static bool _TrueColor = true;
-        private static bool _CycleColors;
-        private static int _Delay = 100;
-        private static bool _UseBeatsPerMinute;
-        private static bool _EnableFedMode;
-        private static int _MinimumRedColorLevel = 0;
-        private static int _MinimumGreenColorLevel = 0;
-        private static int _MinimumBlueColorLevel = 0;
-        private static int _MinimumColorLevel = 0;
-        private static int _MaximumRedColorLevel = 255;
-        private static int _MaximumGreenColorLevel = 255;
-        private static int _MaximumBlueColorLevel = 255;
-        private static int _MaximumColorLevel = 255;
-
         /// <summary>
         /// [Disco] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -52,11 +39,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _TrueColor;
+                return Config.SaverConfig.DiscoTrueColor;
             }
             set
             {
-                _TrueColor = value;
+                Config.SaverConfig.DiscoTrueColor = value;
             }
         }
         /// <summary>
@@ -66,11 +53,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _CycleColors;
+                return Config.SaverConfig.DiscoCycleColors;
             }
             set
             {
-                _CycleColors = value;
+                Config.SaverConfig.DiscoCycleColors = value;
             }
         }
         /// <summary>
@@ -80,13 +67,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.DiscoDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 100;
-                _Delay = value;
+                Config.SaverConfig.DiscoDelay = value;
             }
         }
         /// <summary>
@@ -96,11 +83,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _UseBeatsPerMinute;
+                return Config.SaverConfig.DiscoUseBeatsPerMinute;
             }
             set
             {
-                _UseBeatsPerMinute = value;
+                Config.SaverConfig.DiscoUseBeatsPerMinute = value;
             }
         }
         /// <summary>
@@ -110,11 +97,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _EnableFedMode;
+                return Config.SaverConfig.DiscoEnableFedMode;
             }
             set
             {
-                _EnableFedMode = value;
+                Config.SaverConfig.DiscoEnableFedMode = value;
             }
         }
         /// <summary>
@@ -124,7 +111,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumRedColorLevel;
+                return Config.SaverConfig.DiscoMinimumRedColorLevel;
             }
             set
             {
@@ -132,7 +119,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumRedColorLevel = value;
+                Config.SaverConfig.DiscoMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -142,7 +129,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumGreenColorLevel;
+                return Config.SaverConfig.DiscoMinimumGreenColorLevel;
             }
             set
             {
@@ -150,7 +137,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumGreenColorLevel = value;
+                Config.SaverConfig.DiscoMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -160,7 +147,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumBlueColorLevel;
+                return Config.SaverConfig.DiscoMinimumBlueColorLevel;
             }
             set
             {
@@ -168,7 +155,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumBlueColorLevel = value;
+                Config.SaverConfig.DiscoMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -178,7 +165,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumColorLevel;
+                return Config.SaverConfig.DiscoMinimumColorLevel;
             }
             set
             {
@@ -187,7 +174,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                _MinimumColorLevel = value;
+                Config.SaverConfig.DiscoMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -197,15 +184,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumRedColorLevel;
+                return Config.SaverConfig.DiscoMaximumRedColorLevel;
             }
             set
             {
-                if (value <= _MinimumRedColorLevel)
-                    value = _MinimumRedColorLevel;
+                if (value <= Config.SaverConfig.DiscoMaximumRedColorLevel)
+                    value = Config.SaverConfig.DiscoMaximumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumRedColorLevel = value;
+                Config.SaverConfig.DiscoMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -215,15 +202,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumGreenColorLevel;
+                return Config.SaverConfig.DiscoMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= _MinimumGreenColorLevel)
-                    value = _MinimumGreenColorLevel;
+                if (value <= Config.SaverConfig.DiscoMaximumGreenColorLevel)
+                    value = Config.SaverConfig.DiscoMaximumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumGreenColorLevel = value;
+                Config.SaverConfig.DiscoMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -233,15 +220,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumBlueColorLevel;
+                return Config.SaverConfig.DiscoMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= _MinimumBlueColorLevel)
-                    value = _MinimumBlueColorLevel;
+                if (value <= Config.SaverConfig.DiscoMaximumBlueColorLevel)
+                    value = Config.SaverConfig.DiscoMaximumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumBlueColorLevel = value;
+                Config.SaverConfig.DiscoMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -251,16 +238,16 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumColorLevel;
+                return Config.SaverConfig.DiscoMaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= _MinimumColorLevel)
-                    value = _MinimumColorLevel;
+                if (value <= Config.SaverConfig.DiscoMaximumColorLevel)
+                    value = Config.SaverConfig.DiscoMaximumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                _MaximumColorLevel = value;
+                Config.SaverConfig.DiscoMaximumColorLevel = value;
             }
         }
 

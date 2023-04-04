@@ -33,6 +33,7 @@ using KS.Shell.ShellBase.Commands;
 using Renci.SshNet;
 using Renci.SshNet.Common;
 using KS.Kernel.Events;
+using KS.Kernel.Configuration;
 
 namespace KS.Network.SSH
 {
@@ -49,7 +50,8 @@ namespace KS.Network.SSH
         /// <summary>
         /// Whether or not to show the SSH banner on connection
         /// </summary>
-        public static bool SSHBanner { get; set; }
+        public static bool SSHBanner =>
+            Config.MainConfig.SSHBanner;
 
         /// <summary>
         /// Specifies SSH connection type

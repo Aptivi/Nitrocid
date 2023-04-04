@@ -45,16 +45,6 @@ namespace KS.Misc.Screensaver
     public static class Screensaver
     {
 
-        // Public Variables
-        /// <summary>
-        /// Screensaver debugging
-        /// </summary>
-        public static bool ScreensaverDebug { get; set; }
-        /// <summary>
-        /// Password lock enabled
-        /// </summary>
-        public static bool PasswordLock { get; set; } = true;
-
         // Private variables
         internal static Dictionary<string, BaseScreensaver> Screensavers = new()
         {
@@ -115,35 +105,43 @@ namespace KS.Misc.Screensaver
             { "windowslogo", new WindowsLogoDisplay() },
             { "wipe", new WipeDisplay() }
         };
-        private static int scrnTimeout = 300000;
-        private static string defSaverName = "plain";
+        internal static int scrnTimeout = 300000;
+        internal static string defSaverName = "plain";
         internal static bool LockMode;
         internal static bool inSaver;
         internal static AutoResetEvent SaverAutoReset = new(false);
         internal static KernelThread Timeout = new("Screensaver timeout thread", false, HandleTimeout) { isCritical = true };
 
+        // Public Variables
+        /// <summary>
+        /// Screensaver debugging
+        /// </summary>
+        public static bool ScreensaverDebug =>
+            Config.MainConfig.ScreensaverDebug;
+
+        /// <summary>
+        /// Password lock enabled
+        /// </summary>
+        public static bool PasswordLock =>
+            Config.MainConfig.PasswordLock;
+
         /// <summary>
         /// Whether the kernel is on the screensaver mode
         /// </summary>
-        public static bool InSaver => inSaver;
+        public static bool InSaver =>
+            inSaver;
 
         /// <summary>
         /// Screen timeout in milliseconds
         /// </summary>
-        public static int ScreenTimeout
-        {
-            get => scrnTimeout;
-            set => scrnTimeout = value < 0 ? 300000 : value;
-        }
+        public static int ScreenTimeout =>
+            Config.MainConfig.ScreenTimeout;
 
         /// <summary>
         /// Default screensaver name
         /// </summary>
-        public static string DefaultSaverName
-        {
-            get => defSaverName;
-            set => defSaverName = Screensavers.ContainsKey(value) ? value : "plain";
-        }
+        public static string DefaultSaverName =>
+            Config.MainConfig.DefaultSaverName;
 
         /// <summary>
         /// Gets the name of the screensavers
@@ -284,9 +282,8 @@ namespace KS.Misc.Screensaver
             if (Screensavers.ContainsKey(saver) | CustomSaverTools.CustomSavers.ContainsKey(saver))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "{0} is found. Setting it to default...", saver);
-                DefaultSaverName = saver;
-                var Token = ConfigTools.GetConfigCategory(ConfigCategory.Screensaver);
-                ConfigTools.SetConfigValue(ConfigCategory.Screensaver, Token, "Screensaver", saver);
+                Config.MainConfig.DefaultSaverName = saver;
+                Config.CreateConfig();
             }
             else
             {

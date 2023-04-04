@@ -20,6 +20,7 @@ using System;
 using ColorSeq;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
@@ -32,18 +33,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class FlashColorSettings
     {
 
-        private static bool _TrueColor = true;
-        private static int _Delay = 20;
-        private static string _BackgroundColor = new Color(ConsoleColors.Black).PlainSequence;
-        private static int _MinimumRedColorLevel = 0;
-        private static int _MinimumGreenColorLevel = 0;
-        private static int _MinimumBlueColorLevel = 0;
-        private static int _MinimumColorLevel = 0;
-        private static int _MaximumRedColorLevel = 255;
-        private static int _MaximumGreenColorLevel = 255;
-        private static int _MaximumBlueColorLevel = 255;
-        private static int _MaximumColorLevel = 0;
-
         /// <summary>
         /// [FlashColor] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -51,11 +40,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _TrueColor;
+                return Config.SaverConfig.FlashColorTrueColor;
             }
             set
             {
-                _TrueColor = value;
+                Config.SaverConfig.FlashColorTrueColor = value;
             }
         }
         /// <summary>
@@ -65,13 +54,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.FlashColorDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 20;
-                _Delay = value;
+                Config.SaverConfig.FlashColorDelay = value;
             }
         }
         /// <summary>
@@ -81,11 +70,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _BackgroundColor;
+                return Config.SaverConfig.FlashColorBackgroundColor;
             }
             set
             {
-                _BackgroundColor = new Color(value).PlainSequence;
+                Config.SaverConfig.FlashColorBackgroundColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -95,7 +84,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumRedColorLevel;
+                return Config.SaverConfig.FlashColorMinimumRedColorLevel;
             }
             set
             {
@@ -103,7 +92,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumRedColorLevel = value;
+                Config.SaverConfig.FlashColorMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -113,7 +102,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumGreenColorLevel;
+                return Config.SaverConfig.FlashColorMinimumGreenColorLevel;
             }
             set
             {
@@ -121,7 +110,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumGreenColorLevel = value;
+                Config.SaverConfig.FlashColorMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -131,7 +120,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumBlueColorLevel;
+                return Config.SaverConfig.FlashColorMinimumBlueColorLevel;
             }
             set
             {
@@ -139,7 +128,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumBlueColorLevel = value;
+                Config.SaverConfig.FlashColorMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -149,7 +138,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumColorLevel;
+                return Config.SaverConfig.FlashColorMinimumColorLevel;
             }
             set
             {
@@ -158,7 +147,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                _MinimumColorLevel = value;
+                Config.SaverConfig.FlashColorMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -168,15 +157,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumRedColorLevel;
+                return Config.SaverConfig.FlashColorMaximumRedColorLevel;
             }
             set
             {
-                if (value <= _MinimumRedColorLevel)
-                    value = _MinimumRedColorLevel;
+                if (value <= Config.SaverConfig.FlashColorMinimumRedColorLevel)
+                    value = Config.SaverConfig.FlashColorMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumRedColorLevel = value;
+                Config.SaverConfig.FlashColorMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -186,15 +175,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumGreenColorLevel;
+                return Config.SaverConfig.FlashColorMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= _MinimumGreenColorLevel)
-                    value = _MinimumGreenColorLevel;
+                if (value <= Config.SaverConfig.FlashColorMinimumGreenColorLevel)
+                    value = Config.SaverConfig.FlashColorMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumGreenColorLevel = value;
+                Config.SaverConfig.FlashColorMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -204,15 +193,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumBlueColorLevel;
+                return Config.SaverConfig.FlashColorMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= _MinimumBlueColorLevel)
-                    value = _MinimumBlueColorLevel;
+                if (value <= Config.SaverConfig.FlashColorMinimumBlueColorLevel)
+                    value = Config.SaverConfig.FlashColorMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumBlueColorLevel = value;
+                Config.SaverConfig.FlashColorMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -222,16 +211,16 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumColorLevel;
+                return Config.SaverConfig.FlashColorMaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= _MinimumColorLevel)
-                    value = _MinimumColorLevel;
+                if (value <= Config.SaverConfig.FlashColorMinimumColorLevel)
+                    value = Config.SaverConfig.FlashColorMinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                _MaximumColorLevel = value;
+                Config.SaverConfig.FlashColorMaximumColorLevel = value;
             }
         }
 

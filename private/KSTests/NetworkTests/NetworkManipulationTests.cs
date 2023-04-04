@@ -38,7 +38,7 @@ namespace KSTests.NetworkTests
         {
             NetworkTools.TryChangeHostname("NewHost").ShouldBeTrue();
             NetworkTools.HostName.ShouldBe("NewHost");
-            ConfigTools.GetConfigValue(ConfigCategory.Login, "Host Name").ShouldBe("NewHost");
+            Config.MainConfig.HostName.ShouldBe("NewHost");
         }
 
     }

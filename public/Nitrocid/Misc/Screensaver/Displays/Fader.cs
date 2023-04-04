@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using ColorSeq;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
@@ -28,18 +29,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class FaderSettings
     {
 
-        private static int _Delay = 50;
-        private static int _FadeOutDelay = 3000;
-        private static string _Write = "Nitrocid KS";
-        private static int _MaxSteps = 25;
-        private static string _BackgroundColor = new Color(ConsoleColors.Black).PlainSequence;
-        private static int _MinimumRedColorLevel = 0;
-        private static int _MinimumGreenColorLevel = 0;
-        private static int _MinimumBlueColorLevel = 0;
-        private static int _MaximumRedColorLevel = 255;
-        private static int _MaximumGreenColorLevel = 255;
-        private static int _MaximumBlueColorLevel = 255;
-
         /// <summary>
         /// [Fader] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -47,13 +36,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.FaderDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 50;
-                _Delay = value;
+                Config.SaverConfig.FaderDelay = value;
             }
         }
         /// <summary>
@@ -63,13 +52,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _FadeOutDelay;
+                return Config.SaverConfig.FaderFadeOutDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 3000;
-                _FadeOutDelay = value;
+                Config.SaverConfig.FaderFadeOutDelay = value;
             }
         }
         /// <summary>
@@ -79,13 +68,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Write;
+                return Config.SaverConfig.FaderWrite;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "Nitrocid KS";
-                _Write = value;
+                Config.SaverConfig.FaderWrite = value;
             }
         }
         /// <summary>
@@ -95,13 +84,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaxSteps;
+                return Config.SaverConfig.FaderMaxSteps;
             }
             set
             {
                 if (value <= 0)
                     value = 25;
-                _MaxSteps = value;
+                Config.SaverConfig.FaderMaxSteps = value;
             }
         }
         /// <summary>
@@ -111,11 +100,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _BackgroundColor;
+                return Config.SaverConfig.FaderBackgroundColor;
             }
             set
             {
-                _BackgroundColor = new Color(value).PlainSequence;
+                Config.SaverConfig.FaderBackgroundColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -125,7 +114,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumRedColorLevel;
+                return Config.SaverConfig.FaderMinimumRedColorLevel;
             }
             set
             {
@@ -133,7 +122,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumRedColorLevel = value;
+                Config.SaverConfig.FaderMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -143,7 +132,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumGreenColorLevel;
+                return Config.SaverConfig.FaderMinimumGreenColorLevel;
             }
             set
             {
@@ -151,7 +140,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumGreenColorLevel = value;
+                Config.SaverConfig.FaderMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -161,7 +150,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumBlueColorLevel;
+                return Config.SaverConfig.FaderMinimumBlueColorLevel;
             }
             set
             {
@@ -169,7 +158,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumBlueColorLevel = value;
+                Config.SaverConfig.FaderMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -179,15 +168,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumRedColorLevel;
+                return Config.SaverConfig.FaderMaximumRedColorLevel;
             }
             set
             {
-                if (value <= _MinimumRedColorLevel)
-                    value = _MinimumRedColorLevel;
+                if (value <= Config.SaverConfig.FaderMinimumRedColorLevel)
+                    value = Config.SaverConfig.FaderMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumRedColorLevel = value;
+                Config.SaverConfig.FaderMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -197,15 +186,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumGreenColorLevel;
+                return Config.SaverConfig.FaderMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= _MinimumGreenColorLevel)
-                    value = _MinimumGreenColorLevel;
+                if (value <= Config.SaverConfig.FaderMinimumGreenColorLevel)
+                    value = Config.SaverConfig.FaderMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumGreenColorLevel = value;
+                Config.SaverConfig.FaderMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -215,15 +204,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumBlueColorLevel;
+                return Config.SaverConfig.FaderMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= _MinimumBlueColorLevel)
-                    value = _MinimumBlueColorLevel;
+                if (value <= Config.SaverConfig.FaderMinimumBlueColorLevel)
+                    value = Config.SaverConfig.FaderMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumBlueColorLevel = value;
+                Config.SaverConfig.FaderMaximumBlueColorLevel = value;
             }
         }
 

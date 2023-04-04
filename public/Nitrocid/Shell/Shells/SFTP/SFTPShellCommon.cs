@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Configuration;
 using Renci.SshNet;
 
 namespace KS.Shell.Shells.SFTP
@@ -35,7 +36,8 @@ namespace KS.Shell.Shells.SFTP
         /// <summary>
         /// The SFTP client used to connect to the SFTP server
         /// </summary>
-        public static SftpClient ClientSFTP => _clientSFTP;
+        public static SftpClient ClientSFTP =>
+            _clientSFTP;
         /// <summary>
         /// SFTP current local directory
         /// </summary>
@@ -47,15 +49,18 @@ namespace KS.Shell.Shells.SFTP
         /// <summary>
         /// SFTP show file details in list
         /// </summary>
-        public static bool SFTPShowDetailsInList { get; set; } = true;
+        public static bool SFTPShowDetailsInList =>
+            Config.MainConfig.SFTPShowDetailsInList;
         /// <summary>
         /// SFTP user prompt style
         /// </summary>
-        public static string SFTPUserPromptStyle { get; set; } = "";
+        public static string SFTPUserPromptStyle =>
+            Config.MainConfig.SFTPUserPromptStyle;
         /// <summary>
         /// SFTP add new connections to speed dial
         /// </summary>
-        public static bool SFTPNewConnectionsToSpeedDial { get; set; } = true;
+        public static bool SFTPNewConnectionsToSpeedDial =>
+            Config.MainConfig.SFTPNewConnectionsToSpeedDial;
 
     }
 }

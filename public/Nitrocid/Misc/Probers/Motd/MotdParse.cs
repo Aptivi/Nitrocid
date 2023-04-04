@@ -18,6 +18,7 @@
 
 using System;
 using KS.Files;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -33,7 +34,8 @@ namespace KS.Misc.Probers.Motd
         /// <summary>
         /// MOTD file path
         /// </summary>
-        public static string MotdFilePath { get; set; } = Paths.GetKernelPath(KernelPathType.MOTD);
+        public static string MotdFilePath =>
+            Config.MainConfig.MotdFilePath;
         /// <summary>
         /// Current MOTD message
         /// </summary>
@@ -50,7 +52,7 @@ namespace KS.Misc.Probers.Motd
                 System.IO.StreamWriter MOTDStreamW;
 
                 // Get the MOTD and MAL file path
-                MotdFilePath = Filesystem.NeutralizePath(MotdFilePath);
+                Config.MainConfig.MotdFilePath = Filesystem.NeutralizePath(MotdFilePath);
                 DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", MotdFilePath);
 
                 // Set the message according to message type
@@ -81,7 +83,7 @@ namespace KS.Misc.Probers.Motd
                 var MOTDBuilder = new System.Text.StringBuilder();
 
                 // Get the MOTD and MAL file path
-                MotdFilePath = Filesystem.NeutralizePath(MotdFilePath);
+                Config.MainConfig.MotdFilePath = Filesystem.NeutralizePath(MotdFilePath);
                 DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", MotdFilePath);
 
                 // Read the message according to message type

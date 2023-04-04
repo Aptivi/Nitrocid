@@ -19,6 +19,7 @@
 using System.Net.Sockets;
 using System.Threading;
 using Extensification.StringExts;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -33,28 +34,27 @@ namespace KS.Network.RPC
     public static class RemoteProcedure
     {
 
-        private static int rpcPort = 12345;
+        internal static int rpcPort = 12345;
         internal static UdpClient RPCListen;
         internal static KernelThread RPCThread = new("RPC Thread", true, RPCCommands.ReceiveCommand) { isCritical = true };
 
         /// <summary>
         /// Whether the RPC started
         /// </summary>
-        public static bool RPCStarted => RPCThread.IsAlive;
+        public static bool RPCStarted =>
+            RPCThread.IsAlive;
 
         /// <summary>
         /// RPC port
         /// </summary>
-        public static int RPCPort
-        {
-            get => rpcPort;
-            set => rpcPort = value < 0 ? 12345 : value;
-        }
+        public static int RPCPort =>
+            Config.MainConfig.RPCPort;
 
         /// <summary>
         /// Whether the RPC is enabled or not
         /// </summary>
-        public static bool RPCEnabled { get; set; } = true;
+        public static bool RPCEnabled =>
+            Config.MainConfig.RPCEnabled;
 
         /// <summary>
         /// Starts the RPC listener

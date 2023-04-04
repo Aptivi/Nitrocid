@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using ColorSeq;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
@@ -33,15 +34,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class TypoSettings
     {
 
-        private static int _Delay = 50;
-        private static int _WriteAgainDelay = 3000;
-        private static string _Write = "Nitrocid KS";
-        private static int _WritingSpeedMin = 50;
-        private static int _WritingSpeedMax = 80;
-        private static int _MissStrikePossibility = 20;
-        private static int _MissPossibility = 10;
-        private static string _TextColor = new Color(ConsoleColors.White).PlainSequence;
-
         /// <summary>
         /// [Typo] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -49,13 +41,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.TypoDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 50;
-                _Delay = value;
+                Config.SaverConfig.TypoDelay = value;
             }
         }
         /// <summary>
@@ -65,13 +57,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _WriteAgainDelay;
+                return Config.SaverConfig.TypoWriteAgainDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 3000;
-                _WriteAgainDelay = value;
+                Config.SaverConfig.TypoWriteAgainDelay = value;
             }
         }
         /// <summary>
@@ -81,13 +73,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Write;
+                return Config.SaverConfig.TypoWrite;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "Nitrocid KS";
-                _Write = value;
+                Config.SaverConfig.TypoWrite = value;
             }
         }
         /// <summary>
@@ -97,13 +89,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _WritingSpeedMin;
+                return Config.SaverConfig.TypoWritingSpeedMin;
             }
             set
             {
                 if (value <= 0)
                     value = 50;
-                _WritingSpeedMin = value;
+                Config.SaverConfig.TypoWritingSpeedMin = value;
             }
         }
         /// <summary>
@@ -113,13 +105,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _WritingSpeedMax;
+                return Config.SaverConfig.TypoWritingSpeedMax;
             }
             set
             {
                 if (value <= 0)
                     value = 80;
-                _WritingSpeedMax = value;
+                Config.SaverConfig.TypoWritingSpeedMax = value;
             }
         }
         /// <summary>
@@ -129,13 +121,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MissStrikePossibility;
+                return Config.SaverConfig.TypoMissStrikePossibility;
             }
             set
             {
                 if (value <= 0)
                     value = 20;
-                _MissStrikePossibility = value;
+                Config.SaverConfig.TypoMissStrikePossibility = value;
             }
         }
         /// <summary>
@@ -145,13 +137,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MissPossibility;
+                return Config.SaverConfig.TypoMissPossibility;
             }
             set
             {
                 if (value <= 0)
                     value = 10;
-                _MissPossibility = value;
+                Config.SaverConfig.TypoMissPossibility = value;
             }
         }
         /// <summary>
@@ -161,11 +153,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _TextColor;
+                return Config.SaverConfig.TypoTextColor;
             }
             set
             {
-                _TextColor = new Color(value).PlainSequence;
+                Config.SaverConfig.TypoTextColor = new Color(value).PlainSequence;
             }
         }
 

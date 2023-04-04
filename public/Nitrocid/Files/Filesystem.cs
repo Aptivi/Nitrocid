@@ -27,6 +27,7 @@ using KS.Languages;
 using KS.Kernel.Debugging;
 using KS.Kernel;
 using KS.Kernel.Exceptions;
+using KS.Kernel.Configuration;
 
 namespace KS.Files
 {
@@ -39,7 +40,8 @@ namespace KS.Files
         /// <summary>
         /// Shows the filesystem progress
         /// </summary>
-        public static bool ShowFilesystemProgress { get; set; } = true;
+        public static bool ShowFilesystemProgress =>
+            Config.MainConfig.ShowFilesystemProgress;
 
         /// <summary>
         /// Simplifies the path to the correct one. It converts the path format to the unified format.

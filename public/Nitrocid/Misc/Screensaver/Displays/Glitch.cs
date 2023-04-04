@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 
 namespace KS.Misc.Screensaver.Displays
@@ -27,9 +28,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class GlitchSettings
     {
 
-        private static int _Delay = 10;
-        private static int _Density = 40;
-
         /// <summary>
         /// [Glitch] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -37,13 +35,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.GlitchDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 10;
-                _Delay = value;
+                Config.SaverConfig.GlitchDelay = value;
             }
         }
         /// <summary>
@@ -53,7 +51,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Density;
+                return Config.SaverConfig.GlitchDensity;
             }
             set
             {
@@ -61,7 +59,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 40;
                 if (value > 100)
                     value = 40;
-                _Density = value;
+                Config.SaverConfig.GlitchDensity = value;
             }
         }
 

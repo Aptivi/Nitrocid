@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 
 namespace KS.Misc.Screensaver.Displays
@@ -26,16 +27,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class FaderBackSettings
     {
 
-        private static int _Delay = 10;
-        private static int _FadeOutDelay = 3000;
-        private static int _MaxSteps = 25;
-        private static int _MinimumRedColorLevel = 0;
-        private static int _MinimumGreenColorLevel = 0;
-        private static int _MinimumBlueColorLevel = 0;
-        private static int _MaximumRedColorLevel = 255;
-        private static int _MaximumGreenColorLevel = 255;
-        private static int _MaximumBlueColorLevel = 255;
-
         /// <summary>
         /// [FaderBack] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -43,13 +34,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.FaderBackDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 10;
-                _Delay = value;
+                Config.SaverConfig.FaderBackDelay = value;
             }
         }
         /// <summary>
@@ -59,13 +50,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _FadeOutDelay;
+                return Config.SaverConfig.FaderBackFadeOutDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 3000;
-                _FadeOutDelay = value;
+                Config.SaverConfig.FaderBackFadeOutDelay = value;
             }
         }
         /// <summary>
@@ -75,13 +66,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaxSteps;
+                return Config.SaverConfig.FaderBackMaxSteps;
             }
             set
             {
                 if (value <= 0)
                     value = 25;
-                _MaxSteps = value;
+                Config.SaverConfig.FaderBackMaxSteps = value;
             }
         }
         /// <summary>
@@ -91,7 +82,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumRedColorLevel;
+                return Config.SaverConfig.FaderBackMinimumRedColorLevel;
             }
             set
             {
@@ -99,7 +90,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumRedColorLevel = value;
+                Config.SaverConfig.FaderBackMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -109,7 +100,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumGreenColorLevel;
+                return Config.SaverConfig.FaderBackMinimumGreenColorLevel;
             }
             set
             {
@@ -117,7 +108,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumGreenColorLevel = value;
+                Config.SaverConfig.FaderBackMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -127,7 +118,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumBlueColorLevel;
+                return Config.SaverConfig.FaderBackMinimumBlueColorLevel;
             }
             set
             {
@@ -135,7 +126,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumBlueColorLevel = value;
+                Config.SaverConfig.FaderBackMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -145,15 +136,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumRedColorLevel;
+                return Config.SaverConfig.FaderBackMaximumRedColorLevel;
             }
             set
             {
-                if (value <= _MinimumRedColorLevel)
-                    value = _MinimumRedColorLevel;
+                if (value <= Config.SaverConfig.FaderBackMinimumRedColorLevel)
+                    value = Config.SaverConfig.FaderBackMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumRedColorLevel = value;
+                Config.SaverConfig.FaderBackMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -163,15 +154,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumGreenColorLevel;
+                return Config.SaverConfig.FaderBackMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= _MinimumGreenColorLevel)
-                    value = _MinimumGreenColorLevel;
+                if (value <= Config.SaverConfig.FaderBackMinimumGreenColorLevel)
+                    value = Config.SaverConfig.FaderBackMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumGreenColorLevel = value;
+                Config.SaverConfig.FaderBackMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -181,15 +172,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumBlueColorLevel;
+                return Config.SaverConfig.FaderBackMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= _MinimumBlueColorLevel)
-                    value = _MinimumBlueColorLevel;
+                if (value <= Config.SaverConfig.FaderBackMinimumBlueColorLevel)
+                    value = Config.SaverConfig.FaderBackMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumBlueColorLevel = value;
+                Config.SaverConfig.FaderBackMaximumBlueColorLevel = value;
             }
         }
 

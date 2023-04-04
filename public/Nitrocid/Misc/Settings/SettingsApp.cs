@@ -51,6 +51,8 @@ namespace KS.Misc.Settings
     public static class SettingsApp
     {
 
+        // TODO: Settings app needs a lot of tweaking because of this new config reader and writer, replacing the
+        // older and slower Reflection-based settings instead of the Serialization-based version.
         /// <summary>
         /// Main page
         /// </summary>
@@ -163,7 +165,7 @@ namespace KS.Misc.Settings
                     {
                         try
                         {
-                            Config.ReadConfig(Location);
+                            Config.ReadConfig((ConfigType)SettingsType, Location);
                             Config.CreateConfig();
                         }
                         catch (Exception ex)

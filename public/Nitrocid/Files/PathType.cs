@@ -99,5 +99,13 @@ namespace KS.Files
         /// Contacts import directory
         /// </summary>
         ContactsImport,
+        /// <summary>
+        /// Screensaver configuration file.
+        /// </summary>
+        SaverConfiguration,
+        /// <summary>
+        /// Splash configuration file.
+        /// </summary>
+        SplashConfiguration,
     }
 }

@@ -21,6 +21,7 @@ using System.Threading;
 using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
@@ -46,13 +47,13 @@ namespace KS.Misc.Splash.Splashes
         {
             get
             {
-                switch (SplashSettings.SimpleProgressTextLocation)
+                switch (Config.SplashConfig.SimpleProgressTextLocation)
                 {
-                    case TextLocation.Top:
+                    case (int)TextLocation.Top:
                         {
                             return 1;
                         }
-                    case TextLocation.Bottom:
+                    case (int)TextLocation.Bottom:
                         {
                             return ConsoleWrapper.WindowHeight - 2;
                         }
@@ -71,13 +72,13 @@ namespace KS.Misc.Splash.Splashes
         {
             get
             {
-                switch (SplashSettings.SimpleProgressTextLocation)
+                switch (Config.SplashConfig.SimpleProgressTextLocation)
                 {
-                    case TextLocation.Top:
+                    case (int)TextLocation.Top:
                         {
                             return 1;
                         }
-                    case TextLocation.Bottom:
+                    case (int)TextLocation.Bottom:
                         {
                             return ConsoleWrapper.WindowHeight - 2;
                         }

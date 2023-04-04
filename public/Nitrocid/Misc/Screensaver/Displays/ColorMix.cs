@@ -20,6 +20,7 @@ using System;
 using ColorSeq;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
@@ -32,18 +33,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class ColorMixSettings
     {
 
-        private static bool _TrueColor = true;
-        private static int _Delay = 1;
-        private static string _BackgroundColor = new Color(ConsoleColors.Red).PlainSequence;
-        private static int _MinimumRedColorLevel = 0;
-        private static int _MinimumGreenColorLevel = 0;
-        private static int _MinimumBlueColorLevel = 0;
-        private static int _MinimumColorLevel = 0;
-        private static int _MaximumRedColorLevel = 255;
-        private static int _MaximumGreenColorLevel = 255;
-        private static int _MaximumBlueColorLevel = 255;
-        private static int _MaximumColorLevel = 255;
-
         /// <summary>
         /// [ColorMix] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -51,11 +40,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _TrueColor;
+                return Config.SaverConfig.ColorMixTrueColor;
             }
             set
             {
-                _TrueColor = value;
+                Config.SaverConfig.ColorMixTrueColor = value;
             }
         }
         /// <summary>
@@ -65,13 +54,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.ColorMixDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 1;
-                _Delay = value;
+                Config.SaverConfig.ColorMixDelay = value;
             }
         }
         /// <summary>
@@ -81,11 +70,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _BackgroundColor;
+                return Config.SaverConfig.ColorMixBackgroundColor;
             }
             set
             {
-                _BackgroundColor = new Color(value).PlainSequence;
+                Config.SaverConfig.ColorMixBackgroundColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -95,7 +84,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumRedColorLevel;
+                return Config.SaverConfig.ColorMixMinimumRedColorLevel;
             }
             set
             {
@@ -103,7 +92,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumRedColorLevel = value;
+                Config.SaverConfig.ColorMixMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -113,7 +102,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumGreenColorLevel;
+                return Config.SaverConfig.ColorMixMinimumGreenColorLevel;
             }
             set
             {
@@ -121,7 +110,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumGreenColorLevel = value;
+                Config.SaverConfig.ColorMixMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -131,7 +120,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumBlueColorLevel;
+                return Config.SaverConfig.ColorMixMinimumBlueColorLevel;
             }
             set
             {
@@ -139,7 +128,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumBlueColorLevel = value;
+                Config.SaverConfig.ColorMixMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -149,7 +138,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumColorLevel;
+                return Config.SaverConfig.ColorMixMinimumColorLevel;
             }
             set
             {
@@ -158,7 +147,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                _MinimumColorLevel = value;
+                Config.SaverConfig.ColorMixMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -168,15 +157,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumRedColorLevel;
+                return Config.SaverConfig.ColorMixMaximumRedColorLevel;
             }
             set
             {
-                if (value <= _MinimumRedColorLevel)
-                    value = _MinimumRedColorLevel;
+                if (value <= Config.SaverConfig.ColorMixMaximumRedColorLevel)
+                    value = Config.SaverConfig.ColorMixMaximumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumRedColorLevel = value;
+                Config.SaverConfig.ColorMixMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -186,15 +175,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumGreenColorLevel;
+                return Config.SaverConfig.ColorMixMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= _MinimumGreenColorLevel)
-                    value = _MinimumGreenColorLevel;
+                if (value <= Config.SaverConfig.ColorMixMaximumGreenColorLevel)
+                    value = Config.SaverConfig.ColorMixMaximumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumGreenColorLevel = value;
+                Config.SaverConfig.ColorMixMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -204,15 +193,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumBlueColorLevel;
+                return Config.SaverConfig.ColorMixMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= _MinimumBlueColorLevel)
-                    value = _MinimumBlueColorLevel;
+                if (value <= Config.SaverConfig.ColorMixMaximumBlueColorLevel)
+                    value = Config.SaverConfig.ColorMixMaximumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumBlueColorLevel = value;
+                Config.SaverConfig.ColorMixMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -222,16 +211,16 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumColorLevel;
+                return Config.SaverConfig.ColorMixMaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= _MinimumColorLevel)
-                    value = _MinimumColorLevel;
+                if (value <= Config.SaverConfig.ColorMixMaximumColorLevel)
+                    value = Config.SaverConfig.ColorMixMaximumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                _MaximumColorLevel = value;
+                Config.SaverConfig.ColorMixMaximumColorLevel = value;
             }
         }
 

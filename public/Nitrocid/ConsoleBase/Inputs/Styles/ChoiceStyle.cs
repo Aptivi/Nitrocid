@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
+using KS.Kernel.Configuration;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
@@ -34,12 +35,11 @@ namespace KS.ConsoleBase.Inputs.Styles
     public static class ChoiceStyle
     {
 
-        private static ChoiceOutputType defaultChoiceOutputType = ChoiceOutputType.Modern;
-
         /// <summary>
         /// Default input choice output type
         /// </summary>
-        public static ChoiceOutputType DefaultChoiceOutputType { get; set; } = defaultChoiceOutputType;
+        public static ChoiceOutputType DefaultChoiceOutputType =>
+            (ChoiceOutputType)Config.MainConfig.DefaultChoiceOutputType;
 
         /// <summary>
         /// The enumeration for the choice command output type

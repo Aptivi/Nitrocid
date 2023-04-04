@@ -23,6 +23,7 @@ using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
 using KS.Files.Querying;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Text;
 using KS.Misc.Threading;
@@ -36,14 +37,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class TypewriterSettings
     {
 
-        private static int _Delay = 50;
-        private static int _NewScreenDelay = 3000;
-        private static string _Write = "Nitrocid KS";
-        private static int _WritingSpeedMin = 50;
-        private static int _WritingSpeedMax = 80;
-        private static bool _ShowArrowPos = true;
-        private static string _TextColor = new Color(ConsoleColors.White).PlainSequence;
-
         /// <summary>
         /// [Typewriter] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -51,13 +44,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.TypewriterDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 50;
-                _Delay = value;
+                Config.SaverConfig.TypewriterDelay = value;
             }
         }
         /// <summary>
@@ -67,13 +60,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _NewScreenDelay;
+                return Config.SaverConfig.TypewriterNewScreenDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 3000;
-                _NewScreenDelay = value;
+                Config.SaverConfig.TypewriterNewScreenDelay = value;
             }
         }
         /// <summary>
@@ -83,13 +76,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Write;
+                return Config.SaverConfig.TypewriterWrite;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "Nitrocid KS";
-                _Write = value;
+                Config.SaverConfig.TypewriterWrite = value;
             }
         }
         /// <summary>
@@ -99,13 +92,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _WritingSpeedMin;
+                return Config.SaverConfig.TypewriterWritingSpeedMin;
             }
             set
             {
                 if (value <= 0)
                     value = 50;
-                _WritingSpeedMin = value;
+                Config.SaverConfig.TypewriterWritingSpeedMin = value;
             }
         }
         /// <summary>
@@ -115,29 +108,30 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _WritingSpeedMax;
+                return Config.SaverConfig.TypewriterWritingSpeedMax;
             }
             set
             {
                 if (value <= 0)
                     value = 80;
-                _WritingSpeedMax = value;
+                Config.SaverConfig.TypewriterWritingSpeedMax = value;
             }
         }
         /// <summary>
         /// [Typewriter] Shows the typewriter letter column position by showing this key on the bottom of the screen: <code>^</code>
         /// </summary>
-        public static bool TypewriterShowArrowPos
-        {
-            get
-            {
-                return _ShowArrowPos;
-            }
-            set
-            {
-                _ShowArrowPos = value;
-            }
-        }
+        public static bool TypewriterShowArrowPos = true;
+        //TODO: Address this.
+        //{
+        //    get
+        //    {
+        //        return Config.SaverConfig.TypewriterShowArrowPos;
+        //    }
+        //    set
+        //    {
+        //        Config.SaverConfig.TypewriterShowArrowPos = value;
+        //    }
+        //}
         /// <summary>
         /// [Typewriter] Text color
         /// </summary>
@@ -145,11 +139,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _TextColor;
+                return Config.SaverConfig.TypewriterTextColor;
             }
             set
             {
-                _TextColor = new Color(value).PlainSequence;
+                Config.SaverConfig.TypewriterTextColor = new Color(value).PlainSequence;
             }
         }
 

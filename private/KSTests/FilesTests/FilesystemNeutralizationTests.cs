@@ -18,6 +18,7 @@
 
 using KS.Files;
 using KS.Files.Folders;
+using KS.Kernel.Configuration;
 using NUnit.Framework;
 using Shouldly;
 
@@ -35,7 +36,7 @@ namespace KSTests.FilesTests
         [Description("Neutralization")]
         public void TestNeutralizePaths()
         {
-            CurrentDirectory.CurrentDir = Paths.HomePath;
+            Config.MainConfig.CurrentDir = Paths.HomePath;
             string TestPath = "Documents";
             string ExpectedPath = Paths.HomePath + "/" + TestPath;
             string NeutPath = Filesystem.NeutralizePath(TestPath);

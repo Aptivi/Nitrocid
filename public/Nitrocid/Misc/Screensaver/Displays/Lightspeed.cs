@@ -18,6 +18,7 @@
 
 using ColorSeq;
 using KS.Drivers.RNG;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
@@ -30,16 +31,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class LightspeedSettings
     {
 
-        private static bool _CycleColors;
-        private static int _MinimumRedColorLevel = 0;
-        private static int _MinimumGreenColorLevel = 0;
-        private static int _MinimumBlueColorLevel = 0;
-        private static int _MinimumColorLevel = 0;
-        private static int _MaximumRedColorLevel = 255;
-        private static int _MaximumGreenColorLevel = 255;
-        private static int _MaximumBlueColorLevel = 255;
-        private static int _MaximumColorLevel = 255;
-
         /// <summary>
         /// [Lightspeed] Enable color cycling
         /// </summary>
@@ -47,11 +38,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _CycleColors;
+                return Config.SaverConfig.LightspeedCycleColors;
             }
             set
             {
-                _CycleColors = value;
+                Config.SaverConfig.LightspeedCycleColors = value;
             }
         }
         /// <summary>
@@ -61,7 +52,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumRedColorLevel;
+                return Config.SaverConfig.LightspeedMinimumRedColorLevel;
             }
             set
             {
@@ -69,7 +60,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumRedColorLevel = value;
+                Config.SaverConfig.LightspeedMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -79,7 +70,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumGreenColorLevel;
+                return Config.SaverConfig.LightspeedMinimumGreenColorLevel;
             }
             set
             {
@@ -87,7 +78,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumGreenColorLevel = value;
+                Config.SaverConfig.LightspeedMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -97,7 +88,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumBlueColorLevel;
+                return Config.SaverConfig.LightspeedMinimumBlueColorLevel;
             }
             set
             {
@@ -105,7 +96,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumBlueColorLevel = value;
+                Config.SaverConfig.LightspeedMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -115,7 +106,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumColorLevel;
+                return Config.SaverConfig.LightspeedMinimumColorLevel;
             }
             set
             {
@@ -123,7 +114,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumColorLevel = value;
+                Config.SaverConfig.LightspeedMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -133,15 +124,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumRedColorLevel;
+                return Config.SaverConfig.LightspeedMaximumRedColorLevel;
             }
             set
             {
-                if (value <= _MinimumRedColorLevel)
-                    value = _MinimumRedColorLevel;
+                if (value <= Config.SaverConfig.LightspeedMinimumRedColorLevel)
+                    value = Config.SaverConfig.LightspeedMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumRedColorLevel = value;
+                Config.SaverConfig.LightspeedMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -151,15 +142,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumGreenColorLevel;
+                return Config.SaverConfig.LightspeedMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= _MinimumGreenColorLevel)
-                    value = _MinimumGreenColorLevel;
+                if (value <= Config.SaverConfig.LightspeedMinimumGreenColorLevel)
+                    value = Config.SaverConfig.LightspeedMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumGreenColorLevel = value;
+                Config.SaverConfig.LightspeedMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -169,15 +160,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumBlueColorLevel;
+                return Config.SaverConfig.LightspeedMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= _MinimumBlueColorLevel)
-                    value = _MinimumBlueColorLevel;
+                if (value <= Config.SaverConfig.LightspeedMinimumBlueColorLevel)
+                    value = Config.SaverConfig.LightspeedMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumBlueColorLevel = value;
+                Config.SaverConfig.LightspeedMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -187,15 +178,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumColorLevel;
+                return Config.SaverConfig.LightspeedMaximumColorLevel;
             }
             set
             {
-                if (value <= _MinimumColorLevel)
-                    value = _MinimumColorLevel;
+                if (value <= Config.SaverConfig.LightspeedMinimumColorLevel)
+                    value = Config.SaverConfig.LightspeedMinimumColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumColorLevel = value;
+                Config.SaverConfig.LightspeedMaximumColorLevel = value;
             }
         }
 

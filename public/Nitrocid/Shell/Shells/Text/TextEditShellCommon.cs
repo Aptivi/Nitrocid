@@ -18,6 +18,7 @@
 
 using System.Collections.Generic;
 using System.IO;
+using KS.Kernel.Configuration;
 using KS.Misc.Editors.TextEdit;
 using KS.Misc.Threading;
 
@@ -38,23 +39,23 @@ namespace KS.Shell.Shells.Text
         /// <summary>
         /// File lines for text editor
         /// </summary>
-        public static List<string> TextEdit_FileLines => fileLines;
+        public static List<string> TextEdit_FileLines =>
+            fileLines;
         /// <summary>
         /// File stream for text editor
         /// </summary>
-        public static FileStream TextEdit_FileStream => fileStream;
+        public static FileStream TextEdit_FileStream =>
+            fileStream;
         /// <summary>
         /// Auto save flag
         /// </summary>
-        public static bool TextEdit_AutoSaveFlag { get; set; } = true;
+        public static bool TextEdit_AutoSaveFlag =>
+            Config.MainConfig.TextEdit_AutoSaveFlag;
         /// <summary>
         /// Auto save interval in seconds
         /// </summary>
-        public static int TextEdit_AutoSaveInterval
-        {
-            get => autoSaveInterval;
-            set => autoSaveInterval = value < 0 ? 60 : value;
-        }
+        public static int TextEdit_AutoSaveInterval =>
+            Config.MainConfig.TextEdit_AutoSaveInterval;
 
     }
 }

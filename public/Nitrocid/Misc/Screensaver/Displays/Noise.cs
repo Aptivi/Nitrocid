@@ -20,6 +20,7 @@ using System;
 using System.Collections;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
+using KS.Kernel.Configuration;
 using KS.Misc.Threading;
 
 namespace KS.Misc.Screensaver.Displays
@@ -30,9 +31,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class NoiseSettings
     {
 
-        private static int _NewScreenDelay = 5000;
-        private static int _Density = 40;
-
         /// <summary>
         /// [Noise] How many milliseconds to wait before making the new screen?
         /// </summary>
@@ -40,13 +38,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _NewScreenDelay;
+                return Config.SaverConfig.NoiseNewScreenDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 5000;
-                _NewScreenDelay = value;
+                Config.SaverConfig.NoiseNewScreenDelay = value;
             }
         }
         /// <summary>
@@ -56,7 +54,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Density;
+                return Config.SaverConfig.NoiseDensity;
             }
             set
             {
@@ -64,7 +62,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 40;
                 if (value > 100)
                     value = 40;
-                _Density = value;
+                Config.SaverConfig.NoiseDensity = value;
             }
         }
 

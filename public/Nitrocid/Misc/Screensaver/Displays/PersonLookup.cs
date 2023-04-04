@@ -18,6 +18,7 @@
 
 using System;
 using KS.Drivers.RNG;
+using KS.Kernel.Configuration;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.TimeDate;
@@ -31,13 +32,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class PersonLookupSettings
     {
 
-        private static int _Delay = 75;
-        private static int _LookedUpDelay = 10000;
-        private static int _MinimumNames = 10;
-        private static int _MaximumNames = 100;
-        private static int _MinimumAgeYears = 18;
-        private static int _MaximumAgeYears = 100;
-
         /// <summary>
         /// [PersonLookup] How many milliseconds to wait before getting the new name?
         /// </summary>
@@ -45,13 +39,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.PersonLookupDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 75;
-                _Delay = value;
+                Config.SaverConfig.PersonLookupDelay = value;
             }
         }
         /// <summary>
@@ -61,13 +55,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _LookedUpDelay;
+                return Config.SaverConfig.PersonLookupLookedUpDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 10000;
-                _LookedUpDelay = value;
+                Config.SaverConfig.PersonLookupLookedUpDelay = value;
             }
         }
         /// <summary>
@@ -77,7 +71,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumNames;
+                return Config.SaverConfig.PersonLookupMinimumNames;
             }
             set
             {
@@ -85,7 +79,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 10;
                 if (value > 1000)
                     value = 1000;
-                _MinimumNames = value;
+                Config.SaverConfig.PersonLookupMinimumNames = value;
             }
         }
         /// <summary>
@@ -95,15 +89,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumNames;
+                return Config.SaverConfig.PersonLookupMaximumNames;
             }
             set
             {
-                if (value <= _MinimumNames)
-                    value = _MinimumNames;
+                if (value <= Config.SaverConfig.PersonLookupMinimumNames)
+                    value = Config.SaverConfig.PersonLookupMinimumNames;
                 if (value > 1000)
                     value = 1000;
-                _MaximumNames = value;
+                Config.SaverConfig.PersonLookupMaximumNames = value;
             }
         }
         /// <summary>
@@ -113,7 +107,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumAgeYears;
+                return Config.SaverConfig.PersonLookupMinimumAgeYears;
             }
             set
             {
@@ -121,7 +115,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 18;
                 if (value > 100)
                     value = 100;
-                _MinimumAgeYears = value;
+                Config.SaverConfig.PersonLookupMinimumAgeYears = value;
             }
         }
         /// <summary>
@@ -131,15 +125,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumAgeYears;
+                return Config.SaverConfig.PersonLookupMaximumAgeYears;
             }
             set
             {
-                if (value <= _MinimumAgeYears)
-                    value = _MinimumAgeYears;
+                if (value <= Config.SaverConfig.PersonLookupMinimumAgeYears)
+                    value = Config.SaverConfig.PersonLookupMinimumAgeYears;
                 if (value > 100)
                     value = 100;
-                _MaximumAgeYears = value;
+                Config.SaverConfig.PersonLookupMaximumAgeYears = value;
             }
         }
 

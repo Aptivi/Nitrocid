@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.IO;
+using KS.Kernel.Configuration;
 using KS.Misc.Editors.JsonShell;
 using KS.Misc.Threading;
 using Newtonsoft.Json;
@@ -46,7 +47,8 @@ namespace KS.Shell.Shells.Json
         /// <summary>
         /// JSON formatting
         /// </summary>
-        public static Formatting JsonShell_Formatting { get; set; } = Formatting.Indented;
+        public static Formatting JsonShell_Formatting =>
+            (Formatting)Config.MainConfig.JsonShell_Formatting;
         /// <summary>
         /// Auto save interval in seconds
         /// </summary>

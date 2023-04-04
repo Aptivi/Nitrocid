@@ -22,6 +22,7 @@ using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
@@ -36,19 +37,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class FigletSettings
     {
 
-        private static bool _TrueColor = true;
-        private static int _Delay = 1000;
-        private static string _Text = "Nitrocid KS";
-        private static string _Font = "Small";
-        private static int _MinimumRedColorLevel = 0;
-        private static int _MinimumGreenColorLevel = 0;
-        private static int _MinimumBlueColorLevel = 0;
-        private static int _MinimumColorLevel = 0;
-        private static int _MaximumRedColorLevel = 255;
-        private static int _MaximumGreenColorLevel = 255;
-        private static int _MaximumBlueColorLevel = 255;
-        private static int _MaximumColorLevel = 255;
-
         /// <summary>
         /// [Figlet] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -56,11 +44,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _TrueColor;
+                return Config.SaverConfig.FigletTrueColor;
             }
             set
             {
-                _TrueColor = value;
+                Config.SaverConfig.FigletTrueColor = value;
             }
         }
         /// <summary>
@@ -70,13 +58,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.FigletDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 1000;
-                _Delay = value;
+                Config.SaverConfig.FigletDelay = value;
             }
         }
         /// <summary>
@@ -86,13 +74,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Text;
+                return Config.SaverConfig.FigletText;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "Nitrocid KS";
-                _Text = value;
+                Config.SaverConfig.FigletText = value;
             }
         }
         /// <summary>
@@ -102,11 +90,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Font;
+                return Config.SaverConfig.FigletFont;
             }
             set
             {
-                _Font = value;
+                Config.SaverConfig.FigletFont = value;
             }
         }
         /// <summary>
@@ -116,7 +104,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumRedColorLevel;
+                return Config.SaverConfig.FigletMinimumRedColorLevel;
             }
             set
             {
@@ -124,7 +112,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumRedColorLevel = value;
+                Config.SaverConfig.FigletMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -134,7 +122,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumGreenColorLevel;
+                return Config.SaverConfig.FigletMinimumGreenColorLevel;
             }
             set
             {
@@ -142,7 +130,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumGreenColorLevel = value;
+                Config.SaverConfig.FigletMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -152,7 +140,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumBlueColorLevel;
+                return Config.SaverConfig.FigletMinimumBlueColorLevel;
             }
             set
             {
@@ -160,7 +148,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumBlueColorLevel = value;
+                Config.SaverConfig.FigletMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -170,7 +158,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumColorLevel;
+                return Config.SaverConfig.FigletMinimumColorLevel;
             }
             set
             {
@@ -179,7 +167,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                _MinimumColorLevel = value;
+                Config.SaverConfig.FigletMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -189,15 +177,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumRedColorLevel;
+                return Config.SaverConfig.FigletMaximumRedColorLevel;
             }
             set
             {
-                if (value <= _MinimumRedColorLevel)
-                    value = _MinimumRedColorLevel;
+                if (value <= Config.SaverConfig.FigletMinimumRedColorLevel)
+                    value = Config.SaverConfig.FigletMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumRedColorLevel = value;
+                Config.SaverConfig.FigletMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -207,15 +195,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumGreenColorLevel;
+                return Config.SaverConfig.FigletMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= _MinimumGreenColorLevel)
-                    value = _MinimumGreenColorLevel;
+                if (value <= Config.SaverConfig.FigletMinimumGreenColorLevel)
+                    value = Config.SaverConfig.FigletMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumGreenColorLevel = value;
+                Config.SaverConfig.FigletMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -225,15 +213,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumBlueColorLevel;
+                return Config.SaverConfig.FigletMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= _MinimumBlueColorLevel)
-                    value = _MinimumBlueColorLevel;
+                if (value <= Config.SaverConfig.FigletMinimumBlueColorLevel)
+                    value = Config.SaverConfig.FigletMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumBlueColorLevel = value;
+                Config.SaverConfig.FigletMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -243,16 +231,16 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumColorLevel;
+                return Config.SaverConfig.FigletMaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= _MinimumColorLevel)
-                    value = _MinimumColorLevel;
+                if (value <= Config.SaverConfig.FigletMinimumColorLevel)
+                    value = Config.SaverConfig.FigletMinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                _MaximumColorLevel = value;
+                Config.SaverConfig.FigletMaximumColorLevel = value;
             }
         }
 

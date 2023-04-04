@@ -19,6 +19,7 @@
 using ColorSeq;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
@@ -31,10 +32,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class GlitterMatrixSettings
     {
 
-        private static int _Delay = 1;
-        private static string _BackgroundColor = new Color(ConsoleColors.Black).PlainSequence;
-        private static string _ForegroundColor = new Color(ConsoleColors.Green).PlainSequence;
-
         /// <summary>
         /// [GlitterMatrix] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -42,13 +39,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.GlitterMatrixDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 1;
-                _Delay = value;
+                Config.SaverConfig.GlitterMatrixDelay = value;
             }
         }
         /// <summary>
@@ -58,11 +55,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _BackgroundColor;
+                return Config.SaverConfig.GlitterMatrixBackgroundColor;
             }
             set
             {
-                _BackgroundColor = new Color(value).PlainSequence;
+                Config.SaverConfig.GlitterMatrixBackgroundColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -72,11 +69,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _ForegroundColor;
+                return Config.SaverConfig.GlitterMatrixForegroundColor;
             }
             set
             {
-                _ForegroundColor = new Color(value).PlainSequence;
+                Config.SaverConfig.GlitterMatrixForegroundColor = new Color(value).PlainSequence;
             }
         }
 

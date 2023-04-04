@@ -32,7 +32,7 @@ namespace KS.Languages
         /// <param name="text">Any string that exists in Nitrocid KS's translation files</param>
         /// <returns>Translated string</returns>
         public static string DoTranslation(string text) =>
-            DoTranslation(text, LanguageManager.CurrentLanguage);
+            DoTranslation(text, LanguageManager.CurrentLanguageInfo);
 
         /// <summary>
         /// Translates string into another language, or to English if the language wasn't specified or if it's invalid.

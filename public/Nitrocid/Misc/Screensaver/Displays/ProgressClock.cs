@@ -21,6 +21,7 @@ using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Probers.Placeholder;
 using KS.Misc.Threading;
@@ -35,74 +36,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class ProgressClockSettings
     {
 
-        private static bool _TrueColor = true;
-        private static bool _CycleColors = true;
-        private static string _SecondsProgressColor = 4.ToString();
-        private static string _MinutesProgressColor = 5.ToString();
-        private static string _HoursProgressColor = 6.ToString();
-        private static string _ProgressColor = 7.ToString();
-        private static long _CycleColorsTicks = 20L;
-        private static int _Delay = 500;
-        private static string _UpperLeftCornerCharHours = "╔";
-        private static string _UpperLeftCornerCharMinutes = "╔";
-        private static string _UpperLeftCornerCharSeconds = "╔";
-        private static string _UpperRightCornerCharHours = "╗";
-        private static string _UpperRightCornerCharMinutes = "╗";
-        private static string _UpperRightCornerCharSeconds = "╗";
-        private static string _LowerLeftCornerCharHours = "╚";
-        private static string _LowerLeftCornerCharMinutes = "╚";
-        private static string _LowerLeftCornerCharSeconds = "╚";
-        private static string _LowerRightCornerCharHours = "╝";
-        private static string _LowerRightCornerCharMinutes = "╝";
-        private static string _LowerRightCornerCharSeconds = "╝";
-        private static string _UpperFrameCharHours = "═";
-        private static string _UpperFrameCharMinutes = "═";
-        private static string _UpperFrameCharSeconds = "═";
-        private static string _LowerFrameCharHours = "═";
-        private static string _LowerFrameCharMinutes = "═";
-        private static string _LowerFrameCharSeconds = "═";
-        private static string _LeftFrameCharHours = "║";
-        private static string _LeftFrameCharMinutes = "║";
-        private static string _LeftFrameCharSeconds = "║";
-        private static string _RightFrameCharHours = "║";
-        private static string _RightFrameCharMinutes = "║";
-        private static string _RightFrameCharSeconds = "║";
-        private static string _InfoTextHours = "";
-        private static string _InfoTextMinutes = "";
-        private static string _InfoTextSeconds = "";
-        private static int _MinimumRedColorLevelHours = 0;
-        private static int _MinimumGreenColorLevelHours = 0;
-        private static int _MinimumBlueColorLevelHours = 0;
-        private static int _MinimumColorLevelHours = 0;
-        private static int _MaximumRedColorLevelHours = 255;
-        private static int _MaximumGreenColorLevelHours = 255;
-        private static int _MaximumBlueColorLevelHours = 255;
-        private static int _MaximumColorLevelHours = 255;
-        private static int _MinimumRedColorLevelMinutes = 0;
-        private static int _MinimumGreenColorLevelMinutes = 0;
-        private static int _MinimumBlueColorLevelMinutes = 0;
-        private static int _MinimumColorLevelMinutes = 0;
-        private static int _MaximumRedColorLevelMinutes = 255;
-        private static int _MaximumGreenColorLevelMinutes = 255;
-        private static int _MaximumBlueColorLevelMinutes = 255;
-        private static int _MaximumColorLevelMinutes = 255;
-        private static int _MinimumRedColorLevelSeconds = 0;
-        private static int _MinimumGreenColorLevelSeconds = 0;
-        private static int _MinimumBlueColorLevelSeconds = 0;
-        private static int _MinimumColorLevelSeconds = 0;
-        private static int _MaximumRedColorLevelSeconds = 255;
-        private static int _MaximumGreenColorLevelSeconds = 255;
-        private static int _MaximumBlueColorLevelSeconds = 255;
-        private static int _MaximumColorLevelSeconds = 255;
-        private static int _MinimumRedColorLevel = 0;
-        private static int _MinimumGreenColorLevel = 0;
-        private static int _MinimumBlueColorLevel = 0;
-        private static int _MinimumColorLevel = 0;
-        private static int _MaximumRedColorLevel = 255;
-        private static int _MaximumGreenColorLevel = 255;
-        private static int _MaximumBlueColorLevel = 255;
-        private static int _MaximumColorLevel = 255;
-
         /// <summary>
         /// [ProgressClock] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -110,11 +43,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _TrueColor;
+                return Config.SaverConfig.ProgressClockTrueColor;
             }
             set
             {
-                _TrueColor = value;
+                Config.SaverConfig.ProgressClockTrueColor = value;
             }
         }
         /// <summary>
@@ -124,11 +57,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _CycleColors;
+                return Config.SaverConfig.ProgressClockCycleColors;
             }
             set
             {
-                _CycleColors = value;
+                Config.SaverConfig.ProgressClockCycleColors = value;
             }
         }
         /// <summary>
@@ -138,11 +71,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _SecondsProgressColor;
+                return Config.SaverConfig.ProgressClockSecondsProgressColor;
             }
             set
             {
-                _SecondsProgressColor = new Color(value).PlainSequence;
+                Config.SaverConfig.ProgressClockSecondsProgressColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -152,11 +85,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinutesProgressColor;
+                return Config.SaverConfig.ProgressClockMinutesProgressColor;
             }
             set
             {
-                _MinutesProgressColor = new Color(value).PlainSequence;
+                Config.SaverConfig.ProgressClockMinutesProgressColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -166,11 +99,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _HoursProgressColor;
+                return Config.SaverConfig.ProgressClockHoursProgressColor;
             }
             set
             {
-                _HoursProgressColor = new Color(value).PlainSequence;
+                Config.SaverConfig.ProgressClockHoursProgressColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -180,11 +113,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _ProgressColor;
+                return Config.SaverConfig.ProgressClockProgressColor;
             }
             set
             {
-                _ProgressColor = new Color(value).PlainSequence;
+                Config.SaverConfig.ProgressClockProgressColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -194,13 +127,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _CycleColorsTicks;
+                return Config.SaverConfig.ProgressClockCycleColorsTicks;
             }
             set
             {
                 if (value <= 0L)
                     value = 20L;
-                _CycleColorsTicks = value;
+                Config.SaverConfig.ProgressClockCycleColorsTicks = (int)value;
             }
         }
         /// <summary>
@@ -210,13 +143,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.ProgressClockDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 500;
-                _Delay = value;
+                Config.SaverConfig.ProgressClockDelay = value;
             }
         }
         /// <summary>
@@ -226,13 +159,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _UpperLeftCornerCharHours;
+                return Config.SaverConfig.ProgressClockUpperLeftCornerCharHours;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "╔";
-                _UpperLeftCornerCharHours = value;
+                Config.SaverConfig.ProgressClockUpperLeftCornerCharHours = value;
             }
         }
         /// <summary>
@@ -242,13 +175,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _UpperLeftCornerCharMinutes;
+                return Config.SaverConfig.ProgressClockUpperLeftCornerCharMinutes;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "╔";
-                _UpperLeftCornerCharMinutes = value;
+                Config.SaverConfig.ProgressClockUpperLeftCornerCharMinutes = value;
             }
         }
         /// <summary>
@@ -258,13 +191,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _UpperLeftCornerCharSeconds;
+                return Config.SaverConfig.ProgressClockUpperLeftCornerCharSeconds;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "╔";
-                _UpperLeftCornerCharSeconds = value;
+                Config.SaverConfig.ProgressClockUpperLeftCornerCharSeconds = value;
             }
         }
         /// <summary>
@@ -274,13 +207,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _UpperRightCornerCharHours;
+                return Config.SaverConfig.ProgressClockUpperRightCornerCharHours;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "╗";
-                _UpperRightCornerCharHours = value;
+                Config.SaverConfig.ProgressClockUpperRightCornerCharHours = value;
             }
         }
         /// <summary>
@@ -290,13 +223,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _UpperRightCornerCharMinutes;
+                return Config.SaverConfig.ProgressClockUpperRightCornerCharMinutes;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "╗";
-                _UpperRightCornerCharMinutes = value;
+                Config.SaverConfig.ProgressClockUpperRightCornerCharMinutes = value;
             }
         }
         /// <summary>
@@ -306,13 +239,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _UpperRightCornerCharSeconds;
+                return Config.SaverConfig.ProgressClockUpperRightCornerCharSeconds;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "╗";
-                _UpperRightCornerCharSeconds = value;
+                Config.SaverConfig.ProgressClockUpperRightCornerCharSeconds = value;
             }
         }
         /// <summary>
@@ -322,13 +255,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _LowerLeftCornerCharHours;
+                return Config.SaverConfig.ProgressClockLowerLeftCornerCharHours;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "╚";
-                _LowerLeftCornerCharHours = value;
+                Config.SaverConfig.ProgressClockLowerLeftCornerCharHours = value;
             }
         }
         /// <summary>
@@ -338,13 +271,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _LowerLeftCornerCharMinutes;
+                return Config.SaverConfig.ProgressClockLowerLeftCornerCharMinutes;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "╚";
-                _LowerLeftCornerCharMinutes = value;
+                Config.SaverConfig.ProgressClockLowerLeftCornerCharMinutes = value;
             }
         }
         /// <summary>
@@ -354,13 +287,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _LowerLeftCornerCharSeconds;
+                return Config.SaverConfig.ProgressClockLowerLeftCornerCharSeconds;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "╚";
-                _LowerLeftCornerCharSeconds = value;
+                Config.SaverConfig.ProgressClockLowerLeftCornerCharSeconds = value;
             }
         }
         /// <summary>
@@ -370,13 +303,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _LowerRightCornerCharHours;
+                return Config.SaverConfig.ProgressClockLowerRightCornerCharHours;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "╝";
-                _LowerRightCornerCharHours = value;
+                Config.SaverConfig.ProgressClockLowerRightCornerCharHours = value;
             }
         }
         /// <summary>
@@ -386,13 +319,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _LowerRightCornerCharMinutes;
+                return Config.SaverConfig.ProgressClockLowerRightCornerCharMinutes;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "╝";
-                _LowerRightCornerCharMinutes = value;
+                Config.SaverConfig.ProgressClockLowerRightCornerCharMinutes = value;
             }
         }
         /// <summary>
@@ -402,13 +335,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _LowerRightCornerCharSeconds;
+                return Config.SaverConfig.ProgressClockLowerRightCornerCharSeconds;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "╝";
-                _LowerRightCornerCharSeconds = value;
+                Config.SaverConfig.ProgressClockLowerRightCornerCharSeconds = value;
             }
         }
         /// <summary>
@@ -418,13 +351,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _UpperFrameCharHours;
+                return Config.SaverConfig.ProgressClockUpperFrameCharHours;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "═";
-                _UpperFrameCharHours = value;
+                Config.SaverConfig.ProgressClockUpperFrameCharHours = value;
             }
         }
         /// <summary>
@@ -434,13 +367,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _UpperFrameCharMinutes;
+                return Config.SaverConfig.ProgressClockUpperFrameCharMinutes;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "═";
-                _UpperFrameCharMinutes = value;
+                Config.SaverConfig.ProgressClockUpperFrameCharMinutes = value;
             }
         }
         /// <summary>
@@ -450,13 +383,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _UpperFrameCharSeconds;
+                return Config.SaverConfig.ProgressClockUpperFrameCharSeconds;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "═";
-                _UpperFrameCharSeconds = value;
+                Config.SaverConfig.ProgressClockUpperFrameCharSeconds = value;
             }
         }
         /// <summary>
@@ -466,13 +399,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _LowerFrameCharHours;
+                return Config.SaverConfig.ProgressClockLowerFrameCharHours;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "═";
-                _LowerFrameCharHours = value;
+                Config.SaverConfig.ProgressClockLowerFrameCharHours = value;
             }
         }
         /// <summary>
@@ -482,13 +415,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _LowerFrameCharMinutes;
+                return Config.SaverConfig.ProgressClockLowerFrameCharMinutes;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "═";
-                _LowerFrameCharMinutes = value;
+                Config.SaverConfig.ProgressClockLowerFrameCharMinutes = value;
             }
         }
         /// <summary>
@@ -498,13 +431,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _LowerFrameCharSeconds;
+                return Config.SaverConfig.ProgressClockLowerFrameCharSeconds;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "═";
-                _LowerFrameCharSeconds = value;
+                Config.SaverConfig.ProgressClockLowerFrameCharSeconds = value;
             }
         }
         /// <summary>
@@ -514,13 +447,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _LeftFrameCharHours;
+                return Config.SaverConfig.ProgressClockLeftFrameCharHours;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "║";
-                _LeftFrameCharHours = value;
+                Config.SaverConfig.ProgressClockLeftFrameCharHours = value;
             }
         }
         /// <summary>
@@ -530,13 +463,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _LeftFrameCharMinutes;
+                return Config.SaverConfig.ProgressClockLeftFrameCharMinutes;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "║";
-                _LeftFrameCharMinutes = value;
+                Config.SaverConfig.ProgressClockLeftFrameCharMinutes = value;
             }
         }
         /// <summary>
@@ -546,13 +479,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _LeftFrameCharSeconds;
+                return Config.SaverConfig.ProgressClockLeftFrameCharSeconds;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "║";
-                _LeftFrameCharSeconds = value;
+                Config.SaverConfig.ProgressClockLeftFrameCharSeconds = value;
             }
         }
         /// <summary>
@@ -562,13 +495,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _RightFrameCharHours;
+                return Config.SaverConfig.ProgressClockRightFrameCharHours;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "║";
-                _RightFrameCharHours = value;
+                Config.SaverConfig.ProgressClockRightFrameCharHours = value;
             }
         }
         /// <summary>
@@ -578,13 +511,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _RightFrameCharMinutes;
+                return Config.SaverConfig.ProgressClockRightFrameCharMinutes;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "║";
-                _RightFrameCharMinutes = value;
+                Config.SaverConfig.ProgressClockRightFrameCharMinutes = value;
             }
         }
         /// <summary>
@@ -594,13 +527,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _RightFrameCharSeconds;
+                return Config.SaverConfig.ProgressClockRightFrameCharSeconds;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "║";
-                _RightFrameCharSeconds = value;
+                Config.SaverConfig.ProgressClockRightFrameCharSeconds = value;
             }
         }
         /// <summary>
@@ -610,11 +543,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _InfoTextHours;
+                return Config.SaverConfig.ProgressClockInfoTextHours;
             }
             set
             {
-                _InfoTextHours = value;
+                Config.SaverConfig.ProgressClockInfoTextHours = value;
             }
         }
         /// <summary>
@@ -624,11 +557,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _InfoTextMinutes;
+                return Config.SaverConfig.ProgressClockInfoTextMinutes;
             }
             set
             {
-                _InfoTextMinutes = value;
+                Config.SaverConfig.ProgressClockInfoTextMinutes = value;
             }
         }
         /// <summary>
@@ -638,11 +571,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _InfoTextSeconds;
+                return Config.SaverConfig.ProgressClockInfoTextSeconds;
             }
             set
             {
-                _InfoTextSeconds = value;
+                Config.SaverConfig.ProgressClockInfoTextSeconds = value;
             }
         }
         /// <summary>
@@ -652,7 +585,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumRedColorLevelHours;
+                return Config.SaverConfig.ProgressClockMinimumRedColorLevelHours;
             }
             set
             {
@@ -660,7 +593,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumRedColorLevelHours = value;
+                Config.SaverConfig.ProgressClockMinimumRedColorLevelHours = value;
             }
         }
         /// <summary>
@@ -670,7 +603,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumGreenColorLevelHours;
+                return Config.SaverConfig.ProgressClockMinimumGreenColorLevelHours;
             }
             set
             {
@@ -678,7 +611,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumGreenColorLevelHours = value;
+                Config.SaverConfig.ProgressClockMinimumGreenColorLevelHours = value;
             }
         }
         /// <summary>
@@ -688,7 +621,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumBlueColorLevelHours;
+                return Config.SaverConfig.ProgressClockMinimumBlueColorLevelHours;
             }
             set
             {
@@ -696,7 +629,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumBlueColorLevelHours = value;
+                Config.SaverConfig.ProgressClockMinimumBlueColorLevelHours = value;
             }
         }
         /// <summary>
@@ -706,7 +639,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumColorLevelHours;
+                return Config.SaverConfig.ProgressClockMinimumColorLevelHours;
             }
             set
             {
@@ -715,7 +648,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                _MinimumColorLevelHours = value;
+                Config.SaverConfig.ProgressClockMinimumColorLevelHours = value;
             }
         }
         /// <summary>
@@ -725,15 +658,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumRedColorLevelHours;
+                return Config.SaverConfig.ProgressClockMaximumRedColorLevelHours;
             }
             set
             {
-                if (value <= _MinimumRedColorLevelHours)
-                    value = _MinimumRedColorLevelHours;
+                if (value <= Config.SaverConfig.ProgressClockMinimumRedColorLevelHours)
+                    value = Config.SaverConfig.ProgressClockMinimumRedColorLevelHours;
                 if (value > 255)
                     value = 255;
-                _MaximumRedColorLevelHours = value;
+                Config.SaverConfig.ProgressClockMaximumRedColorLevelHours = value;
             }
         }
         /// <summary>
@@ -743,15 +676,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumGreenColorLevelHours;
+                return Config.SaverConfig.ProgressClockMaximumGreenColorLevelHours;
             }
             set
             {
-                if (value <= _MinimumGreenColorLevelHours)
-                    value = _MinimumGreenColorLevelHours;
+                if (value <= Config.SaverConfig.ProgressClockMinimumGreenColorLevelHours)
+                    value = Config.SaverConfig.ProgressClockMinimumGreenColorLevelHours;
                 if (value > 255)
                     value = 255;
-                _MaximumGreenColorLevelHours = value;
+                Config.SaverConfig.ProgressClockMaximumGreenColorLevelHours = value;
             }
         }
         /// <summary>
@@ -761,15 +694,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumBlueColorLevelHours;
+                return Config.SaverConfig.ProgressClockMaximumBlueColorLevelHours;
             }
             set
             {
-                if (value <= _MinimumBlueColorLevelHours)
-                    value = _MinimumBlueColorLevelHours;
+                if (value <= Config.SaverConfig.ProgressClockMinimumBlueColorLevelHours)
+                    value = Config.SaverConfig.ProgressClockMinimumBlueColorLevelHours;
                 if (value > 255)
                     value = 255;
-                _MaximumBlueColorLevelHours = value;
+                Config.SaverConfig.ProgressClockMaximumBlueColorLevelHours = value;
             }
         }
         /// <summary>
@@ -779,16 +712,16 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumColorLevelHours;
+                return Config.SaverConfig.ProgressClockMaximumColorLevelHours;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= _MinimumColorLevelHours)
-                    value = _MinimumColorLevelHours;
+                if (value <= Config.SaverConfig.ProgressClockMinimumColorLevelHours)
+                    value = Config.SaverConfig.ProgressClockMinimumColorLevelHours;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                _MaximumColorLevelHours = value;
+                Config.SaverConfig.ProgressClockMaximumColorLevelHours = value;
             }
         }
         /// <summary>
@@ -798,7 +731,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumRedColorLevelMinutes;
+                return Config.SaverConfig.ProgressClockMinimumRedColorLevelMinutes;
             }
             set
             {
@@ -806,7 +739,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumRedColorLevelMinutes = value;
+                Config.SaverConfig.ProgressClockMinimumRedColorLevelMinutes = value;
             }
         }
         /// <summary>
@@ -816,7 +749,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumGreenColorLevelMinutes;
+                return Config.SaverConfig.ProgressClockMinimumGreenColorLevelMinutes;
             }
             set
             {
@@ -824,7 +757,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumGreenColorLevelMinutes = value;
+                Config.SaverConfig.ProgressClockMinimumGreenColorLevelMinutes = value;
             }
         }
         /// <summary>
@@ -834,7 +767,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumBlueColorLevelMinutes;
+                return Config.SaverConfig.ProgressClockMinimumBlueColorLevelMinutes;
             }
             set
             {
@@ -842,7 +775,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumBlueColorLevelMinutes = value;
+                Config.SaverConfig.ProgressClockMinimumBlueColorLevelMinutes = value;
             }
         }
         /// <summary>
@@ -852,7 +785,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumColorLevelMinutes;
+                return Config.SaverConfig.ProgressClockMinimumColorLevelMinutes;
             }
             set
             {
@@ -861,7 +794,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                _MinimumColorLevelMinutes = value;
+                Config.SaverConfig.ProgressClockMinimumColorLevelMinutes = value;
             }
         }
         /// <summary>
@@ -871,15 +804,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumRedColorLevelMinutes;
+                return Config.SaverConfig.ProgressClockMaximumRedColorLevelMinutes;
             }
             set
             {
-                if (value <= _MinimumRedColorLevelMinutes)
-                    value = _MinimumRedColorLevelMinutes;
+                if (value <= Config.SaverConfig.ProgressClockMinimumRedColorLevelMinutes)
+                    value = Config.SaverConfig.ProgressClockMinimumRedColorLevelMinutes;
                 if (value > 255)
                     value = 255;
-                _MaximumRedColorLevelMinutes = value;
+                Config.SaverConfig.ProgressClockMaximumRedColorLevelMinutes = value;
             }
         }
         /// <summary>
@@ -889,15 +822,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumGreenColorLevelMinutes;
+                return Config.SaverConfig.ProgressClockMaximumGreenColorLevelMinutes;
             }
             set
             {
-                if (value <= _MinimumGreenColorLevelMinutes)
-                    value = _MinimumGreenColorLevelMinutes;
+                if (value <= Config.SaverConfig.ProgressClockMinimumGreenColorLevelMinutes)
+                    value = Config.SaverConfig.ProgressClockMinimumGreenColorLevelMinutes;
                 if (value > 255)
                     value = 255;
-                _MaximumGreenColorLevelMinutes = value;
+                Config.SaverConfig.ProgressClockMaximumGreenColorLevelMinutes = value;
             }
         }
         /// <summary>
@@ -907,15 +840,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumBlueColorLevelMinutes;
+                return Config.SaverConfig.ProgressClockMaximumBlueColorLevelMinutes;
             }
             set
             {
-                if (value <= _MinimumBlueColorLevelMinutes)
-                    value = _MinimumBlueColorLevelMinutes;
+                if (value <= Config.SaverConfig.ProgressClockMinimumBlueColorLevelMinutes)
+                    value = Config.SaverConfig.ProgressClockMinimumBlueColorLevelMinutes;
                 if (value > 255)
                     value = 255;
-                _MaximumBlueColorLevelMinutes = value;
+                Config.SaverConfig.ProgressClockMaximumBlueColorLevelMinutes = value;
             }
         }
         /// <summary>
@@ -925,16 +858,16 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumColorLevelMinutes;
+                return Config.SaverConfig.ProgressClockMaximumColorLevelMinutes;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= _MinimumColorLevelMinutes)
-                    value = _MinimumColorLevelMinutes;
+                if (value <= Config.SaverConfig.ProgressClockMinimumColorLevelMinutes)
+                    value = Config.SaverConfig.ProgressClockMinimumColorLevelMinutes;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                _MaximumColorLevelMinutes = value;
+                Config.SaverConfig.ProgressClockMaximumColorLevelMinutes = value;
             }
         }
         /// <summary>
@@ -944,7 +877,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumRedColorLevelSeconds;
+                return Config.SaverConfig.ProgressClockMinimumRedColorLevelSeconds;
             }
             set
             {
@@ -952,7 +885,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumRedColorLevelSeconds = value;
+                Config.SaverConfig.ProgressClockMinimumRedColorLevelSeconds = value;
             }
         }
         /// <summary>
@@ -962,7 +895,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumGreenColorLevelSeconds;
+                return Config.SaverConfig.ProgressClockMinimumGreenColorLevelSeconds;
             }
             set
             {
@@ -970,7 +903,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumGreenColorLevelSeconds = value;
+                Config.SaverConfig.ProgressClockMinimumGreenColorLevelSeconds = value;
             }
         }
         /// <summary>
@@ -980,7 +913,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumBlueColorLevelSeconds;
+                return Config.SaverConfig.ProgressClockMinimumBlueColorLevelSeconds;
             }
             set
             {
@@ -988,7 +921,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumBlueColorLevelSeconds = value;
+                Config.SaverConfig.ProgressClockMinimumBlueColorLevelSeconds = value;
             }
         }
         /// <summary>
@@ -998,7 +931,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumColorLevelSeconds;
+                return Config.SaverConfig.ProgressClockMinimumColorLevelSeconds;
             }
             set
             {
@@ -1007,7 +940,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                _MinimumColorLevelSeconds = value;
+                Config.SaverConfig.ProgressClockMinimumColorLevelSeconds = value;
             }
         }
         /// <summary>
@@ -1017,15 +950,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumRedColorLevelSeconds;
+                return Config.SaverConfig.ProgressClockMaximumRedColorLevelSeconds;
             }
             set
             {
-                if (value <= _MinimumRedColorLevelSeconds)
-                    value = _MinimumRedColorLevelSeconds;
+                if (value <= Config.SaverConfig.ProgressClockMinimumRedColorLevelSeconds)
+                    value = Config.SaverConfig.ProgressClockMinimumRedColorLevelSeconds;
                 if (value > 255)
                     value = 255;
-                _MaximumRedColorLevelSeconds = value;
+                Config.SaverConfig.ProgressClockMaximumRedColorLevelSeconds = value;
             }
         }
         /// <summary>
@@ -1035,15 +968,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumGreenColorLevelSeconds;
+                return Config.SaverConfig.ProgressClockMaximumGreenColorLevelSeconds;
             }
             set
             {
-                if (value <= _MinimumGreenColorLevelSeconds)
-                    value = _MinimumGreenColorLevelSeconds;
+                if (value <= Config.SaverConfig.ProgressClockMinimumGreenColorLevelSeconds)
+                    value = Config.SaverConfig.ProgressClockMinimumGreenColorLevelSeconds;
                 if (value > 255)
                     value = 255;
-                _MaximumGreenColorLevelSeconds = value;
+                Config.SaverConfig.ProgressClockMaximumGreenColorLevelSeconds = value;
             }
         }
         /// <summary>
@@ -1053,15 +986,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumBlueColorLevelSeconds;
+                return Config.SaverConfig.ProgressClockMaximumBlueColorLevelSeconds;
             }
             set
             {
-                if (value <= _MinimumBlueColorLevelSeconds)
-                    value = _MinimumBlueColorLevelSeconds;
+                if (value <= Config.SaverConfig.ProgressClockMinimumBlueColorLevelSeconds)
+                    value = Config.SaverConfig.ProgressClockMinimumBlueColorLevelSeconds;
                 if (value > 255)
                     value = 255;
-                _MaximumBlueColorLevelSeconds = value;
+                Config.SaverConfig.ProgressClockMaximumBlueColorLevelSeconds = value;
             }
         }
         /// <summary>
@@ -1071,16 +1004,16 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumColorLevelSeconds;
+                return Config.SaverConfig.ProgressClockMaximumColorLevelSeconds;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= _MinimumColorLevelSeconds)
-                    value = _MinimumColorLevelSeconds;
+                if (value <= Config.SaverConfig.ProgressClockMinimumColorLevelSeconds)
+                    value = Config.SaverConfig.ProgressClockMinimumColorLevelSeconds;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                _MaximumColorLevelSeconds = value;
+                Config.SaverConfig.ProgressClockMaximumColorLevelSeconds = value;
             }
         }
         /// <summary>
@@ -1090,7 +1023,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumRedColorLevel;
+                return Config.SaverConfig.ProgressClockMinimumRedColorLevel;
             }
             set
             {
@@ -1098,7 +1031,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumRedColorLevel = value;
+                Config.SaverConfig.ProgressClockMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -1108,7 +1041,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumGreenColorLevel;
+                return Config.SaverConfig.ProgressClockMinimumGreenColorLevel;
             }
             set
             {
@@ -1116,7 +1049,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumGreenColorLevel = value;
+                Config.SaverConfig.ProgressClockMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -1126,7 +1059,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumBlueColorLevel;
+                return Config.SaverConfig.ProgressClockMinimumBlueColorLevel;
             }
             set
             {
@@ -1134,7 +1067,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumBlueColorLevel = value;
+                Config.SaverConfig.ProgressClockMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -1144,7 +1077,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumColorLevel;
+                return Config.SaverConfig.ProgressClockMinimumColorLevel;
             }
             set
             {
@@ -1153,7 +1086,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                _MinimumColorLevel = value;
+                Config.SaverConfig.ProgressClockMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -1163,15 +1096,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumRedColorLevel;
+                return Config.SaverConfig.ProgressClockMaximumRedColorLevel;
             }
             set
             {
-                if (value <= _MinimumRedColorLevel)
-                    value = _MinimumRedColorLevel;
+                if (value <= Config.SaverConfig.ProgressClockMinimumRedColorLevel)
+                    value = Config.SaverConfig.ProgressClockMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumRedColorLevel = value;
+                Config.SaverConfig.ProgressClockMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -1181,15 +1114,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumGreenColorLevel;
+                return Config.SaverConfig.ProgressClockMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= _MinimumGreenColorLevel)
-                    value = _MinimumGreenColorLevel;
+                if (value <= Config.SaverConfig.ProgressClockMinimumGreenColorLevel)
+                    value = Config.SaverConfig.ProgressClockMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumGreenColorLevel = value;
+                Config.SaverConfig.ProgressClockMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -1199,15 +1132,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumBlueColorLevel;
+                return Config.SaverConfig.ProgressClockMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= _MinimumBlueColorLevel)
-                    value = _MinimumBlueColorLevel;
+                if (value <= Config.SaverConfig.ProgressClockMinimumBlueColorLevel)
+                    value = Config.SaverConfig.ProgressClockMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumBlueColorLevel = value;
+                Config.SaverConfig.ProgressClockMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -1217,16 +1150,16 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumColorLevel;
+                return Config.SaverConfig.ProgressClockMaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= _MinimumColorLevel)
-                    value = _MinimumColorLevel;
+                if (value <= Config.SaverConfig.ProgressClockMinimumColorLevel)
+                    value = Config.SaverConfig.ProgressClockMinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                _MaximumColorLevel = value;
+                Config.SaverConfig.ProgressClockMaximumColorLevel = value;
             }
         }
 

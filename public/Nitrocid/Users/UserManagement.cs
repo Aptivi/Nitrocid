@@ -34,6 +34,7 @@ using KS.Kernel.Events;
 using KS.Users.Login;
 using KS.Users.Permissions;
 using KS.Misc.Probers.Regexp;
+using KS.Kernel.Configuration;
 
 namespace KS.Users
 {
@@ -43,19 +44,19 @@ namespace KS.Users
     public static class UserManagement
     {
 
+        internal static JArray UsersToken;
+
         // Variables
         /// <summary>
         /// Include anonymous users in list
         /// </summary>
-        public static bool IncludeAnonymous { set; get; }
+        public static bool IncludeAnonymous =>
+            Config.MainConfig.IncludeAnonymous;
         /// <summary>
         /// Include disabled users in list
         /// </summary>
-        public static bool IncludeDisabled { set; get; }
-        /// <summary>
-        /// The users token
-        /// </summary>
-        internal static JArray UsersToken;
+        public static bool IncludeDisabled =>
+            Config.MainConfig.IncludeDisabled;
 
         /// <summary>
         /// A user property

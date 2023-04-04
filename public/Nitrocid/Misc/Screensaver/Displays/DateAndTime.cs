@@ -19,6 +19,7 @@
 using System;
 using ColorSeq;
 using KS.Drivers.RNG;
+using KS.Kernel.Configuration;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.TimeDate;
@@ -32,17 +33,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class DateAndTimeSettings
     {
 
-        private static bool _TrueColor = true;
-        private static int _Delay = 1000;
-        private static int _MinimumRedColorLevel = 0;
-        private static int _MinimumGreenColorLevel = 0;
-        private static int _MinimumBlueColorLevel = 0;
-        private static int _MinimumColorLevel = 0;
-        private static int _MaximumRedColorLevel = 255;
-        private static int _MaximumGreenColorLevel = 255;
-        private static int _MaximumBlueColorLevel = 255;
-        private static int _MaximumColorLevel = 255;
-
         /// <summary>
         /// [DateAndTime] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -50,11 +40,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _TrueColor;
+                return Config.SaverConfig.DateAndTimeTrueColor;
             }
             set
             {
-                _TrueColor = value;
+                Config.SaverConfig.DateAndTimeTrueColor = value;
             }
         }
         /// <summary>
@@ -64,13 +54,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.DateAndTimeDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 1000;
-                _Delay = value;
+                Config.SaverConfig.DateAndTimeDelay = value;
             }
         }
         /// <summary>
@@ -80,7 +70,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumRedColorLevel;
+                return Config.SaverConfig.DateAndTimeMinimumRedColorLevel;
             }
             set
             {
@@ -88,7 +78,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumRedColorLevel = value;
+                Config.SaverConfig.DateAndTimeMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -98,7 +88,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumGreenColorLevel;
+                return Config.SaverConfig.DateAndTimeMinimumGreenColorLevel;
             }
             set
             {
@@ -106,7 +96,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumGreenColorLevel = value;
+                Config.SaverConfig.DateAndTimeMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -116,7 +106,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumBlueColorLevel;
+                return Config.SaverConfig.DateAndTimeMinimumBlueColorLevel;
             }
             set
             {
@@ -124,7 +114,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumBlueColorLevel = value;
+                Config.SaverConfig.DateAndTimeMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -134,7 +124,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumColorLevel;
+                return Config.SaverConfig.DateAndTimeMinimumColorLevel;
             }
             set
             {
@@ -143,7 +133,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                _MinimumColorLevel = value;
+                Config.SaverConfig.DateAndTimeMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -153,15 +143,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumRedColorLevel;
+                return Config.SaverConfig.DateAndTimeMaximumRedColorLevel;
             }
             set
             {
-                if (value <= _MinimumRedColorLevel)
-                    value = _MinimumRedColorLevel;
+                if (value <= Config.SaverConfig.DateAndTimeMinimumRedColorLevel)
+                    value = Config.SaverConfig.DateAndTimeMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumRedColorLevel = value;
+                Config.SaverConfig.DateAndTimeMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -171,15 +161,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumGreenColorLevel;
+                return Config.SaverConfig.DateAndTimeMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= _MinimumGreenColorLevel)
-                    value = _MinimumGreenColorLevel;
+                if (value <= Config.SaverConfig.DateAndTimeMinimumGreenColorLevel)
+                    value = Config.SaverConfig.DateAndTimeMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumGreenColorLevel = value;
+                Config.SaverConfig.DateAndTimeMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -189,15 +179,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumBlueColorLevel;
+                return Config.SaverConfig.DateAndTimeMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= _MinimumBlueColorLevel)
-                    value = _MinimumBlueColorLevel;
+                if (value <= Config.SaverConfig.DateAndTimeMinimumBlueColorLevel)
+                    value = Config.SaverConfig.DateAndTimeMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumBlueColorLevel = value;
+                Config.SaverConfig.DateAndTimeMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -207,16 +197,16 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumColorLevel;
+                return Config.SaverConfig.DateAndTimeMaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= _MinimumColorLevel)
-                    value = _MinimumColorLevel;
+                if (value <= Config.SaverConfig.DateAndTimeMinimumColorLevel)
+                    value = Config.SaverConfig.DateAndTimeMinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                _MaximumColorLevel = value;
+                Config.SaverConfig.DateAndTimeMaximumColorLevel = value;
             }
         }
 

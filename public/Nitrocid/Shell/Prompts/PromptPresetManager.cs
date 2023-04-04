@@ -115,57 +115,57 @@ namespace KS.Shell.Prompts
             {
                 case "Shell":
                     {
-                        ConfigTools.SetConfigValue(ConfigCategory.Shell, "Prompt Preset", PresetName);
+                        Config.MainConfig.PromptPreset = PresetName;
                         break;
                     }
                 case "TextShell":
                     {
-                        ConfigTools.SetConfigValue(ConfigCategory.Shell, "Text Edit Prompt Preset", PresetName);
+                        Config.MainConfig.TextEditPromptPreset = PresetName;
                         break;
                     }
                 case "SFTPShell":
                     {
-                        ConfigTools.SetConfigValue(ConfigCategory.Shell, "SFTP Prompt Preset", PresetName);
+                        Config.MainConfig.SFTPPromptPreset = PresetName;
                         break;
                     }
                 case "RSSShell":
                     {
-                        ConfigTools.SetConfigValue(ConfigCategory.Shell, "RSS Prompt Preset", PresetName);
+                        Config.MainConfig.RSSPromptPreset = PresetName;
                         break;
                     }
                 case "MailShell":
                     {
-                        ConfigTools.SetConfigValue(ConfigCategory.Shell, "Mail Prompt Preset", PresetName);
+                        Config.MainConfig.MailPromptPreset = PresetName;
                         break;
                     }
                 case "JsonShell":
                     {
-                        ConfigTools.SetConfigValue(ConfigCategory.Shell, "JSON Shell Prompt Preset", PresetName);
+                        Config.MainConfig.JSONShellPromptPreset = PresetName;
                         break;
                     }
                 case "HTTPShell":
                     {
-                        ConfigTools.SetConfigValue(ConfigCategory.Shell, "HTTP Shell Prompt Preset", PresetName);
+                        Config.MainConfig.HTTPShellPromptPreset = PresetName;
                         break;
                     }
                 case "HexShell":
                     {
-                        ConfigTools.SetConfigValue(ConfigCategory.Shell, "Hex Edit Prompt Preset", PresetName);
+                        Config.MainConfig.HexEditPromptPreset = PresetName;
                         break;
                     }
                 case "FTPShell":
                     {
-                        ConfigTools.SetConfigValue(ConfigCategory.Shell, "FTP Prompt Preset", PresetName);
+                        Config.MainConfig.FTPPromptPreset = PresetName;
                         break;
                     }
                 case "ArchiveShell":
                     {
-                        ConfigTools.SetConfigValue(ConfigCategory.Shell, "Archive Shell Prompt Preset", PresetName);
+                        Config.MainConfig.ArchiveShellPromptPreset = PresetName;
                         break;
                     }
                 case "AdminShell":
                     {
-                        ConfigTools.SetConfigValue(ConfigCategory.Shell, "Admin Shell Prompt Preset", PresetName);
+                        Config.MainConfig.AdminShellPromptPreset = PresetName;
                         break;
                     }
             }

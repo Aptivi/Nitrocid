@@ -30,6 +30,7 @@ using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using KS.Kernel.Events;
+using KS.Kernel.Configuration;
 
 namespace KS.Misc.Notifications
 {
@@ -57,74 +58,48 @@ namespace KS.Misc.Notifications
         /// <summary>
         /// Upper left corner character for the notfication box
         /// </summary>
-        public static string NotifyUpperLeftCornerChar
-        {
-            get => notifyUpperLeftCornerChar;
-            set => notifyUpperLeftCornerChar = string.IsNullOrEmpty(value) ? "╔" : value[0].ToString();
-        }
+        public static string NotifyUpperLeftCornerChar =>
+            Config.MainConfig.NotifyUpperLeftCornerChar;
         /// <summary>
         /// Upper right corner character for the notfication box
         /// </summary>
-        public static string NotifyUpperRightCornerChar
-        {
-            get => notifyUpperRightCornerChar;
-            set => notifyUpperRightCornerChar = string.IsNullOrEmpty(value) ? "╗" : value[0].ToString();
-        }
+        public static string NotifyUpperRightCornerChar =>
+            Config.MainConfig.NotifyUpperRightCornerChar;
         /// <summary>
         /// Lower left corner character for the notfication box
         /// </summary>
-        public static string NotifyLowerLeftCornerChar
-        {
-            get => notifyLowerLeftCornerChar;
-            set => notifyLowerLeftCornerChar = string.IsNullOrEmpty(value) ? "╚" : value[0].ToString();
-        }
+        public static string NotifyLowerLeftCornerChar =>
+            Config.MainConfig.NotifyLowerLeftCornerChar;
         /// <summary>
         /// Lower right corner character for the notfication box
         /// </summary>
-        public static string NotifyLowerRightCornerChar
-        {
-            get => notifyLowerRightCornerChar;
-            set => notifyLowerRightCornerChar = string.IsNullOrEmpty(value) ? "╝" : value[0].ToString();
-        }
+        public static string NotifyLowerRightCornerChar =>
+            Config.MainConfig.NotifyLowerRightCornerChar;
         /// <summary>
         /// Upper frame character for the notfication box
         /// </summary>
-        public static string NotifyUpperFrameChar
-        {
-            get => notifyUpperFrameChar;
-            set => notifyUpperFrameChar = string.IsNullOrEmpty(value) ? "═" : value[0].ToString();
-        }
+        public static string NotifyUpperFrameChar =>
+            Config.MainConfig.NotifyUpperFrameChar;
         /// <summary>
         /// Lower frame character for the notfication box
         /// </summary>
-        public static string NotifyLowerFrameChar
-        {
-            get => notifyLowerFrameChar;
-            set => notifyLowerFrameChar = string.IsNullOrEmpty(value) ? "═" : value[0].ToString();
-        }
+        public static string NotifyLowerFrameChar =>
+            Config.MainConfig.NotifyLowerFrameChar;
         /// <summary>
         /// Left frame character for the notfication box
         /// </summary>
-        public static string NotifyLeftFrameChar
-        {
-            get => notifyLeftFrameChar;
-            set => notifyLeftFrameChar = string.IsNullOrEmpty(value) ? "║" : value[0].ToString();
-        }
+        public static string NotifyLeftFrameChar =>
+            Config.MainConfig.NotifyLeftFrameChar;
         /// <summary>
         /// Right frame character for the notfication box
         /// </summary>
-        public static string NotifyRightFrameChar
-        {
-            get => notifyRightFrameChar;
-            set => notifyRightFrameChar = string.IsNullOrEmpty(value) ? "║" : value[0].ToString();
-        }
+        public static string NotifyRightFrameChar =>
+            Config.MainConfig.NotifyRightFrameChar;
         /// <summary>
         /// Don't disturb, meaning don't show any notification when this mode is on
         /// </summary>
-        public static bool DoNotDisturb { 
-            get => Flags.DoNotDisturb;
-            set => Flags.DoNotDisturb = value;
-        }
+        public static bool DoNotDisturb =>
+            Config.MainConfig.DoNotDisturb;
 
         /// <summary>
         /// Notification priority

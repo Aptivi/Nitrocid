@@ -51,13 +51,18 @@ namespace KS.Languages
         internal static Dictionary<string, LanguageInfo> CustomLanguages = new();
         private static bool NotifyCodepageError;
         private readonly static JToken LanguageMetadata = JToken.Parse(Properties.Resources.Resources.LanguageMetadata);
-        internal static LanguageInfo currentLanguage = Languages["eng"];
-        internal static LanguageInfo currentUserLanguage = Languages["eng"];
 
         /// <summary>
         /// Current language
         /// </summary>
-        public static LanguageInfo CurrentLanguage => Flags.LoggedIn ? currentUserLanguage : currentLanguage;
+        public static string CurrentLanguage =>
+            Config.MainConfig.CurrentLanguage;
+        internal static LanguageInfo currentLanguage = Languages[CurrentLanguage];
+        internal static LanguageInfo currentUserLanguage = Languages[CurrentLanguage];
+        /// <summary>
+        /// Current language
+        /// </summary>
+        public static LanguageInfo CurrentLanguageInfo => Flags.LoggedIn ? currentUserLanguage : currentLanguage;
 
         /// <summary>
         /// The installed languages list.
@@ -126,6 +131,7 @@ namespace KS.Languages
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Translating kernel to {0}.", lang);
                     currentLanguage = Languages[lang];
+                    Config.MainConfig.CurrentLanguage = lang;
 
                     // Update Culture if applicable
                     if (Flags.LangChangeCulture)
@@ -156,8 +162,7 @@ namespace KS.Languages
         public static bool SetLang(string lang)
         {
             SetLangDry(lang);
-            var Token = ConfigTools.GetConfigCategory(ConfigCategory.General);
-            ConfigTools.SetConfigValue(ConfigCategory.General, Token, "Language", lang);
+            Config.CreateConfig(lang);
             DebugWriter.WriteDebug(DebugLevel.I, "Saved new language. Updating culture...");
             CultureManager.UpdateCulture();
             return true;
@@ -206,9 +211,8 @@ namespace KS.Languages
                                 while (!LanguageSet)
                                 {
                                     TextWriterColor.Write(">> ", false, KernelColorType.Input);
-                                    int Answer;
                                     string AnswerString = Input.ReadLine(false);
-                                    if (int.TryParse(AnswerString, out Answer))
+                                    if (int.TryParse(AnswerString, out int Answer))
                                     {
                                         DebugWriter.WriteDebug(DebugLevel.I, "Choice: {0}", Answer);
                                         switch (Answer)
@@ -250,7 +254,7 @@ namespace KS.Languages
                 }
 
                 // Now, set the language!
-                TextWriterColor.Write(Translate.DoTranslation("Changing from: {0} to {1}..."), CurrentLanguage.ThreeLetterLanguageName, lang);
+                TextWriterColor.Write(Translate.DoTranslation("Changing from: {0} to {1}..."), CurrentLanguageInfo.ThreeLetterLanguageName, lang);
                 if (!SetLang(lang))
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Failed to set language."), true, KernelColorType.Error);

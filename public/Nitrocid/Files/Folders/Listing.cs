@@ -26,6 +26,7 @@ using KS.Drivers;
 using KS.Files.Print;
 using KS.Files.Querying;
 using KS.Kernel;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
@@ -43,23 +44,28 @@ namespace KS.Files.Folders
         /// <summary>
         /// Whether to sort the list or not
         /// </summary>
-        public static bool SortList { get; set; } = true;
+        public static bool SortList =>
+            Config.MainConfig.SortList;
         /// <summary>
         /// Sort mode
         /// </summary>
-        public static FilesystemSortOptions SortMode { get; set; } = FilesystemSortOptions.FullName;
+        public static FilesystemSortOptions SortMode =>
+            (FilesystemSortOptions)Config.MainConfig.SortMode;
         /// <summary>
         /// Sort direction
         /// </summary>
-        public static FilesystemSortDirection SortDirection { get; set; } = FilesystemSortDirection.Ascending;
+        public static FilesystemSortDirection SortDirection =>
+            (FilesystemSortDirection)Config.MainConfig.SortDirection;
         /// <summary>
         /// Show file details when listing
         /// </summary>
-        public static bool ShowFileDetailsList { get; set; } = true;
+        public static bool ShowFileDetailsList =>
+            Config.MainConfig.ShowFileDetailsList;
         /// <summary>
         /// Show total size when listing
         /// </summary>
-        public static bool ShowTotalSizeInList { get; set; }
+        public static bool ShowTotalSizeInList =>
+            Config.MainConfig.ShowTotalSizeInList;
 
         /// <summary>
         /// Creates a list of files and directories

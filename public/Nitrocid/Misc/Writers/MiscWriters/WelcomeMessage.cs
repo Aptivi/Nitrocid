@@ -18,6 +18,7 @@
 
 using KS.ConsoleBase.Colors;
 using KS.Kernel;
+using KS.Kernel.Configuration;
 using KS.Languages;
 using KS.Misc.Probers.Placeholder;
 using KS.Misc.Text;
@@ -33,12 +34,13 @@ namespace KS.Misc.Writers.MiscWriters
     public static class WelcomeMessage
     {
 
-        private static string customBanner = "";
+        internal static string customBanner = "";
 
         /// <summary>
         /// The customized message banner to write. If none is specified, or if it only consists of whitespace, it uses the default message.
         /// </summary>
-        public static string CustomBanner { get => GetCustomBanner(); set => customBanner = value; }
+        public static string CustomBanner =>
+            Config.MainConfig.CustomBanner;
 
         /// <summary>
         /// Gets the custom banner actual text with placeholders parsed

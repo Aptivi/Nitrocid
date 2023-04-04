@@ -29,6 +29,7 @@ using KS.Files.Folders;
 using KS.Files.Operations;
 using KS.Files.Querying;
 using KS.Kernel;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Reflection;
 using KS.Misc.Splash.Splashes;
@@ -42,10 +43,6 @@ namespace KS.Misc.Splash
     public static class SplashManager
     {
 
-        /// <summary>
-        /// Current splash name
-        /// </summary>
-        public static string SplashName = "Dots";
         internal static KernelThread SplashThread = new("Kernel Splash Thread", false, (splash) => GetSplashFromName((string)splash).EntryPoint.Display()) { isCritical = true };
         private readonly static Dictionary<string, SplashInfo> InstalledSplashes = new()
         {
@@ -69,24 +66,34 @@ namespace KS.Misc.Splash
         };
 
         /// <summary>
+        /// Current splash name
+        /// </summary>
+        public static string SplashName =>
+            Config.MainConfig.SplashName;
+
+        /// <summary>
         /// Current splash screen
         /// </summary>
-        public static ISplash CurrentSplash => GetSplashFromName(SplashName).EntryPoint;
+        public static ISplash CurrentSplash =>
+            GetSplashFromName(SplashName).EntryPoint;
 
         /// <summary>
         /// Current splash screen info instance
         /// </summary>
-        public static SplashInfo CurrentSplashInfo => GetSplashFromName(SplashName);
+        public static SplashInfo CurrentSplashInfo =>
+            GetSplashFromName(SplashName);
 
         /// <summary>
         /// All the installed splashes either normal or custom
         /// </summary>
-        public static Dictionary<string, SplashInfo> Splashes => InstalledSplashes;
+        public static Dictionary<string, SplashInfo> Splashes =>
+            InstalledSplashes;
 
         /// <summary>
         /// Gets names of the installed splashes
         /// </summary>
-        public static List<string> GetNamesOfSplashes() => Splashes.Keys.ToList();
+        public static List<string> GetNamesOfSplashes() =>
+            Splashes.Keys.ToList();
 
         /// <summary>
         /// Loads all the splashes from the KSSplashes folder

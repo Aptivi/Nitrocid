@@ -31,6 +31,7 @@ using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.Misc.Threading.Interactive;
 using KS.Misc.Threading;
 using System.Diagnostics;
+using KS.Kernel.Configuration;
 
 namespace KS.Files.Interactive
 {
@@ -57,47 +58,58 @@ namespace KS.Files.Interactive
         /// <summary>
         /// Task manager background color
         /// </summary>
-        public static Color TaskManagerBackgroundColor { get; set; } = new(Convert.ToInt32(ConsoleColors.DarkBlue));
+        public static Color TaskManagerBackgroundColor =>
+            new(Config.MainConfig.TaskManagerBackgroundColor);
         /// <summary>
         /// Task manager foreground color
         /// </summary>
-        public static Color TaskManagerForegroundColor { get; set; } = new(Convert.ToInt32(ConsoleColors.Yellow));
+        public static Color TaskManagerForegroundColor =>
+            new(Config.MainConfig.TaskManagerForegroundColor);
         /// <summary>
         /// Task manager pane background color
         /// </summary>
-        public static Color TaskManagerPaneBackgroundColor { get; set; } = new(Convert.ToInt32(ConsoleColors.Blue3));
+        public static Color TaskManagerPaneBackgroundColor =>
+            new(Config.MainConfig.TaskManagerPaneBackgroundColor);
         /// <summary>
         /// Task manager pane separator color
         /// </summary>
-        public static Color TaskManagerPaneSeparatorColor { get; set; } = new(Convert.ToInt32(ConsoleColors.DarkGreen_005f00));
+        public static Color TaskManagerPaneSeparatorColor =>
+            new(Config.MainConfig.TaskManagerPaneSeparatorColor);
         /// <summary>
         /// Task manager pane selected task color (foreground)
         /// </summary>
-        public static Color TaskManagerPaneSelectedTaskForeColor { get; set; } = new(Convert.ToInt32(ConsoleColors.Yellow));
+        public static Color TaskManagerPaneSelectedTaskForeColor =>
+            new(Config.MainConfig.TaskManagerPaneSelectedTaskForeColor);
         /// <summary>
         /// Task manager pane selected task color (background)
         /// </summary>
-        public static Color TaskManagerPaneSelectedTaskBackColor { get; set; } = new(Convert.ToInt32(ConsoleColors.DarkBlue));
+        public static Color TaskManagerPaneSelectedTaskBackColor =>
+            new(Config.MainConfig.TaskManagerPaneSelectedTaskBackColor);
         /// <summary>
         /// Task manager pane task color (foreground)
         /// </summary>
-        public static Color TaskManagerPaneTaskForeColor { get; set; } = new(Convert.ToInt32(ConsoleColors.DarkYellow));
+        public static Color TaskManagerPaneTaskForeColor =>
+            new(Config.MainConfig.TaskManagerPaneTaskForeColor);
         /// <summary>
         /// Task manager pane task color (background)
         /// </summary>
-        public static Color TaskManagerPaneTaskBackColor { get; set; } = new(Convert.ToInt32(ConsoleColors.Blue3));
+        public static Color TaskManagerPaneTaskBackColor =>
+            new(Config.MainConfig.TaskManagerPaneTaskBackColor);
         /// <summary>
         /// Task manager option background color
         /// </summary>
-        public static Color TaskManagerOptionBackgroundColor { get; set; } = new(Convert.ToInt32(ConsoleColors.DarkCyan));
+        public static Color TaskManagerOptionBackgroundColor =>
+            new(Config.MainConfig.TaskManagerOptionBackgroundColor);
         /// <summary>
         /// Task manager key binding in option color
         /// </summary>
-        public static Color TaskManagerKeyBindingOptionColor { get; set; } = new(Convert.ToInt32(ConsoleColors.Black));
+        public static Color TaskManagerKeyBindingOptionColor =>
+            new(Config.MainConfig.TaskManagerKeyBindingOptionColor);
         /// <summary>
         /// Task manager option foreground color
         /// </summary>
-        public static Color TaskManagerOptionForegroundColor { get; set; } = new(Convert.ToInt32(ConsoleColors.Cyan));
+        public static Color TaskManagerOptionForegroundColor =>
+            new(Config.MainConfig.TaskManagerOptionForegroundColor);
 
         /// <summary>
         /// Opens the task manager

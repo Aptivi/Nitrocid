@@ -27,6 +27,7 @@ using FluentFTP.Helpers;
 using HtmlAgilityPack;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -54,11 +55,13 @@ namespace KS.Network.RSS
         /// <summary>
         /// Whether to show the RSS headline each login
         /// </summary>
-        public static bool ShowHeadlineOnLogin { get; set; }
+        public static bool ShowHeadlineOnLogin =>
+            Config.MainConfig.ShowHeadlineOnLogin;
         /// <summary>
         /// RSS headline URL
         /// </summary>
-        public static string RssHeadlineUrl { get; set; } = "https://www.techrepublic.com/rssfeeds/articles/";
+        public static string RssHeadlineUrl =>
+            Config.MainConfig.RssHeadlineUrl;
 
         /// <summary>
         /// Make instances of RSS Article from feed node and type

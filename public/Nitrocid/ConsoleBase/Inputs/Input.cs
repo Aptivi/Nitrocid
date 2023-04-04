@@ -19,6 +19,7 @@
 using System;
 using System.Threading;
 using KS.Drivers;
+using KS.Kernel.Configuration;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Screensaver;
@@ -32,17 +33,14 @@ namespace KS.ConsoleBase.Inputs
     /// </summary>
     public static class Input
     {
+        internal static string currentMask = "*";
         private static bool isWrapperInitialized;
-        private static string currentMask = "*";
 
         /// <summary>
         /// Current mask character
         /// </summary>
-        public static string CurrentMask
-        {
-            get => currentMask;
-            set => currentMask = string.IsNullOrEmpty(value) ? "*" : value[0].ToString();
-        }
+        public static string CurrentMask =>
+            Config.MainConfig.CurrentMask;
 
         /// <summary>
         /// Reads the line from the console

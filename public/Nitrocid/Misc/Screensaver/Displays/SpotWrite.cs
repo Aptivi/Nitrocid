@@ -22,6 +22,7 @@ using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.Files.Querying;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Text;
 using KS.Misc.Threading;
@@ -35,11 +36,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class SpotWriteSettings
     {
 
-        private static int _Delay = 100;
-        private static string _Write = "Nitrocid KS";
-        private static int _NewScreenDelay = 3000;
-        private static string _TextColor = new Color(ConsoleColors.White).PlainSequence;
-
         /// <summary>
         /// [SpotWrite] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -47,13 +43,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.SpotWriteDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 100;
-                _Delay = value;
+                Config.SaverConfig.SpotWriteDelay = value;
             }
         }
         /// <summary>
@@ -63,13 +59,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Write;
+                return Config.SaverConfig.SpotWriteWrite;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "Nitrocid KS";
-                _Write = value;
+                Config.SaverConfig.SpotWriteWrite = value;
             }
         }
         /// <summary>
@@ -79,13 +75,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _NewScreenDelay;
+                return Config.SaverConfig.SpotWriteNewScreenDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 3000;
-                _NewScreenDelay = value;
+                Config.SaverConfig.SpotWriteNewScreenDelay = value;
             }
         }
         /// <summary>
@@ -95,11 +91,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _TextColor;
+                return Config.SaverConfig.SpotWriteTextColor;
             }
             set
             {
-                _TextColor = new Color(value).PlainSequence;
+                Config.SaverConfig.SpotWriteTextColor = new Color(value).PlainSequence;
             }
         }
 

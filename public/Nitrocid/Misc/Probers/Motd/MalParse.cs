@@ -18,6 +18,7 @@
 
 using System;
 using KS.Files;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -33,7 +34,8 @@ namespace KS.Misc.Probers.Motd
         /// <summary>
         /// MAL file path
         /// </summary>
-        public static string MalFilePath { get; set; } = Paths.GetKernelPath(KernelPathType.MAL);
+        public static string MalFilePath =>
+            Config.MainConfig.MalFilePath;
         /// <summary>
         /// Current MAL message
         /// </summary>
@@ -50,7 +52,7 @@ namespace KS.Misc.Probers.Motd
                 System.IO.StreamWriter MALStreamW;
 
                 // Get the MOTD and MAL file path
-                MalFilePath = Filesystem.NeutralizePath(MalFilePath);
+                Config.MainConfig.MalFilePath = Filesystem.NeutralizePath(MalFilePath);
                 DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", MalFilePath);
 
                 // Set the message according to message type
@@ -81,7 +83,7 @@ namespace KS.Misc.Probers.Motd
                 var MALBuilder = new System.Text.StringBuilder();
 
                 // Get the MOTD and MAL file path
-                MalFilePath = Filesystem.NeutralizePath(MalFilePath);
+                Config.MainConfig.MalFilePath = Filesystem.NeutralizePath(MalFilePath);
                 DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", MalFilePath);
 
                 // Read the message according to message type

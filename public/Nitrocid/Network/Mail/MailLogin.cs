@@ -25,6 +25,7 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.Files;
 using KS.Kernel;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Probers.Placeholder;
@@ -45,13 +46,21 @@ namespace KS.Network.Mail
         public static ImapClient IMAP_Client = new();
         public static SmtpClient SMTP_Client = new();
         internal static NetworkCredential Mail_Authentication = new();
-        public static string Mail_UserPromptStyle = "";
-        public static string Mail_PassPromptStyle = "";
-        public static string Mail_IMAPPromptStyle = "";
-        public static string Mail_SMTPPromptStyle = "";
-        public static string Mail_GPGPromptStyle = "";
-        public static bool Mail_Debug;
-        public static bool Mail_AutoDetectServer = true;
+
+        public static string Mail_UserPromptStyle =>
+            Config.MainConfig.Mail_UserPromptStyle;
+        public static string Mail_PassPromptStyle =>
+            Config.MainConfig.Mail_PassPromptStyle;
+        public static string Mail_IMAPPromptStyle =>
+            Config.MainConfig.Mail_IMAPPromptStyle;
+        public static string Mail_SMTPPromptStyle =>
+            Config.MainConfig.Mail_SMTPPromptStyle;
+        public static string Mail_GPGPromptStyle =>
+            Config.MainConfig.Mail_GPGPromptStyle;
+        public static bool Mail_Debug =>
+            Config.MainConfig.Mail_Debug;
+        public static bool Mail_AutoDetectServer =>
+            Config.MainConfig.Mail_AutoDetectServer;
 
         /// <summary>
         /// Mail server type

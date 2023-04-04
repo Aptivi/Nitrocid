@@ -16,6 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Configuration;
+
 namespace KS.Misc.Writers.FancyWriters.Tools
 {
     /// <summary>
@@ -23,142 +25,54 @@ namespace KS.Misc.Writers.FancyWriters.Tools
     /// </summary>
     public static class BorderTools
     {
-        private static string _borderUpperLeftCornerChar = "╔";
-        private static string _borderUpperRightCornerChar = "╗";
-        private static string _borderLowerLeftCornerChar = "╚";
-        private static string _borderLowerRightCornerChar = "╝";
-        private static string _borderUpperFrameChar = "═";
-        private static string _borderLowerFrameChar = "═";
-        private static string _borderLeftFrameChar = "║";
-        private static string _borderRightFrameChar = "║";
+        internal static string _borderUpperLeftCornerChar = "╔";
+        internal static string _borderUpperRightCornerChar = "╗";
+        internal static string _borderLowerLeftCornerChar = "╚";
+        internal static string _borderLowerRightCornerChar = "╝";
+        internal static string _borderUpperFrameChar = "═";
+        internal static string _borderLowerFrameChar = "═";
+        internal static string _borderLeftFrameChar = "║";
+        internal static string _borderRightFrameChar = "║";
 
         /// <summary>
         /// Upper left corner character 
         /// </summary>
-        public static string BorderUpperLeftCornerChar
-        {
-            get
-            {
-                return _borderUpperLeftCornerChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "╔";
-                _borderUpperLeftCornerChar = value;
-            }
-        }
+        public static string BorderUpperLeftCornerChar =>
+            Config.MainConfig.BorderUpperLeftCornerChar;
         /// <summary>
         /// Upper right corner character 
         /// </summary>
-        public static string BorderUpperRightCornerChar
-        {
-            get
-            {
-                return _borderUpperRightCornerChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "╗";
-                _borderUpperRightCornerChar = value;
-            }
-        }
+        public static string BorderUpperRightCornerChar =>
+            Config.MainConfig.BorderUpperRightCornerChar;
         /// <summary>
         /// Lower left corner character 
         /// </summary>
-        public static string BorderLowerLeftCornerChar
-        {
-            get
-            {
-                return _borderLowerLeftCornerChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "╚";
-                _borderLowerLeftCornerChar = value;
-            }
-        }
+        public static string BorderLowerLeftCornerChar =>
+            Config.MainConfig.BorderLowerLeftCornerChar;
         /// <summary>
         /// Lower right corner character 
         /// </summary>
-        public static string BorderLowerRightCornerChar
-        {
-            get
-            {
-                return _borderLowerRightCornerChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "╝";
-                _borderLowerRightCornerChar = value;
-            }
-        }
+        public static string BorderLowerRightCornerChar =>
+            Config.MainConfig.BorderLowerRightCornerChar;
         /// <summary>
         /// Upper frame character 
         /// </summary>
-        public static string BorderUpperFrameChar
-        {
-            get
-            {
-                return _borderUpperFrameChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "═";
-                _borderUpperFrameChar = value;
-            }
-        }
+        public static string BorderUpperFrameChar =>
+            Config.MainConfig.BorderUpperFrameChar;
         /// <summary>
         /// Lower frame character 
         /// </summary>
-        public static string BorderLowerFrameChar
-        {
-            get
-            {
-                return _borderLowerFrameChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "═";
-                _borderLowerFrameChar = value;
-            }
-        }
+        public static string BorderLowerFrameChar =>
+            Config.MainConfig.BorderLowerFrameChar;
         /// <summary>
         /// Left frame character 
         /// </summary>
-        public static string BorderLeftFrameChar
-        {
-            get
-            {
-                return _borderLeftFrameChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "║";
-                _borderLeftFrameChar = value;
-            }
-        }
+        public static string BorderLeftFrameChar =>
+            Config.MainConfig.BorderLeftFrameChar;
         /// <summary>
         /// Right frame character 
         /// </summary>
-        public static string BorderRightFrameChar
-        {
-            get
-            {
-                return _borderRightFrameChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "║";
-                _borderRightFrameChar = value;
-            }
-        }
+        public static string BorderRightFrameChar =>
+            Config.MainConfig.BorderRightFrameChar;
     }
 }

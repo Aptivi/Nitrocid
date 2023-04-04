@@ -20,6 +20,7 @@ using ColorSeq;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Inputs.Styles;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Presentation;
@@ -64,7 +65,7 @@ namespace KS.Kernel
                     TextWriterColor.Write();
                 oldTop = ConsoleWrapper.CursorTop;
                 TextWriterColor.Write();
-                Flags.ConsoleSupportsTrueColor = ChoiceStyle.PromptChoice(Translate.DoTranslation("Do these ramps look right to you? They should transition smoothly."), "y/n") == "y";
+                Config.MainConfig.ConsoleSupportsTrueColor = ChoiceStyle.PromptChoice(Translate.DoTranslation("Do these ramps look right to you? They should transition smoothly."), "y/n") == "y";
                 ConsoleWrapper.Clear();
 
                 // Select a language

@@ -29,6 +29,7 @@ using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Colors;
+using KS.Kernel.Configuration;
 
 namespace KS.Misc.Splash.Splashes
 {
@@ -49,13 +50,13 @@ namespace KS.Misc.Splash.Splashes
         {
             get
             {
-                switch (SplashSettings.PowerLineProgressProgressTextLocation)
+                switch (Config.SplashConfig.PowerLineProgressProgressTextLocation)
                 {
-                    case TextLocation.Top:
+                    case (int)TextLocation.Top:
                         {
                             return 1;
                         }
-                    case TextLocation.Bottom:
+                    case (int)TextLocation.Bottom:
                         {
                             return ConsoleWrapper.WindowHeight - 6;
                         }
@@ -155,9 +156,9 @@ namespace KS.Misc.Splash.Splashes
             ConsoleExtensions.ClearLineToRight();
 
             // Display the progress bar
-            if (!string.IsNullOrEmpty(SplashSettings.PowerLineProgressProgressColor) & ColorTools.TryParseColor(SplashSettings.PowerLineProgressProgressColor))
+            if (!string.IsNullOrEmpty(Config.SplashConfig.PowerLineProgressProgressColor) & ColorTools.TryParseColor(Config.SplashConfig.PowerLineProgressProgressColor))
             {
-                var ProgressColor = new Color(SplashSettings.PowerLineProgressProgressColor);
+                var ProgressColor = new Color(Config.SplashConfig.PowerLineProgressProgressColor);
                 ProgressBarColor.WriteProgress(Progress, 4, ConsoleWrapper.WindowHeight - 4, ProgressColor);
             }
             else

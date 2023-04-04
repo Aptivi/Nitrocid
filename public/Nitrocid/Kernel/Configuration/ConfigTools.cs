@@ -74,276 +74,44 @@ namespace KS.Kernel.Configuration
         }
 
         /// <summary>
-        /// Checks to see if the config needs repair and repairs it as necessary.
+        /// Gets the value from a settings entry
         /// </summary>
-        /// <returns>True if the config is repaired; False if no repairs done; Throws exceptions if unsuccessful.</returns>
-        public static bool RepairConfig()
+        /// <param name="Setting">An entry to get the value from</param>
+        /// <returns>The value</returns>
+        public static object GetValueFromEntry(JToken Setting)
         {
-            // Variables
-            var FixesNeeded = false;
+            object CurrentValue = "Unknown";
+            string Variable = (string)Setting["Variable"];
+            bool VariableIsInternal = (bool)(Setting["IsInternal"] ?? false);
+            bool VariableIsEnumerable = (bool)(Setting["IsEnumerable"] ?? false);
+            int VariableEnumerableIndex = (int)(Setting["EnumerableIndex"] ?? 0);
 
-            // General sections
-            int ExpectedSections = PristineConfigToken.Count;
-
-            // Check for missing sections
-            if (ConfigToken.Count != ExpectedSections)
+            // Print the option by determining how to get the current value
+            if (FieldManager.CheckField(Variable, VariableIsInternal))
             {
-                DebugWriter.WriteDebug(DebugLevel.W, "Missing sections. Config fix needed set to true.");
-                FixesNeeded = true;
-            }
-
-            // Go through sections
-            try
-            {
-                foreach (KeyValuePair<string, JToken> Section in PristineConfigToken)
-                {
-                    if (ConfigToken[Section.Key] is not null)
-                    {
-                        // Check the normal keys count
-                        if (ConfigToken[Section.Key].Count() != PristineConfigToken[Section.Key].Count())
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.W, "Missing sections and/or keys in {0}. Config fix needed set to true.", Section.Key);
-                            FixesNeeded = true;
-                        }
-                        else
-                        {
-                            // Count is the same, but verify the names
-                            for (int i = 0; i < PristineConfigToken[Section.Key].Count(); i++)
-                            {
-                                JProperty token = (JProperty)ConfigToken[Section.Key].ElementAt(i);
-                                JProperty pristineToken = (JProperty)PristineConfigToken[Section.Key].ElementAt(i);
-                                if (token.Name != pristineToken.Name)
-                                {
-                                    DebugWriter.WriteDebug(DebugLevel.W, "Name inconsistency. Expected: {0}, Actual: {1}. Config fix needed set to true.", pristineToken.Name, token.Name);
-                                    FixesNeeded = true;
-                                }
-                            }
-                        }
-
-                        // Check the screensaver keys
-                        if (Section.Key == "Screensaver")
-                        {
-                            foreach (JProperty ScreensaverSection in PristineConfigToken["Screensaver"].Where(x => x.First.Type == JTokenType.Object))
-                            {
-                                if (ConfigToken["Screensaver"][ScreensaverSection.Name].Count() != PristineConfigToken["Screensaver"][ScreensaverSection.Name].Count())
-                                {
-                                    DebugWriter.WriteDebug(DebugLevel.W, "Missing sections and/or keys in Screensaver > {0}. Config fix needed set to true.", ScreensaverSection.Name);
-                                    FixesNeeded = true;
-                                }
-                                else
-                                {
-                                    // Count is the same, but verify the names
-                                    for (int i = 0; i < PristineConfigToken["Screensaver"][ScreensaverSection.Name].Count(); i++)
-                                    {
-                                        JProperty token = (JProperty)ConfigToken["Screensaver"][ScreensaverSection.Name].ElementAt(i);
-                                        JProperty pristineToken = (JProperty)PristineConfigToken["Screensaver"][ScreensaverSection.Name].ElementAt(i);
-                                        if (token.Name != pristineToken.Name)
-                                        {
-                                            DebugWriter.WriteDebug(DebugLevel.W, "Name inconsistency. Expected: {0}, Actual: {1}. Config fix needed set to true.", pristineToken.Name, token.Name);
-                                            FixesNeeded = true;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        // Check the splash keys
-                        if (Section.Key == "Splash")
-                        {
-                            foreach (JProperty SplashSection in PristineConfigToken["Splash"].Where(x => x.First.Type == JTokenType.Object))
-                            {
-                                if (ConfigToken["Splash"][SplashSection.Name].Count() != PristineConfigToken["Splash"][SplashSection.Name].Count())
-                                {
-                                    DebugWriter.WriteDebug(DebugLevel.W, "Missing sections and/or keys in Splash > {0}. Config fix needed set to true.", SplashSection.Name);
-                                    FixesNeeded = true;
-                                }
-                                else
-                                {
-                                    // Count is the same, but verify the names
-                                    for (int i = 0; i < PristineConfigToken["Splash"][SplashSection.Name].Count(); i++)
-                                    {
-                                        JProperty token = (JProperty)ConfigToken["Splash"][SplashSection.Name].ElementAt(i);
-                                        JProperty pristineToken = (JProperty)PristineConfigToken["Splash"][SplashSection.Name].ElementAt(i);
-                                        if (token.Name != pristineToken.Name)
-                                        {
-                                            DebugWriter.WriteDebug(DebugLevel.W, "Name inconsistency. Expected: {0}, Actual: {1}. Config fix needed set to true.", pristineToken.Name, token.Name);
-                                            FixesNeeded = true;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                // Somehow, the config is corrupt or something. Fix it.
-                DebugWriter.WriteDebug(DebugLevel.E, "Found a serious error in configuration: {0}", ex.Message);
-                DebugWriter.WriteDebugStackTrace(ex);
-                FixesNeeded = true;
-            }
-
-            // If the fixes are needed, try to remake config with parsed values
-            if (FixesNeeded)
-                CreateConfig();
-            return FixesNeeded;
-        }
-
-        /// <summary>
-        /// Gets the JSON token for specific configuration category with an optional sub-category
-        /// </summary>
-        /// <param name="ConfigCategory">Config category</param>
-        /// <param name="ConfigSubCategoryName">Sub-category name. Should be an Object. Currently used for screensavers</param>
-        public static JToken GetConfigCategory(ConfigCategory ConfigCategory, string ConfigSubCategoryName = "")
-        {
-            // Try to parse the config category
-            DebugWriter.WriteDebug(DebugLevel.I, "Parsing config category {0}...", ConfigCategory);
-            if (Enum.TryParse(((int)ConfigCategory).ToString(), out ConfigCategory))
-            {
-                // We got a valid category. Now, get the token for the specific category
-                DebugWriter.WriteDebug(DebugLevel.I, "Category {0} found! Parsing sub-category {1} ({2})...", ConfigCategory, ConfigSubCategoryName, ConfigSubCategoryName.Length);
-                var CategoryToken = ConfigToken[ConfigCategory.ToString()];
-
-                // Try to get the sub-category token and check to see if it's found or not
-                var SubCategoryToken = CategoryToken[ConfigSubCategoryName];
-                if (!string.IsNullOrWhiteSpace(ConfigSubCategoryName) & SubCategoryToken is not null)
-                {
-                    // We got the subcategory! Check to see if it's really a sub-category (Object) or not
-                    DebugWriter.WriteDebug(DebugLevel.I, "Sub-category {0} found! Is it really the sub-category? Type = {1}", ConfigSubCategoryName, SubCategoryToken.Type);
-                    if (SubCategoryToken.Type == JTokenType.Object)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "It is really a sub-category!");
-                        return SubCategoryToken;
-                    }
-                    else
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.W, "It is not really a sub-category. Returning master category...");
-                        return CategoryToken;
-                    }
-                }
+                // We're dealing with the field, get the value from it. However, check to see if that field is an enumerable
+                if (VariableIsEnumerable)
+                    CurrentValue = FieldManager.GetValueFromEnumerable(Variable, VariableEnumerableIndex, VariableIsInternal);
                 else
-                {
-                    // We only got the full category.
-                    DebugWriter.WriteDebug(DebugLevel.I, "Returning master category...");
-                    return CategoryToken;
-                }
+                    CurrentValue = FieldManager.GetValue(Variable, VariableIsInternal);
             }
-            else
+            else if (PropertyManager.CheckProperty(Variable))
             {
-                // We didn't get a category.
-                DebugWriter.WriteDebug(DebugLevel.E, "Category {0} not found!", ConfigCategory);
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Config category {0} not found."), ConfigCategory);
+                // We're dealing with the property, get the value from it
+                CurrentValue = PropertyManager.GetPropertyValue(Variable);
             }
-        }
 
-        /// <summary>
-        /// Sets the value of an entry in a category.
-        /// </summary>
-        /// <param name="ConfigCategory">Config category</param>
-        /// <param name="ConfigEntryName">Config entry name.</param>
-        /// <param name="ConfigValue">Config entry value to install</param>
-        public static void SetConfigValue(ConfigCategory ConfigCategory, string ConfigEntryName, JToken ConfigValue) => SetConfigValue(ConfigCategory, GetConfigCategory(ConfigCategory), ConfigEntryName, ConfigValue);
+            // Get the plain sequence from the color
+            if (CurrentValue is KeyValuePair<KernelColorType, Color> color)
+                CurrentValue = color.Value.PlainSequence;
+            if (CurrentValue is Color color2)
+                CurrentValue = color2.PlainSequence;
 
-        /// <summary>
-        /// Sets the value of an entry in a category.
-        /// </summary>
-        /// <param name="ConfigCategory">Config category</param>
-        /// <param name="ConfigSubCategoryName">Configuration subcategory name</param>
-        /// <param name="ConfigEntryName">Config entry name.</param>
-        /// <param name="ConfigValue">Config entry value to install</param>
-        public static void SetConfigValue(ConfigCategory ConfigCategory, string ConfigSubCategoryName, string ConfigEntryName, JToken ConfigValue) => SetConfigValue(ConfigCategory, GetConfigCategory(ConfigCategory, ConfigSubCategoryName), ConfigEntryName, ConfigValue);
+            // Get the language name
+            if (CurrentValue is LanguageInfo lang)
+                CurrentValue = lang.ThreeLetterLanguageName;
 
-        /// <summary>
-        /// Sets the value of an entry in a category.
-        /// </summary>
-        /// <param name="ConfigCategory">Config category</param>
-        /// <param name="ConfigCategoryToken">Config category or sub-category token (You can get it from <see cref="GetConfigCategory(ConfigCategory, string)"/></param>
-        /// <param name="ConfigEntryName">Config entry name.</param>
-        /// <param name="ConfigValue">Config entry value to install</param>
-        public static void SetConfigValue(ConfigCategory ConfigCategory, JToken ConfigCategoryToken, string ConfigEntryName, JToken ConfigValue)
-        {
-            // Try to parse the config category
-            DebugWriter.WriteDebug(DebugLevel.I, "Parsing config category {0}...", ConfigCategory);
-            if (Enum.TryParse(((int)ConfigCategory).ToString(), out ConfigCategory))
-            {
-                // We have a valid category. Now, find the config entry property in the token
-                DebugWriter.WriteDebug(DebugLevel.I, "Parsing config entry {0}...", ConfigEntryName);
-                var CategoryToken = ConfigToken[ConfigCategory.ToString()];
-                if (ConfigCategoryToken[ConfigEntryName] is not null)
-                {
-                    // Assign the new value to it and write the changes to the token and the config file. Don't worry, debuggers, when you set the value like below,
-                    // it will automatically save the changes to ConfigToken as in three lines above
-                    DebugWriter.WriteDebug(DebugLevel.E, "Entry {0} found! Setting value...", ConfigEntryName);
-                    ConfigCategoryToken[ConfigEntryName] = ConfigValue;
-
-                    // Write the changes to the config file
-                    File.WriteAllText(Paths.GetKernelPath(KernelPathType.Configuration), JsonConvert.SerializeObject(ConfigToken, Formatting.Indented));
-                }
-                else
-                {
-                    // We didn't get an entry.
-                    DebugWriter.WriteDebug(DebugLevel.E, "Entry {0} not found!", ConfigEntryName);
-                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Config entry {0} not found."), ConfigEntryName);
-                }
-            }
-            else
-            {
-                // We didn't get a category.
-                DebugWriter.WriteDebug(DebugLevel.E, "Category {0} not found!", ConfigCategory);
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Config category {0} not found."), ConfigCategory);
-            }
-        }
-
-        /// <summary>
-        /// Gets the value of an entry in a category.
-        /// </summary>
-        /// <param name="ConfigCategory">Config category</param>
-        /// <param name="ConfigEntryName">Config entry name.</param>
-        public static JToken GetConfigValue(ConfigCategory ConfigCategory, string ConfigEntryName) => GetConfigValue(ConfigCategory, GetConfigCategory(ConfigCategory), ConfigEntryName);
-
-        /// <summary>
-        /// Gets the value of an entry in a category.
-        /// </summary>
-        /// <param name="ConfigCategory">Config category</param>
-        /// <param name="ConfigSubCategoryName">Configuration subcategory name</param>
-        /// <param name="ConfigEntryName">Config entry name.</param>
-        public static JToken GetConfigValue(ConfigCategory ConfigCategory, string ConfigSubCategoryName, string ConfigEntryName) => GetConfigValue(ConfigCategory, GetConfigCategory(ConfigCategory, ConfigSubCategoryName), ConfigEntryName);
-
-        /// <summary>
-        /// Gets the value of an entry in a category.
-        /// </summary>
-        /// <param name="ConfigCategory">Config category</param>
-        /// <param name="ConfigCategoryToken">Config category or sub-category token (You can get it from <see cref="GetConfigCategory(ConfigCategory, string)"/></param>
-        /// <param name="ConfigEntryName">Config entry name.</param>
-        public static JToken GetConfigValue(ConfigCategory ConfigCategory, JToken ConfigCategoryToken, string ConfigEntryName)
-        {
-            // Try to parse the config category
-            DebugWriter.WriteDebug(DebugLevel.I, "Parsing config category {0}...", ConfigCategory);
-            if (Enum.TryParse(((int)ConfigCategory).ToString(), out ConfigCategory))
-            {
-                // We have a valid category. Now, find the config entry property in the token
-                DebugWriter.WriteDebug(DebugLevel.I, "Parsing config entry {0}...", ConfigEntryName);
-                var CategoryToken = ConfigToken[ConfigCategory.ToString()];
-                if (ConfigCategoryToken[ConfigEntryName] is not null)
-                {
-                    // We got the appropriate value! Return it.
-                    DebugWriter.WriteDebug(DebugLevel.E, "Entry {0} found! Getting value...", ConfigEntryName);
-                    return ConfigCategoryToken[ConfigEntryName];
-                }
-                else
-                {
-                    // We didn't get an entry.
-                    DebugWriter.WriteDebug(DebugLevel.E, "Entry {0} not found!", ConfigEntryName);
-                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Config entry {0} not found."), ConfigEntryName);
-                }
-            }
-            else
-            {
-                // We didn't get a category.
-                DebugWriter.WriteDebug(DebugLevel.E, "Category {0} not found!", ConfigCategory);
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Config category {0} not found."), ConfigCategory);
-            }
+            return CurrentValue;
         }
 
         /// <summary>
@@ -439,47 +207,6 @@ namespace KS.Kernel.Configuration
 
             // Return the results
             return Results;
-        }
-
-        /// <summary>
-        /// Gets the value from a settings entry
-        /// </summary>
-        /// <param name="Setting">An entry to get the value from</param>
-        /// <returns>The value</returns>
-        public static object GetValueFromEntry(JToken Setting)
-        {
-            object CurrentValue = "Unknown";
-            string Variable = (string)Setting["Variable"];
-            bool VariableIsInternal = (bool)(Setting["IsInternal"] ?? false);
-            bool VariableIsEnumerable = (bool)(Setting["IsEnumerable"] ?? false);
-            int VariableEnumerableIndex = (int)(Setting["EnumerableIndex"] ?? 0);
-
-            // Print the option by determining how to get the current value
-            if (FieldManager.CheckField(Variable, VariableIsInternal))
-            {
-                // We're dealing with the field, get the value from it. However, check to see if that field is an enumerable
-                if (VariableIsEnumerable)
-                    CurrentValue = FieldManager.GetValueFromEnumerable(Variable, VariableEnumerableIndex, VariableIsInternal);
-                else
-                    CurrentValue = FieldManager.GetValue(Variable, VariableIsInternal);
-            }
-            else if (PropertyManager.CheckProperty(Variable))
-            {
-                // We're dealing with the property, get the value from it
-                CurrentValue = PropertyManager.GetPropertyValue(Variable);
-            }
-
-            // Get the plain sequence from the color
-            if (CurrentValue is KeyValuePair<KernelColorType, Color> color)
-                CurrentValue = color.Value.PlainSequence;
-            if (CurrentValue is Color color2)
-                CurrentValue = color2.PlainSequence;
-
-            // Get the language name
-            if (CurrentValue is LanguageInfo lang)
-                CurrentValue = lang.ThreeLetterLanguageName;
-
-            return CurrentValue;
         }
 
     }

@@ -24,6 +24,7 @@ using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
 using KS.Files.Querying;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Text;
 using KS.Misc.Threading;
@@ -37,19 +38,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class LinotypoSettings
     {
 
-        private static int _Delay = 50;
-        private static int _NewScreenDelay = 3000;
-        private static string _Write = "Nitrocid KS";
-        private static int _WritingSpeedMin = 50;
-        private static int _WritingSpeedMax = 80;
-        private static int _MissStrikePossibility = 1;
-        private static int _TextColumns = 3;
-        private static int _EtaoinThreshold = 5;
-        private static int _EtaoinCappingPossibility = 5;
-        private static FillType _EtaoinType = FillType.EtaoinPattern;
-        private static int _MissPossibility = 10;
-        private static string _TextColor = new Color(ConsoleColors.White).PlainSequence;
-
         /// <summary>
         /// [Linotypo] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -57,13 +45,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.LinotypoDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 50;
-                _Delay = value;
+                Config.SaverConfig.LinotypoDelay = value;
             }
         }
         /// <summary>
@@ -73,13 +61,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _NewScreenDelay;
+                return Config.SaverConfig.LinotypoNewScreenDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 3000;
-                _NewScreenDelay = value;
+                Config.SaverConfig.LinotypoNewScreenDelay = value;
             }
         }
         /// <summary>
@@ -89,13 +77,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Write;
+                return Config.SaverConfig.LinotypoWrite;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "Nitrocid KS";
-                _Write = value;
+                Config.SaverConfig.LinotypoWrite = value;
             }
         }
         /// <summary>
@@ -105,13 +93,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _WritingSpeedMin;
+                return Config.SaverConfig.LinotypoWritingSpeedMin;
             }
             set
             {
                 if (value <= 0)
                     value = 50;
-                _WritingSpeedMin = value;
+                Config.SaverConfig.LinotypoWritingSpeedMin = value;
             }
         }
         /// <summary>
@@ -121,13 +109,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _WritingSpeedMax;
+                return Config.SaverConfig.LinotypoWritingSpeedMax;
             }
             set
             {
                 if (value <= 0)
                     value = 80;
-                _WritingSpeedMax = value;
+                Config.SaverConfig.LinotypoWritingSpeedMax = value;
             }
         }
         /// <summary>
@@ -137,13 +125,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MissStrikePossibility;
+                return Config.SaverConfig.LinotypoMissStrikePossibility;
             }
             set
             {
                 if (value <= 0)
                     value = 1;
-                _MissStrikePossibility = value;
+                Config.SaverConfig.LinotypoMissStrikePossibility = value;
             }
         }
         /// <summary>
@@ -153,7 +141,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _TextColumns;
+                return Config.SaverConfig.LinotypoTextColumns;
             }
             set
             {
@@ -161,7 +149,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 3;
                 if (value > 3)
                     value = 3;
-                _TextColumns = value;
+                Config.SaverConfig.LinotypoTextColumns = value;
             }
         }
         /// <summary>
@@ -171,7 +159,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _EtaoinThreshold;
+                return Config.SaverConfig.LinotypoEtaoinThreshold;
             }
             set
             {
@@ -179,7 +167,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 5;
                 if (value > 8)
                     value = 8;
-                _EtaoinThreshold = value;
+                Config.SaverConfig.LinotypoEtaoinThreshold = value;
             }
         }
         /// <summary>
@@ -189,13 +177,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _EtaoinCappingPossibility;
+                return Config.SaverConfig.LinotypoEtaoinCappingPossibility;
             }
             set
             {
                 if (value <= 0)
                     value = 5;
-                _EtaoinCappingPossibility = value;
+                Config.SaverConfig.LinotypoEtaoinCappingPossibility = value;
             }
         }
         /// <summary>
@@ -205,11 +193,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _EtaoinType;
+                return (FillType)Config.SaverConfig.LinotypoEtaoinType;
             }
             set
             {
-                _EtaoinType = value;
+                Config.SaverConfig.LinotypoEtaoinType = (int)value;
             }
         }
         /// <summary>
@@ -219,13 +207,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MissPossibility;
+                return Config.SaverConfig.LinotypoMissPossibility;
             }
             set
             {
                 if (value <= 0)
                     value = 10;
-                _MissPossibility = value;
+                Config.SaverConfig.LinotypoMissPossibility = value;
             }
         }
         /// <summary>
@@ -235,11 +223,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _TextColor;
+                return Config.SaverConfig.LinotypoTextColor;
             }
             set
             {
-                _TextColor = new Color(value).PlainSequence;
+                Config.SaverConfig.LinotypoTextColor = new Color(value).PlainSequence;
             }
         }
 

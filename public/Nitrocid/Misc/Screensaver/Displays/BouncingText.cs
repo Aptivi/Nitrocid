@@ -20,6 +20,7 @@ using System;
 using ColorSeq;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
@@ -33,20 +34,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class BouncingTextSettings
     {
 
-        private static bool _TrueColor = true;
-        private static int _Delay = 10;
-        private static string _Write = "Nitrocid KS";
-        private static string _BackgroundColor = new Color(ConsoleColors.Black).PlainSequence;
-        private static string _ForegroundColor = new Color(ConsoleColors.White).PlainSequence;
-        private static int _MinimumRedColorLevel = 0;
-        private static int _MinimumGreenColorLevel = 0;
-        private static int _MinimumBlueColorLevel = 0;
-        private static int _MinimumColorLevel = 0;
-        private static int _MaximumRedColorLevel = 255;
-        private static int _MaximumGreenColorLevel = 255;
-        private static int _MaximumBlueColorLevel = 255;
-        private static int _MaximumColorLevel = 255;
-
         /// <summary>
         /// [BouncingText] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -54,11 +41,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _TrueColor;
+                return Config.SaverConfig.BouncingTextTrueColor;
             }
             set
             {
-                _TrueColor = value;
+                Config.SaverConfig.BouncingTextTrueColor = value;
             }
         }
         /// <summary>
@@ -68,13 +55,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.BouncingTextDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 10;
-                _Delay = value;
+                Config.SaverConfig.BouncingTextDelay = value;
             }
         }
         /// <summary>
@@ -84,13 +71,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Write;
+                return Config.SaverConfig.BouncingTextWrite;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "Nitrocid KS";
-                _Write = value;
+                Config.SaverConfig.BouncingTextWrite = value;
             }
         }
         /// <summary>
@@ -100,11 +87,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _BackgroundColor;
+                return Config.SaverConfig.BouncingTextBackgroundColor;
             }
             set
             {
-                _BackgroundColor = new Color(value).PlainSequence;
+                Config.SaverConfig.BouncingTextBackgroundColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -114,11 +101,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _ForegroundColor;
+                return Config.SaverConfig.BouncingTextForegroundColor;
             }
             set
             {
-                _ForegroundColor = new Color(value).PlainSequence;
+                Config.SaverConfig.BouncingTextForegroundColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -128,7 +115,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumRedColorLevel;
+                return Config.SaverConfig.BouncingTextMinimumRedColorLevel;
             }
             set
             {
@@ -136,7 +123,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumRedColorLevel = value;
+                Config.SaverConfig.BouncingTextMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -146,7 +133,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumGreenColorLevel;
+                return Config.SaverConfig.BouncingTextMinimumGreenColorLevel;
             }
             set
             {
@@ -154,7 +141,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumGreenColorLevel = value;
+                Config.SaverConfig.BouncingTextMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -164,7 +151,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumBlueColorLevel;
+                return Config.SaverConfig.BouncingTextMinimumBlueColorLevel;
             }
             set
             {
@@ -172,7 +159,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumBlueColorLevel = value;
+                Config.SaverConfig.BouncingTextMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -182,7 +169,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumColorLevel;
+                return Config.SaverConfig.BouncingTextMinimumColorLevel;
             }
             set
             {
@@ -191,7 +178,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                _MinimumColorLevel = value;
+                Config.SaverConfig.BouncingTextMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -201,15 +188,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumRedColorLevel;
+                return Config.SaverConfig.BouncingTextMaximumRedColorLevel;
             }
             set
             {
-                if (value <= _MinimumRedColorLevel)
-                    value = _MinimumRedColorLevel;
+                if (value <= Config.SaverConfig.BouncingTextMinimumRedColorLevel)
+                    value = Config.SaverConfig.BouncingTextMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumRedColorLevel = value;
+                Config.SaverConfig.BouncingTextMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -219,15 +206,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumGreenColorLevel;
+                return Config.SaverConfig.BouncingTextMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= _MinimumGreenColorLevel)
-                    value = _MinimumGreenColorLevel;
+                if (value <= Config.SaverConfig.BouncingTextMinimumGreenColorLevel)
+                    value = Config.SaverConfig.BouncingTextMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumGreenColorLevel = value;
+                Config.SaverConfig.BouncingTextMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -237,15 +224,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumBlueColorLevel;
+                return Config.SaverConfig.BouncingTextMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= _MinimumBlueColorLevel)
-                    value = _MinimumBlueColorLevel;
+                if (value <= Config.SaverConfig.BouncingTextMinimumBlueColorLevel)
+                    value = Config.SaverConfig.BouncingTextMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumBlueColorLevel = value;
+                Config.SaverConfig.BouncingTextMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -255,16 +242,16 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumColorLevel;
+                return Config.SaverConfig.BouncingTextMaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= _MinimumColorLevel)
-                    value = _MinimumColorLevel;
+                if (value <= Config.SaverConfig.BouncingTextMinimumColorLevel)
+                    value = Config.SaverConfig.BouncingTextMinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                _MaximumColorLevel = value;
+                Config.SaverConfig.BouncingTextMaximumColorLevel = value;
             }
         }
 

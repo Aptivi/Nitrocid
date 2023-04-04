@@ -21,6 +21,7 @@ using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
@@ -33,19 +34,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class WipeSettings
     {
 
-        private static bool _TrueColor = true;
-        private static int _Delay = 10;
-        private static int _WipesNeededToChangeDirection = 10;
-        private static string _BackgroundColor = new Color(ConsoleColors.Black).PlainSequence;
-        private static int _MinimumRedColorLevel = 0;
-        private static int _MinimumGreenColorLevel = 0;
-        private static int _MinimumBlueColorLevel = 0;
-        private static int _MinimumColorLevel = 0;
-        private static int _MaximumRedColorLevel = 255;
-        private static int _MaximumGreenColorLevel = 255;
-        private static int _MaximumBlueColorLevel = 255;
-        private static int _MaximumColorLevel = 255;
-
         /// <summary>
         /// [Wipe] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -53,11 +41,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _TrueColor;
+                return Config.SaverConfig.WipeTrueColor;
             }
             set
             {
-                _TrueColor = value;
+                Config.SaverConfig.WipeTrueColor = value;
             }
         }
         /// <summary>
@@ -67,11 +55,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.WipeDelay;
             }
             set
             {
-                _Delay = value;
+                Config.SaverConfig.WipeDelay = value;
             }
         }
         /// <summary>
@@ -81,11 +69,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _WipesNeededToChangeDirection;
+                return Config.SaverConfig.WipeWipesNeededToChangeDirection;
             }
             set
             {
-                _WipesNeededToChangeDirection = value;
+                Config.SaverConfig.WipeWipesNeededToChangeDirection = value;
             }
         }
         /// <summary>
@@ -95,11 +83,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _BackgroundColor;
+                return Config.SaverConfig.WipeBackgroundColor;
             }
             set
             {
-                _BackgroundColor = value;
+                Config.SaverConfig.WipeBackgroundColor = value;
             }
         }
         /// <summary>
@@ -109,11 +97,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumRedColorLevel;
+                return Config.SaverConfig.WipeMinimumRedColorLevel;
             }
             set
             {
-                _MinimumRedColorLevel = value;
+                Config.SaverConfig.WipeMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -123,11 +111,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumGreenColorLevel;
+                return Config.SaverConfig.WipeMinimumGreenColorLevel;
             }
             set
             {
-                _MinimumGreenColorLevel = value;
+                Config.SaverConfig.WipeMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -137,11 +125,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumBlueColorLevel;
+                return Config.SaverConfig.WipeMinimumBlueColorLevel;
             }
             set
             {
-                _MinimumBlueColorLevel = value;
+                Config.SaverConfig.WipeMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -151,11 +139,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumColorLevel;
+                return Config.SaverConfig.WipeMinimumColorLevel;
             }
             set
             {
-                _MinimumColorLevel = value;
+                Config.SaverConfig.WipeMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -165,11 +153,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumRedColorLevel;
+                return Config.SaverConfig.WipeMaximumRedColorLevel;
             }
             set
             {
-                _MaximumRedColorLevel = value;
+                Config.SaverConfig.WipeMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -179,11 +167,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumGreenColorLevel;
+                return Config.SaverConfig.WipeMaximumGreenColorLevel;
             }
             set
             {
-                _MaximumGreenColorLevel = value;
+                Config.SaverConfig.WipeMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -193,11 +181,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumBlueColorLevel;
+                return Config.SaverConfig.WipeMaximumBlueColorLevel;
             }
             set
             {
-                _MaximumBlueColorLevel = value;
+                Config.SaverConfig.WipeMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -207,11 +195,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumColorLevel;
+                return Config.SaverConfig.WipeMaximumColorLevel;
             }
             set
             {
-                _MaximumColorLevel = value;
+                Config.SaverConfig.WipeMaximumColorLevel = value;
             }
         }
 

@@ -34,6 +34,7 @@ using KS.Kernel.Events;
 using KS.Misc.Writers.MiscWriters;
 using System;
 using KS.Misc.Probers.Placeholder;
+using KS.Kernel.Configuration;
 
 namespace KS.Users.Login
 {
@@ -55,15 +56,18 @@ namespace KS.Users.Login
         /// <summary>
         /// Current username
         /// </summary>
-        public static UserInfo CurrentUser => CurrentUserInfo;
+        public static UserInfo CurrentUser =>
+            CurrentUserInfo;
         /// <summary>
         /// Username prompt
         /// </summary>
-        public static string UsernamePrompt { get; set; } = "";
+        public static string UsernamePrompt =>
+            Config.MainConfig.UsernamePrompt;
         /// <summary>
         /// Password prompt
         /// </summary>
-        public static string PasswordPrompt { get; set; } = "";
+        public static string PasswordPrompt =>
+            Config.MainConfig.PasswordPrompt;
 
         /// <summary>
         /// Prompts user for login information

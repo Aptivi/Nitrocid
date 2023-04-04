@@ -34,31 +34,11 @@ namespace KS.Files.Folders
     public static class CurrentDirectory
     {
 
-        private static string _CurrentDirectory = Paths.HomePath;
-
         /// <summary>
         /// The current directory
         /// </summary>
-        public static string CurrentDir
-        {
-            get
-            {
-                return _CurrentDirectory;
-            }
-            set
-            {
-                Filesystem.ThrowOnInvalidPath(value);
-                value = Filesystem.NeutralizePath(value);
-                if (Checking.FolderExists(value))
-                {
-                    _CurrentDirectory = value;
-                }
-                else
-                {
-                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Directory {0} not found").FormatString(value));
-                }
-            }
-        }
+        public static string CurrentDir =>
+            Config.MainConfig is not null ? Config.MainConfig.CurrentDir : Paths.HomePath;
 
         /// <summary>
         /// Sets the current working directory
@@ -67,7 +47,7 @@ namespace KS.Files.Folders
         /// <exception cref="DirectoryNotFoundException"></exception>
         public static void SetCurrDir(string dir)
         {
-            CurrentDir = dir;
+            Config.MainConfig.CurrentDir = dir;
 
             // Raise event
             EventsManager.FireEvent(EventType.CurrentDirectoryChanged);
@@ -99,8 +79,7 @@ namespace KS.Files.Folders
         /// </summary>
         public static void SaveCurrDir()
         {
-            var Token = ConfigTools.GetConfigCategory(ConfigCategory.Shell);
-            ConfigTools.SetConfigValue(ConfigCategory.Shell, Token, "Current Directory", CurrentDir);
+            Config.CreateConfig();
         }
 
         /// <summary>

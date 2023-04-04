@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 
@@ -27,15 +28,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class EdgePulseSettings
     {
 
-        private static int _Delay = 50;
-        private static int _MaxSteps = 25;
-        private static int _MinimumRedColorLevel = 0;
-        private static int _MinimumGreenColorLevel = 0;
-        private static int _MinimumBlueColorLevel = 0;
-        private static int _MaximumRedColorLevel = 255;
-        private static int _MaximumGreenColorLevel = 255;
-        private static int _MaximumBlueColorLevel = 255;
-
         /// <summary>
         /// [EdgePulse] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -43,13 +35,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.EdgePulseDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 50;
-                _Delay = value;
+                Config.SaverConfig.EdgePulseDelay = value;
             }
         }
         /// <summary>
@@ -59,13 +51,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaxSteps;
+                return Config.SaverConfig.EdgePulseMaxSteps;
             }
             set
             {
                 if (value <= 0)
                     value = 25;
-                _MaxSteps = value;
+                Config.SaverConfig.EdgePulseMaxSteps = value;
             }
         }
         /// <summary>
@@ -75,7 +67,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumRedColorLevel;
+                return Config.SaverConfig.EdgePulseMinimumRedColorLevel;
             }
             set
             {
@@ -83,7 +75,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumRedColorLevel = value;
+                Config.SaverConfig.EdgePulseMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -93,7 +85,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumGreenColorLevel;
+                return Config.SaverConfig.EdgePulseMinimumGreenColorLevel;
             }
             set
             {
@@ -101,7 +93,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumGreenColorLevel = value;
+                Config.SaverConfig.EdgePulseMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -111,7 +103,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumBlueColorLevel;
+                return Config.SaverConfig.EdgePulseMinimumBlueColorLevel;
             }
             set
             {
@@ -119,7 +111,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumBlueColorLevel = value;
+                Config.SaverConfig.EdgePulseMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -129,15 +121,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumRedColorLevel;
+                return Config.SaverConfig.EdgePulseMaximumRedColorLevel;
             }
             set
             {
-                if (value <= _MinimumRedColorLevel)
-                    value = _MinimumRedColorLevel;
+                if (value <= Config.SaverConfig.EdgePulseMinimumRedColorLevel)
+                    value = Config.SaverConfig.EdgePulseMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumRedColorLevel = value;
+                Config.SaverConfig.EdgePulseMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -147,15 +139,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumGreenColorLevel;
+                return Config.SaverConfig.EdgePulseMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= _MinimumGreenColorLevel)
-                    value = _MinimumGreenColorLevel;
+                if (value <= Config.SaverConfig.EdgePulseMinimumGreenColorLevel)
+                    value = Config.SaverConfig.EdgePulseMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumGreenColorLevel = value;
+                Config.SaverConfig.EdgePulseMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -165,15 +157,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumBlueColorLevel;
+                return Config.SaverConfig.EdgePulseMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= _MinimumBlueColorLevel)
-                    value = _MinimumBlueColorLevel;
+                if (value <= Config.SaverConfig.EdgePulseMinimumBlueColorLevel)
+                    value = Config.SaverConfig.EdgePulseMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumBlueColorLevel = value;
+                Config.SaverConfig.EdgePulseMaximumBlueColorLevel = value;
             }
         }
 

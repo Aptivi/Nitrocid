@@ -66,7 +66,7 @@ namespace KS.Kernel
     {
 
         internal static KernelThread RPCPowerListener = new("RPC Power Listener Thread", true, (object arg) => PowerManager.PowerManage((PowerMode)arg)) { isCritical = true };
-        private static string bannerFigletFont = "Banner";
+        internal static string bannerFigletFont = "Banner";
 
         /// <summary>
         /// Kernel version
@@ -79,11 +79,8 @@ namespace KS.Kernel
         /// <summary>
         /// Current banner figlet font
         /// </summary>
-        public static string BannerFigletFont
-        {
-            get => bannerFigletFont;
-            set => bannerFigletFont = FigletTools.FigletFonts.ContainsKey(value) ? value : "Banner";
-        }
+        public static string BannerFigletFont =>
+            Config.MainConfig.BannerFigletFont;
 
         // ----------------------------------------------- Init and reset -----------------------------------------------
         /// <summary>
@@ -96,7 +93,7 @@ namespace KS.Kernel
             EventManager.CalendarEvents.Clear();
             Flags.SafeMode = false;
             Flags.QuietKernel = false;
-            Flags.Maintenance = false;
+            Config.MainConfig.Maintenance = false;
             SplashReport._Progress = 0;
             SplashReport._ProgressText = "";
             SplashReport._KernelBooted = false;
@@ -192,13 +189,10 @@ namespace KS.Kernel
             TextWriterColor.Write(Translate.DoTranslation("Loading custom splashes..."));
             SplashManager.LoadSplashes();
 
-            // Read failsafe config
-            TextWriterColor.Write(Translate.DoTranslation("Loading configuration..."));
-            if (Flags.SafeMode)
-                Config.ReadFailsafeConfig();
-
             // Create config file and then read it
-            Config.InitializeConfig();
+            TextWriterColor.Write(Translate.DoTranslation("Loading configuration..."));
+            if (!Flags.SafeMode)
+                Config.InitializeConfig();
 
             // Load background
             ColorTools.LoadBack();

@@ -21,6 +21,7 @@ using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
+using KS.Kernel.Configuration;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
@@ -33,8 +34,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class MemdumpSettings
     {
 
-        private static int _Delay = 500;
-
         /// <summary>
         /// [Memdump] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -42,13 +41,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.MemdumpDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 500;
-                _Delay = value;
+                Config.SaverConfig.MemdumpDelay = value;
             }
         }
 

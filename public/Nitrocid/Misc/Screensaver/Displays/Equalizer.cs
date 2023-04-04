@@ -21,6 +21,7 @@ using System.Linq;
 using ColorSeq;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
@@ -34,8 +35,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class EqualizerSettings
     {
 
-        private static int _NextScreenDelay = 3000;
-
         /// <summary>
         /// [Equalizer] How many milliseconds to wait before going to next equalizer preset?
         /// </summary>
@@ -43,13 +42,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _NextScreenDelay;
+                return Config.SaverConfig.EqualizerNextScreenDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 3000;
-                _NextScreenDelay = value;
+                Config.SaverConfig.EqualizerNextScreenDelay = value;
             }
         }
 

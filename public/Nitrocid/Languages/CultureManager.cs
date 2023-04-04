@@ -32,7 +32,8 @@ namespace KS.Languages
         /// <summary>
         /// Current culture
         /// </summary>
-        public static string CurrentCultStr { get; set; } = "en-US";
+        public static string CurrentCultStr =>
+            Config.MainConfig.CurrentCultStr;
         /// <summary>
         /// Current culture
         /// </summary>
@@ -44,7 +45,7 @@ namespace KS.Languages
         public static void UpdateCultureDry()
         {
             string StrCult = !(GetCulturesFromCurrentLang().Count == 0) ? GetCulturesFromCurrentLang()[0].EnglishName : CultureInfo.CurrentCulture.EnglishName;
-            DebugWriter.WriteDebug(DebugLevel.I, "Culture for {0} is {1}", LanguageManager.CurrentLanguage, StrCult);
+            DebugWriter.WriteDebug(DebugLevel.I, "Culture for {0} is {1}", LanguageManager.CurrentLanguageInfo, StrCult);
             var Cults = CultureInfo.GetCultures(CultureTypes.AllCultures);
             DebugWriter.WriteDebug(DebugLevel.I, "Parsing {0} cultures for {1}", Cults.Length, StrCult);
             foreach (CultureInfo Cult in Cults)
@@ -52,7 +53,7 @@ namespace KS.Languages
                 if (Cult.EnglishName == StrCult)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Found. Changing culture...");
-                    CurrentCultStr = Cult.Name;
+                    Config.MainConfig.CurrentCultStr = Cult.Name;
                     break;
                 }
             }
@@ -64,8 +65,7 @@ namespace KS.Languages
         public static void UpdateCulture()
         {
             UpdateCultureDry();
-            var Token = ConfigTools.GetConfigCategory(ConfigCategory.General);
-            ConfigTools.SetConfigValue(ConfigCategory.General, Token, "Culture", CurrentCult.Name);
+            Config.CreateConfig();
             DebugWriter.WriteDebug(DebugLevel.I, "Saved new culture.");
         }
 
@@ -81,7 +81,7 @@ namespace KS.Languages
                 if (Cult.EnglishName == Culture)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Found. Changing culture...");
-                    CurrentCultStr = Cult.Name;
+                    Config.MainConfig.CurrentCultStr = Cult.Name;
                     break;
                 }
             }
@@ -94,8 +94,7 @@ namespace KS.Languages
         public static void UpdateCulture(string Culture)
         {
             UpdateCultureDry(Culture);
-            var Token = ConfigTools.GetConfigCategory(ConfigCategory.General);
-            ConfigTools.SetConfigValue(ConfigCategory.General, Token, "Culture", CurrentCult.Name);
+            Config.CreateConfig();
             DebugWriter.WriteDebug(DebugLevel.I, "Saved new culture.");
         }
 
@@ -103,7 +102,7 @@ namespace KS.Languages
         /// Gets all cultures available for the current language
         /// </summary>
         public static List<CultureInfo> GetCulturesFromCurrentLang() =>
-            LanguageManager.CurrentLanguage.Cultures;
+            LanguageManager.CurrentLanguageInfo.Cultures;
 
         /// <summary>
         /// Gets all cultures available for the current language
@@ -112,7 +111,7 @@ namespace KS.Languages
         {
             if (LanguageManager.Languages.ContainsKey(Language))
             {
-                return LanguageManager.CurrentLanguage.Cultures;
+                return LanguageManager.CurrentLanguageInfo.Cultures;
             }
             return null;
         }

@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.Collections.Generic;
+using KS.Kernel.Configuration;
 using KS.Network.Mail.Transfer;
 using MailKit;
 using MimeKit.Text;
@@ -42,47 +43,43 @@ namespace KS.Shell.Shells.Mail
         /// <summary>
         /// Notify on new mail arrival
         /// </summary>
-        public static bool Mail_NotifyNewMail { get; set; } = true;
+        public static bool Mail_NotifyNewMail =>
+            Config.MainConfig.Mail_NotifyNewMail;
         /// <summary>
         /// IMAP ping interval in milliseconds
         /// </summary>
-        public static int Mail_ImapPingInterval
-        {
-            get => imapPingInterval;
-            set => imapPingInterval = value < 0 ? 30000 : value;
-        }
+        public static int Mail_ImapPingInterval =>
+            Config.MainConfig.Mail_ImapPingInterval;
         /// <summary>
         /// SMTP ping interval in milliseconds
         /// </summary>
-        public static int Mail_SmtpPingInterval
-        {
-            get => smtpPingInterval;
-            set => smtpPingInterval = value < 0 ? 30000 : value;
-        }
+        public static int Mail_SmtpPingInterval =>
+            Config.MainConfig.Mail_SmtpPingInterval;
         /// <summary>
         /// Max messages per page
         /// </summary>
-        public static int Mail_MaxMessagesInPage
-        {
-            get => maxMessagesInPage;
-            set => maxMessagesInPage = value < 0 ? 10 : value;
-        }
+        public static int Mail_MaxMessagesInPage =>
+            Config.MainConfig.Mail_MaxMessagesInPage;
         /// <summary>
         /// Message text format
         /// </summary>
-        public static TextFormat Mail_TextFormat { get; set; } = TextFormat.Plain;
+        public static TextFormat Mail_TextFormat =>
+            (TextFormat)Config.MainConfig.Mail_TextFormat;
         /// <summary>
         /// Show progress on mail transfer
         /// </summary>
-        public static bool Mail_ShowProgress { get; set; } = true;
+        public static bool Mail_ShowProgress =>
+            Config.MainConfig.Mail_ShowProgress;
         /// <summary>
         /// Mail progress style
         /// </summary>
-        public static string Mail_ProgressStyle { get; set; } = "";
+        public static string Mail_ProgressStyle =>
+            Config.MainConfig.Mail_ProgressStyle;
         /// <summary>
         /// Mail progress style (single)
         /// </summary>
-        public static string Mail_ProgressStyleSingle { get; set; } = "";
+        public static string Mail_ProgressStyleSingle =>
+            Config.MainConfig.Mail_ProgressStyleSingle;
         /// <summary>
         /// The mail progress
         /// </summary>

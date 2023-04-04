@@ -21,6 +21,7 @@ using System.Data;
 using System.Linq;
 using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -40,7 +41,8 @@ namespace KS.Network.Mail.Directory
         /// <summary>
         /// Whether to show the message preview or not
         /// </summary>
-        public static bool ShowPreview { get; set; }
+        public static bool ShowPreview =>
+            Config.MainConfig.ShowPreview;
 
         /// <summary>
         /// Lists messages

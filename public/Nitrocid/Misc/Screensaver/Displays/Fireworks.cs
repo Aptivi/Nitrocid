@@ -20,6 +20,7 @@ using System;
 using ColorSeq;
 using Extensification.IntegerExts;
 using KS.ConsoleBase;
+using KS.Kernel.Configuration;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
@@ -33,18 +34,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class FireworksSettings
     {
 
-        private static bool _TrueColor = true;
-        private static int _Delay = 10;
-        private static int _Radius = 5;
-        private static int _MinimumRedColorLevel = 0;
-        private static int _MinimumGreenColorLevel = 0;
-        private static int _MinimumBlueColorLevel = 0;
-        private static int _MinimumColorLevel = 0;
-        private static int _MaximumRedColorLevel = 255;
-        private static int _MaximumGreenColorLevel = 255;
-        private static int _MaximumBlueColorLevel = 255;
-        private static int _MaximumColorLevel = 255;
-
         /// <summary>
         /// [Fireworks] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -52,11 +41,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _TrueColor;
+                return Config.SaverConfig.FireworksTrueColor;
             }
             set
             {
-                _TrueColor = value;
+                Config.SaverConfig.FireworksTrueColor = value;
             }
         }
         /// <summary>
@@ -66,13 +55,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.FireworksDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 10;
-                _Delay = value;
+                Config.SaverConfig.FireworksDelay = value;
             }
         }
         /// <summary>
@@ -82,13 +71,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Radius;
+                return Config.SaverConfig.FireworksRadius;
             }
             set
             {
                 if (value <= 0)
                     value = 5;
-                _Radius = value;
+                Config.SaverConfig.FireworksRadius = value;
             }
         }
         /// <summary>
@@ -98,7 +87,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumRedColorLevel;
+                return Config.SaverConfig.FireworksMinimumRedColorLevel;
             }
             set
             {
@@ -106,7 +95,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumRedColorLevel = value;
+                Config.SaverConfig.FireworksMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -116,7 +105,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumGreenColorLevel;
+                return Config.SaverConfig.FireworksMinimumGreenColorLevel;
             }
             set
             {
@@ -124,7 +113,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumGreenColorLevel = value;
+                Config.SaverConfig.FireworksMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -134,7 +123,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumBlueColorLevel;
+                return Config.SaverConfig.FireworksMinimumBlueColorLevel;
             }
             set
             {
@@ -142,7 +131,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumBlueColorLevel = value;
+                Config.SaverConfig.FireworksMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -152,7 +141,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumColorLevel;
+                return Config.SaverConfig.FireworksMinimumColorLevel;
             }
             set
             {
@@ -161,7 +150,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                _MinimumColorLevel = value;
+                Config.SaverConfig.FireworksMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -171,15 +160,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumRedColorLevel;
+                return Config.SaverConfig.FireworksMaximumRedColorLevel;
             }
             set
             {
-                if (value <= _MinimumRedColorLevel)
-                    value = _MinimumRedColorLevel;
+                if (value <= Config.SaverConfig.FireworksMinimumRedColorLevel)
+                    value = Config.SaverConfig.FireworksMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumRedColorLevel = value;
+                Config.SaverConfig.FireworksMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -189,15 +178,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumGreenColorLevel;
+                return Config.SaverConfig.FireworksMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= _MinimumGreenColorLevel)
-                    value = _MinimumGreenColorLevel;
+                if (value <= Config.SaverConfig.FireworksMinimumGreenColorLevel)
+                    value = Config.SaverConfig.FireworksMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumGreenColorLevel = value;
+                Config.SaverConfig.FireworksMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -207,15 +196,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumBlueColorLevel;
+                return Config.SaverConfig.FireworksMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= _MinimumBlueColorLevel)
-                    value = _MinimumBlueColorLevel;
+                if (value <= Config.SaverConfig.FireworksMinimumBlueColorLevel)
+                    value = Config.SaverConfig.FireworksMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumBlueColorLevel = value;
+                Config.SaverConfig.FireworksMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -225,16 +214,16 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumColorLevel;
+                return Config.SaverConfig.FireworksMaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= _MinimumColorLevel)
-                    value = _MinimumColorLevel;
+                if (value <= Config.SaverConfig.FireworksMinimumColorLevel)
+                    value = Config.SaverConfig.FireworksMinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                _MaximumColorLevel = value;
+                Config.SaverConfig.FireworksMaximumColorLevel = value;
             }
         }
 

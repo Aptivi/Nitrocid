@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 
@@ -27,8 +28,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class SpinSettings
     {
 
-        private static int _Delay = 10;
-
         /// <summary>
         /// [Spin] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -36,13 +35,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.SpinDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 50;
-                _Delay = value;
+                Config.SaverConfig.SpinDelay = value;
             }
         }
 

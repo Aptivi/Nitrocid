@@ -25,6 +25,7 @@ using KS.Languages;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.ConsoleBase.Inputs;
+using KS.Kernel.Configuration;
 
 namespace KS.Misc.Games
 {
@@ -34,27 +35,25 @@ namespace KS.Misc.Games
     public static class MeteorShooter
     {
 
-        /// <summary>
-        /// Use PowerLine characters for the spaceship?
-        /// </summary>
-        public static bool MeteorUsePowerLine { get; set; } = true;
-        /// <summary>
-        /// Meteor speed in milliseconds
-        /// </summary>
-        public static int MeteorSpeed
-        {
-            get => meteorSpeed;
-            set => meteorSpeed = value < 0 ? 10 : value;
-        }
-
         internal readonly static KernelThread MeteorDrawThread = new("Meteor Shooter Draw Thread", true, DrawGame);
         internal static bool GameEnded = false;
-        private static int meteorSpeed = 10;
+        internal static int meteorSpeed = 10;
         private static int SpaceshipHeight = 0;
         private readonly static int MaxBullets = 10;
         private readonly static List<Tuple<int, int>> Bullets = new();
         private readonly static int MaxMeteors = 10;
         private readonly static List<Tuple<int, int>> Meteors = new();
+
+        /// <summary>
+        /// Use PowerLine characters for the spaceship?
+        /// </summary>
+        public static bool MeteorUsePowerLine =>
+            Config.MainConfig.MeteorUsePowerLine;
+        /// <summary>
+        /// Meteor speed in milliseconds
+        /// </summary>
+        public static int MeteorSpeed =>
+            Config.MainConfig.MeteorSpeed;
 
         /// <summary>
         /// Initializes the Meteor game

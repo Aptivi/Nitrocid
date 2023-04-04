@@ -19,6 +19,7 @@
 using ColorSeq;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
@@ -32,17 +33,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class SnakeFillSettings
     {
 
-        private static bool _TrueColor = true;
-        private static int _Delay = 10;
-        private static int _MinimumRedColorLevel = 0;
-        private static int _MinimumGreenColorLevel = 0;
-        private static int _MinimumBlueColorLevel = 0;
-        private static int _MinimumColorLevel = 0;
-        private static int _MaximumRedColorLevel = 255;
-        private static int _MaximumGreenColorLevel = 255;
-        private static int _MaximumBlueColorLevel = 255;
-        private static int _MaximumColorLevel = 255;
-
         /// <summary>
         /// [SnakeFill] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -50,11 +40,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _TrueColor;
+                return Config.SaverConfig.SnakeFillTrueColor;
             }
             set
             {
-                _TrueColor = value;
+                Config.SaverConfig.SnakeFillTrueColor = value;
             }
         }
         /// <summary>
@@ -64,11 +54,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.SnakeFillDelay;
             }
             set
             {
-                _Delay = value;
+                Config.SaverConfig.SnakeFillDelay = value;
             }
         }
         /// <summary>
@@ -78,11 +68,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumRedColorLevel;
+                return Config.SaverConfig.SnakeFillMinimumRedColorLevel;
             }
             set
             {
-                _MinimumRedColorLevel = value;
+                Config.SaverConfig.SnakeFillMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -92,11 +82,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumGreenColorLevel;
+                return Config.SaverConfig.SnakeFillMinimumGreenColorLevel;
             }
             set
             {
-                _MinimumGreenColorLevel = value;
+                Config.SaverConfig.SnakeFillMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -106,11 +96,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumBlueColorLevel;
+                return Config.SaverConfig.SnakeFillMinimumBlueColorLevel;
             }
             set
             {
-                _MinimumBlueColorLevel = value;
+                Config.SaverConfig.SnakeFillMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -120,11 +110,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumColorLevel;
+                return Config.SaverConfig.SnakeFillMinimumColorLevel;
             }
             set
             {
-                _MinimumColorLevel = value;
+                Config.SaverConfig.SnakeFillMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -134,11 +124,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumRedColorLevel;
+                return Config.SaverConfig.SnakeFillMaximumRedColorLevel;
             }
             set
             {
-                _MaximumRedColorLevel = value;
+                Config.SaverConfig.SnakeFillMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -148,11 +138,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumGreenColorLevel;
+                return Config.SaverConfig.SnakeFillMaximumGreenColorLevel;
             }
             set
             {
-                _MaximumGreenColorLevel = value;
+                Config.SaverConfig.SnakeFillMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -162,11 +152,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumBlueColorLevel;
+                return Config.SaverConfig.SnakeFillMaximumBlueColorLevel;
             }
             set
             {
-                _MaximumBlueColorLevel = value;
+                Config.SaverConfig.SnakeFillMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -176,11 +166,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumColorLevel;
+                return Config.SaverConfig.SnakeFillMaximumColorLevel;
             }
             set
             {
-                _MaximumColorLevel = value;
+                Config.SaverConfig.SnakeFillMaximumColorLevel = value;
             }
         }
 

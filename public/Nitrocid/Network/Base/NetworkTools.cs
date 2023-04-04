@@ -42,31 +42,23 @@ namespace KS.Network.Base
         /// <summary>
         /// Current kernel host name
         /// </summary>
-        public static string HostName { get; set; } = "kernel";
+        public static string HostName =>
+            Config.MainConfig.HostName;
         /// <summary>
         /// Download retries before giving up
         /// </summary>
-        public static int DownloadRetries
-        {
-            get => downloadRetries;
-            set => downloadRetries = value < 0 ? 3 : value;
-        }
+        public static int DownloadRetries =>
+            Config.MainConfig.DownloadRetries;
         /// <summary>
         /// Upload retries before giving up
         /// </summary>
-        public static int UploadRetries
-        {
-            get => uploadRetries;
-            set => uploadRetries = value < 0 ? 3 : value;
-        }
+        public static int UploadRetries =>
+            Config.MainConfig.UploadRetries;
         /// <summary>
         /// Ping timeout in milliseconds
         /// </summary>
-        public static int PingTimeout
-        {
-            get => pingTimeout;
-            set => pingTimeout = value < 0 ? 60000 : value;
-        }
+        public static int PingTimeout =>
+            Config.MainConfig.PingTimeout;
 
         /// <summary>
         /// Checks to see if the network is available
@@ -124,9 +116,8 @@ namespace KS.Network.Base
         /// <param name="NewHost">New host name</param>
         public static void ChangeHostname(string NewHost)
         {
-            HostName = NewHost;
-            var Token = ConfigTools.GetConfigCategory(ConfigCategory.Login);
-            ConfigTools.SetConfigValue(ConfigCategory.Login, Token, "Host Name", HostName);
+            Config.MainConfig.HostName = NewHost;
+            Config.CreateConfig();
         }
 
         /// <summary>

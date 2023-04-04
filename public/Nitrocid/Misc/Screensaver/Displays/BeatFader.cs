@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using ColorSeq;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 
 namespace KS.Misc.Screensaver.Displays
@@ -27,20 +28,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class BeatFaderSettings
     {
 
-        private static bool _TrueColor = true;
-        private static bool _CycleColors = true;
-        private static string _BeatColor = "17";
-        private static int _Delay = 120;
-        private static int _MaxSteps = 25;
-        private static int _MinimumRedColorLevel = 0;
-        private static int _MinimumGreenColorLevel = 0;
-        private static int _MinimumBlueColorLevel = 0;
-        private static int _MinimumColorLevel = 0;
-        private static int _MaximumRedColorLevel = 255;
-        private static int _MaximumGreenColorLevel = 255;
-        private static int _MaximumBlueColorLevel = 255;
-        private static int _MaximumColorLevel = 255;
-
         /// <summary>
         /// [BeatFader] Enable truecolor support. Has a higher priority than 255 color support. Please note that it only works if color cycling is enabled.
         /// </summary>
@@ -48,11 +35,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _TrueColor;
+                return Config.SaverConfig.BeatFaderTrueColor;
             }
             set
             {
-                _TrueColor = value;
+                Config.SaverConfig.BeatFaderTrueColor = value;
             }
         }
         /// <summary>
@@ -62,11 +49,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _CycleColors;
+                return Config.SaverConfig.BeatFaderCycleColors;
             }
             set
             {
-                _CycleColors = value;
+                Config.SaverConfig.BeatFaderCycleColors = value;
             }
         }
         /// <summary>
@@ -76,11 +63,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _BeatColor;
+                return Config.SaverConfig.BeatFaderBeatColor;
             }
             set
             {
-                _BeatColor = new Color(value).PlainSequence;
+                Config.SaverConfig.BeatFaderBeatColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -90,13 +77,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.BeatFaderDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 120;
-                _Delay = value;
+                Config.SaverConfig.BeatFaderDelay = value;
             }
         }
         /// <summary>
@@ -106,13 +93,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaxSteps;
+                return Config.SaverConfig.BeatFaderMaxSteps;
             }
             set
             {
                 if (value <= 0)
                     value = 25;
-                _MaxSteps = value;
+                Config.SaverConfig.BeatFaderMaxSteps = value;
             }
         }
         /// <summary>
@@ -122,7 +109,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumRedColorLevel;
+                return Config.SaverConfig.BeatFaderMinimumRedColorLevel;
             }
             set
             {
@@ -130,7 +117,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumRedColorLevel = value;
+                Config.SaverConfig.BeatFaderMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -140,7 +127,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumGreenColorLevel;
+                return Config.SaverConfig.BeatFaderMinimumGreenColorLevel;
             }
             set
             {
@@ -148,7 +135,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumGreenColorLevel = value;
+                Config.SaverConfig.BeatFaderMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -158,7 +145,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumBlueColorLevel;
+                return Config.SaverConfig.BeatFaderMinimumBlueColorLevel;
             }
             set
             {
@@ -166,7 +153,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumBlueColorLevel = value;
+                Config.SaverConfig.BeatFaderMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -176,7 +163,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumColorLevel;
+                return Config.SaverConfig.BeatFaderMinimumColorLevel;
             }
             set
             {
@@ -185,7 +172,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                _MinimumColorLevel = value;
+                Config.SaverConfig.BeatFaderMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -195,15 +182,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumRedColorLevel;
+                return Config.SaverConfig.BeatFaderMaximumRedColorLevel;
             }
             set
             {
-                if (value <= _MinimumRedColorLevel)
-                    value = _MinimumRedColorLevel;
+                if (value <= Config.SaverConfig.BeatFaderMinimumRedColorLevel)
+                    value = Config.SaverConfig.BeatFaderMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumRedColorLevel = value;
+                Config.SaverConfig.BeatFaderMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -213,15 +200,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumGreenColorLevel;
+                return Config.SaverConfig.BeatFaderMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= _MinimumGreenColorLevel)
-                    value = _MinimumGreenColorLevel;
+                if (value <= Config.SaverConfig.BeatFaderMinimumGreenColorLevel)
+                    value = Config.SaverConfig.BeatFaderMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumGreenColorLevel = value;
+                Config.SaverConfig.BeatFaderMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -231,15 +218,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumBlueColorLevel;
+                return Config.SaverConfig.BeatFaderMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= _MinimumBlueColorLevel)
-                    value = _MinimumBlueColorLevel;
+                if (value <= Config.SaverConfig.BeatFaderMinimumBlueColorLevel)
+                    value = Config.SaverConfig.BeatFaderMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumBlueColorLevel = value;
+                Config.SaverConfig.BeatFaderMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -249,16 +236,16 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumColorLevel;
+                return Config.SaverConfig.BeatFaderMaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= _MinimumColorLevel)
-                    value = _MinimumColorLevel;
+                if (value <= Config.SaverConfig.BeatFaderMinimumColorLevel)
+                    value = Config.SaverConfig.BeatFaderMinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                _MaximumColorLevel = value;
+                Config.SaverConfig.BeatFaderMaximumColorLevel = value;
             }
         }
 

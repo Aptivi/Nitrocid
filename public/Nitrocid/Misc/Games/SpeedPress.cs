@@ -19,6 +19,7 @@
 using System;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
+using KS.Kernel.Configuration;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text;
@@ -32,20 +33,18 @@ namespace KS.Misc.Games
     public static class SpeedPress
     {
 
+        internal static int speedPressTimeout = 3000;
+
         /// <summary>
         /// Current difficulty for the game
         /// </summary>
-        public static SpeedPressDifficulty SpeedPressCurrentDifficulty { get; set; } = SpeedPressDifficulty.Medium;
+        public static SpeedPressDifficulty SpeedPressCurrentDifficulty =>
+            (SpeedPressDifficulty)Config.MainConfig.SpeedPressCurrentDifficulty;
         /// <summary>
         /// Timeout in milliseconds before declaring that the time is up
         /// </summary>
-        public static int SpeedPressTimeout
-        {
-            get => speedPressTimeout;
-            set => speedPressTimeout = value < 0 ? 3000 : value;
-        }
-
-        private static int speedPressTimeout = 3000;
+        public static int SpeedPressTimeout =>
+            Config.MainConfig.SpeedPressTimeout;
 
         /// <summary>
         /// SpeedPress difficulty

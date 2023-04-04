@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Configuration;
 using KS.Misc.Games;
 using KS.Misc.Threading;
 
@@ -27,18 +28,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class SnakerSettings
     {
 
-        private static bool _TrueColor = true;
-        private static int _Delay = 100;
-        private static int _StageDelay = 5000;
-        private static int _MinimumRedColorLevel = 0;
-        private static int _MinimumGreenColorLevel = 0;
-        private static int _MinimumBlueColorLevel = 0;
-        private static int _MinimumColorLevel = 0;
-        private static int _MaximumRedColorLevel = 255;
-        private static int _MaximumGreenColorLevel = 255;
-        private static int _MaximumBlueColorLevel = 255;
-        private static int _MaximumColorLevel = 255;
-
         /// <summary>
         /// [Snaker] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -46,11 +35,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _TrueColor;
+                return Config.SaverConfig.SnakerTrueColor;
             }
             set
             {
-                _TrueColor = value;
+                Config.SaverConfig.SnakerTrueColor = value;
             }
         }
         /// <summary>
@@ -60,13 +49,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.SnakerDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 100;
-                _Delay = value;
+                Config.SaverConfig.SnakerDelay = value;
             }
         }
         /// <summary>
@@ -76,13 +65,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _StageDelay;
+                return Config.SaverConfig.SnakerStageDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 5000;
-                _StageDelay = value;
+                Config.SaverConfig.SnakerStageDelay = value;
             }
         }
         /// <summary>
@@ -92,7 +81,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumRedColorLevel;
+                return Config.SaverConfig.SnakerMinimumRedColorLevel;
             }
             set
             {
@@ -100,7 +89,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumRedColorLevel = value;
+                Config.SaverConfig.SnakerMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -110,7 +99,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumGreenColorLevel;
+                return Config.SaverConfig.SnakerMinimumGreenColorLevel;
             }
             set
             {
@@ -118,7 +107,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumGreenColorLevel = value;
+                Config.SaverConfig.SnakerMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -128,7 +117,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumBlueColorLevel;
+                return Config.SaverConfig.SnakerMinimumBlueColorLevel;
             }
             set
             {
@@ -136,7 +125,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumBlueColorLevel = value;
+                Config.SaverConfig.SnakerMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -146,7 +135,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumColorLevel;
+                return Config.SaverConfig.SnakerMinimumColorLevel;
             }
             set
             {
@@ -155,7 +144,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                _MinimumColorLevel = value;
+                Config.SaverConfig.SnakerMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -165,15 +154,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumRedColorLevel;
+                return Config.SaverConfig.SnakerMaximumRedColorLevel;
             }
             set
             {
-                if (value <= _MinimumRedColorLevel)
-                    value = _MinimumRedColorLevel;
+                if (value <= Config.SaverConfig.SnakerMinimumRedColorLevel)
+                    value = Config.SaverConfig.SnakerMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumRedColorLevel = value;
+                Config.SaverConfig.SnakerMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -183,15 +172,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumGreenColorLevel;
+                return Config.SaverConfig.SnakerMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= _MinimumGreenColorLevel)
-                    value = _MinimumGreenColorLevel;
+                if (value <= Config.SaverConfig.SnakerMinimumGreenColorLevel)
+                    value = Config.SaverConfig.SnakerMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumGreenColorLevel = value;
+                Config.SaverConfig.SnakerMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -201,15 +190,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumBlueColorLevel;
+                return Config.SaverConfig.SnakerMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= _MinimumBlueColorLevel)
-                    value = _MinimumBlueColorLevel;
+                if (value <= Config.SaverConfig.SnakerMinimumBlueColorLevel)
+                    value = Config.SaverConfig.SnakerMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumBlueColorLevel = value;
+                Config.SaverConfig.SnakerMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -219,16 +208,16 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumColorLevel;
+                return Config.SaverConfig.SnakerMaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= _MinimumColorLevel)
-                    value = _MinimumColorLevel;
+                if (value <= Config.SaverConfig.SnakerMinimumColorLevel)
+                    value = Config.SaverConfig.SnakerMinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                _MaximumColorLevel = value;
+                Config.SaverConfig.SnakerMaximumColorLevel = value;
             }
         }
 

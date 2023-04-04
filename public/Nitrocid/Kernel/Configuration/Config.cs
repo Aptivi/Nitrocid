@@ -38,6 +38,8 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using KS.Kernel.Events;
 using KS.ConsoleBase.Colors;
+using KS.Kernel.Configuration.Instances;
+using Newtonsoft.Json.Schema;
 
 namespace KS.Kernel.Configuration
 {
@@ -47,185 +49,80 @@ namespace KS.Kernel.Configuration
     public static class Config
     {
 
-        /// <summary>
-        /// Base config token to be loaded each kernel startup.
-        /// </summary>
-        internal static JObject ConfigToken;
-        /// <summary>
-        /// Fallback configuration
-        /// </summary>
-        internal readonly static JObject PristineConfigToken = GetNewConfigObject();
+        internal static KernelMainConfig mainConfig = new();
+        internal static KernelSaverConfig saverConfig = new();
+        internal static KernelSplashConfig splashConfig = new();
 
         /// <summary>
-        /// Creates a new JSON object containing the kernel settings of all kinds
+        /// Main configuration entry for the kernel
         /// </summary>
-        /// <returns>A pristine config object</returns>
-        public static JObject GetNewConfigObject()
-        {
-            JToken ConfigMetadata = JToken.Parse(Properties.Resources.Resources.SettingsEntries);
-            JToken ScreensaverConfigMetadata = JToken.Parse(Properties.Resources.Resources.ScreensaverSettingsEntries);
-            JToken SplashConfigMetadata = JToken.Parse(Properties.Resources.Resources.SplashSettingsEntries);
-
-            // Populate the kernel configuration objects
-            JObject KernelConfigObject = GetNewConfigObject(ConfigMetadata);
-            JObject ScreensaverConfigObject = GetNewConfigObject(ScreensaverConfigMetadata);
-            JObject SplashConfigObject = GetNewConfigObject(SplashConfigMetadata);
-
-            // Add screensaver and splash objects to their own sections
-            foreach (var saver in ScreensaverConfigObject)
-                ((JObject)KernelConfigObject["Screensaver"]).Add(saver.Key, saver.Value);
-            KernelConfigObject.Add("Splash", SplashConfigObject);
-
-            // Return the final result
-            return KernelConfigObject;
-        }
-
+        public static KernelMainConfig MainConfig { get => mainConfig; }
         /// <summary>
-        /// Creates a new JSON object containing the kernel settings of all kinds
+        /// Screensaver configuration entry for the kernel
         /// </summary>
-        /// <returns>A pristine config object</returns>
-        internal static JObject GetNewConfigObject(JToken metadata)
-        {
-            JObject ConfigObject = new();
-
-            // Get the max sections
-            int MaxSections = metadata.Count();
-            DebugWriter.WriteDebug(DebugLevel.I, "Max sections from metadata: {0}", MaxSections);
-            for (int SectionIndex = 0; SectionIndex <= MaxSections - 1; SectionIndex++)
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Section index: {0}", SectionIndex);
-                JObject ConfigSectionOptionsObject = new();
-
-                // Get the section property and fetch metadata information from section
-                JProperty Section = (JProperty)metadata.ToList()[SectionIndex];
-                DebugWriter.WriteDebug(DebugLevel.I, "Section name: {0}", Section.Name);
-                var SectionTokenGeneral = metadata[Section.Name];
-                var SectionToken = SectionTokenGeneral["Keys"];
-
-                // Count the options
-                int MaxOptions = SectionToken.Count();
-                DebugWriter.WriteDebug(DebugLevel.I, "Number of options: {0}", MaxOptions);
-                for (int OptionIndex = 0; OptionIndex <= MaxOptions - 1; OptionIndex++)
-                {
-                    // Get the setting token and fetch information
-                    DebugWriter.WriteDebug(DebugLevel.I, "Option index: {0}", OptionIndex);
-                    var Setting = SectionToken[OptionIndex];
-                    string VariableKeyName = (string)Setting["Name"];
-                    string Variable = (string)Setting["Variable"];
-                    bool VariableIsInternal = (bool)(Setting["IsInternal"] ?? false);
-                    bool VariableIsEnumerable = (bool)(Setting["IsEnumerable"] ?? false);
-                    int VariableEnumerableIndex = (int)(Setting["EnumerableIndex"] ?? 0);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Variable key name: {0} [reflecting {1}] with int: {2}, enum: {3}, enumidx: {4}", VariableKeyName, Variable, VariableIsInternal, VariableIsEnumerable, VariableEnumerableIndex);
-
-                    // Get variable value and type
-                    SettingsKeyType VariableType = (SettingsKeyType)Convert.ToInt32(Enum.Parse(typeof(SettingsKeyType), (string)Setting["Type"]));
-                    DebugWriter.WriteDebug(DebugLevel.I, "Got variable type: {0}", VariableType);
-                    object VariableValue = null;
-
-                    // Check the value if we're dealing with an enumerable
-                    if (FieldManager.CheckField(Variable, VariableIsInternal) && VariableIsEnumerable)
-                        VariableValue = FieldManager.GetValueFromEnumerable(Variable, VariableEnumerableIndex, VariableIsInternal);
-
-                    // Check the variable type, and deal with it as appropriate
-                    if (VariableType == SettingsKeyType.SColor)
-                    {
-                        // Get the plain sequence from the color
-                        if (VariableValue is KeyValuePair<KernelColorType, Color> color)
-                            VariableValue = color.Value.PlainSequence;
-                        else
-                        {
-                            if (FieldManager.CheckField(Variable, VariableIsInternal))
-                            {
-                                var finalVal = FieldManager.GetValue(Variable, VariableIsInternal);
-                                if (finalVal.GetType() == typeof(Color))
-                                    VariableValue = ((Color)finalVal).PlainSequence;
-                                else
-                                    VariableValue = new Color(((string)finalVal).ReleaseDoubleQuotes()).PlainSequence;
-                            }
-                            else
-                            {
-                                var finalVal = PropertyManager.GetPropertyValue(Variable);
-                                if (finalVal.GetType() == typeof(Color))
-                                    VariableValue = ((Color)finalVal).PlainSequence;
-                                else
-                                    VariableValue = new Color(((string)finalVal).ReleaseDoubleQuotes()).PlainSequence;
-                            }
-                        }
-
-                        // Setting entry is color, but the variable could be either String or Color.
-                        if ((FieldManager.CheckField(Variable, VariableIsInternal) && FieldManager.GetField(Variable, VariableIsInternal).FieldType == typeof(string)) ||
-                            (PropertyManager.CheckProperty(Variable) && PropertyManager.GetProperty(Variable).PropertyType == typeof(string)))
-                        {
-                            // We're dealing with the field or the property which takes color but is a string containing plain sequence
-                            VariableValue = new Color((string)VariableValue).PlainSequence;
-                        }
-                        DebugWriter.WriteDebug(DebugLevel.I, "Got color var value: {0}", VariableValue);
-                    }
-                    else if (VariableType == SettingsKeyType.SPreset)
-                    {
-                        if (VariableValue is KeyValuePair<string, PromptPresetBase> preset)
-                            VariableValue = preset.Value.PresetName;
-                        DebugWriter.WriteDebug(DebugLevel.I, "Got var value: {0}", VariableValue);
-                    }
-                    else if (VariableType == SettingsKeyType.SLang)
-                    {
-                        if (FieldManager.CheckField(Variable, VariableIsInternal))
-                            VariableValue = ((LanguageInfo)FieldManager.GetValue(Variable, VariableIsInternal)).ThreeLetterLanguageName;
-                        else
-                            VariableValue = ((LanguageInfo)PropertyManager.GetPropertyValue(Variable)).ThreeLetterLanguageName;
-                        DebugWriter.WriteDebug(DebugLevel.I, "Got var value: {0}", VariableValue);
-                    }
-                    else
-                    {
-                        if (FieldManager.CheckField(Variable, VariableIsInternal))
-                            VariableValue = FieldManager.GetValue(Variable, VariableIsInternal);
-                        else
-                            VariableValue = PropertyManager.GetPropertyValue(Variable);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Got var value: {0}", VariableValue);
-                    }
-
-                    // Check to see if the value is numeric
-                    if (VariableValue is int or long)
-                    {
-                        if (Convert.ToInt64(VariableValue) <= int.MaxValue)
-                            VariableValue = int.Parse(Convert.ToString(VariableValue));
-                        else if (Convert.ToInt64(VariableValue) <= long.MaxValue)
-                            VariableValue = long.Parse(Convert.ToString(VariableValue));
-                        DebugWriter.WriteDebug(DebugLevel.I, "Made necessary conversion for value: {0} [{1}]", VariableValue, VariableValue.GetType());
-                    }
-
-                    // Now, add the key to the options object
-                    DebugWriter.WriteDebug(DebugLevel.I, "Adding {0} to final options object", VariableKeyName);
-                    ConfigSectionOptionsObject.Add(VariableKeyName, VariableValue != null ? JToken.FromObject(VariableValue) : null);
-                }
-
-                // Now, add the key to the options object
-                DebugWriter.WriteDebug(DebugLevel.I, "Adding {0} to final object", Section.Name);
-                ConfigObject.Add(Section.Name, ConfigSectionOptionsObject);
-            }
-
-            return ConfigObject;
-        }
+        public static KernelSaverConfig SaverConfig { get => saverConfig; }
+        /// <summary>
+        /// Splash configuration entry for the kernel
+        /// </summary>
+        public static KernelSplashConfig SplashConfig { get => splashConfig; }
 
         /// <summary>
         /// Creates the kernel configuration file
         /// </summary>
-        public static void CreateConfig() =>
-            CreateConfig(Paths.GetKernelPath(KernelPathType.Configuration));
+        public static void CreateConfig()
+        {
+            CreateConfig(ConfigType.Kernel, Paths.GetKernelPath(KernelPathType.Configuration));
+            CreateConfig(ConfigType.Screensaver, Paths.GetKernelPath(KernelPathType.SaverConfiguration));
+            CreateConfig(ConfigType.Splash, Paths.GetKernelPath(KernelPathType.SplashConfiguration));
+        }
 
         /// <summary>
         /// Creates the kernel configuration file with custom path
         /// </summary>
-        public static void CreateConfig(string ConfigPath)
+        public static void CreateConfig(string ConfigFolder)
+        {
+            if (Flags.SafeMode)
+                return;
+
+            Filesystem.ThrowOnInvalidPath(ConfigFolder);
+            if (!Checking.FolderExists(ConfigFolder))
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Specify an existent folder to store the three configuration files on."));
+
+            // Save all three configuration types
+            CreateConfig(ConfigType.Kernel, ConfigFolder + "/" + Path.GetFileName(Paths.GetKernelPath(KernelPathType.Configuration)));
+            CreateConfig(ConfigType.Screensaver, ConfigFolder + "/" + Path.GetFileName(Paths.GetKernelPath(KernelPathType.SaverConfiguration)));
+            CreateConfig(ConfigType.Splash, ConfigFolder + "/" + Path.GetFileName(Paths.GetKernelPath(KernelPathType.SplashConfiguration)));
+        }
+
+        /// <summary>
+        /// Creates the kernel configuration file with custom path and custom type
+        /// </summary>
+        public static void CreateConfig(ConfigType type, string ConfigPath)
         {
             if (Flags.SafeMode)
                 return;
 
             Filesystem.ThrowOnInvalidPath(ConfigPath);
-            object ConfigurationObject = GetNewConfigObject();
+
+            // Serialize the config object
+            string serialized = "";
+            switch (type)
+            {
+                case ConfigType.Kernel:
+                    serialized = JsonConvert.SerializeObject(mainConfig, Formatting.Indented);
+                    break;
+                case ConfigType.Screensaver:
+                    serialized = JsonConvert.SerializeObject(saverConfig, Formatting.Indented);
+                    break;
+                case ConfigType.Splash:
+                    serialized = JsonConvert.SerializeObject(splashConfig, Formatting.Indented);
+                    break;
+            }
+            DebugCheck.AssertNull(serialized);
+            DebugCheck.Assert(!string.IsNullOrEmpty(serialized));
 
             // Save Config
-            File.WriteAllText(ConfigPath, JsonConvert.SerializeObject(ConfigurationObject, Formatting.Indented));
+            File.WriteAllText(ConfigPath, serialized);
             EventsManager.FireEvent(EventType.ConfigSaved);
         }
 
@@ -233,25 +130,11 @@ namespace KS.Kernel.Configuration
         /// Creates the kernel configuration file
         /// </summary>
         /// <returns>True if successful; False if unsuccessful.</returns>
-        public static bool TryCreateConfig() =>
-            TryCreateConfig(Paths.GetKernelPath(KernelPathType.Configuration));
-
-        /// <summary>
-        /// Creates the kernel configuration file with custom path
-        /// </summary>
-        /// <returns>True if successful; False if unsuccessful.</returns>
-        public static bool TryCreateConfig(string ConfigPath) =>
-            TryCreateConfig(JObject.Parse(File.ReadAllText(ConfigPath)));
-
-        /// <summary>
-        /// Creates the kernel configuration file with custom path
-        /// </summary>
-        /// <returns>True if successful; False if unsuccessful.</returns>
-        public static bool TryCreateConfig(JToken ConfigToken)
+        public static bool TryCreateConfig()
         {
             try
             {
-                CreateConfig((string)ConfigToken);
+                CreateConfig();
                 return true;
             }
             catch (Exception ex)
@@ -263,221 +146,115 @@ namespace KS.Kernel.Configuration
         }
 
         /// <summary>
-        /// Configures the kernel according to the kernel failsafe configuration
+        /// Creates the kernel configuration file with custom folder
         /// </summary>
-        public static void ReadFailsafeConfig() =>
-            ReadConfig(PristineConfigToken, true);
+        /// <returns>True if successful; False if unsuccessful.</returns>
+        public static bool TryCreateConfig(string ConfigFolder)
+        {
+            try
+            {
+                CreateConfig(ConfigFolder);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                EventsManager.FireEvent(EventType.ConfigSaveError, ex);
+                DebugWriter.WriteDebugStackTrace(ex);
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Creates the kernel configuration file with custom folder
+        /// </summary>
+        /// <returns>True if successful; False if unsuccessful.</returns>
+        public static bool TryCreateConfig(ConfigType type, string ConfigPath)
+        {
+            try
+            {
+                CreateConfig(type, ConfigPath);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                EventsManager.FireEvent(EventType.ConfigSaveError, ex);
+                DebugWriter.WriteDebugStackTrace(ex);
+                return false;
+            }
+        }
 
         /// <summary>
         /// Configures the kernel according to the kernel configuration file
         /// </summary>
-        public static void ReadConfig() =>
-            ReadConfig(Paths.GetKernelPath(KernelPathType.Configuration));
-
-        /// <summary>
-        /// Configures the kernel according to the custom kernel configuration file
-        /// </summary>
-        public static void ReadConfig(string ConfigPath)
+        public static void ReadConfig()
         {
-            Filesystem.ThrowOnInvalidPath(ConfigPath);
-            ReadConfig(JObject.Parse(File.ReadAllText(ConfigPath)));
+            ReadConfig(ConfigType.Kernel, Paths.GetKernelPath(KernelPathType.Configuration));
+            ReadConfig(ConfigType.Screensaver, Paths.GetKernelPath(KernelPathType.SaverConfiguration));
+            ReadConfig(ConfigType.Splash, Paths.GetKernelPath(KernelPathType.SplashConfiguration));
         }
 
         /// <summary>
-        /// Configures the kernel according to the custom kernel configuration file (new)
+        /// Configures the kernel according to the custom kernel configuration type
         /// </summary>
-        public static void ReadConfig(JToken ConfigToken, bool Force = false)
+        public static void ReadConfig(ConfigType type)
         {
-            if (Flags.SafeMode & !Force)
-                return;
-
-            // Load config token
-            Config.ConfigToken = (JObject)ConfigToken;
-            DebugWriter.WriteDebug(DebugLevel.I, "Config loaded with {0} sections", ConfigToken.Count());
-
-            // Parse config metadata
-            JToken ConfigMetadata = JToken.Parse(Properties.Resources.Resources.SettingsEntries);
-            JToken ScreensaverConfigMetadata = JToken.Parse(Properties.Resources.Resources.ScreensaverSettingsEntries);
-            JToken SplashConfigMetadata = JToken.Parse(Properties.Resources.Resources.SplashSettingsEntries);
-            JToken[] Metadatas = new[] { ConfigMetadata, ScreensaverConfigMetadata, SplashConfigMetadata };
-
-            // Load configuration values
-            foreach (JToken metadata in Metadatas)
+            switch (type)
             {
-                // Get the max sections
-                int MaxSections = metadata.Count();
-                DebugWriter.WriteDebug(DebugLevel.I, "Max sections from metadata: {0}", MaxSections);
-                for (int SectionIndex = 0; SectionIndex <= MaxSections - 1; SectionIndex++)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Section index: {0}", SectionIndex);
+                case ConfigType.Kernel:
+                    ReadConfig(type, Paths.GetKernelPath(KernelPathType.Configuration));
+                    break;
+                case ConfigType.Screensaver:
+                    ReadConfig(type, Paths.GetKernelPath(KernelPathType.SaverConfiguration));
+                    break;
+                case ConfigType.Splash:
+                    ReadConfig(type, Paths.GetKernelPath(KernelPathType.SplashConfiguration));
+                    break;
+            }
+        }
 
-                    // Get the section property and fetch metadata information from section
-                    JProperty Section = (JProperty)metadata.ToList()[SectionIndex];
-                    DebugWriter.WriteDebug(DebugLevel.I, "Section name: {0}", Section.Name);
-                    var SectionTokenGeneral = metadata[Section.Name];
-                    var SectionToken = SectionTokenGeneral["Keys"];
+        /// <summary>
+        /// Configures the kernel according to the custom kernel configuration type and file
+        /// </summary>
+        public static void ReadConfig(ConfigType type, string ConfigPath)
+        {
+            // Open the config JSON file
+            Filesystem.ThrowOnInvalidPath(ConfigPath);
+            if (!Checking.FileExists(ConfigPath))
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Specify an existent path to a configuration file"));
+            string jsonContents = File.ReadAllText(ConfigPath);
+            JObject configObj = JObject.Parse(jsonContents);
+            JSchema schema;
 
-                    // Get config token from path
-                    var SectionTokenPath = SectionTokenGeneral["Path"];
-                    var ConfigTokenFromPath = ConfigToken.SelectToken((string)SectionTokenPath);
+            // Now, read the config.
+            switch (type)
+            {
+                case ConfigType.Kernel:
+                    // Validate the configuration file
+                    schema = JSchema.Parse(Properties.Resources.Resources.KernelMainConfigSchema);
+                    if (!configObj.IsValid(schema))
+                        throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Configuration file is invalid."));
 
-                    // Count the options
-                    int MaxOptions = SectionToken.Count();
-                    bool repairRequired = false;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Number of options: {0}", MaxOptions);
-                    for (int OptionIndex = 0; OptionIndex <= MaxOptions - 1; OptionIndex++)
-                    {
-                        try
-                        {
-                            // Get the setting token and fetch information
-                            DebugWriter.WriteDebug(DebugLevel.I, "Option index: {0}", OptionIndex);
-                            var Setting = SectionToken[OptionIndex];
-                            string VariableKeyName = (string)Setting["Name"];
-                            string Variable = (string)Setting["Variable"];
-                            bool VariableIsInternal = (bool)(Setting["IsInternal"] ?? false);
-                            bool VariableIsEnumerable = (bool)(Setting["IsEnumerable"] ?? false);
-                            int VariableEnumerableIndex = (int)(Setting["EnumerableIndex"] ?? 0);
-                            DebugWriter.WriteDebug(DebugLevel.I, "Variable key name: {0} [reflecting {1}] with int: {2}, enum: {3}, enumidx: {4}", VariableKeyName, Variable, VariableIsInternal, VariableIsEnumerable, VariableEnumerableIndex);
+                    // Now, deserialize the config state.
+                    mainConfig = (KernelMainConfig)JsonConvert.DeserializeObject(jsonContents, typeof(KernelMainConfig));
+                    break;
+                case ConfigType.Screensaver:
+                    // Validate the configuration file
+                    schema = JSchema.Parse(Properties.Resources.Resources.KernelSaverConfigSchema);
+                    if (!configObj.IsValid(schema))
+                        throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Configuration file is invalid."));
 
-                            // Get variable value and type
-                            SettingsKeyType VariableType = (SettingsKeyType)Convert.ToInt32(Enum.Parse(typeof(SettingsKeyType), (string)Setting["Type"]));
-                            DebugWriter.WriteDebug(DebugLevel.I, "Got variable type: {0}", VariableType);
-                            object VariableValue = null;
+                    // Now, deserialize the config state.
+                    saverConfig = (KernelSaverConfig)JsonConvert.DeserializeObject(jsonContents, typeof(KernelSaverConfig));
+                    break;
+                case ConfigType.Splash:
+                    // Validate the configuration file
+                    schema = JSchema.Parse(Properties.Resources.Resources.KernelSplashConfigSchema);
+                    if (!configObj.IsValid(schema))
+                        throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Configuration file is invalid."));
 
-                            // Check the value if we're dealing with an enumerable
-                            if (FieldManager.CheckField(Variable, VariableIsInternal) && VariableIsEnumerable)
-                                VariableValue = FieldManager.GetValueFromEnumerable(Variable, VariableEnumerableIndex, VariableIsInternal);
-
-                            // Check the variable type, and deal with it as appropriate
-                            if (VariableType == SettingsKeyType.SColor)
-                            {
-                                string ColorValue = ((string)ConfigTokenFromPath[VariableKeyName]).ReleaseDoubleQuotes();
-
-                                // Get the plain sequence from the color
-                                if (FieldManager.CheckField(Variable, VariableIsInternal) &&
-                                    FieldManager.GetValue(Variable, VariableIsInternal) is Dictionary<KernelColorType, Color> colors)
-                                {
-                                    var colorTypeOnDict = colors.ElementAt(VariableEnumerableIndex).Key;
-                                    colors[colorTypeOnDict] = new Color(ColorValue);
-                                    VariableValue = colors;
-                                }
-                                else if (PropertyManager.CheckProperty(Variable) &&
-                                         PropertyManager.GetPropertyValue(Variable) is Dictionary<KernelColorType, Color> colors2)
-                                {
-                                    var colorTypeOnDict = colors2.ElementAt(VariableEnumerableIndex).Key;
-                                    colors2[colorTypeOnDict] = new Color(ColorValue);
-                                    VariableValue = colors2;
-                                }
-                                else if ((FieldManager.CheckField(Variable, VariableIsInternal) &&
-                                          FieldManager.GetField(Variable, VariableIsInternal).FieldType == typeof(Color)) ||
-                                         (PropertyManager.CheckProperty(Variable) &&
-                                          PropertyManager.GetProperty(Variable).PropertyType == typeof(Color)))
-                                {
-                                    VariableValue = new Color(ColorValue);
-                                }
-                                else
-                                {
-                                    VariableValue = ColorValue;
-                                }
-                                DebugWriter.WriteDebug(DebugLevel.I, "Got color var value: {0}", VariableValue);
-                            }
-                            else if (VariableType == SettingsKeyType.SSelection)
-                            {
-                                bool SelectionEnum = (bool)(Setting["IsEnumeration"] ?? false);
-                                string SelectionEnumAssembly = (string)Setting["EnumerationAssembly"];
-                                bool SelectionEnumInternal = (bool)(Setting["EnumerationInternal"] ?? false);
-                                if (SelectionEnum)
-                                {
-                                    if (SelectionEnumInternal)
-                                    {
-                                        // Apparently, we need to have a full assembly name for getting types.
-                                        Type enumType = Type.GetType("KS." + Setting["Enumeration"].ToString() + ", " + Assembly.GetExecutingAssembly().FullName);
-                                        VariableValue = Enum.Parse(enumType, ((string)ConfigTokenFromPath[VariableKeyName]).ReleaseDoubleQuotes());
-                                    }
-                                    else
-                                    {
-                                        Type enumType = Type.GetType(Setting["Enumeration"].ToString() + ", " + SelectionEnumAssembly);
-                                        VariableValue = Enum.Parse(enumType, ((string)ConfigTokenFromPath[VariableKeyName]).ReleaseDoubleQuotes());
-                                    }
-                                }
-                                else
-                                {
-                                    VariableValue = ConfigTokenFromPath[VariableKeyName].ToObject<dynamic>();
-                                }
-                                DebugWriter.WriteDebug(DebugLevel.I, "Got var value: {0}", VariableValue);
-                            }
-                            else if (VariableType == SettingsKeyType.SPreset)
-                            {
-                                if (VariableValue is KeyValuePair<string, PromptPresetBase> preset)
-                                {
-                                    // Set the preset and bail
-                                    PromptPresetManager.SetPreset((string)ConfigTokenFromPath[VariableKeyName], preset.Key);
-                                    continue;
-                                }
-                            }
-                            else if (VariableType == SettingsKeyType.SLang)
-                            {
-                                // Set the language. The reason for adding the type check is that pre-beta 1 0.1.0 versions tend to
-                                // set the language configuration to an object, which should have been a string instance. In order
-                                // to workaround this, we need to verify the type before fetching the language from the configuration
-                                // to avoid errors.
-                                string lang = 
-                                    ConfigTokenFromPath[VariableKeyName].Type == JTokenType.Object ?
-                                    (string)ConfigTokenFromPath[VariableKeyName]["ThreeLetterLanguageName"] :
-                                    (string)ConfigTokenFromPath[VariableKeyName];
-                                LanguageManager.SetLang(lang);
-                                continue;
-                            }
-                            else if (ConfigTokenFromPath is not null && 
-                                     ConfigTokenFromPath[VariableKeyName] is not null)
-                            {
-                                VariableValue = ConfigTokenFromPath[VariableKeyName].ToObject<dynamic>();
-                                DebugWriter.WriteDebug(DebugLevel.I, "Got var value: {0}", VariableValue);
-                            }
-                            else
-                            {
-                                DebugWriter.WriteDebug(DebugLevel.W, "Might be a new config entry: [{0}] {1}", Variable, VariableKeyName);
-                                DebugWriter.WriteDebug(DebugLevel.W, "Setting dirty config flag...");
-                                repairRequired = true;
-                                continue;
-                            }
-
-                            // Check to see if the value is numeric
-                            if (VariableValue is int or long)
-                            {
-                                if (Convert.ToInt64(VariableValue) <= int.MaxValue)
-                                    VariableValue = int.Parse(Convert.ToString(VariableValue));
-                                else if (Convert.ToInt64(VariableValue) <= long.MaxValue)
-                                    VariableValue = long.Parse(Convert.ToString(VariableValue));
-                                DebugWriter.WriteDebug(DebugLevel.I, "Made necessary conversion for value: {0} [{1}]", VariableValue, VariableValue.GetType());
-                            }
-
-                            // Now, set the value
-                            if (FieldManager.CheckField(Variable, VariableIsInternal))
-                            {
-                                // We're dealing with the field
-                                DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0}...", Variable);
-                                FieldManager.SetValue(Variable, VariableValue, VariableIsInternal);
-                            }
-                            else if (PropertyManager.CheckProperty(Variable))
-                            {
-                                // We're dealing with the property
-                                DebugWriter.WriteDebug(DebugLevel.I, "Setting property {0}...", Variable);
-                                PropertyManager.SetPropertyValue(Variable, VariableValue);
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.E, "Failed to read configuration entry {0}/{1} in config section {2} [{3}/{4}]: {5}", OptionIndex + 1, MaxOptions, SectionTokenGeneral, SectionIndex + 1, MaxSections, ex.Message);
-                            DebugWriter.WriteDebug(DebugLevel.E, "Setting dirty config flag...");
-                            repairRequired = true;
-                        }
-                    }
-
-                    // If the config needs repair, just fix it!
-                    if (repairRequired)
-                        ConfigTools.RepairConfig();
-                }
+                    // Now, deserialize the config state.
+                    splashConfig = (KernelSplashConfig)JsonConvert.DeserializeObject(jsonContents, typeof(KernelSplashConfig));
+                    break;
             }
         }
 
@@ -485,27 +262,11 @@ namespace KS.Kernel.Configuration
         /// Configures the kernel according to the kernel configuration file
         /// </summary>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool TryReadConfig() => TryReadConfig(Paths.GetKernelPath(KernelPathType.Configuration));
-
-        /// <summary>
-        /// Configures the kernel according to the custom kernel configuration file
-        /// </summary>
-        /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool TryReadConfig(string ConfigPath)
-        {
-            Filesystem.ThrowOnInvalidPath(ConfigPath);
-            return TryReadConfig(JObject.Parse(File.ReadAllText(ConfigPath)));
-        }
-
-        /// <summary>
-        /// Configures the kernel according to the custom kernel configuration file
-        /// </summary>
-        /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool TryReadConfig(JToken ConfigToken)
+        public static bool TryReadConfig()
         {
             try
             {
-                ReadConfig(ConfigToken);
+                ReadConfig();
                 return true;
             }
             catch (Exception ex)
@@ -513,9 +274,51 @@ namespace KS.Kernel.Configuration
                 EventsManager.FireEvent(EventType.ConfigReadError, ex);
                 DebugWriter.WriteDebugStackTrace(ex);
                 if (!SplashReport.KernelBooted)
-                {
                     NotificationManager.NotifySend(new Notification(Translate.DoTranslation("Error loading settings"), Translate.DoTranslation("There is an error while loading settings. You may need to check the settings file."), NotificationManager.NotifPriority.Medium, NotificationManager.NotifType.Normal));
-                }
+                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to read config: {0}", ex.Message);
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("There is an error trying to read configuration: {0}."), ex, ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Configures the kernel according to the custom kernel configuration file
+        /// </summary>
+        /// <returns>True if successful; False if unsuccessful</returns>
+        public static bool TryReadConfig(ConfigType type)
+        {
+            try
+            {
+                ReadConfig(type);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                EventsManager.FireEvent(EventType.ConfigReadError, ex);
+                DebugWriter.WriteDebugStackTrace(ex);
+                if (!SplashReport.KernelBooted)
+                    NotificationManager.NotifySend(new Notification(Translate.DoTranslation("Error loading settings"), Translate.DoTranslation("There is an error while loading settings. You may need to check the settings file."), NotificationManager.NotifPriority.Medium, NotificationManager.NotifType.Normal));
+                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to read config: {0}", ex.Message);
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("There is an error trying to read configuration: {0}."), ex, ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Configures the kernel according to the custom kernel configuration file
+        /// </summary>
+        /// <returns>True if successful; False if unsuccessful</returns>
+        public static bool TryReadConfig(ConfigType type, string ConfigPath)
+        {
+            try
+            {
+                ReadConfig(type, ConfigPath);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                EventsManager.FireEvent(EventType.ConfigReadError, ex);
+                DebugWriter.WriteDebugStackTrace(ex);
+                if (!SplashReport.KernelBooted)
+                    NotificationManager.NotifySend(new Notification(Translate.DoTranslation("Error loading settings"), Translate.DoTranslation("There is an error while loading settings. You may need to check the settings file."), NotificationManager.NotifPriority.Medium, NotificationManager.NotifType.Normal));
                 DebugWriter.WriteDebug(DebugLevel.E, "Error trying to read config: {0}", ex.Message);
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("There is an error trying to read configuration: {0}."), ex, ex.Message);
             }
@@ -530,7 +333,17 @@ namespace KS.Kernel.Configuration
             if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.Configuration)))
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "No config file found. Creating...");
-                CreateConfig();
+                CreateConfig(ConfigType.Kernel, Paths.GetKernelPath(KernelPathType.Configuration));
+            }
+            if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.SaverConfiguration)))
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "No saver config file found. Creating...");
+                CreateConfig(ConfigType.Screensaver, Paths.GetKernelPath(KernelPathType.SaverConfiguration));
+            }
+            if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.SplashConfiguration)))
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "No splash config file found. Creating...");
+                CreateConfig(ConfigType.Splash, Paths.GetKernelPath(KernelPathType.SplashConfiguration));
             }
 
             // Load and read config
@@ -542,8 +355,8 @@ namespace KS.Kernel.Configuration
             {
                 TextWriterColor.Write(cex.Message, true, KernelColorType.Error);
                 DebugWriter.WriteDebugStackTrace(cex);
-                TextWriterColor.Write(Translate.DoTranslation("Trying to fix configuration..."), true, KernelColorType.Error);
-                ConfigTools.RepairConfig();
+                TextWriterColor.Write(Translate.DoTranslation("Trying to re-generate configuration..."), true, KernelColorType.Error);
+                CreateConfig();
             }
         }
 

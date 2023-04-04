@@ -31,6 +31,7 @@ using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using KS.Misc.Writers.FancyWriters.Tools;
+using KS.Kernel.Configuration;
 
 namespace KS.Misc.Timers
 {
@@ -43,8 +44,8 @@ namespace KS.Misc.Timers
         internal static DateTime TimerStarted;
         internal static int FigletTimeOldWidth;
         internal static int FigletTimeOldWidthEnd;
+        internal static string timerFigletFont = "Small";
         private static Timer _Timer;
-        private static string timerFigletFont = "Small";
 
         internal static Timer Timer
         {
@@ -75,11 +76,8 @@ namespace KS.Misc.Timers
         /// <summary>
         /// Timer figlet font
         /// </summary>
-        public static string TimerFigletFont
-        {
-            get => timerFigletFont;
-            set => timerFigletFont = FigletTools.FigletFonts.ContainsKey(value) ? value : "Small";
-        }
+        public static string TimerFigletFont =>
+            Config.MainConfig.TimerFigletFont;
 
         /// <summary>
         /// Opens the timer screen

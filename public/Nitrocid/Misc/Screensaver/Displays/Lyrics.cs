@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 
 namespace KS.Misc.Screensaver.Displays
@@ -26,8 +27,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class LyricsSettings
     {
 
-        private static int _Delay = 10000;
-
         /// <summary>
         /// [Lyrics] How many milliseconds to wait before the next lyric?
         /// </summary>
@@ -35,13 +34,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.LyricsDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 10000;
-                _Delay = value;
+                Config.SaverConfig.LyricsDelay = value;
             }
         }
 

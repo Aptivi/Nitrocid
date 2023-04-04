@@ -23,6 +23,7 @@ using ColorSeq.Accessibility;
 using Extensification.StringExts;
 using KS.ConsoleBase.Themes;
 using KS.Kernel;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -47,42 +48,26 @@ namespace KS.ConsoleBase.Colors
         /// <summary>
         /// Enables color blindness
         /// </summary>
-        public static bool ColorBlind
-        {
-            get
-            {
-                return ColorSeq.ColorTools.EnableColorTransformation;
-            }
-            set
-            {
-                ColorSeq.ColorTools.EnableColorTransformation = value;
-            }
-        }
+        public static bool ColorBlind =>
+            Config.MainConfig.ColorBlind;
 
         /// <summary>
         /// Enables simple color blindness using the Vienot 1999 formula (may not be accurate for tritanopia)
         /// </summary>
-        public static bool ColorBlindSimple
-        {
-            get
-            {
-                return ColorSeq.ColorTools.EnableSimpleColorTransformation;
-            }
-            set
-            {
-                ColorSeq.ColorTools.EnableSimpleColorTransformation = value;
-            }
-        }
+        public static bool ColorBlindSimple =>
+            Config.MainConfig.ColorBlindSimple;
 
         /// <summary>
         /// Color blindness deficiency
         /// </summary>
-        public static Deficiency BlindnessDeficiency { get => ColorSeq.ColorTools.ColorDeficiency; set => ColorSeq.ColorTools.ColorDeficiency = value; }
+        public static Deficiency BlindnessDeficiency =>
+            (Deficiency)Config.MainConfig.BlindnessDeficiency;
 
         /// <summary>
         /// Color blindness severity
         /// </summary>
-        public static double BlindnessSeverity { get => ColorSeq.ColorTools.ColorDeficiencySeverity; set => ColorSeq.ColorTools.ColorDeficiencySeverity = value; }
+        public static double BlindnessSeverity =>
+            Config.MainConfig.BlindnessSeverity;
 
         /// <summary>
         /// Gets a color from the color type

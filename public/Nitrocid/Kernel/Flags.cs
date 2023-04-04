@@ -15,7 +15,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using TermRead.Reader;
+using KS.Kernel.Configuration;
 
 namespace KS.Kernel
 {
@@ -26,236 +26,256 @@ namespace KS.Kernel
     {
 
         /// <summary>
-        /// Toggle Debugging mode
-        /// </summary>
-        public static bool DebugMode { get; set; }
-        /// <summary>
         /// Maintenance Mode
         /// </summary>
-        public static bool Maintenance { get; set; }
+        public static bool Maintenance =>
+            Config.MainConfig.Maintenance;
         /// <summary>
         /// Clear Screen On Log-in
         /// </summary>
-        public static bool ClearOnLogin { get; set; }
+        public static bool ClearOnLogin =>
+            Config.MainConfig.ClearOnLogin;
         /// <summary>
         /// Show MOTD on log-in
         /// </summary>
-        public static bool ShowMOTD { get; set; } = true;
+        public static bool ShowMOTD =>
+            Config.MainConfig.ShowMOTD;
         /// <summary>
         /// Show MAL on log-in
         /// </summary>
-        public static bool ShowMAL { get; set; } = true;
+        public static bool ShowMAL =>
+            Config.MainConfig.ShowMAL;
         /// <summary>
         /// Simplified Help Command
         /// </summary>
-        public static bool SimHelp { get; set; }
-        /// <summary>
-        /// Probe slots
-        /// </summary>
-        public static bool SlotProbe { get; set; } = true;
+        public static bool SimHelp =>
+            Config.MainConfig.SimHelp;
         /// <summary>
         /// Probe the hardware quietly. This overrides the <see cref="VerboseHardwareProbe"/> flag.
         /// </summary>
-        public static bool QuietHardwareProbe { get; set; }
+        public static bool QuietHardwareProbe =>
+            Config.MainConfig.QuietHardwareProbe;
         /// <summary>
         /// Show Time/Date on corner
         /// </summary>
-        public static bool CornerTimeDate { get; set; }
-        /// <summary>
-        /// A signal when user logs out.
-        /// </summary>
-        public static bool LogoutRequested { get; set; }
-        /// <summary>
-        /// Reboot requested
-        /// </summary>
-        public static bool RebootRequested { get; set; }
+        public static bool CornerTimeDate =>
+            Config.MainConfig.CornerTimeDate;
         /// <summary>
         /// Log username for FTP
         /// </summary>
-        public static bool FTPLoggerUsername { get; set; }
+        public static bool FTPLoggerUsername =>
+            Config.MainConfig.FTPLoggerUsername;
         /// <summary>
         /// Log IP address for FTP
         /// </summary>
-        public static bool FTPLoggerIP { get; set; }
+        public static bool FTPLoggerIP =>
+            Config.MainConfig.FTPLoggerIP;
         /// <summary>
         /// Only first profile will be returned
         /// </summary>
-        public static bool FTPFirstProfileOnly { get; set; }
-        /// <summary>
-        /// Whether safe mode is enabled
-        /// </summary>
-        public static bool SafeMode { get; set; }
+        public static bool FTPFirstProfileOnly =>
+            Config.MainConfig.FTPFirstProfileOnly;
         /// <summary>
         /// Whether or not to parse whole directory for size
         /// </summary>
-        public static bool FullParseMode { get; set; }
+        public static bool FullParseMode =>
+            Config.MainConfig.FullParseMode;
         /// <summary>
         /// Enable marquee on startup
         /// </summary>
-        public static bool StartScroll { get; set; } = true;
+        public static bool StartScroll =>
+            Config.MainConfig.StartScroll;
         /// <summary>
         /// Whether or not to render time and dates short or long
         /// </summary>
-        public static bool LongTimeDate { get; set; } = true;
+        public static bool LongTimeDate =>
+            Config.MainConfig.LongTimeDate;
         /// <summary>
         /// Whether or not to show available usernames on login
         /// </summary>
-        public static bool ShowAvailableUsers { get; set; } = true;
+        public static bool ShowAvailableUsers =>
+            Config.MainConfig.ShowAvailableUsers;
         /// <summary>
         /// Whether or not to show hidden files
         /// </summary>
-        public static bool HiddenFiles { get; set; }
+        public static bool HiddenFiles =>
+            Config.MainConfig.HiddenFiles;
         /// <summary>
         /// Whether or not to check for updates on startup
         /// </summary>
-        public static bool CheckUpdateStart { get; set; } = true;
+        public static bool CheckUpdateStart =>
+            Config.MainConfig.CheckUpdateStart;
         /// <summary>
         /// Change culture when changing language
         /// </summary>
-        public static bool LangChangeCulture { get; set; }
+        public static bool LangChangeCulture =>
+            Config.MainConfig.LangChangeCulture;
         /// <summary>
         /// Shows the progress bar while downloading using the {Down|Up}load{File|String}() API.
         /// </summary>
-        public static bool ShowProgress { get; set; } = true;
+        public static bool ShowProgress =>
+            Config.MainConfig.ShowProgress;
         /// <summary>
         /// Records remote debug chat to debug log
         /// </summary>
-        public static bool RecordChatToDebugLog { get; set; } = true;
+        public static bool RecordChatToDebugLog =>
+            Config.MainConfig.RecordChatToDebugLog;
         /// <summary>
         /// Wraps the list outputs
         /// </summary>
-        public static bool WrapListOutputs { get; set; }
+        public static bool WrapListOutputs =>
+            Config.MainConfig.WrapListOutputs;
         /// <summary>
         /// Ensures that all hardware will be probed
         /// </summary>
-        public static bool FullHardwareProbe { get; set; }
+        public static bool FullHardwareProbe =>
+            Config.MainConfig.FullHardwareProbe;
         /// <summary>
         /// Makes the hardware prober a bit talkative
         /// </summary>
-        public static bool VerboseHardwareProbe { get; set; }
+        public static bool VerboseHardwareProbe =>
+            Config.MainConfig.VerboseHardwareProbe;
         /// <summary>
         /// Draws the border around the notification
         /// </summary>
-        public static bool DrawBorderNotification { get; set; }
+        public static bool DrawBorderNotification =>
+            Config.MainConfig.DrawBorderNotification;
         /// <summary>
         /// Whether to show the app information on boot
         /// </summary>
-        public static bool ShowAppInfoOnBoot { get; set; } = true;
+        public static bool ShowAppInfoOnBoot =>
+            Config.MainConfig.ShowAppInfoOnBoot;
         /// <summary>
         /// Show how much time a stage took on boot
         /// </summary>
-        public static bool ShowStageFinishTimes { get; set; }
+        public static bool ShowStageFinishTimes =>
+            Config.MainConfig.ShowStageFinishTimes;
         /// <summary>
         /// Whether to start the kernel mods on boot
         /// </summary>
-        public static bool StartKernelMods { get; set; } = true;
+        public static bool StartKernelMods =>
+            Config.MainConfig.StartKernelMods;
         /// <summary>
         /// Whether to show the current time before login
         /// </summary>
-        public static bool ShowCurrentTimeBeforeLogin { get; set; } = true;
+        public static bool ShowCurrentTimeBeforeLogin =>
+            Config.MainConfig.ShowCurrentTimeBeforeLogin;
         /// <summary>
         /// Whether to notify the user about minor boot faults
         /// </summary>
-        public static bool NotifyFaultsBoot { get; set; } = true;
+        public static bool NotifyFaultsBoot =>
+            Config.MainConfig.NotifyFaultsBoot;
         /// <summary>
         /// Whether to suppress the unauthorized messages while listing directory contents
         /// </summary>
-        public static bool SuppressUnauthorizedMessages { get; set; } = true;
+        public static bool SuppressUnauthorizedMessages =>
+            Config.MainConfig.SuppressUnauthorizedMessages;
         /// <summary>
         /// Print the line numbers while listing file contents
         /// </summary>
-        public static bool PrintLineNumbers { get; set; }
+        public static bool PrintLineNumbers =>
+            Config.MainConfig.PrintLineNumbers;
         /// <summary>
         /// Whether to use the modern way to present log-on screen or the classic way (write your username)
         /// </summary>
-        public static bool ModernLogon { get; set; } = true;
+        public static bool ModernLogon =>
+            Config.MainConfig.ModernLogon;
         /// <summary>
         /// Whether to print the stack trace on kernel error
         /// </summary>
-        public static bool ShowStackTraceOnKernelError { get; set; }
+        public static bool ShowStackTraceOnKernelError =>
+            Config.MainConfig.ShowStackTraceOnKernelError;
         /// <summary>
         /// Deletes all events and/or reminders before saving them using saveall
         /// </summary>
-        public static bool SaveEventsRemindersDestructively { get; set; }
+        public static bool SaveEventsRemindersDestructively =>
+            Config.MainConfig.SaveEventsRemindersDestructively;
         /// <summary>
         /// Automatically downloads the kernel updates and notifies the user
         /// </summary>
-        public static bool AutoDownloadUpdate { get; set; } = true;
+        public static bool AutoDownloadUpdate =>
+            Config.MainConfig.AutoDownloadUpdate;
         /// <summary>
         /// Enables event debugging
         /// </summary>
-        public static bool EventDebug { get; set; }
+        public static bool EventDebug =>
+            Config.MainConfig.EventDebug;
         /// <summary>
         /// Enable the stylish splash screen in place of the regular verbose boot messages
         /// </summary>
-        public static bool EnableSplash { get; set; } = true;
+        public static bool EnableSplash =>
+            Config.MainConfig.EnableSplash;
         /// <summary>
         /// When there is a remote debug connection error, notify the user
         /// </summary>
-        public static bool NotifyOnRemoteDebugConnectionError { get; set; } = true;
+        public static bool NotifyOnRemoteDebugConnectionError =>
+            Config.MainConfig.NotifyOnRemoteDebugConnectionError;
         /// <summary>
         /// Enables the Figlet font for the timer
         /// </summary>
-        public static bool EnableFigletTimer { get; set; }
+        public static bool EnableFigletTimer =>
+            Config.MainConfig.EnableFigletTimer;
         /// <summary>
         /// Shows how many commands available in help for shells
         /// </summary>
-        public static bool ShowCommandsCount { get; set; }
+        public static bool ShowCommandsCount =>
+            Config.MainConfig.ShowCommandsCount;
         /// <summary>
         /// Shows how many shell commands available in help for shells
         /// </summary>
-        public static bool ShowShellCommandsCount { get; set; } = true;
+        public static bool ShowShellCommandsCount =>
+            Config.MainConfig.ShowShellCommandsCount;
         /// <summary>
         /// Shows how many mod commands available in help for shells
         /// </summary>
-        public static bool ShowModCommandsCount { get; set; } = true;
+        public static bool ShowModCommandsCount =>
+            Config.MainConfig.ShowModCommandsCount;
         /// <summary>
         /// Shows how many aliases available in help for shells
         /// </summary>
-        public static bool ShowShellAliasesCount { get; set; } = true;
+        public static bool ShowShellAliasesCount =>
+            Config.MainConfig.ShowShellAliasesCount;
         /// <summary>
         /// Whether to simulate a situation where there is no APM available. If enabled, it shows the "It's now safe to
         /// turn off your computer" text.
         /// </summary>
-        public static bool SimulateNoAPM { get; set; }
+        public static bool SimulateNoAPM =>
+            Config.MainConfig.SimulateNoAPM;
         /// <summary>
         /// Sets the console background color using the VT sequence if true.
         /// </summary>
-        public static bool SetBackground { get; set; } = true;
+        public static bool SetBackground =>
+            Config.MainConfig.SetBackground;
         /// <summary>
         /// Enables the scroll bar in selection screens
         /// </summary>
-        public static bool EnableScrollBarInSelection { get; set; } = true;
+        public static bool EnableScrollBarInSelection =>
+            Config.MainConfig.EnableScrollBarInSelection;
         /// <summary>
         /// Beeps on shutdown (to restore the way of 0.0.1's shutdown)
         /// </summary>
-        public static bool BeepOnShutdown { get; set; }
+        public static bool BeepOnShutdown =>
+            Config.MainConfig.BeepOnShutdown;
         /// <summary>
         /// Delay on shutdown (to restore the way of 0.0.1's shutdown)
         /// </summary>
-        public static bool DelayOnShutdown { get; set; }
+        public static bool DelayOnShutdown =>
+            Config.MainConfig.DelayOnShutdown;
         /// <summary>
         /// Does your console support true color?
         /// </summary>
-        public static bool ConsoleSupportsTrueColor { get; set; } = true;
+        public static bool ConsoleSupportsTrueColor =>
+            Config.MainConfig.ConsoleSupportsTrueColor;
         /// <summary>
         /// Whether to start the screensavers on boot
         /// </summary>
-        public static bool StartCustomScreensavers { get; set; } = true;
+        public static bool StartCustomScreensavers =>
+            Config.MainConfig.StartCustomScreensavers;
         /// <summary>
         /// Whether the input history is enabled
         /// </summary>
-        public static bool InputHistoryEnabled
-        {
-            get
-            {
-                return TermReaderSettings.HistoryEnabled;
-            }
-            set
-            {
-                TermReaderSettings.HistoryEnabled = value;
-            }
-        }
+        public static bool InputHistoryEnabled =>
+            Config.MainConfig.InputHistoryEnabled;
 
         // Private flags
         /// <summary>
@@ -310,6 +330,10 @@ namespace KS.Kernel
         internal static bool ScrnTimeReached;
         internal static bool LoggedIn;
         internal static bool UseAltBuffer = true;
+        internal static bool LogoutRequested;
+        internal static bool RebootRequested;
+        internal static bool DebugMode;
+        internal static bool SafeMode;
 
     }
 }

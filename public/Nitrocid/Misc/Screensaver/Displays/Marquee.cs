@@ -21,6 +21,7 @@ using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Text;
 using KS.Misc.Threading;
@@ -34,21 +35,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class MarqueeSettings
     {
 
-        private static bool _TrueColor = true;
-        private static int _Delay = 10;
-        private static string _Write = "Nitrocid KS";
-        private static bool _AlwaysCentered = true;
-        private static bool _UseConsoleAPI = false;
-        private static string _BackgroundColor = new Color(ConsoleColors.Black).PlainSequence;
-        private static int _MinimumRedColorLevel = 0;
-        private static int _MinimumGreenColorLevel = 0;
-        private static int _MinimumBlueColorLevel = 0;
-        private static int _MinimumColorLevel = 0;
-        private static int _MaximumRedColorLevel = 255;
-        private static int _MaximumGreenColorLevel = 255;
-        private static int _MaximumBlueColorLevel = 255;
-        private static int _MaximumColorLevel = 0;
-
         /// <summary>
         /// [Marquee] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -56,11 +42,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _TrueColor;
+                return Config.SaverConfig.MarqueeTrueColor;
             }
             set
             {
-                _TrueColor = value;
+                Config.SaverConfig.MarqueeTrueColor = value;
             }
         }
         /// <summary>
@@ -70,11 +56,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.MarqueeDelay;
             }
             set
             {
-                _Delay = value;
+                Config.SaverConfig.MarqueeDelay = value;
             }
         }
         /// <summary>
@@ -84,11 +70,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Write;
+                return Config.SaverConfig.MarqueeWrite;
             }
             set
             {
-                _Write = value;
+                Config.SaverConfig.MarqueeWrite = value;
             }
         }
         /// <summary>
@@ -98,11 +84,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _AlwaysCentered;
+                return Config.SaverConfig.MarqueeAlwaysCentered;
             }
             set
             {
-                _AlwaysCentered = value;
+                Config.SaverConfig.MarqueeAlwaysCentered = value;
             }
         }
         /// <summary>
@@ -112,11 +98,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _UseConsoleAPI;
+                return Config.SaverConfig.MarqueeUseConsoleAPI;
             }
             set
             {
-                _UseConsoleAPI = value;
+                Config.SaverConfig.MarqueeUseConsoleAPI = value;
             }
         }
         /// <summary>
@@ -126,11 +112,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _BackgroundColor;
+                return Config.SaverConfig.MarqueeBackgroundColor;
             }
             set
             {
-                _BackgroundColor = value;
+                Config.SaverConfig.MarqueeBackgroundColor = value;
             }
         }
         /// <summary>
@@ -140,11 +126,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumRedColorLevel;
+                return Config.SaverConfig.MarqueeMinimumRedColorLevel;
             }
             set
             {
-                _MinimumRedColorLevel = value;
+                Config.SaverConfig.MarqueeMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -154,11 +140,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumGreenColorLevel;
+                return Config.SaverConfig.MarqueeMinimumGreenColorLevel;
             }
             set
             {
-                _MinimumGreenColorLevel = value;
+                Config.SaverConfig.MarqueeMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -168,11 +154,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumBlueColorLevel;
+                return Config.SaverConfig.MarqueeMinimumBlueColorLevel;
             }
             set
             {
-                _MinimumBlueColorLevel = value;
+                Config.SaverConfig.MarqueeMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -182,11 +168,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumColorLevel;
+                return Config.SaverConfig.MarqueeMinimumColorLevel;
             }
             set
             {
-                _MinimumColorLevel = value;
+                Config.SaverConfig.MarqueeMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -196,11 +182,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumRedColorLevel;
+                return Config.SaverConfig.MarqueeMaximumRedColorLevel;
             }
             set
             {
-                _MaximumRedColorLevel = value;
+                Config.SaverConfig.MarqueeMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -210,11 +196,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumGreenColorLevel;
+                return Config.SaverConfig.MarqueeMaximumGreenColorLevel;
             }
             set
             {
-                _MaximumGreenColorLevel = value;
+                Config.SaverConfig.MarqueeMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -224,11 +210,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumBlueColorLevel;
+                return Config.SaverConfig.MarqueeMaximumBlueColorLevel;
             }
             set
             {
-                _MaximumBlueColorLevel = value;
+                Config.SaverConfig.MarqueeMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -238,11 +224,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumColorLevel;
+                return Config.SaverConfig.MarqueeMaximumColorLevel;
             }
             set
             {
-                _MaximumColorLevel = value;
+                Config.SaverConfig.MarqueeMaximumColorLevel = value;
             }
         }
 

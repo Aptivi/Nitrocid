@@ -19,39 +19,32 @@
 using KS.ConsoleBase.Colors;
 using KS.Misc.Text;
 
-namespace KS.Misc.Splash
+namespace KS.Kernel.Configuration.Instances
 {
     /// <summary>
-    /// Splash settings module
+    /// Configuration instance for splashes (to be serialized)
     /// </summary>
-    public static class SplashSettings
+    public class KernelSplashConfig
     {
-
-        // -> Simple
         /// <summary>
         /// [Simple] The progress text location
         /// </summary>
-        public static TextLocation SimpleProgressTextLocation { get; set; } = TextLocation.Top;
-
-        // -> Progress
+        public int SimpleProgressTextLocation { get; set; } = (int)TextLocation.Top;
         /// <summary>
         /// [Progress] The progress color
         /// </summary>
-        public static string ProgressProgressColor { get; set; } = ColorTools.GetColor(KernelColorType.Progress).PlainSequence;
+        public string ProgressProgressColor { get; set; } = ColorTools.GetColor(KernelColorType.Progress).PlainSequence;
         /// <summary>
         /// [Progress] The progress text location
         /// </summary>
-        public static TextLocation ProgressProgressTextLocation { get; set; } = TextLocation.Top;
-
-        // -> PowerLineProgress
+        public int ProgressProgressTextLocation { get; set; } = (int)TextLocation.Top;
         /// <summary>
         /// [PowerLineProgress] The progress color
         /// </summary>
-        public static string PowerLineProgressProgressColor { get; set; } = ColorTools.GetColor(KernelColorType.Progress).PlainSequence;
+        public string PowerLineProgressProgressColor { get; set; } = ColorTools.GetColor(KernelColorType.Progress).PlainSequence;
         /// <summary>
         /// [PowerLineProgress] The progress text location
         /// </summary>
-        public static TextLocation PowerLineProgressProgressTextLocation { get; set; } = TextLocation.Top;
-
+        public int PowerLineProgressProgressTextLocation { get; set; } = (int)TextLocation.Top;
     }
 }

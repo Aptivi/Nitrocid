@@ -20,6 +20,7 @@ using System;
 using ColorSeq;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
@@ -33,19 +34,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class FlashTextSettings
     {
 
-        private static bool _TrueColor = true;
-        private static int _Delay = 20;
-        private static string _Write = "Nitrocid KS";
-        private static string _BackgroundColor = new Color(ConsoleColors.Black).PlainSequence;
-        private static int _MinimumRedColorLevel = 0;
-        private static int _MinimumGreenColorLevel = 0;
-        private static int _MinimumBlueColorLevel = 0;
-        private static int _MinimumColorLevel = 0;
-        private static int _MaximumRedColorLevel = 255;
-        private static int _MaximumGreenColorLevel = 255;
-        private static int _MaximumBlueColorLevel = 255;
-        private static int _MaximumColorLevel = 0;
-
         /// <summary>
         /// [FlashText] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -53,11 +41,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _TrueColor;
+                return Config.SaverConfig.FlashTextTrueColor;
             }
             set
             {
-                _TrueColor = value;
+                Config.SaverConfig.FlashTextTrueColor = value;
             }
         }
         /// <summary>
@@ -67,13 +55,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.FlashTextDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 20;
-                _Delay = value;
+                Config.SaverConfig.FlashTextDelay = value;
             }
         }
         /// <summary>
@@ -83,11 +71,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Write;
+                return Config.SaverConfig.FlashTextWrite;
             }
             set
             {
-                _Write = value;
+                Config.SaverConfig.FlashTextWrite = value;
             }
         }
         /// <summary>
@@ -97,11 +85,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _BackgroundColor;
+                return Config.SaverConfig.FlashTextBackgroundColor;
             }
             set
             {
-                _BackgroundColor = value;
+                Config.SaverConfig.FlashTextBackgroundColor = value;
             }
         }
         /// <summary>
@@ -111,7 +99,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumRedColorLevel;
+                return Config.SaverConfig.FlashTextMinimumRedColorLevel;
             }
             set
             {
@@ -119,7 +107,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumRedColorLevel = value;
+                Config.SaverConfig.FlashTextMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -129,7 +117,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumGreenColorLevel;
+                return Config.SaverConfig.FlashTextMinimumGreenColorLevel;
             }
             set
             {
@@ -137,7 +125,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumGreenColorLevel = value;
+                Config.SaverConfig.FlashTextMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -147,7 +135,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumBlueColorLevel;
+                return Config.SaverConfig.FlashTextMinimumBlueColorLevel;
             }
             set
             {
@@ -155,7 +143,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumBlueColorLevel = value;
+                Config.SaverConfig.FlashTextMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -165,7 +153,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumColorLevel;
+                return Config.SaverConfig.FlashTextMinimumColorLevel;
             }
             set
             {
@@ -174,7 +162,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                _MinimumColorLevel = value;
+                Config.SaverConfig.FlashTextMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -184,15 +172,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumRedColorLevel;
+                return Config.SaverConfig.FlashTextMaximumRedColorLevel;
             }
             set
             {
-                if (value <= _MinimumRedColorLevel)
-                    value = _MinimumRedColorLevel;
+                if (value <= Config.SaverConfig.FlashTextMinimumRedColorLevel)
+                    value = Config.SaverConfig.FlashTextMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumRedColorLevel = value;
+                Config.SaverConfig.FlashTextMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -202,15 +190,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumGreenColorLevel;
+                return Config.SaverConfig.FlashTextMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= _MinimumGreenColorLevel)
-                    value = _MinimumGreenColorLevel;
+                if (value <= Config.SaverConfig.FlashTextMinimumGreenColorLevel)
+                    value = Config.SaverConfig.FlashTextMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumGreenColorLevel = value;
+                Config.SaverConfig.FlashTextMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -220,15 +208,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumBlueColorLevel;
+                return Config.SaverConfig.FlashTextMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= _MinimumBlueColorLevel)
-                    value = _MinimumBlueColorLevel;
+                if (value <= Config.SaverConfig.FlashTextMinimumBlueColorLevel)
+                    value = Config.SaverConfig.FlashTextMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumBlueColorLevel = value;
+                Config.SaverConfig.FlashTextMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -238,16 +226,16 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumColorLevel;
+                return Config.SaverConfig.FlashTextMaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= _MinimumColorLevel)
-                    value = _MinimumColorLevel;
+                if (value <= Config.SaverConfig.FlashTextMinimumColorLevel)
+                    value = Config.SaverConfig.FlashTextMinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                _MaximumColorLevel = value;
+                Config.SaverConfig.FlashTextMaximumColorLevel = value;
             }
         }
 

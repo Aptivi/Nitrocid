@@ -66,6 +66,7 @@ using System.Text.RegularExpressions;
 using System.Linq;
 using KS.Drivers.Console.Consoles;
 using FluentFTP.Helpers;
+using KS.Kernel.Configuration;
 
 namespace KS.Shell
 {
@@ -145,7 +146,8 @@ namespace KS.Shell
         /// <summary>
         /// Specifies where to lookup for executables in these paths. Same as in PATH implementation.
         /// </summary>
-        public static string PathsToLookup { get; set; } = Environment.GetEnvironmentVariable("PATH");
+        public static string PathsToLookup =>
+            Config.MainConfig.PathsToLookup;
 
         /// <summary>
         /// Inputs for command then parses a specified command.

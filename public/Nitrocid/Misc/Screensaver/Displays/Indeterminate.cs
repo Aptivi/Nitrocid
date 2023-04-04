@@ -21,6 +21,7 @@ using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
@@ -34,34 +35,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class IndeterminateSettings
     {
 
-        private static bool _TrueColor = true;
-        private static int _Delay = 20;
-        private static string _UpperLeftCornerChar = "╔";
-        private static string _UpperRightCornerChar = "╗";
-        private static string _LowerLeftCornerChar = "╚";
-        private static string _LowerRightCornerChar = "╝";
-        private static string _UpperFrameChar = "═";
-        private static string _LowerFrameChar = "═";
-        private static string _LeftFrameChar = "║";
-        private static string _RightFrameChar = "║";
-        private static int _MinimumRedColorLevel = 0;
-        private static int _MinimumGreenColorLevel = 0;
-        private static int _MinimumBlueColorLevel = 0;
-        private static int _MinimumColorLevel = 0;
-        private static int _MaximumRedColorLevel = 255;
-        private static int _MaximumGreenColorLevel = 255;
-        private static int _MaximumBlueColorLevel = 255;
-        private static int _MaximumColorLevel = 255;
-        private static string _UpperLeftCornerColor = 7.ToString();
-        private static string _UpperRightCornerColor = 7.ToString();
-        private static string _LowerLeftCornerColor = 7.ToString();
-        private static string _LowerRightCornerColor = 7.ToString();
-        private static string _UpperFrameColor = 7.ToString();
-        private static string _LowerFrameColor = 7.ToString();
-        private static string _LeftFrameColor = 7.ToString();
-        private static string _RightFrameColor = 7.ToString();
-        private static bool _UseBorderColors;
-
         /// <summary>
         /// [Indeterminate] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -69,11 +42,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _TrueColor;
+                return Config.SaverConfig.IndeterminateTrueColor;
             }
             set
             {
-                _TrueColor = value;
+                Config.SaverConfig.IndeterminateTrueColor = value;
             }
         }
         /// <summary>
@@ -83,13 +56,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.IndeterminateDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 20;
-                _Delay = value;
+                Config.SaverConfig.IndeterminateDelay = value;
             }
         }
         /// <summary>
@@ -99,13 +72,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _UpperLeftCornerChar;
+                return Config.SaverConfig.IndeterminateUpperLeftCornerChar;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "╔";
-                _UpperLeftCornerChar = value;
+                Config.SaverConfig.IndeterminateUpperLeftCornerChar = value;
             }
         }
         /// <summary>
@@ -115,13 +88,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _UpperRightCornerChar;
+                return Config.SaverConfig.IndeterminateUpperRightCornerChar;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "╗";
-                _UpperRightCornerChar = value;
+                Config.SaverConfig.IndeterminateUpperRightCornerChar = value;
             }
         }
         /// <summary>
@@ -131,13 +104,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _LowerLeftCornerChar;
+                return Config.SaverConfig.IndeterminateLowerLeftCornerChar;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "╚";
-                _LowerLeftCornerChar = value;
+                Config.SaverConfig.IndeterminateLowerLeftCornerChar = value;
             }
         }
         /// <summary>
@@ -147,13 +120,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _LowerRightCornerChar;
+                return Config.SaverConfig.IndeterminateLowerRightCornerChar;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "╝";
-                _LowerRightCornerChar = value;
+                Config.SaverConfig.IndeterminateLowerRightCornerChar = value;
             }
         }
         /// <summary>
@@ -163,13 +136,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _UpperFrameChar;
+                return Config.SaverConfig.IndeterminateUpperFrameChar;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "═";
-                _UpperFrameChar = value;
+                Config.SaverConfig.IndeterminateUpperFrameChar = value;
             }
         }
         /// <summary>
@@ -179,13 +152,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _LowerFrameChar;
+                return Config.SaverConfig.IndeterminateLowerFrameChar;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "═";
-                _LowerFrameChar = value;
+                Config.SaverConfig.IndeterminateLowerFrameChar = value;
             }
         }
         /// <summary>
@@ -195,13 +168,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _LeftFrameChar;
+                return Config.SaverConfig.IndeterminateLeftFrameChar;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "║";
-                _LeftFrameChar = value;
+                Config.SaverConfig.IndeterminateLeftFrameChar = value;
             }
         }
         /// <summary>
@@ -211,13 +184,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _RightFrameChar;
+                return Config.SaverConfig.IndeterminateRightFrameChar;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "║";
-                _RightFrameChar = value;
+                Config.SaverConfig.IndeterminateRightFrameChar = value;
             }
         }
         /// <summary>
@@ -227,7 +200,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumRedColorLevel;
+                return Config.SaverConfig.IndeterminateMinimumRedColorLevel;
             }
             set
             {
@@ -235,7 +208,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumRedColorLevel = value;
+                Config.SaverConfig.IndeterminateMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -245,7 +218,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumGreenColorLevel;
+                return Config.SaverConfig.IndeterminateMinimumGreenColorLevel;
             }
             set
             {
@@ -253,7 +226,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumGreenColorLevel = value;
+                Config.SaverConfig.IndeterminateMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -263,7 +236,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumBlueColorLevel;
+                return Config.SaverConfig.IndeterminateMinimumBlueColorLevel;
             }
             set
             {
@@ -271,7 +244,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > 255)
                     value = 255;
-                _MinimumBlueColorLevel = value;
+                Config.SaverConfig.IndeterminateMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -281,7 +254,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MinimumColorLevel;
+                return Config.SaverConfig.IndeterminateMinimumColorLevel;
             }
             set
             {
@@ -290,7 +263,7 @@ namespace KS.Misc.Screensaver.Displays
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                _MinimumColorLevel = value;
+                Config.SaverConfig.IndeterminateMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -300,15 +273,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumRedColorLevel;
+                return Config.SaverConfig.IndeterminateMaximumRedColorLevel;
             }
             set
             {
-                if (value <= _MinimumRedColorLevel)
-                    value = _MinimumRedColorLevel;
+                if (value <= Config.SaverConfig.IndeterminateMinimumRedColorLevel)
+                    value = Config.SaverConfig.IndeterminateMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumRedColorLevel = value;
+                Config.SaverConfig.IndeterminateMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -318,15 +291,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumGreenColorLevel;
+                return Config.SaverConfig.IndeterminateMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= _MinimumGreenColorLevel)
-                    value = _MinimumGreenColorLevel;
+                if (value <= Config.SaverConfig.IndeterminateMinimumGreenColorLevel)
+                    value = Config.SaverConfig.IndeterminateMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumGreenColorLevel = value;
+                Config.SaverConfig.IndeterminateMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -336,15 +309,15 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumBlueColorLevel;
+                return Config.SaverConfig.IndeterminateMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= _MinimumBlueColorLevel)
-                    value = _MinimumBlueColorLevel;
+                if (value <= Config.SaverConfig.IndeterminateMinimumBlueColorLevel)
+                    value = Config.SaverConfig.IndeterminateMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                _MaximumBlueColorLevel = value;
+                Config.SaverConfig.IndeterminateMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -354,16 +327,16 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _MaximumColorLevel;
+                return Config.SaverConfig.IndeterminateMaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= _MinimumColorLevel)
-                    value = _MinimumColorLevel;
+                if (value <= Config.SaverConfig.IndeterminateMinimumColorLevel)
+                    value = Config.SaverConfig.IndeterminateMinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                _MaximumColorLevel = value;
+                Config.SaverConfig.IndeterminateMaximumColorLevel = value;
             }
         }
         /// <summary>
@@ -373,11 +346,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _UpperLeftCornerColor;
+                return Config.SaverConfig.IndeterminateUpperLeftCornerColor;
             }
             set
             {
-                _UpperLeftCornerColor = new Color(value).PlainSequence;
+                Config.SaverConfig.IndeterminateUpperLeftCornerColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -387,11 +360,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _UpperRightCornerColor;
+                return Config.SaverConfig.IndeterminateUpperRightCornerColor;
             }
             set
             {
-                _UpperRightCornerColor = new Color(value).PlainSequence;
+                Config.SaverConfig.IndeterminateUpperRightCornerColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -401,11 +374,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _LowerLeftCornerColor;
+                return Config.SaverConfig.IndeterminateLowerLeftCornerColor;
             }
             set
             {
-                _LowerLeftCornerColor = new Color(value).PlainSequence;
+                Config.SaverConfig.IndeterminateLowerLeftCornerColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -415,11 +388,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _LowerRightCornerColor;
+                return Config.SaverConfig.IndeterminateLowerRightCornerColor;
             }
             set
             {
-                _LowerRightCornerColor = new Color(value).PlainSequence;
+                Config.SaverConfig.IndeterminateLowerRightCornerColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -429,11 +402,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _UpperFrameColor;
+                return Config.SaverConfig.IndeterminateUpperFrameColor;
             }
             set
             {
-                _UpperFrameColor = new Color(value).PlainSequence;
+                Config.SaverConfig.IndeterminateUpperFrameColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -443,11 +416,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _LowerFrameColor;
+                return Config.SaverConfig.IndeterminateLowerFrameColor;
             }
             set
             {
-                _LowerFrameColor = new Color(value).PlainSequence;
+                Config.SaverConfig.IndeterminateLowerFrameColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -457,11 +430,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _LeftFrameColor;
+                return Config.SaverConfig.IndeterminateLeftFrameColor;
             }
             set
             {
-                _LeftFrameColor = new Color(value).PlainSequence;
+                Config.SaverConfig.IndeterminateLeftFrameColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -471,11 +444,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _RightFrameColor;
+                return Config.SaverConfig.IndeterminateRightFrameColor;
             }
             set
             {
-                _RightFrameColor = new Color(value).PlainSequence;
+                Config.SaverConfig.IndeterminateRightFrameColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -485,11 +458,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _UseBorderColors;
+                return Config.SaverConfig.IndeterminateUseBorderColors;
             }
             set
             {
-                _UseBorderColors = value;
+                Config.SaverConfig.IndeterminateUseBorderColors = value;
             }
         }
 

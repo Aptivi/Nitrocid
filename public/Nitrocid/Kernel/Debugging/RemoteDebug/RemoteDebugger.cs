@@ -31,6 +31,7 @@ using KS.TimeDate;
 using KS.Kernel.Events;
 using KS.Kernel.Debugging.RemoteDebug.Command;
 using KS.Misc.Probers.Placeholder;
+using KS.Kernel.Configuration;
 
 namespace KS.Kernel.Debugging.RemoteDebug
 {
@@ -40,26 +41,6 @@ namespace KS.Kernel.Debugging.RemoteDebug
     public static class RemoteDebugger
     {
 
-        /// <summary>
-        /// Remote debugger port
-        /// </summary>
-        public static int DebugPort
-        {
-            get => debugPort;
-            set => debugPort = value < 0 ? 3014 : value;
-        }
-        /// <summary>
-        /// Whether the remote debug is stopping
-        /// </summary>
-        public static bool RDebugStopping { get; set; }
-        /// <summary>
-        /// Whether to automatically start the remote debugger
-        /// </summary>
-        public static bool RDebugAutoStart { get; set; } = true;
-        /// <summary>
-        /// Remote debug message format
-        /// </summary>
-        public static string RDebugMessageFormat { get; set; } = "";
         internal static bool RDebugFailed;
         internal static Exception RDebugFailedReason;
         internal static List<string> RDebugBlocked = new();
@@ -67,9 +48,29 @@ namespace KS.Kernel.Debugging.RemoteDebug
         internal static Socket RDebugClient;
         internal static TcpListener DebugTCP;
         internal static KernelThread RDebugThread = new("Remote Debug Thread", true, StartRDebugger) { isCritical = true };
-        private static int debugPort = 3014;
+        internal static int debugPort = 3014;
         private readonly static string RDebugVersion = "0.7.2";
         private static readonly AutoResetEvent RDebugBailer = new(false);
+
+        /// <summary>
+        /// Remote debugger port
+        /// </summary>
+        public static int DebugPort =>
+            Config.MainConfig.DebugPort;
+        /// <summary>
+        /// Whether the remote debug is stopping
+        /// </summary>
+        public static bool RDebugStopping { get; set; }
+        /// <summary>
+        /// Whether to automatically start the remote debugger
+        /// </summary>
+        public static bool RDebugAutoStart =>
+            Config.MainConfig.RDebugAutoStart;
+        /// <summary>
+        /// Remote debug message format
+        /// </summary>
+        public static string RDebugMessageFormat =>
+            Config.MainConfig.RDebugMessageFormat;
 
         /// <summary>
         /// Whether to start or stop the remote debugger
@@ -264,7 +265,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
                         {
                             // Check the message format
                             if (string.IsNullOrWhiteSpace(RDebugMessageFormat))
-                                RDebugMessageFormat = "{0}> {1}";
+                                Config.MainConfig.RDebugMessageFormat = "{0}> {1}";
 
                             // Decide if we're recording the chat to the debug log
                             if (Flags.RecordChatToDebugLog)

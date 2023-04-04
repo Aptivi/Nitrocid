@@ -27,6 +27,7 @@ using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Colors;
+using KS.Kernel.Configuration;
 
 namespace KS.Misc.Splash.Splashes
 {
@@ -49,13 +50,13 @@ namespace KS.Misc.Splash.Splashes
         {
             get
             {
-                switch (SplashSettings.ProgressProgressTextLocation)
+                switch (Config.SplashConfig.ProgressProgressTextLocation)
                 {
-                    case TextLocation.Top:
+                    case (int)TextLocation.Top:
                         {
                             return 1;
                         }
-                    case TextLocation.Bottom:
+                    case (int)TextLocation.Bottom:
                         {
                             return ConsoleWrapper.WindowHeight - 6;
                         }
@@ -74,13 +75,13 @@ namespace KS.Misc.Splash.Splashes
         {
             get
             {
-                switch (SplashSettings.ProgressProgressTextLocation)
+                switch (Config.SplashConfig.ProgressProgressTextLocation)
                 {
-                    case TextLocation.Top:
+                    case (int)TextLocation.Top:
                         {
                             return 1;
                         }
-                    case TextLocation.Bottom:
+                    case (int)TextLocation.Bottom:
                         {
                             return ConsoleWrapper.WindowHeight - 6;
                         }
@@ -147,9 +148,9 @@ namespace KS.Misc.Splash.Splashes
             ConsoleExtensions.ClearLineToRight();
 
             // Display the progress bar
-            if (!string.IsNullOrEmpty(SplashSettings.ProgressProgressColor) & ColorTools.TryParseColor(SplashSettings.ProgressProgressColor))
+            if (!string.IsNullOrEmpty(Config.SplashConfig.ProgressProgressColor) & ColorTools.TryParseColor(Config.SplashConfig.ProgressProgressColor))
             {
-                var ProgressColor = new Color(SplashSettings.ProgressProgressColor);
+                var ProgressColor = new Color(Config.SplashConfig.ProgressProgressColor);
                 ProgressBarColor.WriteProgress(Progress, 4, ConsoleWrapper.WindowHeight - 4, ProgressColor);
             }
             else

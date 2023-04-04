@@ -44,6 +44,7 @@ using Extensification.LongExts;
 using KS.Misc.Text;
 using KS.Kernel.Events;
 using KS.Files;
+using KS.Kernel.Configuration;
 
 namespace KS.Drivers.Filesystem
 {
@@ -77,7 +78,7 @@ namespace KS.Drivers.Filesystem
             var LookupPaths = GetPathList();
             Path = FS.NeutralizePath(Path);
             LookupPaths.Add(Path);
-            Shell.Shell.PathsToLookup = string.Join(Shell.Shell.PathLookupDelimiter, LookupPaths);
+            Config.MainConfig.PathsToLookup = string.Join(Shell.Shell.PathLookupDelimiter, LookupPaths);
         }
 
         /// <inheritdoc/>
@@ -88,7 +89,7 @@ namespace KS.Drivers.Filesystem
             var LookupPaths = GetPathList();
             Path = FS.NeutralizePath(Path, RootPath);
             LookupPaths.Add(Path);
-            Shell.Shell.PathsToLookup = string.Join(Shell.Shell.PathLookupDelimiter, LookupPaths);
+            Config.MainConfig.PathsToLookup = string.Join(Shell.Shell.PathLookupDelimiter, LookupPaths);
         }
 
         /// <inheritdoc/>
@@ -1155,7 +1156,7 @@ namespace KS.Drivers.Filesystem
             var LookupPaths = GetPathList();
             Path = FS.NeutralizePath(Path);
             LookupPaths.Remove(Path);
-            Shell.Shell.PathsToLookup = string.Join(Shell.Shell.PathLookupDelimiter, LookupPaths);
+            Config.MainConfig.PathsToLookup = string.Join(Shell.Shell.PathLookupDelimiter, LookupPaths);
         }
 
         /// <inheritdoc/>
@@ -1166,7 +1167,7 @@ namespace KS.Drivers.Filesystem
             var LookupPaths = GetPathList();
             Path = FS.NeutralizePath(Path, RootPath);
             LookupPaths.Remove(Path);
-            Shell.Shell.PathsToLookup = string.Join(Shell.Shell.PathLookupDelimiter, LookupPaths);
+            Config.MainConfig.PathsToLookup = string.Join(Shell.Shell.PathLookupDelimiter, LookupPaths);
         }
 
         /// <inheritdoc/>

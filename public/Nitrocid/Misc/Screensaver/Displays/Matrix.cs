@@ -19,6 +19,7 @@
 using System;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 
@@ -30,8 +31,6 @@ namespace KS.Misc.Screensaver.Displays
     public static class MatrixSettings
     {
 
-        private static int _Delay = 1;
-
         /// <summary>
         /// [Matrix] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -39,13 +38,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             get
             {
-                return _Delay;
+                return Config.SaverConfig.MatrixDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 1;
-                _Delay = value;
+                Config.SaverConfig.MatrixDelay = value;
             }
         }
 

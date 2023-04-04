@@ -196,11 +196,9 @@ namespace Properties.Resources {
         ///  &quot;Name&quot;: &quot;Arabic&quot;,
         ///  &quot;Transliterable&quot;: true,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;al&apos;awamir almtaht: {0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;tam &apos;iilgha&apos; haqn al&apos;awamir.&quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;sayatimu jadwlat alhujaj almahqunat litashghiliha eind &apos;iieadat altamhid altaali.&quot;,
         ///    &quot;Invalid color template {0}&quot;: &quot;qalib &apos;alwan ghayr salih {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: sayatim alta [rest of string was truncated]&quot;;.
+        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: sayatim altahqiq fi al&apos;ajhizat alkhasat bika. arjuk aintazara...&quot;,
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;wahdat almuealajat almarkaziat: fashal tahqiq wahid &apos;aw &apos;akthar min marakiz wahdat almuealajat almarkaziati. earad almaelumat ealaa &apos;ayi hal [rest of string was truncated]&quot;;.
         /// </summary>
         public static string arb {
             get {
@@ -213,11 +211,10 @@ namespace Properties.Resources {
         ///  &quot;Name&quot;: &quot;Arabic&quot;,
         ///  &quot;Transliterable&quot;: true,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;الأوامر المتاحة: {0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;تم إلغاء حقن الأوامر.&quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;سيتم جدولة الحجج المحقونة لتشغيلها عند إعادة التمهيد التالي.&quot;,
         ///    &quot;Invalid color template {0}&quot;: &quot;قالب ألوان غير صالح {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: سيتم التحقيق في الأجهزة الخاصة بك. ارجوك انتظر. [rest of string was truncated]&quot;;.
+        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: سيتم التحقيق في الأجهزة الخاصة بك. ارجوك انتظر...&quot;,
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;وحدة المعالجة المركزية: فشل تحقيق واحد أو أكثر من مراكز وحدة المعالجة المركزية. عرض المعلومات على أي حال ...&quot;,
+        ///    &quot;RAM: One or more of the RAM chips failed to [rest of string was truncated]&quot;;.
         /// </summary>
         public static string arb_T {
             get {
@@ -509,11 +506,10 @@ namespace Properties.Resources {
         ///  &quot;Name&quot;: &quot;Chinese&quot;,
         ///  &quot;Transliterable&quot;: true,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;Kěyòng mìnglìng: {0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;Mìnglìng zhùrù yǐ bèi qǔxiāo.&quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Zhùrù de cānshù jiāng ānpái zàixià cì chóngxīn qǐdòng shí yùnxíng.&quot;,
         ///    &quot;Invalid color template {0}&quot;: &quot;Wúxiào de yánsè múbǎn {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Nǐ de yìngjiàn jiāng bèi tàncè [rest of string was truncated]&quot;;.
+        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Nǐ de yìngjiàn jiāng bèi tàncè. Qǐng nàixīn děngdài...&quot;,
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: Wúfǎ tàncè yīgè huò duō gè CPU héxīn. Wúlùn rúhé xiǎnshì xìnxī......&quot;,
+        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showing informa [rest of string was truncated]&quot;;.
         /// </summary>
         public static string chi {
             get {
@@ -526,12 +522,11 @@ namespace Properties.Resources {
         ///  &quot;Name&quot;: &quot;Chinese&quot;,
         ///  &quot;Transliterable&quot;: true,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;可用命令：{0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;命令注入已被取消。&quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;注入的参数将计划在下次重新引导时运行。&quot;,
         ///    &quot;Invalid color template {0}&quot;: &quot;无效的颜色模板{0}&quot;,
         ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe：将检测您的硬件。请耐心等待...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU：一个或多个CPU [rest of string was truncated]&quot;;.
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU：一个或多个CPU内核无法探测。仍在显示信息...&quot;,
+        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showing information anyway...&quot;: &quot;RAM：无法探测一个或多个RAM芯片。仍在显示信息...&quot;,
+        ///    &quot;HDD: One or more of the hard drives failed t [rest of string was truncated]&quot;;.
         /// </summary>
         public static string chi_T {
             get {
@@ -544,11 +539,10 @@ namespace Properties.Resources {
         ///  &quot;Name&quot;: &quot;Chinese (Traditional)&quot;,
         ///  &quot;Transliterable&quot;: true,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;Kěyòng mìnglìng:{0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;Mìnglìng zhùrù yǐ bèi qǔxiāo.&quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Zhùrù de cānshù jiāng bèi ānpái zàixià cì chóngxīn qǐdòng shí yùnxíng.&quot;,
         ///    &quot;Invalid color template {0}&quot;: &quot;Wúxiào de yánsè múbǎn {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Nín de yìngji [rest of string was truncated]&quot;;.
+        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Nín de yìngjiàn jiāng bèi tàncè. Qǐng shāo děng...&quot;,
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: Yīgè huò duō gè CPU nèihé tàncè shībài. Wúlùn rúhé xiǎnshì xìnxī...&quot;,
+        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showin [rest of string was truncated]&quot;;.
         /// </summary>
         public static string cnt {
             get {
@@ -561,12 +555,11 @@ namespace Properties.Resources {
         ///  &quot;Name&quot;: &quot;Chinese (Traditional)&quot;,
         ///  &quot;Transliterable&quot;: true,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;可用命令：{0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;命令注入已被取消。&quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;注入的參數將被安排在下次重新啟動時運行。&quot;,
         ///    &quot;Invalid color template {0}&quot;: &quot;無效的顏色模板 {0}&quot;,
         ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe：您的硬件將被探測。請稍等...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot; [rest of string was truncated]&quot;;.
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU：一個或多個 CPU 內核探測失敗。無論如何顯示信息...&quot;,
+        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showing information anyway...&quot;: &quot;RAM：一個或多個 RAM 芯片探測失敗。無論如何顯示信息...&quot;,
+        ///    &quot;HDD: One or more of th [rest of string was truncated]&quot;;.
         /// </summary>
         public static string cnt_T {
             get {
@@ -579,11 +572,10 @@ namespace Properties.Resources {
         ///  &quot;Name&quot;: &quot;Czech&quot;,
         ///  &quot;Transliterable&quot;: false,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;Dostupné příkazy: {0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;Příkazové injekce byla zrušena.&quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Vložené argumenty budou naplánovány na další restart.&quot;,
         ///    &quot;Invalid color template {0}&quot;: &quot;Neplatná šablona barev {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Váš hardware bude testován. Prosím, čeke [rest of string was truncated]&quot;;.
+        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Váš hardware bude testován. Prosím, čekejte...&quot;,
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: Jedno nebo více jader CPU selhalo. Zobrazení informací tak jako tak ...&quot;,
+        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showing information  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string cze {
             get {
@@ -675,11 +667,10 @@ namespace Properties.Resources {
         ///  &quot;Name&quot;: &quot;Dutch&quot;,
         ///  &quot;Transliterable&quot;: false,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;Beschikbare opdrachten: {0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;Commando-injectie is geannuleerd.&quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Geïnjecteerde argumenten worden gepland om te worden uitgevoerd bij het volgende opnieuw opstarten.&quot;,
         ///    &quot;Invalid color template {0}&quot;: &quot;Ongeldige kleurensjabloon {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wai [rest of string was truncated]&quot;;.
+        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Uw hardware wordt ondervraagd. Even geduld aub...&quot;,
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: een of meer van de CPU-kernen konden niet worden getest. Informatie toch laten zien ...&quot;,
+        ///    &quot;RAM: One or more of the RAM chips failed to be probed [rest of string was truncated]&quot;;.
         /// </summary>
         public static string dtc {
             get {
@@ -717,11 +708,10 @@ namespace Properties.Resources {
         ///  &quot;Name&quot;: &quot;English&quot;,
         ///  &quot;Transliterable&quot;: false,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;Available commands: {0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;Command injection has been cancelled.&quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Injected arguments will be scheduled to run at next reboot.&quot;,
         ///    &quot;Invalid color template {0}&quot;: &quot;Invalid color template {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Your hardware will be pr [rest of string was truncated]&quot;;.
+        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Your hardware will be probed. Please wait...&quot;,
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;,
+        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showing info [rest of string was truncated]&quot;;.
         /// </summary>
         public static string eng {
             get {
@@ -734,11 +724,10 @@ namespace Properties.Resources {
         ///  &quot;Name&quot;: &quot;English (UK)&quot;,
         ///  &quot;Transliterable&quot;: false,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;Available commands: {0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;Command injection has been cancelled.&quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Injected arguments will be scheduled to run at next reboot.&quot;,
         ///    &quot;Invalid color template {0}&quot;: &quot;Invalid colour template {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Your hardware will [rest of string was truncated]&quot;;.
+        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Your hardware will be probed. Please wait...&quot;,
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;,
+        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showin [rest of string was truncated]&quot;;.
         /// </summary>
         public static string enk {
             get {
@@ -827,11 +816,10 @@ namespace Properties.Resources {
         ///  &quot;Name&quot;: &quot;French&quot;,
         ///  &quot;Transliterable&quot;: false,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;Commandes disponibles: {0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;L&apos;injection de commande a été annulée.&quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Les arguments injectés seront programmés pour s&apos;exécuter au prochain redémarrage.&quot;,
         ///    &quot;Invalid color template {0}&quot;: &quot;Modèle de couleur non valide {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hw [rest of string was truncated]&quot;;.
+        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Votre matériel sera sondé. S&apos;il vous plaît, attendez...&quot;,
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: Un ou plusieurs des cœurs de la CPU n&apos;ont pas été sondés. Montrer des informations quand même ...&quot;,
+        ///    &quot;RAM: One or more of the RAM chips [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fre {
             get {
@@ -844,11 +832,10 @@ namespace Properties.Resources {
         ///  &quot;Name&quot;: &quot;German&quot;,
         ///  &quot;Transliterable&quot;: false,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;Verfügbare Befehle: {0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;Die Befehlsinjektion wurde abgebrochen.&quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Injizierte Argumente werden für den nächsten Neustart geplant.&quot;,
         ///    &quot;Invalid color template {0}&quot;: &quot;Ungültige Farbvorlage {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Ihre Hardware wird ge [rest of string was truncated]&quot;;.
+        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Ihre Hardware wird geprüft. Bitte warten ...&quot;,
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: Ein oder mehrere CPU-Kerne konnten nicht geprüft werden. Zeige trotzdem Informationen ...&quot;,
+        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Show [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ger {
             get {
@@ -1095,11 +1082,10 @@ namespace Properties.Resources {
         ///  &quot;Name&quot;: &quot;H4X0R Level 1&quot;,
         ///  &quot;Transliterable&quot;: false,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;4v41l4bl3 c0mm4nd5: {0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;c0mm4nd 1nj3c710n h45 b33n c4nc3ll3d.&quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;1nj3c73d 4r6um3n75 w1ll b3 5ch3dul3d 70 run 47 n3x7 r3b007.&quot;,
         ///    &quot;Invalid color template {0}&quot;: &quot;1nv4l1d c0l0r 73mpl473 {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwpr0b3: y0ur h4rdw4r3 w1ll [rest of string was truncated]&quot;;.
+        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwpr0b3: y0ur h4rdw4r3 w1ll b3 pr0b3d. pl3453 w417...&quot;,
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;cpu: 0n3 0r m0r3 0f 7h3 cpu c0r35 f41l3d 70 b3 pr0b3d. 5h0w1n6 1nf0rm4710n 4nyw4y...&quot;,
+        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showin [rest of string was truncated]&quot;;.
         /// </summary>
         public static string hxr_1 {
             get {
@@ -1112,10 +1098,9 @@ namespace Properties.Resources {
         ///  &quot;Name&quot;: &quot;H4X0R Level 2&quot;,
         ///  &quot;Transliterable&quot;: false,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;4\\\\/4!|_4|3|_3 (0/\\\\/\\\\/\\\\/\\\\4|\\\\||)5: {0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;(0/\\\\/\\\\/\\\\/\\\\4|\\\\||) !|\\\\|_|3(7!0|\\\\| |-|45 |333|\\\\| (4|\\\\|(3|_|_3|).&quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;!|\\\\|_|3(73|) 4|29(_)/\\\\/\\\\3|\\\\|75 \\\\/\\\\/!|_|_ |33 5(|-|3|)(_)|_3|) 70 |2(_)|\\\\| 47 |\\\\|3&gt;&lt;7 |23|3007.&quot;,
-        ///    &quot;Invalid  [rest of string was truncated]&quot;;.
+        ///    &quot;Invalid color template {0}&quot;: &quot;!|\\\\|\\\\/4|_!|) (0|_0|2 73/\\\\/\\\\|D|_473 {0}&quot;,
+        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;|-|\\\\/\\\\/|D|20|33: `/0(_)|2 |-|4|2|)\\\\/\\\\/4|23 \\\\/\\\\/!|_|_ |33 |D|20|33|). |D|_3453 \\\\/\\\\/4!7...&quot;,
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;(|D(_): 0|\\\\|3 0|2 /\\\\/\\\\0|23 0|= 7|-|3 (|D(_) (0|235 |=4!|_3|) 7 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string hxr_2 {
             get {
@@ -1128,10 +1113,9 @@ namespace Properties.Resources {
         ///  &quot;Name&quot;: &quot;H4X0R Level 3&quot;,
         ///  &quot;Transliterable&quot;: false,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;4\\\\/4!14813 (0|\\\\/||\\\\/|4|\\\\||)5: {0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;(0|\\\\/||\\\\/|4|\\\\||) !|\\\\|_)3(+!0|\\\\| |-|45 833|\\\\| (4|\\\\|(3113|).&quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;!|\\\\|_)3(+3|) 4|26|_||\\\\/|3|\\\\|+5 \\\\|/!11 83 5(|-|3|)|_|13|) +0 |2|_||\\\\| 4+ |\\\\|3%+ |23800+.&quot;,
-        ///    &quot;Invalid color template {0}&quot;: &quot;!|\\\\|\\ [rest of string was truncated]&quot;;.
+        ///    &quot;Invalid color template {0}&quot;: &quot;!|\\\\|\\\\/41!|) (010|2 +3|\\\\/||&gt;14+3 {0}&quot;,
+        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;|-|\\\\|/|&gt;|2083: `/0|_||2 |-|4|2|)\\\\|/4|23 \\\\|/!11 83 |&gt;|2083|). |&gt;13453 \\\\|/4!+...&quot;,
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;(|&gt;|_|: 0|\\\\|3 0|2 |\\\\/|0|23 0|# +|-|3 (|&gt;|_| (0|235 |#4!13|) +0 83 |&gt;|2083|). 5|-|0\\\\|/!|\\\ [rest of string was truncated]&quot;;.
         /// </summary>
         public static string hxr_3 {
             get {
@@ -1144,11 +1128,10 @@ namespace Properties.Resources {
         ///  &quot;Name&quot;: &quot;Hindi&quot;,
         ///  &quot;Transliterable&quot;: true,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;upalabdh aadesh: {0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;kamaand injekshan radd kar diya gaya hai.&quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;injekshan vaale tark agale reeboot par chalane ke lie nirdhaarit kie jaenge.&quot;,
         ///    &quot;Invalid color template {0}&quot;: &quot;amaany rang tempalet {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobai: aapake haa [rest of string was truncated]&quot;;.
+        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobai: aapake haardaveyar kee jaanch kee jaegee. krpaya prateeksha karen ...&quot;,
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;seepeeyoo: ek ya adhik chpu kor kee jaanch kee viphal rahee. vaise bhee jaanakaaree dikha raha hai ...&quot;,
+        ///    &quot;RAM: One or more of the RAM  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ind {
             get {
@@ -1161,11 +1144,10 @@ namespace Properties.Resources {
         ///  &quot;Name&quot;: &quot;Hindi&quot;,
         ///  &quot;Transliterable&quot;: true,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;उपलब्ध आदेश: {0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;कमांड इंजेक्शन रद्द कर दिया गया है।&quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;इंजेक्ट किए गए तर्कों को अगले रिबूट पर चलाने के लिए निर्धारित किया जाएगा।&quot;,
         ///    &quot;Invalid color template {0}&quot;: &quot;अमान्य रंग टेम्पलेट {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: आपके हार्डवेयर की जांच की [rest of string was truncated]&quot;;.
+        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: आपके हार्डवेयर की जांच की जाएगी। कृपया प्रतीक्षा करें...&quot;,
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;सीपीयू: सीपीयू कोर का एक या एक से अधिक परीक्षण किया जाना विफल रहा। वैसे भी जानकारी दिखा रहा है ...&quot;,
+        ///    &quot;RAM: One or more of the RAM chips failed to be  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ind_T {
             get {
@@ -1178,11 +1160,10 @@ namespace Properties.Resources {
         ///  &quot;Name&quot;: &quot;Italian&quot;,
         ///  &quot;Transliterable&quot;: false,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;Comandi disponibili: {0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;L&apos;iniezione del comando è stata annullata.&quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Gli argomenti iniettati saranno programmati per essere eseguiti al successivo riavvio.&quot;,
         ///    &quot;Invalid color template {0}&quot;: &quot;Modello di colore non valido {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait. [rest of string was truncated]&quot;;.
+        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: il tuo hardware verrà verificato. Attendere prego...&quot;,
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: uno o più core della CPU non sono stati rilevati. Mostrare informazioni comunque ...&quot;,
+        ///    &quot;RAM: One or more of the RAM chips failed to be p [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ita {
             get {
@@ -1195,12 +1176,10 @@ namespace Properties.Resources {
         ///  &quot;Name&quot;: &quot;Japanese&quot;,
         ///  &quot;Transliterable&quot;: false,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;利用可能なコマンド：{0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;コマンドインジェクションはキャンセルされました。&quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;注入された引数は、次回の再起動時に実行されるようにスケジュールされます。&quot;,
         ///    &quot;Invalid color template {0}&quot;: &quot;無効なカラーテンプレート{0}&quot;,
         ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe：ハードウェアがプローブされます。お待ちください...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be [rest of string was truncated]&quot;;.
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU：1つ以上のCPUコアのプローブに失敗しました。とにかく情報を表示しています...&quot;,
+        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showing information anyway...&quot;: &quot;RAM：1つ以上のRAMチップのプローブに失敗しました。とにかく情報を表示しています...&quot;,        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string jpn {
             get {
@@ -1210,14 +1189,96 @@ namespace Properties.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to {
+        ///    &quot;$schema&quot;: &quot;http://json-schema.org/draft-04/schema#&quot;,
+        ///    &quot;type&quot;: &quot;object&quot;,
+        ///    &quot;properties&quot;: {
+        ///        &quot;Maintenance&quot;: {
+        ///            &quot;type&quot;: &quot;boolean&quot;
+        ///        },
+        ///        &quot;CheckUpdateStart&quot;: {
+        ///            &quot;type&quot;: &quot;boolean&quot;
+        ///        },
+        ///        &quot;CustomBanner&quot;: {
+        ///            &quot;type&quot;: &quot;string&quot;
+        ///        },
+        ///        &quot;LangChangeCulture&quot;: {
+        ///            &quot;type&quot;: &quot;boolean&quot;
+        ///        },
+        ///        &quot;CurrentLanguage&quot;: {
+        ///            &quot;type&quot;: &quot;string&quot;
+        ///        },
+        ///        &quot;CurrentCultStr&quot;: {
+        ///            &quot;type&quot; [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string KernelMainConfigSchema {
+            get {
+                return ResourceManager.GetString("KernelMainConfigSchema", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///    &quot;$schema&quot;: &quot;http://json-schema.org/draft-04/schema#&quot;,
+        ///    &quot;type&quot;: &quot;object&quot;,
+        ///    &quot;properties&quot;: {
+        ///        &quot;ColorMixTrueColor&quot;: {
+        ///            &quot;type&quot;: &quot;boolean&quot;
+        ///        },
+        ///        &quot;ColorMixDelay&quot;: {
+        ///            &quot;type&quot;: &quot;integer&quot;
+        ///        },
+        ///        &quot;ColorMixBackgroundColor&quot;: {
+        ///            &quot;type&quot;: &quot;string&quot;
+        ///        },
+        ///        &quot;ColorMixMinimumRedColorLevel&quot;: {
+        ///            &quot;type&quot;: &quot;integer&quot;
+        ///        },
+        ///        &quot;ColorMixMinimumGreenColorLevel&quot;: {
+        ///            &quot;type&quot;: &quot;integer&quot;
+        ///        },
+        ///       [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string KernelSaverConfigSchema {
+            get {
+                return ResourceManager.GetString("KernelSaverConfigSchema", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///    &quot;$schema&quot;: &quot;http://json-schema.org/draft-04/schema#&quot;,
+        ///    &quot;type&quot;: &quot;object&quot;,
+        ///    &quot;properties&quot;: {
+        ///        &quot;SimpleProgressTextLocation&quot;: {
+        ///            &quot;type&quot;: &quot;integer&quot;
+        ///        },
+        ///        &quot;ProgressProgressColor&quot;: {
+        ///            &quot;type&quot;: &quot;string&quot;
+        ///        },
+        ///        &quot;ProgressProgressTextLocation&quot;: {
+        ///            &quot;type&quot;: &quot;integer&quot;
+        ///        },
+        ///        &quot;PowerLineProgressProgressColor&quot;: {
+        ///            &quot;type&quot;: &quot;string&quot;
+        ///        },
+        ///        &quot;PowerLineProgressProgressTextLocation&quot;: {
+        ///            &quot;type&quot;: [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string KernelSplashConfigSchema {
+            get {
+                return ResourceManager.GetString("KernelSplashConfigSchema", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
         ///  &quot;Name&quot;: &quot;Korean&quot;,
         ///  &quot;Transliterable&quot;: true,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;sayong ganeunghan myeonglyeong : {0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;myeonglyeong ju-ib-i chwisodoeeossseubnida.&quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;ju-ib doen insuneun da-eum-e dasi buting hal ttae silhaengdoedolog yeyagdoebnida.&quot;,
         ///    &quot;Invalid color template {0}&quot;: &quot;jalmosdoen saegsang tempeullis {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Plea [rest of string was truncated]&quot;;.
+        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe : hadeuweeoga geomsadoebnida. gidalyeojuseyo ...&quot;,
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU : hana isang-ui CPU ko-eoleul geomsahaji moshaessseubnida. eojjaessdeun jeongbo pyosi jung ...&quot;,
+        ///    &quot;RAM: One or more of the RAM chips failed to  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string kor {
             get {
@@ -1230,12 +1291,10 @@ namespace Properties.Resources {
         ///  &quot;Name&quot;: &quot;Korean&quot;,
         ///  &quot;Transliterable&quot;: true,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;사용 가능한 명령 : {0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;명령 주입이 취소되었습니다.&quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;주입 된 인수는 다음에 다시 부팅 할 때 실행되도록 예약됩니다.&quot;,
         ///    &quot;Invalid color template {0}&quot;: &quot;잘못된 색상 템플릿 {0}&quot;,
         ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe : 하드웨어가 검사됩니다. 기다려주세요 ...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Show [rest of string was truncated]&quot;;.
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU : 하나 이상의 CPU 코어를 검사하지 못했습니다. 어쨌든 정보 표시 중 ...&quot;,
+        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showing information anyway...&quot;: &quot;RAM : 하나 이상의 RAM 칩을 검사하지 못했습니다. 어쨌든 정보 표시 중 ...&quot;, [rest of string was truncated]&quot;;.
         /// </summary>
         public static string kor_T {
             get {
@@ -2150,11 +2209,10 @@ namespace Properties.Resources {
         ///  &quot;Name&quot;: &quot;Pirate Speak&quot;,
         ///  &quot;Transliterable&quot;: false,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;Available commands: {0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;command injection been cancelled.&quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;injected arguments be scheduled to run at next reboot.&quot;,
         ///    &quot;Invalid color template {0}&quot;: &quot;invalid color template {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;&apos;wprobe: yer &apos;ardware be probed. Plea [rest of string was truncated]&quot;;.
+        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;&apos;wprobe: yer &apos;ardware be probed. Please wait...&quot;,
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot; cpu: one or more o&apos; the cpu cores failed to be probed. Showin&apos; information anyway...&quot;,
+        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showing info [rest of string was truncated]&quot;;.
         /// </summary>
         public static string pir {
             get {
@@ -2167,11 +2225,10 @@ namespace Properties.Resources {
         ///  &quot;Name&quot;: &quot;Gangsta, Playa&quot;,
         ///  &quot;Transliterable&quot;: false,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;Available commands: {0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;Command injection has been cancelled.&quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Injected arguments will be scheduled ta run at next reboot.&quot;,
         ///    &quot;Invalid color template {0}&quot;: &quot;Invalid color template {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Its just anotha h [rest of string was truncated]&quot;;.
+        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Its just anotha homocide. Yo&apos; hardware will be probed. Drop it like its hot. Pleaze wait...&quot;,
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: One or more of tha CPU cores failed ta be probed hittin that booty. Show&apos;n information anyway...&quot;,
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string pla {
             get {
@@ -2209,11 +2266,10 @@ namespace Properties.Resources {
         ///  &quot;Name&quot;: &quot;Portuguese&quot;,
         ///  &quot;Transliterable&quot;: false,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;Comandos disponíveis: {0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;A injeção de comando foi cancelada.&quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Argumentos injetados serão agendados para serem executados na próxima reinicialização.&quot;,
         ///    &quot;Invalid color template {0}&quot;: &quot;Modelo de cor inválido {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwp [rest of string was truncated]&quot;;.
+        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Seu hardware será testado. Por favor aguarde ...&quot;,
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: Um ou mais núcleos da CPU não puderam ser analisados. Mostrando informações de qualquer maneira ...&quot;,
+        ///    &quot;RAM: One or more of the RAM chips failed [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ptg {
             get {
@@ -2401,11 +2457,10 @@ namespace Properties.Resources {
         ///  &quot;Name&quot;: &quot;Russian&quot;,
         ///  &quot;Transliterable&quot;: true,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;Dostupnyye komandy: {0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;Komandnaya in\&quot;yektsiya byla otmenena.&quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Vvedennyye argumenty budut zaplanirovany dlya zapuska pri sleduyushchey perezagruzke.&quot;,
         ///    &quot;Invalid color template {0}&quot;: &quot;Nevernyy tsvetovoy shablon {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwp [rest of string was truncated]&quot;;.
+        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Vashe oborudovaniye budet provereno. Pozhaluysta, podozhdite...&quot;,
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: odno ili neskol&apos;ko yader TSP ne byli provereny. Pokaz informatsii v lyubom sluchaye ...&quot;,
+        ///    &quot;RAM: One or more of the RAM chips fai [rest of string was truncated]&quot;;.
         /// </summary>
         public static string rus {
             get {
@@ -2418,11 +2473,10 @@ namespace Properties.Resources {
         ///  &quot;Name&quot;: &quot;Russian&quot;,
         ///  &quot;Transliterable&quot;: true,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;Доступные команды: {0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;Командная инъекция была отменена.&quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Введенные аргументы будут запланированы для запуска при следующей перезагрузке.&quot;,
         ///    &quot;Invalid color template {0}&quot;: &quot;Неверный цветовой шаблон {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Ваше обо [rest of string was truncated]&quot;;.
+        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Ваше оборудование будет проверено. Пожалуйста, подождите...&quot;,
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: одно или несколько ядер ЦП не были проверены. Показ информации в любом случае ...&quot;,
+        ///    &quot;RAM: One or more of the RAM chips failed to be pr [rest of string was truncated]&quot;;.
         /// </summary>
         public static string rus_T {
             get {
@@ -2506,12 +2560,10 @@ namespace Properties.Resources {
         ///  &quot;Name&quot;: &quot;SMS Message&quot;,
         ///  &quot;Transliterable&quot;: false,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;Avlbl cmmnds: {0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;cmmnd njctn hs bn cnclld.&quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot; injctd rgmnts wll b schdld t rn t nxt rbt.&quot;,
         ///    &quot;Invalid color template {0}&quot;: &quot; invld clr tmplt {0}&quot;,
         ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprb: yr hrdwr wll b prbd. Pls wt...&quot;,
-        ///    &quot;CPU: One or more of the [rest of string was truncated]&quot;;.
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot; cpu: on r mr f th cpu crs fld t b prbd. Shwng nfrmtn nywy...&quot;,
+        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showing information anyway...&quot;: &quot; ram: on r mr f th r [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sms {
             get {
@@ -2573,11 +2625,10 @@ namespace Properties.Resources {
         ///  &quot;Name&quot;: &quot;Spanish&quot;,
         ///  &quot;Transliterable&quot;: false,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;Comandos disponibles: {0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;La inyección de comandos ha sido cancelada.&quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Los argumentos inyectados se programarán para ejecutarse en el próximo reinicio.&quot;,
         ///    &quot;Invalid color template {0}&quot;: &quot;Plantilla de color no válida {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: [rest of string was truncated]&quot;;.
+        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Su hardware será probado. Por favor espere ...&quot;,
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: uno o más de los núcleos de la CPU no pudieron ser probados. Mostrando información de todos modos ...&quot;,
+        ///    &quot;RAM: One or more of the RAM chips fai [rest of string was truncated]&quot;;.
         /// </summary>
         public static string spa {
             get {
@@ -2664,11 +2715,10 @@ namespace Properties.Resources {
         ///  &quot;Name&quot;: &quot;Shakespearean&quot;,
         ///  &quot;Transliterable&quot;: false,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;Available hests: {0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;hest injection hast been cancell&apos;d. &quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot; did inject arguments shall beest schedul&apos;d to runneth at next reboot. &quot;,
         ///    &quot;Invalid color template {0}&quot;: &quot; invalid col&apos;r template {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: thy hardw [rest of string was truncated]&quot;;.
+        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: thy hardware shall beest prob&apos;d.  Prithee wait. &quot;,
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot; cpu: one &apos;r moo of the cpu cores did fail to beest prob&apos;d.  Showing information concluded, be it. &quot;,
+        ///    &quot;RAM: One or more of the RAM chips failed  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ssp {
             get {
@@ -2760,11 +2810,10 @@ namespace Properties.Resources {
         ///  &quot;Name&quot;: &quot;Turkish&quot;,
         ///  &quot;Transliterable&quot;: false,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;Kullanılabilir komutlar: {0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;Komut enjeksiyonu iptal edildi.&quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Enjekte edilen argümanlar bir sonraki yeniden başlatmada çalışacak şekilde programlanacaktır.&quot;,
         ///    &quot;Invalid color template {0}&quot;: &quot;Geçersiz renk şablonu {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;h [rest of string was truncated]&quot;;.
+        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Donanımınız incelenecek. Lütfen bekle...&quot;,
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: Bir veya daha fazla CPU çekirdeği araştırılamadı. Yine de bilgi gösteriliyor...&quot;,
+        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showing informati [rest of string was truncated]&quot;;.
         /// </summary>
         public static string tky {
             get {
@@ -2885,11 +2934,10 @@ namespace Properties.Resources {
         ///  &quot;Name&quot;: &quot;Ukrainian&quot;,
         ///  &quot;Transliterable&quot;: true,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;Dostupni komandy: {0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;Vvedennya komandy skasovano.&quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Vvedeni arhumenty budutʹ zaplanovani na zapusk pid chas nastupnoho perezavantazhennya.&quot;,
         ///    &quot;Invalid color template {0}&quot;: &quot;Nediysnyy shablon kolʹoru {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: vash [rest of string was truncated]&quot;;.
+        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: vashe obladnannya bude perevireno. Budʹ laska, zachekayte...&quot;,
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;TSP: ne vdalosya pereviryty odne abo kilʹka yader TSP. Pokaz informatsiyi vse odno...&quot;,
+        ///    &quot;RAM: One or more of the RAM chips failed to be [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ukr {
             get {
@@ -2902,11 +2950,10 @@ namespace Properties.Resources {
         ///  &quot;Name&quot;: &quot;Ukrainian&quot;,
         ///  &quot;Transliterable&quot;: true,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;Доступні команди: {0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;Введення команди скасовано.&quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Введені аргументи будуть заплановані на запуск під час наступного перезавантаження.&quot;,
         ///    &quot;Invalid color template {0}&quot;: &quot;Недійсний шаблон кольору {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: ваше обла [rest of string was truncated]&quot;;.
+        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: ваше обладнання буде перевірено. Будь ласка, зачекайте...&quot;,
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;ЦП: не вдалося перевірити одне або кілька ядер ЦП. Показ інформації все одно...&quot;,
+        ///    &quot;RAM: One or more of the RAM chips failed to be probed. S [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ukr_T {
             get {
@@ -3001,11 +3048,10 @@ namespace Properties.Resources {
         ///  &quot;Name&quot;: &quot;Vietnamese&quot;,
         ///  &quot;Transliterable&quot;: false,
         ///  &quot;Localizations&quot;: {
-        ///    &quot;Available commands: {0}&quot;: &quot;Các lệnh khả dụng: {0}&quot;,
-        ///    &quot;Command injection has been cancelled.&quot;: &quot;Lệnh tiêm đã bị hủy bỏ.&quot;,
-        ///    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Các đối số được tiêm sẽ được lên lịch để chạy trong lần khởi động lại tiếp theo.&quot;,
         ///    &quot;Invalid color template {0}&quot;: &quot;Mẫu màu không hợp lệ {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Phần cứng của bạn [rest of string was truncated]&quot;;.
+        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Phần cứng của bạn sẽ được thăm dò. Xin vui lòng chờ ...&quot;,
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: Một hoặc nhiều lõi CPU không được phát hiện. Dù sao cũng hiển thị thông tin ...&quot;,
+        ///    &quot;RAM: One or more of the RAM chips failed to be probed.  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string vtn {
             get {

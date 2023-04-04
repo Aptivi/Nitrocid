@@ -22,6 +22,7 @@ using System.Linq;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.Drivers.RNG;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
@@ -34,29 +35,24 @@ namespace KS.Misc.Games
     public static class Solver
     {
 
-        private static int minimumNumber = 0;
-        private static int maximumNumber = 1000;
+        internal static int minimumNumber = 0;
+        internal static int maximumNumber = 1000;
 
         /// <summary>
         /// Minimum number for solver
         /// </summary>
-        public static int SolverMinimumNumber
-        {
-            get => minimumNumber;
-            set => minimumNumber = value < 0 ? 0 : value;
-        }
+        public static int SolverMinimumNumber =>
+            Config.MainConfig.SolverMinimumNumber;
         /// <summary>
         /// Maximum number for solver
         /// </summary>
-        public static int SolverMaximumNumber
-        {
-            get => maximumNumber;
-            set => maximumNumber = value < 0 ? 1000 : value;
-        }
+        public static int SolverMaximumNumber =>
+            Config.MainConfig.SolverMaximumNumber;
         /// <summary>
         /// Whether to show the input or not
         /// </summary>
-        public static bool SolverShowInput { get; set; }
+        public static bool SolverShowInput =>
+            Config.MainConfig.SolverShowInput;
 
         /// <summary>
         /// Initializes the game

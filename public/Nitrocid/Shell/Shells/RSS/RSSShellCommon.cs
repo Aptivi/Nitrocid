@@ -18,6 +18,7 @@
 
 using System;
 using System.Net.Http;
+using KS.Kernel.Configuration;
 using KS.Misc.Threading;
 using KS.Network.RSS;
 using KS.Network.RSS.Instance;
@@ -40,31 +41,28 @@ namespace KS.Shell.Shells.RSS
         /// <summary>
         /// RSS feed instance
         /// </summary>
-        public static RSSFeed RSSFeedInstance => feedInstance;
+        public static RSSFeed RSSFeedInstance =>
+            feedInstance;
         /// <summary>
         /// RSS feed URL prompt style
         /// </summary>
-        public static string RSSFeedUrlPromptStyle { get; set; } = "";
+        public static string RSSFeedUrlPromptStyle =>
+            Config.MainConfig.RSSFeedUrlPromptStyle;
         /// <summary>
         /// RSS fetch timeout in milliseconds
         /// </summary>
-        public static int RSSFetchTimeout
-        {
-            get => fetchTimeout;
-            set => fetchTimeout = value < 0 ? 60000 : value;
-        }
+        public static int RSSFetchTimeout =>
+            Config.MainConfig.RSSFetchTimeout;
         /// <summary>
         /// Whether to refresh RSS feeds or not
         /// </summary>
-        public static bool RSSRefreshFeeds { get; set; } = true;
+        public static bool RSSRefreshFeeds =>
+            Config.MainConfig.RSSRefreshFeeds;
         /// <summary>
         /// RSS refresh interval in milliseconds
         /// </summary>
-        public static int RSSRefreshInterval
-        {
-            get => refreshInterval;
-            set => refreshInterval = value < 0 ? 60000 : value;
-        }
+        public static int RSSRefreshInterval =>
+            Config.MainConfig.RSSRefreshInterval;
         /// <summary>
         /// Whether to keep the connection alive or not
         /// </summary>

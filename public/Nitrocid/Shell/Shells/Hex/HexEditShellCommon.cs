@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.IO;
+using KS.Kernel.Configuration;
 using KS.Misc.Editors.HexEdit;
 using KS.Misc.Threading;
 
@@ -28,7 +29,7 @@ namespace KS.Shell.Shells.Hex
     public static class HexEditShellCommon
     {
 
-        private static int autoSaveInterval = 60;
+        internal static int autoSaveInterval = 60;
         internal static byte[] HexEdit_FileBytesOrig;
         internal static FileStream HexEdit_FileStream;
         internal static byte[] HexEdit_FileBytes;
@@ -37,15 +38,13 @@ namespace KS.Shell.Shells.Hex
         /// <summary>
         /// Auto save flag
         /// </summary>
-        public static bool HexEdit_AutoSaveFlag { get; set; } = true;
+        public static bool HexEdit_AutoSaveFlag =>
+            Config.MainConfig.HexEdit_AutoSaveFlag;
         /// <summary>
         /// Auto save interval in seconds
         /// </summary>
-        public static int HexEdit_AutoSaveInterval
-        {
-            get => autoSaveInterval;
-            set => autoSaveInterval = value < 0 ? 60 : value;
-        }
+        public static int HexEdit_AutoSaveInterval =>
+            Config.MainConfig.HexEdit_AutoSaveInterval;
 
     }
 }
