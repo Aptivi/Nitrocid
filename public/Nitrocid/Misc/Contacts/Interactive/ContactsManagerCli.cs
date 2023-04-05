@@ -313,6 +313,7 @@ namespace KS.Files.Interactive
             {
                 InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Some of the contacts can't be imported.") + ex.Message, ContactsManagerBoxForegroundColor, ContactsManagerBoxBackgroundColor);
             }
+            redrawRequired = true;
         }
 
         private static void ImportContactsFrom()

@@ -29,6 +29,8 @@ using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase;
 using KS.Misc.Writers.ConsoleWriters;
 using System.Linq;
+using KS.Misc.Text;
+using System.Collections.Generic;
 
 namespace KS.Misc.Writers.FancyWriters
 {
@@ -68,9 +70,18 @@ namespace KS.Misc.Writers.FancyWriters
         {
             try
             {
-                // Fill the info box with text inside it
+                // Deal with the lines to actually fit text in the infobox
                 string finalInfoRendered = string.Format(text, vars);
                 string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
+                List<string> splitFinalLines = new();
+                foreach (var line in splitLines)
+                {
+                    var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
+                    foreach (var lineSentence in lineSentences)
+                        splitFinalLines.Add(lineSentence);
+                }
+
+                // Fill the info box with text inside it
                 int maxWidth = splitLines.Max((str) => str.Length);
                 if (maxWidth >= ConsoleWrapper.WindowWidth)
                     maxWidth = ConsoleWrapper.WindowWidth - 4;
@@ -83,12 +94,18 @@ namespace KS.Misc.Writers.FancyWriters
                 BorderColor.WriteBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
 
                 // Render text inside it
-                for (int i = 0; i < splitLines.Length; i++)
+                bool appendMinusOne = false;
+                for (int i = 0; i < splitFinalLines.Count; i++)
                 {
-                    var line = splitLines[i];
-                    TextWriterWhereColor.WriteWhere(line.Truncate(maxRenderWidth), borderX + 1, borderY + 1 + i);
+                    var line = splitFinalLines[i];
+                    TextWriterWhereColor.WriteWhere(line, borderX + 1, borderY + 1 + (i % maxHeight) - (appendMinusOne ? 1 : 0));
                     if (i % maxHeight == 0 && i > 0)
+                    {
+                        // Reached the end of the box. Wait for keypress then clear the box
+                        appendMinusOne = true;
                         Input.DetectKeypress();
+                        BorderColor.WriteBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
+                    }
                 }
 
                 // Wait until the user presses any key to close the box
