@@ -56,7 +56,7 @@ namespace KS.Misc.Settings
         /// <summary>
         /// Main page
         /// </summary>
-        public static void OpenMainPage(SettingsType SettingsType)
+        public static void OpenMainPage(ConfigType SettingsType)
         {
             bool PromptFinished = false;
             var SettingsToken = OpenSettingsResource(SettingsType);
@@ -69,7 +69,7 @@ namespace KS.Misc.Settings
                 for (int SectionIndex = 0; SectionIndex <= MaxSections - 1; SectionIndex++)
                 {
                     JProperty Section = (JProperty)SettingsToken.ToList()[SectionIndex];
-                    if (SettingsType != SettingsType.Normal)
+                    if (SettingsType != ConfigType.Kernel)
                     {
                         var ici = new InputChoiceInfo(
                             $"{SectionIndex + 1}",
@@ -205,7 +205,7 @@ namespace KS.Misc.Settings
         /// <param name="Section">Section name</param>
         /// <param name="SettingsToken">Settings token</param>
         /// <param name="SettingsType">Settings type</param>
-        public static void OpenSection(string Section, JToken SettingsToken, SettingsType SettingsType)
+        public static void OpenSection(string Section, JToken SettingsToken, ConfigType SettingsType)
         {
             try
             {
@@ -269,12 +269,12 @@ namespace KS.Misc.Settings
                         sections.Add(ici);
                     }
 
-                    if (SettingsType == SettingsType.Screensaver)
+                    if (SettingsType == ConfigType.Screensaver)
                     {
                         var ici = new InputChoiceInfo($"{MaxOptions + 2}", Translate.DoTranslation("Preview screensaver"));
                         altSections.Add(ici);
                     }
-                    else if (SettingsType == SettingsType.Splash)
+                    else if (SettingsType == ConfigType.Splash)
                     {
                         var ici = new InputChoiceInfo($"{MaxOptions + 2}", Translate.DoTranslation("Preview splash"));
                         altSections.Add(ici);
@@ -295,7 +295,7 @@ namespace KS.Misc.Settings
                         DebugWriter.WriteDebug(DebugLevel.I, "Opening key {0} from section {1}...", finalAnswer, Section);
                         OpenKey(Section, finalAnswer, SettingsToken);
                     }
-                    else if (finalAnswer == MaxOptions + 2 & SettingsType == SettingsType.Screensaver)
+                    else if (finalAnswer == MaxOptions + 2 & SettingsType == ConfigType.Screensaver)
                     {
                         // Preview screensaver
                         DebugWriter.WriteDebug(DebugLevel.I, "User requested screensaver preview.");
@@ -306,7 +306,7 @@ namespace KS.Misc.Settings
                             ScreensaverDisplayer.BailFromScreensaver();
                         }
                     }
-                    else if (finalAnswer == MaxOptions + 2 & SettingsType == SettingsType.Splash)
+                    else if (finalAnswer == MaxOptions + 2 & SettingsType == ConfigType.Splash)
                     {
                         // Preview splash
                         DebugWriter.WriteDebug(DebugLevel.I, "User requested splash preview.");
@@ -1001,19 +1001,19 @@ namespace KS.Misc.Settings
         /// Open the settings resource
         /// </summary>
         /// <param name="SettingsType">The settings type</param>
-        private static JToken OpenSettingsResource(SettingsType SettingsType)
+        private static JToken OpenSettingsResource(ConfigType SettingsType)
         {
             switch (SettingsType)
             {
-                case SettingsType.Normal:
+                case ConfigType.Kernel:
                     {
                         return JToken.Parse(Properties.Resources.Resources.SettingsEntries);
                     }
-                case SettingsType.Screensaver:
+                case ConfigType.Screensaver:
                     {
                         return JToken.Parse(Properties.Resources.Resources.ScreensaverSettingsEntries);
                     }
-                case SettingsType.Splash:
+                case ConfigType.Splash:
                     {
                         return JToken.Parse(Properties.Resources.Resources.SplashSettingsEntries);
                     }

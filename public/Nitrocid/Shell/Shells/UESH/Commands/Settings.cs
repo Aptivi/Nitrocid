@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase.Colors;
+using KS.Kernel.Configuration;
 using KS.Languages;
 using KS.Misc.Settings;
 using KS.Misc.Writers.ConsoleWriters;
@@ -64,13 +65,13 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            var SettingsType = Misc.Settings.SettingsType.Normal;
+            var SettingsType = ConfigType.Kernel;
             if (ListSwitchesOnly.Length > 0)
             {
                 if (ListSwitchesOnly[0] == "-saver")
-                    SettingsType = Misc.Settings.SettingsType.Screensaver;
+                    SettingsType = ConfigType.Screensaver;
                 if (ListSwitchesOnly[0] == "-splash")
-                    SettingsType = Misc.Settings.SettingsType.Splash;
+                    SettingsType = ConfigType.Splash;
             }
             SettingsApp.OpenMainPage(SettingsType);
         }
