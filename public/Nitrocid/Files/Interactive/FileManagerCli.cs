@@ -58,9 +58,9 @@ namespace KS.Files.Interactive
         private static readonly List<FileManagerBinding> fileManagerBindings = new()
         {
             // Operations
-            new FileManagerBinding(/* Localizable */ "Copy",   ConsoleKey.F1, (destinationPath, sourcePath) => Copying.CopyFileOrDir(sourcePath.FullName, destinationPath), true),
-            new FileManagerBinding(/* Localizable */ "Move",   ConsoleKey.F2, (destinationPath, sourcePath) => Moving.MoveFileOrDir(sourcePath.FullName, destinationPath), true),
-            new FileManagerBinding(/* Localizable */ "Delete", ConsoleKey.F3, (_,               sourcePath) => Removing.RemoveFileOrDir(sourcePath.FullName), true),
+            new FileManagerBinding(/* Localizable */ "Copy",   ConsoleKey.F1, (destinationPath, sourcePath) => CopyFileOrDir(sourcePath, destinationPath), true),
+            new FileManagerBinding(/* Localizable */ "Move",   ConsoleKey.F2, (destinationPath, sourcePath) => MoveFileOrDir(sourcePath, destinationPath), true),
+            new FileManagerBinding(/* Localizable */ "Delete", ConsoleKey.F3, (_,               sourcePath) => RemoveFileOrDir(sourcePath), true),
             new FileManagerBinding(/* Localizable */ "Up",     ConsoleKey.F4, (_,               _         ) => GoUp(), true),
             new FileManagerBinding(/* Localizable */ "Info",   ConsoleKey.F5, (_,               sourcePath) => PrintFileSystemInfo(sourcePath), true),
 
@@ -287,9 +287,6 @@ namespace KS.Files.Interactive
                 ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)secondPaneCurrentSelection / cachedFileInfosSecondPane.Count), ConsoleWrapper.WindowWidth - 3, 1, 2, 2, false);
 
                 // Now, populate the current file/folder info from the current pane
-                var FileInfoCurrentPane =    currentPane == 2 ?
-                                             cachedFileInfosSecondPane[secondPaneCurrentSelection - 1] :
-                                             cachedFileInfosFirstPane[firstPaneCurrentSelection - 1];
                 var PathCurrentPane =        currentPane == 2 ?
                                              secondPanePath :
                                              firstPanePath;
@@ -301,17 +298,25 @@ namespace KS.Files.Interactive
                 string finalInfoRendered = "";
                 try
                 {
-                    bool infoIsDirectory = Checking.FolderExists(FileInfoCurrentPane.FullName);
-                    finalInfoRendered = 
-                        // Name and directory indicator
-                        $" [{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.Name} | " + 
+                    if (CachedFilesCurrentPane.Count > 0)
+                    {
+                        var FileInfoCurrentPane = currentPane == 2 ?
+                                                  cachedFileInfosSecondPane[secondPaneCurrentSelection - 1] :
+                                                  cachedFileInfosFirstPane[firstPaneCurrentSelection - 1];
+                        bool infoIsDirectory = Checking.FolderExists(FileInfoCurrentPane.FullName);
+                        finalInfoRendered = 
+                            // Name and directory indicator
+                            $" [{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.Name} | " + 
 
-                        // File size or directory size
-                        $"{(!infoIsDirectory ? ((FileInfo)FileInfoCurrentPane).Length.FileSizeToString() : SizeGetter.GetAllSizesInFolder((DirectoryInfo)FileInfoCurrentPane).FileSizeToString())} | " + 
+                            // File size or directory size
+                            $"{(!infoIsDirectory ? ((FileInfo)FileInfoCurrentPane).Length.FileSizeToString() : SizeGetter.GetAllSizesInFolder((DirectoryInfo)FileInfoCurrentPane).FileSizeToString())} | " + 
 
-                        // Modified date
-                        $"{(!infoIsDirectory ? TimeDateRenderers.Render(((FileInfo)FileInfoCurrentPane).LastWriteTime) : "")}"
-                    ;
+                            // Modified date
+                            $"{(!infoIsDirectory ? TimeDateRenderers.Render(((FileInfo)FileInfoCurrentPane).LastWriteTime) : "")}"
+                        ;
+                    }
+                    else
+                        finalInfoRendered = Translate.DoTranslation("No files.");
                 }
                 catch (Exception ex)
                 {
@@ -367,24 +372,41 @@ namespace KS.Files.Interactive
                             firstPaneCurrentSelection = CachedFilesCurrentPane.Count;
                         break;
                     case ConsoleKey.Enter:
-                        if (!Checking.FolderExists(FileInfoCurrentPane.FullName))
+                        {
+                            if (CachedFilesCurrentPane.Count <= 0)
+                                break;
+                            var FileInfoCurrentPane = currentPane == 2 ?
+                                                      cachedFileInfosSecondPane[secondPaneCurrentSelection - 1] :
+                                                      cachedFileInfosFirstPane[firstPaneCurrentSelection - 1];
+                            if (!Checking.FolderExists(FileInfoCurrentPane.FullName))
+                                break;
+                            if (currentPane == 2)
+                            {
+                                secondPanePath = Filesystem.NeutralizePath(FileInfoCurrentPane.FullName);
+                                secondPaneCurrentSelection = 1;
+                            }
+                            else
+                            {
+                                firstPanePath = Filesystem.NeutralizePath(FileInfoCurrentPane.FullName);
+                                firstPaneCurrentSelection = 1;
+                            }
                             break;
-                        if (currentPane == 2)
-                        {
-                            secondPanePath = Filesystem.NeutralizePath(FileInfoCurrentPane.FullName);
-                            secondPaneCurrentSelection = 1;
                         }
-                        else
-                        {
-                            firstPanePath = Filesystem.NeutralizePath(FileInfoCurrentPane.FullName);
-                            firstPaneCurrentSelection = 1;
-                        }
-                        break;
                     default:
-                        var implementedBindings = fileManagerBindings.Where((binding) => binding.BindingKeyName == pressedKey);
-                        foreach (var implementedBinding in implementedBindings)
-                            implementedBinding.BindingAction.Invoke(PathCurrentPane, FileInfoCurrentPane);
-                        break;
+                        {
+                            var implementedBindings = fileManagerBindings.Where((binding) => binding.BindingKeyName == pressedKey);
+                            var FileInfoCurrentPane =
+                                CachedFilesCurrentPane.Count > 0 ?
+                                    currentPane == 2 ?
+                                    cachedFileInfosSecondPane[secondPaneCurrentSelection - 1] :
+                                    cachedFileInfosFirstPane[firstPaneCurrentSelection - 1]
+                                :
+                                    null
+                                ;
+                            foreach (var implementedBinding in implementedBindings)
+                                implementedBinding.BindingAction.Invoke(PathCurrentPane, FileInfoCurrentPane);
+                            break;
+                        }
                 }
             }
 
@@ -416,6 +438,10 @@ namespace KS.Files.Interactive
 
         private static void PrintFileSystemInfo(FileSystemInfo currentFileSystemInfo)
         {
+            // Don't do anything if we haven't been provided anything.
+            if (currentFileSystemInfo is null)
+                return;
+
             // Render the final information string
             var finalInfoRendered = new StringBuilder();
             string fullPath = currentFileSystemInfo.FullName;
@@ -454,6 +480,37 @@ namespace KS.Files.Interactive
             // Now, render the info box
             InfoBoxColor.WriteInfoBox(finalInfoRendered.ToString(), FileManagerBoxForegroundColor, FileManagerBoxBackgroundColor);
             redrawRequired = true;
+        }
+
+        private static void CopyFileOrDir(FileSystemInfo currentFileSystemInfo, string dest)
+        {
+            // Don't do anything if we haven't been provided anything.
+            if (currentFileSystemInfo is null)
+                return;
+
+            DebugCheck.AssertNull(dest);
+            DebugCheck.Assert(string.IsNullOrWhiteSpace(dest));
+            Copying.CopyFileOrDir(currentFileSystemInfo.FullName, dest);
+        }
+
+        private static void MoveFileOrDir(FileSystemInfo currentFileSystemInfo, string dest)
+        {
+            // Don't do anything if we haven't been provided anything.
+            if (currentFileSystemInfo is null)
+                return;
+
+            DebugCheck.AssertNull(dest);
+            DebugCheck.Assert(string.IsNullOrWhiteSpace(dest));
+            Moving.MoveFileOrDir(currentFileSystemInfo.FullName, dest);
+        }
+
+        private static void RemoveFileOrDir(FileSystemInfo currentFileSystemInfo)
+        {
+            // Don't do anything if we haven't been provided anything.
+            if (currentFileSystemInfo is null)
+                return;
+
+            Removing.RemoveFileOrDir(currentFileSystemInfo.FullName);
         }
     }
 }

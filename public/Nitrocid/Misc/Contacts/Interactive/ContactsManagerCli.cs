@@ -210,50 +210,55 @@ namespace KS.Files.Interactive
                 string finalInfoRendered = "";
                 try
                 {
-                    var selectedContact = contacts[paneCurrentSelection - 1];
-                    bool hasName = selectedContact.ContactNames.Any();
-                    bool hasAddress = selectedContact.ContactAddresses.Any();
-                    bool hasMail = selectedContact.ContactMails.Any();
-                    bool hasOrganization = selectedContact.ContactOrganizations.Any();
-                    bool hasTelephone = selectedContact.ContactTelephones.Any();
-                    bool hasURL = selectedContact.ContactURL.Any();
+                    if (contacts.Length > 0)
+                    {
+                        var selectedContact = contacts[paneCurrentSelection - 1];
+                        bool hasName = selectedContact.ContactNames.Any();
+                        bool hasAddress = selectedContact.ContactAddresses.Any();
+                        bool hasMail = selectedContact.ContactMails.Any();
+                        bool hasOrganization = selectedContact.ContactOrganizations.Any();
+                        bool hasTelephone = selectedContact.ContactTelephones.Any();
+                        bool hasURL = selectedContact.ContactURL.Any();
 
-                    // Generate the rendered text
-                    string finalRenderedContactName =
-                        hasName ?
-                        (Translate.DoTranslation("Contact name") + $": {selectedContact.ContactFullName}").Truncate(SeparatorHalfConsoleWidthInterior - 3) :
-                        Translate.DoTranslation("No contact name");
-                    string finalRenderedContactAddress =
-                        hasAddress ?
-                        (Translate.DoTranslation("Contact address") + $": {selectedContact.ContactAddresses[0].StreetAddress}, {selectedContact.ContactAddresses[0].PostalCode}, {selectedContact.ContactAddresses[0].PostOfficeBox}, {selectedContact.ContactAddresses[0].ExtendedAddress}, {selectedContact.ContactAddresses[0].Locality}, {selectedContact.ContactAddresses[0].Region}, {selectedContact.ContactAddresses[0].Country}").Truncate(SeparatorHalfConsoleWidthInterior - 3) :
-                        Translate.DoTranslation("No contact address");
-                    string finalRenderedContactMail =
-                        hasMail ?
-                        (Translate.DoTranslation("Contact mail") + $": {selectedContact.ContactMails[0].ContactEmailAddress}").Truncate(SeparatorHalfConsoleWidthInterior - 3) :
-                        Translate.DoTranslation("No contact mail");
-                    string finalRenderedContactOrganization = hasOrganization ?
-                        (Translate.DoTranslation("Contact organization") + $": {selectedContact.ContactOrganizations[0].Name}, {selectedContact.ContactOrganizations[0].Unit}, {selectedContact.ContactOrganizations[0].Role}").Truncate(SeparatorHalfConsoleWidthInterior - 3) :
-                        Translate.DoTranslation("No contact organization");
-                    string finalRenderedContactTelephone = hasTelephone ?
-                        (Translate.DoTranslation("Contact telephone") + $": {selectedContact.ContactTelephones[0].ContactPhoneNumber}").Truncate(SeparatorHalfConsoleWidthInterior - 3) :
-                        Translate.DoTranslation("No contact telephone");
-                    string finalRenderedContactURL = hasURL ?
-                        (Translate.DoTranslation("Contact URL") + $": {selectedContact.ContactURL}").Truncate(SeparatorHalfConsoleWidthInterior - 3) :
-                        Translate.DoTranslation("No contact URL");
+                        // Generate the rendered text
+                        string finalRenderedContactName =
+                            hasName ?
+                            (Translate.DoTranslation("Contact name") + $": {selectedContact.ContactFullName}").Truncate(SeparatorHalfConsoleWidthInterior - 3) :
+                            Translate.DoTranslation("No contact name");
+                        string finalRenderedContactAddress =
+                            hasAddress ?
+                            (Translate.DoTranslation("Contact address") + $": {selectedContact.ContactAddresses[0].StreetAddress}, {selectedContact.ContactAddresses[0].PostalCode}, {selectedContact.ContactAddresses[0].PostOfficeBox}, {selectedContact.ContactAddresses[0].ExtendedAddress}, {selectedContact.ContactAddresses[0].Locality}, {selectedContact.ContactAddresses[0].Region}, {selectedContact.ContactAddresses[0].Country}").Truncate(SeparatorHalfConsoleWidthInterior - 3) :
+                            Translate.DoTranslation("No contact address");
+                        string finalRenderedContactMail =
+                            hasMail ?
+                            (Translate.DoTranslation("Contact mail") + $": {selectedContact.ContactMails[0].ContactEmailAddress}").Truncate(SeparatorHalfConsoleWidthInterior - 3) :
+                            Translate.DoTranslation("No contact mail");
+                        string finalRenderedContactOrganization = hasOrganization ?
+                            (Translate.DoTranslation("Contact organization") + $": {selectedContact.ContactOrganizations[0].Name}, {selectedContact.ContactOrganizations[0].Unit}, {selectedContact.ContactOrganizations[0].Role}").Truncate(SeparatorHalfConsoleWidthInterior - 3) :
+                            Translate.DoTranslation("No contact organization");
+                        string finalRenderedContactTelephone = hasTelephone ?
+                            (Translate.DoTranslation("Contact telephone") + $": {selectedContact.ContactTelephones[0].ContactPhoneNumber}").Truncate(SeparatorHalfConsoleWidthInterior - 3) :
+                            Translate.DoTranslation("No contact telephone");
+                        string finalRenderedContactURL = hasURL ?
+                            (Translate.DoTranslation("Contact URL") + $": {selectedContact.ContactURL}").Truncate(SeparatorHalfConsoleWidthInterior - 3) :
+                            Translate.DoTranslation("No contact URL");
 
-                    // Render them to the second pane
-                    TextWriterWhereColor.WriteWhere(finalRenderedContactName + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedContactName.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 0, ContactsManagerForegroundColor, ContactsManagerPaneContactsBackColor);
-                    TextWriterWhereColor.WriteWhere(finalRenderedContactAddress + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedContactAddress.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 2, ContactsManagerForegroundColor, ContactsManagerPaneContactsBackColor);
-                    TextWriterWhereColor.WriteWhere(finalRenderedContactMail + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedContactMail.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 3, ContactsManagerForegroundColor, ContactsManagerPaneContactsBackColor);
-                    TextWriterWhereColor.WriteWhere(finalRenderedContactOrganization + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedContactOrganization.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 4, ContactsManagerForegroundColor, ContactsManagerPaneContactsBackColor);
-                    TextWriterWhereColor.WriteWhere(finalRenderedContactTelephone + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedContactTelephone.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 5, ContactsManagerForegroundColor, ContactsManagerPaneContactsBackColor);
-                    TextWriterWhereColor.WriteWhere(finalRenderedContactURL + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedContactTelephone.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 6, ContactsManagerForegroundColor, ContactsManagerPaneContactsBackColor);
-                    TextWriterWhereColor.WriteWhere(" ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedContactTelephone.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 7, ContactsManagerForegroundColor, ContactsManagerPaneContactsBackColor);
-                    TextWriterWhereColor.WriteWhere(" ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedContactTelephone.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 8, ContactsManagerForegroundColor, ContactsManagerPaneContactsBackColor);
+                        // Render them to the second pane
+                        TextWriterWhereColor.WriteWhere(finalRenderedContactName + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedContactName.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 0, ContactsManagerForegroundColor, ContactsManagerPaneContactsBackColor);
+                        TextWriterWhereColor.WriteWhere(finalRenderedContactAddress + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedContactAddress.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 2, ContactsManagerForegroundColor, ContactsManagerPaneContactsBackColor);
+                        TextWriterWhereColor.WriteWhere(finalRenderedContactMail + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedContactMail.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 3, ContactsManagerForegroundColor, ContactsManagerPaneContactsBackColor);
+                        TextWriterWhereColor.WriteWhere(finalRenderedContactOrganization + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedContactOrganization.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 4, ContactsManagerForegroundColor, ContactsManagerPaneContactsBackColor);
+                        TextWriterWhereColor.WriteWhere(finalRenderedContactTelephone + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedContactTelephone.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 5, ContactsManagerForegroundColor, ContactsManagerPaneContactsBackColor);
+                        TextWriterWhereColor.WriteWhere(finalRenderedContactURL + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedContactTelephone.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 6, ContactsManagerForegroundColor, ContactsManagerPaneContactsBackColor);
+                        TextWriterWhereColor.WriteWhere(" ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedContactTelephone.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 7, ContactsManagerForegroundColor, ContactsManagerPaneContactsBackColor);
+                        TextWriterWhereColor.WriteWhere(" ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedContactTelephone.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 8, ContactsManagerForegroundColor, ContactsManagerPaneContactsBackColor);
                     
-                    // Prepare the status
-                    finalInfoRendered = $" {status}";
-                    status = Translate.DoTranslation("Ready");
+                        // Prepare the status
+                        finalInfoRendered = $" {status}";
+                        status = Translate.DoTranslation("Ready");
+                    }
+                    else
+                        finalInfoRendered = Translate.DoTranslation("No contacts. Import your contacts using F3 or F4.");
                 }
                 catch (Exception ex)
                 {

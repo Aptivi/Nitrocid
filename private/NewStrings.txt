@@ -521,5 +521,7 @@ Specify an existent folder to store the three configuration files on.
 Specify an existent path to a configuration file
 Configuration file is invalid.
 Trying to re-generate configuration...
+No contacts. Import your contacts using F3 or F4.
+No files.
 
 ==========================================================================================================================================
