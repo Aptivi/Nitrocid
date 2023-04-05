@@ -113,7 +113,7 @@ namespace KS.Misc.Settings
                 else if (Answer == MaxSections + 1)
                 {
                     // The selected answer is "Find a Setting"
-                    VariableFinder(SettingsToken);
+                    VariableFinder(SettingsToken, SettingsType);
                 }
                 else if (Answer == MaxSections + 2)
                 {
@@ -260,7 +260,7 @@ namespace KS.Misc.Settings
                         }
 
                         // Now, populate the input choice info
-                        object CurrentValue = ConfigTools.GetValueFromEntry(Setting);
+                        object CurrentValue = ConfigTools.GetValueFromEntry(Setting, SettingsType);
                         var ici = new InputChoiceInfo(
                             $"{SectionIndex + 1}",
                             $"{Translate.DoTranslation(Setting["Name"].ToString())} [{CurrentValue}]",
@@ -293,7 +293,7 @@ namespace KS.Misc.Settings
                     if (finalAnswer >= 1 & finalAnswer <= MaxOptions)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Opening key {0} from section {1}...", finalAnswer, Section);
-                        OpenKey(Section, finalAnswer, SettingsToken);
+                        OpenKey(Section, finalAnswer, SettingsToken, SettingsType);
                     }
                     else if (finalAnswer == MaxOptions + 2 & SettingsType == ConfigType.Screensaver)
                     {
@@ -342,10 +342,11 @@ namespace KS.Misc.Settings
         /// <summary>
         /// Open a key.
         /// </summary>
+        /// <param name="SettingsType">Settings type</param>
         /// <param name="Section">Section</param>
         /// <param name="KeyNumber">Key number</param>
         /// <param name="SettingsToken">Settings token</param>
-        public static void OpenKey(string Section, int KeyNumber, JToken SettingsToken)
+        public static void OpenKey(string Section, int KeyNumber, JToken SettingsToken, ConfigType SettingsType)
         {
             try
             {
@@ -406,7 +407,7 @@ namespace KS.Misc.Settings
                         break;
 
                     // Determine how to get key default value
-                    KeyDefaultValue = ConfigTools.GetValueFromEntry(KeyToken);
+                    KeyDefaultValue = ConfigTools.GetValueFromEntry(KeyToken, SettingsType);
 
                     // How the settings app displays the options and parses the output varies by the keytype
                     switch (KeyType)
@@ -630,12 +631,26 @@ namespace KS.Misc.Settings
                                     if (FieldManager.CheckField(KeyVar))
                                     {
                                         // We're dealing with the field
-                                        FieldManager.SetValue(KeyVar, FinalBool, true);
+                                        FieldManager.SetValue(KeyVar, FinalBool);
                                     }
                                     else if (PropertyManager.CheckProperty(KeyVar))
                                     {
                                         // We're dealing with the property
-                                        PropertyManager.SetPropertyValue(KeyVar, FinalBool);
+                                        switch (SettingsType)
+                                        {
+                                            case ConfigType.Kernel:
+                                                PropertyManager.SetPropertyValueInstance(Config.MainConfig, KeyVar, FinalBool);
+                                                break;
+                                            case ConfigType.Screensaver:
+                                                PropertyManager.SetPropertyValueInstance(Config.SaverConfig, KeyVar, FinalBool);
+                                                break;
+                                            case ConfigType.Splash:
+                                                PropertyManager.SetPropertyValueInstance(Config.SplashConfig, KeyVar, FinalBool);
+                                                break;
+                                            default:
+                                                DebugCheck.Assert(false);
+                                                break;
+                                        }
                                     }
                                     break;
                                 }
@@ -658,19 +673,33 @@ namespace KS.Misc.Settings
                                             KeyFinished = true;
 
                                             // Now, set the value
-                                            if (FieldManager.CheckField(KeyVar, true))
+                                            if (FieldManager.CheckField(KeyVar))
                                             {
                                                 // The currentLanguage is a field, so set it
                                                 if (KeyType == SettingsKeyType.SLang)
                                                     LanguageManager.currentLanguage = (LanguageInfo)selectionsArray.ToArray()[AnswerIndex];
                                                 else
                                                     // We're dealing with the field
-                                                    FieldManager.SetValue(KeyVar, selectionsArray.ToArray()[AnswerIndex], true);
+                                                    FieldManager.SetValue(KeyVar, selectionsArray.ToArray()[AnswerIndex]);
                                             }
                                             else if (PropertyManager.CheckProperty(KeyVar))
                                             {
                                                 // We're dealing with the property
-                                                PropertyManager.SetPropertyValue(KeyVar, selectionsArray.ToArray()[AnswerIndex]);
+                                                switch (SettingsType)
+                                                {
+                                                    case ConfigType.Kernel:
+                                                        PropertyManager.SetPropertyValueInstance(Config.MainConfig, KeyVar, selectionsArray.ToArray()[AnswerIndex]);
+                                                        break;
+                                                    case ConfigType.Screensaver:
+                                                        PropertyManager.SetPropertyValueInstance(Config.SaverConfig, KeyVar, selectionsArray.ToArray()[AnswerIndex]);
+                                                        break;
+                                                    case ConfigType.Splash:
+                                                        PropertyManager.SetPropertyValueInstance(Config.SplashConfig, KeyVar, selectionsArray.ToArray()[AnswerIndex]);
+                                                        break;
+                                                    default:
+                                                        DebugCheck.Assert(false);
+                                                        break;
+                                                }
                                             }
                                         }
                                         else if (!(AnswerInt > MaxKeyOptions))
@@ -686,12 +715,26 @@ namespace KS.Misc.Settings
                                             if (FieldManager.CheckField(KeyVar))
                                             {
                                                 // We're dealing with the field
-                                                FieldManager.SetValue(KeyVar, FinalValue, true);
+                                                FieldManager.SetValue(KeyVar, FinalValue);
                                             }
                                             else if (PropertyManager.CheckProperty(KeyVar))
                                             {
                                                 // We're dealing with the property
-                                                PropertyManager.SetPropertyValue(KeyVar, FinalValue);
+                                                switch (SettingsType)
+                                                {
+                                                    case ConfigType.Kernel:
+                                                        PropertyManager.SetPropertyValueInstance(Config.MainConfig, KeyVar, FinalValue);
+                                                        break;
+                                                    case ConfigType.Screensaver:
+                                                        PropertyManager.SetPropertyValueInstance(Config.SaverConfig, KeyVar, FinalValue);
+                                                        break;
+                                                    case ConfigType.Splash:
+                                                        PropertyManager.SetPropertyValueInstance(Config.SplashConfig, KeyVar, FinalValue);
+                                                        break;
+                                                    default:
+                                                        DebugCheck.Assert(false);
+                                                        break;
+                                                }
                                             }
                                         }
                                         else
@@ -732,12 +775,26 @@ namespace KS.Misc.Settings
                                         if (FieldManager.CheckField(KeyVar))
                                         {
                                             // We're dealing with the field
-                                            FieldManager.SetValue(KeyVar, AnswerInt, true);
+                                            FieldManager.SetValue(KeyVar, AnswerInt);
                                         }
                                         else if (PropertyManager.CheckProperty(KeyVar))
                                         {
                                             // We're dealing with the property
-                                            PropertyManager.SetPropertyValue(KeyVar, AnswerInt);
+                                            switch (SettingsType)
+                                            {
+                                                case ConfigType.Kernel:
+                                                    PropertyManager.SetPropertyValueInstance(Config.MainConfig, KeyVar, AnswerInt);
+                                                    break;
+                                                case ConfigType.Screensaver:
+                                                    PropertyManager.SetPropertyValueInstance(Config.SaverConfig, KeyVar, AnswerInt);
+                                                    break;
+                                                case ConfigType.Splash:
+                                                    PropertyManager.SetPropertyValueInstance(Config.SplashConfig, KeyVar, AnswerInt);
+                                                    break;
+                                                default:
+                                                    DebugCheck.Assert(false);
+                                                    break;
+                                            }
                                         }
                                     }
                                     else
@@ -760,12 +817,26 @@ namespace KS.Misc.Settings
                                     if (FieldManager.CheckField(KeyVar))
                                     {
                                         // We're dealing with the field
-                                        FieldManager.SetValue(KeyVar, AnswerInt, true);
+                                        FieldManager.SetValue(KeyVar, AnswerInt);
                                     }
                                     else if (PropertyManager.CheckProperty(KeyVar))
                                     {
                                         // We're dealing with the property
-                                        PropertyManager.SetPropertyValue(KeyVar, AnswerInt);
+                                        switch (SettingsType)
+                                        {
+                                            case ConfigType.Kernel:
+                                                PropertyManager.SetPropertyValueInstance(Config.MainConfig, KeyVar, AnswerInt);
+                                                break;
+                                            case ConfigType.Screensaver:
+                                                PropertyManager.SetPropertyValueInstance(Config.SaverConfig, KeyVar, AnswerInt);
+                                                break;
+                                            case ConfigType.Splash:
+                                                PropertyManager.SetPropertyValueInstance(Config.SplashConfig, KeyVar, AnswerInt);
+                                                break;
+                                            default:
+                                                DebugCheck.Assert(false);
+                                                break;
+                                        }
                                     }
 
                                     break;
@@ -789,12 +860,26 @@ namespace KS.Misc.Settings
                                         if (FieldManager.CheckField(KeyVar))
                                         {
                                             // We're dealing with the field
-                                            FieldManager.SetValue(KeyVar, AnswerDbl, true);
+                                            FieldManager.SetValue(KeyVar, AnswerDbl);
                                         }
                                         else if (PropertyManager.CheckProperty(KeyVar))
                                         {
                                             // We're dealing with the property
-                                            PropertyManager.SetPropertyValue(KeyVar, AnswerDbl);
+                                            switch (SettingsType)
+                                            {
+                                                case ConfigType.Kernel:
+                                                    PropertyManager.SetPropertyValueInstance(Config.MainConfig, KeyVar, AnswerDbl);
+                                                    break;
+                                                case ConfigType.Screensaver:
+                                                    PropertyManager.SetPropertyValueInstance(Config.SaverConfig, KeyVar, AnswerDbl);
+                                                    break;
+                                                case ConfigType.Splash:
+                                                    PropertyManager.SetPropertyValueInstance(Config.SplashConfig, KeyVar, AnswerDbl);
+                                                    break;
+                                                default:
+                                                    DebugCheck.Assert(false);
+                                                    break;
+                                            }
                                         }
                                     }
                                     else
@@ -834,15 +919,29 @@ namespace KS.Misc.Settings
 
                                     // Set the value
                                     KeyFinished = true;
-                                    if (FieldManager.CheckField(KeyVar, true))
+                                    if (FieldManager.CheckField(KeyVar))
                                     {
                                         // We're dealing with the field
-                                        FieldManager.SetValue(KeyVar, AnswerString, true);
+                                        FieldManager.SetValue(KeyVar, AnswerString);
                                     }
                                     else if (PropertyManager.CheckProperty(KeyVar))
                                     {
                                         // We're dealing with the property
-                                        PropertyManager.SetPropertyValue(KeyVar, AnswerString);
+                                        switch (SettingsType)
+                                        {
+                                            case ConfigType.Kernel:
+                                                PropertyManager.SetPropertyValueInstance(Config.MainConfig, KeyVar, AnswerString);
+                                                break;
+                                            case ConfigType.Screensaver:
+                                                PropertyManager.SetPropertyValueInstance(Config.SaverConfig, KeyVar, AnswerString);
+                                                break;
+                                            case ConfigType.Splash:
+                                                PropertyManager.SetPropertyValueInstance(Config.SplashConfig, KeyVar, AnswerString);
+                                                break;
+                                            default:
+                                                DebugCheck.Assert(false);
+                                                break;
+                                        }
                                     }
 
                                     break;
@@ -868,12 +967,26 @@ namespace KS.Misc.Settings
                                     if (FieldManager.CheckField(KeyVar))
                                     {
                                         // We're dealing with the field
-                                        FieldManager.SetValue(KeyVar, JoinedString, true);
+                                        FieldManager.SetValue(KeyVar, JoinedString);
                                     }
                                     else if (PropertyManager.CheckProperty(KeyVar))
                                     {
                                         // We're dealing with the property
-                                        PropertyManager.SetPropertyValue(KeyVar, JoinedString);
+                                        switch (SettingsType)
+                                        {
+                                            case ConfigType.Kernel:
+                                                PropertyManager.SetPropertyValueInstance(Config.MainConfig, KeyVar, JoinedString);
+                                                break;
+                                            case ConfigType.Screensaver:
+                                                PropertyManager.SetPropertyValueInstance(Config.SaverConfig, KeyVar, JoinedString);
+                                                break;
+                                            case ConfigType.Splash:
+                                                PropertyManager.SetPropertyValueInstance(Config.SplashConfig, KeyVar, JoinedString);
+                                                break;
+                                            default:
+                                                DebugCheck.Assert(false);
+                                                break;
+                                        }
                                     }
 
                                     break;
@@ -884,8 +997,8 @@ namespace KS.Misc.Settings
 
                                     // KeyVar is not always KernelColors, which is a dictionary. This applies to standard settings. Everything else should
                                     // be either the Color type or a String type.
-                                    if (FieldManager.CheckField(KeyVar, KeyIsInternal) &&
-                                        FieldManager.GetValue(KeyVar, KeyIsInternal) is Dictionary<KernelColorType, Color> colors)
+                                    if (FieldManager.CheckField(KeyVar) &&
+                                        FieldManager.GetValue(KeyVar) is Dictionary<KernelColorType, Color> colors)
                                     {
                                         var colorTypeOnDict = colors.ElementAt(KeyEnumerableIndex).Key;
                                         colors[colorTypeOnDict] = new Color(ColorValue.ToString());
@@ -898,8 +1011,8 @@ namespace KS.Misc.Settings
                                         colors2[colorTypeOnDict] = new Color(ColorValue.ToString());
                                         FinalColor = colors2;
                                     }
-                                    else if ((FieldManager.CheckField(KeyVar, KeyIsInternal) &&
-                                              FieldManager.GetField(KeyVar, KeyIsInternal).FieldType == typeof(Color)) ||
+                                    else if ((FieldManager.CheckField(KeyVar) &&
+                                              FieldManager.GetField(KeyVar).FieldType == typeof(Color)) ||
                                              (PropertyManager.CheckProperty(KeyVar) &&
                                               PropertyManager.GetProperty(KeyVar).PropertyType == typeof(Color)))
                                     {
@@ -911,15 +1024,29 @@ namespace KS.Misc.Settings
                                     }
 
                                     // Now, set the value
-                                    if (FieldManager.CheckField(KeyVar, KeyIsInternal))
+                                    if (FieldManager.CheckField(KeyVar))
                                     {
                                         // We're dealing with the field
-                                        FieldManager.SetValue(KeyVar, FinalColor, KeyIsInternal);
+                                        FieldManager.SetValue(KeyVar, FinalColor);
                                     }
                                     else if (PropertyManager.CheckProperty(KeyVar))
                                     {
                                         // We're dealing with the property
-                                        PropertyManager.SetPropertyValue(KeyVar, FinalColor);
+                                        switch (SettingsType)
+                                        {
+                                            case ConfigType.Kernel:
+                                                PropertyManager.SetPropertyValueInstance(Config.MainConfig, KeyVar, FinalColor);
+                                                break;
+                                            case ConfigType.Screensaver:
+                                                PropertyManager.SetPropertyValueInstance(Config.SaverConfig, KeyVar, FinalColor);
+                                                break;
+                                            case ConfigType.Splash:
+                                                PropertyManager.SetPropertyValueInstance(Config.SplashConfig, KeyVar, FinalColor);
+                                                break;
+                                            default:
+                                                DebugCheck.Assert(false);
+                                                break;
+                                        }
                                     }
                                     KeyFinished = true;
                                     break;
@@ -958,7 +1085,7 @@ namespace KS.Misc.Settings
         /// <summary>
         /// A sub for variable finding prompt
         /// </summary>
-        public static void VariableFinder(JToken SettingsToken)
+        public static void VariableFinder(JToken SettingsToken, ConfigType SettingsType)
         {
             List<InputChoiceInfo> Results;
             List<InputChoiceInfo> Back = new() { new InputChoiceInfo("<---", Translate.DoTranslation("Go Back...")) };
@@ -970,7 +1097,7 @@ namespace KS.Misc.Settings
             string SearchFor = Input.ReadLine();
 
             // Search for the setting
-            Results = ConfigTools.FindSetting(SearchFor, SettingsToken);
+            Results = ConfigTools.FindSetting(SearchFor, SettingsToken, SettingsType);
 
             // Write the settings
             if (!(Results.Count == 0))
@@ -988,7 +1115,7 @@ namespace KS.Misc.Settings
                 int KeyNumber = Convert.ToInt32(ChosenSetting.ChoiceName.Split('/')[1]);
                 JProperty Section = (JProperty)SettingsToken.ToList()[SectionIndex];
                 string SectionName = Section.Name;
-                OpenKey(SectionName, KeyNumber, SettingsToken);
+                OpenKey(SectionName, KeyNumber, SettingsToken, SettingsType);
             }
             else
             {

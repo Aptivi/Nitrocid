@@ -76,29 +76,33 @@ namespace KS.Kernel.Configuration
         /// <summary>
         /// Gets the value from a settings entry
         /// </summary>
+        /// <param name="SettingsType">Settings type</param>
         /// <param name="Setting">An entry to get the value from</param>
         /// <returns>The value</returns>
-        public static object GetValueFromEntry(JToken Setting)
+        public static object GetValueFromEntry(JToken Setting, ConfigType SettingsType)
         {
             object CurrentValue = "Unknown";
             string Variable = (string)Setting["Variable"];
-            bool VariableIsInternal = (bool)(Setting["IsInternal"] ?? false);
-            bool VariableIsEnumerable = (bool)(Setting["IsEnumerable"] ?? false);
-            int VariableEnumerableIndex = (int)(Setting["EnumerableIndex"] ?? 0);
 
             // Print the option by determining how to get the current value
-            if (FieldManager.CheckField(Variable, VariableIsInternal))
-            {
-                // We're dealing with the field, get the value from it. However, check to see if that field is an enumerable
-                if (VariableIsEnumerable)
-                    CurrentValue = FieldManager.GetValueFromEnumerable(Variable, VariableEnumerableIndex, VariableIsInternal);
-                else
-                    CurrentValue = FieldManager.GetValue(Variable, VariableIsInternal);
-            }
-            else if (PropertyManager.CheckProperty(Variable))
+            if (PropertyManager.CheckProperty(Variable))
             {
                 // We're dealing with the property, get the value from it
-                CurrentValue = PropertyManager.GetPropertyValue(Variable);
+                switch (SettingsType)
+                {
+                    case ConfigType.Kernel:
+                        CurrentValue = PropertyManager.GetPropertyValueInstance(MainConfig, Variable);
+                        break;
+                    case ConfigType.Screensaver:
+                        CurrentValue = PropertyManager.GetPropertyValueInstance(SaverConfig, Variable);
+                        break;
+                    case ConfigType.Splash:
+                        CurrentValue = PropertyManager.GetPropertyValueInstance(SplashConfig, Variable);
+                        break;
+                    default:
+                        DebugCheck.Assert(false);
+                        break;
+                }
             }
 
             // Get the plain sequence from the color
@@ -117,7 +121,7 @@ namespace KS.Kernel.Configuration
         /// <summary>
         /// Finds a setting with the matching pattern
         /// </summary>
-        public static List<InputChoiceInfo> FindSetting(string Pattern, JToken SettingsToken)
+        public static List<InputChoiceInfo> FindSetting(string Pattern, JToken SettingsToken, ConfigType SettingsType)
         {
             var Results = new List<InputChoiceInfo>();
 
@@ -133,7 +137,7 @@ namespace KS.Kernel.Configuration
                         for (int KeyIndex = 0; KeyIndex <= SettingToken.Count() - 1; KeyIndex++)
                         {
                             var Setting = SettingToken.ToList()[KeyIndex];
-                            object CurrentValue = GetValueFromEntry(Setting);
+                            object CurrentValue = GetValueFromEntry(Setting, SettingsType);
                             string KeyName = Translate.DoTranslation((string)Setting["Name"]) + $" [{CurrentValue}]";
                             if (Regex.IsMatch(KeyName, Pattern, RegexOptions.IgnoreCase))
                             {
@@ -179,11 +183,10 @@ namespace KS.Kernel.Configuration
                         string KeyEnumeration = (string)Key["Enumeration"];
                         bool KeyEnumerationInternal = (bool)(Key["EnumerationInternal"] ?? false);
                         string KeyEnumerationAssembly = (string)Key["EnumerationAssembly"];
-                        bool KeyIsInternal = (bool)(Key["IsInternal"] ?? false);
                         bool KeyFound;
 
                         // Check the variable
-                        KeyFound = FieldManager.CheckField(KeyVariable, KeyIsInternal) | PropertyManager.CheckProperty(KeyVariable);
+                        KeyFound = FieldManager.CheckField(KeyVariable) | PropertyManager.CheckProperty(KeyVariable);
                         Results.Add($"{KeyName}, {KeyVariable}", KeyFound);
 
                         // Check the enumeration

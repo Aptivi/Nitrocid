@@ -16,13 +16,18 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Configuration.Instances;
 using System;
-using System.Reflection;
 
 namespace KS.Misc.Reflection
 {
     internal static class ReflectionCommon
     {
-        internal static Type[] KernelTypes = Assembly.GetExecutingAssembly().GetTypes();
+        internal static Type[] KernelConfigTypes =
+        { 
+            typeof(KernelMainConfig),
+            typeof(KernelSaverConfig),
+            typeof(KernelSplashConfig)
+        };
     }
 }

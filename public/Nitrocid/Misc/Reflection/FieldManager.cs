@@ -46,8 +46,8 @@ namespace KS.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Variable name. Use operator NameOf to get name.</param>
         /// <param name="VariableValue">New value of variable</param>
-        /// <param name="Internal">Whether the field is internal</param>
-        public static void SetValue(string Variable, object VariableValue, bool Internal = false) => SetValue(Variable, VariableValue, null, Internal);
+        public static void SetValue(string Variable, object VariableValue) =>
+            SetValue(Variable, VariableValue, null);
 
         /// <summary>
         /// Sets the value of a variable to the new value dynamically
@@ -55,18 +55,17 @@ namespace KS.Misc.Reflection
         /// <param name="Variable">Variable name. Use operator NameOf to get name.</param>
         /// <param name="VariableValue">New value of variable</param>
         /// <param name="VariableType">Variable type</param>
-        /// <param name="Internal">Whether the field is internal</param>
-        public static void SetValue(string Variable, object VariableValue, Type VariableType, bool Internal = false)
+        public static void SetValue(string Variable, object VariableValue, Type VariableType)
         {
             // Get field for specified variable
             FieldInfo TargetField;
             if (VariableType is not null)
             {
-                TargetField = GetField(Variable, VariableType, Internal);
+                TargetField = GetField(Variable, VariableType);
             }
             else
             {
-                TargetField = GetField(Variable, Internal);
+                TargetField = GetField(Variable);
             }
 
             // Set the variable if found
@@ -113,9 +112,9 @@ namespace KS.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Variable name. Use operator NameOf to get name.</param>
         /// <param name="Index">Index from the enumerable</param>
-        /// <param name="Internal">Whether the field is internal</param>
         /// <returns>Value of a variable</returns>
-        public static object GetValueFromEnumerable(string Variable, int Index, bool Internal = false) => GetValueFromEnumerable(Variable, null, Index, Internal);
+        public static object GetValueFromEnumerable(string Variable, int Index) =>
+            GetValueFromEnumerable(Variable, null, Index);
 
         /// <summary>
         /// Gets the value of a variable dynamically 
@@ -123,11 +122,10 @@ namespace KS.Misc.Reflection
         /// <param name="Variable">Variable name. Use operator NameOf to get name.</param>
         /// <param name="VariableType">Variable type</param>
         /// <param name="Index">Index from the enumerable</param>
-        /// <param name="Internal">Whether the field is internal</param>
         /// <returns>Value of a variable from the enumerable, or null if not an enumerable</returns>
-        public static object GetValueFromEnumerable(string Variable, Type VariableType, int Index, bool Internal = false)
+        public static object GetValueFromEnumerable(string Variable, Type VariableType, int Index)
         {
-            var value = GetValue(Variable, VariableType, Internal);
+            var value = GetValue(Variable, VariableType);
             if (value is IEnumerable values)
             {
                 int idx = 0;
@@ -145,28 +143,27 @@ namespace KS.Misc.Reflection
         /// Gets the value of a variable dynamically 
         /// </summary>
         /// <param name="Variable">Variable name. Use operator NameOf to get name.</param>
-        /// <param name="Internal">Whether the field is internal</param>
         /// <returns>Value of a variable</returns>
-        public static object GetValue(string Variable, bool Internal = false) => GetValue(Variable, null, Internal);
+        public static object GetValue(string Variable) =>
+            GetValue(Variable, null);
 
         /// <summary>
         /// Gets the value of a variable dynamically 
         /// </summary>
         /// <param name="Variable">Variable name. Use operator NameOf to get name.</param>
         /// <param name="VariableType">Variable type</param>
-        /// <param name="Internal">Whether the field is internal</param>
         /// <returns>Value of a variable</returns>
-        public static object GetValue(string Variable, Type VariableType, bool Internal = false)
+        public static object GetValue(string Variable, Type VariableType)
         {
             // Get field for specified variable
             FieldInfo TargetField;
             if (VariableType is not null)
             {
-                TargetField = GetField(Variable, VariableType, Internal);
+                TargetField = GetField(Variable, VariableType);
             }
             else
             {
-                TargetField = GetField(Variable, Internal);
+                TargetField = GetField(Variable);
             }
 
             // Get the variable if found
@@ -212,26 +209,16 @@ namespace KS.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Variable name. Use operator NameOf to get name.</param>
         /// <param name="Type">Variable type</param>
-        /// <param name="Internal">Whether the field is internal</param>
         /// <returns>Field information</returns>
-        public static FieldInfo GetField(string Variable, Type Type, bool Internal = false)
+        public static FieldInfo GetField(string Variable, Type Type)
         {
             // Get fields of specified type
             FieldInfo Field;
-            if (Internal)
-            {
-                Field = Type.GetField(Variable, BindingFlags.Instance | BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public);
-            }
-            else
-            {
-                Field = Type.GetField(Variable);
-            }
+            Field = Type.GetField(Variable);
 
             // Check if any of them contains the specified variable
             if (Field is not null)
-            {
                 return Field;
-            }
             return null;
         }
 
@@ -239,27 +226,19 @@ namespace KS.Misc.Reflection
         /// Gets a field from variable name
         /// </summary>
         /// <param name="Variable">Variable name. Use operator NameOf to get name.</param>
-        /// <param name="Internal">Whether the field is internal</param>
         /// <returns>Field information</returns>
-        public static FieldInfo GetField(string Variable, bool Internal = false)
+        public static FieldInfo GetField(string Variable)
         {
             Type[] PossibleTypes;
             FieldInfo PossibleField;
 
             // Get types of possible flag locations
-            PossibleTypes = ReflectionCommon.KernelTypes;
+            PossibleTypes = ReflectionCommon.KernelConfigTypes;
 
             // Get fields of flag modules
             foreach (Type PossibleType in PossibleTypes)
             {
-                if (Internal)
-                {
-                    PossibleField = PossibleType.GetField(Variable, BindingFlags.Instance | BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public);
-                }
-                else
-                {
-                    PossibleField = PossibleType.GetField(Variable);
-                }
+                PossibleField = PossibleType.GetField(Variable);
                 if (PossibleField is not null)
                     return PossibleField;
             }
@@ -270,11 +249,10 @@ namespace KS.Misc.Reflection
         /// Checks the specified variable if it exists
         /// </summary>
         /// <param name="Variable">Variable name. Use operator NameOf to get name.</param>
-        /// <param name="Internal">Whether the field is internal</param>
-        public static bool CheckField(string Variable, bool Internal = false)
+        public static bool CheckField(string Variable)
         {
             // Get field for specified variable
-            var TargetField = GetField(Variable, Internal);
+            var TargetField = GetField(Variable);
 
             // Set the variable if found
             return TargetField is not null;
