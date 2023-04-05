@@ -115,7 +115,7 @@ namespace KS.Misc.Contacts
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Parser card version: {0}", parser.CardVersion);
                         DebugWriter.WriteDebug(DebugLevel.D, "Contents:");
-                        DebugWriter.WriteDebug(DebugLevel.D, "Contents:", parser.CardContent);
+                        DebugWriter.WriteDebug(DebugLevel.D, parser.CardContent);
 
                         // Now, parse the card
                         var card = parser.Parse();
@@ -133,6 +133,18 @@ namespace KS.Misc.Contacts
                     }
                 }
 
+                // Save the contacts to the contacts path if possible
+                if (saveToPath)
+                {
+                    for (int i = 0; i < addedCards.Count; i++)
+                    {
+                        Card card = addedCards[i];
+                        string path = contactsPath + $"/contact-{Encryption.GetEncryptedString(card.SaveToString(), "SHA256")}.vcf";
+                        if (!Checking.FileExists(path))
+                            card.SaveTo(path);
+                    }
+                }
+
                 // Check the added cards count and the parsers count
                 if (addedCards.Count > 0)
                 {
@@ -147,18 +159,6 @@ namespace KS.Misc.Contacts
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "There are no added cards. Marking contact file as invalid...");
                     throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("Either the provided contacts file doesn't have information about any contact or isn't valid."));
-                }
-
-                // Now, save the contacts to the contacts path if possible
-                if (saveToPath)
-                {
-                    for (int i = 0; i < cards.Count; i++)
-                    {
-                        Card card = cards[i];
-                        string path = contactsPath + $"/contact-{Encryption.GetEncryptedString(card.SaveToString(), "SHA256")}.vcf";
-                        if (!Checking.FileExists(path))
-                            card.SaveTo(path);
-                    }
                 }
             }
             catch (Exception ex)

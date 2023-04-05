@@ -34,6 +34,7 @@ using VisualCard.Parts;
 using System.Text;
 using KS.Misc.Probers.Regexp;
 using KS.Files.Querying;
+using System.IO;
 
 namespace KS.Files.Interactive
 {
@@ -301,8 +302,18 @@ namespace KS.Files.Interactive
             ColorTools.LoadBack();
         }
 
-        private static void ImportContacts() =>
-            ContactsManager.ImportContacts();
+        private static void ImportContacts()
+        {
+            try
+            {
+                // Initiate import process
+                ContactsManager.ImportContacts();
+            }
+            catch (Exception ex)
+            {
+                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Some of the contacts can't be imported.") + ex.Message, ContactsManagerBoxForegroundColor, ContactsManagerBoxBackgroundColor);
+            }
+        }
 
         private static void ImportContactsFrom()
         {
