@@ -94,14 +94,8 @@ namespace KS.Kernel
             // Set main thread name
             Thread.CurrentThread.Name = "Main Nitrocid Kernel Thread";
 
-            // We no longer support macOS
-            if (KernelPlatform.IsOnMacOS())
-            {
-                TextWriterColor.WritePlain("We apologize for your inconvenience, but we have ended support for running Nitrocid Kernel on macOS. Until further notice, Nitrocid Kernel can't continue.", true);
-                Environment.Exit(100);
-            }
-
             // This is a kernel entry point
+            DebugCheck.Assert(!KernelPlatform.IsOnMacOS(), "We apologize for your inconvenience, but we have ended support for running Nitrocid Kernel on macOS. Until further notice, Nitrocid Kernel can't continue.");
             while (!Flags.KernelShutdown)
             {
                 try
