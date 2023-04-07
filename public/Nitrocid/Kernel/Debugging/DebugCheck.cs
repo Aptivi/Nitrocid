@@ -43,7 +43,7 @@ namespace KS.Kernel.Debugging
             if (!condition)
             {
                 var trace = new DebugStackFrame();
-                var exc = new KernelException(KernelExceptionType.AssertionFailure, "condition is false.");
+                var exc = new KernelException(KernelExceptionType.AssertionFailure, $"condition is false. {message}");
                 DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Condition is false!");
                 DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Failure at {0} routine in {1}:{2}", trace.RoutineName, trace.RoutineFileName, trace.RoutineLineNumber);
                 DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Message: {0}", message);
@@ -69,7 +69,7 @@ namespace KS.Kernel.Debugging
             if (value is null)
             {
                 var trace = new DebugStackFrame();
-                var exc = new KernelException(KernelExceptionType.AssertionFailure, "value is null.");
+                var exc = new KernelException(KernelExceptionType.AssertionFailure, $"value is null. {message}");
                 DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Value is null!");
                 DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Failure at {0} routine in {1}:{2}", trace.RoutineName, trace.RoutineFileName, trace.RoutineLineNumber);
                 DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Message: {0}", message);

@@ -488,8 +488,8 @@ namespace KS.Files.Interactive
             if (currentFileSystemInfo is null)
                 return;
 
-            DebugCheck.AssertNull(dest);
-            DebugCheck.Assert(string.IsNullOrWhiteSpace(dest));
+            DebugCheck.AssertNull(dest, "destination is null!");
+            DebugCheck.Assert(string.IsNullOrWhiteSpace(dest), "destination is empty or whitespace!");
             Copying.CopyFileOrDir(currentFileSystemInfo.FullName, dest);
         }
 
@@ -499,8 +499,8 @@ namespace KS.Files.Interactive
             if (currentFileSystemInfo is null)
                 return;
 
-            DebugCheck.AssertNull(dest);
-            DebugCheck.Assert(string.IsNullOrWhiteSpace(dest));
+            DebugCheck.AssertNull(dest, "destination is null!");
+            DebugCheck.Assert(string.IsNullOrWhiteSpace(dest), "destination is empty or whitespace!");
             Moving.MoveFileOrDir(currentFileSystemInfo.FullName, dest);
         }
 

@@ -365,8 +365,8 @@ namespace KS.Kernel.Configuration
                     serialized = JsonConvert.SerializeObject(splashConfig, Formatting.Indented);
                     break;
             }
-            DebugCheck.AssertNull(serialized);
-            DebugCheck.Assert(!string.IsNullOrEmpty(serialized));
+            DebugCheck.AssertNull(serialized, "serialized config object is null!");
+            DebugCheck.Assert(!string.IsNullOrEmpty(serialized), "serialized config object is empty or whitespace!");
             return serialized;
         }
 
@@ -452,7 +452,7 @@ namespace KS.Kernel.Configuration
                 string modifiedType = string.Join("", diff.Value.Select((diffToken) => ((JProperty)diffToken).Name));
 
                 // Now, work on how to add or remove the key to the current object
-                DebugCheck.Assert(modifiedType == "-" || modifiedType == "+");
+                DebugCheck.Assert(modifiedType == "-" || modifiedType == "+", $"modified type is garbage. {modifiedType}");
                 if (modifiedType == "-")
                 {
                     // Missing key from current config. Most likely, we've added a new config entry.

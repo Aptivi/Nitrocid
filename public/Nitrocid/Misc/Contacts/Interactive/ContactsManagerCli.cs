@@ -451,7 +451,7 @@ namespace KS.Files.Interactive
             {
                 // Get the index from the instance
                 int idx = Array.FindIndex(contacts, (card) => card == foundCard);
-                DebugCheck.Assert(idx != -1);
+                DebugCheck.Assert(idx != -1, "contact index is -1!!!");
                 paneCurrentSelection = idx + 1;
             }
         }
