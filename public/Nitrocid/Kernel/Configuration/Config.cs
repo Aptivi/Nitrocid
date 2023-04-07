@@ -105,21 +105,7 @@ namespace KS.Kernel.Configuration
             Filesystem.ThrowOnInvalidPath(ConfigPath);
 
             // Serialize the config object
-            string serialized = "";
-            switch (type)
-            {
-                case ConfigType.Kernel:
-                    serialized = JsonConvert.SerializeObject(mainConfig, Formatting.Indented);
-                    break;
-                case ConfigType.Screensaver:
-                    serialized = JsonConvert.SerializeObject(saverConfig, Formatting.Indented);
-                    break;
-                case ConfigType.Splash:
-                    serialized = JsonConvert.SerializeObject(splashConfig, Formatting.Indented);
-                    break;
-            }
-            DebugCheck.AssertNull(serialized);
-            DebugCheck.Assert(!string.IsNullOrEmpty(serialized));
+            string serialized = GetSerializedConfig(type);
 
             // Save Config
             File.WriteAllText(ConfigPath, serialized);
@@ -355,8 +341,147 @@ namespace KS.Kernel.Configuration
             {
                 TextWriterColor.Write(cex.Message, true, KernelColorType.Error);
                 DebugWriter.WriteDebugStackTrace(cex);
-                TextWriterColor.Write(Translate.DoTranslation("Trying to re-generate configuration..."), true, KernelColorType.Error);
-                CreateConfig();
+                TextWriterColor.Write(Translate.DoTranslation("Trying to fix configuration..."), true, KernelColorType.Error);
+                RepairConfig();
+            }
+        }
+
+        private static string GetSerializedConfig(ConfigType type)
+        {
+            // Serialize the config object
+            string serialized = "";
+            switch (type)
+            {
+                case ConfigType.Kernel:
+                    serialized = JsonConvert.SerializeObject(mainConfig, Formatting.Indented);
+                    break;
+                case ConfigType.Screensaver:
+                    serialized = JsonConvert.SerializeObject(saverConfig, Formatting.Indented);
+                    break;
+                case ConfigType.Splash:
+                    serialized = JsonConvert.SerializeObject(splashConfig, Formatting.Indented);
+                    break;
+            }
+            DebugCheck.AssertNull(serialized);
+            DebugCheck.Assert(!string.IsNullOrEmpty(serialized));
+            return serialized;
+        }
+
+        private static void RepairConfig()
+        {
+            RepairConfig(ConfigType.Kernel);
+            RepairConfig(ConfigType.Screensaver);
+            RepairConfig(ConfigType.Splash);
+        }
+
+        private static void RepairConfig(ConfigType type)
+        {
+            // Get the current kernel config JSON file vs the serialized config JSON string
+            string serialized = GetSerializedConfig(type);
+            string current = "";
+            switch (type)
+            {
+                case ConfigType.Kernel:
+                    current = File.ReadAllText(Paths.GetKernelPath(KernelPathType.Configuration));
+                    break;
+                case ConfigType.Screensaver:
+                    current = File.ReadAllText(Paths.GetKernelPath(KernelPathType.SaverConfiguration));
+                    break;
+                case ConfigType.Splash:
+                    current = File.ReadAllText(Paths.GetKernelPath(KernelPathType.SplashConfiguration));
+                    break;
+            }
+
+            // Config difference function. Credits to https://stackoverflow.com/a/53654867
+            JObject FindConfigDifferences(JToken serializedObj, JToken currentObj)
+            {
+                var diff = new JObject();
+                if (!JToken.DeepEquals(currentObj, serializedObj))
+                {
+                    switch (currentObj.Type)
+                    {
+                        case JTokenType.Object:
+                            {
+                                var addedKeys = ((JObject)currentObj).Properties().Select(c => c.Name).Except(((JObject)serializedObj).Properties().Select(c => c.Name));
+                                var removedKeys = ((JObject)serializedObj).Properties().Select(c => c.Name).Except(((JObject)currentObj).Properties().Select(c => c.Name));
+                                var unchangedKeys = ((JObject)currentObj).Properties().Where(c => JToken.DeepEquals(c.Value, serializedObj[c.Name])).Select(c => c.Name);
+                                foreach (var k in addedKeys)
+                                {
+                                    diff[k] = new JObject
+                                    {
+                                        ["+"] = currentObj[k].Path
+                                    };
+                                }
+                                foreach (var k in removedKeys)
+                                {
+                                    diff[k] = new JObject
+                                    {
+                                        ["-"] = serializedObj[k].Path
+                                    };
+                                }
+                                var potentiallyModifiedKeys = ((JObject)currentObj).Properties().Select(c => c.Name).Except(addedKeys).Except(unchangedKeys);
+                                foreach (var k in potentiallyModifiedKeys)
+                                    diff[k] = FindConfigDifferences((JObject)currentObj[k], (JObject)serializedObj[k]);
+                            }
+                            break;
+                        case JTokenType.Array:
+                            {
+                                diff["+"] = new JArray(((JArray)currentObj).Except(serializedObj));
+                                diff["-"] = new JArray(((JArray)serializedObj).Except(currentObj));
+                            }
+                            break;
+                        default:
+                            diff["+"] = currentObj;
+                            diff["-"] = serializedObj;
+                            break;
+                    }
+                }
+                return diff;
+            }
+
+            // Use the above function to compare the two config JSON files
+            var serializedObj = JObject.Parse(serialized);
+            var currentObj = JObject.Parse(current);
+            var diffObj = FindConfigDifferences(serializedObj, currentObj);
+
+            // Skim through the difference object
+            foreach (var diff in diffObj)
+            {
+                // Get the key and the diff type
+                string modifiedKey = diff.Key;
+                string modifiedType = string.Join("", diff.Value.Select((diffToken) => ((JProperty)diffToken).Name));
+
+                // Now, work on how to add or remove the key to the current object
+                DebugCheck.Assert(modifiedType == "-" || modifiedType == "+");
+                if (modifiedType == "-")
+                {
+                    // Missing key from current config. Most likely, we've added a new config entry.
+                    var newValue = serializedObj[modifiedKey];
+                    currentObj.Add(modifiedKey, newValue);
+                }
+                else
+                {
+                    // Extra key from current config. Most likely, we've removed a new config entry.
+                    currentObj.Remove(modifiedKey);
+                }
+            }
+
+            // Save the config
+            if (diffObj.HasValues)
+            {
+                string modified = JsonConvert.SerializeObject(currentObj, Formatting.Indented);
+                switch (type)
+                {
+                    case ConfigType.Kernel:
+                        File.WriteAllText(Paths.GetKernelPath(KernelPathType.Configuration), modified);
+                        break;
+                    case ConfigType.Screensaver:
+                        File.WriteAllText(Paths.GetKernelPath(KernelPathType.SaverConfiguration), modified);
+                        break;
+                    case ConfigType.Splash:
+                        File.WriteAllText(Paths.GetKernelPath(KernelPathType.SplashConfiguration), modified);
+                        break;
+                }
             }
         }
 
