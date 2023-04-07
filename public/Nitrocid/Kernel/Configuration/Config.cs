@@ -221,6 +221,7 @@ namespace KS.Kernel.Configuration
                         throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Configuration file is invalid."));
 
                     // Now, deserialize the config state.
+                    RepairConfig(ConfigType.Kernel);
                     mainConfig = (KernelMainConfig)JsonConvert.DeserializeObject(jsonContents, typeof(KernelMainConfig));
                     break;
                 case ConfigType.Screensaver:
@@ -230,6 +231,7 @@ namespace KS.Kernel.Configuration
                         throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Configuration file is invalid."));
 
                     // Now, deserialize the config state.
+                    RepairConfig(ConfigType.Screensaver);
                     saverConfig = (KernelSaverConfig)JsonConvert.DeserializeObject(jsonContents, typeof(KernelSaverConfig));
                     break;
                 case ConfigType.Splash:
@@ -239,6 +241,7 @@ namespace KS.Kernel.Configuration
                         throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Configuration file is invalid."));
 
                     // Now, deserialize the config state.
+                    RepairConfig(ConfigType.Splash);
                     splashConfig = (KernelSplashConfig)JsonConvert.DeserializeObject(jsonContents, typeof(KernelSplashConfig));
                     break;
             }
@@ -419,9 +422,6 @@ namespace KS.Kernel.Configuration
                                         ["-"] = serializedObj[k].Path
                                     };
                                 }
-                                var potentiallyModifiedKeys = ((JObject)currentObj).Properties().Select(c => c.Name).Except(addedKeys).Except(unchangedKeys);
-                                foreach (var k in potentiallyModifiedKeys)
-                                    diff[k] = FindConfigDifferences((JObject)currentObj[k], (JObject)serializedObj[k]);
                             }
                             break;
                         case JTokenType.Array:
