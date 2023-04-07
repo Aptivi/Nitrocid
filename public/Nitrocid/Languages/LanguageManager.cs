@@ -131,7 +131,6 @@ namespace KS.Languages
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Translating kernel to {0}.", lang);
                     currentLanguage = Languages[lang];
-                    Config.MainConfig.CurrentLanguage = lang;
 
                     // Update Culture if applicable
                     if (Flags.LangChangeCulture)
@@ -161,7 +160,7 @@ namespace KS.Languages
         /// <returns>True if successful, False if unsuccessful.</returns>
         public static bool SetLang(string lang)
         {
-            SetLangDry(lang);
+            Config.MainConfig.CurrentLanguage = lang;
             Config.CreateConfig(lang);
             DebugWriter.WriteDebug(DebugLevel.I, "Saved new language. Updating culture...");
             CultureManager.UpdateCulture();
@@ -456,6 +455,12 @@ namespace KS.Languages
                 }
             }
         }
+
+        /// <summary>
+        /// Lists all languages
+        /// </summary>
+        public static Dictionary<string, LanguageInfo> ListAllLanguages() =>
+            ListLanguages("");
 
         /// <summary>
         /// Lists the languages

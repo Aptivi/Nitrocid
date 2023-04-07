@@ -18,6 +18,7 @@
 
 using KS.Kernel.Configuration.Instances;
 using System;
+using System.Reflection;
 
 namespace KS.Misc.Reflection
 {
@@ -29,5 +30,6 @@ namespace KS.Misc.Reflection
             typeof(KernelSaverConfig),
             typeof(KernelSplashConfig)
         };
+        internal static Type[] KernelTypes = Assembly.GetExecutingAssembly().GetTypes();
     }
 }

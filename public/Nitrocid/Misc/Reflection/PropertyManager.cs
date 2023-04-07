@@ -181,19 +181,18 @@ namespace KS.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <param name="VariableType">Property type</param>
+        /// <param name="UseGeneral">Whether to use the general kernel types</param>
         /// <returns>Value of a property</returns>
-        public static object GetPropertyValue(string Variable, Type VariableType)
+        public static object GetPropertyValue(string Variable, Type VariableType, bool UseGeneral = false)
         {
             // Get field for specified variable
             PropertyInfo TargetProperty;
             if (VariableType is not null)
-            {
                 TargetProperty = GetProperty(Variable, VariableType);
-            }
+            else if (UseGeneral)
+                TargetProperty = GetPropertyGeneral(Variable);
             else
-            {
                 TargetProperty = GetProperty(Variable);
-            }
 
             // Get the variable if found
             if (TargetProperty is not null)
@@ -333,6 +332,29 @@ namespace KS.Misc.Reflection
 
             // Get types of possible flag locations
             PossibleTypes = ReflectionCommon.KernelConfigTypes;
+
+            // Get fields of flag modules
+            foreach (Type PossibleType in PossibleTypes)
+            {
+                PossibleProperty = PossibleType.GetProperty(Variable);
+                if (PossibleProperty is not null)
+                    return PossibleProperty;
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Gets a property from variable name generally
+        /// </summary>
+        /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
+        /// <returns>Property information</returns>
+        public static PropertyInfo GetPropertyGeneral(string Variable)
+        {
+            Type[] PossibleTypes;
+            PropertyInfo PossibleProperty;
+
+            // Get types of possible flag locations
+            PossibleTypes = ReflectionCommon.KernelTypes;
 
             // Get fields of flag modules
             foreach (Type PossibleType in PossibleTypes)

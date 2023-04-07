@@ -33,11 +33,6 @@ namespace KS.Misc.Reflection
     public static class FieldManager
     {
 
-        /// <summary>
-        /// Dummy variable intended for field maagement tests (unit tests). Don't remove!
-        /// </summary>
-        internal static bool Dummy = false;
-
         private static readonly Dictionary<string, Action<object>> cachedSetters = new();
         private static readonly Dictionary<string, Func<object>> cachedGetters = new();
 
@@ -152,19 +147,18 @@ namespace KS.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Variable name. Use operator NameOf to get name.</param>
         /// <param name="VariableType">Variable type</param>
+        /// <param name="UseGeneral">Whether to use the general kernel types</param>
         /// <returns>Value of a variable</returns>
-        public static object GetValue(string Variable, Type VariableType)
+        public static object GetValue(string Variable, Type VariableType, bool UseGeneral = false)
         {
             // Get field for specified variable
             FieldInfo TargetField;
             if (VariableType is not null)
-            {
                 TargetField = GetField(Variable, VariableType);
-            }
+            else if (UseGeneral)
+                TargetField = GetFieldGeneral(Variable);
             else
-            {
                 TargetField = GetField(Variable);
-            }
 
             // Get the variable if found
             if (TargetField is not null)
@@ -234,6 +228,29 @@ namespace KS.Misc.Reflection
 
             // Get types of possible flag locations
             PossibleTypes = ReflectionCommon.KernelConfigTypes;
+
+            // Get fields of flag modules
+            foreach (Type PossibleType in PossibleTypes)
+            {
+                PossibleField = PossibleType.GetField(Variable);
+                if (PossibleField is not null)
+                    return PossibleField;
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Gets a field from variable name generally
+        /// </summary>
+        /// <param name="Variable">Variable name. Use operator NameOf to get name.</param>
+        /// <returns>Field information</returns>
+        public static FieldInfo GetFieldGeneral(string Variable)
+        {
+            Type[] PossibleTypes;
+            FieldInfo PossibleField;
+
+            // Get types of possible flag locations
+            PossibleTypes = ReflectionCommon.KernelTypes;
 
             // Get fields of flag modules
             foreach (Type PossibleType in PossibleTypes)

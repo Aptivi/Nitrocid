@@ -37,11 +37,13 @@ using KS.Misc.Writers.FancyWriters.Tools;
 using KS.Misc.Writers.MiscWriters;
 using KS.Network.Base;
 using KS.Network.RPC;
+using KS.Shell.Prompts;
 using KS.Shell.Shells.FTP;
 using KS.Shell.Shells.Hex;
 using KS.Shell.Shells.Mail;
 using KS.Shell.Shells.RSS;
 using KS.Shell.Shells.Text;
+using KS.Shell.ShellBase.Shells;
 using ManagedWeatherMap.Core;
 using MimeKit.Text;
 using Newtonsoft.Json;
@@ -61,7 +63,11 @@ namespace KS.Kernel.Configuration.Instances
         public bool CheckUpdateStart { get; set; } = true;
         public string CustomBanner { get => WelcomeMessage.GetCustomBanner(); set => WelcomeMessage.customBanner = value; }
         public bool LangChangeCulture { get; set; }
-        public string CurrentLanguage { get; set; } = "eng";
+        public string CurrentLanguage
+        {
+            get => LanguageManager.currentLanguage is not null ? LanguageManager.currentLanguage.ThreeLetterLanguageName : "eng";
+            set => LanguageManager.SetLangDry(value);
+        }
         public string CurrentCultStr { get; set; } = "en-US";
         public bool ShowAppInfoOnBoot { get; set; } = true;
         public bool ShowStageFinishTimes { get; set; }
@@ -109,212 +115,212 @@ namespace KS.Kernel.Configuration.Instances
         public string UserNameShellColor
         {
             get => ColorTools.GetColor(KernelColorType.UserNameShell).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.UserNameShell, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.UserNameShell, new Color(value));
         }
         public string HostNameShellColor
         {
             get => ColorTools.GetColor(KernelColorType.HostNameShell).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.HostNameShell, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.HostNameShell, new Color(value));
         }
         public string ContinuableKernelErrorColor
         {
             get => ColorTools.GetColor(KernelColorType.ContKernelError).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.ContKernelError, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.ContKernelError, new Color(value));
         }
         public string UncontinuableKernelErrorColor
         {
             get => ColorTools.GetColor(KernelColorType.UncontKernelError).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.UncontKernelError, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.UncontKernelError, new Color(value));
         }
         public string TextColor
         {
             get => ColorTools.GetColor(KernelColorType.NeutralText).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.NeutralText, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.NeutralText, new Color(value));
         }
         public string LicenseColor
         {
             get => ColorTools.GetColor(KernelColorType.License).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.License, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.License, new Color(value));
         }
         public string BackgroundColor
         {
             get => ColorTools.GetColor(KernelColorType.Background).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.Background, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.Background, new Color(value));
         }
         public string InputColor
         {
             get => ColorTools.GetColor(KernelColorType.Input).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.Input, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.Input, new Color(value));
         }
         public string ListEntryColor
         {
             get => ColorTools.GetColor(KernelColorType.ListEntry).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.ListEntry, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.ListEntry, new Color(value));
         }
         public string ListValueColor
         {
             get => ColorTools.GetColor(KernelColorType.ListValue).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.ListValue, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.ListValue, new Color(value));
         }
         public string KernelStageColor
         {
             get => ColorTools.GetColor(KernelColorType.Stage).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.Stage, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.Stage, new Color(value));
         }
         public string ErrorTextColor
         {
             get => ColorTools.GetColor(KernelColorType.Error).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.Error, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.Error, new Color(value));
         }
         public string WarningTextColor
         {
             get => ColorTools.GetColor(KernelColorType.Warning).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.Warning, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.Warning, new Color(value));
         }
         public string OptionColor
         {
             get => ColorTools.GetColor(KernelColorType.Option).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.Option, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.Option, new Color(value));
         }
         public string BannerColor
         {
             get => ColorTools.GetColor(KernelColorType.Banner).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.Banner, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.Banner, new Color(value));
         }
         public string NotificationTitleColor
         {
             get => ColorTools.GetColor(KernelColorType.NotificationTitle).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.NotificationTitle, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.NotificationTitle, new Color(value));
         }
         public string NotificationDescriptionColor
         {
             get => ColorTools.GetColor(KernelColorType.NotificationDescription).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.NotificationDescription, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.NotificationDescription, new Color(value));
         }
         public string NotificationProgressColor
         {
             get => ColorTools.GetColor(KernelColorType.NotificationProgress).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.NotificationProgress, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.NotificationProgress, new Color(value));
         }
         public string NotificationFailureColor
         {
             get => ColorTools.GetColor(KernelColorType.NotificationFailure).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.NotificationFailure, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.NotificationFailure, new Color(value));
         }
         public string QuestionColor
         {
             get => ColorTools.GetColor(KernelColorType.Question).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.Question, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.Question, new Color(value));
         }
         public string SuccessColor
         {
             get => ColorTools.GetColor(KernelColorType.Success).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.Success, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.Success, new Color(value));
         }
         public string UserDollarColor
         {
             get => ColorTools.GetColor(KernelColorType.UserDollar).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.UserDollar, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.UserDollar, new Color(value));
         }
         public string TipColor
         {
             get => ColorTools.GetColor(KernelColorType.Tip).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.Tip, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.Tip, new Color(value));
         }
         public string SeparatorTextColor
         {
             get => ColorTools.GetColor(KernelColorType.SeparatorText).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.SeparatorText, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.SeparatorText, new Color(value));
         }
         public string SeparatorColor
         {
             get => ColorTools.GetColor(KernelColorType.Separator).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.Separator, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.Separator, new Color(value));
         }
         public string ListTitleColor
         {
             get => ColorTools.GetColor(KernelColorType.ListTitle).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.ListTitle, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.ListTitle, new Color(value));
         }
         public string DevelopmentWarningColor
         {
             get => ColorTools.GetColor(KernelColorType.DevelopmentWarning).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.DevelopmentWarning, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.DevelopmentWarning, new Color(value));
         }
         public string StageTimeColor
         {
             get => ColorTools.GetColor(KernelColorType.StageTime).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.StageTime, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.StageTime, new Color(value));
         }
         public string ProgressColor
         {
             get => ColorTools.GetColor(KernelColorType.Progress).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.Progress, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.Progress, new Color(value));
         }
         public string BackOptionColor
         {
             get => ColorTools.GetColor(KernelColorType.BackOption).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.BackOption, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.BackOption, new Color(value));
         }
         public string LowPriorityBorderColor
         {
             get => ColorTools.GetColor(KernelColorType.LowPriorityBorder).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.LowPriorityBorder, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.LowPriorityBorder, new Color(value));
         }
         public string MediumPriorityBorderColor
         {
             get => ColorTools.GetColor(KernelColorType.MediumPriorityBorder).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.MediumPriorityBorder, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.MediumPriorityBorder, new Color(value));
         }
         public string HighPriorityBorderColor
         {
             get => ColorTools.GetColor(KernelColorType.HighPriorityBorder).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.HighPriorityBorder, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.HighPriorityBorder, new Color(value));
         }
         public string TableSeparatorColor
         {
             get => ColorTools.GetColor(KernelColorType.TableSeparator).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.TableSeparator, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.TableSeparator, new Color(value));
         }
         public string TableHeaderColor
         {
             get => ColorTools.GetColor(KernelColorType.TableHeader).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.TableHeader, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.TableHeader, new Color(value));
         }
         public string TableValueColor
         {
             get => ColorTools.GetColor(KernelColorType.TableValue).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.TableValue, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.TableValue, new Color(value));
         }
         public string SelectedOptionColor
         {
             get => ColorTools.GetColor(KernelColorType.SelectedOption).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.SelectedOption, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.SelectedOption, new Color(value));
         }
         public string AlternativeOptionColor
         {
             get => ColorTools.GetColor(KernelColorType.AlternativeOption).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.AlternativeOption, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.AlternativeOption, new Color(value));
         }
         public string WeekendDayColor
         {
             get => ColorTools.GetColor(KernelColorType.WeekendDay).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.WeekendDay, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.WeekendDay, new Color(value));
         }
         public string EventDayColor
         {
             get => ColorTools.GetColor(KernelColorType.EventDay).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.EventDay, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.EventDay, new Color(value));
         }
         public string TableTitleColor
         {
             get => ColorTools.GetColor(KernelColorType.TableTitle).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.TableTitle, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.TableTitle, new Color(value));
         }
         public string TodayDayColor
         {
             get => ColorTools.GetColor(KernelColorType.TodayDay).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.TodayDay, new ColorSeq.Color(value));
+            set => ColorTools.SetColor(KernelColorType.TodayDay, new Color(value));
         }
         public bool QuietHardwareProbe { get; set; }
         public bool FullHardwareProbe { get; set; }
@@ -353,17 +359,61 @@ namespace KS.Kernel.Configuration.Instances
             }
         }
         public string PathsToLookup { get; set; } = Environment.GetEnvironmentVariable("PATH");
-        public string PromptPreset { get; set; } = "Default";
-        public string FTPPromptPreset { get; set; } = "Default";
-        public string MailPromptPreset { get; set; } = "Default";
-        public string SFTPPromptPreset { get; set; } = "Default";
-        public string RSSPromptPreset { get; set; } = "Default";
-        public string TextEditPromptPreset { get; set; } = "Default";
-        public string JSONShellPromptPreset { get; set; } = "Default";
-        public string HexEditPromptPreset { get; set; } = "Default";
-        public string HTTPShellPromptPreset { get; set; } = "Default";
-        public string ArchiveShellPromptPreset { get; set; } = "Default";
-        public string AdminShellPromptPreset { get; set; } = "Default";
+        public string PromptPreset
+        {
+            get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.Shell).PresetName;
+            set => PromptPresetManager.SetPresetDry(value, ShellType.Shell, false);
+        }
+        public string FTPPromptPreset
+        {
+            get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.FTPShell).PresetName;
+            set => PromptPresetManager.SetPresetDry(value, ShellType.FTPShell, false);
+        }
+        public string MailPromptPreset
+        {
+            get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.MailShell).PresetName;
+            set => PromptPresetManager.SetPresetDry(value, ShellType.MailShell, false);
+        }
+        public string SFTPPromptPreset
+        {
+            get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.SFTPShell).PresetName;
+            set => PromptPresetManager.SetPresetDry(value, ShellType.SFTPShell, false);
+        }
+        public string RSSPromptPreset
+        {
+            get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.RSSShell).PresetName;
+            set => PromptPresetManager.SetPresetDry(value, ShellType.RSSShell, false);
+        }
+        public string TextEditPromptPreset
+        {
+            get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.TextShell).PresetName;
+            set => PromptPresetManager.SetPresetDry(value, ShellType.TextShell, false);
+        }
+        public string JSONShellPromptPreset
+        {
+            get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.JsonShell).PresetName;
+            set => PromptPresetManager.SetPresetDry(value, ShellType.JsonShell, false);
+        }
+        public string HexEditPromptPreset
+        {
+            get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.HexShell).PresetName;
+            set => PromptPresetManager.SetPresetDry(value, ShellType.HexShell, false);
+        }
+        public string HTTPShellPromptPreset
+        {
+            get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.HTTPShell).PresetName;
+            set => PromptPresetManager.SetPresetDry(value, ShellType.HTTPShell, false);
+        }
+        public string ArchiveShellPromptPreset
+        {
+            get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.ArchiveShell).PresetName;
+            set => PromptPresetManager.SetPresetDry(value, ShellType.ArchiveShell, false);
+        }
+        public string AdminShellPromptPreset
+        {
+            get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.AdminShell).PresetName;
+            set => PromptPresetManager.SetPresetDry(value, ShellType.AdminShell, false);
+        }
         public int DefaultChoiceOutputType { get; set; } = (int)ChoiceOutputType.Modern;
         public int SortMode { get; set; } = (int)FilesystemSortOptions.FullName;
         public int SortDirection { get; set; } = (int)FilesystemSortDirection.Ascending;

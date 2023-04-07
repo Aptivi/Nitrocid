@@ -30,9 +30,13 @@
             },
             {
                 "Name": "Language",
-                "Type": "SLang",
-                "Variable": "currentLanguage",
-                "IsInternal": true,
+                "Type": "SSelection",
+                "Variable": "CurrentLanguage",
+                "IsEnumeration": false,
+                "SelectionFunctionName": "ListAllLanguages",
+                "SelectionFunctionType": "LanguageManager",
+                "IsSelectionFunctionDict": true,
+                "SelectionFallback": [ "en-US" ],
                 "Description": "Specifies the kernel language."
             },
             {
@@ -42,7 +46,7 @@
                 "IsEnumeration": false,
                 "SelectionFunctionName": "GetCulturesFromCurrentLang",
                 "SelectionFunctionType": "Translate",
-                "SelectionFallback": [ "en-US (English (United States))" ],
+                "SelectionFallback": [ "en-US" ],
                 "Description": "Which variant of the current language is being used to change the month names, calendar, etc.?"
             },
             {
@@ -206,338 +210,212 @@
             {
                 "Name": "User Name Shell Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 5
+                "Variable": "UserNameShellColor"
             },
             {
                 "Name": "Host Name Shell Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 4
+                "Variable": "HostNameShellColor"
             },
             {
                 "Name": "Continuable Kernel Error Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 2
+                "Variable": "ContinuableKernelErrorColor"
             },
             {
                 "Name": "Uncontinuable Kernel Error Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 3
+                "Variable": "UncontinuableKernelErrorColor"
             },
             {
                 "Name": "Text Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 7
+                "Variable": "TextColor"
             },
             {
                 "Name": "License Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 1
+                "Variable": "LicenseColor"
             },
             {
                 "Name": "Background Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 6
+                "Variable": "BackgroundColor"
             },
             {
                 "Name": "Input Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 0
+                "Variable": "InputColor"
             },
             {
                 "Name": "List Entry Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 8
+                "Variable": "ListEntryColor"
             },
             {
                 "Name": "List Value Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 9
+                "Variable": "ListValueColor"
             },
             {
                 "Name": "Kernel Stage Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 10
+                "Variable": "KernelStageColor"
             },
             {
                 "Name": "Error Text Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 11
+                "Variable": "ErrorTextColor"
             },
             {
                 "Name": "Warning Text Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 12
+                "Variable": "WarningTextColor"
             },
             {
                 "Name": "Option Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 13
+                "Variable": "OptionColor"
             },
             {
                 "Name": "Banner Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 14
+                "Variable": "BannerColor"
             },
             {
                 "Name": "Notification Title Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 15
+                "Variable": "NotificationTitleColor"
             },
             {
                 "Name": "Notification Description Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 16
+                "Variable": "NotificationDescriptionColor"
             },
             {
                 "Name": "Notification Progress Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 17
+                "Variable": "NotificationProgressColor"
             },
             {
                 "Name": "Notification Failure Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 18
+                "Variable": "NotificationFailureColor"
             },
             {
                 "Name": "Question Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 19
+                "Variable": "QuestionColor"
             },
             {
                 "Name": "Success Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 20
+                "Variable": "SuccessColor"
             },
             {
                 "Name": "User Dollar Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 21
+                "Variable": "UserDollarColor"
             },
             {
                 "Name": "Tip Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 22
+                "Variable": "TipColor"
             },
             {
                 "Name": "Separator Text Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 23
+                "Variable": "SeparatorTextColor"
             },
             {
                 "Name": "Separator Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 24
+                "Variable": "SeparatorColor"
             },
             {
                 "Name": "List Title Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 25
+                "Variable": "ListTitleColor"
             },
             {
                 "Name": "Development Warning Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 26
+                "Variable": "DevelopmentWarningColor"
             },
             {
                 "Name": "Stage Time Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 27
+                "Variable": "StageTimeColor"
             },
             {
                 "Name": "Progress Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 28
+                "Variable": "ProgressColor"
             },
             {
                 "Name": "Back Option Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 29
+                "Variable": "BackOptionColor"
             },
             {
                 "Name": "Low Priority Border Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 30
+                "Variable": "LowPriorityBorderColor"
             },
             {
                 "Name": "Medium Priority Border Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 31
+                "Variable": "MediumPriorityBorderColor"
             },
             {
                 "Name": "High Priority Border Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 32
+                "Variable": "HighPriorityBorderColor"
             },
             {
                 "Name": "Table Separator Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 33
+                "Variable": "TableSeparatorColor"
             },
             {
                 "Name": "Table Header Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 34
+                "Variable": "TableHeaderColor"
             },
             {
                 "Name": "Table Value Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 35
+                "Variable": "TableValueColor"
             },
             {
                 "Name": "Selected Option Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 36
+                "Variable": "SelectedOptionColor"
             },
             {
                 "Name": "Alternative Option Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 37
+                "Variable": "AlternativeOptionColor"
             },
             {
                 "Name": "Weekend Day Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 38
+                "Variable": "WeekendDayColor"
             },
             {
                 "Name": "Event Day Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 39
+                "Variable": "EventDayColor"
             },
             {
                 "Name": "Table Title Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 40
+                "Variable": "TableTitleColor"
             },
             {
                 "Name": "Today Day Color",
                 "Type": "SColor",
-                "Variable": "KernelColors",
-                "IsEnumerable": true,
-                "IsInternal": true,
-                "EnumerableIndex": 41
+                "Variable": "TodayDayColor"
             }
         ]
     },
@@ -680,110 +558,77 @@
             {
                 "Name": "Prompt Preset",
                 "Type": "SPreset",
-                "Variable": "CurrentPresets",
-                "IsInternal": true,
-                "IsEnumerable": true,
-                "EnumerableIndex": 0,
+                "Variable": "PromptPreset",
                 "ShellType": "Shell",
                 "Description": ""
             },
             {
                 "Name": "FTP Prompt Preset",
                 "Type": "SPreset",
-                "Variable": "CurrentPresets",
-                "IsInternal": true,
-                "IsEnumerable": true,
-                "EnumerableIndex": 1,
+                "Variable": "FTPPromptPreset",
                 "ShellType": "FTPTextShell",
                 "Description": ""
             },
             {
                 "Name": "Mail Prompt Preset",
                 "Type": "SPreset",
-                "Variable": "CurrentPresets",
-                "IsInternal": true,
-                "IsEnumerable": true,
-                "EnumerableIndex": 2,
+                "Variable": "MailPromptPreset",
                 "ShellType": "MailShell",
                 "Description": ""
             },
             {
                 "Name": "SFTP Prompt Preset",
                 "Type": "SPreset",
-                "Variable": "CurrentPresets",
-                "IsInternal": true,
-                "IsEnumerable": true,
-                "EnumerableIndex": 3,
+                "Variable": "SFTPPromptPreset",
                 "ShellType": "SFTPTextShell",
                 "Description": ""
             },
             {
                 "Name": "RSS Prompt Preset",
                 "Type": "SPreset",
-                "Variable": "CurrentPresets",
-                "IsInternal": true,
-                "IsEnumerable": true,
-                "EnumerableIndex": 5,
+                "Variable": "RSSPromptPreset",
                 "ShellType": "RSSShell",
                 "Description": ""
             },
             {
                 "Name": "Text Edit Prompt Preset",
                 "Type": "SPreset",
-                "Variable": "CurrentPresets",
-                "IsInternal": true,
-                "IsEnumerable": true,
-                "EnumerableIndex": 4,
+                "Variable": "TextEditPromptPreset",
                 "ShellType": "TextShell",
                 "Description": ""
             },
             {
                 "Name": "JSON Shell Prompt Preset",
                 "Type": "SPreset",
-                "Variable": "CurrentPresets",
-                "IsInternal": true,
-                "IsEnumerable": true,
-                "EnumerableIndex": 6,
+                "Variable": "JSONShellPromptPreset",
                 "ShellType": "JsonShell",
                 "Description": ""
             },
             {
                 "Name": "Hex Edit Prompt Preset",
                 "Type": "SPreset",
-                "Variable": "CurrentPresets",
-                "IsInternal": true,
-                "IsEnumerable": true,
-                "EnumerableIndex": 8,
+                "Variable": "HexEditPromptPreset",
                 "ShellType": "HexShell",
                 "Description": ""
             },
             {
                 "Name": "HTTP Shell Prompt Preset",
                 "Type": "SPreset",
-                "Variable": "CurrentPresets",
-                "IsInternal": true,
-                "IsEnumerable": true,
-                "EnumerableIndex": 7,
+                "Variable": "HTTPShellPromptPreset",
                 "ShellType": "HTTPShell",
                 "Description": ""
             },
             {
                 "Name": "Archive Shell Prompt Preset",
                 "Type": "SPreset",
-                "Variable": "CurrentPresets",
-                "IsInternal": true,
-                "IsEnumerable": true,
-                "EnumerableIndex": 9,
+                "Variable": "ArchiveShellPromptPreset",
                 "ShellType": "ArchiveShell",
                 "Description": ""
             },
             {
                 "Name": "Admin Shell Prompt Preset",
                 "Type": "SPreset",
-                "Variable": "CurrentPresets",
-                "IsInternal": true,
-                "IsEnumerable": true,
-                "EnumerableIndex": 10,
+                "Variable": "AdminShellPromptPreset",
                 "ShellType": "AdminShell",
                 "Description": ""
             },

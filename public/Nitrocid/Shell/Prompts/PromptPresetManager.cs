@@ -94,13 +94,44 @@ namespace KS.Shell.Prompts
         }
 
         /// <summary>
-        /// Sets the preset
+        /// Sets the shell preset
         /// </summary>
         /// <param name="PresetName">The preset name</param>
-        /// <param name="ShellType">The shell type</param>
-        /// <param name="Presets">Dictionary of presets</param>
-        internal static void SetPresetInternal(string PresetName, ShellType ShellType, Dictionary<string, PromptPresetBase> Presets) =>
-            SetPresetInternal(PresetName, Shell.GetShellTypeName(ShellType), Presets);
+        /// <param name="ShellType">Type of shell</param>
+        /// <param name="ThrowOnNotFound">If the preset is not found, throw an exception. Otherwise, use the default preset.</param>
+        public static void SetPresetDry(string PresetName, ShellType ShellType, bool ThrowOnNotFound = true) =>
+            SetPresetDry(PresetName, Shell.GetShellTypeName(ShellType), ThrowOnNotFound);
+
+        /// <summary>
+        /// Sets the shell preset
+        /// </summary>
+        /// <param name="PresetName">The preset name</param>
+        /// <param name="ShellType">Type of shell</param>
+        /// <param name="ThrowOnNotFound">If the preset is not found, throw an exception. Otherwise, use the default preset.</param>
+        public static void SetPresetDry(string PresetName, string ShellType, bool ThrowOnNotFound = true)
+        {
+            var Presets = GetPresetsFromShell(ShellType);
+            var CustomPresets = GetCustomPresetsFromShell(ShellType);
+
+            // Check to see if we have the preset
+            if (Presets.ContainsKey(PresetName))
+            {
+                SetPresetInternal(PresetName, ShellType, Presets, false);
+            }
+            else if (CustomPresets.ContainsKey(PresetName))
+            {
+                SetPresetInternal(PresetName, ShellType, CustomPresets, false);
+            }
+            else if (ThrowOnNotFound)
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Preset {0} for {1} doesn't exist. Throwing...", PresetName, ShellType.ToString());
+                throw new KernelException(KernelExceptionType.NoSuchShellPreset, Translate.DoTranslation("The specified preset {0} is not found."), PresetName);
+            }
+            else
+            {
+                SetPresetInternal("Default", ShellType, Presets, false);
+            }
+        }
 
         /// <summary>
         /// Sets the preset
@@ -108,66 +139,80 @@ namespace KS.Shell.Prompts
         /// <param name="PresetName">The preset name</param>
         /// <param name="ShellType">The shell type</param>
         /// <param name="Presets">Dictionary of presets</param>
-        internal static void SetPresetInternal(string PresetName, string ShellType, Dictionary<string, PromptPresetBase> Presets)
+        /// <param name="permanent">Saves changes to settings</param>
+        internal static void SetPresetInternal(string PresetName, ShellType ShellType, Dictionary<string, PromptPresetBase> Presets, bool permanent = true) =>
+            SetPresetInternal(PresetName, Shell.GetShellTypeName(ShellType), Presets, permanent);
+
+        /// <summary>
+        /// Sets the preset
+        /// </summary>
+        /// <param name="PresetName">The preset name</param>
+        /// <param name="ShellType">The shell type</param>
+        /// <param name="Presets">Dictionary of presets</param>
+        /// <param name="permanent">Saves changes to settings</param>
+        internal static void SetPresetInternal(string PresetName, string ShellType, Dictionary<string, PromptPresetBase> Presets, bool permanent = true)
         {
             CurrentPresets[ShellType] = Presets[PresetName];
-            switch (ShellType)
+            if (permanent)
             {
-                case "Shell":
-                    {
-                        Config.MainConfig.PromptPreset = PresetName;
-                        break;
-                    }
-                case "TextShell":
-                    {
-                        Config.MainConfig.TextEditPromptPreset = PresetName;
-                        break;
-                    }
-                case "SFTPShell":
-                    {
-                        Config.MainConfig.SFTPPromptPreset = PresetName;
-                        break;
-                    }
-                case "RSSShell":
-                    {
-                        Config.MainConfig.RSSPromptPreset = PresetName;
-                        break;
-                    }
-                case "MailShell":
-                    {
-                        Config.MainConfig.MailPromptPreset = PresetName;
-                        break;
-                    }
-                case "JsonShell":
-                    {
-                        Config.MainConfig.JSONShellPromptPreset = PresetName;
-                        break;
-                    }
-                case "HTTPShell":
-                    {
-                        Config.MainConfig.HTTPShellPromptPreset = PresetName;
-                        break;
-                    }
-                case "HexShell":
-                    {
-                        Config.MainConfig.HexEditPromptPreset = PresetName;
-                        break;
-                    }
-                case "FTPShell":
-                    {
-                        Config.MainConfig.FTPPromptPreset = PresetName;
-                        break;
-                    }
-                case "ArchiveShell":
-                    {
-                        Config.MainConfig.ArchiveShellPromptPreset = PresetName;
-                        break;
-                    }
-                case "AdminShell":
-                    {
-                        Config.MainConfig.AdminShellPromptPreset = PresetName;
-                        break;
-                    }
+                switch (ShellType)
+                {
+                    case "Shell":
+                        {
+                            Config.MainConfig.PromptPreset = PresetName;
+                            break;
+                        }
+                    case "TextShell":
+                        {
+                            Config.MainConfig.TextEditPromptPreset = PresetName;
+                            break;
+                        }
+                    case "SFTPShell":
+                        {
+                            Config.MainConfig.SFTPPromptPreset = PresetName;
+                            break;
+                        }
+                    case "RSSShell":
+                        {
+                            Config.MainConfig.RSSPromptPreset = PresetName;
+                            break;
+                        }
+                    case "MailShell":
+                        {
+                            Config.MainConfig.MailPromptPreset = PresetName;
+                            break;
+                        }
+                    case "JsonShell":
+                        {
+                            Config.MainConfig.JSONShellPromptPreset = PresetName;
+                            break;
+                        }
+                    case "HTTPShell":
+                        {
+                            Config.MainConfig.HTTPShellPromptPreset = PresetName;
+                            break;
+                        }
+                    case "HexShell":
+                        {
+                            Config.MainConfig.HexEditPromptPreset = PresetName;
+                            break;
+                        }
+                    case "FTPShell":
+                        {
+                            Config.MainConfig.FTPPromptPreset = PresetName;
+                            break;
+                        }
+                    case "ArchiveShell":
+                        {
+                            Config.MainConfig.ArchiveShellPromptPreset = PresetName;
+                            break;
+                        }
+                    case "AdminShell":
+                        {
+                            Config.MainConfig.AdminShellPromptPreset = PresetName;
+                            break;
+                        }
+                }
             }
         }
 
