@@ -73,7 +73,7 @@ namespace KS.Kernel.Exceptions
                             // If the error type is unrecoverable, or double, and the reboot time exceeds 5 seconds, then
                             // generate a second kernel error stating that there is something wrong with the reboot time.
                             DebugWriter.WriteDebug(DebugLevel.W, "Errors that have type {0} shouldn't exceed 5 seconds. RebootTime was {1} seconds", ErrorType, RebootTime);
-                            TextWriterColor.Write(Translate.DoTranslation("DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug."), true, KernelColorType.UncontKernelError, ((int)ErrorType).ToString());
+                            KernelErrorDouble(Translate.DoTranslation("DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug."), null, ((int)ErrorType).ToString());
                             return;
                         }
                         else if (!Reboot)
