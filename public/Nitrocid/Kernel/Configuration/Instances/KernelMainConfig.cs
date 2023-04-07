@@ -61,7 +61,11 @@ namespace KS.Kernel.Configuration.Instances
 
         public bool Maintenance { get; set; }
         public bool CheckUpdateStart { get; set; } = true;
-        public string CustomBanner { get => WelcomeMessage.GetCustomBanner(); set => WelcomeMessage.customBanner = value; }
+        public string CustomBanner
+        {
+            get => WelcomeMessage.GetCustomBanner();
+            set => WelcomeMessage.customBanner = value;
+        }
         public bool LangChangeCulture { get; set; }
         public string CurrentLanguage
         {
