@@ -161,7 +161,7 @@ namespace KS.Languages
         public static bool SetLang(string lang)
         {
             Config.MainConfig.CurrentLanguage = lang;
-            Config.CreateConfig(lang);
+            Config.CreateConfig();
             DebugWriter.WriteDebug(DebugLevel.I, "Saved new language. Updating culture...");
             CultureManager.UpdateCulture();
             return true;

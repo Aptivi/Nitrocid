@@ -19,6 +19,7 @@
 using System;
 using System.Reflection;
 using Figgle;
+using KS.Kernel.Configuration;
 using KS.Misc.Reflection;
 using NUnit.Framework;
 using Shouldly;
@@ -31,7 +32,7 @@ namespace KSTests.MiscTests
     {
 
         /// <summary>
-        /// Tests checking field
+        /// Tests checking property
         /// </summary>
         [Test]
         [Description("Management")]
@@ -42,9 +43,9 @@ namespace KSTests.MiscTests
         /// </summary>
         [Test]
         [Description("Management")]
-        public void TestGetPropertyValue()
+        public void TestGetPropertyValueInstance()
         {
-            string Value = Convert.ToString(PropertyManager.GetPropertyValue("PersonLookupDelay"));
+            string Value = Convert.ToString(PropertyManager.GetPropertyValueInstance(Config.SaverConfig, "PersonLookupDelay"));
             Value.ShouldNotBeNullOrEmpty();
         }
 
@@ -53,10 +54,10 @@ namespace KSTests.MiscTests
         /// </summary>
         [Test]
         [Description("Management")]
-        public void TestSetPropertyValue()
+        public void TestSetPropertyValueInstance()
         {
-            PropertyManager.SetPropertyValue("PersonLookupDelay", 100);
-            int Value = Convert.ToInt32(PropertyManager.GetPropertyValue("PersonLookupDelay"));
+            PropertyManager.SetPropertyValueInstance(Config.SaverConfig, "PersonLookupDelay", 100);
+            int Value = Convert.ToInt32(PropertyManager.GetPropertyValueInstance(Config.SaverConfig, "PersonLookupDelay"));
             Value.ShouldBe(100);
         }
 
