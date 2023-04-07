@@ -1866,6 +1866,12 @@
                 "Description": "Maximum writing speed in WPM"
             },
             {
+                "Name": "Show arrow position",
+                "Type": "SBoolean",
+                "Variable": "TypewriterShowArrowPos",
+                "Description": "Shows the typewriter letter column position by showing an arrow on the bottom of the screen"
+            },
+            {
                 "Name": "Text color",
                 "Type": "SColor",
                 "Variable": "TypewriterTextColor"

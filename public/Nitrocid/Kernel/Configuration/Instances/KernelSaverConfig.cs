@@ -271,6 +271,7 @@ namespace KS.Kernel.Configuration.Instances
         public string TypewriterWrite { get; set; } = "Nitrocid KS";
         public int TypewriterWritingSpeedMin { get; set; } = 50;
         public int TypewriterWritingSpeedMax { get; set; } = 80;
+        public bool TypewriterShowArrowPos { get; set; } = true;
         public string TypewriterTextColor { get; set; } = new Color(ConsoleColors.White).PlainSequence;
         public bool FlashColorTrueColor { get; set; } = true;
         public int FlashColorDelay { get; set; } = 20;

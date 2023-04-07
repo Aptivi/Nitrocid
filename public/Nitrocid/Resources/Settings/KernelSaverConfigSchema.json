@@ -746,6 +746,9 @@
         "TypewriterWritingSpeedMax": {
             "type": "integer"
         },
+        "TypewriterShowArrowPos": {
+            "type": "boolean"
+        },
         "TypewriterTextColor": {
             "type": "string"
         },
@@ -1926,6 +1929,7 @@
         "TypewriterWrite",
         "TypewriterWritingSpeedMin",
         "TypewriterWritingSpeedMax",
+        "TypewriterShowArrowPos",
         "TypewriterTextColor",
         "FlashColorTrueColor",
         "FlashColorDelay",

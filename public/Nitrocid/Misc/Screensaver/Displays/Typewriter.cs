@@ -120,18 +120,17 @@ namespace KS.Misc.Screensaver.Displays
         /// <summary>
         /// [Typewriter] Shows the typewriter letter column position by showing this key on the bottom of the screen: <code>^</code>
         /// </summary>
-        public static bool TypewriterShowArrowPos = true;
-        //TODO: Address this.
-        //{
-        //    get
-        //    {
-        //        return Config.SaverConfig.TypewriterShowArrowPos;
-        //    }
-        //    set
-        //    {
-        //        Config.SaverConfig.TypewriterShowArrowPos = value;
-        //    }
-        //}
+        public static bool TypewriterShowArrowPos
+        {
+            get
+            {
+                return Config.SaverConfig.TypewriterShowArrowPos;
+            }
+            set
+            {
+                Config.SaverConfig.TypewriterShowArrowPos = value;
+            }
+        }
         /// <summary>
         /// [Typewriter] Text color
         /// </summary>
