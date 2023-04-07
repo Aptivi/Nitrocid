@@ -40,6 +40,7 @@ namespace KS.Shell.Shells.Admin
             { "journal", new CommandInfo("journal", ShellType, /* Localizable */ "Gets current kernel journal log", new CommandArgumentInfo(), new JournalCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported) },
             { "lsevents", new CommandInfo("lsevents", ShellType, /* Localizable */ "Lists all fired events", new CommandArgumentInfo(), new LsEventsCommand()) },
             { "userflag", new CommandInfo("userflag", ShellType, /* Localizable */ "Manipulates with the user main flags", new CommandArgumentInfo(new string[] { "<user> <admin/anonymous/disabled> <false/true>" }, true, 3), new UserFlagCommand()) },
+            { "userlang", new CommandInfo("userlang", ShellType, /* Localizable */ "Changes the preferred user language", new CommandArgumentInfo(new string[] { "<user> <lang/clear>" }, true, 2), new UserLangCommand()) },
         };
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

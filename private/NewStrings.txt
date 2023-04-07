@@ -524,5 +524,6 @@ Trying to re-generate configuration...
 No contacts. Import your contacts using F3 or F4.
 No files.
 Some of the contacts can't be imported.
+Preferred user language set to {0}. You may want to log in again.
 
 ==========================================================================================================================================
