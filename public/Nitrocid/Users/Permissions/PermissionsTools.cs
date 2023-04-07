@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using Newtonsoft.Json.Linq;
@@ -65,6 +66,10 @@ namespace KS.Users.Permissions
         /// <exception cref="KernelException"></exception>
         public static void Demand(PermissionTypes permissionType)
         {
+            // Don't demand when kernel is errored
+            if (Flags.KernelErrored)
+                return;
+
             // Get all the permission types
             foreach (PermissionTypes type in Enum.GetValues(typeof(PermissionTypes)))
             {
