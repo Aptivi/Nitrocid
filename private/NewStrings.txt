@@ -524,6 +524,7 @@ Trying to re-generate configuration...
 No contacts. Import your contacts using F3 or F4.
 No files.
 Some of the contacts can't be imported.
+Changes the preferred user language
 Preferred user language set to {0}. You may want to log in again.
 Shows the typewriter letter column position by showing an arrow on the bottom of the screen
 
