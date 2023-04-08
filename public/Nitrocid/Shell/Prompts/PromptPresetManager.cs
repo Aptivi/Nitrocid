@@ -322,7 +322,7 @@ namespace KS.Shell.Prompts
             var PresetNames = Presets.Keys.ToArray();
             var PresetDisplays = Presets.Values.Select(Preset => Preset.PresetPrompt).ToArray();
             int SelectedPreset = SelectionStyle.PromptSelection(Translate.DoTranslation("Select preset for {0}:").FormatString(shellType), string.Join("/", PresetNames), PresetDisplays);
-            string SelectedPresetName = Presets.Keys.ElementAt(SelectedPreset);
+            string SelectedPresetName = Presets.Keys.ElementAt(SelectedPreset - 1);
             SetPreset(SelectedPresetName, shellType);
         }
 
