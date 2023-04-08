@@ -21,6 +21,7 @@ using System.Data;
 using System.Linq;
 using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Inputs.Styles;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
@@ -320,8 +321,9 @@ namespace KS.Shell.Prompts
             // Now, prompt the user
             var PresetNames = Presets.Keys.ToArray();
             var PresetDisplays = Presets.Values.Select(Preset => Preset.PresetPrompt).ToArray();
-            string SelectedPreset = ChoiceStyle.PromptChoice(Translate.DoTranslation("Select preset for {0}:").FormatString(shellType), string.Join("/", PresetNames), PresetDisplays, ChoiceStyle.ChoiceOutputType.Modern, true);
-            SetPreset(SelectedPreset, shellType);
+            int SelectedPreset = SelectionStyle.PromptSelection(Translate.DoTranslation("Select preset for {0}:").FormatString(shellType), string.Join("/", PresetNames), PresetDisplays);
+            string SelectedPresetName = Presets.Keys.ElementAt(SelectedPreset);
+            SetPreset(SelectedPresetName, shellType);
         }
 
     }
