@@ -34,6 +34,8 @@ namespace KS.Files.Folders
     public static class CurrentDirectory
     {
 
+        internal static string _CurrentDirectory = Paths.HomePath;
+
         /// <summary>
         /// The current directory
         /// </summary>
