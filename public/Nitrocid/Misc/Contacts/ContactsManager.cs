@@ -48,8 +48,19 @@ namespace KS.Misc.Contacts
         /// Gets all the available contacts from KSContacts directory
         /// </summary>
         /// <returns></returns>
-        public static Card[] GetContacts() =>
-            cards.ToArray();
+        public static Card[] GetContacts()
+        {
+            // Get the contact files
+            string contactsPath = Paths.GetKernelPath(KernelPathType.Contacts);
+            if (!Checking.FolderExists(contactsPath))
+                Making.MakeDirectory(contactsPath);
+            var contactFiles = Listing.GetFilesystemEntries(Paths.GetKernelPath(KernelPathType.Contacts) + "/*.vcf");
+
+            // Now, enumerate through each contact file
+            foreach (var contact in contactFiles)
+                InstallContacts(contact, false);
+            return cards.ToArray();
+        }
 
         /// <summary>
         /// Installs the contacts to the manager
@@ -65,22 +76,6 @@ namespace KS.Misc.Contacts
             // Now, enumerate through each contact file
             foreach (var contact in contactFiles)
                 InstallContacts(contact);
-        }
-
-        /// <summary>
-        /// Installs the contacts to the manager
-        /// </summary>
-        public static void InstallContacts()
-        {
-            // Get the contact files
-            string contactsPath = Paths.GetKernelPath(KernelPathType.Contacts);
-            if (!Checking.FolderExists(contactsPath))
-                Making.MakeDirectory(contactsPath);
-            var contactFiles = Listing.GetFilesystemEntries(Paths.GetKernelPath(KernelPathType.Contacts) + "/*.vcf");
-
-            // Now, enumerate through each contact file
-            foreach (var contact in contactFiles)
-                InstallContacts(contact, false);
         }
 
         /// <summary>

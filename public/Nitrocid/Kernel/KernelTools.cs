@@ -229,9 +229,6 @@ namespace KS.Kernel
             EventManager.LoadEvents();
             ReminderManager.LoadReminders();
 
-            // Load all contacts
-            ContactsManager.InstallContacts();
-
             // Load system env vars and convert them
             UESHVariables.ConvertSystemEnvironmentVariables();
         }
