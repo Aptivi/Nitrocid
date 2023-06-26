@@ -18,7 +18,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Threading;
 using System.Xml;
@@ -26,19 +25,14 @@ using Extensification.DictionaryExts;
 using FluentFTP.Helpers;
 using HtmlAgilityPack;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Notifications;
-using KS.Misc.Reflection;
-using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Network.Base.Transfer;
 using KS.Network.RSS.Instance;
 using KS.Shell.Shells.RSS;
-using Newtonsoft.Json.Linq;
 
 namespace KS.Network.RSS
 {
@@ -47,11 +41,6 @@ namespace KS.Network.RSS
     /// </summary>
     public static class RSSTools
     {
-        /// <summary>
-        /// Cached feed list JSON
-        /// </summary>
-        private static string FeedListJsonText = "";
-
         /// <summary>
         /// Whether to show the RSS headline each login
         /// </summary>
@@ -321,191 +310,6 @@ namespace KS.Network.RSS
                     TextWriterColor.Write(Translate.DoTranslation("Failed to get the latest news."), true, KernelColorType.Error);
                 }
             }
-        }
-
-        /// <summary>
-        /// Opens the feed selector
-        /// </summary>
-        public static void OpenFeedSelector()
-        {
-            int StepNumber = 1;
-            JToken FeedListJson;
-            var FeedListJsonCountries = Array.Empty<JToken>();
-            var FeedListJsonNewsSources = Array.Empty<JToken>();
-            var FeedListJsonNewsSourceFeeds = Array.Empty<JToken>();
-            int SelectedCountryIndex = 0;
-            var SelectedNewsSourceIndex = 0;
-            int SelectedNewsSourceFeedIndex;
-            string FinalFeedUrl = "";
-
-            // Try to get the feed list
-            try
-            {
-                TextWriterColor.Write(Translate.DoTranslation("Downloading feed list..."), true, KernelColorType.Progress);
-                if (string.IsNullOrEmpty(FeedListJsonText))
-                    FeedListJsonText = NetworkTransfer.DownloadString("https://cdn.jsdelivr.net/gh/yavuz/news-feed-list-of-countries@master/news-feed-list-of-countries.json");
-                FeedListJson = JToken.Parse(FeedListJsonText);
-                FeedListJsonCountries = FeedListJson.SelectTokens("*").Where(c => c["newSources"].Any()).ToArray();
-            }
-            catch (Exception ex)
-            {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to get feed list: {0}", ex.Message);
-                DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.Write(Translate.DoTranslation("Failed to download feed list."), true, KernelColorType.Error);
-            }
-
-            // Country selection
-            while (StepNumber == 1)
-            {
-                // If the JSON token is actually full, show the list of countries
-                ConsoleBase.ConsoleWrapper.Clear();
-                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Select your country by pressing the arrow left or arrow right keys. Press ENTER to confirm your selection."), 0, 1, false, KernelColorType.NeutralText);
-                TextWriterColor.Write(CharManager.NewLine + CharManager.NewLine + "   < ", false, KernelColorType.NeutralText);
-
-                // The cursor positions for the arrow elements
-                int MaxLength = FeedListJsonCountries.Max(x => x["name"].ToString().Length);
-                string ItemName = $"{FeedListJsonCountries[SelectedCountryIndex]["name"]} [{FeedListJsonCountries[SelectedCountryIndex]["iso"]}]";
-                int ArrowLeftXPosition = ConsoleBase.ConsoleWrapper.CursorLeft + MaxLength + $" [{FeedListJsonCountries[SelectedCountryIndex]["iso"]}]".Length;
-                int ItemNameXPosition = (int)Math.Round(ConsoleBase.ConsoleWrapper.CursorLeft + (ArrowLeftXPosition - ConsoleBase.ConsoleWrapper.CursorLeft) / 2d - ItemName.Length / 2d);
-                TextWriterWhereColor.WriteWhere(ItemName, ItemNameXPosition, ConsoleBase.ConsoleWrapper.CursorTop, true, KernelColorType.Option);
-                TextWriterWhereColor.WriteWhere(" >", ArrowLeftXPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, KernelColorType.NeutralText);
-                TextWriterColor.Write(CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("This country has {0} news sources."), FeedListJsonCountries[SelectedCountryIndex]["newSources"].Count());
-
-                // Read and get response
-                var ConsoleResponse = Input.DetectKeypress();
-                DebugWriter.WriteDebug(DebugLevel.I, "Keypress: {0}", ConsoleResponse.Key.ToString());
-                if (ConsoleResponse.Key == ConsoleKey.LeftArrow)
-                {
-                    // Decrement country index by 1
-                    DebugWriter.WriteDebug(DebugLevel.I, "Decrementing number...");
-                    if (SelectedCountryIndex == 0)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Reached zero! Back to country index {0}.", FeedListJsonCountries.Length - 1);
-                        SelectedCountryIndex = FeedListJsonCountries.Length - 1;
-                    }
-                    else
-                    {
-                        SelectedCountryIndex -= 1;
-                        DebugWriter.WriteDebug(DebugLevel.I, "Decremented to {0}", SelectedCountryIndex);
-                    }
-                }
-                else if (ConsoleResponse.Key == ConsoleKey.RightArrow)
-                {
-                    // Increment country index by 1
-                    if (SelectedCountryIndex == FeedListJsonCountries.Length - 1)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Reached maximum country number! Back to zero.");
-                        SelectedCountryIndex = 0;
-                    }
-                    else
-                    {
-                        SelectedCountryIndex += 1;
-                        DebugWriter.WriteDebug(DebugLevel.I, "Incremented to {0}", SelectedCountryIndex);
-                    }
-                }
-                else if (ConsoleResponse.Key == ConsoleKey.Enter)
-                {
-                    // Go to the next step
-                    DebugWriter.WriteDebug(DebugLevel.I, "Selected country: {0}", FeedListJsonCountries[SelectedCountryIndex]["name"]);
-                    FeedListJsonNewsSources = FeedListJsonCountries[SelectedCountryIndex]["newSources"].ToArray();
-                    TextWriterColor.Write();
-                    StepNumber += 1;
-                }
-            }
-
-            // News source selection
-            TextWriterColor.Write(Translate.DoTranslation("Select your favorite news source by writing the number. Press ENTER to confirm your selection.") + CharManager.NewLine);
-            for (int SourceIndex = 0; SourceIndex <= FeedListJsonNewsSources.Length - 1; SourceIndex++)
-            {
-                var NewsSource = FeedListJsonNewsSources[SourceIndex];
-                string NewsSourceTitle = NewsSource["site"]["title"].ToString().Trim();
-                TextWriterColor.Write("{0}) {1}", true, KernelColorType.Option, SourceIndex + 1, NewsSourceTitle);
-            }
-            TextWriterColor.Write();
-            while (StepNumber == 2)
-            {
-                // Print input
-                DebugWriter.WriteDebug(DebugLevel.W, "{0} news sources.", FeedListJsonNewsSources.Length);
-                TextWriterColor.Write(">> ", false, KernelColorType.Input);
-
-                // Read and parse the answer
-                string AnswerStr = Input.ReadLine();
-                if (StringQuery.IsStringNumeric(AnswerStr))
-                {
-                    // Got a numeric string! Check to see if we're in range before parsing it to index
-                    int AnswerInt = Convert.ToInt32(AnswerStr);
-                    DebugWriter.WriteDebug(DebugLevel.W, "Got answer {0}.", AnswerInt);
-                    if (AnswerInt > 0 & AnswerInt <= FeedListJsonNewsSources.Length)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.W, "Answer is in range.");
-                        SelectedNewsSourceIndex = AnswerInt - 1;
-                        FeedListJsonNewsSourceFeeds = FeedListJsonNewsSources[SelectedNewsSourceIndex]["feedUrls"].ToArray();
-                        TextWriterColor.Write();
-                        StepNumber += 1;
-                    }
-                    else
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.W, "Answer is out of range.");
-                        TextWriterColor.Write(Translate.DoTranslation("The selection is out of range. Select between 1-{0}. Try again."), true, KernelColorType.Error, FeedListJsonNewsSources.Length);
-                    }
-                }
-                else
-                {
-                    DebugWriter.WriteDebug(DebugLevel.W, "Answer is not numeric.");
-                    TextWriterColor.Write(Translate.DoTranslation("The answer must be numeric."), true, KernelColorType.Error);
-                }
-            }
-
-            // News feed selection
-            TextWriterColor.Write(Translate.DoTranslation("Select a feed for your favorite news source. Press ENTER to confirm your selection.") + CharManager.NewLine);
-            for (int SourceFeedIndex = 0; SourceFeedIndex <= FeedListJsonNewsSourceFeeds.Length - 1; SourceFeedIndex++)
-            {
-                var NewsSourceFeed = FeedListJsonNewsSourceFeeds[SourceFeedIndex];
-                string NewsSourceTitle = (string)NewsSourceFeed["title"];
-                if (string.IsNullOrEmpty(NewsSourceTitle))
-                {
-                    // Some feeds like the French nouvelobs.com (Obs) don't have their feed title, so take it from the site title instead
-                    NewsSourceTitle = (string)FeedListJsonNewsSources[SelectedNewsSourceIndex]["site"]["title"];
-                }
-                NewsSourceTitle = NewsSourceTitle.Trim();
-                TextWriterColor.Write("{0}) {1}: {2}", true, KernelColorType.Option, SourceFeedIndex + 1, NewsSourceTitle, NewsSourceFeed["url"]);
-            }
-            TextWriterColor.Write();
-            while (StepNumber == 3)
-            {
-                // Print input
-                DebugWriter.WriteDebug(DebugLevel.W, "{0} news source feeds.", FeedListJsonNewsSourceFeeds.Length);
-                TextWriterColor.Write(">> ", false, KernelColorType.Input);
-
-                // Read and parse the answer
-                string AnswerStr = Input.ReadLine();
-                if (StringQuery.IsStringNumeric(AnswerStr))
-                {
-                    // Got a numeric string! Check to see if we're in range before parsing it to index
-                    int AnswerInt = Convert.ToInt32(AnswerStr);
-                    DebugWriter.WriteDebug(DebugLevel.W, "Got answer {0}.", AnswerInt);
-                    if (AnswerInt > 0 & AnswerInt <= FeedListJsonNewsSourceFeeds.Length)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.W, "Answer is in range.");
-                        SelectedNewsSourceFeedIndex = AnswerInt - 1;
-                        FinalFeedUrl = (string)FeedListJsonNewsSourceFeeds[SelectedNewsSourceFeedIndex]["url"];
-                        StepNumber += 1;
-                    }
-                    else
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.W, "Answer is out of range.");
-                        TextWriterColor.Write(Translate.DoTranslation("The selection is out of range. Select between 1-{0}. Try again."), true, KernelColorType.Error, FeedListJsonNewsSourceFeeds.Length);
-                    }
-                }
-                else
-                {
-                    DebugWriter.WriteDebug(DebugLevel.W, "Answer is not numeric.");
-                    TextWriterColor.Write(Translate.DoTranslation("The answer must be numeric."), true, KernelColorType.Error);
-                }
-            }
-
-            // Actually change the feed
-            RSSShellCommon.RSSFeedLink = FinalFeedUrl;
         }
 
         /// <summary>

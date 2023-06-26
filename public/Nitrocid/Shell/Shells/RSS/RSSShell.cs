@@ -103,10 +103,6 @@ namespace KS.Shell.Shells.RSS
                     {
                         if (OldRSSFeedLink != RSSShellCommon.RSSFeedLink)
                         {
-                            if (RSSShellCommon.RSSFeedLink == "select")
-                            {
-                                RSSTools.OpenFeedSelector();
-                            }
                             RSSShellCommon.feedInstance = new RSSFeed(RSSShellCommon.RSSFeedLink, RSSFeedType.Infer);
                             RSSShellCommon.RSSFeedLink = RSSShellCommon.RSSFeedInstance.FeedUrl;
                         }
