@@ -1589,5 +1589,9 @@ namespace KS.Kernel.Configuration.Instances
         /// Task manager option binding name color
         /// </summary>
         public string TaskManagerKeyBindingOptionColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.Cyan)).PlainSequence;
+        /// <summary>
+        /// Censor private information that may be printed to the debug logs.
+        /// </summary>
+        public bool DebugCensorPrivateInfo { get; set; }
     }
 }

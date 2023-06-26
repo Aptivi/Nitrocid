@@ -20,8 +20,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using Extensification.StringExts;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging.RemoteDebug;
 using KS.Kernel.Debugging.Trace;
+using KS.Languages;
 using KS.Misc.Text;
 
 namespace KS.Kernel.Debugging
@@ -36,9 +38,40 @@ namespace KS.Kernel.Debugging
         /// Debug stack trace list
         /// </summary>
         public readonly static List<string> DebugStackTraces = new();
+        /// <summary>
+        /// Censor private information that may be printed to the debug logs.
+        /// </summary>
+        public static bool DebugCensorPrivateInfo => Config.MainConfig.DebugCensorPrivateInfo;
         internal static string DebugPath = "";
         internal static StreamWriter DebugStreamWriter;
         internal static object WriteLock = new();
+
+        /// <summary>
+        /// Outputs the text into the debugger file, and sets the time stamp. Censors all secure arguments if <see cref="DebugCensorPrivateInfo"/> is on.
+        /// </summary>
+        /// <param name="Level">Debug level</param>
+        /// <param name="text">A sentence that will be written to the the debugger file. Supports {0}, {1}, ...</param>
+        /// <param name="SecureVarIndexes">Secure variable indexes to modify <paramref name="vars"/> to censor them when <see cref="DebugCensorPrivateInfo"/> is on</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteDebugPrivacy(DebugLevel Level, string text, int[] SecureVarIndexes, params object[] vars)
+        {
+            // First, iterate through all the provided secure indexes to convert these to censored strings
+            foreach (int SecureVarIndex in SecureVarIndexes)
+            {
+                // Check the index value
+                if (SecureVarIndex < 0)
+                    continue;
+                if (SecureVarIndex >= vars.Length)
+                    continue;
+
+                // Censor all the secure vars found
+                if (DebugCensorPrivateInfo)
+                    vars[SecureVarIndex] = "[removed for privacy]";
+            }
+
+            // Then, go ahead and write the message
+            WriteDebug(Level, text, vars);
+        }
 
         /// <summary>
         /// Outputs the text into the debugger file, and sets the time stamp.
@@ -63,9 +96,11 @@ namespace KS.Kernel.Debugging
                         var STrace = new DebugStackFrame();
                         string message = "";
 
-                        // We could be calling this function by WriteDebugConditional, so descend a frame
+                        // We could be calling this function by WriteDebugConditional or WriteDebugPrivacy, so descend a frame
                         if (STrace.RoutineName == nameof(WriteDebugConditional))
                             STrace = new DebugStackFrame(3);
+                        if (STrace.RoutineName == nameof(WriteDebugPrivacy))
+                            STrace = new DebugStackFrame(2);
 
                         // Check to see if source file name is not empty.
                         if (STrace.RoutineFileName is not null & !(STrace.RoutineLineNumber == 0))

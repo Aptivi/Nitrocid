@@ -110,14 +110,14 @@ namespace KS.Misc.Contacts
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Parser card version: {0}", parser.CardVersion);
                         DebugWriter.WriteDebug(DebugLevel.D, "Contents:");
-                        DebugWriter.WriteDebug(DebugLevel.D, parser.CardContent);
+                        DebugWriter.WriteDebugPrivacy(DebugLevel.D, "{0}", new int[] { 0 }, parser.CardContent);
 
                         // Now, parse the card
                         var card = parser.Parse();
                         if (!cards.Where((c) => c == card).Any())
                             cards.Add(card);
                         addedCards.Add(card);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Parser successfully processed contact {0}.", cards[^1].ContactFullName);
+                        DebugWriter.WriteDebugPrivacy(DebugLevel.I, "Parser successfully processed contact {0}.", new int[] { 0 }, cards[^1].ContactFullName);
                         DebugWriter.WriteDebug(DebugLevel.I, "Cards: {0}", cards.Count);
                         DebugWriter.WriteDebug(DebugLevel.I, "Added cards: {0}", addedCards.Count);
                     }

@@ -1588,6 +1588,12 @@
                 "Name": "Task manager option binding name color",
                 "Type": "SColor",
                 "Variable": "TaskManagerKeyBindingOptionColor"
+            },
+            {
+                "Name": "Censor private info on debug logs",
+                "Type": "SBoolean",
+                "Variable": "DebugCensorPrivateInfo",
+                "Description": "Censor private information that may be printed to the debug logs."
             }
         ]
     }

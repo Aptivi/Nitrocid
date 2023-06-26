@@ -754,6 +754,9 @@
         },
         "TaskManagerKeyBindingOptionColor": {
             "type": "string"
+        },
+        "DebugCensorPrivateInfo": {
+            "type": "boolean"
         }
     },
     "required": [
@@ -1007,6 +1010,7 @@
         "TaskManagerPaneTaskBackColor",
         "TaskManagerOptionBackgroundColor",
         "TaskManagerOptionForegroundColor",
-        "TaskManagerKeyBindingOptionColor"
+        "TaskManagerKeyBindingOptionColor",
+        "DebugCensorPrivateInfo"
     ]
 }
