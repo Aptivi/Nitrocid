@@ -1678,6 +1678,36 @@
         },
         "ExcaliBeatsMaximumColorLevel": {
             "type": "integer"
+        },
+        "BarWaveTrueColor": {
+            "type": "boolean"
+        },
+        "BarWaveDelay": {
+            "type": "integer"
+        },
+        "BarWaveMinimumRedColorLevel": {
+            "type": "integer"
+        },
+        "BarWaveMinimumGreenColorLevel": {
+            "type": "integer"
+        },
+        "BarWaveMinimumBlueColorLevel": {
+            "type": "integer"
+        },
+        "BarWaveMinimumColorLevel": {
+            "type": "integer"
+        },
+        "BarWaveMaximumRedColorLevel": {
+            "type": "integer"
+        },
+        "BarWaveMaximumGreenColorLevel": {
+            "type": "integer"
+        },
+        "BarWaveMaximumBlueColorLevel": {
+            "type": "integer"
+        },
+        "BarWaveMaximumColorLevel": {
+            "type": "integer"
         }
     },
     "required": [
@@ -2239,6 +2269,16 @@
         "ExcaliBeatsMaximumRedColorLevel",
         "ExcaliBeatsMaximumGreenColorLevel",
         "ExcaliBeatsMaximumBlueColorLevel",
-        "ExcaliBeatsMaximumColorLevel"
+        "ExcaliBeatsMaximumColorLevel",
+        "BarWaveTrueColor",
+        "BarWaveDelay",
+        "BarWaveMinimumRedColorLevel",
+        "BarWaveMinimumGreenColorLevel",
+        "BarWaveMinimumBlueColorLevel",
+        "BarWaveMinimumColorLevel",
+        "BarWaveMaximumRedColorLevel",
+        "BarWaveMaximumGreenColorLevel",
+        "BarWaveMaximumBlueColorLevel",
+        "BarWaveMaximumColorLevel"
     ]
 }

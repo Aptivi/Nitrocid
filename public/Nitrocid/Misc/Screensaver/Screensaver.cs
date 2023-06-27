@@ -49,6 +49,7 @@ namespace KS.Misc.Screensaver
         internal static Dictionary<string, BaseScreensaver> Screensavers = new()
         {
             { "barrot", new BarRotDisplay() },
+            { "barwave", new BarWaveDisplay() },
             { "beatfader", new BeatFaderDisplay() },
             { "beatpulse", new BeatPulseDisplay() },
             { "beatedgepulse", new BeatEdgePulseDisplay() },

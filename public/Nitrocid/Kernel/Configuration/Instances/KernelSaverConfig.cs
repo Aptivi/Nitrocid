@@ -2262,5 +2262,45 @@ namespace KS.Kernel.Configuration.Instances
         /// [ExcaliBeats] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int ExcaliBeatsMaximumColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [BarWave] Enable truecolor support. Has a higher priority than 255 color support.
+        /// </summary>
+        public bool BarWaveTrueColor { get; set; } = true;
+        /// <summary>
+        /// [BarWave] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int BarWaveDelay { get; set; } = 1;
+        /// <summary>
+        /// [BarWave] The minimum red color level (true color)
+        /// </summary>
+        public int BarWaveMinimumRedColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [BarWave] The minimum green color level (true color)
+        /// </summary>
+        public int BarWaveMinimumGreenColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [BarWave] The minimum blue color level (true color)
+        /// </summary>
+        public int BarWaveMinimumBlueColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [BarWave] The minimum color level (255 colors or 16 colors)
+        /// </summary>
+        public int BarWaveMinimumColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [BarWave] The maximum red color level (true color)
+        /// </summary>
+        public int BarWaveMaximumRedColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [BarWave] The maximum green color level (true color)
+        /// </summary>
+        public int BarWaveMaximumGreenColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [BarWave] The maximum blue color level (true color)
+        /// </summary>
+        public int BarWaveMaximumBlueColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [BarWave] The maximum color level (255 colors or 16 colors)
+        /// </summary>
+        public int BarWaveMaximumColorLevel { get; set; } = 255;
     }
 }
