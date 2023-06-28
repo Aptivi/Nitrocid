@@ -82,32 +82,32 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="AltAnswers">Set of alternate answers.</param>
         public static int PromptSelection(string Question, List<InputChoiceInfo> Answers, List<InputChoiceInfo> AltAnswers)
         {
+            // Variables
             int HighlightedAnswer = savedPos;
+            List<InputChoiceInfo> AllAnswers = new(Answers);
+            AllAnswers.AddRange(AltAnswers);
+
+            // Before we proceed, we need to check the highlighted answer number
+            if (HighlightedAnswer > AllAnswers.Count)
+                HighlightedAnswer = 1;
+
+            // First alt answer index
+            int altAnswersFirstIdx = Answers.Count;
+            ConsoleKeyInfo Answer;
+            ConsoleWrapper.CursorVisible = false;
+            ConsoleWrapper.Clear(true);
+
+            // Ask a question
+            TextWriterColor.Write(Question + CharManager.NewLine, true, KernelColorType.Question);
+
+            // Make pages based on console window height
+            int listStartPosition = ConsoleWrapper.CursorTop;
+            int listEndPosition = ConsoleWrapper.WindowHeight - ConsoleWrapper.CursorTop;
+            int pages = AllAnswers.Count / listEndPosition;
+            int answersPerPage = listEndPosition - 5;
+
             while (true)
             {
-                // Variables
-                List<InputChoiceInfo> AllAnswers = new(Answers);
-                AllAnswers.AddRange(AltAnswers);
-
-                // Before we proceed, we need to check the highlighted answer number
-                if (HighlightedAnswer > AllAnswers.Count)
-                    HighlightedAnswer = 1;
-
-                // First alt answer index
-                int altAnswersFirstIdx = Answers.Count;
-                ConsoleKeyInfo Answer;
-                ConsoleWrapper.CursorVisible = false;
-                ConsoleWrapper.Clear(true);
-
-                // Ask a question
-                TextWriterColor.Write(Question + CharManager.NewLine, true, KernelColorType.Question);
-
-                // Make pages based on console window height
-                int listStartPosition = ConsoleWrapper.CursorTop;
-                int listEndPosition = ConsoleWrapper.WindowHeight - ConsoleWrapper.CursorTop;
-                int pages = AllAnswers.Count / listEndPosition;
-                int answersPerPage = listEndPosition - 5;
-
                 // The reason for subtracting the highlighted answer by one is that because while the highlighted answer number is one-based, the indexes are zero-based,
                 // causing confusion. Pages, again, are one-based. Highlighting the last option causes us to go to the next page. This is intentional.
                 int currentPage = (HighlightedAnswer - 1) / answersPerPage;
@@ -115,6 +115,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 int endIndex = answersPerPage * (currentPage + 1);
 
                 // Populate the answers
+                ConsoleWrapper.SetCursorPosition(0, listStartPosition);
                 for (int AnswerIndex = startIndex; AnswerIndex <= endIndex && AnswerIndex <= AllAnswers.Count - 1; AnswerIndex++)
                 {
                     bool AltAnswer = AnswerIndex >= altAnswersFirstIdx;
