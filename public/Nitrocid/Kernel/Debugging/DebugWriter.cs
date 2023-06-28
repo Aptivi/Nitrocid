@@ -102,6 +102,10 @@ namespace KS.Kernel.Debugging
                         if (STrace.RoutineName == nameof(WriteDebugPrivacy))
                             STrace = new DebugStackFrame(2);
 
+                        // Remove the \r line endings from the text, since the debug file needs to have its line endings in the
+                        // UNIX format anyways.
+                        text = text.Replace(char.ToString((char)13), "");
+
                         // Check to see if source file name is not empty.
                         if (STrace.RoutineFileName is not null & !(STrace.RoutineLineNumber == 0))
                             // Show stack information
@@ -114,8 +118,13 @@ namespace KS.Kernel.Debugging
                         // Nitrocid on the Linux host tends to use /n only for new lines, and Windows considers /r/n as the
                         // new line. This causes the staircase effect on text written to the remote debugger, which messes up
                         // the output on Windows.
+                        //
+                        // However, we don't want to append the Windows new line character to the debug file, because we need
+                        // it to have consistent line endings across platforms, like if you try to print the output of a text
+                        // file that only has \n at the end of each line, we would inadvertently place the \r\n in each debug
+                        // line, causing the file to have mixed line endings.
+                        DebugStreamWriter.Write(message + "\n", vars);
                         message += "\r\n";
-                        DebugStreamWriter.Write(message, vars);
                         for (int i = 0; i <= RemoteDebugger.DebugDevices.Count - 1; i++)
                         {
                             try
