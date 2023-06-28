@@ -38,10 +38,6 @@ namespace KS.Misc.Execution
     public static class ProcessExecutor
     {
 
-        internal static string ProcessData = "";
-        internal static bool NewDataSpotted;
-        internal static KernelThread NewDataDetector = new("New data detection for process", false, DetectNewData);
-
         /// <summary>
         /// Thread parameters for ExecuteProcess()
         /// </summary>
@@ -66,7 +62,8 @@ namespace KS.Misc.Execution
         /// <summary>
         /// Executes a file with specified arguments
         /// </summary>
-        internal static void ExecuteProcess(ExecuteProcessThreadParameters ThreadParams) => ExecuteProcess(ThreadParams.File, ThreadParams.Args);
+        internal static void ExecuteProcess(ExecuteProcessThreadParameters ThreadParams) =>
+            ExecuteProcess(ThreadParams.File, ThreadParams.Args);
 
         /// <summary>
         /// Executes a file with specified arguments
@@ -74,7 +71,8 @@ namespace KS.Misc.Execution
         /// <param name="File">Full path to file</param>
         /// <param name="Args">Arguments, if any</param>
         /// <returns>Application exit code. -1 if internal error occurred.</returns>
-        public static int ExecuteProcess(string File, string Args) => ExecuteProcess(File, Args, CurrentDirectory.CurrentDir);
+        public static int ExecuteProcess(string File, string Args) =>
+            ExecuteProcess(File, Args, CurrentDirectory.CurrentDir);
 
         /// <summary>
         /// Executes a file with specified arguments
@@ -87,6 +85,7 @@ namespace KS.Misc.Execution
         {
             try
             {
+                bool HasProcessExited = false;
                 var CommandProcess = new Process();
                 var CommandProcessStart = new ProcessStartInfo()
                 {
@@ -101,42 +100,37 @@ namespace KS.Misc.Execution
                     UseShellExecute = false
                 };
                 CommandProcess.StartInfo = CommandProcessStart;
+                CommandProcess.EnableRaisingEvents = true;
                 CommandProcess.OutputDataReceived += ExecutableOutput;
                 CommandProcess.ErrorDataReceived += ExecutableOutput;
+                CommandProcess.Exited += (sender, args) => HasProcessExited = true;
 
                 // Start the process
                 DebugWriter.WriteDebug(DebugLevel.I, "Starting...");
                 CommandProcess.Start();
                 CommandProcess.BeginOutputReadLine();
                 CommandProcess.BeginErrorReadLine();
-                NewDataDetector.Start();
 
                 // Wait for process exit
-                while (!CommandProcess.HasExited | !Flags.CancelRequested)
+                while (!HasProcessExited | !Flags.CancelRequested)
                 {
-                    if (CommandProcess.HasExited)
+                    if (HasProcessExited)
                     {
+                        DebugWriter.WriteDebug(DebugLevel.W, "Process exited! Output may not be complete!");
+                        CommandProcess.WaitForExit();
+                        DebugWriter.WriteDebug(DebugLevel.I, "Flushed as much as possible.");
                         break;
                     }
                     else if (Flags.CancelRequested)
                     {
+                        DebugWriter.WriteDebug(DebugLevel.W, "Process killed! Output may not be complete!");
                         CommandProcess.Kill();
+                        CommandProcess.WaitForExit();
+                        DebugWriter.WriteDebug(DebugLevel.I, "Flushed as much as possible.");
                         break;
                     }
                 }
-
-                // Wait until no more data is entered
-                while (NewDataSpotted)
-                {
-                }
-
-                // Stop the new data detector
-                NewDataDetector.Stop();
-                ProcessData = "";
-
-                // Assume that we've spotted new data. This is to avoid race conditions happening sometimes if the processes are exited while output is still going.
-                // This is a workaround for some commands like netstat.exe that don't work with normal workarounds shown below.
-                NewDataSpotted = true;
+                DebugWriter.WriteDebug(DebugLevel.I, "Process exited with exit code {0}.", CommandProcess.ExitCode);
                 return CommandProcess.ExitCode;
             }
             catch (ThreadInterruptedException)
@@ -160,38 +154,10 @@ namespace KS.Misc.Execution
         /// <param name="outLine">Output</param>
         private static void ExecutableOutput(object sendingProcess, DataReceivedEventArgs outLine)
         {
-            NewDataSpotted = true;
+            if (outLine.Data is null)
+                return;
             DebugWriter.WriteDebug(DebugLevel.I, outLine.Data);
             TextWriterColor.Write(outLine.Data);
-            ProcessData += outLine.Data;
-        }
-
-        /// <summary>
-        /// Detects new data
-        /// </summary>
-        private static void DetectNewData()
-        {
-            try
-            {
-                while (Thread.CurrentThread.IsAlive)
-                {
-                    if (NewDataSpotted)
-                    {
-                        long OldLength = ProcessData.LongCount();
-                        Thread.Sleep(50);
-                        if (OldLength == ProcessData.LongCount())
-                            NewDataSpotted = false;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                if (ex is not ThreadInterruptedException)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Error processing data: {0}", ex.Message);
-                    DebugWriter.WriteDebugStackTrace(ex);
-                }
-            }
         }
 
     }
