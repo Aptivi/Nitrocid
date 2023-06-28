@@ -17,23 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using ColorSeq;
-using Extensification.StringExts;
 using KS.Files;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Notifications;
-using KS.Misc.Reflection;
-using KS.Misc.Settings;
 using KS.Misc.Splash;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Shell.Prompts;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using KS.Kernel.Events;

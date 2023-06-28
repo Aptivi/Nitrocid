@@ -44,7 +44,6 @@ using KS.Shell.ShellBase.Commands;
 using KS.TimeDate;
 using KS.Users;
 using System.Reflection;
-using KS.Misc.Writers.FancyWriters.Tools;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Inputs;
 using KS.Misc.Contacts;

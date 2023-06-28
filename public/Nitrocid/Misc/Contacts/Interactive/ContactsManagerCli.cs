@@ -34,7 +34,6 @@ using VisualCard.Parts;
 using System.Text;
 using KS.Misc.Probers.Regexp;
 using KS.Files.Querying;
-using System.IO;
 
 namespace KS.Files.Interactive
 {

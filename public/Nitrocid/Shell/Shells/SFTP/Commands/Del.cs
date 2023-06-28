@@ -22,7 +22,6 @@ using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.SFTP.Filesystem;
 using KS.Shell.ShellBase.Commands;
-using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Inputs.Styles;
 
 namespace KS.Shell.Shells.SFTP.Commands

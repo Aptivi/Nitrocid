@@ -23,7 +23,6 @@ using Extensification.StringExts;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging.RemoteDebug;
 using KS.Kernel.Debugging.Trace;
-using KS.Languages;
 using KS.Misc.Text;
 
 namespace KS.Kernel.Debugging

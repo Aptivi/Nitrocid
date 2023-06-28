@@ -20,7 +20,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using Extensification.StringExts;
 using KS.Kernel.Debugging;
 using Newtonsoft.Json.Linq;
 
