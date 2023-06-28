@@ -123,13 +123,19 @@ namespace KS.Kernel.Debugging
                         // it to have consistent line endings across platforms, like if you try to print the output of a text
                         // file that only has \n at the end of each line, we would inadvertently place the \r\n in each debug
                         // line, causing the file to have mixed line endings.
-                        DebugStreamWriter.Write(message + "\n", vars);
+                        if (vars.Length > 0)
+                            DebugStreamWriter.Write(message + "\n", vars);
+                        else
+                            DebugStreamWriter.Write(message + "\n");
                         message += "\r\n";
                         for (int i = 0; i <= RemoteDebugger.DebugDevices.Count - 1; i++)
                         {
                             try
                             {
-                                RemoteDebugger.DebugDevices[i].ClientStreamWriter.Write(message, vars);
+                                if (vars.Length > 0)
+                                    RemoteDebugger.DebugDevices[i].ClientStreamWriter.Write(message, vars);
+                                else
+                                    RemoteDebugger.DebugDevices[i].ClientStreamWriter.Write(message);
                             }
                             catch (Exception ex)
                             {
