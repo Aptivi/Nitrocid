@@ -105,6 +105,7 @@ namespace KS.ConsoleBase.Inputs.Styles
             int listEndPosition = ConsoleWrapper.WindowHeight - ConsoleWrapper.CursorTop;
             int pages = AllAnswers.Count / listEndPosition;
             int answersPerPage = listEndPosition - 5;
+            int lastPage = 1;
 
             while (true)
             {
@@ -113,6 +114,13 @@ namespace KS.ConsoleBase.Inputs.Styles
                 int currentPage = (HighlightedAnswer - 1) / answersPerPage;
                 int startIndex = answersPerPage * currentPage;
                 int endIndex = answersPerPage * (currentPage + 1);
+
+                // If the current page is different, refresh the entire screen.
+                if (currentPage != lastPage)
+                {
+                    ConsoleWrapper.Clear(true);
+                    TextWriterColor.Write(Question + CharManager.NewLine, true, KernelColorType.Question);
+                }
 
                 // Populate the answers
                 ConsoleWrapper.SetCursorPosition(0, listStartPosition);
@@ -195,6 +203,9 @@ namespace KS.ConsoleBase.Inputs.Styles
                             return -1;
                         }
                 }
+
+                // Update the last page
+                lastPage = currentPage;
             }
         }
 
