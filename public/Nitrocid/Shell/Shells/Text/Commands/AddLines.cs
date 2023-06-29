@@ -45,7 +45,7 @@ namespace KS.Shell.Shells.Text.Commands
             while (FinalLine != "EOF")
             {
                 TextWriterColor.Write(">> ", false, KernelColorType.Input);
-                FinalLine = Input.ReadLine(false);
+                FinalLine = Input.ReadLine();
                 if (!(FinalLine == "EOF"))
                 {
                     FinalLines.Add(FinalLine);

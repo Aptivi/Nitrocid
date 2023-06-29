@@ -87,7 +87,7 @@ namespace KS.Network.SSH
                 TextWriterColor.Write("1) " + Translate.DoTranslation("Private key file"), true, KernelColorType.Option);
                 TextWriterColor.Write("2) " + Translate.DoTranslation("Password") + CharManager.NewLine, true, KernelColorType.Option);
                 TextWriterColor.Write(">> ", false, KernelColorType.Input);
-                if (int.TryParse(Input.ReadLine(false), out Answer))
+                if (int.TryParse(Input.ReadLine(), out Answer))
                 {
                     // Check for answer
                     bool exitWhile = false;
@@ -138,7 +138,7 @@ namespace KS.Network.SSH
 
                             // Ask for location
                             TextWriterColor.Write(Translate.DoTranslation("Enter the location of the private key for {0}. Write \"q\" to finish adding keys: "), false, KernelColorType.Input, Username);
-                            PrivateKeyFile = Input.ReadLine(false);
+                            PrivateKeyFile = Input.ReadLine();
                             PrivateKeyFile = Filesystem.NeutralizePath(PrivateKeyFile);
                             if (Checking.FileExists(PrivateKeyFile))
                             {

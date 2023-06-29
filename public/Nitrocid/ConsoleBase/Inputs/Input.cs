@@ -45,36 +45,24 @@ namespace KS.ConsoleBase.Inputs
         /// <summary>
         /// Reads the line from the console
         /// </summary>
-        public static string ReadLine() => ReadLine("", "", true);
-
-        /// <summary>
-        /// Reads the line from the console
-        /// </summary>
-        /// <param name="UseCtrlCAsInput">Whether to treat CTRL + C as input</param>
-        public static string ReadLine(bool UseCtrlCAsInput) => ReadLine("", "", UseCtrlCAsInput);
+        public static string ReadLine() =>
+            ReadLine("", "");
 
         /// <summary>
         /// Reads the line from the console
         /// </summary>
         /// <param name="InputText">Input text to write</param>
-        public static string ReadLine(string InputText) => ReadLine(InputText, "", true);
+        public static string ReadLine(string InputText) =>
+            ReadLine(InputText, "");
 
         /// <summary>
         /// Reads the line from the console
         /// </summary>
         /// <param name="InputText">Input text to write</param>
         /// <param name="DefaultValue">Default value</param>
-        public static string ReadLine(string InputText, string DefaultValue) => ReadLine(InputText, DefaultValue, true);
-
-        /// <summary>
-        /// Reads the line from the console
-        /// </summary>
-        /// <param name="InputText">Input text to write</param>
-        /// <param name="DefaultValue">Default value</param>
-        /// <param name="UseCtrlCAsInput">Whether to treat CTRL + C as input</param>
-        public static string ReadLine(string InputText, string DefaultValue, bool UseCtrlCAsInput)
+        public static string ReadLine(string InputText, string DefaultValue)
         {
-            string Output = ReadLineUnsafe(InputText, DefaultValue, UseCtrlCAsInput);
+            string Output = ReadLineUnsafe(InputText, DefaultValue);
 
             // If in lock mode, wait until release
             SpinWait.SpinUntil(() => !Screensaver.LockMode);
@@ -86,8 +74,7 @@ namespace KS.ConsoleBase.Inputs
         /// </summary>
         /// <param name="InputText">Input text to write</param>
         /// <param name="DefaultValue">Default value</param>
-        /// <param name="UseCtrlCAsInput">Whether to treat CTRL + C as input</param>
-        public static string ReadLineUnsafe(string InputText, string DefaultValue, bool UseCtrlCAsInput)
+        public static string ReadLineUnsafe(string InputText, string DefaultValue)
         {
             string Output = TermReader.Read(InputText, DefaultValue);
             ScreensaverDisplayer.BailFromScreensaver();
@@ -100,13 +87,9 @@ namespace KS.ConsoleBase.Inputs
         public static string ReadLineNoInput()
         {
             if (!string.IsNullOrEmpty(CurrentMask))
-            {
                 return ReadLineNoInput(CurrentMask[0]);
-            }
             else
-            {
                 return ReadLineNoInput(Convert.ToChar("\0"));
-            }
         }
 
         /// <summary>
@@ -128,13 +111,9 @@ namespace KS.ConsoleBase.Inputs
         public static string ReadLineNoInputUnsafe()
         {
             if (!string.IsNullOrEmpty(CurrentMask))
-            {
                 return ReadLineNoInputUnsafe(CurrentMask[0]);
-            }
             else
-            {
                 return ReadLineNoInputUnsafe(Convert.ToChar("\0"));
-            }
         }
 
         /// <summary>

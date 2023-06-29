@@ -208,7 +208,7 @@ namespace KS.Languages
                                 while (!LanguageSet)
                                 {
                                     TextWriterColor.Write(">> ", false, KernelColorType.Input);
-                                    string AnswerString = Input.ReadLine(false);
+                                    string AnswerString = Input.ReadLine();
                                     if (int.TryParse(AnswerString, out int Answer))
                                     {
                                         DebugWriter.WriteDebug(DebugLevel.I, "Choice: {0}", Answer);

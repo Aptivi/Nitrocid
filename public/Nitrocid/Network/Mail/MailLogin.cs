@@ -150,7 +150,7 @@ namespace KS.Network.Mail
             {
                 TextWriterColor.Write(Translate.DoTranslation("Enter IMAP server address and port (<address> or <address>:[port]): "), false, KernelColorType.Input);
             }
-            IMAP_Address = Input.ReadLine(false);
+            IMAP_Address = Input.ReadLine();
             DebugWriter.WriteDebug(DebugLevel.I, "IMAP Server: \"{0}\"", IMAP_Address);
 
             // SMTP server address and port
@@ -162,7 +162,7 @@ namespace KS.Network.Mail
             {
                 TextWriterColor.Write(Translate.DoTranslation("Enter SMTP server address and port (<address> or <address>:[port]): "), false, KernelColorType.Input);
             }
-            SMTP_Address = Input.ReadLine(false);
+            SMTP_Address = Input.ReadLine();
             SMTP_Port = 587;
             DebugWriter.WriteDebug(DebugLevel.I, "SMTP Server: \"{0}\"", SMTP_Address);
 

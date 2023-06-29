@@ -77,7 +77,7 @@ namespace KS.Shell.Shells.Mail.Commands
 
                 // Prompt for subject
                 TextWriterColor.Write(Translate.DoTranslation("Enter the subject:") + " ", false, KernelColorType.Input);
-                Subject = Input.ReadLine(false);
+                Subject = Input.ReadLine();
                 DebugWriter.WriteDebug(DebugLevel.I, "Subject: {0} ({1} chars)", Subject, Subject.Length);
 
                 // Prompt for body
@@ -99,7 +99,7 @@ namespace KS.Shell.Shells.Mail.Commands
                 while (!string.IsNullOrEmpty(PathLine))
                 {
                     TextWriterColor.Write("> ", false, KernelColorType.Input);
-                    PathLine = Input.ReadLine(false);
+                    PathLine = Input.ReadLine();
                     if (!string.IsNullOrEmpty(PathLine))
                     {
                         PathLine = Filesystem.NeutralizePath(PathLine);

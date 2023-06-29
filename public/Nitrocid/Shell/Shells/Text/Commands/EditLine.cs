@@ -44,7 +44,7 @@ namespace KS.Shell.Shells.Text.Commands
                 {
                     string OriginalLine = TextEditShellCommon.TextEdit_FileLines[(int)Math.Round(Convert.ToDouble(ListArgsOnly[0]) - 1d)];
                     TextWriterColor.Write(">> ", false, KernelColorType.Input);
-                    string EditedLine = Input.ReadLine("", OriginalLine, false);
+                    string EditedLine = Input.ReadLine("", OriginalLine);
                     TextEditShellCommon.TextEdit_FileLines[(int)Math.Round(Convert.ToDouble(ListArgsOnly[0]) - 1d)] = EditedLine;
                 }
                 else

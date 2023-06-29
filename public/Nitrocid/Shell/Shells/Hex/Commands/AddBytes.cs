@@ -45,7 +45,7 @@ namespace KS.Shell.Shells.Hex.Commands
             while (FinalByte != "EOF")
             {
                 TextWriterColor.Write(">> ", false, KernelColorType.Input);
-                FinalByte = Input.ReadLine(false);
+                FinalByte = Input.ReadLine();
                 if (!(FinalByte == "EOF"))
                 {
                     byte ByteContent;
