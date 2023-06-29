@@ -114,6 +114,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 int currentPage = (HighlightedAnswer - 1) / answersPerPage;
                 int startIndex = answersPerPage * currentPage;
                 int endIndex = answersPerPage * (currentPage + 1);
+                int shownAnswers = 0;
 
                 // If the current page is different, refresh the entire screen.
                 if (currentPage != lastPage)
@@ -144,6 +145,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                                       AltAnswer ? KernelColorType.AlternativeOption : KernelColorType.Option;
                     AnswerOption = $"{ColorTools.GetColor(AnswerColor).VTSequenceForeground}{AnswerOption}";
                     TextWriterColor.Write(AnswerIndex == endIndex ? " vvvvvvvvvv " + Translate.DoTranslation("Highlight this entry to go to the next page.") + " vvvvvvvvvv " : AnswerOption.Truncate(ConsoleWrapper.WindowWidth - 3 + Matches.MatchVTSequences(AnswerOption).Sum((m) => m.Length)), true, AnswerColor);
+                    shownAnswers++;
                 }
 
                 // If we need to write the vertical progress bar, do so.
@@ -180,14 +182,24 @@ namespace KS.ConsoleBase.Inputs.Styles
                                 HighlightedAnswer = 1;
                             break;
                         }
-                    case ConsoleKey.PageUp:
+                    case ConsoleKey.Home:
                         {
                             HighlightedAnswer = 1;
                             break;
                         }
-                    case ConsoleKey.PageDown:
+                    case ConsoleKey.End:
                         {
                             HighlightedAnswer = AllAnswers.Count;
+                            break;
+                        }
+                    case ConsoleKey.PageUp:
+                        {
+                            HighlightedAnswer = startIndex > 0 ? startIndex : 1;
+                            break;
+                        }
+                    case ConsoleKey.PageDown:
+                        {
+                            HighlightedAnswer = endIndex + 1 > AllAnswers.Count ? AllAnswers.Count : endIndex + 1;
                             break;
                         }
                     case ConsoleKey.Enter:
