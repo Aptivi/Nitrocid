@@ -31,10 +31,13 @@ namespace KS.Arguments.CommandLineArguments
             Flags.DebugMode = true;
 
             // Write headers for debug
-            DebugWriter.WriteDebug(DebugLevel.I, "-------------------------------------------------------------------");
-            DebugWriter.WriteDebug(DebugLevel.I, "Kernel initialized, version {0}.", KernelTools.KernelVersion.ToString());
-            DebugWriter.WriteDebug(DebugLevel.I, "Kernel mod API version {0}.", KernelTools.KernelApiVersion.ToString());
-            DebugWriter.WriteDebug(DebugLevel.I, "OS: {0}", Environment.OSVersion.ToString());
+            DebugWriter.WriteDebug(DebugLevel.I,
+                "-------------------------------------------------------------------\n" +
+                "Kernel initialized, version {0}.\n" +
+                "Kernel mod API version {1}.\n" +
+                "OS: {2}",
+                KernelTools.KernelVersion.ToString(), KernelTools.KernelApiVersion.ToString(), Environment.OSVersion.ToString()
+            );
         }
     }
 }

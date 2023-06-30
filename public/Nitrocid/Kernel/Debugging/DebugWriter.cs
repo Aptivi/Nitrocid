@@ -19,6 +19,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using Extensification.StringExts;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging.RemoteDebug;
@@ -93,7 +94,7 @@ namespace KS.Kernel.Debugging
                     try
                     {
                         var STrace = new DebugStackFrame();
-                        string message = "";
+                        StringBuilder message = new();
 
                         // We could be calling this function by WriteDebugConditional or WriteDebugPrivacy, so descend a frame
                         if (STrace.RoutineName == nameof(WriteDebugConditional))
@@ -105,13 +106,18 @@ namespace KS.Kernel.Debugging
                         // UNIX format anyways.
                         text = text.Replace(char.ToString((char)13), "");
 
-                        // Check to see if source file name is not empty.
-                        if (STrace.RoutineFileName is not null & !(STrace.RoutineLineNumber == 0))
-                            // Show stack information
-                            message = $"{TimeDate.TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDate.TimeDateTools.KernelDateTime.ToShortTimeString()} [{Level}] ({STrace.RoutineName} - {STrace.RoutineFileName}:{STrace.RoutineLineNumber}): {text}";
-                        else
-                            // Rare case, unless debug symbol is not found on archives.
-                            message = $"{TimeDate.TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDate.TimeDateTools.KernelDateTime.ToShortTimeString()} [{Level}] {text}";
+                        // Handle the new lines
+                        string[] texts = text.Split("\n");
+                        foreach (string splitText in texts)
+                        {
+                            // Check to see if source file name is not empty.
+                            if (STrace.RoutineFileName is not null & !(STrace.RoutineLineNumber == 0))
+                                // Show stack information
+                                message.Append($"{TimeDate.TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDate.TimeDateTools.KernelDateTime.ToShortTimeString()} [{Level}] ({STrace.RoutineName} - {STrace.RoutineFileName}:{STrace.RoutineLineNumber}): {splitText}\n");
+                            else
+                                // Rare case, unless debug symbol is not found on archives.
+                                message.Append($"{TimeDate.TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDate.TimeDateTools.KernelDateTime.ToShortTimeString()} [{Level}] {splitText}\n");
+                        }
 
                         // Debug to file and all connected debug devices (raw mode). The reason for the /r/n is that because
                         // Nitrocid on the Linux host tends to use /n only for new lines, and Windows considers /r/n as the
@@ -123,16 +129,16 @@ namespace KS.Kernel.Debugging
                         // file that only has \n at the end of each line, we would inadvertently place the \r\n in each debug
                         // line, causing the file to have mixed line endings.
                         if (vars.Length > 0)
-                            DebugStreamWriter.Write(message + "\n", vars);
+                            DebugStreamWriter.Write(message.ToString(), vars);
                         else
-                            DebugStreamWriter.Write(message + "\n");
-                        message += "\r\n";
+                            DebugStreamWriter.Write(message);
+                        message.Replace("\n", "\r\n");
                         for (int i = 0; i <= RemoteDebugger.DebugDevices.Count - 1; i++)
                         {
                             try
                             {
                                 if (vars.Length > 0)
-                                    RemoteDebugger.DebugDevices[i].ClientStreamWriter.Write(message, vars);
+                                    RemoteDebugger.DebugDevices[i].ClientStreamWriter.Write(message.ToString(), vars);
                                 else
                                     RemoteDebugger.DebugDevices[i].ClientStreamWriter.Write(message);
                             }
