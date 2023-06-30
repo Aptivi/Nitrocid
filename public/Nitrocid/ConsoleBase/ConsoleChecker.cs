@@ -49,6 +49,28 @@ namespace KS.ConsoleBase
         public static void CheckConsole()
         {
             string TerminalType = KernelPlatform.GetTerminalType();
+            string TerminalEmulator = KernelPlatform.GetTerminalEmulator();
+
+            // First: Check if the console is running on Apple_Terminal (terminal.app).
+            // Severity: Error
+            // Explanation below:
+            // ---
+            // This check is needed because we have the stock Terminal.app (Apple_Terminal according to $TERM_PROGRAM) that has incompatibilities with
+            // VT sequences, causing broken display. It claims it supports XTerm, yet it isn't fully XTerm-compliant, so we exit the program early when
+            // this stock terminal is spotted.
+            // ---
+            // More information regarding this check: The blacklisted terminals will not be able to run Kernel Simulator properly, because they have
+            // broken support for colors and possibly more features. For example, we have Apple_Terminal that has no support for 255 and true colors;
+            // it only supports 16 colors setting by VT sequences and nothing can change that, although it's fully XTerm compliant.
+            if (KernelPlatform.IsOnMacOS())
+            {
+                if (TerminalEmulator == "Apple_Terminal")
+                {
+                    throw new KernelException(KernelExceptionType.InsaneConsoleDetected,
+                                              "Kernel Simulator makes use of VT escape sequences, but Terminal.app has broken support for 255 and true colors." + CharManager.NewLine +
+                                              "Possible solution: Download iTerm2 here: https://iterm2.com/downloads.html");
+                }
+            }
 
             // Check if the terminal type is "dumb".
             // Severity: Error
