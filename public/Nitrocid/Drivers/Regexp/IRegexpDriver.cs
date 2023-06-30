@@ -49,6 +49,14 @@ namespace KS.Drivers.Regexp
         Match Match(string text, string pattern);
 
         /// <summary>
+        /// Matches the pattern with the text given
+        /// </summary>
+        /// <param name="text">The text to be matched</param>
+        /// <param name="pattern">Regular expression pattern for matching</param>
+        /// <returns>Collection of <see cref="System.Text.RegularExpressions.Match"/>es that contains information about the current match</returns>
+        MatchCollection Matches(string text, string pattern);
+
+        /// <summary>
         /// Filters the string from the substrings matched by the given pattern
         /// </summary>
         /// <param name="text">The text to be processed</param>
@@ -72,5 +80,19 @@ namespace KS.Drivers.Regexp
         /// <param name="pattern">Regular expression pattern for splitting</param>
         /// <returns>Array of strings</returns>
         string[] Split(string text, string pattern);
+
+        /// <summary>
+        /// Escapes the invalid characters from the string
+        /// </summary>
+        /// <param name="text">The text containing invalid characters to escape</param>
+        /// <returns>Escaped string</returns>
+        string Escape(string text);
+
+        /// <summary>
+        /// Unescapes the escaped characters from the string
+        /// </summary>
+        /// <param name="text">The text containing escaped characters to unescape</param>
+        /// <returns>Unescaped string</returns>
+        string Unescape(string text);
     }
 }

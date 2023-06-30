@@ -46,9 +46,12 @@
     <ApplicationIcon>OfficialAppIcon-KernelSimulator-256.ico</ApplicationIcon>
     <Version>0.1.0</Version>
     <AssemblyVersion>0.1.0</AssemblyVersion>
-    <FileVersion>3.0.25.0</FileVersion>
     <PackageVersion>0.1.0.0-beta1</PackageVersion>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    
+    <!-- Increment NitrocidModAPIVersion everytime there is a breaking change in the N-KS API. -->
+    <NitrocidModAPIVersion>3.0.25.1</NitrocidModAPIVersion>
+    <FileVersion>$(NitrocidModAPIVersion)</FileVersion>
   </PropertyGroup>
   <!-- KS General Information End -->
 

@@ -19,6 +19,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Extensification.StringExts;
+using KS.Drivers;
 using KS.Kernel.Debugging;
 using KS.Modifications;
 using KS.Shell.ShellBase.Shells;
@@ -77,27 +78,21 @@ namespace KS.Shell.ShellBase.Commands
             ShellCommands = CommandManager.GetCommands(CommandType);
             ModCommands = ModManager.ListModCommands(CommandType);
 
-            // Get the index of the first space (Used for step 3)
-            int index = CommandText.IndexOf(" ");
-            if (index == -1)
-                index = CommandText.Length;
-            DebugWriter.WriteDebug(DebugLevel.I, "Index: {0}", index);
-
             // Split the requested command string into words
-            var words = CommandText.Split(new[] { ' ' });
-            for (int i = 0; i <= words.Length - 1; i++)
-                DebugWriter.WriteDebug(DebugLevel.I, "Word {0}: {1}", i + 1, words[i]);
-            Command = words[0];
-
-            // Get the string of arguments
-            string strArgs = CommandText.Substring(index);
-            DebugWriter.WriteDebug(DebugLevel.I, "Prototype strArgs: {0}", strArgs);
-            if (!(index == CommandText.Length))
-                strArgs = strArgs.Substring(1);
-            DebugWriter.WriteDebug(DebugLevel.I, "Finished strArgs: {0}", strArgs);
+            var words = DriverHandler.CurrentRegexpDriver.Matches(CommandText, @"(""(.+?)(?<![^\\]\\)"")|('(.+?)(?<![^\\]\\)')|(`(.+?)(?<![^\\]\\)`)|(?:[^\\\s]|\\.)+|\S+");
+            for (int i = 0; i <= words.Count - 1; i++)
+                DebugWriter.WriteDebug(DebugLevel.I, "Word {0}: {1}", i + 1, words[i].Value);
+            Command = words[0].Value;
 
             // Split the arguments with enclosed quotes
-            var EnclosedArgs = strArgs.SplitSpacesEncloseDoubleQuotes();
+            var EnclosedArgMatches = words.Skip(1);
+            var EnclosedArgs = EnclosedArgMatches.Select(match => match.Value).ToArray();
+
+            // Get the string of arguments
+            string strArgs = words.Count > 0 ? string.Join(" ", EnclosedArgMatches) : "";
+            DebugWriter.WriteDebug(DebugLevel.I, "Finished strArgs: {0}", strArgs);
+
+            // Ensure that strArgs is not empty
             if (string.IsNullOrWhiteSpace(strArgs))
                 EnclosedArgs = null;
             if (EnclosedArgs is not null)
@@ -120,19 +115,11 @@ namespace KS.Shell.ShellBase.Commands
             var FinalArgs = new List<string>();
             var FinalSwitches = new List<string>();
             if (EnclosedArgs is not null)
-            {
                 foreach (string EnclosedArg in EnclosedArgs)
-                {
                     if (EnclosedArg.StartsWith("-"))
-                    {
                         FinalSwitches.Add(EnclosedArg);
-                    }
                     else
-                    {
-                        FinalArgs.Add(EnclosedArg);
-                    }
-                }
-            }
+                        FinalArgs.Add(DriverHandler.CurrentRegexpDriver.Unescape(EnclosedArg).ReleaseDoubleQuotes());
 
             // Install the parsed values to the new class instance
             ArgumentsList = FinalArgs.ToArray();

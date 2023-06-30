@@ -74,6 +74,7 @@ namespace KS.Kernel
         /// <summary>
         /// Kernel API version
         /// </summary>
+        // Refer to NitrocidModAPIVersion in the project file.
         public readonly static Version KernelApiVersion = new(FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion);
         /// <summary>
         /// Current banner figlet font

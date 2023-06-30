@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using InxiFrontend;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using System.Text.RegularExpressions;
@@ -66,6 +67,15 @@ namespace KS.Drivers.Regexp
         }
 
         /// <inheritdoc/>
+        public MatchCollection Matches(string text, string pattern)
+        {
+            if (!IsValidRegex(pattern))
+                throw new KernelException(KernelExceptionType.RegularExpression, Translate.DoTranslation("Invalid regular expression syntax."));
+
+            return new Regex(pattern).Matches(text);
+        }
+
+        /// <inheritdoc/>
         public string Filter(string text, string pattern)
         {
             if (!IsValidRegex(pattern))
@@ -91,5 +101,13 @@ namespace KS.Drivers.Regexp
 
             return new Regex(pattern).Split(text);
         }
+
+        /// <inheritdoc/>
+        public string Escape(string text) =>
+            Regex.Escape(text);
+
+        /// <inheritdoc/>
+        public string Unescape(string text) =>
+            Regex.Unescape(text);
     }
 }
