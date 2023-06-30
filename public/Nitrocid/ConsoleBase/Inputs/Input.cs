@@ -70,13 +70,41 @@ namespace KS.ConsoleBase.Inputs
         }
 
         /// <summary>
+        /// Reads the line from the console (wrapped to one line)
+        /// </summary>
+        public static string ReadLineWrapped() =>
+            ReadLineWrapped("", "");
+
+        /// <summary>
+        /// Reads the line from the console (wrapped to one line)
+        /// </summary>
+        /// <param name="InputText">Input text to write</param>
+        public static string ReadLineWrapped(string InputText) =>
+            ReadLineWrapped(InputText, "");
+
+        /// <summary>
+        /// Reads the line from the console (wrapped to one line)
+        /// </summary>
+        /// <param name="InputText">Input text to write</param>
+        /// <param name="DefaultValue">Default value</param>
+        public static string ReadLineWrapped(string InputText, string DefaultValue)
+        {
+            string Output = ReadLineUnsafe(InputText, DefaultValue, true);
+
+            // If in lock mode, wait until release
+            SpinWait.SpinUntil(() => !Screensaver.LockMode);
+            return Output;
+        }
+
+        /// <summary>
         /// Reads the line from the console unsafely. This doesn't wait until the screensaver lock mode is released.
         /// </summary>
         /// <param name="InputText">Input text to write</param>
         /// <param name="DefaultValue">Default value</param>
-        public static string ReadLineUnsafe(string InputText, string DefaultValue)
+        /// <param name="OneLineWrap">Whether to wrap the input to one line</param>
+        public static string ReadLineUnsafe(string InputText, string DefaultValue, bool OneLineWrap = false)
         {
-            string Output = TermReader.Read(InputText, DefaultValue);
+            string Output = TermReader.Read(InputText, DefaultValue, false, OneLineWrap);
             ScreensaverDisplayer.BailFromScreensaver();
             return Output;
         }

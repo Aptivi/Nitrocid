@@ -71,9 +71,9 @@ namespace KS.Misc.Presentation.Elements
 
             // Get the input
             ConsoleWrapper.CursorVisible = true;
-            TermReaderSettings.LeftMargin = TermReaderSettings.RightMargin = PresentationTools.PresentationUpperInnerBorderLeft;
-            WrittenInput = Input.ReadLine();
-            TermReaderSettings.LeftMargin = TermReaderSettings.RightMargin = 0;
+            TermReaderSettings.RightMargin = PresentationTools.PresentationUpperInnerBorderLeft;
+            WrittenInput = Input.ReadLineWrapped();
+            TermReaderSettings.RightMargin = 0;
             ConsoleWrapper.CursorVisible = false;
         }
 

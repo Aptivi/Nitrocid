@@ -31,6 +31,7 @@ using KS.Misc.Writers.ConsoleWriters;
 using System.Linq;
 using KS.Misc.Text;
 using System.Collections.Generic;
+using TermRead.Reader;
 
 namespace KS.Misc.Writers.FancyWriters
 {
@@ -173,8 +174,10 @@ namespace KS.Misc.Writers.FancyWriters
                 }
 
                 // Wait until the user presses any key to close the box
-                // TODO: TermRead should implement the one-line wrapping system so text can't go out of bounds from the infobox.
-                return Input.ReadLine();
+                TermReaderSettings.RightMargin = borderX;
+                string input = Input.ReadLineWrapped();
+                TermReaderSettings.RightMargin = 0;
+                return input;
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
