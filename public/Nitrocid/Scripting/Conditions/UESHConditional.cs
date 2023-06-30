@@ -55,6 +55,8 @@ namespace KS.Scripting.Conditions
             { "insane", new HashesMismatchCondition() },
             { "fsane", new FileHashMatchCondition() },
             { "finsane", new FileHashMismatchCondition() },
+            { "is", new IsCondition() },
+            { "isnot", new IsNotCondition() },
             { "none", new NoneCondition() }
         };
 

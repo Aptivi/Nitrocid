@@ -529,5 +529,6 @@ Preferred user language set to {0}. You may want to log in again.
 Shows the typewriter letter column position by showing an arrow on the bottom of the screen
 Censor private information that may be printed to the debug logs.
 Censor private info on debug logs
+Data type {0} specified is invalid.
 
 ==========================================================================================================================================
