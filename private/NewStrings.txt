@@ -530,5 +530,15 @@ Shows the typewriter letter column position by showing an arrow on the bottom of
 Censor private information that may be printed to the debug logs.
 Censor private info on debug logs
 Data type {0} specified is invalid.
+Show information about the imaginary number formula specified by a specified real and imaginary number
+The real number is not valid.
+The imaginary number is not valid.
+Formula:
+Radius:
+Real to Radius in Radians:
+Imaginary to Radius in Radians:
+Angle in Radians:
+Exponential:
+Triangular:
 
 ==========================================================================================================================================
