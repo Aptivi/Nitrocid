@@ -39,6 +39,7 @@ using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Colors;
 using KS.Files.Querying;
 using System.Collections.Generic;
+using KS.Kernel.Power;
 
 namespace KS.Misc.Probers.Placeholder
 {
@@ -80,7 +81,8 @@ namespace KS.Misc.Probers.Placeholder
             { "<randomfile>",                             Getting.GetRandomFileName },
             { "<randomfolder>",                           Getting.GetRandomFolderName },
             { "<f:reset>",                          () => ColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground },
-            { "<b:reset>",                          () => Flags.SetBackground ? ColorTools.GetColor(KernelColorType.Background).VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m" }
+            { "<b:reset>",                          () => Flags.SetBackground ? ColorTools.GetColor(KernelColorType.Background).VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m" },
+            { "<uptime>",                           () => PowerManager.KernelUptime }
         };
 
         /// <summary>

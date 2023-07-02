@@ -51,6 +51,7 @@ using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Colors;
 using KS.Misc.Writers.MiscWriters;
 using KS.Misc.Screensaver.Customized;
+using KS.Kernel.Power;
 
 namespace KS.Kernel
 {
@@ -145,6 +146,7 @@ namespace KS.Kernel
 
                     // Initialize everything
                     StageTimer.Start();
+                    PowerManager.Uptime.Start();
                     KernelTools.InitEverything();
                     CheckErrored();
 
@@ -273,6 +275,7 @@ namespace KS.Kernel
 
                     // Clear all active threads as we're rebooting
                     ThreadManager.StopAllThreads();
+                    PowerManager.Uptime.Reset();
                 }
                 catch (KernelException icde) when (icde.ExceptionType == KernelExceptionType.InsaneConsoleDetected)
                 {

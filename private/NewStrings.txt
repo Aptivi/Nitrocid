@@ -548,5 +548,6 @@ Tests the child kernel thread
 Shows the two useful URLs for manual.
 To access the user manual for general uses of Nitrocid, please visit the below link:
 To access the developer's manual for updated ways of making kernel modifications and screensavers, please visit the below link:
+Shows the kernel uptime
 
 ==========================================================================================================================================

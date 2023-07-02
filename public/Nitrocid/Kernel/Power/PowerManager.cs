@@ -24,6 +24,7 @@ using KS.Network.RPC;
 using System.Threading;
 using KS.Kernel.Events;
 using KS.Users.Permissions;
+using System.Diagnostics;
 
 namespace KS.Kernel.Power
 {
@@ -32,6 +33,8 @@ namespace KS.Kernel.Power
     /// </summary>
     public static class PowerManager
     {
+
+        internal static Stopwatch Uptime = new();
 
         /// <summary>
         /// Manage computer's (actually, simulated computer) power
@@ -117,6 +120,12 @@ namespace KS.Kernel.Power
             }
             Flags.SafeMode = PowerMode == PowerMode.RebootSafe;
         }
+
+        /// <summary>
+        /// The kernel uptime (how long since the kernel booted up)
+        /// </summary>
+        public static string KernelUptime =>
+            Uptime.Elapsed.ToString();
 
     }
 }
