@@ -25,6 +25,7 @@ using System.Reflection;
 using ColorPrint.Core.Wheel;
 using ColorSeq;
 using Extensification.StringExts;
+using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Inputs.Styles;
@@ -100,7 +101,7 @@ namespace KS.Misc.Settings
 
                 // Prompt for selection and check the answer
                 string finalTitle = Translate.DoTranslation("Welcome to Settings!");
-                int Answer = SelectionStyle.PromptSelection(finalTitle + CharManager.NewLine + "=".Repeat(finalTitle.Length) + CharManager.NewLine + Translate.DoTranslation("Select section:"), 
+                int Answer = SelectionStyle.PromptSelection("- " + finalTitle + " " + "-".Repeat(ConsoleWrapper.WindowWidth - ("- " + finalTitle + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("Select section:"), 
                     sections, altSections);
                 if (Answer >= 1 & Answer <= MaxSections)
                 {
@@ -185,7 +186,7 @@ namespace KS.Misc.Settings
                     // The selected answer is "Exit"
                     DebugWriter.WriteDebug(DebugLevel.W, "Exiting...");
                     PromptFinished = true;
-                    ConsoleBase.ConsoleWrapper.Clear();
+                    ConsoleWrapper.Clear();
                 }
                 else
                 {
@@ -282,7 +283,7 @@ namespace KS.Misc.Settings
 
                     // Prompt user and check for input
                     string finalSection = SectionTranslateName ? Translate.DoTranslation((string)SectionDisplayName) : (string)SectionDisplayName;
-                    int Answer = SelectionStyle.PromptSelection(finalSection + CharManager.NewLine + "=".Repeat(finalSection.Length) + CharManager.NewLine + Translate.DoTranslation((string)SectionDescription) + (!string.IsNullOrEmpty(Notes) ? CharManager.NewLine + Notes : ""),
+                    int Answer = SelectionStyle.PromptSelection("- " + finalSection + " " + "-".Repeat(ConsoleWrapper.WindowWidth - ("- " + finalSection + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation((string)SectionDescription) + (!string.IsNullOrEmpty(Notes) ? CharManager.NewLine + Notes : ""),
                         sections, altSections);
 
                     // Check the answer
@@ -328,10 +329,10 @@ namespace KS.Misc.Settings
             }
             catch (Exception ex)
             {
-                ConsoleBase.ConsoleWrapper.Clear();
+                ConsoleWrapper.Clear();
                 DebugWriter.WriteDebug(DebugLevel.I, "Error trying to open section: {0}", ex.Message);
                 string finalSection = Translate.DoTranslation("You're Lost!");
-                TextWriterColor.Write(finalSection + CharManager.NewLine + "=".Repeat(finalSection.Length) + CharManager.NewLine + Translate.DoTranslation("Invalid section entered. Please go back."), true, KernelColorType.Error);
+                TextWriterColor.Write("- " + finalSection + " " + "-".Repeat(ConsoleWrapper.WindowWidth - ("- " + finalSection + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("Invalid section entered. Please go back."), true, KernelColorType.Error);
                 TextWriterColor.Write(Translate.DoTranslation("If you're sure that you've opened the right section, check this message out:"), true, KernelColorType.Error);
                 TextWriterColor.Write(ex.Message, true, KernelColorType.Error);
                 Input.DetectKeypress();
@@ -415,10 +416,10 @@ namespace KS.Misc.Settings
                         case SettingsKeyType.SDouble:
                         case SettingsKeyType.SList:
                         case SettingsKeyType.SString:
-                            ConsoleBase.ConsoleWrapper.Clear();
+                            ConsoleWrapper.Clear();
 
                             // Make an introductory banner
-                            TextWriterColor.Write(finalSection + CharManager.NewLine + "=".Repeat(finalSection.Length) + CharManager.NewLine + Translate.DoTranslation(KeyDescription), true, KernelColorType.Question);
+                            TextWriterColor.Write("- " + finalSection + " " + "-".Repeat(ConsoleWrapper.WindowWidth - ("- " + finalSection + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation(KeyDescription), true, KernelColorType.Question);
 
                             // Write the prompt
                             TextWriterColor.Write("[{0}] > ", false, KernelColorType.Input, KeyDefaultValue);
@@ -520,7 +521,7 @@ namespace KS.Misc.Settings
                             }
 
                             // Prompt user and check for input
-                            int Answer = SelectionStyle.PromptSelection(finalSection + CharManager.NewLine + "=".Repeat(finalSection.Length) + CharManager.NewLine + Translate.DoTranslation(KeyDescription),
+                            int Answer = SelectionStyle.PromptSelection("- " + finalSection + " " + "-".Repeat(ConsoleWrapper.WindowWidth - ("- " + finalSection + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation(KeyDescription),
                                 string.Join("/", itemNums), items.ToArray(),
                                 string.Join("/", altSectionNums), altSections.ToArray());
                             AnswerString = Answer.ToString();
@@ -542,14 +543,14 @@ namespace KS.Misc.Settings
                         case SettingsKeyType.SIntSlider:
                             var PressedKey = default(ConsoleKey);
                             int CurrentValue = Convert.ToInt32(KeyDefaultValue);
-                            ConsoleBase.ConsoleWrapper.CursorVisible = false;
+                            ConsoleWrapper.CursorVisible = false;
                             while (PressedKey != ConsoleKey.Enter)
                             {
                                 // Draw the progress bar
-                                ProgressBarColor.WriteProgress(100d * (CurrentValue / (double)IntSliderMaximumValue), 4, ConsoleBase.ConsoleWrapper.WindowHeight - 4);
+                                ProgressBarColor.WriteProgress(100d * (CurrentValue / (double)IntSliderMaximumValue), 4, ConsoleWrapper.WindowHeight - 4);
 
                                 // Show the current value
-                                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Current value:") + " {0} / {1} - {2}" + Convert.ToString(CharManager.GetEsc()) + "[0K", 5, ConsoleBase.ConsoleWrapper.WindowHeight - 5, false, KernelColorType.NeutralText, CurrentValue, IntSliderMinimumValue, IntSliderMaximumValue);
+                                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Current value:") + " {0} / {1} - {2}" + Convert.ToString(CharManager.GetEsc()) + "[0K", 5, ConsoleWrapper.WindowHeight - 5, false, KernelColorType.NeutralText, CurrentValue, IntSliderMinimumValue, IntSliderMaximumValue);
 
                                 // Parse the user input
                                 PressedKey = Input.DetectKeypress().Key;
@@ -570,7 +571,7 @@ namespace KS.Misc.Settings
                                     case ConsoleKey.Enter:
                                         {
                                             AnswerString = CurrentValue.ToString();
-                                            ConsoleBase.ConsoleWrapper.CursorVisible = true;
+                                            ConsoleWrapper.CursorVisible = true;
                                             break;
                                         }
                                 }
@@ -838,11 +839,11 @@ namespace KS.Misc.Settings
             }
             catch (Exception ex)
             {
-                ConsoleBase.ConsoleWrapper.Clear();
+                ConsoleWrapper.Clear();
                 DebugWriter.WriteDebug(DebugLevel.I, "Error trying to open section: {0}", ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 string finalSection = Translate.DoTranslation("You're Lost!");
-                TextWriterColor.Write(finalSection + CharManager.NewLine + "=".Repeat(finalSection.Length) + CharManager.NewLine + Translate.DoTranslation("Invalid section entered. Please go back."), true, KernelColorType.Error);
+                TextWriterColor.Write("- " + finalSection + " " + "-".Repeat(ConsoleWrapper.WindowWidth - ("- " + finalSection + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("Invalid section entered. Please go back."), true, KernelColorType.Error);
                 TextWriterColor.Write(Translate.DoTranslation("If you're sure that you've opened the right section, check this message out:"), true, KernelColorType.Error);
                 TextWriterColor.Write(ex.Message, true, KernelColorType.Error);
                 Input.DetectKeypress();
