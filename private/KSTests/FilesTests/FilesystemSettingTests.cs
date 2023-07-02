@@ -63,7 +63,7 @@ namespace KSTests.FilesTests
         public void TestSaveCurrDir()
         {
             Config.MainConfig.CurrentDir = Paths.HomePath;
-            CurrentDirectory.SaveCurrDir();
+            Config.CreateConfig();
             Config.MainConfig.CurrentDir.ShouldBe(Paths.HomePath);
         }
 

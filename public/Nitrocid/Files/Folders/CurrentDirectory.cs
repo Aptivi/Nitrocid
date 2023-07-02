@@ -75,33 +75,5 @@ namespace KS.Files.Folders
             }
         }
 
-        /// <summary>
-        /// Saves the current directory to configuration
-        /// </summary>
-        public static void SaveCurrDir()
-        {
-            // TODO: Deal with this, since it's reduced to just a wrapper to CreateConfig()
-            Config.CreateConfig();
-        }
-
-        /// <summary>
-        /// Tries to set the current directory to configuration
-        /// </summary>
-        /// <returns>True if successful; otherwise, false.</returns>
-        public static bool TrySaveCurrDir()
-        {
-            try
-            {
-                SaveCurrDir();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to save current directory: {0}", ex.Message);
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Failed to save current directory: {0}"), ex, ex.Message);
-            }
-        }
-
     }
 }
