@@ -1171,6 +1171,10 @@ namespace KS.Misc.Screensaver.Displays
     public class ProgressClockDisplay : BaseScreensaver, IScreensaver
     {
 
+        private Color ColorStorageHours = Color.Empty,
+                      ColorStorageMinutes = Color.Empty,
+                      ColorStorageSeconds = Color.Empty,
+                      ColorStorage = Color.Empty;
         private long CurrentTicks;
 
         /// <inheritdoc/>
@@ -1197,7 +1201,6 @@ namespace KS.Misc.Screensaver.Displays
             int ColorNumHours, ColorNumMinutes, ColorNumSeconds, ColorNum;
             int ProgressFillPositionHours, ProgressFillPositionMinutes, ProgressFillPositionSeconds;
             int InformationPositionHours, InformationPositionMinutes, InformationPositionSeconds;
-            Color ColorStorageHours = default, ColorStorageMinutes = default, ColorStorageSeconds = default, ColorStorage;
 
             DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Current tick: {0}", CurrentTicks);
             if (ProgressClockSettings.ProgressClockCycleColors)
@@ -1308,7 +1311,7 @@ namespace KS.Misc.Screensaver.Displays
                     TextWriterWhereColor.WriteWhere("S: {0}/60", 4, InformationPositionSeconds, true, ColorStorageSeconds, TimeDateTools.KernelDateTime.Second);
 
                 // Print date information
-                TextWriterWhereColor.WriteWhere(TimeDateRenderers.Render(), (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - TimeDateRenderers.Render().Length / 2d), ConsoleWrapper.WindowHeight - 2, ColorStorageSeconds);
+                TextWriterWhereColor.WriteWhere(TimeDateRenderers.Render(), (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - TimeDateRenderers.Render().Length / 2d), ConsoleWrapper.WindowHeight - 2, ColorStorage);
             }
             if (ProgressClockSettings.ProgressClockCycleColors)
                 CurrentTicks += 1L;
