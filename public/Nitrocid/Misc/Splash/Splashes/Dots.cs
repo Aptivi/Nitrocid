@@ -23,6 +23,7 @@ using KS.Kernel.Debugging;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.ConsoleBase;
 using VT.NET;
+using VT.NET.Tools;
 
 namespace KS.Misc.Splash.Splashes
 {
@@ -64,7 +65,7 @@ namespace KS.Misc.Splash.Splashes
 
                     // Write the three dots
                     string dots = $"{firstDotColor.VTSequenceForeground}* {secondDotColor.VTSequenceForeground}* {thirdDotColor.VTSequenceForeground}*";
-                    int dotsPosX = (ConsoleWrapper.WindowWidth / 2) - (Filters.FilterVTSequences(dots).Length / 2);
+                    int dotsPosX = (ConsoleWrapper.WindowWidth / 2) - (VtSequenceTools.FilterVTSequences(dots).Length / 2);
                     int dotsPosY = ConsoleWrapper.WindowHeight - 2;
                     TextWriterWhereColor.WriteWhere(dots, dotsPosX, dotsPosY);
                     Thread.Sleep(500);

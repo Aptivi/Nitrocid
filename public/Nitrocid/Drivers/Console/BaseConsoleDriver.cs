@@ -31,6 +31,7 @@ using ColorSeq;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using con = System.Console;
 using VT.NET;
+using VT.NET.Tools;
 
 namespace KS.Drivers.Console.Consoles
 {
@@ -402,7 +403,7 @@ namespace KS.Drivers.Console.Consoles
                         msg = StringManipulate.FormatString(msg, vars);
 
                     // Grab each VT sequence from the message and fetch their indexes
-                    var sequences = Matches.MatchVTSequences(msg);
+                    var sequences = VtSequenceTools.MatchVTSequences(msg);
                     int vtSeqIdx = 0;
 
                     // Write text slowly
@@ -457,7 +458,7 @@ namespace KS.Drivers.Console.Consoles
                         string MessageParagraph = Paragraphs[MessageParagraphIndex];
 
                         // Grab each VT sequence from the paragraph and fetch their indexes
-                        var sequences = Matches.MatchVTSequences(MessageParagraph);
+                        var sequences = VtSequenceTools.MatchVTSequences(MessageParagraph);
                         int vtSeqIdx = 0;
 
                         // Now, parse every character
@@ -539,7 +540,7 @@ namespace KS.Drivers.Console.Consoles
                         string MessageParagraph = Paragraphs[MessageParagraphIndex];
 
                         // Grab each VT sequence from the paragraph and fetch their indexes
-                        var sequences = Matches.MatchVTSequences(MessageParagraph);
+                        var sequences = VtSequenceTools.MatchVTSequences(MessageParagraph);
                         int vtSeqIdx = 0;
 
                         // We can now check to see if we're writing a letter past the console window width
@@ -611,7 +612,7 @@ namespace KS.Drivers.Console.Consoles
                         Text = StringManipulate.FormatString(Text, vars);
 
                     // Grab each VT sequence from the paragraph and fetch their indexes
-                    var sequences = Matches.MatchVTSequences(Text);
+                    var sequences = VtSequenceTools.MatchVTSequences(Text);
                     int vtSeqIdx = 0;
 
                     OldTop = ConsoleWrapper.CursorTop;
@@ -645,7 +646,7 @@ namespace KS.Drivers.Console.Consoles
         {
             // Grab each VT sequence from the message
             char ch = text[i];
-            var sequences = Matches.MatchVTSequences(text);
+            var sequencesCollections = VtSequenceTools.MatchVTSequences(text);
 
             // Before printing the character, check to see if we're surrounded by the VT sequence. This is to work around
             // the problem in .NET 6.0 Linux that prevents it from actually parsing the VT sequences like it's supposed to
@@ -661,17 +662,20 @@ namespace KS.Drivers.Console.Consoles
             // To overcome this limitation, we need to print the whole sequence to the console found by the virtual terminal
             // control sequence matcher to match how it works on Windows.
             string seq = "";
-            if (sequences.Count > 0 && sequences[vtSeqIdx].Index == i)
+            foreach (var sequences in sequencesCollections)
             {
-                // We're at an index which is the same as the captured VT sequence. Get the sequence
-                seq = sequences[vtSeqIdx].Value;
+                if (sequences.Count > 0 && sequences[vtSeqIdx].Index == i)
+                {
+                    // We're at an index which is the same as the captured VT sequence. Get the sequence
+                    seq = sequences[vtSeqIdx].Value;
 
-                // Raise the index in case we have the next sequence, but only if we're sure that we have another
-                if (vtSeqIdx + 1 < sequences.Count)
-                    vtSeqIdx++;
+                    // Raise the index in case we have the next sequence, but only if we're sure that we have another
+                    if (vtSeqIdx + 1 < sequences.Count)
+                        vtSeqIdx++;
 
-                // Raise the paragraph index by the length of the sequence
-                i += seq.Length - 1;
+                    // Raise the paragraph index by the length of the sequence
+                    i += seq.Length - 1;
+                }
             }
             ConsoleWrapper.Write(!string.IsNullOrEmpty(seq) ? seq : ch.ToString());
         }

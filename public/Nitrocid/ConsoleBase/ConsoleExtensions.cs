@@ -22,6 +22,7 @@ using KS.Misc.Reflection;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using VT.NET;
+using VT.NET.Tools;
 
 namespace KS.ConsoleBase
 {
@@ -73,7 +74,7 @@ namespace KS.ConsoleBase
         public static string FilterVTSequences(string Text)
         {
             // Filter all sequences
-            Text = Filters.FilterVTSequences(Text);
+            Text = VtSequenceTools.FilterVTSequences(Text);
             return Text;
         }
 

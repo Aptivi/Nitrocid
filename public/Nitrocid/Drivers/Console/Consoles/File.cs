@@ -28,6 +28,7 @@ using System.Linq;
 using System.Threading;
 using System.Text;
 using KS.Kernel.Exceptions;
+using VT.NET.Tools;
 
 namespace KS.Drivers.Console.Consoles
 {
@@ -149,7 +150,7 @@ namespace KS.Drivers.Console.Consoles
 
                 // If filtering, filter all VT sequences
                 if (FilterVT)
-                    Text = Filters.FilterVTSequences(Text);
+                    Text = VtSequenceTools.FilterVTSequences(Text);
 
                 // Open the stream
                 StreamWriter fileWriter = new(PathToWrite, true) { AutoFlush = true };
@@ -225,7 +226,7 @@ namespace KS.Drivers.Console.Consoles
 
                 // If filtering, filter all VT sequences
                 if (FilterVT)
-                    msg = Filters.FilterVTSequences(msg);
+                    msg = VtSequenceTools.FilterVTSequences(msg);
 
                 // Open the stream
                 StreamWriter fileWriter = new(PathToWrite, true);

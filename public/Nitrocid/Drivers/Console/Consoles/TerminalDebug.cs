@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Kernel.Debugging;
+using VT.NET.Tools;
 
 namespace KS.Drivers.Console.Consoles
 {
@@ -40,8 +41,8 @@ namespace KS.Drivers.Console.Consoles
         {
             DebugWriter.WriteDebug(DebugLevel.I, "[X = {0}, Y = {1}, x-winmax = {2}, y-winmax = {3}, y-buffmax = {4}] [VT = {5}, Seqs = {6}] [Len = {7}] [Message = {8}] [Literal = {9}]",
                                    CursorLeft, CursorTop, WindowWidth, WindowHeight, BufferHeight, 
-                                   VT.NET.Matches.MatchVTSequences(text).Count > 0, VT.NET.Matches.MatchVTSequences(text).Count, 
-                                   text.Length, text, VT.NET.Filters.FilterVTSequences(text));
+                                   VtSequenceTools.MatchVTSequences(text).Length > 0, VtSequenceTools.MatchVTSequences(text).Length, 
+                                   text.Length, text, VtSequenceTools.FilterVTSequences(text));
             base.Write(text);
         }
 
@@ -50,8 +51,8 @@ namespace KS.Drivers.Console.Consoles
         {
             DebugWriter.WriteDebug(DebugLevel.I, "[X = {0}, Y = {1}, x-winmax = {2}, y-winmax = {3}, y-buffmax = {4}] [VT = {5}, Seqs = {6}] [Len = {7}] [Message = {8}] [Literal = {9}] [Vars = {10}]",
                                    CursorLeft, CursorTop, WindowWidth, WindowHeight, BufferHeight,
-                                   VT.NET.Matches.MatchVTSequences(text).Count > 0, VT.NET.Matches.MatchVTSequences(text).Count,
-                                   text.Length, text, VT.NET.Filters.FilterVTSequences(text), args.Length);
+                                   VtSequenceTools.MatchVTSequences(text).Length > 0, VtSequenceTools.MatchVTSequences(text).Length,
+                                   text.Length, text, VtSequenceTools.FilterVTSequences(text), args.Length);
             base.Write(text, args);
         }
 
@@ -68,8 +69,8 @@ namespace KS.Drivers.Console.Consoles
         {
             DebugWriter.WriteDebug(DebugLevel.I, "[X = {0}, Y = {1}, x-winmax = {2}, y-winmax = {3}, y-buffmax = {4}] [VT = {5}, Seqs = {6}] [Len = {7}] [Message = {8}] [Literal = {9}]",
                                    CursorLeft, CursorTop, WindowWidth, WindowHeight, BufferHeight,
-                                   VT.NET.Matches.MatchVTSequences(text).Count > 0, VT.NET.Matches.MatchVTSequences(text).Count,
-                                   text.Length, text, VT.NET.Filters.FilterVTSequences(text));
+                                   VtSequenceTools.MatchVTSequences(text).Length > 0, VtSequenceTools.MatchVTSequences(text).Length,
+                                   text.Length, text, VtSequenceTools.FilterVTSequences(text));
             base.WriteLine(text);
         }
 
@@ -78,8 +79,8 @@ namespace KS.Drivers.Console.Consoles
         {
             DebugWriter.WriteDebug(DebugLevel.I, "[X = {0}, Y = {1}, x-winmax = {2}, y-winmax = {3}, y-buffmax = {4}] [VT = {5}, Seqs = {6}] [Len = {7}] [Message = {8}] [Literal = {9}] [Vars = {10}]",
                                    CursorLeft, CursorTop, WindowWidth, WindowHeight, BufferHeight,
-                                   VT.NET.Matches.MatchVTSequences(text).Count > 0, VT.NET.Matches.MatchVTSequences(text).Count,
-                                   text.Length, text, VT.NET.Filters.FilterVTSequences(text), args.Length);
+                                   VtSequenceTools.MatchVTSequences(text).Length > 0, VtSequenceTools.MatchVTSequences(text).Length,
+                                   text.Length, text, VtSequenceTools.FilterVTSequences(text), args.Length);
             base.WriteLine(text, args);
         }
     }

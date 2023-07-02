@@ -92,9 +92,9 @@
     <PackageReference Include="SharpLyrics" Version="1.0.0.1" />
     <PackageReference Include="SSH.NET" Version="2020.0.2" />
     <PackageReference Include="StringMath" Version="4.1.0" />
-    <PackageReference Include="TermRead" Version="0.4.0.1" />
+    <PackageReference Include="TermRead" Version="0.4.0.2" />
     <PackageReference Include="UnitsNet" Version="5.21.0" />
-    <PackageReference Include="Aptivi.VT.NET" Version="0.2.0.1" />
+    <PackageReference Include="Aptivi.VT.NET" Version="1.0.0" />
     <PackageReference Include="VisualCard" Version="0.3.0" />
     <PackageReference Include="Wordament" Version="0.1.1" />
   </ItemGroup>

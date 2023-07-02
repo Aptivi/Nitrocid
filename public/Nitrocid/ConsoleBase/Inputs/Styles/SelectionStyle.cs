@@ -27,6 +27,7 @@ using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using VT.NET;
+using VT.NET.Tools;
 
 namespace KS.ConsoleBase.Inputs.Styles
 {
@@ -143,7 +144,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                                       KernelColorType.SelectedOption : 
                                       AltAnswer ? KernelColorType.AlternativeOption : KernelColorType.Option;
                     AnswerOption = $"{ColorTools.GetColor(AnswerColor).VTSequenceForeground}{AnswerOption}";
-                    TextWriterColor.Write(AnswerIndex == endIndex ? " vvvvvvvvvv " + Translate.DoTranslation("Highlight this entry to go to the next page.") + " vvvvvvvvvv " : AnswerOption.Truncate(ConsoleWrapper.WindowWidth - 3 + Matches.MatchVTSequences(AnswerOption).Sum((m) => m.Length)), true, AnswerColor);
+                    TextWriterColor.Write(AnswerIndex == endIndex ? " vvvvvvvvvv " + Translate.DoTranslation("Highlight this entry to go to the next page.") + " vvvvvvvvvv " : AnswerOption.Truncate(ConsoleWrapper.WindowWidth - 3 + VtSequenceTools.MatchVTSequences(AnswerOption).Sum((mc) => mc.Sum((m) => m.Length))), true, AnswerColor);
                 }
 
                 // If we need to write the vertical progress bar, do so.
