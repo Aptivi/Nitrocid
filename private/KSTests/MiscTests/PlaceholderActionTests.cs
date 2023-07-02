@@ -36,7 +36,28 @@ namespace KSTests.MiscTests
         public void TestParsePlaceholders()
         {
             var UnparsedStrings = new List<string>();
-            var ParsedStrings = new List<string>() { PlaceParse.ProbePlaces("Hostname is <host>"), PlaceParse.ProbePlaces("Short date is <shortdate>"), PlaceParse.ProbePlaces("Long date is <longdate>"), PlaceParse.ProbePlaces("Short time is <shorttime>"), PlaceParse.ProbePlaces("Long time is <longtime>"), PlaceParse.ProbePlaces("Date is <date>"), PlaceParse.ProbePlaces("Time is <time>"), PlaceParse.ProbePlaces("Timezone is <timezone>"), PlaceParse.ProbePlaces("Summer timezone is <summertimezone>"), PlaceParse.ProbePlaces("Operating system is <system>"), PlaceParse.ProbePlaces("Newline is <newline>"), PlaceParse.ProbePlaces("Foreground reset is <f:reset>here"), PlaceParse.ProbePlaces("Background reset is <b:reset>here"), PlaceParse.ProbePlaces("Foreground color is <f:4>0-15"), PlaceParse.ProbePlaces("Foreground color is <b:4>0-15"), PlaceParse.ProbePlaces("Foreground color is <f:254>0-255"), PlaceParse.ProbePlaces("Foreground color is <b:254>0-255"), PlaceParse.ProbePlaces("Foreground color is <f:255;255;255>truecolor"), PlaceParse.ProbePlaces("Foreground color is <b:255;255;255>truecolor") };
+            var ParsedStrings = new List<string>()
+            {
+                PlaceParse.ProbePlaces("Hostname is <host>"),
+                PlaceParse.ProbePlaces("Short date is <shortdate>"),
+                PlaceParse.ProbePlaces("Long date is <longdate>"),
+                PlaceParse.ProbePlaces("Short time is <shorttime>"),
+                PlaceParse.ProbePlaces("Long time is <longtime>"),
+                PlaceParse.ProbePlaces("Date is <date>"),
+                PlaceParse.ProbePlaces("Time is <time>"),
+                PlaceParse.ProbePlaces("Timezone is <timezone>"),
+                PlaceParse.ProbePlaces("Summer timezone is <summertimezone>"),
+                PlaceParse.ProbePlaces("Operating system is <system>"),
+                PlaceParse.ProbePlaces("Newline is <newline>"),
+                PlaceParse.ProbePlaces("Foreground reset is <f:reset>here"),
+                PlaceParse.ProbePlaces("Background reset is <b:reset>here"),
+                PlaceParse.ProbePlaces("Foreground color is <f:4>0-15"),
+                PlaceParse.ProbePlaces("Foreground color is <b:4>0-15"),
+                PlaceParse.ProbePlaces("Foreground color is <f:254>0-255"),
+                PlaceParse.ProbePlaces("Foreground color is <b:254>0-255"),
+                PlaceParse.ProbePlaces("Foreground color is <f:255;255;255>truecolor"),
+                PlaceParse.ProbePlaces("Foreground color is <b:255;255;255>truecolor")
+            };
             foreach (string ParsedString in ParsedStrings)
             {
                 if (ParsedString.Contains("<") & ParsedString.Contains(">"))
