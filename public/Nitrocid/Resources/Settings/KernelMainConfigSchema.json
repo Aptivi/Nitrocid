@@ -302,6 +302,9 @@
         "AdminShellPromptPreset": {
             "type": "string"
         },
+        "SqlShellPromptPreset": {
+            "type": "string"
+        },
         "DefaultChoiceOutputType": {
             "type": "integer"
         },
@@ -860,6 +863,7 @@
         "HTTPShellPromptPreset",
         "ArchiveShellPromptPreset",
         "AdminShellPromptPreset",
+        "SqlShellPromptPreset",
         "DefaultChoiceOutputType",
         "SortMode",
         "SortDirection",

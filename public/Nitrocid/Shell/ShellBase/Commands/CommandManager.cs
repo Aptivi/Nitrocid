@@ -74,7 +74,8 @@ namespace KS.Shell.ShellBase.Commands
                  | GetCommands(ShellType.TextShell).ContainsKey(Command)
                  | GetCommands(ShellType.HTTPShell).ContainsKey(Command)
                  | GetCommands(ShellType.HexShell).ContainsKey(Command)
-                 | GetCommands(ShellType.ArchiveShell).ContainsKey(Command);
+                 | GetCommands(ShellType.ArchiveShell).ContainsKey(Command)
+                 | GetCommands(ShellType.SqlShell).ContainsKey(Command);
         }
 
         /// <summary>

@@ -148,6 +148,7 @@ namespace KS.Shell.Shells.UESH
             { "snaker", new CommandInfo("snaker", ShellType, /* Localizable */ "The snake game!", new CommandArgumentInfo(), new SnakerCommand()) },
             { "solver", new CommandInfo("solver", ShellType, /* Localizable */ "See if you can solve mathematical equations on time", new CommandArgumentInfo(), new SolverCommand()) },
             { "speedpress", new CommandInfo("speedpress", ShellType, /* Localizable */ "See if you can press a key on time", new CommandArgumentInfo(new[] { "[-e|-m|-h|-v|-c] [timeout]" }, false, 0), new SpeedPressCommand()) },
+            { "sql", new CommandInfo("sql", ShellType, /* Localizable */ "Opens the SQL editor to a specified file", new CommandArgumentInfo(new[] { "<dbfile>" }, true, 1), new SqlCommand()) },
             { "sshell", new CommandInfo("sshell", ShellType, /* Localizable */ "Connects to an SSH server.", new CommandArgumentInfo(new[] { "<address:port> <username>" }, true, 2), new SshellCommand()) },
             { "sshcmd", new CommandInfo("sshcmd", ShellType, /* Localizable */ "Connects to an SSH server to execute a command.", new CommandArgumentInfo(new[] { "<address:port> <username> \"<command>\"" }, true, 3), new SshcmdCommand()) },
             { "stopwatch", new CommandInfo("stopwatch", ShellType, /* Localizable */ "A simple stopwatch", new CommandArgumentInfo(), new StopwatchCommand()) },

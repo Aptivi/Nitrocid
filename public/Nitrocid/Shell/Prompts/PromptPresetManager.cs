@@ -50,7 +50,8 @@ namespace KS.Shell.Prompts
             { "HTTPShell", Shell.GetShellInfo(ShellType.HTTPShell).ShellPresets["Default"] },
             { "HexShell", Shell.GetShellInfo(ShellType.HexShell).ShellPresets["Default"] },
             { "ArchiveShell", Shell.GetShellInfo(ShellType.ArchiveShell).ShellPresets["Default"] },
-            { "AdminShell", Shell.GetShellInfo(ShellType.AdminShell).ShellPresets["Default"] }
+            { "AdminShell", Shell.GetShellInfo(ShellType.AdminShell).ShellPresets["Default"] },
+            { "SqlShell", Shell.GetShellInfo(ShellType.SqlShell).ShellPresets["Default"] }
         };
 
         /// <summary>
@@ -210,6 +211,11 @@ namespace KS.Shell.Prompts
                     case "AdminShell":
                         {
                             Config.MainConfig.AdminShellPromptPreset = PresetName;
+                            break;
+                        }
+                    case "SqlShell":
+                        {
+                            Config.MainConfig.SqlShellPromptPreset = PresetName;
                             break;
                         }
                 }

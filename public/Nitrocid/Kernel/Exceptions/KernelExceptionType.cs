@@ -346,6 +346,10 @@ namespace KS.Kernel.Exceptions
         /// <summary>
         /// A UESH condition system failed while performing the requested operation. See the error message below for more details.
         /// </summary>
-        UESHConditional
+        UESHConditional,
+        /// <summary>
+        /// An invalid SQL editor operation is being performed.
+        /// </summary>
+        SqlEditor,
     }
 }

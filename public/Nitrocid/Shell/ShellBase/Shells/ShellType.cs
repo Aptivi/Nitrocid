@@ -66,6 +66,10 @@ namespace KS.Shell.ShellBase.Shells
         /// <summary>
         /// Kernel administration shell
         /// </summary>
-        AdminShell
+        AdminShell,
+        /// <summary>
+        /// SQL shell
+        /// </summary>
+        SqlShell
     }
 }

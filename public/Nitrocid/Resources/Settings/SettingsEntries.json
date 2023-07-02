@@ -633,6 +633,13 @@
                 "Description": ""
             },
             {
+                "Name": "SQL Shell Prompt Preset",
+                "Type": "SPreset",
+                "Variable": "SqlShellPromptPreset",
+                "ShellType": "SqlShell",
+                "Description": ""
+            },
+            {
                 "Name": "Default choice output type",
                 "Type": "SSelection",
                 "Variable": "DefaultChoiceOutputType",

@@ -553,5 +553,7 @@ A UESH condition system failed while performing the requested operation. See the
 Can't register a condition that already exists.
 Can't register an empty condition.
 Can't unregister a condition that doesn't exist.
+An invalid SQL editor operation is being performed.
+SQL Shell Prompt Preset
 
 ==========================================================================================================================================

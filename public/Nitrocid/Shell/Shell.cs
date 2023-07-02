@@ -67,6 +67,7 @@ using System.Linq;
 using KS.Drivers.Console.Consoles;
 using FluentFTP.Helpers;
 using KS.Kernel.Configuration;
+using KS.Shell.Shells.Sql;
 
 namespace KS.Shell
 {
@@ -110,7 +111,8 @@ namespace KS.Shell
             { "HTTPShell", new HTTPShellInfo() },
             { "HexShell", new HexShellInfo() },
             { "ArchiveShell", new ArchiveShellInfo() },
-            { "AdminShell", new AdminShellInfo() }
+            { "AdminShell", new AdminShellInfo() },
+            { "SqlShell", new SqlShellInfo() }
         };
 
         /// <summary>
