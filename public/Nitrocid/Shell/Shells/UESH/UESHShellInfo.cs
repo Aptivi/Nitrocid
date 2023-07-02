@@ -160,7 +160,7 @@ namespace KS.Shell.Shells.UESH
             { "unitconv", new CommandInfo("unitconv", ShellType, /* Localizable */ "Unit converter", new CommandArgumentInfo(new[] { "<unittype> <quantity> <sourceunit> <targetunit>" }, true, 4), new UnitConvCommand()) },
             { "unzip", new CommandInfo("unzip", ShellType, /* Localizable */ "Extracts a ZIP archive", new CommandArgumentInfo(new[] { "<zipfile> [path] [-createdir]" }, true, 1), new UnZipCommand()) },
             { "update", new CommandInfo("update", ShellType, /* Localizable */ "System update", new CommandArgumentInfo(), new UpdateCommand(), CommandFlags.Strict) },
-            { "usermanual", new CommandInfo("usermanual", ShellType, /* Localizable */ "Takes you to our GitHub Wiki.", new CommandArgumentInfo(new[] { "[-modapi]" }, false, 0), new UserManualCommand()) },
+            { "usermanual", new CommandInfo("usermanual", ShellType, /* Localizable */ "Shows the two useful URLs for manual.", new CommandArgumentInfo(), new UserManualCommand()) },
             { "verify", new CommandInfo("verify", ShellType, /* Localizable */ "Verifies sanity of the file", new CommandArgumentInfo(new[] { "<MD5/SHA1/SHA256/SHA384/SHA512> <calculatedhash> <hashfile/expectedhash> <file>" }, true, 4), new VerifyCommand()) },
             { "weather", new CommandInfo("weather", ShellType, /* Localizable */ "Shows weather info for specified city. Uses OpenWeatherMap.", new CommandArgumentInfo(new[] { "[-list] <CityID/CityName> [apikey]" }, true, 1), new WeatherCommand()) },
             { "wordle", new CommandInfo("wordle", ShellType, /* Localizable */ "The Wordle game simulator", new CommandArgumentInfo(new[] { "[-orig]" }, false, 0), new WordleCommand()) },
