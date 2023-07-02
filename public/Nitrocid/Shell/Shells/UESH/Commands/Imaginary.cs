@@ -18,7 +18,6 @@
 
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Scripting.Interaction;
 using KS.Shell.ShellBase.Commands;
 using System;
 

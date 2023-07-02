@@ -22,7 +22,6 @@ using ColorSeq;
 using KS.Kernel.Debugging;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.ConsoleBase;
-using VT.NET;
 using VT.NET.Tools;
 
 namespace KS.Misc.Splash.Splashes

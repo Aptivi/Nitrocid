@@ -20,7 +20,6 @@ using System;
 using System.IO;
 using System.Linq;
 using Extensification.StringExts;
-using static Extensification.StringExts.Manipulation;
 using KS.Files.Folders;
 using KS.Files.Querying;
 using KS.Languages;
@@ -28,6 +27,7 @@ using KS.Kernel.Debugging;
 using KS.Kernel;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Configuration;
+using static Extensification.StringExts.Manipulation;
 
 namespace KS.Files
 {

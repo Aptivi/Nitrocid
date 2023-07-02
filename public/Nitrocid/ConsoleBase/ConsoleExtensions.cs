@@ -21,7 +21,6 @@ using System.Runtime.InteropServices;
 using KS.Misc.Reflection;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
-using VT.NET;
 using VT.NET.Tools;
 
 namespace KS.ConsoleBase

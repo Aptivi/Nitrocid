@@ -16,12 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using FluentFTP.Helpers;
-using KS.Drivers;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using System;
-using System.Collections.Generic;
 
 namespace KS.Scripting.Conditions.Types
 {

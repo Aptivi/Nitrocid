@@ -33,7 +33,6 @@ using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Kernel.Events;
 using KS.Kernel.Exceptions;
-using Renci.SshNet.Messages;
 
 namespace KS.Network.RPC
 {

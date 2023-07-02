@@ -26,7 +26,6 @@ using KS.Languages;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
-using VT.NET;
 using VT.NET.Tools;
 
 namespace KS.ConsoleBase.Inputs.Styles

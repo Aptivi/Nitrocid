@@ -30,7 +30,6 @@ using KS.Kernel;
 using ColorSeq;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using con = System.Console;
-using VT.NET;
 using VT.NET.Tools;
 
 namespace KS.Drivers.Console.Consoles

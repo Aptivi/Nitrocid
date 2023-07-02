@@ -20,7 +20,6 @@ using KS.Kernel.Debugging;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using VT.NET;
 using VT.NET.Tools;
 
 namespace KS.Misc.Text
