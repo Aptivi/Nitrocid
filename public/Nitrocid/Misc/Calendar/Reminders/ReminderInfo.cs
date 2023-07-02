@@ -49,8 +49,8 @@ namespace KS.Misc.Calendar.Reminders
         {
             if (!ReminderNotified)
             {
-                var ReminderNotification = new Notification(ReminderTitle, Translate.DoTranslation("Don't miss this!"), ReminderImportance, Notifications.NotificationManager.NotifType.Normal);
-                Notifications.NotificationManager.NotifySend(ReminderNotification);
+                var ReminderNotification = new Notification(ReminderTitle, Translate.DoTranslation("Don't miss this!"), ReminderImportance, NotificationManager.NotifType.Normal);
+                NotificationManager.NotifySend(ReminderNotification);
                 ReminderNotified = true;
             }
         }

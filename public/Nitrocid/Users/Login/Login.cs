@@ -208,7 +208,7 @@ namespace KS.Users.Login
             CurrentUserInfo = Users[signedInUser];
 
             // Set preferred language
-            if (!string.IsNullOrWhiteSpace(Login.CurrentUser.PreferredLanguage))
+            if (!string.IsNullOrWhiteSpace(CurrentUser.PreferredLanguage))
                 LanguageManager.currentUserLanguage = LanguageManager.Languages[CurrentUserInfo.PreferredLanguage];
             else
                 LanguageManager.currentUserLanguage = LanguageManager.currentLanguage;
