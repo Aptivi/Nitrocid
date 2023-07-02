@@ -31,6 +31,7 @@ namespace KS.Misc.Threading
     {
 
         internal static List<KernelThread> kernelThreads = new();
+        internal static bool kernelThreadsMustStop = false;
 
         /// <summary>
         /// Gets the operating system threads that Nitrocid makes use of within the host OS
@@ -55,11 +56,10 @@ namespace KS.Misc.Threading
         /// </summary>
         internal static void StopAllThreads()
         {
+            kernelThreadsMustStop = true;
             foreach (KernelThread ActiveThread in ActiveThreads)
-            {
                 ActiveThread.Stop();
-                ActiveThread.Wait();
-            }
+            kernelThreadsMustStop = false;
         }
 
         /// <summary>
