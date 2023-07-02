@@ -342,6 +342,10 @@ namespace KS.Kernel.Exceptions
         /// <summary>
         /// A contacts manager error occurred when trying to perform the requested operation. Make sure that the contact file exists in the correct folder and that it's a valid vCard 2.1, 3.0, or 4.0 contact file.
         /// </summary>
-        Contacts
+        Contacts,
+        /// <summary>
+        /// A UESH condition system failed while performing the requested operation. See the error message below for more details.
+        /// </summary>
+        UESHConditional
     }
 }

@@ -111,6 +111,7 @@ namespace KS.Kernel.Exceptions
                     { KernelExceptionType.OldModDetected,                   Translate.DoTranslation("When the kernel tried to load the specified mod, it requested loading \"Kernel Simulator\". Since the main application is renamed to Nitrocid KS, this mod can't be run safely. We advice you to upgrade the mod.") },
                     { KernelExceptionType.RegularExpression,                Translate.DoTranslation("A regular expression error happened while the text is being processed. Check your regular expression syntax and try again. If the time-out occurred, ensure that you don't recurse too much (don't be greedy).") },
                     { KernelExceptionType.Contacts,                         Translate.DoTranslation("A contacts manager error occurred when trying to perform the requested operation. Make sure that the contact file exists in the correct folder and that it's a valid vCard 2.1, 3.0, or 4.0 contact file.") },
+                    { KernelExceptionType.UESHConditional,                  Translate.DoTranslation("A UESH condition system failed while performing the requested operation. See the error message below for more details.") },
                 };
             }
         }

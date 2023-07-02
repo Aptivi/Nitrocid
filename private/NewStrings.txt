@@ -549,5 +549,9 @@ Shows the two useful URLs for manual.
 To access the user manual for general uses of Nitrocid, please visit the below link:
 To access the developer's manual for updated ways of making kernel modifications and screensavers, please visit the below link:
 Shows the kernel uptime
+A UESH condition system failed while performing the requested operation. See the error message below for more details.
+Can't register a condition that already exists.
+Can't register an empty condition.
+Can't unregister a condition that doesn't exist.
 
 ==========================================================================================================================================

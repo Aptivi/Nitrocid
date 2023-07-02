@@ -60,10 +60,13 @@ namespace KS.Scripting.Conditions
             { "none", new NoneCondition() }
         };
 
+        private readonly static Dictionary<string, BaseCondition> CustomConditions = new();
+
         /// <summary>
         /// The available condition names
         /// </summary>
-        public static Dictionary<string, BaseCondition> AvailableConditions => Conditions;
+        public static Dictionary<string, BaseCondition> AvailableConditions =>
+            (Dictionary<string, BaseCondition>)Conditions.Union(CustomConditions);
 
         /// <summary>
         /// Checks if the UESH condition was satisfied
@@ -189,6 +192,35 @@ namespace KS.Scripting.Conditions
                 }
             }
             return false;
+        }
+
+        /// <summary>
+        /// Registers a custom condition
+        /// </summary>
+        /// <param name="name">Condition name to register. Must be short and not contain whitespace</param>
+        /// <param name="condition">Condition class containing information about the condition</param>
+        public static void RegisterCondition(string name, BaseCondition condition)
+        {
+            if (Conditions.ContainsKey(name) || CustomConditions.ContainsKey(name))
+                throw new KernelException(KernelExceptionType.UESHConditional, Translate.DoTranslation("Can't register a condition that already exists."));
+            if (condition is null)
+                throw new KernelException(KernelExceptionType.UESHConditional, Translate.DoTranslation("Can't register an empty condition."));
+
+            // Add a custom condition
+            CustomConditions.Add(name, condition);
+        }
+
+        /// <summary>
+        /// Unregisters a custom condition
+        /// </summary>
+        /// <param name="name">Condition name to unregister. Must be short and not contain whitespace</param>
+        public static void UnregisterCondition(string name)
+        {
+            if (!CustomConditions.ContainsKey(name))
+                throw new KernelException(KernelExceptionType.UESHConditional, Translate.DoTranslation("Can't unregister a condition that doesn't exist."));
+
+            // Add a custom condition
+            CustomConditions.Remove(name);
         }
 
     }
