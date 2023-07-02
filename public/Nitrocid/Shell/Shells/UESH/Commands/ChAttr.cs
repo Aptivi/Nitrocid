@@ -25,6 +25,7 @@ using KS.Files.Querying;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
+using KS.Users.Permissions;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -65,6 +66,7 @@ namespace KS.Shell.Shells.UESH.Commands
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
             string NeutralizedFilePath = Filesystem.NeutralizePath(ListArgsOnly[0]);
+            PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
             if (Checking.FileExists(NeutralizedFilePath))
             {
                 if (ListArgsOnly[1].EndsWith("Normal") | ListArgsOnly[1].EndsWith("ReadOnly") | ListArgsOnly[1].EndsWith("Hidden") | ListArgsOnly[1].EndsWith("Archive"))

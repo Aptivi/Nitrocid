@@ -19,14 +19,17 @@
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using KS.Users;
+using KS.Users.Permissions;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
     class LsUsersCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => 
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        {
+            PermissionsTools.Demand(PermissionTypes.ManageUsers);
             ListWriterColor.WriteList(UserManagement.ListAllUsers());
-
+        }
     }
 }

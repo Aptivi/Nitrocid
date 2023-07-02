@@ -39,6 +39,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
+            PermissionsTools.Demand(PermissionTypes.ManageUsers);
             string target = ListArgsOnly[0];
             string mode = ListArgsOnly[1];
             string perm = ListArgsOnly[2];

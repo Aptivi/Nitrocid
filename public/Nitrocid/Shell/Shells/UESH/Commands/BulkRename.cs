@@ -21,6 +21,7 @@ using KS.Files.Folders;
 using KS.Files.Operations;
 using KS.Files.Querying;
 using KS.Shell.ShellBase.Commands;
+using KS.Users.Permissions;
 using System.IO;
 
 namespace KS.Shell.Shells.UESH.Commands
@@ -36,6 +37,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
+            PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
             string targetDir = ListArgsOnly[0];
             string pattern = ListArgsOnly[1];
             string newName = ListArgsOnly[2];

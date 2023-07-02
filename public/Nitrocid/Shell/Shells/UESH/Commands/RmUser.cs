@@ -20,6 +20,7 @@ using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using KS.Users;
+using KS.Users.Permissions;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -38,6 +39,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
+            PermissionsTools.Demand(PermissionTypes.ManageUsers);
             UserManagement.RemoveUser(ListArgsOnly[0]);
             if (!UserManagement.UserExists(ListArgsOnly[0]))
                 TextWriterColor.Write(Translate.DoTranslation("User {0} removed."), ListArgsOnly[0]);

@@ -23,6 +23,7 @@ using KS.Languages;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Events;
+using KS.Users.Permissions;
 
 namespace KS.Files.Folders
 {
@@ -79,6 +80,7 @@ namespace KS.Files.Folders
         /// </summary>
         public static void SaveCurrDir()
         {
+            // TODO: Deal with this, since it's reduced to just a wrapper to CreateConfig()
             Config.CreateConfig();
         }
 

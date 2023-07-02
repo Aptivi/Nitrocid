@@ -20,6 +20,7 @@ using System;
 using System.IO;
 using KS.Drivers;
 using KS.Kernel.Debugging;
+using KS.Users.Permissions;
 
 namespace KS.Files.Operations
 {

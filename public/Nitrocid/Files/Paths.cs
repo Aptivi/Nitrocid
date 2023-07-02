@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.IO;
 using System.Reflection;
 using KS.Kernel;
 using KS.Kernel.Exceptions;
@@ -36,7 +37,7 @@ namespace KS.Files
         /// Path to KS executable folder
         /// </summary>
         public static string ExecPath =>
-            System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
         /// <summary>
         /// Platform-dependent home path
@@ -46,13 +47,9 @@ namespace KS.Files
             get
             {
                 if (KernelPlatform.IsOnUnix())
-                {
                     return Environment.GetEnvironmentVariable("HOME");
-                }
                 else
-                {
                     return Environment.GetEnvironmentVariable("USERPROFILE").Replace(@"\", "/");
-                }
             }
         }
 
@@ -64,13 +61,9 @@ namespace KS.Files
             get
             {
                 if (KernelPlatform.IsOnUnix())
-                {
                     return Environment.GetEnvironmentVariable("HOME") + "/.config/ks";
-                }
                 else
-                {
                     return (Environment.GetEnvironmentVariable("LOCALAPPDATA") + "/KS").Replace("\\", "/");
-                }
             }
         }
 
@@ -82,13 +75,9 @@ namespace KS.Files
             get
             {
                 if (KernelPlatform.IsOnUnix())
-                {
                     return "/tmp";
-                }
                 else
-                {
                     return Environment.GetEnvironmentVariable("TEMP").Replace(@"\", "/");
-                }
             }
         }
 
@@ -100,13 +89,9 @@ namespace KS.Files
             get
             {
                 if (KernelPlatform.IsOnUnix())
-                {
                     return Environment.GetEnvironmentVariable("HOME") + "/.config/retroks/exec/coreclr";
-                }
                 else
-                {
                     return (Environment.GetEnvironmentVariable("LOCALAPPDATA") + "/RetroKS/exec/coreclr").Replace("\\", "/");
-                }
             }
         }
 

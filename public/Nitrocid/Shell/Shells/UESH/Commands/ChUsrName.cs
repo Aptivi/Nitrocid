@@ -22,6 +22,7 @@ using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using KS.Users;
 using KS.Users.Login;
+using KS.Users.Permissions;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -42,12 +43,11 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
+            PermissionsTools.Demand(PermissionTypes.ManageUsers);
             UserManagement.ChangeUsername(ListArgsOnly[0], ListArgsOnly[1]);
             TextWriterColor.Write(Translate.DoTranslation("Username has been changed to {0}!"), ListArgsOnly[1]);
             if (ListArgsOnly[0] == Login.CurrentUser.Username)
-            {
                 Flags.LogoutRequested = true;
-            }
         }
 
     }

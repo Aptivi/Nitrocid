@@ -20,6 +20,7 @@ using System;
 using System.IO;
 using KS.Drivers;
 using KS.Kernel.Debugging;
+using KS.Users.Permissions;
 
 namespace KS.Files.Attributes
 {
@@ -64,7 +65,8 @@ namespace KS.Files.Attributes
         /// <param name="attributes">All attributes</param>
         /// <param name="attributesToRemove">Attributes to remove</param>
         /// <returns>Attributes without target attribute</returns>
-        public static FileAttributes RemoveAttribute(this FileAttributes attributes, FileAttributes attributesToRemove) => attributes & ~attributesToRemove;
+        public static FileAttributes RemoveAttribute(this FileAttributes attributes, FileAttributes attributesToRemove) =>
+            attributes & ~attributesToRemove;
 
         /// <summary>
         /// Removes attribute from file

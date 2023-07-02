@@ -18,6 +18,7 @@
 
 using KS.Files.Operations;
 using KS.Shell.ShellBase.Commands;
+using KS.Users.Permissions;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -30,7 +31,10 @@ namespace KS.Shell.Shells.UESH.Commands
     class MoveCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Moving.MoveFileOrDir(ListArgsOnly[0], ListArgsOnly[1]);
-
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        {
+            PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
+            Moving.MoveFileOrDir(ListArgsOnly[0], ListArgsOnly[1]);
+        }
     }
 }

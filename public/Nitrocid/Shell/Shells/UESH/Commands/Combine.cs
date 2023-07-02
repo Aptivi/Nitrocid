@@ -25,6 +25,7 @@ using KS.Files.Querying;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
+using KS.Users.Permissions;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -39,6 +40,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
+            PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
             string OutputPath = Filesystem.NeutralizePath(ListArgsOnly[0]);
             string InputPath = ListArgsOnly[1];
             var CombineInputPaths = ListArgsOnly.Skip(2).ToArray();

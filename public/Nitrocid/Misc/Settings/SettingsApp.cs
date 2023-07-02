@@ -43,6 +43,7 @@ using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using KS.Shell.Prompts;
+using KS.Users.Permissions;
 using Newtonsoft.Json.Linq;
 
 namespace KS.Misc.Settings
@@ -58,6 +59,7 @@ namespace KS.Misc.Settings
         /// </summary>
         public static void OpenMainPage(ConfigType SettingsType)
         {
+            PermissionsTools.Demand(PermissionTypes.ManipulateSettings);
             bool PromptFinished = false;
             var SettingsToken = OpenSettingsResource(SettingsType);
             int MaxSections = SettingsToken.Count();
@@ -207,6 +209,7 @@ namespace KS.Misc.Settings
         /// <param name="SettingsType">Settings type</param>
         public static void OpenSection(string Section, JToken SettingsToken, ConfigType SettingsType)
         {
+            PermissionsTools.Demand(PermissionTypes.ManipulateSettings);
             try
             {
                 // General variables
@@ -348,6 +351,7 @@ namespace KS.Misc.Settings
         /// <param name="SettingsToken">Settings token</param>
         public static void OpenKey(string Section, int KeyNumber, JToken SettingsToken, ConfigType SettingsType)
         {
+            PermissionsTools.Demand(PermissionTypes.ManipulateSettings);
             try
             {
                 // Section and key

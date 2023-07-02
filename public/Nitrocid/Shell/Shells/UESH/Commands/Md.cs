@@ -18,6 +18,7 @@
 
 using KS.Files.Operations;
 using KS.Shell.ShellBase.Commands;
+using KS.Users.Permissions;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -32,7 +33,10 @@ namespace KS.Shell.Shells.UESH.Commands
     class MdCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Making.MakeDirectory(ListArgsOnly[0]);
-
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        {
+            PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
+            Making.MakeDirectory(ListArgsOnly[0]);
+        }
     }
 }

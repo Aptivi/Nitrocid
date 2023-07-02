@@ -34,6 +34,30 @@ namespace KS.Users.Permissions
         /// <summary>
         /// Allows the user to run strict commands
         /// </summary>
-        RunStrictCommands = 4
+        RunStrictCommands = 4,
+        /// <summary>
+        /// Allows the user to perform the filesystem operations
+        /// </summary>
+        ManageFilesystem = 8,
+        /// <summary>
+        /// Allows the user to manipulate with the kernel settings
+        /// </summary>
+        ManipulateSettings = 16,
+        /// <summary>
+        /// Allows the user to execute UESH scripts
+        /// </summary>
+        ExecuteScripts = 32,
+        /// <summary>
+        /// Allows the user to execute processes
+        /// </summary>
+        ExecuteProcesses = 64,
+        /// <summary>
+        /// Allows the user to manage the users
+        /// </summary>
+        ManageUsers = 128,
+        /// <summary>
+        /// Allows the user to manage the kernel mods
+        /// </summary>
+        ManageMods = 256,
     }
 }

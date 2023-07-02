@@ -349,6 +349,7 @@ namespace KS.Shell
                                     try
                                     {
                                         // Create a new instance of process
+                                        PermissionsTools.Demand(PermissionTypes.ExecuteProcesses);
                                         if (Parsing.TryParsePath(TargetFile))
                                         {
                                             var targetCommand = Command.Replace(TargetFileName, "");
@@ -371,6 +372,7 @@ namespace KS.Shell
                                 {
                                     try
                                     {
+                                        PermissionsTools.Demand(PermissionTypes.ExecuteScripts);
                                         DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded because it's a UESH script.", commandName);
                                         UESHParse.Execute(TargetFile, commandArguments.ArgumentsText);
                                     }

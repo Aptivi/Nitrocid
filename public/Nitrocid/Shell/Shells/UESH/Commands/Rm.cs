@@ -19,6 +19,7 @@
 using KS.Files;
 using KS.Files.Operations;
 using KS.Shell.ShellBase.Commands;
+using KS.Users.Permissions;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -33,6 +34,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
+            PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
             foreach (string Path in ListArgsOnly)
             {
                 string NeutPath = Filesystem.NeutralizePath(Path);

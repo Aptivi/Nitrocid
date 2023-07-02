@@ -21,6 +21,7 @@ using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using KS.Users;
+using KS.Users.Permissions;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -39,6 +40,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
+            PermissionsTools.Demand(PermissionTypes.ManageUsers);
             if (ListArgsOnly.Length == 1)
             {
                 TextWriterColor.Write(Translate.DoTranslation("usrmgr: Creating username {0}..."), ListArgsOnly[0]);
