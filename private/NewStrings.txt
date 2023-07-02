@@ -540,5 +540,10 @@ Imaginary to Radius in Radians:
 Angle in Radians:
 Exponential:
 Triangular:
+Child thread start action can't be null.
+Can't add a child thread when the parent thread, in this case this thread, is already running.
+Can't remove a child thread when the parent thread, in this case this thread, is already running.
+Tests the kernel thread
+Tests the child kernel thread
 
 ==========================================================================================================================================

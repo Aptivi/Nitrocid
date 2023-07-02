@@ -107,6 +107,8 @@ namespace KS.Kernel.Debugging.Testing
             { "NetworkCheck",                   new Facades.NetworkCheck() },
             { "LoadSavers",                     new Facades.LoadSavers() },
             { "ChangeLanguage",                 new Facades.ChangeLanguage() },
+            { "KernelThreadTest",               new Facades.KernelThreadTest() },
+            { "KernelThreadChildTest",          new Facades.KernelThreadChildTest() },
         };
 
         internal static void Open()
