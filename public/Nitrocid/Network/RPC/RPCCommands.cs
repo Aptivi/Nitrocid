@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
+using System.Text;
 using System.Threading;
 using Extensification.StringExts;
 using KS.Kernel;
@@ -32,6 +33,7 @@ using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Kernel.Events;
 using KS.Kernel.Exceptions;
+using Renci.SshNet.Messages;
 
 namespace KS.Network.RPC
 {
@@ -40,6 +42,7 @@ namespace KS.Network.RPC
     /// </summary>
     public static class RPCCommands
     {
+        private static bool received = false;
 
         /// <summary>
         /// List of RPC commands.<br/>
@@ -95,7 +98,7 @@ namespace KS.Network.RPC
                     DebugWriter.WriteDebug(DebugLevel.I, "Command found.");
 
                     // Check the request type
-                    string RequestType = Cmd.Substring(Cmd.IndexOf(":") + 1, Finish: Cmd.IndexOf(">"));
+                    string RequestType = Cmd.Substring(Cmd.IndexOf(":") + 1, Finish: Cmd.IndexOf(">") - 1);
                     var ByteMsg = Array.Empty<byte>();
                     switch (RequestType)
                     {
@@ -109,7 +112,7 @@ namespace KS.Network.RPC
                             {
                                 // Populate the byte message to send the confirmation to
                                 DebugWriter.WriteDebug(DebugLevel.I, "Stream opened for device {0}", Arg);
-                                ByteMsg = System.Text.Encoding.Default.GetBytes($"{RequestType}Confirm, " + Arg + CharManager.NewLine);
+                                ByteMsg = Encoding.Default.GetBytes($"{RequestType}Confirm, " + Arg + CharManager.NewLine);
                                 break;
                             }
 
@@ -143,72 +146,16 @@ namespace KS.Network.RPC
         public static void ReceiveCommand()
         {
             var RemoteEndpoint = new IPEndPoint(IPAddress.Any, RemoteProcedure.RPCPort);
-            while (RemoteProcedure.RPCStarted)
+            while (!RemoteProcedure.rpcStopping)
             {
-                Thread.Sleep(1);
-                byte[] MessageBuffer;
-                string Message = "";
                 try
                 {
-                    MessageBuffer = RemoteProcedure.RPCListen.Receive(ref RemoteEndpoint);
-                    Message = System.Text.Encoding.Default.GetString(MessageBuffer);
-
-                    // If the message is not empty, parse it
-                    if (!string.IsNullOrEmpty(Message))
+                    var receiveResult = RemoteProcedure.RPCListen.BeginReceive(new AsyncCallback(AcknowledgeMessage), null);
+                    while (!received)
                     {
-                        DebugWriter.WriteDebug((DebugLevel)Convert.ToInt32("RPC: Received message {0}"), Message);
-                        EventsManager.FireEvent(EventType.RPCCommandReceived, Message, RemoteEndpoint.Address.ToString(), RemoteEndpoint.Port);
-
-                        // Iterate through every confirmation message
-                        if (Message.StartsWith("ShutdownConfirm"))
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Shutdown confirmed from remote access.");
-                            KernelTools.RPCPowerListener.Start(PowerMode.Shutdown);
-                        }
-                        else if (Message.StartsWith("RebootConfirm"))
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Reboot confirmed from remote access.");
-                            KernelTools.RPCPowerListener.Start(PowerMode.Reboot);
-                        }
-                        else if (Message.StartsWith("RebootSafeConfirm"))
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Reboot to safe mode confirmed from remote access.");
-                            KernelTools.RPCPowerListener.Start(PowerMode.RebootSafe);
-                        }
-                        else if (Message.StartsWith("SaveScrConfirm"))
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Save screen confirmed from remote access.");
-                            Screensaver.ShowSavers();
-                            while (Screensaver.inSaver)
-                                Thread.Sleep(1);
-                        }
-                        else if (Message.StartsWith("ExecConfirm"))
-                        {
-                            if (Flags.LoggedIn)
-                            {
-                                DebugWriter.WriteDebug(DebugLevel.I, "Exec confirmed from remote access.");
-                                TextWriterColor.Write();
-                                Shell.Shell.GetLine(Message.Replace("ExecConfirm, ", "").Replace(CharManager.NewLine, ""));
-                            }
-                            else
-                            {
-                                DebugWriter.WriteDebug(DebugLevel.W, "Tried to exec from remote access while not logged in. Dropping packet...");
-                            }
-                        }
-                        else if (Message.StartsWith("AckConfirm"))
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.I, "{0} says \"Hello.\"", Message.Replace("AckConfirm, ", "").Replace(CharManager.NewLine, ""));
-                        }
-                        else if (Message.StartsWith("PingConfirm"))
-                        {
-                            string IPAddr = Message.Replace("PingConfirm, ", "").Replace(CharManager.NewLine, "");
-                            DebugWriter.WriteDebug(DebugLevel.I, "{0} pinged this device!", IPAddr);
-                            NotificationManager.NotifySend(new Notification(Translate.DoTranslation("Ping!"), Translate.DoTranslation("{0} pinged you.").FormatString(IPAddr), NotificationManager.NotifPriority.Low, NotificationManager.NotifType.Normal));
-                        }
-                        else
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.W, "Not found. Message was {0}", Message);
-                        }
+                        Thread.Sleep(100);
+                        if (RemoteProcedure.rpcStopping)
+                            break;
                     }
                 }
                 catch (Exception ex)
@@ -226,11 +173,87 @@ namespace KS.Network.RPC
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "Fatal error: {0}", ex.Message);
                         DebugWriter.WriteDebugStackTrace(ex);
-                        EventsManager.FireEvent(EventType.RPCCommandError, Message, ex, RemoteEndpoint.Address.ToString(), RemoteEndpoint.Port);
+                        EventsManager.FireEvent(EventType.RPCCommandError, ex, RemoteEndpoint.Address.ToString(), RemoteEndpoint.Port);
                     }
                 }
             }
         }
 
+        private static void AcknowledgeMessage(IAsyncResult asyncResult)
+        {
+            received = true;
+            try
+            {
+                if (RemoteProcedure.RPCListen is null)
+                    return;
+                var endpoint = new IPEndPoint(IPAddress.Any, RemoteProcedure.RPCPort);
+                byte[] MessageBuffer = RemoteProcedure.RPCListen.EndReceive(asyncResult, ref endpoint);
+                string Message = Encoding.Default.GetString(MessageBuffer);
+
+                // If the message is not empty, parse it
+                if (!string.IsNullOrEmpty(Message))
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "RPC: Received message {0}", Message);
+                    EventsManager.FireEvent(EventType.RPCCommandReceived, Message, endpoint.Address.ToString(), endpoint.Port);
+
+                    // Iterate through every confirmation message
+                    if (Message.StartsWith("ShutdownConfirm"))
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.I, "Shutdown confirmed from remote access.");
+                        KernelTools.RPCPowerListener.Start(PowerMode.Shutdown);
+                    }
+                    else if (Message.StartsWith("RebootConfirm"))
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.I, "Reboot confirmed from remote access.");
+                        KernelTools.RPCPowerListener.Start(PowerMode.Reboot);
+                    }
+                    else if (Message.StartsWith("RebootSafeConfirm"))
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.I, "Reboot to safe mode confirmed from remote access.");
+                        KernelTools.RPCPowerListener.Start(PowerMode.RebootSafe);
+                    }
+                    else if (Message.StartsWith("SaveScrConfirm"))
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.I, "Save screen confirmed from remote access.");
+                        Screensaver.ShowSavers();
+                        while (Screensaver.inSaver)
+                            Thread.Sleep(1);
+                    }
+                    else if (Message.StartsWith("ExecConfirm"))
+                    {
+                        if (Flags.LoggedIn)
+                        {
+                            DebugWriter.WriteDebug(DebugLevel.I, "Exec confirmed from remote access.");
+                            TextWriterColor.Write();
+                            Shell.Shell.GetLine(Message.Replace("ExecConfirm, ", "").Replace(CharManager.NewLine, ""));
+                        }
+                        else
+                        {
+                            DebugWriter.WriteDebug(DebugLevel.W, "Tried to exec from remote access while not logged in. Dropping packet...");
+                        }
+                    }
+                    else if (Message.StartsWith("AckConfirm"))
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.I, "{0} says \"Hello.\"", Message.Replace("AckConfirm, ", "").Replace(CharManager.NewLine, ""));
+                    }
+                    else if (Message.StartsWith("PingConfirm"))
+                    {
+                        string IPAddr = Message.Replace("PingConfirm, ", "").Replace(CharManager.NewLine, "");
+                        DebugWriter.WriteDebug(DebugLevel.I, "{0} pinged this device!", IPAddr);
+                        NotificationManager.NotifySend(new Notification(Translate.DoTranslation("Ping!"), Translate.DoTranslation("{0} pinged you.").FormatString(IPAddr), NotificationManager.NotifPriority.Low, NotificationManager.NotifType.Normal));
+                    }
+                    else
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.W, "Not found. Message was {0}", Message);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to acknowledge message: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
+            received = false;
+        }
     }
 }
