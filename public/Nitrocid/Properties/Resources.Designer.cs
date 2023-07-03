@@ -664,6 +664,32 @@ namespace Properties.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to {
+        ///    &quot;Metadata&quot;: {
+        ///        &quot;Name&quot;: &quot;DefaultVivid&quot;,
+        ///        &quot;Description&quot;: &quot;The vivid default theme for the kernel&quot;
+        ///    },
+        ///    &quot;InputColor&quot;: &quot;15&quot;,
+        ///    &quot;LicenseColor&quot;: &quot;15&quot;,
+        ///    &quot;ContKernelErrorColor&quot;: &quot;11&quot;,
+        ///    &quot;UncontKernelErrorColor&quot;: &quot;200;0;0&quot;,
+        ///    &quot;HostNameShellColor&quot;: &quot;0;200;0&quot;,
+        ///    &quot;UserNameShellColor&quot;: &quot;10&quot;,
+        ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        ///    &quot;NeutralTextColor&quot;: &quot;200;200;200&quot;,
+        ///    &quot;ListEntryColor&quot;: &quot;0;200;200&quot;,
+        ///    &quot;ListValueColor&quot;: &quot;8&quot;,
+        ///    &quot;StageColor&quot;: &quot;10&quot;,
+        ///    &quot;ErrorColor&quot;: &quot;200;0;0&quot;,
+        ///    &quot;WarningC [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string DefaultVivid {
+            get {
+                return ResourceManager.GetString("DefaultVivid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
         ///  &quot;Name&quot;: &quot;Dutch&quot;,
         ///  &quot;Transliterable&quot;: false,
         ///  &quot;Localizations&quot;: {

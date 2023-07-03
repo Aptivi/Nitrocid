@@ -65,6 +65,7 @@ namespace KS.ConsoleBase.Themes
             { "Dawn Aurora", new ThemeInfo("Dawn_Aurora") },
             { "Darcula", new ThemeInfo("Darcula") },
             { "Debian", new ThemeInfo("Debian") },
+            { "DefaultVivid", new ThemeInfo("DefaultVivid") },
             { "EDM", new ThemeInfo("EDM") },
             { "Fast_X", new ThemeInfo("Fast_X") },
             { "Fast_X_FG", new ThemeInfo("Fast_X_FG") },
