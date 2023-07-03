@@ -555,5 +555,10 @@ Can't register an empty condition.
 Can't unregister a condition that doesn't exist.
 An invalid SQL editor operation is being performed.
 SQL Shell Prompt Preset
+Posts the file to the HTTP server using the specified request
+Posts the string to the HTTP server using the specified request
+Uploading file {0}...
+Posting file {0}...
+Posting string {0}...
 
 ==========================================================================================================================================

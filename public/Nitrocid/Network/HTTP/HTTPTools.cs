@@ -17,8 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
+using KS.Files;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.Shells.HTTP;
@@ -94,6 +96,67 @@ namespace KS.Network.HTTP
                 var TargetUri = new Uri(NeutralizeUri(ContentUri));
                 var stringContent = new StringContent(ContentString);
                 return await HTTPShellCommon.ClientHTTP.PutAsync(TargetUri, stringContent);
+            }
+            else
+            {
+                throw new KernelException(KernelExceptionType.HTTPShell, Translate.DoTranslation("You must connect to server before performing transmission."));
+            }
+        }
+
+        /// <summary>
+        /// Puts the specified file to the HTTP server
+        /// </summary>
+        /// <param name="ContentUri">Content URI (starts after the HTTP hostname)</param>
+        /// <param name="ContentPath">Path to the file to open a stream and put it to the HTTP server</param>
+        public async static Task<HttpResponseMessage> HttpPutFile(string ContentUri, string ContentPath)
+        {
+            if (HTTPShellCommon.HTTPConnected)
+            {
+                ContentPath = Filesystem.NeutralizePath(ContentPath);
+                var TargetUri = new Uri(NeutralizeUri(ContentUri));
+                var TargetStream = new FileStream(ContentPath, FileMode.Open, FileAccess.Read);
+                var stringContent = new StreamContent(TargetStream);
+                return await HTTPShellCommon.ClientHTTP.PutAsync(TargetUri, stringContent);
+            }
+            else
+            {
+                throw new KernelException(KernelExceptionType.HTTPShell, Translate.DoTranslation("You must connect to server before performing transmission."));
+            }
+        }
+
+        /// <summary>
+        /// Posts the specified content string to the HTTP server
+        /// </summary>
+        /// <param name="ContentUri">Content URI (starts after the HTTP hostname)</param>
+        /// <param name="ContentString">String to post to the HTTP server</param>
+        public async static Task<HttpResponseMessage> HttpPostString(string ContentUri, string ContentString)
+        {
+            if (HTTPShellCommon.HTTPConnected)
+            {
+                var TargetUri = new Uri(NeutralizeUri(ContentUri));
+                var stringContent = new StringContent(ContentString);
+                return await HTTPShellCommon.ClientHTTP.PostAsync(TargetUri, stringContent);
+            }
+            else
+            {
+                throw new KernelException(KernelExceptionType.HTTPShell, Translate.DoTranslation("You must connect to server before performing transmission."));
+            }
+        }
+
+        /// <summary>
+        /// Posts the specified file to the HTTP server
+        /// </summary>
+        /// <param name="ContentUri">Content URI (starts after the HTTP hostname)</param>
+        /// <param name="ContentPath">Path to the file to open a stream and post it to the HTTP server</param>
+        public async static Task<HttpResponseMessage> HttpPostFile(string ContentUri, string ContentPath)
+        {
+            if (HTTPShellCommon.HTTPConnected)
+            {
+                ContentPath = Filesystem.NeutralizePath(ContentPath);
+                var TargetUri = new Uri(NeutralizeUri(ContentUri));
+                var TargetStream = new FileStream(ContentPath, FileMode.Open, FileAccess.Read);
+                var stringContent = new StreamContent(TargetStream);
+                return await HTTPShellCommon.ClientHTTP.PostAsync(TargetUri, stringContent);
             }
             else
             {
