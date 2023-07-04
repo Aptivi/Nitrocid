@@ -66,7 +66,7 @@ namespace KS.Scripting.Conditions
         /// The available condition names
         /// </summary>
         public static Dictionary<string, BaseCondition> AvailableConditions =>
-            (Dictionary<string, BaseCondition>)Conditions.Union(CustomConditions);
+            Conditions.Union(CustomConditions).ToDictionary((kvp) => kvp.Key, (kvp) => kvp.Value);
 
         /// <summary>
         /// Checks if the UESH condition was satisfied
