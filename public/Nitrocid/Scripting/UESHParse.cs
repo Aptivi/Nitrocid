@@ -174,7 +174,8 @@ namespace KS.Scripting
                                 while (true)
                                 {
                                     l++;
-                                    Line = FileLines[l];
+                                    if (l < FileLines.Length)
+                                        Line = FileLines[l];
                                     string blockStackIndicator = new('|', commandStackNum + 1);
                                     if (!Line.StartsWith(blockStackIndicator))
                                     {
@@ -188,6 +189,8 @@ namespace KS.Scripting
                                         commandStackNum = newStackNum;
                                         break;
                                     }
+                                    if (l >= FileLines.Length)
+                                        return;
                                 }
                                 Line = Line[commandStackNum..];
                                 retryLoopCondition = false;
