@@ -23,6 +23,7 @@ using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Drivers;
 using KS.Kernel;
+using KS.Misc.Reflection;
 using KS.Misc.Writers.ConsoleWriters;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
@@ -43,12 +44,13 @@ namespace KS.Misc.Writers.FancyWriters
         public static void WriteSeparator(string Text, bool PrintSuffix, params object[] Vars)
         {
             bool canPosition = !DriverHandler.CurrentConsoleDriver.IsDumb;
+            Text = StringManipulate.FormatString(Text, Vars);
 
             // Print the suffix and the text
             if (!string.IsNullOrWhiteSpace(Text))
             {
                 if (PrintSuffix)
-                    TextWriterColor.Write("- ", false, KernelColorType.Separator, Vars);
+                    TextWriterColor.Write("- ", false, KernelColorType.Separator);
                 if (!Text.EndsWith("-"))
                     Text += " ";
 
@@ -72,7 +74,7 @@ namespace KS.Misc.Writers.FancyWriters
 
                 // Render the text accordingly
                 Text = canPosition ? Text.Truncate(ConsoleWrapper.WindowWidth - 6) : Text;
-                TextWriterColor.Write(Text, false, KernelColorType.SeparatorText, Vars);
+                TextWriterColor.Write(Text, false, KernelColorType.SeparatorText);
             }
 
             // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
@@ -155,6 +157,7 @@ namespace KS.Misc.Writers.FancyWriters
         public static void WriteSeparator(string Text, bool PrintSuffix, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
         {
             bool canPosition = !DriverHandler.CurrentConsoleDriver.IsDumb;
+            Text = StringManipulate.FormatString(Text, Vars);
 
             // Print the suffix and the text
             if (!string.IsNullOrWhiteSpace(Text))
@@ -166,7 +169,7 @@ namespace KS.Misc.Writers.FancyWriters
 
                 // Render the text accordingly
                 Text = canPosition ? Text.Truncate(ConsoleWrapper.WindowWidth - 6) : Text;
-                TextWriterColor.Write(Text, false, ForegroundColor, BackgroundColor, Vars);
+                TextWriterColor.Write(Text, false, ForegroundColor, BackgroundColor);
             }
 
             // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
