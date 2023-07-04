@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using Extensification.StringExts;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using System.Text.RegularExpressions;
@@ -102,11 +103,21 @@ namespace KS.Drivers.Regexp
         }
 
         /// <inheritdoc/>
-        public string Escape(string text) =>
-            Regex.Escape(text);
+        public string Escape(string text)
+        {
+            return text.ReplaceAllRange(
+                new string[] { @"\", @"*", @"+", @"?", @"|", @"{", @"[", @"(", @")", @"^", @"$", @".", @"#", @" " },
+                new string[] { @"\\", @"\*", @"\+", @"\?", @"\|", @"\{", @"\[", @"\(", @"\)", @"\^", @"\$", @"\.", @"\#", @"\ " }
+            );
+        }
 
         /// <inheritdoc/>
-        public string Unescape(string text) =>
-            Regex.Unescape(text);
+        public string Unescape(string text)
+        {
+            return text.ReplaceAllRange(
+                new string[] { @"\\", @"\*", @"\+", @"\?", @"\|", @"\{", @"\[", @"\(", @"\)", @"\^", @"\$", @"\.", @"\#", @"\ " },
+                new string[] { @"\", @"*", @"+", @"?", @"|", @"{", @"[", @"(", @")", @"^", @"$", @".", @"#", @" " }
+            );
+        }
     }
 }

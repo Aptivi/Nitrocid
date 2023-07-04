@@ -253,13 +253,18 @@ namespace KS.Shell
                 // Check to see if the command is a comment
                 if ((string.IsNullOrEmpty(Command) | (Command?.StartsWithAnyOf(new[] { " ", "#" }))) == false)
                 {
-                    // Get the index of the first space
-                    int indexCmd = Command.IndexOf(" ");
-                    DebugWriter.WriteDebug(DebugLevel.I, "Prototype indexCmd and Command: {0}, {1}", indexCmd, Command);
-                    if (indexCmd == -1)
-                        indexCmd = Command.Length;
-                    string commandName = Command.Substring(0, indexCmd);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Finished indexCmd and finalCommand: {0}, {1}", indexCmd, commandName);
+                    // Get the command name
+                    var words = DriverHandler.CurrentRegexpDriver.Matches(Command, @"(""(.+?)(?<![^\\]\\)"")|('(.+?)(?<![^\\]\\)')|(`(.+?)(?<![^\\]\\)`)|(?:[^\\\s]|\\.)+|\S+");
+                    string commandName = words[0].Value.ReleaseDoubleQuotes();
+                    TargetFile = DriverHandler.CurrentRegexpDriver.Unescape(commandName);
+                    bool existsInPath = PathLookupTools.FileExistsInPath(commandName, ref TargetFile);
+                    bool pathValid = Parsing.TryParsePath(TargetFile);
+                    if (!existsInPath || string.IsNullOrEmpty(TargetFile))
+                        TargetFile = Filesystem.NeutralizePath(commandName);
+                    if (pathValid)
+                        TargetFileName = Path.GetFileName(TargetFile);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Finished finalCommand: {0}", commandName);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Finished TargetFile: {0}", TargetFile);
 
                     // Get arguments
                     var commandArguments = new ProvidedCommandArgumentsInfo(Command, ShellType);
@@ -335,15 +340,8 @@ namespace KS.Shell
                                     }
                                 }
                             }
-                            else if (Parsing.TryParsePath(TargetFile) & ShellType == "Shell")
+                            else if (pathValid & ShellType == "Shell")
                             {
-                                // Scan PATH for file existence and set file name as needed
-                                PathLookupTools.FileExistsInPath(commandName, ref TargetFile);
-                                if (string.IsNullOrEmpty(TargetFile))
-                                    TargetFile = Filesystem.NeutralizePath(commandName);
-                                if (Parsing.TryParsePath(TargetFile))
-                                    TargetFileName = Path.GetFileName(TargetFile);
-
                                 // If we're in the UESH shell, parse the script file or executable file
                                 if (Checking.FileExists(TargetFile) & !TargetFile.EndsWith(".uesh"))
                                 {
@@ -352,7 +350,7 @@ namespace KS.Shell
                                     {
                                         // Create a new instance of process
                                         PermissionsTools.Demand(PermissionTypes.ExecuteProcesses);
-                                        if (Parsing.TryParsePath(TargetFile))
+                                        if (pathValid)
                                         {
                                             var targetCommand = Command.Replace(TargetFileName, "");
                                             targetCommand.RemoveNullsOrWhitespacesAtTheBeginning();
@@ -386,13 +384,13 @@ namespace KS.Shell
                                 }
                                 else
                                 {
-                                    DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", commandName, indexCmd);
+                                    DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: command {0} not found parsing target file", commandName);
                                     TextWriterColor.Write(Translate.DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), true, KernelColorType.Error, commandName);
                                 }
                             }
                             else
                             {
-                                DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", commandName, indexCmd);
+                                DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: command {0} not found", commandName);
                                 TextWriterColor.Write(Translate.DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), true, KernelColorType.Error, commandName);
                             }
                         }

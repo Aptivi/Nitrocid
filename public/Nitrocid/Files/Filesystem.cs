@@ -28,6 +28,7 @@ using KS.Kernel;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Configuration;
 using static Extensification.StringExts.Manipulation;
+using KS.Drivers;
 
 namespace KS.Files
 {
@@ -67,6 +68,10 @@ namespace KS.Files
             Source ??= "";
             ThrowOnInvalidPath(Path);
             ThrowOnInvalidPath(Source);
+
+            // Unescape the characters
+            Path = DriverHandler.CurrentRegexpDriver.Unescape(Path);
+            Source = DriverHandler.CurrentRegexpDriver.Unescape(Source);
 
             // Replace backslashes with slashes if any.
             Path = Path.Replace(@"\", "/");
