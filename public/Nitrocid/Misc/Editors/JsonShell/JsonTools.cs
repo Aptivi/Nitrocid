@@ -29,6 +29,7 @@ using KS.Languages;
 using KS.Shell.Shells.Json;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Renci.SshNet.Security;
 
 namespace KS.Misc.Editors.JsonShell
 {
@@ -196,6 +197,24 @@ namespace KS.Misc.Editors.JsonShell
         }
 
         /// <summary>
+        /// Adds a new object to the current JSON file by index
+        /// </summary>
+        /// <param name="ParentProperty">Where is the target array found?</param>
+        /// <param name="Index">Index number of an array to add the value to</param>
+        /// <param name="Value">The new value</param>
+        public static void JsonShell_AddNewObjectIndexed(string ParentProperty, int Index, JToken Value)
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
+            var TargetToken = JsonShell_GetProperty(ParentProperty);
+            JToken PropertyToken = TargetToken.ElementAt(Index);
+
+            // Check to see if we're dealing with the array
+            if (PropertyToken.Type == JTokenType.Array)
+                ((JArray)PropertyToken).Add(Value);
+            DebugWriter.WriteDebug(DebugLevel.I, "New file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
+        }
+
+        /// <summary>
         /// Adds a new property to the current JSON file
         /// </summary>
         /// <param name="ParentProperty">Where to place the new property?</param>
@@ -234,6 +253,34 @@ namespace KS.Misc.Editors.JsonShell
             DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
             var TargetToken = JsonShell_GetProperty(Property);
             TargetToken.Parent.Remove();
+            DebugWriter.WriteDebug(DebugLevel.I, "New file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
+        }
+
+        /// <summary>
+        /// Removes an object from the current JSON file
+        /// </summary>
+        /// <param name="ParentProperty">Where is the target object found?</param>
+        /// <param name="ObjectName">The object name. You can use JSONPath.</param>
+        public static void JsonShell_RemoveObject(string ParentProperty, string ObjectName)
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
+            var TargetToken = JsonShell_GetProperty(ParentProperty);
+            JToken PropertyToken = TargetToken[ObjectName];
+            PropertyToken.Remove();
+            DebugWriter.WriteDebug(DebugLevel.I, "New file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
+        }
+
+        /// <summary>
+        /// Removes an object from the current JSON file
+        /// </summary>
+        /// <param name="ParentProperty">Where is the target object found?</param>
+        /// <param name="Index">Index number of an array to add the value to</param>
+        public static void JsonShell_RemoveObjectIndexed(string ParentProperty, int Index)
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
+            var TargetToken = JsonShell_GetProperty(ParentProperty);
+            JToken PropertyToken = TargetToken.ElementAt(Index);
+            PropertyToken.Remove();
             DebugWriter.WriteDebug(DebugLevel.I, "New file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
         }
 

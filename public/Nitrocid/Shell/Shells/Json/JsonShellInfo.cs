@@ -39,11 +39,14 @@ namespace KS.Shell.Shells.Json
             { "addarray", new CommandInfo("addarray", ShellType, /* Localizable */ "Adds a new property containing the array", new CommandArgumentInfo(new[] { "[-parentProperty=prop] <propertyName> <propertyValue1> [propertyValue2] [propertyValue3]..." }, true, 2), new JsonShell_AddArrayCommand()) },
             { "addproperty", new CommandInfo("addproperty", ShellType, /* Localizable */ "Adds a new property at the end of the JSON file", new CommandArgumentInfo(new[] { "[-parentProperty=prop] <propertyName> <propertyValue>" }, true, 2), new JsonShell_AddPropertyCommand()) },
             { "addobject", new CommandInfo("addobject", ShellType, /* Localizable */ "Adds a new object inside the array", new CommandArgumentInfo(new[] { "[-parentProperty=prop] <arrayName> <valueInArray>" }, true, 2), new JsonShell_AddObjectCommand()) },
+            { "addobjectindexed", new CommandInfo("addobjectindexed", ShellType, /* Localizable */ "Adds a new object inside an object specified by index", new CommandArgumentInfo(new[] { "[-parentProperty=prop] <index> <valueInArray>" }, true, 2), new JsonShell_AddObjectIndexedCommand()) },
             { "clear", new CommandInfo("clear", ShellType, /* Localizable */ "Clears the JSON file", new CommandArgumentInfo(), new JsonShell_ClearCommand()) },
             { "delproperty", new CommandInfo("delproperty", ShellType, /* Localizable */ "Removes a property from the JSON file", new CommandArgumentInfo(new[] { "<propertyName>" }, true, 1), new JsonShell_DelPropertyCommand()) },
             { "exitnosave", new CommandInfo("exitnosave", ShellType, /* Localizable */ "Exits the JSON shell without saving the changes", new CommandArgumentInfo(), new JsonShell_ExitNoSaveCommand()) },
-            { "jsoninfo", new CommandInfo("jsoninfo", ShellType, /* Localizable */ "Shows information about the JSON file", new CommandArgumentInfo(), new JsonShell_JsonInfoCommand()) },
+            { "jsoninfo", new CommandInfo("jsoninfo", ShellType, /* Localizable */ "Shows information about the JSON file", new CommandArgumentInfo(new[] { "[-simplified|-showvals]" }, false, 0), new JsonShell_JsonInfoCommand()) },
             { "print", new CommandInfo("print", ShellType, /* Localizable */ "Prints the JSON file", new CommandArgumentInfo(new[] { "[property]" }, false, 0), new JsonShell_PrintCommand()) },
+            { "rmobject", new CommandInfo("rmobject", ShellType, /* Localizable */ "Removes an object", new CommandArgumentInfo(new[] { "[-parentProperty=prop] <objectName>" }, true, 1), new JsonShell_RmObjectCommand()) },
+            { "rmobjectindexed", new CommandInfo("rmobjectindexed", ShellType, /* Localizable */ "Removes an object specified by index", new CommandArgumentInfo(new[] { "[-parentProperty=prop] <index>" }, true, 1), new JsonShell_RmObjectIndexedCommand()) },
             { "save", new CommandInfo("save", ShellType, /* Localizable */ "Saves the JSON file", new CommandArgumentInfo(new[] { "[-b|-m]" }, false, 0), new JsonShell_SaveCommand()) }
         };
 

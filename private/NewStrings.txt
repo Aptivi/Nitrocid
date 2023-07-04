@@ -563,5 +563,9 @@ Posting string {0}...
 Demanding permission
 Remote power management invoked:
 Kernel event fired:
+Adds a new object inside an object specified by index
+Removes an object
+Removes an object specified by index
+Children token count
 
 ==========================================================================================================================================
