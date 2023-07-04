@@ -25,6 +25,7 @@ using KS.Kernel.Events;
 using KS.Kernel.Power;
 using KS.Languages;
 using KS.Misc.Reflection;
+using KS.Misc.Splash;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.TimeDate;
@@ -81,7 +82,7 @@ namespace KS.Kernel.Exceptions
                             // If the error type is unrecoverable, or double, and the rebooting is false where it should
                             // not be false, then it can deal with this issue by enabling reboot.
                             DebugWriter.WriteDebug(DebugLevel.W, "Errors that have type {0} enforced Reboot = True.", ErrorType);
-                            TextWriterColor.Write(Translate.DoTranslation("[{0}] panic: Reboot enabled due to error level being {0}."), true, KernelColorType.UncontKernelError, ErrorType);
+                            SplashReport.ReportProgressError(Translate.DoTranslation("[{0}] panic: Reboot enabled due to error level being {0}."), ErrorType);
                             Reboot = true;
                         }
                     }
@@ -89,7 +90,7 @@ namespace KS.Kernel.Exceptions
                     {
                         // If the reboot time exceeds 1 hour, then it will set the time to 1 minute.
                         DebugWriter.WriteDebug(DebugLevel.W, "RebootTime shouldn't exceed 1 hour. Was {0} seconds", RebootTime);
-                        TextWriterColor.Write(Translate.DoTranslation("[{0}] panic: Time to reboot: {1} seconds, exceeds 1 hour. It is set to 1 minute."), true, KernelColorType.UncontKernelError, ErrorType, RebootTime.ToString());
+                        SplashReport.ReportProgressError(Translate.DoTranslation("[{0}] panic: Time to reboot: {1} seconds, exceeds 1 hour. It is set to 1 minute."), ErrorType, RebootTime.ToString());
                         RebootTime = 60L;
                     }
                 }
@@ -119,13 +120,13 @@ namespace KS.Kernel.Exceptions
                             {
                                 // Continuable kernel errors shouldn't cause the kernel to reboot.
                                 DebugWriter.WriteDebug(DebugLevel.W, "Continuable kernel errors shouldn't have Reboot = True.");
-                                TextWriterColor.Write(Translate.DoTranslation("[{0}] panic: Reboot disabled due to error level being {0}."), true, KernelColorType.Warning, ErrorType);
+                                SplashReport.ReportProgressError(Translate.DoTranslation("[{0}] panic: Reboot disabled due to error level being {0}."), ErrorType);
                             }
                             // Print normally
                             EventsManager.FireEvent(EventType.ContKernelError, ErrorType, Reboot, RebootTime, Description, Exc, Variables);
-                            TextWriterColor.Write(Translate.DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel."), true, KernelColorType.ContKernelError, ErrorType, Description);
+                            SplashReport.ReportProgressError(Translate.DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel."), Exc, ErrorType, Description);
                             if (Flags.ShowStackTraceOnKernelError & Exc is not null)
-                                TextWriterColor.Write(Exc.StackTrace, true, KernelColorType.ContKernelError);
+                                SplashReport.ReportProgressError(Exc.StackTrace);
                             Input.DetectKeypress();
                             break;
                         }
@@ -136,9 +137,9 @@ namespace KS.Kernel.Exceptions
                             {
                                 // Offer the user to wait for the set time interval before the kernel reboots.
                                 DebugWriter.WriteDebug(DebugLevel.F, "Kernel panic initiated with reboot time: {0} seconds, Error Type: {1}", RebootTime, ErrorType);
-                                TextWriterColor.Write(Translate.DoTranslation("[{0}] panic: {1} -- Rebooting in {2} seconds..."), true, KernelColorType.UncontKernelError, ErrorType, Description, RebootTime.ToString());
+                                SplashReport.ReportProgressError(Translate.DoTranslation("[{0}] panic: {1} -- Rebooting in {2} seconds..."), Exc, ErrorType, Description, RebootTime);
                                 if (Flags.ShowStackTraceOnKernelError & Exc is not null)
-                                    TextWriterColor.Write(Exc.StackTrace, true, KernelColorType.UncontKernelError);
+                                    SplashReport.ReportProgressError(Exc.StackTrace);
                                 Thread.Sleep((int)(RebootTime * 1000L));
                                 PowerManager.PowerManage(PowerMode.Reboot);
                             }
@@ -146,9 +147,9 @@ namespace KS.Kernel.Exceptions
                             {
                                 // If rebooting is disabled, offer the user to shutdown the kernel
                                 DebugWriter.WriteDebug(DebugLevel.W, "Reboot is False, ErrorType is not double or continuable.");
-                                TextWriterColor.Write(Translate.DoTranslation("[{0}] panic: {1} -- Press any key to shutdown."), true, KernelColorType.UncontKernelError, ErrorType, Description);
+                                SplashReport.ReportProgressError(Translate.DoTranslation("[{0}] panic: {1} -- Press any key to shutdown."), Exc, ErrorType, Description);
                                 if (Flags.ShowStackTraceOnKernelError & Exc is not null)
-                                    TextWriterColor.Write(Exc.StackTrace, true, KernelColorType.UncontKernelError);
+                                    SplashReport.ReportProgressError(Exc.StackTrace);
                                 Input.DetectKeypress();
                                 PowerManager.PowerManage(PowerMode.Shutdown);
                             }
@@ -188,7 +189,7 @@ namespace KS.Kernel.Exceptions
 
                 // Double panic printed and reboot initiated
                 DebugWriter.WriteDebug(DebugLevel.F, "Double panic caused by bug in kernel crash.");
-                TextWriterColor.Write("[D] dpanic: " + Translate.DoTranslation("{0} -- Rebooting in {1} seconds..."), true, KernelColorType.UncontKernelError, Description, 5);
+                SplashReport.ReportProgressError("[D] dpanic: " + Translate.DoTranslation("{0} -- Rebooting in {1} seconds..."), Description, 5);
                 Thread.Sleep(5000);
                 DebugWriter.WriteDebug(DebugLevel.F, "Rebooting");
                 PowerManager.PowerManage(PowerMode.Reboot);
