@@ -36,7 +36,7 @@ namespace KS.Shell.Shells.Sql
         /// </summary>
         public override Dictionary<string, CommandInfo> Commands => new()
         {
-            { "save", new CommandInfo("save", ShellType, /* Localizable */ "Saves the file", new CommandArgumentInfo(), new Sql_SaveCommand()) }
+            { "cmd", new CommandInfo("cmd", ShellType, /* Localizable */ "Executes an SQL query", new CommandArgumentInfo(), new Sql_CmdCommand()) }
         };
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

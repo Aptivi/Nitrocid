@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Collections.Generic;
 using KS.Files;
 using KS.Kernel.Debugging;
 using KS.Shell.Shells.Sql;
@@ -76,15 +77,35 @@ namespace KS.Misc.Editors.SqlEdit
         }
 
         /// <summary>
-        /// Saves SQL file
+        /// Executes an SQL command
         /// </summary>
+        /// <param name="query">An SQL query</param>
+        /// <param name="replies">Replies array to be filled</param>
+        /// <param name="parameters">SQL query parameters</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool SqlEdit_SaveSqlFile()
+        public static bool SqlEdit_SqlCommand(string query, ref string[] replies, params SqliteParameter[] parameters)
         {
             try
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Trying to save file...");
-                // TODO: Currently does nothing.
+                DebugWriter.WriteDebug(DebugLevel.I, "Trying to execute query {0}...", query);
+                List<string> replyList = new();
+                using var sqlCommand = new SqliteCommand(query, SqlShellCommon.sqliteConnection);
+
+                // Add parameters
+                foreach (SqliteParameter parameter in parameters)
+                    sqlCommand.Parameters.Add(parameter);
+
+                // Try to execute the command
+                using var sqlReader = sqlCommand.ExecuteReader();
+                while (sqlReader.Read())
+                {
+                    for (int i = 0; i < sqlReader.FieldCount; i++)
+                    {
+                        string reply = !sqlReader.IsDBNull(i) ? sqlReader.GetString(i) : "";
+                        replyList.Add(reply);
+                    }
+                }
+                replies = replyList.ToArray();
                 return true;
             }
             catch (Exception ex)

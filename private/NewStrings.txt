@@ -567,5 +567,9 @@ Adds a new object inside an object specified by index
 Removes an object
 Removes an object specified by index
 Children token count
+Executes an SQL query
+Enter parameter value for {0}:
+SQL command succeeded. Here are the replies:
+SQL command failed.
 
 ==========================================================================================================================================
