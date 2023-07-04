@@ -167,6 +167,7 @@ namespace KS.Kernel
                     }
                     SplashReport.ReportProgress(Translate.DoTranslation("Starting RPC..."), 3);
                     RemoteProcedure.WrapperStartRPC();
+                    CheckErrored();
 
                     // If the two files are not found, create two MOTD files with current config.
                     if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.MOTD)))
@@ -207,6 +208,7 @@ namespace KS.Kernel
                     {
                         SplashReport.ReportProgress(Translate.DoTranslation("Running in safe mode. Skipping stage..."), 0);
                     }
+                    CheckErrored();
                     EventsManager.FireEvent(EventType.StartKernel);
 
                     // Phase 4: Log-in
@@ -217,6 +219,7 @@ namespace KS.Kernel
                     SplashReport.ReportProgress(Translate.DoTranslation("Users initialized"), 5);
                     MotdParse.ReadMotd();
                     MalParse.ReadMal();
+                    CheckErrored();
 
                     // Reset console state and stop stage timer
                     KernelTools.ReportNewStage(5, "");
