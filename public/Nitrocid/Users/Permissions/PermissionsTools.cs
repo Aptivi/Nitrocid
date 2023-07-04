@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Kernel;
+using KS.Kernel.Administration.Journalling;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using Newtonsoft.Json.Linq;
@@ -76,7 +77,9 @@ namespace KS.Users.Permissions
                 // Check to see if one or more permissions exist
                 if (permissionType.HasFlag(type))
                 {
-                    if (!IsPermissionGranted(type))
+                    bool granted = IsPermissionGranted(type);
+                    JournalManager.WriteJournal(Translate.DoTranslation("Demanding permission") + $" {type} [{permissionType}]: {granted}");
+                    if (!granted)
                         throw new KernelException(KernelExceptionType.PermissionDenied, Translate.DoTranslation("Permission not granted") + ": {0}", permissionType.ToString());
                 }
             }

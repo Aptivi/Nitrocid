@@ -16,8 +16,10 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Administration.Journalling;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
+using KS.Kernel.Power;
 using KS.Languages;
 using KS.Modifications;
 using System;
@@ -80,6 +82,7 @@ namespace KS.Kernel.Events
             // Add fired event to the list
             DebugWriter.WriteDebugConditional(Flags.EventDebug, DebugLevel.I, $"Raising event {Event}...");
             FiredEvents.Add($"[{FiredEvents.Count}] {Event}", Params);
+            JournalManager.WriteJournal(Translate.DoTranslation("Kernel event fired:") + $" {Event} [{FiredEvents.Count}]");
 
             // Now, respond to the event
             foreach (ModInfo ModPart in ModManager.Mods.Values)

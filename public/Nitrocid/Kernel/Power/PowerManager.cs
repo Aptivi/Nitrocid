@@ -25,6 +25,7 @@ using System.Threading;
 using KS.Kernel.Events;
 using KS.Users.Permissions;
 using System.Diagnostics;
+using KS.Kernel.Administration.Journalling;
 
 namespace KS.Kernel.Power
 {
@@ -104,16 +105,19 @@ namespace KS.Kernel.Power
                     }
                 case PowerMode.RemoteShutdown:
                     {
+                        JournalManager.WriteJournal(Translate.DoTranslation("Remote power management invoked:") + $" {IP}:{Port} => {PowerMode}");
                         RPCCommands.SendCommand("<Request:Shutdown>(" + IP + ")", IP, Port);
                         break;
                     }
                 case PowerMode.RemoteRestart:
                     {
+                        JournalManager.WriteJournal(Translate.DoTranslation("Remote power management invoked:") + $" {IP}:{Port} => {PowerMode}");
                         RPCCommands.SendCommand("<Request:Reboot>(" + IP + ")", IP, Port);
                         break;
                     }
                 case PowerMode.RemoteRestartSafe:
                     {
+                        JournalManager.WriteJournal(Translate.DoTranslation("Remote power management invoked:") + $" {IP}:{Port} => {PowerMode}");
                         RPCCommands.SendCommand("<Request:RebootSafe>(" + IP + ")", IP, Port);
                         break;
                     }
