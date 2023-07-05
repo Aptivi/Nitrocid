@@ -1,6 +1,7 @@
 {
     "Metadata": {
         "Name": "Rigel",
+        "Description": "A theme inspired by a VIM theme of the same name"
     },
     "InputColor": "#f08e48",
     "LicenseColor": "#1c8db2",

@@ -1,6 +1,7 @@
 {
     "Metadata": {
         "Name": "Phosphoric (foreground)",
+        "Description": "Phosphoric terminal that converts everything to orange"
     },
     "InputColor": "3",
     "LicenseColor": "3",

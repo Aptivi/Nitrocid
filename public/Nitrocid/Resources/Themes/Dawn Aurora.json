@@ -1,6 +1,7 @@
 {
     "Metadata": {
         "Name": "Dawn Aurora",
+        "Description": "Gives you a breeze of dawn"
     },
     "InputColor": "15;31;64",
     "LicenseColor": "15;31;64",

@@ -1,6 +1,7 @@
 {
     "Metadata": {
         "Name": "Traffic Light",
+        "Description": "You're waiting for a green light, you're late for work, and the traffic light never turns to green"
     },
     "InputColor": "10",
     "LicenseColor": "10",

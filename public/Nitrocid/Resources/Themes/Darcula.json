@@ -1,6 +1,7 @@
 {
     "Metadata": {
         "Name": "Darcula",
+        "Description": "Popular color scheme for IDEs, like IntelliJ"
     },
     "InputColor": "#629755",
     "LicenseColor": "#A9B7C6",

@@ -1,6 +1,7 @@
 {
     "Metadata": {
         "Name": "Yellow (foreground)",
+        "Description": "A bright yellow console"
     },
     "InputColor": "11",
     "LicenseColor": "3",

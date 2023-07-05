@@ -1,6 +1,7 @@
 {
     "Metadata": {
         "Name": "Mint",
+        "Description": "Make your terminal full of mint"
     },
     "InputColor": "50;161;61",
     "LicenseColor": "50;161;61",

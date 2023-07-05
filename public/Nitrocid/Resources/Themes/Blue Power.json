@@ -1,6 +1,7 @@
 {
     "Metadata": {
         "Name": "Blue Power",
+        "Description": "Gives you a power of blue"
     },
     "InputColor": "35;11;128",
     "LicenseColor": "35;11;128",

@@ -1,6 +1,7 @@
 {
     "Metadata": {
         "Name": "Bloody",
+        "Description": "Makes your terminal bloody. Don't use unless you can really handle this."
     },
     "InputColor": "199;187;187",
     "LicenseColor": "199;187;187",

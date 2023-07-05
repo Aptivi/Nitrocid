@@ -1,6 +1,7 @@
 {
     "Metadata": {
         "Name": "Papercolor",
+        "Description": "A theme inspired by a VIM theme of the same name"
     },
     "InputColor": "#005f87",
     "LicenseColor": "#000000",

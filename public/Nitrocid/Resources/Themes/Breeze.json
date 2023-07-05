@@ -1,6 +1,7 @@
 {
     "Metadata": {
         "Name": "Breeze",
+        "Description": "Color scheme for Breeze, a KDE Plasma 5 theme"
     },
     "InputColor": "244;79;79",
     "LicenseColor": "122;124;125",

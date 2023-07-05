@@ -1,6 +1,7 @@
 {
     "Metadata": {
         "Name": "No Frils (acme)",
+        "Description": "A theme inspired by a VIM theme of the same name"
     },
     "InputColor": "#585858",
     "LicenseColor": "#AF8700",

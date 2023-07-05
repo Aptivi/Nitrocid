@@ -1,6 +1,7 @@
 {
     "Metadata": {
         "Name": "Mintish",
+        "Description": "Another variant of Mint"
     },
     "InputColor": "244;242;105",
     "LicenseColor": "244;242;105",

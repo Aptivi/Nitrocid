@@ -1,6 +1,7 @@
 {
     "Metadata": {
         "Name": "Windows 11 (light)",
+        "Description": "Color scheme for Windows 11, a recent version of Windows"
     },
     "InputColor": "0;120;212",
     "LicenseColor": "0;120;212",

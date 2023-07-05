@@ -1,6 +1,7 @@
 {
     "Metadata": {
         "Name": "Pastel 3",
+        "Description": "Make your terminal more of a pastel terminal"
     },
     "InputColor": "132;217;139",
     "LicenseColor": "132;217;139",

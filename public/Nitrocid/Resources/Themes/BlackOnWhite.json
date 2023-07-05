@@ -1,6 +1,7 @@
 {
     "Metadata": {
         "Name": "Black on White",
+        "Description": "Lightest terminal possible"
     },
     "InputColor": "0",
     "LicenseColor": "0",

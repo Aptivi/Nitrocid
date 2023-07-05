@@ -1,6 +1,7 @@
 {
     "Metadata": {
         "Name": "Planted Wood",
+        "Description": "Simulates the color of wood that has small green plants usually found in jungles"
     },
     "InputColor": "214;142;60",
     "LicenseColor": "214;142;60",

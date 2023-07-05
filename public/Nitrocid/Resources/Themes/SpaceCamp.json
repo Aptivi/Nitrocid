@@ -1,6 +1,7 @@
 {
     "Metadata": {
         "Name": "Space Camp",
+        "Description": "A theme inspired by a VIM theme of the same name"
     },
     "InputColor": "#DEDEDE",
     "LicenseColor": "#EEEEEE",

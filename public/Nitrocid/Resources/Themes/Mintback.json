@@ -1,6 +1,7 @@
 {
     "Metadata": {
         "Name": "Mintback",
+        "Description": "Light version of Mint"
     },
     "InputColor": "23;13;28",
     "LicenseColor": "23;13;28",
