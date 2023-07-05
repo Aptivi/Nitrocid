@@ -2302,5 +2302,41 @@ namespace KS.Kernel.Configuration.Instances
         /// [BarWave] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int BarWaveMaximumColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [Wave] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int WaveDelay { get; set; } = 100;
+        /// <summary>
+        /// [Wave] The minimum red color level (true color)
+        /// </summary>
+        public int WaveMinimumRedColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [Wave] The minimum green color level (true color)
+        /// </summary>
+        public int WaveMinimumGreenColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [Wave] The minimum blue color level (true color)
+        /// </summary>
+        public int WaveMinimumBlueColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [Wave] The minimum color level (255 colors or 16 colors)
+        /// </summary>
+        public int WaveMinimumColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [Wave] The maximum red color level (true color)
+        /// </summary>
+        public int WaveMaximumRedColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [Wave] The maximum green color level (true color)
+        /// </summary>
+        public int WaveMaximumGreenColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [Wave] The maximum blue color level (true color)
+        /// </summary>
+        public int WaveMaximumBlueColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [Wave] The maximum color level (255 colors or 16 colors)
+        /// </summary>
+        public int WaveMaximumColorLevel { get; set; } = 255;
     }
 }

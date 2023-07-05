@@ -1708,6 +1708,36 @@
         },
         "BarWaveMaximumColorLevel": {
             "type": "integer"
+        },
+        "WaveTrueColor": {
+            "type": "boolean"
+        },
+        "WaveDelay": {
+            "type": "integer"
+        },
+        "WaveMinimumRedColorLevel": {
+            "type": "integer"
+        },
+        "WaveMinimumGreenColorLevel": {
+            "type": "integer"
+        },
+        "WaveMinimumBlueColorLevel": {
+            "type": "integer"
+        },
+        "WaveMinimumColorLevel": {
+            "type": "integer"
+        },
+        "WaveMaximumRedColorLevel": {
+            "type": "integer"
+        },
+        "WaveMaximumGreenColorLevel": {
+            "type": "integer"
+        },
+        "WaveMaximumBlueColorLevel": {
+            "type": "integer"
+        },
+        "WaveMaximumColorLevel": {
+            "type": "integer"
         }
     },
     "required": [
@@ -2279,6 +2309,16 @@
         "BarWaveMaximumRedColorLevel",
         "BarWaveMaximumGreenColorLevel",
         "BarWaveMaximumBlueColorLevel",
-        "BarWaveMaximumColorLevel"
+        "BarWaveMaximumColorLevel",
+        "WaveTrueColor",
+        "WaveDelay",
+        "WaveMinimumRedColorLevel",
+        "WaveMinimumGreenColorLevel",
+        "WaveMinimumBlueColorLevel",
+        "WaveMinimumColorLevel",
+        "WaveMaximumRedColorLevel",
+        "WaveMaximumGreenColorLevel",
+        "WaveMaximumBlueColorLevel",
+        "WaveMaximumColorLevel"
     ]
 }

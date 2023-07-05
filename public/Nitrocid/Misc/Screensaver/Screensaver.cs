@@ -104,6 +104,7 @@ namespace KS.Misc.Screensaver
             { "starfield", new StarfieldDisplay() },
             { "typewriter", new TypewriterDisplay() },
             { "typo", new TypoDisplay() },
+            { "wave", new WaveDisplay() },
             { "windowslogo", new WindowsLogoDisplay() },
             { "wipe", new WipeDisplay() }
         };
