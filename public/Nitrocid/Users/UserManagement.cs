@@ -35,6 +35,7 @@ using KS.Users.Login;
 using KS.Users.Permissions;
 using KS.Misc.Probers.Regexp;
 using KS.Kernel.Configuration;
+using KS.Groups;
 
 namespace KS.Users
 {
@@ -43,8 +44,6 @@ namespace KS.Users
     /// </summary>
     public static class UserManagement
     {
-
-        internal static JArray UsersToken;
 
         // Variables
         /// <summary>
@@ -57,6 +56,14 @@ namespace KS.Users
         /// </summary>
         public static bool IncludeDisabled =>
             Config.MainConfig.IncludeDisabled;
+        /// <summary>
+        /// Current username
+        /// </summary>
+        public static UserInfo CurrentUser =>
+            CurrentUserInfo;
+
+        internal static UserInfo CurrentUserInfo = new("root", Encryption.GetEncryptedString("", "SHA256"), Array.Empty<string>(), "System Account", "", Array.Empty<string>(), true, false, false);
+        internal static List<UserInfo> Users = new() { CurrentUserInfo };
 
         /// <summary>
         /// A user property
@@ -95,6 +102,10 @@ namespace KS.Users
             /// Preferred language
             /// </summary>
             PreferredLanguage,
+            /// <summary>
+            /// User groups
+            /// </summary>
+            Groups,
         }
 
         // ---------- User Management ----------
@@ -123,64 +134,19 @@ namespace KS.Users
                 }
 
                 // Add user locally
-                var initedUser = new UserInfo(uninitUser, unpassword, Array.Empty<string>(), "", "");
+                var initedUser = new UserInfo(uninitUser, unpassword, Array.Empty<string>(), "", "", Array.Empty<string>(), false, false, false);
                 if (!UserExists(uninitUser))
                 {
-                    Login.Login.Users.Add(uninitUser, initedUser);
+                    Users.Add(initedUser);
                 }
                 else if (UserExists(uninitUser) & ModifyExisting)
                 {
-                    Login.Login.Users[uninitUser] = initedUser;
+                    int userIndex = GetUserIndex(uninitUser);
+                    Users[userIndex] = initedUser;
                 }
 
                 // Add user globally
-                if (!(UsersToken.Count == 0))
-                {
-                    var UserExists = false;
-                    var ExistingIndex = 0;
-                    foreach (JToken UserToken in UsersToken)
-                    {
-                        if (UserToken["username"].ToString() == uninitUser)
-                        {
-                            UserExists = true;
-                            break;
-                        }
-                        ExistingIndex += 1;
-                    }
-                    if (!UserExists)
-                    {
-                        var NewUser = new JObject(
-                            new JProperty("username", uninitUser),
-                            new JProperty("password", unpassword),
-                            new JProperty("admin", false),
-                            new JProperty("anonymous", false),
-                            new JProperty("disabled", false),
-                            new JProperty("permissions", Array.Empty<string>()),
-                            new JProperty("fullname", ""),
-                            new JProperty("preferredlanguage", "")
-                        );
-                        UsersToken.Add(NewUser);
-                    }
-                    else if (UserExists & ModifyExisting)
-                    {
-                        UsersToken[ExistingIndex]["password"] = unpassword;
-                    }
-                }
-                else
-                {
-                    var NewUser = new JObject(
-                        new JProperty("username", uninitUser),
-                        new JProperty("password", unpassword),
-                        new JProperty("admin", false),
-                        new JProperty("anonymous", false),
-                        new JProperty("disabled", false),
-                        new JProperty("permissions", Array.Empty<string>()),
-                        new JProperty("fullname", ""),
-                        new JProperty("preferredlanguage", "")
-                    );
-                    UsersToken.Add(NewUser);
-                }
-                File.WriteAllText(Paths.GetKernelPath(KernelPathType.Users), JsonConvert.SerializeObject(UsersToken, Formatting.Indented));
+                SaveUsers();
 
                 // Ready permissions
                 DebugWriter.WriteDebug(DebugLevel.I, "Username {0} added. Readying permissions...", uninitUser);
@@ -200,64 +166,14 @@ namespace KS.Users
         {
             // Opens file stream
             string UsersTokenContent = File.ReadAllText(Paths.GetKernelPath(KernelPathType.Users));
-            var UninitUsersToken = JArray.Parse(!string.IsNullOrEmpty(UsersTokenContent) ? UsersTokenContent : "[]");
-            foreach (var UserToken in UninitUsersToken)
+            JArray userInfoArrays = (JArray)JsonConvert.DeserializeObject(UsersTokenContent);
+            List<UserInfo> users = new();
+            foreach (var userInfoArray in userInfoArrays)
             {
-                string user = (string)UserToken["username"];
-                var perms = UserToken["permissions"]?.ToArray() ?? Array.Empty<JToken>();
-                InitializeUser(user, (string)UserToken["password"], false);
-                foreach (var perm in perms)
-                    if (Enum.TryParse(typeof(PermissionTypes), (string)perm, out object permEnum))
-                        PermissionsTools.GrantPermission(user, (PermissionTypes)permEnum);
-                string fullname = (string)UserToken["fullname"];
-                string preferredlanguage = (string)UserToken["preferredlanguage"];
-                Login.Login.Users[user].FullName = fullname;
-                Login.Login.Users[user].PreferredLanguage = preferredlanguage;
+                UserInfo userInfo = (UserInfo)JsonConvert.DeserializeObject(userInfoArray.ToString(), typeof(UserInfo));
+                users.Add(userInfo);
             }
-        }
-
-        /// <summary>
-        /// Loads user token
-        /// </summary>
-        public static void LoadUserToken()
-        {
-            if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.Users)))
-                File.Create(Paths.GetKernelPath(KernelPathType.Users)).Close();
-            string UsersTokenContent = File.ReadAllText(Paths.GetKernelPath(KernelPathType.Users));
-            UsersToken = JArray.Parse(!string.IsNullOrEmpty(UsersTokenContent) ? UsersTokenContent : "[]");
-        }
-
-        /// <summary>
-        /// Gets user property
-        /// </summary>
-        /// <param name="User">Target user</param>
-        /// <param name="PropertyType">Property type</param>
-        /// <returns>JSON token of user property</returns>
-        public static JToken GetUserProperty(string User, UserProperty PropertyType)
-        {
-            foreach (var UserToken in UsersToken)
-                if (UserToken["username"].ToString() == User)
-                    return UserToken.SelectToken(PropertyType.ToString().ToLower());
-            return null;
-        }
-
-        /// <summary>
-        /// Sets user property
-        /// </summary>
-        /// <param name="User">Target user</param>
-        /// <param name="PropertyType">Property type</param>
-        /// <param name="Value">Value</param>
-        public static void SetUserProperty(string User, UserProperty PropertyType, JToken Value)
-        {
-            foreach (var UserToken in UsersToken)
-            {
-                if (UserToken["username"].ToString() == User)
-                {
-                    string propertyTypeNameJson = PropertyType.ToString().ToLower();
-                    UserToken[propertyTypeNameJson] = Value;
-                }
-            }
-            File.WriteAllText(Paths.GetKernelPath(KernelPathType.Users), JsonConvert.SerializeObject(UsersToken, Formatting.Indented));
+            Users = users;
         }
 
         /// <summary>
@@ -303,52 +219,43 @@ namespace KS.Users
         /// <remarks>This sub is an accomplice of in-shell command arguments.</remarks>
         public static void RemoveUser(string user)
         {
-            if (ValidateUsername(user))
+            if (!ValidateUsername(user))
+                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Can't remove username. Make sure that the username exists."));
+            
+            // Try to remove user
+            if (user == "root")
             {
-                // Try to remove user
-                if (user == "root")
-                {
-                    DebugWriter.WriteDebug(DebugLevel.W, "User is root, and is a system account");
-                    throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("User {0} isn't allowed to be removed."), user);
-                }
-                else if (user == (Login.Login.CurrentUser?.Username))
-                {
-                    DebugWriter.WriteDebug(DebugLevel.W, "User has logged in, so can't delete self.");
-                    throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("User {0} is already logged in. Log-out and log-in as another admin."), user);
-                }
-                else
-                {
-                    try
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Removing permissions...");
-
-                        // Remove user
-                        DebugWriter.WriteDebug(DebugLevel.I, "Removing username {0}...", user);
-                        Login.Login.Users.Remove(user);
-
-                        // Remove user from Users.json
-                        foreach (var UserToken in UsersToken)
-                        {
-                            if (UserToken["username"].ToString() == user)
-                            {
-                                UserToken.Remove();
-                                break;
-                            }
-                        }
-                        File.WriteAllText(Paths.GetKernelPath(KernelPathType.Users), JsonConvert.SerializeObject(UsersToken, Formatting.Indented));
-
-                        // Raise event
-                        EventsManager.FireEvent(EventType.UserRemoved, user);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugStackTrace(ex);
-                        throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Error trying to remove username.") + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), ex, ex.Message);
-                    }
-                }
+                DebugWriter.WriteDebug(DebugLevel.W, "User is root, and is a system account");
+                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("User {0} isn't allowed to be removed."), user);
+            }
+            else if (user == CurrentUser?.Username)
+            {
+                DebugWriter.WriteDebug(DebugLevel.W, "User has logged in, so can't delete self.");
+                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("User {0} is already logged in. Log-out and log-in as another admin."), user);
             }
             else
-                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Can't remove username. Make sure that the username exists."));
+            {
+                try
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removing permissions...");
+
+                    // Remove user
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removing username {0}...", user);
+                    var userInfo = GetUser(user);
+                    Users.Remove(userInfo);
+
+                    // Remove user from Users.json
+                    SaveUsers();
+
+                    // Raise event
+                    EventsManager.FireEvent(EventType.UserRemoved, user);
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Error trying to remove username.") + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), ex, ex.Message);
+                }
+            }
         }
 
         /// <summary>
@@ -384,15 +291,15 @@ namespace KS.Users
                     try
                     {
                         // Store user info
-                        var oldInfo = Login.Login.Users[OldName];
-                        var newInfo = new UserInfo(Username, oldInfo.Password, oldInfo.Permissions, oldInfo.FullName, oldInfo.PreferredLanguage);
+                        var oldInfo = GetUser(OldName);
+                        var newInfo = new UserInfo(Username, oldInfo.Password, oldInfo.Permissions, oldInfo.FullName, oldInfo.PreferredLanguage, oldInfo.Groups, oldInfo.Admin, oldInfo.Anonymous, oldInfo.Disabled);
 
                         // Rename username in dictionary
-                        Login.Login.Users.Remove(OldName);
-                        Login.Login.Users.Add(Username, newInfo);
+                        Users.Remove(oldInfo);
+                        Users.Add(newInfo);
 
                         // Rename username in Users.json
-                        SetUserProperty(OldName, UserProperty.Username, Username);
+                        SaveUsers();
 
                         // Raise event
                         EventsManager.FireEvent(EventType.UsernameChanged, OldName, Username);
@@ -434,30 +341,6 @@ namespace KS.Users
         }
 
         /// <summary>
-        /// Initializes root account
-        /// </summary>
-        public static void InitializeSystemAccount()
-        {
-            string systemAccountName = "root";
-            if (Checking.FileExists(Paths.GetKernelPath(KernelPathType.Users)))
-            {
-                if (GetUserProperty(systemAccountName, UserProperty.Password) is not null)
-                {
-                    InitializeUser(systemAccountName, (string)GetUserProperty(systemAccountName, UserProperty.Password), false, true);
-                }
-                else
-                {
-                    InitializeUser(systemAccountName, "", true, true);
-                }
-            }
-            else
-            {
-                InitializeUser(systemAccountName, "", true, true);
-            }
-            SetUserProperty(systemAccountName, UserProperty.Admin, true);
-        }
-
-        /// <summary>
         /// Changes user password
         /// </summary>
         /// <param name="Target">Target username</param>
@@ -465,26 +348,27 @@ namespace KS.Users
         /// <param name="NewPass">New user password</param>
         public static void ChangePassword(string Target, string CurrentPass, string NewPass)
         {
-            bool currentUserAdmin = (bool)GetUserProperty(Login.Login.CurrentUser.Username, UserProperty.Admin);
-            bool targetUserAdmin = (bool)GetUserProperty(Target, UserProperty.Admin);
+            bool currentUserAdmin = GetUser(CurrentUser.Username).Admin;
+            bool targetUserAdmin = GetUser(Target).Admin;
+
+            if (!UserExists(Target))
+                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("User not found"));
+
             CurrentPass = Encryption.GetEncryptedString(CurrentPass, "SHA256");
-            if (CurrentPass == Login.Login.Users[Target].Password)
+            if (CurrentPass == GetUser(Target).Password)
             {
                 if (currentUserAdmin & UserExists(Target))
                 {
                     // Change password locally
                     NewPass = Encryption.GetEncryptedString(NewPass, "SHA256");
-                    Login.Login.Users[Target].Password = NewPass;
+                    int userIndex = GetUserIndex(Target);
+                    Users[userIndex].Password = NewPass;
 
                     // Change password globally
-                    SetUserProperty(Target, UserProperty.Password, NewPass);
+                    SaveUsers();
 
                     // Raise event
                     EventsManager.FireEvent(EventType.UserPasswordChanged, Target);
-                }
-                else if (currentUserAdmin & !UserExists(Target))
-                {
-                    throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("User not found"));
                 }
                 else if (targetUserAdmin & !currentUserAdmin)
                 {
@@ -529,11 +413,11 @@ namespace KS.Users
         /// <param name="IncludeDisabled">Include disabled users</param>
         public static List<string> ListAllUsers(bool IncludeAnonymous = false, bool IncludeDisabled = false)
         {
-            var UsersList = new List<string>(Login.Login.Users.Keys);
+            var UsersList = new List<string>(Users.Select((userInfo) => userInfo.Username));
             if (!IncludeAnonymous)
-                UsersList.RemoveAll(new Predicate<string>(x => (bool)GetUserProperty(x, UserProperty.Anonymous) == true));
+                UsersList.RemoveAll(x => GetUser(x).Anonymous);
             if (!IncludeDisabled)
-                UsersList.RemoveAll(new Predicate<string>(x => (bool)GetUserProperty(x, UserProperty.Disabled) == true));
+                UsersList.RemoveAll(x => GetUser(x).Disabled);
 
             return UsersList;
         }
@@ -543,7 +427,8 @@ namespace KS.Users
         /// </summary>
         /// <param name="UserNumber">The user number. This is NOT an index!</param>
         /// <returns>The username which is selected</returns>
-        public static string SelectUser(int UserNumber) => SelectUser(UserNumber, IncludeAnonymous, IncludeDisabled);
+        public static string SelectUser(int UserNumber) =>
+            SelectUser(UserNumber, IncludeAnonymous, IncludeDisabled);
 
         /// <summary>
         /// Selects a user from the <see cref="ListAllUsers(bool, bool)"/> list
@@ -556,19 +441,49 @@ namespace KS.Users
         {
             var UsersList = ListAllUsers(IncludeAnonymous, IncludeDisabled);
             string SelectedUsername = UsersList[UserNumber - 1];
-            return Login.Login.Users.Keys.First(x => x == SelectedUsername);
+            return GetUser(SelectedUsername).Username;
         }
 
         /// <summary>
         /// Checks to see if the user exists
         /// </summary>
         /// <param name="User">The target user</param>
-        public static bool UserExists(string User) => Login.Login.Users.ContainsKey(User);
+        public static bool UserExists(string User) =>
+            Users.Any((userinfo) => userinfo.Username == User);
+
+        /// <summary>
+        /// Gets a user
+        /// </summary>
+        /// <param name="userName">The user</param>
+        /// <returns>User information</returns>
+        public static UserInfo GetUser(string userName)
+        {
+            // Check to see if we have the target user
+            if (!UserExists(userName))
+                throw new KernelException(KernelExceptionType.NoSuchUser);
+
+            return Users.FirstOrDefault(x => x.Username == userName);
+        }
+
+        /// <summary>
+        /// Gets a user index
+        /// </summary>
+        /// <param name="userName">The user</param>
+        /// <returns>User index</returns>
+        public static int GetUserIndex(string userName)
+        {
+            // Check to see if we have the target user
+            if (!UserExists(userName))
+                throw new KernelException(KernelExceptionType.NoSuchUser);
+
+            return Users.FindIndex(x => x.Username == userName);
+        }
 
         /// <summary>
         /// Gets the unique user identifier for the current user
         /// </summary>
-        public static string GetUserDollarSign() => GetUserDollarSign(Login.Login.CurrentUser.Username);
+        public static string GetUserDollarSign() =>
+            GetUserDollarSign(CurrentUser.Username);
 
         /// <summary>
         /// Gets the unique user identifier
@@ -577,20 +492,12 @@ namespace KS.Users
         public static string GetUserDollarSign(string User)
         {
             if (UserExists(User))
-            {
-                if ((bool)GetUserProperty(User, UserProperty.Admin))
-                {
+                if (GetUser(User).Admin)
                     return "#";
-                }
                 else
-                {
                     return "$";
-                }
-            }
             else
-            {
                 throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("User not found"));
-            }
         }
 
         /// <summary>
@@ -625,7 +532,7 @@ namespace KS.Users
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Username correct. Finding if the user is disabled...");
-                if (!UserExists(User) || !(bool)GetUserProperty(User, UserProperty.Disabled))
+                if (!UserExists(User) || !GetUser(User).Disabled)
                 {
                     // User is not disabled
                     DebugWriter.WriteDebug(DebugLevel.I, "User validation complete");
@@ -658,7 +565,7 @@ namespace KS.Users
             DebugWriter.WriteDebug(DebugLevel.I, "Hash computed.");
 
             // Now, check to see if the password matches
-            if (Login.Login.Users.TryGetValue(User, out UserInfo UserPassword) && UserPassword.Password == Password)
+            if (GetUser(User).Password == Password)
             {
                 // Password matches
                 DebugWriter.WriteDebug(DebugLevel.I, "Password written correctly.");
@@ -667,10 +574,17 @@ namespace KS.Users
             else
             {
                 // Password doesn't match
-                DebugWriter.WriteDebug(DebugLevel.I, "Passowrd written wrong...");
+                DebugWriter.WriteDebug(DebugLevel.I, "Password written wrong...");
                 EventsManager.FireEvent(EventType.LoginError, User, LoginErrorReasons.WrongPassword);
                 return false;
             }
+        }
+
+        internal static void SaveUsers()
+        {
+            // Make a JSON file to save all user information files
+            string userInfosSerialized = JsonConvert.SerializeObject(Users.ToArray(), Formatting.Indented);
+            File.WriteAllText(Paths.UsersPath, userInfosSerialized);
         }
 
     }

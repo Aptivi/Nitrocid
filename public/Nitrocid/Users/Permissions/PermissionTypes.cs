@@ -59,5 +59,9 @@ namespace KS.Users.Permissions
         /// Allows the user to manage the kernel mods
         /// </summary>
         ManageMods = 256,
+        /// <summary>
+        /// Allows the user to manage the user groups
+        /// </summary>
+        ManageGroups = 512,
     }
 }

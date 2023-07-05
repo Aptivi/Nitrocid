@@ -45,6 +45,7 @@ namespace KS.Kernel.Exceptions
                     { KernelExceptionType.FTPFilesystem,                    Translate.DoTranslation("A general FTP filesystem error occurred. Check to make sure that the path specified is correct, and that the file or directory actually exists.") },
                     { KernelExceptionType.FTPNetwork,                       Translate.DoTranslation("A general FTP network error occurred. Check to make sure that your internet connection is working.") },
                     { KernelExceptionType.FTPShell,                         Translate.DoTranslation("A general FTP shell error occurred.") },
+                    { KernelExceptionType.GroupManagement,                  Translate.DoTranslation("A group management error occurred.") },
                     { KernelExceptionType.Hostname,                         Translate.DoTranslation("Hostname error.") },
                     { KernelExceptionType.HTTPShell,                        Translate.DoTranslation("A general HTTP shell error occurred.") },
                     { KernelExceptionType.InsaneConsoleDetected,            Translate.DoTranslation("Insane console has been detected. Nitrocid KS can't continue running, because your console is incompatible with our requirements.") },
@@ -113,6 +114,7 @@ namespace KS.Kernel.Exceptions
                     { KernelExceptionType.Contacts,                         Translate.DoTranslation("A contacts manager error occurred when trying to perform the requested operation. Make sure that the contact file exists in the correct folder and that it's a valid vCard 2.1, 3.0, or 4.0 contact file.") },
                     { KernelExceptionType.UESHConditional,                  Translate.DoTranslation("A UESH condition system failed while performing the requested operation. See the error message below for more details.") },
                     { KernelExceptionType.SqlEditor,                        Translate.DoTranslation("An invalid SQL editor operation is being performed.") },
+                    { KernelExceptionType.NoSuchGroup,                      Translate.DoTranslation("Group doesn't exist. Check to make sure that you've written the group name correctly.") },
                 };
             }
         }

@@ -52,6 +52,7 @@ using KS.ConsoleBase.Colors;
 using KS.Misc.Writers.MiscWriters;
 using KS.Misc.Screensaver.Customized;
 using KS.Kernel.Power;
+using KS.Users.Groups;
 
 namespace KS.Kernel
 {
@@ -213,9 +214,8 @@ namespace KS.Kernel
 
                     // Phase 4: Log-in
                     KernelTools.ReportNewStage(4, Translate.DoTranslation("- Stage 4: Log in"));
-                    UserManagement.InitializeSystemAccount();
-                    SplashReport.ReportProgress(Translate.DoTranslation("System account initialized"), 5);
                     UserManagement.InitializeUsers();
+                    GroupManagement.InitializeGroups();
                     SplashReport.ReportProgress(Translate.DoTranslation("Users initialized"), 5);
                     MotdParse.ReadMotd();
                     MalParse.ReadMal();
@@ -263,17 +263,17 @@ namespace KS.Kernel
                     else
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Enter the admin password for maintenance."));
-                        if (Login.Users.ContainsKey("root"))
+                        if (UserManagement.UserExists("root"))
                         {
                             DebugWriter.WriteDebug(DebugLevel.I, "Root account found. Prompting for password...");
+                            Login.ShowPasswordPrompt("root");
                         }
                         else
                         {
                             // Some malicious mod removed the root account, or rare situation happened and it was gone.
-                            DebugWriter.WriteDebug(DebugLevel.W, "Root account not found for maintenance. Initializing it...");
-                            UserManagement.InitializeSystemAccount();
+                            DebugWriter.WriteDebug(DebugLevel.F, "Root account not found for maintenance.");
+                            throw new KernelException(KernelExceptionType.NoSuchUser, Translate.DoTranslation("Some malicious mod removed the root account, or rare situation happened and it was gone."));
                         }
-                        Login.ShowPasswordPrompt("root");
                     }
 
                     // Clear all active threads as we're rebooting

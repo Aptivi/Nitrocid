@@ -67,15 +67,15 @@ namespace KS.Users.Login
                 var users = UserManagement.ListAllUsers().ToArray();
                 var userFullNames = users.Select(
                     (user) => 
-                        UserManagement.GetUserProperty(user, UserManagement.UserProperty.FullName) is not null ? 
-                        UserManagement.GetUserProperty(user, UserManagement.UserProperty.FullName).ToString() :
+                        UserManagement.GetUser(user).FullName is not null ? 
+                        UserManagement.GetUser(user).FullName :
                         ""
                 ).ToArray();
                 int userNum = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a user account you want to log in with."), string.Join("/", users), userFullNames);
 
                 // Then, get the user from the number and prompt for password if found
                 userName = UserManagement.SelectUser(userNum);
-                if (Login.Users[userName].Password != Encryption.GetEmptyHash("SHA256"))
+                if (UserManagement.Users[userNum - 1].Password != Encryption.GetEmptyHash("SHA256"))
                 {
                     // The password is not empty. Prompt for password.
                     TextWriterColor.Write(Translate.DoTranslation("Enter the password for user") + " {0}: ", false, userName);

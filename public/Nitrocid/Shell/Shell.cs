@@ -56,7 +56,6 @@ using KS.Shell.Shells.Admin;
 using KS.Users.Login;
 using KS.Kernel.Events;
 using File = KS.Drivers.Console.Consoles.File;
-using static KS.Users.UserManagement;
 using KS.Users.Permissions;
 using KS.Drivers.Console;
 using Manipulation = KS.Files.Operations.Manipulation;
@@ -68,6 +67,7 @@ using KS.Drivers.Console.Consoles;
 using FluentFTP.Helpers;
 using KS.Kernel.Configuration;
 using KS.Shell.Shells.Sql;
+using KS.Users;
 
 namespace KS.Shell
 {
@@ -317,7 +317,7 @@ namespace KS.Shell
                                         if (Commands[commandName].Flags.HasFlag(CommandFlags.Strict))
                                         {
                                             if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) && 
-                                                !(bool)GetUserProperty(Login.CurrentUser.Username, UserProperty.Admin))
+                                                !UserManagement.CurrentUser.Admin)
                                             {
                                                 DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", commandName);
                                                 TextWriterColor.Write(Translate.DoTranslation("You don't have permission to use {0}"), true, KernelColorType.Error, commandName);

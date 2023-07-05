@@ -50,7 +50,7 @@ namespace KS.Misc.Probers.Placeholder
     {
         private readonly static Dictionary<string, Func<string>> placeholders = new()
         {
-            { "<user>",                             () => Login.CurrentUser.Username },
+            { "<user>",                             () => UserManagement.CurrentUser.Username },
             { "<ftpuser>",                          () => FTPShellCommon.FtpUser },
             { "<ftpaddr>",                          () => FTPShellCommon.FtpSite },
             { "<currentftpdirectory>",              () => FTPShellCommon.FtpCurrentRemoteDir },

@@ -28,6 +28,7 @@ using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Colors;
 using System.Collections.Generic;
 using KS.Misc.Writers.FancyWriters.Tools;
+using KS.Users;
 
 namespace KS.Shell.Prompts.Presets.UESH
 {
@@ -51,7 +52,7 @@ namespace KS.Shell.Prompts.Presets.UESH
             // PowerLine presets
             List<PowerLineSegment> segments = new()
             {
-                new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), Login.CurrentUser.Username),
+                new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), UserManagement.CurrentUser.Username),
                 new PowerLineSegment(new Color(0, 0, 0), new Color(85, 255, 255), NetworkTools.HostName, PadlockChar),
                 new PowerLineSegment(new Color(0, 0, 0), new Color(255, 255, 255), CurrentDirectory.CurrentDir),
             };

@@ -30,6 +30,7 @@ using UnitsNet;
 using KS.ConsoleBase.Themes;
 using KS.Misc.Screensaver;
 using KS.Misc.Splash;
+using KS.Users.Groups;
 
 namespace KS.Shell.Shells.UESH
 {
@@ -43,7 +44,9 @@ namespace KS.Shell.Shells.UESH
         /// </summary>
         public override Dictionary<string, CommandInfo> Commands => new()
         {
+            { "addgroup", new CommandInfo("addgroup", ShellType, /* Localizable */ "Adds groups", new CommandArgumentInfo(new[] { "<groupName>" }, true, 1), new AddGroupCommand(), CommandFlags.Strict) },
             { "adduser", new CommandInfo("adduser", ShellType, /* Localizable */ "Adds users", new CommandArgumentInfo(new[] { "<userName> [password] [confirm]" }, true, 1), new AddUserCommand(), CommandFlags.Strict) },
+            { "addusertogroup", new CommandInfo("addusertogroup", ShellType, /* Localizable */ "Adds users to a group", new CommandArgumentInfo(new[] { "<userName> <group>" }, true, 2), new AddUserToGroupCommand(), CommandFlags.Strict) },
             { "admin", new CommandInfo("admin", ShellType, /* Localizable */ "Administrative shell", new CommandArgumentInfo(), new AdminCommand(), CommandFlags.Strict) },
             { "alias", new CommandInfo("alias", ShellType, /* Localizable */ "Adds aliases to commands", new CommandArgumentInfo( new[] { $"<rem/add> <{string.Join("/", Enum.GetNames(typeof(ShellType)))}> <alias> <cmd>" }, true, 3, (startFrom, _, _) => HelpUnifiedCommand.ListCmds(startFrom)), new AliasCommand(), CommandFlags.Strict) },
             { "archive", new CommandInfo("archive", ShellType, /* Localizable */ "Opens the archive file to the archive shell", new CommandArgumentInfo(new[] { "<archivefile>" }, true, 1), new ArchiveCommand()) },
@@ -115,6 +118,7 @@ namespace KS.Shell.Shells.UESH
             { "move", new CommandInfo("move", ShellType, /* Localizable */ "Moves a file to another directory", new CommandArgumentInfo(new[] { "<source> <target>" }, true, 2), new MoveCommand()) },
             { "open", new CommandInfo("open", ShellType, /* Localizable */ "Opens a URL", new CommandArgumentInfo(new[] { "<URL>" }, true, 1), new OpenCommand()) },
             { "perm", new CommandInfo("perm", ShellType, /* Localizable */ "Manage permissions for users", new CommandArgumentInfo(new[] { "<userName> <allow/revoke> <perm>" }, true, 3, (startFrom, _, _) => UserManagement.ListAllUsers().Where((src) => src.StartsWith(startFrom)).ToArray()), new PermCommand(), CommandFlags.Strict) },
+            { "permgroup", new CommandInfo("permgroup", ShellType, /* Localizable */ "Manage permissions for groups", new CommandArgumentInfo(new[] { "<groupName> <allow/revoke> <perm>" }, true, 3, (startFrom, _, _) => GroupManagement.AvailableGroups.Select((src) => src.GroupName).Where((src) => src.StartsWith(startFrom)).ToArray()), new PermGroupCommand(), CommandFlags.Strict) },
             { "ping", new CommandInfo("ping", ShellType, /* Localizable */ "Pings an address", new CommandArgumentInfo(new[] { "[times] <Address1> <Address2> ..." }, true, 1), new PingCommand()) },
             { "playlyric", new CommandInfo("playlyric", ShellType, /* Localizable */ "Plays a lyric file", new CommandArgumentInfo(new[] { "<lyric.lrc>" }, true, 1), new PlayLyricCommand()) },
             { "previewsplash", new CommandInfo("previewsplash", ShellType, /* Localizable */ "Previews the splash", new CommandArgumentInfo(new[] { "[splashName]" }, false, 0, (startFrom, _, _) => SplashManager.Splashes.Keys.Where((src) => src.StartsWith(startFrom)).ToArray()), new PreviewSplashCommand()) },
@@ -128,6 +132,8 @@ namespace KS.Shell.Shells.UESH
             { "rdebug", new CommandInfo("rdebug", ShellType, /* Localizable */ "Enables or disables remote debugging.", new CommandArgumentInfo(), new RdebugCommand(), CommandFlags.Strict) },
             { "reportbug", new CommandInfo("reportbug", ShellType, /* Localizable */ "A bug reporting prompt.", new CommandArgumentInfo(), new ReportBugCommand()) },
             { "rmuser", new CommandInfo("rmuser", ShellType, /* Localizable */ "Removes a user from the list", new CommandArgumentInfo(new[] { "<Username>" }, true, 1, (startFrom, _, _) => UserManagement.ListAllUsers().Where((src) => src.StartsWith(startFrom)).ToArray()), new RmUserCommand(), CommandFlags.Strict) },
+            { "rmgroup", new CommandInfo("rmgroup", ShellType, /* Localizable */ "Removes a group from the list", new CommandArgumentInfo(new[] { "<GroupName>" }, true, 1, (startFrom, _, _) => GroupManagement.AvailableGroups.Select((src) => src.GroupName).Where((src) => src.StartsWith(startFrom)).ToArray()), new RmGroupCommand(), CommandFlags.Strict) },
+            { "rmuserfromgroup", new CommandInfo("rmuserfromgroup", ShellType, /* Localizable */ "Removes a user from the group", new CommandArgumentInfo(new[] { "<UserName> <GroupName>" }, true, 1, (startFrom, _, _) => UserManagement.ListAllUsers().Where((src) => src.StartsWith(startFrom)).ToArray()), new RmUserFromGroupCommand(), CommandFlags.Strict) },
             { "roulette", new CommandInfo("roulette", ShellType, /* Localizable */ "Russian Roulette", new CommandArgumentInfo(), new RouletteCommand()) },
             { "rss", new CommandInfo("rss", ShellType, /* Localizable */ "Opens an RSS shell to read the feeds", new CommandArgumentInfo(new[] { "[-m] [feedlink]" }, false, 0), new RssCommand()) },
             { "savecurrdir", new CommandInfo("savecurrdir", ShellType, /* Localizable */ "Saves the current directory to kernel configuration file", new CommandArgumentInfo(), new SaveCurrDirCommand(), CommandFlags.Strict) },

@@ -16,37 +16,33 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using KS.Users;
+using KS.Users.Groups;
+using KS.Users.Permissions;
 
-namespace KS.Shell.Shells.Admin.Commands
+namespace KS.Shell.Shells.UESH.Commands
 {
-    class UserFlagCommand : BaseCommand, ICommand
+    /// <summary>
+    /// You can add a user to a group when needed.
+    /// </summary>
+    /// <remarks>
+    /// If you need to add a user to a group to organize people that use the kernel, you can add a users to the group.
+    /// <br></br>
+    /// The user must have at least the administrative privileges before they can run the below commands.
+    /// </remarks>
+    class AddUserToGroupCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            string userName = ListArgsOnly[0];
-            string type = ListArgsOnly[1];
-            bool enabled = bool.Parse(ListArgsOnly[2]);
-            int userIndex = UserManagement.GetUserIndex(userName);
-            switch (type)
-            {
-                case "admin":
-                    UserManagement.Users[userIndex].Admin = enabled;
-                    break;
-                case "disabled":
-                    UserManagement.Users[userIndex].Disabled = enabled;
-                    break;
-                case "anonymous":
-                    UserManagement.Users[userIndex].Anonymous = enabled;
-                    break;
-                default:
-                    TextWriterColor.Write(Translate.DoTranslation("The specified main flag type is invalid") + ": {0}", type);
-                    return;
-            }
+            PermissionsTools.Demand(PermissionTypes.ManageGroups);
+            TextWriterColor.Write(Translate.DoTranslation("Adding user {0} to group {1}..."), ListArgsOnly[0], ListArgsOnly[1]);
+            GroupManagement.AddUserToGroup(ListArgsOnly[0], ListArgsOnly[1]);
         }
+
     }
 }

@@ -224,6 +224,12 @@ namespace KS.Files
             Filesystem.NeutralizePath(AppDataPath + "/KernelSplashConfig.json");
 
         /// <summary>
+        /// User groups path
+        /// </summary>
+        public static string UserGroupsPath =>
+            Filesystem.NeutralizePath(AppDataPath + "/UserGroups.json");
+
+        /// <summary>
         /// Gets the neutralized kernel path
         /// </summary>
         /// <param name="PathType">Kernel path type</param>
@@ -253,6 +259,7 @@ namespace KS.Files
                 KernelPathType.ContactsImport =>        ContactsImportPath,
                 KernelPathType.SaverConfiguration =>    SaverConfigurationPath,
                 KernelPathType.SplashConfiguration =>   SplashConfigurationPath,
+                KernelPathType.UserGroups =>            UserGroupsPath,
                 _ => throw new KernelException(KernelExceptionType.InvalidKernelPath, Translate.DoTranslation("Invalid kernel path type.")),
             };
         }

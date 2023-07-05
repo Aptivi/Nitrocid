@@ -46,7 +46,7 @@ namespace KS.Shell.Shells.UESH.Commands
             PermissionsTools.Demand(PermissionTypes.ManageUsers);
             UserManagement.ChangeUsername(ListArgsOnly[0], ListArgsOnly[1]);
             TextWriterColor.Write(Translate.DoTranslation("Username has been changed to {0}!"), ListArgsOnly[1]);
-            if (ListArgsOnly[0] == Login.CurrentUser.Username)
+            if (ListArgsOnly[0] == UserManagement.CurrentUser.Username)
                 Flags.LogoutRequested = true;
         }
 

@@ -351,5 +351,9 @@ namespace KS.Kernel.Exceptions
         /// An invalid SQL editor operation is being performed.
         /// </summary>
         SqlEditor,
+        /// <summary>
+        /// Group doesn't exist. Check to make sure that you've written the group name correctly.
+        /// </summary>
+        NoSuchGroup,
     }
 }

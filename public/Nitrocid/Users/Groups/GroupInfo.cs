@@ -16,13 +16,32 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Users;
+using Newtonsoft.Json;
 
-namespace KS.Kernel.Debugging.RemoteDebug.Command.BaseCommands
+namespace KS.Groups
 {
-    internal class UsernameCommand : RemoteDebugBaseCommand
+    /// <summary>
+    /// Group information class
+    /// </summary>
+    public class GroupInfo
     {
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, string Address) =>
-            DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, UserManagement.CurrentUser.Username);
+
+        /// <summary>
+        /// The group name
+        /// </summary>
+        public string GroupName { get; set; }
+        [JsonProperty]
+        internal string[] Permissions { get; set; }
+
+        /// <summary>
+        /// Makes a new class instance of current group info
+        /// </summary>
+        [JsonConstructor]
+        internal GroupInfo(string name, string[] permissions)
+        {
+            GroupName = name;
+            Permissions = permissions;
+        }
+
     }
 }

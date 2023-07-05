@@ -45,20 +45,6 @@ namespace KS.Users.Login
     {
 
         /// <summary>
-        /// List of usernames
-        /// </summary>
-        internal static Dictionary<string, UserInfo> Users = new();
-        /// <summary>
-        /// Current username
-        /// </summary>
-        private static UserInfo CurrentUserInfo = new("root", Encryption.GetEncryptedString("", "SHA256"), Array.Empty<string>(), "System Account", "");
-
-        /// <summary>
-        /// Current username
-        /// </summary>
-        public static UserInfo CurrentUser =>
-            CurrentUserInfo;
-        /// <summary>
         /// Username prompt
         /// </summary>
         public static string UsernamePrompt =>
@@ -80,7 +66,7 @@ namespace KS.Users.Login
                 EventsManager.FireEvent(EventType.PreLogin);
 
                 // Check to see if there are any users
-                if (Users.Count == 0)
+                if (UserManagement.Users.Count == 0)
                 {
                     // Extremely rare state reached
                     DebugWriter.WriteDebug(DebugLevel.F, "Shell reached rare state, because userword count is 0.");
@@ -146,7 +132,8 @@ namespace KS.Users.Login
             while (!(Flags.RebootRequested | Flags.KernelShutdown))
             {
                 // Get the password from dictionary
-                string UserPassword = Users[usernamerequested].Password;
+                int userIndex = UserManagement.GetUserIndex(usernamerequested);
+                string UserPassword = UserManagement.Users[userIndex].Password;
 
                 // Check if there's a password
                 if (UserPassword != Encryption.GetEmptyHash("SHA256"))
@@ -205,16 +192,17 @@ namespace KS.Users.Login
             Flags.LoggedIn = true;
 
             // Sign in to user.
-            CurrentUserInfo = Users[signedInUser];
+            UserManagement.CurrentUserInfo = UserManagement.GetUser(signedInUser);
 
             // Set preferred language
-            if (!string.IsNullOrWhiteSpace(CurrentUser.PreferredLanguage))
-                LanguageManager.currentUserLanguage = LanguageManager.Languages[CurrentUserInfo.PreferredLanguage];
+            string preferredLanguage = UserManagement.CurrentUser.PreferredLanguage;
+            if (!string.IsNullOrWhiteSpace(preferredLanguage))
+                LanguageManager.currentUserLanguage = LanguageManager.Languages[preferredLanguage];
             else
                 LanguageManager.currentUserLanguage = LanguageManager.currentLanguage;
 
             // Fire event PostLogin
-            EventsManager.FireEvent(EventType.PostLogin, CurrentUser.Username);
+            EventsManager.FireEvent(EventType.PostLogin, UserManagement.CurrentUser.Username);
 
             // Show license information
             WelcomeMessage.WriteLicense();

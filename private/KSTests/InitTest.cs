@@ -52,7 +52,6 @@ namespace KSTests
                 Config.CreateConfig();
             }
             Config.ReadConfig(ConfigType.Kernel, Paths.GetKernelPath(KernelPathType.Configuration));
-            UserManagement.LoadUserToken();
 
             // NUnit sets current directory to a wrong directory, so set it to the test context directory
             string TestAssemblyDir = TestContext.CurrentContext.TestDirectory;

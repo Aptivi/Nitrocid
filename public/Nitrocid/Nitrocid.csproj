@@ -50,7 +50,7 @@
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     
     <!-- Increment NitrocidModAPIVersion everytime there is a breaking change in the N-KS API. -->
-    <NitrocidModAPIVersion>3.0.25.3</NitrocidModAPIVersion>
+    <NitrocidModAPIVersion>3.0.25.4</NitrocidModAPIVersion>
     <FileVersion>$(NitrocidModAPIVersion)</FileVersion>
   </PropertyGroup>
   <!-- KS General Information End -->

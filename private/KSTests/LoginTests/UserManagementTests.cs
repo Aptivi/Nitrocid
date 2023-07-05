@@ -45,18 +45,8 @@ namespace KSTests.LoginTests
         /// </summary>
         [Test]
         [Description("Management")]
-        public void TestChangeUser() => UserManagement.TryChangeUsername("Account2", "Account3").ShouldBeTrue();
-
-        /// <summary>
-        /// Tests username change
-        /// </summary>
-        [Test]
-        [Description("Management")]
-        public void TestGetUserProperty()
-        {
-            UserManagement.GetUserProperty("Account3", UserManagement.UserProperty.Username).ShouldBe("Account3");
-            ((bool)UserManagement.GetUserProperty("Account3", UserManagement.UserProperty.Admin)).ShouldBeFalse();
-        }
+        public void TestChangeUser() =>
+            UserManagement.TryChangeUsername("Account2", "Account3").ShouldBeTrue();
 
         /// <summary>
         /// Tests removing user

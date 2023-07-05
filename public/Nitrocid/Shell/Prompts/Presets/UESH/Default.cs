@@ -42,7 +42,7 @@ namespace KS.Shell.Prompts.Presets.UESH
         internal override string PresetPromptBuilder()
         {
             var PresetStringBuilder = new StringBuilder();
-            string UserDollarSign = UserManagement.GetUserDollarSign(Login.CurrentUser.Username);
+            string UserDollarSign = UserManagement.GetUserDollarSign(UserManagement.CurrentUser.Username);
 
             // Build the preset
             if (!Flags.Maintenance)
@@ -53,7 +53,7 @@ namespace KS.Shell.Prompts.Presets.UESH
 
                 // Current username
                 PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
-                PresetStringBuilder.AppendFormat("{0}", Login.CurrentUser.Username);
+                PresetStringBuilder.AppendFormat("{0}", UserManagement.CurrentUser.Username);
 
                 // "At" sign
                 PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);

@@ -36,6 +36,7 @@ using KS.ConsoleBase.Colors;
 using KS.Drivers.Console;
 using KS.Drivers;
 using System.Linq;
+using KS.Users;
 
 namespace KS.Misc.Screensaver
 {
@@ -268,7 +269,7 @@ namespace KS.Misc.Screensaver
             while (inSaver)
                 Thread.Sleep(1);
             if (PasswordLock)
-                Login.ShowPasswordPrompt(Login.CurrentUser.Username);
+                Login.ShowPasswordPrompt(UserManagement.CurrentUser.Username);
             else
                 LockMode = false;
         }

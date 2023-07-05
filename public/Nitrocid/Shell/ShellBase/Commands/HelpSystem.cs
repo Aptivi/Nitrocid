@@ -28,8 +28,8 @@ using KS.Misc.Writers.ConsoleWriters;
 using KS.Modifications;
 using KS.Shell.ShellBase.Aliases;
 using KS.Shell.ShellBase.Shells;
+using KS.Users;
 using KS.Users.Login;
-using static KS.Users.UserManagement;
 
 namespace KS.Shell.ShellBase.Commands
 {
@@ -140,7 +140,7 @@ namespace KS.Shell.ShellBase.Commands
                         TextWriterColor.Write("- " + Translate.DoTranslation("Shell commands not implemented!!!"), true, KernelColorType.Warning);
                     foreach (string cmd in CommandList.Keys)
                     {
-                        if ((!CommandList[cmd].Flags.HasFlag(CommandFlags.Strict) | CommandList[cmd].Flags.HasFlag(CommandFlags.Strict) & (bool)GetUserProperty(Login.CurrentUser?.Username, UserProperty.Admin)) & (Flags.Maintenance & !CommandList[cmd].Flags.HasFlag(CommandFlags.NoMaintenance) | !Flags.Maintenance))
+                        if ((!CommandList[cmd].Flags.HasFlag(CommandFlags.Strict) | CommandList[cmd].Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Admin) & (Flags.Maintenance & !CommandList[cmd].Flags.HasFlag(CommandFlags.NoMaintenance) | !Flags.Maintenance))
                         {
                             TextWriterColor.Write("- {0}: ", false, Shell.UnifiedCommandDict.ContainsKey(cmd) ? KernelColorType.Success : KernelColorType.ListEntry, cmd);
                             TextWriterColor.Write("{0}", true, KernelColorType.ListValue, CommandList[cmd].GetTranslatedHelpEntry());
@@ -175,12 +175,8 @@ namespace KS.Shell.ShellBase.Commands
                 {
                     // The built-in commands
                     foreach (string cmd in CommandList.Keys)
-                    {
-                        if ((!CommandList[cmd].Flags.HasFlag(CommandFlags.Strict) | CommandList[cmd].Flags.HasFlag(CommandFlags.Strict) & (bool)GetUserProperty(Login.CurrentUser?.Username, UserProperty.Admin)) & (Flags.Maintenance & !CommandList[cmd].Flags.HasFlag(CommandFlags.NoMaintenance) | !Flags.Maintenance))
-                        {
+                        if ((!CommandList[cmd].Flags.HasFlag(CommandFlags.Strict) | CommandList[cmd].Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Admin) & (Flags.Maintenance & !CommandList[cmd].Flags.HasFlag(CommandFlags.NoMaintenance) | !Flags.Maintenance))
                             TextWriterColor.Write("{0}, ", false, KernelColorType.ListEntry, cmd);
-                        }
-                    }
 
                     // The mod commands
                     foreach (string cmd in ModCommandList.Keys)

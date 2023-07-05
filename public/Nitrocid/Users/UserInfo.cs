@@ -16,6 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using Newtonsoft.Json;
+
 namespace KS.Users
 {
     /// <summary>
@@ -27,7 +29,7 @@ namespace KS.Users
         /// <summary>
         /// The username
         /// </summary>
-        public string Username { get; private set; }
+        public string Username { get; set; }
         /// <summary>
         /// The full name
         /// </summary>
@@ -36,20 +38,34 @@ namespace KS.Users
         /// The preferred language
         /// </summary>
         public string PreferredLanguage { get; set; }
-
+        [JsonProperty]
+        internal string[] Groups { get; set; }
+        [JsonProperty]
         internal string Password { get; set; }
+        [JsonProperty]
+        internal bool Admin { get; set; }
+        [JsonProperty]
+        internal bool Anonymous { get; set; }
+        [JsonProperty]
+        internal bool Disabled { get; set; }
+        [JsonProperty]
         internal string[] Permissions { get; set; }
 
         /// <summary>
         /// Makes a new class instance of current user info
         /// </summary>
-        protected internal UserInfo(string username, string password, string[] permissions, string fullName, string preferredLanguage)
+        [JsonConstructor]
+        internal UserInfo(string username, string password, string[] permissions, string fullName, string preferredLanguage, string[] groups, bool admin, bool anonymous, bool disabled)
         {
             Username = username;
             Password = password;
             Permissions = permissions;
             FullName = fullName;
             PreferredLanguage = preferredLanguage;
+            Groups = groups;
+            Admin = admin;
+            Anonymous = anonymous;
+            Disabled = disabled;
         }
 
     }

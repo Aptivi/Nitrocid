@@ -571,5 +571,23 @@ Executes an SQL query
 Enter parameter value for {0}:
 SQL command succeeded. Here are the replies:
 SQL command failed.
+Group doesn't exist. Check to make sure that you've written the group name correctly.
+Can't add a group with the same name.
+Can't remove a nonexistent group.
+Can't add a user to a nonexistent group.
+Can't remove a user from a nonexistent group.
+Can't query a user from a nonexistent group.
+Some malicious mod removed the root account, or rare situation happened and it was gone.
+User has already joined the group!
+User has already left the group!
+Adds groups
+Adds users to a group
+Creating group {0}...
+Adding user {0} to group {1}...
+Removes a group from the list
+Removes a user from the group
+Group {0} removed.
+Removed {0} from group {1}.
+Manage permissions for groups
 
 ==========================================================================================================================================

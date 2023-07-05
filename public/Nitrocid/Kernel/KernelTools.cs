@@ -200,9 +200,6 @@ namespace KS.Kernel
             // Initialize top right date
             TimeDateTopRight.InitTopRightDate();
 
-            // Load user token
-            UserManagement.LoadUserToken();
-
             // Show welcome message.
             WelcomeMessage.WriteMessage();
 

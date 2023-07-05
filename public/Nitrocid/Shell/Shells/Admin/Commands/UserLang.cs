@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using Addresstigator;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
@@ -31,18 +32,19 @@ namespace KS.Shell.Shells.Admin.Commands
         {
             string userName = ListArgsOnly[0];
             string lang = ListArgsOnly[1];
+            int userIndex = UserManagement.GetUserIndex(userName);
             if (lang == "clear")
             {
                 // If we're doing this on ourselves, change the kernel language to the system language
                 lang = LanguageManager.currentLanguage.ThreeLetterLanguageName;
-                if (Login.CurrentUser.Username == userName)
+                if (UserManagement.CurrentUser.Username == userName)
                 {
                     LanguageManager.currentUserLanguage = LanguageManager.currentLanguage;
-                    Login.CurrentUser.PreferredLanguage = lang;
+                    UserManagement.CurrentUser.PreferredLanguage = lang;
                 }
 
                 // Now, change the language in the user config
-                UserManagement.SetUserProperty(userName, UserManagement.UserProperty.PreferredLanguage, null);
+                UserManagement.Users[userIndex].PreferredLanguage = null;
                 TextWriterColor.Write(Translate.DoTranslation("Preferred user language set to {0}. You may want to log in again."), lang);
             }
             else if (LanguageManager.Languages.ContainsKey(lang))
@@ -51,7 +53,7 @@ namespace KS.Shell.Shells.Admin.Commands
                 LanguageManager.currentUserLanguage = LanguageManager.Languages[lang];
 
                 // Now, change the language in the user config
-                UserManagement.SetUserProperty(userName, UserManagement.UserProperty.PreferredLanguage, lang);
+                UserManagement.Users[userIndex].PreferredLanguage = lang;
                 TextWriterColor.Write(Translate.DoTranslation("Preferred user language set to {0}. You may want to log in again."), lang);
             }
             else
