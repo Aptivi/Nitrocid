@@ -1709,9 +1709,6 @@
         "BarWaveMaximumColorLevel": {
             "type": "integer"
         },
-        "WaveTrueColor": {
-            "type": "boolean"
-        },
         "WaveDelay": {
             "type": "integer"
         },
@@ -2310,7 +2307,6 @@
         "BarWaveMaximumGreenColorLevel",
         "BarWaveMaximumBlueColorLevel",
         "BarWaveMaximumColorLevel",
-        "WaveTrueColor",
         "WaveDelay",
         "WaveMinimumRedColorLevel",
         "WaveMinimumGreenColorLevel",

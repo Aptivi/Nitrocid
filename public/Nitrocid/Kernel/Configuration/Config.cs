@@ -204,36 +204,44 @@ namespace KS.Kernel.Configuration
             JObject configObj = JObject.Parse(jsonContents);
             JSchema schema;
 
-            // Now, read the config.
+            // Validate the configuration file
+            try
+            {
+                switch (type)
+                {
+                    case ConfigType.Kernel:
+                        schema = JSchema.Parse(Properties.Resources.Resources.KernelMainConfigSchema);
+                        configObj.Validate(schema);
+                        break;
+                    case ConfigType.Screensaver:
+                        // Validate the configuration file
+                        schema = JSchema.Parse(Properties.Resources.Resources.KernelSaverConfigSchema);
+                        configObj.Validate(schema);
+                        break;
+                    case ConfigType.Splash:
+                        // Validate the configuration file
+                        schema = JSchema.Parse(Properties.Resources.Resources.KernelSplashConfigSchema);
+                        configObj.Validate(schema);
+                        break;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Configuration file is invalid."), e);
+            }
+
+            // Now, deserialize the config state.
             switch (type)
             {
                 case ConfigType.Kernel:
-                    // Validate the configuration file
-                    schema = JSchema.Parse(Properties.Resources.Resources.KernelMainConfigSchema);
-                    if (!configObj.IsValid(schema))
-                        throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Configuration file is invalid."));
-
-                    // Now, deserialize the config state.
                     RepairConfig(ConfigType.Kernel);
                     mainConfig = (KernelMainConfig)JsonConvert.DeserializeObject(jsonContents, typeof(KernelMainConfig));
                     break;
                 case ConfigType.Screensaver:
-                    // Validate the configuration file
-                    schema = JSchema.Parse(Properties.Resources.Resources.KernelSaverConfigSchema);
-                    if (!configObj.IsValid(schema))
-                        throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Configuration file is invalid."));
-
-                    // Now, deserialize the config state.
                     RepairConfig(ConfigType.Screensaver);
                     saverConfig = (KernelSaverConfig)JsonConvert.DeserializeObject(jsonContents, typeof(KernelSaverConfig));
                     break;
                 case ConfigType.Splash:
-                    // Validate the configuration file
-                    schema = JSchema.Parse(Properties.Resources.Resources.KernelSplashConfigSchema);
-                    if (!configObj.IsValid(schema))
-                        throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Configuration file is invalid."));
-
-                    // Now, deserialize the config state.
                     RepairConfig(ConfigType.Splash);
                     splashConfig = (KernelSplashConfig)JsonConvert.DeserializeObject(jsonContents, typeof(KernelSplashConfig));
                     break;

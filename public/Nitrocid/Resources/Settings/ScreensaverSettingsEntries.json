@@ -4343,12 +4343,6 @@
         "Path": "Screensaver.Wave",
         "Keys": [
             {
-                "Name": "Activate true colors",
-                "Type": "SBoolean",
-                "Variable": "WaveTrueColor",
-                "Description": "Activates the true color support."
-            },
-            {
                 "Name": "Delay in Milliseconds",
                 "Type": "SInt",
                 "Variable": "WaveDelay",
