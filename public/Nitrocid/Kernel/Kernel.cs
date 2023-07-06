@@ -275,10 +275,6 @@ namespace KS.Kernel
                             throw new KernelException(KernelExceptionType.NoSuchUser, Translate.DoTranslation("Some malicious mod removed the root account, or rare situation happened and it was gone."));
                         }
                     }
-
-                    // Clear all active threads as we're rebooting
-                    ThreadManager.StopAllThreads();
-                    PowerManager.Uptime.Reset();
                 }
                 catch (KernelException icde) when (icde.ExceptionType == KernelExceptionType.InsaneConsoleDetected)
                 {
