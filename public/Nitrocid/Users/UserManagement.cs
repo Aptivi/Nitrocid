@@ -36,6 +36,7 @@ using KS.Users.Permissions;
 using KS.Misc.Probers.Regexp;
 using KS.Kernel.Configuration;
 using KS.Groups;
+using KS.Files.Operations;
 
 namespace KS.Users
 {
@@ -164,12 +165,20 @@ namespace KS.Users
         /// </summary>
         public static void InitializeUsers()
         {
-            // Opens file stream
+            // First, check to see if we have the file
+            string UsersPath = Paths.GetKernelPath(KernelPathType.Users);
+            if (!Checking.FileExists(UsersPath))
+                SaveUsers();
+
+            // Get the content and parse it
             string UsersTokenContent = File.ReadAllText(Paths.GetKernelPath(KernelPathType.Users));
             JArray userInfoArrays = (JArray)JsonConvert.DeserializeObject(UsersTokenContent);
+
+            // Now, get each user from the config file
             List<UserInfo> users = new();
             foreach (var userInfoArray in userInfoArrays)
             {
+                // Add the user info to the users list after populating it
                 UserInfo userInfo = (UserInfo)JsonConvert.DeserializeObject(userInfoArray.ToString(), typeof(UserInfo));
                 users.Add(userInfo);
             }
