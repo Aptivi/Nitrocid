@@ -2338,5 +2338,41 @@ namespace KS.Kernel.Configuration.Instances
         /// [Wave] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int WaveMaximumColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [Mesmerize] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int MesmerizeDelay { get; set; } = 10;
+        /// <summary>
+        /// [Mesmerize] The minimum red color level (true color)
+        /// </summary>
+        public int MesmerizeMinimumRedColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [Mesmerize] The minimum green color level (true color)
+        /// </summary>
+        public int MesmerizeMinimumGreenColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [Mesmerize] The minimum blue color level (true color)
+        /// </summary>
+        public int MesmerizeMinimumBlueColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [Mesmerize] The minimum color level (255 colors or 16 colors)
+        /// </summary>
+        public int MesmerizeMinimumColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [Mesmerize] The maximum red color level (true color)
+        /// </summary>
+        public int MesmerizeMaximumRedColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [Mesmerize] The maximum green color level (true color)
+        /// </summary>
+        public int MesmerizeMaximumGreenColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [Mesmerize] The maximum blue color level (true color)
+        /// </summary>
+        public int MesmerizeMaximumBlueColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [Mesmerize] The maximum color level (255 colors or 16 colors)
+        /// </summary>
+        public int MesmerizeMaximumColorLevel { get; set; } = 255;
     }
 }

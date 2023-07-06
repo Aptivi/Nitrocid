@@ -1735,6 +1735,33 @@
         },
         "WaveMaximumColorLevel": {
             "type": "integer"
+        },
+        "MesmerizeDelay": {
+            "type": "integer"
+        },
+        "MesmerizeMinimumRedColorLevel": {
+            "type": "integer"
+        },
+        "MesmerizeMinimumGreenColorLevel": {
+            "type": "integer"
+        },
+        "MesmerizeMinimumBlueColorLevel": {
+            "type": "integer"
+        },
+        "MesmerizeMinimumColorLevel": {
+            "type": "integer"
+        },
+        "MesmerizeMaximumRedColorLevel": {
+            "type": "integer"
+        },
+        "MesmerizeMaximumGreenColorLevel": {
+            "type": "integer"
+        },
+        "MesmerizeMaximumBlueColorLevel": {
+            "type": "integer"
+        },
+        "MesmerizeMaximumColorLevel": {
+            "type": "integer"
         }
     },
     "required": [
@@ -2315,6 +2342,15 @@
         "WaveMaximumRedColorLevel",
         "WaveMaximumGreenColorLevel",
         "WaveMaximumBlueColorLevel",
-        "WaveMaximumColorLevel"
+        "WaveMaximumColorLevel",
+        "MesmerizeDelay",
+        "MesmerizeMinimumRedColorLevel",
+        "MesmerizeMinimumGreenColorLevel",
+        "MesmerizeMinimumBlueColorLevel",
+        "MesmerizeMinimumColorLevel",
+        "MesmerizeMaximumRedColorLevel",
+        "MesmerizeMaximumGreenColorLevel",
+        "MesmerizeMaximumBlueColorLevel",
+        "MesmerizeMaximumColorLevel"
     ]
 }
