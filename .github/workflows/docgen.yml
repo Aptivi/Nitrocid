@@ -3,11 +3,11 @@ name: KS API Documentation
 on:
   push:
     branches:
-      - master
+      - main
       - servicing
   pull_request:
     branches:
-      - master
+      - main
       - servicing
 
 jobs:

@@ -11,7 +11,7 @@
     <projectUrl>http://github.com/Aptivi/NitrocidKS</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/Aptivi/NitrocidKS@latest/public/Nitrocid/OfficialAppIcon-KernelSimulator-256.ico</iconUrl>
     <copyright>Copyright © 2018-2023 Aptivi, All rights reserved.</copyright>
-    <licenseUrl>https://github.com/Aptivi/NitrocidKS/blob/master/LICENSE</licenseUrl>
+    <licenseUrl>https://github.com/Aptivi/NitrocidKS/blob/main/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <tags>ks kernel simulator vb.net</tags>
     <summary>Simulates our future-planned kernel, Nitrocid Kernel!</summary>
