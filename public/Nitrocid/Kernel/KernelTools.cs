@@ -138,10 +138,6 @@ namespace KS.Kernel
 
             // Stop the time/date change thread
             TimeDateTopRight.TimeTopRightChange.Stop();
-
-            // Clear all active threads as we're rebooting
-            ThreadManager.StopAllThreads();
-            PowerManager.Uptime.Reset();
         }
 
         /// <summary>
@@ -149,9 +145,6 @@ namespace KS.Kernel
         /// </summary>
         internal static void InitEverything()
         {
-            // Reset errored flag
-            Flags.KernelErrored = false;
-
             // Load alternative buffer (only supported on Linux, because Windows doesn't seem to respect CursorVisible = false on alt buffers)
             if (!KernelPlatform.IsOnWindows() && Flags.UseAltBuffer)
             {
