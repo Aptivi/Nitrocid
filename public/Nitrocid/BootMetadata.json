@@ -4,10 +4,6 @@
         "Arguments": [ "noaltbuffer" ]
     },
     {
-        "OverrideTitle": "Nitrocid 0.1.0 - args",
-        "Arguments": [ "noaltbuffer", "args" ]
-    },
-    {
         "OverrideTitle": "Nitrocid 0.1.0 - debug",
         "Arguments": [ "noaltbuffer", "debug" ]
     },
