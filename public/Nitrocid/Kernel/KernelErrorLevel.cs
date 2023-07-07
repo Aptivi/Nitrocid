@@ -24,10 +24,6 @@ namespace KS.Kernel
     public enum KernelErrorLevel
     {
         /// <summary>
-        /// Continuable kernel error
-        /// </summary>
-        C,
-        /// <summary>
         /// Serious kernel error
         /// </summary>
         S,

@@ -26,7 +26,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override string TestName => Translate.DoTranslation("Tests the kernel error facility");
         public override void Run()
         {
-            KernelPanic.KernelError(KernelErrorLevel.C, false, 3000, Translate.DoTranslation("Test panicking the kernel"), null);
+            KernelPanic.KernelErrorContinuable(Translate.DoTranslation("Test panicking the kernel"), null);
         }
     }
 }

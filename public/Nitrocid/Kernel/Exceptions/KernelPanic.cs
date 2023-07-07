@@ -96,7 +96,7 @@ namespace KS.Kernel.Exceptions
                 }
                 else
                 {
-                    // If the error type is other than D/F/C/U/S, then it will generate a second error.
+                    // If the error type is other than F/U/S, then it will generate a second error.
                     DebugWriter.WriteDebug(DebugLevel.E, "Error type {0} is not valid.", ErrorType);
                     KernelErrorDouble(Translate.DoTranslation("DOUBLE PANIC: Error Type {0} invalid."), null, ((int)ErrorType).ToString());
                     return;
@@ -111,51 +111,26 @@ namespace KS.Kernel.Exceptions
                 // Make a dump file
                 GeneratePanicDump(Description, ErrorType, Exc);
 
-                // Check error type
-                switch (ErrorType)
+                // Do the job
+                if (Reboot)
                 {
-                    case KernelErrorLevel.C:
-                        {
-                            if (Reboot)
-                            {
-                                // Continuable kernel errors shouldn't cause the kernel to reboot.
-                                DebugWriter.WriteDebug(DebugLevel.W, "Continuable kernel errors shouldn't have Reboot = True.");
-                                SplashReport.ReportProgressError(Translate.DoTranslation("[{0}] panic: Reboot disabled due to error level being {0}."), ErrorType);
-                            }
-                            // Print normally
-                            EventsManager.FireEvent(EventType.ContKernelError, ErrorType, Reboot, RebootTime, Description, Exc, Variables);
-                            SplashReport.ReportProgressError(Translate.DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel."), Exc, ErrorType, Description);
-                            if (Flags.ShowStackTraceOnKernelError & Exc is not null)
-                                SplashReport.ReportProgressError(Exc.StackTrace);
-                            Input.DetectKeypress();
-                            break;
-                        }
-
-                    default:
-                        {
-                            if (Reboot)
-                            {
-                                // Offer the user to wait for the set time interval before the kernel reboots.
-                                DebugWriter.WriteDebug(DebugLevel.F, "Kernel panic initiated with reboot time: {0} seconds, Error Type: {1}", RebootTime, ErrorType);
-                                SplashReport.ReportProgressError(Translate.DoTranslation("[{0}] panic: {1} -- Rebooting in {2} seconds..."), Exc, ErrorType, Description, RebootTime);
-                                if (Flags.ShowStackTraceOnKernelError & Exc is not null)
-                                    SplashReport.ReportProgressError(Exc.StackTrace);
-                                Thread.Sleep((int)(RebootTime * 1000L));
-                                PowerManager.PowerManage(PowerMode.Reboot);
-                            }
-                            else
-                            {
-                                // If rebooting is disabled, offer the user to shutdown the kernel
-                                DebugWriter.WriteDebug(DebugLevel.W, "Reboot is False, ErrorType is not double or continuable.");
-                                SplashReport.ReportProgressError(Translate.DoTranslation("[{0}] panic: {1} -- Press any key to shutdown."), Exc, ErrorType, Description);
-                                if (Flags.ShowStackTraceOnKernelError & Exc is not null)
-                                    SplashReport.ReportProgressError(Exc.StackTrace);
-                                Input.DetectKeypress();
-                                PowerManager.PowerManage(PowerMode.Shutdown);
-                            }
-
-                            break;
-                        }
+                    // Offer the user to wait for the set time interval before the kernel reboots.
+                    DebugWriter.WriteDebug(DebugLevel.F, "Kernel panic initiated with reboot time: {0} seconds, Error Type: {1}", RebootTime, ErrorType);
+                    SplashReport.ReportProgressError(Translate.DoTranslation("[{0}] panic: {1} -- Rebooting in {2} seconds..."), Exc, ErrorType, Description, RebootTime);
+                    if (Flags.ShowStackTraceOnKernelError & Exc is not null)
+                        SplashReport.ReportProgressError(Exc.StackTrace);
+                    Thread.Sleep((int)(RebootTime * 1000L));
+                    PowerManager.PowerManage(PowerMode.Reboot);
+                }
+                else
+                {
+                    // If rebooting is disabled, offer the user to shutdown the kernel
+                    DebugWriter.WriteDebug(DebugLevel.W, "Reboot is False, ErrorType is not double or continuable.");
+                    SplashReport.ReportProgressError(Translate.DoTranslation("[{0}] panic: {1} -- Press any key to shutdown."), Exc, ErrorType, Description);
+                    if (Flags.ShowStackTraceOnKernelError & Exc is not null)
+                        SplashReport.ReportProgressError(Exc.StackTrace);
+                    Input.DetectKeypress();
+                    PowerManager.PowerManage(PowerMode.Shutdown);
                 }
             }
             catch (Exception ex)
@@ -198,6 +173,37 @@ namespace KS.Kernel.Exceptions
             {
                 // Trigger triple fault
                 Environment.FailFast("TRIPLE FAULT in trying to handle DOUBLE PANIC. KS can't continue.", ex);
+            }
+        }
+
+        /// <summary>
+        /// Indicates that there's a continuable error with the kernel.
+        /// </summary>
+        /// <param name="Description">Explanation of what happened when it errored.</param>
+        /// <param name="Exc">An exception to get stack traces, etc. Used for dump files currently.</param>
+        /// <param name="Variables">Optional. Specifies variables to get on text that will be printed.</param>
+        internal static void KernelErrorContinuable(string Description, Exception Exc, params object[] Variables)
+        {
+            Flags.KernelErrored = true;
+            LastKernelErrorException = Exc;
+            Flags.NotifyKernelError = true;
+
+            try
+            {
+                // Let the user know that there is a continuable kernel error
+                EventsManager.FireEvent(EventType.ContKernelError, Description, Exc, Variables);
+                SplashReport.ReportProgressError(Translate.DoTranslation("Continuable kernel error occurred:") + " {0}", Exc, Description);
+                if (Flags.ShowStackTraceOnKernelError && Exc is not null)
+                    SplashReport.ReportProgressError(Exc.StackTrace);
+                SplashReport.ReportProgressError(Translate.DoTranslation("This error may cause instabilities to the kernel or to the applications. Press any key to continue using the kernel..."));
+                Input.DetectKeypress();
+            }
+            catch (Exception ex)
+            {
+                // Alright, we have a double panic.
+                DebugWriter.WriteDebug(DebugLevel.F, "DOUBLE PANIC: Kernel bug: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+                KernelErrorDouble(Translate.DoTranslation("DOUBLE PANIC: Kernel bug: {0}"), ex, ex.Message);
             }
         }
 

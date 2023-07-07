@@ -319,7 +319,7 @@ namespace KS.Misc.Threading
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Thread {0} [{1}] failed: {2}", Name, BaseThread.ManagedThreadId, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                KernelPanic.KernelError(Kernel.KernelErrorLevel.C, false, 0, Translate.DoTranslation("Kernel thread {0} failed.") + " {1}", ex, Name, ex.Message);
+                KernelPanic.KernelErrorContinuable(Translate.DoTranslation("Kernel thread {0} failed.") + " {1}", ex, Name, ex.Message);
             }
         }
 
@@ -335,7 +335,7 @@ namespace KS.Misc.Threading
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Thread {0} [{1}] failed: {2}", Name, BaseThread.ManagedThreadId, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                KernelPanic.KernelError(Kernel.KernelErrorLevel.C, false, 0, Translate.DoTranslation("Kernel thread {0} failed.") + " {1}", ex, Name, ex.Message);
+                KernelPanic.KernelErrorContinuable(Translate.DoTranslation("Kernel thread {0} failed.") + " {1}", ex, Name, ex.Message);
             }
         }
 

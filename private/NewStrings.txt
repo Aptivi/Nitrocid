@@ -598,5 +598,7 @@ Tests the interactive TUI system with a single pane interaction
 Tests the interactive TUI system with a double pane interaction
 Add
 Delete Last
+Continuable kernel error occurred:
+This error may cause instabilities to the kernel or to the applications. Press any key to continue using the kernel...
 
 ==========================================================================================================================================
