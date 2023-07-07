@@ -1601,5 +1601,9 @@ namespace KS.Kernel.Configuration.Instances
         /// Censor private information that may be printed to the debug logs.
         /// </summary>
         public bool DebugCensorPrivateInfo { get; set; }
+        /// <summary>
+        /// Shows all new notifications as asterisks. This option is ignored in notifications with progress bar.
+        /// </summary>
+        public bool NotifyDisplayAsAsterisk { get; set; }
     }
 }

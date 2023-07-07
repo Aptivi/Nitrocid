@@ -1601,6 +1601,12 @@
                 "Type": "SBoolean",
                 "Variable": "DebugCensorPrivateInfo",
                 "Description": "Censor private information that may be printed to the debug logs."
+            },
+            {
+                "Name": "Display new notifications as asterisks",
+                "Type": "SBoolean",
+                "Variable": "NotifyDisplayAsAsterisk",
+                "Description": "Shows all new notifications as asterisks. This option is ignored in notifications with progress bar."
             }
         ]
     }

@@ -760,6 +760,9 @@
         },
         "DebugCensorPrivateInfo": {
             "type": "boolean"
+        },
+        "NotifyDisplayAsAsterisk": {
+            "type": "boolean"
         }
     },
     "required": [
@@ -1015,6 +1018,7 @@
         "TaskManagerOptionBackgroundColor",
         "TaskManagerOptionForegroundColor",
         "TaskManagerKeyBindingOptionColor",
-        "DebugCensorPrivateInfo"
+        "DebugCensorPrivateInfo",
+        "NotifyDisplayAsAsterisk"
     ]
 }

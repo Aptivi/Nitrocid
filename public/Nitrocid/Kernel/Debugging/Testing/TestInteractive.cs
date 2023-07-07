@@ -90,6 +90,7 @@ namespace KS.Kernel.Debugging.Testing
             { "ProbeHardware",                  new Facades.ProbeHardware() },
             { "EnableNotifications",            new Facades.EnableNotifications() },
             { "SendNotification",               new Facades.SendNotification() },
+            { "SendNotificationSimple",         new Facades.SendNotificationSimple() },
             { "SendNotificationProg",           new Facades.SendNotificationProg() },
             { "SendNotificationProgF",          new Facades.SendNotificationProgF() },
             { "ShowDateDiffCalendar",           new Facades.ShowDateDiffCalendar() },

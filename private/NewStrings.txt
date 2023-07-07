@@ -600,5 +600,8 @@ Add
 Delete Last
 Continuable kernel error occurred:
 This error may cause instabilities to the kernel or to the applications. Press any key to continue using the kernel...
+Shows all new notifications as asterisks. This option is ignored in notifications with progress bar.
+Display new notifications as asterisks
+Sends a notification as asterisk to test the receiver
 
 ==========================================================================================================================================
