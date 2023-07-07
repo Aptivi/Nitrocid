@@ -108,7 +108,7 @@ namespace KS.Misc.Splash.Splashes
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
 
                 // Display the progress bar
-                UpdateProgressReport(SplashReport.Progress, false, SplashReport.ProgressText);
+                UpdateProgressReport(SplashReport.Progress, false, false, SplashReport.ProgressText);
 
                 // Loop until closing
                 while (!SplashClosing)
@@ -127,24 +127,29 @@ namespace KS.Misc.Splash.Splashes
         }
 
         public void Report(int Progress, string ProgressReport, params object[] Vars) => 
-            UpdateProgressReport(Progress, false, ProgressReport, Vars);
+            UpdateProgressReport(Progress, false, false, ProgressReport, Vars);
+
+        public void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars) =>
+            UpdateProgressReport(Progress, false, true, WarningReport, Vars);
 
         public void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars) =>
-            UpdateProgressReport(Progress, true, ErrorReport, Vars);
+            UpdateProgressReport(Progress, true, false, ErrorReport, Vars);
 
         /// <summary>
         /// Updates the splash progress
         /// </summary>
         /// <param name="Progress">Progress percentage from 0 to 100</param>
         /// <param name="ProgressErrored">The progress error or not</param>
+        /// <param name="ProgressWarning">The progress warning or not</param>
         /// <param name="ProgressReport">The progress text</param>
         /// <param name="Vars">Variables to be formatted in the text</param>
-        public void UpdateProgressReport(int Progress, bool ProgressErrored, string ProgressReport, params object[] Vars)
+        public void UpdateProgressReport(int Progress, bool ProgressErrored, bool ProgressWarning, string ProgressReport, params object[] Vars)
         {
             // Display the text and percentage
             string RenderedText = ProgressReport.Truncate(ConsoleWrapper.WindowWidth - ProgressReportWritePositionX - ProgressWritePositionX - 3);
             TextWriterWhereColor.WriteWhere("{0}%", ProgressWritePositionX, ProgressWritePositionY, true, KernelColorType.Progress, Progress.ToString().PadLeft(3));
-            TextWriterWhereColor.WriteWhere($"{(ProgressErrored ? "[X] " : "")}{RenderedText}", ProgressReportWritePositionX, ProgressReportWritePositionY, false, KernelColorType.NeutralText, Vars);
+            TextWriterWhereColor.WriteWhere($"{(ProgressErrored ? "[X] " : "")}{RenderedText}", ProgressReportWritePositionX, ProgressReportWritePositionY, false, KernelColorType.Error, Vars);
+            TextWriterWhereColor.WriteWhere($"{(ProgressWarning ? "[!] " : "")}{RenderedText}", ProgressReportWritePositionX, ProgressReportWritePositionY, false, KernelColorType.Warning, Vars);
             ConsoleExtensions.ClearLineToRight();
 
             // Display the progress bar

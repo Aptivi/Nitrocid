@@ -85,6 +85,19 @@ namespace KS.Misc.Splash.Splashes
             Beginning = false;
         }
 
+        public void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars)
+        {
+            if (!Beginning)
+                TextWriterWhereColor.WriteWhere(" WARN ", IndicatorLeft, IndicatorTop, true, KernelColorType.Warning);
+            TextWriterColor.Write($" [      ] {WarningReport}", Vars);
+            if (!Beginning)
+            {
+                IndicatorLeft = 2;
+                IndicatorTop = ConsoleBase.ConsoleWrapper.CursorTop - 1;
+            }
+            Beginning = false;
+        }
+
         public void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars)
         {
             if (!Beginning)

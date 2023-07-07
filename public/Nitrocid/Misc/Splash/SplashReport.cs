@@ -110,6 +110,67 @@ namespace KS.Misc.Splash
         /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
         /// it will report the progress to the splash system. You can force it to report the progress by passing force.
         /// </remarks>
+        internal static void ReportProgressWarning(string Text, params object[] Vars) =>
+            ReportProgressWarning(Text, false, SplashManager.CurrentSplash, null, Vars);
+
+        /// <summary>
+        /// Reports the progress for the splash screen while the kernel is booting.
+        /// </summary>
+        /// <param name="Text">The progress text to indicate how did the kernel progress</param>
+        /// <param name="exception">Exception information</param>
+        /// <param name="Vars">Varibales to be expanded to text</param>
+        /// <remarks>
+        /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
+        /// it will report the progress to the splash system. You can force it to report the progress by passing force.
+        /// </remarks>
+        internal static void ReportProgressWarning(string Text, Exception exception, params object[] Vars) =>
+            ReportProgressWarning(Text, false, SplashManager.CurrentSplash, exception, Vars);
+
+        /// <summary>
+        /// Reports the progress for the splash screen while the kernel is booting.
+        /// </summary>
+        /// <param name="Text">The progress text to indicate how did the kernel progress</param>
+        /// <param name="force">Force report progress to splash</param>
+        /// <param name="splash">Splash interface</param>
+        /// <param name="exception">Exception information</param>
+        /// <param name="Vars">Varibales to be expanded to text</param>
+        /// <remarks>
+        /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
+        /// it will report the progress to the splash system. You can force it to report the progress by passing force.
+        /// </remarks>
+        internal static void ReportProgressWarning(string Text, bool force = false, ISplash splash = null, Exception exception = null, params object[] Vars)
+        {
+            if (!KernelBooted || force)
+            {
+                _ProgressText = Text;
+                if (SplashManager.CurrentSplashInfo.DisplaysProgress)
+                {
+                    if (Flags.EnableSplash && splash != null)
+                    {
+                        splash.ReportWarning(_Progress, Text, exception, Vars);
+                    }
+                    else if (!Flags.QuietKernel)
+                    {
+                        TextWriterColor.Write($"  [{_Progress}%] Warning: {Text}", true, KernelColorType.Warning, Vars);
+                    }
+                }
+            }
+            else
+            {
+                TextWriterColor.Write(Text, true, KernelColorType.Warning, Vars);
+            }
+            JournalManager.WriteJournal(Text, JournalStatus.Warning, Vars);
+        }
+
+        /// <summary>
+        /// Reports the progress for the splash screen while the kernel is booting.
+        /// </summary>
+        /// <param name="Text">The progress text to indicate how did the kernel progress</param>
+        /// <param name="Vars">Varibales to be expanded to text</param>
+        /// <remarks>
+        /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
+        /// it will report the progress to the splash system. You can force it to report the progress by passing force.
+        /// </remarks>
         internal static void ReportProgressError(string Text, params object[] Vars) =>
             ReportProgressError(Text, false, SplashManager.CurrentSplash, null, Vars);
 

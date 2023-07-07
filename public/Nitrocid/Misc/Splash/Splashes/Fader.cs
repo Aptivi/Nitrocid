@@ -84,13 +84,11 @@ namespace KS.Misc.Splash.Splashes
             ConsoleBase.ConsoleWrapper.Clear();
         }
 
-        public void Report(int Progress, string ProgressReport, params object[] Vars)
-        {
-        }
+        public void Report(int Progress, string ProgressReport, params object[] Vars) { }
 
-        public void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars)
-        {
-        }
+        public void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars) { }
+
+        public void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars) { }
 
     }
 }

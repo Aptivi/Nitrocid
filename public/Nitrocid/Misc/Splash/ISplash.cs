@@ -58,6 +58,14 @@ namespace KS.Misc.Splash
         /// <param name="Vars">Variables to be formatted in the text</param>
         void Report(int Progress, string ProgressReport, params object[] Vars);
         /// <summary>
+        /// Report the progress warning
+        /// </summary>
+        /// <param name="Progress">The progress indicator of the kernel</param>
+        /// <param name="WarningReport">The progress text to indicate what went wrong</param>
+        /// <param name="ExceptionInfo">Exception that caused the warning</param>
+        /// <param name="Vars">Variables to be formatted in the text</param>
+        void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars);
+        /// <summary>
         /// Report the progress error
         /// </summary>
         /// <param name="Progress">The progress indicator of the kernel</param>

@@ -192,10 +192,10 @@ namespace KS.Kernel.Exceptions
             {
                 // Let the user know that there is a continuable kernel error
                 EventsManager.FireEvent(EventType.ContKernelError, Description, Exc, Variables);
-                SplashReport.ReportProgressError(Translate.DoTranslation("Continuable kernel error occurred:") + " {0}", Exc, Description);
+                SplashReport.ReportProgressWarning(Translate.DoTranslation("Continuable kernel error occurred:") + " {0}", Exc, Description);
                 if (Flags.ShowStackTraceOnKernelError && Exc is not null)
-                    SplashReport.ReportProgressError(Exc.StackTrace);
-                SplashReport.ReportProgressError(Translate.DoTranslation("This error may cause instabilities to the kernel or to the applications. Press any key to continue using the kernel..."));
+                    SplashReport.ReportProgressWarning(Exc.StackTrace);
+                SplashReport.ReportProgressWarning(Translate.DoTranslation("This error may cause instabilities to the kernel or to the applications. Press any key to continue using the kernel..."));
                 Input.DetectKeypress();
             }
             catch (Exception ex)

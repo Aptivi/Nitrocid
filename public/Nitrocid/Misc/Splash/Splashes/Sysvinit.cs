@@ -76,13 +76,11 @@ namespace KS.Misc.Splash.Splashes
             Beginning = false;
         }
 
-        public void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars)
-        {
-            if (!Beginning)
-                TextWriterColor.Write(".");
-            TextWriterColor.Write($"{ErrorReport}:", false, KernelColorType.NeutralText, Vars);
-            Beginning = false;
-        }
+        public void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars) =>
+            Report(Progress, WarningReport, Vars);
+
+        public void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars) =>
+            Report(Progress, ErrorReport, Vars);
 
     }
 }
