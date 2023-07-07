@@ -96,7 +96,6 @@ namespace KS.Misc.Timers
 
             // Populate the positions for time
             int HalfWidth = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
-            int HalfHeight = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
             string CurrentRemainingString = TimeDate.TimeDateTools.GetRemainingTimeFromNow((int)Math.Round(TimerInterval));
             int TimeLeftPosition = 0;
             int TimeTopPosition = 0;
@@ -209,8 +208,6 @@ namespace KS.Misc.Timers
         private static void TimerElapsed(object sender, ElapsedEventArgs e)
         {
             var FigletFont = FigletTools.GetFigletFont(TimerFigletFont);
-            int HalfWidth = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
-            int HalfHeight = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
             string ElapsedText = new TimeSpan().ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult);
             int TimeLeftPosition = 0;
             int TimeTopPosition = 0;

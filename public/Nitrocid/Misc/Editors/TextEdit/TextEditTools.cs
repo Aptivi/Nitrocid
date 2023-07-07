@@ -547,10 +547,7 @@ namespace KS.Misc.Editors.TextEdit
                 {
                     var LineMatches = Regex.Matches(TextEditShellCommon.TextEdit_FileLines[LineIndex], Word);
                     for (int MatchIndex = 0; MatchIndex <= LineMatches.Count - 1; MatchIndex++)
-                    {
-                        var LineMatch = LineMatches[MatchIndex];
                         Results.Add(MatchIndex, TextEditShellCommon.TextEdit_FileLines[LineIndex]);
-                    }
                     Lines.Add(LineIndex, new Dictionary<int, string>(Results));
                     Results.Clear();
                 }
@@ -580,10 +577,7 @@ namespace KS.Misc.Editors.TextEdit
                 {
                     var LineMatches = Regex.Matches(TextEditShellCommon.TextEdit_FileLines[LineIndex], Word);
                     for (int MatchIndex = 0; MatchIndex <= LineMatches.Count - 1; MatchIndex++)
-                    {
-                        var LineMatch = LineMatches[MatchIndex];
                         Results.Add(MatchIndex, TextEditShellCommon.TextEdit_FileLines[LineIndex]);
-                    }
                 }
                 else
                 {
