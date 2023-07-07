@@ -589,5 +589,14 @@ Removes a user from the group
 Group {0} removed.
 Removed {0} from group {1}.
 Manage permissions for groups
+An error occurred in the Interactive TUI implementation.
+Please provide a base Interactive TUI class and try again.
+No info.
+Failed to get information.
+Open
+Tests the interactive TUI system with a single pane interaction
+Tests the interactive TUI system with a double pane interaction
+Add
+Delete Last
 
 ==========================================================================================================================================

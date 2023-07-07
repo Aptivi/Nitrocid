@@ -16,17 +16,16 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Misc.Contacts.Interactive;
+using KS.Kernel.Debugging.Testing.Facades.FacadeData;
+using KS.Languages;
 using KS.Misc.Interactive;
-using KS.Shell.ShellBase.Commands;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace KS.Kernel.Debugging.Testing.Facades
 {
-    class ContactsCommand : BaseCommand, ICommand
+    internal class CliInfoPaneTest : TestFacade
     {
-
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>
-            InteractiveTuiTools.OpenInteractiveTui(new ContactsManagerCli());
-
+        public override string TestName => Translate.DoTranslation("Tests the interactive TUI system with a single pane interaction");
+        public override void Run() =>
+            InteractiveTuiTools.OpenInteractiveTui(new CliInfoPaneTestData());
     }
 }

@@ -18,16 +18,16 @@
 
 using System;
 
-namespace KS.Misc.Threading.Interactive
+namespace KS.Misc.Interactive
 {
     /// <summary>
-    /// Task manager key binding information class
+    /// Interactive TUI binding information class
     /// </summary>
-    internal class ContactsManagerBinding
+    public class InteractiveTuiBinding
     {
         private string _bindingName;
         private ConsoleKey _bindingKeyName;
-        private Action<int> _bindingAction;
+        private Action<object, int> _bindingAction;
         internal bool _localizable;
 
         /// <summary>
@@ -42,11 +42,11 @@ namespace KS.Misc.Threading.Interactive
 
         /// <summary>
         /// The action to execute.
-        /// The integer argument denotes the thread index in the current pane
+        /// The integer argument denotes the currently selected data
         /// </summary>
-        public Action<int> BindingAction { get => _bindingAction; }
+        public Action<object, int> BindingAction { get => _bindingAction; }
 
-        internal ContactsManagerBinding(string bindingName, ConsoleKey bindingKeyName, Action<int> bindingAction, bool localizable)
+        internal InteractiveTuiBinding(string bindingName, ConsoleKey bindingKeyName, Action<object, int> bindingAction, bool localizable)
         {
             _bindingName = bindingName;
             _bindingKeyName = bindingKeyName;

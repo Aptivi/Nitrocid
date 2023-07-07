@@ -115,6 +115,7 @@ namespace KS.Kernel.Exceptions
                     { KernelExceptionType.UESHConditional,                  Translate.DoTranslation("A UESH condition system failed while performing the requested operation. See the error message below for more details.") },
                     { KernelExceptionType.SqlEditor,                        Translate.DoTranslation("An invalid SQL editor operation is being performed.") },
                     { KernelExceptionType.NoSuchGroup,                      Translate.DoTranslation("Group doesn't exist. Check to make sure that you've written the group name correctly.") },
+                    { KernelExceptionType.InteractiveTui,                   Translate.DoTranslation("An error occurred in the Interactive TUI implementation.") },
                 };
             }
         }

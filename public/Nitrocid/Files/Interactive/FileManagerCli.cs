@@ -19,421 +19,184 @@
 using ColorSeq;
 using Extensification.StringExts;
 using FluentFTP.Helpers;
-using KS.ConsoleBase;
 using KS.Files.Folders;
 using KS.Files.Operations;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using KS.TimeDate;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using KS.ConsoleBase.Inputs;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using MimeKit;
 using KS.Files.LineEndings;
 using System.Text;
-using KS.Kernel.Configuration;
+using KS.Misc.Interactive;
+using System.Collections;
 
 namespace KS.Files.Interactive
 {
     /// <summary>
     /// File manager class relating to the interactive file manager planned back in 2018
     /// </summary>
-    public static class FileManagerCli
+    public class FileManagerCli : BaseInteractiveTui, IInteractiveTui
     {
-        private static bool redrawRequired = true;
-        private static bool isExiting = false;
-        private static int firstPaneCurrentSelection = 1;
-        private static int secondPaneCurrentSelection = 1;
-        private static int currentPane = 1;
-        private static string firstPanePath = "";
-        private static string secondPanePath = "";
-        private static List<FileSystemInfo> cachedFileInfosFirstPane = new();
-        private static List<FileSystemInfo> cachedFileInfosSecondPane = new();
-        private static readonly List<FileManagerBinding> fileManagerBindings = new()
+        private static string firstPanePath = Paths.HomePath;
+        private static string secondPanePath = Paths.HomePath;
+
+        /// <summary>
+        /// File manager bindings
+        /// </summary>
+        public override List<InteractiveTuiBinding> Bindings { get; set; } = new()
         {
             // Operations
-            new FileManagerBinding(/* Localizable */ "Copy",   ConsoleKey.F1, (destinationPath, sourcePath) => CopyFileOrDir(sourcePath, destinationPath), true),
-            new FileManagerBinding(/* Localizable */ "Move",   ConsoleKey.F2, (destinationPath, sourcePath) => MoveFileOrDir(sourcePath, destinationPath), true),
-            new FileManagerBinding(/* Localizable */ "Delete", ConsoleKey.F3, (_,               sourcePath) => RemoveFileOrDir(sourcePath), true),
-            new FileManagerBinding(/* Localizable */ "Up",     ConsoleKey.F4, (_,               _         ) => GoUp(), true),
-            new FileManagerBinding(/* Localizable */ "Info",   ConsoleKey.F5, (_,               sourcePath) => PrintFileSystemInfo(sourcePath), true),
+            new InteractiveTuiBinding(/* Localizable */ "Open",   ConsoleKey.Enter, (info, _) => Open((FileSystemInfo)info), true),
+            new InteractiveTuiBinding(/* Localizable */ "Copy",   ConsoleKey.F1,    (info, _) => CopyFileOrDir((FileSystemInfo)info), true),
+            new InteractiveTuiBinding(/* Localizable */ "Move",   ConsoleKey.F2,    (info, _) => MoveFileOrDir((FileSystemInfo)info), true),
+            new InteractiveTuiBinding(/* Localizable */ "Delete", ConsoleKey.F3,    (info, _) => RemoveFileOrDir((FileSystemInfo)info), true),
+            new InteractiveTuiBinding(/* Localizable */ "Up",     ConsoleKey.F4,    (_, _)    => GoUp(), true),
+            new InteractiveTuiBinding(/* Localizable */ "Info",   ConsoleKey.F5,    (info, _) => PrintFileSystemInfo((FileSystemInfo)info), true),
 
             // Misc bindings
-            new FileManagerBinding(/* Localizable */ "Exit"  , ConsoleKey.Escape, (_, _) => isExiting = true, true),
-            new FileManagerBinding(/* Localizable */ "Switch", ConsoleKey.Tab   , (_, _) => Switch(), true),
+            new InteractiveTuiBinding(/* Localizable */ "Switch", ConsoleKey.Tab,   (_, _)    => Switch(), true),
         };
 
         /// <summary>
         /// File manager background color
         /// </summary>
-        public static Color FileManagerBackgroundColor =>
-            new(Config.MainConfig.FileManagerBackgroundColor);
+        public static new Color BackgroundColor => FileManagerCliColors.FileManagerBackgroundColor;
         /// <summary>
         /// File manager foreground color
         /// </summary>
-        public static Color FileManagerForegroundColor =>
-            new(Config.MainConfig.FileManagerForegroundColor);
+        public static new Color ForegroundColor => FileManagerCliColors.FileManagerForegroundColor;
         /// <summary>
         /// File manager pane background color
         /// </summary>
-        public static Color FileManagerPaneBackgroundColor =>
-            new(Config.MainConfig.FileManagerPaneBackgroundColor);
+        public static new Color PaneBackgroundColor => FileManagerCliColors.FileManagerPaneBackgroundColor;
         /// <summary>
         /// File manager pane separator color
         /// </summary>
-        public static Color FileManagerPaneSeparatorColor =>
-            new(Config.MainConfig.FileManagerPaneSeparatorColor);
+        public static new Color PaneSeparatorColor => FileManagerCliColors.FileManagerPaneSeparatorColor;
         /// <summary>
-        /// File manager selected pane separator color
+        /// File manager pane selected File color (foreground)
         /// </summary>
-        public static Color FileManagerPaneSelectedSeparatorColor =>
-            new(Config.MainConfig.FileManagerPaneSelectedSeparatorColor);
+        public static new Color PaneSelectedItemForeColor => FileManagerCliColors.FileManagerPaneSelectedFileForeColor;
         /// <summary>
-        /// File manager pane selected file color (foreground)
+        /// File manager pane selected File color (background)
         /// </summary>
-        public static Color FileManagerPaneSelectedFileForeColor =>
-            new(Config.MainConfig.FileManagerPaneSelectedFileForeColor);
+        public static new Color PaneSelectedItemBackColor => FileManagerCliColors.FileManagerPaneSelectedFileBackColor;
         /// <summary>
-        /// File manager pane selected file color (background)
+        /// File manager pane File color (foreground)
         /// </summary>
-        public static Color FileManagerPaneSelectedFileBackColor =>
-            new(Config.MainConfig.FileManagerPaneSelectedFileBackColor);
+        public static new Color PaneItemForeColor => FileManagerCliColors.FileManagerPaneFileForeColor;
         /// <summary>
-        /// File manager pane file color (foreground)
+        /// File manager pane File color (background)
         /// </summary>
-        public static Color FileManagerPaneFileForeColor =>
-            new(Config.MainConfig.FileManagerPaneFileForeColor);
-        /// <summary>
-        /// File manager pane file color (background)
-        /// </summary>
-        public static Color FileManagerPaneFileBackColor =>
-            new(Config.MainConfig.FileManagerPaneFileBackColor);
+        public static new Color PaneItemBackColor => FileManagerCliColors.FileManagerPaneFileBackColor;
         /// <summary>
         /// File manager option background color
         /// </summary>
-        public static Color FileManagerOptionBackgroundColor =>
-            new(Config.MainConfig.FileManagerOptionBackgroundColor);
+        public static new Color OptionBackgroundColor => FileManagerCliColors.FileManagerOptionBackgroundColor;
         /// <summary>
         /// File manager key binding in option color
         /// </summary>
-        public static Color FileManagerKeyBindingOptionColor =>
-            new(Config.MainConfig.FileManagerKeyBindingOptionColor);
+        public static new Color KeyBindingOptionColor => FileManagerCliColors.FileManagerKeyBindingOptionColor;
         /// <summary>
         /// File manager option foreground color
         /// </summary>
-        public static Color FileManagerOptionForegroundColor =>
-            new(Config.MainConfig.FileManagerOptionForegroundColor);
+        public static new Color OptionForegroundColor => FileManagerCliColors.FileManagerOptionForegroundColor;
         /// <summary>
         /// File manager box background color
         /// </summary>
-        public static Color FileManagerBoxBackgroundColor =>
-            new(Config.MainConfig.FileManagerBoxBackgroundColor);
+        public static new Color BoxBackgroundColor => FileManagerCliColors.FileManagerBoxBackgroundColor;
         /// <summary>
         /// File manager box foreground color
         /// </summary>
-        public static Color FileManagerBoxForegroundColor =>
-            new(Config.MainConfig.FileManagerBoxForegroundColor);
+        public static new Color BoxForegroundColor => FileManagerCliColors.FileManagerBoxForegroundColor;
 
         /// <summary>
-        /// Opens the file manager to the current path
+        /// Always true in the file manager as we want it to behave like Total Commander
         /// </summary>
-        public static void OpenMain() =>
-            OpenMain(CurrentDirectory.CurrentDir, CurrentDirectory.CurrentDir);
+        public override bool SecondPaneInteractable =>
+            true;
+        /// <inheritdoc/>
+        public override IEnumerable PrimaryDataSource =>
+            Listing.CreateList(firstPanePath, true);
+        /// <inheritdoc/>
+        public override IEnumerable SecondaryDataSource =>
+            Listing.CreateList(secondPanePath, true);
 
-        /// <summary>
-        /// Opens the file manager to the current path
-        /// </summary>
-        /// <param name="firstPath">(Non)neutralized path to the folder for the first pane</param>
-        public static void OpenMain(string firstPath) =>
-            OpenMain(firstPath, CurrentDirectory.CurrentDir);
-
-        /// <summary>
-        /// Opens the file manager to the specified path
-        /// </summary>
-        /// <param name="firstPath">(Non)neutralized path to the folder for the first pane</param>
-        /// <param name="secondPath">(Non)neutralized path to the folder for the second pane</param>
-        public static void OpenMain(string firstPath, string secondPath)
+        /// <inheritdoc/>
+        public override void RenderStatus(object item)
         {
-            isExiting = false;
-            redrawRequired = true;
-            firstPanePath = firstPath;
-            secondPanePath = secondPath;
-            string lastFirstPanePath = "";
-            string lastSecondPanePath = "";
+            FileSystemInfo FileInfoCurrentPane = (FileSystemInfo)item;
 
-            while (!isExiting)
+            // Check to see if we're given the file system info
+            if (FileInfoCurrentPane == null)
             {
-                // Prepare the console
-                ConsoleWrapper.CursorVisible = false;
-                int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
-                int SeparatorHalfConsoleWidthInterior = (ConsoleWrapper.WindowWidth / 2) - 2;
-                int SeparatorMinimumHeight = 1;
-                int SeparatorMinimumHeightInterior = 2;
-                int SeparatorMaximumHeight = ConsoleWrapper.WindowHeight - 2;
-                int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
-
-                // Redraw the entire file manager screen
-                if (redrawRequired)
-                {
-                    ColorTools.LoadBack(FileManagerBackgroundColor, true);
-
-                    // Make a separator that separates the two panes to make it look like Total Commander or Midnight Commander. We need information in the upper and the
-                    // lower part of the console, so we need to render the entire program to look like this: (just a concept mockup)
-                    //
-                    //       | vvvvvvvvvvvvvvvvvvvvvv (SeparatorHalfConsoleWidth)
-                    //       |  vvvvvvvvvvvvvvvvvvvv  (SeparatorHalfConsoleWidthInterior)
-                    // H: 0  |
-                    // H: 1  | a--------------------|c---------------------| < ----> (SeparatorMinimumHeight)
-                    // H: 2  | |b                   ||d                    | << ----> (SeparatorMinimumHeightInterior)
-                    // H: 3  | |                    ||                     | <<
-                    // H: 4  | |                    ||                     | <<
-                    // H: 5  | |                    ||                     | <<
-                    // H: 6  | |                    ||                     | <<
-                    // H: 7  | |                    ||                     | <<
-                    // H: 8  | |                    ||                     | << ----> (SeparatorMaximumHeightInterior)
-                    // H: 9  | |--------------------||---------------------| < ----> (SeparatorMaximumHeight)
-                    // H: 10 |
-                    //       | where a is the dimension for the first pane upper left corner           (0, SeparatorMinimumHeight                                     (usually 1))
-                    //       |   and b is the dimension for the first pane interior upper left corner  (1, SeparatorMinimumHeightInterior                             (usually 2))
-                    //       |   and c is the dimension for the second pane upper left corner          (SeparatorHalfConsoleWidth, SeparatorMinimumHeight             (usually 1))
-                    //       |   and d is the dimension for the second pane interior upper left corner (SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior (usually 2))
-
-                    // First, the horizontal and vertical separators
-                    var finalFirstPaneSeparatorColor = currentPane == 1 ? FileManagerPaneSelectedSeparatorColor : FileManagerPaneSeparatorColor;
-                    var finalSecondPaneSeparatorColor = currentPane == 2 ? FileManagerPaneSelectedSeparatorColor : FileManagerPaneSeparatorColor;
-                    BorderColor.WriteBorder(0, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, finalFirstPaneSeparatorColor, FileManagerPaneBackgroundColor);
-                    BorderColor.WriteBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, finalSecondPaneSeparatorColor, FileManagerPaneBackgroundColor);
-
-                    // Render the key bindings
-                    ConsoleWrapper.CursorLeft = 0;
-                    foreach (FileManagerBinding binding in fileManagerBindings)
-                    {
-                        // First, check to see if the rendered binding info is going to exceed the console window width
-                        if (!($" {binding.BindingKeyName} {binding.BindingName}  ".Length + ConsoleWrapper.CursorLeft >= ConsoleWrapper.WindowWidth))
-                        {
-                            TextWriterWhereColor.WriteWhere($" {binding.BindingKeyName} ", ConsoleWrapper.CursorLeft + 0, ConsoleWrapper.WindowHeight - 1, FileManagerKeyBindingOptionColor, FileManagerOptionBackgroundColor);
-                            TextWriterWhereColor.WriteWhere($"{(binding._localizable ? Translate.DoTranslation(binding.BindingName) : binding.BindingName)}  ", ConsoleWrapper.CursorLeft + 1, ConsoleWrapper.WindowHeight - 1, FileManagerOptionForegroundColor, FileManagerBackgroundColor);
-                        }
-                    }
-
-                    // Don't require redraw
-                    redrawRequired = false;
-                }
-
-                // Render the file lists (first pane)
-                if (lastFirstPanePath != firstPanePath)
-                {
-                    var FilesFirstPane = Listing.CreateList(firstPanePath, true);
-                    cachedFileInfosFirstPane = FilesFirstPane;
-                    lastFirstPanePath = firstPanePath;
-                }
-                int pagesFirstPane = cachedFileInfosFirstPane.Count / SeparatorMaximumHeightInterior;
-                int answersPerPageFirstPane = SeparatorMaximumHeightInterior - 1;
-                int currentPageFirstPane = (firstPaneCurrentSelection - 1) / answersPerPageFirstPane;
-                int startIndexFirstPane = answersPerPageFirstPane * currentPageFirstPane;
-                int endIndexFirstPane = answersPerPageFirstPane * (currentPageFirstPane + 1);
-                for (int i = 0; i <= answersPerPageFirstPane; i++)
-                {
-                    // Populate the first pane
-                    string finalEntry = "";
-                    int finalIndex = i + startIndexFirstPane;
-                    if (finalIndex <= cachedFileInfosFirstPane.Count - 1)
-                    {
-                        FileSystemInfo file = cachedFileInfosFirstPane[finalIndex];
-                        bool isDirectory = Checking.FolderExists(file.FullName);
-                        finalEntry = $" [{(isDirectory ? "/" : "*")}] {file.Name}".Truncate(SeparatorHalfConsoleWidthInterior - 4);
-                    }
-
-                    var finalForeColor = finalIndex == firstPaneCurrentSelection - 1 ? FileManagerPaneSelectedFileForeColor : FileManagerPaneFileForeColor;
-                    var finalBackColor = finalIndex == firstPaneCurrentSelection - 1 ? FileManagerPaneSelectedFileBackColor : FileManagerPaneFileBackColor;
-                    TextWriterWhereColor.WriteWhere(finalEntry + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalEntry.Length), 1, SeparatorMinimumHeightInterior + finalIndex - startIndexFirstPane, finalForeColor, finalBackColor);
-                }
-                ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)firstPaneCurrentSelection / cachedFileInfosFirstPane.Count), SeparatorHalfConsoleWidthInterior - 1, 1, 2, 2, false);
-
-                // Render the file lists (second pane)
-                if (lastSecondPanePath != secondPanePath)
-                {
-                    var FilesSecondPane = Listing.CreateList(secondPanePath, true);
-                    cachedFileInfosSecondPane = FilesSecondPane;
-                    lastSecondPanePath = secondPanePath;
-                }
-                int pagesSecondPane = cachedFileInfosSecondPane.Count / SeparatorMaximumHeightInterior;
-                int answersPerPageSecondPane = SeparatorMaximumHeightInterior - 1;
-                int currentPageSecondPane = (secondPaneCurrentSelection - 1) / answersPerPageSecondPane;
-                int startIndexSecondPane = answersPerPageSecondPane * currentPageSecondPane;
-                int endIndexSecondPane = answersPerPageSecondPane * (currentPageSecondPane + 1);
-                for (int i = 0; i <= answersPerPageSecondPane; i++)
-                {
-                    // Populate the second pane
-                    string finalEntry = "";
-                    int finalIndex = i + startIndexSecondPane;
-                    if (finalIndex <= cachedFileInfosSecondPane.Count - 1)
-                    {
-                        FileSystemInfo file = cachedFileInfosSecondPane[finalIndex];
-                        bool isDirectory = Checking.FolderExists(file.FullName);
-                        finalEntry = $" [{(isDirectory ? "/" : "*")}] {file.Name}".Truncate(SeparatorHalfConsoleWidthInterior - 4);
-                    }
-
-                    var finalForeColor = finalIndex == secondPaneCurrentSelection - 1 ? FileManagerPaneSelectedFileForeColor : FileManagerPaneFileForeColor;
-                    var finalBackColor = finalIndex == secondPaneCurrentSelection - 1 ? FileManagerPaneSelectedFileBackColor : FileManagerPaneFileBackColor;
-                    TextWriterWhereColor.WriteWhere(finalEntry + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalEntry.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + finalIndex - startIndexSecondPane, finalForeColor, finalBackColor);
-                }
-                ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)secondPaneCurrentSelection / cachedFileInfosSecondPane.Count), ConsoleWrapper.WindowWidth - 3, 1, 2, 2, false);
-
-                // Now, populate the current file/folder info from the current pane
-                var PathCurrentPane =        currentPane == 2 ?
-                                             secondPanePath :
-                                             firstPanePath;
-                var CachedFilesCurrentPane = currentPane == 2 ?
-                                             cachedFileInfosSecondPane :
-                                             cachedFileInfosFirstPane;
-
-                // Write file info
-                string finalInfoRendered = "";
-                try
-                {
-                    if (CachedFilesCurrentPane.Count > 0)
-                    {
-                        var FileInfoCurrentPane = currentPane == 2 ?
-                                                  cachedFileInfosSecondPane[secondPaneCurrentSelection - 1] :
-                                                  cachedFileInfosFirstPane[firstPaneCurrentSelection - 1];
-                        bool infoIsDirectory = Checking.FolderExists(FileInfoCurrentPane.FullName);
-                        finalInfoRendered = 
-                            // Name and directory indicator
-                            $" [{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.Name} | " + 
-
-                            // File size or directory size
-                            $"{(!infoIsDirectory ? ((FileInfo)FileInfoCurrentPane).Length.FileSizeToString() : SizeGetter.GetAllSizesInFolder((DirectoryInfo)FileInfoCurrentPane).FileSizeToString())} | " + 
-
-                            // Modified date
-                            $"{(!infoIsDirectory ? TimeDateRenderers.Render(((FileInfo)FileInfoCurrentPane).LastWriteTime) : "")}"
-                        ;
-                    }
-                    else
-                        finalInfoRendered = Translate.DoTranslation("No files.");
-                }
-                catch (Exception ex)
-                {
-                    finalInfoRendered = Translate.DoTranslation("Failed to get file or folder information.");
-                    DebugWriter.WriteDebug(DebugLevel.E, "Error trying to get file or folder information in ifm: {0}", ex.Message);
-                    DebugWriter.WriteDebugStackTrace(ex);
-                }
-                TextWriterWhereColor.WriteWhere(finalInfoRendered.Truncate(ConsoleWrapper.WindowWidth - 3), 0, 0, FileManagerForegroundColor, FileManagerBackgroundColor);
-                ConsoleExtensions.ClearLineToRight();
-
-                // Wait for key
-                ConsoleKey pressedKey = Input.DetectKeypress().Key;
-                switch (pressedKey)
-                {
-                    case ConsoleKey.UpArrow:
-                        if (currentPane == 2)
-                        {
-                            secondPaneCurrentSelection--;
-                            if (secondPaneCurrentSelection < 1)
-                                secondPaneCurrentSelection = CachedFilesCurrentPane.Count;
-                        }
-                        else
-                        {
-                            firstPaneCurrentSelection--;
-                            if (firstPaneCurrentSelection < 1)
-                                firstPaneCurrentSelection = CachedFilesCurrentPane.Count;
-                        }
-                        break;
-                    case ConsoleKey.DownArrow:
-                        if (currentPane == 2)
-                        {
-                            secondPaneCurrentSelection++;
-                            if (secondPaneCurrentSelection > CachedFilesCurrentPane.Count)
-                                secondPaneCurrentSelection = 1;
-                        }
-                        else
-                        {
-                            firstPaneCurrentSelection++;
-                            if (firstPaneCurrentSelection > CachedFilesCurrentPane.Count)
-                                firstPaneCurrentSelection = 1;
-                        }
-                        break;
-                    case ConsoleKey.PageUp:
-                        if (currentPane == 2)
-                            secondPaneCurrentSelection = 1;
-                        else
-                            firstPaneCurrentSelection = 1;
-                        break;
-                    case ConsoleKey.PageDown:
-                        if (currentPane == 2)
-                            secondPaneCurrentSelection = CachedFilesCurrentPane.Count;
-                        else
-                            firstPaneCurrentSelection = CachedFilesCurrentPane.Count;
-                        break;
-                    case ConsoleKey.Enter:
-                        {
-                            if (CachedFilesCurrentPane.Count <= 0)
-                                break;
-                            var FileInfoCurrentPane = currentPane == 2 ?
-                                                      cachedFileInfosSecondPane[secondPaneCurrentSelection - 1] :
-                                                      cachedFileInfosFirstPane[firstPaneCurrentSelection - 1];
-                            if (!Checking.FolderExists(FileInfoCurrentPane.FullName))
-                                break;
-                            if (currentPane == 2)
-                            {
-                                secondPanePath = Filesystem.NeutralizePath(FileInfoCurrentPane.FullName);
-                                secondPaneCurrentSelection = 1;
-                            }
-                            else
-                            {
-                                firstPanePath = Filesystem.NeutralizePath(FileInfoCurrentPane.FullName);
-                                firstPaneCurrentSelection = 1;
-                            }
-                            break;
-                        }
-                    default:
-                        {
-                            var implementedBindings = fileManagerBindings.Where((binding) => binding.BindingKeyName == pressedKey);
-                            var FileInfoCurrentPane =
-                                CachedFilesCurrentPane.Count > 0 ?
-                                    currentPane == 2 ?
-                                    cachedFileInfosSecondPane[secondPaneCurrentSelection - 1] :
-                                    cachedFileInfosFirstPane[firstPaneCurrentSelection - 1]
-                                :
-                                    null
-                                ;
-                            foreach (var implementedBinding in implementedBindings)
-                                implementedBinding.BindingAction.Invoke(PathCurrentPane, FileInfoCurrentPane);
-                            break;
-                        }
-                }
+                Status = Translate.DoTranslation("No info.");
+                return;
             }
 
-            // Clear the console to clean up
-            ColorTools.LoadBack();
+            // Now, populate the info to the status
+            bool infoIsDirectory = Checking.FolderExists(FileInfoCurrentPane.FullName);
+            Status =
+                // Name and directory indicator
+                $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.Name} | " +
+
+                // File size or directory size
+                $"{(!infoIsDirectory ? ((FileInfo)FileInfoCurrentPane).Length.FileSizeToString() : SizeGetter.GetAllSizesInFolder((DirectoryInfo)FileInfoCurrentPane).FileSizeToString())} | " +
+
+                // Modified date
+                $"{(!infoIsDirectory ? TimeDateRenderers.Render(((FileInfo)FileInfoCurrentPane).LastWriteTime) : "")}"
+            ;
+        }
+
+        /// <inheritdoc/>
+        public override string GetEntryFromItem(object item)
+        {
+            FileSystemInfo file = (FileSystemInfo)item;
+            bool isDirectory = Checking.FolderExists(file.FullName);
+            return $" [{(isDirectory ? "/" : "*")}] {file.Name}";
+        }
+
+        private static void Open(FileSystemInfo currentFileSystemInfo)
+        {
+            if (!Checking.FolderExists(currentFileSystemInfo.FullName))
+                return;
+            if (CurrentPane == 2)
+            {
+                secondPanePath = Filesystem.NeutralizePath(currentFileSystemInfo.FullName);
+                SecondPaneCurrentSelection = 1;
+            }
+            else
+            {
+                firstPanePath = Filesystem.NeutralizePath(currentFileSystemInfo.FullName);
+                FirstPaneCurrentSelection = 1;
+            }
         }
 
         private static void GoUp()
         {
-            if (currentPane == 2)
+            if (CurrentPane == 2)
             {
                 secondPanePath = Filesystem.NeutralizePath(secondPanePath + "/..");
-                secondPaneCurrentSelection = 1;
+                SecondPaneCurrentSelection = 1;
             }
             else
             {
                 firstPanePath = Filesystem.NeutralizePath(firstPanePath + "/..");
-                firstPaneCurrentSelection = 1;
+                FirstPaneCurrentSelection = 1;
             }
         }
 
         private static void Switch()
         {
-            currentPane++;
-            if (currentPane > 2)
-                currentPane = 1;
-            redrawRequired = true;
+            CurrentPane++;
+            if (CurrentPane > 2)
+                CurrentPane = 1;
+            RedrawRequired = true;
         }
 
         private static void PrintFileSystemInfo(FileSystemInfo currentFileSystemInfo)
@@ -478,27 +241,29 @@ namespace KS.Files.Interactive
             finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
 
             // Now, render the info box
-            InfoBoxColor.WriteInfoBox(finalInfoRendered.ToString(), FileManagerBoxForegroundColor, FileManagerBoxBackgroundColor);
-            redrawRequired = true;
+            InfoBoxColor.WriteInfoBox(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+            RedrawRequired = true;
         }
 
-        private static void CopyFileOrDir(FileSystemInfo currentFileSystemInfo, string dest)
+        private static void CopyFileOrDir(FileSystemInfo currentFileSystemInfo)
         {
             // Don't do anything if we haven't been provided anything.
             if (currentFileSystemInfo is null)
                 return;
 
+            string dest = (CurrentPane == 2 ? secondPanePath : firstPanePath) + "/";
             DebugCheck.AssertNull(dest, "destination is null!");
             DebugCheck.Assert(string.IsNullOrWhiteSpace(dest), "destination is empty or whitespace!");
             Copying.CopyFileOrDir(currentFileSystemInfo.FullName, dest);
         }
 
-        private static void MoveFileOrDir(FileSystemInfo currentFileSystemInfo, string dest)
+        private static void MoveFileOrDir(FileSystemInfo currentFileSystemInfo)
         {
             // Don't do anything if we haven't been provided anything.
             if (currentFileSystemInfo is null)
                 return;
 
+            string dest = (CurrentPane == 2 ? secondPanePath : firstPanePath) + "/";
             DebugCheck.AssertNull(dest, "destination is null!");
             DebugCheck.Assert(string.IsNullOrWhiteSpace(dest), "destination is empty or whitespace!");
             Moving.MoveFileOrDir(currentFileSystemInfo.FullName, dest);

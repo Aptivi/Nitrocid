@@ -109,6 +109,8 @@ namespace KS.Kernel.Debugging.Testing
             { "ChangeLanguage",                 new Facades.ChangeLanguage() },
             { "KernelThreadTest",               new Facades.KernelThreadTest() },
             { "KernelThreadChildTest",          new Facades.KernelThreadChildTest() },
+            { "CliInfoPaneTest",                new Facades.CliInfoPaneTest() },
+            { "CliDoublePaneTest",              new Facades.CliDoublePaneTest() },
         };
 
         internal static void Open()

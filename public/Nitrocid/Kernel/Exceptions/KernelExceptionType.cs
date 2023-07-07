@@ -355,5 +355,9 @@ namespace KS.Kernel.Exceptions
         /// Group doesn't exist. Check to make sure that you've written the group name correctly.
         /// </summary>
         NoSuchGroup,
+        /// <summary>
+        /// An error occurred in the Interactive TUI implementation.
+        /// </summary>
+        InteractiveTui,
     }
 }

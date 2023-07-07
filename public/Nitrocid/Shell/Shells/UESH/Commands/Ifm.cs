@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Files.Interactive;
+using KS.Misc.Interactive;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.UESH.Commands
@@ -26,13 +27,12 @@ namespace KS.Shell.Shells.UESH.Commands
     /// </summary>
     /// <remarks>
     /// If you are planning to take a look at your filesystem in an interactive manner, use this command.
-    /// > [!WARNING] You currently can't run this command because it's a placeholder. It'll be hopefully finished by Beta 1.
     /// </remarks>
     class IfmCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>
-            FileManagerCli.OpenMain();
+            InteractiveTuiTools.OpenInteractiveTui(new FileManagerCli());
 
     }
 }
