@@ -144,11 +144,6 @@ namespace KS.Drivers.Console
         int CursorTop { get; set; }
 
         /// <summary>
-        /// The console window top (rows)
-        /// </summary>
-        int WindowTop { get; }
-
-        /// <summary>
         /// The console window width (columns)
         /// </summary>
         int WindowWidth { get; }

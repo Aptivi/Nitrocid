@@ -113,17 +113,6 @@ namespace KS.Drivers.Console.Consoles
         }
 
         /// <inheritdoc/>
-        public virtual int WindowTop
-        {
-            get
-            {
-                if (IsDumb)
-                    return 0;
-                return con.WindowTop;
-            }
-        }
-
-        /// <inheritdoc/>
         public virtual int WindowWidth
         {
             get

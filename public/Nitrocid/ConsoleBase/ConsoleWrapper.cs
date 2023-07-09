@@ -54,12 +54,6 @@ namespace KS.ConsoleBase
         }
 
         /// <summary>
-        /// The console window top (rows)
-        /// </summary>
-        public static int WindowTop => 
-            DriverHandler.CurrentConsoleDriver.WindowTop;
-
-        /// <summary>
         /// The console window width (columns)
         /// </summary>
         public static int WindowWidth => 

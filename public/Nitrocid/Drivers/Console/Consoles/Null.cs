@@ -37,8 +37,6 @@ namespace KS.Drivers.Console.Consoles
 
         public override int CursorTop { get => 0; set => throw new KernelException(KernelExceptionType.NotImplementedYet); }
 
-        public override int WindowTop => 0;
-
         public override int WindowWidth => 0;
 
         public override int WindowHeight => 0;

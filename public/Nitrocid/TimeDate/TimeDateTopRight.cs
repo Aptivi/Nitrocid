@@ -50,8 +50,8 @@ namespace KS.TimeDate
                     if (Flags.CornerTimeDate == true & !Screensaver.InSaver)
                     {
                         oldWid = ConsoleBase.ConsoleWrapper.WindowWidth - TimeString.Length - 1;
-                        oldTop = ConsoleBase.ConsoleWrapper.WindowTop;
-                        TextWriterWhereColor.WriteWhere(TimeString, ConsoleBase.ConsoleWrapper.WindowWidth - TimeString.Length - 1, ConsoleBase.ConsoleWrapper.WindowTop, true, KernelColorType.NeutralText);
+                        oldTop = 0;
+                        TextWriterWhereColor.WriteWhere(TimeString, ConsoleBase.ConsoleWrapper.WindowWidth - TimeString.Length - 1, 0, true, KernelColorType.NeutralText);
                     }
                     Thread.Sleep(1000);
                     if (oldWid != 0)
