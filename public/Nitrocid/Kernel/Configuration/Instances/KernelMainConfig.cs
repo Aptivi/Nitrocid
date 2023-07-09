@@ -130,7 +130,7 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// Splash name from the available splashes implemented in the kernel.
         /// </summary>
-        public string SplashName { get; set; } = "Dots";
+        public string SplashName { get; set; } = "Welcome";
         /// <summary>
         /// Write a figlet font that is supported by the Figgle library. Consult the library documentation for more information
         /// </summary>

@@ -61,7 +61,8 @@ namespace KS.Misc.Splash
             { "PowerLine", new SplashInfo("PowerLine", new SplashPowerLine()) },
             { "PowerLineProgress", new SplashInfo("PowerLine", new SplashPowerLineProgress()) },
             { "Spin", new SplashInfo("Spin", new SplashSpin()) },
-            { "Dots", new SplashInfo("Dots", new SplashDots()) }
+            { "Dots", new SplashInfo("Dots", new SplashDots()) },
+            { "Welcome", new SplashInfo("Welcome", new SplashWelcome()) }
         };
 
         /// <summary>
