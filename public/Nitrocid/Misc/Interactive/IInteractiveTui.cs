@@ -56,6 +56,10 @@ namespace KS.Misc.Interactive
         /// Whether the user can switch to the second path
         /// </summary>
         public bool SecondPaneInteractable { get; }
+        /// <summary>
+        /// How many milliseconds to wait before refreshing? Only applies to single-pane interactive TUI instances. 0 to disable.
+        /// </summary>
+        public int RefreshInterval { get; }
 
         /// <summary>
         /// An array, a dictionary, a list, or an enumerable that holds data (pane one)

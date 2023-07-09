@@ -111,6 +111,7 @@ namespace KS.Kernel.Debugging.Testing
             { "KernelThreadTest",               new Facades.KernelThreadTest() },
             { "KernelThreadChildTest",          new Facades.KernelThreadChildTest() },
             { "CliInfoPaneTest",                new Facades.CliInfoPaneTest() },
+            { "CliInfoPaneTestRefreshing",      new Facades.CliInfoPaneTestRefreshing() },
             { "CliDoublePaneTest",              new Facades.CliDoublePaneTest() },
         };
 

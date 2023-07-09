@@ -46,6 +46,8 @@ namespace KS.Misc.Interactive
         public virtual List<InteractiveTuiBinding> Bindings { get; set; }
         /// <inheritdoc/>
         public virtual bool SecondPaneInteractable => false;
+        /// <inheritdoc/>
+        public virtual int RefreshInterval => 0;
 
         /// <inheritdoc/>
         public virtual IEnumerable PrimaryDataSource => Array.Empty<string>();

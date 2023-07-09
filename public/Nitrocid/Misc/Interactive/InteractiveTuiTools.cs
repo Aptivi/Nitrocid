@@ -318,60 +318,71 @@ namespace KS.Misc.Interactive
             object selectedData = GetElementFromIndex(data, paneCurrentSelection - 1);
 
             // Wait for key
-            ConsoleKey pressedKey = Input.DetectKeypress().Key;
-            switch (pressedKey)
+            try
             {
-                case ConsoleKey.UpArrow:
-                    if (BaseInteractiveTui.CurrentPane == 2)
-                    {
-                        BaseInteractiveTui.SecondPaneCurrentSelection--;
-                        if (BaseInteractiveTui.SecondPaneCurrentSelection < 1)
-                            BaseInteractiveTui.SecondPaneCurrentSelection = dataCount;
-                    }
-                    else
-                    {
-                        BaseInteractiveTui.FirstPaneCurrentSelection--;
-                        if (BaseInteractiveTui.FirstPaneCurrentSelection < 1)
-                            BaseInteractiveTui.FirstPaneCurrentSelection = dataCount;
-                    }
-                    break;
-                case ConsoleKey.DownArrow:
-                    if (BaseInteractiveTui.CurrentPane == 2)
-                    {
-                        BaseInteractiveTui.SecondPaneCurrentSelection++;
-                        if (BaseInteractiveTui.SecondPaneCurrentSelection > dataCount)
+                ConsoleKey pressedKey;
+                if (interactiveTui.RefreshInterval == 0 || interactiveTui.SecondPaneInteractable)
+                    pressedKey = Input.DetectKeypress().Key;
+                else
+                    pressedKey = Input.ReadKeyTimeout(true, TimeSpan.FromMilliseconds(interactiveTui.RefreshInterval)).Key;
+
+                // Handle the key
+                switch (pressedKey)
+                {
+                    case ConsoleKey.UpArrow:
+                        if (BaseInteractiveTui.CurrentPane == 2)
+                        {
+                            BaseInteractiveTui.SecondPaneCurrentSelection--;
+                            if (BaseInteractiveTui.SecondPaneCurrentSelection < 1)
+                                BaseInteractiveTui.SecondPaneCurrentSelection = dataCount;
+                        }
+                        else
+                        {
+                            BaseInteractiveTui.FirstPaneCurrentSelection--;
+                            if (BaseInteractiveTui.FirstPaneCurrentSelection < 1)
+                                BaseInteractiveTui.FirstPaneCurrentSelection = dataCount;
+                        }
+                        break;
+                    case ConsoleKey.DownArrow:
+                        if (BaseInteractiveTui.CurrentPane == 2)
+                        {
+                            BaseInteractiveTui.SecondPaneCurrentSelection++;
+                            if (BaseInteractiveTui.SecondPaneCurrentSelection > dataCount)
+                                BaseInteractiveTui.SecondPaneCurrentSelection = 1;
+                        }
+                        else
+                        {
+                            BaseInteractiveTui.FirstPaneCurrentSelection++;
+                            if (BaseInteractiveTui.FirstPaneCurrentSelection > dataCount)
+                                BaseInteractiveTui.FirstPaneCurrentSelection = 1;
+                        }
+                        break;
+                    case ConsoleKey.PageUp:
+                        if (BaseInteractiveTui.CurrentPane == 2)
                             BaseInteractiveTui.SecondPaneCurrentSelection = 1;
-                    }
-                    else
-                    {
-                        BaseInteractiveTui.FirstPaneCurrentSelection++;
-                        if (BaseInteractiveTui.FirstPaneCurrentSelection > dataCount)
+                        else
                             BaseInteractiveTui.FirstPaneCurrentSelection = 1;
-                    }
-                    break;
-                case ConsoleKey.PageUp:
-                    if (BaseInteractiveTui.CurrentPane == 2)
-                        BaseInteractiveTui.SecondPaneCurrentSelection = 1;
-                    else
-                        BaseInteractiveTui.FirstPaneCurrentSelection = 1;
-                    break;
-                case ConsoleKey.PageDown:
-                    if (BaseInteractiveTui.CurrentPane == 2)
-                        BaseInteractiveTui.SecondPaneCurrentSelection = dataCount;
-                    else
-                        BaseInteractiveTui.FirstPaneCurrentSelection = dataCount;
-                    break;
-                case ConsoleKey.Escape:
-                    interactiveTui.HandleExit();
-                    interactiveTui.isExiting = true;
-                    break;
-                default:
-                    {
+                        break;
+                    case ConsoleKey.PageDown:
+                        if (BaseInteractiveTui.CurrentPane == 2)
+                            BaseInteractiveTui.SecondPaneCurrentSelection = dataCount;
+                        else
+                            BaseInteractiveTui.FirstPaneCurrentSelection = dataCount;
+                        break;
+                    case ConsoleKey.Escape:
+                        interactiveTui.HandleExit();
+                        interactiveTui.isExiting = true;
+                        break;
+                    default:
                         var implementedBindings = interactiveTui.Bindings.Where((binding) => binding.BindingKeyName == pressedKey);
                         foreach (var implementedBinding in implementedBindings)
                             implementedBinding.BindingAction.Invoke(selectedData, paneCurrentSelection - 1);
                         break;
-                    }
+                }
+            }
+            catch (KernelException kex) when (kex.ExceptionType == KernelExceptionType.ConsoleReadTimeout)
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Refreshing...");
             }
         }
     }
