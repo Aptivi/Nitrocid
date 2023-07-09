@@ -19,9 +19,9 @@
 using System;
 using System.Collections.Generic;
 using ColorSeq;
-using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters.Tools;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
@@ -122,8 +122,8 @@ namespace KS.Misc.Writers.FancyWriters
             // Write the closing minus sign.
             RepeatTimes = ConsoleWrapper.WindowWidth - ConsoleWrapper.CursorLeft - Margin * 2;
             if (Margin > 0)
-                TextWriterColor.Write(" ".Repeat(Margin), false, SeparatorForegroundColor, BackgroundColor);
-            TextWriterColor.Write("═".Repeat(RepeatTimes), true, SeparatorForegroundColor, BackgroundColor);
+                TextWriterColor.Write(new string(' ', Margin), false, SeparatorForegroundColor, BackgroundColor);
+            TextWriterColor.Write(new string('═', RepeatTimes), true, SeparatorForegroundColor, BackgroundColor);
 
             // Write the rows
             for (int RowIndex = 0; RowIndex <= Rows.GetLength(0) - 1; RowIndex++)
@@ -166,8 +166,8 @@ namespace KS.Misc.Writers.FancyWriters
                     // Write the closing minus sign.
                     RepeatTimes = ConsoleWrapper.WindowWidth - ConsoleWrapper.CursorLeft - Margin * 2;
                     if (Margin > 0)
-                        TextWriterColor.Write(" ".Repeat(Margin), false, SeparatorForegroundColor, BackgroundColor);
-                    TextWriterColor.Write("═".Repeat(RepeatTimes), true, SeparatorForegroundColor, BackgroundColor);
+                        TextWriterColor.Write(new string(' ', Margin), false, SeparatorForegroundColor, BackgroundColor);
+                    TextWriterColor.Write(new string('=', RepeatTimes), true, SeparatorForegroundColor, BackgroundColor);
                 }
             }
         }

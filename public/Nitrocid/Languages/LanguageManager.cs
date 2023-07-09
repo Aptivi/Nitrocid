@@ -21,7 +21,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
-using Extensification.DictionaryExts;
 using FluentFTP.Helpers;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
@@ -83,7 +82,7 @@ namespace KS.Languages
                     if (!BaseLanguages.ContainsKey(LanguageName))
                     {
                         var LanguageInfo = new LanguageInfo(LanguageName, LanguageFullName, LanguageTransliterable, LanguageCodepage);
-                        BaseLanguages.AddIfNotFound(LanguageName, LanguageInfo);
+                        BaseLanguages.Add(LanguageName, LanguageInfo);
                     }
                 }
 

@@ -16,7 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using Extensification.DictionaryExts;
 using KS.Kernel.Debugging;
 using KS.Shell.ShellBase.Shells;
 using System.Collections.Generic;
@@ -95,7 +94,11 @@ namespace KS.Shell.ShellBase.Commands
 
             // Unified commands
             foreach (string UnifiedCommand in Shell.UnifiedCommandDict.Keys)
-                FinalCommands.AddOrModify(UnifiedCommand, Shell.UnifiedCommandDict[UnifiedCommand]);
+            {
+                if (FinalCommands.ContainsKey(UnifiedCommand))
+                    FinalCommands.Remove(UnifiedCommand);
+                FinalCommands.Add(UnifiedCommand, Shell.UnifiedCommandDict[UnifiedCommand]);
+            }
 
             return FinalCommands;
         }

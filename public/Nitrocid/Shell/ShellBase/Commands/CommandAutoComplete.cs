@@ -15,8 +15,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using Extensification.StringExts;
 using KS.Files.Folders;
+using KS.Misc.Text;
 using KS.Shell.ShellBase.Shells;
 using System.Linq;
 
@@ -42,8 +42,8 @@ namespace KS.Shell.ShellBase.Commands
                 else if (text.Contains(' '))
                 {
                     // We're providing completion for argument.
-                    string CommandName = text.SplitEncloseDoubleQuotes(" ")[0];
-                    string LastArgument = text.SplitEncloseDoubleQuotes(" ")[text.SplitEncloseDoubleQuotes(" ").Length - 1];
+                    string CommandName = text.SplitEncloseDoubleQuotes()[0];
+                    string LastArgument = text.SplitEncloseDoubleQuotes()[^1];
                     var FileFolderList = Listing.CreateList(CurrentDirectory.CurrentDir, true)
                                                 .Select(x => x.Name)
                                                 .Where(x => x.StartsWith(LastArgument))

@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using Extensification.StringExts;
 using InxiFrontend;
 using KS.Kernel;
 using KS.Kernel.Debugging;
@@ -76,7 +75,7 @@ namespace KS.Hardware
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Hardware {0} ({1}) successfully probed.", Hardware, Hardware.ToString());
             if (!Flags.QuietHardwareProbe & Flags.VerboseHardwareProbe | Flags.EnableSplash)
-                SplashReport.ReportProgress(Translate.DoTranslation("Successfully probed {0}.").FormatString(Hardware.ToString()), 5);
+                SplashReport.ReportProgress(Translate.DoTranslation("Successfully probed {0}."), 5, Hardware.ToString());
         }
 
         /// <summary>

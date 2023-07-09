@@ -19,10 +19,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Extensification.StringExts;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
+using KS.Misc.Text;
 using KS.Scripting.Conditions.Types;
 
 namespace KS.Scripting.Conditions
@@ -80,7 +80,7 @@ namespace KS.Scripting.Conditions
 
                 // First, check for the existence of one of the conditional words
                 DebugWriter.WriteDebug(DebugLevel.I, "Checking expression {0} for condition", ConditionToSatisfy);
-                var EnclosedWords = ConditionToSatisfy.SplitEncloseDoubleQuotes(" ")?.ToList();
+                var EnclosedWords = ConditionToSatisfy.SplitEncloseDoubleQuotes();
                 var ConditionFound = false;
                 string ConditionType = "none";
                 var ConditionBase = AvailableConditions[ConditionType];
@@ -100,10 +100,10 @@ namespace KS.Scripting.Conditions
                 // Check the expression for argument numbers and middle condition
                 int RequiredArguments = ConditionBase.ConditionRequiredArguments;
                 int ConditionPosition = ConditionBase.ConditionPosition;
-                if (EnclosedWords.Count < RequiredArguments)
+                if (EnclosedWords.Length < RequiredArguments)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Argument count {0} is less than the required arguments {1}", EnclosedWords.Count, RequiredArguments);
-                    throw new KernelException(KernelExceptionType.UESHConditionParse, Translate.DoTranslation("Condition {0} requires {1} arguments. Got {2}."), ConditionType, RequiredArguments, EnclosedWords.Count);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Argument count {0} is less than the required arguments {1}", EnclosedWords.Length, RequiredArguments);
+                    throw new KernelException(KernelExceptionType.UESHConditionParse, Translate.DoTranslation("Condition {0} requires {1} arguments. Got {2}."), ConditionType, RequiredArguments, EnclosedWords.Length);
                 }
                 if (!AvailableConditions.ContainsKey(EnclosedWords[ConditionPosition - 1]))
                 {

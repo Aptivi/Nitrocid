@@ -22,7 +22,6 @@ using KS.Files;
 using KS.Files.Querying;
 using KS.Kernel.Configuration;
 using NUnit.Framework;
-using KS.Users;
 using KS.Files.Operations;
 
 namespace KSTests

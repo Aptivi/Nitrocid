@@ -18,8 +18,8 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Extensification.StringExts;
 using KS.Kernel.Debugging;
+using KS.Misc.Text;
 
 namespace KS.Arguments.ArgumentBase
 {
@@ -84,10 +84,10 @@ namespace KS.Arguments.ArgumentBase
             DebugWriter.WriteDebug(DebugLevel.I, "Finished strArgs: {0}", strArgs);
 
             // Split the arguments with enclosed quotes and set the required boolean variable
-            var EnclosedArgs = strArgs.SplitEncloseDoubleQuotes(" ")?.ToList();
+            var EnclosedArgs = strArgs.SplitEncloseDoubleQuotes();
             if (EnclosedArgs is not null)
             {
-                RequiredArgumentsProvided = (bool)(KernelArguments[Argument].ArgArgumentInfo.MinimumArguments is var arg2 && (EnclosedArgs?.Count) is { } arg1 ? arg1 >= arg2 : (bool?)null);
+                RequiredArgumentsProvided = (bool)(KernelArguments[Argument].ArgArgumentInfo.MinimumArguments is var arg2 && (EnclosedArgs.Length) is { } arg1 ? arg1 >= arg2 : (bool?)null);
             }
             else if (KernelArguments[Argument].ArgArgumentInfo.ArgumentsRequired & EnclosedArgs is null)
             {
@@ -115,7 +115,7 @@ namespace KS.Arguments.ArgumentBase
             }
 
             // Install the parsed values to the new class instance
-            FullArgumentsList = EnclosedArgs?.ToArray();
+            FullArgumentsList = EnclosedArgs;
             ArgumentsList = FinalArgs.ToArray();
             SwitchesList = FinalSwitches.ToArray();
             ArgumentsText = strArgs;

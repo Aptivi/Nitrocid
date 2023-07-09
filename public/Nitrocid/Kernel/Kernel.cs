@@ -21,7 +21,6 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using System.IO;
-using Extensification.StringExts;
 using KS.Arguments.ArgumentBase;
 using KS.ConsoleBase;
 using KS.Files;
@@ -159,11 +158,11 @@ namespace KS.Kernel
                         RemoteDebugger.StartRDebugThread();
                         if (!RemoteDebugger.RDebugFailed)
                         {
-                            SplashReport.ReportProgress(Translate.DoTranslation("Debug listening on all addresses using port {0}.").FormatString(RemoteDebugger.DebugPort), 5);
+                            SplashReport.ReportProgress(Translate.DoTranslation("Debug listening on all addresses using port {0}."), 5, RemoteDebugger.DebugPort);
                         }
                         else
                         {
-                            SplashReport.ReportProgressError(Translate.DoTranslation("Remote debug failed to start: {0}").FormatString(RemoteDebugger.RDebugFailedReason.Message));
+                            SplashReport.ReportProgressError(Translate.DoTranslation("Remote debug failed to start: {0}"), RemoteDebugger.RDebugFailedReason.Message);
                         }
                     }
                     SplashReport.ReportProgress(Translate.DoTranslation("Starting RPC..."), 3);

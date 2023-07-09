@@ -27,7 +27,6 @@ using KS.Languages;
 using KS.Misc.Writers.FancyWriters.Tools;
 using KS.Network.Base;
 using KS.Users;
-using KS.Users.Login;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Shell.Prompts.Presets.UESH

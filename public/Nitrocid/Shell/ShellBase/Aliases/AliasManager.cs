@@ -21,7 +21,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
-using Extensification.DictionaryExts;
+using System.Xml.Linq;
 using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Files.Operations;
@@ -56,14 +56,16 @@ namespace KS.Shell.ShellBase.Aliases
             string AliasCmd, ActualCmd;
             string AliasType;
 
-            foreach (JObject AliasObject in AliasNameToken)
+            foreach (JObject AliasObject in AliasNameToken.Cast<JObject>())
             {
                 AliasCmd = (string)AliasObject["Alias"];
                 ActualCmd = (string)AliasObject["Command"];
                 AliasType = (string)AliasObject["Type"];
                 DebugWriter.WriteDebug(DebugLevel.I, "Adding \"{0}\" and \"{1}\" from Aliases.json to {2} list...", AliasCmd, ActualCmd, AliasType);
                 var TargetAliasList = GetAliasesListFromType(AliasType);
-                TargetAliasList.AddOrModify(AliasCmd, ActualCmd);
+                if (TargetAliasList.ContainsKey(AliasCmd))
+                    TargetAliasList.Remove(AliasCmd);
+                TargetAliasList.Add(AliasCmd, ActualCmd);
             }
         }
 
@@ -308,7 +310,7 @@ namespace KS.Shell.ShellBase.Aliases
             var AliasNameToken = JArray.Parse(!string.IsNullOrEmpty(AliasJsonContent) ? AliasJsonContent : "[]");
 
             // Check to see if the specified alias exists
-            foreach (JObject AliasName in AliasNameToken)
+            foreach (JObject AliasName in AliasNameToken.Cast<JObject>())
             {
                 if ((string)AliasName["Alias"] == TargetAlias & (string)AliasName["Type"] == Type.ToString())
                     return true;

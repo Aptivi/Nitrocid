@@ -16,9 +16,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Inputs;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using System;
@@ -94,7 +94,7 @@ namespace KS.Misc.Presentation
                 var page = pages[i];
 
                 // Clear the informational screen
-                TextWriterWhereColor.WriteWhere(" ".Repeat(PresentationLowerInnerBorderLeft), PresentationUpperBorderLeft, PresentationInformationalTop);
+                TextWriterWhereColor.WriteWhere(new string(' ', PresentationLowerInnerBorderLeft), PresentationUpperBorderLeft, PresentationInformationalTop);
 
                 // Write the name and the page number
                 TextWriterWhereColor.WriteWhere($"{(!kiosk ? $"[{i + 1}/{pages.Count}] - " : "")}{page.Name} - {presentation.Name}".Truncate(PresentationLowerInnerBorderLeft + 1), PresentationUpperBorderLeft, PresentationInformationalTop);
@@ -180,7 +180,7 @@ namespace KS.Misc.Presentation
         {
             // Clear the presentation screen
             for (int y = PresentationUpperInnerBorderTop; y <= PresentationLowerInnerBorderTop + 1; y++)
-                TextWriterWhereColor.WriteWhere(" ".Repeat(PresentationLowerInnerBorderLeft), PresentationUpperInnerBorderLeft, y);
+                TextWriterWhereColor.WriteWhere(new string(' ', PresentationLowerInnerBorderLeft), PresentationUpperInnerBorderLeft, y);
 
             // Seek to the first position inside the border
             ConsoleWrapper.SetCursorPosition(PresentationUpperInnerBorderLeft, PresentationUpperInnerBorderTop);

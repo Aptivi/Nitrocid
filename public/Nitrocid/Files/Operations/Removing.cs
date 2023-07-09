@@ -19,7 +19,6 @@
 using System;
 using KS.Kernel.Debugging;
 using KS.Drivers;
-using KS.Users.Permissions;
 
 namespace KS.Files.Operations
 {

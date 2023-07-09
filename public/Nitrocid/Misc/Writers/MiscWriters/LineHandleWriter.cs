@@ -16,7 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Files.Read;
@@ -138,7 +137,7 @@ namespace KS.Misc.Writers.MiscWriters
             int RepeatBlanks = ColumnNumber - 1;
             if (RepeatBlanks < 0)
                 RepeatBlanks = 0;
-            TextWriterColor.Write(" | " + " ".Repeat(RepeatBlanks) + "^", true, ColorType);
+            TextWriterColor.Write(" | " + new string(' ', RepeatBlanks) + "^", true, ColorType);
         }
 
     }

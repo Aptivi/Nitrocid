@@ -19,7 +19,6 @@
 using System;
 using System.IO;
 using System.Linq;
-using Extensification.StringExts;
 using KS.Files.Folders;
 using KS.Files.Querying;
 using KS.Languages;
@@ -27,8 +26,8 @@ using KS.Kernel.Debugging;
 using KS.Kernel;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Configuration;
-using static Extensification.StringExts.Manipulation;
 using KS.Drivers;
+using KS.Misc.Text;
 
 namespace KS.Files
 {
@@ -94,7 +93,7 @@ namespace KS.Files
                 if (Checking.FileExists(Path) | Checking.FolderExists(Path))
                     return Path;
                 else
-                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Neutralized a non-existent path.") + " {0}".FormatString(Path));
+                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Neutralized a non-existent path.") + " {0}", Path);
             else
                 return Path;
         }

@@ -21,7 +21,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Xml;
-using Extensification.DictionaryExts;
 using FluentFTP.Helpers;
 using HtmlAgilityPack;
 using KS.ConsoleBase.Colors;
@@ -181,7 +180,8 @@ namespace KS.Network.RSS
                         Description = ArticleNode.InnerText.Trim(Convert.ToChar(Convert.ToChar(13)), Convert.ToChar(Convert.ToChar(10)), ' ');
                     }
                 }
-                Parameters.AddIfNotFound(ArticleNode.Name, ArticleNode);
+                if (!Parameters.ContainsKey(ArticleNode.Name))
+                    Parameters.Add(ArticleNode.Name, ArticleNode);
             }
             return new RSSArticle(Title, Link, Description, Parameters);
         }

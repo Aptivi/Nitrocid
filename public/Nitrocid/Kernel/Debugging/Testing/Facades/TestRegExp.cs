@@ -19,6 +19,7 @@
 using KS.ConsoleBase.Inputs;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace KS.Kernel.Debugging.Testing.Facades
@@ -33,7 +34,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
             var Reg = new Regex(Regex);
             var Matches = Reg.Matches(Text);
             int MatchNum = 1;
-            foreach (Match Mat in Matches)
+            foreach (Match Mat in Matches.Cast<Match>())
             {
                 TextWriterColor.Write(Translate.DoTranslation("Match {0} ({1}): {2}"), MatchNum, Regex, Mat);
                 MatchNum += 1;

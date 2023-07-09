@@ -19,7 +19,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Configuration;
 using KS.Languages;
@@ -157,7 +156,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                                 if (AnswerTitleLeft < ConsoleWrapper.WindowWidth)
                                 {
                                     int blankRepeats = AnswerTitleLeft - $" {AnswerInstance.ChoiceName}) ".Length;
-                                    AnswerOption = $" {AnswerInstance.ChoiceName}) " + " ".Repeat(blankRepeats) + $"{AnswerTitle}";
+                                    AnswerOption = $" {AnswerInstance.ChoiceName}) " + new string(' ', blankRepeats) + $"{AnswerTitle}";
                                 }
                                 TextWriterColor.Write(AnswerOption, true, KernelColorType.Option);
                             }
@@ -172,7 +171,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                                 if (AnswerTitleLeft < ConsoleWrapper.WindowWidth)
                                 {
                                     int blankRepeats = AnswerTitleLeft - $" {AnswerInstance.ChoiceName}) ".Length;
-                                    AnswerOption = $" {AnswerInstance.ChoiceName}) " + " ".Repeat(blankRepeats) + $"{AnswerTitle}";
+                                    AnswerOption = $" {AnswerInstance.ChoiceName}) " + new string(' ', blankRepeats) + $"{AnswerTitle}";
                                 }
                                 TextWriterColor.Write(AnswerOption, true, KernelColorType.AlternativeOption);
                             }

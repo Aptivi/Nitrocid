@@ -22,7 +22,6 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
-using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
 using KS.Languages;

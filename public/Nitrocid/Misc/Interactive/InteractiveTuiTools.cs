@@ -16,7 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
@@ -24,6 +23,7 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using System;
@@ -234,7 +234,7 @@ namespace KS.Misc.Interactive
                 var finalBackColor = finalIndex == paneCurrentSelection - 1 ? BaseInteractiveTui.PaneSelectedItemBackColor : BaseInteractiveTui.PaneItemBackColor;
                 int left = paneNum == 2 ? SeparatorHalfConsoleWidth + 1 : 1;
                 int top = SeparatorMinimumHeightInterior + finalIndex - startIndex;
-                TextWriterWhereColor.WriteWhere(finalEntry + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalEntry.Length), left, top, finalForeColor, finalBackColor);
+                TextWriterWhereColor.WriteWhere(finalEntry + new string(' ', SeparatorHalfConsoleWidthInterior - finalEntry.Length), left, top, finalForeColor, finalBackColor);
             }
 
             // Render the vertical bar

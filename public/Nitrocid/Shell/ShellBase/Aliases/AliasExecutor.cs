@@ -16,8 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using Extensification.StringExts;
 using KS.Kernel.Debugging;
+using KS.Misc.Text;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 
@@ -44,7 +44,7 @@ namespace KS.Shell.ShellBase.Aliases
             var AliasesList = AliasManager.GetAliasesListFromType(ShellType);
 
             // Get the actual command from the alias
-            string FirstWordCmd = aliascmd.SplitEncloseDoubleQuotes(" ")[0];
+            string FirstWordCmd = aliascmd.SplitEncloseDoubleQuotes()[0];
             string actualCmd = aliascmd.Replace(FirstWordCmd, AliasesList[FirstWordCmd]);
             DebugWriter.WriteDebug(DebugLevel.I, "Actual command: {0}", actualCmd);
 

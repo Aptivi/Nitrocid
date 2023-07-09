@@ -19,12 +19,12 @@
 using System;
 using System.Data;
 using System.Linq;
-using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.Shells.Mail;
 using MailKit;

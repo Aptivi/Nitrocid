@@ -23,7 +23,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using Extensification.DictionaryExts;
 using KS.Files;
 using KS.Files.Querying;
 using KS.Kernel;
@@ -187,7 +186,8 @@ namespace KS.Modifications
                     DebugWriter.WriteDebug(DebugLevel.I, "Mod name: {0}", ModName);
 
                     // Check to see if there is a part under the same name.
-                    var Parts = ModManager.Mods.ContainsKey(ModName) ? ModManager.Mods[ModName].ModParts : ModParts;
+                    bool modFound = ModManager.Mods.ContainsKey(ModName);
+                    var Parts = modFound ? ModManager.Mods[ModName].ModParts : ModParts;
                     DebugWriter.WriteDebug(DebugLevel.I, "Adding mod part {0}...", script.ModPart);
                     if (Parts.ContainsKey(script.ModPart))
                     {
@@ -200,7 +200,8 @@ namespace KS.Modifications
                     PartInstance = new ModPartInfo(ModName, script.ModPart, modFile, Filesystem.NeutralizePath(modFile, ModPath), script);
                     Parts.Add(script.ModPart, PartInstance);
                     ModInstance = new ModInfo(ModName, modFile, Filesystem.NeutralizePath(modFile, ModPath), Parts, script.Version);
-                    ModManager.Mods.AddIfNotFound(ModName, ModInstance);
+                    if (!modFound)
+                        ModManager.Mods.Add(ModName, ModInstance);
 
                     // See if the mod has version
                     if (string.IsNullOrWhiteSpace(script.Version) & !string.IsNullOrWhiteSpace(script.Name))
@@ -241,10 +242,14 @@ namespace KS.Modifications
                                 }
 
                                 // Now, add the command to the mod list
+                                var CommandScript = script.Commands[ActualCommand];
                                 DebugWriter.WriteDebug(DebugLevel.I, "Adding command {0} for {1}...", Command, CommandType.ToString());
                                 if (!ModManager.ListModCommands(CommandType).ContainsKey(Command))
-                                    ModManager.ListModCommands(CommandType).Add(Command, script.Commands[ActualCommand]);
-                                script.Commands.RenameKey(ActualCommand, Command);
+                                    ModManager.ListModCommands(CommandType).Add(Command, CommandScript);
+
+                                // Rename the command in the script
+                                script.Commands.Remove(ActualCommand);
+                                script.Commands.Add(ActualCommand, CommandScript);
                             }
                         }
                     }

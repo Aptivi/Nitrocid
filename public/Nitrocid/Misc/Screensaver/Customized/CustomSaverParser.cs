@@ -20,7 +20,6 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using Extensification.DictionaryExts;
 using KS.Files;
 using KS.Files.Querying;
 using KS.Kernel;
@@ -104,11 +103,15 @@ namespace KS.Misc.Screensaver.Customized
                             DebugWriter.WriteDebug(DebugLevel.I, "{0} is a valid screensaver!", SaverFileName);
                             SplashReport.ReportProgress(Translate.DoTranslation("{0} has been initialized properly."), 0, SaverFileName);
                             string SaverName = ScreensaverBase.ScreensaverName;
+                            bool updating = CustomSaverTools.CustomSavers.ContainsKey(SaverName);
                             CustomSaverInfo SaverInstance;
                             SaverInstance = new CustomSaverInfo(SaverName, SaverFileName, FinalScreensaverPath, ScreensaverBase);
-                            if (CustomSaverTools.CustomSavers.ContainsKey(SaverName))
+                            if (updating)
+                            {
                                 SplashReport.ReportProgress(Translate.DoTranslation("{0} has already been initialized. Updating screensaver..."), 0, SaverFileName);
-                            CustomSaverTools.CustomSavers.AddOrModify(SaverName, SaverInstance);
+                                CustomSaverTools.CustomSavers.Remove(SaverName);
+                            }
+                            CustomSaverTools.CustomSavers.Add(SaverName, SaverInstance);
                         }
                         else
                         {

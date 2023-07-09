@@ -18,7 +18,6 @@
 
 using ColorSeq;
 using ColorSeq.Accessibility;
-using Extensification.StringExts;
 using FluentFTP;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
@@ -623,7 +622,7 @@ namespace KS.Kernel.Configuration.Instances
                 }
                 else
                 {
-                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Directory {0} not found").FormatString(value));
+                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Directory {0} not found"), value);
                 }
             }
         }

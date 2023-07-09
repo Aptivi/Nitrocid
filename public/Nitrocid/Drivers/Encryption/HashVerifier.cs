@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.IO;
-using Extensification.StringExts;
 using FS = KS.Files.Filesystem;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
@@ -88,7 +87,7 @@ namespace KS.Drivers.Encryption
                 }
                 else
                 {
-                    throw new KernelException(KernelExceptionType.Encryption, "Hashes file {0} not found.".FormatString(HashesFile));
+                    throw new KernelException(KernelExceptionType.Encryption, "Hashes file {0} not found.", HashesFile);
                 }
 
                 if (ActualHash.Length == ExpectedHashLength & ExpectedHash.Length == ExpectedHashLength)
@@ -114,7 +113,7 @@ namespace KS.Drivers.Encryption
             }
             else
             {
-                throw new KernelException(KernelExceptionType.Encryption, "File {0} not found.".FormatString(FileName));
+                throw new KernelException(KernelExceptionType.Encryption, "File {0} not found.", FileName);
             }
         }
 
@@ -164,7 +163,7 @@ namespace KS.Drivers.Encryption
             }
             else
             {
-                throw new KernelException(KernelExceptionType.Encryption, "File {0} not found.".FormatString(FileName));
+                throw new KernelException(KernelExceptionType.Encryption, "File {0} not found.", FileName);
             }
         }
 
@@ -225,7 +224,7 @@ namespace KS.Drivers.Encryption
                 }
                 else
                 {
-                    throw new KernelException(KernelExceptionType.Encryption, "Hashes file {0} not found.".FormatString(HashesFile));
+                    throw new KernelException(KernelExceptionType.Encryption, "Hashes file {0} not found.", HashesFile);
                 }
 
                 if (ActualHash.Length == ExpectedHashLength & ExpectedHash.Length == ExpectedHashLength)
@@ -251,7 +250,7 @@ namespace KS.Drivers.Encryption
             }
             else
             {
-                throw new KernelException(KernelExceptionType.Encryption, "File {0} not found.".FormatString(FileName));
+                throw new KernelException(KernelExceptionType.Encryption, "File {0} not found.", FileName);
             }
         }
 
@@ -302,7 +301,7 @@ namespace KS.Drivers.Encryption
             }
             else
             {
-                throw new KernelException(KernelExceptionType.Encryption, "File {0} not found.".FormatString(FileName));
+                throw new KernelException(KernelExceptionType.Encryption, "File {0} not found.", FileName);
             }
         }
 

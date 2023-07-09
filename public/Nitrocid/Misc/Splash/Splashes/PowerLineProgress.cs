@@ -20,7 +20,6 @@ using System;
 using System.Text;
 using System.Threading;
 using ColorSeq;
-using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.Kernel;
 using KS.Kernel.Debugging;

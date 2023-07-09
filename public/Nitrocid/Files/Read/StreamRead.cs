@@ -17,19 +17,21 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Drivers;
+using System.IO;
 
-namespace KS.Files.Operations
+namespace KS.Files.Read
 {
     /// <summary>
-    /// Miscellaneous file manipulation routines
+    /// Stream reading tools
     /// </summary>
-    public static class Manipulation
+    public static class StreamRead
     {
         /// <summary>
-        /// Clears the contents of a file
+        /// Reads all the characters in the stream until the end and seeks the stream to the beginning, if possible.
         /// </summary>
-        /// <param name="path">Path to an existing file</param>
-        public static void ClearFile(string path) =>
-            DriverHandler.CurrentFilesystemDriver.ClearFile(path);
+        /// <param name="stream">The stream reader</param>
+        /// <returns>Contents of the stream</returns>
+        public static string ReadToEndAndSeek(ref StreamReader stream) =>
+            DriverHandler.CurrentFilesystemDriver.ReadToEndAndSeek(ref stream);
     }
 }

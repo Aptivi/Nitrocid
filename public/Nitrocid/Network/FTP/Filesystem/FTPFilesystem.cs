@@ -22,7 +22,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using Extensification.StringExts;
 using FluentFTP;
 using FluentFTP.Helpers;
 using KS.ConsoleBase.Colors;
@@ -97,7 +96,7 @@ namespace KS.Network.FTP.Filesystem
                                     EntryBuilder.Append(": ");
                                     FileSize = FTPShellCommon.ClientFTP.GetFileSize(finalDirListFTP.FullName);
                                     ModDate = FTPShellCommon.ClientFTP.GetModifiedTime(finalDirListFTP.FullName);
-                                    EntryBuilder.Append(ColorTools.GetColor(KernelColorType.ListValue).VTSequenceForeground + Translate.DoTranslation("{0} KB | Modified in: {1}").FormatString((FileSize / 1024d).ToString("N2"), ModDate.ToString()));
+                                    EntryBuilder.Append(ColorTools.GetColor(KernelColorType.ListValue).VTSequenceForeground + string.Format(Translate.DoTranslation("{0} KB | Modified in: {1}"), FileSize / 1024d, ModDate.ToString()));
                                 }
                             }
                             else if (finalDirListFTP.Type == FtpObjectType.Directory)

@@ -19,7 +19,6 @@
 using KS.Kernel.Administration.Journalling;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
-using KS.Kernel.Power;
 using KS.Languages;
 using KS.Modifications;
 using System;

@@ -24,7 +24,6 @@ using System.Linq;
 using System.Reflection;
 using ColorPrint.Core.Wheel;
 using ColorSeq;
-using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
@@ -103,7 +102,7 @@ namespace KS.Misc.Settings
 
                 // Prompt for selection and check the answer
                 string finalTitle = Translate.DoTranslation("Welcome to Settings!");
-                int Answer = SelectionStyle.PromptSelection("- " + finalTitle + " " + "-".Repeat(ConsoleWrapper.WindowWidth - ("- " + finalTitle + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("Select section:"), 
+                int Answer = SelectionStyle.PromptSelection("- " + finalTitle + " " + new string('-', ConsoleWrapper.WindowWidth - ("- " + finalTitle + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("Select section:"), 
                     sections, altSections);
                 if (Answer >= 1 & Answer <= MaxSections)
                 {
@@ -286,7 +285,7 @@ namespace KS.Misc.Settings
 
                     // Prompt user and check for input
                     string finalSection = SectionTranslateName ? Translate.DoTranslation((string)SectionDisplayName) : (string)SectionDisplayName;
-                    int Answer = SelectionStyle.PromptSelection("- " + finalSection + " " + "-".Repeat(ConsoleWrapper.WindowWidth - ("- " + finalSection + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation((string)SectionDescription) + (!string.IsNullOrEmpty(Notes) ? CharManager.NewLine + Notes : ""),
+                    int Answer = SelectionStyle.PromptSelection("- " + finalSection + " " + new string('-', ConsoleWrapper.WindowWidth - ("- " + finalSection + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation((string)SectionDescription) + (!string.IsNullOrEmpty(Notes) ? CharManager.NewLine + Notes : ""),
                         sections, altSections);
 
                     // Check the answer
@@ -335,7 +334,7 @@ namespace KS.Misc.Settings
                 ConsoleWrapper.Clear();
                 DebugWriter.WriteDebug(DebugLevel.I, "Error trying to open section: {0}", ex.Message);
                 string finalSection = Translate.DoTranslation("You're Lost!");
-                TextWriterColor.Write("- " + finalSection + " " + "-".Repeat(ConsoleWrapper.WindowWidth - ("- " + finalSection + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("Invalid section entered. Please go back."), true, KernelColorType.Error);
+                TextWriterColor.Write("- " + finalSection + " " + new string('-', ConsoleWrapper.WindowWidth - ("- " + finalSection + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("Invalid section entered. Please go back."), true, KernelColorType.Error);
                 TextWriterColor.Write(Translate.DoTranslation("If you're sure that you've opened the right section, check this message out:"), true, KernelColorType.Error);
                 TextWriterColor.Write(ex.Message, true, KernelColorType.Error);
                 Input.DetectKeypress();
@@ -423,7 +422,7 @@ namespace KS.Misc.Settings
                             ConsoleWrapper.Clear();
 
                             // Make an introductory banner
-                            TextWriterColor.Write("- " + finalSection + " " + "-".Repeat(ConsoleWrapper.WindowWidth - ("- " + finalSection + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation(KeyDescription), true, KernelColorType.Question);
+                            TextWriterColor.Write("- " + finalSection + " " + new string('-', ConsoleWrapper.WindowWidth - ("- " + finalSection + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation(KeyDescription), true, KernelColorType.Question);
 
                             // Write the prompt
                             TextWriterColor.Write("[{0}] > ", false, KernelColorType.Input, KeyDefaultValue);
@@ -525,7 +524,7 @@ namespace KS.Misc.Settings
                             }
 
                             // Prompt user and check for input
-                            int Answer = SelectionStyle.PromptSelection("- " + finalSection + " " + "-".Repeat(ConsoleWrapper.WindowWidth - ("- " + finalSection + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation(KeyDescription),
+                            int Answer = SelectionStyle.PromptSelection("- " + finalSection + " " + new string('-', ConsoleWrapper.WindowWidth - ("- " + finalSection + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation(KeyDescription),
                                 string.Join("/", itemNums), items.ToArray(),
                                 string.Join("/", altSectionNums), altSections.ToArray());
                             AnswerString = Answer.ToString();
@@ -847,7 +846,7 @@ namespace KS.Misc.Settings
                 DebugWriter.WriteDebug(DebugLevel.I, "Error trying to open section: {0}", ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 string finalSection = Translate.DoTranslation("You're Lost!");
-                TextWriterColor.Write("- " + finalSection + " " + "-".Repeat(ConsoleWrapper.WindowWidth - ("- " + finalSection + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("Invalid section entered. Please go back."), true, KernelColorType.Error);
+                TextWriterColor.Write("- " + finalSection + " " + new string('-', ConsoleWrapper.WindowWidth - ("- " + finalSection + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("Invalid section entered. Please go back."), true, KernelColorType.Error);
                 TextWriterColor.Write(Translate.DoTranslation("If you're sure that you've opened the right section, check this message out:"), true, KernelColorType.Error);
                 TextWriterColor.Write(ex.Message, true, KernelColorType.Error);
                 Input.DetectKeypress();

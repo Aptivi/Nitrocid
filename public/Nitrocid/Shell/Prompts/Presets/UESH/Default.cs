@@ -23,7 +23,6 @@ using KS.Kernel;
 using KS.Languages;
 using KS.Network.Base;
 using KS.Users;
-using KS.Users.Login;
 
 namespace KS.Shell.Prompts.Presets.UESH
 {

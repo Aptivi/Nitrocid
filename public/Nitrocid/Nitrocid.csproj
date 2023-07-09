@@ -50,7 +50,7 @@
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     
     <!-- Increment NitrocidModAPIVersion everytime there is a breaking change in the N-KS API. -->
-    <NitrocidModAPIVersion>3.0.25.4</NitrocidModAPIVersion>
+    <NitrocidModAPIVersion>3.0.25.7</NitrocidModAPIVersion>
     <FileVersion>$(NitrocidModAPIVersion)</FileVersion>
   </PropertyGroup>
   <!-- KS General Information End -->
@@ -73,16 +73,16 @@
   <ItemGroup>
     <PackageReference Include="Addresstigator" Version="0.1.0.3" />
     <PackageReference Include="ColorPrint.Core" Version="1.1.1" />
-    <PackageReference Include="ColorSeq" Version="1.3.0" />
+    <PackageReference Include="ColorSeq" Version="1.4.0" />
     <PackageReference Include="Crc32.NET" Version="1.2.0" />
     <PackageReference Include="Dictify" Version="1.0.0.2" />
     <PackageReference Include="Figgle" Version="0.5.1" />
     <PackageReference Include="FluentFTP" Version="46.0.2" />
     <PackageReference Include="GRILO.Boot" Version="0.1.0.2" />
     <PackageReference Include="HtmlAgilityPack" Version="1.11.49" />
-    <PackageReference Include="Inxi.NET" Version="2022.4.1" />
+    <PackageReference Include="Inxi.NET" Version="2022.5.0" />
     <PackageReference Include="MailKit" Version="4.1.0" />
-    <PackageReference Include="ManagedWeatherMap" Version="1.0.2.1" />
+    <PackageReference Include="ManagedWeatherMap" Version="1.1.0" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.8" />
     <PackageReference Include="Namer" Version="1.0.0.2" />
@@ -92,19 +92,17 @@
     <PackageReference Include="SharpLyrics" Version="1.0.0.1" />
     <PackageReference Include="SSH.NET" Version="2020.0.2" />
     <PackageReference Include="StringMath" Version="4.1.0" />
-    <PackageReference Include="TermRead" Version="0.4.0.2" />
+    <PackageReference Include="TermRead" Version="0.5.0" />
     <PackageReference Include="UnitsNet" Version="5.21.0" />
     <PackageReference Include="Aptivi.VT.NET" Version="1.0.0" />
     <PackageReference Include="VisualCard" Version="0.4.0" />
-    <PackageReference Include="Wordament" Version="0.1.1" />
+    <PackageReference Include="Wordament" Version="0.2.0" />
   </ItemGroup>
   <!-- KS Dependencies Information End -->
 
   <!-- KS Import Information -->
   <ItemGroup>
     <Import Include="ColorSeq" />
-    <Import Include="Extensification.DictionaryExts" />
-    <Import Include="Extensification.StringExts" />
     <Import Include="FluentFTP" />
     <Import Include="FluentFTP.Helpers" />
     <Import Include="KS.ConsoleBase" />

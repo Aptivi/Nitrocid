@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using Extensification.StringExts;
+using ColorSeq;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
@@ -36,16 +36,15 @@ namespace KS.Shell.Shells.UESH.Commands
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
             string Hex = ListArgsOnly[0];
-            int R = default, G = default, B = default;
 
             // Do the job
-            Hex.ConvertFromHexToRgb(ref R, ref G, ref B);
+            Color color = new(Hex);
             TextWriterColor.Write("- " + Translate.DoTranslation("Red color level:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write($"{R}", true, KernelColorType.ListValue);
+            TextWriterColor.Write($"{color.R}", true, KernelColorType.ListValue);
             TextWriterColor.Write("- " + Translate.DoTranslation("Green color level:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write($"{G}", true, KernelColorType.ListValue);
+            TextWriterColor.Write($"{color.G}", true, KernelColorType.ListValue);
             TextWriterColor.Write("- " + Translate.DoTranslation("Blue color level:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write($"{B}", true, KernelColorType.ListValue);
+            TextWriterColor.Write($"{color.B}", true, KernelColorType.ListValue);
         }
 
     }

@@ -20,8 +20,6 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using ColorSeq;
-using Extensification.DictionaryExts;
-using Extensification.ListExts;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
@@ -323,7 +321,8 @@ namespace KS.Misc.Games
                     DebugWriter.WriteDebug(DebugLevel.I, "Mass position contains the current position ({0}, {1})? {2}", SnakeCurrentX, SnakeCurrentY, Dead);
 
                     // Add the mass position
-                    SnakeMassPositions.AddIfNotFound($"{SnakeCurrentX}/{SnakeCurrentY}");
+                    if (!Dead)
+                        SnakeMassPositions.Add($"{SnakeCurrentX}/{SnakeCurrentY}");
                     if (SnakeMassPositions.Count > SnakeLength)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Mass position count {0} exceeds snake length of {1}. Removing index 0...", SnakeMassPositions.Count, SnakeLength);

@@ -18,7 +18,6 @@
 
 using System;
 using ColorSeq;
-using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
 using KS.Kernel.Configuration;

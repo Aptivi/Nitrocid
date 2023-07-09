@@ -16,10 +16,10 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using Extensification.StringExts;
 using KS.Kernel.Debugging;
 using KS.Shell.ShellBase.Commands;
 using KS.Kernel.Events;
+using KS.Misc.Text;
 
 namespace KS.Modifications
 {
@@ -35,7 +35,7 @@ namespace KS.Modifications
             EventsManager.FireEvent(EventType.PreExecuteModCommand, cmd);
 
             // Variables
-            var parts = cmd.SplitEncloseDoubleQuotes(" ");
+            var parts = cmd.SplitEncloseDoubleQuotes();
             string actualCmd = parts[0];
             DebugWriter.WriteDebug(DebugLevel.I, "Command = {0}", actualCmd);
 

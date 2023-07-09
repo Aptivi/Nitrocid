@@ -16,7 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using Extensification.StringExts;
 using KS.Misc.Writers.ConsoleWriters;
 using System;
 using System.Threading;
@@ -69,14 +68,15 @@ namespace KS.Misc.Writers.FancyWriters
         {
             try 
             {
+                // TODO: Deal with these, too.
                 // Draw the box frame
-                TextWriterWhereColor.WriteWhere(UpperLeftCornerChar + UpperFrameChar.Repeat(InteriorWidth) + UpperRightCornerChar, Left, Top, true);
+                TextWriterWhereColor.WriteWhere(UpperLeftCornerChar + new string(UpperFrameChar[0], InteriorWidth) + UpperRightCornerChar, Left, Top, true);
                 for (int i = 1; i <= InteriorHeight; i++)
                 {
                     TextWriterWhereColor.WriteWhere(LeftFrameChar, Left, Top + i, true);
                     TextWriterWhereColor.WriteWhere(RightFrameChar, Left + InteriorWidth + 1, Top + i, true);
                 }
-                TextWriterWhereColor.WriteWhere(LowerLeftCornerChar + LowerFrameChar.Repeat(InteriorWidth) + LowerRightCornerChar, Left, Top + InteriorHeight + 1, true);
+                TextWriterWhereColor.WriteWhere(LowerLeftCornerChar + new string(LowerFrameChar[0], InteriorWidth) + LowerRightCornerChar, Left, Top + InteriorHeight + 1, true);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {

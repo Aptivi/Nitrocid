@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using ColorSeq;
-using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -32,6 +31,7 @@ using KS.Misc.Probers.Regexp;
 using KS.Files.Querying;
 using KS.Misc.Interactive;
 using System.Collections;
+using KS.Misc.Text;
 
 namespace KS.Misc.Contacts.Interactive
 {
@@ -154,14 +154,14 @@ namespace KS.Misc.Contacts.Interactive
                 Translate.DoTranslation("No contact URL");
 
             // Render them to the second pane
-            TextWriterWhereColor.WriteWhere(finalRenderedContactName + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedContactName.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 0, ForegroundColor, PaneItemBackColor);
-            TextWriterWhereColor.WriteWhere(finalRenderedContactAddress + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedContactAddress.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 2, ForegroundColor, PaneItemBackColor);
-            TextWriterWhereColor.WriteWhere(finalRenderedContactMail + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedContactMail.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 3, ForegroundColor, PaneItemBackColor);
-            TextWriterWhereColor.WriteWhere(finalRenderedContactOrganization + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedContactOrganization.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 4, ForegroundColor, PaneItemBackColor);
-            TextWriterWhereColor.WriteWhere(finalRenderedContactTelephone + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedContactTelephone.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 5, ForegroundColor, PaneItemBackColor);
-            TextWriterWhereColor.WriteWhere(finalRenderedContactURL + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedContactTelephone.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 6, ForegroundColor, PaneItemBackColor);
-            TextWriterWhereColor.WriteWhere(" ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedContactTelephone.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 7, ForegroundColor, PaneItemBackColor);
-            TextWriterWhereColor.WriteWhere(" ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedContactTelephone.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 8, ForegroundColor, PaneItemBackColor);
+            TextWriterWhereColor.WriteWhere(finalRenderedContactName + new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedContactName.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 0, ForegroundColor, PaneItemBackColor);
+            TextWriterWhereColor.WriteWhere(finalRenderedContactAddress + new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedContactAddress.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 2, ForegroundColor, PaneItemBackColor);
+            TextWriterWhereColor.WriteWhere(finalRenderedContactMail + new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedContactMail.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 3, ForegroundColor, PaneItemBackColor);
+            TextWriterWhereColor.WriteWhere(finalRenderedContactOrganization + new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedContactOrganization.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 4, ForegroundColor, PaneItemBackColor);
+            TextWriterWhereColor.WriteWhere(finalRenderedContactTelephone + new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedContactTelephone.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 5, ForegroundColor, PaneItemBackColor);
+            TextWriterWhereColor.WriteWhere(finalRenderedContactURL + new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedContactTelephone.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 6, ForegroundColor, PaneItemBackColor);
+            TextWriterWhereColor.WriteWhere(new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedContactTelephone.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 7, ForegroundColor, PaneItemBackColor);
+            TextWriterWhereColor.WriteWhere(new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedContactTelephone.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 8, ForegroundColor, PaneItemBackColor);
 
             // Prepare the status
             Status = Translate.DoTranslation("Ready");

@@ -19,7 +19,6 @@
 using System;
 using System.Threading;
 using ColorSeq;
-using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
@@ -72,7 +71,7 @@ namespace KS.Misc.Splash.Splashes
                     {
                         if (SplashClosing)
                             break;
-                        TextWriterWhereColor.WriteWhere(" ".Repeat(PowerLineLength), 0, Top, Color.Empty, FirstColorSegmentBackground);
+                        TextWriterWhereColor.WriteWhere(new string(' ', PowerLineLength), 0, Top, Color.Empty, FirstColorSegmentBackground);
                         TextWriterWhereColor.WriteWhere(Convert.ToString(TransitionChar), PowerLineLength, Top, LastTransitionForeground);
                         ConsoleExtensions.ClearLineToRight();
                     }

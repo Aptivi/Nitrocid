@@ -18,6 +18,7 @@
 
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using KS.Files;
 using KS.Files.Operations;
 using KS.Kernel.Exceptions;
@@ -134,7 +135,7 @@ namespace KS.Misc.Screensaver.Customized
         {
             if (!CustomSaverSettingsToken.ContainsKey(CustomSaver))
                 throw new KernelException(KernelExceptionType.NoSuchScreensaver, Translate.DoTranslation("Screensaver {0} not found."), CustomSaver);
-            foreach (JProperty Setting in CustomSaverSettingsToken[CustomSaver])
+            foreach (JProperty Setting in CustomSaverSettingsToken[CustomSaver].Cast<JProperty>())
             {
                 if (Setting.Name == SaverSetting)
                 {
@@ -156,7 +157,7 @@ namespace KS.Misc.Screensaver.Customized
             if (!CustomSaverSettingsToken.ContainsKey(CustomSaver))
                 throw new KernelException(KernelExceptionType.NoSuchScreensaver, Translate.DoTranslation("Screensaver {0} not found."), CustomSaver);
             var SettingFound = false;
-            foreach (JProperty Setting in CustomSaverSettingsToken[CustomSaver])
+            foreach (JProperty Setting in CustomSaverSettingsToken[CustomSaver].Cast<JProperty>())
             {
                 if (Setting.Name == SaverSetting)
                 {

@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using Extensification.StringExts;
+using KS.Misc.Text;
 using System.Collections.Generic;
 
 namespace KS.Shell.ShellBase.Commands
@@ -70,10 +70,8 @@ namespace KS.Shell.ShellBase.Commands
 
                     // Install the syntax to argument or switch list
                     if (isSwitch)
-                    {
                         foreach (string switchStr in syntax.Split("|"))
                             switches.Add($"{startSyntax}{switchStr}{endSyntax}");
-                    }
                     else
                         args.Add(usage);
                 }

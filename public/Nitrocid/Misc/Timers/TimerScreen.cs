@@ -21,7 +21,6 @@ using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Timers;
 using Timer = System.Timers.Timer;
-using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
@@ -125,7 +124,7 @@ namespace KS.Misc.Timers
             }
 
             // Print the border
-            TextWriterWhereColor.WriteWhere("═".Repeat(ConsoleWrapper.WindowWidth), 0, KeysTextTopPosition - 2, true, ColorTools.GetGray());
+            TextWriterWhereColor.WriteWhere(new string('═', ConsoleWrapper.WindowWidth), 0, KeysTextTopPosition - 2, true, ColorTools.GetGray());
 
             // Wait for a keypress
             while (KeysKeypress != ConsoleKey.Escape)

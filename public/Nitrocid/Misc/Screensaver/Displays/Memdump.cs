@@ -18,7 +18,6 @@
 
 using System;
 using ColorSeq;
-using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
@@ -95,9 +94,9 @@ namespace KS.Misc.Screensaver.Displays
 
             // Now, fill the colors!
             for (int i = 0; i < 3; i++)
-                TextWriterWhereColor.WriteWhere(" ".Repeat(8), 3, 2 + i, Color.Empty, initialColor);
+                TextWriterWhereColor.WriteWhere(new string(' ', 8), 3, 2 + i, Color.Empty, initialColor);
             for (int i = 0; i < 3; i++)
-                TextWriterWhereColor.WriteWhere(" ".Repeat(8), 14, 2 + i, Color.Empty, shiftedColor);
+                TextWriterWhereColor.WriteWhere(new string(' ', 8), 14, 2 + i, Color.Empty, shiftedColor);
 
             // Print the hexes
             TextWriterWhereColor.WriteWhere(initialHex, initialInfoMargin, infoTop, initialColor);

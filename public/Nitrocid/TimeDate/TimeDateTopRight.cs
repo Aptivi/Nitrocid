@@ -18,7 +18,6 @@
 
 using System;
 using System.Threading;
-using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Kernel.Debugging;
@@ -56,7 +55,7 @@ namespace KS.TimeDate
                     }
                     Thread.Sleep(1000);
                     if (oldWid != 0)
-                        TextWriterWhereColor.WriteWhere(" ".Repeat(TimeString.Length), oldWid, oldTop, true, KernelColorType.NeutralText);
+                        TextWriterWhereColor.WriteWhere(new string(' ', TimeString.Length), oldWid, oldTop, true, KernelColorType.NeutralText);
                 }
             }
             catch (ThreadInterruptedException)

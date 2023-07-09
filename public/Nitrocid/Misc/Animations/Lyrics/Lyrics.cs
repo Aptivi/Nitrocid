@@ -19,13 +19,13 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
-using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
 using KS.Files;
 using KS.Files.Folders;
 using KS.Files.Querying;
 using KS.Misc.Screensaver;
+using KS.Misc.Text;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
@@ -83,13 +83,13 @@ namespace KS.Misc.Animations.Lyrics
             // Start the elapsed time in 3...
             for (int i = 3; i > 0; i--)
             {
-                TextWriterWhereColor.WriteWhere(" ".Repeat(infoMaxChars), 3, infoHeight);
+                TextWriterWhereColor.WriteWhere(new string(' ', infoMaxChars), 3, infoHeight);
                 TextWriterWhereColor.WriteWhere($"{i}...", (ConsoleWrapper.WindowWidth / 2) - ($"{i}...".Length / 2), infoHeight);
                 ThreadManager.SleepNoBlock(1000, Thread.CurrentThread);
             }
 
             // Go!
-            TextWriterWhereColor.WriteWhere(" ".Repeat(infoMaxChars), 3, infoHeight);
+            TextWriterWhereColor.WriteWhere(new string(' ', infoMaxChars), 3, infoHeight);
             TextWriterWhereColor.WriteWhere("Go!", (ConsoleWrapper.WindowWidth / 2) - ("Go!".Length / 2), infoHeight);
             var sw = new Stopwatch();
             sw.Start();
@@ -105,7 +105,7 @@ namespace KS.Misc.Animations.Lyrics
                 if (sw.Elapsed > ts.LineSpan)
                 {
                     string tsLine = ts.Line.Truncate(infoMaxChars);
-                    TextWriterWhereColor.WriteWhere(" ".Repeat(infoMaxChars), 3, infoHeight);
+                    TextWriterWhereColor.WriteWhere(new string(' ', infoMaxChars), 3, infoHeight);
                     TextWriterWhereColor.WriteWhere(tsLine, (ConsoleWrapper.WindowWidth / 2) - (tsLine.Length / 2), infoHeight);
                     shownLines.Add(ts);
                     if (shownLines.Count == lyricLines.Count)

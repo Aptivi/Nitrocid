@@ -20,14 +20,13 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Threading;
-using Extensification.ArrayExts;
-using Extensification.LongExts;
 using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Files.Print;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
+using KS.Misc.Reflection;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.Shells.Hex;
 
@@ -162,7 +161,8 @@ namespace KS.Misc.Editors.HexEdit
         {
             if (HexEditShellCommon.HexEdit_FileStream is not null)
             {
-                HexEditShellCommon.HexEdit_FileBytes.Add(Content);
+                Array.Resize(ref HexEditShellCommon.HexEdit_FileBytes, HexEditShellCommon.HexEdit_FileBytes.Length + 1);
+                HexEditShellCommon.HexEdit_FileBytes[^1] = Content;
             }
             else
             {
@@ -179,7 +179,7 @@ namespace KS.Misc.Editors.HexEdit
             if (HexEditShellCommon.HexEdit_FileStream is not null)
             {
                 foreach (byte ByteContent in Bytes)
-                    HexEditShellCommon.HexEdit_FileBytes.Add(ByteContent);
+                    HexEdit_AddNewByte(ByteContent);
             }
             else
             {

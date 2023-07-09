@@ -19,7 +19,6 @@
 using System;
 using System.IO;
 using ColorSeq;
-using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.Files.Querying;
 using KS.Kernel.Configuration;

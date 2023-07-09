@@ -18,7 +18,6 @@
 
 using System.Net.Sockets;
 using System.Threading;
-using Extensification.StringExts;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
@@ -93,7 +92,7 @@ namespace KS.Network.RPC
                 try
                 {
                     StartRPC();
-                    SplashReport.ReportProgress(Translate.DoTranslation("RPC listening on all addresses using port {0}.").FormatString(RPCPort), 5);
+                    SplashReport.ReportProgress(Translate.DoTranslation("RPC listening on all addresses using port {0}."), 5, RPCPort);
                 }
                 catch (ThreadStateException ex)
                 {

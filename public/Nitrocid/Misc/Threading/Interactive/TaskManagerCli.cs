@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using ColorSeq;
-using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
@@ -28,6 +27,7 @@ using KS.Misc.Threading;
 using System.Diagnostics;
 using KS.Misc.Interactive;
 using System.Collections;
+using KS.Misc.Text;
 
 namespace KS.Files.Interactive
 {
@@ -123,13 +123,13 @@ namespace KS.Files.Interactive
                 string finalRenderedTaskState = (Translate.DoTranslation("Task state") + $": {selectedThread.ThreadState}").Truncate(SeparatorHalfConsoleWidthInterior - 3);
                 string finalRenderedTaskPriority = (Translate.DoTranslation("Priority level") + $": {selectedThread.CurrentPriority}").Truncate(SeparatorHalfConsoleWidthInterior - 3);
                 string finalRenderedTaskMemAddress = (Translate.DoTranslation("Task memory address") + $": 0x{selectedThread.StartAddress:X8}").Truncate(SeparatorHalfConsoleWidthInterior - 3);
-                TextWriterWhereColor.WriteWhere(finalRenderedTaskID + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskID.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 0, ForegroundColor, PaneItemBackColor);
-                TextWriterWhereColor.WriteWhere(finalRenderedTaskPPT + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskPPT.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 2, ForegroundColor, PaneItemBackColor);
-                TextWriterWhereColor.WriteWhere(finalRenderedTaskUPT + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskUPT.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 3, ForegroundColor, PaneItemBackColor);
-                TextWriterWhereColor.WriteWhere(finalRenderedTaskTPT + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskTPT.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 4, ForegroundColor, PaneItemBackColor);
-                TextWriterWhereColor.WriteWhere(finalRenderedTaskState + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskState.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 5, ForegroundColor, PaneItemBackColor);
-                TextWriterWhereColor.WriteWhere(finalRenderedTaskPriority + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskPriority.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 6, ForegroundColor, PaneItemBackColor);
-                TextWriterWhereColor.WriteWhere(finalRenderedTaskMemAddress + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskMemAddress.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 7, ForegroundColor, PaneItemBackColor);
+                TextWriterWhereColor.WriteWhere(finalRenderedTaskID + new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedTaskID.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 0, ForegroundColor, PaneItemBackColor);
+                TextWriterWhereColor.WriteWhere(finalRenderedTaskPPT + new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedTaskPPT.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 2, ForegroundColor, PaneItemBackColor);
+                TextWriterWhereColor.WriteWhere(finalRenderedTaskUPT + new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedTaskUPT.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 3, ForegroundColor, PaneItemBackColor);
+                TextWriterWhereColor.WriteWhere(finalRenderedTaskTPT + new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedTaskTPT.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 4, ForegroundColor, PaneItemBackColor);
+                TextWriterWhereColor.WriteWhere(finalRenderedTaskState + new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedTaskState.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 5, ForegroundColor, PaneItemBackColor);
+                TextWriterWhereColor.WriteWhere(finalRenderedTaskPriority + new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedTaskPriority.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 6, ForegroundColor, PaneItemBackColor);
+                TextWriterWhereColor.WriteWhere(finalRenderedTaskMemAddress + new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedTaskMemAddress.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 7, ForegroundColor, PaneItemBackColor);
             }
             else
             {
@@ -139,13 +139,13 @@ namespace KS.Files.Interactive
                 string finalRenderedTaskBackground = (Translate.DoTranslation("Background") + $": {selectedThread.IsBackground}").Truncate(SeparatorHalfConsoleWidthInterior - 3);
                 string finalRenderedTaskCritical = (Translate.DoTranslation("Critical") + $": {selectedThread.IsCritical}").Truncate(SeparatorHalfConsoleWidthInterior - 3);
                 string finalRenderedTaskReady = (Translate.DoTranslation("Ready") + $": {selectedThread.IsReady}").Truncate(SeparatorHalfConsoleWidthInterior - 3);
-                TextWriterWhereColor.WriteWhere(finalRenderedTaskName + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskName.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 0, ForegroundColor, PaneItemBackColor);
-                TextWriterWhereColor.WriteWhere(finalRenderedTaskAlive + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskAlive.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 2, ForegroundColor, PaneItemBackColor);
-                TextWriterWhereColor.WriteWhere(finalRenderedTaskBackground + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskBackground.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 3, ForegroundColor, PaneItemBackColor);
-                TextWriterWhereColor.WriteWhere(finalRenderedTaskCritical + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskCritical.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 4, ForegroundColor, PaneItemBackColor);
-                TextWriterWhereColor.WriteWhere(finalRenderedTaskReady + " ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskReady.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 5, ForegroundColor, PaneItemBackColor);
-                TextWriterWhereColor.WriteWhere(" ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskReady.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 6, ForegroundColor, PaneItemBackColor);
-                TextWriterWhereColor.WriteWhere(" ".Repeat(SeparatorHalfConsoleWidthInterior - finalRenderedTaskReady.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 7, ForegroundColor, PaneItemBackColor);
+                TextWriterWhereColor.WriteWhere(finalRenderedTaskName + new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedTaskName.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 0, ForegroundColor, PaneItemBackColor);
+                TextWriterWhereColor.WriteWhere(finalRenderedTaskAlive + new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedTaskAlive.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 2, ForegroundColor, PaneItemBackColor);
+                TextWriterWhereColor.WriteWhere(finalRenderedTaskBackground + new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedTaskBackground.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 3, ForegroundColor, PaneItemBackColor);
+                TextWriterWhereColor.WriteWhere(finalRenderedTaskCritical + new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedTaskCritical.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 4, ForegroundColor, PaneItemBackColor);
+                TextWriterWhereColor.WriteWhere(finalRenderedTaskReady + new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedTaskReady.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 5, ForegroundColor, PaneItemBackColor);
+                TextWriterWhereColor.WriteWhere(new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedTaskReady.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 6, ForegroundColor, PaneItemBackColor);
+                TextWriterWhereColor.WriteWhere(new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedTaskReady.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 7, ForegroundColor, PaneItemBackColor);
             }
 
             // Prepare the status

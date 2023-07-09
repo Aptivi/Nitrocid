@@ -24,7 +24,6 @@ using KS.ConsoleBase.Colors;
 using KS.Languages;
 using ColorSeq;
 using KS.Misc.Writers.FancyWriters.Tools;
-using Extensification.StringExts;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase;
 using KS.Misc.Writers.ConsoleWriters;

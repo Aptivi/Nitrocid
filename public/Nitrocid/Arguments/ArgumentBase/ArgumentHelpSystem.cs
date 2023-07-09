@@ -16,7 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Languages;
@@ -71,7 +70,7 @@ namespace KS.Arguments.ArgumentBase
                     {
                         // Indent, if necessary
                         if (Indent)
-                            TextWriterColor.Write(" ".Repeat(UsageLength), false, KernelColorType.ListEntry);
+                            TextWriterColor.Write(new string(' ', UsageLength), false, KernelColorType.ListEntry);
                         TextWriterColor.Write($" {Argument} {string.Join(" ", HelpUsage.Switches)} {string.Join(" ", HelpUsage.Arguments)}", true, KernelColorType.ListEntry);
                         Indent = true;
                     }

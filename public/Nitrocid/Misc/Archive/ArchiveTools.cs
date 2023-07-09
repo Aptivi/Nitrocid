@@ -20,7 +20,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
-using Extensification.StringExts;
 using KS.Files;
 using KS.Files.Operations;
 using KS.Files.Querying;
@@ -87,7 +86,7 @@ namespace KS.Misc.Archive
             // Define absolute target
             string AbsoluteTarget = ArchiveShellCommon.ArchiveShell_CurrentArchiveDirectory + "/" + Target;
             if (AbsoluteTarget.StartsWith("/"))
-                AbsoluteTarget = AbsoluteTarget.RemoveLetter(0);
+                AbsoluteTarget = AbsoluteTarget[1..];
             DebugWriter.WriteDebug(DebugLevel.I, "Target: {0}, AbsoluteTarget: {1}", Target, AbsoluteTarget);
 
             // Define local destination while getting an entry from target
@@ -126,12 +125,12 @@ namespace KS.Misc.Archive
             if (string.IsNullOrWhiteSpace(Where))
                 Where = ArchiveShellCommon.ArchiveShell_CurrentDirectory;
             if (ArchiveShellCommon.ArchiveShell_Archive is not IWritableArchive)
-                throw new KernelException(KernelExceptionType.Archive, Translate.DoTranslation("Archive is not writable because type is") + " {0}.".FormatString(ArchiveShellCommon.ArchiveShell_Archive.Type));
+                throw new KernelException(KernelExceptionType.Archive, Translate.DoTranslation("Archive is not writable because type is") + " {0}.", ArchiveShellCommon.ArchiveShell_Archive.Type);
 
             // Define absolute archive target
             string ArchiveTarget = ArchiveShellCommon.ArchiveShell_CurrentArchiveDirectory + "/" + Target;
             if (ArchiveTarget.StartsWith("/"))
-                ArchiveTarget = ArchiveTarget.RemoveLetter(0);
+                ArchiveTarget = ArchiveTarget[1..];
             DebugWriter.WriteDebug(DebugLevel.I, "Where: {0}, ArchiveTarget: {1}", Where, ArchiveTarget);
 
             // Select compression type
@@ -206,7 +205,7 @@ namespace KS.Misc.Archive
             // Prepare the target
             Target = ArchiveShellCommon.ArchiveShell_CurrentArchiveDirectory + "/" + Target;
             if (Target.StartsWith("/"))
-                Target = Target.RemoveLetter(0);
+                Target = Target[1..];
             DebugWriter.WriteDebug(DebugLevel.I, "Setting target to {0}...", Target);
 
             // Enumerate entries
@@ -216,7 +215,7 @@ namespace KS.Misc.Archive
                 if (Entry.Key.StartsWith(Target))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "{0} found ({1}). Changing...", Target, Entry.Key);
-                    ArchiveShellCommon.ArchiveShell_CurrentArchiveDirectory = Entry.Key.RemoveLetter(Entry.Key.Length - 1);
+                    ArchiveShellCommon.ArchiveShell_CurrentArchiveDirectory = Entry.Key[..^1];
                     DebugWriter.WriteDebug(DebugLevel.I, "Setting CAD to {0}...", ArchiveShellCommon.ArchiveShell_CurrentArchiveDirectory);
                     return true;
                 }

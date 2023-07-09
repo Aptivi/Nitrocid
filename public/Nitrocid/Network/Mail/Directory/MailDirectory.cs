@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Linq;
 using System.Text;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
@@ -140,7 +141,7 @@ namespace KS.Network.Mail.Directory
             foreach (FolderNamespace nmspc in MailLogin.IMAP_Client.PersonalNamespaces)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
-                foreach (MailFolder dir in MailLogin.IMAP_Client.GetFolders(nmspc))
+                foreach (MailFolder dir in MailLogin.IMAP_Client.GetFolders(nmspc).Cast<MailFolder>())
                 {
                     if (dir.Name.ToLower() == FolderString.ToLower())
                     {
@@ -154,7 +155,7 @@ namespace KS.Network.Mail.Directory
             foreach (FolderNamespace nmspc in MailLogin.IMAP_Client.SharedNamespaces)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
-                foreach (MailFolder dir in MailLogin.IMAP_Client.GetFolders(nmspc))
+                foreach (MailFolder dir in MailLogin.IMAP_Client.GetFolders(nmspc).Cast<MailFolder>())
                 {
                     if (dir.Name.ToLower() == FolderString.ToLower())
                     {
@@ -168,7 +169,7 @@ namespace KS.Network.Mail.Directory
             foreach (FolderNamespace nmspc in MailLogin.IMAP_Client.OtherNamespaces)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
-                foreach (MailFolder dir in MailLogin.IMAP_Client.GetFolders(nmspc))
+                foreach (MailFolder dir in MailLogin.IMAP_Client.GetFolders(nmspc).Cast<MailFolder>())
                 {
                     if (dir.Name.ToLower() == FolderString.ToLower())
                     {
@@ -202,7 +203,7 @@ namespace KS.Network.Mail.Directory
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
                     EntryBuilder.AppendLine($"- {nmspc.Path}");
-                    foreach (MailFolder dir in MailLogin.IMAP_Client.GetFolders(nmspc))
+                    foreach (MailFolder dir in MailLogin.IMAP_Client.GetFolders(nmspc).Cast<MailFolder>())
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Folder: {0}", dir.Name);
                         EntryBuilder.AppendLine($"  - {dir.Name}");
@@ -214,7 +215,7 @@ namespace KS.Network.Mail.Directory
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
                     EntryBuilder.AppendLine($"- {nmspc.Path}");
-                    foreach (MailFolder dir in MailLogin.IMAP_Client.GetFolders(nmspc))
+                    foreach (MailFolder dir in MailLogin.IMAP_Client.GetFolders(nmspc).Cast<MailFolder>())
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Folder: {0}", dir.Name);
                         EntryBuilder.AppendLine($"  - {dir.Name}");
@@ -226,7 +227,7 @@ namespace KS.Network.Mail.Directory
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
                     EntryBuilder.AppendLine($"- {nmspc.Path}");
-                    foreach (MailFolder dir in MailLogin.IMAP_Client.GetFolders(nmspc))
+                    foreach (MailFolder dir in MailLogin.IMAP_Client.GetFolders(nmspc).Cast<MailFolder>())
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Folder: {0}", dir.Name);
                         EntryBuilder.AppendLine($"  - {dir.Name}");

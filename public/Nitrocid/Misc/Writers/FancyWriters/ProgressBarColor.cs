@@ -19,7 +19,6 @@
 using System;
 using System.Threading;
 using ColorSeq;
-using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.Kernel.Debugging;
 using KS.ConsoleBase.Colors;
@@ -85,16 +84,17 @@ namespace KS.Misc.Writers.FancyWriters
                 // Draw the border
                 if (DrawBorder)
                 {
-                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressUpperLeftCornerChar + ProgressTools.ProgressUpperFrameChar.Repeat(ConsoleWrapper.WindowWidth - FinalWidthOffset) + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true);
-                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLeftFrameChar + " ".Repeat(ConsoleWrapper.WindowWidth - FinalWidthOffset) + ProgressTools.ProgressRightFrameChar, Left, Top + 1, true);
-                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLowerLeftCornerChar + ProgressTools.ProgressLowerFrameChar.Repeat(ConsoleWrapper.WindowWidth - FinalWidthOffset) + ProgressTools.ProgressLowerRightCornerChar, Left, Top + 2, true);
+                    // TODO: Deal with these, too.
+                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressUpperLeftCornerChar + new string(ProgressTools.ProgressUpperFrameChar[0], ConsoleWrapper.WindowWidth - FinalWidthOffset) + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true);
+                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLeftFrameChar + new string(' ', ConsoleWrapper.WindowWidth - FinalWidthOffset) + ProgressTools.ProgressRightFrameChar, Left, Top + 1, true);
+                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLowerLeftCornerChar + new string(ProgressTools.ProgressLowerFrameChar[0], ConsoleWrapper.WindowWidth - FinalWidthOffset) + ProgressTools.ProgressLowerRightCornerChar, Left, Top + 2, true);
                 }
 
                 // Draw the progress bar
                 int times = Targeted ?
                     ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, FinalWidthOffset) : 
                     ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset);
-                TextWriterWhereColor.WriteWhere("*".Repeat(times), Left + 1, Top + 1, true);
+                TextWriterWhereColor.WriteWhere(new string('*', times), Left + 1, Top + 1, true);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -278,9 +278,9 @@ namespace KS.Misc.Writers.FancyWriters
                 // Draw the border
                 if (DrawBorder)
                 {
-                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressUpperLeftCornerChar + ProgressTools.ProgressUpperFrameChar.Repeat(ConsoleWrapper.WindowWidth - FinalWidthOffset) + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true, FrameColor, BackgroundColor);
-                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLeftFrameChar + " ".Repeat(ConsoleWrapper.WindowWidth - FinalWidthOffset) + ProgressTools.ProgressRightFrameChar, Left, Top + 1, true, FrameColor, BackgroundColor);
-                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLowerLeftCornerChar + ProgressTools.ProgressLowerFrameChar.Repeat(ConsoleWrapper.WindowWidth - FinalWidthOffset) + ProgressTools.ProgressLowerRightCornerChar, Left, Top + 2, true, FrameColor, BackgroundColor);
+                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressUpperLeftCornerChar + new string(ProgressTools.ProgressUpperFrameChar[0], ConsoleWrapper.WindowWidth - FinalWidthOffset) + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true, FrameColor, BackgroundColor);
+                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLeftFrameChar + new string(' ', ConsoleWrapper.WindowWidth - FinalWidthOffset) + ProgressTools.ProgressRightFrameChar, Left, Top + 1, true, FrameColor, BackgroundColor);
+                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLowerLeftCornerChar + new string(ProgressTools.ProgressLowerFrameChar[0], ConsoleWrapper.WindowWidth - FinalWidthOffset) + ProgressTools.ProgressLowerRightCornerChar, Left, Top + 2, true, FrameColor, BackgroundColor);
                 }
 
                 // Draw the progress bar
@@ -288,7 +288,7 @@ namespace KS.Misc.Writers.FancyWriters
                             ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, FinalWidthOffset) :
                             ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset);
                 ColorTools.SetConsoleColor(ProgressColor, true, true);
-                TextWriterWhereColor.WriteWhere(" ".Repeat(times), Left + 1, Top + 1, true);
+                TextWriterWhereColor.WriteWhere(new string(' ', times), Left + 1, Top + 1, true);
                 ColorTools.SetConsoleColor(KernelColorType.Background, true);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
@@ -437,9 +437,9 @@ namespace KS.Misc.Writers.FancyWriters
                 // Draw the border
                 if (DrawBorder)
                 {
-                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressUpperLeftCornerChar + ProgressTools.ProgressUpperFrameChar.Repeat(ConsoleWrapper.WindowWidth - FinalWidthOffset) + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true, FrameColor, BackgroundColor);
-                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLeftFrameChar + " ".Repeat(ConsoleWrapper.WindowWidth - FinalWidthOffset) + ProgressTools.ProgressRightFrameChar, Left, Top + 1, true, FrameColor, BackgroundColor);
-                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLowerLeftCornerChar + ProgressTools.ProgressLowerFrameChar.Repeat(ConsoleWrapper.WindowWidth - FinalWidthOffset) + ProgressTools.ProgressLowerRightCornerChar, Left, Top + 2, true, FrameColor, BackgroundColor);
+                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressUpperLeftCornerChar + new string(ProgressTools.ProgressUpperFrameChar[0], ConsoleWrapper.WindowWidth - FinalWidthOffset) + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true, FrameColor, BackgroundColor);
+                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLeftFrameChar + new string(' ', ConsoleWrapper.WindowWidth - FinalWidthOffset) + ProgressTools.ProgressRightFrameChar, Left, Top + 1, true, FrameColor, BackgroundColor);
+                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLowerLeftCornerChar + new string(ProgressTools.ProgressLowerFrameChar[0], ConsoleWrapper.WindowWidth - FinalWidthOffset) + ProgressTools.ProgressLowerRightCornerChar, Left, Top + 2, true, FrameColor, BackgroundColor);
                 }
 
                 // Draw the progress bar
@@ -447,7 +447,7 @@ namespace KS.Misc.Writers.FancyWriters
                             ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, FinalWidthOffset) :
                             ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset);
                 ColorTools.SetConsoleColor(new Color(ProgressColor), true, true);
-                TextWriterWhereColor.WriteWhere(" ".Repeat(times), Left + 1, Top + 1, true);
+                TextWriterWhereColor.WriteWhere(new string(' ', times), Left + 1, Top + 1, true);
                 ColorTools.SetConsoleColor(KernelColorType.Background, true);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
@@ -596,9 +596,9 @@ namespace KS.Misc.Writers.FancyWriters
                 // Draw the border
                 if (DrawBorder)
                 {
-                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressUpperLeftCornerChar + ProgressTools.ProgressUpperFrameChar.Repeat(ConsoleWrapper.WindowWidth - FinalWidthOffset) + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true, FrameColor, BackgroundColor);
-                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLeftFrameChar + " ".Repeat(ConsoleWrapper.WindowWidth - FinalWidthOffset) + ProgressTools.ProgressRightFrameChar, Left, Top + 1, true, FrameColor, BackgroundColor);
-                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLowerLeftCornerChar + ProgressTools.ProgressLowerFrameChar.Repeat(ConsoleWrapper.WindowWidth - FinalWidthOffset) + ProgressTools.ProgressLowerRightCornerChar, Left, Top + 2, true, FrameColor, BackgroundColor);
+                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressUpperLeftCornerChar + new string(ProgressTools.ProgressUpperFrameChar[0], ConsoleWrapper.WindowWidth - FinalWidthOffset) + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true, FrameColor, BackgroundColor);
+                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLeftFrameChar + new string(' ', ConsoleWrapper.WindowWidth - FinalWidthOffset) + ProgressTools.ProgressRightFrameChar, Left, Top + 1, true, FrameColor, BackgroundColor);
+                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLowerLeftCornerChar + new string(ProgressTools.ProgressLowerFrameChar[0], ConsoleWrapper.WindowWidth - FinalWidthOffset) + ProgressTools.ProgressLowerRightCornerChar, Left, Top + 2, true, FrameColor, BackgroundColor);
                 }
 
                 // Draw the progress bar
@@ -606,7 +606,7 @@ namespace KS.Misc.Writers.FancyWriters
                             ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, FinalWidthOffset) :
                             ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset);
                 ColorTools.SetConsoleColor(ProgressColor, true, true);
-                TextWriterWhereColor.WriteWhere(" ".Repeat(times), Left + 1, Top + 1, true);
+                TextWriterWhereColor.WriteWhere(new string(' ', times), Left + 1, Top + 1, true);
                 ColorTools.SetConsoleColor(KernelColorType.Background, true);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))

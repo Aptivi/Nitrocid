@@ -21,15 +21,14 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
-using Extensification.StreamReaderExts;
 using KS.Files;
+using KS.Files.Read;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.Shells.Json;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Renci.SshNet.Security;
 
 namespace KS.Misc.Editors.JsonShell
 {
@@ -51,7 +50,7 @@ namespace KS.Misc.Editors.JsonShell
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to open file {0}...", File);
                 JsonShellCommon.JsonShell_FileStream = new FileStream(File, FileMode.Open);
                 var JsonFileReader = new StreamReader(JsonShellCommon.JsonShell_FileStream);
-                string JsonFileContents = JsonFileReader.ReadToEndAndSeek();
+                string JsonFileContents = StreamRead.ReadToEndAndSeek(ref JsonFileReader);
                 JsonShellCommon.JsonShell_FileToken = JToken.Parse(!string.IsNullOrWhiteSpace(JsonFileContents) ? JsonFileContents : "{}");
                 JsonShellCommon.JsonShell_FileTokenOrig = JToken.Parse(!string.IsNullOrWhiteSpace(JsonFileContents) ? JsonFileContents : "{}");
                 DebugWriter.WriteDebug(DebugLevel.I, "File {0} is open. Length: {1}, Pos: {2}", File, JsonShellCommon.JsonShell_FileStream.Length, JsonShellCommon.JsonShell_FileStream.Position);

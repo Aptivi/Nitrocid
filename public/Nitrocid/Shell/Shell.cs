@@ -20,7 +20,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
@@ -53,7 +52,6 @@ using KS.Shell.Shells.HTTP;
 using KS.Shell.Shells.Hex;
 using KS.Shell.Shells.Archive;
 using KS.Shell.Shells.Admin;
-using KS.Users.Login;
 using KS.Kernel.Events;
 using File = KS.Drivers.Console.Consoles.File;
 using KS.Users.Permissions;
@@ -353,7 +351,7 @@ namespace KS.Shell
                                         if (pathValid)
                                         {
                                             var targetCommand = Command.Replace(TargetFileName, "");
-                                            targetCommand.RemoveNullsOrWhitespacesAtTheBeginning();
+                                            targetCommand.TrimStart('\0', ' ');
                                             DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, Arguments: {1}", TargetFile, targetCommand);
                                             var Params = new ProcessExecutor.ExecuteProcessThreadParameters(TargetFile, targetCommand);
                                             ProcessStartCommandThread.Start(Params);

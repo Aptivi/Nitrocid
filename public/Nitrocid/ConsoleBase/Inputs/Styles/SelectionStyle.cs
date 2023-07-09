@@ -19,7 +19,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Languages;
@@ -137,7 +136,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                     if (AnswerTitleLeft < ConsoleWrapper.WindowWidth)
                     {
                         int blankRepeats = AnswerTitleLeft - $" {AnswerInstance.ChoiceName}) ".Length;
-                        AnswerOption = $" {AnswerInstance.ChoiceName}) " + " ".Repeat(blankRepeats) + $"{AnswerTitle}";
+                        AnswerOption = $" {AnswerInstance.ChoiceName}) " + new string(' ', blankRepeats) + $"{AnswerTitle}";
                     }
                     var AnswerColor = AnswerIndex + 1 == HighlightedAnswer ? 
                                       KernelColorType.SelectedOption : 
@@ -154,9 +153,9 @@ namespace KS.ConsoleBase.Inputs.Styles
                 int descSepArea = ConsoleWrapper.WindowHeight - 3;
                 int descArea = ConsoleWrapper.WindowHeight - 2;
                 string descFinal = AllAnswers[HighlightedAnswer - 1].ChoiceDescription is not null ? AllAnswers[HighlightedAnswer - 1].ChoiceDescription.Truncate((ConsoleWrapper.WindowWidth * 2) - 3) : "";
-                TextWriterWhereColor.WriteWhere("=".Repeat(ConsoleWrapper.WindowWidth), 0, descSepArea, KernelColorType.Separator);
-                TextWriterWhereColor.WriteWhere(" ".Repeat(ConsoleWrapper.WindowWidth), 0, descArea);
-                TextWriterWhereColor.WriteWhere(" ".Repeat(ConsoleWrapper.WindowWidth), 0, descArea + 1);
+                TextWriterWhereColor.WriteWhere(new string('=', ConsoleWrapper.WindowWidth), 0, descSepArea, KernelColorType.Separator);
+                TextWriterWhereColor.WriteWhere(new string(' ', ConsoleWrapper.WindowWidth), 0, descArea);
+                TextWriterWhereColor.WriteWhere(new string(' ', ConsoleWrapper.WindowWidth), 0, descArea + 1);
                 TextWriterWhereColor.WriteWhere(descFinal, 0, descArea, KernelColorType.NeutralText);
 
                 // Wait for an answer

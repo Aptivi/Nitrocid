@@ -20,7 +20,6 @@ using System;
 using System.IO;
 using KS.Drivers;
 using KS.Files.Querying;
-using KS.Users.Permissions;
 
 namespace KS.Files.Operations
 {

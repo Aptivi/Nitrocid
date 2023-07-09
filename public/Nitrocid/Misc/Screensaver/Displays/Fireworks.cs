@@ -18,13 +18,13 @@
 
 using System;
 using ColorSeq;
-using Extensification.IntegerExts;
 using KS.ConsoleBase;
 using KS.Kernel.Configuration;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
+using KS.Misc.Reflection;
 
 namespace KS.Misc.Screensaver.Displays
 {

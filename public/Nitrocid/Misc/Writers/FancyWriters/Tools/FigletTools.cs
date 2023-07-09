@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.Collections.Generic;
-using Extensification.StringExts;
 using Figgle;
 using KS.Misc.Reflection;
+using KS.Misc.Text;
 
 namespace KS.Misc.Writers.FancyWriters.Tools
 {

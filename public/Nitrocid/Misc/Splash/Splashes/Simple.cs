@@ -18,7 +18,6 @@
 
 using System;
 using System.Threading;
-using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Configuration;

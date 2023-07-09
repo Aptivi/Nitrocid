@@ -19,7 +19,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using Extensification.StringExts;
 using FluentFTP.Helpers;
 using KS.ConsoleBase.Colors;
 using KS.Drivers;

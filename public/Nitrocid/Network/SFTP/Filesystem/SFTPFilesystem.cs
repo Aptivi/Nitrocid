@@ -20,7 +20,6 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
-using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
@@ -85,7 +84,7 @@ namespace KS.Network.SFTP.Filesystem
                             {
                                 FileSize = DirListSFTP.Length;
                                 ModDate = DirListSFTP.LastWriteTime;
-                                EntryBuilder.Append(ColorTools.GetColor(KernelColorType.ListValue).VTSequenceForeground + Translate.DoTranslation("{0} KB | Modified in: {1}").FormatString((FileSize / 1024d).ToString("N2"), ModDate.ToString()));
+                                EntryBuilder.Append(ColorTools.GetColor(KernelColorType.ListValue).VTSequenceForeground + string.Format(Translate.DoTranslation("{0} KB | Modified in: {1}"), FileSize / 1024d, ModDate.ToString()));
                             }
                         }
                         else if (DirListSFTP.IsDirectory)

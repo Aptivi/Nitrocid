@@ -16,7 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using Extensification.StringExts;
 using KS.Files.Attributes;
 using KS.Files.Folders;
 using KS.Files.LineEndings;
@@ -32,7 +31,6 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using FS = KS.Files.Filesystem;
-using static Extensification.CharExts.Querying;
 using KS.Misc.Writers.ConsoleWriters;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
@@ -40,11 +38,11 @@ using KS.Files.Operations;
 using FluentFTP.Helpers;
 using KS.Kernel;
 using KS.ConsoleBase.Colors;
-using Extensification.LongExts;
 using KS.Misc.Text;
 using KS.Kernel.Events;
 using KS.Files;
 using KS.Kernel.Configuration;
+using KS.Misc.Reflection;
 
 namespace KS.Drivers.Filesystem
 {
@@ -177,7 +175,7 @@ namespace KS.Drivers.Filesystem
             FS.ThrowOnInvalidPath(TextFile);
             TextFile = FS.NeutralizePath(TextFile);
             if (!Checking.FileExists(TextFile))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File {0} not found.").FormatString(TextFile));
+                throw new KernelException(KernelExceptionType.Filesystem, string.Format(Translate.DoTranslation("File {0} not found."), TextFile));
 
             // Get all the file lines, regardless of the new line style on the target file
             var FileContents = FileRead.ReadAllLinesNoBlock(TextFile);
@@ -205,7 +203,7 @@ namespace KS.Drivers.Filesystem
             FS.ThrowOnInvalidPath(Source);
             FS.ThrowOnInvalidPath(Destination);
             if (!Checking.FolderExists(Source))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Directory {0} not found.").FormatString(Source));
+                throw new KernelException(KernelExceptionType.Filesystem, string.Format(Translate.DoTranslation("Directory {0} not found."), Source));
 
             // Get all source directories and files
             var SourceDirInfo = new DirectoryInfo(Source);
@@ -601,13 +599,13 @@ namespace KS.Drivers.Filesystem
             FS.ThrowOnInvalidPath(TextFile);
             TextFile = FS.NeutralizePath(TextFile);
             if (!Checking.FileExists(TextFile))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File {0} not found.").FormatString(TextFile));
+                throw new KernelException(KernelExceptionType.Filesystem, string.Format(Translate.DoTranslation("File {0} not found."), TextFile));
 
             // Open the file stream
             var NewlineStyle = LineEndingsTools.NewlineStyle;
             var TextFileStream = new FileStream(TextFile, FileMode.Open, FileAccess.Read);
-            int CarriageReturnCode = Convert.ToChar(LineEndingsTools.GetLineEndingString(FilesystemNewlineStyle.CR)).GetAsciiCode();
-            int LineFeedCode = Convert.ToChar(LineEndingsTools.GetLineEndingString(FilesystemNewlineStyle.LF)).GetAsciiCode();
+            int CarriageReturnCode = Convert.ToChar(LineEndingsTools.GetLineEndingString(FilesystemNewlineStyle.CR));
+            int LineFeedCode = Convert.ToChar(LineEndingsTools.GetLineEndingString(FilesystemNewlineStyle.LF));
             var CarriageReturnSpotted = false;
             var LineFeedSpotted = false;
             var ExitOnSpotted = false;
@@ -746,7 +744,7 @@ namespace KS.Drivers.Filesystem
             }
             else if (ThrowIfDirectoryExists)
             {
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Directory {0} already exists.").FormatString(NewDirectory));
+                throw new KernelException(KernelExceptionType.Filesystem, string.Format(Translate.DoTranslation("Directory {0} already exists."), NewDirectory));
             }
         }
 
@@ -771,7 +769,7 @@ namespace KS.Drivers.Filesystem
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Error trying to create a file: {0}").FormatString(ex.Message));
+                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Error trying to create a file: {0}"), ex.Message);
                 }
             }
             else if (ThrowIfFileExists)
@@ -805,7 +803,7 @@ namespace KS.Drivers.Filesystem
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Error trying to create a file: {0}").FormatString(ex.Message));
+                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Error trying to create a file: {0}"), ex.Message);
                 }
             }
             else if (ThrowIfFileExists)
@@ -824,7 +822,7 @@ namespace KS.Drivers.Filesystem
             FS.ThrowOnInvalidPath(Source);
             FS.ThrowOnInvalidPath(Destination);
             if (!Checking.FolderExists(Source))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Directory {0} not found.").FormatString(Source));
+                throw new KernelException(KernelExceptionType.Filesystem, string.Format(Translate.DoTranslation("Directory {0} not found."), Source));
 
             // Get all source directories and files
             var SourceDirInfo = new DirectoryInfo(Source);
@@ -1073,7 +1071,7 @@ namespace KS.Drivers.Filesystem
         {
             FS.ThrowOnInvalidPath(Target);
             if (!Checking.FolderExists(Target))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Directory {0} not found.").FormatString(Target));
+                throw new KernelException(KernelExceptionType.Filesystem, string.Format(Translate.DoTranslation("Directory {0} not found."), Target));
 
             // Get all source directories and files
             var SourceDirInfo = new DirectoryInfo(Target);
@@ -1185,7 +1183,7 @@ namespace KS.Drivers.Filesystem
                 {
                     if (Str.Contains(StringLookup))
                     {
-                        Matches.Add($"[{LineNumber}] " + Translate.DoTranslation("Match {0}: {1}").FormatString(MatchNum, Str));
+                        Matches.Add($"[{LineNumber}] " + string.Format(Translate.DoTranslation("Match {0}: {1}"), MatchNum, Str));
                         MatchNum += 1;
                     }
                     LineNumber += 1;
@@ -1195,7 +1193,7 @@ namespace KS.Drivers.Filesystem
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Unable to find file to match string \"{0}\": {1}").FormatString(StringLookup, ex.Message));
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Unable to find file to match string \"{0}\": {1}"), StringLookup, ex.Message);
             }
         }
 
@@ -1214,7 +1212,7 @@ namespace KS.Drivers.Filesystem
                 {
                     if (StringLookup.IsMatch(Str))
                     {
-                        Matches.Add($"[{LineNumber}] " + Translate.DoTranslation("Match {0}: {1}").FormatString(MatchNum, Str));
+                        Matches.Add($"[{LineNumber}] " + string.Format(Translate.DoTranslation("Match {0}: {1}"), MatchNum, Str));
                         MatchNum += 1;
                     }
                     LineNumber += 1;
@@ -1224,7 +1222,7 @@ namespace KS.Drivers.Filesystem
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Unable to find file to match string \"{0}\": {1}").FormatString(StringLookup, ex.Message));
+                throw new KernelException(KernelExceptionType.Filesystem, string.Format(Translate.DoTranslation("Unable to find file to match string \"{0}\": {1}"), StringLookup, ex.Message));
             }
         }
 
@@ -1274,6 +1272,19 @@ namespace KS.Drivers.Filesystem
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to parse path {0}: {1}", Path, ex.Message);
             }
             return false;
+        }
+
+        /// <summary>
+        /// Reads all the characters in the stream until the end and seeks the stream to the beginning, if possible.
+        /// </summary>
+        /// <param name="stream">The stream reader</param>
+        /// <returns>Contents of the stream</returns>
+        public virtual string ReadToEndAndSeek(ref StreamReader stream)
+        {
+            string StreamString = stream.ReadToEnd();
+            if (stream.BaseStream.CanSeek)
+                stream.BaseStream.Seek(0L, SeekOrigin.Begin);
+            return StreamString;
         }
     }
 }

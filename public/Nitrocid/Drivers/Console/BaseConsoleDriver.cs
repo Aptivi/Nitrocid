@@ -15,7 +15,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using Extensification.StringExts;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase;
 using KS.Kernel.Debugging;
@@ -31,6 +30,7 @@ using ColorSeq;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using con = System.Console;
 using VT.NET.Tools;
+using KS.Misc.Text;
 
 namespace KS.Drivers.Console.Consoles
 {

@@ -18,12 +18,12 @@
 
 using System;
 using ColorSeq;
-using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Drivers;
 using KS.Kernel;
 using KS.Misc.Reflection;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
@@ -84,7 +84,7 @@ namespace KS.Misc.Writers.FancyWriters
 
             // Write the closing minus sign.
             int OldTop = ConsoleWrapper.CursorTop;
-            TextWriterColor.Write("-".Repeat(RepeatTimes), true, KernelColorType.Separator);
+            TextWriterColor.Write(new string('-', RepeatTimes), true, KernelColorType.Separator);
 
             // Fix CursorTop value on Unix systems. Mono...
             if (KernelPlatform.IsOnUnix() && canPosition)
@@ -179,7 +179,7 @@ namespace KS.Misc.Writers.FancyWriters
 
             // Write the closing minus sign.
             int OldTop = ConsoleWrapper.CursorTop;
-            TextWriterColor.Write("-".Repeat(RepeatTimes), true, ForegroundColor, BackgroundColor);
+            TextWriterColor.Write(new string('-', RepeatTimes), true, ForegroundColor, BackgroundColor);
 
             // Fix CursorTop value on Unix systems. Mono...
             if (KernelPlatform.IsOnUnix() && canPosition)

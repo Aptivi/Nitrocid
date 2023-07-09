@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using Extensification.DictionaryExts;
 
 namespace KS.Shell.ShellBase.Shells
 {
@@ -31,8 +30,11 @@ namespace KS.Shell.ShellBase.Shells
         /// </summary>
         /// <param name="ShellType">The shell type</param>
         /// <param name="ShellTypeInfo">The shell type information</param>
-        public static void RegisterShell(string ShellType, BaseShellInfo ShellTypeInfo) => 
-            Shell.AvailableShells.AddIfNotFound(ShellType, ShellTypeInfo);
+        public static void RegisterShell(string ShellType, BaseShellInfo ShellTypeInfo)
+        {
+            if (!Shell.AvailableShells.ContainsKey(ShellType))
+                Shell.AvailableShells.Add(ShellType, ShellTypeInfo);
+        }
 
         /// <summary>
         /// Unregisters the custom shell. Should be called when the mods shut down.

@@ -22,7 +22,6 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
-using Extensification.StringExts;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Kernel.Power;
@@ -97,7 +96,7 @@ namespace KS.Network.RPC
                     DebugWriter.WriteDebug(DebugLevel.I, "Command found.");
 
                     // Check the request type
-                    string RequestType = Cmd.Substring(Cmd.IndexOf(":") + 1, Finish: Cmd.IndexOf(">") - 1);
+                    string RequestType = Cmd.Substring(Cmd.IndexOf(":") + 1, (Cmd.IndexOf(">") - 1) - (Cmd.IndexOf(":") + 1));
                     var ByteMsg = Array.Empty<byte>();
                     switch (RequestType)
                     {
@@ -239,7 +238,7 @@ namespace KS.Network.RPC
                     {
                         string IPAddr = Message.Replace("PingConfirm, ", "").Replace(CharManager.NewLine, "");
                         DebugWriter.WriteDebug(DebugLevel.I, "{0} pinged this device!", IPAddr);
-                        NotificationManager.NotifySend(new Notification(Translate.DoTranslation("Ping!"), Translate.DoTranslation("{0} pinged you.").FormatString(IPAddr), NotificationManager.NotifPriority.Low, NotificationManager.NotifType.Normal));
+                        NotificationManager.NotifySend(new Notification(Translate.DoTranslation("Ping!"), string.Format(Translate.DoTranslation("{0} pinged you."), IPAddr), NotificationManager.NotifPriority.Low, NotificationManager.NotifType.Normal));
                     }
                     else
                     {

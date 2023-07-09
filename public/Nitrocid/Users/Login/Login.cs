@@ -16,7 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.Collections.Generic;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.Drivers.Encryption;
@@ -32,7 +31,6 @@ using KS.Network.RSS;
 using KS.Shell.ShellBase.Shells;
 using KS.Kernel.Events;
 using KS.Misc.Writers.MiscWriters;
-using System;
 using KS.Misc.Probers.Placeholder;
 using KS.Kernel.Configuration;
 

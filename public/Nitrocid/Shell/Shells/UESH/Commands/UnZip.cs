@@ -20,7 +20,6 @@ using System;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
-using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Files.Folders;
@@ -66,7 +65,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 {
                     Destination = $"{(!(ListSwitchesOnly[0] == "-createdir") ? Filesystem.NeutralizePath(ListArgsOnly[1]) : "")}/{(!(ListSwitchesOnly[0] == "-createdir") ? Path.GetFileNameWithoutExtension(ZipArchiveName) : Filesystem.NeutralizePath(Path.GetFileNameWithoutExtension(ZipArchiveName)))}";
                     if (Convert.ToString(Destination[0]) == "/")
-                        Destination = Destination.RemoveLetter(0);
+                        Destination = Destination[1..];
                 }
                 ZipFile.ExtractToDirectory(ZipArchiveName, Destination);
             }

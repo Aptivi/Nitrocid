@@ -20,7 +20,6 @@ using System;
 using System.Collections.Generic;
 using ColorSeq;
 using ColorSeq.Accessibility;
-using Extensification.StringExts;
 using KS.ConsoleBase.Themes;
 using KS.Kernel;
 using KS.Kernel.Configuration;
@@ -352,7 +351,7 @@ namespace KS.ConsoleBase.Colors
         {
             if (Hex.StartsWith("#"))
             {
-                int ColorDecimal = Convert.ToInt32(Hex.RemoveLetter(0), 16);
+                int ColorDecimal = Convert.ToInt32(Hex[1..], 16);
                 int R = (byte)((ColorDecimal & 0xFF0000) >> 0x10);
                 int G = (byte)((ColorDecimal & 0xFF00) >> 8);
                 int B = (byte)(ColorDecimal & 0xFF);

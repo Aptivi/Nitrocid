@@ -168,7 +168,7 @@ namespace KS.Kernel.Configuration
             // Parse all the settings
             foreach (JToken Token in Tokens)
             {
-                foreach (JProperty Section in Token)
+                foreach (JProperty Section in Token.Cast<JProperty>())
                 {
                     var SectionToken = Token[Section.Name];
                     foreach (JToken Key in SectionToken["Keys"])

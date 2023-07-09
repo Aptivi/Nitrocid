@@ -16,8 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.RSS.Instance;
 using KS.Shell.ShellBase.Commands;

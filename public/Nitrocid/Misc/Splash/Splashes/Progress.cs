@@ -19,7 +19,6 @@
 using System;
 using System.Threading;
 using ColorSeq;
-using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.Kernel.Debugging;
 using KS.Misc.Text;

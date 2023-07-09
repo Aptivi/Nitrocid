@@ -19,7 +19,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Languages;
@@ -29,7 +28,6 @@ using KS.Modifications;
 using KS.Shell.ShellBase.Aliases;
 using KS.Shell.ShellBase.Shells;
 using KS.Users;
-using KS.Users.Login;
 
 namespace KS.Shell.ShellBase.Commands
 {
@@ -109,7 +107,7 @@ namespace KS.Shell.ShellBase.Commands
                     {
                         // Indent, if necessary
                         if (Indent)
-                            TextWriterColor.Write(" ".Repeat(UsageLength), false, KernelColorType.ListEntry);
+                            TextWriterColor.Write(new string(' ', UsageLength), false, KernelColorType.ListEntry);
                         TextWriterColor.Write($" {FinalCommand}" +
                             $"{(HelpUsage.Switches.Length > 0 ? " " + string.Join(" ", HelpUsage.Switches) : "")}" +
                             $"{(HelpUsage.Arguments.Length > 0 ? " " + string.Join(" ", HelpUsage.Arguments) : "")}", true, KernelColorType.ListEntry);

@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using ColorSeq;
-using Extensification.StringExts;
 using FluentFTP.Helpers;
 using KS.Files.Folders;
 using KS.Files.Operations;
@@ -212,31 +211,31 @@ namespace KS.Files.Interactive
             {
                 // The file system info instance points to a folder
                 var DirInfo = new DirectoryInfo(fullPath);
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Name: {0}").FormatString(DirInfo.Name));
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Full name: {0}").FormatString(Filesystem.NeutralizePath(DirInfo.FullName)));
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Size: {0}").FormatString(SizeGetter.GetAllSizesInFolder(DirInfo).FileSizeToString()));
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Creation time: {0}").FormatString(TimeDateRenderers.Render(DirInfo.CreationTime)));
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Last access time: {0}").FormatString(TimeDateRenderers.Render(DirInfo.LastAccessTime)));
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Last write time: {0}").FormatString(TimeDateRenderers.Render(DirInfo.LastWriteTime)));
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Attributes: {0}").FormatString(DirInfo.Attributes));
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Parent directory: {0}").FormatString(Filesystem.NeutralizePath(DirInfo.Parent.FullName)));
+                finalInfoRendered.AppendLine(string.Format(Translate.DoTranslation("Name: {0}"), DirInfo.Name));
+                finalInfoRendered.AppendLine(string.Format(Translate.DoTranslation("Full name: {0}"), Filesystem.NeutralizePath(DirInfo.FullName)));
+                finalInfoRendered.AppendLine(string.Format(Translate.DoTranslation("Size: {0}"), SizeGetter.GetAllSizesInFolder(DirInfo).FileSizeToString()));
+                finalInfoRendered.AppendLine(string.Format(Translate.DoTranslation("Creation time: {0}"), TimeDateRenderers.Render(DirInfo.CreationTime)));
+                finalInfoRendered.AppendLine(string.Format(Translate.DoTranslation("Last access time: {0}"), TimeDateRenderers.Render(DirInfo.LastAccessTime)));
+                finalInfoRendered.AppendLine(string.Format(Translate.DoTranslation("Last write time: {0}"), TimeDateRenderers.Render(DirInfo.LastWriteTime)));
+                finalInfoRendered.AppendLine(string.Format(Translate.DoTranslation("Attributes: {0}"), DirInfo.Attributes));
+                finalInfoRendered.AppendLine(string.Format(Translate.DoTranslation("Parent directory: {0}"), Filesystem.NeutralizePath(DirInfo.Parent.FullName)));
             }
             else
             {
                 // The file system info instance points to a file
                 FileInfo fileInfo = new(fullPath);
                 var Style = LineEndingsTools.GetLineEndingFromFile(fullPath);
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Name: {0}").FormatString(fileInfo.Name));
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Full name: {0}").FormatString(Filesystem.NeutralizePath(fileInfo.FullName)));
-                finalInfoRendered.AppendLine(Translate.DoTranslation("File size: {0}").FormatString(fileInfo.Length.FileSizeToString()));
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Creation time: {0}").FormatString(TimeDateRenderers.Render(fileInfo.CreationTime)));
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Last access time: {0}").FormatString(TimeDateRenderers.Render(fileInfo.LastAccessTime)));
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Last write time: {0}").FormatString(TimeDateRenderers.Render(fileInfo.LastWriteTime)));
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Attributes: {0}").FormatString(fileInfo.Attributes));
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Where to find: {0}").FormatString(Filesystem.NeutralizePath(fileInfo.DirectoryName)));
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Newline style:") + " {0}".FormatString(Style.ToString()));
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Binary file:") + " {0}".FormatString(Parsing.IsBinaryFile(fileInfo.FullName)));
-                finalInfoRendered.AppendLine(Translate.DoTranslation("MIME metadata:") + " {0}".FormatString(MimeTypes.GetMimeType(Filesystem.NeutralizePath(fileInfo.FullName))));
+                finalInfoRendered.AppendLine(string.Format(Translate.DoTranslation("Name: {0}"), fileInfo.Name));
+                finalInfoRendered.AppendLine(string.Format(Translate.DoTranslation("Full name: {0}"), Filesystem.NeutralizePath(fileInfo.FullName)));
+                finalInfoRendered.AppendLine(string.Format(Translate.DoTranslation("File size: {0}"), fileInfo.Length.FileSizeToString()));
+                finalInfoRendered.AppendLine(string.Format(Translate.DoTranslation("Creation time: {0}"), TimeDateRenderers.Render(fileInfo.CreationTime)));
+                finalInfoRendered.AppendLine(string.Format(Translate.DoTranslation("Last access time: {0}"), TimeDateRenderers.Render(fileInfo.LastAccessTime)));
+                finalInfoRendered.AppendLine(string.Format(Translate.DoTranslation("Last write time: {0}"), TimeDateRenderers.Render(fileInfo.LastWriteTime)));
+                finalInfoRendered.AppendLine(string.Format(Translate.DoTranslation("Attributes: {0}"), fileInfo.Attributes));
+                finalInfoRendered.AppendLine(string.Format(Translate.DoTranslation("Where to find: {0}"), Filesystem.NeutralizePath(fileInfo.DirectoryName)));
+                finalInfoRendered.AppendLine(string.Format(Translate.DoTranslation("Newline style:") + " {0}", Style.ToString()));
+                finalInfoRendered.AppendLine(string.Format(Translate.DoTranslation("Binary file:") + " {0}", Parsing.IsBinaryFile(fileInfo.FullName)));
+                finalInfoRendered.AppendLine(string.Format(Translate.DoTranslation("MIME metadata:") + " {0}", MimeTypes.GetMimeType(Filesystem.NeutralizePath(fileInfo.FullName))));
             }
             finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
 

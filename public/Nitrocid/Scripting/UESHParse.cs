@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using Extensification.StringExts;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -27,6 +26,7 @@ using System.Linq;
 using KS.Files.Read;
 using System.Collections.Generic;
 using FluentFTP.Helpers;
+using KS.Misc.Text;
 
 namespace KS.Scripting
 {
@@ -110,7 +110,7 @@ namespace KS.Scripting
                     }
 
                     // See if the line contains variable, and replace every instance of it with its value
-                    var SplitWords = Line.SplitEncloseDoubleQuotes(" ");
+                    var SplitWords = Line.SplitEncloseDoubleQuotes();
                     if (SplitWords is not null)
                         // Iterate every word
                         for (int i = 0; i <= SplitWords.Length - 1; i++)
@@ -120,7 +120,7 @@ namespace KS.Scripting
                                 Line = UESHVariables.GetVariableCommand(SplitWords[i], Line);
 
                     // See if the line contains argument placeholder, and replace every instance of it with its value
-                    var SplitArguments = ScriptArguments.SplitEncloseDoubleQuotes(" ");
+                    var SplitArguments = ScriptArguments.SplitEncloseDoubleQuotes();
                     if (SplitArguments is not null)
                         // Iterate every word
                         for (int i = 0; i <= SplitWords.Length - 1; i++)
@@ -146,7 +146,7 @@ namespace KS.Scripting
                             {
                                 case "if":
                                 case "while":
-                                    satisfied = justLint ? true : UESHConditional.ConditionSatisfied(Arguments);
+                                    satisfied = justLint || UESHConditional.ConditionSatisfied(Arguments);
                                     if (Command == "while")
                                     {
                                         if (!whilePlaces.Contains((l, commandStackNum)))
@@ -155,7 +155,7 @@ namespace KS.Scripting
                                     }
                                     break;
                                 case "until":
-                                    satisfied = justLint ? true : !UESHConditional.ConditionSatisfied(Arguments);
+                                    satisfied = justLint || !UESHConditional.ConditionSatisfied(Arguments);
                                     if (!whilePlaces.Contains((l, commandStackNum)))
                                         whilePlaces.Add((l, commandStackNum));
                                     retryLoopCondition = true;

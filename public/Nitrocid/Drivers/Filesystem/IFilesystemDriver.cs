@@ -412,5 +412,12 @@ namespace KS.Drivers.Filesystem
         /// <param name="path">Path to an existing file</param>
         void ClearFile(string path);
 
+        /// <summary>
+        /// Reads all the characters in the stream until the end and seeks the stream to the beginning, if possible.
+        /// </summary>
+        /// <param name="stream">The stream reader</param>
+        /// <returns>Contents of the stream</returns>
+        string ReadToEndAndSeek(ref StreamReader stream);
+
     }
 }

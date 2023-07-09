@@ -18,11 +18,11 @@
 
 using System;
 using ColorSeq;
-using Extensification.IntegerExts;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
+using KS.Misc.Reflection;
 using KS.Misc.Threading;
 using KS.Misc.Writers.FancyWriters;
 

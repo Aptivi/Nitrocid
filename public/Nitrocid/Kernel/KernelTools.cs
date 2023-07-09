@@ -42,7 +42,6 @@ using KS.Scripting;
 using KS.Shell.ShellBase.Aliases;
 using KS.Shell.ShellBase.Commands;
 using KS.TimeDate;
-using KS.Users;
 using System.Reflection;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Inputs;

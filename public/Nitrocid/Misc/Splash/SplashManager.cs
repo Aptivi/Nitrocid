@@ -23,7 +23,6 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
-using Extensification.DictionaryExts;
 using KS.Files;
 using KS.Files.Folders;
 using KS.Files.Operations;
@@ -134,7 +133,9 @@ namespace KS.Misc.Splash
                             DebugWriter.WriteDebug(DebugLevel.I, "- Displays Progress: {0}", DisplaysProgress);
                             DebugWriter.WriteDebug(DebugLevel.I, "Installing splash...");
                             var InstalledSplash = new SplashInfo(Name, SplashInstance, DisplaysProgress);
-                            InstalledSplashes.AddOrModify(Name, InstalledSplash);
+                            if (InstalledSplashes.ContainsKey(Name))
+                                InstalledSplashes.Remove(Name);
+                            InstalledSplashes.Add(Name, InstalledSplash);
                         }
                         else
                         {

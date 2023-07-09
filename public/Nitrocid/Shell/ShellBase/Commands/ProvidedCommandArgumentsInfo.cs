@@ -18,9 +18,9 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Extensification.StringExts;
 using KS.Drivers;
 using KS.Kernel.Debugging;
+using KS.Misc.Text;
 using KS.Modifications;
 using KS.Shell.ShellBase.Shells;
 

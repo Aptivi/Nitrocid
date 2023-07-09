@@ -16,10 +16,14 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Drivers;
 using KS.Kernel.Debugging;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using VT.NET.Tools;
 
 namespace KS.Misc.Text
@@ -109,6 +113,185 @@ namespace KS.Misc.Text
             }
 
             return IncompleteSentences.ToArray();
+        }
+
+        /// <summary>
+        /// Splits the string enclosed in double quotes delimited by spaces using regular expression formula
+        /// </summary>
+        /// <param name="target">Target string</param>
+        public static string[] SplitEncloseDoubleQuotes(this string target)
+        {
+            return Regex.Split(target, "(?<=^[^\"]*(?:\"[^\"]*\"[^\"]*)*) (?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)")
+                        .Select((m) => (m.StartsWith("\"") && m.EndsWith("\"")) ? m.ReleaseDoubleQuotes() : m)
+                        .ToArray();
+        }
+
+        /// <summary>
+        /// Releases a string from double quotations
+        /// </summary>
+        /// <param name="target">Target string</param>
+        /// <returns>A string that doesn't contain double quotation marks at the start and at the end of the string</returns>
+        public static string ReleaseDoubleQuotes(this string target)
+        {
+            string ReleasedString = target;
+            if (target.StartsWith("\"") & target.EndsWith("\""))
+                ReleasedString = ReleasedString.Remove(0, 1).Remove(ReleasedString.Length - 1);
+            return ReleasedString;
+        }
+
+        /// <summary>
+        /// Truncates the string if the string is larger than the threshold, otherwise, returns an unchanged string
+        /// </summary>
+        /// <param name="target">Source string to truncate</param>
+        /// <param name="threshold">Max number of string characters</param>
+        /// <returns>Truncated string</returns>
+        public static string Truncate(this string target, int threshold)
+        {
+            if (target is null)
+                throw new ArgumentNullException(nameof(target));
+
+            // Try to truncate string. If the string length is bigger than the threshold, it'll be truncated to the length of
+            // the threshold, putting three dots next to it. We don't use ellipsis marks here because we're dealing with the
+            // terminal, and some terminals and some monospace fonts may not support that character, so we mimick it by putting
+            // the three dots.
+            if (target.Length > threshold)
+                return target[..(threshold - 1)] + "...";
+            else
+                return target;
+        }
+
+        /// <summary>
+        /// Makes a string array with new line as delimiter
+        /// </summary>
+        /// <param name="target">Target string</param>
+        /// <returns>List of words that are separated by the new lines</returns>
+        public static string[] SplitNewLines(this string target) =>
+            target.Replace(Convert.ToChar(13).ToString(), "")
+               .Split(Convert.ToChar(10));
+
+        /// <summary>
+        /// Checks to see if the string starts with any of the values
+        /// </summary>
+        /// <param name="target">Target string</param>
+        /// <param name="values">Values</param>
+        /// <returns>True if the string starts with any of the values specified in the array. Otherwise, false.</returns>
+        public static bool StartsWithAnyOf(this string target, string[] values)
+        {
+            if (target is null)
+                throw new ArgumentNullException(nameof(target));
+            bool started = false;
+            foreach (string value in values)
+                if (target.StartsWith(value))
+                    started = true;
+            return started;
+        }
+
+        /// <summary>
+        /// Checks to see if the string contains any of the target strings.
+        /// </summary>
+        /// <param name="source">Source string</param>
+        /// <param name="targets">Target strings</param>
+        /// <returns>True if one of them is found; otherwise, false.</returns>
+        public static bool ContainsAnyOf(this string source, string[] targets)
+        {
+            if (source is null)
+                throw new ArgumentNullException(nameof(source));
+            foreach (string target in targets)
+                if (source.Contains(target))
+                    return true;
+            return false;
+        }
+
+        /// <summary>
+        /// Replaces all the instances of strings with a string
+        /// </summary>
+        /// <param name="target">Target string</param>
+        /// <param name="toBeReplaced">Strings to be replaced</param>
+        /// <param name="toReplace">String to replace with</param>
+        /// <returns>Modified string</returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        public static string ReplaceAll(this string target, string[] toBeReplaced, string toReplace)
+        {
+            if (target is null)
+                throw new ArgumentNullException(nameof(target));
+            if (toBeReplaced is null)
+                throw new ArgumentNullException(nameof(toBeReplaced));
+            if (toBeReplaced.Length == 0)
+                throw new ArgumentNullException(nameof(toBeReplaced));
+            foreach (string ReplaceTarget in toBeReplaced)
+                target = target.Replace(ReplaceTarget, toReplace);
+            return target;
+        }
+
+        /// <summary>
+        /// Replaces all the instances of strings with a string assigned to each entry
+        /// </summary>
+        /// <param name="target">Target string</param>
+        /// <param name="toBeReplaced">Strings to be replaced</param>
+        /// <param name="toReplace">Strings to replace with</param>
+        /// <returns>Modified string</returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="ArgumentException"></exception>
+        public static string ReplaceAllRange(this string target, string[] toBeReplaced, string[] toReplace)
+        {
+            if (target is null)
+                throw new ArgumentNullException(nameof(target));
+            if (toBeReplaced is null)
+                throw new ArgumentNullException(nameof(toBeReplaced));
+            if (toBeReplaced.Length == 0)
+                throw new ArgumentNullException(nameof(toBeReplaced));
+            if (toReplace is null)
+                throw new ArgumentNullException(nameof(toReplace));
+            if (toReplace.Length == 0)
+                throw new ArgumentNullException(nameof(toReplace));
+            if (toBeReplaced.Length != toBeReplaced.Length)
+                throw new ArgumentException("Array length of which strings to be replaced doesn't equal the array length of which strings to replace.");
+            for (int i = 0, loopTo = toBeReplaced.Length - 1; i <= loopTo; i++)
+                target = target.Replace(toBeReplaced[i], toReplace[i]);
+            return target;
+        }
+
+        /// <summary>
+        /// Replaces last occurrence of a text in source string with the replacement
+        /// </summary>
+        /// <param name="source">A string which has the specified text to replace</param>
+        /// <param name="searchText">A string to be replaced</param>
+        /// <param name="replace">A string to replace</param>
+        /// <returns>String that has its last occurrence of text replaced</returns>
+        public static string ReplaceLastOccurrence(this string source, string searchText, string replace)
+        {
+            if (source is null)
+                throw new ArgumentNullException(nameof(source));
+            if (searchText is null)
+                throw new ArgumentNullException(nameof(searchText));
+            int position = source.LastIndexOf(searchText);
+            if (position == -1)
+                return source;
+            string result = source.Remove(position, searchText.Length).Insert(position, replace);
+            return result;
+        }
+
+        /// <summary>
+        /// Get all indexes of a value in string
+        /// </summary>
+        /// <param name="target">Source string</param>
+        /// <param name="value">A value</param>
+        /// <returns>Indexes of strings</returns>
+        public static IEnumerable<int> AllIndexesOf(this string target, string value)
+        {
+            if (target is null)
+                throw new ArgumentNullException(nameof(target));
+            if (string.IsNullOrEmpty(value))
+                throw new ArgumentException("Empty string specified", nameof(value));
+            int index = 0;
+            while (true)
+            {
+                index = target.IndexOf(value, index);
+                if (index == -1)
+                    break;
+                yield return index;
+                index += value.Length;
+            }
         }
     }
 }

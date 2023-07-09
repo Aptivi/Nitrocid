@@ -22,7 +22,6 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Files.Operations;
@@ -439,7 +438,7 @@ namespace KS.Modifications
                         string ManualFileName = Path.GetFileNameWithoutExtension(ModManualFile);
                         var ManualInstance = new Manual(ModManualFile);
                         if (!ManualInstance.ValidManpage)
-                            throw new KernelException(KernelExceptionType.ModInstall, Translate.DoTranslation("The manual page {0} is invalid.").FormatString(ManualFileName));
+                            throw new KernelException(KernelExceptionType.ModInstall, Translate.DoTranslation("The manual page {0} is invalid."), ManualFileName);
                         Copying.CopyFileOrDir(ModManualFile, TargetModPath + ".manual/" + ModManualFile);
                     }
                 }
@@ -486,7 +485,7 @@ namespace KS.Modifications
                         }
                         else
                         {
-                            throw new KernelException(KernelExceptionType.ModUninstall, Translate.DoTranslation("The manual page {0} is invalid.").FormatString(ManualFileName));
+                            throw new KernelException(KernelExceptionType.ModUninstall, Translate.DoTranslation("The manual page {0} is invalid."), ManualFileName);
                         }
                     }
                     Directory.Delete(ModPath + ".manual", true);

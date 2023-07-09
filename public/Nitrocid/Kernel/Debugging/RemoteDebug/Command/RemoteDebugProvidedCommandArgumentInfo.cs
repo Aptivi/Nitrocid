@@ -16,9 +16,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Misc.Text;
 using System.Collections.Generic;
 using System.Linq;
-using Extensification.StringExts;
 
 namespace KS.Kernel.Debugging.RemoteDebug.Command
 {
@@ -78,7 +78,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
             DebugWriter.WriteDebug(DebugLevel.I, "Finished strArgs: {0}", strArgs);
 
             // Split the arguments with enclosed quotes
-            var EnclosedArgs = strArgs.SplitSpacesEncloseDoubleQuotes();
+            var EnclosedArgs = strArgs.SplitEncloseDoubleQuotes();
             if (string.IsNullOrWhiteSpace(strArgs))
                 EnclosedArgs = null;
             if (EnclosedArgs is not null)
