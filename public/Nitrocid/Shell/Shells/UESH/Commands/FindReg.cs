@@ -16,34 +16,39 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Drivers;
 using KS.Files;
 using KS.Files.Folders;
+using KS.Kernel.Exceptions;
+using KS.Languages;
+using KS.Misc.Probers.Regexp;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
     /// <summary>
-    /// Finds a file in the specified directory or in the current directory
+    /// Finds a file in the specified directory or in the current directory using regular expressions
     /// </summary>
     /// <remarks>
     /// If you are looking for a file and you can't remember where, using this command will help you find it.
     /// </remarks>
-    class FindCommand : BaseCommand, ICommand
+    class FindRegCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            string FileToSearch = ListArgsOnly[0];
+            string RegexToMatch = ListArgsOnly[0];
             string DirectoryToSearch = CurrentDirectory.CurrentDir;
             bool isRecursive = ListSwitchesOnly.Contains("-recursive");
             if (ListArgsOnly.Length > 1)
                 DirectoryToSearch = Filesystem.NeutralizePath(ListArgsOnly[1]);
 
             // Print the results if found
-            var FileEntries = Listing.GetFilesystemEntries(DirectoryToSearch, FileToSearch, isRecursive);
-            ListWriterColor.WriteList(FileEntries, true);
+            var AllFileEntries = Listing.GetFilesystemEntriesRegex(DirectoryToSearch, RegexToMatch, isRecursive);
+            ListWriterColor.WriteList(AllFileEntries, true);
         }
 
     }

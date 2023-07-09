@@ -603,5 +603,6 @@ This error may cause instabilities to the kernel or to the applications. Press a
 Shows all new notifications as asterisks. This option is ignored in notifications with progress bar.
 Display new notifications as asterisks
 Sends a notification as asterisk to test the receiver
+Finds a file in the specified directory or in the current directory using regular expressions
 
 ==========================================================================================================================================

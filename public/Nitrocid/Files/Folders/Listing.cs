@@ -202,5 +202,15 @@ namespace KS.Files.Folders
         public static string[] GetFilesystemEntries(string Parent, string Pattern, bool Recursive = false) =>
             DriverHandler.CurrentFilesystemDriver.GetFilesystemEntries(Parent, Pattern, Recursive);
 
+        /// <summary>
+        /// Gets the filesystem entries of the parent using regular expressions
+        /// </summary>
+        /// <param name="Parent">The parent path. It can be neutralized if necessary</param>
+        /// <param name="Pattern">The regular expression pattern</param>
+        /// <param name="Recursive">Whether the list is recursive or not</param>
+        /// <returns>The array of full paths</returns>
+        public static string[] GetFilesystemEntriesRegex(string Parent, string Pattern, bool Recursive = false) =>
+            DriverHandler.CurrentFilesystemDriver.GetFilesystemEntriesRegex(Parent, Pattern, Recursive);
+
     }
 }

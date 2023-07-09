@@ -43,6 +43,7 @@ using KS.Kernel.Events;
 using KS.Files;
 using KS.Kernel.Configuration;
 using KS.Misc.Reflection;
+using KS.Misc.Probers.Regexp;
 
 namespace KS.Drivers.Filesystem
 {
@@ -562,6 +563,28 @@ namespace KS.Drivers.Filesystem
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to combine files: {0}", ex.Message);
             }
             return Entries;
+        }
+
+        /// <inheritdoc/>
+        public string[] GetFilesystemEntriesRegex(string Parent, string Pattern, bool Recursive = false)
+        {
+            // Ensure that the regex is valid
+            if (!RegexpTools.IsValidRegex(Pattern))
+                throw new KernelException(KernelExceptionType.RegularExpression, Translate.DoTranslation("Invalid regular expression syntax."));
+
+            // Get the entries and match them against the given pattern
+            var AllFileEntries = Listing.GetFilesystemEntries(Parent, "*", Recursive);
+            List<string> entryNames = new();
+            foreach (var FileEntry in AllFileEntries)
+            {
+                // Match the file entry
+                var FileEntryMatches = DriverHandler.CurrentRegexpDriver.Matches(FileEntry, Pattern);
+                if (FileEntryMatches.Count == 0)
+                    // No match.
+                    continue;
+                entryNames.Add(FileEntry);
+            }
+            return entryNames.ToArray();
         }
 
         /// <inheritdoc/>

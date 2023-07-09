@@ -80,6 +80,15 @@ namespace KS.Drivers.Filesystem
         string[] GetFilesystemEntries(string Parent, string Pattern, bool Recursive = false);
 
         /// <summary>
+        /// Gets the filesystem entries of the parent using regular expressions
+        /// </summary>
+        /// <param name="Parent">The parent path. It can be neutralized if necessary</param>
+        /// <param name="Pattern">The regular expression pattern</param>
+        /// <param name="Recursive">Whether the list is recursive or not</param>
+        /// <returns>The array of full paths</returns>
+        string[] GetFilesystemEntriesRegex(string Parent, string Pattern, bool Recursive = false);
+
+        /// <summary>
         /// Converts the line endings to the newline style for the current platform
         /// </summary>
         /// <param name="TextFile">Text file name with extension or file path</param>
