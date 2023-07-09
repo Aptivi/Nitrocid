@@ -456,7 +456,7 @@ namespace KS.Misc.Settings
                                         {
                                             // We're removing an item.
                                             var DeletedItems = Enumerable.Empty<object>();
-                                            DeletedItems = DeletedItems.Append(AnswerString.Substring(1));
+                                            DeletedItems = DeletedItems.Append(AnswerString[1..]);
                                             TargetList = TargetList.Except(DeletedItems);
                                         }
                                         DebugWriter.WriteDebug(DebugLevel.I, "Added answer {0} to list.", AnswerString);

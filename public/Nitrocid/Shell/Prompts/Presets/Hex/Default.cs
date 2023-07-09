@@ -46,7 +46,7 @@ namespace KS.Shell.Prompts.Presets.Hex
 
             // Opening
             PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
-            PresetStringBuilder.Append("[");
+            PresetStringBuilder.Append('[');
 
             // File name
             PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);

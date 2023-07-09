@@ -106,7 +106,7 @@ namespace KS.Network.FTP
                 try
                 {
                     // Create an FTP stream to connect to
-                    string FtpHost = address.Replace("ftpes://", "").Replace("ftps://", "").Replace("ftp://", "").Replace(address.Substring(address.LastIndexOf(":")), "");
+                    string FtpHost = address.Replace("ftpes://", "").Replace("ftps://", "").Replace("ftp://", "").Replace(address[address.LastIndexOf(":")..], "");
                     string FtpPort = address.Replace("ftpes://", "").Replace("ftps://", "").Replace("ftp://", "").Replace(FtpHost + ":", "");
 
                     // Check to see if no port is provided by client

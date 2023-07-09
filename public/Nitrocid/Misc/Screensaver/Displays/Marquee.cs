@@ -306,7 +306,7 @@ namespace KS.Misc.Screensaver.Displays
                 // shown previously won't be shown again.
                 if (!(CurrentLeft == 0))
                 {
-                    MarqueeWritten = MarqueeWritten.Substring(0, CurrentLeftOtherEnd - CurrentLeft);
+                    MarqueeWritten = MarqueeWritten[..(CurrentLeftOtherEnd - CurrentLeft)];
                 }
                 else if (CurrentLeft == 0 & Middle)
                 {
@@ -314,7 +314,7 @@ namespace KS.Misc.Screensaver.Displays
                 }
                 else
                 {
-                    MarqueeWritten = MarqueeWritten.Substring(MarqueeSettings.MarqueeWrite.Length - (CurrentLeftOtherEnd - CurrentLeft));
+                    MarqueeWritten = MarqueeWritten[(MarqueeSettings.MarqueeWrite.Length - (CurrentLeftOtherEnd - CurrentLeft))..];
                 }
                 DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Written result: {0}", MarqueeWritten);
                 if (!MarqueeSettings.MarqueeUseConsoleAPI)

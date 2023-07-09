@@ -50,7 +50,7 @@ namespace KS.Network.SFTP
                 try
                 {
                     // Create an SFTP stream to connect to
-                    string SftpHost = address.Replace("sftp://", "").Replace(address.Substring(address.LastIndexOf(":")), "");
+                    string SftpHost = address.Replace("sftp://", "").Replace(address[address.LastIndexOf(":")..], "");
                     string SftpPort = address.Replace("sftp://", "").Replace(SftpHost + ":", "");
 
                     // Check to see if no port is provided by client

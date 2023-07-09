@@ -101,7 +101,7 @@ namespace KS.Network.FTP.Filesystem
                             }
                             else if (finalDirListFTP.Type == FtpObjectType.Directory)
                             {
-                                EntryBuilder.Append("/");
+                                EntryBuilder.Append('/');
                             }
                         }
                         Entries.Add(EntryBuilder.ToString());

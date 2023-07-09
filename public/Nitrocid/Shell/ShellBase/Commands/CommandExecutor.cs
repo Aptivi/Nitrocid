@@ -74,14 +74,14 @@ namespace KS.Shell.ShellBase.Commands
             // Since we're probably trying to run a command using the alternative command threads, if the main shell command thread
             // is running, use that to execute the command. This ensures that commands like "wrap" that also execute commands from the
             // shell can do their job.
-            var ShellInstance = ShellStart.ShellStack[ShellStart.ShellStack.Count - 1];
+            var ShellInstance = ShellStart.ShellStack[^1];
             var StartCommandThread = ShellInstance.ShellCommandThread;
             bool CommandThreadValid = true;
             if (StartCommandThread.IsAlive)
             {
                 if (ShellInstance.AltCommandThreads.Count > 0)
                 {
-                    StartCommandThread = ShellInstance.AltCommandThreads[ShellInstance.AltCommandThreads.Count - 1];
+                    StartCommandThread = ShellInstance.AltCommandThreads[^1];
                 }
                 else
                 {

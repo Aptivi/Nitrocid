@@ -44,7 +44,7 @@ namespace KS.Shell.ShellBase.Commands
                     TextWriterColor.Write();
                     DriverHandler.SetDriver<IConsoleDriver>("Null");
                     e.Cancel = true;
-                    var StartCommandThread = ShellStart.ShellStack[ShellStart.ShellStack.Count - 1].ShellCommandThread;
+                    var StartCommandThread = ShellStart.ShellStack[^1].ShellCommandThread;
                     StartCommandThread.Stop();
                     Shell.ProcessStartCommandThread.Stop();
                     DriverHandler.SetDriver<IConsoleDriver>("Default");

@@ -281,8 +281,8 @@ namespace KS.Misc.Screensaver.Displays
             if (CoveredPositions.Count == LighterSettings.LighterMaxPositions)
             {
                 DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Covered positions exceeded max positions of {0}", LighterSettings.LighterMaxPositions);
-                int WipeLeft = Convert.ToInt32(CoveredPositions[0].ToString().Substring(0, CoveredPositions[0].ToString().IndexOf(";")));
-                int WipeTop = Convert.ToInt32(CoveredPositions[0].ToString().Substring(CoveredPositions[0].ToString().IndexOf(";") + 1));
+                int WipeLeft = Convert.ToInt32(CoveredPositions[0].ToString()[..CoveredPositions[0].ToString().IndexOf(";")]);
+                int WipeTop = Convert.ToInt32(CoveredPositions[0].ToString()[(CoveredPositions[0].ToString().IndexOf(";") + 1)..]);
                 DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Wiping in {0}, {1}...", WipeLeft, WipeTop);
                 if (!ConsoleResizeListener.WasResized(false))
                 {

@@ -89,7 +89,7 @@ namespace KS.Network.SFTP.Filesystem
                         }
                         else if (DirListSFTP.IsDirectory)
                         {
-                            EntryBuilder.Append("/");
+                            EntryBuilder.Append('/');
                         }
                         Entries.Add(EntryBuilder.ToString());
                         EntryBuilder.Clear();

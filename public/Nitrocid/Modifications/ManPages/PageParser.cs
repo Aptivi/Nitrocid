@@ -115,7 +115,7 @@ namespace KS.Modifications.ManPages
                             {
                                 // Found the revision constant
                                 DebugWriter.WriteDebug(DebugLevel.I, "Revision found on this line: {0}", ManLine);
-                                string Rev = ManLine.Substring(RevisionConstant.Length);
+                                string Rev = ManLine[RevisionConstant.Length..];
                                 if (string.IsNullOrWhiteSpace(Rev))
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.W, "Revision not defined. Assuming v1...");
@@ -127,7 +127,7 @@ namespace KS.Modifications.ManPages
                             {
                                 // Found the title constant
                                 DebugWriter.WriteDebug(DebugLevel.I, "Title found on this line: {0}", ManLine);
-                                string Title = ManLine.Substring(TitleConstant.Length);
+                                string Title = ManLine[TitleConstant.Length..];
                                 if (string.IsNullOrWhiteSpace(Title))
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.W, "Title not defined.");

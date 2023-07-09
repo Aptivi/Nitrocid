@@ -66,7 +66,7 @@ namespace KS.Misc.Writers.FancyWriters
                         else
                         {
                             // We're (mostly) done
-                            Text = Text.Substring(CharIndex);
+                            Text = Text[CharIndex..];
                             break;
                         }
                     }

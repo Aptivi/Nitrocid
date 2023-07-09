@@ -84,7 +84,7 @@ namespace KS.Network.RPC
                 // Get the command and the argument
                 string Cmd = Request.Remove(Request.IndexOf("("));
                 DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}", Cmd);
-                string Arg = Request.Substring(Request.IndexOf("(") + 1);
+                string Arg = Request[(Request.IndexOf("(") + 1)..];
                 DebugWriter.WriteDebug(DebugLevel.I, "Prototype Arg: {0}", Arg);
                 Arg = Arg.Remove(Arg.Length - 1);
                 DebugWriter.WriteDebug(DebugLevel.I, "Finished Arg: {0}", Arg);
@@ -96,7 +96,7 @@ namespace KS.Network.RPC
                     DebugWriter.WriteDebug(DebugLevel.I, "Command found.");
 
                     // Check the request type
-                    string RequestType = Cmd.Substring(Cmd.IndexOf(":") + 1, (Cmd.IndexOf(">") - 1) - (Cmd.IndexOf(":") + 1));
+                    string RequestType = Cmd[(Cmd.IndexOf(":") + 1)..(Cmd.IndexOf(">") - 1)];
                     var ByteMsg = Array.Empty<byte>();
                     switch (RequestType)
                     {

@@ -52,7 +52,7 @@ namespace KS.Shell.ShellBase.Aliases
             var Params = new CommandExecutor.ExecuteCommandParameters(actualCmd, ShellType);
 
             // Start the command thread
-            var StartCommandThread = ShellStart.ShellStack[ShellStart.ShellStack.Count - 1].ShellCommandThread;
+            var StartCommandThread = ShellStart.ShellStack[^1].ShellCommandThread;
             StartCommandThread.Start(Params);
             StartCommandThread.Wait();
             StartCommandThread.Stop();

@@ -100,7 +100,7 @@ namespace KS.Scripting
                     {
                         if (retryLoopCondition && !justLint)
                         {
-                            (int, int) whilePlace = whilePlaces[whilePlaces.Count - 1];
+                            (int, int) whilePlace = whilePlaces[^1];
                             commandStackNum = whilePlace.Item2;
                             l = whilePlace.Item1;
                             Line = FileLines[l][commandStackNum..];

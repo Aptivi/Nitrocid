@@ -71,7 +71,7 @@ namespace KS.Shell.Shells.Mail.Commands
             DebugWriter.WriteDebug(DebugLevel.I, "Recipient: {0}", Receiver);
 
             // Check for mail format
-            if (Receiver.Contains("@") & Receiver.Substring(Receiver.IndexOf("@")).Contains("."))
+            if (Receiver.Contains("@") & Receiver[Receiver.IndexOf("@")..].Contains("."))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Mail format satisfied. Contains \"@\" and contains \".\" in the second part after the \"@\" symbol.");
 

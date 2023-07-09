@@ -45,7 +45,7 @@ namespace KS.Shell.Prompts.Presets.RSS
 
             // Opening
             PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
-            PresetStringBuilder.Append("[");
+            PresetStringBuilder.Append('[');
 
             // RSS site
             PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);

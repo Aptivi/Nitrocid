@@ -43,8 +43,8 @@ namespace KS.Shell.ShellBase.Commands
                     continue;
 
                 // Get switch name and value. If the equal sign is at the end, the value is an empty value.
-                switchName = @switch.Substring(0, switchIndex);
-                switchValue = switchIndex != @switch.Length - 1 ? @switch.Substring(switchIndex + 1) : "";
+                switchName = @switch[..switchIndex];
+                switchValue = switchIndex != @switch.Length - 1 ? @switch[(switchIndex + 1)..] : "";
 
                 // Add the values to the list
                 switchValues.Add((switchName, switchValue));

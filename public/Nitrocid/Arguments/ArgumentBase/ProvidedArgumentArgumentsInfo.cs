@@ -77,10 +77,10 @@ namespace KS.Arguments.ArgumentBase
             Argument = words[0];
 
             // Get the string of arguments
-            string strArgs = ArgumentText.Substring(index);
+            string strArgs = ArgumentText[index..];
             DebugWriter.WriteDebug(DebugLevel.I, "Prototype strArgs: {0}", strArgs);
             if (!(index == ArgumentText.Length))
-                strArgs = strArgs.Substring(1);
+                strArgs = strArgs[1..];
             DebugWriter.WriteDebug(DebugLevel.I, "Finished strArgs: {0}", strArgs);
 
             // Split the arguments with enclosed quotes and set the required boolean variable

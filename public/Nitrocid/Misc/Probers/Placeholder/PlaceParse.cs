@@ -115,9 +115,9 @@ namespace KS.Misc.Probers.Placeholder
                     while (text.Contains("<f:"))
                     {
                         int StartForegroundIndex = text.IndexOf("<f:");
-                        int EndForegroundIndex = text.Substring(text.IndexOf("<f:")).IndexOf(">");
+                        int EndForegroundIndex = text[text.IndexOf("<f:")..].IndexOf(">");
                         string SequenceSubstring = text.Substring(text.IndexOf("<f:"), length: EndForegroundIndex + 1);
-                        string PlainSequence = SequenceSubstring.Substring(3, SequenceSubstring.Length - 1 - 3);
+                        string PlainSequence = SequenceSubstring[3..^1];
                         string VTSequence = new Color(PlainSequence).VTSequenceForeground;
                         text = text.Replace(SequenceSubstring, VTSequence);
                     }
@@ -130,9 +130,9 @@ namespace KS.Misc.Probers.Placeholder
                     while (text.Contains("<b:"))
                     {
                         int StartBackgroundIndex = text.IndexOf("<b:");
-                        int EndBackgroundIndex = text.Substring(text.IndexOf("<b:")).IndexOf(">");
+                        int EndBackgroundIndex = text[text.IndexOf("<b:")..].IndexOf(">");
                         string SequenceSubstring = text.Substring(text.IndexOf("<b:"), length: EndBackgroundIndex + 1);
-                        string PlainSequence = SequenceSubstring.Substring(3, SequenceSubstring.Length - 1 - 3);
+                        string PlainSequence = SequenceSubstring[3..^1];
                         string VTSequence = Flags.SetBackground ? new Color(PlainSequence).VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m";
                         text = text.Replace(SequenceSubstring, VTSequence);
                     }
@@ -145,9 +145,9 @@ namespace KS.Misc.Probers.Placeholder
                     while (text.Contains("<$"))
                     {
                         int StartShellVariableIndex = text.IndexOf("<$");
-                        int EndShellVariableIndex = text.Substring(text.IndexOf("<$")).IndexOf(">");
+                        int EndShellVariableIndex = text[text.IndexOf("<$")..].IndexOf(">");
                         string ShellVariableSubstring = text.Substring(text.IndexOf("<$"), length: EndShellVariableIndex + 1);
-                        string PlainShellVariable = ShellVariableSubstring.Substring(1, ShellVariableSubstring.Length - 1 - 1);
+                        string PlainShellVariable = ShellVariableSubstring[1..^1];
                         text = text.Replace(ShellVariableSubstring, UESHVariables.GetVariable(PlainShellVariable));
                     }
                 }

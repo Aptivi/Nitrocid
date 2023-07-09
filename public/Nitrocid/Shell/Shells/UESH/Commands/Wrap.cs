@@ -50,11 +50,11 @@ namespace KS.Shell.Shells.UESH.Commands
                     string WrapOutputPath = Paths.TempPath + "/wrapoutput.txt";
                     if (!Checking.FileExists(WrapOutputPath))
                         Making.MakeFile(WrapOutputPath);
-                    var AltThreads = ShellStart.ShellStack[ShellStart.ShellStack.Count - 1].AltCommandThreads;
-                    if (AltThreads.Count == 0 || AltThreads[AltThreads.Count - 1].IsAlive)
+                    var AltThreads = ShellStart.ShellStack[^1].AltCommandThreads;
+                    if (AltThreads.Count == 0 || AltThreads[^1].IsAlive)
                     {
                         var WrappedCommand = new KernelThread($"Wrapped Shell Command Thread", false, (cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutor.ExecuteCommandParameters)cmdThreadParams));
-                        ShellStart.ShellStack[ShellStart.ShellStack.Count - 1].AltCommandThreads.Add(WrappedCommand);
+                        ShellStart.ShellStack[^1].AltCommandThreads.Add(WrappedCommand);
                     }
                     Shell.GetLine(StringArgs, WrapOutputPath);
                     var WrapOutputStream = new StreamReader(WrapOutputPath);

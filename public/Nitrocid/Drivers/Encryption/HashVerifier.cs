@@ -68,7 +68,7 @@ namespace KS.Drivers.Encryption
                             if ((StringLine.StartsWith("- " + FileName) | StringLine.StartsWith("- " + Path.GetFileName(FileName))) & StringLine.EndsWith($"({HashType})"))
                             {
                                 var HashSplit = StringLine.Split(' ');
-                                ExpectedHash = HashSplit[HashSplit.Length - 2].ToUpper();
+                                ExpectedHash = HashSplit[^2].ToUpper();
                                 ActualHash = ActualHash.ToUpper();
                             }
                         }
@@ -205,7 +205,7 @@ namespace KS.Drivers.Encryption
                             if ((StringLine.StartsWith("- " + FileName) | StringLine.StartsWith("- " + Path.GetFileName(FileName))) & StringLine.EndsWith($"({HashType})"))
                             {
                                 var HashSplit = StringLine.Split(' ');
-                                ExpectedHash = HashSplit[HashSplit.Length - 2].ToUpper();
+                                ExpectedHash = HashSplit[^2].ToUpper();
                                 ActualHash = Encryption.GetEncryptedFile(FileName, HashType).ToUpper();
                             }
                         }

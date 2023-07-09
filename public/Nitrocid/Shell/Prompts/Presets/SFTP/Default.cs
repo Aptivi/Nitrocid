@@ -46,7 +46,7 @@ namespace KS.Shell.Prompts.Presets.SFTP
             {
                 // Opening
                 PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
-                PresetStringBuilder.Append("[");
+                PresetStringBuilder.Append('[');
 
                 // SFTP user
                 PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
@@ -54,7 +54,7 @@ namespace KS.Shell.Prompts.Presets.SFTP
 
                 // "at" sign
                 PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
-                PresetStringBuilder.Append("@");
+                PresetStringBuilder.Append('@');
 
                 // SFTP site
                 PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.HostNameShell).VTSequenceForeground);

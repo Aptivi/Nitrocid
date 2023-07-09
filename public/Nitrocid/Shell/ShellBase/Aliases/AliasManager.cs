@@ -274,7 +274,7 @@ namespace KS.Shell.ShellBase.Aliases
                 for (int RemovedAliasIndex = AliasNameToken.Count - 1; RemovedAliasIndex >= 0; RemovedAliasIndex -= 1)
                 {
                     var TargetAliasType = AliasesToBeRemoved[TargetAliasItem];
-                    string TargetAlias = TargetAliasItem.Substring(TargetAliasItem.IndexOf("-") + 1);
+                    string TargetAlias = TargetAliasItem[(TargetAliasItem.IndexOf("-") + 1)..];
                     if ((string)AliasNameToken[RemovedAliasIndex]["Alias"] == TargetAlias & (string)AliasNameToken[RemovedAliasIndex]["Type"] == TargetAliasType.ToString())
                         AliasNameToken.RemoveAt(RemovedAliasIndex);
                 }

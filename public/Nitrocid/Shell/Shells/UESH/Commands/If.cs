@@ -45,11 +45,11 @@ namespace KS.Shell.Shells.UESH.Commands
                 if (UESHConditional.ConditionSatisfied(ListArgsOnly[0]))
                 {
                     string CommandString = string.Join(" ", ListArgsOnly.Skip(1).ToArray());
-                    var AltThreads = ShellStart.ShellStack[ShellStart.ShellStack.Count - 1].AltCommandThreads;
-                    if (AltThreads.Count == 0 || AltThreads[AltThreads.Count - 1].IsAlive)
+                    var AltThreads = ShellStart.ShellStack[^1].AltCommandThreads;
+                    if (AltThreads.Count == 0 || AltThreads[^1].IsAlive)
                     {
                         var CommandThread = new KernelThread($"Alternative Shell Command Thread", false, (cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutor.ExecuteCommandParameters)cmdThreadParams));
-                        ShellStart.ShellStack[ShellStart.ShellStack.Count - 1].AltCommandThreads.Add(CommandThread);
+                        ShellStart.ShellStack[^1].AltCommandThreads.Add(CommandThread);
                     }
                     Shell.GetLine(CommandString);
                 }

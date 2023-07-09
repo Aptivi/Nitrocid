@@ -103,7 +103,7 @@ namespace KS.Shell.ShellBase.Shells
             // We must have at least two shells to kill the last shell. Else, we will have zero shells running, making us look like we've logged out!
             if (ShellStack.Count >= 2)
             {
-                ShellStack[ShellStack.Count - 1].ShellBase.Bail = true;
+                ShellStack[^1].ShellBase.Bail = true;
                 PurgeShells();
             }
             else
@@ -119,7 +119,7 @@ namespace KS.Shell.ShellBase.Shells
         {
             if (ShellStack.Count >= 1)
             {
-                ShellStack[ShellStack.Count - 1].ShellBase.Bail = true;
+                ShellStack[^1].ShellBase.Bail = true;
                 PurgeShells();
             }
         }

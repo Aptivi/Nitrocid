@@ -34,7 +34,7 @@ namespace KS.Shell.ShellBase.Commands
             text = text[..index];
             if (ShellStart.ShellStack.Count > 0)
             {
-                var ShellCommands = CommandManager.GetCommands(ShellStart.ShellStack[ShellStart.ShellStack.Count - 1].ShellType);
+                var ShellCommands = CommandManager.GetCommands(ShellStart.ShellStack[^1].ShellType);
                 if (string.IsNullOrEmpty(text))
                 {
                     return ShellCommands.Keys.ToArray();

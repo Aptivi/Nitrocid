@@ -116,7 +116,7 @@ namespace KS.Shell
         /// <summary>
         /// Current shell type
         /// </summary>
-        public static string CurrentShellType => ShellStart.ShellStack[ShellStart.ShellStack.Count - 1].ShellType;
+        public static string CurrentShellType => ShellStart.ShellStack[^1].ShellType;
 
         /// <summary>
         /// Last shell type
@@ -138,7 +138,7 @@ namespace KS.Shell
                 else
                 {
                     // We have more than one shell. Return the shell type for a shell before the last one.
-                    return ShellStart.ShellStack[ShellStart.ShellStack.Count - 2].ShellType;
+                    return ShellStart.ShellStack[^2].ShellType;
                 }
             }
         }
@@ -233,7 +233,7 @@ namespace KS.Shell
                 // because if we need to provide a second command to the shell in a separate line, we usually add the semicolon at the end of the primary
                 // command input.
                 if (!string.IsNullOrEmpty(FullCommand))
-                    commandBuilder.Append(" ");
+                    commandBuilder.Append(' ');
                 commandBuilder.Append(strcommand);
                 FullCommand = commandBuilder.ToString();
             }
@@ -351,7 +351,7 @@ namespace KS.Shell
                                         if (pathValid)
                                         {
                                             var targetCommand = Command.Replace(TargetFileName, "");
-                                            targetCommand.TrimStart('\0', ' ');
+                                            targetCommand = targetCommand.TrimStart('\0', ' ');
                                             DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, Arguments: {1}", TargetFile, targetCommand);
                                             var Params = new ProcessExecutor.ExecuteProcessThreadParameters(TargetFile, targetCommand);
                                             ProcessStartCommandThread.Start(Params);

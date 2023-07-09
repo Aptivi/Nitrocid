@@ -171,8 +171,8 @@ namespace KS.Misc.Screensaver.Displays
                 int AgeDay = RandomDriver.Random(-31, 31);
                 var Birthdate = DateTime.Now.AddYears(-Age).AddMonths(AgeMonth).AddDays(AgeDay);
                 int FinalAge = new DateTime((DateTime.Now - Birthdate).Ticks).Year;
-                string FirstName = GeneratedName.Substring(0, GeneratedName.IndexOf(" "));
-                string LastName = GeneratedName.Substring(GeneratedName.IndexOf(" ") + 1);
+                string FirstName = GeneratedName[..GeneratedName.IndexOf(" ")];
+                string LastName = GeneratedName[(GeneratedName.IndexOf(" ") + 1)..];
 
                 // Print all information
                 ConsoleBase.ConsoleWrapper.Clear();

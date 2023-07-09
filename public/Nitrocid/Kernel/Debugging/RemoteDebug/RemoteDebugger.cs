@@ -280,7 +280,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
                         // Now, check to see if the message is a command
                         if (Message.StartsWith("/"))
                         {
-                            string finalCommand = Message.Substring(1);
+                            string finalCommand = Message[1..];
                             RemoteDebugCommandExecutor.ExecuteCommand(finalCommand, device.ClientIP);
                         }
                     }

@@ -176,7 +176,7 @@ namespace KS.Network.Mail
             if (IMAP_Address.Contains(":"))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Found colon in address. Separating...", Mail_Authentication.UserName);
-                IMAP_Port = Convert.ToInt32(IMAP_Address.Substring(IMAP_Address.IndexOf(":") + 1));
+                IMAP_Port = Convert.ToInt32(IMAP_Address[(IMAP_Address.IndexOf(":") + 1)..]);
                 IMAP_Address = IMAP_Address.Remove(IMAP_Address.IndexOf(":"));
                 DebugWriter.WriteDebug(DebugLevel.I, "Final address: {0}, Final port: {1}", IMAP_Address, IMAP_Port);
             }
@@ -185,7 +185,7 @@ namespace KS.Network.Mail
             if (SMTP_Address.Contains(":"))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Found colon in address. Separating...", Mail_Authentication.UserName);
-                SMTP_Port = Convert.ToInt32(SMTP_Address.Substring(SMTP_Address.IndexOf(":") + 1));
+                SMTP_Port = Convert.ToInt32(SMTP_Address[(SMTP_Address.IndexOf(":") + 1)..]);
                 SMTP_Address = SMTP_Address.Remove(SMTP_Address.IndexOf(":"));
                 DebugWriter.WriteDebug(DebugLevel.I, "Final address: {0}, Final port: {1}", SMTP_Address, SMTP_Port);
             }
