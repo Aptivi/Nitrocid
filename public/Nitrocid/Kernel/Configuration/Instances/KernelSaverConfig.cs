@@ -2374,5 +2374,9 @@ namespace KS.Kernel.Configuration.Instances
         /// [Mesmerize] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int MesmerizeMaximumColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [Aurora] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int AuroraDelay { get; set; } = 100;
     }
 }

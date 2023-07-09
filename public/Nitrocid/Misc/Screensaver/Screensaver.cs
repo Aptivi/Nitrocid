@@ -49,6 +49,7 @@ namespace KS.Misc.Screensaver
         // Private variables
         internal static Dictionary<string, BaseScreensaver> Screensavers = new()
         {
+            { "aurora", new AuroraDisplay() },
             { "barrot", new BarRotDisplay() },
             { "barwave", new BarWaveDisplay() },
             { "beatfader", new BeatFaderDisplay() },

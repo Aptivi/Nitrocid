@@ -4489,5 +4489,17 @@
                 "MaximumValue": 255
             }
         ]
+    },
+    "Aurora": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Path": "Screensaver.Aurora",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "AuroraDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            }
+        ]
     }
 }

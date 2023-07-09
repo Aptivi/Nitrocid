@@ -1762,6 +1762,9 @@
         },
         "MesmerizeMaximumColorLevel": {
             "type": "integer"
+        },
+        "AuroraDelay": {
+            "type": "integer"
         }
     },
     "required": [
@@ -2351,6 +2354,7 @@
         "MesmerizeMaximumRedColorLevel",
         "MesmerizeMaximumGreenColorLevel",
         "MesmerizeMaximumBlueColorLevel",
-        "MesmerizeMaximumColorLevel"
+        "MesmerizeMaximumColorLevel",
+        "AuroraDelay"
     ]
 }
