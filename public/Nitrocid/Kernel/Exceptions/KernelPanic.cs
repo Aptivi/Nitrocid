@@ -190,6 +190,9 @@ namespace KS.Kernel.Exceptions
 
             try
             {
+                // Format the "Description" string variable
+                Description = StringManipulate.FormatString(Description, Variables);
+
                 // Let the user know that there is a continuable kernel error
                 EventsManager.FireEvent(EventType.ContKernelError, Description, Exc, Variables);
                 SplashReport.ReportProgressWarning(Translate.DoTranslation("Continuable kernel error occurred:") + " {0}", Exc, Description);
