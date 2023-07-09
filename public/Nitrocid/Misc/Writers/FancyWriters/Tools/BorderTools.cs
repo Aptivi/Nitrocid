@@ -25,54 +25,54 @@ namespace KS.Misc.Writers.FancyWriters.Tools
     /// </summary>
     public static class BorderTools
     {
-        internal static string _borderUpperLeftCornerChar = "╔";
-        internal static string _borderUpperRightCornerChar = "╗";
-        internal static string _borderLowerLeftCornerChar = "╚";
-        internal static string _borderLowerRightCornerChar = "╝";
-        internal static string _borderUpperFrameChar = "═";
-        internal static string _borderLowerFrameChar = "═";
-        internal static string _borderLeftFrameChar = "║";
-        internal static string _borderRightFrameChar = "║";
+        internal static char _borderUpperLeftCornerChar = '╔';
+        internal static char _borderUpperRightCornerChar = '╗';
+        internal static char _borderLowerLeftCornerChar = '╚';
+        internal static char _borderLowerRightCornerChar = '╝';
+        internal static char _borderUpperFrameChar = '═';
+        internal static char _borderLowerFrameChar = '═';
+        internal static char _borderLeftFrameChar = '║';
+        internal static char _borderRightFrameChar = '║';
 
         /// <summary>
         /// Upper left corner character 
         /// </summary>
-        public static string BorderUpperLeftCornerChar =>
+        public static char BorderUpperLeftCornerChar =>
             Config.MainConfig.BorderUpperLeftCornerChar;
         /// <summary>
         /// Upper right corner character 
         /// </summary>
-        public static string BorderUpperRightCornerChar =>
+        public static char BorderUpperRightCornerChar =>
             Config.MainConfig.BorderUpperRightCornerChar;
         /// <summary>
         /// Lower left corner character 
         /// </summary>
-        public static string BorderLowerLeftCornerChar =>
+        public static char BorderLowerLeftCornerChar =>
             Config.MainConfig.BorderLowerLeftCornerChar;
         /// <summary>
         /// Lower right corner character 
         /// </summary>
-        public static string BorderLowerRightCornerChar =>
+        public static char BorderLowerRightCornerChar =>
             Config.MainConfig.BorderLowerRightCornerChar;
         /// <summary>
         /// Upper frame character 
         /// </summary>
-        public static string BorderUpperFrameChar =>
+        public static char BorderUpperFrameChar =>
             Config.MainConfig.BorderUpperFrameChar;
         /// <summary>
         /// Lower frame character 
         /// </summary>
-        public static string BorderLowerFrameChar =>
+        public static char BorderLowerFrameChar =>
             Config.MainConfig.BorderLowerFrameChar;
         /// <summary>
         /// Left frame character 
         /// </summary>
-        public static string BorderLeftFrameChar =>
+        public static char BorderLeftFrameChar =>
             Config.MainConfig.BorderLeftFrameChar;
         /// <summary>
         /// Right frame character 
         /// </summary>
-        public static string BorderRightFrameChar =>
+        public static char BorderRightFrameChar =>
             Config.MainConfig.BorderRightFrameChar;
     }
 }

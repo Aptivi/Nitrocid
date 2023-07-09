@@ -62,8 +62,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="LeftFrameChar">Left frame character for border</param>
         /// <param name="RightFrameChar">Right frame character for border</param>
         public static void WriteBorderPlain(int Left, int Top, int InteriorWidth, int InteriorHeight, 
-                                            string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar, 
-                                            string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar)
+                                            char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, 
+                                            char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar)
         {
             try 
             {
@@ -210,8 +210,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="LeftFrameChar">Left frame character for border</param>
         /// <param name="RightFrameChar">Right frame character for border</param>
         public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight, 
-                                       string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar, 
-                                       string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar) =>
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, 
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar) =>
             WriteBorder(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, KernelColorType.Separator, KernelColorType.Background);
 
         /// <summary>
@@ -231,8 +231,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="RightFrameChar">Right frame character for border</param>
         /// <param name="BorderColor">Border color from Nitrocid KS's <see cref="KernelColorType"/></param>
         public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight, 
-                                       string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar, 
-                                       string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar, 
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, 
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, 
                                        KernelColorType BorderColor) =>
             WriteBorder(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, BorderColor, KernelColorType.Background);
 
@@ -254,8 +254,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="BorderColor">Border color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="BackgroundColor">Border background color from Nitrocid KS's <see cref="KernelColorType"/></param>
         public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight, 
-                                       string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar, 
-                                       string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar, 
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, 
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, 
                                        KernelColorType BorderColor, KernelColorType BackgroundColor)
         {
             try
@@ -288,8 +288,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="RightFrameChar">Right frame character for border</param>
         /// <param name="BorderColor">Border color</param>
         public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight, 
-                                       string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar, 
-                                       string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar, 
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, 
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, 
                                        Color BorderColor) =>
             WriteBorder(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, BorderColor, GetColor(KernelColorType.Background));
 
@@ -311,8 +311,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="BorderColor">Border color</param>
         /// <param name="BackgroundColor">Border background color</param>
         public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight, 
-                                       string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar, 
-                                       string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar, 
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, 
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, 
                                        Color BorderColor, Color BackgroundColor)
         {
             try
@@ -345,8 +345,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="RightFrameChar">Right frame character for border</param>
         /// <param name="BorderColor">Border color</param>
         public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight, 
-                                       string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar, 
-                                       string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar, 
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, 
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, 
                                        ConsoleColors BorderColor) =>
             WriteBorder(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(BorderColor), GetColor(KernelColorType.Background));
 
@@ -368,8 +368,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="BorderColor">Border color</param>
         /// <param name="BackgroundColor">Border background color</param>
         public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight, 
-                                       string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar, 
-                                       string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar, 
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, 
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, 
                                        ConsoleColors BorderColor, ConsoleColors BackgroundColor)
         {
             try

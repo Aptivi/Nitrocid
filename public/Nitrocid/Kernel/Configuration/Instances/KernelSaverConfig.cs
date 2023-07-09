@@ -333,99 +333,99 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// [ProgressClock] Upper left corner character for hours bar
         /// </summary>
-        public string ProgressClockUpperLeftCornerCharHours { get; set; } = "╔";
+        public char ProgressClockUpperLeftCornerCharHours { get; set; } = '╔';
         /// <summary>
         /// [ProgressClock] Upper left corner character for minutes bar
         /// </summary>
-        public string ProgressClockUpperLeftCornerCharMinutes { get; set; } = "╔";
+        public char ProgressClockUpperLeftCornerCharMinutes { get; set; } = '╔';
         /// <summary>
         /// [ProgressClock] Upper left corner character for seconds bar
         /// </summary>
-        public string ProgressClockUpperLeftCornerCharSeconds { get; set; } = "╔";
+        public char ProgressClockUpperLeftCornerCharSeconds { get; set; } = '╔';
         /// <summary>
         /// [ProgressClock] Upper right corner character for hours bar
         /// </summary>
-        public string ProgressClockUpperRightCornerCharHours { get; set; } = "╗";
+        public char ProgressClockUpperRightCornerCharHours { get; set; } = '╗';
         /// <summary>
         /// [ProgressClock] Upper right corner character for minutes bar
         /// </summary>
-        public string ProgressClockUpperRightCornerCharMinutes { get; set; } = "╗";
+        public char ProgressClockUpperRightCornerCharMinutes { get; set; } = '╗';
         /// <summary>
         /// [ProgressClock] Upper right corner character for seconds bar
         /// </summary>
-        public string ProgressClockUpperRightCornerCharSeconds { get; set; } = "╗";
+        public char ProgressClockUpperRightCornerCharSeconds { get; set; } = '╗';
         /// <summary>
         /// [ProgressClock] Lower left corner character for hours bar
         /// </summary>
-        public string ProgressClockLowerLeftCornerCharHours { get; set; } = "╚";
+        public char ProgressClockLowerLeftCornerCharHours { get; set; } = '╚';
         /// <summary>
         /// [ProgressClock] Lower left corner character for minutes bar
         /// </summary>
-        public string ProgressClockLowerLeftCornerCharMinutes { get; set; } = "╚";
+        public char ProgressClockLowerLeftCornerCharMinutes { get; set; } = '╚';
         /// <summary>
         /// [ProgressClock] Lower left corner character for seconds bar
         /// </summary>
-        public string ProgressClockLowerLeftCornerCharSeconds { get; set; } = "╚";
+        public char ProgressClockLowerLeftCornerCharSeconds { get; set; } = '╚';
         /// <summary>
         /// [ProgressClock] Lower right corner character for hours bar
         /// </summary>
-        public string ProgressClockLowerRightCornerCharHours { get; set; } = "╝";
+        public char ProgressClockLowerRightCornerCharHours { get; set; } = '╝';
         /// <summary>
         /// [ProgressClock] Lower right corner character for minutes bar
         /// </summary>
-        public string ProgressClockLowerRightCornerCharMinutes { get; set; } = "╝";
+        public char ProgressClockLowerRightCornerCharMinutes { get; set; } = '╝';
         /// <summary>
         /// [ProgressClock] Lower right corner character for seconds bar
         /// </summary>
-        public string ProgressClockLowerRightCornerCharSeconds { get; set; } = "╝";
+        public char ProgressClockLowerRightCornerCharSeconds { get; set; } = '╝';
         /// <summary>
         /// [ProgressClock] Upper frame character for hours bar
         /// </summary>
-        public string ProgressClockUpperFrameCharHours { get; set; } = "═";
+        public char ProgressClockUpperFrameCharHours { get; set; } = '═';
         /// <summary>
         /// [ProgressClock] Upper frame character for minutes bar
         /// </summary>
-        public string ProgressClockUpperFrameCharMinutes { get; set; } = "═";
+        public char ProgressClockUpperFrameCharMinutes { get; set; } = '═';
         /// <summary>
         /// [ProgressClock] Upper frame character for seconds bar
         /// </summary>
-        public string ProgressClockUpperFrameCharSeconds { get; set; } = "═";
+        public char ProgressClockUpperFrameCharSeconds { get; set; } = '═';
         /// <summary>
         /// [ProgressClock] Lower frame character for hours bar
         /// </summary>
-        public string ProgressClockLowerFrameCharHours { get; set; } = "═";
+        public char ProgressClockLowerFrameCharHours { get; set; } = '═';
         /// <summary>
         /// [ProgressClock] Lower frame character for minutes bar
         /// </summary>
-        public string ProgressClockLowerFrameCharMinutes { get; set; } = "═";
+        public char ProgressClockLowerFrameCharMinutes { get; set; } = '═';
         /// <summary>
         /// [ProgressClock] Lower frame character for seconds bar
         /// </summary>
-        public string ProgressClockLowerFrameCharSeconds { get; set; } = "═";
+        public char ProgressClockLowerFrameCharSeconds { get; set; } = '═';
         /// <summary>
         /// [ProgressClock] Left frame character for hours bar
         /// </summary>
-        public string ProgressClockLeftFrameCharHours { get; set; } = "║";
+        public char ProgressClockLeftFrameCharHours { get; set; } = '║';
         /// <summary>
         /// [ProgressClock] Left frame character for minutes bar
         /// </summary>
-        public string ProgressClockLeftFrameCharMinutes { get; set; } = "║";
+        public char ProgressClockLeftFrameCharMinutes { get; set; } = '║';
         /// <summary>
         /// [ProgressClock] Left frame character for seconds bar
         /// </summary>
-        public string ProgressClockLeftFrameCharSeconds { get; set; } = "║";
+        public char ProgressClockLeftFrameCharSeconds { get; set; } = '║';
         /// <summary>
         /// [ProgressClock] Right frame character for hours bar
         /// </summary>
-        public string ProgressClockRightFrameCharHours { get; set; } = "║";
+        public char ProgressClockRightFrameCharHours { get; set; } = '║';
         /// <summary>
         /// [ProgressClock] Right frame character for minutes bar
         /// </summary>
-        public string ProgressClockRightFrameCharMinutes { get; set; } = "║";
+        public char ProgressClockRightFrameCharMinutes { get; set; } = '║';
         /// <summary>
         /// [ProgressClock] Right frame character for seconds bar
         /// </summary>
-        public string ProgressClockRightFrameCharSeconds { get; set; } = "║";
+        public char ProgressClockRightFrameCharSeconds { get; set; } = '║';
         /// <summary>
         /// [ProgressClock] Information text for hours bar
         /// </summary>
@@ -1101,35 +1101,35 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// [Ramp] Upper left corner character 
         /// </summary>
-        public string RampUpperLeftCornerChar { get; set; } = "╔";
+        public char RampUpperLeftCornerChar { get; set; } = '╔';
         /// <summary>
         /// [Ramp] Upper right corner character 
         /// </summary>
-        public string RampUpperRightCornerChar { get; set; } = "╗";
+        public char RampUpperRightCornerChar { get; set; } = '╗';
         /// <summary>
         /// [Ramp] Lower left corner character 
         /// </summary>
-        public string RampLowerLeftCornerChar { get; set; } = "╚";
+        public char RampLowerLeftCornerChar { get; set; } = '╚';
         /// <summary>
         /// [Ramp] Lower right corner character 
         /// </summary>
-        public string RampLowerRightCornerChar { get; set; } = "╝";
+        public char RampLowerRightCornerChar { get; set; } = '╝';
         /// <summary>
         /// [Ramp] Upper frame character 
         /// </summary>
-        public string RampUpperFrameChar { get; set; } = "═";
+        public char RampUpperFrameChar { get; set; } = '═';
         /// <summary>
         /// [Ramp] Lower frame character 
         /// </summary>
-        public string RampLowerFrameChar { get; set; } = "═";
+        public char RampLowerFrameChar { get; set; } = '═';
         /// <summary>
         /// [Ramp] Left frame character 
         /// </summary>
-        public string RampLeftFrameChar { get; set; } = "║";
+        public char RampLeftFrameChar { get; set; } = '║';
         /// <summary>
         /// [Ramp] Right frame character 
         /// </summary>
-        public string RampRightFrameChar { get; set; } = "║";
+        public char RampRightFrameChar { get; set; } = '║';
         /// <summary>
         /// [Ramp] The minimum red color level (true color - start)
         /// </summary>
@@ -1333,35 +1333,35 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// [BarRot] Upper left corner character 
         /// </summary>
-        public string BarRotUpperLeftCornerChar { get; set; } = "╔";
+        public char BarRotUpperLeftCornerChar { get; set; } = '╔';
         /// <summary>
         /// [BarRot] Upper right corner character 
         /// </summary>
-        public string BarRotUpperRightCornerChar { get; set; } = "╗";
+        public char BarRotUpperRightCornerChar { get; set; } = '╗';
         /// <summary>
         /// [BarRot] Lower left corner character 
         /// </summary>
-        public string BarRotLowerLeftCornerChar { get; set; } = "╚";
+        public char BarRotLowerLeftCornerChar { get; set; } = '╚';
         /// <summary>
         /// [BarRot] Lower right corner character 
         /// </summary>
-        public string BarRotLowerRightCornerChar { get; set; } = "╝";
+        public char BarRotLowerRightCornerChar { get; set; } = '╝';
         /// <summary>
         /// [BarRot] Upper frame character 
         /// </summary>
-        public string BarRotUpperFrameChar { get; set; } = "═";
+        public char BarRotUpperFrameChar { get; set; } = '═';
         /// <summary>
         /// [BarRot] Lower frame character 
         /// </summary>
-        public string BarRotLowerFrameChar { get; set; } = "═";
+        public char BarRotLowerFrameChar { get; set; } = '═';
         /// <summary>
         /// [BarRot] Left frame character 
         /// </summary>
-        public string BarRotLeftFrameChar { get; set; } = "║";
+        public char BarRotLeftFrameChar { get; set; } = '║';
         /// <summary>
         /// [BarRot] Right frame character 
         /// </summary>
-        public string BarRotRightFrameChar { get; set; } = "║";
+        public char BarRotRightFrameChar { get; set; } = '║';
         /// <summary>
         /// [BarRot] The minimum red color level (true color - start)
         /// </summary>
@@ -1721,35 +1721,35 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// [Indeterminate] Upper left corner character 
         /// </summary>
-        public string IndeterminateUpperLeftCornerChar { get; set; } = "╔";
+        public char IndeterminateUpperLeftCornerChar { get; set; } = '╔';
         /// <summary>
         /// [Indeterminate] Upper right corner character 
         /// </summary>
-        public string IndeterminateUpperRightCornerChar { get; set; } = "╗";
+        public char IndeterminateUpperRightCornerChar { get; set; } = '╗';
         /// <summary>
         /// [Indeterminate] Lower left corner character 
         /// </summary>
-        public string IndeterminateLowerLeftCornerChar { get; set; } = "╚";
+        public char IndeterminateLowerLeftCornerChar { get; set; } = '╚';
         /// <summary>
         /// [Indeterminate] Lower right corner character 
         /// </summary>
-        public string IndeterminateLowerRightCornerChar { get; set; } = "╝";
+        public char IndeterminateLowerRightCornerChar { get; set; } = '╝';
         /// <summary>
         /// [Indeterminate] Upper frame character 
         /// </summary>
-        public string IndeterminateUpperFrameChar { get; set; } = "═";
+        public char IndeterminateUpperFrameChar { get; set; } = '═';
         /// <summary>
         /// [Indeterminate] Lower frame character 
         /// </summary>
-        public string IndeterminateLowerFrameChar { get; set; } = "═";
+        public char IndeterminateLowerFrameChar { get; set; } = '═';
         /// <summary>
         /// [Indeterminate] Left frame character 
         /// </summary>
-        public string IndeterminateLeftFrameChar { get; set; } = "║";
+        public char IndeterminateLeftFrameChar { get; set; } = '║';
         /// <summary>
         /// [Indeterminate] Right frame character 
         /// </summary>
-        public string IndeterminateRightFrameChar { get; set; } = "║";
+        public char IndeterminateRightFrameChar { get; set; } = '║';
         /// <summary>
         /// [Indeterminate] The minimum red color level (true color)
         /// </summary>

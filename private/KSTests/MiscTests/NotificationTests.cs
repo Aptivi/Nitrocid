@@ -53,14 +53,14 @@ namespace KSTests.MiscTests
                 CustomTitleColor = new Color(4),
                 CustomProgressColor = new Color(4),
                 CustomProgressFailureColor = new Color(4),
-                CustomLeftFrameChar = "|",
-                CustomRightFrameChar = "|",
-                CustomUpperFrameChar = "-",
-                CustomLowerFrameChar = "-",
-                CustomUpperLeftCornerChar = "+",
-                CustomUpperRightCornerChar = "+",
-                CustomLowerLeftCornerChar = "+",
-                CustomLowerRightCornerChar = "+"
+                CustomLeftFrameChar = '|',
+                CustomRightFrameChar = '|',
+                CustomUpperFrameChar = '-',
+                CustomLowerFrameChar = '-',
+                CustomUpperLeftCornerChar = '+',
+                CustomUpperRightCornerChar = '+',
+                CustomLowerLeftCornerChar = '+',
+                CustomLowerRightCornerChar = '+'
             };
             Notif.ShouldNotBeNull();
         }

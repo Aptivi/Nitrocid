@@ -40,14 +40,14 @@ namespace KS.Misc.Notifications
     public static class NotificationManager
     {
 
-        internal static string notifyUpperLeftCornerChar = "╔";
-        internal static string notifyUpperRightCornerChar = "╗";
-        internal static string notifyLowerLeftCornerChar = "╚";
-        internal static string notifyLowerRightCornerChar = "╝";
-        internal static string notifyUpperFrameChar = "═";
-        internal static string notifyLowerFrameChar = "═";
-        internal static string notifyLeftFrameChar = "║";
-        internal static string notifyRightFrameChar = "║";
+        internal static char notifyUpperLeftCornerChar = '╔';
+        internal static char notifyUpperRightCornerChar = '╗';
+        internal static char notifyLowerLeftCornerChar = '╚';
+        internal static char notifyLowerRightCornerChar = '╝';
+        internal static char notifyUpperFrameChar = '═';
+        internal static char notifyLowerFrameChar = '═';
+        internal static char notifyLeftFrameChar = '║';
+        internal static char notifyRightFrameChar = '║';
         internal static KernelThread NotifThread = new("Notification Thread", false, NotifListen) { isCritical = true };
         private static readonly List<Notification> notifRecents = new();
 
@@ -58,42 +58,42 @@ namespace KS.Misc.Notifications
         /// <summary>
         /// Upper left corner character for the notfication box
         /// </summary>
-        public static string NotifyUpperLeftCornerChar =>
+        public static char NotifyUpperLeftCornerChar =>
             Config.MainConfig.NotifyUpperLeftCornerChar;
         /// <summary>
         /// Upper right corner character for the notfication box
         /// </summary>
-        public static string NotifyUpperRightCornerChar =>
+        public static char NotifyUpperRightCornerChar =>
             Config.MainConfig.NotifyUpperRightCornerChar;
         /// <summary>
         /// Lower left corner character for the notfication box
         /// </summary>
-        public static string NotifyLowerLeftCornerChar =>
+        public static char NotifyLowerLeftCornerChar =>
             Config.MainConfig.NotifyLowerLeftCornerChar;
         /// <summary>
         /// Lower right corner character for the notfication box
         /// </summary>
-        public static string NotifyLowerRightCornerChar =>
+        public static char NotifyLowerRightCornerChar =>
             Config.MainConfig.NotifyLowerRightCornerChar;
         /// <summary>
         /// Upper frame character for the notfication box
         /// </summary>
-        public static string NotifyUpperFrameChar =>
+        public static char NotifyUpperFrameChar =>
             Config.MainConfig.NotifyUpperFrameChar;
         /// <summary>
         /// Lower frame character for the notfication box
         /// </summary>
-        public static string NotifyLowerFrameChar =>
+        public static char NotifyLowerFrameChar =>
             Config.MainConfig.NotifyLowerFrameChar;
         /// <summary>
         /// Left frame character for the notfication box
         /// </summary>
-        public static string NotifyLeftFrameChar =>
+        public static char NotifyLeftFrameChar =>
             Config.MainConfig.NotifyLeftFrameChar;
         /// <summary>
         /// Right frame character for the notfication box
         /// </summary>
-        public static string NotifyRightFrameChar =>
+        public static char NotifyRightFrameChar =>
             Config.MainConfig.NotifyRightFrameChar;
         /// <summary>
         /// Don't disturb, meaning don't show any notification when this mode is on
@@ -246,16 +246,15 @@ namespace KS.Misc.Notifications
                             // Optionally, draw a border
                             if (Flags.DrawBorderNotification && !useSimplified)
                             {
-                                // TODO: Deal with these and convert them to chars
                                 // Prepare the variables
-                                string CurrentNotifyUpperLeftCornerChar = NotifyUpperLeftCornerChar;
-                                string CurrentNotifyUpperRightCornerChar = NotifyUpperRightCornerChar;
-                                string CurrentNotifyLowerLeftCornerChar = NotifyLowerLeftCornerChar;
-                                string CurrentNotifyLowerRightCornerChar = NotifyLowerRightCornerChar;
-                                string CurrentNotifyUpperFrameChar = NotifyUpperFrameChar;
-                                string CurrentNotifyLowerFrameChar = NotifyLowerFrameChar;
-                                string CurrentNotifyLeftFrameChar = NotifyLeftFrameChar;
-                                string CurrentNotifyRightFrameChar = NotifyRightFrameChar;
+                                char CurrentNotifyUpperLeftCornerChar = NotifyUpperLeftCornerChar;
+                                char CurrentNotifyUpperRightCornerChar = NotifyUpperRightCornerChar;
+                                char CurrentNotifyLowerLeftCornerChar = NotifyLowerLeftCornerChar;
+                                char CurrentNotifyLowerRightCornerChar = NotifyLowerRightCornerChar;
+                                char CurrentNotifyUpperFrameChar = NotifyUpperFrameChar;
+                                char CurrentNotifyLowerFrameChar = NotifyLowerFrameChar;
+                                char CurrentNotifyLeftFrameChar = NotifyLeftFrameChar;
+                                char CurrentNotifyRightFrameChar = NotifyRightFrameChar;
 
                                 // Get custom corner characters
                                 if (NewNotification.Priority == NotifPriority.Custom)
@@ -271,14 +270,14 @@ namespace KS.Misc.Notifications
                                 }
 
                                 // Just draw the border!
-                                TextWriterWhereColor.WriteWhere(CurrentNotifyUpperLeftCornerChar + new string(CurrentNotifyUpperFrameChar[0], 38) + CurrentNotifyUpperRightCornerChar, ConsoleWrapper.WindowWidth - 41, 0, true, NotifyBorderColor);
-                                TextWriterWhereColor.WriteWhere(CurrentNotifyLeftFrameChar, ConsoleWrapper.WindowWidth - 41, notifTitleTop, true, NotifyBorderColor);
-                                TextWriterWhereColor.WriteWhere(CurrentNotifyLeftFrameChar, ConsoleWrapper.WindowWidth - 41, notifDescTop, true, NotifyBorderColor);
-                                TextWriterWhereColor.WriteWhere(CurrentNotifyLeftFrameChar, ConsoleWrapper.WindowWidth - 41, notifWipeTop, true, NotifyBorderColor);
-                                TextWriterWhereColor.WriteWhere(CurrentNotifyRightFrameChar, ConsoleWrapper.WindowWidth - 2, notifTitleTop, true, NotifyBorderColor);
-                                TextWriterWhereColor.WriteWhere(CurrentNotifyRightFrameChar, ConsoleWrapper.WindowWidth - 2, notifDescTop, true, NotifyBorderColor);
-                                TextWriterWhereColor.WriteWhere(CurrentNotifyRightFrameChar, ConsoleWrapper.WindowWidth - 2, notifWipeTop, true, NotifyBorderColor);
-                                TextWriterWhereColor.WriteWhere(CurrentNotifyLowerLeftCornerChar + new string(CurrentNotifyLowerFrameChar[0], 38) + CurrentNotifyLowerRightCornerChar, ConsoleWrapper.WindowWidth - 41, 4, true, NotifyBorderColor);
+                                TextWriterWhereColor.WriteWhere(CurrentNotifyUpperLeftCornerChar + new string(CurrentNotifyUpperFrameChar, 38) + CurrentNotifyUpperRightCornerChar, ConsoleWrapper.WindowWidth - 41, 0, true, NotifyBorderColor);
+                                TextWriterWhereColor.WriteWhere(CurrentNotifyLeftFrameChar.ToString(), ConsoleWrapper.WindowWidth - 41, notifTitleTop, true, NotifyBorderColor);
+                                TextWriterWhereColor.WriteWhere(CurrentNotifyLeftFrameChar.ToString(), ConsoleWrapper.WindowWidth - 41, notifDescTop, true, NotifyBorderColor);
+                                TextWriterWhereColor.WriteWhere(CurrentNotifyLeftFrameChar.ToString(), ConsoleWrapper.WindowWidth - 41, notifWipeTop, true, NotifyBorderColor);
+                                TextWriterWhereColor.WriteWhere(CurrentNotifyRightFrameChar.ToString(), ConsoleWrapper.WindowWidth - 2, notifTitleTop, true, NotifyBorderColor);
+                                TextWriterWhereColor.WriteWhere(CurrentNotifyRightFrameChar.ToString(), ConsoleWrapper.WindowWidth - 2, notifDescTop, true, NotifyBorderColor);
+                                TextWriterWhereColor.WriteWhere(CurrentNotifyRightFrameChar.ToString(), ConsoleWrapper.WindowWidth - 2, notifWipeTop, true, NotifyBorderColor);
+                                TextWriterWhereColor.WriteWhere(CurrentNotifyLowerLeftCornerChar + new string(CurrentNotifyLowerFrameChar, 38) + CurrentNotifyLowerRightCornerChar, ConsoleWrapper.WindowWidth - 41, 4, true, NotifyBorderColor);
                             }
 
                             // Beep according to priority

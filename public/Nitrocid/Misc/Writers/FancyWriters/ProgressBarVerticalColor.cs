@@ -85,10 +85,10 @@ namespace KS.Misc.Writers.FancyWriters
                 // Draw the border
                 if (DrawBorder)
                 {
-                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressUpperLeftCornerChar + ProgressTools.ProgressUpperFrameChar + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true);
+                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressUpperLeftCornerChar.ToString() + ProgressTools.ProgressUpperFrameChar + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true);
                     for (int i = 0; i < ConsoleWrapper.WindowHeight - FinalHeightOffset; i++)
                         TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLeftFrameChar + " " + ProgressTools.ProgressRightFrameChar, Left, Top + i + 1, true);
-                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLowerLeftCornerChar + ProgressTools.ProgressLowerFrameChar + ProgressTools.ProgressLowerRightCornerChar, Left, Top + MaximumHeight + 1, true);
+                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLowerLeftCornerChar.ToString() + ProgressTools.ProgressLowerFrameChar + ProgressTools.ProgressLowerRightCornerChar, Left, Top + MaximumHeight + 1, true);
                 }
 
                 // Draw the progress bar
@@ -227,10 +227,10 @@ namespace KS.Misc.Writers.FancyWriters
                 // Draw the border
                 if (DrawBorder)
                 {
-                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressUpperLeftCornerChar + ProgressTools.ProgressUpperFrameChar + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true, FrameColor);
+                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressUpperLeftCornerChar.ToString() + ProgressTools.ProgressUpperFrameChar + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true, FrameColor);
                     for (int i = 0; i < ConsoleWrapper.WindowHeight - FinalHeightOffset; i++)
                         TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLeftFrameChar + " " + ProgressTools.ProgressRightFrameChar, Left, Top + i + 1, true, FrameColor);
-                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLowerLeftCornerChar + ProgressTools.ProgressLowerFrameChar + ProgressTools.ProgressLowerRightCornerChar, Left, Top + MaximumHeight + 1, true, FrameColor);
+                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLowerLeftCornerChar.ToString() + ProgressTools.ProgressLowerFrameChar + ProgressTools.ProgressLowerRightCornerChar, Left, Top + MaximumHeight + 1, true, FrameColor);
                 }
 
                 // Draw the progress bar
@@ -338,10 +338,10 @@ namespace KS.Misc.Writers.FancyWriters
                 // Draw the border
                 if (DrawBorder)
                 {
-                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressUpperLeftCornerChar + ProgressTools.ProgressUpperFrameChar + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true, FrameColor);
+                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressUpperLeftCornerChar.ToString() + ProgressTools.ProgressUpperFrameChar + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true, FrameColor);
                     for (int i = 0; i < ConsoleWrapper.WindowHeight - FinalHeightOffset; i++)
                         TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLeftFrameChar + " " + ProgressTools.ProgressRightFrameChar, Left, Top + i + 1, true, FrameColor);
-                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLowerLeftCornerChar + ProgressTools.ProgressLowerFrameChar + ProgressTools.ProgressLowerRightCornerChar, Left, Top + MaximumHeight + 1, true, FrameColor);
+                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLowerLeftCornerChar.ToString() + ProgressTools.ProgressLowerFrameChar + ProgressTools.ProgressLowerRightCornerChar, Left, Top + MaximumHeight + 1, true, FrameColor);
                 }
 
                 // Draw the progress bar
@@ -449,10 +449,10 @@ namespace KS.Misc.Writers.FancyWriters
                 // Draw the border
                 if (DrawBorder)
                 {
-                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressUpperLeftCornerChar + ProgressTools.ProgressUpperFrameChar + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true, FrameColor);
+                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressUpperLeftCornerChar.ToString() + ProgressTools.ProgressUpperFrameChar + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true, FrameColor);
                     for (int i = 0; i < ConsoleWrapper.WindowHeight - FinalHeightOffset; i++)
                         TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLeftFrameChar + " " + ProgressTools.ProgressRightFrameChar, Left, Top + i + 1, true, FrameColor);
-                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLowerLeftCornerChar + ProgressTools.ProgressLowerFrameChar + ProgressTools.ProgressLowerRightCornerChar, Left, Top + MaximumHeight + 1, true, FrameColor);
+                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLowerLeftCornerChar.ToString() + ProgressTools.ProgressLowerFrameChar + ProgressTools.ProgressLowerRightCornerChar, Left, Top + MaximumHeight + 1, true, FrameColor);
                 }
 
                 // Draw the progress bar

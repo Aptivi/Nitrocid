@@ -40,94 +40,55 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static bool ProgressClockTrueColor
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockTrueColor;
-            }
-            set
-            {
-                Config.SaverConfig.ProgressClockTrueColor = value;
-            }
+            get => Config.SaverConfig.ProgressClockTrueColor;
+            set => Config.SaverConfig.ProgressClockTrueColor = value;
         }
         /// <summary>
         /// [ProgressClock] Enable color cycling (uses RNG. If disabled, uses the <see cref="ProgressClockSecondsProgressColor"/>, <see cref="ProgressClockMinutesProgressColor"/>, and <see cref="ProgressClockHoursProgressColor"/> colors.)
         /// </summary>
         public static bool ProgressClockCycleColors
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockCycleColors;
-            }
-            set
-            {
-                Config.SaverConfig.ProgressClockCycleColors = value;
-            }
+            get => Config.SaverConfig.ProgressClockCycleColors;
+            set => Config.SaverConfig.ProgressClockCycleColors = value;
         }
         /// <summary>
         /// [ProgressClock] The color of seconds progress bar. It can be 1-16, 1-255, or "1-255;1-255;1-255".
         /// </summary>
         public static string ProgressClockSecondsProgressColor
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockSecondsProgressColor;
-            }
-            set
-            {
-                Config.SaverConfig.ProgressClockSecondsProgressColor = new Color(value).PlainSequence;
-            }
+            get => Config.SaverConfig.ProgressClockSecondsProgressColor;
+            set => Config.SaverConfig.ProgressClockSecondsProgressColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [ProgressClock] The color of minutes progress bar. It can be 1-16, 1-255, or "1-255;1-255;1-255".
         /// </summary>
         public static string ProgressClockMinutesProgressColor
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMinutesProgressColor;
-            }
-            set
-            {
-                Config.SaverConfig.ProgressClockMinutesProgressColor = new Color(value).PlainSequence;
-            }
+            get => Config.SaverConfig.ProgressClockMinutesProgressColor;
+            set => Config.SaverConfig.ProgressClockMinutesProgressColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [ProgressClock] The color of hours progress bar. It can be 1-16, 1-255, or "1-255;1-255;1-255".
         /// </summary>
         public static string ProgressClockHoursProgressColor
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockHoursProgressColor;
-            }
-            set
-            {
-                Config.SaverConfig.ProgressClockHoursProgressColor = new Color(value).PlainSequence;
-            }
+            get => Config.SaverConfig.ProgressClockHoursProgressColor;
+            set => Config.SaverConfig.ProgressClockHoursProgressColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [ProgressClock] The color of date information. It can be 1-16, 1-255, or "1-255;1-255;1-255".
         /// </summary>
         public static string ProgressClockProgressColor
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockProgressColor;
-            }
-            set
-            {
-                Config.SaverConfig.ProgressClockProgressColor = new Color(value).PlainSequence;
-            }
+            get => Config.SaverConfig.ProgressClockProgressColor;
+            set => Config.SaverConfig.ProgressClockProgressColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [ProgressClock] If color cycling is enabled, how many ticks before changing colors? 1 tick = 0.5 seconds
         /// </summary>
         public static long ProgressClockCycleColorsTicks
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockCycleColorsTicks;
-            }
+            get => Config.SaverConfig.ProgressClockCycleColorsTicks;
             set
             {
                 if (value <= 0L)
@@ -140,10 +101,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int ProgressClockDelay
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockDelay;
-            }
+            get => Config.SaverConfig.ProgressClockDelay;
             set
             {
                 if (value <= 0)
@@ -154,438 +112,225 @@ namespace KS.Misc.Screensaver.Displays
         /// <summary>
         /// [ProgressClock] Upper left corner character for hours bar
         /// </summary>
-        public static string ProgressClockUpperLeftCornerCharHours
+        public static char ProgressClockUpperLeftCornerCharHours
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockUpperLeftCornerCharHours;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "╔";
-                Config.SaverConfig.ProgressClockUpperLeftCornerCharHours = value;
-            }
+            get => Config.SaverConfig.ProgressClockUpperLeftCornerCharHours;
+            set => Config.SaverConfig.ProgressClockUpperLeftCornerCharHours = value;
         }
         /// <summary>
         /// [ProgressClock] Upper left corner character for minutes bar
         /// </summary>
-        public static string ProgressClockUpperLeftCornerCharMinutes
+        public static char ProgressClockUpperLeftCornerCharMinutes
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockUpperLeftCornerCharMinutes;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "╔";
-                Config.SaverConfig.ProgressClockUpperLeftCornerCharMinutes = value;
-            }
+            get => Config.SaverConfig.ProgressClockUpperLeftCornerCharMinutes;
+            set => Config.SaverConfig.ProgressClockUpperLeftCornerCharMinutes = value;
         }
         /// <summary>
         /// [ProgressClock] Upper left corner character for seconds bar
         /// </summary>
-        public static string ProgressClockUpperLeftCornerCharSeconds
+        public static char ProgressClockUpperLeftCornerCharSeconds
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockUpperLeftCornerCharSeconds;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "╔";
-                Config.SaverConfig.ProgressClockUpperLeftCornerCharSeconds = value;
-            }
+            get => Config.SaverConfig.ProgressClockUpperLeftCornerCharSeconds;
+            set => Config.SaverConfig.ProgressClockUpperLeftCornerCharSeconds = value;
         }
         /// <summary>
         /// [ProgressClock] Upper right corner character for hours bar
         /// </summary>
-        public static string ProgressClockUpperRightCornerCharHours
+        public static char ProgressClockUpperRightCornerCharHours
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockUpperRightCornerCharHours;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "╗";
-                Config.SaverConfig.ProgressClockUpperRightCornerCharHours = value;
-            }
+            get => Config.SaverConfig.ProgressClockUpperRightCornerCharHours;
+            set => Config.SaverConfig.ProgressClockUpperRightCornerCharHours = value;
         }
         /// <summary>
         /// [ProgressClock] Upper right corner character for minutes bar
         /// </summary>
-        public static string ProgressClockUpperRightCornerCharMinutes
+        public static char ProgressClockUpperRightCornerCharMinutes
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockUpperRightCornerCharMinutes;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "╗";
-                Config.SaverConfig.ProgressClockUpperRightCornerCharMinutes = value;
-            }
+            get => Config.SaverConfig.ProgressClockUpperRightCornerCharMinutes;
+            set => Config.SaverConfig.ProgressClockUpperRightCornerCharMinutes = value;
         }
         /// <summary>
         /// [ProgressClock] Upper right corner character for seconds bar
         /// </summary>
-        public static string ProgressClockUpperRightCornerCharSeconds
+        public static char ProgressClockUpperRightCornerCharSeconds
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockUpperRightCornerCharSeconds;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "╗";
-                Config.SaverConfig.ProgressClockUpperRightCornerCharSeconds = value;
-            }
+            get => Config.SaverConfig.ProgressClockUpperRightCornerCharSeconds;
+            set => Config.SaverConfig.ProgressClockUpperRightCornerCharSeconds = value;
         }
         /// <summary>
         /// [ProgressClock] Lower left corner character for hours bar
         /// </summary>
-        public static string ProgressClockLowerLeftCornerCharHours
+        public static char ProgressClockLowerLeftCornerCharHours
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockLowerLeftCornerCharHours;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "╚";
-                Config.SaverConfig.ProgressClockLowerLeftCornerCharHours = value;
-            }
+            get => Config.SaverConfig.ProgressClockLowerLeftCornerCharHours;
+            set => Config.SaverConfig.ProgressClockLowerLeftCornerCharHours = value;
         }
         /// <summary>
         /// [ProgressClock] Lower left corner character for minutes bar
         /// </summary>
-        public static string ProgressClockLowerLeftCornerCharMinutes
+        public static char ProgressClockLowerLeftCornerCharMinutes
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockLowerLeftCornerCharMinutes;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "╚";
-                Config.SaverConfig.ProgressClockLowerLeftCornerCharMinutes = value;
-            }
+            get => Config.SaverConfig.ProgressClockLowerLeftCornerCharMinutes;
+            set => Config.SaverConfig.ProgressClockLowerLeftCornerCharMinutes = value;
         }
         /// <summary>
         /// [ProgressClock] Lower left corner character for seconds bar
         /// </summary>
-        public static string ProgressClockLowerLeftCornerCharSeconds
+        public static char ProgressClockLowerLeftCornerCharSeconds
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockLowerLeftCornerCharSeconds;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "╚";
-                Config.SaverConfig.ProgressClockLowerLeftCornerCharSeconds = value;
-            }
+            get => Config.SaverConfig.ProgressClockLowerLeftCornerCharSeconds;
+            set => Config.SaverConfig.ProgressClockLowerLeftCornerCharSeconds = value;
         }
         /// <summary>
         /// [ProgressClock] Lower right corner character for hours bar
         /// </summary>
-        public static string ProgressClockLowerRightCornerCharHours
+        public static char ProgressClockLowerRightCornerCharHours
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockLowerRightCornerCharHours;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "╝";
-                Config.SaverConfig.ProgressClockLowerRightCornerCharHours = value;
-            }
+            get => Config.SaverConfig.ProgressClockLowerRightCornerCharHours;
+            set => Config.SaverConfig.ProgressClockLowerRightCornerCharHours = value;
         }
         /// <summary>
         /// [ProgressClock] Lower right corner character for minutes bar
         /// </summary>
-        public static string ProgressClockLowerRightCornerCharMinutes
+        public static char ProgressClockLowerRightCornerCharMinutes
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockLowerRightCornerCharMinutes;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "╝";
-                Config.SaverConfig.ProgressClockLowerRightCornerCharMinutes = value;
-            }
+            get => Config.SaverConfig.ProgressClockLowerRightCornerCharMinutes;
+            set => Config.SaverConfig.ProgressClockLowerRightCornerCharMinutes = value;
         }
         /// <summary>
         /// [ProgressClock] Lower right corner character for seconds bar
         /// </summary>
-        public static string ProgressClockLowerRightCornerCharSeconds
+        public static char ProgressClockLowerRightCornerCharSeconds
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockLowerRightCornerCharSeconds;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "╝";
-                Config.SaverConfig.ProgressClockLowerRightCornerCharSeconds = value;
-            }
+            get => Config.SaverConfig.ProgressClockLowerRightCornerCharSeconds;
+            set => Config.SaverConfig.ProgressClockLowerRightCornerCharSeconds = value;
         }
         /// <summary>
         /// [ProgressClock] Upper frame character for hours bar
         /// </summary>
-        public static string ProgressClockUpperFrameCharHours
+        public static char ProgressClockUpperFrameCharHours
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockUpperFrameCharHours;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "═";
-                Config.SaverConfig.ProgressClockUpperFrameCharHours = value;
-            }
+            get => Config.SaverConfig.ProgressClockUpperFrameCharHours;
+            set => Config.SaverConfig.ProgressClockUpperFrameCharHours = value;
         }
         /// <summary>
         /// [ProgressClock] Upper frame character for minutes bar
         /// </summary>
-        public static string ProgressClockUpperFrameCharMinutes
+        public static char ProgressClockUpperFrameCharMinutes
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockUpperFrameCharMinutes;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "═";
-                Config.SaverConfig.ProgressClockUpperFrameCharMinutes = value;
-            }
+            get => Config.SaverConfig.ProgressClockUpperFrameCharMinutes;
+            set => Config.SaverConfig.ProgressClockUpperFrameCharMinutes = value;
         }
         /// <summary>
         /// [ProgressClock] Upper frame character for seconds bar
         /// </summary>
-        public static string ProgressClockUpperFrameCharSeconds
+        public static char ProgressClockUpperFrameCharSeconds
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockUpperFrameCharSeconds;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "═";
-                Config.SaverConfig.ProgressClockUpperFrameCharSeconds = value;
-            }
+            get => Config.SaverConfig.ProgressClockUpperFrameCharSeconds;
+            set => Config.SaverConfig.ProgressClockUpperFrameCharSeconds = value;
         }
         /// <summary>
         /// [ProgressClock] Lower frame character for hours bar
         /// </summary>
-        public static string ProgressClockLowerFrameCharHours
+        public static char ProgressClockLowerFrameCharHours
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockLowerFrameCharHours;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "═";
-                Config.SaverConfig.ProgressClockLowerFrameCharHours = value;
-            }
+            get => Config.SaverConfig.ProgressClockLowerFrameCharHours;
+            set => Config.SaverConfig.ProgressClockLowerFrameCharHours = value;
         }
         /// <summary>
         /// [ProgressClock] Lower frame character for minutes bar
         /// </summary>
-        public static string ProgressClockLowerFrameCharMinutes
+        public static char ProgressClockLowerFrameCharMinutes
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockLowerFrameCharMinutes;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "═";
-                Config.SaverConfig.ProgressClockLowerFrameCharMinutes = value;
-            }
+            get => Config.SaverConfig.ProgressClockLowerFrameCharMinutes;
+            set => Config.SaverConfig.ProgressClockLowerFrameCharMinutes = value;
         }
         /// <summary>
         /// [ProgressClock] Lower frame character for seconds bar
         /// </summary>
-        public static string ProgressClockLowerFrameCharSeconds
+        public static char ProgressClockLowerFrameCharSeconds
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockLowerFrameCharSeconds;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "═";
-                Config.SaverConfig.ProgressClockLowerFrameCharSeconds = value;
-            }
+            get => Config.SaverConfig.ProgressClockLowerFrameCharSeconds;
+            set => Config.SaverConfig.ProgressClockLowerFrameCharSeconds = value;
         }
         /// <summary>
         /// [ProgressClock] Left frame character for hours bar
         /// </summary>
-        public static string ProgressClockLeftFrameCharHours
+        public static char ProgressClockLeftFrameCharHours
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockLeftFrameCharHours;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "║";
-                Config.SaverConfig.ProgressClockLeftFrameCharHours = value;
-            }
+            get => Config.SaverConfig.ProgressClockLeftFrameCharHours;
+            set => Config.SaverConfig.ProgressClockLeftFrameCharHours = value;
         }
         /// <summary>
         /// [ProgressClock] Left frame character for minutes bar
         /// </summary>
-        public static string ProgressClockLeftFrameCharMinutes
+        public static char ProgressClockLeftFrameCharMinutes
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockLeftFrameCharMinutes;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "║";
-                Config.SaverConfig.ProgressClockLeftFrameCharMinutes = value;
-            }
+            get => Config.SaverConfig.ProgressClockLeftFrameCharMinutes;
+            set => Config.SaverConfig.ProgressClockLeftFrameCharMinutes = value;
         }
         /// <summary>
         /// [ProgressClock] Left frame character for seconds bar
         /// </summary>
-        public static string ProgressClockLeftFrameCharSeconds
+        public static char ProgressClockLeftFrameCharSeconds
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockLeftFrameCharSeconds;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "║";
-                Config.SaverConfig.ProgressClockLeftFrameCharSeconds = value;
-            }
+            get => Config.SaverConfig.ProgressClockLeftFrameCharSeconds;
+            set => Config.SaverConfig.ProgressClockLeftFrameCharSeconds = value;
         }
         /// <summary>
         /// [ProgressClock] Right frame character for hours bar
         /// </summary>
-        public static string ProgressClockRightFrameCharHours
+        public static char ProgressClockRightFrameCharHours
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockRightFrameCharHours;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "║";
-                Config.SaverConfig.ProgressClockRightFrameCharHours = value;
-            }
+            get => Config.SaverConfig.ProgressClockRightFrameCharHours;
+            set => Config.SaverConfig.ProgressClockRightFrameCharHours = value;
         }
         /// <summary>
         /// [ProgressClock] Right frame character for minutes bar
         /// </summary>
-        public static string ProgressClockRightFrameCharMinutes
+        public static char ProgressClockRightFrameCharMinutes
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockRightFrameCharMinutes;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "║";
-                Config.SaverConfig.ProgressClockRightFrameCharMinutes = value;
-            }
+            get => Config.SaverConfig.ProgressClockRightFrameCharMinutes;
+            set => Config.SaverConfig.ProgressClockRightFrameCharMinutes = value;
         }
         /// <summary>
         /// [ProgressClock] Right frame character for seconds bar
         /// </summary>
-        public static string ProgressClockRightFrameCharSeconds
+        public static char ProgressClockRightFrameCharSeconds
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockRightFrameCharSeconds;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "║";
-                Config.SaverConfig.ProgressClockRightFrameCharSeconds = value;
-            }
+            get => Config.SaverConfig.ProgressClockRightFrameCharSeconds;
+            set => Config.SaverConfig.ProgressClockRightFrameCharSeconds = value;
         }
         /// <summary>
         /// [ProgressClock] Information text for hours bar
         /// </summary>
         public static string ProgressClockInfoTextHours
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockInfoTextHours;
-            }
-            set
-            {
-                Config.SaverConfig.ProgressClockInfoTextHours = value;
-            }
+            get => Config.SaverConfig.ProgressClockInfoTextHours;
+            set => Config.SaverConfig.ProgressClockInfoTextHours = value;
         }
         /// <summary>
         /// [ProgressClock] Information text for minutes bar
         /// </summary>
         public static string ProgressClockInfoTextMinutes
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockInfoTextMinutes;
-            }
-            set
-            {
-                Config.SaverConfig.ProgressClockInfoTextMinutes = value;
-            }
+            get => Config.SaverConfig.ProgressClockInfoTextMinutes;
+            set => Config.SaverConfig.ProgressClockInfoTextMinutes = value;
         }
         /// <summary>
         /// [ProgressClock] Information text for seconds bar
         /// </summary>
         public static string ProgressClockInfoTextSeconds
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockInfoTextSeconds;
-            }
-            set
-            {
-                Config.SaverConfig.ProgressClockInfoTextSeconds = value;
-            }
+            get => Config.SaverConfig.ProgressClockInfoTextSeconds;
+            set => Config.SaverConfig.ProgressClockInfoTextSeconds = value;
         }
         /// <summary>
         /// [ProgressClock] The minimum red color level (true color - hours)
         /// </summary>
         public static int ProgressClockMinimumRedColorLevelHours
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMinimumRedColorLevelHours;
-            }
+            get => Config.SaverConfig.ProgressClockMinimumRedColorLevelHours;
             set
             {
                 if (value <= 0)
@@ -600,10 +345,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int ProgressClockMinimumGreenColorLevelHours
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMinimumGreenColorLevelHours;
-            }
+            get => Config.SaverConfig.ProgressClockMinimumGreenColorLevelHours;
             set
             {
                 if (value <= 0)
@@ -618,10 +360,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int ProgressClockMinimumBlueColorLevelHours
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMinimumBlueColorLevelHours;
-            }
+            get => Config.SaverConfig.ProgressClockMinimumBlueColorLevelHours;
             set
             {
                 if (value <= 0)
@@ -636,10 +375,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int ProgressClockMinimumColorLevelHours
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMinimumColorLevelHours;
-            }
+            get => Config.SaverConfig.ProgressClockMinimumColorLevelHours;
             set
             {
                 int FinalMinimumLevel = 255;
@@ -655,10 +391,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int ProgressClockMaximumRedColorLevelHours
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMaximumRedColorLevelHours;
-            }
+            get => Config.SaverConfig.ProgressClockMaximumRedColorLevelHours;
             set
             {
                 if (value <= Config.SaverConfig.ProgressClockMinimumRedColorLevelHours)
@@ -673,10 +406,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int ProgressClockMaximumGreenColorLevelHours
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMaximumGreenColorLevelHours;
-            }
+            get => Config.SaverConfig.ProgressClockMaximumGreenColorLevelHours;
             set
             {
                 if (value <= Config.SaverConfig.ProgressClockMinimumGreenColorLevelHours)
@@ -691,10 +421,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int ProgressClockMaximumBlueColorLevelHours
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMaximumBlueColorLevelHours;
-            }
+            get => Config.SaverConfig.ProgressClockMaximumBlueColorLevelHours;
             set
             {
                 if (value <= Config.SaverConfig.ProgressClockMinimumBlueColorLevelHours)
@@ -709,10 +436,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int ProgressClockMaximumColorLevelHours
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMaximumColorLevelHours;
-            }
+            get => Config.SaverConfig.ProgressClockMaximumColorLevelHours;
             set
             {
                 int FinalMaximumLevel = 255;
@@ -728,10 +452,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int ProgressClockMinimumRedColorLevelMinutes
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMinimumRedColorLevelMinutes;
-            }
+            get => Config.SaverConfig.ProgressClockMinimumRedColorLevelMinutes;
             set
             {
                 if (value <= 0)
@@ -746,10 +467,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int ProgressClockMinimumGreenColorLevelMinutes
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMinimumGreenColorLevelMinutes;
-            }
+            get => Config.SaverConfig.ProgressClockMinimumGreenColorLevelMinutes;
             set
             {
                 if (value <= 0)
@@ -764,10 +482,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int ProgressClockMinimumBlueColorLevelMinutes
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMinimumBlueColorLevelMinutes;
-            }
+            get => Config.SaverConfig.ProgressClockMinimumBlueColorLevelMinutes;
             set
             {
                 if (value <= 0)
@@ -782,10 +497,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int ProgressClockMinimumColorLevelMinutes
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMinimumColorLevelMinutes;
-            }
+            get => Config.SaverConfig.ProgressClockMinimumColorLevelMinutes;
             set
             {
                 int FinalMinimumLevel = 255;
@@ -801,10 +513,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int ProgressClockMaximumRedColorLevelMinutes
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMaximumRedColorLevelMinutes;
-            }
+            get => Config.SaverConfig.ProgressClockMaximumRedColorLevelMinutes;
             set
             {
                 if (value <= Config.SaverConfig.ProgressClockMinimumRedColorLevelMinutes)
@@ -819,10 +528,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int ProgressClockMaximumGreenColorLevelMinutes
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMaximumGreenColorLevelMinutes;
-            }
+            get => Config.SaverConfig.ProgressClockMaximumGreenColorLevelMinutes;
             set
             {
                 if (value <= Config.SaverConfig.ProgressClockMinimumGreenColorLevelMinutes)
@@ -837,10 +543,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int ProgressClockMaximumBlueColorLevelMinutes
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMaximumBlueColorLevelMinutes;
-            }
+            get => Config.SaverConfig.ProgressClockMaximumBlueColorLevelMinutes;
             set
             {
                 if (value <= Config.SaverConfig.ProgressClockMinimumBlueColorLevelMinutes)
@@ -855,10 +558,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int ProgressClockMaximumColorLevelMinutes
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMaximumColorLevelMinutes;
-            }
+            get => Config.SaverConfig.ProgressClockMaximumColorLevelMinutes;
             set
             {
                 int FinalMaximumLevel = 255;
@@ -874,10 +574,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int ProgressClockMinimumRedColorLevelSeconds
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMinimumRedColorLevelSeconds;
-            }
+            get => Config.SaverConfig.ProgressClockMinimumRedColorLevelSeconds;
             set
             {
                 if (value <= 0)
@@ -892,10 +589,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int ProgressClockMinimumGreenColorLevelSeconds
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMinimumGreenColorLevelSeconds;
-            }
+            get => Config.SaverConfig.ProgressClockMinimumGreenColorLevelSeconds;
             set
             {
                 if (value <= 0)
@@ -910,10 +604,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int ProgressClockMinimumBlueColorLevelSeconds
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMinimumBlueColorLevelSeconds;
-            }
+            get => Config.SaverConfig.ProgressClockMinimumBlueColorLevelSeconds;
             set
             {
                 if (value <= 0)
@@ -928,10 +619,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int ProgressClockMinimumColorLevelSeconds
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMinimumColorLevelSeconds;
-            }
+            get => Config.SaverConfig.ProgressClockMinimumColorLevelSeconds;
             set
             {
                 int FinalMinimumLevel = 255;
@@ -947,10 +635,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int ProgressClockMaximumRedColorLevelSeconds
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMaximumRedColorLevelSeconds;
-            }
+            get => Config.SaverConfig.ProgressClockMaximumRedColorLevelSeconds;
             set
             {
                 if (value <= Config.SaverConfig.ProgressClockMinimumRedColorLevelSeconds)
@@ -965,10 +650,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int ProgressClockMaximumGreenColorLevelSeconds
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMaximumGreenColorLevelSeconds;
-            }
+            get => Config.SaverConfig.ProgressClockMaximumGreenColorLevelSeconds;
             set
             {
                 if (value <= Config.SaverConfig.ProgressClockMinimumGreenColorLevelSeconds)
@@ -983,10 +665,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int ProgressClockMaximumBlueColorLevelSeconds
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMaximumBlueColorLevelSeconds;
-            }
+            get => Config.SaverConfig.ProgressClockMaximumBlueColorLevelSeconds;
             set
             {
                 if (value <= Config.SaverConfig.ProgressClockMinimumBlueColorLevelSeconds)
@@ -1001,10 +680,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int ProgressClockMaximumColorLevelSeconds
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMaximumColorLevelSeconds;
-            }
+            get => Config.SaverConfig.ProgressClockMaximumColorLevelSeconds;
             set
             {
                 int FinalMaximumLevel = 255;
@@ -1020,10 +696,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int ProgressClockMinimumRedColorLevel
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMinimumRedColorLevel;
-            }
+            get => Config.SaverConfig.ProgressClockMinimumRedColorLevel;
             set
             {
                 if (value <= 0)
@@ -1038,10 +711,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int ProgressClockMinimumGreenColorLevel
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMinimumGreenColorLevel;
-            }
+            get => Config.SaverConfig.ProgressClockMinimumGreenColorLevel;
             set
             {
                 if (value <= 0)
@@ -1056,10 +726,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int ProgressClockMinimumBlueColorLevel
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMinimumBlueColorLevel;
-            }
+            get => Config.SaverConfig.ProgressClockMinimumBlueColorLevel;
             set
             {
                 if (value <= 0)
@@ -1074,10 +741,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int ProgressClockMinimumColorLevel
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMinimumColorLevel;
-            }
+            get => Config.SaverConfig.ProgressClockMinimumColorLevel;
             set
             {
                 int FinalMinimumLevel = 255;
@@ -1093,10 +757,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int ProgressClockMaximumRedColorLevel
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMaximumRedColorLevel;
-            }
+            get => Config.SaverConfig.ProgressClockMaximumRedColorLevel;
             set
             {
                 if (value <= Config.SaverConfig.ProgressClockMinimumRedColorLevel)
@@ -1111,10 +772,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int ProgressClockMaximumGreenColorLevel
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMaximumGreenColorLevel;
-            }
+            get => Config.SaverConfig.ProgressClockMaximumGreenColorLevel;
             set
             {
                 if (value <= Config.SaverConfig.ProgressClockMinimumGreenColorLevel)
@@ -1129,10 +787,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int ProgressClockMaximumBlueColorLevel
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMaximumBlueColorLevel;
-            }
+            get => Config.SaverConfig.ProgressClockMaximumBlueColorLevel;
             set
             {
                 if (value <= Config.SaverConfig.ProgressClockMinimumBlueColorLevel)
@@ -1147,10 +802,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int ProgressClockMaximumColorLevel
         {
-            get
-            {
-                return Config.SaverConfig.ProgressClockMaximumColorLevel;
-            }
+            get => Config.SaverConfig.ProgressClockMaximumColorLevel;
             set
             {
                 int FinalMaximumLevel = 255;
@@ -1272,21 +924,20 @@ namespace KS.Misc.Screensaver.Displays
 
             if (!ConsoleResizeListener.WasResized(false))
             {
-                // TODO: Deal with these, too.
                 // Hours
-                TextWriterWhereColor.WriteWhere(ProgressClockSettings.ProgressClockLowerLeftCornerCharHours + new string(ProgressClockSettings.ProgressClockLowerFrameCharHours[0], ConsoleWrapper.WindowWidth - 10) + ProgressClockSettings.ProgressClockLowerRightCornerCharHours, 4, (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) - 9, true, ColorStorageHours);         // Bottom of Hours
+                TextWriterWhereColor.WriteWhere(ProgressClockSettings.ProgressClockLowerLeftCornerCharHours + new string(ProgressClockSettings.ProgressClockLowerFrameCharHours, ConsoleWrapper.WindowWidth - 10) + ProgressClockSettings.ProgressClockLowerRightCornerCharHours, 4, (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) - 9, true, ColorStorageHours);         // Bottom of Hours
                 TextWriterWhereColor.WriteWhere(ProgressClockSettings.ProgressClockLeftFrameCharHours + new string(' ', ConsoleWrapper.WindowWidth - 10) + ProgressClockSettings.ProgressClockRightFrameCharHours, 4, ProgressFillPositionHours, true, ColorStorageHours);                                                           // Medium of Hours
-                TextWriterWhereColor.WriteWhere(ProgressClockSettings.ProgressClockUpperLeftCornerCharHours + new string(ProgressClockSettings.ProgressClockUpperFrameCharHours[0], ConsoleWrapper.WindowWidth - 10) + ProgressClockSettings.ProgressClockUpperRightCornerCharHours, 4, (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) - 11, true, ColorStorageHours);        // Top of Hours
+                TextWriterWhereColor.WriteWhere(ProgressClockSettings.ProgressClockUpperLeftCornerCharHours + new string(ProgressClockSettings.ProgressClockUpperFrameCharHours, ConsoleWrapper.WindowWidth - 10) + ProgressClockSettings.ProgressClockUpperRightCornerCharHours, 4, (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) - 11, true, ColorStorageHours);        // Top of Hours
 
                 // Minutes
-                TextWriterWhereColor.WriteWhere(ProgressClockSettings.ProgressClockLowerLeftCornerCharMinutes + new string(ProgressClockSettings.ProgressClockLowerFrameCharMinutes[0], ConsoleWrapper.WindowWidth - 10) + ProgressClockSettings.ProgressClockLowerRightCornerCharMinutes, 4, (int)Math.Round(ConsoleWrapper.WindowHeight / 2d), true, ColorStorageMinutes);     // Bottom of Minutes
+                TextWriterWhereColor.WriteWhere(ProgressClockSettings.ProgressClockLowerLeftCornerCharMinutes + new string(ProgressClockSettings.ProgressClockLowerFrameCharMinutes, ConsoleWrapper.WindowWidth - 10) + ProgressClockSettings.ProgressClockLowerRightCornerCharMinutes, 4, (int)Math.Round(ConsoleWrapper.WindowHeight / 2d), true, ColorStorageMinutes);     // Bottom of Minutes
                 TextWriterWhereColor.WriteWhere(ProgressClockSettings.ProgressClockLeftFrameCharMinutes + new string(' ', ConsoleWrapper.WindowWidth - 10) + ProgressClockSettings.ProgressClockRightFrameCharMinutes, 4, ProgressFillPositionMinutes, true, ColorStorageMinutes);                                                   // Medium of Minutes
-                TextWriterWhereColor.WriteWhere(ProgressClockSettings.ProgressClockUpperLeftCornerCharMinutes + new string(ProgressClockSettings.ProgressClockUpperFrameCharMinutes[0], ConsoleWrapper.WindowWidth - 10) + ProgressClockSettings.ProgressClockUpperRightCornerCharMinutes, 4, (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) - 2, true, ColorStorageMinutes); // Top of Minutes
+                TextWriterWhereColor.WriteWhere(ProgressClockSettings.ProgressClockUpperLeftCornerCharMinutes + new string(ProgressClockSettings.ProgressClockUpperFrameCharMinutes, ConsoleWrapper.WindowWidth - 10) + ProgressClockSettings.ProgressClockUpperRightCornerCharMinutes, 4, (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) - 2, true, ColorStorageMinutes); // Top of Minutes
 
                 // Seconds
-                TextWriterWhereColor.WriteWhere(ProgressClockSettings.ProgressClockLowerLeftCornerCharSeconds + new string(ProgressClockSettings.ProgressClockLowerFrameCharSeconds[0], ConsoleWrapper.WindowWidth - 10) + ProgressClockSettings.ProgressClockLowerRightCornerCharSeconds, 4, (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) + 9, true, ColorStorageSeconds); // Bottom of Seconds
+                TextWriterWhereColor.WriteWhere(ProgressClockSettings.ProgressClockLowerLeftCornerCharSeconds + new string(ProgressClockSettings.ProgressClockLowerFrameCharSeconds, ConsoleWrapper.WindowWidth - 10) + ProgressClockSettings.ProgressClockLowerRightCornerCharSeconds, 4, (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) + 9, true, ColorStorageSeconds); // Bottom of Seconds
                 TextWriterWhereColor.WriteWhere(ProgressClockSettings.ProgressClockLeftFrameCharSeconds + new string(' ', ConsoleWrapper.WindowWidth - 10) + ProgressClockSettings.ProgressClockRightFrameCharSeconds, 4, ProgressFillPositionSeconds, true, ColorStorageSeconds);                                                   // Medium of Seconds
-                TextWriterWhereColor.WriteWhere(ProgressClockSettings.ProgressClockUpperLeftCornerCharSeconds + new string(ProgressClockSettings.ProgressClockUpperFrameCharSeconds[0], ConsoleWrapper.WindowWidth - 10) + ProgressClockSettings.ProgressClockUpperRightCornerCharSeconds, 4, (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) + 7, true, ColorStorageSeconds); // Top of Seconds
+                TextWriterWhereColor.WriteWhere(ProgressClockSettings.ProgressClockUpperLeftCornerCharSeconds + new string(ProgressClockSettings.ProgressClockUpperFrameCharSeconds, ConsoleWrapper.WindowWidth - 10) + ProgressClockSettings.ProgressClockUpperRightCornerCharSeconds, 4, (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) + 7, true, ColorStorageSeconds); // Top of Seconds
 
                 // Fill progress for hours, minutes, and seconds
                 if (!(TimeDateTools.KernelDateTime.Hour == 0))

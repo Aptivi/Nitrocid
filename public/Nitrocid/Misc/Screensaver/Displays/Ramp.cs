@@ -39,24 +39,15 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static bool RampTrueColor
         {
-            get
-            {
-                return Config.SaverConfig.RampTrueColor;
-            }
-            set
-            {
-                Config.SaverConfig.RampTrueColor = value;
-            }
+            get => Config.SaverConfig.RampTrueColor;
+            set => Config.SaverConfig.RampTrueColor = value;
         }
         /// <summary>
         /// [Ramp] How many milliseconds to wait before making the next write?
         /// </summary>
         public static int RampDelay
         {
-            get
-            {
-                return Config.SaverConfig.RampDelay;
-            }
+            get => Config.SaverConfig.RampDelay;
             set
             {
                 if (value <= 0)
@@ -69,10 +60,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int RampNextRampDelay
         {
-            get
-            {
-                return Config.SaverConfig.RampNextRampDelay;
-            }
+            get => Config.SaverConfig.RampNextRampDelay;
             set
             {
                 if (value <= 0)
@@ -83,140 +71,73 @@ namespace KS.Misc.Screensaver.Displays
         /// <summary>
         /// [Ramp] Upper left corner character 
         /// </summary>
-        public static string RampUpperLeftCornerChar
+        public static char RampUpperLeftCornerChar
         {
-            get
-            {
-                return Config.SaverConfig.RampUpperLeftCornerChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "╔";
-                Config.SaverConfig.RampUpperLeftCornerChar = value;
-            }
+            get => Config.SaverConfig.RampUpperLeftCornerChar;
+            set => Config.SaverConfig.RampUpperLeftCornerChar = value;
         }
         /// <summary>
         /// [Ramp] Upper right corner character 
         /// </summary>
-        public static string RampUpperRightCornerChar
+        public static char RampUpperRightCornerChar
         {
-            get
-            {
-                return Config.SaverConfig.RampUpperRightCornerChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "╗";
-                Config.SaverConfig.RampUpperRightCornerChar = value;
-            }
+            get => Config.SaverConfig.RampUpperRightCornerChar;
+            set => Config.SaverConfig.RampUpperRightCornerChar = value;
         }
         /// <summary>
         /// [Ramp] Lower left corner character 
         /// </summary>
-        public static string RampLowerLeftCornerChar
+        public static char RampLowerLeftCornerChar
         {
-            get
-            {
-                return Config.SaverConfig.RampLowerLeftCornerChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "╚";
-                Config.SaverConfig.RampLowerLeftCornerChar = value;
-            }
+            get => Config.SaverConfig.RampLowerLeftCornerChar;
+            set => Config.SaverConfig.RampLowerLeftCornerChar = value;
         }
         /// <summary>
         /// [Ramp] Lower right corner character 
         /// </summary>
-        public static string RampLowerRightCornerChar
+        public static char RampLowerRightCornerChar
         {
-            get
-            {
-                return Config.SaverConfig.RampLowerRightCornerChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "╝";
-                Config.SaverConfig.RampLowerRightCornerChar = value;
-            }
+            get => Config.SaverConfig.RampLowerRightCornerChar;
+            set => Config.SaverConfig.RampLowerRightCornerChar = value;
         }
         /// <summary>
         /// [Ramp] Upper frame character 
         /// </summary>
-        public static string RampUpperFrameChar
+        public static char RampUpperFrameChar
         {
-            get
-            {
-                return Config.SaverConfig.RampUpperFrameChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "═";
-                Config.SaverConfig.RampUpperFrameChar = value;
-            }
+            get => Config.SaverConfig.RampUpperFrameChar;
+            set => Config.SaverConfig.RampUpperFrameChar = value;
         }
         /// <summary>
         /// [Ramp] Lower frame character 
         /// </summary>
-        public static string RampLowerFrameChar
+        public static char RampLowerFrameChar
         {
-            get
-            {
-                return Config.SaverConfig.RampLowerFrameChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "═";
-                Config.SaverConfig.RampLowerFrameChar = value;
-            }
+            get => Config.SaverConfig.RampLowerFrameChar;
+            set => Config.SaverConfig.RampLowerFrameChar = value;
         }
         /// <summary>
         /// [Ramp] Left frame character 
         /// </summary>
-        public static string RampLeftFrameChar
+        public static char RampLeftFrameChar
         {
-            get
-            {
-                return Config.SaverConfig.RampLeftFrameChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "║";
-                Config.SaverConfig.RampLeftFrameChar = value;
-            }
+            get => Config.SaverConfig.RampLeftFrameChar;
+            set => Config.SaverConfig.RampLeftFrameChar = value;
         }
         /// <summary>
         /// [Ramp] Right frame character 
         /// </summary>
-        public static string RampRightFrameChar
+        public static char RampRightFrameChar
         {
-            get
-            {
-                return Config.SaverConfig.RampRightFrameChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "║";
-                Config.SaverConfig.RampRightFrameChar = value;
-            }
+            get => Config.SaverConfig.RampRightFrameChar;
+            set => Config.SaverConfig.RampRightFrameChar = value;
         }
         /// <summary>
         /// [Ramp] The minimum red color level (true color - start)
         /// </summary>
         public static int RampMinimumRedColorLevelStart
         {
-            get
-            {
-                return Config.SaverConfig.RampMinimumRedColorLevelStart;
-            }
+            get => Config.SaverConfig.RampMinimumRedColorLevelStart;
             set
             {
                 if (value <= 0)
@@ -231,10 +152,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int RampMinimumGreenColorLevelStart
         {
-            get
-            {
-                return Config.SaverConfig.RampMinimumGreenColorLevelStart;
-            }
+            get => Config.SaverConfig.RampMinimumGreenColorLevelStart;
             set
             {
                 if (value <= 0)
@@ -249,10 +167,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int RampMinimumBlueColorLevelStart
         {
-            get
-            {
-                return Config.SaverConfig.RampMinimumBlueColorLevelStart;
-            }
+            get => Config.SaverConfig.RampMinimumBlueColorLevelStart;
             set
             {
                 if (value <= 0)
@@ -267,10 +182,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int RampMinimumColorLevelStart
         {
-            get
-            {
-                return Config.SaverConfig.RampMinimumColorLevelStart;
-            }
+            get => Config.SaverConfig.RampMinimumColorLevelStart;
             set
             {
                 int FinalMinimumLevel = 255;
@@ -286,10 +198,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int RampMaximumRedColorLevelStart
         {
-            get
-            {
-                return Config.SaverConfig.RampMaximumRedColorLevelStart;
-            }
+            get => Config.SaverConfig.RampMaximumRedColorLevelStart;
             set
             {
                 if (value <= Config.SaverConfig.RampMinimumRedColorLevelStart)
@@ -304,10 +213,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int RampMaximumGreenColorLevelStart
         {
-            get
-            {
-                return Config.SaverConfig.RampMaximumGreenColorLevelStart;
-            }
+            get => Config.SaverConfig.RampMaximumGreenColorLevelStart;
             set
             {
                 if (value <= Config.SaverConfig.RampMinimumGreenColorLevelStart)
@@ -322,10 +228,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int RampMaximumBlueColorLevelStart
         {
-            get
-            {
-                return Config.SaverConfig.RampMaximumBlueColorLevelStart;
-            }
+            get => Config.SaverConfig.RampMaximumBlueColorLevelStart;
             set
             {
                 if (value <= Config.SaverConfig.RampMinimumBlueColorLevelStart)
@@ -340,10 +243,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int RampMaximumColorLevelStart
         {
-            get
-            {
-                return Config.SaverConfig.RampMaximumColorLevelStart;
-            }
+            get => Config.SaverConfig.RampMaximumColorLevelStart;
             set
             {
                 int FinalMaximumLevel = 255;
@@ -359,10 +259,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int RampMinimumRedColorLevelEnd
         {
-            get
-            {
-                return Config.SaverConfig.RampMinimumRedColorLevelEnd;
-            }
+            get => Config.SaverConfig.RampMinimumRedColorLevelEnd;
             set
             {
                 if (value <= 0)
@@ -377,10 +274,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int RampMinimumGreenColorLevelEnd
         {
-            get
-            {
-                return Config.SaverConfig.RampMinimumGreenColorLevelEnd;
-            }
+            get => Config.SaverConfig.RampMinimumGreenColorLevelEnd;
             set
             {
                 if (value <= 0)
@@ -395,10 +289,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int RampMinimumBlueColorLevelEnd
         {
-            get
-            {
-                return Config.SaverConfig.RampMinimumBlueColorLevelEnd;
-            }
+            get => Config.SaverConfig.RampMinimumBlueColorLevelEnd;
             set
             {
                 if (value <= 0)
@@ -413,10 +304,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int RampMinimumColorLevelEnd
         {
-            get
-            {
-                return Config.SaverConfig.RampMinimumColorLevelEnd;
-            }
+            get => Config.SaverConfig.RampMinimumColorLevelEnd;
             set
             {
                 int FinalMinimumLevel = 255;
@@ -432,10 +320,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int RampMaximumRedColorLevelEnd
         {
-            get
-            {
-                return Config.SaverConfig.RampMaximumRedColorLevelEnd;
-            }
+            get => Config.SaverConfig.RampMaximumRedColorLevelEnd;
             set
             {
                 if (value <= Config.SaverConfig.RampMinimumRedColorLevelEnd)
@@ -450,10 +335,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int RampMaximumGreenColorLevelEnd
         {
-            get
-            {
-                return Config.SaverConfig.RampMaximumGreenColorLevelEnd;
-            }
+            get => Config.SaverConfig.RampMaximumGreenColorLevelEnd;
             set
             {
                 if (value <= Config.SaverConfig.RampMinimumGreenColorLevelEnd)
@@ -468,10 +350,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int RampMaximumBlueColorLevelEnd
         {
-            get
-            {
-                return Config.SaverConfig.RampMaximumBlueColorLevelEnd;
-            }
+            get => Config.SaverConfig.RampMaximumBlueColorLevelEnd;
             set
             {
                 if (value <= Config.SaverConfig.RampMinimumBlueColorLevelEnd)
@@ -486,10 +365,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int RampMaximumColorLevelEnd
         {
-            get
-            {
-                return Config.SaverConfig.RampMaximumColorLevelEnd;
-            }
+            get => Config.SaverConfig.RampMaximumColorLevelEnd;
             set
             {
                 int FinalMaximumLevel = 255;
@@ -505,126 +381,72 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static string RampUpperLeftCornerColor
         {
-            get
-            {
-                return Config.SaverConfig.RampUpperLeftCornerColor;
-            }
-            set
-            {
-                Config.SaverConfig.RampUpperLeftCornerColor = new Color(value).PlainSequence;
-            }
+            get => Config.SaverConfig.RampUpperLeftCornerColor;
+            set => Config.SaverConfig.RampUpperLeftCornerColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [Ramp] Upper right corner color.
         /// </summary>
         public static string RampUpperRightCornerColor
         {
-            get
-            {
-                return Config.SaverConfig.RampUpperRightCornerColor;
-            }
-            set
-            {
-                Config.SaverConfig.RampUpperRightCornerColor = new Color(value).PlainSequence;
-            }
+            get => Config.SaverConfig.RampUpperRightCornerColor;
+            set => Config.SaverConfig.RampUpperRightCornerColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [Ramp] Lower left corner color.
         /// </summary>
         public static string RampLowerLeftCornerColor
         {
-            get
-            {
-                return Config.SaverConfig.RampLowerLeftCornerColor;
-            }
-            set
-            {
-                Config.SaverConfig.RampLowerLeftCornerColor = new Color(value).PlainSequence;
-            }
+            get => Config.SaverConfig.RampLowerLeftCornerColor;
+            set => Config.SaverConfig.RampLowerLeftCornerColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [Ramp] Lower right corner color.
         /// </summary>
         public static string RampLowerRightCornerColor
         {
-            get
-            {
-                return Config.SaverConfig.RampLowerRightCornerColor;
-            }
-            set
-            {
-                Config.SaverConfig.RampLowerRightCornerColor = new Color(value).PlainSequence;
-            }
+            get => Config.SaverConfig.RampLowerRightCornerColor;
+            set => Config.SaverConfig.RampLowerRightCornerColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [Ramp] Upper frame color.
         /// </summary>
         public static string RampUpperFrameColor
         {
-            get
-            {
-                return Config.SaverConfig.RampUpperFrameColor;
-            }
-            set
-            {
-                Config.SaverConfig.RampUpperFrameColor = new Color(value).PlainSequence;
-            }
+            get => Config.SaverConfig.RampUpperFrameColor;
+            set => Config.SaverConfig.RampUpperFrameColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [Ramp] Lower frame color.
         /// </summary>
         public static string RampLowerFrameColor
         {
-            get
-            {
-                return Config.SaverConfig.RampLowerFrameColor;
-            }
-            set
-            {
-                Config.SaverConfig.RampLowerFrameColor = new Color(value).PlainSequence;
-            }
+            get => Config.SaverConfig.RampLowerFrameColor;
+            set => Config.SaverConfig.RampLowerFrameColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [Ramp] Left frame color.
         /// </summary>
         public static string RampLeftFrameColor
         {
-            get
-            {
-                return Config.SaverConfig.RampLeftFrameColor;
-            }
-            set
-            {
-                Config.SaverConfig.RampLeftFrameColor = new Color(value).PlainSequence;
-            }
+            get => Config.SaverConfig.RampLeftFrameColor;
+            set => Config.SaverConfig.RampLeftFrameColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [Ramp] Right frame color.
         /// </summary>
         public static string RampRightFrameColor
         {
-            get
-            {
-                return Config.SaverConfig.RampRightFrameColor;
-            }
-            set
-            {
-                Config.SaverConfig.RampRightFrameColor = new Color(value).PlainSequence;
-            }
+            get => Config.SaverConfig.RampRightFrameColor;
+            set => Config.SaverConfig.RampRightFrameColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [Ramp] Use the border colors.
         /// </summary>
         public static bool RampUseBorderColors
         {
-            get
-            {
-                return Config.SaverConfig.RampUseBorderColors;
-            }
-            set
-            {
-                Config.SaverConfig.RampUseBorderColors = value;
-            }
+            get => Config.SaverConfig.RampUseBorderColors;
+            set => Config.SaverConfig.RampUseBorderColors = value;
         }
 
     }
@@ -682,19 +504,18 @@ namespace KS.Misc.Screensaver.Displays
             // Draw the frame
             if (!ConsoleResizeListener.WasResized(false))
             {
-                // TODO: Deal with these, too.
-                TextWriterWhereColor.WriteWhere(RampSettings.RampUpperLeftCornerChar, RampFrameStartWidth, RampCenterPosition - 2, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampUpperLeftCornerColor) : ColorTools.GetGray());
-                TextWriterColor.Write(new string(RampSettings.RampUpperFrameChar[0], RampFrameSpaces), false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampUpperFrameColor) : ColorTools.GetGray());
-                TextWriterColor.Write(RampSettings.RampUpperRightCornerChar, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampUpperRightCornerColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(RampSettings.RampLeftFrameChar, RampFrameStartWidth, RampCenterPosition - 1, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLeftFrameColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(RampSettings.RampLeftFrameChar, RampFrameStartWidth, RampCenterPosition, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLeftFrameColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(RampSettings.RampLeftFrameChar, RampFrameStartWidth, RampCenterPosition + 1, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLeftFrameColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(RampSettings.RampRightFrameChar, RampFrameEndWidth + 1, RampCenterPosition - 1, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLeftFrameColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(RampSettings.RampRightFrameChar, RampFrameEndWidth + 1, RampCenterPosition, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLeftFrameColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(RampSettings.RampRightFrameChar, RampFrameEndWidth + 1, RampCenterPosition + 1, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLeftFrameColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(RampSettings.RampLowerLeftCornerChar, RampFrameStartWidth, RampCenterPosition + 2, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLowerLeftCornerColor) : ColorTools.GetGray());
-                TextWriterColor.Write(new string(RampSettings.RampLowerFrameChar[0], RampFrameSpaces), false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLowerFrameColor) : ColorTools.GetGray());
-                TextWriterColor.Write(RampSettings.RampLowerRightCornerChar, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLowerRightCornerColor) : ColorTools.GetGray());
+                TextWriterWhereColor.WriteWhere(RampSettings.RampUpperLeftCornerChar.ToString(), RampFrameStartWidth, RampCenterPosition - 2, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampUpperLeftCornerColor) : ColorTools.GetGray());
+                TextWriterColor.Write(new string(RampSettings.RampUpperFrameChar, RampFrameSpaces), false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampUpperFrameColor) : ColorTools.GetGray());
+                TextWriterColor.Write(RampSettings.RampUpperRightCornerChar.ToString(), false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampUpperRightCornerColor) : ColorTools.GetGray());
+                TextWriterWhereColor.WriteWhere(RampSettings.RampLeftFrameChar.ToString(), RampFrameStartWidth, RampCenterPosition - 1, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLeftFrameColor) : ColorTools.GetGray());
+                TextWriterWhereColor.WriteWhere(RampSettings.RampLeftFrameChar.ToString(), RampFrameStartWidth, RampCenterPosition, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLeftFrameColor) : ColorTools.GetGray());
+                TextWriterWhereColor.WriteWhere(RampSettings.RampLeftFrameChar.ToString(), RampFrameStartWidth, RampCenterPosition + 1, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLeftFrameColor) : ColorTools.GetGray());
+                TextWriterWhereColor.WriteWhere(RampSettings.RampRightFrameChar.ToString(), RampFrameEndWidth + 1, RampCenterPosition - 1, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLeftFrameColor) : ColorTools.GetGray());
+                TextWriterWhereColor.WriteWhere(RampSettings.RampRightFrameChar.ToString(), RampFrameEndWidth + 1, RampCenterPosition, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLeftFrameColor) : ColorTools.GetGray());
+                TextWriterWhereColor.WriteWhere(RampSettings.RampRightFrameChar.ToString(), RampFrameEndWidth + 1, RampCenterPosition + 1, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLeftFrameColor) : ColorTools.GetGray());
+                TextWriterWhereColor.WriteWhere(RampSettings.RampLowerLeftCornerChar.ToString(), RampFrameStartWidth, RampCenterPosition + 2, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLowerLeftCornerColor) : ColorTools.GetGray());
+                TextWriterColor.Write(new string(RampSettings.RampLowerFrameChar, RampFrameSpaces), false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLowerFrameColor) : ColorTools.GetGray());
+                TextWriterColor.Write(RampSettings.RampLowerRightCornerChar.ToString(), false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLowerRightCornerColor) : ColorTools.GetGray());
             }
 
             // Draw the ramp

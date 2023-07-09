@@ -135,42 +135,42 @@ namespace KS.Misc.Notifications
         /// <summary>
         /// Upper left corner character for custom priority notification
         /// </summary>
-        public string CustomUpperLeftCornerChar { get; set; } = "╔";
+        public char CustomUpperLeftCornerChar { get; set; } = '╔';
 
         /// <summary>
         /// Upper right corner character for custom priority notification
         /// </summary>
-        public string CustomUpperRightCornerChar { get; set; } = "╗";
+        public char CustomUpperRightCornerChar { get; set; } = '╗';
 
         /// <summary>
         /// Lower left corner character for custom priority notification
         /// </summary>
-        public string CustomLowerLeftCornerChar { get; set; } = "╚";
+        public char CustomLowerLeftCornerChar { get; set; } = '╚';
 
         /// <summary>
         /// Lower right corner character for custom priority notification
         /// </summary>
-        public string CustomLowerRightCornerChar { get; set; } = "╝";
+        public char CustomLowerRightCornerChar { get; set; } = '╝';
 
         /// <summary>
         /// Upper frame character for custom priority notification
         /// </summary>
-        public string CustomUpperFrameChar { get; set; } = "═";
+        public char CustomUpperFrameChar { get; set; } = '═';
 
         /// <summary>
         /// Lower frame character for custom priority notification
         /// </summary>
-        public string CustomLowerFrameChar { get; set; } = "═";
+        public char CustomLowerFrameChar { get; set; } = '═';
 
         /// <summary>
         /// Left frame character for custom priority notification
         /// </summary>
-        public string CustomLeftFrameChar { get; set; } = "║";
+        public char CustomLeftFrameChar { get; set; } = '║';
 
         /// <summary>
         /// Right frame character for custom priority notification
         /// </summary>
-        public string CustomRightFrameChar { get; set; } = "║";
+        public char CustomRightFrameChar { get; set; } = '║';
 
         /// <summary>
         /// Whether the progress has been compeleted successfully or with failure

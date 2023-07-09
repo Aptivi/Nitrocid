@@ -65,8 +65,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBoxPlain(string text,
-                                            string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar,
-                                            string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar, params object[] vars)
+                                            char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+                                            char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars)
         {
             try
             {
@@ -144,8 +144,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static string WriteInfoBoxPlainInput(string text,
-                                                    string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar,
-                                                    string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar, params object[] vars)
+                                                    char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+                                                    char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars)
         {
             try
             {
@@ -300,8 +300,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBox(string text,
-                                       string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar,
-                                       string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar, params object[] vars) =>
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars) =>
             WriteInfoBox(text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, KernelColorType.Separator, KernelColorType.Background, vars);
 
         /// <summary>
@@ -319,8 +319,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBox(string text,
-                                       string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar,
-                                       string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar,
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        KernelColorType InfoBoxColor, params object[] vars) =>
             WriteInfoBox(text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, KernelColorType.Background, vars);
 
@@ -340,8 +340,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBox(string text,
-                                       string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar,
-                                       string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar,
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        KernelColorType InfoBoxColor, KernelColorType BackgroundColor, params object[] vars)
         {
             try
@@ -372,8 +372,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBox(string text,
-                                       string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar,
-                                       string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar,
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        Color InfoBoxColor, params object[] vars) =>
             WriteInfoBox(text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, GetColor(KernelColorType.Background), vars);
 
@@ -393,8 +393,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBox(string text,
-                                       string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar,
-                                       string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar,
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        Color InfoBoxColor, Color BackgroundColor, params object[] vars)
         {
             try
@@ -425,8 +425,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBox(string text,
-                                       string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar,
-                                       string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar,
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        ConsoleColors InfoBoxColor, params object[] vars) =>
             WriteInfoBox(text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(InfoBoxColor), GetColor(KernelColorType.Background), vars);
 
@@ -446,8 +446,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBox(string text,
-                                       string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar,
-                                       string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar,
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        ConsoleColors InfoBoxColor, ConsoleColors BackgroundColor, params object[] vars)
         {
             try
@@ -577,8 +577,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static string WriteInfoBoxInput(string text,
-                                       string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar,
-                                       string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar, params object[] vars) =>
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars) =>
             WriteInfoBoxInput(text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, KernelColorType.Separator, KernelColorType.Background, vars);
 
         /// <summary>
@@ -596,8 +596,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static string WriteInfoBoxInput(string text,
-                                       string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar,
-                                       string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar,
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        KernelColorType InfoBoxColor, params object[] vars) =>
             WriteInfoBoxInput(text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, KernelColorType.Background, vars);
 
@@ -617,8 +617,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static string WriteInfoBoxInput(string text,
-                                       string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar,
-                                       string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar,
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        KernelColorType InfoBoxColor, KernelColorType BackgroundColor, params object[] vars)
         {
             try
@@ -650,8 +650,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static string WriteInfoBoxInput(string text,
-                                       string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar,
-                                       string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar,
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        Color InfoBoxColor, params object[] vars) =>
             WriteInfoBoxInput(text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, GetColor(KernelColorType.Background), vars);
 
@@ -671,8 +671,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static string WriteInfoBoxInput(string text,
-                                       string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar,
-                                       string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar,
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        Color InfoBoxColor, Color BackgroundColor, params object[] vars)
         {
             try
@@ -704,8 +704,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static string WriteInfoBoxInput(string text,
-                                       string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar,
-                                       string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar,
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        ConsoleColors InfoBoxColor, params object[] vars) =>
             WriteInfoBoxInput(text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(InfoBoxColor), GetColor(KernelColorType.Background), vars);
 
@@ -725,8 +725,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static string WriteInfoBoxInput(string text,
-                                       string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar,
-                                       string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar,
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        ConsoleColors InfoBoxColor, ConsoleColors BackgroundColor, params object[] vars)
         {
             try

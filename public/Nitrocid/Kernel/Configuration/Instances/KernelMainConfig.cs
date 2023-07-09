@@ -1141,66 +1141,66 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// A character that resembles the upper left corner. Be sure to only input one character
         /// </summary>
-        public string NotifyUpperLeftCornerChar
+        public char NotifyUpperLeftCornerChar
         {
             get => NotificationManager.notifyUpperLeftCornerChar;
-            set => NotificationManager.notifyUpperLeftCornerChar = string.IsNullOrEmpty(value) ? "╔" : value[0].ToString();
+            set => NotificationManager.notifyUpperLeftCornerChar = value;
         }
         /// <summary>
         /// A character that resembles the upper right corner. Be sure to only input one character
         /// </summary>
-        public string NotifyUpperRightCornerChar
+        public char NotifyUpperRightCornerChar
         {
             get => NotificationManager.notifyUpperRightCornerChar;
-            set => NotificationManager.notifyUpperRightCornerChar = string.IsNullOrEmpty(value) ? "╗" : value[0].ToString();
+            set => NotificationManager.notifyUpperRightCornerChar = value;
         }
         /// <summary>
         /// A character that resembles the lower left corner. Be sure to only input one character
         /// </summary>
-        public string NotifyLowerLeftCornerChar
+        public char NotifyLowerLeftCornerChar
         {
             get => NotificationManager.notifyLowerLeftCornerChar;
-            set => NotificationManager.notifyLowerLeftCornerChar = string.IsNullOrEmpty(value) ? "╚" : value[0].ToString();
+            set => NotificationManager.notifyLowerLeftCornerChar = value;
         }
         /// <summary>
         /// A character that resembles the lower right corner. Be sure to only input one character
         /// </summary>
-        public string NotifyLowerRightCornerChar
+        public char NotifyLowerRightCornerChar
         {
             get => NotificationManager.notifyLowerRightCornerChar;
-            set => NotificationManager.notifyLowerRightCornerChar = string.IsNullOrEmpty(value) ? "╝" : value[0].ToString();
+            set => NotificationManager.notifyLowerRightCornerChar = value;
         }
         /// <summary>
         /// A character that resembles the upper frame. Be sure to only input one character
         /// </summary>
-        public string NotifyUpperFrameChar
+        public char NotifyUpperFrameChar
         {
             get => NotificationManager.notifyUpperFrameChar;
-            set => NotificationManager.notifyUpperFrameChar = string.IsNullOrEmpty(value) ? "═" : value[0].ToString();
+            set => NotificationManager.notifyUpperFrameChar = value;
         }
         /// <summary>
         /// A character that resembles the lower frame. Be sure to only input one character
         /// </summary>
-        public string NotifyLowerFrameChar
+        public char NotifyLowerFrameChar
         {
             get => NotificationManager.notifyLowerFrameChar;
-            set => NotificationManager.notifyLowerFrameChar = string.IsNullOrEmpty(value) ? "═" : value[0].ToString();
+            set => NotificationManager.notifyLowerFrameChar = value;
         }
         /// <summary>
         /// A character that resembles the left frame. Be sure to only input one character
         /// </summary>
-        public string NotifyLeftFrameChar
+        public char NotifyLeftFrameChar
         {
             get => NotificationManager.notifyLeftFrameChar;
-            set => NotificationManager.notifyLeftFrameChar = string.IsNullOrEmpty(value) ? "║" : value[0].ToString();
+            set => NotificationManager.notifyLeftFrameChar = value;
         }
         /// <summary>
         /// A character that resembles the right frame. Be sure to only input one character
         /// </summary>
-        public string NotifyRightFrameChar
+        public char NotifyRightFrameChar
         {
             get => NotificationManager.notifyRightFrameChar;
-            set => NotificationManager.notifyRightFrameChar = string.IsNullOrEmpty(value) ? "║" : value[0].ToString();
+            set => NotificationManager.notifyRightFrameChar = value;
         }
         /// <summary>
         /// Select your preferred difficulty
@@ -1269,66 +1269,66 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// A character that resembles the upper left corner. Be sure to only input one character
         /// </summary>
-        public string ProgressUpperLeftCornerChar
+        public char ProgressUpperLeftCornerChar
         {
             get => ProgressTools.progressUpperLeftCornerChar;
-            set => ProgressTools.progressUpperLeftCornerChar = string.IsNullOrEmpty(value) ? "╔" : value[0].ToString();
+            set => ProgressTools.progressUpperLeftCornerChar = value;
         }
         /// <summary>
         /// A character that resembles the upper right corner. Be sure to only input one character
         /// </summary>
-        public string ProgressUpperRightCornerChar
+        public char ProgressUpperRightCornerChar
         {
             get => ProgressTools.progressUpperRightCornerChar;
-            set => ProgressTools.progressUpperRightCornerChar = string.IsNullOrEmpty(value) ? "╗" : value[0].ToString();
+            set => ProgressTools.progressUpperRightCornerChar = value;
         }
         /// <summary>
         /// A character that resembles the lower left corner. Be sure to only input one character
         /// </summary>
-        public string ProgressLowerLeftCornerChar
+        public char ProgressLowerLeftCornerChar
         {
             get => ProgressTools.progressLowerLeftCornerChar;
-            set => ProgressTools.progressLowerLeftCornerChar = string.IsNullOrEmpty(value) ? "╚" : value[0].ToString();
+            set => ProgressTools.progressLowerLeftCornerChar = value;
         }
         /// <summary>
         /// A character that resembles the lower right corner. Be sure to only input one character
         /// </summary>
-        public string ProgressLowerRightCornerChar
+        public char ProgressLowerRightCornerChar
         {
             get => ProgressTools.progressLowerRightCornerChar;
-            set => ProgressTools.progressLowerRightCornerChar = string.IsNullOrEmpty(value) ? "╝" : value[0].ToString();
+            set => ProgressTools.progressLowerRightCornerChar = value;
         }
         /// <summary>
         /// A character that resembles the upper frame. Be sure to only input one character
         /// </summary>
-        public string ProgressUpperFrameChar
+        public char ProgressUpperFrameChar
         {
             get => ProgressTools.progressUpperFrameChar;
-            set => ProgressTools.progressUpperFrameChar = string.IsNullOrEmpty(value) ? "═" : value[0].ToString();
+            set => ProgressTools.progressUpperFrameChar = value;
         }
         /// <summary>
         /// A character that resembles the lower frame. Be sure to only input one character
         /// </summary>
-        public string ProgressLowerFrameChar
+        public char ProgressLowerFrameChar
         {
             get => ProgressTools.progressLowerFrameChar;
-            set => ProgressTools.progressLowerFrameChar = string.IsNullOrEmpty(value) ? "═" : value[0].ToString();
+            set => ProgressTools.progressLowerFrameChar = value;
         }
         /// <summary>
         /// A character that resembles the left frame. Be sure to only input one character
         /// </summary>
-        public string ProgressLeftFrameChar
+        public char ProgressLeftFrameChar
         {
             get => ProgressTools.progressLeftFrameChar;
-            set => ProgressTools.progressLeftFrameChar = string.IsNullOrEmpty(value) ? "║" : value[0].ToString();
+            set => ProgressTools.progressLeftFrameChar = value;
         }
         /// <summary>
         /// A character that resembles the right frame. Be sure to only input one character
         /// </summary>
-        public string ProgressRightFrameChar
+        public char ProgressRightFrameChar
         {
             get => ProgressTools.progressRightFrameChar;
-            set => ProgressTools.progressRightFrameChar = string.IsNullOrEmpty(value) ? "║" : value[0].ToString();
+            set => ProgressTools.progressRightFrameChar = value;
         }
         /// <summary>
         /// Whether the input history is enabled or not. If enabled, you can access recently typed commands using the up or down arrow keys.
@@ -1371,130 +1371,66 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// A character that resembles the upper left corner. Be sure to only input one character.
         /// </summary>
-        public string BorderUpperLeftCornerChar
+        public char BorderUpperLeftCornerChar
         {
-            get
-            {
-                return BorderTools._borderUpperLeftCornerChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "╔";
-                BorderTools._borderUpperLeftCornerChar = value;
-            }
+            get => BorderTools._borderUpperLeftCornerChar;
+            set => BorderTools._borderUpperLeftCornerChar = value;
         }
         /// <summary>
         /// A character that resembles the upper right corner. Be sure to only input one character.
         /// </summary>
-        public string BorderUpperRightCornerChar
+        public char BorderUpperRightCornerChar
         {
-            get
-            {
-                return BorderTools._borderUpperRightCornerChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "╗";
-                BorderTools._borderUpperRightCornerChar = value;
-            }
+            get => BorderTools._borderUpperRightCornerChar;
+            set => BorderTools._borderUpperRightCornerChar = value;
         }
         /// <summary>
         /// A character that resembles the lower left corner. Be sure to only input one character.
         /// </summary>
-        public string BorderLowerLeftCornerChar
+        public char BorderLowerLeftCornerChar
         {
-            get
-            {
-                return BorderTools._borderLowerLeftCornerChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "╚";
-                BorderTools._borderLowerLeftCornerChar = value;
-            }
+            get => BorderTools._borderLowerLeftCornerChar;
+            set => BorderTools._borderLowerLeftCornerChar = value;
         }
         /// <summary>
         /// A character that resembles the lower right corner. Be sure to only input one character.
         /// </summary>
-        public string BorderLowerRightCornerChar
+        public char BorderLowerRightCornerChar
         {
-            get
-            {
-                return BorderTools._borderLowerRightCornerChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "╝";
-                BorderTools._borderLowerRightCornerChar = value;
-            }
+            get => BorderTools._borderLowerRightCornerChar;
+            set => BorderTools._borderLowerRightCornerChar = value;
         }
         /// <summary>
         /// A character that resembles the upper frame. Be sure to only input one character.
         /// </summary>
-        public string BorderUpperFrameChar
+        public char BorderUpperFrameChar
         {
-            get
-            {
-                return BorderTools._borderUpperFrameChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "═";
-                BorderTools._borderUpperFrameChar = value;
-            }
+            get => BorderTools._borderUpperFrameChar;
+            set => BorderTools._borderUpperFrameChar = value;
         }
         /// <summary>
         /// A character that resembles the lower frame. Be sure to only input one character.
         /// </summary>
-        public string BorderLowerFrameChar
+        public char BorderLowerFrameChar
         {
-            get
-            {
-                return BorderTools._borderLowerFrameChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "═";
-                BorderTools._borderLowerFrameChar = value;
-            }
+            get => BorderTools._borderLowerFrameChar;
+            set => BorderTools._borderLowerFrameChar = value;
         }
         /// <summary>
         /// A character that resembles the left frame. Be sure to only input one character.
         /// </summary>
-        public string BorderLeftFrameChar
+        public char BorderLeftFrameChar
         {
-            get
-            {
-                return BorderTools._borderLeftFrameChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "║";
-                BorderTools._borderLeftFrameChar = value;
-            }
+            get => BorderTools._borderLeftFrameChar;
+            set => BorderTools._borderLeftFrameChar = value;
         }
         /// <summary>
         /// A character that resembles the right frame. Be sure to only input one character.
         /// </summary>
-        public string BorderRightFrameChar
+        public char BorderRightFrameChar
         {
-            get
-            {
-                return BorderTools._borderRightFrameChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "║";
-                BorderTools._borderRightFrameChar = value;
-            }
+            get => BorderTools._borderRightFrameChar;
+            set => BorderTools._borderRightFrameChar = value;
         }
         /// <summary>
         /// File manager background color

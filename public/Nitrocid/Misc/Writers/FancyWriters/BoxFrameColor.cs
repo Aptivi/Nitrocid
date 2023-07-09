@@ -42,10 +42,10 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         public static void WriteBoxFramePlain(int Left, int Top, int InteriorWidth, int InteriorHeight) =>
             WriteBoxFramePlain(Left, Top, InteriorWidth, InteriorHeight,
-                             BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                             BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                             BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                             BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar);
+                               BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
+                               BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
+                               BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
+                               BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar);
 
         /// <summary>
         /// Writes the box frame plainly
@@ -63,20 +63,19 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="LeftFrameChar">Left frame character for box frame</param>
         /// <param name="RightFrameChar">Right frame character for box frame</param>
         public static void WriteBoxFramePlain(int Left, int Top, int InteriorWidth, int InteriorHeight, 
-                                            string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar, 
-                                            string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar)
+                                              char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, 
+                                              char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar)
         {
             try 
             {
-                // TODO: Deal with these, too.
                 // Draw the box frame
-                TextWriterWhereColor.WriteWhere(UpperLeftCornerChar + new string(UpperFrameChar[0], InteriorWidth) + UpperRightCornerChar, Left, Top, true);
+                TextWriterWhereColor.WriteWhere(UpperLeftCornerChar + new string(UpperFrameChar, InteriorWidth) + UpperRightCornerChar, Left, Top, true);
                 for (int i = 1; i <= InteriorHeight; i++)
                 {
-                    TextWriterWhereColor.WriteWhere(LeftFrameChar, Left, Top + i, true);
-                    TextWriterWhereColor.WriteWhere(RightFrameChar, Left + InteriorWidth + 1, Top + i, true);
+                    TextWriterWhereColor.WriteWhere(LeftFrameChar.ToString(), Left, Top + i, true);
+                    TextWriterWhereColor.WriteWhere(RightFrameChar.ToString(), Left + InteriorWidth + 1, Top + i, true);
                 }
-                TextWriterWhereColor.WriteWhere(LowerLeftCornerChar + new string(LowerFrameChar[0], InteriorWidth) + LowerRightCornerChar, Left, Top + InteriorHeight + 1, true);
+                TextWriterWhereColor.WriteWhere(LowerLeftCornerChar + new string(LowerFrameChar, InteriorWidth) + LowerRightCornerChar, Left, Top + InteriorHeight + 1, true);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -215,8 +214,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="LeftFrameChar">Left frame character for box frame</param>
         /// <param name="RightFrameChar">Right frame character for box frame</param>
         public static void WriteBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight, 
-                                       string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar, 
-                                       string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar) =>
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, 
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar) =>
             WriteBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, KernelColorType.Separator, KernelColorType.Background);
 
         /// <summary>
@@ -236,8 +235,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="RightFrameChar">Right frame character for box frame</param>
         /// <param name="BoxFrameColor">BoxFrame color from Nitrocid KS's <see cref="KernelColorType"/></param>
         public static void WriteBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight, 
-                                       string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar, 
-                                       string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar, 
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, 
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, 
                                        KernelColorType BoxFrameColor) =>
             WriteBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, BoxFrameColor, KernelColorType.Background);
 
@@ -259,8 +258,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="BoxFrameColor">BoxFrame color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="BackgroundColor">BoxFrame background color from Nitrocid KS's <see cref="KernelColorType"/></param>
         public static void WriteBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight, 
-                                       string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar, 
-                                       string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar, 
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, 
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, 
                                        KernelColorType BoxFrameColor, KernelColorType BackgroundColor)
         {
             try
@@ -293,8 +292,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="RightFrameChar">Right frame character for box frame</param>
         /// <param name="BoxFrameColor">BoxFrame color</param>
         public static void WriteBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight, 
-                                       string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar, 
-                                       string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar, 
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, 
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, 
                                        Color BoxFrameColor) =>
             WriteBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, BoxFrameColor, GetColor(KernelColorType.Background));
 
@@ -316,8 +315,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="BoxFrameColor">BoxFrame color</param>
         /// <param name="BackgroundColor">BoxFrame background color</param>
         public static void WriteBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight, 
-                                       string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar, 
-                                       string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar, 
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, 
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, 
                                        Color BoxFrameColor, Color BackgroundColor)
         {
             try
@@ -350,8 +349,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="RightFrameChar">Right frame character for box frame</param>
         /// <param name="BoxFrameColor">BoxFrame color</param>
         public static void WriteBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight, 
-                                       string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar, 
-                                       string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar, 
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, 
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, 
                                        ConsoleColors BoxFrameColor) =>
             WriteBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(BoxFrameColor), GetColor(KernelColorType.Background));
 
@@ -373,8 +372,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="BoxFrameColor">BoxFrame color</param>
         /// <param name="BackgroundColor">BoxFrame background color</param>
         public static void WriteBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight, 
-                                       string UpperLeftCornerChar, string LowerLeftCornerChar, string UpperRightCornerChar, string LowerRightCornerChar, 
-                                       string UpperFrameChar, string LowerFrameChar, string LeftFrameChar, string RightFrameChar, 
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, 
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, 
                                        ConsoleColors BoxFrameColor, ConsoleColors BackgroundColor)
         {
             try

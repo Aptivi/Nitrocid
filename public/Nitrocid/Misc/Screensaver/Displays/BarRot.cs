@@ -39,24 +39,15 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static bool BarRotTrueColor
         {
-            get
-            {
-                return Config.SaverConfig.BarRotTrueColor;
-            }
-            set
-            {
-                Config.SaverConfig.BarRotTrueColor = value;
-            }
+            get => Config.SaverConfig.BarRotTrueColor;
+            set => Config.SaverConfig.BarRotTrueColor = value;
         }
         /// <summary>
         /// [BarRot] How many milliseconds to wait before making the next write?
         /// </summary>
         public static int BarRotDelay
         {
-            get
-            {
-                return Config.SaverConfig.BarRotDelay;
-            }
+            get => Config.SaverConfig.BarRotDelay;
             set
             {
                 if (value <= 0)
@@ -69,10 +60,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int BarRotNextRampDelay
         {
-            get
-            {
-                return Config.SaverConfig.BarRotNextRampDelay;
-            }
+            get => Config.SaverConfig.BarRotNextRampDelay;
             set
             {
                 if (value <= 0)
@@ -83,140 +71,73 @@ namespace KS.Misc.Screensaver.Displays
         /// <summary>
         /// [BarRot] Upper left corner character 
         /// </summary>
-        public static string BarRotUpperLeftCornerChar
+        public static char BarRotUpperLeftCornerChar
         {
-            get
-            {
-                return Config.SaverConfig.BarRotUpperLeftCornerChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "╔";
-                Config.SaverConfig.BarRotUpperLeftCornerChar = value;
-            }
+            get => Config.SaverConfig.BarRotUpperLeftCornerChar;
+            set => Config.SaverConfig.BarRotUpperLeftCornerChar = value;
         }
         /// <summary>
         /// [BarRot] Upper right corner character 
         /// </summary>
-        public static string BarRotUpperRightCornerChar
+        public static char BarRotUpperRightCornerChar
         {
-            get
-            {
-                return Config.SaverConfig.BarRotUpperRightCornerChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "╗";
-                Config.SaverConfig.BarRotUpperRightCornerChar = value;
-            }
+            get => Config.SaverConfig.BarRotUpperRightCornerChar;
+            set => Config.SaverConfig.BarRotUpperRightCornerChar = value;
         }
         /// <summary>
         /// [BarRot] Lower left corner character 
         /// </summary>
-        public static string BarRotLowerLeftCornerChar
+        public static char BarRotLowerLeftCornerChar
         {
-            get
-            {
-                return Config.SaverConfig.BarRotLowerLeftCornerChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "╚";
-                Config.SaverConfig.BarRotLowerLeftCornerChar = value;
-            }
+            get => Config.SaverConfig.BarRotLowerLeftCornerChar;
+            set => Config.SaverConfig.BarRotLowerLeftCornerChar = value;
         }
         /// <summary>
         /// [BarRot] Lower right corner character 
         /// </summary>
-        public static string BarRotLowerRightCornerChar
+        public static char BarRotLowerRightCornerChar
         {
-            get
-            {
-                return Config.SaverConfig.BarRotLowerRightCornerChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "╝";
-                Config.SaverConfig.BarRotLowerRightCornerChar = value;
-            }
+            get => Config.SaverConfig.BarRotLowerRightCornerChar;
+            set => Config.SaverConfig.BarRotLowerRightCornerChar = value;
         }
         /// <summary>
         /// [BarRot] Upper frame character 
         /// </summary>
-        public static string BarRotUpperFrameChar
+        public static char BarRotUpperFrameChar
         {
-            get
-            {
-                return Config.SaverConfig.BarRotUpperFrameChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "═";
-                Config.SaverConfig.BarRotUpperFrameChar = value;
-            }
+            get => Config.SaverConfig.BarRotUpperFrameChar;
+            set => Config.SaverConfig.BarRotUpperFrameChar = value;
         }
         /// <summary>
         /// [BarRot] Lower frame character 
         /// </summary>
-        public static string BarRotLowerFrameChar
+        public static char BarRotLowerFrameChar
         {
-            get
-            {
-                return Config.SaverConfig.BarRotLowerFrameChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "═";
-                Config.SaverConfig.BarRotLowerFrameChar = value;
-            }
+            get => Config.SaverConfig.BarRotLowerFrameChar;
+            set => Config.SaverConfig.BarRotLowerFrameChar = value;
         }
         /// <summary>
         /// [BarRot] Left frame character 
         /// </summary>
-        public static string BarRotLeftFrameChar
+        public static char BarRotLeftFrameChar
         {
-            get
-            {
-                return Config.SaverConfig.BarRotLeftFrameChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "║";
-                Config.SaverConfig.BarRotLeftFrameChar = value;
-            }
+            get => Config.SaverConfig.BarRotLeftFrameChar;
+            set => Config.SaverConfig.BarRotLeftFrameChar = value;
         }
         /// <summary>
         /// [BarRot] Right frame character 
         /// </summary>
-        public static string BarRotRightFrameChar
+        public static char BarRotRightFrameChar
         {
-            get
-            {
-                return Config.SaverConfig.BarRotRightFrameChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "║";
-                Config.SaverConfig.BarRotRightFrameChar = value;
-            }
+            get => Config.SaverConfig.BarRotRightFrameChar;
+            set => Config.SaverConfig.BarRotRightFrameChar = value;
         }
         /// <summary>
         /// [BarRot] The minimum red color level (true color - start)
         /// </summary>
         public static int BarRotMinimumRedColorLevelStart
         {
-            get
-            {
-                return Config.SaverConfig.BarRotMinimumRedColorLevelStart;
-            }
+            get => Config.SaverConfig.BarRotMinimumRedColorLevelStart;
             set
             {
                 if (value <= 0)
@@ -231,10 +152,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int BarRotMinimumGreenColorLevelStart
         {
-            get
-            {
-                return Config.SaverConfig.BarRotMinimumGreenColorLevelStart;
-            }
+            get => Config.SaverConfig.BarRotMinimumGreenColorLevelStart;
             set
             {
                 if (value <= 0)
@@ -249,10 +167,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int BarRotMinimumBlueColorLevelStart
         {
-            get
-            {
-                return Config.SaverConfig.BarRotMinimumBlueColorLevelStart;
-            }
+            get => Config.SaverConfig.BarRotMinimumBlueColorLevelStart;
             set
             {
                 if (value <= 0)
@@ -267,10 +182,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int BarRotMaximumRedColorLevelStart
         {
-            get
-            {
-                return Config.SaverConfig.BarRotMaximumRedColorLevelStart;
-            }
+            get => Config.SaverConfig.BarRotMaximumRedColorLevelStart;
             set
             {
                 if (value <= Config.SaverConfig.BarRotMinimumRedColorLevelStart)
@@ -285,10 +197,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int BarRotMaximumGreenColorLevelStart
         {
-            get
-            {
-                return Config.SaverConfig.BarRotMaximumGreenColorLevelStart;
-            }
+            get => Config.SaverConfig.BarRotMaximumGreenColorLevelStart;
             set
             {
                 if (value <= Config.SaverConfig.BarRotMinimumGreenColorLevelStart)
@@ -303,10 +212,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int BarRotMaximumBlueColorLevelStart
         {
-            get
-            {
-                return Config.SaverConfig.BarRotMaximumBlueColorLevelStart;
-            }
+            get => Config.SaverConfig.BarRotMaximumBlueColorLevelStart;
             set
             {
                 if (value <= Config.SaverConfig.BarRotMinimumBlueColorLevelStart)
@@ -321,10 +227,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int BarRotMinimumRedColorLevelEnd
         {
-            get
-            {
-                return Config.SaverConfig.BarRotMinimumRedColorLevelEnd;
-            }
+            get => Config.SaverConfig.BarRotMinimumRedColorLevelEnd;
             set
             {
                 if (value <= 0)
@@ -339,10 +242,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int BarRotMinimumGreenColorLevelEnd
         {
-            get
-            {
-                return Config.SaverConfig.BarRotMinimumGreenColorLevelEnd;
-            }
+            get => Config.SaverConfig.BarRotMinimumGreenColorLevelEnd;
             set
             {
                 if (value <= 0)
@@ -357,10 +257,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int BarRotMinimumBlueColorLevelEnd
         {
-            get
-            {
-                return Config.SaverConfig.BarRotMinimumBlueColorLevelEnd;
-            }
+            get => Config.SaverConfig.BarRotMinimumBlueColorLevelEnd;
             set
             {
                 if (value <= 0)
@@ -375,10 +272,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int BarRotMaximumRedColorLevelEnd
         {
-            get
-            {
-                return Config.SaverConfig.BarRotMaximumRedColorLevelEnd;
-            }
+            get => Config.SaverConfig.BarRotMaximumRedColorLevelEnd;
             set
             {
                 if (value <= Config.SaverConfig.BarRotMinimumRedColorLevelEnd)
@@ -393,10 +287,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int BarRotMaximumGreenColorLevelEnd
         {
-            get
-            {
-                return Config.SaverConfig.BarRotMaximumGreenColorLevelEnd;
-            }
+            get => Config.SaverConfig.BarRotMaximumGreenColorLevelEnd;
             set
             {
                 if (value <= Config.SaverConfig.BarRotMinimumGreenColorLevelEnd)
@@ -411,10 +302,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int BarRotMaximumBlueColorLevelEnd
         {
-            get
-            {
-                return Config.SaverConfig.BarRotMaximumBlueColorLevelEnd;
-            }
+            get => Config.SaverConfig.BarRotMaximumBlueColorLevelEnd;
             set
             {
                 if (value <= Config.SaverConfig.BarRotMinimumBlueColorLevelEnd)
@@ -429,126 +317,72 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static string BarRotUpperLeftCornerColor
         {
-            get
-            {
-                return Config.SaverConfig.BarRotUpperLeftCornerColor;
-            }
-            set
-            {
-                Config.SaverConfig.BarRotUpperLeftCornerColor = new Color(value).PlainSequence;
-            }
+            get => Config.SaverConfig.BarRotUpperLeftCornerColor;
+            set => Config.SaverConfig.BarRotUpperLeftCornerColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [BarRot] Upper right corner color.
         /// </summary>
         public static string BarRotUpperRightCornerColor
         {
-            get
-            {
-                return Config.SaverConfig.BarRotUpperRightCornerColor;
-            }
-            set
-            {
-                Config.SaverConfig.BarRotUpperRightCornerColor = new Color(value).PlainSequence;
-            }
+            get => Config.SaverConfig.BarRotUpperRightCornerColor;
+            set => Config.SaverConfig.BarRotUpperRightCornerColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [BarRot] Lower left corner color.
         /// </summary>
         public static string BarRotLowerLeftCornerColor
         {
-            get
-            {
-                return Config.SaverConfig.BarRotLowerLeftCornerColor;
-            }
-            set
-            {
-                Config.SaverConfig.BarRotLowerLeftCornerColor = new Color(value).PlainSequence;
-            }
+            get => Config.SaverConfig.BarRotLowerLeftCornerColor;
+            set => Config.SaverConfig.BarRotLowerLeftCornerColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [BarRot] Lower right corner color.
         /// </summary>
         public static string BarRotLowerRightCornerColor
         {
-            get
-            {
-                return Config.SaverConfig.BarRotLowerRightCornerColor;
-            }
-            set
-            {
-                Config.SaverConfig.BarRotLowerRightCornerColor = new Color(value).PlainSequence;
-            }
+            get => Config.SaverConfig.BarRotLowerRightCornerColor;
+            set => Config.SaverConfig.BarRotLowerRightCornerColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [BarRot] Upper frame color.
         /// </summary>
         public static string BarRotUpperFrameColor
         {
-            get
-            {
-                return Config.SaverConfig.BarRotUpperFrameColor;
-            }
-            set
-            {
-                Config.SaverConfig.BarRotUpperFrameColor = new Color(value).PlainSequence;
-            }
+            get => Config.SaverConfig.BarRotUpperFrameColor;
+            set => Config.SaverConfig.BarRotUpperFrameColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [BarRot] Lower frame color.
         /// </summary>
         public static string BarRotLowerFrameColor
         {
-            get
-            {
-                return Config.SaverConfig.BarRotLowerFrameColor;
-            }
-            set
-            {
-                Config.SaverConfig.BarRotLowerFrameColor = new Color(value).PlainSequence;
-            }
+            get => Config.SaverConfig.BarRotLowerFrameColor;
+            set => Config.SaverConfig.BarRotLowerFrameColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [BarRot] Left frame color.
         /// </summary>
         public static string BarRotLeftFrameColor
         {
-            get
-            {
-                return Config.SaverConfig.BarRotLeftFrameColor;
-            }
-            set
-            {
-                Config.SaverConfig.BarRotLeftFrameColor = new Color(value).PlainSequence;
-            }
+            get => Config.SaverConfig.BarRotLeftFrameColor;
+            set => Config.SaverConfig.BarRotLeftFrameColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [BarRot] Right frame color.
         /// </summary>
         public static string BarRotRightFrameColor
         {
-            get
-            {
-                return Config.SaverConfig.BarRotRightFrameColor;
-            }
-            set
-            {
-                Config.SaverConfig.BarRotRightFrameColor = new Color(value).PlainSequence;
-            }
+            get => Config.SaverConfig.BarRotRightFrameColor;
+            set => Config.SaverConfig.BarRotRightFrameColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [BarRot] Use the border colors.
         /// </summary>
         public static bool BarRotUseBorderColors
         {
-            get
-            {
-                return Config.SaverConfig.BarRotUseBorderColors;
-            }
-            set
-            {
-                Config.SaverConfig.BarRotUseBorderColors = value;
-            }
+            get => Config.SaverConfig.BarRotUseBorderColors;
+            set => Config.SaverConfig.BarRotUseBorderColors = value;
         }
 
     }
@@ -607,19 +441,18 @@ namespace KS.Misc.Screensaver.Displays
             // Draw the frame
             if (!ConsoleResizeListener.WasResized(false))
             {
-                // TODO: Deal with these, too.
-                TextWriterWhereColor.WriteWhere(BarRotSettings.BarRotUpperLeftCornerChar, RampFrameStartWidth, RampCenterPosition - 2, false, BarRotSettings.BarRotUseBorderColors ? new Color(BarRotSettings.BarRotUpperLeftCornerColor) : ColorTools.GetGray());
-                TextWriterColor.Write(new string(BarRotSettings.BarRotUpperFrameChar[0], RampFrameSpaces), false, BarRotSettings.BarRotUseBorderColors ? new Color(BarRotSettings.BarRotUpperFrameColor) : ColorTools.GetGray());
-                TextWriterColor.Write(BarRotSettings.BarRotUpperRightCornerChar, false, BarRotSettings.BarRotUseBorderColors ? new Color(BarRotSettings.BarRotUpperRightCornerColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(BarRotSettings.BarRotLeftFrameChar, RampFrameStartWidth, RampCenterPosition - 1, false, BarRotSettings.BarRotUseBorderColors ? new Color(BarRotSettings.BarRotLeftFrameColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(BarRotSettings.BarRotLeftFrameChar, RampFrameStartWidth, RampCenterPosition, false, BarRotSettings.BarRotUseBorderColors ? new Color(BarRotSettings.BarRotLeftFrameColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(BarRotSettings.BarRotLeftFrameChar, RampFrameStartWidth, RampCenterPosition + 1, false, BarRotSettings.BarRotUseBorderColors ? new Color(BarRotSettings.BarRotLeftFrameColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(BarRotSettings.BarRotRightFrameChar, RampFrameEndWidth + 1, RampCenterPosition - 1, false, BarRotSettings.BarRotUseBorderColors ? new Color(BarRotSettings.BarRotLeftFrameColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(BarRotSettings.BarRotRightFrameChar, RampFrameEndWidth + 1, RampCenterPosition, false, BarRotSettings.BarRotUseBorderColors ? new Color(BarRotSettings.BarRotLeftFrameColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(BarRotSettings.BarRotRightFrameChar, RampFrameEndWidth + 1, RampCenterPosition + 1, false, BarRotSettings.BarRotUseBorderColors ? new Color(BarRotSettings.BarRotLeftFrameColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(BarRotSettings.BarRotLowerLeftCornerChar, RampFrameStartWidth, RampCenterPosition + 2, false, BarRotSettings.BarRotUseBorderColors ? new Color(BarRotSettings.BarRotLowerLeftCornerColor) : ColorTools.GetGray());
-                TextWriterColor.Write(new string(BarRotSettings.BarRotLowerFrameChar[0], RampFrameSpaces), false, BarRotSettings.BarRotUseBorderColors ? new Color(BarRotSettings.BarRotLowerFrameColor) : ColorTools.GetGray());
-                TextWriterColor.Write(BarRotSettings.BarRotLowerRightCornerChar, false, BarRotSettings.BarRotUseBorderColors ? new Color(BarRotSettings.BarRotLowerRightCornerColor) : ColorTools.GetGray());
+                TextWriterWhereColor.WriteWhere(BarRotSettings.BarRotUpperLeftCornerChar.ToString(), RampFrameStartWidth, RampCenterPosition - 2, false, BarRotSettings.BarRotUseBorderColors ? new Color(BarRotSettings.BarRotUpperLeftCornerColor) : ColorTools.GetGray());
+                TextWriterColor.Write(new string(BarRotSettings.BarRotUpperFrameChar, RampFrameSpaces), false, BarRotSettings.BarRotUseBorderColors ? new Color(BarRotSettings.BarRotUpperFrameColor) : ColorTools.GetGray());
+                TextWriterColor.Write(BarRotSettings.BarRotUpperRightCornerChar.ToString(), false, BarRotSettings.BarRotUseBorderColors ? new Color(BarRotSettings.BarRotUpperRightCornerColor) : ColorTools.GetGray());
+                TextWriterWhereColor.WriteWhere(BarRotSettings.BarRotLeftFrameChar.ToString(), RampFrameStartWidth, RampCenterPosition - 1, false, BarRotSettings.BarRotUseBorderColors ? new Color(BarRotSettings.BarRotLeftFrameColor) : ColorTools.GetGray());
+                TextWriterWhereColor.WriteWhere(BarRotSettings.BarRotLeftFrameChar.ToString(), RampFrameStartWidth, RampCenterPosition, false, BarRotSettings.BarRotUseBorderColors ? new Color(BarRotSettings.BarRotLeftFrameColor) : ColorTools.GetGray());
+                TextWriterWhereColor.WriteWhere(BarRotSettings.BarRotLeftFrameChar.ToString(), RampFrameStartWidth, RampCenterPosition + 1, false, BarRotSettings.BarRotUseBorderColors ? new Color(BarRotSettings.BarRotLeftFrameColor) : ColorTools.GetGray());
+                TextWriterWhereColor.WriteWhere(BarRotSettings.BarRotRightFrameChar.ToString(), RampFrameEndWidth + 1, RampCenterPosition - 1, false, BarRotSettings.BarRotUseBorderColors ? new Color(BarRotSettings.BarRotLeftFrameColor) : ColorTools.GetGray());
+                TextWriterWhereColor.WriteWhere(BarRotSettings.BarRotRightFrameChar.ToString(), RampFrameEndWidth + 1, RampCenterPosition, false, BarRotSettings.BarRotUseBorderColors ? new Color(BarRotSettings.BarRotLeftFrameColor) : ColorTools.GetGray());
+                TextWriterWhereColor.WriteWhere(BarRotSettings.BarRotRightFrameChar.ToString(), RampFrameEndWidth + 1, RampCenterPosition + 1, false, BarRotSettings.BarRotUseBorderColors ? new Color(BarRotSettings.BarRotLeftFrameColor) : ColorTools.GetGray());
+                TextWriterWhereColor.WriteWhere(BarRotSettings.BarRotLowerLeftCornerChar.ToString(), RampFrameStartWidth, RampCenterPosition + 2, false, BarRotSettings.BarRotUseBorderColors ? new Color(BarRotSettings.BarRotLowerLeftCornerColor) : ColorTools.GetGray());
+                TextWriterColor.Write(new string(BarRotSettings.BarRotLowerFrameChar, RampFrameSpaces), false, BarRotSettings.BarRotUseBorderColors ? new Color(BarRotSettings.BarRotLowerFrameColor) : ColorTools.GetGray());
+                TextWriterColor.Write(BarRotSettings.BarRotLowerRightCornerChar.ToString(), false, BarRotSettings.BarRotUseBorderColors ? new Color(BarRotSettings.BarRotLowerRightCornerColor) : ColorTools.GetGray());
             }
 
             // Set the current colors

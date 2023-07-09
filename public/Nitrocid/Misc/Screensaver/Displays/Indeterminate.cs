@@ -39,24 +39,15 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static bool IndeterminateTrueColor
         {
-            get
-            {
-                return Config.SaverConfig.IndeterminateTrueColor;
-            }
-            set
-            {
-                Config.SaverConfig.IndeterminateTrueColor = value;
-            }
+            get => Config.SaverConfig.IndeterminateTrueColor;
+            set => Config.SaverConfig.IndeterminateTrueColor = value;
         }
         /// <summary>
         /// [Indeterminate] How many milliseconds to wait before making the next write?
         /// </summary>
         public static int IndeterminateDelay
         {
-            get
-            {
-                return Config.SaverConfig.IndeterminateDelay;
-            }
+            get => Config.SaverConfig.IndeterminateDelay;
             set
             {
                 if (value <= 0)
@@ -67,140 +58,73 @@ namespace KS.Misc.Screensaver.Displays
         /// <summary>
         /// [Indeterminate] Upper left corner character 
         /// </summary>
-        public static string IndeterminateUpperLeftCornerChar
+        public static char IndeterminateUpperLeftCornerChar
         {
-            get
-            {
-                return Config.SaverConfig.IndeterminateUpperLeftCornerChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "╔";
-                Config.SaverConfig.IndeterminateUpperLeftCornerChar = value;
-            }
+            get => Config.SaverConfig.IndeterminateUpperLeftCornerChar;
+            set => Config.SaverConfig.IndeterminateUpperLeftCornerChar = value;
         }
         /// <summary>
         /// [Indeterminate] Upper right corner character 
         /// </summary>
-        public static string IndeterminateUpperRightCornerChar
+        public static char IndeterminateUpperRightCornerChar
         {
-            get
-            {
-                return Config.SaverConfig.IndeterminateUpperRightCornerChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "╗";
-                Config.SaverConfig.IndeterminateUpperRightCornerChar = value;
-            }
+            get => Config.SaverConfig.IndeterminateUpperRightCornerChar;
+            set => Config.SaverConfig.IndeterminateUpperRightCornerChar = value;
         }
         /// <summary>
         /// [Indeterminate] Lower left corner character 
         /// </summary>
-        public static string IndeterminateLowerLeftCornerChar
+        public static char IndeterminateLowerLeftCornerChar
         {
-            get
-            {
-                return Config.SaverConfig.IndeterminateLowerLeftCornerChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "╚";
-                Config.SaverConfig.IndeterminateLowerLeftCornerChar = value;
-            }
+            get => Config.SaverConfig.IndeterminateLowerLeftCornerChar;
+            set => Config.SaverConfig.IndeterminateLowerLeftCornerChar = value;
         }
         /// <summary>
         /// [Indeterminate] Lower right corner character 
         /// </summary>
-        public static string IndeterminateLowerRightCornerChar
+        public static char IndeterminateLowerRightCornerChar
         {
-            get
-            {
-                return Config.SaverConfig.IndeterminateLowerRightCornerChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "╝";
-                Config.SaverConfig.IndeterminateLowerRightCornerChar = value;
-            }
+            get => Config.SaverConfig.IndeterminateLowerRightCornerChar;
+            set => Config.SaverConfig.IndeterminateLowerRightCornerChar = value;
         }
         /// <summary>
         /// [Indeterminate] Upper frame character 
         /// </summary>
-        public static string IndeterminateUpperFrameChar
+        public static char IndeterminateUpperFrameChar
         {
-            get
-            {
-                return Config.SaverConfig.IndeterminateUpperFrameChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "═";
-                Config.SaverConfig.IndeterminateUpperFrameChar = value;
-            }
+            get => Config.SaverConfig.IndeterminateUpperFrameChar;
+            set => Config.SaverConfig.IndeterminateUpperFrameChar = value;
         }
         /// <summary>
         /// [Indeterminate] Lower frame character 
         /// </summary>
-        public static string IndeterminateLowerFrameChar
+        public static char IndeterminateLowerFrameChar
         {
-            get
-            {
-                return Config.SaverConfig.IndeterminateLowerFrameChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "═";
-                Config.SaverConfig.IndeterminateLowerFrameChar = value;
-            }
+            get => Config.SaverConfig.IndeterminateLowerFrameChar;
+            set => Config.SaverConfig.IndeterminateLowerFrameChar = value;
         }
         /// <summary>
         /// [Indeterminate] Left frame character 
         /// </summary>
-        public static string IndeterminateLeftFrameChar
+        public static char IndeterminateLeftFrameChar
         {
-            get
-            {
-                return Config.SaverConfig.IndeterminateLeftFrameChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "║";
-                Config.SaverConfig.IndeterminateLeftFrameChar = value;
-            }
+            get => Config.SaverConfig.IndeterminateLeftFrameChar;
+            set => Config.SaverConfig.IndeterminateLeftFrameChar = value;
         }
         /// <summary>
         /// [Indeterminate] Right frame character 
         /// </summary>
-        public static string IndeterminateRightFrameChar
+        public static char IndeterminateRightFrameChar
         {
-            get
-            {
-                return Config.SaverConfig.IndeterminateRightFrameChar;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "║";
-                Config.SaverConfig.IndeterminateRightFrameChar = value;
-            }
+            get => Config.SaverConfig.IndeterminateRightFrameChar;
+            set => Config.SaverConfig.IndeterminateRightFrameChar = value;
         }
         /// <summary>
         /// [Indeterminate] The minimum red color level (true color)
         /// </summary>
         public static int IndeterminateMinimumRedColorLevel
         {
-            get
-            {
-                return Config.SaverConfig.IndeterminateMinimumRedColorLevel;
-            }
+            get => Config.SaverConfig.IndeterminateMinimumRedColorLevel;
             set
             {
                 if (value <= 0)
@@ -215,10 +139,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int IndeterminateMinimumGreenColorLevel
         {
-            get
-            {
-                return Config.SaverConfig.IndeterminateMinimumGreenColorLevel;
-            }
+            get => Config.SaverConfig.IndeterminateMinimumGreenColorLevel;
             set
             {
                 if (value <= 0)
@@ -233,10 +154,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int IndeterminateMinimumBlueColorLevel
         {
-            get
-            {
-                return Config.SaverConfig.IndeterminateMinimumBlueColorLevel;
-            }
+            get => Config.SaverConfig.IndeterminateMinimumBlueColorLevel;
             set
             {
                 if (value <= 0)
@@ -251,10 +169,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int IndeterminateMinimumColorLevel
         {
-            get
-            {
-                return Config.SaverConfig.IndeterminateMinimumColorLevel;
-            }
+            get => Config.SaverConfig.IndeterminateMinimumColorLevel;
             set
             {
                 int FinalMinimumLevel = 255;
@@ -270,10 +185,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int IndeterminateMaximumRedColorLevel
         {
-            get
-            {
-                return Config.SaverConfig.IndeterminateMaximumRedColorLevel;
-            }
+            get => Config.SaverConfig.IndeterminateMaximumRedColorLevel;
             set
             {
                 if (value <= Config.SaverConfig.IndeterminateMinimumRedColorLevel)
@@ -288,10 +200,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int IndeterminateMaximumGreenColorLevel
         {
-            get
-            {
-                return Config.SaverConfig.IndeterminateMaximumGreenColorLevel;
-            }
+            get => Config.SaverConfig.IndeterminateMaximumGreenColorLevel;
             set
             {
                 if (value <= Config.SaverConfig.IndeterminateMinimumGreenColorLevel)
@@ -306,10 +215,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int IndeterminateMaximumBlueColorLevel
         {
-            get
-            {
-                return Config.SaverConfig.IndeterminateMaximumBlueColorLevel;
-            }
+            get => Config.SaverConfig.IndeterminateMaximumBlueColorLevel;
             set
             {
                 if (value <= Config.SaverConfig.IndeterminateMinimumBlueColorLevel)
@@ -324,10 +230,7 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static int IndeterminateMaximumColorLevel
         {
-            get
-            {
-                return Config.SaverConfig.IndeterminateMaximumColorLevel;
-            }
+            get => Config.SaverConfig.IndeterminateMaximumColorLevel;
             set
             {
                 int FinalMaximumLevel = 255;
@@ -343,126 +246,72 @@ namespace KS.Misc.Screensaver.Displays
         /// </summary>
         public static string IndeterminateUpperLeftCornerColor
         {
-            get
-            {
-                return Config.SaverConfig.IndeterminateUpperLeftCornerColor;
-            }
-            set
-            {
-                Config.SaverConfig.IndeterminateUpperLeftCornerColor = new Color(value).PlainSequence;
-            }
+            get => Config.SaverConfig.IndeterminateUpperLeftCornerColor;
+            set => Config.SaverConfig.IndeterminateUpperLeftCornerColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [Indeterminate] Upper right corner color.
         /// </summary>
         public static string IndeterminateUpperRightCornerColor
         {
-            get
-            {
-                return Config.SaverConfig.IndeterminateUpperRightCornerColor;
-            }
-            set
-            {
-                Config.SaverConfig.IndeterminateUpperRightCornerColor = new Color(value).PlainSequence;
-            }
+            get => Config.SaverConfig.IndeterminateUpperRightCornerColor;
+            set => Config.SaverConfig.IndeterminateUpperRightCornerColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [Indeterminate] Lower left corner color.
         /// </summary>
         public static string IndeterminateLowerLeftCornerColor
         {
-            get
-            {
-                return Config.SaverConfig.IndeterminateLowerLeftCornerColor;
-            }
-            set
-            {
-                Config.SaverConfig.IndeterminateLowerLeftCornerColor = new Color(value).PlainSequence;
-            }
+            get => Config.SaverConfig.IndeterminateLowerLeftCornerColor;
+            set => Config.SaverConfig.IndeterminateLowerLeftCornerColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [Indeterminate] Lower right corner color.
         /// </summary>
         public static string IndeterminateLowerRightCornerColor
         {
-            get
-            {
-                return Config.SaverConfig.IndeterminateLowerRightCornerColor;
-            }
-            set
-            {
-                Config.SaverConfig.IndeterminateLowerRightCornerColor = new Color(value).PlainSequence;
-            }
+            get => Config.SaverConfig.IndeterminateLowerRightCornerColor;
+            set => Config.SaverConfig.IndeterminateLowerRightCornerColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [Indeterminate] Upper frame color.
         /// </summary>
         public static string IndeterminateUpperFrameColor
         {
-            get
-            {
-                return Config.SaverConfig.IndeterminateUpperFrameColor;
-            }
-            set
-            {
-                Config.SaverConfig.IndeterminateUpperFrameColor = new Color(value).PlainSequence;
-            }
+            get => Config.SaverConfig.IndeterminateUpperFrameColor;
+            set => Config.SaverConfig.IndeterminateUpperFrameColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [Indeterminate] Lower frame color.
         /// </summary>
         public static string IndeterminateLowerFrameColor
         {
-            get
-            {
-                return Config.SaverConfig.IndeterminateLowerFrameColor;
-            }
-            set
-            {
-                Config.SaverConfig.IndeterminateLowerFrameColor = new Color(value).PlainSequence;
-            }
+            get => Config.SaverConfig.IndeterminateLowerFrameColor;
+            set => Config.SaverConfig.IndeterminateLowerFrameColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [Indeterminate] Left frame color.
         /// </summary>
         public static string IndeterminateLeftFrameColor
         {
-            get
-            {
-                return Config.SaverConfig.IndeterminateLeftFrameColor;
-            }
-            set
-            {
-                Config.SaverConfig.IndeterminateLeftFrameColor = new Color(value).PlainSequence;
-            }
+            get => Config.SaverConfig.IndeterminateLeftFrameColor;
+            set => Config.SaverConfig.IndeterminateLeftFrameColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [Indeterminate] Right frame color.
         /// </summary>
         public static string IndeterminateRightFrameColor
         {
-            get
-            {
-                return Config.SaverConfig.IndeterminateRightFrameColor;
-            }
-            set
-            {
-                Config.SaverConfig.IndeterminateRightFrameColor = new Color(value).PlainSequence;
-            }
+            get => Config.SaverConfig.IndeterminateRightFrameColor;
+            set => Config.SaverConfig.IndeterminateRightFrameColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [Indeterminate] Use the border colors.
         /// </summary>
         public static bool IndeterminateUseBorderColors
         {
-            get
-            {
-                return Config.SaverConfig.IndeterminateUseBorderColors;
-            }
-            set
-            {
-                Config.SaverConfig.IndeterminateUseBorderColors = value;
-            }
+            get => Config.SaverConfig.IndeterminateUseBorderColors;
+            set => Config.SaverConfig.IndeterminateUseBorderColors = value;
         }
 
     }
@@ -513,19 +362,18 @@ namespace KS.Misc.Screensaver.Displays
             // Draw the frame
             if (!ConsoleResizeListener.WasResized(false))
             {
-                // TODO: Deal with these, too.
-                TextWriterWhereColor.WriteWhere(IndeterminateSettings.IndeterminateUpperLeftCornerChar, RampFrameStartWidth, RampCenterPosition - 2, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateUpperLeftCornerColor) : ColorTools.GetGray());
-                TextWriterColor.Write(new string(IndeterminateSettings.IndeterminateUpperFrameChar[0], RampFrameSpaces), false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateUpperFrameColor) : ColorTools.GetGray());
-                TextWriterColor.Write(IndeterminateSettings.IndeterminateUpperRightCornerChar, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateUpperRightCornerColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(IndeterminateSettings.IndeterminateLeftFrameChar, RampFrameStartWidth, RampCenterPosition - 1, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLeftFrameColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(IndeterminateSettings.IndeterminateLeftFrameChar, RampFrameStartWidth, RampCenterPosition, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLeftFrameColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(IndeterminateSettings.IndeterminateLeftFrameChar, RampFrameStartWidth, RampCenterPosition + 1, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLeftFrameColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(IndeterminateSettings.IndeterminateRightFrameChar, RampFrameEndWidth + 1, RampCenterPosition - 1, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLeftFrameColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(IndeterminateSettings.IndeterminateRightFrameChar, RampFrameEndWidth + 1, RampCenterPosition, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLeftFrameColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(IndeterminateSettings.IndeterminateRightFrameChar, RampFrameEndWidth + 1, RampCenterPosition + 1, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLeftFrameColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(IndeterminateSettings.IndeterminateLowerLeftCornerChar, RampFrameStartWidth, RampCenterPosition + 2, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLowerLeftCornerColor) : ColorTools.GetGray());
-                TextWriterColor.Write(new string(IndeterminateSettings.IndeterminateLowerFrameChar[0], RampFrameSpaces), false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLowerFrameColor) : ColorTools.GetGray());
-                TextWriterColor.Write(IndeterminateSettings.IndeterminateLowerRightCornerChar, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLowerRightCornerColor) : ColorTools.GetGray());
+                TextWriterWhereColor.WriteWhere(IndeterminateSettings.IndeterminateUpperLeftCornerChar.ToString(), RampFrameStartWidth, RampCenterPosition - 2, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateUpperLeftCornerColor) : ColorTools.GetGray());
+                TextWriterColor.Write(new string(IndeterminateSettings.IndeterminateUpperFrameChar, RampFrameSpaces), false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateUpperFrameColor) : ColorTools.GetGray());
+                TextWriterColor.Write(IndeterminateSettings.IndeterminateUpperRightCornerChar.ToString(), false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateUpperRightCornerColor) : ColorTools.GetGray());
+                TextWriterWhereColor.WriteWhere(IndeterminateSettings.IndeterminateLeftFrameChar.ToString(), RampFrameStartWidth, RampCenterPosition - 1, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLeftFrameColor) : ColorTools.GetGray());
+                TextWriterWhereColor.WriteWhere(IndeterminateSettings.IndeterminateLeftFrameChar.ToString(), RampFrameStartWidth, RampCenterPosition, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLeftFrameColor) : ColorTools.GetGray());
+                TextWriterWhereColor.WriteWhere(IndeterminateSettings.IndeterminateLeftFrameChar.ToString(), RampFrameStartWidth, RampCenterPosition + 1, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLeftFrameColor) : ColorTools.GetGray());
+                TextWriterWhereColor.WriteWhere(IndeterminateSettings.IndeterminateRightFrameChar.ToString(), RampFrameEndWidth + 1, RampCenterPosition - 1, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLeftFrameColor) : ColorTools.GetGray());
+                TextWriterWhereColor.WriteWhere(IndeterminateSettings.IndeterminateRightFrameChar.ToString(), RampFrameEndWidth + 1, RampCenterPosition, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLeftFrameColor) : ColorTools.GetGray());
+                TextWriterWhereColor.WriteWhere(IndeterminateSettings.IndeterminateRightFrameChar.ToString(), RampFrameEndWidth + 1, RampCenterPosition + 1, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLeftFrameColor) : ColorTools.GetGray());
+                TextWriterWhereColor.WriteWhere(IndeterminateSettings.IndeterminateLowerLeftCornerChar.ToString(), RampFrameStartWidth, RampCenterPosition + 2, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLowerLeftCornerColor) : ColorTools.GetGray());
+                TextWriterColor.Write(new string(IndeterminateSettings.IndeterminateLowerFrameChar, RampFrameSpaces), false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLowerFrameColor) : ColorTools.GetGray());
+                TextWriterColor.Write(IndeterminateSettings.IndeterminateLowerRightCornerChar.ToString(), false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLowerRightCornerColor) : ColorTools.GetGray());
             }
 
             // Draw the ramp
