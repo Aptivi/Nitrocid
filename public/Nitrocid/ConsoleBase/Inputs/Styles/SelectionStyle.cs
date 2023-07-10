@@ -144,9 +144,14 @@ namespace KS.ConsoleBase.Inputs.Styles
                     TextWriterColor.Write(AnswerOption.Truncate(ConsoleWrapper.WindowWidth - 3 + VtSequenceTools.MatchVTSequences(AnswerOption).Sum((mc) => mc.Sum((m) => m.Length))), true, AnswerColor);
                 }
 
-                // If we need to write the vertical progress bar, do so.
+                // If we need to write the vertical progress bar, do so. But, we need to refresh in case we're told to redraw on demand when
+                // we're not switching pages yet. Switching pages requires clearing the console as per the current implementation.
                 if (Flags.EnableScrollBarInSelection)
+                {
+                    for (int y = listStartPosition; y < listEndPosition; y++)
+                        TextWriterWhereColor.WriteWhere(" ", ConsoleWrapper.WindowWidth - 1, y);
                     ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)HighlightedAnswer / AllAnswers.Count), ConsoleWrapper.WindowWidth - 2, listStartPosition - 1, listStartPosition, 4, false);
+                }
 
                 // Write description area
                 int descSepArea = ConsoleWrapper.WindowHeight - 3;
