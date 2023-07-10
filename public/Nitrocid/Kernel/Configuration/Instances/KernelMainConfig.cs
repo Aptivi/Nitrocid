@@ -204,6 +204,10 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public bool StartCustomScreensavers { get; set; } = true;
         /// <summary>
+        /// Set the language codepage upon switching languages (Windows only)
+        /// </summary>
+        public bool SetCodepage { get; set; }
+        /// <summary>
         /// User Name Shell Color
         /// </summary>
         public string UserNameShellColor

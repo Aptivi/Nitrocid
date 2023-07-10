@@ -60,6 +60,14 @@ namespace KS.Languages
         /// Current language
         /// </summary>
         public static LanguageInfo CurrentLanguageInfo => Flags.LoggedIn ? currentUserLanguage : currentLanguage;
+        /// <summary>
+        /// Set the language codepage upon switching languages (Windows only)
+        /// </summary>
+        public static bool SetCodepage
+        {
+            get => Config.MainConfig.SetCodepage;
+            set => Config.MainConfig.SetCodepage = value;
+        }
 
         /// <summary>
         /// The installed languages list.
@@ -111,7 +119,7 @@ namespace KS.Languages
                 // Set appropriate codepage for incapable terminals
                 try
                 {
-                    if (KernelPlatform.IsOnWindows())
+                    if (KernelPlatform.IsOnWindows() && SetCodepage)
                     {
                         int Codepage = Languages[lang].Codepage;
                         ConsoleBase.ConsoleWrapper.OutputEncoding = System.Text.Encoding.GetEncoding(Codepage);

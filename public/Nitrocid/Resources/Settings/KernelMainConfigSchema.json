@@ -89,6 +89,9 @@
         "StartCustomScreensavers": {
             "type": "boolean"
         },
+        "SetCodepage": {
+            "type": "boolean"
+        },
         "UserNameShellColor": {
             "type": "string"
         },
@@ -795,6 +798,7 @@
         "AltCalendar",
         "EnableAltCalendar",
         "StartCustomScreensavers",
+        "SetCodepage",
         "UserNameShellColor",
         "HostNameShellColor",
         "ContinuableKernelErrorColor",

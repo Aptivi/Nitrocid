@@ -199,6 +199,13 @@
                 "Type": "SBoolean",
                 "Variable": "StartCustomScreensavers",
                 "Description": "Automatically load the custom screensavers on boot."
+            },
+            {
+                "Name": "Set codepage",
+                "Type": "SBoolean",
+                "Variable": "SetCodepage",
+                "Description": "Set the language codepage upon switching languages.",
+                "UnsupportedPlatforms": [ "Unix", "macOS" ]
             }
         ]
     },
