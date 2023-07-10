@@ -121,9 +121,11 @@ namespace KS.Misc.Text
         /// <param name="target">Target string</param>
         public static string[] SplitEncloseDoubleQuotes(this string target)
         {
-            return Regex.Split(target, "(?<=^[^\"]*(?:\"[^\"]*\"[^\"]*)*) (?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)")
-                        .Select((m) => (m.StartsWith("\"") && m.EndsWith("\"")) ? m.ReleaseDoubleQuotes() : m)
-                        .ToArray();
+            return DriverHandler.CurrentRegexpDriver
+                .Matches(target, /* lang=regex */ @"(""(.+?)(?<![^\\]\\)"")|('(.+?)(?<![^\\]\\)')|(`(.+?)(?<![^\\]\\)`)|(?:[^\\\s]|\\.)+|\S+")
+                .Select((m) => m.Value)
+                .Select((m) => (m.StartsWith("\"") && m.EndsWith("\"")) ? m.ReleaseDoubleQuotes() : m)
+                .ToArray();
         }
 
         /// <summary>
@@ -135,7 +137,10 @@ namespace KS.Misc.Text
         {
             string ReleasedString = target;
             if (target.StartsWith("\"") & target.EndsWith("\""))
-                ReleasedString = ReleasedString.Remove(0, 1).Remove(ReleasedString.Length - 1);
+            {
+                ReleasedString = ReleasedString.Remove(0, 1);
+                ReleasedString = ReleasedString.Remove(ReleasedString.Length - 1);
+            }
             return ReleasedString;
         }
 

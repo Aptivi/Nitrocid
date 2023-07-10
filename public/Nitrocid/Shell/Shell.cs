@@ -255,8 +255,8 @@ namespace KS.Shell
                 if ((string.IsNullOrEmpty(Command) | (Command?.StartsWithAnyOf(new[] { " ", "#" }))) == false)
                 {
                     // Get the command name
-                    var words = DriverHandler.CurrentRegexpDriver.Matches(Command, @"(""(.+?)(?<![^\\]\\)"")|('(.+?)(?<![^\\]\\)')|(`(.+?)(?<![^\\]\\)`)|(?:[^\\\s]|\\.)+|\S+");
-                    string commandName = words[0].Value.ReleaseDoubleQuotes();
+                    var words = Command.SplitEncloseDoubleQuotes();
+                    string commandName = words[0].ReleaseDoubleQuotes();
                     TargetFile = DriverHandler.CurrentRegexpDriver.Unescape(commandName);
                     bool existsInPath = PathLookupTools.FileExistsInPath(commandName, ref TargetFile);
                     bool pathValid = Parsing.TryParsePath(TargetFile);
