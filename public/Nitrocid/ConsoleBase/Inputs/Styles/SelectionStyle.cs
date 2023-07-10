@@ -103,16 +103,16 @@ namespace KS.ConsoleBase.Inputs.Styles
             int listStartPosition = ConsoleWrapper.CursorTop;
             int listEndPosition = ConsoleWrapper.WindowHeight - ConsoleWrapper.CursorTop;
             int pages = AllAnswers.Count / listEndPosition;
-            int answersPerPage = listEndPosition - 5;
+            int answersPerPage = listEndPosition - 4;
             int lastPage = 1;
 
             while (true)
             {
                 // The reason for subtracting the highlighted answer by one is that because while the highlighted answer number is one-based, the indexes are zero-based,
-                // causing confusion. Pages, again, are one-based. Highlighting the last option causes us to go to the next page. This is intentional.
+                // causing confusion. Pages, again, are one-based.
                 int currentPage = (HighlightedAnswer - 1) / answersPerPage;
                 int startIndex = answersPerPage * currentPage;
-                int endIndex = answersPerPage * (currentPage + 1);
+                int endIndex = (answersPerPage * (currentPage + 1)) - 1;
 
                 // If the current page is different, refresh the entire screen.
                 if (currentPage != lastPage)
@@ -129,8 +129,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                     var AnswerInstance = AllAnswers[AnswerIndex];
                     string AnswerTitle = AnswerInstance.ChoiceTitle ?? "";
 
-                    // Just like we told you previously in above few lines, the last option highlight to go to the next page is intentional. So, change the last option
-                    // string so it says "Highlight this entry to go to the next page."
+                    // Get the option
                     string AnswerOption = $" {AnswerInstance}) {AnswerTitle}";
                     int AnswerTitleLeft = AllAnswers.Max(x => $" {x.ChoiceName}) ".Length);
                     if (AnswerTitleLeft < ConsoleWrapper.WindowWidth)
@@ -142,7 +141,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                                       KernelColorType.SelectedOption : 
                                       AltAnswer ? KernelColorType.AlternativeOption : KernelColorType.Option;
                     AnswerOption = $"{ColorTools.GetColor(AnswerColor).VTSequenceForeground}{AnswerOption}";
-                    TextWriterColor.Write(AnswerIndex == endIndex ? " vvvvvvvvvv " + Translate.DoTranslation("Highlight this entry to go to the next page.") + " vvvvvvvvvv " : AnswerOption.Truncate(ConsoleWrapper.WindowWidth - 3 + VtSequenceTools.MatchVTSequences(AnswerOption).Sum((mc) => mc.Sum((m) => m.Length))), true, AnswerColor);
+                    TextWriterColor.Write(AnswerOption.Truncate(ConsoleWrapper.WindowWidth - 3 + VtSequenceTools.MatchVTSequences(AnswerOption).Sum((mc) => mc.Sum((m) => m.Length))), true, AnswerColor);
                 }
 
                 // If we need to write the vertical progress bar, do so.
@@ -196,7 +195,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                         }
                     case ConsoleKey.PageDown:
                         {
-                            HighlightedAnswer = endIndex + 1 > AllAnswers.Count ? AllAnswers.Count : endIndex + 1;
+                            HighlightedAnswer = endIndex > AllAnswers.Count ? AllAnswers.Count : endIndex + 2;
                             break;
                         }
                     case ConsoleKey.Enter:

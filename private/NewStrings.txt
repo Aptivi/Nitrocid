@@ -89,7 +89,6 @@ You're running the development version of the kernel. While you can experience u
 You're running the release candidate version of the kernel. While you can experience the final touches, you may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible.
 We recommend against running this version of the kernel, because it is unsupported. If you have downloaded this kernel from unknown sources, this message may appear. Please download from our official downloads page.
 * You can use multiple commands using the semicolon between commands.
-Highlight this entry to go to the next page.
 Event {0} not found.
 Administrative shell
 Gets current kernel journal log
