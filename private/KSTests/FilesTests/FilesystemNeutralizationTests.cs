@@ -47,6 +47,7 @@ namespace KSTests.FilesTests
         /// </summary>
         [Test]
         [Description("Neutralization")]
+        [Platform("Unix,Linux")]
         public void TestNeutralizePathsCustom()
         {
             string TestPath = "sources.list";
