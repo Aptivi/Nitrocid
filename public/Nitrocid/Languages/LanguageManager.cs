@@ -111,10 +111,13 @@ namespace KS.Languages
                 // Set appropriate codepage for incapable terminals
                 try
                 {
-                    int Codepage = Languages[lang].Codepage;
-                    ConsoleBase.ConsoleWrapper.OutputEncoding = System.Text.Encoding.GetEncoding(Codepage);
-                    ConsoleBase.ConsoleWrapper.InputEncoding = System.Text.Encoding.GetEncoding(Codepage);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Encoding set successfully for {0} to {1}.", lang, ConsoleBase.ConsoleWrapper.OutputEncoding.EncodingName);
+                    if (KernelPlatform.IsOnWindows())
+                    {
+                        int Codepage = Languages[lang].Codepage;
+                        ConsoleBase.ConsoleWrapper.OutputEncoding = System.Text.Encoding.GetEncoding(Codepage);
+                        ConsoleBase.ConsoleWrapper.InputEncoding = System.Text.Encoding.GetEncoding(Codepage);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Encoding set successfully for {0} to {1}.", lang, ConsoleBase.ConsoleWrapper.OutputEncoding.EncodingName);
+                    }
                 }
                 catch (Exception ex)
                 {
