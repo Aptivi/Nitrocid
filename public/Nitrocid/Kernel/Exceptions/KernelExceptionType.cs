@@ -359,5 +359,9 @@ namespace KS.Kernel.Exceptions
         /// An error occurred in the Interactive TUI implementation.
         /// </summary>
         InteractiveTui,
+        /// <summary>
+        /// An error occurred in the custom settings manager for users.
+        /// </summary>
+        CustomSettings,
     }
 }

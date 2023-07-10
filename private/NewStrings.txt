@@ -608,5 +608,8 @@ Tests the interactive TUI system with a single pane interaction and with refresh
 Administrator Shell
 Set codepage
 Set the language codepage upon switching languages.
+An error occurred in the custom settings manager for users.
+The key specified, {0}, doesn't exist.
+The key specified, {0}, already exists.
 
 ==========================================================================================================================================

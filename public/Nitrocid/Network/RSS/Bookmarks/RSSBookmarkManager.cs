@@ -18,10 +18,13 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.Shells.RSS;
+using KS.Users;
+using KS.Users.Settings;
 
 namespace KS.Network.RSS.Bookmarks
 {
@@ -31,21 +34,15 @@ namespace KS.Network.RSS.Bookmarks
     public static class RSSBookmarkManager
     {
 
-        private readonly static List<string> RssBookmarks = new();
-
         /// <summary>
         /// Adds the current RSS feed to the bookmarks
         /// </summary>
         public static void AddRSSFeedToBookmark()
         {
             if (!string.IsNullOrEmpty(RSSShellCommon.RSSFeedLink))
-            {
                 AddRSSFeedToBookmark(RSSShellCommon.RSSFeedLink);
-            }
             else
-            {
                 DebugWriter.WriteDebug(DebugLevel.W, "Trying to add null feed link to bookmarks. Ignored.");
-            }
         }
 
         /// <summary>
@@ -63,11 +60,13 @@ namespace KS.Network.RSS.Bookmarks
                     string FinalFeedUriString = FinalFeedUri.AbsoluteUri;
 
                     // Add the feed to bookmarks if not found
+                    var RssBookmarks = GetBookmarks();
                     if (!RssBookmarks.Contains(FinalFeedUriString))
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Adding {0} to feed bookmark list...", FinalFeedUriString);
                         RssBookmarks.Add(FinalFeedUriString);
                     }
+                    SaveBookmarks(RssBookmarks);
                 }
                 catch (Exception ex)
                 {
@@ -79,15 +78,11 @@ namespace KS.Network.RSS.Bookmarks
                         throw new KernelException(KernelExceptionType.InvalidFeedLink, Translate.DoTranslation("Failed to parse feed URL:") + " {0}", ex.Message);
                     }
                     else
-                    {
                         throw new KernelException(KernelExceptionType.InvalidFeed, Translate.DoTranslation("Failed to parse feed URL:") + " {0}", ex.Message);
-                    }
                 }
             }
             else
-            {
                 DebugWriter.WriteDebug(DebugLevel.W, "Trying to add null feed link to bookmarks. Ignored.");
-            }
         }
 
         /// <summary>
@@ -96,13 +91,9 @@ namespace KS.Network.RSS.Bookmarks
         public static void RemoveRSSFeedFromBookmark()
         {
             if (!string.IsNullOrEmpty(RSSShellCommon.RSSFeedLink))
-            {
                 RemoveRSSFeedFromBookmark(RSSShellCommon.RSSFeedLink);
-            }
             else
-            {
                 DebugWriter.WriteDebug(DebugLevel.W, "Trying to remove null feed link from bookmarks. Ignored.");
-            }
         }
 
         /// <summary>
@@ -120,15 +111,15 @@ namespace KS.Network.RSS.Bookmarks
                     string FinalFeedUriString = FinalFeedUri.AbsoluteUri;
 
                     // Remove the feed from bookmarks if found
+                    var RssBookmarks = GetBookmarks();
                     if (RssBookmarks.Contains(FinalFeedUriString))
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Removing {0} from feed bookmark list...", FinalFeedUriString);
                         RssBookmarks.Remove(FinalFeedUriString);
+                        SaveBookmarks(RssBookmarks);
                     }
                     else
-                    {
                         throw new KernelException(KernelExceptionType.InvalidFeedLink, Translate.DoTranslation("The feed doesn't exist in bookmarks."));
-                    }
                 }
                 catch (Exception ex)
                 {
@@ -140,21 +131,25 @@ namespace KS.Network.RSS.Bookmarks
                         throw new KernelException(KernelExceptionType.InvalidFeedLink, Translate.DoTranslation("Failed to parse feed URL:") + " {0}", ex.Message);
                     }
                     else
-                    {
                         throw new KernelException(KernelExceptionType.InvalidFeed, Translate.DoTranslation("Failed to parse feed URL:") + " {0}", ex.Message);
-                    }
                 }
             }
             else
-            {
                 DebugWriter.WriteDebug(DebugLevel.W, "Trying to remove null feed link from bookmarks. Ignored.");
-            }
         }
 
         /// <summary>
         /// Gets all RSS bookmarks
         /// </summary>
-        public static List<string> GetBookmarks() => RssBookmarks;
+        public static List<string> GetBookmarks()
+        {
+            string currentUsername = UserManagement.CurrentUser.Username;
+            const string keyName = "RSSBookmarks";
+            if (UserCustomSettingsManager.DoesSettingsEntryExist(currentUsername, keyName))
+                return UserCustomSettingsManager.GetSettingsEntryFromUser(currentUsername, keyName).Select((rssString) => rssString.ToString()).ToList();
+            else
+                return new();
+        }
 
         /// <summary>
         /// Gets the bookmark URL from number
@@ -162,6 +157,7 @@ namespace KS.Network.RSS.Bookmarks
         public static string GetBookmark(int Num)
         {
             // Return nothing if there are no bookmarks
+            var RssBookmarks = GetBookmarks();
             if (RssBookmarks.Count == 0)
                 return "";
 
@@ -169,6 +165,17 @@ namespace KS.Network.RSS.Bookmarks
             if (Num <= 0)
                 Num = 1;
             return RssBookmarks[Num - 1];
+        }
+
+        private static void SaveBookmarks(List<string> RssBookmarks)
+        {
+            // Save the bookmarks to the custom settings for user
+            string currentUsername = UserManagement.CurrentUser.Username;
+            const string keyName = "RSSBookmarks";
+            if (UserCustomSettingsManager.DoesSettingsEntryExist(currentUsername, keyName))
+                UserCustomSettingsManager.ModifySettingsEntryInUser(currentUsername, keyName, RssBookmarks.ToArray());
+            else
+                UserCustomSettingsManager.AddSettingsEntryToUser(currentUsername, keyName, RssBookmarks.ToArray());
         }
 
     }

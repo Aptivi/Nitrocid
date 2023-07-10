@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace KS.Users
 {
@@ -50,12 +51,14 @@ namespace KS.Users
         internal bool Disabled { get; set; }
         [JsonProperty]
         internal string[] Permissions { get; set; }
+        [JsonProperty]
+        internal Dictionary<string, object[]> CustomSettings { get; set; }
 
         /// <summary>
         /// Makes a new class instance of current user info
         /// </summary>
         [JsonConstructor]
-        internal UserInfo(string username, string password, string[] permissions, string fullName, string preferredLanguage, string[] groups, bool admin, bool anonymous, bool disabled)
+        internal UserInfo(string username, string password, string[] permissions, string fullName, string preferredLanguage, string[] groups, bool admin, bool anonymous, bool disabled, Dictionary<string, object[]> customSettings)
         {
             Username = username;
             Password = password;
@@ -66,6 +69,7 @@ namespace KS.Users
             Admin = admin;
             Anonymous = anonymous;
             Disabled = disabled;
+            CustomSettings = customSettings;
         }
 
     }

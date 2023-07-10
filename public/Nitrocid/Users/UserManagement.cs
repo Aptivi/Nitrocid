@@ -60,7 +60,7 @@ namespace KS.Users
         public static UserInfo CurrentUser =>
             CurrentUserInfo;
 
-        internal static UserInfo CurrentUserInfo = new("root", Encryption.GetEncryptedString("", "SHA256"), Array.Empty<string>(), "System Account", "", Array.Empty<string>(), true, false, false);
+        internal static UserInfo CurrentUserInfo = new("root", Encryption.GetEncryptedString("", "SHA256"), Array.Empty<string>(), "System Account", "", Array.Empty<string>(), true, false, false, new());
         internal static List<UserInfo> Users = new() { CurrentUserInfo };
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace KS.Users
                 }
 
                 // Add user locally
-                var initedUser = new UserInfo(uninitUser, unpassword, Array.Empty<string>(), "", "", Array.Empty<string>(), false, false, false);
+                var initedUser = new UserInfo(uninitUser, unpassword, Array.Empty<string>(), "", "", Array.Empty<string>(), false, false, false, new());
                 if (!UserExists(uninitUser))
                 {
                     Users.Add(initedUser);
@@ -298,7 +298,7 @@ namespace KS.Users
                     {
                         // Store user info
                         var oldInfo = GetUser(OldName);
-                        var newInfo = new UserInfo(Username, oldInfo.Password, oldInfo.Permissions, oldInfo.FullName, oldInfo.PreferredLanguage, oldInfo.Groups, oldInfo.Admin, oldInfo.Anonymous, oldInfo.Disabled);
+                        var newInfo = new UserInfo(Username, oldInfo.Password, oldInfo.Permissions, oldInfo.FullName, oldInfo.PreferredLanguage, oldInfo.Groups, oldInfo.Admin, oldInfo.Anonymous, oldInfo.Disabled, oldInfo.CustomSettings);
 
                         // Rename username in dictionary
                         Users.Remove(oldInfo);
