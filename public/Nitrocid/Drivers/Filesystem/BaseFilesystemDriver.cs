@@ -1250,6 +1250,27 @@ namespace KS.Drivers.Filesystem
         }
 
         /// <inheritdoc/>
+        public List<(string, MatchCollection)> SearchFileForStringRegexpMatches(string FilePath, Regex StringLookup)
+        {
+            try
+            {
+                FS.ThrowOnInvalidPath(FilePath);
+                FilePath = FS.NeutralizePath(FilePath);
+                var Matches = new List<(string, MatchCollection)>();
+                var Filebyte = File.ReadAllLines(FilePath);
+                foreach (string Str in Filebyte)
+                    if (StringLookup.IsMatch(Str))
+                        Matches.Add((Str, StringLookup.Matches(Str)));
+                return Matches;
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                throw new KernelException(KernelExceptionType.Filesystem, string.Format(Translate.DoTranslation("Unable to find file to match string \"{0}\": {1}"), StringLookup, ex.Message));
+            }
+        }
+
+        /// <inheritdoc/>
         public virtual string SortSelector(FileSystemInfo FileSystemEntry, int MaxLength) =>
             Listing.SortMode switch
             {

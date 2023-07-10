@@ -49,5 +49,15 @@ namespace KS.Files.Querying
         public static List<string> SearchFileForStringRegexp(string FilePath, Regex StringLookup) =>
             DriverHandler.CurrentFilesystemDriver.SearchFileForStringRegexp(FilePath, StringLookup);
 
+        /// <summary>
+        /// Searches a file for string using regexp
+        /// </summary>
+        /// <param name="FilePath">File path</param>
+        /// <param name="StringLookup">String to find</param>
+        /// <returns>The list of match collections with their associated line of text</returns>
+        /// <exception cref="IOException"></exception>
+        public static List<(string, MatchCollection)> SearchFileForStringRegexpMatches(string FilePath, Regex StringLookup) =>
+            DriverHandler.CurrentFilesystemDriver.SearchFileForStringRegexpMatches(FilePath, StringLookup);
+
     }
 }

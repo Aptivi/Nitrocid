@@ -17,11 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Linq;
 using System.Text.RegularExpressions;
 using KS.ConsoleBase.Colors;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Languages;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 
@@ -40,9 +42,26 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             try
             {
-                var Matches = Searching.SearchFileForStringRegexp(ListArgsOnly[1], new Regex(ListArgsOnly[0], RegexOptions.IgnoreCase));
-                foreach (string Match in Matches)
-                    TextWriterColor.Write(Match);
+                var Matches = Searching.SearchFileForStringRegexpMatches(ListArgsOnly[1], new Regex(ListArgsOnly[0], RegexOptions.IgnoreCase));
+                foreach ((string, MatchCollection) matchTuple in Matches)
+                {
+                    string matchLine = matchTuple.Item1;
+                    var matchCollection = matchTuple.Item2;
+
+                    // Iterate through each match collection to get their values so that we can replace the text with the text that
+                    // contains VT sequences to colorize the matches.
+                    var matchColor = ColorTools.GetColor(KernelColorType.Success);
+                    var normalColor = ColorTools.GetColor(KernelColorType.NeutralText);
+                    foreach (Match match in matchCollection.Cast<Match>())
+                    {
+                        string toReplaceWith = $"{matchColor.VTSequenceForeground}{match.Value}{normalColor.VTSequenceForeground}";
+
+                        // We want to avoid repetitions here
+                        if (!matchLine.Contains(toReplaceWith))
+                            matchLine = matchLine.Replace(match.Value, toReplaceWith);
+                    }
+                    Console.WriteLine(matchLine);
+                }
             }
             catch (Exception ex)
             {

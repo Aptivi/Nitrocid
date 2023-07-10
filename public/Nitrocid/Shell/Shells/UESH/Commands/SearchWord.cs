@@ -17,6 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Linq;
+using System.Reflection.PortableExecutable;
+using System.Text.RegularExpressions;
 using KS.ConsoleBase.Colors;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
@@ -37,15 +40,28 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
+            string lookup = ListArgsOnly[0];
+            string fileName = ListArgsOnly[1];
+
             try
             {
-                var Matches = Searching.SearchFileForString(ListArgsOnly[1], ListArgsOnly[0]);
+                var Matches = Searching.SearchFileForString(fileName, lookup);
                 foreach (string Match in Matches)
-                    TextWriterColor.Write(Match);
+                {
+                    var matchColor = ColorTools.GetColor(KernelColorType.Success);
+                    var normalColor = ColorTools.GetColor(KernelColorType.NeutralText);
+                    string matchLine = Match;
+                    string toReplaceWith = $"{matchColor.VTSequenceForeground}{lookup}{normalColor.VTSequenceForeground}";
+
+                    // We want to avoid repetitions here
+                    if (!matchLine.Contains(toReplaceWith))
+                        matchLine = matchLine.Replace(lookup, toReplaceWith);
+                    TextWriterColor.Write(matchLine);
+                }
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to search {0} for {1}", ListArgsOnly[0], ListArgsOnly[1]);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to search {0} for {1}", lookup, fileName);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriterColor.Write(Translate.DoTranslation("Searching {0} for {1} failed.") + " {2}", true, KernelColorType.Error, ListArgsOnly[0], ListArgsOnly[1], ex.Message);
             }
