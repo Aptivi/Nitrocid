@@ -28,6 +28,7 @@ using KS.Kernel.Exceptions;
 using KS.Kernel.Configuration;
 using KS.Drivers;
 using KS.Misc.Text;
+using IOPath = System.IO.Path;
 
 namespace KS.Files
 {
@@ -87,6 +88,9 @@ namespace KS.Files
             if (!string.IsNullOrEmpty(Source))
                 if (Path.Contains(Source) & Path.AllIndexesOf(Source).Count() > 1)
                     Path = Path.ReplaceLastOccurrence(Source, "");
+
+            // Finalize the path in case NeutralizePath didn't normalize it correctly.
+            Path = IOPath.GetFullPath(Path).Replace(@"\", "/");
 
             // If strict, checks for existence of file
             if (Strict)
