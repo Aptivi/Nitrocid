@@ -232,9 +232,12 @@ namespace KS.Shell
                 // Add command to command builder and return the final result. The reason to add the extra space before the second command written is that
                 // because if we need to provide a second command to the shell in a separate line, we usually add the semicolon at the end of the primary
                 // command input.
-                if (!string.IsNullOrEmpty(FullCommand))
+                if (!string.IsNullOrEmpty(FullCommand) && !string.IsNullOrEmpty(strcommand))
                     commandBuilder.Append(' ');
-                commandBuilder.Append(strcommand);
+
+                // There are cases when strcommand may be empty, so ignore that if it's empty.
+                if (!string.IsNullOrEmpty(strcommand))
+                    commandBuilder.Append(strcommand);
                 FullCommand = commandBuilder.ToString();
             }
 
