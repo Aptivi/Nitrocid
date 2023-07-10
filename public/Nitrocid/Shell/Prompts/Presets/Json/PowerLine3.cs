@@ -36,10 +36,15 @@ namespace KS.Shell.Prompts.Presets.Json
         public override string PresetName { get; } = "PowerLine3";
 
         /// <inheritdoc/>
-        public override string PresetPrompt => PresetPromptBuilder();
+        public override string PresetShellType { get; } = "JsonShell";
 
         /// <inheritdoc/>
-        public override string PresetShellType { get; } = "JsonShell";
+        public override string PresetPrompt =>
+            PresetPromptBuilder();
+
+        /// <inheritdoc/>
+        public override string PresetPromptCompletion =>
+            PresetPromptCompletionBuilder();
 
         internal override string PresetPromptBuilder()
         {
@@ -60,7 +65,30 @@ namespace KS.Shell.Prompts.Presets.Json
             return PresetStringBuilder.ToString();
         }
 
-        string IPromptPreset.PresetPromptBuilder() => PresetPromptBuilder();
+        internal override string PresetPromptCompletionBuilder()
+        {
+            // Segments
+            List<PowerLineSegment> segments = new()
+            {
+                new PowerLineSegment(new Color(255, 255, 85), new Color(127, 127, 43), "+"),
+            };
+
+            // Builder
+            var PresetStringBuilder = new StringBuilder();
+
+            // Use RenderSegments to render our segments
+            PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
+            PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+
+            // Present final string
+            return PresetStringBuilder.ToString();
+        }
+
+        string IPromptPreset.PresetPromptBuilder() =>
+            PresetPromptBuilder();
+
+        string IPromptPreset.PresetPromptCompletionBuilder() =>
+            PresetPromptCompletionBuilder();
 
     }
 }

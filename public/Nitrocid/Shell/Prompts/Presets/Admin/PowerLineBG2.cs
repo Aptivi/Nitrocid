@@ -22,6 +22,7 @@ using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Colors;
 using KS.Misc.Writers.FancyWriters.Tools;
 using System.Collections.Generic;
+using KS.Languages;
 
 namespace KS.Shell.Prompts.Presets.Admin
 {
@@ -35,17 +36,22 @@ namespace KS.Shell.Prompts.Presets.Admin
         public override string PresetName { get; } = "PowerLineBG2";
 
         /// <inheritdoc/>
-        public override string PresetPrompt => PresetPromptBuilder();
+        public override string PresetShellType { get; } = "AdminShell";
 
         /// <inheritdoc/>
-        public override string PresetShellType { get; } = "AdminShell";
+        public override string PresetPrompt =>
+            PresetPromptBuilder();
+
+        /// <inheritdoc/>
+        public override string PresetPromptCompletion =>
+            PresetPromptCompletionBuilder();
 
         internal override string PresetPromptBuilder()
         {
             // Segments
             List<PowerLineSegment> segments = new()
             {
-                new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), "Admin"),
+                new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), Translate.DoTranslation("Administrator Shell")),
             };
 
             // Builder
@@ -59,7 +65,30 @@ namespace KS.Shell.Prompts.Presets.Admin
             return PresetStringBuilder.ToString();
         }
 
-        string IPromptPreset.PresetPromptBuilder() => PresetPromptBuilder();
+        internal override string PresetPromptCompletionBuilder()
+        {
+            // Segments
+            List<PowerLineSegment> segments = new()
+            {
+                new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), "+"),
+            };
+
+            // Builder
+            var PresetStringBuilder = new StringBuilder();
+
+            // Use RenderSegments to render our segments
+            PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
+            PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+
+            // Present final string
+            return PresetStringBuilder.ToString();
+        }
+
+        string IPromptPreset.PresetPromptBuilder() =>
+            PresetPromptBuilder();
+
+        string IPromptPreset.PresetPromptCompletionBuilder() =>
+            PresetPromptCompletionBuilder();
 
     }
 }

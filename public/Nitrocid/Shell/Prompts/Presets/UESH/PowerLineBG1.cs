@@ -41,7 +41,12 @@ namespace KS.Shell.Prompts.Presets.UESH
         public override string PresetName { get; } = "PowerLineBG1";
 
         /// <inheritdoc/>
-        public override string PresetPrompt => PresetPromptBuilder();
+        public override string PresetPrompt =>
+            PresetPromptBuilder();
+
+        /// <inheritdoc/>
+        public override string PresetPromptCompletion =>
+            PresetPromptCompletionBuilder();
 
         internal override string PresetPromptBuilder()
         {
@@ -79,7 +84,30 @@ namespace KS.Shell.Prompts.Presets.UESH
             return PresetStringBuilder.ToString();
         }
 
-        string IPromptPreset.PresetPromptBuilder() => PresetPromptBuilder();
+        internal override string PresetPromptCompletionBuilder()
+        {
+            // Segments
+            List<PowerLineSegment> segments = new()
+            {
+                new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), "+"),
+            };
+
+            // Builder
+            var PresetStringBuilder = new StringBuilder();
+
+            // Use RenderSegments to render our segments
+            PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
+            PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+
+            // Present final string
+            return PresetStringBuilder.ToString();
+        }
+
+        string IPromptPreset.PresetPromptBuilder() =>
+            PresetPromptBuilder();
+
+        string IPromptPreset.PresetPromptCompletionBuilder() =>
+            PresetPromptCompletionBuilder();
 
     }
 }

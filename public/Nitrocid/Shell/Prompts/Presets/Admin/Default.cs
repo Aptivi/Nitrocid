@@ -15,6 +15,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Languages;
+
 namespace KS.Shell.Prompts.Presets.Admin
 {
     /// <summary>
@@ -27,7 +29,7 @@ namespace KS.Shell.Prompts.Presets.Admin
         public override string PresetName { get; } = "Default";
 
         /// <inheritdoc/>
-        public override string PresetPrompt { get; } = "Admin> ";
+        public override string PresetPrompt { get => Translate.DoTranslation("Administrator Shell") + "> "; }
 
         /// <inheritdoc/>
         public override string PresetShellType { get; } = "AdminShell";

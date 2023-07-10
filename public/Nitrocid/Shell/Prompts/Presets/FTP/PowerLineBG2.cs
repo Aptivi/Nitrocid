@@ -23,6 +23,8 @@ using KS.Shell.Shells.FTP;
 using KS.Misc.Writers.FancyWriters.Tools;
 using KS.Shell.Shells.SFTP;
 using System.Collections.Generic;
+using KS.ConsoleBase.Colors;
+using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Shell.Prompts.Presets.FTP
 {
@@ -36,10 +38,15 @@ namespace KS.Shell.Prompts.Presets.FTP
         public override string PresetName { get; } = "PowerLineBG2";
 
         /// <inheritdoc/>
-        public override string PresetPrompt => PresetPromptBuilder();
+        public override string PresetShellType { get; } = "FTPShell";
 
         /// <inheritdoc/>
-        public override string PresetShellType { get; } = "FTPShell";
+        public override string PresetPrompt =>
+            PresetPromptBuilder();
+
+        /// <inheritdoc/>
+        public override string PresetPromptCompletion =>
+            PresetPromptCompletionBuilder();
 
         internal override string PresetPromptBuilder()
         {
@@ -74,7 +81,30 @@ namespace KS.Shell.Prompts.Presets.FTP
             return PresetStringBuilder.ToString();
         }
 
-        string IPromptPreset.PresetPromptBuilder() => PresetPromptBuilder();
+        internal override string PresetPromptCompletionBuilder()
+        {
+            // Segments
+            List<PowerLineSegment> segments = new()
+            {
+                new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), "+"),
+            };
+
+            // Builder
+            var PresetStringBuilder = new StringBuilder();
+
+            // Use RenderSegments to render our segments
+            PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
+            PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+
+            // Present final string
+            return PresetStringBuilder.ToString();
+        }
+
+        string IPromptPreset.PresetPromptBuilder() =>
+            PresetPromptBuilder();
+
+        string IPromptPreset.PresetPromptCompletionBuilder() =>
+            PresetPromptCompletionBuilder();
 
     }
 }

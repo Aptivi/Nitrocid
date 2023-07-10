@@ -605,5 +605,6 @@ Sends a notification as asterisk to test the receiver
 Finds a file in the specified directory or in the current directory using regular expressions
 Welcome!
 Tests the interactive TUI system with a single pane interaction and with refreshing the second pane info
+Administrator Shell
 
 ==========================================================================================================================================
