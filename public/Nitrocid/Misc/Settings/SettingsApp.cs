@@ -228,6 +228,7 @@ namespace KS.Misc.Settings
                     {
                         new InputChoiceInfo($"{MaxOptions + 1}", Translate.DoTranslation("Go Back..."))
                     };
+                    var displayUnsupportedConfigs = new List<string>();
 
                     string Notes = "";
                     for (int SectionIndex = 0; SectionIndex <= MaxOptions - 1; SectionIndex++)
@@ -257,7 +258,8 @@ namespace KS.Misc.Settings
                         }
                         if (platformUnsupported)
                         {
-                            Notes = Translate.DoTranslation("One or more of the settings found in this section are unsupported in your platform.");
+                            displayUnsupportedConfigs.Add(Translate.DoTranslation(Setting["Name"].ToString()));
+                            Notes = Translate.DoTranslation("One or more of the following settings found in this section are unsupported in your platform:") + $" {string.Join(", ", displayUnsupportedConfigs)}";
                             continue;
                         }
 
