@@ -19,6 +19,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Languages;
@@ -105,6 +106,7 @@ namespace KS.ConsoleBase.Inputs.Styles
             int pages = AllAnswers.Count / listEndPosition;
             int answersPerPage = listEndPosition - 4;
             int lastPage = 1;
+            bool refreshRequired = false;
 
             while (true)
             {
@@ -115,7 +117,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 int endIndex = (answersPerPage * (currentPage + 1)) - 1;
 
                 // If the current page is different, refresh the entire screen.
-                if (currentPage != lastPage)
+                if (currentPage != lastPage || refreshRequired)
                 {
                     ConsoleWrapper.Clear(true);
                     TextWriterColor.Write(Question + CharManager.NewLine, true, KernelColorType.Question);
@@ -156,7 +158,8 @@ namespace KS.ConsoleBase.Inputs.Styles
                 // Write description area
                 int descSepArea = ConsoleWrapper.WindowHeight - 3;
                 int descArea = ConsoleWrapper.WindowHeight - 2;
-                string descFinal = AllAnswers[HighlightedAnswer - 1].ChoiceDescription is not null ? AllAnswers[HighlightedAnswer - 1].ChoiceDescription.Truncate((ConsoleWrapper.WindowWidth * 2) - 3) : "";
+                var highlightedAnswer = AllAnswers[HighlightedAnswer - 1];
+                string descFinal = highlightedAnswer.ChoiceDescription is not null ? highlightedAnswer.ChoiceDescription.Truncate((ConsoleWrapper.WindowWidth * 2) - 3) : "";
                 TextWriterWhereColor.WriteWhere(new string('=', ConsoleWrapper.WindowWidth), 0, descSepArea, KernelColorType.Separator);
                 TextWriterWhereColor.WriteWhere(new string(' ', ConsoleWrapper.WindowWidth), 0, descArea);
                 TextWriterWhereColor.WriteWhere(new string(' ', ConsoleWrapper.WindowWidth), 0, descArea + 1);
@@ -169,52 +172,50 @@ namespace KS.ConsoleBase.Inputs.Styles
                 switch (Answer.Key)
                 {
                     case ConsoleKey.UpArrow:
-                        {
-                            HighlightedAnswer -= 1;
-                            if (HighlightedAnswer == 0)
-                                HighlightedAnswer = AllAnswers.Count;
-
-                            break;
-                        }
-                    case ConsoleKey.DownArrow:
-                        {
-                            HighlightedAnswer += 1;
-                            if (HighlightedAnswer > AllAnswers.Count)
-                                HighlightedAnswer = 1;
-                            break;
-                        }
-                    case ConsoleKey.Home:
-                        {
-                            HighlightedAnswer = 1;
-                            break;
-                        }
-                    case ConsoleKey.End:
-                        {
+                        HighlightedAnswer -= 1;
+                        if (HighlightedAnswer == 0)
                             HighlightedAnswer = AllAnswers.Count;
-                            break;
-                        }
+
+                        break;
+                    case ConsoleKey.DownArrow:
+                        HighlightedAnswer += 1;
+                        if (HighlightedAnswer > AllAnswers.Count)
+                            HighlightedAnswer = 1;
+                        break;
+                    case ConsoleKey.Home:
+                        HighlightedAnswer = 1;
+                        break;
+                    case ConsoleKey.End:
+                        HighlightedAnswer = AllAnswers.Count;
+                        break;
                     case ConsoleKey.PageUp:
-                        {
-                            HighlightedAnswer = startIndex > 0 ? startIndex : 1;
-                            break;
-                        }
+                        HighlightedAnswer = startIndex > 0 ? startIndex : 1;
+                        break;
                     case ConsoleKey.PageDown:
-                        {
-                            HighlightedAnswer = endIndex > AllAnswers.Count ? AllAnswers.Count : endIndex + 2;
-                            break;
-                        }
+                        HighlightedAnswer = endIndex > AllAnswers.Count ? AllAnswers.Count : endIndex + 2;
+                        break;
                     case ConsoleKey.Enter:
-                        {
-                            TextWriterColor.Write();
-                            savedPos = HighlightedAnswer;
-                            return HighlightedAnswer;
-                        }
+                        TextWriterColor.Write();
+                        savedPos = HighlightedAnswer;
+                        return HighlightedAnswer;
                     case ConsoleKey.Escape:
-                        {
-                            TextWriterColor.Write();
-                            savedPos = HighlightedAnswer;
-                            return -1;
-                        }
+                        TextWriterColor.Write();
+                        savedPos = HighlightedAnswer;
+                        return -1;
+                    case ConsoleKey.Tab:
+                        var infoRenderer = new StringBuilder();
+                        infoRenderer.AppendJoin("\n",
+                            new[]
+                            {
+                                highlightedAnswer.ChoiceTitle,
+                                new string('-', highlightedAnswer.ChoiceTitle.Length),
+                                "",
+                                highlightedAnswer.ChoiceDescription,
+                            }
+                        );
+                        InfoBoxColor.WriteInfoBox(infoRenderer.ToString());
+                        refreshRequired = true;
+                        break;
                 }
 
                 // Update the last page
