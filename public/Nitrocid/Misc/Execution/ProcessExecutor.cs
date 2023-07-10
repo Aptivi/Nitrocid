@@ -27,6 +27,7 @@ using KS.Languages;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Kernel.Events;
+using System.Text;
 
 namespace KS.Misc.Execution
 {
@@ -143,6 +144,103 @@ namespace KS.Misc.Execution
                 TextWriterColor.Write(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName, ex.Message, File);
             }
             return -1;
+        }
+
+        /// <summary>
+        /// Executes a file with specified arguments and puts the output to the string
+        /// </summary>
+        /// <param name="File">Full path to file</param>
+        /// <param name="Args">Arguments, if any</param>
+        /// <param name="exitCode">Application exit code. -1 if internal error occurred</param>
+        /// <param name="includeStdErr">Include output printed to StdErr</param>
+        /// <returns>Output of a command from stdout</returns>
+        public static string ExecuteProcessToString(string File, string Args, ref int exitCode, bool includeStdErr) =>
+            ExecuteProcessToString(File, Args, CurrentDirectory.CurrentDir, ref exitCode, includeStdErr);
+
+        /// <summary>
+        /// Executes a file with specified arguments and puts the output to the string
+        /// </summary>
+        /// <param name="File">Full path to file</param>
+        /// <param name="Args">Arguments, if any</param>
+        /// <param name="WorkingDirectory">Specifies the working directory</param>
+        /// <param name="exitCode">Application exit code. -1 if internal error occurred</param>
+        /// <param name="includeStdErr">Include output printed to StdErr</param>
+        /// <returns>Output of a command from stdout</returns>
+        public static string ExecuteProcessToString(string File, string Args, string WorkingDirectory, ref int exitCode, bool includeStdErr)
+        {
+            var commandOutputBuilder = new StringBuilder();
+            try
+            {
+                bool HasProcessExited = false;
+                var CommandProcess = new Process();
+                var CommandProcessStart = new ProcessStartInfo()
+                {
+                    RedirectStandardInput = true,
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = includeStdErr,
+                    FileName = File,
+                    Arguments = Args,
+                    WorkingDirectory = WorkingDirectory,
+                    CreateNoWindow = true,
+                    WindowStyle = ProcessWindowStyle.Hidden,
+                    UseShellExecute = false
+                };
+                CommandProcess.StartInfo = CommandProcessStart;
+
+                // Set events up
+                void DataReceivedHandler(object _, DataReceivedEventArgs data)
+                {
+                    if (data.Data is not null)
+                        commandOutputBuilder.Append(data.Data);
+                }
+                CommandProcess.EnableRaisingEvents = true;
+                CommandProcess.OutputDataReceived += DataReceivedHandler;
+                if (includeStdErr)
+                    CommandProcess.ErrorDataReceived += DataReceivedHandler;
+                CommandProcess.Exited += (sender, args) => HasProcessExited = true;
+
+                // Start the process
+                DebugWriter.WriteDebug(DebugLevel.I, "Starting...");
+                CommandProcess.Start();
+                CommandProcess.BeginOutputReadLine();
+                if (includeStdErr)
+                    CommandProcess.BeginErrorReadLine();
+
+                // Wait for process exit
+                while (!HasProcessExited | !Flags.CancelRequested)
+                {
+                    if (HasProcessExited)
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.W, "Process exited! Output may not be complete!");
+                        CommandProcess.WaitForExit();
+                        DebugWriter.WriteDebug(DebugLevel.I, "Flushed as much as possible.");
+                        break;
+                    }
+                    else if (Flags.CancelRequested)
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.W, "Process killed! Output may not be complete!");
+                        CommandProcess.Kill();
+                        CommandProcess.WaitForExit();
+                        DebugWriter.WriteDebug(DebugLevel.I, "Flushed as much as possible.");
+                        break;
+                    }
+                }
+                DebugWriter.WriteDebug(DebugLevel.I, "Process exited with exit code {0}.", CommandProcess.ExitCode);
+                exitCode = CommandProcess.ExitCode;
+            }
+            catch (ThreadInterruptedException)
+            {
+                Flags.CancelRequested = false;
+                exitCode = -1;
+            }
+            catch (Exception ex)
+            {
+                EventsManager.FireEvent(EventType.ProcessError, File + Args, ex);
+                DebugWriter.WriteDebugStackTrace(ex);
+                TextWriterColor.Write(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName, ex.Message, File);
+                exitCode = -1;
+            }
+            return commandOutputBuilder.ToString();
         }
 
         /// <summary>

@@ -25,6 +25,8 @@ using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Drivers;
 using KS.ConsoleBase.Inputs;
+using KS.Misc.Execution;
+using KS.Files.PathLookup;
 
 namespace KS.ConsoleBase
 {
@@ -121,8 +123,40 @@ namespace KS.ConsoleBase
             int MinimumWidth =  80;
             int MinimumHeight = 24;
             if (KernelPlatform.IsRunningFromTmux())
-                // Assume that status bar is 1 row long
-                MinimumHeight -= 1;
+            {
+                try
+                {
+                    // Try to get the status variable from the global TMUX "status" variable. Additionally, we need to replace
+                    // the value "on" with 1 and "off" with 0 to best reflect the state. It can take a value larger than 1, like
+                    // a TMUX configuration that contains two status bars, then that variable would be 2.
+                    //
+                    // So, we invoke the `tmux show-options -v -g status` command to get the value from the running TMUX session
+                    // via the global configuration options, filtering the result as necessary.
+                    string shellPath = "/bin/sh";
+                    int exitCode = -1;
+                    PathLookupTools.FileExistsInPath("sh", ref shellPath);
+                    string output = ProcessExecutor.ExecuteProcessToString(shellPath, "-c \"tmux show-options -v -g status | sed 's/on/1/g' | sed 's/off/0/g'\"", ref exitCode, false);
+
+                    // If we couldn't get this variable, assume that the status height is 1.
+                    if (exitCode == 0)
+                    {
+                        // We got it! Now, let's parse it.
+                        if (int.TryParse(output, out int numStatusBars))
+                            MinimumHeight -= numStatusBars;
+                    }
+                    else
+                    {
+                        // We couldn't get the status variable from the global TMUX "status" variable because of command error.
+                        // Assume that it's 1.
+                        MinimumHeight--;
+                    }
+                }
+                catch
+                {
+                    // We couldn't get the status variable from the global TMUX "status" variable. Assume that it's 1.
+                    MinimumHeight--;
+                }
+            }
 
             // Check for the minimum console window requirements (80x24)
             while (ConsoleWrapper.WindowWidth < MinimumWidth | ConsoleWrapper.WindowHeight < MinimumHeight)
