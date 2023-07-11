@@ -166,12 +166,12 @@ namespace KS.Files.Interactive
                 return;
             if (CurrentPane == 2)
             {
-                secondPanePath = Filesystem.NeutralizePath(currentFileSystemInfo.FullName);
+                secondPanePath = Filesystem.NeutralizePath(currentFileSystemInfo.FullName + "/");
                 SecondPaneCurrentSelection = 1;
             }
             else
             {
-                firstPanePath = Filesystem.NeutralizePath(currentFileSystemInfo.FullName);
+                firstPanePath = Filesystem.NeutralizePath(currentFileSystemInfo.FullName + "/");
                 FirstPaneCurrentSelection = 1;
             }
         }
