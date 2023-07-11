@@ -23,6 +23,7 @@ using KS.Misc.Presentation.Elements;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.TimeDate;
 using System.Collections.Generic;
+using System.Linq;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Presentation
@@ -167,6 +168,153 @@ namespace KS.Misc.Presentation
                                     "lobortis feugiat vivamus at. Scelerisque fermentum dui faucibus in ornare quam viverra. " +
                                     "Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin."
                                 }
+                            }
+                        }
+                    ),
+                    #endregion
+                        
+                    #region Fifth page - Debugging choice input
+                    new PresentationPage("Fifth page - Debugging choice input",
+                        new List<IElement>()
+                        {
+                            new TextElement() {
+                                Arguments = new object[] {
+                                    "Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin."
+                                }
+                            },
+                            new ChoiceInputElement()
+                            {
+                                Arguments = new object[]
+                                {
+                                    "Ultricies mi eget mauris pharetra:",
+                                    "Alex",
+                                    "Zhao",
+                                    "Agustin",
+                                    "Jim",
+                                    "Sarah"
+                                },
+                                InvokeActionInput =
+                                    (objs) => TextWriterWhereColor.WriteWhere($"You chose \"{objs[0]}\", a {((string)objs[0] == "Sarah" ? "girl" : "boy")}.", PresentationTools.PresentationUpperInnerBorderLeft, ConsoleWrapper.CursorTop)
+                            },
+                            new ChoiceInputElement()
+                            {
+                                Arguments = new object[]
+                                {
+                                    "Ultricies mi eget mauris pharetra sapien et ligula:",
+                                    "Alex",
+                                    "Zhao",
+                                    "Agustin",
+                                    "Jim",
+                                    "Sarah",
+                                    "Akshay",
+                                    "Aladdin",
+                                    "Bella",
+                                    "Billy",
+                                    "Blake",
+                                    "Bobby",
+                                    "Chandran",
+                                    "Colin",
+                                    "Connor",
+                                    "Debbie",
+                                    "Eduard",
+                                    "David",
+                                    "Paul",
+                                    "Ella",
+                                    "Elizabeth",
+                                    "Fitz",
+                                    "Gary",
+                                    "Hendrick",
+                                    "Henry",
+                                    "Jared",
+                                    "Jasmine",
+                                    "Johnny",
+                                    "Sofia",
+                                    "Thalia",
+                                    "Vincent"
+                                },
+                                InvokeActionInput =
+                                    (objs) =>
+                                    TextWriterWhereColor.WriteWhere($"You chose \"{objs[0]}\", a " +
+                                        $"{(((string)objs[0] is "Sarah" or "Bella" or "Debbie" or "Ella" or "Elizabeth" or "Jasmine" or "Sofia" or "Thalia")
+                                    ? "girl" : "boy")}.",
+                                    PresentationTools.PresentationUpperInnerBorderLeft, ConsoleWrapper.CursorTop)
+                            }
+                        }
+                    ),
+                    #endregion
+                        
+                    #region Sixth page - Debugging multiple choice input
+                    new PresentationPage("Sixth page - Debugging choice input",
+                        new List<IElement>()
+                        {
+                            new TextElement() {
+                                Arguments = new object[] {
+                                    "Tempor orci dapibus ultrices in iaculis nunc sed augue lacus."
+                                }
+                            },
+                            new MultipleChoiceInputElement()
+                            {
+                                Arguments = new object[]
+                                {
+                                    "Ultricies mi eget mauris pharetra:",
+                                    "Alex",
+                                    "Zhao",
+                                    "Agustin",
+                                    "Jim",
+                                    "Sarah"
+                                },
+                                InvokeActionInput =
+                                    (objs) =>
+                                    {
+                                        string[] names = objs[0].ToString().Split(';');
+                                        TextWriterWhereColor.WriteWhere($"You chose {names.Length} persons, {names.Count((name) => name == "Sarah")} of which are girls.", PresentationTools.PresentationUpperInnerBorderLeft, ConsoleWrapper.CursorTop);
+                                    }
+                            },
+                            new MultipleChoiceInputElement()
+                            {
+                                Arguments = new object[]
+                                {
+                                    "Ultricies mi eget mauris pharetra sapien et ligula:",
+                                    "Alex",
+                                    "Zhao",
+                                    "Agustin",
+                                    "Jim",
+                                    "Sarah",
+                                    "Akshay",
+                                    "Aladdin",
+                                    "Bella",
+                                    "Billy",
+                                    "Blake",
+                                    "Bobby",
+                                    "Chandran",
+                                    "Colin",
+                                    "Connor",
+                                    "Debbie",
+                                    "Eduard",
+                                    "David",
+                                    "Paul",
+                                    "Ella",
+                                    "Elizabeth",
+                                    "Fitz",
+                                    "Gary",
+                                    "Hendrick",
+                                    "Henry",
+                                    "Jared",
+                                    "Jasmine",
+                                    "Johnny",
+                                    "Sofia",
+                                    "Thalia",
+                                    "Vincent"
+                                },
+                                InvokeActionInput =
+                                    (objs) =>
+                                    {
+                                        string[] names = objs[0].ToString().Split(';');
+                                        TextWriterWhereColor.WriteWhere($"You chose {names.Length} persons, " +
+                                            $"{names.Count((name) => 
+                                               name is "Sarah" or "Bella" or "Debbie" or "Ella" or "Elizabeth" or "Jasmine" or "Sofia" or "Thalia")}" +
+                                            $" of which are girls.", PresentationTools.PresentationUpperInnerBorderLeft, ConsoleWrapper.CursorTop);
+                                    }
                             }
                         }
                     ),
