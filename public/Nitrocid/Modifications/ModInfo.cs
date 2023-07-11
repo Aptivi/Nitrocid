@@ -48,11 +48,15 @@ namespace KS.Modifications
         /// The mod version. We recommend using <seealso href="https://semver.org/">Semantic Versioning</seealso> scheme.
         /// </summary>
         public string ModVersion { get; private set; }
+        /// <summary>
+        /// The localization information containing the mod's strings
+        /// </summary>
+        public Dictionary<string, Dictionary<string, string>> ModStrings { get; private set; } = new();
 
         /// <summary>
         /// Creates new mod info instance
         /// </summary>
-        internal ModInfo(string ModName, string ModFileName, string ModFilePath, Dictionary<string, ModPartInfo> ModParts, string ModVersion)
+        internal ModInfo(string ModName, string ModFileName, string ModFilePath, Dictionary<string, ModPartInfo> ModParts, string ModVersion, Dictionary<string, Dictionary<string, string>> ModStrings)
         {
             // Validate values. Check to see if the name is null. If so, it will take the mod file name.
             if (string.IsNullOrWhiteSpace(ModName))
@@ -72,6 +76,7 @@ namespace KS.Modifications
             this.ModFilePath = ModFilePath;
             this.ModParts = ModParts;
             this.ModVersion = ModVersion;
+            this.ModStrings = ModStrings;
         }
 
     }

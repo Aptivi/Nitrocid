@@ -489,5 +489,14 @@ namespace KS.Languages
             return ListedLanguages;
         }
 
+        internal static Dictionary<string, string> ProbeLocalizations(JObject LanguageToken)
+        {
+            DebugCheck.Assert(LanguageToken.ContainsKey("Localizations"), "language has no localizations!!!");
+            var langStrings = new Dictionary<string, string>();
+            foreach (JProperty TranslatedProperty in LanguageToken.SelectToken("Localizations").Cast<JProperty>())
+                langStrings.Add(TranslatedProperty.Name, (string)TranslatedProperty.Value);
+            return langStrings;
+        }
+
     }
 }
