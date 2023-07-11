@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using ColorSeq;
 using KS.ConsoleBase;
 using KS.Kernel.Configuration;
+using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 
@@ -70,13 +71,14 @@ namespace KS.Misc.Screensaver.Displays
 
             // Select a color range for the aurora
             double GreenFrequency = Math.PI / 16;
-            double BlueFrequency = Math.PI / 8;
+            double BlueFrequency = Math.PI / 10;
             int[] GreenCurrentLevels = GetColorLevels(GreenFrequency);
             int[] BlueCurrentLevels = GetColorLevels(BlueFrequency);
 
             // Set some value ranges
             int GreenColorNumTo = Math.Abs(GreenCurrentLevels[greenPosIdx]);
             int BlueColorNumTo = Math.Abs(BlueCurrentLevels[bluePosIdx]);
+            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "G: {0} [{1}], B: {2} [{3}]", GreenColorNumTo, greenPosIdx, BlueColorNumTo, bluePosIdx);
 
             // Advance the indexes
             greenPosIdx++;
@@ -85,6 +87,7 @@ namespace KS.Misc.Screensaver.Displays
             bluePosIdx++;
             if (bluePosIdx >= BlueCurrentLevels.Length)
                 bluePosIdx = 0;
+            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Indexes advanced to {0}, {1}", greenPosIdx, bluePosIdx);
 
             // Prepare the color bands
             (int, int)[] ColorBands = GetColorBands(GreenColorNumTo, BlueColorNumTo);
@@ -94,7 +97,8 @@ namespace KS.Misc.Screensaver.Displays
             {
                 int red = 0;
                 int green = colorBand.Item1;
-                int blue = colorBand.Item1;
+                int blue = colorBand.Item2;
+                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Aurora drawing... {0}, {1}", green, blue);
                 Color storage = new(red, green, blue);
                 if (!ConsoleResizeListener.WasResized(false))
                     TextWriterColor.Write(new string(' ', ConsoleWrapper.WindowWidth), false, Color.Empty, storage);
