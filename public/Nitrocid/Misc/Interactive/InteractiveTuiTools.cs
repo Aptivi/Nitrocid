@@ -51,30 +51,52 @@ namespace KS.Misc.Interactive
                 if (interactiveTui is null)
                     throw new KernelException(KernelExceptionType.InteractiveTui, Translate.DoTranslation("Please provide a base Interactive TUI class and try again."));
 
-                // Loop until the user requests to exit
-                while (!interactiveTui.isExiting)
+                bool notifyCrash = false;
+                string crashReason = "";
+                try
                 {
-                    // Draw the boxes
-                    DrawInteractiveTui(interactiveTui);
-
-                    // Draw the first pane
-                    DrawInteractiveTuiItems(interactiveTui, 1);
-
-                    // Draw the second pane
-                    if (interactiveTui.SecondPaneInteractable)
+                    // Loop until the user requests to exit
+                    while (!interactiveTui.isExiting)
                     {
-                        DrawInteractiveTuiItems(interactiveTui, 2);
-                        DrawStatus(interactiveTui);
-                    }
-                    else
-                        DrawInformationOnSecondPane(interactiveTui);
+                        // Draw the boxes
+                        DrawInteractiveTui(interactiveTui);
 
-                    // Wait for user input
-                    RespondToUserInput(interactiveTui);
+                        // Draw the first pane
+                        DrawInteractiveTuiItems(interactiveTui, 1);
+
+                        // Draw the second pane
+                        if (interactiveTui.SecondPaneInteractable)
+                        {
+                            DrawInteractiveTuiItems(interactiveTui, 2);
+                            DrawStatus(interactiveTui);
+                        }
+                        else
+                            DrawInformationOnSecondPane(interactiveTui);
+
+                        // Wait for user input
+                        RespondToUserInput(interactiveTui);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    notifyCrash = true;
+                    crashReason = string.Format(Translate.DoTranslation("The interactive TUI, {0}, has crashed for the following reason:"), interactiveTui.GetType().Name) + $" {ex.Message}";
+                    DebugWriter.WriteDebug(DebugLevel.E, "Interactive TUI {0} crashed! {1}", interactiveTui.GetType().Name, ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
                 }
 
                 // Clear the console to clean up
                 ColorTools.LoadBack();
+                
+                // If there is a crash, notify the user about it
+                if (notifyCrash)
+                {
+                    notifyCrash = false;
+                    TextWriterColor.Write(crashReason, true, KernelColorType.Error);
+                    TextWriterColor.Write();
+                    TextWriterColor.Write(Translate.DoTranslation("Press any key to exit this program..."));
+                    Input.DetectKeypress();
+                }
 
                 // Reset some static variables
                 BaseInteractiveTui.RedrawRequired = true;
@@ -260,8 +282,12 @@ namespace KS.Misc.Interactive
             try
             {
                 // Populate data source and its count
-                int paneCurrentSelection = BaseInteractiveTui.FirstPaneCurrentSelection;
-                var data = interactiveTui.PrimaryDataSource;
+                int paneCurrentSelection = BaseInteractiveTui.CurrentPane == 2 ?
+                                           BaseInteractiveTui.SecondPaneCurrentSelection :
+                                           BaseInteractiveTui.FirstPaneCurrentSelection;
+                var data = BaseInteractiveTui.CurrentPane == 2 ?
+                           interactiveTui.SecondaryDataSource :
+                           interactiveTui.PrimaryDataSource;
                 int dataCount = CountElements(data);
 
                 // Populate selected data
@@ -292,7 +318,9 @@ namespace KS.Misc.Interactive
             int paneCurrentSelection = BaseInteractiveTui.CurrentPane == 2 ?
                                        BaseInteractiveTui.SecondPaneCurrentSelection :
                                        BaseInteractiveTui.FirstPaneCurrentSelection;
-            var data = interactiveTui.PrimaryDataSource;
+            var data = BaseInteractiveTui.CurrentPane == 2 ?
+                       interactiveTui.SecondaryDataSource :
+                       interactiveTui.PrimaryDataSource;
             object selectedData = GetElementFromIndex(data, paneCurrentSelection - 1);
             interactiveTui.RenderStatus(selectedData);
 
@@ -311,7 +339,9 @@ namespace KS.Misc.Interactive
             int paneCurrentSelection = BaseInteractiveTui.CurrentPane == 2 ?
                                        BaseInteractiveTui.SecondPaneCurrentSelection :
                                        BaseInteractiveTui.FirstPaneCurrentSelection;
-            var data = interactiveTui.PrimaryDataSource;
+            var data = BaseInteractiveTui.CurrentPane == 2 ?
+                       interactiveTui.SecondaryDataSource :
+                       interactiveTui.PrimaryDataSource;
             int dataCount = CountElements(data);
 
             // Populate selected data

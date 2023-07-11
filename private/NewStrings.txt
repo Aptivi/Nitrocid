@@ -619,5 +619,7 @@ Your terminal is {0} on {1}.
 Lets you select a feed from bookmarks
 Select your favorite feed.
 No bookmarks.
+The interactive TUI, {0}, has crashed for the following reason:
+Press any key to exit this program...
 
 ==========================================================================================================================================

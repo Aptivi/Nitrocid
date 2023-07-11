@@ -46,6 +46,9 @@ namespace KS.Kernel.Debugging.Testing.Facades.FacadeData
         public override IEnumerable SecondaryDataSource =>
             strings2;
 
+        public override bool SecondPaneInteractable =>
+            true;
+
         /// <inheritdoc/>
         public override void RenderStatus(object item)
         {
@@ -79,20 +82,32 @@ namespace KS.Kernel.Debugging.Testing.Facades.FacadeData
             {
                 if (index < strings2.Count)
                     strings2.RemoveAt(index - 1);
+                if (SecondPaneCurrentSelection > strings2.Count)
+                    SecondPaneCurrentSelection = strings2.Count;
             }
             else
             {
                 if (index < strings.Count)
                     strings.RemoveAt(index - 1);
+                if (FirstPaneCurrentSelection > strings.Count)
+                    FirstPaneCurrentSelection = strings.Count;
             }
         }
 
         private static void RemoveLast()
         {
             if (CurrentPane == 2)
+            {
                 strings2.RemoveAt(strings2.Count - 1);
+                if (SecondPaneCurrentSelection > strings2.Count)
+                    SecondPaneCurrentSelection = strings2.Count;
+            }
             else
+            {
                 strings.RemoveAt(strings.Count - 1);
+                if (FirstPaneCurrentSelection > strings.Count)
+                    FirstPaneCurrentSelection = strings.Count;
+            }
         }
 
         private static void Switch()
