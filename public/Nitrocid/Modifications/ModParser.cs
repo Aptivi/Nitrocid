@@ -34,6 +34,7 @@ using KS.Misc.Splash;
 using KS.Modifications.ManPages;
 using KS.Shell.ShellBase.Commands;
 using KS.Kernel.Events;
+using Newtonsoft.Json.Linq;
 
 namespace KS.Modifications
 {
@@ -70,10 +71,7 @@ namespace KS.Modifications
                 try
                 {
                     // Check to see if the DLL is actually a mod
-                    var script = GetModInstance(Assembly.LoadFrom(ModPath + modFile));
-
-                    // If we didn't find anything, abort
-                    if (script is null)
+                    var script = GetModInstance(Assembly.LoadFrom(ModPath + modFile)) ??
                         throw new KernelException(KernelExceptionType.InvalidMod, Translate.DoTranslation("The modfile is invalid."));
 
                     // Finalize the mod
@@ -144,6 +142,60 @@ namespace KS.Modifications
                         SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} may not work properly with this API version. Mod may fail to start up. Contact the mod vendor to get a latest copy."), 0, modFile);
                     }
 
+                    // Locate the mod's localization files
+                    string ModLocalizationPath = ModPath + "Localization/" + Path.GetFileNameWithoutExtension(modFile) + "-" + FileVersionInfo.GetVersionInfo(ModPath + modFile).FileVersion + "/";
+                    Dictionary<string, Dictionary<string, string>> localizations = new();
+                    if (Checking.FolderExists(ModLocalizationPath))
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.I, "Found mod localization collection in {0}", ModLocalizationPath);
+                        foreach (string ModManualFile in Directory.EnumerateFiles(ModLocalizationPath, "*.json", SearchOption.AllDirectories))
+                        {
+                            // This json file, as always, contains "Name" (ignored), "Transliterable" (ignored), and "Localizations" keys.
+                            string LanguageName = Path.GetFileNameWithoutExtension(ModManualFile);
+                            string ModManualFileContents = File.ReadAllText(ModManualFile);
+                            JToken MetadataToken = JObject.Parse(ModManualFileContents);
+                            DebugWriter.WriteDebug(DebugLevel.I, "MetadataToken is null: {0}", MetadataToken is null);
+                            if (MetadataToken is not null)
+                            {
+                                DebugWriter.WriteDebug(DebugLevel.I, "Metadata exists!");
+
+                                // Parse the values and install the language
+                                var ParsedLanguageLocalizations = MetadataToken.SelectToken("Localizations");
+
+                                // Check to see if we have that language...
+                                if (!LanguageManager.Languages.ContainsKey(LanguageName))
+                                {
+                                    DebugWriter.WriteDebug(DebugLevel.E, "Metadata contains nonexistent language!");
+                                    SplashReport.ReportProgressError(Translate.DoTranslation("Invalid language") + " {0} [{1}]", LanguageName, LanguageName);
+                                    return;
+                                }
+
+                                // Check the localizations...
+                                DebugWriter.WriteDebug(DebugLevel.I, "Checking localizations... (Null: {0})", ParsedLanguageLocalizations is null);
+                                if (ParsedLanguageLocalizations is not null)
+                                {
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Valid localizations found! Length: {0}", ParsedLanguageLocalizations.Count());
+
+                                    // Try to install the localizations
+                                    if (!localizations.ContainsKey(LanguageName))
+                                        localizations.Add(LanguageName, LanguageManager.ProbeLocalizations((JObject)MetadataToken));
+                                }
+                                else
+                                {
+                                    DebugWriter.WriteDebug(DebugLevel.E, "Metadata doesn't contain valid localizations!");
+                                    SplashReport.ReportProgressError(Translate.DoTranslation("The metadata information needed to install the custom language doesn't provide the necessary localizations needed."));
+                                    return;
+                                }
+                            }
+                            else
+                            {
+                                DebugWriter.WriteDebug(DebugLevel.E, "Metadata for language doesn't exist!");
+                                SplashReport.ReportProgressError(Translate.DoTranslation("The metadata information needed to install the custom language doesn't exist."));
+                                return;
+                            }
+                        }
+                    }
+
                     // Start the mod
                     script.StartMod();
                     DebugWriter.WriteDebug(DebugLevel.I, "script.StartMod() initialized. Mod name: {0} | Mod part: {1} | Version: {2}", script.Name, script.ModPart, script.Version);
@@ -199,7 +251,7 @@ namespace KS.Modifications
                     // Now, add the part
                     PartInstance = new ModPartInfo(ModName, script.ModPart, modFile, Filesystem.NeutralizePath(modFile, ModPath), script);
                     Parts.Add(script.ModPart, PartInstance);
-                    ModInstance = new ModInfo(ModName, modFile, Filesystem.NeutralizePath(modFile, ModPath), Parts, script.Version);
+                    ModInstance = new ModInfo(ModName, modFile, Filesystem.NeutralizePath(modFile, ModPath), Parts, script.Version, localizations);
                     if (!modFound)
                         ModManager.Mods.Add(ModName, ModInstance);
 

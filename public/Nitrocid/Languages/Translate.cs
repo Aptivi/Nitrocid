@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Kernel.Debugging;
+using KS.Modifications;
 
 namespace KS.Languages
 {
@@ -71,22 +72,31 @@ namespace KS.Languages
         /// <returns>Translated string</returns>
         public static string DoTranslation(string text, LanguageInfo lang)
         {
+            string langname = lang.ThreeLetterLanguageName;
+
             if (string.IsNullOrWhiteSpace(text))
                 return "";
 
-            if (lang.ThreeLetterLanguageName == "eng")
+            if (langname == "eng")
                 return text;
 
             // Do translation
             if (lang.Strings.ContainsKey(text))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Translating string to {0}: {1}", lang.ThreeLetterLanguageName, text);
+                DebugWriter.WriteDebug(DebugLevel.I, "Translating string to {0}: {1}", langname, text);
                 return lang.Strings[text];
             }
             else
             {
+                // We might have this string from a mod
+                foreach (ModInfo mod in ModManager.ListMods().Values)
+                {
+                    if (mod.ModStrings.ContainsKey(langname) && mod.ModStrings[langname].ContainsKey(text))
+                        return mod.ModStrings[langname][text];
+                }
+
                 // String wasn't found
-                DebugWriter.WriteDebug(DebugLevel.W, "No string found in langlist. Lang: {0}, String: {1}", lang.ThreeLetterLanguageName, text);
+                DebugWriter.WriteDebug(DebugLevel.W, "No string found in langlist. Lang: {0}, String: {1}", langname, text);
                 text = "(( " + text + " ))";
                 return text;
             }
