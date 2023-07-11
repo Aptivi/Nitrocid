@@ -19,74 +19,39 @@
 using ColorSeq;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Inputs.Styles;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Presentation;
 using KS.Misc.Presentation.Elements;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Users;
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Text;
 
 namespace KS.Kernel
 {
     internal static class KernelFirstRun
     {
-        internal static void FirstRun()
-        {
-            if (Flags.FirstTime)
-            {
-                Flags.FirstTime = false;
-                TextWriterColor.Write();
-                TextWriterColor.Write(Translate.DoTranslation("Welcome to Nitrocid Kernel! Since this is the first time you start Nitrocid Kernel up, we'll initiate a simple console testing to determine whether it supports true color. Press any key to continue."));
-                Input.DetectKeypress();
-                ConsoleWrapper.Clear();
-
-                // Show three color bands
-                int times = ConsoleWrapper.WindowWidth;
-                int oldTop = ConsoleWrapper.CursorTop;
-                double threshold = 255 / (double)times;
-                for (double i = 0; i < 255; i += threshold)
-                    TextWriterColor.Write(" ", false, Color.Empty, new Color(Convert.ToInt32(i), 0, 0));
-                if (ConsoleWrapper.CursorTop == oldTop)
-                    TextWriterColor.Write();
-                oldTop = ConsoleWrapper.CursorTop;
-                for (double i = 0; i < 255; i += threshold)
-                    TextWriterColor.Write(" ", false, Color.Empty, new Color(0, Convert.ToInt32(i), 0));
-                if (ConsoleWrapper.CursorTop == oldTop)
-                    TextWriterColor.Write();
-                oldTop = ConsoleWrapper.CursorTop;
-                for (double i = 0; i < 255; i += threshold)
-                    TextWriterColor.Write(" ", false, Color.Empty, new Color(0, 0, Convert.ToInt32(i)));
-                if (ConsoleWrapper.CursorTop == oldTop)
-                    TextWriterColor.Write();
-                oldTop = ConsoleWrapper.CursorTop;
-                TextWriterColor.Write();
-                Config.MainConfig.ConsoleSupportsTrueColor = ChoiceStyle.PromptChoice(Translate.DoTranslation("Do these ramps look right to you? They should transition smoothly."), "y/n") == "y";
-                ConsoleWrapper.Clear();
-
-                // Select a language
-                var langCodes = InputChoiceTools.GetInputChoices(string.Join("/", LanguageManager.Languages.Keys), LanguageManager.Languages.Values.Select((lang) => lang.FullLanguageName).ToArray());
-                int langIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Choose your language"), langCodes) - 1;
-                string lang = LanguageManager.Languages.Keys.ElementAt(langIndex);
-                LanguageManager.SetLang(lang);
-
-                // Run the presentation
-                PresentFirstRun();
-            }
-        }
-
-        private static void PresentFirstRun()
+        internal static void PresentFirstRun()
         {
             try
             {
                 // Some variables
                 string user = "owner";
                 string stepFailureReason = "";
+                string langCode = "eng";
+                bool supportsTrueColor = true;
                 bool moveOn = false;
+
+                // Prepare some arguments
+                // TODO: They are hacks that should be dealt with before Beta 2 for choice elements.
+                List<object> step1Args = new()
+                {
+                    Translate.DoTranslation("Select your language. By default, the kernel uses the English language, but you can select any other language here. Write the language code listed below:")
+                };
+                step1Args.AddRange(LanguageManager.Languages.Keys);
 
                 // Populate the first run presentations in case language changed during the first start-up
                 Presentation firstRunPresIntro = new(
@@ -124,6 +89,43 @@ namespace KS.Kernel
                 );
 
                 Presentation firstRunPresStep1 = new(
+                    // Presentation name
+                    Translate.DoTranslation("Kernel first-run"),
+
+                    // Presentation list
+                    new List<PresentationPage>()
+                    {
+                        // Third page - language selection
+                        new PresentationPage(
+                            // Page name
+                            Translate.DoTranslation("Select your language"),
+                        
+                            // Page elements
+                            new List<IElement>()
+                            {
+                                new ChoiceInputElement()
+                                {
+                                    Arguments = step1Args.ToArray(),
+                                    InvokeActionInput =
+                                        (args) => { 
+                                            langCode = (string)args[0];
+                                            LanguageManager.SetLang(langCode);
+                                            moveOn = true;
+                                        } 
+                                },
+                                new TextElement()
+                                {
+                                    Arguments = new object[]
+                                    {
+                                        Translate.DoTranslation("Press the ENTER key to continue.") + "\n"
+                                    }
+                                }
+                            }
+                        )
+                    }
+                );
+
+                Presentation firstRunPresStep2 = new(
                     // Presentation name
                     Translate.DoTranslation("Kernel first-run"),
 
@@ -197,6 +199,62 @@ namespace KS.Kernel
                     }
                 );
 
+                Presentation firstRunPresStep3 = new(
+                    // Presentation name
+                    Translate.DoTranslation("Kernel first-run"),
+
+                    // Presentation list
+                    new List<PresentationPage>()
+                    {
+                        // Fourth page - Console test
+                        new PresentationPage(
+                            // Page name
+                            Translate.DoTranslation("Testing your console for true-color support"),
+                        
+                            // Page elements
+                            new List<IElement>()
+                            {
+                                new TextElement()
+                                {
+                                    Arguments = new object[]
+                                    {
+                                        Translate.DoTranslation("Your terminal is {0} on {1}.") + "\n\n",
+                                        KernelPlatform.GetTerminalType(),
+                                        KernelPlatform.GetTerminalEmulator()
+                                    }
+                                },
+                                new TextElement()
+                                {
+                                    Arguments = new object[]
+                                    {
+                                        RenderBandsForFirstRun()
+                                    }
+                                },
+                                new ChoiceInputElement()
+                                {
+                                    Arguments = new object[]
+                                    {
+                                        Translate.DoTranslation("Do these ramps look right to you? They should transition smoothly."),
+                                        "y", "n"
+                                    },
+                                    InvokeActionInput =
+                                        (args) => {
+                                            supportsTrueColor = (string)args[0] == "y";
+                                            moveOn = true;
+                                        } 
+                                },
+                                new TextElement()
+                                {
+                                    Arguments = new object[]
+                                    {
+                                        Translate.DoTranslation("Press the ENTER key to continue.") + "\n"
+                                    }
+                                }
+                            }
+                        )
+                    }
+                );
+
                 Presentation firstRunPresOutro = new(
                     // Presentation name
                     Translate.DoTranslation("Kernel first-run"),
@@ -231,8 +289,19 @@ namespace KS.Kernel
                     }
                 );
 
+                // Assign all first runs
+                Presentation[] firstRuns = {
+                    // Introduction
+                    firstRunPresIntro,
+
+                    // Steps
+                    firstRunPresStep1, firstRunPresStep2, firstRunPresStep3,
+
+                    // Outro
+                    firstRunPresOutro 
+                };
+
                 // Present all presentations
-                Presentation[] firstRuns = { firstRunPresIntro, firstRunPresStep1, firstRunPresOutro };
                 for (int step = 0; step < firstRuns.Length; step++)
                 {
                     // Put in loop if the presentation contains input
@@ -263,6 +332,25 @@ namespace KS.Kernel
                 TextWriterColor.Write(Translate.DoTranslation("Press any key to start the shell anyways, but please note that you may have to create your new user manually."));
                 Input.DetectKeypress();
             }
+        }
+
+        private static string RenderBandsForFirstRun()
+        {
+            // Show three color bands
+            var band = new StringBuilder();
+            int times = ConsoleWrapper.WindowWidth - (PresentationTools.PresentationUpperInnerBorderLeft * 2) - 1;
+            double threshold = 255 / (double)times;
+            for (double i = 0; i < 255; i += threshold)
+                band.Append($"{new Color(Convert.ToInt32(i), 0, 0).VTSequenceBackground} ");
+            band.AppendLine();
+            for (double i = 0; i < 255; i += threshold)
+                band.Append($"{new Color(0, Convert.ToInt32(i), 0).VTSequenceBackground} ");
+            band.AppendLine();
+            for (double i = 0; i < 255; i += threshold)
+                band.Append($"{new Color(0, 0, Convert.ToInt32(i)).VTSequenceBackground} ");
+            band.AppendLine();
+            band.Append($"{CharManager.GetEsc() + $"[49m"}");
+            return band.ToString();
         }
     }
 }
