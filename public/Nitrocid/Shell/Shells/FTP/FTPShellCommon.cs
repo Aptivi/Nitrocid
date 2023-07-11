@@ -19,6 +19,7 @@
 using System.Collections.Generic;
 using FluentFTP;
 using KS.Kernel.Configuration;
+using KS.Network.Base.Connections;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.FTP
@@ -29,10 +30,12 @@ namespace KS.Shell.Shells.FTP
     public static class FTPShellCommon
     {
 
+        // TODO: This is just an initial implementation of the NetworkConnection support for all network types. Please refactor!
         internal static int verifyRetryAttempts = 3;
         internal static int connectTimeout = 15000;
         internal static int dataConnectTimeout = 15000;
         internal static FtpClient _clientFTP;
+        internal static NetworkConnection clientConnection;
         internal static bool FtpConnected;
         internal static string FtpSite;
         internal static string FtpPass;
@@ -42,7 +45,8 @@ namespace KS.Shell.Shells.FTP
         /// <summary>
         /// The FTP client used to connect to the FTP server
         /// </summary>
-        public static FtpClient ClientFTP => _clientFTP;
+        public static FtpClient ClientFTP =>
+            _clientFTP;
         /// <summary>
         /// FTP verify retry attempts
         /// </summary>

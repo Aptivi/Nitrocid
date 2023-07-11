@@ -46,6 +46,7 @@ using System.Reflection;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Inputs;
 using KS.Misc.Contacts;
+using KS.Network.Base.Connections;
 
 #if SPECIFIERREL
 using static KS.Misc.Notifications.NotificationManager;
@@ -125,6 +126,9 @@ namespace KS.Kernel
             // Disconnect from mail
             MailLogin.IMAP_Client.Disconnect(true);
             MailLogin.SMTP_Client.Disconnect(true);
+
+            // Disconnect all connections
+            NetworkConnectionTools.CloseAllConnections();
 
             // Unload all splashes
             SplashManager.UnloadSplashes();

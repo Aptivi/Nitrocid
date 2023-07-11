@@ -31,6 +31,7 @@ using KS.Misc.Reflection;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
+using KS.Network.Base.Connections;
 using KS.Network.FTP.Transfer;
 using KS.Network.SpeedDial;
 using KS.Shell.Shells.FTP;
@@ -234,6 +235,7 @@ namespace KS.Network.FTP
             // Connect
             TextWriterColor.Write(Translate.DoTranslation("Trying to connect to {0} with profile {1}..."), FTPShellCommon.ClientFTP.Host, profiles.IndexOf(profsel));
             DebugWriter.WriteDebug(DebugLevel.I, "Connecting to {0} with {1}...", FTPShellCommon.ClientFTP.Host, profiles.IndexOf(profsel));
+            FTPShellCommon.clientConnection = NetworkConnectionTools.EstablishConnection("FTP connection", FTPShellCommon.ClientFTP.Host, NetworkConnectionType.FTP, FTPShellCommon.ClientFTP);
             FTPShellCommon.ClientFTP.Connect(profsel);
 
             // Show that it's connected

@@ -363,5 +363,9 @@ namespace KS.Kernel.Exceptions
         /// An error occurred in the custom settings manager for users.
         /// </summary>
         CustomSettings,
+        /// <summary>
+        /// An error occurred in the network connection manager.
+        /// </summary>
+        NetworkConnection,
     }
 }

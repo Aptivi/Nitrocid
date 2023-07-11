@@ -116,6 +116,7 @@ namespace KS.Kernel.Exceptions
                     { KernelExceptionType.NoSuchGroup,                      Translate.DoTranslation("Group doesn't exist. Check to make sure that you've written the group name correctly.") },
                     { KernelExceptionType.InteractiveTui,                   Translate.DoTranslation("An error occurred in the Interactive TUI implementation.") },
                     { KernelExceptionType.CustomSettings,                   Translate.DoTranslation("An error occurred in the custom settings manager for users.") },
+                    { KernelExceptionType.NetworkConnection,                Translate.DoTranslation("An error occurred in the network connection manager.") },
                 };
             }
         }

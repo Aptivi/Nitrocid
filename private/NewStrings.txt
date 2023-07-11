@@ -621,5 +621,11 @@ Select your favorite feed.
 No bookmarks.
 The interactive TUI, {0}, has crashed for the following reason:
 Press any key to exit this program...
+An error occurred in the network connection manager.
+Connection is not found.
+Invalid link for connection.
+Failed to establish connection with {0}.
+Connection is not established yet.
+This property is only valid for connections with threads. For instance connections, call the appropriate property on the instance itself instead of calling this property.
 
 ==========================================================================================================================================
