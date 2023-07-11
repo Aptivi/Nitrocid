@@ -18,6 +18,7 @@
 
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 
@@ -112,6 +113,24 @@ namespace KS.Languages
             if (LanguageManager.Languages.ContainsKey(Language))
             {
                 return LanguageManager.CurrentLanguageInfo.Cultures;
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Gets all culture names available for the current language
+        /// </summary>
+        public static List<string> GetCultureNamesFromCurrentLang() =>
+            LanguageManager.CurrentLanguageInfo.Cultures.Select((culture) => culture.Name).ToList();
+
+        /// <summary>
+        /// Gets all culture names available for the current language
+        /// </summary>
+        public static List<string> GetCultureNamesFromLang(string Language)
+        {
+            if (LanguageManager.Languages.ContainsKey(Language))
+            {
+                return LanguageManager.CurrentLanguageInfo.Cultures.Select((culture) => culture.Name).ToList();
             }
             return null;
         }

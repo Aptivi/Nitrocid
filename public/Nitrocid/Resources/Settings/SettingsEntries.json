@@ -44,8 +44,8 @@
                 "Type": "SSelection",
                 "Variable": "CurrentCultStr",
                 "IsEnumeration": false,
-                "SelectionFunctionName": "GetCulturesFromCurrentLang",
-                "SelectionFunctionType": "Translate",
+                "SelectionFunctionName": "GetCultureNamesFromCurrentLang",
+                "SelectionFunctionType": "CultureManager",
                 "SelectionFallback": [ "en-US" ],
                 "Description": "Which variant of the current language is being used to change the month names, calendar, etc.?"
             },
