@@ -22,7 +22,6 @@ using System.Linq;
 using System.Text;
 using KS.ConsoleBase.Colors;
 using KS.Kernel;
-using KS.Languages;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;

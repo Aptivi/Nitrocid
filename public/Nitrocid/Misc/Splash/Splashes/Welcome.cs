@@ -26,7 +26,6 @@ using VT.NET.Tools;
 using KS.Misc.Writers.FancyWriters.Tools;
 using KS.Misc.Writers.FancyWriters;
 using KS.Languages;
-using KS.Kernel;
 
 namespace KS.Misc.Splash.Splashes
 {

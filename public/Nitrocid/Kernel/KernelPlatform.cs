@@ -30,17 +30,18 @@ namespace KS.Kernel
         /// <summary>
         /// Is this system a Windows system?
         /// </summary>
-        public static bool IsOnWindows() => Environment.OSVersion.Platform == PlatformID.Win32NT;
+        public static bool IsOnWindows() =>
+            Environment.OSVersion.Platform == PlatformID.Win32NT;
 
         /// <summary>
         /// Is this system a Unix system? True for macOS, too!
         /// </summary>
-        public static bool IsOnUnix() => Environment.OSVersion.Platform == PlatformID.Unix;
+        public static bool IsOnUnix() =>
+            Environment.OSVersion.Platform == PlatformID.Unix;
 
         /// <summary>
         /// Is this system a macOS system?
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "We already have IsOnUnix() to do the job, so it returns false when Windows is detected.")]
         public static bool IsOnMacOS()
         {
             if (IsOnUnix())
@@ -49,30 +50,32 @@ namespace KS.Kernel
                 return System.Contains("Darwin");
             }
             else
-            {
                 return false;
-            }
         }
 
         /// <summary>
         /// Polls $TERM_PROGRAM to get terminal emulator
         /// </summary>
-        public static string GetTerminalEmulator() => Environment.GetEnvironmentVariable("TERM_PROGRAM") ?? "";
+        public static string GetTerminalEmulator() =>
+            Environment.GetEnvironmentVariable("TERM_PROGRAM") ?? "";
 
         /// <summary>
         /// Polls $TERM to get terminal type (vt100, dumb, ...)
         /// </summary>
-        public static string GetTerminalType() => Environment.GetEnvironmentVariable("TERM") ?? "";
+        public static string GetTerminalType() =>
+            Environment.GetEnvironmentVariable("TERM") ?? "";
 
         /// <summary>
         /// Is Nitrocid KS running from GRILO?
         /// </summary>
-        public static bool IsRunningFromGrilo() => (System.Reflection.Assembly.GetEntryAssembly()?.GetName()?.Name?.StartsWith("GRILO")) ?? false;
+        public static bool IsRunningFromGrilo() =>
+            (System.Reflection.Assembly.GetEntryAssembly()?.GetName()?.Name?.StartsWith("GRILO")) ?? false;
 
         /// <summary>
         /// Is Nitrocid KS running from TMUX?
         /// </summary>
-        public static bool IsRunningFromTmux() => Environment.GetEnvironmentVariable("TMUX") is not null;
+        public static bool IsRunningFromTmux() =>
+            Environment.GetEnvironmentVariable("TMUX") is not null;
 
     }
 }

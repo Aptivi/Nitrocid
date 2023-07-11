@@ -17,9 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using System.Linq;
-using System.Reflection.PortableExecutable;
-using System.Text.RegularExpressions;
 using KS.ConsoleBase.Colors;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;

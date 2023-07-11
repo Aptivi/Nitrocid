@@ -20,14 +20,10 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Inputs.Styles;
 using KS.Languages;
-using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Network.RSS;
 using KS.Network.RSS.Bookmarks;
-using KS.Network.RSS.Instance;
 using KS.Shell.ShellBase.Commands;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace KS.Shell.Shells.RSS.Commands
 {

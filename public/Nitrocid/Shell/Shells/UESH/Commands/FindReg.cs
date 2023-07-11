@@ -16,15 +16,10 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Drivers;
 using KS.Files;
 using KS.Files.Folders;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Misc.Probers.Regexp;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace KS.Shell.Shells.UESH.Commands
