@@ -36,7 +36,7 @@ namespace KS.Shell.Shells.RSS
         internal static int refreshInterval = 60000;
         internal static KernelThread RSSRefresher = new("RSS Feed Refresher", false, RSSTools.RefreshFeeds);
         internal static HttpClient RSSRefresherClient = new() { Timeout = TimeSpan.FromMilliseconds(RSSFetchTimeout) };
-        internal static string RSSFeedLink;
+        internal static string rssFeedLink;
 
         /// <summary>
         /// RSS feed instance
@@ -67,6 +67,17 @@ namespace KS.Shell.Shells.RSS
         /// Whether to keep the connection alive or not
         /// </summary>
         public static bool RSSKeepAlive { get; set; }
-
+        /// <summary>
+        /// RSS feed URL prompt style
+        /// </summary>
+        public static string RSSFeedLink
+        {
+            get => rssFeedLink;
+            set
+            {
+                feedInstance = !string.IsNullOrEmpty(value) ? new RSSFeed(value, RSSFeedType.Infer) : null;
+                rssFeedLink = value;
+            }
+        }
     }
 }

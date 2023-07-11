@@ -54,10 +54,10 @@ namespace KS.Shell.Shells.RSS.Commands
             var bookmarksChoiceList = new List<InputChoiceInfo>();
             foreach (string bookmarkUrl in bookmarks)
                 bookmarksChoiceList.Add(new InputChoiceInfo(bookmarkUrl, ""));
-            int feedIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select your favorite feed."), bookmarksChoiceList) - 1;
+            int bookmarkNum = SelectionStyle.PromptSelection(Translate.DoTranslation("Select your favorite feed."), bookmarksChoiceList);
 
             // Get the feed from the list and connect the RSS shell to it
-            string feed = bookmarks[feedIndex];
+            string feed = RSSBookmarkManager.GetBookmark(bookmarkNum);
             RSSShellCommon.RSSFeedLink = feed;
         }
 
