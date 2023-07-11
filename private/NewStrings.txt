@@ -616,5 +616,8 @@ Select your language
 Select your language. By default, the kernel uses the English language, but you can select any other language here. Write the language code listed below:
 Testing your console for true-color support
 Your terminal is {0} on {1}.
+Lets you select a feed from bookmarks
+Select your favorite feed.
+No bookmarks.
 
 ==========================================================================================================================================
