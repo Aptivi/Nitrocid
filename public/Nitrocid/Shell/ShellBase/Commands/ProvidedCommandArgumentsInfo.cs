@@ -112,6 +112,7 @@ namespace KS.Shell.ShellBase.Commands
                     !CommandInfo.CommandArgumentInfo.ArgumentsRequired;
             else
                 RequiredArgumentsProvided = true;
+            // TODO: Handle switch requirements here
 
             // Install the parsed values to the new class instance
             ArgumentsList = EnclosedArgs;

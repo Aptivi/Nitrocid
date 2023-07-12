@@ -21,6 +21,7 @@ using KS.Kernel;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
+using KS.Shell.Shells.UESH.Commands;
 using System;
 using System.Linq;
 
@@ -52,29 +53,45 @@ namespace KS.Arguments.ArgumentBase
             if (!string.IsNullOrWhiteSpace(Argument) & ArgumentList.ContainsKey(Argument))
             {
                 string HelpDefinition = ArgumentList[Argument].GetTranslatedHelpEntry();
-                int UsageLength = Translate.DoTranslation("Usage:").Length;
-                var HelpUsages = Array.Empty<HelpUsage>();
+                var Arguments = Array.Empty<string>();
+                var Switches = Array.Empty<SwitchInfo>();
+                var argumentInfo = ArgumentList[Argument].ArgArgumentInfo;
 
                 // Populate help usages
-                if (ArgumentList[Argument].ArgArgumentInfo is not null)
-                    HelpUsages = ArgumentList[Argument].ArgArgumentInfo.HelpUsages;
+                if (argumentInfo is not null)
+                {
+                    Arguments = argumentInfo.Arguments;
+                    Switches = argumentInfo.Switches;
+                }
 
                 // Print usage information
-                if (HelpUsages.Length != 0)
+                if (Arguments.Length != 0 || Switches.Length != 0)
                 {
-                    var Indent = false;
-                    TextWriterColor.Write(Translate.DoTranslation("Usage:"));
+                    // Print the usage information holder
+                    TextWriterColor.Write(Translate.DoTranslation("Usage:") + $" {Argument}", false, KernelColorType.ListEntry);
 
-                    // Enumerate through the available help usages
-                    foreach (var HelpUsage in HelpUsages)
+                    // Enumerate through the available switches first
+                    foreach (var Switch in Switches)
                     {
-                        // Indent, if necessary
-                        if (Indent)
-                            TextWriterColor.Write(new string(' ', UsageLength), false, KernelColorType.ListEntry);
-                        TextWriterColor.Write($" {Argument} {string.Join(" ", HelpUsage.Switches)} {string.Join(" ", HelpUsage.Arguments)}", true, KernelColorType.ListEntry);
-                        Indent = true;
+                        bool required = Switch.IsRequired;
+                        string switchName = Switch.SwitchName;
+                        string renderedSwitch = required ? $" <-{switchName}[=value]>" : $" [-{switchName}[=value]]";
+                        TextWriterColor.Write(renderedSwitch, false, KernelColorType.ListEntry);
                     }
+
+                    // Enumerate through the available arguments
+                    int howManyRequired = argumentInfo.MinimumArguments;
+                    int queriedArgs = 1;
+                    foreach (string argument in Arguments)
+                    {
+                        bool required = argumentInfo.ArgumentsRequired && queriedArgs <= howManyRequired;
+                        string renderedArgument = required ? $" <{argument}>" : $" [{argument}]";
+                        TextWriterColor.Write(renderedArgument, false, KernelColorType.ListEntry);
+                    }
+                    TextWriterColor.Write();
                 }
+                else
+                    TextWriterColor.Write(Translate.DoTranslation("Usage:") + $" {Argument}", true, KernelColorType.ListEntry);
 
                 // Write the description now
                 if (string.IsNullOrEmpty(HelpDefinition))

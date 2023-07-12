@@ -84,20 +84,5 @@ namespace KS.Shell.Shells.UESH.Commands
             SpeedPress.InitializeSpeedPress(Difficulty, CustomTimeout);
         }
 
-        public override void HelpHelper()
-        {
-            TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"));
-            TextWriterColor.Write("  -e: ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Starts the game in easy difficulty"), true, KernelColorType.ListValue);
-            TextWriterColor.Write("  -m: ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Starts the game in medium difficulty"), true, KernelColorType.ListValue);
-            TextWriterColor.Write("  -h: ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Starts the game in hard difficulty"), true, KernelColorType.ListValue);
-            TextWriterColor.Write("  -v: ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Starts the game in very hard difficulty"), true, KernelColorType.ListValue);
-            TextWriterColor.Write("  -c: ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Starts the game in custom difficulty. Please note that the custom timeout in milliseconds should be written as argument."), true, KernelColorType.ListValue);
-        }
-
     }
 }

@@ -70,12 +70,5 @@ namespace KS.Shell.Shells.SFTP.Commands
                 TextWriterColor.Write(Entry, true, KernelColorType.ListEntry);
         }
 
-        public override void HelpHelper()
-        {
-            TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"));
-            TextWriterColor.Write("  -showdetails: ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Shows the file details in the list"), true, KernelColorType.ListValue);
-        }
-
     }
 }

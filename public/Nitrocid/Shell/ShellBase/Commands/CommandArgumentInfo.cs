@@ -28,10 +28,6 @@ namespace KS.Shell.ShellBase.Commands
     {
 
         /// <summary>
-        /// The help usages of command.
-        /// </summary>
-        public HelpUsage[] HelpUsages { get; private set; }
-        /// <summary>
         /// Does the command require arguments?
         /// </summary>
         public bool ArgumentsRequired { get; private set; }
@@ -39,6 +35,14 @@ namespace KS.Shell.ShellBase.Commands
         /// User must specify at least this number of arguments
         /// </summary>
         public int MinimumArguments { get; private set; }
+        /// <summary>
+        /// Command arguments
+        /// </summary>
+        public string[] Arguments { get; private set; }
+        /// <summary>
+        /// Command switches
+        /// </summary>
+        public SwitchInfo[] Switches { get; private set; }
         /// <summary>
         /// Auto completion function delegate
         /// </summary>
@@ -48,36 +52,20 @@ namespace KS.Shell.ShellBase.Commands
         /// Installs a new instance of the command argument info class
         /// </summary>
         public CommandArgumentInfo()
-            : this(Array.Empty<string>(), false, 0) { }
+            : this(Array.Empty<string>(), Array.Empty<SwitchInfo>(), false, 0) { }
 
         /// <summary>
         /// Installs a new instance of the command argument info class
         /// </summary>
-        /// <param name="HelpUsages">Help usages</param>
+        /// <param name="Arguments">Command arguments</param>
+        /// <param name="Switches">Command switches</param>
         /// <param name="ArgumentsRequired">Arguments required</param>
         /// <param name="MinimumArguments">Minimum arguments</param>
         /// <param name="AutoCompleter">Auto completion function</param>
-        public CommandArgumentInfo(string[] HelpUsages, bool ArgumentsRequired, int MinimumArguments, Func<string, int, char[], string[]> AutoCompleter = null)
+        public CommandArgumentInfo(string[] Arguments, SwitchInfo[] Switches, bool ArgumentsRequired, int MinimumArguments, Func<string, int, char[], string[]> AutoCompleter = null)
         {
-            List<HelpUsage> usages = new();
-            foreach (string helpUsage in HelpUsages)
-                usages.Add(new HelpUsage(helpUsage));
-            this.HelpUsages = usages.ToArray();
-            this.ArgumentsRequired = ArgumentsRequired;
-            this.MinimumArguments = MinimumArguments;
-            this.AutoCompleter = AutoCompleter;
-        }
-
-        /// <summary>
-        /// Installs a new instance of the command argument info class
-        /// </summary>
-        /// <param name="HelpUsages">Help usages</param>
-        /// <param name="ArgumentsRequired">Arguments required</param>
-        /// <param name="MinimumArguments">Minimum arguments</param>
-        /// <param name="AutoCompleter">Auto completion function</param>
-        public CommandArgumentInfo(HelpUsage[] HelpUsages, bool ArgumentsRequired, int MinimumArguments, Func<string, int, char[], string[]> AutoCompleter = null)
-        {
-            this.HelpUsages = HelpUsages;
+            this.Arguments = Arguments;
+            this.Switches = Switches;
             this.ArgumentsRequired = ArgumentsRequired;
             this.MinimumArguments = MinimumArguments;
             this.AutoCompleter = AutoCompleter;

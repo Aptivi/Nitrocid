@@ -76,14 +76,5 @@ namespace KS.Shell.Shells.UESH.Commands
             SettingsApp.OpenMainPage(SettingsType);
         }
 
-        public override void HelpHelper()
-        {
-            TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"));
-            TextWriterColor.Write("  -saver: ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Opens the screensaver settings"), true, KernelColorType.ListValue);
-            TextWriterColor.Write("  -splash: ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Opens the splash settings"), true, KernelColorType.ListValue);
-        }
-
     }
 }

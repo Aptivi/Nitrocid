@@ -73,14 +73,5 @@ namespace KS.Shell.Shells.FTP.Commands
             }
         }
 
-        public override void HelpHelper()
-        {
-            TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"));
-            TextWriterColor.Write("  -showdetails: ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Shows the file details in the list"), true, KernelColorType.ListValue);
-            TextWriterColor.Write("  -suppressmessages: ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Suppresses the annoying \"permission denied\" messages"), true, KernelColorType.ListValue);
-        }
-
     }
 }

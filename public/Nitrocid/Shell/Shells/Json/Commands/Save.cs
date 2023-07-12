@@ -63,14 +63,5 @@ namespace KS.Shell.Shells.Json.Commands
             JsonTools.JsonShell_SaveFile(false, TargetFormatting);
         }
 
-        public override void HelpHelper()
-        {
-            TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"));
-            TextWriterColor.Write("  -b: ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Saves the JSON file, beautifying it in the process"), true, KernelColorType.ListValue);
-            TextWriterColor.Write("  -m: ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Saves the JSON file, minifying it in the process"), true, KernelColorType.ListValue);
-        }
-
     }
 }

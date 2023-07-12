@@ -81,9 +81,6 @@ namespace KS.Shell.Shells.UESH.Commands
         public override void HelpHelper()
         {
             TextWriterColor.Write(Translate.DoTranslation("You can always consult http://bulk.openweathermap.org/sample/city.list.json.gz for the list of cities with their IDs.") + " " + Translate.DoTranslation("Or, pass \"listcities\" to this command."));
-            TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"));
-            TextWriterColor.Write("  -list: ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Shows all the available cities"), true, KernelColorType.ListValue);
         }
 
     }

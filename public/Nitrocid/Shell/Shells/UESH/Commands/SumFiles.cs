@@ -95,12 +95,5 @@ namespace KS.Shell.Shells.UESH.Commands
             }
         }
 
-        public override void HelpHelper()
-        {
-            TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"));
-            TextWriterColor.Write("  -relative: ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Uses relative path instead of absolute"), true, KernelColorType.ListValue);
-        }
-
     }
 }

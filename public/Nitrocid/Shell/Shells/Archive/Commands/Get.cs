@@ -64,12 +64,5 @@ namespace KS.Shell.Shells.Archive.Commands
             ArchiveTools.ExtractFileEntry(ListArgsOnly[0], Where, Absolute);
         }
 
-        public override void HelpHelper()
-        {
-            TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"));
-            TextWriterColor.Write("  -absolute: ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Indicates that the target path is absolute"), true, KernelColorType.ListValue);
-        }
-
     }
 }

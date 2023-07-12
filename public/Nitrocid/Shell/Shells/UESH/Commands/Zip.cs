@@ -77,16 +77,5 @@ namespace KS.Shell.Shells.UESH.Commands
             ZipFile.CreateFromDirectory(Destination, ZipArchiveName, ZipCompression, ZipBaseDir);
         }
 
-        public override void HelpHelper()
-        {
-            TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"));
-            TextWriterColor.Write("  -fast: ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Fast compression"), true, KernelColorType.ListValue);
-            TextWriterColor.Write("  -nocomp: ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("No compression"), true, KernelColorType.ListValue);
-            TextWriterColor.Write("  -nobasedir: ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Don't create base directory in archive"), true, KernelColorType.ListValue);
-        }
-
     }
 }

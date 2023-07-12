@@ -627,5 +627,34 @@ Invalid link for connection.
 Failed to establish connection with {0}.
 Connection is not established yet.
 This property is only valid for connections with threads. For instance connections, call the appropriate property on the instance itself instead of calling this property.
+Specifies the parent property
+Don't show individual properties
+Show all values
+Beautified JSON
+Minified JSON
+Change feed using the bookmark number
+Search for title
+Search for description
+Search for title and description
+Case sensitive search
+Shows the details of the files and folders
+Suppresses the \"unauthorized\" messages
+Prints the line numbers alongside the contents
+Force treating binary files as plain text
+One line choice style
+Two lines choice style
+Modern choice style
+Table choice style
+The output can be more than a character
+The output can be only one character
+Converts the line endings to the Windows format
+Converts the line endings to the Unix format
+Searches for a file recursively
+Executes a command on a file
+Generate nametags (umlauts are currently not supported)
+Lists a folder recursively
+Lists all installed mod manuals
+Don't open RSS feed reader to the headline URL
+Play the Wordle game originally
 
 ==========================================================================================================================================

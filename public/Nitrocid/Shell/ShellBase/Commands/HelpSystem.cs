@@ -88,31 +88,43 @@ namespace KS.Shell.ShellBase.Commands
                 var FinalCommandList = IsMod ? ModCommandList : CommandList;
                 string FinalCommand = IsMod ? command : IsAlias ? AliasedCommandList[command] : command;
                 string HelpDefinition = IsMod ? FinalCommandList[FinalCommand].HelpDefinition : FinalCommandList[FinalCommand].GetTranslatedHelpEntry();
-                int UsageLength = Translate.DoTranslation("Usage:").Length;
-                var HelpUsages = Array.Empty<HelpUsage>();
+                var Arguments = Array.Empty<string>();
+                var Switches = Array.Empty<SwitchInfo>();
+                var argumentInfo = FinalCommandList[FinalCommand].CommandArgumentInfo;
 
                 // Populate help usages
-                if (FinalCommandList[FinalCommand].CommandArgumentInfo is not null)
-                    HelpUsages = FinalCommandList[FinalCommand].CommandArgumentInfo.HelpUsages;
+                if (argumentInfo is not null)
+                {
+                    Arguments = argumentInfo.Arguments;
+                    Switches = argumentInfo.Switches;
+                }
 
                 // Print usage information
-                if (HelpUsages.Length != 0)
+                if (Arguments.Length != 0 || Switches.Length != 0)
                 {
                     // Print the usage information holder
-                    var Indent = false;
-                    TextWriterColor.Write(Translate.DoTranslation("Usage:"), false, KernelColorType.ListEntry);
+                    TextWriterColor.Write(Translate.DoTranslation("Usage:") + $" {FinalCommand}", false, KernelColorType.ListEntry);
 
-                    // Enumerate through the available help usages
-                    foreach (var HelpUsage in HelpUsages)
+                    // Enumerate through the available switches first
+                    foreach (var Switch in Switches)
                     {
-                        // Indent, if necessary
-                        if (Indent)
-                            TextWriterColor.Write(new string(' ', UsageLength), false, KernelColorType.ListEntry);
-                        TextWriterColor.Write($" {FinalCommand}" +
-                            $"{(HelpUsage.Switches.Length > 0 ? " " + string.Join(" ", HelpUsage.Switches) : "")}" +
-                            $"{(HelpUsage.Arguments.Length > 0 ? " " + string.Join(" ", HelpUsage.Arguments) : "")}", true, KernelColorType.ListEntry);
-                        Indent = true;
+                        bool required = Switch.IsRequired;
+                        string switchName = Switch.SwitchName;
+                        string renderedSwitch = required ? $" <-{switchName}[=value]>" : $" [-{switchName}[=value]]";
+                        TextWriterColor.Write(renderedSwitch, false, KernelColorType.ListEntry);
                     }
+
+                    // Enumerate through the available arguments
+                    int howManyRequired = argumentInfo.MinimumArguments;
+                    int queriedArgs = 1;
+                    foreach (string Argument in Arguments)
+                    {
+                        bool required = argumentInfo.ArgumentsRequired && queriedArgs <= howManyRequired;
+                        string renderedArgument = required ? $" <{Argument}>" : $" [{Argument}]";
+                        TextWriterColor.Write(renderedArgument, false, KernelColorType.ListEntry);
+                        queriedArgs++;
+                    }
+                    TextWriterColor.Write();
                 }
                 else
                     TextWriterColor.Write(Translate.DoTranslation("Usage:") + $" {FinalCommand}", true, KernelColorType.ListEntry);
@@ -121,6 +133,19 @@ namespace KS.Shell.ShellBase.Commands
                 if (string.IsNullOrEmpty(HelpDefinition))
                     HelpDefinition = Translate.DoTranslation("Command defined by ") + command;
                 TextWriterColor.Write(Translate.DoTranslation("Description:") + $" {HelpDefinition}", true, KernelColorType.ListValue);
+
+                // If we have switches, print their descriptions
+                if (Switches.Length != 0)
+                {
+                    TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"));
+                    foreach (var Switch in Switches)
+                    {
+                        string switchName = Switch.SwitchName;
+                        string switchDesc = IsMod ? Switch.HelpDefinition : Switch.GetTranslatedHelpEntry();
+                        TextWriterColor.Write($"  -{switchName}: ", false, KernelColorType.ListEntry);
+                        TextWriterColor.Write(switchDesc, true, KernelColorType.ListValue);
+                    }
+                }
 
                 // Extra help action for some commands
                 FinalCommandList[FinalCommand].CommandBase?.HelpHelper();

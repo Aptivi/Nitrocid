@@ -71,12 +71,5 @@ namespace KS.Shell.Shells.FTP.Commands
             }
         }
 
-        public override void HelpHelper()
-        {
-            TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"));
-            TextWriterColor.Write("  -f: ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Disconnects from server disgracefully"), true, KernelColorType.ListValue);
-        }
-
     }
 }

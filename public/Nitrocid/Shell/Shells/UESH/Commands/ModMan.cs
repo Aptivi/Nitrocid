@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.IO;
+using KS.Arguments.ArgumentBase;
 using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Files.Querying;
@@ -135,29 +136,42 @@ namespace KS.Shell.Shells.UESH.Commands
                                         {
                                             foreach (string ModCommand in ModManager.Mods[script].ModParts[ModPart].PartScript.Commands.Keys)
                                             {
+                                                var commandInstance = ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand];
+                                                var commandArgInfo = commandInstance.CommandArgumentInfo;
                                                 SeparatorWriterColor.WriteSeparator("--- {0}", false, ModCommand);
                                                 TextWriterColor.Write("- " + Translate.DoTranslation("Command name:") + " ", false, KernelColorType.ListEntry);
                                                 TextWriterColor.Write(ModCommand, true, KernelColorType.ListValue);
                                                 TextWriterColor.Write("- " + Translate.DoTranslation("Command definition:") + " ", false, KernelColorType.ListEntry);
-                                                TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].HelpDefinition, true, KernelColorType.ListValue);
+                                                TextWriterColor.Write(commandInstance.HelpDefinition, true, KernelColorType.ListValue);
                                                 TextWriterColor.Write("- " + Translate.DoTranslation("Command type:") + " ", false, KernelColorType.ListEntry);
-                                                TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].Type.ToString(), true, KernelColorType.ListValue);
+                                                TextWriterColor.Write(commandInstance.Type.ToString(), true, KernelColorType.ListValue);
                                                 TextWriterColor.Write("- " + Translate.DoTranslation("Strict command?") + " ", false, KernelColorType.ListEntry);
-                                                TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].Flags.HasFlag(CommandFlags.Strict).ToString(), true, KernelColorType.ListValue);
+                                                TextWriterColor.Write(commandInstance.Flags.HasFlag(CommandFlags.Strict).ToString(), true, KernelColorType.ListValue);
                                                 TextWriterColor.Write("- " + Translate.DoTranslation("Setting shell variable?") + " ", false, KernelColorType.ListEntry);
-                                                TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].Flags.HasFlag(CommandFlags.SettingVariable).ToString(), true, KernelColorType.ListValue);
+                                                TextWriterColor.Write(commandInstance.Flags.HasFlag(CommandFlags.SettingVariable).ToString(), true, KernelColorType.ListValue);
                                                 TextWriterColor.Write("- " + Translate.DoTranslation("Can not run in maintenance mode?") + " ", false, KernelColorType.ListEntry);
-                                                TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].Flags.HasFlag(CommandFlags.NoMaintenance).ToString(), true, KernelColorType.ListValue);
+                                                TextWriterColor.Write(commandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ToString(), true, KernelColorType.ListValue);
                                                 TextWriterColor.Write("- " + Translate.DoTranslation("Obsolete?") + " ", false, KernelColorType.ListEntry);
-                                                TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].Flags.HasFlag(CommandFlags.Obsolete).ToString(), true, KernelColorType.ListValue);
+                                                TextWriterColor.Write(commandInstance.Flags.HasFlag(CommandFlags.Obsolete).ToString(), true, KernelColorType.ListValue);
                                                 TextWriterColor.Write("- " + Translate.DoTranslation("Redirection supported?") + " ", false, KernelColorType.ListEntry);
-                                                TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].Flags.HasFlag(CommandFlags.RedirectionSupported).ToString(), true, KernelColorType.ListValue);
-                                                if (ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].CommandArgumentInfo is not null)
+                                                TextWriterColor.Write(commandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ToString(), true, KernelColorType.ListValue);
+                                                if (commandArgInfo is not null)
                                                 {
-                                                    foreach (var Usage in ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].CommandArgumentInfo.HelpUsages)
+                                                    TextWriterColor.Write("- " + Translate.DoTranslation("Command usage:") + $" {ModCommand} ", false, KernelColorType.ListEntry);
+                                                    foreach (var Usage in commandArgInfo.Switches)
                                                     {
-                                                        TextWriterColor.Write("- " + Translate.DoTranslation("Command usage:") + " ", false, KernelColorType.ListEntry);
-                                                        TextWriterColor.Write($"{string.Join(" ", Usage.Switches)} {string.Join(" ", Usage.Arguments)}", true, KernelColorType.ListValue);
+                                                        bool required = Usage.IsRequired;
+                                                        string switchName = Usage.SwitchName;
+                                                        string renderedSwitch = required ? $" <-{switchName}[=value]>" : $" [-{switchName}[=value]]";
+                                                        TextWriterColor.Write($"{renderedSwitch} ", true, KernelColorType.ListValue);
+                                                    }
+                                                    int queriedArgs = 1;
+                                                    foreach (string Usage in commandArgInfo.Arguments)
+                                                    {
+                                                        int howManyRequired = commandArgInfo.MinimumArguments;
+                                                        bool required = commandArgInfo.ArgumentsRequired && queriedArgs <= howManyRequired;
+                                                        string renderedArgument = required ? $" <{Usage}>" : $" [{Usage}]";
+                                                        TextWriterColor.Write($"{renderedArgument} ", true, KernelColorType.ListValue);
                                                     }
                                                     TextWriterColor.Write("- " + Translate.DoTranslation("Arguments required?") + " ", false, KernelColorType.ListEntry);
                                                     TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].CommandArgumentInfo.ArgumentsRequired.ToString(), true, KernelColorType.ListValue);

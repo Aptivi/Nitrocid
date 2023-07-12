@@ -64,12 +64,5 @@ namespace KS.Shell.Shells.UESH.Commands
                 TextWriterColor.Write(Translate.DoTranslation("Timezone is specified incorrectly."), true, KernelColorType.Error);
         }
 
-        public override void HelpHelper()
-        {
-            TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"));
-            TextWriterColor.Write("  -all: ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(Translate.DoTranslation("Shows all the time zones"), true, KernelColorType.ListValue);
-        }
-
     }
 }

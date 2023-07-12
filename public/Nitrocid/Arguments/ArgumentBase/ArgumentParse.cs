@@ -49,7 +49,7 @@ namespace KS.Arguments.ArgumentBase
             { "reset", new ArgumentInfo("reset", /* Localizable */ "Resets the kernel to the factory settings", new CommandArgumentInfo(), new ResetArgument()) },
             { "bypasssizedetection", new ArgumentInfo("bypasssizedetection", /* Localizable */ "Bypasses the console size detection", new CommandArgumentInfo(), new BypassSizeDetectionArgument()) },
             { "noaltbuffer", new ArgumentInfo("noaltbuffer", /* Localizable */ "Prevents the kernel from using the alternative buffer", new CommandArgumentInfo(), new NoAltBufferArgument()) },
-            { "lang", new ArgumentInfo("lang", /* Localizable */ "Sets the initial pre-boot environment language", new CommandArgumentInfo(new string[]{ "<lang>" }, true, 1), new LangArgument()) },
+            { "lang", new ArgumentInfo("lang", /* Localizable */ "Sets the initial pre-boot environment language", new CommandArgumentInfo(new string[]{ "<lang>" }, Array.Empty<SwitchInfo>(), true, 1), new LangArgument()) },
             { "attach", new ArgumentInfo("attach", /* Localizable */ "Attaches the Visual Studio debugger to this instance of Nitrocid", new CommandArgumentInfo(), new AttachArgument()) },
             { "help", new ArgumentInfo("help", /* Localizable */ "Help page", new CommandArgumentInfo(), new HelpArgument()) }
         };
