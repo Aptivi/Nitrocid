@@ -18,8 +18,11 @@
 
 using KS.Files;
 using KS.Files.Folders;
+using KS.Misc.Text;
+using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Shells;
 using System.Linq;
 
 namespace KS.Shell.Shells.UESH.Commands
@@ -38,12 +41,30 @@ namespace KS.Shell.Shells.UESH.Commands
             string FileToSearch = ListArgsOnly[0];
             string DirectoryToSearch = CurrentDirectory.CurrentDir;
             bool isRecursive = ListSwitchesOnly.Contains("-recursive");
+            string command = SwitchManager.GetSwitchValue(ListSwitchesOnly, "-exec").ReleaseDoubleQuotes();
             if (ListArgsOnly.Length > 1)
                 DirectoryToSearch = Filesystem.NeutralizePath(ListArgsOnly[1]);
 
             // Print the results if found
             var FileEntries = Listing.GetFilesystemEntries(DirectoryToSearch, FileToSearch, isRecursive);
-            ListWriterColor.WriteList(FileEntries, true);
+
+            // Print or exec, depending on the command
+            if (!string.IsNullOrWhiteSpace(command))
+            {
+                foreach (var file in FileEntries)
+                {
+                    var AltThreads = ShellStart.ShellStack[^1].AltCommandThreads;
+                    if (AltThreads.Count == 0 || AltThreads[^1].IsAlive)
+                    {
+                        var WrappedCommand = new KernelThread($"Find Shell Command Thread for file {file}", false, (cmdThreadParams) =>
+                            CommandExecutor.ExecuteCommand((CommandExecutor.ExecuteCommandParameters)cmdThreadParams));
+                        ShellStart.ShellStack[^1].AltCommandThreads.Add(WrappedCommand);
+                    }
+                    Shell.GetLine($"{command} \"{file}\"");
+                }
+            }
+            else
+                ListWriterColor.WriteList(FileEntries, true);
         }
 
     }
