@@ -40,12 +40,13 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
+            var parser = UnitsNetSetup.Default.UnitParser;
             string UnitType = ListArgsOnly[0];
             int QuantityNum = Convert.ToInt32(ListArgsOnly[1]);
             string SourceUnit = ListArgsOnly[2];
             string TargetUnit = ListArgsOnly[3];
             var QuantityInfos = Quantity.Infos.Where(x => x.Name == UnitType).ToArray();
-            var TargetUnitInstance = UnitParser.Default.Parse(TargetUnit, QuantityInfos[0].UnitType);
+            var TargetUnitInstance = parser.Parse(TargetUnit, QuantityInfos[0].UnitType);
             var ConvertedUnit = Quantity.Parse(QuantityInfos[0].ValueType, $"{QuantityNum} {SourceUnit}").ToUnit(TargetUnitInstance);
             TextWriterColor.Write("- {0} => {1}: ", false, KernelColorType.ListEntry, SourceUnit, TargetUnit);
             TextWriterColor.Write(ConvertedUnit.ToString(CultureManager.CurrentCult.NumberFormat), true, KernelColorType.ListValue);
@@ -53,13 +54,14 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void HelpHelper()
         {
+            var abbreviations = UnitsNetSetup.Default.UnitAbbreviations;
             TextWriterColor.Write(Translate.DoTranslation("Available unit types and their units:"));
             foreach (QuantityInfo QuantityInfo in Quantity.Infos)
             {
                 TextWriterColor.Write("- {0}:", true, KernelColorType.ListEntry, QuantityInfo.Name);
                 foreach (Enum UnitValues in QuantityInfo.UnitInfos.Select(x => x.Value))
                 {
-                    TextWriterColor.Write("  - {0}: ", false, KernelColorType.ListEntry, string.Join(", ", UnitAbbreviationsCache.Default.GetDefaultAbbreviation(UnitValues.GetType(), Convert.ToInt32(UnitValues))));
+                    TextWriterColor.Write("  - {0}: ", false, KernelColorType.ListEntry, string.Join(", ", abbreviations.GetDefaultAbbreviation(UnitValues.GetType(), Convert.ToInt32(UnitValues))));
                     TextWriterColor.Write(UnitValues.ToString(), true, KernelColorType.ListValue);
                 }
             }

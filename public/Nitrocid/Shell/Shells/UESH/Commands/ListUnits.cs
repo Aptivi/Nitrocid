@@ -38,6 +38,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
+            var abbreviations = UnitsNetSetup.Default.UnitAbbreviations;
             var Quantities = Quantity.Infos.Where(x => x.Name == ListArgsOnly[0]);
             if (Quantities.Count() != 0)
             {
@@ -47,7 +48,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     TextWriterColor.Write("- {0}:", true, KernelColorType.ListEntry, QuantityInfo.Name);
                     foreach (Enum UnitValues in QuantityInfo.UnitInfos.Select(x => x.Value))
                     {
-                        TextWriterColor.Write("  - {0}: ", false, KernelColorType.ListEntry, string.Join(", ", UnitAbbreviationsCache.Default.GetDefaultAbbreviation(UnitValues.GetType(), Convert.ToInt32(UnitValues))));
+                        TextWriterColor.Write("  - {0}: ", false, KernelColorType.ListEntry, string.Join(", ", abbreviations.GetDefaultAbbreviation(UnitValues.GetType(), Convert.ToInt32(UnitValues))));
                         TextWriterColor.Write(UnitValues.ToString(), true, KernelColorType.ListValue);
                     }
                 }
