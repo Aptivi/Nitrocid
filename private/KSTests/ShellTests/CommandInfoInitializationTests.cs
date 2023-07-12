@@ -20,6 +20,7 @@ using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using NUnit.Framework;
 using Shouldly;
+using System;
 
 namespace KSTests.ShellTests
 {
@@ -36,18 +37,20 @@ namespace KSTests.ShellTests
         public void TestInitializeCommandInfoInstanceFromCommandLineArg()
         {
             // Create instance
-            var CommandInstance = new CommandInfo("help", ShellType.Shell, "Help page", new CommandArgumentInfo(new[] { "" }, false, 0), null);
+            var CommandInstance = new CommandInfo("help", ShellType.Shell, "Help page", new CommandArgumentInfo(new[] { "testarg" }, Array.Empty<SwitchInfo>(), false, 0), null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
             CommandInstance.Command.ShouldNotBeNullOrEmpty();
             CommandInstance.HelpDefinition.ShouldNotBeNullOrEmpty();
-            CommandInstance.CommandArgumentInfo.HelpUsages.ShouldNotBeNull();
+            CommandInstance.CommandArgumentInfo.Arguments.ShouldNotBeNull();
+            CommandInstance.CommandArgumentInfo.Switches.ShouldNotBeNull();
 
             // Check for property correctness
             CommandInstance.Command.ShouldBe("help");
             CommandInstance.HelpDefinition.ShouldBe("Help page");
-            CommandInstance.CommandArgumentInfo.HelpUsages.ShouldNotBeEmpty();
+            CommandInstance.CommandArgumentInfo.Arguments.ShouldNotBeEmpty();
+            CommandInstance.CommandArgumentInfo.Switches.ShouldBeEmpty();
             CommandInstance.Type.ShouldBe("Shell");
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
