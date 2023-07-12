@@ -656,5 +656,6 @@ Lists a folder recursively
 Lists all installed mod manuals
 Don't open RSS feed reader to the headline URL
 Play the Wordle game originally
+A simple implementation of the GUI starting in a separate window
 
 ==========================================================================================================================================
