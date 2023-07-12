@@ -78,52 +78,44 @@ namespace KS.Shell.ShellBase.Commands
             ShellCommands = CommandManager.GetCommands(CommandType);
             ModCommands = ModManager.ListModCommands(CommandType);
 
+            // Split the switches properly now
+            string switchRegex =
+                /* lang=regex */ @"(-\S+=((""(.+?)(?<![^\\]\\)"")|('(.+?)(?<![^\\]\\)')|(`(.+?)(?<![^\\]\\)`)|(?:[^\\\s]|\\.)+|\S+))|(?<= )-\S+";
+            var EnclosedSwitches = DriverHandler.CurrentRegexpDriver
+                .Matches(CommandText, switchRegex)
+                .Select((match) => match.Value)
+                .ToArray();
+            CommandText = DriverHandler.CurrentRegexpDriver.Filter(CommandText, switchRegex);
+
             // Split the requested command string into words
-            var words = DriverHandler.CurrentRegexpDriver.Matches(CommandText, @"(""(.+?)(?<![^\\]\\)"")|('(.+?)(?<![^\\]\\)')|(`(.+?)(?<![^\\]\\)`)|(?:[^\\\s]|\\.)+|\S+");
-            for (int i = 0; i <= words.Count - 1; i++)
-                DebugWriter.WriteDebug(DebugLevel.I, "Word {0}: {1}", i + 1, words[i].Value);
-            Command = words[0].Value;
+            var words = CommandText.SplitEncloseDoubleQuotes();
+            for (int i = 0; i <= words.Length - 1; i++)
+                DebugWriter.WriteDebug(DebugLevel.I, "Word {0}: {1}", i + 1, words[i]);
+            Command = words[0];
 
             // Split the arguments with enclosed quotes
             var EnclosedArgMatches = words.Skip(1);
-            var EnclosedArgs = EnclosedArgMatches.Select(match => match.Value).ToArray();
+            var EnclosedArgs = EnclosedArgMatches.ToArray();
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} arguments parsed: {1}", EnclosedArgs.Length, string.Join(", ", EnclosedArgs));
 
             // Get the string of arguments
-            string strArgs = words.Count > 0 ? string.Join(" ", EnclosedArgMatches) : "";
+            string strArgs = words.Length > 0 ? string.Join(" ", EnclosedArgMatches) : "";
             DebugWriter.WriteDebug(DebugLevel.I, "Finished strArgs: {0}", strArgs);
-
-            // Ensure that strArgs is not empty
-            if (string.IsNullOrWhiteSpace(strArgs))
-                EnclosedArgs = null;
-            if (EnclosedArgs is not null)
-                DebugWriter.WriteDebug(DebugLevel.I, "Arguments parsed: " + string.Join(", ", EnclosedArgs));
 
             // Check to see if the caller has provided required number of arguments
             var CommandInfo = ModCommands.ContainsKey(Command) ? ModCommands[Command] :
                               ShellCommands.ContainsKey(Command) ? ShellCommands[Command] :
                               null;
             if (CommandInfo?.CommandArgumentInfo is not null)
-                if (EnclosedArgs is not null)
-                    RequiredArgumentsProvided = (bool)(CommandInfo.CommandArgumentInfo.MinimumArguments is int expectedArgumentNum &&
-                                                      (EnclosedArgs?.Count()) is int actualArgumentNum ? actualArgumentNum >= expectedArgumentNum : (bool?)null);
-                else if (CommandInfo.CommandArgumentInfo.ArgumentsRequired & EnclosedArgs is null)
-                    RequiredArgumentsProvided = false;
+                RequiredArgumentsProvided = 
+                    (EnclosedArgs.Length >= CommandInfo.CommandArgumentInfo.MinimumArguments) ||
+                    !CommandInfo.CommandArgumentInfo.ArgumentsRequired;
             else
                 RequiredArgumentsProvided = true;
 
-            // Separate the arguments from the switches
-            var FinalArgs = new List<string>();
-            var FinalSwitches = new List<string>();
-            if (EnclosedArgs is not null)
-                foreach (string EnclosedArg in EnclosedArgs)
-                    if (EnclosedArg.StartsWith("-"))
-                        FinalSwitches.Add(EnclosedArg);
-                    else
-                        FinalArgs.Add(DriverHandler.CurrentRegexpDriver.Unescape(EnclosedArg).ReleaseDoubleQuotes());
-
             // Install the parsed values to the new class instance
-            ArgumentsList = FinalArgs.ToArray();
-            SwitchesList = FinalSwitches.ToArray();
+            ArgumentsList = EnclosedArgs;
+            SwitchesList = EnclosedSwitches;
             ArgumentsText = strArgs;
             this.Command = Command;
             this.RequiredArgumentsProvided = RequiredArgumentsProvided;
