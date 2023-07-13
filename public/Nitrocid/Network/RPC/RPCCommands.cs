@@ -165,6 +165,7 @@ namespace KS.Network.RPC
                     }
                 }
             }
+            RemoteProcedure.RPCListen.Close();
         }
 
         private static void AcknowledgeMessage(IAsyncResult asyncResult)
@@ -172,7 +173,11 @@ namespace KS.Network.RPC
             received = true;
             try
             {
-                if (RemoteProcedure.RPCListen is null)
+                if (RemoteProcedure.RPCListen is null || RemoteProcedure.RPCListen.Client is null)
+                    return;
+                if (RemoteProcedure.rpcStopping)
+                    return;
+                if (RemoteProcedure.RPCListen.Available == 0)
                     return;
                 var endpoint = new IPEndPoint(IPAddress.Any, RemoteProcedure.RPCPort);
                 byte[] MessageBuffer = RemoteProcedure.RPCListen.EndReceive(asyncResult, ref endpoint);

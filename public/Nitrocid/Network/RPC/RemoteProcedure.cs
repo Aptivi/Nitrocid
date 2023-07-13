@@ -115,8 +115,6 @@ namespace KS.Network.RPC
             {
                 rpcStopping = true;
                 RPCThread.Stop();
-                RPCListen?.Close();
-                RPCListen = null;
                 rpcStopping = false;
                 DebugWriter.WriteDebug(DebugLevel.I, "RPC stopped.");
             }
