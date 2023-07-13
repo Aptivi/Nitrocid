@@ -58,7 +58,7 @@ namespace KS.Misc.Calendar.Reminders
             {
                 try
                 {
-                    Thread.Sleep(100);
+                    SpinWait.SpinUntil(() => Flags.KernelShutdown, 100);
                     lock (ReminderManagerLock)
                     {
                         for (int ReminderIndex = 0; ReminderIndex <= Reminders.Count - 1; ReminderIndex++)

@@ -37,6 +37,7 @@ using KS.Drivers.Console;
 using KS.Drivers;
 using System.Linq;
 using KS.Users;
+using System.Diagnostics;
 
 namespace KS.Misc.Screensaver
 {
@@ -161,41 +162,21 @@ namespace KS.Misc.Screensaver
         {
             try
             {
-                int CountedTime;
                 var termDriver = DriverHandler.GetDriver<IConsoleDriver>("Default");
-                int OldCursorLeft = termDriver.CursorLeft;
                 while (!Flags.KernelShutdown)
                 {
+                    int OldCursorLeft = termDriver.CursorLeft;
+                    SpinWait.SpinUntil(() => !Flags.ScrnTimeReached || Flags.KernelShutdown);
                     if (!Flags.ScrnTimeReached)
                     {
-                        bool exitWhile = false;
-                        for (CountedTime = 0; CountedTime <= ScreenTimeout; CountedTime++)
-                        {
-                            Thread.Sleep(1);
-                            if (termDriver.KeyAvailable | OldCursorLeft != termDriver.CursorLeft)
-                            {
-                                CountedTime = 0;
-                            }
-                            OldCursorLeft = termDriver.CursorLeft;
-                            if (CountedTime > ScreenTimeout)
-                            {
-                                // This shouldn't happen, but the counted time is bigger than the screen timeout. Just bail.
-                                break;
-                            }
-
-                            // Poll to see if there is a kernel shutdown signal
-                            if (Flags.KernelShutdown)
-                            {
-                                exitWhile = true;
-                                break;
-                            }
-                        }
-
-                        if (exitWhile)
-                        {
+                        var stopwatch = new Stopwatch();
+                        stopwatch.Start();
+                        SpinWait.SpinUntil(() => (termDriver.KeyAvailable | OldCursorLeft != termDriver.CursorLeft | Flags.KernelShutdown) && stopwatch.ElapsedMilliseconds >= ScreenTimeout, ScreenTimeout);
+                        bool locking = !(termDriver.KeyAvailable | OldCursorLeft != termDriver.CursorLeft | Flags.KernelShutdown) && stopwatch.ElapsedMilliseconds >= ScreenTimeout;
+                        stopwatch.Reset();
+                        if (Flags.KernelShutdown)
                             break;
-                        }
-                        if (!Flags.RebootRequested)
+                        else if (!Flags.RebootRequested && locking)
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "Screen time has reached.");
                             LockScreen();

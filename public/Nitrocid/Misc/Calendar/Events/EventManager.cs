@@ -53,7 +53,7 @@ namespace KS.Misc.Calendar.Events
             {
                 try
                 {
-                    Thread.Sleep(100);
+                    SpinWait.SpinUntil(() => Flags.KernelShutdown, 100);
                     lock (EventManagerLock)
                     {
                         for (int EventIndex = 0; EventIndex <= CalendarEvents.Count - 1; EventIndex++)

@@ -141,7 +141,7 @@ namespace KS.Network.RPC
                     var receiveResult = RemoteProcedure.RPCListen.BeginReceive(new AsyncCallback(AcknowledgeMessage), null);
                     while (!received)
                     {
-                        Thread.Sleep(100);
+                        SpinWait.SpinUntil(() => received || RemoteProcedure.rpcStopping);
                         if (RemoteProcedure.rpcStopping)
                             break;
                     }
@@ -164,6 +164,7 @@ namespace KS.Network.RPC
                         EventsManager.FireEvent(EventType.RPCCommandError, ex, RemoteEndpoint.Address.ToString(), RemoteEndpoint.Port);
                     }
                 }
+                received = false;
             }
             RemoteProcedure.RPCListen.Close();
         }

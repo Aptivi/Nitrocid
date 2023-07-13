@@ -155,7 +155,7 @@ namespace KS.Misc.Notifications
                 List<Notification> NewNotificationsList;
                 while (!Flags.KernelShutdown)
                 {
-                    Thread.Sleep(100);
+                    SpinWait.SpinUntil(() => NotifRecents.Except(OldNotificationsList).ToList().Count > 0);
                     NewNotificationsList = NotifRecents.Except(OldNotificationsList).ToList();
                     if (NewNotificationsList.Count > 0 & !Screensaver.Screensaver.InSaver)
                     {
@@ -167,7 +167,7 @@ namespace KS.Misc.Notifications
                         // Iterate through new notifications. If we're on the booting stage, ensure that the notifications are only queued until the
                         // kernel has finished booting.
                         while (!SplashReport.KernelBooted)
-                            Thread.Sleep(100);
+                            SpinWait.SpinUntil(() => SplashReport.KernelBooted);
                         foreach (Notification NewNotification in NewNotificationsList)
                         {
                             EventsManager.FireEvent(EventType.NotificationReceived, NewNotification);
