@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Arguments.ArgumentBase;
-using KS.Kernel.Configuration;
+using KS.Kernel;
 
 namespace KS.Arguments.CommandLineArguments
 {
@@ -25,7 +25,7 @@ namespace KS.Arguments.CommandLineArguments
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>
-            Config.MainConfig.Maintenance = true;
+            Flags.Maintenance = true;
 
     }
 }

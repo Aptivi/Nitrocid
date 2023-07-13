@@ -5,12 +5,6 @@
         "DisplayAs": "General kernel settings",
         "Keys": [
             {
-                "Name": "Maintenance Mode",
-                "Type": "SBoolean",
-                "Variable": "Maintenance",
-                "Description": "Triggers maintenance mode. This disables multiple accounts."
-            },
-            {
                 "Name": "Check for Updates on Startup",
                 "Type": "SBoolean",
                 "Variable": "CheckUpdateStart",

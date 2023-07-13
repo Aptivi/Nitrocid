@@ -26,11 +26,6 @@ namespace KS.Kernel
     {
 
         /// <summary>
-        /// Maintenance Mode
-        /// </summary>
-        public static bool Maintenance =>
-            Config.MainConfig.Maintenance;
-        /// <summary>
         /// Clear Screen On Log-in
         /// </summary>
         public static bool ClearOnLogin =>
@@ -278,53 +273,17 @@ namespace KS.Kernel
             Config.MainConfig.InputHistoryEnabled;
 
         // Private flags
-        /// <summary>
-        /// Notifies user as soon as the kernel finished booting if there is an error reading configuration.
-        /// </summary>
         internal static bool NotifyConfigError;
-        /// <summary>
-        /// Notifies user as soon as the kernel finished booting if there is an error downloading debugging data.
-        /// </summary>
         internal static bool NotifyDebugDownloadError;
-        /// <summary>
-        /// Notifies user as soon as the kernel finished booting if network is not available while downloading debugging data.
-        /// </summary>
         internal static bool NotifyDebugDownloadNetworkUnavailable;
-        /// <summary>
-        /// When the command cancel is requested
-        /// </summary>
         internal static bool CancelRequested;
-        /// <summary>
-        /// Show MOTD every <see cref="Users.Login.Login.LoginPrompt()"/> call if false. Otherwise, shows it only once.
-        /// </summary>
         internal static bool ShowMOTDOnceFlag = true;
-        /// <summary>
-        /// The kernel has errored
-        /// </summary>
         internal static bool KernelErrored;
-        /// <summary>
-        /// Notifies user as soon as the kernel finished booting if there was a kernel error in the previous boot
-        /// </summary>
         internal static bool NotifyKernelError;
-        /// <summary>
-        /// Notifies the kernel to be quiet
-        /// </summary>
         internal static bool QuietKernel;
-        /// <summary>
-        /// Checking for the console size (minimum req. 80x24)
-        /// </summary>
         internal static bool CheckingForConsoleSize = true;
-        /// <summary>
-        /// Is the cancellation handler installed?
-        /// </summary>
         internal static bool CancellationHandlerInstalled;
-        /// <summary>
-        /// If the kernel is shut down, exit from main entry point gracefully.
-        /// </summary>
         internal static bool KernelShutdown;
-        /// <summary>
-        /// If this is true, prompts for console support
-        /// </summary>
         internal static bool FirstTime;
         internal static bool DoNotDisturb;
         internal static bool ScrnTimeReached;
@@ -334,6 +293,7 @@ namespace KS.Kernel
         internal static bool RebootRequested;
         internal static bool DebugMode;
         internal static bool SafeMode;
+        internal static bool Maintenance;
 
     }
 }

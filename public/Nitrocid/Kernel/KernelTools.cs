@@ -93,7 +93,7 @@ namespace KS.Kernel
             EventManager.CalendarEvents.Clear();
             Flags.SafeMode = false;
             Flags.QuietKernel = false;
-            Config.MainConfig.Maintenance = false;
+            Flags.Maintenance = false;
             SplashReport._Progress = 0;
             SplashReport._ProgressText = "";
             SplashReport._KernelBooted = false;

@@ -67,10 +67,6 @@ namespace KS.Kernel.Configuration.Instances
     public class KernelMainConfig
     {
         /// <summary>
-        /// Triggers maintenance mode. This disables multiple accounts.
-        /// </summary>
-        public bool Maintenance { get; set; }
-        /// <summary>
         /// Each startup, it will check for updates.
         /// </summary>
         public bool CheckUpdateStart { get; set; } = true;
