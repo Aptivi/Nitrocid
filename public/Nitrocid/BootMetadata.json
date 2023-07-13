@@ -10,5 +10,13 @@
     {
         "OverrideTitle": "Nitrocid 0.1.0 - force on small console",
         "Arguments": [ "noaltbuffer", "bypasssizedetection" ]
+    },
+    {
+        "OverrideTitle": "Nitrocid 0.1.0 - safe mode",
+        "Arguments": [ "noaltbuffer", "safe" ]
+    },
+    {
+        "OverrideTitle": "Nitrocid 0.1.0 - maintenance mode",
+        "Arguments": [ "noaltbuffer", "maintenance" ]
     }
 ]
