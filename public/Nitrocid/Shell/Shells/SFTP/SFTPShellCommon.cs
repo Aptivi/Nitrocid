@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Kernel.Configuration;
+using KS.Network.Base.Connections;
 using Renci.SshNet;
 
 namespace KS.Shell.Shells.SFTP
@@ -28,7 +29,7 @@ namespace KS.Shell.Shells.SFTP
     {
 
         internal static bool SFTPConnected;
-        internal static SftpClient _clientSFTP;
+        internal static NetworkConnection clientConnection;
         internal static string SFTPSite;
         internal static string SFTPPass;
         internal static string SFTPUser;
@@ -36,8 +37,8 @@ namespace KS.Shell.Shells.SFTP
         /// <summary>
         /// The SFTP client used to connect to the SFTP server
         /// </summary>
-        public static SftpClient ClientSFTP =>
-            _clientSFTP;
+        public static NetworkConnection ClientSFTP =>
+            clientConnection;
         /// <summary>
         /// SFTP current local directory
         /// </summary>

@@ -18,11 +18,13 @@
 
 using System;
 using System.Threading;
+using FluentFTP;
 using KS.Files;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
+using KS.Network.Base.Connections;
 using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Shells.FTP
@@ -57,20 +59,6 @@ namespace KS.Shell.Shells.FTP
             {
                 try
                 {
-                    // Check if the shell is going to exit
-                    if (Bail)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.W, "Exiting shell...");
-                        FTPShellCommon.FtpConnected = false;
-                        FTPShellCommon.ClientFTP?.Disconnect();
-                        FTPShellCommon.FtpSite = "";
-                        FTPShellCommon.FtpCurrentDirectory = "";
-                        FTPShellCommon.FtpCurrentRemoteDir = "";
-                        FTPShellCommon.FtpUser = "";
-                        FTPShellCommon.FtpPass = "";
-                        return;
-                    }
-
                     // Try to connect if IP address is specified.
                     if (Connects)
                     {
@@ -94,6 +82,25 @@ namespace KS.Shell.Shells.FTP
                     DebugWriter.WriteDebugStackTrace(ex);
                     throw new KernelException(KernelExceptionType.FTPShell, Translate.DoTranslation("There was an error in the FTP shell:") + " {0}", ex, ex.Message);
                 }
+            }
+
+            // Check if the shell is going to exit
+            if (Bail)
+            {
+                DebugWriter.WriteDebug(DebugLevel.W, "Exiting shell...");
+                if (FTPShellCommon.FtpConnected)
+                {
+                    FTPShellCommon.FtpConnected = false;
+                    ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance)?.Disconnect();
+                    int connectionIndex = NetworkConnectionTools.GetConnectionIndex(FTPShellCommon.ClientFTP);
+                    NetworkConnectionTools.CloseConnection(connectionIndex);
+                    FTPShellCommon.clientConnection = null;
+                }
+                FTPShellCommon.FtpSite = "";
+                FTPShellCommon.FtpCurrentDirectory = "";
+                FTPShellCommon.FtpCurrentRemoteDir = "";
+                FTPShellCommon.FtpUser = "";
+                FTPShellCommon.FtpPass = "";
             }
         }
 

@@ -33,6 +33,7 @@ using Renci.SshNet;
 using Renci.SshNet.Common;
 using KS.Kernel.Events;
 using KS.Kernel.Configuration;
+using KS.Network.Base.Connections;
 
 namespace KS.Network.SSH
 {
@@ -94,25 +95,18 @@ namespace KS.Network.SSH
                     {
                         case 1:
                         case 2:
-                            {
-                                exitWhile = true;
-                                break;
-                            }
-
+                            exitWhile = true;
+                            break;
                         default:
-                            {
-                                DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
-                                TextWriterColor.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, KernelColorType.Error, Answer);
-                                TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
-                                Input.DetectKeypress();
-                                break;
-                            }
+                            DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
+                            TextWriterColor.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, KernelColorType.Error, Answer);
+                            TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
+                            Input.DetectKeypress();
+                            break;
                     }
 
                     if (exitWhile)
-                    {
                         break;
-                    }
                 }
                 else
                 {
@@ -125,72 +119,62 @@ namespace KS.Network.SSH
 
             switch (Answer)
             {
-                case 1: // Private key file
+                case 1:
+                    // Private key file
+                    var AuthFiles = new List<PrivateKeyFile>();
+
+                    // Prompt user
+                    while (true)
                     {
-                        var AuthFiles = new List<PrivateKeyFile>();
+                        string PrivateKeyFile, PrivateKeyPassphrase;
+                        PrivateKeyFile PrivateKeyAuth;
 
-                        // Prompt user
-                        while (true)
+                        // Ask for location
+                        TextWriterColor.Write(Translate.DoTranslation("Enter the location of the private key for {0}. Write \"q\" to finish adding keys: "), false, KernelColorType.Input, Username);
+                        PrivateKeyFile = Input.ReadLine();
+                        PrivateKeyFile = Filesystem.NeutralizePath(PrivateKeyFile);
+                        if (Checking.FileExists(PrivateKeyFile))
                         {
-                            string PrivateKeyFile, PrivateKeyPassphrase;
-                            PrivateKeyFile PrivateKeyAuth;
+                            // Ask for passphrase
+                            TextWriterColor.Write(Translate.DoTranslation("Enter the passphrase for key {0}: "), false, KernelColorType.Input, PrivateKeyFile);
+                            PrivateKeyPassphrase = Input.ReadLineNoInput();
 
-                            // Ask for location
-                            TextWriterColor.Write(Translate.DoTranslation("Enter the location of the private key for {0}. Write \"q\" to finish adding keys: "), false, KernelColorType.Input, Username);
-                            PrivateKeyFile = Input.ReadLine();
-                            PrivateKeyFile = Filesystem.NeutralizePath(PrivateKeyFile);
-                            if (Checking.FileExists(PrivateKeyFile))
+                            // Add authentication method
+                            try
                             {
-                                // Ask for passphrase
-                                TextWriterColor.Write(Translate.DoTranslation("Enter the passphrase for key {0}: "), false, KernelColorType.Input, PrivateKeyFile);
-                                PrivateKeyPassphrase = Input.ReadLineNoInput();
-
-                                // Add authentication method
-                                try
-                                {
-                                    if (string.IsNullOrEmpty(PrivateKeyPassphrase))
-                                    {
-                                        PrivateKeyAuth = new PrivateKeyFile(PrivateKeyFile);
-                                    }
-                                    else
-                                    {
-                                        PrivateKeyAuth = new PrivateKeyFile(PrivateKeyFile, PrivateKeyPassphrase);
-                                    }
-                                    AuthFiles.Add(PrivateKeyAuth);
-                                }
-                                catch (Exception ex)
-                                {
-                                    DebugWriter.WriteDebugStackTrace(ex);
-                                    DebugWriter.WriteDebug(DebugLevel.E, "Error trying to add private key authentication method: {0}", ex.Message);
-                                    TextWriterColor.Write(Translate.DoTranslation("Error trying to add private key:") + " {0}", true, KernelColorType.Error, ex.Message);
-                                }
+                                if (string.IsNullOrEmpty(PrivateKeyPassphrase))
+                                    PrivateKeyAuth = new PrivateKeyFile(PrivateKeyFile);
+                                else
+                                    PrivateKeyAuth = new PrivateKeyFile(PrivateKeyFile, PrivateKeyPassphrase);
+                                AuthFiles.Add(PrivateKeyAuth);
                             }
-                            else if (PrivateKeyFile.EndsWith("/q"))
+                            catch (Exception ex)
                             {
-                                break;
-                            }
-                            else
-                            {
-                                TextWriterColor.Write(Translate.DoTranslation("Key file {0} doesn't exist."), true, KernelColorType.Error, PrivateKeyFile);
+                                DebugWriter.WriteDebugStackTrace(ex);
+                                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to add private key authentication method: {0}", ex.Message);
+                                TextWriterColor.Write(Translate.DoTranslation("Error trying to add private key:") + " {0}", true, KernelColorType.Error, ex.Message);
                             }
                         }
-
-                        // Add authentication method
-                        AuthenticationMethods.Add(new PrivateKeyAuthenticationMethod(Username, AuthFiles.ToArray()));
-                        break;
+                        else if (PrivateKeyFile.EndsWith("/q"))
+                            break;
+                        else
+                            TextWriterColor.Write(Translate.DoTranslation("Key file {0} doesn't exist."), true, KernelColorType.Error, PrivateKeyFile);
                     }
-                case 2: // Password
-                    {
-                        string Pass;
 
-                        // Ask for password
-                        TextWriterColor.Write(Translate.DoTranslation("Enter the password for {0}: "), false, KernelColorType.Input, Username);
-                        Pass = Input.ReadLineNoInput();
+                    // Add authentication method
+                    AuthenticationMethods.Add(new PrivateKeyAuthenticationMethod(Username, AuthFiles.ToArray()));
+                    break;
+                case 2:
+                    // Password
+                    string Pass;
 
-                        // Add authentication method
-                        AuthenticationMethods.Add(new PasswordAuthenticationMethod(Username, Pass));
-                        break;
-                    }
+                    // Ask for password
+                    TextWriterColor.Write(Translate.DoTranslation("Enter the password for {0}: "), false, KernelColorType.Input, Username);
+                    Pass = Input.ReadLineNoInput();
+
+                    // Add authentication method
+                    AuthenticationMethods.Add(new PasswordAuthenticationMethod(Username, Pass));
+                    break;
             }
             return GetConnectionInfo(Address, Port, Username, AuthenticationMethods);
         }
@@ -202,7 +186,8 @@ namespace KS.Network.SSH
         /// <param name="Port">A port of the SSH/SFTP server. It's usually 22</param>
         /// <param name="Username">A username to authenticate with</param>
         /// <param name="AuthMethods">Authentication methods list.</param>
-        public static ConnectionInfo GetConnectionInfo(string Address, int Port, string Username, List<AuthenticationMethod> AuthMethods) => new(Address, Port, Username, AuthMethods.ToArray());
+        public static ConnectionInfo GetConnectionInfo(string Address, int Port, string Username, List<AuthenticationMethod> AuthMethods) =>
+            new(Address, Port, Username, AuthMethods.ToArray());
 
         /// <summary>
         /// Opens a session to specified address using the specified port and the username
@@ -224,15 +209,14 @@ namespace KS.Network.SSH
                 DebugWriter.WriteDebug(DebugLevel.I, "Connecting to {0}...", Address);
                 SSH.Connect();
 
+                // Establish connection
+                var sshConnection = NetworkConnectionTools.EstablishConnection("SSH client", Address, NetworkConnectionType.SSH, SSH);
+
                 // Open SSH connection
                 if (Connection == ConnectionType.Shell)
-                {
-                    OpenShell(SSH);
-                }
+                    OpenShell(sshConnection);
                 else
-                {
-                    OpenCommand(SSH, Command);
-                }
+                    OpenCommand(sshConnection, Command);
             }
             catch (Exception ex)
             {
@@ -257,6 +241,17 @@ namespace KS.Network.SSH
                 DebugWriter.WriteDebug(DebugLevel.I, BannerLine);
                 TextWriterColor.Write(BannerLine);
             }
+        }
+
+        /// <summary>
+        /// Opens an SSH shell
+        /// </summary>
+        /// <param name="sshConnection">SSH connection</param>
+        public static void OpenShell(NetworkConnection sshConnection)
+        {
+            OpenShell((SshClient)sshConnection.ConnectionInstance);
+            int connectionIndex = NetworkConnectionTools.GetConnectionIndex(sshConnection);
+            NetworkConnectionTools.CloseConnection(connectionIndex);
         }
 
         /// <summary>
@@ -304,6 +299,18 @@ namespace KS.Network.SSH
                 Console.CancelKeyPress += CancellationHandlers.CancelCommand;
                 Console.CancelKeyPress -= SSHDisconnect;
             }
+        }
+
+        /// <summary>
+        /// Opens an SSH shell for a command
+        /// </summary>
+        /// <param name="sshConnection">SSH connection</param>
+        /// <param name="Command">Command to sent to remote system (usually a UNIX command)</param>
+        public static void OpenCommand(NetworkConnection sshConnection, string Command)
+        {
+            OpenCommand((SshClient)sshConnection.ConnectionInstance, Command);
+            int connectionIndex = NetworkConnectionTools.GetConnectionIndex(sshConnection);
+            NetworkConnectionTools.CloseConnection(connectionIndex);
         }
 
         /// <summary>

@@ -19,6 +19,8 @@
 using System.Threading;
 using KS.Kernel.Debugging;
 using KS.Shell.Shells.Mail;
+using MailKit.Net.Imap;
+using MailKit.Net.Smtp;
 
 namespace KS.Network.Mail.Transfer
 {
@@ -31,13 +33,13 @@ namespace KS.Network.Mail.Transfer
         public static void IMAPKeepConnection()
         {
             // Every 30 seconds, send a ping to IMAP server
-            while (MailLogin.IMAP_Client.IsConnected)
+            while (((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).IsConnected)
             {
                 Thread.Sleep(MailShellCommon.Mail_ImapPingInterval);
-                if (MailLogin.IMAP_Client.IsConnected)
+                if (((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).IsConnected)
                 {
-                    lock (MailLogin.IMAP_Client.SyncRoot)
-                        MailLogin.IMAP_Client.NoOp();
+                    lock (((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).SyncRoot)
+                        ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).NoOp();
                     MailTransfer.PopulateMessages();
                 }
                 else
@@ -54,13 +56,13 @@ namespace KS.Network.Mail.Transfer
         public static void SMTPKeepConnection()
         {
             // Every 30 seconds, send a ping to SMTP server
-            while (MailLogin.SMTP_Client.IsConnected)
+            while (((SmtpClient)MailShellCommon.ClientSmtp.ConnectionInstance).IsConnected)
             {
                 Thread.Sleep(MailShellCommon.Mail_SmtpPingInterval);
-                if (MailLogin.SMTP_Client.IsConnected)
+                if (((SmtpClient)MailShellCommon.ClientSmtp.ConnectionInstance).IsConnected)
                 {
-                    lock (MailLogin.SMTP_Client.SyncRoot)
-                        MailLogin.SMTP_Client.NoOp();
+                    lock (((SmtpClient)MailShellCommon.ClientSmtp.ConnectionInstance).SyncRoot)
+                        ((SmtpClient)MailShellCommon.ClientSmtp.ConnectionInstance).NoOp();
                 }
                 else
                 {

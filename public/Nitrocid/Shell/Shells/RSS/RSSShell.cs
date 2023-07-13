@@ -58,6 +58,7 @@ namespace KS.Shell.Shells.RSS
 
             while (!BailFromEnter)
             {
+                // TODO: It's messed up here. Refactor the RSS feed link prompt here before we're able to make it use NetworkConnection.
                 if (string.IsNullOrWhiteSpace(RSSShellCommon.RSSFeedLink))
                 {
                     while (string.IsNullOrWhiteSpace(RSSShellCommon.RSSFeedLink))

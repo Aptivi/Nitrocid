@@ -24,6 +24,7 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.Shells.Mail;
 using MailKit;
+using MailKit.Net.Imap;
 
 namespace KS.Network.Mail.Directory
 {
@@ -43,7 +44,7 @@ namespace KS.Network.Mail.Directory
             try
             {
                 MailFolder MailFolder;
-                lock (MailLogin.IMAP_Client.SyncRoot)
+                lock (((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).SyncRoot)
                 {
                     MailFolder = OpenFolder(MailShellCommon.IMAP_CurrentDirectory);
                     MailFolder.Create(Directory, true);
@@ -67,7 +68,7 @@ namespace KS.Network.Mail.Directory
             try
             {
                 MailFolder MailFolder;
-                lock (MailLogin.IMAP_Client.SyncRoot)
+                lock (((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).SyncRoot)
                 {
                     MailFolder = OpenFolder(Directory);
                     MailFolder.Delete();
@@ -92,7 +93,7 @@ namespace KS.Network.Mail.Directory
             try
             {
                 MailFolder MailFolder;
-                lock (MailLogin.IMAP_Client.SyncRoot)
+                lock (((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).SyncRoot)
                 {
                     MailFolder = OpenFolder(Directory);
                     MailFolder.Rename(MailFolder.ParentFolder, NewName);
@@ -115,7 +116,7 @@ namespace KS.Network.Mail.Directory
             DebugWriter.WriteDebug(DebugLevel.I, "Opening folder: {0}", Directory);
             try
             {
-                lock (MailLogin.IMAP_Client.SyncRoot)
+                lock (((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).SyncRoot)
                     OpenFolder(Directory);
                 MailShellCommon.IMAP_CurrentDirectory = Directory;
                 DebugWriter.WriteDebug(DebugLevel.I, "Current directory changed.");
@@ -138,10 +139,10 @@ namespace KS.Network.Mail.Directory
         {
             var Opened = default(MailFolder);
             DebugWriter.WriteDebug(DebugLevel.I, "Personal namespace collection parsing started.");
-            foreach (FolderNamespace nmspc in MailLogin.IMAP_Client.PersonalNamespaces)
+            foreach (FolderNamespace nmspc in ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).PersonalNamespaces)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
-                foreach (MailFolder dir in MailLogin.IMAP_Client.GetFolders(nmspc).Cast<MailFolder>())
+                foreach (MailFolder dir in ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).GetFolders(nmspc).Cast<MailFolder>())
                 {
                     if (dir.Name.ToLower() == FolderString.ToLower())
                     {
@@ -152,10 +153,10 @@ namespace KS.Network.Mail.Directory
             }
 
             DebugWriter.WriteDebug(DebugLevel.I, "Shared namespace collection parsing started.");
-            foreach (FolderNamespace nmspc in MailLogin.IMAP_Client.SharedNamespaces)
+            foreach (FolderNamespace nmspc in ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).SharedNamespaces)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
-                foreach (MailFolder dir in MailLogin.IMAP_Client.GetFolders(nmspc).Cast<MailFolder>())
+                foreach (MailFolder dir in ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).GetFolders(nmspc).Cast<MailFolder>())
                 {
                     if (dir.Name.ToLower() == FolderString.ToLower())
                     {
@@ -166,10 +167,10 @@ namespace KS.Network.Mail.Directory
             }
 
             DebugWriter.WriteDebug(DebugLevel.I, "Other namespace collection parsing started.");
-            foreach (FolderNamespace nmspc in MailLogin.IMAP_Client.OtherNamespaces)
+            foreach (FolderNamespace nmspc in ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).OtherNamespaces)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
-                foreach (MailFolder dir in MailLogin.IMAP_Client.GetFolders(nmspc).Cast<MailFolder>())
+                foreach (MailFolder dir in ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).GetFolders(nmspc).Cast<MailFolder>())
                 {
                     if (dir.Name.ToLower() == FolderString.ToLower())
                     {
@@ -196,14 +197,14 @@ namespace KS.Network.Mail.Directory
         public static string MailListDirectories()
         {
             var EntryBuilder = new StringBuilder();
-            lock (MailLogin.IMAP_Client.SyncRoot)
+            lock (((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).SyncRoot)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Personal namespace collection parsing started.");
-                foreach (FolderNamespace nmspc in MailLogin.IMAP_Client.PersonalNamespaces)
+                foreach (FolderNamespace nmspc in ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).PersonalNamespaces)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
                     EntryBuilder.AppendLine($"- {nmspc.Path}");
-                    foreach (MailFolder dir in MailLogin.IMAP_Client.GetFolders(nmspc).Cast<MailFolder>())
+                    foreach (MailFolder dir in ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).GetFolders(nmspc).Cast<MailFolder>())
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Folder: {0}", dir.Name);
                         EntryBuilder.AppendLine($"  - {dir.Name}");
@@ -211,11 +212,11 @@ namespace KS.Network.Mail.Directory
                 }
 
                 DebugWriter.WriteDebug(DebugLevel.I, "Shared namespace collection parsing started.");
-                foreach (FolderNamespace nmspc in MailLogin.IMAP_Client.SharedNamespaces)
+                foreach (FolderNamespace nmspc in ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).SharedNamespaces)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
                     EntryBuilder.AppendLine($"- {nmspc.Path}");
-                    foreach (MailFolder dir in MailLogin.IMAP_Client.GetFolders(nmspc).Cast<MailFolder>())
+                    foreach (MailFolder dir in ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).GetFolders(nmspc).Cast<MailFolder>())
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Folder: {0}", dir.Name);
                         EntryBuilder.AppendLine($"  - {dir.Name}");
@@ -223,11 +224,11 @@ namespace KS.Network.Mail.Directory
                 }
 
                 DebugWriter.WriteDebug(DebugLevel.I, "Other namespace collection parsing started.");
-                foreach (FolderNamespace nmspc in MailLogin.IMAP_Client.OtherNamespaces)
+                foreach (FolderNamespace nmspc in ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).OtherNamespaces)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
                     EntryBuilder.AppendLine($"- {nmspc.Path}");
-                    foreach (MailFolder dir in MailLogin.IMAP_Client.GetFolders(nmspc).Cast<MailFolder>())
+                    foreach (MailFolder dir in ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).GetFolders(nmspc).Cast<MailFolder>())
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Folder: {0}", dir.Name);
                         EntryBuilder.AppendLine($"  - {dir.Name}");

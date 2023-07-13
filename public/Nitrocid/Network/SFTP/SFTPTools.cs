@@ -23,6 +23,7 @@ using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Probers.Placeholder;
 using KS.Misc.Writers.ConsoleWriters;
+using KS.Network.Base.Connections;
 using KS.Network.SpeedDial;
 using KS.Shell.Shells.SFTP;
 using Renci.SshNet;
@@ -76,10 +77,10 @@ namespace KS.Network.SFTP
                     }
 
                     // Check to see if we're aborting or not
-                    SFTPShellCommon._clientSFTP = new SftpClient(SSH.SSH.PromptConnectionInfo(SftpHost, Convert.ToInt32(SftpPort), SFTPShellCommon.SFTPUser));
+                    var client = new SftpClient(SSH.SSH.PromptConnectionInfo(SftpHost, Convert.ToInt32(SftpPort), SFTPShellCommon.SFTPUser));
 
                     // Connect to SFTP
-                    ConnectSFTP();
+                    ConnectSFTP(client);
                 }
                 catch (Exception ex)
                 {
@@ -93,26 +94,29 @@ namespace KS.Network.SFTP
         /// <summary>
         /// Tries to connect to the SFTP server.
         /// </summary>
-        private static void ConnectSFTP()
+        private static void ConnectSFTP(SftpClient client)
         {
             // Connect
-            TextWriterColor.Write(Translate.DoTranslation("Trying to connect to {0}..."), SFTPShellCommon.ClientSFTP.ConnectionInfo.Host);
-            DebugWriter.WriteDebug(DebugLevel.I, "Connecting to {0} with {1}...", SFTPShellCommon.ClientSFTP.ConnectionInfo.Host);
-            SFTPShellCommon.ClientSFTP.Connect();
+            TextWriterColor.Write(Translate.DoTranslation("Trying to connect to {0}..."), client.ConnectionInfo.Host);
+            DebugWriter.WriteDebug(DebugLevel.I, "Connecting to {0} with {1}...", client.ConnectionInfo.Host);
+            client.Connect();
 
             // Show that it's connected
-            TextWriterColor.Write(Translate.DoTranslation("Connected to {0}"), SFTPShellCommon.ClientSFTP.ConnectionInfo.Host);
+            TextWriterColor.Write(Translate.DoTranslation("Connected to {0}"), client.ConnectionInfo.Host);
             DebugWriter.WriteDebug(DebugLevel.I, "Connected.");
             SFTPShellCommon.SFTPConnected = true;
 
             // Prepare to print current SFTP directory
-            SFTPShellCommon.SFTPCurrentRemoteDir = SFTPShellCommon.ClientSFTP.WorkingDirectory;
+            SFTPShellCommon.SFTPCurrentRemoteDir = client.WorkingDirectory;
             DebugWriter.WriteDebug(DebugLevel.I, "Working directory: {0}", SFTPShellCommon.SFTPCurrentRemoteDir);
-            SFTPShellCommon.SFTPSite = SFTPShellCommon.ClientSFTP.ConnectionInfo.Host;
-            SFTPShellCommon.SFTPUser = SFTPShellCommon.ClientSFTP.ConnectionInfo.Username;
+            SFTPShellCommon.SFTPSite = client.ConnectionInfo.Host;
+            SFTPShellCommon.SFTPUser = client.ConnectionInfo.Username;
 
             // Write connection information to Speed Dial file if it doesn't exist there
-            SpeedDialTools.TryAddEntryToSpeedDial(SFTPShellCommon.SFTPSite, SFTPShellCommon.ClientSFTP.ConnectionInfo.Port, SpeedDialType.SFTP, true, SFTPShellCommon.SFTPUser);
+            SpeedDialTools.TryAddEntryToSpeedDial(SFTPShellCommon.SFTPSite, client.ConnectionInfo.Port, SpeedDialType.SFTP, true, SFTPShellCommon.SFTPUser);
+
+            // Establish connection
+            NetworkConnectionTools.EstablishConnection("SFTP client", SFTPShellCommon.SFTPSite, NetworkConnectionType.SFTP, client);
         }
 
         /// <summary>
@@ -125,8 +129,8 @@ namespace KS.Network.SFTP
             string Port = (string)quickConnectInfo["Port"];
             string Username = (string)quickConnectInfo["Options"][0];
             DebugWriter.WriteDebug(DebugLevel.I, "Address: {0}, Port: {1}, Username: {2}", Address, Port, Username);
-            SFTPShellCommon._clientSFTP = new SftpClient(SSH.SSH.PromptConnectionInfo(Address, Convert.ToInt32(Port), Username));
-            ConnectSFTP();
+            var client = new SftpClient(SSH.SSH.PromptConnectionInfo(Address, Convert.ToInt32(Port), Username));
+            ConnectSFTP(client);
         }
 
     }

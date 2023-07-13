@@ -69,11 +69,11 @@ namespace KS.Network.FTP.Filesystem
                 {
                     if (!string.IsNullOrEmpty(Path))
                     {
-                        Listing = FTPShellCommon.ClientFTP.GetListing(Path, FtpListOption.Auto);
+                        Listing = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetListing(Path, FtpListOption.Auto);
                     }
                     else
                     {
-                        Listing = FTPShellCommon.ClientFTP.GetListing(FTPShellCommon.FtpCurrentRemoteDir, FtpListOption.Auto);
+                        Listing = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetListing(FTPShellCommon.FtpCurrentRemoteDir, FtpListOption.Auto);
                     }
                     foreach (FtpListItem DirListFTP in Listing)
                     {
@@ -94,8 +94,8 @@ namespace KS.Network.FTP.Filesystem
                                 if (ShowDetails)
                                 {
                                     EntryBuilder.Append(": ");
-                                    FileSize = FTPShellCommon.ClientFTP.GetFileSize(finalDirListFTP.FullName);
-                                    ModDate = FTPShellCommon.ClientFTP.GetModifiedTime(finalDirListFTP.FullName);
+                                    FileSize = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetFileSize(finalDirListFTP.FullName);
+                                    ModDate = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetModifiedTime(finalDirListFTP.FullName);
                                     EntryBuilder.Append(ColorTools.GetColor(KernelColorType.ListValue).VTSequenceForeground + string.Format(Translate.DoTranslation("{0} KB | Modified in: {1}"), FileSize / 1024d, ModDate.ToString()));
                                 }
                             }
@@ -133,15 +133,15 @@ namespace KS.Network.FTP.Filesystem
                 DebugWriter.WriteDebug(DebugLevel.I, "Deleting {0}...", Target);
 
                 // Delete a file or folder
-                if (FTPShellCommon.ClientFTP.FileExists(Target))
+                if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).FileExists(Target))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "{0} is a file.", Target);
-                    FTPShellCommon.ClientFTP.DeleteFile(Target);
+                    ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DeleteFile(Target);
                 }
-                else if (FTPShellCommon.ClientFTP.DirectoryExists(Target))
+                else if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DirectoryExists(Target))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "{0} is a folder.", Target);
-                    FTPShellCommon.ClientFTP.DeleteDirectory(Target);
+                    ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DeleteDirectory(Target);
                 }
                 else
                 {
@@ -170,11 +170,11 @@ namespace KS.Network.FTP.Filesystem
             {
                 if (!string.IsNullOrEmpty(Directory))
                 {
-                    if (FTPShellCommon.ClientFTP.DirectoryExists(Directory))
+                    if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DirectoryExists(Directory))
                     {
                         // Directory exists, go to the new directory
-                        FTPShellCommon.ClientFTP.SetWorkingDirectory(Directory);
-                        FTPShellCommon.FtpCurrentRemoteDir = FTPShellCommon.ClientFTP.GetWorkingDirectory();
+                        ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).SetWorkingDirectory(Directory);
+                        FTPShellCommon.FtpCurrentRemoteDir = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetWorkingDirectory();
                         return true;
                     }
                     else
@@ -243,17 +243,17 @@ namespace KS.Network.FTP.Filesystem
                 // Begin the moving process
                 string SourceFile = Source.Split('/').Last();
                 DebugWriter.WriteDebug(DebugLevel.I, "Moving from {0} to {1} with the source file of {2}...", Source, Target, SourceFile);
-                if (FTPShellCommon.ClientFTP.DirectoryExists(Source))
+                if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DirectoryExists(Source))
                 {
-                    Success = FTPShellCommon.ClientFTP.MoveDirectory(Source, Target);
+                    Success = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).MoveDirectory(Source, Target);
                 }
-                else if (FTPShellCommon.ClientFTP.FileExists(Source) & FTPShellCommon.ClientFTP.DirectoryExists(Target))
+                else if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).FileExists(Source) & ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DirectoryExists(Target))
                 {
-                    Success = FTPShellCommon.ClientFTP.MoveFile(Source, Target + SourceFile);
+                    Success = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).MoveFile(Source, Target + SourceFile);
                 }
-                else if (FTPShellCommon.ClientFTP.FileExists(Source))
+                else if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).FileExists(Source))
                 {
-                    Success = FTPShellCommon.ClientFTP.MoveFile(Source, Target);
+                    Success = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).MoveFile(Source, Target);
                 }
                 DebugWriter.WriteDebug(DebugLevel.I, "Moved. Result: {0}", Success);
                 return Success;
@@ -281,20 +281,20 @@ namespace KS.Network.FTP.Filesystem
                 // Begin the copying process
                 string SourceFile = Source.Split('/').Last();
                 DebugWriter.WriteDebug(DebugLevel.I, "Copying from {0} to {1} with the source file of {2}...", Source, Target, SourceFile);
-                if (FTPShellCommon.ClientFTP.DirectoryExists(Source))
+                if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DirectoryExists(Source))
                 {
-                    FTPShellCommon.ClientFTP.DownloadDirectory(Paths.TempPath + "/FTPTransfer", Source);
-                    Result = FTPShellCommon.ClientFTP.UploadDirectory(Paths.TempPath + "/FTPTransfer/" + Source, Target);
+                    ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DownloadDirectory(Paths.TempPath + "/FTPTransfer", Source);
+                    Result = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).UploadDirectory(Paths.TempPath + "/FTPTransfer/" + Source, Target);
                 }
-                else if (FTPShellCommon.ClientFTP.FileExists(Source) & FTPShellCommon.ClientFTP.DirectoryExists(Target))
+                else if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).FileExists(Source) & ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DirectoryExists(Target))
                 {
-                    FTPShellCommon.ClientFTP.DownloadFile(Paths.TempPath + "/FTPTransfer/" + SourceFile, Source);
-                    Result = FTPShellCommon.ClientFTP.UploadFile(Paths.TempPath + "/FTPTransfer/" + SourceFile, Target + "/" + SourceFile);
+                    ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DownloadFile(Paths.TempPath + "/FTPTransfer/" + SourceFile, Source);
+                    Result = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).UploadFile(Paths.TempPath + "/FTPTransfer/" + SourceFile, Target + "/" + SourceFile);
                 }
-                else if (FTPShellCommon.ClientFTP.FileExists(Source))
+                else if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).FileExists(Source))
                 {
-                    FTPShellCommon.ClientFTP.DownloadFile(Paths.TempPath + "/FTPTransfer/" + SourceFile, Source);
-                    Result = FTPShellCommon.ClientFTP.UploadFile(Paths.TempPath + "/FTPTransfer/" + SourceFile, Target);
+                    ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DownloadFile(Paths.TempPath + "/FTPTransfer/" + SourceFile, Source);
+                    Result = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).UploadFile(Paths.TempPath + "/FTPTransfer/" + SourceFile, Target);
                 }
                 Directory.Delete(Paths.TempPath + "/FTPTransfer", true);
 
@@ -340,7 +340,7 @@ namespace KS.Network.FTP.Filesystem
             {
                 try
                 {
-                    FTPShellCommon.ClientFTP.Chmod(Target, Chmod);
+                    ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Chmod(Target, Chmod);
                     return true;
                 }
                 catch (Exception ex)

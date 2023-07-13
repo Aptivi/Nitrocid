@@ -42,7 +42,7 @@ namespace KS.Network.HTTP
             if (HTTPShellCommon.HTTPConnected)
             {
                 var TargetUri = new Uri(NeutralizeUri(ContentUri));
-                await HTTPShellCommon.ClientHTTP.DeleteAsync(TargetUri);
+                await ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).DeleteAsync(TargetUri);
             }
             else
             {
@@ -59,7 +59,7 @@ namespace KS.Network.HTTP
             if (HTTPShellCommon.HTTPConnected)
             {
                 var TargetUri = new Uri(NeutralizeUri(ContentUri));
-                return await HTTPShellCommon.ClientHTTP.GetStringAsync(TargetUri);
+                return await ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).GetStringAsync(TargetUri);
             }
             else
             {
@@ -76,7 +76,7 @@ namespace KS.Network.HTTP
             if (HTTPShellCommon.HTTPConnected)
             {
                 var TargetUri = new Uri(NeutralizeUri(ContentUri));
-                return await HTTPShellCommon.ClientHTTP.GetAsync(TargetUri);
+                return await ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).GetAsync(TargetUri);
             }
             else
             {
@@ -95,7 +95,7 @@ namespace KS.Network.HTTP
             {
                 var TargetUri = new Uri(NeutralizeUri(ContentUri));
                 var stringContent = new StringContent(ContentString);
-                return await HTTPShellCommon.ClientHTTP.PutAsync(TargetUri, stringContent);
+                return await ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).PutAsync(TargetUri, stringContent);
             }
             else
             {
@@ -116,7 +116,7 @@ namespace KS.Network.HTTP
                 var TargetUri = new Uri(NeutralizeUri(ContentUri));
                 var TargetStream = new FileStream(ContentPath, FileMode.Open, FileAccess.Read);
                 var stringContent = new StreamContent(TargetStream);
-                return await HTTPShellCommon.ClientHTTP.PutAsync(TargetUri, stringContent);
+                return await ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).PutAsync(TargetUri, stringContent);
             }
             else
             {
@@ -135,7 +135,7 @@ namespace KS.Network.HTTP
             {
                 var TargetUri = new Uri(NeutralizeUri(ContentUri));
                 var stringContent = new StringContent(ContentString);
-                return await HTTPShellCommon.ClientHTTP.PostAsync(TargetUri, stringContent);
+                return await ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).PostAsync(TargetUri, stringContent);
             }
             else
             {
@@ -156,7 +156,7 @@ namespace KS.Network.HTTP
                 var TargetUri = new Uri(NeutralizeUri(ContentUri));
                 var TargetStream = new FileStream(ContentPath, FileMode.Open, FileAccess.Read);
                 var stringContent = new StreamContent(TargetStream);
-                return await HTTPShellCommon.ClientHTTP.PostAsync(TargetUri, stringContent);
+                return await ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).PostAsync(TargetUri, stringContent);
             }
             else
             {

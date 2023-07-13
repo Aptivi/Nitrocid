@@ -18,12 +18,16 @@
 
 using System;
 using System.Threading;
+using FluentFTP;
 using KS.Files;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
+using KS.Network.Base.Connections;
 using KS.Shell.ShellBase.Shells;
+using KS.Shell.Shells.FTP;
+using Renci.SshNet;
 
 namespace KS.Shell.Shells.SFTP
 {
@@ -67,8 +71,14 @@ namespace KS.Shell.Shells.SFTP
                     if (Bail)
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Exiting shell...");
-                        SFTPShellCommon.SFTPConnected = false;
-                        SFTPShellCommon.ClientSFTP?.Disconnect();
+                        if (SFTPShellCommon.SFTPConnected)
+                        {
+                            SFTPShellCommon.SFTPConnected = false;
+                            ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance)?.Disconnect();
+                            int connectionIndex = NetworkConnectionTools.GetConnectionIndex(SFTPShellCommon.ClientSFTP);
+                            NetworkConnectionTools.CloseConnection(connectionIndex);
+                            SFTPShellCommon.clientConnection = null;
+                        }
                         SFTPShellCommon.SFTPSite = "";
                         SFTPShellCommon.SFTPCurrDirect = "";
                         SFTPShellCommon.SFTPCurrentRemoteDir = "";

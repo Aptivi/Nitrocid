@@ -123,10 +123,6 @@ namespace KS.Kernel
             // Stop RPC
             RemoteProcedure.StopRPC();
 
-            // Disconnect from mail
-            MailLogin.IMAP_Client.Disconnect(true);
-            MailLogin.SMTP_Client.Disconnect(true);
-
             // Disconnect all connections
             NetworkConnectionTools.CloseAllConnections();
 

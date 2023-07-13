@@ -30,8 +30,10 @@ using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Probers.Placeholder;
 using KS.Misc.Writers.ConsoleWriters;
+using KS.Network.Base.Connections;
 using KS.Network.Mail.PGP;
 using KS.Shell.ShellBase.Shells;
+using KS.Shell.Shells.Mail;
 using MailKit;
 using MailKit.Net.Imap;
 using MailKit.Net.Smtp;
@@ -139,8 +141,8 @@ namespace KS.Network.Mail
         {
             string IMAP_Address;
             var IMAP_Port = 0;
-            string SMTP_Address = "";
             int SMTP_Port;
+
             // IMAP server address and port
             if (!string.IsNullOrWhiteSpace(Mail_IMAPPromptStyle))
             {
@@ -162,7 +164,7 @@ namespace KS.Network.Mail
             {
                 TextWriterColor.Write(Translate.DoTranslation("Enter SMTP server address and port (<address> or <address>:[port]): "), false, KernelColorType.Input);
             }
-            SMTP_Address = Input.ReadLine();
+            string SMTP_Address = Input.ReadLine();
             SMTP_Port = 587;
             DebugWriter.WriteDebug(DebugLevel.I, "SMTP Server: \"{0}\"", SMTP_Address);
 
@@ -279,6 +281,8 @@ namespace KS.Network.Mail
 
                 // Initialize shell
                 DebugWriter.WriteDebug(DebugLevel.I, "Authentication succeeded. Opening shell...");
+                MailShellCommon.ClientImap = NetworkConnectionTools.EstablishConnection("IMAP client", $"mailto:{Mail_Authentication.UserName}", NetworkConnectionType.Mail, IMAP_Client);
+                MailShellCommon.ClientSmtp = NetworkConnectionTools.EstablishConnection("SMTP client", $"mailto:{Mail_Authentication.UserName}", NetworkConnectionType.Mail, SMTP_Client);
                 ShellStart.StartShell(ShellType.MailShell);
             }
             catch (Exception ex)

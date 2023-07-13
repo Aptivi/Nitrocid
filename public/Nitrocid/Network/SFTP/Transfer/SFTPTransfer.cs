@@ -22,6 +22,7 @@ using KS.Languages;
 using KS.Shell.Shells.SFTP;
 using KS.Kernel.Events;
 using KS.Kernel.Exceptions;
+using Renci.SshNet;
 
 namespace KS.Network.SFTP.Transfer
 {
@@ -48,7 +49,7 @@ namespace KS.Network.SFTP.Transfer
 
                     // Try to download
                     var DownloadFileStream = new System.IO.FileStream($"{SFTPShellCommon.SFTPCurrDirect}/{File}", System.IO.FileMode.OpenOrCreate);
-                    SFTPShellCommon.ClientSFTP.DownloadFile($"{SFTPShellCommon.SFTPCurrentRemoteDir}/{File}", DownloadFileStream);
+                    ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).DownloadFile($"{SFTPShellCommon.SFTPCurrentRemoteDir}/{File}", DownloadFileStream);
 
                     // Show a message that it's downloaded
                     DebugWriter.WriteDebug(DebugLevel.I, "Downloaded file {0}.", File);
@@ -85,7 +86,7 @@ namespace KS.Network.SFTP.Transfer
 
                     // Try to upload
                     var UploadFileStream = new System.IO.FileStream($"{SFTPShellCommon.SFTPCurrDirect}/{File}", System.IO.FileMode.Open);
-                    SFTPShellCommon.ClientSFTP.UploadFile(UploadFileStream, $"{SFTPShellCommon.SFTPCurrentRemoteDir}/{File}");
+                    ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).UploadFile(UploadFileStream, $"{SFTPShellCommon.SFTPCurrentRemoteDir}/{File}");
                     DebugWriter.WriteDebug(DebugLevel.I, "Uploaded file {0}", File);
                     EventsManager.FireEvent(EventType.SFTPPostUpload, File);
                     return true;

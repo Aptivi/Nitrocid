@@ -46,10 +46,10 @@ namespace KS.Network.FTP.Filesystem
             {
                 if (!string.IsNullOrEmpty(File))
                 {
-                    if (FTPShellCommon.ClientFTP.FileExists(File))
+                    if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).FileExists(File))
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Hashing {0} using {1}...", File, HashAlgorithm.ToString());
-                        return FTPShellCommon.ClientFTP.GetChecksum(File, HashAlgorithm);
+                        return ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetChecksum(File, HashAlgorithm);
                     }
                     else
                     {
@@ -91,17 +91,17 @@ namespace KS.Network.FTP.Filesystem
             {
                 if (!string.IsNullOrEmpty(Directory))
                 {
-                    if (FTPShellCommon.ClientFTP.DirectoryExists(Directory))
+                    if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DirectoryExists(Directory))
                     {
                         var Hashes = new Dictionary<string, FtpHash>();
                         FtpListItem[] Items;
                         if (Recurse)
                         {
-                            Items = FTPShellCommon.ClientFTP.GetListing(Directory, FtpListOption.Recursive);
+                            Items = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetListing(Directory, FtpListOption.Recursive);
                         }
                         else
                         {
-                            Items = FTPShellCommon.ClientFTP.GetListing(Directory);
+                            Items = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetListing(Directory);
                         }
                         foreach (FtpListItem Item in Items)
                         {

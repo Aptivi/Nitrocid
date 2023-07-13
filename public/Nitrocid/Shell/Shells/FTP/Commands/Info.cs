@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using FluentFTP;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
@@ -39,23 +40,23 @@ namespace KS.Shell.Shells.FTP.Commands
             {
                 SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("FTP server information"), true);
                 TextWriterColor.Write(Translate.DoTranslation("Server address:") + " ", false, KernelColorType.ListEntry);
-                TextWriterColor.Write(FTPShellCommon.ClientFTP.Host, false, KernelColorType.ListEntry);
+                TextWriterColor.Write(((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Host, false, KernelColorType.ListEntry);
                 TextWriterColor.Write(Translate.DoTranslation("Server port:") + " ", false, KernelColorType.ListEntry);
-                TextWriterColor.Write(FTPShellCommon.ClientFTP.Port.ToString(), false, KernelColorType.ListEntry);
+                TextWriterColor.Write(((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Port.ToString(), false, KernelColorType.ListEntry);
                 TextWriterColor.Write(Translate.DoTranslation("Server type:") + " ", false, KernelColorType.ListEntry);
-                TextWriterColor.Write(FTPShellCommon.ClientFTP.ServerType.ToString(), false, KernelColorType.ListEntry);
+                TextWriterColor.Write(((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).ServerType.ToString(), false, KernelColorType.ListEntry);
                 TextWriterColor.Write(Translate.DoTranslation("Server system type:") + " ", false, KernelColorType.ListEntry);
-                TextWriterColor.Write(FTPShellCommon.ClientFTP.SystemType, false, KernelColorType.ListEntry);
+                TextWriterColor.Write(((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).SystemType, false, KernelColorType.ListEntry);
                 TextWriterColor.Write(Translate.DoTranslation("Server system:") + " ", false, KernelColorType.ListEntry);
-                TextWriterColor.Write(FTPShellCommon.ClientFTP.ServerOS.ToString(), false, KernelColorType.ListEntry);
+                TextWriterColor.Write(((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).ServerOS.ToString(), false, KernelColorType.ListEntry);
                 TextWriterColor.Write(Translate.DoTranslation("Server encryption mode:") + " ", false, KernelColorType.ListEntry);
-                TextWriterColor.Write(FTPShellCommon.ClientFTP.Config.EncryptionMode.ToString(), false, KernelColorType.ListEntry);
+                TextWriterColor.Write(((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.EncryptionMode.ToString(), false, KernelColorType.ListEntry);
                 TextWriterColor.Write(Translate.DoTranslation("Server data connection type:") + " ", false, KernelColorType.ListEntry);
-                TextWriterColor.Write(FTPShellCommon.ClientFTP.Config.DataConnectionType.ToString(), false, KernelColorType.ListEntry);
+                TextWriterColor.Write(((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.DataConnectionType.ToString(), false, KernelColorType.ListEntry);
                 TextWriterColor.Write(Translate.DoTranslation("Server download data type:") + " ", false, KernelColorType.ListEntry);
-                TextWriterColor.Write(FTPShellCommon.ClientFTP.Config.DownloadDataType.ToString(), false, KernelColorType.ListEntry);
+                TextWriterColor.Write(((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.DownloadDataType.ToString(), false, KernelColorType.ListEntry);
                 TextWriterColor.Write(Translate.DoTranslation("Server upload data type:") + " ", false, KernelColorType.ListEntry);
-                TextWriterColor.Write(FTPShellCommon.ClientFTP.Config.UploadDataType.ToString(), false, KernelColorType.ListEntry);
+                TextWriterColor.Write(((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.UploadDataType.ToString(), false, KernelColorType.ListEntry);
             }
             else
             {

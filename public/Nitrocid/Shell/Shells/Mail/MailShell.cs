@@ -18,9 +18,12 @@
 
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
+using KS.Network.Base.Connections;
 using KS.Network.Mail;
 using KS.Network.Mail.Transfer;
 using KS.Shell.ShellBase.Shells;
+using MailKit.Net.Imap;
+using MailKit.Net.Smtp;
 
 namespace KS.Shell.Shells.Mail
 {
@@ -69,8 +72,14 @@ namespace KS.Shell.Shells.Mail
                 DebugWriter.WriteDebug(DebugLevel.W, "Exit requested. Disconnecting host...");
                 if (MailShellCommon.Mail_NotifyNewMail)
                     MailHandlers.ReleaseHandlers();
-                MailLogin.IMAP_Client.Disconnect(true);
-                MailLogin.SMTP_Client.Disconnect(true);
+                ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).Disconnect(true);
+                ((SmtpClient)MailShellCommon.ClientSmtp.ConnectionInstance).Disconnect(true);
+                int connectionIndexImap = NetworkConnectionTools.GetConnectionIndex(MailShellCommon.ClientImap);
+                int connectionIndexSmtp = NetworkConnectionTools.GetConnectionIndex(MailShellCommon.ClientSmtp);
+                NetworkConnectionTools.CloseConnection(connectionIndexImap);
+                NetworkConnectionTools.CloseConnection(connectionIndexSmtp);
+                MailShellCommon.ClientImap = null;
+                MailShellCommon.ClientSmtp = null;
             }
         }
 

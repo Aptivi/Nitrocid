@@ -26,6 +26,8 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.Shells.SFTP;
+using Renci.SshNet;
+using Renci.SshNet.Sftp;
 
 namespace KS.Network.SFTP.Filesystem
 {
@@ -55,19 +57,19 @@ namespace KS.Network.SFTP.Filesystem
                 var Entries = new List<string>();
                 long FileSize;
                 DateTime ModDate;
-                IEnumerable<Renci.SshNet.Sftp.SftpFile> Listing;
+                IEnumerable<SftpFile> Listing;
 
                 try
                 {
                     if (!string.IsNullOrEmpty(Path))
                     {
-                        Listing = SFTPShellCommon.ClientSFTP.ListDirectory(Path);
+                        Listing = ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).ListDirectory(Path);
                     }
                     else
                     {
-                        Listing = SFTPShellCommon.ClientSFTP.ListDirectory(SFTPShellCommon.SFTPCurrentRemoteDir);
+                        Listing = ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).ListDirectory(SFTPShellCommon.SFTPCurrentRemoteDir);
                     }
-                    foreach (Renci.SshNet.Sftp.SftpFile DirListSFTP in Listing)
+                    foreach (SftpFile DirListSFTP in Listing)
                     {
                         EntryBuilder.Append($"- {DirListSFTP.Name}");
                         // Check to see if the file that we're dealing with is a symbolic link
@@ -120,10 +122,10 @@ namespace KS.Network.SFTP.Filesystem
                 DebugWriter.WriteDebug(DebugLevel.I, "Deleting {0}...", Target);
 
                 // Delete a file or folder
-                if (SFTPShellCommon.ClientSFTP.Exists(Target))
+                if (((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).Exists(Target))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Deleting {0}...", Target);
-                    SFTPShellCommon.ClientSFTP.Delete(Target);
+                    ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).Delete(Target);
                 }
                 else
                 {
@@ -152,11 +154,11 @@ namespace KS.Network.SFTP.Filesystem
             {
                 if (!string.IsNullOrEmpty(Directory))
                 {
-                    if (SFTPShellCommon.ClientSFTP.Exists(Directory))
+                    if (((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).Exists(Directory))
                     {
                         // Directory exists, go to the new directory
-                        SFTPShellCommon.ClientSFTP.ChangeDirectory(Directory);
-                        SFTPShellCommon.SFTPCurrentRemoteDir = SFTPShellCommon.ClientSFTP.WorkingDirectory;
+                        ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).ChangeDirectory(Directory);
+                        SFTPShellCommon.SFTPCurrentRemoteDir = ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).WorkingDirectory;
                         return true;
                     }
                     else
@@ -213,9 +215,9 @@ namespace KS.Network.SFTP.Filesystem
             if (SFTPShellCommon.SFTPConnected)
             {
                 // GetCanonicalPath was supposed to be public, but it's in a private class called SftpSession. It should be in SftpClient, which is public.
-                var SFTPType = SFTPShellCommon.ClientSFTP.GetType();
+                var SFTPType = ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).GetType();
                 var SFTPSessionField = SFTPType.GetField("_sftpSession", BindingFlags.Instance | BindingFlags.NonPublic);
-                var SFTPSession = SFTPSessionField.GetValue(SFTPShellCommon.ClientSFTP);
+                var SFTPSession = SFTPSessionField.GetValue((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance);
                 var SFTPSessionType = SFTPSession.GetType();
                 var SFTPSessionCanon = SFTPSessionType.GetMethod("GetCanonicalPath");
                 string CanonicalPath = Convert.ToString(SFTPSessionCanon.Invoke(SFTPSession, new string[] { Path }));

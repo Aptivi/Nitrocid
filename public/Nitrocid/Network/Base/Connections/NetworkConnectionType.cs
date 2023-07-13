@@ -36,10 +36,6 @@ namespace KS.Network.Base.Connections
         /// </summary>
         Mail,
         /// <summary>
-        /// RPC connection
-        /// </summary>
-        RPC,
-        /// <summary>
         /// RSS connection
         /// </summary>
         RSS,

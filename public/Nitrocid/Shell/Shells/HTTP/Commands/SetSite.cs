@@ -17,9 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Net.Http;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
+using KS.Network.Base.Connections;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.HTTP.Commands
@@ -41,6 +43,7 @@ namespace KS.Shell.Shells.HTTP.Commands
             {
                 var SiteUri = new Uri(StringArgs);
                 TextWriterColor.Write(Translate.DoTranslation("Setting site to") + " {0}...", true, KernelColorType.Progress, SiteUri.ToString());
+                HTTPShellCommon.clientConnection = NetworkConnectionTools.EstablishConnection("HTTP connection", SiteUri, NetworkConnectionType.HTTP, new HttpClient());
                 HTTPShellCommon.HTTPSite = SiteUri.ToString();
             }
             catch (Exception)

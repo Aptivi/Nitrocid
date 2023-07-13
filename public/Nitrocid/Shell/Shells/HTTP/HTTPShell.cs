@@ -17,11 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Net.Http;
 using System.Threading;
+using FluentFTP;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
+using KS.Network.Base.Connections;
 using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Shells.HTTP
@@ -61,6 +64,14 @@ namespace KS.Shell.Shells.HTTP
             }
 
             // Exiting, so reset the site
+            if (HTTPShellCommon.HTTPConnected)
+            {
+                HTTPShellCommon.HTTPSite = "";
+                ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance)?.Dispose();
+                int connectionIndex = NetworkConnectionTools.GetConnectionIndex(HTTPShellCommon.ClientHTTP);
+                NetworkConnectionTools.CloseConnection(connectionIndex);
+                HTTPShellCommon.clientConnection = null;
+            }
             HTTPShellCommon.HTTPSite = "";
         }
 

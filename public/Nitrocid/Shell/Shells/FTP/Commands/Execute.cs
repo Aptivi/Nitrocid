@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using FluentFTP;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
@@ -37,7 +38,7 @@ namespace KS.Shell.Shells.FTP.Commands
             if (FTPShellCommon.FtpConnected)
             {
                 TextWriterColor.Write("<<< C: {0}", StringArgs);
-                var ExecutedReply = FTPShellCommon.ClientFTP.Execute(StringArgs);
+                var ExecutedReply = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Execute(StringArgs);
                 if (ExecutedReply.Success)
                 {
                     TextWriterColor.Write(">>> [{0}] M: {1}", true, KernelColorType.Success, ExecutedReply.Code, ExecutedReply.Message);

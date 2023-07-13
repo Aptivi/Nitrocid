@@ -31,6 +31,8 @@ using KS.Network.Mail.PGP;
 using KS.Shell.Shells.Mail;
 using KS.TimeDate;
 using MailKit;
+using MailKit.Net.Imap;
+using MailKit.Net.Smtp;
 using MailKit.Search;
 using MimeKit;
 using MimeKit.Cryptography;
@@ -67,7 +69,7 @@ namespace KS.Network.Mail.Transfer
                 return;
             }
 
-            lock (MailLogin.IMAP_Client.SyncRoot)
+            lock (((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).SyncRoot)
             {
                 // Get message
                 DebugWriter.WriteDebug(DebugLevel.I, "Getting message...");
@@ -79,7 +81,7 @@ namespace KS.Network.Mail.Transfer
                 }
                 else
                 {
-                    Msg = MailLogin.IMAP_Client.Inbox.GetMessage(MailShellCommon.IMAP_Messages.ElementAtOrDefault(Message), default, MailShellCommon.Mail_Progress);
+                    Msg = ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).Inbox.GetMessage(MailShellCommon.IMAP_Messages.ElementAtOrDefault(Message), default, MailShellCommon.Mail_Progress);
                 }
 
                 // Prepare view
@@ -296,11 +298,11 @@ namespace KS.Network.Mail.Transfer
             DebugWriter.WriteDebug(DebugLevel.I, "Added body to FinalMessage.Body (plain text). Sending message...");
 
             // Send the message
-            lock (MailLogin.SMTP_Client.SyncRoot)
+            lock (((SmtpClient)MailShellCommon.ClientSmtp.ConnectionInstance).SyncRoot)
             {
                 try
                 {
-                    MailLogin.SMTP_Client.Send(FinalMessage, default, MailShellCommon.Mail_Progress);
+                    ((SmtpClient)MailShellCommon.ClientSmtp.ConnectionInstance).Send(FinalMessage, default, MailShellCommon.Mail_Progress);
                     return true;
                 }
                 catch (Exception ex)
@@ -333,11 +335,11 @@ namespace KS.Network.Mail.Transfer
             DebugWriter.WriteDebug(DebugLevel.I, "Added body to FinalMessage.Body (plain text). Sending message...");
 
             // Send the message
-            lock (MailLogin.SMTP_Client.SyncRoot)
+            lock (((SmtpClient)MailShellCommon.ClientSmtp.ConnectionInstance).SyncRoot)
             {
                 try
                 {
-                    MailLogin.SMTP_Client.Send(FinalMessage, default, MailShellCommon.Mail_Progress);
+                    ((SmtpClient)MailShellCommon.ClientSmtp.ConnectionInstance).Send(FinalMessage, default, MailShellCommon.Mail_Progress);
                     return true;
                 }
                 catch (Exception ex)
@@ -370,11 +372,11 @@ namespace KS.Network.Mail.Transfer
             DebugWriter.WriteDebug(DebugLevel.I, "Added body to FinalMessage.Body (plain text). Sending message...");
 
             // Send the message
-            lock (MailLogin.SMTP_Client.SyncRoot)
+            lock (((SmtpClient)MailShellCommon.ClientSmtp.ConnectionInstance).SyncRoot)
             {
                 try
                 {
-                    MailLogin.SMTP_Client.Send(FinalMessage, default, MailShellCommon.Mail_Progress);
+                    ((SmtpClient)MailShellCommon.ClientSmtp.ConnectionInstance).Send(FinalMessage, default, MailShellCommon.Mail_Progress);
                     return true;
                 }
                 catch (Exception ex)
@@ -391,15 +393,15 @@ namespace KS.Network.Mail.Transfer
         /// </summary>
         public static void PopulateMessages()
         {
-            if (MailLogin.IMAP_Client.IsConnected)
+            if (((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).IsConnected)
             {
-                lock (MailLogin.IMAP_Client.SyncRoot)
+                lock (((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).SyncRoot)
                 {
                     if (string.IsNullOrEmpty(MailShellCommon.IMAP_CurrentDirectory) | MailShellCommon.IMAP_CurrentDirectory == "Inbox")
                     {
-                        MailLogin.IMAP_Client.Inbox.Open(FolderAccess.ReadWrite);
+                        ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).Inbox.Open(FolderAccess.ReadWrite);
                         DebugWriter.WriteDebug(DebugLevel.I, "Opened inbox");
-                        MailShellCommon.IMAP_Messages = MailLogin.IMAP_Client.Inbox.Search(SearchQuery.All).Reverse();
+                        MailShellCommon.IMAP_Messages = ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).Inbox.Search(SearchQuery.All).Reverse();
                         DebugWriter.WriteDebug(DebugLevel.I, "Messages count: {0} messages", MailShellCommon.IMAP_Messages.LongCount());
                     }
                     else

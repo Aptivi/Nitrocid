@@ -18,6 +18,7 @@
 
 using System;
 using System.Linq;
+using FluentFTP;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
@@ -53,10 +54,11 @@ namespace KS.Shell.Shells.FTP.Commands
             {
                 // Set a connected flag to False
                 FTPShellCommon.FtpConnected = false;
-                FTPShellCommon.ClientFTP.Config.DisconnectWithQuit = ListSwitchesOnly.Contains("-f");
-                FTPShellCommon.ClientFTP.Disconnect();
+                ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.DisconnectWithQuit = ListSwitchesOnly.Contains("-f");
+                ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Disconnect();
                 int connectionIndex = NetworkConnectionTools.GetConnectionIndex(FTPShellCommon.clientConnection);
                 NetworkConnectionTools.CloseConnection(connectionIndex);
+                FTPShellCommon.clientConnection = null;
                 TextWriterColor.Write(Translate.DoTranslation("Disconnected from {0}"), true, KernelColorType.Success, FTPShellCommon.FtpSite);
 
                 // Clean up everything

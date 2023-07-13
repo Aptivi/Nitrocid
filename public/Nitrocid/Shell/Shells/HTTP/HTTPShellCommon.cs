@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Network.Base.Connections;
 using System.Net.Http;
 
 namespace KS.Shell.Shells.HTTP
@@ -25,6 +26,8 @@ namespace KS.Shell.Shells.HTTP
     /// </summary>
     public static class HTTPShellCommon
     {
+        internal static NetworkConnection clientConnection;
+
         /// <summary>
         /// HTTP site URL
         /// </summary>
@@ -38,11 +41,13 @@ namespace KS.Shell.Shells.HTTP
         /// <summary>
         /// See if the HTTP shell is connected
         /// </summary>
-        public static bool HTTPConnected => !string.IsNullOrEmpty(HTTPSite);
+        public static bool HTTPConnected =>
+            !string.IsNullOrEmpty(HTTPSite);
 
         /// <summary>
         /// An HTTP client
         /// </summary>
-        public static HttpClient ClientHTTP { get; } = new();
+        public static NetworkConnection ClientHTTP =>
+            clientConnection;
     }
 }

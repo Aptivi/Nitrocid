@@ -18,6 +18,7 @@
 
 using System.Collections.Generic;
 using KS.Kernel.Configuration;
+using KS.Network.Base.Connections;
 using KS.Network.Mail.Transfer;
 using MailKit;
 using MimeKit.Text;
@@ -35,6 +36,8 @@ namespace KS.Shell.Shells.Mail
         internal static int imapPingInterval = 30000;
         internal static int smtpPingInterval = 30000;
         internal static int maxMessagesInPage = 10;
+        internal static NetworkConnection ClientImap;
+        internal static NetworkConnection ClientSmtp;
 
         /// <summary>
         /// IMAP current directory name

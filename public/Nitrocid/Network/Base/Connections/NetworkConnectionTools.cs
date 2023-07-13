@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Threading;
@@ -62,9 +63,11 @@ namespace KS.Network.Base.Connections
                     Translate.DoTranslation("Connection is not found."));
 
             // Now, try to close this connection
+            DebugWriter.WriteDebug(DebugLevel.I, "Closing connection {0}...", connectionIndex);
             if (!networkConnections[connectionIndex].ConnectionIsInstance)
                 networkConnections[connectionIndex].ConnectionThread.Stop();
             networkConnections.RemoveAt(connectionIndex);
+            DebugWriter.WriteDebug(DebugLevel.I, "Connection {0} closed...", connectionIndex);
         }
 
         /// <summary>
@@ -103,6 +106,7 @@ namespace KS.Network.Base.Connections
                 NetworkConnection connection = new(name, uri, connectionType, connectionThread, null);
                 connection.ConnectionThread.Start();
                 networkConnections.Add(connection);
+                DebugWriter.WriteDebug(DebugLevel.I, "Added connection {0} for URI {1} to {2} list with thread name {3}", name, uri.ToString(), connectionType.ToString(), connectionThread.Name);
                 return connection;
             }
             catch (Exception e)
@@ -149,6 +153,7 @@ namespace KS.Network.Base.Connections
 
                 // Just return the connection. This instance is an object and could be anything that represents a network connection.
                 networkConnections.Add(connection);
+                DebugWriter.WriteDebug(DebugLevel.I, "Added connection {0} for URI {1} to {2} list with instance type {3}", name, uri.ToString(), connectionType.ToString(), connectionInstance.GetType().Name);
                 return connection;
             }
             catch (Exception e)

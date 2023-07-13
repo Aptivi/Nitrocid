@@ -19,8 +19,9 @@
 using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
+using KS.Network.Base.Connections;
 using KS.Shell.ShellBase.Commands;
-using KS.Shell.Shells.FTP;
+using Renci.SshNet;
 
 namespace KS.Shell.Shells.SFTP.Commands
 {
@@ -39,8 +40,11 @@ namespace KS.Shell.Shells.SFTP.Commands
             {
                 // Set a connected flag to False
                 SFTPShellCommon.SFTPConnected = false;
-                SFTPShellCommon.ClientSFTP.Disconnect();
-                TextWriterColor.Write(Translate.DoTranslation("Disconnected from {0}"), FTPShellCommon.FtpSite);
+                ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance)?.Disconnect();
+                int connectionIndex = NetworkConnectionTools.GetConnectionIndex(SFTPShellCommon.ClientSFTP);
+                NetworkConnectionTools.CloseConnection(connectionIndex);
+                SFTPShellCommon.clientConnection = null;
+                TextWriterColor.Write(Translate.DoTranslation("Disconnected from {0}"), SFTPShellCommon.SFTPSite);
 
                 // Clean up everything
                 SFTPShellCommon.SFTPSite = "";

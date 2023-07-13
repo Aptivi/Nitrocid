@@ -46,7 +46,9 @@ namespace KS.Misc.Animations.BeatFader
             ThreadManager.SleepNoBlock(BeatIntervalStep, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
             // If we're cycling colors, set them. Else, use the user-provided color
-            int RedColorNum = default, GreenColorNum = default, BlueColorNum = default;
+            int RedColorNum;
+            int GreenColorNum;
+            int BlueColorNum;
             if (Settings.BeatFaderCycleColors)
             {
                 // We're cycling. Select the color mode, starting from true color
