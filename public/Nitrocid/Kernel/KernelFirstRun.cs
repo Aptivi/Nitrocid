@@ -19,6 +19,7 @@
 using ColorSeq;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Inputs;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Presentation;
@@ -255,6 +256,79 @@ namespace KS.Kernel
                     }
                 );
 
+                Presentation firstRunPresStep4 = new(
+                    // Presentation name
+                    Translate.DoTranslation("Kernel first-run"),
+
+                    // Presentation list
+                    new List<PresentationPage>()
+                    {
+                        // Fifth page - Automatic updates
+                        new PresentationPage(
+                            // Page name
+                            Translate.DoTranslation("Automatic updates"),
+                        
+                            // Page elements
+                            new List<IElement>()
+                            {
+                                new TextElement()
+                                {
+                                    Arguments = new object[]
+                                    {
+                                        Translate.DoTranslation("Nitrocid KS currently updates itself to get the most recent version that includes general improvements and bug fixes. New major versions usually include breaking changes and new exciting features.")
+                                    }
+                                },
+                                new ChoiceInputElement()
+                                {
+                                    Arguments = new object[]
+                                    {
+                                        Translate.DoTranslation("Do you want Nitrocid KS to automatically check for updates?"),
+                                        "y", "n"
+                                    },
+                                    InvokeActionInput =
+                                        (args) => {
+                                            Config.MainConfig.CheckUpdateStart = (string)args[0] == "y";
+                                        } 
+                                },
+                                new TextElement()
+                                {
+                                    Arguments = new object[]
+                                    {
+                                        Translate.DoTranslation("In addition to automatically checking for updates, Nitrocid KS can also download the update file automatically.")
+                                    }
+                                },
+                                new ChoiceInputElement()
+                                {
+                                    Arguments = new object[]
+                                    {
+                                        Translate.DoTranslation("Do you want Nitrocid KS to automatically download updates?"),
+                                        "y", "n"
+                                    },
+                                    InvokeActionInput =
+                                        (args) => {
+                                            Config.MainConfig.AutoDownloadUpdate = (string)args[0] == "y";
+                                            moveOn = true;
+                                        }
+                                },
+                                new TextElement()
+                                {
+                                    Arguments = new object[]
+                                    {
+                                        Translate.DoTranslation("You can always check for kernel updates using the \"update\" command.") + "\n"
+                                    }
+                                },
+                                new TextElement()
+                                {
+                                    Arguments = new object[]
+                                    {
+                                        Translate.DoTranslation("Press the ENTER key to continue.") + "\n"
+                                    }
+                                }
+                            }
+                        )
+                    }
+                );
+
                 Presentation firstRunPresOutro = new(
                     // Presentation name
                     Translate.DoTranslation("Kernel first-run"),
@@ -295,7 +369,7 @@ namespace KS.Kernel
                     firstRunPresIntro,
 
                     // Steps
-                    firstRunPresStep1, firstRunPresStep2, firstRunPresStep3,
+                    firstRunPresStep1, firstRunPresStep2, firstRunPresStep3, firstRunPresStep4,
 
                     // Outro
                     firstRunPresOutro 

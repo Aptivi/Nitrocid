@@ -514,7 +514,7 @@ Contact file is invalid.
 Attaches the Visual Studio debugger to this instance of Nitrocid
 Kernel is waiting for the debugger...
 Debugger failed to attach. Starting anyways...
-This \"mock app\" mocks \"HDD Cleaner 2.1,\" which was released on November 24th, 2015. We'll call it \"HDD Uncleaner 2015.\" It'll basically do nothing except display messages to the console using the Nitrocid KS API. It'll try to simulate how this archived program looks like. Please don't take this too literally as it's just a joke program intended to amuse you. It also doesn't simulate extraneous features, like the \"AutoRecovery\" routine. Please note that we don't intend to localize this. Press any key to start.
+This "mock app" mocks "HDD Cleaner 2.1," which was released on November 24th, 2015. We'll call it "HDD Uncleaner 2015." It'll basically do nothing except display messages to the console using the Nitrocid KS API. It'll try to simulate how this archived program looks like. Please don't take this too literally as it's just a joke program intended to amuse you. It also doesn't simulate extraneous features, like the "AutoRecovery" routine. Please note that we don't intend to localize this. Press any key to start.
 Starts the joke program, HDD Uncleaner 2015.
 Specify an existent folder to store the three configuration files on.
 Specify an existent path to a configuration file
@@ -638,7 +638,7 @@ Search for description
 Search for title and description
 Case sensitive search
 Shows the details of the files and folders
-Suppresses the \"unauthorized\" messages
+Suppresses the "unauthorized" messages
 Prints the line numbers alongside the contents
 Force treating binary files as plain text
 One line choice style
@@ -671,5 +671,11 @@ Current encryption driver
 Which encryption driver would you like to use?
 Current regular expression driver
 Which regular expression driver would you like to use?
+Automatic updates
+Nitrocid KS currently updates itself to get the most recent version that includes general improvements and bug fixes. New major versions usually include breaking changes and new exciting features.
+Do you want Nitrocid KS to automatically check for updates?
+In addition to automatically checking for updates, Nitrocid KS can also download the update file automatically.
+Do you want Nitrocid KS to automatically download updates?
+You can always check for kernel updates using the "update" command.
 
 ==========================================================================================================================================
