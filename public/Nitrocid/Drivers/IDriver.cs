@@ -31,5 +31,9 @@ namespace KS.Drivers
         /// Driver type
         /// </summary>
         DriverTypes DriverType { get; }
+        /// <summary>
+        /// Whether the driver is internal (doesn't show in settings) or not
+        /// </summary>
+        bool DriverInternal { get; }
     }
 }

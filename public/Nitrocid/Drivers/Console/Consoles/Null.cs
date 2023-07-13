@@ -29,6 +29,8 @@ namespace KS.Drivers.Console.Consoles
 
         public override DriverTypes DriverType => DriverTypes.Console;
 
+        public override bool DriverInternal => true;
+
         public override bool IsDumb => true;
 
         public override TextWriter Out => null;

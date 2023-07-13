@@ -657,5 +657,19 @@ Lists all installed mod manuals
 Don't open RSS feed reader to the headline URL
 Play the Wordle game originally
 A simple implementation of the GUI starting in a separate window
+This section lists the driver settings.
+Kernel driver settings
+Current console driver
+Which console driver would you like to use?
+Current random number generator driver
+Which random number generator driver would you like to use?
+Current network driver
+Which network driver would you like to use?
+Current filesystem driver
+Which filesystem driver would you like to use?
+Current encryption driver
+Which encryption driver would you like to use?
+Current regular expression driver
+Which regular expression driver would you like to use?
 
 ==========================================================================================================================================

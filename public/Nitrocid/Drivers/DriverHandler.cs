@@ -30,6 +30,8 @@ using KS.Drivers.Encryption.Encryptors;
 using KS.Drivers.Regexp;
 using KS.Drivers.Regexp.Bases;
 using KS.Kernel.Exceptions;
+using System.Linq;
+using System.Xml.Linq;
 
 namespace KS.Drivers
 {
@@ -158,6 +160,7 @@ namespace KS.Drivers
         /// <summary>
         /// Gets the driver
         /// </summary>
+        /// <typeparam name="TResult">The required driver type</typeparam>
         /// <param name="name">The driver name</param>
         /// <returns>The driver responsible for performing operations according to driver type</returns>
         public static TResult GetDriver<TResult>(string name)
@@ -175,6 +178,61 @@ namespace KS.Drivers
             else
                 // Found no driver under both lists
                 return (TResult)drivers[driverType]["Default"];
+        }
+
+        /// <summary>
+        /// Gets the driver name
+        /// </summary>
+        /// <typeparam name="TResult">The required driver type</typeparam>
+        /// <param name="driver">Driver to query its name from the key</param>
+        /// <returns>Driver name</returns>
+        public static string GetDriverName<TResult>(IDriver driver)
+        {
+            // First, infer the type from the TResult
+            var driverType = InferDriverTypeFromDriverInterfaceType<TResult>();
+
+            // Then, get the actual driver from name
+            if (drivers[driverType].ContainsValue(driver))
+                // Found a driver under the kernel driver list
+                return drivers[driverType]
+                    .Single((kvp) => kvp.Value == driver).Key;
+            else if (IsRegistered(driverType, driver))
+                // Found a driver under the custom driver list
+                return customDrivers[driverType]
+                    .Single((kvp) => kvp.Value == driver).Key;
+            else
+                // Found no driver under both lists
+                return "Default";
+        }
+
+        /// <summary>
+        /// Gets the drivers
+        /// </summary>
+        /// <typeparam name="TResult">The required driver type</typeparam>
+        /// <returns>List of drivers with their instances</returns>
+        public static Dictionary<string, IDriver> GetDrivers<TResult>()
+        {
+            // First, infer the type from the TResult
+            var driverType = InferDriverTypeFromDriverInterfaceType<TResult>();
+
+            // Then, exclude internal drivers from the list
+            var filteredDrivers       = drivers[driverType].Where((kvp) => !kvp.Value.DriverInternal);
+            var filteredCustomDrivers = customDrivers[driverType].Where((kvp) => !kvp.Value.DriverInternal);
+
+            // Then, get the list of drivers
+            return filteredDrivers.Union(filteredCustomDrivers).ToDictionary((kvp) => kvp.Key, (kvp) => kvp.Value);
+        }
+
+        /// <summary>
+        /// Gets the driver names
+        /// </summary>
+        /// <typeparam name="TResult">The required driver type</typeparam>
+        /// <returns>List of driver names</returns>
+        public static string[] GetDriverNames<TResult>()
+        {
+            // Get the drivers and fetch their names
+            var drivers = GetDrivers<TResult>();
+            return drivers.Select((kvp) => kvp.Key).ToArray();
         }
 
         /// <summary>
@@ -210,6 +268,15 @@ namespace KS.Drivers
             customDrivers[type].ContainsKey(name) || drivers[type].ContainsKey(name);
 
         /// <summary>
+        /// Is the driver registered?
+        /// </summary>
+        /// <param name="type">Driver type</param>
+        /// <param name="driver">Driver to query its name from the key</param>
+        /// <returns>True if registered. Otherwise, false.</returns>
+        public static bool IsRegistered(DriverTypes type, IDriver driver) =>
+            customDrivers[type].ContainsValue(driver) || drivers[type].ContainsValue(driver);
+
+        /// <summary>
         /// Sets the kernel driver
         /// </summary>
         /// <param name="name">Name of the available kernel driver to set to</param>
@@ -221,6 +288,24 @@ namespace KS.Drivers
 
             // Then, try to set the driver
             currentDrivers[driverType] = (IDriver)GetDriver<T>(name);
+        }
+
+        /// <summary>
+        /// Sets the kernel driver
+        /// </summary>
+        /// <param name="name">Name of the available kernel driver to set to</param>
+        /// <exception cref="KernelException"></exception>
+        public static void SetDriverSafe<T>(string name)
+        {
+            // First, infer the type from the T
+            var driverType = InferDriverTypeFromDriverInterfaceType<T>();
+
+            // Then, try to set the driver
+            var drivers = GetDrivers<T>();
+            if (!drivers.ContainsKey(name))
+                currentDrivers[driverType] = (IDriver)GetDriver<T>("Default");
+            else
+                currentDrivers[driverType] = (IDriver)GetDriver<T>(name);
         }
 
         private static DriverTypes InferDriverTypeFromDriverInterfaceType<T>()

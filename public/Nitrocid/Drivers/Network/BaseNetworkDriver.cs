@@ -50,6 +50,9 @@ namespace KS.Drivers.Network
         public virtual DriverTypes DriverType => DriverTypes.Network;
 
         /// <inheritdoc/>
+        public virtual bool DriverInternal => false;
+
+        /// <inheritdoc/>
         public virtual bool NetworkAvailable => NetworkInterface.GetIsNetworkAvailable();
 
         /// <inheritdoc/>

@@ -35,6 +35,9 @@ namespace KS.Drivers.Regexp
         public virtual DriverTypes DriverType => DriverTypes.Regexp;
 
         /// <inheritdoc/>
+        public virtual bool DriverInternal => false;
+
+        /// <inheritdoc/>
         public bool IsValidRegex(string pattern)
         {
             try

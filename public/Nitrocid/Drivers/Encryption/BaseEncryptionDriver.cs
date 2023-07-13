@@ -37,6 +37,9 @@ namespace KS.Drivers.Encryption.Encryptors
         public virtual DriverTypes DriverType => DriverTypes.Encryption;
 
         /// <inheritdoc/>
+        public virtual bool DriverInternal => false;
+
+        /// <inheritdoc/>
         public virtual string EmptyHash => GetEncryptedString("");
 
         /// <inheritdoc/>

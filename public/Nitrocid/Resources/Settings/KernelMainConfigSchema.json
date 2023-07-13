@@ -518,6 +518,24 @@
         "PasswordLock": {
             "type": "boolean"
         },
+        "CurrentConsoleDriver": {
+            "type": "string"
+        },
+        "CurrentRandomDriver": {
+            "type": "string"
+        },
+        "CurrentNetworkDriver": {
+            "type": "string"
+        },
+        "CurrentFilesystemDriver": {
+            "type": "string"
+        },
+        "CurrentEncryptionDriver": {
+            "type": "string"
+        },
+        "CurrentRegexpDriver": {
+            "type": "string"
+        },
         "CornerTimeDate": {
             "type": "boolean"
         },
@@ -941,6 +959,12 @@
         "ScreenTimeout",
         "ScreensaverDebug",
         "PasswordLock",
+        "CurrentConsoleDriver",
+        "CurrentRandomDriver",
+        "CurrentNetworkDriver",
+        "CurrentFilesystemDriver",
+        "CurrentEncryptionDriver",
+        "CurrentRegexpDriver",
         "CornerTimeDate",
         "StartScroll",
         "LongTimeDate",

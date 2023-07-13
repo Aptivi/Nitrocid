@@ -48,9 +48,16 @@ using MimeKit.Text;
 using Newtonsoft.Json;
 using System;
 using TermRead.Reader;
+using KS.Drivers;
+using KS.Drivers.Console;
+using KS.Drivers.RNG;
+using KS.Drivers.Network;
+using KS.Drivers.Filesystem;
+using KS.Drivers.Encryption;
+using KS.Drivers.Regexp;
+using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using static KS.ConsoleBase.Inputs.Styles.ChoiceStyle;
 using static KS.Misc.Games.SpeedPress;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Kernel.Configuration.Instances
 {
@@ -1070,6 +1077,54 @@ namespace KS.Kernel.Configuration.Instances
         /// After locking the screen, ask for password
         /// </summary>
         public bool PasswordLock { get; set; } = true;
+        /// <summary>
+        /// Current console driver
+        /// </summary>
+        public string CurrentConsoleDriver
+        {
+            get => DriverHandler.GetDriverName<IConsoleDriver>(DriverHandler.CurrentConsoleDriver);
+            set => ConsoleDriverTools.SetConsoleDriver(value);
+        }
+        /// <summary>
+        /// Current random number generator driver
+        /// </summary>
+        public string CurrentRandomDriver
+        {
+            get => DriverHandler.GetDriverName<IRandomDriver>(DriverHandler.CurrentRandomDriver);
+            set => RandomDriverTools.SetRandomDriver(value);
+        }
+        /// <summary>
+        /// Current network driver
+        /// </summary>
+        public string CurrentNetworkDriver
+        {
+            get => DriverHandler.GetDriverName<INetworkDriver>(DriverHandler.CurrentNetworkDriver);
+            set => NetworkDriverTools.SetNetworkDriver(value);
+        }
+        /// <summary>
+        /// Current filesystem driver
+        /// </summary>
+        public string CurrentFilesystemDriver
+        {
+            get => DriverHandler.GetDriverName<IFilesystemDriver>(DriverHandler.CurrentFilesystemDriver);
+            set => FilesystemDriverTools.SetFilesystemDriver(value);
+        }
+        /// <summary>
+        /// Current encryption driver
+        /// </summary>
+        public string CurrentEncryptionDriver
+        {
+            get => DriverHandler.GetDriverName<IEncryptionDriver>(DriverHandler.CurrentEncryptionDriver);
+            set => EncryptionDriverTools.SetEncryptionDriver(value);
+        }
+        /// <summary>
+        /// Current regular expression driver
+        /// </summary>
+        public string CurrentRegexpDriver
+        {
+            get => DriverHandler.GetDriverName<IRegexpDriver>(DriverHandler.CurrentRegexpDriver);
+            set => RegexpDriverTools.SetRegexpDriver(value);
+        }
         /// <summary>
         /// The time and date will be shown in the upper right corner of the screen
         /// </summary>

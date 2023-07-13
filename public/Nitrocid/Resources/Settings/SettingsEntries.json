@@ -1117,6 +1117,73 @@
             }
         ]
     },
+    "Drivers": {
+        "Desc": "This section lists the driver settings.",
+        "Path": "Drivers",
+        "DisplayAs": "Kernel driver settings",
+        "Keys": [
+            {
+                "Name": "Current console driver",
+                "Type": "SSelection",
+                "Variable": "CurrentConsoleDriver",
+                "IsEnumeration": false,
+                "SelectionFunctionName": "GetConsoleDriverNames",
+                "SelectionFunctionType": "ConsoleDriverTools",
+                "SelectionFallback": [ "Default" ],
+                "Description": "Which console driver would you like to use?"
+            },
+            {
+                "Name": "Current random number generator driver",
+                "Type": "SSelection",
+                "Variable": "CurrentRandomDriver",
+                "IsEnumeration": false,
+                "SelectionFunctionName": "GetRandomDriverNames",
+                "SelectionFunctionType": "RandomDriverTools",
+                "SelectionFallback": [ "Default" ],
+                "Description": "Which random number generator driver would you like to use?"
+            },
+            {
+                "Name": "Current network driver",
+                "Type": "SSelection",
+                "Variable": "CurrentNetworkDriver",
+                "IsEnumeration": false,
+                "SelectionFunctionName": "GetNetworkDriverNames",
+                "SelectionFunctionType": "NetworkDriverTools",
+                "SelectionFallback": [ "Default" ],
+                "Description": "Which network driver would you like to use?"
+            },
+            {
+                "Name": "Current filesystem driver",
+                "Type": "SSelection",
+                "Variable": "CurrentFilesystemDriver",
+                "IsEnumeration": false,
+                "SelectionFunctionName": "GetFilesystemDriverNames",
+                "SelectionFunctionType": "FilesystemDriverTools",
+                "SelectionFallback": [ "Default" ],
+                "Description": "Which filesystem driver would you like to use?"
+            },
+            {
+                "Name": "Current encryption driver",
+                "Type": "SSelection",
+                "Variable": "CurrentEncryptionDriver",
+                "IsEnumeration": false,
+                "SelectionFunctionName": "GetEncryptionDriverNames",
+                "SelectionFunctionType": "EncryptionDriverTools",
+                "SelectionFallback": [ "Default" ],
+                "Description": "Which encryption driver would you like to use?"
+            },
+            {
+                "Name": "Current regular expression driver",
+                "Type": "SSelection",
+                "Variable": "CurrentRegexpDriver",
+                "IsEnumeration": false,
+                "SelectionFunctionName": "GetRegexpDriverNames",
+                "SelectionFunctionType": "RegexpDriverTools",
+                "SelectionFallback": [ "Default" ],
+                "Description": "Which regular expression driver would you like to use?"
+            }
+        ]
+    },
     "Misc": {
         "Desc": "Settings that don't fit in their appropriate sections land here.",
         "Path": "Misc",

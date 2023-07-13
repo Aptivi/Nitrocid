@@ -46,6 +46,9 @@ namespace KS.Drivers.Console.Consoles
         /// <inheritdoc/>
         public virtual DriverTypes DriverType => DriverTypes.Console;
 
+        /// <inheritdoc/>
+        public virtual bool DriverInternal => false;
+
         private static bool _dumbSet = false;
         private static bool _dumb = true;
 

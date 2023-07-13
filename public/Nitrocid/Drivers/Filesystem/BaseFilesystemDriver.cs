@@ -59,6 +59,9 @@ namespace KS.Drivers.Filesystem
         public virtual DriverTypes DriverType => DriverTypes.Filesystem;
 
         /// <inheritdoc/>
+        public virtual bool DriverInternal => false;
+
+        /// <inheritdoc/>
         public virtual void AddAttributeToFile(string FilePath, FileAttributes Attributes)
         {
             FS.ThrowOnInvalidPath(FilePath);
