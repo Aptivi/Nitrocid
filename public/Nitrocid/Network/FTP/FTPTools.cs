@@ -252,7 +252,7 @@ namespace KS.Network.FTP
 
             // Prepare to print current FTP directory
             FTPShellCommon.FtpCurrentRemoteDir = clientFTP.GetWorkingDirectory();
-            DebugWriter.WriteDebug(DebugLevel.I, "Working directory: {0}", clientFTP);
+            DebugWriter.WriteDebug(DebugLevel.I, "Working directory: {0}", FTPShellCommon.FtpCurrentRemoteDir);
             FTPShellCommon.FtpSite = clientFTP.Host;
             FTPShellCommon.FtpUser = clientFTP.Credentials.UserName;
 
