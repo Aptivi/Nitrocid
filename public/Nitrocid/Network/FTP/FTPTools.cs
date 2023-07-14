@@ -257,7 +257,7 @@ namespace KS.Network.FTP
             FTPShellCommon.FtpUser = clientFTP.Credentials.UserName;
 
             // Write connection information to Speed Dial file if it doesn't exist there
-            SpeedDialTools.TryAddEntryToSpeedDial(FTPShellCommon.FtpSite, clientFTP.Port, SpeedDialType.FTP, true, clientFTP, clientFTP.Config.EncryptionMode);
+            SpeedDialTools.TryAddEntryToSpeedDial(FTPShellCommon.FtpSite, clientFTP.Port, SpeedDialType.FTP, true, FTPShellCommon.FtpUser, clientFTP.Config.EncryptionMode);
 
             // Initialize logging
             clientFTP.Logger = new FTPLogger();
@@ -322,7 +322,7 @@ namespace KS.Network.FTP
         /// </summary>
         public static void QuickConnect()
         {
-            var quickConnectInfo = SpeedDialTools.GetQuickConnectInfo(SpeedDialType.FTP);
+            var quickConnectInfo = SpeedDialTools.GetQuickConnectInfo();
             string Address = (string)quickConnectInfo["Address"];
             string Port = (string)quickConnectInfo["Port"];
             string Username = (string)quickConnectInfo["Options"][0];

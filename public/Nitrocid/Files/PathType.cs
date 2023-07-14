@@ -44,13 +44,9 @@ namespace KS.Files
         /// </summary>
         Users,
         /// <summary>
-        /// FTP speed dial file.
+        /// Speed dial file.
         /// </summary>
-        FTPSpeedDial,
-        /// <summary>
-        /// SFTP speed dial file.
-        /// </summary>
-        SFTPSpeedDial,
+        SpeedDial,
         /// <summary>
         /// Debug devices configuration file.
         /// </summary>

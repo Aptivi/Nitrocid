@@ -128,16 +128,10 @@ namespace KS.Files
             Filesystem.NeutralizePath(AppDataPath + "/Users.json");
 
         /// <summary>
-        /// FTPSpeedDial path
+        /// Speed dial path
         /// </summary>
-        public static string FTPSpeedDialPath =>
-            Filesystem.NeutralizePath(AppDataPath + "/FTP_SpeedDial.json");
-
-        /// <summary>
-        /// SFTPSpeedDial path
-        /// </summary>
-        public static string SFTPSpeedDialPath =>
-            Filesystem.NeutralizePath(AppDataPath + "/SFTP_SpeedDial.json");
+        public static string SpeedDialPath =>
+            Filesystem.NeutralizePath(AppDataPath + "/SpeedDial.json");
 
         /// <summary>
         /// DebugDevNames path
@@ -246,12 +240,11 @@ namespace KS.Files
                 KernelPathType.DebugDevNames =>         DebugDevNamesPath,
                 KernelPathType.Debugging =>             DebuggingPath,
                 KernelPathType.Events =>                EventsPath,
-                KernelPathType.FTPSpeedDial =>          FTPSpeedDialPath,
+                KernelPathType.SpeedDial =>             SpeedDialPath,
                 KernelPathType.MAL =>                   MALPath,
                 KernelPathType.Mods =>                  ModsPath,
                 KernelPathType.MOTD =>                  MOTDPath,
                 KernelPathType.Reminders =>             RemindersPath,
-                KernelPathType.SFTPSpeedDial =>         SFTPSpeedDialPath,
                 KernelPathType.Users =>                 UsersPath,
                 KernelPathType.Journalling =>           JournallingPath,
                 KernelPathType.Screensavers =>          ScreensaversPath,

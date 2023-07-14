@@ -33,35 +33,26 @@ namespace KSTests.NetworkTests
         /// </summary>
         [Test]
         [Description("Management")]
-        public void TestAddEntryToFTPSpeedDial() => SpeedDialTools.TryAddEntryToSpeedDial("ftp.riken.jp", 21, SpeedDialType.FTP, false, "anonymous", FluentFTP.FtpEncryptionMode.None).ShouldBeTrue();
+        public void TestAddEntryToFTPSpeedDial() =>
+            SpeedDialTools.TryAddEntryToSpeedDial("ftp.riken.jp", 21, SpeedDialType.FTP, false, "anonymous", FluentFTP.FtpEncryptionMode.None).ShouldBeTrue();
 
         /// <summary>
         /// Tests adding SFTP speed dial entry
         /// </summary>
         [Test]
         [Description("Management")]
-        public void TestAddEntryToSFTPSpeedDial() => SpeedDialTools.TryAddEntryToSpeedDial("test.rebex.net", 22, SpeedDialType.SFTP, false, "demo", FluentFTP.FtpEncryptionMode.None).ShouldBeTrue();
+        public void TestAddEntryToSFTPSpeedDial() =>
+            SpeedDialTools.TryAddEntryToSpeedDial("test.rebex.net", 22, SpeedDialType.SFTP, false, "demo", FluentFTP.FtpEncryptionMode.None).ShouldBeTrue();
 
         /// <summary>
-        /// Tests listing FTP speed dial entries
+        /// Tests listing speed dial entries
         /// </summary>
         [Test]
         [Description("Management")]
-        public void TestListFTPSpeedDialEntries()
+        public void TestListSpeedDialEntries()
         {
-            SpeedDialTools.ListSpeedDialEntries(SpeedDialType.FTP).ShouldNotBeEmpty();
-            Debug.WriteLine(string.Join(" | ", SpeedDialTools.ListSpeedDialEntries(SpeedDialType.FTP).Keys));
-        }
-
-        /// <summary>
-        /// Tests listing SFTP speed dial entries
-        /// </summary>
-        [Test]
-        [Description("Management")]
-        public void TestListSFTPSpeedDialEntries()
-        {
-            SpeedDialTools.ListSpeedDialEntries(SpeedDialType.SFTP).ShouldNotBeEmpty();
-            Debug.WriteLine(string.Join(" | ", SpeedDialTools.ListSpeedDialEntries(SpeedDialType.SFTP).Keys));
+            SpeedDialTools.ListSpeedDialEntries().ShouldNotBeEmpty();
+            Debug.WriteLine(string.Join(" | ", SpeedDialTools.ListSpeedDialEntries().Keys));
         }
 
     }

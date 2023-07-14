@@ -124,7 +124,7 @@ namespace KS.Network.SFTP
         /// </summary>
         public static void SFTPQuickConnect()
         {
-            var quickConnectInfo = SpeedDialTools.GetQuickConnectInfo(SpeedDialType.SFTP);
+            var quickConnectInfo = SpeedDialTools.GetQuickConnectInfo();
             string Address = (string)quickConnectInfo["Address"];
             string Port = (string)quickConnectInfo["Port"];
             string Username = (string)quickConnectInfo["Options"][0];
