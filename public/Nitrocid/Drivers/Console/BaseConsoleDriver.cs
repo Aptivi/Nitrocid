@@ -71,7 +71,7 @@ namespace KS.Drivers.Console.Consoles
                         int _ = con.CursorLeft;
 
                         // If it doesn't get here without throwing exceptions, assume console is dumb. Now, check to see if terminal type is dumb
-                        if (TerminalType != "dumb")
+                        if (TerminalType != "dumb" && TerminalType != "unknown")
                             _dumb = false;
                     }
                 }
