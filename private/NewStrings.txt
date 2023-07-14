@@ -677,5 +677,6 @@ Do you want Nitrocid KS to automatically check for updates?
 In addition to automatically checking for updates, Nitrocid KS can also download the update file automatically.
 Do you want Nitrocid KS to automatically download updates?
 You can always check for kernel updates using the "update" command.
+Make sure that you specify the port correctly.
 
 ==========================================================================================================================================

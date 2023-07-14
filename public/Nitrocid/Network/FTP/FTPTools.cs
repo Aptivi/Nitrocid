@@ -103,13 +103,14 @@ namespace KS.Network.FTP
             try
             {
                 // Create an FTP stream to connect to
-                string FtpHost = address.Replace("ftpes://", "").Replace("ftps://", "").Replace("ftp://", "").Replace(address[address.LastIndexOf(":")..], "");
-                string FtpPort = address.Replace("ftpes://", "").Replace("ftps://", "").Replace("ftp://", "").Replace(FtpHost + ":", "");
-
-                // Check to see if no port is provided by client
-                if (FtpHost == FtpPort)
+                string FtpHost       = address.Replace("ftpes://", "").Replace("ftps://", "").Replace("ftp://", "").Replace(address[address.LastIndexOf(":")..], "");
+                string FtpPortString = address.Replace("ftpes://", "").Replace("ftps://", "").Replace("ftp://", "").Replace(FtpHost + ":", "");
+                DebugWriter.WriteDebug(DebugLevel.W, "Host: {0}, Port: {1}", FtpHost, FtpPortString);
+                bool portParsed = int.TryParse(FtpHost == FtpPortString ? "0" : FtpPortString, out int FtpPort);
+                if (!portParsed)
                 {
-                    FtpPort = 0.ToString(); // Used for detecting of SSL is being used or not dynamically on connection
+                    TextWriterColor.Write(Translate.DoTranslation("Make sure that you specify the port correctly."), true, KernelColorType.Error);
+                    return;
                 }
 
                 // Make a new FTP client object instance
@@ -124,7 +125,7 @@ namespace KS.Network.FTP
                 FtpClient _clientFTP = new()
                 {
                     Host = FtpHost,
-                    Port = Convert.ToInt32(FtpPort),
+                    Port = FtpPort,
                     Config = ftpConfig
                 };
 
