@@ -25,6 +25,8 @@ using KS.Misc.Writers.ConsoleWriters;
 using System;
 using System.Linq;
 using TermRead.Reader;
+using System.Collections.Generic;
+using System.Collections;
 
 namespace KS.Misc.Presentation.Elements
 {
@@ -70,9 +72,20 @@ namespace KS.Misc.Presentation.Elements
                 TextWriterWhereColor.WriteWhere(split + (i == splitText.Length - 1 ? "" : "\n"), PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft);
             }
 
+            // Flatten the enumerables to their string value representations
+            List<string> choices = new();
+            foreach (var finalArg in finalArgs)
+            {
+                if (finalArg is IEnumerable enumerable && finalArg is not string)
+                    foreach (var enumerableValue in enumerable)
+                        choices.Add(enumerableValue.ToString());
+                else
+                    choices.Add(finalArg.ToString());
+            }
+
             // Render the choices (with checking for bounds, again)
             TextWriterWhereColor.WriteWhere("\n\n", PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft);
-            string[] finalChoices = finalArgs.Cast<string>().ToArray();
+            string[] finalChoices = choices.ToArray();
             int choiceNum = 1;
             foreach (string choice in finalChoices)
             {
@@ -116,7 +129,19 @@ namespace KS.Misc.Presentation.Elements
         {
             // Get the text, the arguments, and the choices
             object[] finalArgs = Arguments.Length > 1 ? Arguments.Skip(1).ToArray() : Array.Empty<object>();
-            string[] finalChoices = finalArgs.Cast<string>().ToArray();
+
+            // Flatten the enumerables to their string value representations
+            List<string> choices = new();
+            foreach (var finalArg in finalArgs)
+            {
+                if (finalArg is IEnumerable enumerable && finalArg is not string)
+                    foreach (var enumerableValue in enumerable)
+                        choices.Add(enumerableValue.ToString());
+                else
+                    choices.Add(finalArg.ToString());
+            }
+
+            string[] finalChoices = choices.ToArray();
             string text = string.Format((string)(Arguments.Length > 0 ? Arguments[0] : ""), finalArgs) + "\n\n";
 
             // Add the choices to the text

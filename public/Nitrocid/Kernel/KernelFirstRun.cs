@@ -46,14 +46,6 @@ namespace KS.Kernel
                 bool supportsTrueColor = true;
                 bool moveOn = false;
 
-                // Prepare some arguments
-                // TODO: They are hacks that should be dealt with before Beta 2 for choice elements.
-                List<object> step1Args = new()
-                {
-                    Translate.DoTranslation("Select your language. By default, the kernel uses the English language, but you can select any other language here. Write the language code listed below:")
-                };
-                step1Args.AddRange(LanguageManager.Languages.Keys);
-
                 // Populate the first run presentations in case language changed during the first start-up
                 Presentation firstRunPresIntro = new(
                     // Presentation name
@@ -106,7 +98,11 @@ namespace KS.Kernel
                             {
                                 new ChoiceInputElement()
                                 {
-                                    Arguments = step1Args.ToArray(),
+                                    Arguments = new object[]
+                                    {
+                                        Translate.DoTranslation("Select your language. By default, the kernel uses the English language, but you can select any other language here. Write the language code listed below:"),
+                                        LanguageManager.Languages.Keys,
+                                    },
                                     InvokeActionInput =
                                         (args) => { 
                                             langCode = (string)args[0];

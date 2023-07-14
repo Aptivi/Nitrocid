@@ -30,6 +30,15 @@ namespace KS.Misc.Presentation
 {
     internal static class PresentationDebugInt
     {
+        internal static string[] data1 =
+        {
+            "Alex",
+            "Zhao",
+            "Agustin",
+            "Jim",
+            "Sarah"
+        };
+
         internal static Presentation Debug =>
             new(
                 "Debugging the Presentation",
@@ -187,11 +196,7 @@ namespace KS.Misc.Presentation
                                 Arguments = new object[]
                                 {
                                     "Ultricies mi eget mauris pharetra:",
-                                    "Alex",
-                                    "Zhao",
-                                    "Agustin",
-                                    "Jim",
-                                    "Sarah"
+                                    data1
                                 },
                                 InvokeActionInput =
                                     (objs) => TextWriterWhereColor.WriteWhere($"You chose \"{objs[0]}\", a {((string)objs[0] == "Sarah" ? "girl" : "boy")}.", PresentationTools.PresentationUpperInnerBorderLeft, ConsoleWrapper.CursorTop)
@@ -201,11 +206,7 @@ namespace KS.Misc.Presentation
                                 Arguments = new object[]
                                 {
                                     "Ultricies mi eget mauris pharetra sapien et ligula:",
-                                    "Alex",
-                                    "Zhao",
-                                    "Agustin",
-                                    "Jim",
-                                    "Sarah",
+                                    data1,
                                     "Akshay",
                                     "Aladdin",
                                     "Bella",
@@ -257,11 +258,7 @@ namespace KS.Misc.Presentation
                                 Arguments = new object[]
                                 {
                                     "Ultricies mi eget mauris pharetra:",
-                                    "Alex",
-                                    "Zhao",
-                                    "Agustin",
-                                    "Jim",
-                                    "Sarah"
+                                    data1
                                 },
                                 InvokeActionInput =
                                     (objs) =>
@@ -275,11 +272,7 @@ namespace KS.Misc.Presentation
                                 Arguments = new object[]
                                 {
                                     "Ultricies mi eget mauris pharetra sapien et ligula:",
-                                    "Alex",
-                                    "Zhao",
-                                    "Agustin",
-                                    "Jim",
-                                    "Sarah",
+                                    data1,
                                     "Akshay",
                                     "Aladdin",
                                     "Bella",
