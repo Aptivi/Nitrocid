@@ -77,5 +77,46 @@ namespace KS.Kernel.Debugging
                 throw exc;
             }
         }
+
+        /// <summary>
+        /// Asserts and checks to see if the value is not null
+        /// </summary>
+        /// <param name="value">Condition</param>
+        public static void AssertNotNull<T>(T value) =>
+            AssertNotNull(value, "");
+
+        /// <summary>
+        /// Asserts and checks to see if the value is not null
+        /// </summary>
+        /// <param name="value">Condition</param>
+        /// <param name="message">A message to clarify why the assert failed</param>
+        public static void AssertNotNull<T>(T value, string message)
+        {
+            if (value is not null)
+            {
+                var trace = new DebugStackFrame();
+                var exc = new KernelException(KernelExceptionType.AssertionFailure, $"value is not null. {message}");
+                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Value is not null!");
+                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Failure at {0} routine in {1}:{2}", trace.RoutineName, trace.RoutineFileName, trace.RoutineLineNumber);
+                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Message: {0}", message);
+                KernelPanic.KernelErrorContinuable(Translate.DoTranslation("Assertion failure.") + $" {message}", exc);
+                throw exc;
+            }
+        }
+
+        /// <summary>
+        /// Triggers assertion failure
+        /// </summary>
+        /// <param name="message">A message to clarify why the assert failed</param>
+        public static void AssertFail(string message)
+        {
+            var trace = new DebugStackFrame();
+            var exc = new KernelException(KernelExceptionType.AssertionFailure, $"undetermined failure. {message}");
+            DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Undetermined failure!");
+            DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Failure at {0} routine in {1}:{2}", trace.RoutineName, trace.RoutineFileName, trace.RoutineLineNumber);
+            DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Message: {0}", message);
+            KernelPanic.KernelErrorContinuable(Translate.DoTranslation("Assertion failure.") + $" {message}", exc);
+            throw exc;
+        }
     }
 }
