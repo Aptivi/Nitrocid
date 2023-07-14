@@ -685,5 +685,7 @@ Sets console title on command execution.
 Set console title on command execution
 Required arguments are not provided. See below for usage:
 Required switches are not provided. See below for usage:
+Select a connection. If you have no connections, you'll have to create a new connection.
+Create a new connection
 
 ==========================================================================================================================================
