@@ -60,22 +60,11 @@ namespace KS.Shell.Prompts.Presets.FTP
                 new PowerLineSegment(new Color(0, 0, 0), new Color(85, 255, 255), FTPShellCommon.FtpSite, PadlockChar),
                 new PowerLineSegment(new Color(0, 0, 0), new Color(255, 255, 255), FTPShellCommon.FtpCurrentRemoteDir),
             };
-            List<PowerLineSegment> segmentsDisconnected = new()
-            {
-                new PowerLineSegment(new Color(255, 85, 255), new Color(127, 43, 127), FTPShellCommon.FtpCurrentDirectory)
-            };
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
 
-            // Build the preset
-            if (SFTPShellCommon.SFTPConnected)
-                // Use RenderSegments to render our segments
-                PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
-            else
-                // Use RenderSegments to render our segments
-                PresetStringBuilder.Append(PowerLineTools.RenderSegments(segmentsDisconnected));
-
+            PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
             PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
 
             // Present final string

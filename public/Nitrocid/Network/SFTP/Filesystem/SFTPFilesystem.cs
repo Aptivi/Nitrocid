@@ -51,62 +51,55 @@ namespace KS.Network.SFTP.Filesystem
         /// <exception cref="InvalidOperationException"></exception>
         public static List<string> SFTPListRemote(string Path, bool ShowDetails)
         {
-            if (SFTPShellCommon.SFTPConnected)
+            var EntryBuilder = new StringBuilder();
+            var Entries = new List<string>();
+            long FileSize;
+            DateTime ModDate;
+            IEnumerable<SftpFile> Listing;
+
+            try
             {
-                var EntryBuilder = new StringBuilder();
-                var Entries = new List<string>();
-                long FileSize;
-                DateTime ModDate;
-                IEnumerable<SftpFile> Listing;
-
-                try
+                if (!string.IsNullOrEmpty(Path))
                 {
-                    if (!string.IsNullOrEmpty(Path))
-                    {
-                        Listing = ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).ListDirectory(Path);
-                    }
-                    else
-                    {
-                        Listing = ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).ListDirectory(SFTPShellCommon.SFTPCurrentRemoteDir);
-                    }
-                    foreach (SftpFile DirListSFTP in Listing)
-                    {
-                        EntryBuilder.Append($"- {DirListSFTP.Name}");
-                        // Check to see if the file that we're dealing with is a symbolic link
-                        if (DirListSFTP.IsSymbolicLink)
-                        {
-                            EntryBuilder.Append(" >> ");
-                            EntryBuilder.Append(SFTPGetCanonicalPath(DirListSFTP.FullName));
-                        }
-
-                        if (DirListSFTP.IsRegularFile)
-                        {
-                            EntryBuilder.Append(": ");
-                            if (ShowDetails)
-                            {
-                                FileSize = DirListSFTP.Length;
-                                ModDate = DirListSFTP.LastWriteTime;
-                                EntryBuilder.Append(ColorTools.GetColor(KernelColorType.ListValue).VTSequenceForeground + string.Format(Translate.DoTranslation("{0} KB | Modified in: {1}"), FileSize / 1024d, ModDate.ToString()));
-                            }
-                        }
-                        else if (DirListSFTP.IsDirectory)
-                        {
-                            EntryBuilder.Append('/');
-                        }
-                        Entries.Add(EntryBuilder.ToString());
-                        EntryBuilder.Clear();
-                    }
-                    return Entries;
+                    Listing = ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).ListDirectory(Path);
                 }
-                catch (Exception ex)
+                else
                 {
-                    DebugWriter.WriteDebugStackTrace(ex);
-                    throw new KernelException(KernelExceptionType.SFTPFilesystem, Translate.DoTranslation("Failed to list remote files: {0}"), ex, ex.Message);
+                    Listing = ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).ListDirectory(SFTPShellCommon.SFTPCurrentRemoteDir);
                 }
+                foreach (SftpFile DirListSFTP in Listing)
+                {
+                    EntryBuilder.Append($"- {DirListSFTP.Name}");
+                    // Check to see if the file that we're dealing with is a symbolic link
+                    if (DirListSFTP.IsSymbolicLink)
+                    {
+                        EntryBuilder.Append(" >> ");
+                        EntryBuilder.Append(SFTPGetCanonicalPath(DirListSFTP.FullName));
+                    }
+
+                    if (DirListSFTP.IsRegularFile)
+                    {
+                        EntryBuilder.Append(": ");
+                        if (ShowDetails)
+                        {
+                            FileSize = DirListSFTP.Length;
+                            ModDate = DirListSFTP.LastWriteTime;
+                            EntryBuilder.Append(ColorTools.GetColor(KernelColorType.ListValue).VTSequenceForeground + string.Format(Translate.DoTranslation("{0} KB | Modified in: {1}"), FileSize / 1024d, ModDate.ToString()));
+                        }
+                    }
+                    else if (DirListSFTP.IsDirectory)
+                    {
+                        EntryBuilder.Append('/');
+                    }
+                    Entries.Add(EntryBuilder.ToString());
+                    EntryBuilder.Clear();
+                }
+                return Entries;
             }
-            else
+            catch (Exception ex)
             {
-                throw new KernelException(KernelExceptionType.SFTPFilesystem, Translate.DoTranslation("You should connect to server before listing all remote files."));
+                DebugWriter.WriteDebugStackTrace(ex);
+                throw new KernelException(KernelExceptionType.SFTPFilesystem, Translate.DoTranslation("Failed to list remote files: {0}"), ex, ex.Message);
             }
         }
 
@@ -117,28 +110,21 @@ namespace KS.Network.SFTP.Filesystem
         /// <returns>True if successful; False if unsuccessful</returns>
         public static bool SFTPDeleteRemote(string Target)
         {
-            if (SFTPShellCommon.SFTPConnected)
+            DebugWriter.WriteDebug(DebugLevel.I, "Deleting {0}...", Target);
+
+            // Delete a file or folder
+            if (((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).Exists(Target))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Deleting {0}...", Target);
-
-                // Delete a file or folder
-                if (((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).Exists(Target))
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Deleting {0}...", Target);
-                    ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).Delete(Target);
-                }
-                else
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", Target);
-                    throw new KernelException(KernelExceptionType.SFTPFilesystem, Translate.DoTranslation("{0} is not found in the server."), Target);
-                }
-                DebugWriter.WriteDebug(DebugLevel.I, "Deleted {0}", Target);
-                return true;
+                ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).Delete(Target);
             }
             else
             {
-                throw new KernelException(KernelExceptionType.SFTPFilesystem, Translate.DoTranslation("You must connect to server with administrative privileges before performing the deletion."));
+                DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", Target);
+                throw new KernelException(KernelExceptionType.SFTPFilesystem, Translate.DoTranslation("{0} is not found in the server."), Target);
             }
+            DebugWriter.WriteDebug(DebugLevel.I, "Deleted {0}", Target);
+            return true;
         }
 
         /// <summary>
@@ -150,58 +136,44 @@ namespace KS.Network.SFTP.Filesystem
         /// <exception cref="ArgumentNullException"></exception>
         public static bool SFTPChangeRemoteDir(string Directory)
         {
-            if (SFTPShellCommon.SFTPConnected == true)
+            if (!string.IsNullOrEmpty(Directory))
             {
-                if (!string.IsNullOrEmpty(Directory))
+                if (((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).Exists(Directory))
                 {
-                    if (((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).Exists(Directory))
-                    {
-                        // Directory exists, go to the new directory
-                        ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).ChangeDirectory(Directory);
-                        SFTPShellCommon.SFTPCurrentRemoteDir = ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).WorkingDirectory;
-                        return true;
-                    }
-                    else
-                    {
-                        // Directory doesn't exist, go to the old directory
-                        throw new KernelException(KernelExceptionType.SFTPFilesystem, Translate.DoTranslation("Directory {0} not found."), Directory);
-                    }
+                    // Directory exists, go to the new directory
+                    ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).ChangeDirectory(Directory);
+                    SFTPShellCommon.SFTPCurrentRemoteDir = ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).WorkingDirectory;
+                    return true;
                 }
                 else
                 {
-                    throw new KernelException(KernelExceptionType.SFTPFilesystem, Translate.DoTranslation("Enter a remote directory. \"..\" to go back"));
+                    // Directory doesn't exist, go to the old directory
+                    throw new KernelException(KernelExceptionType.SFTPFilesystem, Translate.DoTranslation("Directory {0} not found."), Directory);
                 }
             }
             else
             {
-                throw new KernelException(KernelExceptionType.SFTPFilesystem, Translate.DoTranslation("You must connect to a server before changing directory"));
+                throw new KernelException(KernelExceptionType.SFTPFilesystem, Translate.DoTranslation("Enter a remote directory. \"..\" to go back"));
             }
         }
 
         public static bool SFTPChangeLocalDir(string Directory)
         {
-            if (!string.IsNullOrEmpty(Directory))
-            {
-                string targetDir;
-                targetDir = $"{SFTPShellCommon.SFTPCurrDirect}/{Directory}";
-                Files.Filesystem.ThrowOnInvalidPath(targetDir);
+            string targetDir;
+            targetDir = $"{SFTPShellCommon.SFTPCurrDirect}/{Directory}";
+            Files.Filesystem.ThrowOnInvalidPath(targetDir);
 
-                // Check if folder exists
-                if (Checking.FolderExists(targetDir))
-                {
-                    // Parse written directory
-                    var parser = new System.IO.DirectoryInfo(targetDir);
-                    SFTPShellCommon.SFTPCurrDirect = parser.FullName;
-                    return true;
-                }
-                else
-                {
-                    throw new KernelException(KernelExceptionType.SFTPFilesystem, Translate.DoTranslation("Local directory {0} doesn't exist."), Directory);
-                }
+            // Check if folder exists
+            if (Checking.FolderExists(targetDir))
+            {
+                // Parse written directory
+                var parser = new System.IO.DirectoryInfo(targetDir);
+                SFTPShellCommon.SFTPCurrDirect = parser.FullName;
+                return true;
             }
             else
             {
-                throw new KernelException(KernelExceptionType.SFTPFilesystem, Translate.DoTranslation("Enter a local directory. \"..\" to go back."));
+                throw new KernelException(KernelExceptionType.SFTPFilesystem, Translate.DoTranslation("Local directory {0} doesn't exist."), Directory);
             }
         }
 
@@ -212,22 +184,15 @@ namespace KS.Network.SFTP.Filesystem
         /// <returns>Absolute path for a remote path</returns>
         public static string SFTPGetCanonicalPath(string Path)
         {
-            if (SFTPShellCommon.SFTPConnected)
-            {
-                // GetCanonicalPath was supposed to be public, but it's in a private class called SftpSession. It should be in SftpClient, which is public.
-                var SFTPType = ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).GetType();
-                var SFTPSessionField = SFTPType.GetField("_sftpSession", BindingFlags.Instance | BindingFlags.NonPublic);
-                var SFTPSession = SFTPSessionField.GetValue((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance);
-                var SFTPSessionType = SFTPSession.GetType();
-                var SFTPSessionCanon = SFTPSessionType.GetMethod("GetCanonicalPath");
-                string CanonicalPath = Convert.ToString(SFTPSessionCanon.Invoke(SFTPSession, new string[] { Path }));
-                DebugWriter.WriteDebug(DebugLevel.I, "Canonical path: {0}", CanonicalPath);
-                return CanonicalPath;
-            }
-            else
-            {
-                throw new KernelException(KernelExceptionType.SFTPFilesystem, Translate.DoTranslation("You must connect to server before performing filesystem operations."));
-            }
+            // GetCanonicalPath was supposed to be public, but it's in a private class called SftpSession. It should be in SftpClient, which is public.
+            var SFTPType = ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).GetType();
+            var SFTPSessionField = SFTPType.GetField("_sftpSession", BindingFlags.Instance | BindingFlags.NonPublic);
+            var SFTPSession = SFTPSessionField.GetValue((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance);
+            var SFTPSessionType = SFTPSession.GetType();
+            var SFTPSessionCanon = SFTPSessionType.GetMethod("GetCanonicalPath");
+            string CanonicalPath = Convert.ToString(SFTPSessionCanon.Invoke(SFTPSession, new string[] { Path }));
+            DebugWriter.WriteDebug(DebugLevel.I, "Canonical path: {0}", CanonicalPath);
+            return CanonicalPath;
         }
 
     }

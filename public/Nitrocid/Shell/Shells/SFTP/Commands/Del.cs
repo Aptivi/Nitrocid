@@ -41,28 +41,21 @@ namespace KS.Shell.Shells.SFTP.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            if (SFTPShellCommon.SFTPConnected)
+            // Print a message
+            TextWriterColor.Write(Translate.DoTranslation("Deleting {0}..."), true, KernelColorType.Progress, ListArgsOnly[0]);
+
+            // Make a confirmation message so user will not accidentally delete a file or folder
+            string answer = ChoiceStyle.PromptChoice(string.Format(Translate.DoTranslation("Are you sure you want to delete {0}?"), ListArgsOnly[0]), "y/n");
+            if (answer != "y")
+                return;
+
+            try
             {
-                // Print a message
-                TextWriterColor.Write(Translate.DoTranslation("Deleting {0}..."), true, KernelColorType.Progress, ListArgsOnly[0]);
-
-                // Make a confirmation message so user will not accidentally delete a file or folder
-                string answer = ChoiceStyle.PromptChoice(string.Format(Translate.DoTranslation("Are you sure you want to delete {0}?"), ListArgsOnly[0]), "y/n");
-                if (answer != "y")
-                    return;
-
-                try
-                {
-                    SFTPFilesystem.SFTPDeleteRemote(ListArgsOnly[0]);
-                }
-                catch (Exception ex)
-                {
-                    TextWriterColor.Write(ex.Message, true, KernelColorType.Error);
-                }
+                SFTPFilesystem.SFTPDeleteRemote(ListArgsOnly[0]);
             }
-            else
+            catch (Exception ex)
             {
-                TextWriterColor.Write(Translate.DoTranslation("You must connect to server with administrative privileges before performing the deletion."), true, KernelColorType.Error);
+                TextWriterColor.Write(ex.Message, true, KernelColorType.Error);
             }
         }
 

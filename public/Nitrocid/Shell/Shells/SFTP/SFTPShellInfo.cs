@@ -23,6 +23,7 @@ using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.SFTP.Commands;
 using System;
+using KS.Shell.Shells.FTP.Commands;
 
 namespace KS.Shell.Shells.SFTP
 {
@@ -45,8 +46,8 @@ namespace KS.Shell.Shells.SFTP
                 new CommandArgumentInfo(new[] { "directory" }, Array.Empty<SwitchInfo>(), true, 1), new SFTP_CdrCommand()) },
             { "del", new CommandInfo("del", ShellType, /* Localizable */ "Deletes remote file from server",
                 new CommandArgumentInfo(new[] { "file" }, Array.Empty<SwitchInfo>(), true, 1), new SFTP_DelCommand()) },
-            { "disconnect", new CommandInfo("disconnect", ShellType, /* Localizable */ "Disconnects from server",
-                new CommandArgumentInfo(), new SFTP_DisconnectCommand()) },
+            { "detach", new CommandInfo("detach", ShellType, /* Localizable */ "Exits the shell without disconnecting",
+                new CommandArgumentInfo(), new SFTP_DetachCommand()) },
             { "get", new CommandInfo("get", ShellType, /* Localizable */ "Downloads remote file to local directory using binary or text",
                 new CommandArgumentInfo(new[] { "file" }, Array.Empty<SwitchInfo>(), true, 1), new SFTP_GetCommand()) },
             { "lsl", new CommandInfo("lsl", ShellType, /* Localizable */ "Lists local directory",
@@ -59,8 +60,6 @@ namespace KS.Shell.Shells.SFTP
                 new CommandArgumentInfo(), new SFTP_PwdlCommand()) },
             { "pwdr", new CommandInfo("pwdr", ShellType, /* Localizable */ "Gets current remote directory",
                 new CommandArgumentInfo(), new SFTP_PwdrCommand()) },
-            { "quickconnect", new CommandInfo("quickconnect", ShellType, /* Localizable */ "Uses information from Speed Dial to connect to any network quickly",
-                new CommandArgumentInfo(), new SFTP_QuickConnectCommand()) }
         };
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

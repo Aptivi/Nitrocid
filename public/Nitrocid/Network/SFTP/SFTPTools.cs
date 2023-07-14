@@ -40,83 +40,69 @@ namespace KS.Network.SFTP
         /// Tries to connect to the FTP server
         /// </summary>
         /// <param name="address">An FTP server. You may specify it like "[address]" or "[address]:[port]"</param>
-        public static void SFTPTryToConnect(string address)
+        public static NetworkConnection SFTPTryToConnect(string address)
         {
-            if (SFTPShellCommon.SFTPConnected == true)
+            try
             {
-                TextWriterColor.Write(Translate.DoTranslation("You should disconnect from server before connecting to another server"), true, KernelColorType.Error);
+                // Create an SFTP stream to connect to
+                int indexOfPort = address.LastIndexOf(":");
+                string SftpHost = address.Replace("sftp://", "");
+                SftpHost = indexOfPort < 0 ? SftpHost : SftpHost.Replace(SftpHost[SftpHost.LastIndexOf(":")..], "");
+                string SftpPortString = address.Replace("sftp://", "").Replace(SftpHost + ":", "");
+                DebugWriter.WriteDebug(DebugLevel.W, "Host: {0}, Port: {1}", SftpHost, SftpPortString);
+                bool portParsed = int.TryParse(SftpHost == SftpPortString ? "22" : SftpPortString, out int SftpPort);
+                if (!portParsed)
+                {
+                    TextWriterColor.Write(Translate.DoTranslation("Make sure that you specify the port correctly."), true, KernelColorType.Error);
+                    return null;
+                }
+
+                // Prompt for username
+                if (!string.IsNullOrWhiteSpace(SFTPShellCommon.SFTPUserPromptStyle))
+                {
+                    TextWriterColor.Write(PlaceParse.ProbePlaces(SFTPShellCommon.SFTPUserPromptStyle), false, KernelColorType.Input, address);
+                }
+                else
+                {
+                    TextWriterColor.Write(Translate.DoTranslation("Username for {0}: "), false, KernelColorType.Input, address);
+                }
+                SFTPShellCommon.SFTPUser = Input.ReadLine();
+                if (string.IsNullOrEmpty(SFTPShellCommon.SFTPUser))
+                {
+                    DebugWriter.WriteDebug(DebugLevel.W, "User is not provided. Fallback to \"anonymous\"");
+                    SFTPShellCommon.SFTPUser = "anonymous";
+                }
+
+                // Check to see if we're aborting or not
+                var client = new SftpClient(SSH.SSH.PromptConnectionInfo(SftpHost, Convert.ToInt32(SftpPort), SFTPShellCommon.SFTPUser));
+
+                // Connect to SFTP
+                return ConnectSFTP(client);
             }
-            else
+            catch (Exception ex)
             {
-                try
-                {
-                    // Create an SFTP stream to connect to
-                    string SftpHost = address.Replace("sftp://", "").Replace(address[address.LastIndexOf(":")..], "");
-                    string SftpPort = address.Replace("sftp://", "").Replace(SftpHost + ":", "");
-
-                    // Check to see if no port is provided by client
-                    if (SftpHost == SftpPort)
-                    {
-                        SftpPort = 22.ToString();
-                    }
-
-                    // Prompt for username
-                    if (!string.IsNullOrWhiteSpace(SFTPShellCommon.SFTPUserPromptStyle))
-                    {
-                        TextWriterColor.Write(PlaceParse.ProbePlaces(SFTPShellCommon.SFTPUserPromptStyle), false, KernelColorType.Input, address);
-                    }
-                    else
-                    {
-                        TextWriterColor.Write(Translate.DoTranslation("Username for {0}: "), false, KernelColorType.Input, address);
-                    }
-                    SFTPShellCommon.SFTPUser = Input.ReadLine();
-                    if (string.IsNullOrEmpty(SFTPShellCommon.SFTPUser))
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.W, "User is not provided. Fallback to \"anonymous\"");
-                        SFTPShellCommon.SFTPUser = "anonymous";
-                    }
-
-                    // Check to see if we're aborting or not
-                    var client = new SftpClient(SSH.SSH.PromptConnectionInfo(SftpHost, Convert.ToInt32(SftpPort), SFTPShellCommon.SFTPUser));
-
-                    // Connect to SFTP
-                    ConnectSFTP(client);
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.W, "Error connecting to {0}: {1}", address, ex.Message);
-                    DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriterColor.Write(Translate.DoTranslation("Error when trying to connect to {0}: {1}"), true, KernelColorType.Error, address, ex.Message);
-                }
+                DebugWriter.WriteDebug(DebugLevel.W, "Error connecting to {0}: {1}", address, ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+                TextWriterColor.Write(Translate.DoTranslation("Error when trying to connect to {0}: {1}"), true, KernelColorType.Error, address, ex.Message);
+                return null;
             }
         }
 
         /// <summary>
         /// Tries to connect to the SFTP server.
         /// </summary>
-        private static void ConnectSFTP(SftpClient client)
+        private static NetworkConnection ConnectSFTP(SftpClient client)
         {
             // Connect
             TextWriterColor.Write(Translate.DoTranslation("Trying to connect to {0}..."), client.ConnectionInfo.Host);
             DebugWriter.WriteDebug(DebugLevel.I, "Connecting to {0} with {1}...", client.ConnectionInfo.Host);
+            var sftpConnection = NetworkConnectionTools.EstablishConnection("SFTP client", client.ConnectionInfo.Host, NetworkConnectionType.SFTP, client);
             client.Connect();
 
             // Show that it's connected
             TextWriterColor.Write(Translate.DoTranslation("Connected to {0}"), client.ConnectionInfo.Host);
             DebugWriter.WriteDebug(DebugLevel.I, "Connected.");
-            SFTPShellCommon.SFTPConnected = true;
-
-            // Prepare to print current SFTP directory
-            SFTPShellCommon.SFTPCurrentRemoteDir = client.WorkingDirectory;
-            DebugWriter.WriteDebug(DebugLevel.I, "Working directory: {0}", SFTPShellCommon.SFTPCurrentRemoteDir);
-            SFTPShellCommon.SFTPSite = client.ConnectionInfo.Host;
-            SFTPShellCommon.SFTPUser = client.ConnectionInfo.Username;
-
-            // Write connection information to Speed Dial file if it doesn't exist there
-            SpeedDialTools.TryAddEntryToSpeedDial(SFTPShellCommon.SFTPSite, client.ConnectionInfo.Port, SpeedDialType.SFTP, true, SFTPShellCommon.SFTPUser);
-
-            // Establish connection
-            NetworkConnectionTools.EstablishConnection("SFTP client", SFTPShellCommon.SFTPSite, NetworkConnectionType.SFTP, client);
+            return sftpConnection;
         }
 
         /// <summary>

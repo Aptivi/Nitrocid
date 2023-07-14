@@ -32,17 +32,8 @@ namespace KS.Shell.Shells.SFTP.Commands
     class SFTP_PwdrCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            if (SFTPShellCommon.SFTPConnected)
-            {
-                TextWriterColor.Write(Translate.DoTranslation("Remote directory: {0}"), SFTPShellCommon.SFTPCurrentRemoteDir);
-            }
-            else
-            {
-                TextWriterColor.Write(Translate.DoTranslation("You must connect to server before getting current remote directory."), true, KernelColorType.Error);
-            }
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>
+            TextWriterColor.Write(Translate.DoTranslation("Remote directory: {0}"), SFTPShellCommon.SFTPCurrentRemoteDir);
 
     }
 }

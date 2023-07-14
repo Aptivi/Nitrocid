@@ -28,7 +28,6 @@ namespace KS.Shell.Shells.SFTP
     public static class SFTPShellCommon
     {
 
-        internal static bool SFTPConnected;
         internal static NetworkConnection clientConnection;
         internal static string SFTPSite;
         internal static string SFTPPass;

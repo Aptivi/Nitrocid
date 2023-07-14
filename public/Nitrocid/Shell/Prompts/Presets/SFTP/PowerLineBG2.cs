@@ -60,22 +60,11 @@ namespace KS.Shell.Prompts.Presets.SFTP
                 new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), SFTPShellCommon.SFTPSite, PadlockChar, TransitionPartChar),
                 new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), SFTPShellCommon.SFTPCurrentRemoteDir, default, TransitionPartChar),
             };
-            List<PowerLineSegment> segmentsDisconnected = new()
-            {
-                new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), SFTPShellCommon.SFTPCurrDirect, default, TransitionPartChar)
-            };
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
 
-            // Build the preset
-            if (SFTPShellCommon.SFTPConnected)
-                // Use RenderSegments to render our segments
-                PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
-            else
-                // Use RenderSegments to render our segments
-                PresetStringBuilder.Append(PowerLineTools.RenderSegments(segmentsDisconnected));
-
+            PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
             PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
 
             // Present final string

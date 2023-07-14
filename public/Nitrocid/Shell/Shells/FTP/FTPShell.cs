@@ -46,7 +46,6 @@ namespace KS.Shell.Shells.FTP
         /// <inheritdoc/>
         public override bool Bail { get; set; }
 
-        /// <inheritdoc/>
         internal bool detaching = false;
 
         /// <inheritdoc/>

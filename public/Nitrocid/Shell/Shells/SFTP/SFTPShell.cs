@@ -18,15 +18,14 @@
 
 using System;
 using System.Threading;
-using FluentFTP;
 using KS.Files;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Network.Base.Connections;
+using KS.Network.SpeedDial;
 using KS.Shell.ShellBase.Shells;
-using KS.Shell.Shells.FTP;
 using Renci.SshNet;
 
 namespace KS.Shell.Shells.SFTP
@@ -43,64 +42,36 @@ namespace KS.Shell.Shells.SFTP
         /// <inheritdoc/>
         public override bool Bail { get; set; }
 
+        internal bool detaching = false;
+
         /// <inheritdoc/>
         public override void InitializeShell(params object[] ShellArgs)
         {
             // Parse shell arguments
-            bool Connects = ShellArgs.Length > 0;
-            string Address = "";
-            if (Connects)
-                Address = Convert.ToString(ShellArgs[0]);
+            NetworkConnection sftpConnection = (NetworkConnection)ShellArgs[0];
+            SftpClient client = (SftpClient)sftpConnection.ConnectionInstance;
+
+            // Finalize current connection
+            SFTPShellCommon.clientConnection = sftpConnection;
+
+            // Prepare to print current SFTP directory
+            SFTPShellCommon.SFTPCurrentRemoteDir = client.WorkingDirectory;
+            DebugWriter.WriteDebug(DebugLevel.I, "Working directory: {0}", SFTPShellCommon.SFTPCurrentRemoteDir);
+            SFTPShellCommon.SFTPSite = client.ConnectionInfo.Host;
+            SFTPShellCommon.SFTPUser = client.ConnectionInfo.Username;
+
+            // Write connection information to Speed Dial file if it doesn't exist there
+            SpeedDialTools.TryAddEntryToSpeedDial(SFTPShellCommon.SFTPSite, client.ConnectionInfo.Port, SpeedDialType.SFTP, true, SFTPShellCommon.SFTPUser);
+
+            // Populate SFTP current directory
+            SFTPShellCommon.SFTPCurrDirect = Paths.HomePath;
 
             // Actual shell logic
-            string SFTPStrCmd;
-            var SFTPInitialized = false;
             while (!Bail)
             {
                 try
                 {
-                    // Complete initialization
-                    if (SFTPInitialized == false)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, $"Completing initialization of SFTP: {SFTPInitialized}");
-                        SFTPShellCommon.SFTPCurrDirect = Paths.HomePath;
-                        SFTPInitialized = true;
-                    }
-
-                    // Check if the shell is going to exit
-                    if (Bail)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.W, "Exiting shell...");
-                        if (SFTPShellCommon.SFTPConnected)
-                        {
-                            SFTPShellCommon.SFTPConnected = false;
-                            ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance)?.Disconnect();
-                            int connectionIndex = NetworkConnectionTools.GetConnectionIndex(SFTPShellCommon.ClientSFTP);
-                            NetworkConnectionTools.CloseConnection(connectionIndex);
-                            SFTPShellCommon.clientConnection = null;
-                        }
-                        SFTPShellCommon.SFTPSite = "";
-                        SFTPShellCommon.SFTPCurrDirect = "";
-                        SFTPShellCommon.SFTPCurrentRemoteDir = "";
-                        SFTPShellCommon.SFTPUser = "";
-                        SFTPShellCommon.SFTPPass = "";
-                        SFTPInitialized = false;
-                        return;
-                    }
-
-                    // Try to connect if IP address is specified.
-                    if (Connects)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, $"Currently connecting to {Address} by \"sftp (address)\"...");
-                        SFTPStrCmd = $"connect {Address}";
-                        Connects = false;
-                        Shell.GetLine(SFTPStrCmd, "", ShellType);
-                    }
-                    else
-                    {
-                        // Prompt for the command
-                        Shell.GetLine();
-                    }
+                    Shell.GetLine();
                 }
                 catch (ThreadInterruptedException)
                 {
@@ -111,6 +82,25 @@ namespace KS.Shell.Shells.SFTP
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
                     throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("There was an error in the SFTP shell:") + " {0}", ex, ex.Message);
+                }
+
+                // Check if the shell is going to exit
+                if (Bail)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.W, "Exiting shell...");
+                    if (!detaching)
+                    {
+                        ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance)?.Disconnect();
+                        int connectionIndex = NetworkConnectionTools.GetConnectionIndex(SFTPShellCommon.ClientSFTP);
+                        NetworkConnectionTools.CloseConnection(connectionIndex);
+                        SFTPShellCommon.clientConnection = null;
+                    }
+                    detaching = false;
+                    SFTPShellCommon.SFTPSite = "";
+                    SFTPShellCommon.SFTPCurrDirect = "";
+                    SFTPShellCommon.SFTPCurrentRemoteDir = "";
+                    SFTPShellCommon.SFTPUser = "";
+                    SFTPShellCommon.SFTPPass = "";
                 }
             }
         }

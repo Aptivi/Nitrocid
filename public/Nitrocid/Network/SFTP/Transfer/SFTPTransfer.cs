@@ -39,32 +39,25 @@ namespace KS.Network.SFTP.Transfer
         /// <returns>True if successful; False if unsuccessful</returns>
         public static bool SFTPGetFile(string File)
         {
-            if (SFTPShellCommon.SFTPConnected)
+            try
             {
-                try
-                {
-                    // Show a message to download
-                    EventsManager.FireEvent(EventType.SFTPPreDownload, File);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Downloading file {0}...", File);
+                // Show a message to download
+                EventsManager.FireEvent(EventType.SFTPPreDownload, File);
+                DebugWriter.WriteDebug(DebugLevel.I, "Downloading file {0}...", File);
 
-                    // Try to download
-                    var DownloadFileStream = new System.IO.FileStream($"{SFTPShellCommon.SFTPCurrDirect}/{File}", System.IO.FileMode.OpenOrCreate);
-                    ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).DownloadFile($"{SFTPShellCommon.SFTPCurrentRemoteDir}/{File}", DownloadFileStream);
+                // Try to download
+                var DownloadFileStream = new System.IO.FileStream($"{SFTPShellCommon.SFTPCurrDirect}/{File}", System.IO.FileMode.OpenOrCreate);
+                ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).DownloadFile($"{SFTPShellCommon.SFTPCurrentRemoteDir}/{File}", DownloadFileStream);
 
-                    // Show a message that it's downloaded
-                    DebugWriter.WriteDebug(DebugLevel.I, "Downloaded file {0}.", File);
-                    EventsManager.FireEvent(EventType.SFTPPostDownload, File);
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Download failed for file {0}: {1}", File, ex.Message);
-                    EventsManager.FireEvent(EventType.SFTPDownloadError, File, ex);
-                }
+                // Show a message that it's downloaded
+                DebugWriter.WriteDebug(DebugLevel.I, "Downloaded file {0}.", File);
+                EventsManager.FireEvent(EventType.SFTPPostDownload, File);
+                return true;
             }
-            else
+            catch (Exception ex)
             {
-                throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("You must connect to server before performing transmission."));
+                DebugWriter.WriteDebug(DebugLevel.E, "Download failed for file {0}: {1}", File, ex.Message);
+                EventsManager.FireEvent(EventType.SFTPDownloadError, File, ex);
             }
             return false;
         }
@@ -76,30 +69,23 @@ namespace KS.Network.SFTP.Transfer
         /// <returns>True if successful; False if unsuccessful</returns>
         public static bool SFTPUploadFile(string File)
         {
-            if (SFTPShellCommon.SFTPConnected)
+            try
             {
-                try
-                {
-                    // Show a message to download
-                    EventsManager.FireEvent(EventType.SFTPPreUpload, File);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Uploading file {0}...", File);
+                // Show a message to download
+                EventsManager.FireEvent(EventType.SFTPPreUpload, File);
+                DebugWriter.WriteDebug(DebugLevel.I, "Uploading file {0}...", File);
 
-                    // Try to upload
-                    var UploadFileStream = new System.IO.FileStream($"{SFTPShellCommon.SFTPCurrDirect}/{File}", System.IO.FileMode.Open);
-                    ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).UploadFile(UploadFileStream, $"{SFTPShellCommon.SFTPCurrentRemoteDir}/{File}");
-                    DebugWriter.WriteDebug(DebugLevel.I, "Uploaded file {0}", File);
-                    EventsManager.FireEvent(EventType.SFTPPostUpload, File);
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Upload failed for file {0}: {1}", File, ex.Message);
-                    EventsManager.FireEvent(EventType.SFTPUploadError, File, ex);
-                }
+                // Try to upload
+                var UploadFileStream = new System.IO.FileStream($"{SFTPShellCommon.SFTPCurrDirect}/{File}", System.IO.FileMode.Open);
+                ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).UploadFile(UploadFileStream, $"{SFTPShellCommon.SFTPCurrentRemoteDir}/{File}");
+                DebugWriter.WriteDebug(DebugLevel.I, "Uploaded file {0}", File);
+                EventsManager.FireEvent(EventType.SFTPPostUpload, File);
+                return true;
             }
-            else
+            catch (Exception ex)
             {
-                throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("You must connect to server before performing transmission."));
+                DebugWriter.WriteDebug(DebugLevel.E, "Upload failed for file {0}: {1}", File, ex.Message);
+                EventsManager.FireEvent(EventType.SFTPUploadError, File, ex);
             }
             return false;
         }
