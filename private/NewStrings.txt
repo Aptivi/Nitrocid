@@ -678,5 +678,8 @@ In addition to automatically checking for updates, Nitrocid KS can also download
 Do you want Nitrocid KS to automatically download updates?
 You can always check for kernel updates using the "update" command.
 Make sure that you specify the port correctly.
+Finds a given file name from path lookup directories
+File found in path:
+File not found in path lookup directories.
 
 ==========================================================================================================================================
