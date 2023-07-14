@@ -21,10 +21,8 @@ using System.Text;
 using FluentFTP;
 using FluentFTP.Helpers;
 using KS.Kernel.Debugging;
-using KS.Languages;
 using KS.Shell.Shells.FTP;
 using KS.Kernel.Events;
-using KS.Kernel.Exceptions;
 
 namespace KS.Network.FTP.Transfer
 {

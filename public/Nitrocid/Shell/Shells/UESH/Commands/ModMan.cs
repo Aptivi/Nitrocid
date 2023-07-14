@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.IO;
-using KS.Arguments.ArgumentBase;
 using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Files.Querying;

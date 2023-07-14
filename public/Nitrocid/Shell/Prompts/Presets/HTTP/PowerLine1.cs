@@ -24,7 +24,6 @@ using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Colors;
 using KS.Misc.Writers.FancyWriters.Tools;
 using System.Collections.Generic;
-using KS.Languages;
 
 namespace KS.Shell.Prompts.Presets.HTTP
 {

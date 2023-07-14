@@ -19,7 +19,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using FluentFTP;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Inputs.Styles;
@@ -31,7 +30,6 @@ using KS.Network.Base.Connections;
 using KS.Network.FTP;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
-using static KS.Network.SSH.SSH;
 
 namespace KS.Shell.Shells.UESH.Commands
 {

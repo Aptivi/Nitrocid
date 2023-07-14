@@ -23,7 +23,6 @@ using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.HTTP.Commands;
 using System;
-using KS.Shell.Shells.FTP.Commands;
 
 namespace KS.Shell.Shells.HTTP
 {

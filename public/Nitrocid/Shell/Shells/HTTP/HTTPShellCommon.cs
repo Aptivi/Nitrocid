@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Network.Base.Connections;
-using System.Net.Http;
 
 namespace KS.Shell.Shells.HTTP
 {

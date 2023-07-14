@@ -36,7 +36,6 @@ using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using KS.Misc.Writers.MiscWriters;
 using KS.Modifications;
-using KS.Network.Mail;
 using KS.Network.RPC;
 using KS.Scripting;
 using KS.Shell.ShellBase.Aliases;

@@ -23,7 +23,6 @@ using KS.Shell.Shells.FTP;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Colors;
 using KS.Misc.Writers.FancyWriters.Tools;
-using KS.Shell.Shells.SFTP;
 using System.Collections.Generic;
 
 namespace KS.Shell.Prompts.Presets.FTP

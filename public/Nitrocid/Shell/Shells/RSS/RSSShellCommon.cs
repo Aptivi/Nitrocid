@@ -22,7 +22,7 @@ using KS.Kernel.Configuration;
 using KS.Misc.Threading;
 using KS.Network.Base.Connections;
 using KS.Network.RSS;
-using KS.Network.RSS.Instance;
+using Syndian.Instance;
 
 namespace KS.Shell.Shells.RSS
 {

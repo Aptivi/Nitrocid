@@ -25,7 +25,7 @@ using KS.Languages;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.Base.Connections;
-using KS.Network.RSS.Instance;
+using Syndian.Instance;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.HTTP;
 
@@ -54,17 +54,17 @@ namespace KS.Shell.Shells.RSS
             RSSShellCommon.feedInstance = rssFeed;
             RSSShellCommon.rssFeedLink = rssFeed.FeedUrl;
 
+            // Send ping to keep the connection alive
+            if (!RSSShellCommon.RSSKeepAlive & !RSSShellCommon.RSSRefresher.IsAlive & RSSShellCommon.RSSRefreshFeeds)
+            {
+                RSSShellCommon.RSSRefresher.Start();
+                DebugWriter.WriteDebug(DebugLevel.I, "Made new thread about RefreshFeeds()");
+            }
+
             while (!Bail)
             {
                 try
                 {
-                    // Send ping to keep the connection alive
-                    if (!RSSShellCommon.RSSKeepAlive & !RSSShellCommon.RSSRefresher.IsAlive & RSSShellCommon.RSSRefreshFeeds)
-                    {
-                        RSSShellCommon.RSSRefresher.Start();
-                        DebugWriter.WriteDebug(DebugLevel.I, "Made new thread about RefreshFeeds()");
-                    }
-
                     // Prompt for the command
                     Shell.GetLine();
                 }

@@ -20,7 +20,7 @@ using KS.ConsoleBase.Colors;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.RSS;
-using KS.Network.RSS.Instance;
+using Syndian.Instance;
 using KS.Shell.ShellBase.Commands;
 using System.Linq;
 

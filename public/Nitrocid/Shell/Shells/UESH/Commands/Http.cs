@@ -24,7 +24,6 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.Base.Connections;
-using KS.Network.HTTP;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using System.Collections.Generic;

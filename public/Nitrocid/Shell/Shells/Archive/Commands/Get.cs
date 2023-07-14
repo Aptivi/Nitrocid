@@ -18,10 +18,7 @@
 
 using System;
 using System.Linq;
-using KS.ConsoleBase.Colors;
 using KS.Files;
-using KS.Languages;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Archive;
 using KS.Shell.ShellBase.Commands;
 

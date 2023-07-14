@@ -18,11 +18,8 @@
 
 using System;
 using System.Linq;
-using KS.ConsoleBase.Colors;
-using KS.Languages;
 using KS.Misc.Games;
 using KS.Misc.Reflection;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.UESH.Commands

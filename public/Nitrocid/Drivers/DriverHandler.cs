@@ -31,7 +31,6 @@ using KS.Drivers.Regexp;
 using KS.Drivers.Regexp.Bases;
 using KS.Kernel.Exceptions;
 using System.Linq;
-using System.Xml.Linq;
 
 namespace KS.Drivers
 {

@@ -20,17 +20,15 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs.Styles;
 using KS.ConsoleBase.Inputs;
 using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.Base.Connections;
-using KS.Network.RSS;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using System.Collections.Generic;
 using System;
 using System.Linq;
-using KS.Network.RSS.Instance;
+using Syndian.Instance;
 
 namespace KS.Shell.Shells.UESH.Commands
 {

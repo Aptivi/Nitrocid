@@ -18,10 +18,8 @@
 
 using System;
 using KS.Kernel.Debugging;
-using KS.Languages;
 using KS.Shell.Shells.SFTP;
 using KS.Kernel.Events;
-using KS.Kernel.Exceptions;
 using Renci.SshNet;
 
 namespace KS.Network.SFTP.Transfer

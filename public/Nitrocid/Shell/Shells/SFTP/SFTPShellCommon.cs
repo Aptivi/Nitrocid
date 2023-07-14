@@ -18,7 +18,6 @@
 
 using KS.Kernel.Configuration;
 using KS.Network.Base.Connections;
-using Renci.SshNet;
 
 namespace KS.Shell.Shells.SFTP
 {

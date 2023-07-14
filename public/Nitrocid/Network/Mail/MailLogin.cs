@@ -32,8 +32,6 @@ using KS.Misc.Probers.Placeholder;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.Base.Connections;
 using KS.Network.Mail.PGP;
-using KS.Shell.ShellBase.Shells;
-using KS.Shell.Shells.Mail;
 using MailKit;
 using MailKit.Net.Imap;
 using MailKit.Net.Smtp;

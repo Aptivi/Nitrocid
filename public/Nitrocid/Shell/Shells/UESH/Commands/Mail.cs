@@ -20,16 +20,13 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs.Styles;
 using KS.ConsoleBase.Inputs;
 using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.Base.Connections;
 using KS.Network.Mail;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
-using KS.Shell.Shells.Mail;
 using System.Collections.Generic;
-using System.Net.Http;
 using System;
 using System.Linq;
 

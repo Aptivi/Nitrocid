@@ -21,7 +21,6 @@ using System.Text;
 using ColorSeq;
 using KS.Shell.Shells.FTP;
 using KS.Misc.Writers.FancyWriters.Tools;
-using KS.Shell.Shells.SFTP;
 using System.Collections.Generic;
 using KS.ConsoleBase.Colors;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;

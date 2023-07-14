@@ -22,7 +22,6 @@ using ColorSeq;
 using KS.Shell.Shells.HTTP;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Colors;
-using KS.Languages;
 using KS.Misc.Writers.FancyWriters.Tools;
 using System.Collections.Generic;
 

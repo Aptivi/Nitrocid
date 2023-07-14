@@ -21,8 +21,6 @@ using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 using KS.Files;
-using KS.Kernel.Exceptions;
-using KS.Languages;
 using KS.Shell.Shells.HTTP;
 
 namespace KS.Network.HTTP
