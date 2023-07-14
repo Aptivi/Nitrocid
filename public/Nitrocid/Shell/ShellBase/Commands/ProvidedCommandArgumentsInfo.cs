@@ -52,6 +52,10 @@ namespace KS.Shell.ShellBase.Commands
         /// Checks to see if the required arguments are provided
         /// </summary>
         public bool RequiredArgumentsProvided { get; private set; }
+        /// <summary>
+        /// Checks to see if the required switches are provided
+        /// </summary>
+        public bool RequiredSwitchesProvided { get; private set; }
 
         /// <summary>
         /// Makes a new instance of the command argument info with the user-provided command text
@@ -71,6 +75,7 @@ namespace KS.Shell.ShellBase.Commands
         {
             string Command;
             bool RequiredArgumentsProvided = true;
+            bool RequiredSwitchesProvided = true;
             Dictionary<string, CommandInfo> ShellCommands;
             Dictionary<string, CommandInfo> ModCommands;
 
@@ -112,7 +117,15 @@ namespace KS.Shell.ShellBase.Commands
                     !CommandInfo.CommandArgumentInfo.ArgumentsRequired;
             else
                 RequiredArgumentsProvided = true;
-            // TODO: Handle switch requirements here
+
+            // Check to see if the caller has provided required number of switches
+            if (CommandInfo?.CommandArgumentInfo is not null)
+                RequiredSwitchesProvided =
+                    CommandInfo.CommandArgumentInfo.Switches.Length == 0 ||
+                    EnclosedSwitches.Length >= CommandInfo.CommandArgumentInfo.Switches.Where((@switch) => @switch.IsRequired).Count() ||
+                    !CommandInfo.CommandArgumentInfo.Switches.Any((@switch) => @switch.IsRequired);
+            else
+                RequiredSwitchesProvided = true;
 
             // Install the parsed values to the new class instance
             ArgumentsList = EnclosedArgs;
@@ -120,6 +133,7 @@ namespace KS.Shell.ShellBase.Commands
             ArgumentsText = strArgs;
             this.Command = Command;
             this.RequiredArgumentsProvided = RequiredArgumentsProvided;
+            this.RequiredSwitchesProvided = RequiredSwitchesProvided;
         }
 
     }

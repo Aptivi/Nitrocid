@@ -27,6 +27,7 @@ using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Shells;
 using KS.Kernel.Events;
+using System.Linq;
 
 namespace KS.Shell.ShellBase.Commands
 {
@@ -113,6 +114,7 @@ namespace KS.Shell.ShellBase.Commands
                 var Switches = ArgumentInfo.SwitchesList;
                 string StrArgs = ArgumentInfo.ArgumentsText;
                 bool RequiredArgumentsProvided = ArgumentInfo.RequiredArgumentsProvided;
+                bool RequiredSwitchesProvided = ArgumentInfo.RequiredSwitchesProvided;
 
                 // Check to see if a requested command is obsolete
                 if (TargetCommands[Command].Flags.HasFlag(CommandFlags.Obsolete))
@@ -125,15 +127,26 @@ namespace KS.Shell.ShellBase.Commands
                 if (TargetCommands[Command].CommandArgumentInfo is not null)
                 {
                     var ArgInfo = TargetCommands[Command].CommandArgumentInfo;
-                    if (ArgInfo.ArgumentsRequired & RequiredArgumentsProvided | !ArgInfo.ArgumentsRequired)
+                    if (ArgInfo.ArgumentsRequired & RequiredArgumentsProvided ||
+                        !ArgInfo.ArgumentsRequired)
                     {
-                        var CommandBase = TargetCommands[Command].CommandBase;
-                        CommandBase.Execute(StrArgs, Args, Switches);
+                        if (ArgInfo.Switches.Any((@switch) => @switch.IsRequired) && RequiredSwitchesProvided ||
+                            !ArgInfo.Switches.Any((@switch) => @switch.IsRequired))
+                        {
+                            var CommandBase = TargetCommands[Command].CommandBase;
+                            CommandBase.Execute(StrArgs, Args, Switches);
+                        }
+                        else
+                        {
+                            DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough switches for {0}", Command);
+                            TextWriterColor.Write(Translate.DoTranslation("Required switches are not provided. See below for usage:"));
+                            HelpSystem.ShowHelp(Command, ShellType);
+                        }
                     }
                     else
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough arguments for {0}", Command);
-                        TextWriterColor.Write(Translate.DoTranslation("There was not enough arguments. See below for usage:"));
+                        TextWriterColor.Write(Translate.DoTranslation("Required arguments are not provided. See below for usage:"));
                         HelpSystem.ShowHelp(Command, ShellType);
                     }
                 }
