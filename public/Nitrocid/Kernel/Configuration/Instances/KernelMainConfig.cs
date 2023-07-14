@@ -738,6 +738,10 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public int DefaultChoiceOutputType { get; set; } = (int)ChoiceOutputType.Modern;
         /// <summary>
+        /// Sets console title on command execution
+        /// </summary>
+        public bool SetTitleOnCommandExecution { get; set; } = true;
+        /// <summary>
         /// Controls how the files will be sorted
         /// </summary>
         public int SortMode { get; set; } = (int)FilesystemSortOptions.FullName;

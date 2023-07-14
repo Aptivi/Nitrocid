@@ -649,6 +649,12 @@
                 "Enumeration": "ConsoleBase.Inputs.Styles.ChoiceStyle+ChoiceOutputType",
                 "EnumerationZeroBased": true,
                 "Description": "Default choice output type"
+            },
+            {
+                "Name": "Set console title on command execution",
+                "Type": "SBoolean",
+                "Variable": "SetTitleOnCommandExecution",
+                "Description": "Sets console title on command execution."
             }
         ]
     },

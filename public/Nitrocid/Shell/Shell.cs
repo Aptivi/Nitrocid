@@ -116,7 +116,8 @@ namespace KS.Shell
         /// <summary>
         /// Current shell type
         /// </summary>
-        public static string CurrentShellType => ShellStart.ShellStack[^1].ShellType;
+        public static string CurrentShellType =>
+            ShellStart.ShellStack[^1].ShellType;
 
         /// <summary>
         /// Last shell type
@@ -276,7 +277,8 @@ namespace KS.Shell
                         try
                         {
                             // Set title
-                            ConsoleExtensions.SetTitle($"{Kernel.Kernel.ConsoleTitle} - {Command}");
+                            if (Config.MainConfig.SetTitleOnCommandExecution)
+                                ConsoleExtensions.SetTitle($"{Kernel.Kernel.ConsoleTitle} - {Command}");
 
                             if (ModManager.ListModCommands(ShellType).ContainsKey(commandName))
                             {

@@ -308,6 +308,9 @@
         "DefaultChoiceOutputType": {
             "type": "integer"
         },
+        "SetTitleOnCommandExecution": {
+            "type": "boolean"
+        },
         "SortMode": {
             "type": "integer"
         },
@@ -886,6 +889,7 @@
         "AdminShellPromptPreset",
         "SqlShellPromptPreset",
         "DefaultChoiceOutputType",
+        "SetTitleOnCommandExecution",
         "SortMode",
         "SortDirection",
         "HiddenFiles",
