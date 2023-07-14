@@ -35,25 +35,18 @@ namespace KS.Shell.Shells.FTP.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            if (FTPShellCommon.FtpConnected)
+            TextWriterColor.Write("<<< C: {0}", StringArgs);
+            var ExecutedReply = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Execute(StringArgs);
+            if (ExecutedReply.Success)
             {
-                TextWriterColor.Write("<<< C: {0}", StringArgs);
-                var ExecutedReply = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Execute(StringArgs);
-                if (ExecutedReply.Success)
-                {
-                    TextWriterColor.Write(">>> [{0}] M: {1}", true, KernelColorType.Success, ExecutedReply.Code, ExecutedReply.Message);
-                    TextWriterColor.Write(">>> [{0}] I: {1}", true, KernelColorType.Success, ExecutedReply.Code, ExecutedReply.InfoMessages);
-                }
-                else
-                {
-                    TextWriterColor.Write(">>> [{0}] M: {1}", true, KernelColorType.Error, ExecutedReply.Code, ExecutedReply.Message);
-                    TextWriterColor.Write(">>> [{0}] I: {1}", true, KernelColorType.Error, ExecutedReply.Code, ExecutedReply.InfoMessages);
-                    TextWriterColor.Write(">>> [{0}] E: {1}", true, KernelColorType.Error, ExecutedReply.Code, ExecutedReply.ErrorMessage);
-                }
+                TextWriterColor.Write(">>> [{0}] M: {1}", true, KernelColorType.Success, ExecutedReply.Code, ExecutedReply.Message);
+                TextWriterColor.Write(">>> [{0}] I: {1}", true, KernelColorType.Success, ExecutedReply.Code, ExecutedReply.InfoMessages);
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("You haven't connected to any server yet"), true, KernelColorType.Error);
+                TextWriterColor.Write(">>> [{0}] M: {1}", true, KernelColorType.Error, ExecutedReply.Code, ExecutedReply.Message);
+                TextWriterColor.Write(">>> [{0}] I: {1}", true, KernelColorType.Error, ExecutedReply.Code, ExecutedReply.InfoMessages);
+                TextWriterColor.Write(">>> [{0}] E: {1}", true, KernelColorType.Error, ExecutedReply.Code, ExecutedReply.ErrorMessage);
             }
         }
 

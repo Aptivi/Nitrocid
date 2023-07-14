@@ -42,29 +42,22 @@ namespace KS.Network.FTP.Filesystem
         /// <exception cref="ArgumentNullException"></exception>
         public static FtpHash FTPGetHash(string File, FtpHashAlgorithm HashAlgorithm)
         {
-            if (FTPShellCommon.FtpConnected == true)
+            if (!string.IsNullOrEmpty(File))
             {
-                if (!string.IsNullOrEmpty(File))
+                if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).FileExists(File))
                 {
-                    if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).FileExists(File))
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Hashing {0} using {1}...", File, HashAlgorithm.ToString());
-                        return ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetChecksum(File, HashAlgorithm);
-                    }
-                    else
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", File);
-                        throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("{0} is not found in the server."), File);
-                    }
+                    DebugWriter.WriteDebug(DebugLevel.I, "Hashing {0} using {1}...", File, HashAlgorithm.ToString());
+                    return ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetChecksum(File, HashAlgorithm);
                 }
                 else
                 {
-                    throw new KernelException(KernelExceptionType.FTPNetwork, Translate.DoTranslation("Enter a remote file to be hashed."));
+                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", File);
+                    throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("{0} is not found in the server."), File);
                 }
             }
             else
             {
-                throw new KernelException(KernelExceptionType.FTPNetwork, Translate.DoTranslation("You must connect to a server before performing this operation."));
+                throw new KernelException(KernelExceptionType.FTPNetwork, Translate.DoTranslation("Enter a remote file to be hashed."));
             }
         }
 
@@ -87,43 +80,36 @@ namespace KS.Network.FTP.Filesystem
         /// <exception cref="ArgumentNullException"></exception>
         public static Dictionary<string, FtpHash> FTPGetHashes(string Directory, FtpHashAlgorithm HashAlgorithm, bool Recurse)
         {
-            if (FTPShellCommon.FtpConnected == true)
+            if (!string.IsNullOrEmpty(Directory))
             {
-                if (!string.IsNullOrEmpty(Directory))
+                if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DirectoryExists(Directory))
                 {
-                    if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DirectoryExists(Directory))
+                    var Hashes = new Dictionary<string, FtpHash>();
+                    FtpListItem[] Items;
+                    if (Recurse)
                     {
-                        var Hashes = new Dictionary<string, FtpHash>();
-                        FtpListItem[] Items;
-                        if (Recurse)
-                        {
-                            Items = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetListing(Directory, FtpListOption.Recursive);
-                        }
-                        else
-                        {
-                            Items = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetListing(Directory);
-                        }
-                        foreach (FtpListItem Item in Items)
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Hashing {0} using {1}...", Item.FullName, HashAlgorithm.ToString());
-                            Hashes.Add(Item.FullName, FTPGetHash(Item.FullName, HashAlgorithm));
-                        }
-                        return Hashes;
+                        Items = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetListing(Directory, FtpListOption.Recursive);
                     }
                     else
                     {
-                        DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", Directory);
-                        throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("{0} is not found in the server."), Directory);
+                        Items = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetListing(Directory);
                     }
+                    foreach (FtpListItem Item in Items)
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.I, "Hashing {0} using {1}...", Item.FullName, HashAlgorithm.ToString());
+                        Hashes.Add(Item.FullName, FTPGetHash(Item.FullName, HashAlgorithm));
+                    }
+                    return Hashes;
                 }
                 else
                 {
-                    throw new KernelException(KernelExceptionType.FTPNetwork, Translate.DoTranslation("Enter a remote directory."));
+                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", Directory);
+                    throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("{0} is not found in the server."), Directory);
                 }
             }
             else
             {
-                throw new KernelException(KernelExceptionType.FTPNetwork, Translate.DoTranslation("You must connect to a server before performing this operation."));
+                throw new KernelException(KernelExceptionType.FTPNetwork, Translate.DoTranslation("Enter a remote directory."));
             }
         }
 

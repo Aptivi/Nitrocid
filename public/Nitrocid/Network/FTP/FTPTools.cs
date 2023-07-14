@@ -52,7 +52,7 @@ namespace KS.Network.FTP
         /// <param name="Address">A host address</param>
         /// <param name="Port">A port for the address</param>
         /// <param name="EncryptionMode">FTP encryption mode</param>
-        public static void PromptForPassword(FtpClient clientFTP, string user, string Address = "", int Port = 0, FtpEncryptionMode EncryptionMode = FtpEncryptionMode.Explicit)
+        public static NetworkConnection PromptForPassword(FtpClient clientFTP, string user, string Address = "", int Port = 0, FtpEncryptionMode EncryptionMode = FtpEncryptionMode.Explicit)
         {
             // Make a new FTP client object instance (Used in case logging in using speed dial)
             if (clientFTP is null)
@@ -86,31 +86,28 @@ namespace KS.Network.FTP
             clientFTP.Credentials = new NetworkCredential(user, FTPShellCommon.FtpPass);
 
             // Connect to FTP
-            ConnectFTP(clientFTP);
+            return ConnectFTP(clientFTP);
         }
 
         /// <summary>
         /// Tries to connect to the FTP server
         /// </summary>
         /// <param name="address">An FTP server. You may specify it like "[address]" or "[address]:[port]"</param>
-        public static void TryToConnect(string address)
+        public static NetworkConnection TryToConnect(string address)
         {
-            if (FTPShellCommon.FtpConnected)
-            {
-                TextWriterColor.Write(Translate.DoTranslation("You should disconnect from server before connecting to another server"), true, KernelColorType.Error);
-                return;
-            }
             try
             {
                 // Create an FTP stream to connect to
-                string FtpHost       = address.Replace("ftpes://", "").Replace("ftps://", "").Replace("ftp://", "").Replace(address[address.LastIndexOf(":")..], "");
+                int indexOfPort = address.LastIndexOf(":");
+                string FtpHost       = address.Replace("ftpes://", "").Replace("ftps://", "").Replace("ftp://", "");
+                FtpHost = indexOfPort < 0 ? FtpHost : FtpHost.Replace(FtpHost[FtpHost.LastIndexOf(":")..], "");
                 string FtpPortString = address.Replace("ftpes://", "").Replace("ftps://", "").Replace("ftp://", "").Replace(FtpHost + ":", "");
                 DebugWriter.WriteDebug(DebugLevel.W, "Host: {0}, Port: {1}", FtpHost, FtpPortString);
                 bool portParsed = int.TryParse(FtpHost == FtpPortString ? "0" : FtpPortString, out int FtpPort);
                 if (!portParsed)
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Make sure that you specify the port correctly."), true, KernelColorType.Error);
-                    return;
+                    return null;
                 }
 
                 // Make a new FTP client object instance
@@ -150,20 +147,21 @@ namespace KS.Network.FTP
                 }
 
                 // If we didn't abort, prompt for password
-                PromptForPassword(_clientFTP, FTPShellCommon.FtpUser);
+                return PromptForPassword(_clientFTP, FTPShellCommon.FtpUser);
             }
             catch (Exception ex)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Error connecting to {0}: {1}", address, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriterColor.Write(Translate.DoTranslation("Error when trying to connect to {0}: {1}"), true, KernelColorType.Error, address, ex.Message);
+                return null;
             }
         }
 
         /// <summary>
         /// Tries to connect to the FTP server.
         /// </summary>
-        private static void ConnectFTP(FtpClient clientFTP)
+        private static NetworkConnection ConnectFTP(FtpClient clientFTP)
         {
             // Prepare profiles
             TextWriterColor.Write(Translate.DoTranslation("Preparing profiles... It could take several minutes..."));
@@ -224,7 +222,7 @@ namespace KS.Network.FTP
             {
                 // Failed trying to get profiles
                 TextWriterColor.Write(Translate.DoTranslation("Error when trying to connect to {0}: Connection timeout or lost connection"), true, KernelColorType.Error, clientFTP.Host);
-                return;
+                return null;
             }
 
             // Connect
@@ -236,36 +234,7 @@ namespace KS.Network.FTP
             // Show that it's connected
             TextWriterColor.Write(Translate.DoTranslation("Connected to {0}"), true, KernelColorType.Success, clientFTP.Host);
             DebugWriter.WriteDebug(DebugLevel.I, "Connected.");
-            FTPShellCommon.FtpConnected = true;
-
-            // Finalize current connection
-            FTPShellCommon.clientConnection = ftpConnection;
-
-            // If MOTD exists, show it
-            if (FTPShellCommon.FtpShowMotd)
-            {
-                if (clientFTP.FileExists("welcome.msg"))
-                    TextWriterColor.Write(FTPTransfer.FTPDownloadToString("welcome.msg"), true, KernelColorType.Banner);
-                else if (clientFTP.FileExists(".message"))
-                    TextWriterColor.Write(FTPTransfer.FTPDownloadToString(".message"), true, KernelColorType.Banner);
-            }
-
-            // Prepare to print current FTP directory
-            FTPShellCommon.FtpCurrentRemoteDir = clientFTP.GetWorkingDirectory();
-            DebugWriter.WriteDebug(DebugLevel.I, "Working directory: {0}", FTPShellCommon.FtpCurrentRemoteDir);
-            FTPShellCommon.FtpSite = clientFTP.Host;
-            FTPShellCommon.FtpUser = clientFTP.Credentials.UserName;
-
-            // Write connection information to Speed Dial file if it doesn't exist there
-            SpeedDialTools.TryAddEntryToSpeedDial(FTPShellCommon.FtpSite, clientFTP.Port, SpeedDialType.FTP, true, FTPShellCommon.FtpUser, clientFTP.Config.EncryptionMode);
-
-            // Initialize logging
-            clientFTP.Logger = new FTPLogger();
-            clientFTP.Config.LogUserName = Flags.FTPLoggerUsername;
-            clientFTP.Config.LogHost = Flags.FTPLoggerIP;
-
-            // Don't remove this, make a config entry for it, or set it to True! It will introduce security problems.
-            clientFTP.Config.LogPassword = false;
+            return ftpConnection;
         }
 
         /// <summary>

@@ -16,35 +16,25 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.ConsoleBase.Colors;
-using KS.Languages;
-using KS.Misc.Writers.ConsoleWriters;
-using KS.Network.FTP;
 using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Shells.FTP.Commands
 {
     /// <summary>
-    /// Prompts you to select an address to connect to
+    /// Detaches the shell from the current working server
     /// </summary>
     /// <remarks>
-    /// We have implemented speed dial to the FTP client to quickly connect to the last-connected FTP server. This is so you don't have to repeat the connect command to the same server over and over.
+    /// If you want to detach the shell from the current working server, but don't want to disconnect from it, use this command.
     /// <br></br>
-    /// For this, we have implemented this command for easier access to FTP servers.
     /// </remarks>
-    class FTP_QuickConnectCommand : BaseCommand, ICommand
+    class FTP_DetachCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            if (!FTPShellCommon.FtpConnected)
-            {
-                FTPTools.QuickConnect();
-            }
-            else
-            {
-                TextWriterColor.Write(Translate.DoTranslation("You should disconnect from server before connecting to another server"), true, KernelColorType.Error);
-            }
+            ((FTPShell)ShellStart.ShellStack[^1].ShellBase).detaching = true;
+            ShellStart.KillShell();
         }
 
     }

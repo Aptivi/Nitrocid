@@ -54,33 +54,26 @@ namespace KS.Network.FTP.Transfer
         /// <returns>True if successful; False if unsuccessful</returns>
         public static bool FTPGetFile(string File, string LocalFile)
         {
-            if (FTPShellCommon.FtpConnected)
+            try
             {
-                try
-                {
-                    // Show a message to download
-                    EventsManager.FireEvent(EventType.FTPPreDownload, File);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Downloading file {0}...", File);
+                // Show a message to download
+                EventsManager.FireEvent(EventType.FTPPreDownload, File);
+                DebugWriter.WriteDebug(DebugLevel.I, "Downloading file {0}...", File);
 
-                    // Try to download 3 times
-                    string LocalFilePath = Files.Filesystem.NeutralizePath(LocalFile, FTPShellCommon.FtpCurrentDirectory);
-                    var Result = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DownloadFile(LocalFilePath, File, FtpLocalExists.Resume, (FtpVerify)((int)FtpVerify.Retry + (int)FtpVerify.Throw), FTPTransferProgress.FileProgress);
+                // Try to download 3 times
+                string LocalFilePath = Files.Filesystem.NeutralizePath(LocalFile, FTPShellCommon.FtpCurrentDirectory);
+                var Result = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DownloadFile(LocalFilePath, File, FtpLocalExists.Resume, (FtpVerify)((int)FtpVerify.Retry + (int)FtpVerify.Throw), FTPTransferProgress.FileProgress);
 
-                    // Show a message that it's downloaded
-                    DebugWriter.WriteDebug(DebugLevel.I, "Downloaded file {0}.", File);
-                    EventsManager.FireEvent(EventType.FTPPostDownload, File, Result.IsSuccess());
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebugStackTrace(ex);
-                    DebugWriter.WriteDebug(DebugLevel.E, "Download failed for file {0}: {1}", File, ex.Message);
-                    EventsManager.FireEvent(EventType.FTPPostDownload, File, false);
-                }
+                // Show a message that it's downloaded
+                DebugWriter.WriteDebug(DebugLevel.I, "Downloaded file {0}.", File);
+                EventsManager.FireEvent(EventType.FTPPostDownload, File, Result.IsSuccess());
+                return true;
             }
-            else
+            catch (Exception ex)
             {
-                throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("You must connect to server before performing transmission."));
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Download failed for file {0}: {1}", File, ex.Message);
+                EventsManager.FireEvent(EventType.FTPPostDownload, File, false);
             }
             return false;
         }
@@ -100,66 +93,59 @@ namespace KS.Network.FTP.Transfer
         /// <returns>True if successful; False if unsuccessful</returns>
         public static bool FTPGetFolder(string Folder, string LocalFolder)
         {
-            if (FTPShellCommon.FtpConnected)
+            try
             {
-                try
+                // Show a message to download
+                EventsManager.FireEvent(EventType.FTPPreDownload, Folder);
+                DebugWriter.WriteDebug(DebugLevel.I, "Downloading folder {0}...", Folder);
+
+                // Try to download folder
+                string LocalFolderPath = Files.Filesystem.NeutralizePath(LocalFolder, FTPShellCommon.FtpCurrentDirectory);
+                var Results = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DownloadDirectory(LocalFolderPath, Folder, FtpFolderSyncMode.Update, FtpLocalExists.Resume, (FtpVerify)((int)FtpVerify.Retry + (int)FtpVerify.Throw), null, FTPTransferProgress.MultipleProgress);
+
+                // Print download results to debugger
+                var Failed = false;
+                DebugWriter.WriteDebug(DebugLevel.I, "Folder download result:");
+                foreach (FtpResult Result in Results)
                 {
-                    // Show a message to download
-                    EventsManager.FireEvent(EventType.FTPPreDownload, Folder);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Downloading folder {0}...", Folder);
-
-                    // Try to download folder
-                    string LocalFolderPath = Files.Filesystem.NeutralizePath(LocalFolder, FTPShellCommon.FtpCurrentDirectory);
-                    var Results = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DownloadDirectory(LocalFolderPath, Folder, FtpFolderSyncMode.Update, FtpLocalExists.Resume, (FtpVerify)((int)FtpVerify.Retry + (int)FtpVerify.Throw), null, FTPTransferProgress.MultipleProgress);
-
-                    // Print download results to debugger
-                    var Failed = false;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Folder download result:");
-                    foreach (FtpResult Result in Results)
+                    DebugWriter.WriteDebug(DebugLevel.I, "-- {0} --", Result.Name);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Success: {0}", Result.IsSuccess);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Skipped: {0}", Result.IsSkipped);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Failure: {0}", Result.IsFailed);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Size: {0}", Result.Size);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Type: {0}", Result.Type);
+                    if (Result.IsFailed)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "-- {0} --", Result.Name);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Success: {0}", Result.IsSuccess);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Skipped: {0}", Result.IsSkipped);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Failure: {0}", Result.IsFailed);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Size: {0}", Result.Size);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Type: {0}", Result.Type);
-                        if (Result.IsFailed)
+                        DebugWriter.WriteDebug(DebugLevel.E, "Download failed for {0}", Result.Name);
+
+                        // Download could fail with no exception in very rare cases.
+                        if (Result.Exception is not null)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.E, "Download failed for {0}", Result.Name);
-
-                            // Download could fail with no exception in very rare cases.
-                            if (Result.Exception is not null)
-                            {
-                                DebugWriter.WriteDebug(DebugLevel.E, "Exception {0}", Result.Exception.Message);
-                                DebugWriter.WriteDebugStackTrace(Result.Exception);
-                            }
-                            Failed = true;
+                            DebugWriter.WriteDebug(DebugLevel.E, "Exception {0}", Result.Exception.Message);
+                            DebugWriter.WriteDebugStackTrace(Result.Exception);
                         }
-                        EventsManager.FireEvent(EventType.FTPPostDownload, Result.Name, !Failed);
+                        Failed = true;
                     }
+                    EventsManager.FireEvent(EventType.FTPPostDownload, Result.Name, !Failed);
+                }
 
-                    // Show a message that it's downloaded
-                    if (!Failed)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Downloaded folder {0}.", Folder);
-                    }
-                    else
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Downloaded folder {0} partially due to failure.", Folder);
-                    }
-                    EventsManager.FireEvent(EventType.FTPPostDownload, Folder, !Failed);
-                    return !Failed;
-                }
-                catch (Exception ex)
+                // Show a message that it's downloaded
+                if (!Failed)
                 {
-                    DebugWriter.WriteDebugStackTrace(ex);
-                    DebugWriter.WriteDebug(DebugLevel.E, "Download failed for folder {0}: {1}", Folder, ex.Message);
-                    EventsManager.FireEvent(EventType.FTPPostDownload, Folder, false);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Downloaded folder {0}.", Folder);
                 }
+                else
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Downloaded folder {0} partially due to failure.", Folder);
+                }
+                EventsManager.FireEvent(EventType.FTPPostDownload, Folder, !Failed);
+                return !Failed;
             }
-            else
+            catch (Exception ex)
             {
-                throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("You must connect to server before performing transmission."));
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Download failed for folder {0}: {1}", Folder, ex.Message);
+                EventsManager.FireEvent(EventType.FTPPostDownload, Folder, false);
             }
             return false;
         }
@@ -179,24 +165,17 @@ namespace KS.Network.FTP.Transfer
         /// <returns>True if successful; False if unsuccessful</returns>
         public static bool FTPUploadFile(string File, string LocalFile)
         {
-            if (FTPShellCommon.FtpConnected)
-            {
-                // Show a message to download
-                EventsManager.FireEvent(EventType.FTPPreUpload, File);
-                DebugWriter.WriteDebug(DebugLevel.I, "Uploading file {0}...", LocalFile);
-                DebugWriter.WriteDebug(DebugLevel.I, "Where in the remote: {0}", File);
+            // Show a message to download
+            EventsManager.FireEvent(EventType.FTPPreUpload, File);
+            DebugWriter.WriteDebug(DebugLevel.I, "Uploading file {0}...", LocalFile);
+            DebugWriter.WriteDebug(DebugLevel.I, "Where in the remote: {0}", File);
 
-                // Try to upload
-                string LocalFilePath = Files.Filesystem.NeutralizePath(LocalFile, FTPShellCommon.FtpCurrentDirectory);
-                bool Success = Convert.ToBoolean(((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).UploadFile(LocalFilePath, File, FtpRemoteExists.Resume, true, FtpVerify.Retry, FTPTransferProgress.FileProgress));
-                DebugWriter.WriteDebug(DebugLevel.I, "Uploaded file {0} to {1} with status {2}.", LocalFile, File, Success);
-                EventsManager.FireEvent(EventType.FTPPostUpload, File, Success);
-                return Success;
-            }
-            else
-            {
-                throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("You must connect to server before performing transmission."));
-            }
+            // Try to upload
+            string LocalFilePath = Files.Filesystem.NeutralizePath(LocalFile, FTPShellCommon.FtpCurrentDirectory);
+            bool Success = Convert.ToBoolean(((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).UploadFile(LocalFilePath, File, FtpRemoteExists.Resume, true, FtpVerify.Retry, FTPTransferProgress.FileProgress));
+            DebugWriter.WriteDebug(DebugLevel.I, "Uploaded file {0} to {1} with status {2}.", LocalFile, File, Success);
+            EventsManager.FireEvent(EventType.FTPPostUpload, File, Success);
+            return Success;
         }
 
         /// <summary>
@@ -214,58 +193,51 @@ namespace KS.Network.FTP.Transfer
         /// <returns>True if successful; False if unsuccessful</returns>
         public static bool FTPUploadFolder(string Folder, string LocalFolder)
         {
-            if (FTPShellCommon.FtpConnected)
+            // Show a message to download
+            EventsManager.FireEvent(EventType.FTPPreUpload, Folder);
+            DebugWriter.WriteDebug(DebugLevel.I, "Uploading folder {0}...", Folder);
+
+            // Try to upload
+            string LocalFolderPath = Files.Filesystem.NeutralizePath(LocalFolder, FTPShellCommon.FtpCurrentDirectory);
+            var Results = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).UploadDirectory(LocalFolderPath, Folder, FtpFolderSyncMode.Update, FtpRemoteExists.Resume, FtpVerify.Retry, null, FTPTransferProgress.MultipleProgress);
+
+            // Print upload results to debugger
+            var Failed = false;
+            DebugWriter.WriteDebug(DebugLevel.I, "Folder upload result:");
+            foreach (FtpResult Result in Results)
             {
-                // Show a message to download
-                EventsManager.FireEvent(EventType.FTPPreUpload, Folder);
-                DebugWriter.WriteDebug(DebugLevel.I, "Uploading folder {0}...", Folder);
-
-                // Try to upload
-                string LocalFolderPath = Files.Filesystem.NeutralizePath(LocalFolder, FTPShellCommon.FtpCurrentDirectory);
-                var Results = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).UploadDirectory(LocalFolderPath, Folder, FtpFolderSyncMode.Update, FtpRemoteExists.Resume, FtpVerify.Retry, null, FTPTransferProgress.MultipleProgress);
-
-                // Print upload results to debugger
-                var Failed = false;
-                DebugWriter.WriteDebug(DebugLevel.I, "Folder upload result:");
-                foreach (FtpResult Result in Results)
+                DebugWriter.WriteDebug(DebugLevel.I, "-- {0} --", Result.Name);
+                DebugWriter.WriteDebug(DebugLevel.I, "Success: {0}", Result.IsSuccess);
+                DebugWriter.WriteDebug(DebugLevel.I, "Skipped: {0}", Result.IsSkipped);
+                DebugWriter.WriteDebug(DebugLevel.I, "Failure: {0}", Result.IsFailed);
+                DebugWriter.WriteDebug(DebugLevel.I, "Size: {0}", Result.Size);
+                DebugWriter.WriteDebug(DebugLevel.I, "Type: {0}", Result.Type);
+                if (Result.IsFailed)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "-- {0} --", Result.Name);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Success: {0}", Result.IsSuccess);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Skipped: {0}", Result.IsSkipped);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Failure: {0}", Result.IsFailed);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Size: {0}", Result.Size);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Type: {0}", Result.Type);
-                    if (Result.IsFailed)
+                    DebugWriter.WriteDebug(DebugLevel.E, "Upload failed for {0}", Result.Name);
+
+                    // Upload could fail with no exception in very rare cases.
+                    if (Result.Exception is not null)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Upload failed for {0}", Result.Name);
-
-                        // Upload could fail with no exception in very rare cases.
-                        if (Result.Exception is not null)
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.E, "Exception {0}", Result.Exception.Message);
-                            DebugWriter.WriteDebugStackTrace(Result.Exception);
-                        }
-                        Failed = true;
+                        DebugWriter.WriteDebug(DebugLevel.E, "Exception {0}", Result.Exception.Message);
+                        DebugWriter.WriteDebugStackTrace(Result.Exception);
                     }
-                    EventsManager.FireEvent(EventType.FTPPostUpload, Result.Name, !Failed);
+                    Failed = true;
                 }
+                EventsManager.FireEvent(EventType.FTPPostUpload, Result.Name, !Failed);
+            }
 
-                // Show a message that it's downloaded
-                if (!Failed)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Uploaded folder {0}.", Folder);
-                }
-                else
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Uploaded folder {0} partially due to failure.", Folder);
-                }
-                EventsManager.FireEvent(EventType.FTPPostUpload, Folder, !Failed);
-                return !Failed;
+            // Show a message that it's downloaded
+            if (!Failed)
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Uploaded folder {0}.", Folder);
             }
             else
             {
-                throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("You must connect to server before performing transmission."));
+                DebugWriter.WriteDebug(DebugLevel.I, "Uploaded folder {0} partially due to failure.", Folder);
             }
+            EventsManager.FireEvent(EventType.FTPPostUpload, Folder, !Failed);
+            return !Failed;
         }
 
         /// <summary>
@@ -275,36 +247,29 @@ namespace KS.Network.FTP.Transfer
         /// <returns>Contents of the file</returns>
         public static string FTPDownloadToString(string File)
         {
-            if (FTPShellCommon.FtpConnected)
+            try
             {
-                try
-                {
-                    // Show a message to download
-                    EventsManager.FireEvent(EventType.FTPPreDownload, File);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Downloading {0}...", File);
+                // Show a message to download
+                EventsManager.FireEvent(EventType.FTPPreDownload, File);
+                DebugWriter.WriteDebug(DebugLevel.I, "Downloading {0}...", File);
 
-                    // Try to download 3 times
-                    var DownloadedBytes = Array.Empty<byte>();
-                    var DownloadedContent = new StringBuilder();
-                    bool Downloaded = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DownloadBytes(out DownloadedBytes, File);
-                    foreach (byte DownloadedByte in DownloadedBytes)
-                        DownloadedContent.Append(Convert.ToChar(DownloadedByte));
+                // Try to download 3 times
+                var DownloadedBytes = Array.Empty<byte>();
+                var DownloadedContent = new StringBuilder();
+                bool Downloaded = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DownloadBytes(out DownloadedBytes, File);
+                foreach (byte DownloadedByte in DownloadedBytes)
+                    DownloadedContent.Append(Convert.ToChar(DownloadedByte));
 
-                    // Show a message that it's downloaded
-                    DebugWriter.WriteDebug(DebugLevel.I, "Downloaded {0}.", File);
-                    EventsManager.FireEvent(EventType.FTPPostDownload, File, Downloaded);
-                    return DownloadedContent.ToString();
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebugStackTrace(ex);
-                    DebugWriter.WriteDebug(DebugLevel.E, "Download failed for {0}: {1}", File, ex.Message);
-                    EventsManager.FireEvent(EventType.FTPPostDownload, File, false);
-                }
+                // Show a message that it's downloaded
+                DebugWriter.WriteDebug(DebugLevel.I, "Downloaded {0}.", File);
+                EventsManager.FireEvent(EventType.FTPPostDownload, File, Downloaded);
+                return DownloadedContent.ToString();
             }
-            else
+            catch (Exception ex)
             {
-                throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("You must connect to server before performing transmission."));
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Download failed for {0}: {1}", File, ex.Message);
+                EventsManager.FireEvent(EventType.FTPPostDownload, File, false);
             }
             return "";
         }

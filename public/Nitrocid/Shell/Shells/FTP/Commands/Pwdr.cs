@@ -32,17 +32,8 @@ namespace KS.Shell.Shells.FTP.Commands
     class FTP_PwdrCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            if (FTPShellCommon.FtpConnected)
-            {
-                TextWriterColor.Write(Translate.DoTranslation("Remote directory: {0}"), FTPShellCommon.FtpCurrentRemoteDir);
-            }
-            else
-            {
-                TextWriterColor.Write(Translate.DoTranslation("You must connect to server before getting current remote directory."), true, KernelColorType.Error);
-            }
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>
+            TextWriterColor.Write(Translate.DoTranslation("Remote directory: {0}"), FTPShellCommon.FtpCurrentRemoteDir);
 
     }
 }

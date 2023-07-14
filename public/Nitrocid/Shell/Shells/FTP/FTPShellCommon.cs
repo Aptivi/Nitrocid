@@ -34,7 +34,6 @@ namespace KS.Shell.Shells.FTP
         internal static int connectTimeout = 15000;
         internal static int dataConnectTimeout = 15000;
         internal static NetworkConnection clientConnection;
-        internal static bool FtpConnected;
         internal static string FtpSite;
         internal static string FtpPass;
         internal static string FtpUser;

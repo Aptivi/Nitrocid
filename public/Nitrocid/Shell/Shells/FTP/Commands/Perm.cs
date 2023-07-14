@@ -38,21 +38,10 @@ namespace KS.Shell.Shells.FTP.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            if (FTPShellCommon.FtpConnected)
-            {
-                if (FTPFilesystem.FTPChangeGroups(ListArgsOnly[0], Convert.ToInt32(ListArgsOnly[1])))
-                {
-                    TextWriterColor.Write(Translate.DoTranslation("Permissions set successfully for file") + " {0}", true, KernelColorType.Success, ListArgsOnly[0]);
-                }
-                else
-                {
-                    TextWriterColor.Write(Translate.DoTranslation("Failed to set permissions of {0} to {1}."), true, KernelColorType.Error, ListArgsOnly[0], ListArgsOnly[1]);
-                }
-            }
+            if (FTPFilesystem.FTPChangePermissions(ListArgsOnly[0], Convert.ToInt32(ListArgsOnly[1])))
+                TextWriterColor.Write(Translate.DoTranslation("Permissions set successfully for file") + " {0}", true, KernelColorType.Success, ListArgsOnly[0]);
             else
-            {
-                TextWriterColor.Write(Translate.DoTranslation("You must connect to server before performing filesystem operations."), true, KernelColorType.Error);
-            }
+                TextWriterColor.Write(Translate.DoTranslation("Failed to set permissions of {0} to {1}."), true, KernelColorType.Error, ListArgsOnly[0], ListArgsOnly[1]);
         }
 
     }

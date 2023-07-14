@@ -19,12 +19,17 @@
 using System;
 using System.Threading;
 using FluentFTP;
+using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
+using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.Base.Connections;
+using KS.Network.FTP.Transfer;
+using KS.Network.FTP;
+using KS.Network.SpeedDial;
 using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Shells.FTP
@@ -42,14 +47,43 @@ namespace KS.Shell.Shells.FTP
         public override bool Bail { get; set; }
 
         /// <inheritdoc/>
+        internal bool detaching = false;
+
+        /// <inheritdoc/>
         public override void InitializeShell(params object[] ShellArgs)
         {
             // Parse shell arguments
-            string FtpCommand;
-            bool Connects = ShellArgs.Length > 0;
-            string Address = "";
-            if (Connects)
-                Address = Convert.ToString(ShellArgs[0]);
+            NetworkConnection ftpConnection = (NetworkConnection)ShellArgs[0];
+            FtpClient clientFTP = (FtpClient)ftpConnection.ConnectionInstance;
+
+            // Finalize current connection
+            FTPShellCommon.clientConnection = ftpConnection;
+
+            // If MOTD exists, show it
+            if (FTPShellCommon.FtpShowMotd)
+            {
+                if (clientFTP.FileExists("welcome.msg"))
+                    TextWriterColor.Write(FTPTransfer.FTPDownloadToString("welcome.msg"), true, KernelColorType.Banner);
+                else if (clientFTP.FileExists(".message"))
+                    TextWriterColor.Write(FTPTransfer.FTPDownloadToString(".message"), true, KernelColorType.Banner);
+            }
+
+            // Prepare to print current FTP directory
+            FTPShellCommon.FtpCurrentRemoteDir = clientFTP.GetWorkingDirectory();
+            DebugWriter.WriteDebug(DebugLevel.I, "Working directory: {0}", FTPShellCommon.FtpCurrentRemoteDir);
+            FTPShellCommon.FtpSite = clientFTP.Host;
+            FTPShellCommon.FtpUser = clientFTP.Credentials.UserName;
+
+            // Write connection information to Speed Dial file if it doesn't exist there
+            SpeedDialTools.TryAddEntryToSpeedDial(FTPShellCommon.FtpSite, clientFTP.Port, SpeedDialType.FTP, true, clientFTP.Credentials.UserName, clientFTP.Config.EncryptionMode);
+
+            // Initialize logging
+            clientFTP.Logger = new FTPLogger();
+            clientFTP.Config.LogUserName = Flags.FTPLoggerUsername;
+            clientFTP.Config.LogHost = Flags.FTPLoggerIP;
+
+            // Don't remove this, make a config entry for it, or set it to True! It will introduce security problems.
+            clientFTP.Config.LogPassword = false;
 
             // Populate FTP current directory
             FTPShellCommon.FtpCurrentDirectory = Paths.HomePath;
@@ -59,18 +93,7 @@ namespace KS.Shell.Shells.FTP
             {
                 try
                 {
-                    // Try to connect if IP address is specified.
-                    if (Connects)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, $"Currently connecting to {Address} by \"ftp (address)\"...");
-                        FtpCommand = $"connect {Address}";
-                        Connects = false;
-                        Shell.GetLine(FtpCommand, "", ShellType);
-                    }
-                    else
-                    {
-                        Shell.GetLine();
-                    }
+                    Shell.GetLine();
                 }
                 catch (ThreadInterruptedException)
                 {
@@ -82,25 +105,25 @@ namespace KS.Shell.Shells.FTP
                     DebugWriter.WriteDebugStackTrace(ex);
                     throw new KernelException(KernelExceptionType.FTPShell, Translate.DoTranslation("There was an error in the FTP shell:") + " {0}", ex, ex.Message);
                 }
-            }
 
-            // Check if the shell is going to exit
-            if (Bail)
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, "Exiting shell...");
-                if (FTPShellCommon.FtpConnected)
+                // Check if the shell is going to exit
+                if (Bail)
                 {
-                    FTPShellCommon.FtpConnected = false;
-                    ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance)?.Disconnect();
-                    int connectionIndex = NetworkConnectionTools.GetConnectionIndex(FTPShellCommon.ClientFTP);
-                    NetworkConnectionTools.CloseConnection(connectionIndex);
-                    FTPShellCommon.clientConnection = null;
+                    DebugWriter.WriteDebug(DebugLevel.W, "Exiting shell...");
+                    if (!detaching)
+                    {
+                        clientFTP?.Disconnect();
+                        int connectionIndex = NetworkConnectionTools.GetConnectionIndex(FTPShellCommon.ClientFTP);
+                        NetworkConnectionTools.CloseConnection(connectionIndex);
+                        FTPShellCommon.clientConnection = null;
+                    }
+                    detaching = false;
+                    FTPShellCommon.FtpSite = "";
+                    FTPShellCommon.FtpCurrentDirectory = "";
+                    FTPShellCommon.FtpCurrentRemoteDir = "";
+                    FTPShellCommon.FtpUser = "";
+                    FTPShellCommon.FtpPass = "";
                 }
-                FTPShellCommon.FtpSite = "";
-                FTPShellCommon.FtpCurrentDirectory = "";
-                FTPShellCommon.FtpCurrentRemoteDir = "";
-                FTPShellCommon.FtpUser = "";
-                FTPShellCommon.FtpPass = "";
             }
         }
 

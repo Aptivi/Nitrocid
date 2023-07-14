@@ -57,67 +57,60 @@ namespace KS.Network.FTP.Filesystem
         /// <exception cref="InvalidOperationException"></exception>
         public static List<string> FTPListRemote(string Path, bool ShowDetails)
         {
-            if (FTPShellCommon.FtpConnected)
+            var EntryBuilder = new StringBuilder();
+            var Entries = new List<string>();
+            long FileSize;
+            DateTime ModDate;
+            FtpListItem[] Listing;
+
+            try
             {
-                var EntryBuilder = new StringBuilder();
-                var Entries = new List<string>();
-                long FileSize;
-                DateTime ModDate;
-                FtpListItem[] Listing;
-
-                try
+                if (!string.IsNullOrEmpty(Path))
                 {
-                    if (!string.IsNullOrEmpty(Path))
+                    Listing = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetListing(Path, FtpListOption.Auto);
+                }
+                else
+                {
+                    Listing = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetListing(FTPShellCommon.FtpCurrentRemoteDir, FtpListOption.Auto);
+                }
+                foreach (FtpListItem DirListFTP in Listing)
+                {
+                    FtpListItem finalDirListFTP = DirListFTP;
+                    EntryBuilder.Append($"- {finalDirListFTP.Name}");
+                    // Check to see if the file that we're dealing with is a symbolic link
+                    if (finalDirListFTP.Type == FtpObjectType.Link)
                     {
-                        Listing = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetListing(Path, FtpListOption.Auto);
+                        EntryBuilder.Append(" >> ");
+                        EntryBuilder.Append(finalDirListFTP.LinkTarget);
+                        finalDirListFTP = finalDirListFTP.LinkObject;
                     }
-                    else
-                    {
-                        Listing = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetListing(FTPShellCommon.FtpCurrentRemoteDir, FtpListOption.Auto);
-                    }
-                    foreach (FtpListItem DirListFTP in Listing)
-                    {
-                        FtpListItem finalDirListFTP = DirListFTP;
-                        EntryBuilder.Append($"- {finalDirListFTP.Name}");
-                        // Check to see if the file that we're dealing with is a symbolic link
-                        if (finalDirListFTP.Type == FtpObjectType.Link)
-                        {
-                            EntryBuilder.Append(" >> ");
-                            EntryBuilder.Append(finalDirListFTP.LinkTarget);
-                            finalDirListFTP = finalDirListFTP.LinkObject;
-                        }
 
-                        if (finalDirListFTP is not null)
+                    if (finalDirListFTP is not null)
+                    {
+                        if (finalDirListFTP.Type == FtpObjectType.File)
                         {
-                            if (finalDirListFTP.Type == FtpObjectType.File)
+                            if (ShowDetails)
                             {
-                                if (ShowDetails)
-                                {
-                                    EntryBuilder.Append(": ");
-                                    FileSize = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetFileSize(finalDirListFTP.FullName);
-                                    ModDate = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetModifiedTime(finalDirListFTP.FullName);
-                                    EntryBuilder.Append(ColorTools.GetColor(KernelColorType.ListValue).VTSequenceForeground + string.Format(Translate.DoTranslation("{0} KB | Modified in: {1}"), FileSize / 1024d, ModDate.ToString()));
-                                }
-                            }
-                            else if (finalDirListFTP.Type == FtpObjectType.Directory)
-                            {
-                                EntryBuilder.Append('/');
+                                EntryBuilder.Append(": ");
+                                FileSize = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetFileSize(finalDirListFTP.FullName);
+                                ModDate = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetModifiedTime(finalDirListFTP.FullName);
+                                EntryBuilder.Append(ColorTools.GetColor(KernelColorType.ListValue).VTSequenceForeground + string.Format(Translate.DoTranslation("{0} KB | Modified in: {1}"), FileSize / 1024d, ModDate.ToString()));
                             }
                         }
-                        Entries.Add(EntryBuilder.ToString());
-                        EntryBuilder.Clear();
+                        else if (finalDirListFTP.Type == FtpObjectType.Directory)
+                        {
+                            EntryBuilder.Append('/');
+                        }
                     }
-                    return Entries;
+                    Entries.Add(EntryBuilder.ToString());
+                    EntryBuilder.Clear();
                 }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebugStackTrace(ex);
-                    throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("Failed to list remote files: {0}"), ex, ex.Message);
-                }
+                return Entries;
             }
-            else
+            catch (Exception ex)
             {
-                throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("You should connect to server before listing all remote files."));
+                DebugWriter.WriteDebugStackTrace(ex);
+                throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("Failed to list remote files: {0}"), ex, ex.Message);
             }
         }
 
@@ -128,33 +121,26 @@ namespace KS.Network.FTP.Filesystem
         /// <returns>True if successful; False if unsuccessful</returns>
         public static bool FTPDeleteRemote(string Target)
         {
-            if (FTPShellCommon.FtpConnected)
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Deleting {0}...", Target);
+            DebugWriter.WriteDebug(DebugLevel.I, "Deleting {0}...", Target);
 
-                // Delete a file or folder
-                if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).FileExists(Target))
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "{0} is a file.", Target);
-                    ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DeleteFile(Target);
-                }
-                else if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DirectoryExists(Target))
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "{0} is a folder.", Target);
-                    ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DeleteDirectory(Target);
-                }
-                else
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", Target);
-                    throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("{0} is not found in the server."), Target);
-                }
-                DebugWriter.WriteDebug(DebugLevel.I, "Deleted {0}", Target);
-                return true;
+            // Delete a file or folder
+            if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).FileExists(Target))
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "{0} is a file.", Target);
+                ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DeleteFile(Target);
+            }
+            else if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DirectoryExists(Target))
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "{0} is a folder.", Target);
+                ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DeleteDirectory(Target);
             }
             else
             {
-                throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("You must connect to server with administrative privileges before performing the deletion."));
+                DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", Target);
+                throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("{0} is not found in the server."), Target);
             }
+            DebugWriter.WriteDebug(DebugLevel.I, "Deleted {0}", Target);
+            return true;
         }
 
         /// <summary>
@@ -166,31 +152,24 @@ namespace KS.Network.FTP.Filesystem
         /// <exception cref="ArgumentNullException"></exception>
         public static bool FTPChangeRemoteDir(string Directory)
         {
-            if (FTPShellCommon.FtpConnected == true)
+            if (!string.IsNullOrEmpty(Directory))
             {
-                if (!string.IsNullOrEmpty(Directory))
+                if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DirectoryExists(Directory))
                 {
-                    if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DirectoryExists(Directory))
-                    {
-                        // Directory exists, go to the new directory
-                        ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).SetWorkingDirectory(Directory);
-                        FTPShellCommon.FtpCurrentRemoteDir = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetWorkingDirectory();
-                        return true;
-                    }
-                    else
-                    {
-                        // Directory doesn't exist, go to the old directory
-                        throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("Directory {0} not found."), Directory);
-                    }
+                    // Directory exists, go to the new directory
+                    ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).SetWorkingDirectory(Directory);
+                    FTPShellCommon.FtpCurrentRemoteDir = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetWorkingDirectory();
+                    return true;
                 }
                 else
                 {
-                    throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("Enter a remote directory. \"..\" to go back"));
+                    // Directory doesn't exist, go to the old directory
+                    throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("Directory {0} not found."), Directory);
                 }
             }
             else
             {
-                throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("You must connect to a server before changing directory"));
+                throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("Enter a remote directory. \"..\" to go back"));
             }
         }
 
@@ -236,32 +215,19 @@ namespace KS.Network.FTP.Filesystem
         /// <exception cref="InvalidOperationException"></exception>
         public static bool FTPMoveItem(string Source, string Target)
         {
-            if (FTPShellCommon.FtpConnected)
-            {
-                var Success = false;
+            var Success = false;
 
-                // Begin the moving process
-                string SourceFile = Source.Split('/').Last();
-                DebugWriter.WriteDebug(DebugLevel.I, "Moving from {0} to {1} with the source file of {2}...", Source, Target, SourceFile);
-                if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DirectoryExists(Source))
-                {
-                    Success = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).MoveDirectory(Source, Target);
-                }
-                else if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).FileExists(Source) & ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DirectoryExists(Target))
-                {
-                    Success = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).MoveFile(Source, Target + SourceFile);
-                }
-                else if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).FileExists(Source))
-                {
-                    Success = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).MoveFile(Source, Target);
-                }
-                DebugWriter.WriteDebug(DebugLevel.I, "Moved. Result: {0}", Success);
-                return Success;
-            }
-            else
-            {
-                throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("You must connect to server before performing transmission."));
-            }
+            // Begin the moving process
+            string SourceFile = Source.Split('/').Last();
+            DebugWriter.WriteDebug(DebugLevel.I, "Moving from {0} to {1} with the source file of {2}...", Source, Target, SourceFile);
+            if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DirectoryExists(Source))
+                Success = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).MoveDirectory(Source, Target);
+            else if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).FileExists(Source) & ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DirectoryExists(Target))
+                Success = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).MoveFile(Source, Target + SourceFile);
+            else if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).FileExists(Source))
+                Success = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).MoveFile(Source, Target);
+            DebugWriter.WriteDebug(DebugLevel.I, "Moved. Result: {0}", Success);
+            return Success;
         }
 
         /// <summary>
@@ -273,85 +239,71 @@ namespace KS.Network.FTP.Filesystem
         /// <exception cref="InvalidOperationException"></exception>
         public static bool FTPCopyItem(string Source, string Target)
         {
-            if (FTPShellCommon.FtpConnected)
+            bool Success = true;
+            object Result = null;
+
+            // Begin the copying process
+            string SourceFile = Source.Split('/').Last();
+            DebugWriter.WriteDebug(DebugLevel.I, "Copying from {0} to {1} with the source file of {2}...", Source, Target, SourceFile);
+            if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DirectoryExists(Source))
             {
-                bool Success = true;
-                object Result = null;
+                ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DownloadDirectory(Paths.TempPath + "/FTPTransfer", Source);
+                Result = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).UploadDirectory(Paths.TempPath + "/FTPTransfer/" + Source, Target);
+            }
+            else if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).FileExists(Source) & ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DirectoryExists(Target))
+            {
+                ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DownloadFile(Paths.TempPath + "/FTPTransfer/" + SourceFile, Source);
+                Result = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).UploadFile(Paths.TempPath + "/FTPTransfer/" + SourceFile, Target + "/" + SourceFile);
+            }
+            else if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).FileExists(Source))
+            {
+                ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DownloadFile(Paths.TempPath + "/FTPTransfer/" + SourceFile, Source);
+                Result = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).UploadFile(Paths.TempPath + "/FTPTransfer/" + SourceFile, Target);
+            }
+            Directory.Delete(Paths.TempPath + "/FTPTransfer", true);
 
-                // Begin the copying process
-                string SourceFile = Source.Split('/').Last();
-                DebugWriter.WriteDebug(DebugLevel.I, "Copying from {0} to {1} with the source file of {2}...", Source, Target, SourceFile);
-                if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DirectoryExists(Source))
+            // See if copied successfully
+            if (Result.GetType() == typeof(List<FtpResult>))
+            {
+                foreach (FtpResult FileResult in (IEnumerable)Result)
                 {
-                    ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DownloadDirectory(Paths.TempPath + "/FTPTransfer", Source);
-                    Result = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).UploadDirectory(Paths.TempPath + "/FTPTransfer/" + Source, Target);
-                }
-                else if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).FileExists(Source) & ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DirectoryExists(Target))
-                {
-                    ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DownloadFile(Paths.TempPath + "/FTPTransfer/" + SourceFile, Source);
-                    Result = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).UploadFile(Paths.TempPath + "/FTPTransfer/" + SourceFile, Target + "/" + SourceFile);
-                }
-                else if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).FileExists(Source))
-                {
-                    ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DownloadFile(Paths.TempPath + "/FTPTransfer/" + SourceFile, Source);
-                    Result = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).UploadFile(Paths.TempPath + "/FTPTransfer/" + SourceFile, Target);
-                }
-                Directory.Delete(Paths.TempPath + "/FTPTransfer", true);
-
-                // See if copied successfully
-                if (Result.GetType() == typeof(List<FtpResult>))
-                {
-                    foreach (FtpResult FileResult in (IEnumerable)Result)
+                    if (FileResult.IsFailed)
                     {
-                        if (FileResult.IsFailed)
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.E, "Transfer for {0} failed: {1}", FileResult.Name, FileResult.Exception.Message);
-                            DebugWriter.WriteDebugStackTrace(FileResult.Exception);
-                            Success = false;
-                        }
-                    }
-                }
-                else if (Result.GetType() == typeof(FtpStatus))
-                {
-                    if (((FtpStatus)Convert.ToInt32(Result)).IsFailure())
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Transfer failed");
+                        DebugWriter.WriteDebug(DebugLevel.E, "Transfer for {0} failed: {1}", FileResult.Name, FileResult.Exception.Message);
+                        DebugWriter.WriteDebugStackTrace(FileResult.Exception);
                         Success = false;
                     }
                 }
-                DebugWriter.WriteDebug(DebugLevel.I, "Copied. Result: {0}", Success);
-                return Success;
             }
-            else
+            else if (Result.GetType() == typeof(FtpStatus))
             {
-                throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("You must connect to server before performing transmission."));
+                if (((FtpStatus)Convert.ToInt32(Result)).IsFailure())
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, "Transfer failed");
+                    Success = false;
+                }
             }
+            DebugWriter.WriteDebug(DebugLevel.I, "Copied. Result: {0}", Success);
+            return Success;
         }
 
         /// <summary>
         /// Changes the permissions of a remote file
         /// </summary>
         /// <param name="Target">Target file</param>
-        /// <param name="Chmod">Groups in CHMOD format. See https://man7.org/linux/man-pages/man2/chmod.2.html chmod(2) for more info.</param>
+        /// <param name="Chmod">Permissions in CHMOD format. See https://man7.org/linux/man-pages/man2/chmod.2.html chmod(2) for more info.</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool FTPChangeGroups(string Target, int Chmod)
+        public static bool FTPChangePermissions(string Target, int Chmod)
         {
-            if (FTPShellCommon.FtpConnected)
+            try
             {
-                try
-                {
-                    ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Chmod(Target, Chmod);
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Error setting permissions ({0}) to file {1}: {2}", Chmod, Target, ex.Message);
-                    DebugWriter.WriteDebugStackTrace(ex);
-                }
+                ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Chmod(Target, Chmod);
+                return true;
             }
-            else
+            catch (Exception ex)
             {
-                throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("You must connect to server before performing filesystem operations."));
+                DebugWriter.WriteDebug(DebugLevel.E, "Error setting permissions ({0}) to file {1}: {2}", Chmod, Target, ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;
         }

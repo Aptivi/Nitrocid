@@ -38,22 +38,11 @@ namespace KS.Shell.Shells.FTP.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            if (FTPShellCommon.FtpConnected)
-            {
-                TextWriterColor.Write(Translate.DoTranslation("Moving {0} to {1}..."), true, KernelColorType.Progress, ListArgsOnly[0], ListArgsOnly[1]);
-                if (FTPFilesystem.FTPMoveItem(ListArgsOnly[0], ListArgsOnly[1]))
-                {
-                    TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Moved successfully"), true, KernelColorType.Success);
-                }
-                else
-                {
-                    TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Failed to move {0} to {1}."), true, KernelColorType.Error, ListArgsOnly[0], ListArgsOnly[1]);
-                }
-            }
+            TextWriterColor.Write(Translate.DoTranslation("Moving {0} to {1}..."), true, KernelColorType.Progress, ListArgsOnly[0], ListArgsOnly[1]);
+            if (FTPFilesystem.FTPMoveItem(ListArgsOnly[0], ListArgsOnly[1]))
+                TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Moved successfully"), true, KernelColorType.Success);
             else
-            {
-                TextWriterColor.Write(Translate.DoTranslation("You must connect to server before performing transmission."), true, KernelColorType.Error);
-            }
+                TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Failed to move {0} to {1}."), true, KernelColorType.Error, ListArgsOnly[0], ListArgsOnly[1]);
         }
 
     }
