@@ -100,43 +100,6 @@
   </ItemGroup>
   <!-- KS Dependencies Information End -->
 
-  <!-- KS Import Information -->
-  <ItemGroup>
-    <Import Include="ColorSeq" />
-    <Import Include="FluentFTP" />
-    <Import Include="FluentFTP.Helpers" />
-    <Import Include="KS.ConsoleBase" />
-    <Import Include="KS.ConsoleBase.Colors" />
-    <Import Include="KS.ConsoleBase.Inputs" />
-    <Import Include="KS.ConsoleBase.Themes" />
-    <Import Include="KS.ConsoleBase.Themes.Studio" />
-    <Import Include="KS.Files" />
-    <Import Include="KS.Kernel" />
-    <Import Include="KS.Languages" />
-    <Import Include="KS.Login" />
-    <Import Include="KS.Misc.Platform" />
-    <Import Include="KS.Misc.Probers" />
-    <Import Include="KS.Misc.Threading" />
-    <Import Include="KS.Misc.Writers.ConsoleWriters" />
-    <Import Include="KS.Misc.Writers.DebugWriters" />
-    <Import Include="KS.Misc.Writers.FancyWriters" />
-    <Import Include="KS.Shell" />
-    <Import Include="KS.Shell.ShellBase" />
-    <Import Include="KS.Shell.ShellBase.Commands" />
-    <Import Include="KS.Shell.ShellBase.Shells" />
-    <Import Include="Newtonsoft.Json" />
-    <Import Include="Renci.SshNet" />
-    <Import Include="System" />
-    <Import Include="System.Collections" />
-    <Import Include="System.Collections.Generic" />
-    <Import Include="System.Data" />
-    <Import Include="System.Diagnostics" />
-    <Import Include="System.Linq" />
-    <Import Include="System.Net" />
-    <Import Include="System.Xml.Linq" />
-  </ItemGroup>
-  <!-- KS Import Information End -->
-
   <!-- KS Launchers and Manpages -->
   <ItemGroup>
     <None Include="ks-jl.1">
