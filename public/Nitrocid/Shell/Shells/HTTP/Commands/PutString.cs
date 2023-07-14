@@ -30,41 +30,34 @@ namespace KS.Shell.Shells.HTTP.Commands
 
         public override async void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            if (HTTPShellCommon.HTTPConnected == true)
-            {
-                // Print a message
-                TextWriterColor.Write(Translate.DoTranslation("Uploading string {0}..."), true, KernelColorType.Progress, ListArgsOnly[0]);
+            // Print a message
+            TextWriterColor.Write(Translate.DoTranslation("Uploading string {0}..."), true, KernelColorType.Progress, ListArgsOnly[0]);
 
-                try
+            try
+            {
+                var ResponseTask = HTTPTools.HttpPutString(ListArgsOnly[0], ListArgsOnly[1]);
+                ResponseTask.Wait();
+                var Response = ResponseTask.Result;
+                string ResponseContent = await Response.Content.ReadAsStringAsync();
+                TextWriterColor.Write("[{0}] {1}", (int)Response.StatusCode, Response.StatusCode.ToString());
+                TextWriterColor.Write(ResponseContent);
+                TextWriterColor.Write(Response.ReasonPhrase);
+            }
+            catch (AggregateException aex)
+            {
+                TextWriterColor.Write(aex.Message + ":", true, KernelColorType.Error);
+                foreach (Exception InnerException in aex.InnerExceptions)
                 {
-                    var ResponseTask = HTTPTools.HttpPutString(ListArgsOnly[0], ListArgsOnly[1]);
-                    ResponseTask.Wait();
-                    var Response = ResponseTask.Result;
-                    string ResponseContent = await Response.Content.ReadAsStringAsync();
-                    TextWriterColor.Write("[{0}] {1}", (int)Response.StatusCode, Response.StatusCode.ToString());
-                    TextWriterColor.Write(ResponseContent);
-                    TextWriterColor.Write(Response.ReasonPhrase);
-                }
-                catch (AggregateException aex)
-                {
-                    TextWriterColor.Write(aex.Message + ":", true, KernelColorType.Error);
-                    foreach (Exception InnerException in aex.InnerExceptions)
+                    TextWriterColor.Write("- " + InnerException.Message, true, KernelColorType.Error);
+                    if (InnerException.InnerException is not null)
                     {
-                        TextWriterColor.Write("- " + InnerException.Message, true, KernelColorType.Error);
-                        if (InnerException.InnerException is not null)
-                        {
-                            TextWriterColor.Write("- " + InnerException.InnerException.Message, true, KernelColorType.Error);
-                        }
+                        TextWriterColor.Write("- " + InnerException.InnerException.Message, true, KernelColorType.Error);
                     }
                 }
-                catch (Exception ex)
-                {
-                    TextWriterColor.Write(ex.Message, true, KernelColorType.Error);
-                }
             }
-            else
+            catch (Exception ex)
             {
-                TextWriterColor.Write(Translate.DoTranslation("You must connect to server before performing transmission."), true, KernelColorType.Error);
+                TextWriterColor.Write(ex.Message, true, KernelColorType.Error);
             }
         }
 

@@ -23,6 +23,7 @@ using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.RSS.Commands;
 using System;
+using KS.Shell.Shells.HTTP.Commands;
 
 namespace KS.Shell.Shells.RSS
 {
@@ -41,8 +42,8 @@ namespace KS.Shell.Shells.RSS
                 new CommandArgumentInfo(new[] { "feednum" }, Array.Empty<SwitchInfo>(), true, 1), new RSS_ArticleInfoCommand()) },
             { "bookmark", new CommandInfo("bookmark", ShellType, /* Localizable */ "Bookmarks the feed",
                 new CommandArgumentInfo(), new RSS_BookmarkCommand()) },
-            { "chfeed", new CommandInfo("chfeed", ShellType, /* Localizable */ "Changes the feed link",
-                new CommandArgumentInfo(new[] { "feedurl/bookmarknumber" }, new[] { new SwitchInfo("bookmark", /* Localizable */ "Change feed using the bookmark number", false, true) }, true, 1), new RSS_ChFeedCommand()) },
+            { "detach", new CommandInfo("detach", ShellType, /* Localizable */ "Exits the shell without disconnecting",
+                new CommandArgumentInfo(), new RSS_DetachCommand()) },
             { "feedinfo", new CommandInfo("feedinfo", ShellType, /* Localizable */ "Gets the feed info",
                 new CommandArgumentInfo(), new RSS_FeedInfoCommand()) },
             { "list", new CommandInfo("list", ShellType, /* Localizable */ "Lists all feeds",
@@ -53,8 +54,6 @@ namespace KS.Shell.Shells.RSS
                 new CommandArgumentInfo(new[] { "feednum" }, Array.Empty<SwitchInfo>(), true, 1), new RSS_ReadCommand()) },
             { "search", new CommandInfo("search", ShellType, /* Localizable */ "Searches the feed for a phrase in title and/or description",
                 new CommandArgumentInfo(new[] { "phrase" }, new[] { new SwitchInfo("t", /* Localizable */ "Search for title"), new SwitchInfo("d", /* Localizable */ "Search for description"), new SwitchInfo("a", /* Localizable */ "Search for title and description"), new SwitchInfo("cs", /* Localizable */ "Case sensitive search") }, true, 1), new RSS_SearchCommand()) },
-            { "selfeed", new CommandInfo("selfeed", ShellType, /* Localizable */ "Lets you select a feed from bookmarks",
-                new CommandArgumentInfo(), new RSS_SelFeedCommand()) },
             { "unbookmark", new CommandInfo("unbookmark", ShellType, /* Localizable */ "Removes the feed bookmark",
                 new CommandArgumentInfo(), new RSS_UnbookmarkCommand()) }
         };

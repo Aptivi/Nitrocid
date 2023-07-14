@@ -39,6 +39,8 @@ namespace KS.Shell.Shells.Mail
         {
             { "cd", new CommandInfo("cd", ShellType, /* Localizable */ "Changes current mail directory",
                 new CommandArgumentInfo(new[] { "folder" }, Array.Empty<SwitchInfo>(), true, 1), new Mail_CdCommand()) },
+            { "detach", new CommandInfo("detach", ShellType, /* Localizable */ "Exits the shell without disconnecting",
+                new CommandArgumentInfo(), new Mail_DetachCommand()) },
             { "lsdirs", new CommandInfo("lsdirs", ShellType, /* Localizable */ "Lists directories in your mail address",
                 new CommandArgumentInfo(), new Mail_LsDirsCommand()) },
             { "list", new CommandInfo("list", ShellType, /* Localizable */ "Downloads messages and lists them",

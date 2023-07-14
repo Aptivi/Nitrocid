@@ -231,7 +231,7 @@ namespace KS.Shell.Shells.UESH
             { "roulette", new CommandInfo("roulette", ShellType, /* Localizable */ "Russian Roulette",
                 new CommandArgumentInfo(), new RouletteCommand()) },
             { "rss", new CommandInfo("rss", ShellType, /* Localizable */ "Opens an RSS shell to read the feeds",
-                new CommandArgumentInfo(new[] { "feedlink" }, new[] { new SwitchInfo("m", /* Localizable */ "Don't open RSS feed reader to the headline URL") }, false, 0), new RssCommand()) },
+                new CommandArgumentInfo(new[] { "feedlink" }, Array.Empty<SwitchInfo>(), false, 0), new RssCommand()) },
             { "savecurrdir", new CommandInfo("savecurrdir", ShellType, /* Localizable */ "Saves the current directory to kernel configuration file",
                 new CommandArgumentInfo(), new SaveCurrDirCommand(), CommandFlags.Strict) },
             { "savescreen", new CommandInfo("savescreen", ShellType, /* Localizable */ "Saves your screen from burn outs",

@@ -23,6 +23,7 @@ using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.HTTP.Commands;
 using System;
+using KS.Shell.Shells.FTP.Commands;
 
 namespace KS.Shell.Shells.HTTP
 {
@@ -39,6 +40,8 @@ namespace KS.Shell.Shells.HTTP
         {
             { "delete", new CommandInfo("delete", ShellType, /* Localizable */ "Deletes content from HTTP server",
                 new CommandArgumentInfo(new[] { "request" }, Array.Empty<SwitchInfo>(), true, 1), new HTTP_DeleteCommand()) },
+            { "detach", new CommandInfo("detach", ShellType, /* Localizable */ "Exits the shell without disconnecting",
+                new CommandArgumentInfo(), new HTTP_DetachCommand()) },
             { "get", new CommandInfo("get", ShellType, /* Localizable */ "Gets the response from the HTTP server using the specified request",
                 new CommandArgumentInfo(new[] { "request" }, Array.Empty<SwitchInfo>(), true, 1), new HTTP_GetCommand()) },
             { "getstring", new CommandInfo("getstring", ShellType, /* Localizable */ "Gets the string from the HTTP server using the specified request",
@@ -50,9 +53,7 @@ namespace KS.Shell.Shells.HTTP
             { "post", new CommandInfo("post", ShellType, /* Localizable */ "Posts the file to the HTTP server using the specified request",
                 new CommandArgumentInfo(new[] { "request", "pathtofile" }, Array.Empty<SwitchInfo>(), true, 2), new HTTP_PostCommand()) },
             { "poststring", new CommandInfo("poststring", ShellType, /* Localizable */ "Posts the string to the HTTP server using the specified request",
-                new CommandArgumentInfo(new[] { "request", "string" }, Array.Empty<SwitchInfo>(), true, 2), new HTTP_PostStringCommand()) },
-            { "setsite", new CommandInfo("setsite", ShellType, /* Localizable */ "Sets the HTTP site. Must be a valid URI.",
-                new CommandArgumentInfo(new[] { "uri" }, Array.Empty<SwitchInfo>(), true, 1), new HTTP_SetSiteCommand()) }
+                new CommandArgumentInfo(new[] { "request", "string" }, Array.Empty<SwitchInfo>(), true, 2), new HTTP_PostStringCommand()) }
         };
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

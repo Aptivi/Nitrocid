@@ -690,5 +690,6 @@ Create a new connection
 Enter the server address:
 Exits the shell without disconnecting
 Select a connection.
+Unknown shell error:
 
 ==========================================================================================================================================

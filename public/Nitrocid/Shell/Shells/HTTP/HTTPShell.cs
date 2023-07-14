@@ -41,9 +41,17 @@ namespace KS.Shell.Shells.HTTP
         /// <inheritdoc/>
         public override bool Bail { get; set; }
 
+        internal bool detaching = false;
+
         /// <inheritdoc/>
         public override void InitializeShell(params object[] ShellArgs)
         {
+            // Parse shell arguments
+            NetworkConnection httpConnection = (NetworkConnection)ShellArgs[0];
+            string httpLink = (string)httpConnection.ConnectionInstance;
+            HTTPShellCommon.clientConnection = httpConnection;
+            HTTPShellCommon.HTTPSite = httpLink;
+
             while (!Bail)
             {
                 try
@@ -61,18 +69,21 @@ namespace KS.Shell.Shells.HTTP
                     DebugWriter.WriteDebugStackTrace(ex);
                     throw new KernelException(KernelExceptionType.HTTPShell, Translate.DoTranslation("There was an error in the HTTP shell:") + " {0}", ex, ex.Message);
                 }
-            }
 
-            // Exiting, so reset the site
-            if (HTTPShellCommon.HTTPConnected)
-            {
-                HTTPShellCommon.HTTPSite = "";
-                ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance)?.Dispose();
-                int connectionIndex = NetworkConnectionTools.GetConnectionIndex(HTTPShellCommon.ClientHTTP);
-                NetworkConnectionTools.CloseConnection(connectionIndex);
-                HTTPShellCommon.clientConnection = null;
+                // Exiting, so reset the site
+                if (Bail)
+                {
+                    if (!detaching)
+                    {
+                        ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance)?.Dispose();
+                        int connectionIndex = NetworkConnectionTools.GetConnectionIndex(HTTPShellCommon.ClientHTTP);
+                        NetworkConnectionTools.CloseConnection(connectionIndex);
+                        HTTPShellCommon.clientConnection = null;
+                    }
+                    detaching = false;
+                    HTTPShellCommon.HTTPSite = "";
+                }
             }
-            HTTPShellCommon.HTTPSite = "";
         }
 
     }

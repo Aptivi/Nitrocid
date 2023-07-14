@@ -16,32 +16,26 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Network.Base.Connections;
-using System.Net.Http;
+using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Shells;
 
-namespace KS.Shell.Shells.HTTP
+namespace KS.Shell.Shells.HTTP.Commands
 {
     /// <summary>
-    /// Common HTTP shell module
+    /// Detaches the shell from the current working server
     /// </summary>
-    public static class HTTPShellCommon
+    /// <remarks>
+    /// If you want to detach the shell from the current working server, but don't want to disconnect from it, use this command.
+    /// <br></br>
+    /// </remarks>
+    class HTTP_DetachCommand : BaseCommand, ICommand
     {
-        internal static NetworkConnection clientConnection;
 
-        /// <summary>
-        /// HTTP site URL
-        /// </summary>
-        public static string HTTPSite { get; set; }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        {
+            ((HTTPShell)ShellStart.ShellStack[^1].ShellBase).detaching = true;
+            ShellStart.KillShell();
+        }
 
-        /// <summary>
-        /// HTTP shell prompt style
-        /// </summary>
-        public static string HTTPShellPromptStyle { get; set; } = "";
-
-        /// <summary>
-        /// An HTTP client
-        /// </summary>
-        public static NetworkConnection ClientHTTP =>
-            clientConnection;
     }
 }

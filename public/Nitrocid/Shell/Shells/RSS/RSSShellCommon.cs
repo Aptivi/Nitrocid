@@ -20,6 +20,7 @@ using System;
 using System.Net.Http;
 using KS.Kernel.Configuration;
 using KS.Misc.Threading;
+using KS.Network.Base.Connections;
 using KS.Network.RSS;
 using KS.Network.RSS.Instance;
 
@@ -31,6 +32,7 @@ namespace KS.Shell.Shells.RSS
     public static class RSSShellCommon
     {
 
+        internal static NetworkConnection clientConnection;
         internal static RSSFeed feedInstance;
         internal static int fetchTimeout = 60000;
         internal static int refreshInterval = 60000;
@@ -70,14 +72,7 @@ namespace KS.Shell.Shells.RSS
         /// <summary>
         /// RSS feed URL prompt style
         /// </summary>
-        public static string RSSFeedLink
-        {
-            get => rssFeedLink;
-            set
-            {
-                feedInstance = !string.IsNullOrEmpty(value) ? new RSSFeed(value, RSSFeedType.Infer) : null;
-                rssFeedLink = value;
-            }
-        }
+        public static string RSSFeedLink =>
+            rssFeedLink;
     }
 }

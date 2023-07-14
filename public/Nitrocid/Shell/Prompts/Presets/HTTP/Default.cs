@@ -42,28 +42,18 @@ namespace KS.Shell.Prompts.Presets.HTTP
             // Build the preset
             var PresetStringBuilder = new StringBuilder();
 
-            if (HTTPShellCommon.HTTPConnected)
-            {
-                // Opening
-                PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
-                PresetStringBuilder.Append('[');
+            // Opening
+            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append('[');
 
-                // HTTP site
-                PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.HostNameShell).VTSequenceForeground);
-                PresetStringBuilder.AppendFormat("{0}", HTTPShellCommon.HTTPSite);
+            // HTTP site
+            PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.HostNameShell).VTSequenceForeground);
+            PresetStringBuilder.AppendFormat("{0}", HTTPShellCommon.HTTPSite);
 
-                // Closing
-                PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
-                PresetStringBuilder.Append("] > ");
-                PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
-            }
-            else
-            {
-                // Closing
-                PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
-                PresetStringBuilder.Append("> ");
-                PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
-            }
+            // Closing
+            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append("] > ");
+            PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
 
             // Present final string
             return PresetStringBuilder.ToString();

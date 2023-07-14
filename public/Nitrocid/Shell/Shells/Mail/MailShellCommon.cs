@@ -31,7 +31,6 @@ namespace KS.Shell.Shells.Mail
     public static class MailShellCommon
     {
 
-        internal static bool KeepAlive;
         internal static IEnumerable<UniqueId> IMAP_Messages;
         internal static int imapPingInterval = 30000;
         internal static int smtpPingInterval = 30000;

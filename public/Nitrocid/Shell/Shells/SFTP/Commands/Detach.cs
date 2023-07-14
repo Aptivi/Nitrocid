@@ -18,9 +18,8 @@
 
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
-using KS.Shell.Shells.SFTP;
 
-namespace KS.Shell.Shells.FTP.Commands
+namespace KS.Shell.Shells.SFTP.Commands
 {
     /// <summary>
     /// Detaches the shell from the current working server

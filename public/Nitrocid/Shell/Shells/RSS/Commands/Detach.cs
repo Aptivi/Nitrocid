@@ -16,35 +16,25 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System;
-using System.Linq;
-using KS.Network.RSS.Bookmarks;
 using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Shells.RSS.Commands
 {
     /// <summary>
-    /// Changes current feed
+    /// Detaches the shell from the current working server
     /// </summary>
     /// <remarks>
-    /// If you want to read another feed, you can use this command to provide a second feed URL to the shell so you can interact with it.
+    /// If you want to detach the shell from the current working server, but don't want to disconnect from it, use this command.
+    /// <br></br>
     /// </remarks>
-    class RSS_ChFeedCommand : BaseCommand, ICommand
+    class RSS_DetachCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            bool UseBookmarkNum = ListSwitchesOnly.Contains("-bookmark");
-            int BookmarkNum;
-            if (UseBookmarkNum)
-            {
-                BookmarkNum = int.Parse(ListArgsOnly[0]);
-                RSSShellCommon.RSSFeedLink = RSSBookmarkManager.GetBookmark(BookmarkNum);
-            }
-            else
-            {
-                RSSShellCommon.RSSFeedLink = ListArgsOnly[0];
-            }
+            ((RSSShell)ShellStart.ShellStack[^1].ShellBase).detaching = true;
+            ShellStart.KillShell();
         }
 
     }

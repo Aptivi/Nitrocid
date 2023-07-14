@@ -40,6 +40,8 @@ namespace KS.Network.RSS
     /// </summary>
     public static class RSSTools
     {
+        // TODO: Use Syndian...
+
         /// <summary>
         /// Whether to show the RSS headline each login
         /// </summary>

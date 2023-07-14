@@ -39,15 +39,8 @@ namespace KS.Network.HTTP
         /// <param name="ContentUri">Content URI (starts after the HTTP hostname, e.g. "filetodelete.html")</param>
         public async static Task HttpDelete(string ContentUri)
         {
-            if (HTTPShellCommon.HTTPConnected)
-            {
-                var TargetUri = new Uri(NeutralizeUri(ContentUri));
-                await ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).DeleteAsync(TargetUri);
-            }
-            else
-            {
-                throw new KernelException(KernelExceptionType.HTTPShell, Translate.DoTranslation("You must connect to server with administrative privileges before performing the deletion."));
-            }
+            var TargetUri = new Uri(NeutralizeUri(ContentUri));
+            await ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).DeleteAsync(TargetUri);
         }
 
         /// <summary>
@@ -56,15 +49,8 @@ namespace KS.Network.HTTP
         /// <param name="ContentUri">Content URI (starts after the HTTP hostname, e.g. "filetoget.html")</param>
         public async static Task<string> HttpGetString(string ContentUri)
         {
-            if (HTTPShellCommon.HTTPConnected)
-            {
-                var TargetUri = new Uri(NeutralizeUri(ContentUri));
-                return await ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).GetStringAsync(TargetUri);
-            }
-            else
-            {
-                throw new KernelException(KernelExceptionType.HTTPShell, Translate.DoTranslation("You must connect to server before performing transmission."));
-            }
+            var TargetUri = new Uri(NeutralizeUri(ContentUri));
+            return await ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).GetStringAsync(TargetUri);
         }
 
         /// <summary>
@@ -73,15 +59,8 @@ namespace KS.Network.HTTP
         /// <param name="ContentUri">Content URI (starts after the HTTP hostname, e.g. "filetoget.html")</param>
         public async static Task<HttpResponseMessage> HttpGet(string ContentUri)
         {
-            if (HTTPShellCommon.HTTPConnected)
-            {
-                var TargetUri = new Uri(NeutralizeUri(ContentUri));
-                return await ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).GetAsync(TargetUri);
-            }
-            else
-            {
-                throw new KernelException(KernelExceptionType.HTTPShell, Translate.DoTranslation("You must connect to server before performing transmission."));
-            }
+            var TargetUri = new Uri(NeutralizeUri(ContentUri));
+            return await ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).GetAsync(TargetUri);
         }
 
         /// <summary>
@@ -91,16 +70,9 @@ namespace KS.Network.HTTP
         /// <param name="ContentString">String to put to the HTTP server</param>
         public async static Task<HttpResponseMessage> HttpPutString(string ContentUri, string ContentString)
         {
-            if (HTTPShellCommon.HTTPConnected)
-            {
-                var TargetUri = new Uri(NeutralizeUri(ContentUri));
-                var stringContent = new StringContent(ContentString);
-                return await ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).PutAsync(TargetUri, stringContent);
-            }
-            else
-            {
-                throw new KernelException(KernelExceptionType.HTTPShell, Translate.DoTranslation("You must connect to server before performing transmission."));
-            }
+            var TargetUri = new Uri(NeutralizeUri(ContentUri));
+            var stringContent = new StringContent(ContentString);
+            return await ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).PutAsync(TargetUri, stringContent);
         }
 
         /// <summary>
@@ -110,18 +82,11 @@ namespace KS.Network.HTTP
         /// <param name="ContentPath">Path to the file to open a stream and put it to the HTTP server</param>
         public async static Task<HttpResponseMessage> HttpPutFile(string ContentUri, string ContentPath)
         {
-            if (HTTPShellCommon.HTTPConnected)
-            {
-                ContentPath = Filesystem.NeutralizePath(ContentPath);
-                var TargetUri = new Uri(NeutralizeUri(ContentUri));
-                var TargetStream = new FileStream(ContentPath, FileMode.Open, FileAccess.Read);
-                var stringContent = new StreamContent(TargetStream);
-                return await ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).PutAsync(TargetUri, stringContent);
-            }
-            else
-            {
-                throw new KernelException(KernelExceptionType.HTTPShell, Translate.DoTranslation("You must connect to server before performing transmission."));
-            }
+            ContentPath = Filesystem.NeutralizePath(ContentPath);
+            var TargetUri = new Uri(NeutralizeUri(ContentUri));
+            var TargetStream = new FileStream(ContentPath, FileMode.Open, FileAccess.Read);
+            var stringContent = new StreamContent(TargetStream);
+            return await ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).PutAsync(TargetUri, stringContent);
         }
 
         /// <summary>
@@ -131,16 +96,9 @@ namespace KS.Network.HTTP
         /// <param name="ContentString">String to post to the HTTP server</param>
         public async static Task<HttpResponseMessage> HttpPostString(string ContentUri, string ContentString)
         {
-            if (HTTPShellCommon.HTTPConnected)
-            {
-                var TargetUri = new Uri(NeutralizeUri(ContentUri));
-                var stringContent = new StringContent(ContentString);
-                return await ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).PostAsync(TargetUri, stringContent);
-            }
-            else
-            {
-                throw new KernelException(KernelExceptionType.HTTPShell, Translate.DoTranslation("You must connect to server before performing transmission."));
-            }
+            var TargetUri = new Uri(NeutralizeUri(ContentUri));
+            var stringContent = new StringContent(ContentString);
+            return await ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).PostAsync(TargetUri, stringContent);
         }
 
         /// <summary>
@@ -150,18 +108,11 @@ namespace KS.Network.HTTP
         /// <param name="ContentPath">Path to the file to open a stream and post it to the HTTP server</param>
         public async static Task<HttpResponseMessage> HttpPostFile(string ContentUri, string ContentPath)
         {
-            if (HTTPShellCommon.HTTPConnected)
-            {
-                ContentPath = Filesystem.NeutralizePath(ContentPath);
-                var TargetUri = new Uri(NeutralizeUri(ContentUri));
-                var TargetStream = new FileStream(ContentPath, FileMode.Open, FileAccess.Read);
-                var stringContent = new StreamContent(TargetStream);
-                return await ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).PostAsync(TargetUri, stringContent);
-            }
-            else
-            {
-                throw new KernelException(KernelExceptionType.HTTPShell, Translate.DoTranslation("You must connect to server before performing transmission."));
-            }
+            ContentPath = Filesystem.NeutralizePath(ContentPath);
+            var TargetUri = new Uri(NeutralizeUri(ContentUri));
+            var TargetStream = new FileStream(ContentPath, FileMode.Open, FileAccess.Read);
+            var stringContent = new StreamContent(TargetStream);
+            return await ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).PostAsync(TargetUri, stringContent);
         }
 
         /// <summary>

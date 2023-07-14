@@ -37,41 +37,34 @@ namespace KS.Shell.Shells.HTTP.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            if (HTTPShellCommon.HTTPConnected == true)
+            // Print a message
+            TextWriterColor.Write(Translate.DoTranslation("Deleting {0}..."), true, KernelColorType.Progress, ListArgsOnly[0]);
+
+            // Make a confirmation message so user will not accidentally delete a file or folder
+            string answer = ChoiceStyle.PromptChoice(string.Format(Translate.DoTranslation("Are you sure you want to delete {0}?"), ListArgsOnly[0]), "y/n");
+            if (answer != "y")
+                return;
+
+            try
             {
-                // Print a message
-                TextWriterColor.Write(Translate.DoTranslation("Deleting {0}..."), true, KernelColorType.Progress, ListArgsOnly[0]);
-
-                // Make a confirmation message so user will not accidentally delete a file or folder
-                string answer = ChoiceStyle.PromptChoice(string.Format(Translate.DoTranslation("Are you sure you want to delete {0}?"), ListArgsOnly[0]), "y/n");
-                if (answer != "y")
-                    return;
-
-                try
+                var DeleteTask = HTTPTools.HttpDelete(ListArgsOnly[0]);
+                DeleteTask.Wait();
+            }
+            catch (AggregateException aex)
+            {
+                TextWriterColor.Write(aex.Message + ":", true, KernelColorType.Error);
+                foreach (Exception InnerException in aex.InnerExceptions)
                 {
-                    var DeleteTask = HTTPTools.HttpDelete(ListArgsOnly[0]);
-                    DeleteTask.Wait();
-                }
-                catch (AggregateException aex)
-                {
-                    TextWriterColor.Write(aex.Message + ":", true, KernelColorType.Error);
-                    foreach (Exception InnerException in aex.InnerExceptions)
+                    TextWriterColor.Write("- " + InnerException.Message, true, KernelColorType.Error);
+                    if (InnerException.InnerException is not null)
                     {
-                        TextWriterColor.Write("- " + InnerException.Message, true, KernelColorType.Error);
-                        if (InnerException.InnerException is not null)
-                        {
-                            TextWriterColor.Write("- " + InnerException.InnerException.Message, true, KernelColorType.Error);
-                        }
+                        TextWriterColor.Write("- " + InnerException.InnerException.Message, true, KernelColorType.Error);
                     }
                 }
-                catch (Exception ex)
-                {
-                    TextWriterColor.Write(ex.Message, true, KernelColorType.Error);
-                }
             }
-            else
+            catch (Exception ex)
             {
-                TextWriterColor.Write(Translate.DoTranslation("You must connect to server with administrative privileges before performing the deletion."), true, KernelColorType.Error);
+                TextWriterColor.Write(ex.Message, true, KernelColorType.Error);
             }
         }
 

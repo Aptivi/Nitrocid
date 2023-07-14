@@ -16,7 +16,10 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
+using KS.Languages;
 using KS.Misc.Threading;
 using KS.Network.Base.Connections;
 using KS.Network.Mail;
@@ -24,6 +27,8 @@ using KS.Network.Mail.Transfer;
 using KS.Shell.ShellBase.Shells;
 using MailKit.Net.Imap;
 using MailKit.Net.Smtp;
+using System.Threading;
+using System;
 
 namespace KS.Shell.Shells.Mail
 {
@@ -39,9 +44,19 @@ namespace KS.Shell.Shells.Mail
         /// <inheritdoc/>
         public override bool Bail { get; set; }
 
+        internal bool detaching = false;
+
         /// <inheritdoc/>
         public override void InitializeShell(params object[] ShellArgs)
         {
+            // Parse shell arguments
+            NetworkConnection imapConnection = (NetworkConnection)ShellArgs[0];
+            NetworkConnection smtpConnection = (NetworkConnection)ShellArgs[1];
+            ImapClient imapLink = (ImapClient)imapConnection.ConnectionInstance;
+            SmtpClient smtpLink = (SmtpClient)smtpConnection.ConnectionInstance;
+            MailShellCommon.ClientImap = imapConnection;
+            MailShellCommon.ClientSmtp = smtpConnection;
+
             // Send ping to keep the connection alive
             var IMAP_NoOp = new KernelThread("IMAP Keep Connection", false, MailPingers.IMAPKeepConnection);
             IMAP_NoOp.Start();
@@ -52,34 +67,47 @@ namespace KS.Shell.Shells.Mail
 
             while (!Bail)
             {
-                // Populate messages
-                MailTransfer.PopulateMessages();
-                if (MailShellCommon.Mail_NotifyNewMail)
-                    MailHandlers.InitializeHandlers();
+                try
+                {
+                    // Populate messages
+                    MailTransfer.PopulateMessages();
+                    if (MailShellCommon.Mail_NotifyNewMail)
+                        MailHandlers.InitializeHandlers();
 
-                // Prompt for the command
-                Shell.GetLine();
-            }
+                    // Prompt for the command
+                    Shell.GetLine();
+                }
+                catch (ThreadInterruptedException)
+                {
+                    Flags.CancelRequested = false;
+                    Bail = true;
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    throw new KernelException(KernelExceptionType.HTTPShell, Translate.DoTranslation("There was an error in the HTTP shell:") + " {0}", ex, ex.Message);
+                }
 
-            // Disconnect the session
-            MailShellCommon.IMAP_CurrentDirectory = "Inbox";
-            if (MailShellCommon.KeepAlive)
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, "Exit requested, but not disconnecting.");
-            }
-            else
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, "Exit requested. Disconnecting host...");
-                if (MailShellCommon.Mail_NotifyNewMail)
-                    MailHandlers.ReleaseHandlers();
-                ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).Disconnect(true);
-                ((SmtpClient)MailShellCommon.ClientSmtp.ConnectionInstance).Disconnect(true);
-                int connectionIndexImap = NetworkConnectionTools.GetConnectionIndex(MailShellCommon.ClientImap);
-                int connectionIndexSmtp = NetworkConnectionTools.GetConnectionIndex(MailShellCommon.ClientSmtp);
-                NetworkConnectionTools.CloseConnection(connectionIndexImap);
-                NetworkConnectionTools.CloseConnection(connectionIndexSmtp);
-                MailShellCommon.ClientImap = null;
-                MailShellCommon.ClientSmtp = null;
+                // Exiting, so reset the site
+                if (Bail)
+                {
+                    MailShellCommon.IMAP_CurrentDirectory = "Inbox";
+                    if (!detaching)
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.W, "Exit requested. Disconnecting host...");
+                        if (MailShellCommon.Mail_NotifyNewMail)
+                            MailHandlers.ReleaseHandlers();
+                        ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).Disconnect(true);
+                        ((SmtpClient)MailShellCommon.ClientSmtp.ConnectionInstance).Disconnect(true);
+                        int connectionIndexImap = NetworkConnectionTools.GetConnectionIndex(MailShellCommon.ClientImap);
+                        int connectionIndexSmtp = NetworkConnectionTools.GetConnectionIndex(MailShellCommon.ClientSmtp);
+                        NetworkConnectionTools.CloseConnection(connectionIndexImap);
+                        NetworkConnectionTools.CloseConnection(connectionIndexSmtp);
+                        MailShellCommon.ClientImap = null;
+                        MailShellCommon.ClientSmtp = null;
+                    }
+                    detaching = false;
+                }
             }
         }
 

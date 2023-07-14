@@ -58,22 +58,11 @@ namespace KS.Shell.Prompts.Presets.HTTP
             {
                 new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), HTTPShellCommon.HTTPSite, PadlockChar)
             };
-            List<PowerLineSegment> segmentsDisconnected = new()
-            {
-                new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), Translate.DoTranslation("Not connected"))
-            };
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
 
-            // Build the preset
-            if (HTTPShellCommon.HTTPConnected)
-                // Use RenderSegments to render our segments
-                PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
-            else
-                // Use RenderSegments to render our segments
-                PresetStringBuilder.Append(PowerLineTools.RenderSegments(segmentsDisconnected));
-
+            PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
             PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
 
             // Present final string
