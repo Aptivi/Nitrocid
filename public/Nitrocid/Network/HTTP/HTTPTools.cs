@@ -17,10 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using KS.Files;
+using KS.Kernel.Exceptions;
+using KS.Languages;
 using KS.Shell.Shells.HTTP;
 
 namespace KS.Network.HTTP
@@ -111,6 +115,106 @@ namespace KS.Network.HTTP
             var TargetStream = new FileStream(ContentPath, FileMode.Open, FileAccess.Read);
             var stringContent = new StreamContent(TargetStream);
             return await ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).PostAsync(TargetUri, stringContent);
+        }
+
+        /// <summary>
+        /// Adds a request header to the future requests
+        /// </summary>
+        /// <param name="key">Key to assign a value to</param>
+        /// <param name="value">Value to assign to this key</param>
+        public static void HttpAddHeader(string key, string value)
+        {
+            if (!HttpHeaderExists(key))
+                ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).DefaultRequestHeaders.Add(key, value);
+            else
+                throw new KernelException(KernelExceptionType.HTTPNetwork, Translate.DoTranslation("Adding header that already exists."));
+        }
+
+        /// <summary>
+        /// Adds a request header to the future requests
+        /// </summary>
+        /// <param name="key">Key to remove</param>
+        public static void HttpRemoveHeader(string key)
+        {
+            if (HttpHeaderExists(key))
+                ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).DefaultRequestHeaders.Remove(key);
+            else
+                throw new KernelException(KernelExceptionType.HTTPNetwork, Translate.DoTranslation("Removing header that doesn't exist."));
+        }
+
+        /// <summary>
+        /// Modifies a request header key for the future requests
+        /// </summary>
+        /// <param name="key">Key to assign a value to</param>
+        /// <param name="value">Value to assign to this key</param>
+        public static void HttpEditHeader(string key, string value)
+        {
+            if (HttpHeaderExists(key))
+            {
+                // We can't just index a key from the request header collection and expect it to set to another value. We need to
+                // remove the key and re-add the same key with different value
+                HttpRemoveHeader(key);
+                HttpAddHeader(key, value);
+            }
+            else
+                throw new KernelException(KernelExceptionType.HTTPNetwork, Translate.DoTranslation("Editing header that doesn't exist."));
+        }
+
+        /// <summary>
+        /// Makes a list of headers
+        /// </summary>
+        /// <returns>An array of tuples containing keys and values from the HTTP request headers</returns>
+        public static (string, string)[] HttpListHeaders()
+        {
+            var headers = ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).DefaultRequestHeaders;
+            var finalHeaders = new List<(string, string)>();
+
+            // Enumerate through headers to convert them to tuples
+            foreach (var header in headers)
+            {
+                var values = header.Value;
+                foreach (var value in values)
+                    finalHeaders.Add((header.Key, value));
+            }
+            return finalHeaders.ToArray();
+        }
+
+        /// <summary>
+        /// Checks to see if the specified key from the header exists
+        /// </summary>
+        /// <param name="key">Key to query</param>
+        /// <returns>True if found; false otherwise.</returns>
+        public static bool HttpHeaderExists(string key) =>
+            ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).DefaultRequestHeaders.Contains(key);
+
+        /// <summary>
+        /// Gets the current user agent
+        /// </summary>
+        /// <returns>
+        /// The current user agent. If there are two or more user agents set in the same header (by somehow adding the same
+        /// key with different UA), returns the last user agent value.
+        /// </returns>
+        public static string HttpGetCurrentUserAgent()
+        {
+            var userAgents = ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).DefaultRequestHeaders.UserAgent;
+            if (userAgents.Count > 0)
+                // We don't support more than one UserAgent value, so return the last one and ignore the rest
+                return userAgents.ElementAt(userAgents.Count - 1).ToString();
+            return "";
+        }
+
+        /// <summary>
+        /// Sets the current user agent
+        /// </summary>
+        /// <param name="userAgent">Target user agent</param>
+        public static void HttpSetUserAgent(string userAgent)
+        {
+            // Remove all user agent strings in case we have more than one instance
+            while (HttpHeaderExists("User-Agent"))
+                HttpRemoveHeader("User-Agent");
+
+            // Now, set the user agent
+            HttpAddHeader("User-Agent", userAgent);
         }
 
         /// <summary>

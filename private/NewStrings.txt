@@ -691,5 +691,15 @@ Enter the server address:
 Exits the shell without disconnecting
 Select a connection.
 Unknown shell error:
+A general HTTP network error occurred. Check to make sure that your internet connection is working.
+Adds a header with the key and the value to all the upcoming requests
+Adding header that already exists.
+Removing header that doesn't exist.
+Editing header that doesn't exist.
+Edits a key on the header to all the upcoming requests
+Removes a key on the header to all the upcoming requests
+Lists the request headers
+Gets current user agent
+Sets a user agent
 
 ==========================================================================================================================================

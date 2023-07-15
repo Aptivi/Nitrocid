@@ -367,5 +367,9 @@ namespace KS.Kernel.Exceptions
         /// An error occurred in the network connection manager.
         /// </summary>
         NetworkConnection,
+        /// <summary>
+        /// A general HTTP network error occurred. Check to make sure that your internet connection is working.
+        /// </summary>
+        HTTPNetwork,
     }
 }

@@ -47,9 +47,9 @@ namespace KS.Shell.Shells.HTTP
         {
             // Parse shell arguments
             NetworkConnection httpConnection = (NetworkConnection)ShellArgs[0];
-            string httpLink = (string)httpConnection.ConnectionInstance;
+            HttpClient httpLink = (HttpClient)httpConnection.ConnectionInstance;
             HTTPShellCommon.clientConnection = httpConnection;
-            HTTPShellCommon.HTTPSite = httpLink;
+            HTTPShellCommon.HTTPSite = httpConnection.ConnectionUri.OriginalString;
 
             while (!Bail)
             {

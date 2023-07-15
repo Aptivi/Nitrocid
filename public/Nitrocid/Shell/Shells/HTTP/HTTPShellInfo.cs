@@ -37,14 +37,22 @@ namespace KS.Shell.Shells.HTTP
         /// </summary>
         public override Dictionary<string, CommandInfo> Commands => new()
         {
+            { "addheader", new CommandInfo("addheader", ShellType, /* Localizable */ "Adds a header with the key and the value to all the upcoming requests",
+                new CommandArgumentInfo(new[] { "key", "value" }, Array.Empty<SwitchInfo>(), true, 2), new HTTP_AddHeaderCommand()) },
+            { "curragent", new CommandInfo("curragent", ShellType, /* Localizable */ "Gets current user agent",
+                new CommandArgumentInfo(), new HTTP_CurrAgentCommand()) },
             { "delete", new CommandInfo("delete", ShellType, /* Localizable */ "Deletes content from HTTP server",
                 new CommandArgumentInfo(new[] { "request" }, Array.Empty<SwitchInfo>(), true, 1), new HTTP_DeleteCommand()) },
             { "detach", new CommandInfo("detach", ShellType, /* Localizable */ "Exits the shell without disconnecting",
                 new CommandArgumentInfo(), new HTTP_DetachCommand()) },
+            { "editheader", new CommandInfo("editheader", ShellType, /* Localizable */ "Edits a key on the header to all the upcoming requests",
+                new CommandArgumentInfo(new[] { "key", "value" }, Array.Empty<SwitchInfo>(), true, 2), new HTTP_EditHeaderCommand()) },
             { "get", new CommandInfo("get", ShellType, /* Localizable */ "Gets the response from the HTTP server using the specified request",
                 new CommandArgumentInfo(new[] { "request" }, Array.Empty<SwitchInfo>(), true, 1), new HTTP_GetCommand()) },
             { "getstring", new CommandInfo("getstring", ShellType, /* Localizable */ "Gets the string from the HTTP server using the specified request",
                 new CommandArgumentInfo(new[] { "request" }, Array.Empty<SwitchInfo>(), true, 1), new HTTP_GetStringCommand()) },
+            { "lsheader", new CommandInfo("lsheader", ShellType, /* Localizable */ "Lists the request headers",
+                new CommandArgumentInfo(), new HTTP_LsHeaderCommand()) },
             { "put", new CommandInfo("put", ShellType, /* Localizable */ "Puts the file to the HTTP server using the specified request",
                 new CommandArgumentInfo(new[] { "request", "pathtofile>" }, Array.Empty<SwitchInfo>(), true, 2), new HTTP_PutCommand()) },
             { "putstring", new CommandInfo("putstring", ShellType, /* Localizable */ "Puts the string to the HTTP server using the specified request",
@@ -52,7 +60,11 @@ namespace KS.Shell.Shells.HTTP
             { "post", new CommandInfo("post", ShellType, /* Localizable */ "Posts the file to the HTTP server using the specified request",
                 new CommandArgumentInfo(new[] { "request", "pathtofile" }, Array.Empty<SwitchInfo>(), true, 2), new HTTP_PostCommand()) },
             { "poststring", new CommandInfo("poststring", ShellType, /* Localizable */ "Posts the string to the HTTP server using the specified request",
-                new CommandArgumentInfo(new[] { "request", "string" }, Array.Empty<SwitchInfo>(), true, 2), new HTTP_PostStringCommand()) }
+                new CommandArgumentInfo(new[] { "request", "string" }, Array.Empty<SwitchInfo>(), true, 2), new HTTP_PostStringCommand()) },
+            { "rmheader", new CommandInfo("rmheader", ShellType, /* Localizable */ "Removes a key on the header to all the upcoming requests",
+                new CommandArgumentInfo(new[] { "key" }, Array.Empty<SwitchInfo>(), true, 1), new HTTP_RmHeaderCommand()) },
+            { "setagent", new CommandInfo("setagent", ShellType, /* Localizable */ "Sets a user agent",
+                new CommandArgumentInfo(new[] { "userAgent" }, Array.Empty<SwitchInfo>(), true, 1), new HTTP_SetAgentCommand()) }
         };
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
