@@ -22,6 +22,7 @@ using ColorSeq;
 using KS.ConsoleBase;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
+using KS.Misc.Text;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 
@@ -108,7 +109,7 @@ namespace KS.Misc.Screensaver.Displays
                 DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Aurora drawing... {0}, {1}, {2}", red, green, blue);
                 Color storage = new(red, green, blue);
                 if (!ConsoleResizeListener.WasResized(false))
-                    TextWriterColor.Write(new string(' ', ConsoleWrapper.WindowWidth), false, Color.Empty, storage);
+                    TextWriterColor.Write(Convert.ToString(CharManager.GetEsc()) + "[0K", true, Color.Empty, storage);
             }
             ConsoleWrapper.SetCursorPosition(0, 0);
             ThreadManager.SleepNoBlock(AuroraSettings.AuroraDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
