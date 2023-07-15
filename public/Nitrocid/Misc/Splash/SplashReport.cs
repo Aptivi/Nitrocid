@@ -33,6 +33,7 @@ namespace KS.Misc.Splash
         internal static int _Progress = 0;
         internal static string _ProgressText = "";
         internal static bool _KernelBooted = false;
+        internal static bool _InSplash = false;
 
         /// <summary>
         /// The progress indicator of the kernel 
@@ -48,6 +49,11 @@ namespace KS.Misc.Splash
         /// Did the kernel boot successfully?
         /// </summary>
         public static bool KernelBooted => _KernelBooted;
+
+        /// <summary>
+        /// Did the kernel enter splash screen?
+        /// </summary>
+        public static bool InSplash => _InSplash;
 
         /// <summary>
         /// Reports the progress for the splash screen while the kernel is booting.
@@ -76,7 +82,7 @@ namespace KS.Misc.Splash
         /// </remarks>
         internal static void ReportProgress(string Text, int Progress, bool force = false, ISplash splash = null, params object[] Vars)
         {
-            if (!KernelBooted || force)
+            if (!KernelBooted && InSplash || force)
             {
                 _Progress += Progress;
                 _ProgressText = Text;
@@ -140,7 +146,7 @@ namespace KS.Misc.Splash
         /// </remarks>
         internal static void ReportProgressWarning(string Text, bool force = false, ISplash splash = null, Exception exception = null, params object[] Vars)
         {
-            if (!KernelBooted || force)
+            if (!KernelBooted && InSplash || force)
             {
                 _ProgressText = Text;
                 if (SplashManager.CurrentSplashInfo.DisplaysProgress)
@@ -201,7 +207,7 @@ namespace KS.Misc.Splash
         /// </remarks>
         internal static void ReportProgressError(string Text, bool force = false, ISplash splash = null, Exception exception = null, params object[] Vars)
         {
-            if (!KernelBooted || force)
+            if (!KernelBooted && InSplash || force)
             {
                 _ProgressText = Text;
                 if (SplashManager.CurrentSplashInfo.DisplaysProgress)

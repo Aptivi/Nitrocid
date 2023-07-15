@@ -255,6 +255,7 @@ namespace KS.Misc.Splash
                 splash.Opening();
                 SplashThread.Stop();
                 SplashThread.Start(splash.SplashName);
+                SplashReport._InSplash = true;
             }
         }
 
@@ -291,6 +292,7 @@ namespace KS.Misc.Splash
                 // Reset the SplashClosing variable in case it needs to be open again. Some splashes don't do anything if they detect that the splash
                 // screen is closing.
                 splash.SplashClosing = false;
+                SplashReport._InSplash = false;
             }
             SplashReport._KernelBooted = true;
         }
