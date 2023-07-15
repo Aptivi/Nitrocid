@@ -190,8 +190,11 @@ namespace KS.ConsoleBase.Inputs
         /// <summary>
         /// Detects the keypress
         /// </summary>
-        public static ConsoleKeyInfo DetectKeypress() =>
-            ConsoleWrapper.ReadKey(true);
+        public static ConsoleKeyInfo DetectKeypress()
+        {
+            SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable);
+            return ConsoleWrapper.ReadKey(true);
+        }
 
         internal static void InitializeInputWrappers()
         {
