@@ -58,6 +58,7 @@ namespace KS.Misc.Screensaver.Displays
     public class AuroraDisplay : BaseScreensaver, IScreensaver
     {
 
+        private int redPosIdx = 0;
         private int greenPosIdx = 0;
         private int bluePosIdx = 0;
 
@@ -70,35 +71,41 @@ namespace KS.Misc.Screensaver.Displays
             ConsoleWrapper.CursorVisible = false;
 
             // Select a color range for the aurora
+            double RedFrequency = Math.PI / 24;
             double GreenFrequency = Math.PI / 16;
             double BlueFrequency = Math.PI / 10;
+            int[] RedCurrentLevels = GetColorLevels(RedFrequency);
             int[] GreenCurrentLevels = GetColorLevels(GreenFrequency);
             int[] BlueCurrentLevels = GetColorLevels(BlueFrequency);
 
             // Set some value ranges
+            int RedColorNumTo = Math.Abs(RedCurrentLevels[redPosIdx]);
             int GreenColorNumTo = Math.Abs(GreenCurrentLevels[greenPosIdx]);
             int BlueColorNumTo = Math.Abs(BlueCurrentLevels[bluePosIdx]);
-            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "G: {0} [{1}], B: {2} [{3}]", GreenColorNumTo, greenPosIdx, BlueColorNumTo, bluePosIdx);
+            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "R: {0} [{1}], G: {2} [{3}], B: {4} [{5}]", RedColorNumTo, redPosIdx, GreenColorNumTo, greenPosIdx, BlueColorNumTo, bluePosIdx);
 
             // Advance the indexes
+            redPosIdx++;
+            if (redPosIdx >= RedCurrentLevels.Length)
+                redPosIdx = 0;
             greenPosIdx++;
             if (greenPosIdx >= GreenCurrentLevels.Length)
                 greenPosIdx = 0;
             bluePosIdx++;
             if (bluePosIdx >= BlueCurrentLevels.Length)
                 bluePosIdx = 0;
-            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Indexes advanced to {0}, {1}", greenPosIdx, bluePosIdx);
+            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Indexes advanced to {0}, {1}, {2}", redPosIdx, greenPosIdx, bluePosIdx);
 
             // Prepare the color bands
-            (int, int)[] ColorBands = GetColorBands(GreenColorNumTo, BlueColorNumTo);
+            (int, int, int)[] ColorBands = GetColorBands(RedColorNumTo, GreenColorNumTo, BlueColorNumTo);
 
             // Actually draw the aurora to the background
-            foreach ((int, int) colorBand in ColorBands)
+            foreach ((int, int, int) colorBand in ColorBands)
             {
-                int red = 0;
-                int green = colorBand.Item1;
-                int blue = colorBand.Item2;
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Aurora drawing... {0}, {1}", green, blue);
+                int red = colorBand.Item1;
+                int green = colorBand.Item2;
+                int blue = colorBand.Item3;
+                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Aurora drawing... {0}, {1}, {2}", red, green, blue);
                 Color storage = new(red, green, blue);
                 if (!ConsoleResizeListener.WasResized(false))
                     TextWriterColor.Write(new string(' ', ConsoleWrapper.WindowWidth), false, Color.Empty, storage);
@@ -113,7 +120,7 @@ namespace KS.Misc.Screensaver.Displays
         private static int[] GetColorLevels(double Frequency)
         {
             List<int> ColorLevels = new();
-            int Count = 200;
+            int Count = 10000;
             int AuroraMaxColor = 80;
             double TimeSecs = 0.0;
             bool isSet = false;
@@ -130,21 +137,23 @@ namespace KS.Misc.Screensaver.Displays
             return ColorLevels.ToArray();
         }
 
-        private static (int, int)[] GetColorBands(int greenColorNumTo, int blueColorNumTo)
+        private static (int, int, int)[] GetColorBands(int redColorNumTo, int greenColorNumTo, int blueColorNumTo)
         {
-            List<(int, int)> ColorBands = new();
+            List<(int, int, int)> ColorBands = new();
             int Count = ConsoleWrapper.WindowHeight;
 
             // Set thresholds
+            double redBandThreshold = (double)redColorNumTo / Count;
             double greenBandThreshold = (double)greenColorNumTo / Count;
             double blueBandThreshold = (double)blueColorNumTo / Count;
 
             // Add the color levels to the color bands
             for (int i = 0; i < Count; i++)
             {
+                int finalRedLevel = (int)(redBandThreshold * i);
                 int finalGreenLevel = (int)(greenBandThreshold * i);
                 int finalBlueLevel = (int)(blueBandThreshold * i);
-                ColorBands.Add((finalGreenLevel, finalBlueLevel));
+                ColorBands.Add((finalRedLevel, finalGreenLevel, finalBlueLevel));
             }
             return ColorBands.ToArray();
         }
