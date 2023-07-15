@@ -333,12 +333,9 @@ namespace KS.Drivers.Console.Consoles
                 {
                     // Get the filtered positions first.
                     int FilteredLeft = default, FilteredTop = default;
-                    if (!Line)
-                    {
-                        var pos = ConsoleExtensions.GetFilteredPositions(Text, vars);
-                        FilteredLeft = pos.Item1;
-                        FilteredTop = pos.Item2;
-                    }
+                    var pos = ConsoleExtensions.GetFilteredPositions(Line ? Text + "\n" : Text, vars);
+                    FilteredLeft = pos.Item1;
+                    FilteredTop = pos.Item2;
 
                     // Actually write
                     if (Line)
@@ -362,8 +359,7 @@ namespace KS.Drivers.Console.Consoles
                     }
 
                     // Return to the processed position
-                    if (!Line)
-                        ConsoleWrapper.SetCursorPosition(FilteredLeft, FilteredTop);
+                    ConsoleWrapper.SetCursorPosition(FilteredLeft, FilteredTop);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
                 {

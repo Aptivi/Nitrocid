@@ -97,7 +97,7 @@ namespace KS.ConsoleBase.Inputs.Styles
             ConsoleWrapper.Clear(true);
 
             // Ask a question
-            TextWriterColor.Write(Question + CharManager.NewLine, true, KernelColorType.Question);
+            TextWriterColor.Write(Question, true, KernelColorType.Question);
 
             // Make pages based on console window height
             int listStartPosition = ConsoleWrapper.CursorTop;
@@ -119,7 +119,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 if (currentPage != lastPage || refreshRequired)
                 {
                     ConsoleWrapper.Clear(true);
-                    TextWriterColor.Write(Question + CharManager.NewLine, true, KernelColorType.Question);
+                    TextWriterColor.Write(Question, true, KernelColorType.Question);
                 }
 
                 // Populate the answers

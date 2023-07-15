@@ -86,8 +86,8 @@ namespace KS.Misc.Writers.FancyWriters
             int OldTop = ConsoleWrapper.CursorTop;
             TextWriterColor.Write(new string('-', RepeatTimes), true, KernelColorType.Separator);
 
-            // Fix CursorTop value on Unix systems. Mono...
-            if (KernelPlatform.IsOnUnix() && canPosition)
+            // We're still suffering from this bug...
+            if (canPosition)
             {
                 if (!(ConsoleWrapper.CursorTop == ConsoleWrapper.WindowHeight - 1) | OldTop == ConsoleWrapper.WindowHeight - 3)
                     ConsoleWrapper.CursorTop -= 1;
@@ -181,8 +181,8 @@ namespace KS.Misc.Writers.FancyWriters
             int OldTop = ConsoleWrapper.CursorTop;
             TextWriterColor.Write(new string('-', RepeatTimes), true, ForegroundColor, BackgroundColor);
 
-            // Fix CursorTop value on Unix systems. Mono...
-            if (KernelPlatform.IsOnUnix() && canPosition)
+            // We're still suffering from this bug...
+            if (canPosition)
             {
                 if (!(ConsoleWrapper.CursorTop == ConsoleWrapper.WindowHeight - 1) | OldTop == ConsoleWrapper.WindowHeight - 3)
                     ConsoleWrapper.CursorTop -= 1;

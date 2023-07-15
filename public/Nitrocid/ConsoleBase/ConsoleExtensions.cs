@@ -96,12 +96,13 @@ namespace KS.ConsoleBase
             for (int i = 1; i <= Text.Length; i++)
             {
                 // If we spotted a new line character, get down by one line.
-                if (Text[i - 1] == Convert.ToChar(10) & TopSeekPosition < ConsoleWrapper.BufferHeight - 1)
+                if (Text[i - 1] == Convert.ToChar(10))
                 {
-                    TopSeekPosition += 1;
+                    if (TopSeekPosition < ConsoleWrapper.BufferHeight - 1)
+                        TopSeekPosition += 1;
                     LeftSeekPosition = 0;
                 }
-                else if (Text[i - 1] != Convert.ToChar(10))
+                else
                 {
                     // Simulate seeking through text
                     LeftSeekPosition += 1;
