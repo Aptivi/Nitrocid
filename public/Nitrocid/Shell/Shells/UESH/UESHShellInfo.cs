@@ -260,8 +260,6 @@ namespace KS.Shell.Shells.UESH
                 new CommandArgumentInfo(new[] { "-all", "timezone" }, new[] { new SwitchInfo("all", /* Localizable */ "Shows all the time zones") }, true, 1), new ShowTdZoneCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
             { "shutdown", new CommandInfo("shutdown", ShellType, /* Localizable */ "The kernel will be shut down",
                 new CommandArgumentInfo(new[] { "ip", "port" }, Array.Empty<SwitchInfo>(), false, 0), new ShutdownCommand()) },
-            { "silogui", new CommandInfo("silogui", ShellType, /* Localizable */ "A simple implementation of the GUI starting in a separate window",
-                new CommandArgumentInfo(), new SiloGuiCommand()) },
             { "sleep", new CommandInfo("sleep", ShellType, /* Localizable */ "Sleeps for specified milliseconds",
                 new CommandArgumentInfo(new[] { "ms" }, Array.Empty<SwitchInfo>(), true, 1), new SleepCommand()) },
             { "snaker", new CommandInfo("snaker", ShellType, /* Localizable */ "The snake game!",
