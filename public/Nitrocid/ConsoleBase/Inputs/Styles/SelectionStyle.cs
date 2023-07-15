@@ -191,7 +191,8 @@ namespace KS.ConsoleBase.Inputs.Styles
                         HighlightedAnswer = startIndex > 0 ? startIndex : 1;
                         break;
                     case ConsoleKey.PageDown:
-                        HighlightedAnswer = endIndex > AllAnswers.Count ? AllAnswers.Count : endIndex + 2;
+                        HighlightedAnswer = endIndex > AllAnswers.Count - 1 ? AllAnswers.Count : endIndex + 2;
+                        HighlightedAnswer = endIndex == AllAnswers.Count - 1 ? endIndex + 1 : HighlightedAnswer;
                         break;
                     case ConsoleKey.Enter:
                         TextWriterColor.Write();
