@@ -33,6 +33,7 @@ using KS.Kernel.Events;
 using KS.Misc.Writers.MiscWriters;
 using KS.Misc.Probers.Placeholder;
 using KS.Kernel.Configuration;
+using KS.Misc.Writers.FancyWriters;
 
 namespace KS.Users.Login
 {
@@ -202,15 +203,26 @@ namespace KS.Users.Login
             // Fire event PostLogin
             EventsManager.FireEvent(EventType.PostLogin, UserManagement.CurrentUser.Username);
 
+            // Show current time
+            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Welcome!"), true, KernelColorType.Stage);
+            if (Flags.ShowCurrentTimeBeforeLogin)
+                TimeDate.TimeDateTools.ShowCurrentTimes();
+            TextWriterColor.Write();
+
             // Show license information
             WelcomeMessage.WriteLicense();
+
+            // Show development disclaimer
+            KernelTools.ShowDevelopmentDisclaimer();
+            TextWriterColor.Write();
 
             // Show MOTD
             Flags.ShowMOTDOnceFlag = true;
             if (Flags.ShowMAL)
                 TextWriterColor.Write(PlaceParse.ProbePlaces(MalParse.MAL), true, KernelColorType.Banner);
-            if (!Flags.ModernLogon)
-                RSSTools.ShowHeadlineLogin();
+
+            // Show headline
+            RSSTools.ShowHeadlineLogin();
 
             // Initialize shell
             DebugWriter.WriteDebug(DebugLevel.I, "Shell is being initialized...");

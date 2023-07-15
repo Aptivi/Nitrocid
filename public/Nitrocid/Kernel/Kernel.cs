@@ -229,25 +229,6 @@ namespace KS.Kernel
                     if (!Flags.EnableSplash)
                         TextWriterColor.Write();
 
-                    // Show current time
-                    SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Welcome!"), true, KernelColorType.Stage);
-                    if (Flags.ShowCurrentTimeBeforeLogin)
-                        TimeDate.TimeDateTools.ShowCurrentTimes();
-
-                    // Notify user of errors if appropriate
-                    if (Flags.NotifyKernelError)
-                    {
-                        Flags.NotifyKernelError = false;
-                        NotificationManager.NotifySend(new Notification(Translate.DoTranslation("Previous boot failed"), KernelPanic.LastKernelErrorException.Message, NotificationManager.NotifPriority.High, NotificationManager.NotifType.Normal));
-                    }
-
-                    // Show license if splash is enabled
-                    if (Flags.EnableSplash)
-                    {
-                        TextWriterColor.Write();
-                        WelcomeMessage.WriteLicense();
-                    }
-
                     // If this is the first time, run the first run presentation
                     if (Flags.FirstTime)
                     {
@@ -255,8 +236,12 @@ namespace KS.Kernel
                         KernelFirstRun.PresentFirstRun();
                     }
 
-                    // Show development disclaimer
-                    KernelTools.ShowDevelopmentDisclaimer();
+                    // Notify user of errors if appropriate
+                    if (Flags.NotifyKernelError)
+                    {
+                        Flags.NotifyKernelError = false;
+                        NotificationManager.NotifySend(new Notification(Translate.DoTranslation("Previous boot failed"), KernelPanic.LastKernelErrorException.Message, NotificationManager.NotifPriority.High, NotificationManager.NotifType.Normal));
+                    }
 
                     // Initialize login prompt
                     if (!Flags.Maintenance)
