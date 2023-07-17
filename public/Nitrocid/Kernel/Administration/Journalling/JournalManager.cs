@@ -34,6 +34,7 @@ namespace KS.Kernel.Administration.Journalling
     {
 
         internal static string JournalPath = "";
+        private static readonly object journalLock = new();
 
         /// <summary>
         /// Writes a message to the journal
@@ -55,26 +56,29 @@ namespace KS.Kernel.Administration.Journalling
             if (string.IsNullOrEmpty(JournalPath))
                 return;
 
-            // If we don't have the target journal file, create it
-            if (!Checking.FileExists(JournalPath))
-                Making.MakeJsonFile(JournalPath, false, true);
+            lock (journalLock)
+            {
+                // If we don't have the target journal file, create it
+                if (!Checking.FileExists(JournalPath))
+                    Making.MakeJsonFile(JournalPath, false, true);
 
-            // Make a new journal entry and store everything in it
-            Message = string.Format(Message, Vars);
-            var JournalEntry = 
-                new JObject(
-                    new JProperty("date", TimeDate.TimeDateRenderers.RenderDate()),
-                    new JProperty("time", TimeDate.TimeDateRenderers.RenderTime()),
-                    new JProperty("status", Status.ToString()),
-                    new JProperty("message", Message)
-                );
+                // Make a new journal entry and store everything in it
+                Message = string.Format(Message, Vars);
+                var JournalEntry = 
+                    new JObject(
+                        new JProperty("date", TimeDate.TimeDateRenderers.RenderDate()),
+                        new JProperty("time", TimeDate.TimeDateRenderers.RenderTime()),
+                        new JProperty("status", Status.ToString()),
+                        new JProperty("message", Message)
+                    );
 
-            // Open the journal and add the new journal entry to it
-            var JournalFileObject = JArray.Parse(File.ReadAllText(JournalPath));
-            JournalFileObject.Add(JournalEntry);
+                // Open the journal and add the new journal entry to it
+                var JournalFileObject = JArray.Parse(File.ReadAllText(JournalPath));
+                JournalFileObject.Add(JournalEntry);
 
-            // Save the journal with the changes in it
-            File.WriteAllText(JournalPath, JsonConvert.SerializeObject(JournalFileObject, Formatting.Indented));
+                // Save the journal with the changes in it
+                File.WriteAllText(JournalPath, JsonConvert.SerializeObject(JournalFileObject, Formatting.Indented));
+            }
         }
 
         /// <summary>
