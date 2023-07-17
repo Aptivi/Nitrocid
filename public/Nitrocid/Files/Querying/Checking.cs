@@ -33,7 +33,7 @@ namespace KS.Files.Querying
         /// <param name="Neutralize">Whether to neutralize the path</param>
         /// <returns>True if exists; False if not. Throws on trying to trigger the Windows 10/11 BSOD/corruption bug</returns>
         public static bool FileExists(string File, bool Neutralize = false) =>
-            DriverHandler.CurrentFilesystemDriver.FileExists(File, Neutralize);
+            DriverHandler.CurrentFilesystemDriverLocal.FileExists(File, Neutralize);
 
         /// <summary>
         /// Checks to see if the folder exists. Windows 10/11 bug aware.
@@ -42,7 +42,7 @@ namespace KS.Files.Querying
         /// <param name="Neutralize">Whether to neutralize the path</param>
         /// <returns>True if exists; False if not. Throws on trying to trigger the Windows 10/11 BSOD/corruption bug</returns>
         public static bool FolderExists(string Folder, bool Neutralize = false) =>
-            DriverHandler.CurrentFilesystemDriver.FolderExists(Folder, Neutralize);
+            DriverHandler.CurrentFilesystemDriverLocal.FolderExists(Folder, Neutralize);
 
     }
 }

@@ -37,7 +37,7 @@ namespace KS.Files.Querying
         /// <returns>The list if successful; null if unsuccessful</returns>
         /// <exception cref="IOException"></exception>
         public static List<string> SearchFileForString(string FilePath, string StringLookup) =>
-            DriverHandler.CurrentFilesystemDriver.SearchFileForString(FilePath, StringLookup);
+            DriverHandler.CurrentFilesystemDriverLocal.SearchFileForString(FilePath, StringLookup);
 
         /// <summary>
         /// Searches a file for string using regexp
@@ -47,7 +47,7 @@ namespace KS.Files.Querying
         /// <returns>The list if successful; null if unsuccessful</returns>
         /// <exception cref="IOException"></exception>
         public static List<string> SearchFileForStringRegexp(string FilePath, Regex StringLookup) =>
-            DriverHandler.CurrentFilesystemDriver.SearchFileForStringRegexp(FilePath, StringLookup);
+            DriverHandler.CurrentFilesystemDriverLocal.SearchFileForStringRegexp(FilePath, StringLookup);
 
         /// <summary>
         /// Searches a file for string using regexp
@@ -57,7 +57,7 @@ namespace KS.Files.Querying
         /// <returns>The list of match collections with their associated line of text</returns>
         /// <exception cref="IOException"></exception>
         public static List<(string, MatchCollection)> SearchFileForStringRegexpMatches(string FilePath, Regex StringLookup) =>
-            DriverHandler.CurrentFilesystemDriver.SearchFileForStringRegexpMatches(FilePath, StringLookup);
+            DriverHandler.CurrentFilesystemDriverLocal.SearchFileForStringRegexpMatches(FilePath, StringLookup);
 
     }
 }

@@ -36,7 +36,7 @@ namespace KS.Files.Operations
         /// <param name="Destination">Target file or directory</param>
         /// <exception cref="IOException"></exception>
         public static void MoveFileOrDir(string Source, string Destination) =>
-            DriverHandler.CurrentFilesystemDriver.MoveFileOrDir(Source, Destination);
+            DriverHandler.CurrentFilesystemDriverLocal.MoveFileOrDir(Source, Destination);
 
         /// <summary>
         /// Moves a file or directory
@@ -66,7 +66,7 @@ namespace KS.Files.Operations
         /// <param name="Source">Source directory</param>
         /// <param name="Destination">Target directory</param>
         public static void MoveDirectory(string Source, string Destination) =>
-            DriverHandler.CurrentFilesystemDriver.MoveDirectory(Source, Destination);
+            DriverHandler.CurrentFilesystemDriverLocal.MoveDirectory(Source, Destination);
 
         /// <summary>
         /// Moves the directory from source to destination
@@ -75,7 +75,7 @@ namespace KS.Files.Operations
         /// <param name="Destination">Target directory</param>
         /// <param name="ShowProgress">Whether or not to show what files are being moved</param>
         public static void MoveDirectory(string Source, string Destination, bool ShowProgress) =>
-            DriverHandler.CurrentFilesystemDriver.MoveDirectory(Source, Destination, ShowProgress);
+            DriverHandler.CurrentFilesystemDriverLocal.MoveDirectory(Source, Destination, ShowProgress);
 
     }
 }

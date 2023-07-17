@@ -30,7 +30,7 @@ namespace KS.Files.Querying
         /// Gets all the invalid path characters
         /// </summary>
         public static char[] GetInvalidPathChars() =>
-            DriverHandler.CurrentFilesystemDriver.GetInvalidPathChars();
+            DriverHandler.CurrentFilesystemDriverLocal.GetInvalidPathChars();
 
         /// <summary>
         /// Tries to parse the path (For file names and only names, use <see cref="TryParseFileName(string)"/> instead.)
@@ -38,7 +38,7 @@ namespace KS.Files.Querying
         /// <param name="Path">The path to be parsed</param>
         /// <returns>True if successful; false if unsuccessful</returns>
         public static bool TryParsePath(string Path) =>
-            DriverHandler.CurrentFilesystemDriver.TryParsePath(Path);
+            DriverHandler.CurrentFilesystemDriverLocal.TryParsePath(Path);
 
         /// <summary>
         /// Tries to parse the file name (For full paths, use <see cref="TryParsePath(string)"/> instead.)
@@ -46,21 +46,21 @@ namespace KS.Files.Querying
         /// <param name="Name">The file name to be parsed</param>
         /// <returns>True if successful; false if unsuccessful</returns>
         public static bool TryParseFileName(string Name) =>
-            DriverHandler.CurrentFilesystemDriver.TryParseFileName(Name);
+            DriverHandler.CurrentFilesystemDriverLocal.TryParseFileName(Name);
 
         /// <summary>
         /// Is the file a binary file?
         /// </summary>
         /// <param name="Path">Path to file</param>
         public static bool IsBinaryFile(string Path) => 
-            DriverHandler.CurrentFilesystemDriver.IsBinaryFile(Path);
+            DriverHandler.CurrentFilesystemDriverLocal.IsBinaryFile(Path);
 
         /// <summary>
         /// Is the file a JSON file?
         /// </summary>
         /// <param name="Path">Path to file</param>
         public static bool IsJson(string Path) =>
-            DriverHandler.CurrentFilesystemDriver.IsJson(Path);
+            DriverHandler.CurrentFilesystemDriverLocal.IsJson(Path);
 
     }
 }

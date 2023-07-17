@@ -258,7 +258,7 @@ namespace KS.Shell
                     // Get the command name
                     var words = Command.SplitEncloseDoubleQuotes();
                     string commandName = words[0].ReleaseDoubleQuotes();
-                    TargetFile = DriverHandler.CurrentRegexpDriver.Unescape(commandName);
+                    TargetFile = DriverHandler.CurrentRegexpDriverLocal.Unescape(commandName);
                     bool existsInPath = PathLookupTools.FileExistsInPath(commandName, ref TargetFile);
                     bool pathValid = Parsing.TryParsePath(TargetFile);
                     if (!existsInPath || string.IsNullOrEmpty(TargetFile))
@@ -411,11 +411,11 @@ namespace KS.Shell
             }
 
             // Restore console output to its original state if any
-            if (DriverHandler.CurrentConsoleDriver.DriverName != "Default")
+            if (DriverHandler.CurrentConsoleDriverLocal.DriverName != "Default")
             {
-                if (DriverHandler.CurrentConsoleDriver is File writer)
+                if (DriverHandler.CurrentConsoleDriverLocal is File writer)
                     writer.FilterVT = false;
-                DriverHandler.SetDriver<IConsoleDriver>("Default");
+                DriverHandler.EndLocalDriver<IConsoleDriver>();
             }
 
             // Restore title
@@ -462,15 +462,15 @@ namespace KS.Shell
                         Manipulation.ClearFile(OutputFilePath);
                     filePaths.Add(OutputFilePath);
                 }
-                DriverHandler.SetDriver<IConsoleDriver>("FileSequence");
-                ((FileSequence)DriverHandler.CurrentConsoleDriver).PathsToWrite = filePaths.ToArray();
-                ((FileSequence)DriverHandler.CurrentConsoleDriver).FilterVT = true;
+                DriverHandler.BeginLocalDriver<IConsoleDriver>("FileSequence");
+                ((FileSequence)DriverHandler.CurrentConsoleDriverLocal).PathsToWrite = filePaths.ToArray();
+                ((FileSequence)DriverHandler.CurrentConsoleDriverLocal).FilterVT = true;
                 Command = Command.RemovePostfix(outputMatch.Value);
             }
             else if (Command.EndsWith(" |SILENT|"))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Silence found. Redirecting to null writer...");
-                DriverHandler.SetDriver<IConsoleDriver>("Null");
+                DriverHandler.BeginLocalDriver<IConsoleDriver>("Null");
                 Command = Command.RemovePostfix(" |SILENT|");
             }
 
@@ -487,8 +487,8 @@ namespace KS.Shell
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Optional output redirection found using OutputPath ({0}).", OutputPath);
                 OutputPath = Filesystem.NeutralizePath(OutputPath);
-                DriverHandler.SetDriver<IConsoleDriver>("File");
-                ((File)DriverHandler.CurrentConsoleDriver).PathToWrite = OutputPath;
+                DriverHandler.BeginLocalDriver<IConsoleDriver>("File");
+                ((File)DriverHandler.CurrentConsoleDriverLocal).PathToWrite = OutputPath;
             }
         }
 

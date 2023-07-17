@@ -207,7 +207,7 @@ namespace KS.ConsoleBase.Inputs
             ConsoleWrapperTools.ActionCursorLeft = () => ConsoleWrapper.CursorLeft;
             ConsoleWrapperTools.ActionCursorTop = () => ConsoleWrapper.CursorTop;
             ConsoleWrapperTools.ActionCursorVisible = (value) => ConsoleWrapper.CursorVisible = value;
-            ConsoleWrapperTools.ActionIsDumb = () => DriverHandler.CurrentConsoleDriver.IsDumb;
+            ConsoleWrapperTools.ActionIsDumb = () => DriverHandler.CurrentConsoleDriverLocal.IsDumb;
             ConsoleWrapperTools.ActionKeyAvailable = () => ConsoleWrapper.KeyAvailable;
             ConsoleWrapperTools.ActionReadKey = ConsoleWrapper.ReadKey;
             ConsoleWrapperTools.ActionSetCursorPosition = ConsoleWrapper.SetCursorPosition;

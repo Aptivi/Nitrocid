@@ -35,7 +35,7 @@ namespace KS.Files.Attributes
         /// <param name="FilePath">File path</param>
         /// <param name="Attributes">Attributes</param>
         public static void AddAttributeToFile(string FilePath, FileAttributes Attributes) =>
-            DriverHandler.CurrentFilesystemDriver.AddAttributeToFile(FilePath, Attributes);
+            DriverHandler.CurrentFilesystemDriverLocal.AddAttributeToFile(FilePath, Attributes);
 
         /// <summary>
         /// Adds attribute to file
@@ -73,7 +73,7 @@ namespace KS.Files.Attributes
         /// <param name="FilePath">File path</param>
         /// <param name="Attributes">Attributes</param>
         public static void RemoveAttributeFromFile(string FilePath, FileAttributes Attributes) =>
-            DriverHandler.CurrentFilesystemDriver.RemoveAttributeFromFile(FilePath, Attributes);
+            DriverHandler.CurrentFilesystemDriverLocal.RemoveAttributeFromFile(FilePath, Attributes);
 
         /// <summary>
         /// Removes attribute from file

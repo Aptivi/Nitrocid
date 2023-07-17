@@ -32,19 +32,19 @@ namespace KS.Files.PathLookup
         /// Gets the lookup path list
         /// </summary>
         public static List<string> GetPathList() =>
-            DriverHandler.CurrentFilesystemDriver.GetPathList();
+            DriverHandler.CurrentFilesystemDriverLocal.GetPathList();
 
         /// <summary>
         /// Adds a (non-)neutralized path to lookup
         /// </summary>
         public static void AddToPathLookup(string Path) =>
-            DriverHandler.CurrentFilesystemDriver.AddToPathLookup(Path);
+            DriverHandler.CurrentFilesystemDriverLocal.AddToPathLookup(Path);
 
         /// <summary>
         /// Adds a (non-)neutralized path to lookup
         /// </summary>
         public static void AddToPathLookup(string Path, string RootPath) =>
-            DriverHandler.CurrentFilesystemDriver.AddToPathLookup(Path, RootPath);
+            DriverHandler.CurrentFilesystemDriverLocal.AddToPathLookup(Path, RootPath);
 
         /// <summary>
         /// Adds a (non-)neutralized path to lookup
@@ -84,13 +84,13 @@ namespace KS.Files.PathLookup
         /// Removes an existing (non-)neutralized path from lookup
         /// </summary>
         public static void RemoveFromPathLookup(string Path) =>
-            DriverHandler.CurrentFilesystemDriver.RemoveFromPathLookup(Path);
+            DriverHandler.CurrentFilesystemDriverLocal.RemoveFromPathLookup(Path);
 
         /// <summary>
         /// Removes an existing (non-)neutralized path from lookup
         /// </summary>
         public static void RemoveFromPathLookup(string Path, string RootPath) =>
-            DriverHandler.CurrentFilesystemDriver.RemoveFromPathLookup(Path, RootPath);
+            DriverHandler.CurrentFilesystemDriverLocal.RemoveFromPathLookup(Path, RootPath);
 
         /// <summary>
         /// Removes an existing (non-)neutralized path from lookup
@@ -133,7 +133,7 @@ namespace KS.Files.PathLookup
         /// <param name="Result">The neutralized path</param>
         /// <returns>True if successful; False if unsuccessful</returns>
         public static bool FileExistsInPath(string FilePath, ref string Result) =>
-            DriverHandler.CurrentFilesystemDriver.FileExistsInPath(FilePath, ref Result);
+            DriverHandler.CurrentFilesystemDriverLocal.FileExistsInPath(FilePath, ref Result);
 
     }
 }

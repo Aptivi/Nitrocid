@@ -160,7 +160,7 @@ namespace KS.Network.Base
         /// Gets the online devices in your network, including the router and the broadcast address
         /// </summary>
         public static IPAddress[] GetOnlineDevicesInNetwork() =>
-            DriverHandler.CurrentNetworkDriver.GetOnlineDevicesInNetwork();
+            DriverHandler.CurrentNetworkDriverLocal.GetOnlineDevicesInNetwork();
 
         private static bool IsInternetAvailable()
         {

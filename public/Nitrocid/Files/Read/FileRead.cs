@@ -32,7 +32,7 @@ namespace KS.Files.Read
         /// <param name="filename">Full path to file</param>
         /// <returns>An array full of file contents</returns>
         public static string[] ReadContents(string filename) =>
-            DriverHandler.CurrentFilesystemDriver.ReadContents(filename);
+            DriverHandler.CurrentFilesystemDriverLocal.ReadContents(filename);
 
         /// <summary>
         /// Opens a file, reads all lines, and returns the array of lines
@@ -40,14 +40,14 @@ namespace KS.Files.Read
         /// <param name="path">Path to file</param>
         /// <returns>Array of lines</returns>
         public static string[] ReadAllLinesNoBlock(string path) =>
-            DriverHandler.CurrentFilesystemDriver.ReadAllLinesNoBlock(path);
+            DriverHandler.CurrentFilesystemDriverLocal.ReadAllLinesNoBlock(path);
 
         /// <summary>
         /// Reads all the bytes
         /// </summary>
         /// <param name="path">Path to the file</param>
         public static byte[] ReadAllBytes(string path) =>
-            DriverHandler.CurrentFilesystemDriver.ReadAllBytes(path);
+            DriverHandler.CurrentFilesystemDriverLocal.ReadAllBytes(path);
 
     }
 }

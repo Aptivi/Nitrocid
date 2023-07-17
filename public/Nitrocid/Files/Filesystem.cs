@@ -70,8 +70,8 @@ namespace KS.Files
             ThrowOnInvalidPath(Source);
 
             // Unescape the characters
-            Path = DriverHandler.CurrentRegexpDriver.Unescape(Path.Replace(@"\", "/"));
-            Source = DriverHandler.CurrentRegexpDriver.Unescape(Source.Replace(@"\", "/"));
+            Path = DriverHandler.CurrentRegexpDriverLocal.Unescape(Path.Replace(@"\", "/"));
+            Source = DriverHandler.CurrentRegexpDriverLocal.Unescape(Source.Replace(@"\", "/"));
 
             // Append current directory to path
             if (KernelPlatform.IsOnWindows() & !Path.Contains(":/") | KernelPlatform.IsOnUnix() & !Path.StartsWith("/"))

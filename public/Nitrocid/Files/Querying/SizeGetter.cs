@@ -34,7 +34,7 @@ namespace KS.Files.Querying
         /// <param name="DirectoryInfo">Directory information</param>
         /// <returns>Directory Size</returns>
         public static long GetAllSizesInFolder(DirectoryInfo DirectoryInfo) => 
-            DriverHandler.CurrentFilesystemDriver.GetAllSizesInFolder(DirectoryInfo, Flags.FullParseMode);
+            DriverHandler.CurrentFilesystemDriverLocal.GetAllSizesInFolder(DirectoryInfo, Flags.FullParseMode);
 
         /// <summary>
         /// Gets all file sizes in a folder, and optionally parses the entire folder
@@ -43,7 +43,7 @@ namespace KS.Files.Querying
         /// <param name="FullParseMode">Whether to parse all the directories</param>
         /// <returns>Directory Size</returns>
         public static long GetAllSizesInFolder(DirectoryInfo DirectoryInfo, bool FullParseMode) =>
-            DriverHandler.CurrentFilesystemDriver.GetAllSizesInFolder(DirectoryInfo, FullParseMode);
+            DriverHandler.CurrentFilesystemDriverLocal.GetAllSizesInFolder(DirectoryInfo, FullParseMode);
 
     }
 }

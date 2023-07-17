@@ -86,11 +86,11 @@ namespace KS.Shell.ShellBase.Commands
             // Split the switches properly now
             string switchRegex =
                 /* lang=regex */ @"(-\S+=((""(.+?)(?<![^\\]\\)"")|('(.+?)(?<![^\\]\\)')|(`(.+?)(?<![^\\]\\)`)|(?:[^\\\s]|\\.)+|\S+))|(?<= )-\S+";
-            var EnclosedSwitches = DriverHandler.CurrentRegexpDriver
+            var EnclosedSwitches = DriverHandler.CurrentRegexpDriverLocal
                 .Matches(CommandText, switchRegex)
                 .Select((match) => match.Value)
                 .ToArray();
-            CommandText = DriverHandler.CurrentRegexpDriver.Filter(CommandText, switchRegex);
+            CommandText = DriverHandler.CurrentRegexpDriverLocal.Filter(CommandText, switchRegex);
 
             // Split the requested command string into words
             var words = CommandText.SplitEncloseDoubleQuotes();

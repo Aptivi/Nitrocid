@@ -30,6 +30,6 @@ namespace KS.Files.Operations
         /// </summary>
         /// <param name="path">Path to an existing file</param>
         public static void ClearFile(string path) =>
-            DriverHandler.CurrentFilesystemDriver.ClearFile(path);
+            DriverHandler.CurrentFilesystemDriverLocal.ClearFile(path);
     }
 }

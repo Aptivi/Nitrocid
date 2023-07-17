@@ -39,6 +39,7 @@ namespace KS.Drivers
     /// </summary>
     public static class DriverHandler
     {
+        internal static bool begunLocal = false;
         internal static Dictionary<DriverTypes, Dictionary<string, IDriver>> drivers = new()
         {
             { 
@@ -120,38 +121,76 @@ namespace KS.Drivers
             { DriverTypes.Regexp,       drivers[DriverTypes.Regexp]["Default"] },
         };
 
+        internal static Dictionary<DriverTypes, IDriver> currentDriversLocal = new(currentDrivers);
+
         /// <summary>
-        /// Gets the current random driver
+        /// Gets the current random driver (use this when possible)
+        /// </summary>
+        public static IRandomDriver CurrentRandomDriverLocal =>
+            begunLocal ? (IRandomDriver)currentDriversLocal[DriverTypes.RNG] : CurrentRandomDriver;
+
+        /// <summary>
+        /// Gets the current console driver (use this when possible)
+        /// </summary>
+        public static IConsoleDriver CurrentConsoleDriverLocal =>
+            begunLocal ? (IConsoleDriver)currentDriversLocal[DriverTypes.Console] : CurrentConsoleDriver;
+
+        /// <summary>
+        /// Gets the current network driver (use this when possible)
+        /// </summary>
+        public static INetworkDriver CurrentNetworkDriverLocal =>
+            begunLocal ? (INetworkDriver)currentDriversLocal[DriverTypes.Network] : CurrentNetworkDriver;
+
+        /// <summary>
+        /// Gets the current filesystem driver (use this when possible)
+        /// </summary>
+        public static IFilesystemDriver CurrentFilesystemDriverLocal =>
+            begunLocal ? (IFilesystemDriver)currentDriversLocal[DriverTypes.Filesystem] : CurrentFilesystemDriver;
+
+        /// <summary>
+        /// Gets the current encryption driver (use this when possible)
+        /// </summary>
+        public static IEncryptionDriver CurrentEncryptionDriverLocal =>
+            begunLocal ? (IEncryptionDriver)currentDriversLocal[DriverTypes.Encryption] : CurrentEncryptionDriver;
+
+        /// <summary>
+        /// Gets the current regexp driver (use this when possible)
+        /// </summary>
+        public static IRegexpDriver CurrentRegexpDriverLocal =>
+            begunLocal ? (IRegexpDriver)currentDriversLocal[DriverTypes.Regexp] : CurrentRegexpDriver;
+
+        /// <summary>
+        /// Gets the system-wide current random driver
         /// </summary>
         public static IRandomDriver CurrentRandomDriver =>
             (IRandomDriver)currentDrivers[DriverTypes.RNG];
 
         /// <summary>
-        /// Gets the current console driver
+        /// Gets the system-wide current console driver
         /// </summary>
         public static IConsoleDriver CurrentConsoleDriver =>
             (IConsoleDriver)currentDrivers[DriverTypes.Console];
 
         /// <summary>
-        /// Gets the current network driver
+        /// Gets the system-wide current network driver
         /// </summary>
         public static INetworkDriver CurrentNetworkDriver =>
             (INetworkDriver)currentDrivers[DriverTypes.Network];
 
         /// <summary>
-        /// Gets the current filesystem driver
+        /// Gets the system-wide current filesystem driver
         /// </summary>
         public static IFilesystemDriver CurrentFilesystemDriver =>
             (IFilesystemDriver)currentDrivers[DriverTypes.Filesystem];
 
         /// <summary>
-        /// Gets the current encryption driver
+        /// Gets the system-wide current encryption driver
         /// </summary>
         public static IEncryptionDriver CurrentEncryptionDriver =>
             (IEncryptionDriver)currentDrivers[DriverTypes.Encryption];
 
         /// <summary>
-        /// Gets the current regexp driver
+        /// Gets the system-wide current regexp driver
         /// </summary>
         public static IRegexpDriver CurrentRegexpDriver =>
             (IRegexpDriver)currentDrivers[DriverTypes.Regexp];
@@ -287,6 +326,7 @@ namespace KS.Drivers
 
             // Then, try to set the driver
             currentDrivers[driverType] = (IDriver)GetDriver<T>(name);
+            SetDriverLocal<T>(name);
         }
 
         /// <summary>
@@ -302,9 +342,72 @@ namespace KS.Drivers
             // Then, try to set the driver
             var drivers = GetDrivers<T>();
             if (!drivers.ContainsKey(name))
+            {
                 currentDrivers[driverType] = (IDriver)GetDriver<T>("Default");
+                SetDriverLocal<T>("Default");
+            }
             else
+            {
                 currentDrivers[driverType] = (IDriver)GetDriver<T>(name);
+                SetDriverLocal<T>(name);
+            }
+        }
+
+        /// <summary>
+        /// Begins to use the local driver
+        /// </summary>
+        /// <param name="name">Name of the available kernel driver to set to</param>
+        public static void BeginLocalDriver<T>(string name)
+        {
+            if (begunLocal)
+                return;
+
+            // Try to set the driver
+            SetDriverLocal<T>(name);
+            begunLocal = true;
+        }
+
+        /// <summary>
+        /// Begins to use the local driver
+        /// </summary>
+        /// <param name="name">Name of the available kernel driver to set to</param>
+        public static void BeginLocalDriverSafe<T>(string name)
+        {
+            if (begunLocal)
+                return;
+
+            // Try to set the driver
+            var drivers = GetDrivers<T>();
+            if (!drivers.ContainsKey(name))
+                SetDriverLocal<T>("Default");
+            else
+                SetDriverLocal<T>(name);
+            begunLocal = true;
+        }
+
+        /// <summary>
+        /// Ends using the local driver
+        /// </summary>
+        public static void EndLocalDriver<T>()
+        {
+            if (!begunLocal)
+                return;
+
+            // First, infer the type from the T
+            var driverType = InferDriverTypeFromDriverInterfaceType<T>();
+
+            // Try to set the driver
+            currentDriversLocal[driverType] = currentDrivers[driverType];
+            begunLocal = false;
+        }
+
+        internal static void SetDriverLocal<T>(string name)
+        {
+            // First, infer the type from the T
+            var driverType = InferDriverTypeFromDriverInterfaceType<T>();
+
+            // Then, try to set the driver
+            currentDriversLocal[driverType] = (IDriver)GetDriver<T>(name);
         }
 
         private static DriverTypes InferDriverTypeFromDriverInterfaceType<T>()

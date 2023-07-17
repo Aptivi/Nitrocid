@@ -32,13 +32,13 @@ namespace KS.Files.Print
         /// Prints the file information to the console
         /// </summary>
         public static void PrintFileInfo(FileSystemInfo FileInfo) => 
-            DriverHandler.CurrentFilesystemDriver.PrintFileInfo(FileInfo, Listing.ShowFileDetailsList);
+            DriverHandler.CurrentFilesystemDriverLocal.PrintFileInfo(FileInfo, Listing.ShowFileDetailsList);
 
         /// <summary>
         /// Prints the file information to the console
         /// </summary>
         public static void PrintFileInfo(FileSystemInfo FileInfo, bool ShowFileDetails) =>
-            DriverHandler.CurrentFilesystemDriver.PrintFileInfo(FileInfo, ShowFileDetails);
+            DriverHandler.CurrentFilesystemDriverLocal.PrintFileInfo(FileInfo, ShowFileDetails);
 
     }
 }

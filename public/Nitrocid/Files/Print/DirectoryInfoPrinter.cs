@@ -32,13 +32,13 @@ namespace KS.Files.Print
         /// Prints the directory information to the console
         /// </summary>
         public static void PrintDirectoryInfo(FileSystemInfo DirectoryInfo) => 
-            DriverHandler.CurrentFilesystemDriver.PrintDirectoryInfo(DirectoryInfo, Listing.ShowFileDetailsList);
+            DriverHandler.CurrentFilesystemDriverLocal.PrintDirectoryInfo(DirectoryInfo, Listing.ShowFileDetailsList);
 
         /// <summary>
         /// Prints the directory information to the console
         /// </summary>
         public static void PrintDirectoryInfo(FileSystemInfo DirectoryInfo, bool ShowDirectoryDetails) =>
-            DriverHandler.CurrentFilesystemDriver.PrintDirectoryInfo(DirectoryInfo, ShowDirectoryDetails);
+            DriverHandler.CurrentFilesystemDriverLocal.PrintDirectoryInfo(DirectoryInfo, ShowDirectoryDetails);
 
     }
 }

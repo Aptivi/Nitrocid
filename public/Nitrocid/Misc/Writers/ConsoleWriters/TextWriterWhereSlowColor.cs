@@ -82,7 +82,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(colorType);
 
                     // Write text in another place slowly
-                    DriverHandler.CurrentConsoleDriver.WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
+                    DriverHandler.CurrentConsoleDriverLocal.WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
                 {
@@ -145,7 +145,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(colorTypeBackground, true);
 
                     // Write text in another place slowly
-                    DriverHandler.CurrentConsoleDriver.WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
+                    DriverHandler.CurrentConsoleDriverLocal.WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
                 {
@@ -204,7 +204,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(KernelColorType.Background, true);
 
                     // Write text in another place slowly
-                    DriverHandler.CurrentConsoleDriver.WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
+                    DriverHandler.CurrentConsoleDriverLocal.WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
                 {
@@ -266,7 +266,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(new Color(BackgroundColor));
 
                     // Write text in another place slowly
-                    DriverHandler.CurrentConsoleDriver.WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
+                    DriverHandler.CurrentConsoleDriverLocal.WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
                 {
@@ -325,7 +325,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(KernelColorType.Background, true);
 
                     // Write text in another place slowly
-                    DriverHandler.CurrentConsoleDriver.WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
+                    DriverHandler.CurrentConsoleDriverLocal.WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
                 {
@@ -387,7 +387,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(BackgroundColor, true);
 
                     // Write text in another place slowly
-                    DriverHandler.CurrentConsoleDriver.WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
+                    DriverHandler.CurrentConsoleDriverLocal.WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
                 {

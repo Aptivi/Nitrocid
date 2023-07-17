@@ -32,20 +32,20 @@ namespace KS.Files.Querying
         /// <param name="fileName">The file name with an extension</param>
         /// <returns>Numbered file name with the file number suffix applied in this format: [filename]-[number].[ext]</returns>
         public static string GetNumberedFileName(string path, string fileName) =>
-            DriverHandler.CurrentFilesystemDriver.GetNumberedFileName(path, fileName);
+            DriverHandler.CurrentFilesystemDriverLocal.GetNumberedFileName(path, fileName);
 
         /// <summary>
         /// Gets the randomized file name
         /// </summary>
         /// <returns>Randomized file name in the temporary directory for your system</returns>
         public static string GetRandomFileName() =>
-            DriverHandler.CurrentFilesystemDriver.GetRandomFileName();
+            DriverHandler.CurrentFilesystemDriverLocal.GetRandomFileName();
 
         /// <summary>
         /// Gets the randomized folder name
         /// </summary>
         /// <returns>Randomized folder name in the temporary directory for your system</returns>
         public static string GetRandomFolderName() =>
-            DriverHandler.CurrentFilesystemDriver.GetRandomFolderName();
+            DriverHandler.CurrentFilesystemDriverLocal.GetRandomFolderName();
     }
 }

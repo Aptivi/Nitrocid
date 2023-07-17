@@ -32,7 +32,7 @@ namespace KS.Files.Operations
         /// <param name="Input">An input file</param>
         /// <param name="TargetInputs">The target inputs to merge</param>
         public static string[] CombineTextFiles(string Input, string[] TargetInputs) =>
-            DriverHandler.CurrentFilesystemDriver.CombineTextFiles(Input, TargetInputs);
+            DriverHandler.CurrentFilesystemDriverLocal.CombineTextFiles(Input, TargetInputs);
 
         /// <summary>
         /// Combines the binary files and puts the combined output to the array
@@ -40,7 +40,7 @@ namespace KS.Files.Operations
         /// <param name="Input">An input file</param>
         /// <param name="TargetInputs">The target inputs to merge</param>
         public static byte[] CombineBinaryFiles(string Input, string[] TargetInputs) =>
-            DriverHandler.CurrentFilesystemDriver.CombineBinaryFiles(Input, TargetInputs);
+            DriverHandler.CurrentFilesystemDriverLocal.CombineBinaryFiles(Input, TargetInputs);
 
     }
 }

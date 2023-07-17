@@ -33,7 +33,7 @@ namespace KS.Files.Operations
         /// </summary>
         /// <param name="Target">Target directory</param>
         public static void RemoveDirectory(string Target) =>
-            DriverHandler.CurrentFilesystemDriver.RemoveDirectory(Target, Filesystem.ShowFilesystemProgress);
+            DriverHandler.CurrentFilesystemDriverLocal.RemoveDirectory(Target, Filesystem.ShowFilesystemProgress);
 
         /// <summary>
         /// Removes a directory
@@ -42,7 +42,7 @@ namespace KS.Files.Operations
         /// <param name="ShowProgress">Whether or not to show what files are being removed</param>
         /// <param name="secureRemove">Securely remove file by filling it with zeroes</param>
         public static void RemoveDirectory(string Target, bool ShowProgress, bool secureRemove = false) =>
-            DriverHandler.CurrentFilesystemDriver.RemoveDirectory(Target, ShowProgress, secureRemove);
+            DriverHandler.CurrentFilesystemDriverLocal.RemoveDirectory(Target, ShowProgress, secureRemove);
 
         /// <summary>
         /// Removes a directory
@@ -70,7 +70,7 @@ namespace KS.Files.Operations
         /// <param name="Target">Target directory</param>
         /// <param name="secureRemove">Securely remove file by filling it with zeroes</param>
         public static void RemoveFile(string Target, bool secureRemove = false) =>
-            DriverHandler.CurrentFilesystemDriver.RemoveFile(Target, secureRemove);
+            DriverHandler.CurrentFilesystemDriverLocal.RemoveFile(Target, secureRemove);
 
         /// <summary>
         /// Removes a file
@@ -98,7 +98,7 @@ namespace KS.Files.Operations
         /// <param name="Target">Path to file or directory</param>
         /// <param name="secureRemove">Securely remove file by filling it with zeroes</param>
         public static void RemoveFileOrDir(string Target, bool secureRemove = false) =>
-            DriverHandler.CurrentFilesystemDriver.RemoveFileOrDir(Target, secureRemove);
+            DriverHandler.CurrentFilesystemDriverLocal.RemoveFileOrDir(Target, secureRemove);
 
         /// <summary>
         /// Removes a file or directory

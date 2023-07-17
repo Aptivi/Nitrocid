@@ -33,15 +33,15 @@ namespace KS.ConsoleBase
         /// The standard output stream that the console uses
         /// </summary>
         public static TextWriter Out => 
-            DriverHandler.CurrentConsoleDriver.Out;
+            DriverHandler.CurrentConsoleDriverLocal.Out;
 
         /// <summary>
         /// The cursor left position
         /// </summary>
         public static int CursorLeft
         {
-            get => DriverHandler.CurrentConsoleDriver.CursorLeft;
-            set => DriverHandler.CurrentConsoleDriver.CursorLeft = value;
+            get => DriverHandler.CurrentConsoleDriverLocal.CursorLeft;
+            set => DriverHandler.CurrentConsoleDriverLocal.CursorLeft = value;
         }
 
         /// <summary>
@@ -49,47 +49,47 @@ namespace KS.ConsoleBase
         /// </summary>
         public static int CursorTop
         {
-            get => DriverHandler.CurrentConsoleDriver.CursorTop;
-            set => DriverHandler.CurrentConsoleDriver.CursorTop = value;
+            get => DriverHandler.CurrentConsoleDriverLocal.CursorTop;
+            set => DriverHandler.CurrentConsoleDriverLocal.CursorTop = value;
         }
 
         /// <summary>
         /// The console window width (columns)
         /// </summary>
         public static int WindowWidth => 
-            DriverHandler.CurrentConsoleDriver.WindowWidth;
+            DriverHandler.CurrentConsoleDriverLocal.WindowWidth;
 
         /// <summary>
         /// The console window height (rows)
         /// </summary>
         public static int WindowHeight => 
-            DriverHandler.CurrentConsoleDriver.WindowHeight;
+            DriverHandler.CurrentConsoleDriverLocal.WindowHeight;
 
         /// <summary>
         /// The console window topmost
         /// </summary>
         public static int WindowTop =>
-            DriverHandler.CurrentConsoleDriver.WindowTop;
+            DriverHandler.CurrentConsoleDriverLocal.WindowTop;
 
         /// <summary>
         /// The console buffer width (columns)
         /// </summary>
         public static int BufferWidth =>
-            DriverHandler.CurrentConsoleDriver.BufferWidth;
+            DriverHandler.CurrentConsoleDriverLocal.BufferWidth;
 
         /// <summary>
         /// The console buffer height (rows)
         /// </summary>
         public static int BufferHeight =>
-            DriverHandler.CurrentConsoleDriver.BufferHeight;
+            DriverHandler.CurrentConsoleDriverLocal.BufferHeight;
 
         /// <summary>
         /// The foreground color
         /// </summary>
         public static ConsoleColor ForegroundColor
         {
-            get => DriverHandler.CurrentConsoleDriver.ForegroundColor;
-            set => DriverHandler.CurrentConsoleDriver.ForegroundColor = value;
+            get => DriverHandler.CurrentConsoleDriverLocal.ForegroundColor;
+            set => DriverHandler.CurrentConsoleDriverLocal.ForegroundColor = value;
         }
 
         /// <summary>
@@ -97,8 +97,8 @@ namespace KS.ConsoleBase
         /// </summary>
         public static ConsoleColor BackgroundColor
         {
-            get => DriverHandler.CurrentConsoleDriver.BackgroundColor;
-            set => DriverHandler.CurrentConsoleDriver.BackgroundColor = value;
+            get => DriverHandler.CurrentConsoleDriverLocal.BackgroundColor;
+            set => DriverHandler.CurrentConsoleDriverLocal.BackgroundColor = value;
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace KS.ConsoleBase
         /// </summary>
         public static bool CursorVisible 
         { 
-            set => DriverHandler.CurrentConsoleDriver.CursorVisible = value; 
+            set => DriverHandler.CurrentConsoleDriverLocal.CursorVisible = value; 
         }
 
         /// <summary>
@@ -114,8 +114,8 @@ namespace KS.ConsoleBase
         /// </summary>
         public static Encoding OutputEncoding
         {
-            get => DriverHandler.CurrentConsoleDriver.OutputEncoding;
-            set => DriverHandler.CurrentConsoleDriver.OutputEncoding = value;
+            get => DriverHandler.CurrentConsoleDriverLocal.OutputEncoding;
+            set => DriverHandler.CurrentConsoleDriverLocal.OutputEncoding = value;
         }
 
         /// <summary>
@@ -123,21 +123,21 @@ namespace KS.ConsoleBase
         /// </summary>
         public static Encoding InputEncoding
         {
-            get => DriverHandler.CurrentConsoleDriver.InputEncoding;
-            set => DriverHandler.CurrentConsoleDriver.InputEncoding = value;
+            get => DriverHandler.CurrentConsoleDriverLocal.InputEncoding;
+            set => DriverHandler.CurrentConsoleDriverLocal.InputEncoding = value;
         }
 
         /// <summary>
         /// Whether a key is pressed
         /// </summary>
         public static bool KeyAvailable =>
-            DriverHandler.CurrentConsoleDriver.KeyAvailable;
+            DriverHandler.CurrentConsoleDriverLocal.KeyAvailable;
 
         /// <summary>
         /// Clears the console screen, filling it with spaces with the selected background color.
         /// </summary>
         public static void Clear(bool loadBack = false) =>
-            DriverHandler.CurrentConsoleDriver.Clear(loadBack);
+            DriverHandler.CurrentConsoleDriverLocal.Clear(loadBack);
 
         /// <summary>
         /// Sets the cursor position
@@ -145,65 +145,65 @@ namespace KS.ConsoleBase
         /// <param name="left">The left to be set (from 0)</param>
         /// <param name="top">The top to be set (from 0)</param>
         public static void SetCursorPosition(int left, int top) =>
-            DriverHandler.CurrentConsoleDriver.SetCursorPosition(left, top);
+            DriverHandler.CurrentConsoleDriverLocal.SetCursorPosition(left, top);
 
         /// <summary>
         /// Resets console colors
         /// </summary>
         public static void ResetColor() =>
-            DriverHandler.CurrentConsoleDriver.ResetColor();
+            DriverHandler.CurrentConsoleDriverLocal.ResetColor();
 
         /// <summary>
         /// Opens the standard input
         /// </summary>
         public static Stream OpenStandardInput() =>
-            DriverHandler.CurrentConsoleDriver.OpenStandardInput();
+            DriverHandler.CurrentConsoleDriverLocal.OpenStandardInput();
 
         /// <summary>
         /// Opens the standard output
         /// </summary>
         public static Stream OpenStandardOutput() =>
-            DriverHandler.CurrentConsoleDriver.OpenStandardOutput();
+            DriverHandler.CurrentConsoleDriverLocal.OpenStandardOutput();
 
         /// <summary>
         /// Opens the standard error
         /// </summary>
         public static Stream OpenStandardError() =>
-            DriverHandler.CurrentConsoleDriver.OpenStandardError();
+            DriverHandler.CurrentConsoleDriverLocal.OpenStandardError();
 
         /// <summary>
         /// Sets console output
         /// </summary>
         /// <param name="newOut">New output</param>
         public static void SetOut(TextWriter newOut) =>
-            DriverHandler.CurrentConsoleDriver.SetOut(newOut);
+            DriverHandler.CurrentConsoleDriverLocal.SetOut(newOut);
 
         /// <summary>
         /// Beeps the console
         /// </summary>
         public static void Beep() => 
-            DriverHandler.CurrentConsoleDriver.Beep();
+            DriverHandler.CurrentConsoleDriverLocal.Beep();
 
         /// <summary>
         /// Reads a key
         /// </summary>
         /// <param name="intercept">Whether to intercept</param>
         public static ConsoleKeyInfo ReadKey(bool intercept = false) =>
-            DriverHandler.CurrentConsoleDriver.ReadKey(intercept);
+            DriverHandler.CurrentConsoleDriverLocal.ReadKey(intercept);
 
         /// <summary>
         /// Writes a character to console
         /// </summary>
         /// <param name="value">A character</param>
         public static void Write(char value) =>
-            DriverHandler.CurrentConsoleDriver.Write(value);
+            DriverHandler.CurrentConsoleDriverLocal.Write(value);
 
         /// <summary>
         /// Writes text to console
         /// </summary>
         /// <param name="text">The text to write</param>
         public static void Write(string text) =>
-            DriverHandler.CurrentConsoleDriver.Write(text);
+            DriverHandler.CurrentConsoleDriverLocal.Write(text);
 
         /// <summary>
         /// Writes text to console
@@ -211,20 +211,20 @@ namespace KS.ConsoleBase
         /// <param name="text">The text to write</param>
         /// <param name="args">The arguments to evaluate</param>
         public static void Write(string text, params object[] args) =>
-            DriverHandler.CurrentConsoleDriver.Write(text, args);
+            DriverHandler.CurrentConsoleDriverLocal.Write(text, args);
 
         /// <summary>
         /// Writes new line to console
         /// </summary>
         public static void WriteLine() =>
-            DriverHandler.CurrentConsoleDriver.WriteLine();
+            DriverHandler.CurrentConsoleDriverLocal.WriteLine();
 
         /// <summary>
         /// Writes text to console with line terminator
         /// </summary>
         /// <param name="text">The text to write</param>
         public static void WriteLine(string text) =>
-            DriverHandler.CurrentConsoleDriver.WriteLine(text);
+            DriverHandler.CurrentConsoleDriverLocal.WriteLine(text);
 
         /// <summary>
         /// Writes text to console with line terminator
@@ -232,6 +232,6 @@ namespace KS.ConsoleBase
         /// <param name="text">The text to write</param>
         /// <param name="args">The arguments to evaluate</param>
         public static void WriteLine(string text, params object[] args) =>
-            DriverHandler.CurrentConsoleDriver.WriteLine(text, args);
+            DriverHandler.CurrentConsoleDriverLocal.WriteLine(text, args);
     }
 }

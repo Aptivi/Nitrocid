@@ -78,7 +78,7 @@ namespace KS.Files.LineEndings
         /// </summary>
         /// <param name="TextFile">Target text file</param>
         public static FilesystemNewlineStyle GetLineEndingFromFile(string TextFile) =>
-            DriverHandler.CurrentFilesystemDriver.GetLineEndingFromFile(TextFile);
+            DriverHandler.CurrentFilesystemDriverLocal.GetLineEndingFromFile(TextFile);
 
     }
 }

@@ -119,7 +119,7 @@ namespace KS.Misc.Text
         /// <param name="target">Target string</param>
         public static string[] SplitEncloseDoubleQuotes(this string target)
         {
-            return DriverHandler.CurrentRegexpDriver
+            return DriverHandler.CurrentRegexpDriverLocal
                 .Matches(target, /* lang=regex */ @"(""(.+?)(?<![^\\]\\)"")|('(.+?)(?<![^\\]\\)')|(`(.+?)(?<![^\\]\\)`)|(?:[^\\\s]|\\.)+|\S+")
                 .Select((m) => m.Value)
                 .Select((m) => (m.StartsWith("\"") && m.EndsWith("\"")) ? m.ReleaseDoubleQuotes() : m)

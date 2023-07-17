@@ -32,6 +32,6 @@ namespace KS.Files.Read
         /// <param name="stream">The stream reader</param>
         /// <returns>Contents of the stream</returns>
         public static string ReadToEndAndSeek(ref StreamReader stream) =>
-            DriverHandler.CurrentFilesystemDriver.ReadToEndAndSeek(ref stream);
+            DriverHandler.CurrentFilesystemDriverLocal.ReadToEndAndSeek(ref stream);
     }
 }

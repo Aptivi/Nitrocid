@@ -74,7 +74,7 @@ namespace KS.Files.Folders
         /// <param name="Recursive">Whether the list is recursive or not</param>
         /// <returns>List of filesystem entries if any. Empty list if folder is not found or is empty.</returns>
         public static List<FileSystemInfo> CreateList(string folder, bool Sorted = false, bool Recursive = false) =>
-            DriverHandler.CurrentFilesystemDriver.CreateList(folder, Sorted, Recursive);
+            DriverHandler.CurrentFilesystemDriverLocal.CreateList(folder, Sorted, Recursive);
 
         internal static int GetDigits(this long Number) =>
             Number == 0 ? 1 : (int)Math.Log10(Math.Abs(Number)) + 1;
@@ -190,7 +190,7 @@ namespace KS.Files.Folders
         /// <param name="Recursive">Whether the list is recursive or not</param>
         /// <returns>The array of full paths</returns>
         public static string[] GetFilesystemEntries(string Path, bool IsFile = false, bool Recursive = false) =>
-            DriverHandler.CurrentFilesystemDriver.GetFilesystemEntries(Path, IsFile, Recursive);
+            DriverHandler.CurrentFilesystemDriverLocal.GetFilesystemEntries(Path, IsFile, Recursive);
 
         /// <summary>
         /// Gets the filesystem entries of the parent with the specified pattern (wildcards, ...)
@@ -200,7 +200,7 @@ namespace KS.Files.Folders
         /// <param name="Recursive">Whether the list is recursive or not</param>
         /// <returns>The array of full paths</returns>
         public static string[] GetFilesystemEntries(string Parent, string Pattern, bool Recursive = false) =>
-            DriverHandler.CurrentFilesystemDriver.GetFilesystemEntries(Parent, Pattern, Recursive);
+            DriverHandler.CurrentFilesystemDriverLocal.GetFilesystemEntries(Parent, Pattern, Recursive);
 
         /// <summary>
         /// Gets the filesystem entries of the parent using regular expressions
@@ -210,7 +210,7 @@ namespace KS.Files.Folders
         /// <param name="Recursive">Whether the list is recursive or not</param>
         /// <returns>The array of full paths</returns>
         public static string[] GetFilesystemEntriesRegex(string Parent, string Pattern, bool Recursive = false) =>
-            DriverHandler.CurrentFilesystemDriver.GetFilesystemEntriesRegex(Parent, Pattern, Recursive);
+            DriverHandler.CurrentFilesystemDriverLocal.GetFilesystemEntriesRegex(Parent, Pattern, Recursive);
 
     }
 }

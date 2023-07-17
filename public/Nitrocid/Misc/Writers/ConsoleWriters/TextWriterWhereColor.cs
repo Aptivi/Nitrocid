@@ -70,7 +70,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                 try
                 {
                     // Write text in another place. By the way, we check the text for newlines and console width excess
-                    DriverHandler.CurrentConsoleDriver.WriteWherePlain(msg, Left, Top, Return, RightMargin, vars);
+                    DriverHandler.CurrentConsoleDriverLocal.WriteWherePlain(msg, Left, Top, Return, RightMargin, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
                 {

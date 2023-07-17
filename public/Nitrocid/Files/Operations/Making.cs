@@ -36,7 +36,7 @@ namespace KS.Files.Operations
         /// <param name="ThrowIfDirectoryExists">If directory exists, throw an exception.</param>
         /// <exception cref="IOException"></exception>
         public static void MakeDirectory(string NewDirectory, bool ThrowIfDirectoryExists = true) =>
-            DriverHandler.CurrentFilesystemDriver.MakeDirectory(NewDirectory, ThrowIfDirectoryExists);
+            DriverHandler.CurrentFilesystemDriverLocal.MakeDirectory(NewDirectory, ThrowIfDirectoryExists);
 
         /// <summary>
         /// Makes a directory
@@ -65,7 +65,7 @@ namespace KS.Files.Operations
         /// <param name="ThrowIfFileExists">If file exists, throw an exception.</param>
         /// <exception cref="IOException"></exception>
         public static void MakeFile(string NewFile, bool ThrowIfFileExists = true) =>
-            DriverHandler.CurrentFilesystemDriver.MakeFile(NewFile, ThrowIfFileExists);
+            DriverHandler.CurrentFilesystemDriverLocal.MakeFile(NewFile, ThrowIfFileExists);
 
         /// <summary>
         /// Makes a file
@@ -95,7 +95,7 @@ namespace KS.Files.Operations
         /// <param name="useArray">Use array instead of object</param>
         /// <exception cref="IOException"></exception>
         public static void MakeJsonFile(string NewFile, bool ThrowIfFileExists = true, bool useArray = false) =>
-            DriverHandler.CurrentFilesystemDriver.MakeJsonFile(NewFile, ThrowIfFileExists, useArray);
+            DriverHandler.CurrentFilesystemDriverLocal.MakeJsonFile(NewFile, ThrowIfFileExists, useArray);
 
         /// <summary>
         /// Makes an empty JSON file

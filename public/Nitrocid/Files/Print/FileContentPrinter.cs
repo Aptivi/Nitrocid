@@ -32,7 +32,7 @@ namespace KS.Files.Print
         /// </summary>
         /// <param name="filename">Full path to file</param>
         public static void PrintContents(string filename) => 
-            DriverHandler.CurrentFilesystemDriver.PrintContents(filename, Flags.PrintLineNumbers);
+            DriverHandler.CurrentFilesystemDriverLocal.PrintContents(filename, Flags.PrintLineNumbers);
 
         /// <summary>
         /// Prints the contents of a file to the console
@@ -41,7 +41,7 @@ namespace KS.Files.Print
         /// <param name="PrintLineNumbers">Whether to also print the line numbers or not</param>
         /// <param name="ForcePlain">Forces binary files to be printed verbatim</param>
         public static void PrintContents(string filename, bool PrintLineNumbers, bool ForcePlain = false) =>
-            DriverHandler.CurrentFilesystemDriver.PrintContents(filename, PrintLineNumbers, ForcePlain);
+            DriverHandler.CurrentFilesystemDriverLocal.PrintContents(filename, PrintLineNumbers, ForcePlain);
 
         /// <summary>
         /// Renders the file in hex
@@ -50,6 +50,6 @@ namespace KS.Files.Print
         /// <param name="EndByte">End byte position</param>
         /// <param name="FileByte">File content in bytes</param>
         public static void DisplayInHex(long StartByte, long EndByte, byte[] FileByte) =>
-            DriverHandler.CurrentFilesystemDriver.DisplayInHex(StartByte, EndByte, FileByte);
+            DriverHandler.CurrentFilesystemDriverLocal.DisplayInHex(StartByte, EndByte, FileByte);
     }
 }

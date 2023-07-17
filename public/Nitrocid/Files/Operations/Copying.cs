@@ -36,7 +36,7 @@ namespace KS.Files.Operations
         /// <param name="Destination">Target file or directory</param>
         /// <exception cref="IOException"></exception>
         public static void CopyFileOrDir(string Source, string Destination) =>
-            DriverHandler.CurrentFilesystemDriver.CopyFileOrDir(Source, Destination);
+            DriverHandler.CurrentFilesystemDriverLocal.CopyFileOrDir(Source, Destination);
 
         /// <summary>
         /// Copies a file or directory
@@ -66,7 +66,7 @@ namespace KS.Files.Operations
         /// <param name="Source">Source directory</param>
         /// <param name="Destination">Target directory</param>
         public static void CopyDirectory(string Source, string Destination) =>
-            DriverHandler.CurrentFilesystemDriver.CopyDirectory(Source, Destination);
+            DriverHandler.CurrentFilesystemDriverLocal.CopyDirectory(Source, Destination);
 
         /// <summary>
         /// Copies the directory from source to destination
@@ -75,7 +75,7 @@ namespace KS.Files.Operations
         /// <param name="Destination">Target directory</param>
         /// <param name="ShowProgress">Whether or not to show what files are being copied</param>
         public static void CopyDirectory(string Source, string Destination, bool ShowProgress) =>
-            DriverHandler.CurrentFilesystemDriver.CopyDirectory(Source, Destination, ShowProgress);
+            DriverHandler.CurrentFilesystemDriverLocal.CopyDirectory(Source, Destination, ShowProgress);
 
     }
 }

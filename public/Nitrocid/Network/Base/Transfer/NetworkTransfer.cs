@@ -78,7 +78,7 @@ namespace KS.Network.Base.Transfer
         /// <param name="URL">A URL to a file</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
         public static bool DownloadFile(string URL) =>
-            DriverHandler.CurrentNetworkDriver.DownloadFile(URL);
+            DriverHandler.CurrentNetworkDriverLocal.DownloadFile(URL);
 
         /// <summary>
         /// Downloads a file to the current working directory.
@@ -87,7 +87,7 @@ namespace KS.Network.Base.Transfer
         /// <param name="ShowProgress">Whether or not to show progress bar</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
         public static bool DownloadFile(string URL, bool ShowProgress) =>
-            DriverHandler.CurrentNetworkDriver.DownloadFile(URL, ShowProgress);
+            DriverHandler.CurrentNetworkDriverLocal.DownloadFile(URL, ShowProgress);
 
         /// <summary>
         /// Downloads a file to the current working directory.
@@ -96,7 +96,7 @@ namespace KS.Network.Base.Transfer
         /// <param name="FileName">File name to download to</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
         public static bool DownloadFile(string URL, string FileName) =>
-            DriverHandler.CurrentNetworkDriver.DownloadFile(URL, FileName);
+            DriverHandler.CurrentNetworkDriverLocal.DownloadFile(URL, FileName);
 
         /// <summary>
         /// Downloads a file to the current working directory.
@@ -106,7 +106,7 @@ namespace KS.Network.Base.Transfer
         /// <param name="FileName">File name to download to</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
         public static bool DownloadFile(string URL, bool ShowProgress, string FileName) =>
-            DriverHandler.CurrentNetworkDriver.DownloadFile(URL, ShowProgress, FileName);
+            DriverHandler.CurrentNetworkDriverLocal.DownloadFile(URL, ShowProgress, FileName);
 
         /// <summary>
         /// Uploads a file to the current working directory.
@@ -115,7 +115,7 @@ namespace KS.Network.Base.Transfer
         /// <param name="URL">A URL to a file</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
         public static bool UploadFile(string FileName, string URL) => 
-            DriverHandler.CurrentNetworkDriver.UploadFile(FileName, URL);
+            DriverHandler.CurrentNetworkDriverLocal.UploadFile(FileName, URL);
 
         /// <summary>
         /// Uploads a file from the current working directory.
@@ -125,7 +125,7 @@ namespace KS.Network.Base.Transfer
         /// <param name="ShowProgress">Whether or not to show progress bar</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
         public static bool UploadFile(string FileName, string URL, bool ShowProgress) =>
-            DriverHandler.CurrentNetworkDriver.UploadFile(FileName, URL, ShowProgress);
+            DriverHandler.CurrentNetworkDriverLocal.UploadFile(FileName, URL, ShowProgress);
 
         /// <summary>
         /// Downloads a resource from URL as a string.
@@ -133,7 +133,7 @@ namespace KS.Network.Base.Transfer
         /// <param name="URL">A URL to a file</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
         public static string DownloadString(string URL) => 
-            DriverHandler.CurrentNetworkDriver.DownloadString(URL);
+            DriverHandler.CurrentNetworkDriverLocal.DownloadString(URL);
 
         /// <summary>
         /// Downloads a resource from URL as a string.
@@ -142,7 +142,7 @@ namespace KS.Network.Base.Transfer
         /// <param name="ShowProgress">Whether or not to show progress bar</param>
         /// <returns>A resource string if successful; Throws exception if unsuccessful.</returns>
         public static string DownloadString(string URL, bool ShowProgress) =>
-            DriverHandler.CurrentNetworkDriver.DownloadString(URL, ShowProgress);
+            DriverHandler.CurrentNetworkDriverLocal.DownloadString(URL, ShowProgress);
 
         /// <summary>
         /// Uploads a resource from URL as a string.
@@ -151,7 +151,7 @@ namespace KS.Network.Base.Transfer
         /// <param name="Data">Content to upload</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
         public static bool UploadString(string URL, string Data) =>
-            DriverHandler.CurrentNetworkDriver.UploadString(URL, Data);
+            DriverHandler.CurrentNetworkDriverLocal.UploadString(URL, Data);
 
         /// <summary>
         /// Uploads a resource from URL as a string.
@@ -161,7 +161,7 @@ namespace KS.Network.Base.Transfer
         /// <param name="ShowProgress">Whether or not to show progress bar</param>
         /// <returns>A resource string if successful; Throws exception if unsuccessful.</returns>
         public static bool UploadString(string URL, string Data, bool ShowProgress) =>
-            DriverHandler.CurrentNetworkDriver.UploadString(URL, Data, ShowProgress);
+            DriverHandler.CurrentNetworkDriverLocal.UploadString(URL, Data, ShowProgress);
 
         /// <summary>
         /// Check for errors on download completion.

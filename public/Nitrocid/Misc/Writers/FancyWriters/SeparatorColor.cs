@@ -43,7 +43,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteSeparator(string Text, bool PrintSuffix, params object[] Vars)
         {
-            bool canPosition = !DriverHandler.CurrentConsoleDriver.IsDumb;
+            bool canPosition = !DriverHandler.CurrentConsoleDriverLocal.IsDumb;
             Text = StringManipulate.FormatString(Text, Vars);
 
             // Print the suffix and the text
@@ -156,7 +156,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteSeparator(string Text, bool PrintSuffix, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
         {
-            bool canPosition = !DriverHandler.CurrentConsoleDriver.IsDumb;
+            bool canPosition = !DriverHandler.CurrentConsoleDriverLocal.IsDumb;
             Text = StringManipulate.FormatString(Text, Vars);
 
             // Print the suffix and the text

@@ -42,7 +42,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         {
             lock (WriteLock)
             {
-                DriverHandler.CurrentConsoleDriver.WritePlain();
+                DriverHandler.CurrentConsoleDriverLocal.WritePlain();
             }
         }
 
@@ -56,7 +56,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         {
             lock (WriteLock)
             {
-                DriverHandler.CurrentConsoleDriver.WritePlain(Text, Line, vars);
+                DriverHandler.CurrentConsoleDriverLocal.WritePlain(Text, Line, vars);
             }
         }
 

@@ -581,7 +581,7 @@ namespace KS.Drivers.Filesystem
             foreach (var FileEntry in AllFileEntries)
             {
                 // Match the file entry
-                var FileEntryMatches = DriverHandler.CurrentRegexpDriver.Matches(FileEntry, Pattern);
+                var FileEntryMatches = DriverHandler.CurrentRegexpDriverLocal.Matches(FileEntry, Pattern);
                 if (FileEntryMatches.Count == 0)
                     // No match.
                     continue;

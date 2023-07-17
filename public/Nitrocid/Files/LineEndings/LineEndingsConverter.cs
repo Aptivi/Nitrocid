@@ -31,7 +31,7 @@ namespace KS.Files.LineEndings
         /// </summary>
         /// <param name="TextFile">Text file name with extension or file path</param>
         public static void ConvertLineEndings(string TextFile) =>
-            DriverHandler.CurrentFilesystemDriver.ConvertLineEndings(TextFile);
+            DriverHandler.CurrentFilesystemDriverLocal.ConvertLineEndings(TextFile);
 
         /// <summary>
         /// Converts the line endings to the specified newline style
@@ -39,7 +39,7 @@ namespace KS.Files.LineEndings
         /// <param name="TextFile">Text file name with extension or file path</param>
         /// <param name="LineEndingStyle">Line ending style</param>
         public static void ConvertLineEndings(string TextFile, FilesystemNewlineStyle LineEndingStyle) =>
-            DriverHandler.CurrentFilesystemDriver.ConvertLineEndings(TextFile, LineEndingStyle);
+            DriverHandler.CurrentFilesystemDriverLocal.ConvertLineEndings(TextFile, LineEndingStyle);
 
     }
 }

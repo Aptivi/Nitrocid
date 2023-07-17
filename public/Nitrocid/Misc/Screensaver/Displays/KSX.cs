@@ -259,7 +259,7 @@ namespace KS.Misc.Screensaver.Displays
                         int currentMove = 0;
                         while (!selectedFirst)
                         {
-                            bool movingTop = DriverHandler.CurrentRandomDriver.RandomChance(30);
+                            bool movingTop = DriverHandler.CurrentRandomDriverLocal.RandomChance(30);
 
                             // Make a move
                             currentMove++;

@@ -64,7 +64,7 @@ namespace KS.Scripting.Conditions.Types
             { "double",     (value) => value is not null && double.TryParse(value, out _) },
             { "f64",        (value) => value is not null && double.TryParse(value, out _) },
             { "bool",       (value) => value is not null && bool.TryParse(value, out _) },
-            { "regex",      (value) => value is not null && DriverHandler.CurrentRegexpDriver.IsValidRegex(value) },
+            { "regex",      (value) => value is not null && DriverHandler.CurrentRegexpDriverLocal.IsValidRegex(value) },
         };
 
         /// <inheritdoc/>

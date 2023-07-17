@@ -31,7 +31,7 @@ namespace KS.Misc.Probers.Regexp
         /// <param name="pattern">Regular expression pattern</param>
         /// <returns>True if valid. Otherwise, false</returns>
         public static bool IsValidRegex(string pattern) =>
-            DriverHandler.CurrentRegexpDriver.IsValidRegex(pattern);
+            DriverHandler.CurrentRegexpDriverLocal.IsValidRegex(pattern);
 
         /// <summary>
         /// Checks to see whether the pattern matches
@@ -40,6 +40,6 @@ namespace KS.Misc.Probers.Regexp
         /// <param name="pattern">Regular expression pattern for matching</param>
         /// <returns>True if there are matches. Otherwise, false</returns>
         public static bool IsMatch(string text, string pattern) =>
-            DriverHandler.CurrentRegexpDriver.IsMatch(text, pattern);
+            DriverHandler.CurrentRegexpDriverLocal.IsMatch(text, pattern);
     }
 }
