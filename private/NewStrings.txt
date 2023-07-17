@@ -701,5 +701,7 @@ Removes a key on the header to all the upcoming requests
 Lists the request headers
 Gets current user agent
 Sets a user agent
+File is already in use.
+File is not in use.
 
 ==========================================================================================================================================

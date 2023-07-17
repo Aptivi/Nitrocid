@@ -116,5 +116,34 @@ namespace KS.Files
             }
         }
 
+        /// <summary>
+        /// Checks to see if the file is locked
+        /// </summary>
+        /// <param name="Path">Path to check the file</param>
+        /// <returns></returns>
+        public static bool IsFileLocked(string Path)
+        {
+            Path = NeutralizePath(Path);
+
+            // We can't perform this operation on nonexistent file
+            if (!Checking.FileExists(Path))
+                throw new KernelException(KernelExceptionType.Filesystem, string.Format(Translate.DoTranslation("File {0} not found."), Path));
+
+            // Try to open the file exclusively to check to see if we can open the file or just error out with sharing violation
+            // error.
+            try
+            {
+                // Open the file stream
+                using FileStream targetFile = new(Path, FileMode.Open, FileAccess.ReadWrite, FileShare.None);
+                targetFile.ReadByte();
+                return false;
+            }
+            catch (IOException ex) when ((ex.HResult & 0x0000FFFF) == 32)
+            {
+                DebugWriter.WriteDebug(DebugLevel.W, "File {0} is locked: {1}", Path, ex.Message);
+                return true;
+            }
+        }
+
     }
 }
