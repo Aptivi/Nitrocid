@@ -37,8 +37,6 @@ namespace KS.Shell.Shells.FTP
         /// </summary>
         public override Dictionary<string, CommandInfo> Commands => new()
         {
-            { "connect", new CommandInfo("connect", ShellType, /* Localizable */ "Connects to an FTP server (it must start with \"ftp://\" or \"ftps://\")",
-                new CommandArgumentInfo(new[] { "server" }, Array.Empty<SwitchInfo>(), true, 1), new FTP_ConnectCommand()) },
             { "cdl", new CommandInfo("cdl", ShellType, /* Localizable */ "Changes local directory to download to or upload from",
                 new CommandArgumentInfo(new[] { "directory" }, Array.Empty<SwitchInfo>(), true, 1), new FTP_CdlCommand()) },
             { "cdr", new CommandInfo("cdr", ShellType, /* Localizable */ "Changes remote directory to download from or upload to",
