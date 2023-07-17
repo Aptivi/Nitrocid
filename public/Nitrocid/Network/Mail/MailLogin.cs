@@ -80,7 +80,7 @@ namespace KS.Network.Mail
         /// <summary>
         /// Prompts user to enter username or e-mail address
         /// </summary>
-        public static (NetworkConnection, NetworkConnection) PromptUser()
+        public static NetworkConnection PromptUser()
         {
             // Username or mail address
             if (!string.IsNullOrWhiteSpace(Mail_UserPromptStyle))
@@ -94,16 +94,14 @@ namespace KS.Network.Mail
 
             // Try to get the username or e-mail address from the input
             string InputMailAddress = Input.ReadLine();
-            if (!string.IsNullOrWhiteSpace(Mail_UserPromptStyle))
-                return PromptPassword(InputMailAddress);
-            return (null, null);
+            return PromptPassword(InputMailAddress);
         }
 
         /// <summary>
         /// Prompts user to enter password
         /// </summary>
         /// <param name="Username">Specified username</param>
-        public static (NetworkConnection, NetworkConnection) PromptPassword(string Username)
+        public static NetworkConnection PromptPassword(string Username)
         {
             // Password
             DebugWriter.WriteDebug(DebugLevel.I, "Username: {0}", Username);
@@ -130,7 +128,7 @@ namespace KS.Network.Mail
         /// <summary>
         /// Prompts for server
         /// </summary>
-        public static (NetworkConnection, NetworkConnection) PromptServer()
+        public static NetworkConnection PromptServer()
         {
             string IMAP_Address;
             var IMAP_Port = 0;
@@ -165,7 +163,7 @@ namespace KS.Network.Mail
             return ParseAddresses(IMAP_Address, IMAP_Port, SMTP_Address, SMTP_Port);
         }
 
-        public static (NetworkConnection, NetworkConnection) ParseAddresses(string IMAP_Address, int IMAP_Port, string SMTP_Address, int SMTP_Port)
+        public static NetworkConnection ParseAddresses(string IMAP_Address, int IMAP_Port, string SMTP_Address, int SMTP_Port)
         {
             // If the address is <address>:[port]
             if (IMAP_Address.Contains(":"))
@@ -239,7 +237,7 @@ namespace KS.Network.Mail
         /// <param name="Port">A port of the IMAP server</param>
         /// <param name="SmtpAddress">An IP address of the SMTP server</param>
         /// <param name="SmtpPort">A port of the SMTP server</param>
-        public static (NetworkConnection, NetworkConnection) ConnectShell(string Address, int Port, string SmtpAddress, int SmtpPort)
+        public static NetworkConnection ConnectShell(string Address, int Port, string SmtpAddress, int SmtpPort)
         {
             try
             {
@@ -274,9 +272,8 @@ namespace KS.Network.Mail
 
                 // Initialize shell
                 DebugWriter.WriteDebug(DebugLevel.I, "Authentication succeeded. Opening shell...");
-                var ClientImap = NetworkConnectionTools.EstablishConnection("IMAP client", $"mailto:{Mail_Authentication.UserName}", NetworkConnectionType.Mail, IMAP_Client);
-                var ClientSmtp = NetworkConnectionTools.EstablishConnection("SMTP client", $"mailto:{Mail_Authentication.UserName}", NetworkConnectionType.Mail, SMTP_Client);
-                return (ClientImap, ClientSmtp);
+                var Client = NetworkConnectionTools.EstablishConnection("Mail client", $"mailto:{Mail_Authentication.UserName}", NetworkConnectionType.Mail, new object[] { IMAP_Client, SMTP_Client });
+                return Client;
             }
             catch (Exception ex)
             {
@@ -284,7 +281,7 @@ namespace KS.Network.Mail
                 DebugWriter.WriteDebugStackTrace(ex);
                 IMAP_Client.Disconnect(true);
                 SMTP_Client.Disconnect(true);
-                return (null, null);
+                return null;
             }
         }
 

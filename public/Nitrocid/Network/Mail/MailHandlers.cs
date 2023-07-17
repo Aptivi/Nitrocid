@@ -39,12 +39,12 @@ namespace KS.Network.Mail
         /// <summary>
         /// Initializes the CountChanged handlers. Currently, it only supports inbox.
         /// </summary>
-        public static void InitializeHandlers() => ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).Inbox.CountChanged += OnCountChanged;
+        public static void InitializeHandlers() => ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).Inbox.CountChanged += OnCountChanged;
 
         /// <summary>
         /// Releases the CountChanged handlers. Currently, it only supports inbox.
         /// </summary>
-        public static void ReleaseHandlers() => ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).Inbox.CountChanged -= OnCountChanged;
+        public static void ReleaseHandlers() => ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).Inbox.CountChanged -= OnCountChanged;
 
         /// <summary>
         /// Handles WebAlert sent by Gmail

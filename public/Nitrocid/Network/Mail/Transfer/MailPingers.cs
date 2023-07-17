@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System;
 using System.Threading;
 using KS.Kernel.Debugging;
 using KS.Shell.Shells.Mail;
@@ -32,21 +33,29 @@ namespace KS.Network.Mail.Transfer
         /// </summary>
         public static void IMAPKeepConnection()
         {
-            // Every 30 seconds, send a ping to IMAP server
-            while (((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).IsConnected)
+            try
             {
-                Thread.Sleep(MailShellCommon.Mail_ImapPingInterval);
-                if (((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).IsConnected)
+                // Every 30 seconds, send a ping to IMAP server
+                while (((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).IsConnected)
                 {
-                    lock (((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).SyncRoot)
-                        ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).NoOp();
-                    MailTransfer.PopulateMessages();
+                    Thread.Sleep(MailShellCommon.Mail_ImapPingInterval);
+                    if (((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).IsConnected)
+                    {
+                        lock (((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).SyncRoot)
+                            ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).NoOp();
+                        MailTransfer.PopulateMessages();
+                    }
+                    else
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.W, "Connection state is inconsistent. Stopping IMAPKeepConnection()...");
+                        Thread.CurrentThread.Interrupt();
+                    }
                 }
-                else
-                {
-                    DebugWriter.WriteDebug(DebugLevel.W, "Connection state is inconsistent. Stopping IMAPKeepConnection()...");
-                    Thread.CurrentThread.Interrupt();
-                }
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to keep connection to IMAP server alive: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
             }
         }
 
@@ -55,20 +64,28 @@ namespace KS.Network.Mail.Transfer
         /// </summary>
         public static void SMTPKeepConnection()
         {
-            // Every 30 seconds, send a ping to SMTP server
-            while (((SmtpClient)MailShellCommon.ClientSmtp.ConnectionInstance).IsConnected)
+            try
             {
-                Thread.Sleep(MailShellCommon.Mail_SmtpPingInterval);
-                if (((SmtpClient)MailShellCommon.ClientSmtp.ConnectionInstance).IsConnected)
+                // Every 30 seconds, send a ping to SMTP server
+                while (((SmtpClient)((object[])MailShellCommon.Client.ConnectionInstance)[1]).IsConnected)
                 {
-                    lock (((SmtpClient)MailShellCommon.ClientSmtp.ConnectionInstance).SyncRoot)
-                        ((SmtpClient)MailShellCommon.ClientSmtp.ConnectionInstance).NoOp();
+                    Thread.Sleep(MailShellCommon.Mail_SmtpPingInterval);
+                    if (((SmtpClient)((object[])MailShellCommon.Client.ConnectionInstance)[1]).IsConnected)
+                    {
+                        lock (((SmtpClient)((object[])MailShellCommon.Client.ConnectionInstance)[1]).SyncRoot)
+                            ((SmtpClient)((object[])MailShellCommon.Client.ConnectionInstance)[1]).NoOp();
+                    }
+                    else
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.W, "Connection state is inconsistent. Stopping SMTPKeepConnection()...");
+                        Thread.CurrentThread.Interrupt();
+                    }
                 }
-                else
-                {
-                    DebugWriter.WriteDebug(DebugLevel.W, "Connection state is inconsistent. Stopping SMTPKeepConnection()...");
-                    Thread.CurrentThread.Interrupt();
-                }
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to keep connection to SMTP server alive: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
             }
         }
 

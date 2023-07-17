@@ -80,7 +80,7 @@ namespace KS.Network.Mail.Directory
 
                     // Getting information about the message is vital to display them.
                     DebugWriter.WriteDebug(DebugLevel.I, "Getting message {0}...", i);
-                    lock (((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).SyncRoot)
+                    lock (((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).SyncRoot)
                     {
                         MimeMessage Msg;
                         if (!string.IsNullOrEmpty(MailShellCommon.IMAP_CurrentDirectory) & !(MailShellCommon.IMAP_CurrentDirectory == "Inbox"))
@@ -90,7 +90,7 @@ namespace KS.Network.Mail.Directory
                         }
                         else
                         {
-                            Msg = ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).Inbox.GetMessage(MailShellCommon.IMAP_Messages.ElementAtOrDefault(i), default, MailShellCommon.Mail_Progress);
+                            Msg = ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).Inbox.GetMessage(MailShellCommon.IMAP_Messages.ElementAtOrDefault(i), default, MailShellCommon.Mail_Progress);
                         }
                         MsgFrom = Msg.From.ToString();
                         MsgSubject = Msg.Subject;
@@ -140,7 +140,7 @@ namespace KS.Network.Mail.Directory
                 throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Message specified is not found."));
             }
 
-            lock (((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).SyncRoot)
+            lock (((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).SyncRoot)
             {
                 if (!string.IsNullOrEmpty(MailShellCommon.IMAP_CurrentDirectory) & !(MailShellCommon.IMAP_CurrentDirectory == "Inbox"))
                 {
@@ -154,11 +154,11 @@ namespace KS.Network.Mail.Directory
                 else
                 {
                     // Remove message
-                    ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).Inbox.Open(FolderAccess.ReadWrite);
+                    ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).Inbox.Open(FolderAccess.ReadWrite);
                     DebugWriter.WriteDebug(DebugLevel.I, "Removing {0}...", MsgNumber);
-                    ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).Inbox.Store(MailShellCommon.IMAP_Messages.ElementAtOrDefault(Message), new StoreFlagsRequest(StoreAction.Add, MessageFlags.Deleted));
+                    ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).Inbox.Store(MailShellCommon.IMAP_Messages.ElementAtOrDefault(Message), new StoreFlagsRequest(StoreAction.Add, MessageFlags.Deleted));
                     DebugWriter.WriteDebug(DebugLevel.I, "Removed.");
-                    ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).Inbox.Expunge();
+                    ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).Inbox.Expunge();
                 }
             }
             return true;
@@ -178,7 +178,7 @@ namespace KS.Network.Mail.Directory
             {
                 try
                 {
-                    lock (((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).SyncRoot)
+                    lock (((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).SyncRoot)
                     {
                         var MessageId = MailShellCommon.IMAP_Messages.ElementAtOrDefault(i);
                         MimeMessage Msg;
@@ -189,7 +189,7 @@ namespace KS.Network.Mail.Directory
                         }
                         else
                         {
-                            Msg = ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).Inbox.GetMessage(MessageId, default, MailShellCommon.Mail_Progress);
+                            Msg = ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).Inbox.GetMessage(MessageId, default, MailShellCommon.Mail_Progress);
                         }
                         SteppedMsgNumber += 1;
 
@@ -212,11 +212,11 @@ namespace KS.Network.Mail.Directory
                                 else
                                 {
                                     // Remove message
-                                    ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).Inbox.Open(FolderAccess.ReadWrite);
+                                    ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).Inbox.Open(FolderAccess.ReadWrite);
                                     DebugWriter.WriteDebug(DebugLevel.I, "Removing {0}...", Sender);
-                                    ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).Inbox.Store(MessageId, new StoreFlagsRequest(StoreAction.Add, MessageFlags.Deleted));
+                                    ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).Inbox.Store(MessageId, new StoreFlagsRequest(StoreAction.Add, MessageFlags.Deleted));
                                     DebugWriter.WriteDebug(DebugLevel.I, "Removed.");
-                                    ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).Inbox.Expunge();
+                                    ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).Inbox.Expunge();
                                     DebugWriter.WriteDebug(DebugLevel.I, "Message {0} from {1} deleted from inbox. {2} messages remaining to parse.", DeletedMsgNumber, Sender, MailShellCommon.IMAP_Messages.Count() - SteppedMsgNumber);
                                     TextWriterColor.Write(Translate.DoTranslation("Message {0} from {1} deleted from inbox. {2} messages remaining to parse."), DeletedMsgNumber, Sender, MailShellCommon.IMAP_Messages.Count() - SteppedMsgNumber);
                                 }
@@ -257,7 +257,7 @@ namespace KS.Network.Mail.Directory
                 throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Message specified is not found."));
             }
 
-            lock (((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).SyncRoot)
+            lock (((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).SyncRoot)
             {
                 if (!string.IsNullOrEmpty(MailShellCommon.IMAP_CurrentDirectory) & !(MailShellCommon.IMAP_CurrentDirectory == "Inbox"))
                 {
@@ -273,8 +273,8 @@ namespace KS.Network.Mail.Directory
                     // Move message
                     var TargetF = MailDirectory.OpenFolder(TargetFolder);
                     DebugWriter.WriteDebug(DebugLevel.I, "Moving {0}...", MsgNumber);
-                    ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).Inbox.Open(FolderAccess.ReadWrite);
-                    ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).Inbox.MoveTo(MailShellCommon.IMAP_Messages.ElementAtOrDefault(Message), TargetF);
+                    ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).Inbox.Open(FolderAccess.ReadWrite);
+                    ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).Inbox.MoveTo(MailShellCommon.IMAP_Messages.ElementAtOrDefault(Message), TargetF);
                     DebugWriter.WriteDebug(DebugLevel.I, "Moved.");
                 }
             }
@@ -296,7 +296,7 @@ namespace KS.Network.Mail.Directory
             {
                 try
                 {
-                    lock (((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).SyncRoot)
+                    lock (((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).SyncRoot)
                     {
                         var MessageId = MailShellCommon.IMAP_Messages.ElementAtOrDefault(i);
                         MimeMessage Msg;
@@ -307,7 +307,7 @@ namespace KS.Network.Mail.Directory
                         }
                         else
                         {
-                            Msg = ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).Inbox.GetMessage(MessageId, default, MailShellCommon.Mail_Progress);
+                            Msg = ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).Inbox.GetMessage(MessageId, default, MailShellCommon.Mail_Progress);
                         }
                         SteppedMsgNumber += 1;
 
@@ -331,8 +331,8 @@ namespace KS.Network.Mail.Directory
                                     // Remove message
                                     var TargetF = MailDirectory.OpenFolder(TargetFolder);
                                     DebugWriter.WriteDebug(DebugLevel.I, "Moving {0}...", Sender);
-                                    ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).Inbox.Open(FolderAccess.ReadWrite);
-                                    ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).Inbox.MoveTo(MessageId, TargetF);
+                                    ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).Inbox.Open(FolderAccess.ReadWrite);
+                                    ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).Inbox.MoveTo(MessageId, TargetF);
                                     DebugWriter.WriteDebug(DebugLevel.I, "Moved.");
                                     DebugWriter.WriteDebug(DebugLevel.I, "Message {0} from {1} moved. {2} messages remaining to parse.", DeletedMsgNumber, Sender, MailShellCommon.IMAP_Messages.Count() - SteppedMsgNumber);
                                     TextWriterColor.Write(Translate.DoTranslation("Message {0} from {1} moved. {2} messages remaining to parse."), DeletedMsgNumber, Sender, MailShellCommon.IMAP_Messages.Count() - SteppedMsgNumber);

@@ -55,24 +55,21 @@ namespace KS.Shell.Shells.UESH.Commands
                     int availableConnections = NetworkConnectionTools.GetNetworkConnections(NetworkConnectionType.Mail).Length;
 
                     // Now, check to see if the user selected "Create a new connection"
-                    NetworkConnection connectionImap;
-                    NetworkConnection connectionSmtp;
+                    NetworkConnection connection;
                     if (selectedConnection == availableConnections + 1)
                     {
                         // Prompt the user to provide connection information
                         var connections = MailLogin.PromptUser();
-                        connectionImap = connections.Item1;
-                        connectionSmtp = connections.Item2;
+                        connection = connections;
                     }
                     else
                     {
                         // User selected connection
-                        connectionImap = availableConnectionInstances[selectedConnection - 1];
-                        connectionSmtp = availableConnectionInstances[selectedConnection];
+                        connection = availableConnectionInstances[selectedConnection - 1];
                     }
 
                     // Use that information to start the shell
-                    ShellStart.StartShell(ShellType.MailShell, connectionImap, connectionSmtp);
+                    ShellStart.StartShell(ShellType.MailShell, connection);
                 }
                 else
                 {
@@ -91,16 +88,13 @@ namespace KS.Shell.Shells.UESH.Commands
 
                         // Get connection from user selection
                         int selectedConnectionNumber = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a connection."), connectionsChoiceList);
-                        NetworkConnection connectionImap = availableConnectionInstances[selectedConnectionNumber - 1];
-                        NetworkConnection connectionSmtp = availableConnectionInstances[selectedConnectionNumber];
-                        ShellStart.StartShell(ShellType.MailShell, connectionImap, connectionSmtp);
+                        NetworkConnection connection = availableConnectionInstances[selectedConnectionNumber - 1];
+                        ShellStart.StartShell(ShellType.MailShell, connection);
                     }
                     else
                     {
-                        var connections = MailLogin.PromptUser();
-                        NetworkConnection connectionImap = connections.Item1;
-                        NetworkConnection connectionSmtp = connections.Item2;
-                        ShellStart.StartShell(ShellType.MailShell, connectionImap, connectionSmtp);
+                        var connection = MailLogin.PromptPassword(address);
+                        ShellStart.StartShell(ShellType.MailShell, connection);
                     }
                 }
             }

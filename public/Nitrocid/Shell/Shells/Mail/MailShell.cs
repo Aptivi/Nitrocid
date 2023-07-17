@@ -29,6 +29,7 @@ using MailKit.Net.Imap;
 using MailKit.Net.Smtp;
 using System.Threading;
 using System;
+using KS.Misc.Reflection;
 
 namespace KS.Shell.Shells.Mail
 {
@@ -50,12 +51,10 @@ namespace KS.Shell.Shells.Mail
         public override void InitializeShell(params object[] ShellArgs)
         {
             // Parse shell arguments
-            NetworkConnection imapConnection = (NetworkConnection)ShellArgs[0];
-            NetworkConnection smtpConnection = (NetworkConnection)ShellArgs[1];
-            ImapClient imapLink = (ImapClient)imapConnection.ConnectionInstance;
-            SmtpClient smtpLink = (SmtpClient)smtpConnection.ConnectionInstance;
-            MailShellCommon.ClientImap = imapConnection;
-            MailShellCommon.ClientSmtp = smtpConnection;
+            NetworkConnection connection = (NetworkConnection)ShellArgs[0];
+            ImapClient imapLink = (ImapClient)((object[])connection.ConnectionInstance)[0];
+            SmtpClient smtpLink = (SmtpClient)((object[])connection.ConnectionInstance)[1];
+            MailShellCommon.Client = connection;
 
             // Send ping to keep the connection alive
             var IMAP_NoOp = new KernelThread("IMAP Keep Connection", false, MailPingers.IMAPKeepConnection);
@@ -97,14 +96,13 @@ namespace KS.Shell.Shells.Mail
                         DebugWriter.WriteDebug(DebugLevel.W, "Exit requested. Disconnecting host...");
                         if (MailShellCommon.Mail_NotifyNewMail)
                             MailHandlers.ReleaseHandlers();
-                        ((ImapClient)MailShellCommon.ClientImap.ConnectionInstance).Disconnect(true);
-                        ((SmtpClient)MailShellCommon.ClientSmtp.ConnectionInstance).Disconnect(true);
-                        int connectionIndexImap = NetworkConnectionTools.GetConnectionIndex(MailShellCommon.ClientImap);
-                        int connectionIndexSmtp = NetworkConnectionTools.GetConnectionIndex(MailShellCommon.ClientSmtp);
-                        NetworkConnectionTools.CloseConnection(connectionIndexImap);
-                        NetworkConnectionTools.CloseConnection(connectionIndexSmtp);
-                        MailShellCommon.ClientImap = null;
-                        MailShellCommon.ClientSmtp = null;
+                        IMAP_NoOp.Stop();
+                        SMTP_NoOp.Stop();
+                        imapLink.Disconnect(true);
+                        smtpLink.Disconnect(true);
+                        int connectionIndex = NetworkConnectionTools.GetConnectionIndex(MailShellCommon.Client);
+                        NetworkConnectionTools.CloseConnection(connectionIndex);
+                        MailShellCommon.Client = null;
                     }
                     detaching = false;
                 }
