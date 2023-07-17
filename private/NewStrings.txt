@@ -703,5 +703,6 @@ Gets current user agent
 Sets a user agent
 File is already in use.
 File is not in use.
+You've installed Nitrocid KS using your package manager. Please use it to upgrade your kernel instead.
 
 ==========================================================================================================================================

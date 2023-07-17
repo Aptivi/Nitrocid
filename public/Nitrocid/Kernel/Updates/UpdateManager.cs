@@ -28,6 +28,11 @@ using KS.Languages;
 using System.IO;
 #endif
 
+#if PACKAGEMANAGERBUILD
+using KS.Misc.Splash;
+using KS.Languages;
+#endif
+
 namespace KS.Kernel.Updates
 {
     /// <summary>
@@ -69,14 +74,7 @@ namespace KS.Kernel.Updates
         /// </summary>
         public static void CheckKernelUpdates()
         {
-#if SPECIFIERREL
-            // Check to see if we're running from Ubuntu PPA
-            if (Paths.ExecPath.StartsWith("/usr/lib/ks"))
-            {
-                SplashReport.ReportProgressError(Translate.DoTranslation("Use apt to update Nitrocid KS."));
-                return;
-            }
-
+#if SPECIFIERREL && !PACKAGEMANAGERBUILD
             // Check for updates now
             SplashReport.ReportProgress(Translate.DoTranslation("Checking for system updates..."), 10);
             var AvailableUpdate = FetchKernelUpdates();
@@ -106,6 +104,8 @@ namespace KS.Kernel.Updates
             {
                 SplashReport.ReportProgressError(Translate.DoTranslation("Failed to check for updates."));
             }
+#elif PACKAGEMANAGERBUILD
+            SplashReport.ReportProgressError(Translate.DoTranslation("You've installed Nitrocid KS using your package manager. Please use it to upgrade your kernel instead."));
 #endif
         }
 

@@ -19,7 +19,7 @@
     <!-- Repository set up -->
     <RepositoryUrl>https://github.com/Aptivi/NitrocidKS.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <Configurations>Debug;Release</Configurations>
+    <Configurations>Debug;Release;Release-Linux-Packaging</Configurations>
   </PropertyGroup>
   <!-- KS NuGet Information End -->
 
@@ -66,6 +66,12 @@
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <DefineConstants>SPECIFIERREL</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release-Linux-Packaging|AnyCPU'">
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <DefineConstants>SPECIFIERREL;PACKAGEMANAGERBUILD</DefineConstants>
+    <NitrocidLinuxPackageManagerBuild>true</NitrocidLinuxPackageManagerBuild>
   </PropertyGroup>
   <!-- KS Platform Information End -->
 
@@ -121,7 +127,10 @@
     <None Include="ks.desktop">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="ks.sh">
+    <None Include="ks.sh" Condition="'NitrocidLinuxPackageManagerBuild' == 'true'">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="ks-n.sh" Condition="'NitrocidLinuxPackageManagerBuild' != 'true'">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
