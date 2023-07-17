@@ -1671,6 +1671,71 @@
                 "Variable": "TaskManagerKeyBindingOptionColor"
             },
             {
+                "Name": "Contact manager background color",
+                "Type": "SColor",
+                "Variable": "ContactsManagerBackgroundColor"
+            },
+            {
+                "Name": "Contact manager foreground color",
+                "Type": "SColor",
+                "Variable": "ContactsManagerForegroundColor"
+            },
+            {
+                "Name": "Contact manager pane background color",
+                "Type": "SColor",
+                "Variable": "ContactsManagerPaneBackgroundColor"
+            },
+            {
+                "Name": "Contact manager pane separator color",
+                "Type": "SColor",
+                "Variable": "ContactsManagerPaneSeparatorColor"
+            },
+            {
+                "Name": "Contact manager selected pane contact foreground color",
+                "Type": "SColor",
+                "Variable": "ContactsManagerPaneSelectedContactsForeColor"
+            },
+            {
+                "Name": "Contact manager selected pane contact background color",
+                "Type": "SColor",
+                "Variable": "ContactsManagerPaneSelectedContactsBackColor"
+            },
+            {
+                "Name": "Contact manager pane contact foreground color",
+                "Type": "SColor",
+                "Variable": "ContactsManagerPaneContactsForeColor"
+            },
+            {
+                "Name": "Contact manager pane contact background color",
+                "Type": "SColor",
+                "Variable": "ContactsManagerPaneContactsBackColor"
+            },
+            {
+                "Name": "Contact manager option background color",
+                "Type": "SColor",
+                "Variable": "ContactsManagerOptionBackgroundColor"
+            },
+            {
+                "Name": "Contact manager option foreground color",
+                "Type": "SColor",
+                "Variable": "ContactsManagerOptionForegroundColor"
+            },
+            {
+                "Name": "Contact manager option binding name color",
+                "Type": "SColor",
+                "Variable": "ContactsManagerKeyBindingOptionColor"
+            },
+            {
+                "Name": "Contact manager box background color",
+                "Type": "SColor",
+                "Variable": "ContactsManagerBoxBackgroundColor"
+            },
+            {
+                "Name": "Contact manager box foreground color",
+                "Type": "SColor",
+                "Variable": "ContactsManagerBoxForegroundColor"
+            },
+            {
                 "Name": "Censor private info on debug logs",
                 "Type": "SBoolean",
                 "Variable": "DebugCensorPrivateInfo",

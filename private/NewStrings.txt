@@ -704,5 +704,19 @@ Sets a user agent
 File is already in use.
 File is not in use.
 You've installed Nitrocid KS using your package manager. Please use it to upgrade your kernel instead.
+Contact manager background color
+Contact manager foreground color
+Contact manager pane background color
+Contact manager pane separator color
+Contact manager selected pane separator color
+Contact manager selected pane contact foreground color
+Contact manager selected pane contact background color
+Contact manager pane contact foreground color
+Contact manager pane contact background color
+Contact manager option background color
+Contact manager option foreground color
+Contact manager option binding name color
+Contact manager box background color
+Contact manager box foreground color
 
 ==========================================================================================================================================

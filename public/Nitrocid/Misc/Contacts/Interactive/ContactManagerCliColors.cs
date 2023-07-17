@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using ColorSeq;
+using KS.Kernel.Configuration;
 using System;
 
 namespace KS.Misc.Contacts.Interactive
@@ -30,54 +31,54 @@ namespace KS.Misc.Contacts.Interactive
         /// <summary>
         /// Contacts manager background color
         /// </summary>
-        public static Color ContactsManagerBackgroundColor { get; set; } = new(Convert.ToInt32(ConsoleColors.DarkBlue));
+        public static Color ContactsManagerBackgroundColor { get; set; } = new(Config.MainConfig.ContactsManagerBackgroundColor);
         /// <summary>
         /// Contacts manager foreground color
         /// </summary>
-        public static Color ContactsManagerForegroundColor { get; set; } = new(Convert.ToInt32(ConsoleColors.Yellow));
+        public static Color ContactsManagerForegroundColor { get; set; } = new(Config.MainConfig.ContactsManagerForegroundColor);
         /// <summary>
         /// Contacts manager pane background color
         /// </summary>
-        public static Color ContactsManagerPaneBackgroundColor { get; set; } = new(Convert.ToInt32(ConsoleColors.Blue3));
+        public static Color ContactsManagerPaneBackgroundColor { get; set; } = new(Config.MainConfig.ContactsManagerPaneBackgroundColor);
         /// <summary>
         /// Contacts manager pane separator color
         /// </summary>
-        public static Color ContactsManagerPaneSeparatorColor { get; set; } = new(Convert.ToInt32(ConsoleColors.DarkGreen_005f00));
+        public static Color ContactsManagerPaneSeparatorColor { get; set; } = new(Config.MainConfig.ContactsManagerPaneSeparatorColor);
         /// <summary>
         /// Contacts manager pane selected Contacts color (foreground)
         /// </summary>
-        public static Color ContactsManagerPaneSelectedContactsForeColor { get; set; } = new(Convert.ToInt32(ConsoleColors.Yellow));
+        public static Color ContactsManagerPaneSelectedContactsForeColor { get; set; } = new(Config.MainConfig.ContactsManagerPaneSelectedContactsForeColor);
         /// <summary>
         /// Contacts manager pane selected Contacts color (background)
         /// </summary>
-        public static Color ContactsManagerPaneSelectedContactsBackColor { get; set; } = new(Convert.ToInt32(ConsoleColors.DarkBlue));
+        public static Color ContactsManagerPaneSelectedContactsBackColor { get; set; } = new(Config.MainConfig.ContactsManagerPaneSelectedContactsBackColor);
         /// <summary>
         /// Contacts manager pane Contacts color (foreground)
         /// </summary>
-        public static Color ContactsManagerPaneContactsForeColor { get; set; } = new(Convert.ToInt32(ConsoleColors.DarkYellow));
+        public static Color ContactsManagerPaneContactsForeColor { get; set; } = new(Config.MainConfig.ContactsManagerPaneContactsForeColor);
         /// <summary>
         /// Contacts manager pane Contacts color (background)
         /// </summary>
-        public static Color ContactsManagerPaneContactsBackColor { get; set; } = new(Convert.ToInt32(ConsoleColors.Blue3));
+        public static Color ContactsManagerPaneContactsBackColor { get; set; } = new(Config.MainConfig.ContactsManagerPaneContactsBackColor);
         /// <summary>
         /// Contacts manager option background color
         /// </summary>
-        public static Color ContactsManagerOptionBackgroundColor { get; set; } = new(Convert.ToInt32(ConsoleColors.DarkCyan));
+        public static Color ContactsManagerOptionBackgroundColor { get; set; } = new(Config.MainConfig.ContactsManagerOptionBackgroundColor);
         /// <summary>
         /// Contacts manager key binding in option color
         /// </summary>
-        public static Color ContactsManagerKeyBindingOptionColor { get; set; } = new(Convert.ToInt32(ConsoleColors.Black));
+        public static Color ContactsManagerKeyBindingOptionColor { get; set; } = new(Config.MainConfig.ContactsManagerKeyBindingOptionColor);
         /// <summary>
         /// Contacts manager option foreground color
         /// </summary>
-        public static Color ContactsManagerOptionForegroundColor { get; set; } = new(Convert.ToInt32(ConsoleColors.Cyan));
+        public static Color ContactsManagerOptionForegroundColor { get; set; } = new(Config.MainConfig.ContactsManagerOptionForegroundColor);
         /// <summary>
         /// Contacts manager box background color
         /// </summary>
-        public static Color ContactsManagerBoxBackgroundColor { get; set; } = new(Convert.ToInt32(ConsoleColors.Red));
+        public static Color ContactsManagerBoxBackgroundColor { get; set; } = new(Config.MainConfig.ContactsManagerBoxBackgroundColor);
         /// <summary>
         /// Contacts manager box foreground color
         /// </summary>
-        public static Color ContactsManagerBoxForegroundColor { get; set; } = new(Convert.ToInt32(ConsoleColors.White));
+        public static Color ContactsManagerBoxForegroundColor { get; set; } = new(Config.MainConfig.ContactsManagerBoxForegroundColor);
     }
 }

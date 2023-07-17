@@ -1592,6 +1592,58 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public string TaskManagerKeyBindingOptionColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.Cyan)).PlainSequence;
         /// <summary>
+        /// Contact manager background color
+        /// </summary>
+        public string ContactsManagerBackgroundColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.DarkBlue)).PlainSequence;
+        /// <summary>
+        /// Contact manager foreground color
+        /// </summary>
+        public string ContactsManagerForegroundColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.Yellow)).PlainSequence;
+        /// <summary>
+        /// Contact manager pane background color
+        /// </summary>
+        public string ContactsManagerPaneBackgroundColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.Blue3)).PlainSequence;
+        /// <summary>
+        /// Contact manager pane separator color
+        /// </summary>
+        public string ContactsManagerPaneSeparatorColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.DarkGreen_005f00)).PlainSequence;
+        /// <summary>
+        /// Contact manager selected pane contact foreground color
+        /// </summary>
+        public string ContactsManagerPaneSelectedContactsForeColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.Yellow)).PlainSequence;
+        /// <summary>
+        /// Contact manager selected pane contact background color
+        /// </summary>
+        public string ContactsManagerPaneSelectedContactsBackColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.DarkBlue)).PlainSequence;
+        /// <summary>
+        /// Contact manager pane contact foreground color
+        /// </summary>
+        public string ContactsManagerPaneContactsForeColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.DarkYellow)).PlainSequence;
+        /// <summary>
+        /// Contact manager pane contact background color
+        /// </summary>
+        public string ContactsManagerPaneContactsBackColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.Blue3)).PlainSequence;
+        /// <summary>
+        /// Contact manager option background color
+        /// </summary>
+        public string ContactsManagerOptionBackgroundColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.DarkCyan)).PlainSequence;
+        /// <summary>
+        /// Contact manager option foreground color
+        /// </summary>
+        public string ContactsManagerOptionForegroundColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.Black)).PlainSequence;
+        /// <summary>
+        /// Contact manager option binding name color
+        /// </summary>
+        public string ContactsManagerKeyBindingOptionColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.Cyan)).PlainSequence;
+        /// <summary>
+        /// Contacts manager box background color
+        /// </summary>
+        public string ContactsManagerBoxBackgroundColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.Red)).PlainSequence;
+        /// <summary>
+        /// Contacts manager box foreground color
+        /// </summary>
+        public string ContactsManagerBoxForegroundColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.White)).PlainSequence;
+        /// <summary>
         /// Censor private information that may be printed to the debug logs.
         /// </summary>
         public bool DebugCensorPrivateInfo { get; set; }

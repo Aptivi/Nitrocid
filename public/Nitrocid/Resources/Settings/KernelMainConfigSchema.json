@@ -779,6 +779,45 @@
         "TaskManagerKeyBindingOptionColor": {
             "type": "string"
         },
+        "ContactsManagerBackgroundColor": {
+            "type": "string"
+        },
+        "ContactsManagerForegroundColor": {
+            "type": "string"
+        },
+        "ContactsManagerPaneBackgroundColor": {
+            "type": "string"
+        },
+        "ContactsManagerPaneSeparatorColor": {
+            "type": "string"
+        },
+        "ContactsManagerPaneSelectedContactsForeColor": {
+            "type": "string"
+        },
+        "ContactsManagerPaneSelectedContactsBackColor": {
+            "type": "string"
+        },
+        "ContactsManagerPaneContactsForeColor": {
+            "type": "string"
+        },
+        "ContactsManagerPaneContactsBackColor": {
+            "type": "string"
+        },
+        "ContactsManagerOptionBackgroundColor": {
+            "type": "string"
+        },
+        "ContactsManagerOptionForegroundColor": {
+            "type": "string"
+        },
+        "ContactsManagerKeyBindingOptionColor": {
+            "type": "string"
+        },
+        "ContactsManagerBoxBackgroundColor": {
+            "type": "string"
+        },
+        "ContactsManagerBoxForegroundColor": {
+            "type": "string"
+        },
         "DebugCensorPrivateInfo": {
             "type": "boolean"
         },
@@ -1046,6 +1085,19 @@
         "TaskManagerOptionBackgroundColor",
         "TaskManagerOptionForegroundColor",
         "TaskManagerKeyBindingOptionColor",
+        "ContactsManagerBackgroundColor",
+        "ContactsManagerForegroundColor",
+        "ContactsManagerPaneBackgroundColor",
+        "ContactsManagerPaneSeparatorColor",
+        "ContactsManagerPaneSelectedContactsForeColor",
+        "ContactsManagerPaneSelectedContactsBackColor",
+        "ContactsManagerPaneContactsForeColor",
+        "ContactsManagerPaneContactsBackColor",
+        "ContactsManagerOptionBackgroundColor",
+        "ContactsManagerOptionForegroundColor",
+        "ContactsManagerKeyBindingOptionColor",
+        "ContactsManagerBoxBackgroundColor",
+        "ContactsManagerBoxForegroundColor",
         "DebugCensorPrivateInfo",
         "NotifyDisplayAsAsterisk"
     ]

@@ -329,8 +329,5 @@ namespace KS.Misc.Contacts.Interactive
                 FirstPaneCurrentSelection = idx + 1;
             }
         }
-
-        private void ExitCli() =>
-            isExiting = true;
     }
 }
