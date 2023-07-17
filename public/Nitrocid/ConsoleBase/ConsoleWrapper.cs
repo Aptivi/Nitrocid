@@ -66,6 +66,12 @@ namespace KS.ConsoleBase
             DriverHandler.CurrentConsoleDriver.WindowHeight;
 
         /// <summary>
+        /// The console window topmost
+        /// </summary>
+        public static int WindowTop =>
+            DriverHandler.CurrentConsoleDriver.WindowTop;
+
+        /// <summary>
         /// The console buffer width (columns)
         /// </summary>
         public static int BufferWidth =>

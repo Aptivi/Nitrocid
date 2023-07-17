@@ -154,6 +154,11 @@ namespace KS.Drivers.Console
         int WindowHeight { get; }
 
         /// <summary>
+        /// The console window topmost
+        /// </summary>
+        int WindowTop { get; }
+
+        /// <summary>
         /// The console buffer width (columns)
         /// </summary>
         int BufferWidth { get; }

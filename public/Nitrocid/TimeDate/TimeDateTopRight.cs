@@ -44,18 +44,18 @@ namespace KS.TimeDate
             try
             {
                 int oldWid = default, oldTop = default;
-                while (true)
+                while (Flags.CornerTimeDate)
                 {
-                    string TimeString = $"{TimeDateRenderers.RenderDate()} - {TimeDateRenderers.RenderTime()}";
-                    if (Flags.CornerTimeDate == true & !Screensaver.InSaver)
+                    if (!Screensaver.InSaver)
                     {
+                        string TimeString = $"{TimeDateRenderers.RenderDate()} - {TimeDateRenderers.RenderTime()}";
                         oldWid = ConsoleBase.ConsoleWrapper.WindowWidth - TimeString.Length - 1;
-                        oldTop = 0;
-                        TextWriterWhereColor.WriteWhere(TimeString, ConsoleBase.ConsoleWrapper.WindowWidth - TimeString.Length - 1, 0, true, KernelColorType.NeutralText);
+                        oldTop = ConsoleBase.ConsoleWrapper.WindowTop;
+                        TextWriterWhereColor.WriteWhere(TimeString, ConsoleBase.ConsoleWrapper.WindowWidth - TimeString.Length - 1, ConsoleBase.ConsoleWrapper.WindowTop, true, KernelColorType.NeutralText);
+                        Thread.Sleep(1000);
+                        if (oldWid != 0)
+                            TextWriterWhereColor.WriteWhere(new string(' ', TimeString.Length), oldWid, oldTop, true, KernelColorType.NeutralText);
                     }
-                    Thread.Sleep(1000);
-                    if (oldWid != 0)
-                        TextWriterWhereColor.WriteWhere(new string(' ', TimeString.Length), oldWid, oldTop, true, KernelColorType.NeutralText);
                 }
             }
             catch (ThreadInterruptedException)
