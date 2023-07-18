@@ -18,7 +18,6 @@
 
 using ColorSeq;
 using KS.Kernel.Configuration;
-using System;
 
 namespace KS.Misc.Contacts.Interactive
 {

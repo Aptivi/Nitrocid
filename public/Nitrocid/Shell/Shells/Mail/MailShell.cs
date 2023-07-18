@@ -29,7 +29,6 @@ using MailKit.Net.Imap;
 using MailKit.Net.Smtp;
 using System.Threading;
 using System;
-using KS.Misc.Reflection;
 
 namespace KS.Shell.Shells.Mail
 {

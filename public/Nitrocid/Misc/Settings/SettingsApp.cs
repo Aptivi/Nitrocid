@@ -167,7 +167,7 @@ namespace KS.Misc.Settings
                     {
                         try
                         {
-                            Config.ReadConfig((ConfigType)SettingsType, Location);
+                            Config.ReadConfig(SettingsType, Location);
                             Config.CreateConfig();
                         }
                         catch (Exception ex)
