@@ -25,6 +25,7 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Shells;
 
@@ -331,7 +332,7 @@ namespace KS.Shell.Prompts
             // Now, prompt the user
             var PresetNames = Presets.Keys.ToArray();
             var PresetDisplays = Presets.Values.Select(Preset => Preset.PresetPrompt).ToArray();
-            int SelectedPreset = SelectionStyle.PromptSelection(string.Format(Translate.DoTranslation("Select preset for {0}:"), shellType), string.Join("/", PresetNames), PresetDisplays);
+            int SelectedPreset = SelectionStyle.PromptSelection(TextTools.FormatString(Translate.DoTranslation("Select preset for {0}:"), shellType), string.Join("/", PresetNames), PresetDisplays);
             string SelectedPresetName = Presets.Keys.ElementAt(SelectedPreset - 1);
             SetPreset(SelectedPresetName, shellType);
         }

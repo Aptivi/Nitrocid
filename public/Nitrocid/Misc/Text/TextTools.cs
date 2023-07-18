@@ -308,7 +308,8 @@ namespace KS.Misc.Text
             string FormattedString = Format;
             try
             {
-                FormattedString = string.Format(Format, Vars);
+                if (Vars.Length > 0)
+                    FormattedString = string.Format(Format, Vars);
             }
             catch (Exception ex)
             {

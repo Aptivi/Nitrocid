@@ -30,6 +30,7 @@ using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
+using KS.Misc.Text;
 using KS.Shell.Shells.FTP;
 
 namespace KS.Network.FTP.Filesystem
@@ -94,7 +95,7 @@ namespace KS.Network.FTP.Filesystem
                                 EntryBuilder.Append(": ");
                                 FileSize = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetFileSize(finalDirListFTP.FullName);
                                 ModDate = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetModifiedTime(finalDirListFTP.FullName);
-                                EntryBuilder.Append(ColorTools.GetColor(KernelColorType.ListValue).VTSequenceForeground + string.Format(Translate.DoTranslation("{0} KB | Modified in: {1}"), FileSize / 1024d, ModDate.ToString()));
+                                EntryBuilder.Append(ColorTools.GetColor(KernelColorType.ListValue).VTSequenceForeground + TextTools.FormatString(Translate.DoTranslation("{0} KB | Modified in: {1}"), FileSize / 1024d, ModDate.ToString()));
                             }
                         }
                         else if (finalDirListFTP.Type == FtpObjectType.Directory)

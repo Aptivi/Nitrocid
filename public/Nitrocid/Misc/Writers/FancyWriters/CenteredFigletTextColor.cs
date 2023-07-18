@@ -20,6 +20,7 @@ using ColorSeq;
 using Figgle;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
+using KS.Misc.Text;
 using KS.Misc.Writers.FancyWriters.Tools;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
@@ -40,7 +41,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, params object[] Vars)
         {
-            Text = string.Format(Text, Vars);
+            Text = TextTools.FormatString(Text, Vars);
             int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
             int consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidth;
             FigletWhereColor.WriteFigletWhere(Text, consoleX, top, true, FigletFont, KernelColorType.NeutralText, Vars);
@@ -114,7 +115,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
         {
-            Text = string.Format(Text, Vars);
+            Text = TextTools.FormatString(Text, Vars);
             int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
             int consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidth;
             FigletWhereColor.WriteFigletWhere(Text, consoleX, top, true, FigletFont, ForegroundColor, BackgroundColor, Vars);
@@ -128,7 +129,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, params object[] Vars)
         {
-            Text = string.Format(Text, Vars);
+            Text = TextTools.FormatString(Text, Vars);
             int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
             int figHeight = FigletTools.GetFigletHeight(Text, FigletFont) / 2;
             int consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidth;
@@ -198,7 +199,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
         {
-            Text = string.Format(Text, Vars);
+            Text = TextTools.FormatString(Text, Vars);
             int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
             int figHeight = FigletTools.GetFigletHeight(Text, FigletFont) / 2;
             int consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidth;

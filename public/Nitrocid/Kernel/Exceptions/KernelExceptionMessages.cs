@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Languages;
+using KS.Misc.Text;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -130,7 +131,7 @@ namespace KS.Kernel.Exceptions
             if (e is not null && e.GetType() == typeof(KernelException))
             {
                 // Display message and some extra info
-                builder.AppendLine(Translate.DoTranslation("Another kernel exception has been returned.") + $" {string.Format(message, vars)}\n");
+                builder.AppendLine(Translate.DoTranslation("Another kernel exception has been returned.") + $" {TextTools.FormatString(message, vars)}\n");
                 builder.Append(e.Message);
             }
             else
@@ -145,7 +146,7 @@ namespace KS.Kernel.Exceptions
 
                 // Display error message
                 if (!string.IsNullOrWhiteSpace(message))
-                    builder.AppendLine(Translate.DoTranslation("The module that caused the fault provided this additional information that may help you further") + $": {string.Format(message, vars)}\n");
+                    builder.AppendLine(Translate.DoTranslation("The module that caused the fault provided this additional information that may help you further") + $": {TextTools.FormatString(message, vars)}\n");
                 else
                     builder.AppendLine(Translate.DoTranslation("The module that caused the fault didn't provide additional information.") + "\n");
 

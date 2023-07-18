@@ -39,7 +39,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCentered(int top, string Text, params object[] Vars)
         {
-            Text = string.Format(Text, Vars);
+            Text = TextTools.FormatString(Text, Vars);
             string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
             ConsoleWrapper.CursorTop = top;
             for (int i = 0; i < sentences.Length; i++)
@@ -113,7 +113,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCentered(int top, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
         {
-            Text = string.Format(Text, Vars);
+            Text = TextTools.FormatString(Text, Vars);
             string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
             ConsoleWrapper.CursorTop = top;
             for (int i = 0; i < sentences.Length; i++)

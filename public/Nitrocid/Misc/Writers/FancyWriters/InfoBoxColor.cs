@@ -71,7 +71,7 @@ namespace KS.Misc.Writers.FancyWriters
             try
             {
                 // Deal with the lines to actually fit text in the infobox
-                string finalInfoRendered = string.Format(text, vars);
+                string finalInfoRendered = TextTools.FormatString(text, vars);
                 string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
                 List<string> splitFinalLines = new();
                 foreach (var line in splitLines)
@@ -150,7 +150,7 @@ namespace KS.Misc.Writers.FancyWriters
             try
             {
                 // Fill the info box with text inside it
-                string finalInfoRendered = string.Format(text, vars) + "\n";
+                string finalInfoRendered = TextTools.FormatString(text, vars) + "\n";
                 string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
                 int maxWidth = splitLines.Max((str) => str.Length);
                 if (maxWidth >= ConsoleWrapper.WindowWidth)

@@ -53,7 +53,7 @@ namespace KS.Misc.Presentation.Elements
         {
             // Get the text and the arguments
             object[] finalArgs = Arguments.Length > 1 ? Arguments.Skip(1).ToArray() : Array.Empty<object>();
-            string text = string.Format((string)(Arguments.Length > 0 ? Arguments[0] : ""), finalArgs);
+            string text = TextTools.FormatString((string)(Arguments.Length > 0 ? Arguments[0] : ""), finalArgs);
 
             // Check the bounds
             string[] splitText = TextTools.GetWrappedSentences(text, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperBorderLeft + 2);
@@ -142,7 +142,7 @@ namespace KS.Misc.Presentation.Elements
             }
 
             string[] finalChoices = choices.ToArray();
-            string text = string.Format((string)(Arguments.Length > 0 ? Arguments[0] : ""), finalArgs) + "\n\n";
+            string text = TextTools.FormatString((string)(Arguments.Length > 0 ? Arguments[0] : ""), finalArgs) + "\n\n";
 
             // Add the choices to the text
             for (int choice = 0; choice < finalChoices.Length; choice++)

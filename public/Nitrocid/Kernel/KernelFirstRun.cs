@@ -344,7 +344,7 @@ namespace KS.Kernel
                                 {
                                     Arguments = new object[]
                                     {
-                                        () => string.Format(Translate.DoTranslation("Congratulations! You now have a user account, {0}!"), user) + "\n"
+                                        () => TextTools.FormatString(Translate.DoTranslation("Congratulations! You now have a user account, {0}!"), user) + "\n"
                                     }
                                 },
                                 new TextElement()

@@ -23,6 +23,7 @@ using KS.Files;
 using KS.Files.Querying;
 using KS.Kernel.Configuration;
 using KS.Languages;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using System.Collections.Generic;
@@ -81,7 +82,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
             // Pause until a key is pressed
             string answer = ChoiceStyle.PromptChoice(
-                string.Format(Translate.DoTranslation("Would you like to set this theme to {0}?"), selectedTheme), "y/n",
+                TextTools.FormatString(Translate.DoTranslation("Would you like to set this theme to {0}?"), selectedTheme), "y/n",
                 new[] { Translate.DoTranslation("Yes, set it!"), Translate.DoTranslation("No, don't set it.") },
                 ChoiceStyle.ChoiceOutputType.Modern
             );

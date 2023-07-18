@@ -130,7 +130,7 @@ namespace KS.Files
 
             // We can't perform this operation on nonexistent file
             if (!Checking.FileExists(Path))
-                throw new KernelException(KernelExceptionType.Filesystem, string.Format(Translate.DoTranslation("File {0} not found."), Path));
+                throw new KernelException(KernelExceptionType.Filesystem, TextTools.FormatString(Translate.DoTranslation("File {0} not found."), Path));
 
             // Try to open the file exclusively to check to see if we can open the file or just error out with sharing violation
             // error.
@@ -159,7 +159,7 @@ namespace KS.Files
 
             // We can't perform this operation on nonexistent file
             if (!Checking.FileExists(Path))
-                throw new KernelException(KernelExceptionType.Filesystem, string.Format(Translate.DoTranslation("File {0} not found."), Path));
+                throw new KernelException(KernelExceptionType.Filesystem, TextTools.FormatString(Translate.DoTranslation("File {0} not found."), Path));
 
             // We also can't wait for lock too little or too much
             if (lockMs < 100 || lockMs > 60000)
@@ -176,7 +176,7 @@ namespace KS.Files
                 {
                     estimatedLockMs += lockMs;
                     if (estimatedLockMs > maxTimeoutMs)
-                        throw new KernelException(KernelExceptionType.Filesystem, string.Format(Translate.DoTranslation("File {0} is still locked even after waiting for {1} seconds."), Path, maxTimeoutMs / 1000));
+                        throw new KernelException(KernelExceptionType.Filesystem, TextTools.FormatString(Translate.DoTranslation("File {0} is still locked even after waiting for {1} seconds."), Path, maxTimeoutMs / 1000));
                 }
             }
         }
@@ -191,7 +191,7 @@ namespace KS.Files
 
             // We can't perform this operation on nonexistent file
             if (!Checking.FileExists(Path))
-                throw new KernelException(KernelExceptionType.Filesystem, string.Format(Translate.DoTranslation("File {0} not found."), Path));
+                throw new KernelException(KernelExceptionType.Filesystem, TextTools.FormatString(Translate.DoTranslation("File {0} not found."), Path));
 
             // Wait until the lock is released
             SpinWait.SpinUntil(() => !IsFileLocked(Path));

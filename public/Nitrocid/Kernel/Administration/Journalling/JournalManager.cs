@@ -19,6 +19,7 @@
 using KS.ConsoleBase.Colors;
 using KS.Files.Operations;
 using KS.Files.Querying;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -63,7 +64,7 @@ namespace KS.Kernel.Administration.Journalling
                     Making.MakeJsonFile(JournalPath, false, true);
 
                 // Make a new journal entry and store everything in it
-                Message = string.Format(Message, Vars);
+                Message = TextTools.FormatString(Message, Vars);
                 var JournalEntry = 
                     new JObject(
                         new JProperty("date", TimeDate.TimeDateRenderers.RenderDate()),
