@@ -115,6 +115,7 @@ namespace KS.Shell.ShellBase.Commands
                 string StrArgs = ArgumentInfo.ArgumentsText;
                 bool RequiredArgumentsProvided = ArgumentInfo.RequiredArgumentsProvided;
                 bool RequiredSwitchesProvided = ArgumentInfo.RequiredSwitchesProvided;
+                bool RequiredSwitchArgumentsProvided = ArgumentInfo.RequiredSwitchArgumentsProvided;
 
                 // Check to see if a requested command is obsolete
                 if (TargetCommands[Command].Flags.HasFlag(CommandFlags.Obsolete))
@@ -124,33 +125,51 @@ namespace KS.Shell.ShellBase.Commands
                 }
 
                 // If there are enough arguments provided, execute. Otherwise, fail with not enough arguments.
-                if (TargetCommands[Command].CommandArgumentInfo is not null)
+                var ArgInfo = TargetCommands[Command].CommandArgumentInfo;
+                bool argSatisfied = true;
+                if (ArgInfo is not null)
                 {
-                    var ArgInfo = TargetCommands[Command].CommandArgumentInfo;
-                    if (ArgInfo.ArgumentsRequired & RequiredArgumentsProvided ||
-                        !ArgInfo.ArgumentsRequired)
+                    // Check for required arguments
+                    if (!RequiredArgumentsProvided && ArgInfo.ArgumentsRequired)
                     {
-                        if (ArgInfo.Switches.Any((@switch) => @switch.IsRequired) && RequiredSwitchesProvided ||
-                            !ArgInfo.Switches.Any((@switch) => @switch.IsRequired))
-                        {
-                            var CommandBase = TargetCommands[Command].CommandBase;
-                            CommandBase.Execute(StrArgs, Args, Switches);
-                        }
-                        else
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough switches for {0}", Command);
-                            TextWriterColor.Write(Translate.DoTranslation("Required switches are not provided. See below for usage:"));
-                            HelpSystem.ShowHelp(Command, ShellType);
-                        }
-                    }
-                    else
-                    {
+                        argSatisfied = false;
                         DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough arguments for {0}", Command);
                         TextWriterColor.Write(Translate.DoTranslation("Required arguments are not provided. See below for usage:"));
                         HelpSystem.ShowHelp(Command, ShellType);
                     }
+                    
+                    // Check for required switches
+                    if (!RequiredSwitchesProvided && ArgInfo.Switches.Any((@switch) => @switch.IsRequired))
+                    {
+                        argSatisfied = false;
+                        DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough switches for {0}", Command);
+                        TextWriterColor.Write(Translate.DoTranslation("Required switches are not provided. See below for usage:"));
+                        HelpSystem.ShowHelp(Command, ShellType);
+                    }
+                    
+                    // Check for required switch arguments
+                    if (!RequiredSwitchArgumentsProvided && ArgInfo.Switches.Any((@switch) => @switch.ArgumentsRequired))
+                    {
+                        argSatisfied = false;
+                        DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided a value for one of the switches for {0}", Command);
+                        TextWriterColor.Write(Translate.DoTranslation("One of the switches requires a value that is not provided. See below for usage:"));
+                        HelpSystem.ShowHelp(Command, ShellType);
+                    }
+                    
+                    // Check for unknown switches
+                    if (ArgumentInfo.unknownSwitchesList.Length > 0)
+                    {
+                        argSatisfied = false;
+                        DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided a value for one of the switches for {0}", Command);
+                        TextWriterColor.Write(Translate.DoTranslation("Switches that are listed below are unknown."));
+                        ListWriterColor.WriteList(ArgumentInfo.unknownSwitchesList);
+                        TextWriterColor.Write(Translate.DoTranslation("See below for usage:"));
+                        HelpSystem.ShowHelp(Command, ShellType);
+                    }
                 }
-                else
+
+                // Execute the command
+                if (argSatisfied)
                 {
                     var CommandBase = TargetCommands[Command].CommandBase;
                     CommandBase.Execute(StrArgs, Args, Switches);

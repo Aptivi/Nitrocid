@@ -29,7 +29,7 @@ namespace KS.Shell.ShellBase.Commands
         /// Gets the switch values
         /// </summary>
         /// <returns>The list of switches with values supplied</returns>
-        public static List<(string, string)> GetSwitchValues(string[] switches)
+        public static List<(string, string)> GetSwitchValues(string[] switches, bool includeNonValueSwitches = false)
         {
             List<(string, string)> switchValues = new();
 
@@ -40,11 +40,22 @@ namespace KS.Shell.ShellBase.Commands
                 int switchIndex = @switch.IndexOf('=');
                 string switchName, switchValue;
                 if (switchIndex == -1)
-                    continue;
-
-                // Get switch name and value. If the equal sign is at the end, the value is an empty value.
-                switchName = @switch[..switchIndex];
-                switchValue = switchIndex != @switch.Length - 1 ? @switch[(switchIndex + 1)..] : "";
+                {
+                    if (includeNonValueSwitches)
+                    {
+                        // Assume that switch is the key name
+                        switchName = @switch;
+                        switchValue = "";
+                    }
+                    else
+                        continue;
+                }
+                else
+                {
+                    // Get switch name and value. If the equal sign is at the end, the value is an empty value.
+                    switchName = @switch[..switchIndex];
+                    switchValue = switchIndex != @switch.Length - 1 ? @switch[(switchIndex + 1)..] : "";
+                }
 
                 // Add the values to the list
                 switchValues.Add((switchName, switchValue));

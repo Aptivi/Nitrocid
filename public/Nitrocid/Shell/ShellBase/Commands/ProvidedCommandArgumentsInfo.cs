@@ -32,6 +32,8 @@ namespace KS.Shell.ShellBase.Commands
     public class ProvidedCommandArgumentsInfo
     {
 
+        internal string[] unknownSwitchesList;
+
         /// <summary>
         /// Target command that the user executed in shell
         /// </summary>
@@ -56,6 +58,10 @@ namespace KS.Shell.ShellBase.Commands
         /// Checks to see if the required switches are provided
         /// </summary>
         public bool RequiredSwitchesProvided { get; private set; }
+        /// <summary>
+        /// Checks to see if the required switch arguments for switches that require values are provided
+        /// </summary>
+        public bool RequiredSwitchArgumentsProvided { get; private set; }
 
         /// <summary>
         /// Makes a new instance of the command argument info with the user-provided command text
@@ -76,6 +82,7 @@ namespace KS.Shell.ShellBase.Commands
             string Command;
             bool RequiredArgumentsProvided = true;
             bool RequiredSwitchesProvided = true;
+            bool RequiredSwitchArgumentsProvided = true;
             Dictionary<string, CommandInfo> ShellCommands;
             Dictionary<string, CommandInfo> ModCommands;
 
@@ -91,6 +98,9 @@ namespace KS.Shell.ShellBase.Commands
                 .Select((match) => match.Value)
                 .ToArray();
             CommandText = DriverHandler.CurrentRegexpDriverLocal.Filter(CommandText, switchRegex);
+
+            // Split the switches to their key-value counterparts
+            var EnclosedSwitchKeyValuePairs = SwitchManager.GetSwitchValues(EnclosedSwitches, true);
 
             // Split the requested command string into words
             var words = CommandText.SplitEncloseDoubleQuotes();
@@ -127,6 +137,23 @@ namespace KS.Shell.ShellBase.Commands
             else
                 RequiredSwitchesProvided = true;
 
+            // Check to see if the caller has provided required number of switches that require arguments
+            if (CommandInfo?.CommandArgumentInfo is not null)
+                RequiredSwitchArgumentsProvided =
+                    CommandInfo.CommandArgumentInfo.Switches.Length == 0 ||
+                    EnclosedSwitches.Length == 0 ||
+                    EnclosedSwitchKeyValuePairs.Where((kvp) => !string.IsNullOrEmpty(kvp.Item2)).Count() >= CommandInfo.CommandArgumentInfo.Switches.Where((@switch) => @switch.ArgumentsRequired).Count() ||
+                    !CommandInfo.CommandArgumentInfo.Switches.Any((@switch) => @switch.ArgumentsRequired);
+            else
+                RequiredSwitchArgumentsProvided = true;
+
+            // Check to see if the caller has provided non-existent switches
+            if (CommandInfo?.CommandArgumentInfo is not null)
+                unknownSwitchesList = EnclosedSwitchKeyValuePairs
+                    .Select((kvp) => kvp.Item1)
+                    .Where((key) => !CommandInfo.CommandArgumentInfo.Switches.Any((switchInfo) => switchInfo.SwitchName == key[1..]))
+                    .ToArray();
+
             // Install the parsed values to the new class instance
             ArgumentsList = EnclosedArgs;
             SwitchesList = EnclosedSwitches;
@@ -134,6 +161,7 @@ namespace KS.Shell.ShellBase.Commands
             this.Command = Command;
             this.RequiredArgumentsProvided = RequiredArgumentsProvided;
             this.RequiredSwitchesProvided = RequiredSwitchesProvided;
+            this.RequiredSwitchArgumentsProvided = RequiredSwitchArgumentsProvided;
         }
 
     }

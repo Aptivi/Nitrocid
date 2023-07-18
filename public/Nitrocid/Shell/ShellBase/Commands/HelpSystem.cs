@@ -109,8 +109,10 @@ namespace KS.Shell.ShellBase.Commands
                     foreach (var Switch in Switches)
                     {
                         bool required = Switch.IsRequired;
+                        bool argRequired = Switch.ArgumentsRequired;
                         string switchName = Switch.SwitchName;
-                        string renderedSwitch = required ? $" <-{switchName}[=value]>" : $" [-{switchName}[=value]]";
+                        string renderedSwitchValue = argRequired ? $"=value" : $"[=value]";
+                        string renderedSwitch = required ? $" <-{switchName}{renderedSwitchValue}>" : $" [-{switchName}{renderedSwitchValue}]";
                         TextWriterColor.Write(renderedSwitch, false, KernelColorType.ListEntry);
                     }
 
