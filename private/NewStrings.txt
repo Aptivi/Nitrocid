@@ -725,5 +725,9 @@ One of the switches requires a value that is not provided. See below for usage:
 Switches that are listed below are unknown.
 See below for usage:
 Reload Settings
+Gets current backtrace
+Debug Shell
+Starts the debug shell
+Debug Shell Prompt Preset
 
 ==========================================================================================================================================

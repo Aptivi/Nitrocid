@@ -106,6 +106,8 @@ namespace KS.Shell.Shells.UESH
                 new CommandArgumentInfo(new[] { "textfile" }, new[] { new SwitchInfo("w", /* Localizable */ "Converts the line endings to the Windows format"), new SwitchInfo("u", /* Localizable */ "Converts the line endings to the Unix format"), new SwitchInfo("m", /* Localizable */ "Converts the line endings to the Mac OS 9 format") }, true, 1), new ConvertLineEndingsCommand()) },
             { "copy", new CommandInfo("copy", ShellType, /* Localizable */ "Creates another copy of a file under different directory or name.",
                 new CommandArgumentInfo(new[] { "source", "target" }, Array.Empty<SwitchInfo>(), true, 2), new CopyCommand()) },
+            { "debugshell", new CommandInfo("debugshell", ShellType, /* Localizable */ "Starts the debug shell",
+                new CommandArgumentInfo(), new DebugShellCommand(), CommandFlags.Strict) },
             { "dict", new CommandInfo("dict", ShellType, /* Localizable */ "The English Dictionary",
                 new CommandArgumentInfo(new[] { "word" }, Array.Empty<SwitchInfo>(), true, 1), new DictCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
             { "dirinfo", new CommandInfo("dirinfo", ShellType, /* Localizable */ "Provides information about a directory",

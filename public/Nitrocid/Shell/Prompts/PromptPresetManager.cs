@@ -50,7 +50,8 @@ namespace KS.Shell.Prompts
             { "HexShell", Shell.GetShellInfo(ShellType.HexShell).ShellPresets["Default"] },
             { "ArchiveShell", Shell.GetShellInfo(ShellType.ArchiveShell).ShellPresets["Default"] },
             { "AdminShell", Shell.GetShellInfo(ShellType.AdminShell).ShellPresets["Default"] },
-            { "SqlShell", Shell.GetShellInfo(ShellType.SqlShell).ShellPresets["Default"] }
+            { "SqlShell", Shell.GetShellInfo(ShellType.SqlShell).ShellPresets["Default"] },
+            { "DebugShell", Shell.GetShellInfo(ShellType.DebugShell).ShellPresets["Default"] }
         };
 
         /// <summary>
@@ -215,6 +216,11 @@ namespace KS.Shell.Prompts
                     case "SqlShell":
                         {
                             Config.MainConfig.SqlShellPromptPreset = PresetName;
+                            break;
+                        }
+                    case "DebugShell":
+                        {
+                            Config.MainConfig.DebugShellPromptPreset = PresetName;
                             break;
                         }
                 }

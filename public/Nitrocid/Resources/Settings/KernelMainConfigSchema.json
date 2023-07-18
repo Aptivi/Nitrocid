@@ -305,6 +305,9 @@
         "SqlShellPromptPreset": {
             "type": "string"
         },
+        "DebugShellPromptPreset": {
+            "type": "string"
+        },
         "DefaultChoiceOutputType": {
             "type": "integer"
         },
@@ -927,6 +930,7 @@
         "ArchiveShellPromptPreset",
         "AdminShellPromptPreset",
         "SqlShellPromptPreset",
+        "DebugShellPromptPreset",
         "DefaultChoiceOutputType",
         "SetTitleOnCommandExecution",
         "SortMode",

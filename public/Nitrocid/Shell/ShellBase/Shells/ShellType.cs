@@ -70,6 +70,10 @@ namespace KS.Shell.ShellBase.Shells
         /// <summary>
         /// SQL shell
         /// </summary>
-        SqlShell
+        SqlShell,
+        /// <summary>
+        /// Kernel debug shell
+        /// </summary>
+        DebugShell
     }
 }

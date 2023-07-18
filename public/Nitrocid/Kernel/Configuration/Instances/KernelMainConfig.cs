@@ -734,6 +734,14 @@ namespace KS.Kernel.Configuration.Instances
             set => PromptPresetManager.SetPresetDry(value, ShellType.SqlShell, false);
         }
         /// <summary>
+        /// Debug Shell Prompt Preset
+        /// </summary>
+        public string DebugShellPromptPreset
+        {
+            get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.DebugShell).PresetName;
+            set => PromptPresetManager.SetPresetDry(value, ShellType.DebugShell, false);
+        }
+        /// <summary>
         /// Default choice output type
         /// </summary>
         public int DefaultChoiceOutputType { get; set; } = (int)ChoiceOutputType.Modern;

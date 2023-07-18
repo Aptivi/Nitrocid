@@ -66,6 +66,7 @@ using FluentFTP.Helpers;
 using KS.Kernel.Configuration;
 using KS.Shell.Shells.Sql;
 using KS.Users;
+using KS.Shell.Shells.Debug;
 
 namespace KS.Shell
 {
@@ -110,7 +111,8 @@ namespace KS.Shell
             { "HexShell", new HexShellInfo() },
             { "ArchiveShell", new ArchiveShellInfo() },
             { "AdminShell", new AdminShellInfo() },
-            { "SqlShell", new SqlShellInfo() }
+            { "SqlShell", new SqlShellInfo() },
+            { "DebugShell", new DebugShellInfo() }
         };
 
         /// <summary>
