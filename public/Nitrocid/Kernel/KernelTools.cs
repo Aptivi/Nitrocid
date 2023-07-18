@@ -63,6 +63,16 @@ namespace KS.Kernel
     public static class KernelTools
     {
 
+        /// <summary>
+        /// Kernel version
+        /// </summary>
+        public readonly static Version KernelVersion = Assembly.GetExecutingAssembly().GetName().Version;
+        /// <summary>
+        /// Kernel API version
+        /// </summary>
+        // Refer to NitrocidModAPIVersion in the project file.
+        public readonly static Version KernelApiVersion = new(FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion);
+
         internal static Stopwatch StageTimer = new();
         internal static KernelThread RPCPowerListener = new("RPC Power Listener Thread", true, (object arg) => PowerManager.PowerManage((PowerMode)arg)) { isCritical = true };
         internal static string bannerFigletFont = "Banner";
@@ -92,15 +102,6 @@ namespace KS.Kernel
         internal readonly static string ConsoleTitle = $"Nitrocid Kernel v{KernelVersion} {ReleaseSpecifier} (API v{KernelApiVersion})";
 #endif
 
-        /// <summary>
-        /// Kernel version
-        /// </summary>
-        public readonly static Version KernelVersion = Assembly.GetExecutingAssembly().GetName().Version;
-        /// <summary>
-        /// Kernel API version
-        /// </summary>
-        // Refer to NitrocidModAPIVersion in the project file.
-        public readonly static Version KernelApiVersion = new(FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion);
         /// <summary>
         /// Current banner figlet font
         /// </summary>
