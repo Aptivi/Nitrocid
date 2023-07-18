@@ -291,12 +291,13 @@ namespace KS.Misc.Interactive
                 int dataCount = CountElements(data);
 
                 // Populate selected data
-                object selectedData = GetElementFromIndex(data, paneCurrentSelection - 1);
-                DebugCheck.AssertNull(selectedData,
-                    "attempted to render info about null data");
-
                 if (dataCount > 0)
+                {
+                    object selectedData = GetElementFromIndex(data, paneCurrentSelection - 1);
+                    DebugCheck.AssertNull(selectedData,
+                        "attempted to render info about null data");
                     finalInfoRendered = interactiveTui.RenderInfoOnSecondPane(selectedData);
+                }
                 else
                     finalInfoRendered = Translate.DoTranslation("No info.");
             }
