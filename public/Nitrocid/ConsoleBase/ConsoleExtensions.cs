@@ -134,7 +134,6 @@ namespace KS.ConsoleBase
             char BellChar = Convert.ToChar(7);
             char EscapeChar = Convert.ToChar(27);
             string Sequence = $"{EscapeChar}]0;{Text}{BellChar}";
-            Console.Title = Text;
             TextWriterColor.WritePlain(Sequence, false);
         }
 
