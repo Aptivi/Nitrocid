@@ -36,11 +36,11 @@ namespace KSTests.ShellTests
         public void TestIsCommandFoundInSpecificShell() => CommandManager.IsCommandFound("help", ShellType.Shell).ShouldBeTrue();
 
         /// <summary>
-        /// Tests seeing if the command is found in all the shells (test case: connect command)
+        /// Tests seeing if the command is found in all the shells (test case: detach command)
         /// </summary>
         [Test]
         [Description("Action")]
-        public void TestIsCommandFoundInAllTheShells() => CommandManager.IsCommandFound("connect").ShouldBeTrue();
+        public void TestIsCommandFoundInAllTheShells() => CommandManager.IsCommandFound("detach").ShouldBeTrue();
 
     }
 }
