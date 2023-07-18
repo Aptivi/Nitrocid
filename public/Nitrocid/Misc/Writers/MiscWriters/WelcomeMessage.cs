@@ -41,6 +41,11 @@ namespace KS.Misc.Writers.MiscWriters
         /// </summary>
         public static string CustomBanner =>
             Config.MainConfig.CustomBanner;
+        /// <summary>
+        /// Current banner figlet font
+        /// </summary>
+        public static string BannerFigletFont =>
+            Config.MainConfig.BannerFigletFont;
 
         /// <summary>
         /// Gets the custom banner actual text with placeholders parsed
@@ -80,7 +85,7 @@ namespace KS.Misc.Writers.MiscWriters
                     TextWriterColor.Write(MessageWrite, true, KernelColorType.Banner, KernelTools.KernelVersion.ToString());
                 }
 
-                string FigletRenderedBanner = FigletTools.RenderFiglet($"{KernelTools.KernelVersion}", KernelTools.BannerFigletFont);
+                string FigletRenderedBanner = FigletTools.RenderFiglet($"{KernelTools.KernelVersion}", BannerFigletFont);
                 TextWriterColor.Write(CharManager.NewLine + FigletRenderedBanner + CharManager.NewLine );
                 ConsoleBase.ConsoleWrapper.CursorVisible = true;
             }

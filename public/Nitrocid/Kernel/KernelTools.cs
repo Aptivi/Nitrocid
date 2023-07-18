@@ -102,12 +102,6 @@ namespace KS.Kernel
         internal readonly static string ConsoleTitle = $"Nitrocid Kernel v{KernelVersion} {ReleaseSpecifier} (API v{KernelApiVersion})";
 #endif
 
-        /// <summary>
-        /// Current banner figlet font
-        /// </summary>
-        public static string BannerFigletFont =>
-            Config.MainConfig.BannerFigletFont;
-
         // ----------------------------------------------- Init and reset -----------------------------------------------
         /// <summary>
         /// Reset everything for the next restart
