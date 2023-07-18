@@ -59,32 +59,6 @@ namespace KS.Kernel
     internal static class Kernel
     {
 
-        internal static Stopwatch StageTimer = new();
-
-        // #ifdef'd variables ... Release specifiers (SPECIFIER: REL, RC, or DEV | MILESTONESPECIFIER: ALPHA, BETA, NONE | None satisfied: Unsupported Release)
-#if SPECIFIERREL
-        internal readonly static string ReleaseSpecifier = $"Final";
-#elif SPECIFIERRC
-        internal readonly static string ReleaseSpecifier = $"Release Candidate";
-#elif SPECIFIERDEV
-#if MILESTONESPECIFIERALPHA
-        internal readonly static string ReleaseSpecifier = $"Milestone 1";
-#elif MILESTONESPECIFIERBETA
-        internal readonly static string ReleaseSpecifier = $"Beta 1";
-#else
-        internal readonly static string ReleaseSpecifier = $"Developer Preview";
-#endif
-#else
-        internal readonly static string ReleaseSpecifier = $"- UNSUPPORTED -";
-#endif
-
-        // Final console window title
-#if SPECIFIERREL
-        internal readonly static string ConsoleTitle = $"Nitrocid Kernel v{KernelTools.KernelVersion} (API v{KernelTools.KernelApiVersion})";
-#else
-        internal readonly static string ConsoleTitle = $"Nitrocid Kernel v{KernelTools.KernelVersion} {ReleaseSpecifier} (API v{KernelTools.KernelApiVersion})";
-#endif
-
         /// <summary>
         /// Entry point
         /// </summary>
@@ -107,7 +81,7 @@ namespace KS.Kernel
                     AppDomain.CurrentDomain.AssemblyResolve += AssemblyLookup.LoadFromAssemblySearchPaths;
 
                     // A title
-                    ConsoleExtensions.SetTitle(ConsoleTitle);
+                    ConsoleExtensions.SetTitle(KernelTools.ConsoleTitle);
 
                     // Check to see if we have an appdata folder for KS
                     if (!Checking.FolderExists(Paths.AppDataPath))
@@ -143,7 +117,7 @@ namespace KS.Kernel
                     }
 
                     // Initialize everything
-                    StageTimer.Start();
+                    KernelTools.StageTimer.Start();
                     PowerManager.Uptime.Start();
                     KernelTools.InitEverything();
                     CheckErrored();

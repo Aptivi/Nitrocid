@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Arguments.ArgumentBase;
+using KS.Kernel;
 using KS.Kernel.Debugging.Testing;
 using System;
 
@@ -27,9 +28,9 @@ namespace KS.Arguments.CommandLineArguments
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            Kernel.Kernel.StageTimer.Stop();
+            KernelTools.StageTimer.Stop();
             TestInteractive.Open();
-            Kernel.Kernel.StageTimer.Start();
+            KernelTools.StageTimer.Start();
             if (TestInteractive.ShutdownFlag)
             {
                 // Clear the console and reset the colors

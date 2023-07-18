@@ -63,8 +63,34 @@ namespace KS.Kernel
     public static class KernelTools
     {
 
+        internal static Stopwatch StageTimer = new();
         internal static KernelThread RPCPowerListener = new("RPC Power Listener Thread", true, (object arg) => PowerManager.PowerManage((PowerMode)arg)) { isCritical = true };
         internal static string bannerFigletFont = "Banner";
+
+        // #ifdef'd variables...
+        // Release specifiers (SPECIFIER: REL, RC, or DEV | MILESTONESPECIFIER: ALPHA, BETA, or NONE | None satisfied: Unsupported Release)
+#if SPECIFIERREL
+        internal readonly static string ReleaseSpecifier = $"Final";
+#elif SPECIFIERRC
+        internal readonly static string ReleaseSpecifier = $"Release Candidate";
+#elif SPECIFIERDEV
+#if MILESTONESPECIFIERALPHA
+        internal readonly static string ReleaseSpecifier = $"Milestone 1";
+#elif MILESTONESPECIFIERBETA
+        internal readonly static string ReleaseSpecifier = $"Beta 1";
+#else
+        internal readonly static string ReleaseSpecifier = $"Developer Preview";
+#endif
+#else
+        internal readonly static string ReleaseSpecifier = $"- UNSUPPORTED -";
+#endif
+
+        // Final console window title
+#if SPECIFIERREL
+        internal readonly static string ConsoleTitle = $"Nitrocid Kernel v{KernelVersion} (API v{KernelApiVersion})";
+#else
+        internal readonly static string ConsoleTitle = $"Nitrocid Kernel v{KernelVersion} {ReleaseSpecifier} (API v{KernelApiVersion})";
+#endif
 
         /// <summary>
         /// Kernel version
@@ -242,23 +268,23 @@ namespace KS.Kernel
             {
                 if (Flags.ShowStageFinishTimes)
                 {
-                    SplashReport.ReportProgress(Translate.DoTranslation("Internal initialization finished in") + $" {Kernel.StageTimer.Elapsed}", 0);
-                    Kernel.StageTimer.Restart();
+                    SplashReport.ReportProgress(Translate.DoTranslation("Internal initialization finished in") + $" {StageTimer.Elapsed}", 0);
+                    StageTimer.Restart();
                 }
             }
             else if (StageNumber >= 5)
             {
                 if (Flags.ShowStageFinishTimes)
                 {
-                    SplashReport.ReportProgress(Translate.DoTranslation("Stage finished in") + $" {Kernel.StageTimer.Elapsed}", 10);
-                    Kernel.StageTimer.Reset();
+                    SplashReport.ReportProgress(Translate.DoTranslation("Stage finished in") + $" {StageTimer.Elapsed}", 10);
+                    StageTimer.Reset();
                     TextWriterColor.Write();
                 }
             }
             else if (Flags.ShowStageFinishTimes)
             {
-                SplashReport.ReportProgress(Translate.DoTranslation("Stage finished in") + $" {Kernel.StageTimer.Elapsed}", 10);
-                Kernel.StageTimer.Restart();
+                SplashReport.ReportProgress(Translate.DoTranslation("Stage finished in") + $" {StageTimer.Elapsed}", 10);
+                StageTimer.Restart();
             }
 
             // Actually report the stage

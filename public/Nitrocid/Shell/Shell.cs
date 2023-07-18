@@ -280,7 +280,7 @@ namespace KS.Shell
                         {
                             // Set title
                             if (Config.MainConfig.SetTitleOnCommandExecution)
-                                ConsoleExtensions.SetTitle($"{Kernel.Kernel.ConsoleTitle} - {Command}");
+                                ConsoleExtensions.SetTitle($"{KernelTools.ConsoleTitle} - {Command}");
 
                             if (ModManager.ListModCommands(ShellType).ContainsKey(commandName))
                             {
@@ -421,7 +421,7 @@ namespace KS.Shell
             }
 
             // Restore title
-            ConsoleExtensions.SetTitle(Kernel.Kernel.ConsoleTitle);
+            ConsoleExtensions.SetTitle(KernelTools.ConsoleTitle);
         }
 
         /// <summary>
