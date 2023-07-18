@@ -21,6 +21,7 @@ using KS.Files;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
+using System.Linq;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -37,8 +38,23 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             string path = ListArgsOnly[0];
             bool locked = Filesystem.IsFileLocked(path);
+            bool waitForUnlock = ListSwitchesOnly.Contains("-waitforunlock");
+            string waitForUnlockMsStr = SwitchManager.GetSwitchValue(ListSwitchesOnly, "-waitforunlock");
+            bool waitForUnlockTimed = !string.IsNullOrEmpty(waitForUnlockMsStr);
+            int waitForUnlockMs = waitForUnlockTimed ? int.Parse(waitForUnlockMsStr) : 0;
             if (locked)
+            {
                 TextWriterColor.Write(Translate.DoTranslation("File is already in use."), true, KernelColorType.Warning);
+                if (waitForUnlock)
+                {
+                    TextWriterColor.Write(Translate.DoTranslation("Waiting until the file is unlocked..."), true, KernelColorType.Progress);
+                    if (waitForUnlockTimed)
+                        Filesystem.WaitForLockRelease(path, waitForUnlockMs);
+                    else
+                        Filesystem.WaitForLockReleaseIndefinite(path);
+                    TextWriterColor.Write(Translate.DoTranslation("File is not in use."), true, KernelColorType.Success);
+                }
+            }
             else
                 TextWriterColor.Write(Translate.DoTranslation("File is not in use."), true, KernelColorType.Success);
         }

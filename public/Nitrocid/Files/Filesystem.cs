@@ -29,6 +29,7 @@ using KS.Kernel.Configuration;
 using KS.Drivers;
 using KS.Misc.Text;
 using IOPath = System.IO.Path;
+using System.Threading;
 
 namespace KS.Files
 {
@@ -37,6 +38,8 @@ namespace KS.Files
     /// </summary>
     public static class Filesystem
     {
+
+        private const int maxTimeoutMs = 300000;
 
         /// <summary>
         /// Shows the filesystem progress
@@ -120,7 +123,7 @@ namespace KS.Files
         /// Checks to see if the file is locked
         /// </summary>
         /// <param name="Path">Path to check the file</param>
-        /// <returns></returns>
+        /// <returns>True if locked; false otherwise.</returns>
         public static bool IsFileLocked(string Path)
         {
             Path = NeutralizePath(Path);
@@ -143,6 +146,55 @@ namespace KS.Files
                 DebugWriter.WriteDebug(DebugLevel.W, "File {0} is locked: {1}", Path, ex.Message);
                 return true;
             }
+        }
+
+        /// <summary>
+        /// Waits until the file is unlocked (lock released)
+        /// </summary>
+        /// <param name="Path">Path to check the file</param>
+        /// <param name="lockMs">How many milliseconds to wait before querying the lock</param>
+        public static void WaitForLockRelease(string Path, int lockMs = 1000)
+        {
+            Path = NeutralizePath(Path);
+
+            // We can't perform this operation on nonexistent file
+            if (!Checking.FileExists(Path))
+                throw new KernelException(KernelExceptionType.Filesystem, string.Format(Translate.DoTranslation("File {0} not found."), Path));
+
+            // We also can't wait for lock too little or too much
+            if (lockMs < 100 || lockMs > 60000)
+                lockMs = 1000;
+
+            // Wait until the lock is released
+            int estimatedLockMs = 0;
+            while (IsFileLocked(Path))
+            {
+                SpinWait.SpinUntil(() => !IsFileLocked(Path), lockMs);
+
+                // If the file is still locked, add the estimated lock time to check for timeout
+                if (IsFileLocked(Path))
+                {
+                    estimatedLockMs += lockMs;
+                    if (estimatedLockMs > maxTimeoutMs)
+                        throw new KernelException(KernelExceptionType.Filesystem, string.Format(Translate.DoTranslation("File {0} is still locked even after waiting for {1} seconds."), Path, maxTimeoutMs / 1000));
+                }
+            }
+        }
+
+        /// <summary>
+        /// Waits infinitely until the file is unlocked (lock released)
+        /// </summary>
+        /// <param name="Path">Path to check the file</param>
+        public static void WaitForLockReleaseIndefinite(string Path)
+        {
+            Path = NeutralizePath(Path);
+
+            // We can't perform this operation on nonexistent file
+            if (!Checking.FileExists(Path))
+                throw new KernelException(KernelExceptionType.Filesystem, string.Format(Translate.DoTranslation("File {0} not found."), Path));
+
+            // Wait until the lock is released
+            SpinWait.SpinUntil(() => !IsFileLocked(Path));
         }
 
     }

@@ -718,5 +718,8 @@ Contact manager option foreground color
 Contact manager option binding name color
 Contact manager box background color
 Contact manager box foreground color
+File {0} is still locked even after waiting for {1} seconds.
+Waits until the file is unlocked
+Waiting until the file is unlocked...
 
 ==========================================================================================================================================

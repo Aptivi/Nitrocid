@@ -75,7 +75,7 @@ namespace KS.Shell.Shells.UESH
             { "chhostname", new CommandInfo("chhostname", ShellType, /* Localizable */ "Changes host name",
                 new CommandArgumentInfo(new[] { "HostName" }, Array.Empty<SwitchInfo>(), true, 1), new ChHostNameCommand(), CommandFlags.Strict) },
             { "chklock", new CommandInfo("chklock", ShellType, /* Localizable */ "Checks the file lock",
-                new CommandArgumentInfo(new[] { "file" }, Array.Empty<SwitchInfo>(), true, 1), new ChkLockCommand()) },
+                new CommandArgumentInfo(new[] { "file" }, new[] { new SwitchInfo("waitforunlock", /* Localizable */ "Waits until the file is unlocked", false, true) }, true, 1), new ChkLockCommand()) },
             { "chmal", new CommandInfo("chmal", ShellType, /* Localizable */ "Changes MAL, the MOTD After Login",
                 new CommandArgumentInfo(new[] { "Message" }, Array.Empty<SwitchInfo>(), false, 0), new ChMalCommand(), CommandFlags.Strict) },
             { "chmotd", new CommandInfo("chmotd", ShellType, /* Localizable */ "Changes MOTD, the Message Of The Day",
