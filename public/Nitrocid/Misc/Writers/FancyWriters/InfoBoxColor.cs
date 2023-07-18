@@ -82,15 +82,15 @@ namespace KS.Misc.Writers.FancyWriters
                 }
 
                 // Fill the info box with text inside it
-                int maxWidth = splitLines.Max((str) => str.Length);
+                int maxWidth = splitFinalLines.Max((str) => str.Length);
                 if (maxWidth >= ConsoleWrapper.WindowWidth)
                     maxWidth = ConsoleWrapper.WindowWidth - 4;
-                int maxHeight = splitLines.Length;
+                int maxHeight = splitFinalLines.Count;
                 if (maxHeight >= ConsoleWrapper.WindowHeight)
                     maxHeight = ConsoleWrapper.WindowHeight - 4;
                 int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
-                int borderX = (ConsoleWrapper.WindowWidth / 2) - (maxWidth / 2);
-                int borderY = (ConsoleWrapper.WindowHeight / 2) - (maxHeight / 2);
+                int borderX = (ConsoleWrapper.WindowWidth / 2) - (maxWidth / 2) - 1;
+                int borderY = (ConsoleWrapper.WindowHeight / 2) - (maxHeight / 2) - 1;
                 BorderColor.WriteBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
 
                 // Render text inside it
