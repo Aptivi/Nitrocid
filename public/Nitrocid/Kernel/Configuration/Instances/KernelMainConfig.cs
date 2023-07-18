@@ -836,7 +836,7 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// Whether or not to enable RPC
         /// </summary>
-        public bool RPCEnabled { get; set; } = true;
+        public bool RPCEnabled { get; set; }
         /// <summary>
         /// Write an RPC port. It must be numeric, and must not be already used. Otherwise, RPC will fail to open the port.
         /// </summary>
