@@ -147,14 +147,14 @@ namespace KS.Users.Login
                             }
                             finally
                             {
-                                int consoleHeadlineInfoY = (ConsoleWrapper.WindowHeight / 2) - figHeight - 2;
+                                int consoleHeadlineInfoY = (ConsoleWrapper.WindowHeight / 2) + figHeight + (CalendarTools.EnableAltCalendar ? 5 : 4);
                                 CenteredTextColor.WriteCentered(consoleHeadlineInfoY, headlineStr);
                             }
                         }
 
                         // Print the MOTD
                         string motdStr = MotdParse.MOTDMessage;
-                        int consoleMotdInfoY = (ConsoleWrapper.WindowHeight / 2) - figHeight - 3;
+                        int consoleMotdInfoY = (ConsoleWrapper.WindowHeight / 2) + figHeight + (CalendarTools.EnableAltCalendar ? 7 : 6);
                         CenteredTextColor.WriteCentered(consoleMotdInfoY, motdStr);
 
                         // Print the instructions
