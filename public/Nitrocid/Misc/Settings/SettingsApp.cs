@@ -97,7 +97,8 @@ namespace KS.Misc.Settings
                     new InputChoiceInfo($"{MaxSections + 2}", Translate.DoTranslation("Save Settings")),
                     new InputChoiceInfo($"{MaxSections + 3}", Translate.DoTranslation("Save Settings As")),
                     new InputChoiceInfo($"{MaxSections + 4}", Translate.DoTranslation("Load Settings From")),
-                    new InputChoiceInfo($"{MaxSections + 5}", Translate.DoTranslation("Exit")),
+                    new InputChoiceInfo($"{MaxSections + 5}", Translate.DoTranslation("Reload Settings")),
+                    new InputChoiceInfo($"{MaxSections + 6}", Translate.DoTranslation("Exit")),
                 };
 
                 // Prompt for selection and check the answer
@@ -182,7 +183,15 @@ namespace KS.Misc.Settings
                         Input.DetectKeypress();
                     }
                 }
-                else if (Answer == MaxSections + 5 || Answer == -1)
+                else if (Answer == MaxSections + 5)
+                {
+                    // The selected answer is "Reload Settings"
+                    DebugWriter.WriteDebug(DebugLevel.W, "Reloading...");
+                    ConfigTools.ReloadConfig();
+                    TextWriterColor.Write(Translate.DoTranslation("Configuration reloaded. You might need to reboot the kernel for some changes to take effect."));
+                    Input.DetectKeypress();
+                }
+                else if (Answer == MaxSections + 6 || Answer == -1)
                 {
                     // The selected answer is "Exit"
                     DebugWriter.WriteDebug(DebugLevel.W, "Exiting...");

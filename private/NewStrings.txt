@@ -724,5 +724,6 @@ Waiting until the file is unlocked...
 One of the switches requires a value that is not provided. See below for usage:
 Switches that are listed below are unknown.
 See below for usage:
+Reload Settings
 
 ==========================================================================================================================================
