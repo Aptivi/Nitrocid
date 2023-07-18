@@ -32,7 +32,7 @@ namespace KS.Misc.Writers.FancyWriters
     {
 
         /// <summary>
-        /// Draw a centered with text
+        /// Draws a centered text
         /// </summary>
         /// <param name="top">Top position to write centered text to</param>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
@@ -52,7 +52,7 @@ namespace KS.Misc.Writers.FancyWriters
         }
 
         /// <summary>
-        /// Draw a centered with text
+        /// Draws a centered text
         /// </summary>
         /// <param name="top">Top position to write centered text to</param>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
@@ -62,7 +62,7 @@ namespace KS.Misc.Writers.FancyWriters
             WriteCentered(top, Text, ColorTools.GetColor(ColTypes), ColorTools.GetColor(KernelColorType.Background), Vars);
 
         /// <summary>
-        /// Draw a centered with text
+        /// Draws a centered text
         /// </summary>
         /// <param name="top">Top position to write centered text to</param>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
@@ -73,7 +73,7 @@ namespace KS.Misc.Writers.FancyWriters
             WriteCentered(top, Text, ColorTools.GetColor(colorTypeForeground), ColorTools.GetColor(colorTypeBackground), Vars);
 
         /// <summary>
-        /// Draw a centered with text
+        /// Draws a centered text
         /// </summary>
         /// <param name="top">Top position to write centered text to</param>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
@@ -83,7 +83,7 @@ namespace KS.Misc.Writers.FancyWriters
             WriteCentered(top, Text, new Color(Color), ColorTools.GetColor(KernelColorType.Background), Vars);
 
         /// <summary>
-        /// Draw a centered with text
+        /// Draws a centered text
         /// </summary>
         /// <param name="top">Top position to write centered text to</param>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
@@ -94,7 +94,7 @@ namespace KS.Misc.Writers.FancyWriters
             WriteCentered(top, Text, new Color(ForegroundColor), new Color(BackgroundColor), Vars);
 
         /// <summary>
-        /// Draw a centered with text
+        /// Draws a centered text
         /// </summary>
         /// <param name="top">Top position to write centered text to</param>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
@@ -104,7 +104,7 @@ namespace KS.Misc.Writers.FancyWriters
             WriteCentered(top, Text, Color, ColorTools.GetColor(KernelColorType.Background), Vars);
 
         /// <summary>
-        /// Draw a centered with text
+        /// Draws a centered text
         /// </summary>
         /// <param name="top">Top position to write centered text to</param>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
