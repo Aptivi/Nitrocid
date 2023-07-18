@@ -16,14 +16,14 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Misc.Reflection;
+using KS.Misc.Text;
 using NUnit.Framework;
 
 namespace KSTests.MiscTests
 {
 
     [TestFixture]
-    public class ReflectionActionTests
+    public class TextToolsActionTests
     {
 
         /// <summary>
@@ -35,7 +35,8 @@ namespace KSTests.MiscTests
         [TestCase("Alsalaam 3lekom", ExpectedResult = false)]
         [TestCase("", ExpectedResult = false)]
         [Description("Action")]
-        public bool TestIsStringNumeric(string Expression) => StringQuery.IsStringNumeric(Expression);
+        public bool TestIsStringNumeric(string Expression) =>
+            TextTools.IsStringNumeric(Expression);
 
         /// <summary>
         /// Tests formatting the string
@@ -44,7 +45,8 @@ namespace KSTests.MiscTests
         [TestCase("We have 0x{0:X2} faults!", 15, ExpectedResult = "We have 0x0F faults!")]
         [TestCase("Destroy {0 ships!", 3, ExpectedResult = "Destroy {0 ships!")]
         [Description("Action")]
-        public string TestFormatString(string Expression, params object[] Vars) => StringManipulate.FormatString(Expression, Vars);
+        public string TestFormatString(string Expression, params object[] Vars) =>
+            TextTools.FormatString(Expression, Vars);
 
     }
 }

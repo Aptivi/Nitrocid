@@ -22,7 +22,7 @@ using System.Net.NetworkInformation;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Reflection;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using KS.Network.Base;
@@ -46,7 +46,7 @@ namespace KS.Shell.Shells.UESH.Commands
             // If the pinged address is actually a number of times
             int PingTimes = 4;
             int StepsToSkip = 0;
-            if (StringQuery.IsStringNumeric(ListArgsOnly[0]))
+            if (TextTools.IsStringNumeric(ListArgsOnly[0]))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "ListArgsOnly(0) is numeric. Assuming number of times: {0}", ListArgsOnly[0]);
                 PingTimes = Convert.ToInt32(ListArgsOnly[0]);

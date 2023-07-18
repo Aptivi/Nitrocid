@@ -20,7 +20,7 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.Languages;
 using KS.Misc.Editors.SqlEdit;
-using KS.Misc.Reflection;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using Microsoft.Data.Sqlite;
@@ -46,7 +46,7 @@ namespace KS.Shell.Shells.Sql.Commands
             {
                 if (StringArg.StartsWith("@"))
                 {
-                    string paramValue = Input.ReadLine(StringManipulate.FormatString(Translate.DoTranslation("Enter parameter value for {0}:"), StringArg) + " ");
+                    string paramValue = Input.ReadLine(TextTools.FormatString(Translate.DoTranslation("Enter parameter value for {0}:"), StringArg) + " ");
                     parameters.Add(new SqliteParameter(StringArg, paramValue));
                 }
             }

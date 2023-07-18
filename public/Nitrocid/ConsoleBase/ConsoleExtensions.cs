@@ -18,7 +18,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using KS.Misc.Reflection;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using VT.NET.Tools;
@@ -88,7 +87,7 @@ namespace KS.ConsoleBase
             Text = FilterVTSequences(Text);
 
             // Seek through filtered text (make it seem like it came from Linux by removing CR (\r)), return to the old position, and return the filtered positions
-            Text = StringManipulate.FormatString(Text, Vars);
+            Text = TextTools.FormatString(Text, Vars);
             Text = Text.Replace(Convert.ToString(Convert.ToChar(13)), "");
             Text = Text.Replace(Convert.ToString(Convert.ToChar(0)), "");
             int LeftSeekPosition = ConsoleWrapper.CursorLeft;

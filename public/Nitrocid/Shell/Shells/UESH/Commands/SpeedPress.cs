@@ -19,7 +19,7 @@
 using System;
 using System.Linq;
 using KS.Misc.Games;
-using KS.Misc.Reflection;
+using KS.Misc.Text;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.UESH.Commands
@@ -73,7 +73,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 Difficulty = SpeedPress.SpeedPressDifficulty.Hard;
             if (ListSwitchesOnly.Contains("-v"))
                 Difficulty = SpeedPress.SpeedPressDifficulty.VeryHard;
-            if (ListSwitchesOnly.Contains("-c") & ListArgsOnly.Length > 0 && StringQuery.IsStringNumeric(ListArgsOnly[0]))
+            if (ListSwitchesOnly.Contains("-c") & ListArgsOnly.Length > 0 && TextTools.IsStringNumeric(ListArgsOnly[0]))
             {
                 Difficulty = SpeedPress.SpeedPressDifficulty.Custom;
                 CustomTimeout = Convert.ToInt32(ListArgsOnly[0]);

@@ -27,11 +27,11 @@ using System.IO;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.Kernel.Debugging;
-using KS.Misc.Reflection;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using System.Linq;
 using KS.Kernel.Exceptions;
+using KS.Misc.Text;
 
 namespace KS.Network.SpeedDial
 {
@@ -161,7 +161,7 @@ namespace KS.Network.SpeedDial
                     TextWriterColor.Write(">> ", false, KernelColorType.Input);
                     Answer = Input.ReadLine();
                     DebugWriter.WriteDebug(DebugLevel.I, "Response: {0}", Answer);
-                    if (StringQuery.IsStringNumeric(Answer))
+                    if (TextTools.IsStringNumeric(Answer))
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Response is numeric. IsStringNumeric(Answer) returned true. Checking to see if in-bounds...");
                         int AnswerInt = Convert.ToInt32(Answer);

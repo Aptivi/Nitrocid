@@ -27,7 +27,6 @@ using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Probers.Placeholder;
-using KS.Misc.Reflection;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
@@ -195,7 +194,7 @@ namespace KS.Network.FTP
                         TextWriterColor.Write(CharManager.NewLine + ">> ", false, KernelColorType.Input);
                         profanswer = Input.ReadLine();
                         DebugWriter.WriteDebug(DebugLevel.I, "Selection: {0}", profanswer);
-                        if (StringQuery.IsStringNumeric(profanswer))
+                        if (TextTools.IsStringNumeric(profanswer))
                         {
                             try
                             {

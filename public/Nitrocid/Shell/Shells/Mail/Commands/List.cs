@@ -19,7 +19,7 @@
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Reflection;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.Mail.Directory;
 using KS.Shell.ShellBase.Commands;
@@ -40,8 +40,8 @@ namespace KS.Shell.Shells.Mail.Commands
         {
             if (ListArgsOnly.Length > 0)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Page is numeric? {0}", StringQuery.IsStringNumeric(ListArgsOnly[0]));
-                if (StringQuery.IsStringNumeric(ListArgsOnly[0]))
+                DebugWriter.WriteDebug(DebugLevel.I, "Page is numeric? {0}", TextTools.IsStringNumeric(ListArgsOnly[0]));
+                if (TextTools.IsStringNumeric(ListArgsOnly[0]))
                 {
                     MailManager.MailListMessages(Convert.ToInt32(ListArgsOnly[0]));
                 }

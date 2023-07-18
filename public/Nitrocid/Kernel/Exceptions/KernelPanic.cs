@@ -24,7 +24,6 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Events;
 using KS.Kernel.Power;
 using KS.Languages;
-using KS.Misc.Reflection;
 using KS.Misc.Splash;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
@@ -103,7 +102,7 @@ namespace KS.Kernel.Exceptions
                 }
 
                 // Format the "Description" string variable
-                Description = StringManipulate.FormatString(Description, Variables);
+                Description = TextTools.FormatString(Description, Variables);
 
                 // Fire an event
                 EventsManager.FireEvent(EventType.KernelError, ErrorType, Reboot, RebootTime, Description, Exc, Variables);
@@ -160,7 +159,7 @@ namespace KS.Kernel.Exceptions
                 Flags.QuietKernel = false;
 
                 // Format the "Description" string variable
-                Description = StringManipulate.FormatString(Description, Variables);
+                Description = TextTools.FormatString(Description, Variables);
 
                 // Double panic printed and reboot initiated
                 DebugWriter.WriteDebug(DebugLevel.F, "Double panic caused by bug in kernel crash.");
@@ -191,7 +190,7 @@ namespace KS.Kernel.Exceptions
             try
             {
                 // Format the "Description" string variable
-                Description = StringManipulate.FormatString(Description, Variables);
+                Description = TextTools.FormatString(Description, Variables);
 
                 // Let the user know that there is a continuable kernel error
                 EventsManager.FireEvent(EventType.ContKernelError, Description, Exc, Variables);

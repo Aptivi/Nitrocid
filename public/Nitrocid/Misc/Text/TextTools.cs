@@ -296,5 +296,33 @@ namespace KS.Misc.Text
                 index += value.Length;
             }
         }
+
+        /// <summary>
+        /// Formats the string
+        /// </summary>
+        /// <param name="Format">The string to format</param>
+        /// <param name="Vars">The variables used</param>
+        /// <returns>A formatted string if successful, or the unformatted one if failed.</returns>
+        public static string FormatString(string Format, params object[] Vars)
+        {
+            string FormattedString = Format;
+            try
+            {
+                FormattedString = string.Format(Format, Vars);
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to format string: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
+            return FormattedString;
+        }
+
+        /// <summary>
+        /// Is the string numeric?
+        /// </summary>
+        /// <param name="Expression">The expression</param>
+        public static bool IsStringNumeric(string Expression) =>
+            double.TryParse(Expression, out double _);
     }
 }

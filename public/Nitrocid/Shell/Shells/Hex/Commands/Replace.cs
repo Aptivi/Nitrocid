@@ -21,6 +21,7 @@ using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Misc.Editors.HexEdit;
 using KS.Misc.Reflection;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 
@@ -46,7 +47,7 @@ namespace KS.Shell.Shells.Hex.Commands
             }
             else if (ListArgsOnly.Length == 3)
             {
-                if (StringQuery.IsStringNumeric(ListArgsOnly[2]))
+                if (TextTools.IsStringNumeric(ListArgsOnly[2]))
                 {
                     if (Convert.ToInt64(ListArgsOnly[2]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
                     {
@@ -63,7 +64,7 @@ namespace KS.Shell.Shells.Hex.Commands
             }
             else if (ListArgsOnly.Length > 3)
             {
-                if (StringQuery.IsStringNumeric(ListArgsOnly[2]) & StringQuery.IsStringNumeric(ListArgsOnly[3]))
+                if (TextTools.IsStringNumeric(ListArgsOnly[2]) & TextTools.IsStringNumeric(ListArgsOnly[3]))
                 {
                     if (Convert.ToInt64(ListArgsOnly[2]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength & Convert.ToInt64(ListArgsOnly[3]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
                     {

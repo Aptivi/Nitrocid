@@ -603,7 +603,7 @@ namespace KS.Misc.Settings
                     }
 
                     // Check for input
-                    DebugWriter.WriteDebug(DebugLevel.I, "Is the answer numeric? {0}", StringQuery.IsStringNumeric(AnswerString));
+                    DebugWriter.WriteDebug(DebugLevel.I, "Is the answer numeric? {0}", TextTools.IsStringNumeric(AnswerString));
                     if (int.TryParse(AnswerString, out int AnswerInt))
                     {
                         // The answer is numeric! Now, check for types

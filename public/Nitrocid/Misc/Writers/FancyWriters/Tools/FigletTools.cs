@@ -164,7 +164,7 @@ namespace KS.Misc.Writers.FancyWriters.Tools
             {
                 // Format string as needed
                 if (!(Vars.Length == 0))
-                    Text = StringManipulate.FormatString(Text, Vars);
+                    Text = TextTools.FormatString(Text, Vars);
 
                 // Write the font
                 Text = string.Join("\n", GetFigletLines(Text, FigletFont));

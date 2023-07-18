@@ -21,6 +21,7 @@ using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Editors.TextEdit;
 using KS.Misc.Reflection;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using System;
@@ -40,7 +41,7 @@ namespace KS.Shell.Shells.Text.Commands
         {
             if (ListArgsOnly.Length == 3)
             {
-                if (StringQuery.IsStringNumeric(ListArgsOnly[2]))
+                if (TextTools.IsStringNumeric(ListArgsOnly[2]))
                 {
                     if (Convert.ToInt32(ListArgsOnly[2]) <= TextEditShellCommon.TextEdit_FileLines.Count)
                     {
@@ -60,7 +61,7 @@ namespace KS.Shell.Shells.Text.Commands
             }
             else if (ListArgsOnly.Length > 3)
             {
-                if (StringQuery.IsStringNumeric(ListArgsOnly[2]) & StringQuery.IsStringNumeric(ListArgsOnly[3]))
+                if (TextTools.IsStringNumeric(ListArgsOnly[2]) & TextTools.IsStringNumeric(ListArgsOnly[3]))
                 {
                     if (Convert.ToInt32(ListArgsOnly[2]) <= TextEditShellCommon.TextEdit_FileLines.Count & Convert.ToInt32(ListArgsOnly[3]) <= TextEditShellCommon.TextEdit_FileLines.Count)
                     {

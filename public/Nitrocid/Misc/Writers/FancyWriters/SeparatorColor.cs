@@ -21,7 +21,6 @@ using ColorSeq;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Drivers;
-using KS.Misc.Reflection;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
@@ -43,7 +42,7 @@ namespace KS.Misc.Writers.FancyWriters
         public static void WriteSeparator(string Text, bool PrintSuffix, params object[] Vars)
         {
             bool canPosition = !DriverHandler.CurrentConsoleDriverLocal.IsDumb;
-            Text = StringManipulate.FormatString(Text, Vars);
+            Text = TextTools.FormatString(Text, Vars);
 
             // Print the suffix and the text
             if (!string.IsNullOrWhiteSpace(Text))
@@ -156,7 +155,7 @@ namespace KS.Misc.Writers.FancyWriters
         public static void WriteSeparator(string Text, bool PrintSuffix, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
         {
             bool canPosition = !DriverHandler.CurrentConsoleDriverLocal.IsDumb;
-            Text = StringManipulate.FormatString(Text, Vars);
+            Text = TextTools.FormatString(Text, Vars);
 
             // Print the suffix and the text
             if (!string.IsNullOrWhiteSpace(Text))

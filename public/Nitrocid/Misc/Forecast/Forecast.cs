@@ -19,7 +19,7 @@
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Reflection;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using ManagedWeatherMap.Core;
@@ -87,7 +87,7 @@ namespace KS.Misc.Forecast
             ForecastInfo WeatherInfo;
             string WeatherSpecifier = "°";
             string WindSpeedSpecifier = "m.s";
-            if (StringQuery.IsStringNumeric(CityID))
+            if (TextTools.IsStringNumeric(CityID))
             {
                 WeatherInfo = GetWeatherInfo(Convert.ToInt64(CityID), APIKey);
             }

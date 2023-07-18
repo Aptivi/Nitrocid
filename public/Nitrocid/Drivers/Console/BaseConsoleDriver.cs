@@ -19,7 +19,6 @@ using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase;
 using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Reflection;
 using KS.Misc.Writers.ConsoleWriters;
 using System;
 using System.IO;
@@ -398,7 +397,7 @@ namespace KS.Drivers.Console.Consoles
                 {
                     // Format string as needed
                     if (!(vars.Length == 0))
-                        msg = StringManipulate.FormatString(msg, vars);
+                        msg = TextTools.FormatString(msg, vars);
 
                     // Grab each VT sequence from the message and fetch their indexes
                     var sequences = VtSequenceTools.MatchVTSequences(msg);
@@ -443,7 +442,7 @@ namespace KS.Drivers.Console.Consoles
                 {
                     // Format the message as necessary
                     if (!(vars.Length == 0))
-                        msg = StringManipulate.FormatString(msg, vars);
+                        msg = TextTools.FormatString(msg, vars);
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
                     int OldLeft = ConsoleWrapper.CursorLeft;
@@ -525,7 +524,7 @@ namespace KS.Drivers.Console.Consoles
                 {
                     // Format string as needed
                     if (!(vars.Length == 0))
-                        msg = StringManipulate.FormatString(msg, vars);
+                        msg = TextTools.FormatString(msg, vars);
 
                     // Write text in another place slowly
                     int OldLeft = ConsoleWrapper.CursorLeft;
@@ -607,7 +606,7 @@ namespace KS.Drivers.Console.Consoles
                 {
                     // Format string as needed
                     if (!(vars.Length == 0))
-                        Text = StringManipulate.FormatString(Text, vars);
+                        Text = TextTools.FormatString(Text, vars);
 
                     // Grab each VT sequence from the paragraph and fetch their indexes
                     var sequences = VtSequenceTools.MatchVTSequences(Text);

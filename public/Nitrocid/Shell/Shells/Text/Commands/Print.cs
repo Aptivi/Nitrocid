@@ -20,6 +20,7 @@ using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Reflection;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using System;
@@ -44,8 +45,8 @@ namespace KS.Shell.Shells.Text.Commands
                 {
                     // We've only provided one line number
                     DebugWriter.WriteDebug(DebugLevel.I, "Line number provided: {0}", ListArgsOnly[0]);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Is it numeric? {0}", StringQuery.IsStringNumeric(ListArgsOnly[0]));
-                    if (StringQuery.IsStringNumeric(ListArgsOnly[0]))
+                    DebugWriter.WriteDebug(DebugLevel.I, "Is it numeric? {0}", TextTools.IsStringNumeric(ListArgsOnly[0]));
+                    if (TextTools.IsStringNumeric(ListArgsOnly[0]))
                     {
                         LineNumber = Convert.ToInt32(ListArgsOnly[0]);
                         DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
@@ -71,8 +72,8 @@ namespace KS.Shell.Shells.Text.Commands
                 {
                     // We've provided two line numbers in the range
                     DebugWriter.WriteDebug(DebugLevel.I, "Line numbers provided: {0}, {1}", ListArgsOnly[0], ListArgsOnly[1]);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Is it numeric? {0}", StringQuery.IsStringNumeric(ListArgsOnly[0]), StringQuery.IsStringNumeric(ListArgsOnly[1]));
-                    if (StringQuery.IsStringNumeric(ListArgsOnly[0]) & StringQuery.IsStringNumeric(ListArgsOnly[1]))
+                    DebugWriter.WriteDebug(DebugLevel.I, "Is it numeric? {0}", TextTools.IsStringNumeric(ListArgsOnly[0]), TextTools.IsStringNumeric(ListArgsOnly[1]));
+                    if (TextTools.IsStringNumeric(ListArgsOnly[0]) & TextTools.IsStringNumeric(ListArgsOnly[1]))
                     {
                         int LineNumberStart = Convert.ToInt32(ListArgsOnly[0]);
                         int LineNumberEnd = Convert.ToInt32(ListArgsOnly[1]);

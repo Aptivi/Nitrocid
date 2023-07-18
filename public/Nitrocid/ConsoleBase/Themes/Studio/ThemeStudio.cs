@@ -26,7 +26,6 @@ using KS.Files.Folders;
 using KS.Kernel.Debugging;
 using KS.Kernel.Events;
 using KS.Languages;
-using KS.Misc.Reflection;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 
@@ -79,7 +78,7 @@ namespace KS.ConsoleBase.Themes.Studio
                 DebugWriter.WriteDebug(DebugLevel.I, "Got response: {0}", Response);
 
                 // Check for response integrity
-                if (StringQuery.IsStringNumeric(Response))
+                if (TextTools.IsStringNumeric(Response))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Response is numeric.");
                     int NumericResponse = Convert.ToInt32(Response);

@@ -19,7 +19,6 @@
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Reflection;
 using KS.Misc.Writers.ConsoleWriters;
 using System;
 using System.IO;
@@ -28,6 +27,7 @@ using System.Threading;
 using System.Text;
 using KS.Kernel.Exceptions;
 using VT.NET.Tools;
+using KS.Misc.Text;
 
 namespace KS.Drivers.Console.Consoles
 {
@@ -233,7 +233,7 @@ namespace KS.Drivers.Console.Consoles
                 {
                     // Format string as needed
                     if (!(vars.Length == 0))
-                        msg = StringManipulate.FormatString(msg, vars);
+                        msg = TextTools.FormatString(msg, vars);
 
                     // Write text slowly
                     var chars = msg.ToCharArray().ToList();

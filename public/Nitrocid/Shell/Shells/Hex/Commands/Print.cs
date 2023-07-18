@@ -21,6 +21,7 @@ using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Editors.HexEdit;
 using KS.Misc.Reflection;
+using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using System;
@@ -45,8 +46,8 @@ namespace KS.Shell.Shells.Hex.Commands
                 {
                     // We've only provided one range
                     DebugWriter.WriteDebug(DebugLevel.I, "Byte number provided: {0}", ListArgsOnly[0]);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Is it numeric? {0}", StringQuery.IsStringNumeric(ListArgsOnly[0]));
-                    if (StringQuery.IsStringNumeric(ListArgsOnly[0]))
+                    DebugWriter.WriteDebug(DebugLevel.I, "Is it numeric? {0}", TextTools.IsStringNumeric(ListArgsOnly[0]));
+                    if (TextTools.IsStringNumeric(ListArgsOnly[0]))
                     {
                         ByteNumber = Convert.ToInt64(ListArgsOnly[0]);
                         HexEditTools.HexEdit_DisplayHex(ByteNumber);
@@ -61,8 +62,8 @@ namespace KS.Shell.Shells.Hex.Commands
                 {
                     // We've provided two Byte numbers in the range
                     DebugWriter.WriteDebug(DebugLevel.I, "Byte numbers provided: {0}, {1}", ListArgsOnly[0], ListArgsOnly[1]);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Is it numeric? {0}", StringQuery.IsStringNumeric(ListArgsOnly[0]), StringQuery.IsStringNumeric(ListArgsOnly[1]));
-                    if (StringQuery.IsStringNumeric(ListArgsOnly[0]) & StringQuery.IsStringNumeric(ListArgsOnly[1]))
+                    DebugWriter.WriteDebug(DebugLevel.I, "Is it numeric? {0}", TextTools.IsStringNumeric(ListArgsOnly[0]), TextTools.IsStringNumeric(ListArgsOnly[1]));
+                    if (TextTools.IsStringNumeric(ListArgsOnly[0]) & TextTools.IsStringNumeric(ListArgsOnly[1]))
                     {
                         long ByteNumberStart = Convert.ToInt64(ListArgsOnly[0]);
                         long ByteNumberEnd = Convert.ToInt64(ListArgsOnly[1]);

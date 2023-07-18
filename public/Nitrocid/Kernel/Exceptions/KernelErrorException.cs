@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Misc.Reflection;
+using KS.Misc.Text;
 using System;
 
 namespace KS.Kernel.Exceptions
@@ -40,7 +40,7 @@ namespace KS.Kernel.Exceptions
         /// </summary>
         /// <param name="vars">List of arguments</param>
         /// <param name="message">Message to be printed</param>
-        public KernelErrorException(string message, params object[] vars) : base(StringManipulate.FormatString(message, vars))
+        public KernelErrorException(string message, params object[] vars) : base(TextTools.FormatString(message, vars))
         {
         }
         /// <inheritdoc/>
@@ -53,7 +53,7 @@ namespace KS.Kernel.Exceptions
         /// <param name="vars">List of arguments</param>
         /// <param name="e">Inner exception</param>
         /// <param name="message">Message to be printed</param>
-        public KernelErrorException(string message, Exception e, params object[] vars) : base(StringManipulate.FormatString(message, vars), e)
+        public KernelErrorException(string message, Exception e, params object[] vars) : base(TextTools.FormatString(message, vars), e)
         {
         }
 
