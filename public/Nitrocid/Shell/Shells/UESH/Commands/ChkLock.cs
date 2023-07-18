@@ -38,7 +38,7 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             string path = ListArgsOnly[0];
             bool locked = Filesystem.IsFileLocked(path);
-            bool waitForUnlock = ListSwitchesOnly.Contains("-waitforunlock");
+            bool waitForUnlock = SwitchManager.ContainsSwitch(ListSwitchesOnly, "-waitforunlock");
             string waitForUnlockMsStr = SwitchManager.GetSwitchValue(ListSwitchesOnly, "-waitforunlock");
             bool waitForUnlockTimed = !string.IsNullOrEmpty(waitForUnlockMsStr);
             int waitForUnlockMs = waitForUnlockTimed ? int.Parse(waitForUnlockMsStr) : 0;
