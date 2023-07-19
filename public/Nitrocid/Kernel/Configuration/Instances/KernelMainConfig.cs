@@ -607,6 +607,10 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public bool ModernLogon { get; set; } = true;
         /// <summary>
+        /// Whether to show the MOTD and the headline at the bottom or at the top of the clock
+        /// </summary>
+        public bool MotdHeadlineBottom { get; set; } = true;
+        /// <summary>
         /// Simplified help command for all the shells
         /// </summary>
         public bool SimHelp { get; set; }

@@ -260,6 +260,9 @@
         "ModernLogon": {
             "type": "boolean"
         },
+        "MotdHeadlineBottom": {
+            "type": "boolean"
+        },
         "SimHelp": {
             "type": "boolean"
         },
@@ -915,6 +918,7 @@
         "IncludeAnonymous",
         "IncludeDisabled",
         "ModernLogon",
+        "MotdHeadlineBottom",
         "SimHelp",
         "CurrentDir",
         "PathsToLookup",

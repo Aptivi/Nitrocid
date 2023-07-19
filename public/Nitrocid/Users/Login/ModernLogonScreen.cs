@@ -35,12 +35,19 @@ using KS.Misc.Probers.Motd;
 using Syndian.Instance;
 using System;
 using KS.Network.RSS;
+using KS.Kernel.Configuration;
 
 namespace KS.Users.Login
 {
     internal static class ModernLogonScreen
     {
         private static readonly KernelThread DateTimeUpdateThread = new("Date and Time Update Thread for Modern Logon", true, DateTimeWidgetUpdater) { isCritical = true };
+
+        /// <summary>
+        /// Whether to show the MOTD and the headline at the bottom or at the top of the clock
+        /// </summary>
+        public static bool MotdHeadlineBottom =>
+            Config.MainConfig.MotdHeadlineBottom;
 
         internal static void ShowLogon()
         {
@@ -147,14 +154,20 @@ namespace KS.Users.Login
                             }
                             finally
                             {
-                                int consoleHeadlineInfoY = (ConsoleWrapper.WindowHeight / 2) + figHeight + (CalendarTools.EnableAltCalendar ? 5 : 4);
+                                int consoleHeadlineInfoY =
+                                    MotdHeadlineBottom ?
+                                    (ConsoleWrapper.WindowHeight / 2) + figHeight + (CalendarTools.EnableAltCalendar ? 5 : 4) :
+                                    (ConsoleWrapper.WindowHeight / 2) - figHeight - 2;
                                 CenteredTextColor.WriteCentered(consoleHeadlineInfoY, headlineStr);
                             }
                         }
 
                         // Print the MOTD
                         string motdStr = MotdParse.MOTDMessage;
-                        int consoleMotdInfoY = (ConsoleWrapper.WindowHeight / 2) + figHeight + (CalendarTools.EnableAltCalendar ? 7 : 6);
+                        int consoleMotdInfoY =
+                            MotdHeadlineBottom ? 
+                            (ConsoleWrapper.WindowHeight / 2) + figHeight + (CalendarTools.EnableAltCalendar ? 7 : 6) :
+                            (ConsoleWrapper.WindowHeight / 2) - figHeight - 3;
                         CenteredTextColor.WriteCentered(consoleMotdInfoY, motdStr);
 
                         // Print the instructions
