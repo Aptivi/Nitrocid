@@ -67,6 +67,7 @@ using KS.Kernel.Configuration;
 using KS.Shell.Shells.Sql;
 using KS.Users;
 using KS.Shell.Shells.Debug;
+using KS.Kernel.Exceptions;
 
 namespace KS.Shell
 {
@@ -274,138 +275,155 @@ namespace KS.Shell
                     var commandArguments = new ProvidedCommandArgumentsInfo(Command, ShellType);
 
                     // Reads command written by user
-                    do
+                    try
                     {
-                        try
+                        // Set title
+                        if (Config.MainConfig.SetTitleOnCommandExecution)
+                            ConsoleExtensions.SetTitle($"{KernelTools.ConsoleTitle} - {Command}");
+
+                        if (ModManager.ListModCommands(ShellType).ContainsKey(commandName))
                         {
-                            // Set title
-                            if (Config.MainConfig.SetTitleOnCommandExecution)
-                                ConsoleExtensions.SetTitle($"{KernelTools.ConsoleTitle} - {Command}");
+                            // Iterate through mod commands
+                            DebugWriter.WriteDebug(DebugLevel.I, "Mod commands probing started with {0} from {1}", commandName, Command);
+                            ModExecutor.ExecuteModCommand(Command);
+                            UESHVariables.SetVariable("UESHErrorCode", "0");
+                        }
+                        else if (AliasManager.GetAliasesListFromType(ShellType).ContainsKey(commandName))
+                        {
+                            // Iterate through alias commands
+                            DebugWriter.WriteDebug(DebugLevel.I, "Aliases probing started with {0} from {1}", Command, Command);
+                            AliasExecutor.ExecuteAlias(Command, ShellType);
+                            UESHVariables.SetVariable("UESHErrorCode", "0");
+                        }
+                        else if (Commands.ContainsKey(commandName))
+                        {
+                            // Execute the built-in command
+                            DebugWriter.WriteDebug(DebugLevel.I, "Executing built-in command");
 
-                            if (ModManager.ListModCommands(ShellType).ContainsKey(commandName))
+                            // Check to see if the command supports redirection
+                            if (Commands[commandName].Flags.HasFlag(CommandFlags.RedirectionSupported))
                             {
-                                // Iterate through mod commands
-                                DebugWriter.WriteDebug(DebugLevel.I, "Mod commands probing started with {0} from {1}", commandName, Command);
-                                ModExecutor.ExecuteModCommand(Command);
+                                DebugWriter.WriteDebug(DebugLevel.I, "Redirection supported!");
+                                Command = InitializeRedirection(Command);
                             }
-                            else if (AliasManager.GetAliasesListFromType(ShellType).ContainsKey(commandName))
+
+                            // Check to see if the optional path is specified
+                            if (!string.IsNullOrEmpty(OutputPath))
                             {
-                                // Iterate through alias commands
-                                DebugWriter.WriteDebug(DebugLevel.I, "Aliases probing started with {0} from {1}", Command, Command);
-                                AliasExecutor.ExecuteAlias(Command, ShellType);
+                                DebugWriter.WriteDebug(DebugLevel.I, "Output path provided!");
+                                InitializeOutputPathWriter(OutputPath);
                             }
-                            else if (Commands.ContainsKey(commandName))
+
+                            if (!(string.IsNullOrEmpty(commandName) | commandName.StartsWithAnyOf(new[] { " ", "#" }) == true))
                             {
-                                // Execute the built-in command
-                                DebugWriter.WriteDebug(DebugLevel.I, "Executing built-in command");
 
-                                // Check to see if the command supports redirection
-                                if (Commands[commandName].Flags.HasFlag(CommandFlags.RedirectionSupported))
+                                // Check to see if a user is able to execute a command
+                                if (ShellType == "Shell")
                                 {
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Redirection supported!");
-                                    Command = InitializeRedirection(Command);
-                                }
-
-                                // Check to see if the optional path is specified
-                                if (!string.IsNullOrEmpty(OutputPath))
-                                {
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Output path provided!");
-                                    InitializeOutputPathWriter(OutputPath);
-                                }
-
-                                if (!(string.IsNullOrEmpty(commandName) | commandName.StartsWithAnyOf(new[] { " ", "#" }) == true))
-                                {
-
-                                    // Check to see if a user is able to execute a command
-                                    if (ShellType == "Shell")
+                                    if (Commands[commandName].Flags.HasFlag(CommandFlags.Strict))
                                     {
-                                        if (Commands[commandName].Flags.HasFlag(CommandFlags.Strict))
+                                        if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) && 
+                                            !UserManagement.CurrentUser.Admin)
                                         {
-                                            if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) && 
-                                                !UserManagement.CurrentUser.Admin)
-                                            {
-                                                DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", commandName);
-                                                TextWriterColor.Write(Translate.DoTranslation("You don't have permission to use {0}"), true, KernelColorType.Error, commandName);
-                                                break;
-                                            }
+                                            DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", commandName);
+                                            TextWriterColor.Write(Translate.DoTranslation("You don't have permission to use {0}"), true, KernelColorType.Error, commandName);
+                                            UESHVariables.SetVariable("UESHErrorCode", "-4");
+                                            break;
                                         }
                                     }
+                                }
 
-                                    // Check the command before starting
-                                    if (Flags.Maintenance == true & Commands[commandName].Flags.HasFlag(CommandFlags.NoMaintenance))
-                                    {
-                                        DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", commandName);
-                                        TextWriterColor.Write(Translate.DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), true, KernelColorType.Error, commandName);
-                                    }
-                                    else
-                                    {
-                                        DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded. Running with {1}", commandName, Command);
-                                        var Params = new CommandExecutor.ExecuteCommandParameters(Command, ShellType);
-                                        CommandExecutor.StartCommandThread(Params);
-                                    }
-                                }
-                            }
-                            else if (pathValid & ShellType == "Shell")
-                            {
-                                // If we're in the UESH shell, parse the script file or executable file
-                                if (Checking.FileExists(TargetFile) & !TargetFile.EndsWith(".uesh"))
+                                // Check the command before starting
+                                if (Flags.Maintenance == true & Commands[commandName].Flags.HasFlag(CommandFlags.NoMaintenance))
                                 {
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded because file is found.", commandName);
-                                    try
-                                    {
-                                        // Create a new instance of process
-                                        PermissionsTools.Demand(PermissionTypes.ExecuteProcesses);
-                                        if (pathValid)
-                                        {
-                                            var targetCommand = Command.Replace(TargetFileName, "");
-                                            targetCommand = targetCommand.TrimStart('\0', ' ');
-                                            DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, Arguments: {1}", TargetFile, targetCommand);
-                                            var Params = new ProcessExecutor.ExecuteProcessThreadParameters(TargetFile, targetCommand);
-                                            ProcessStartCommandThread.Start(Params);
-                                            ProcessStartCommandThread.Wait();
-                                            ProcessStartCommandThread.Stop();
-                                        }
-                                    }
-                                    catch (Exception ex)
-                                    {
-                                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to start process: {0}", ex.Message);
-                                        TextWriterColor.Write(Translate.DoTranslation("Failed to start \"{0}\": {1}"), true, KernelColorType.Error, commandName, ex.Message);
-                                        DebugWriter.WriteDebugStackTrace(ex);
-                                    }
-                                }
-                                else if (Checking.FileExists(TargetFile) & TargetFile.EndsWith(".uesh"))
-                                {
-                                    try
-                                    {
-                                        PermissionsTools.Demand(PermissionTypes.ExecuteScripts);
-                                        DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded because it's a UESH script.", commandName);
-                                        UESHParse.Execute(TargetFile, commandArguments.ArgumentsText);
-                                    }
-                                    catch (Exception ex)
-                                    {
-                                        TextWriterColor.Write(Translate.DoTranslation("Error trying to execute script: {0}"), true, KernelColorType.Error, ex.Message);
-                                        DebugWriter.WriteDebugStackTrace(ex);
-                                    }
+                                    DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", commandName);
+                                    TextWriterColor.Write(Translate.DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), true, KernelColorType.Error, commandName);
+                                    UESHVariables.SetVariable("UESHErrorCode", "-3");
                                 }
                                 else
                                 {
-                                    DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: command {0} not found parsing target file", commandName);
-                                    TextWriterColor.Write(Translate.DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), true, KernelColorType.Error, commandName);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded. Running with {1}", commandName, Command);
+                                    var Params = new CommandExecutor.ExecuteCommandParameters(Command, ShellType);
+                                    CommandExecutor.StartCommandThread(Params);
+                                    UESHVariables.SetVariable("UESHErrorCode", "0");
+                                }
+                            }
+                        }
+                        else if (pathValid & ShellType == "Shell")
+                        {
+                            // If we're in the UESH shell, parse the script file or executable file
+                            if (Checking.FileExists(TargetFile) & !TargetFile.EndsWith(".uesh"))
+                            {
+                                DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded because file is found.", commandName);
+                                try
+                                {
+                                    // Create a new instance of process
+                                    PermissionsTools.Demand(PermissionTypes.ExecuteProcesses);
+                                    if (pathValid)
+                                    {
+                                        var targetCommand = Command.Replace(TargetFileName, "");
+                                        targetCommand = targetCommand.TrimStart('\0', ' ');
+                                        DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, Arguments: {1}", TargetFile, targetCommand);
+                                        var Params = new ProcessExecutor.ExecuteProcessThreadParameters(TargetFile, targetCommand);
+                                        ProcessStartCommandThread.Start(Params);
+                                        ProcessStartCommandThread.Wait();
+                                        ProcessStartCommandThread.Stop();
+                                        UESHVariables.SetVariable("UESHErrorCode", "0");
+                                    }
+                                }
+                                catch (Exception ex)
+                                {
+                                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to start process: {0}", ex.Message);
+                                    TextWriterColor.Write(Translate.DoTranslation("Failed to start \"{0}\": {1}"), true, KernelColorType.Error, commandName, ex.Message);
+                                    DebugWriter.WriteDebugStackTrace(ex);
+                                    if (ex is KernelException kex)
+                                        UESHVariables.SetVariable("UESHErrorCode", $"{Convert.ToInt32(kex.ExceptionType)}");
+                                    else
+                                        UESHVariables.SetVariable("UESHErrorCode", $"{ex.HResult}");
+                                }
+                            }
+                            else if (Checking.FileExists(TargetFile) & TargetFile.EndsWith(".uesh"))
+                            {
+                                try
+                                {
+                                    PermissionsTools.Demand(PermissionTypes.ExecuteScripts);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded because it's a UESH script.", commandName);
+                                    UESHParse.Execute(TargetFile, commandArguments.ArgumentsText);
+                                    UESHVariables.SetVariable("UESHErrorCode", "0");
+                                }
+                                catch (Exception ex)
+                                {
+                                    TextWriterColor.Write(Translate.DoTranslation("Error trying to execute script: {0}"), true, KernelColorType.Error, ex.Message);
+                                    DebugWriter.WriteDebugStackTrace(ex);
+                                    if (ex is KernelException kex)
+                                        UESHVariables.SetVariable("UESHErrorCode", $"{Convert.ToInt32(kex.ExceptionType)}");
+                                    else
+                                        UESHVariables.SetVariable("UESHErrorCode", $"{ex.HResult}");
                                 }
                             }
                             else
                             {
-                                DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: command {0} not found", commandName);
+                                DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: command {0} not found parsing target file", commandName);
                                 TextWriterColor.Write(Translate.DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), true, KernelColorType.Error, commandName);
+                                UESHVariables.SetVariable("UESHErrorCode", "-2");
                             }
                         }
-                        catch (Exception ex)
+                        else
                         {
-                            DebugWriter.WriteDebugStackTrace(ex);
-                            TextWriterColor.Write(Translate.DoTranslation("Error trying to execute command.") + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName, ex.Message);
+                            DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: command {0} not found", commandName);
+                            TextWriterColor.Write(Translate.DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), true, KernelColorType.Error, commandName);
+                            UESHVariables.SetVariable("UESHErrorCode", "-1");
                         }
                     }
-                    while (false);
+                    catch (Exception ex)
+                    {
+                        DebugWriter.WriteDebugStackTrace(ex);
+                        TextWriterColor.Write(Translate.DoTranslation("Error trying to execute command.") + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName, ex.Message);
+                        if (ex is KernelException kex)
+                            UESHVariables.SetVariable("UESHErrorCode", $"{Convert.ToInt32(kex.ExceptionType)}");
+                        else
+                            UESHVariables.SetVariable("UESHErrorCode", $"{ex.HResult}");
+                    }
                 }
 
                 // Fire an event of PostExecuteCommand
