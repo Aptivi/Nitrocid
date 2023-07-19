@@ -25,6 +25,7 @@ using KS.ConsoleBase;
 using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
+using KS.Misc.Writers.ConsoleWriters;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Screensaver.Displays
@@ -249,58 +250,36 @@ namespace KS.Misc.Screensaver.Displays
             // Fill the color if not filled
             if (!ColorFilled)
             {
-                // NOTICE: Mono seems to have a bug in KS.ConsoleBase.ConsoleWrapper.CursorLeft and KS.ConsoleBase.ConsoleWrapper.CursorTop when printing with VT escape sequences. For info, seek EB#2:7.
                 if (!(ConsoleWrapper.CursorLeft >= EndLeft & ConsoleWrapper.CursorTop >= EndTop))
                 {
+                    Color colorStorage = Color.Empty;
                     if (DissolveSettings.DissolveTrueColor)
                     {
                         int RedColorNum = RandomDriver.Random(DissolveSettings.DissolveMinimumRedColorLevel, DissolveSettings.DissolveMaximumRedColorLevel);
                         int GreenColorNum = RandomDriver.Random(DissolveSettings.DissolveMinimumGreenColorLevel, DissolveSettings.DissolveMaximumGreenColorLevel);
                         int BlueColorNum = RandomDriver.Random(DissolveSettings.DissolveMinimumBlueColorLevel, DissolveSettings.DissolveMaximumBlueColorLevel);
                         DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
-                        if (!ConsoleResizeListener.WasResized(false))
-                        {
-                            ColorTools.SetConsoleColor(Color.Empty);
-                            ColorTools.SetConsoleColor(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), true, true);
-                            ConsoleWrapper.Write(" ");
-                            if (ConsoleWrapper.CursorLeft == ConsoleWrapper.WindowWidth - 1 &&
-                                ConsoleWrapper.CursorTop < EndTop)
-                            {
-                                ConsoleWrapper.CursorLeft = 0;
-                                ConsoleWrapper.CursorTop += 1;
-                            }
-                        }
-                        else
-                        {
-                            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "We're refilling...");
-                            ColorFilled = false;
-                            ColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor), true);
-                            CoveredPositions.Clear();
-                        }
+                        colorStorage = new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}");
                     }
                     else
                     {
                         int ColorNum = RandomDriver.Random(DissolveSettings.DissolveMinimumColorLevel, DissolveSettings.DissolveMaximumColorLevel);
                         DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
-                        if (!ConsoleResizeListener.WasResized(false))
-                        {
-                            ColorTools.SetConsoleColor(Color.Empty);
-                            ColorTools.SetConsoleColor(new Color(ColorNum), true, true);
-                            ConsoleWrapper.Write(" ");
-                            if (ConsoleWrapper.CursorLeft == ConsoleWrapper.WindowWidth - 1 &&
-                                ConsoleWrapper.CursorTop < EndTop)
-                            {
-                                ConsoleWrapper.CursorLeft = 0;
-                                ConsoleWrapper.CursorTop += 1;
-                            }
-                        }
-                        else
-                        {
-                            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "We're refilling...");
-                            ColorFilled = false;
-                            ColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor), true);
-                            CoveredPositions.Clear();
-                        }
+                        colorStorage = new Color(ColorNum);
+                    }
+
+                    if (!ConsoleResizeListener.WasResized(false))
+                    {
+                        ColorTools.SetConsoleColor(Color.Empty);
+                        ColorTools.SetConsoleColor(colorStorage, true, true);
+                        TextWriterColor.WritePlain(" ", false);
+                    }
+                    else
+                    {
+                        DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "We're refilling...");
+                        ColorFilled = false;
+                        ColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor), true);
+                        CoveredPositions.Clear();
                     }
                 }
                 else
