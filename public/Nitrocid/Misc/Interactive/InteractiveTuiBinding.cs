@@ -46,6 +46,16 @@ namespace KS.Misc.Interactive
         /// </summary>
         public Action<object, int> BindingAction { get => _bindingAction; }
 
+        /// <summary>
+        /// Makes a new instance of an interactive TUI key binding
+        /// </summary>
+        /// <param name="bindingName">Key binding name</param>
+        /// <param name="bindingKeyName">Which key is bound to the action?</param>
+        /// <param name="bindingAction">The action to execute. The object argument denotes the currently selected item, and the integer argument denotes the currently selected data</param>
+        public InteractiveTuiBinding(string bindingName, ConsoleKey bindingKeyName, Action<object, int> bindingAction) :
+            this(bindingName, bindingKeyName, bindingAction, false)
+        { }
+
         internal InteractiveTuiBinding(string bindingName, ConsoleKey bindingKeyName, Action<object, int> bindingAction, bool localizable)
         {
             _bindingName = bindingName;
