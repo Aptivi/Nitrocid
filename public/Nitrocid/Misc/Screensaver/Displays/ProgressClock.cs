@@ -25,6 +25,7 @@ using KS.Kernel.Debugging;
 using KS.Misc.Probers.Placeholder;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
+using KS.Misc.Writers.FancyWriters;
 using KS.TimeDate;
 
 namespace KS.Misc.Screensaver.Displays
@@ -925,19 +926,28 @@ namespace KS.Misc.Screensaver.Displays
             if (!ConsoleResizeListener.WasResized(false))
             {
                 // Hours
-                TextWriterWhereColor.WriteWhere(ProgressClockSettings.ProgressClockLowerLeftCornerCharHours + new string(ProgressClockSettings.ProgressClockLowerFrameCharHours, ConsoleWrapper.WindowWidth - 10) + ProgressClockSettings.ProgressClockLowerRightCornerCharHours, 4, (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) - 9, true, ColorStorageHours);         // Bottom of Hours
-                TextWriterWhereColor.WriteWhere(ProgressClockSettings.ProgressClockLeftFrameCharHours + new string(' ', ConsoleWrapper.WindowWidth - 10) + ProgressClockSettings.ProgressClockRightFrameCharHours, 4, ProgressFillPositionHours, true, ColorStorageHours);                                                           // Medium of Hours
-                TextWriterWhereColor.WriteWhere(ProgressClockSettings.ProgressClockUpperLeftCornerCharHours + new string(ProgressClockSettings.ProgressClockUpperFrameCharHours, ConsoleWrapper.WindowWidth - 10) + ProgressClockSettings.ProgressClockUpperRightCornerCharHours, 4, (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) - 11, true, ColorStorageHours);        // Top of Hours
+                BoxFrameColor.WriteBoxFrame(4, (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) - 11, ConsoleWrapper.WindowWidth - 10, 1,
+                    ProgressClockSettings.ProgressClockUpperLeftCornerCharHours, ProgressClockSettings.ProgressClockLowerLeftCornerCharHours,
+                    ProgressClockSettings.ProgressClockUpperRightCornerCharHours, ProgressClockSettings.ProgressClockLowerRightCornerCharHours,
+                    ProgressClockSettings.ProgressClockUpperFrameCharHours, ProgressClockSettings.ProgressClockLowerFrameCharHours,
+                    ProgressClockSettings.ProgressClockLeftFrameCharHours, ProgressClockSettings.ProgressClockRightFrameCharHours,
+                    ColorStorageHours);
 
                 // Minutes
-                TextWriterWhereColor.WriteWhere(ProgressClockSettings.ProgressClockLowerLeftCornerCharMinutes + new string(ProgressClockSettings.ProgressClockLowerFrameCharMinutes, ConsoleWrapper.WindowWidth - 10) + ProgressClockSettings.ProgressClockLowerRightCornerCharMinutes, 4, (int)Math.Round(ConsoleWrapper.WindowHeight / 2d), true, ColorStorageMinutes);     // Bottom of Minutes
-                TextWriterWhereColor.WriteWhere(ProgressClockSettings.ProgressClockLeftFrameCharMinutes + new string(' ', ConsoleWrapper.WindowWidth - 10) + ProgressClockSettings.ProgressClockRightFrameCharMinutes, 4, ProgressFillPositionMinutes, true, ColorStorageMinutes);                                                   // Medium of Minutes
-                TextWriterWhereColor.WriteWhere(ProgressClockSettings.ProgressClockUpperLeftCornerCharMinutes + new string(ProgressClockSettings.ProgressClockUpperFrameCharMinutes, ConsoleWrapper.WindowWidth - 10) + ProgressClockSettings.ProgressClockUpperRightCornerCharMinutes, 4, (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) - 2, true, ColorStorageMinutes); // Top of Minutes
+                BoxFrameColor.WriteBoxFrame(4, (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) - 2, ConsoleWrapper.WindowWidth - 10, 1,
+                    ProgressClockSettings.ProgressClockUpperLeftCornerCharMinutes, ProgressClockSettings.ProgressClockLowerLeftCornerCharMinutes,
+                    ProgressClockSettings.ProgressClockUpperRightCornerCharMinutes, ProgressClockSettings.ProgressClockLowerRightCornerCharMinutes,
+                    ProgressClockSettings.ProgressClockUpperFrameCharMinutes, ProgressClockSettings.ProgressClockLowerFrameCharMinutes,
+                    ProgressClockSettings.ProgressClockLeftFrameCharMinutes, ProgressClockSettings.ProgressClockRightFrameCharMinutes,
+                    ColorStorageMinutes);
 
                 // Seconds
-                TextWriterWhereColor.WriteWhere(ProgressClockSettings.ProgressClockLowerLeftCornerCharSeconds + new string(ProgressClockSettings.ProgressClockLowerFrameCharSeconds, ConsoleWrapper.WindowWidth - 10) + ProgressClockSettings.ProgressClockLowerRightCornerCharSeconds, 4, (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) + 9, true, ColorStorageSeconds); // Bottom of Seconds
-                TextWriterWhereColor.WriteWhere(ProgressClockSettings.ProgressClockLeftFrameCharSeconds + new string(' ', ConsoleWrapper.WindowWidth - 10) + ProgressClockSettings.ProgressClockRightFrameCharSeconds, 4, ProgressFillPositionSeconds, true, ColorStorageSeconds);                                                   // Medium of Seconds
-                TextWriterWhereColor.WriteWhere(ProgressClockSettings.ProgressClockUpperLeftCornerCharSeconds + new string(ProgressClockSettings.ProgressClockUpperFrameCharSeconds, ConsoleWrapper.WindowWidth - 10) + ProgressClockSettings.ProgressClockUpperRightCornerCharSeconds, 4, (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) + 7, true, ColorStorageSeconds); // Top of Seconds
+                BoxFrameColor.WriteBoxFrame(4, (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) + 7, ConsoleWrapper.WindowWidth - 10, 1,
+                    ProgressClockSettings.ProgressClockUpperLeftCornerCharSeconds, ProgressClockSettings.ProgressClockLowerLeftCornerCharSeconds,
+                    ProgressClockSettings.ProgressClockUpperRightCornerCharSeconds, ProgressClockSettings.ProgressClockLowerRightCornerCharSeconds,
+                    ProgressClockSettings.ProgressClockUpperFrameCharSeconds, ProgressClockSettings.ProgressClockLowerFrameCharSeconds,
+                    ProgressClockSettings.ProgressClockLeftFrameCharSeconds, ProgressClockSettings.ProgressClockRightFrameCharSeconds,
+                    ColorStorageSeconds);
 
                 // Fill progress for hours, minutes, and seconds
                 if (!(TimeDateTools.KernelDateTime.Hour == 0))
