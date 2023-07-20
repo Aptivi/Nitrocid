@@ -169,7 +169,7 @@ namespace KS.Files
             int estimatedLockMs = 0;
             while (IsFileLocked(Path))
             {
-                SpinWait.SpinUntil(() => !IsFileLocked(Path), lockMs);
+                Thread.Sleep(lockMs);
 
                 // If the file is still locked, add the estimated lock time to check for timeout
                 if (IsFileLocked(Path))
