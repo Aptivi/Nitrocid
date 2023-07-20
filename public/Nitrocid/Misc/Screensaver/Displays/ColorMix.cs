@@ -23,6 +23,7 @@ using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
+using KS.Misc.Writers.ConsoleWriters;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Screensaver.Displays
@@ -259,7 +260,7 @@ namespace KS.Misc.Screensaver.Displays
                 if (!ConsoleResizeListener.WasResized(false))
                 {
                     ColorTools.SetConsoleColor(ColorStorage, true, true);
-                    ConsoleWrapper.Write(" ");
+                    TextWriterColor.WritePlain(" ", false);
                 }
             }
             else
@@ -269,7 +270,7 @@ namespace KS.Misc.Screensaver.Displays
                 if (!ConsoleResizeListener.WasResized(false))
                 {
                     ColorTools.SetConsoleColor(new Color(ColorNum), true, true);
-                    ConsoleWrapper.Write(" ");
+                    TextWriterColor.WritePlain(" ", false);
                 }
             }
 
