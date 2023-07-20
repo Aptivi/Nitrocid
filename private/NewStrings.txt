@@ -736,5 +736,6 @@ Thread stack trace information for {0}
 Forces text mode
 Forces hex mode
 Forces JSON mode
+Not a Nitrocid KS thread
 
 ==========================================================================================================================================

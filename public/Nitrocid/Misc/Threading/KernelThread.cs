@@ -33,7 +33,7 @@ namespace KS.Misc.Threading
     {
 
         internal bool isCritical;
-        private Thread BaseThread;
+        internal Thread BaseThread;
         private bool isReady;
         private readonly ThreadStart ThreadDelegate;
         private readonly ThreadStart InitialThreadDelegate;

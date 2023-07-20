@@ -18,6 +18,7 @@
 
 using KS.ConsoleBase.Colors;
 using KS.Languages;
+using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using Microsoft.Diagnostics.Runtime;
@@ -46,15 +47,17 @@ namespace KS.Shell.Shells.Debug.Commands
             var runtime = runtimeInfo.CreateRuntime();
             foreach (var t in runtime.Threads)
             {
-                result.Add(
-                    $"[0x{t.Address:X2}] [{t.ManagedThreadId}]",
-                    t.EnumerateStackTrace(true).Select(f =>
-                    {
-                        if (f.Method != null)
-                            return $"[0x{f.Method.NativeCode:X2}] @ {f.Method.Type.Name}.{f.Method.Name}({f.Method.Signature})";
-                        return "???";
-                    }).ToArray()
-                );
+                var matchingThreads = ThreadManager.KernelThreads.Where((thread) => thread.BaseThread.ManagedThreadId == t.ManagedThreadId).ToArray();
+                string threadName = matchingThreads.Length > 0 ? matchingThreads[0].Name : Translate.DoTranslation("Not a Nitrocid KS thread");
+                string[] trace = t.EnumerateStackTrace(true).Select(f =>
+                {
+                    if (f.Method != null)
+                        return $"[0x{f.Method.NativeCode:X16}] @ {f.Method.Type.Name}.{f.Method.Name}({f.Method.Signature})";
+                    return "[0x????????????????] @ ???.???(???)";
+                }
+                ).ToArray();
+                if (trace.Length > 0)
+                    result.Add($"{threadName} [{t.ManagedThreadId}] @ 0x{t.Address:X16}", trace);
             }
 
             // Now, print the list
