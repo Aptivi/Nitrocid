@@ -601,26 +601,25 @@ namespace KS.Drivers.Console.Consoles
             lock (TextWriterColor.WriteLock)
             {
                 var LinesMade = 0;
-                int OldTop;
                 try
                 {
                     // Format string as needed
                     if (!(vars.Length == 0))
                         Text = TextTools.FormatString(Text, vars);
+                    Text = Text.Replace(Convert.ToChar(13), default);
 
                     // Grab each VT sequence from the paragraph and fetch their indexes
                     var sequences = VtSequenceTools.MatchVTSequences(Text);
                     int vtSeqIdx = 0;
 
-                    OldTop = ConsoleWrapper.CursorTop;
                     for (int i = 0; i < Text.Length; i++)
                     {
                         char TextChar = Text[i];
 
                         // Write a character individually
                         WriteChar(Text, ref i, ref vtSeqIdx);
-                        LinesMade += ConsoleWrapper.CursorTop - OldTop;
-                        OldTop = ConsoleWrapper.CursorTop;
+                        if (TextChar == '\n')
+                            LinesMade++;
                         if (LinesMade == ConsoleWrapper.WindowHeight - 1)
                         {
                             if (Input.DetectKeypress().Key == ConsoleKey.Escape)
