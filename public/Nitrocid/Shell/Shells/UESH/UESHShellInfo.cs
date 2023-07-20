@@ -224,8 +224,6 @@ namespace KS.Shell.Shells.UESH
                 new CommandArgumentInfo(new[] { "directory/file" }, Array.Empty<SwitchInfo>(), true, 1), new RmCommand()) },
             { "rdebug", new CommandInfo("rdebug", ShellType, /* Localizable */ "Enables or disables remote debugging.",
                 new CommandArgumentInfo(), new RdebugCommand(), CommandFlags.Strict) },
-            { "reportbug", new CommandInfo("reportbug", ShellType, /* Localizable */ "A bug reporting prompt.",
-                new CommandArgumentInfo(), new ReportBugCommand()) },
             { "rmuser", new CommandInfo("rmuser", ShellType, /* Localizable */ "Removes a user from the list",
                 new CommandArgumentInfo(new[] { "Username" }, Array.Empty<SwitchInfo>(), true, 1, (startFrom, _, _) => UserManagement.ListAllUsers().Where((src) => src.StartsWith(startFrom)).ToArray()), new RmUserCommand(), CommandFlags.Strict) },
             { "rmgroup", new CommandInfo("rmgroup", ShellType, /* Localizable */ "Removes a group from the list",
