@@ -91,6 +91,7 @@
     <PackageReference Include="ManagedWeatherMap" Version="1.1.0" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.9" />
+    <PackageReference Include="Microsoft.Diagnostics.Runtime" Version="2.4.416101" />
     <PackageReference Include="Namer" Version="1.0.0.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Newtonsoft.Json.Schema" Version="3.0.15" />

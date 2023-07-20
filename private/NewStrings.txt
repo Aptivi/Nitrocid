@@ -731,5 +731,7 @@ Starts the debug shell
 Debug Shell Prompt Preset
 Whether to show the MOTD and the headline at the bottom or at the top of the clock
 MOTD and Headline at the bottom of the modern logon clock
+Gets backtrace for all threads
+Thread stack trace information for {0}
 
 ==========================================================================================================================================
