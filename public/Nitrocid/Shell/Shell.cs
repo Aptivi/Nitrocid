@@ -190,8 +190,9 @@ namespace KS.Shell
         /// <param name="FullCommand">The full command string</param>
         /// <param name="OutputPath">Optional (non-)neutralized output path</param>
         /// <param name="ShellType">Shell type</param>
+        /// <param name="restoreDriver">Whether to restore the driver to the previous state</param>
         /// <remarks>All new shells implemented either in KS or by mods should use this routine to allow effective and consistent line parsing.</remarks>
-        public static void GetLine(string FullCommand, string OutputPath = "", string ShellType = "Shell")
+        public static void GetLine(string FullCommand, string OutputPath = "", string ShellType = "Shell", bool restoreDriver = true)
         {
             // Check for sanity
             if (string.IsNullOrEmpty(FullCommand))
@@ -431,7 +432,7 @@ namespace KS.Shell
             }
 
             // Restore console output to its original state if any
-            if (DriverHandler.CurrentConsoleDriverLocal.DriverName != "Default")
+            if (DriverHandler.CurrentConsoleDriverLocal.DriverName != "Default" && restoreDriver)
             {
                 if (DriverHandler.CurrentConsoleDriverLocal is File writer)
                     writer.FilterVT = false;

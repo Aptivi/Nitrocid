@@ -49,6 +49,7 @@ namespace KS.Drivers
                     { "File", new File() },
                     { "FileSequence", new FileSequence() },
                     { "Null", new Null() },
+                    { "Buffered", new Buffered() },
 
 #if !SPECIFIERREL
                     // Below are excluded from the final release
