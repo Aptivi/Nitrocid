@@ -52,7 +52,10 @@ namespace KS.Shell.Shells.UESH.Commands
             DebugWriter.WriteDebug(DebugLevel.I, "Force JSON: {0}", forceJson);
             DebugWriter.WriteDebug(DebugLevel.I, "Force Hex: {0}", forceHex);
             if (!fileExists)
+            {
                 TextWriterColor.Write(Translate.DoTranslation("File doesn't exist."), true, KernelColorType.Error);
+                return;
+            }
 
             // First, forced types
             if (forceText)
