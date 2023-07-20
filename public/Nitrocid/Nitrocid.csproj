@@ -101,7 +101,7 @@
     <PackageReference Include="StringMath" Version="4.1.0" />
     <PackageReference Include="Syndian" Version="0.2.1" />
     <PackageReference Include="TermRead" Version="0.6.0" />
-    <PackageReference Include="UnitsNet" Version="5.26.0" />
+    <PackageReference Include="UnitsNet" Version="5.27.0" />
     <PackageReference Include="Aptivi.VT.NET" Version="1.0.0" />
     <PackageReference Include="VisualCard" Version="0.4.0" />
     <PackageReference Include="Wordament" Version="0.2.0" />
