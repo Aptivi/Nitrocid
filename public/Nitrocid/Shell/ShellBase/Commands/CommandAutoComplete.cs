@@ -16,8 +16,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Files.Folders;
+using KS.Kernel.Debugging;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Shells;
+using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace KS.Shell.ShellBase.Commands
@@ -31,60 +35,86 @@ namespace KS.Shell.ShellBase.Commands
         /// <inheritdoc/>
         public static string[] GetSuggestions(string text, int index, char[] delims)
         {
+            // First, cut the text to index
             text = text[..index];
-            if (ShellStart.ShellStack.Count > 0)
+            DebugWriter.WriteDebug(DebugLevel.I, "Text to auto complete: {0} (idx: {1})", text, index);
+
+            // Then, check to see is we have shells
+            DebugWriter.WriteDebug(DebugLevel.I, "Shell count: {0}", ShellStart.ShellStack.Count);
+            if (ShellStart.ShellStack.Count <= 0)
+                return Array.Empty<string>();
+
+            // Get the commands based on the current shell type
+            var shellType = ShellStart.ShellStack[^1].ShellType;
+            var ShellCommands = CommandManager.GetCommands(shellType);
+            DebugWriter.WriteDebug(DebugLevel.I, "Commands count for type {0}: {1}", shellType, ShellCommands.Count);
+
+            // If text is not provided, return the command list without filtering
+            if (string.IsNullOrEmpty(text))
+                return ShellCommands.Keys.ToArray();
+
+            // Get the provided command and argument information
+            var commandArgumentInfo = new ProvidedCommandArgumentsInfo(text, shellType);
+
+            // We're providing completion for argument.
+            string CommandName = commandArgumentInfo.Command;
+            string finalCommandArgs = commandArgumentInfo.ArgumentsText;
+            string[] finalCommandArgsEnclosed = finalCommandArgs.SplitEncloseDoubleQuotes();
+            string LastArgument = finalCommandArgsEnclosed.Length > 0 ? finalCommandArgsEnclosed[^1] : "";
+            DebugWriter.WriteDebug(DebugLevel.I, "Command name: {0}", CommandName);
+            DebugWriter.WriteDebug(DebugLevel.I, "Command arguments [{0}]: {1}", finalCommandArgsEnclosed.Length, finalCommandArgs);
+            DebugWriter.WriteDebug(DebugLevel.I, "last argument: {0}", LastArgument);
+
+            // Make a file and folder list
+            string[] finalCompletions;
+            if (!string.IsNullOrEmpty(finalCommandArgs))
             {
-                var ShellCommands = CommandManager.GetCommands(ShellStart.ShellStack[^1].ShellType);
-                if (string.IsNullOrEmpty(text))
-                {
-                    return ShellCommands.Keys.ToArray();
-                }
-                else if (text.Contains(' '))
-                {
-                    // We're providing completion for argument.
-                    string CommandName = text.SplitEncloseDoubleQuotes()[0];
-                    string LastArgument = text.SplitEncloseDoubleQuotes()[^1];
-                    var FileFolderList = Listing.CreateList(CurrentDirectory.CurrentDir, true)
-                                                .Select(x => x.Name)
-                                                .Where(x => x.StartsWith(LastArgument))
-                                                .ToArray();
-                    if (ShellCommands.ContainsKey(CommandName))
-                    {
-                        // We have the command. Check its entry for argument info
-                        var CommandArgumentInfo = ShellCommands[CommandName].CommandArgumentInfo;
-                        if (CommandArgumentInfo is not null)
-                        {
-                            // There are arguments! Now, check to see if it has the accessible auto completer
-                            var AutoCompleter = CommandArgumentInfo.AutoCompleter;
-                            if (AutoCompleter is not null)
-                            {
-                                // We have the delegate! Invoke it.
-                                return AutoCompleter.Invoke(LastArgument, index, delims);
-                            }
-                            else
-                            {
-                                // No delegate. Return file list
-                                return FileFolderList;
-                            }
-                        }
-                        else
-                        {
-                            // No arguments. Return file list
-                            return FileFolderList;
-                        }
-                    }
-                    return FileFolderList;
-                }
-                else
-                {
-                    // We're providing completion for command.
-                    return ShellCommands.Keys.Where(x => x.StartsWith(text)).ToArray();
-                }
+                DebugWriter.WriteDebug(DebugLevel.I, "Creating list of files and directories starting with argument {0} [{1}]...", LastArgument, LastArgument.Length);
+                finalCompletions = Listing.CreateList(CurrentDirectory.CurrentDir, true)
+                    .Select(x => x.Name)
+                    .Where(x => x.StartsWith(LastArgument))
+                    .Select(x => x[LastArgument.Length..])
+                    .ToArray();
+                DebugWriter.WriteDebug(DebugLevel.I, "Initially invoked, and got {0} autocompletion suggestions. [{1}]", finalCompletions.Length, string.Join(", ", finalCompletions));
             }
             else
             {
-                return null;
+                DebugWriter.WriteDebug(DebugLevel.I, "Creating list of files and directories starting with command {0} [{1}]...", CommandName, CommandName.Length);
+                finalCompletions = Listing.CreateList(CurrentDirectory.CurrentDir, true)
+                    .Select(x => x.Name)
+                    .Where(x => x.StartsWith(CommandName))
+                    .Select(x => x[CommandName.Length..])
+                    .ToArray();
+                DebugWriter.WriteDebug(DebugLevel.I, "Initially invoked, and got {0} autocompletion suggestions. [{1}]", finalCompletions.Length, string.Join(", ", finalCompletions));
             }
+
+            // Check to see if there is such command
+            DebugWriter.WriteDebug(DebugLevel.I, "Command {0} exists? {1}", CommandName, ShellCommands.ContainsKey(CommandName));
+            if (!ShellCommands.ContainsKey(CommandName))
+                return finalCompletions;
+
+            // We have the command. Check its entry for argument info
+            var CommandArgumentInfo = ShellCommands[CommandName].CommandArgumentInfo;
+            DebugWriter.WriteDebug(DebugLevel.I, "Command {0} has argument info? {1}", CommandName, CommandArgumentInfo is not null);
+            if (CommandArgumentInfo is null)
+                // No arguments. Return file list
+                return finalCompletions;
+
+            // There are arguments! Now, check to see if it has the accessible auto completer
+            var AutoCompleter = CommandArgumentInfo.AutoCompleter;
+            DebugWriter.WriteDebug(DebugLevel.I, "Command {0} has auto complete info? {1}", CommandName, AutoCompleter is not null);
+            if (AutoCompleter is null)
+                // No delegate. Return file list
+                return finalCompletions;
+
+            // We have the delegate! Invoke it.
+            DebugWriter.WriteDebug(DebugLevel.I, "If we reach here, it means we have a delegate! Executing delegate with {0} [{1}]...", LastArgument, LastArgument.Length);
+            finalCompletions = AutoCompleter.Invoke(LastArgument, index, delims)
+                .Where(x => x.StartsWith(LastArgument))
+                .Select(x => x[LastArgument.Length..])
+                .ToArray();
+            DebugWriter.WriteDebug(DebugLevel.I, "Invoked, and got {0} autocompletion suggestions. [{1}]", finalCompletions.Length, string.Join(", ", finalCompletions));
+            return finalCompletions;
         }
 
     }
