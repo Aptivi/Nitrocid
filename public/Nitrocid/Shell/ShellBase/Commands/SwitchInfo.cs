@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Languages;
+using System;
 
 namespace KS.Shell.ShellBase.Commands
 {
@@ -42,6 +43,10 @@ namespace KS.Shell.ShellBase.Commands
         /// Does the switch require arguments?
         /// </summary>
         public bool ArgumentsRequired { get; private set; }
+        /// <summary>
+        /// Does the switch conflict with the provided switches?
+        /// </summary>
+        public string[] ConflictsWith { get; private set; }
 
         /// <summary>
         /// Installs a new instance of switch info class
@@ -50,12 +55,14 @@ namespace KS.Shell.ShellBase.Commands
         /// <param name="HelpDefinition">Switch help definition</param>
         /// <param name="IsRequired">Is the switch required?</param>
         /// <param name="ArgumentsRequired">Whether the switch requires a value to be set</param>
-        public SwitchInfo(string Switch, string HelpDefinition, bool IsRequired = false, bool ArgumentsRequired = false)
+        /// <param name="conflictsWith">Does the switch conflict with the provided switches?</param>
+        public SwitchInfo(string Switch, string HelpDefinition, bool IsRequired = false, bool ArgumentsRequired = false, string[] conflictsWith = null)
         {
             SwitchName = Switch;
             this.HelpDefinition = HelpDefinition;
             this.IsRequired = IsRequired;
             this.ArgumentsRequired = ArgumentsRequired;
+            ConflictsWith = conflictsWith ?? Array.Empty<string>();
         }
 
         /// <summary>

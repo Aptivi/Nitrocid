@@ -33,6 +33,7 @@ namespace KS.Shell.ShellBase.Commands
     {
 
         internal string[] unknownSwitchesList;
+        internal string[] conflictingSwitchesList;
 
         /// <summary>
         /// Target command that the user executed in shell
@@ -153,6 +154,30 @@ namespace KS.Shell.ShellBase.Commands
                     .Select((kvp) => kvp.Item1)
                     .Where((key) => !CommandInfo.CommandArgumentInfo.Switches.Any((switchInfo) => switchInfo.SwitchName == key[1..]))
                     .ToArray();
+
+            // Check to see if the caller has provided conflicting switches
+            if (CommandInfo?.CommandArgumentInfo is not null)
+            {
+                List<string> processed = new();
+                List<string> conflicts = new();
+                foreach (var kvp in EnclosedSwitchKeyValuePairs)
+                {
+                    // Get the switch and its conflicts list
+                    string @switch = kvp.Item1;
+                    string[] switchConflicts = CommandInfo.CommandArgumentInfo.Switches
+                        .Where((switchInfo) => $"-{switchInfo.SwitchName}" == @switch)
+                        .First().ConflictsWith
+                        .Select((conflicting) => $"-{conflicting}")
+                        .ToArray();
+
+                    // Now, get the last switch and check to see if it's provided with the conflicting switch
+                    string lastSwitch = processed.Count > 0 ? processed[^1] : "";
+                    if (switchConflicts.Contains(lastSwitch))
+                        conflicts.Add($"{@switch} vs. {lastSwitch}");
+                    processed.Add(@switch);
+                }
+                conflictingSwitchesList = conflicts.ToArray();
+            }
 
             // Install the parsed values to the new class instance
             ArgumentsList = EnclosedArgs;

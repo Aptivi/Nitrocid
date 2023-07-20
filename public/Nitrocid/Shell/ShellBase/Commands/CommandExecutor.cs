@@ -160,9 +160,20 @@ namespace KS.Shell.ShellBase.Commands
                     if (ArgumentInfo.unknownSwitchesList.Length > 0)
                     {
                         argSatisfied = false;
-                        DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided a value for one of the switches for {0}", Command);
+                        DebugWriter.WriteDebug(DebugLevel.W, "User has provided unknown switches {0}", Command);
                         TextWriterColor.Write(Translate.DoTranslation("Switches that are listed below are unknown."));
                         ListWriterColor.WriteList(ArgumentInfo.unknownSwitchesList);
+                        TextWriterColor.Write(Translate.DoTranslation("See below for usage:"));
+                        HelpSystem.ShowHelp(Command, ShellType);
+                    }
+                    
+                    // Check for conflicting switches
+                    if (ArgumentInfo.conflictingSwitchesList.Length > 0)
+                    {
+                        argSatisfied = false;
+                        DebugWriter.WriteDebug(DebugLevel.W, "User has provided conflicting switches for {0}", Command);
+                        TextWriterColor.Write(Translate.DoTranslation("Switches that are listed below conflict with each other."));
+                        ListWriterColor.WriteList(ArgumentInfo.conflictingSwitchesList);
                         TextWriterColor.Write(Translate.DoTranslation("See below for usage:"));
                         HelpSystem.ShowHelp(Command, ShellType);
                     }

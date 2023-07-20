@@ -738,5 +738,6 @@ Forces hex mode
 Forces JSON mode
 Not a Nitrocid KS thread
 An error occurred while trying to wrap a command output
+Switches that are listed below conflict with each other.
 
 ==========================================================================================================================================
