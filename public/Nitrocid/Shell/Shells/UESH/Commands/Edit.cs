@@ -40,22 +40,39 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            ListArgsOnly[0] = Filesystem.NeutralizePath(ListArgsOnly[0]);
-            DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {0}", ListArgsOnly[0], Checking.FileExists(ListArgsOnly[0]));
-            if (Checking.FileExists(ListArgsOnly[0]))
-            {
-                // Determine the type
-                if (Parsing.IsBinaryFile(ListArgsOnly[0]))
-                    ShellStart.StartShell(ShellType.HexShell, ListArgsOnly[0]);
-                else if (Parsing.IsJson(ListArgsOnly[0]))
-                    ShellStart.StartShell(ShellType.JsonShell, ListArgsOnly[0]);
-                else
-                    ShellStart.StartShell(ShellType.TextShell, ListArgsOnly[0]);
-            }
-            else
-            {
+            string path = Filesystem.NeutralizePath(ListArgsOnly[0]);
+            bool forceText = SwitchManager.ContainsSwitch(ListSwitchesOnly, "-text");
+            bool forceJson = SwitchManager.ContainsSwitch(ListSwitchesOnly, "-json");
+            bool forceHex = SwitchManager.ContainsSwitch(ListSwitchesOnly, "-hex");
+            bool fileExists = Checking.FileExists(path);
+
+            // Check to see if the file exists
+            DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {1}", path, fileExists);
+            DebugWriter.WriteDebug(DebugLevel.I, "Force text: {0}", forceText);
+            DebugWriter.WriteDebug(DebugLevel.I, "Force JSON: {0}", forceJson);
+            DebugWriter.WriteDebug(DebugLevel.I, "Force Hex: {0}", forceHex);
+            if (!fileExists)
                 TextWriterColor.Write(Translate.DoTranslation("File doesn't exist."), true, KernelColorType.Error);
-            }
+
+            // First, forced types
+            if (forceText)
+                ShellStart.StartShell(ShellType.TextShell, path);
+            else if (forceJson)
+                ShellStart.StartShell(ShellType.JsonShell, path);
+            else if (forceHex)
+                ShellStart.StartShell(ShellType.HexShell, path);
+
+            // Exit if forced types
+            if (forceText || forceJson || forceHex)
+                return;
+
+            // Determine the type
+            if (Parsing.IsBinaryFile(path))
+                ShellStart.StartShell(ShellType.HexShell, path);
+            else if (Parsing.IsJson(path))
+                ShellStart.StartShell(ShellType.JsonShell, path);
+            else
+                ShellStart.StartShell(ShellType.TextShell, path);
         }
 
     }

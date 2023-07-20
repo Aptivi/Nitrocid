@@ -121,7 +121,7 @@ namespace KS.Shell.Shells.UESH
             { "echo", new CommandInfo("echo", ShellType, /* Localizable */ "Writes text into the console",
                 new CommandArgumentInfo(new[] { "text" }, Array.Empty<SwitchInfo>(), false, 0), new EchoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
             { "edit", new CommandInfo("edit", ShellType, /* Localizable */ "Edits a file",
-                new CommandArgumentInfo(new[] { "file" }, Array.Empty<SwitchInfo>(), true, 1), new EditCommand()) },
+                new CommandArgumentInfo(new[] { "file" }, new SwitchInfo[] { new SwitchInfo("text", /* Localizable */ "Forces text mode"), new SwitchInfo("hex", /* Localizable */ "Forces hex mode"), new SwitchInfo("json", /* Localizable */ "Forces JSON mode") }, true, 1), new EditCommand()) },
             { "fileinfo", new CommandInfo("fileinfo", ShellType, /* Localizable */ "Provides information about a file",
                 new CommandArgumentInfo(new[] { "file" }, Array.Empty<SwitchInfo>(), true, 1), new FileInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
             { "find", new CommandInfo("find", ShellType, /* Localizable */ "Finds a file in the specified directory or in the current directory",

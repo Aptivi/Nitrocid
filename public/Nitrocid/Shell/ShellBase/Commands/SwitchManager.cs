@@ -85,7 +85,7 @@ namespace KS.Shell.ShellBase.Commands
         /// <param name="switchKey">Switch key</param>
         public static bool ContainsSwitch(string[] switches, string switchKey)
         {
-            var switchValues = GetSwitchValues(switches);
+            var switchValues = GetSwitchValues(switches, true);
             return switchValues.Exists((tuple) => tuple.Item1 == switchKey);
         }
     }
