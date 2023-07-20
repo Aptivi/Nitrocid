@@ -25,6 +25,7 @@ using KS.ConsoleBase.Colors;
 using KS.Languages;
 using ColorSeq;
 using KS.Misc.Writers.FancyWriters.Tools;
+using KS.Misc.Screensaver.Displays;
 
 namespace KS.Misc.Writers.FancyWriters
 {
@@ -68,14 +69,22 @@ namespace KS.Misc.Writers.FancyWriters
         {
             try 
             {
-                // Draw the box frame
-                TextWriterWhereColor.WriteWhere(UpperLeftCornerChar + new string(UpperFrameChar, InteriorWidth) + UpperRightCornerChar, Left, Top, true);
+                // Upper frame
+                TextWriterWhereColor.WriteWhere(UpperLeftCornerChar.ToString(), Left, Top, false);
+                TextWriterColor.Write(new string(UpperFrameChar, InteriorWidth), false);
+                TextWriterColor.Write(UpperRightCornerChar.ToString(), false);
+
+                // Left and right edges
                 for (int i = 1; i <= InteriorHeight; i++)
                 {
                     TextWriterWhereColor.WriteWhere(LeftFrameChar.ToString(), Left, Top + i, true);
                     TextWriterWhereColor.WriteWhere(RightFrameChar.ToString(), Left + InteriorWidth + 1, Top + i, true);
                 }
-                TextWriterWhereColor.WriteWhere(LowerLeftCornerChar + new string(LowerFrameChar, InteriorWidth) + LowerRightCornerChar, Left, Top + InteriorHeight + 1, true);
+
+                // Lower frame
+                TextWriterWhereColor.WriteWhere(LowerLeftCornerChar.ToString(), Left, Top + InteriorHeight + 1, false);
+                TextWriterColor.Write(new string(LowerFrameChar, InteriorWidth), false);
+                TextWriterColor.Write(LowerRightCornerChar.ToString(), false);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
