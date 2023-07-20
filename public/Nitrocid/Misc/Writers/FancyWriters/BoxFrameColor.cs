@@ -25,7 +25,6 @@ using KS.ConsoleBase.Colors;
 using KS.Languages;
 using ColorSeq;
 using KS.Misc.Writers.FancyWriters.Tools;
-using KS.Misc.Screensaver.Displays;
 
 namespace KS.Misc.Writers.FancyWriters
 {
@@ -273,9 +272,22 @@ namespace KS.Misc.Writers.FancyWriters
         {
             try
             {
-                SetConsoleColor(BoxFrameColor, false);
-                SetConsoleColor(BackgroundColor, true, true);
-                WriteBoxFramePlain(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
+                // Upper frame
+                TextWriterWhereColor.WriteWhere(UpperLeftCornerChar.ToString(), Left, Top, false, BoxFrameColor, BackgroundColor);
+                TextWriterColor.Write(new string(UpperFrameChar, InteriorWidth), false, BoxFrameColor, BackgroundColor);
+                TextWriterColor.Write(UpperRightCornerChar.ToString(), false, BoxFrameColor, BackgroundColor);
+
+                // Left and right edges
+                for (int i = 1; i <= InteriorHeight; i++)
+                {
+                    TextWriterWhereColor.WriteWhere(LeftFrameChar.ToString(), Left, Top + i, true, BoxFrameColor, BackgroundColor);
+                    TextWriterWhereColor.WriteWhere(RightFrameChar.ToString(), Left + InteriorWidth + 1, Top + i, true, BoxFrameColor, BackgroundColor);
+                }
+
+                // Lower frame
+                TextWriterWhereColor.WriteWhere(LowerLeftCornerChar.ToString(), Left, Top + InteriorHeight + 1, false, BoxFrameColor, BackgroundColor);
+                TextWriterColor.Write(new string(LowerFrameChar, InteriorWidth), false, BoxFrameColor, BackgroundColor);
+                TextWriterColor.Write(LowerRightCornerChar.ToString(), false, BoxFrameColor, BackgroundColor);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -330,9 +342,22 @@ namespace KS.Misc.Writers.FancyWriters
         {
             try
             {
-                SetConsoleColor(BoxFrameColor, false);
-                SetConsoleColor(BackgroundColor, true, true);
-                WriteBoxFramePlain(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
+                // Upper frame
+                TextWriterWhereColor.WriteWhere(UpperLeftCornerChar.ToString(), Left, Top, false, BoxFrameColor, BackgroundColor);
+                TextWriterColor.Write(new string(UpperFrameChar, InteriorWidth), false, BoxFrameColor, BackgroundColor);
+                TextWriterColor.Write(UpperRightCornerChar.ToString(), false, BoxFrameColor, BackgroundColor);
+
+                // Left and right edges
+                for (int i = 1; i <= InteriorHeight; i++)
+                {
+                    TextWriterWhereColor.WriteWhere(LeftFrameChar.ToString(), Left, Top + i, true, BoxFrameColor, BackgroundColor);
+                    TextWriterWhereColor.WriteWhere(RightFrameChar.ToString(), Left + InteriorWidth + 1, Top + i, true, BoxFrameColor, BackgroundColor);
+                }
+
+                // Lower frame
+                TextWriterWhereColor.WriteWhere(LowerLeftCornerChar.ToString(), Left, Top + InteriorHeight + 1, false, BoxFrameColor, BackgroundColor);
+                TextWriterColor.Write(new string(LowerFrameChar, InteriorWidth), false, BoxFrameColor, BackgroundColor);
+                TextWriterColor.Write(LowerRightCornerChar.ToString(), false, BoxFrameColor, BackgroundColor);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -387,9 +412,22 @@ namespace KS.Misc.Writers.FancyWriters
         {
             try
             {
-                SetConsoleColor(new Color(BoxFrameColor), false);
-                SetConsoleColor(new Color(BackgroundColor), true, true);
-                WriteBoxFramePlain(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
+                // Upper frame
+                TextWriterWhereColor.WriteWhere(UpperLeftCornerChar.ToString(), Left, Top, false, BoxFrameColor, BackgroundColor);
+                TextWriterColor.Write(new string(UpperFrameChar, InteriorWidth), false, BoxFrameColor, BackgroundColor);
+                TextWriterColor.Write(UpperRightCornerChar.ToString(), false, BoxFrameColor, BackgroundColor);
+
+                // Left and right edges
+                for (int i = 1; i <= InteriorHeight; i++)
+                {
+                    TextWriterWhereColor.WriteWhere(LeftFrameChar.ToString(), Left, Top + i, true, BoxFrameColor, BackgroundColor);
+                    TextWriterWhereColor.WriteWhere(RightFrameChar.ToString(), Left + InteriorWidth + 1, Top + i, true, BoxFrameColor, BackgroundColor);
+                }
+
+                // Lower frame
+                TextWriterWhereColor.WriteWhere(LowerLeftCornerChar.ToString(), Left, Top + InteriorHeight + 1, false, BoxFrameColor, BackgroundColor);
+                TextWriterColor.Write(new string(LowerFrameChar, InteriorWidth), false, BoxFrameColor, BackgroundColor);
+                TextWriterColor.Write(LowerRightCornerChar.ToString(), false, BoxFrameColor, BackgroundColor);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
