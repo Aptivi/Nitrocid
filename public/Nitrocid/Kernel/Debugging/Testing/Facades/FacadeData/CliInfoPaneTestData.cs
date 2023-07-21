@@ -41,7 +41,7 @@ namespace KS.Kernel.Debugging.Testing.Facades.FacadeData
             strings;
 
         /// <inheritdoc/>
-        public override string RenderInfoOnSecondPane(object item)
+        public override string GetInfoFromItem(object item)
         {
             string selected = (string)item;
 

@@ -86,8 +86,8 @@ namespace KS.Misc.Interactive
             item is not null ? item.ToString() : "???";
 
         /// <inheritdoc/>
-        public virtual string RenderInfoOnSecondPane(object item) =>
-            item is not null ? Translate.DoTranslation("Ready") : "???";
+        public virtual string GetInfoFromItem(object item) =>
+            item is not null ? Translate.DoTranslation("No info.") : "???";
 
         /// <inheritdoc/>
         public virtual void HandleExit() { }

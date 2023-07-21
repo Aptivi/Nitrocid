@@ -129,11 +129,11 @@ namespace KS.Misc.Interactive
         /// <param name="item">Target item</param>
         public string GetEntryFromItem(object item);
         /// <summary>
-        /// Renders information on the second pane, returning the status
+        /// Gets the info from the item
         /// </summary>
         /// <param name="item">Target item</param>
-        /// <returns>A status of rendering (whether it's a success or a failure), or summary of info</returns>
-        public string RenderInfoOnSecondPane(object item);
+        /// <returns>The rendered info so that <see cref="InteractiveTuiTools"/> can handle its rendering</returns>
+        public string GetInfoFromItem(object item);
         /// <summary>
         /// Handles exiting the interactive TUI
         /// </summary>

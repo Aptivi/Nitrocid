@@ -48,12 +48,8 @@ namespace KS.Kernel.Debugging.Testing.Facades.FacadeData
             strings;
 
         /// <inheritdoc/>
-        public override string RenderInfoOnSecondPane(object item)
+        public override string GetInfoFromItem(object item)
         {
-            // Populate some positions
-            int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
-            int SeparatorMinimumHeightInterior = 2;
-
             // Some variables
             string selected = (string)item;
             timesRendered++;
@@ -64,10 +60,8 @@ namespace KS.Kernel.Debugging.Testing.Facades.FacadeData
             else
                 Status = $"{selected}";
 
-            TextWriterWhereColor.WriteWhere($"{timesRendered}", SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 0, ForegroundColor, PaneItemBackColor);
-
             // Now, populate the info to the status
-            return $" {Status}";
+            return $"{timesRendered}";
         }
 
         /// <inheritdoc/>

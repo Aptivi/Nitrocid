@@ -36,6 +36,8 @@ namespace KS.Files.Interactive
     /// </summary>
     public class TaskManagerCli : BaseInteractiveTui, IInteractiveTui
     {
+
+        private static string taskStatus = "";
         private static bool osThreadMode = false;
 
         /// <summary>
@@ -106,52 +108,66 @@ namespace KS.Files.Interactive
             osThreadMode ? ThreadManager.OperatingSystemThreads : ThreadManager.KernelThreads;
 
         /// <inheritdoc/>
-        public override string RenderInfoOnSecondPane(object item)
+        public override string GetInfoFromItem(object item)
         {
-            // Populate some positions
-            int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
-            int SeparatorHalfConsoleWidthInterior = (ConsoleWrapper.WindowWidth / 2) - 2;
-            int SeparatorMinimumHeightInterior = 2;
-
             if (osThreadMode)
             {
                 ProcessThread selectedThread = (ProcessThread)item;
-                string finalRenderedTaskID = (Translate.DoTranslation("Task ID") + $": {selectedThread.Id}").Truncate(SeparatorHalfConsoleWidthInterior - 3);
-                string finalRenderedTaskPPT = (Translate.DoTranslation("Privileged processor time") + $": {selectedThread.PrivilegedProcessorTime}").Truncate(SeparatorHalfConsoleWidthInterior - 3);
-                string finalRenderedTaskUPT = (Translate.DoTranslation("User processor time") + $": {selectedThread.UserProcessorTime}").Truncate(SeparatorHalfConsoleWidthInterior - 3);
-                string finalRenderedTaskTPT = (Translate.DoTranslation("Total processor time") + $": {selectedThread.TotalProcessorTime}").Truncate(SeparatorHalfConsoleWidthInterior - 3);
-                string finalRenderedTaskState = (Translate.DoTranslation("Task state") + $": {selectedThread.ThreadState}").Truncate(SeparatorHalfConsoleWidthInterior - 3);
-                string finalRenderedTaskPriority = (Translate.DoTranslation("Priority level") + $": {selectedThread.CurrentPriority}").Truncate(SeparatorHalfConsoleWidthInterior - 3);
-                string finalRenderedTaskMemAddress = (Translate.DoTranslation("Task memory address") + $": 0x{selectedThread.StartAddress:X8}").Truncate(SeparatorHalfConsoleWidthInterior - 3);
-                TextWriterWhereColor.WriteWhere(finalRenderedTaskID + new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedTaskID.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 0, ForegroundColor, PaneItemBackColor);
-                TextWriterWhereColor.WriteWhere(finalRenderedTaskPPT + new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedTaskPPT.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 2, ForegroundColor, PaneItemBackColor);
-                TextWriterWhereColor.WriteWhere(finalRenderedTaskUPT + new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedTaskUPT.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 3, ForegroundColor, PaneItemBackColor);
-                TextWriterWhereColor.WriteWhere(finalRenderedTaskTPT + new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedTaskTPT.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 4, ForegroundColor, PaneItemBackColor);
-                TextWriterWhereColor.WriteWhere(finalRenderedTaskState + new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedTaskState.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 5, ForegroundColor, PaneItemBackColor);
-                TextWriterWhereColor.WriteWhere(finalRenderedTaskPriority + new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedTaskPriority.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 6, ForegroundColor, PaneItemBackColor);
-                TextWriterWhereColor.WriteWhere(finalRenderedTaskMemAddress + new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedTaskMemAddress.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 7, ForegroundColor, PaneItemBackColor);
+                string finalRenderedTaskID = (Translate.DoTranslation("Task ID") + $": {selectedThread.Id}");
+                string finalRenderedTaskPPT = (Translate.DoTranslation("Privileged processor time") + $": {selectedThread.PrivilegedProcessorTime}");
+                string finalRenderedTaskUPT = (Translate.DoTranslation("User processor time") + $": {selectedThread.UserProcessorTime}");
+                string finalRenderedTaskTPT = (Translate.DoTranslation("Total processor time") + $": {selectedThread.TotalProcessorTime}");
+                string finalRenderedTaskState = (Translate.DoTranslation("Task state") + $": {selectedThread.ThreadState}");
+                string finalRenderedTaskPriority = (Translate.DoTranslation("Priority level") + $": {selectedThread.CurrentPriority}");
+                string finalRenderedTaskMemAddress = (Translate.DoTranslation("Task memory address") + $": 0x{selectedThread.StartAddress:X16}");
+                return
+                    finalRenderedTaskID + CharManager.NewLine +
+                    finalRenderedTaskPPT + CharManager.NewLine +
+                    finalRenderedTaskUPT + CharManager.NewLine +
+                    finalRenderedTaskTPT + CharManager.NewLine +
+                    finalRenderedTaskState + CharManager.NewLine +
+                    finalRenderedTaskPriority + CharManager.NewLine +
+                    finalRenderedTaskMemAddress
+                ;
             }
             else
             {
                 KernelThread selectedThread = (KernelThread)item;
-                string finalRenderedTaskName = (Translate.DoTranslation("Task name") + $": {selectedThread.Name}").Truncate(SeparatorHalfConsoleWidthInterior - 3);
-                string finalRenderedTaskAlive = (Translate.DoTranslation("Alive") + $": {selectedThread.IsAlive}").Truncate(SeparatorHalfConsoleWidthInterior - 3);
-                string finalRenderedTaskBackground = (Translate.DoTranslation("Background") + $": {selectedThread.IsBackground}").Truncate(SeparatorHalfConsoleWidthInterior - 3);
-                string finalRenderedTaskCritical = (Translate.DoTranslation("Critical") + $": {selectedThread.IsCritical}").Truncate(SeparatorHalfConsoleWidthInterior - 3);
-                string finalRenderedTaskReady = (Translate.DoTranslation("Ready") + $": {selectedThread.IsReady}").Truncate(SeparatorHalfConsoleWidthInterior - 3);
-                TextWriterWhereColor.WriteWhere(finalRenderedTaskName + new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedTaskName.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 0, ForegroundColor, PaneItemBackColor);
-                TextWriterWhereColor.WriteWhere(finalRenderedTaskAlive + new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedTaskAlive.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 2, ForegroundColor, PaneItemBackColor);
-                TextWriterWhereColor.WriteWhere(finalRenderedTaskBackground + new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedTaskBackground.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 3, ForegroundColor, PaneItemBackColor);
-                TextWriterWhereColor.WriteWhere(finalRenderedTaskCritical + new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedTaskCritical.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 4, ForegroundColor, PaneItemBackColor);
-                TextWriterWhereColor.WriteWhere(finalRenderedTaskReady + new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedTaskReady.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 5, ForegroundColor, PaneItemBackColor);
-                TextWriterWhereColor.WriteWhere(new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedTaskReady.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 6, ForegroundColor, PaneItemBackColor);
-                TextWriterWhereColor.WriteWhere(new string(' ', SeparatorHalfConsoleWidthInterior - finalRenderedTaskReady.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + 7, ForegroundColor, PaneItemBackColor);
+                string finalRenderedTaskName = (Translate.DoTranslation("Task name") + $": {selectedThread.Name}");
+                string finalRenderedTaskAlive = (Translate.DoTranslation("Alive") + $": {selectedThread.IsAlive}");
+                string finalRenderedTaskBackground = (Translate.DoTranslation("Background") + $": {selectedThread.IsBackground}");
+                string finalRenderedTaskCritical = (Translate.DoTranslation("Critical") + $": {selectedThread.IsCritical}");
+                string finalRenderedTaskReady = (Translate.DoTranslation("Ready") + $": {selectedThread.IsReady}");
+                return
+                    finalRenderedTaskName + CharManager.NewLine +
+                    finalRenderedTaskAlive + CharManager.NewLine +
+                    finalRenderedTaskBackground + CharManager.NewLine +
+                    finalRenderedTaskCritical + CharManager.NewLine +
+                    finalRenderedTaskReady
+                ;
             }
+        }
 
-            // Prepare the status
-            Status = Translate.DoTranslation("Ready");
-            string finalInfoRendered = $" {Status}";
-            return finalInfoRendered;
+        /// <inheritdoc/>
+        public override void RenderStatus(object item)
+        {
+            if (osThreadMode)
+            {
+                ProcessThread thread = (ProcessThread)item;
+                if (string.IsNullOrEmpty(taskStatus))
+                    Status = $"{thread.Id}";
+                else
+                    Status = $"{thread.Id} - {taskStatus}";
+            }
+            else
+            {
+                KernelThread thread = (KernelThread)item;
+                if (string.IsNullOrEmpty(taskStatus))
+                    Status = $"{thread.Name}";
+                else
+                    Status = $"{thread.Name} - {taskStatus}";
+            }
+            taskStatus = "";
         }
 
         /// <inheritdoc/>
@@ -175,11 +191,11 @@ namespace KS.Files.Interactive
                 if (!ThreadManager.kernelThreads[id].IsCritical && ThreadManager.kernelThreads[id].IsAlive)
                     ThreadManager.kernelThreads[id].Stop();
                 else if (!ThreadManager.kernelThreads[id].IsAlive)
-                    Status = Translate.DoTranslation("Kernel task is already killed.");
+                    taskStatus = Translate.DoTranslation("Kernel task is already killed.");
                 else
-                    Status = Translate.DoTranslation("Kernel task is critical and can't be killed.");
+                    taskStatus = Translate.DoTranslation("Kernel task is critical and can't be killed.");
             else
-                Status = Translate.DoTranslation("OS threads can't be killed.");
+                taskStatus = Translate.DoTranslation("OS threads can't be killed.");
         }
 
         private static void SwitchMode()

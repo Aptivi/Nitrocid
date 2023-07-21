@@ -37,6 +37,8 @@ namespace KS.Misc.Interactive
     /// </summary>
     public static class InteractiveTuiTools
     {
+
+        private static string _finalInfoRendered = "";
         private static readonly object _interactiveTuiLock = new();
 
         /// <summary>
@@ -66,12 +68,10 @@ namespace KS.Misc.Interactive
 
                         // Draw the second pane
                         if (interactiveTui.SecondPaneInteractable)
-                        {
                             DrawInteractiveTuiItems(interactiveTui, 2);
-                            DrawStatus(interactiveTui);
-                        }
                         else
                             DrawInformationOnSecondPane(interactiveTui);
+                        DrawStatus(interactiveTui);
 
                         // Wait for user input
                         RespondToUserInput(interactiveTui);
@@ -277,6 +277,17 @@ namespace KS.Misc.Interactive
             DebugCheck.Assert(!interactiveTui.SecondPaneInteractable,
                 "tried to render information the secondary pane on an interactive TUI that allows interaction from two panes, messing the selection rendering up there.");
 
+            // Populate some positions
+            int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
+            int SeparatorHalfConsoleWidthInterior = (ConsoleWrapper.WindowWidth / 2) - 2;
+            int SeparatorMinimumHeight = 1;
+            int SeparatorMinimumHeightInterior = 2;
+            int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
+
+            // Populate some colors
+            var ForegroundColor = BaseInteractiveTui.ForegroundColor;
+            var PaneItemBackColor = BaseInteractiveTui.PaneItemBackColor;
+
             // Now, do the job!
             string finalInfoRendered;
             try
@@ -296,10 +307,12 @@ namespace KS.Misc.Interactive
                     object selectedData = GetElementFromIndex(data, paneCurrentSelection - 1);
                     DebugCheck.AssertNull(selectedData,
                         "attempted to render info about null data");
-                    finalInfoRendered = interactiveTui.RenderInfoOnSecondPane(selectedData);
+                    finalInfoRendered = interactiveTui.GetInfoFromItem(selectedData);
                 }
                 else
+                {
                     finalInfoRendered = Translate.DoTranslation("No info.");
+                }
             }
             catch (Exception ex)
             {
@@ -309,8 +322,23 @@ namespace KS.Misc.Interactive
             }
 
             // Now, write info
-            TextWriterWhereColor.WriteWhere(finalInfoRendered.Truncate(ConsoleWrapper.WindowWidth - 3), 0, 0, BaseInteractiveTui.ForegroundColor, BaseInteractiveTui.BackgroundColor);
-            ConsoleExtensions.ClearLineToRight();
+            BorderColor.WriteBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, BaseInteractiveTui.PaneSeparatorColor, BaseInteractiveTui.PaneBackgroundColor);
+            _finalInfoRendered = finalInfoRendered;
+            string[] finalInfoStrings = TextTools.GetWrappedSentences(finalInfoRendered, SeparatorHalfConsoleWidthInterior);
+            for (int infoIndex = 0; infoIndex < finalInfoStrings.Length; infoIndex++)
+            {
+                // Check to see if the info is overpopulated
+                if (infoIndex >= SeparatorMaximumHeightInterior)
+                {
+                    string truncated = Translate.DoTranslation("Truncated information. Press Shift + Esc for more information.");
+                    TextWriterWhereColor.WriteWhere(truncated + new string(' ', SeparatorHalfConsoleWidthInterior - truncated.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + infoIndex, ForegroundColor, PaneItemBackColor);
+                    break;
+                }
+
+                // Now, render the info
+                string finalInfo = finalInfoStrings[infoIndex];
+                TextWriterWhereColor.WriteWhere(finalInfo + new string(' ', SeparatorHalfConsoleWidthInterior - finalInfo.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + infoIndex, ForegroundColor, PaneItemBackColor);
+            }
         }
 
         private static void DrawStatus(BaseInteractiveTui interactiveTui)
@@ -351,14 +379,14 @@ namespace KS.Misc.Interactive
             // Wait for key
             try
             {
-                ConsoleKey pressedKey;
+                ConsoleKeyInfo pressedKey;
                 if (interactiveTui.RefreshInterval == 0 || interactiveTui.SecondPaneInteractable)
-                    pressedKey = Input.DetectKeypress().Key;
+                    pressedKey = Input.DetectKeypress();
                 else
-                    pressedKey = Input.ReadKeyTimeout(true, TimeSpan.FromMilliseconds(interactiveTui.RefreshInterval)).Key;
+                    pressedKey = Input.ReadKeyTimeout(true, TimeSpan.FromMilliseconds(interactiveTui.RefreshInterval));
 
                 // Handle the key
-                switch (pressedKey)
+                switch (pressedKey.Key)
                 {
                     case ConsoleKey.UpArrow:
                         if (BaseInteractiveTui.CurrentPane == 2)
@@ -400,12 +428,21 @@ namespace KS.Misc.Interactive
                         else
                             BaseInteractiveTui.FirstPaneCurrentSelection = dataCount;
                         break;
+                    case ConsoleKey.I:
+                        if (pressedKey.Modifiers.HasFlag(ConsoleModifiers.Shift) && !string.IsNullOrEmpty(_finalInfoRendered))
+                        {
+                            // User needs more information in the infobox
+                            InfoBoxColor.WriteInfoBox(_finalInfoRendered);
+                            BaseInteractiveTui.RedrawRequired = true;
+                        }
+                        break;
                     case ConsoleKey.Escape:
+                        // User needs to exit
                         interactiveTui.HandleExit();
                         interactiveTui.isExiting = true;
                         break;
                     default:
-                        var implementedBindings = interactiveTui.Bindings.Where((binding) => binding.BindingKeyName == pressedKey);
+                        var implementedBindings = interactiveTui.Bindings.Where((binding) => binding.BindingKeyName == pressedKey.Key);
                         foreach (var implementedBinding in implementedBindings)
                             implementedBinding.BindingAction.Invoke(selectedData, paneCurrentSelection - 1);
                         break;
