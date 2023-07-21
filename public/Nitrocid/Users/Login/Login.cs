@@ -112,7 +112,10 @@ namespace KS.Users.Login
 
                     // Parse input
                     if (UserManagement.ValidateUsername(answeruser))
-                        ShowPasswordPrompt(answeruser);
+                    {
+                        if (ShowPasswordPrompt(answeruser))
+                            SignIn(answeruser);
+                    }
                     else
                         TextWriterColor.Write(Translate.DoTranslation("Wrong username or username not found."), true, KernelColorType.Error);
                 }
@@ -125,7 +128,7 @@ namespace KS.Users.Login
         /// Prompts user for password
         /// </summary>
         /// <param name="usernamerequested">A username that is about to be logged in</param>
-        public static void ShowPasswordPrompt(string usernamerequested)
+        public static bool ShowPasswordPrompt(string usernamerequested)
         {
             // Prompts user to enter a user's password
             while (!(Flags.RebootRequested | Flags.KernelShutdown))
@@ -148,28 +151,25 @@ namespace KS.Users.Login
                     string answerpass = Input.ReadLineNoInputUnsafe();
 
                     if (UserManagement.ValidatePassword(usernamerequested, answerpass))
-                    {
-                        SignIn(usernamerequested);
-                        return;
-                    }
+                        return true;
                     else
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Wrong password."), true, KernelColorType.Error);
                         if (!Flags.Maintenance)
                             if (!Screensaver.LockMode)
-                                return;
+                                return false;
                     }
                 }
                 else
                 {
                     // Log-in instantly
                     DebugWriter.WriteDebug(DebugLevel.I, "Password is empty");
-                    SignIn(usernamerequested);
-                    return;
+                    return true;
                 }
             }
 
             Flags.RebootRequested = false;
+            return false;
         }
 
         /// <summary>

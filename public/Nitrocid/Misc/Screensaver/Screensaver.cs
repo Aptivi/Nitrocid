@@ -38,6 +38,7 @@ using KS.Drivers;
 using System.Linq;
 using KS.Users;
 using System.Diagnostics;
+using KS.ConsoleBase;
 
 namespace KS.Misc.Screensaver
 {
@@ -249,14 +250,24 @@ namespace KS.Misc.Screensaver
         public static void LockScreen()
         {
             LockMode = true;
-            ShowSavers();
-            EventsManager.FireEvent(EventType.PreUnlock, DefaultSaverName);
-            while (inSaver)
-                Thread.Sleep(1);
-            if (PasswordLock)
-                Login.ShowPasswordPrompt(UserManagement.CurrentUser.Username);
-            else
-                LockMode = false;
+            try
+            {
+                // Show the screensaver and wait for input
+                ShowSavers();
+                EventsManager.FireEvent(EventType.PreUnlock, DefaultSaverName);
+                SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable);
+
+                // Bail from screensaver and optionally prompt for password
+                ScreensaverDisplayer.BailFromScreensaver();
+                if (PasswordLock)
+                    Login.ShowPasswordPrompt(UserManagement.CurrentUser.Username);
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to lock screen: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
+            LockMode = false;
         }
 
         /// <summary>

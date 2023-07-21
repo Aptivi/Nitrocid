@@ -223,10 +223,21 @@ namespace KS.Kernel
                     else
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Enter the admin password for maintenance."));
-                        if (UserManagement.UserExists("root"))
+                        string user = "root";
+                        if (UserManagement.UserExists(user))
                         {
                             DebugWriter.WriteDebug(DebugLevel.I, "Root account found. Prompting for password...");
-                            Login.ShowPasswordPrompt("root");
+                            for (int tries = 0; tries < 3; tries++)
+                            {
+                                if (Login.ShowPasswordPrompt(user))
+                                    Login.SignIn(user);
+                                else
+                                {
+                                    TextWriterColor.Write(Translate.DoTranslation("Incorrect admin password. You have {0} tries."), 3 - (tries + 1), true, KernelColorType.Error);
+                                    if (tries == 2)
+                                        TextWriterColor.Write(Translate.DoTranslation("Out of chances. Rebooting..."), true, KernelColorType.Error);
+                                }
+                            }
                         }
                         else
                         {
