@@ -663,9 +663,9 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public int WipeMaximumColorLevel { get; set; } = 255;
         /// <summary>
-        /// [Matrix] How many milliseconds to wait before making the next write?
+        /// [SimpleMatrix] How many milliseconds to wait before making the next write?
         /// </summary>
-        public int MatrixDelay { get; set; } = 1;
+        public int SimpleMatrixDelay { get; set; } = 1;
         /// <summary>
         /// [GlitterMatrix] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -2378,5 +2378,13 @@ namespace KS.Kernel.Configuration.Instances
         /// [Aurora] How many milliseconds to wait before making the next write?
         /// </summary>
         public int AuroraDelay { get; set; } = 100;
+        /// <summary>
+        /// [Matrix] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int MatrixDelay { get; set; } = 10;
+        /// <summary>
+        /// [Matrix] How many fade steps to do?
+        /// </summary>
+        public int MatrixMaxSteps { get; set; } = 25;
     }
 }

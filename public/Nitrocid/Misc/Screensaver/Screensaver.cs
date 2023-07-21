@@ -98,6 +98,7 @@ namespace KS.Misc.Screensaver
             { "pulse", new PulseDisplay() },
             { "ramp", new RampDisplay() },
             { "random", new RandomSaverDisplay() },
+            { "simplematrix", new SimpleMatrixDisplay() },
             { "siren", new SirenDisplay() },
             { "snakefill", new SnakeFillDisplay() },
             { "snaker", new SnakerDisplay() },
@@ -112,7 +113,7 @@ namespace KS.Misc.Screensaver
             { "wipe", new WipeDisplay() }
         };
         internal static int scrnTimeout = 300000;
-        internal static string defSaverName = "plain";
+        internal static string defSaverName = "matrix";
         internal static bool LockMode;
         internal static bool inSaver;
         internal static AutoResetEvent SaverAutoReset = new(false);

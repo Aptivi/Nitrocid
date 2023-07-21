@@ -479,7 +479,7 @@
         "WipeMaximumColorLevel": {
             "type": "integer"
         },
-        "MatrixDelay": {
+        "SimpleMatrixDelay": {
             "type": "integer"
         },
         "GlitterMatrixDelay": {
@@ -1765,6 +1765,12 @@
         },
         "AuroraDelay": {
             "type": "integer"
+        },
+        "MatrixDelay": {
+            "type": "integer"
+        },
+        "MatrixMaxSteps": {
+            "type": "integer"
         }
     },
     "required": [
@@ -1927,7 +1933,7 @@
         "WipeMaximumGreenColorLevel",
         "WipeMaximumBlueColorLevel",
         "WipeMaximumColorLevel",
-        "MatrixDelay",
+        "SimpleMatrixDelay",
         "GlitterMatrixDelay",
         "GlitterMatrixBackgroundColor",
         "GlitterMatrixForegroundColor",
@@ -2355,6 +2361,8 @@
         "MesmerizeMaximumGreenColorLevel",
         "MesmerizeMaximumBlueColorLevel",
         "MesmerizeMaximumColorLevel",
-        "AuroraDelay"
+        "AuroraDelay",
+        "MatrixDelay",
+        "MatrixMaxSteps"
     ]
 }

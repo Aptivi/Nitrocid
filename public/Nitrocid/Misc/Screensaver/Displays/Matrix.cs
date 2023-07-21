@@ -17,11 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Collections.Generic;
+using ColorSeq;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
+using KS.Misc.Writers.ConsoleWriters;
+using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Screensaver.Displays
 {
@@ -43,8 +47,24 @@ namespace KS.Misc.Screensaver.Displays
             set
             {
                 if (value <= 0)
-                    value = 1;
+                    value = 10;
                 Config.SaverConfig.MatrixDelay = value;
+            }
+        }
+        /// <summary>
+        /// [Matrix] How many fade steps to do?
+        /// </summary>
+        public static int MatrixMaxSteps
+        {
+            get
+            {
+                return Config.SaverConfig.MatrixMaxSteps;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 25;
+                Config.SaverConfig.MatrixMaxSteps = value;
             }
         }
 
@@ -56,31 +76,81 @@ namespace KS.Misc.Screensaver.Displays
     public class MatrixDisplay : BaseScreensaver, IScreensaver
     {
 
+        private int ColumnLine;
+        private readonly List<(int, int, string)> CoveredPositions = new();
+        private readonly Color foreground = new(ConsoleColors.Green);
+        private readonly Color background = new(ConsoleColors.Black);
+
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Matrix";
 
         /// <inheritdoc/>
-        public override void ScreensaverPreparation()
-        {
-            // Variable preparations
-            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleWrapper.ForegroundColor = ConsoleColor.Green;
-            ConsoleWrapper.Clear();
-        }
-
-        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
-            if (!ConsoleResizeListener.WasResized(false))
+            // Choose the column for the falling line
+            ColumnLine = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
+
+            // Now, determine the fall start and end position
+            int FallStart = 0;
+            int FallEnd = ConsoleWrapper.WindowHeight - 1;
+
+            // Make the line fall down
+            for (int Fall = FallStart; Fall <= FallEnd; Fall++)
             {
-                ConsoleWrapper.Write(RandomDriver.Random(1).ToString());
+                // Check to see if user decided to resize
+                if (ConsoleResizeListener.WasResized(false))
+                    break;
+
+                // Print a block and add the covered position to the list so fading down can be done
+                string renderedNumber = RandomDriver.Random(1).ToString();
+                TextWriterWhereColor.WriteWhere(renderedNumber, ColumnLine, Fall, false, foreground, background);
+                var PositionTuple = (ColumnLine, Fall, renderedNumber);
+                CoveredPositions.Add(PositionTuple);
+
+                // Delay
+                ThreadManager.SleepNoBlock(MatrixSettings.MatrixDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
             }
-            else
+
+            // Fade the line down. Please note that this requires true-color support in the terminal to work properly.
+            for (int StepNum = 0; StepNum <= MatrixSettings.MatrixMaxSteps; StepNum++)
             {
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing...");
-                ConsoleWrapper.Clear();
+                // Check to see if user decided to resize
+                if (ConsoleResizeListener.WasResized(false))
+                    break;
+
+                // Set thresholds
+                double ThresholdRed = foreground.R / (double)MatrixSettings.MatrixMaxSteps;
+                double ThresholdGreen = foreground.G / (double)MatrixSettings.MatrixMaxSteps;
+                double ThresholdBlue = foreground.B / (double)MatrixSettings.MatrixMaxSteps;
+                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0})", ThresholdRed, ThresholdGreen, ThresholdBlue);
+
+                // Set color fade steps
+                int CurrentColorRedOut = (int)Math.Round(foreground.R - ThresholdRed * StepNum);
+                int CurrentColorGreenOut = (int)Math.Round(foreground.G - ThresholdGreen * StepNum);
+                int CurrentColorBlueOut = (int)Math.Round(foreground.B - ThresholdBlue * StepNum);
+                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
+
+                // Get the positions and write the block with new color
+                var CurrentFadeColor = new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
+                foreach ((int, int, string) PositionTuple in CoveredPositions)
+                {
+                    // Check to see if user decided to resize
+                    if (ConsoleResizeListener.WasResized(false))
+                        break;
+
+                    // Actually fade the line out
+                    int PositionLeft = PositionTuple.Item1;
+                    int PositionTop = PositionTuple.Item2;
+                    string renderedNumber = PositionTuple.Item3;
+                    TextWriterWhereColor.WriteWhere(renderedNumber, PositionLeft, PositionTop, false, CurrentFadeColor, background);
+                }
+
+                // Delay
+                ThreadManager.SleepNoBlock(MatrixSettings.MatrixDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
             }
+
+            // Reset covered positions
+            CoveredPositions.Clear();
 
             // Reset resize sync
             ConsoleResizeListener.WasResized();

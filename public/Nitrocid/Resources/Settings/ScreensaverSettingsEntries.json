@@ -1188,14 +1188,14 @@
             }
         ]
     },
-    "Matrix": {
+    "SimpleMatrix": {
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Matrix",
+        "Path": "Screensaver.SimpleMatrix",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
                 "Type": "SInt",
-                "Variable": "MatrixDelay",
+                "Variable": "SimpleMatrixDelay",
                 "Description": "How many milliseconds to wait before making the next write?"
             }
         ]
@@ -4499,6 +4499,24 @@
                 "Type": "SInt",
                 "Variable": "AuroraDelay",
                 "Description": "How many milliseconds to wait before making the next write?"
+            }
+        ]
+    },
+    "Matrix": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Path": "Screensaver.Matrix",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "MatrixDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Max Fade Steps",
+                "Type": "SInt",
+                "Variable": "MatrixMaxSteps",
+                "Description": "How many fade steps to do?"
             }
         ]
     }
