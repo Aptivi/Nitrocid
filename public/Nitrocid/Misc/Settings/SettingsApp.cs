@@ -882,22 +882,27 @@ namespace KS.Misc.Settings
             Results = ConfigTools.FindSetting(SearchFor, SettingsToken, SettingsType);
 
             // Write the settings
-            if (!(Results.Count == 0))
+            if (Results.Count > 0)
             {
-                // Prompt for setting
-                int sel = SelectionStyle.PromptSelection(Translate.DoTranslation("These settings are found. Please select one."), Results, Back);
+                int sel = 0;
+                while (sel != Results.Count + 1)
+                {
+                    // Prompt for setting
+                    sel = SelectionStyle.PromptSelection(Translate.DoTranslation("These settings are found. Please select one."), Results, Back);
 
-                // If pressed back, bail
-                if (sel == Results.Count + 1)
-                    return;
+                    // If pressed back, bail
+                    if (sel == Results.Count + 1 && sel == -1)
+                        break;
 
-                // Go to setting
-                var ChosenSetting = Results[sel - 1];
-                int SectionIndex = Convert.ToInt32(ChosenSetting.ChoiceName.Split('/')[0]) - 1;
-                int KeyNumber = Convert.ToInt32(ChosenSetting.ChoiceName.Split('/')[1]);
-                JProperty Section = (JProperty)SettingsToken.ToList()[SectionIndex];
-                string SectionName = Section.Name;
-                OpenKey(SectionName, KeyNumber, SettingsToken, SettingsType);
+                    // Go to setting
+                    var ChosenSetting = Results[sel - 1];
+                    int SectionIndex = Convert.ToInt32(ChosenSetting.ChoiceName.Split('/')[0]) - 1;
+                    int KeyNumber = Convert.ToInt32(ChosenSetting.ChoiceName.Split('/')[1]);
+                    JProperty Section = (JProperty)SettingsToken.ToList()[SectionIndex];
+                    string SectionName = Section.Name;
+                    OpenKey(SectionName, KeyNumber, SettingsToken, SettingsType);
+                    Results = ConfigTools.FindSetting(SearchFor, SettingsToken, SettingsType);
+                }
             }
             else
             {
