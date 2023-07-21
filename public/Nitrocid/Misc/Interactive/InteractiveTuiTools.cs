@@ -432,7 +432,7 @@ namespace KS.Misc.Interactive
                         if (pressedKey.Modifiers.HasFlag(ConsoleModifiers.Shift) && !string.IsNullOrEmpty(_finalInfoRendered))
                         {
                             // User needs more information in the infobox
-                            InfoBoxColor.WriteInfoBox(_finalInfoRendered);
+                            InfoBoxColor.WriteInfoBox(_finalInfoRendered, BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
                             BaseInteractiveTui.RedrawRequired = true;
                         }
                         break;

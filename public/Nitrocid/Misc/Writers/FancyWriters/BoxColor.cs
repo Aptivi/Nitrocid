@@ -76,8 +76,9 @@ namespace KS.Misc.Writers.FancyWriters
         {
             try
             {
-                SetConsoleColor(BoxColor, true, true);
-                WriteBoxPlain(Left, Top, InteriorWidth, InteriorHeight);
+                // Fill the box with spaces inside it
+                for (int y = 1; y <= InteriorHeight; y++)
+                    TextWriterWhereColor.WriteWhere(new string(' ', InteriorWidth), Left, Top + y, true, Color.Empty, GetColor(BoxColor));
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -98,8 +99,9 @@ namespace KS.Misc.Writers.FancyWriters
         {
             try
             {
-                SetConsoleColor(new Color(BoxColor), true, true);
-                WriteBoxPlain(Left, Top, InteriorWidth, InteriorHeight);
+                // Fill the box with spaces inside it
+                for (int y = 1; y <= InteriorHeight; y++)
+                    TextWriterWhereColor.WriteWhere(new string(' ', InteriorWidth), Left, Top + y, true, Color.Empty, new Color(BoxColor));
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -120,8 +122,9 @@ namespace KS.Misc.Writers.FancyWriters
         {
             try
             {
-                SetConsoleColor(BoxColor, true, true);
-                WriteBoxPlain(Left, Top, InteriorWidth, InteriorHeight);
+                // Fill the box with spaces inside it
+                for (int y = 1; y <= InteriorHeight; y++)
+                    TextWriterWhereColor.WriteWhere(new string(' ', InteriorWidth), Left, Top + y, true, Color.Empty, BoxColor);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
