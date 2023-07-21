@@ -78,7 +78,7 @@
   <!-- KS Dependencies Information -->
   <ItemGroup>
     <PackageReference Include="Addresstigator" Version="0.1.0.3" />
-    <PackageReference Include="ColorPrint.Core" Version="1.1.1" />
+    <PackageReference Include="ColorPrint.Core" Version="1.2.0" />
     <PackageReference Include="ColorSeq" Version="1.4.0" />
     <PackageReference Include="Crc32.NET" Version="1.2.0" />
     <PackageReference Include="Dictify" Version="1.0.0.2" />
