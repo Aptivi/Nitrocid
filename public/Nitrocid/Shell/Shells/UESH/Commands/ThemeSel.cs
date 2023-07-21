@@ -43,63 +43,69 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            // Selected theme null for now
-            string selectedTheme = ListArgsOnly.Length > 0 ? ListArgsOnly[0] : "";
-            if (ListArgsOnly.Length == 0)
+            string answer = "";
+            string selectedTheme = "";
+            string ThemePath = "";
+
+            while (answer != "y")
             {
-                // Let the user select a theme
-                List<InputChoiceInfo> themeChoices = new();
-                foreach (string theme in ThemeTools.Themes.Keys)
+                // Selected theme null for now
+                selectedTheme = ListArgsOnly.Length > 0 ? ListArgsOnly[0] : "";
+                if (ListArgsOnly.Length == 0)
                 {
-                    var ici = new InputChoiceInfo(theme, ThemeTools.Themes[theme].Name, ThemeTools.Themes[theme].Description);
-                    themeChoices.Add(ici);
+                    // Let the user select a theme
+                    List<InputChoiceInfo> themeChoices = new();
+                    foreach (string theme in ThemeTools.Themes.Keys)
+                    {
+                        var ici = new InputChoiceInfo(theme, ThemeTools.Themes[theme].Name, ThemeTools.Themes[theme].Description);
+                        themeChoices.Add(ici);
+                    }
+                    int colorIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a theme"), themeChoices) - 1;
+
+                    // If the color index is -2, exit. PromptSelection returns -1 if ESC is pressed to cancel selecting. However, the index just decreases to -2
+                    // even if that PromptSelection returned the abovementioned value, so bail if index is -2
+                    if (colorIndex == -2)
+                        return;
+
+                    // Get the theme name from index
+                    selectedTheme = ThemeTools.Themes.Keys.ElementAt(colorIndex);
                 }
-                int colorIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a theme"), themeChoices) - 1;
 
-                // If the color index is -2, exit. PromptSelection returns -1 if ESC is pressed to cancel selecting. However, the index just decreases to -2
-                // even if that PromptSelection returned the abovementioned value, so bail if index is -2
-                if (colorIndex == -2)
-                    return;
-
-                // Get the theme name from index
-                selectedTheme = ThemeTools.Themes.Keys.ElementAt(colorIndex);
-            }
-
-            // Load the theme to the instance
-            string ThemePath = Filesystem.NeutralizePath(selectedTheme);
-            ThemeInfo Theme;
-            if (Checking.FileExists(ThemePath))
-            {
-                var ThemeStream = new StreamReader(ThemePath);
-                Theme = new ThemeInfo(ThemeStream);
-            }
-            else
-                Theme = ThemeTools.GetThemeInfo(selectedTheme);
-
-            // Now, preview the theme
-            ThemeTools.PreviewTheme(Theme);
-            TextWriterColor.Write();
-
-            // Pause until a key is pressed
-            string answer = ChoiceStyle.PromptChoice(
-                TextTools.FormatString(Translate.DoTranslation("Would you like to set this theme to {0}?"), selectedTheme), "y/n",
-                new[] { Translate.DoTranslation("Yes, set it!"), Translate.DoTranslation("No, don't set it.") },
-                ChoiceStyle.ChoiceOutputType.Modern
-            );
-            if (answer == "y")
-            {
-                // User answered yes, so set it
+                // Load the theme to the instance
+                ThemePath = Filesystem.NeutralizePath(selectedTheme);
+                ThemeInfo Theme;
                 if (Checking.FileExists(ThemePath))
-                    ThemeTools.ApplyThemeFromFile(ThemePath);
+                {
+                    var ThemeStream = new StreamReader(ThemePath);
+                    Theme = new ThemeInfo(ThemeStream);
+                }
                 else
-                    ThemeTools.ApplyThemeFromResources(selectedTheme);
+                    Theme = ThemeTools.GetThemeInfo(selectedTheme);
 
-                // Save it to configuration
-                Config.CreateConfig();
+                // Now, preview the theme
+                ThemeTools.PreviewTheme(Theme);
+                TextWriterColor.Write();
+
+                // Pause until a key is pressed
+                answer = ChoiceStyle.PromptChoice(
+                    TextTools.FormatString(Translate.DoTranslation("Would you like to set this theme to {0}?"), selectedTheme), "y/n",
+                    new[] { Translate.DoTranslation("Yes, set it!"), Translate.DoTranslation("No, don't set it.") },
+                    ChoiceStyle.ChoiceOutputType.Modern
+                );
             }
+
+            // User answered yes, so set it
+            if (Checking.FileExists(ThemePath))
+                ThemeTools.ApplyThemeFromFile(ThemePath);
+            else
+                ThemeTools.ApplyThemeFromResources(selectedTheme);
+
+            // Save it to configuration
+            Config.CreateConfig();
         }
 
-        public override void HelpHelper() => TextWriterColor.Write("<Theme>: ThemeName.json, " + string.Join(", ", ThemeTools.Themes.Keys));
+        public override void HelpHelper() =>
+            TextWriterColor.Write("<Theme>: ThemeName.json, " + string.Join(", ", ThemeTools.Themes.Keys));
 
     }
 }
