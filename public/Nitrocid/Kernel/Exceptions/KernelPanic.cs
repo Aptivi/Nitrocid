@@ -39,8 +39,6 @@ namespace KS.Kernel.Exceptions
     {
         internal static Exception LastKernelErrorException;
 
-        // ----------------------------------------------- Kernel errors -----------------------------------------------
-
         /// <summary>
         /// Indicates that there's something wrong with the kernel.
         /// </summary>

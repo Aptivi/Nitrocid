@@ -47,14 +47,6 @@ using KS.ConsoleBase.Inputs;
 using KS.Misc.Contacts;
 using KS.Network.Base.Connections;
 
-#if SPECIFIERREL
-using static KS.Misc.Notifications.NotificationManager;
-using KS.Files;
-using KS.Files.Querying;
-using KS.Network.Base;
-using KS.Network.Base.Transfer;
-#endif
-
 namespace KS.Kernel
 {
     /// <summary>
@@ -102,7 +94,6 @@ namespace KS.Kernel
         internal readonly static string ConsoleTitle = $"Nitrocid Kernel v{KernelVersion} {ReleaseSpecifier} (API v{KernelApiVersion})";
 #endif
 
-        // ----------------------------------------------- Init and reset -----------------------------------------------
         /// <summary>
         /// Reset everything for the next restart
         /// </summary>
@@ -247,99 +238,6 @@ namespace KS.Kernel
 
             // Load system env vars and convert them
             UESHVariables.ConvertSystemEnvironmentVariables();
-        }
-
-        // ----------------------------------------------- Misc -----------------------------------------------
-
-        /// <summary>
-        /// Reports the new kernel stage
-        /// </summary>
-        /// <param name="StageNumber">The stage number</param>
-        /// <param name="StageText">The stage text</param>
-        internal static void ReportNewStage(int StageNumber, string StageText)
-        {
-            // Show the stage finish times
-            if (StageNumber <= 1)
-            {
-                if (Flags.ShowStageFinishTimes)
-                {
-                    SplashReport.ReportProgress(Translate.DoTranslation("Internal initialization finished in") + $" {StageTimer.Elapsed}", 0);
-                    StageTimer.Restart();
-                }
-            }
-            else if (StageNumber >= 5)
-            {
-                if (Flags.ShowStageFinishTimes)
-                {
-                    SplashReport.ReportProgress(Translate.DoTranslation("Stage finished in") + $" {StageTimer.Elapsed}", 10);
-                    StageTimer.Reset();
-                    TextWriterColor.Write();
-                }
-            }
-            else if (Flags.ShowStageFinishTimes)
-            {
-                SplashReport.ReportProgress(Translate.DoTranslation("Stage finished in") + $" {StageTimer.Elapsed}", 10);
-                StageTimer.Restart();
-            }
-
-            // Actually report the stage
-            if (StageNumber >= 1 & StageNumber <= 4)
-            {
-                if (!Flags.EnableSplash & !Flags.QuietKernel)
-                {
-                    TextWriterColor.Write();
-                    SeparatorWriterColor.WriteSeparator(StageText, false, KernelColorType.Stage);
-                }
-                DebugWriter.WriteDebug(DebugLevel.I, $"- Kernel stage {StageNumber} | Text: {StageText}");
-            }
-        }
-
-        /// <summary>
-        /// Checks for debug symbols and downloads it if not found. It'll be auto-loaded upon download.
-        /// </summary>
-        internal static void CheckDebugSymbols()
-        {
-#if SPECIFIERREL
-			if (!NetworkTools.NetworkAvailable)
-			{
-				NotifySend(new Notification(Translate.DoTranslation("No network while downloading debug data"), Translate.DoTranslation("Check your internet connection and try again."), NotifPriority.Medium, NotifType.Normal));
-			}
-			if (NetworkTools.NetworkAvailable)
-			{
-				//Check to see if we're running from Ubuntu PPA
-				bool PPASpotted = Paths.ExecPath.StartsWith("/usr/lib/ks");
-				if (PPASpotted)
-					SplashReport.ReportProgressError(Translate.DoTranslation("Use apt to update Nitrocid KS."));
-
-				//Download debug symbols
-				if (!Checking.FileExists(Assembly.GetExecutingAssembly().Location.Replace(".exe", ".pdb")) & !PPASpotted)
-				{
-					try
-					{
-						NetworkTransfer.DownloadFile($"https://github.com/Aptivi/NitrocidKS/releases/download/v{KernelVersion}-beta/{KernelVersion}.pdb", Assembly.GetExecutingAssembly().Location.Replace(".exe", ".pdb"));
-					}
-					catch (Exception)
-					{
-						NotifySend(new Notification(Translate.DoTranslation("Error downloading debug data"), Translate.DoTranslation("There is an error while downloading debug data. Check your internet connection."), NotifPriority.Medium, NotifType.Normal));
-					}
-				}
-			}
-#endif
-        }
-
-        internal static void ShowDevelopmentDisclaimer()
-        {
-            // Show development disclaimer
-#if SPECIFIERDEV
-            TextWriterColor.Write();
-            TextWriterColor.Write("* " + Translate.DoTranslation("You're running the development version of the kernel. While you can experience upcoming features which may exist in the final release, you may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible."), true, KernelColorType.DevelopmentWarning);
-#elif SPECIFIERRC
-            TextWriterColor.Write();
-            TextWriterColor.Write("* " + Translate.DoTranslation("You're running the release candidate version of the kernel. While you can experience the final touches, you may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible."), true, KernelColorType.DevelopmentWarning);
-#elif SPECIFIERREL == false
-            TextWriterColor.Write();
-            TextWriterColor.Write("* " + Translate.DoTranslation("We recommend against running this version of the kernel, because it is unsupported. If you have downloaded this kernel from unknown sources, this message may appear. Please download from our official downloads page."), true, KernelColorType.DevelopmentWarning);
-#endif
         }
 
     }

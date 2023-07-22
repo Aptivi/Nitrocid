@@ -50,6 +50,7 @@ using KS.ConsoleBase.Colors;
 using KS.Misc.Screensaver.Customized;
 using KS.Kernel.Power;
 using KS.Users.Groups;
+using KS.Kernel.Debugging.Trace;
 
 namespace KS.Kernel
 {
@@ -101,7 +102,7 @@ namespace KS.Kernel
                     JournalManager.JournalPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Journalling)), Paths.GetKernelPath(KernelPathType.Journalling));
 
                     // Download debug symbols if not found (loads automatically, useful for debugging problems and stack traces)
-                    KernelTools.CheckDebugSymbols();
+                    DebugSymbolsTools.CheckDebugSymbols();
 
                     // Check for console size
                     if (Flags.CheckingForConsoleSize)
@@ -123,7 +124,7 @@ namespace KS.Kernel
                     CheckErrored();
 
                     // Stage 1: Initialize the system
-                    KernelTools.ReportNewStage(1, Translate.DoTranslation("- Stage 1: System initialization"));
+                    SplashReport.ReportNewStage(1, Translate.DoTranslation("- Stage 1: System initialization"));
                     if (RemoteDebugger.RDebugAutoStart & Flags.DebugMode)
                     {
                         SplashReport.ReportProgress(Translate.DoTranslation("Starting the remote debugger..."), 3);
@@ -158,7 +159,7 @@ namespace KS.Kernel
                         UpdateManager.CheckKernelUpdates();
 
                     // Phase 2: Probe hardware
-                    KernelTools.ReportNewStage(2, Translate.DoTranslation("- Stage 2: Hardware detection"));
+                    SplashReport.ReportNewStage(2, Translate.DoTranslation("- Stage 2: Hardware detection"));
                     if (!Flags.QuietHardwareProbe)
                         SplashReport.ReportProgress(Translate.DoTranslation("hwprobe: Your hardware will be probed. Please wait..."), 15);
                     HardwareProbe.StartProbing();
@@ -167,7 +168,7 @@ namespace KS.Kernel
                     CheckErrored();
 
                     // Phase 3: Parse Mods and Screensavers
-                    KernelTools.ReportNewStage(3, Translate.DoTranslation("- Stage 3: Mods and screensavers detection"));
+                    SplashReport.ReportNewStage(3, Translate.DoTranslation("- Stage 3: Mods and screensavers detection"));
                     DebugWriter.WriteDebug(DebugLevel.I, "Safe mode flag is set to {0}", Flags.SafeMode);
                     if (!Flags.SafeMode)
                     {
@@ -184,7 +185,7 @@ namespace KS.Kernel
                     EventsManager.FireEvent(EventType.StartKernel);
 
                     // Phase 4: Log-in
-                    KernelTools.ReportNewStage(4, Translate.DoTranslation("- Stage 4: Log in"));
+                    SplashReport.ReportNewStage(4, Translate.DoTranslation("- Stage 4: Log in"));
                     UserManagement.InitializeUsers();
                     GroupManagement.InitializeGroups();
                     SplashReport.ReportProgress(Translate.DoTranslation("Users initialized"), 5);
@@ -193,7 +194,7 @@ namespace KS.Kernel
                     CheckErrored();
 
                     // Reset console state and stop stage timer
-                    KernelTools.ReportNewStage(5, "");
+                    SplashReport.ReportNewStage(5, "");
 
                     // Show the closing screen
                     SplashReport.ReportProgress(Translate.DoTranslation("Welcome!"), 100);

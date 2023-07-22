@@ -213,8 +213,7 @@ namespace KS.Users.Login
             WelcomeMessage.WriteLicense();
 
             // Show development disclaimer
-            KernelTools.ShowDevelopmentDisclaimer();
-            TextWriterColor.Write();
+            WelcomeMessage.ShowDevelopmentDisclaimer();
 
             // Show MOTD
             Flags.ShowMOTDOnceFlag = true;

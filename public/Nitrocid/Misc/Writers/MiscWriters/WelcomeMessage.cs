@@ -105,5 +105,23 @@ namespace KS.Misc.Writers.MiscWriters
             TextWriterColor.Write("* " + Translate.DoTranslation("For more information about the terms and conditions of using this software, visit") + " http://www.gnu.org/licenses/", true, KernelColorType.License);
         }
 
+        internal static void ShowDevelopmentDisclaimer()
+        {
+            // Show development disclaimer
+#if SPECIFIERDEV
+            TextWriterColor.Write();
+            TextWriterColor.Write("* " + Translate.DoTranslation("You're running the development version of the kernel. While you can experience upcoming features which may exist in the final release, you may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible."), true, KernelColorType.DevelopmentWarning);
+            TextWriterColor.Write();
+#elif SPECIFIERRC
+            TextWriterColor.Write();
+            TextWriterColor.Write("* " + Translate.DoTranslation("You're running the release candidate version of the kernel. While you can experience the final touches, you may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible."), true, KernelColorType.DevelopmentWarning);
+            TextWriterColor.Write();
+#elif SPECIFIERREL == false
+            TextWriterColor.Write();
+            TextWriterColor.Write("* " + Translate.DoTranslation("We recommend against running this version of the kernel, because it is unsupported. If you have downloaded this kernel from unknown sources, this message may appear. Please download from our official downloads page."), true, KernelColorType.DevelopmentWarning);
+            TextWriterColor.Write();
+#endif
+        }
+
     }
 }
