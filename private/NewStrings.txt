@@ -744,5 +744,6 @@ Incorrect admin password. You have {0} tries.
 Out of chances. Rebooting...
 A general command manager error occurred. Check to make sure that you've written the command or the shell type correctly.
 Command not found.
+You must not directly execute this command in a wrapped mode.
 
 ==========================================================================================================================================
