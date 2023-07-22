@@ -1663,5 +1663,61 @@ namespace KS.Kernel.Configuration.Instances
         /// Shows all new notifications as asterisks. This option is ignored in notifications with progress bar.
         /// </summary>
         public bool NotifyDisplayAsAsterisk { get; set; }
+        /// <summary>
+        /// Interactive TUI background color
+        /// </summary>
+        public string TuiBackgroundColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.DarkBlue)).PlainSequence;
+        /// <summary>
+        /// Interactive TUI foreground color
+        /// </summary>
+        public string TuiForegroundColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.Yellow)).PlainSequence;
+        /// <summary>
+        /// Interactive TUI pane background color
+        /// </summary>
+        public string TuiPaneBackgroundColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.Blue3)).PlainSequence;
+        /// <summary>
+        /// Interactive TUI pane separator color
+        /// </summary>
+        public string TuiPaneSeparatorColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.DarkGreen_005f00)).PlainSequence;
+        /// <summary>
+        /// Interactive TUI selected pane separator color
+        /// </summary>
+        public string TuiPaneSelectedSeparatorColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.Green3_00d700)).PlainSequence;
+        /// <summary>
+        /// Interactive TUI selected pane item foreground color
+        /// </summary>
+        public string TuiPaneSelectedItemForeColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.Yellow)).PlainSequence;
+        /// <summary>
+        /// Interactive TUI selected pane item background color
+        /// </summary>
+        public string TuiPaneSelectedItemBackColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.DarkBlue)).PlainSequence;
+        /// <summary>
+        /// Interactive TUI pane item foreground color
+        /// </summary>
+        public string TuiPaneItemForeColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.DarkYellow)).PlainSequence;
+        /// <summary>
+        /// Interactive TUI pane item background color
+        /// </summary>
+        public string TuiPaneItemBackColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.Blue3)).PlainSequence;
+        /// <summary>
+        /// Interactive TUI option background color
+        /// </summary>
+        public string TuiOptionBackgroundColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.DarkCyan)).PlainSequence;
+        /// <summary>
+        /// Interactive TUI option foreground color
+        /// </summary>
+        public string TuiOptionForegroundColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.Black)).PlainSequence;
+        /// <summary>
+        /// Interactive TUI option binding name color
+        /// </summary>
+        public string TuiKeyBindingOptionColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.Cyan)).PlainSequence;
+        /// <summary>
+        /// Interactive TUI box background color
+        /// </summary>
+        public string TuiBoxBackgroundColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.Red)).PlainSequence;
+        /// <summary>
+        /// Interactive TUI box foreground color
+        /// </summary>
+        public string TuiBoxForegroundColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.White)).PlainSequence;
     }
 }

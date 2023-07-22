@@ -745,5 +745,17 @@ Out of chances. Rebooting...
 A general command manager error occurred. Check to make sure that you've written the command or the shell type correctly.
 Command not found.
 You must not directly execute this command in a wrapped mode.
+Interactive TUI background color
+Interactive TUI foreground color
+Interactive TUI pane background color
+Interactive TUI pane separator color
+Interactive TUI selected pane separator color
+Interactive TUI selected pane item foreground color
+Interactive TUI selected pane item background color
+Interactive TUI pane item foreground color
+Interactive TUI pane item background color
+Interactive TUI option background color
+Interactive TUI option foreground color
+Interactive TUI option binding name color
 
 ==========================================================================================================================================

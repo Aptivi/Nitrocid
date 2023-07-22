@@ -55,31 +55,31 @@ namespace KS.Misc.Interactive
         public virtual IEnumerable SecondaryDataSource => Array.Empty<string>();
 
         /// <inheritdoc/>
-        public static Color BackgroundColor => new(Convert.ToInt32(ConsoleColors.DarkBlue));
+        public static Color BackgroundColor => InteractiveTuiColors.TuiBackgroundColor;
         /// <inheritdoc/>
-        public static Color ForegroundColor => new(Convert.ToInt32(ConsoleColors.Yellow));
+        public static Color ForegroundColor => InteractiveTuiColors.TuiForegroundColor;
         /// <inheritdoc/>
-        public static Color PaneBackgroundColor => new(Convert.ToInt32(ConsoleColors.Blue3));
+        public static Color PaneBackgroundColor => InteractiveTuiColors.TuiPaneBackgroundColor;
         /// <inheritdoc/>
-        public static Color PaneSeparatorColor => new(Convert.ToInt32(ConsoleColors.DarkGreen_005f00));
+        public static Color PaneSeparatorColor => InteractiveTuiColors.TuiPaneSeparatorColor;
         /// <inheritdoc/>
-        public static Color PaneSelectedItemForeColor => new(Convert.ToInt32(ConsoleColors.Yellow));
+        public static Color PaneSelectedItemForeColor => InteractiveTuiColors.TuiPaneSelectedItemForeColor;
         /// <inheritdoc/>
-        public static Color PaneSelectedItemBackColor => new(Convert.ToInt32(ConsoleColors.DarkBlue));
+        public static Color PaneSelectedItemBackColor => InteractiveTuiColors.TuiPaneSelectedItemBackColor;
         /// <inheritdoc/>
-        public static Color PaneItemForeColor => new(Convert.ToInt32(ConsoleColors.DarkYellow));
+        public static Color PaneItemForeColor => InteractiveTuiColors.TuiPaneItemForeColor;
         /// <inheritdoc/>
-        public static Color PaneItemBackColor => new(Convert.ToInt32(ConsoleColors.Blue3));
+        public static Color PaneItemBackColor => InteractiveTuiColors.TuiPaneItemBackColor;
         /// <inheritdoc/>
-        public static Color OptionBackgroundColor => new(Convert.ToInt32(ConsoleColors.DarkCyan));
+        public static Color OptionBackgroundColor => InteractiveTuiColors.TuiOptionBackgroundColor;
         /// <inheritdoc/>
-        public static Color KeyBindingOptionColor => new(Convert.ToInt32(ConsoleColors.Black));
+        public static Color KeyBindingOptionColor => InteractiveTuiColors.TuiKeyBindingOptionColor;
         /// <inheritdoc/>
-        public static Color OptionForegroundColor => new(Convert.ToInt32(ConsoleColors.Cyan));
+        public static Color OptionForegroundColor => InteractiveTuiColors.TuiOptionForegroundColor;
         /// <inheritdoc/>
-        public static Color BoxBackgroundColor => new(Convert.ToInt32(ConsoleColors.Red));
+        public static Color BoxBackgroundColor => InteractiveTuiColors.TuiBoxBackgroundColor;
         /// <inheritdoc/>
-        public static Color BoxForegroundColor => new(Convert.ToInt32(ConsoleColors.White));
+        public static Color BoxForegroundColor => InteractiveTuiColors.TuiBoxForegroundColor;
 
         /// <inheritdoc/>
         public virtual string GetEntryFromItem(object item) =>
