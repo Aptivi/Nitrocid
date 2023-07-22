@@ -63,6 +63,8 @@ namespace KS.Misc.Interactive
         /// <inheritdoc/>
         public static Color PaneSeparatorColor => InteractiveTuiColors.TuiPaneSeparatorColor;
         /// <inheritdoc/>
+        public static Color PaneSelectedSeparatorColor => InteractiveTuiColors.TuiPaneSelectedSeparatorColor;
+        /// <inheritdoc/>
         public static Color PaneSelectedItemForeColor => InteractiveTuiColors.TuiPaneSelectedItemForeColor;
         /// <inheritdoc/>
         public static Color PaneSelectedItemBackColor => InteractiveTuiColors.TuiPaneSelectedItemBackColor;

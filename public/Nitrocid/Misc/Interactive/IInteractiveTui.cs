@@ -87,6 +87,10 @@ namespace KS.Misc.Interactive
         /// </summary>
         public static Color PaneSeparatorColor { get; }
         /// <summary>
+        /// Interactive TUI pane selected separator color
+        /// </summary>
+        public static Color PaneSelectedSeparatorColor { get; }
+        /// <summary>
         /// Interactive TUI pane selected item color (foreground)
         /// </summary>
         public static Color PaneSelectedItemForeColor { get; }

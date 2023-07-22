@@ -175,8 +175,10 @@ namespace KS.Misc.Interactive
                 //       |   and d is the dimension for the second pane interior upper left corner (SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior (usually 2))
 
                 // First, the horizontal and vertical separators
-                BorderColor.WriteBorder(0, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, BaseInteractiveTui.PaneSeparatorColor, BaseInteractiveTui.PaneBackgroundColor);
-                BorderColor.WriteBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, BaseInteractiveTui.PaneSeparatorColor, BaseInteractiveTui.PaneBackgroundColor);
+                var finalForeColorFirstPane  = BaseInteractiveTui.CurrentPane == 1 ? BaseInteractiveTui.PaneSelectedSeparatorColor : BaseInteractiveTui.PaneSeparatorColor;
+                var finalForeColorSecondPane = BaseInteractiveTui.CurrentPane == 2 ? BaseInteractiveTui.PaneSelectedSeparatorColor : BaseInteractiveTui.PaneSeparatorColor;
+                BorderColor.WriteBorder(0, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, finalForeColorFirstPane, BaseInteractiveTui.PaneBackgroundColor);
+                BorderColor.WriteBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, finalForeColorSecondPane, BaseInteractiveTui.PaneBackgroundColor);
 
                 // Render the key bindings
                 ConsoleWrapper.CursorLeft = 0;
@@ -322,7 +324,8 @@ namespace KS.Misc.Interactive
             }
 
             // Now, write info
-            BorderColor.WriteBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, BaseInteractiveTui.PaneSeparatorColor, BaseInteractiveTui.PaneBackgroundColor);
+            var finalForeColorSecondPane = BaseInteractiveTui.CurrentPane == 2 ? BaseInteractiveTui.PaneSelectedSeparatorColor : BaseInteractiveTui.PaneSeparatorColor;
+            BorderColor.WriteBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, finalForeColorSecondPane, BaseInteractiveTui.PaneBackgroundColor);
             _finalInfoRendered = finalInfoRendered;
             string[] finalInfoStrings = TextTools.GetWrappedSentences(finalInfoRendered, SeparatorHalfConsoleWidthInterior);
             for (int infoIndex = 0; infoIndex < finalInfoStrings.Length; infoIndex++)

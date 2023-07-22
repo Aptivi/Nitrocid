@@ -44,6 +44,10 @@ namespace KS.Files.Interactive
         /// </summary>
         public static Color FileManagerPaneSeparatorColor { get; set; } = new(Config.MainConfig.FileManagerPaneSeparatorColor);
         /// <summary>
+        /// File manager selected pane separator color
+        /// </summary>
+        public static Color FileManagerPaneSelectedSeparatorColor { get; set; } = new(Config.MainConfig.FileManagerPaneSelectedSeparatorColor);
+        /// <summary>
         /// File manager pane selected Files color (foreground)
         /// </summary>
         public static Color FileManagerPaneSelectedFileForeColor { get; set; } = new(Config.MainConfig.FileManagerPaneSelectedFileForeColor);

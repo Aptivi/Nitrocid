@@ -757,5 +757,6 @@ Interactive TUI pane item background color
 Interactive TUI option background color
 Interactive TUI option foreground color
 Interactive TUI option binding name color
+Interactive TUI pane selected separator color
 
 ==========================================================================================================================================

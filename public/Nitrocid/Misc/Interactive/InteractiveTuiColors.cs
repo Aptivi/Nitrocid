@@ -43,6 +43,10 @@ namespace KS.Misc.Interactive
         /// </summary>
         public static Color TuiPaneSeparatorColor { get; set; } = new(Config.MainConfig.TuiPaneSeparatorColor);
         /// <summary>
+        /// Interactive TUI pane selected separator color
+        /// </summary>
+        public static Color TuiPaneSelectedSeparatorColor { get; set; } = new(Config.MainConfig.TuiPaneSelectedSeparatorColor);
+        /// <summary>
         /// Interactive TUI pane selected item color (foreground)
         /// </summary>
         public static Color TuiPaneSelectedItemForeColor { get; set; } = new(Config.MainConfig.TuiPaneSelectedItemForeColor);
