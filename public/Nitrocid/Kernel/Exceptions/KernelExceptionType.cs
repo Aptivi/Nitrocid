@@ -371,5 +371,9 @@ namespace KS.Kernel.Exceptions
         /// A general HTTP network error occurred. Check to make sure that your internet connection is working.
         /// </summary>
         HTTPNetwork,
+        /// <summary>
+        /// A general command manager error occurred. Check to make sure that you've written the command or the shell type correctly.
+        /// </summary>
+        CommandManager,
     }
 }

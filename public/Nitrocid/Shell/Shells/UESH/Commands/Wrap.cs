@@ -59,7 +59,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
 
             // Now, check to see if the command is wrappable
-            if (!CommandManager.GetCommands(currentType)[CommandToBeWrapped].Flags.HasFlag(CommandFlags.Wrappable))
+            if (!CommandManager.GetCommand(CommandToBeWrapped, currentType).Flags.HasFlag(CommandFlags.Wrappable))
             {
                 var WrappableCmds = new List<string>();
                 foreach (CommandInfo CommandInfo in Shell.GetShellInfo(ShellType.Shell).Commands.Values)

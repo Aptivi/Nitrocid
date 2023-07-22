@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
+using KS.Languages;
 using KS.Shell.ShellBase.Shells;
 using System.Collections.Generic;
 
@@ -33,13 +35,8 @@ namespace KS.Shell.ShellBase.Commands
         /// <param name="Command">A command</param>
         /// <param name="ShellType">The shell type</param>
         /// <returns>True if found; False if not found or shell type is invalid.</returns>
-        public static bool IsCommandFound(string Command, ShellType ShellType)
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, ShellType: {1}", Command, ShellType);
-            if (Shell.UnifiedCommandDict.ContainsKey(Command))
-                return true;
-            return GetCommands(ShellType).ContainsKey(Command);
-        }
+        public static bool IsCommandFound(string Command, ShellType ShellType) =>
+            IsCommandFound(Command, Shell.GetShellTypeName(ShellType));
 
         /// <summary>
         /// Checks to see if the command is found in selected shell command type
@@ -81,7 +78,8 @@ namespace KS.Shell.ShellBase.Commands
         /// Gets the command dictionary according to the shell type
         /// </summary>
         /// <param name="ShellType">The shell type</param>
-        public static Dictionary<string, CommandInfo> GetCommands(ShellType ShellType) => GetCommands(Shell.GetShellTypeName(ShellType));
+        public static Dictionary<string, CommandInfo> GetCommands(ShellType ShellType) =>
+            GetCommands(Shell.GetShellTypeName(ShellType));
 
         /// <summary>
         /// Gets the command dictionary according to the shell type
@@ -101,6 +99,32 @@ namespace KS.Shell.ShellBase.Commands
             }
 
             return FinalCommands;
+        }
+
+        /// <summary>
+        /// Gets a command, specified by the shell type
+        /// </summary>
+        /// <param name="Command">A command</param>
+        /// <param name="ShellType">The shell type</param>
+        /// <returns>A <see cref="CommandInfo"/> instance of a specified command</returns>
+        public static CommandInfo GetCommand(string Command, ShellType ShellType) =>
+            GetCommand(Command, Shell.GetShellTypeName(ShellType));
+
+        /// <summary>
+        /// Gets a command, specified by the shell type
+        /// </summary>
+        /// <param name="Command">A command</param>
+        /// <param name="ShellType">The shell type name</param>
+        /// <returns>True if found; False if not found or shell type is invalid.</returns>
+        public static CommandInfo GetCommand(string Command, string ShellType)
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, ShellType: {1}", Command, ShellType);
+            var commandList = GetCommands(ShellType);
+            if (Shell.UnifiedCommandDict.ContainsKey(Command))
+                return Shell.UnifiedCommandDict[Command];
+            if (!IsCommandFound(Command, ShellType))
+                throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("Command not found."));
+            return commandList[Command];
         }
     }
 }
