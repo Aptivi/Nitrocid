@@ -28,7 +28,7 @@ namespace KSCleanUnusedLocales
         private static string[] ListLanguageFilesForKS()
         {
             // Check to see if we have the Nitrocid KS folder
-            string ksJsonifyLocalesSource = "../../../../../public/KSJsonifyLocales/Translations";
+            string ksJsonifyLocalesSource = "../../../../../public/Nitrocid.LocaleGen/Translations";
             if (Directory.Exists(ksJsonifyLocalesSource))
             {
                 // Iterate through all the source files for Nitrocid KS

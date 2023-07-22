@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid", "public\Nitrocid
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KSTests", "private\KSTests\KSTests.csproj", "{2698CB71-9EF6-06A7-2A14-1AFF675F88CB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KSJsonifyLocales", "public\KSJsonifyLocales\KSJsonifyLocales.csproj", "{8EDAE674-CC21-0D06-0641-064C500DE0CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.LocaleGen", "public\Nitrocid.LocaleGen\Nitrocid.LocaleGen.csproj", "{8EDAE674-CC21-0D06-0641-064C500DE0CC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Public", "Public", "{A32F9CED-BCDB-48A7-A42D-E98E33BD6E65}"
 EndProject

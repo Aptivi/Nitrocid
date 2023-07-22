@@ -31,7 +31,7 @@ namespace KSCleanUnusedLocales
             bool dry = Args.Contains("-dry");
 
             // Check to see if we're running on the KS repo
-            string engFile = "../../../../../public/KSJsonifyLocales/Translations/eng.txt";
+            string engFile = "../../../../../public/Nitrocid.LocaleGen/Translations/eng.txt";
             if (File.Exists(engFile))
             {
                 Console.WriteLine("Probing English file...");
@@ -108,7 +108,7 @@ namespace KSCleanUnusedLocales
                 }
 
                 // Done!
-                Console.WriteLine("Done! Please use KSJsonifyLocales to finalize the change.");
+                Console.WriteLine("Done! Please use Nitrocid.LocaleGen to finalize the change.");
             }
             else
                 Console.WriteLine("This internal program needs to be run within the Nitrocid KS repository.");

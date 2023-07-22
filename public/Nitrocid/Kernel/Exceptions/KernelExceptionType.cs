@@ -375,5 +375,9 @@ namespace KS.Kernel.Exceptions
         /// A general command manager error occurred. Check to make sure that you've written the command or the shell type correctly.
         /// </summary>
         CommandManager,
+        /// <summary>
+        /// Locale generator tool returned an error while trying to generate JSON files for languages.
+        /// </summary>
+        LocaleGen,
     }
 }

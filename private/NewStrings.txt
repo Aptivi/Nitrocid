@@ -758,5 +758,17 @@ Interactive TUI option background color
 Interactive TUI option foreground color
 Interactive TUI option binding name color
 Interactive TUI pane selected separator color
+Locale generator tool returned an error while trying to generate JSON files for languages.
+Translations folder doesn't exist. Make sure that it exists, and that it contains both the metadata file containing language information and the eng.txt file containing English localizations for each string.
+Metadata file doesn't exist.
+English translations file doesn't exist.
+Time elapsed:
+Generating locale JSON for
+Malformed line
+Error trying to parse above line
+Language metadata is empty.
+Generation failed:
+Serialization time elapsed:
+Export time elapsed:
 
 ==========================================================================================================================================

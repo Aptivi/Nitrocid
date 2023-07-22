@@ -416,7 +416,7 @@
     <value>..\Resources\Themes\PhosphoricFG.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
   <data name="LanguageMetadata" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\..\KSJsonifyLocales\Translations\Metadata.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+    <value>..\..\Nitrocid.LocaleGen\Translations\Metadata.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
   <data name="sms" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Languages\sms.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>

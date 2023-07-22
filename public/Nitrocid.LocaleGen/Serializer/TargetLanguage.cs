@@ -16,25 +16,25 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-namespace KSJsonifyLocales
+namespace Nitrocid.LocaleGen.Serializer
 {
     /// <summary>
     /// Target language class
     /// </summary>
-    public class TargetLanguage
+    internal class TargetLanguage
     {
         /// <summary>
         /// The file name of the language
         /// </summary>
-        public string FileName { get; private set; }
+        internal string FileName { get; private set; }
         /// <summary>
         /// The language name
         /// </summary>
-        public string LanguageName { get; private set; }
+        internal string LanguageName { get; private set; }
         /// <summary>
         /// Chooses whether the language is custom or from the KS resources
         /// </summary>
-        public bool CustomLanguage { get; private set; }
+        internal bool CustomLanguage { get; private set; }
 
         /// <summary>
         /// Makes a new class instance of TargetLanguage
@@ -42,7 +42,7 @@ namespace KSJsonifyLocales
         /// <param name="FileName">The file name of the language</param>
         /// <param name="LanguageName">The language name</param>
         /// <param name="CustomLanguage">Chooses whether the language is custom or from the KS resources</param>
-        public TargetLanguage(string FileName, string LanguageName, bool CustomLanguage)
+        internal TargetLanguage(string FileName, string LanguageName, bool CustomLanguage)
         {
             this.FileName = FileName;
             this.LanguageName = LanguageName;
