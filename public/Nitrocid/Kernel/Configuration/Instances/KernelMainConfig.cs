@@ -609,7 +609,7 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// Whether to show the MOTD and the headline at the bottom or at the top of the clock
         /// </summary>
-        public bool MotdHeadlineBottom { get; set; };
+        public bool MotdHeadlineBottom { get; set; }
         /// <summary>
         /// Simplified help command for all the shells
         /// </summary>
