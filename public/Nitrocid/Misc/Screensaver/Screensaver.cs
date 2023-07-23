@@ -82,6 +82,7 @@ namespace KS.Misc.Screensaver
             { "indeterminate", new IndeterminateDisplay() },
             { "ksx", new KSXDisplay() },
             { "lighter", new LighterDisplay() },
+            { "lightning", new LightningDisplay() },
             { "lightspeed", new LightspeedDisplay() },
             { "lines", new LinesDisplay() },
             { "linotypo", new LinotypoDisplay() },

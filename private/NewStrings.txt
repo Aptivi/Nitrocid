@@ -785,5 +785,7 @@ Write your translation of
 ENTER: select
 ESC: exit
 TAB: info
+Chance, in percent, to strike
+Strike Probability
 
 ==========================================================================================================================================

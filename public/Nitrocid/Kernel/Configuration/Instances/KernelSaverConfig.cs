@@ -2386,5 +2386,13 @@ namespace KS.Kernel.Configuration.Instances
         /// [Matrix] How many fade steps to do?
         /// </summary>
         public int MatrixMaxSteps { get; set; } = 25;
+        /// <summary>
+        /// [Lightning] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int LightningDelay { get; set; } = 100;
+        /// <summary>
+        /// [Lightning] Chance, in percent, to strike
+        /// </summary>
+        public int LightningStrikeProbability { get; set; } = 5;
     }
 }

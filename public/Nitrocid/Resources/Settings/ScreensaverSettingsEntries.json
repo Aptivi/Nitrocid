@@ -4519,5 +4519,25 @@
                 "Description": "How many fade steps to do?"
             }
         ]
+    },
+    "Lightning": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Path": "Screensaver.Lightning",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "LightningDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Strike Probability",
+                "Type": "SIntSlider",
+                "Variable": "LightningStrikeProbability",
+                "Description": "Chance, in percent, to strike",
+                "MinimumValue": 0,
+                "MaximumValue": 100
+            }
+        ]
     }
 }

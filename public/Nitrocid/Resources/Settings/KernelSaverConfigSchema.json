@@ -1771,6 +1771,12 @@
         },
         "MatrixMaxSteps": {
             "type": "integer"
+        },
+        "LightningDelay": {
+            "type": "integer"
+        },
+        "LightningStrikeProbability": {
+            "type": "integer"
         }
     },
     "required": [
@@ -2363,6 +2369,8 @@
         "MesmerizeMaximumColorLevel",
         "AuroraDelay",
         "MatrixDelay",
-        "MatrixMaxSteps"
+        "MatrixMaxSteps",
+        "LightningDelay",
+        "LightningStrikeProbability"
     ]
 }
