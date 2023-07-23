@@ -16,6 +16,24 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.Runtime.CompilerServices;
+using KS.Languages;
+using KS.Languages.Studio;
+using KS.Shell.ShellBase.Commands;
+using System.Linq;
 
-[assembly: InternalsVisibleTo("Nitrocid")]
+namespace KS.Shell.Shells.UESH.Commands
+{
+    /// <summary>
+    /// Makes a new language
+    /// </summary>
+    /// <remarks>
+    /// This opens up the language studio to let you provide translations to strings. This will allow you to create your own languages for Nitrocid KS.
+    /// </remarks>
+    class MkLangCommand : BaseCommand, ICommand
+    {
+
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>
+            LanguageStudio.StartLanguageStudio(ListArgsOnly[0]);
+
+    }
+}

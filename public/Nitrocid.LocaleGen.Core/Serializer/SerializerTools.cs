@@ -16,13 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.ConsoleBase.Colors;
-using KS.Files.Operations;
-using KS.Files.Querying;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Misc.Writers.ConsoleWriters;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -35,11 +28,11 @@ namespace Nitrocid.LocaleGen.Serializer
 {
     internal static class SerializerTools
     {
-        internal static (TargetLanguage, string)[] SerializeTargetLanguages(TargetLanguage[] targetLanguages, string pathToTranslations = "", bool quiet = false)
+        internal static (TargetLanguage, string)[] SerializeTargetLanguages(TargetLanguage[] targetLanguages, string pathToTranslations = "")
         {
             // Check to see if the translations directory exists
-            if (!Checking.FolderExists(pathToTranslations))
-                throw new KernelException(KernelExceptionType.LocaleGen, Translate.DoTranslation("Translations folder doesn't exist. Make sure that it exists, and that it contains both the metadata file containing language information and the eng.txt file containing English localizations for each string."));
+            if (!Directory.Exists(pathToTranslations))
+                throw new Exception( /* Localizable */ "Translations folder doesn't exist. Make sure that it exists, and that it contains both the metadata file containing language information and the eng.txt file containing English localizations for each string.");
 
             // Determine several paths
             pathToTranslations = string.IsNullOrEmpty(pathToTranslations) ? Path.GetFullPath("Translations") : pathToTranslations;
@@ -48,18 +41,17 @@ namespace Nitrocid.LocaleGen.Serializer
             string outputFolder = $"{pathToTranslations}/Output";
 
             // Check to see if the required files exist
-            if (!Checking.FileExists(metadataFile))
-                throw new KernelException(KernelExceptionType.LocaleGen, Translate.DoTranslation("Metadata file doesn't exist."));
-            if (!Checking.FileExists(englishFile))
-                throw new KernelException(KernelExceptionType.LocaleGen, Translate.DoTranslation("English translations file doesn't exist."));
-            if (!Checking.FolderExists(outputFolder))
-                Making.MakeDirectory(outputFolder);
+            if (!File.Exists(metadataFile))
+                throw new Exception( /* Localizable */ "Metadata file doesn't exist.");
+            if (!File.Exists(englishFile))
+                throw new Exception( /* Localizable */ "English translations file doesn't exist.");
+            if (!Directory.Exists(outputFolder))
+                Directory.CreateDirectory(outputFolder);
 
             // Now, iterate through each target language to generate JSON files
             var fileLinesEng = File.ReadAllLines(englishFile);
             JToken metadata = JObject.Parse(File.ReadAllText(metadataFile));
             var serializedTargets = new List<(TargetLanguage, string)>();
-            var GenerationInterval = new Stopwatch();
             for (int fileIndex = 0; fileIndex < targetLanguages.Length; fileIndex++)
             {
                 // Initialize two arrays for localization
@@ -67,12 +59,6 @@ namespace Nitrocid.LocaleGen.Serializer
                 string file = language.FileName;
                 string fileName = language.LanguageName;
                 var fileLines = File.ReadAllLines(file);
-                int fileNumber = fileIndex + 1;
-
-                // Show the generation message
-                if (!quiet)
-                    TextWriterColor.Write($"[{fileNumber}/{targetLanguages.Length}] " + Translate.DoTranslation("Generating locale JSON for") + $" {fileName}...", true, KernelColorType.Progress);
-                GenerationInterval.Start();
 
                 // Make a JSON object for each language entry
                 var localizedJson = new JObject();
@@ -83,23 +69,18 @@ namespace Nitrocid.LocaleGen.Serializer
                     {
                         try
                         {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Adding \"{0}, {1}\"...", fileLinesEng[i], fileLines[i]);
                             localizationDataJson.Add(fileLinesEng[i], fileLines[i]);
                         }
-                        catch (Exception ex)
+                        catch (Exception)
                         {
-                            if (!quiet)
-                            {
-                                TextWriterColor.Write($"  - " + Translate.DoTranslation("Malformed line") + $" {i + 1}: {fileLinesEng[i]} -> {fileLines[i]}", true, KernelColorType.Error);
-                                TextWriterColor.Write($"  - " + Translate.DoTranslation("Error trying to parse above line") + $": {ex.Message}", true, KernelColorType.Error);
-                            }
+                            continue;
                         }
                     }
                 }
 
                 // Fetch the metadata and put their values, but check the metadata first
                 var languageMetadata = metadata.SelectToken(fileName) ??
-                    throw new KernelException(KernelExceptionType.LocaleGen, Translate.DoTranslation("Language metadata is empty."));
+                    throw new Exception( /* Localizable */ "Language metadata is empty.");
                 var languageName = languageMetadata.SelectToken("name");
                 var languageTransliterable = languageMetadata.SelectToken("transliterable");
                 localizedJson.Add("Name", languageName);
@@ -109,43 +90,35 @@ namespace Nitrocid.LocaleGen.Serializer
                 // Serialize the JSON object
                 string serializedLocale = JsonConvert.SerializeObject(localizedJson, Formatting.Indented);
                 serializedTargets.Add((language, serializedLocale));
-
-                // Print the entire generation interval
-                if (!quiet)
-                    TextWriterColor.Write($"  - " + Translate.DoTranslation("Time elapsed:") + $" {GenerationInterval.Elapsed}", true, KernelColorType.StageTime);
-                GenerationInterval.Restart();
             }
             return serializedTargets.ToArray();
         }
 
-        internal static void SaveTargetLanguage(TargetLanguage target, string serializedLocale, string pathToTranslations = "", bool quiet = false, bool copyToResources = false)
+        internal static void SaveTargetLanguage(TargetLanguage target, string serializedLocale, string pathToTranslations = "", bool copyToResources = false, bool dry = false)
         {
             // Check to see if the translations directory exists
-            if (!Checking.FolderExists(pathToTranslations))
-                throw new KernelException(KernelExceptionType.LocaleGen, Translate.DoTranslation("Translations folder doesn't exist. Make sure that it exists, and that it contains both the metadata file containing language information and the eng.txt file containing English localizations for each string."));
+            if (!Directory.Exists(pathToTranslations))
+                throw new Exception( /* Localizable */ "Translations folder doesn't exist. Make sure that it exists, and that it contains both the metadata file containing language information and the eng.txt file containing English localizations for each string.");
 
             // Determine several paths
             pathToTranslations = string.IsNullOrEmpty(pathToTranslations) ? Path.GetFullPath("Translations") : pathToTranslations;
             string outputFolder = copyToResources ? Path.GetFullPath("../../Resources/Languages") : $"{pathToTranslations}/Output";
 
             // Check to see if the output folder exists
-            if (!Checking.FolderExists(outputFolder))
-                Making.MakeDirectory(outputFolder);
+            if (!Directory.Exists(outputFolder))
+                Directory.CreateDirectory(outputFolder);
 
             // Save changes
             string fileName = target.LanguageName;
-            DebugWriter.WriteDebug(DebugLevel.I, "Saving as {0}...", fileName + ".json");
-            if (!Generator.dry)
+            if (!dry)
                 File.WriteAllText($"{outputFolder}/" + fileName + ".json", serializedLocale);
-            if (!quiet)
-                TextWriterColor.Write("  - Saved new language JSON file to" + $" {outputFolder}/{fileName}.json!", true, KernelColorType.Success);
         }
 
         internal static TargetLanguage[] GetTargetLanguages(string pathToTranslations, string toSearch = "")
         {
             // Check to see if the translations directory exists
-            if (!Checking.FolderExists(pathToTranslations))
-                throw new KernelException(KernelExceptionType.LocaleGen, Translate.DoTranslation("Translations folder doesn't exist. Make sure that it exists, and that it contains both the metadata file containing language information and the eng.txt file containing English localizations for each string."));
+            if (!Directory.Exists(pathToTranslations))
+                throw new Exception( /* Localizable */ "Translations folder doesn't exist. Make sure that it exists, and that it contains both the metadata file containing language information and the eng.txt file containing English localizations for each string.");
 
             // Get all the language files
             bool custom = pathToTranslations == Path.GetFullPath("Translations");

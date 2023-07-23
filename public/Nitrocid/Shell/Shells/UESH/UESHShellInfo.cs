@@ -186,6 +186,8 @@ namespace KS.Shell.Shells.UESH
                 new CommandArgumentInfo(), new MeteorCommand()) },
             { "mkfile", new CommandInfo("mkfile", ShellType, /* Localizable */ "Makes a new file",
                 new CommandArgumentInfo(new[] { "file" }, Array.Empty<SwitchInfo>(), true, 1), new MkFileCommand()) },
+            { "mklang", new CommandInfo("mklang", ShellType, /* Localizable */ "Makes a new language",
+                new CommandArgumentInfo(new[] { "pathToTranslations" }, Array.Empty<SwitchInfo>(), true, 1), new MkLangCommand()) },
             { "mktheme", new CommandInfo("mktheme", ShellType, /* Localizable */ "Makes a new theme",
                 new CommandArgumentInfo(new[] { "themeName" }, Array.Empty<SwitchInfo>(), true, 1), new MkThemeCommand()) },
             { "modman", new CommandInfo("modman", ShellType, /* Localizable */ "Manage your mods",

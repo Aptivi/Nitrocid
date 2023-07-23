@@ -15,13 +15,15 @@
     <Deterministic>true</Deterministic>
     <OutputPath>..\Nitrocid\KSBuild\</OutputPath>
     <Description>Nitrocid KS Locale Generator</Description>
+    <AssemblyTitle>Nitrocid KS Locale Generator</AssemblyTitle>
+    <Company>Aptivi</Company>
+    <Product>Nitrocid</Product>
     <Copyright>Copyright © Aptivi 2018 - 2023</Copyright>
     <OptionExplicit>On</OptionExplicit>
     <OptionCompare>Binary</OptionCompare>
     <OptionStrict>Off</OptionStrict>
     <OptionInfer>On</OptionInfer>
     <ApplicationIcon>../Nitrocid/OfficialAppIcon-KernelSimulator-256.ico</ApplicationIcon>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <Version>0.1.0</Version>
     <Configurations>Debug;Release;Release-Linux-Packaging</Configurations>
     <LangVersion>latest</LangVersion>
@@ -51,6 +53,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Nitrocid.LocaleGen.Core\Nitrocid.LocaleGen.Core.csproj" />
     <ProjectReference Include="..\Nitrocid\Nitrocid.csproj">
       <Project>{c7b37899-c361-423d-9512-fe0a87a46866}</Project>
       <Name>Nitrocid</Name>

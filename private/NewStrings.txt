@@ -770,5 +770,17 @@ Language metadata is empty.
 Generation failed:
 Serialization time elapsed:
 Export time elapsed:
+The base English strings file doesn't exist. Do you want to create an empty one? Or do you want to use Nitrocid's English strings?
+Welcome to the Language Studio!
+Select a string to translate:
+No valid language is specified.
+Save translations
+New string
+Remove string
+Enter a new string
+Select a string to remove:
+Saving language...
+Select language
+Write your translation of
 
 ==========================================================================================================================================

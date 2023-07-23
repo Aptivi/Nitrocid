@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- LocaleGen General Information -->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineTrace>true</DefineTrace>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <OutputPath>..\Nitrocid\KSBuild\</OutputPath>
+    <Description>Nitrocid KS Locale Generator</Description>
+    <AssemblyTitle>Nitrocid KS Locale Generator</AssemblyTitle>
+    <Copyright>Copyright © Aptivi 2018 - 2023</Copyright>
+    <Company>Aptivi</Company>
+    <Product>Nitrocid</Product>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <Version>0.1.0</Version>
+    <Configurations>Debug;Release;Release-Linux-Packaging</Configurations>
+    <LangVersion>latest</LangVersion>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+  <!-- LocaleGen General Information End -->
+
+  <!-- LocaleGen Platform Information -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>portable</DebugType>
+    <DefineDebug>true</DefineDebug>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Linux-Packaging|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <!-- LocaleGen Platform Information End -->
+  
+  <!-- LocaleGen Dependencies Information -->
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+  <!-- LocaleGen Dependencies Information End -->
+</Project>

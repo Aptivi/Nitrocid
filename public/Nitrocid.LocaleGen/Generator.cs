@@ -24,7 +24,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
@@ -35,7 +34,6 @@ namespace Nitrocid.LocaleGen
 {
     internal static class Generator
     {
-        internal static bool dry = false;
 
         /// <summary>
         /// Entry point
@@ -50,8 +48,8 @@ namespace Nitrocid.LocaleGen
             var switches = new List<string>();
             bool custom = true;
             bool normal = true;
+            bool dry = false;
             var copyToResources = false;
-            var quiet = false;
             string toSearch = "";
             if (Args.Length > 0)
             {
@@ -74,7 +72,6 @@ namespace Nitrocid.LocaleGen
                 custom = switches.Contains("--CustomOnly") || switches.Contains("--All");
                 normal = switches.Contains("--NormalOnly") || switches.Contains("--All");
                 copyToResources = switches.Contains("--CopyToResources");
-                quiet = switches.Contains("--Quiet");
                 dry = switches.Contains("--Dry");
 
                 // Check to see if we're going to parse one language
@@ -87,45 +84,39 @@ namespace Nitrocid.LocaleGen
                 else if (singular)
                 {
                     // We can't be singular without providing the language!
-                    Console.WriteLine("Provide a language to generate.");
+                    TextWriterColor.Write("Provide a language to generate.", true, KernelColorType.Error);
                     Environment.Exit(1);
                 }
 
                 // Check to see if we're going to show help
                 if (switches.Contains("--Help"))
                 {
-                    Console.WriteLine("{0} [--CustomOnly|--NormalOnly|--All|--Singular|--CopyToResources|--Dry|--Help]", Path.GetFileName(Environment.GetCommandLineArgs()[0]));
+                    TextWriterColor.Write("{0} [--CustomOnly|--NormalOnly|--All|--Singular|--CopyToResources|--Dry|--Help]", Path.GetFileName(Environment.GetCommandLineArgs()[0]));
                     Environment.Exit(1);
                 }
             }
 
-            var total = new Stopwatch();
-            total.Start();
             try
             {
                 // Get the translation folders
                 string translations = Path.GetFullPath("Translations");
                 string customs = Path.GetFullPath("CustomLanguages");
 
+                // Warn if dry
+                if (dry)
+                    TextWriterColor.Write("Running in dry mode. No changes will be made. Take out the --Dry switch if you really want to apply changes.", true, KernelColorType.Warning);
+
                 // Now, do the job!
                 if (normal)
-                    LanguageGenerator.GenerateLocaleFiles(translations, toSearch, quiet, copyToResources);
+                    LanguageGenerator.GenerateLocaleFiles(translations, toSearch, copyToResources, dry);
                 if (custom)
-                    LanguageGenerator.GenerateLocaleFiles(customs, toSearch, quiet, copyToResources);
+                    LanguageGenerator.GenerateLocaleFiles(customs, toSearch, copyToResources, dry);
             }
             catch (Exception ex)
             {
-                if (!quiet)
-                {
-                    TextWriterColor.Write("Unexpected error in converter:" + $" {ex.Message}", true, KernelColorType.Error);
-                    TextWriterColor.Write(ex.StackTrace, true, KernelColorType.Error);
-                }
+                TextWriterColor.Write("Unexpected error in converter:" + $" {ex.Message}", true, KernelColorType.Error);
+                TextWriterColor.Write(ex.StackTrace, true, KernelColorType.Error);
             }
-
-            // Finish the program
-            if (!quiet)
-                TextWriterColor.Write("Finished in " + $"{total.Elapsed}");
-            total.Reset();
         }
     }
 }
