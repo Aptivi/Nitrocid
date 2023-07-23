@@ -60,7 +60,7 @@ namespace KS.Shell.Shells.Json
             { "rmobjectindexed", new CommandInfo("rmobjectindexed", ShellType, /* Localizable */ "Removes an object specified by index",
                 new CommandArgumentInfo(new[] { "index" }, new[] { new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", false, true) }, true, 1), new JsonShell_RmObjectIndexedCommand()) },
             { "save", new CommandInfo("save", ShellType, /* Localizable */ "Saves the JSON file",
-                new CommandArgumentInfo(new[] { "[-b|-m]" }, new[] { new SwitchInfo("b", /* Localizable */ "Beautified JSON"), new SwitchInfo("m", /* Localizable */ "Minified JSON") }, false, 0), new JsonShell_SaveCommand()) }
+                new CommandArgumentInfo(Array.Empty<string>(), new[] { new SwitchInfo("b", /* Localizable */ "Beautified JSON", false, false, new string[] { "m" }), new SwitchInfo("m", /* Localizable */ "Minified JSON", false, false, new string[] { "b" }) }, false, 0), new JsonShell_SaveCommand()) }
         };
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
