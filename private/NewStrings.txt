@@ -782,5 +782,8 @@ Select a string to remove:
 Saving language...
 Select language
 Write your translation of
+ENTER: select
+ESC: exit
+TAB: info
 
 ==========================================================================================================================================

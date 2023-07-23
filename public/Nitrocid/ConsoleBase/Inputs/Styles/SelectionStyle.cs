@@ -22,6 +22,7 @@ using System.Linq;
 using System.Text;
 using KS.ConsoleBase.Colors;
 using KS.Kernel;
+using KS.Languages;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
@@ -163,6 +164,14 @@ namespace KS.ConsoleBase.Inputs.Styles
                 TextWriterWhereColor.WriteWhere(new string(' ', ConsoleWrapper.WindowWidth), 0, descArea);
                 TextWriterWhereColor.WriteWhere(new string(' ', ConsoleWrapper.WindowWidth), 0, descArea + 1);
                 TextWriterWhereColor.WriteWhere(descFinal, 0, descArea, KernelColorType.NeutralText);
+
+                // Write keybindings and page and answer number
+                string bindingsRender = $"[{Translate.DoTranslation("ENTER: select")}]==[{Translate.DoTranslation("ESC: exit")}]==[{Translate.DoTranslation("TAB: info")}]";
+                string numberRender = $"[{currentPage + 1}/{pages + 1}]==[{HighlightedAnswer}/{AllAnswers.Count}]";
+                int bindingsLeft = 2;
+                int numbersLeft = ConsoleWrapper.WindowWidth - numberRender.Length - bindingsLeft;
+                TextWriterWhereColor.WriteWhere(bindingsRender, bindingsLeft, descSepArea, KernelColorType.Separator);
+                TextWriterWhereColor.WriteWhere(numberRender, numbersLeft, descSepArea, KernelColorType.Separator);
 
                 // Wait for an answer
                 Answer = Input.DetectKeypress();
