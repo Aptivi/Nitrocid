@@ -19,9 +19,9 @@
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.Files;
-using KS.Kernel.Administration.Journalling;
 using KS.Kernel.Debugging;
 using KS.Kernel.Events;
+using KS.Kernel.Journaling;
 using KS.Kernel.Power;
 using KS.Languages;
 using KS.Misc.Splash;

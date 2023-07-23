@@ -18,8 +18,8 @@
 
 using KS.ConsoleBase.Colors;
 using KS.Kernel;
-using KS.Kernel.Administration.Journalling;
 using KS.Kernel.Debugging;
+using KS.Kernel.Journaling;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;

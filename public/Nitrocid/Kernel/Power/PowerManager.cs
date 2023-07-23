@@ -25,7 +25,7 @@ using System.Threading;
 using KS.Kernel.Events;
 using KS.Users.Permissions;
 using System.Diagnostics;
-using KS.Kernel.Administration.Journalling;
+using KS.Kernel.Journaling;
 
 namespace KS.Kernel.Power
 {

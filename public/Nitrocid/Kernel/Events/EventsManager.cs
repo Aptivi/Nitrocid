@@ -16,9 +16,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Kernel.Administration.Journalling;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
+using KS.Kernel.Journaling;
 using KS.Languages;
 using KS.Modifications;
 using System;

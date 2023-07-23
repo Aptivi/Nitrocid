@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Kernel;
-using KS.Kernel.Administration.Journalling;
 using KS.Kernel.Exceptions;
+using KS.Kernel.Journaling;
 using KS.Languages;
 using KS.Users.Groups;
 using System;

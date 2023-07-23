@@ -43,7 +43,6 @@ using KS.Users.Login;
 using KS.Users;
 using KS.Kernel.Events;
 using KS.Misc.Text;
-using KS.Kernel.Administration.Journalling;
 using KS.Files.Operations;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Colors;
@@ -51,6 +50,7 @@ using KS.Misc.Screensaver.Customized;
 using KS.Kernel.Power;
 using KS.Users.Groups;
 using KS.Kernel.Debugging.Trace;
+using KS.Kernel.Journaling;
 
 namespace KS.Kernel
 {

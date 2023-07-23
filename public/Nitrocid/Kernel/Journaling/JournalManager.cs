@@ -26,7 +26,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.IO;
 
-namespace KS.Kernel.Administration.Journalling
+namespace KS.Kernel.Journaling
 {
     /// <summary>
     /// Kernel journalling manager
@@ -65,7 +65,7 @@ namespace KS.Kernel.Administration.Journalling
 
                 // Make a new journal entry and store everything in it
                 Message = TextTools.FormatString(Message, Vars);
-                var JournalEntry = 
+                var JournalEntry =
                     new JObject(
                         new JProperty("date", TimeDate.TimeDateRenderers.RenderDate()),
                         new JProperty("time", TimeDate.TimeDateRenderers.RenderTime()),
