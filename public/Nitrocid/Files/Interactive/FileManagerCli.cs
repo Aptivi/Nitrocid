@@ -24,7 +24,6 @@ using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Writers.FancyWriters;
-using KS.TimeDate;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -34,6 +33,7 @@ using System.Text;
 using KS.Misc.Interactive;
 using System.Collections;
 using KS.Misc.Text;
+using KS.Kernel.Time.Renderers;
 
 namespace KS.Files.Interactive
 {

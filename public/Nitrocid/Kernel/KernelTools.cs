@@ -40,12 +40,12 @@ using KS.Network.RPC;
 using KS.Scripting;
 using KS.Shell.ShellBase.Aliases;
 using KS.Shell.ShellBase.Commands;
-using KS.TimeDate;
 using System.Reflection;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Inputs;
 using KS.Misc.Contacts;
 using KS.Network.Base.Connections;
+using KS.Kernel.Time.Renderers;
 
 namespace KS.Kernel
 {

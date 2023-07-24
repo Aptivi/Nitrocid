@@ -34,6 +34,8 @@ using KS.Misc.Writers.MiscWriters;
 using KS.Misc.Probers.Placeholder;
 using KS.Kernel.Configuration;
 using KS.Misc.Writers.FancyWriters;
+using KS.Kernel.Time;
+using KS.Kernel.Time.Renderers;
 
 namespace KS.Users.Login
 {
@@ -206,7 +208,7 @@ namespace KS.Users.Login
             // Show current time
             SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Welcome!"), true, KernelColorType.Stage);
             if (Flags.ShowCurrentTimeBeforeLogin)
-                TimeDate.TimeDateTools.ShowCurrentTimes();
+                TimeDateMiscRenderers.ShowCurrentTimes();
             TextWriterColor.Write();
 
             // Show license information

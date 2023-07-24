@@ -16,7 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.TimeDate;
+using KS.Kernel.Time;
+using KS.Kernel.Time.Renderers;
 using NUnit.Framework;
 using Shouldly;
 
@@ -34,7 +35,7 @@ namespace KSTests.TimeDateTests
         [Description("Querying")]
         public void TestGetRemainingTimeFromNow()
         {
-            string RemainingTime = TimeDateTools.GetRemainingTimeFromNow(1000);
+            string RemainingTime = TimeDateMiscRenderers.RenderRemainingTimeFromNow(1000);
             RemainingTime.ShouldNotBeNullOrEmpty();
             RemainingTime.ShouldBe("0.00:00:01.000");
         }

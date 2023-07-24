@@ -379,5 +379,9 @@ namespace KS.Kernel.Exceptions
         /// Locale generator tool returned an error while trying to generate JSON files for languages.
         /// </summary>
         LocaleGen,
+        /// <summary>
+        /// An error occurred in the time and date module. Check to make sure that you've specified the time and the date correctly, and that the time zone exists.
+        /// </summary>
+        TimeDate,
     }
 }

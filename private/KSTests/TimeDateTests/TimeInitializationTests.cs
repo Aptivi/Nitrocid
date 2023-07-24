@@ -33,7 +33,7 @@ namespace KSTests.TimeDateTests
         [Description("Initialization")]
         public void TestGetTimeZones()
         {
-            var TimeZones = KS.TimeDate.TimeZones.GetTimeZones();
+            var TimeZones = KS.Kernel.Time.Timezones.TimeZones.GetTimeZones();
             TimeZones.ShouldNotBeNull();
             TimeZones.ShouldNotBeEmpty();
         }

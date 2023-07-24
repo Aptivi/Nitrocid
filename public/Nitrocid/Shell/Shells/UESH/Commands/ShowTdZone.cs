@@ -19,10 +19,10 @@
 using System;
 using System.Linq;
 using KS.ConsoleBase.Colors;
+using KS.Kernel.Time.Renderers;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
-using KS.TimeDate;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <br></br>
     /// This command is multi-platform, and uses the IANA timezones on Unix systems and the Windows timezone system on Windows.
     /// <br></br>
-    /// For example, if you need to use "Asia/Damascus" on the Unix systems, you will write showtdzone Asia/Damascus." However on Windows 10, assuming we're on the summer season, you write showtdzone "Syria Daylight Time"
+    /// For example, if you need to use "Asia/Damascus" on the Unix systems, you will write "showtdzone Asia/Damascus." However on Windows 10, assuming we're on the summer season, you write showtdzone "Syria Daylight Time"
     /// <br></br>
     /// <list type="table">
     /// <listheader>
@@ -57,10 +57,8 @@ namespace KS.Shell.Shells.UESH.Commands
             if (ListSwitchesOnly.Contains("-all"))
                 ShowAll = true;
             if (ShowAll)
-            {
-                TimeZones.ShowAllTimeZones();
-            }
-            else if (!TimeZones.ShowTimeZones(ListArgsOnly[0]))
+                TimeZoneRenderers.ShowAllTimeZones();
+            else if (!TimeZoneRenderers.ShowTimeZones(ListArgsOnly[0]))
                 TextWriterColor.Write(Translate.DoTranslation("Timezone is specified incorrectly."), true, KernelColorType.Error);
         }
 

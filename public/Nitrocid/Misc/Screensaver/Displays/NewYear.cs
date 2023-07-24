@@ -20,6 +20,7 @@ using System;
 using ColorSeq;
 using KS.ConsoleBase;
 using KS.Kernel.Debugging;
+using KS.Kernel.Time;
 using KS.Languages;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
@@ -53,11 +54,11 @@ namespace KS.Misc.Screensaver.Displays
             Color green = new(ConsoleColors.Green);
 
             // Get the current year
-            int currentYear = TimeDate.TimeDateTools.KernelDateTime.Year;
+            int currentYear = TimeDateTools.KernelDateTime.Year;
             var currentYearDate = new DateTime(currentYear, 1, 1);
 
             // Select mode
-            if (TimeDate.TimeDateTools.KernelDateTime.Date == currentYearDate)
+            if (TimeDateTools.KernelDateTime.Date == currentYearDate)
             {
                 // We're at the new year!
                 string currentYearStr = currentYear.ToString();
@@ -87,7 +88,7 @@ namespace KS.Misc.Screensaver.Displays
 
                 // Print the time remaining
                 var nextYearDate = new DateTime(currentYear + 1, 1, 1);
-                var distance = nextYearDate - TimeDate.TimeDateTools.KernelDateTime;
+                var distance = nextYearDate - TimeDateTools.KernelDateTime;
                 string distanceStr = distance.ToString("dd\\d\\ hh\\:mm\\:ss") + " left till " + nextYearStr;
                 int consoleInfoX = (ConsoleWrapper.WindowWidth / 2) - (distanceStr.Length / 2);
                 int consoleInfoY = (ConsoleWrapper.WindowHeight / 2) + figHeight + 2;

@@ -23,6 +23,7 @@ using System.Text;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging.RemoteDebug;
 using KS.Kernel.Debugging.Trace;
+using KS.Kernel.Time;
 using KS.Misc.Text;
 
 namespace KS.Kernel.Debugging
@@ -112,10 +113,10 @@ namespace KS.Kernel.Debugging
                             // Check to see if source file name is not empty.
                             if (STrace.RoutineFileName is not null & !(STrace.RoutineLineNumber == 0))
                                 // Show stack information
-                                message.Append($"{TimeDate.TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDate.TimeDateTools.KernelDateTime.ToShortTimeString()} [{Level}] ({STrace.RoutineName} - {STrace.RoutineFileName}:{STrace.RoutineLineNumber}): {splitText}\n");
+                                message.Append($"{TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDateTools.KernelDateTime.ToShortTimeString()} [{Level}] ({STrace.RoutineName} - {STrace.RoutineFileName}:{STrace.RoutineLineNumber}): {splitText}\n");
                             else
                                 // Rare case, unless debug symbol is not found on archives.
-                                message.Append($"{TimeDate.TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDate.TimeDateTools.KernelDateTime.ToShortTimeString()} [{Level}] {splitText}\n");
+                                message.Append($"{TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDateTools.KernelDateTime.ToShortTimeString()} [{Level}] {splitText}\n");
                         }
 
                         // Debug to file and all connected debug devices (raw mode). The reason for the /r/n is that because
@@ -190,7 +191,7 @@ namespace KS.Kernel.Debugging
                     {
                         try
                         {
-                            RemoteDebugger.DebugDevices[i].ClientStreamWriter.Write($"{TimeDate.TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDate.TimeDateTools.KernelDateTime.ToShortTimeString()} [{Level}] {text}\r\n", vars);
+                            RemoteDebugger.DebugDevices[i].ClientStreamWriter.Write($"{TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDateTools.KernelDateTime.ToShortTimeString()} [{Level}] {text}\r\n", vars);
                         }
                         catch (Exception ex)
                         {

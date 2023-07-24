@@ -27,11 +27,11 @@ using KS.Languages;
 using KS.Misc.Notifications;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.TimeDate;
 using KS.Kernel.Events;
 using KS.Kernel.Debugging.RemoteDebug.Command;
 using KS.Misc.Probers.Placeholder;
 using KS.Kernel.Configuration;
+using KS.Kernel.Time.Renderers;
 
 namespace KS.Kernel.Debugging.RemoteDebug
 {

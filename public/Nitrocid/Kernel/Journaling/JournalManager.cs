@@ -19,6 +19,7 @@
 using KS.ConsoleBase.Colors;
 using KS.Files.Operations;
 using KS.Files.Querying;
+using KS.Kernel.Time.Renderers;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using Newtonsoft.Json;
@@ -67,8 +68,8 @@ namespace KS.Kernel.Journaling
                 Message = TextTools.FormatString(Message, Vars);
                 var JournalEntry =
                     new JObject(
-                        new JProperty("date", TimeDate.TimeDateRenderers.RenderDate()),
-                        new JProperty("time", TimeDate.TimeDateRenderers.RenderTime()),
+                        new JProperty("date", TimeDateRenderers.RenderDate()),
+                        new JProperty("time", TimeDateRenderers.RenderTime()),
                         new JProperty("status", Status.ToString()),
                         new JProperty("message", Message)
                     );

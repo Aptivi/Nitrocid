@@ -19,9 +19,9 @@
 using System;
 using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
+using KS.Kernel.Time.Renderers;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.TimeDate;
 using static Namer.NameGenerator;
 
 namespace KS.Misc.Screensaver.Displays

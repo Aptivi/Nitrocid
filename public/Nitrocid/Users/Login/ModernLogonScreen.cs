@@ -21,7 +21,6 @@ using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters.Tools;
 using KS.Misc.Writers.FancyWriters;
 using KS.ConsoleBase.Colors;
-using KS.TimeDate;
 using KS.ConsoleBase.Inputs;
 using KS.Languages;
 using KS.ConsoleBase.Inputs.Styles;
@@ -36,6 +35,8 @@ using Syndian.Instance;
 using System;
 using KS.Network.RSS;
 using KS.Kernel.Configuration;
+using KS.Kernel.Time;
+using KS.Kernel.Time.Renderers;
 
 namespace KS.Users.Login
 {
@@ -113,11 +114,11 @@ namespace KS.Users.Login
                 while (true)
                 {
                     // Print the time
-                    string timeStr = TimeDateRenderers.RenderTime(TimeDateTools.FormatType.Short);
+                    string timeStr = TimeDateRenderers.RenderTime(FormatType.Short);
                     if (timeStr != cachedTimeStr)
                     {
                         ConsoleWrapper.Clear();
-                        cachedTimeStr = TimeDateRenderers.RenderTime(TimeDateTools.FormatType.Short);
+                        cachedTimeStr = TimeDateRenderers.RenderTime(FormatType.Short);
                         var figFont = FigletTools.GetFigletFont("Banner3");
                         int figHeight = FigletTools.GetFigletHeight(timeStr, figFont) / 2;
                         CenteredFigletTextColor.WriteCenteredFiglet(figFont, timeStr, KernelColorType.Stage);

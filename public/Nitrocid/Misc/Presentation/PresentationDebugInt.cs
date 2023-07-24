@@ -19,9 +19,9 @@
 using ColorSeq;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
+using KS.Kernel.Time.Renderers;
 using KS.Misc.Presentation.Elements;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.TimeDate;
 using System.Collections.Generic;
 using System.Linq;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;

@@ -17,10 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.Globalization;
-using KS.TimeDate;
 using NUnit.Framework;
 using Shouldly;
 using System;
+using KS.Kernel.Time;
+using KS.Kernel.Time.Renderers;
 
 namespace KSTests.TimeDateTests
 {
@@ -43,8 +44,8 @@ namespace KSTests.TimeDateTests
         [Description("Action")]
         public void TestRenderKernelDateType()
         {
-            TimeDateRenderers.RenderDate(TimeDateTools.FormatType.Long).ShouldNotBeNullOrEmpty();
-            TimeDateRenderers.RenderDate(TimeDateTools.FormatType.Short).ShouldNotBeNullOrEmpty();
+            TimeDateRenderers.RenderDate(FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderers.RenderDate(FormatType.Short).ShouldNotBeNullOrEmpty();
         }
 
         /// <summary>
@@ -66,8 +67,8 @@ namespace KSTests.TimeDateTests
         public void TestRenderKernelDateCultType()
         {
             var TargetCult = new CultureInfo("es-ES");
-            TimeDateRenderers.RenderDate(TargetCult, TimeDateTools.FormatType.Long).ShouldNotBeNullOrEmpty();
-            TimeDateRenderers.RenderDate(TargetCult, TimeDateTools.FormatType.Short).ShouldNotBeNullOrEmpty();
+            TimeDateRenderers.RenderDate(TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderers.RenderDate(TargetCult, FormatType.Short).ShouldNotBeNullOrEmpty();
         }
 
         /// <summary>
@@ -84,8 +85,8 @@ namespace KSTests.TimeDateTests
         [Description("Action")]
         public void TestRenderKernelDateUtcType()
         {
-            TimeDateRenderersUtc.RenderDateUtc(TimeDateTools.FormatType.Long).ShouldNotBeNullOrEmpty();
-            TimeDateRenderersUtc.RenderDateUtc(TimeDateTools.FormatType.Short).ShouldNotBeNullOrEmpty();
+            TimeDateRenderersUtc.RenderDateUtc(FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderersUtc.RenderDateUtc(FormatType.Short).ShouldNotBeNullOrEmpty();
         }
 
         /// <summary>
@@ -107,8 +108,8 @@ namespace KSTests.TimeDateTests
         public void TestRenderKernelDateUtcCultType()
         {
             var TargetCult = new CultureInfo("es-ES");
-            TimeDateRenderersUtc.RenderDateUtc(TargetCult, TimeDateTools.FormatType.Long).ShouldNotBeNullOrEmpty();
-            TimeDateRenderersUtc.RenderDateUtc(TargetCult, TimeDateTools.FormatType.Short).ShouldNotBeNullOrEmpty();
+            TimeDateRenderersUtc.RenderDateUtc(TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderersUtc.RenderDateUtc(TargetCult, FormatType.Short).ShouldNotBeNullOrEmpty();
         }
 
         /// <summary>
@@ -130,8 +131,8 @@ namespace KSTests.TimeDateTests
         public void TestRenderCustomDateType()
         {
             var TargetDate = new DateTime(2018, 2, 22);
-            TimeDateRenderers.RenderDate(TargetDate, TimeDateTools.FormatType.Long).ShouldNotBeNullOrEmpty();
-            TimeDateRenderers.RenderDate(TargetDate, TimeDateTools.FormatType.Short).ShouldNotBeNullOrEmpty();
+            TimeDateRenderers.RenderDate(TargetDate, FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderers.RenderDate(TargetDate, FormatType.Short).ShouldNotBeNullOrEmpty();
         }
 
         /// <summary>
@@ -155,8 +156,8 @@ namespace KSTests.TimeDateTests
         {
             var TargetDate = new DateTime(2018, 2, 22);
             var TargetCult = new CultureInfo("es-ES");
-            TimeDateRenderers.RenderDate(TargetDate, TargetCult, TimeDateTools.FormatType.Long).ShouldNotBeNullOrEmpty();
-            TimeDateRenderers.RenderDate(TargetDate, TargetCult, TimeDateTools.FormatType.Short).ShouldNotBeNullOrEmpty();
+            TimeDateRenderers.RenderDate(TargetDate, TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderers.RenderDate(TargetDate, TargetCult, FormatType.Short).ShouldNotBeNullOrEmpty();
         }
 
         /// <summary>
@@ -178,8 +179,8 @@ namespace KSTests.TimeDateTests
         public void TestRenderCustomDateUtcType()
         {
             var TargetDate = new DateTime(2018, 2, 22);
-            TimeDateRenderersUtc.RenderDateUtc(TargetDate, TimeDateTools.FormatType.Long).ShouldNotBeNullOrEmpty();
-            TimeDateRenderersUtc.RenderDateUtc(TargetDate, TimeDateTools.FormatType.Short).ShouldNotBeNullOrEmpty();
+            TimeDateRenderersUtc.RenderDateUtc(TargetDate, FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderersUtc.RenderDateUtc(TargetDate, FormatType.Short).ShouldNotBeNullOrEmpty();
         }
 
         /// <summary>
@@ -203,8 +204,8 @@ namespace KSTests.TimeDateTests
         {
             var TargetDate = new DateTime(2018, 2, 22);
             var TargetCult = new CultureInfo("es-ES");
-            TimeDateRenderersUtc.RenderDateUtc(TargetDate, TargetCult, TimeDateTools.FormatType.Long).ShouldNotBeNullOrEmpty();
-            TimeDateRenderersUtc.RenderDateUtc(TargetDate, TargetCult, TimeDateTools.FormatType.Short).ShouldNotBeNullOrEmpty();
+            TimeDateRenderersUtc.RenderDateUtc(TargetDate, TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderersUtc.RenderDateUtc(TargetDate, TargetCult, FormatType.Short).ShouldNotBeNullOrEmpty();
         }
 
         /// <summary>
@@ -221,8 +222,8 @@ namespace KSTests.TimeDateTests
         [Description("Action")]
         public void TestRenderKernelTimeType()
         {
-            TimeDateRenderers.RenderTime(TimeDateTools.FormatType.Long).ShouldNotBeNullOrEmpty();
-            TimeDateRenderers.RenderTime(TimeDateTools.FormatType.Short).ShouldNotBeNullOrEmpty();
+            TimeDateRenderers.RenderTime(FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderers.RenderTime(FormatType.Short).ShouldNotBeNullOrEmpty();
         }
 
         /// <summary>
@@ -244,8 +245,8 @@ namespace KSTests.TimeDateTests
         public void TestRenderKernelTimeCultType()
         {
             var TargetCult = new CultureInfo("es-ES");
-            TimeDateRenderers.RenderTime(TargetCult, TimeDateTools.FormatType.Long).ShouldNotBeNullOrEmpty();
-            TimeDateRenderers.RenderTime(TargetCult, TimeDateTools.FormatType.Short).ShouldNotBeNullOrEmpty();
+            TimeDateRenderers.RenderTime(TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderers.RenderTime(TargetCult, FormatType.Short).ShouldNotBeNullOrEmpty();
         }
 
         /// <summary>
@@ -262,8 +263,8 @@ namespace KSTests.TimeDateTests
         [Description("Action")]
         public void TestRenderKernelTimeUtcType()
         {
-            TimeDateRenderersUtc.RenderTimeUtc(TimeDateTools.FormatType.Long).ShouldNotBeNullOrEmpty();
-            TimeDateRenderersUtc.RenderTimeUtc(TimeDateTools.FormatType.Short).ShouldNotBeNullOrEmpty();
+            TimeDateRenderersUtc.RenderTimeUtc(FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderersUtc.RenderTimeUtc(FormatType.Short).ShouldNotBeNullOrEmpty();
         }
 
         /// <summary>
@@ -285,8 +286,8 @@ namespace KSTests.TimeDateTests
         public void TestRenderKernelTimeUtcCultType()
         {
             var TargetCult = new CultureInfo("es-ES");
-            TimeDateRenderersUtc.RenderTimeUtc(TargetCult, TimeDateTools.FormatType.Long).ShouldNotBeNullOrEmpty();
-            TimeDateRenderersUtc.RenderTimeUtc(TargetCult, TimeDateTools.FormatType.Short).ShouldNotBeNullOrEmpty();
+            TimeDateRenderersUtc.RenderTimeUtc(TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderersUtc.RenderTimeUtc(TargetCult, FormatType.Short).ShouldNotBeNullOrEmpty();
         }
 
         /// <summary>
@@ -308,8 +309,8 @@ namespace KSTests.TimeDateTests
         public void TestRenderCustomTimeType()
         {
             var TargetTime = new DateTime(2018, 2, 22, 5, 40, 37);
-            TimeDateRenderers.RenderTime(TargetTime, TimeDateTools.FormatType.Long).ShouldNotBeNullOrEmpty();
-            TimeDateRenderers.RenderTime(TargetTime, TimeDateTools.FormatType.Short).ShouldNotBeNullOrEmpty();
+            TimeDateRenderers.RenderTime(TargetTime, FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderers.RenderTime(TargetTime, FormatType.Short).ShouldNotBeNullOrEmpty();
         }
 
         /// <summary>
@@ -333,8 +334,8 @@ namespace KSTests.TimeDateTests
         {
             var TargetTime = new DateTime(2018, 2, 22, 5, 40, 37);
             var TargetCult = new CultureInfo("es-ES");
-            TimeDateRenderers.RenderTime(TargetTime, TargetCult, TimeDateTools.FormatType.Long).ShouldNotBeNullOrEmpty();
-            TimeDateRenderers.RenderTime(TargetTime, TargetCult, TimeDateTools.FormatType.Short).ShouldNotBeNullOrEmpty();
+            TimeDateRenderers.RenderTime(TargetTime, TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderers.RenderTime(TargetTime, TargetCult, FormatType.Short).ShouldNotBeNullOrEmpty();
         }
 
         /// <summary>
@@ -356,8 +357,8 @@ namespace KSTests.TimeDateTests
         public void TestRenderCustomTimeUtcType()
         {
             var TargetTime = new DateTime(2018, 2, 22, 5, 40, 37);
-            TimeDateRenderersUtc.RenderTimeUtc(TargetTime, TimeDateTools.FormatType.Long).ShouldNotBeNullOrEmpty();
-            TimeDateRenderersUtc.RenderTimeUtc(TargetTime, TimeDateTools.FormatType.Short).ShouldNotBeNullOrEmpty();
+            TimeDateRenderersUtc.RenderTimeUtc(TargetTime, FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderersUtc.RenderTimeUtc(TargetTime, FormatType.Short).ShouldNotBeNullOrEmpty();
         }
 
         /// <summary>
@@ -381,8 +382,8 @@ namespace KSTests.TimeDateTests
         {
             var TargetTime = new DateTime(2018, 2, 22, 5, 40, 37);
             var TargetCult = new CultureInfo("es-ES");
-            TimeDateRenderersUtc.RenderTimeUtc(TargetTime, TargetCult, TimeDateTools.FormatType.Long).ShouldNotBeNullOrEmpty();
-            TimeDateRenderersUtc.RenderTimeUtc(TargetTime, TargetCult, TimeDateTools.FormatType.Short).ShouldNotBeNullOrEmpty();
+            TimeDateRenderersUtc.RenderTimeUtc(TargetTime, TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderersUtc.RenderTimeUtc(TargetTime, TargetCult, FormatType.Short).ShouldNotBeNullOrEmpty();
         }
 
         /// <summary>
@@ -399,8 +400,8 @@ namespace KSTests.TimeDateTests
         [Description("Action")]
         public void TestRenderKernelType()
         {
-            TimeDateRenderers.Render(TimeDateTools.FormatType.Long).ShouldNotBeNullOrEmpty();
-            TimeDateRenderers.Render(TimeDateTools.FormatType.Short).ShouldNotBeNullOrEmpty();
+            TimeDateRenderers.Render(FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderers.Render(FormatType.Short).ShouldNotBeNullOrEmpty();
         }
 
         /// <summary>
@@ -422,8 +423,8 @@ namespace KSTests.TimeDateTests
         public void TestRenderKernelCultType()
         {
             var TargetCult = new CultureInfo("es-ES");
-            TimeDateRenderers.Render(TargetCult, TimeDateTools.FormatType.Long).ShouldNotBeNullOrEmpty();
-            TimeDateRenderers.Render(TargetCult, TimeDateTools.FormatType.Short).ShouldNotBeNullOrEmpty();
+            TimeDateRenderers.Render(TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderers.Render(TargetCult, FormatType.Short).ShouldNotBeNullOrEmpty();
         }
 
         /// <summary>
@@ -440,8 +441,8 @@ namespace KSTests.TimeDateTests
         [Description("Action")]
         public void TestRenderKernelUtcType()
         {
-            TimeDateRenderersUtc.RenderUtc(TimeDateTools.FormatType.Long).ShouldNotBeNullOrEmpty();
-            TimeDateRenderersUtc.RenderUtc(TimeDateTools.FormatType.Short).ShouldNotBeNullOrEmpty();
+            TimeDateRenderersUtc.RenderUtc(FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderersUtc.RenderUtc(FormatType.Short).ShouldNotBeNullOrEmpty();
         }
 
         /// <summary>
@@ -463,8 +464,8 @@ namespace KSTests.TimeDateTests
         public void TestRenderKernelUtcCultType()
         {
             var TargetCult = new CultureInfo("es-ES");
-            TimeDateRenderersUtc.RenderUtc(TargetCult, TimeDateTools.FormatType.Long).ShouldNotBeNullOrEmpty();
-            TimeDateRenderersUtc.RenderUtc(TargetCult, TimeDateTools.FormatType.Short).ShouldNotBeNullOrEmpty();
+            TimeDateRenderersUtc.RenderUtc(TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderersUtc.RenderUtc(TargetCult, FormatType.Short).ShouldNotBeNullOrEmpty();
         }
 
         /// <summary>
@@ -486,8 +487,8 @@ namespace KSTests.TimeDateTests
         public void TestRenderCustomType()
         {
             var TargetDate = new DateTime(2018, 2, 22);
-            TimeDateRenderers.Render(TargetDate, TimeDateTools.FormatType.Long).ShouldNotBeNullOrEmpty();
-            TimeDateRenderers.Render(TargetDate, TimeDateTools.FormatType.Short).ShouldNotBeNullOrEmpty();
+            TimeDateRenderers.Render(TargetDate, FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderers.Render(TargetDate, FormatType.Short).ShouldNotBeNullOrEmpty();
         }
 
         /// <summary>
@@ -511,8 +512,8 @@ namespace KSTests.TimeDateTests
         {
             var TargetDate = new DateTime(2018, 2, 22);
             var TargetCult = new CultureInfo("es-ES");
-            TimeDateRenderers.Render(TargetDate, TargetCult, TimeDateTools.FormatType.Long).ShouldNotBeNullOrEmpty();
-            TimeDateRenderers.Render(TargetDate, TargetCult, TimeDateTools.FormatType.Short).ShouldNotBeNullOrEmpty();
+            TimeDateRenderers.Render(TargetDate, TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderers.Render(TargetDate, TargetCult, FormatType.Short).ShouldNotBeNullOrEmpty();
         }
 
         /// <summary>
@@ -534,8 +535,8 @@ namespace KSTests.TimeDateTests
         public void TestRenderCustomUtcType()
         {
             var TargetDate = new DateTime(2018, 2, 22);
-            TimeDateRenderersUtc.RenderUtc(TargetDate, TimeDateTools.FormatType.Long).ShouldNotBeNullOrEmpty();
-            TimeDateRenderersUtc.RenderUtc(TargetDate, TimeDateTools.FormatType.Short).ShouldNotBeNullOrEmpty();
+            TimeDateRenderersUtc.RenderUtc(TargetDate, FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderersUtc.RenderUtc(TargetDate, FormatType.Short).ShouldNotBeNullOrEmpty();
         }
 
         /// <summary>
@@ -559,8 +560,8 @@ namespace KSTests.TimeDateTests
         {
             var TargetDate = new DateTime(2018, 2, 22);
             var TargetCult = new CultureInfo("es-ES");
-            TimeDateRenderersUtc.RenderUtc(TargetDate, TargetCult, TimeDateTools.FormatType.Long).ShouldNotBeNullOrEmpty();
-            TimeDateRenderersUtc.RenderUtc(TargetDate, TargetCult, TimeDateTools.FormatType.Short).ShouldNotBeNullOrEmpty();
+            TimeDateRenderersUtc.RenderUtc(TargetDate, TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderersUtc.RenderUtc(TargetDate, TargetCult, FormatType.Short).ShouldNotBeNullOrEmpty();
         }
 
     }

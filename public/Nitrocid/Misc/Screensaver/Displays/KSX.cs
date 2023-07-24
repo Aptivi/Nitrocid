@@ -24,6 +24,8 @@ using KS.ConsoleBase;
 using KS.Drivers;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
+using KS.Kernel.Time;
+using KS.Kernel.Time.Renderers;
 using KS.Misc.Animations.BSOD.Simulations;
 using KS.Misc.Animations.Glitch;
 using KS.Misc.Text;
@@ -241,13 +243,13 @@ namespace KS.Misc.Screensaver.Displays
                         // Show all released kernel versions (only the LTS versions)
                         Dictionary<string, string> versions = new()
                         {
-                            { "Kernel 0.0.1",  TimeDate.TimeDateRenderers.RenderDate(new DateTime(2018, 2,  22)) },
-                            { "Kernel 0.0.4",  TimeDate.TimeDateRenderers.RenderDate(new DateTime(2018, 5,  20)) },
-                            { "Kernel 0.0.8",  TimeDate.TimeDateRenderers.RenderDate(new DateTime(2020, 2,  22)) },
-                            { "Kernel 0.0.12", TimeDate.TimeDateRenderers.RenderDate(new DateTime(2020, 11, 6 )) },
-                            { "Kernel 0.0.16", TimeDate.TimeDateRenderers.RenderDate(new DateTime(2021, 6,  12)) },
-                            { "Kernel 0.0.20", TimeDate.TimeDateRenderers.RenderDate(new DateTime(2022, 2,  22)) },
-                            { "Kernel 0.0.24", TimeDate.TimeDateRenderers.RenderDate(new DateTime(2022, 8,  2 )) },
+                            { "Kernel 0.0.1",  TimeDateRenderers.RenderDate(new DateTime(2018, 2,  22)) },
+                            { "Kernel 0.0.4",  TimeDateRenderers.RenderDate(new DateTime(2018, 5,  20)) },
+                            { "Kernel 0.0.8",  TimeDateRenderers.RenderDate(new DateTime(2020, 2,  22)) },
+                            { "Kernel 0.0.12", TimeDateRenderers.RenderDate(new DateTime(2020, 11, 6 )) },
+                            { "Kernel 0.0.16", TimeDateRenderers.RenderDate(new DateTime(2021, 6,  12)) },
+                            { "Kernel 0.0.20", TimeDateRenderers.RenderDate(new DateTime(2022, 2,  22)) },
+                            { "Kernel 0.0.24", TimeDateRenderers.RenderDate(new DateTime(2022, 8,  2 )) },
                         };
                         int maxKernels = versions.Count;
                         int selectedKernel = 5;
@@ -305,7 +307,7 @@ namespace KS.Misc.Screensaver.Displays
                     case 7:
                         // Display time warp text
                         ConsoleBase.Colors.ColorTools.LoadBack(darkGreen, true);
-                        string timeWarpText = $"Time machine... Warping to {TimeDate.TimeDateRenderers.RenderDate(new DateTime(2018, 2, 22))}...";
+                        string timeWarpText = $"Time machine... Warping to {TimeDateRenderers.RenderDate(new DateTime(2018, 2, 22))}...";
                         int textPosX = (ConsoleWrapper.WindowWidth / 2) - (timeWarpText.Length / 2);
                         int textPosY = ConsoleWrapper.WindowHeight - 8;
                         int textTravelledPosY = ConsoleWrapper.WindowHeight - 6;
@@ -316,7 +318,7 @@ namespace KS.Misc.Screensaver.Displays
                         int progPosY = ConsoleWrapper.WindowHeight - 4;
                         int maxProg = 3000;
                         long ksEpochTick = new DateTime(2018, 2, 22).Ticks;
-                        long currentTick = TimeDate.TimeDateTools.KernelDateTime.Date.Ticks;
+                        long currentTick = TimeDateTools.KernelDateTime.Date.Ticks;
                         long tickDiff = currentTick - ksEpochTick;
                         for (int iteration = 0; iteration < maxProg; iteration++)
                         {
@@ -328,7 +330,7 @@ namespace KS.Misc.Screensaver.Displays
                             long travelledTicks = (long)Math.Round(tickDiff * ((double)currentProg / 100));
                             long travelledTickFromCurrent = currentTick - travelledTicks;
                             DateTime travelled = new(travelledTickFromCurrent);
-                            string timeWarpCurrentDate = $"Travelled: {TimeDate.TimeDateRenderers.RenderDate(travelled)}";
+                            string timeWarpCurrentDate = $"Travelled: {TimeDateRenderers.RenderDate(travelled)}";
                             TextWriterWhereColor.WriteWhere(timeWarpCurrentDate + $"{Convert.ToString(CharManager.GetEsc()) + "[0K"}", progPosX, textTravelledPosY, black, darkGreen);
 
                             // Now, do the glitch

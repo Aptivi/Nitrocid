@@ -19,13 +19,12 @@
 using System;
 using System.Threading;
 using KS.ConsoleBase.Colors;
-using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Misc.Screensaver;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 
-namespace KS.TimeDate
+namespace KS.Kernel.Time.Renderers
 {
     /// <summary>
     /// Top right corner on time and date

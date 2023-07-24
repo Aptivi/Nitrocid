@@ -20,18 +20,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using static System.TimeZoneInfo;
-using KS.Languages;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
 
-namespace KS.TimeDate
+namespace KS.Kernel.Time.Timezones
 {
     /// <summary>
     /// Time zone module
     /// </summary>
     public static class TimeZones
     {
-
         /// <summary>
         /// Populates current time in all of the time zones (IANA on Unix).
         /// </summary>
@@ -55,50 +52,15 @@ namespace KS.TimeDate
         }
 
         /// <summary>
-        /// Shows current time in selected time zone
+        /// Checks to see if the specified time zone exists
         /// </summary>
-        /// <param name="Zone">Time zone</param>
-        /// <returns>True if found; False if not found</returns>
-        public static bool ShowTimeZone(string Zone)
+        /// <param name="zone">Target time zone name</param>
+        /// <returns>True if found; false otherwise</returns>
+        public static bool TimeZoneExists(string zone)
         {
             var ZoneTimes = GetTimeZones();
-            bool ZoneFound = ZoneTimes.ContainsKey(Zone);
-            if (ZoneFound)
-            {
-                TextWriterColor.Write(Translate.DoTranslation("- Time of {0}: {1}") + " ({2})", Zone, ZoneTimes[Zone].ToString(), FindSystemTimeZoneById(Zone).GetUtcOffset(TimeDateTools.KernelDateTime).ToString());
-            }
+            bool ZoneFound = ZoneTimes.ContainsKey(zone);
             return ZoneFound;
         }
-
-        /// <summary>
-        /// Shows current time in selected time zone
-        /// </summary>
-        /// <param name="Zone">Time zone to search</param>
-        /// <returns>True if found; False if not found</returns>
-        public static bool ShowTimeZones(string Zone)
-        {
-            var ZoneTimes = GetTimeZones();
-            var ZoneFound = false;
-            foreach (string ZoneName in ZoneTimes.Keys)
-            {
-                if (ZoneName.Contains(Zone))
-                {
-                    ZoneFound = true;
-                    TextWriterColor.Write(Translate.DoTranslation("- Time of {0}: {1}") + " ({2})", ZoneName, ZoneTimes[ZoneName].ToString(), FindSystemTimeZoneById(ZoneName).GetUtcOffset(TimeDateTools.KernelDateTime).ToString());
-                }
-            }
-            return ZoneFound;
-        }
-
-        /// <summary>
-        /// Shows current time in all time zones
-        /// </summary>
-        public static void ShowAllTimeZones()
-        {
-            var ZoneTimes = GetTimeZones();
-            foreach (var TimeZone in ZoneTimes.Keys)
-                TextWriterColor.Write(Translate.DoTranslation("- Time of {0}: {1}") + " ({2})", TimeZone, ZoneTimes[TimeZone].ToString(), FindSystemTimeZoneById(TimeZone).GetUtcOffset(TimeDateTools.KernelDateTime).ToString());
-        }
-
     }
 }

@@ -31,6 +31,8 @@ using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using KS.Misc.Writers.FancyWriters.Tools;
 using KS.Kernel.Configuration;
+using KS.Kernel.Time;
+using KS.Kernel.Time.Renderers;
 
 namespace KS.Misc.Timers
 {
@@ -95,7 +97,7 @@ namespace KS.Misc.Timers
 
             // Populate the positions for time
             int HalfWidth = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
-            string CurrentRemainingString = TimeDate.TimeDateTools.GetRemainingTimeFromNow((int)Math.Round(TimerInterval));
+            string CurrentRemainingString = TimeDateMiscRenderers.RenderRemainingTimeFromNow((int)Math.Round(TimerInterval));
             int TimeLeftPosition = 0;
             int TimeTopPosition = 0;
             UpdateRemainingPositions(CurrentRemainingString, ref TimeLeftPosition, ref TimeTopPosition);
@@ -163,7 +165,7 @@ namespace KS.Misc.Timers
                                 else
                                 {
                                     // Update the remaining time
-                                    string RemainingString = TimeDate.TimeDateTools.GetRemainingTimeFromNow((int)Math.Round(TimerInterval));
+                                    string RemainingString = TimeDateMiscRenderers.RenderRemainingTimeFromNow((int)Math.Round(TimerInterval));
                                     UpdateRemainingPositions(RemainingString, ref TimeLeftPosition, ref TimeTopPosition);
                                     ClearRemainingTimeDisplay(RemainingString, FigletTimeOldWidth, FigletTimeOldWidthEnd);
                                     if (Flags.EnableFigletTimer)

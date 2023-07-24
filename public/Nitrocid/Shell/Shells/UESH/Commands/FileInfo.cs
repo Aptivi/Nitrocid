@@ -23,11 +23,11 @@ using KS.Files;
 using KS.Files.LineEndings;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
+using KS.Kernel.Time.Renderers;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using KS.Shell.ShellBase.Commands;
-using KS.TimeDate;
 using MimeKit;
 
 namespace KS.Shell.Shells.UESH.Commands

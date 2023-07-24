@@ -20,9 +20,9 @@ using System;
 using ColorSeq;
 using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
+using KS.Kernel.Time.Renderers;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.TimeDate;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Screensaver.Displays

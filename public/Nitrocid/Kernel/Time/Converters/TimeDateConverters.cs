@@ -18,7 +18,7 @@
 
 using System;
 
-namespace KS.TimeDate
+namespace KS.Kernel.Time.Converters
 {
     /// <summary>
     /// Date and time conversion module
@@ -34,12 +34,14 @@ namespace KS.TimeDate
         /// <summary>
         /// Converts the date to Unix time (seconds since 1970/1/1) (UTC)
         /// </summary>
-        public static double DateToUnix(DateTime TargetDate) => (TargetDate - UnixEpoch).TotalSeconds;
+        public static double DateToUnix(DateTime TargetDate) =>
+            (TargetDate - UnixEpoch).TotalSeconds;
 
         /// <summary>
         /// Converts the Unix time (seconds since 1970/1/1) to date (UTC)
         /// </summary>
-        public static DateTime UnixToDate(double UnixTime) => UnixEpoch.AddSeconds(UnixTime);
+        public static DateTime UnixToDate(double UnixTime) =>
+            UnixEpoch.AddSeconds(UnixTime);
 
     }
 }

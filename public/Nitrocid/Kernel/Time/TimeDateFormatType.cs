@@ -16,15 +16,20 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Kernel.Time.Renderers;
-using KS.Languages;
-using KS.Misc.Writers.ConsoleWriters;
-
-namespace KS.Kernel.Debugging.Testing.Facades
+namespace KS.Kernel.Time
 {
-    internal class ShowDateUtc : TestFacade
+    /// <summary>
+    /// Specifies the time/date format type.
+    /// </summary>
+    public enum FormatType
     {
-        public override string TestName => Translate.DoTranslation("Shows UTC kernel date");
-        public override void Run() => TextWriterColor.Write(TimeDateRenderersUtc.RenderDateUtc());
+        /// <summary>
+        /// Long time/date format
+        /// </summary>
+        Long,
+        /// <summary>
+        /// Short time/date format
+        /// </summary>
+        Short
     }
 }

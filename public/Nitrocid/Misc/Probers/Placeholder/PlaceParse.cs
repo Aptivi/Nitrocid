@@ -31,7 +31,6 @@ using KS.Scripting;
 using KS.Shell.Shells.FTP;
 using KS.Shell.Shells.Mail;
 using KS.Shell.Shells.SFTP;
-using KS.TimeDate;
 using KS.Users;
 using KS.Kernel.Events;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
@@ -39,6 +38,8 @@ using KS.ConsoleBase.Colors;
 using KS.Files.Querying;
 using System.Collections.Generic;
 using KS.Kernel.Power;
+using KS.Kernel.Time;
+using KS.Kernel.Time.Renderers;
 
 namespace KS.Misc.Probers.Placeholder
 {
@@ -66,10 +67,10 @@ namespace KS.Misc.Probers.Placeholder
             { "<host>",                             () => NetworkTools.HostName },
             { "<currentdirectory>",                 () => CurrentDirectory.CurrentDir },
             { "<currentdirectoryname>",             () => !string.IsNullOrEmpty(CurrentDirectory.CurrentDir) ? new DirectoryInfo(CurrentDirectory.CurrentDir).Name : ""},
-            { "<shortdate>",                        () => TimeDateRenderers.RenderDate(TimeDateTools.FormatType.Short) },
-            { "<longdate>",                         () => TimeDateRenderers.RenderDate(TimeDateTools.FormatType.Long) },
-            { "<shorttime>",                        () => TimeDateRenderers.RenderTime(TimeDateTools.FormatType.Short) },
-            { "<longtime>",                         () => TimeDateRenderers.RenderTime(TimeDateTools.FormatType.Long) },
+            { "<shortdate>",                        () => TimeDateRenderers.RenderDate(FormatType.Short) },
+            { "<longdate>",                         () => TimeDateRenderers.RenderDate(FormatType.Long) },
+            { "<shorttime>",                        () => TimeDateRenderers.RenderTime(FormatType.Short) },
+            { "<longtime>",                         () => TimeDateRenderers.RenderTime(FormatType.Long) },
             { "<date>",                                   TimeDateRenderers.RenderDate },
             { "<time>",                                   TimeDateRenderers.RenderTime },
             { "<timezone>",                         () => TimeZoneInfo.Local.StandardName },

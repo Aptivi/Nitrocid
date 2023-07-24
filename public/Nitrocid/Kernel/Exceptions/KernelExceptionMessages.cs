@@ -118,6 +118,7 @@ namespace KS.Kernel.Exceptions
                 { KernelExceptionType.HTTPNetwork,                      Translate.DoTranslation("A general HTTP network error occurred. Check to make sure that your internet connection is working.") },
                 { KernelExceptionType.CommandManager,                   Translate.DoTranslation("A general command manager error occurred. Check to make sure that you've written the command or the shell type correctly.") },
                 { KernelExceptionType.LocaleGen,                        Translate.DoTranslation("Locale generator tool returned an error while trying to generate JSON files for languages.") },
+                { KernelExceptionType.TimeDate,                         Translate.DoTranslation("An error occurred in the time and date module. Check to make sure that you've specified the time and the date correctly, and that the time zone exists.") },
             };
 
         internal static string GetFinalExceptionMessage(KernelExceptionType exceptionType, string message, Exception e, params object[] vars)

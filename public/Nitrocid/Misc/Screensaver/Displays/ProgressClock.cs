@@ -21,11 +21,12 @@ using ColorSeq;
 using KS.ConsoleBase;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
+using KS.Kernel.Time;
+using KS.Kernel.Time.Renderers;
 using KS.Misc.Probers.Placeholder;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
-using KS.TimeDate;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Screensaver.Displays

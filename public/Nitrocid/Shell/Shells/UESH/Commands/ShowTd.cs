@@ -16,6 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Time;
+using KS.Kernel.Time.Renderers;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.UESH.Commands
@@ -29,7 +31,8 @@ namespace KS.Shell.Shells.UESH.Commands
     class ShowTdCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => TimeDate.TimeDateTools.ShowCurrentTimes();
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>
+            TimeDateMiscRenderers.ShowCurrentTimes();
 
     }
 }
