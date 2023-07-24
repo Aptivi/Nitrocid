@@ -257,6 +257,7 @@ namespace KS.Shell.ShellBase.Commands
                 // Extract the buffer and then end the local driver
                 var wrapBuffer = ((Buffered)DriverHandler.CurrentConsoleDriverLocal).consoleBuffer;
                 var wrapOutput = wrapBuffer.ToString();
+                wrapBuffer.Clear();
                 DriverHandler.EndLocalDriver<IConsoleDriver>();
 
                 // Now, print the output
