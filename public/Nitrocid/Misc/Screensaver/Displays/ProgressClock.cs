@@ -19,7 +19,6 @@
 using System;
 using ColorSeq;
 using KS.ConsoleBase;
-using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Probers.Placeholder;
@@ -27,6 +26,7 @@ using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using KS.TimeDate;
+using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Screensaver.Displays
 {
@@ -846,11 +846,6 @@ namespace KS.Misc.Screensaver.Displays
             ConsoleWrapper.Clear();
 
             // Prepare colors
-            int RedColorNumHours, GreenColorNumHours, BlueColorNumHours;
-            int RedColorNumMinutes, GreenColorNumMinutes, BlueColorNumMinutes;
-            int RedColorNumSeconds, GreenColorNumSeconds, BlueColorNumSeconds;
-            int RedColorNum, GreenColorNum, BlueColorNum;
-            int ColorNumHours, ColorNumMinutes, ColorNumSeconds, ColorNum;
             int ProgressFillPositionHours, ProgressFillPositionMinutes, ProgressFillPositionSeconds;
             int InformationPositionHours, InformationPositionMinutes, InformationPositionSeconds;
 
@@ -860,45 +855,32 @@ namespace KS.Misc.Screensaver.Displays
                 DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Cycling colors...");
                 if (CurrentTicks >= ProgressClockSettings.ProgressClockCycleColorsTicks)
                 {
-                    if (ProgressClockSettings.ProgressClockTrueColor)
-                    {
-                        DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Current tick equals the maximum ticks to change color.");
-                        RedColorNumHours = RandomDriver.Random(ProgressClockSettings.ProgressClockMinimumRedColorLevelHours, ProgressClockSettings.ProgressClockMaximumRedColorLevelHours);
-                        GreenColorNumHours = RandomDriver.Random(ProgressClockSettings.ProgressClockMinimumGreenColorLevelHours, ProgressClockSettings.ProgressClockMaximumGreenColorLevelHours);
-                        BlueColorNumHours = RandomDriver.Random(ProgressClockSettings.ProgressClockMinimumBlueColorLevelHours, ProgressClockSettings.ProgressClockMaximumBlueColorLevelHours);
-                        DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (Hours) (R;G;B: {0};{1};{2})", RedColorNumHours, GreenColorNumHours, BlueColorNumHours);
-                        RedColorNumMinutes = RandomDriver.Random(ProgressClockSettings.ProgressClockMinimumRedColorLevelMinutes, ProgressClockSettings.ProgressClockMaximumRedColorLevelMinutes);
-                        GreenColorNumMinutes = RandomDriver.Random(ProgressClockSettings.ProgressClockMinimumGreenColorLevelMinutes, ProgressClockSettings.ProgressClockMaximumGreenColorLevelMinutes);
-                        BlueColorNumMinutes = RandomDriver.Random(ProgressClockSettings.ProgressClockMinimumBlueColorLevelMinutes, ProgressClockSettings.ProgressClockMaximumBlueColorLevelMinutes);
-                        DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (Minutes) (R;G;B: {0};{1};{2})", RedColorNumMinutes, GreenColorNumMinutes, BlueColorNumMinutes);
-                        RedColorNumSeconds = RandomDriver.Random(ProgressClockSettings.ProgressClockMinimumRedColorLevelSeconds, ProgressClockSettings.ProgressClockMaximumRedColorLevelSeconds);
-                        GreenColorNumSeconds = RandomDriver.Random(ProgressClockSettings.ProgressClockMinimumGreenColorLevelSeconds, ProgressClockSettings.ProgressClockMaximumGreenColorLevelSeconds);
-                        BlueColorNumSeconds = RandomDriver.Random(ProgressClockSettings.ProgressClockMinimumBlueColorLevelSeconds, ProgressClockSettings.ProgressClockMaximumBlueColorLevelSeconds);
-                        DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (Seconds) (R;G;B: {0};{1};{2})", RedColorNumSeconds, GreenColorNumSeconds, BlueColorNumSeconds);
-                        RedColorNum = RandomDriver.Random(ProgressClockSettings.ProgressClockMinimumRedColorLevel, ProgressClockSettings.ProgressClockMaximumRedColorLevel);
-                        GreenColorNum = RandomDriver.Random(ProgressClockSettings.ProgressClockMinimumGreenColorLevel, ProgressClockSettings.ProgressClockMaximumGreenColorLevel);
-                        BlueColorNum = RandomDriver.Random(ProgressClockSettings.ProgressClockMinimumBlueColorLevel, ProgressClockSettings.ProgressClockMaximumBlueColorLevel);
-                        DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
-                        ColorStorageHours = new Color(RedColorNumHours, GreenColorNumHours, BlueColorNumHours);
-                        ColorStorageMinutes = new Color(RedColorNumMinutes, GreenColorNumMinutes, BlueColorNumMinutes);
-                        ColorStorageSeconds = new Color(RedColorNumSeconds, GreenColorNumSeconds, BlueColorNumSeconds);
-                        ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
-                    }
-                    else
-                    {
-                        ColorNumHours = RandomDriver.Random(ProgressClockSettings.ProgressClockMinimumColorLevelHours, ProgressClockSettings.ProgressClockMaximumColorLevelHours);
-                        DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (Hours) ({0})", ColorNumHours);
-                        ColorNumMinutes = RandomDriver.Random(ProgressClockSettings.ProgressClockMinimumColorLevelMinutes, ProgressClockSettings.ProgressClockMaximumColorLevelMinutes);
-                        DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (Minutes) ({0})", ColorNumMinutes);
-                        ColorNumSeconds = RandomDriver.Random(ProgressClockSettings.ProgressClockMinimumColorLevelSeconds, ProgressClockSettings.ProgressClockMaximumColorLevelSeconds);
-                        DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (Seconds) ({0})", ColorNumSeconds);
-                        ColorNum = RandomDriver.Random(ProgressClockSettings.ProgressClockMinimumColorLevel, ProgressClockSettings.ProgressClockMaximumColorLevel);
-                        DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
-                        ColorStorageHours = new Color(ColorNumHours);
-                        ColorStorageMinutes = new Color(ColorNumMinutes);
-                        ColorStorageSeconds = new Color(ColorNumSeconds);
-                        ColorStorage = new Color(ColorNum);
-                    }
+                    var type = ProgressClockSettings.ProgressClockTrueColor ? ColorType.TrueColor : ColorType._255Color;
+                    DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Current tick equals the maximum ticks to change color.");
+                    ColorStorageHours =
+                        ColorTools.GetRandomColor(type, ProgressClockSettings.ProgressClockMinimumColorLevelHours, ProgressClockSettings.ProgressClockMaximumColorLevelHours,
+                                                        ProgressClockSettings.ProgressClockMinimumRedColorLevelHours, ProgressClockSettings.ProgressClockMaximumRedColorLevelHours,
+                                                        ProgressClockSettings.ProgressClockMinimumGreenColorLevelHours, ProgressClockSettings.ProgressClockMaximumGreenColorLevelHours,
+                                                        ProgressClockSettings.ProgressClockMinimumBlueColorLevelHours, ProgressClockSettings.ProgressClockMaximumBlueColorLevelHours);
+                    DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (Hours) (R;G;B: {0};{1};{2})", ColorStorageHours.R, ColorStorageHours.G, ColorStorageHours.B);
+                    ColorStorageMinutes =
+                        ColorTools.GetRandomColor(type, ProgressClockSettings.ProgressClockMinimumColorLevelMinutes, ProgressClockSettings.ProgressClockMaximumColorLevelMinutes,
+                                                        ProgressClockSettings.ProgressClockMinimumRedColorLevelMinutes, ProgressClockSettings.ProgressClockMaximumRedColorLevelMinutes,
+                                                        ProgressClockSettings.ProgressClockMinimumGreenColorLevelMinutes, ProgressClockSettings.ProgressClockMaximumGreenColorLevelMinutes,
+                                                        ProgressClockSettings.ProgressClockMinimumBlueColorLevelMinutes, ProgressClockSettings.ProgressClockMaximumBlueColorLevelMinutes);
+                    DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (Minutes) (R;G;B: {0};{1};{2})", ColorStorageMinutes.R, ColorStorageMinutes.G, ColorStorageMinutes.B);
+                    ColorStorageSeconds =
+                        ColorTools.GetRandomColor(type, ProgressClockSettings.ProgressClockMinimumColorLevelSeconds, ProgressClockSettings.ProgressClockMaximumColorLevelSeconds,
+                                                        ProgressClockSettings.ProgressClockMinimumRedColorLevelSeconds, ProgressClockSettings.ProgressClockMaximumRedColorLevelSeconds,
+                                                        ProgressClockSettings.ProgressClockMinimumGreenColorLevelSeconds, ProgressClockSettings.ProgressClockMaximumGreenColorLevelSeconds,
+                                                        ProgressClockSettings.ProgressClockMinimumBlueColorLevelSeconds, ProgressClockSettings.ProgressClockMaximumBlueColorLevelSeconds);
+                    DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (Seconds) (R;G;B: {0};{1};{2})", ColorStorageSeconds.R, ColorStorageSeconds.G, ColorStorageSeconds.B);
+                    ColorStorage =
+                        ColorTools.GetRandomColor(type, ProgressClockSettings.ProgressClockMinimumColorLevel, ProgressClockSettings.ProgressClockMaximumColorLevel,
+                                                        ProgressClockSettings.ProgressClockMinimumRedColorLevel, ProgressClockSettings.ProgressClockMaximumRedColorLevel,
+                                                        ProgressClockSettings.ProgressClockMinimumGreenColorLevel, ProgressClockSettings.ProgressClockMaximumGreenColorLevel,
+                                                        ProgressClockSettings.ProgressClockMinimumBlueColorLevel, ProgressClockSettings.ProgressClockMaximumBlueColorLevel);
+                    DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", ColorStorage.R, ColorStorage.G, ColorStorage.B);
                     CurrentTicks = 0L;
                 }
             }
