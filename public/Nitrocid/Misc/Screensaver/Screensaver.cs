@@ -57,6 +57,7 @@ namespace KS.Misc.Screensaver
             { "beatfader", new BeatFaderDisplay() },
             { "beatpulse", new BeatPulseDisplay() },
             { "beatedgepulse", new BeatEdgePulseDisplay() },
+            { "bloom", new BloomDisplay() },
             { "bouncingblock", new BouncingBlockDisplay() },
             { "bouncingtext", new BouncingTextDisplay() },
             { "bsod", new BSODDisplay() },

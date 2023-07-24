@@ -2394,5 +2394,9 @@ namespace KS.Kernel.Configuration.Instances
         /// [Lightning] Chance, in percent, to strike
         /// </summary>
         public int LightningStrikeProbability { get; set; } = 5;
+        /// <summary>
+        /// [Bloom] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int BloomDelay { get; set; } = 50;
     }
 }

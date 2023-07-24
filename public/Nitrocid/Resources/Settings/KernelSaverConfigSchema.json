@@ -1777,6 +1777,9 @@
         },
         "LightningStrikeProbability": {
             "type": "integer"
+        },
+        "BloomDelay": {
+            "type": "integer"
         }
     },
     "required": [
@@ -2371,6 +2374,7 @@
         "MatrixDelay",
         "MatrixMaxSteps",
         "LightningDelay",
-        "LightningStrikeProbability"
+        "LightningStrikeProbability",
+        "BloomDelay"
     ]
 }
