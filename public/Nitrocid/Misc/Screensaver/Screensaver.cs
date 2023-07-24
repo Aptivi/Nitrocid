@@ -217,6 +217,8 @@ namespace KS.Misc.Screensaver
                 {
                     saver = saver.ToLower();
                     var BaseSaver = Screensavers[saver];
+                    if (BaseSaver.ScreensaverContainsFlashingImages)
+                        BaseSaver.ScreensaverSeizureWarning();
                     inSaver = true;
                     Flags.ScrnTimeReached = true;
                     ScreensaverDisplayer.ScreensaverDisplayerThread.Start(BaseSaver);
@@ -225,9 +227,12 @@ namespace KS.Misc.Screensaver
                 else if (CustomSaverTools.CustomSavers.ContainsKey(saver))
                 {
                     // Only one custom screensaver can be used.
+                    var BaseSaver = CustomSaverTools.CustomSavers[saver].ScreensaverBase;
+                    if (BaseSaver.ScreensaverContainsFlashingImages)
+                        BaseSaver.ScreensaverSeizureWarning();
                     inSaver = true;
                     Flags.ScrnTimeReached = true;
-                    ScreensaverDisplayer.ScreensaverDisplayerThread.Start(new CustomDisplay(CustomSaverTools.CustomSavers[saver].ScreensaverBase));
+                    ScreensaverDisplayer.ScreensaverDisplayerThread.Start(new CustomDisplay(BaseSaver));
                     DebugWriter.WriteDebug(DebugLevel.I, "Custom screensaver {0} started", saver);
                 }
                 else

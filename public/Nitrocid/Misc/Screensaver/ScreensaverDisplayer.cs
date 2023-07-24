@@ -43,8 +43,6 @@ namespace KS.Misc.Screensaver
             try
             {
                 // Preparations
-                if (Screensaver.ScreensaverContainsFlashingImages)
-                    Screensaver.ScreensaverSeizureWarning();
                 OutOfRandom = false;
                 Screensaver.ScreensaverPreparation();
 
