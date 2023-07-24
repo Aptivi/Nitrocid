@@ -26,6 +26,10 @@ namespace KS.Misc.Screensaver
     public interface IScreensaver
     {
         /// <summary>
+        /// Shows the seizure warning before the preparation
+        /// </summary>
+        void ScreensaverSeizureWarning();
+        /// <summary>
         /// Prepare the screensaver before displaying.
         /// </summary>
         void ScreensaverPreparation();
@@ -41,6 +45,10 @@ namespace KS.Misc.Screensaver
         /// The name of screensaver, usually the assembly name of the custom screensaver
         /// </summary>
         string ScreensaverName { get; set; }
+        /// <summary>
+        /// Whether the screensaver contains flashing images
+        /// </summary>
+        bool ScreensaverContainsFlashingImages { get; set; }
         /// <summary>
         /// Settings for custom screensaver
         /// </summary>

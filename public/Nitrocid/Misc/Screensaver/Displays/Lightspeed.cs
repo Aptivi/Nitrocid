@@ -204,6 +204,9 @@ namespace KS.Misc.Screensaver.Displays
         public override string ScreensaverName { get; set; } = "Lightspeed";
 
         /// <inheritdoc/>
+        public override bool ScreensaverContainsFlashingImages { get; set; } = true;
+
+        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             int MaximumColors = LightspeedSettings.LightspeedMaximumColorLevel;

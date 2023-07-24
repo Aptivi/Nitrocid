@@ -796,5 +796,7 @@ Whether to use PowerLine to render the spaceship or to use the standard greater 
 An error occurred in the time and date module. Check to make sure that you've specified the time and the date correctly, and that the time zone exists.
 Time zone {0} not found
 To be continued...
+Photosensitive seizure warning
+This screensaver may contain flashing images and fast-paced animations that may cause seizures for the photosensitive. If you're sure to show this screensaver, press any key.
 
 ==========================================================================================================================================

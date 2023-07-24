@@ -80,6 +80,9 @@ namespace KS.Misc.Screensaver.Displays
         public override string ScreensaverName { get; set; } = "Lightning";
 
         /// <inheritdoc/>
+        public override bool ScreensaverContainsFlashingImages { get; set; } = true;
+
+        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             bool striking = RandomDriver.RandomChance(LightningSettings.LightningStrikeProbability);

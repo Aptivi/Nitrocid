@@ -297,6 +297,9 @@ namespace KS.Misc.Screensaver.Displays
         public override string ScreensaverName { get; set; } = "ExcaliBeats";
 
         /// <inheritdoc/>
+        public override bool ScreensaverContainsFlashingImages { get; set; } = true;
+
+        /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
