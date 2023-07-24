@@ -256,6 +256,8 @@ namespace KS.Shell.Shells.UESH
                 new CommandArgumentInfo(new[] { "$variablename", "value1", "value2", "value3 ..." }, Array.Empty<SwitchInfo>(), true, 2), new SetRangeCommand(), CommandFlags.SettingVariable) },
             { "sftp", new CommandInfo("sftp", ShellType, /* Localizable */ "Lets you use an SSH FTP server",
                 new CommandArgumentInfo(new[] { "server" }, Array.Empty<SwitchInfo>(), false, 0), new SftpCommand()) },
+            { "shipduet", new CommandInfo("shipduet", ShellType, /* Localizable */ "Two spaceships are on a fight with each other. One shot and the spaceship will blow. This is a local two-player game.",
+                new CommandArgumentInfo(), new ShipDuetCommand()) },
             { "shownotifs", new CommandInfo("shownotifs", ShellType, /* Localizable */ "Shows all received notifications",
                 new CommandArgumentInfo(), new ShowNotifsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
             { "showtd", new CommandInfo("showtd", ShellType, /* Localizable */ "Shows date and time",

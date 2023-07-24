@@ -871,6 +871,12 @@
         },
         "TuiBoxForegroundColor": {
             "type": "string"
+        },
+        "ShipDuetUsePowerLine": {
+            "type": "boolean"
+        },
+        "ShipDuetSpeed": {
+            "type": "integer"
         }
     },
     "required": [
@@ -1163,6 +1169,8 @@
         "TuiOptionForegroundColor",
         "TuiKeyBindingOptionColor",
         "TuiBoxBackgroundColor",
-        "TuiBoxForegroundColor"
+        "TuiBoxForegroundColor",
+        "ShipDuetUsePowerLine",
+        "ShipDuetSpeed"
     ]
 }

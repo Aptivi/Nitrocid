@@ -1829,6 +1829,18 @@
                 "Name": "Interactive TUI box foreground color",
                 "Type": "SColor",
                 "Variable": "TuiBoxForegroundColor"
+            },
+            {
+                "Name": "Use PowerLine for rendering spaceship in ShipDuet",
+                "Type": "SBoolean",
+                "Variable": "ShipDuetUsePowerLine",
+                "Description": "Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with ShipDuet, you need to install an appropriate font with PowerLine support."
+            },
+            {
+                "Name": "Game speed in ShipDuet",
+                "Type": "SInt",
+                "Variable": "ShipDuetSpeed",
+                "Description": "Specifies the game speed in milliseconds."
             }
         ]
     }

@@ -100,6 +100,7 @@ namespace KS.Misc.Screensaver
             { "pulse", new PulseDisplay() },
             { "ramp", new RampDisplay() },
             { "random", new RandomSaverDisplay() },
+            { "shipduet", new ShipDuetDisplay() },
             { "simplematrix", new SimpleMatrixDisplay() },
             { "siren", new SirenDisplay() },
             { "snakefill", new SnakeFillDisplay() },

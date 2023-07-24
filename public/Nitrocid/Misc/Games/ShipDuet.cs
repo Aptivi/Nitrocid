@@ -1,0 +1,373 @@
+﻿
+// Nitrocid KS  Copyright (C) 2018-2023  Aptivi
+// 
+// This file is part of Nitrocid KS
+// 
+// Nitrocid KS is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+// 
+// Nitrocid KS is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+// 
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+using System;
+using System.Collections.Generic;
+using System.Threading;
+using ColorSeq;
+using KS.Drivers.RNG;
+using KS.Languages;
+using KS.Misc.Threading;
+using KS.Misc.Writers.ConsoleWriters;
+using KS.ConsoleBase.Inputs;
+using KS.Kernel.Configuration;
+using KS.ConsoleBase;
+
+namespace KS.Misc.Games
+{
+    /// <summary>
+    /// ShipDuet shooter game module
+    /// </summary>
+    public static class ShipDuetShooter
+    {
+
+        internal readonly static KernelThread ShipDuetDrawThread = new("ShipDuet Shooter Draw Thread", true, DrawGame);
+        internal static bool GameEnded = false;
+        internal static int shipDuetSpeed = 10;
+        private static bool player1Won = false;
+        private static bool player2Won = false;
+        private static int SpaceshipHeightPlayer1 = 0;
+        private readonly static int MaxBulletsPlayer1 = 10;
+        private readonly static List<Tuple<int, int>> BulletsPlayer1 = new();
+        private static int SpaceshipHeightPlayer2 = 0;
+        private readonly static int MaxBulletsPlayer2 = 10;
+        private readonly static List<Tuple<int, int>> BulletsPlayer2 = new();
+        private readonly static List<Tuple<int, int>> Stars = new();
+
+        /// <summary>
+        /// Use PowerLine characters for the spaceship?
+        /// </summary>
+        public static bool ShipDuetUsePowerLine =>
+            Config.MainConfig.ShipDuetUsePowerLine;
+        /// <summary>
+        /// ShipDuet speed in milliseconds
+        /// </summary>
+        public static int ShipDuetSpeed =>
+            Config.MainConfig.ShipDuetSpeed;
+
+        /// <summary>
+        /// Initializes the ShipDuet game
+        /// </summary>
+        public static void InitializeShipDuet(bool simulation = false)
+        {
+            // Clear all bullets
+            BulletsPlayer1.Clear();
+            BulletsPlayer2.Clear();
+            Stars.Clear();
+            player1Won = false;
+            player2Won = false;
+
+            // Make the spaceship height in the center
+            SpaceshipHeightPlayer1 = SpaceshipHeightPlayer2 = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
+
+            // Start the draw thread
+            ShipDuetDrawThread.Stop();
+            ShipDuetDrawThread.Start();
+
+            // Remove the cursor
+            ConsoleWrapper.CursorVisible = false;
+
+            // Now, handle input or simulate keypresses
+            if (!simulation)
+            {
+                // Player mode
+                ConsoleKeyInfo Keypress;
+                while (!GameEnded)
+                {
+                    if (ConsoleWrapper.KeyAvailable)
+                    {
+                        // Read the key
+                        Keypress = Input.DetectKeypress();
+
+                        // Select command based on key value
+                        switch (Keypress.Key)
+                        {
+                            case ConsoleKey.UpArrow:
+                                {
+                                    if (SpaceshipHeightPlayer1 > 0)
+                                        SpaceshipHeightPlayer1 -= 1;
+                                    break;
+                                }
+                            case ConsoleKey.DownArrow:
+                                {
+                                    if (SpaceshipHeightPlayer1 < ConsoleWrapper.WindowHeight)
+                                        SpaceshipHeightPlayer1 += 1;
+                                    break;
+                                }
+                            case ConsoleKey.Enter:
+                                {
+                                    if (BulletsPlayer1.Count < MaxBulletsPlayer1)
+                                        BulletsPlayer1.Add(new Tuple<int, int>(1, SpaceshipHeightPlayer1));
+                                    break;
+                                }
+                            case ConsoleKey.W:
+                                {
+                                    if (SpaceshipHeightPlayer2 > 0)
+                                        SpaceshipHeightPlayer2 -= 1;
+                                    break;
+                                }
+                            case ConsoleKey.S:
+                                {
+                                    if (SpaceshipHeightPlayer2 < ConsoleWrapper.WindowHeight)
+                                        SpaceshipHeightPlayer2 += 1;
+                                    break;
+                                }
+                            case ConsoleKey.Spacebar:
+                                {
+                                    if (BulletsPlayer2.Count < MaxBulletsPlayer2)
+                                        BulletsPlayer2.Add(new Tuple<int, int>(ConsoleWrapper.WindowWidth - 2, SpaceshipHeightPlayer2));
+                                    break;
+                                }
+                            case ConsoleKey.Escape:
+                                {
+                                    GameEnded = true;
+                                    break;
+                                }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                // Simulation mode
+                ConsoleKey Keypress = 0;
+                ConsoleKey[] possibleKeys = new[] 
+                { 
+                    // Player 1
+                    ConsoleKey.UpArrow, ConsoleKey.DownArrow, ConsoleKey.Enter,
+
+                    // Player 2
+                    ConsoleKey.W, ConsoleKey.S, ConsoleKey.Spacebar
+                };
+                while (!GameEnded)
+                {
+                    float PossibilityToChange = (float)RandomDriver.RandomDouble();
+                    if ((int)Math.Round(PossibilityToChange) == 1)
+                        Keypress = possibleKeys[RandomDriver.RandomIdx(possibleKeys.Length)];
+
+                    // Select command based on key value
+                    switch (Keypress)
+                    {
+                        case ConsoleKey.UpArrow:
+                            {
+                                if (SpaceshipHeightPlayer1 > 0)
+                                    SpaceshipHeightPlayer1 -= 1;
+                                break;
+                            }
+                        case ConsoleKey.DownArrow:
+                            {
+                                if (SpaceshipHeightPlayer1 < ConsoleWrapper.WindowHeight)
+                                    SpaceshipHeightPlayer1 += 1;
+                                break;
+                            }
+                        case ConsoleKey.Enter:
+                            {
+                                if (BulletsPlayer1.Count < MaxBulletsPlayer1)
+                                    BulletsPlayer1.Add(new Tuple<int, int>(1, SpaceshipHeightPlayer1));
+                                break;
+                            }
+                        case ConsoleKey.W:
+                            {
+                                if (SpaceshipHeightPlayer2 > 0)
+                                    SpaceshipHeightPlayer2 -= 1;
+                                break;
+                            }
+                        case ConsoleKey.S:
+                            {
+                                if (SpaceshipHeightPlayer2 < ConsoleWrapper.WindowHeight)
+                                    SpaceshipHeightPlayer2 += 1;
+                                break;
+                            }
+                        case ConsoleKey.Spacebar:
+                            {
+                                if (BulletsPlayer2.Count < MaxBulletsPlayer2)
+                                    BulletsPlayer2.Add(new Tuple<int, int>(ConsoleWrapper.WindowWidth - 2, SpaceshipHeightPlayer2));
+                                break;
+                            }
+                    }
+                    ThreadManager.SleepNoBlock(100, Screensaver.ScreensaverDisplayer.ScreensaverDisplayerThread);
+                }
+            }
+
+            // Stop the draw thread since the game ended
+            ShipDuetDrawThread.Wait();
+            ShipDuetDrawThread.Stop();
+            GameEnded = false;
+        }
+
+        private static void DrawGame()
+        {
+            try
+            {
+                while (!GameEnded)
+                {
+                    // Clear screen
+                    ConsoleWrapper.Clear();
+
+                    // Move the Player 1 bullets right
+                    for (int Bullet = 0; Bullet <= BulletsPlayer1.Count - 1; Bullet++)
+                    {
+                        int BulletX = BulletsPlayer1[Bullet].Item1 + 1;
+                        int BulletY = BulletsPlayer1[Bullet].Item2;
+                        BulletsPlayer1[Bullet] = new Tuple<int, int>(BulletX, BulletY);
+                    }
+
+                    // Move the Player 2 bullets left
+                    for (int Bullet = 0; Bullet <= BulletsPlayer2.Count - 1; Bullet++)
+                    {
+                        int BulletX = BulletsPlayer2[Bullet].Item1 - 1;
+                        int BulletY = BulletsPlayer2[Bullet].Item2;
+                        BulletsPlayer2[Bullet] = new Tuple<int, int>(BulletX, BulletY);
+                    }
+
+                    // Move the stars left
+                    for (int Star = 0; Star <= Stars.Count - 1; Star++)
+                    {
+                        int StarX = Stars[Star].Item1 - 1;
+                        int StarY = Stars[Star].Item2;
+                        Stars[Star] = new Tuple<int, int>(StarX, StarY);
+                    }
+
+                    // If any bullet is out of X range, delete it
+                    for (int BulletIndex = BulletsPlayer1.Count - 1; BulletIndex >= 0; BulletIndex -= 1)
+                    {
+                        var Bullet = BulletsPlayer1[BulletIndex];
+                        if (Bullet.Item1 >= ConsoleWrapper.WindowWidth)
+                        {
+                            // The bullet went beyond. Remove it.
+                            BulletsPlayer1.RemoveAt(BulletIndex);
+                        }
+                    }
+                    for (int BulletIndex = BulletsPlayer2.Count - 1; BulletIndex >= 0; BulletIndex -= 1)
+                    {
+                        var Bullet = BulletsPlayer2[BulletIndex];
+                        if (Bullet.Item1 < 0)
+                        {
+                            // The bullet went beyond. Remove it.
+                            BulletsPlayer2.RemoveAt(BulletIndex);
+                        }
+                    }
+
+                    // If any star is out of X range, delete it
+                    for (int StarIndex = Stars.Count - 1; StarIndex >= 0; StarIndex -= 1)
+                    {
+                        var Star = Stars[StarIndex];
+                        if (Star.Item1 < 0)
+                        {
+                            // The star went beyond. Remove it.
+                            Stars.RemoveAt(StarIndex);
+                        }
+                    }
+
+                    // Add new star if guaranteed
+                    bool StarShowGuaranteed = RandomDriver.RandomChance(10);
+                    if (StarShowGuaranteed)
+                    {
+                        int StarX = ConsoleWrapper.WindowWidth - 1;
+                        int StarY = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
+                        Stars.Add(new Tuple<int, int>(StarX, StarY));
+                    }
+
+                    // Draw the stars, the bullet, and the spaceship if any of them are updated
+                    DrawSpaceships();
+                    for (int BulletIndex = BulletsPlayer1.Count - 1; BulletIndex >= 0; BulletIndex -= 1)
+                    {
+                        var Bullet = BulletsPlayer1[BulletIndex];
+                        DrawBullet(Bullet.Item1, Bullet.Item2);
+                    }
+                    for (int BulletIndex = BulletsPlayer2.Count - 1; BulletIndex >= 0; BulletIndex -= 1)
+                    {
+                        var Bullet = BulletsPlayer2[BulletIndex];
+                        DrawBullet(Bullet.Item1, Bullet.Item2);
+                    }
+                    for (int StarIndex = Stars.Count - 1; StarIndex >= 0; StarIndex -= 1)
+                    {
+                        var Star = Stars[StarIndex];
+                        char StarSymbol = '*';
+                        int StarX = Star.Item1;
+                        int StarY = Star.Item2;
+                        TextWriterWhereColor.WriteWhere(Convert.ToString(StarSymbol), StarX, StarY, false, ConsoleColors.White);
+                    }
+
+                    // Check to see if the spaceship is blown up by the opposing spaceship
+                    for (int BulletIndex = BulletsPlayer1.Count - 1; BulletIndex >= 0; BulletIndex -= 1)
+                    {
+                        var Bullet = BulletsPlayer1[BulletIndex];
+                        if (Bullet.Item1 == ConsoleWrapper.WindowWidth - 1 & Bullet.Item2 == SpaceshipHeightPlayer2)
+                        {
+                            // The spaceship crashed! Game ended and Player 1 won.
+                            GameEnded = true;
+                            player1Won = true;
+                        }
+                    }
+                    for (int BulletIndex = BulletsPlayer2.Count - 1; BulletIndex >= 0; BulletIndex -= 1)
+                    {
+                        var Bullet = BulletsPlayer2[BulletIndex];
+                        if (Bullet.Item1 == 0 & Bullet.Item2 == SpaceshipHeightPlayer1)
+                        {
+                            // The spaceship crashed! Game ended and Player 2 won.
+                            GameEnded = true;
+                            player2Won = true;
+                        }
+                    }
+
+                    // Wait for a few milliseconds
+                    ThreadManager.SleepNoBlock(ShipDuetSpeed, ShipDuetDrawThread);
+                }
+            }
+            catch (ThreadInterruptedException)
+            {
+            }
+            // Game is over. Move to the Finally block.
+            catch (Exception ex)
+            {
+                // Game is over with an unexpected error.
+                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Unexpected error") + ": {0}", 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red, ex.Message);
+                ThreadManager.SleepNoBlock(3000L, ShipDuetDrawThread);
+                ConsoleWrapper.Clear();
+            }
+            finally
+            {
+                // Write who is the winner
+                if (player1Won && player2Won || !player1Won && !player2Won)
+                    TextWriterWhereColor.WriteWhere(Translate.DoTranslation("It's a draw."), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red);
+                else if (player1Won || player2Won)
+                    TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Player {0} wins!"), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red, player1Won ? 1 : 2);
+                ThreadManager.SleepNoBlock(3000L, ShipDuetDrawThread);
+                ConsoleWrapper.Clear();
+            }
+        }
+
+        private static void DrawSpaceships()
+        {
+            char PowerLineSpaceshipP1 = Convert.ToChar(0xE0B0);
+            char PowerLineSpaceshipP2 = Convert.ToChar(0xE0B2);
+            char SpaceshipSymbolP1 = ShipDuetUsePowerLine ? PowerLineSpaceshipP1 : '>';
+            char SpaceshipSymbolP2 = ShipDuetUsePowerLine ? PowerLineSpaceshipP2 : '<';
+            TextWriterWhereColor.WriteWhere(Convert.ToString(SpaceshipSymbolP1), 0, SpaceshipHeightPlayer1, false, ConsoleColors.Green);
+            TextWriterWhereColor.WriteWhere(Convert.ToString(SpaceshipSymbolP2), Console.WindowWidth - 1, SpaceshipHeightPlayer2, false, ConsoleColors.DarkGreen);
+        }
+
+        private static void DrawBullet(int BulletX, int BulletY)
+        {
+            char BulletSymbol = '-';
+            TextWriterWhereColor.WriteWhere(Convert.ToString(BulletSymbol), BulletX, BulletY, false, ConsoleColors.Cyan);
+        }
+
+    }
+}

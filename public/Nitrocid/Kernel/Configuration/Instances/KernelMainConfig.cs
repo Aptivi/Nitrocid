@@ -1719,5 +1719,17 @@ namespace KS.Kernel.Configuration.Instances
         /// Interactive TUI box foreground color
         /// </summary>
         public string TuiBoxForegroundColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.White)).PlainSequence;
+        /// <summary>
+        /// Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with Meteor, you need to install an appropriate font with PowerLine support.
+        /// </summary>
+        public bool ShipDuetUsePowerLine { get; set; } = true;
+        /// <summary>
+        /// Specifies the game speed in milliseconds.
+        /// </summary>
+        public int ShipDuetSpeed
+        {
+            get => ShipDuetShooter.shipDuetSpeed;
+            set => ShipDuetShooter.shipDuetSpeed = value < 0 ? 10 : value;
+        }
     }
 }

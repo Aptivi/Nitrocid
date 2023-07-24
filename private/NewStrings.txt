@@ -787,5 +787,11 @@ ESC: exit
 TAB: info
 Chance, in percent, to strike
 Strike Probability
+It's a draw.
+Player {0} wins!
+Two spaceships are on a fight with each other. One shot and the spaceship will blow. This is a local two-player game.
+Use PowerLine for rendering spaceship in ShipDuet
+Game speed in ShipDuet
+Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with ShipDuet, you need to install an appropriate font with PowerLine support.
 
 ==========================================================================================================================================
