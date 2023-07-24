@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using ColorSeq;
 using ColorSeq.Accessibility;
 using KS.ConsoleBase.Themes;
+using KS.Drivers.RNG;
 using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
@@ -408,6 +409,52 @@ namespace KS.ConsoleBase.Colors
             if (B < 0 | B > 255)
                 throw new KernelException(KernelExceptionType.Color, Translate.DoTranslation("Invalid blue color specifier."));
             return $"#{R:X2}{G:X2}{B:X2}";
+        }
+
+        /// <summary>
+        /// Gets a random color instance
+        /// </summary>
+        /// <param name="type">Color type to generate</param>
+        /// <param name="selectBlack">Whether to select the black color or not</param>
+        /// <returns>A color instance</returns>
+        public static Color GetRandomColor(ColorType type, bool selectBlack = true) =>
+            GetRandomColor(type,
+                selectBlack ? 0 : 1, type != ColorType._16Color ? 255 : 15,
+                selectBlack ? 0 : 1, 255,
+                selectBlack ? 0 : 1, 255,
+                selectBlack ? 0 : 1, 255);
+
+        /// <summary>
+        /// Gets a random color instance
+        /// </summary>
+        /// <param name="type">Color type to generate</param>
+        /// <param name="minColor">The minimum color level</param>
+        /// <param name="maxColor">The maximum color level</param>
+        /// <param name="minColorR">The minimum red color level</param>
+        /// <param name="maxColorR">The maximum red color level</param>
+        /// <param name="minColorG">The minimum green color level</param>
+        /// <param name="maxColorG">The maximum green color level</param>
+        /// <param name="minColorB">The minimum blue color level</param>
+        /// <param name="maxColorB">The maximum blue color level</param>
+        /// <returns>A color instance</returns>
+        public static Color GetRandomColor(ColorType type, int minColor, int maxColor, int minColorR, int maxColorR, int minColorG, int maxColorG, int minColorB, int maxColorB)
+        {
+            switch (type)
+            {
+                case ColorType._16Color:
+                    int colorNum = RandomDriver.Random(minColor, maxColor);
+                    return new Color(colorNum);
+                case ColorType._255Color:
+                    int colorNum2 = RandomDriver.Random(minColor, maxColor);
+                    return new Color(colorNum2);
+                case ColorType.TrueColor:
+                    int colorNumR = RandomDriver.Random(minColorR, maxColorR);
+                    int colorNumG = RandomDriver.Random(minColorG, maxColorG);
+                    int colorNumB = RandomDriver.Random(minColorB, maxColorB);
+                    return new Color(colorNumR, colorNumG, colorNumB);
+                default:
+                    return Color.Empty;
+            }
         }
 
     }
