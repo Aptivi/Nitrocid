@@ -795,5 +795,6 @@ Game speed in ShipDuet
 Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with ShipDuet, you need to install an appropriate font with PowerLine support.
 An error occurred in the time and date module. Check to make sure that you've specified the time and the date correctly, and that the time zone exists.
 Time zone {0} not found
+To be continued...
 
 ==========================================================================================================================================

@@ -26,6 +26,7 @@ using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Kernel.Time;
 using KS.Kernel.Time.Renderers;
+using KS.Languages;
 using KS.Misc.Animations.BSOD.Simulations;
 using KS.Misc.Animations.Glitch;
 using KS.Misc.Text;
@@ -58,7 +59,7 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverLogic()
         {
             int step;
-            int maxSteps = 12;
+            int maxSteps = 13;
             Color darkGreen = new(ConsoleColors.DarkGreen);
             Color green = new(ConsoleColors.Green);
             Color black = new(ConsoleColors.Black);
@@ -450,6 +451,20 @@ namespace KS.Misc.Screensaver.Displays
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
                         }
+                        break;
+                    case 13:
+                        string tbc = Translate.DoTranslation("To be continued...").ToUpper();
+                        ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, green);
+                        ThreadManager.SleepNoBlock(40, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, black);
+                        ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, green);
+                        ThreadManager.SleepNoBlock(50, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, black);
+                        ThreadManager.SleepNoBlock(1000, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, green);
+                        ThreadManager.SleepNoBlock(5000, ScreensaverDisplayer.ScreensaverDisplayerThread);
                         break;
                 }
             }

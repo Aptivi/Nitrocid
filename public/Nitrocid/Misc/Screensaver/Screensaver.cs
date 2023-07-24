@@ -81,6 +81,7 @@ namespace KS.Misc.Screensaver
             { "gradientrot", new GradientRotDisplay() },
             { "indeterminate", new IndeterminateDisplay() },
             { "ksx", new KSXDisplay() },
+            { "ksx2", new KSX2Display() },
             { "lighter", new LighterDisplay() },
             { "lightning", new LightningDisplay() },
             { "lightspeed", new LightspeedDisplay() },
