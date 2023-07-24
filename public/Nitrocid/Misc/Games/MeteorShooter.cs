@@ -26,6 +26,7 @@ using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.ConsoleBase.Inputs;
 using KS.Kernel.Configuration;
+using KS.ConsoleBase;
 
 namespace KS.Misc.Games
 {
@@ -65,14 +66,14 @@ namespace KS.Misc.Games
             Meteors.Clear();
 
             // Make the spaceship height in the center
-            SpaceshipHeight = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d);
+            SpaceshipHeight = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
 
             // Start the draw thread
             MeteorDrawThread.Stop();
             MeteorDrawThread.Start();
 
             // Remove the cursor
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
+            ConsoleWrapper.CursorVisible = false;
 
             // Now, handle input or simulate keypresses
             if (!simulation)
@@ -81,38 +82,11 @@ namespace KS.Misc.Games
                 ConsoleKeyInfo Keypress;
                 while (!GameEnded)
                 {
-                    if (ConsoleBase.ConsoleWrapper.KeyAvailable)
+                    if (ConsoleWrapper.KeyAvailable)
                     {
-                        // Read the key
+                        // Read the key and handle it
                         Keypress = Input.DetectKeypress();
-
-                        // Select command based on key value
-                        switch (Keypress.Key)
-                        {
-                            case ConsoleKey.UpArrow:
-                                {
-                                    if (SpaceshipHeight > 0)
-                                        SpaceshipHeight -= 1;
-                                    break;
-                                }
-                            case ConsoleKey.DownArrow:
-                                {
-                                    if (SpaceshipHeight < ConsoleBase.ConsoleWrapper.WindowHeight)
-                                        SpaceshipHeight += 1;
-                                    break;
-                                }
-                            case ConsoleKey.Spacebar:
-                                {
-                                    if (Bullets.Count < MaxBullets)
-                                        Bullets.Add(new Tuple<int, int>(1, SpaceshipHeight));
-                                    break;
-                                }
-                            case ConsoleKey.Escape:
-                                {
-                                    GameEnded = true;
-                                    break;
-                                }
-                        }
+                        HandleKeypress(Keypress.Key);
                     }
                 }
             }
@@ -128,27 +102,7 @@ namespace KS.Misc.Games
                         Keypress = possibleKeys[RandomDriver.RandomIdx(possibleKeys.Length)];
 
                     // Select command based on key value
-                    switch (Keypress)
-                    {
-                        case ConsoleKey.UpArrow:
-                            {
-                                if (SpaceshipHeight > 0)
-                                    SpaceshipHeight -= 1;
-                                break;
-                            }
-                        case ConsoleKey.DownArrow:
-                            {
-                                if (SpaceshipHeight < ConsoleBase.ConsoleWrapper.WindowHeight)
-                                    SpaceshipHeight += 1;
-                                break;
-                            }
-                        case ConsoleKey.Spacebar:
-                            {
-                                if (Bullets.Count < MaxBullets)
-                                    Bullets.Add(new Tuple<int, int>(1, SpaceshipHeight));
-                                break;
-                            }
-                    }
+                    HandleKeypress(Keypress);
                     ThreadManager.SleepNoBlock(100, Screensaver.ScreensaverDisplayer.ScreensaverDisplayerThread);
                 }
             }
@@ -159,6 +113,28 @@ namespace KS.Misc.Games
             GameEnded = false;
         }
 
+        private static void HandleKeypress(ConsoleKey Keypress)
+        {
+            switch (Keypress)
+            {
+                case ConsoleKey.UpArrow:
+                    if (SpaceshipHeight > 0)
+                        SpaceshipHeight -= 1;
+                    break;
+                case ConsoleKey.DownArrow:
+                    if (SpaceshipHeight < ConsoleWrapper.WindowHeight)
+                        SpaceshipHeight += 1;
+                    break;
+                case ConsoleKey.Spacebar:
+                    if (Bullets.Count < MaxBullets)
+                        Bullets.Add(new Tuple<int, int>(1, SpaceshipHeight));
+                    break;
+                case ConsoleKey.Escape:
+                    GameEnded = true;
+                    break;
+            }
+        }
+
         private static void DrawGame()
         {
             try
@@ -166,7 +142,7 @@ namespace KS.Misc.Games
                 while (!GameEnded)
                 {
                     // Clear screen
-                    ConsoleBase.ConsoleWrapper.Clear();
+                    ConsoleWrapper.Clear();
 
                     // Move the meteors left
                     for (int Meteor = 0; Meteor <= Meteors.Count - 1; Meteor++)
@@ -188,7 +164,7 @@ namespace KS.Misc.Games
                     for (int BulletIndex = Bullets.Count - 1; BulletIndex >= 0; BulletIndex -= 1)
                     {
                         var Bullet = Bullets[BulletIndex];
-                        if (Bullet.Item1 >= ConsoleBase.ConsoleWrapper.WindowWidth)
+                        if (Bullet.Item1 >= ConsoleWrapper.WindowWidth)
                         {
                             // The bullet went beyond. Remove it.
                             Bullets.RemoveAt(BulletIndex);
@@ -211,8 +187,8 @@ namespace KS.Misc.Games
                     bool MeteorShowGuaranteed = RandomDriver.RandomDouble() < MeteorShowProbability;
                     if (MeteorShowGuaranteed & Meteors.Count < MaxMeteors)
                     {
-                        int MeteorX = ConsoleBase.ConsoleWrapper.WindowWidth - 1;
-                        int MeteorY = RandomDriver.RandomIdx(ConsoleBase.ConsoleWrapper.WindowHeight - 1);
+                        int MeteorX = ConsoleWrapper.WindowWidth - 1;
+                        int MeteorY = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight - 1);
                         Meteors.Add(new Tuple<int, int>(MeteorX, MeteorY));
                     }
 
@@ -267,16 +243,16 @@ namespace KS.Misc.Games
             catch (Exception ex)
             {
                 // Game is over with an unexpected error.
-                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Unexpected error") + ": {0}", 0, ConsoleBase.ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red, ex.Message);
+                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Unexpected error") + ": {0}", 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red, ex.Message);
                 ThreadManager.SleepNoBlock(3000L, MeteorDrawThread);
-                ConsoleBase.ConsoleWrapper.Clear();
+                ConsoleWrapper.Clear();
             }
             finally
             {
                 // Write game over
-                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Game over"), 0, ConsoleBase.ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red);
+                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Game over"), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red);
                 ThreadManager.SleepNoBlock(3000L, MeteorDrawThread);
-                ConsoleBase.ConsoleWrapper.Clear();
+                ConsoleWrapper.Clear();
             }
         }
 

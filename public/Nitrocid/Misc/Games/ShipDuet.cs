@@ -91,54 +91,9 @@ namespace KS.Misc.Games
                 {
                     if (ConsoleWrapper.KeyAvailable)
                     {
-                        // Read the key
+                        // Read the key and handle it
                         Keypress = Input.DetectKeypress();
-
-                        // Select command based on key value
-                        switch (Keypress.Key)
-                        {
-                            case ConsoleKey.UpArrow:
-                                {
-                                    if (SpaceshipHeightPlayer1 > 0)
-                                        SpaceshipHeightPlayer1 -= 1;
-                                    break;
-                                }
-                            case ConsoleKey.DownArrow:
-                                {
-                                    if (SpaceshipHeightPlayer1 < ConsoleWrapper.WindowHeight)
-                                        SpaceshipHeightPlayer1 += 1;
-                                    break;
-                                }
-                            case ConsoleKey.Enter:
-                                {
-                                    if (BulletsPlayer1.Count < MaxBulletsPlayer1)
-                                        BulletsPlayer1.Add(new Tuple<int, int>(1, SpaceshipHeightPlayer1));
-                                    break;
-                                }
-                            case ConsoleKey.W:
-                                {
-                                    if (SpaceshipHeightPlayer2 > 0)
-                                        SpaceshipHeightPlayer2 -= 1;
-                                    break;
-                                }
-                            case ConsoleKey.S:
-                                {
-                                    if (SpaceshipHeightPlayer2 < ConsoleWrapper.WindowHeight)
-                                        SpaceshipHeightPlayer2 += 1;
-                                    break;
-                                }
-                            case ConsoleKey.Spacebar:
-                                {
-                                    if (BulletsPlayer2.Count < MaxBulletsPlayer2)
-                                        BulletsPlayer2.Add(new Tuple<int, int>(ConsoleWrapper.WindowWidth - 2, SpaceshipHeightPlayer2));
-                                    break;
-                                }
-                            case ConsoleKey.Escape:
-                                {
-                                    GameEnded = true;
-                                    break;
-                                }
-                        }
+                        HandleKeypress(Keypress.Key);
                     }
                 }
             }
@@ -161,45 +116,7 @@ namespace KS.Misc.Games
                         Keypress = possibleKeys[RandomDriver.RandomIdx(possibleKeys.Length)];
 
                     // Select command based on key value
-                    switch (Keypress)
-                    {
-                        case ConsoleKey.UpArrow:
-                            {
-                                if (SpaceshipHeightPlayer1 > 0)
-                                    SpaceshipHeightPlayer1 -= 1;
-                                break;
-                            }
-                        case ConsoleKey.DownArrow:
-                            {
-                                if (SpaceshipHeightPlayer1 < ConsoleWrapper.WindowHeight)
-                                    SpaceshipHeightPlayer1 += 1;
-                                break;
-                            }
-                        case ConsoleKey.Enter:
-                            {
-                                if (BulletsPlayer1.Count < MaxBulletsPlayer1)
-                                    BulletsPlayer1.Add(new Tuple<int, int>(1, SpaceshipHeightPlayer1));
-                                break;
-                            }
-                        case ConsoleKey.W:
-                            {
-                                if (SpaceshipHeightPlayer2 > 0)
-                                    SpaceshipHeightPlayer2 -= 1;
-                                break;
-                            }
-                        case ConsoleKey.S:
-                            {
-                                if (SpaceshipHeightPlayer2 < ConsoleWrapper.WindowHeight)
-                                    SpaceshipHeightPlayer2 += 1;
-                                break;
-                            }
-                        case ConsoleKey.Spacebar:
-                            {
-                                if (BulletsPlayer2.Count < MaxBulletsPlayer2)
-                                    BulletsPlayer2.Add(new Tuple<int, int>(ConsoleWrapper.WindowWidth - 2, SpaceshipHeightPlayer2));
-                                break;
-                            }
-                    }
+                    HandleKeypress(Keypress);
                     ThreadManager.SleepNoBlock(100, Screensaver.ScreensaverDisplayer.ScreensaverDisplayerThread);
                 }
             }
@@ -208,6 +125,40 @@ namespace KS.Misc.Games
             ShipDuetDrawThread.Wait();
             ShipDuetDrawThread.Stop();
             GameEnded = false;
+        }
+
+        private static void HandleKeypress(ConsoleKey Keypress)
+        {
+            switch (Keypress)
+            {
+                case ConsoleKey.UpArrow:
+                    if (SpaceshipHeightPlayer1 > 0)
+                        SpaceshipHeightPlayer1 -= 1;
+                    break;
+                case ConsoleKey.DownArrow:
+                    if (SpaceshipHeightPlayer1 < ConsoleWrapper.WindowHeight)
+                        SpaceshipHeightPlayer1 += 1;
+                    break;
+                case ConsoleKey.Enter:
+                    if (BulletsPlayer1.Count < MaxBulletsPlayer1)
+                        BulletsPlayer1.Add(new Tuple<int, int>(1, SpaceshipHeightPlayer1));
+                    break;
+                case ConsoleKey.W:
+                    if (SpaceshipHeightPlayer2 > 0)
+                        SpaceshipHeightPlayer2 -= 1;
+                    break;
+                case ConsoleKey.S:
+                    if (SpaceshipHeightPlayer2 < ConsoleWrapper.WindowHeight)
+                        SpaceshipHeightPlayer2 += 1;
+                    break;
+                case ConsoleKey.Spacebar:
+                    if (BulletsPlayer2.Count < MaxBulletsPlayer2)
+                        BulletsPlayer2.Add(new Tuple<int, int>(ConsoleWrapper.WindowWidth - 2, SpaceshipHeightPlayer2));
+                    break;
+                case ConsoleKey.Escape:
+                    GameEnded = true;
+                    break;
+            }
         }
 
         private static void DrawGame()
