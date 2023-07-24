@@ -313,9 +313,9 @@ namespace KS.Misc.Screensaver.Displays
             int RampColorRedThreshold = RedColorNumFrom - RedColorNumTo;
             int RampColorGreenThreshold = GreenColorNumFrom - GreenColorNumTo;
             int RampColorBlueThreshold = BlueColorNumFrom - BlueColorNumTo;
-            double RampColorRedSteps = RampColorRedThreshold / RampFrameSpaces;
-            double RampColorGreenSteps = RampColorGreenThreshold / RampFrameSpaces;
-            double RampColorBlueSteps = RampColorBlueThreshold / RampFrameSpaces;
+            double RampColorRedSteps = RampColorRedThreshold / (double)RampFrameSpaces;
+            double RampColorGreenSteps = RampColorGreenThreshold / (double)RampFrameSpaces;
+            double RampColorBlueSteps = RampColorBlueThreshold / (double)RampFrameSpaces;
             DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Set thresholds (RGB: {0};{1};{2})", RampColorRedThreshold, RampColorGreenThreshold, RampColorBlueThreshold);
             DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Steps by {0} spaces (RGB: {1};{2};{3})", RampFrameSpaces, RampColorRedSteps, RampColorGreenSteps, RampColorBlueSteps);
 
