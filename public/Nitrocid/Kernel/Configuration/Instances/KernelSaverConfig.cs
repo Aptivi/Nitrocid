@@ -453,7 +453,7 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// [ProgressClock] The minimum color level (255 colors or 16 colors - hours)
         /// </summary>
-        public int ProgressClockMinimumColorLevelHours { get; set; } = 0;
+        public int ProgressClockMinimumColorLevelHours { get; set; } = 1;
         /// <summary>
         /// [ProgressClock] The maximum red color level (true color - hours)
         /// </summary>
@@ -485,7 +485,7 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// [ProgressClock] The minimum color level (255 colors or 16 colors - minutes)
         /// </summary>
-        public int ProgressClockMinimumColorLevelMinutes { get; set; } = 0;
+        public int ProgressClockMinimumColorLevelMinutes { get; set; } = 1;
         /// <summary>
         /// [ProgressClock] The maximum red color level (true color - minutes)
         /// </summary>
@@ -517,7 +517,7 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// [ProgressClock] The minimum color level (255 colors or 16 colors - seconds)
         /// </summary>
-        public int ProgressClockMinimumColorLevelSeconds { get; set; } = 0;
+        public int ProgressClockMinimumColorLevelSeconds { get; set; } = 1;
         /// <summary>
         /// [ProgressClock] The maximum red color level (true color - seconds)
         /// </summary>
@@ -549,7 +549,7 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// [ProgressClock] The minimum color level (255 colors or 16 colors)
         /// </summary>
-        public int ProgressClockMinimumColorLevel { get; set; } = 0;
+        public int ProgressClockMinimumColorLevel { get; set; } = 1;
         /// <summary>
         /// [ProgressClock] The maximum red color level (true color)
         /// </summary>

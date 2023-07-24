@@ -380,8 +380,8 @@ namespace KS.Misc.Screensaver.Displays
             set
             {
                 int FinalMinimumLevel = 255;
-                if (value <= 0)
-                    value = 0;
+                if (value < 0)
+                    value = 1;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
                 Config.SaverConfig.ProgressClockMinimumColorLevelHours = value;
@@ -502,8 +502,8 @@ namespace KS.Misc.Screensaver.Displays
             set
             {
                 int FinalMinimumLevel = 255;
-                if (value <= 0)
-                    value = 0;
+                if (value < 0)
+                    value = 1;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
                 Config.SaverConfig.ProgressClockMinimumColorLevelMinutes = value;
@@ -624,8 +624,8 @@ namespace KS.Misc.Screensaver.Displays
             set
             {
                 int FinalMinimumLevel = 255;
-                if (value <= 0)
-                    value = 0;
+                if (value < 0)
+                    value = 1;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
                 Config.SaverConfig.ProgressClockMinimumColorLevelSeconds = value;
@@ -746,8 +746,8 @@ namespace KS.Misc.Screensaver.Displays
             set
             {
                 int FinalMinimumLevel = 255;
-                if (value <= 0)
-                    value = 0;
+                if (value < 0)
+                    value = 1;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
                 Config.SaverConfig.ProgressClockMinimumColorLevel = value;
