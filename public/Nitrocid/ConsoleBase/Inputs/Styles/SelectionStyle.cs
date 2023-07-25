@@ -62,9 +62,57 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
         /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
         /// <param name="AlternateAnswersStr">Set of alternate answers. They can be written like this: Y/N/C.</param>
+        public static int PromptSelection(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr) =>
+            PromptSelection(Question, AnswersStr, AnswersTitles, AlternateAnswersStr, Array.Empty<string>());
+
+        /// <summary>
+        /// Prompts user for Selection
+        /// </summary>
+        /// <param name="Question">A question</param>
+        /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
+        /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
+        /// <param name="AlternateAnswersStr">Set of alternate answers. They can be written like this: Y/N/C.</param>
         /// <param name="AlternateAnswersTitles">Working titles for each alternate answer. It must be the same amount as the alternate answers.</param>
         public static int PromptSelection(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, string[] AlternateAnswersTitles) =>
             PromptSelection(Question, InputChoiceTools.GetInputChoices(AnswersStr, AnswersTitles), InputChoiceTools.GetInputChoices(AlternateAnswersStr, AlternateAnswersTitles));
+
+        /// <summary>
+        /// Prompts user for selection
+        /// </summary>
+        /// <param name="Question">A question</param>
+        /// <param name="Answers">Set of answers. They can be written like this: Y/N/C.</param>
+        public static int PromptSelection(string Question, string[] Answers) => 
+            PromptSelection(Question, Answers, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>());
+
+        /// <summary>
+        /// Prompts user for Selection
+        /// </summary>
+        /// <param name="Question">A question</param>
+        /// <param name="Answers">Set of answers. They can be written like this: Y/N/C.</param>
+        /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
+        public static int PromptSelection(string Question, string[] Answers, string[] AnswersTitles) =>
+            PromptSelection(Question, Answers, AnswersTitles, Array.Empty<string>(), Array.Empty<string>());
+
+        /// <summary>
+        /// Prompts user for Selection
+        /// </summary>
+        /// <param name="Question">A question</param>
+        /// <param name="Answers">Set of answers. They can be written like this: Y/N/C.</param>
+        /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
+        /// <param name="AlternateAnswers">Set of alternate answers. They can be written like this: Y/N/C.</param>
+        public static int PromptSelection(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers) =>
+            PromptSelection(Question, Answers, AnswersTitles, AlternateAnswers, Array.Empty<string>());
+
+        /// <summary>
+        /// Prompts user for Selection
+        /// </summary>
+        /// <param name="Question">A question</param>
+        /// <param name="Answers">Set of answers. They can be written like this: Y/N/C.</param>
+        /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
+        /// <param name="AlternateAnswers">Set of alternate answers. They can be written like this: Y/N/C.</param>
+        /// <param name="AlternateAnswersTitles">Working titles for each alternate answer. It must be the same amount as the alternate answers.</param>
+        public static int PromptSelection(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, string[] AlternateAnswersTitles) =>
+            PromptSelection(Question, InputChoiceTools.GetInputChoices(Answers, AnswersTitles), InputChoiceTools.GetInputChoices(AlternateAnswers, AlternateAnswersTitles));
 
         /// <summary>
         /// Prompts user for Selection

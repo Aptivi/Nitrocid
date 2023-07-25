@@ -68,11 +68,69 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
         /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
         /// <param name="AlternateAnswersStr">Set of alternate answers. They can be written like this: Y/N/C.</param>
+        /// <param name="OutputType">Output type of choices</param>
+        /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
+        public static string PromptChoice(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
+            PromptChoice(Question, AnswersStr, AnswersTitles, AlternateAnswersStr, Array.Empty<string>(), OutputType, PressEnter);
+
+        /// <summary>
+        /// Prompts user for choice
+        /// </summary>
+        /// <param name="Question">A question</param>
+        /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
+        /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
+        /// <param name="AlternateAnswersStr">Set of alternate answers. They can be written like this: Y/N/C.</param>
         /// <param name="AlternateAnswersTitles">Working titles for each alternate answer. It must be the same amount as the alternate answers.</param>
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
         public static string PromptChoice(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, string[] AlternateAnswersTitles, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
             PromptChoice(Question, InputChoiceTools.GetInputChoices(AnswersStr, AnswersTitles), InputChoiceTools.GetInputChoices(AlternateAnswersStr, AlternateAnswersTitles), OutputType, PressEnter);
+
+        /// <summary>
+        /// Prompts user for choice
+        /// </summary>
+        /// <param name="Question">A question</param>
+        /// <param name="Answers">Set of answers.</param>
+        /// <param name="OutputType">Output type of choices</param>
+        /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
+        public static string PromptChoice(string Question, string[] Answers, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) => 
+            PromptChoice(Question, Answers, Array.Empty<string>(), OutputType, PressEnter);
+
+        /// <summary>
+        /// Prompts user for choice
+        /// </summary>
+        /// <param name="Question">A question</param>
+        /// <param name="Answers">Set of answers.</param>
+        /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
+        /// <param name="OutputType">Output type of choices</param>
+        /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
+        public static string PromptChoice(string Question, string[] Answers, string[] AnswersTitles, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
+            PromptChoice(Question, Answers, AnswersTitles, Array.Empty<string>(), Array.Empty<string>(), OutputType, PressEnter);
+
+        /// <summary>
+        /// Prompts user for choice
+        /// </summary>
+        /// <param name="Question">A question</param>
+        /// <param name="Answers">Set of answers.</param>
+        /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
+        /// <param name="AlternateAnswers">Set of alternate answers.</param>
+        /// <param name="OutputType">Output type of choices</param>
+        /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
+        public static string PromptChoice(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
+            PromptChoice(Question, Answers, AnswersTitles, AlternateAnswers, Array.Empty<string>(), OutputType, PressEnter);
+
+        /// <summary>
+        /// Prompts user for choice
+        /// </summary>
+        /// <param name="Question">A question</param>
+        /// <param name="Answers">Set of answers.</param>
+        /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
+        /// <param name="AlternateAnswers">Set of alternate answers.</param>
+        /// <param name="AlternateAnswersTitles">Working titles for each alternate answer. It must be the same amount as the alternate answers.</param>
+        /// <param name="OutputType">Output type of choices</param>
+        /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
+        public static string PromptChoice(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, string[] AlternateAnswersTitles, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
+            PromptChoice(Question, InputChoiceTools.GetInputChoices(Answers, AnswersTitles), InputChoiceTools.GetInputChoices(AlternateAnswers, AlternateAnswersTitles), OutputType, PressEnter);
 
         /// <summary>
         /// Prompts user for choice

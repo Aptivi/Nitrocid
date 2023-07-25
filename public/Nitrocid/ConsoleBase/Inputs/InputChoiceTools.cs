@@ -31,19 +31,26 @@ namespace KS.ConsoleBase.Inputs
         /// </summary>
         /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
         /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
-        public static List<InputChoiceInfo> GetInputChoices(string AnswersStr, string[] AnswersTitles)
+        public static List<InputChoiceInfo> GetInputChoices(string AnswersStr, string[] AnswersTitles) =>
+            GetInputChoices(AnswersStr.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries), AnswersTitles);
+
+        /// <summary>
+        /// Gets the input choices
+        /// </summary>
+        /// <param name="Answers">Set of answers.</param>
+        /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
+        public static List<InputChoiceInfo> GetInputChoices(string[] Answers, string[] AnswersTitles)
         {
             // Variables
-            var answers = AnswersStr.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
             var finalAnswers = new List<string>();
             var finalChoices = new List<InputChoiceInfo>();
 
             // Check to see if the answer titles are the same
-            if (answers.Length != AnswersTitles.Length)
-                Array.Resize(ref AnswersTitles, answers.Length);
+            if (Answers.Length != AnswersTitles.Length)
+                Array.Resize(ref AnswersTitles, Answers.Length);
 
             // Populate answers to final list for below operation
-            foreach (var _answer in answers)
+            foreach (var _answer in Answers)
                 finalAnswers.Add(_answer);
 
             // Now, populate choice information from the arrays
