@@ -331,9 +331,9 @@ namespace KS.Misc.Interactive
             for (int infoIndex = 0; infoIndex < finalInfoStrings.Length; infoIndex++)
             {
                 // Check to see if the info is overpopulated
-                if (infoIndex >= SeparatorMaximumHeightInterior)
+                if (infoIndex >= SeparatorMaximumHeightInterior - 1)
                 {
-                    string truncated = Translate.DoTranslation("Truncated information. Press Shift + Esc for more information.");
+                    string truncated = Translate.DoTranslation("Shift+I = more info");
                     TextWriterWhereColor.WriteWhere(truncated + new string(' ', SeparatorHalfConsoleWidthInterior - truncated.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + infoIndex, ForegroundColor, PaneItemBackColor);
                     break;
                 }

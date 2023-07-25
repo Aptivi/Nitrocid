@@ -739,7 +739,7 @@ Forces JSON mode
 Not a Nitrocid KS thread
 An error occurred while trying to wrap a command output
 Switches that are listed below conflict with each other.
-Truncated information. Press Shift + Esc for more information.
+Shift+I = more info
 Incorrect admin password. You have {0} tries.
 Out of chances. Rebooting...
 A general command manager error occurred. Check to make sure that you've written the command or the shell type correctly.
