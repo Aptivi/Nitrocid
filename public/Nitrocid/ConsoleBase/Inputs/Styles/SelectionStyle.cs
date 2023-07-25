@@ -103,8 +103,8 @@ namespace KS.ConsoleBase.Inputs.Styles
             // Make pages based on console window height
             int listStartPosition = ConsoleWrapper.CursorTop;
             int listEndPosition = ConsoleWrapper.WindowHeight - ConsoleWrapper.CursorTop;
-            int pages = AllAnswers.Count / listEndPosition;
             int answersPerPage = listEndPosition - 4;
+            int pages = AllAnswers.Count / answersPerPage;
             int lastPage = 1;
             bool refreshRequired = false;
 
