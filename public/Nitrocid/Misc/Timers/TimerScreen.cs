@@ -237,7 +237,7 @@ namespace KS.Misc.Timers
         private static void UpdateTimerElapsedDisplay()
         {
             var FigletFont = FigletTools.GetFigletFont(TimerFigletFont);
-            while (TimerUpdate.IsAlive)
+            while (!TimerUpdate.IsStopping)
             {
                 try
                 {

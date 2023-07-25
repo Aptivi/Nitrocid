@@ -193,7 +193,7 @@ namespace KS.Misc.Timers
             int LapsLapsListLeftPosition = 4;
             int LapsLapsListTopPosition = 3;
 
-            while (StopwatchUpdate.IsAlive)
+            while (!StopwatchUpdate.IsStopping)
             {
                 try
                 {
