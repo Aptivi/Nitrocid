@@ -42,8 +42,8 @@ namespace KS.ConsoleBase.Colors
         internal static Dictionary<KernelColorType, Color> KernelColors = PopulateColorsDefault();
 
         // Cache variables for background and foreground colors
-        internal static string cachedForegroundColor = "";
-        internal static string cachedBackgroundColor = "";
+        internal static Color currentForegroundColor = new Color(ConsoleColors.White);
+        internal static Color currentBackgroundColor = Color.Empty;
 
         /// <summary>
         /// Enables color blindness
@@ -70,32 +70,49 @@ namespace KS.ConsoleBase.Colors
             Config.MainConfig.BlindnessSeverity;
 
         /// <summary>
+        /// Current foreground color
+        /// </summary>
+        public static Color CurrentForegroundColor =>
+            currentForegroundColor;
+
+        /// <summary>
+        /// Current background color
+        /// </summary>
+        public static Color CurrentBackgroundColor =>
+            currentBackgroundColor;
+
+        /// <summary>
         /// Gets a color from the color type
         /// </summary>
         /// <param name="type">Color type</param>
-        public static Color GetColor(KernelColorType type) => new(KernelColors[type].PlainSequence);
+        public static Color GetColor(KernelColorType type) =>
+            new(KernelColors[type].PlainSequence);
 
         /// <summary>
         /// Sets a color from the color type
         /// </summary>
         /// <param name="type">Color type</param>
         /// <param name="color">Color to be set</param>
-        public static Color SetColor(KernelColorType type, Color color) => KernelColors[type] = color;
+        public static Color SetColor(KernelColorType type, Color color) =>
+            KernelColors[type] = color;
 
         /// <summary>
         /// Populate the empty color dictionary
         /// </summary>
-        public static Dictionary<KernelColorType, Color> PopulateColorsEmpty() => PopulateColors(0);
+        public static Dictionary<KernelColorType, Color> PopulateColorsEmpty() =>
+            PopulateColors(0);
 
         /// <summary>
         /// Populate the default color dictionary
         /// </summary>
-        public static Dictionary<KernelColorType, Color> PopulateColorsDefault() => PopulateColors(1);
+        public static Dictionary<KernelColorType, Color> PopulateColorsDefault() =>
+            PopulateColors(1);
 
         /// <summary>
         /// Populate the current color dictionary
         /// </summary>
-        public static Dictionary<KernelColorType, Color> PopulateColorsCurrent() => PopulateColors(2);
+        public static Dictionary<KernelColorType, Color> PopulateColorsCurrent() =>
+            PopulateColors(2);
 
         private static Dictionary<KernelColorType, Color> PopulateColors(int populationType)
         {
@@ -218,21 +235,21 @@ namespace KS.ConsoleBase.Colors
             // Set background
             if (Background)
             {
-                if ((Flags.SetBackground | ForceSet) && cachedBackgroundColor != ColorSequence.VTSequenceBackground)
+                if (Flags.SetBackground | ForceSet)
                 {
                     TextWriterColor.WritePlain(ColorSequence.VTSequenceBackground, false);
-                    cachedBackgroundColor = ColorSequence.VTSequenceBackground;
+                    currentBackgroundColor = ColorSequence;
                 }
-                else if (!Flags.SetBackground && cachedBackgroundColor != resetSequence)
+                else if (!Flags.SetBackground)
                 {
                     TextWriterColor.WritePlain(resetSequence, false);
-                    cachedBackgroundColor = resetSequence;
+                    currentBackgroundColor = Color.Empty;
                 }
             }
-            else if (cachedForegroundColor != ColorSequence.VTSequenceForeground)
+            else
             {
                 TextWriterColor.WritePlain(ColorSequence.VTSequenceForeground, false);
-                cachedForegroundColor = ColorSequence.VTSequenceForeground;
+                currentForegroundColor = ColorSequence;
             }
         }
 

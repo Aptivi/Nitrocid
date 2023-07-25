@@ -182,7 +182,7 @@ namespace KS.Drivers.Console.Consoles
             {
                 if (!IsDumb)
                     con.ForegroundColor = value;
-                ColorTools.cachedForegroundColor = new Color(Convert.ToInt32(value)).VTSequenceForeground;
+                ColorTools.currentForegroundColor = new Color(Convert.ToInt32(value));
             }
         }
 
@@ -199,7 +199,7 @@ namespace KS.Drivers.Console.Consoles
             {
                 if (!IsDumb)
                     con.BackgroundColor = value;
-                ColorTools.cachedBackgroundColor = new Color(Convert.ToInt32(value)).VTSequenceBackground;
+                ColorTools.currentBackgroundColor = new Color(Convert.ToInt32(value));
             }
         }
 
