@@ -41,6 +41,59 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="Left">Column number in console</param>
         /// <param name="Top">Row number in console</param>
         /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, params object[] vars) =>
+            WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, false, 0, vars);
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
+        /// </summary>
+        /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Line">Whether to print a new line or not</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+        /// <param name="Return">Whether or not to return to old position</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, params object[] vars) =>
+            WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, Return, 0, vars);
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
+        /// </summary>
+        /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Line">Whether to print a new line or not</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+        /// <param name="Return">Whether or not to return to old position</param>
+        /// <param name="RightMargin">The right margin</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, params object[] vars)
+        {
+            lock (TextWriterColor.WriteLock)
+            {
+                try
+                {
+                    // Write text in another place slowly
+                    DriverHandler.CurrentConsoleDriverLocal.WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
+                }
+                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+                {
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
+        /// </summary>
+        /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Line">Whether to print a new line or not</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, KernelColorType colorType, params object[] vars) =>
@@ -82,7 +135,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(colorType);
 
                     // Write text in another place slowly
-                    DriverHandler.CurrentConsoleDriverLocal.WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
+                    WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
                 {
